@@ -1,6 +1,21 @@
-#This section is waiting for content
+#Umbraco 4 Documentation
 
-This documention has not been written yet, but it is on the roadmap.
+
+##[Installation](Installation/index.md)
+Describes how Umbraco 4 is installed, using either WebMatrix, Microsoft Platform Installer, or from a zip-file. 
+
+##[Getting Started](Getting-Started/index.md)
+Step by step guides on how to approach the different areas in umbraco. Working with content, media, templating or developement. 
+
+
+##[Best Practices](Best-Practices/index.md)
+Patterns and best practices for solving common tasks in umbraco. 
+
+
+##[Developers Reference](Reference/index.md)
+Covers API reference, packaging, extending umbraco, querying and management APIs.
+
+---
 
 ###Progress
 Consult the Umbraco 4 documentation trello board to see what we are currently working on.
