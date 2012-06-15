@@ -18,7 +18,7 @@ Add references to the right namespaces at the top of your .cs file, and inherit 
 	
 	namespace MyApp
 	{
-	    public class AppBase : ApplicationBase
+	    public class BeforePublishHandler : ApplicationBase
 	    {
 	
 	        public AppBase()
