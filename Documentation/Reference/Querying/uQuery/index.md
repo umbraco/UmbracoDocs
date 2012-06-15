@@ -1,6 +1,6 @@
 # uQuery
 
-uQuery is an API giving read and write access the content, media and member data, as well as extending the relations API. uQuery originated from uComponents and was added into Umbraco from v4.8, and can be accessed by referencing the umbraco namespace:
+uQuery is an API giving read and write access the content, media and member data, as well as extending the relations built in API. uQuery originated from uComponents and was added into Umbraco from v4.8, and can be accessed by referencing the umbraco namespace:
 
 `using umbraco;`
 
@@ -10,14 +10,20 @@ Querying content can be done via 'Nodes' where the source data comes from the Xm
 
 uQuery has a number of static methods to get collections of Nodes and Documents, as well as extension methods on the umbraco.NodeFactory.Node / umbraco.cms.Web.Document objects.
 
+----
+
 ### Items
+
 #### GetRootNode
 #### GetCurrentNode
 #### GetCurrentDocument
 #### GetNode
 #### GetDocument
 
+----
+
 ### Collections
+
 #### GetNodesByCsv
 #### GetDocumentsByCsv
 #### GetNodesByXml
@@ -27,7 +33,10 @@ uQuery has a number of static methods to get collections of Nodes and Documents,
 #### GetNodesByType
 #### GetNodeByUrl
 
+----
+
 ### Traversing
+
 #### GetAncestorNodes
 #### GetAncestorDocuments
 #### GetAncestorOrSelfNodes
@@ -45,15 +54,24 @@ uQuery has a number of static methods to get collections of Nodes and Documents,
 #### GetChildNodes
 #### GetChildDocuments
 
+----
+
 ### Properties
 #### HasProperty
 #### GetProperty
 #### SetProperty
 
+----
+
 ## Media ##
+Querying media intro
+
+----
 
 ### Items
 #### GetMedia
+
+----
 
 ### Collections
 #### GetMediaByXPath
@@ -61,6 +79,8 @@ uQuery has a number of static methods to get collections of Nodes and Documents,
 #### GetMediaByXml
 #### GetMediaByName
 #### GetMediaByType
+
+----
 
 ### Traversing
 #### GetAncestorMedia
@@ -72,15 +92,25 @@ uQuery has a number of static methods to get collections of Nodes and Documents,
 #### GetDescendantOrSelfMedia
 #### GetChildMedia
 
+----
+
 ### Properties
 #### HasProperty
 #### GetProperty
 #### SetProperty
 
+----
+
 ## Members ##
+
+Querying members into
+
+----
 
 ### Items
 #### GetMember
+
+----
 
 ### Collections
 #### GetMembersByXPath
@@ -89,12 +119,21 @@ uQuery has a number of static methods to get collections of Nodes and Documents,
 #### GetMembersByType
 #### GetMembersByGroup
 
+----
+
 ### Properties
 #### HasProperty
 #### GetProperty
 #### SetProperty
 
+----
+
 ## Relations ##
+Releation methods intro
+
+----
+
+### Methods
 
 #### HasRelations
 #### IsRelated
