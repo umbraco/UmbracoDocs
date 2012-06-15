@@ -1,6 +1,8 @@
-# Configuration
+# Using Examine in XSLT
 
-## Web.config
+## Configuration
+
+### Web.config
 
 First, you need to make sure "XSLT Extensions" are enabled.
 
@@ -11,7 +13,7 @@ Umbraco installation and locate the line:
 
 Make sure its value is set to "false". (Don't you love double negation!)
 
-## xsltExtensions.config
+### xsltExtensions.config
 
 Second, you need to configure the Examine XSLT extensions to be
 available.
@@ -24,9 +26,9 @@ comment section ```<!-- ... --\>```!):
 
     <ext assembly="UmbracoExamine" type="UmbracoExamine.XsltExtensions" alias="umbraco.examine" />
 
-# Using Examine
+## Using Examine
 
-## Create a new XSLT file
+### Create a new XSLT file
 
 Go to the "Developer" section in the Umbraco backend and create a new
 XSLT file, based on the "Clean" template. Let's name it "ExamineSearch".
@@ -45,7 +47,7 @@ If the namespace isn't readily available when creating a new XSLT file,
 it's a good indication the configuration wasn't succesful. You might
 want to go to the forum for help!
 
-## Test whether Examine works
+### Test whether Examine works
 
 In the XSLT file you've just created, put your cursor in the "root"
 template:
