@@ -22,7 +22,7 @@ Once you have selected a branch, you're good to go. Our project consists of 2 ma
 To contribute to either the documentation or stubs, you can fork & clone our repository, make your edits, and simply push back to gitHub and send us a pull request. All items that get pulled into the main repository will automatically get pushed to [our.umbraco.org/documentation](http://our.umbraco.org/documentation).
 
 ####Getting started with Git and GitHub
- * [Setting up Git for Windows and connecting to GitHub](http://windows.github.com)
+ * [Setting up Git for Windows and connecting to GitHub](http://windos.github.com)
  * [Forking a GitHub repository](http://help.github.com/fork-a-repo/)
  * [The simple guide to GIT](http://rogerdudler.github.com/git-guide/)
 
