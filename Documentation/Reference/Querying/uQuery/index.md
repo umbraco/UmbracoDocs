@@ -1,15 +1,143 @@
-#This section is waiting for content
+# uQuery
 
-This documention has not been written yet, but it is on the roadmap.
+uQuery is an API giving read and write access the content, media and member data, as well as extending the relations built in API. uQuery originated from uComponents and was added into Umbraco from v4.8, and can be accessed by referencing the umbraco namespace:
 
-###Progress
-Consult the Umbraco 4 documentation trello board to see what we are currently working on.
-[See the TrelloBoard here](https://trello.com/board/umbraco-4-documentation/4fdb02df8fc3ef067e809e95)
+`using umbraco;`
 
-###Contribution
-Umbraco is a community powered project and we welcome any contribution, big or small, even fixing a typo is a valuable contribution.
-[See how to contribute](https://github.com/umbraco/Umbraco4Docs)
+## Content
 
+Querying content can be done via 'Nodes' where the source data comes from the Xml cache (the current published version), or via 'Documents' where the data is retrieved from the database (which is slower, but the data represents the latest version whether it's published or not).
 
+uQuery has a number of static methods to get collections of Nodes and Documents, as well as extension methods on the umbraco.NodeFactory.Node / umbraco.cms.Web.Document objects.
 
- 
+----
+
+### Items
+
+#### GetRootNode
+#### GetCurrentNode
+#### GetCurrentDocument
+#### GetNode
+#### GetDocument
+
+----
+
+### Collections
+
+#### GetNodesByCsv
+#### GetDocumentsByCsv
+#### GetNodesByXml
+#### GetDocumentsByXml
+#### GetNodesByXPath
+#### GetNodesByName
+#### GetNodesByType
+#### GetNodeByUrl
+
+----
+
+### Traversing
+
+#### GetAncestorNodes
+#### GetAncestorDocuments
+#### GetAncestorOrSelfNodes
+#### GetAncestorOrSelfDocuments
+#### GetPreceedingSiblingNodes
+#### GetPreceedingSiblingDocuments
+#### GetFollowingSiblingNodes
+#### GetFollowingSiblingDocuments
+#### GetSiblingNodes
+#### GetSiblingDocuments
+#### GetDescendantNodes
+#### GetDescendantDocuments
+#### GetDescendantOrSelfNodes
+#### GetDescendantOrSelfDocuments
+#### GetChildNodes
+#### GetChildDocuments
+
+----
+
+### Properties
+#### HasProperty
+#### GetProperty
+#### SetProperty
+
+----
+
+## Media ##
+Querying media intro
+
+----
+
+### Items
+#### GetMedia
+
+----
+
+### Collections
+#### GetMediaByXPath
+#### GetMediaByCsv
+#### GetMediaByXml
+#### GetMediaByName
+#### GetMediaByType
+
+----
+
+### Traversing
+#### GetAncestorMedia
+#### GetAncestorOfSelfMedia
+#### GetPrecedingSiblingMedia*
+#### GetFollowingSiblingMedia*
+#### GetSiblingMedia
+#### GetDescendantMedia
+#### GetDescendantOrSelfMedia
+#### GetChildMedia
+
+----
+
+### Properties
+#### HasProperty
+#### GetProperty
+#### SetProperty
+
+----
+
+## Members ##
+
+Querying members into
+
+----
+
+### Items
+#### GetMember
+
+----
+
+### Collections
+#### GetMembersByXPath
+#### GetMembersByCsv
+#### GetMembersByXml
+#### GetMembersByType
+#### GetMembersByGroup
+
+----
+
+### Properties
+#### HasProperty
+#### GetProperty
+#### SetProperty
+
+----
+
+## Relations ##
+Releation methods intro
+
+----
+
+### Methods
+
+#### HasRelations
+#### IsRelated
+#### GetRelation
+#### GetRelations
+#### DeleteRelation
+#### ClearRelations
