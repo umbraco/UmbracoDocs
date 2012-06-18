@@ -10,8 +10,6 @@ Querying content can be done via 'Nodes' where the source data comes from the Xm
 
 uQuery has a number of static methods to get collections of Nodes and Documents, as well as extension methods on the umbraco.NodeFactory.Node / umbraco.cms.Web.Document objects.
 
-----
-
 ## Items
 
 ### GetRootNode()
@@ -44,9 +42,6 @@ Checks to see if the current Node can be obtained via the nodeFactory, else atte
 
 ### GetDocument(string or int)
 Returns: `Document`
-
-
-----
 
 ## Collections
 
@@ -86,8 +81,6 @@ Get document collection from a CSV string of node Ids
 
 ### GetDocumentsByXml(string)
 Returns: `List<Document>`
-
-----
 
 ## Traversing
 These axis type methods are useful with LINQ
@@ -140,8 +133,6 @@ Returns: `IEnumerable<Document>`
 ### GetChildDocuments(optional Func&lt;Document, bool&gt;)
 Returns: `IEnumerable<Document>`
 
-----
-
 ## Properties
 
 ### HasProperty(string)
@@ -155,18 +146,12 @@ Returns: `Node`
 
 chainable property setter - calls Document.SetProperty
 
-----
-
 # Media
 Querying media intro
-
-----
 
 ## Items
 ### GetMedia(string or int)
 Returns: `Media`
-
-----
 
 ## Collections
 ### GetMediaByXPath(string)
@@ -187,8 +172,6 @@ Returns: `List<Media>`
 
 ### GetMediaByType(string)
 Returns: `List<Media>`
-
-----
 
 ## Traversing
 
@@ -216,8 +199,6 @@ Returns: `IEnumerable<Media>`
 ### GetChildMedia()
 Returns: `IEnumerable<Media>`
 
-----
-
 ## Properties
 ### HasProperty(string)
 Returns: `bool`
@@ -228,19 +209,13 @@ Returns: `T`
 ### SetProperty(string, object)
 Returns: `Media`
 
-----
-
 # Members
 
 Querying members into
 
-----
-
 ## Items
 ### GetMember(string or int)
 Returns: `Member`
-
-----
 
 ## Collections
 ### GetMembersByXPath(string)
@@ -260,8 +235,6 @@ Returns: `List<Member>`
 ### GetMembersByGroup(string)*
 Returns: `List<Member>`
 
-----
-
 ## Properties
 ### HasProperty(string)
 Returns: `bool`
@@ -272,12 +245,8 @@ Returns: `T`
 ### SetProperty(string, object)
 Returns: `Member`
 
-----
-
 # Relations
 Releation methods intro
-
-----
 
 ## Methods
 
