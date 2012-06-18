@@ -1,15 +1,19 @@
-#This section is waiting for content
+#Developers Reference
 
-This documention has not been written yet, but it is on the roadmap.
-
-###Progress
-Consult the Umbraco 4 documentation trello board to see what we are currently working on.
-[See the TrelloBoard here](https://trello.com/board/umbraco-4-documentation/4fdb02df8fc3ef067e809e95)
-
-###Contribution
-Umbraco is a community powered project and we welcome any contribution, big or small, even fixing a typo is a valuable contribution.
-[See how to contribute](https://github.com/umbraco/Umbraco4Docs)
+The intended audience for these reference pages are .net developers, it is assumed the reader already has a knowledge of the basics of Umbraco and knows .net & c#
 
 
+##[Content Types](ContentTypes/index.md)
+Content Types, defines the data you work with, use the DocumentType and MediaType APIs to define what values editors can add to your pages.   
 
- 
+##[Documents](documents/index.md)
+Create, Update, Move, Copy, delete and publish documents. 
+
+##[Media](media/index.md)
+Create, Update, Move, Copy and delete media.
+
+##[Members](members/index.md)
+Create, Update, Move, Copy, assign groups and delete members.
+
+##[Templates](Templates/index.md)
+Create templates programaticly 
