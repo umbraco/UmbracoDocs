@@ -28,7 +28,7 @@ To contribute to either the documentation or stubs, you can fork & clone our rep
 
 
 ##Repository organisation
-So that we can target documentation for each release of Umbraco 5, there will be a branch for each released version.
+So that we can target documentation for each release of Umbraco 4, there will be a branch for each released version.
 When making corrections or edits to documentation against one revision, if those updates are relevant to another release, merge those specific changes to the other relevant branches.
 No active work on the documentation should be done on the 'master' branch.
 
