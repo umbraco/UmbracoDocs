@@ -6,13 +6,13 @@ The intended audience for these reference pages are .net developers, it is assum
 ##[Content Types](ContentTypes/index.md)
 Content Types, defines the data you work with, use the DocumentType and MediaType APIs to define what values editors can add to your pages.   
 
-##[Documents](documents/index.md)
+##[Documents](Documents/index.md)
 Create, Update, Move, Copy, delete and publish documents. 
 
-##[Media](media/index.md)
+##[Media](Media/index.md)
 Create, Update, Move, Copy and delete media.
 
-##[Members](members/index.md)
+##[Members](Members/index.md)
 Create, Update, Move, Copy, assign groups and delete members.
 
 ##[Templates](Templates/index.md)
