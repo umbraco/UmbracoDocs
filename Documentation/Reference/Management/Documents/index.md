@@ -45,6 +45,11 @@ All documents in umbraco is versioned. So everytime a document is changed, a new
 		Document d = new Document(1234 versionGuid);
 
 
+##Document methods and properties
+The `Document` class itself has a big collection of methods and properties, please see the seperate [Document](document.md) page for this.
+
+
+
 ##Static methods
 ###.CountSubs(1233, false);
 Counts the number as a `int` of children below a given document, optional parameter to only return number of published children.
