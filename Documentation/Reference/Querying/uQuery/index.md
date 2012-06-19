@@ -17,6 +17,7 @@ uQuery has a number of static methods to get collections of Nodes and Documents,
 Returns: `Node`
 
 Returns the top level node in the content tree, this node always has an id of -1, so this method is simply a wrapper method.
+
 eg.
 
 `Node node = uQuery.GetRootNode();`
