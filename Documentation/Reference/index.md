@@ -14,7 +14,7 @@ Information and references for package developers, on how to create packages, as
 Umbraco comes with several ways of querying, filtering and searching contnet, through the APIs uQuery, DynamicNode and Examine
 
 ##[/Base](Api/Base/Index.md)
-/Base is a extendable system for creating raw feeds directly from Umbraco using very basic Url's. This enables developers to access umbraco data through javascript, flash or any other client.  It even allows you to modify umbraco data directly via simple url's.
+Base is a extendable system for creating raw feeds directly from Umbraco using very basic Url's. This enables developers to access umbraco data through javascript, flash or any other client.  It even allows you to modify umbraco data directly via simple url's.
 ---
 
 ###Progress
