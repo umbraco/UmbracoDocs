@@ -1,4 +1,4 @@
-#Razor syntax for Breadcrumb in Umbraco 4.7
+#Breadcrumb using Razor in Umbraco 4.7
 
     <ul>
       @foreach(var level in @Model.Ancestors().Where("Visible"))
