@@ -4,8 +4,8 @@ Displays a list of preset values as a list of checkbox controls. The preset valu
 
 ##Data Type Definition Example
 
-![Approved Color Data Type Definition](images/Checkbox-List-DataType.jpg?raw=true)
+![Approved Color Data Type Definition](images/CheckBox-List-DataType.jpg?raw=true)
 
 ##Content Example
 
-![Approved Color Data Type Definition](images/Checkbox-List-Content.jpg?raw=true)
+![Approved Color Data Type Definition](images/CheckBox-List-Content.jpg?raw=true)
