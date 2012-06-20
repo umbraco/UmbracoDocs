@@ -4,8 +4,8 @@ Adds a list of approved colours which can be selected by clicking. The approved 
 
 ##Data Type Definition Example
 
-![Approved Color Data Type Definition](images/Approved-Color-DataType.jpg)
+![Approved Color Data Type Definition](images/Approved-Color-DataType.jpg?raw=true)
 
 ##Content Example
 
-![Approved Color Data Type Definition](images/Approved-Color-Content.jpg)
+![Approved Color Data Type Definition](images/Approved-Color-Content.jpg?raw=true)
