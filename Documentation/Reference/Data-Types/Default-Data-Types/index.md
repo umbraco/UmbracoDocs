@@ -6,7 +6,7 @@ This page contains a list of all the default Umbraco datatypes and a short descr
 Adds a list of approved colours which can be selected by clicking. The approved colours need to be added as hex values (without the #) in the prevalues field. i.e. cccccc
 
 ##[Checkbox list](Checkbox-List.md)
-Displays a list of preset values as a list of checkbox controls. The preset values are modified in the developer section under "data types" / checkbox list where new items can be added. The value saved is a commasepareted string of prevalue IDs, which is easiliest processed with xslt. (umbraco.library:GetPrevalue())
+Displays a list of preset values as a list of checkbox controls. The preset values are modified in the developer section under "data types" / checkbox list where new items can be added. The value saved is a comma separeted string of prevalue IDs
 
 ##Content picker
 The content picker opens a simple modal to pick a specific page from the content structure. The value saved is the selected page's ID. This ID can be used in xslt with umbraco.library:GetXmlNodeById(ID) to get the page's content

@@ -9,3 +9,7 @@ Adds a list of approved colours which can be selected by clicking. The approved 
 ##Content Example
 
 ![Approved Color Data Type Definition](images/Approved-Color-Content.jpg?raw=true)
+
+##XSLT Example
+
+##Razor Example
