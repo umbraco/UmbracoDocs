@@ -13,8 +13,13 @@ Information and references for package developers, on how to create packages, as
 ##[Querying](Querying/index.md)
 Umbraco comes with several ways of querying, filtering and searching contnet, through the APIs uQuery, DynamicNode and Examine
 
+##[Searching](Searching/index.md)
+Details on how to implement search capabilities for your Umbraco website.
+
 ##[/Base](Api/Base/Index.md)
 /Base is a extendable system for creating raw feeds directly from Umbraco using very basic Url's. This enables developers to access umbraco data through javascript, flash or any other client. It even allows you to modify umbraco data directly via simple url's.
+
+
 
 ---
 
@@ -24,8 +29,4 @@ Consult the Umbraco 4 documentation trello board to see what we are currently wo
 
 ###Contribution
 Umbraco is a community powered project and we welcome any contribution, big or small, even fixing a typo is a valuable contribution.
-[See how to contribute](https://github.com/umbraco/Umbraco4Docs)
-
-
-
- 
+[See how to contribute](https://github.com/umbraco/Umbraco4Docs) 
