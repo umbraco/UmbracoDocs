@@ -2,7 +2,7 @@
 
 This page contains a list of all the default Umbraco datatypes and a short description of what they do:
 
-##Approved Color
+##[Approved Color](Approved-Color.md)
 Adds a list of approved colours which can be selected by clicking. The approved colours need to be added as hex values (without the #) in the prevalues field. i.e. cccccc
 
 ##Checkbox list
