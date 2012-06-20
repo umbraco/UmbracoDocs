@@ -7,15 +7,16 @@ Umbraco 4, comes with a complete event model, covering all mayor aspects of the 
 ##[Management APIs](management/index.md)
 Create, update, delete all build-in system objects, like documents, media, templates, document types and so on. 
 
-
 ##[Packaging](Packaging/index.md)
 Information and references for package developers, on how to create packages, as well as extending the packaging format.
-
 
 ##[Querying](Querying/index.md)
 Umbraco comes with several ways of querying, filtering and searching contnet, through the APIs uQuery, DynamicNode and Examine
 
----
+##[Searching](Searching/index.md)
+Details on how to implement search capabilities for your Umbraco website.
+
+- - -
 
 ###Progress
 Consult the Umbraco 4 documentation trello board to see what we are currently working on.
