@@ -12,4 +12,25 @@ Displays a list of preset values as a list of checkbox controls. The preset valu
 
 ##XSLT Example
 
+	<xsl:if test="string-length($currentPage/fruit) > 0">  
+	  <xsl:variable name="items" select="umbraco.library:Split($currentPage/fruit,',')" />  
+	  <ul>  
+	  <xsl:for-each select="$items//value">
+	    <li>
+	      <xsl:value-of select="current()"/>
+	    </li>
+	  </xsl:for-each>
+	  </ul>    
+	</xsl:if>
+
 ##Razor Example
+
+	@{
+	  if (@Model.fruit.Length > 0){
+	    <ul>                                                        
+	      @foreach(var item in @Model.fruit.Split(',')) { 
+	       <li>@item</li>
+	      }
+	    </ul>                                                                                        
+	  }
+	}

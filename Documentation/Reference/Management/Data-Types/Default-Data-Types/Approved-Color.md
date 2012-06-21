@@ -12,4 +12,13 @@ Adds a list of approved colours which can be selected by clicking. The approved 
 
 ##XSLT Example
 
+	<div>
+		<xsl:attribute name="style">background-color:#<xsl:value-of select="$currentPage/colorPicker"/></xsl:attribute>
+		<p>some content</p>
+	</div>
+
 ##Razor Example
+
+	<div style="background-color:#@Model.colorPicker">
+	  <p>some content</p>
+	</div>
