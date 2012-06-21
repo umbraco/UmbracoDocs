@@ -2,7 +2,7 @@
 
 Displays a list of preset values as a list of checkbox controls. The preset values are modified in the developer section under "data types" / checkbox list where new items can be added. The text saved is a comma separeted string of prevalue IDs. 
 
-NOTE: Unlike other data types, the values are not direct accessible in xslt or razor
+NOTE: Unlike other data types, the values are not directly accessible in xslt or razor
 
 ##Data Type Definition Example
 
