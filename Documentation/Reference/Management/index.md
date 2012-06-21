@@ -17,3 +17,6 @@ Create, Update, Move, Copy, assign groups and delete members.
 
 ##[Templates](Templates/index.md)
 Create templates programaticly 
+
+##[Data Types and Render Controls](Data-Types/index.md)
+Create Data Type Render Controls. Details of preinstalled Data Types in Umbraco
