@@ -67,23 +67,23 @@ Returns: `Document` or `null`
 
 For a given id, returns a Document obj or a null if not found. There are two overloaded methods: GetDocument(int) and GetDocument(string).
 
-`Document document = uQuery.GetDocument(123);`
-
-or
-
-`Document document = uQuery.GetDocument("123");`
+`Document document = uQuery.GetDocument(123);` or `Document document = uQuery.GetDocument("123");`
 
 ## Collections
 
 ### GetNodesByCsv(string) 
 Returns: `IEnumerable<Node>` 
 
-Get node collection from a CSV string of node Ids
+Get node collection from a CSV string of node Ids.
+
+`IEnumerable<Node> nodes = uQuery.GetNodesByCsv("1002, 1003, 1004");`
+
 
 ### GetNodesByXPath(string)
 Returns: `IEnumerable<Node>` 
 
 Get node collection from an XPath expression (uses Umbraco Xml) can use use $ancestorOrSelf to use the currentNode if published else it'll use the nearest published parent ($currentPage will be depreciated) - the XPath expression is compiled and cached
+
 
 ### GetNodesByName(string)
 Returns: `IEnumerable<Node>` 
@@ -169,10 +169,13 @@ Returns: `IEnumerable<Document>`
 Returns: `bool`
 
 ### GetProperty&lt;T&gt;(string)
-Returns: `T`
+Returns: `bool` `int` `float` `decimal` `string` `DateTime` `XmlDocument`
+
 
 ### SetProperty(string, object)
 Returns: `Node`
+
+When a property is set, it's also saved
 
 chainable property setter - calls Document.SetProperty
 
@@ -181,7 +184,7 @@ Querying media intro
 
 ## Items
 ### GetMedia(string or int)
-Returns: `Media`
+Returns: `Media` or `null`
 
 ## Collections
 ### GetMediaByXPath(string)
@@ -234,7 +237,7 @@ Returns: `IEnumerable<Media>`
 Returns: `bool`
 
 ### GetProperty<T>(string)
-Returns: `T`
+Returns: `bool` `int` `float` `decimal` `string` `DateTime` `XmlDocument`
 
 ### SetProperty(string, object)
 Returns: `Media`
@@ -245,7 +248,7 @@ Querying members into
 
 ## Items
 ### GetMember(string or int)
-Returns: `Member`
+Returns: `Member` or `null`
 
 ## Collections
 ### GetMembersByXPath(string)
@@ -270,7 +273,7 @@ Returns: `IEnumerable<Member>`
 Returns: `bool`
 
 ### GetProperty&lt;T&gt;(string)
-Returns: `T`
+Returns: `bool` `int` `float` `decimal` `string` `DateTime` `XmlDocument`
 
 ### SetProperty(string, object)
 Returns: `Member`
