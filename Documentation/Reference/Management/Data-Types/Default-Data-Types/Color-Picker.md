@@ -1,14 +1,16 @@
-#Approved Color
+#Color Picker
+
+`GUID f8d60f68-ec59-4974-b43b-c46eb5677985`
 
 Adds a list of approved colours which can be selected by clicking. The approved colours need to be added as hex values (without the #) in the prevalues field. i.e. cccccc
 
 ##Data Type Definition Example
 
-![Approved Color Data Type Definition](images/Approved-Color-DataType.jpg?raw=true)
+![Approved Color Data Type Definition](images/Color-Picker-DataType.jpg?raw=true)
 
 ##Content Example
 
-![Approved Color Data Type Definition](images/Approved-Color-Content.jpg?raw=true)
+![Approved Color Data Type Definition](images/Color-Picker-Content.jpg?raw=true)
 
 ##XSLT Example
 
