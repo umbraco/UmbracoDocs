@@ -9,7 +9,7 @@ Displays a list of preset values as a list of checkbox controls. The preset valu
 Adds a list of approved colours which can be selected by clicking. The approved colours need to be added as hex values (without the #) in the prevalues field. i.e. cccccc
 
 ##[Content Picker](Content-Picker.md)
-The content picker opens a simple modal to pick a specific page from the content structure. The value saved is the selected page's ID. This ID can be used in xslt with umbraco.library:GetXmlNodeById(ID) to get the page's content
+The content picker opens a simple modal to pick a specific page from the content structure. The value saved is the selected nodes's ID. 
 
 ##Date picker with time
 Displays a calendar UI for selecting dates and time, the value saved is a standard dateTime value
