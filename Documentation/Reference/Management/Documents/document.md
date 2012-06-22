@@ -54,6 +54,14 @@ Returns the `User` who created the document
 ###.ExpireDate
 If set, returns the `DateTime` the Document is meant to be unpublished and become unavailable on the website
 
+###.getProperties
+Returns a `Property[]` containing all property data of the given `Document`, each property has a value, a alias
+
+	var doc = new Document(1223);
+	foreach(var prop in doc.getProperties){
+        var value = (DateTime)p.Value;
+        var alias = p.PropertyType.Alias;
+    } 
 
 ###.HasChildren
 Returns `Bool` indicating whether the given `Document` has any documents just below it
@@ -143,7 +151,19 @@ Recreates the given Document as a child of the given Id, a User is based for the
 
 
 ###.delete(true)
-Deletes the given `Document`, a `Bool` can be passed to indicate whether the Document should be deleted, or simply moved to the Recycle bin.
+Deletes the given `Document`, a `Bool` can be passed to indicate whether the Document should be deleted, or simply moved to the Recycle bin, **notice** you will need to remove the document from the cache as well
+
+	var doc = new Document(1223);
+	umbraco.library.UnpublishSingleDocument(doc.id);
+	doc.delete(true);
+
+###.getProperty(alias)
+Returns a `Property` with the given alias. The properties contain the document data, the property data is instantly persisted.  
+
+	var doc = new Document(1234);
+	doc.getProperty("bodyText").Value = "<p>hello</p>";
+	doc.getProperty("dateField").Valye = DateTime.Now;
+
 
 ###.GetTextPath()
 Returns the parent Ids as a path to the given `Document`. If a document exist underneath a Document with ID 1234, which then exist under a document with id 5555, the TextPath returned is -1,5555,1234
@@ -197,13 +217,41 @@ Does the same thing as .Publish(user) but returns a `Bool` indicating whether th
 ###.PublishWithSubs(user)
 
 ###.RemoveTemplate()
+Sets the template ID to `Null` on the given Document
+
 ###.RollBack(VersionId, user)
+Rolls the `Document` back to the version with the a given Version Id. A user must be passed for the Document audit trail. 
+
 ###.Save()
+Saves the latest changes on the Document. This triggers the Before/After save events. **Notice** this method is nothing but a stub, as all properties are instantly persisted.
+
 ###.SendToPublication(user)
+Sends the Document to publishing, which triggers notifications to the appropriate admins, subscribing to notifications. Send to publishing, is only used in case the current `User` does not have permission to publish a document.
+
 ###.ToPreviewXml(XmlDocument)
+Returns a `XmlNode` containing the Document data, based off the latest changes, even unpublished changes, is only used for the internal Preview functionality
+
 ###.ToXml(xmldocument, true)
+Returns a `XmlNode` containing the Document data, based off the latest published changes. Is used when the published document is send to the in-memory cache.
+
 ###.UnPublish()
+Sets the Published flag to false, which means the Xml will not be included in the Xml Cache the next time it refreshes. **Notice:** to force the document out of the cache instantly, a call to library.UnpublishSingleNode()
+
+	//get the document
+	var doc = new Document(1234);
+		
+	//remove it from the cache
+	umbraco.library.UnpublishSingleNode(doc.id);
+
+	//mark it as unpublished
+	doc.UnPublish();
+	
+
 ###.XmlGenerate(XmlDocument)
+Generates a xml representation of the `Document` and saves it in the database.
+
 ###.XmlNodeRefresh(XmlDocument, ref XmlNode)
+Refreshes the given `XmlNode` with data from the Document properties.
+
 ###.XmlPopulate(XmlDocument, ref XmlNode, true)
-###.XmlRemoveFromDB()
+Populates the given `XmlNode` with data from the Document Properties. A boolean parameter can be passed to indicate whether all child document xml should be append as well. 
