@@ -43,11 +43,7 @@ Returns: `Node` or `null`
 
 For a given id, returns a Node obj or a null if not found. There are two overloaded methods: GetNode(int) and GetNode(string).
 
-`Node node = uQuery.GetNode(123);`
-
-or
-
-`Node node = uQuery.GetNode("123");`
+`Node node = uQuery.GetNode(123);` or `Node node = uQuery.GetNode("123");`
 
 
 ### GetNodeByUrl(string)
@@ -82,7 +78,9 @@ Get node collection from a CSV string of node Ids.
 ### GetNodesByXPath(string)
 Returns: `IEnumerable<Node>` 
 
-Get node collection from an XPath expression (uses Umbraco Xml) can use use $ancestorOrSelf to use the currentNode if published else it'll use the nearest published parent ($currentPage will be depreciated) - the XPath expression is compiled and cached
+Get node collection from an XPath expression (uses the Umbraco Xml cache) can use use $ancestorOrSelf to use the currentNode if published else it'll use the nearest published parent. On first use the XPath expression is compiled and then cached.
+
+`IEnumerable<Node> nodes = uQuery.GetNodesByXPath("\\*[@isDoc]");`
 
 
 ### GetNodesByName(string)
