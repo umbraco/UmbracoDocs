@@ -1,8 +1,13 @@
 # uQuery
 
-uQuery is an API giving read and write access the content, media and member data, as well as extending the relations API. uQuery originated from uComponents and was added into Umbraco from v4.8, and can be accessed by referencing the umbraco namespace:
+uQuery is an API giving read/write access the content, media and member data, as well as extending the relations API. uQuery originated from uComponents and was added into Umbraco from v4.8. To use uQuery declare the umbraco namespace in addition to those for nodes / documents / media / members / relations:
 
 `using umbraco;`
+'using umbraco.NodeFactory;'
+`using umbraco.cms.businesslogic.web;`
+`using umbraco.cms.businesslogic.media;`
+`using umbraco.cms.businesslogic.member;`
+`using umbraco.cms.businesslogic.relation;`
 
 ## Content
 
@@ -299,4 +304,4 @@ Returns: `void`
 
 ### ClearRelations(int)
 Returns: `void`
-=======
+
