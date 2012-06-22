@@ -2,18 +2,24 @@
 
 uQuery is an API giving read/write access the content, media and member data, as well as extending the relations API. uQuery originated from uComponents and was added into Umbraco from v4.8. To use uQuery declare the umbraco namespace in addition to those for nodes / documents / media / members / relations:
 
-`using umbraco;`
-'using umbraco.NodeFactory;'
-`using umbraco.cms.businesslogic.web;`
+`using umbraco; // uQuery`
+
+`using umbraco.NodeFactory; // Node`
+
+`using umbraco.cms.businesslogic.web; // Document`
+
 `using umbraco.cms.businesslogic.media;`
+
 `using umbraco.cms.businesslogic.member;`
+
 `using umbraco.cms.businesslogic.relation;`
+
 
 ## Content
 
 Querying content can be done via 'Nodes' where the source data comes from the Xml cache (the current published version), or via 'Documents' where the data is retrieved from the database (which is slower, but the data represents the latest version whether it's published or not).
 
-uQuery has a number of static methods to get collections of Nodes and Documents, as well as extension methods on the umbraco.NodeFactory.Node / umbraco.cms.Web.Document objects.
+uQuery has a number of static methods to get collections of Nodes and Documents, as well as extension methods on the `umbraco.NodeFactory.Node` `umbraco.cms.Web.Document objects`.
 
 ## Items
 
