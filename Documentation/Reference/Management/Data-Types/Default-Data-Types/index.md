@@ -14,8 +14,8 @@ The content picker opens a simple modal to pick a specific page from the content
 ##[Date/Time](Date-Time.md)
 Displays a calendar UI for selecting dates and time, the value saved is a standard dateTime value
 
-##Date
-Displays a calendar UI for selecting dates and time, the value saved is a standard dateTime value, but with no time information.
+##[Date](Date.md)
+Displays a calendar UI for selecting dates, the value saved is a standard dateTime value, but with no time information.
 
 ##Dictionary Picker
 
