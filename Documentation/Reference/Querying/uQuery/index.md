@@ -11,8 +11,6 @@ uQuery is an API giving read/write access the content, media and member data, as
 	using umbraco.cms.businesslogic.relation;
 
 
-----------
-
 ## UmbracoObjectType
 uQuery also exposes an Enum with associated helper methods to represent each of the Guids used by Umbraco.
 
@@ -46,7 +44,8 @@ Returns: `uQuery.UmbracoObjectType`
 
 Gets the Enum value corresponding to the supplied Guid. This method iterates the Enum looking for one with a matching Guid attribute, if not found then UmbracoObjectType.Unknown is returned.
 
-	uQuery.UmbracoObjectType umbracoObjectType = uQuery.GetUmbracoObjectType(Guid.Parse("C66BA18E-EAF3-4CFF-8A22-41B16D66A972"));
+	uQuery.UmbracoObjectType umbracoObjectType = uQuery.GetUmbracoObjectType(
+													Guid.Parse("C66BA18E-EAF3-4CFF-8A22-41B16D66A972"));
 
 ### GetUmbracoObjectType(int)
 Returns: `uQuery.UmbracoObjectType`
