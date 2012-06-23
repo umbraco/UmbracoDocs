@@ -1,6 +1,7 @@
 # uQuery
 
-uQuery is an API giving read / write access the content, media and member data, as well as extending the relations API. uQuery originated from uComponents and was added into Umbraco from v4.8. To use uQuery declare the umbraco namespace in addition to those for nodes / documents / media / members / relations:
+uQuery is an API giving read/write access the content, media and member data, as well as extending the relations API. uQuery originated from uComponents and was added into Umbraco from v4.8. To use uQuery declare the umbraco namespace in addition to those required for nodes / documents / media / members / relations:
+
 
 `using umbraco; // uQuery`
 
@@ -22,6 +23,7 @@ Querying content can be done via 'Nodes' where the source data comes from the Xm
 uQuery has a number of static methods to get collections of Nodes and Documents, as well as extension methods on the `umbraco.NodeFactory.Node` `umbraco.cms.Web.Document` objects.
 
 ## Items
+Methods that return either a single `Node` or `Document` (or a `null`)
 
 ### GetRootNode()
 Returns: `Node`
@@ -34,38 +36,46 @@ Returns the top level node in the content tree, this node always has an id of -1
 ### GetCurrentNode()
 Returns: `Node` or `null`
 
-Returns the current content node (unlike Node.GetCurrent() this method will also work in the back office, hence can be used by custom datatypes). There are circumstances where GetCurrentNode() will a return null, for example in the back office on a content item that has never been published (hence it's not in the xml cache).
+Returns the current content node (unlike *umbraco.nodeFactory.Node.GetCurrent()* this method will also work in the back office, hence can be used by custom datatypes). There are circumstances where *GetCurrentNode()* will a return null, for example in the back office on a content item that has never been published (since it's not in the xml cache).
 
 `Node node = uQuery.GetCurrentNode();`
 
 ### GetNode(string or int)
 Returns: `Node` or `null`
 
-For a given id, returns a Node obj or a null if not found. There are two overloaded methods: GetNode(int) and GetNode(string).
+For a given id (supplied as an int or a string), returns the associated Node obj or a null if it not found. This method supresses any exceptions thown by Umbraco when trying to create an invalid Node, if this occurs, then a null is returned.
 
-`Node node = uQuery.GetNode(123);` or `Node node = uQuery.GetNode("123");`
+`Node node = uQuery.GetNode(123);`
+
+`Node node = uQuery.GetNode("123");`
 
 
 ### GetNodeByUrl(string)
 Returns: `Node` or `null`
 
-Returns a node for the supplied Url
+Returns a node for the supplied Url.
+
+`Node node = uQuery.GetNodeByUrl("/home.aspx")`
 
 
 ### GetCurrentDocument()
 Returns `Document` or `null`
 
-Checks to see if the current Node can be obtained via the nodeFactory, else attempts to get via a QueryString id parameter
+Gets the current document (like *uQuery.GetCurrentNode()* this method will also work in the back office).
 
+`Document document = uQuery.GetCurrentDocument()`
 
 ### GetDocument(string or int)
 Returns: `Document` or `null`
 
-For a given id, returns a Document obj or a null if not found. There are two overloaded methods: GetDocument(int) and GetDocument(string).
+For a given id (supplied as an int or a string), returns the associated Document obj or a null if not found.
 
-`Document document = uQuery.GetDocument(123);` or `Document document = uQuery.GetDocument("123");`
+`Document document = uQuery.GetDocument(123);`
+
+`Document document = uQuery.GetDocument("123");`
 
 ## Collections
+Methods that return collection of Nodes or Documents
 
 ### GetNodesByCsv(string) 
 Returns: `IEnumerable<Node>` 
@@ -86,20 +96,27 @@ Get node collection from an XPath expression (uses the Umbraco Xml cache) can us
 ### GetNodesByName(string)
 Returns: `IEnumerable<Node>` 
 
-Returns a collection of nodes where names match
+This is a wrapper method to an XPath expression, and gets a collection of nodes where their names match.
+
+`IEnumerable<Node> nodes = uQuery.GetNodesByName("Page A");`
 
 ### GetNodesByType(string or int)
 Returns: `IEnumerable<Node>`
 
-Parameter: 
-`string` of the docType alias or `int` of docType id
+Gets a collection of nodes from a supplied DocumentType Alias (the string parameter) or from the DocumentType Id (the int parameter). Internally this search is done via an XPath expression (as with all XPath queries via uQuery, these are also compiled and cached).
 
-Returns a collection of nodes of docType alias or docType id
+`IEnumerable<Node> nodes = uQuery.GetNodesByType("page");`
+
+`IEnumerable<Node> nodes = uQuery.GetNodesByType(1000);`
+
 
 ### GetNodesByXml(string)
 Returns: `IEnumerable<Node>`
 
-Currently works with XML saved by Multi-Node Tree Picker (use GetMediaByXml for Media nodes)
+uQuery is aware of the xml fragments saved by several datatypes (*Multi-Node TreePicker*, *XPath CheckBoxTree* and the *uComponents: CheckBoxTree*)
+
+
+
 
 ### GetDocumentsByCsv(string)
 Returns: `IEnumerable<Document>` 
