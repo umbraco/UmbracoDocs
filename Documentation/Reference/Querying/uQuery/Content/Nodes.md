@@ -175,10 +175,48 @@ Checks to see if the node has a property with the supplied alias. This is a wrap
 	if(uQuery.GetCurrentNode().HasProperty("title")) { ... }
 
 ### GetProperty&lt;T&gt;(string)
-Returns: `bool` `int` `float` `decimal` `string` `DateTime` `XmlDocument`
+Returns: `<T>`
+
+This generic method handles the null checks when getting a node property by alias, and then converts the stored property value into the return type `T` requested. It also takes into account bool values as stored as strings "0" and "1", and can also construct an XmlDocument from a string fragment. Here are some examples:
+
+	string heading = uQuery.GetCurrentNode().GetProperty<string>("heading");
+
+	bool showInNavigation = uQuery.GetCurrentNode().GetProperty<bool>("showInNavigation");
+
+	int itemsPerPage = uQuery.GetCurrentNode().GetProperty<int>("itemsPerPage");
+
+	DateTime bookingDate = uQuery.GetCurrentNode().GetProperty<DateTime>("bookingDate").Date();
+
+	XmlDocument xmlDocument = uQuery.GetCurrentNode().GetProperty<XmlDocument>("imageCropper");
+
+
+### GetImageCropperUrl(string, string)
+Returns: `string`
+
+This helper method will parse the xml fragment stored by the the Image Cropper datatype and return the url for the specified crop alias, or an empty string if no url could be found.
+
+	string cropUrl = uQuery.GetCurrentNode().GetImageCropperUrl("propertyAlias", "cropAlias");
+
 
 
 ### SetProperty(string, object)
 Returns: `Node`
 
-This is a wrapper method for the Document SetProperty extension method.
+This is a wrapper method for the Document SetProperty extension method, so gets the Document instance of the current Node, and calls SetProperty on that.
+
+
+### Level()
+Returns: `int`
+
+This method returns the level (depth in the content tree) of the node.
+
+	int level = uQuery.GetCurrentNode().Level();
+
+
+### ToXml()
+Returns `XmlNode`
+
+This method gets the Umrbaco xml fragment of the node.
+
+	XmlNode xmlNode = uQuery.GetCurrentNode().ToXml();
+
