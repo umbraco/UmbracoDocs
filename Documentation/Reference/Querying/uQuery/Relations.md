@@ -1,29 +1,9 @@
 
 ## Relations
 
-uQuery extends the Relations API, by adding the following extension methods onto  the `umbraco.cms.businesslogic.relations.RelationType` object.
-
-
-
 `using umbraco.cms.businesslogic.relation; // RelationType and Relation`
 
-
-
-### GetParentUmbracoObjectType()
-Returns: `UmbracoObjectType`
-
-Hits the database to get the parent Guid for this relation type, and returns the associated UmbracoObjectType Enum value.
-
-`uQuery.UmbracoObjectType umbracoObjectType = RelationType.GetByAlias("relateA_B").GetParentUmbracoObjectType();`
-
-
-### GetChildUmbracoObjectType()
-Returns: `UmbracoObjectType`
-
-Hits the database to get the child Guid for this relation type, and returns the associated UmbracoObjectType Enum value.
-
-`uQuery.UmbracoObjectType umbracoObjectType = RelationType.GetByAlias("relateA_B").GetChildUmbracoObjectType();`
-
+uQuery extends the Relations API, by adding the following extension methods onto  the `umbraco.cms.businesslogic.relations.RelationType` object.
 
 ### CreateRelation(int, int)
 Returns: `void`
@@ -67,10 +47,29 @@ Returns: `void`
 
 `RelationType.GetByAlias("relateA_B").DeleteRelation(1001, 1003);`
 
-#### ClearRelations(int)
+### DeleteRelations(int)
 
 
 
 
 Returns: `void`
+
+
+
+### GetParentUmbracoObjectType()
+Returns: `UmbracoObjectType`
+
+Hits the database to get the parent Guid for this relation type, and returns the associated UmbracoObjectType Enum value.
+
+`uQuery.UmbracoObjectType umbracoObjectType = RelationType.GetByAlias("relateA_B").GetParentUmbracoObjectType();`
+
+
+### GetChildUmbracoObjectType()
+Returns: `UmbracoObjectType`
+
+Hits the database to get the child Guid for this relation type, and returns the associated UmbracoObjectType Enum value.
+
+`uQuery.UmbracoObjectType umbracoObjectType = RelationType.GetByAlias("relateA_B").GetChildUmbracoObjectType();`
+
+
 
