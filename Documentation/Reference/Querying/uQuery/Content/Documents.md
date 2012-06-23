@@ -43,6 +43,8 @@ Returns: `IEnumerable<Document>`
 
 
 ### Traversing
+These methods are useful in conjunction with LINQ, allowing tree traversal with custom filtering.
+
 #### GetAncestorDocuments()
 Returns: `IEnumerable<Document>`
 
@@ -83,7 +85,17 @@ Returns: `IEnumerable<Document>`
 ## Properties
 ### HasProperty(string)
 ### GetProperty&lt;T&gt;(string)
-Returns: `bool` `int` `float` `decimal` `string` `DateTime` `XmlDocument` `...`
+Returns: `<T>`
+
+This generic method handles the null checks when getting a document property by alias, and then converts the stored property value into the return type `<T>` requested. It also takes into account bool values as stored as strings "0" and "1", and can also construct an XmlDocument from a string fragment. Here are some examples:
+
+	Document currentDocument = uQuery.GetCurrentDocument();
+
+	string heading = currentDocument.GetProperty<string>("heading");
+	bool showInNavigation = currentDocument.GetProperty<bool>("showInNavigation");
+	int itemsPerPage = currentDocument.GetProperty<int>("itemsPerPage");
+	DateTime bookingDate = currentDocument.GetProperty<DateTime>("bookingDate").Date();
+	XmlDocument xmlDocument = currentDocument.GetProperty<XmlDocument>("imageCropper");
 
 
 
@@ -92,6 +104,10 @@ Returns: `bool` `int` `float` `decimal` `string` `DateTime` `XmlDocument` `...`
 
 ### SetProperty(string, object)
 Returns: `Document`
+
+	Document currentDocument = uQuery.GetCurrentDocument();
+
+	
 
 
 When a property is set, it's also saved

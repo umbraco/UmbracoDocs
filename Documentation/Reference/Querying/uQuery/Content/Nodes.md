@@ -177,17 +177,15 @@ Checks to see if the node has a property with the supplied alias. This is a wrap
 ### GetProperty&lt;T&gt;(string)
 Returns: `<T>`
 
-This generic method handles the null checks when getting a node property by alias, and then converts the stored property value into the return type `T` requested. It also takes into account bool values as stored as strings "0" and "1", and can also construct an XmlDocument from a string fragment. Here are some examples:
+This generic method handles the null checks when getting a node property by alias, and then converts the stored property value into the return type `<T>` requested. It also takes into account bool values as stored as strings "0" and "1", and can also construct an XmlDocument from a string fragment. Here are some examples:
 
-	string heading = uQuery.GetCurrentNode().GetProperty<string>("heading");
+	Node currentNode = uQuery.GetCurrentNode();
 
-	bool showInNavigation = uQuery.GetCurrentNode().GetProperty<bool>("showInNavigation");
-
-	int itemsPerPage = uQuery.GetCurrentNode().GetProperty<int>("itemsPerPage");
-
-	DateTime bookingDate = uQuery.GetCurrentNode().GetProperty<DateTime>("bookingDate").Date();
-
-	XmlDocument xmlDocument = uQuery.GetCurrentNode().GetProperty<XmlDocument>("imageCropper");
+	string heading = currentNode.GetProperty<string>("heading");
+	bool showInNavigation = currentNode.GetProperty<bool>("showInNavigation");
+	int itemsPerPage = currentNode.GetProperty<int>("itemsPerPage");
+	DateTime bookingDate = currentNode.GetProperty<DateTime>("bookingDate").Date();
+	XmlDocument xmlDocument = currentNode.GetProperty<XmlDocument>("imageCropper");
 
 
 ### GetImageCropperUrl(string, string)
