@@ -57,7 +57,7 @@ Returns: `void`
 
 
 ### GetParentUmbracoObjectType()
-Returns: `UmbracoObjectType`
+Returns: `uQuery.UmbracoObjectType`
 
 Hits the database to get the parent Guid for this relation type, and returns the associated UmbracoObjectType Enum value.
 
@@ -65,7 +65,7 @@ Hits the database to get the parent Guid for this relation type, and returns the
 
 
 ### GetChildUmbracoObjectType()
-Returns: `UmbracoObjectType`
+Returns: `uQuery.UmbracoObjectType`
 
 Hits the database to get the child Guid for this relation type, and returns the associated UmbracoObjectType Enum value.
 
