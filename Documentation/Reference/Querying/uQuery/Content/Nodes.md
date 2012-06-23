@@ -1,17 +1,3 @@
-## Content
-
-
-Querying content can be done via **Nodes** where the source data comes from the xml cache, which is fast (the current published version data) or via **Documents** where the data is retrieved from the database (slower, but the data represents the latest version whether it's published or not).
-
-	using umbraco; // uQuery
-	using umbraco.NodeFactory; // Nodes
-	using umbraco.cms.Web.Document; // Documents
-
-uQuery has a number of static methods to get collections of Nodes and Documents, as well as extension methods on the `umbraco.NodeFactory.Node` `umbraco.cms.businesslogic.Web.Document` objects.
-
-
-
-----------
 ### Nodes
 
 
@@ -113,8 +99,12 @@ These methods are useful in conjunction with LINQ, allowing tree traversal with 
 ###### GetAncestorNodes()
 Returns: `IEnumerable<Node>`
 
-Gets a collection of nodes from the current parent to the root.
-
+Gets a collection of nodes from the current parent to the root. This can be useful to find the first parent of a particular doctype, for example:
+	
+	Node homeNode = uQuery.GetCurrentNode()
+							.GetAncestorNodes()
+							.Where(x => x.NodeTypeAlias == "home")
+							.FirstOrDefault();
 
 ###### GetAncestorOrSelfNodes()
 Returns: `IEnumerable<Node>`
@@ -146,18 +136,34 @@ Returns: `IEnumerable<Node>`
 
 Gets a collection of nodes starting with the current, and then all it's descendant nodes.
 
+	IEnumerable<Node> nodes = uQuery.GetRootNode().GetDescendantOrSelfNodes();
+
+
+
 ###### GetSiblingNodes()
 Returns: `IEnumerable<Node>`
+
+	IEnumerable<Node> nodes = uQuery.GetCurrentNode().GetSiblingNodes();
 
 ###### GetPreceedingSiblingNodes()
 Returns: `IEnumerable<Node>`
 
+This can be useful when rendering out navigation
+
+	IEnumerable<Node> nodes = uQuery.GetCurrentNode().GetPreedingSiblingNodes();
+
+
 ###### GetFollowingSiblingNodes()
 Returns: `IEnumerable<Node>`
+
+This can be useful when rendering out navigation
+
+	IEnumerable<Node> nodes = uQuery.GetCurrentNode().GetFolloringSiblingNodes();
 
 ###### GetChildNodes()
 Returns: `IEnumerable<Node>`
 
+	IEdnumerable<Node> nodes = uQuery.GetCurrentNode().GetChildNodes();
 
 ##### Properties
 
@@ -176,106 +182,3 @@ Returns: `bool` `int` `float` `decimal` `string` `DateTime` `XmlDocument`
 Returns: `Node`
 
 This is a wrapper method for the Document SetProperty extension method.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-----------
-### Documents
-#### Items
-##### GetCurrentDocument()
-Returns `Document` or `null`
-
-Gets the current document (like *uQuery.GetCurrentNode()* this method will also work in the back office).
-
-	Document document = uQuery.GetCurrentDocument();
-
-##### GetDocument(string or int)
-Returns: `Document` or `null`
-
-For a given id (supplied as an int or a string), returns the associated Document obj or a null if not found.
-
-	Document document = uQuery.GetDocument(123);
-
-	Document document = uQuery.GetDocument("123");
-
-
-
-
-
-
-
-
-#### Collections
-##### GetDocumentsByCsv(string)
-Returns: `IEnumerable<Document>` 
-
-Get document collection from a CSV string of node Ids
-
-
-##### GetDocumentsByXml(string)
-Returns: `IEnumerable<Document>`
-
-
-##### Traversing
-###### GetAncestorDocuments()
-Returns: `IEnumerable<Document>`
-
-###### GetAncestorOrSelfDocuments()
-Returns: `IEnumerable<Document>`
-
-###### GetDescendantDocuments(optional Func&lt;Document, bool&gt;)
-Returns: `IEnumerable<Document>`
-
-###### GetDescendantOrSelfDocuments()
-Returns: `IEnumerable<Document>`
-
-###### GetSiblingDocuments()
-Returns: `IEnumerable<Document>`
-
-###### GetPreceedingSiblingDocuments()
-Returns: `IEnumerable<Document>`
-
-###### GetFollowingSiblingDocuments()
-Returns: `IEnumerable<Document>`
-
-###### GetChildDocuments(optional Func&lt;Document, bool&gt;)
-Returns: `IEnumerable<Document>`
-
-
-
-
-
-
-#### Properties
-##### HasProperty(string) TODO !
-##### GetProperty&lt;T&gt;(string)
-Returns: `bool` `int` `float` `decimal` `string` `DateTime` `XmlDocument` `...`
-
-
-
-
-
-
-##### SetProperty(string, object)
-Returns: `Document`
-
-
-When a property is set, it's also saved
