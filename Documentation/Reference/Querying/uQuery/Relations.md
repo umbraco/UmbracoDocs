@@ -1,9 +1,10 @@
 
-## Relations
+# Relations
 
 	using umbraco.cms.businesslogic.relation; // RelationType and Relation
 
 uQuery extends the Relations API, by adding the following extension methods onto  the `umbraco.cms.businesslogic.relations.RelationType` object.
+## RelationType
 
 ### CreateRelation(int, int)
 Returns: `void`
@@ -11,7 +12,6 @@ Returns: `void`
 Before a relation is created, this method validates the UmbracoOjbectTypes of the supplied ids to ensure they match those defined on the RelationType. If there's a validation error, then the relationship isn't added.
 
 	RelationType.GetByAlias("relateA_B").CreateRelation(1001, 1003);
-
 
 ### HasRelations(int)
 Returns: `bool`

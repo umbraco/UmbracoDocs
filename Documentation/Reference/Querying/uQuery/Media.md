@@ -1,63 +1,63 @@
-## Media
+# Media
 Querying media intro
 
-### Items
-#### GetMedia(string or int)
+## Items
+### GetMedia(string or int)
 Returns: `Media` or `null`
 
-### Collections
-#### GetMediaByXPath(string)
+## Collections
+### GetMediaByXPath(string)
 Returns: `IEnumerable<Media>`
 
 (uses GetPublishedXml)
 
-#### GetMediaByCsv(string)
+### GetMediaByCsv(string)
 Returns: `IEnumerable<Media>`
 
-#### GetMediaByXml(string)
+### GetMediaByXml(string)
 Returns: `IEnumerable<Media>`
 
 Currently works with XML saved by Multi-Node Tree Picker (use GetNodesByXml for Content nodes) 
 
-#### GetMediaByName(string)
+### GetMediaByName(string)
 Returns: `IEnumerable<Media>`
 
-#### GetMediaByType(string)
+### GetMediaByType(string)
 Returns: `IEnumerable<Media>`
 
-#### Traversing
+### Traversing
 
-##### GetAncestorMedia()
+#### GetAncestorMedia()
 Returns: `IEnumerable<Media>`
 
-##### GetAncestorOfSelfMedia()
+#### GetAncestorOfSelfMedia()
 Returns: `IEnumerable<Media>`
 
-##### GetDescendantMedia()
+#### GetDescendantMedia()
 Returns: `IEnumerable<Media>`
 
-##### GetDescendantOrSelfMedia()
+#### GetDescendantOrSelfMedia()
 Returns: `IEnumerable<Media>`
 
-##### GetSiblingMedia()
+#### GetSiblingMedia()
 Returns: `IEnumerable<Media>`
 
-##### GetPrecedingSiblingMedia()*
+#### GetPrecedingSiblingMedia()*
 Returns: `IEnumerable<Media>`
 
-##### GetFollowingSiblingMedia()*
+#### GetFollowingSiblingMedia()*
 Returns: `IEnumerable<Media>`
 
-##### GetChildMedia()
+#### GetChildMedia()
 Returns: `IEnumerable<Media>`
 
-### Properties
-#### HasProperty(string)
+## Properties
+### HasProperty(string)
 Returns: `bool`
 
-#### GetProperty<T>(string)
+### GetProperty<T>(string)
 Returns: `bool` `int` `float` `decimal` `string` `DateTime` `XmlDocument`
 
-#### SetProperty(string, object)
+### SetProperty(string, object)
 Returns: `Media`
 

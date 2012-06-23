@@ -1,37 +1,37 @@
 
 
-## Members
+# Members
 
 Querying members into
 
-### Items
-### GetMember(string or int)
+## Items
+## GetMember(string or int)
 Returns: `Member` or `null`
 
-### Collections
-#### GetMembersByXPath(string)
+## Collections
+### GetMembersByXPath(string)
 Returns: `IEnumerable<Member>`
 
 (uses GetPublishedXml)
 
-#### GetMembersByCsv(string)
+### GetMembersByCsv(string)
 Returns: `IEnumerable<Member>`
 
-#### GetMembersByXml(string)
+### GetMembersByXml(string)
 Returns: `IEnumerable<Member>`
 
-#### GetMembersByType(string)
+### GetMembersByType(string)
 Returns: `IEnumerable<Member>`
 
-#### GetMembersByGroup(string)*
+### GetMembersByGroup(string)*
 Returns: `IEnumerable<Member>`
 
-### Properties
-#### HasProperty(string)
+## Properties
+### HasProperty(string)
 Returns: `bool`
 
-#### GetProperty&lt;T&gt;(string)
+### GetProperty&lt;T&gt;(string)
 Returns: `bool` `int` `float` `decimal` `string` `DateTime` `XmlDocument`
 
-#### SetProperty(string, object)
+### SetProperty(string, object)
 Returns: `Member`

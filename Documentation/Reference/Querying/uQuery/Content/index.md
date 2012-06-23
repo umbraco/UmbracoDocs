@@ -1,4 +1,4 @@
-## Content
+# Content
 
 Querying content can be done via **Nodes** where the source data comes from the xml cache, which is fast (the current published version data) or via **Documents** where the data is retrieved from the database (slower, but the data represents the latest version whether it's published or not).
 

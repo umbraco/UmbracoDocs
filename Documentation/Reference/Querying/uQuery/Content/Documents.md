@@ -1,13 +1,17 @@
-### Documents
-#### Items
-##### GetCurrentDocument()
+# Documents
+
+
+## Items
+Methods that return a `Document` object or `null`
+
+### GetCurrentDocument()
 Returns `Document` or `null`
 
 Gets the current document (like *uQuery.GetCurrentNode()* this method will also work in the back office).
 
 	Document document = uQuery.GetCurrentDocument();
 
-##### GetDocument(string or int)
+### GetDocument(string or int)
 Returns: `Document` or `null`
 
 For a given id (supplied as an int or a string), returns the associated Document obj or a null if not found.
@@ -23,40 +27,40 @@ For a given id (supplied as an int or a string), returns the associated Document
 
 
 
-#### Collections
-##### GetDocumentsByCsv(string)
+## Collections
+### GetDocumentsByCsv(string)
 Returns: `IEnumerable<Document>` 
 
 Get document collection from a CSV string of node Ids
 
 
-##### GetDocumentsByXml(string)
+### GetDocumentsByXml(string)
 Returns: `IEnumerable<Document>`
 
 
-##### Traversing
-###### GetAncestorDocuments()
+### Traversing
+#### GetAncestorDocuments()
 Returns: `IEnumerable<Document>`
 
-###### GetAncestorOrSelfDocuments()
+#### GetAncestorOrSelfDocuments()
 Returns: `IEnumerable<Document>`
 
-###### GetDescendantDocuments(optional Func&lt;Document, bool&gt;)
+#### GetDescendantDocuments(optional Func&lt;Document, bool&gt;)
 Returns: `IEnumerable<Document>`
 
-###### GetDescendantOrSelfDocuments()
+#### GetDescendantOrSelfDocuments()
 Returns: `IEnumerable<Document>`
 
-###### GetSiblingDocuments()
+#### GetSiblingDocuments()
 Returns: `IEnumerable<Document>`
 
-###### GetPreceedingSiblingDocuments()
+#### GetPreceedingSiblingDocuments()
 Returns: `IEnumerable<Document>`
 
-###### GetFollowingSiblingDocuments()
+#### GetFollowingSiblingDocuments()
 Returns: `IEnumerable<Document>`
 
-###### GetChildDocuments(optional Func&lt;Document, bool&gt;)
+#### GetChildDocuments(optional Func&lt;Document, bool&gt;)
 Returns: `IEnumerable<Document>`
 
 
@@ -64,9 +68,9 @@ Returns: `IEnumerable<Document>`
 
 
 
-#### Properties
-##### HasProperty(string) TODO !
-##### GetProperty&lt;T&gt;(string)
+## Properties
+### HasProperty(string) TODO !
+### GetProperty&lt;T&gt;(string)
 Returns: `bool` `int` `float` `decimal` `string` `DateTime` `XmlDocument` `...`
 
 
@@ -74,7 +78,7 @@ Returns: `bool` `int` `float` `decimal` `string` `DateTime` `XmlDocument` `...`
 
 
 
-##### SetProperty(string, object)
+### SetProperty(string, object)
 Returns: `Document`
 
 
