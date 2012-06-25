@@ -1,439 +1,69 @@
 # uQuery
 
-uQuery is an API giving read and write access the content, media and member data, as well as extending the relations API. uQuery originated from uComponents and was added into Umbraco from v4.8, and can be accessed by referencing the umbraco namespace:
+uQuery is an API giving read/write access the content, media and member data, as well as extending the relations API. uQuery originated from uComponents and was added into Umbraco from v4.8. To use uQuery declare the umbraco namespace in addition to those required for nodes, documents, media, members and relations.
 
-`using umbraco;`
 
-# Content
-=======
-uQuery is an API giving read and write access the content, media and member data, as well as extending the relations built in API. uQuery originated from uComponents and was added into Umbraco from v4.8, and can be accessed by referencing the umbraco namespace:
+	using umbraco; // uQuery
+	using umbraco.NodeFactory; // Node
+	using umbraco.cms.businesslogic.web; // Document
+	using umbraco.cms.businesslogic.media;
+	using umbraco.cms.businesslogic.member;
+	using umbraco.cms.businesslogic.relation;
 
-`using umbraco;`
 
-## Content
+## UmbracoObjectType
+uQuery also exposes an Enum with associated helper methods to represent each of the Guids used by Umbraco.
 
-Querying content can be done via 'Nodes' where the source data comes from the Xml cache (the current published version), or via 'Documents' where the data is retrieved from the database (which is slower, but the data represents the latest version whether it's published or not).
+	public enum UmbracoObjectType
+	{
+		Unknown,
+		[Guid("EA7D8624-4CFE-4578-A871-24AA946BF34D")] ROOT,
+		[Guid("C66BA18E-EAF3-4CFF-8A22-41B16D66A972")] Document,
+		[Guid("B796F64C-1F99-4FFB-B886-4BF4BC011A9C")] Media,
+		[Guid("39EB0F98-B348-42A1-8662-E7EB18487560")] Member,
+		[Guid("7A333C54-6F43-40A4-86A2-18688DC7E532")] ContentItemType,
+		[Guid("10E2B09F-C28B-476D-B77A-AA686435E44A")] ContentItem,
+		[Guid("A2CB7800-F571-4787-9638-BC48539A0EFB")] DocumentType,
+		[Guid("4EA4382B-2F5A-4C2B-9587-AE9B3CF3602E")] MediaType,
+		[Guid("9B5416FB-E72F-45A9-A07B-5A9A2709CE43")] MemberType,
+		[Guid("366E63B9-880F-4E13-A61C-98069B029728")] MemberGroup,
+		[Guid("6FBDE604-4178-42CE-A10B-8A2600A2F07D")] Template,
+		[Guid("01BB7FF2-24DC-4C0C-95A2-C24EF72BBAC8")] RecycleBin,
+		[Guid("9F68DA4F-A3A8-44C2-8226-DCBD125E4840")] Stylesheet,
+		[Guid("30A2A501-1978-4DDB-A57B-F7EFED43BA3C")] DataType
+	}
 
-uQuery has a number of static methods to get collections of Nodes and Documents, as well as extension methods on the umbraco.NodeFactory.Node / umbraco.cms.Web.Document objects.
+### GetUmbracoObjectType(string)
+Returns: `uQuery.UmbracoObjectType`
 
-## Items
+	uQuery.UmbracoObjectType umbracoObjectType = uQuery.GetUmbracoObjectType("Document");
+	
 
-### GetRootNode()
-Returns: `Node`
+### GetUmbracoObjectType(Guid)
+Returns: `uQuery.UmbracoObjectType`
 
-Returns the top level node in the content tree, this node always has an id of -1, so this method is simply a wrapper method.
-eg.
+Gets the Enum value corresponding to the supplied Guid. This method iterates the Enum looking for one with a matching Guid attribute, if not found then UmbracoObjectType.Unknown is returned.
 
-`Node node = uQuery.GetRootNode();`
+	uQuery.UmbracoObjectType umbracoObjectType = uQuery.GetUmbracoObjectType(
+													Guid.Parse("C66BA18E-EAF3-4CFF-8A22-41B16D66A972"));
 
-Returns node -1
+### GetUmbracoObjectType(int)
+Returns: `uQuery.UmbracoObjectType`
 
-### GetCurrentNode()
-Returns: `Node`
+Gets the UmbracoObjectType for the supplied Umbraco id. This method queries the umbracoNode table, getting the guid in the nodeObjectType field where the id matches that supplied. This guid is then used to the find the Enum by attribute value, iif it's not found then UmbracoObjectType.Unknown is returned.
 
-Returns the current content node (unlike Node.GetCurrent() this method will also work in the back office, hence can be used by custom datatypes). There are circumstances where GetCurrentNode() will a return null, for example in the back office on a content item that has never been published (hence it's not in the xml cache).
+	uQuery.UmbracoObjectType umbracoObjectType = uQuery.GetUmbracoObjectType(1100);
 
-eg.
 
-`Node node = uQuery.GetCurrentNode();`
 
-### GetNode(string or int)
-Returns: `Node`
+### GetGuid()
+Retuns: `Guid`	
+	
+	Guid guid = uQuery.GetUmbracoObjectType("Document").GetGuid();
 
-For a given id, returns a Node obj or a null if not found. There are two overloaded methods: GetNode(int) and GetNode(string).
 
-eg.
 
-`Node node = uQuery.GetNode(123);`
+### GetName()
+Returns: `string`
 
-or
-
-`Node node = uQuery.GetNode("123");`
-
-
-### GetNodeByUrl(string)
-Returns: `Node`
-
-Returns a node for the supplied Url
-
-
-### GetCurrentDocument()
-Returns `Document`
-
-Checks to see if the current Node can be obtained via the nodeFactory, else attempts to get via a QueryString id parameter
-
-
-### GetDocument(string or int)
-Returns: `Document`
-
-For a given id, returns a Document obj or a null if not found. There are two overloaded methods: GetDocument(int) and GetDocument(string).
-
-eg.
-
-`Document document = uQuery.GetDocument(123);`
-
-or
-
-`Document document = uQuery.GetDocument("123");`
-
-## Collections
-
-### GetNodesByCsv(string) 
-Returns: `List<Node>` 
-
-Get node collection from a CSV string of node Ids
-
-### GetNodesByXPath(string)
-Returns: `List<Node>` 
-
-Get node collection from an XPath expression (uses Umbraco Xml) can use use $ancestorOrSelf to use the currentNode if published else it'll use the nearest published parent ($currentPage will be depreciated) - the XPath expression is compiled and cached
-
-### GetNodesByName(string)
-Returns: `List<Node>` 
-
-Returns a collection of nodes where names match
-
-### GetNodesByType(string or int)
-Returns: `List<Node>`
-
-Parameter: 
-`string` of the docType alias or `int` of docType id
-
-Returns a collection of nodes of docType alias or docType id
-
-### GetNodesByXml(string)
-Returns: `List<Node>`
-
-Currently works with XML saved by Multi-Node Tree Picker (use GetMediaByXml for Media nodes)
-
-### GetDocumentsByCsv(string)
-Returns: `List<Document>` 
-
-Get document collection from a CSV string of node Ids
-
-
-### GetDocumentsByXml(string)
-Returns: `List<Document>`
-
-## Traversing
-These axis type methods are useful with LINQ
-
-### GetAncestorNodes()
-Returns: `IEnumerable<Node>`
-
-### GetAncestorOrSelfNodes()
-Returns: `IEnumerable<Node>`
-
-### GetDescendantNodes(optional Func&lt;Document, bool&gt;)
-Returns: `IEnumerable<Node>`
-
-### GetDescendantOrSelfNodes()
-Returns: `IEnumerable<Node>`
-
-### GetSiblingNodes()
-Returns: `IEnumerable<Node>`
-
-### GetPreceedingSiblingNodes()
-Returns: `IEnumerable<Node>`
-
-### GetFollowingSiblingNodes()
-Returns: `IEnumerable<Node>`
-
-### GetChildNodes()
-Returns: `IEnumerable<Node>`
-
-### GetAncestorDocuments()
-Returns: `IEnumerable<Document>`
-
-### GetAncestorOrSelfDocuments()
-Returns: `IEnumerable<Document>`
-
-### GetDescendantDocuments(optional Func&lt;Document, bool&gt;)
-Returns: `IEnumerable<Document>`
-
-### GetDescendantOrSelfDocuments()
-Returns: `IEnumerable<Document>`
-
-### GetSiblingDocuments()
-Returns: `IEnumerable<Document>`
-
-### GetPreceedingSiblingDocuments()
-Returns: `IEnumerable<Document>`
-
-### GetFollowingSiblingDocuments()
-Returns: `IEnumerable<Document>`
-
-### GetChildDocuments(optional Func&lt;Document, bool&gt;)
-Returns: `IEnumerable<Document>`
-
-## Properties
-
-### HasProperty(string)
-Returns: `bool`
-
-### GetProperty&lt;T&gt;(string)
-Returns: `T`
-
-### SetProperty(string, object)
-Returns: `Node`
-
-chainable property setter - calls Document.SetProperty
-
-# Media
-Querying media intro
-
-## Items
-### GetMedia(string or int)
-Returns: `Media`
-
-## Collections
-### GetMediaByXPath(string)
-Returns: `List<Media>`
-
-(uses GetPublishedXml)
-
-### GetMediaByCsv(string)
-Returns: `List<Media>`
-
-### GetMediaByXml(string)
-Returns: `List<Media>`
-
-Currently works with XML saved by Multi-Node Tree Picker (use GetNodesByXml for Content nodes) 
-
-### GetMediaByName(string)
-Returns: `List<Media>`
-
-### GetMediaByType(string)
-Returns: `List<Media>`
-
-## Traversing
-
-### GetAncestorMedia()
-Returns: `IEnumerable<Media>`
-
-### GetAncestorOfSelfMedia()
-Returns: `IEnumerable<Media>`
-
-### GetDescendantMedia()
-Returns: `IEnumerable<Media>`
-
-### GetDescendantOrSelfMedia()
-Returns: `IEnumerable<Media>`
-
-### GetSiblingMedia()
-Returns: `IEnumerable<Media>`
-
-### GetPrecedingSiblingMedia()*
-Returns: `IEnumerable<Media>`
-
-### GetFollowingSiblingMedia()*
-Returns: `IEnumerable<Media>`
-
-### GetChildMedia()
-Returns: `IEnumerable<Media>`
-
-## Properties
-### HasProperty(string)
-Returns: `bool`
-
-### GetProperty<T>(string)
-Returns: `T`
-
-### SetProperty(string, object)
-Returns: `Media`
-
-# Members
-
-Querying members into
-
-## Items
-### GetMember(string or int)
-Returns: `Member`
-
-## Collections
-### GetMembersByXPath(string)
-Returns: `List<Member>`
-
-(uses GetPublishedXml)
-
-### GetMembersByCsv(string)
-Returns: `List<Member>`
-
-### GetMembersByXml(string)
-Returns: `List<Member>`
-
-### GetMembersByType(string)
-Returns: `List<Member>`
-
-### GetMembersByGroup(string)*
-Returns: `List<Member>`
-
-## Properties
-### HasProperty(string)
-Returns: `bool`
-
-### GetProperty&lt;T&gt;(string)
-Returns: `T`
-
-### SetProperty(string, object)
-Returns: `Member`
-
-# Relations
-Releation methods intro
-
-## Methods
-
-### CreateRelation(int, int)
-Returns: `void`
-
-validates ids against the objectypes defined on the RelationType
-
-### HasRelations(int)
-Returns: `bool`
-
-### IsRelated(int, int)
-Returns: `bool`
-
-### GetRelation(int, int)
-Returns: `Relation`
-
-### GetRelations(int)
-Returns: `Relation[]`
-
-### DeleteRelation(int, int)
-Returns: `void`
-
-### ClearRelations(int)
-Returns: `void`
-=======
-----
-
-### Items
-
-#### GetRootNode
-#### GetCurrentNode
-#### GetCurrentDocument
-#### GetNode
-#### GetDocument
-
-----
-
-### Collections
-
-#### GetNodesByCsv
-#### GetDocumentsByCsv
-#### GetNodesByXml
-#### GetDocumentsByXml
-#### GetNodesByXPath
-#### GetNodesByName
-#### GetNodesByType
-#### GetNodeByUrl
-
-----
-
-### Traversing
-
-#### GetAncestorNodes
-#### GetAncestorDocuments
-#### GetAncestorOrSelfNodes
-#### GetAncestorOrSelfDocuments
-#### GetPreceedingSiblingNodes
-#### GetPreceedingSiblingDocuments
-#### GetFollowingSiblingNodes
-#### GetFollowingSiblingDocuments
-#### GetSiblingNodes
-#### GetSiblingDocuments
-#### GetDescendantNodes
-#### GetDescendantDocuments
-#### GetDescendantOrSelfNodes
-#### GetDescendantOrSelfDocuments
-#### GetChildNodes
-#### GetChildDocuments
-
-----
-
-### Properties
-#### HasProperty
-#### GetProperty
-#### SetProperty
-
-----
-
-## Media ##
-Querying media intro
-
-----
-
-### Items
-#### GetMedia
-
-----
-
-### Collections
-#### GetMediaByXPath
-#### GetMediaByCsv
-#### GetMediaByXml
-#### GetMediaByName
-#### GetMediaByType
-
-----
-
-### Traversing
-#### GetAncestorMedia
-#### GetAncestorOfSelfMedia
-#### GetPrecedingSiblingMedia*
-#### GetFollowingSiblingMedia*
-#### GetSiblingMedia
-#### GetDescendantMedia
-#### GetDescendantOrSelfMedia
-#### GetChildMedia
-
-----
-
-### Properties
-#### HasProperty
-#### GetProperty
-#### SetProperty
-
-----
-
-## Members ##
-
-Querying members into
-
-----
-
-### Items
-#### GetMember
-
-----
-
-### Collections
-#### GetMembersByXPath
-#### GetMembersByCsv
-#### GetMembersByXml
-#### GetMembersByType
-#### GetMembersByGroup
-
-----
-
-### Properties
-#### HasProperty
-#### GetProperty
-#### SetProperty
-
-----
-
-## Relations ##
-Releation methods intro
-
-----
-
-### Methods
-
-#### HasRelations
-#### IsRelated
-#### GetRelation
-#### GetRelations
-#### DeleteRelation
-#### ClearRelations
+	string name =  uQuery.GetUmbracoObjectType(Guid.Parse("C66BA18E-EAF3-4CFF-8A22-41B16D66A972")).GetName();
