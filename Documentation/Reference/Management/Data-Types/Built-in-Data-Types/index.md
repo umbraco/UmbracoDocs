@@ -1,6 +1,6 @@
-#Default Data Type Render Controls
+#Built-in Data Type Render Controls
 
-This page contains a list of all the default Umbraco datatypes and a short description of what they do:
+This page contains a list of all the built-in Umbraco data type render controls and a short description of what they do:
 
 ##[Checkbox list](Checkbox-List.md)
 Displays a list of preset values as a list of checkbox controls. The preset values are modified in the developer section under "data types" / checkbox list where new items can be added. The value saved is a comma separeted string of prevalue IDs
