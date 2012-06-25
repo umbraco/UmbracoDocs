@@ -13,10 +13,10 @@ Once you have selected a branch, you're good to go. Our project consists of 2 ma
 #What's in these guides
 
 ##Documentation
-[Documentation (available here)](Documentation/index.md) is a collection of references and step-by-step guides, as well as conceptual overviews of the architecture.
+[Documentation (available here)](tree/4.8.0/Documentation/index.md) is a collection of references and step-by-step guides, as well as conceptual overviews of the architecture.
 
 ##Developers Reference
-[Developers (available here)](Documentation/Reference/index.md) is a collection of API references specificly for developers working with and extending Umbraco 4.
+[Developers (available here)](/tree/4.8.0/Documentation/Reference/index.md) is a collection of API references specificly for developers working with and extending Umbraco 4.
 
 #Contributing to the guides
 To contribute to either the documentation or stubs, you can fork & clone our repository, make your edits, and simply push back to gitHub and send us a pull request. All items that get pulled into the main repository will automatically get pushed to [our.umbraco.org/documentation](http://our.umbraco.org/documentation).
