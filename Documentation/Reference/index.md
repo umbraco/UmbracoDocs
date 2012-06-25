@@ -11,7 +11,7 @@ Create, update, delete all build-in system objects, like documents, media, templ
 Information and references for package developers, on how to create packages, as well as extending the packaging format.
 
 ##[Querying](Querying/index.md)
-Umbraco comes with several ways of querying, filtering and searching contnet, through the APIs uQuery, DynamicNode and Examine
+Umbraco comes with several ways of querying, filtering and searching contnet, through the APIs: uQuery, DynamicNode and NodeFactory
 
 ##[Searching](Searching/index.md)
 Details on how to implement search capabilities for your Umbraco website.
