@@ -1,6 +1,6 @@
 # uQuery
 
-uQuery is an API giving read/write access the content, media and member data, as well as extending the relations API. uQuery originated from uComponents and was added into Umbraco from v4.8. To use uQuery declare the umbraco namespace in addition to those required for nodes, documents, media, members and relations.
+uQuery is an API giving read/write access the [Content](Content/index.md), [Media](Media.md) and [Member](Member.md) data, as well as extending the [Relations](Relations.md). uQuery originated from uComponents and was added into Umbraco from v4.8. To use uQuery declare the umbraco namespace in addition to those required for nodes, documents, media, members and relations.
 
 
 	using umbraco; // uQuery
