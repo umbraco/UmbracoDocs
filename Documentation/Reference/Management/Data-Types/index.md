@@ -7,5 +7,5 @@ Data Types define the types and structure of data which can be then be used by C
 ## [Creating Data Type Render Controls](Creating-Data-Types/index.md) ##
 Creating data type render controls in C#
 
-## [Built-in Data Type Render Controls](Default-Data-Types/index.md) ##
+## [Built-in Data Type Render Controls](Built-in-Data-Types/index.md) ##
 Umbraco comes preinstalled with many useful data type render controls….
