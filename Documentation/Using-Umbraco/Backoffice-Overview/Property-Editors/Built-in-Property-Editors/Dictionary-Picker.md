@@ -15,13 +15,13 @@ The prevalue text must match the parent dictionary item, in the example below th
 ![Dictionary Picker Data Type](images/Dictionary-Picker-Setup.jpg?raw=true)
 ![Dictionary Picker Data Type](images/Dictionary-Picker-Content.jpg?raw=true)
 
-If you change the language on the root node, the language in the checkbox list also changes
+If you change the language on the root node, the language in the checkbox list in the Umbraco backoffice also changes
 
 ![Dictionary Picker Data Type](images/Dictionary-Picker-Content2.jpg?raw=true)
 
 ##Examples
 
-The below examples render a HTML select drop down, if the root node has a language set the dictionary will return the values in that language, see [Hostnames]() for how do change the language
+The below example renders a HTML select drop down list, if the root node has a language set the dictionary will return the values in that language, see [Hostnames]() for how do change the language
 
 ![Dictionary Picker Data Type HTML](images/Dictionary-Picker-HTML-Result.jpg?raw=true)
 
