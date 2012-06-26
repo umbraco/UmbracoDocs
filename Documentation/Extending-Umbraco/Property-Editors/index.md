@@ -7,7 +7,7 @@ There are two types of property editors in Umbraco
 Content to come from 
 http://www.nibble.be/?p=91
 
-###User Control Grapper
+###User Control Wrapper
 
 Content to come from 
 http://www.nibble.be/?p=93

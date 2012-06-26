@@ -1,0 +1,52 @@
+#Dictionary Picker
+
+`GUID 17b70066-f764-407d-ab05-3717f1e1c513`
+
+Displays a checkbox list of child dictionary items for a named dictionary item
+
+##Data Type Definition Example
+
+![Dictionary Picker Data Type Definition](images/Dictionary-Picker-DataType.jpg?raw=true)
+
+The prevalue text must match the parent dictionary item, in the example below this is "Selected Fruit"
+
+##Content Example
+
+![Dictionary Picker Data Type](images/Dictionary-Picker-Setup.jpg?raw=true)
+![Dictionary Picker Data Type](images/Dictionary-Picker-Content.jpg?raw=true)
+
+If you change the language on the root node, the language in the checkbox list also changes
+
+![Dictionary Picker Data Type](images/Dictionary-Picker-Content2.jpg?raw=true)
+
+##Examples
+
+The below examples render a HTML select drop down, if the root node has a language set the dictionary will return the values in that language, see [Hostnames]() for how do change the language
+
+![Dictionary Picker Data Type HTML](images/Dictionary-Picker-HTML-Result.jpg?raw=true)
+
+###XSLT
+
+
+	<xsl:if test="string-length($currentPage/dictionaryPicker) > 0">  
+	  <xsl:variable name="items" select="umbraco.library:Split($currentPage/dictionaryPicker,',')" />  
+	  <select>  
+	  <xsl:for-each select="$items//value">
+	    <option value="{current()}">
+	      <xsl:value-of select="umbraco.library:GetDictionaryItem(current())"/>      
+	    </option>
+	  </xsl:for-each>
+	  </select>    
+	</xsl:if>  
+
+###Razor
+
+	@{
+	  if (@Model.dictionaryPicker.Length > 0){
+	    <select>                                                         
+	      @foreach(var item in @Model.dictionaryPicker.Split(',')) { 
+	       <option value="@item">@Dictionary[@item]</option>
+	      }
+	    </select>                                                                                         
+	  }
+	}
