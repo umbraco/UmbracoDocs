@@ -8,7 +8,7 @@ Document types define the types of page/nodes that backoffice users can create i
 Content is the pages and content that make up your Umbraco website.
 
 ###Data Type
-Each document type property has a data type which defines the type of input of that property. Data types use a selected Property Editor and are configured in the Umbraco backoffice in the developer section.
+Each document type property has a data type which defines the type of input of that property. Data types reference a Property Editor and are configured in the Umbraco backoffice in the developer section.
 
 ###Media Type
 Media types are very similar to document types in Umbraco except they are specifically for media items in the media section.
