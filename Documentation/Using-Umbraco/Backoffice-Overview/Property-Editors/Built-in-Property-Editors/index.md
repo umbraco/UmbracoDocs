@@ -17,7 +17,7 @@ Displays a calendar UI for selecting dates and time, the value saved is a standa
 ##[Date](Date.md)
 Displays a calendar UI for selecting dates, the value saved is a standard dateTime value, but with no time information.
 
-##Dictionary Picker
+##[Dictionary Picker](Dictionary-Picker.md)
 
 ##Dropdown list multiple, publish keys
 
