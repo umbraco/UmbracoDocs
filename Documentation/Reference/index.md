@@ -1,24 +1,25 @@
 #Developers Reference
+_Developers reference primarily consists of API references of the different core umbraco APIS. In many cases, the references comes with code snippets with simple exemples. However, for a more in-depth study of the different APIs, consult the "using-umbraco" and "extending-umbraco" sections of the documentation_ 
 
 
-##[Events](Events/index.md)
-Umbraco 4, comes with a complete event model, covering all mayor aspects of the system for triggering custom code or automation.  
+
+##[Templating](Templating/index.md)
+Reference documentation, covering masterpages, macros, razor syntax and xslt for macros
 
 ##[Management APIs](management/index.md)
 Create, update, delete all build-in system objects, like documents, media, templates, document types and so on. 
-
-##[Packaging](Packaging/index.md)
-Information and references for package developers, on how to create packages, as well as extending the packaging format.
 
 ##[Querying](Querying/index.md)
 Umbraco comes with several ways of querying, filtering and searching contnet, through the APIs: uQuery, DynamicNode and NodeFactory
 
 ##[Searching](Searching/index.md)
-Details on how to implement search capabilities for your Umbraco website.
+Details on how to implement search capabilities for your Umbraco website using Examine, which is a Lucene based search engine for umbraco.
+
+##[Events](Events/index.md)
+Umbraco 4, comes with a complete event model, covering all mayor aspects of the system for triggering custom code or automation.  
 
 ##[/Base](Api/Base/Index.md)
 /Base is a extendable system for creating raw feeds directly from Umbraco using very basic Url's. This enables developers to access umbraco data through javascript, flash or any other client. It even allows you to modify umbraco data directly via simple url's.
-
 
 
 ---
