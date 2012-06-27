@@ -1,5 +1,3 @@
-#This section is waiting for content
-
 Umbraco (since version 4) uses [ASP.NET master pages](http://www.asp.net/web-forms/tutorials/master-pages), so if you are familiar with these you will find this a breeze.
 
 When creating a new template via the backoffice, Umbraco simply generates a masterpage file that inherits from
@@ -12,13 +10,14 @@ master page files can be overwritten to update.
 
 When linking to Umbraco pages within a master page you may use {localLink:nodeID}. This avoids hard coding file paths.
 
-###Progress
-Consult the Umbraco 4 documentation trello board to see what we are currently working on.
-[See the TrelloBoard here](https://trello.com/board/umbraco-4-documentation/4fdb02df8fc3ef067e809e95)
+## Elements of a Masterpage
+A Masterpage used in Umbraco holds a number of common componets:
+### <asp:ContentPlaceHolder>
+A placeholder for individual content in a content page
+### <asp:Content>
+A reference to the contentplaceholder on the Masterpage
 
-###Contribution
-Umbraco is a community powered project and we welcome any contribution, big or small, even fixing a typo is a valuable contribution.
-[See how to contribute](https://github.com/umbraco/Umbraco4Docs)
+
 
 
 
