@@ -205,13 +205,32 @@ Returns the last item
 
 	@var root =Model.AncestorsOrSelf.Last();
 
-###.Up()
+###.Up([int])
+Returns a parent item up the tree by one level or by the value specified in the optional parameter. default value = 0, or 1 level. For example to move up two levels set the optional parameter to 1.
 
-###.Down()
+	@var parent = Model.Up();
+	@var parentsParent = Model.Up(1);
 
-###.Next()
+###.Down([int])
 
-###.Previous()
+Returns a child item down the tree by one level or by the value specified in the optional parameter. default value = 0, or 1 level. For example to move down two levels set the optional parameter to 1.
+
+	@var firstChild = Model.Down();
+	@var firstChildsFirstChild = Model.Down(1);
+
+###.Next([int])
+
+Returns the next sibling item in the tree by one position or by the value specified in the optional parameter. default value = 0, or 1 level. For example to move two positions set the optional parameter to 1.
+
+	@var nextSibling = Model.Next();
+	@var anotherSibling = Model.Next(1);
+
+###.Previous([int])
+
+Returns the previous sibling item in the tree by one position or by the value specified in the optional parameter. default value = 0, or 1 level. For example to move two positions set the optional parameter to 1.
+
+	@var previousSibling = Model.Previous();
+	@var anotherSibling = Model.Previous(1);
 
 ###.AncestorOrSelf()
 
