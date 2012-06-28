@@ -198,6 +198,7 @@ Returns a collection of items that match the XPath expression specified.
 	}
 
 ###.GetChildrenAsList
+Returns a `DynamicNodeList` of `DynamicNode` of the child content items
 
 -----
 
