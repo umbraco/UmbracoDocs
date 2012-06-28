@@ -301,7 +301,32 @@ Orders a collection by a field name
 	@var nodes = Model.Children.OrderBy("Name desc");
 	
 ###.GroupBy("propertyAlias")
+Groups items in the collection based on a content property that is used as a key and returns a Collection of Anonymous objects that have two properties. `.Key` and `.Elements` that contains a collection of the content items for that grouping.
 
+	@{
+	  	var groupedItems = Model.Children.GroupBy("MyProperty");
+	  	foreach (var group in groupedItems)
+	  	{
+	   		<h2>@group.Key</h2>
+	   		foreach(var item in group.Elements)
+	   		{
+	   			<h3>@el.Name</h3>
+	   		}
+	   	}
+	}
+
+
+###.InGroupsOf([int])
+Returns a collection as a collection of collections. The integer value specifies the size of the groups.
+
+	@* return in groups of 3 *@
+	@foreach(var group in Model.Children.InGroupsOf(3)){
+		<div class="row">
+			@foreach(var item in group){
+				<div>@item.Name</div>
+			}
+		</div>
+	}
 
 ###.Pluck("PropertyName")
 Returns a collection of type `new List<string>()` of only the specified property and not the entire content item.
