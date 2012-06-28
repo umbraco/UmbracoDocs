@@ -160,9 +160,9 @@ Returns all ancestors of the current page (parent page, grandparent and so on)
 			<li><a href="@item.Url">@item.Name</a></li>
 		}
 	</ul>
-
+<span id="ancestorsorself"></span>
 ###.AncestorsOrSelf
-Returns all ancestors of the current page (parent page, grandparent and so on), and the current page itself
+Returns a collection of all ancestors of the current page (parent page, grandparent and so on), and the current page itself
 
 	@* Get the top item in the content tree, this will always be the Last ancestor found *@
 	var websiteRoot = Model.AncestorsOrSelf.Last();
@@ -246,6 +246,8 @@ Returns the previous sibling item in the tree by one position or by the value sp
 The AncestorOrSelf() method has a number of overloads that allow you to quickly traverse the tree and return an item that matches the overloaded criteria.
 Using the menthod without any parameters will return the top most node in tree that you are currently navigating.
 
+**Notice** `.AncestorOrSelf()` should not be confused with the collection [`.AncestorsOrSelf()`](#ancestorsorself)
+
 	@var root = Model.AncestorOrSelf();
 
 <table>
@@ -302,7 +304,7 @@ Orders a collection by a field name
 
 
 ###.Pluck("PropertyName")
-Returns a collection of type new List<string>() of only the specified property and not the entire content item.
+Returns a collection of type `new List<string>()` of only the specified property and not the entire content item.
 
 	@* return only the colour property as a List<string>(); *@
 	@Model.Children.Pluck("colour");
