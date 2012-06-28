@@ -79,19 +79,18 @@ Returns the DateTime the page was created
 ###.UpdateDate
 Returns the DateTime the page was modified
 
-###.Version
-
 ###.NiceUrl
 Same as Url
 
 ###.Level
 Returns the Level this content item is on
 
-###.PropertiesAsList
+###.PropertiesAsList()
+Returns a `new List<IProperty>()` of the user defined properties for a content item.  an `IProperty` has two `string` properties `.Alias` and `.Value`
 
 ###.ChildrenAsList
+Returns the children of the current item as a `List<>()`
 
-###.Position
 
 -----
 
