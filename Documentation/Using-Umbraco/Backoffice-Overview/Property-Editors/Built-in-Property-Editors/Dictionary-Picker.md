@@ -21,7 +21,7 @@ If you change the language on the root node, the language in the checkbox list i
 
 ##Examples
 
-The below example renders a HTML select drop down list, if the root node has a language set the dictionary will return the values in that language, see [Hostnames]() for how do change the language
+The example below renders a HTML select drop down list, if the root node has a language, the dictionary will return the values in that language, see [Hostnames]() for how do change the language
 
 ![Dictionary Picker Data Type HTML](images/Dictionary-Picker-HTML-Result.jpg?raw=true)
 
