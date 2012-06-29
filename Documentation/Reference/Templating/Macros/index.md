@@ -15,6 +15,16 @@ This will insert a macro with the alias '`YourMacroAlias`' into the template
 
 	<umbraco:Macro Alias="YourMacroAlias" runat="server"></umbraco:Macro>
 
+##Inline macros
+Macros can also render inline code, directly in the template
+
+	<umbraco:Macro runat="server" language="cshtml">
+	    <h1>@Model.Name</h1>
+	    @foreach(var child in Model.Children){
+	        <a href="@Model.Url">@Model.Name</a>
+	    }
+	</umbraco:Macro>
+
 
 ##Definining Property Values
 This will insert a macro with the alias 'YourMacroAlias' into the template and set the macro property named 'YourPropertyName' to the value 'hello'

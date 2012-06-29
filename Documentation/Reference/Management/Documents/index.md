@@ -45,9 +45,8 @@ All documents in umbraco is versioned. So everytime a document is changed, a new
 		Document d = new Document(1234 versionGuid);
 
 
-##Document methods and properties
+##[Document methods and properties](document.md) 
 The `Document` class itself has a big collection of methods and properties, please see the seperate [Document](document.md) page for this.
-
 
 
 ##Static methods
