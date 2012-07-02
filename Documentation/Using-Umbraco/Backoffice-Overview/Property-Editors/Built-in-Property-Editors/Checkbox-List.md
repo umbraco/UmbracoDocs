@@ -29,12 +29,12 @@ NOTE: Unlike other data types, the values are not directly accessible in xslt or
 
 ##Razor Example
 
-	@{
-	  if (@Model.fruit.Length > 0){
-	    <ul>                                                        
-	      @foreach(var item in @Model.fruit.Split(',')) { 
-	       <li>@item</li>
-	      }
-	    </ul>                                                                                        
+	  @{
+	    if (@Model.GetProperty("fruit").Value.Length > 0){
+	      <ul>                                                        
+	        @foreach(var item in @Model.GetProperty("fruit").Value.Split(',')) { 
+	         <li>@item</li>
+	        }
+	      </ul>                                                                                        
+	    }
 	  }
-	}

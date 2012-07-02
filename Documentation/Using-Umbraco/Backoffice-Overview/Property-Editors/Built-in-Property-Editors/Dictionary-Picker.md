@@ -41,12 +41,12 @@ The example below renders a HTML select drop down list, if the root node has a l
 
 ###Razor
 
-	@{
-	  if (@Model.dictionaryPicker.Length > 0){
-	    <select>                                                         
-	      @foreach(var item in @Model.dictionaryPicker.Split(',')) { 
-	       <option value="@item">@Dictionary[@item]</option>
-	      }
-	    </select>                                                                                         
+	  @{
+	    if (@Model.GetProperty("dictionaryPicker").Value.Length > 0){
+	      <select>                                                         
+	        @foreach(var item in @Model.GetProperty("dictionaryPicker").Value.Split(',')) { 
+	         <option value="@item">@Dictionary[@item]</option>
+	        }
+	      </select>                                                                                         
+	    }
 	  }
-	}
