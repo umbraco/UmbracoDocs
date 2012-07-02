@@ -1,14 +1,12 @@
-#This section is waiting for content
+#Installation
 
-This documention has not been written yet, but it is on the roadmap.
+_Covers the different ways to install Umbraco. We recommend you either use Microsoft Platform installer or Microsoft Webmatrix as an easy way to get started with Umbraco._
 
-###Progress
-Consult the Umbraco 4 documentation trello board to see what we are currently working on.
-[See the TrelloBoard here](https://trello.com/board/umbraco-4-documentation/4fdb02df8fc3ef067e809e95)
+##[Manual installation](Installation/install-umbraco-manually.md)
+Goes through the steps needed to either download a stable release or a nightly version, unzipping, and getting it running on a local webserver.
 
-###Contribution
-Umbraco is a community powered project and we welcome any contribution, big or small, even fixing a typo is a valuable contribution.
-[See how to contribute](https://github.com/umbraco/Umbraco4Docs)
+##[Webmatrix installation](Installation/install-umbraco-with-microsoft-webmatrix.md)
+Microsoft Webmatrix is a simple to use editor with an embedded webserver, to get you easy and fast up and running with Umbraco.
 
 
 
