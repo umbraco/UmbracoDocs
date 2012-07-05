@@ -27,7 +27,7 @@ Displays a list of preset values as a list where multiple values can be selected
 	  </ul>    
 	</xsl:if>
 
-##Razor Example
+##Razor (DynamicNode) Example
 
 	@{
 	  if (@Model.GetProperty("superHeros").Value.Length > 0){
