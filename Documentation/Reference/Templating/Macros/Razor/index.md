@@ -1,15 +1,23 @@
-#This section is waiting for content
+#Building Macros with Razor
 
-This documention has not been written yet, but it is on the roadmap.
+_Reference snippets for working with the Razor language in Umbraco macros. These samples shows how to use the DynamicNode API with razor, but does go into detail on the different methods and properties._
 
-###Progress
-Consult the Umbraco 4 documentation trello board to see what we are currently working on.
-[See the TrelloBoard here](https://trello.com/board/umbraco-4-documentation/4fdb02df8fc3ef067e809e95)
+##[Hello World](hello-world.md)
+Writing a simple Razor macro to output the name, url and ID of the current page, as well as iterating through child pages of the current pages.
 
-###Contribution
-Umbraco is a community powered project and we welcome any contribution, big or small, even fixing a typo is a valuable contribution.
-[See how to contribute](https://github.com/umbraco/Umbraco4Docs)
+##[Basic Razor syntax](basic-razor-syntax.md)
+Syntax samples for handling common logical tasks, such as loops, if/else, and using @ to seperate Code and markup
 
+##[Using Macro Parameters](using-macro-parameters.md)
+Using Macro parameters to pass changeable values to a Razor script to increase flexibility and reusability of the macro.
 
+##[Using Razor axes](using-razor-axes.md)
+Razor axes is a feature of DynamicNode, which allows you to query for specific parts of the content tree without using hardcoded Ids.
+
+##[Using Pluralised queries](using-pluralised-queries.md)
+Pluralised queries enables you to query and filter pages with a simple syntax.
+
+##[Using Razor functions to make recursive queries](using-razor-functions-to-make-recursive-queries.md)
+A razor function is a small, embedded method you can call inside of your razor scripts
 
  

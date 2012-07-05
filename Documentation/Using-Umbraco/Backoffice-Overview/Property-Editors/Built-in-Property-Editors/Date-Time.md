@@ -2,6 +2,8 @@
 
 `GUID b6fb1622-afa5-4bbf-a3cc-d9672a442222`
 
+`Returns: DateTime`
+
 Displays a calendar UI for selecting dates and time, the value saved is a standard dateTime value.
 
 ##Data Type Definition Example
@@ -16,6 +18,6 @@ Displays a calendar UI for selecting dates and time, the value saved is a standa
 
 	<xsl:value-of select="umbraco.library:FormatDateTime($currentPage/datePickerWithTime, 'dd MMM yyyy hh:mm tt')"/>
 
-##Razor Example
+##Razor (DynamicNode) Example
 
 	@Model.datePickerWithTime.ToString("dd MMM yyyy hh:mm tt")

@@ -1,7 +1,20 @@
 # uQuery
 
-uQuery is an API giving read/write access the [Content](Content/index.md), [Media](Media.md) and [Member](Member.md) data, as well as extending the [Relations](Relations.md). uQuery originated from uComponents and was added into Umbraco from v4.8. To use uQuery declare the umbraco namespace in addition to those required for nodes, documents, media, members and relations.
+uQuery is an API giving read/write access the [Content](Content/index.md), [Media](Media.md) and [Member](Member.md) data, as well as extending the [Relations](Relations.md). uQuery originated from uComponents and was added into Umbraco from v4.8. 
 
+##[Content](Content/index.md)
+Queries against nodes stored in the website cache, as well as queries directly against documents stored in the database.
+
+##[Media](Media.md)
+Querying data stored in the media section.
+
+##[Members](Members.md)
+Working with Members, MemberGroups and membertypes
+
+##[Relations](Relations.md)
+Extensions ontop of the Core relations API in Umbraco 4
+
+To use uQuery declare the umbraco namespace in addition to those required for nodes, documents, media, members and relations.
 
 	using umbraco; // uQuery
 	using umbraco.NodeFactory; // Node

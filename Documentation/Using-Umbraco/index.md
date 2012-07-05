@@ -1,15 +1,9 @@
-#This section is waiting for content
+#Using Umbraco
 
-This documention has not been written yet, but it is on the roadmap.
+###[BackOffice Overview](Backoffice-Overview/index.md)
 
-###Progress
-Consult the Umbraco 4 documentation trello board to see what we are currently working on.
-[See the TrelloBoard here](https://trello.com/board/umbraco-4-documentation/4fdb02df8fc3ef067e809e95)
+Details of all the common terms and concepts that are used throughout the Umbraco backoffice.
 
-###Contribution
-Umbraco is a community powered project and we welcome any contribution, big or small, even fixing a typo is a valuable contribution.
-[See how to contribute](https://github.com/umbraco/Umbraco4Docs)
+###[Creating a basic site with Umbraco](Creating-Basic-Site/index.md)
 
-
-
- 
+Step by step guide of everything you need to get a basic site up and running in Umbraco

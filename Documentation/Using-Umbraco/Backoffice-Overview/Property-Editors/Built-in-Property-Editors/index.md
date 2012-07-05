@@ -17,17 +17,20 @@ Displays a calendar UI for selecting dates and time, the value saved is a standa
 ##[Date](Date.md)
 Displays a calendar UI for selecting dates, the value saved is a standard dateTime value, but with no time information.
 
-##Dictionary Picker
+##[Dictionary Picker](Dictionary-Picker.md)
+Displays a checkbox list of child dictionary items for a named dictionary item
 
-##Dropdown list multiple, publish keys
+##[Dropdown list multiple, publish keys](Dropdown-Multiple-Publish-Keys.md)
+Displays a list of preset values as a list where multiple values can be selected. The value saved is a comma separeted string of prevalue IDs, the Prevalue text can be retrived using the umbraco.library.GetPreValueAsString method in XSLT or Razor
 
-##Dropdown list multiple
-Displays a list of preset values as a list where multiple values can be selected. The preset values are modified in the developer section under "data types" / Dropdown multple where new items can be added. The value saved is a commasepareted string of prevalue IDs, which is easiliest processed with xslt. (umbraco.library:GetPrevalue())
+##[Dropdown list multiple](Dropdown-Multiple.md)
+Displays a list of preset values as a list where multiple values can be selected. The value saved is a comma separeted string of the text values. The prevalue ID's are not accessible, use the [Dropdown list multiple, publish keys](Dropdown-Multiple-Publish-Keys.md) instead if you need the prevalue IDs.
 
-##Dropdown list, publishing keys
+##[Dropdown list, publishing keys](Dropdown-Publish-Keys.md)
+Displays a list of preset values as a list. The value saved is a prevalue ID. The Prevalue text can be retrived using the umbraco.library.GetPreValueAsString method in XSLT or Razor.
 
-##Dropdown list
-Displays a list of preset values as a list where only a single can be selected. The preset values are modified in the developer section under "data types" / Dropdown multple where new items can be added. The value saved is the selected value as a string.
+##[Dropdown list](Dropdown.md)
+Displays a list of preset values as a list. The value saved is a text value. The prevalue ID is not accessible, use the [Dropdown list, publishing keys](Dropdown-Publish-Keys.md) instead if you need the prevalue ID.
 
 ##Folder Browser
 

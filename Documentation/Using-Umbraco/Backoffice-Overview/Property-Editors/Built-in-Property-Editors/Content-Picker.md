@@ -2,6 +2,8 @@
 
 `GUID 158aa029-24ed-4948-939e-c3da209e5fba`
 
+`Returns: Node ID`
+
 The content picker opens a simple modal to pick a specific page from the content structure. The value saved is the selected nodes's ID. 
 
 ##Data Type Definition Example
@@ -20,9 +22,11 @@ The content picker opens a simple modal to pick a specific page from the content
 	  </a>
 	</xsl:if>
 
-##Razor Example
+##Razor (DynamicNode) Example
 
 	@{
-	  var node = @Library.NodeById(@Model.contentPicker);
-	  <a href="@node.Url">@node.Name</a>
+	  if (@Model.HasValue("contentPicker")){
+	    var node = @Library.NodeById(@Model.contentPicker);
+	    <a href="@node.Url">@node.Name</a>
+	  }
 	}
