@@ -24,6 +24,6 @@ Displays a list of preset values as a list. The value saved is a text value. The
 
 	@{
 	  if (@Model.HasValue("superHero")){                                                     
-	   <p>@Model.superHero</p>                                                                                                                                                                                                                                                                                                                                                       
+	   <p>@Model.superHero</p>                                                                                    
 	  }
 	}
