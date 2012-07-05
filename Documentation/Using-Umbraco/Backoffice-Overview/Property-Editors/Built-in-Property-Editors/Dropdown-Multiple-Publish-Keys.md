@@ -30,7 +30,7 @@ Displays a list of preset values as a list where multiple values can be selected
 ##Razor (DynamicNode) Example
 
 	@{
-	  if (@Model.GetProperty("superHeros").Value.Length > 0){
+	  if (@Model.HasValue("superHeros")){
 	    <ul>                                                        
 	      @foreach(var item in @Model.GetProperty("superHeros").Value.Split(',')) { 
 	       <li>@umbraco.library.GetPreValueAsString(Convert.ToInt32(item)) - @item</li>

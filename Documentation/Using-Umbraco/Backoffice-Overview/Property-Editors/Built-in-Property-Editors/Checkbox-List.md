@@ -18,8 +18,8 @@ NOTE: Unlike other data types, the Prevalue IDs are not directly accessible in x
 
 ##XSLT Example
 
-	<xsl:if test="string-length($currentPage/fruit) > 0">  
-	  <xsl:variable name="items" select="umbraco.library:Split($currentPage/fruit,',')" />  
+	<xsl:if test="string-length($currentPage/fruitList) > 0">  
+	  <xsl:variable name="items" select="umbraco.library:Split($currentPage/fruitList,',')" />  
 	  <ul>  
 	  <xsl:for-each select="$items//value">
 	    <li>
@@ -31,12 +31,12 @@ NOTE: Unlike other data types, the Prevalue IDs are not directly accessible in x
 
 ##Razor (DynamicNode) Example
 
-	  @{
-	    if (@Model.GetProperty("fruit").Value.Length > 0){
-	      <ul>                                                        
-	        @foreach(var item in @Model.GetProperty("fruit").Value.Split(',')) { 
-	         <li>@item</li>
-	        }
-	      </ul>                                                                                        
-	    }
+	@{                                                   
+	  if (@Model.HasValue("fruitList")){                                                        
+	    <ul>                                                        
+	      @foreach(var item in @Model.GetProperty("fruitList").Value.Split(',')) { 
+	        <li>@item</li>
+	      }
+	    </ul>                                                                                        
 	  }
+	}

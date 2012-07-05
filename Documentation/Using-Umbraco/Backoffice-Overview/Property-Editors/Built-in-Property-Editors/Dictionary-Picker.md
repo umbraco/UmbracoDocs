@@ -44,7 +44,7 @@ The example below renders a HTML select drop down list, if the root node has a l
 ###Razor (DynamicNode) Example
 
 	  @{
-	    if (@Model.GetProperty("dictionaryPicker").Value.Length > 0){
+	    if (@Model.HasValue("fruit")){
 	      <select>                                                         
 	        @foreach(var item in @Model.GetProperty("dictionaryPicker").Value.Split(',')) { 
 	         <option value="@item">@Dictionary[@item]</option>
