@@ -2,9 +2,11 @@
 
 `GUID b4471851-82b6-4c75-afa4-39fa9c6a75e9`
 
-Displays a list of preset values as a list of checkbox controls. The preset values are modified in the developer section under "data types" / checkbox list where new items can be added. The text saved is a comma separeted string of prevalue IDs. 
+`Returns: Comma Separated String`
 
-NOTE: Unlike other data types, the values are not directly accessible in xslt or razor
+Displays a list of preset values as a list of checkbox controls. The preset values are modified in the developer section under "data types" / checkbox list where new items can be added. The text saved is a comma separeted string of text values. 
+
+NOTE: Unlike other data types, the Prevalue IDs are not directly accessible in xslt or razor
 
 ##Data Type Definition Example
 
@@ -27,7 +29,7 @@ NOTE: Unlike other data types, the values are not directly accessible in xslt or
 	  </ul>    
 	</xsl:if>
 
-##Razor Example
+##Razor (DynamicNode) Example
 
 	  @{
 	    if (@Model.GetProperty("fruit").Value.Length > 0){

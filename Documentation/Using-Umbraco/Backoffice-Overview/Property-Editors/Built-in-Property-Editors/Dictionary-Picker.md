@@ -2,6 +2,8 @@
 
 `GUID 17b70066-f764-407d-ab05-3717f1e1c513`
 
+`Retuns: Comma Separated String`
+
 Displays a checkbox list of child dictionary items for a named dictionary item
 
 ##Data Type Definition Example
@@ -39,7 +41,7 @@ The example below renders a HTML select drop down list, if the root node has a l
 	  </select>    
 	</xsl:if>  
 
-###Razor
+###Razor (DynamicNode) Example
 
 	  @{
 	    if (@Model.GetProperty("dictionaryPicker").Value.Length > 0){
