@@ -36,6 +36,8 @@ uQuery also exposes an Enum with associated helper methods to represent each of 
 ### GetUmbracoObjectType(string)
 Returns: `uQuery.UmbracoObjectType`
 
+Gets an UmbracoObjectType enum value from the enum name.
+
 	uQuery.UmbracoObjectType umbracoObjectType = uQuery.GetUmbracoObjectType("Document");
 	
 
@@ -58,6 +60,8 @@ Gets the UmbracoObjectType for the supplied Umbraco id. This method queries the 
 
 ### GetGuid()
 Retuns: `Guid`	
+
+Gets the guid associated with an UmbracoObjectType enum value.
 	
 	Guid guid = uQuery.GetUmbracoObjectType("Document").GetGuid();
 
@@ -65,5 +69,7 @@ Retuns: `Guid`
 
 ### GetName()
 Returns: `string`
+
+Gets the name of the UmbracoObjectType enum value.
 
 	string name =  uQuery.GetUmbracoObjectType(Guid.Parse("C66BA18E-EAF3-4CFF-8A22-41B16D66A972")).GetName();
