@@ -32,7 +32,8 @@ Displays a list of preset values as a list. The value saved is a prevalue ID. Th
 ##[Dropdown list](Dropdown.md)
 Displays a list of preset values as a list. The value saved is a text value. The prevalue ID is not accessible, use the [Dropdown list, publishing keys](Dropdown-Publish-Keys.md) instead if you need the prevalue ID.
 
-##Folder Browser
+##[Folder Browser](Folder-Browser.md)
+Used with container Media Types, the Folder Browser displays a list of thumbnail images. Every Media item contained within the folder that has a generated thumbnail will be listed.
 
 ##Image Cropper
 
