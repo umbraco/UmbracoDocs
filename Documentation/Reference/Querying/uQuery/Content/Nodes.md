@@ -26,7 +26,7 @@ For a given id (supplied as an int or a string), returns the associated Node obj
 
 	Node node = uQuery.GetNode(123);
 
-`Node node = uQuery.GetNode("123");`
+	Node node = uQuery.GetNode("123");`
 
 
 ### GetNodeByUrl(string)
