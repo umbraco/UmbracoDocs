@@ -36,7 +36,11 @@ No active work on the documentation should be done on the 'master' branch.
 All documents are written in Markdown, using a simple structure and stored as .md files.
 These are then pulled to [our.umbraco.org/documentation](http://our.umbraco.org/documentation) for easy browsing. 
 
-First fork and clone the repository so that you have your own working copy. Then choose the minimum version of Umbraco 4 to which you know your edits apply. Then make your changes on the git branch for this version. Once you are happy with your edits, use github to issue a "pull request" which means your edits will be reviewed, and once accepted, merged into the main repository. Everything in the main repository will make it onto the [our.umbraco.org/documentation](http://our.umbraco.org/documentation) site, which is why we have chosen a pull request workflow to keep everything simple and straightforward.
+First fork and clone the repository so that you have your own working copy. Then choose the minimum version of Umbraco 4 to which you know your edits apply. Then make your changes on the git branch for this version. Once you are happy with your edits, use github to issue a "pull request" which means your edits will be reviewed, and once accepted, merged into the main repository. 
+
+**Note:** It's a good idea to pull in upstream changes, merge and commit to your own fork before submitting a pull request. Instructions on how to setup a remote repo and  pull from upstream can be found on this [page](https://help.github.com/articles/fork-a-repo)
+
+Everything in the main repository will make it onto the [our.umbraco.org/documentation](http://our.umbraco.org/documentation) site, which is why we have chosen a pull request workflow to keep everything simple and straightforward.
 
 
 
