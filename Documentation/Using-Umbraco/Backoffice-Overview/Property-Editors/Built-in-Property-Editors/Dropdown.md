@@ -1,7 +1,5 @@
 #Dropdown list
 
-`GUID a74ea9c9-8e18-4d2a-8cf6-73c6206c5da6`
-
 `Retuns: String`
 
 Displays a list of preset values as a list. The value saved is a text value. The prevalue ID is not accessible, use the [Dropdown list, publishing keys](Dropdown-Publish-Keys.md) instead if you need the prevalue ID.

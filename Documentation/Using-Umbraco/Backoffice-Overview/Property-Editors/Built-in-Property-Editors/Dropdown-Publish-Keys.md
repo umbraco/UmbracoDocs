@@ -1,7 +1,5 @@
 #Dropdown list, publishing keys
 
-`GUID a74ea9e1-8e18-4d2a-8cf6-73c6206c5da6`
-
 `Retuns: Prevalue ID`
 
 Displays a list of preset values as a list. The value saved is a prevalue ID. The Prevalue text can be retrived using the umbraco.library.GetPreValueAsString method in XSLT or Razor.

@@ -1,7 +1,5 @@
 #Color Picker
 
-`GUID f8d60f68-ec59-4974-b43b-c46eb5677985`
-
 `Returns: String`
 
 Adds a list of approved colours which can be selected by clicking. The approved colours need to be added as hex values (without the #) in the prevalues field. i.e. cccccc

@@ -1,7 +1,5 @@
 #Dropdown list multiple, publish keys
 
-`GUID 928639aa-9c73-4028-920c-1e55dbb68783`
-
 `Retuns: Comma Separated String of Prevalue IDs`
 
 Displays a list of preset values as a list where multiple values can be selected. The value saved is a comma separeted string of prevalue IDs, the Prevalue text can be retrived using the umbraco.library.GetPreValueAsString method in XSLT or Razor

@@ -1,7 +1,5 @@
 #Content Picker
 
-`GUID 158aa029-24ed-4948-939e-c3da209e5fba`
-
 `Returns: Node ID`
 
 The content picker opens a simple modal to pick a specific page from the content structure. The value saved is the selected nodes's ID. 

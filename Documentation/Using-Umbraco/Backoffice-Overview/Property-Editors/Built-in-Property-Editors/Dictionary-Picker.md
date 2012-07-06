@@ -1,7 +1,5 @@
 #Dictionary Picker
 
-`GUID 17b70066-f764-407d-ab05-3717f1e1c513`
-
 `Retuns: Comma Separated String`
 
 Displays a checkbox list of child dictionary items for a named dictionary item

@@ -1,7 +1,5 @@
 #Dropdown list multiple
 
-`GUID 928639ed-9c73-4028-920c-1e55dbb68783`
-
 `Retuns: Comma Separated String`
 
 Displays a list of preset values as a list where multiple values can be selected. The value saved is a comma separeted string of the text values. The prevalue ID's are not accessible, use the [Dropdown list multiple, publish keys](Dropdown-Multiple-Publish-Keys.md) instead if you need the prevalue IDs.
