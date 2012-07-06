@@ -8,4 +8,4 @@ DynamicNode is the dynamic access to all the data stored in your Umbraco website
 Model represents the page, currently being rendered, and is usually referenced on Templates or Macros
 
 ##[uQuery](uQuery/index.md)
-uQuery is an API giving read/write access the content, media and member data, as well as extending the releations.
+uQuery is an API giving read/write access to the content, media and member data, as well as extending the releations.
