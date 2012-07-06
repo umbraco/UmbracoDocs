@@ -6,15 +6,15 @@ To explain how base works, we'll do a quick "Hello World" sample. So open Visual
 
 I created a namespace called "BaseTest" and a class called "TestClass" - This class will contain all our samples for this book.
 
-namespace BaseTest {
-    [RestExtension("myAlias")]
-    public class TestClass {
-        [RestExtensionMethod()]
-        public static string Hello() {
-            return "Hello World";
+    namespace BaseTest {
+        [RestExtension("myAlias")]
+        public class TestClass {
+            [RestExtensionMethod()]
+            public static string Hello() {
+                return "Hello World";
+            }
         }
-    }
-} 
+    } 
 
 So here we have a simple static string called "Hello" which will return the string  "Hello World". Now let's get this hooked up to /base.
 
