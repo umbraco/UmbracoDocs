@@ -22,7 +22,8 @@ Copy the projects .dll to your umbraco /Bin folder - In this sample the DLL is c
 Automatically hook-up
 
 Because we used the Attributes "RestExtension" and "RestExtensionMethod" umbraco is smart enough (since version ...  #doesanyoneknow?) to hook up the methods automatically.  After coping the dll file to your umbraco bin folder, try calling the url /Base/myAlias/Hello.  You will get the response: "Hello World".
-Hook up by configuration
+
+###Hook up by configuration
 
 If you prefer the config files instead of the Attributes, you can change the restExtensions.config file.
 
@@ -30,16 +31,16 @@ Open the /config/restExtensions.config in notepad, we will now register this met
 
 Edit the restExtensions.config file so it looks like this:
 
-<?xml version="1.0" encoding="utf-8"?>
-<RestExtensions>
-  <ext assembly="/bin/BaseTest" type="BaseTest.TestClass" alias="TestAlias">
-    <permission method="Hello" allowAll="true" />
-  </ext>
-</RestExtensions> 
+    <?xml version="1.0" encoding="utf-8"?>
+    <RestExtensions>
+      <ext assembly="/bin/BaseTest" type="BaseTest.TestClass" alias="TestAlias">
+        <permission method="Hello" allowAll="true" />
+      </ext>
+    </RestExtensions> 
 
 Okey if you've followed the above tutorial you can now goto this url: <your umbraco installations domain>/Base/TestAlias/Hello.aspx
 
-This should give you an xml page with a single node in it: "<value>Hello World</value>"
+This should give you an xml page with a single node in it: `<value>Hello World</value>`
 So what just happened?
 
 So what we just did was build a simple string method in .net and afterwards gained direct access to it's return value using a standard Url. Let's take a closer look on what we did to make that happen.
