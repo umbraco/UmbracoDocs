@@ -1,10 +1,13 @@
 # Simple /base samples
 
+##Hello World
 To explain how base works, we'll do a quick "Hello World" sample. Open Visual Studio (or visual C# express) (VB.net can also be used, but all the samples are written in C#)  
 
-- Create a new project, this could be a class library or a asp.net web application project.  We will only be interested in the DLL that is produced on compile.
+Create a new project called BaseTest, this could be a class library or a asp.net web application project.  We will only be interested in the DLL that is produced on compile.
 
-I created a namespace called `BaseTest` and a class called `TestClass`.
+Next create a new class called `TestClass`.  The namespace should automatically be the same as the project which is `BaseTest`.
+
+Copy the following code into the class.
 
     namespace BaseTest {
         [RestExtension("myAlias")]
@@ -16,11 +19,13 @@ I created a namespace called `BaseTest` and a class called `TestClass`.
         }
     } 
 
-So here we have a simple static string called "Hello" which will return the string  "Hello World". Now let's get this hooked up to /base.
+Here we have a simple static string method called `Hello` which will return the string  "Hello World". 
 
-Compile your project and copy the projects .dll to your umbraco /Bin folder - In this sample the DLL is called BaseTest.dll.
+Compile your project and copy the projects .dll to your umbraco /Bin folder - In this sample the DLL is called BaseTest.dll.Now let's get this hooked up to /base.
 
-###Automatic registration using Attributes
+##Registering with base
+
+####Automatic registration using Attributes
 In the above example, Because we used the Attributes "RestExtension" and "RestExtensionMethod", umbraco is smart enough (since version 4.5) to hook up the methods automatically.  After coping the dll file to your umbraco bin folder, try calling the url /Base/myAlias/Hello.  You will get the response: "Hello World".
 
 ###Registration by configuration
