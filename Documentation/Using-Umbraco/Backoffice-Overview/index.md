@@ -17,7 +17,7 @@ Media types are very similar to document types in Umbraco except they are specif
 Media items are used to store assets like images and video within the Media section and can be referenced from your content.
 
 ###Member Type
-Similar to a Document type and a media type. You are able to define custom properties to store on a member such as twitter username or website URL for example.
+Similar to a Document type and a Media type. You are able to define custom properties to store on a member such as twitter username or website URL for example.
 
 ###Member
 A member is someone who has access to signup, register and login into your public website and is not to be confused with User.
