@@ -29,10 +29,10 @@ A node is generally a page within the Umbraco backoffice content section
 A user is someone who has access to the Umbraco backoffice and is not to be confused with Member.
 
 ###Macros
-A macro is a reusable piece of functionality that you want to re-use throughout your site can be configurable with parameters and inserted into Rich Text Editors.
+A macro is a reusable piece of functionality that you want to re-use throughout your site. Macros can be configured with parameters and be inserted into a Rich Text Editor.
 
 ###Templates / Layouts / Masterpages
-A template is where your HTML for your pages are stored to build your website. A layout is a common template that contains common markup such as the `<head>` section.
+A template is where you define the HTML markup of your website. A layout is a common template that contains common markup such as the `<head>` section.
 
 ###Template Sections
 Template sections allow child templates that inherit the master layout template to insert html code up into the main layout template. For example a child template inserting code into the `<head>` tag
@@ -50,7 +50,7 @@ A property editor is a way to insert content into Umbraco. An example of a prope
 A parameter editor defines the usage of a property editor for use as a parameter for Macros.
 
 ###Editor
-An editor is what you use to edit different items within the backoffice. There are editors specific to editing stylesheets, there are editors for editing Macros and so fourth.
+An editor is what you use to edit different items within the backoffice. There are editors specific to editing stylesheets, there are editors for editing Macros and so forth.
 
 ###Tree
 A tree is an hierarchical list of items related (and usually restricted) to a specific concept, which could be something like a content tree or a media tree.
