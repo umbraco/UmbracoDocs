@@ -20,7 +20,7 @@ To access the current page in your Razor macros or templates, copy-paste the bel
 Listing and explanation of DynamicNode properties & standard helpers for Content and Media.
 
 ##[Collections & Filtering](Collections.md)
-Methods for collections and filtering.
+Methods for DynamicNode collections and filtering.
 
 
 ##[IsHelpers](IsHelpers.md)
