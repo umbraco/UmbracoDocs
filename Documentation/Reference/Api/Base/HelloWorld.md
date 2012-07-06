@@ -19,12 +19,11 @@ I created a namespace called "BaseTest" and a class called "TestClass" - This cl
 So here we have a simple static string called "Hello" which will return the string  "Hello World". Now let's get this hooked up to /base.
 
 Copy the projects .dll to your umbraco /Bin folder - In this sample the DLL is called BaseTest.dll.
-Automatically hook-up
 
-Because we used the Attributes "RestExtension" and "RestExtensionMethod" umbraco is smart enough (since version ...  #doesanyoneknow?) to hook up the methods automatically.  After coping the dll file to your umbraco bin folder, try calling the url /Base/myAlias/Hello.  You will get the response: "Hello World".
+###Automatic registration using Attributes
+Because we used the Attributes "RestExtension" and "RestExtensionMethod" umbraco is smart enough (since version 4.5) to hook up the methods automatically.  After coping the dll file to your umbraco bin folder, try calling the url /Base/myAlias/Hello.  You will get the response: "Hello World".
 
-###Hook up by configuration
-
+###Registration by configuration
 If you prefer the config files instead of the Attributes, you can change the restExtensions.config file.
 
 Open the /config/restExtensions.config in notepad, we will now register this method in /base. 
@@ -41,7 +40,8 @@ Edit the restExtensions.config file so it looks like this:
 Okey if you've followed the above tutorial you can now goto this url: <your umbraco installations domain>/Base/TestAlias/Hello.aspx
 
 This should give you an xml page with a single node in it: `<value>Hello World</value>`
-So what just happened?
+
+###So what just happened?
 
 So what we just did was build a simple string method in .net and afterwards gained direct access to it's return value using a standard Url. Let's take a closer look on what we did to make that happen.
 
