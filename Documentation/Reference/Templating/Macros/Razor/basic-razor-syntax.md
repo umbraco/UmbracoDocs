@@ -50,3 +50,22 @@ A foreach loop goes through a collection of items, typically a collection of pag
 	@foreach(var item in Model.Children){
 		<p>The item name is: @Item.Name</p>
 	}
+	
+## Switch block
+A Switch block is used when testing a large number of conditions
+
+	@switch(Model.WeekDay){
+	case "Monday":
+		"<p>It is Monday</p>;
+		break;
+	case "Tuesday":
+		"<p>It is Tuesday</p>";
+		break;
+	case "Wednesday":
+		"<p>It is Wednesday</p>";
+		break;
+	default:
+		"<p>It's some day of the week</p>"
+		break;
+	}
+
