@@ -33,10 +33,10 @@ Displays a list of preset values as a list. The value saved is a prevalue ID. Th
 Displays a list of preset values as a list. The value saved is a text value. The prevalue ID is not accessible, use the [Dropdown list, publishing keys](Dropdown-Publish-Keys.md) instead if you need the prevalue ID.
 
 ##[Folder Browser](Folder-Browser.md)
-Used with container **Media Types only**, the Folder Browser displays a list of thumbnail images. Every Media item contained within the folder that has a generated thumbnail will be listed.
+Used with mainly with container Media Types, the Folder Browser displays a list of thumbnail images. Every Media item contained within the folder that has a generated thumbnail will be listed.
 
 ##[Image Cropper](Image-Cropper.md)
-Used with **Media Types only**, the Image Cropper property editor displays an editor to allow backoffice users to position pre-defined image crops on media items. The crops are saved to disk within the media item folder path.
+The Image Cropper property editor displays an editor to allow backoffice users to position pre-defined image crops on media or content items. The crops are saved to disk within the media item folder path.
 
 ##Integer
 A simple textbox to input a numeric value

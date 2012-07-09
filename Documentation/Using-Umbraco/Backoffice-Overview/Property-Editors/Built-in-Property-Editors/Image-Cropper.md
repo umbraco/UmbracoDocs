@@ -2,17 +2,17 @@
 
 `Returns: XML`
 
-Used with Media Types only, the Image Cropper property editor displays an editor to allow backoffice users to position pre-defined image crops on media items. The crops are saved to disk within the media item folder path.
+Tthe Image Cropper property editor displays an editor to allow backoffice users to position pre-defined image crops on media or content items. The crops are saved to disk within the media item folder path.
 
 XML returned by Image Cropper is appended into the media item XML and returned by the `umbraco.library:GetMedia` function.
 
 ##Settings
 
 ###Property alias
-Defines the [Upload](Upload.md) property alias of the file onto which the cropper should be activated. On the default Image Media Types this is 'umbracoFile'.
+Defines the [Upload](Upload.md) property alias of the file onto which the cropper should be activated. On the default Image Media Types this is 'umbracoFile'.  This property must exist on either the Media type or Document type for the cropper to function.
 
 ###Save crop images
-Defines if the generated crop images are saved to disk or created on demand. It is recommended that this is checked for performance.
+Defines if the generated crop images are saved to disk or created on demand, when checked the settings will offer the option to alter the output quality of cropped images, the field expects a numeric value between 0 - 100. E.g. 90 = 90% compared to original image quality. It is recommended that this is checked for performance.
 
 ###Show Label
 Defines if the property name is displayed to the user when selecting the crops.
@@ -23,18 +23,20 @@ This area allows you define multiple crops which the backoffice user is presente
 The following settings are used for a individual crop definition:
 
 - Name - the name of the crop (this is important and used when outputting the crop)
-- Target width
-- Target height
-- Default position
-- Keep aspect
+- Target width - The width of the crop to save in pixels. If a value entered is greater than the original width the crop will still be saved and the output file will be scaled up causing loss of quality.
+- Target height - The height of the crop to save in pixels. If a value entered is greater than the original height the crop will still be saved and the output file will be scaled up causing loss of quality.
+- Default position - The default position of the crop marks when creating crops e.g. you may want to offset the crop so it is taken from the centre of the image.
+- Keep aspect - When checked will maintain the aspect ration of the image when creating crops and will crop based on the longest dimension.
 
-When creating a crop definition you must click add to add the definiton to the list and then click save on the toolbar otherwise your crop definition will be lost.
+When creating a crop definition you must click "Add" to add the definiton to the list and then click the save button on the toolbar otherwise your crop definition will be lost.
 
 ##Data Type Definition Example
 
 ![Image Cropper Property Editor Definition](images/Image-Cropper-DataType.jpg?raw=true)
 
 ##Media Type Definiton Example
+
+The property alias which references the Image Cropper property editor will be output in the XML, in the example below this is "newsCrops".
 
 ![Image Cropper Property Editor Definition](images/Image-Cropper-MediaType.jpg?raw=true)
 
@@ -64,4 +66,17 @@ The crops defined for the Media Type are shown below the image, clicking on a cr
 
 ##XSLT Example
 
+	  <xsl:variable name="mediaItem" select="umbraco.library:GetMedia(1065, 0)"/>
+	  <xsl:if test="count($mediaItem/newsCrops/crops/crop) > 0">
+	    <img src="{$mediaItem/newsCrops/crops/crop[@name = 'thumbCrop']/@url}" />
+	  </xsl:if>
+
 ##Razor (DynamicNode) Example
+	
+	@{
+	  var mediaItem = Model.MediaById(1065);
+	  if (@mediaItem.newsCrops.Count() > 0)
+	  {
+	      <img src="@mediaItem.newsCrops.Find("@name", "thumbCrop").url" />	  
+	  }
+	}
