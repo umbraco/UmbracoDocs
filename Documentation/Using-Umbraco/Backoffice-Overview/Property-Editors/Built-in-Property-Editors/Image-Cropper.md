@@ -2,7 +2,7 @@
 
 `Returns: XML`
 
-Tthe Image Cropper property editor displays an editor to allow backoffice users to position pre-defined image crops on media or content items. The crops are saved to disk within the media item folder path.
+Tthe Image Cropper property editor displays an editor to allow backoffice users to position pre-defined image crops on media or content items. The crops are saved to disk within the media item folder path is the save setting is checked.
 
 XML returned by Image Cropper is appended into the media item XML and returned by the `umbraco.library:GetMedia` function.
 
