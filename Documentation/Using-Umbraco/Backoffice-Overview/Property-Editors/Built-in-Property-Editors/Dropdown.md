@@ -1,6 +1,6 @@
 #Dropdown list
 
-`Retuns: String`
+`Returns: String`
 
 Displays a list of preset values as a list. The value saved is a text value. The prevalue ID is not accessible, use the [Dropdown list, publishing keys](Dropdown-Publish-Keys.md) instead if you need the prevalue ID.
 

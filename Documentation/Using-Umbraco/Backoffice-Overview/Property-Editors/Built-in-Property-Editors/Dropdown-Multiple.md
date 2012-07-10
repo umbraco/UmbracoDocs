@@ -1,8 +1,8 @@
 #Dropdown list multiple
 
-`Retuns: Comma Separated String`
+`Returns: Comma Separated String`
 
-Displays a list of preset values as a list where multiple values can be selected. The value saved is a comma separeted string of the text values. The prevalue ID's are not accessible, use the [Dropdown list multiple, publish keys](Dropdown-Multiple-Publish-Keys.md) instead if you need the prevalue IDs.
+Displays a list of preset values as a list where multiple values can be selected. The value saved is a comma separated string of the text values. The prevalue ID's are not accessible, use the [Dropdown list multiple, publish keys](Dropdown-Multiple-Publish-Keys.md) instead if you need the prevalue IDs.
 
 ##Data Type Definition Example
 

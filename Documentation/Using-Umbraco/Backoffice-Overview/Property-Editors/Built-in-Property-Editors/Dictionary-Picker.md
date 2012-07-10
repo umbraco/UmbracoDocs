@@ -1,6 +1,6 @@
 #Dictionary Picker
 
-`Retuns: Comma Separated String`
+`Returns: Comma Separated String`
 
 Displays a checkbox list of child dictionary items for a named dictionary item
 

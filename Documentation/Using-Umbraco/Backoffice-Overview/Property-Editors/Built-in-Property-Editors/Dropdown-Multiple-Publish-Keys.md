@@ -1,8 +1,8 @@
 #Dropdown list multiple, publish keys
 
-`Retuns: Comma Separated String of Prevalue IDs`
+`Returns: Comma Separated String of Prevalue IDs`
 
-Displays a list of preset values as a list where multiple values can be selected. The value saved is a comma separeted string of prevalue IDs, the Prevalue text can be retrived using the umbraco.library.GetPreValueAsString method in XSLT or Razor
+Displays a list of preset values as a list where multiple values can be selected. The value saved is a comma separated string of prevalue IDs, the Prevalue text can be retrieved using the umbraco.library.GetPreValueAsString method in XSLT or Razor
 
 ##Data Type Definition Example
 

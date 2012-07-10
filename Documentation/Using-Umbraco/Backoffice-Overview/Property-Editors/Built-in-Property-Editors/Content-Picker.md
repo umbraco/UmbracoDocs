@@ -2,7 +2,7 @@
 
 `Returns: Node ID`
 
-The content picker opens a simple modal to pick a specific page from the content structure. The value saved is the selected nodes's ID. 
+The content picker opens a simple modal to pick a specific page from the content structure. The value saved is the selected nodes ID. 
 
 ##Data Type Definition Example
 

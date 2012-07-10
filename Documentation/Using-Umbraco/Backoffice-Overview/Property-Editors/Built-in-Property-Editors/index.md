@@ -3,13 +3,13 @@
 This page contains a list of all the built-in Umbraco property editors and a short description of what they do:
 
 ##[Checkbox list](Checkbox-List.md)
-Displays a list of preset values as a list of checkbox controls. The preset values are modified in the developer section under "data types" / checkbox list where new items can be added. The value saved is a comma separeted string of prevalue IDs
+Displays a list of preset values as a list of checkbox controls. The preset values are modified in the developer section under "data types" / checkbox list where new items can be added. The value saved is a comma separated string of prevalue IDs
 
 ##[Color Picker](Color-Picker.md)
 Adds a list of approved colours which can be selected by clicking. The approved colours need to be added as hex values (without the #) in the prevalues field. i.e. cccccc
 
 ##[Content Picker](Content-Picker.md)
-The content picker opens a simple modal to pick a specific page from the content structure. The value saved is the selected nodes's ID. 
+The content picker opens a simple modal to pick a specific page from the content structure. The value saved is the selected nodes ID. 
 
 ##[Date/Time](Date-Time.md)
 Displays a calendar UI for selecting dates and time, the value saved is a standard dateTime value
@@ -21,13 +21,13 @@ Displays a calendar UI for selecting dates, the value saved is a standard dateTi
 Displays a checkbox list of child dictionary items for a named dictionary item
 
 ##[Dropdown list multiple, publish keys](Dropdown-Multiple-Publish-Keys.md)
-Displays a list of preset values as a list where multiple values can be selected. The value saved is a comma separeted string of prevalue IDs, the Prevalue text can be retrived using the umbraco.library.GetPreValueAsString method in XSLT or Razor
+Displays a list of preset values as a list where multiple values can be selected. The value saved is a comma separated string of prevalue IDs, the Prevalue text can be retrieved using the umbraco.library.GetPreValueAsString method in XSLT or Razor
 
 ##[Dropdown list multiple](Dropdown-Multiple.md)
-Displays a list of preset values as a list where multiple values can be selected. The value saved is a comma separeted string of the text values. The prevalue ID's are not accessible, use the [Dropdown list multiple, publish keys](Dropdown-Multiple-Publish-Keys.md) instead if you need the prevalue IDs.
+Displays a list of preset values as a list where multiple values can be selected. The value saved is a comma separated string of the text values. The prevalue ID's are not accessible, use the [Dropdown list multiple, publish keys](Dropdown-Multiple-Publish-Keys.md) instead if you need the prevalue IDs.
 
 ##[Dropdown list, publishing keys](Dropdown-Publish-Keys.md)
-Displays a list of preset values as a list. The value saved is a prevalue ID. The Prevalue text can be retrived using the umbraco.library.GetPreValueAsString method in XSLT or Razor.
+Displays a list of preset values as a list. The value saved is a prevalue ID. The Prevalue text can be retrieved using the umbraco.library.GetPreValueAsString method in XSLT or Razor.
 
 ##[Dropdown list](Dropdown.md)
 Displays a list of preset values as a list. The value saved is a text value. The prevalue ID is not accessible, use the [Dropdown list, publishing keys](Dropdown-Publish-Keys.md) instead if you need the prevalue ID.
@@ -64,7 +64,7 @@ The current version supports:
 * Set a maximum number of nodes to be selected, by default this is unlimited
 * Information tooltip display for each selected item which can be toggled on/off
 * The tooltip display contains a link to edit the selected item
-* The option to save as valid XML data for easy retrieval even in XSLT, OR saving as CSV (comma seperated values)
+* The option to save as valid XML data for easy retrieval even in XSLT, OR saving as CSV (comma separated values)
 * Drag/Drop sorting of selected nodes
 
 
@@ -89,7 +89,7 @@ The Slider data-type makes use of the jQuery UI Slider plugin; which makes selec
 Slider was originally in uComponents but was included in the Umbraco Core v4.8 
 
 ##Tags
-A textbox that allows you to use use multiple tags on a docType - This is what is used on Blog4Umbraco and is perfect if you need to categorise data.  You can specify a TAG Group when creating new versions of this datatype, in case you need to use TAGS on different sections of your site (i.e  News, Article, Events).
+A textbox that allows you to use multiple tags on a docType - This is what is used on Blog4Umbraco and is perfect if you need to categorise data.  You can specify a TAG Group when creating new versions of this datatype, in case you need to use TAGS on different sections of your site (i.e  News, Article, Events).
 
 ##Textbox multiple
 A simple textarea control to import text
@@ -111,7 +111,7 @@ A very scaled down editor which only has bold, italic and link - It does not ren
 ##umbraco usercontrol wrapper
 
 ##Upload field
-Adds an upload field, which allows documents or images to be uploaded to umbraco. This does nto add them to the media library, they are simply added to the document data.
+Adds an upload field, which allows documents or images to be uploaded to umbraco. This does not add them to the media library, they are simply added to the document data.
 
 ##XPath CheckBoxList
 Uses an XPath expression to select nodes from the content tree to use as the checkbox options. The advantage of using XPath to define the nodes to use is that it allows a granular selection throughout the whole tree.
@@ -123,7 +123,7 @@ The property value stored can be a CSV string or an XML fragment of Node Ids or 
 XPath CheckBoxList was originally in uComponents but was included in the Umbraco Core v4.8
 
 ##XPath DropDownList
-Uses an XPath expression to select nodes from the content tree to use as the dropdown options. The advantage of using XPath to define the nodes to use is that it allows a granular selection thoughout the whole tree.
+Uses an XPath expression to select nodes from the content tree to use as the dropdown options. The advantage of using XPath to define the nodes to use is that it allows a granular selection throughout the whole tree.
 
 The property value stored can be the Node Id or Node name.
 

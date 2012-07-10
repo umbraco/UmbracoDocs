@@ -2,7 +2,7 @@
 
 `Retuns: Prevalue ID`
 
-Displays a list of preset values as a list. The value saved is a prevalue ID. The Prevalue text can be retrived using the umbraco.library.GetPreValueAsString method in XSLT or Razor.
+Displays a list of preset values as a list. The value saved is a prevalue ID. The Prevalue text can be retrieved using the umbraco.library.GetPreValueAsString method in XSLT or Razor.
 
 ##Data Type Definition Example
 

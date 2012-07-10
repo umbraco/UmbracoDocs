@@ -2,7 +2,7 @@
 
 `Returns: Comma Separated String`
 
-Displays a list of preset values as a list of checkbox controls. The preset values are modified in the developer section under "data types" / checkbox list where new items can be added. The text saved is a comma separeted string of text values. 
+Displays a list of preset values as a list of checkbox controls. The preset values are modified in the developer section under "data types" / checkbox list where new items can be added. The text saved is a comma separated string of text values. 
 
 NOTE: Unlike other data types, the Prevalue IDs are not directly accessible in xslt or razor
 
