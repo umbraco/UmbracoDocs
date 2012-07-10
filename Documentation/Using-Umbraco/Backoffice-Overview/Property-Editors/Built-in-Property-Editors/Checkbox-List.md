@@ -30,9 +30,9 @@ NOTE: Unlike other data types, the Prevalue IDs are not directly accessible in x
 ##Razor (DynamicNode) Example
 
 	@{                                                   
-	  if (@Model.HasValue("fruitList")){                                                        
+	  if (Model.HasValue("fruitList")){                                                        
 	    <ul>                                                        
-	      @foreach(var item in @Model.GetProperty("fruitList").Value.Split(',')) { 
+	      @foreach(var item in Model.GetProperty("fruitList").Value.Split(',')) { 
 	        <li>@item</li>
 	      }
 	    </ul>                                                                                        

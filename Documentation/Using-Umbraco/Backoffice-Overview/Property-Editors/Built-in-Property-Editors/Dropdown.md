@@ -21,7 +21,7 @@ Displays a list of preset values as a list. The value saved is a text value. The
 ##Razor (DynamicNode) Example
 
 	@{
-	  if (@Model.HasValue("superHero")){                                                     
+	  if (Model.HasValue("superHero")){                                                     
 	   <p>@Model.superHero</p>                                                                                    
 	  }
 	}

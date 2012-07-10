@@ -21,7 +21,7 @@ Displays a list of preset values as a list. The value saved is a prevalue ID. Th
 ##Razor (DynamicNode) Example
 
 	@{
-	  if (@Model.HasValue("superHero")){                                                     
-	    <p>@umbraco.library.GetPreValueAsString(Convert.ToInt32(@Model.superHero)) - @Model.superHero</p>                                                                                               
+	  if (Model.HasValue("superHero")){                                                     
+	    <p>@umbraco.library.GetPreValueAsString(Convert.ToInt32(Model.superHero)) - @Model.superHero</p>                                                                                               
 	  }
 	}

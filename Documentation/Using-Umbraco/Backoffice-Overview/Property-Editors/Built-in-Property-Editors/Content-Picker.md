@@ -23,8 +23,8 @@ The content picker opens a simple modal to pick a specific page from the content
 ##Razor (DynamicNode) Example
 
 	@{
-	  if (@Model.HasValue("contentPicker")){
-	    var node = @Library.NodeById(@Model.contentPicker);
+	  if (Model.HasValue("contentPicker")){
+	    var node = @Library.NodeById(Model.contentPicker);
 	    <a href="@node.Url">@node.Name</a>
 	  }
 	}
