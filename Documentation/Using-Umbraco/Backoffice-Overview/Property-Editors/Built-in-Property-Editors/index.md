@@ -38,7 +38,7 @@ Used with mainly with container Media Types, the Folder Browser displays a list 
 ##[Image Cropper](Image-Cropper.md)
 The Image Cropper property editor displays an editor to allow backoffice users to position pre-defined image crops on media or content items. The crops are saved to disk within the media item folder path.
 
-##Integer
+##[Integer](Integer.md)
 A simple textbox to input a numeric value
 
 ##Macro Container
