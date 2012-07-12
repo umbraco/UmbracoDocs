@@ -44,7 +44,27 @@ All documents in umbraco is versioned. So everytime a document is changed, a new
 	
 		Document d = new Document(1234 versionGuid);
 
-
+##Creating a Document and setting properties
+To create and store a `Document` you need a `DocumentType`, calling `MakeNew()` the document is instantly persisted and property values can be set. A property expects a object so any value can be set, however, ensure the datatype associated with the property can handle the valuetype.
+	
+	DocumentType dt = DocumentType.GetByAlias("Textpage");
+	User u = new User(0);
+	int parentId = 1234;
+	
+	Document d = Document.MakeNew("name of document", dt, u, parentId); 
+	//set a string
+	d.getProperty("bodyText").Value = "Hello");
+	//set a date
+	d.getProperty("date").Value = DateTime.Now;
+	//set a HttpPostedFile 
+	d.getProperty("upload").Value = Request.Files[0];
+	
+	//publish the document
+	d.Publish(user);
+	
+	//Inform the cache it should update
+	umbraco.librarh.UpdateDocumentCache(d.Id);
+	
 ##[Document methods and properties](document.md) 
 The `Document` class itself has a big collection of methods and properties, please see the seperate [Document](document.md) page for this.
 

@@ -63,6 +63,19 @@ Returns a `Property[]` containing all property data of the given `Document`, eac
         var alias = p.PropertyType.Alias;
     } 
 
+###.getProperty
+Returns or sets  a `Property` describing the property with a given alias
+
+	var doc = new Document(1223);
+	var bodyText = doc.getProperty("bodyText);
+	
+	//get the bodyText value	
+	var bodyTextValue = bodyText.Value
+	
+	//sets the bodyText value
+	bodytext.Value = "<p>hello</p>";
+	
+
 ###.HasChildren
 Returns `Bool` indicating whether the given `Document` has any documents just below it
 

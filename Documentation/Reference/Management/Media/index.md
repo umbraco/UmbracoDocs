@@ -36,6 +36,21 @@ if noSetup is set to true, only the Id, property is set on the returned `Media` 
     
         Media d = new Media(guid, true); 
 
+##Creating a Media item and setting properties
+To create and store a `Media` you need a `MediaType`, calling `MakeNew()` the media is instantly persisted and property values can be set. A property expects a object so any value can be set, however, ensure the datatype associated with the property can handle the valuetype.
+	
+	MediaType dt =MediaType.GetByAlias("Textpage");
+	User u = new User(0);
+	int parentId = 1234;
+	
+	Media d = Media.MakeNew("name of media", dt, u, parentId); 
+	//set a string
+	d.getProperty("bodyText").Value = "Hello");
+	//set a date
+	d.getProperty("date").Value = DateTime.Now;
+	//set a HttpPostedFile 
+	d.getProperty("umbracoFile").Value = Request.Files[0];
+	
 
 ##[Media methods and properties](media.md) 
 The `Media` class itself has a big collection of methods and properties, please see the seperate [Media](media.md) page for this.
