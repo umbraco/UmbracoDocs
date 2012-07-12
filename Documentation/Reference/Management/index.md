@@ -9,11 +9,14 @@ Content Types, defines the data you work with, use the DocumentType and MediaTyp
 ##[Documents](Documents/index.md)
 Create, Update, Move, Copy, delete and publish documents. 
 
-##[Media](Media/index.md)
-Create, Update, Move, Copy and delete media. **Coming soon**
+##[Media](Medias/index.md)
+Create, Update, Move, Copy and delete media. 
 
 ##[Members](Members/index.md)
 Create, Update, Move, Copy, assign groups and delete members. **Coming soon**
+
+##[Relations](Relations/index.md)
+Creating and finding relations between umbraco items.
 
 ##[Templates](Templates/index.md)
 Create templates programatically  **Coming soon**
