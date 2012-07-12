@@ -37,7 +37,7 @@ if noSetup is set to true, only the Id, property is set on the returned `Media` 
         Media d = new Media(guid, true); 
 
 
-##[Media methods and properties](Media.md) 
+##[Media methods and properties](media.md) 
 The `Media` class itself has a big collection of methods and properties, please see the seperate [Media](media.md) page for this.
 
 

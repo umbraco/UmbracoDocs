@@ -9,7 +9,7 @@ Content Types, defines the data you work with, use the DocumentType and MediaTyp
 ##[Documents](Documents/index.md)
 Create, Update, Move, Copy, delete and publish documents. 
 
-##[Media](Medias/index.md)
+##[Media](Media/index.md)
 Create, Update, Move, Copy and delete media. 
 
 ##[Members](Members/index.md)
