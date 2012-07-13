@@ -1,5 +1,5 @@
 #Hello World
-_Goes through the code, requiered to display the current page's name, id, url and its chil pages_
+_Goes through the code, required to display the current page's name, ID, URL and child pages_
 
 ##Getting values from the current page
 Using Razor in an Umbraco Macro, the current page, is accessible through the `Model` keyword, as a `dynamic` object.
@@ -14,7 +14,7 @@ Using Razor in an Umbraco Macro, the current page, is accessible through the `Mo
 	<p>My page id is: @Model.Id</p>
 
 ##Getting a collection of child pages of the current page.
-All pages in Razor, contains a standard property called `Children`, this returns a `DynamicNodeList` contaning all child pages, these can be iterated through 
+All pages in Razor, contains a standard property called `Children`, this returns a `DynamicNodeList` containing all child pages, these can be iterated through 
 
 	<ul>
 		@foreach(var child in Model.Children){
