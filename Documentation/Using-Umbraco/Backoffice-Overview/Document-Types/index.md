@@ -3,9 +3,9 @@ _A Document Type is a way to structure the data of your website. A Document Type
 ##Creating Document Types##
 Document Types are created in the 'Settings' section of the Backoffice by rightclicking on the node 
 Document Types and choosing 'Create' in the context menu:
-![creating a Document Type in the Settings section](images/documenttype-create.gif)
+![creating a Document Type in the Settings section](images/documenttype-create.gif?raw=true)
 A new Document Type has 4 configuration tabs:
-![Document Type configuation tabs](images/documenttype-configuration-tabs.gif)
+![Document Type configuation tabs](images/documenttype-configuration-tabs.gif?raw=true)
 ###Info###
 The Info tab is where you set the Name and Alias of your Document Type. Under this tab you also define which Templates 
 can render the data this Document Type holds. Also the display options are set under the Info tab, like the Icon with 
