@@ -120,7 +120,7 @@ Returns a `Property` with the given alias. The properties contain the Media data
 
     var media = new Media(1234);
     media.getProperty("bodyText").Value = "<p>hello</p>";
-    media.getProperty("dateField").Valye = DateTime.Now;
+    media.getProperty("dateField").Value = DateTime.Now;
 
 ###.Move(1234)
 Moves the Media, and places it as a child under the the Media with the given ID.
