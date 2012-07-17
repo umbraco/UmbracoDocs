@@ -28,7 +28,7 @@ If checked, the content editor is able to view thumbnails of the images while se
         <img src="{$selectedMedia/umbracoFile}" width="{$selectedMedia/umbracoWidth}" height="{$selectedMedia/umbracoHeight}" alt="{$selectedMedia/@nodeName}" />
     </xsl:if>
 
-##Razor (DynamicNode & Dynamic Media) Example
+##Razor (DynamicNode & DynamicMedia) Example
 There are several different techniques you can use to retrieve the media from a media picker using DynamicNode & DynamicMedia, below are three examples.
 
       @{
