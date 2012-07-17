@@ -11,7 +11,8 @@ If checked, the content editor is shown a thumbnail once the media item is selec
 ![Media Picker Preview](images/Media-Picker-Preview.jpg?raw=true)
 
 ###Show advanced dialog
-If checked, the content editor is able to view thumbnails of the images while selecting and also is able to upload new media directly within the picker (shown below).
+If checked, the content editor is able to view thumbnails of the images while selecting and also is able to upload new media directly within the picker.
+![Media Picker Advanced Setting](images/Media-Picker-Advanced.jpg?raw=true)
 
 ##Data Type Definition Example
 
@@ -19,7 +20,7 @@ If checked, the content editor is able to view thumbnails of the images while se
 
 ##Content Example
 
-![Media Picker Advanced Setting](images/Media-Picker-Advanced.jpg?raw=true)
+![Media Picker Content](images/Media-Picker-Content.jpg?raw=true)
 
 ##XSLT Example
 
