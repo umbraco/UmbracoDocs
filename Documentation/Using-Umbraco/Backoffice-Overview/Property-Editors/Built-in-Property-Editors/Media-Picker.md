@@ -8,10 +8,12 @@ The media picker opens a simple modal to pick a specific media item from the med
 
 ###Show preview
 If checked, the content editor is shown a thumbnail once the media item is selected.
+
 ![Media Picker Preview](images/Media-Picker-Preview.jpg?raw=true)
 
 ###Show advanced dialog
 If checked, the content editor is able to view thumbnails of the images while selecting and also is able to upload new media directly within the picker.
+
 ![Media Picker Advanced Setting](images/Media-Picker-Advanced.jpg?raw=true)
 
 ##Data Type Definition Example
