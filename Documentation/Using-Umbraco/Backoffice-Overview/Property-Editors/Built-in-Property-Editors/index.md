@@ -43,8 +43,8 @@ A simple textbox to input a numeric value
 
 ##Macro Container
 
-##Media Picker
-The content picker opens a simple modal to pick a specific media item from the media tree. The value saved is the selected media node ID. This ID can be used in xslt with umbraco.library:GetMedia(ID) to get the media items xml data
+##[Media Picker](Media-Picker.md)
+The media picker opens a simple modal to pick a specific media item from the media tree. The value saved is the selected media ID.
 
 ##Member Picker
 Displays a simple dropdown with all available members in. A single member can be selected. The value saved is the ID of the member
