@@ -20,7 +20,13 @@ If checked, the content editor is able to view thumbnails of the images while se
 
 ![Media Picker Data Type Definition](images/Media-Picker-DataType.jpg?raw=true)
 
-##Content Example
+##Content Example 
+
+Standard Media Picker
+
+![Media Picker Content](images/Media-Picker-Content-Standard.jpg?raw=true)
+
+Media Picker with Show Advanced Dialog checked
 
 ![Media Picker Content](images/Media-Picker-Content.jpg?raw=true)
 
