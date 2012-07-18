@@ -28,12 +28,15 @@ Displays a simple select dropdown with all available members in. A single member
 	@if (Model.HasValue("pageContact"))
 	{
 	    var member = new umbraco.cms.businesslogic.member.Member(Model.pageContact);
-	    var nodeName = member.Text;   
+	    //built in properties
+		var nodeName = member.Text;   
 	    var userName = member.LoginName;
 	    var email = member.Email;
+		//custom property
+		var twitter = member.getProperty("twitter").Value;
 	
 	    <text>Name: </text> @nodeName 
 	    <text>Username: </text> @userName<br />
-	    <text>Email: </text> @email<br />
-	 
+	    <text>Email: </text> @email<br />	
+	    <text>Twitter : </text> @twitter  
 	}
