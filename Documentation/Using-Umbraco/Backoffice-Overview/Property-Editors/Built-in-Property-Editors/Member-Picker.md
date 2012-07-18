@@ -40,3 +40,16 @@ Displays a simple select dropdown with all available members in. A single member
 	    <text>Email: </text> @email<br />	
 	    <text>Twitter : </text> @twitter  
 	}
+
+##Razor (uQuery) Example
+
+	@{
+	  var member = uQuery.GetMember(uQuery.GetCurrentNode().GetProperty<int>("pageContact"));
+	    if (member != null)
+	      {
+	        <text>Name: </text>@member.Text<br/>
+	        <text>Username: </text>@member.LoginName<br/>
+	        <text>Email: </text>@member.Email<br/>
+	        <text>Twitter: </text>@(member.GetProperty<string>("twitter"))
+	      }
+	}
