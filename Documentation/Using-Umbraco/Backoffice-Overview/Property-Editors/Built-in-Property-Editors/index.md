@@ -112,6 +112,7 @@ The Ultimate picker is a flexible document picker where you can set the root for
 A very scaled down editor which only has bold, italic and link - It does not render the HTML live like the richtext editor, but shows the raw HTML and simply surrounds the selected text with the limited HTML tag buttons at the top.
 
 ##umbraco usercontrol wrapper
+The umbraco usercontrol wrapper datatype enables to create a custom Data type that references a .NET User Control, given that the User Control dll has been copied to the /bin folder and the User Control ascx file has been copied to the /usercontrols directory
 
 ##Upload field
 Adds an upload field, which allows documents or images to be uploaded to umbraco. This does not add them to the media library, they are simply added to the document data.
