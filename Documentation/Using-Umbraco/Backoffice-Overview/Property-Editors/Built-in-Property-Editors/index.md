@@ -80,6 +80,7 @@ Is a non-editable control, can only be used to display a present text. It can al
 ##Picker Relations
 
 ##Radiobutton List
+Pretty much like the name indicates this Data type enables editors to choose from list of radiobuttons. The settings for this data type include the data storage type (Date, Integer, Ntext, Nvarchar) and the prevalues the RadioButton list should hold.
 
 ##Related Links
 This datatype allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
