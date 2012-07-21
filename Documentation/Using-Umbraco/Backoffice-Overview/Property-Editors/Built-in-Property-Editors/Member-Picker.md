@@ -2,7 +2,7 @@
 
 `Returns: Member ID`
 
-Displays a simple select dropdown with all available members in. A single member can be selected. The value saved is the member ID.
+Displays a simple select dropdown with all available members. A single member can be selected. The value saved is the member ID.
 
 ##Data Type Definition Example
 
