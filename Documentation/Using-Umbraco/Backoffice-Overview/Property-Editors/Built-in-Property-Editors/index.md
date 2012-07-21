@@ -47,7 +47,7 @@ The Macro Container Data type allows content editors to insert one or more macro
 ##[Media Picker](Media-Picker.md)
 The media picker opens a simple modal to pick a specific media item from the media tree. The value saved is the selected media ID.
 
-##Member Picker
+##[Member Picker](Member-Picker.md)
 Displays a simple dropdown with all available members in. A single member can be selected. The value saved is the ID of the member
 
 ##Multi-Node Tree Picker
