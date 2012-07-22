@@ -16,7 +16,7 @@ Defines if the generated crop images are saved to disk or created on demand, whe
 Defines if the property name is displayed to the user when selecting the crops.
 
 ###Crops
-This area allows you define multiple crops which the backoffice user is presented to selected on the media item.  There are controls on the right to allow you to rearrange the order (Up, Down) and remove crop definitions. You cannot edit crop definitions but you can delete and recreate with different settings using the same Name.
+This area allows you to define multiple crops which the backoffice user is presented to select on the media item.  There are controls on the right to allow you to rearrange the order (Up, Down) and remove crop definitions. You cannot edit crop definitions but you can delete and recreate with different settings using the same Name.
 
 The following settings are used for a individual crop definition:
 
