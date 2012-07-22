@@ -23,33 +23,32 @@ Displays a simple select dropdown with all available members. A single member ca
 	  </p>
 	</xsl:if>
 
-##Razor (DynamicNode) Example
+##Razor (DynamicNode & Members API) Example
 
-	@if (Model.HasValue("pageContact"))
-	{
-	    var member = new umbraco.cms.businesslogic.member.Member(Model.pageContact);
-	    //built in properties
-		var nodeName = member.Text;   
-	    var userName = member.LoginName;
-	    var email = member.Email;
-		//custom property
-		var twitter = member.getProperty("twitter").Value;
-	
-	    <text>Name: </text> @nodeName 
-	    <text>Username: </text> @userName<br />
-	    <text>Email: </text> @email<br />	
-	    <text>Twitter : </text> @twitter  
+	@{
+	  if (Model.HasValue("pageContact"))
+	  {
+	    var member = new umbraco.cms.businesslogic.member.Member(Model.pageContact);  
+	    //member properties
+	    <text>Name: </text>  @member.Text
+	    <text>Username: </text> @member.LoginName<br />
+	    <text>Email: </text> @member.Email<br />  
+	    //custom properties
+	    <text>Twitter : </text> @member.getProperty("twitter").Value
+	  }
 	}
 
 ##Razor (uQuery) Example
 
 	@{
-	  var member = uQuery.GetMember(uQuery.GetCurrentNode().GetProperty<int>("pageContact"));
+		var member = uQuery.GetMember(uQuery.GetCurrentNode().GetProperty<int>("pageContact"));
 	    if (member != null)
-	      {
+	    {
+	    	//member properties
 	        <text>Name: </text>@member.Text<br/>
 	        <text>Username: </text>@member.LoginName<br/>
 	        <text>Email: </text>@member.Email<br/>
+	        //custom properties
 	        <text>Twitter: </text>@(member.GetProperty<string>("twitter"))
-	      }
+	     }
 	}
