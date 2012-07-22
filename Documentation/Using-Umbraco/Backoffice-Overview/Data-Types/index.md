@@ -26,6 +26,7 @@ Displays a list of preset values as a list where only a single can be selected.
 The preset values are modified in the developer section under "data types" / Dropdown multple where 
 new items can be added. The value saved is the selected value as a string.
 ###Folder Browser###
+Used mainly with container Media Types, the Folder Browser displays a list of thumbnail images. Every Media item contained within the folder that has a generated thumbnail will be listed.
 ###Label###
 Is a non-editable control, can only be used to display a present text. It can also be used in the 
 media section to load in values related to the node, such as width, height and file size.
@@ -39,6 +40,7 @@ The value saved is the ID of the member
 ###Numeric###
 A simple textbox to imput a numeric value.
 ###Radiobox###
+this Data type enables editors to choose from list of radiobuttons. Options for the Radiobox need to be set in the Developer section by adding prevalues to the Data type
 ###Related Links###
 This datatype allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
 ###Richtext Editor###
@@ -58,6 +60,37 @@ A simple checkbox which saves either 0 or 1, depending on the checkbox being che
 Adds an upload field, which allows documents or images to be uploaded to umbraco. This does nto add them to the media library, they are simply added to the document data.
 ##Custon Data-Types##
 If what you're after is not included in the Default Data-Types, you can create a custom Data-Type. Go to the Developer section and right click the Data Types node to create a new custom Data-Type. Reference your custom Data-Type to a [Property Editor](../Property-Editors/index.md). Now you can select your custom Data-Type in the Type dropdown of a Document Type property.
+Since Umbraco v4.8 some components from the popular uComponents package have been built in to the core of Umbraco. To take advantage of these new Property Editors, create a custom Data type:
+### Multi-Node Tree Picker
+The multi-node tree picker data type allows your content editor to choose multiple nodes in the content or media trees to be saved with the current document type. This is useful for all sorts of situations such as relating a page to numerous other pages, creating a list of images/files from the media section, etc...
+The current version supports:
 
+* Rendering either the Media or Content tree
+* Choosing a starting node ID for the tree
+* An XPath filter to match the nodes that should, OR should not be clickable/selectable in the tree
+* Thumbnail preview for selected images when working with the media tree
+* Thunbmail preview can be enabled/disabled
+* Set a maximum number of nodes to be selected, by default this is unlimited
+* Information tooltip display for each selected item which can be toggled on/off
+* The tooltip display contains a link to edit the selected item
+* The option to save as valid XML data for easy retrieval even in XSLT, OR saving as CSV (comma separated values)
+* Drag/Drop sorting of selected nodes
+
+
+###Multiple Textstring###
+The Multiple Textstring data-type enables a content editor to make a list of text items. For best use with an unordered-list.
+###Slider###
+The Slider data-type makes use of the jQuery UI Slider plugin; which makes selected elements into sliders. The slider can be moved with the mouse or the arrow keys.
+###XPath CheckBoxList###
+Uses an XPath expression to select nodes from the content tree to use as the checkbox options. The advantage of using XPath to define the nodes to use is that it allows a granular selection throughout the whole tree.
+
+Can use $currentPage and also $parentPage within the XPath expression (including use within any XPath predicates). ($parentPage allows the expression to be evaluated when the current node is unpublished, and the XPath expression depends on finding nodes based on a current ancestor).
+
+The property value stored can be a CSV string or an XML fragment of Node Ids or Node names.
+
+###XPath DropDownList###
+Uses an XPath expression to select nodes from the content tree to use as the dropdown options. The advantage of using XPath to define the nodes to use is that it allows a granular selection throughout the whole tree.
+
+The property value stored can be the Node Id or Node name.
 
  
