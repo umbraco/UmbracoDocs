@@ -86,7 +86,7 @@ Pretty much like the name indicates this Data type enables editors to choose fro
 This datatype allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
 
 ##Slider
-The Slider data-type makes use of the jQuery UI Slider plugin; which makes selected elements into sliders. The slider can be moved with the mouse or the arrow keys.
+The Slider data-type makes use of the jQuery UI Slider plugin, which makes selected elements into sliders. The slider can be moved with the mouse or the arrow keys.
 
 Slider was originally in uComponents but was included in the Umbraco Core v4.8 
 
