@@ -57,7 +57,7 @@ A simple checkbox which saves either 0 or 1, depending on the checkbox being che
 ###Upload###
 Adds an upload field, which allows documents or images to be uploaded to umbraco. This does nto add them to the media library, they are simply added to the document data.
 ##Custon Data-Types##
-
+If what you're after is not included in the Default Data-Types, you can create a custom Data-Type. Go to the Developer section and right click the Data Types node to create a new custom Data-Type. Reference your custom Data-Type to a [Property Editor](../Property-Editors/index.md). Now you can select your custom Data-Type in the Type dropdown of a Document Type property.
 
 
  
