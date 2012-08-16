@@ -1,21 +1,19 @@
-@inherits PartialViewMacroPage
-@using Umbraco.Cms.Web
-@using Umbraco.Cms.Web.Macros
-@using Umbraco.Framework
+@inherits umbraco.MacroEngines.DynamicNodeContext
+
 
 @{   
     @*
-    === Macro Parameters To Create ===
+    Macro Parameters To Create
     Show:True   Alias:twitterUsername       Name:Twitter Username       Type:Textstring     Defaults to: umbraco
-    Show:True   Alias:includeRTs            Name:Include Retweets?      Type:Textstring     Defaults to: false
-    Show:True   Alias:excludeReplies        Name:Exclude @Replies?      Type:Textstring     Defaults to: false
+    Show:True   Alias:includeRTs            Name:Include Retweets       Type:Textstring     Defaults to: false
+    Show:True   Alias:excludeReplies        Name:Exclude Replies        Type:Textstring     Defaults to: false
     Show:True   Alias:noTweets              Name:Number of Tweets       Type:Integer        Defaults to: 1
-    *@   
+    *@
     
-    var twitterUsername = String.IsNullOrEmpty(Model.MacroParameters.twitterUsername) ? "umbraco" : Model.MacroParameters.twitterUsername;
-    var includeRTs      = String.IsNullOrEmpty(Model.MacroParameters.includeRTs) ? false : Model.MacroParameters.includeRTs;
-    var excludeReplies  = String.IsNullOrEmpty(Model.MacroParameters.excludeReplies) ? false : Model.MacroParameters.excludeReplies;
-    var noTweets        = String.IsNullOrEmpty(Model.MacroParameters.noTweets) ? 1 : Model.MacroParameters.noTweets;
+    var twitterUsername = String.IsNullOrEmpty(Parameter.twitterUsername) ? "umbraco" : Parameter.twitterUsername;
+    var includeRTs      = String.IsNullOrEmpty(Parameter.includeRTs) ? false : Parameter.includeRTs;
+    var excludeReplies  = String.IsNullOrEmpty(Parameter.excludeReplies) ? false : Parameter.excludeReplies;
+    var noTweets        = String.IsNullOrEmpty(Parameter.noTweets) ? 1 : Parameter.noTweets;
     
 
     @* Twitter JSON URL *@
@@ -25,8 +23,8 @@
             includeRTs,
             excludeReplies,
             noTweets);                
-            
 }
+
 
 @* Fetch the JSON from Twitters API *@
 @using (var client = new System.Net.WebClient())
