@@ -96,6 +96,14 @@ This setting determines if the data is stored as CSV data or XML.
 
 ![Media Picker Data Type Definition](images/MNTP-Settings-Tooltip.jpg?raw=true) 
 
+Example of XML data:
+  
+	<MultiNodePicker>
+		<nodeId>1052</nodeId>
+		<nodeId>1051</nodeId>
+		<nodeId>1050</nodeId>
+	</MultiNodePicker>
+
 ###Pixel height of the tree control box
 
 This setting determines the height of the data type when displayed to the editor.
@@ -110,4 +118,12 @@ This setting determines the height of the data type when displayed to the editor
 
 ##XSLT Example
 
-##Razor (DynamicNode) Example
+##Razor (DynamicXML & DynamicNode) Example
+
+	@{
+		foreach (var id in Model.mntpFeaturePicker){
+			var currentNode = Library.NodeById(id.InnerText);
+			<p>@currentNode.Name</p>		
+		}
+	}
+
