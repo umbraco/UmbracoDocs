@@ -27,7 +27,7 @@ This setting determines if the tree picker nodes are selected by a particular pa
 
 This setting determines if the XPath expression is evaluated from the node being currently edited or from the root of the global tree.
 
-When "XPath Type" is set to "Global", the expression is evaulated by using [uQuery.GetNodesByXPath](../../../Reference/Querying/uQuery/Content/Nodes.md) This method provides some very useful tokens such as $ancestorOrSelf which allow complex expressions.
+When "XPath Type" is set to "Global", the expression is evaulated by using [uQuery.GetNodesByXPath](../../../../Reference/Querying/uQuery/Content/Nodes.md) This method provides some very useful tokens such as $ancestorOrSelf which allow complex expressions.
 
 ![Media Picker Data Type Definition](images/MNTP-Settings-XPathType.jpg?raw=true) 
 
