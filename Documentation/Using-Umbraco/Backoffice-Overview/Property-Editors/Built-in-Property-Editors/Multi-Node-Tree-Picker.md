@@ -118,12 +118,57 @@ This setting determines the height of the data type when displayed to the editor
 
 ##XSLT Example
 
-##Razor (DynamicXML & DynamicNode) Example
+For XML data storage:
 
+	<xsl:if test="$currentPage/mntpFeaturePicker/MultiNodePicker/nodeId">
+		<xsl:for-each select="$currentPage/mntpFeaturePicker/MultiNodePicker/nodeId">
+			<xsl:variable name="currentnode" select="umbraco.library:GetXmlNodeById(.)" />
+			<!-- render only published nodes -->
+			<xsl:if test="count($currentnode/error) = 0">			
+				<p><xsl:value-of select="$currentnode/@nodeName" /></p>
+			</xsl:if>			
+		</xsl:for-each>
+	</xsl:if>
+
+For CSV data storage:
+
+	<xsl:if test="string-length($currentPage/mntpFeaturePicker) > 0">  
+	  <xsl:variable name="items" select="umbraco.library:Split($currentPage/mntpFeaturePicker,',')" />  
+	  <xsl:for-each select="$items//value">
+	  	<xsl:variable name="currentnode" select="umbraco.library:GetXmlNodeById(.)" />
+		<!-- render only published nodes -->
+		<xsl:if test="count($currentnode/error) = 0">			
+			<p><xsl:value-of select="$currentnode/@nodeName" /></p>
+		</xsl:if>		  		  		
+	  </xsl:for-each>	  
+	</xsl:if>
+
+##Razor (DynamicNode) Example
+
+For XML data storage:
+
+	@using umbraco.MacroEngines;
 	@{
 		foreach (var id in Model.mntpFeaturePicker){
-			var currentNode = Library.NodeById(id.InnerText);
-			<p>@currentNode.Name</p>		
+			var currentNode = Library.NodeById(id.InnerText);			
+			//render only published nodes
+			if(currentNode.GetType() != typeof(DynamicNull)){
+				<p>@currentNode.Name</p>	
+			}				
 		}
 	}
 
+For CSV data storage:
+
+	@using umbraco.MacroEngines;
+	@{
+		if (Model.HasValue("mntpFeaturePicker")){
+			foreach(var id in Model.GetProperty("mntpFeaturePicker").Value.Split(',')) { 
+				var currentNode = Library.NodeById(id);			
+				//render only published nodes
+				if(currentNode.GetType() != typeof(DynamicNull)){
+					<p>CSV : @currentNode.Name</p>	
+				}					
+			}	                          
+		}
+	}
