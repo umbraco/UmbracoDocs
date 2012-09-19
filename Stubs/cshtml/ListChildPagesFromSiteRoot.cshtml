@@ -1,7 +1,7 @@
 @inherits umbraco.MacroEngines.DynamicNodeContext
 
 @{
-    var root = Model.AncestorsOrself(1)
+    var root = Model.AncestorOrSelf(1);
 }
 
 <ul>
