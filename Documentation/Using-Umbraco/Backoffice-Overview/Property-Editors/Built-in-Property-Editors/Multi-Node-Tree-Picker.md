@@ -159,6 +159,23 @@ For XML data storage:
 		}
 	}
 
+Alternative approach for XML data storage so that all nodes selected (and published) are returned in a single collection
+
+	@using umbraco.MacroEngines
+	@inherits umbraco.MacroEngines.DynamicNodeContext
+	@{  
+	    //convert NodeIds to List by iterating through each node
+	    var NodeIdListObj = new List<object>();    
+	    foreach (var id in Model.mntpFeaturePicker){
+	        NodeIdListObj.Add(id.InnerText);
+	    }
+	    var nodeCollectionFromListObj = @Library.NodesById(NodeIdListObj);
+	    foreach (var item in nodeCollectionFromListObj)
+	    {
+	        <p>@item.Name</p>   
+	    }   
+	}
+
 For CSV data storage:
 
 	@using umbraco.MacroEngines
