@@ -147,7 +147,8 @@ For CSV data storage:
 
 For XML data storage:
 
-	@using umbraco.MacroEngines;
+	@using umbraco.MacroEngines
+	@inherits umbraco.MacroEngines.DynamicNodeContext
 	@{
 		foreach (var id in Model.mntpFeaturePicker){
 			var currentNode = Library.NodeById(id.InnerText);			
@@ -160,15 +161,15 @@ For XML data storage:
 
 For CSV data storage:
 
-	@using umbraco.MacroEngines;
+	@using umbraco.MacroEngines
+	@inherits umbraco.MacroEngines.DynamicNodeContext
 	@{
 		if (Model.HasValue("mntpFeaturePicker")){
-			foreach(var id in Model.GetProperty("mntpFeaturePicker").Value.Split(',')) { 
-				var currentNode = Library.NodeById(id);			
-				//render only published nodes
-				if(currentNode.GetType() != typeof(DynamicNull)){
-					<p>CSV : @currentNode.Name</p>	
-				}					
-			}	                          
+		    string mntpFeaturePicker = @Model.GetProperty("mntpFeaturePicker").Value;
+		    var nodeCollectionFromArray = @Library.NodesById(mntpFeaturePicker.Split(',').ToArray<object>());  
+		    foreach (var item in nodeCollectionFromArray)
+		    {
+		     <p>@item.Name</p>   
+		    }                        
 		}
 	}
