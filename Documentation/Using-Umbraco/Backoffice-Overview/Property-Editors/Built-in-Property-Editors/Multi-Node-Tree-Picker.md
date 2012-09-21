@@ -149,21 +149,7 @@ For XML data storage:
 
 	@using umbraco.MacroEngines
 	@inherits umbraco.MacroEngines.DynamicNodeContext
-	@{
-		foreach (var id in Model.mntpFeaturePicker){
-			var currentNode = Library.NodeById(id.InnerText);			
-			//render only published nodes
-			if(currentNode.GetType() != typeof(DynamicNull)){
-				<p>@currentNode.Name</p>	
-			}				
-		}
-	}
-
-Alternative approach for XML data storage so that all nodes selected (and published) are returned in a single collection
-
-	@using umbraco.MacroEngines
-	@inherits umbraco.MacroEngines.DynamicNodeContext
-	@{  
+	@{    
 	    //convert NodeIds to List by iterating through each node
 	    var NodeIdListObj = new List<object>();    
 	    foreach (var id in Model.mntpFeaturePicker){
@@ -173,7 +159,7 @@ Alternative approach for XML data storage so that all nodes selected (and publis
 	    foreach (var item in nodeCollectionFromListObj)
 	    {
 	        <p>@item.Name</p>   
-	    }   
+	    }              
 	}
 
 For CSV data storage:
@@ -181,12 +167,12 @@ For CSV data storage:
 	@using umbraco.MacroEngines
 	@inherits umbraco.MacroEngines.DynamicNodeContext
 	@{
-		if (Model.HasValue("mntpFeaturePicker")){
-		    string mntpFeaturePicker = @Model.GetProperty("mntpFeaturePicker").Value;
-		    var nodeCollectionFromArray = @Library.NodesById(mntpFeaturePicker.Split(',').ToArray<object>());  
-		    foreach (var item in nodeCollectionFromArray)
-		    {
-		     <p>@item.Name</p>   
-		    }                        
+		if (Model.HasValue("mntpFeaturePickerCSV")){        
+	        string mntpFeaturePickerCSV = @Model.GetProperty("mntpFeaturePickerCSV").Value;
+	        var nodeCollectionFromArray = @Library.NodesById(mntpFeaturePickerCSV.Split(',').ToArray<object>());  
+	        foreach (var item in nodeCollectionFromArray)
+	        {
+	         <p>@item.Name</p>   
+	        }                
 		}
 	}
