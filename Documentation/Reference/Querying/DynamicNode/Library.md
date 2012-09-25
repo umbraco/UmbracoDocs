@@ -100,7 +100,7 @@ Here are the other overloads:
 Rather than explaining each of the overloads, which would be boring for all of us, there are 3 input types, and for each of those, 3 overloads.
 addElipsis controls whether the … will be added and "treatTagsAsContent" effectively disables the HTML tag parsing portion of this method.
 
-###.StripHTML(IHtmlString html)
+###.StripHtml(IHtmlString html)
 As the name suggests, this method will strip the HTML tags out of a block of HTML and return just the text. For example:
 
 This is some text `<strong>` and this is some bold text`</strong>` in a sentence
@@ -124,11 +124,11 @@ Here are the overloads:
 
 These methods are fairly self explainatory, but the simple use case is this:
 
-	@Library.StripHTML(Model.rteContent)
+	@Library.StripHtml(Model.rteContent)
 
 If you only wanted to strip specific tags, such as the dreaded `<pre>`, you could do this:
 
-	@Library.StripHTML(Model.rteContent, "pre")
+	@Library.StripHtml(Model.rteContent, "pre")
 
 ###.Search(string term, bool useWildCards = true, string searchProvider = null)
 
