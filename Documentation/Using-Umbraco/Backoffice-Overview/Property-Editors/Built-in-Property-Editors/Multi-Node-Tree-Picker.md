@@ -167,9 +167,9 @@ For CSV data storage:
 	@using umbraco.MacroEngines
 	@inherits umbraco.MacroEngines.DynamicNodeContext
 	@{
-		if (Model.HasValue("mntpFeaturePickerCSV")){        
-	        string mntpFeaturePickerCSV = @Model.GetProperty("mntpFeaturePickerCSV").Value;
-	        var nodeCollectionFromArray = @Library.NodesById(mntpFeaturePickerCSV.Split(',').ToArray<object>());  
+		if (Model.HasValue("mntpFeaturePicker")){        
+	        string mntpFeaturePicker = @Model.GetProperty("mntpFeaturePicker").Value;
+	        var nodeCollectionFromArray = @Library.NodesById(mntpFeaturePicker.Split(',').ToArray<object>());  
 	        foreach (var item in nodeCollectionFromArray)
 	        {
 	         <p>@item.Name</p>   
