@@ -116,6 +116,25 @@ This setting determines the height of the data type when displayed to the editor
 
 ##Content Example 
 
+The list on the right shows which nodes have already been selected/saved
+
+These nodes can be sorted by dragging and dropping and can also be removed by clicking the 'x'
+
+![Media Picker Content Example 1](images/MNTP-Content-Standard.jpg?raw=true)
+
+When informational tooltips are enabled an 'info' icon is displayed next to each of the selected items 
+which when click shows information about the node:
+
+- The node's ID
+- Path and content Path
+- Edit button which will deep link to that item's editor page
+
+![Media Picker Content Example 2](images/MNTP-Content-Standard-Info.jpg?raw=true)
+
+The nodes in a light reddish colour ("File 1") are nodes that the user is unable to select
+
+![Media Picker Content Example 3](images/MNTP-Content-Media.jpg?raw=true)
+
 ##XSLT Example
 
 For XML data storage:
