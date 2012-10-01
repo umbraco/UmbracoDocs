@@ -26,6 +26,8 @@ Acheiving this goal will take quite a lot of time by slowly migrating over old c
 * Umbraco.Web.UI
 	* Contains ONLY rendering files, webforms files and MVC Views: *JS, CSS, ASPX, ASCX, ASMX, CSHTML*
 	* Legacy webforms files have their codebehind files in the Umbraco.Web project. If these legacy webforms files need to be worked on, we can migrate their codebehind files to the Umbraco.Web.UI project as we see fit.
+	* **ALL NEW ASPX, ASCX, ASMX and any other webforms file that requires a codebehind will exist under the Umbraco.Web.UI project**
+	* **MORE IMPORTANT -> BECAUSE THE NAMES OF THE FOLDERS ARE NOT PROPER CASE YOU WILL NEED TO ENSURE THAT THE NAMESPACE IS OF THE CORRECT CASE. SO WHEN YOU CREATE YOUR ASPX PAGE, THE NAMESPACE NAME MIGHT BE: *Umbraco.Web.UI.umbraco.settings* . YOU NEED TO CHANGE THIS TO: *Umbraco.Web.UI.Umbraco.Settings***
 * Umbraco.Tests
 	* Contains all unit tests for Umbraco
 	* Uses Nunit for unit tests
