@@ -164,7 +164,7 @@ For CSV data storage:
 
 ##Razor (DynamicNode) Example
 
-For XML data storage:
+For XML data storage (This example returns a DynamicNodeList so that filtering and ordering can be used):
 
 	@using umbraco.MacroEngines
 	@inherits umbraco.MacroEngines.DynamicNodeContext
@@ -172,7 +172,10 @@ For XML data storage:
 	    //convert NodeIds to List by iterating through each node
 	    var NodeIdListObj = new List<object>();    
 	    foreach (var id in Model.mntpFeaturePicker){
-	        NodeIdListObj.Add(id.InnerText);
+	        //remove unpublished nodes
+	        if(Library.NodeById(id.InnerText).GetType() != typeof(DynamicNull)){
+	            NodeIdListObj.Add(id.InnerText);
+	        }
 	    }
 	    var nodeCollectionFromListObj = @Library.NodesById(NodeIdListObj);
 	    foreach (var item in nodeCollectionFromListObj)
@@ -181,17 +184,25 @@ For XML data storage:
 	    }              
 	}
 
-For CSV data storage:
+For CSV data storage (This example returns a DynamicNodeList so that filtering and ordering can be used):
 
 	@using umbraco.MacroEngines
 	@inherits umbraco.MacroEngines.DynamicNodeContext
 	@{
-		if (Model.HasValue("mntpFeaturePicker")){        
-	        string mntpFeaturePicker = @Model.GetProperty("mntpFeaturePicker").Value;
-	        var nodeCollectionFromArray = @Library.NodesById(mntpFeaturePicker.Split(',').ToArray<object>());  
-	        foreach (var item in nodeCollectionFromArray)
+		if (Model.HasValue("mntpFeaturePicker")){                
+	        //convert NodeIds to List by iterating through each node
+	        var NodeIdListObj = new List<object>();    
+	        foreach (var id in Model.GetPropertyValue("mntpFeaturePicker").Split(',')){
+	            //remove unpublished nodes
+	            if(Library.NodeById(id).GetType() != typeof(DynamicNull)){
+	                NodeIdListObj.Add(id);
+	            }
+	        }
+	        var nodeCollectionFromListObj = @Library.NodesById(NodeIdListObj);
+	        foreach (var item in nodeCollectionFromListObj)
 	        {
-	         <p>@item.Name</p>   
-	        }                
-		}
+	            <p>@item.Name</p>   
+	        }  
+	    
+	    } 
 	}
