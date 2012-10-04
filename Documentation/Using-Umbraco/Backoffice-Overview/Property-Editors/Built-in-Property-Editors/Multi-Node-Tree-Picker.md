@@ -169,19 +169,20 @@ For XML data storage (This example returns a DynamicNodeList so that filtering a
 	@using umbraco.MacroEngines
 	@inherits umbraco.MacroEngines.DynamicNodeContext
 	@{    
-	    //convert NodeIds to List by iterating through each node
-	    var NodeIdListObj = new List<object>();    
-	    foreach (var id in Model.mntpFeaturePicker){
-	        //remove unpublished nodes
-	        if(Library.NodeById(id.InnerText).GetType() != typeof(DynamicNull)){
-	            NodeIdListObj.Add(id.InnerText);
+		if (Model.HasValue("mntpFeaturePicker")){  
+	        //Convert selected NodeIds to DynamicNodeList by iterating through each node to check if published
+	        var PublishedNodeList = new DynamicNodeList();    
+	        foreach (var id in Model.mntpFeaturePicker){        
+	            var currentNode = Library.NodeById(id.InnerText);
+	            if(currentNode.GetType() != typeof(DynamicNull)){
+	                PublishedNodeList.Add(currentNode);
+	            }
 	        }
+	        foreach (DynamicNode item in PublishedNodeList)
+	        {
+	            <p>@item.Name</p>   
+	        }              
 	    }
-	    var nodeCollectionFromListObj = @Library.NodesById(NodeIdListObj);
-	    foreach (var item in nodeCollectionFromListObj)
-	    {
-	        <p>@item.Name</p>   
-	    }              
 	}
 
 For CSV data storage (This example returns a DynamicNodeList so that filtering and ordering can be used):
@@ -190,19 +191,17 @@ For CSV data storage (This example returns a DynamicNodeList so that filtering a
 	@inherits umbraco.MacroEngines.DynamicNodeContext
 	@{
 		if (Model.HasValue("mntpFeaturePicker")){                
-	        //convert NodeIds to List by iterating through each node
-	        var NodeIdListObj = new List<object>();    
+	        //Convert selected NodeIds to DynamicNodeList by iterating through each node to check if published
+	        var PublishedNodeList = new DynamicNodeList();  
 	        foreach (var id in Model.GetPropertyValue("mntpFeaturePicker").Split(',')){
-	            //remove unpublished nodes
-	            if(Library.NodeById(id).GetType() != typeof(DynamicNull)){
-	                NodeIdListObj.Add(id);
+	            var currentNode = Library.NodeById(id);
+	            if(currentNode.GetType() != typeof(DynamicNull)){
+	                PublishedNodeList.Add(currentNode);
 	            }
 	        }
-	        var nodeCollectionFromListObj = @Library.NodesById(NodeIdListObj);
-	        foreach (var item in nodeCollectionFromListObj)
+	        foreach (DynamicNode item in PublishedNodeList)
 	        {
 	            <p>@item.Name</p>   
-	        }  
-	    
+	        }      
 	    } 
 	}
