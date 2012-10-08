@@ -1,4 +1,7 @@
 #Resolvers
+
+**Applies to: Umbraco 4.10.0+**
+
 _A Resolver is an class that returns a plugin object or multiple plugin objects. There are 2 types of Resolvers: A single object resolver and a multiple object resolver._ 
 
 ##Single object resolver

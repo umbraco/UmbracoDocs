@@ -1,4 +1,7 @@
 #Initializing Resolvers
+
+**Applies to: Umbraco 4.10.0+**
+
 _All resolvers need to be initialized, this occurs in an IBootManager_ 
 
 ##Initializing the singleton
