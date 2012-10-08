@@ -8,7 +8,7 @@ All Umbraco views inherit from `Umbraco.Web.Mvc.RenderViewPage` which exposes ma
 * @Umbraco (of type `Umbraco.Web.UmbracoHelper`) -> contains many helpful methods, from rendering macros and fields to retreiving content based on an Id and tons of other helpful methods. This is essentially the replacement for the 'library' object in the old codebase.
 * @Html (of type `HtmlHelper`) -> the same HtmlHelper you know and love from Microsoft but we've added a bunch of handy extension methods like @Html.BeginUmbracoForm
 * @CurrentPage (of type `DynamicPublishedContent`) -> the dynamic representation of the current page model which allows dynamic access to fields and also dynamic Linq
-* @Model (of type `Umbraco.Web.Mvc.RenderModel`) -> the model for the view which contains a property called CurrentContent which gives you accesss to the typed current page (of type IPublishedContent). 
+* @Model (of type `Umbraco.Web.Mvc.RenderModel`) -> the model for the view which contains a property called Content which gives you accesss to the typed current page (of type IPublishedContent). 
 * @UmbracoContext (of type `Umbraco.Web.UmbracoContext1)
 * @ApplicationContext (of type `Umbraco.Core.ApplicationContext`)
 * @GetDictionaryValue(string key) -> this is a method that can be accessed directly to return a dictionary value
@@ -37,17 +37,17 @@ The easiest way to use the Field method is to simply specify the optional parame
 
 ##Rendering a field with Model
 
-The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however simply want to render value "as-is" you can use the @Model.CurrentContent property of the view. For example:
+The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however simply want to render value "as-is" you can use the @Model.Content property of the view. For example:
 
-	@Model.CurrentContent.Properties["bodyContent"].Value
+	@Model.Content.Properties["bodyContent"].Value
 
 Or alternatively:
 
-	@Model.CurrentContent.GetProperty("bodyContent")
+	@Model.Content.GetProperty("bodyContent")
 
 ##Rendering a field using @CurrentPage (dynamically)
 
-The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however simply want to render value "as-is" you can use the @CurrentPage property of the view. The difference between @CurrentPage and @Model.CurrentContent is that @CurrentPage is the dynamic representation of the model which exposes many dynamic features for querying. For example, to render a field you simply use this syntax:
+The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however simply want to render value "as-is" you can use the @CurrentPage property of the view. The difference between @CurrentPage and @Model.Content is that @CurrentPage is the dynamic representation of the model which exposes many dynamic features for querying. For example, to render a field you simply use this syntax:
 
 	@CurrentPage.bodyContent
 
