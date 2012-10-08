@@ -23,6 +23,10 @@ Umbraco 4, comes with a complete event model, covering all mayor aspects of the 
 Introduced in **Umbraco 4.10.0+**
 The term 'Plugins' is refering to any types in Umbraco that are found in assemblies that are used to extend and/or enhance the Umbraco application.
 
+##[MVC](Mvc/index.md) 
+Introduced in **Umbraco 4.10.0+**
+How to use MVC in Umbraco.
+
 ---
 
 ###Progress

@@ -1,4 +1,7 @@
 #MVC Views
+
+**Applies to: Umbraco 4.10.0+**
+
 _This section will define the syntax for rendering content in your views_ 
 
 ##[Views](views.md)
