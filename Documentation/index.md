@@ -14,6 +14,8 @@ Covers API reference, searching, querying and management APIs.
 ##[Extending Umbraco](Extending-Umbraco/index.md)
 Documentation on how to extend umbraco with your own editors, trees, sections, and how to distribute those extensions as packages **(coming soon)**
 
+##[Development Guidelines](Development-Guidelines/index.md)
+How to work with the Umbraco codebase.
 
 ###Progress
 Consult the Umbraco 4 documentation trello board to see what we are currently working on.
