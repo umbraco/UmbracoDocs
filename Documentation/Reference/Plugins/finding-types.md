@@ -1,4 +1,7 @@
 #Finding types
+
+**Applies to: Umbraco 4.10.0+**
+
 _Whenever types need to be found in assemblies in order to add them to resolvers, the PluginManager should be used. The TypeFinder should never be used directly in any code except for in PluginManager extension methods or in the PluingManager itself._ 
 
 ##The Plugin Manager

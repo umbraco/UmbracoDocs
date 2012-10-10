@@ -17,6 +17,8 @@ All samples in this document will require the following usings:
 	using umbraco.cms.businesslogic.relation;
 	using umbraco.BusinessLogic;
 
+(see also: [uQuery Relation Extensions](../../Querying/uQuery/Relations.md))
+
 ##Constructor
 The `Relation` constructor is used to retrive a Relation object with a given Id, a null is returned if no relation is found with the given Id. 
 

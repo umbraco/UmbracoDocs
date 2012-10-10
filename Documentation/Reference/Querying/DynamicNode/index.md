@@ -22,6 +22,8 @@ Listing and explanation of DynamicNode properties & standard helpers for Content
 ##[Collections & Filtering](Collections.md)
 Methods for DynamicNode collections and filtering.
 
-
 ##[IsHelpers](IsHelpers.md)
 A library of extension methods to simplify working with DynamicNodes in collections to modify your HTML output. Examples could be injecting CSS classes for alternating rows or to modify margins.
+
+##[Library](Library.md)
+Library contains a collection of additional useful methods for use in Razor templates.

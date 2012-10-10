@@ -44,6 +44,14 @@ The umbraco:macro element can also be used inline, so a macro is not required, i
 			<a href="@Model.Url">@Model.Name</a>
 		}
 	</umbraco:Macro>
+	
+When attributes are passed into a macro, you can use the following syntax to send data from the current state to your macro.
+
+CurrentPage property value: [#propertyAlias]
+Recursive value: [$propertyAlias]
+Cookie value: [%cookieValueKey]
+Value from request collection: [@requestValueKey]
+
 
 [See the full umbraco:macro reference](umbracomacro.md)
     

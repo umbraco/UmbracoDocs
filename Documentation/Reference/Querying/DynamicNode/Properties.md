@@ -43,13 +43,13 @@ Returns the Url encoded name of the page
 Returns the Alias of the Document type used by this content item.
 
 ###.WriterName
-Returns the name of the Umbraco back office user that perfomed the last update operation on the content item.
+Returns the name of the Umbraco back office user that performed the last update operation on the content item.
 
 ###.CreatorName
 Returns the name of the Umbraco back office user that initially created the content item.
 
 ###.WriterId
-Returns the Id of the Umbraco back office user that performed the the last update operation to the content item.
+Returns the Id of the Umbraco back office user that performed the last update operation to the content item.
 
 ###.CreatorId
 Returns the Id of the Umbraco back office user that initially created the content item.
@@ -87,7 +87,7 @@ Returns the property matching the PropertyAlias (replace with alias of property)
 	@*Get the property with alias: "siteName" from the current page  *@
 	@Model.siteName
 	
-	@*Notice razor uses Pascal casing, there is therefore an OverLoad to get propeties as pascal cased as well*@
+	@*Notice razor uses Pascal casing, there is therefore an OverLoad to get properties as Pascal cased as well*@
 	@Model.SiteName
 		
 
@@ -109,8 +109,8 @@ Property `bodyText` is therefore referenced as `_bodyText`
 
 ---
 
-##Property Checks
-There are a few helpful methods to help check if a property exists, has a value or is null.
+##Property Methods
+**There are a few helpful methods to help check if a property exists, has a value or is null.**
 
 ###.HasProperty(string propertyAlias)
 Returns a boolean value representing if the DynamicNode has a property with the specified alias.
@@ -118,8 +118,37 @@ Returns a boolean value representing if the DynamicNode has a property with the 
 ###.HasValue(string propertyAlias)
 Retruns a boolean value representing if the DynamicNode property has had a value set.
 
-###.IsNull(string proertyAlias)
+###.IsNull(string propertyAlias)
 Returns a boolean value representing if the DynamicNode property is Null.
+
+**Further useful property methods**
+
+It is possible to use any standard C# method on a property such as .Contains (example below). They can also be chained, e.g. `@item.Name.SubString(1,3).Contains("v")`
+
+###.Contains(string needle)
+Returns a boolean value representing if the needle was found in the property (haystack).
+
+For example:
+
+	@foreach(var item in Model.Children.Where("bodyText.Contains(\"cat\")"))
+	{
+	    @item.Name 
+	}
+
+###.ContainsAny(List&lt;string&gt; needles)
+A property extension method, it returns a boolean value representing if any of the needles in the list were found in the property.
+
+For example:
+
+	@{
+		var values = new Dictionary<string,object>();
+		var keywords = new List<string>();
+		keywords.Add("cat");
+		keywords.Add("dog");
+		keywords.Add("fish");
+		values.Add("keywords",keywords);
+		var items = @Model.Children.Where("Name.ContainsAny(keywords)", values); 
+	}
 
 ---
 

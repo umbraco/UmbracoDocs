@@ -1,4 +1,7 @@
 #Creating Resolvers
+
+**Applies to: Umbraco 4.10.0+**
+
 _A Resolver should be created for any plugin type.  Resolvers are the standard way to retreive/create/register plugin types._ 
 
 ##Creating a single object resolver

@@ -59,7 +59,7 @@ Returns: `void`
 ### GetParentUmbracoObjectType()
 Returns: `uQuery.UmbracoObjectType`
 
-Hits the database to get the parent Guid for this relation type, and returns the associated [UmbracoObjectType](/index.md#UmbracoObjectType) Enum value.
+Hits the database to get the parent Guid for this relation type, and returns the associated [UmbracoObjectType](../index.md#UmbracoObjectType) Enum value.
 
 	uQuery.UmbracoObjectType umbracoObjectType = RelationType.GetByAlias("relateA_B").GetParentUmbracoObjectType();
 
@@ -67,7 +67,7 @@ Hits the database to get the parent Guid for this relation type, and returns the
 ### GetChildUmbracoObjectType()
 Returns: `uQuery.UmbracoObjectType`
 
-Hits the database to get the child Guid for this relation type, and returns the associated [UmbracoObjectType](/index.md#UmbracoObjectType) Enum value.
+Hits the database to get the child Guid for this relation type, and returns the associated [UmbracoObjectType](../index.md#UmbracoObjectType) Enum value.
 
 	uQuery.UmbracoObjectType umbracoObjectType = RelationType.GetByAlias("relateA_B").GetChildUmbracoObjectType();
 

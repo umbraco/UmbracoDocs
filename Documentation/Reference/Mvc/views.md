@@ -1,4 +1,7 @@
 #Using MVC in Umbraco
+
+**Applies to: Umbraco 4.10.0+**
+
 _This section will focus on how to use the MVC rendering engine in Umbraco such as the syntax to use in your Views, creating forms and creating your own custom controllers_ 
 
 ##Properties available in Views
