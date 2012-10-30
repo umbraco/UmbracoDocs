@@ -14,6 +14,8 @@ There are two settings for Multiple Textstring which allow the setting of the mi
 
 ![Multiple Textstring Content Example](images/Multiple-Textstring-Content.jpg?raw=true)
 
+Users can add a new item by clicking the plus icon, delete a item by clicking the minus icon and order the items by clicking and dragging on the blue up/down icon.
+
 ##Data example
 
 Multiple Textstring stores it's content as XML, below is an example.
