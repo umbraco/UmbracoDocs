@@ -30,7 +30,7 @@ To create a locally declared SurfaceController:
 
 * Create a controller that inherits from `Umbraco.Web.Mvc.SurfaceController`
 * The controller must be a 'public' class.
-* The controller's name must be suffixed with the term 'SurfaceController'
+* The controller's name must be suffixed with the term 'Controller'
 
 For example:
 
@@ -59,7 +59,7 @@ They do not get routed via an MVC Area so any Views must exist in the following 
 If you are shipping a SurfaceController in a package then you should definitely be creating a plugin based SurfaceController. The only difference between creating a plugin based controller and locally declared controller is that you just need to add an attribute to your class which defines the MVC Area you'd like your controller routed through. Here's an example:
 
 	[SurfaceController("SuperAwesomeAnalytics")]
-	pulic void MySurfaceController : Umbraco.Web.Mvc.SurfaceController
+	public void MySurfaceController : Umbraco.Web.Mvc.SurfaceController
 	{
 		public ActionResult Index() 
 		{
