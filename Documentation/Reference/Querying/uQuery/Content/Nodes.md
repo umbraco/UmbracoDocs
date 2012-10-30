@@ -57,7 +57,7 @@ The tokens `$currentPage`, `$ancestorOrSelf` and `$parentPage` can be used withi
 
 On first use the XPath expression is compiled and cached.
 
-	IEnumerable<Node> nodes = uQuery.GetNodesByXPath("\\*[@isDoc]");
+	IEnumerable<Node> nodes = uQuery.GetNodesByXPath("//*[@isDoc]");
 
 
 ### GetNodesByName(string)

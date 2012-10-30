@@ -7,7 +7,7 @@ _This section will define the syntax for rendering content in your views_
 ##[Views](views.md)
 Documentation covering the syntax to use in your Views to render and query content
 
-###[Partial Views](partial-views.md)
+##[Partial Views](partial-views.md)
 Documentation covering how to use Partial Views. This is not documentation about using "Partial View Macros", this documentation relates simply to using native MVC partial views within Umbraco.
 
 ##[Surface Controllers](surface-controllers.md)
