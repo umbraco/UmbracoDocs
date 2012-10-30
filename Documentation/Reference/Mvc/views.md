@@ -1,4 +1,4 @@
-#Using MVC in Umbraco
+#Working with MVC Views in Umbraco
 
 **Applies to: Umbraco 4.10.0+**
 
@@ -14,7 +14,6 @@ All Umbraco views inherit from `Umbraco.Web.Mvc.RenderViewPage` which exposes ma
 * @Model (of type `Umbraco.Web.Mvc.RenderModel`) -> the model for the view which contains a property called Content which gives you accesss to the typed current page (of type IPublishedContent). 
 * @UmbracoContext (of type `Umbraco.Web.UmbracoContext1)
 * @ApplicationContext (of type `Umbraco.Core.ApplicationContext`)
-* @GetDictionaryValue(string key) -> this is a method that can be accessed directly to return a dictionary value
 
 ##Rendering a field with UmbracoHelper
 This is probably the most used method which simply renders the contents of a field for the current content item.
