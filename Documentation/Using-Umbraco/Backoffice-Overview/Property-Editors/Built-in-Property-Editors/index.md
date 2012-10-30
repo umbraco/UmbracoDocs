@@ -69,7 +69,7 @@ The current version supports:
 * Drag/Drop sorting of selected nodes
 
 
-##Multiple Textstring
+##[Multiple Textstring](Multiple-Textstring.md)
 The Multiple Textstring data-type enables a content editor to make a list of text items. For best use with an unordered-list.
 
 Multiple Textstring was originally in uComponents but was included in the Umbraco Core v4.8 
