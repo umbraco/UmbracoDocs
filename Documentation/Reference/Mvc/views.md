@@ -1,4 +1,4 @@
-#Using MVC in Umbraco
+#Working with MVC Views in Umbraco
 
 **Applies to: Umbraco 4.10.0+**
 
