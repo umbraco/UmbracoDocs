@@ -33,7 +33,7 @@ A quick example of a content item that has a template that renders out a partial
 
 The MVC template markup for the document:
 
-	@inherits Umbraco.Web.Mvc.RenderViewPage
+	@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 	@{
 	    Layout = null;
 	}
@@ -56,3 +56,10 @@ The partial view (located at: `~/Views/Partials/ChildItem.cshtml`)
 	
 	<strong>@Model.Name</strong>
 
+#Strongly typed Partial Views
+
+Normally you would create a partial view by simply using the `@model MyModel` syntax. However, inside of Umbraco you will probably want to have access to the handy properties available on your normal Umbraco views like the Umbraco helper: `@Umbraco` and the Umbraco context: `@UmbracoContext`. The good news is that this is completely possible, instead of using the `@model MyModel` syntax, you just need to inherit from the correct view class so do this instead:
+
+	@inherits Umbraco.Web.Mvc.UmbracoViewPage<MyModel>
+
+By inheriting from this view, you'll have instant access to those handy properties.

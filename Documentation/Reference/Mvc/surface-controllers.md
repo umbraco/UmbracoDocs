@@ -4,6 +4,20 @@
 
 _A SurfaceController is an MVC controller that interacts with the front-end rendering of an UmbracoPage. They can be used for rendering Child Action content, for handling form data submissions and for rendering Child Action macros. SurfaceController's are auto-routed meaning that you don't have add/create your own routes for these controllers to work._
 
+##What is a SurfaceController?
+
+It is a regular ASP.Net MVC controller that:
+
+* Is auto routed, meaning you don't have to setup any custom routes to make it work
+* Is used for interacting with the front-end of Umbraco (not the back office)
+
+Since any SurfaceController inherits from the `Umbraco.Web.Mvc.SurfaceController` class, the class instantly supports many of the helper methods and properties that are available on the base SurfaceController class including `UmbracoHelper` and `UmbracoContext`. Therefore, all Surface Controlers have native Umbraco support for:
+
+* interacting with Umbraco routes during HTTP Posts (i.e. `return CurrentUmbracoPage();` )
+* rendering forms in Umbraco (i.e. `@Html.BeginUmbracoForm<MySurfaceController>(...)` )
+* rendering ASP.Net MVC ChildAction (see [ChildActions](child-actions.md) documentation)
+* rendering ChildAction macros (when they are supported in 4.11)
+
 ##Creating a SurfaceController
 
 SurfaceController's are plugins, meaning they are found when the Umbraco application boots. There are 2 types of SurfaceController's: **locally declared** & **plugin based**.  The main difference between the 2 is that a plugin based controller gets routed via an MVC Area (which is defined on the controller... see below). Because a plugin based controller is routed via an MVC Area, it means that the views can be stored in a custom folder specific to the package it is  being shipped in without interfering with the local developers MVC files.
