@@ -42,7 +42,7 @@ Also not that since this example is using a Surface Controller and if we were sh
 To render a child action in your view is really easy, call the Html.Action method, pass in the Action name and your controller's name and the route values including your model. In this case we are passing in a new instance of a custom QueryParameters class and using a current 'search' query string from the Http request:
 
 	@Html.Action("SearchResults", "MySearch", 
-		new { query = new QueryParameters(Request.QueryString["search"]) })
+		new { area = "umbraco", query = new QueryParameters(Request.QueryString["search"]) })
 
 *NOTE: notice that we are creating an anonymous object with a property called 'query', that is because our Child Action method accepts a parameter called 'query', these must match in order to work.*
 
