@@ -27,3 +27,6 @@ Creating custom controllers to have 100% full control over how your pages are re
 
 ##[Custom routes](custom-routes.md)
 How to specify your own custom MVC routes in your application to work outside of the Umbraco pipeline
+
+##[Using IoC](using-ioc.md)
+How to setup IoC/Dependency Injection containers for use in MVC within Umbraco
