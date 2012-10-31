@@ -2,7 +2,7 @@
 
 `Returns: XML`
 
-The Multiple Textstring data-type enables a content editor to make a list of text items. For best use with an unordered-list.
+The Multiple Textstring property editor enables a content editor to make a list of text items. For best use with an unordered-list.
 
 ##Settings
 
