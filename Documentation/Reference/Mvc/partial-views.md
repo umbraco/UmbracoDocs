@@ -63,3 +63,21 @@ Normally you would create a partial view by simply using the `@model MyModel` sy
 	@inherits Umbraco.Web.Mvc.UmbracoViewPage<MyModel>
 
 By inheriting from this view, you'll have instant access to those handy properties.
+
+##Caching
+
+Normally you don't really need to cache the output of Partial views just like normally you don't need to cache the output of User Controls, however there are times when this is necessary. Just like macro caching we provide caching output of partial views. This is done simply by using an HtmlHelper extension method:
+
+	@Html.CachedPartial("MyPartialName", new MyModel(), 3600)
+
+the above will cache the output of your partial view for 1 hr (3600 seconds). Additionally there are a few optional parameters you can specify to this method. Here is the full method signature:
+
+	IHtmlString CachedPartial(
+		string partialViewName, 
+		object model, 
+		int cachedSeconds,
+		bool cacheByPage = false,
+		bool cacheByMember = false,
+		ViewDataDictionary viewData = null)
+
+So you can specify to cache by member and/or by page and also specify additional view data to your partial view. **HOWEVER**, if your view data is dynamic (meaning it could change per page request) the cached output will still be returned, this same principle goes for if the model you are passing in is dynamic. Please be aware of this as if you have a different model or viewData for any page request, the result will be the cached result of the first execution.
