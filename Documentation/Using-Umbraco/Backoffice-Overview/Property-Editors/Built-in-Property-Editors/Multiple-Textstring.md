@@ -44,7 +44,7 @@ Multiple Textstring stores it's content as XML, below is an example.
 	@inherits umbraco.MacroEngines.DynamicNodeContext
 	@using umbraco.MacroEngines
 	@{
-		if (Model.keyFeatureList.Count() > 0){	
+		if (Model.keyFeatureList.Any()){	
 		  <ul>
 			@foreach (var item in Model.keyFeatureList) {		
 				<li>@item.InnerText</li>
@@ -52,3 +52,5 @@ Multiple Textstring stores it's content as XML, below is an example.
 		  </ul>
 		}
 	}
+
+**NOTE:** DynamicXml .Any() method is only available in Umbraco 4.10.0+ Substitute with `if (Model.keyFeatureList.Count() > 0)` if using a older version of Umbraco
