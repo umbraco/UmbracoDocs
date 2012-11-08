@@ -74,7 +74,7 @@ The Multiple Textstring property editor enables a content editor to make a list 
 
 Multiple Textstring was originally in uComponents but was included in the Umbraco Core v4.8 
 
-##No Edit
+##[No Edit](No-Edit.md)
 Is a non-editable control, can only be used to display a present text. It can also be used in the media section to load in values related to the node, such as width, height and file size.
 
 ##Picker Relations
