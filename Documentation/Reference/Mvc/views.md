@@ -6,7 +6,7 @@ _This section will focus on how to use the MVC rendering engine in Umbraco such 
 
 ##Properties available in Views
 
-All Umbraco views inherit from `Umbraco.Web.Mvc.RenderViewPage` which exposes many properties that are available in razor:
+All Umbraco views inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage` which exposes many properties that are available in razor:
 
 * @Umbraco (of type `Umbraco.Web.UmbracoHelper`) -> contains many helpful methods, from rendering macros and fields to retreiving content based on an Id and tons of other helpful methods. This is essentially the replacement for the 'library' object in the old codebase.
 * @Html (of type `HtmlHelper`) -> the same HtmlHelper you know and love from Microsoft but we've added a bunch of handy extension methods like @Html.BeginUmbracoForm
