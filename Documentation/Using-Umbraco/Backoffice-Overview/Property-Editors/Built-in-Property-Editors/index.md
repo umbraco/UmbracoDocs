@@ -69,13 +69,13 @@ The current version supports:
 * Drag/Drop sorting of selected nodes
 
 
-##Multiple Textstring
-The Multiple Textstring data-type enables a content editor to make a list of text items. For best use with an unordered-list.
+##[Multiple Textstring](Multiple-Textstring.md)
+The Multiple Textstring property editor enables a content editor to make a list of text items. For best use with an unordered-list.
 
 Multiple Textstring was originally in uComponents but was included in the Umbraco Core v4.8 
 
-##No Edit
-Is a non-editable control, can only be used to display a present text. It can also be used in the media section to load in values related to the node, such as width, height and file size.
+##[No Edit](No-Edit.md)
+No Edit is a non-editable control, can only be used to display a present text. It can also be used in the media section to load in values related to the node, such as width, height and file size.
 
 ##Picker Relations
 

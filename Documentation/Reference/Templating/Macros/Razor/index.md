@@ -20,4 +20,6 @@ Pluralised queries enables you to query and filter pages with a simple syntax.
 ##[Using Razor functions to make recursive queries](using-razor-functions-to-make-recursive-queries.md)
 A razor function is a small, embedded method you can call inside of your razor scripts
 
+##[Using Umbraco Dictionary Items](using-dictionary-items.md)
+How to access dictionary items from Razor
  
