@@ -37,7 +37,7 @@ Media Picker with Show Advanced Dialog checked
         <img src="{$selectedMedia/umbracoFile}" width="{$selectedMedia/umbracoWidth}" height="{$selectedMedia/umbracoHeight}" alt="{$selectedMedia/@nodeName}" />
     </xsl:if>
 
-##Razor (DynamicNode & DynamicMedia) Example
+##Razor Macro (DynamicNode & DynamicMedia) Example
 There are several different techniques you can use to retrieve the media from a media picker using DynamicNode & DynamicMedia, below are three examples.
 
       @{
@@ -52,3 +52,22 @@ There are several different techniques you can use to retrieve the media from a 
           <img src="@selectedMedia3.umbracoFile" width="@selectedMedia3.umbracoWidth" height="@selectedMedia3.umbracoHeight" alt="@selectedMedia3.Name"/>                       
         }
       }
+
+##Mvc View Example
+
+###Typed:
+	@{
+	    if(Model.Content.HasValue("mainImage")){
+	        var mediaItem = Umbraco.TypedMedia(Model.Content.GetPropertyValue("mainImage")); 
+	        <img src="@mediaItem.GetPropertyValue("umbracoFile")" alt="@mediaItem.GetPropertyValue("Name")"/>    
+	    }   
+	}
+
+###Dynamic:                              
+	@{      
+	    if (CurrentPage.HasValue("mainImage")){                                         
+		    var dynamicMediaItem = Umbraco.Media(CurrentPage.mainImage);
+		    <img src="@dynamicMediaItem.umbracoFile" alt="@dynamicMediaItem.Name"/>
+		}
+	}
+    
