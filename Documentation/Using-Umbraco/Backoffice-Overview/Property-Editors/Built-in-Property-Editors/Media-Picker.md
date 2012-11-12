@@ -53,7 +53,7 @@ There are several different techniques you can use to retrieve the media from a 
         }
       }
 
-##Mvc View Example
+##MVC View Example
 
 ###Typed:
 	@{
