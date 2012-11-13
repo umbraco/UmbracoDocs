@@ -30,7 +30,7 @@ Media Picker with Show Advanced Dialog checked
 
 ![Media Picker Content](images/Media-Picker-Content.jpg?raw=true)
 
-##XSLT Example
+##XSLT Macro Example
 
     <xsl:if test="number($currentPage/mainImage) > 0">
         <xsl:variable name="selectedMedia" select="umbraco.library:GetMedia($currentPage/mainImage, 0)" />
