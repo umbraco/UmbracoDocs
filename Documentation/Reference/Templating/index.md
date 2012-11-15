@@ -11,7 +11,7 @@ Introduction to setting up a macro, passing parameters, configuring caching
 ##Related References
 Documentation related to templating and macros
 
-###[Umbraco.library](../api/umbraco.library/index.md)
+###[Umbraco.library](../Api/Umbraco.Library/index.md)
 Umbraco.library is a collection of helpers available to both Razor and Xslt
 
 ###[Razor syntax](Macros/Razor/index.md)

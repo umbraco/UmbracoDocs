@@ -1,6 +1,8 @@
-#This section is waiting for content
+#Macro Parameter Editors
 
-This documention has not been written yet, but it is on the roadmap.
+This documention has not been written yet, but it is on the roadmap. 
+
+In the meantime, you can find details of how to create a Macro Parameter Editor [here](http://www.richardsoeteman.net/2010/01/04/CreateACustomMacroParameterType.aspx)
 
 ###Progress
 Consult the Umbraco 4 documentation trello board to see what we are currently working on.

@@ -9,7 +9,7 @@ A Dashboard is a component for displaying elements on the right-hand side of the
 A parameter editor defines the usage of a property editor for use as a parameter for Macros. **(coming soon)**
 
 ###[Packaging](Packaging/index.md)
-
+Information on the packaging manifest format and how assets should be packaged as a zip file for easy distribution
 **(coming soon)**
 
 ###[Property Editors](Property-Editors/index.md)
