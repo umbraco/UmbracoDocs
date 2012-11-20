@@ -39,7 +39,7 @@ If you want to use IIS to host your Umbraco site, you have two options:
 	
 	You will then be asked what kind of application this is, make sure to pick (or create) an application pool that uses ASP.NET 4.0 as it's basis (the default ASP.NET 4.0 is configured perfectly for this, we recommend you pick that one). Use the "Select.." button to pick a different application pool, you shouldn't have to change the other settings.
 	
-	Finally fill in the hostname, in this example we'll use *MyUmbraco5Site.local*
+	Finally fill in the hostname, in this example we'll use *MyUmbracoSite.local*
 	
 	![Configure new website in IIS](images/Manual/2012-03-12_223022.png?raw=true)
 	
