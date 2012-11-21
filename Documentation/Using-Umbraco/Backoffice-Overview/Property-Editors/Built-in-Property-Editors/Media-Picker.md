@@ -30,29 +30,6 @@ Media Picker with Show Advanced Dialog checked
 
 ![Media Picker Content](images/Media-Picker-Content.jpg?raw=true)
 
-##XSLT Macro Example
-
-    <xsl:if test="number($currentPage/mainImage) > 0">
-        <xsl:variable name="selectedMedia" select="umbraco.library:GetMedia($currentPage/mainImage, 0)" />
-        <img src="{$selectedMedia/umbracoFile}" width="{$selectedMedia/umbracoWidth}" height="{$selectedMedia/umbracoHeight}" alt="{$selectedMedia/@nodeName}" />
-    </xsl:if>
-
-##Razor Macro (DynamicNode & DynamicMedia) Example
-There are several different techniques you can use to retrieve the media from a media picker using DynamicNode & DynamicMedia, below are three examples.
-
-      @{
-        if (Model.HasValue("mainImage")){                                     
-          //option 1                               
-          <img src="@Model.Media("mainImage","umbracoFile")" width="@Model.Media("mainImage","umbracoWidth")" height="@Model.Media("mainImage","umbracoHeight")" />
-          //option 2
-          var selectedMedia2 = @Model.Media("mainImage");
-          <img src="@selectedMedia2.umbracoFile" width="@selectedMedia2.umbracoWidth" height="@selectedMedia2.umbracoHeight" alt="@selectedMedia2.Name"/>
-          //option 3          
-          var selectedMedia3 = @Library.MediaById(Model.mainImage);
-          <img src="@selectedMedia3.umbracoFile" width="@selectedMedia3.umbracoWidth" height="@selectedMedia3.umbracoHeight" alt="@selectedMedia3.Name"/>                       
-        }
-      }
-
 ##MVC View Example
 
 ###Typed:
@@ -70,4 +47,26 @@ There are several different techniques you can use to retrieve the media from a 
 		    <img src="@dynamicMediaItem.umbracoFile" alt="@dynamicMediaItem.Name"/>
 		}
 	}
-    
+
+##Razor Macro (DynamicNode & DynamicMedia) Example
+There are several different techniques you can use to retrieve the media from a media picker using DynamicNode & DynamicMedia, below are three examples.
+
+      @{
+        if (Model.HasValue("mainImage")){                                     
+          //option 1                               
+          <img src="@Model.Media("mainImage","umbracoFile")" width="@Model.Media("mainImage","umbracoWidth")" height="@Model.Media("mainImage","umbracoHeight")" />
+          //option 2
+          var selectedMedia2 = @Model.Media("mainImage");
+          <img src="@selectedMedia2.umbracoFile" width="@selectedMedia2.umbracoWidth" height="@selectedMedia2.umbracoHeight" alt="@selectedMedia2.Name"/>
+          //option 3          
+          var selectedMedia3 = @Library.MediaById(Model.mainImage);
+          <img src="@selectedMedia3.umbracoFile" width="@selectedMedia3.umbracoWidth" height="@selectedMedia3.umbracoHeight" alt="@selectedMedia3.Name"/>                       
+        }
+      }
+
+##XSLT Macro Example
+
+    <xsl:if test="number($currentPage/mainImage) > 0">
+        <xsl:variable name="selectedMedia" select="umbraco.library:GetMedia($currentPage/mainImage, 0)" />
+        <img src="{$selectedMedia/umbracoFile}" width="{$selectedMedia/umbracoWidth}" height="{$selectedMedia/umbracoHeight}" alt="{$selectedMedia/@nodeName}" />
+    </xsl:if>
