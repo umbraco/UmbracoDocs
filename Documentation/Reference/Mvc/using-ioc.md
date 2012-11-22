@@ -10,7 +10,7 @@ We don't use IoC in the Umbraco source code whatsoever. This isn't because we do
 
 ##Implementation
 
-In most IoC frameworks you would setup your container in your global.asax class. To do that in Umbraco, you will need to inherit from our global.asax class called: `Umbraco.Web.UmbracoApplication`. You should then override the `OnApplicationStarted` method to build your container and initialize any of the IoC stuff that you require.
+In most IoC frameworks you would setup your container in your global.asax class. To do that in Umbraco, you will need to implement the `Umbraco.Web.IApplicationEventHandler` interface. You should then build your container and initialize any of the IoC stuff that you require in the `OnApplicationStarted` method.
 
 ##Example
 
@@ -32,12 +32,12 @@ Here's an example of a custom global.asax class which initializes the IoC contai
 	/// <summary>
 	/// The global.asax class
 	/// </summary>
-	public class MyApplication : Umbraco.Web.UmbracoApplication
+	using Umbraco.Web;
+	public class MyApplication : IApplicationEventHandler
 	{
-		protected override void OnApplicationStarted(object sender, EventArgs e)
+		public void OnApplicationStarted(
+			UmbracoApplication httpApplication, Umbraco.Core.ApplicationContext applicationContext)
 		{
-			base.OnApplicationStarted(sender, e);
-
 			var builder = new ContainerBuilder();
 		
 			//register all controllers found in this assembly
@@ -48,6 +48,14 @@ Here's an example of a custom global.asax class which initializes the IoC contai
 
 			var container = builder.Build();
 			DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+		}
+
+		public void OnApplicationInitialized(UmbracoApplication httpApplication, Umbraco.Core.ApplicationContext applicationContext)
+		{
+		}
+
+		public void OnApplicationStarting(UmbracoApplication httpApplication, Umbraco.Core.ApplicationContext applicationContext)
+		{
 		}
 	}
 
