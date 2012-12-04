@@ -48,7 +48,7 @@ Add references to the right namespaces at the top of your .cs file, and inherit 
 
 ## Using IApplicationEventHandler to register events ##
 
-** Applies to: Umbraco 4.10.0+ **
+**Applies to: Umbraco 4.10.0+**
 
 
 As of version 4.10.0 the use of ApplicationBase has been deprecated and you're encourage to move to implemint IApplicationEventHandler instead.
