@@ -19,6 +19,9 @@ Umbraco 4, comes with a complete event model, covering all mayor aspects of the 
 ##[/Base](Api/Base/Index.md)
 /Base is a extendable system for creating raw feeds directly from Umbraco using very basic Url's. This enables developers to access umbraco data through javascript, flash or any other client. It even allows you to modify umbraco data directly via simple url's.
 
+##[Umbraco.Library](Api/UmbracoLibrary/index.md)
+Umbraco.Library is a Xslt extension library, built specifically for xslt macros in umbraco 4. It contains many utility methods which are strictly for use in Xslt, but also has a number of more general purpous methods, which can used more broadly.
+
 ##[Plugins](Plugins/index.md) 
 Introduced in **Umbraco 4.10.0+**
 The term 'Plugins' is refering to any types in Umbraco that are found in assemblies that are used to extend and/or enhance the Umbraco application.
