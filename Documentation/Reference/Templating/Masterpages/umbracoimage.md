@@ -1,10 +1,12 @@
 #Umbraco:image
 
-The `umbraco:image` control enables you to easily add images from your content to your templates. The cotrols is used as such:
+**Applies to: Umbraco 4.11.0+**
+
+The `umbraco:image` control enables you to easily add images from your content to your templates. The control is used as such:
 
 	<umbraco:image runat="server" field="bannerImage" />
 
-This will output an <img/> tag when the template renders:
+This will output an `<img/>` tag when the template renders:
 
 	<img src="/media/19/imagename.jpg" />
 
@@ -12,7 +14,7 @@ The complete syntax for the control is this:
 
 	<umbraco:image runat="server" field="{fieldName}" nodeid="{nodeId}" parameters="{urlParameters}" provider="{providername}" />
 
-All other attributes, such as `width|height|class` will be passed through to the generated <img/> tag.
+All other attributes, such as `width|height|class` will be passed through to the generated `<img/>` tag.
 
 ##Field
 The `field` attribute defines which field of the current page will be used as the image. If the field contains a number, then a media item will be used to generate the url. If the field contains an image path (for example from the upload control), then that path is used directly.
@@ -37,7 +39,7 @@ The `parameters` are provider specific. The default provider supports the upload
 	<tr>
 		<td>crop</td>
 		<td>string</td>
-		<td>Specifiy the name of the crop that you want to display. For example crop=small.</td>
+		<td>Specify the name of the crop that you want to display. For example crop=small.</td>
 	</tr>
 </table>
 

@@ -32,11 +32,11 @@ There are several advanced options for using` umbraco:item`, for controlling fal
 [See the full umbraco:item reference](umbracoitem.md)
 
 ##[umbraco:image](umbraco:image)
-The `umbraco:image` control enables you to easily add images from your content to your templates. The cotrols is used as such:
+Introduced in **Umbraco 4.11.0**, the `umbraco:image` control enables you to easily add images from your content to your templates. The control is used as such:
 
 	<umbraco:image runat="server" field="bannerImage" />
 
-This will output an <img/> tag when the template renders:
+This will output an `<img/>` tag when the template renders:
 
 	<img src="/media/19/imagename.jpg" />
 
