@@ -13,3 +13,9 @@ Alternatively, if you require custom routes to be distributed in a package, or y
 ##Adding to the Umbraco ignore list
 
 In order for you to get your custom route working 100%, you should add them to the ignore list in the web.config in the umbracoReservedUrls or the umbracoReservedPaths.
+
+
+##Where to put the controller code
+
+Unlke a regular ASP.NET MVC project which has a folder called Controllers where controllers are put. The custom controllers 
+should be put in the App_Code-folder to work.
