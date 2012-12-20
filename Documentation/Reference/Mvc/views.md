@@ -34,7 +34,7 @@ There are several optional parameters. Here is the list with their default value
 
 The easiest way to use the Field method is to simply specify the optional parameters you'd like to set. For example, if we want to set the insertBefore and insertAfter parameters we'd do:
 
-	@Umbraco.Field("bodyContent", insertBefore = "<h2>", insertAfter = "</h2>")
+	@Umbraco.Field("bodyContent", insertBefore : "<h2>", insertAfter : "</h2>")
 
 
 ##Rendering a field with Model
