@@ -4,10 +4,9 @@
 
 _This section will define the syntax for rendering content in your views_ 
 
-Before getting started with MVC you need to enable this in ~/config/umbracoSettings.config by setting the defaultRenderingEngine
-setting to MVC as such.
+Before getting started with MVC you need to enable this in ~/config/umbracoSettings.config by setting the defaultRenderingEngine setting to MVC as such.
 
-<pre><code>&lt;defaultRenderingEngine&gt;Mvc&lt;/defaultRenderingEngine&gt;</code></pre>
+	<defaultRenderingEngine>Mvc</defaultRenderingEngine>
 
 ##[Views](views.md)
 Documentation covering the syntax to use in your Views to render and query content
