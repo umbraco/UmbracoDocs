@@ -1,0 +1,34 @@
+Introduction
+
+Spent last two days trying to get Umbraco to work with visual studio 2012,iis and some kind of pagebuilder. After following lots of guides including Umbraco 5 to later find out that Umbraco 5 is dead i got it to work.
+
+I am only doing this to help new Umbraco users like myself to get a good start in their developement.
+
+Setup Umbraco With VS 2012
+
+1. Create a new WebForm Project from the installed VS 2012 Templates.
+2. Remove everything from the solution except Properties and References.
+3. From Package Manager Console run "PM > Install-Package UmbracoCms"
+4. Rightclick on the Project and select Properties. Under the WebTab make sure the project uses Local IIS Web Server and "Create Virtual Directory".
+5. Save Project and run with F5. VS 2012 Asks if you wold like to modify Web.config file for debugging, click OK.
+6. Now follow the Umbraco installationssteps from your webbrowser.
+7. On Database Configuration, choose 'SQL CE 4 database'.
+8. On starterkits choose empty template.
+9. First step completed. Now we just need to add uSiteBuilder to our project.
+
+Setup uSiteBuilder to be able to easily build DocumentTypes and Templates etcetera from Code
+
+1. Download uSiteBuilder.dll from usitebuilder.codeplex.com/releases/view/71768
+2. Add a reference to this dll in References inside your VS 2012 Project
+3. Copy uSiteBuilder.dll to the binfolder inside your project.
+4. Push F5, you will notice that the dll will add a reference to our dll in the web.config
+5*. Follow uSiteBuilder guides below to build DocumentTypes(ordinary .cs classes) and Templates(master and nested masterpages)
+
+DocumentTypes - usitebuilder.vegaitsourcing.rs/tutorials?id=22389
+Templates - usitebuilder.vegaitsourcing.rs/tutorials?id=22391
+
+Finished
+
+When we have done all these steps we are ready to build Umbracosites from code with the help of uSiteBuilder.
+
+* Since we only downloaded the uSiteBuilder.dll and not the whole package with included vs2012 templates we have to add the classes(DocumentTypes) and Masterpages(Templates) ourselves.
