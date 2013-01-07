@@ -78,6 +78,8 @@ Returns or sets  a `Property` describing the property with a given alias
 	//sets the bodyText value
 	bodytext.Value = "<p>hello</p>";
 	
+	doc.Save();
+	
 
 ###.HasChildren
 Returns `Bool` indicating whether the given `Document` has any documents just below it
