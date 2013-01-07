@@ -1,4 +1,7 @@
 #Document
+
+**Applies to Umbraco 4.x and earlier**
+
 The `Document` class represents a single item in the content tree, its values are
 fetched directly from the database, not from the cache. **Notice** the Document class should strictly be used for simple CRUD operations, not complex queries, as it is not flexible nor fast enough for this.
 
@@ -236,7 +239,9 @@ Sets the template ID to `Null` on the given Document
 Rolls the `Document` back to the version with the a given Version Id. A user must be passed for the Document audit trail. 
 
 ###.Save()
-Saves the latest changes on the Document. This triggers the Before/After save events. **Notice** this method is nothing but a stub, as all properties are instantly persisted.
+Saves the latest changes on the Document. This triggers the Before/After save events. 
+**Notice** In v4.x this method is a stub, but from v6.0 it will be required to call to persisst
+any changes, so it is recommend to always include .Save() in your code.
 
 ###.SendToPublication(user)
 Sends the Document to publishing, which triggers notifications to the appropriate admins, subscribing to notifications. Send to publishing, is only used in case the current `User` does not have permission to publish a document.
