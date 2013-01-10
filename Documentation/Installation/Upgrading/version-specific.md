@@ -2,7 +2,7 @@
 
 *For now, this document will only list fairly recent updates (the past 2 years), but it will be updated to go further back.*
 
-Most of the time you will be able to go straight from the version you're on to the latest version. Follow the steps in the [general upgrade guide](Installation/Upgrading/index.md), and then the additional instructions per version.
+Most of the time you will be able to go straight from the version you're on to the latest version. Follow the steps in the [general upgrade guide](general.md), and then the additional instructions per version.
 
 The additional steps are listed below, remember that new config files are not mentioned because that is already covered in the general upgrade guide:
 
