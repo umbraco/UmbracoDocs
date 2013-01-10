@@ -10,7 +10,7 @@ The additional steps are listed below, remember that new config files are not me
 * Delete bin/Iron*.dll (all dll files starting with "Iron")
 * Delete bin/RazorEngine*.dll (all dll files starting with "RazorEngine")
 
-#Version 4.7.1.1 to 4.7.2
+##Version 4.7.1.1 to 4.7.2
 * Delete the bin/Microsoft.Scripting.dll file
 * Delete the bin/umbraco.MacroEngines.Legacy.dll file
 
