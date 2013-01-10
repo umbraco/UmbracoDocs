@@ -1,6 +1,6 @@
 #Upgrades in general
 
-_This is the general upgrade guide, sometimes there are exceptions to these guidelines, they're listed in the [version-specific guide](Installation/Upgrading/version-specific.md.md)._
+_This is the general upgrade guide, sometimes there are exceptions to these guidelines, they're listed in the [version-specific guide](version-specific.md.md)._
 
 ##Warning
 First of all, things may go wrong for various reasons. Make sure to **ALWAYS** take a backup of both your site's files and the database so that you can return to a version that you know works.
