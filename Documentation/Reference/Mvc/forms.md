@@ -2,6 +2,10 @@
 
 **Applies to: Umbraco 4.10.0+**
 
+Quick links - MVC form tutorials:
+
+* [Creating an MVC form using a Partial View](forms/turorial-partial-views.md)
+
 _Creating an HTML form to submit data with MVC in Umbraco is very easy! You'll need to create a SurfaceController, a 'View Model' class and use a handy HtmlHelper extension method called BeginUmbracoForm._
 
 ##Creating a form - The View Model
@@ -35,7 +39,7 @@ Next up, we need to create an Action on a SurfaceController which accepts our su
 		    //model not valid, do not save, but return current umbraco page
 		    if (!ModelState.IsValid)
 			{
-				//Perhaps you might want to add a custom message to the TempData or ViewBag
+				//Perhaps you might want to add a custom message to the ViewBag
 				//which will be available on the View when it renders (since we're not 
 				//redirecting)	    	
 		   		return CurrentUmbracoPage();
