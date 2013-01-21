@@ -106,3 +106,13 @@ Once you've created the database and credentials, enter those details in the ins
 
 ##Finishing off
 Follow the installation wizard and after a few easy steps and choices you should get a message saying the installation was a success.
+
+##Post installation in production
+Umbraco 4.x includes uGoLive components which is accessible as a tab in the the developer section of Umbraco backoffice. 
+uGoLive does certain post-installation checks and gives recommendations on what to do post-install - the recommendations should 
+be followed to secure your Umbraco installation. 
+
+After applying the recommended measures you can optionally delete the uGoLive-binaries which are named Our.Umbraco.uGoLive.* 
+from the bin folder to increase site performance. 
+
+

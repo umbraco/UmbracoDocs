@@ -45,3 +45,46 @@ Add references to the right namespaces at the top of your .cs file, and inherit 
 	    }
 	}
 
+
+## Using IApplicationEventHandler to register events ##
+
+**Applies to: Umbraco 4.10.0+**
+
+
+As of version 4.10.0 the use of ApplicationBase has been deprecated and you're encourage to move to implemint IApplicationEventHandler instead.
+Here's an example that does the same thing as the ApplicationBase sample above. Remember that it's an interface so you have to implement all three methods, but you can leave the ones you're not using empty.
+
+	using Umbraco.Core;
+	using Umbraco.Web;
+	using umbraco.BusinessLogic;
+	using umbraco.cms.businesslogic;
+	using umbraco.cms.businesslogic.web;
+	
+	namespace Umbraco.Extensions.EventHandlers
+	{
+	    public class RegisterEvents : IApplicationEventHandler
+	    {
+	        public void OnApplicationInitialized(UmbracoApplication httpApplication, ApplicationContext applicationContext)
+	        {            
+	        }
+	
+	        public void OnApplicationStarting(UmbracoApplication httpApplication, ApplicationContext applicationContext)
+	        {
+	            Document.BeforePublish += Document_BeforePublish;
+	        }
+	
+	        public void OnApplicationStarted(UmbracoApplication httpApplication, ApplicationContext applicationContext)
+	        {
+	        }
+	
+	        private void Document_BeforePublish(Document sender, PublishEventArgs e)
+	        {
+	            //Do what you need to do. In this case logging to the Umbraco log
+	            Log.Add(LogTypes.Debug, sender.Id, "the document " + sender.Text + " is about to be published");
+	
+	            //cancel the publishing if you want.
+	            e.Cancel = true;
+	        }
+	    }
+	}
+

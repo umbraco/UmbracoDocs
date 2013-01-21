@@ -59,6 +59,9 @@ To create and store a `Document` you need a `DocumentType`, calling `MakeNew()` 
 	//set a HttpPostedFile 
 	d.getProperty("upload").Value = Request.Files[0];
 	
+	//save the document to the database
+	d.Save();
+	
 	//publish the document
 	d.Publish(user);
 	

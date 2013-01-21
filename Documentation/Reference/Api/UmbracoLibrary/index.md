@@ -441,6 +441,8 @@ Creates an MD5 hash out of a string:
 	<xsl:value-of select="umbraco.library:md5('value to hash')"/>
 
 ##NiceUrlFullPath
+**NOTE:** This method was obsoleted in **Umbraco 4.10.0+**
+
 Does the same as NiceUrl except it returns the full url with a domain for a given node in the Umbraco content section.
 
 ###XSLT Example
