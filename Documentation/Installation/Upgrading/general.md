@@ -19,6 +19,7 @@ You can also expect there to be some changes to the following configuration file
 
 * Any file in the /Config folder
 * The web.config file in the root of your site
+ * **Warning: Do not remove the version number, nor the existing connection string**
 * In rare cases also the Web.config file in the Views folder
 
 Use a tool like [WinMerge](http://winmerge.org/ "WinMerge") to check changes between all of the config files. Depending on when you did this last there have been updates to quite a few of them.
@@ -34,6 +35,9 @@ The installer will do two things
 
 * Update the version number in the Web.config 
 * Upgrade your database in case there are any changes.
+
+We are aware that, currently, the installer is asking you for the database details of a **blank database** while upgrading. In the near future this will be prefilled with your existing details and the wording will be updated.  
+So no need to be scared, enter the details of your existing database and Umbraco will upgrade it to the latest version when necessary. 
 
 Since version 4.0.0 there have been two database upgrades, one to version 4.1.0 and one to version 4.9.0.  
 Version 6 introduces a large database upgrade and still handles all the previously necessary database upgrades too.
