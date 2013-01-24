@@ -20,7 +20,17 @@ Coming soon...
 
 ###Dynamic: 
 
-Coming soon...
+	@{
+		if(CurrentPage.HasValue("relatedLinks") && CurrentPage.relatedLinks.Any()){
+        	<ul>
+            @foreach (var item in CurrentPage.relatedLinks){
+            	var linkUrl = (item.type.Equals("internal")) ? @Umbraco.NiceUrl(int.Parse(item.link)) : item.link;                                     
+                var linkTarget = (item.newwindow.Equals("1")) ? " target=\"_blank\"" : String.Empty;
+                <li><a href="@linkUrl"@Html.Raw(linkTarget)>@item.title</a></li>    
+            }   
+            </ul>            
+        }   
+	}       
 
 ##Razor Macro (DynamicXml) Example
 
