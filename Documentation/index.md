@@ -11,6 +11,9 @@ Step by step guides on how to approach the different areas in umbraco. Working w
 ##[Developers API Reference](Reference/index.md)
 Covers API reference, searching, querying and management APIs.
 
+##[Cheatsheets](Cheatsheets/index.md)
+Cheatsheets for easy overview of different areas like the Razor API and Views syntax
+
 ##[Extending Umbraco](Extending-Umbraco/index.md)
 Documentation on how to extend umbraco with your own editors, trees, sections, and how to distribute those extensions as packages **(coming soon)**
 
