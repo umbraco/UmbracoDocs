@@ -83,6 +83,9 @@ The tag property editor comes with a helper library containing 7 public methods.
 
 ###Razor Macro (DynamicXml) Example
 
+	@inherits umbraco.MacroEngines.DynamicNodeContext
+	@using umbraco.MacroEngines;
+	@using Tags = umbraco.editorControls.tags;
 	@{
 	    var rawTagXml = Tags.library.getAllTagsInGroup("News").Current.InnerXml;
 	    var NewsGroupTags = new DynamicXml(rawTagXml);
