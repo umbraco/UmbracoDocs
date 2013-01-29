@@ -90,7 +90,7 @@ The Slider data-type makes use of the jQuery UI Slider plugin, which makes selec
 
 Slider was originally in uComponents but was included in the Umbraco Core v4.8 
 
-##Tags
+##[Tags](Tags.md)
 A textbox that allows you to use multiple tags on a docType - This is what is used on Blog4Umbraco and is perfect if you need to categorise data.  You can specify a TAG Group when creating new versions of this datatype, in case you need to use TAGS on different sections of your site (i.e  News, Article, Events).
 
 ##Textbox multiple
