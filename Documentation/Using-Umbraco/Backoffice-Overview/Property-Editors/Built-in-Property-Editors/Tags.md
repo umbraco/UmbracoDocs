@@ -88,12 +88,11 @@ The tag property editor comes with a helper library containing 7 public methods.
 	@using Tags = umbraco.editorControls.tags;
 	@{
 	    var rawTagXml = Tags.library.getAllTagsInGroup("News").Current.InnerXml;
-	    var NewsGroupTags = new DynamicXml(rawTagXml);
-	
-	    if (NewsGroupTags.Any())
+	    var newsGroupTags = new DynamicXml(rawTagXml);
+	    if (newsGroupTags.Any())
 	    {
 	        <ul>
-	        @foreach (var tag in NewsGroupTags)
+	        @foreach (var tag in newsGroupTags)
 	        {
 	            <li>@tag.InnerText</li>
 	        }
