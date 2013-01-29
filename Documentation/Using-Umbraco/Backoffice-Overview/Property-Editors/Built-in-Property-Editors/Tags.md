@@ -50,7 +50,7 @@ Specify the tag group for this data type. Tags can be retrieved by group.
         }   
     }     
 
-##Razor Macro (DynamicXml) Example
+##Razor Macro (DynamicNode) Example
 
 	@{
 	    if (Model.HasValue("articleTags")){
