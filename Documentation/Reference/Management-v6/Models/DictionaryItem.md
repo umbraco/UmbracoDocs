@@ -2,7 +2,7 @@
 
 **Applies to Umbraco 6.x and newer**
 
-Intro text here
+Intro text here.
 
  * **Namespace:** `Umbraco.Core.Models` 
  * **Assembly:** `Umbraco.Core.dll`

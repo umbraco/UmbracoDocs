@@ -4,8 +4,11 @@ _Developers reference primarily consists of API references of the different core
 ##[Templating](Templating/index.md)
 Reference documentation, covering masterpages, macros, razor syntax and xslt for macros
 
-##[Management APIs](management/index.md)
-Create, update, delete all build-in system objects, like documents, media, templates, document types and so on. 
+##[Management APIs - 4.x](Management/index.md)
+Specific to version 4.x or earlier: Create, update, delete all build-in system objects like documents, media, templates, document types and so on. 
+
+##[Management APIs - 6.x](Management-v6/index.md)
+Specific to version 6.x or later: Create, update, delete all build-in system objects like content, media, templates, content types and so on. 
 
 ##[Querying](Querying/index.md)
 Umbraco comes with several ways of querying, filtering and searching contnet, through the APIs: uQuery, DynamicNode and NodeFactory

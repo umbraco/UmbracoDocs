@@ -21,16 +21,16 @@ All samples in this document will require the following usings:
 ##Constructors
 
 ### new Content(string name, IContent parent, IContentType contentType)
-Constructor for creating a Content object where the necessary parameters are the name of the Content, the parent of the Content as an `IContent` object and the ContentType as an `IContentType` object for the Content being created.
+Constructor for creating a new Content object where the necessary parameters are the name of the Content, the parent of the Content as an `IContent` object and the ContentType as an `IContentType` object for the Content being created.
 
 ### new Content(string name, IContent parent, IContentType contentType, PropertyCollection properties)
-Constructor for creating a Content object where the necessary parameters are the name of the Content, the parent of the Content as an `IContent` object, the ContentType as an `IContentType` object and a `PropertyCollection` for the Content being created.
+Constructor for creating a new Content object where the necessary parameters are the name of the Content, the parent of the Content as an `IContent` object, the ContentType as an `IContentType` object and a `PropertyCollection` for the Content being created.
 
 ### new Content(string name, int parentId, IContentType contentType)
-Constructor for creating a Content object where the necessary parameters are the name of the Content, the id of the parent as `int` and the ContentType as an `IContentType` object for the Content being created.
+Constructor for creating a new Content object where the necessary parameters are the name of the Content, the id of the parent as `int` and the ContentType as an `IContentType` object for the Content being created.
 
 ### new Content(string name, int parentId, IContentType contentType, PropertyCollection properties)
-Constructor for creating a Content object where the necessary parameters are the name of the Content, the id of the parent as `int`, the ContentType as an `IContentType` object and a `PropertyCollection` for the Content being created.
+Constructor for creating a new Content object where the necessary parameters are the name of the Content, the id of the parent as `int`, the ContentType as an `IContentType` object and a `PropertyCollection` for the Content being created.
 
 ##Properties
 
@@ -70,7 +70,7 @@ If set, returns the `DateTime` the Content is meant to be unpublished and become
 	content.ExpireDate = DateTime.Now.AddDays(5);
 
 ###.Id
-Returns the unique `Content` Id as a `Int`, this ID is based on a Database identity field, and is therefore not safe to reference in code which are moved between different instances, use UniqueId instead. 
+Returns the unique `Content` Id as a `Int`, this ID is based on a Database identity field, and is therefore not safe to reference in code which are moved between different instances, use Key instead. 
 
 ###.Key
 Returns the `Guid` assigned to the Content during creation. This value is unique, and should never change, even if the content is moved between instances. 
@@ -164,7 +164,7 @@ If set, returns `DateTime` indicating when the `Content` should be published and
 	content.ReleaseDate = DateTime.Now.AddDays(4);
 
 ###.SortOrder
-Returns the given `Content` index, compared to sibling documents.
+Returns the given `Content` index, compared to sibling content.
 
 	//Given a `ContentService` object get Content by its Id and return its SortOrder
 	var content = contentService.GetById(1234);
@@ -221,7 +221,7 @@ Changes the `IContentType` for the current Content object and removes PropertyTy
 	//Given a `ContentTypeService` object get the ContentType that we're changing to,
 	//get the Content from the `ContentService` for which we want to change ContentType for,
 	//and then save the Content throught the ContentService.
-	var contentType = contentTypeService.GetById(1122);
+	var contentType = contentTypeService.GetContentType(1122);
 	var content = contentService.GetById(1234);
 	content.ChangeContentType(contentType);
 	contentService.Save(content);
@@ -285,7 +285,7 @@ Sets the value of a property by its alias.
 	contentService.Save(content);
 
 ###.ToXml()
-Returns an `XElement` containing the Content data, based off the latest changes. Is used when the published content is sent to the in-memory cache.
+Returns an `XElement` containing the Content data, based off the latest changes. Is used when the published content is sent to the in-memory xml cache.
 
 	//Given a `ContentService` object get Content by its Id and returns the xml
 	var content = contentService.GetById(1234);

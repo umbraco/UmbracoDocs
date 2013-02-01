@@ -1,9 +1,21 @@
 #Developers Reference
 
-The intended audience for these reference pages are .net developers, it is assumed the reader already has a knowledge of the basics of Umbraco and knows .net & c#
+The intended audience for these reference pages are .net developers, it is assumed the reader already has a knowledge of the basics of Umbraco and knows .net & c#.
 
 ##[ContentService](ContentService.md)
-Create, Update, Move, Copy, delete and publish documents. 
+Service for doing CRUD type operations, as well as publishing for Content objects.
 
 ##[ContentTypeService](ContentTypeService.md)
-Create, Update, Move, Copy, delete and publish documents. 
+Service for doing CRUD type operations against ContentType and MediaType objects. 
+
+##[DataTypeService](DataTypeService.md)
+Service for doing CRUD type operations for DataTypeDefinition and DataType objects.
+
+##FileService
+Service for doing CRUD type operations for Script, Stylesheet and Template objects.
+
+##LocalizationService
+Service for doing CRUD type operations for Dictionary and Language objects.
+
+##MediaService
+Service for doing CRUD type operations for Media objects.
