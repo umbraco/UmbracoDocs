@@ -62,8 +62,8 @@ Returns a `Property[]` containing all property data of the given `Document`, eac
 
 	var doc = new Document(1223);
 	foreach(var prop in doc.getProperties){
-        var value = (DateTime)p.Value;
-        var alias = p.PropertyType.Alias;
+        var value = (DateTime)prop.Value;
+        var alias = prop.PropertyType.Alias;
     } 
 
 ###.getProperty
