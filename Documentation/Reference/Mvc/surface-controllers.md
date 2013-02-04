@@ -34,7 +34,7 @@ To create a locally declared SurfaceController:
 
 For example:
 
-	public void MySurfaceController : Umbraco.Web.Mvc.SurfaceController
+	public class MySurfaceController : Umbraco.Web.Mvc.SurfaceController
 	{
 		public ActionResult Index() 
 		{
