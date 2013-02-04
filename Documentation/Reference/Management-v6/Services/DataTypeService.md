@@ -2,7 +2,7 @@
 
 **Applies to Umbraco 6.x and newer**
 
-The ContentService acts as a "gateway" to Umbraco data for operations which are related to DataTypes and DataTypeDefinitions.
+The DataTypeService acts as a "gateway" to Umbraco data for operations which are related to DataTypes and DataTypeDefinitions.
 
  * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
