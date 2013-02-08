@@ -1,9 +1,9 @@
 #Umbraco Documentation
 
-_Documentation on the Umbraco 4 core functionality and APIs._
+_Documentation on the Umbraco core functionality and APIs._
 
 ##[Installation](Installation/index.md)
-Describes how Umbraco 4 is installed, using either WebMatrix, Microsoft Platform Installer, or from a zip-file. 
+Describes how Umbraco is installed, using either WebMatrix, Microsoft Platform Installer, or from a zip-file. 
 
 ##[Using Umbraco](Using-Umbraco/index.md)
 Step by step guides on how to approach the different areas in umbraco. Working with content, media, templating or developement. 
@@ -21,7 +21,7 @@ Documentation on how to extend umbraco with your own editors, trees, sections, a
 How to work with the Umbraco codebase.
 
 ###Progress
-Consult the Umbraco 4 documentation trello board to see what we are currently working on.
+Consult the Umbraco documentation trello board to see what we are currently working on.
 [See the TrelloBoard here](https://trello.com/board/umbraco-4-documentation/4fdb02df8fc3ef067e809e95)
 
 ###Contribution
