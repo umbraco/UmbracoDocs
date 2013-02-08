@@ -1,4 +1,4 @@
-#Umbraco 4 Documentation
+#Umbraco Documentation
 
 _Documentation on the Umbraco 4 core functionality and APIs._
 
