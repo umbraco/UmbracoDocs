@@ -27,7 +27,7 @@ The additional steps are listed below, remember that new config files are not me
 * Remove the Config/formHandlers.config file
 
 ##Version 4.10.x to 4.11.x 
-* If your site was ever a version between 4.10.x and 4.11.x (anything lower then 4.11.4) install the [fixup package] (http://our.umbraco.org/projects/developer-tools/path-fixup)
+* If your site was ever a version between 4.10.x and 4.11.x (anything lower then 4.11.4) install the [fixup package](http://our.umbraco.org/projects/developer-tools/path-fixup)
 
 ##Version 4.10.x/4.11.x to 6.0.0 
-* If your site was ever a version between 4.10.x and 4.11.x (anything lower than 4.11.4) and you have just upgraded to 6.0.0 install the [fixup package] (http://our.umbraco.org/projects/developer-tools/path-fixup)
+* If your site was ever a version between 4.10.x and 4.11.x (anything lower than 4.11.4) and you have just upgraded to 6.0.0 install the [fixup package](http://our.umbraco.org/projects/developer-tools/path-fixup)
