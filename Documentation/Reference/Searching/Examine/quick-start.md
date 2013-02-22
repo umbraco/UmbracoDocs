@@ -1,4 +1,7 @@
 # Quick start
+
+**Applies to: Umbraco 4.11.5+**
+
 _This guide will help you get setup quickly using Examine with minimal configuration options. Umbraco ships Examine with 2 internal indexes which should not be used for searching when returning results on a public website because it indexes content that has not been published yet. So to get started we need to create a new index._
 
 
