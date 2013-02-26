@@ -4,6 +4,14 @@ _Developers reference primarily consists of API references of the different core
 ##[Templating](Templating/index.md)
 Reference documentation, covering masterpages, macros, razor syntax and xslt for macros
 
+##[MVC](Mvc/index.md) 
+Introduced in **Umbraco 4.10.0+**
+How to use MVC in Umbraco.
+
+##[Web API](WebApi/index.md) 
+Introduced in **Umbraco 6.1.0+**
+How to use Web API in Umbraco to easily create REST services.
+
 ##[Management APIs - 4.x](Management/index.md)
 Specific to version 4.x or earlier: Create, update, delete all build-in system objects like documents, media, templates, document types and so on. 
 
@@ -28,10 +36,6 @@ Umbraco.Library is a Xslt extension library, built specifically for xslt macros 
 ##[Plugins](Plugins/index.md) 
 Introduced in **Umbraco 4.10.0+**
 The term 'Plugins' is refering to any types in Umbraco that are found in assemblies that are used to extend and/or enhance the Umbraco application.
-
-##[MVC](Mvc/index.md) 
-Introduced in **Umbraco 4.10.0+**
-How to use MVC in Umbraco.
 
 ---
 
