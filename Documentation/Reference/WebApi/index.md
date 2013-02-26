@@ -1,4 +1,7 @@
 #Umbraco Api
+
+**Applies to: Umbraco 6.1.0+**
+
 _This section will describe how to work with Web Api in Umbraco to easily create REST services_ 
 
 Related links:
@@ -59,6 +62,10 @@ Example:
 	    }
 	}
 
+All locally declared Umbraco api controllers will be routed under the url path of:
+
+*~/Umbraco/Api/[YourControllerName]*
+
 ###Plugin based controller
 
 If you are creating an Umbraco Api controller to be shipped in an Umbraco package you will need to add an attribute to your controller to ensure that it is routed via an area. The area name is up to you to specify in the attribute. 
@@ -74,7 +81,9 @@ Example:
 	    }
 	}
 
-Now this controller will be routed via the area called "AwesomeProducts"
+Now this controller will be routed via the area called "AwesomeProducts". All plugin based Umbraco api controlleres will be routed under the url path of:
+
+*~/Umbraco/[YourAreaName]/[YourControllerName]*
 
 For more information about areas, Urls and routing see the [routing section](routing.md)
 

@@ -1,4 +1,7 @@
 #Umbraco Api - Authorization
+
+**Applies to: Umbraco 6.1.0+**	
+
 _This section will describe how to secure your Umbraco Api controllers based on a users membership_ 
 
 ##Using MemberAuthorizeAttribute

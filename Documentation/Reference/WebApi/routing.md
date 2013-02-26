@@ -1,4 +1,7 @@
 #Umbraco Api - Routing & Urls
+
+**Applies to: Umbraco 6.1.0+**
+
 _This section will describe how Umbraco Api controllers are routed and how to retreive their URLs_ 
 
 ##Routing
