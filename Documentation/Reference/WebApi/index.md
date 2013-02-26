@@ -1,6 +1,11 @@
 #Umbraco Api
 _This section will describe how to work with Web Api in Umbraco to easily create REST services_ 
 
+Related links:
+
+* [Umbraco api routes and Urls](routing.md)
+* [Umbraco api authorization](authorization.md)
+
 ##What is Web API?
 The Microsoft Web API reference can be found [here](http://www.asp.net/web-api) - *"ASP.NET Web API is a framework that makes it easy to build HTTP services that reach a broad range of clients, including browsers and mobile devices. ASP.NET Web API is an ideal platform for building RESTful applications on the .NET Framework."*
 
