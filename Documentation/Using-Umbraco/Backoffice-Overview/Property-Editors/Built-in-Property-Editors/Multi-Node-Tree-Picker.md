@@ -1,4 +1,4 @@
-#Multi-Node Tree Picker
+#Multi-Node Tree Picker (MNTP)
 
 `Returns: XML or CSV`
 
@@ -135,7 +135,61 @@ The nodes in a light reddish colour ("File 1") are nodes that the user is unable
 
 ![Media Picker Content Example 3](images/MNTP-Content-Media.jpg?raw=true)
 
-##XSLT Example
+##MVC View Example
+
+###Typed:
+
+Coming soon
+
+###Dynamic: 
+
+Coming soon
+
+##Razor Macro (DynamicXml) Example
+
+For XML data storage (This example returns a DynamicNodeList so that filtering and ordering can be used):
+
+	@using umbraco.MacroEngines
+	@inherits umbraco.MacroEngines.DynamicNodeContext
+	@{    
+		if (Model.HasValue("mntpFeaturePicker")){  
+	        //Convert selected NodeIds to DynamicNodeList by iterating through each node to check if published
+	        var PublishedNodeList = new DynamicNodeList();    
+	        foreach (var id in Model.mntpFeaturePicker){        
+	            var currentNode = Library.NodeById(id.InnerText);
+	            if(currentNode.GetType() != typeof(DynamicNull)){
+	                PublishedNodeList.Add(currentNode);
+	            }
+	        }
+	        foreach (dynamic item in PublishedNodeList)
+	        {
+	            <p>@item.Name</p>   
+	        }              
+	    }
+	}
+
+For CSV data storage (This example returns a DynamicNodeList so that filtering and ordering can be used):
+
+	@using umbraco.MacroEngines
+	@inherits umbraco.MacroEngines.DynamicNodeContext
+	@{
+		if (Model.HasValue("mntpFeaturePicker")){                
+	        //Convert selected NodeIds to DynamicNodeList by iterating through each node to check if published
+	        var PublishedNodeList = new DynamicNodeList();  
+	        foreach (var id in Model.GetPropertyValue("mntpFeaturePicker").Split(',')){
+	            var currentNode = Library.NodeById(id);
+	            if(currentNode.GetType() != typeof(DynamicNull)){
+	                PublishedNodeList.Add(currentNode);
+	            }
+	        }
+	        foreach (dynamic item in PublishedNodeList)
+	        {
+	            <p>@item.Name</p>   
+	        }      
+	    } 
+	}
+
+##XSLT Macro Example
 
 For XML data storage:
 
@@ -161,47 +215,3 @@ For CSV data storage:
 		</xsl:if>		  		  		
 	  </xsl:for-each>	  
 	</xsl:if>
-
-##Razor (DynamicNode) Example
-
-For XML data storage (This example returns a DynamicNodeList so that filtering and ordering can be used):
-
-	@using umbraco.MacroEngines
-	@inherits umbraco.MacroEngines.DynamicNodeContext
-	@{    
-		if (Model.HasValue("mntpFeaturePicker")){  
-	        //Convert selected NodeIds to DynamicNodeList by iterating through each node to check if published
-	        var PublishedNodeList = new DynamicNodeList();    
-	        foreach (var id in Model.mntpFeaturePicker){        
-	            var currentNode = Library.NodeById(id.InnerText);
-	            if(currentNode.GetType() != typeof(DynamicNull)){
-	                PublishedNodeList.Add(currentNode);
-	            }
-	        }
-	        foreach (DynamicNode item in PublishedNodeList)
-	        {
-	            <p>@item.Name</p>   
-	        }              
-	    }
-	}
-
-For CSV data storage (This example returns a DynamicNodeList so that filtering and ordering can be used):
-
-	@using umbraco.MacroEngines
-	@inherits umbraco.MacroEngines.DynamicNodeContext
-	@{
-		if (Model.HasValue("mntpFeaturePicker")){                
-	        //Convert selected NodeIds to DynamicNodeList by iterating through each node to check if published
-	        var PublishedNodeList = new DynamicNodeList();  
-	        foreach (var id in Model.GetPropertyValue("mntpFeaturePicker").Split(',')){
-	            var currentNode = Library.NodeById(id);
-	            if(currentNode.GetType() != typeof(DynamicNull)){
-	                PublishedNodeList.Add(currentNode);
-	            }
-	        }
-	        foreach (DynamicNode item in PublishedNodeList)
-	        {
-	            <p>@item.Name</p>   
-	        }      
-	    } 
-	}
