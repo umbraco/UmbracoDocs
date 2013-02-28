@@ -34,3 +34,6 @@ How to specify your own custom MVC routes in your application to work outside of
 
 ##[Using IoC](using-ioc.md)
 How to setup IoC/Dependency Injection containers for use in MVC within Umbraco
+
+##[Scaffolding](Scaffolding.md)
+Scaffold common components like Views, SurfaceControllers or MacroPartials in Visual Studio with simple commands. 
