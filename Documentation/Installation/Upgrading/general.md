@@ -26,7 +26,7 @@ Use a tool like [WinMerge](http://winmerge.org/ "WinMerge") to check changes bet
 
 There's also the possibility that some files in the /Config folder are new or some have been removed (we do make a note of this in the release notes). WinMerge (and other diff tools) is able to compare folders as well so you can more easily spot these differences too.
 
-Up until version 6.0.0 it was necessary to change the version number in ClientDependency.config. This was to clear the cached html/css/js files in the backoffice. Just change the current version number to one that's higher than that. Make sure not to skip this step as you might get strange behavior in the backoffice otherwise.
+Up until version 6.0.0 it was necessary to change the version number in ClientDependency.config. This was to clear the cached html/css/js files in the backoffice. Just change the current version number to one that's higher than that. Make sure not to skip this step as you might get strange behaviour in the backoffice otherwise.
 
 #Finalize
 After copying the files and making the config changes, you can open your site. You should see the installer which will guide you through the upgrade. 
