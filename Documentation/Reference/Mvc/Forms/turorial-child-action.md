@@ -135,9 +135,9 @@ When naming your actions you may be tempted to name them the same for rendering 
 	    ...
 	}
 
-However this may cause unwanted side effects. If you don't do a redirect in during the  HttpPost and instead `return CurrentUmbracoPage();`  MVC will end up trying to render the [HttpPost] action when rendering your Child Action which will cause problems (and YSODs). Full information is available in this issue: [http://issues.umbraco.org/issue/U4-1819](http://issues.umbraco.org/issue/U4-1819). The problem is due to MVC routing to the wrong action because there's still an HttpPost verb in the request.
+However this may cause unwanted side effects. If you don't do a redirect during the  HttpPost and instead `return CurrentUmbracoPage();`  MVC will end up trying to render the [HttpPost] action when rendering your Child Action which will cause problems (and YSODs). Full information is available in this issue: [http://issues.umbraco.org/issue/U4-1819](http://issues.umbraco.org/issue/U4-1819). The problem is due to MVC routing to the wrong action because there's still an HttpPost verb in the request.
 
-If you really want to name your actions the same you can use a new attribute which will be available in Umbraco 4.11.6+, 6.0.2+ called [NotChildAction] which you'd have to use to attribute your HttpPost method as well, so you actions would look like:
+If you really want to name your actions the same you can use a new attribute which will be available in Umbraco 4.11.6+, 6.0.3+ called [NotChildAction] which you'd have to use to attribute your HttpPost method as well, so you actions would look like:
 
 	[ChildActionOnly]
 	public ActionResult CommentForm(int memberId) 
