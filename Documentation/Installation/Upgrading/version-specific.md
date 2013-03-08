@@ -20,6 +20,7 @@ The additional steps are listed below, remember that new config files are not me
 * For people using uComponents 3.1.2 or below, 4.8.0 breaks support for it. Either upgrade to a newer version beforehand or follow the workaround [posted here](http://our.umbraco.org/projects/backoffice-extensions/ucomponents/questionssuggestions/33021-Upgrading-to-Umbraco-48-breaks-support-for-uComponents)
 
 ##Version 4.8.0 to 4.10.0
+* Delete the bin/umbraco.linq.core.dll file
 * Copy the new files and folders from the zip file into your site's folder
  * /App_Plugins
  * /Views
