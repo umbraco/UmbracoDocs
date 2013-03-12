@@ -139,11 +139,62 @@ The nodes in a light reddish colour ("File 1") are nodes that the user is unable
 
 ###Typed:
 
-Coming soon
+For XML data storage (DynamicXml used to retrieve NodeIds):
+
+	@using Umbraco.Core.Dynamics;
+    @{
+        DynamicXml typedMultiNodeTreePicker = new DynamicXml(Model.Content.GetPropertyValue<string>("mntpFeaturePickerXML"));
+        List<string> typedPublishedMNTPNodeList = new List<string>();
+        foreach (dynamic id in typedMultiNodeTreePicker)                
+        {
+            typedPublishedMNTPNodeList.Add(id.InnerText); 
+        }
+        IEnumerable<IPublishedContent> typedMNTPCollection = Umbraco.TypedContent(typedPublishedMNTPNodeList).Where(x => x != null);
+        foreach (IPublishedContent item in typedMNTPCollection)
+        {     
+            <p>@item.Name</p>         
+        }       
+    }
+
+For CSV data storage:
+
+    @{
+        String typedMultiNodeTreePickerCSV = Model.Content.GetPropertyValue<string>("mntpFeaturePickerCSV");
+        IEnumerable<int> typedPublishedMNTPNodeListCSV = typedMultiNodeTreePickerCSV.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(x => int.Parse(x));            
+        IEnumerable<IPublishedContent> typedMNTPCollectionCSV = Umbraco.TypedContent(typedPublishedMNTPNodeList).Where(x => x != null);
+        foreach (IPublishedContent item in typedMNTPCollectionCSV)
+        {     
+            <p>@item.Name</p>         
+        }       
+    }
 
 ###Dynamic: 
 
-Coming soon
+For XML data storage:
+
+    @{
+        var dynamicPublishedMNTPNodeList = new List<string>();
+        foreach (var id in CurrentPage.mntpFeaturePickerXML)                
+        {
+            dynamicPublishedMNTPNodeList.Add(id.InnerText); 
+        }
+        var dynamicMNTPCollection = Umbraco.Content(dynamicPublishedMNTPNodeList);
+        foreach (var item in dynamicMNTPCollection)
+        {     
+            <p>@item.Name</p>         
+        }       
+    }  
+
+For CSV data storage:
+
+    @{
+        var dynamicPublishedMNTPNodeListCSV = CurrentPage.mntpFeaturePickerCSV.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+        var dynamicMNTPCollectionCSV = Umbraco.Content(dynamicPublishedMNTPNodeListCSV);
+        foreach (var item in typedMNTPCollectionCSV)
+        {     
+            <p>@item.Name</p>         
+        }       
+    }
 
 ##Razor Macro (DynamicXml) Example
 
