@@ -81,11 +81,14 @@ This settings determines if the picker should be populated with items which the 
 	    if (Model.HasValue("ultimatePicker")){
 	        //filter out unpublished or deleted nodes, check for Id > 0 due to bug (U4-1924) with NodesById
 	        IEnumerable<DynamicNode> PublishedNodeList = Library.NodesById(Model.ultimatePicker.Split(','));        
-	        PublishedNodeList = PublishedNodeList.Where(x => x.GetType() != typeof(DynamicNull) && x.Id > 0);       	               
-	        dynamic ultimatePicker = new DynamicNodeList(PublishedNodeList);        
-	        foreach(var item in ultimatePicker.Where("Visible")){                   
-	            <p>@item.Name</p>      
-	        }               
+	        PublishedNodeList = PublishedNodeList.Where(x => x.GetType() != typeof(DynamicNull) && x.Id > 0);                        
+	        dynamic ultimatePicker = new DynamicNodeList(PublishedNodeList);    
+	        
+	        if (ultimatePicker.Any()){            
+	            foreach(var item in ultimatePicker.Where("Visible")){                   
+	                <p>@item.Name</p>      
+	            }               
+	        }
 	    } 
 	}
 
