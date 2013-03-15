@@ -117,7 +117,7 @@ The umbraco usercontrol wrapper datatype enables to create a custom Data type th
 ##Upload field
 Adds an upload field, which allows documents or images to be uploaded to umbraco. This does not add them to the media library, they are simply added to the document data.
 
-##XPath CheckBoxList
+##[XPath CheckBoxList](XPath-CheckBox-List.md)
 Uses an XPath expression to select nodes from the content tree to use as the checkbox options. The advantage of using XPath to define the nodes to use is that it allows a granular selection throughout the whole tree.
 
 Can use $currentPage and also $parentPage within the XPath expression (including use within any XPath predicates). ($parentPage allows the expression to be evaluated when the current node is unpublished, and the XPath expression depends on finding nodes based on a current ancestor).
