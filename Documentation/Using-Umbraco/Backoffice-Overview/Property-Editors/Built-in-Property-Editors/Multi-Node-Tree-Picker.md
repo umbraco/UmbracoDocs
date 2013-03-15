@@ -4,6 +4,10 @@
 
 The multi-node tree picker data type allows your content editor to choose multiple nodes in the content or media trees to be saved with the current document type. This is useful for all sorts of situations such as relating a page to numerous other pages, creating a list of images/files from the media section, etc...
 
+##Data Type Definition Example
+
+![Media Picker Data Type Definition](images/MNTP-DataType.jpg?raw=true)
+
 ##Settings
 
 There are a lot of settings for the Multi-Node tree picker, there are also some settings which determine which further settings are displayed.
@@ -110,10 +114,6 @@ This setting determines the height of the data type when displayed to the editor
 
 ![Media Picker Data Type Definition](images/MNTP-Settings-Height.jpg?raw=true)
 
-##Data Type Definition Example
-
-![Media Picker Data Type Definition](images/MNTP-DataType.jpg?raw=true)
-
 ##Content Example 
 
 The list on the right shows which nodes have already been selected/saved
@@ -201,22 +201,24 @@ For CSV data storage:
 For XML data storage (This example returns a DynamicNodeList so that filtering and ordering can be used):
 
 	@using umbraco.MacroEngines
-	@inherits umbraco.MacroEngines.DynamicNodeContext
-	@{    
-		if (Model.HasValue("mntpFeaturePicker")){  
-	        //Convert selected NodeIds to DynamicNodeList by iterating through each node to check if published
-	        var PublishedNodeList = new DynamicNodeList();    
-	        foreach (var id in Model.mntpFeaturePicker){        
-	            var currentNode = Library.NodeById(id.InnerText);
-	            if(currentNode.GetType() != typeof(DynamicNull)){
-	                PublishedNodeList.Add(currentNode);
-	            }
-	        }
-	        foreach (dynamic item in PublishedNodeList)
+	@using umbraco;
+	@inherits umbraco.MacroEngines.DynamicNodeContext	 
+	@{
+	    if (Model.HasValue("mntpFeaturePickerXML"))
+	    {
+	        int[] nodeList = uQuery.GetXmlIds(Model.mntpFeaturePickerXML.ToXml());      
+	        IEnumerable<DynamicNode> PublishedNodeList = Library.NodesById(nodeList.ToList());        
+	        PublishedNodeList = PublishedNodeList.Where(x => x.GetType() != typeof(DynamicNull) && x.Id > 0);                        
+	        dynamic multiNodeTreePicker = new DynamicNodeList(PublishedNodeList);
+	
+	        if (multiNodeTreePicker.Any())
 	        {
-	            <p>@item.Name</p>   
-	        }              
-	    }
+	            foreach (var item in multiNodeTreePicker.Where("Visible"))
+	            {                   
+	                <p>@item.Name</p>      
+	            }               
+	        }
+	    } 
 	}
 
 For CSV data storage (This example returns a DynamicNodeList so that filtering and ordering can be used):
@@ -224,19 +226,19 @@ For CSV data storage (This example returns a DynamicNodeList so that filtering a
 	@using umbraco.MacroEngines
 	@inherits umbraco.MacroEngines.DynamicNodeContext
 	@{
-		if (Model.HasValue("mntpFeaturePicker")){                
-	        //Convert selected NodeIds to DynamicNodeList by iterating through each node to check if published
-	        var PublishedNodeList = new DynamicNodeList();  
-	        foreach (var id in Model.GetPropertyValue("mntpFeaturePicker").Split(',')){
-	            var currentNode = Library.NodeById(id);
-	            if(currentNode.GetType() != typeof(DynamicNull)){
-	                PublishedNodeList.Add(currentNode);
-	            }
-	        }
-	        foreach (dynamic item in PublishedNodeList)
+	    if (Model.HasValue("mntpFeaturePickerCSV"))
+	    {
+	        IEnumerable<DynamicNode> PublishedNodeList = Library.NodesById(Model.mntpFeaturePickerCSV.Split(','));        
+	        PublishedNodeList = PublishedNodeList.Where(x => x.GetType() != typeof(DynamicNull) && x.Id > 0);                        
+	        dynamic multiNodeTreePicker = new DynamicNodeList(PublishedNodeList);
+	
+	        if (multiNodeTreePicker.Any())
 	        {
-	            <p>@item.Name</p>   
-	        }      
+	            foreach (var item in multiNodeTreePicker.Where("Visible"))
+	            {                   
+	                <p>@item.Name</p>      
+	            }               
+	        }
 	    } 
 	}
 
