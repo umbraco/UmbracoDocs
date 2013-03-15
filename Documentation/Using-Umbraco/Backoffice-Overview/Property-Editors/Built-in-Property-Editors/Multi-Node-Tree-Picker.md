@@ -98,7 +98,7 @@ If checked a information icon will appear next to selected nodes, this provides 
 
 This setting determines if the data is stored as CSV data or XML.
 
-![Media Picker Data Type Definition](images/MNTP-Settings-Tooltip.jpg?raw=true) 
+![Media Picker Data Type Definition](images/MNTP-Settings-CSVXML.jpg?raw=true) 
 
 Example of XML data:
   
