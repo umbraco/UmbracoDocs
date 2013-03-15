@@ -75,7 +75,7 @@ This settings determines if the picker should be populated with items which the 
         }       
     }
 
-##Razor Macro (DynamicXml) Example
+##Razor Macro (DynamicNode) Example
 
 	@{
 	    if (Model.HasValue("ultimatePicker")){
