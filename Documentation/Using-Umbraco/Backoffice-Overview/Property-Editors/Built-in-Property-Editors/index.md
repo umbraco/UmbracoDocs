@@ -105,7 +105,7 @@ The TinyMCE based wysiwyg editor. This is the standard editor used to edit any l
 ##True/False (Ja/Nej)
 A simple checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
 
-##Ultimate picker
+##[Ultimate picker](Ultimate-Picker.md)
 The Ultimate picker is a flexible document picker where you can set the root for the picker as well as of what type (Autocomplete, CheckboxList, DropDownList, ListBox, RadioButtonList) the picker should be. Other settings are on which Document Types the picker should filter, and if it should show Grandchildren of the root.  
 
 ##UltraSimpleEditor
