@@ -11,13 +11,17 @@ All samples in this document will require the following usings:
 	using Umbraco.Core.Models;
 	using Umbraco.Web;
 
+## Implementing the interface
+
+Implement `IPropertyEditorValueConverter` on your class
+
 ## Methods
 
 ### `IsConverterFor(Guid propertyEditorId, string docTypeAlias, string propertyTypeAlias)`
 
 ### `Attempt<object> ConvertPropertyValue(object value)`
 
-## Content Picker Example
+## Content picker example
 
 Converts the string node id to `IPublishedContent`
 
