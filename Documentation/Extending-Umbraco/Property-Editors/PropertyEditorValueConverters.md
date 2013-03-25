@@ -25,7 +25,6 @@ Implement `IPropertyEditorValueConverter` on your class
 
 Converts the string node id to `IPublishedContent`
 
-```c#
 	using Umbraco.Core;
 	using Umbraco.Core.PropertyEditors;
 	using Umbraco.Core.Models;
@@ -54,13 +53,11 @@ Converts the string node id to `IPublishedContent`
 	        }
 	    }
 	}
-```
 
 ## Using the converted property editor in Razor ##
 
 ### Typed: ###
 
-```c#
     @{
         IPublishedContent typedContentPicker = Model.Content.GetPropertyValue<IPublishedContent>("contentPicker");
         if (typedContentPicker != null)
@@ -68,11 +65,9 @@ Converts the string node id to `IPublishedContent`
             <p>@typedContentPicker.Name</p>                                                
         } 
     }
-```
 
 ### Dynamic: ###
 
-```c#
     @{
         var dynamicContentPicker = CurrentPage.contentPicker;
         if (dynamicContentPicker != null)
