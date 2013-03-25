@@ -2,7 +2,7 @@
 
 **Applies to Umbraco 4.10 and newer**
 
-A property editor value converter converts a property editors stored value to another type to be returned in a MVC View and accessed in Razor. For example as standard the core "Content Picker" returns a `String` containing the node id of the selected node. If you implement a converter it might return a `IPublishedContent` object.
+A property editor value converter converts a property editors stored value to another type to be returned in a MVC View and accessed in Razor. For example the standard core "Content Picker" returns a `String` containing the node id of the selected node. However if you implement a converter it could return a `IPublishedContent` object.
 
 All samples in this document will require the following usings:
 
