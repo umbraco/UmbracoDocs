@@ -20,3 +20,13 @@ A searcher in Examine is the object that performs the searching of data that is 
 ## Index Set
 
 An index set is what defines an index, where the index is saved and how the information is stored in the index. 
+
+## Naming conventions
+
+It is important to note the naming conventions above. Your Indexer, Searcher and associated Index Set must all be named according to convention so that they match. With the above examples the naming conventions are:
+
+ExternalIndexer 
+ExternalSearcher 
+ExternalIndexSet 
+
+Notice that the prefix is all the same, this is a requirement. The suffixes must also match so that the indexer name is suffixed with Indexer, the searcher is suffixed with Searcher and the index set is suffixed with IndexSet.
