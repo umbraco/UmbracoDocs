@@ -1,4 +1,5 @@
-# Overview & Explanation
+# Overview & Explanation - "Examining Examine by Peter Gregory"
+
 <small>Originally published on the Umbraco blog - [Examining Examine: Friday, September 16, 2011 by Peter Gregory](http://umbraco.com/follow-us/blog-archive/2011/9/16/examining-examine.aspx)</small>
 
 When Umbraco Examine was released many developers including myself thought all my search woes were solved. I figured I would be able to just fire up Umbraco, configure examine and BAM! I would have a search engine that gave me exactly what I needed. But after giving it an initial go and trying it out, most developers left it alone and put it in the too hard basket as they did not understand what was going on under the surface or why their search results were not what they expected. What I want to try and achieve in this post is to demystify Umbraco Examine and provide a few tips I have picked up while working with it.
