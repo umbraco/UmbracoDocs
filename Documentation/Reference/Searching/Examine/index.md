@@ -1,6 +1,9 @@
 # Examine
 _Examine uses Lucene as its search and index engine. Searching using Examine with Lucene can be very powerful and fast and it can also be really simple to setup and use._
 
+## What is Examine?
+
+Examine allows you to index and search data easily and wraps the Lucene.Net indexing/searching engine. Lucene is *super* fast and allows for very fast searching even on very large amounts of data. Examine is provider based so is very extensible and allows you to configure as many indexes as you like and each may be configured individually. Out of the box our *UmbracoExamine* library that is shipped with Umbraco gives you Umbraco based implementations for indexers and searchers to get started quickly.
 
 ## [Quick start](quick-start.md)
 
