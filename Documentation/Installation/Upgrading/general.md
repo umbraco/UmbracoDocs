@@ -28,6 +28,10 @@ There's also the possibility that some files in the /Config folder are new or so
 
 Up until version 6.0.0 it was necessary to change the version number in ClientDependency.config. This was to clear the cached html/css/js files in the backoffice. Just change the current version number to one that's higher than that. Make sure not to skip this step as you might get strange behaviour in the backoffice otherwise.
 
+##Merge UI.xml
+Some packages (like Contour) add dialogs to the UI.xml. Make sure to merge those changes back in during the upgrade so that the packages continue to work.  
+This file can be found in: /umbraco/config/create/UI.xml.
+
 #Finalize
 After copying the files and making the config changes, you can open your site. You should see the installer which will guide you through the upgrade. 
 
