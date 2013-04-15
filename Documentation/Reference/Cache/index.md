@@ -1,32 +1,18 @@
 #Cache & Distributed Cache
+
 _This section refers to how to implement caching features in the Umbraco application in a consistent way that will work in both single server environments and load balanced (multi-server) environments. The caching described in this section relates to application caching in the context of a web application only._ 
 
-##Adding and retreiving items in the cache
+##IF YOU ARE CACHING, PLEASE READ THIS
 
-Putting data in and getting data out of the cache is the easy, just use the `ApplicationContext.Current.ApplicationCache` object (`Umbraco.Core.CacheHelper`). The easiest way is to use one of the many overloaded methods of: `GetCacheItem`
+Although caching is a pretty standard concept it is very important to understand that caching is done correctly and consistently. It is always best to ensure performance is at its best before applying any cache and also beware of *over caching* as this can cause  degraded performance in your application because of cache turnover.
 
-The `GetCacheItem` methods (all except one) are designed to "Get or Add" to the cache. For example, the following will retreive an item from the cache and if it doesn't exist will ensure that the item is added to it:
+In normal environments caching seems to be a pretty standard and easy concept, however if you are a package developer or a developer who is going to be publishing a codebase to a load balanced environment then you need to be aware of how to invalidate your cache properly so that it works in load balanced environments. If it is not done correctly then your package and/or codebase will not work the way that you would expect in a load balanced scenario. 
 
-	MyObject cachedItem = ApplicationContext.Current.ApplicationCache
-							.GetCacheItem<MyObject>("MyCacheKey",
-								() => new MyObject());
+**If you are caching business logic data that changes based on a user's action in the back office and you are not using an *ICacheRefresher* than you will need to review your code and update it based on the below documentation.**
 
-Notice 2 things: the `GetCacheItem` method is strongly typed and that we are supplying a callback method which is used to populate the cache if it doesn't exist. The example above is very simple, it will retreive a strongly typed object of `MyObject` from the cache with the key of "MyCacheKey", if the object doesn't exist in the cache a new instance of `MyObject` will be added to it with the same key.
+##[Retreiving and Adding items in the cache](updating-cache.md)
 
-There are many overloads of GetCacheItem allowing you to customize how your object is cached from cache dependencies to expiration times.
-
-###Retrieving an item from the cache without a callback
- 
-One of the overloads of GetCacheItem doesn't specify a callback, this will allow  you to simply retreive an item from the cache without populating it if it doesn't exist.
-
-The usage is very simple:
-
-	MyObject cachedItem = ApplicationContext.Current.ApplicationCache
-							.GetCacheItem<MyObject>("MyCacheKey");
-
-###Inserting an item into the cache without retrieval
-
-Sometimes you might want to just put something in the cache without actually retrieving it. In this case there is an `InsertCacheItem<T>` method with a few overloads. This method will add or update the cache item specified by the key so if the item already exists in the cache, it will be replaced.
+Describes the process of how to get, update and insert items in the cache
 
 ##ApplicationContext.Current.ApplicationCache
 
