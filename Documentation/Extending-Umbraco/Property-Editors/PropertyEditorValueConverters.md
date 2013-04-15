@@ -23,7 +23,7 @@ Implement `IPropertyEditorValueConverter` on your class
 
 ## Content picker example
 
-Converts the string node id to `IPublishedContent`
+Converts the `String` node id to `IPublishedContent`
 
 	using Umbraco.Core;
 	using Umbraco.Core.PropertyEditors;
