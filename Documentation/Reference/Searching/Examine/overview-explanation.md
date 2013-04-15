@@ -203,7 +203,7 @@ This would end up being:
 ### Fuzzy
 Sometimes users will query your site looking for a term that they could have misspelled or is very close. Fuzzy gives you the ability to get Lucene to look for terms that look like your term.  Eg mound could actually be sound.
 
-	var query = searchCriteria.Fields("nodeName","hello".Fuzzy(0.8)).Compile();
+	var query = searchCriteria.Fields("nodeName","hello".Fuzzy(0.8f)).Compile();
 
 The optional value you pass into Fuzzy between 0 and 1 specifies how Fuzzy or how close the match is to the original. For instance a match of 0.5 will not return when a threshold of 0.8 is specified.
 
