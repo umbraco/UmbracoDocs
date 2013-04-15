@@ -85,8 +85,8 @@ Pretty much like the name indicates this Data type enables editors to choose fro
 ##[Related Links](Related-Links.md)
 This datatype allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
 
-##Slider
-The Slider data-type makes use of the jQuery UI Slider plugin, which makes selected elements into sliders. The slider can be moved with the mouse or the arrow keys.
+##[Slider](Slider.md)
+The Slider property editor makes use of the jQuery UI Slider plugin, which makes selected elements into sliders. The slider can be moved with the mouse or the arrow keys.
 
 Slider was originally in uComponents but was included in the Umbraco Core v4.8 
 
