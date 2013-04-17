@@ -18,7 +18,7 @@ This setting determines if the rendered checkbox list will contain documents, me
 
 ###XPath Expression 
 
-The XPath expression should select the starting node for the editor to choose from.
+The XPath expression should select the nodes for the editor to choose from.
 
 The expression is evaulated by using [uQuery.GetNodesByXPath](../../../../Reference/Querying/uQuery/Content/Nodes.md) This method provides some very useful tokens such as $ancestorOrSelf which allow complex expressions.
 
