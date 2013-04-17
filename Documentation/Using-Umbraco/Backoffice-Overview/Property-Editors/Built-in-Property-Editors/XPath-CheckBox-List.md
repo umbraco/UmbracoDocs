@@ -22,6 +22,8 @@ The XPath expression should select the nodes for the editor to choose from.
 
 The expression is evaulated by using [uQuery.GetNodesByXPath](../../../../Reference/Querying/uQuery/Content/Nodes.md) This method provides some very useful tokens such as $ancestorOrSelf which allow complex expressions.
 
+An example might be to select news items (document type alias of "NewsItem") that are descendants of the same level 1 node as the one being edited, `$ancestorOrSelf/ancestor-or-self::*[@level=1]/NewsItem`
+
 ###Storage Type
 
 This setting determines if the data is stored as CSV data or XML.
