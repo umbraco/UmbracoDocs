@@ -12,20 +12,51 @@ No Edit is a property editor that can only be used to display a preset text. It 
 
 ![No Edit Content Example](images/No-Edit-Content.jpg?raw=true)
 
-##XSLT Example
+##MVC View Example
 
-	<xsl:if test="string-length($currentPage/propertyNoEdit) > 0">  
-	  <p><xsl:value-of select="$currentPage/propertyNoEdit"/></p>  
-	</xsl:if>
+###Typed:
 
-##Razor (DynamicNode) Example
+	@{
+	   if (Model.Content.HasProperty("propertyNoEdit")){
+	       <p>This document type has a No Edit property</p>
+	   } else {
+	        <p>This document type does have a No Edit property</p>
+	   }
+	}
+
+###Dynamic: 
+
+	@{       
+	   if (CurrentPage.HasProperty("propertyNoEdit")){
+	       <p>This document type has a No Edit property</p>
+	   } else {
+	        <p>This document type does have a No Edit property</p>
+	   }
+	        
+	}
+
+##Razor Macro (DynamicNode) Example
 
 	@inherits umbraco.MacroEngines.DynamicNodeContext
 	@using umbraco.MacroEngines
 	@{  
-		if (Model.HasValue("propertyNoEdit")){
-			<p>@Model.propertyNoEdit</p>
-		}
+		if (Model.HasProperty("propertyNoEdit")){
+			<p>This document type has a No Edit property</p>
+	   } else {
+	        <p>This document type does have a No Edit property</p>
+	   }
 	}
+
+
+##XSLT Macro Example
+
+	<xsl:choose>
+	  <xsl:when test="$currentPage/propertyNoEdit">
+	    <p>This document type has a No Edit property</p>  
+	  </xsl:when>
+	  <xsl:otherwise>
+	    <p>This document type does have a No Edit property</p>
+	  </xsl:otherwise>  
+	</xsl:choose>
 
 **TIP:** If you need to edit the value of a "Label" property, switch it's type to "Textstring", edit the value and then switch it back to "Label".
