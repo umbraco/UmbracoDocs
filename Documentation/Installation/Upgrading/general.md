@@ -14,6 +14,8 @@ Usually when there's a new version you would want to take the zip file of that v
 - /Umbraco 
 - /Umbraco_Client
 
+**Note: if you've installed Umbraco using NuGet you need to update through NuGet, just overwriting folder is of no use as upon each build the old files will be copied back from the packages folder.**
+
 ##Merge configuration files
 You can also expect there to be some changes to the following configuration files. 
 
