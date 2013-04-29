@@ -103,3 +103,41 @@ This will work but the object (model) that you pass to the `Index` method must b
 			return CurrentTemplate(myCustomModel);
 	    }
 	}
+
+##Change the default controller
+
+**Applies to: Umbraco 6.1.0+**
+
+In some cases you might want to have your own custom controller execute for all MVC requests when you haven't hijacked a route. This is possible by assigning your own default controller during application startup.
+
+The code to do this is simple, an example to register a default controller of type 'MyCustomUmbracoController' :
+
+	DefaultRenderMvcControllerResolver.Current.SetDefaultControllerType(typeof(MyCustomUmbracoController));
+
+You can execute this code during application startup before resolution is frozen. The 2 most common ways of doing this is:
+
+####Global.asax
+
+In your global asax, you can override the `OnApplicationStarting` method and put this custom code in that method. Example:
+
+    public class MyApplication : UmbracoApplication
+	{
+        protected override void OnApplicationStarting(object sender, EventArgs e)
+        {
+            DefaultRenderMvcControllerResolver.Current.SetDefaultControllerType(typeof(MyCustomUmbracoController));
+            base.OnApplicationStarting(sender, e);
+        }
+	}
+
+####Using ApplicationEventHandler
+
+You can create an instance of `Umbraco.Core.ApplicationEventHandler` and override the method `ApplicationStarting`. Example:
+
+    public class CustomApplicationEventHandler : ApplicationEventHandler
+    {
+        protected override void ApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+        {
+            DefaultRenderMvcControllerResolver.Current.SetDefaultControllerType(typeof(MyCustomUmbracoController));
+            base.ApplicationStarting(umbracoApplication, applicationContext);
+        }
+    }
