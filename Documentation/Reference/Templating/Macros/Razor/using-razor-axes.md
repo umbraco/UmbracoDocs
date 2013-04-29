@@ -25,10 +25,10 @@ Methods returning either all pages above (parents, grandparents and so on) a giv
 ###.Descendants() and .DescendantsOrSelf()
 Methods returning either all pages (children, grandchildren and so on) below a given page in the content tree, or all pages above the current page, and the page itself
 
-	@foreach(var ancestor in Model.Ancestors()){
-		<a href="@ancestor.Url">@ancestor.Name</a>
+	@foreach(var descendant in Model.Descendants()){
+		<a href="@descendant.Url">@descendant.Name</a>
 	}
 
-	@foreach(var ancestor in Model.AncestorsOrSelf()){
-		<a href="@ancestor.Url">@ancestor.Name</a>
+	@foreach(var descendant in Model.DescendantsOrSelf()){
+		<a href="@descendant.Url">@descendant.Name</a>
 	}
