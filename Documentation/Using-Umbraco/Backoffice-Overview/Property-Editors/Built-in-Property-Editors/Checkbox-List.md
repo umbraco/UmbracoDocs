@@ -14,7 +14,19 @@ NOTE: Unlike other data types, the Prevalue IDs are not directly accessible in x
 
 ![Approved Color Data Type Definition](images/CheckBox-List-Content.jpg?raw=true)
 
-##XSLT Example
+##Razor Macro (DynamicNode) Example
+
+	@{                                                   
+	  if (Model.HasValue("fruitList")){                                                        
+	    <ul>                                                        
+	      @foreach(var item in Model.GetProperty("fruitList").Value.Split(',')) { 
+	        <li>@item</li>
+	      }
+	    </ul>                                                                                        
+	  }
+	}
+
+##XSLT Macro Example
 
 	<xsl:if test="string-length($currentPage/fruitList) > 0">  
 	  <xsl:variable name="items" select="umbraco.library:Split($currentPage/fruitList,',')" />  
@@ -26,15 +38,3 @@ NOTE: Unlike other data types, the Prevalue IDs are not directly accessible in x
 	  </xsl:for-each>
 	  </ul>    
 	</xsl:if>
-
-##Razor (DynamicNode) Example
-
-	@{                                                   
-	  if (Model.HasValue("fruitList")){                                                        
-	    <ul>                                                        
-	      @foreach(var item in Model.GetProperty("fruitList").Value.Split(',')) { 
-	        <li>@item</li>
-	      }
-	    </ul>                                                                                        
-	  }
-	}
