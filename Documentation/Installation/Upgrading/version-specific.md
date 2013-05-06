@@ -32,4 +32,4 @@ The additional steps are listed below, remember that new config files are not me
 
 ##Version 4.10.x/4.11.x to 6.0.0 
 * If your site was ever a version between 4.10.0 and 4.11.4 and you have just upgraded to 6.0.0 install the [fixup package](http://our.umbraco.org/projects/developer-tools/path-fixup) and run it after the upgrade process is finished.
-* The DocType Mixins package is *NOT* compatible with v6+ and will cause problems in your document types.
+* The DocType Mixins package is **NOT** compatible with v6+ and will cause problems in your document types.
