@@ -3,7 +3,8 @@
 _This is the general upgrade guide, sometimes there are exceptions to these guidelines, they're listed in the [version-specific guide](version-specific.md)._
 
 ##Warning
-First of all, things may go wrong for various reasons. Make sure to **ALWAYS** take a backup of both your site's files and the database so that you can return to a version that you know works.
+First of all, things may go wrong for various reasons. Make sure to **ALWAYS** take a backup of both your site's files and the database so that you can return to a version that you know works.  
+Before upgrading, check if the packages you're using are compatible with the version you're upgrading to. On the package's download page, there's "Project compatibility" area, click "View details" to check version-specific compatibilities.
 
 ##Copying files
 
