@@ -303,10 +303,10 @@ Returns the name as a string,  of the member with a given Id
 ##GetPreValueAsString
 Gets the umbraco data type prevalue with the specified Id as string.
 
-###Xslt Exemple
+###Xslt Example
 	<xsl:variable name="name" select="umbraco.library:GetPreValueAsString(1234)" />
 
-###Razor Exemple
+###Razor Example
 	@{
 	  var myValues = "7,8";
 	  foreach(var id in myValues.Split(',')) { 
