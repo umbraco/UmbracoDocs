@@ -102,7 +102,7 @@ A normal html input text field
 ##TinyMCE v3 wysiwyg
 The TinyMCE based wysiwyg editor. This is the standard editor used to edit any larger amount of text. The editor has a lot of settings, which can be changed under the developer section in "data types" / Richtext editor. The editor also supports TinyMCE plugins which can be controlled in the configuration file located at /config/tinyMce.config
 
-##True/False (Ja/Nej)
+##[True/False](True-False.md)
 A simple checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
 
 ##[Ultimate picker](Ultimate-Picker.md)
