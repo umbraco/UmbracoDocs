@@ -23,7 +23,7 @@ This setting is maintained for legacy however it should generally be set to Inte
 ###Typed:
 
 	@{
-		foreach (var page in Model.Content.Children){
+		foreach (IPublishedContent page in Model.Content.Children){
             if (!page.GetPropertyValue<bool>("umbracoNaviHide"))
             {
 				<p>@page.Name</p>
