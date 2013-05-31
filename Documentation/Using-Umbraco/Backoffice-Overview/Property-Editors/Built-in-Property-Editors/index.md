@@ -96,7 +96,7 @@ A textbox that allows you to use multiple tags on a docType - This is what is us
 ##[Textbox multiple](Textbox-Multiple.md)
 A simple textarea control to input text
 
-##Textbox
+##[Textbox](Textbox.md)
 A normal html input text field
 
 ##TinyMCE v3 wysiwyg

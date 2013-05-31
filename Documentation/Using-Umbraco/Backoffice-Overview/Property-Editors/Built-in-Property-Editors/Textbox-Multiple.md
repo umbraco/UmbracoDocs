@@ -42,7 +42,7 @@ This setting is maintained for legacy however it should be set to Ntext as the p
 	@using umbraco.MacroEngines
 	@{
 	   if (Model.HasValue("introParagraph")){
-	       <p>@Model.introParagraph<string>("introParagraph")</p>
+	       <p>@Model.introParagraph</p>
 	   } 
 	}
 
