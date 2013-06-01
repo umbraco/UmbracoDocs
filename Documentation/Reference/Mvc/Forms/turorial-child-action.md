@@ -37,7 +37,7 @@ The Child Action will:
 The HttpPost Action will:
 
 *	Check if the model is valid - based on the validation attributes applied to the model above, we will not be performing any custom validation
-*	If the model **is not valid**, return the currently rendered Umbraco page (do not redirect). By not redirecting the ViewData is preserved including the ModelState which contains the validation information.
+*	If the model **is not valid**, return the currently rendered Umbraco page (do not redirect). By not redirecting the ViewData is preserved including the ModelState which contains the validation information *(See 'Other Considerations' below for mor info)*
 *	If the model **is valid**, add a custom message to the TempData collection and then redirect to the currently rendered Umbraco page. A standard procedure for a web based for is to redirect if the POST is successful. This ensures that the POST cannot be accidentally re-submitted by accidentally pressing F5 (refresh) ... *unfortunately ASP.Net WebForms does not adhere to this rule by default but it 'should' be done in WebForms too.* 
 
 <br/>
@@ -121,6 +121,8 @@ and then change your action to look like:
 
 ##Other considerations
 
+###Action naming
+
 When naming your actions you may be tempted to name them the same for rendering a form and handling the POST for the form. For example with the above you might want to do this:
 
 	[ChildActionOnly]
@@ -153,3 +155,17 @@ If you really want to name your actions the same you can use a new attribute whi
 	}
 
 Otherwise, just name your actions differently.
+
+###ViewData 
+
+When you are adding any data to the ViewData collection in your [HttpPost] action, this ViewData gets set on the 'root' view context. Therefore in order to retreive the data in the ViewData collection from your ChildAction view, you'll need to access it by:
+
+	@ParentActionViewContext.ViewData
+
+This is due to the fact that you are rendering a ChildAction. This is exactly the same as what would happen when you create a normal MVC application. Whenever you POST to a controller, anything you do in that controller is done on a 'root' context.
+
+In some cases you might actually be rendering a ChildAction from within a macro. In this case what is actually happening is that you are rendering a ChildAction within a ChildAction because macros that are rendered in MVC are rendered as ChildActions themselves. In this case you'd have to access your view data by:
+
+	@ParentActionViewContext.ParentActionViewContext.ViewData
+
+And of course if you decide you want to render a ChildAction that then renders a macro that then renders a ChildAction (and so on), this nesting becomes bigger.
