@@ -119,9 +119,7 @@ and then change your action to look like:
 		return PartialView("BlogCommentForm", model);
 	}
 
-##Other considerations
-
-###Action naming
+##Action naming
 
 When naming your actions you may be tempted to name them the same for rendering a form and handling the POST for the form. For example with the above you might want to do this:
 
@@ -156,7 +154,7 @@ If you really want to name your actions the same you can use a new attribute whi
 
 Otherwise, just name your actions differently.
 
-###ViewData 
+##Accessing ViewData 
 
 When you are adding any data to the ViewData collection in your [HttpPost] action, this ViewData gets set on the 'root' view context. Therefore in order to retreive the data in the ViewData collection from your ChildAction view, you'll need to access it by:
 
