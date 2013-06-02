@@ -2,11 +2,11 @@
 
 ###[Dashboards](Dashboards/index.md)
 
-A Dashboard is a component for displaying elements on the right-hand side of the backoffice UI area. **(coming soon)**
+A Dashboard is a component for displaying elements on the right-hand side of the backoffice UI area.
 
 ###[Macro Parameter Editors](Macro-Parameter-Editors/index.md)
 
-A parameter editor defines the usage of a property editor for use as a parameter for Macros. **(coming soon)**
+A parameter editor defines the usage of a property editor for use as a parameter for Macros.
 
 ###[Packaging](Packaging/index.md)
 Information on the packaging manifest format and how assets should be packaged as a zip file for easy distribution
