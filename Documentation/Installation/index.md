@@ -8,6 +8,5 @@ Goes through the steps needed to either download a stable release or a nightly v
 ##[Webmatrix installation](install-umbraco-with-microsoft-webmatrix.md)
 Microsoft Webmatrix is a simple to use editor with an embedded webserver, to get you easy and fast up and running with Umbraco.
 
-
-
- 
+##[Upgrading](Upgrading/index.md)
+When there's a new version and you wish to upgrade, there's a few steps to go through.

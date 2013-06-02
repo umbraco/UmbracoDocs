@@ -6,7 +6,7 @@ _This section will focus on how to use the MVC rendering engine in Umbraco such 
 
 ##Properties available in Views
 
-All Umbraco views inherit from `Umbraco.Web.Mvc.RenderViewPage` which exposes many properties that are available in razor:
+All Umbraco views inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage` which exposes many properties that are available in razor:
 
 * @Umbraco (of type `Umbraco.Web.UmbracoHelper`) -> contains many helpful methods, from rendering macros and fields to retreiving content based on an Id and tons of other helpful methods. This is essentially the replacement for the 'library' object in the old codebase.
 * @Html (of type `HtmlHelper`) -> the same HtmlHelper you know and love from Microsoft but we've added a bunch of handy extension methods like @Html.BeginUmbracoForm
@@ -34,7 +34,7 @@ There are several optional parameters. Here is the list with their default value
 
 The easiest way to use the Field method is to simply specify the optional parameters you'd like to set. For example, if we want to set the insertBefore and insertAfter parameters we'd do:
 
-	@Umbraco.Field("bodyContent", insertBefore = "<h2>", insertAfter = "</h2>")
+	@Umbraco.Field("bodyContent", insertBefore : "<h2>", insertAfter : "</h2>")
 
 
 ##Rendering a field with Model

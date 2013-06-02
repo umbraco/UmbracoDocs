@@ -303,10 +303,10 @@ Returns the name as a string,  of the member with a given Id
 ##GetPreValueAsString
 Gets the umbraco data type prevalue with the specified Id as string.
 
-###Xslt Exemple
+###Xslt Example
 	<xsl:variable name="name" select="umbraco.library:GetPreValueAsString(1234)" />
 
-###Razor Exemple
+###Razor Example
 	@{
 	  var myValues = "7,8";
 	  foreach(var id in myValues.Split(',')) { 
@@ -441,6 +441,8 @@ Creates an MD5 hash out of a string:
 	<xsl:value-of select="umbraco.library:md5('value to hash')"/>
 
 ##NiceUrlFullPath
+**NOTE:** This method was obsoleted in **Umbraco 4.10.0+**
+
 Does the same as NiceUrl except it returns the full url with a domain for a given node in the Umbraco content section.
 
 ###XSLT Example

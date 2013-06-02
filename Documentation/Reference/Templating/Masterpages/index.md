@@ -31,6 +31,17 @@ There are several advanced options for using` umbraco:item`, for controlling fal
 
 [See the full umbraco:item reference](umbracoitem.md)
 
+##[umbraco:image](umbracoimage.md)
+Introduced in **Umbraco 4.11.0**, the `umbraco:image` control enables you to easily add images from your content to your templates. The control is used as such:
+
+	<umbraco:image runat="server" field="bannerImage" />
+
+This will output an `<img/>` tag when the template renders:
+
+	<img src="/media/19/imagename.jpg" />
+
+[See the full umbraco:image reference](umbracoimage.md)
+
 ##[umbraco:macro](../Macros/index.md)
 The umbraco:macro element renders the out of a macro with a given alias. Attributes on the element is passed to the macro as parameters for the rendering.  In the sample below, the macro with the alias "topnavigation" is rendered, and the parameter "className" is set to "greenList" which is passed on to the script associated with the macro.
 

@@ -79,33 +79,33 @@ No Edit is a non-editable control, can only be used to display a present text. I
 
 ##Picker Relations
 
-##Radiobutton List
+##[Radiobutton List](Radiobutton-List.md)
 Pretty much like the name indicates this Data type enables editors to choose from list of radiobuttons. The settings for this data type include the data storage type (Date, Integer, Ntext, Nvarchar) and the prevalues the RadioButton list should hold.
 
-##Related Links
+##[Related Links](Related-Links.md)
 This datatype allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
 
-##Slider
-The Slider data-type makes use of the jQuery UI Slider plugin, which makes selected elements into sliders. The slider can be moved with the mouse or the arrow keys.
+##[Slider](Slider.md)
+The Slider property editor makes use of the jQuery UI Slider plugin, which makes selected elements into sliders. The slider can be moved with the mouse or the arrow keys.
 
 Slider was originally in uComponents but was included in the Umbraco Core v4.8 
 
-##Tags
+##[Tags](Tags.md)
 A textbox that allows you to use multiple tags on a docType - This is what is used on Blog4Umbraco and is perfect if you need to categorise data.  You can specify a TAG Group when creating new versions of this datatype, in case you need to use TAGS on different sections of your site (i.e  News, Article, Events).
 
-##Textbox multiple
-A simple textarea control to import text
+##[Textbox multiple](Textbox-Multiple.md)
+A simple textarea control to input text
 
-##Textbox
+##[Textbox](Textbox.md)
 A normal html input text field
 
 ##TinyMCE v3 wysiwyg
 The TinyMCE based wysiwyg editor. This is the standard editor used to edit any larger amount of text. The editor has a lot of settings, which can be changed under the developer section in "data types" / Richtext editor. The editor also supports TinyMCE plugins which can be controlled in the configuration file located at /config/tinyMce.config
 
-##True/False (Ja/Nej)
+##[True/False](True-False.md)
 A simple checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
 
-##Ultimate picker
+##[Ultimate picker](Ultimate-Picker.md)
 The Ultimate picker is a flexible document picker where you can set the root for the picker as well as of what type (Autocomplete, CheckboxList, DropDownList, ListBox, RadioButtonList) the picker should be. Other settings are on which Document Types the picker should filter, and if it should show Grandchildren of the root.  
 
 ##UltraSimpleEditor
@@ -117,7 +117,7 @@ The umbraco usercontrol wrapper datatype enables to create a custom Data type th
 ##Upload field
 Adds an upload field, which allows documents or images to be uploaded to umbraco. This does not add them to the media library, they are simply added to the document data.
 
-##XPath CheckBoxList
+##[XPath CheckBoxList](XPath-CheckBox-List.md)
 Uses an XPath expression to select nodes from the content tree to use as the checkbox options. The advantage of using XPath to define the nodes to use is that it allows a granular selection throughout the whole tree.
 
 Can use $currentPage and also $parentPage within the XPath expression (including use within any XPath predicates). ($parentPage allows the expression to be evaluated when the current node is unpublished, and the XPath expression depends on finding nodes based on a current ancestor).

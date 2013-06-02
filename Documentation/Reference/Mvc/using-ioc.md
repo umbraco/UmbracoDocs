@@ -11,6 +11,7 @@ We don't use IoC in the Umbraco source code whatsoever. This isn't because we do
 ##Implementation
 
 In most IoC frameworks you would setup your container in your global.asax class. To do that in Umbraco, you will need to inherit from our global.asax class called: `Umbraco.Web.UmbracoApplication`. You should then override the `OnApplicationStarted` method to build your container and initialize any of the IoC stuff that you require.
+Alternatively you can implement the `Umbraco.Web.IApplicationEventHandler` interface.
 
 ##Example
 
@@ -32,12 +33,36 @@ Here's an example of a custom global.asax class which initializes the IoC contai
 	/// <summary>
 	/// The global.asax class
 	/// </summary>
+	
 	public class MyApplication : Umbraco.Web.UmbracoApplication
 	{
 		protected override void OnApplicationStarted(object sender, EventArgs e)
 		{
 			base.OnApplicationStarted(sender, e);
 
+			var builder = new ContainerBuilder();
+
+			//register all controllers found in this assembly
+			builder.RegisterControllers(typeof(MyApplication).Assembly);
+
+			//add custom class to the container as Transient instance
+			builder.RegisterType<MyAwesomeContext>();
+
+			var container = builder.Build();
+			DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+		}
+	}
+
+*(NOTE: do not forget to change the inherits clause of the global.asax file in the web root.)*
+
+If you like to use the `IApplicationEventHandler` alternative - here is an example for this approach:
+	
+	using Umbraco.Web;
+	public class MyApplication : IApplicationEventHandler
+	{
+		public void OnApplicationStarted(
+			UmbracoApplication httpApplication, Umbraco.Core.ApplicationContext applicationContext)
+		{
 			var builder = new ContainerBuilder();
 		
 			//register all controllers found in this assembly
@@ -48,6 +73,14 @@ Here's an example of a custom global.asax class which initializes the IoC contai
 
 			var container = builder.Build();
 			DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+		}
+
+		public void OnApplicationInitialized(UmbracoApplication httpApplication, Umbraco.Core.ApplicationContext applicationContext)
+		{
+		}
+
+		public void OnApplicationStarting(UmbracoApplication httpApplication, Umbraco.Core.ApplicationContext applicationContext)
+		{
 		}
 	}
 

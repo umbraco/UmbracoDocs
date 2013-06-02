@@ -62,7 +62,24 @@ Normally you would create a partial view by simply using the `@model MyModel` sy
 
 	@inherits Umbraco.Web.Mvc.UmbracoViewPage<MyModel>
 
-By inheriting from this view, you'll have instant access to those handy properties.
+By inheriting from this view, you'll have instant access to those handy properties and have your view created with a strongly typed custom model.
+
+Another case you might have is that you want your Partial View to be strongly typed with the same model type (`RenderModel`) as a normal template if you are passing around instances of IPublishedContent. To do this, just have your partial view inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage` (just like your normal templates) and when you render your partial a neat trick is that you can just pass it an instance of `IPublishedContent` instead of a new instance of `RenderModel`. For Example:
+	
+	@foreach(var child in Model.Content.Children())
+	{
+		@Html.Partial("MyPartialName", child)
+	}
+
+The partial view can still inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage` which has a model of `RenderModel` but you can still just pass it an instance of `IPublishedContent` and a new `RenderModel` will be created and applied automagically for you. Of course you can always create your own `RenderModel` too like:
+
+	@foreach(var child in Model.Content.Children())
+	{
+		@Html.Partial("MyPartialName", 
+			new global::Umbraco.Web.Models.RenderModel(child, Model.CurrentCulture))
+	}
+
+Both of these will acheive the same result.
 
 ##Caching
 

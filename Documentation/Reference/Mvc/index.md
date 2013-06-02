@@ -4,6 +4,10 @@
 
 _This section will define the syntax for rendering content in your views_ 
 
+Before getting started with MVC you need to enable this in ~/config/umbracoSettings.config by setting the defaultRenderingEngine setting to MVC as such.
+
+	<defaultRenderingEngine>Mvc</defaultRenderingEngine>
+
 ##[Views](views.md)
 Documentation covering the syntax to use in your Views to render and query content
 
@@ -30,3 +34,6 @@ How to specify your own custom MVC routes in your application to work outside of
 
 ##[Using IoC](using-ioc.md)
 How to setup IoC/Dependency Injection containers for use in MVC within Umbraco
+
+##[Scaffolding](scaffolding.md)
+Scaffold common components like Views, SurfaceControllers or MacroPartials in Visual Studio with simple commands. 

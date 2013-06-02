@@ -51,7 +51,7 @@ All of these extension methods are available on `Umbraco.Core.Models.IPublishedC
 	DescendantsOrSelf(string nodeTypeAlias)
 	
 
-Additionally there are other methods that will return a single `IPublishedContentItem` (or dynamic if you are using @CurrentPage) 
+Additionally there are other methods that will return a single `IPublishedContent` (or dynamic if you are using @CurrentPage) 
 
 	AncestorOrSelf()
 	AncestorOrSelf(int level)
