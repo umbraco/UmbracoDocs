@@ -126,7 +126,7 @@ The property value stored can be a CSV string or an XML fragment of Node Ids or 
 
 XPath CheckBoxList was originally in uComponents but was included in the Umbraco Core v4.8
 
-##XPath DropDownList
+##[XPath DropDownList](XPath-DropDown-List.md)
 Uses an XPath expression to select nodes from the content tree to use as the dropdown options. The advantage of using XPath to define the nodes to use is that it allows a granular selection throughout the whole tree.
 
 The property value stored can be the Node Id or Node name.
