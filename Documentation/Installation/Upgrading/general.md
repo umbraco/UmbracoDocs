@@ -17,11 +17,12 @@ Usually when there's a new version you would want to take the zip file of that v
 
 ##Using NuGet?
 
-Once you have Umbraco setup in Visual Studio using the NuGet packages you can easily update to newer versions. you can simply open up the Package Console and type:
+You can simply open up the Package Console and type:
 `Update-Package UmbracoCms`
 
 Or you can open the NuGet Package Manager and select the **Updates** pane to get a list of available updates. Choose the package called UmbracoCms and click update. This will run through all the files and make sure you have the latest changes while leaving files you have updated.
-Central configuration files are copied to *.config.backup and replaced with new ones to make sure you have the correct configuration in the updated version. If you have made changes to any of the config files you need merge those manually.
+
+Don't be alarmed when you get asked if files should be overwritten, the config files are first copied to *.config.backup and replaced with new ones to make sure you have the correct configuration in the updated version. If you have made changes to any of the config files you need merge those manually.
 
 ##Merge configuration files
 You can expect there to be some changes to the following configuration files. 
