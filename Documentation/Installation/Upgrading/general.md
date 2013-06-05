@@ -15,7 +15,7 @@ Usually when there's a new version you would want to take the zip file of that v
 - /Umbraco 
 - /Umbraco_Client
 
-##Using NuGet?
+##Are you using NuGet?
 
 You can simply open up the Package Console and type:
 `Update-Package UmbracoCms`
