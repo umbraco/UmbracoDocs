@@ -114,7 +114,7 @@ A very scaled down editor which only has bold, italic and link - It does not ren
 ##umbraco usercontrol wrapper
 The umbraco usercontrol wrapper datatype enables to create a custom Data type that references a .NET User Control, given that the User Control dll has been copied to the /bin folder and the User Control ascx file has been copied to the /usercontrols directory
 
-##Upload field
+##[Upload field](Upload.md)
 Adds an upload field, which allows documents or images to be uploaded to umbraco. This does not add them to the media library, they are simply added to the document data.
 
 ##[XPath CheckBoxList](XPath-CheckBox-List.md)
