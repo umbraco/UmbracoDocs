@@ -2,7 +2,7 @@
 
 `Returns: String`
 
-Textbox Multiple is simple HTML text area control that additionally provides three quick function buttons for bold, italic and link.
+Simple Editor is simple HTML text area control that additionally provides three quick function buttons for adding bold, italic and link markup.
 
 ##Data Type Definition Example
 
