@@ -1,4 +1,4 @@
-#Umbraco 4 Documentation project
+#Umbraco Documentation project
 
 **WORK IN PROGRESS**
 
