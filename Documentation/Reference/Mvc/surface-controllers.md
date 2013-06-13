@@ -30,7 +30,7 @@ To create a locally declared SurfaceController:
 
 * Create a controller that inherits from `Umbraco.Web.Mvc.SurfaceController`
 * The controller must be a 'public' class.
-* The controller's name must be suffixed with the term 'SurfaceController'
+* <del>The controller's name must be suffixed with the term 'SurfaceController'</del> - This is not required in 4.11.x or 6.x.x
 
 For example:
 
