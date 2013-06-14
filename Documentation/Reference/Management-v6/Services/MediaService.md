@@ -33,7 +33,7 @@ Getting the service through the `ApplicationContext`:
 ###.CreateMedia(string name, int parentId, string mediaTypeAlias, [int userId = 0])
 Creates an `Media` object using the alias of the `MediaType` that this Media is based on.
 
-Example for methods **CreateMedia** and **Save**, creating a new `Media` object (being a new child for `Media` node #100);
+Example for methods **CreateMedia** and **Save**, creating a new `Media` object (as a child of `Media` rootnode -1);
 	
         if (ApplicationContext.Current != null)
         {
