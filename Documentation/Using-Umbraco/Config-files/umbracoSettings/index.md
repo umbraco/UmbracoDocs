@@ -133,6 +133,14 @@ If you have multiple sites, with different cultures, setup in your tree then you
 If you have more than two sites and for some reason forget to update the above section with a 404 page and a culture then the **default** page will act as a fallback. Same
 happens if you for some reason forget to define a hostname on a site.
 
+**Errors and IIS7+**
+
+You may find that your custom error page doesn't show, and instead IIS handles the error. To resolve this add the following key to your web.config just before the closing tag of the system.webServer section.
+
+        <httpErrors existingResponse="PassThrough" />
+
+Now IIS will ignore httpErrors and allow Umbraco to handle them.
+
 **Handling multiple sites with the same culture**
 
 If you have multiple sites with the same culture then you can't use the above error settings. Then you will need to have a look at the [uComponents Multi-Site Not Found handler](http://ucomponents.codeplex.com/wikipage?title=MultiSitePageNotFoundHandler).
