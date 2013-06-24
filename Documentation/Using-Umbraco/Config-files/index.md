@@ -1,5 +1,7 @@
 #Configuration Files
 
+_This section will define the many configuration options in Umbraco and what they do_ 
+
 ###web.config
 
 There are quite a few umbraco options in the web.config file defined in appSettings. Click on your version below to view details:
