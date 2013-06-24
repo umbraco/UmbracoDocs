@@ -30,7 +30,7 @@ Coming soon!
 
 ##umbracoEnableStat
 
-Coming soon!
+***This setting has zero effect and will be removed in v7***
 
 ##umbracoHideTopLevelNodeFromPath
 
@@ -38,7 +38,9 @@ Coming soon!
 
 ##umbracoEditXhtmlMode
 
-Coming soon!
+***This setting will be removed in v7!***
+
+This setting is used for Netscape 4 compatibility to change the way that the rich text editor output's html breaks, if set to true then it outputs "&lt;br /&gt;" otherwise it outputs "&lt;br/&gt;".
 
 ##umbracoUseDirectoryUrls
 
