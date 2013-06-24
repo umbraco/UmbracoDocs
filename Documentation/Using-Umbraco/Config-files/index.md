@@ -6,8 +6,8 @@ _This section will define the many configuration options in Umbraco and what the
 
 There are quite a few umbraco options in the web.config file defined in appSettings. Click on your version below to view details:
 
-* [Less than version 7](webconfig/webconfig6.md)
-* [Version 7+](webconfig/webconfig7.md)
+* [Less than version 7](webconfig6.md)
+* [Version 7+](webconfig7.md)
 
 ###[404handlers.config](404handlers/index.md)
 
