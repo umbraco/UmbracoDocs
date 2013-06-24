@@ -4,63 +4,85 @@
 
 _This section defines the appSetting parameters found in the web.config for versions 7+_
 
-##umbracoConfigurationStatus
+##Explicit settings
+
+_These are settings that require a value in the appSettings section of the web.config file_
+
+###umbracoConfigurationStatus
 
 Coming soon!
 
-##umbracoReservedUrls
+###umbracoReservedUrls
 
 Coming soon!
 
-##umbracoReservedPaths
+###umbracoReservedPaths
 
 Coming soon!
 
-##umbracoContentXML
+###umbracoPath
 
 Coming soon!
 
-##umbracoStorageDirectory
+###umbracoHideTopLevelNodeFromPath
 
 Coming soon!
 
-##umbracoPath
+###umbracoUseDirectoryUrls
 
 Coming soon!
 
-##umbracoHideTopLevelNodeFromPath
+###umbracoTimeOutInMinutes
 
 Coming soon!
 
-##umbracoUseDirectoryUrls
+###umbracoDefaultUILanguage
 
 Coming soon!
 
-##umbracoTimeOutInMinutes
+###umbracoUseSSL
 
 Coming soon!
 
-##umbracoVersionCheckPeriod
+##Optional settings
 
-Coming soon!
+_These are settings that have default values but can be overridden by creating the appSetting and setting it's value in the web.config_
 
-##umbracoDisableXsltExtensions
+###umbracoContentXML
 
-Coming soon!
+The default value is:
+*~/App_Data/umbraco.config*
 
-##umbracoDefaultUILanguage
+The value must be set to a virtual path with a prefixed tilda (~)
 
-Coming soon!
+###umbracoStorageDirectory
 
-##umbracoProfileUrl
+The default value is:
+*~/App_Data*
 
-Coming soon!
+The value must be set to a virtual path with a prefixed tilda (~)
 
-##umbracoUseSSL
+It is recommended to not change this path.
 
-Coming soon!
+###umbracoContentXMLUseLocalTemp
 
-##umbracoContentXMLUseLocalTemp
+The default value is:
+*'false'*
 
-Coming soon!
- 
+Generally set to 'false' but when set to 'true' the content xml file (normally stored @ ~/App_Data/umbraco.config) will be stored in the local servers' Temp (CodeGen) folder. This is handy for load balanced environments when the website is running from a central SAN based file system (non-replicated). 
+
+If you are not running a load balanced environment on a central SAN based file system (or similar) ensure that this setting remains set to 'false'.
+
+###umbracoProfileUrl
+
+The default value is:
+*'profiler'*
+
+A legacy setting used for re-routing a member profile login page.
+
+###umbracoVersionCheckPeriod
+
+The default value is:
+*'7'*
+
+When this value is set above 0, the back office will check for new version of Umbraco every 'x' number of days where 'x' is the value defined for this setting. By default Umbraco ships with a value of '7'.
