@@ -1,6 +1,6 @@
 #Web.config
 
-**Applies to: versions 7.0.0 + **
+**Applies to: versions 7.0.0 +**
 
 _This section defines the appSetting parameters found in the web.config for versions 7+_
 
