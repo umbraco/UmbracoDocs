@@ -32,5 +32,6 @@ This section describes what a breaking change is in regards to the Umbraco codeb
 * Changes made to any non-public or non-protected property, method or class are not considered breaking
 	* Generally these types of changes will never break a developers usage unless they are using reflection to target non-public/non-protected objects. 
 * Changes to CSS are not considered breaking changes
+* Changes to HTML/Markup are not considered breaking changes
 
 **NOTE: This documention is not complete yet**
