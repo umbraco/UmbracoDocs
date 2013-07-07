@@ -11,30 +11,33 @@ In order to bind to certain events in the Umbraco application you need to make t
 The ApplicationEventHandler is a new robust way to hook in to the Umbraco application startup process. It is a base class so all you need to do is override the methods that you wish to handle. It is important to know the difference between each of the methods (information is below). Most of the time you will just want to execute code on the *ApplicationStarted* method.
 
 Here's an example that does the same thing as the IApplicationEventHandler sample below.
-
-    using Umbraco.Core;
-    using umbraco.BusinessLogic;
-    using umbraco.cms.businesslogic;
-    using umbraco.cms.businesslogic.web;
-
+    
     namespace Umbraco.Extensions.EventHandlers
     {
-        public class RegisterEvents : ApplicationEventHandler
-        {
-            protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
-            {
-                Document.BeforePublish += Document_BeforePublish;
-            }
-            
-            private void Document_BeforePublish(Document sender, PublishEventArgs e)
-            {
-                //Do what you need to do. In this case logging to the Umbraco log
-                Log.Add(LogTypes.Debug, sender.Id, "the document " + sender.Text + " is about to be published");
+         using Umbraco.Core;
+         using Umbraco.Core.Logging;
+         using Umbraco.Core.Models;
+         
+         public class RegisterEvents : ApplicationEventHandler
+         {
+	     protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+             {
+                 Umbraco.Core.Publishing.PublishingStrategy.Published += this.PublishingStrategy_Published;
+             }
 
-                //cancel the publishing if you want.
-                e.Cancel = true;
-            }
-        }
+             void PublishingStrategy_Published(Umbraco.Core.Publishing.IPublishingStrategy sender, Umbraco.Core.Events.PublishEventArgs<IContent> e)
+             {
+                 var publishedEntries = e.PublishedEntities;
+
+                 foreach (var publishedEntry in publishedEntries)
+                 {     
+                     IContent entry = publishedEntry;
+                     LogHelper.Info<RegisterEvents>("Document '{0}' (id: {1}) is published", () => entry.Name, () => entry.Id);
+                
+                     // to stuff with the published entry
+                 }
+             }
+         }
     }
 
 Unlike the older startup handlers (pre 6.1.0) the ApplicationEventHandler will ensure that these methods only execute if the applicaton is installed and the database is ready. This will prevent many errors from occuring especially if Umbraco is not installed yet.
