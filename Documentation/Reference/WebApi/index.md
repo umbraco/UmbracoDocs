@@ -66,6 +66,8 @@ All locally declared Umbraco api controllers will be routed under the url path o
 
 *~/Umbraco/Api/[YourControllerName]*
 
+E.g *~/Umbraco/Api/ProductsApi/GetAllProducts*
+
 ###Plugin based controller
 
 If you are creating an Umbraco Api controller to be shipped in an Umbraco package you will need to add an attribute to your controller to ensure that it is routed via an area. The area name is up to you to specify in the attribute. 
