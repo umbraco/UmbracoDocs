@@ -1,11 +1,13 @@
 #Querying
 _Umbraco comes with several ways of querying, filtering and searching content, through the APIs: uQuery, DynamicNode and NodeFactory_ 
 
-_DynamicNode provides a fast, dynamic way to query Content which resides in the website cache. uQuery has a broader api, which covers content, media, members and relations, but does not have the focused query and filtering DynamicNode has._
-
 ##[DynamicNode](DynamicNode/index.md)
-DynamicNode is the dynamic access to all the data stored in your Umbraco website. Also known as the Model of your site.
-Model represents the page, currently being rendered, and is usually referenced on Templates or Macros
+DynamicNode provides a fast, dynamic way to query content which resides in the website cache. It can be used on Templates and Macros and accessable via the Model. DynamicNode extends this Model by exposing the properties of the current page as dynamic properties, and also adds [tree traversal and filtering methods](http://our.umbraco.org/projects/developer-tools/razor-dynamicnode-cheat-sheet).
+
+
+
 
 ##[uQuery](uQuery/index.md)
-uQuery is an API giving read/write access to the content, media and member data, as well as extending the releations.
+uQuery is similar to DynamicNode in that is adds tree traversal/filtering methods and acts as a wrapper to the website cache. uQuery extends the NodeFactory, Document, Media, Member and Relations apis and can be queried using LINQ.
+
+The property accessor syntax is heavier, but is strongly typed, so there's intellisense.
