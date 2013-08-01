@@ -55,9 +55,14 @@ First, the standard view that is created by Umbraco inherits from `Umbraco.Web.M
 
 	@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
-If you are returning a custom model, then this directive will need to change because your custom model will not be an instance of `Umbraco.Web.Models.RenderModel`. Instead change your @inherits directive to inherit from `Umbraco.Web.Mvc.UmbracoViewPage<T>`	where 'T' is the type of your custom model. So for exammple, if your custom model is of type 'MyCustomModel' then your @inherits directive will look like:
+If you are returning a custom model, then this directive will need to change because your custom model will not be an instance of `Umbraco.Web.Models.RenderModel`. Instead change your @inherits directive to inherit from `Umbraco.Web.Mvc.UmbracoViewPage<T>` where 'T' is the type of your custom model. So for exammple, if your custom model is of type 'MyCustomModel' then your @inherits directive will look like:
 
 	@inherits Umbraco.Web.Mvc.UmbracoViewPage<MyCustomModel>
+
+Please note that if your template uses a layout that expects the model to be of type `Umbraco.Web.Models.RenderModel` then changing the template to inherit from `Umbraco.Web.Mvc.UmbracoViewPage<MyCustomModel>` will cause an exception. This is due to the way ASP.NET MVC works with strongly typed views: the requirement for a specific type applies all the way from the top-most layout down to the template. There are two ways to solve this problem:
+
+1. Break the dependency on `Umbraco.Web.Models.RenderModel` in your layout by having it inherit from `Umbraco.Web.Mvc.UmbracoViewPage<dynamic>` (this means `@Model` will be of type `dynamic` in the layout).
+2. Make your custom model inherit from `Umbraco.Web.Models.RenderModel` (this means `@Model...` will continue to work in the layouts used by your template).
 
 ###Returning the correct view from your controller
 
