@@ -2,6 +2,9 @@
 
 _Covers the different ways to install Umbraco. We recommend you either use Microsoft Platform installer or Microsoft Webmatrix as an easy way to get started with Umbraco._
 
+##[System requirements](system-requirements.md)
+Defines the system requirements to run Umbraco
+
 ##[Manual installation](install-umbraco-manually.md)
 Goes through the steps needed to either download a stable release or a nightly version, unzipping, and getting it running on a local webserver.
 
