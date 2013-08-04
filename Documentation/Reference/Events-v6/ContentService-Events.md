@@ -156,7 +156,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
         <td>Deleting</td>
         <td>(IContentService sender, DeleteEventArgs<IContent> e)</td>
         <td>
-        Raised when ContentService.Delete, ContentService.EmptyRecycleBin are called in the API.<br />
+        Raised when ContentService.DeleteContentOfType, ContentService.Delete, ContentService.EmptyRecycleBin are called in the API.<br />
         "sender" will be the current IContentService object.<br />
         "e" will provide:
             <ol>
