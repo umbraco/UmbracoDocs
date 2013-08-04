@@ -30,7 +30,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
         <td>
         Raised when ContentService.CreateContent is called in the API.<br />
         The event is fired after the CreatedId and WriterId of the Content object have been set.<br />
-        NOTE: The content object has been created, but not saved so it does not have an identity yet (meaning no Id has been set)
+        NOTE: The content object has been created, but not saved so it does not have an identity yet (meaning no Id has been set).<br />
         "sender" will be the current IContentService object.<br />
         "e" will provide:
             <ol>
@@ -102,7 +102,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
         <td>(IContentService sender, MoveEventArgs<IContent> e)</td>
         <td>
         Raised when ContentService.Move is called in the API. <br />
-        NOTE: If the target parent is the Recycle bin, this event is never fired. Try the Trashing event instead.
+        NOTE: If the target parent is the Recycle bin, this event is never fired. Try the Trashing event instead.<br />
         "sender" will be the current IContentService object.<br />
         "e" will provide:
             <ol>
@@ -117,7 +117,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
         <td>
         Raised when ContentService.Move is called in the API. <br />
         The event is fired after the content object has been moved.<br />
-        NOTE: If the target parent is the Recycle bin, this event is never fired. Try the Trashed event instead.
+        NOTE: If the target parent is the Recycle bin, this event is never fired. Try the Trashed event instead.<br />
         "sender" will be the current IContentService object.<br />
         "e" will provide:
             <ol>
