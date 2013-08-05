@@ -24,8 +24,11 @@ Umbraco comes with several ways of querying, filtering and searching contnet, th
 ##[Searching](Searching/index.md)
 Details on how to implement search capabilities for your Umbraco website using Examine, which is a Lucene based search engine for umbraco.
 
-##[Events](Events/index.md)
+##[Events - 4.x](Events/index.md)
 Umbraco 4, comes with a complete event model, covering all mayor aspects of the system for triggering custom code or automation.  
+
+##[Events - 6.x](Events-v6/index.md)
+Umbraco 6.x or later: event model covering all mayor aspects of the system for triggering custom code or automation.  
 
 ##[/Base](Api/Base/Index.md)
 /Base is a extendable system for creating raw feeds directly from Umbraco using very basic Url's. This enables developers to access umbraco data through javascript, flash or any other client. It even allows you to modify umbraco data directly via simple url's.
