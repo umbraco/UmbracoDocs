@@ -52,6 +52,8 @@ This section describes what a breaking change is in regards to the Umbraco codeb
 
 ###Breaking
 
+* Changing the file location of CSS, JS, or Images is a breaking change
+
 ##JavaScript
 
 ###Non-breaking
