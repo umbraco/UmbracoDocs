@@ -46,7 +46,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
         <td>(IContentService sender, SaveEventArgs<IContent> e)</td>
         <td>
         Raised when ContentService.Save is called in the API.<br />
-        NOTE: It can be skipped completely if the parameter "raiseEvents" is set to true during the Save method call (true by default).<br />
+        NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default).<br />
         "sender" will be the current IContentService object.<br />
         "e" will provide:
             <ol>
@@ -59,7 +59,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
         <td>(IContentService sender, SaveEventArgs<IContent> e)</td>
         <td>
         Raised when ContentService.Save is called in the API and after data has been persisted.<br />
-        NOTE: It can be skipped completely if the parameter "raiseEvents" is set to true during the Save method call (true by default). <br />
+        NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default). <br />
         "sender" will be the current IContentService object.<br />
         "e" will provide:
             <ol>
