@@ -10,40 +10,40 @@ The ContentService class is the most commonly used type when extending Umbraco u
     </tr>
     <tr>
         <td>Creating</td>
-        <td>(IContentService sender, NewEventArgs<IContent> e)</td>
+        <td>(IContentService sender, NewEventArgs&lt;IContent&gt; e)</td>
         <td>
         Raised when ContentService.CreateContent is called in the API. <br />
-        The event is fired after the ContentType of the Content object has been set. <br/>
+        The event is fired after the ContentType, ParentId and Name of the IContent object have been set. <br/>
         "sender" will be the current IContentService object.<br />
         "e" will provide:
             <ol>
                 <li>Entity: Gets the IContent object being created.</li>
-                <li>Alias: Gets the ContentTypeAlias of the IContent being created.</li>
-                <li>ParentId: Gets the Id of the parent of the IContent being created.</li>
-                <li>Parent: Gets the parent of the IContent being created.</li>
+                <li>Alias: Gets the ContentTypeAlias of the IContent object being created.</li>
+                <li>ParentId: Gets the Id of the parent of the IContent object being created.</li>
+                <li>Parent: Gets the parent of the IContent object being created.</li>
             </ol>
         </td>
     </tr>
     <tr>
         <td>Created</td>
-        <td>(IContentService sender, NewEventArgs<IContent> e)</td>
+        <td>(IContentService sender, NewEventArgs&lt;IContent&gt; e)</td>
         <td>
         Raised when ContentService.CreateContent is called in the API.<br />
-        The event is fired after the CreatedId and WriterId of the Content object have been set.<br />
-        NOTE: The content object has been created, but not saved so it does not have an identity yet (meaning no Id has been set).<br />
+        The event is fired after the CreatorId and WriterId of the Content object have been set.<br />
+        NOTE: The IContent object has been created, but not saved so it does not have an identity yet (meaning no Id has been set).<br />
         "sender" will be the current IContentService object.<br />
         "e" will provide:
             <ol>
                 <li>Entity: Gets the created IContent object.</li>
-                <li>Alias: Gets the ContentTypeAlias of the IContent being created.</li>
-                <li>ParentId: Gets the Id of the parent of the IContent being created.</li>
-                <li>Parent: Gets the parent of the IContent being created.</li>
+                <li>Alias: Gets the ContentTypeAlias of the IContent object being created.</li>
+                <li>ParentId: Gets the Id of the parent of the IContent object being created.</li>
+                <li>Parent: Gets the parent of the IContent object being created.</li>
             </ol>
         </td>
     </tr>
     <tr>
         <td>Saving</td>
-        <td>(IContentService sender, SaveEventArgs<IContent> e)</td>
+        <td>(IContentService sender, SaveEventArgs&lt;IContent&gt; e)</td>
         <td>
         Raised when ContentService.Save is called in the API.<br />
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default).<br />
@@ -56,7 +56,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
     </tr>
     <tr>
         <td>Saved</td>
-        <td>(IContentService sender, SaveEventArgs<IContent> e)</td>
+        <td>(IContentService sender, SaveEventArgs&lt;IContent&gt; e)</td>
         <td>
         Raised when ContentService.Save is called in the API and after data has been persisted.<br />
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default). <br />
@@ -69,7 +69,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
     </tr>
     <tr>
         <td>Copying</td>
-        <td>(IContentService sender, CopyEventArgs<IContent> e)</td>
+        <td>(IContentService sender, CopyEventArgs&lt;IContent&gt; e)</td>
         <td>
         Raised when ContentService.Copy is called in the API.<br />
         The event is fired after a copy object has been created and had its parentId updated and its state has been set to unpublished. <br />
@@ -84,7 +84,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
     </tr>
     <tr>
         <td>Copied</td>
-        <td>(IContentService sender, CopyEventArgs<IContent> e)</td>
+        <td>(IContentService sender, CopyEventArgs&lt;IContent&gt; e)</td>
         <td>
         Raised when ContentService.Copy is called in the API.<br />
         The event is fired after the content object has been copied. <br />
@@ -99,7 +99,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
     </tr>
     <tr>
         <td>Moving</td>
-        <td>(IContentService sender, MoveEventArgs<IContent> e)</td>
+        <td>(IContentService sender, MoveEventArgs&lt;IContent&gt; e)</td>
         <td>
         Raised when ContentService.Move is called in the API. <br />
         NOTE: If the target parent is the Recycle bin, this event is never fired. Try the Trashing event instead.<br />
@@ -113,7 +113,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
     </tr>
     <tr>
         <td>Moved</td>
-        <td>(IContentService sender, MoveEventArgs<IContent> e)</td>
+        <td>(IContentService sender, MoveEventArgs&lt;IContent&gt; e)</td>
         <td>
         Raised when ContentService.Move is called in the API. <br />
         The event is fired after the content object has been moved.<br />
@@ -128,7 +128,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
     </tr>
     <tr>
         <td>Trashing</td>
-        <td>(IContentService sender, MoveEventArgs<IContent> e)</td>
+        <td>(IContentService sender, MoveEventArgs&lt;IContent&gt; e)</td>
         <td>
         Raised when ContentService.MoveToRecycleBin is called in the API.<br />
         "sender" will be the current IContentService object.<br />
@@ -141,7 +141,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
     </tr>
     <tr>
         <td>Trashed</td>
-        <td>(IContentService sender, MoveEventArgs<IContent> e)</td>
+        <td>(IContentService sender, MoveEventArgs&lt;IContent&gt; e)</td>
         <td>
         Raised when ContentService.MoveToRecycleBin is called in the API.<br/>
         "sender" will be the current IContentService object.<br />
@@ -154,7 +154,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
     </tr>
     <tr>
         <td>Deleting</td>
-        <td>(IContentService sender, DeleteEventArgs<IContent> e)</td>
+        <td>(IContentService sender, DeleteEventArgs&lt;IContent&gt; e)</td>
         <td>
         Raised when ContentService.DeleteContentOfType, ContentService.Delete, ContentService.EmptyRecycleBin are called in the API.<br />
         "sender" will be the current IContentService object.<br />
@@ -166,7 +166,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
     </tr>
     <tr>
         <td>Deleted</td>
-        <td>(IContentService sender, DeleteEventArgs<IContent> e)</td>
+        <td>(IContentService sender, DeleteEventArgs&lt;IContent&gt; e)</td>
         <td>
         Raised when ContentService.Delete, ContentService.EmptyRecycleBin are called in the API.<br />
         "sender" will be the current IContentService object.<br />
@@ -180,7 +180,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
         <td>DeletingVersions</td>
         <td>(IContentService sender, DeleteRevisionsEventArgs e)</td>
         <td>
-        Raised when ContentService.DeleteVersions is called in the API.<br />
+        Raised when ContentService.DeleteVersion, ContentService.DeleteVersions are called in the API.<br />
         "sender" will be the current IContentService object.<br />
         "e" will provide:
             <ol>
@@ -196,7 +196,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
         <td>DeletedVersions</td>
         <td>(IContentService sender, DeleteRevisionsEventArgs e)</td>
         <td>
-        Raised when ContentService.DeleteVersions is called in the API.<br />
+        Raised when ContentService.DeleteVersion, ContentService.DeleteVersions are called in the API.<br />
         "sender" will be the current IContentService object.<br />
         "e" will provide:
             <ol>
@@ -210,7 +210,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
     </tr>
     <tr>
         <td>RollingBack</td>
-        <td>(IContentService sender, RollbackEventArgs<IContent> e)</td>
+        <td>(IContentService sender, RollbackEventArgs&lt;IContent&gt; e)</td>
         <td>
         Raised when ContentService.Rollback is called in the API.<br />
         "sender" will be the current IContentService object.<br />
@@ -222,7 +222,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
     </tr>
     <tr>
         <td>RolledBack</td>
-        <td>(IContentService sender, RollbackEventArgs<IContent> e)</td>
+        <td>(IContentService sender, RollbackEventArgs&lt;IContent&gt; e)</td>
         <td>
         Raised when ContentService.Rollback is called in the API. <br />
         "sender" will be the current IContentService object.<br />
@@ -234,7 +234,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
     </tr>
     <tr>
         <td>SendingToPublish</td>
-        <td>(IContentService sender, SendToPublishEventArgs<IContent> e)</td>
+        <td>(IContentService sender, SendToPublishEventArgs&lt;IContent&gt; e)</td>
         <td>
         Raised when ContentService.SendToPublication is called in the API.<br />
         "sender" will be the current IContentService object.<br />
@@ -246,7 +246,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
     </tr>
     <tr>
         <td>SentToPublish</td>
-        <td>(IContentService sender, SendToPublishEventArgs<IContent> e)</td>
+        <td>(IContentService sender, SendToPublishEventArgs&lt;IContent&gt; e)</td>
         <td>
         Raised when ContentService.SendToPublication is called in the API. <br />
         "sender" will be the current IContentService object.<br />
