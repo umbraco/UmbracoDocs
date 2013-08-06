@@ -13,14 +13,14 @@ The ContentService class is the most commonly used type when extending Umbraco u
         <td>(IContentService sender, NewEventArgs&lt;IContent&gt; e)</td>
         <td>
         Raised when ContentService.CreateContent is called in the API. <br />
-        The event is fired after the ContentType of the Content object has been set. <br/>
+        The event is fired after the ContentType, ParentId and Name of the IContent object have been set. <br/>
         "sender" will be the current IContentService object.<br />
         "e" will provide:
             <ol>
                 <li>Entity: Gets the IContent object being created.</li>
-                <li>Alias: Gets the ContentTypeAlias of the IContent being created.</li>
-                <li>ParentId: Gets the Id of the parent of the IContent being created.</li>
-                <li>Parent: Gets the parent of the IContent being created.</li>
+                <li>Alias: Gets the ContentTypeAlias of the IContent object being created.</li>
+                <li>ParentId: Gets the Id of the parent of the IContent object being created.</li>
+                <li>Parent: Gets the parent of the IContent object being created.</li>
             </ol>
         </td>
     </tr>
@@ -29,15 +29,15 @@ The ContentService class is the most commonly used type when extending Umbraco u
         <td>(IContentService sender, NewEventArgs&lt;IContent&gt; e)</td>
         <td>
         Raised when ContentService.CreateContent is called in the API.<br />
-        The event is fired after the CreatedId and WriterId of the Content object have been set.<br />
-        NOTE: The content object has been created, but not saved so it does not have an identity yet (meaning no Id has been set).<br />
+        The event is fired after the CreatorId and WriterId of the Content object have been set.<br />
+        NOTE: The IContent object has been created, but not saved so it does not have an identity yet (meaning no Id has been set).<br />
         "sender" will be the current IContentService object.<br />
         "e" will provide:
             <ol>
                 <li>Entity: Gets the created IContent object.</li>
-                <li>Alias: Gets the ContentTypeAlias of the IContent being created.</li>
-                <li>ParentId: Gets the Id of the parent of the IContent being created.</li>
-                <li>Parent: Gets the parent of the IContent being created.</li>
+                <li>Alias: Gets the ContentTypeAlias of the IContent object being created.</li>
+                <li>ParentId: Gets the Id of the parent of the IContent object being created.</li>
+                <li>Parent: Gets the parent of the IContent object being created.</li>
             </ol>
         </td>
     </tr>
@@ -180,7 +180,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
         <td>DeletingVersions</td>
         <td>(IContentService sender, DeleteRevisionsEventArgs e)</td>
         <td>
-        Raised when ContentService.DeleteVersions is called in the API.<br />
+        Raised when ContentService.DeleteVersion, ContentService.DeleteVersions are called in the API.<br />
         "sender" will be the current IContentService object.<br />
         "e" will provide:
             <ol>
@@ -196,7 +196,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
         <td>DeletedVersions</td>
         <td>(IContentService sender, DeleteRevisionsEventArgs e)</td>
         <td>
-        Raised when ContentService.DeleteVersions is called in the API.<br />
+        Raised when ContentService.DeleteVersion, ContentService.DeleteVersions are called in the API.<br />
         "sender" will be the current IContentService object.<br />
         "e" will provide:
             <ol>
