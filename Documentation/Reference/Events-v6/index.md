@@ -12,6 +12,7 @@ Typically, the events available exist in pairs, with a "before" and "after" even
 
 Which one you want to use depends on what you want to achieve. If you want to be able to cancel the action, the you would use the "before" event, and use the eventargs to cancel it. See the sample handler further down. If you want to execute some code after the publishing has suceeded, then you would use the "after" event.
 
-## ContentService events ##
+## Content and Media events ##
 
-See [ContentService Events](ContentService-Events.md) for a listing of the ContentService object events.
+* See [ContentService Events](ContentService-Events.md) for a listing of the ContentService object events.  
+* See [MediaService Events](MediaService-Events.md) for a listing of the MediaService object events.
