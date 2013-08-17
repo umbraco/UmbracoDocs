@@ -104,7 +104,7 @@ This will work but the object (model) that you pass to the `Index` method must b
 			//Example for 4.11+
 			
 			//simply use the protected method CurrentTemplate<T>, this does all of the
-			//above for you... must nicer.
+			//above for you... much nicer.
 			return CurrentTemplate(myCustomModel);
 	    }
 	}
