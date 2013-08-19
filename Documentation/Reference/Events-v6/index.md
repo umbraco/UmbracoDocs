@@ -4,7 +4,7 @@ Umbraco uses .Net events to allow you to hook into the workflow processes for th
 
 ## Application Startup & event registration ##
 
-Umbraco allows you to execute code during application startup. This is also the correct place to register for events for certain objects. See [Application Startup & event registration](application-startup.md) for full details.
+Umbraco allows you to execute code during application startup. This is also the correct place to register for events for certain objects. See [Application Startup & event registration](/Documentation/Reference/Events/application-startup.md) for full details.
 
 ## Events ##
 
