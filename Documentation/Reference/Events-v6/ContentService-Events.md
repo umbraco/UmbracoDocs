@@ -21,11 +21,11 @@ Example usage of the ContentService events:
     
             private void Go(IPublishingStrategy sender, PublishEventArgs<IContent> args)
             {
-                foreach (var publishedEntity in args.PublishedEntities)
+                foreach (var node in args.PublishedEntities)
                 {
-                    if (publishedEntity.ContentType.Alias == "Comment")
+                    if (node.ContentType.Alias == "Comment")
                     {
-                        SendMail(comment);
+                        SendMail(node);
                     }
                 }
             }
