@@ -2,6 +2,7 @@
 
 The ContentService class is the most commonly used type when extending Umbraco using events. ContentService implements IContentService. It provides easy access to operations involving IContent.
 
+## Usage ##
 Example usage of the ContentService events:
 
     using Umbraco.Core;
