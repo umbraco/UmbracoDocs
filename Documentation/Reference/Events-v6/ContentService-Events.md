@@ -4,8 +4,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
 
 Example usage of the ContentService events:
 
-```
-using Umbraco.Core;
+```using Umbraco.Core;
 using Umbraco.Core.Events;
 using Umbraco.Core.Models;
 using Umbraco.Core.Publishing;
@@ -31,8 +30,7 @@ namespace My.Namespace
             }
         }
     }
-}
-```
+}```
 
 ## Events ##
 
