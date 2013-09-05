@@ -3,14 +3,15 @@
 _Information on how to deploy Umbraco in a Load Balanced scenario and other details to consider when settting up Umbraco for load balancing_
 
 ##Overview
-Setting up load balanced environments generally takes a lot of planning, design and testing. This document should assist in setting up Umbraco in load balanced environments. This document assumes that you have a fair amount of knowledge about:
+Configuring and setting up a load balanced server environment requires planning, design and testing. This document should assist you in setting up your servers, load balanced environment and Umbraco configuration. 
+
+This document assumes that you have a fair amount of knowledge about:
 
 * Umbraco
-* IIS
+* IIS 7+
 * Networking & DNS
-* Windows Server (2003/2008/2012)
+* Windows Server (2008/2012)
 * .Net Framework
-* .Net SDK
 
 ##Design
 For the sake if this document, the following assumptions will be made:
