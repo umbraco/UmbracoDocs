@@ -172,7 +172,9 @@ Configuring Umbraco to support load balanced clusters is probalby the easiest pa
 
 As you can see in the above XML the distributed server names are the custom DNS names created for each IIS host name for each server.  Don't forget to enable the distributedCall.
 
-In addition to enabling the distributed calls above, there are some additional items that should be modified as well.  Each server will need a unique copy of the /App_Data/TEMP directory for Examine, Client Dependency Cache, plugins cache, etc... to work correctly.  Further, the umbraco.config xml cache file should also be unique to limit any issues with file locks.
+There's a couple optional elements for the configuration of each server that allow you to specify a specific protocol or port number:
+
+	<server forceProtocol="http|https" forcePortnumber="80|443">server3.mywebsite.com</server>
 
 ##Testing
 You'll need to test this solution **a lot** before going to production. You need to ensure there are no windows security issues, etc... The best way to determine issues is have a lot of people testing this setup and ensuring all errors and warnings in your application/system logs in Windows are fixed.
