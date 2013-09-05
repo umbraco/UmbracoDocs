@@ -1,5 +1,7 @@
 #This section is waiting for content
 
+***NOTE**: this configuration file does not exist in v7+. This has been superceded by BaseRestExtensions.config from v4.10+.*
+
 This documention has not been written yet, but it is on the roadmap.
 
 ###Progress

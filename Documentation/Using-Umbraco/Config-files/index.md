@@ -29,6 +29,10 @@ There are quite a few umbraco options in the web.config file defined in appSetti
 
 ###[restExtensions.config](restExtensions/index.md)
 
+**NOTE**: this configuration file does not exist in v7+. This has been superceded by BaseRestExtensions.config from v4.10+.
+
+###[BaseRestExtensions.config](BaseRestExtensions/index.md)
+
 ###[scripting.config](scripting/index.md)
 
 ###[skinning.config](skinning/index.md)
@@ -40,6 +44,8 @@ There are quite a few umbraco options in the web.config file defined in appSetti
 ###[umbracoSettings.config](umbracoSettings/index.md)
 
 ###[xsltextensions.config](xsltextensions/index.md)
+
+**NOTE**: this configuration file does not exist in v7+. XSLT extensions in v7+ are registered via attributes in c#.
 
 ##clientdependency.config
 

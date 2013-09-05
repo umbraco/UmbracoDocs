@@ -13,3 +13,6 @@ Microsoft Webmatrix is a simple to use editor with an embedded webserver, to get
 
 ##[Upgrading](Upgrading/index.md)
 When there's a new version and you wish to upgrade, there's a few steps to go through.
+
+##[Load Balanced setup](load-balancing.md)
+Information on how to deploy Umbraco in a Load Balanced scenario and other details to consider when settting up Umbraco for load balancing.  
