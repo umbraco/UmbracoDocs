@@ -183,4 +183,4 @@ You'll need to test this solution **a lot** before going to production. You need
 To test Umbraco distributed calls, just create and publish some content on one server (i.e. http://server1.mywebsite.com/umbraco/umbraco.aspx), then browse to the front end content on another server (i.e. http://server2.mywebsite.com/public/page1.aspx if page1 was the newly published content). If the page shows up on the 2nd server, though it was published from the 1st server, then distributed calls are working! You'll need to thoroughly test this though.
 
 ##Conclusion
-Though this is somewhat detailed, this is still a basic overview since all environments are different in some way. Setting these environments up for production is not an easy task and requires a lot of testing. Hopefully this guide will point you in the right direction!
+Though this is somewhat detailed, this is still a basic overview since all environments are different in some way. Hopefully this guide will point you in the right direction!
