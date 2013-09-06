@@ -158,6 +158,24 @@ Since the files for the website will be hosted centrally, each IIS website on yo
 * have their application pools run as the user above
 * Have the IIS anonymous user account set to the application pool account (IIS 7)
 
+##ASP.Net Configuration
+
+* You will need to use a custom machine key so that all your machine key level encryption values are the same on all servers, without this you will end up with view state errors, validation errors and encryption/decryption errors since each server will have it's own generated key.
+	* Here's a couple of tools that can be used to generate machine keys:
+		* 	[http://www.betterbuilt.com/machinekey/](http://www.betterbuilt.com/machinekey/)
+		* 	[http://www.developerfusion.com/tools/generatemachinekey/](http://www.developerfusion.com/tools/generatemachinekey/)
+	* 	Then you need to update your web.config accordingly, note that the validation/decryption types may be different for your environment depending on how you've generated your keys.
+
+			<configuration>
+			  <system.web>
+			    <machineKey decryptionKey="Your decryption key here" 
+			                validationKey="Your Validation key here"
+							validation="SHA1"
+							decryption="AES" />
+			  </system.web>
+			</configuration>
+* If you use SessionState in your application, or are using the default TempDataProvider in MVC (which uses SessionState) then you will need to configure your application to use the SqlSessionStateStore provider (see [http://msdn.microsoft.com/en-us/library/aa478952.aspx](http://msdn.microsoft.com/en-us/library/aa478952.aspx) for more details).
+
 ##Umbraco Configuration
 
 Configuring Umbraco to support load balanced clusters is probalby the easiest part. In the /config/umbracoSettings.config file you need to updated the distributed call section to the following (as an example)
