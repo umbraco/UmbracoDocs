@@ -1,14 +1,33 @@
 #Macros
 
-##References
-###[Razor](Razor/index.md)
-Introduction to razor, going through the basics of scripting in razor.
+_Describes how to set up a macro, use macro parameters & configuring caching. Defines the different types of macros and provides details on the different macro engine APIs and their usage_
+
+##What is a macro?
+
+A macro is a reusable piece of functionality that you can re-use throughout your site. Macros can be configured with parameters and be inserted into a Rich Text Editor. Your can define what macros are available for your editors to insert in to the rich text editor. When an editor inserts a macro into the rich text editor it will prompt them to fill out any of the defined parameters for the macro.
+
+##[Managing macros](managing-macros.md)
+
+Describes how to create/update a macro and it's macro parameters
+
+##Macro types
+
+All macro types will work in either MVC or WebForms
+
+###Partial View Macros
+
+*Partial view macros have been available from v4.10+*
+
+**This is the recommended macro type to use**, it uses the exact same syntax and objects as MVC views.
 
 ###[Xslt](Xslt/index.md)
 Information, examples and best practices according to readability and performance in your XSLT/XPath snippets.
 
-###[Parameters](Parameters/index.md)
-Working with the different macro parameter types and the values passed from them
+###[Razor macros](Razor/index.md)
+
+***Razor macros have been superceded by Partial View Macros, if you are using an Umbraco version greater than 4.10+ it is recommended to use Partial View Macros***
+
+Introduction to razor, going through the basics of scripting in razor.
 
 ##Basic Syntax:
 This will insert a macro with the alias '`YourMacroAlias`' into the template 

@@ -31,11 +31,16 @@ Describes how to work with MVC views, the razor syntax and APIs available as wel
 Reference on the different components in the WebForms 'masterpages' templating syntax
 
 ##[Working with macros](Macros/index.md)
-Introduction to setting up a macro, passing parameters, configuring caching
+Describes how to set up a macro, use macro parameters & configuring caching. Defines the different types of macros and provides details on the different macro engine APIs and their usage. 
 
 ##Hybrid templates
 
 Describes how you can use both WebForms and MVC templates together in the same Umbraco installation
+
+*Coming soon...*
+
+##[Xslt macros](Macros/Xslt/index.md)
+Information, examples and best practices according to readability and performance in your XSLT/XPath snippets.
 
 ##Related References
 Documentation related to templating and macros
@@ -46,5 +51,3 @@ Umbraco.library is a collection of helpers available to both Razor and Xslt
 ###[Razor syntax](Macros/Razor/index.md)
 Introduction to razor, going through the basics of scripting in razor.
 
-###[Xslt overview](Macros/Xslt/index.md)
-Information, examples and best practices according to readability and performance in your XSLT/XPath snippets.

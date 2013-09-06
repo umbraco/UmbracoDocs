@@ -29,7 +29,7 @@ A node is generally a page within the Umbraco backoffice content section
 A user is someone who has access to the Umbraco backoffice and is not to be confused with Member.
 
 ###Macros
-A macro is a reusable piece of functionality that you want to re-use throughout your site. Macros can be configured with parameters and be inserted into a Rich Text Editor.
+A macro is a reusable piece of functionality that you can re-use throughout your site. Macros can be configured with parameters and be inserted into a Rich Text Editor. Your can define what macros are available for your editors to insert in to the rich text editor. When an editor inserts a macro into the rich text editor it will prompt them to fill out any of the defined parameters for the macro.
 
 ###Templates / Layouts / Masterpages
 A template is where you define the HTML markup of your website. A layout is a common template that contains common markup such as the `<head>` section.
