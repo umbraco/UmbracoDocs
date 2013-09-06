@@ -22,4 +22,6 @@ A razor function is a small, embedded method you can call inside of your razor s
 
 ##[Using Umbraco Dictionary Items](using-dictionary-items.md)
 How to access dictionary items from Razor
- 
+
+##[Umbraco.library](../../../Api/UmbracoLibrary/index.md)
+Umbraco.library is a collection of helpers available to both Razor and Xslt 
