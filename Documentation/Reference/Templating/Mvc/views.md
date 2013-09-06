@@ -45,13 +45,20 @@ The UmbracoHelper method provides many useful parameters to change how the value
 
 Or alternatively:
 
-	@Model.Content.GetProperty("bodyContent")
+	@Model.Content.GetPropertyValue("bodyContent")
+
+You can also specify the output type that you want from the property. If the property editor or value does not support the conversion then an exception will be thrown. Some examples:
+
+ 	@Model.Content.GetPropertyValue<double>("amount")
+	@Model.Content.GetPropertyValue<RawXElement>("xmlContents")
 
 ##Rendering a field using @CurrentPage (dynamically)
 
 The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however simply want to render value "as-is" you can use the @CurrentPage property of the view. The difference between @CurrentPage and @Model.Content is that @CurrentPage is the dynamic representation of the model which exposes many dynamic features for querying. For example, to render a field you simply use this syntax:
 
 	@CurrentPage.bodyContent
+
+*NOTE: When accessing content dynamically you will not get intellisense if you are using Visual Studio to edit your templates.*
 
 ##Rendering Macros
 

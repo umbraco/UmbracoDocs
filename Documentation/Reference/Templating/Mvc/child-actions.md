@@ -14,7 +14,7 @@ Child Actions can be very powerful especially when you want to have re-usable co
 
 ##Creating a Child Action
 
-This documentation is going to use [SurfaceControllers](surface-controllers.md) to create child actions but if you want to create child actions with your own custom controllers with your own custom routing that will work too. Once you've created a SurfaceController, you just need to create an action (Note the ChildActionOnly attribute, this will ensure that this action is not routable via a URL):
+This documentation is going to use [SurfaceControllers](surface-controllers.md) to create child actions but if you want to create child actions with your own custom controllers with your own custom routing that will work too. Once you've created a SurfaceController, you just need to create an action (Note the ChildActionOnly attribute, this will ensure that this action is not publicly routable via a URL):
 
 	public class MySearchController : SurfaceController 
 	{
@@ -31,6 +31,10 @@ This documentation is going to use [SurfaceControllers](surface-controllers.md) 
 	}
 
 *NOTE: In this example we have used a SurfaceController to create the ChildAction and so long as you are using this Child Action in the context of rendering an Umbraco view, you will then have available all of the handy SurfaceController properties such as UmbracoHelper, UmbracoContext, etc...*
+
+###Action name conflicts
+
+MVC allows you to have the same overloaded action names on your controllers, however in some cases when POST-ing data and rendering a child action in the response, this can cause issues when MVC is trying to determine which action to use. If you have named both an `[HttpPost]` action and a `[ChildActionOnly]` action with the same name you may also need to attribute your `[HttpPost]` action with the attribute `[NotChildAction]` so that MVC doesn't get confused. 
 
 ##View Locations
 

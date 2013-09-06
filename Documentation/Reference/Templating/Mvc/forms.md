@@ -2,13 +2,13 @@
 
 **Applies to: Umbraco 4.10.0+**
 
-Quick links - MVC form tutorials:
+_Creating an HTML form to submit data with MVC in Umbraco is very easy! You'll need to create a SurfaceController, a 'View Model' class and use a handy HtmlHelper extension method called BeginUmbracoForm._
+
+##Quick links - MVC form tutorials
 
 * [Creating an MVC form using a Partial View](forms/turorial-partial-views.md)
 * [Creating an MVC form using a Child Action](forms/turorial-child-action.md)
 * [Creating an MVC form with custom html markup](forms/turorial-custom-markup.md)
-
-_Creating an HTML form to submit data with MVC in Umbraco is very easy! You'll need to create a SurfaceController, a 'View Model' class and use a handy HtmlHelper extension method called BeginUmbracoForm._
 
 ##Creating a form - The View Model
 
