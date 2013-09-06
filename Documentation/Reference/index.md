@@ -2,11 +2,10 @@
 _Developers reference primarily consists of API references of the different core umbraco APIS. In many cases, the references comes with code snippets with simple exemples. However, for a more in-depth study of the different APIs, consult the "using-umbraco" and "extending-umbraco" sections of the documentation_ 
 
 ##[Templating](Templating/index.md)
-Reference documentation, covering masterpages, macros, razor syntax and xslt for macros
 
-##[MVC](Mvc/index.md) 
-Introduced in **Umbraco 4.10.0+**
-How to use MVC in Umbraco.
+How to use templates and macros. Covers the basic definitions of templates/macros to advanced techniques and API usage.
+
+*This section contains all of the details about both templates types: MVC & WebForms* 
 
 ##[Web API](WebApi/index.md) 
 Introduced in **Umbraco 6.1.0+**

@@ -2,6 +2,8 @@
 
 Here you will be able to find documentation on all the options you can modify in the umbracoSettings.config file.
 
+***NOTE**: in v7+ many of these settings are not explicitly contained in the configuration file that is shipped with Umbraco and most of these settings have default values assigned. These default values will be expressed below but you can insert these configuration items in the file to override the defaults.*
+
 ##Content
 
 Below you can see settings that affects content in Umbraco.
@@ -11,6 +13,8 @@ Below you can see settings that affects content in Umbraco.
 <small>This was introduced in 4.8 but is first used with the new media archive in 4.9</small>
 
 This section is used for managing thumbnail creation, allowed attributes and, which properties of an image that should be automatically updated on upload.
+
+> *The values in this example are the default values in **v7+** when these configuration elements are not explicitly set in the configuration file.*
 
         <imaging>
             <!-- what file extension that should cause umbraco to create thumbnails -->
@@ -69,7 +73,10 @@ If you need to create a custom media documenttype to handle images called someth
 **Scripteditor**
 
 This section is used for managing the options to create and edit script files in the Umbraco backoffice. 
+
 <small>Please note that best practice is to handle your script files externally and not through Umbraco!</small>
+
+> *The values in this example are the default values in **v7+** when these configuration elements are not explicitly set in the configuration file.*
 
         <scripteditor>
             <!-- Path to script folder - no ending "/" -->
@@ -97,6 +104,8 @@ If you change the value to "true" then you will see the code in a simple textare
 **UploadAllowDirectories**
 
 This setting let's you control if an upload control can create new folders for files uploaded, or if the file should be stored in the /media folder root with a unique ID prefixed to the filename.
+
+> *The values in this example are the default values in **v7+** when these configuration elements are not explicitly set in the configuration file.*
 
          <!-- should umbraco store the uploaded files like /media/xxx/filename.ext or like /media/xxx-filename.ext
               should be set to false if the application pool's user account hasn't got readrights of the driveroot up to the /media directory -->

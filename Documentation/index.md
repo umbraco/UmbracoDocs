@@ -6,10 +6,10 @@ _Documentation on the Umbraco core functionality and APIs._
 Describes how Umbraco is installed, using either WebMatrix, Microsoft Platform Installer, or from a zip-file. 
 
 ##[Using Umbraco](Using-Umbraco/index.md)
-Step by step guides on how to approach the different areas in umbraco. Working with content, media, templating or developement. 
+Describes Umbraco terminology, configuration files/settings & step by step guides on how to approach the different areas in umbraco. 
 
-##[Developers API Reference](Reference/index.md)
-Covers API reference, searching, querying and management APIs.
+##[Developers Reference](Reference/index.md)
+Templating, querying, searching and other Umbraco APIs.
 
 ##[Cheatsheets](Cheatsheets/index.md)
 Cheatsheets for easy overview of different areas like the Razor API and Views syntax

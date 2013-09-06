@@ -1,14 +1,41 @@
 #Templating
 
-_Templating in Umbraco 4 consists of 2 larger concepts, namely Masterpages, and Macros. Masterpages are used for the html layout of your pages, whereas macros are resuable dynamic components used for embedding navigation, forms, list and so on in your templates._
+_Templating in Umbraco consists of 2 larger concepts, namely Templates, and Macros. Templates are used for the html layout of your pages, whereas macros are resuable dynamic components used for embedding navigation, forms, lists, and so-on in your templates._
 
-In **Umbraco 4.10.0 MVC** templating was introduced as an alternative to Masterpages, you can find a full reference [here](../Mvc/index.md).
+##Template options
 
-##[Working with masterpages](Masterpages/index.md)
-Reference on the different components in the Masterpages templating syntax
+There are 2 types of templating technologies in Umbraco:
+
+* MVC (views)
+* WebForms (masterpages)
+
+Umbraco recommends using MVC templates so if you are unsure what to choose then use MVC. 
+
+It's easy to configure the default type, in the */Config/umbracoSettings.config* file, find this section and set the type you'd like to use (*Mvc* or *WebForms*):
+
+	<templates>
+		<defaultRenderingEngine>Mvc</defaultRenderingEngine>
+	</templates>
+
+*NOTE: MVC Templating is only available from v4.10+*
+
+##[Managing templates](managing-templates.md)
+
+Describes how to create/modify templates and describes nested templates.
+
+##[Working with MVC 'views'](../Mvc/index.md)
+
+Describes how to work with MVC views, the razor syntax and APIs available as well details on how to create forms, step-by-step guides and other advanced techniques.
+
+##[Working with WebForms 'masterpages'](Masterpages/index.md)
+Reference on the different components in the WebForms 'masterpages' templating syntax
 
 ##[Working with macros](Macros/index.md)
 Introduction to setting up a macro, passing parameters, configuring caching
+
+##Hybrid templates
+
+Describes how you can use both WebForms and MVC templates together in the same Umbraco installation
 
 ##Related References
 Documentation related to templating and macros
