@@ -245,7 +245,7 @@ Then update your log4net configuration to use the pattern converter:
 	    <file type="log4net.Util.PatternString" >
 	      <converter>
 	        <name value="hostname" />
-	        <type value="Concorde.Sync.MachineNameLogConverter, Concorde.Sync" />
+	        <type value="YourProject.MachineNameLogConverter, YourProject" />
 	      </converter>
 	      <conversionPattern value="App_Data\Logs\UmbracoTraceLog.%hostname{LocalApplicationData}.txt" />
 	    </file>
