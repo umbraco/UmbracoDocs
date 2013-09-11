@@ -1,6 +1,6 @@
 #Umbraco in Load Balanced Environments
 
-_Information on how to deploy Umbraco in a Load Balanced scenario and other details to consider when settting up Umbraco for load balancing_
+_Information on how to deploy Umbraco in a Load Balanced scenario and other details to consider when setting up Umbraco for load balancing_
 
 ##Overview
 Configuring and setting up a load balanced server environment requires planning, design and testing. This document should assist you in setting up your servers, load balanced environment and Umbraco configuration. 
