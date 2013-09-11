@@ -102,6 +102,8 @@ When deploying Umbraco in a load balanced scenario using file replication it is 
 	* Another alternative is to have the umbraco.config file stored in the local server's 'temp' folder, this can be acheived by changing this configuration setting to 'true' in the web.config. The downside of this is that if you need to view this configuration file you'll have to find it in the temp files which isn't always clear.
 			
 			<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
+* ~/App_Data/Logs/*
+	* This is **optional** and depends on how you want your logs configured (see below) 
 
 If for some reason your file replication solution doesn't allow you to not replicate specific files folders (which it should!!) then you can use an alternative approach by using virtual directories. *This is not the recommended setup but it is a viable alternative:*
 
@@ -112,7 +114,13 @@ If for some reason your file replication solution doesn't allow you to not repli
 
 ###Additional important notes
 
+####Examine/Lucene
 When running in a replicated environment Lucene/Examine indexes must not be replicated (as per above). It is also important to note that Lucene/Examine indexes will only contain published *content* on each server node. The only server node that will contain full Lucene/Examine indexes with unpublished content and media will be the server that you've designated as your back-office administration server. If you require your Lucene/Examine indexes to contain unpublished content and media on your additional servers it is probably possible but some custom setup will be required. 
+
+####Logging
+Since Umbraco is using log4net for logging there are various configurations that you can use to ensure logging is done the way that you'd like. If you are replicating your logs - which you may wish to do to ensure that all of your servers have the other server logs - then you'll want to ensure that your logs are named with file names that include the machine name, otherwise you'll get file locks or your logs will get overwritten. *(See below for details on how to do this)* 
+
+Other options include changing your log4net setup to log to a centralized database - of course if your database cannot be accessed then no logging will occur so be aware of this.
 
 ###IIS Setup
 
@@ -158,6 +166,16 @@ Since the files for the website will be hosted centrally, each IIS website on yo
 * have their application pools run as the user above
 * Have the IIS anonymous user account set to the application pool account (IIS 7)
 
+###Additional important notes
+
+####Examine/Lucene
+As noted above if running Umbraco load balanced in a centralized SAN environment you must only have one designated server as the administration server otherwise it will not work, you will get file locks.
+
+####Logging
+Since Umbraco is using log4net for logging there are various configurations that you can use to ensure logging is done the way that you'd like. If you are using file based logs you'll want to ensure that your logs are named with file names that include the machine name, otherwise you'll get file locks. *(See below for details on how to do this)*
+
+Other options include changing your log4net setup to log to a centralized database - of course if your database cannot be accessed then no logging will occur so be aware of this.
+
 ##ASP.Net Configuration
 
 * You will need to use a custom machine key so that all your machine key level encryption values are the same on all servers, without this you will end up with view state errors, validation errors and encryption/decryption errors since each server will have it's own generated key.
@@ -199,6 +217,47 @@ There's a couple optional elements for the configuration of each server that all
 You'll need to test this solution **a lot** before going to production. You need to ensure there are no windows security issues, etc... The best way to determine issues is have a lot of people testing this setup and ensuring all errors and warnings in your application/system logs in Windows are fixed.
 
 To test Umbraco distributed calls, just create and publish some content on one server (i.e. http://server1.mywebsite.com/umbraco/umbraco.aspx), then browse to the front end content on another server (i.e. http://server2.mywebsite.com/public/page1.aspx if page1 was the newly published content). If the page shows up on the 2nd server, though it was published from the 1st server, then distributed calls are working! You'll need to thoroughly test this though.
+
+##Log4net file logging with machine name
+This describes how you can configure log4net to write log files that are named with the machine name.
+
+You'll have to create a custom log4net formatter:
+
+    public sealed class MachineNameLogConverter : log4net.Util.PatternConverter
+    {
+        protected override void Convert(TextWriter writer, object state)
+        {
+            writer.Write(Environment.MachineName);
+        }
+    }
+
+Then update your log4net configuration to use the pattern converter:
+
+	  <appender name="AsynchronousLog4NetAppender"
+	            type="Umbraco.Core.Logging.AsynchronousRollingFileAppender, Umbraco.Core">
+	    <!--
+			THIS IS THAT VALUE THAT UMBRACO IS SHIPPED WITH THAT DOES NOT
+			INCLUDE THE MACHINE NAME IN THE FILE
+			<file value="App_Data\Logs\UmbracoTraceLog.txt" />
+		-->
+
+		<!-- THIS IS THE NEW CHANGE TO HAVE A MACHINE NAME IN THE FILE NAME -->
+	    <file type="log4net.Util.PatternString" >
+	      <converter>
+	        <name value="hostname" />
+	        <type value="Concorde.Sync.MachineNameLogConverter, Concorde.Sync" />
+	      </converter>
+	      <conversionPattern value="App_Data\Logs\UmbracoTraceLog.%hostname{LocalApplicationData}.txt" />
+	    </file>
+
+	    <lockingModel type="log4net.Appender.FileAppender+MinimalLock" />
+	    <appendToFile value="true" />
+	    <rollingStyle value="Date" />
+	    <maximumFileSize value="5MB" />
+	    <layout type="log4net.Layout.PatternLayout">
+	      <conversionPattern value="%date [%thread] %-5level %logger - %message%newline" />
+	    </layout>
+	  </appender>
 
 ##Conclusion
 Though this is somewhat detailed, this is still a basic overview since all environments are different in some way. Hopefully this guide will point you in the right direction!
