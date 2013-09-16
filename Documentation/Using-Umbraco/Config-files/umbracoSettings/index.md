@@ -8,7 +8,7 @@ Here you will be able to find documentation on all the options you can modify in
 
 Below you can see settings that affects content in Umbraco.
 
-**Imaging**
+###Imaging
 
 <small>This was introduced in 4.8 but is first used with the new media archive in 4.9</small>
 
@@ -70,7 +70,7 @@ If you need to create a custom media documenttype to handle images called someth
             </autoFillImageProperties>
         </imaging>
 
-**Scripteditor**
+###Scripteditor
 
 This section is used for managing the options to create and edit script files in the Umbraco backoffice. 
 
