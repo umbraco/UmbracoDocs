@@ -111,7 +111,7 @@ This setting let's you control if an upload control can create new folders for f
               should be set to false if the application pool's user account hasn't got readrights of the driveroot up to the /media directory -->
         <UploadAllowDirectories>True</UploadAllowDirectories>
 
-**Errors**
+###Errors
 
 In case of a 404 error (page not found) umbraco can return a default page instead. this is set here. Notice you can also set a different error page, based on the current culture so a 404 page can be returned in the correct language
 
@@ -155,7 +155,7 @@ Now IIS will ignore httpErrors and allow Umbraco to handle them.
 If you have multiple sites with the same culture then you can't use the above error settings. Then you will need to have a look at the [uComponents Multi-Site Not Found handler](http://ucomponents.codeplex.com/wikipage?title=MultiSitePageNotFoundHandler).
 The benefit of using this handler is that you can choose the error page to be shown within the Umbraco backoffice.
 
-**Notifications**
+###Notifications
 
 Umbraco can send out email notifications, set the sender email address for the notifications emails here. To set the SMTP server used to send the emails, edit the standard <mailSettings/> section in the web.config file.
 
