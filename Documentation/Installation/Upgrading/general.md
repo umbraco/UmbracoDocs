@@ -15,6 +15,8 @@ Usually when there's a new version you would want to take the zip file of that v
 - /Umbraco 
 - /Umbraco_Client
 
+**Note:** there are hosting providers (we know of one: RackSpace Cloud) that require proper casing of file and folder names. Normally on Windows this is not a problem but if your hosting provider forces proper casing then you will need to verify that the folder and file names are in the same casing as in the newest version you're upgrading to.
+
 ##Are you using NuGet?
 
 You can simply open up the Package Console and type:
