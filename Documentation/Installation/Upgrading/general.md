@@ -30,9 +30,11 @@ Don't be alarmed when you get asked if files should be overwritten, the config f
 You can expect there to be some changes to the following configuration files. 
 
 * Any file in the /Config folder
-* The web.config file in the root of your site
+* The /Global.asax file
+* * The web.config file in the root of your site
  * **Warning: Do not remove the version number, nor the existing connection string**
 * In rare cases also the Web.config file in the Views folder
+
 
 Use a tool like [WinMerge](http://winmerge.org/ "WinMerge") to check changes between all of the config files. Depending on when you did this last there have been updates to quite a few of them.
 
