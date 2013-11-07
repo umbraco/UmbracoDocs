@@ -22,3 +22,7 @@ Which one you want to use depends on what you want to achieve. If you want to be
 * See [DataTypeService Events](DataTypeService-Events.md) for a listing of the DataTypeService object events.  
 * See [FileService Events](FileService-Events.md) for a listing of the FileService object events.  
 * See [LocalizationService Events](LocalizationService-Events.md) for a listing of the LocalizationService object events. 
+
+## Tree events
+
+* See [Tree Events](../../Extending-Umbraco/Section-Trees/trees.md) for a listing of the tree events.  
