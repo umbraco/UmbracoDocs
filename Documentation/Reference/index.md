@@ -11,11 +11,11 @@ How to use templates and macros. Covers the basic definitions of templates/macro
 Introduced in **Umbraco 6.1.0+**
 How to use Web API in Umbraco to easily create REST services.
 
-##[Management APIs - 4.x](Management/index.md)
-Specific to version 4.x or earlier: Create, update, delete all build-in system objects like documents, media, templates, document types and so on. 
-
-##[Management APIs - 6.x](Management-v6/index.md)
+##[Management APIs - 6+](Management-v6/index.md)
 Specific to version 6.x or later: Create, update, delete all build-in system objects like content, media, templates, content types and so on. 
+
+##[Legacy Management APIs - 4.x](Management/index.md)
+Specific to version 4.x or earlier: Create, update, delete all build-in system objects like documents, media, templates, document types and so on.
 
 ##[Querying](Querying/index.md)
 Umbraco comes with several ways of querying, filtering and searching contnet, through the APIs: uQuery, DynamicNode and NodeFactory
@@ -23,11 +23,11 @@ Umbraco comes with several ways of querying, filtering and searching contnet, th
 ##[Searching](Searching/index.md)
 Details on how to implement search capabilities for your Umbraco website using Examine, which is a Lucene based search engine for umbraco.
 
-##[Events - 4.x](Events/index.md)
-Umbraco 4, comes with a complete event model, covering all mayor aspects of the system for triggering custom code or automation.  
-
 ##[Events - 6.x](Events-v6/index.md)
 Umbraco 6.x or later: event model covering all mayor aspects of the system for triggering custom code or automation.  
+
+##[Legacy Events - 4.x](Events/index.md)
+Umbraco 4 and earlier, comes with a complete event model, covering all mayor aspects of the system for triggering custom code or automation.
 
 ##[/Base](Api/Base/Index.md)
 /Base is a extendable system for creating raw feeds directly from Umbraco using very basic Url's. This enables developers to access umbraco data through javascript, flash or any other client. It even allows you to modify umbraco data directly via simple url's.

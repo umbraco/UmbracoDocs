@@ -19,3 +19,9 @@ Service for doing CRUD type operations for `Dictionary` and `Language` objects.
 
 ##[MediaService](MediaService.md)
 Service for doing CRUD type operations for `Media` objects.
+
+##[SectionService](SectionService.md)
+
+**Introduced in Umbraco 7.0.0+**
+
+Service for doing CRUD type operations for `Section` objects
