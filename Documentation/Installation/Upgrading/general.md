@@ -15,6 +15,8 @@ Usually when there's a new version you would want to take the zip file of that v
 - /Umbraco 
 - /Umbraco_Client
 
+**Note:** there are hosting providers (we know of one: RackSpace Cloud) that require proper casing of file and folder names. Normally on Windows this is not a problem but if your hosting provider forces proper casing then you will need to verify that the folder and file names are in the same casing as in the newest version you're upgrading to.
+
 ##Are you using NuGet?
 
 You can simply open up the Package Console and type:
@@ -28,9 +30,11 @@ Don't be alarmed when you get asked if files should be overwritten, the config f
 You can expect there to be some changes to the following configuration files. 
 
 * Any file in the /Config folder
-* The web.config file in the root of your site
+* The /Global.asax file
+* * The web.config file in the root of your site
  * **Warning: Do not remove the version number, nor the existing connection string**
 * In rare cases also the Web.config file in the Views folder
+
 
 Use a tool like [WinMerge](http://winmerge.org/ "WinMerge") to check changes between all of the config files. Depending on when you did this last there have been updates to quite a few of them.
 

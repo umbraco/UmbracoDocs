@@ -2,19 +2,18 @@
 
 Here you will be able to find documentation on all the options you can modify in the umbracoSettings.config file.
 
-***NOTE**: in v7+ many of these settings are not explicitly contained in the configuration file that is shipped with Umbraco and most of these settings have default values assigned. These default values will be expressed below but you can insert these configuration items in the file to override the defaults.*
+***NOTE**: in v7+ many of these settings are not explicitly contained in the configuration file that is shipped with Umbraco and most of these settings have default values assigned. 
+These default values will be expressed below and you can insert these configuration items in the file to override the defaults.*
 
 ##Content
 
 Below you can see settings that affects content in Umbraco.
 
-**Imaging**
+###Imaging
 
 <small>This was introduced in 4.8 but is first used with the new media archive in 4.9</small>
 
 This section is used for managing thumbnail creation, allowed attributes and, which properties of an image that should be automatically updated on upload.
-
-> *The values in this example are the default values in **v7+** when these configuration elements are not explicitly set in the configuration file.*
 
         <imaging>
             <!-- what file extension that should cause umbraco to create thumbnails -->
@@ -70,13 +69,11 @@ If you need to create a custom media documenttype to handle images called someth
             </autoFillImageProperties>
         </imaging>
 
-**Scripteditor**
+###Scripteditor
 
 This section is used for managing the options to create and edit script files in the Umbraco backoffice. 
 
 <small>Please note that best practice is to handle your script files externally and not through Umbraco!</small>
-
-> *The values in this example are the default values in **v7+** when these configuration elements are not explicitly set in the configuration file.*
 
         <scripteditor>
             <!-- Path to script folder - no ending "/" -->
@@ -105,13 +102,11 @@ If you change the value to "true" then you will see the code in a simple textare
 
 This setting let's you control if an upload control can create new folders for files uploaded, or if the file should be stored in the /media folder root with a unique ID prefixed to the filename.
 
-> *The values in this example are the default values in **v7+** when these configuration elements are not explicitly set in the configuration file.*
-
          <!-- should umbraco store the uploaded files like /media/xxx/filename.ext or like /media/xxx-filename.ext
               should be set to false if the application pool's user account hasn't got readrights of the driveroot up to the /media directory -->
         <UploadAllowDirectories>True</UploadAllowDirectories>
 
-**Errors**
+###Errors
 
 In case of a 404 error (page not found) umbraco can return a default page instead. this is set here. Notice you can also set a different error page, based on the current culture so a 404 page can be returned in the correct language
 
@@ -155,7 +150,7 @@ Now IIS will ignore httpErrors and allow Umbraco to handle them.
 If you have multiple sites with the same culture then you can't use the above error settings. Then you will need to have a look at the [uComponents Multi-Site Not Found handler](http://ucomponents.codeplex.com/wikipage?title=MultiSitePageNotFoundHandler).
 The benefit of using this handler is that you can choose the error page to be shown within the Umbraco backoffice.
 
-**Notifications**
+###Notifications
 
 Umbraco can send out email notifications, set the sender email address for the notifications emails here. To set the SMTP server used to send the emails, edit the standard <mailSettings/> section in the web.config file.
 
@@ -192,6 +187,8 @@ Character encoding for Tidy.
 
 By default Umbraco uses the new XML schema, which was introduced with the release of Umbraco 4.5. If you need to be able to use the old schema, due to an upgrade from an older version
 of Umbraco, then change the setting to "true". This way you will not need to update the existing XSLT files to use the new format.
+
+*This setting will not exist in v7+*
 
         <!-- to enable new content schema, this needs to be false -->
         <UseLegacyXmlSchema>false</UseLegacyXmlSchema>
@@ -344,11 +341,24 @@ So if **`<char org="ñ">n</char>`** is added above the **ñ** will be shown as a
 
 ##Templates
 
-Enabled by default, You can turn off masterpages and go back and use the old templating engine (From v3 of Umbraco). But it is in no way recommended to do so.
-
     <templates>
+        <defaultRenderingEngine>Mvc</defaultRenderingEngine>
         <useAspNetMasterPages>true</useAspNetMasterPages>
+        <enableSkinSupport>true</enableSkinSupport>
     </templates>
+
+**`<defaultRenderingEngine>`**
+Tells Umbraco whether to create MVC Views or Webforms Master Pages when creating a template. This does not limit you from using one technology or the other, it is just a flag to indicate to Umbraco what type of templates to create in the back office.
+
+**`useAspNetMasterPages`**
+This is a legacy setting and should not normally be changed.
+Enabled by default, You can turn off masterpages and go back and use the old templating engine (From v3 of Umbraco). 
+But it is in no way recommended to do so.
+
+*In v7+ this setting is removed*
+
+**`<enableSkinSupport>`**
+This setting only affects skinning when using Webforms Masterpages.
 
 ##Developer
 
@@ -363,6 +373,10 @@ The comment says it all :)
     </developer>
 
 ##Scripting
+
+This is a legacy section which is used for the legacy Razor Macros (superceded by Partial View Macros in v4.10+), 
+generally you won't need to modify this section. If you need custom razor macro converters you should use implementations
+of IRazorDataTypeModel instead of setting them in config.
 
     <scripting>
         <razor>
