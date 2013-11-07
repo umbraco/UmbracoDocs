@@ -60,3 +60,22 @@ So no need to be scared, enter the details of your existing database and Umbraco
 
 Since version 4.0.0 there have been two database upgrades, one to version 4.1.0 and one to version 4.9.0.  
 Version 6 introduces a large database upgrade and still handles all the previously necessary database upgrades too.
+
+##Potential issues and gotchas
+
+###Module Load Order
+
+`UmbracoModule` requires `UrlRewriteModule` to be loaded first. This is determined in the `<system.webServer><modules>` section of your web.config file. 
+
+Typically, your configuration file should look like this
+
+	<system.webServer>
+    	<validation validateIntegratedModeConfiguration="false" />
+    	<modules runAllManagedModulesForAllRequests="true">
+      		<remove name="UrlRewriteModule" />
+      		<add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter" />
+      		<remove name="UmbracoModule" />
+      		<add name=" UmbracoModule" type="Umbraco.Web.UmbracoModule,umbraco" />
+			... Other modules ...
+		</modules>
+	</system.webServer>
