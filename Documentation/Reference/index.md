@@ -11,10 +11,10 @@ How to use templates and macros. Covers the basic definitions of templates/macro
 Introduced in **Umbraco 6.1.0+**
 How to use Web API in Umbraco to easily create REST services.
 
-##[Management APIs - 6+](Management-v6/index.md)
+##[Management APIs](Management-v6/index.md)
 Specific to version 6.x or later: Create, update, delete all build-in system objects like content, media, templates, content types and so on. 
 
-##[Legacy Management APIs - 4.x](Management/index.md)
+##[Legacy Management APIs](Management/index.md)
 Specific to version 4.x or earlier: Create, update, delete all build-in system objects like documents, media, templates, document types and so on.
 
 ##[Querying](Querying/index.md)
@@ -23,10 +23,10 @@ Umbraco comes with several ways of querying, filtering and searching contnet, th
 ##[Searching](Searching/index.md)
 Details on how to implement search capabilities for your Umbraco website using Examine, which is a Lucene based search engine for umbraco.
 
-##[Events - 6.x](Events-v6/index.md)
+##[Events](Events-v6/index.md)
 Umbraco 6.x or later: event model covering all mayor aspects of the system for triggering custom code or automation.  
 
-##[Legacy Events - 4.x](Events/index.md)
+##[Legacy Events](Events/index.md)
 Umbraco 4 and earlier, comes with a complete event model, covering all mayor aspects of the system for triggering custom code or automation.
 
 ##[/Base](Api/Base/Index.md)
