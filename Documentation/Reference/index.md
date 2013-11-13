@@ -9,7 +9,7 @@ How to use **templates** and **macros**. Covers the basic definitions of templat
 
 ##[Querying](Querying/index.md)
 
-Umbraco comes with several ways of querying, filtering and searching content which you can use in your code.
+Umbraco comes with various ways of querying, filtering and searching published content for use on your website.
 
 ##[Searching](Searching/index.md)
 
