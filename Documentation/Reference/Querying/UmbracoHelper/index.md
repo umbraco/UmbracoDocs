@@ -4,6 +4,8 @@ UmbracoHelper is the unified way to work with published content/media on your we
 
 **This is the recommended approach to working with Umbraco published content.**
 
+UmbracoHelper also has a variety of helper methods that are useful when working in your views, controllers and webforms classes.
+
 ##Working with content
 
 Coming soon....
