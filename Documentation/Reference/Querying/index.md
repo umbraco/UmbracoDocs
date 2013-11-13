@@ -4,15 +4,11 @@ _Umbraco comes with various ways of querying, filtering and searching published 
 
 ***NOTE**: This section does not describe how to work with Umbraco persisted (database) data, see [Management Apis](../Management-v6/index.md)* 
 
-##UmbracoHelper
+##[UmbracoHelper](UmbracoHelper/index.md)
 
-UmbracoHelper is the unified way to work with published content/media on your website. Whether you are using MVC or WebForms you will be able to use UmbracoHelper to query/traverse Umbraco published data. UmbracoHelper is also available from within [Partial View Macros](../Templating/Macros/Partial-View-Macros/index.md) which is why Partial View Macro's are the recommended macro format (which work in both MVC and WebForms).  
+UmbracoHelper is the unified way to work with published content/media on your website. Whether you are using MVC or WebForms you will be able to use UmbracoHelper to query/traverse Umbraco published data. 
 
-This is the recommended approach to working with Umbraco published content. 
-
-**[See here for full details on UmbracoHelper](UmbracoHelper/index.md)**
-
-**Are you using [MVC](../Templating/Mvc/index.md)?** UmbracoHelper will expose the currently executing page model but when using MVC, this model is instantly available in your views via your [view's model](../Templating/Mvc/views/index.md).
+**This is the recommended approach to working with Umbraco published content.**
 
 ##Legacy APIs
 
