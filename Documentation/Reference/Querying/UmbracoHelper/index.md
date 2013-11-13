@@ -6,6 +6,8 @@ UmbracoHelper is the unified way to work with published content/media on your we
 
 UmbracoHelper also has a variety of helper methods that are useful when working in your views, controllers and webforms classes.
 
+**Are you using [MVC](../../Templating/Mvc/index.md)?** UmbracoHelper will expose the currently executing page model but when using MVC, this model is instantly available in your views via your [view's model](../../Templating/Mvc/views/index.md).
+
 ##Working with content
 
 Coming soon....

@@ -12,6 +12,8 @@ This is the recommended approach to working with Umbraco published content.
 
 **[See here for full details on UmbracoHelper](umbraco-helper.md)**
 
+**Are you using [MVC](../Templating/Mvc/index.md)?** UmbracoHelper will expose the currently executing page model but when using MVC, this model is instantly available in your views via your [view's model](../Templating/Mvc/views/index.md).
+
 ##Legacy APIs
 
 ###[DynamicNode](DynamicNode/index.md)
