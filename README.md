@@ -3,12 +3,10 @@
 **WORK IN PROGRESS**
 
 #Reading & using the docs
-This is the documentation project for Umbraco 4. The scope of this project is to provide overviews of concepts, tutorials, example code, and links to API reference.
+This is the documentation project for Umbraco. The scope of this project is to provide overviews of concepts, tutorials, example code, and links to API reference.
 This is a work in progress at the moment, and we welcome valuable contributions from anyone willing to help. For details on how to contribute, see further down this page.
 
-To allow us to maintain documentation specific to each version of Umbraco 4, we have branches for each release starting from 4.8.
-
-Once you have selected a branch, you're good to go. Our project consists of 2 main parts, "Stubs" and "Documentation". 
+Our project consists of 2 main parts, "Stubs" and "Documentation".  Currently there are no branches for different versions of umbraco.
 
 #What's in these guides
 
@@ -16,7 +14,7 @@ Once you have selected a branch, you're good to go. Our project consists of 2 ma
 [Documentation (available here)](Documentation/index.md) is a collection of references and step-by-step guides, as well as conceptual overviews of the architecture.
 
 ##Developers Reference
-[Developers (available here)](Documentation/Reference/index.md) is a collection of API references specificly for developers working with and extending Umbraco 4.
+[Developers (available here)](Documentation/Reference/index.md) is a collection of API references specificly for developers working with and extending Umbraco.
 
 #Contributing to the guides
 To contribute to either the documentation or stubs, you can fork & clone our repository, make your edits, and simply push back to gitHub and send us a pull request. All items that get pulled into the main repository will automatically get pushed to [our.umbraco.org/documentation](http://our.umbraco.org/documentation).
@@ -28,21 +26,17 @@ To contribute to either the documentation or stubs, you can fork & clone our rep
 
 
 ##Repository organisation
-So that we can target documentation for each release of Umbraco 4, there will be a branch for each released version.
-When making corrections or edits to documentation against one revision, if those updates are relevant to another release, merge those specific changes to the other relevant branches.
-No active work on the documentation should be done on the 'master' branch.
+All active work done on the documentation is currently be done on the 'master' branch.
 
 ###Contributing documentation
 All documents are written in Markdown, using a simple structure and stored as .md files.
 These are then pulled to [our.umbraco.org/documentation](http://our.umbraco.org/documentation) for easy browsing. 
 
-First fork and clone the repository so that you have your own working copy. Then choose the minimum version of Umbraco 4 to which you know your edits apply. Then make your changes on the git branch for this version. Once you are happy with your edits, use github to issue a "pull request" which means your edits will be reviewed, and once accepted, merged into the main repository. 
+First fork and clone the repository so that you have your own working copy. Then create a new branch on your local copy to make your changes. Once you are happy with your edits, use github to issue a "pull request" which means your edits will be reviewed, and once accepted, merged into the main repository. 
 
 **Note:** It's a good idea to pull in upstream changes, merge and commit to your own fork before submitting a pull request. Instructions on how to setup a remote repo and  pull from upstream can be found on this [page](https://help.github.com/articles/fork-a-repo)
 
 Everything in the main repository will make it onto the [our.umbraco.org/documentation](http://our.umbraco.org/documentation) site, which is why we have chosen a pull request workflow to keep everything simple and straightforward.
-
-
 
 ##Planning & discussions
 
