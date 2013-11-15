@@ -18,9 +18,9 @@ The segments are created by the "Url Segment provider"
 ### Url Segment provider
 On umbraco startup the `UrlSegmentProviderResolver` will search for the first `IUrlSegmentProvider` and that does not return `null`.
 
-If no UrlSegment provider is found, he will fall back to the *default url segment provider*.
+If no UrlSegment provider is found, he will fall back to the *default Url segment provider*.
 
-To craete a new url segment provider, implement the following interface:
+To create a new Url segment provider, implement the following interface:
 
     public interface IUrlSegmentProvider
     {
@@ -43,13 +43,13 @@ The returned string will be your URL segment for this node.  You are free to ret
       }
     }
 
-The returned string becomes the native url segment.  You don't need any url rewriting, ...
+The returned string becomes the native Url segment.  You don't need any Url rewriting, ...
 
 If we would use `MyProvider`, the "swibble" node from our example content tree would have "5678-swibble" as segment. 
 
 ### The Default Url Segment Provider
 
-Default url builds it's segments like this. 
+Default Url builds it's segments like this. 
 First it looks (in this order) for: 
 
 - the *umbracoUrlName* property. on the node  `content.GetPropertyValue<string>("umbracoUrlName")`
@@ -86,18 +86,18 @@ will produce "1234/dk/path/to/page" as path
 - **No domain specified**: "/path/to/page"
 - **Unless HideTopLevelNodeFromPath config is true**, then the path becomes "/to/page"
 
-## 3. <a name="urls"></a> Create urls
-The url of a node consists out of a complete [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier): the schema, domainname, (port) and the path.  
+## 3. <a name="urls"></a> Create Urls
+The Url of a node consists out of a complete [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier): the schema, domainname, (port) and the path.  
 
-In our example the swibble node could have the following URL: "http://example.com/our-products/swibble.aspx"
+In our example the "swibble" node could have the following URL: "http://example.com/our-products/swibble.aspx"
 
-This is handled by the Url Provider.  The url provider is every time whenever you write (e.g.):
+This is handled by the Url Provider.  The Url provider is every time whenever you write (e.g.):
 
 	@Content.Model.url
 	@Umbraco.Url(1234)
 	@UmbracoContext.Current.UrlProvider.Geturl(1234)
 
-The `UrlProviderResolver` searches for all url providers and will take the first one that does not return null.  If falls back to the default urls provider if no Url provider has been found.
+The `UrlProviderResolver` searches for all Url providers and will take the first one that does not return null.  If falls back to the default Urls provider if no Url provider has been found.
 
     // That one is initialized by default
     public class DefaultUrlProvider : IUrlProvider
@@ -125,19 +125,19 @@ It's tricky to implement your own provider, it is advised use override the defau
 - inbound might require rewriting
 
 **TODO: "Per-context UrlProvider".
-Stephan mentions a "per context url provider" on page 35 of his document.  We need to find out what this is!**
+Stephan mentions a "per context Url provider" on page 35 of his document.  We need to find out what this is!**
 
 ### How the Url provider works
 
 - If the current domain matches a root domain of the target content
-  - Return a relative url
-  - Else must return an absolute url
+  - Return a relative Url
+  - Else must return an absolute Url
 - If the target content has only one root domain
-  - Use that domain to build the absolute url
+  - Use that domain to build the absolute Url
 - If the target content has more that one root domain
   - Figure out which one to use
-  - To build the absolute url
-- Complete the absolute url with scheme (http vs https)
+  - To build the absolute Url
+- Complete the absolute Url with scheme (http vs https)
   - If the domain contains a scheme use it
   - Else use the current request’s scheme
 
@@ -146,27 +146,27 @@ If "addTrailingSlash" is true, then add a slash.
 Then add the virtual directory.
 
 ### A few more things
-**TODO: CHECK WITH IF THIS IS INTERPRETED CORRECTLY.  Copied from page 42 of stephans document.**
+**TODO: CHECK WITH IF THIS IS INTERPRETED CORRECTLY.  Copied from page 42 of Stéphane's document.**
  
 - The IUrlProvider also has a GetOtherUrls method (For the back-end)
 - Another implementation if the IUrlProvider is the `AliasUrlProvider`: this will show the umbracoUrlAlias url in the back-end
 
 ###Url Provider Mode
-Provider "mode" determines absolute vs. relative urls.
+Provider "mode" determines absolute vs. relative Urls.
 You can change the mode of the current provider
 
 These are the different modes:
 
     public enum UrlProviderMode
     {
-      // Produce relative urls exclusively 
+      // Produce relative Urls exclusively 
       Relative,
-      // Produce absolute urls exclusively
+      // Produce absolute Urls exclusively
       Absolute,
-      // Produce relative urls when possible, else absolute when required
+      // Produce relative Urls when possible, else absolute when required
       Auto,
-      // Produce relative urls when possible, else absolute when required
-      // If useDomainPrefixes is true, then produce absolute urls exclusively
+      // Produce relative Urls when possible, else absolute when required
+      // If useDomainPrefixes is true, then produce absolute Urls exclusively
       AutoLegacy // this is the default mode in v6
     }
 
@@ -179,7 +179,7 @@ Default mode can be configured in `/umbraco/web.routing/urlProviderMode`
 ### Site Domain Helper
 The Url provider needs a `ISiteDomainHelper` object, this object is provided by the `SiteDomainHelperResolver`.
 
-This object gets the current Uri and all eligible domains, and return only one domain which is used by the UrlProvider to create the url.
+This object gets the current Uri and all eligible domains, and return only one domain which is used by the UrlProvider to create the Url.
 
     // That one is initialized by default
     public class SiteDomainHelper : ISiteDomainHelper

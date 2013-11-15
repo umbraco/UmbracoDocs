@@ -1,7 +1,7 @@
 #FindPublishedContentAndTemplate()
 
 This method is called on the "PublishedContentRequest.PrepareRequest()" method.  
-We discusss shortly what this method is doing:
+We discuss shortly what this method is doing:
 
 1. FindPublishedContent ()
 2. Handles redirects
@@ -47,7 +47,7 @@ We discusss shortly what this method is doing:
 - Yes, these rules are arbitrary… feedback?  Get to the [Dev Group](https://groups.google.com/forum/#!forum/umbraco-dev)!
 
 #### FollowExternalRedirect()
-- content.GetPropertyValue<string>(“umbracoRedirect”)
+- content.GetPropertyValue<string>("umbracoRedirect")
 - If it’s there, sets the published content request to redirect to the content
 - Will trigger an external (browser) redirect
 

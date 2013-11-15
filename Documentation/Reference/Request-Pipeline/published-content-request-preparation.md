@@ -67,9 +67,9 @@ UmbracoModule will pick up the redirect and redirect...  There is no need to wri
 
 ## Forward to either WebForms or Mvc
 
-Concerning webforms - that's the same as v4 (no change).  That means that MVC has been made possible by the pipeline.
+Concerning Webforms - that's the same as v4 (no change).  That means that MVC has been made possible by the pipeline.
 
-You can of couse create your own Mvc RenderController: 
+You can of course create your own Mvc RenderController: 
 
 
     // This is the default controller
@@ -82,7 +82,7 @@ You can of couse create your own Mvc RenderController:
 
 Note: a missing template goes to MVC
 
-There’s one by default but you can use your own, so still time to change the view...
+There's one by default but you can use your own, so still time to change the view...
 
 As a reminder, [Route hijacking](../../Reference/Templating/Mvc/custom-routes.md) works like this: 
 
