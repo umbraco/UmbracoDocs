@@ -4,7 +4,7 @@ _UmbracoHelper is the unified way to work with published content/media on your w
 
 UmbracoHelper also has a variety of helper methods that are useful when working in your views, controllers and webforms classes.
 
-UmbracoHelper is also available from within [Partial View Macros](../Templating/Macros/Partial-View-Macros/index.md) which is why Partial View Macro's are the recommended macro format (which work in both MVC and WebForms).
+UmbracoHelper is also available from within [Partial View Macros](../../Templating/Macros/Partial-View-Macros/index.md) which is why Partial View Macro's are the recommended macro format (which work in both MVC and WebForms).
 
 ##How to reference UmbracoHelper?
 
@@ -26,7 +26,7 @@ Lastly, if you need an UmbracoHelper in a custom class, service, view, etc... yo
 
 UmbracoHelper will expose all content in the form of `IPublishedContent`. To get a reference to the currently executing content item from the UmbracoHelper, use `UmbracoHelper.AssignedContentItem`
 
-**Are you using [MVC](../../Templating/Mvc/index.md)?** UmbracoHelper will expose the currently executing page model as per above, but when using MVC this model is instantly available in your views via your [view's model](../../Templating/Mvc/views/index.md).
+**Are you using [MVC](../../Templating/Mvc/index.md)?** UmbracoHelper will expose the currently executing page model as per above, but when using MVC this model is instantly available in your views via your [view's model](../../Templating/Mvc/views.md).
 
 *More coming soon...*
 
