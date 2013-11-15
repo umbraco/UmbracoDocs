@@ -20,7 +20,7 @@ Media items are used to store assets like images and video within the Media sect
 ###Member Type
 Similar to a Document type and a Media type. You are able to define custom properties to store on a member such as twitter username or website URL for example.
 
-###Member
+###[Member](Members/index.md)
 A member is someone who has access to signup, register and login into your **public website** and is not to be confused with User.
 
 ###Node
