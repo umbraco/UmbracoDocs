@@ -47,6 +47,10 @@ Specific to version 6.x or later: Create, update, delete all build-in system obj
 
 Specific to version 4.x or earlier: Create, update, delete all build-in system objects like documents, media, templates, document types and so on.
 
+## [Request Pipeline](Request-Pipeline/index.md)
+This section explains how the url generation is done (outbound pipeline) and how umbraco finds back a node using a url (inbound pipeline).
+_This functionality was introduced in v6_
+
 ##[Plugins](Plugins/index.md) 
 
 Introduced in **Umbraco 4.10.0+**
