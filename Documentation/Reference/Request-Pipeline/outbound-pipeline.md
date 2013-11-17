@@ -125,7 +125,7 @@ It's tricky to implement your own provider, it is advised use override the defau
 - inbound might require rewriting
 
 **TODO: "Per-context UrlProvider".
-Stephan mentions a "per context Url provider" on page 35 of his document.  We need to find out what this is!**
+Stéphane mentions a "per context Url provider" on page 35 of his document.  We need to find out what this is!**
 
 ### How the Url provider works
 
