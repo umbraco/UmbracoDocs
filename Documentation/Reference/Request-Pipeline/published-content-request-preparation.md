@@ -5,6 +5,7 @@ Is called in `UmbracoModule`:
     void ProcessRequest(…)
 
 What it does:
+
 - It ensures Umbraco is ready, and the request is a document request.
 - Creates a PublishedContentRequest instance
 - Runs PublishedContentRequestEngine.PrepareRequest() for that instance
