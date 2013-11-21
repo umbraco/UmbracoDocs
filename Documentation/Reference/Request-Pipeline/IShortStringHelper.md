@@ -1,8 +1,8 @@
 #IShortStringHelper
 
-Every [url segment](outbound-pipeline.md#segments) is converted into a URL readable string.  
+Every [URL segment](outbound-pipeline.md#segments) is converted into a URL readable string.  
 
-In umbraco version 4 and version 6 the [LegacyShortStringHelper](https://github.com/umbraco/Umbraco-CMS/blob/7.0.0/src/Umbraco.Core/Strings/LegacyShortStringHelper.cs) is  backward compatible with the behaviour of v4.x.
+In Umbraco version 4 and version 6 the [LegacyShortStringHelper](https://github.com/umbraco/Umbraco-CMS/blob/7.0.0/src/Umbraco.Core/Strings/LegacyShortStringHelper.cs) is  backward compatible with the behaviour of v4.x.
 
     // That one is initialized by default in v4 & v6
     public class LegacyShortStringHelper : IShortStringHelper
