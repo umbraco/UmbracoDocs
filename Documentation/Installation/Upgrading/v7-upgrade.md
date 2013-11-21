@@ -2,6 +2,10 @@
 
 *This document should be used as a reference, not a step by step guide. Upgrading will largely depend on what version of Umbraco you are currently running, what packages you have installed and the many aspects of your own Umbraco installation.*
 
+##Backup
+
+Just like with any upgrade, it is critical that you back up your website and database before upgrading. There are several database changes made during install and you cannot revert an v7 database to a v6 databse.
+
 ##.Net 4.5
 
 Umbraco 7 is built on .Net 4.5, your environment will require this .Net version installed in order to operate.
