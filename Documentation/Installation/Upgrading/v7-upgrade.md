@@ -66,6 +66,9 @@ All Umbraco core property editors shipped will be mapped to their equivalent v7 
 * Macro container
 * Image cropper
 
+###Related links property editor and xslt
+Since this is an advanced prop editor the data format has changed from xml to json this shouldn't have any effect when retrieving the data from razor but if you are outputting related links data with xslt you'll need to update your xslt snippet. Making use of the new library method umbraco.library:JsonToXml
+
 ###Guid -> Alias mapping
 
 There are several database changes made in v7, one of which is the change of referencing a property editor from a GUID to a string alias. If you have a legacy property editor that you'd like to map to a new v7 property editor you can add your custom GUID -> Alias map during application startup. Do do this you'd add your map with this method: `Umbraco.Core.PropertyEditors.LegacyPropertyEditorIdToAliasConverter.CreateMap`
