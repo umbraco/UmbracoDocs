@@ -61,9 +61,9 @@ The content, media, member and data type editors have been re-created and are so
 
 Legacy property editors (pre v7) will not work with Umbraco v7. During the upgrade installation process Umbraco will generate a report showing you which legacy property editors are installed, these will all be converted to a readonly Label property editor. No data loss will occur but you'll need to re-assign your existing data types to use a new compatible v7 property editor.
 
-All Umbraco core property editors shipped will be mapped to their equivalent v7 editors except the following editors which have not been completed for v7.0:
+All Umbraco core property editors shipped will be mapped to their equivalent v7 editors except the following editors 
+which have not been completed for v7.0:
 
-* Macro container
 * Image cropper
 
 ###Related links property editor and xslt
