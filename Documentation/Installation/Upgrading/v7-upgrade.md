@@ -67,7 +67,7 @@ All Umbraco core property editors shipped will be mapped to their equivalent v7 
 * Image cropper
 
 ###Related links property editor and xslt
-Since this is an advanced prop editor the data format has changed from xml to json this shouldn't have any effect when retrieving the data from razor but if you are outputting related links data with xslt you'll need to update your xslt snippet. Making use of the new library method umbraco.library:JsonToXml
+Since this is an advanced prop editor the data format has changed from xml to json this shouldn't have any effect when retrieving the data from razor but if you are outputting related links data with xslt you'll need to update your xslt snippet. Making use of the new library method umbraco.library:JsonToXml and taking into account that the xml structure has also slightly changed.
 
 ###Guid -> Alias mapping
 
