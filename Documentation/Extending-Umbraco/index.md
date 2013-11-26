@@ -12,13 +12,15 @@ Both sections and trees can be created to extend Umbraco.
 
 ###[Property Editors](Property-Editors/index.md)
 
-A property editor is the editor used to insert content into Umbraco. An example of a property editor is the Rich Text Editor. 
+A property editor is the editor used to insert content into Umbraco. [See here for definition.](../using-umbraco/backoffice-overview/property-editors/index.md)
 
-Property Editors are sometimes confused with Data Types - its possible to have many rich text editor *Data Types* with different settings and different names which all use the same underlying Rich Text Editor *Property Editor*. 
+This section will describe how to work with and create Property Editors.
 
 ###[Macro Parameter Editors](Macro-Parameter-Editors/index.md)
 
 A Parameter Editor is the editor used to insert values into a [Macro](../reference/templating/macros/index.md).
+
+This section will describe how to work with and create Parameter Editors.
 
 ###[Packaging](Packaging/index.md)
 
