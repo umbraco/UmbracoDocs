@@ -51,7 +51,7 @@ The legacy media picker opens a simple dialogue to pick a specific media item fr
 
 ##Radio button list
 
-##Related Links
+##[Related Links](Related-Links.md)
 
 ##Rich Text Editor
 
