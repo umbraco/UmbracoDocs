@@ -9,7 +9,3 @@ Consult the Umbraco 4 documentation trello board to see what we are currently wo
 ###Contribution
 Umbraco is a community powered project and we welcome any contribution, big or small, even fixing a typo is a valuable contribution.
 [See how to contribute](https://github.com/umbraco/Umbraco4Docs)
-
-
-
- 

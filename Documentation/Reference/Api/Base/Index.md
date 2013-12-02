@@ -20,13 +20,13 @@ If you add parameters, the url will become `/Base/ClassAlias/MethodName/Paramete
 ## Setting up
 There are 2 ways to make your own .net classes /Base enabled.
 
-  1. By using the [RestExtentions.config](The-RestExtentions.config-file.md) file
-  2. Since umbraco 4.6 <!-- can someone confirm the version number? --> you can decorate classes and methods with .Net Attributes to make them /Base enabled.  See the [hello world](helloworld.md) to find out how.
+  1. By using the [RestExtentions.config](../../../Using-Umbraco/Config-files/restExtensions/index.md) file
+  2. Since umbraco 4.6 <!-- can someone confirm the version number? --> you can decorate classes and methods with .Net Attributes to make them /Base enabled.  See the [hello world](HelloWorld.md) to find out how.
 
 ## Advanced examples
 
-*   using [parameters](examples/parameters.md)
+*   using [parameters](Examples/Parameters.md)
 *   special [return types](Return-types.md)
-*   using [XPathNodeIterator as return type](examples/XPathNodeIterator-returntype.md)
+*   using [XPathNodeIterator as return type](Examples/XPathNodeIterator-returntype.md)
 
 
