@@ -1,6 +1,8 @@
 #BaseRestExtension.config
 
-This file contains the data necessary for the /Base system when exposing the methods in your class library.
+***NOTE**: This pertains to Umbraco 4.10.0+, for earlier versions of Umbraco see [restExtension.conf](../restExtensions/index.md)
+
+BaseRestExtension.config contains the data necessary for the /Base system when exposing the methods in your class library.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -18,7 +20,7 @@ It contains one extension tag for each class you want the /Base system to expose
 The extension tag contains the following attributes:
 
 - **type**: The fully qualified name of the class containing the methods you want to expose via /Base
-- **alias**: The name that /Base will use when mapping url's to your class. If you put "MyAlias" here, the url wil start with: yourdomainname/Base/MyAlias.
+- **alias**: The name that /Base will use when mapping urls to your class. If you put "MyAlias" here, the url will start with: yourdomainname/Base/MyAlias.
 
 The method tag contains the following attributes:
 
@@ -31,9 +33,22 @@ The method tag contains the following attributes:
 
 The user calling the method, will be allowed if she has access through at least one of the possible attribute values. If allowAll is set to true, the other attributes has no effect, everyone will be allowed. 
 
-The methods in your class library will only be exposed of there is a permission tag for the method.
+###Example
 
-Example Class from above config:
+_BaseRestExtensions.config_
+
+```XML
+<?xml version="1.0" encoding="utf-8"?>
+<BaseRestExtensions>
+  
+  <extension alias="test" type="BasetTest.TestClass,basetest">
+    <method name="Hello" returnXml="false" allowAll="true"></method>
+  </extension>
+  
+</BaseRestExtensions>
+```
+
+_BaseTest.cs_  
 ```C#
 namespace BaseTest {
     public class TestClass {
@@ -43,3 +58,14 @@ namespace BaseTest {
     }
 } 
 ```
+
+You should now be able to visit YourDomainHere/base/test/Hello/ and see results.
+```
+Hello World
+```
+
+**Also check out the examples included with Umbraco:**
+[BaseRestExtensions.config](https://github.com/umbraco/Umbraco-CMS/blob/6.2.0/src/Umbraco.Web.UI/config/BaseRestExtensions.config)
+[MemberRest.cs](https://github.com/umbraco/Umbraco-CMS/blob/6.2.0/src/Umbraco.Web/BaseRest/MemberRest.cs)
+
+The config is clean and  simple.  If you are familiar with C# and interested in taking a peek behind the scenes check out https://github.com/umbraco/Umbraco-CMS/tree/6.2.0/src/Umbraco.Web/BaseRest/Configuration
