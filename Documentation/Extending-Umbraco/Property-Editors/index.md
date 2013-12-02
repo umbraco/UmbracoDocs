@@ -1,17 +1,11 @@
-## Creating Property Editors
+#Property Editors
 
-There are two types of property editors in Umbraco
+A property editor is the editor used to insert content into Umbraco. [See here for definition.](../using-umbraco/backoffice-overview/property-editors/index.md) 
 
-### Abstract Data Editor
+##[Property Editors in v7](property-editors-v7.md)
 
-Content to come from 
-http://www.nibble.be/?p=91
+This section describes how to work with and create Property Editors in v7
 
-### User Control Wrapper
+##[Property Editors in v6 (and v4)](property-editors-v6.md)
 
-Content to come from 
-http://www.nibble.be/?p=93
-
-### [Property Editor Converters](PropertyEditorValueConverters.md)
-
-Introduced in **Umbraco 4.10.0+** you can convert the return type of property editors for use in MVC Razor by implementing the `IPropertyEditorValueConverter` interface 
+This section describes how to work with and create Property Editors in v6 (and v4)
