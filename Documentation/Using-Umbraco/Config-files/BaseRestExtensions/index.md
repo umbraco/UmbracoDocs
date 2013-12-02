@@ -1,6 +1,6 @@
 #BaseRestExtension.config
 
-***NOTE**: This pertains to Umbraco 4.10.0+, for earlier versions of Umbraco see [restExtension.conf](../restExtensions/index.md)
+**NOTE**: This pertains to Umbraco 4.10.0+, for earlier versions of Umbraco see [restExtension.conf](../restExtensions/index.md)
 
 BaseRestExtension.config contains the data necessary for the /Base system when exposing the methods in your class library.
 
@@ -59,7 +59,7 @@ namespace BaseTest {
 } 
 ```
 
-You should now be able to visit YourDomainHere/base/test/Hello/ and see results.
+Now visit http://example.com/base/test/Hello/ and see results.
 ```
 Hello World
 ```
