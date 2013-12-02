@@ -43,7 +43,7 @@ The legacy media picker opens a simple dialogue to pick a specific media item fr
 
 ##Member Picker
 
-##Multinode Treepicker
+##[Multinode Treepicker](Multinode-Treepicker.md)
 
 ##Multiple Textbox
 
