@@ -20,7 +20,7 @@ If you add parameters, the url will become `/Base/ClassAlias/MethodName/Paramete
 ## Setting up
 There are 2 ways to make your own .net classes /Base enabled.
 
-  1. By using the [RestExtentions.config](The-RestExtentions.config-file.md) file
+  1. By using the [RestExtentions.config](http://our.umbraco.org/wiki/reference/umbraco-base/simple-base-samples/the-restextensionsconfig-file) file
   2. Since umbraco 4.6 <!-- can someone confirm the version number? --> you can decorate classes and methods with .Net Attributes to make them /Base enabled.  See the [hello world](HelloWorld.md) to find out how.
 
 ## Advanced examples
