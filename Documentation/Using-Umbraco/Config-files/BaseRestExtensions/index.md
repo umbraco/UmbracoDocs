@@ -1,6 +1,6 @@
 #The restExtensions.config file
 
-As mentioned in the [simple /base example page](../../../Reference/Api/Base/HellowWorld.md) this file contains the data necessary for the /Base system when exposing the methods in your class library.
+As mentioned in the [simple /base example page](../../../Reference/Api/Base/HelloWorld.md) this file contains the data necessary for the /Base system when exposing the methods in your class library.
 
 The config file follows the following structure:
 ```XML
