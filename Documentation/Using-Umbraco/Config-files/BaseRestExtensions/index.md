@@ -59,13 +59,13 @@ namespace BaseTest {
 } 
 ```
 
-Now visit http://example.com/base/test/Hello/ and see results.
+Visit the /base url. For example: http://example.com/base/test/Hello/.
 ```
 Hello World
 ```
 
 **Also check out the examples included with Umbraco:**
-[BaseRestExtensions.config](https://github.com/umbraco/Umbraco-CMS/blob/6.2.0/src/Umbraco.Web.UI/config/BaseRestExtensions.config)
-[MemberRest.cs](https://github.com/umbraco/Umbraco-CMS/blob/6.2.0/src/Umbraco.Web/BaseRest/MemberRest.cs)
+- [BaseRestExtensions.config](https://github.com/umbraco/Umbraco-CMS/blob/6.2.0/src/Umbraco.Web.UI/config/BaseRestExtensions.config)
+- [MemberRest.cs](https://github.com/umbraco/Umbraco-CMS/blob/6.2.0/src/Umbraco.Web/BaseRest/MemberRest.cs)
 
 The config is clean and  simple.  If you are familiar with C# and interested in taking a peek behind the scenes check out https://github.com/umbraco/Umbraco-CMS/tree/6.2.0/src/Umbraco.Web/BaseRest/Configuration
