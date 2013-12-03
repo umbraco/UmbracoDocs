@@ -6,32 +6,32 @@ This datatype allows an editor to easily add an array of links. These can either
 
 ##Data Type Definition Example
 
-![Related Links Data Type Definition](images/Related-Links-DataType.jpg?raw=true)
+![Related Links Data Type Definition](images/Related-Links-DataType.jpg)
 
 ##Content Example 
 
-![Related Links Content](images/Related-Links-Content.jpg?raw=true)
+![Related Links Content](images/Related-Links-Content.jpg)
 
-##MVC View Example
+##MVC View Example (using DynamicXml)
 
 ###Typed:
 
 	@using Umbraco.Core.Dynamics;
 	@{
-        if(Model.Content.HasValue("relatedLinks")){
-            DynamicXml relatedLinks = Model.Content.GetPropertyValue<DynamicXml>("relatedLinks");
-            if (relatedLinks.Any()){
-                <ul>
-                @foreach (dynamic item in relatedLinks)
-                {                   
-                    var linkUrl = (item.type.Equals("internal")) ? @Umbraco.NiceUrl(int.Parse(item.link)) : item.link;                                     
-                    var linkTarget = (item.newwindow.Equals("1")) ? " target=\"_blank\"" : String.Empty;
-                    <li><a href="@linkUrl"@Html.Raw(linkTarget)>@item.title</a></li>                    
-                }  
-                </ul>             
-            }
-        }   
-    }
+	    if(Model.Content.HasValue("relatedLinks")){
+	        var relatedLinks = Model.Content.GetPropertyValue<DynamicXml>("relatedLinks");
+	        if (relatedLinks.Any()){
+	            <ul>
+	            @foreach (dynamic item in relatedLinks)
+	            {                   
+	                var linkUrl = (item.type.Equals("internal")) ? Umbraco.NiceUrl(int.Parse(item.link)) : item.link;                                     
+	                var linkTarget = (item.newwindow.Equals("1")) ? " target=\"_blank\"" : string.Empty;
+	                <li><a href="@linkUrl"@Html.Raw(linkTarget)>@item.title</a></li>                    
+	            }  
+	            </ul>             
+	        }
+	    }   
+	}
 
 ###Dynamic: 
 
@@ -39,13 +39,13 @@ This datatype allows an editor to easily add an array of links. These can either
 		if(CurrentPage.HasValue("relatedLinks") && CurrentPage.relatedLinks.Any()){
         	<ul>
             @foreach (var item in CurrentPage.relatedLinks){
-            	var linkUrl = (item.type.Equals("internal")) ? @Umbraco.NiceUrl(int.Parse(item.link)) : item.link;                                     
-                var linkTarget = (item.newwindow.Equals("1")) ? " target=\"_blank\"" : String.Empty;
+            	var linkUrl = (item.type.Equals("internal")) ? Umbraco.NiceUrl(int.Parse(item.link)) : item.link;                                     
+                var linkTarget = (item.newwindow.Equals("1")) ? " target=\"_blank\"" : string.Empty;
                 <li><a href="@linkUrl"@Html.Raw(linkTarget)>@item.title</a></li>    
             }   
             </ul>            
         }   
-	}       
+	}   
 
 ##Razor Macro (DynamicXml) Example
 
@@ -54,7 +54,7 @@ This datatype allows an editor to easily add an array of links. These can either
 	        <ul>
 	        @foreach (var item in Model.relatedLinks){
 	            var linkUrl = (item.type.Equals("internal")) ? umbraco.library.NiceUrl(int.Parse(item.link)) : item.link;                                     
-	            var linkTarget = (item.newwindow.Equals("1")) ? " target=\"_blank\"" : String.Empty;
+	            var linkTarget = (item.newwindow.Equals("1")) ? " target=\"_blank\"" : string.Empty;
 	            <li><a href="@linkUrl"@Html.Raw(linkTarget)>@item.title</a></li>
 	        }
 	        </ul>       
