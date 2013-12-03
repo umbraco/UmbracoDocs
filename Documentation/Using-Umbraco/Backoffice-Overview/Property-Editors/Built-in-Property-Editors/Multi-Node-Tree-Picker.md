@@ -194,14 +194,14 @@ For XML data storage:
 
 For CSV data storage:
 
-@{
-    var dynamicPublishedMNTPNodeListCSV = CurrentPage.mntpFeaturePickerCSV.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-    var dynamicMNTPCollectionCSV = Umbraco.Content(dynamicPublishedMNTPNodeListCSV);
-    foreach (var item in dynamicMNTPCollectionCSV)
-    {     
-        <p>@item.Name</p>         
-    }       
-}
+	@{
+	    var dynamicPublishedMNTPNodeListCSV = CurrentPage.mntpFeaturePickerCSV.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+	    var dynamicMNTPCollectionCSV = Umbraco.Content(dynamicPublishedMNTPNodeListCSV);
+	    foreach (var item in dynamicMNTPCollectionCSV)
+	    {     
+	        <p>@item.Name</p>         
+	    }       
+	}
 
 
 ##Razor Macro (DynamicXml) Example
