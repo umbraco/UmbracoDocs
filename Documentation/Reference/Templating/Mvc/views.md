@@ -76,3 +76,25 @@ This renders a macro with some parameters using a dictionary
 
 	@Umbraco.RenderMacro("myMacroAlias", new Dictionary<string, object> {{ "name", "Ned"}, { "age", 27}})
 
+## Bundling and Minification
+
+	Umbraco contains ClientDependency which bundle and minify CSS and JavaScript files.
+	Visual Studio can also bundle and minify, but that is different from Umbraco's one.
+	You can bundle and minify as follows in a view template file.
+
+	@using ClientDependency.Core.Mvc
+	@using ClientDependency.Core
+	@{
+		Html.RequiresJs("~/scripts/Script1.js", 1);
+		Html.RequiresJs("~/scripts/Script2.js", 2);
+
+		Html.RequiresCss("~/css/style.css");
+	}
+	<html>
+	<head>
+		@Html.Raw(@Html.RenderCssHere())
+		@Html.Raw(@Html.RenderJsHere())
+	</head>
+
+
+
