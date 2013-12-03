@@ -4,16 +4,14 @@
 
 BaseRestExtension.config contains the data necessary for the /Base system when exposing the methods in your class library.
 
-```XML
-<?xml version="1.0" encoding="utf-8"?>
-<BaseRestExtensions>
-  
-  <extension alias="aliasName" type="the.fully.qualified.name, assemblyName">
-    <method name="Hello" returnXml="false" allowAll="true"></method>
-  </extension>
-  
-</BaseRestExtensions>
-```
+	<?xml version="1.0" encoding="utf-8"?>
+	<BaseRestExtensions>
+	  
+	  <extension alias="aliasName" type="the.fully.qualified.name, assemblyName">
+	    <method name="Hello" returnXml="false" allowAll="true"></method>
+	  </extension>
+	  
+	</BaseRestExtensions>
 
 It contains one extension tag for each class you want the /Base system to expose, and the method tags for each method you want the /Base system to expose.
 
@@ -37,32 +35,28 @@ The user calling the method, will be allowed if she has access through at least 
 
 _BaseRestExtensions.config_
 
-```XML
-<?xml version="1.0" encoding="utf-8"?>
-<BaseRestExtensions>
-  
-  <extension alias="test" type="BasetTest.TestClass,basetest">
-    <method name="Hello" returnXml="false" allowAll="true"></method>
-  </extension>
-  
-</BaseRestExtensions>
-```
+	<?xml version="1.0" encoding="utf-8"?>
+	<BaseRestExtensions>
+	  
+	  <extension alias="test" type="BasetTest.TestClass,basetest">
+	    <method name="Hello" returnXml="false" allowAll="true"></method>
+	  </extension>
+	  
+	</BaseRestExtensions>
 
 _BaseTest.cs_  
-```C#
-namespace BaseTest {
-    public class TestClass {
-        public static string Hello() {
-            return "Hello World";
-        }
-    }
-} 
-```
+
+	namespace BaseTest {
+	    public class TestClass {
+	        public static string Hello() {
+	            return "Hello World";
+	        }
+	    }
+	} 
 
 Visit the /base url. For example: http://example.com/base/test/Hello/.
-```
-Hello World
-```
+
+	Hello World
 
 **Also check out the examples included with Umbraco:**
 - [BaseRestExtensions.config](https://github.com/umbraco/Umbraco-CMS/blob/6.2.0/src/Umbraco.Web.UI/config/BaseRestExtensions.config)
