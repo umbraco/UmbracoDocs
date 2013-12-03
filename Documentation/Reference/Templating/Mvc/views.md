@@ -78,9 +78,11 @@ This renders a macro with some parameters using a dictionary
 
 ## Bundling and Minification
 
-	Umbraco contains ClientDependency which bundle and minify CSS and JavaScript files.
-	Visual Studio can also bundle and minify, but that is different from Umbraco's one.
-	You can bundle and minify as follows in a view template file.
+Umbraco contains ClientDependency Framework which bundles and minifies CSS and JavaScript files.
+Visual Studio can also bundle and minify, but that is different from Umbraco's one.
+You can see the details of ClientDependency Framework in the following site.  [http://github.com/Shandem/ClientDependency](http://github.com/Shandem/ClientDependency)
+
+You can bundle and minify as follows in a view template file.
 
 	@using ClientDependency.Core.Mvc
 	@using ClientDependency.Core
