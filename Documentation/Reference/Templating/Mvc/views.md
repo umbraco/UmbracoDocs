@@ -94,8 +94,8 @@ You can bundle and minify as follows in a view template file.
 	}
 	<html>
 	<head>
-		@Html.Raw(@Html.RenderCssHere())
-		@Html.Raw(@Html.RenderJsHere())
+		@Html.RenderCssHere()
+		@Html.RenderJsHere()
 	</head>
 
 
