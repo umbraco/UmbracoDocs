@@ -98,5 +98,6 @@ You can bundle and minify as follows in a view template file.
 		@Html.RenderJsHere()
 	</head>
 
+Note that when you find the bundled CSS is not updated although you changed one of the files, Delete "\App_Data\Tmp\ClientDependency".
 
 
