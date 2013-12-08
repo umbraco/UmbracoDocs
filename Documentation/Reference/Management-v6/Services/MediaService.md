@@ -33,6 +33,17 @@ Getting the service through the `ApplicationContext`:
 ###.CreateMedia(string name, int parentId, string mediaTypeAlias, [int userId = 0])
 Creates an `Media` object using the alias of the `MediaType` that this Media is based on.
 
+Example for methods **CreateMedia** and **Save**, creating a new `Media` object (as a child of `Media` rootnode -1);
+	
+        if (ApplicationContext.Current != null)
+        {
+            var ms = ApplicationContext.Current.Services.MediaService;
+            //Use the MediaService to create a new Media object (-1 is Id of root Media object, "Folder" is the MediaType)
+            var mediaMap = ms.CreateMedia("Test", -1, "Folder");
+            //Use the MediaService to Save the new Media object
+            ms.Save(mediaMap);
+        }
+
 ###.CreateMedia(string name, Umbraco.Core.Models.IMedia parent, string mediaTypeAlias, [int userId = 0])
 Creates an `Media` object using the alias of the `MediaType` that this Media is based on.
 
