@@ -1,6 +1,14 @@
 #System Requirements
 
 ##Hosting
+
+###Umbraco 7.x.x
+
+* IIS 7+ (II6 may still work but is untested)
+* SQL CE, SQL Server 2008 (Express and higher)
+* ASP.NET 4.5 Full-Trust
+* Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
+
 ###Umbraco 6.x.x
 
 * IIS6+ (IIS 7 Preferred)
@@ -45,8 +53,14 @@ Medium-Trust/Full-Trust (Should work in Medium-Trust environments, but Full-Trus
 * Virtual directories are not supported
 
 ##Browsers
-The Umbraco UI should work in all modern browsers, however the following are preferred:
+The Umbraco UI should work in all modern browsers:
 
+###Umbraco 7.x.x
+* Firefox (Latest)
+* Chrome (Latest)
+* IE10+ (will not alway work correctly in lower versions)
+
+###Umbraco 4/6
 * Firefox (Latest)
 * Chrome (Latest)
 * IE7+
