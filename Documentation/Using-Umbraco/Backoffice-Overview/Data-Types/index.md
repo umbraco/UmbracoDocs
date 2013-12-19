@@ -45,6 +45,26 @@ this Data type enables editors to choose from list of radiobuttons. Options for 
 This datatype allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
 ###Richtext Editor###
 The TinyMCE based wysiwyg editor. This is the standard editor used to edit any larger amount of text. The editor has a lot of settings, which can be changed under the developer section in "data types" / Richtext editor. The editor also supports TinyMCE plugins which can be controlled in the configuration file located at /config/tinyMce.config
+
+In the default settings some tags such as bullet list can be used. If you want to use other tags like h1 or h2, you need to add stylesheets.
+
+Create child stylesheets for each tag(h1 or h2) under a base one.
+Go to "Back office->Developer->Data Types->Richtext editor" and associate rich text editor with the base. 
+Also turn on "styleselect" in the toolbar section.
+You can find a new button in the toolbar of the content editor.
+
+An example of the style sheet tree is as follows.
+
+<pre>
+Stylesheets
+-IE7
+-IE8
+-Style
+-RichEdit
+--h1
+--h2
+</pre>
+
 ###Simple Editor###
 A very scaled down editor which only has bold, italic and link - It does not render the HTML live like the richtext editor, but shows the raw HTML and simply surrounds the selected text with the limited HTML tag buttons at the top.
 ###Tags###
