@@ -3,7 +3,7 @@
 _Follow these steps to do a full manual install of Umbraco._
 
 ##Download Umbraco binaries
-The stable releases of the Umbraco binaries are available from [Codeplex](http://umbraco.codeplex.com/releases). If you don't mind working with experimental builds, you could download a [nightly release](http://nightly.umbraco.org/) at your own perril (no guarantees that it will work).
+The stable releases of the Umbraco binaries are available from [our.umbraco.org/download](http://our.umbraco.org/download/). If you don't mind working with experimental builds, you could download a [nightly release](http://nightly.umbraco.org/) at your own perril (no guarantees that it will work).
 
 ##Unzip files
 Once you have the binary release of your liking saved to disk, make sure that the file has not been blocked by windows. Right-click the file you downloaded and choose "Properties". If it says at the bottom of the properties window: "This file came from another computer and might be blocked to help protect this computer" then make sure to click the "Unblock" button so that all of the binary files will be unzipped later on.
