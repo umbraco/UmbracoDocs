@@ -7,18 +7,18 @@ To be able to translate the labels of tabs, name and description on your documen
 
 It's quite simple to translate these labels. Consider the following text on a document type
 
-Tab: Content
-Name: Header
-Description: This is the header of page.
+**Tab**: Content<br/>
+**Name**: Header<br/>
+**Description**: This is the header of page.
 
 The name of document type is "Document".
 
 If you create dictionary items for these fields with translations to other languages you can actually reference these, and then have these labels translated so the text appears in the language of the editor logged into Umbraco.
 So simply just reference the name of the dictionary items like shown below
 
-Tab: #Content
-Name: #Header
-Description: #HeaderDescription
+**Tab**: #Content<br/>
+**Name**: #Header<br/>
+**Description**: #HeaderDescription
 
 The name of the document type can be referenced with #Document
 
