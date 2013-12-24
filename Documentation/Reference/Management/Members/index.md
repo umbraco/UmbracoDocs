@@ -1,6 +1,6 @@
 #Members
 
-_This section will soon be out of date as a new membership API is announced to come in Umbraco v6.2.  We advice you to keep an eye on the [new Management Api](../../Management-v6/)'s_
+_This section will soon be out of date as a new membership API is announced to come in Umbraco v6.2.  We advice you to keep an eye on the [new Management Api](../../Management-v6/index.md)'s_
 
 The `Member` object represents members, as it is stored in the database. 
 
