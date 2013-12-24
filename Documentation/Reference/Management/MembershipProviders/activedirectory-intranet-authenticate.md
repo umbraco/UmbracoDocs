@@ -47,7 +47,7 @@ This event is used to check if the member exists in Umbraco.  If it is their fir
 
 ###OnAuthenticate Event
 
-Instead of validating the members password with umbraco call a custom method to validate against AD.
+Instead of validating the members password with Umbraco call a custom method to validate against AD.
 
     protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
@@ -93,6 +93,6 @@ Query AD to validate the members credentials. This method can also be modified t
         }
  
 
-This is still a bit of a work in progress so I'll add to this as I refine the code a bit more. At the moment this solution fits in nicely with our intranet but if you wanted to get a bit more complicated you would need to look at rolling you own Membership and Role Provider classes.
+This is still a bit of a work in progress so I'll add to this as I refine the code a bit more. At the moment this solution fits in nicely with our Intranet but if you wanted to get a bit more complicated you would need to look at rolling you own Membership and Role Provider classes.
 
 I hope this helps someone out.

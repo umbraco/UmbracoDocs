@@ -7,27 +7,27 @@ The `Member` object represents members, as it is stored in the database.
  * **Namespace**: `umbraco.cms.businesslogic.member`
  * **assembly**: `cms.dll`
 
-To use the Member api, you require references to the following dlls:
+To use the Member Api, you require references to the following dlls:
 
 * cms.dll
 * businesslogic.dll
 
-To use the Member api, you will require the following usings:
+To use the Member Api, you will require the following usings:
 
 	using umbraco.cms.businesslogic.media;
 	using umbraco.BusinessLogic;
 
 ## Membership provider
-Although you can do a lot with the member api, it is advices to use the [membership provider](../MembershipProviders/index.md) syntax.  Things like login/logout are the same as any .Net website.
+Although you can do a lot with the member Api, it is advices to use the [membership provider](../MembershipProviders/index.md) syntax.  Things like login/logout are the same as any .Net website.
 
 ## Constructor
 
-The Member constructor is used to retrive a Member object with a given Id or Guid, there are optional parameters, which allows one to control setup and version.
+The Member constructor is used to retrieve a Member object with a given Id or Guid, there are optional parameters, which allows one to control setup and version.
 
-For all constructors, a null is returned if a Member is not found with the given id, guid or version.
+For all constructors, a null is returned if a Member is not found with the given id, Guid or version.
 
 ## Events
-The member api has a lot of events:
+The member Api has a lot of events:
 
         public static event Member.AddingGroupEventHandler AfterAddGroup;
         public static event Member.AddingToCacheEventHandler AfterAddToCache;
@@ -42,6 +42,6 @@ The member api has a lot of events:
         public static event Member.NewEventHandler New;
 
 ### Methods
-If the methods of the ASP.net Membership provider or the ASP.net Roles provider are not enough, you can use the umbraco member methods.
+If the methods of the ASP.net Membership provider or the ASP.net Roles provider are not enough, you can use the Umbraco member methods.
 
  

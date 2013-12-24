@@ -13,6 +13,7 @@ This can
     <asp:login id="login1" runat="server" TitleText="" OnLoggingIn="login1_onLogginIn" />
  
 and in the code behind
+
     protected void login1_onLogginIn(object sender, System.Web.UI.WebControls.LoginCancelEventArgs e)
     {
         Member m = Member.GetMemberFromLoginNameAndPassword(login1.UserName, login1.Password);

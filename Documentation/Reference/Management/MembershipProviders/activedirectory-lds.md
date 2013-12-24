@@ -93,7 +93,7 @@ I moved some of the authentication and checking outside of the event handlers fo
 
 ###OnLoggingIn Event
 
-This event handler first checks to see if there is already a membership account for the current user.  If not, it checks ADLDS for the existance of and validity of the specified account/password and then proceeds to create a membership account in Umbraco if they are valid.
+This event handler first checks to see if there is already a membership account for the current user.  If not, it checks ADLDS for the existence of and validity of the specified account/password and then proceeds to create a membership account in Umbraco if they are valid.
 
      protected void uxLogin_OnLoggingIn(object sender, System.Web.UI.WebControls.LoginCancelEventArgs e)
         {

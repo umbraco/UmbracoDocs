@@ -1,7 +1,7 @@
 #Add User with hashed password
 <!-- original from http://our.umbraco.org/wiki/reference/api-cheatsheet/users,-user-types-and-permissions/add-user-with-hashed-password -->
 
-If you are using hashed passwords (default in Umbraco 4 and above) you must hash the password when adding a user via the API
+If you are using hashed passwords (default in Umbraco 4 and above) you must hash the password when adding a user via the Api
 
 Add references to the following namespace at the top of your .cs file
 
