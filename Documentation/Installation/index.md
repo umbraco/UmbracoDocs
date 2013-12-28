@@ -17,9 +17,6 @@ NuGet is the package manager for the Microsoft development platform including .N
 ##[Upgrading](Upgrading/index.md)
 When there's a new version and you wish to upgrade, there's a few steps to go through.
 
-##[Move to new server](move-to-new-server.md)
-Moving is easy. However you need to care a few things.
-
 ##[Load Balanced setup](load-balancing.md)
 Information on how to deploy Umbraco in a Load Balanced scenario and other details to consider when settting up Umbraco for load balancing.  
 
