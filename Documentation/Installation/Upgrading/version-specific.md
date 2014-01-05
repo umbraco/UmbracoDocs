@@ -38,7 +38,7 @@ The additional steps are listed below, remember that new config files are not me
 * The DocType Mixins package is **NOT** compatible with v6+ and will cause problems in your document types.
 
 ##Version 6 to 7.0.0
-Read and follow [the full v7 upgrade guide](v7-upgrade)
+Read and follow [the full v7 upgrade guide](v7-upgrade.md)
 
 ##Version 7.0.0 to 7.0.1
 * Remove all uGoLive dlls from /bin
