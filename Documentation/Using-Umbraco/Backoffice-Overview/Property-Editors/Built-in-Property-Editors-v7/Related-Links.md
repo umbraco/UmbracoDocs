@@ -17,19 +17,19 @@ Related Links allows an editor to easily add an array of links. These can either
 ###Typed:
 
 	@using Newtonsoft.Json.Linq
-	@{
-	    if (Model.Content.HasValue("relatedLinks"))
-	    {
-	        <ul>
-	            @foreach (var item in Model.Content.GetPropertyValue<JArray>("relatedLinks"))
-	            {
-	                var linkUrl = (item.Value<bool>("isInternal")) ? Umbraco.NiceUrl(item.Value<int>("link")) : item.Value<string>("link");
-	                var linkTarget = item.Value<bool>("newWindow") ? " target=\"_blank\"" : string.Empty;
-	                <li><a href="@linkUrl" @Html.Raw(linkTarget)>@(item.Value<string>("caption"))</a></li>
-	            }
-	        </ul>
-	    }           
-	}   
+    @{
+        if (Model.Content.HasValue("relatedLinks"))
+        {
+            <ul>
+                @foreach (var item in Model.Content.GetPropertyValue<JArray>("relatedLinks"))
+                {
+                    var linkUrl = (item.Value<bool>("isInternal")) ? Umbraco.NiceUrl(item.Value<int>("internal")) : item.Value<string>("link");
+                    var linkTarget = item.Value<bool>("newWindow") ? " target=\"_blank\"" : string.Empty;
+                    <li><a href="@linkUrl" @Html.Raw(linkTarget)>@(item.Value<string>("caption"))</a></li>
+                }
+            </ul>
+        }
+    }  
 
 ###Dynamic:       
                        
