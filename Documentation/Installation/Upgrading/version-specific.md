@@ -9,6 +9,9 @@ The additional steps are listed below, remember that new config files are not me
 ##Version 4.6.1 to 4.7.1.1
 * Delete bin/Iron*.dll (all dll files starting with "Iron")
 * Delete bin/RazorEngine*.dll (all dll files starting with "RazorEngine")
+* Delete bin/umbraco.MacroEngines.Legacy.dll 
+* Delete bin/Microsoft.Scripting.Debugging.dll 
+* Delete bin/Microsoft.Dynamic.dll
 
 ##Version 4.7.1.1 to 4.7.2
 * Delete the bin/umbraco.MacroEngines.Legacy.dll file
@@ -33,3 +36,16 @@ The additional steps are listed below, remember that new config files are not me
 ##Version 4.10.x/4.11.x to 6.0.0 
 * If your site was ever a version between 4.10.0 and 4.11.4 and you have just upgraded to 6.0.0 install the [fixup package](http://our.umbraco.org/projects/developer-tools/path-fixup) and run it after the upgrade process is finished.
 * The DocType Mixins package is **NOT** compatible with v6+ and will cause problems in your document types.
+
+##Version 6 to 7.0.0
+Read and follow [the full v7 upgrade guide](v7-upgrade.md)
+
+##Version 7.0.0 to 7.0.1
+* Remove all uGoLive dlls from /bin
+ * These are not compatible with V7
+* Move appSettings/connectionStrings back to web.config 
+ * If you are on 7.0.0 you should migrate these settings into the web.config instead of having them in seperate files in /config/
+ * So the keys in config/AppSettings.config need to be moved back to the web.config <appSettings> section and similarly, the config/ConnectionStrings.config holds the Umbraco database connections in v7.0.0 and they should be moved back to the web.config <connectionStrings> section. 
+ * /config/AppSettings.config and /config/ConnectionString.config can be removed (make backups, just in case) after the contents have been moved back to web.config.
+* Delete all files in ~/App_Data/TEMP/Razor/* 
+ * Related to issues with razor macros
