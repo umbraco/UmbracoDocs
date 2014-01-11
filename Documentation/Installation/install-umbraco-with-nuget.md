@@ -8,6 +8,11 @@ If you don't already have NuGet installed, you can read all about the installati
 ##New solution
 In order to be able to install Umbraco we need to have a Visual Studio solution to install it in. So go to File > New Project and pick either a new WebForms or new MVC project.  
 
+![](images/NuGet/new-project-dotnet4.png)
+
+Make sure to start with a .NET Framework 4 project. The project templates for .NET 4.5.x include incompatible versions of MVC and Json.Net.  
+If you need .NET 4.5+ functionality in your custom code then you can always add a class library project targeted at .NET 4.5.x.
+
 ##Finding and installing the Umbraco package
 The latest release of Umbraco is always available in the NuGet gallery so all you have to do is search for it and install.
 To do so from the Visual Studio interface, just right-click on the new project you just made and choose "Manage NuGet Packages".
