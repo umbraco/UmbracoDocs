@@ -12,7 +12,7 @@ Before getting started with MVC you need to enable this in ~/config/umbracoSetti
 Documentation covering the syntax to use in your Views to render and query content
 
 ##[Partial Views](partial-views.md)
-Documentation covering how to use Partial Views. This is not documentation about using "Partial View Macros", this documentation relates simply to using native MVC partial views within Umbraco.
+Documentation covering how to use Partial Views. This is not documentation about using "[Partial View Macros](../Macros/Partial-View-Macros/index.md)", this documentation relates simply to using native MVC partial views within Umbraco.
 
 ##[Surface Controllers](surface-controllers.md)
 What is a Surface Controller and how to use them
