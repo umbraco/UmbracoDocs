@@ -2,7 +2,7 @@
 
 **Applies to: Umbraco 4.10.0+**
 
-_This section will show you how to use MVC Partial Views in Umbraco. Please note, this is documentation relating to the use of native MVC partial views, not 'Partial View Macros'_
+_This section will show you how to use MVC Partial Views in Umbraco. Please note, this is documentation relating to the use of native MVC partial views, not '[Partial View Macros](../Macros/Partial-View-Macros/index.md)'_
 
 ##Overview
 
