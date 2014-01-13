@@ -16,13 +16,13 @@ Since Partial View Macros are just a normal MVC partial view, their file extensi
 
 	Umbraco.Web.Macros.PartialViewMacroPage
 
-Therefor all files will contain this header (which is done automatically for you if creating partial view macros via the Umbraco back office):
+Therefore all files will contain this header (which is done automatically for you if creating partial view macros via the Umbraco back office):
 
 	@inherits Umbraco.Web.Macros.PartialViewMacroPage
 
 ## Accessing content
 
-The systax in Partial View Macros is 100% on par with the **[MVC View](../../Mvc/views.md)** syntax, in fact they are driven by the exact same engine as MVC Views.
+The syntax in Partial View Macros is 100% on par with the **[MVC View](../../Mvc/views.md)** syntax, in fact they are driven by the exact same engine as MVC Views.
 
 You can use @CurrentPage, @Model.Content, @Umbraco, ...
 
@@ -43,7 +43,7 @@ Quick conversion guide:
 
 1. Create a new Partial Macro View
 2. Copy the content of the old macro script to the partial view macro.
-3. change the 
+3. Change the 
 
 		@inherits umbraco.MacroEngines.DynamicNodeContext
 
@@ -51,5 +51,5 @@ Quick conversion guide:
 
     	@inherits Umbraco.Web.Macros.PartialViewMacroPage
 
-4. replace each reference to `Model` to `CurrentPage`
-5. change the reference in the CMS back-end (under Developer/Macros) using the partial view macro instead of the macro script.
+4. Replace each reference to `Model` to `CurrentPage`
+5. Change the reference in the CMS back-end (under Developer/Macros) using the partial view macro instead of the macro script.
