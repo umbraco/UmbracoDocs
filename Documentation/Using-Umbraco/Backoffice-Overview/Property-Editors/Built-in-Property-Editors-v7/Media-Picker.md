@@ -19,39 +19,28 @@ If checked, the picker will allow the user to select multiple media items using 
 
 ##MVC View Example
 
-###Typed:
-In Umbraco v7.0.0 this sample is ideal and will work correctly except in the situation of a selected media item having been deleted, in this situation, an exception will occur, see workaround below.
+###Typed (for v7.0.1+):
 
-	@if (Model.Content.HasValue("caseStudyImage"))
+	@if (Model.Content.HasValue("caseStudyImages"))
 	{
-	    var caseStudyImagesList = Model.Content.GetPropertyValue<string>("caseStudyImage").Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
+	    var caseStudyImagesList = Model.Content.GetPropertyValue<string>("caseStudyImages").Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
 	    var caseStudyImagesCollection = Umbraco.TypedMedia(caseStudyImagesList).Where(x => x != null);
 	
 	    foreach (var caseStudyImage in caseStudyImagesCollection)
 	        {      
-	            <img src="@caseStudyImage.Url" />      
+	            <img src="@caseStudyImage.Url" style="width:300px;height:300px" />      
 	        }                                                               
-	}
-
-###Typed Workaround:
-	@if (Model.Content.HasValue("caseStudyImage"))
-	{
-	    var caseStudyImagesList = Model.Content.GetPropertyValue<string>("caseStudyImage").Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);  
-	        
-	    foreach (var item in caseStudyImagesList)
-	    {
-	        // Try/Catch workaround for Umbrco.TypedMedia throwing an exception if media item has been deleted. http://issues.umbraco.org/issue/U4-3630        
-	        IPublishedContent image;
-	        try { image = Umbraco.TypedMedia(item); }
-	        catch { image = null; }
-	        
-	        if (image != null)
-	        {
-	            <img src="@image.Url" />
-	        }
-	    }
 	}
 
 ###Dynamic:                              
 
-TBC
+	@if (CurrentPage.HasValue("caseStudyImages"))
+	{
+	    var caseStudyImagesList = CurrentPage.CaseStudyImages.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+	    var caseStudyImagesCollection = Umbraco.Media(caseStudyImagesList);
+	
+	    foreach (var caseStudyImage in caseStudyImagesCollection)
+	    {
+	        <img src="@caseStudyImage.Url" style="width:300px;height:300px" />
+	    }
+	}
