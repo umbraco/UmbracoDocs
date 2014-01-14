@@ -19,7 +19,7 @@ If checked, the picker will allow the user to select multiple media items using 
 
 ##MVC View Example
 
-###Typed (for v7.0.1+):
+###Typed:
 
 	@if (Model.Content.HasValue("caseStudyImages"))
 	{
