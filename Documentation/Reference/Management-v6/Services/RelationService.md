@@ -18,7 +18,7 @@ All samples in this document will require the following usings:
 	using Umbraco.Core.Services;
 
 ##Getting the service
-The RelationService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the RelationService is available through a local `Services` property.
+The RelationService is available through the `ApplicationContext`, or if you are using a `SurfaceController` or the `UmbracoUserControl` then the RelationService is available through a local `Services` property.
 
 	Services.RelationService
 
