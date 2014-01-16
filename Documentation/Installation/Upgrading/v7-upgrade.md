@@ -9,6 +9,7 @@ Just like with any upgrade, it is critical that you back up your website and dat
 ##.Net 4.5
 
 Umbraco 7 is built on .Net 4.5, your environment will require this .Net version installed in order to operate.
+(Visual Studio users may require 2012 or higher)
 
 ##HTML 5 browser support
 
