@@ -37,7 +37,7 @@ The differences to note are:
 	* Partial View Macro's do not expose the objects: `MacroModel`, `INode` or `RazorLibraryCore`, they expose `UmbracoHelper` which can be used instead.
 * The Models are different
 	* The Partial View Macro model is of type `Umbraco.Web.Models.PartialViewMacroModel` whereas razor macro script's model is purely a dynamic representation of the content item.
-	* To access the content item in Partial View Macros, use `Model.CurrentPage` which exposes an instance of `IPublishedContent` or use `CurrentPage` which exposes the dynamic representation of the content item (similar to how razor macro scripts work)
+	* To access the content item in Partial View Macros, use `Model.Content` which exposes an instance of `IPublishedContent` or use `CurrentPage` which exposes the dynamic representation of the content item (similar to how razor macro scripts work)
 
 Quick conversion guide:
 
