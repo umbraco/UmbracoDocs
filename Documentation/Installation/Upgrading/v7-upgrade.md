@@ -2,6 +2,8 @@
 
 *This document should be used as a reference, not a step by step guide. Upgrading will largely depend on what version of Umbraco you are currently running, what packages you have installed and the many aspects of your own Umbraco installation.*
 
+The [standard upgrade instructions](http://our.umbraco.org/documentation/Installation/Upgrading/general) still apply to this process as well.
+
 ##Backup
 
 Just like with any upgrade, it is critical that you back up your website and database before upgrading. There are several database changes made during install and you cannot revert an v7 database to a v6 databse.
@@ -52,6 +54,9 @@ It is recommended that you use a Diff tool to compare the configuration file cha
 * /config/umbracoSettings.config 
 	* Umbraco is now shipped with minimal settings but the [full settings](http://our.umbraco.org/documentation/Using-Umbraco/Config-files/umbracoSettings/) are still available
 	* umbracoSettings is now a true ASP.Net configuration section [http://issues.umbraco.org/issue/U4-58](http://issues.umbraco.org/issue/U4-58)
+	* remove the &lt;EnableCanvasEditing&gt; element
+	* remove the &lt;webservices&gt; element
+	* 
 * Removed xsltExtensions.config
 	* [http://issues.umbraco.org/issue/U4-2742](http://issues.umbraco.org/issue/U4-2742)
 * /config/applications.config and /config/trees.config have some icon paths and names updated, you will need to merge the new changes into your existing config files.
