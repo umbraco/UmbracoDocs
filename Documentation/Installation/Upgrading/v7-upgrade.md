@@ -30,15 +30,31 @@ You should rebuild all Examine indexes after the upgrade
 It is recommended that you use a Diff tool to compare the configuration file changes with your own current configuration files.
 
 * /web.config updates 
-	* [http://issues.umbraco.org/issue/U4-2900](http://issues.umbraco.org/issue/U4-2900)
+	* Details are listed here: [http://issues.umbraco.org/issue/U4-2900](http://issues.umbraco.org/issue/U4-2900)
+	* You'll need to compare the new v7 web.config with your current web.config, here's a quick reference of what needs to change:		
+		* remove &lt;section name="BaseRestExtensions"&gt; section
+		* remove &lt;section name="FileSystemProviders"&gt; section
+		* remove &lt;sectionGroup name="system.web.webPages.razor"&gt; section
+		* remove &lt;<FileSystemProviders &gt; element
+		* remove &lt;BaseRestExtensions &gt; element
+		* remove &lt;add key="umbracoUseMediumTrust" &gt; element
+		* remove &lt;system.web.extensions&gt; element
+		* removes &lt;xhtmlConformance &gt; element
+		* remove &lt;system.codedom&gt; element
+		* remove &lt;compilation&gt; <strong>&lt;assemblies *&gt;</strong> &lt;/compilation&gt;
+		* remove &lt;system.web.webPages.razor &gt; element 
+		* new &lt;sectionGroup name="umbracoConfiguration"&gt; section
+		* new &lt;umbracoConfiguration&gt; element  
+* /config/clientdependency.config changes
+	* remove &lt;add name="CanvasProvider" /&gt; element 
 * /views/web.config updates
 * new /macroscripts/web.config
 * /config/umbracoSettings.config 
 	* Umbraco is now shipped with minimal settings but the [full settings](http://our.umbraco.org/documentation/Using-Umbraco/Config-files/umbracoSettings/) are still available
 	* umbracoSettings is now a true ASP.Net configuration section [http://issues.umbraco.org/issue/U4-58](http://issues.umbraco.org/issue/U4-58)
-* Moved appSettings and connectionStrings to external files found in ~/Config folder
 * Removed xsltExtensions.config
 	* [http://issues.umbraco.org/issue/U4-2742](http://issues.umbraco.org/issue/U4-2742)
+* /config/applications.config and /config/trees.config have some icon paths and names updated, you will need to merge the new changes into your existing config files.
 
 ##Medium Trust
 
