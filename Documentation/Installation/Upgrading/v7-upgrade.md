@@ -47,6 +47,7 @@ It is recommended that you use a Diff tool to compare the configuration file cha
 		* remove &lt;system.web.webPages.razor &gt; element 
 		* new &lt;sectionGroup name="umbracoConfiguration"&gt; section
 		* new &lt;umbracoConfiguration&gt; element  
+		* ensure that the **targetFramework="4.5"** is added to the &lt;httpRuntime&gt; element
 * /config/clientdependency.config changes
 	* remove &lt;add name="CanvasProvider" /&gt; element 
 * /views/web.config updates
