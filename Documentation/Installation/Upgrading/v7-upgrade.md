@@ -76,6 +76,8 @@ It is recommended that you use a Diff tool to compare the configuration file cha
 		    </plugins>
 	* You will need to merge the changes from the new tinyMceConfig file into yours, the 'command' elements that have changed are: JustifyCenter, JustifyLeft, JustifyRight, JustifyFull, umbracomacro, umbracoembed, mceImage, subscript, superscript, styleselect
 	* Remove the command: mceSpellCheck
+* /config/dashboard.config
+	* You will need to merge the changes from the new dashboard.config into yours. Some of the original dashboard entries that were shipped with v6 have been replaced or removed. 
 
 ##Medium Trust
 
