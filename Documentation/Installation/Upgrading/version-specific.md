@@ -49,3 +49,19 @@ Read and follow [the full v7 upgrade guide](v7-upgrade.md)
  * /config/AppSettings.config and /config/ConnectionString.config can be removed (make backups, just in case) after the contents have been moved back to web.config.
 * Delete all files in ~/App_Data/TEMP/Razor/* 
  * Related to issues with razor macros
+
+##Version 7.0.1 to 7.0.2
+
+* There was an update to the /umbraco/config/create/ui.xml which needs to be manually updated, the original element had this text:
+
+		<nodeType alias="users">
+			<header>User</header>
+			<usercontrol>/create/simple.ascx</usercontrol>
+			<tasks>
+			  <create assembly="umbraco" type="userTasks" />
+			  <delete assembly="umbraco" type="userTasks" />
+			</tasks>
+		</nodeType>
+
+	* The &lt;usercontrol&gt; value has changed to: **/create/user.ascx**, this is a required change otherwise creating a new user will not work.
+* There is a breaking change to be aware of, full details can be found [here](http://umbraco.com/follow-us/blog-archive/2014/1/17/heads-up,-breaking-change-coming-in-702-and-62.aspx).
