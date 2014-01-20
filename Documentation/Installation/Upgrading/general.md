@@ -63,6 +63,16 @@ Version 6 introduces a large database upgrade and still handles all the previous
 
 ##Potential issues and gotchas
 
+###Browser cache (mostly v7 related)
+Google Chrome has notoriously aggressive caching, so if something doesn't seem to work well in the backoffice, make sure to clear cache and cookies thoroughly (for other browsers as well). 
+
+One way to nudge the cache in Chrome is to open the developer tools (F12) and go to the settings (the cog icon). There will be a checkbox that says "Disable cache (while DevTools is open)". Once this checkbox is on you can refresh the page and the cache should be invalidated. To force it even more, the "reload" button next to your address bar now has extra options when you right-click it. It should have "Normal reload", "Hard reload" and "Empty cache and hard reload" now. The last option is the most thorough and you might want to try that.
+
+The important other thing you'll need to do is go into config/ClientDependency.config and update the version number in there. So if it currently says version="2" then just make it one higher: version="3".
+This will ensure that any server-side cache of javascript and stylesheets gets cleared as well.
+
+**_We're working on making this experience better and seamless, but for now make sure to follow these steps for v7 upgrades._**
+
 ###Module Load Order
 
 `UmbracoModule` requires `UrlRewriteModule` to be loaded first. This is determined in the `<system.webServer><modules>` section of your web.config file. 
