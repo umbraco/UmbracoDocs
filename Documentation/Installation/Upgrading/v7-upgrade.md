@@ -48,6 +48,7 @@ It is recommended that you use a Diff tool to compare the configuration file cha
 		* new &lt;sectionGroup name="umbracoConfiguration"&gt; section
 		* new &lt;umbracoConfiguration&gt; element  
 		* ensure that the **targetFramework="4.5"** is added to the &lt;httpRuntime&gt; element
+		* add &lt;add key="ValidationSettings:UnobtrusiveValidationMode" value="None" /&gt; to the appSettings element
 * /config/clientdependency.config changes
 	* remove &lt;add name="CanvasProvider" /&gt; element 
 * /views/web.config updates
