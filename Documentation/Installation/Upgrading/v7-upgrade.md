@@ -62,7 +62,20 @@ It is recommended that you use a Diff tool to compare the configuration file cha
 	* [http://issues.umbraco.org/issue/U4-2742](http://issues.umbraco.org/issue/U4-2742)
 * /config/applications.config and /config/trees.config have some icon paths and names updated, you will need to merge the new changes into your existing config files.
 * /config/tinyMceConfig.config
-	* The inlinepopups is not currently supported in v7, you will need to remove this element: &lt;plugin loadOnFrontend="true"&gt;inlinepopups&lt;/plugin&gt; 
+	* The inlinepopups is compatible supported in v7, you will need to remove this element: &lt;plugin loadOnFrontend="true"&gt;inlinepopups&lt;/plugin&gt; 
+	* The plugins element that is shipped with v7 looks like:
+
+		    <plugins>
+		        <plugin loadOnFrontend="true">code</plugin>  
+		        <plugin loadOnFrontend="true">paste</plugin>
+		        <plugin loadOnFrontend="true">umbracolink</plugin>
+		        <plugin loadOnFrontend="true">anchor</plugin>
+		        <plugin loadOnFrontend="true">charmap</plugin>
+		        <plugin loadOnFrontend="true">table</plugin>
+		        <plugin loadOnFrontend="true">lists</plugin>
+		    </plugins>
+	* You will need to merge the changes from the new tinyMceConfig file into yours, the 'command' elements that have changed are: JustifyCenter, JustifyLeft, JustifyRight, JustifyFull, umbracomacro, umbracoembed, mceImage, subscript, superscript, styleselect
+	* Remove the command: mceSpellCheck
 
 ##Medium Trust
 
