@@ -58,10 +58,11 @@ It is recommended that you use a Diff tool to compare the configuration file cha
 	* umbracoSettings is now a true ASP.Net configuration section [http://issues.umbraco.org/issue/U4-58](http://issues.umbraco.org/issue/U4-58)
 	* remove the &lt;EnableCanvasEditing&gt; element
 	* remove the &lt;webservices&gt; element
-	* 
 * Removed xsltExtensions.config
 	* [http://issues.umbraco.org/issue/U4-2742](http://issues.umbraco.org/issue/U4-2742)
 * /config/applications.config and /config/trees.config have some icon paths and names updated, you will need to merge the new changes into your existing config files.
+* /config/tinyMceConfig.config
+	* The inlinepopups is not currently supported in v7, you will need to remove this element: &lt;plugin loadOnFrontend="true"&gt;inlinepopups&lt;/plugin&gt; 
 
 ##Medium Trust
 
