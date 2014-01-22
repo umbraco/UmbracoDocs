@@ -58,7 +58,7 @@ Example usage of the MediaService events:
         <td>
         Raised when MediaService.CreateMedia is called in the API.<br />
         The event is fired after the CreatorId of the IMedia object has been set.<br />
-        NOTE: The IMedia object has been created, but not saved so it does not have an identity yet (meaning no Id has been set).<br />
+        <strong>NOTE: The IMedia object has been created, but not saved so it does not have an identity yet (meaning no Id has been set)</strong><br />
         "sender" will be the current IMediaService object.<br />
         "e" will provide:
             <ol>
@@ -90,6 +90,7 @@ Example usage of the MediaService events:
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default). <br />
         "sender" will be the current IMediaService object.<br />
         "e" will provide:
+		<br/>NOTE: <a href="determining-new-entity">See here on how to determine if the entity is brand new</a>
             <ol>
                 <li>SavedEntities: Gets the saved collection of IMedia objects.</li>
             </ol>

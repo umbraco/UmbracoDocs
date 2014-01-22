@@ -95,7 +95,7 @@ Example usage of the ContentService events:
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default). <br />
         "sender" will be the current IContentService object.<br />
         "e" will provide:<br/>
-		NOTE: See <a href="determining-new-entity">here</a> on how to determine if the entity is brand new
+		NOTE: <a href="determining-new-entity">See here on how to determine if the entity is brand new</a>
             <ol>
                 <li>SavedEntities: Gets the saved collection of IContent objects.</li>
             </ol>

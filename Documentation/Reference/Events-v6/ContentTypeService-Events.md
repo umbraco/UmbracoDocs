@@ -27,6 +27,7 @@ The ContentTypeService class implements IContentTypeService. It provides easy ac
         Raised when ContentTypeService.Save (IContentType overloads) is called in the API and after data has been persisted.<br />
         "sender" will be the current IContentTypeService object.<br />
         "e" will provide:
+		<br/>NOTE: <a href="determining-new-entity">See here on how to determine if the entity is brand new</a>
             <ol>
                 <li>SavedEntities: Gets the saved collection of IContentType objects.</li>
             </ol>
@@ -51,6 +52,7 @@ The ContentTypeService class implements IContentTypeService. It provides easy ac
         Raised when ContentTypeService.Save (IMediaType overloads) is called in the API and after data has been persisted.<br />
         "sender" will be the current IContentTypeService object.<br />
         "e" will provide:
+		<br/>NOTE: <a href="determining-new-entity">See here on how to determine if the entity is brand new</a>
             <ol>
                 <li>SavedEntities: Gets the saved collection of IMediaType objects.</li>
             </ol>
