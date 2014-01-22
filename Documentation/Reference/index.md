@@ -1,5 +1,5 @@
 #Developers' Reference
-_Developers' Reference primarily consists of API references of the different core Umbraco APIs. In many cases, the references come with code snippets with simple exemples. For a more in-depth study of the different APIs, however, consult the "using-umbraco" and "extending-umbraco" sections of the documentation._
+_Developers' Reference primarily consists of API references of the different core Umbraco APIs. In many cases, the references come with code snippets with simple exemples. For a more in-depth study of the different APIs, consult the "using-umbraco" and "extending-umbraco" sections of the documentation._
 
 ##[Templating](Templating/index.md)
 
@@ -29,7 +29,7 @@ Umbraco 4 and earlier comes with a complete event model, covering all major aspe
 ###[Web API](WebApi/index.md) 
 
 Introduced in **Umbraco 6.1.0+**
-How to use the Web API in Umbraco to easily create REST services.
+How to use [Web API](http://www.asp.net/web-api) in Umbraco to easily create REST services.
 
 ###[/Base](Api/Base/Index.md)
 
