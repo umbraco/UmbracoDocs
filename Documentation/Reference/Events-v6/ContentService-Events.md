@@ -63,7 +63,7 @@ Example usage of the ContentService events:
         <td>
         Raised when ContentService.CreateContent is called in the API.<br />
         The event is fired after the CreatorId and WriterId of the Content object have been set.<br />
-        NOTE: The IContent object has been created, but not saved so it does not have an identity yet (meaning no Id has been set).<br />
+        <strong>NOTE: The IContent object has been created, but not saved so it does not have an identity yet (meaning no Id has been set)</strong><br />
         "sender" will be the current IContentService object.<br />
         "e" will provide:
             <ol>
@@ -94,7 +94,8 @@ Example usage of the ContentService events:
         Raised when ContentService.Save is called in the API and after data has been persisted.<br />
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default). <br />
         "sender" will be the current IContentService object.<br />
-        "e" will provide:
+        "e" will provide:<br/>
+		NOTE: See <a href="determining-new-entity">here</a> on how to determine if the entity is brand new
             <ol>
                 <li>SavedEntities: Gets the saved collection of IContent objects.</li>
             </ol>
