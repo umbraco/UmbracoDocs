@@ -11,4 +11,8 @@
 
 ## [Property Value Converters](value-converters-v7.md)
 
-*Coming soon!* 
+*Coming soon!*
+
+## [Tag support](tag-support-v7.md)
+
+Property editors can be configured to support tag data. In v7 the tag system has been overhauled and updated for easier querying and seamless integration into any property editor, not just the tags property editor. This document covers how you can integrate tagging support with your property editor. 
