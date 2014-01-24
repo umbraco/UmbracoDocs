@@ -8,7 +8,7 @@ The goal of the Umbraco project is to be able to be left with only a few Visual 
 * Umbraco.Core
 * Umbraco.Web
 * Umbraco.Web.UI
-* Umbraco.Web.UI.Client (**v7+ only**)
+* [Umbraco.Web.UI.Client](umbraco-web.ui-client.md) (**v7+ only**)
 * Umbraco.Tests
 
 Acheiving this goal will take quite a lot of time by slowly migrating over old code and refactoring it into new code under new namespaces and projects. This cannot all happen at the same time but starting down this path now means that we can  realize this goal sooner.
