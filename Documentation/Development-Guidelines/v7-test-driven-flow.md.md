@@ -1,12 +1,8 @@
 #Working with the back office UI AngularJs project 
 
-_Describes how to work with the code for building the v7 back office UI in a test driven development workflow_
-
-##Overview
-
-This document tries to outline what is required to have a test-driven setup for
+_This document tries to outline what is required to have a test-driven setup for
 angular developement in Umbraco 7. It goes through the setup process as well as how
-to add new services that requires mocking as well as how to use grunt to run tests automaticly.
+to add new services that requires mocking as well as how to use grunt to run tests automaticly_
 
 ##Setup
 Make sure to have all the node dependencies in order when you start, these are updated regularly in case we need to go to a new version of a dependency, or new dependencies are added.
