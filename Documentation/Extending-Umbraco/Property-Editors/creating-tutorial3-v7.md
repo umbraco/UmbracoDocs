@@ -1,153 +1,76 @@
-#Tutorial - adding configuration to a v7 property editor
+#Tutorial - Intergrating services with a property editor
 
 ##Overview
-In this tutorial we will add a serverside API controller, which will query a custom table in the umbraco database, and then return the data to a simple angular controller + view.
+This is step 3 in the property editor tutorial. In this part we will intergrate one of the built-in 
+umbraco services. For this sample we will use the dialog service to hook into the media picker and return image data to the markdown editor. 
 
-The end result will be a person-list, populated from a custom table, when clicked it will store the ID of the selected person.
+##Injecting the service.
+First up, we need to get access to the service, this is done in the constructor of the controller, where we add it as a parameter:
 
-##Setup the database
-First thing we need is some data, below is a simple SQL Script for create a `people` table with some random data in. You could also use [http://generatedata.com] for larger amounts of data:
-
-	CREATE TABLE people (
-	    id INTEGER NOT NULL IDENTITY(1, 1),
-	    name VARCHAR(255) NULL,
-	    town VARCHAR(255) NULL,
-	    country VARCHAR(100) NULL,
-	    PRIMARY KEY (id)
-	);
-	GO
-
-	INSERT INTO people(name,town,country) VALUES('Myles A. Pearson','Tailles','United Kingdom');
-	INSERT INTO people(name,town,country) VALUES('Cora Y. Kelly','Froidchapelle','Latvia');
-	INSERT INTO people(name,town,country) VALUES('Brooke Baxter','Mogi das Cruzes','Grenada');
-	INSERT INTO people(name,town,country) VALUES('Illiana T. Strong','Bevel','Bhutan');
-	INSERT INTO people(name,town,country) VALUES('Kaye Frederick','Rothesay','Turkmenistan');
-	INSERT INTO people(name,town,country) VALUES('Erasmus Camacho','Sint-Pieters-Kapelle','Saint Vincent and The Grenadines');
-	INSERT INTO people(name,town,country) VALUES('Aimee Sampson','Hawera','Antigua and Barbuda');
-
-
-##Setup ApiController routes
-Next we need to defined a `ApiController` to expose a server side route which our application will use to fetch the data.
-
-For this, we will create a file at: `/App_Code/PersonApiController.cs` It must be in app_code since we want our app to compile it on start, alternatively, you can just add it to a normal .net project and compile into a dll as normal.
-
-In the PersonApiController.cs file, add: 
-
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Web;
-
-	using Umbraco.Web.WebApi;
-	using Umbraco.Web.Editors;
-	using Umbraco.Core.Persistence;
-
-	namespace My.Controllers
-	{
-	    [Umbraco.Web.Mvc.PluginController("My")]
-	    public class PersonApiController : UmbracoAuthorizedJsonController
-	    {
-	        //we will add a method here later
-	    }
-	}
-
-This is a very basic Api controller which inherits from `UmbracoAuthorizedJsonController` this specific class will only return json data, and only to requests which are authorized to access the backoffice
-
-##Setup the GetAll() method
-Now that we have a controller, we need to create a method, which can return a collection of people, which our editor will use. 
-
-So first of all, we add a `Person` class to the `My.Controllers` namespace:
-
-	public class Person
-	{
-	    public int Id { get; set; }
-	    public string Name { get; set; }
-	    public string Town { get; set; }
-	    public string Country { get; set; }
-	}
-
-We will use this class to map our table data to an c# class, which we can return as json later. 
-
-Now we need the `GetAll()` method which returns a collection of people, insert this inside the PersonApiController class:
-
-	public IEnumerable<Person> GetAll()
-	{
-		
-	}
-
-Inside the GetAll() method, we now write a bit of code, that connects to the database, creates a query and returns the data, mapped to the `Person` class above: 
-
-	//get the database
-	var db = UmbracoContext.Application.DatabaseContext.Database;
-	//build a query to select everything the people table
-	var query = new Sql().Select("*").From("people");
-	//fetch data from DB with the query and map to Person object
-	return db.Fetch<Person>(query);
-
-We are now done with the server side of things, with the file saved in app_code you can now open the Url: /umbraco/My/PersonApi/GetAll
-
-This will return our json code.
-
-##Create a Person Resource 
-Now that we have the serverside in place, and a Url to call, we will setup a service to retrieve our data. As an Umbraco specific convention, we call these services a *resource, so we always have an indication what services fetch data from the DB.
-
-Create a new file as `person.resource.js` and add: 
-
-	//adds the resource to umbraco.resources module:
-	angular.module('umbraco.resources').factory('personResource', 
-		function($q, $http) {
-		    //the factory object returned
-		    return {
-		        //this cals the Api Controller we setup earlier
-		        getAll: function () {
-		            return  $http.get("My/PersonApi/GetAll");
-		        }
-		    };
-		}
-	); 
-
-This uses the standard angular factory pattern, so we can now inject this into any of our controllers under the name `personResource`.
-
-the getAll method just returns a $http.get call, which handles calling the url, and will return the data when its ready.
-
-##Create the view and controller
-We will now finally setup a new view and controller, which follows previous tutorials, so have refer to those for more details: 
-
-####the view:
-
-	<div ng-controller="My.PersonPickerController">
-		<ul>
-			<li ng-repeat="person in people">
-				<a href ng-click="model.value = person.Name">{{person.Name}}</a>
-			</li>
-		</ul>
-	</div>
-
-####The controller:
-	
 	angular.module("umbraco")
-		.controller("My.PersonPickerController", function($scope, personResource){
-			personResource.getAll().then(function(response){
-				$scope.people = response.data;
-			});
-		});
+		.controller("My.MarkdownEditorController",
+		//inject umbracos assetsServce and dialog service
+		function ($scope,assetsService, dialogService) { ... }
 
-##The flow
-So with all these bits in place, all you need to do is register the property editor in a package.manifest - have a look at the first tutorial in this series. You will need to tell the package to load both your personpicker.controller.js and the person.resource.js file on app start.
+this works the same way as with the assetsService we added in step 1.
 
-With this, the entire flow is: 
+##Hooking into pagedown
+The pagedown editor we are using, has a nice event system inplace, so we can easily hook into the events triggered by the media chooser, by adding a hook, after the editor has started:
+	
+	//Start the editor	
+	var converter2 = new Markdown.Converter();
+    var editor2 = new Markdown.Editor(converter2, "-" + $scope.model.alias);
+    editor2.run();
 
-1. the view renders a list of people with a controller
-2. the controller asks the personResource for data
-3. the personResource returns a promise and asks the /my/PersonAPI api controller
-4. The apicontroller queries the database, which returns the data as strongly typed Person objects
-5. the api controller returns those `Person` objects as json to the resource
-6. the resource resolve the promise
-7. the controller populates the view
+	//subscribe to the image dialog clicks
+    editor2.hooks.set("insertImageDialog", function (callback) {
+           //here we can intercept our own dialog handling
 
-Easy huh? - honestly tho, there is a good amount of things to keep track of, but each component is tiny and flexible. 
+           return true; // tell the editor that we'll take care of getting the image url
+       });
+	});
 
-##Wrap-up
-The important part of the above is the way you create an `ApiController` call the database for your own data, and finally expose the data to angular as a service using $http.
+Notice the callback, this callback is used to return whatever data we want to editor.
 
-For simplicity, you could also have skipped the service part, and just called $http directly in your controller, but by having your data in a service, it becomes a reusable resource for your entire application.
+So now that we have access to the editor events, we will trigger a media picker dialog, by using the `dialogService`. You can inject whatever html you want with this service, but it also has a number of shorthands for things like a media picker: 
+
+	//the callback is called when the use selects images
+	dialogService.mediaPicker({callback: function(data){
+							//data.selection contains an array of images
+	                        $(data.selection).each(function(i, item){
+	                               //try using $log.log(item) to see what this data contains
+	                        });
+	                   }});
+
+##Getting to the image data
+Because of Umbraco's generic nature, you don't always know where your image is, as a media object's data is basicly an array of properies, so how do you pick the right one? - you cannot always be sure the property is called `umbracoFile` for instance.
+
+For cases like this, a helper service is available: `imageHelper`. This utillity has usefull methods for getting to images embedded in property data, as well as associated thumbnails. **Remember to** inject this imageHelper in the controller constructor as well (same place as dialogService and assetsService).
+
+So we get the image page from the selected media item, and return it through the callback: 
+
+	var imagePropVal = imageHelper.getImagePropertyValue({ imageModel: item, scope: $scope });
+	callback(imagePropVal);
+
+Now when we run the markdown editor and click the image button, we are presented with a native umbraco dialog, listing the standard media archive. 
+
+Clicking an image and choosing select returns the image to the editor which then renders it as:
+
+	![Koala picture][1]
+
+	  [1]: /media/1005/Koala.jpg
+
+The above is correct markdown code, representing the image, and if preview is turned on, you will see the image below the editor.
+
+
+##Wrap up
+So over the 3 previous steps, we've:
+
+- created a plugin
+- defined an editor
+- injected our own javascript libraries and 3rd party ones
+- made the editor configurable
+- connected the editor with native dialogs and services
+- looked at koala pictures.
+
+The complete project can be found [here](https://github.com/umbraco/Umbraco-CMS/tree/7.0.0/src/Umbraco.Web.UI.Client/src/packages/MarkdownEditor).

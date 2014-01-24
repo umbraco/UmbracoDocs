@@ -1,4 +1,4 @@
-#Tutorial - creating a v7 property editor
+#Tutorial - Creating a v7 property editor
 
 ##Overview
 
