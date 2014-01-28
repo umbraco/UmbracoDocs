@@ -16,6 +16,8 @@ This is not an angular service, it is simply a namespaced global variable. An ex
 
 which returns whether or not the application has the debug="true" setting in the web.config file.
 
+It's also worth mentioning that the server variables collection when requested gets minified and then compressed so even though there might be quite a few values in there, the request size will be small.
+
 ###Adding your own
 
 From version 7.0.2+ you can subscribe to an event if you need to add your data to the server variables collection:
