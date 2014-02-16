@@ -27,6 +27,7 @@ The DataTypeService class implements IDataTypeService. It provides easy access t
         Raised when DataTypeService.Save is called in the API and after data has been persisted.<br />
         "sender" will be the current IDataTypeService object.<br />
         "e" will provide:
+		<br/>NOTE: <a href="determining-new-entity">See here on how to determine if the entity is brand new</a>
             <ol>
                 <li>SavedEntities: Gets the saved collection of IDataTypeDefinition objects.</li>
             </ol>

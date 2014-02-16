@@ -27,6 +27,7 @@ The FileService class implements IFileService. It provides easy access to operat
         Raised when FileService.SaveTemplate is called in the API and after data has been persisted.<br />
         "sender" will be the current IFileService object.<br />
         "e" will provide:
+		<br/>NOTE: <a href="determining-new-entity">See here on how to determine if the entity is brand new</a>
             <ol>
                 <li>SavedEntities: Gets the saved collection of ITemplate objects.</li>
             </ol>
