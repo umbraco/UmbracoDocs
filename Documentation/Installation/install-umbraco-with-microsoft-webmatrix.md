@@ -14,7 +14,7 @@ Follow these simple steps to be up and running with WebMatrix quickly and easily
 
 1. In the search box in the top right hand corner, type "Umbraco".
 
-	![Web Matrix - Search for Umbraco CMS](images/WebMatrix/webmatrix-search.PNG?raw=true)
+	![Web Matrix - Search for Umbraco CMS](images/WebMatrix/webmatrix-search.png?raw=true)
 
 1. From the results select the item marked **Umbraco CMS**. Click **Next**.
 
