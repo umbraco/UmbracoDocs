@@ -24,7 +24,7 @@ Follow these simple steps to be up and running with WebMatrix quickly and easily
 
 1. The next screen presents you with two options for the database to be used by Umbraco. Choose the option marked **SQL CE Server (Installed)** and click **Next**. This is the quickest and easiest option to get started with Umbraco - especially for small sites - and uses a file stored on disk as the database.
 	
-	![Web Matrix - Database Selection](images/WebMatrix/webmatrix3-database.PNG?raw=true)
+	![Web Matrix - Database Selection](images/WebMatrix/webmatrix3-database.png?raw=true)
 	
 	*If you need to migrate your database from SQL CE Server to the full edition of SQL Server, you can do it at a later point.*
 	
@@ -32,7 +32,7 @@ Follow these simple steps to be up and running with WebMatrix quickly and easily
 	
 1. WebMatrix will download the required files to run Umbraco. Once done you will see a confirmation message.
 
-	![Web Matrix - Install Complete](images/WebMatrix/webmatrix3-install-complete.PNG?raw=true)
+	![Web Matrix - Install Complete](images/WebMatrix/webmatrix3-install-complete.png?raw=true)
 
 ## Umbraco Web Installer
 This section continues from where we left off but covers the installation and configuration of Umbraco inside your web browser when you run Umbraco for the first time.
@@ -42,7 +42,7 @@ This section continues from where we left off but covers the installation and co
 	1. Then click on the URL such as `http://localhost:22830`<br/>*Port number may be different as it is random*.
 	1. The Web installer for Umbraco will now launch inside your default browser.
 
-	![Web Matrix - Finding Local Host](images/WebMatrix/webmatrix3-localhost.PNG?raw=true)
+	![Web Matrix - Finding Local Host](images/WebMatrix/webmatrix3-localhost.png?raw=true)
 	
 1. You will see the welcome screen. After reading through the page click **Lets get started!**
 
