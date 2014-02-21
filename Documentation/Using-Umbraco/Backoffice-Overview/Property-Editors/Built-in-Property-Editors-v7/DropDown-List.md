@@ -17,7 +17,7 @@ You can add, edit & delete the data prevalues rendered within the dropdown list.
 
 ![Downdown List Content](images/Dropdown-List-Content.png)
 
-##MVC View Example to out selected value
+##MVC View Example to output selected value
 
 ###Typed:
 
