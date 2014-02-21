@@ -16,7 +16,7 @@ This page contains a list of all the built-in Umbraco  v7+ property editors and 
 
 ##Dropdown list multiple
 
-##Dropdown list multiple, publish keys
+##[Dropdown list multiple, publish keys](DropDown-List-Publishing-Keys.md)
 
 ##Dropdown list, publishing keys
 
