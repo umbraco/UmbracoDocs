@@ -10,6 +10,8 @@ This section describes what a breaking change is in regards to the Umbraco codeb
 
 ###Non-breaking
 
+* Any changes to the installation objects, classes, interfaces, views, client files, etc... are not considered breaking changes
+
 * Any changes to the interfaces in the namespaces `Umbraco.Core.Services`, `Umbraco.Core.Models`, `Umbraco.Core.Models.Membership`,  are not considered breaking changes
 	* Even though changes to an interface are normally considered breaking, these interfaces should not be implemented except by the core code and therefore we do not consider changes to these interfaces as breaking changes.
 
