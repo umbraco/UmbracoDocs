@@ -14,7 +14,9 @@ Download the .zip file for the new version you are upgading to.
 Copy the following folders from inside the .zip file over the existing folders in your site:
 
 - /bin
-- /Install (don't forget to remove it after the upgrade is finished)
+- Only for versions lower than 7.1.0: 
+   - /Install (don't forget to remove it after the upgrade is finished)
+   - This folder is no longer present or needed in Umbraco v7.1.0+
 - /Umbraco 
 - /Umbraco_Client
 
