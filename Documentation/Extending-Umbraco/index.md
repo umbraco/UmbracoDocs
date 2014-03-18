@@ -45,4 +45,22 @@ Information on the packaging manifest format and how assets should be packaged a
 
 ##Custom file systems (IFileSystem)
 
-*coming soon*
+By default, Umbraco uses an instance of *PhysicalFileSystem* to handle the media archive. The configuration for this can be found in */config/FileSystemProviders.config*:
+
+    <Provider alias="media" type="Umbraco.Core.IO.PhysicalFileSystem, Umbraco.Core">
+        <Parameters>
+            <add key="virtualRoot" value="~/media/" />
+        </Parameters>
+    </Provider>
+    
+*PhysicalFileSystem* implements the *IFileSystem* interface, and it is possible to replace it with a custom class - eg. if you want your media files stored on Azure or something similar.
+
+If you need access to the instance of IFileSystem, this can be archieved through the following code:
+
+    IFileSystem fs = FileSystemProviderManager.Current.GetUnderlyingFileSystemProvider("media");
+    
+Both *IFileSystem* and *FileSystemProviderManager* are located in the *Umbraco.Core.IO* namespace.
+
+**Custom providers**
+
+[Azure Blob Storage Provider](http://our.umbraco.org/projects/backoffice-extensions/azure-blob-storage-provider) by Dirk Seefeld
