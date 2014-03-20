@@ -65,3 +65,7 @@ Read and follow [the full v7 upgrade guide](v7-upgrade.md)
 
 	* The &lt;usercontrol&gt; value has changed to: **/create/user.ascx**, this is a required change otherwise creating a new user will not work.
 * There is a breaking change to be aware of, full details can be found [here](http://umbraco.com/follow-us/blog-archive/2014/1/17/heads-up,-breaking-change-coming-in-702-and-62.aspx).
+
+
+##Version 7.1.0
+* Remove the /Install folder. 
