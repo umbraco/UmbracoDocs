@@ -29,7 +29,7 @@ You can simply open up the **Package Console** and type:
 
 Or you can open the **NuGet Package Manager** and select the **Updates** pane to get a list of available updates. Choose the package called **UmbracoCms** and click update. This will run through all the files and make sure you have the latest changes while leaving files you have updated.
 
-You will be asked to overwrite your web.config file and the files in /config so make sure to back them up beforehand. After the update is done and before running the project again, make sure to merge the new files with your backed up files. See the next section for details on merging configuration files.
+You will be asked to overwrite your web.config file and the files in /config, make sure to answer **No** to those questions. Now here comes the tricky bit: We'll be mean and overwrite your web.config file anyway. But we'll back it up so don't worry (plus you already had your own backup, right?). You can find the backup in `App_Data\ConfigBackup\20140320-165450`, the `20140320-165450` bit is the current date and time, so it varies. You can then merge your config files and make sure they're completely up to date.
 
 ##Merge configuration files
 You can expect some changes to the following configuration files:
