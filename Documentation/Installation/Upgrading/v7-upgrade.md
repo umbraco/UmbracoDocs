@@ -27,6 +27,14 @@ See: [List of breaking changes](http://our.umbraco.org/contribute/releases/700)
 
 You should rebuild all Examine indexes after the upgrade
 
+##Xml Cache rebuild
+
+You should re-generate the xml cache, you can do this by visiting this url:
+
+/Umbraco/dialogs/republish.aspx?xml=true
+
+and follow the prompts
+
 ##Configuration changes
 
 It is recommended that you use a Diff tool to compare the configuration file changes with your own current configuration files.
