@@ -42,11 +42,11 @@ When working on your own projects you will normally be creating a locally declar
 
 It is very important that you name your controllers according to these guidelines or else they will not get routed:
 
-All controller class names must be suffixed with "**ApiController**". Some examples:
+All controller class names must be suffixed with "**Controller**" and inherit from **UmbracoApiController**. Some examples:
 
-	ProductsApiController
-	CustomersApiController
-	ScoresApiController
+	public class ProductsController : UmbracoApiController
+	public class CustomersController : UmbracoApiController
+	public class ScoresController : UmbracoApiController
 
 ###Locally declared controller
 
@@ -54,7 +54,7 @@ This is the most common way to create an Umbraco Api controller, you simply inhe
 
 Example:
 
-	public class ProductsApiController : UmbracoApiController
+	public class ProductsController : UmbracoApiController
 	{	    
 	    public IEnumerable<string> GetAllProducts()
 	    {
@@ -66,7 +66,7 @@ All locally declared Umbraco api controllers will be routed under the url path o
 
 *~/Umbraco/Api/[YourControllerName]*
 
-E.g *~/Umbraco/Api/ProductsApi/GetAllProducts*
+E.g *~/Umbraco/Api/Products/GetAllProducts*
 
 ###Plugin based controller
 
@@ -75,7 +75,7 @@ If you are creating an Umbraco Api controller to be shipped in an Umbraco packag
 Example:
 
 	[PluginController("AwesomeProducts")]
-	public class ProductsApiController : UmbracoApiController
+	public class ProductsController : UmbracoApiController
 	{	    
 	    public IEnumerable<string> GetAllProducts()
 	    {
@@ -89,4 +89,27 @@ Now this controller will be routed via the area called "AwesomeProducts". All pl
 
 For more information about areas, Urls and routing see the [routing section](routing.md)
 
+###Securing your API methods
+API methods can be secured so that only members logged into your site can use them, you can do this using the `MemberAuthorize` attribute.
 
+This attribute allows for the following protections to be set up:
+
+- AlowAll: boolean (true by default)
+- AllowType: list of allowed member types
+- AllowGroup: list of allowed member groups
+- AllowMembers: list of allowed members (login names)
+
+`AllowAll` is only there for backwards compatibility, if any of the other "Allow" properties are set then AllowAll is set to false.
+
+Example:
+	
+	[MemberAuthorize(AllowGroup: "Accounts,Editors")]
+	public class ProductsController : UmbracoApiController
+	{	    
+	    public IEnumerable<string> GetAllProducts()
+	    {
+	        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+	    }
+	}
+	
+When a member is logged in and is member of the member group "Accounts" or "Editors", they will get the result of the API call as normal. Anybody else will get an error telling them they're not allowed to call this method.
