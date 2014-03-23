@@ -113,3 +113,5 @@ Example:
 	}
 	
 When a member is logged in and is member of the member group "Accounts" or "Editors", they will get the result of the API call as normal. Anybody else will get an error telling them they're not allowed to call this method.
+
+Any methods added to this class will have the same protection but you can also add the attribute to a single or a few of your methods when not all methods in your API Controller class need to have the same authorization.
