@@ -35,6 +35,7 @@ It's important to pick only one of those as other templates cause errors beyond 
 ![](images/NuGet/new-project-vs2013-2.png)
 
 Or you can use one of the VS2012 templates:
+
 * ASP.NET Empty Web Application
 * ASP.NET Web Forms Application
 * ASP.NET MVC 4 Web Application
