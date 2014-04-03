@@ -58,8 +58,8 @@ So make sure to pick Umbraco CMS (highlighted in the image below) and click **In
 NuGet will then download dependencies and will install all of Umbraco's files in your new solution.  
 During this process it will ask if it is allowed to overwrite your web.config file. In this case, overwriting the file is safe because we just started a new project. If you're installing Umbraco in an existing project, however, you might want to create a backup of your existing web.config file before answering "Yes".
 
-For some inexplicable reason, the installation will fail if you answer "Overwrite All" to the question
-So make sure to only answer "Yes" (sometimes needed a few times).
+For some inexplicable reason, the installation will fail if you answer "Yes to All" to the question
+So make sure to **only answer "Yes"** (sometimes needed a few times).
 
 ![](images/NuGet/nuget-overwrite-dialog.png)
 
@@ -78,7 +78,7 @@ Then simply type `Install-Package UmbracoCms` to start installing the latest ver
 For some inexplicable reason, the installation will fail if you answer "A" to the question: 
 `File 'Web.config' already exists in project 'MySite'. Do you want to overwrite it?`
 `[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [?] Help (default is "N"):`  
-So make sure to only answer "Y" (sometimes needed a few times).
+So make sure to **only answer "Y"** (sometimes needed a few times).
 
 ![](images/NuGet/package-manager-console-overwrite.png)
 
