@@ -2,6 +2,14 @@
 
 _Follow these steps to do a full install of Umbraco with NuGet._
 
+##NuGet version
+Before you start: make sure your NuGet version is up to date. We use the latest version while testing and can't guarantee that the install process works with older versions of NuGet.
+
+In Visual Studio, go to Tools > Extensions and Updates, then Updates > Visual Studio Gallery. Check if there's a NuGet Update available and install it.
+
+![](images/NuGet/nuget-update.png)
+
+
 ##Install NuGet in Visual Studio
 If you don't already have NuGet installed, you can read all about the installation process here: [http://docs.nuget.org/docs/start-here/installing-nuget](http://docs.nuget.org/docs/start-here/installing-nuget).
 
