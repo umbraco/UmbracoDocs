@@ -16,6 +16,7 @@ For Umbraco 6 you can still choose .NET Framework 4 but 4.5 and 4.5.1 also work.
 
 ###Visual Studio 2012  
 Go to **File > New Project** and pick ASP.NET Web Application. Click **OK** and then choose one of the following:
+
 * ASP.NET Empty Web Application
 * ASP.NET Web Forms Application
 * ASP.NET MVC 3 Web Application (will be upgraded to an MVC 4 application)
