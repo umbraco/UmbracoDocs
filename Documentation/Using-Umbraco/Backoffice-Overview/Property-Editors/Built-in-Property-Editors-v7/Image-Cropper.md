@@ -44,7 +44,12 @@ is shown for a specific crop.
 
 ##Sample code
 
-###MVC View Example to output a "banner" crop from a cropper property with the alias "image"
+Image Cropper comes with a simple to use API to generate crop urls, or you can access its raw data directly as a
+dynamic object.
+
+
+
+####MVC View Example to output a "banner" crop from a cropper property with the alias "image"
     
     //show the crop preset "banner"
     <img src='@CurrentPage.GetCropUrl("image", "banner")' />
@@ -55,20 +60,53 @@ is shown for a specific crop.
     //or from typed content:
     <img src='@Model.Content.GetCropUrl("image", "banner")' />
 
-###MVC View Example to output the raw image url from a cropper property with the alias "image"
-        
-    @if (CurrentPage.HasValue("image"))
-    {
-        <img src='@CurrentPage.image.src'/>
-    }       
 
-
-###MVC View Example to output create custom crops - in this case forcing a 300 x 400 px image
+####MVC View Example to output create custom crops - in this case forcing a 300 x 400 px image
             
         @if (CurrentPage.HasValue("image"))
         {
             <img src='@Model.Content.GetCropUrl(propertyAlias: "image", height:300, width:400)'/>
         }       
+
+###Data returned
+
+The cropper returns a dynamic object, based on a json structure like this: 
+
+                            
+    {
+      "focalPoint": {
+        "left": 0.23049645390070922,
+        "top": 0.27215189873417722
+      },
+      "src": "/media/SampleImages/1063/pic01.jpg",
+      "crops": [
+        {
+          "alias": "banner",
+          "width": 800,
+          "height": 90
+        },
+        {
+          "alias": "highrise",
+          "width": 80,
+          "height": 400
+        },
+        {
+          "alias": "thumb",
+          "width": 90,
+          "height": 90
+        }
+      ]
+    }
+
+So you can access each property directly:
+
+    <img src='@CurrentPage.image.src'/>
+
+Or iterate through them:
+                       
+    @foreach(var crop in CurrentPage.image.crops){
+        <img src="@CurrentPage.GetCropUrl("image", crop.alias)">    
+    }     
 
 
 ##Powered by ImageProcessor
@@ -76,10 +114,18 @@ is shown for a specific crop.
 
 We bundle this library in Umbraco 7.1 and you can therefore take full advantage of all its features out-of-the-box, like sharping, blurring, cropping, rotating and so.
 
-###MVC View Exemple on how to blur a crop
+####MVC View Exemple on how to blur a crop
 
     <img src='@CurrentPage.GetCropUrl("image", "banner")&blur=11,sigma-1.5,threshold-10' />
 
 Using ImageProcessors built-in [gaussianblur](http://jimbobsquarepants.github.io/ImageProcessor/imageprocessor-web/gaussianblur.html)    
+
+##Upload property replacement
+
+You can replace an upload property with a cropper, existing images will keep returning their current path and work unmodified with the cropper 
+applied. The old image will even be available in the cropper, so you can modify it if you ever need to. 
+
+However, be aware that a cropper returns a dynamic object when saved, so if you perform any sort of string modifications on your upload property value, 
+you will most likely see some errors in your templates / macros.
 
 
