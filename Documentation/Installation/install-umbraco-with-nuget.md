@@ -30,7 +30,6 @@ It's important to pick only one of those as other templates cause errors beyond 
 ###Visual Studio 2013
 Go to **File > New Project** and pick an ASP.NET **Empty** Web Application.   
 It's important to pick **empty** as other templates include incompatible versions of MVC and Json.NET. (don't enable any of the checkboxes to add folders or core references, Umbraco will add them for you).   
-It's important to pick only one of those as other templates cause errors beyond our control.
 
 ![](images/NuGet/new-project-vs2013-1.png)
 ![](images/NuGet/new-project-vs2013-2.png)
