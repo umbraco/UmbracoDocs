@@ -12,7 +12,7 @@ When working in templating, this helper will automatically be there for you to u
 	@Members.IsLoggedIn();
 	@Members.GetCurrentMemberProfileModel();
 
-If you need a MembershipHelper in a custom class, service, view, etc... you can easily create one using this syntax:
+If you need a `MembershipHelper` in a custom class, service, view, etc... you can easily create one using this syntax:
 
 	var memberShipHelper = new Umbraco.Web.Security.MembershipHelper(Umbraco.Web.UmbracoContext.Current);
 
