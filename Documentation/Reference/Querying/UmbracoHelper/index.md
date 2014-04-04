@@ -61,7 +61,7 @@ Queries the XML Cache for Content matching a given xpath query and returns a col
     }
 
 ###.ContentQuery
-Content query helper, which contains many help ways to find content. (description coming soon)
+Content query helper, which contains many helpful ways to find content. (description coming soon)
 
 ###.ContentSingleAtXPath(string xpath, params XPathVariable[] variables);
 Queries the XML Cache for Content matching a given Xpath query, returns first match as a `dynamic` object.
@@ -71,7 +71,7 @@ Queries the XML Cache for Content matching a given Xpath query, returns first ma
     }
     
 ###.TypedContent(int id)
-Given a node ID , teturns a `IPublishedContent`
+Given a node ID , returns a `IPublishedContent`
 
     @{
         var page = Umbraco.TypedContent(1234);
@@ -97,7 +97,7 @@ Returns the root `IPublishedContent` from the Content tree
 Queries the XML Cache for Content matching a given xpath query and returns a collection of `IPublished` objecs.
 
     @{
-        var newsArticles = Umbraco.ContentAtXPath("//newsArticle");
+        var newsArticles = Umbraco.TypedContentAtXPath("//newsArticle");
         var bd = newsArticles.First().GetPropertyValue("bodyText")
     }
 
@@ -106,7 +106,7 @@ Queries the XML Cache for Content matching a given xpath query and returns a col
 Queries the XML Cache for Content matching a given Xpath query, returns first match as an `IPublished` object.
 
     @{
-        var newsArticles = Umbraco.ContentAtXPath("//newsArticle");
+        var newsArticles = Umbraco.TypedContentAtXPath("//newsArticle");
         var bd = newsArticles.First().GetPropertyValue("bodyText")
     }
 
