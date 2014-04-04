@@ -8,12 +8,13 @@ _This section will focus on how to use the MVC rendering engine in Umbraco such 
 
 All Umbraco views inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage` which exposes many properties that are available in razor:
 
-* @Umbraco (of type `Umbraco.Web.UmbracoHelper`) -> contains many helpful methods, from rendering macros and fields to retreiving content based on an Id and tons of other helpful methods. This is essentially the replacement for the 'library' object in the old codebase.
+* @Umbraco (of type `Umbraco.Web.UmbracoHelper`) -> contains many helpful methods, from rendering macros and fields to retreiving content based on an Id and tons of other helpful methods. This is essentially the replacement for the 'library' object in the old codebase. [UmbracoHelper Documentation](../../Querying/UmbracoHelper/index.md)
 * @Html (of type `HtmlHelper`) -> the same HtmlHelper you know and love from Microsoft but we've added a bunch of handy extension methods like @Html.BeginUmbracoForm
 * @CurrentPage (of type `DynamicPublishedContent`) -> the dynamic representation of the current page model which allows dynamic access to fields and also dynamic Linq
 * @Model (of type `Umbraco.Web.Mvc.RenderModel`) -> the model for the view which contains a property called Content which gives you accesss to the typed current page (of type IPublishedContent). 
-* @UmbracoContext (of type `Umbraco.Web.UmbracoContext1)
+* @UmbracoContext (of type `Umbraco.Web.UmbracoContext`)
 * @ApplicationContext (of type `Umbraco.Core.ApplicationContext`)
+* @Members (of type `Umbraco.Web.Security.MemberShipHelper`) [MemberShipHelper Documentation](../../Querying/MemberShipHelper/index.md)
 
 ##Rendering a field with UmbracoHelper
 This is probably the most used method which simply renders the contents of a field for the current content item.
@@ -75,6 +76,23 @@ This renders a macro with some parameters using an anonymous object:
 This renders a macro with some parameters using a dictionary
 
 	@Umbraco.RenderMacro("myMacroAlias", new Dictionary<string, object> {{ "name", "Ned"}, { "age", 27}})
+
+
+[UmbracoHelper Documentation](../../Querying/UmbracoHelper/index.md)
+
+
+##Accessing Member data
+
+**Added in (7.1 and 6.2)** `@Members` is the gateway to everything related to members when templating your site. [MemberShipHelper Documentation](../../Querying/MemberShipHelper/index.md)
+
+	@if(Members.IsLoggedIn()){
+	   var profile = Members.GetCurrentMemberProfileModel();
+	   var umbracomember = Members.GetByUsername(profile.UserName);
+	   
+	    <h1>@umbracomember.Name</h1>
+	    <p>@umbracomember.GetPropertyValue<string>("bio")</p>
+	}
+
 
 ## Bundling and Minification
 
