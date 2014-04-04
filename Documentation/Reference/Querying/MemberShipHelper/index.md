@@ -1,20 +1,20 @@
-#MemberShiphelper
+#Membershiphelper
 
-_MemberShipHelper is a general helper class for access asp.net membership data, as well as Umbraco Member data, which are stored in a format similiar to Umbraco content and media_
+_MembershipHelper is a general helper class for access asp.net membership data, as well as Umbraco Member data, which are stored in a format similiar to Umbraco content and media_
 
-`MemberShipHelper` also has a variety of helper methods that are useful when working in your views, controllers and webforms classes.
+`MembershipHelper` also has a variety of helper methods that are useful when working in your views, controllers and webforms classes.
 
-`MemberShipHelper` is also available from within [Partial View Macros](../../Templating/Macros/Partial-View-Macros/index.md) which is why Partial View Macro's are the recommended macro format (which work in both MVC and WebForms).
+`MembershipHelper` is also available from within [Partial View Macros](../../Templating/Macros/Partial-View-Macros/index.md) which is why Partial View Macro's are the recommended macro format (which work in both MVC and WebForms).
 
-##How to reference MemberShipHelper?
+##How to reference MembershipHelper?
 When working in templating, this helper will automatically be there for you to use as `@Members` which means you conveniently in your templates easily can access member data:
 
 	@Members.IsLoggedIn();
 	@Members.GetCurrentMemberProfileModel();
 
-If you need a MemberShipHelper in a custom class, service, view, etc... you can easily create one using this syntax:
+If you need a MembershipHelper in a custom class, service, view, etc... you can easily create one using this syntax:
 
-	var memberShipHelper = new Umbraco.Web.Security.MemberShipHelper(Umbraco.Web.UmbracoContext.Current);
+	var memberShipHelper = new Umbraco.Web.Security.MembershipHelper(Umbraco.Web.UmbracoContext.Current);
 
 ##ProfileModel and IPublishedContent 
 When looking up Members, member data is returned as `IPublishedContent`, which is the same format used for Content and Media, so referencing member properties should
