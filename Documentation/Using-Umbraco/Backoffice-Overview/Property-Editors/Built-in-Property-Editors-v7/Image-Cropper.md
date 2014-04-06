@@ -66,7 +66,14 @@ dynamic object.
         @if (CurrentPage.HasValue("image"))
         {
             <img src='@Model.Content.GetCropUrl(propertyAlias: "image", height:300, width:400)'/>
-        }       
+        }
+
+####Media example
+
+The cropped URL can also be found for media in a similar way:
+
+    @Umbraco.Media(1234).GetCropUrl("banner")
+    @Umbraco.TypedMedia(1234).GetCropUrl("banner")
 
 ###Data returned
 
