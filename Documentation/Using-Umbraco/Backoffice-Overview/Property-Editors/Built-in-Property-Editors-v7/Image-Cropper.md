@@ -68,7 +68,7 @@ dynamic object.
             <img src='@Model.Content.GetCropUrl(propertyAlias: "image", height:300, width:400)'/>
         }
 
-####Media example to output a "banner" crops from a cropper property with alias "umbracoFile"
+####Media example to output a "banner" crop from a cropper property with alias "umbracoFile"
 
 The cropped URL can also be found for media in a similar way:
 
