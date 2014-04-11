@@ -2,7 +2,7 @@
 
 This page contains a list of all the built-in Umbraco  v7+ property editors and a short description of what they do:
 
-##[Checkbox list](Checkbox-List.md)
+##[Checkbox list](CheckBox-List.md)
 Displays a list of preset values as a list of checkbox controls
 
 ##Color Picker
