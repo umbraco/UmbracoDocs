@@ -20,11 +20,14 @@ This guide doesn’t cover the installation of Umbraco – follow the instructio
  
 ![Umbraco Installation Splash Screen](images/figure-1-installation-splash-screen.png?raw=true)
 
+
 *Figure 1 - Installation Splash Screen - note the Customize link*
 
 
 
 ![Install a starter website](images/figure-2-no-starter-website.png?raw=true)
+
+
 *Figure 2 - Install a starter website - No Thanks!*
 
 
@@ -35,6 +38,8 @@ When you hit your local host address (http://localhost or whatever you’ve set 
 
  
 ![This is correct – we have a blank, empty Umbraco website](images/figure-3-empty-umbraco-install.png?raw=true)
+
+
 *Figure 3 - This is correct – we have a blank, empty Umbraco website!*
 
 If you can see the Umbraco Starter kit site you’ve missed the option to install Umbraco with no starter site.  
@@ -53,6 +58,8 @@ Now unzip the Initializr contents to a folder onto your desktop (or a place of y
 
  
 ![The Initializr Template](images/figure-5-initializr-template.png?raw=true)
+
+
 *Figure 5 - The Initializr Template*
 
 
@@ -60,6 +67,8 @@ Log into your Umbraco installation (e.g. go to http://localhost/umbraco in your 
 
  
 ![A barren, empty Umbraco installation](images/figure-6-umbraco-empty.png?raw=true)
+
+
 *Figure 6 - A barren, empty Umbraco installation*
 
 
