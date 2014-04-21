@@ -56,9 +56,9 @@ In red at the top you’ll see “_Enter a name..._” click this and enter a name (on
 Fill in the following on the **_Contents_** tab:
 
 
->**__Page Title_** 	Welcome to Widgets Ltd
+>**_Page Title_** 	Welcome to Widgets Ltd
 >
->**__>Body Text_** 	Hello world! We can write what we like here!
+>**_Body Text_** 	Hello world! We can write what we like here!
 >
 >
 >Widgets Ltd 2014” 
