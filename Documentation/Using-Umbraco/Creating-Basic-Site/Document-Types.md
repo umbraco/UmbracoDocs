@@ -1,6 +1,7 @@
 #Document Types
 
-## Data first – nothing in = nothing out!
+## Data first 
+### nothing in = nothing out!
 
 Step 1 of any site is to create a “**_Document Type_**” – after a few installations you’ll speak this terminology but at the start it’s a little bit bewildering.  A **_Document Type_** is a data container in Umbraco where you can add data fields / attributes where the editor user can input data and Umbraco can use it to output it in the relevant part of a “**_template_**” (more on these later).  
 
@@ -76,36 +77,22 @@ Ignore the rest of the fields for now and click the green **_Save_** button at t
 
 
 Repeat this step, clicking the **_Click here to add a new property link_** at the top of the **_Generic Properties tab_** and create these (remembering to click **_Save_** each time):
-```
-**_Name_**: 	Body Text
+
+|**_Name_**: |	Body Text |
+|  --------- |  --------- |
+|**_Alias_**: |	bodyText|
+|**_Type_**: |	Richtext editor _(click the arrow on the Type field!)|
+|**_Tab:_** |	Contents|
+|**_Description_**: |	The main content of the page.| 
 
 
-**_Alias_**: 	bodyText
+|**_Name_**:  |	Footer Text|
+|  --------- |  --------- |
+|**_Alias_**: |	footerText|
+|**_Type_**: |	Textstring |
+|**_Tab:_** 	| Footer _(remember to change this!)|
+|**_Description_**: 	| Copyright notice for the footer.  |
 
-
-**_Type_**: 	Richtext editor _(click the arrow on the Type field!)_
-
-
-**_Tab:_** 	Contents
-
-
-**_Description_**: 	The main content of the page. 
-
-
-**_Name_**:  	Footer Text
-
-
-**_Alias_**: 	footerText
-
-
-**_Type_**: 	Textstring 
-
-
-**_Tab:_** 	Footer _(remember to change this!)
-
-
-**_Description_**: 	Copyright notice for the footer.  
-```
 
 You should now have a **_Generic Properties tab_** that looks like this:
 
