@@ -27,12 +27,9 @@ Adding the CSS and Javascript for your site into Umbraco.
 How to wire the Umbraco Data Fields into the templates to output the editor's data in the right place.
 
 
-##[Creating More Pages](Creating-More-Pages.md)
-Expanding on our single homepage example we create more pages.
- 
 
 ##[Creating Master Template Part 1](Creating-Master-Template-Part-1.md)
-How to create a Master Template and use this to minimise duplicate HTML code in your templates.
+How to create a Master Template and use this to create more pages whilst minimisind duplicate HTML code from your flat source files.
 
 
 ##[Creating Master Template Part 2](Creating-Master-Template-Part-2.md)

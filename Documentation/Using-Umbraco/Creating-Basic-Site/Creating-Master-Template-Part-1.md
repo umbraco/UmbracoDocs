@@ -14,16 +14,18 @@ To start we’re going to unpick a little bit of what we did in creating the homep
 #Create a Master Template 
 
 
-Go to the **_Settings > Templates _** and open up the tree.  At the moment we just have our **_Homepage_** template.  Hover over the **_Templates_** menu and click the menu **_..._** button. Create a new template called Master, click **_+ Create _**and then give it the name “_Master”_ . Remember to click **_Save_**. 
+Go to the **_Settings > Templates_** and open up the tree.  At the moment we just have our **_Homepage_** template.  Hover over the **_Templates_** menu and click the menu **_..._** button. Create a new template called Master, click **_+ Create_**and then give it the name "_Master_" . Remember to click **_Save_**. 
 
 
-![IMAGETITLE](images/FILENAME.png?raw=true)
+![Master Template](images/figure-22-master-template.png?raw=true)
 
 
 *Figure 22 - Master Template**
 
 
-Now we’re going to move the **_Homepage_** template under the **_Master_** template. To do this select the **_Settings > Homepage node_** and from the **_Properties tab >Master template drop down_** select “_Master”_ and then click **_Save_**.  This will update the Razor code section to change “_Layout = null_”; to _“Layout = “Master.cshtml”” _(you may have to click off the **_Homepage node_** and back on to see this update – a bug that will be fixed in a future release of Umbraco). 
+Now we’re going to move the **_Homepage_** template under the **_Master_** template. To do this select the **_Settings > Homepage node_** and from the **_Properties tab > Master template drop down_** select “_Master”_ and then click **_Save_**.  This will update the Razor code section to change “_Layout = null_”; to _“Layout = “Master.cshtml”” 
+
+_NOTE: You may have to click off the **_Homepage node_** and back on to see this update – a bug that will be fixed in a future release of Umbraco. 
 
 
 ![Homepage Template now sits under the Master](images/figure-23-homepage-has-master-template.png?raw=true)
@@ -32,7 +34,7 @@ Now we’re going to move the **_Homepage_** template under the **_Master_** templ
 *Figure 23 - Homepage Template now sits under the Master*
 
 
-Now we need to move the parts of our HTML template that are common across all pages into the **_Master_**. This is where as a developer you might need to use your brain as it will be slightly different for different websites – e.g. do all pages have a <div id=”main”> as so can we put this in the master or does this belong to only certain pages? For this site we’ll assume this is part of the child page. Cut everything from the closing curly brace to line 37 `<div id=”main-container”>` - we’re going to move the header and nav of the site to the master template. Cut this and click **_Save_**. 
+Now we need to move the parts of our HTML template that are common across all pages into the **_Master_**. This is where as a developer you might need to use your brain as it will be slightly different for different websites – e.g. do all pages have a `<div id=”main”>` as so can we put this in the master or does this belong to only certain pages? For this site we’ll assume this is part of the child page. Cut everything from the closing curly brace to line 37 `<div id=”main-container”>` - we’re going to move the header and nav of the site to the master template. Cut this and click **_Save_**. 
 
 
 ![Homepage Template After Cutting the Header](images/figure-24-homepage-after-cutting-the-header.png?raw=true)
@@ -61,7 +63,7 @@ At the end of this markup we need to tell Umbraco to insert the child template’s
 Now we’ll do the same with the footer content. Cut everything from the opening of the _footer-container _div (approximately line 33) from the **_Settings > Templates > Homepage > template tab_**, click **_Save_** and then paste this into the **_Master_** template under the **_@RenderBody_** field we’ve just added. Remember to click **_Save_**. 
 
 
-![Completed Master Template](images/figure-27-master-template-complete.png.png?raw=true)
+![Completed Master Template](images/figure-27-master-template-complete.png?raw=true)
 
 
 *Figure 27 – Completed Master Template*
@@ -119,7 +121,7 @@ Now we’ve done a lot of work – and what we should see if we refresh our localhos
 </html>
 
 ```
-	
+
 *Figure 28 - Complete Master Template*
 
 ```
@@ -157,7 +159,8 @@ Now we’ve done a lot of work – and what we should see if we refresh our localhos
 	</div> <!-- #main-container -->
 
 ```	
-	
-	*Figure 29 - Complete Homepage Template*
+
+*Figure 29 - Complete Homepage Template*
+
 
 >If you’re new to these concepts then I don’t think what we’ve just done is going to make much sense until we make our next page. 

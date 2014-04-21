@@ -1,14 +1,16 @@
 #Creating More Pages Using the Master – Contact Us
 
 
-37.  We’re now going to make a simple page where we’ll just put our contact details. For added functionality you might want to look at replacing this with a contact us form – see http://our.umbraco.org/projects/tag/contact%20form . For now let’s create a simple page – a page where the user can provide a title and some rich text. This is very similar to our homepage document type at the moment but we’re assuming that you’ll go and develop this into something very specific (e.g. adding the featured article and other article content blocks). 
+We’re now going to make a simple page where we’ll just put our contact details. For added functionality you might want to look at replacing this with a contact us form – see http://our.umbraco.org/projects/tag/contact%20form . For now let’s create a simple page – a page where the user can provide a title and some rich text. This is very similar to our homepage document type at the moment but we’re assuming that you’ll go and develop this into something very specific (e.g. adding the featured article and other article content blocks). 
 
 
-38.  Go to **_Settings > Document Types_** (hover) **_> ... > + Create_** .  Let’s create one called “_Simple Content Page_”. Leave the **_Master Document Type_** drop down to “_none..._” (the use of allows you to inherit property types from parents, I’d recommend you don’t use it unless there is a definite need) but we’ll create a matching template so leave this checked. 
-39.  Firstly let’s select an **_Icon_** – type the word “_Content_” into the filter and select the document icon. In description type “A simple content page”, leave the **_Allowed Templates_** as it is (e.g. only **_Simple Content_** page checked).  Click **_Save_**.
+3Go to **_Settings > Document Types_** (hover) **_> ... > + Create_** .  Let’s create one called “_Simple Content Page_”. Leave the **_Master Document Type_** drop down to “_none..._” (the use of allows you to inherit property types from parents, I’d recommend you don’t use it unless there is a definite need) but we’ll create a matching template so leave this checked. 
 
 
-40.  Now click on the **_Settings > Templates (hover) > ..._** and then **_Reload Nodes.  _**Click on your**_ Simple Content Paqe node _**and then the**_ Properties tab_**. Change the **_Master template_** drop down to select value “_Master_” – this will mean that we’ll get the header and footer from the master just as we do in the Homepage template.  Click **_Save_** then load the **_Template tab_** you should see the portion of Razor code has updated to say _“Layout =”Master.cshtml”” _if it hasn’t updated itself click on a different node and then back again to reload it. Now add the following HTML to the template and click **_Save_**. 
+Firstly let’s select an **_Icon_** – type the word “_Content_” into the filter and select the document icon. In description type “A simple content page”, leave the **_Allowed Templates_** as it is (e.g. only **_Simple Content_** page checked).  Click **_Save_**.
+
+
+Now click on the **_Settings > Templates (hover) > ..._** and then **_Reload Nodes.  _**Click on your**_ Simple Content Paqe node _**and then the**_ Properties tab_**. Change the **_Master template_** drop down to select value “_Master_” – this will mean that we’ll get the header and footer from the master just as we do in the Homepage template.  Click **_Save_** then load the **_Template tab_** you should see the portion of Razor code has updated to say _“Layout =”Master.cshtml”” _if it hasn’t updated itself click on a different node and then back again to reload it. Now add the following HTML to the template and click **_Save_**. 
 
 <div id="main-container">
 
