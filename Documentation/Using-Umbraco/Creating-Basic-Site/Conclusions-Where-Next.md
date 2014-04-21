@@ -8,9 +8,8 @@ This is not the limit of Umbraco – you’ve barely scratched the surface in this g
 *    There is also a wiki (of which the intention is to use this guide to populate the “Creating a basic site with Umbraco” section). http://our.umbraco.org/documentation 
 *    For help and guidance on anything this guide doesn’t cover the forums are a great place to start:
 *    http://our.umbraco.org/forum 
-*    This guide was produced by Steve Morgan of Siempre Solutions – for more info contact him via http://www.siempresolutions.co.uk 
+*    This guide was created by Steve Morgan of Siempre Solutions – for more info contact him via http://www.siempresolutions.co.uk 
 
 
 ---
 #Happy Umbraco-ing!
----
