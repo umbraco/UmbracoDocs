@@ -78,3 +78,7 @@ Now click the green **_Save and publish_** button.  The menu will reload with ou
 
 *Figure 16 – An Unstyled Homepage*
 
+
+---
+##Next - [CSS & Javascript](CSS-And-Javascript.md)
+Adding the CSS and Javascript for your site into Umbraco.

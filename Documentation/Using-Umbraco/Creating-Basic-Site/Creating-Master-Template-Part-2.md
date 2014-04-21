@@ -119,3 +119,7 @@ Highlight the Umbraco field in the footer `<h3>` tags and then click the **_Inse
 
 Click **_Save_** and reload our Contact Us page. 
 
+
+---
+##Next - [Master Template The Menu](Master-Template-The-Menu.md)
+A simple solution for the template in the menu. 

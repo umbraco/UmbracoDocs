@@ -164,3 +164,8 @@ Now we’ve done a lot of work – and what we should see if we refresh our localhos
 
 
 >If you’re new to these concepts then I don’t think what we’ve just done is going to make much sense until we make our next page. 
+
+
+---
+##Next - ##[Creating Master Template Part 2](Creating-Master-Template-Part-2.md)
+Part 2 - using the Master template to create new page types. 

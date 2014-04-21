@@ -16,3 +16,8 @@ Next copy the **_scripts_** folder from the **js** directory of the initializr t
 
 
 Now in dev tools when looking at the http://localhost page you should find that the network tab doesn’t report any missing assets - if it does have a look and fix any typos / check the files are in the right places! 
+
+---
+
+##Next - [Outputting the Umbraco Data Fields](Outputting-the-Umbraco-Data-Fields.md)
+How to wire the Umbraco Data Fields into the templates to output the editor's data in the right place.

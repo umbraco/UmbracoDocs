@@ -19,4 +19,6 @@ Now let’s fix the menu – there are two ways of doing this, you could have Umbrac
 
 **_Save_** your changes and let’s test our menu. You’ll find that clicking on the Article link throws an Umbraco error as we’ve not created this page yet. Let’s do that now.
 
-
+---
+##Next - [Articles Parent and Article Items](Articles-Parent-and-Article-Items.md)
+How to have a parent page that lists and links to the child nodes automatically (e.g. Aricles home with infinite articles - useful for Blogs or News pages). 
