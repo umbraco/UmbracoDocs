@@ -24,7 +24,7 @@ This guide doesn’t cover the installation of Umbraco – follow the instructio
 
 
  
-**
+![Umbraco Installation Splash Screen](images/figure-1-installation-splash-screen.png?raw=true)
 ****Figure 1 - Installation Splash Screen - note the Customize link**
 
 
