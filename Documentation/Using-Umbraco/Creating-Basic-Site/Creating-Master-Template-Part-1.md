@@ -167,5 +167,5 @@ Now we’ve done a lot of work – and what we should see if we refresh our localhos
 
 
 ---
-##Next - ##[Creating Master Template Part 2](Creating-Master-Template-Part-2.md)
+##Next - [Creating Master Template Part 2](Creating-Master-Template-Part-2.md)
 Part 2 - using the Master template to create new page types. 
