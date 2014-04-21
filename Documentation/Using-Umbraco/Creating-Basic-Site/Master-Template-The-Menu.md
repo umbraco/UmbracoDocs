@@ -14,8 +14,12 @@
 	</ul>
 
 </nav>
-**
-****Figure 34 - Master Template - Menu / Nav Section**
+
+
+![IMAGETITLE](images/FILENAME.png?raw=true)
+
+
+*Figure 34 - Master Template - Menu / Nav Section*
 52.  **_Save_** your changes and let’s test our menu. You’ll find that clicking on the Article link throws an Umbraco error as we’ve not created this page yet. Let’s do that now.
 
 

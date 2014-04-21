@@ -46,6 +46,8 @@ If you can see the Umbraco Starter kit site you’ve missed the option to instal
 
  
 ![You should NOT see this!](images/figure-4-should-not-see-this.png?raw=true)
+
+
 *Figure 4- You should NOT see this!*
 
 

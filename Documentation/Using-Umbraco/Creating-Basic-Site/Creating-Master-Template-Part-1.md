@@ -1,34 +1,46 @@
 #Create a Master Template 
+
+
 30.  Go to the **_Settings > Templates _**and open up the tree.  At the moment we just have our **_Homepage_** template.  Hover over the **_Templates_** menu and click the menu **_..._** button. Create a new template called Master, click **_+ Create _**and then give it the name “_Master”_ . Remember to click **_Save_**. 
 
- 
-**
-****Figure 19 - Master Template**
+![IMAGETITLE](images/FILENAME.png?raw=true)
+
+
+*Figure 19 - Master Template**
 31.  Now we’re going to move the **_Homepage_** template under the **_Master_** template. To do this select the **_Settings > Homepage node_** and from the **_Properties tab >Master template drop down_** select “_Master”_ and then click **_Save_**.  This will update the Razor code section to change “_Layout = null_”; to _“Layout = “Master.cshtml”” _(you may have to click off the **_Homepage node_** and back on to see this update – a bug that will be fixed in a future release of Umbraco). 
 
-> 
-**
-****Figure 20 - Homepage Template now sits under the Master**
+
+![IMAGETITLE](images/FILENAME.png?raw=true)
+
+
+*Figure 20 - Homepage Template now sits under the Master*
 32.  Now we need to move the parts of our HTML template that are common across all pages into the **_Master_**. This is where as a developer you might need to use your brain as it will be slightly different for different websites – e.g. do all pages have a <div id=”main”> as so can we put this in the master or does this belong to only certain pages? For this site we’ll assume this is part of the child page. Cut everything from the closing curly brace to line 37 _<div id=”main-container”>_ - we’re going to move the header and nav of the site to the master template. Cut this and click **_Save_**. 
 
-> 
-**
-****Figure 21 - Homepage Template After Cutting the Header**
+
+![IMAGETITLE](images/FILENAME.png?raw=true)
+
+
+*Figure 21 - Homepage Template After Cutting the Header*
 33.  Now click on your **_Master_** template and paste this HTML markup after the closing curly brace and remember to click **_Save_**.
 
-> 
-**
-****Figure 22 - Master Template after Pasting the Header**
+
+![IMAGETITLE](images/FILENAME.png?raw=true)
+
+*Figure 22 - Master Template after Pasting the Header*
 34.  At the end of this markup we need to tell Umbraco to insert the child template’s content – this is done by adding the code **_@RenderBody()_** at the end (around line 37). Click **_Save_**. 
 
-> 
-**
-****Figure 23 - Adding RenderBody() to the Master Template**
+
+![IMAGETITLE](images/FILENAME.png?raw=true)
+
+
+*Figure 23 - Adding RenderBody() to the Master Template*
 35.  Now we’ll do the same with the footer content. Cut everything from the opening of the _footer-container _div (approximately line 33) from the **_Settings > Templates > Homepage > template tab_**, click **_Save_** and then paste this into the **_Master_** template under the **_@RenderBody_** field we’ve just added. Remember to click **_Save_**. 
 
-> 
-**
-****Figure 24 – Completed Master Template**
+
+![IMAGETITLE](images/FILENAME.png?raw=true)
+
+
+*Figure 24 – Completed Master Template*
 36.  Now we’ve done a lot of work – and what we should see if we refresh our localhost page is nothing has changed!  If you have a compilation error you’ve perhaps mistyped **_@RenderBody()_**. If you’re missing any content (header or footer) check that what you have in the templates matches the following:
 
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
@@ -125,10 +137,12 @@
 
 </html>
 
-			
-**
-********Figure 25 - Complete Master Template
-**
+	
+![IMAGETITLE](images/FILENAME.png?raw=true)
+
+	
+*Figure 25 - Complete Master Template*
+
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
 @{
@@ -192,7 +206,10 @@
 		</div> <!-- #main -->
 
 	</div> <!-- #main-container -->
-**
-****Figure 26 - Complete Homepage Template**
+
+	
+	![IMAGETITLE](images/FILENAME.png?raw=true)
+	
+	*Figure 26 - Complete Homepage Template*
 
 >If you’re new to these concepts then I don’t think what we’ve just done is going to make much sense until we make our next page. 
