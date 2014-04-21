@@ -14,7 +14,7 @@ To start we’re going to unpick a little bit of what we did in creating the homep
 #Create a Master Template 
 
 
-Go to the **_Settings > Templates_** and open up the tree.  At the moment we just have our **_Homepage_** template.  Hover over the **_Templates_** menu and click the menu **_..._** button. Create a new template called Master, click **_+ Create_**and then give it the name "_Master_" . Remember to click **_Save_**. 
+Go to the **_Settings > Templates_** and open up the tree.  At the moment we just have our **_Homepage_** template.  Hover over the **_Templates_** menu and click the menu **_..._** button. Create a new template called Master, click **_+ Create_** and then give it the name "_Master_" . Remember to click **_Save_**. 
 
 
 ![Master Template](images/figure-22-master-template.png?raw=true)
@@ -23,9 +23,9 @@ Go to the **_Settings > Templates_** and open up the tree.  At the moment we jus
 *Figure 22 - Master Template**
 
 
-Now we’re going to move the **_Homepage_** template under the **_Master_** template. To do this select the **_Settings > Homepage node_** and from the **_Properties tab > Master template drop down_** select “_Master”_ and then click **_Save_**.  This will update the Razor code section to change “_Layout = null_”; to _“Layout = “Master.cshtml”” 
+Now we’re going to move the **_Homepage_** template under the **_Master_** template. To do this select the **_Settings > Homepage node_** and from the **_Properties tab > Master template drop down_**, select _“Master”_ and then click **_Save_**.  This will update the Razor code section to change `Layout = null;` to `Layout = "Master.cshtml";` 
 
-_NOTE: You may have to click off the **_Homepage node_** and back on to see this update – a bug that will be fixed in a future release of Umbraco. 
+>NOTE: You may have to click off the **_Homepage node_** and back on to see this update – a bug that will be fixed in a future release of Umbraco. 
 
 
 ![Homepage Template now sits under the Master](images/figure-23-homepage-has-master-template.png?raw=true)
@@ -34,7 +34,7 @@ _NOTE: You may have to click off the **_Homepage node_** and back on to see this
 *Figure 23 - Homepage Template now sits under the Master*
 
 
-Now we need to move the parts of our HTML template that are common across all pages into the **_Master_**. This is where as a developer you might need to use your brain as it will be slightly different for different websites – e.g. do all pages have a `<div id=”main”>` as so can we put this in the master or does this belong to only certain pages? For this site we’ll assume this is part of the child page. Cut everything from the closing curly brace to line 37 `<div id=”main-container”>` - we’re going to move the header and nav of the site to the master template. Cut this and click **_Save_**. 
+Now we need to move the parts of our HTML template that are common across all pages into the **_Master_**. This is where as a developer you might need to use your brain as it will be slightly different for different websites – e.g. do all pages have a `<div id="main">` as so can we put this in the master or does this belong to only certain pages? For this site we’ll assume this is part of the child page. Cut everything from the closing curly brace to line 37 `<div id="main-container">` - we’re going to move the header and nav of the site to the master template. Cut this and click **_Save_**. 
 
 
 ![Homepage Template After Cutting the Header](images/figure-24-homepage-after-cutting-the-header.png?raw=true)
