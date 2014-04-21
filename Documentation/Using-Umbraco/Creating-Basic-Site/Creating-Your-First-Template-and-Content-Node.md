@@ -1,7 +1,7 @@
 #Creating (Editing) Your First Template
 
 
-Next click the expand node icon (it’s the small triangle) ? behind the **_Settings >_** **_Templates folder_** – you should then see a child node titled “_Homepage_” – we created this automatically when we created the **_Document Type_** (remember that checkbox?).  
+Next click the expand node icon (it’s the small triangle) behind the **_Settings >_** **_Templates folder_** – you should then see a child node titled “_Homepage_” – we created this automatically when we created the **_Document Type_** (remember that checkbox?).  
 
 >NOTE – in early versions of 7.1 the tree doesn’t automatically refresh to show you this, if it’s missing try a hard refresh of Umbraco (Ctrl+F5) – should be fixed soon. 
 

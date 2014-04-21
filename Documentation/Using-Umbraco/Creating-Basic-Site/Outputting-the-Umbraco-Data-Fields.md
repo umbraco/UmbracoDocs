@@ -24,7 +24,7 @@ Go to the **_Settings > Templates > Homepage_**. Scroll down and highlight the t
 Click the button **_Insert Umbraco Page Field_** and under the **_Choose field _** drop down select **_pageTitle_** from the **_Custom Fields_** section. 
 
 
-![Umbraco Page Field](images/figure-19-umbraco-page-field.png.png?raw=true)
+![Umbraco Page Field](images/figure-19-umbraco-page-field.png?raw=true)
 
 
 *Figure 19 - Umbraco Page Field*
@@ -33,7 +33,7 @@ Click the button **_Insert Umbraco Page Field_** and under the **_Choose field _
 Click the green **_Insert_** button then the **_Save_** button.  
 
 
-Next do the same for the content between the “_<header></header>_” tags (around lines 42 -43) using field **_bodyText_**.  Again click the **_Insert_** and then **_Save _**buttons. 
+Next do the same for the content between the `<header></header>` tags (around lines 42 -43) using field **_bodyText_**.  Again click the **_Insert_** and then **_Save_** buttons. 
 
 
 ![Replacing the bodyText with the Umbraco Page Field](images/figure-20-replace-bodytext-with-page-field.png?raw=true)
@@ -42,7 +42,7 @@ Next do the same for the content between the “_<header></header>_” tags (around 
 *Figure 20 - Replacing the bodyText with the Umbraco Page Field*
 
 
-Finally we do the footer – between the <h3></h3> tags in the footer div (line 68). 
+Finally we do the footer – between the `<h3></h3>` tags in the footer div (line 68). 
 
 ![Replacing the Footer Text with the relevant Umbraco Page Field](images/figure-21-footer-text.png?raw=true)
 
