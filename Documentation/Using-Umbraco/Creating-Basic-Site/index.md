@@ -15,8 +15,8 @@ To follow this guide please work through this section first.
 How to create Document Types and what they do.
 
 
-##[Creating Your First Template](Creating-Your-First-Template.md)
-How to create your first template. 
+##[Creating Your First Template and Content Node](Creating-Your-First-Template-and-Content-Node.md)
+How to create your first template and create a content node. 
 
 
 ##[CSS & Javascript](CSS-And-Javascript.md)
