@@ -1,13 +1,6 @@
 #This section is work-in-progress
 
-###Progress
-Consult the Umbraco 4 documentation trello board to see what we are currently working on.
-[See the TrelloBoard here](https://trello.com/board/umbraco-4-documentation/4fdb02df8fc3ef067e809e95)
-
-###Contribution
-Umbraco is a community powered project and we welcome any contribution, big or small, even fixing a typo is a valuable contribution.
-[See how to contribute](https://github.com/umbraco/Umbraco4Docs)
-
+## Introduction
 The idea of this section of the documentation is to take you step by step through an Umbraco website build. It will allow you to take any website “template” (e.g. flat HTML, CSS and JS) and install it into a fresh Umbraco and wire up the sections that need content managing in Umbraco.  Umbraco is a seriously powerful CMS but many find the learning curve of installing a website from scratch a little too much – this guide aims to explain the mysteries!
 
 
@@ -56,3 +49,13 @@ How to have a parent page that lists and links to the child nodes automatically 
 
 ##[Conclusions and Where Next?](Conclusions-Where-Next.md)
 By this point you'll have a basic working site - where next?  You've barely scratched the surface of the power of Umbraco!
+
+---
+###Progress
+Consult the Umbraco 4 documentation trello board to see what we are currently working on.
+[See the TrelloBoard here](https://trello.com/board/umbraco-4-documentation/4fdb02df8fc3ef067e809e95)
+
+###Contribution
+Umbraco is a community powered project and we welcome any contribution, big or small, even fixing a typo is a valuable contribution.
+[See how to contribute](https://github.com/umbraco/Umbraco4Docs)
+
