@@ -4,8 +4,8 @@ What we now have is a fully fledged working site! Hopefully this guide should ha
 
 This is not the limit of Umbraco – you’ve barely scratched the surface in this guide.
 
-*    For further reading / exercises I’d recommend working through the video tutorials: http://umbraco.com/help-and-support/video-tutorials.aspx
-*    There is also a wiki (of which the intention is to use this guide to populate the “Creating a basic site with Umbraco” section). http://our.umbraco.org/documentation 
+*    For further reading / exercises I’d recommend working through the video tutorials: http://umbraco.tv/videos/umbraco-v7/implementor/
+*    There is also the online Official Documentation. http://our.umbraco.org/documentation 
 *    For help and guidance on anything this guide doesn’t cover the forums are a great place to start:
 *    http://our.umbraco.org/forum 
 *    This guide was created by Steve Morgan of Siempre Solutions – for more info contact him via http://www.siempresolutions.co.uk 

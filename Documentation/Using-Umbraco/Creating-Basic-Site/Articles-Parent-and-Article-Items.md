@@ -98,6 +98,8 @@ Now check this in the browser!
 
 
 ![Finished Articles Page](images/figure-43-finished-articles-page.png?raw=true)
+
+
 *Figure 43 - Finished Articles Page*
 
 
