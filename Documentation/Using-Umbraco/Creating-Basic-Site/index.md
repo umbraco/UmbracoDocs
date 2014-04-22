@@ -23,8 +23,8 @@ How to create your first template and create a content node.
 Adding the CSS and Javascript for your site into Umbraco.
 
 
-##[Outputting the Umbraco Data Fields](Outputting-the-Document-Type-Properties.md)
-How to wire the Umbraco Data Fields into the templates to output the editor's data in the right place.
+##[Outputting the Document Type Properties](Outputting-the-Document-Type-Properties.md)
+How to wire the Document Type Properties (Umbraco Data Fields) into the templates to output the editor's data in the right place.
 
 
 ##[Creating Master Template Part 1](Creating-Master-Template-Part-1.md)
