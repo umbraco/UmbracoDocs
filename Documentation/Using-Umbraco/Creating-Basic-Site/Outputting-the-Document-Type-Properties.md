@@ -1,15 +1,15 @@
 #Outputting the Document Type Properties
 
-What you’ll notice though is that our content we added to the homepage isn’t being output. We need to wire up the data type properties (the data fields we've created in Umbraco that the editors can edit) to the template.  Let’s look at our template and identify where the data fields we created before should go.  
+What you’ll notice though is that our content we added to the homepage isn’t being output. We need to wire up the data type properties (the data fields we've created in Umbraco that the editors can edit) to the template.  Let’s look at our template and identify where the data properties we created before should go.  
 
 
-![Where our Data Fields Content Should be Output](images/figure-17-where-our-data-fields-go.png?raw=true)
+![Where our Data Properties Content Should be Output](images/figure-17-where-our-data-fields-go.png?raw=true)
 
 
-*Figure 17 - Where our Data Fields Content Should be Output*
+*Figure 17 - Where our Data Property Content Should be Output*
 
 
-We’ve marked in blue where we want our data field content to be output. Now we need to wire up the relevant fields. 
+We’ve marked in blue where we want our data property content to be output. Now we need to wire up the relevant properties. 
 
 
 Go to the **_Settings > Templates > Homepage_**. Scroll down and highlight the text `“h1#title”` around line 27. 
@@ -18,7 +18,7 @@ Go to the **_Settings > Templates > Homepage_**. Scroll down and highlight the t
 ![Preparing to replace the hardcoded text with an Umbraco Page Field](images/figure-18-replace-hardcoded-text-with-umbraco-page-field.png?raw=true)
 
 
-*Figure 18 - Preparing to replace the hardcoded text with an Umbraco Page Field*
+*Figure 18 - Preparing to replace the hardcoded text with an Umbraco Data Property*
 
 
 Click the button **_Insert Umbraco Page Field_** and under the **_Choose field_** drop down select **_pageTitle_** from the **_Custom Fields_** section. 
@@ -27,7 +27,7 @@ Click the button **_Insert Umbraco Page Field_** and under the **_Choose field_*
 ![Umbraco Page Field](images/figure-19-umbraco-page-field.png?raw=true)
 
 
-*Figure 19 - Umbraco Page Field*
+*Figure 19 - Umbraco Page Field / Property*
 
 
 Click the green **_Insert_** button then the **_Save_** button.  
