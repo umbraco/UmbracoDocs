@@ -39,7 +39,7 @@ We’re now ready to create our first page in Umbraco!   Click the **_Content_** b
 Hover over the grey text **_CONTENT_**  and you’ll see the three dots **_..._** – click this.  If you’ve done everything correctly so far you should see the option to create our Homepage! 
 
 
-![Create a Homepage](images/figure-14-homepage-template-with-initializr-html.png?raw=true)
+![Create a Homepage](images/figure-15-create-a-homepage.png?raw=true)
 
 *Figure 15 – Create a Homepage*
 
