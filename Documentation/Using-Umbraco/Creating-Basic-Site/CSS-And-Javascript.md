@@ -15,7 +15,7 @@ Next copy the **_scripts_** folder from the **js** directory of the initializr t
 >NOTE – you can also use the UI interface to create your JS files too **_Settings > Scripts > ... > + Create_** (again don’t add the suffix but select .js from the **_Type_** dropdown) the reference in your template should be “_scripts/myfile.js_”. 
 
 
-Now in dev tools when looking at the http://localhost page you should find that the network tab doesn’t report any missing assets - if it does have a look and fix any typos / check the files are in the right places! 
+Now using Chrome Developer Tools or Firebug whilst browsing http://localhost you should find that the network tab (or the equivalent) doesn’t report any missing assets / files - if it does have a look and fix any typos / check the files are in the right places. 
 
 ---
 
