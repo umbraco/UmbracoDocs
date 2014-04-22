@@ -19,6 +19,8 @@ Copy the following folders from inside the .zip file over the existing folders i
    - This folder is no longer present or needed in Umbraco v7.1.0+
 - /Umbraco 
 - /Umbraco_Client
+ 
+**Note:** Most of the other folders in the zip are stub folders for a new install. That is why you don't copy all of them.
 
 **Note:** There are hosting providers (we know of one: RackSpace Cloud) that require proper casing of file and folder names. Normally on Windows this is not a problem but if your hosting provider forces proper casing then you will need to verify that the folder and file names are in the same casing as in the newest version you're upgrading to.
 
@@ -75,7 +77,9 @@ Version 6 introduces a large database upgrade and still handles all the previous
 ##Potential issues and gotchas
 
 ###Browser cache (mostly v7 related)
-Google Chrome has notoriously aggressive caching, so if something doesn't seem to work well in the backoffice, make sure to clear cache and cookies thoroughly (for other browsers as well). 
+Google Chrome has notoriously aggressive caching, so if something doesn't seem to work well in the backoffice, make sure to clear cache and cookies thoroughly (for other browsers as well).
+
+**Note:** When you navigate to umbraco/install you may get an IIS error, or be sent to the Login screen. These are both good signs you need to clear caches and cookies.
 
 One way to nudge the cache in Chrome is to open the developer tools (F12) and go to the settings (the cog icon). There will be a checkbox that says "Disable cache (while DevTools is open)". Once this checkbox is on you can refresh the page and the cache should be invalidated. To force it even more, the "reload" button next to your address bar now has extra options when you right-click it. It should have "Normal reload", "Hard reload" and "Empty cache and hard reload" now. The last option is the most thorough and you might want to try that.
 
