@@ -19,5 +19,5 @@ Now in dev tools when looking at the http://localhost page you should find that 
 
 ---
 
-##Next - [Outputting the Umbraco Data Fields](Outputting-the-Umbraco-Data-Fields.md)
+##Next - [Outputting the Document Type Properties](Outputting-the-Document-Type-Properties.md)
 How to wire the Umbraco Data Fields into the templates to output the editor's data in the right place.

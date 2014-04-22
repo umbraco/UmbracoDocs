@@ -1,6 +1,6 @@
-#Outputting the Umbraco Data Fields
+#Outputting the Document Type Properties
 
-What you’ll notice though is that our content we added to the homepage isn’t being output. We need to wire up the data properties to the template.  Let’s look at our template and identify where the data fields we created before should go.  
+What you’ll notice though is that our content we added to the homepage isn’t being output. We need to wire up the data type properties (the data fields we've created in Umbraco that the editors can edit) to the template.  Let’s look at our template and identify where the data fields we created before should go.  
 
 
 ![Where our Data Fields Content Should be Output](images/figure-17-where-our-data-fields-go.png?raw=true)
