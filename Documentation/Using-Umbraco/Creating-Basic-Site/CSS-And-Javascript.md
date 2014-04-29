@@ -1,21 +1,21 @@
 #CSS and Javascript
 
 
-Looking at our homepage weíre obviously missing the CSS and JS from the Initializr template. To include this navigate to the root of your website directory (e.g. "C:\inetpub\wwwroot" - this may be different depending on your installation type) in Windows Explorer and copy over the **_css\style.css_** file into the **_Umbraco\Css_** folder (replace Umbraco with wherever your Umbraco instance is being served from ñ e.g. ì_C:\inetpub\wwwroot_î. Now refresh your webpage in your browser and youíll see a more styled page.
+Looking at our homepage we‚Äôre obviously missing the CSS and JS from the Initializr template. To include this navigate to the root of your website directory (e.g. "C:\inetpub\wwwroot" - this may be different depending on your installation type) in Windows Explorer and copy over the **_css\style.css_** file into the **_[your website root]\Css_** folder (replace Umbraco with wherever your Umbraco instance is being served from ‚Äì e.g. ‚Äú_C:\inetpub\wwwroot_‚Äù. Now refresh your webpage in your browser and you‚Äôll see a more styled page.
 
->NOTE ñ you could use the Umbraco UI to create your CSS file. **_Settings > Stylesheets_** > **_... > + Create_** and create a stylesheet called style (donít add the file suffix .css) and paste the CSS in I find it easier to copy the CSS. Using either method should be noted does NOT include them in your HTML markup automatically ñ Umbraco produces clean output and this means you only wire up what you want and need. 
+>NOTE ‚Äì you could use the Umbraco UI to create your CSS file. **_Settings > Stylesheets_** > **_... > + Create_** and create a stylesheet called style (don‚Äôt add the file suffix .css) and paste the CSS in I find it easier to copy the CSS. Using either method should be noted does NOT include them in your HTML markup automatically ‚Äì Umbraco produces clean output and this means you only wire up what you want and need. 
 
 
-Next copy the **_scripts_** folder from the **js** directory of the initializr template to the **_[your website root]\Scripts_** directory ñ weíll have to update the template to look in **\Scripts** instead of **\js**. To do this go to **_Settings > Templates > Homepage_** and change line 21 to say ì_scripts/..._î and click **_Save_**.  
+Next copy the **_scripts_** folder from the **js** directory of the Initializr template to the **_[your website root]\Scripts_** directory ‚Äì we‚Äôll have to update the template to look in **/Scripts** instead of **/js**. To do this go to **_Settings > Templates > Homepage_** and change line 21 to say ‚Äú_scripts/..._‚Äù and click **_Save_**.  
 
 ```
 <script src="scripts/libs/modernizr-2.0.6.min.js"></script>
 ```
 
->NOTE ñ you can also use the UI interface to create your JS files too **_Settings > Scripts > ... > + Create_** (again donít add the suffix but select .js from the **_Type_** dropdown) the reference in your template should be ì_scripts/myfile.js_î. 
+>NOTE ‚Äì you can also use the UI interface to create your JS files too **_Settings > Scripts > ... > + Create_** (again don‚Äôt add the suffix but select .js from the **_Type_** dropdown) the reference in your template should be ‚Äú_scripts/myfile.js_‚Äù. 
 
 
-Now using Chrome Developer Tools or Firebug whilst browsing http://localhost you should find that the network tab (or the equivalent) doesnít report any missing assets / files - if it does have a look and fix any typos / check the files are in the right places. 
+Now using Chrome Developer Tools or Firebug whilst browsing http://localhost you should find that the network tab (or the equivalent) doesn‚Äôt report any missing assets / files - if it does have a look and fix any typos / check the files are in the right places. 
 
 ---
 

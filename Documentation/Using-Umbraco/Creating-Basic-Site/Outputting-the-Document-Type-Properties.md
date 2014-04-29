@@ -1,6 +1,6 @@
 #Outputting the Document Type Properties
 
-What youíll notice though is that our content we added to the homepage isnít being output. We need to wire up the data type properties (the data fields we've created in Umbraco that the editors can edit) to the template.  Letís look at our template and identify where the data properties we created before should go.  
+What you‚Äôll notice though is that our content we added to the homepage isn‚Äôt being output. We need to wire up the data type properties (the data fields we've created in Umbraco that the editors can edit) to the template.  Let‚Äôs look at our template and identify where the data properties we created before should go.  
 
 
 ![Where our Data Properties Content Should be Output](images/figure-17-where-our-data-fields-go.png?raw=true)
@@ -9,10 +9,10 @@ What youíll notice though is that our content we added to the homepage isnít bei
 *Figure 17 - Where our Data Property Content Should be Output*
 
 
-Weíve marked in blue where we want our data property content to be output. Now we need to wire up the relevant properties. 
+We‚Äôve marked in blue where we want our data property content to be output. Now we need to wire up the relevant properties. 
 
 
-Go to the **_Settings > Templates > Homepage_**. Scroll down and highlight the text `ìh1#titleî` around line 27. 
+Go to the **_Settings > Templates > Homepage_**. Scroll down and highlight the text `‚Äúh1#title‚Äù` around line 27. 
 
 
 ![Preparing to replace the hardcoded text with an Umbraco Page Field](images/figure-18-replace-hardcoded-text-with-umbraco-page-field.png?raw=true)
@@ -42,7 +42,7 @@ Next do the same for the content between the `<header></header>` tags (around li
 *Figure 20 - Replacing the bodyText with the Umbraco Page Field*
 
 
-Finally we do the footer ñ between the `<h3></h3>` tags in the footer div (line 68). 
+Finally we do the footer ‚Äì between the `<h3></h3>` tags in the footer div (line 68). 
 
 ![Replacing the Footer Text with the relevant Umbraco Page Field](images/figure-21-footer-text.png?raw=true)
 
@@ -50,10 +50,10 @@ Finally we do the footer ñ between the `<h3></h3>` tags in the footer div (line 
 *Figure 21 - Footer Text*
 
 
-Now go and reload your homepage... viola! We have content!   Now, we could go back and add two tabs called Article1, Article 2, Article Footer each containing a title and content field and wire these to the relevant places in the template. However this would limit the content manager to always having to have these sections. This might be OK but we could also use child nodes ñ weíll learn about those later. 
+Now go and reload your homepage... viola! We have content!   Now, we could go back and add two tabs called Article 1, Article 2, Article Footer each containing a title and content field and wire these to the relevant places in the template. However this would limit the content manager to always having to have these sections. This might be OK but we could also use child nodes ‚Äì we‚Äôll learn about those later. 
 
 
 ---
 ##Next - [Creating Master Template Part 1](Creating-Master-Template-Part-1.md)
-How to create a Master Template and use this to create more pages whilst minimisind duplicate HTML code from your flat source files.
+How to create a Master Template and use this to create more pages whilst minimising duplicate HTML code from your flat source files.
 
