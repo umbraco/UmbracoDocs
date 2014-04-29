@@ -1,7 +1,7 @@
-#Master Template – The Navigation Menu
+#Master Template - The Navigation Menu
 
 
-Now let’s fix the navigation menu – there are two ways of doing this, you could have Umbraco dynamically create a navigation menu from the pages it has in the Content Tree, so that when an editor creates a page it automatically appears or, more simply you can hardcode it. We’re going to hardcode this for now (it’s a good idea as you start building a site to hard code this so you can move around testing before you replace this) and we’ll leave it to you as an exercise to do this later. Edit your **_Master template_** – edit the <li> items under the `<nav>` tags to say:
+Now let's fix the navigation menu - there are two ways of doing this, you could have Umbraco dynamically create a navigation menu from the pages it has in the Content Tree, so that when an editor creates a page it automatically appears or, more simply you can hardcode it. We're going to hardcode this for now (it's a good idea as you start building a site to hard code this so you can move around testing before you replace this) and we'll leave it to you as an exercise to do this later. Edit your **_Master template_** - edit the <li> items under the `<nav>` tags to say:
 
 ```
 <nav>
@@ -17,7 +17,7 @@ Now let’s fix the navigation menu – there are two ways of doing this, you could 
 *Figure 34 - Master Template - Menu / Nav Section*
 
 
-**_Save_** your changes and let’s test our menu. You’ll find that clicking on the Article link throws an Umbraco error as we’ve not created this page yet. Let’s do that now.
+**_Save_** your changes and let's test our menu. You'll find that clicking on the Article link throws an Umbraco error as we've not created this page yet. Let's do that now.
 
 ---
 ##Next - [Articles Parent and Article Items](Articles-Parent-and-Article-Items.md)

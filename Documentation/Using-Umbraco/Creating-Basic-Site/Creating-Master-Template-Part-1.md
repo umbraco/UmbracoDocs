@@ -2,13 +2,13 @@
 
 ## Using a Maintainable Template Structure
 
-We’ve seen how to create a **_Document Type_**. We have a simple three page site, Home, News and Contact Us. We could easily just create three **_Document Types_** and leave **_Create matching template_** checkbox checked to also create three matching templates. Then we’d copy the same HTML code, job-lot into each template.  
+We've seen how to create a **_Document Type_**. We have a simple three page site, Home, News and Contact Us. We could easily just create three **_Document Types_** and leave **_Create matching template_** checkbox checked to also create three matching templates. Then we'd copy the same HTML code, job-lot into each template.  
 
-This would work – on a very simple site it actually has some merits however once a site starts to grow this would lead to problems – for instance changing anything in the menu needs to be done on each template - it also means we’d need the user to set the footer on each page etc. 
+This would work - on a very simple site it actually has some merits however once a site starts to grow this would lead to problems - for instance changing anything in the menu needs to be done on each template - it also means we'd need the user to set the footer on each page etc. 
 
-Umbraco provides us with an elegant solution to keeping a consistent base template – those familiar with MVC will recognise it. 
+Umbraco provides us with an elegant solution to keeping a consistent base template - those familiar with MVC will recognise it. 
 
-To start we’re going to unpick a little bit of what we did in creating the homepage to sit the homepage template under a master. 
+To start we're going to unpick a little bit of what we did in creating the homepage to sit the homepage template under a master. 
 
 
 #Create a Master Template 
@@ -23,9 +23,9 @@ Go to the **_Settings > Templates_** and open up the tree.  At the moment we jus
 *Figure 22 - Master Template**
 
 
-Now we’re going to move the **_Homepage_** template under the **_Master_** template. To do this select the **_Settings > Homepage node_** and from the **_Properties tab > Master template drop down_**, select _“Master”_ and then click **_Save_**.  This will update the Razor code section to change `Layout = null;` to `Layout = "Master.cshtml";` 
+Now we're going to move the **_Homepage_** template under the **_Master_** template. To do this select the **_Settings > Homepage node_** and from the **_Properties tab > Master template drop down_**, select _“Master”_ and then click **_Save_**.  This will update the Razor code section to change `Layout = null;` to `Layout = "Master.cshtml";` 
 
->NOTE: You may have to click off the **_Homepage node_** and back on to see this update – a bug that will be fixed in a future release of Umbraco. 
+>NOTE: You may have to click off the **_Homepage node_** and back on to see this update - a bug that will be fixed in a future release of Umbraco. 
 
 
 ![Homepage Template now sits under the Master](images/figure-23-homepage-has-master-template.png?raw=true)
@@ -34,7 +34,7 @@ Now we’re going to move the **_Homepage_** template under the **_Master_** templ
 *Figure 23 - Homepage Template now sits under the Master*
 
 
-Now we need to move the parts of our HTML template that are common across all pages into the **_Master_**. This is where as a developer you might need to use your brain as it will be slightly different for different websites – e.g. do all pages have a `<div id="main">` as so can we put this in the master or does this belong to only certain pages? For this site we’ll assume this is part of the child page. Cut everything from the closing curly brace to line 37 `<div id="main-container">` - we’re going to move the header and nav of the site to the master template. Cut this and click **_Save_**. 
+Now we need to move the parts of our HTML template that are common across all pages into the **_Master_**. This is where as a developer you might need to use your brain as it will be slightly different for different websites - e.g. do all pages have a `<div id="main">` as so can we put this in the master or does this belong to only certain pages? For this site we'll assume this is part of the child page. Cut everything from the closing curly brace to line 37 `<div id="main-container">` - we're going to move the header and nav of the site to the master template. Cut this and click **_Save_**. 
 
 
 ![Homepage Template After Cutting the Header](images/figure-24-homepage-after-cutting-the-header.png?raw=true)
@@ -51,7 +51,7 @@ Now click on your **_Master_** template and paste this HTML markup after the clo
 *Figure 25 - Master Template after Pasting the Header*
 
 
-At the end of this markup we need to tell Umbraco to insert the child template’s content – this is done by adding the code **_@RenderBody()_** at the end (around line 37). Click **_Save_**. 
+At the end of this markup we need to tell Umbraco to insert the child template's content - this is done by adding the code **_@RenderBody()_** at the end (around line 37). Click **_Save_**. 
 
 
 ![Adding RenderBody() to the Master Template](images/figure-26-adding-renderbody.png?raw=true)
@@ -60,16 +60,16 @@ At the end of this markup we need to tell Umbraco to insert the child template’s
 *Figure 26 - Adding RenderBody() to the Master Template*
 
 
-Now we’ll do the same with the footer content. Cut everything from the opening of the _footer-container _div (approximately line 33) from the **_Settings > Templates > Homepage > template tab_**, click **_Save_** and then paste this into the **_Master_** template under the **_@RenderBody_** field we’ve just added. Remember to click **_Save_**. 
+Now we'll do the same with the footer content. Cut everything from the opening of the _footer-container _div (approximately line 33) from the **_Settings > Templates > Homepage > template tab_**, click **_Save_** and then paste this into the **_Master_** template under the **_@RenderBody_** field we've just added. Remember to click **_Save_**. 
 
 
 ![Completed Master Template](images/figure-27-master-template-complete.png?raw=true)
 
 
-*Figure 27 – Completed Master Template*
+*Figure 27 - Completed Master Template*
 
 
-Now we’ve done a lot of work – and what we should see if we refresh our localhost page is nothing has changed!  If you have a compilation error you’ve perhaps mistyped **_@RenderBody()_**. If you’re missing any content (header or footer) check that what you have in the templates matches the following:
+Now we've done a lot of work - and what we should see if we refresh our localhost page is nothing has changed!  If you have a compilation error you've perhaps mistyped **_@RenderBody()_**. If you're missing any content (header or footer) check that what you have in the templates matches the following:
 
 ```
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
@@ -163,7 +163,7 @@ Now we’ve done a lot of work – and what we should see if we refresh our localhos
 *Figure 29 - Complete Homepage Template*
 
 
->If you’re new to these concepts then I don’t think what we’ve just done is going to make much sense until we make our next page. 
+>If you're new to these concepts then I don't think what we've just done is going to make much sense until we make our next page. 
 
 
 ---
