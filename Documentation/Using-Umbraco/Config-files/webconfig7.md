@@ -34,7 +34,9 @@ Coming soon!
 
 ###umbracoTimeOutInMinutes
 
-Coming soon!
+Configures the number of minutes without any requests being made before the Umbraco user will be required to re-login. Any backoffice request will reset the clock. Default setting is 20 minutes
+
+    <add key="umbracoTimeOutInMinutes" value="20" />
 
 ###umbracoDefaultUILanguage
 
