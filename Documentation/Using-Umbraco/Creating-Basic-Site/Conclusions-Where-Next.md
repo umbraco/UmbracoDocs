@@ -4,10 +4,9 @@ What we now have is a fully fledged working site! Hopefully this guide should ha
 
 This is not the limit of Umbraco - you've barely scratched the surface in this guide.
 
-*    For further reading / exercises I'd recommend working through the video tutorials: http://umbraco.tv/videos/umbraco-v7/implementor/
-*    There is also the online Official Documentation. http://our.umbraco.org/documentation 
-*    For help and guidance on anything this guide doesn't cover the forums are a great place to start:
-*    http://our.umbraco.org/forum 
+*    For further reading / exercises work through the video tutorials: [http://umbraco.tv/videos/umbraco-v7/implementor/](http://umbraco.tv/videos/umbraco-v7/implementor/)
+*    There is also the online Official Documentation. [http://our.umbraco.org/documentation](http://our.umbraco.org/documentation) 
+*    For help and guidance on anything this guide doesn't cover the forums are a great place to start: [http://our.umbraco.org/forum ](http://our.umbraco.org/forum )
 
 ---
 #Happy Umbraco-ing!
