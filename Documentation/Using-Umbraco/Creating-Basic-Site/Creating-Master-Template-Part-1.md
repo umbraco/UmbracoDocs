@@ -20,10 +20,10 @@ Go to the **_Settings > Templates_** and open up the tree.  At the moment we jus
 ![Master Template](images/figure-22-master-template.png?raw=true)
 
 
-*Figure 22 - Master Template**
+*Figure 22 - Master Template*
 
 
-Now we're going to move the **_Homepage_** template under the **_Master_** template. To do this select the **_Settings > Homepage node_** and from the **_Properties tab > Master template drop down_**, select _“Master”_ and then click **_Save_**.  This will update the Razor code section to change `Layout = null;` to `Layout = "Master.cshtml";` 
+Now we're going to move the **_Homepage_** template under the **_Master_** template. To do this select the **_Settings > Homepage node_** and from the **_Properties tab > Master template drop down_**, select _"Master"_ and then click **_Save_**.  This will update the Razor code section to change `Layout = null;` to `Layout = "Master.cshtml";` 
 
 >NOTE: You may have to click off the **_Homepage node_** and back on to see this update - a bug that will be fixed in a future release of Umbraco. 
 
@@ -71,64 +71,60 @@ Now we'll do the same with the footer content. Cut everything from the opening o
 
 Now we've done a lot of work - and what we should see if we refresh our localhost page is nothing has changed!  If you have a compilation error you've perhaps mistyped **_@RenderBody()_**. If you're missing any content (header or footer) check that what you have in the templates matches the following:
 
-```
-@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-@{
-    Layout = null;
-}<!doctype html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-	<title></title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-
-	<link rel="stylesheet" href="css/style.css">
-
-	<script src="js/libs/modernizr-2.0.6.min.js"></script>
-</head>
-<body>
-
-	<div id="header-container">
-		<header class="wrapper clearfix">
-			<h1 id="title">@Umbraco.Field("pageTitle")</h1>
-			<nav>
-				<ul>
-					<li><a href="#">nav ul li a</a></li>
-					<li><a href="#">nav ul li a</a></li>
-					<li><a href="#">nav ul li a</a></li>
-				</ul>
-			</nav>
-		</header>
-	</div>
-			
-	@RenderBody()
-			
-	<div id="footer-container">
-		<footer class="wrapper">
-			<h3>@Umbraco.Field("footerText")</h3>
-		</footer>
-	</div>
-
-</body>
-</html>
-
-```
+	@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+	@{
+	    Layout = null;
+	}<!doctype html>
+	<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+	<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+	<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+	<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+		<title></title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+	
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+	
+		<link rel="stylesheet" href="css/style.css">
+	
+		<script src="js/libs/modernizr-2.0.6.min.js"></script>
+	</head>
+	<body>
+	
+		<div id="header-container">
+			<header class="wrapper clearfix">
+				<h1 id="title">@Umbraco.Field("pageTitle")</h1>
+				<nav>
+					<ul>
+						<li><a href="#">nav ul li a</a></li>
+						<li><a href="#">nav ul li a</a></li>
+						<li><a href="#">nav ul li a</a></li>
+					</ul>
+				</nav>
+			</header>
+		</div>
+				
+		@RenderBody()
+				
+		<div id="footer-container">
+			<footer class="wrapper">
+				<h3>@Umbraco.Field("footerText")</h3>
+			</footer>
+		</div>
+	
+	</body>
+	</html>
 
 *Figure 28 - Complete Master Template*
 
-```
-@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-@{
-    Layout = "Master.cshtml";
-}
+	@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+	@{
+	    Layout = "Master.cshtml";
+	}
 	<div id="main-container">
 		<div id="main" class="wrapper clearfix">
 			
@@ -157,8 +153,6 @@ Now we've done a lot of work - and what we should see if we refresh our localhos
 			
 		</div> <!-- #main -->
 	</div> <!-- #main-container -->
-
-```	
 
 *Figure 29 - Complete Homepage Template*
 
