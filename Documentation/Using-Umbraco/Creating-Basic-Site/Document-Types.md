@@ -80,6 +80,8 @@ Ignore the rest of the fields for now and click the green **_Save_** button at t
 Repeat this step, clicking the **_Click here to add a new property link_** at the top of the **_Generic Properties tab_** and create these (remembering to click **_Save_** each time):
 
 <table border="0">
+<col width="130">
+<col width="400">
 <tr><th>Name</th><th>Body Text</th></tr>
 <tr><td>Alias:</td><td>bodyText</td></tr>
 <tr><td>Type:</td><td>Richtext editor (click the arrow on the Type field!)</td></tr>
@@ -88,6 +90,8 @@ Repeat this step, clicking the **_Click here to add a new property link_** at th
 </table>
 
 <table border="0">
+<col width="130">
+<col width="400">
 <tr><th>Name</th><th>Footer Text</th></tr>
 <tr><td>Alias:</td><td>footerText</td></tr>
 <tr><td>Type:</td><td>Textstring</td></tr>
