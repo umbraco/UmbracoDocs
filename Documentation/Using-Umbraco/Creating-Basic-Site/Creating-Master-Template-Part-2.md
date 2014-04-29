@@ -7,8 +7,9 @@ We're now going to make a simple page where we'll just put our contact details. 
 
 
 Some potential solutions:
-* Build your own contact form using Surface Controllers - http://our.umbraco.org/documentation/Reference/Templating/Mvc/forms or http://umbraco.tv/videos/developer/fundamentals/surface-controllers/
-* If you're not a programmer you can use a ready-made package - http://umbraco.com/products/more-add-ons/contour.aspx
+
+* Build your own contact form using Surface Controllers - [http://our.umbraco.org/documentation/Reference/Templating/Mvc/forms](http://our.umbraco.org/documentation/Reference/Templating/Mvc/forms) or [http://umbraco.tv/videos/developer/fundamentals/surface-controllers/](http://our.umbraco.org/documentation/Reference/Templating/Mvc/forms)
+* If you're not a programmer you can use a ready-made package - [http://umbraco.com/products/more-add-ons/contour.aspx](http://umbraco.com/products/more-add-ons/contour.aspx)
 
 
 For now let's create a simple page - a page where the user can provide a title and some rich text. This is very similar to our homepage document type at the moment but we're assuming that you'll go and develop this into something very specific (e.g. adding the featured article and other article content blocks). 
@@ -20,7 +21,7 @@ Go to **_Settings > Document Types_** (hover) **_> ... > + Create_** .  Let's cr
 Firstly let's select an **_Icon_** - type the word "_Content_" into the filter and select the document icon. In description type "A simple content page", leave the **_Allowed Templates_** as it is (e.g. only **_Simple Content_** page checked).  Click **_Save_**.
 
 
-Now click on the **_Settings > Templates (hover) > ..._** and then **_Reload Nodes_**.  Click on your **_Simple Content Paqe node_** and then the **_Properties tab_**. Change the **_Master template_** drop down to select value "_Master_" - this will mean that we'll get the header and footer from the master just as we do in the Homepage template.  
+Now click on the **_Settings > Templates (hover) > ..._** and then **_Reload Nodes_**.  Click on your **_Simple Content Page node_** and then the **_Properties tab_**. Change the **_Master template_** drop down to select value "_Master_" - this will mean that we'll get the header and footer from the master just as we do in the Homepage template.  
 
 
 Click **_Save_** then load the **_Template tab_** you should see the portion of Razor code has updated to say `Layout ="Master.cshtml"` if it hasn't updated itself click on a different node and then back again to reload it. Now add the following HTML to the template and click **_Save_**. 
@@ -47,7 +48,7 @@ Now let's create a page using our new **_Document Type_** and **_Template_** - g
 
 This is by design - Umbraco limits the editors to only being able to create content in the places that you, the developer, allows. This will stop a user from breaking a site design (or an entire site) when they create a new homepage under the news container node later! Unfortunately this functionality also confuses a lot of new Umbracians - hence why we show you this error here.  
 
-Go to **_Settings > Homepage_** on the **_Structure_**  tab you'll see a list of checkboxes under a label **_Allowed child nodetypes _**(be careful not to confuse this with the **_Info tab's_** **_Allowed templates_** - we'll cover that later).  So we need to allow users to be able to create child nodes below our Homepage of type "_Simple Content Page_". Check the box and hit **_Save_**. 
+Go to **_Settings > Homepage_** on the **_Structure_**  tab you'll see a list of checkboxes under a label **_Allowed child nodetypes _** (be careful not to confuse this with the **_Info tab's_** **_Allowed templates_** - we'll cover that later).  So we need to allow users to be able to create child nodes below our Homepage of type "_Simple Content Page_". Check the box and hit **_Save_**. 
 
 
 ![Homepage - Allowed Child Nodetypes](images/figure-32-homepage-allowed-child.png?raw=true)

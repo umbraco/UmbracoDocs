@@ -3,9 +3,10 @@
 ## Data first 
 ### nothing in = nothing out!
 
-Step 1 of any site is to create a “**_Document Type_**” – after a few installations you’ll become familiar with this terminology but at the start it might be a little bit bewildering.  A **_Document Type_** is a data container in Umbraco where you can add data fields / attributes where the editor user can input data and Umbraco can use it to output it in the relevant part of a “**_template_**” (more on these later).  
+Step 1 of any site is to create a "**_Document Type_**" – after a few installations you’ll become familiar with this terminology but at the start it might be a little bit bewildering.  A **_Document Type_** is a data container in Umbraco where you can add data fields / attributes where the editor user can input data and Umbraco can use it to output it in the relevant part of a "**_template_**" (more on these later).  
 
 **_Document Types_** are infinitely extendable but usually you’ll add data fields something like the following:
+
 *    Page title
 *    Sub Heading
 *    Body Text
@@ -31,7 +32,7 @@ Right, let’s get busy. Go to the **_Settings_** menu in Umbraco. This is the t
 *Figure 7 - Creating a Document Type*
 
 
-Ignore the **_Master Document Type_** drop down for now. Give our new **_Document Type_** the **_Name_** = “_HomePage”_ and ensure the **_Create matching template_** checkbox is checked.  Click **_Create_**. 
+Ignore the **_Master Document Type_** drop down for now. Give our new **_Document Type_** the **_Name_** = "_HomePage"_ and ensure the **_Create matching template_** checkbox is checked.  Click **_Create_**. 
 
 
 ![Name your Document Type](images/figure-8-name-your-document-type.png?raw=true)
@@ -40,7 +41,7 @@ Ignore the **_Master Document Type_** drop down for now. Give our new **_Documen
 *Figure 8 – Name your Document Type*
 
 
-Umbraco now adds a **_Document Type_** to the tree under the node. You’ll see four tabs **_Info_**,**_Structure_**, **_Generic properties_**, **_Tabs_**.  Click **_Info_** (should already be selected) and then the **_Choose..._** link next to the **_Icon_** label.   Enter “_home_” into the search and you'll have a house icon – this will help our editors in the **_Content_** tree later.
+Umbraco now adds a **_Document Type_** to the tree under the node. You’ll see four tabs **_Info_**,**_Structure_**, **_Generic properties_**, **_Tabs_**.  Click **_Info_** (should already be selected) and then the **_Choose..._** link next to the **_Icon_** label.   Enter "_home_" into the search and you'll have a house icon – this will help our editors in the **_Content_** tree later.
 
 
 ![Adding an Icon to Document Type](images/figure-9-adding-an-icon-to-document-type.png?raw=true)
@@ -49,13 +50,13 @@ Umbraco now adds a **_Document Type_** to the tree under the node. You’ll see 
 *Figure 9 - Adding an Icon to Document Type*
 
 
-Enter in the **_Description_** field “_This is our homepage template_”.  This text is used to help the user select the correct document type later. 
+Enter in the **_Description_** field "_This is our homepage template_".  This text is used to help the user select the correct document type later. 
 
 
 Next click the **_Structure_** tab and check **_Allow at root_**.  This will allow us to create a homepage at the root (simple huh?). 
 
 
-Next we go to the **_Tabs_** tab. Create a new tab called “_Contents_” and then another called “_Footer_” (enter the name and click the **_New tab_** button remembering to click **_Save_** after).
+Next we go to the **_Tabs_** tab. Create a new tab called "_Contents_" and then another called "_Footer_" (enter the name and click the **_New tab_** button remembering to click **_Save_** after).
 
 
 ![Document Types - Adding Tabs](images/figure-10-document-types-adding-tabs.png?raw=true)
@@ -64,7 +65,7 @@ Next we go to the **_Tabs_** tab. Create a new tab called “_Contents_” and t
 *Figure 10 - Document Types - Adding Tabs*
 
 
-Now go to the **_Generic properties_** – this tab is where we create the data containers that the homepage will need and use.  Click on the link **_Click here to add a new property_**. Enter the **_Name_** “_Page Title_”. When you move to the next field you’ll see Umbraco helpfully gives you the alias “pageTitle”.  The **_Type_** is defaulted to “_Textstring”_ and **_Tab_** = “_Contents_” (remember, we just created that!).  **_Description_** again helps the editor so we’ll fill this in “_The main title of the page (e.g. Welcome to Widgets Ltd)._ “ 
+Now go to the **_Generic properties_** – this tab is where we create the data containers that the homepage will need and use.  Click on the link **_Click here to add a new property_**. Enter the **_Name_** "_Page Title_". When you move to the next field you’ll see Umbraco helpfully gives you the alias "pageTitle".  The **_Type_** is defaulted to "Textstring" and **_Tab_** = "Contents" (remember, we just created that!).  **_Description_** again helps the editor so we'll fill this in "_The main title of the page (e.g. Welcome to Widgets Ltd)._ " 
 
 
 ![Creating our PageTitle Data Type](images/figure-11-creating-our-pagetitle-data-type.png?raw=true)
@@ -78,24 +79,23 @@ Ignore the rest of the fields for now and click the green **_Save_** button at t
 
 Repeat this step, clicking the **_Click here to add a new property link_** at the top of the **_Generic Properties tab_** and create these (remembering to click **_Save_** each time):
 
-|**_Name_**: |	Body Text |
-|  --------- |  --------- |
-|**_Alias_**: |	bodyText|
-|**_Type_**: |	Richtext editor (click the arrow on the Type field!)|
-|**_Tab:_** |	Contents|
-|**_Description_**: |	The main content of the page.| 
+<table border="0">
+<tr><th>Name</th><th>Body Text</th></tr>
+<tr><td>Alias:</td><td>bodyText</td></tr>
+<tr><td>Type:</td><td>Richtext editor (click the arrow on the Type field!)</td></tr>
+<tr><td>Tab:</td><td>Contents</td></tr>
+<tr><td>Description:</td><td>The main content of the page.</td></tr>
+</table>
 
-
-|**_Name_**:  |	Footer Text|
-|  --------- |  --------- |
-|**_Alias_**: |	footerText|
-|**_Type_**: |	Textstring |
-|**_Tab:_** 	| Footer (remember to change this!)|
-|**_Description_**: 	| Copyright notice for the footer.  |
-
+<table border="0">
+<tr><th>Name</th><th>Footer Text</th></tr>
+<tr><td>Alias:</td><td>footerText</td></tr>
+<tr><td>Type:</td><td>Textstring</td></tr>
+<tr><td>Tab:</td><td>Footer (remember to change this!)</td></tr>
+<tr><td>Description:</td><td>Copyright notice for the footer.</td></tr>
+</table>
 
 You should now have a **_Generic Properties tab_** that looks like this:
-
 
 ![Generic Properties Tab of your Homepage Document Type](images/figure-12-generic-properties-tab.png?raw=true)
 
