@@ -41,6 +41,7 @@ Hover over the grey text **_CONTENT_**  and you’ll see the three dots **_..._** 
 
 ![Create a Homepage](images/figure-15-create-a-homepage.png?raw=true)
 
+
 *Figure 15 – Create a Homepage*
 
 
@@ -50,7 +51,13 @@ Hover over the grey text **_CONTENT_**  and you’ll see the three dots **_..._** 
 Let’s create our homepage. Click the icon and you’ll see what we’ve just been setting up – our document type is now going to drive our homepage content – it gives us and the editors the fields they need. 
 
 
-In red at the top you’ll see “_Enter a name..._” click this and enter a name (on some browsers this is hard to see as a field – an Umbraco bug has been raised for this).  We’re going to call this “_Homepage_”. 
+In red at the top of the form you’ll see “_Enter a name..._” click this and enter the name for your new content node.  We’re going to call this “_Homepage_”. 
+
+
+![Create a Homepage](images/figure-15a-create-a-homepage-enter-name.png?raw=true)
+
+
+*Figure 15a – Create a Homepage - Enter a name...*
 
 
 Fill in the following on the **_Contents_** tab:

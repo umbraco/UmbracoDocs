@@ -7,15 +7,14 @@ We’re now going to make a simple page where we’ll just put our contact details. 
 
 
 Some potential solutions:
-* Build your own contact form using Surface Controllers - http://umbraco.tv/videos/developer/fundamentals/surface-controllers/
-* Or Webforms - http://our.umbraco.org/documentation/Reference/Templating/Masterpages/
-* Use, if you're not a programmer, use a package - http://umbraco.com/products/more-add-ons/contour.aspx
+* Build your own contact form using Surface Controllers - http://our.umbraco.org/documentation/Reference/Templating/Mvc/forms or http://umbraco.tv/videos/developer/fundamentals/surface-controllers/
+* If you're not a programmer you can use a ready-made package - http://umbraco.com/products/more-add-ons/contour.aspx
 
 
 For now let’s create a simple page – a page where the user can provide a title and some rich text. This is very similar to our homepage document type at the moment but we’re assuming that you’ll go and develop this into something very specific (e.g. adding the featured article and other article content blocks). 
 
 
-Go to **_Settings > Document Types_** (hover) **_> ... > + Create_** .  Let’s create one called “_Simple Content Page_”. Leave the **_Master Document Type_** drop down to “_none..._” (the use of allows you to inherit property types from parents, I’d recommend you don’t use it unless there is a definite need) but we’ll create a matching template so leave this checked. 
+Go to **_Settings > Document Types_** (hover) **_> ... > + Create_** .  Let’s create one called “_Simple Content Page_”. Leave the **_Master Document Type_** drop down to “_none..._” (the use of the Master Document Type allows you to inherit property types from parents) but we’ll create a matching template so leave this checked. 
 
 
 Firstly let’s select an **_Icon_** – type the word “_Content_” into the filter and select the document icon. In description type “A simple content page”, leave the **_Allowed Templates_** as it is (e.g. only **_Simple Content_** page checked).  Click **_Save_**.
@@ -130,5 +129,5 @@ Click **_Save_** and reload our Contact Us page.
 
 
 ---
-##Next - [Master Template The Menu](Master-Template-The-Menu.md)
+##Next - [Master Template The Navigation Menu](Master-Template-The-Navigation-Menu.md)
 A simple solution for the template in the menu. 

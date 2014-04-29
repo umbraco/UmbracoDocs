@@ -8,8 +8,6 @@ This is not the limit of Umbraco – you’ve barely scratched the surface in this g
 *    There is also the online Official Documentation. http://our.umbraco.org/documentation 
 *    For help and guidance on anything this guide doesn’t cover the forums are a great place to start:
 *    http://our.umbraco.org/forum 
-*    This guide was created by Steve Morgan of Siempre Solutions – for more info contact him via http://www.siempresolutions.co.uk 
-
 
 ---
 #Happy Umbraco-ing!
