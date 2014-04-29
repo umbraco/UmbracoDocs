@@ -36,7 +36,7 @@ How to create a Master Template and use this to create more pages whilst minimis
 Part 2 - using the Master template to create new page types. 
 
 
-##[Master Template The Navigation Menu](Master-Template-The-Navigation-Menu.md)
+##[Master Template - The Navigation Menu](Master-Template-The-Navigation-Menu.md)
 A simple solution for the template in the menu. 
 
 
