@@ -6,8 +6,8 @@ The following sections of the "Creating a Basic Site" documentation provide step
 
 To take you through a demo of installing a basic site in Umbraco you need the following:
 
-*    A clean, empty installation of Umbraco – e.g. no starter site installed, see the notes below what to do when running through the installation wizard. Use the latest main 7.X download. Follow the installation steps in the documentation http://our.umbraco.org/documentation/Installation  
-*    To follow the instructions step by step, a copy of Initializr – a HTML5, responsive template which is a nice start for any website. https://github.com/verekia/initializr-template/archive/master.zip if you prefer you can use your own flat HTML files.
+*    A clean, empty installation of Umbraco – e.g. no starter site installed, see the notes below what to do when running through the installation wizard. Use the latest main 7.X download. Follow the installation steps in the documentation [http://our.umbraco.org/documentation/Installation](http://our.umbraco.org/documentation/Installation)  
+*    To follow the instructions step by step, a copy of Initializr – a HTML5, responsive template which is a nice start for any website. [https://github.com/verekia/initializr-template/archive/master.zip](https://github.com/verekia/initializr-template/archive/master.zip) if you prefer you can use your own flat HTML files.
 
 # **Getting Started**
 
