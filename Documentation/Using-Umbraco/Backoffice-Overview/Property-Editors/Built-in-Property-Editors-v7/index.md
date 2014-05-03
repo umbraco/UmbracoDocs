@@ -26,7 +26,7 @@ Displays a list of preset values as a list. The value saved is a prevalue ID
 ##[Dropdown list multiple](DropDown-List-Multiple.md)
 Displays a list of preset values where multiple can be selected. The value saved is a CSV of the text values.
 
-##Dropdown list multiple, publish keys
+##[Dropdown list multiple, publish keys](DropDown-List-Multiple-Publish-Keys.md)
 Displays a list of preset values where multiple can be selected. The value saved is a CSV of prevalue ids.
 
 ##Email address
