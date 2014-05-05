@@ -38,7 +38,7 @@ It's important to pick only one of those as other templates cause errors beyond 
 
 ###Visual Studio 2013
 Go to **File > New Project** and pick an ASP.NET **Empty** Web Application.   
-It's important to pick **empty** as other templates include incompatible versions of MVC and Json.NET. (don't enable any of the checkboxes to add folders or core references, Umbraco will add them for you).   
+It's important to pick **empty** as other templates include incompatible versions of MVC and Json.NET. (Don't enable any of the checkboxes to add folders or core references. Umbraco will add them for you).   
 
 ![](images/NuGet/new-project-vs2013-1.png)
 ![](images/NuGet/new-project-vs2013-2.png)
@@ -50,6 +50,7 @@ Or you can use one of the VS2012 templates:
 * ASP.NET MVC 4 Web Application
 
 Again, if there's a next step, then choose **Empty** to prevent conflicts.
+
 ![](images/NuGet/new-project-vs2013-3.png)
 
 ##Finding and installing the Umbraco package
@@ -59,16 +60,13 @@ To install Umbraco from the Visual Studio interface, right-click on the new proj
 
 ![](images/NuGet/manage-nuget-packages.png)
 
-You can then use the search function to find the package called **Umbraco CMS**. You'll also find the Umbraco CMS Core Binaries package, which is going to be included automatically when you choose Umbraco CMS.
-So make sure to pick Umbraco CMS (highlighted in the image below) and click **Install**.
+You can then use the search function to find the package called **Umbraco CMS**. You'll also find the Umbraco CMS Core Binaries package, which will be included automatically when you choose Umbraco CMS. So make sure to pick Umbraco CMS (highlighted in the image below) and click **Install**.
 
 ![](images/NuGet/nuget-search.png)
 
-NuGet will then download dependencies and will install all of Umbraco's files in your new solution.  
-During this process it will ask if it is allowed to overwrite your web.config file. In this case, overwriting the file is safe because we just started a new project. If you're installing Umbraco in an existing project, however, you might want to create a backup of your existing web.config file before answering "Yes".
+NuGet will then download dependencies and will install all of Umbraco's files in your new solution.
 
-For some inexplicable reason, the installation will fail if you answer "Yes to All" to the question
-So make sure to **only answer "Yes"** (sometimes needed a few times).
+During this process it will ask if it is allowed to overwrite your web.config file. In this case, overwriting the file is safe because we just started a new project. If you're installing Umbraco in an existing project, however, you might want to create a backup of your existing web.config file before answering "Yes". For some inexplicable reason, the installation will fail if you answer "Yes to All". So make sure to **only answer "Yes"**. (You may need to do this a few times).
 
 ![](images/NuGet/nuget-overwrite-dialog.png)
 
@@ -87,7 +85,7 @@ Then simply type `Install-Package UmbracoCms` to start installing the latest ver
 For some inexplicable reason, the installation will fail if you answer "A" to the question: 
 `File 'Web.config' already exists in project 'MySite'. Do you want to overwrite it?`
 `[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [?] Help (default is "N"):`  
-So make sure to **only answer "Y"** (sometimes needed a few times).
+So make sure to **only answer "Y"**. (You may need to do this a few times).
 
 ![](images/NuGet/package-manager-console-overwrite.png)
 
