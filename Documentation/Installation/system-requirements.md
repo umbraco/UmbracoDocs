@@ -1,5 +1,9 @@
 #System Requirements
 
+##[File & folder permissions](permissions.md)
+
+To ensure a stable and smoothly running umbraco installation, these permissions need to be set correctly.
+
 ##Hosting
 
 ###Umbraco 7.x.x

@@ -17,15 +17,15 @@ Related Links allows an editor to easily add an array of links. These can either
 ###Typed:
 
 	@using Newtonsoft.Json.Linq
-    @{
-        if (Model.Content.HasValue("relatedLinks"))
+    @{      
+        if (Model.Content.HasValue("relatedLinks") && Model.Content.GetPropertyValue<string>("relatedLinks").Length > 2)
         {
             <ul>
                 @foreach (var item in Model.Content.GetPropertyValue<JArray>("relatedLinks"))
                 {
                     var linkUrl = (item.Value<bool>("isInternal")) ? Umbraco.NiceUrl(item.Value<int>("internal")) : item.Value<string>("link");
-                    var linkTarget = item.Value<bool>("newWindow") ? " target=\"_blank\"" : string.Empty;
-                    <li><a href="@linkUrl" @Html.Raw(linkTarget)>@(item.Value<string>("caption"))</a></li>
+                    var linkTarget = item.Value<bool>("newWindow") ? "_blank" : null;
+                    <li><a href="@linkUrl" target="@linkTarget">@(item.Value<string>("caption"))</a></li>
                 }
             </ul>
         }
@@ -33,16 +33,16 @@ Related Links allows an editor to easily add an array of links. These can either
 
 ###Dynamic:       
                        
-	@{
-	    if (CurrentPage.HasValue("relatedLinks"))
-	    {
-	        <ul>
-	            @foreach (var item in CurrentPage.relatedLinks)
-	            {
-	                var linkUrl = (bool)item.isInternal ? Umbraco.NiceUrl((int)item.link) : item.link;
-	                var linkTarget = (bool)item.newWindow ? " target=\"_blank\"" : string.Empty;
-	                <li><a href="@linkUrl" @Html.Raw(linkTarget)>@item.caption</a></li>
-	            }
-	        </ul>
-	    }        
-	}    
+    @{
+        if (CurrentPage.HasValue("relatedLinks") && CurrentPage.relatedLinks.ToString().Length > 2)
+        {
+            <ul>
+                @foreach (var item in CurrentPage.relatedLinks)
+                {
+                    var linkUrl = (bool)item.isInternal ? Umbraco.NiceUrl(item.Value<int>("internal")) : item.link;
+                    var linkTarget = (bool)item.newWindow ? "_blank" : null;
+                    <li><a href="@linkUrl" target="@linkTarget">@item.caption</a></li>
+                }
+            </ul>
+        }
+    }    

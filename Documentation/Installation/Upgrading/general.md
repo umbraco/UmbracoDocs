@@ -14,7 +14,9 @@ Download the .zip file for the new version you are upgading to.
 Copy the following folders from inside the .zip file over the existing folders in your site:
 
 - /bin
-- /Install (don't forget to remove it after the upgrade is finished)
+- Only for versions lower than 7.1.0: 
+   - /Install (don't forget to remove it after the upgrade is finished)
+   - This folder is no longer present or needed in Umbraco v7.1.0+
 - /Umbraco 
 - /Umbraco_Client
 
@@ -27,7 +29,14 @@ You can simply open up the **Package Console** and type:
 
 Or you can open the **NuGet Package Manager** and select the **Updates** pane to get a list of available updates. Choose the package called **UmbracoCms** and click update. This will run through all the files and make sure you have the latest changes while leaving files you have updated.
 
-Don't be alarmed when you are asked to overwite files. The config files are first copied to *.config.backup and replaced with new ones to make sure you have the correct configuration in the updated version. If you have made changes to any of the config files you need to merge those manually.
+You will be asked to overwrite your web.config file and the files in /config, make sure to answer **No** to those questions. For some inexplicable reason, the installation will fail if you answer "No to all" or "L" to the question: File 'Web.config' already exists in project 'MySite'. Do you want to overwrite it? 
+So make sure to only answer "No" (in the GUI) or "N" (in the package manager console).
+
+![](images/nuget-overwrite-dialog.png)
+![](images/nuget-upgrade-overwrite.png)
+
+
+Now here comes the tricky bit: We'll be mean and overwrite your web.config file anyway. But we'll back it up so don't worry (plus you already had your own backup, right?). You can find the backup in `App_Data\ConfigBackup\20140320-165450`, the `20140320-165450` bit is the current date and time, so it varies. You can then merge your config files and make sure they're completely up to date.
 
 ##Merge configuration files
 You can expect some changes to the following configuration files:
