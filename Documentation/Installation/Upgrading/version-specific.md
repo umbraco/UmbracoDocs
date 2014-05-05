@@ -1,16 +1,14 @@
 #Version specific upgrades
 
-*For now, this document will only list fairly recent updates (the past 2 years), but it will be updated to go further back.*
+*For now, this document will only list updates from the past two years, but it will eventually be improved to go further back.*
 
-Most of the time you will be able to go straight from the version you're on to the latest version. Follow the steps in the [general upgrade guide](general.md), and then the additional instructions per version.
-
-The additional steps are listed below, remember that new config files are not mentioned because that is already covered in the general upgrade guide:
+Most of the time you will be able to upgrade directly from your current version to the latest version. Follow the steps in the [general upgrade guide](general.md), then these additional instructions for the specific versions. (Remember that new config files are not mentioned because they are already covered in the general upgrade guide.)
 
 ##Version 4.6.1 to 4.7.1.1
 * Delete bin/Iron*.dll (all dll files starting with "Iron")
 * Delete bin/RazorEngine*.dll (all dll files starting with "RazorEngine")
-* Delete bin/umbraco.MacroEngines.Legacy.dll 
-* Delete bin/Microsoft.Scripting.Debugging.dll 
+* Delete bin/umbraco.MacroEngines.Legacy.dll
+* Delete bin/Microsoft.Scripting.Debugging.dll
 * Delete bin/Microsoft.Dynamic.dll
 
 ##Version 4.7.1.1 to 4.7.2
@@ -45,8 +43,8 @@ Read and follow [the full v7 upgrade guide](v7-upgrade.md)
  * These are not compatible with V7
 * Move appSettings/connectionStrings back to web.config 
  * If you are on 7.0.0 you should migrate these settings into the web.config instead of having them in seperate files in /config/
- * So the keys in config/AppSettings.config need to be moved back to the web.config <appSettings> section and similarly, the config/ConnectionStrings.config holds the Umbraco database connections in v7.0.0 and they should be moved back to the web.config <connectionStrings> section. 
- * /config/AppSettings.config and /config/ConnectionString.config can be removed (make backups, just in case) after the contents have been moved back to web.config.
+ * The keys in config/AppSettings.config need to be moved back to the web.config <appSettings> section and similarly, the config/ConnectionStrings.config holds the Umbraco database connections in v7.0.0 and they should be moved back to the web.config <connectionStrings> section. 
+ * /config/AppSettings.config and /config/ConnectionString.config can be removed after the contents have been moved back to web.config. (Make backups just in case)
 * Delete all files in ~/App_Data/TEMP/Razor/* 
  * Related to issues with razor macros
 
