@@ -86,7 +86,7 @@ The `MenuRendering` is raised whenever a menu is generated for a tree node
 	//the event listener method:
     void TreeControllerBase_MenuRendering(TreeControllerBase sender, MenuRenderingEventArgs e)
     {
-        //this example will add a custom menu item for all admin user's
+        //this example will add a custom menu item for all admin users
         // for all content tree nodes
         if (sender.TreeAlias == "content"
             && sender.Security.CurrentUser.UserType.Alias == "admin")
