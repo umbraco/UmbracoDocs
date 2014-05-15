@@ -4,7 +4,7 @@ Many of the Umbraco services expose a 'Saved' event (or similar), in some cases 
 
 ## Checking if it's new##
 
-We know that if an entity is new and hasn't been persisted that it will not have an ID. Therefore we know if an entity has been newly persisted to the database by checking if it's ID was changed before being persisted.
+We know that if an entity is new and hasn't been persisted that it will not have an ID. Therefore we know if an entity has been newly persisted to the database by checking if its ID was changed before being persisted.
 
 Here's the snippet of code that does that:
 

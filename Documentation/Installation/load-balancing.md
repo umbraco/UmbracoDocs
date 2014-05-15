@@ -33,7 +33,7 @@ There are 2 design alternatives you can use to effectively load balance servers:
 And, you'll need a load balancer to do your load balancing obviously!
 
 ##DNS
-Each server in your cluster will require a custom unique DNS name assigned to the host header for the IIS install for this website. This is so Umbraco knows which server nodes to replicate it's cached content with.
+Each server in your cluster will require a custom unique DNS name assigned to the host header for the IIS install for this website. This is so Umbraco knows which server nodes to replicate its cached content with.
 
 An example of how to setup DNS and host headers between 3 load balanced servers:
 
@@ -124,7 +124,7 @@ Other options include changing your log4net setup to log to a centralized databa
 
 ###IIS Setup
 
-IIS configuration is pretty straightforward with file replication because IIS is just reading files from it's own file system just like a normal IIS website.
+IIS configuration is pretty straightforward with file replication because IIS is just reading files from its own file system just like a normal IIS website.
 
 ##File Storage on SAN/NAS/Clustered File Server/Network Share
 
@@ -178,8 +178,8 @@ Other options include changing your log4net setup to log to a centralized databa
 
 ##ASP.Net Configuration
 
-* You will need to use a custom machine key so that all your machine key level encryption values are the same on all servers, without this you will end up with view state errors, validation errors and encryption/decryption errors since each server will have it's own generated key.
-	* Here's a couple of tools that can be used to generate machine keys:
+* You will need to use a custom machine key so that all your machine key level encryption values are the same on all servers, without this you will end up with view state errors, validation errors and encryption/decryption errors since each server will have its own generated key.
+	* Here are a couple of tools that can be used to generate machine keys:
 		* 	[http://www.betterbuilt.com/machinekey/](http://www.betterbuilt.com/machinekey/)
 		* 	[http://www.developerfusion.com/tools/generatemachinekey/](http://www.developerfusion.com/tools/generatemachinekey/)
 	* 	Then you need to update your web.config accordingly, note that the validation/decryption types may be different for your environment depending on how you've generated your keys.

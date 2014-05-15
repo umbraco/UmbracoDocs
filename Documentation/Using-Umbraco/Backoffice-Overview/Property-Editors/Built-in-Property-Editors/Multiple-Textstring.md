@@ -18,7 +18,7 @@ Users can add a new item by clicking the plus icon, delete a item by clicking th
 
 ##Data example
 
-Multiple Textstring stores it's content as XML, below is an example.
+Multiple Textstring stores its content as XML, below is an example.
 
 	<keyFeatureList>
 		<values>

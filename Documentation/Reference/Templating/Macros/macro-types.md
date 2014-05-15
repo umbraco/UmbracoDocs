@@ -1,6 +1,6 @@
 #Managing macros
 
-_Describes how to create/update a macro and it's parameters_
+_Describes how to create/update a macro and its parameters_
 
 ##Creating macros
 

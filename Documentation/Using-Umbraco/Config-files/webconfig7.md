@@ -48,7 +48,7 @@ Coming soon!
 
 ##Optional settings
 
-_These are settings that have default values but can be overridden by creating the appSetting and setting it's value in the web.config_
+_These are settings that have default values but can be overridden by creating the appSetting and setting its value in the web.config_
 
 ###umbracoContentXML
 

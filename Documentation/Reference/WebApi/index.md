@@ -36,7 +36,7 @@ There are 2 types of Umbraco Api controllers:
 1. A locally declared controller - it is **not** routed via an Area
 1. A plugin based controller - it is routed via an Area
 
-When working on your own projects you will normally be creating a locally declared controller which requires no additional steps. However, if you are creating an Umbraco package to be distributed you will want to create a plugin based controller so that it gets routed via it's own area. This ensures that the route will not overlap with someone's locally declared controller if they are both named the same thing.
+When working on your own projects you will normally be creating a locally declared controller which requires no additional steps. However, if you are creating an Umbraco package to be distributed you will want to create a plugin based controller so that it gets routed via its own area. This ensures that the route will not overlap with someone's locally declared controller if they are both named the same thing.
 
 ###Naming conventions
 

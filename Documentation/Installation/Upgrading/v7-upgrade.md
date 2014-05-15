@@ -123,7 +123,7 @@ There are several database changes made in v7, one of which is the change of ref
 
 ##Parameter Editors
 
-Legacy parameter editors (pre v7) will not work with Umbraco v7. If Umbraco detects a legacy parameter editor alias that does not map to a real v7 parameter editor it will simply render a textbox in it's place. You will need to update your macros to use a compatible v7 parameter editor for those that aren't supported.
+Legacy parameter editors (pre v7) will not work with Umbraco v7. If Umbraco detects a legacy parameter editor alias that does not map to a real v7 parameter editor it will simply render a textbox in its place. You will need to update your macros to use a compatible v7 parameter editor for those that aren't supported.
 
 Previously parameter editors were registered in an Umbraco database table: `cmsMacroPropertyType` which no longer exists. Parameter editors in v7 are plugins just like property editors. During the v7 upgrade installation process it will update the new `cmsMacroProperty.editorAlias` column with the previous parameter editor alias. During this process it will look into the `Umbraco.Core.PropertyEditors.LegacyParameterEditorAliasConverter` for a map between a legacy alias to a new v7 alias.
 
