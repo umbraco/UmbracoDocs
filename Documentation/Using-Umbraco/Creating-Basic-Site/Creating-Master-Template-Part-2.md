@@ -48,7 +48,7 @@ Now let's create a page using our new **_Document Type_** and **_Template_** - g
 
 This is by design - Umbraco limits the editors to only being able to create content in the places that you, the developer, allows. This will stop a user from breaking a site design (or an entire site) when they create a new homepage under the news container node later! Unfortunately this functionality also confuses a lot of new Umbracians - hence why we show you this error here.  
 
-Go to **_Settings > Homepage_** on the **_Structure_**  tab you'll see a list of checkboxes under a label **_Allowed child nodetypes_** (be careful not to confuse this with the **_Info tab's_** **_Allowed templates_** - we'll cover that later).  So we need to allow users to be able to create child nodes below our Homepage of type "_Simple Content Page_". Check the box and hit **_Save_**. 
+Go to **_Settings > Homepage_** on the **_Structure_**  tab you'll see a list of checkboxes under a label **_Allowed child nodetypes_** (be careful not to confuse this with the **_Info tab_**'s **_Allowed templates_** - we'll cover that later).  So we need to allow users to be able to create child nodes below our Homepage of type "_Simple Content Page_". Check the box and hit **_Save_**. 
 
 
 ![Homepage - Allowed Child Nodetypes](images/figure-32-homepage-allowed-child.png?raw=true)

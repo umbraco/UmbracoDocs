@@ -60,7 +60,7 @@ The `TreeNodesRendering` is raised whenever a list of child nodes are created
 	//the event listener method:
     void TreeControllerBase_TreeNodesRendering(TreeControllerBase sender, TreeNodesRenderingEventArgs e)
     {
-        //this example will filter any content tree node who's node name starts with
+        //this example will filter any content tree node whose node name starts with
         // 'Private', for any user that is of the type 'customUser'
         if (sender.TreeAlias == "content"
             && sender.Security.CurrentUser.UserType.Alias == "customUser")

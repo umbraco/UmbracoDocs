@@ -278,11 +278,11 @@ option to "false" and thereby enabling it.
 
 **`<hideDisabledUsersInBackoffice>`**
 As stated in the comment above, this setting was introduced in v4.8. If it's set to true it's not possible to see disabled users, which means it's
-not possible to re-enable their access to the backoffice again. It also means you can't create an identical username if the user was disabled by a mistake.
+not possible to re-enable their access to the back office again. It also means you can't create an identical username if the user was disabled by a mistake.
 
 ##RequestHandler
 
-The options in the request handler let's us do some quite usefull things, like setting domain prefixes, deciding wether or not to use traling slashes and setting url replacement for special characters.
+The options in the request handler let us do some quite useful things, like setting domain prefixes, deciding whether or not to use trailing slashes and setting URL replacement for special characters.
 Let's have a further look at each option below.
 
     <requestHandler>
