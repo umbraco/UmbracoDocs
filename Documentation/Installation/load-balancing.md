@@ -1,6 +1,6 @@
 #Umbraco in Load Balanced Environments
 
-_Information on how to deploy Umbraco in a Load Balanced scenario and other details to consider when setting up Umbraco for load balancing_
+_Information on how to deploy Umbraco in a Load Balanced scenario and other details to consider when setting up Umbraco for load balancing._
 
 ##Overview
 Configuring and setting up a load balanced server environment requires planning, design and testing. This document should assist you in setting up your servers, load balanced environment and Umbraco configuration. 
@@ -11,26 +11,25 @@ This document assumes that you have a fair amount of knowledge about:
 * IIS 7+
 * Networking & DNS
 * Windows Server (2008/2012)
-* .Net Framework
+* .NET Framework
 
 ##Design
-For the sake if this document, the following assumptions will be made:
+These instructions make the following assumptions:
 
 * All servers are part of the same domain
 * All servers are on the same network/subnet
 * You have administration access to all servers
 * All servers can communicate via HTTP protocol with each other
-* You should be running in ASP.Net Full trust (medium trust may cause some issues with load balancing)
-* **You will designate a single server to be back-office server for which your editors will log in to for editing content.** Umbraco out-of-the-box currently *(coming soon...)* will not seamlessly work if the back-office is behind the load balancer *(see DNS for more information below)*. If you require that the back office is load balanced you may have to do additional custom development to ensure this works seamlessly.
+* You should be running in ASP.NET Full Trust (medium trust may cause some issues with load balancing)
+* **You will designate a single server to be the back-office server for which your editors will log into for editing content.** Umbraco out-of-the-box currently *(coming soon...)* will not seamlessly work if the back-office is behind the load balancer *(see DNS for more information below)*. If you require that the back office is load balanced you may have to do additional custom development to ensure this works seamlessly.
 
-There are 2 design alternatives you can use to effectively load balance servers:
+There are two design alternatives you can use to effectively load balance servers:
 
 1. Each server hosts copies of the load balanced website files and a file replication service is running to ensure that all files on all servers are up to date. *This is the recommended approach.* 
-2. The load balanced website files are located on a centralized file share (SAN/NAS/Custered File Server/Network Share)
+2. The load balanced website files are located on a centralized file share (SAN/NAS/Custered File Server/Network Share).
 
- 
 
-And, you'll need a load balancer to do your load balancing obviously!
+And you'll obviously need a load balancer to do your load balancing!
 
 ##DNS
 Each server in your cluster will require a custom unique DNS name assigned to the host header for the IIS install for this website. This is so Umbraco knows which server nodes to replicate its cached content with.
@@ -66,7 +65,7 @@ As an example, you could assign Server 1 as the designated back-office server. I
 You will then need to ensure that any public request going to this DNS entry only goes to Server 1. This can be acheived by assigning a secondary public IP address to the DNS entry and configuring your firewall to NAT this IP address to your Server 1 internal IP address. Other alternatives could possibly be acheived based on your firewall and the configuration that it supports.
 
 ##Load Balancer
-A load balancer is what is going to balance the traffic between your servers. There's a ton of load balancers out there and hardware ones are generally the most effective way to go about balancing traffic. If you don't have a hardware load balancer, don't worry as you can use software. Windows server comes with [NLB (Network load balancing)](http://technet.microsoft.com/en-us/library/cc758834%28WS.10%29.aspx). It's relatively easy to setup and it's free. 
+A load balancer will balance the traffic between your servers. There are many load balancers out there and hardware ones are generally the most effective way to balance traffic. If you don't have a hardware load balancer, don't worry - you can use software. Windows Server comes with [NLB (Network Load Balancing)](http://technet.microsoft.com/en-us/library/cc758834%28WS.10%29.aspx). It's relatively easy to setup and free.
 
 Some important notes on NLB:
 
@@ -80,7 +79,7 @@ Some important notes on NLB:
 
 *This is the recommended setup*
 
-A very common way to do file replication on Windows Server is to use [DFS](http://msdn.microsoft.com/en-us/library/windows/desktop/bb540031(v=vs.85).aspx) which comes with Windows Server for free. 
+A common way to replicate files on Windows Server is to use [DFS](http://msdn.microsoft.com/en-us/library/windows/desktop/bb540031(v=vs.85).aspx), which is included with Windows Server.
 
 Additional DFS resources:
 
@@ -92,14 +91,14 @@ There are other alternatives for file replication out there, some free and some 
 
 ###Non-replicated files
 
-When deploying Umbraco in a load balanced scenario using file replication it is important to ensure that not all files are replicated otherwise you will get file locking issues. Here are the folders/files to ensure are not replicated:
+When deploying Umbraco in a load balanced scenario using file replication, it is important to ensure that not all files are replicated - otherwise you will experience file locking issues. Here are the folders and files that should not be replicated:
 
 * ~/App_Data/TEMP/*
 * ~/App_Data/umbraco.config 
 	* Alternatively you can change the web.config entry to store this file inside of the ~/App_Data/TEMP folder using this
 	
 			<add key="umbracoContentXML" value="~/App_Data/TEMP/umbraco.config" />
-	* Another alternative is to have the umbraco.config file stored in the local server's 'temp' folder, this can be acheived by changing this configuration setting to 'true' in the web.config. The downside of this is that if you need to view this configuration file you'll have to find it in the temp files which isn't always clear.
+	* Another alternative is to store the umbraco.config file in the local server's 'temp' folder. Achieve this by changing this configuration setting to 'true' in the web.config. The downside is that if you need to view this configuration file you'll have to find it in the temp files. Locating the file this way isn't always clear.
 			
 			<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
 * ~/App_Data/Logs/*
@@ -109,22 +108,22 @@ If for some reason your file replication solution doesn't allow you to not repli
 
 * Edit /web.config and change the umbracoContentXML to use ~/App_Data/TEMP/umbraco.config.
 * Copy the /App_Data/TEMP directory to each server, outside of any replication areas or to a unique folder for each server.
-* Create a virtual directory (not a virtual application) in the /App_Data folder, and name it TEMP.  Point the virtual directory to the folder you created in step 2.
-* You may delete the /App_Data/TEMP folder from the file system (not IIS as this may delete the virtual directory) if you wish.
+* Create a virtual directory (not a virtual application) in the /App_Data folder, and name it TEMP. Point the virtual directory to the folder you created in step 2.
+* You may delete the /App_Data/TEMP folder from the file system - not IIS as this may delete the virtual directory - if you wish.
 
 ###Additional important notes
 
 ####Examine/Lucene
-When running in a replicated environment Lucene/Examine indexes must not be replicated (as per above). It is also important to note that Lucene/Examine indexes will only contain published *content* on each server node. The only server node that will contain full Lucene/Examine indexes with unpublished content and media will be the server that you've designated as your back-office administration server. If you require your Lucene/Examine indexes to contain unpublished content and media on your additional servers it is probably possible but some custom setup will be required. 
+When running in a replicated environment Lucene/Examine indexes must not be replicated (as per above). It is also important to note that Lucene/Examine indexes will only contain published *content* on each server node. The only server node that will contain full Lucene/Examine indexes with unpublished content and media will be the server that you've designated as your back-office administration server. If you require your Lucene/Examine indexes to contain unpublished content and media on your additional servers it is possible but requires some custom setup.
 
 ####Logging
-Since Umbraco is using log4net for logging there are various configurations that you can use to ensure logging is done the way that you'd like. If you are replicating your logs - which you may wish to do to ensure that all of your servers have the other server logs - then you'll want to ensure that your logs are named with file names that include the machine name, otherwise you'll get file locks or your logs will get overwritten. *(See below for details on how to do this)* 
+Since Umbraco uses log4net for logging, there are various configurations that can ensure logging is done the way you would like. If you are replicating your logs - which you may wish to do to ensure that all of your servers have the other server logs - then you'll want to ensure that your logs are named with file names that include the machine name. Otherwise you'll get file locks or your logs will get overwritten. *(See below for details on how to do this)* 
 
-Other options include changing your log4net setup to log to a centralized database - of course if your database cannot be accessed then no logging will occur so be aware of this.
+Other options include changing your log4net setup to log to a centralized database. Of course, if your database cannot be accessed then no logging will occur so be aware of this.
 
 ###IIS Setup
 
-IIS configuration is pretty straightforward with file replication because IIS is just reading files from its own file system just like a normal IIS website.
+IIS configuration is pretty straightforward with file replication. IIS is just reading files from its own file system like a normal IIS website.
 
 ##File Storage on SAN/NAS/Clustered File Server/Network Share
 
@@ -132,13 +131,13 @@ Configuring your servers to work using a centrally located file system that is s
 
 **This is when it is very important to have one designated server operating as your back-office editing server.** If you have not configured your environment this way you will get file locks especially regarding Lucene/Examine indexes.  
 
-A note when using this method to store your files centrally, you **must** make sure that your file storage system is HA (Highly Available) which means that there's not single point of failure. If you're hosting your files on a File Server share, you need to make the file share clustered (using [MSCS](http://en.wikipedia.org/wiki/Microsoft_Cluster_Server) or similar). Windows server 2008 supports connecting directly to a SAN via [iSCSI](http://en.wikipedia.org/wiki/ISCSI) if your SAN supports it (there are also many other ways to connect to a SAN to share folders), otherwise you should be able to connect to a NAS via a UNC path.
+A note when using this method to store your files centrally, you **must** make sure that your file storage system is HA (Highly Available) which means that there's not single point of failure. If you're hosting your files on a File Server share, you need to make the file share clustered (using [MSCS](http://en.wikipedia.org/wiki/Microsoft_Cluster_Server) or similar). Windows Server 2008 supports connecting directly to a SAN via [iSCSI](http://en.wikipedia.org/wiki/ISCSI) if your SAN supports it (there are also many other ways to connect to a SAN to share folders), otherwise you should be able to connect to a NAS via a UNC path.
 
 There's a lot of work required to get this working, but once it's done it's fairly easy to maintain. We've this same setup working for many websites so hopefully these notes help you get started:
 
 ###Umbraco configuration
 
-One important configuration option that **must** be set when using a centralized storage is to store the umbraco.config file in the ASP.Net temp folder local to the individual server. Change this setting to 'true' in your web.config
+One important configuration option that **must** be set when using a centralized storage is to store the umbraco.config file in the ASP.NET temp folder local to the individual server. Change this setting to 'true' in your web.config
 
 	<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
 
@@ -149,34 +148,34 @@ One important configuration option that **must** be set when using a centralized
 * Create domain user account that will run your IIS websites. Example: MyDomain\WebsiteUser
 * Grant this domain user FULL access to your file share
 * On each web server, add this user to the IIS Security group account. Server 2003: IIS_WPG, Server 2008: IIS_IUSRS
-* The .Net Code Access Policy must be updated on each server to run with Full Trust for the UsterNC share:
+* The .NET Code Access Policy must be updated on each server to run with Full Trust for the UsterNC share:
 ** EXAMPLE: %windir%\Microsoft.NET\Framework64\v2.0.50727\caspol -m -ag 1. -url "file://\\fileserver.mydomain.local\Inetpub\MySite\*" FullTrust -name "WebsiteUser"
 * The IIS user above needs to be granted the appropriate IIS permissions:
 ** EXAMPLE: %windir%\Microsoft.NET\Framework64\v2.0.50727\Aspnet_regiis.exe -ga ActiveDirectoryDomain\ProcessIdentity
 * Restart the server
 
-**Much of the above is covered in this Microsoft doc: [ASP.Net 3.5 Hosting](http://wiki.dev/GetFile.aspx?File=Wiggles-Hosting/ASPNET35_HostingDeploymentGuide.doc)**
+**Much of the above is covered in this Microsoft doc: [ASP.NET 3.5 Hosting](http://wiki.dev/GetFile.aspx?File=Wiggles-Hosting/ASPNET35_HostingDeploymentGuide.doc)**
 
 ###IIS Setup
 
 Since the files for the website will be hosted centrally, each IIS website on your servers will need to point to the same UNC share for the files. For example: *\\fileserver.mydomain.local\Inetpub\MySite*
 
-* point to the shared file server: \\fileserver.mydomain.local\Inetpub\MySite
+* Point to the shared file server: \\fileserver.mydomain.local\Inetpub\MySite
 * "Connect To" this share with the user account created above
-* have their application pools run as the user above
+* Have their application pools run as the user above
 * Have the IIS anonymous user account set to the application pool account (IIS 7)
 
 ###Additional important notes
 
 ####Examine/Lucene
-As noted above if running Umbraco load balanced in a centralized SAN environment you must only have one designated server as the administration server otherwise it will not work, you will get file locks.
+As noted above, if running Umbraco load balanced in a centralized SAN environment you must only have one server designated as the administration server. Otherwise it will not work - you will get file locks.
 
 ####Logging
 Since Umbraco is using log4net for logging there are various configurations that you can use to ensure logging is done the way that you'd like. If you are using file based logs you'll want to ensure that your logs are named with file names that include the machine name, otherwise you'll get file locks. *(See below for details on how to do this)*
 
 Other options include changing your log4net setup to log to a centralized database - of course if your database cannot be accessed then no logging will occur so be aware of this.
 
-##ASP.Net Configuration
+##ASP.NET Configuration
 
 * You will need to use a custom machine key so that all your machine key level encryption values are the same on all servers, without this you will end up with view state errors, validation errors and encryption/decryption errors since each server will have its own generated key.
 	* Here are a couple of tools that can be used to generate machine keys:

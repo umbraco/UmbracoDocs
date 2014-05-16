@@ -29,14 +29,15 @@ You can simply open up the **Package Console** and type:
 
 Or you can open the **NuGet Package Manager** and select the **Updates** pane to get a list of available updates. Choose the package called **UmbracoCms** and click update. This will run through all the files and make sure you have the latest changes while leaving files you have updated.
 
-You will be asked to overwrite your web.config file and the files in /config, make sure to answer **No** to those questions. For some inexplicable reason, the installation will fail if you answer "No to all" or "L" to the question: File 'Web.config' already exists in project 'MySite'. Do you want to overwrite it? 
-So make sure to only answer "No" (in the GUI) or "N" (in the package manager console).
+You will be asked to overwrite your web.config file and the files in /config, make sure to answer **No** to those questions.
+
+For some inexplicable reason, the installation will fail if you click "No to All" (in the GUI) or answer "L" (in the package manager console) to the question: "File 'Web.config' already exists in project 'MySite'. Do you want to overwrite it?" So make sure to only answer "**No**" (in the GUI) or "**N**" (in the package manager console).
 
 ![](images/nuget-overwrite-dialog.png)
 ![](images/nuget-upgrade-overwrite.png)
 
 
-Now here comes the tricky bit: We'll be mean and overwrite your web.config file anyway. But we'll back it up so don't worry (plus you already had your own backup, right?). You can find the backup in `App_Data\ConfigBackup\20140320-165450`, the `20140320-165450` bit is the current date and time, so it varies. You can then merge your config files and make sure they're completely up to date.
+Now here comes the tricky bit: We'll be mean and overwrite your web.config file anyway. But we'll back it up so don't worry. (Plus you already had your own backup, right?) You can find the backup in `App_Data\ConfigBackup\20140320-165450`. (The `20140320-165450` bit is the date and time when the backup occured, which varies.) You can then merge your config files and make sure they're completely up to date.
 
 ##Merge configuration files
 You can expect some changes to the following configuration files:
@@ -66,11 +67,9 @@ The installer will do two things:
 * Update the version number in the Web.config 
 * Upgrade your database in case there are any changes
 
-We are aware that, currently, the installer is asking you for the database details of a **blank database** while upgrading. In the near future this will be prefilled with your existing details and the wording will be updated.  
-So no need to be scared. Just enter the details of your existing database and Umbraco will upgrade it to the latest version when necessary.
+We are aware that, currently, the installer is asking you for the database details of a **blank database** while upgrading. In the near future this will be prefilled with your existing details and the wording will be updated. So no need to be scared. Just enter the details of your existing database and Umbraco will upgrade it to the latest version when necessary.
 
-Since version 4.0.0 there have been two database upgrades, one to version 4.1.0 and one to version 4.9.0.  
-Version 6 introduces a large database upgrade and still handles all the previously necessary database upgrades too.
+Since version 4.0.0 there have been two database upgrades, one to version 4.1.0 and one to version 4.9.0. Version 6 introduces a large database upgrade and still handles all the previously necessary database upgrades too.
 
 ##Potential issues and gotchas
 
@@ -79,8 +78,7 @@ Google Chrome has notoriously aggressive caching, so if something doesn't seem t
 
 One way to nudge the cache in Chrome is to open the developer tools (F12) and go to the settings (the cog icon). There will be a checkbox that says "Disable cache (while DevTools is open)". Once this checkbox is on you can refresh the page and the cache should be invalidated. To force it even more, the "reload" button next to your address bar now has extra options when you right-click it. It should have "Normal reload", "Hard reload" and "Empty cache and hard reload" now. The last option is the most thorough and you might want to try that.
 
-The important other thing you'll need to do is go into config/ClientDependency.config and update the version number in there. So if it currently says version="2" then just make it one higher: version="3".
-This will ensure that any server-side cache of javascript and stylesheets gets cleared as well.
+The important other thing you'll need to do is go into config/ClientDependency.config and update the version number there. If it currently says version="2" then just make it one higher: version="3". This will ensure that any server-side cache of javascript and stylesheets gets cleared as well.
 
 **_We're working on making this experience better and seamless, but for now make sure to follow these steps for v7 upgrades._**
 
