@@ -44,9 +44,9 @@ new XML Schema.
       </Home>
     </root>
 
--   Each document type has it's own node using the document type alias -
+-   Each document type has its own node using the document type alias -
     ```<Home>``` as opposed to ```<node documentTypeAlias="home">```
--   Each property has it's own node underneath the document type node
+-   Each property has its own node underneath the document type node
     ```<umbracoNaviHide>``` as opposed to ```<data alias="umbracoNaviHide">```
 -   The way to tell the difference between a document type node and a
     property node is that the document type node has the blank attribute

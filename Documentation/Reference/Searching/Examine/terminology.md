@@ -3,7 +3,7 @@ _Describes the different terms/names used throughout Examine_
 
 ## Index
 
-An *Index* is the repository that stores searchable data, generally Examine uses Lucene as it's index repository but if you really wanted it is possible to use any repository, though this would require writing a lot of code.
+An *Index* is the repository that stores searchable data, generally Examine uses Lucene as its index repository but if you really wanted it is possible to use any repository, though this would require writing a lot of code.
 
 ## The 3 basic parts
 
@@ -15,7 +15,7 @@ An indexer in Examine is the object that performs the storing data into the inde
 
 ## Searcher
 
-A searcher in Examine is the object that performs the searching of data that is stored in the index.The most basic interface that defines a searcher is `Examine.ISearcher`. Examine has the capability to search based on it's own Fluent Api, or by querying directly to Lucene using raw lucene search syntax.
+A searcher in Examine is the object that performs the searching of data that is stored in the index.The most basic interface that defines a searcher is `Examine.ISearcher`. Examine has the capability to search based on its own Fluent Api, or by querying directly to Lucene using raw lucene search syntax.
 
 ## Index Set
 

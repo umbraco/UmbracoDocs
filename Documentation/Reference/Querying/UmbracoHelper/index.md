@@ -4,14 +4,14 @@ _UmbracoHelper is the unified way to work with published content/media on your w
 
 UmbracoHelper also has a variety of helper methods that are useful when working in your views, controllers and webforms classes.
 
-UmbracoHelper is also available from within [Partial View Macros](../../Templating/Macros/Partial-View-Macros/index.md) which is why Partial View Macro's are the recommended macro format (which work in both MVC and WebForms).
+UmbracoHelper is also available from within [Partial View Macros](../../Templating/Macros/Partial-View-Macros/index.md) which is why Partial View Macros are the recommended macro format (which work in both MVC and WebForms).
 
 
 ##How to reference UmbracoHelper?
 
 Nearly all of Umbraco's base classes expose an intance of UmbracoHelper. If you are using MVC Views or Partial View Macros you can reference UmbracoHelper with the syntax: `@Umbraco`
 
-If you are using SurfaceController's, RenderMvcController's, or any controller inheriting from UmbracoController, these all expose an UmbracoHelper via the `Umbraco` property. 
+If you are using SurfaceControllers, RenderMvcControllers, or any controller inheriting from UmbracoController, these all expose an UmbracoHelper via the `Umbraco` property. 
 
 For WebApi, the base class `Umbraco.Web.WebApi.UmbracoApiController` exposes this property too.
 

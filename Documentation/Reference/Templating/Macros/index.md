@@ -8,7 +8,7 @@ A macro is a reusable piece of functionality that you can re-use throughout your
 
 ##[Managing macros](managing-macros.md)
 
-Describes how to create/update a macro and it's macro parameters
+Describes how to create/update a macro and its macro parameters
 
 ##Macro types
 

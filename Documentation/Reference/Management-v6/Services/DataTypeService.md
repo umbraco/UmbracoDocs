@@ -46,7 +46,7 @@ Saves a `DataTypeDefinition` object.
 Deletes a `DataTypeDefinition` object.
 
 ###.GetDataTypeById(Guid id)
-Gets an `IDataType`  by it's unique Id.
+Gets an `IDataType`  by its unique Id.
 
 ###.GetAllDataTypes()
 Gets a complete list of all registered DataTypes as `IDataType` objects.

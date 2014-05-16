@@ -49,7 +49,7 @@ If we would use `MyProvider`, the "swibble" node from our example content tree w
 
 ### The Default Url Segment Provider
 
-Default Url builds it's segments like this. 
+Default Url builds its segments like this. 
 First it looks (in this order) for: 
 
 - the *umbracoUrlName* property. on the node  `content.GetPropertyValue<string>("umbracoUrlName")`

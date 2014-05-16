@@ -1,5 +1,5 @@
 #Document Types#
-_A Document Type is a way to structure the data of your website. A Document Type consists of Properties and a Document Type also defines which Templates can render it's data_
+_A Document Type is a way to structure the data of your website. A Document Type consists of Properties and a Document Type also defines which Templates can render its data_
 ##Creating Document Types##
 Document Types are created in the 'Settings' section of the Backoffice by rightclicking on the node 
 Document Types and choosing 'Create' in the context menu:
@@ -13,7 +13,7 @@ A new Document Type has 4 configuration tabs:
 ###Info###
 The Info tab is where you set the Name and Alias of your Document Type. Under this tab you also define which Templates 
 can render the data this Document Type holds. Also the display options are set under the Info tab, like the Icon with 
-which it is shown in the Content Tree or it's Thumbnail and Description when a user creates a new Document Type in the Content Tree.
+which it is shown in the Content Tree or its Thumbnail and Description when a user creates a new Document Type in the Content Tree.
 ###Structure###
 The Structure tab is where you control the hierarchy of your site. Structure allows you to determine which 
 Document Types can be nested as children to the one you are creating.

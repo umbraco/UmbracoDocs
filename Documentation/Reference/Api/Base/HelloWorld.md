@@ -47,7 +47,7 @@ If you've followed the above tutorial you can now goto this url: <your umbraco i
 This should give you an xml page with a single node in it: `<value>Hello World</value>`
 
 ##So what just happened?
-So what we just did was build a simple string method in .net and afterwards gained direct access to it's return value using a standard Url. Let's take a closer look on what we did to make that happen.
+So what we just did was build a simple string method in .net and afterwards gained direct access to its return value using a standard Url. Let's take a closer look on what we did to make that happen.
 
 First we setup our "TestClass" in the /Base configuration file "restExtenstions.config" by adding this line:
 

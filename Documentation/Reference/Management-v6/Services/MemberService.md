@@ -37,7 +37,7 @@ Adds a new Role with a given name
 Assigns a role to a specific `Member`
 
 ###.AssignRoles(int[] memberIds, string role);
-Assigns a role to multiple `Member`'s
+Assigns a role to multiple `Member`s
 
 ###.CreateMember(string username, string email, string displayName, string memberTypeAlias);
 Creates a new `Member`, but does not instantly persist it

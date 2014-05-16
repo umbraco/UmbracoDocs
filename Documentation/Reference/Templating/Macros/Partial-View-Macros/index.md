@@ -4,7 +4,7 @@ Partial view macros are the recommended macro type to use in Umbraco. They work 
 
 ##File information
 
-By default Partial View Macro's are stored in this folder: 
+By default Partial View Macros are stored in this folder: 
 
 > ~/Views/MacroPartials 
 

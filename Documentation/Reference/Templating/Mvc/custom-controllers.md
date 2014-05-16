@@ -47,7 +47,7 @@ In the near future we will allow setting a custom default controller to execute 
 
 ##Returning a view with a custom model
 
-If you want to return a custom model to a view then there's a few steps that need to be taken. 
+If you want to return a custom model to a view then there are a few steps that need to be taken. 
 
 ###Changing the @inherits directive of your template
 

@@ -42,7 +42,7 @@ The Image Cropper property editor displays an editor to allow backoffice users t
 A simple textbox to input a numeric value
 
 ##Macro Container
-The Macro Container Data type allows content editors to insert one or more macro's in a content page. Settings for the Macro Container are which macro's are allowed, the maximum number of macro's that can be inserted, and the prefered width and height of the Macro Container. A typical use case for the macro container is to allow content editors to insert sidebar widgets.
+The Macro Container Data type allows content editors to insert one or more macros in a content page. Settings for the Macro Container are which macros are allowed, the maximum number of macros that can be inserted, and the prefered width and height of the Macro Container. A typical use case for the macro container is to allow content editors to insert sidebar widgets.
 
 ##[Media Picker](Media-Picker.md)
 The media picker opens a simple modal to pick a specific media item from the media tree. The value saved is the selected media ID.

@@ -4,7 +4,7 @@ _MembershipHelper is a general helper class for access asp.net membership data, 
 
 `MembershipHelper` also has a variety of helper methods that are useful when working in your views, controllers and webforms classes.
 
-`MembershipHelper` is also available from within [Partial View Macros](../../Templating/Macros/Partial-View-Macros/index.md) which is why Partial View Macro's are the recommended macro format (which work in both MVC and WebForms).
+`MembershipHelper` is also available from within [Partial View Macros](../../Templating/Macros/Partial-View-Macros/index.md) which is why Partial View Macros are the recommended macro format (which work in both MVC and WebForms).
 
 ##How to reference MembershipHelper?
 When working in templating, this helper will automatically be there for you to use as `@Members` which means you conveniently in your templates easily can access member data:
