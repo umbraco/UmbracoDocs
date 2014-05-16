@@ -1,6 +1,6 @@
 #Upgrades in general
 
-_This is the guide for upgading in general. Sometimes there are exceptions to these guidelines, which are listed in the [version-specific guide](version-specific.md)._
+_This is the guide for upgrading in general. Sometimes there are exceptions to these guidelines, which are listed in the [version-specific guide](version-specific.md)._
 
 ##Warning
 First of all, things may go wrong for various reasons. Make sure to **ALWAYS** make a backup of both your site's files and the database so that you can return to a version that you know works.  
@@ -9,7 +9,7 @@ Before upgrading to a new major version (like v4 to v6), check if the packages y
 
 ##Copying files
 
-Download the .zip file for the new version you are upgading to.
+Download the .zip file for the new version you are upgrading to.
 
 Copy the following folders from inside the .zip file over the existing folders in your site:
 
@@ -37,7 +37,7 @@ For some inexplicable reason, the installation will fail if you click "No to All
 ![](images/nuget-upgrade-overwrite.png)
 
 
-Now here comes the tricky bit: We'll be mean and overwrite your web.config file anyway. But we'll back it up so don't worry. (Plus you already had your own backup, right?) You can find the backup in `App_Data\ConfigBackup\20140320-165450`. (The `20140320-165450` bit is the date and time when the backup occured, which varies.) You can then merge your config files and make sure they're completely up to date.
+Now here comes the tricky bit: We'll be mean and overwrite your web.config file anyway. But we'll back it up so don't worry. (Plus you already had your own backup, right?) You can find the backup in `App_Data\ConfigBackup\20140320-165450`. (The `20140320-165450` bit is the date and time when the backup occurred, which varies.) You can then merge your config files and make sure they're completely up to date.
 
 ##Merge configuration files
 You can expect some changes to the following configuration files:
