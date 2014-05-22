@@ -59,4 +59,4 @@ No Edit is a property editor that can only be used to display a preset text. It 
 	  </xsl:otherwise>  
 	</xsl:choose>
 
-**TIP:** If you need to edit the value of a "Label" property, switch it's type to "Textstring", edit the value and then switch it back to "Label".
+**TIP:** If you need to edit the value of a "Label" property, switch its type to "Textstring", edit the value and then switch it back to "Label".

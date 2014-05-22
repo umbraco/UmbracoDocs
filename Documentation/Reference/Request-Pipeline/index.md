@@ -2,7 +2,7 @@
 
 **Applies to: Umbraco 6.0+**
 
-_This section explains how Umbraco builds it's URLs and how the URLs are mapped back to nodes_
+_This section explains how Umbraco builds its URLs and how the URLs are mapped back to nodes_
 
  
 ##Introduction

@@ -25,7 +25,7 @@ security</p>
 <th>/App_Code</th>
 <th>Modify / Full control</th>
 <td>
-<p>Should always have modify rights as the folder and it's files
+<p>Should always have modify rights as the folder and its files
 are used for dynamically loading in and generating dlls</p>
 </td>
 </tr>
@@ -33,7 +33,7 @@ are used for dynamically loading in and generating dlls</p>
 <th>/App_Data</th>
 <th>Modify / Full control</th>
 <td>
-<p>Should always have modify rights as the folder and it's files
+<p>Should always have modify rights as the folder and its files
 are used for cache and storage (from Umbraco 4.5 onwards)</p>
 </td>
 </tr>
@@ -58,7 +58,7 @@ security</p>
 <th>/Css</th>
 <th>Modify / Full control</th>
 <td>
-<p>Should always have modify rights as the folder and it's files
+<p>Should always have modify rights as the folder and its files
 are used for css files</p>
 </td>
 </tr>
@@ -66,7 +66,7 @@ are used for css files</p>
 <th>/Data</th>
 <th>Modify / Full control</th>
 <td>
-<p>Should always have modify rights as the folder and it's files
+<p>Should always have modify rights as the folder and its files
 are used for cache and storage (until Umbraco 4.4, changed to App_Data in 4.5)</p>
 </td>
 </tr>
@@ -74,7 +74,7 @@ are used for cache and storage (until Umbraco 4.4, changed to App_Data in 4.5)</
 <th>/MacroScripts</th>
 <th>Modify / Full control</th>
 <td>
-<p>Should always have modify rights as the folder and it's files
+<p>Should always have modify rights as the folder and its files
 are used for Razor files (as of Umbraco 4.7)</p>
 </td>
 </tr>
@@ -82,7 +82,7 @@ are used for Razor files (as of Umbraco 4.7)</p>
 <th>/Masterpages</th>
 <th>Modify / Full control</th>
 <td>
-<p>Should always have modify rights as the folder and it's files
+<p>Should always have modify rights as the folder and its files
 are used for template files</p>
 </td>
 </tr>
@@ -90,7 +90,7 @@ are used for template files</p>
 <th>/Media</th>
 <th>Modify / Full control</th>
 <td>
-<p>Should always have modify rights as the folder and it's files
+<p>Should always have modify rights as the folder and its files
 are used for media files uploaded via umbraco cms interface</p>
 </td>
 </tr>
@@ -98,7 +98,7 @@ are used for media files uploaded via umbraco cms interface</p>
 <th>/Scripts</th>
 <th>Modify / Full control</th>
 <td>
-<p>Should always have modify rights as the folder and it's files
+<p>Should always have modify rights as the folder and its files
 are used for script files</p>
 </td>
 </tr>
@@ -129,7 +129,7 @@ rights, but can be set to read-only afterwards</p>
 <th>/Views</th>
 <th>Modify / Full control</th>
 <td>
-<p>Should always have modify rights as the folder and it's files
+<p>Should always have modify rights as the folder and its files
 are used for template, partial view and macro files</p>
 </td>
 </tr>
@@ -137,7 +137,7 @@ are used for template, partial view and macro files</p>
 <th>/Xslt</th>
 <th>Modify / Full control</th>
 <td>
-<p>Should always have modify rights as the folder and it's files
+<p>Should always have modify rights as the folder and its files
 are used for macro files</p>
 </td>
 </tr>

@@ -37,7 +37,7 @@ Gets all `Umbraco.Core.Models.Section` objects
 Gets all `Umbraco.Core.Models.Section` objects that the user with the specified ID is allowed to access
 
 ###.GetByAlias(string appAlias)
-Gets the `Umbraco.Core.Models.Section` object by it's alias
+Gets the `Umbraco.Core.Models.Section` object by its alias
 
 ###.MakeNew(string name, string alias, string icon)
 Persists a new `Umbraco.Core.Models.Section` object

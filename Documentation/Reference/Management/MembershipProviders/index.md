@@ -4,7 +4,7 @@
 
 ## Overview
 
-Umbraco 4 changed the Umbraco membership model to use the ASP.NET Membership Provider model, meaning that all the abstract classes which are provided Out-Of-The-Box with ASP.NET are capable of accessing the Umbraco Member. There's plenty of good resources on MSDN (and other sites) for using ASP.NET Membership, a suggested starting point is here.
+Umbraco 4 changed the Umbraco membership model to use the ASP.NET Membership Provider model, meaning that all the abstract classes which are provided out-of-the-box with ASP.NET are capable of accessing the Umbraco Member. There are plenty of good resources on MSDN (and other sites) for using ASP.NET Membership, a suggested starting point is here.
 
 Umbraco 4.1 takes this a step further as most of the methods on the umbraco.cms.businesslogic.member.Member class (and MemberGroup class) are obsoleted to direct people into the ASP.NET Membership Provider model.
 

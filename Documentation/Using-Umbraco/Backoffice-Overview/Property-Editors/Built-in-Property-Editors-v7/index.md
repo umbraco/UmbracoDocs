@@ -2,13 +2,13 @@
 
 This page contains a list of all the built-in Umbraco  v7+ property editors and a short description of what they do:
 
-##Checkbox list
+##[Checkbox list](CheckBox-List.md)
 Displays a list of preset values as a list of checkbox controls
 
 ##Color Picker
 Adds a list of approved colours which can be selected by clicking.
 
-##Content Picker
+##[Content Picker](Content-Picker.md)
 The content picker opens a simple modal to pick a specific page from the content structure. 
 
 ##Date
@@ -23,10 +23,10 @@ Displays a list of preset values. The value saved is a text value.
 ##[Dropdown list, publishing keys](DropDown-List-Publishing-Keys.md)
 Displays a list of preset values as a list. The value saved is a prevalue ID
 
-##Dropdown list multiple
+##[Dropdown list multiple](DropDown-List-Multiple.md)
 Displays a list of preset values where multiple can be selected. The value saved is a CSV of the text values.
 
-##Dropdown list multiple, publish keys
+##[Dropdown list multiple, publish keys](DropDown-List-Multiple-Publish-Keys.md)
 Displays a list of preset values where multiple can be selected. The value saved is a CSV of prevalue ids.
 
 ##Email address
@@ -36,6 +36,9 @@ Adds an upload field, which allows documents or images to be uploaded to Umbraco
 
 ##Folder Browser
 Used mainly with container Media Types, the Folder Browser displays a list of thumbnail images.
+
+##[Image Cropper](Image-Cropper.md)
+Used to crop and resize images to predefined sizes. Available from V7.1
 
 ##Label
 Label is a non-editable control, can only be used to display a pre-set text.
@@ -59,12 +62,13 @@ The media picker displays the current selected media and provides the option to 
 ##[Multinode Treepicker](Multinode-Treepicker.md)
 The multinode treepicker data type allows content editors to choose multiple nodes in the content or media trees.
 
-##Multiple Textbox
+##[Multiple Textbox](Multiple-Textbox.md)
+The Multiple Textbox property editor enables a content editor to make a list of text items
 
 ##Numeric
 
-##Radio button list
-Pretty much like the name indicates this Data type enables editors to choose from list of radiobuttons.
+##[Radio button list](RadioButton-List.md)
+Pretty much like the name indicates this property editor enables editors to choose from list of radio buttons.
 
 ##[Related Links](Related-Links.md)
 Related Links allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.

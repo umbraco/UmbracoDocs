@@ -57,6 +57,6 @@ So with this information along with some basic xpath we can query the xml from t
 
 	<xsl:value-of select="/macro/contentTree/node/nodeName"/> 
 
-or get it's bodyText value with
+or get its bodyText value with
 
 	<xsl:value-of select="/macro/contentTree/node/data [@alias = 'bodyText']"/>

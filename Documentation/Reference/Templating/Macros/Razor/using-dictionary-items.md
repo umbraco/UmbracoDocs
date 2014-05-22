@@ -9,4 +9,4 @@ Dictionary Items can be accessed from Razor in different ways
 ###umbraco.GetDictionaryItem("dictionaryItemAlias")
 Get the dictionary item with the specified key `@umbraco.library.GetDictionaryItem("Home")`
 ###umbraco.GetDictionaryItems("dictionaryItemAlias")
-Gets the dictionary item with the specified key and it's child dictionary items
+Gets the dictionary item with the specified key and its child dictionary items

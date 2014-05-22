@@ -69,7 +69,7 @@ Gets the Enum value corresponding to the supplied Guid. This method iterates the
 ### GetUmbracoObjectType(int)
 Returns: `uQuery.UmbracoObjectType`
 
-Gets the UmbracoObjectType for the supplied Umbraco id. This method queries the umbracoNode table, getting the guid in the nodeObjectType field where the id matches that supplied. This guid is then used to the find the Enum by attribute value, iif it's not found then UmbracoObjectType.Unknown is returned.
+Gets the UmbracoObjectType for the supplied Umbraco id. This method queries the umbracoNode table, getting the guid in the nodeObjectType field where the id matches that supplied. This guid is then used to the find the Enum by attribute value; if it's not found then UmbracoObjectType.Unknown is returned.
 
 	uQuery.UmbracoObjectType umbracoObjectType = uQuery.GetUmbracoObjectType(1100);
 

@@ -278,11 +278,11 @@ option to "false" and thereby enabling it.
 
 **`<hideDisabledUsersInBackoffice>`**
 As stated in the comment above, this setting was introduced in v4.8. If it's set to true it's not possible to see disabled users, which means it's
-not possible to re-enable their access to the backoffice again. It also means you can't create an identical username if the user was disabled by a mistake.
+not possible to re-enable their access to the back office again. It also means you can't create an identical username if the user was disabled by a mistake.
 
 ##RequestHandler
 
-The options in the request handler let's us do some quite usefull things, like setting domain prefixes, deciding wether or not to use traling slashes and setting url replacement for special characters.
+The options in the request handler let us do some quite useful things, like setting domain prefixes, deciding whether or not to use trailing slashes and setting URL replacement for special characters.
 Let's have a further look at each option below.
 
     <requestHandler>
@@ -462,13 +462,13 @@ The task elements consist of the following attributes:
 
 ##DistributedCalls / Loadbalancing
 
-Umbraco comes with abbility to distrubute it's cached content to multiple servers. Also know as loadbalancing. Umbraco has to be installed on all servers, but all servers sharing the same database.
+Umbraco comes with abbility to distrubute its cached content to multiple servers. Also know as loadbalancing. Umbraco has to be installed on all servers, but all servers sharing the same database.
 
 When the umbraco instances are setup and files are synced between the instances, the instances need to know when to refresh their cache. This happens in the <servers> setting.
 
 Eveytime some content is published in umbraco. You can ask umbraco to ping other hosts and tell them to update their cache. Make sure that these instances can be reached internally on port 80.
 
-Also, remember to include the actual instance performing the publish if you it to refresh it's own cache as well. Cache will only be refreshed on servers in the list.
+Also, remember to include the actual instance performing the publish if you it to refresh its own cache as well. Cache will only be refreshed on servers in the list.
 
     <!-- distributed calls make umbraco use webservices to handle cache refreshing -->
     <distributedCall enable="false">
@@ -538,7 +538,7 @@ Also note that you can remove the official repository from the **<repositories>*
 
 The providers section configures the different providers in use in umbraco. Currently only the backend membership provider is set here.
 
-**DefaultBackofficeProvider:** the name of the membership provider you wish to use to authenticate users in the backend. To use, add a new provider to the web.config file and set it's alias here
+**DefaultBackofficeProvider:** the name of the membership provider you wish to use to authenticate users in the backend. To use, add a new provider to the web.config file and set its alias here
 
     <providers>
         <users>
@@ -577,7 +577,7 @@ This will make the final url look like this: http://www.xyz.no/?content/dashboar
 
 You can also omit the parameters you don't need.
 
-The smart thing about the help section is that it is context aware. Therefore the Help link will change according to it's current context. If nothing has been specified
+The smart thing about the help section is that it is context aware. Therefore the Help link will change according to its current context. If nothing has been specified
 in the **`<link>`** elements then the help button will default to the **defaultUrl** specified on the **`<help>`** element. Let's have a look at the different attribues i more detail.
 
 **content:** This can be either "content", "media", "settings", "developer", "users", "members" or "translation"

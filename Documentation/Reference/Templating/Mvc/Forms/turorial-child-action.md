@@ -99,7 +99,7 @@ The last step is to render the Child Action that we've just created in your Umbr
 
 	@Html.Action("ShowCommentForm", "BlogPostSurface", new { memberId = 1234 })
 
-We pass in the action name and the controller name. Notice that we leave off the suffix "Controller" when calling this method so instead of referring to the class name BlogPostSurfaceController, we refer to it's controller name which is the class name without the "Controller" suffix: *BlogPostSurface*. We'll pass in a member id parameter (value 1234 for brevity) which is done by sending the controller a custom route value which gets automatically bound to the action's parameter. 
+We pass in the action name and the controller name. Notice that we leave off the suffix "Controller" when calling this method so instead of referring to the class name BlogPostSurfaceController, we refer to its controller name which is the class name without the "Controller" suffix: *BlogPostSurface*. We'll pass in a member id parameter (value 1234 for brevity) which is done by sending the controller a custom route value which gets automatically bound to the action's parameter. 
 
 You could also pass in an object as a parameter if you wanted, for this example we could change it to just pass in the currently logged in member object:
 
