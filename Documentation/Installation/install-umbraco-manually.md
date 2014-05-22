@@ -104,6 +104,8 @@ Generally, for development environments you would ensure that the database user 
 
 Once you've created the database and credentials, enter those details in the install wizard after choosing the *I already have a blank SQL Server 2008 database* option.
 
+IMPORTANT: The SQL server user must have their language set to the default English language, do not set this to British english as it parses date structures incorrectly. This issue will hopefully be resolved in the future. 
+
 ##Finishing off
 Follow the installation wizard and after a few easy steps and choices you should get a message saying the installation was a success.
 
