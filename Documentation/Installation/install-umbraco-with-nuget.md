@@ -37,10 +37,12 @@ It's important to pick only one of those as other templates cause errors beyond 
 ![](images/NuGet/new-project-vs2012.png)
 
 ###Visual Studio 2013
-Go to **File > New Project** and pick an ASP.NET **Empty** Web Application.   
-It's important to pick **empty** as other templates include incompatible versions of MVC and Json.NET. (Don't enable any of the checkboxes to add folders or core references. Umbraco will add them for you).   
+Go to **File > New Project** and pick an ASP.NET  Web Application.    
 
 ![](images/NuGet/new-project-vs2013-1.png)
+
+On the next step, select the **Empty** template. It's important to to pick **empty** as other templates include incompatible versions of MVC and Json.NET. (Don't enable any of the checkboxes to add folders or core references. Umbraco will add them for you).  
+
 ![](images/NuGet/new-project-vs2013-2.png)
 
 Or you can use one of the VS2012 templates:
