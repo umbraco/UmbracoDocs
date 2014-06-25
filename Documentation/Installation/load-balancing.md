@@ -195,7 +195,7 @@ Other options include changing your log4net setup to log to a centralized databa
 
 ##Umbraco Configuration
 
-Configuring Umbraco to support load balanced clusters is probalby the easiest part. In the /config/umbracoSettings.config file you need to updated the distributed call section to the following (as an example)
+Configuring Umbraco to support load balanced clusters is probably the easiest part. In the /config/umbracoSettings.config file you need to updated the distributed call section to the following (as an example)
 	
 	<distributedCall enable="true">
 	    <user>0</user>
@@ -211,6 +211,28 @@ As you can see in the above XML the distributed server names are the custom DNS 
 There are a couple optional elements for the configuration of each server that allow you to specify a specific protocol or port number:
 
 	<server forceProtocol="http|https" forcePortnumber="80|443">server3.mywebsite.com</server>
+
+### Correct config for scheduled publishing & tasks
+
+As of Umbraco 6.2.1+ and 7.1.5+ there are another couple of options to take into account:
+
+* If you have your load balancing environment setup with a 'master' server, Umbraco will assume that the **first** server listed in the configuration is the 'master'
+* For scheduled publishing and scheduled tasks to work properly, each server listed needs to know if it is the 'master' server or not. In order to achieve this there are 2 optional attributes for a server configuration node: serverName or appId
+
+**serverName** will be the most common attribute to use and will always work so long as you are not load balancing a single site on the same server. In this case you should add the serverName attribute to each server node listed so that each server knows if it is a master or slave and so that each server knows which internal URL it can use to ping itself. Example:
+
+		
+		<server serverName="MyServer1">server1.mywebsite.com</server>
+	        <server serverName="MyServer2">server2.mywebsite.com</server>
+	        <server serverName="MyServer3">server3.mywebsite.com</server>
+	        
+**appId** is a less common attribute to use but will need to be used in the case where you are load balancing a single site on the same server. The appId is determined by the result of: `HttpRuntime.AppDomainAppId`. This is generally the id of the IIS site hosting the web app (i.e. the value might look something like: /LM/W3SVC/69/ROOT ). You shouldn't specify both the serverName and appId together on the same xml server node, if you do the appId will take precedence. 
+Example:
+
+		<server appId="/LM/W3SVC/987/ROOT">server1.mywebsite.com</server>
+	        <server appId="/LM/W3SVC/123/ROOT">server2.mywebsite.com</server>
+	        <server serverName="MyServer3">server3.mywebsite.com</server>
+
 
 ##Testing
 You'll need to test this solution **a lot** before going to production. You need to ensure there are no windows security issues, etc... The best way to determine issues is have a lot of people testing this setup and ensuring all errors and warnings in your application/system logs in Windows are fixed.
