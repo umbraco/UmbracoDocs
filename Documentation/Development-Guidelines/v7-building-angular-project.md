@@ -57,7 +57,7 @@ this will do the following:
 - Start a webserver on port 9999
 - Open a browser to display localhost:9999/belle
 
-This is all grunt doing that for us, and notice that it sets up a watcher, which means that every time you make a change, it will automaticly recompile and test your code, if something is wrong the terminal will tell you why. 
+This is all grunt doing that for us, and notice that it sets up a watcher, which means that every time you make a change, it will automatically recompile and test your code, if something is wrong the terminal will tell you why. 
 
 You can now login (no user/pass) and browse the UI with dummy data, this setup is perfect for fast css and js changes that does not require any *real* data.
 
@@ -90,6 +90,6 @@ Before running build.bat, then the latest UI files will be included.
 ##Conclusion
 Having Umbraco 7 UI as a seperate project does indeed give us a bit more complexity when building and running from visual studio, since 2 build systems are in play: grunt and msbuild. 
 
-However, the alternative would be to shove everything into the msbuil process, making the entire thing inaccesible to a large number of frontend developers and with a clunkier and less uptodate system.
+However, the alternative would be to shove everything into the msbuild process, making the entire thing inaccessible to a large number of frontend developers and with a clunkier and less uptodate system.
 
-So see it as an additional powerfull tool in your arsenal, once you see the power, you don't want to go back.
+So see it as an additional powerful tool in your arsenal, once you see the power, you don't want to go back.
