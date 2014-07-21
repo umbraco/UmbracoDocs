@@ -71,6 +71,9 @@ We are aware that, currently, the installer is asking you for the database detai
 
 Since version 4.0.0 there have been two database upgrades, one to version 4.1.0 and one to version 4.9.0. Version 6 introduces a large database upgrade and still handles all the previously necessary database upgrades too.
 
+##Post installation
+One important recommendation is to always remove the `install` folder immediately after upgrading Umbraco and never to upload it to a live server.
+
 ##Potential issues and gotchas
 
 ###Browser cache (mostly v7 related)
