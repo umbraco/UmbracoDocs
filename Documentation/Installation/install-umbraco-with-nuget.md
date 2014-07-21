@@ -95,3 +95,6 @@ So make sure to **only answer "Y"**. (You may need to do this a few times).
 You can now run the site like you would normally in Visual Studio (using **F5** or the **Debug** button).
 
 Follow the installation wizard and after a few easy steps and choices you should get a message saying the installation was a success.
+
+##Post installation
+One important recommendation is to always remove the `install` folder immediately after installing Umbraco and never to upload it to a live server.
