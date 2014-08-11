@@ -4,7 +4,7 @@
 
 A property value converter converts a property editors database stored value to another type. The converted value can be accessed from MVC Razor or any other Published Content API. 
 
-Starting with Umbraco v7, property values have multiple levels:
+Starting with Umbraco v7, published property values have four "Values":
 
 - Data - The raw data stored in the database, this is generally a `String`
 - Source - A object of type that is appropriate to the property, e.g. a nodeId should be a `Int` or a collection of nodeId's would be a array of `Int[]`
@@ -107,7 +107,7 @@ In the example below the Content Picker is being converted to `IPublishedContent
 
 #### Properties ####
 
-Level - Content (this Published Content), ContentCache (any Published Content), Request, None
+Level - Content (this Published Content), ContentCache (any Published Content), Request, None<br/>
 Value - All, Source, Object, XPath
 
 In the example below the Content Picker is being converted to `IPublishedContent` so both the Source and XPath values can be cached at the content level but the Object value can only be cached at the ContentCache level. This is because the picked node may change when it's published and we don't want the converted value to become stale therefore we should clear it.
