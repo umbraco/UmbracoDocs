@@ -17,7 +17,9 @@ For example the standard Umbraco Core "Content Picker" stores a nodeId as `Strin
 
 ## Implementing the Interface ##
 
-Implement `IPropertyValueConverter` from the `Umbraco.Core` namepsace on your class
+Implement `IPropertyValueConverter` from the `Umbraco.Core` namespace on your class
+
+	public class ContentPickerPropertyConverter : IPropertyValueConverter
 
 ## Methods ##
 
@@ -53,21 +55,16 @@ This method converts the Source to a Object, the returned value is used by the `
 
 The below example converts the nodeId (converted to Int by ConvertDataToSource) into a IPublishedContent object using the UmbracoHelper TypedContent method.
 
-        public object ConvertSourceToObject(PublishedPropertyType propertyType, object source, bool preview)
-        {
-            if (source == null)
-            {
-                return null;
-            }
-
-            if (UmbracoContext.Current != null)
-            {
-                var umbHelper = new UmbracoHelper(UmbracoContext.Current);
-                return umbHelper.TypedContent(source);
-            }
-
-            return source;
-        }
+	public object ConvertSourceToObject(PublishedPropertyType propertyType, object source, bool preview)
+	{
+	    if (source == null || UmbracoContext.Current == null)
+	    {
+	        return null;
+	    }
+	
+	    var umbHelper = new UmbracoHelper(UmbracoContext.Current);
+	    return umbHelper.TypedContent(source);
+	}
 
 ### object ConvertSourceToXPath(PublishedPropertyType propertyType, object source, bool preview) ###
 
@@ -81,3 +78,74 @@ In the example below, we convert the nodeId (converted by ConvertDataToSource) b
     }
 
 **Note**: This method is not currently requested in Umbraco v7.1.x but it will be in a future version
+
+## Meta Data ##
+
+There are two options for implementing the meta data for a value converter, the first method is to use class attributes and the second is to implement the `IPropertyValueConverterMeta` interface, this is only available in Umbraco **v7.1.5+**
+
+### Property Value Type ###
+
+This meta property is used by the `IPublishedContentModelFactory` to report the CLR type of the `PublishedPropertyType` returned by the `ConvertSourceToObject` method.
+
+In the example below the Content Picker is being converted to `IPublishedContent`
+
+#### Class Attribute ####
+
+	[PropertyValueType(typeof(IPublishedContent))]
+	public class ContentPickerPropertyConverter : IPropertyValueConverter
+
+#### Interface ####
+
+    public Type GetPropertyValueType(PublishedPropertyType propertyType)
+    {
+        return typeof(IPublishedContent);
+    }
+
+### Property Value Cache Level ###
+
+**Note**: This data is not currently used in Umbraco v7.1.x but it will be by the future "object cache layer" to determine at which level each value returned by the `ConvertDataToSource`, `ConvertSourceToObject` & `ConvertSourceToXPath` methods should be cached at.
+
+#### Properties ####
+
+Level - Content (this Published Content), ContentCache (any Published Content), Request, None
+Value - All, Source, Object, XPath
+
+In the example below the Content Picker is being converted to `IPublishedContent` so both the Source and XPath values can be cached at the content level but the Object value can only be cached at the ContentCache level. This is because the picked node may change when it's published and we don't want the converted value to become stale therefore we should clear it.
+
+#### Class Attribute ####
+
+    [PropertyValueCache(PropertyCacheValue.Source, PropertyCacheLevel.Content)]
+    [PropertyValueCache(PropertyCacheValue.Object, PropertyCacheLevel.ContentCache)]
+    [PropertyValueCache(PropertyCacheValue.XPath, PropertyCacheLevel.Content)]
+    public class ContentPickerPropertyConverter : IPropertyValueConverter
+
+If all values should use the same level you can use the short cut below
+
+    [PropertyValueCache(PropertyCacheValue.All, PropertyCacheLevel.ContentCache)]
+
+#### Interface ####
+
+    public PropertyCacheLevel GetPropertyCacheLevel(PublishedPropertyType propertyType, PropertyCacheValue cacheValue)
+    {
+        PropertyCacheLevel returnLevel;
+        switch (cacheValue)
+        {
+            case PropertyCacheValue.Object:
+                returnLevel = PropertyCacheLevel.ContentCache; 
+                break;
+            case PropertyCacheValue.Source:
+                returnLevel = PropertyCacheLevel.Content;
+                break;
+            case PropertyCacheValue.XPath:
+                returnLevel = PropertyCacheLevel.Content;
+                break;
+            default:
+                returnLevel = PropertyCacheLevel.None;
+                break;
+        }
+
+## Samples ##
+
+[Content Picker to `IPublishedContent` using attribute meta data](value-converters-v7-full-example-attributes.md)
+
+[Content Picker to `IPublishedContent` using `IPropertyValueConverterMeta` interface](value-converters-v7-full-example-interface.md) (Umbraco v7.1.5+)
