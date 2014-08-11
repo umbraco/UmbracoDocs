@@ -11,7 +11,7 @@
 
 ## [Property Value Converters](value-converters-v7.md)
 
-*Coming soon!*
+Convert the stored property data value to a useful object returned by the Published Content APIs
 
 ## [Tag support](tag-support-v7.md)
 
