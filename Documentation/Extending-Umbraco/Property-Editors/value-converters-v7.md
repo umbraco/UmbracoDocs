@@ -36,7 +36,7 @@ Example, checking if the PublishedPropertyType PropertyEditorAlias property is e
 
 ### object ConvertDataToSource(PublishedPropertyType propertyType, object data, bool preview) ###
 
-This method should convert the raw data value into a appropriate type, for example, a nodeId stored as a `String` should be converted to a `Int`. This method returns the "Source".  Include a `using Umbraco.Core` to be able to use the TryConverTo extention method.
+This method should convert the raw data value into a appropriate type, for example, a nodeId stored as a `String` should be converted to a `Int`. This method returns the "Source".  Include a `using Umbraco.Core` to be able to use the TryConvertTo extension method.
 
     public object ConvertDataToSource(PublishedPropertyType propertyType, object data, bool preview)
     {
