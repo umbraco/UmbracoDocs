@@ -31,7 +31,7 @@ Example, checking if the PublishedPropertyType PropertyEditorAlias property is e
 
 	public bool IsConverter(PublishedPropertyType propertyType)
 	{
-	    return propertyType.PropertyEditorAlias.Equals("Umbraco.ContentPickerAlias");
+	    return propertyType.PropertyTypeAlias.Equals("Umbraco.ContentPickerAlias");
 	}
 
 ### object ConvertDataToSource(PublishedPropertyType propertyType, object data, bool preview) ###
