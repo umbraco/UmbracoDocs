@@ -3,7 +3,8 @@
 _Follow these steps to do a full install of Umbraco with NuGet._
 
 ##Note for ReSharper users
-We're aware of an ongoing issue with ReSharper 8 which interferes with the NuGet installation and causes it to fail. The advise for now is when you're installing Umbraco: suspend ReSharper through Tools > Options > ReSharper > Suspend Now.   
+We're aware of an ongoing issue with ReSharper 8 which interferes with the NuGet installation and causes it to fail (you can help getting this resolved by voting for [this issue][1]).  
+The advise for now is when you're installing Umbraco: suspend ReSharper through Tools > Options > ReSharper > Suspend Now.   
 After you're done installing or updating you can re-enable ReSharper in the same way.
 
 ##NuGet version
@@ -102,3 +103,5 @@ Follow the installation wizard and after a few easy steps and choices you should
 
 ##Post installation
 One important recommendation is to always remove the `install` folder immediately after installing Umbraco and never to upload it to a live server.
+
+[1]: http://youtrack.jetbrains.com/issue/RSRP-419513
