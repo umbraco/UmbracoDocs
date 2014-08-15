@@ -88,6 +88,8 @@ Then simply type `Install-Package UmbracoCms` to start installing the latest ver
 
 ![](images/NuGet/package-manager-console.png)
 
+During this process it will ask if it is allowed to overwrite your web.config file. In this case, overwriting the file is safe because we just started a new project. If you're installing Umbraco in an existing project, however, you might want to create a backup of your existing web.config file before answering "Yes".
+
 ![](images/NuGet/package-manager-console-overwrite.png)
 
 ##Running the site
