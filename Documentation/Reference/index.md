@@ -16,6 +16,7 @@ Umbraco comes with various ways of querying, filtering and searching published c
 Details on how to implement search capabilities for your Umbraco website using Examine, which is a Lucene-based search engine for Umbraco.
 
 ##Events
+
 ###[Events](Events-v6/index.md) (v6+)
 
 Umbraco 6.x or later: event model covering all major aspects of the system for triggering custom code or automation.  
@@ -26,9 +27,8 @@ Umbraco 4 and earlier comes with a complete event model, covering all major aspe
 
 ## Rest APIs
 
-###[Web API](WebApi/index.md) 
+###[Web API](WebApi/index.md)  (V6.1+)
 
-Introduced in **Umbraco 6.1.0+**
 How to use [Web API](http://www.asp.net/web-api) in Umbraco to easily create REST services.
 
 ###[/Base](Api/Base/Index.md)
@@ -47,15 +47,17 @@ Specific to version 6.x or later: Create, update, and delete all build-in system
 
 Specific to version 4.x or earlier: Create, update, and delete all build-in system objects like documents, media, templates, document types and so on.
 
-## [Request Pipeline](Request-Pipeline/index.md)
-This section explains how to generate URLs (outbound pipeline) and how Umbraco finds back a node using an URL (inbound pipeline).
-_This functionality was introduced in v6._
+##[Plugins](Plugins/index.md) (v4.10.0+)
 
-##[Plugins](Plugins/index.md) 
-
-Introduced in **Umbraco 4.10.0+**
 The term 'Plugins' refers to any types in Umbraco that are found in assemblies that are used to extend and/or enhance the Umbraco application.
+
+## [Request Pipeline](Request-Pipeline/index.md) (V6+)
+This section explains how to generate URLs (outbound pipeline) and how Umbraco finds back a node using an URL (inbound pipeline).
 
 ##[Umbraco.Library](Api/UmbracoLibrary/index.md)
 
 Umbraco.Library is a XSLT extension library, built specifically for XSLT macros in Umbraco 4. It contains many utility methods which are strictly for use in XSLT, but also a number of more general purpose methods which can be used more broadly.
+
+##[Caching](Cache/index.md)
+
+Describes how to work with caching custom data structures in Umbraco. If you are creating Umbraco packages that have custom data sources and you want to cache some of this data, it's important to understand how caching works in Umbraco and to understand how it affects Umbraco installations in load balanced environments.
