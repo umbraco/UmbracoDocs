@@ -44,7 +44,7 @@ You can expect some changes to the following configuration files:
 
 * Any file in the /Config folder
 * The /Global.asax file
-* The web.config file in the root of your site **(Warning: Do not remove the version number, nor the existing connection string.)**
+* The web.config file in the root of your site **(Warning: Make sure to copy back the version number, and the connection string as they were.)**
 * In rare cases, the Web.config file in the Views folder
 
 
