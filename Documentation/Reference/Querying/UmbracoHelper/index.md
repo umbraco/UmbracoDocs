@@ -291,7 +291,7 @@ If the test is true, the string `valueIfTrue` will be returned, otherwise the `v
 ###.Join(string seperator, parmas object[] args)    
 Joins any number of int/string/objects into one string and seperates them with the string seperator parameter.
 
-    Umbraco.Concatenate("Jimbo", CurrentPage.Name, "Horsens");
+    Umbraco.Join("; ", "Red", 112, CurrentPage.Name);
 
 ###.ReplaceLineBreaksForHtml(string text)
 Given a non-html string, it replaces all line-breaks with `<br/>`
