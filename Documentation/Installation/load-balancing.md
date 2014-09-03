@@ -212,6 +212,8 @@ There are a couple optional elements for the configuration of each server that a
 
 	<server forceProtocol="http|https" forcePortnumber="80|443">server3.mywebsite.com</server>
 
+If you only add https bindings to your site in IIS, then you will need to set umbracoUseSSL="true" in your web.config in order for publish to work.
+
 ### Correct config for scheduled publishing & tasks
 
 As of Umbraco 6.2.1+ and 7.1.5+ there are another couple of options to take into account:
