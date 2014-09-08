@@ -3,7 +3,7 @@
 Having an Articles Parent page and a number of associated child articles which the editors can add to freely provides a good example page of the power of Umbraco. We'll assume our fictional company, Widgets Ltd, write about ten articles a month and want the articles page to act like a blog (e.g. you could use this functionality for a blog or news and events pages).
 
 
-Create two new Document Types "_Articles Home_" and "_Articles Item_" **_Document Types Settings > Document Types (hover) > ... > + Create_**. Remember to leave **_Master Document Type_** = "_none.._". 
+Create two new Document Types "_Articles Main_" and "_Articles Item_" **_Document Types Settings > Document Types (hover) > ... > + Create_**. Remember to leave **_Master Document Type_** = "_none.._". 
 
 
 Create the following **_Tabs_** and **_Data Properties_**:
