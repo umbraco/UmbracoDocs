@@ -136,7 +136,7 @@ One important configuration option that **must** be set when using a centralized
 
 	<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
 
-##Lucene/Examine configuration
+###Lucene/Examine configuration
 
 _**Lucene/Examine will have issues with this configuration!**_. Even though you've specified a single server as the administration server, when this server makes distributed calls to the other servers in your load balanced environment, each of those servers will attempt to write to their index files. Since these index files are shared between all servers you will get file locking issues. 
 
@@ -169,9 +169,6 @@ Since the files for the website will be hosted centrally, each IIS website on yo
 * Have the IIS anonymous user account set to the application pool account (IIS 7)
 
 ###Additional important notes
-
-####Examine/Lucene
-As noted above, if running Umbraco load balanced in a centralized SAN environment you must only have one server designated as the administration server. Otherwise it will not work - you will get file locks.
 
 ####Logging
 Since Umbraco is using log4net for logging there are various configurations that you can use to ensure logging is done the way that you'd like. If you are using file based logs you'll want to ensure that your logs are named with file names that include the machine name, otherwise you'll get file locks. *(See below for details on how to do this)*
