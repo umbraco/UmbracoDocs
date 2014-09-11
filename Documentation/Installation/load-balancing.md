@@ -21,7 +21,7 @@ These instructions make the following assumptions:
 * You have administration access to all servers
 * All servers can communicate via HTTP protocol with each other
 * You should be running in ASP.NET Full Trust (medium trust may cause some issues with load balancing)
-* **You will designate a single server to be the back-office server for which your editors will log into for editing content.** Umbraco out-of-the-box currently *(coming soon...)* will not seamlessly work if the back-office is behind the load balancer *(see DNS for more information below)*. If you require that the back office is load balanced you may have to do additional custom development to ensure this works seamlessly.
+* _**You will designate a single server to be the back-office server for which your editors will log into for editing content.**_ Umbraco out-of-the-box currently *(coming soon...)* will not seamlessly work if the back-office is behind the load balancer *(see DNS for more information below)*. If you require that the back office is load balanced you may have to do additional custom development to ensure this works seamlessly.
 
 There are two design alternatives you can use to effectively load balance servers:
 
@@ -113,9 +113,6 @@ If for some reason your file replication solution doesn't allow you to not repli
 
 ###Additional important notes
 
-####Examine/Lucene
-When running in a replicated environment Lucene/Examine indexes must not be replicated (as per above). It is also important to note that Lucene/Examine indexes will only contain published *content* on each server node. The only server node that will contain full Lucene/Examine indexes with unpublished content and media will be the server that you've designated as your back-office administration server. If you require your Lucene/Examine indexes to contain unpublished content and media on your additional servers it is possible but requires some custom setup.
-
 ####Logging
 Since Umbraco uses log4net for logging, there are various configurations that can ensure logging is done the way you would like. If you are replicating your logs - which you may wish to do to ensure that all of your servers have the other server logs - then you'll want to ensure that your logs are named with file names that include the machine name. Otherwise you'll get file locks or your logs will get overwritten. *(See below for details on how to do this)* 
 
@@ -129,8 +126,6 @@ IIS configuration is pretty straightforward with file replication. IIS is just r
 
 Configuring your servers to work using a centrally located file system that is shared for all of your IIS instances can be tricky and can take a while to setup correctly. 
 
-**This is when it is very important to have one designated server operating as your back-office editing server.** If you have not configured your environment this way you will get file locks especially regarding Lucene/Examine indexes.  
-
 A note when using this method to store your files centrally, you **must** make sure that your file storage system is HA (Highly Available) which means that there's not single point of failure. If you're hosting your files on a File Server share, you need to make the file share clustered (using [MSCS](http://en.wikipedia.org/wiki/Microsoft_Cluster_Server) or similar). Windows Server 2008 supports connecting directly to a SAN via [iSCSI](http://en.wikipedia.org/wiki/ISCSI) if your SAN supports it (there are also many other ways to connect to a SAN to share folders), otherwise you should be able to connect to a NAS via a UNC path.
 
 There's a lot of work required to get this working, but once it's done it's fairly easy to maintain. We've this same setup working for many websites so hopefully these notes help you get started:
@@ -141,7 +136,15 @@ One important configuration option that **must** be set when using a centralized
 
 	<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
 
+##Lucene/Examine configuration
 
+_**Lucene/Examine will have issues with this configuration!**_. Even though you've specified a single server as the administration server, when this server makes distributed calls to the other servers in your load balanced environment, each of those servers will attempt to write to their index files. Since these index files are shared between all servers you will get file locking issues. 
+
+Therefore you need to setup Examine to store index files on the local machine. This can be done with this custom library:
+
+https://github.com/Shandem/UmbracoExamine.TempStorage
+
+Or you might decide to write your own Examine providers that store the index files for each server in a server name specific folder so each server is writing to their own index. It's worth noting however that you might experience latency issues with Lucene when running over a file share since the file access is being done over the network. In this case, using the library above will solve that problem since the index will be running locally.
 
 ###Windows Setup
 
