@@ -52,6 +52,29 @@ Gets an enumerable list of `RelationType` objects. If the optional array of inte
 ###.GetByParentId(int id)
 Gets an enumerable list of `Relation` objects that have the specified ParentId.
 
+	public IENumerable<IPublishedContent> GetFavorites(int memberId)
+	{
+	    var _rs = ApplicationContext.Current.Services.RelationService;
+	    var relType = _rs.GetRelationTypeByAlias("memberFavorites");
+	    var favorites = new List<IPublishedContent>();
+	 
+	 
+	    if (memberId > 0)
+	    {
+	        var relations = _rs.GetByParentId(memberId).Where(r => r.RelationType.Alias == "memberFavorites");
+	 
+	        if (relations.Any())
+	        {
+	            foreach (var relation in relations)
+	            {
+	                favorites.Add(UmbracoContext.Current.ContentCache.GetById(relation.ChildId));
+	            }
+	        }
+	              
+	    }
+	 
+	    return favorites;
+	}
 ###.GetByChildId(int id)
 Gets an enumerable list of `Relation` objects that have the specified ChildId.
 
