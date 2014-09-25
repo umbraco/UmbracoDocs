@@ -29,3 +29,15 @@ Getting the service through the `ApplicationContext`:
 	ApplicationContext.Current.Services.FileService
 
 ##Methods
+
+###.GetTemplate(string alias)
+
+Gets a single `TemplateObject` object.
+
+###.DeleteTemplate(string alias, int userId = 0)
+
+Delete a single `TemplateObject` object.
+
+###.Save(ITemplate template)
+
+Saves a single `Template` object.
