@@ -100,6 +100,19 @@ Returns `true` if any relations exist for the specified Id, otherwise returns `f
 ###.Save(IRelation relation)
 Saves a single `Relation` object.
 
+	public void SetFavorite(int memberId, int contentId) {
+		var _rs = ApplicationContext.Current.Services.RelationService;
+		var relType = _rs.GetRelationTypeByAlias("memberFavorites");
+		var areRelated = _rs.AreRelated(memberId, contentId);
+	 
+		if (!areRelated)
+		{
+			//create relation
+			var r = new Relation(memberId, contentId, relType);
+			_rs.Save(r);
+		}
+	}
+
 ###.Save(IRelationType relationType)
 Saves a single IRelationType object.
 
