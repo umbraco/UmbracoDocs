@@ -63,14 +63,10 @@ Gets an enumerable list of `Relation` objects that have the specified ParentId.
 	    {
 	        var relations = rs.GetByParentId(memberId).Where(r => r.RelationType.Alias == "memberFavorites");
 	 
-	        if (relations.Any())
-	        {
-	            foreach (var relation in relations)
-	            {
-	                favorites.Add(UmbracoContext.Current.ContentCache.GetById(relation.ChildId));
-	            }
-	        }
-	              
+		foreach (var relation in relations)
+		{
+			favorites.Add(UmbracoContext.Current.ContentCache.GetById(relation.ChildId));
+		}
 	    }
 	 
 	    return favorites;
