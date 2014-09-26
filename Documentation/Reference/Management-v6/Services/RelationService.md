@@ -61,7 +61,7 @@ Gets an enumerable list of `Relation` objects that have the specified ParentId.
 	 
 	    if (memberId > 0)
 	    {
-	        var relations = _rs.GetByParentId(memberId).Where(r => r.RelationType.Alias == "memberFavorites");
+	        var relations = rs.GetByParentId(memberId).Where(r => r.RelationType.Alias == "memberFavorites");
 	 
 	        if (relations.Any())
 	        {
@@ -126,12 +126,12 @@ Saves a single `Relation` object.
 
 	public void SetFavorite(int memberId, int contentId) {
 		var rs = ApplicationContext.Current.Services.RelationService;
-		var relType = _rs.GetRelationTypeByAlias("memberFavorites");
-		var areRelated = _rs.AreRelated(memberId, contentId, "memberFavorites");
+		var areRelated = rs.AreRelated(memberId, contentId, "memberFavorites");
 	 
 		if (!areRelated)
 		{
 			//create relation
+			var relType = rs.GetRelationTypeByAlias("memberFavorites");
 			var r = new Relation(memberId, contentId, relType);
 			rs.Save(r);
 		}
