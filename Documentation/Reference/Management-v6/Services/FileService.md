@@ -32,11 +32,11 @@ Getting the service through the `ApplicationContext`:
 
 ###.GetTemplate(string alias)
 
-Gets a single `TemplateObject` object.
+Gets a single `ITemplateObject` object.
 
 ###.DeleteTemplate(string alias, int userId = 0)
 
-Delete a single `TemplateObject` object.
+Delete a single `ITemplateObject` object.
 
 ###.Save(ITemplate template)
 
