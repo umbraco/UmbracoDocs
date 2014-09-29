@@ -52,6 +52,26 @@ Gets an enumerable list of `RelationType` objects. If the optional array of inte
 ###.GetByParentId(int id)
 Gets an enumerable list of `Relation` objects that have the specified ParentId.
 
+	public IENumerable<IPublishedContent> GetFavorites(int memberId)
+	{
+	    var rs = ApplicationContext.Current.Services.RelationService;
+	    var relType = rs.GetRelationTypeByAlias("memberFavorites");
+	    var favorites = new List<IPublishedContent>();
+	 
+	 
+	    if (memberId > 0)
+	    {
+	        var relations = rs.GetByParentId(memberId).Where(r => r.RelationType.Alias == "memberFavorites");
+	 
+		foreach (var relation in relations)
+		{
+			favorites.Add(UmbracoContext.Current.ContentCache.GetById(relation.ChildId));
+		}
+	    }
+	 
+	    return favorites;
+	}
+
 ###.GetByChildId(int id)
 Gets an enumerable list of `Relation` objects that have the specified ChildId.
 
@@ -99,6 +119,19 @@ Returns `true` if any relations exist for the specified Id, otherwise returns `f
 
 ###.Save(IRelation relation)
 Saves a single `Relation` object.
+
+	public void SetFavorite(int memberId, int contentId) {
+		var rs = ApplicationContext.Current.Services.RelationService;
+		var areRelated = rs.AreRelated(memberId, contentId, "memberFavorites");
+	 
+		if (!areRelated)
+		{
+			//create relation
+			var relType = rs.GetRelationTypeByAlias("memberFavorites");
+			var r = new Relation(memberId, contentId, relType);
+			rs.Save(r);
+		}
+	}
 
 ###.Save(IRelationType relationType)
 Saves a single IRelationType object.
