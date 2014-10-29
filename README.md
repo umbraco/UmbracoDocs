@@ -14,10 +14,10 @@ Our project consists of 2 main parts, "Stubs" and "Documentation".  Currently th
 [Documentation (available here)](Documentation/index.md) is a collection of references and step-by-step guides, as well as conceptual overviews of the architecture.
 
 ##Developers Reference
-[Developers (available here)](Documentation/Reference/index.md) is a collection of API references specificly for developers working with and extending Umbraco.
+[Developers (available here)](Documentation/Reference/index.md) is a collection of API references specifically for developers working with and extending Umbraco.
 
 #Contributing to the guides
-To contribute to either the documentation or stubs, you can fork & clone our repository, make your edits, and simply push back to gitHub and send us a pull request. All items that get pulled into the main repository will automatically get pushed to [our.umbraco.org/documentation](http://our.umbraco.org/documentation).
+To contribute to either the documentation or stubs, you can fork & clone our repository, make your edits, and simply push back to GitHub and send us a pull request. All items that get pulled into the main repository will automatically get pushed to [our.umbraco.org/documentation](http://our.umbraco.org/documentation).
 
 ####Getting started with Git and GitHub
  * [Setting up Git for Windows and connecting to GitHub](http://windows.github.com)
@@ -26,15 +26,15 @@ To contribute to either the documentation or stubs, you can fork & clone our rep
 
 
 ##Repository organisation
-All active work done on the documentation is currently be done on the 'master' branch.
+All active work done on the documentation is currently being done on the 'master' branch.
 
 ###Contributing documentation
 All documents are written in Markdown, using a simple structure and stored as .md files.
 These are then pulled to [our.umbraco.org/documentation](http://our.umbraco.org/documentation) for easy browsing. 
 
-First fork and clone the repository so that you have your own working copy. Then create a new branch on your local copy to make your changes. Once you are happy with your edits, use github to issue a "pull request" which means your edits will be reviewed, and once accepted, merged into the main repository. 
+First fork and clone the repository so that you have your own working copy. Then create a new branch on your local copy to make your changes. Once you are happy with your edits, use GitHub to issue a "pull request", which means your edits will be reviewed, and once accepted, merged into the main repository. 
 
-**Note:** It's a good idea to pull in upstream changes, merge and commit to your own fork before submitting a pull request. Instructions on how to setup a remote repo and  pull from upstream can be found on this [page](https://help.github.com/articles/fork-a-repo)
+**Note:** It's a good idea to pull in upstream changes, merge and commit to your own fork before submitting a pull request. Instructions on how to set up a remote repo and pull from upstream can be found on this [page](https://help.github.com/articles/fork-a-repo).
 
 Everything in the main repository will make it onto the [our.umbraco.org/documentation](http://our.umbraco.org/documentation) site, which is why we have chosen a pull request workflow to keep everything simple and straightforward.
 

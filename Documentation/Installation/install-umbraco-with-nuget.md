@@ -26,7 +26,7 @@ To install Umbraco we need a Visual Studio solution to install it in.
 ![](images/NuGet/new-project-dotnet4.png)
 
 If you're installing Umbraco 7+ then you need to choose .NET Framework 4.5 or 4.5.1 here.  
-For Umbraco 6 you can still choose .NET Framework 4 but 4.5 and 4.5.1 also work.
+For Umbraco 6 you can still choose .NET Framework 4, but 4.5 and 4.5.1 also work.
 
 ###Visual Studio 2012  
 Go to **File > New Project** and pick ASP.NET Web Application. Click **OK** and then choose one of the following:
