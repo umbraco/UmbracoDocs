@@ -38,7 +38,7 @@ umbraco.library:GetMedia(ID) to get the media items xml data
 Displays a simple dropdown with all available members in. A single member can be selected. 
 The value saved is the ID of the member
 ###Numeric###
-A simple textbox to imput a numeric value.
+A simple textbox to input a numeric value.
 ###Radiobox###
 this Data type enables editors to choose from list of radiobuttons. Options for the Radiobox need to be set in the Developer section by adding prevalues to the Data type
 ###Related Links###
@@ -78,7 +78,7 @@ A simple checkbox which saves either 0 or 1, depending on the checkbox being che
 ###Ultimate picker###
 ###Upload###
 Adds an upload field, which allows documents or images to be uploaded to umbraco. This does nto add them to the media library, they are simply added to the document data.
-##Custon Data-Types##
+##Custom Data-Types##
 If what you're after is not included in the Default Data-Types, you can create a custom Data-Type. Go to the Developer section and right click the Data Types node to create a new custom Data-Type. Reference your custom Data-Type to a [Property Editor](../Property-Editors/index.md). Now you can select your custom Data-Type in the Type dropdown of a Document Type property.
 Since Umbraco v4.8 some components from the popular uComponents package have been built in to the core of Umbraco. To take advantage of these new Property Editors, create a custom Data type:
 ### Multi-Node Tree Picker
@@ -89,8 +89,8 @@ The current version supports:
 * Choosing a starting node ID for the tree
 * An XPath filter to match the nodes that should, OR should not be clickable/selectable in the tree
 * Thumbnail preview for selected images when working with the media tree
-* Thunbmail preview can be enabled/disabled
-* Set a maximum number of nodes to be selected, by default this is unlimited
+* Thumbnail preview can be enabled/disabled
+* Set a maximum number of nodes to be selected (by default this is unlimited)
 * Information tooltip display for each selected item which can be toggled on/off
 * The tooltip display contains a link to edit the selected item
 * The option to save as valid XML data for easy retrieval even in XSLT, OR saving as CSV (comma separated values)

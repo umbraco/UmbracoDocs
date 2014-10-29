@@ -2,7 +2,7 @@
 These items are common terms and concepts that are used throughout the Umbraco backoffice.
 
 ### [Document Type](Document-Types/index.md)
-Document types define the types of page/nodes that backoffice users can create in the content tree. Each document type contains different properties or fields.
+Document types define the types of pages/nodes that backoffice users can create in the content tree. Each document type contains different properties or fields.
 Each field has a specific data type e.g. text, number, ... 
 
 ###Content
