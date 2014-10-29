@@ -117,7 +117,7 @@ Or iterate through them:
 
 
 ##Powered by ImageProcessor
-[ImageProcessor](http://jimbobsquarepants.github.io/ImageProcessor/) is an amazing project for modifying and processing images in a simple an efficient manner.
+[ImageProcessor](http://imageprocessor.org/) is an amazing project for modifying and processing images in a simple an efficient manner.
 
 We bundle this library in Umbraco 7.1 and you can therefore take full advantage of all its features out-of-the-box, like sharping, blurring, cropping, rotating and so.
 
@@ -125,7 +125,7 @@ We bundle this library in Umbraco 7.1 and you can therefore take full advantage 
 
     <img src='@CurrentPage.GetCropUrl("image", "banner")&blur=11,sigma-1.5,threshold-10' />
 
-Using ImageProcessors built-in [gaussianblur](http://jimbobsquarepants.github.io/ImageProcessor/imageprocessor-web/gaussianblur.html)    
+Using ImageProcessors built-in [gaussianblur](http://imageprocessor.org/imageprocessor-web/imageprocessingmodule/gaussianblur.html)    
 
 ##Upload property replacement
 
@@ -134,5 +134,4 @@ applied. The old image will even be available in the cropper, so you can modify 
 
 However, be aware that a cropper returns a dynamic object when saved, so if you perform any sort of string modifications on your upload property value, 
 you will most likely see some errors in your templates / macros.
-
 
