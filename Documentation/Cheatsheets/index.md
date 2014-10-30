@@ -1,6 +1,6 @@
 #Cheatsheets
 
-_Cheatsheets covering different areas of Umbraco, easy to print and hand at the office or bedroom_
+_Easy to print cheatsheets covering different areas of Umbraco_
 
 ##[Umbraco v6 MVC Razor] (http://our.umbraco.org/projects/developer-tools/umbraco-v6-mvc-razor-cheatsheets)
 
