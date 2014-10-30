@@ -16,12 +16,13 @@ Example usage of the ContentService events:
     {
         public class MyEventHandler : ApplicationEventHandler
         {
-            public MyEventHandler()
+
+			protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
             {
-                ContentService.Published += Go;
-            }
+				ContentService.Published += ContentServicePublished;     
+            }            
     
-            private void Go(IPublishingStrategy sender, PublishEventArgs<IContent> args)
+            private void ContentServicePublished(IPublishingStrategy sender, PublishEventArgs<IContent> args)
             {
                 foreach (var node in args.PublishedEntities)
                 {

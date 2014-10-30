@@ -14,10 +14,11 @@ Example usage of the MediaService events:
     {
         public class MyEventHandler : ApplicationEventHandler
         {
-            public MyEventHandler()
+
+			protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
             {
-                MediaService.Saved += MediaServiceSaved;
-            }
+				MediaService.Saved += MediaServiceSaved;     
+            }   
     
             void MediaServiceSaved(IMediaService sender, SaveEventArgs<IMedia> e)
             {
