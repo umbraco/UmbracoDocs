@@ -2,13 +2,11 @@
 
 _Umbraco comes with various ways of querying, filtering and searching published content for use on your website. Published content is content/media that is available to end-users viewing your website._
 
-***NOTE**: This section does not describe how to work with Umbraco persisted (database) data, see [Management Apis](../Management-v6/index.md)* 
+_This section describes how to work with the read-only cached data for use on the front-end. If you are loking for documentation on how to work with Umbraco persisted (database) data, see [Management Apis](../Management-v6/index.md)_
 
 ##[UmbracoHelper](UmbracoHelper/index.md)
 
 UmbracoHelper is the unified way to work with published content/media on your website. Whether you are using MVC or WebForms you will be able to use UmbracoHelper to query/traverse Umbraco published data. 
-
-**This is the recommended approach to working with Umbraco published content.**
 
 ##Legacy APIs
 
