@@ -3,7 +3,7 @@
 _Follow these steps to do a full manual install of Umbraco._
 
 ##Download Umbraco binaries
-The stable releases of the Umbraco binaries are available from [our.umbraco.org/download](http://our.umbraco.org/download/). If you don't mind working with experimental builds, you could download a [nightly release](http://nightly.umbraco.org/) at your own perril (no guarantees that it will work).
+The stable releases of the Umbraco binaries are available from [our.umbraco.org/download](http://our.umbraco.org/download/). If you don't mind working with experimental builds, you could download a [nightly release](http://nightly.umbraco.org/) at your own peril (no guarantees that it will work).
 
 ##Unzip files
 Once you have the binary release of your liking saved to disk, make sure that the file has not been blocked by Windows. Right-click the file you downloaded and choose "Properties". If it says at the bottom of the properties window: "This file came from another computer and might be blocked to help protect this computer" then make sure to click the "Unblock" button so that all of the binary files will be unzipped later on.
@@ -100,7 +100,7 @@ To start using SQL CE, just choose it in the install wizzard: "*I want to use SQ
 ###SQL Server 2008
 To be able to use SQL Server, you should setup an empty database before you can continue installing Umbraco. It's completely up to you how you want to configure this database, but make sure it's connectable over TCP/IP and that it has a SQL username and SQL password. (You can use Windows authentication, but that would require you to write your own connection string).
 
-Generally, for development environments you would ensure that the database user have database owner rights, but make sure to comply with the rules you or your workspace has set up for this.
+Generally, for development environments you would ensure that the database user has database owner rights, but make sure to comply with the rules you or your workspace has set up for this.
 
 Once you've created the database and credentials, enter those details in the install wizard after choosing the *I already have a blank SQL Server 2008 database* option.
 
@@ -110,7 +110,7 @@ IMPORTANT: The SQL server user must have their language set to the default Engli
 Follow the installation wizard and after a few easy steps and choices you should get a message saying the installation was a success.
 
 ##Post installation in production
-Umbraco 4.x includes uGoLive components which is accessible as a tab in the the developer section of Umbraco backoffice. 
+Umbraco 4.x includes uGoLive components which are accessible as a tab in the the developer section of Umbraco backoffice. 
 uGoLive does certain post-installation checks and gives recommendations on what to do post-install - the recommendations should 
 be followed to secure your Umbraco installation.  
 One important recommendation is to always remove the `install` folder immediately after installing Umbraco and never to upload it to a live server.

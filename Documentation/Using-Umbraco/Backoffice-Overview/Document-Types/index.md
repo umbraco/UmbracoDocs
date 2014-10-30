@@ -1,5 +1,5 @@
 #Document Types#
-_A Document Type is a way to structure the data of your website. A Document Type consists of Properties and a Document Type also defines which Templates can render its data_
+_A Document Type is a way to structure the data of your website. A Document Type consists of Properties, and a Document Type also defines which Templates can render its data._
 ##Creating Document Types##
 Document Types are created in the 'Settings' section of the Backoffice by rightclicking on the node 
 Document Types and choosing 'Create' in the context menu:
@@ -18,7 +18,7 @@ which it is shown in the Content Tree or its Thumbnail and Description when a us
 The Structure tab is where you control the hierarchy of your site. Structure allows you to determine which 
 Document Types can be nested as children to the one you are creating.
 ###Generic properties###
-This tab holds the properties that are created on the Document Type or that are inherited from a Master Document Type. Inheretid Properties can not be edited.
+This tab holds the properties that are created on the Document Type or that are inherited from a Master Document Type. Inherited Properties can not be edited.
 ###Tabs###
 Document Types organize Properties on the screen by using Tabs so the first thing you will want to do when creating a Document Type is create one or more tabs
 ##Properties##
