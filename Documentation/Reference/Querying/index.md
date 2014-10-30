@@ -12,6 +12,8 @@ UmbracoHelper is the unified way to work with published content/media on your we
 
 ##Legacy APIs
 
+_The following APIs have been superceded by UmbracoHelper, they should not be used unless you are using a very old version of Umbraco_
+
 ###[DynamicNode](DynamicNode/index.md)
 
 DynamicNode is similar to the dynamic models that UmbracoHelper exposes but is available only to the legacy Razor Macros and inline razor macros. If you are using DynamicNode and Razor Macros, it is recommended to upgrade them to Partial View Macros and UmbracoHelper. 
@@ -27,7 +29,3 @@ _**NOTE**: If there are features of uQuery that are not available via UmbracoHel
 uQuery is similar to DynamicNode in that is adds tree traversal/filtering methods and acts as a wrapper to the website cache. uQuery extends the NodeFactory, Document, Media, Member and Relations apis and can be queried using LINQ.
 
 The property accessor syntax is heavier, but is strongly typed, so there's intellisense.
-
-###NodeFactory
-
-Coming soon....
