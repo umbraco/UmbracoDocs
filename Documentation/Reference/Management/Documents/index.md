@@ -53,7 +53,7 @@ To create and store a `Document` you need a `DocumentType`, calling `MakeNew()` 
 	
 	Document d = Document.MakeNew("name of document", dt, u, parentId); 
 	//set a string
-	d.getProperty("bodyText").Value = "Hello");
+	d.getProperty("bodyText").Value = "Hello";
 	//set a date
 	d.getProperty("date").Value = DateTime.Now;
 	//set a HttpPostedFile 
@@ -66,10 +66,10 @@ To create and store a `Document` you need a `DocumentType`, calling `MakeNew()` 
 	d.Publish(user);
 	
 	//Inform the cache it should update
-	umbraco.librarh.UpdateDocumentCache(d.Id);
+	umbraco.library.UpdateDocumentCache(d.Id);
 	
 ##[Document methods and properties](document.md) 
-The `Document` class itself has a big collection of methods and properties, please see the seperate [Document](document.md) page for this.
+The `Document` class itself has a big collection of methods and properties, please see the separate [Document](document.md) page for this.
 
 
 ##Static methods
