@@ -31,9 +31,9 @@ The easiest way to retreive a Url is to use your controller's type. Example:
 
 	@Url.GetUmbracoApiService<ProductsApiController>("GetAllProducts")
 
-In Umbraco 7 this works:
+Generally a UrlHelper instance will be available on most base classes like Controllers and Views but In some cases you might need to create a UrlHelper instance manually. Here's an example of a way to do that:
 
-	var RequestHandler = HttpContext.Current.Request.RequestContext;
-    var UrlHelper = new System.Web.Mvc.UrlHelper(RequestHandler);
+	var requestContext = HttpContext.Current.Request.RequestContext;
+    var urlHelper = new System.Web.Mvc.UrlHelper(RequestHandler);
+    var apiControllerUrl = urlHelper.GetUmbracoApiService("GetAllProducts");
 
-    string WebApiController = Umbraco.Web.UrlHelperExtensions.GetUmbracoApiService<ProductsApiController>(UrlHelper, "GetAllProducts");
