@@ -244,17 +244,7 @@ To test Umbraco distributed calls, just create and publish some content on one s
 ##Log4net file logging with machine name
 This describes how you can configure log4net to write log files that are named with the machine name.
 
-You'll have to create a custom log4net formatter:
-
-    public sealed class MachineNameLogConverter : log4net.Util.PatternConverter
-    {
-        protected override void Convert(TextWriter writer, object state)
-        {
-            writer.Write(Environment.MachineName);
-        }
-    }
-
-Then update your log4net configuration to use the pattern converter:
+Update your log4net configuration to use the pattern converter:
 
 	  <appender name="AsynchronousLog4NetAppender"
 	            type="Umbraco.Core.Logging.AsynchronousRollingFileAppender, Umbraco.Core">
@@ -270,7 +260,7 @@ Then update your log4net configuration to use the pattern converter:
 	        <name value="hostname" />
 	        <type value="YourProject.MachineNameLogConverter, YourProject" />
 	      </converter>
-	      <conversionPattern value="App_Data\Logs\UmbracoTraceLog.%hostname{LocalApplicationData}.txt" />
+	      <conversionPattern value="App_Data\Logs\UmbracoTraceLog.%property{log4net:HostName}.txt" />
 	    </file>
 
 	    <lockingModel type="log4net.Appender.FileAppender+MinimalLock" />
