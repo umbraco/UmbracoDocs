@@ -11,16 +11,17 @@ Gives editors a grid layout editor which allows them to insert different types o
 ##What are grid layouts?
 To understand how the grid layout editor works, we must first understand the structure of the grid.
 
-The Grid consists of to main areas that need to be configured, *grid layouts* and *grid rows*.
+The grid consists of to main areas that need to be configured, *grid layouts* and *grid rows*.
 
-![Grid structure](images/Grid-Layout/grid-wireframe.jpg)
-###Grid Layout
-The *layout area* is where overall page layout is defined. 
-*Layout areas* are divided in to *layout sections* e.g. a sidebar section and content section	. The size of the *layout sections* is defined in columns. For a full-width content area use max number of columns (12 for Bootstrap 3). Each *layout section* contains one or more *rows* 
+###Grid Layout	
+The *layout area* is where the overall page layout is defined. 
+*Layout areas* are divided in to *layout sections* e.g. a sidebar section and content section	. The size of the *layout sections* is defined in columns. For a full-width content area use max number of columns (12 for Bootstrap 3). Each *layout section* contains one or more *rows*
+
+![Grid structure](images/Grid-Layout/Grid-layout-NO-SIDEBARS-rows.jpg)
 
 ###Grid Rows
 Grid *rows* is where the actual content goes. Each row is divided into *cells* that contain the property editors. The size of the cells is defined in columns. Unlike the *layouts sections* you can add more *cells* than the max number of columns - they will stack as they should in a grid system. The rows can be configured with inline styling and CSS classes to allow specifically tailored content.
-
+![Grid rows](images/Grid-Layout/Grid-layout-rows.jpg)
 
 
 ##Settings
@@ -28,21 +29,21 @@ A grid layout contains multiple configuration options to allow developers to tai
 The configuration can be divided into 4 overall parts:
 
 ###Layouts
-A layout is the general grid "container", it contains one or more columns which content editors can use to insert pre-configured **rows**. There are 2 main usage scenarios of layouts:
+A layout is the general grid "container", it contains one or more sections which content editors can use to insert pre-configured **rows**. There are 2 main usage scenarios of layouts:
 
 1. a single column layout which to the content editor will act like a full page canvas to insert elements on
 2. a multiple column layout with a main content body, and one or more sidebar columns to insert lists or other sidebar widgets on.
 
-{{ image of the 2 layout scenarios}}
+![Grid layout scenarios](images/Grid-Layout/Grid-layout-scenarios.jpg)
 
-You can however configure as many layouts and layout columns as you wish, each column in the layout must be given a width in columns, so editors gets an accurate preview of their layout.
+You can however configure as many layouts and layout sections as you wish, each section in the layout must be given a width in columns, so editors gets an accurate preview of their layout.
 
 
 ![Grid layouts](images/Grid-Layout/layouts.png)
 
 
 ###Row configurations
-A row in the grid editor contains one or more cells, which devide the row into areas where editors can enter content. So a row is merely a container of areas to insert content into. When you add a new row, you asked to give it a name, and can then define cells inside the row, by clicking the "+" icon, each cell has a default width set to 4, but by clicking the inserted cell, you can control its width.
+A row in the grid editor contains one or more cells, which divide the row into areas where editors can enter content. So a row is merely a container of areas to insert content into. When you add a new row, you are asked to give it a name, and can then define cells inside the row, by clicking the "+" icon, each cell has a default width set to 4, but by clicking the inserted cell, you can control its width.
 
 ![Grid layouts](images/Grid-Layout/rows.png)
 
