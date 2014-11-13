@@ -43,6 +43,8 @@ The full configuration options for these files can be found [Here](../../Referen
 
 ###[umbracoSettings.config](umbracoSettings/index.md)
 
+Contains many Umbraco options, generally the default values work well in most installs however in some cases some of these options may need adjusting depending on each installation.
+
 ###[xsltextensions.config](xsltextensions/index.md)
 
 **NOTE**: this configuration file does not exist in v7+. XSLT extensions in v7+ are registered via attributes in c#.
