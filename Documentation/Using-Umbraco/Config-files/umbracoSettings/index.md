@@ -445,17 +445,25 @@ Standard logTypeAlias Entries are as follows and correspond to the entries found
 
 In this section you can add multiple scheduled tasks that should run a certain intervals.
 
-    <scheduledTasks>
+    <scheduledTasks baseUrl="OptionalCustomBaseUrl.com/umbraco/">
         <!-- add tasks that should be called with an interval (seconds) -->
         <!--    <task log="true" alias="test60" interval="60" url="http://localhost/umbraco/test.aspx"/>-->
     </scheduledTasks>
 
+The scheduledTasks element consist of the following attributes:
+
+**baseUrl**: **(v7.1.9+)** This is optional and should only be used if the base URL cannot be detected. This might occur if your hosting setup has some special proxies setup. See this issue for more details: http://issues.umbraco.org/issue/U4-5391
+
 For each task you want to run you should simply just add a **`<task>`** element.
 
 The task elements consist of the following attributes:
+
 **log:** Set this to true if you want to write to the umbracoLog table and see if everything is working as expected. If set to false nothing will be written to the log.
+
 **alias:** The alias is being used in the log so you can distinguise between the different tasks and other log-entries.
+
 **interval:** The interval is set in seconds and determines how often the task should be run.
+
 **url:** Here the url for the page that should be called to run the task must be entered. Please note this can also point to an extensionless url or a service etc.
 
 **Please note:** that the scheduler is not in anyway a windows process so it is depending on the application pool umbraco is located in. This means that if the application pool resets, so will the scheduler, so this is not a highly reliable way of scheduling tasks.
