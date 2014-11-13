@@ -13,12 +13,12 @@ To understand how the grid layout editor works, we must first understand the str
 
 The grid consists of to main areas that need to be configured, *grid layouts* and *grid rows*.
 
-###Grid Layout	
+####Grid Layout	
 The *layout area* is where the overall page layout is defined. 
 *Layout areas* are divided in to *layout sections* e.g. a sidebar section and content section	. The size of the *layout sections* is defined in columns. For a full-width content area use max number of columns (12 for Bootstrap 3). Each *layout section* contains one or more *rows*
 ![Grid rows](images/Grid-Layout/Grid-layout-rows.jpg)
 
-###Grid Rows
+####Grid Rows
 Grid *rows* is where the actual content goes. Each row is divided into *cells* that contain the property editors. The size of the cells is defined in columns. Unlike the *layouts sections* you can add more *cells* than the max number of columns - they will stack as they should in a grid system. The rows can be configured with inline styling and CSS classes to allow specifically tailored content.
 ![Grid structure](images/Grid-Layout/Grid-layout-NO-SIDEBAR-rows.jpg)
 
@@ -150,5 +150,11 @@ A grid editor is the component responsible for getting data into the grid - that
 - .cshtml serverside renderer
 
 So the view is what the editor sees, the controller handles how it acts, and the cshtml determins how the entered data renders.
+
+#Render grid in template
+To display the grid on a site use:
+
+    @CurrentPage.GetGridHtml("propertyAlias")
+
 
 WIP ....
