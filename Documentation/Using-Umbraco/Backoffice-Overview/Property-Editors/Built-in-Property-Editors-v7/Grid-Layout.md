@@ -7,7 +7,6 @@ Gives editors a grid layout editor which allows them to insert different types o
 ![Grid layouts](images/Grid-Layout/editor.png)
 
 
-
 ##What are grid layouts?
 To understand how the grid layout editor works, we must first understand the structure of the grid.
 
@@ -143,6 +142,21 @@ There are many ways to combine these, here are some samples:
     }
 
 
+#Render grid in template
+To display the grid on a site use:
+
+    @CurrentPage.GetGridHtml("propertyAlias")
+
+This will by default use the view `/views/partials/grid/bootstrap3.cshtml` you can also use the built-in bootstrap2.cshtml view by overloading the method: 
+
+    @CurrentPage.GetGridHtml("propertyAlias", "bootstrap2")
+
+or point it a custom view, which by default looks in `/views/partials/grid/` - or provide the method with a full path 
+
+    @CurrentPage.GetGridHtml("propertyAlias", "mycustomview")
+    @CurrentPage.GetGridHtml("propertyAlias", "/views/mycustomfile.cshtml")
+
+
 
 ###Grid Editors
 A grid editor is the component responsible for getting data into the grid - that could be a simple text field or a media picker. They're built in the same way as a property editor thus consists of 3 parts:
@@ -153,10 +167,105 @@ A grid editor is the component responsible for getting data into the grid - that
 
 The view is what the editor see, the controller handles how it acts and the cshtml determines how the entered data is rendered.
 
-#Render grid in template
-To display the grid on a site use:
+####Grid editor configuration
+All editors are specified in `config/grid.editors.config.js` file which uses the json format. Foreach editor you have an object like so: 
 
-    @CurrentPage.GetGridHtml("propertyAlias")
+    {
+        "name": "Rich text editor",
+        "alias": "rte",
+        "view": "rte",
+        "icon": "icon-article"
+    }
+
+The values are:
+
+- **name**: The name of the editor
+- **alias**: Unique alias of the editor
+- **icon**: Icon shown to the editor, uses same icon classes as the rest of 
+- **view** the view defines the editor used to enter a value. By default Umbraco will look in `umbraco/views/propertyeditors/grid/editors` for a html view to use - but you can pass in your own path
+
+The built-in views you can use are: 
+
+- textstring
+- rte
+- embed
+- macro
+- media
+- rte
+
+#####Sample textstring config
+In most cases you will either use the textstring view, or built your own from scratch.
+
+    {
+        "name": "Headline",
+        "alias": "headline",
+        "view": "textstring",
+        "icon": "icon-coin",
+        "config": {
+            "style": "font-size: 36px; line-height: 45px; font-weight: bold",
+            "markup": "<h1>#value#</h1>"
+        }
+    }
+
+In this sample, the `config.style` value is applied to the editor so users can see an accurate preview, and `config.markup` is the string rendered on the server side
 
 
-WIP ....
+####Built your own editor
+Create a file in `/app_plugins/yourpackage/editor.html` and add the following to the editor.html file: 
+
+    <textarea
+        rows="1" ng-model="control.value" ng-style="control.config"></textarea>
+
+Save the file and add an editor to the `grid.editors.config.js` file:
+
+    {
+        "name": "Code",
+        "alias": "code",
+        "view": "/app_plugins/yourpackage/editor.html",
+        "icon": "icon-code",
+        "config": {
+            "color": "red",
+            "text-align": "right"
+        }
+    }
+
+If you want to make a more advanced editor, then it works just like building a property editor, where you can add a `ng-controller` attribute to the view to add functionality. 
+
+Add a new file: `/app_plugins/yourpackage/editor.cshtml` - this file will handle rendering the entered data  - this path is done by convention so: 
+
+- view: 'editor' => `views/partials/grid/editors/editor.cshtml`
+- view: '/app_plugins/path.html' => `/app_plugins/path.cshtml`
+
+If you wish to use something entirely different you can give the editor a seperate `render` value which follow the same conventions
+    
+    {
+        "name": "Code",
+        "alias": "code",
+        "view": "/app_plugins/yourpackage/editor.html",
+        "render": "textstring"
+    }
+
+Next add this c# to the file: 
+
+    @inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>
+    <pre>@Model</pre>
+
+This will render the raw data of the editor:
+
+    {
+      "value": "What ever value entered into the textarea",
+      "editor": {
+        "name": "Code",
+        "alias": "code",
+        "view": "/app_plugins/yourpackage/editor.html",
+        "icon": "icon-code",
+        "config": {
+          "color": "red",
+          "text-align": "right"
+        }
+      }
+    }
+
+So you can now use these value to build your output like so:
+
+    <div style="color: @Model.config.color">@Model.value</div>
