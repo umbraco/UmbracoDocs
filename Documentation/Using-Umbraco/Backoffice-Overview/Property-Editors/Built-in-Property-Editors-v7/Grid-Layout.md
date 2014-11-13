@@ -48,7 +48,7 @@ You add as many cells as you like. If they overflow the total width of the row, 
 
 ![Grid layouts](images/Grid-Layout/cells.png)
 
-Each cell can by default contain any type of content such as simple text-strings, images, embedded media or umbraco macros. To override this behavior, uncheck the **allow all editors** option adnd you can select specific editors for the row.
+Each cell can by default contain any type of content such as simple text-strings, images, embedded media or umbraco macros. To override this behavior, uncheck the **allow all editors** option and you can select specific editors for the row.
 
 
 ###Settings and styling
