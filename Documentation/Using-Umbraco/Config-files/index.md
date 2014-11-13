@@ -15,9 +15,9 @@ There are quite a few umbraco options in the web.config file defined in appSetti
 
 ###[EmbeddedMedia.config](EmbeddedMedia/index.md)
 
-###[ExamineIndex.config](ExamineIndex/index.md)
+###ExamineIndex.config & ExamineSettings.config
 
-###[ExamineSettings.config](ExamineSettings/index.md)
+The full configuration options for these files can be found [Here](../../Reference/Searching/Examine/full-configuration.md) 
 
 ###[feedProxy.config](feedProxy/index.md)
 
