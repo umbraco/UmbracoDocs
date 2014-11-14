@@ -1,79 +1,97 @@
 #Canvas designer
+ 
+##What is the Canvas Designer?
 
-##What is this?
+The Canvas Designer is an *Umbraco* feature that allows real time styles edition.
 
-The Canvas Designer is a new feature of Umbraco that allows real time styles editing.
-This is a set of style editors that can be applied directly to the web pages of your site without any css coding. 
+It allows to accurately change, resize any CSS dimension by clicking the mouse, without any line of code. Any changes are immediately displayed in real-time and achieve best perfection for templating.
+The Canvas Designer have a set of style editor to change colors, sizes, borders, fonts and else so on...
+
 
 ##Getting Started
 
-###Enable the canvas designer
+###Enable the Canvas Designer
 
-To active the canvas designer, first place @Umbraco.EnableCanvasDesigner() into the head tag of your main template just after your stylesheet links.
+To active the Canvas Designer into a website, only one statement is required into the *head* tag of your main template of the site.
 
-![Canvas Designer](images/Canvas-Designer/1.png)
+	@Umbraco.EnableCanvasDesigner()
 
-###Access and use the canvas designer
+It have to be place just after the stylesheet links.
+	
+![Canvas Designer](images/Canvas-Designer/1_.png)
 
-You can now access the Canvas Designer through the preview mode of any page of your Website.
+###Use of the canvas designer
+
+The Canvas Designer is located into the *Umbraco* preview mode and can be access through any page from the Website.
 
 ![Canvas Designer](images/Canvas-Designer/2.png)
 
-A new Canvas Designer option appears just below the device buttons into the right side panel control.
+
+The Canvas Designer option appears just below the device preview buttons, in the right side panel control.
 
 ![Canvas Designer](images/Canvas-Designer/3.png)
 
-First, you access the Canvas Designer palette panel control. It consists on a set of pre-configured styles that can be apply directly to the website.
+
+The first option of the Canvas Designer is the palette panel control. It consists on a set of pre-configured styles that can be apply directly to the website.
+Any change is immediately displayed in real-time on the right side panel. 
 
 ![Canvas Designer](images/Canvas-Designer/4.png)
 
-The third option allow us to edit into detail the style of the website.
+
+The third option of the Canvas Designer allows the element by element style edition.
 
 ![Canvas Designer](images/Canvas-Designer/5.png)
 
-The first panel show the list of element witch can be edited. 
-We can select them through the list or selecting the highlight element at the right sight into the frontend panel.
+
+The second left panel show the element list that can be edited. 
+These elements can be selected on the list or can be selected directly on the right side panel, in the preview page..
 
 ![Canvas Designer](images/Canvas-Designer/6.png)
 
-Once an element selected, we can edit its styles through the different styles editors.
+
+Once an element is selected, its styles can be modified through the different styles editors available.
 
 ![Canvas Designer](images/Canvas-Designer/7.png)
 
+
 ###Save page style
 
-You can save your costumed styles at any time just clicking on save style, this action compile and minify all these styles into a css file ready to use.
-The statement @Umbraco.EnableCanvasDesigner() mentioned before take care to add a link to this file into the live mode.
+The custom styles are saved by clicking on *save styles*, this action compile and minify all these styles into a ready to use. css file.
+The statement @Umbraco.EnableCanvasDesigner() mentioned before will add a stylesheet link to this file into the webpage.
 
 ![Canvas Designer](images/Canvas-Designer/8.png)
 
-![Canvas Designer](images/Canvas-Designer/9.png)
+![Canvas Designer](images/Canvas-Designer/9_.png)
+
 
 ###Create page styles
 
-By default, when you access the canvas designer, the style are apply to the entire web site from its root node and descendants children.
-You can also create new custom style from another node of your website just clicking on "Create page styles"
-These style will be apply from this node to all its descendants children.
+By default, custom styles are apply to the entire web site from its root node to its descendants children.
+However, new custom styles can be create from a specific node of the website clicking on *Create page styles* into its preview mode
+These styles will be apply from this node to all its descendants children.
 
 ![Canvas Designer](images/Canvas-Designer/10.png)
 
+
 ###Reset Style
 
-You can reset costumed style clicking on "Reset Style", this action delete the respected css file.
+Custom style can be reset clicking on *Reset Style*, this action delete the respected css file.
 
 ![Canvas Designer](images/Canvas-Designer/11.png)
+
 
 ##Configurations
 
 ###Canvas Designer Configurations
 
-By default, the canvas designer comes with a simple configuration which allows the style edition of the Umbraco Starter Kit. But you can easily create you own configuration for the style edition of you own Website.
+By default, the Canvas Designer comes with a simple configuration for the Umbraco Starter Kit styles edition. However, custom configuration can be easy done for any kind of mark-up and web design.
 
-The configuration of the Canvas designer is a Json file that can be specify into the first parameter of the EnableCanvasDesigner statement.
+The Canvas designer configuration is a JSON. Its location can be specify into the EnableCanvasDesigner statement's first parameter.
 
 ![Canvas Designer](images/Canvas-Designer/12.png)
 
-The configuration defines basically the set of style editors that can be use for the web site
+
+The configuration basically defines a set of style editors that can be apply for elements:
 
 	var canvasdesignerConfig = {
     configs: [{
@@ -92,16 +110,16 @@ The configuration defines basically the set of style editors that can be use for
 		]}
 	}
 	
-Each config have 4 parameters:
+Config has 4 parameters:
 
-- name: (mandatory) friendly name of the element editable (Body / Header / Main Column ...).
-- schema: (mandatory) default selector(s) on that style will be apply (body / h1 / p, a, span/ .main ...).
-- selector: selector used for the highlight of the element (body / h1 / .header...), if empty *schema* is used instead.
-- editors: list of editors that can be used for the element.
+- name: (mandatory) friendly name of the element (Body / Header / Main Column ...).
+- schema: (mandatory) element's selector(s) where custom style will be apply (body / h1 / p, a, span/ .main ...).
+- selector: (optional) selector used for the highlight of the element (body / h1 / .header...), if empty *schema* is used instead.
+- editors: (mandatory) list of style editors available for the element.
 
 #### Editors
 
-By default 9 different editors can be used:
+The Canvas Designer comes with 9 different available editors:
 
 - background
 - border
@@ -120,64 +138,113 @@ The base parameters of these editor are:
 		category: "...", // mandatory, string that describe the category of the editor (color, position...)
 		name: "..."      // mandatory, friendly name of the editor (Background, Background color ...)
 		schema: "..."	 // optional, overwrite the schema parameter of the conig
+		...
 	}
 	
-Each editor can also additional parameters.
+Furthermore, some editors have others additional parameters.
 
-##### background
+##### Background editor
 
-This editor doesn't have additional parameter
+*Alias*: background
+
+This editor is used for edit the color and image background.
+
+This editor doesn't have additional parameters
  
-##### border
+##### Border editor
+
+*Alias*: border
+
+This editor is used for edit element borders.
+
+*Parameters*:
 
 	{
 		...
 		enable: ["top", "bottom"...] 	// optional, which edge can be editable: "all", "left", "right", "top", "bottom"
 	}
 
-##### color
+##### Color editor
+
+*Alias*: color
+
+This editor is used for edit color (font, border, background...).
+
+*Parameters*:
 
 	{
 		...
 		css: "..."	// mandatory, css tag use to apply the color (color, border-color, background-color ...) 
 	}
 
-##### googlefontpicker
+##### Googlefontpicker editor
 
-This editor doesn't have additional parameter
+*Alias*: googlefontpicker
 
-##### margin
+This editor is used for edit web and googlefont family.
 
-	{
-		...
-		enable: ["top", "bottom"...] 	// optional, which edge can be editable: "all", "left", "right", "top", "bottom"
-	}
-	
-##### padding
+This editor doesn't have additional parameters
 
-	{
-		...
-		enable: ["top", "bottom"...] 	// optional, which edge can be editable: "all", "left", "right", "top", "bottom"
-	}
+##### Margin editor
 
-##### radius
+*Alias*: margin
+
+This editor is used for edit element margins.
+
+*Parameters*:
 
 	{
 		...
 		enable: ["top", "bottom"...] 	// optional, which edge can be editable: "all", "left", "right", "top", "bottom"
 	}
 	
-##### shadow
+##### Padding editor
 
-This editor doesn't have additional parameter
+*Alias*: padding
 
-##### slide
+This editor is used for edit element paddings.
+
+*Parameters*:
 
 	{
 		...
-		css: "..."	// mandatory, css tag use to apply the size (color, border-color, background-color ...) 
-		min: 18,	// mandatory, min slide in pixel 
-		max: 100	// mandatory, max slide in pixel 
+		enable: ["top", "bottom"...] 	// optional, which edge can be editable: "all", "left", "right", "top", "bottom"
+	}
+
+##### Radius editor
+
+*Alias*: radius
+
+This editor is used for edit element border radius.
+
+*Parameters*:
+
+	{
+		...
+		enable: ["top", "bottom"...] 	// optional, which edge can be editable: "all", "left", "right", "top", "bottom"
+	}
+	
+##### Shadow editor
+
+*Alias*: shadow
+
+This editor is used for edit element border radius.
+
+This editor doesn't have additional parameter
+
+##### Slide editor
+
+*Alias*: slide
+
+This editor is used for edit any kind of css size (margin, font size, padding, width, height...).
+
+*Parameters*:
+
+	{
+		...
+		css: "..."	// mandatory, css tag use to apply the size (margin, font-size, width ...) 
+		min: 18,	// mandatory, min size in pixel 
+		max: 100	// mandatory, max size in pixel 
 	}
 
 ### Palette Configurations
