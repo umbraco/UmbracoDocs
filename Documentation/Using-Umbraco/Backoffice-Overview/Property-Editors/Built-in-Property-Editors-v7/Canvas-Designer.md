@@ -53,6 +53,9 @@ Once an element is selected, its styles can be modified through the different st
 
 ![Canvas Designer](images/Canvas-Designer/7.png)
 
+To go back to the main element list, click on the burger menu at the top right corner of the second panel.
+
+![Canvas Designer](images/Canvas-Designer/22.png)
 
 ###Save page style
 
@@ -86,7 +89,7 @@ Custom style can be reset clicking on *Reset Style*, this action delete the resp
 
 By default, the Canvas Designer comes with a simple configuration for the Umbraco Starter Kit styles edition. However, custom configuration can be easy done for any kind of mark-up and web design.
 
-The Canvas designer configuration is a JSON. Its location can be specify into the EnableCanvasDesigner statement's first parameter.
+The Canvas designer configuration is a JSON file. Its location can be specify into the EnableCanvasDesigner statement's first parameter.
 
 ![Canvas Designer](images/Canvas-Designer/12.png)
 
@@ -147,9 +150,12 @@ Furthermore, some editors have others additional parameters.
 
 *Alias*: background
 
-This editor is used for edit the color and image background.
+This editor is used for edit the color and the image background.
+Images are picked up from the Umbraco Media library
 
 This editor doesn't have additional parameters
+ 
+![Canvas Designer](images/Canvas-Designer/13.png)
  
 ##### Border editor
 
@@ -163,6 +169,8 @@ This editor is used for edit element borders.
 		...
 		enable: ["top", "bottom"...] 	// optional, which edge can be editable: "all", "left", "right", "top", "bottom"
 	}
+	
+![Canvas Designer](images/Canvas-Designer/14.png)
 
 ##### Color editor
 
@@ -177,6 +185,8 @@ This editor is used for edit color (font, border, background...).
 		css: "..."	// mandatory, css tag use to apply the color (color, border-color, background-color ...) 
 	}
 
+![Canvas Designer](images/Canvas-Designer/15.png)
+	
 ##### Googlefontpicker editor
 
 *Alias*: googlefontpicker
@@ -184,6 +194,8 @@ This editor is used for edit color (font, border, background...).
 This editor is used for edit web and googlefont family.
 
 This editor doesn't have additional parameters
+
+![Canvas Designer](images/Canvas-Designer/16.png)
 
 ##### Margin editor
 
@@ -198,6 +210,8 @@ This editor is used for edit element margins.
 		enable: ["top", "bottom"...] 	// optional, which edge can be editable: "all", "left", "right", "top", "bottom"
 	}
 	
+![Canvas Designer](images/Canvas-Designer/17.png)
+	
 ##### Padding editor
 
 *Alias*: padding
@@ -211,6 +225,8 @@ This editor is used for edit element paddings.
 		enable: ["top", "bottom"...] 	// optional, which edge can be editable: "all", "left", "right", "top", "bottom"
 	}
 
+![Canvas Designer](images/Canvas-Designer/18.png)
+	
 ##### Radius editor
 
 *Alias*: radius
@@ -224,6 +240,8 @@ This editor is used for edit element border radius.
 		enable: ["top", "bottom"...] 	// optional, which edge can be editable: "all", "left", "right", "top", "bottom"
 	}
 	
+![Canvas Designer](images/Canvas-Designer/19.png)
+	
 ##### Shadow editor
 
 *Alias*: shadow
@@ -231,6 +249,8 @@ This editor is used for edit element border radius.
 This editor is used for edit element border radius.
 
 This editor doesn't have additional parameter
+
+![Canvas Designer](images/Canvas-Designer/20.png)
 
 ##### Slide editor
 
@@ -247,10 +267,13 @@ This editor is used for edit any kind of css size (margin, font size, padding, w
 		max: 100	// mandatory, max size in pixel 
 	}
 
+![Canvas Designer](images/Canvas-Designer/21.png)
+	
 ### Palette Configurations
 
+Pre-configured palette setting can be modified into another JSON file, its path can be specified in the second parameters of the EnableCanvasDesigner statement.
 
-
+![Canvas Designer](images/Canvas-Designer/23.png)
 
 
 
