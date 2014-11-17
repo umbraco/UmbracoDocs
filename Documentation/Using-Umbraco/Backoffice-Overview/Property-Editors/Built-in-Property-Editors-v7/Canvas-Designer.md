@@ -125,7 +125,9 @@ The configs object is an array of objects that each have 4 properties:
 
 The `selector` and `schema` properties are similar, but it is important to understand the difference. The `selector` property exists to make life easier for the end user. The `schema` property exists to actually apply a style.
 
-Imagine a navigation menu marked up as a <nav> element with its menu items in a nested <ul> element. In preview mode, the user will click somewhere on the navigation menu and expect to see style editors for all of its components: the menu itself, the menu items, the logo, etc. For this to work, the selector would have to be set to `"nav"`. While the whole menu should be highlighted in the preview pane, each style editor needs a specific selector to correctly apply its styles. For example, there could be two style editors. One would change the whole menu's background color and the other would change each menu item's background color. To avoid the menu item style editor from changing the whole navigation menu's background it would need a narrower schema. Setting this second editor's schema to `"nav ul li"` would fix the problem.
+Imagine a navigation menu marked up as a <nav> element with its menu items in a nested `<ul>` element. In preview mode, the user will click somewhere on the navigation menu and expect to see style editors for all of its components: the menu itself, the menu items, the logo, etc. For this to work, the selector would have to be set to `"nav"`. While the whole menu should be highlighted in the preview pane, each style editor needs a specific selector to correctly apply its styles.
+
+For example, there could be two style editors. One would change the whole menu's background color and the other would change each menu item's background color. To avoid the menu item style editor from changing the whole navigation menu's background it would need a narrower schema. Setting this second editor's schema to `"nav ul li"` would fix the problem.
 
 #### Editors
 
