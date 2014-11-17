@@ -308,6 +308,8 @@ This action will open a text box with all the value needed for the palette. Thes
 
 ![Canvas Designer](images/Canvas-Designer/25.png)
 
+![Canvas Designer](images/Canvas-Designer/26.png)
+
 
 
 
