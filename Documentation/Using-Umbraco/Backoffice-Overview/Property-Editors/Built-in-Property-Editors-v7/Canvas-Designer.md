@@ -2,65 +2,65 @@
  
 ##What is the Canvas Designer?
 
-The Canvas Designer is an *Umbraco* feature that allows real time styles edition.
+The Canvas Designer is an Umbraco feature that lets you edit styles in real time.
 
-It allows to accurately change, resize any CSS dimension by clicking the mouse, without any line of code. Any changes are immediately displayed in real-time and achieve best perfection for templating.
-The Canvas Designer have a set of style editor to change colors, sizes, borders, fonts and else so on...
+You can accurately change CSS properties using just your mouse, without a single line of code. Any changes are immediately displayed, which is perfect for making templates. The Canvas Designer has a set of style editors to change properties like colors, sizes and borders, as well as others. You can see a list of all available editors in the [Editors section](#editors).
 
 
 ##Getting Started
 
 ###Enable the Canvas Designer
 
-To active the Canvas Designer into a website, only one statement is required into the *head* tag of your main template of the site.
+To enable the Canvas Designer for your website, all you have to do is add one statement inside the `head` tag of your site's main template:
 
-	@Umbraco.EnableCanvasDesigner()
+```csharp
+@Umbraco.EnableCanvasDesigner()
+```
 
-It have to be place just after the stylesheet links.
+Place this statement just after the stylesheet links.
 	
 ![Canvas Designer](images/Canvas-Designer/1_.png)
 
-###Use of the canvas designer
 
-The Canvas Designer is located into the *Umbraco* preview mode and can be access through any page from the Website.
+###Using the Canvas Designer
+
+To use the Canvas Designer, first select any page in the Umbraco backoffice and click on its "Preview" button.
 
 ![Canvas Designer](images/Canvas-Designer/2.png)
 
 
-The Canvas Designer option appears just below the device preview buttons, in the right side panel control.
+Once the preview has loaded, you will find the Canvas Designer options on the left-hand side panel, just below the device preview buttons. There are two options: Palette and UI Designer.
 
 ![Canvas Designer](images/Canvas-Designer/3.png)
 
 
-The first option of the Canvas Designer is the palette panel control. It consists on a set of pre-configured styles that can be apply directly to the website.
-Any change is immediately displayed in real-time on the right side panel. 
+The first option, Palette, consists of a set of pre-configured styles that can be directly applied to the website. Any change is immediately displayed on the page's preview, on the right-hand side panel. 
 
 ![Canvas Designer](images/Canvas-Designer/4.png)
 
 
-The third option of the Canvas Designer allows the element by element style edition.
+The second option, UI Designer, allows you to edit the page's styles element by element.
 
 ![Canvas Designer](images/Canvas-Designer/5.png)
 
 
-The second left panel show the element list that can be edited. 
-These elements can be selected on the list or can be selected directly on the right side panel, in the preview page..
+The flyout panel shows you the list of elements that can be edited. 
+You can either click on an element on the list, or you can click anywhere on the preview pane and its element will be selected.
 
 ![Canvas Designer](images/Canvas-Designer/6.png)
 
 
-Once an element is selected, its styles can be modified through the different styles editors available.
+Once you have selected an element, you can modify its styles with the different style editors that are available.
 
 ![Canvas Designer](images/Canvas-Designer/7.png)
 
-To go back to the main element list, click on the burger menu at the top right corner of the second panel.
+Once you have finished editing an element's style you can click on the burger menu at the top right corner of the second panel. This takes you back to the main element list.
 
 ![Canvas Designer](images/Canvas-Designer/22.png)
 
-###Save page style
+###Save the page's style
 
-The custom styles are saved by clicking on *save styles*, this action compile and minify all these styles into a ready to use. css file.
-The statement @Umbraco.EnableCanvasDesigner() mentioned before will add a stylesheet link to this file into the webpage.
+Save the custom styles you have defined by clicking on the Save Styles button. This will compile and minify all these styles into a ready to use .css file. The `@Umbraco.EnableCanvasDesigner()` statement mentioned before will automatically add a stylesheet link to this file into the webpage.
 
 ![Canvas Designer](images/Canvas-Designer/8.png)
 
@@ -69,56 +69,63 @@ The statement @Umbraco.EnableCanvasDesigner() mentioned before will add a styles
 
 ###Create page styles
 
-By default, custom styles are apply to the entire web site from its root node to its descendants children.
-However, new custom styles can be create from a specific node of the website clicking on *Create page styles* into its preview mode
-These styles will be apply from this node to all its descendants children.
+By default, custom styles are applied to the entire web site, from its root node to all its descendants. If you need a node to have a different style, however, you can create a new Page Style that will be applied to that node and all its descendants. While previewing the target page, click on the little upwards-pointing arrow next to the Save Style button and then click on Create Page Style. From now on, this node and its descendants will have a separate set of styles applied. Any changes in the parent styling will not affect the custom Page Style, as a new CSS file is generated for this node and its descendants, and is applied instead of the parent CSS file.
 
 ![Canvas Designer](images/Canvas-Designer/10.png)
 
 
 ###Reset Style
 
-Custom style can be reset clicking on *Reset Style*, this action delete the respected css file.
+You can reset the custom styling for a node and its descendants. Click on the upwards-pointing arrow next to Save Style and click on Reset page style. This deletes the custom CSS file and applies the parent CSS file to the node and its descendants.
 
 ![Canvas Designer](images/Canvas-Designer/11.png)
 
 
-##Configurations
+##Configuration
 
 ###Canvas Designer Configurations
 
-By default, the Canvas Designer comes with a simple configuration for the Umbraco Starter Kit styles edition. However, custom configuration can be easy done for any kind of mark-up and web design.
+By default, the Canvas Designer comes with a simple configuration for the Umbraco Starter Kit styles edition. However, custom configuration can be easy done for any kind of mark-up and designs.
 
-The Canvas designer configuration is a JSON file. Its location can be specify into the EnableCanvasDesigner statement's first parameter.
+The Canvas designer is configured via a JSON file. You can specify the path to a configuration file to the `EnableCanvasDesigner` method as its first argument.
 
 ![Canvas Designer](images/Canvas-Designer/12.png)
 
 
-The configuration basically defines a set of style editors that can be apply for elements:
+The configuration defines a set of elements and the style editors that can be used on each of those elements.
 
-	var canvasdesignerConfig = {
-    configs: [{
-        name: "Body",
-        schema: "body",
-        selector: "body",
-        editors: [
-            {
-                type: "background",
-                category: "Color",
-                name: "Background",
-            },
-			.
-			.
-			.
-		]}
-	}
+```js
+var canvasdesignerConfig = {
+	configs: [
+		{
+			name: "Body",
+			schema: "body",
+			selector: "body",
+			editors: [
+				{
+					type: "background",
+					category: "Color",
+					name: "Background",
+				},
+				.
+				.
+				.
+			]
+		}
+	]
+}
+```
 	
-Config has 4 parameters:
+The configs object is an array of objects that each have 4 properties:
 
-- name: (mandatory) friendly name of the element (Body / Header / Main Column ...).
-- schema: (mandatory) element's selector(s) where custom style will be apply (body / h1 / p, a, span/ .main ...).
-- selector: (optional) selector used for the highlight of the element (body / h1 / .header...), if empty *schema* is used instead.
-- editors: (mandatory) list of style editors available for the element.
+- name: (mandatory) the element's friendly name (Body/Header/Main Column/...).
+- schema: (mandatory) collection of [jQuery selectors](http://api.jquery.com/category/selectors/) that specify which DOM elements the custom styles will be applied to by default (body/h1/.main/p, a, span/...).
+- selector: (optional) single jQuery selector used to highlight the associated high-level element in the preview pane (body/h1/.header/...). If empty, `schema` is used instead.
+- editors: (mandatory) array of style editors available for the element. Each editor can override which DOM elements it applies its style to by specifying its own `schema` property.
+
+The `selector` and `schema` properties are similar, but it is important to understand the difference. The `selector` property exists to make life easier for the end user. The `schema` property exists to actually apply a style.
+
+Imagine a navigation menu marked up as a <nav> element with its menu items in a nested <ul> element. In preview mode, the user will click somewhere on the navigation menu and expect to see style editors for all of its components: the menu itself, the menu items, the logo, etc. For this to work, the selector would have to be set to `"nav"`. While the whole menu should be highlighted in the preview pane, each style editor needs a specific selector to correctly apply its styles. For example, there could be two style editors. One would change the whole menu's background color and the other would change each menu item's background color. To avoid the menu item style editor from changing the whole navigation menu's background it would need a narrower schema. Setting this second editor's schema to `"nav ul li"` would fix the problem.
 
 #### Editors
 
