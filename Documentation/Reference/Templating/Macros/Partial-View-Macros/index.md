@@ -51,5 +51,5 @@ Quick conversion guide:
 
     	@inherits Umbraco.Web.Macros.PartialViewMacroPage
 
-4. Replace each reference to `Model` to `CurrentPage`
+4. Replace each reference from `Model` to `CurrentPage`
 5. Change the reference in the CMS back-end (under Developer/Macros) using the Partial View Macro instead of the macro script.
