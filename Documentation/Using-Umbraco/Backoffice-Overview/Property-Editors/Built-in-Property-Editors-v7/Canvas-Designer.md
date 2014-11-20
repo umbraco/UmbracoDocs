@@ -149,7 +149,7 @@ The base parameters of these editor are:
 		type: "...",     // mandatory, alias of the editor (background, border...)
 		category: "...", // mandatory, string that describe the category of the editor (color, position...)
 		name: "..."      // mandatory, friendly name of the editor (Background, Background color ...)
-		schema: "..."	 // optional, overwrite the schema parameter of the conig
+		schema: "..."	 // optional, overwrite the schema parameter of the config
 		...
 	}
 	
@@ -159,10 +159,10 @@ Furthermore, some editors have others additional parameters.
 
 *Alias*: background
 
-This editor is used for edit the color and the image background.
+This editor is used for editing the color and the image background.
 Images are picked up from the Umbraco Media library
 
-This editor doesn't have additional parameters
+It doesn't have any additional parameter.
  
 ![Canvas Designer](images/Canvas-Designer/13.png)
  
@@ -170,7 +170,7 @@ This editor doesn't have additional parameters
 
 *Alias*: border
 
-This editor is used for edit element borders.
+This editor is used for editing element borders.
 
 *Parameters*:
 
@@ -185,7 +185,7 @@ This editor is used for edit element borders.
 
 *Alias*: color
 
-This editor is used for edit color (font, border, background...).
+This editor is used for editing color (font, border, background...).
 
 *Parameters*:
 
@@ -200,9 +200,9 @@ This editor is used for edit color (font, border, background...).
 
 *Alias*: googlefontpicker
 
-This editor is used for edit web and googlefont family.
+This editor is used for editing web and googlefont family.
 
-This editor doesn't have additional parameters
+It doesn't have any additional parameter.
 
 ![Canvas Designer](images/Canvas-Designer/16.png)
 
@@ -210,7 +210,7 @@ This editor doesn't have additional parameters
 
 *Alias*: margin
 
-This editor is used for edit element margins.
+This editor is used for editing element margins.
 
 *Parameters*:
 
@@ -225,7 +225,7 @@ This editor is used for edit element margins.
 
 *Alias*: padding
 
-This editor is used for edit element paddings.
+This editor is used for editing element paddings.
 
 *Parameters*:
 
@@ -240,7 +240,7 @@ This editor is used for edit element paddings.
 
 *Alias*: radius
 
-This editor is used for edit element border radius.
+This editor is used for editing element border radius.
 
 *Parameters*:
 
@@ -255,9 +255,9 @@ This editor is used for edit element border radius.
 
 *Alias*: shadow
 
-This editor is used for edit element border radius.
+This editor is used for editing element border radius.
 
-This editor doesn't have additional parameter
+This editor doesn't have any additional parameter.
 
 ![Canvas Designer](images/Canvas-Designer/20.png)
 
@@ -265,7 +265,7 @@ This editor doesn't have additional parameter
 
 *Alias*: slide
 
-This editor is used for edit any kind of css size (margin, font size, padding, width, height...).
+This editor can be used for editing any kind of css size value (margin, font size, padding, width, height...).
 
 *Parameters*:
 
@@ -284,7 +284,7 @@ Pre-configured palette setting can be modified into another JSON file, its path 
 
 ![Canvas Designer](images/Canvas-Designer/23.png)
 
-A palette setting is mainly a set of value apply to the editors of the canvas. 
+A palette setting is mainly a set of values applied to the editors of the canvas. 
 
 	var canvasdesignerPalette = [
 
@@ -298,7 +298,7 @@ A palette setting is mainly a set of value apply to the editors of the canvas.
 			// set of value that can be apply to the editors of the canvas
 			data:
 				{
-					"widebodytypewidecategorydimensionnamelayout": "wide","imageorpatternbodytypebackgroundcategorycolornamebackground": "","colorbodytypebackgroundcategorycolornamebackground": "","colorbodytypecolorcategoryfontnamefontcolormaincsscolorschemabodyh1h2h3h4h5h6h7navlia": "rgb(107, 119, 112)","colorbodytypecolorcategoryfontnamefontcolorsecondarycsscolorschemaulmetabyline": "rgb(193, 202, 197)","fontfamilybodytypegooglefontpickercategoryfontnamefontfamilycsscolorschemabodyh1h2h3h4h5h6h7bylinenavbutton": "Open Sans Condensed","fonttypebodytypegooglefontpickercategoryfontnamefontfamilycsscolorschemabodyh1h2h3h4h5h6h7bylinenavbutton": "google","fontweightbodytypegooglefontpickercategoryfontnamefontfamilycsscolorschemabodyh1h2h3h4h5h6h7bylinenavbutton": "700","fontstylebodytypegooglefontpickercategoryfontnamefontfamilycsscolorschemabodyh1h2h3h4h5h6h7bylinenavbutton": "","imageorpatternnavtypebackgroundcategorycolornamebackground": "","colornavtypebackgroundcategorycolornamebackground": "","bordersizenavtypebordercategorycolornameborder": "","bordercolornavtypebordercategorycolornameborder": "","bordertypenavtypebordercategorycolornameborder": "solid","leftbordersizenavtypebordercategorycolornameborder": "","leftbordercolornavtypebordercategorycolornameborder": "","leftbordertypenavtypebordercategorycolornameborder": "solid","rightbordersizenavtypebordercategorycolornameborder": "","rightbordercolornavtypebordercategorycolornameborder": "","rightbordertypenavtypebordercategorycolornameborder": "solid","topbordersizenavtypebordercategorycolornameborder": "","topbordercolornavtypebordercategorycolornameborder": "","topbordertypenavtypebordercategorycolornameborder": "solid","bottombordersizenavtypebordercategorycolornameborder": "","bottombordercolornavtypebordercategorycolornameborder": "","bottombordertypenavtypebordercategorycolornameborder": "solid","colornavtypecolorcategorynavnamefontcolorcsscolorschemanavlia": "rgb(107, 119, 112)","colornavtypecolorcategorynavnamefontcolorhoverselectedcsscolorschemanavlihovera": "rgb(255, 255, 255)","colornavtypecolorcategorynavnamebackgroundcolorhovercssbackgroundcolorschemanavlihovera": "rgb(193, 202, 197)","colornavtypecolorcategorynavnamebackgroundcolorselectedcssbackgroundcolorschemanavlicurrentpageitema": "rgb(227, 218, 168)","fontfamilynavtypegooglefontpickercategoryfontnamefontfamilly": "","fonttypenavtypegooglefontpickercategoryfontnamefontfamilly": "","fontweightnavtypegooglefontpickercategoryfontnamefontfamilly": "","fontstylenavtypegooglefontpickercategoryfontnamefontfamilly": "","colorheaderlogodivtypecolorcategorycolornamebordercolorcssbordertopcolorschemaheaderlogo": "rgb(231, 234, 232)","paddingvalueheaderlogodivtypepaddingcategorypositionnamemarginenabletopbottomschemaheader": "","leftpaddingvalueheaderlogodivtypepaddingcategorypositionnamemarginenabletopbottomschemaheader": "","rightpaddingvalueheaderlogodivtypepaddingcategorypositionnamemarginenabletopbottomschemaheader": "","toppaddingvalueheaderlogodivtypepaddingcategorypositionnamemarginenabletopbottomschemaheader": "172","bottompaddingvalueheaderlogodivtypepaddingcategorypositionnamemarginenabletopbottomschemaheader": "101","colorh2typecolorcategorycolornamebordercolorcssbordertopcolorschemah2major": "rgb(231, 234, 232)","colorh2typecolorcategoryfontnamefontcolorcsscolor": "","colorh3typecolorcategoryfontnamefontcolorcsscolor": "","colorbannerh2typecolorcategoryfontnamefontcolorcsscolor": "","sliderbannerh2typeslidercategoryfontnamefontsizecssfontsizemin18max100": "45","marginvaluebannerh2typemargincategorypositionnamemargin": "","leftmarginvaluebannerh2typemargincategorypositionnamemargin": "","rightmarginvaluebannerh2typemargincategorypositionnamemargin": "","topmarginvaluebannerh2typemargincategorypositionnamemargin": "","bottommarginvaluebannerh2typemargincategorypositionnamemargin": "","colorbannerbylinetypecolorcategoryfontnamefontcolorcsscolor": "","sliderbannerbylinetypeslidercategoryfontnamefontsizecssfontsizemin18max100": "22","marginvaluebannerbylinetypemargincategorypositionnamemargin": "","leftmarginvaluebannerbylinetypemargincategorypositionnamemargin": "","rightmarginvaluebannerbylinetypemargincategorypositionnamemargin": "","topmarginvaluebannerbylinetypemargincategorypositionnamemargin": "","bottommarginvaluebannerbylinetypemargincategorypositionnamemargin": "","imageorpatternbannertypebackgroundcategorycolornamebackgroundcsscolor": "","colorbannertypebackgroundcategorycolornamebackgroundcsscolor": "rgba(21, 28, 23, 0.95)","imageorpatternbannerwrappertypebackgroundcategorycolornamebackground": "","colorbannerwrappertypebackgroundcategorycolornamebackground": "","paddingvaluebannerwrappertypepaddingcategorypositionnamepaddingenabletopbottom": "","leftpaddingvaluebannerwrappertypepaddingcategorypositionnamepaddingenabletopbottom": "","rightpaddingvaluebannerwrappertypepaddingcategorypositionnamepaddingenabletopbottom": "","toppaddingvaluebannerwrappertypepaddingcategorypositionnamepaddingenabletopbottom": "123","bottompaddingvaluebannerwrappertypepaddingcategorypositionnamepaddingenabletopbottom": "125","bordersizemainwrappertypebordercategorystylingnameborderenabletopbottom": "","bordercolormainwrappertypebordercategorystylingnameborderenabletopbottom": "","bordertypemainwrappertypebordercategorystylingnameborderenabletopbottom": "solid","leftbordersizemainwrappertypebordercategorystylingnameborderenabletopbottom": "","leftbordercolormainwrappertypebordercategorystylingnameborderenabletopbottom": "","leftbordertypemainwrappertypebordercategorystylingnameborderenabletopbottom": "solid","rightbordersizemainwrappertypebordercategorystylingnameborderenabletopbottom": "","rightbordercolormainwrappertypebordercategorystylingnameborderenabletopbottom": "","rightbordertypemainwrappertypebordercategorystylingnameborderenabletopbottom": "solid","topbordersizemainwrappertypebordercategorystylingnameborderenabletopbottom": "32","topbordercolormainwrappertypebordercategorystylingnameborderenabletopbottom": "rgb(227, 218, 168)","topbordertypemainwrappertypebordercategorystylingnameborderenabletopbottom": "solid","bottombordersizemainwrappertypebordercategorystylingnameborderenabletopbottom": "10","bottombordercolormainwrappertypebordercategorystylingnameborderenabletopbottom": "rgb(193, 202, 197)","bottombordertypemainwrappertypebordercategorystylingnameborderenabletopbottom": "solid","radiusvalueimageimageimgimagebeforetyperadiuscategorystylingnameradius": "8","topleftradiusvalueimageimageimgimagebeforetyperadiuscategorystylingnameradius": "","toprightradiusvalueimageimageimgimagebeforetyperadiuscategorystylingnameradius": "","bottomleftradiusvalueimageimageimgimagebeforetyperadiuscategorystylingnameradius": "","bottomrightradiusvalueimageimageimgimagebeforetyperadiuscategorystylingnameradius": "","colorbuttontypecolorcategorycolornamecolorcsscolor": "rgb(255, 255, 255)","colorbuttontypecolorcategorycolornamebackgroundcssbackground": "rgb(227, 218, 168)","colorbuttontypecolorcategorycolornamebackgroundhovercssbackgroundschemabuttonhover": "rgb(235, 227, 178)","radiusvaluebuttontyperadiuscategorystylingnameradius": "7","topleftradiusvaluebuttontyperadiuscategorystylingnameradius": "","toprightradiusvaluebuttontyperadiuscategorystylingnameradius": "","bottomleftradiusvaluebuttontyperadiuscategorystylingnameradius": "","bottomrightradiusvaluebuttontyperadiuscategorystylingnameradius": "","colorbuttonalttypecolorcategorycolornamecolorcsscolor": "rgb(255, 255, 255)","colorbuttonalttypecolorcategorycolornamebackgroundcssbackground": "rgb(193, 202, 197)","colorbuttonalttypecolorcategorycolornamebackgroundhovercssbackgroundschemabuttonalthover": "rgb(204, 213, 208)"
+				.....
 				}
 		},
 
@@ -307,13 +307,12 @@ A palette setting is mainly a set of value apply to the editors of the canvas.
 		}
 	]
 	
-The palette colors values are used only to give an orientated color idea to the user. 
-Data is the set of value that will be apply to the editor. 
+The palette colors values are used only to give an estimated idea to the user of the final color. 
+Data is the set of values that will be applied to the editor.
 
 ![Canvas Designer](images/Canvas-Designer/24.png)
 
-The most easy way to create a new palette, is to first customize you style through the canvas designer and then click on the save option "Make preset".
-This action will open a text box with all the value needed for the palette. These value can be copied and past into the Palette config file.
+The easiest way to create a new palette, would be first customizing you style through the canvas designer and then clicking on the save option "Make preset". This action will open a text box with all the values needed for the palette. These values can be copied and pasted direcly into the Palette config file.
 
 ![Canvas Designer](images/Canvas-Designer/25.png)
 
