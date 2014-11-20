@@ -312,7 +312,7 @@ Data is the set of values that will be applied to the editor.
 
 ![Canvas Designer](images/Canvas-Designer/24.png)
 
-The easiest way to create a new palette, would be first customizing you style through the canvas designer and then clicking on the save option "Make preset". This action will open a text box with all the values needed for the palette. These values can be copied and pasted direcly into the Palette config file.
+The easiest way to create a new palette, would be first customizing your styles through the canvas designer and then clicking on the save option "Make preset". This action will open a text box with all the values needed for the palette. These values can be copied and pasted direcly into the Palette config file.
 
 ![Canvas Designer](images/Canvas-Designer/25.png)
 
