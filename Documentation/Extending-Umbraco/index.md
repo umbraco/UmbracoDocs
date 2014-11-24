@@ -26,6 +26,10 @@ A Parameter Editor is the editor used to insert values into a [Macro](../referen
 
 This section will describe how to work with and create Parameter Editors.
 
+##[Language Files](Language-Files/index.md)
+
+The Umbraco back office can be configured so that the user interface runs in the user's native language. This is made possible with community generated language files, if your language is not currently supported, why not help to add support?
+
 ##[Packaging](Packaging/index.md)
 
 Information on the packaging manifest format and how assets should be packaged as a zip file for easy distribution
