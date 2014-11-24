@@ -37,7 +37,7 @@ For some inexplicable reason, the installation will fail if you click "No to All
 ![](images/nuget-upgrade-overwrite.png)
 
 
-Now here comes the tricky bit: We'll be mean and overwrite your web.config file anyway. But we'll back it up so don't worry. (Plus you already had your own backup, right?) You can find the backup in `App_Data\ConfigBackup\20140320-165450`. (The `20140320-165450` bit is the date and time when the backup occurred, which varies.) You can then merge your config files and make sure they're completely up to date.
+Now here comes the tricky bit: We'll be mean and overwrite your web.config file anyway. But we'll back it up so don't worry. (Plus you already had your own backup, right?) You can find the backup in `App_Data\NuGetBackup\20140320-165450\`. (The `20140320-165450` bit is the date and time when the backup occurred, which varies.) You can then merge your config files and make sure they're completely up to date.
 
 ##Merge configuration files
 You can expect some changes to the following configuration files:
