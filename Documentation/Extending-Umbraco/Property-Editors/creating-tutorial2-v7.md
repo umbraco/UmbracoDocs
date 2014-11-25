@@ -56,10 +56,3 @@ However, you can also use these values without any javascript, so open the `mark
 Because we can also use the configuration directly in our html like here, where we use it to toggle the preview `<div>`, using the ng-hide attribute: 
 
 	<div ng-show="model.config.preview" class="wmd-panel wmd-preview"></div>
-
-
-##Get the codes
-The latest update to the markdowneditor project is on github where you can see all the files and the manifest [here](https://github.com/umbraco/Umbraco-CMS/tree/7.0.0/src/Umbraco.Web.UI.Client/src/packages/MarkdownEditor).
-	 
-
-
