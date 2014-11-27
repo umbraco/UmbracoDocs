@@ -210,7 +210,7 @@ In most cases you will either use the textstring view, or built your own from sc
 In this sample, the `config.style` value is applied to the editor so users can see an accurate preview, and `config.markup` is the string rendered on the server side
 
 
-####Built your own editor
+####Build your own editor
 Create a file in `/app_plugins/yourpackage/editor.html` and add the following to the editor.html file: 
 
     <textarea
