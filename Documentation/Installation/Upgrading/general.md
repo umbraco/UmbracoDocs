@@ -32,6 +32,7 @@ Or you can open the **NuGet Package Manager** and select the **Updates** pane to
 ####Upgrades to versions lower than 7.2.0
 If you're not upgrading to 7.2.0 or higher then you should follow these extra instructions, if you are upgrading to 7.2.0+ then you can skip this and go to [Merge UI.xml and language files](#MergeUIxmlandlanguagefiles)
 
+**The following only applies to upgrading to versions lower than 7.2.0**  
 You will be asked to overwrite your web.config file and the files in /config, make sure to answer **No** to those questions.
 
 For some inexplicable reason, the installation will fail if you click "No to All" (in the GUI) or answer "L" (in the package manager console) to the question: "File 'Web.config' already exists in project 'MySite'. Do you want to overwrite it?" So make sure to only answer "**No**" (in the GUI) or "**N**" (in the package manager console).
