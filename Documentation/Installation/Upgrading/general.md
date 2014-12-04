@@ -29,13 +29,15 @@ You can simply open up the **Package Console** and type:
 
 Or you can open the **NuGet Package Manager** and select the **Updates** pane to get a list of available updates. Choose the package called **UmbracoCms** and click update. This will run through all the files and make sure you have the latest changes while leaving files you have updated.
 
+####Upgrades to versions lower than 7.2.0
+If you're not upgrading to 7.2.0 or higher then you should follow these extra instructions, if you are upgrading to 7.2.0+ then you can skip this and go to [Merge UI.xml and language files](#MergeUIxmlandlanguagefiles)
+
 You will be asked to overwrite your web.config file and the files in /config, make sure to answer **No** to those questions.
 
 For some inexplicable reason, the installation will fail if you click "No to All" (in the GUI) or answer "L" (in the package manager console) to the question: "File 'Web.config' already exists in project 'MySite'. Do you want to overwrite it?" So make sure to only answer "**No**" (in the GUI) or "**N**" (in the package manager console).
 
 ![](images/nuget-overwrite-dialog.png)
 ![](images/nuget-upgrade-overwrite.png)
-
 
 Now here comes the tricky bit: We'll be mean and overwrite your web.config file anyway. But we'll back it up so don't worry. (Plus you already had your own backup, right?) You can find the backup in `App_Data\NuGetBackup\20140320-165450\`. (The `20140320-165450` bit is the date and time when the backup occurred, which varies.) You can then merge your config files and make sure they're completely up to date.
 
