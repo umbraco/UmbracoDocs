@@ -147,9 +147,3 @@ and add that id to the text area in the html, for more info on the html structur
 Now, clear the cache, reload the document and see the pagedown editor running. 
 
 When you save or publish the value of the editor is automaticly synced to the current content object and sent to the server, all through the power of angular and the `ng-model`attribute.
-
-##Get the source
-The full source, including manifest and dependencies, can be found on the umbraco-cms project 
-[here](https://github.com/umbraco/Umbraco-CMS/tree/7.0.0/src/Umbraco.Web.UI.Client/src/packages/MarkdownEditor)
-
-Simply copy the MarkdownEditor folder to /app_plugins and restart your website, and it will be up and running.

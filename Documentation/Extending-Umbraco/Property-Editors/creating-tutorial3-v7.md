@@ -72,5 +72,3 @@ So over the 3 previous steps, we've:
 - made the editor configurable
 - connected the editor with native dialogs and services
 - looked at koala pictures.
-
-The complete project can be found [here](https://github.com/umbraco/Umbraco-CMS/tree/7.0.0/src/Umbraco.Web.UI.Client/src/packages/MarkdownEditor).
