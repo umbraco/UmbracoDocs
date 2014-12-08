@@ -452,7 +452,7 @@ In this section you can add multiple scheduled tasks that should run a certain i
 
 The scheduledTasks element consist of the following attributes:
 
-**baseUrl**: **(v7.1.9+)** This is optional and should only be used if the base URL cannot be detected. This might occur if your hosting setup has some special proxies setup. See this issue for more details: http://issues.umbraco.org/issue/U4-5391
+**baseUrl**: **(v6.2.5 & v7.1.9+)** This is optional and should only be used if the base URL cannot be detected. This might occur if your hosting setup has some special proxies setup. See this issue for more details: http://issues.umbraco.org/issue/U4-5391
 
 For each task you want to run you should simply just add a **`<task>`** element.
 
