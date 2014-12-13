@@ -37,7 +37,7 @@ Adds an upload field, which allows documents or images to be uploaded to Umbraco
 ##Folder Browser
 Used mainly with container Media Types, the Folder Browser displays a list of thumbnail images.
 
-##Grid Layout
+##[Grid Layout](Grid-Layout.md)
 New to v7.2, gives editors a grid layout editor which allows them to insert different types of content in a predefined layout.
 
 ##[Image Cropper](Image-Cropper.md)
