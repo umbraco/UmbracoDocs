@@ -10,7 +10,7 @@ _These are settings that require a value in the appSettings section of the web.c
 
 ###umbracoConfigurationStatus
 
-Coming soon!
+Holds the version number of the currently installed version of Umbraco. This version number changes automatically when running the installer and the upgrade installer. It is not recommended to update this version manually as the upgrade installer might need to perform some actions to upgrade your site properly. The upgrade installer doesn't run when this version is the same as the version number in the Umbraco dll.
 
 ###umbracoReservedUrls
 
@@ -30,7 +30,8 @@ Coming soon!
 
 ###umbracoUseDirectoryUrls
 
-Coming soon!
+Strips `.aspx` from URLs on the frontend when set to `true`.  
+This setting is only important to older IIS configurations where extionless URLs weren't supported very well.
 
 ###umbracoTimeOutInMinutes
 
@@ -44,7 +45,7 @@ Coming soon!
 
 ###umbracoUseSSL
 
-Coming soon!
+Makes sure that all of the requests in the backoffice are called over https instead of http when set to `true`.
 
 ##Optional settings
 
