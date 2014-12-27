@@ -8,20 +8,20 @@ Gives editors a grid layout editor which allows them to insert different types o
 
 
 ##What are grid layouts?
-To understand how the grid layout editor works, we must first understand the structure of the grid.
+To understand how the grid layout editor works, we must first understand the structure of the grid layouts.
 
-The grid consists of two main areas that need to be configured, *grid layouts* and *grid rows*.
+Grid layouts consists of two main areas that need to be configured, *grid layout area* and *grid rows*.
 
-####Grid Layout	
+####Grid Layout 
 The *layout area* is where the overall page layout is defined. 
-*Layout areas* are divided in to *layout sections* e.g. a sidebar section and content section	. The size of the *layout sections* is defined in columns. For a full-width content area use max number of columns (12 for Bootstrap 3). Each *layout section* contains one or more *rows*
+*Layout areas* are divided in to *layout sections* e.g. a sidebar section and content section. The size of the *layout sections* is defined in columns. For a full-width content area use max number of columns (12 for Bootstrap 3). Each *layout section* contains one or more *rows*.
 ![Grid rows](images/Grid-Layout/Grid-layout-rows.jpg)
 
 ####Grid Rows
-Grid *rows* is where the actual content goes. Each row is divided into *cells* that contain the property editors. The size of the cells is defined in columns. Unlike the *layouts sections* you can add more *cells* than the max number of columns - they will stack as they should in a grid system. The rows can be configured with inline styling and CSS classes to allow specifically tailored content.
+Grid *rows* is where the actual content goes. Each row is divided into *cells* that contain the property editors. The size of the cells is defined in columns. Unlike the *layouts sections* it is possible to add more *cells* than the max number of columns - they will stack as they should in a grid system.
 ![Grid structure](images/Grid-Layout/Grid-layout-NO-SIDEBAR-rows.jpg)
 
-##Settings
+##Configuring the Grid Layout data type
 A grid layout contains multiple configuration options to allow developers to tailor the grid to a very specific site design.
 The configuration can be divided into 4 overall parts:
 
@@ -35,28 +35,30 @@ A layout is the general grid "container", it contains one or more sections which
 
 You can however configure as many layouts and layout sections as you wish, each section in the layout must be given a width in columns, so editors gets an accurate preview of their layout.
 
-
+It is possible to setup configurable attributes(class, rel, href) and inline styling on sections.
 ![Grid layouts](images/Grid-Layout/layouts.png)
 
 
 ###Row configurations
 A row in the grid editor contains one or more cells, which divide the row into areas where editors can enter content. So a row is merely a container of areas to insert content into. When you add a new row, you are asked to give it a name, then define cells inside the row by clicking the "+" icon. Each cell has a default width set to 4, but by clicking the inserted cell you can control its width.
 
+It is possible to setup configurable attributes(class, rel, href) and inline styling on rows.
+
 ![Grid layouts](images/Grid-Layout/rows.png)
 
-You add as many cells as you like. If they overflow the total width of the row, they will simply be arranged after each other horizontally as you'd expect a grid system to behave.
+You add as many cells as you like. If they overflow the total width of the row, they will simply be arranged after each other horizontally as you'd expect in a grid system.
 
 ![Grid layouts](images/Grid-Layout/cells.png)
 
-Each cell can by default contain any type of content such as simple text-strings, images, embedded media or umbraco macros. To override this behavior, uncheck the **allow all editors** option and you can select specific editors for the row.
+Each cell can by default contain any type of editor such as simple textstring editors, imagespicker, embedded media or umbraco macros. To override this behavior, uncheck the **allow all editors** option and you can specify which editors will be available for the row. 
 
 
 ###Settings and styling
-A grid layout can also expose custom settings - such as styling options or data-attributes - on each cell or row. This allows editors to use a friendly UI to add configuration values to grid elements. When custom settings and styles are applied, they will by default be included in the grid html as either inline styles or html attributes.
+A grid layout can also expose custom settings - such as data-attributes or styling options - on each cell or row. This allows editors to use a friendly UI to add configuration values to grid elements. When custom settings and styles are applied, they will by default be included in the grid html as either html attributes or inline styles.
 
 ![Grid layouts](images/Grid-Layout/settings.png)
 
-These settings and styles must be configured by developers when setting up the grid.
+These settings and styles must be configured by developers when setting up the grid layout data type.
 
 ###Configuring a custom setting or style
 To add a setting, click the edit settings link. This will expand a dialog showing you the raw configuration data. This data is in the JSON format and will only save if its valid JSON.
@@ -79,9 +81,10 @@ The different values are:
 - **label** : Field name displayed in the content editor UI
 - **description** : Descriptive text displayed in the content editor UI to guide the user
 - **key** : The key the entered setting value will be stored under.
-- **view** : The editor used to enter a setting value with
-- **modifier** : A string formater to modify the output of the editor to append extra values.
-- **applyTo (optional)** : States whether the setting can be used on a cell or a row. If either not present or empty, the setting will be shown both on Rows and Cells. 
+- **view** : The editor used to enter a setting value with.
+- **prevalues** is for views that need predefined values, e.g. the radiobuttonlist view.
+- **modifier (optional)** : A string formater to modify the output of the editor to prepend or append extra values.
+- **applyTo (optional)** : States whether the setting can be used on a cell or a row. If either not present or empty, the setting will be shown both on Rows and Cells.
 
 **Label** and **description** are straight-forward. **key** defines the alias the configuration is stored under and by default the alias of the attribute will also be the attribute on the rendered html element. In the example above any value entered in this settings editor will be rendered in the grid html as:
 
@@ -94,6 +97,7 @@ By changing the key of the setting you can modify the `<div>` element's attribut
 
 - textstring
 - textarea
+- radiobuttonlist
 - mediapicker
 - imagepicker
 - boolean
@@ -102,8 +106,17 @@ By changing the key of the setting you can modify the `<div>` element's attribut
 - number
 - multivalues
 
-Alternatively you can also pass in a path to a custom view like "/app_plugins/packages/view.html"
+Alternatively you can also pass in a path to a custom view like "/app_plugins/grid/editors/view.html"
 
+**prevalues** is for views that need predefined values, e.g. the radiobuttonlist view. Prevalues are defined as strings in an array:
+    
+    "prevalues":[
+        "value_1",
+        "value_2",
+        "value_3"
+    ]
+
+and will translate in to three different options where each string will become a radiobutton. The String represents the value of the option.
 
 **modifier** is a basic way to prepend, append or wrap the value from the editor in a simple string. This is especially useful when working with custom styles which often requires additional values to function. For instance if you want to set a background image you can get an image path from the image picker view. But in order for it to work with css it has to be wrapped in `url()`. In that case you set the **modifier** to `url('{0}')` which means that `{0}` is replaced with the editor value.
 
@@ -114,7 +127,7 @@ There are many ways to combine these, here are some samples:
 **Set a background image style**
 
     {
-        "label": "Background color",
+        "label": "Background image",
         "description": "Choose an image",
         "key": "background-image",
         "view": "imagepicker",
@@ -137,10 +150,17 @@ There are many ways to combine these, here are some samples:
     {
         "label": "Custom data",
         "description": "Set a title on this element",
-        "key": "title",
-        "view": "textstring"
+        "key": "data-custom",
+        "view": "radiobuttonlist",
+        "prevalues": [
+            "value_1",
+            "value_2",
+            "value_3"
+        ]
     }
 
+###Full-width settings and styles
+It is possible to use settings and styles to add full-width background-images, background-colors and so forth. Just make sure the sorrounding *section* is full-width(12 columns by default) and the *rows* inside it will automatically become full-width.
 
 #Render grid in template
 To display the grid on a site use:
@@ -165,7 +185,7 @@ A grid editor is the component responsible for getting data into the grid - that
 - .js controller
 - .cshtml serverside renderer
 
-The view is what the editor see, the controller handles how it acts and the cshtml determines how the entered data is rendered.
+The view is what the editor sees, the controller handles how it acts and the cshtml determines how the entered data is rendered in the template.
 
 ####Grid editor configuration
 All editors are specified in `config/grid.editors.config.js` file which uses the json format. Foreach editor you have an object like so: 
@@ -207,7 +227,7 @@ In most cases you will either use the textstring view, or built your own from sc
         }
     }
 
-In this sample, the `config.style` value is applied to the editor so users can see an accurate preview, and `config.markup` is the string rendered on the server side
+In this sample, the `config.style` value is applied to the editor so users can see an accurate preview in the backoffice, and `config.markup` is the string rendered on the server side.
 
 
 ####Build your own editor
