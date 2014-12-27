@@ -14,12 +14,12 @@ Bigger textfield that allows multiline text and more than 250 characters
 ##Datepicker
 Will display a picker that allows to user to select a date
 
-![Datepicker](datepicker.png)
+![Datepicker](Datepicker.png)
 
 ##Checkbox
 Displays a single checkbox that can be checked or not
 
-![Checkbox](checkbox.png)
+![Checkbox](Checkbox.png)
 
 ##File upload
 Allows user to select and upload a local file
@@ -34,12 +34,12 @@ Password field (input isn't visible when typing)
 ##Checkboxlist
 Will display a list of items (a checkbox for each item) where the user can select multiple options
 
-![Checkboxlist](checkboxlist.png)
+![Checkboxlist](Checkboxlist.png)
 
 ##Dropdownlist
 Will display a list of items (in a drop down box) where the user can select a single option
 
-![Dropdownlist](dropdownlist.png)
+![Dropdownlist](Dropdownlist.png)
 
 ##Radiobuttonlist
 Displays a list of items (a radio button for each item), where the user can select a single option
