@@ -34,7 +34,7 @@ Password field (input isn't visible when typing)
 ##Checkboxlist
 Will display a list of items (a checkbox for each item) where the user can select multiple options
 
-![Checkboxlist](CheckBoxlist.png)
+![Checkboxlist](CheckBoxList.png)
 
 ##Dropdownlist
 Will display a list of items (in a drop down box) where the user can select a single option
