@@ -37,7 +37,7 @@ A layout is the general grid "container", it contains one or more sections which
 
 You can however configure as many layouts and layout sections as you wish, each section in the layout must be given a width in columns, so editors gets an accurate preview of their layout.
 
-It is possible to setup configurable attributes(class, rel, href) and inline styling on sections.
+It is possible to setup configurable attributes (class, rel, href) and inline styling on sections.
 ![Grid layouts](images/Grid-Layout/layouts.png)
 
 
@@ -48,7 +48,7 @@ It is possible to setup configurable attributes(class, rel, href) and inline sty
 
 ![Grid layouts](images/Grid-Layout/rows.png)
 
-You add as many cells as you like. If they overflow the total width of the row, they will simply be arranged after each other horizontally as you'd expect in a grid system.
+You can add as many cells as you like. If they overflow the total width of the row, they will simply be arranged after each other horizontally as you'd expect in a grid system.
 
 ![Grid layouts](images/Grid-Layout/cells.png)
 
@@ -84,11 +84,13 @@ The different values are:
 - **description** : Descriptive text displayed in the content editor UI to guide the user
 - **key** : The key the entered setting value will be stored under.
 - **view** : The editor used to enter a setting value with.
-- **prevalues** is for views that need predefined values, e.g. the radiobuttonlist view.
+- **prevalues** : For views that need predefined values, e.g. the radiobuttonlist view.
 - **modifier (optional)** : A string formater to modify the output of the editor to prepend or append extra values.
 - **applyTo (optional)** : States whether the setting can be used on a cell or a row. If either not present or empty, the setting will be shown both on Rows and Cells.
 
-**Label** and **description** are straight-forward. **key** defines the alias the configuration is stored under and by default the alias of the attribute will also be the attribute on the rendered html element. In the example above any value entered in this settings editor will be rendered in the grid html as:
+**label** and **description** are straight-forward.
+
+**key** defines the alias the configuration is stored under and by default the alias of the attribute will also be the attribute on the rendered html element. In the example above any value entered in this settings editor will be rendered in the grid html as:
 
     <div **class**="VALUE-ENTERED"></div>
 
@@ -118,7 +120,7 @@ Alternatively you can also pass in a path to a custom view like "/app_plugins/gr
         "value_3"
     ]
 
-and will translate in to three different options where each string will become a radiobutton. The String represents the value of the option.
+and will translate in to three different options where each string will become a radiobutton. The strings represent the value of the options.
 
 **modifier** is a basic way to prepend, append or wrap the value from the editor in a simple string. This is especially useful when working with custom styles which often requires additional values to function. For instance if you want to set a background image you can get an image path from the image picker view. But in order for it to work with css it has to be wrapped in `url()`. In that case you set the **modifier** to `url('{0}')` which means that `{0}` is replaced with the editor value.
 
@@ -147,7 +149,7 @@ There are many ways to combine these, here are some samples:
     }
 
 
-**add a data-custom setting**
+**Set a data-custom setting**
 
     {
         "label": "Custom data",
@@ -162,7 +164,7 @@ There are many ways to combine these, here are some samples:
     }
 
 ###Full-width settings and styles
-It is possible to use settings and styles to add full-width background-images, background-colors and so forth. Just make sure the sorrounding *section* is full-width(12 columns by default) and the *rows* inside it will automatically become full-width.
+It is possible to use settings and styles to add full-width background-images, background-colors and so forth. Just make sure the surrounding *section* is full-width(12 columns by default) and the *rows* inside it will automatically become full-width.
 
 #Render grid in template
 To display the grid on a site use:
@@ -235,8 +237,7 @@ In this sample, the `config.style` value is applied to the editor so users can s
 ####Build your own editor
 Create a file in `/app_plugins/yourpackage/editor.html` and add the following to the editor.html file: 
 
-    <textarea
-        rows="1" ng-model="control.value" ng-style="control.config"></textarea>
+    <textarea rows="1" ng-model="control.value" ng-style="control.config"></textarea>
 
 Save the file and add an editor to the `grid.editors.config.js` file:
 
