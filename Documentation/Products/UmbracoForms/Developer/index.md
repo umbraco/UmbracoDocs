@@ -1,8 +1,8 @@
 #Developer documentation
-Developer documents covers working with Umbraco Forms from a developer standpoint. It covers retrieving data, it shows how to extend the system by hooking into the provider model, and finally it describes the available events and workflows you can use to extend or integrate Umbraco Forms.
+Developer documentation covers working with Umbraco Forms from a developer standpoint. It covers retrieving data, it shows how to extend the system by hooking into the provider model, and finally it describes the available events and workflows you can use to extend or integrate Umbraco Forms.
 
 ##[Preparing your Frontend](Prepping-Frontend/index.md)
-Before adding some forms to your site we'll need to make sure you have the necessary client dependencies.
+Before adding a form to your site we'll need to make sure you have the necessary client dependencies.
 
 ##[Custom markup](Custom-Markup/index.md)
 Write your forms your way. You have full control over your form's HTML markup and styling

@@ -15,7 +15,7 @@ You should see the following dialog
 
 ![Forms create dialog](FormsCreateDialog.png)
 
-Where you'll have the option to start from a template (the template will already have some fields definied so you don't start from a completely empty form).
+Where you'll have the option to start from a template (the template will already have some fields defined so you don't start from a completely empty form).
 
 
 ##Design the form
@@ -24,7 +24,7 @@ The next screen you should see after selecting the empty or form template is the
 
 ![Forms designer](FormDesignerStart.png)
 
-There is already a page a fieldset and a container available the rest of the form has to be added using the UI(unless you started from a template then you already get some fields).
+There is already a page, a fieldset and a container available. The rest of the form has to be added using the UI(unless you started from a template then you already get some fields).
 
 ###Setting the form name
 First we'll need to provide a name for our new form, you can do that in the top input.

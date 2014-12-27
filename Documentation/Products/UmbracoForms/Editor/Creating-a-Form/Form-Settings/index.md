@@ -15,7 +15,7 @@ The error message that will be displayed for a field if a field is mandatory but
 The error message that will be displayed for a field if a field isn't valid (a regular expression has been setup but the input doesn't match). This setting can be overwritten on a field level. {0} will be replaced with the field caption.
 
 ###Show validation summary
-Enable this option If you wish to display a summary of all error messages on top of the form.
+Enable this option if you wish to display a summary of all error messages on top of the form.
 
 ###Hide field validation labels
 Enable this option if you wish the hide idividual field error messages from being displayed.

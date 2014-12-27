@@ -31,7 +31,7 @@ First thing that needs to be chosen is the action type this can be either show o
 
 ###Logic type
 
-Then you'll need to specify if all rules need to match (but this setting is only important whne you have multple rules.
+Then you'll need to specify if all rules need to match. This setting is only important if you have multple rules.
 
 ![LogicType](LogicType.png)
 

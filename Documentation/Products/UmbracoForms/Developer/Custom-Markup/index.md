@@ -2,9 +2,9 @@
 With Umbraco Forms it's possible to customize the outputted markup of a form. So you have complete control over what Forms will output.
 
 ##Customizing the default views
-The way the razor macro works it that it uses some razor views to output the form (1 for each fieldtype, 1 for the scripts and 1 for the rest of the form). The views are available for edit so you can customize them to your needs.
+The way the razor macro works is that it uses some razor views to output the form (1 for each fieldtype, 1 for the scripts and 1 for the rest of the form). The views are available for edit so you can customize them to your needs.
 
-The views can be found in the ~\View\Partials\Forms\
+The views can be found in the `~\Views\Partials\Forms\
 
 ###Form.cshtml
 

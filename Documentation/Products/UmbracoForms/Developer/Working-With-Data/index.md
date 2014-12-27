@@ -8,30 +8,30 @@ The static methods can be found in Umbraco.Forms.Mvc.DynamicObjects.Library
 ###GetApprovedRecordsFromPage
 
 	DynamicRecordList GetApprovedRecordsFromPage(int pageId)
-Returns All records with the state set to approved from all forms on the umbraco page with the id = pageId as a DynamicRecordList
+Returns all records with the state set to approved from all forms on the umbraco page with the id = pageId as a DynamicRecordList
 
 ###GetApprovedRecordsFromFormOnPage
 
 	DynamicRecordList GetApprovedRecordsFromFormOnPage(int pageId, string formId)
-Returns All records with the state set to approved from the form with the id = formId on the umbraco page with the id = pageId as a DynamicRecordList
+Returns all records with the state set to approved from the form with the id = formId on the umbraco page with the id = pageId as a DynamicRecordList
 
 ###GetApprovedRecordsFromForm
 	DynamicRecordList GetApprovedRecordsFromForm(string formId)
-Returns All records with the state set to approved from the form with the ID = formId as a DynamicRecordList
+Returns all records with the state set to approved from the form with the ID = formId as a DynamicRecordList
 ###GetRecordsFromPage
 
 	DynamicRecordList GetRecordsFromPage(int pageId)
-Returns All records from all forms on the umbraco page with the id = pageId as a DynamicRecordList
+Returns all records from all forms on the umbraco page with the id = pageId as a DynamicRecordList
 
 ###GetRecordsFromFormOnPage
 
 	DynamicRecordList GetRecordsFromFormOnPage(int pageId, string formId)
-Returns All records from the form with the id = formId on the umbraco page with the id = pageId as a DynamicRecordList
+Returns all records from the form with the id = formId on the umbraco page with the id = pageId as a DynamicRecordList
 
 ###GetRecordsFromForm
 
 	DynamicRecordList GetRecordsFromForm(string formId)
-Returns All records from the form with the ID = formId as a DynamicRecordList
+Returns all records from the form with the ID = formId as a DynamicRecordList
 
 ##DynamicRecordsList and DynamicRecord
 As you see all of these methods will return an object of type DynamicRecordList so you can easily iterate trough the DynamicRecord objects.
@@ -48,7 +48,7 @@ The properties available on a DynamicRecord are:
 	int UmbracoPageId
 	DateTime Updated
 
-The access custom form fields you can simply use the dot notation, using the field caption but removing all spaces and non alphanumeric characters.
+In order to access custom form fields you can simply use the dot notation, using the field caption but removing all spaces and non alphanumeric characters.
 
 ##Sample razor script (DynamicNode, pre umbraco 6.0.0)
 

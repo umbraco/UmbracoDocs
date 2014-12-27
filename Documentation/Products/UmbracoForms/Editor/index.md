@@ -1,7 +1,7 @@
 #Editor documentation
 Documents how to use the different parts of the Forms interface.
 
-##[Creating a form, the basics](Creating-a-form/index.md)
+##[Creating a form, the basics](Creating-a-Form/index.md)
 Create new forms and add them to your Umbraco site in minutes.
 
 ###[Form settings](Creating-a-form/Form-Settings/index.md)

@@ -19,10 +19,13 @@ It should have the following contents
 Here we'll make a small change, in the RenderAction call we'll provide an additional argument mode = "form"
 
 so go from
+
 	Html.RenderAction("Render", "UmbracoForms", new {formId = g});	
+
 to
+	
 	Html.RenderAction("Render", "UmbracoForms", new {formId = g, mode = "form"});
 
 ##Place the Render scripts macro on your template
 
-Now we'll need to let Forms know where we want to output the script instead. So Navigate to the settings section and select  your template that should contain the scripts. There simply insert the Render Umbraco Forms Scripts macro.
+Now we'll need to let Forms know where we want to output the script instead. So Navigate to the settings section and select  your template that should contain the scripts. There simply insert the *Render Umbraco Forms Scripts* macro.

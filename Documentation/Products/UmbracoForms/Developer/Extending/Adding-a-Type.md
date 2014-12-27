@@ -3,7 +3,7 @@
 To add a new type, no matter if it's a workflow, field, data source, etc, there is a number of tasks to perform to connect to the Forms provider model. This chapter walks through each step and describes how each part works. This chapter will reference the creation of a workflow type. It is however the same process for all types.
 ##Preparations
 Create a new asp.net or class project in Visual Studio add references to the Umbraco.Forms.Core.dll.
-##Addng the type to Forms
+##Adding the type to Forms
 The Forms api contains a collection of classes that the provider model automaticly registers. So to add a new type to Forms you simply inherit from the right class. In the sample below we use the class for the workflow type.
 
 	public class Class1 : Umbraco.Forms.Core.WorkflowType 

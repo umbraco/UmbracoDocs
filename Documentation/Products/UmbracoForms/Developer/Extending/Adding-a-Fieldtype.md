@@ -18,7 +18,7 @@ In the empty constructor add the following information:
 
 In the constructor we specify the standard provider information (remember to set the ID to a unique ID).
 
-And then we set the field type specific information. In this case a preview Icon for the form builder UI and what kind of data it will return, this can either be string, longstring,integer,datetime or boolean.
+And then we set the field type specific information. In this case a preview Icon for the form builder UI and what kind of data it will return, this can either be string, longstring, integer, datetime or boolean.
 
 Then we will start building the view
 
@@ -28,6 +28,6 @@ Then we will start building the view
     @{if (Model.Mandatory) {<text> data-val-required="@Model.RequiredErrorMessage"</text>}}
     @{if (Model.Validate) {<text> data-val-regex="@Model.InvalidErrorMessage" data-regex="@Html.Raw(Model.Regex)"</text>}}
 
-The view simply takes care of generating the UI control and setting its value (views are found in the \Partials\Forms\Fieldtypes\ directory)
+The view simply takes care of generating the UI control and setting its value. Views are found in the `Views\Partials\Forms\Fieldtypes\` directory.
 
-Important on the view is that the id attribute is fetched from @Model.Id. You'll also see that we are using jquery validate unobtrusive to perform client side validation so that's why we are adding the data* attributes.
+On the view it is important to note that the id attribute is fetched from @Model.Id. You'll also see that we are using jquery validate unobtrusive to perform client side validation so that's why we are adding the data* attributes.
