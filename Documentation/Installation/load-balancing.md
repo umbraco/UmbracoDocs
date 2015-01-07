@@ -228,13 +228,13 @@ As of Umbraco 6.2.1+ and 7.1.5+ there are another couple of options to take into
 	        <server serverName="MyServer2">server2.mywebsite.com</server>
 	        <server serverName="MyServer3">server3.mywebsite.com</server>
 	        
-**appId** is a less common attribute to use but will need to be used in the case where you are load balancing a single site on the same server. The appId is determined by the result of: `HttpRuntime.AppDomainAppId`. This is generally the id of the IIS site hosting the web app (i.e. the value might look something like: /LM/W3SVC/69/ROOT ). You shouldn't specify both the serverName and appId together on the same xml server node, if you do the appId will take precedence. 
-Example:
+**appId** is a less common attribute to use but will need to be used in the case where you are load balancing a single site on the same server. The appId is determined by the result of: `HttpRuntime.AppDomainAppId`. This is generally the id of the IIS site hosting the web app (i.e. the value might look something like: /LM/W3SVC/69/ROOT ). You shouldn't specify both the serverName and appId together on the same xml server node, if you do the appId will take precedence. Example:
 
 		<server appId="/LM/W3SVC/987/ROOT">server1.mywebsite.com</server>
 	        <server appId="/LM/W3SVC/123/ROOT">server2.mywebsite.com</server>
 	        <server serverName="MyServer3">server3.mywebsite.com</server>
 
+**7.1.5 & 7.1.6** - If IIS uses the same site ID on each server, it *can* cause the cache to not refresh. Set them differently on each server if the cache fails to update, it can be edited in IIS via advanced settings.
 
 ##Testing
 You'll need to test this solution **a lot** before going to production. You need to ensure there are no windows security issues, etc... The best way to determine issues is have a lot of people testing this setup and ensuring all errors and warnings in your application/system logs in Windows are fixed.
