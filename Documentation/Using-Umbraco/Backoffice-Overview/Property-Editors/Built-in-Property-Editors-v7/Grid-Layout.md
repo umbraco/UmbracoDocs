@@ -153,7 +153,7 @@ There are many ways to combine these, here are some samples:
 
     {
         "label": "Custom data",
-        "description": "Set a title on this element",
+        "description": "Set the custom data on this element",
         "key": "data-custom",
         "view": "radiobuttonlist",
         "prevalues": [
@@ -162,6 +162,31 @@ There are many ways to combine these, here are some samples:
             "value_3"
         ]
     }
+
+###Multiple settings and styles
+You can add multiple settings and styles configurations on a datatype. This is done by creating a new setting or style object. Remember to seperate the objects with a comma.
+
+**Adding multiple settings**
+
+    {
+        "label": "Class",
+        "description": "Set a class on this element",
+        "key": "class",
+        "view": "textstring"
+    },
+    {
+        "label": "Title",
+        "description": "Set a title on this element",
+        "key": "title",
+        "view": "textstring"
+    },
+    {
+        "label": "Custom data",
+        "description": "Set the custom data on this element",
+        "key": "data-custom",
+        "view": "textstring"
+    }
+
 
 ###Full-width settings and styles
 It is possible to use settings and styles to add full-width background-images, background-colors and so forth. Just make sure the surrounding *section* is full-width(12 columns by default) and the *rows* inside it will automatically become full-width.
