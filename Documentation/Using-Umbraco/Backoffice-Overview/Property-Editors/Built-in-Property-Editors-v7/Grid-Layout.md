@@ -168,24 +168,26 @@ You can add multiple settings and styles configurations on a datatype. This is d
 
 **Adding multiple settings**
 
-    {
-        "label": "Class",
-        "description": "Set a class on this element",
-        "key": "class",
-        "view": "textstring"
-    },
-    {
-        "label": "Title",
-        "description": "Set a title on this element",
-        "key": "title",
-        "view": "textstring"
-    },
-    {
-        "label": "Custom data",
-        "description": "Set the custom data on this element",
-        "key": "data-custom",
-        "view": "textstring"
-    }
+    [
+        {
+            "label": "Class",
+            "description": "Set a class on this element",
+            "key": "class",
+            "view": "textstring"
+        },
+        {
+            "label": "Title",
+            "description": "Set a title on this element",
+            "key": "title",
+            "view": "textstring"
+        },
+        {
+            "label": "Custom data",
+            "description": "Set the custom data on this element",
+            "key": "data-custom",
+            "view": "textstring"
+        }
+    ]
 
 
 ###Full-width settings and styles
