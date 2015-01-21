@@ -51,8 +51,8 @@ Gets a `IDictionaryItem` by its id
 ###GetDictionaryItemByKey(string key)
 Gets a `IDictionaryItem` by its key
 
-###GetDictionaryItemChildren(Guid)
-Gets a list of children for a `IDictionaryItem`
+###GetDictionaryItemChildren(Guid parentId)
+Gets a list of children as as an `IEnumerable<IDictionaryItem>` for a parent `IDictionaryItem`
 
 ###GetLanguageByCultureCode(string cultureName)
 Gets a `ILanguage` by its culture code  (Culture Name - also referred to as 'Friendly name')
