@@ -6,7 +6,7 @@ _The grid layout editor, introduced in Umbraco 7.2, offers non-technical editors
 
 The editor offers many configuration options, and as a website implementor, you could easily be tempted to use the grid for nearly every kind of content entry - this is however not encouraged. 
 
-To help developers determine when to use the grid layout, we've outlined the 2 mayor use-cases below.
+To help developers determine when to use the grid layout, we've outlined the 2 major use-cases below.
 
 ##1. As a RTE Replacement
 The grid should primarily be used to replace content entry in a rich text editor (RTE). Where editors before would struggle with aligning images, lists and text or using tables inside the editor to layout content in columns. 
