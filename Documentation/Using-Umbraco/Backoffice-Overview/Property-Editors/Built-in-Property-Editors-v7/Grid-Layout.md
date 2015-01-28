@@ -207,6 +207,10 @@ or point it a custom view, which by default looks in `/views/partials/grid/` - o
     @CurrentPage.GetGridHtml("propertyAlias", "mycustomview")
     @CurrentPage.GetGridHtml("propertyAlias", "/views/mycustomfile.cshtml")
 
+If you're working with a strongly typed model simply replace `@CurrentPage` with `@Model.Content`, so:
+
+    @Model.Content.GetGridHtml("propertyAlias")
+
 
 
 ###Grid Editors
