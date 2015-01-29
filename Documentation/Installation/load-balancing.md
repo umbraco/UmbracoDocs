@@ -13,6 +13,8 @@ This document assumes that you have a fair amount of knowledge about:
 * Windows Server (2008/2012)
 * .NET Framework
 
+__It is highly recommended that you setup your staging environment to also be load balanced so that you can run all of your testing on a similar environment to your live environment.__
+
 ##Design
 These instructions make the following assumptions:
 
@@ -25,9 +27,8 @@ These instructions make the following assumptions:
 
 There are two design alternatives you can use to effectively load balance servers:
 
-1. Each server hosts copies of the load balanced website files and a file replication service is running to ensure that all files on all servers are up to date. *This is the recommended approach.* 
+1. Each server hosts copies of the load balanced website files and a file replication service is running to ensure that all files on all servers are up to date. __This is the recommended approach.__ 
 2. The load balanced website files are located on a centralized file share (SAN/NAS/Custered File Server/Network Share).
-
 
 And you'll obviously need a load balancer to do your load balancing!
 
