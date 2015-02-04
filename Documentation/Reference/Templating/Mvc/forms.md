@@ -6,9 +6,9 @@ _Creating an HTML form to submit data with MVC in Umbraco is very easy! You'll n
 
 ##Quick links - MVC form tutorials
 
-* [Creating an MVC form using a Partial View](forms/turorial-partial-views.md)
-* [Creating an MVC form using a Child Action](forms/turorial-child-action.md)
-* [Creating an MVC form with custom html markup](forms/turorial-custom-markup.md)
+* [Creating an MVC form using a Partial View](forms/tutorial-partial-views.md)
+* [Creating an MVC form using a Child Action](forms/tutorial-child-action.md)
+* [Creating an MVC form with custom html markup](forms/tutorial-custom-markup.md)
 
 ##Creating a form - The View Model
 
@@ -38,7 +38,7 @@ Next up, we need to create an Action on a SurfaceController which accepts our su
 		[HttpPost]
 		public ActionResult CreateComment(CommentViewModel model)
 		{    
-		    //model not valid, do not save, but return current umbraco page
+		    //model not valid, do not save, but return current Umbraco page
 		    if (!ModelState.IsValid)
 			{
 				//Perhaps you might want to add a custom message to the ViewBag
@@ -65,7 +65,7 @@ Next up, we need to create an Action on a SurfaceController which accepts our su
 
 ##Using BeginUmbracoForm
 
-Lastly we need to render the HTML form to ensure that it posts to the surface controller created. The easiest way to do this is to create a seperate PartialView to render your form with the model type declared as your ViewModel. There's a few overloads for the BeginUmbracoForm method, we'll start with the simplest one:
+Lastly we need to render the HTML form to ensure that it posts to the surface controller created. The easiest way to do this is to create a separate PartialView to render your form with the model type declared as your ViewModel. There's a few overloads for the BeginUmbracoForm method, we'll start with the simplest one:
 
 	@model CommentViewModel
 
