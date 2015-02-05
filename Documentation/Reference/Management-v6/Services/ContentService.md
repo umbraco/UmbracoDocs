@@ -33,43 +33,43 @@ Getting the service through the `ApplicationContext`:
 ###.AssignContentPermission(IContent content, char permission, IEnumerable<int> userIds)
 Assigns a single permission to the current `Content` object for the specified list of user IDs.
 
-###.Copy(IContent content, int parentId, bool relateToOriginal, int userId = 0)
-Copies an `Content` object by creating a new Content object of the same type and copies all data from the current to the new copy which is returned.
+###.Copy(IContent content, int parentId, bool relateToOriginal, _[int userId = 0]_)
+Copies an `Content` object by creating a new `Content` object of the same type and copies all data from the current to the new copy which is returned.
 
-###.Count(string contentTypeAlias = null)
+###.Count(_[string contentTypeAlias = null]_)
 Count all `Content` objects with given `ContentType`.
 
-###.CountChildren(int parentId, string contentTypeAlias = null)
+###.CountChildren(int parentId, _[string contentTypeAlias = null]_)
 Count all Children for given parent `Content` object with `ContentType`.
 
-###.CountDescendants(int parentId, [string contentTypeAlias = null])
+###.CountDescendants(int parentId, _[string contentTypeAlias = null]_)
 Count all Descendants for given parent `Content` object with `ContentType`.
 
-###.CountPublished(string contentTypeAlias = null)
+###.CountPublished(_[string contentTypeAlias = null]_)
 Count all `Content` objects Published with `ContentType`.
 
-###.CreateContent(string name, int parentId, string contentTypeAlias, [int userId = 0])
+###.CreateContent(string name, int parentId, string contentTypeAlias, _[int userId = 0]_)
 Creates a `Content` object using the alias of the `ContentType` that this Content is based on.
 
-###.CreateContent(string name, IContent parentId, string contentTypeAlias, [int userId = 0])
+###.CreateContent(string name, IContent parentId, string contentTypeAlias, _[int userId = 0]_)
 Creates a `Content` object using the alias of the `ContentType` that this Content is based on.
 
-###.CreateContentWithIdentity(string name, IContent parent, string contentTypeAlias, [int userId = 0])
+###.CreateContentWithIdentity(string name, IContent parent, string contentTypeAlias, _[int userId = 0]_)
 Creates and saves an `Content` object using the alias `ContentType` that this `Content` should be based on.
 
-###.CreateContentWithIdentity(string name, int parentId, string contentTypeAlias, [int userId = 0])
+###.CreateContentWithIdentity(string name, int parentId, string contentTypeAlias, _[int userId = 0]_)
 Creates and saves an `Content` object using the alias `ContentType` that this `Content` should be based on.
 
-###.Delete(IContent content, int userId = 0)
+###.Delete(IContent content, _[int userId = 0]_)
 Permanently deletes a `Content` object.
 
-###.DeleteContentOfType(int contentTypeId, int userId = 0)
+###.DeleteContentOfType(int contentTypeId, _[int userId = 0]_)
 Deletes all content of specified type. All children of deleted content is moved to Recycle Bin.
 
-###.DeleteVersion(int id, Guid versionId, bool deletePriorVersions, int userId = 0)
+###.DeleteVersion(int id, Guid versionId, bool deletePriorVersions, _[int userId = 0]_)
 Permanently deletes a specific version from an `Content` object.
 
-###.DeleteVersions(int id, DateTime versionDate, int userId = 0)
+###.DeleteVersions(int id, DateTime versionDate, _[int userId = 0]_)
 Permanently deletes versions from an `Content` object prior to a specific date.
 
 ###.EmptyRecycleBin()
@@ -126,10 +126,10 @@ Gets an `Enumerable` list of `Content` objects by Parent Id.
 ###.GetByVersion(Guid versionId)
 Gets a specific version of a `Content` item.
 
-###.GetPagedChildren(int id, int pageIndex, int pageSize, out int totalChildren, string orderBy, Direction orderDirection, [string filter = ""])
+###.GetPagedChildren(int id, int pageIndex, int pageSize, out int totalChildren, string orderBy, Direction orderDirection, _[string filter = ""]_)
 Gets an `Enumerable` list of `Content` child objects, paged.
 
-###.GetPagedDescendants(int id, int pageIndex, int pageSize, out int totalChildren, [string orderBy = "Path"], [Direction orderDirection = Direction.Ascending], [string filter = ""])
+###.GetPagedDescendants(int id, int pageIndex, int pageSize, out int totalChildren, _[string orderBy = "Path"]_, _[Direction orderDirection = Direction.Ascending]_, _[string filter = ""]_)
 Gets an `Enumerable` list of `Content` descendant objects, paged.
 
 ###.GetParent(IContent content)
@@ -156,22 +156,22 @@ Checks whether an `Content` item has any published versions. Returns a `bool`.
 ###.IsPublishable(IContent content)
 Checks if the passed in `Content` can be published based on the ancestors publish state. Returns a `bool`.
 
-###.Move(IContent content, int parentId, int userId = 0)
+###.Move(IContent content, int parentId, _[int userId = 0]_)
 Moves an `Content` object to a new location.
 
-###.MoveToRecycleBin(IContent content, int userId = 0)
+###.MoveToRecycleBin(IContent content, _[int userId = 0]_)
 Deletes an `Content` object by moving it to the Recycle Bin.
 
-###.Publish(IContent content, int userId = 0)
+###.Publish(IContent content, _[int userId = 0]_)
 Publishes a single `Content` object
 
-###.PublishWithChildren(IContent content, int userId = 0)
+###.PublishWithChildren(IContent content, _[int userId = 0]_)
 Publishes a `Content` object and all its children.
 
-###.PublishWithChildrenWithStatus(IContent content, [int userId = 0], [bool includeUnpublished = false])
+###.PublishWithChildrenWithStatus(IContent content, _[int userId = 0]_, _[bool includeUnpublished = false]_)
 Publishes a `Content` object and all its children, returning a collection of `<Attempt<PublishStatus>>`.
 
-###.PublishWithStatus(IContent content, [int userId = 0])
+###.PublishWithStatus(IContent content, _[int userId = 0]_)
 Publishes a `Content` object, returning the result as a `Attempt<PublishStatus>`.
 
 ###.RebuildXmlStructures(params int[] contentTypeIds)
@@ -180,30 +180,30 @@ Rebuilds all xml content in the cmsContentXml table for all documents matching t
 ###.ReplaceContentPermissions(EntityPermissionSet permissionSet)
 Replaces the `PermissionSet` for Content.
 
-###.RePublishAll(int userId = 0)
+###.RePublishAll(_[int userId = 0]_)
 Re-Publishes all Content.
 
-###.Rollback(int id, Guid versionId, int userId = 0)
+###.Rollback(int id, Guid versionId, _[int userId = 0]_)
 Rollback an `Content` object to a previous version. This will create a new version, which is a copy of all the old data.
 
-###.Save(IContent content, int userId = 0, bool raiseEvents = true)
+###.Save(IContent content, _[int userId = 0]_, _[bool raiseEvents = true]_)
 Saves a single IContent object.
 
-###.Save(IEnumerable<IContent> contents, int userId = 0, bool raiseEvents = true)
+###.Save(IEnumerable<IContent> contents, _[int userId = 0]_, _[bool raiseEvents = true]_)
 Saves an `Enumerable` list of `Content` objects.
 
-###.SaveAndPublish(IContent content, int userId = 0, bool raiseEvents = true)
+###.SaveAndPublish(IContent content, _[int userId = 0]_, _[bool raiseEvents = true]_)
 Saves and Publishes a single `Content` object.
 
-###.SaveAndPublishWithStatus(IContent content, [int userId = 0], [bool raiseEvents = true])
+###.SaveAndPublishWithStatus(IContent content, _[int userId = 0]_, _[bool raiseEvents = true]_)
 Saves and Publishes a single `Content` object, returning the result as a `Attempt<PublishStatus>`.
 
-###.SendToPublication(IContent content, int userId = 0)
+###.SendToPublication(IContent content, _[int userId = 0]_)
 Sends a `Content` item to Publication, which executes handlers and events for the 'Send to Publication' action.
 Returns `True` if sending publication was succesful, otherwise `False`.
 
-###.Sort(IEnumerable<IContent> items, int userId = 0, bool raiseEvents = true)
+###.Sort(IEnumerable<IContent> items, _[int userId = 0]_, _[bool raiseEvents = true]_)
 Sorts a collection `Content` objects by updating the SortOrder according to the ordering of items in the passed in System.Collections.Generic.IEnumerable<T>. Returns `True` if sorting succeeded, otherwise `False`. Using this method will ensure that the Published-state is maintained upon sorting so the cache is updated accordingly - as needed.
 
-###.UnPublish(IContent content, int userId = 0)
+###.UnPublish(IContent content, _[int userId = 0]_)
 UnPublishes a single `Content` object.
