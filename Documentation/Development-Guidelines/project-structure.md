@@ -1,6 +1,6 @@
 #Solution and project structure
 
-_How the Visual Studio solution is structured and what the funcionality of each project is. This also describes the end goal of how we'd like the solution structured._
+_How the Visual Studio solution is structured and what the functionality of each project is. This also describes the end goal of how we'd like the solution structured._
 
 ##The goal
 The goal of the Umbraco project is to be able to be left with only a few Visual Studio projects:

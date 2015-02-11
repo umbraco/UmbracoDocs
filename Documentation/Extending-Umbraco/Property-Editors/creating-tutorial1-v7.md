@@ -14,7 +14,7 @@ So all the steps we will go through:
 - Complete the markdown editor
 
 ##Prerequisites
-This is about how to use AngularJS with umbraco, so it does not cover AngularJS itself, as there are tons of resources on that already here: 
+This is about how to use AngularJS with Umbraco, so it does not cover AngularJS itself, as there are tons of resources on that already here: 
 
 - [egghead.io](http://www.egghead.io/)
 - [angularjs.org/tutorial](http://docs.angularjs.org/tutorial)
@@ -83,11 +83,11 @@ And in the .html file I'll add:
 
 Now our basic parts of the editor is done namely: 
 
-- The package manifest, telling umbraco what to lod
+- The package manifest, telling Umbraco what to lod
 - The html view for the editor
 - The controller for wiring up the editor with angular.
 
-##Register the datatype in umbraco
+##Register the datatype in Umbraco
 After the above edits are done, restart your application. Go to developer section, click the 3 dots next to the datatypes folder and create a new data type called "markdown". In the editor you can now select a property editor, where your newly added "markdown editor" will appear. 
 
 Save the datatype, and add it to a document type of your choice, open a document of that type, and you will be greated with an alert message saying "The controller has landed", which means all is well, and you can now edit the assigned property's value with your editor. 
