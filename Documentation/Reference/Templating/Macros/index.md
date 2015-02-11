@@ -25,7 +25,7 @@ Information, examples and best practices according to readability and performanc
 
 ###[Razor macros](Razor/index.md)
 
-***Razor macros have been superceded by Partial View Macros, if you are using an Umbraco version greater than 4.10+ it is recommended to use Partial View Macros***
+***Razor macros have been superseded by Partial View Macros, if you are using an Umbraco version greater than 4.10+ it is recommended to use Partial View Macros***
 
 Introduction to razor, going through the basics of scripting in razor.
 
@@ -45,7 +45,7 @@ Macros can also render inline code, directly in the template
 	</umbraco:Macro>
 
 
-##Definining Property Values
+##Defining Property Values
 This will insert a macro with the alias 'YourMacroAlias' into the template and set the macro property named 'YourPropertyName' to the value 'hello'
 
 	<umbraco:Macro Alias="YourMacroAlias" runat="server" YourPropertyName="hello"></umbraco:Macro>
