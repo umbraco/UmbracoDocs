@@ -6,7 +6,7 @@
 This is the documentation project for Umbraco. The scope of this project is to provide overviews of concepts, tutorials, example code, and links to API reference.
 This is a work in progress at the moment, and we welcome valuable contributions from anyone willing to help. For details on how to contribute, see further down this page.
 
-Our project consists of 2 main parts, "Stubs" and "Documentation".  Currently there are no branches for different versions of umbraco.
+Our project consists of 2 main parts, "Stubs" and "Documentation".  Currently there are no branches for different versions of Umbraco.
 
 #What's in these guides
 
