@@ -2,7 +2,7 @@
 
 ##Installing Courier 2 using a package
 
-1. Open the embrace repository from the developer section in umbraco
+1. Open the embrace repository from the developer section in Umbraco
 2. Browse to the Umbraco PRO category
 3. Click Umbraco Courier, and choose install, follow directions on screen
 4. At the end of the install, you are prompted for a location, enter the domain of the other site you want to use with courier, e.g.: domain.com, www.sample.com or internaldev
@@ -41,15 +41,15 @@ Folders containing the application files for Courier 2
 Contains the single uninstall sql script, which will remove custom courier table as well as the any courier app entries, it will not remove any files
 
 ###Installing the files
-Simply unzip the /bin, /config and /umbraco folders to the root of your website, the archive follows the structure needed to place the files correctly. Notice: the archive assumes your umbraco director is located at /umbraco. If not you will need to move those files manually to the right location.
+Simply unzip the /bin, /config and /umbraco folders to the root of your website, the archive follows the structure needed to place the files correctly. Notice: the archive assumes your Umbraco director is located at /umbraco. If not you will need to move those files manually to the right location.
 
 If you have purchased Umbraco Courier, you can download a license file on umbraco.com. This license file must be placed in the websites /bin directory to be registered.
 
 ###Installing the database
-To install the database we need to execute a sql script against the database umbraco is installed on. Courier  currently only supports SQL server 2005 and 2008.
+To install the database we need to execute a sql script against the database Umbraco is installed on. Courier  currently only supports SQL server 2005 and 2008.
 
 * Open Microsoft Sql Server Management Studio and connect to your database. 
-* Right click your umbraco database and choose "new query" 
+* Right click your Umbraco database and choose "new query" 
 * Open the /sql/install folder and pick the appropriate sql files. If you use MS Sql, you pick “app.sql” and “create.sql” if not, you pick the files with the correct database name in them.
 * Copy the contents of sql files to the query window
 * Execute the script

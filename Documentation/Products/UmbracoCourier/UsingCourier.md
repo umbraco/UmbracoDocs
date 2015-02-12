@@ -1,6 +1,6 @@
 #Using Courier
 
-_Outlines the common gotchas, and the recommended way to work with Courier, to perform as smooth deployments of a umbraco site as possible_
+_Outlines the common gotchas, and the recommended way to work with Courier, to perform as smooth deployments of a Umbraco site as possible_
 
 This document will try to outline what Courier does, why it does it, and how you can work with it to make your deployments as smooth as possible.
 It will go through the following: 
@@ -84,7 +84,7 @@ So In short, when you initially want to deploy your site, and dont have 2 enviro
 ##Day to day work with Courier
 Due to courier handling pretty much every object of your site, it can quickly create some rather large deployments, even tho your editors just want to deploy a single document, they can all of sudden have a deployment with a lot of documents and files in them, due to the whole dependency setup, there is not many ways aroud this currently, Courier will check for dependencies, and it will include those that have changed, as it is right now. 
 
-But for day to day work, let your developers handle deployments of document types, templates and so on, and do these in small batches, as even minor changes do have a great effect on your umbraco database, f.ex. if you add a propertytype to a document type, that will add an additional row for each document version on your site to the property data table, so even small things can mean big changes.
+But for day to day work, let your developers handle deployments of document types, templates and so on, and do these in small batches, as even minor changes do have a great effect on your Umbraco database, f.ex. if you add a propertytype to a document type, that will add an additional row for each document version on your site to the property data table, so even small things can mean big changes.
 
 When your infrastructure (documnet types, templates, etc) is in place, your editors should in most cases not be bothered with too many big deployments using the right-click menu, Courier will try to skip as many things as possible, and only suggest things that have actually changed, but as you have probably guessed by now, this is no simple task. 
 

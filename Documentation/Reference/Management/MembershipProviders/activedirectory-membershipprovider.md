@@ -4,7 +4,7 @@
 
 Setting up membership: http://msdn.microsoft.com/en-us/library/ms998360.aspx#paght000026_step3
 
-##Registering the provider in umbraco
+##Registering the provider in Umbraco
 
 Add it to the web.config under the membership section leave the existing providers in place :
 
@@ -28,17 +28,17 @@ Add the alias of the provider to the /config/umbracosettings.config file
 
     <providers>
       <users>
-        <!-- if you wish to use your own  membershipprovider for authenticating to the umbraco back office --> 
+        <!-- if you wish to use your own  membershipprovider for authenticating to the Umbraco back office --> 
         <!-- specify it here (remember to add it to the web.config as well) -->
         <DefaultBackofficeProvider>MyADMembershipProvider</DefaultBackofficeProvider>
       </users>
     </providers>
  
 
-##Notes from other umbraco users on how to setup AD users
+##Notes from other Umbraco users on how to setup AD users
 
 1. Switch DefaultBackofficeProvider to "ADMembershipProvider" (change for your connectionStringName)
-2. Login using an authenticated user from Active Directory. You will be shown the default access of a "Writer" (userType = 2 in the umbracoUser database table). This is, by default, only the "Content" application and Browse Node, Create, Update, and Send to Publish permissions.
+2. Login using an authenticated user from Active Directory. You will be shown the default access of a "Writer" (userType = 2 in the mbracoUser database table). This is, by default, only the "Content" application and Browse Node, Create, Update, and Send to Publish permissions.
 3. Logout the active directory user
 3. Switch DefaultBackofficeProvider back to "UsersMembershipProvider" (the default)
 4. Login using the built-in administrator account

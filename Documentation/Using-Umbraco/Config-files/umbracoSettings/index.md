@@ -16,7 +16,7 @@ Below you can see settings that affects content in Umbraco.
 This section is used for managing thumbnail creation, allowed attributes and, which properties of an image that should be automatically updated on upload.
 
         <imaging>
-            <!-- what file extension that should cause umbraco to create thumbnails -->
+            <!-- what file extension that should cause Umbraco to create thumbnails -->
             <imageFileTypes>jpeg,jpg,gif,bmp,png,tiff,tif</imageFileTypes>
             <!-- what attributes that are allowed in the editor on an img tag -->
             <allowedAttributes>alt,border,class,style,align,id,name,onclick,usemap</allowedAttributes>
@@ -34,21 +34,21 @@ This section is used for managing thumbnail creation, allowed attributes and, wh
 Let's break it down.
 
 **`<imageFileTypes>`**
-As the comment above states, this is a comma seperated list of accepted image formats, which Umbraco can create a thumbnail of the image from.
+As the comment above states, this is a comma separated list of accepted image formats, which Umbraco can create a thumbnail of the image from.
 
 **`<allowedAttributes>`**
-As the comment above states, this is a comma seperated list of those attributes you want to allow on the image tag.
+As the comment above states, this is a comma separated list of those attributes you want to allow on the image tag.
 
 **`<autoFillImageProperties>`**
 As the comment above states, you can define what properties should be automatically updated when an image is being uploaded. This means that if you, for some odd reason, decide
 to rename the default **umbracoWidth** and **umbracoHeight** properties to **width** and **height** then the values in **`<widthFieldAlias>`** and **``<heightFieldAlias>`** of course need to
 be updated with the new property aliases in order to automatically populate the values when the image is being uploaded.
 
-If you need to create a custom media documenttype to handle images called something like "Custom Image" width an alias of **customImage** then you need to add another
+If you need to create a custom media document type to handle images called something like "Custom Image" width an alias of **customImage** then you need to add another
 **`<uploadField>`** element where the **alias** is set to **customImage**. Like below. Note that the width and height attributes has also been changed in this example.
 
         <imaging>
-            <!-- what file extension that should cause umbraco to create thumbnails -->
+            <!-- what file extension that should cause Umbraco to create thumbnails -->
             <imageFileTypes>jpeg,jpg,gif,bmp,png,tiff,tif</imageFileTypes>
             <!-- what attributes that are allowed in the editor on an img tag -->
             <allowedAttributes>alt,border,class,style,align,id,name,onclick,usemap</allowedAttributes>
@@ -95,20 +95,20 @@ another folder structure like /frontend/scripts then simply change the value to 
 As the comment above says, this is where you can define what files can be opened/created in the script editor in a comma-separated list.
 
 **`<scriptDisableEditor>`**
-As the comments above say, this is where you can decide wether you want to just edit the code in a simple textarea or you want to have a more advanced editor available.
+As the comments above say, this is where you can decide whether you want to just edit the code in a simple textarea or you want to have a more advanced editor available.
 If you change the value to "true" then you will see the code in a simple textarea instead.
 
 **UploadAllowDirectories**
 
 This setting let's you control if an upload control can create new folders for files uploaded, or if the file should be stored in the /media folder root with a unique ID prefixed to the filename.
 
-         <!-- should umbraco store the uploaded files like /media/xxx/filename.ext or like /media/xxx-filename.ext
+         <!-- should Umbraco store the uploaded files like /media/xxx/filename.ext or like /media/xxx-filename.ext
               should be set to false if the application pool's user account hasn't got readrights of the driveroot up to the /media directory -->
         <UploadAllowDirectories>True</UploadAllowDirectories>
 
 ###Errors
 
-In case of a 404 error (page not found) umbraco can return a default page instead. this is set here. Notice you can also set a different error page, based on the current culture so a 404 page can be returned in the correct language
+In case of a 404 error (page not found) Umbraco can return a default page instead. this is set here. Notice you can also set a different error page, based on the current culture so a 404 page can be returned in the correct language
 
         <errors>
             <!-- the id of the page that should be shown if the page is not found -->
@@ -155,15 +155,15 @@ The benefit of using this handler is that you can choose the error page to be sh
 Umbraco can send out email notifications, set the sender email address for the notifications emails here. To set the SMTP server used to send the emails, edit the standard <mailSettings/> section in the web.config file.
 
         <notifications>
-            <!-- the email that should be used as from mail when umbraco sends a notification -->
+            <!-- the email that should be used as from mail when Umbraco sends a notification -->
             <email>your@email.here</email>
         </notifications>
 
 **EnsureUniqueNaming**
 
-Umbraco comes with a build-in action handler that ensures that 2 pages does not get identical urls. Incase of identical names, the handler will attach a counter to the dublicate name.
+Umbraco comes with a build-in action handler that ensures that 2 pages does not get identical urls. In case of identical names, the handler will attach a counter to the duplicate name.
 
-        <!-- if true umbraco will ensure that no page under the same parent has an identical name -->
+        <!-- if true Umbraco will ensure that no page under the same parent has an identical name -->
         <ensureUniqueNaming>True</ensureUniqueNaming>
 
 **TidyEditorContent**
@@ -204,9 +204,9 @@ should not turn this of. Pleae also note that this option is most likely removed
 
 **XmlCacheEnabled**
 
-Turn Xml caching of content on/off. Umbraco Makes heavy use of caching content in memory to avoid database calls. This makes umbraco faster and more efficient. You should not in any way turn this off, unless you have a very good reason to do so. It will make your website very slow.
+Turn XML caching of content on/off. Umbraco Makes heavy use of caching content in memory to avoid database calls. This makes Umbraco faster and more efficient. You should not in any way turn this off, unless you have a very good reason to do so. It will make your website very slow.
 
-        <!-- Enable / disable xml content cache -->
+        <!-- Enable / disable XML content cache -->
         <XmlCacheEnabled>True</XmlCacheEnabled>
 
 **ContinouslyUpdateXmlDiskCache**
@@ -220,12 +220,12 @@ Updates the XmlCache whenever content is published. If it's set to false, then w
 
 Checks if the disk cache file has been updated and if so, clears the in-memory cache to force the file to be read. Added to trigger updates of the in-memory cache when the disk cache file is updated.
 
-        <!-- Update in-memory cache if xml file is changed -->
+        <!-- Update in-memory cache if XML file is changed -->
         <XmlContentCheckForDiskChanges>False</XmlContentCheckForDiskChanges>
 
 **EnableSplashWhileLoading**
 
-In case umbraco is taking a bit of time to prepare content to display you can display a "loading, please wait..." splash screen to your users. Simply change the value to "True".
+In case Umbraco is taking a bit of time to prepare content to display you can display a "loading, please wait..." splash screen to your users. Simply change the value to "True".
 
         <!-- Show the /config/splashes/booting.aspx page while initializing content -->
         <EnableSplashWhileLoading>False</EnableSplashWhileLoading>
@@ -415,13 +415,13 @@ The viewstate mover module is included by default. It enables you to move all as
 
 **enableAsyncLogging:** add log entries using a background thread so it does not slow down page rendering or other more important processes.
 
-**disabledLogTypes:** Enable or disable certain types of log entries. This can be usefull to ensure that debug log entries are not filling the umbracoLog table after the site has entered production.
+**disabledLogTypes:** Enable or disable certain types of log entries. This can be useful to ensure that debug log entries are not filling the UmbracoLog table after the site has entered production.
 
 Standard logTypeAlias Entries are as follows and correspond to the entries found in the logHeader column of the umbracoLog table.
 
 **new** = when a new node is created in the database
 **system** = application events such as restart
-**debug** = debug information such as node name changes, xml save times
+**debug** = debug information such as node name changes, XML save times
 **login** = information regarding Admin user login
 **error** = .net error logging of errors in the backoffice as well as website
 **save** = node is saved to the database
@@ -460,28 +460,28 @@ The task elements consist of the following attributes:
 
 **log:** Set this to true if you want to write to the umbracoLog table and see if everything is working as expected. If set to false nothing will be written to the log.
 
-**alias:** The alias is being used in the log so you can distinguise between the different tasks and other log-entries.
+**alias:** The alias is being used in the log so you can distinguish between the different tasks and other log-entries.
 
 **interval:** The interval is set in seconds and determines how often the task should be run.
 
 **url:** Here the url for the page that should be called to run the task must be entered. Please note this can also point to an extensionless url or a service etc.
 
-**Please note:** that the scheduler is not in anyway a windows process so it is depending on the application pool umbraco is located in. This means that if the application pool resets, so will the scheduler, so this is not a highly reliable way of scheduling tasks.
+**Please note:** that the scheduler is not in anyway a windows process so it is depending on the application pool Umbraco is located in. This means that if the application pool resets, so will the scheduler, so this is not a highly reliable way of scheduling tasks.
 
 ##DistributedCalls / Loadbalancing
 
-Umbraco comes with abbility to distrubute its cached content to multiple servers. Also know as loadbalancing. Umbraco has to be installed on all servers, but all servers sharing the same database.
+Umbraco comes with ability to distribute its cached content to multiple servers. Also know as loadbalancing. Umbraco has to be installed on all servers, but all servers sharing the same database.
 
-When the umbraco instances are setup and files are synced between the instances, the instances need to know when to refresh their cache. This happens in the <servers> setting.
+When the Umbraco instances are setup and files are synced between the instances, the instances need to know when to refresh their cache. This happens in the <servers> setting.
 
-Eveytime some content is published in umbraco. You can ask umbraco to ping other hosts and tell them to update their cache. Make sure that these instances can be reached internally on port 80.
+Every time some content is published in Umbraco. You can ask Umbraco to ping other hosts and tell them to update their cache. Make sure that these instances can be reached internally on port 80.
 
 Also, remember to include the actual instance performing the publish if you it to refresh its own cache as well. Cache will only be refreshed on servers in the list.
 
-    <!-- distributed calls make umbraco use webservices to handle cache refreshing -->
+    <!-- distributed calls make Umbraco use webservices to handle cache refreshing -->
     <distributedCall enable="false">
         <!-- the id of the user who's making the calls -->
-        <!-- needed for security, umbraco will automatically look up correct login and passwords -->
+        <!-- needed for security, Umbraco will automatically look up correct login and passwords -->
         <user>0</user>
         <servers>
             <!-- add ip number or hostname, make sure that it can be reached from all servers -->
@@ -497,7 +497,7 @@ Though the above example shows the server's as IP addresses, these can also be D
 
 ##Webservices
 
-umbraco includes a simple set of webservices to control content, members, media files etc etc from external applications. They can be turned completely off on the <webservices> element or enabled one by one by enabling users access.
+Umbraco includes a simple set of webservices to control content, members, media files etc etc from external applications. They can be turned completely off on the <webservices> element or enabled one by one by enabling users access.
 
 documentServiceUsers: access to creating and publishing content
 url: /umbraco/webservices/api/documentservice.asmx
@@ -530,7 +530,7 @@ url: /umbraco/webservices/api/templateservice.asmx
 
 ##Repositories
 
-From the Developer section you can access packages. From here you have access to the umbraco package repository from where you can download packages. It is however also possible to add other repositories to this list. If you or your company have a private repository, it can be added to this list.
+From the Developer section you can access packages. From here you have access to the Umbraco package repository from where you can download packages. It is however also possible to add other repositories to this list. If you or your company have a private repository, it can be added to this list.
 
     <!-- Configuration for repositories -->
     <!-- Add or remove repositories here. You will need the repository's unique key to be able to connect to it.-->
@@ -544,13 +544,13 @@ Also note that you can remove the official repository from the **<repositories>*
 
 ##Providers
 
-The providers section configures the different providers in use in umbraco. Currently only the backend membership provider is set here.
+The providers section configures the different providers in use in Umbraco. Currently only the backend membership provider is set here.
 
 **DefaultBackofficeProvider:** the name of the membership provider you wish to use to authenticate users in the backend. To use, add a new provider to the web.config file and set its alias here
 
     <providers>
         <users>
-            <!-- if you wish to use your own membershipprovider for authenticating to the umbraco back office -->
+            <!-- if you wish to use your own membershipprovider for authenticating to the Umbraco back office -->
             <!-- specify it here (remember to add it to the web.config as well) -->
             <DefaultBackofficeProvider>UsersMembershipProvider</DefaultBackofficeProvider>
         </users>

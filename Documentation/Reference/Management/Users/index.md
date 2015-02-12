@@ -33,7 +33,7 @@ Create a new user and allow access to the settings section
     u.addApplication("settings");
     u.Save(); 
 
-More inforamtion about [password hashing](add-user-with-hashed-password.md).
+More information about [password hashing](add-user-with-hashed-password.md).
 
 ##Managing UserTypes
 

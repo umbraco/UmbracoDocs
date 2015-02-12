@@ -62,7 +62,7 @@ Connects to a OLEDB compatible Database Table and constructs a prevalue source f
 
 
 ###Umbraco data type Prevalues
-Connects to an umbraco data type and uses its prevalue collection
+Connects to an Umbraco data type and uses its prevalue collection
 
 
 ###Umbraco Documents

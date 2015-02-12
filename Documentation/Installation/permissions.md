@@ -1,6 +1,6 @@
 #File and folder permissions
 
-_To ensure a stable and smoothly running umbraco installation, these permissions need to be set correctly. These permissions should be setup before or during the insallation of umbraco. The user with the permissions set are the user used by the Application Pool used by the IIS website (usually Network Service or the IIS\_IUSRS group). If in doubt, ask your server admin / hosting company. Generally if you are using WebMatrix, permissions don't need to be strictly applied_
+_To ensure a stable and smoothly running Umbraco installation, these permissions need to be set correctly. These permissions should be setup before or during the installation of Umbraco. The user with the permissions set are the user used by the Application Pool used by the IIS website (usually Network Service or the IIS\_IUSRS group). If in doubt, ask your server admin / hosting company. Generally if you are using WebMatrix, permissions don't need to be strictly applied_
 
 <table border="0">
 <thead>
@@ -91,7 +91,7 @@ are used for template files</p>
 <th>Modify / Full control</th>
 <td>
 <p>Should always have modify rights as the folder and its files
-are used for media files uploaded via umbraco cms interface</p>
+are used for media files uploaded via Umbraco cms interface</p>
 </td>
 </tr>
 <tr>

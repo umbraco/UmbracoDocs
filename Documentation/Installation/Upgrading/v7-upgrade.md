@@ -164,11 +164,11 @@ The TypeFinder has been deprecated since 4.10 and is now found under Umbraco.Cor
 
 ### Javascript in menu actions
 
-While you need to have javascript  inside menu actions to trigger a response, it is highly recommended that you use the recommended UmbClientMgr methods, and not try to override parent.right.document and similar tricks to get to the right-hand frame.
+While you need to have JavaScript  inside menu actions to trigger a response, it is highly recommended that you use the recommended UmbClientMgr methods, and not try to override parent.right.document and similar tricks to get to the right-hand frame.
 
-###Use the recommended umbraco uicontrols
+###Use the recommended Umbraco uicontrols
 
-If you have a webforms page in the backoffice, it is recommended that you use the built-in asp.net controls to render panels, panes, tabviews, properties and so on. If you use the raw html, or try to style it to match the backoffice, you will get out of sync, therefore, follow the guidelines set by umbracos internal editors and use the asp.net custom controls for UI.
+If you have a webforms page in the backoffice, it is recommended that you use the built-in asp.net controls to render panels, panes, tabviews, properties and so on. If you use the raw html, or try to style it to match the backoffice, you will get out of sync, therefore, follow the guidelines set by Umbraco's internal editors and use the asp.net custom controls for UI.
  
 	
  

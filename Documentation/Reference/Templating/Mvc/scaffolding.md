@@ -1,6 +1,6 @@
 #Scaffolding
 
-_Scaffold common umbraco items like Surface Controllers, Custom Controllers and views from the Visual Studio Console, by installing 
+_Scaffold common Umbraco items like Surface Controllers, Custom Controllers and views from the Visual Studio Console, by installing 
 the UmbracoCms.Scaffolding nuget package_
 
 ##Installing

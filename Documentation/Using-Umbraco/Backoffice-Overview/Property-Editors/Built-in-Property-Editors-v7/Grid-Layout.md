@@ -52,7 +52,7 @@ You can add as many cells as you like. If they overflow the total width of the r
 
 ![Grid layouts](images/Grid-Layout/cells.png)
 
-Each cell can by default contain any type of editor such as simple textstring editors, imagespicker, embedded media or umbraco macros. To override this behavior, uncheck the **allow all editors** option and you can specify which editors will be available for the row. 
+Each cell can by default contain any type of editor such as simple textstring editors, imagespicker, embedded media or Umbraco macros. To override this behavior, uncheck the **allow all editors** option and you can specify which editors will be available for the row. 
 
 
 ###Settings and styling
@@ -288,7 +288,7 @@ Add a new file: `/app_plugins/yourpackage/editor.cshtml` - this file will handle
 - view: 'editor' => `views/partials/grid/editors/editor.cshtml`
 - view: '/app_plugins/path.html' => `/app_plugins/path.cshtml`
 
-If you wish to use something entirely different you can give the editor a seperate `render` value which follow the same conventions
+If you wish to use something entirely different you can give the editor a separate `render` value which follow the same conventions
     
     {
         "name": "Code",
@@ -310,7 +310,7 @@ To wire up a controller to this view, create the file `/app_plugins/yourpackage/
         $scope.control.value = "my new value";
     });
 
-Finally, we need to tell umbraco load this javascript controller when the umbraco application boots, this is also just like building a property editor, so create a `package.manifest` file in the `/yourpackage` folder, and configure it to load your controller file. 
+Finally, we need to tell Umbraco load this JavaScript controller when the Umbraco application boots, this is also just like building a property editor, so create a `package.manifest` file in the `/yourpackage` folder, and configure it to load your controller file. 
 
     {
         javascript:[
@@ -323,7 +323,7 @@ So to summarize, to create a custom grid editor from scratch, you will need to:
 - Create a grid editor view `.html` file
 - Create a grid render `.cshtml` file
 - Create a grid editor controller `.js` file
-- Create a `package.manifest` file to make umbraco load needed files
+- Create a `package.manifest` file to make Umbraco load needed files
 - Register the editor in the `/config/grid.editors.js` file
 
 This process tries to be as close to building property editors as currently possible.
