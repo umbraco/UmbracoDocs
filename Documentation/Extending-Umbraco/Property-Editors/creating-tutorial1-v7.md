@@ -53,7 +53,7 @@ Inside this package manifest we add a bit of json to describe the property edito
 		]
 		,
 		//array of files we want to inject into the application on app_start
-		JavaScript: [
+		javascript: [
 		    '~/App_Plugins/MarkDownEditor/markdowneditor.controller.js'
 		]
 	}

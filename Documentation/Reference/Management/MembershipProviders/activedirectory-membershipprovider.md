@@ -38,7 +38,7 @@ Add the alias of the provider to the /config/umbracosettings.config file
 ##Notes from other Umbraco users on how to setup AD users
 
 1. Switch DefaultBackofficeProvider to "ADMembershipProvider" (change for your connectionStringName)
-2. Login using an authenticated user from Active Directory. You will be shown the default access of a "Writer" (userType = 2 in the mbracoUser database table). This is, by default, only the "Content" application and Browse Node, Create, Update, and Send to Publish permissions.
+2. Login using an authenticated user from Active Directory. You will be shown the default access of a "Writer" (userType = 2 in the umbracoUser database table). This is, by default, only the "Content" application and Browse Node, Create, Update, and Send to Publish permissions.
 3. Logout the active directory user
 3. Switch DefaultBackofficeProvider back to "UsersMembershipProvider" (the default)
 4. Login using the built-in administrator account

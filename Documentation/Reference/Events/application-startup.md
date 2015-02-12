@@ -63,7 +63,7 @@ If you want more control over execution you can override these properties:
 
 Here's an example that does the same thing as the ApplicationStartupHandler sample below. Remember that it's an interface so you have to implement all three methods, but you can leave the ones you're not using empty.
 
-	using Umbraco.Core;
+	using umbraco.Core;
 	using Umbraco.Web;
 	using umbraco.BusinessLogic;
 	using umbraco.cms.businesslogic;

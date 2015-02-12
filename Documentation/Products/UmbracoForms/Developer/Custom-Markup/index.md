@@ -164,14 +164,14 @@ Default contents of the view:
                 }
                 else
                 {
-                    <script type="text/JavaScript" src="@Url.Content(script.Value)"></script>
+                    <script type="text/javascript" src="@Url.Content(script.Value)"></script>
                 }
             }
 
             if (Model.CurrentPage.JavascriptCommands.Count > 0)
             {
 
-                <script type="text/JavaScript">
+                <script type="text/javascript">
                     @foreach (var cmd in Model.CurrentPage.JavascriptCommands)
                     {
                         <text>@Html.Raw(cmd)</text>

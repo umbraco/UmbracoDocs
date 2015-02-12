@@ -1,4 +1,4 @@
-search('*.md', #Tutorial - Integrating services with a property editor
+#Tutorial - Integrating services with a property editor
 
 ##Overview
 This is step 3 in the property editor tutorial. In this part we will integrate one of the built-in 
