@@ -12,7 +12,7 @@ The ApplicationEventHandler is a new robust way to hook in to the Umbraco applic
 
 Here's an example that does the same thing as the IApplicationEventHandler sample below.
 
-    using umbraco.Core;
+    using Umbraco.Core;
     using umbraco.BusinessLogic;
     using umbraco.cms.businesslogic;
     using umbraco.cms.businesslogic.web;
