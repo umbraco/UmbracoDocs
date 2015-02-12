@@ -53,7 +53,7 @@ Inside this package manifest we add a bit of json to describe the property edito
 		]
 		,
 		//array of files we want to inject into the application on app_start
-		javascript: [
+		JavaScript: [
 		    '~/App_Plugins/MarkDownEditor/markdowneditor.controller.js'
 		]
 	}
@@ -94,7 +94,7 @@ Save the datatype, and add it to a document type of your choice, open a document
 
 
 ##Add external dependencies
-Lets go a bit further, and load in a markdown editor javascript library, I've chosen pagedown, but you can use whatever you want. 
+Lets go a bit further, and load in a markdown editor JavaScript library, I've chosen pagedown, but you can use whatever you want. 
 
 First of, I'll add some external files to our package folder, in /app_plugins/markdowneditor/lib folder, these files comes from the pagedown editor project found here: 
 

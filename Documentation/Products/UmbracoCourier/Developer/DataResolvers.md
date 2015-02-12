@@ -25,14 +25,14 @@ A data resolver is a custom model built into Courier 2, to handle 3rd party data
 
 In short, a Data resolver is simply a .net class, which inherits from a specific base class, which allows the developer to hook into different events during the data packaging and extraction.
 
-Out of the box, Courier 2, can understand all standard data-types in umbraco. This means that Courier knows that a Content picker contains a ID, pointing at a document, which then becomes a dependency, and the ID gets translated into a Guid which can safely be deployed to another location. It also knows that a template might contain references to javascript files or internal links, using the [locallink:] syntax. Or a a lot of other cases where data have a special meaning. 
+Out of the box, Courier 2, can understand all standard data-types in Umbraco. This means that Courier knows that a Content picker contains a ID, pointing at a document, which then becomes a dependency, and the ID gets translated into a Guid which can safely be deployed to another location. It also knows that a template might contain references to JavaScript files or internal links, using the [locallink:] syntax. Or a a lot of other cases where data have a special meaning. 
 
 This is what dataresolvers do, add special meaning to specific data that matches certain criteria, for instance properties using a specific datatype, templates containing a certain keyword and so on.
 
 ## Sample Data Resolver
 To show some code as fast as possible here is a commented code sample which outlines a simple resolver:
 
-	//inherite from ItemDataResolver and implement ResolvableTypes and ShouldExecute
+	//inherit from ItemDataResolver and implement ResolvableTypes and ShouldExecute
 	public class test : ItemDataResolverProvider
 	{
 	    //resolvableTypes are the types of content which can be processed by this resolver
@@ -45,7 +45,7 @@ To show some code as fast as possible here is a commented code sample which outl
 	 
 	    //ShouldExecute, a fast way to determine if the provider should trigger or not, under a specific event
 	    //in this case the resolver will only trigger during Packaging Event and if the template has any 
-	    //javascript resources packaged
+	    //JavaScript resources packaged
 	    public override bool ShouldExecute(Item item, Core.Enums.ItemEvent itemEvent)
 	    {
 	        if (itemEvent == Core.Enums.ItemEvent.Packaging)
@@ -61,7 +61,7 @@ To show some code as fast as possible here is a commented code sample which outl
 	    //we have access to all the data  and can replace anything, which will then be saved to the revision.
 	    public override void Packaging(Item item)
 	    {
-	        //here we simply just fetch the javascript resource and could then do something with those                foreach (var jsFile in item.Resources.Where(x => x.ExtractToPath.EndsWith(".js")))
+	        //here we simply just fetch the JavaScript resource and could then do something with those                foreach (var jsFile in item.Resources.Where(x => x.ExtractToPath.EndsWith(".js")))
 	        {
 	            //do something with that jsFile
 	        }
@@ -211,7 +211,7 @@ It looks at that configuration and tells courier the files it can find so courie
 
 
 #Helpers for working with custom XML data
-A common use-case is a data type storing node ID references in an xml structure. Due to umbracos history and xml usage, this is a common road for data type developers to take. 
+A common use-case is a data type storing node ID references in an xml structure. Due to Umbracos history and xml usage, this is a common road for data type developers to take. 
 For instance storing data like so:
 	
 	<nodes>

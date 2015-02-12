@@ -19,13 +19,13 @@ Another common scenario the grid layout editor supports are managing and inserti
 This could replace various setups involving content pickers, repeatable content editors and other kinds of collections of content nodes and macros. 
 
 ###Limitations
-With the above usage scenarios in mind, consider the grids limitations. First of all, all content entered into the grid is stored as a single property value on the content node, as a big JSON object. This means that as soon as the values are stored in the database, there is no managed api to drill into the grid content and target specific cell content - so a grid layout is not a recommended storage of reusable content - it simply wasn't designed for this scenario. If you wish to reuse content in multiple pages, it is still recommended that you store these pieces of content as seperate content nodes, so they can be stored, cached and queried as usual. 
+With the above usage scenarios in mind, consider the grids limitations. First of all, all content entered into the grid is stored as a single property value on the content node, as a big JSON object. This means that as soon as the values are stored in the database, there is no managed api to drill into the grid content and target specific cell content - so a grid layout is not a recommended storage of reusable content - it simply wasn't designed for this scenario. If you wish to reuse content in multiple pages, it is still recommended that you store these pieces of content as separate content nodes, so they can be stored, cached and queried as usual. 
 
 ###Keep it simple
 The grid cannot solve every problem, neither was it meant to. It absolutely shines when configured correctly and designed to solve well-defined editor tasks, like entering content in a pre-defined layout and pre-configured options.
 If you put a standard grid editor on every page, expecting editors to do magic, you will be disappointed - and so will your editor. 
 
-So keep the usecases simple, spend time to configure and tune the grid in detail, this will truly make your editors love you.  
+So keep the use cases simple, spend time to configure and tune the grid in detail, this will truly make your editors love you.  
 
 
 

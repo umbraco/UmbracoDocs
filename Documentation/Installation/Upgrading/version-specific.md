@@ -42,7 +42,7 @@ Read and follow [the full v7 upgrade guide](v7-upgrade.md)
 * Remove all uGoLive dlls from /bin
  * These are not compatible with V7
 * Move appSettings/connectionStrings back to web.config 
- * If you are on 7.0.0 you should migrate these settings into the web.config instead of having them in seperate files in /config/
+ * If you are on 7.0.0 you should migrate these settings into the web.config instead of having them in separate files in /config/
  * The keys in config/AppSettings.config need to be moved back to the web.config <appSettings> section and similarly, the config/ConnectionStrings.config holds the Umbraco database connections in v7.0.0 and they should be moved back to the web.config <connectionStrings> section. 
  * /config/AppSettings.config and /config/ConnectionString.config can be removed after the contents have been moved back to web.config. (Make backups just in case)
 * Delete all files in ~/App_Data/TEMP/Razor/* 

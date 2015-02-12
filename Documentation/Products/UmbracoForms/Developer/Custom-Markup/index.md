@@ -8,7 +8,7 @@ The views can be found in the `~\Views\Partials\Forms\`
 
 ###Form.cshtml
 
-This is the main view responsable for rendering the form markup.
+This is the main view responsible for rendering the form markup.
 
 Default contents of the view:
 
@@ -164,14 +164,14 @@ Default contents of the view:
                 }
                 else
                 {
-                    <script type="text/javascript" src="@Url.Content(script.Value)"></script>
+                    <script type="text/JavaScript" src="@Url.Content(script.Value)"></script>
                 }
             }
 
             if (Model.CurrentPage.JavascriptCommands.Count > 0)
             {
 
-                <script type="text/javascript">
+                <script type="text/JavaScript">
                     @foreach (var cmd in Model.CurrentPage.JavascriptCommands)
                     {
                         <text>@Html.Raw(cmd)</text>
@@ -200,7 +200,7 @@ The view is seperated in 2 parts, 1 is the actual form and the other part is wha
 This view can be customized, if you do so it will be customized for all your forms.
 
 ###Script.cshtml
-This view renders the javascript that will take care of the conditional logic, custimization won't be needed here...
+This view renders the JavaScript that will take care of the conditional logic, custimization won't be needed here...
 
 ###FieldType.*.cshtml
 The rest of the views start with FieldType. like FieldType.Textfield.cshtml and those will output the fields (so there is a view for each default fieldtype like textfield, textarea, checkbox...

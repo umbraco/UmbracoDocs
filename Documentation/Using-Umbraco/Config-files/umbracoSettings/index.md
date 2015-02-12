@@ -404,7 +404,7 @@ of IRazorDataTypeModel instead of setting them in config.
 
 ##viewstateMoverModule
 
-The viewstate mover module is included by default. It enables you to move all asp.nets viewstate information to the end of the page, thereby making it easier for search engines to index your content instead of going through viewstate javascript code.Please note that this does not work will all asp.net controls.
+The viewstate mover module is included by default. It enables you to move all asp.nets viewstate information to the end of the page, thereby making it easier for search engines to index your content instead of going through viewstate JavaScript code.Please note that this does not work will all asp.net controls.
 
     <!-- This moves the asp.net viewstate data to the end of the html document instead of having it in the beginning-->
     <viewstateMoverModule enable="false" />

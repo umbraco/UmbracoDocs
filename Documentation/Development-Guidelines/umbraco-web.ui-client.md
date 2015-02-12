@@ -34,7 +34,7 @@ Test configuration and test files used by the karma testrunner to unit-test the 
 Inside the /src folder, the Umbraco 7 source code is devided into 3 groups of code: 
 
 - Less files
-- Common / shared javascript 
+- Common / shared JavaScript 
 - Views 
 
 ###Less files
@@ -46,7 +46,7 @@ The Views folder contains all the html for the application as well as the Contro
 - /views/section/Viewname.html
 - /views/section/section.viewname.controller.js
 
-So if you are looking for the html and javascript used by the content editor look in /src/views/content/edit.html and `/src/vies/content/content.edit.controller.js`
+So if you are looking for the html and JavaScript used by the content editor look in /src/views/content/edit.html and `/src/vies/content/content.edit.controller.js`
 
 ###/common
 The Common folder contains all the items that are share between multiple parts of the application, such as Services, Directives and Filters.
@@ -70,7 +70,7 @@ Folder containing various sample projects on how to use the external api, good f
 The central application script, which handles what modules to inject, app.js is for production, app.dev.js is for testing
 
 ###loader.js
-yepnope.js based loader for async loading javascript files, this file specifies what files to load on application start
+yepnope.js based loader for async loading JavaScript files, this file specifies what files to load on application start
 
 ###routes.js
 Routing setup for /umbraco/ pages, by default it contains a mvc-like convention based pattern, which means that we not very often need to modify this.

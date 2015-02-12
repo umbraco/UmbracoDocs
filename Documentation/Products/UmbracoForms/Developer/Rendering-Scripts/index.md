@@ -1,5 +1,5 @@
 #Rendering Forms scripts where you want
-Besides markup Forms will also output some javascript, by default this javascript is outputted just below the markup. If you wish to change this behaviour follow the next steps (like if all your js is rendered at the bottom of you page)
+Besides markup Forms will also output some JavaScript, by default this JavaScript is outputted just below the markup. If you wish to change this behaviour follow the next steps (like if all your js is rendered at the bottom of you page)
 
 ##Change the Forms partial view macro
 First we'll need to tell the Forms partial macro (that is used to render forms) to only render the markup and not the scripts. Navigate to the developer section and open the > Partial View Macro File > Insert Umbraco Form

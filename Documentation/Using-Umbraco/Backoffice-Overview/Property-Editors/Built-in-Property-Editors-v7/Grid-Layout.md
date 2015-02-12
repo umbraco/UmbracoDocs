@@ -164,7 +164,7 @@ There are many ways to combine these, here are some samples:
     }
 
 ###Multiple settings and styles
-You can add multiple settings and styles configurations on a datatype. This is done by creating a new setting or style object. Remember to seperate the objects with a comma.
+You can add multiple settings and styles configurations on a datatype. This is done by creating a new setting or style object. Remember to separate the objects with a comma.
 
 **Adding multiple settings**
 

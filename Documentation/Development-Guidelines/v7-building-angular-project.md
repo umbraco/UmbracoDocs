@@ -17,7 +17,7 @@ Umbraco 7 needs a couple of things to run:
 To compile and run the UI project you need node.js installed, you can get that at [http://nodejs.org](nodejs.org) for both windows and osx.
 
 ###Grunt
-When you have node.js installed, you need to install grunt. Grunt is a simple javascript task runner, basicly like Nant, Msbuild or any traditional build system [http://gruntjs.com](more about grunt here).
+When you have node.js installed, you need to install grunt. Grunt is a simple JavaScript task runner, basically like Nant, Msbuild or any traditional build system [http://gruntjs.com](more about grunt here).
 
 To install, open a terminal and run: 
 	
@@ -27,10 +27,10 @@ For OSX users, you will most likely need to do:
 
 	sudo npm install -g grunt-cli
 
-This installs a `grunt` command into your terminal so you can run grunt scripts with simple commands. That migth sound scary, but really isn't, for working with Umbraco 7, you will become really good friends with `grunt` and your terminal. 
+This installs a `grunt` command into your terminal so you can run grunt scripts with simple commands. That might sound scary, but really isn't, for working with Umbraco 7, you will become really good friends with `grunt` and your terminal. 
 
 ###Project dependencies
-Now its time to install all the dependencies that the project requires to compile, debug, test, minify and so on. Luckily this is all automatic, and is done wiht the node.js package manager (which you already have installed with node)
+Now its time to install all the dependencies that the project requires to compile, debug, test, minify and so on. Luckily this is all automatic, and is done with the node.js package manager (which you already have installed with node)
 
 In your terminal, browse to the `Umbraco.Web.Ui.Client` folder and run the command: 
 
@@ -73,7 +73,7 @@ or for a one-time build:
 
 	grunt build
 
-This will compile all files and copy them into the appropriate folder in the VS project, if you run `grunt dev` it will also automaticly update the VS project files as you edit them.
+This will compile all files and copy them into the appropriate folder in the VS project, if you run `grunt dev` it will also automatically update the VS project files as you edit them.
 
 You should never edit the /umbraco/js/umbraco.*.js files directly, these will be overwritten on each build.
 
@@ -88,8 +88,8 @@ Before running build.bat, then the latest UI files will be included.
 
 
 ##Conclusion
-Having Umbraco 7 UI as a seperate project does indeed give us a bit more complexity when building and running from visual studio, since 2 build systems are in play: grunt and msbuild. 
+Having Umbraco 7 UI as a separate project does indeed give us a bit more complexity when building and running from visual studio, since 2 build systems are in play: grunt and msbuild. 
 
-However, the alternative would be to shove everything into the msbuild process, making the entire thing inaccessible to a large number of frontend developers and with a clunkier and less uptodate system.
+However, the alternative would be to shove everything into the msbuild process, making the entire thing inaccessible to a large number of frontend developers and with a clunkier and less up to date system.
 
 So see it as an additional powerful tool in your arsenal, once you see the power, you don't want to go back.
