@@ -2,16 +2,16 @@
 
 *This builds on the "[adding a type to the provider model](Adding-a-Type.md)" chapter*
 
-Add a new class to the Visual Studio solution with a using directive using `using Umbraco.Forms.Core;` and make it inherit from Umbraco.Forms.Core.FieldType with an override of the Editor property.
+To add a custom field type create a new class in your Visual Studio solution. Your class will need `using Umbraco.Forms.Core;` in the Using directives at the top and to inherit from `Umbraco.Forms.Core.FieldType`.
 
-An example CustomFormDataType new data type should contain the following information in it's constructor (remember to set the Id to be a unique GUID):
+As an example, to create a new field type called CustomFormDataType, your class should contain the following information in it's constructor:
 
     public class CustomFormDataType : Umbraco.Forms.Core.FieldType
     	{
     		public CustomFormDataType()
     		{
     			// Provider
-    			this.Id = new Guid("73c7e88f-5916-49de-b223-27f63bd57381");
+    			this.Id = new Guid("73c7e88f-5916-49de-b223-27f63bd57381"); // set a unique GUID here
     			this.Name = "CustomFormDataType";
     			this.Description = "Renders an html input";
     			this.Icon = "icon-autofill";
@@ -21,15 +21,15 @@ An example CustomFormDataType new data type should contain the following informa
     	}
 
 
-And then we set the field type specific information. In this case a preview icon (autofill) for the form builder UI and what kind of data it will return, this can either be string, longstring, integer, datetime or boolean.
+In this example a preview icon (autofill) is set for the form builder UI and the DataType is set so that the field will return a String (this can either be string, longstring, integer, datetime or boolean).
 
-Add a back office field type angular view in `App_Plugins\UmbracoForms\Common\FieldTypes\CustomFormDataType.html`. e.g. copying the standard textfield control.
+A back office field type angular view is also required in `App_Plugins\UmbracoForms\Common\FieldTypes\CustomFormDataType.html`. e.g. to create this use the standard textfield control as a starting point.
 
     <input type="text" tabindex="-1"
        class="input-block-level"
        style="max-width: 400px" />
 
-Then add the view to the `Views\Partials\Forms\Fieldtypes\` directory which is used to render a control to web visitors.
+Then add a view to the `Views\Partials\Forms\Fieldtypes\` directory which is used to render a control to web visitors.
 
     @model Umbraco.Forms.Mvc.Models.FieldViewModel
     <input type="text" name="@Model.Name" id="@Model.Id" class="text" value="@Model.Value" maxlength="500"
