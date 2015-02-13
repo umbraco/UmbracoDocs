@@ -138,3 +138,9 @@ There's been numerous cases of people attempting to return a PartialView directl
 	3. The process starts again at **2. Umbraco page rendered**
 
 So you can see that if you returned a Partial View from within your [HttpPost] action, the only thing that would happen is that you'd end up displaying only the markup for the partial view to the end-user because you are not sending the request back to Umraco.
+
+##Display success messages
+
+Displaying a success message is easy. You can either send the user to a totally different page. For example you could use `return RedirectToUmbracoPage(nodeId)`. This page would typically be a child of the page where the form is located in, which is hidden in the navigation.
+
+The other way is to add a message or something to the TempData. For example you could use `TempData.Add("Success", "your form was successfully submitted");` in your SurfaceController action, and then display the message using `@TempData["Success"]` in the page where the form is located in. 
