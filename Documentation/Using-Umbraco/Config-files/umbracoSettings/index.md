@@ -16,7 +16,7 @@ Below you can see settings that affects content in Umbraco.
 This section is used for managing thumbnail creation, allowed attributes and, which properties of an image that should be automatically updated on upload.
 
         <imaging>
-            <!-- what file extension that should cause Umbraco to create thumbnails -->
+            <!-- what file extension that should cause umbraco to create thumbnails -->
             <imageFileTypes>jpeg,jpg,gif,bmp,png,tiff,tif</imageFileTypes>
             <!-- what attributes that are allowed in the editor on an img tag -->
             <allowedAttributes>alt,border,class,style,align,id,name,onclick,usemap</allowedAttributes>
@@ -48,7 +48,7 @@ If you need to create a custom media document type to handle images called somet
 **`<uploadField>`** element where the **alias** is set to **customImage**. Like below. Note that the width and height attributes has also been changed in this example.
 
         <imaging>
-            <!-- what file extension that should cause Umbraco to create thumbnails -->
+            <!-- what file extension that should cause umbraco to create thumbnails -->
             <imageFileTypes>jpeg,jpg,gif,bmp,png,tiff,tif</imageFileTypes>
             <!-- what attributes that are allowed in the editor on an img tag -->
             <allowedAttributes>alt,border,class,style,align,id,name,onclick,usemap</allowedAttributes>
@@ -102,7 +102,7 @@ If you change the value to "true" then you will see the code in a simple textare
 
 This setting let's you control if an upload control can create new folders for files uploaded, or if the file should be stored in the /media folder root with a unique ID prefixed to the filename.
 
-         <!-- should Umbraco store the uploaded files like /media/xxx/filename.ext or like /media/xxx-filename.ext
+         <!-- should umbraco store the uploaded files like /media/xxx/filename.ext or like /media/xxx-filename.ext
               should be set to false if the application pool's user account hasn't got readrights of the driveroot up to the /media directory -->
         <UploadAllowDirectories>True</UploadAllowDirectories>
 
@@ -155,7 +155,7 @@ The benefit of using this handler is that you can choose the error page to be sh
 Umbraco can send out email notifications, set the sender email address for the notifications emails here. To set the SMTP server used to send the emails, edit the standard <mailSettings/> section in the web.config file.
 
         <notifications>
-            <!-- the email that should be used as from mail when Umbraco sends a notification -->
+            <!-- the email that should be used as from mail when umbraco sends a notification -->
             <email>your@email.here</email>
         </notifications>
 
@@ -163,7 +163,7 @@ Umbraco can send out email notifications, set the sender email address for the n
 
 Umbraco comes with a build-in action handler that ensures that 2 pages does not get identical urls. In case of identical names, the handler will attach a counter to the duplicate name.
 
-        <!-- if true Umbraco will ensure that no page under the same parent has an identical name -->
+        <!-- if true umbraco will ensure that no page under the same parent has an identical name -->
         <ensureUniqueNaming>True</ensureUniqueNaming>
 
 **TidyEditorContent**
@@ -256,7 +256,7 @@ This setting is used when you're running Umbraco in virtual directories.
 
         <!-- Url Resolving ensures that all links works if you run Umbraco in virtual directories -->
         <!-- Setting this to true can increase render time for pages with a large number of links -->
-        <!-- If running Umbraco in virtual directory this *must* be set to true! -->
+        <!-- If running umbraco in virtual directory this *must* be set to true! -->
         <ResolveUrlsFromTextString>false</ResolveUrlsFromTextString>
 
 ##Security
@@ -366,7 +366,7 @@ This setting only affects skinning when using Webforms Masterpages.
 
 The comment says it all :)
 
-    <!-- this is used by Umbraco to determine if there's valid classes in the /App_Code folder to be used for Rest/XSLT extensions -->
+    <!-- this is used by umbraco to determine if there's valid classes in the /App_Code folder to be used for Rest/XSLT extensions -->
     <developer>
         <appCodeFileExtensions>
             <ext>cs</ext>
@@ -478,10 +478,10 @@ Every time some content is published in Umbraco. You can ask Umbraco to ping oth
 
 Also, remember to include the actual instance performing the publish if you it to refresh its own cache as well. Cache will only be refreshed on servers in the list.
 
-    <!-- distributed calls make Umbraco use webservices to handle cache refreshing -->
+    <!-- distributed calls make umbraco use webservices to handle cache refreshing -->
     <distributedCall enable="false">
         <!-- the id of the user who's making the calls -->
-        <!-- needed for security, Umbraco will automatically look up correct login and passwords -->
+        <!-- needed for security, umbraco will automatically look up correct login and passwords -->
         <user>0</user>
         <servers>
             <!-- add ip number or hostname, make sure that it can be reached from all servers -->

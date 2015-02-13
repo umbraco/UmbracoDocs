@@ -13,9 +13,9 @@ The ApplicationEventHandler is a new robust way to hook in to the Umbraco applic
 Here's an example that does the same thing as the IApplicationEventHandler sample below.
 
     using Umbraco.Core;
-    using umbraco.BusinessLogic;
-    using umbraco.cms.businesslogic;
-    using umbraco.cms.businesslogic.web;
+    using Umbraco.BusinessLogic;
+    using Umbraco.Cms.BusinessLogic;
+    using Umbraco.Cms.BusinessLogic.Web;
 
     namespace Umbraco.Extensions.EventHandlers
     {
@@ -63,11 +63,11 @@ If you want more control over execution you can override these properties:
 
 Here's an example that does the same thing as the ApplicationStartupHandler sample below. Remember that it's an interface so you have to implement all three methods, but you can leave the ones you're not using empty.
 
-	using umbraco.Core;
+	using Umbraco.Core;
 	using Umbraco.Web;
-	using umbraco.BusinessLogic;
-	using umbraco.cms.businesslogic;
-	using umbraco.cms.businesslogic.web;
+	using Umbraco.BusinessLogic;
+	using Umbraco.Cms.Businesslogic;
+	using Umbraco.Cms.Businesslogic.Web;
 	
 	namespace Umbraco.Extensions.EventHandlers
 	{
@@ -109,9 +109,9 @@ Remember to add the cms.dll, businesslogic.dll, umbraco.dll and interfaces.dll t
 
 Add references to the right namespaces at the top of your .cs file, and inherit the ApplicationStartupHandler and place the event code in the default class constructor.
 
-	using umbraco.BusinessLogic;
-	using umbraco.cms.businesslogic;
-	using umbraco.cms.businesslogic.web;
+	using Umbraco.BusinessLogic;
+	using Umbraco.Cms.BusinessLogic;
+	using Umbraco.Cms.BusinessLogic.Web;
 	
 	namespace MyApp
 	{
@@ -146,9 +146,9 @@ Remember to add the cms.dll, businesslogic.dll, umbraco.dll and interfaces.dll t
 
 Add references to the right namespaces at the top of your .cs file, and inherit the ApplicationBase and place the event code in the default class constructor.
 
-	using umbraco.BusinessLogic;
-	using umbraco.cms.businesslogic;
-	using umbraco.cms.businesslogic.web;
+	using Umbraco.BusinessLogic;
+	using Umbraco.Cms.BusinessLogic;
+	using Umbraco.Cms.BusinessLogic.Web;
 	
 	namespace MyApp
 	{
