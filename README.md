@@ -1,7 +1,5 @@
 #Umbraco Documentation project
 
-**WORK IN PROGRESS**
-
 #Reading & using the docs
 This is the documentation project for Umbraco. The scope of this project is to provide overviews of concepts, tutorials, example code, and links to API reference.
 This is a work in progress at the moment, and we welcome valuable contributions from anyone willing to help. For details on how to contribute, see further down this page.

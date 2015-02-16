@@ -1,28 +1,16 @@
 #Umbraco Documentation
+*The documentation project is open source and hosted on Github. If you have any corrections or additions to the documentation clone the project and make a pull request. [Guidelines](https://github.com/umbraco/Umbraco4Docs) on how to contribute to the documentation.*
 
-_Documentation on the Umbraco core functionality and APIs._
+##[Getting Started](Getting-Started/)
+All the basics of using Umbraco v7. From your first local installation, to a fully functional customized CMS.
 
-##[Installation](Installation/index.md)
-Describes how Umbraco is installed, using either WebMatrix, Microsoft Platform Installer, or from a zip-file.
+##[Implementation](Implementation/)
+Get an overview of how the Umbraco pipeline is structured. Not sure what to search for? Get a birdseye view of what happens from user request to content delivery.
 
-##[Using Umbraco](Using-Umbraco/index.md)
-Describes Umbraco terminology, configuration files/settings & step by step guides on how to approach the different areas in Umbraco.
+##[Extending Umbraco](Extending/)
+Documentation on the areas in Umbraco that are extendable such as the backoffice ui and database. Create your own property editors and develop packages for easy re-use and sharing.
 
-##[Developers' Reference](Reference/index.md)
-Templating, querying, searching and other Umbraco APIs.
+##[Old docs](Old-Docs/)
 
-##[Cheatsheets](Cheatsheets/index.md)
-Cheatsheets for easy overview of different areas like the Razor API and Views syntax.
 
-##[Umbraco Add-on documentation](Products/index.md)
-Documentation for the Umbraco add-ons 'Forms' and 'Courier'
-
-##[Extending Umbraco](Extending-Umbraco/index.md)
-Documentation on how to extend umbraco with your own editors, trees, sections, and how to distribute those extensions as packages. **(coming soon)**
-
-##[Development Guidelines](Development-Guidelines/index.md)
-How to work with the Umbraco codebase.
-
-###Contribution
-Umbraco is a community powered project and we welcome any contribution, big or small. Even fixing a typo is a valuable contribution.
-[See how to contribute](https://github.com/umbraco/Umbraco4Docs)
+Old Umbraco documentation repo. Contains documentation for older versions of Umbraco.
