@@ -13,9 +13,9 @@ The ApplicationEventHandler is a new robust way to hook in to the Umbraco applic
 Here's an example that does the same thing as the IApplicationEventHandler sample below.
 
     using Umbraco.Core;
-    using Umbraco.BusinessLogic;
-    using Umbraco.Cms.BusinessLogic;
-    using Umbraco.Cms.BusinessLogic.Web;
+    using umbraco.BusinessLogic;
+    using umbraco.Cms.BusinessLogic;
+    using umbraco.Cms.BusinessLogic.Web;
 
     namespace Umbraco.Extensions.EventHandlers
     {
@@ -65,9 +65,9 @@ Here's an example that does the same thing as the ApplicationStartupHandler samp
 
 	using Umbraco.Core;
 	using Umbraco.Web;
-	using Umbraco.BusinessLogic;
-	using Umbraco.Cms.Businesslogic;
-	using Umbraco.Cms.Businesslogic.Web;
+	using umbraco.BusinessLogic;
+	using umbraco.Cms.Businesslogic;
+	using umbraco.Cms.Businesslogic.Web;
 	
 	namespace Umbraco.Extensions.EventHandlers
 	{
@@ -109,9 +109,9 @@ Remember to add the cms.dll, businesslogic.dll, umbraco.dll and interfaces.dll t
 
 Add references to the right namespaces at the top of your .cs file, and inherit the ApplicationStartupHandler and place the event code in the default class constructor.
 
-	using Umbraco.BusinessLogic;
-	using Umbraco.Cms.BusinessLogic;
-	using Umbraco.Cms.BusinessLogic.Web;
+	using umbraco.BusinessLogic;
+	using umbraco.Cms.BusinessLogic;
+	using umbraco.Cms.BusinessLogic.Web;
 	
 	namespace MyApp
 	{
@@ -146,9 +146,9 @@ Remember to add the cms.dll, businesslogic.dll, umbraco.dll and interfaces.dll t
 
 Add references to the right namespaces at the top of your .cs file, and inherit the ApplicationBase and place the event code in the default class constructor.
 
-	using Umbraco.BusinessLogic;
-	using Umbraco.Cms.BusinessLogic;
-	using Umbraco.Cms.BusinessLogic.Web;
+	using umbraco.BusinessLogic;
+	using umbraco.Cms.BusinessLogic;
+	using umbraco.Cms.BusinessLogic.Web;
 	
 	namespace MyApp
 	{
