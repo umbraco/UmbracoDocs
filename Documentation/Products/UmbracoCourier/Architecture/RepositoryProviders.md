@@ -16,7 +16,7 @@ This cannot be configured as Courier always automatically list all revisions fro
 * **Guid**:  e0472596-e73b-11df-9492-0800200c9a66
 * **Full name**:  `Umbraco.Courier.Providers.RepositoryProviders. CourierWebserviceRepositoryProvider`
 
-The courier webservice provider can connect any other website running umbraco, with courier installed as a repository. It is possible to transfer items back and forth using the http protocol.  To install, add the following to your courier.config under “repositories”.
+The courier webservice provider can connect any other website running Umbraco, with courier installed as a repository. It is possible to transfer items back and forth using the http protocol.  To install, add the following to your courier.config under “repositories”.
 
 
 ####Configuration XML
@@ -31,14 +31,14 @@ The courier webservice provider can connect any other website running umbraco, w
 
 ####Settings
 * **Url**: url to the website where the other instance is accessible
-* **User**: The ID of the umbraco user you want to use to authenticate with
+* **User**: The ID of the Umbraco user you want to use to authenticate with
 * **Login**: (optional) Instead of user ID you can set a specific login name
 * **Password**: (optional) Instead of user ID, you can set a specific password
 * **PasswordEncoding**: (optional) specify if Courier should keep password clear or Hashed to match your target repository
 
 **Note**: Courier alwas encrypts credentials. Encoding is more to do with how Umbraco stores user passwords.
 Custom Umbraco Membership Providers
-If you use a custom umbraco membership provider, you must always specify the login and password on the repository configuration. And set passwordEncoding to Clear.
+If you use a custom Umbraco membership provider, you must always specify the login and password on the repository configuration. And set passwordEncoding to Clear.
 
 
 ##Network Share

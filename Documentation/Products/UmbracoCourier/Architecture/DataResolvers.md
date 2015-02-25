@@ -127,12 +127,12 @@ Configuring which macro property types contains references to other nodes
 ###Tags
 * **Full name:** `Umbraco.Courier.DataResolvers.Tags`
 * **Triggers on:**  Propertydata, which have a Tags type as datatype
-* Selected tags are included as seperate dependencies and extracted along with the document.
+* Selected tags are included as separate dependencies and extracted along with the document.
 
 ###TemplateResources
 * **Full name:** `Umbraco.Courier.DataResolvers.TemplateResources`
 * **Triggers on:**  Templates
-* Detects linked images, javascript files and stylesheets. These are added as resources and dependencies on packaging. It also detects locallinks in the template and adds the linked Node as a dependency.
+* Detects linked images, JavaScript files and stylesheets. These are added as resources and dependencies on packaging. It also detects locallinks in the template and adds the linked Node as a dependency.
 
 ###UltimatePicker
 * **Full name:** `Umbraco.Courier.DataResolvers.UltimatePicker`

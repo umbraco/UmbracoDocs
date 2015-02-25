@@ -33,7 +33,7 @@ The password is hashed with SHA1 and Base64 encoded before it is stored.  You ca
     //Add email if required
     u.Email = "email@emailcode.com";
     
-    //Allow access to the umbraco sections you want for this user
+    //Allow access to the Umbraco sections you want for this user
     u.addApplication("content");
     u.addApplication("media");
     u.addApplication("users");

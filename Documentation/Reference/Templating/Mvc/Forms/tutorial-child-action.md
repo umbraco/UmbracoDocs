@@ -63,7 +63,7 @@ The HttpPost Action will:
 		[HttpPost]
 		public ActionResult CreateComment(CommentViewModel model)
 		{    
-		    //model not valid, do not save, but return current umbraco page
+		    //model not valid, do not save, but return current Umbraco page
 		    if (!ModelState.IsValid)
 			{
 				//Perhaps you might want to add a custom message to the ViewBag

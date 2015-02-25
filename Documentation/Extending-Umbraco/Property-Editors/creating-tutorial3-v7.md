@@ -1,21 +1,21 @@
-#Tutorial - Intergrating services with a property editor
+#Tutorial - Integrating services with a property editor
 
 ##Overview
-This is step 3 in the property editor tutorial. In this part we will intergrate one of the built-in 
-umbraco services. For this sample we will use the dialog service to hook into the media picker and return image data to the markdown editor. 
+This is step 3 in the property editor tutorial. In this part we will integrate one of the built-in 
+Umbraco services. For this sample we will use the dialog service to hook into the media picker and return image data to the markdown editor. 
 
 ##Injecting the service.
 First up, we need to get access to the service, this is done in the constructor of the controller, where we add it as a parameter:
 
 	angular.module("umbraco")
 		.controller("My.MarkdownEditorController",
-		//inject umbracos assetsServce and dialog service
+		//inject Umbraco's assetsServce and dialog service
 		function ($scope,assetsService, dialogService) { ... }
 
 this works the same way as with the assetsService we added in step 1.
 
 ##Hooking into pagedown
-The pagedown editor we are using, has a nice event system inplace, so we can easily hook into the events triggered by the media chooser, by adding a hook, after the editor has started:
+The pagedown editor we are using, has a nice event system in place, so we can easily hook into the events triggered by the media chooser, by adding a hook, after the editor has started:
 	
 	//Start the editor	
 	var converter2 = new Markdown.Converter();
@@ -43,16 +43,16 @@ So now that we have access to the editor events, we will trigger a media picker 
 	                   }});
 
 ##Getting to the image data
-Because of Umbraco's generic nature, you don't always know where your image is, as a media object's data is basicly an array of properies, so how do you pick the right one? - you cannot always be sure the property is called `umbracoFile` for instance.
+Because of Umbraco's generic nature, you don't always know where your image is, as a media object's data is basically an array of properties, so how do you pick the right one? - you cannot always be sure the property is called `umbracoFile` for instance.
 
-For cases like this, a helper service is available: `imageHelper`. This utillity has usefull methods for getting to images embedded in property data, as well as associated thumbnails. **Remember to** inject this imageHelper in the controller constructor as well (same place as dialogService and assetsService).
+For cases like this, a helper service is available: `imageHelper`. This utility has useful methods for getting to images embedded in property data, as well as associated thumbnails. **Remember to** inject this imageHelper in the controller constructor as well (same place as dialogService and assetsService).
 
 So we get the image page from the selected media item, and return it through the callback: 
 
 	var imagePropVal = imageHelper.getImagePropertyValue({ imageModel: item, scope: $scope });
 	callback(imagePropVal);
 
-Now when we run the markdown editor and click the image button, we are presented with a native umbraco dialog, listing the standard media archive. 
+Now when we run the markdown editor and click the image button, we are presented with a native Umbraco dialog, listing the standard media archive. 
 
 Clicking an image and choosing select returns the image to the editor which then renders it as:
 
@@ -68,7 +68,7 @@ So over the 3 previous steps, we've:
 
 - created a plugin
 - defined an editor
-- injected our own javascript libraries and 3rd party ones
+- injected our own JavaScript libraries and 3rd party ones
 - made the editor configurable
 - connected the editor with native dialogs and services
 - looked at koala pictures.

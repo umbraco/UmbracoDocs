@@ -2,7 +2,7 @@
 
 ##[File & folder permissions](permissions.md)
 
-To ensure a stable and smoothly running umbraco installation, these permissions need to be set correctly.
+To ensure a stable and smoothly running Umbraco installation, these permissions need to be set correctly.
 
 ##Hosting
 

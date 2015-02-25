@@ -11,7 +11,7 @@ So an editor can be used several times, with different configurations, and that 
 
 
 ##package.manifest
-So to add configuration options to our markdown editor, open the package.manifest file. rigth below the editor definition, paste in the following: 
+So to add configuration options to our markdown editor, open the package.manifest file. right below the editor definition, paste in the following: 
 
 	prevalues: {
 		fields: [
@@ -30,9 +30,9 @@ So to add configuration options to our markdown editor, open the package.manifes
 		]
 	}
 
-**Remember to: ** seperate the editor element and prevalue editor definition with a comma, or you will get a json error. 
+**Remember to: ** separate the editor element and prevalue editor definition with a comma, or you will get a json error. 
 
-So what did we just add? We added a prevalue editor, with a `fields` collection. This collection contains infomation about the UI we will render on the data type configuration for this editor. 
+So what did we just add? We added a prevalue editor, with a `fields` collection. This collection contains information about the UI we will render on the data type configuration for this editor. 
 
 So the first gets the label "Preview" and uses the view "boolean", so this will allow us to turn preview on/off and will provide the user with a simple checkbox. The name "boolean" comes from the convention that all preview editors are stored in /umbraco/views/prevalueeditors/ and then found via `<name>.html`
 

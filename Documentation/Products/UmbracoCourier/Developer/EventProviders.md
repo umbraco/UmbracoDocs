@@ -1,20 +1,20 @@
 #Item Event Provider
 
-An Item event provider allows a developer to attach events to items during an extraction.  Exemples of usage could be:
+An Item event provider allows a developer to attach events to items during an extraction.  Examples of usage could be:
 
 * Triggering Lucene indexing
 * Publishing items
 * Refreshing caches
 * Rebooting application pool
 
-It is basicly events you would like to postpone / queue until after all data has been safely extracted and the database is done with its transaction, unlocking the inserted and updated data. 
+It is basically events you would like to postpone / queue until after all data has been safely extracted and the database is done with its transaction, unlocking the inserted and updated data. 
 
-The `ItemEventProviders` is a replacement of the standard umbraco event system, as Courier does not use the standard umbraco API, and can therefore not trigger the standard event handlers, which is usually a good thing. We won’t trigger any 3rd party handlers or accidently cause a endless loop, everything is isolated which also increases the success rate.
+The `ItemEventProviders` is a replacement of the standard Umbraco event system, as Courier does not use the standard Umbraco API, and can therefore not trigger the standard event handlers, which is usually a good thing. We won’t trigger any 3rd party handlers or accidently cause a endless loop, everything is isolated which also increases the success rate.
 
 But in some cases, it is needed to trigger an event as soon as Courier 2 is done extracting its items. Which is why the ItemEventProviders has been added.
 
 ##A sample item event provider
-This is a very simple provider, as it simply has an alias and a execute mehthod which sends a message to twitter:
+This is a very simple provider, as it simply has an alias and a execute method which sends a message to twitter:
 
 	public class test : ItemEventProvider
 	{

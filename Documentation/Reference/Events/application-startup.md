@@ -13,9 +13,9 @@ The ApplicationEventHandler is a new robust way to hook in to the Umbraco applic
 Here's an example that does the same thing as the IApplicationEventHandler sample below.
 
     using Umbraco.Core;
-    using umbraco.BusinessLogic;
-    using umbraco.cms.businesslogic;
-    using umbraco.cms.businesslogic.web;
+    using Umbraco.BusinessLogic;
+    using Umbraco.Cms.BusinessLogic;
+    using Umbraco.Cms.BusinessLogic.Web;
 
     namespace Umbraco.Extensions.EventHandlers
     {
@@ -65,9 +65,9 @@ Here's an example that does the same thing as the ApplicationStartupHandler samp
 
 	using Umbraco.Core;
 	using Umbraco.Web;
-	using umbraco.BusinessLogic;
-	using umbraco.cms.businesslogic;
-	using umbraco.cms.businesslogic.web;
+	using Umbraco.BusinessLogic;
+	using Umbraco.Cms.Businesslogic;
+	using Umbraco.Cms.Businesslogic.Web;
 	
 	namespace Umbraco.Extensions.EventHandlers
 	{
@@ -103,15 +103,15 @@ The above code does not have any error checking but you should put as much error
 
 **Applies to versions: Umbraco 4.8.0+**
 
-Umbraco includes the ApplicationStartupHandler class which is used for registering your code in umbraco automatically when umbraco loads.
+Umbraco includes the ApplicationStartupHandler class which is used for registering your code in Umbraco automatically when Umbraco loads.
 
 Remember to add the cms.dll, businesslogic.dll, umbraco.dll and interfaces.dll to your project.
 
 Add references to the right namespaces at the top of your .cs file, and inherit the ApplicationStartupHandler and place the event code in the default class constructor.
 
-	using umbraco.BusinessLogic;
-	using umbraco.cms.businesslogic;
-	using umbraco.cms.businesslogic.web;
+	using Umbraco.BusinessLogic;
+	using Umbraco.Cms.BusinessLogic;
+	using Umbraco.Cms.BusinessLogic.Web;
 	
 	namespace MyApp
 	{
@@ -140,15 +140,15 @@ The above code does not have any error checking but you should put as much error
 
 **Applies to versions before: Umbraco 4.8.0**
 
-Umbraco includes the ApplicationBase class which is used for registering your code in umbraco automatically when umbraco loads.
+Umbraco includes the ApplicationBase class which is used for registering your code in Umbraco automatically when Umbraco loads.
 
 Remember to add the cms.dll, businesslogic.dll, umbraco.dll and interfaces.dll to your project.
 
 Add references to the right namespaces at the top of your .cs file, and inherit the ApplicationBase and place the event code in the default class constructor.
 
-	using umbraco.BusinessLogic;
-	using umbraco.cms.businesslogic;
-	using umbraco.cms.businesslogic.web;
+	using Umbraco.BusinessLogic;
+	using Umbraco.Cms.BusinessLogic;
+	using Umbraco.Cms.BusinessLogic.Web;
 	
 	namespace MyApp
 	{

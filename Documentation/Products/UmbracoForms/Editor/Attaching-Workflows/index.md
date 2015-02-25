@@ -64,8 +64,8 @@ Posts the form to a url, either as POST or GET
 ###Save as file
 Saves the result of the form as a file
 
-###Save as umbraco document
-Saves the form values as an umbraco document node with a specific type
+###Save as Umbraco document
+Saves the form values as an Umbraco document node with a specific type
 ###Send email
 Send the result of the form to an email address
 

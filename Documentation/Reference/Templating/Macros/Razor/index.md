@@ -6,7 +6,7 @@ _Reference snippets for working with the Razor language in Umbraco macros. These
 Writing a simple Razor macro to output the name, url and ID of the current page, as well as iterating through child pages of the current pages.
 
 ##[Basic Razor syntax](basic-razor-syntax.md)
-Syntax samples for handling common logical tasks, such as loops, if/else, and using @ to seperate Code and markup
+Syntax samples for handling common logical tasks, such as loops, if/else, and using @ to separate Code and markup
 
 ##[Using Macro Parameters](using-macro-parameters.md)
 Using Macro parameters to pass changeable values to a Razor script to increase flexibility and reusability of the macro.

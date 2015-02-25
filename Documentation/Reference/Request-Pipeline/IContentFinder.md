@@ -58,7 +58,7 @@ This is an un-breaking change.
 
 ### Broken example
 
-**TO CHECK: I think this example was included in the presentation to show that umbraco v4 was broken. Using this example you can mimic this behaviour.**
+**TO CHECK: I think this example was included in the presentation to show that Umbraco v4 was broken. Using this example you can mimic this behaviour.**
 
     public class MyContentFinder : ContentFinderByNiceUrl
     {
@@ -90,7 +90,7 @@ this example shows how to add custom content finder to (and how to remove Conten
     }
 
 #NotFoundHandlers
-In umbraco v4 you could use the NotFoundHandlers.  These are currently (in v6/7) working as an implementation of the IContentFinders:
+In Umbraco v4 you could use the NotFoundHandlers.  These are currently (in v6/7) working as an implementation of the IContentFinders:
 
     public class ContentFinderByNotFoundHandlers : IContentFinder
     {

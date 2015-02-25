@@ -8,12 +8,12 @@ The static methods can be found in Umbraco.Forms.Mvc.DynamicObjects.Library
 ###GetApprovedRecordsFromPage
 
 	DynamicRecordList GetApprovedRecordsFromPage(int pageId)
-Returns all records with the state set to approved from all forms on the umbraco page with the id = pageId as a DynamicRecordList
+Returns all records with the state set to approved from all forms on the Umbraco page with the id = pageId as a DynamicRecordList
 
 ###GetApprovedRecordsFromFormOnPage
 
 	DynamicRecordList GetApprovedRecordsFromFormOnPage(int pageId, string formId)
-Returns all records with the state set to approved from the form with the id = formId on the umbraco page with the id = pageId as a DynamicRecordList
+Returns all records with the state set to approved from the form with the id = formId on the Umbraco page with the id = pageId as a DynamicRecordList
 
 ###GetApprovedRecordsFromForm
 	DynamicRecordList GetApprovedRecordsFromForm(string formId)
@@ -21,12 +21,12 @@ Returns all records with the state set to approved from the form with the ID = f
 ###GetRecordsFromPage
 
 	DynamicRecordList GetRecordsFromPage(int pageId)
-Returns all records from all forms on the umbraco page with the id = pageId as a DynamicRecordList
+Returns all records from all forms on the Umbraco page with the id = pageId as a DynamicRecordList
 
 ###GetRecordsFromFormOnPage
 
 	DynamicRecordList GetRecordsFromFormOnPage(int pageId, string formId)
-Returns all records from the form with the id = formId on the umbraco page with the id = pageId as a DynamicRecordList
+Returns all records from the form with the id = formId on the Umbraco page with the id = pageId as a DynamicRecordList
 
 ###GetRecordsFromForm
 
@@ -50,7 +50,7 @@ The properties available on a DynamicRecord are:
 
 In order to access custom form fields you can simply use the dot notation, using the field caption but removing all spaces and non alphanumeric characters.
 
-##Sample razor script (DynamicNode, pre umbraco 6.0.0)
+##Sample razor script (DynamicNode, pre Umbraco 6.0.0)
 
 Sample script that is outputting comments using a form created with the default comment form template.
 	
