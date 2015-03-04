@@ -111,10 +111,6 @@ Get an overview of how the Umbraco pipeline is structured. See what happens from
 			<span class="line v-line"></span>
 			<span class="line h-line"></span>
 		</span>
-		<span class="dot small">
-			<span class="line v-line"></span>
-			<span class="line h-line"></span>
-		</span>
 	</div>
 	
 	<div class="col-xs-9">
@@ -123,12 +119,8 @@ Get an overview of how the Umbraco pipeline is structured. See what happens from
 				<h4><a href="Query-Data/">Query Data</a></h4>
 			</div>
 			<div class="col-xs-6">
-				<h5><a href="Query-Data/UmbracoHelper/">Content</a></h5>
-				<small>Template is rendered with Razor</small>
-			</div>
-			<div class="col-xs-6">
-				<h5><a href="Query-Data/UmbracoHelper/">Media</a></h5>
-				<small>Model refers to the found content</small>
+				<h5><a href="Query-Data/UmbracoHelper/">Content/Media</a></h5>
+				<small>Use UmbracoHelper to query published media and content</small>
 			</div>
 			<div class="col-xs-6">
 				<h5><a href="Query-Data/MembershipHelper/">Members</a></h5>
