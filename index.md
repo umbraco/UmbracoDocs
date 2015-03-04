@@ -7,9 +7,6 @@ All the basics of using Umbraco v7. From your first local installation, to a ful
 ##[Implementation](Implementation/)
 Get an overview of how the Umbraco pipeline is structured. Not sure what to search for? Get a birdseye view of what happens from user request to content delivery.
 
-##[Extending Umbraco](Extending/)
-Documentation on the areas in Umbraco that are extendable such as the backoffice ui and database. Create your own property editors and develop packages for easy re-use and sharing.
-
 ##[Old docs](Old-Docs/)
 
 
