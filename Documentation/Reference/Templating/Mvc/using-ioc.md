@@ -15,7 +15,7 @@ Alternatively you can implement the `Umbraco.Web.IApplicationEventHandler` inter
 
 ##Example
 
-This example will setup Autofac to work with Umbraco (see [their documentation](http://code.google.com/p/autofac/wiki/Mvc3Integration) for full details)
+This example will setup Autofac to work with Umbraco (see [their documentation](http://autofac.readthedocs.org/en/latest/) for full details)
 
 For this example we're going to add a custom class to the IoC container as a Transient instance, here's the class:
 
