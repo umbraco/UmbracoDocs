@@ -1,45 +1,43 @@
-#Dropdown List, Publishing Keys
+# Dropdown List, Publishing Keys
 
 `Returns: Int`
 
 Displays a list of preset values. The value saved is the prevalue id.
 
-##Settings
+## Settings
 
-###Prevalues
+### Prevalues
 You can add, edit & delete the data prevalues rendered within the dropdown list.
 
-##Data Type Definition Example
+## Data Type Definition Example
 
 ![Dropdown List Data Type Definition](images/Dropdown-List-Keys-DataType.png)
 
-##Content Example 
+## Content Example 
 
 ![Downdown List Content](images/Dropdown-List-Keys-Content.png)
 
-##MVC View Example to output selected value
+## MVC View Example to output selected value
 
-###Typed:
+### Typed:
 
     @if (Model.Content.HasValue("character"))
     {        
-        var ds = ApplicationContext.Services.DataTypeService;
-        var preValue = ds.GetPreValueAsString(Model.Content.GetPropertyValue<int>("character"));
+        var preValue = Umbraco.GetPreValueAsString(Model.Content.GetPropertyValue<int>("character"));
         <p>@preValue</p>
     }
 
-###Dynamic:     
+### Dynamic:     
                          
     @if (CurrentPage.HasValue("character"))
     {
-        var ds = ApplicationContext.Services.DataTypeService;
-        var preValue = ds.GetPreValueAsString(CurrentPage.character);
+        var preValue = Umbraco.GetPreValueAsString(CurrentPage.character);
         <p>@preValue</p>        
     }    
 
-##MVC View Example list all nodes which have a certain item selected in the dropdown list
+## MVC View Example list all nodes which have a certain item selected in the dropdown list
 
-###Typed:
+### Typed:
 
     @{
         var valueToMatch = 31;
@@ -61,7 +59,7 @@ You can add, edit & delete the data prevalues rendered within the dropdown list.
         }
     }
 
-###Dynamic:                             
+### Dynamic:                             
 
     @{
 		var valueToMatch = 31;
