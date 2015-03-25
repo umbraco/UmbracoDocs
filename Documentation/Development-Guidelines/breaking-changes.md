@@ -51,6 +51,7 @@ This section describes what a breaking change is in regards to the Umbraco codeb
 * Changes to CSS are not considered breaking changes
 * Changes to HTML/Markup are not considered breaking changes
 * Changes to images are not considered breaking changes
+* Changes made to the inclusion, exclusion or location change of referenced JS/CSS libraries
 
 ###Breaking
 
