@@ -14,19 +14,27 @@ Holds the version number of the currently installed version of Umbraco. This ver
 
 ###umbracoReservedUrls
 
-Coming soon!
+A comma separted list of files to be left alone by umbraco.  IIS will service these files, and the umbraco request pipeline will not be triggered.  
+
+    <add key="umbracoReservedUrls" value="~/config/splashes/booting.aspx,~/install/default.aspx,~/config/splashes/noNodes.aspx,~/VSEnterpriseHelper.axd" />
 
 ###umbracoReservedPaths
 
-Coming soon!
+A comma separated list of all the folders in your directory to be left alone by umbraco.  If you have folders with custom files, add them to this setting to make sure umbraco leaves them alone.
+
+    <add key="umbracoReservedPaths" value="~/umbraco,~/install/" />
 
 ###umbracoPath
 
-Coming soon!
+The Url pointing to the umbraco administration folder.  If you rename the umbraco folder, you need to update this setting too.
+
+    <add key="umbracoPath" value="~/umbraco" />
 
 ###umbracoHideTopLevelNodeFromPath
 
-Coming soon!
+If you are runing multiple sites, you don't want the top level node in your Url.  Possible options are _true_ and _false_.
+
+    <add key="umbracoHideTopLevelNodeFromPath" value="true" />
 
 ###umbracoUseDirectoryUrls
 
