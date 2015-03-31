@@ -17,8 +17,9 @@ To use the Member Api, you will require the following usings:
 	using umbraco.cms.businesslogic.media;
 	using umbraco.BusinessLogic;
 
-## Membership provider
-Although you can do a lot with the member Api, it is advices to use the [membership provider](../MembershipProviders/index.md) syntax.  Things like login/logout are the same as any .Net website.
+## Membership providers/Authentication
+
+It is adviced to use the [ASP.Net Membership Provider](https://msdn.microsoft.com/en-us/library/yh26yfzy%28v=vs.140%29.aspx) APIs for authentication (i.e. logging in/out)
 
 ## Constructor
 
