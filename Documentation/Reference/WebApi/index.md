@@ -70,7 +70,7 @@ E.g *~/Umbraco/Api/Products/GetAllProducts*
 
 ###Plugin based controller
 
-If you are creating an Umbraco Api controller to be shipped in an Umbraco package you will need to add an attribute to your controller to ensure that it is routed via an area. The area name is up to you to specify in the attribute. 
+If you are creating an Umbraco Api controller to be shipped in an Umbraco package you will need to add the `Umbraco.Web.Mvc.PluginController` attribute to your controller to ensure that it is routed via an area. The area name is up to you to specify in the attribute. 
 
 Example:
 
@@ -90,7 +90,7 @@ Now this controller will be routed via the area called "AwesomeProducts". All pl
 For more information about areas, Urls and routing see the [routing section](routing.md)
 
 ###Securing your API methods
-API methods can be secured so that only members logged into your site can use them, you can do this using the `MemberAuthorize` attribute.
+API methods can be secured so that only members logged into your site can use them, you can do this using the `Umbraco.Web.WebApi.MemberAuthorize` attribute.
 
 This attribute allows for the following protections to be set up:
 
@@ -103,7 +103,7 @@ This attribute allows for the following protections to be set up:
 
 Example:
 	
-	[MemberAuthorize(AllowGroup: "Accounts,Editors")]
+	[MemberAuthorize(AllowGroup = "Accounts,Editors")]
 	public class ProductsController : UmbracoApiController
 	{	    
 	    public IEnumerable<string> GetAllProducts()
