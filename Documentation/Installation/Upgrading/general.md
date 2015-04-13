@@ -20,7 +20,7 @@ Copy the following folders from inside the .zip file over the existing folders i
 - Only for versions lower than 7.1.0: 
    - /Install (don't forget to remove it after the upgrade is finished)
    - (This folder is no longer present or needed in Umbraco v7.1.0+)
-- Only for versions lower than 7.2.0:
+- Only for versions higher than 7.2.0:
 	- /Views/Partials/Grid (contains Grid rendering views)
 - /Umbraco 
 - /Umbraco_Client
