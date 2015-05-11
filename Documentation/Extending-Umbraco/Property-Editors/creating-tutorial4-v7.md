@@ -84,7 +84,7 @@ Inside the GetAll() method, we now write a bit of code, that connects to the dat
 	//fetch data from DB with the query and map to Person object
 	return db.Fetch<Person>(query);
 
-We are now done with the server-side of things, with the file saved in app_code you can now open the Url: /umbraco/My/PersonApi/GetAll
+We are now done with the server-side of things, with the file saved in app_code you can now open the Url: /umbraco/backoffice/My/PersonApi/GetAll
 
 This will return our json code.
 
@@ -100,7 +100,7 @@ Create a new file as `person.resource.js` and add:
 		    return {
 		        //this cals the Api Controller we setup earlier
 		        getAll: function () {
-		            return  $http.get("My/PersonApi/GetAll");
+		            return  $http.get("backoffice/My/PersonApi/GetAll");
 		        }
 		    };
 		}
@@ -139,7 +139,7 @@ With this, the entire flow is:
 
 1. the view renders a list of people with a controller
 2. the controller asks the personResource for data
-3. the personResource returns a promise and asks the /my/PersonAPI api controller
+3. the personResource returns a promise and asks the my/PersonAPI api controller
 4. The apicontroller queries the database, which returns the data as strongly typed Person objects
 5. the api controller returns those `Person` objects as json to the resource
 6. the resource resolve the promise
