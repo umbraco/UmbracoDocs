@@ -12,7 +12,6 @@ A layout is the general grid "container", it contains one or more sections which
 
 You can however configure as many layouts and layout sections as you wish, each section in the layout must be given a width in columns, so editors gets an accurate preview of their layout.
 
-It is possible to setup configurable attributes (class, rel, href) and inline styling on sections.
 ![Grid layouts](images/layouts.png)
 
 ##Row configurations

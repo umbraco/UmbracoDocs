@@ -27,9 +27,3 @@ The grid cannot solve every problem, neither was it meant to. It absolutely shin
 If you put a standard grid editor on every page, expecting editors to do magic, you will be disappointed - and so will your editor.
 
 So keep the use cases simple, spend time to configure and tune the grid in detail, this will truly make your editors love you.
-
-
-
-
-
-
