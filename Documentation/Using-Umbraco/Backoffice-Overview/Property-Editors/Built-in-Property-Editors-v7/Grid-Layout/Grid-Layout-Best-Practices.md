@@ -1,7 +1,5 @@
 #Grid layout best practices
 
-**WORK IN PROGRESS**
-
 _The grid layout editor, introduced in Umbraco 7.2, offers non-technical editors a more visual editing environment to layout content pages and enter content of many different kinds._
 
 The editor offers many configuration options, and as a website implementor, you could easily be tempted to use the grid for nearly every kind of content entry - this is however not encouraged. 
@@ -21,12 +19,11 @@ This could replace various setups involving content pickers, repeatable content 
 ###Limitations
 With the above usage scenarios in mind, consider the grids limitations. First of all, all content entered into the grid is stored as a single property value on the content node, as a big JSON object. This means that as soon as the values are stored in the database, there is no managed api to drill into the grid content and target specific cell content - so a grid layout is not a recommended storage of reusable content - it simply wasn't designed for this scenario. If you wish to reuse content in multiple pages, it is still recommended that you store these pieces of content as separate content nodes, so they can be stored, cached and queried as usual. 
 
+###Customisation
+Keep all customisation in the `/App_Plugins/` folder. This makes it easier to share across multiple projects and ensures that nothing is lost in an update process.
+
 ###Keep it simple
 The grid cannot solve every problem, neither was it meant to. It absolutely shines when configured correctly and designed to solve well-defined editor tasks, like entering content in a pre-defined layout and pre-configured options.
-If you put a standard grid editor on every page, expecting editors to do magic, you will be disappointed - and so will your editor. 
+If you put a standard grid editor on every page, expecting editors to do magic, you will be disappointed - and so will your editor.
 
-So keep the use cases simple, spend time to configure and tune the grid in detail, this will truly make your editors love you.  
-
-
-
-
+So keep the use cases simple, spend time to configure and tune the grid in detail, this will truly make your editors love you.
