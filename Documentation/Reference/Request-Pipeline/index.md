@@ -4,13 +4,6 @@
 
 _This section explains how Umbraco builds its URLs and how the URLs are mapped back to nodes_
 
- 
-##Introduction
-
-The request pipeline was rewritten by Stéphane Gay and explained at "Codegarden 13" on 2013/06/13.  This documentation is based on the slides which he made public using this [tweet](https://twitter.com/zpqrtbnk/status/345125834434158592).
-
-![zpqrtbnk tweet](images/zpqrtbnk-status-345125834434158592.png)
-
 ##What is the pipeline
 The request pipeline is the process of building up the URL for a node, resolving a request to a specified node and making sure that the right content is sent back.
 
