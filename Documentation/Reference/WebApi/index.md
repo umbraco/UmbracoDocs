@@ -64,9 +64,9 @@ Example:
 
 All locally declared Umbraco api controllers will be routed under the url path of:
 
-*~/Umbraco/backoffice/Api/[YourControllerName]*
+*~/Umbraco/Api/[YourControllerName]*
 
-E.g *~/Umbraco/backoffice/Api/Products/GetAllProducts*
+E.g *~/Umbraco/Api/Products/GetAllProducts*
 
 ###Plugin based controller
 
@@ -85,7 +85,7 @@ Example:
 
 Now this controller will be routed via the area called "AwesomeProducts". All plugin based Umbraco api controlleres will be routed under the url path of:
 
-*~/Umbraco/backoffice/[YourAreaName]/[YourControllerName]*
+*~/Umbraco/[YourAreaName]/[YourControllerName]*
 
 For more information about areas, Urls and routing see the [routing section](routing.md)
 
