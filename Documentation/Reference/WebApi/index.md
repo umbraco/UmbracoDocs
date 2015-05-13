@@ -115,3 +115,10 @@ Example:
 When a member is logged in and is member of the member group "Accounts" or "Editors", they will get the result of the API call as normal. Anybody else will get an error telling them they're not allowed to call this method.
 
 Any methods added to this class will have the same protection but you can also add the attribute to a single or a few of your methods when not all methods in your API Controller class need to have the same authorization.
+
+##Backoffice controllers
+
+If you are creating a controller to work within the Umbraco back office then you will need to ensure that it is secured  properly. Backoffice controllers should inherit from: `UmbracoAuthorizedJsonController`. This controller type will auto-route your controller like the above examples except that it will add another Uri path: 'backoffice'. For example:
+
+*~/Umbraco/backoffice/Api/[YourControllerName]*
+*~/Umbraco/backoffice/[YourAreaName]/[YourControllerName]*
