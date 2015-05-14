@@ -4,9 +4,7 @@ _Documentation about how to setup your own custom controllers and routes that ne
 
 ##Where to put your routing logic?
 
-In 4.10.0+ we have a custom global.asax class called `Umbraco.Web.UmbracoApplication` which you **must** inherit from if you want your own custom global.asax. Putting your own custom routes in your global.asax class is easily done by overriding the method: `OnApplicationStarted`. Any custom route logic should be done in this method.
-
-Alternatively, if you require custom routes to be distributed in a package, or you just don't like global.asax for some reason, you can create a custom `Umbraco.Web.ApplicationEventHandler` class and override the  `ApplicationStarted` method. There you can add any custom routing logic you like.
+In Umbraco the best place to put your routing logic is in a custom `Umbraco.Web.ApplicationEventHandler` class and override the `ApplicationStarted` method. There you can add any custom routing logic you like and you can be sure that the Umbraco application has completed it's booting sequence.
 
 ##Custom MVC routes & controllers with Umbraco data & views
 
