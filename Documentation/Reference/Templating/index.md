@@ -23,7 +23,7 @@ It's easy to configure the default type, in the */Config/umbracoSettings.config*
 
 Describes how to create/modify templates and describes nested templates.
 
-##[Working with MVC 'views'](Mvc/index.md)
+##[Working with MVC](Mvc/index.md)
 
 Describes how to work with MVC views, the razor syntax and APIs available as well details on how to create forms, step-by-step guides and other advanced techniques.
 
