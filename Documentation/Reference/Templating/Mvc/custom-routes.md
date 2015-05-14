@@ -12,12 +12,6 @@ Alternatively, if you require custom routes to be distributed in a package, or y
 
 *NOTE: `Umbraco.Web.ApplicationEventHandler` is available from v6.1.0+ . Otherwise if you are running a previous version: use the interface `Umbraco.Core.IApplicationEventHandler` and put your routing logic in the `OnApplicationStarted` method*
 
-##Adding to the Umbraco ignore list
-
-Since version 4.11.0+ you do not have to add any custom routes to the Umbraco ignore list. 
-
-If however you are running on v4.10.x then in order for you to get your custom route working 100%, you should add them to the ignore list in the web.config in the umbracoReservedUrls or the umbracoReservedPaths.
-
 ##Custom MVC routes & controllers with Umbraco data & views
 
 This is an advanced technique that some devs may be interested in. This post will describe how you can declare your own custom MVC routes in order to execute your own custom controllers in Umbraco but still be able to render Umbraco views with the same model that Umbraco uses natively.
