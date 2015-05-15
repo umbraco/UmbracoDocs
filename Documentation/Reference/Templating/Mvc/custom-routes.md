@@ -10,4 +10,4 @@ In Umbraco the best place to put your routing logic is in a custom `Umbraco.Web.
 
 This is an advanced technique that some devs may be interested in. This post will describe how you can declare your own custom MVC routes in order to execute your own custom controllers in Umbraco but still be able to render Umbraco views with the same model that Umbraco uses natively.
 
-See: [http://shazwazza.com/post/Custom-MVC-routing-in-Umbraco](http://shazwazza.com/post/Custom-MVC-routing-in-Umbraco)
+See: [http://shazwazza.com/post/custom-mvc-routes-within-the-umbraco-pipeline/](http://shazwazza.com/post/custom-mvc-routes-within-the-umbraco-pipeline/)
