@@ -9,7 +9,7 @@ Describes how Umbraco is installed, using either WebMatrix, Microsoft Platform I
 Describes Umbraco terminology, configuration files/settings & step by step guides on how to approach the different areas in Umbraco.
 
 ##[Developers' Reference](Reference/index.md)
-Templating, querying, searching and other Umbraco APIs.
+Templating, querying, routing, searching and other Umbraco APIs.
 
 ##[Cheatsheets](Cheatsheets/index.md)
 Cheatsheets for easy overview of different areas like the Razor API and Views syntax.
