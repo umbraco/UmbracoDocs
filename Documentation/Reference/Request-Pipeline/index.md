@@ -22,7 +22,7 @@ The pipeline works bidirectional: [inbound](inbound-pipeline.md) and [outbound](
 
 *Coming soon....*
 
-This section will describe the components that you can use to modify Umbraco's request pipeline: `[IContentFinder](IContentFinder.md)` & `IUrlProvider`
+This section will describe the components that you can use to modify Umbraco's request pipeline: [IContentFinder](IContentFinder.md) & `IUrlProvider`
 
 ## Custom MVC Controllers
 
