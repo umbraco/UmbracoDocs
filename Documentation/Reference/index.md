@@ -15,9 +15,7 @@ Umbraco comes with various ways of querying, filtering and searching published c
 
 Details on how to implement search capabilities for your Umbraco website using Examine, which is a Lucene-based search engine for Umbraco.
 
-##Events
-
-###[Events](Events-v6/index.md)
+##[Events](Events-v6/index.md)
 
 Event model covering all major aspects of the system for triggering custom code or automation.  
 
