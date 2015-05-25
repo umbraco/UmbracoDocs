@@ -1,7 +1,5 @@
 #ICacheRefresher
 
-**Applies to: Umbraco 6.1.0+**
-
 _This section describes what ICacheRefresher and ICacheRefresher&lt;T&gt; are and how to use them to invalidate your cache correctly including load balanced environments_ 
 
 ## What is an ICacheRefresher
