@@ -115,6 +115,18 @@ In /config/xsltExtensions.config add the following to register the library
 	    </xsl:for-each>
 	  </ul>    
 	</xsl:if>
+	
+###Umbraco 7 tagService Example
+@{
+var tagsFromService = UmbracoContext.Application.Services.TagService.GetAllContentTags("tagGroupName");
+}	
+		
+		<ul>
+		@foreach(var tag in tagsFromService)
+		{
+		<li>tag.Text (tag.NodeCount)</li>
+		}
+		</ul>
 
 ##Further Resources
 
