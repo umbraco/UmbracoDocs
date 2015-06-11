@@ -1,0 +1,48 @@
+#Related Links
+
+`Returns: JArray`
+
+Related Links allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
+
+##Data Type Definition Example
+
+![Related Links Data Type Definition](images/Related-Links-DataType.jpg)
+
+##Content Example 
+
+![Media Picker Content](images/Related-Links-Content.jpg)
+
+##MVC View Example
+
+###Typed:
+
+	@using Newtonsoft.Json.Linq
+    @{      
+        if (Model.Content.HasValue("relatedLinks") && Model.Content.GetPropertyValue<string>("relatedLinks").Length > 2)
+        {
+            <ul>
+                @foreach (var item in Model.Content.GetPropertyValue<JArray>("relatedLinks"))
+                {
+                    var linkUrl = (item.Value<bool>("isInternal")) ? Umbraco.NiceUrl(item.Value<int>("internal")) : item.Value<string>("link");
+                    var linkTarget = item.Value<bool>("newWindow") ? "_blank" : null;
+                    <li><a href="@linkUrl" target="@linkTarget">@(item.Value<string>("caption"))</a></li>
+                }
+            </ul>
+        }
+    }  
+
+###Dynamic:       
+                       
+    @{
+        if (CurrentPage.HasValue("relatedLinks") && CurrentPage.relatedLinks.ToString().Length > 2)
+        {
+            <ul>
+                @foreach (var item in CurrentPage.relatedLinks)
+                {
+                    var linkUrl = (bool)item.isInternal ? Umbraco.NiceUrl(item.Value<int>("internal")) : item.link;
+                    var linkTarget = (bool)item.newWindow ? "_blank" : null;
+                    <li><a href="@linkUrl" target="@linkTarget">@item.caption</a></li>
+                }
+            </ul>
+        }
+    }    

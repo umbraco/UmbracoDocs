@@ -4,10 +4,6 @@
 
 A Dashboard is a component for displaying elements on the right-hand side of the backoffice UI area.
 
-##[Version 7+ assets](version7-assets.md)
-
-Version 7+ specific information on extending Umbraco, details such as dealing with server variables, service URLs, JavaScript and CSS assets, etc....
-
 ##[Sections & Trees](Section-Trees/index.md)
 
 The Umbraco back office consists of sections (sometimes referred to as applications) which contain trees. For example, when you load the back office you'll see that the 'Content' section contains one tree: the content tree whereas the 'Settings' section contains a number of trees: Stylesheets, Content Types, Media Types, etc...
@@ -34,6 +30,10 @@ The Umbraco back office can be configured so that the user interface runs in the
 
 Information on the packaging manifest format and how assets should be packaged as a zip file for easy distribution
 **(coming soon)**
+
+##[Version 7+ assets](version7-assets.md)
+
+Version 7+ specific information on extending Umbraco, details such as dealing with server variables, service URLs, JavaScript and CSS assets, etc....
 
 ##[Custom file systems (IFileSystem)](Custom-File-Systems.md)
 

@@ -125,7 +125,7 @@ Gets a collection of nodes from under the current in a depth first order.
 									.GetDescendantNodes();
 
 If a function is provided, then it's evalutated on each node before adding it to the result collection - if this function returns a false, then any further descendant nodes of the one being checked are not processed. 
-For example this could be useful in getting a collection of nodes, but as soon as one is found marked as 'hidden', none of it's descendants are then evaluated. Supplying a function can make a search more efficient.
+For example this could be useful in getting a collection of nodes, but as soon as one is found marked as 'hidden', none of its descendants are then evaluated. Supplying a function can make a search more efficient.
 
 	IEnumerable<Node> nodes = uQuery.GetRootNode()
 									.GetDescendantNodes(x => !GetProperty<bool>("hidden"));
@@ -134,7 +134,7 @@ For example this could be useful in getting a collection of nodes, but as soon a
 #### GetDescendantOrSelfNodes()
 Returns: `IEnumerable<Node>`
 
-Gets a collection of nodes starting with the current, and then all it's descendant nodes.
+Gets a collection of nodes starting with the current, and then all its descendant nodes.
 
 	IEnumerable<Node> nodes = uQuery.GetRootNode().GetDescendantOrSelfNodes();
 

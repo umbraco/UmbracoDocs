@@ -21,12 +21,12 @@ Copy the following code into the class.
 
 Here we have a simple static string method called `Hello` which will return the string  "Hello World". 
 
-Compile your project and copy the projects .dll to your umbraco /Bin folder - In this sample the DLL is called BaseTest.dll.Now let's get this hooked up to /base.
+Compile your project and copy the projects .dll to your Umbraco /Bin folder - In this sample the DLL is called BaseTest.dll.Now let's get this hooked up to /base.
 
 ##Registering with base
 
 ####Automatic registration using Attributes
-In the above example, Because we used the Attributes "RestExtension" and "RestExtensionMethod", umbraco is smart enough (since version 4.5) to hook up the methods automatically.  After coping the dll file to your umbraco bin folder, try calling the url /Base/myAlias/Hello.  You will get the response: "Hello World".
+In the above example, Because we used the Attributes "RestExtension" and "RestExtensionMethod", Umbraco is smart enough (since version 4.5) to hook up the methods automatically.  After coping the dll file to your Umbraco bin folder, try calling the url /Base/myAlias/Hello.  You will get the response: "Hello World".
 
 ###Registration by configuration
 If you prefer the use of config files instead of the attributes, you can change register your methods through the restExtensions.config file.
@@ -42,12 +42,12 @@ Edit the restExtensions.config file so it looks like this:
       </ext>
     </RestExtensions> 
 
-If you've followed the above tutorial you can now goto this url: <your umbraco installations domain>/Base/TestAlias/Hello.aspx
+If you've followed the above tutorial you can now goto this url: <your Umbraco installations domain>/Base/TestAlias/Hello.aspx
 
 This should give you an xml page with a single node in it: `<value>Hello World</value>`
 
 ##So what just happened?
-So what we just did was build a simple string method in .net and afterwards gained direct access to it's return value using a standard Url. Let's take a closer look on what we did to make that happen.
+So what we just did was build a simple string method in .net and afterwards gained direct access to its return value using a standard Url. Let's take a closer look on what we did to make that happen.
 
 First we setup our "TestClass" in the /Base configuration file "restExtenstions.config" by adding this line:
 
@@ -59,6 +59,6 @@ So now we have the class setup, now we need to setup permissions for each indivi
 
     <permission method="Hello" allowAll="true" />
 
-It holds the methods name and allows everyone to access it. Later we'll look at how to control what umbraco members have access.
+It holds the methods name and allows everyone to access it. Later we'll look at how to control what Umbraco members have access.
 
-That's it. Now you've setup a very simple /base url. Next we'll look at how to return more complex data and how to send data to umbraco using simple urls.
+That's it. Now you've setup a very simple /base url. Next we'll look at how to return more complex data and how to send data to Umbraco using simple urls.
