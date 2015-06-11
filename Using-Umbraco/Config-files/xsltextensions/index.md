@@ -1,7 +1,5 @@
 #This section is waiting for content
 
-***NOTE**: this configuration file does not exist in v7+. XSLT extensions in v7+ are registered via attributes in c#.*
-
 This documention has not been written yet, but it is on the roadmap.
 
 ###Progress

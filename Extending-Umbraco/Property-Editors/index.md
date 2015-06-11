@@ -1,11 +1,17 @@
-#Property Editors
+##Creating Property Editors
 
-A property editor is the editor used to insert content into Umbraco. [See here for definition.](../using-umbraco/backoffice-overview/property-editors/index.md) 
+There are two types of property editors in Umbraco
 
-##[Property Editors in v7](property-editors-v7.md)
+###Abstract Data Editor
 
-This section describes how to work with and create Property Editors in v7
+Content to come from 
+http://www.nibble.be/?p=91
 
-##[Property Editors in v6 (and v4)](property-editors-v6.md)
+###User Control Wrapper
 
-This section describes how to work with and create Property Editors in v6 (and v4)
+Content to come from 
+http://www.nibble.be/?p=93
+
+
+
+ 

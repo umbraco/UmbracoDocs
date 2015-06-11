@@ -1,7 +1,4 @@
 #DynamicNode
-
-_DynamicNode is similar to the dynamic models that [UmbracoHelper](../UmbracoHelper/index.md) exposes but is available only to the legacy Razor Macros and inline razor macros. If you are using DynamicNode and Razor Macros, it is recommended to upgrade them to Partial View Macros and UmbracoHelper._ 
-
 DynamicNode is the dynamic access to all the data stored in your Umbraco website. Also know as the Model of your site.
 Model represents the page, currently being rendered, and is usually referenced on Templates or Macros
 

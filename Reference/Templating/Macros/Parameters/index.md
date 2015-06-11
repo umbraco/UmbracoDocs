@@ -1,6 +1,6 @@
 #Macro parameters
 
-_Macro parameters are in short a value you send to a Macro from Umbraco. This could be piece of text, a node ID or even a big chunk of xml. To do this you have a handful of different form controls you can use_
+_Macro parameters are in short a value you send to a Macro from Umbraco. This could be piece of text, a node ID or even a big chunk of xml. To do this you have a handful of different form controls you can use.
 
 ##Default macro parameter types
 
@@ -65,7 +65,7 @@ The `<xsl:copy-of select="/macro/contentTree" />` returns:
 So as you can see: the text parameter simply sends the text string we entered to the macro and the contentTree parameter sends a big chunk of xml describing the node we selected. If the node had any child nodes these would also be send to the xslt macro as xml.
 
 ##Explaining how the parameters are send to the macro
-When you set up a macro parameter for a xslt macro, you basically tell Umbraco to send some xml to the xslt script. This xml looks something like this: 
+When you set up a macro parameter for a xslt macro, you basically tell umbraco to send some xml to the xslt script. This xml looks something like this: 
 
 	<macro>
 		<parameteralias1>Value</parameteralias1>
@@ -76,6 +76,6 @@ So with this information along with some basic xpath we can query the xml from t
 
 	<xsl:value-of select="/macro/contentTree/node/nodeName"/> 
 
-or get its bodyText value with
+or get it's bodyText value with
 
 	<xsl:value-of select="/macro/contentTree/node/data [@alias = 'bodyText']"/>

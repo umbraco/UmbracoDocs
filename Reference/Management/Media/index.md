@@ -51,12 +51,9 @@ To create and store a `Media` you need a `MediaType`, calling `MakeNew()` the me
 	//set a HttpPostedFile 
 	d.getProperty("umbracoFile").Value = Request.Files[0];
 	
-	//persist changes to the database
-	d.Save();
-	
 
 ##[Media methods and properties](media.md) 
-The `Media` class itself has a big collection of methods and properties, please see the separate [Media](media.md) page for this.
+The `Media` class itself has a big collection of methods and properties, please see the seperate [Media](media.md) page for this.
 
 
 ##Static methods

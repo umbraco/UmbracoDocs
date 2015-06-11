@@ -26,7 +26,7 @@ Returns: `bool`
 
 Returns true if a relationship was found between the two ids for the current RelationType.
 
-When the RelationType has its direction configured as a parent to child, the order of the parameters is significant (first is parent, second is child).
+When the RelationType has it's direction configured as a parent to child, the order of the parameters is significant (first is parent, second is child).
 
 	if (RelationType.GetByAlias("relateA_B").IsRelated(1001, 1003)) { ... }
 

@@ -29,7 +29,7 @@
 		</a>
 	</div>
 	<div class="col-sm-6">
-		<a href="Add-ons/" class="docs-section">
+		<a href="Implementation/" class="docs-section">
 			<img src="images/icon-add-on.png" alt="">
 			<h2>Add-on documentation</h2>
 			<p>Everything you need to know about Forms and Courier, the two premium packages developed and supported by HQ</p>

@@ -1,5 +1,5 @@
 #Umbraco.Library
-_Umbraco.Library is a Xslt extension library, built specifically for xslt macros in Umbraco 4. It contains many utility methods which are strictly for use in Xslt, but also has a number of more general purpous methods, which can used more broadly. All samples are written with Xslt in mind, but can easily be referenced in both c# and razor under the `umbraco.library` namespace_
+_Umbraco.Library is a Xslt extension library, built specifically for xslt macros in umbraco 4. It contains many utility methods which are strictly for use in Xslt, but also has a number of more general purpous methods, which can used more broadly. All samples are written with Xslt in mind, but can easily be referenced in both c# and razor under the `umbraco.library` namespace_
 
 ##NiceUrl
 Use this to return a 'Friendly URL' for a given node in the Umbraco content section. A 'Friendly URL' is the complete encoded URL excluding the domain.
@@ -169,7 +169,7 @@ returns true if firstDate >= secondDate otherwise false
 Allows you to select Data and filter via a date field, so you could select data from a specific node which had a date which was in the future or the same as today.
 
 
-	<xsl:for-each select="$currentPage//node/data [@nodeTypeAlias='whatever' and umbraco.library:DateGreaterThanOrEqualToday(./data [@alias='dateField'])] " />
+	<xsl:for-each select="$currentPage//node/data [@nodeTypeAlias='whataver' and umbraco.library:DateGreaterThanOrEqualToday(./data [@alias='dateField'])] " />
  
 
 You could use this method for Events or time specific data, this would save you using the publish at and remove at features in the admin section.  
@@ -301,12 +301,12 @@ Returns the name as a string,  of the member with a given Id
 
 
 ##GetPreValueAsString
-Gets the Umbraco data type prevalue with the specified Id as string.
+Gets the umbraco data type prevalue with the specified Id as string.
 
-###Xslt Example
+###Xslt Exemple
 	<xsl:variable name="name" select="umbraco.library:GetPreValueAsString(1234)" />
 
-###Razor Example
+###Razor Exemple
 	@{
 	  var myValues = "7,8";
 	  foreach(var id in myValues.Split(',')) { 

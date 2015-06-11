@@ -1,7 +1,7 @@
-#Tutorial - Adding server-side data to a property editor
+#Tutorial - Adding server side data to a property editor
 
 ##Overview
-In this tutorial we will add a server-side API controller, which will query a custom table in the Umbraco database, and then return the data to a simple angular controller + view.
+In this tutorial we will add a serverside API controller, which will query a custom table in the umbraco database, and then return the data to a simple angular controller + view.
 
 The end result will be a person-list, populated from a custom table, when clicked it will store the ID of the selected person.
 
@@ -27,7 +27,7 @@ First thing we need is some data, below is a simple SQL Script for create a `peo
 
 
 ##Setup ApiController routes
-Next we need to defined a `ApiController` to expose a server-side route which our application will use to fetch the data.
+Next we need to defined a `ApiController` to expose a server side route which our application will use to fetch the data.
 
 For this, we will create a file at: `/App_Code/PersonApiController.cs` It must be in app_code since we want our app to compile it on start, alternatively, you can just add it to a normal .net project and compile into a dll as normal.
 
@@ -84,12 +84,12 @@ Inside the GetAll() method, we now write a bit of code, that connects to the dat
 	//fetch data from DB with the query and map to Person object
 	return db.Fetch<Person>(query);
 
-We are now done with the server-side of things, with the file saved in app_code you can now open the Url: /umbraco/backoffice/My/PersonApi/GetAll
+We are now done with the server side of things, with the file saved in app_code you can now open the Url: /umbraco/My/PersonApi/GetAll
 
 This will return our json code.
 
 ##Create a Person Resource 
-Now that we have the server-side in place, and a Url to call, we will setup a service to retrieve our data. As an Umbraco specific convention, we call these services a *resource, so we always have an indication what services fetch data from the DB.
+Now that we have the serverside in place, and a Url to call, we will setup a service to retrieve our data. As an Umbraco specific convention, we call these services a *resource, so we always have an indication what services fetch data from the DB.
 
 Create a new file as `person.resource.js` and add: 
 
@@ -100,7 +100,7 @@ Create a new file as `person.resource.js` and add:
 		    return {
 		        //this cals the Api Controller we setup earlier
 		        getAll: function () {
-		            return  $http.get("backoffice/My/PersonApi/GetAll");
+		            return  $http.get("My/PersonApi/GetAll");
 		        }
 		    };
 		}
@@ -139,7 +139,7 @@ With this, the entire flow is:
 
 1. the view renders a list of people with a controller
 2. the controller asks the personResource for data
-3. the personResource returns a promise and asks the my/PersonAPI api controller
+3. the personResource returns a promise and asks the /my/PersonAPI api controller
 4. The apicontroller queries the database, which returns the data as strongly typed Person objects
 5. the api controller returns those `Person` objects as json to the resource
 6. the resource resolve the promise

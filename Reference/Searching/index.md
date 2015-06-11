@@ -1,5 +1,5 @@
 # Searching
-_Search in Umbraco cam be implemented in several ways. Out of the box, Umbraco 4 supports 2 methods: Examine, which is a lucene implementation for Umbraco, and XsltSearch which is an easy to use searcher for small sites._
+_Search in umbraco cam be implemented in several ways. Out of the box, Umbraco 4 supports 2 methods: Examine, which is a lucene implementation for Umbraco, and XsltSearch which is an easy to use searcher for small sites._
 
 
 ## [Examine](Examine/index.md)

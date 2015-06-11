@@ -1,66 +1,41 @@
-#Developers' Reference
-_Developers' Reference primarily consists of API references of the different core Umbraco APIs. In many cases, the references come with code snippets with simple examples. For a more in-depth study of the different APIs, consult the "using-umbraco" and "extending-umbraco" sections of the documentation._
+#Developers Reference
+_Developers reference primarily consists of API references of the different core umbraco APIS. In many cases, the references comes with code snippets with simple exemples. However, for a more in-depth study of the different APIs, consult the "using-umbraco" and "extending-umbraco" sections of the documentation_ 
 
 ##[Templating](Templating/index.md)
+Reference documentation, covering masterpages, macros, razor syntax and xslt for macros
 
-How to use **templates** and **macros**. Covers templates and macros from the basic definitions to advanced techniques and using APIs.
-
-*This section contains all of the details about both templates types: MVC & WebForms.*
+##[Management APIs](management/index.md)
+Create, update, delete all build-in system objects, like documents, media, templates, document types and so on. 
 
 ##[Querying](Querying/index.md)
-
-Umbraco comes with various ways of querying, filtering and searching published content for use on your website.
+Umbraco comes with several ways of querying, filtering and searching contnet, through the APIs: uQuery, DynamicNode and NodeFactory
 
 ##[Searching](Searching/index.md)
+Details on how to implement search capabilities for your Umbraco website using Examine, which is a Lucene based search engine for umbraco.
 
-Details on how to implement search capabilities for your Umbraco website using Examine, which is a Lucene-based search engine for Umbraco.
+##[Events](Events/index.md)
+Umbraco 4, comes with a complete event model, covering all mayor aspects of the system for triggering custom code or automation.  
 
-##[Events](Events-v6/index.md)
+##[/Base](Api/Base/Index.md)
+/Base is a extendable system for creating raw feeds directly from Umbraco using very basic Url's. This enables developers to access umbraco data through javascript, flash or any other client. It even allows you to modify umbraco data directly via simple url's.
 
-Event model covering all major aspects of the system for triggering custom code or automation.  
+##[Umbraco.Library](Api/UmbracoLibrary/index.md)
+Umbraco.Library is a Xslt extension library, built specifically for xslt macros in umbraco 4. It contains many utility methods which are strictly for use in Xslt, but also has a number of more general purpous methods, which can used more broadly.
 
-##[Rest APIs](WebApi/index.md)
+##[Plugins](Plugins/index.md) 
+Introduced in **Umbraco 4.10.0+**
+The term 'Plugins' is refering to any types in Umbraco that are found in assemblies that are used to extend and/or enhance the Umbraco application.
 
-How to use [Web API](http://www.asp.net/web-api) with Umbraco to easily create REST services.
+##[MVC](Mvc/index.md) 
+Introduced in **Umbraco 4.10.0+**
+How to use MVC in Umbraco.
 
-##[Management APIs](Management-v6/index.md)
+---
 
-APIs that focus on creating, updating and deleting.
+###Progress
+Consult the Umbraco 4 documentation trello board to see what we are currently working on.
+[See the TrelloBoard here](https://trello.com/board/umbraco-4-documentation/4fdb02df8fc3ef067e809e95)
 
-## [Routing](Request-Pipeline/index.md)
-
-This section explains how routing and URLs work in Umbraco ('request pipeline'). 
-
-It explains how to generate URLs (outbound pipeline) and how Umbraco finds a node from a given URL (inbound pipeline). 
-
-Custom routing is also described in this section.
-
-##[Plugins](Plugins/index.md)
-
-The term 'Plugins' refers to any types in Umbraco that are found in assemblies that are used to extend and/or enhance the Umbraco application.
-
-##[Caching](Cache/index.md)
-
-Describes how to work with caching custom data structures in Umbraco. If you are creating Umbraco packages that have custom data sources and you want to cache some of this data, it's important to understand how caching works in Umbraco and to understand how it affects Umbraco installations in load balanced environments.
-
-## Legacy reference
-
-The below links refer to old deprecated code, you can safely ignore the below information in most cases if you are working with Umbraco versions 6+
-
-###[Umbraco.Library](Api/UmbracoLibrary/index.md)
-
-Umbraco.Library is a legacy XSLT extension library, built specifically for XSLT macros in Umbraco 4. It contains many utility methods which are strictly for use in XSLT.
-
-###[Legacy Events](Events/index.md) (v4)
-
-Umbraco 4 and earlier comes with a complete event model, covering all major aspects of the system for triggering custom code or automation.
-
-###[Legacy Management APIs](Management/index.md) (v4)
-
-Specific to version 4.x or earlier: Create, update, and delete all build-in system objects like documents, media, templates, document types and so on.
-
-###[/Base](Api/Base/Index.md) (Legacy)
-
-_/Base has been superseded by Web API above_
-
-/Base is a extendable system for creating raw feeds directly from Umbraco using very basic URLs. This enables developers to access Umbraco data through javascript, flash or any other client. It even allows you to modify Umbraco data directly via simple URLs.
+###Contribution
+Umbraco is a community powered project and we welcome any contribution, big or small, even fixing a typo is a valuable contribution.
+[See how to contribute](https://github.com/umbraco/Umbraco4Docs) 

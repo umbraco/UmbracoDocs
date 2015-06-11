@@ -25,8 +25,8 @@ This is just like formatAsDate but instead this will also ouput the time along w
 	<umbraco:item field="startDate" formatAsDateWithTime="true" formatAsDateWithTimeSeperator=" " runat="server"/>
 
 
-##formatAsDateWithTimeSeparator
-This is just like `formatAsDate` but instead this will also ouput the time along with the date, if you use this attribute you will also need to use the `formatAsDateWithTimeSeparator` attribute.
+##formatAsDateWithTimeSeperator
+This is just like `formatAsDate` but instead this will also ouput the time along with the date, if you use this attribute you will also need to use the `formatAsDateWithTimeSeperator` attribute.
 
 	<umbraco:item field="startDate" formatAsDateWithTime="true" formatAsDateWithTimeSeperator=" " runat="server"/>
 

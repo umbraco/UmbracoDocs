@@ -19,7 +19,7 @@ All samples in this document will require the following usings:
 	using umbraco.BusinessLogic;
 
 ##Constructor
-The Document constructor is used to retrieve a Document object with a given Id or Guid, there are optional parameters, which allows one to control setup and version.
+The Document constructor is used to retrive a Document object with a given Id or Guid, there are optional parameters, which allows one to control setup and version.
 
 For all constructors, a null is returned if a document is not found with the given id, guid or version.
 
@@ -39,7 +39,7 @@ if noSetup is set to true, only the Id, property is set on the returned `Documen
 		Document d = new Document(guid, true); 
 	 
 ###Get Document by version
-All documents in Umbraco is versioned. So everytime a document is changed, a new version is stored seperately. All versions get a unique Id assigned. The document returned will reflect the state of the document data in that specific version.
+All documents in umbraco is versioned. So everytime a document is changed, a new version is stored seperately. All versions get a unique Id assigned. The document returned will reflect the state of the document data in that specific version.
 
 	
 		Document d = new Document(1234 versionGuid);
@@ -53,23 +53,20 @@ To create and store a `Document` you need a `DocumentType`, calling `MakeNew()` 
 	
 	Document d = Document.MakeNew("name of document", dt, u, parentId); 
 	//set a string
-	d.getProperty("bodyText").Value = "Hello";
+	d.getProperty("bodyText").Value = "Hello");
 	//set a date
 	d.getProperty("date").Value = DateTime.Now;
 	//set a HttpPostedFile 
 	d.getProperty("upload").Value = Request.Files[0];
 	
-	//save the document to the database
-	d.Save();
-	
 	//publish the document
 	d.Publish(user);
 	
 	//Inform the cache it should update
-	umbraco.library.UpdateDocumentCache(d.Id);
+	umbraco.librarh.UpdateDocumentCache(d.Id);
 	
 ##[Document methods and properties](document.md) 
-The `Document` class itself has a big collection of methods and properties, please see the separate [Document](document.md) page for this.
+The `Document` class itself has a big collection of methods and properties, please see the seperate [Document](document.md) page for this.
 
 
 ##Static methods

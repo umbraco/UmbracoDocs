@@ -6,7 +6,7 @@ It is also possible to pass a parameter on the "Base-enabled" method allowing yo
 
 In the example below, we have a "Base-enabled" method called getMemberInfo and that method has one parameter 'memberid' of type integer. The method returns an XPathNodeIterator. 
 
-What the example does (remember to import System.Xml and umbraco.cms.businesslogic.member), is that it pulls member properties by an id from Umbraco and presents it as xml.
+What the example does (remember to import System.Xml and umbraco.cms.businesslogic.member), is that it pulls member properties by an id from umbraco and presents it as xml.
 
     public static System.Xml.XPath.XPathNodeIterator getMemberInfo(int memberid)    
     {

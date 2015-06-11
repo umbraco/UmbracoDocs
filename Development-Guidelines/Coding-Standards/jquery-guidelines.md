@@ -22,7 +22,7 @@ Simple jQuery plugins don't require an internal class to perform the functionali
 Most jQuery plugins will expose an API or a way in which a developer can interact with the plugin, not just instantiating it. To do this we need to create a class that does the work of the plugin and then expose that class via a different jQuery plugin.
 
 ###Naming Conventions
-There are many different ways to expose an API for a jQuery plugin, in Umbraco the standard will be:
+There's many different ways to expose an API for a jQuery plugin, in Umbraco the standard will be:
 
 * `$("#myId").myFirstJQueryPlugin();` = to instantiate the plugin
 * `var pluginApi = $("#myId").myFirstJQueryPluginApi();` = to retrieve the plugin API for that selector

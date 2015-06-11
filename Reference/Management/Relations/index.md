@@ -28,10 +28,10 @@ Retrieves the  `Relation` by its id, which is a Database identity `int`.
 	Relation r = new Relation(1234); 
 	
 ##[Relation methods and properties](relation.md) 
-The `Relation` class itself has a big collection of methods and properties, please see the separate [Relation](relation.md) page for this.
+The `Relation` class itself has a big collection of methods and properties, please see the seperate [Relation](relation.md) page for this.
 
 ##[RelationType methods and properties](relationtype.md) 
-The `RelationType` class itself is described in a  separate [RelationType](relationtype.md) page.
+The `RelationType` class itself is described in a  seperate [RelationType](relationtype.md) page.
 
 ##Static methods
 

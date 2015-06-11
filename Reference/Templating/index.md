@@ -1,43 +1,23 @@
 #Templating
 
-_Templating in Umbraco consists of 2 larger concepts, namely Templates, and Macros. Templates are used for the html layout of your pages, whereas macros are resuable dynamic components used for embedding navigation, forms, lists, and so-on in your templates._
+_Templating in Umbraco 4 consists of 2 larger concepts, namely Masterpages, and Macros. Masterpages are used for the html layout of your pages, whereas macros are resuable dynamic components used for embedding navigation, forms, list and so on in your templates._
 
-##[Managing templates](managing-templates.md)
+In **Umbraco 4.10.0 MVC** templating was introduced as an alternative to Masterpages, you can find a full reference [here](../Mvc/index.md).
 
-Describes how to create/modify templates and describes nested templates.
+##[Working with masterpages](Masterpages/index.md)
+Reference on the different components in the Masterpages templating syntax
 
-##Template options
+##[Working with macros](Macros/index.md)
+Introduction to setting up a macro, passing parameters, configuring caching
 
-There are 2 types of templating technologies in Umbraco:
+##Related References
+Documentation related to templating and macros
 
-* MVC (views)
-* WebForms (masterpages)
+###[Umbraco.library](../Api/UmbracoLibrary/index.md)
+Umbraco.library is a collection of helpers available to both Razor and Xslt
 
-By default Umbraco uses MVC templates.
+###[Razor syntax](Macros/Razor/index.md)
+Introduction to razor, going through the basics of scripting in razor.
 
-##[Working with MVC (views, razor, etc...)](Mvc/index.md)
-
-Describes how to work with MVC views, the razor syntax and APIs available as well details on how to create forms, step-by-step guides and other advanced techniques.
-
-##[Working with WebForms (masterpages, usercontrols, etc...)](Masterpages/index.md)
-
-Describes how to work with WebForms (masterpages) templating syntax and it's various components like UserControls, etc...
-
-If you prefer to work with Webforms, you can change the default template engine in the */Config/umbracoSettings.config* file, find this section and set the type you'd like to use (*Mvc* or *WebForms*):
-
-	<templates>
-		<defaultRenderingEngine>WebForms</defaultRenderingEngine>
-	</templates>
-
-##[Working with Macros](Macros/index.md)
-
-Describes how to set up a macro, use macro parameters & configuring caching. Defines the different types of macros and provides details on the different macro engine APIs and their usage. 
-
-##Hybrid templates
-
-Umbraco can work with both MVC and Webforms templates at the same time, however there can only be one default. Umbraco will first check for an MVC view file before it checks for a Webforms master page file. For example, if a template was created in the back office called "Home", then when rendering a content page with this template Umbraco will check these locations and use the first one that is found:
-
-~/Views/Home.cshtml
-~/Masterpages/Home.master
-
-
+###[Xslt overview](Macros/Xslt/index.md)
+Information, examples and best practices according to readability and performance in your XSLT/XPath snippets.
