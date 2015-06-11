@@ -13,3 +13,6 @@ Describes the process of creating new classes and where they should be stored in
 
 ##[Unit testing](unit-testing.md)
 Describes how to write unit testable code and how to write unit tests for the code in Umbraco.
+
+##[Breaking changes](breaking-changes.md)
+Defines what a breaking change is in regards to the Umbraco core codebase and describes how to deal with required breaking changes.

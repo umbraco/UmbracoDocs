@@ -121,6 +121,7 @@ Returns a `Property` with the given alias. The properties contain the Media data
     var media = new Media(1234);
     media.getProperty("bodyText").Value = "<p>hello</p>";
     media.getProperty("dateField").Value = DateTime.Now;
+    media.Save();
 
 ###.Move(1234)
 Moves the Media, and places it as a child under the the Media with the given ID.
@@ -135,7 +136,8 @@ Moves the Media, and places it as a child under the the Media with the given ID.
 
 
 ###.Save()
-Saves the latest changes on the Media. This triggers the Before/After save events. **Notice** this method is nothing but a stub, as all properties are instantly persisted.
+Saves the latest changes on the Media. This triggers the Before/After save events. 
+**Notice** In v4.x this method is a stub, but from v6.0 it will be required to call to persisst any changes, so it is recommend to always include .Save() in your code.
 
 ###.ToXml(xmlMedia, true)
 Returns a `XmlNode` containing the Media data, based off the latest published changes. Is used when the published Media is send to the in-memory cache.

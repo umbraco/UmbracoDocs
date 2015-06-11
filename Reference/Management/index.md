@@ -16,7 +16,7 @@ Create, Update, Move, Copy and delete media.
 Create, Update, Move, Copy, assign groups and delete members. **Coming soon**
 
 ##[Relations](Relations/index.md)
-Creating and finding relations between umbraco items.
+Creating and finding relations between Umbraco items.
 
 ##[Templates](Templates/index.md)
 Create templates programatically  **Coming soon**

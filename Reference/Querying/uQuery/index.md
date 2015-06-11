@@ -1,5 +1,9 @@
 # uQuery
 
+_uQuery was originally created in the uComponents project primarily to overcome some of the missing features of the legacy NodeFactory and other query techniques that came out of the box with Umbraco. uQuery was eventually integrated into Umbraco's core. Just like DynamicNode, uQuery has been superceded by [UmbracoHelper](../UmbracoHelper/index.md)._
+
+_**NOTE**: If there are features of uQuery that are not available via UmbracoHelper, please create a task/issue on the [tracker](http://issues.umbraco.org/) so we can implement it._
+
 uQuery is an API giving read/write access the [Content](Content/index.md), [Media](Media.md) and [Member](Member.md) data, as well as extending the [Relations](Relations.md). uQuery originated from uComponents and was added into Umbraco from v4.8. 
 
 ##[Content](Content/index.md)
@@ -65,7 +69,7 @@ Gets the Enum value corresponding to the supplied Guid. This method iterates the
 ### GetUmbracoObjectType(int)
 Returns: `uQuery.UmbracoObjectType`
 
-Gets the UmbracoObjectType for the supplied Umbraco id. This method queries the umbracoNode table, getting the guid in the nodeObjectType field where the id matches that supplied. This guid is then used to the find the Enum by attribute value, iif it's not found then UmbracoObjectType.Unknown is returned.
+Gets the UmbracoObjectType for the supplied Umbraco id. This method queries the umbracoNode table, getting the guid in the nodeObjectType field where the id matches that supplied. This guid is then used to the find the Enum by attribute value; if it's not found then UmbracoObjectType.Unknown is returned.
 
 	uQuery.UmbracoObjectType umbracoObjectType = uQuery.GetUmbracoObjectType(1100);
 
