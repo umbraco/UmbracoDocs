@@ -81,7 +81,7 @@ Related Links allows an editor to easily add an array of links. These can either
 
 ####Slider
 
-####Tags
+####[Tags](Tags.md)
 
 ####Textarea
 A simple textarea control to input text.
