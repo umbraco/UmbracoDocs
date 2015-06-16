@@ -44,25 +44,26 @@
 
 ----------------
 
-#Legacy Documentation
+##Documentation
+*We are currently in the process of moving the documentation into the new structure you can see above. Below is the old documentation structure. It is here to preserve links in forum and blog posts and for users who are familiar with the old structure.*
 
-##[Installation](Installation/index.md)
+###[Installation](Installation/index.md)
 Describes how Umbraco is installed, using either WebMatrix, Microsoft Platform Installer, or from a zip-file.
 
-##[Using Umbraco](Using-Umbraco/index.md)
+###[Using Umbraco](Using-Umbraco/index.md)
 Describes Umbraco terminology, configuration files/settings & step by step guides on how to approach the different areas in Umbraco.
 
-##[Developers' Reference](Reference/index.md)
+###[Developers' Reference](Reference/index.md)
 Templating, querying, searching and other Umbraco APIs.
 
-##[Cheatsheets](Cheatsheets/index.md)
+###[Cheatsheets](Cheatsheets/index.md)
 Cheatsheets for easy overview of different areas like the Razor API and Views syntax.
 
-##[Umbraco Add-on documentation](Products/index.md)
+###[Umbraco Add-on documentation](Products/index.md)
 Documentation for the Umbraco add-ons 'Forms' and 'Courier'
 
-##[Extending Umbraco](Extending-Umbraco/index.md)
+###[Extending Umbraco](Extending-Umbraco/index.md)
 Documentation on how to extend umbraco with your own editors, trees, sections, and how to distribute those extensions as packages. **(coming soon)**
 
-##[Development Guidelines](Development-Guidelines/index.md)
+###[Development Guidelines](Development-Guidelines/index.md)
 How to work with the Umbraco codebase.
