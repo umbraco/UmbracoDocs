@@ -49,7 +49,8 @@ Given a node ID, returns a `dynamic` object, representing a single `IPublishedCo
 ###.ContentAtRoot();
 Returns a `dynamic` object, representing the root `IPublishedContent` entity
 
-    @foreach (var child in Umbraco.ContentAtRoot().Children) { 
+    // Get the children of the first content item found in the root
+    @foreach (var child in Umbraco.ContentAtRoot().First().Children) { 
         <a href="@child.Url">@child.Name</a>
     }
 
@@ -88,7 +89,8 @@ Given a node ID , returns a `IPublishedContent`
 ###.TypedContentAtRoot()
 Returns the root `IPublishedContent` from the Content tree
 
-    @foreach (var child in Umbraco.TypedContentAtRoot().Children) { 
+    // Get the children of the first content item found in the root
+    @foreach (var child in Umbraco.TypedContentAtRoot().First().Children) { 
         <a href="@child.Url">@child.Name</a>
     }
 
