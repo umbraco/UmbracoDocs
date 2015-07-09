@@ -1,5 +1,5 @@
 #Data
-*Before content created it needs to be defined as a Document Type*
+*Before content is created, it needs to be defined as a Document Type*
 
 ###[Document Type](Document-Types/index.md)
 Document types define the types of pages/nodes that backoffice users can create in the content tree. Each document type contains different properties or fields.
