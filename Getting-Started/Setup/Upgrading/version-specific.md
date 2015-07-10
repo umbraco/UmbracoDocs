@@ -66,4 +66,7 @@ Read and follow [the full v7 upgrade guide](v7-upgrade.md)
 
 
 ##Version 7.1.0
-* Remove the /Install folder. 
+* Remove the /Install folder.
+
+##Version 7.2.0
+* Copy in the /Views/Partials/Grid (contains Grid rendering views)
