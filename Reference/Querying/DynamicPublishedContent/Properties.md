@@ -1,18 +1,18 @@
-#DynamicNode
+#DynamicPublishedContent
 
 ##Properties
 Built-in properties, which exists on all dynamic content objects by default. These are referenced in Razor as a standard property
-`object.Property` using standard C syntax. 
+`object.Property` using standard C# syntax. 
 
 	@* gets the current page Url *@
-	@Model.Url
+	@CurrentPage.Url
 	
 	@* gets the Creation date, and formats it to a short date *@
-	@Model.CreateDate.ToString("D")
+	@CurrentPage.CreateDate.ToString("D")
 	
 	@* Outputs the name of the parent if it exists *@
-	@if(Model.Parent != null){
-		<h1>@Model.Parent.Name</h1>
+	@if(CurrentPage.Parent != null){
+		<h1>@CurrentPage.Parent.Name</h1>
 	}
 
 ###.Parent
@@ -69,40 +69,25 @@ Same as Url
 ###.Level
 Returns the Level this content item is on
 
-###.PropertiesAsList()
-Returns a `new List<IProperty>()` of the user defined properties for a content item.  an `IProperty` has two `string` properties `.Alias` and `.Value`
-
-###.ChildrenAsList
-Returns the children of the current item as a `List<>()`
-
-
 -----
 
 ##Custom properties
 All content and media items also contains a reference to all the data defined by their document type
 	
-###Model.PropertyAlias
+###CurrentPage.PropertyAlias
 Returns the property matching the PropertyAlias (replace with alias of property) 
 
 	@*Get the property with alias: "siteName" from the current page  *@
-	@Model.siteName
+	@CurrentPage.siteName
 	
-	@*Notice razor uses Pascal casing, there is therefore an OverLoad to get properties as Pascal cased as well*@
-	@Model.SiteName
-		
-
-**Notice**, that Razor uses Pascal casing (capitalize first letter) for properties.
-Property `bodyText` can therefore be referenced as `BodyText`
-
-
-###Model._propertyAlias
+###CurrentPage._propertyAlias
 Returns the property matching the propertyAlias (replace with alias of property) 
 by prefixing with '_' razor will first look on the current page. If no value is defined, it will then search ancestor pages for a property matching the alias, and return a value, if a property is found.
 
 	@* Get the "siteName" property recursively (if not present on current page, traverse 
 	through page ancestors, 
 	Notice this matches alias casing, but prefixes a _ char *@
-	@Model._siteName
+	@CurrentPage._siteName
 	
 **Notice**, this matches the exact casing for the property.
 Property `bodyText` is therefore referenced as `_bodyText`
@@ -113,13 +98,13 @@ Property `bodyText` is therefore referenced as `_bodyText`
 **There are a few helpful methods to help check if a property exists, has a value or is null.**
 
 ###.HasProperty(string propertyAlias)
-Returns a boolean value representing if the DynamicNode has a property with the specified alias.
+Returns a boolean value representing if the DynamicPublishedContent has a property with the specified alias.
 
 ###.HasValue(string propertyAlias)
-Retruns a boolean value representing if the DynamicNode property has had a value set.
+Retruns a boolean value representing if the DynamicPublishedContent property has had a value set.
 
 ###.IsNull(string propertyAlias)
-Returns a boolean value representing if the DynamicNode property is Null.
+Returns a boolean value representing if the DynamicPublishedContent property is Null.
 
 **Further useful property methods**
 
@@ -130,7 +115,7 @@ Returns a boolean value representing if the needle was found in the property (ha
 
 For example:
 
-	@foreach(var item in Model.Children.Where("bodyText.Contains(\"cat\")"))
+	@foreach(var item in CurrentPage.Children.Where("bodyText.Contains(\"cat\")"))
 	{
 	    @item.Name 
 	}
@@ -147,16 +132,16 @@ For example:
 		keywords.Add("dog");
 		keywords.Add("fish");
 		values.Add("keywords",keywords);
-		var items = @Model.Children.Where("Name.ContainsAny(keywords)", values); 
+		var items = @CurrentPage.Children.Where("Name.ContainsAny(keywords)", values); 
 	}
 
 ---
 
 ##Permissions
-The following checks are to find out if the current website user has permissions or access to the current DynamicNode.   Commonly used in navigation scripts.
+The following checks are to find out if the current website user has permissions or access to the current DynamicPublishedContent.   Commonly used in navigation scripts.
 
 ###.HasAccess()
-Returns a boolean value representing whether or not the current website user has permissions to access the DynamicNode.
+Returns a boolean value representing whether or not the current website user has permissions to access the DynamicPublishedContent.
 
 ###.IsProtected()
 Returns a boolean value representing whether a node has public access permissions set.
@@ -166,7 +151,7 @@ Returns a boolean value representing whether a node has public access permission
 
 
 ###.Media(string propertyAlias[,string mediaPropertyAlias])
-When a DynamicNode contains a media picker, a media item can be returned using this method.
+When a DynamicPublishedContent contains a media picker, a media item can be returned using this method.
 
 ###.UmbracoFile
 Returns the path to the file stored if the media type is using the umbracoFile property alias for the upload field
