@@ -44,7 +44,7 @@
 
 ----------------
 
-###[Installation](Installation/index.md)
+###[Installation](Getting-Started/Setup/Install/index.md)
 Describes how Umbraco is installed, using either WebMatrix, Microsoft Platform Installer, or from a zip-file.
 
 ###[Using Umbraco](Using-Umbraco/index.md)
