@@ -222,7 +222,8 @@ As of Umbraco 6.2.1+ and 7.1.5+ there are another couple of options to take into
 * If you have your load balancing environment setup with a 'master' server, Umbraco will assume that the **first** server listed in the configuration is the 'master'
 * For scheduled publishing and scheduled tasks to work properly, each server listed needs to know if it is the 'master' server or not. In order to achieve this there are 2 optional attributes for a server configuration node: serverName or appId
 
-**serverName** will be the most common attribute to use and will always work so long as you are not load balancing a single site on the same server. In this case you should add the serverName attribute to each server node listed so that each server knows if it is a master or slave and so that each server knows which internal URL it can use to ping itself. Example:
+**serverName** will be the most common attribute to use and will always work so long as you are not load balancing a single site on the same server. In this case you should add the serverName attribute to each server node listed so that each server knows if it is a master or slave and so that each server knows which internal URL it can use to ping itself. Take not that the serverName must match the machine name otherwise scheduled tasks will not work
+Example:
 
 		
 		<server serverName="MyServer1">server1.mywebsite.com</server>

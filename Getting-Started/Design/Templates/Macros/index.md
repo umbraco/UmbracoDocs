@@ -12,15 +12,14 @@ Describes how to create/update a macro and its macro parameters
 
 ##Macro types
 
-All macro types will work in either MVC or WebForms
+All macro types will work in either MVC or WebForms templating engines
 
 ###[Partial View Macros](Partial-View-Macros/index.md)
-
-*Partial view macros have been available from v4.10+*
 
 **This is the recommended macro type to use**, it uses the exact same syntax and objects as MVC views.
 
 ###[Xslt macros](Xslt/index.md)
+
 Information, examples and best practices according to readability and performance in your XSLT/XPath snippets.
 
 ###[Razor macros](Razor/index.md)

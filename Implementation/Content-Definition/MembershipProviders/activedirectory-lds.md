@@ -99,10 +99,10 @@ This event handler first checks to see if there is already a membership account 
         {
             uxLogin = (Login)sender;
             
-            //Check umbraco membership.
+            //Check Umbraco membership.
             if (!this.IsMember)
             {
-                //Current user is NOT an umbraco member, attempt to validate ADLds user account and create umbraco membership account.
+                //Current user is NOT an Umbraco member, attempt to validate ADLds user account and create Umbraco membership account.
                 if (this.IsADLdsUser)
                 {
                     //ADLds user account was valid, create membership.
@@ -116,7 +116,7 @@ This event handler first checks to see if there is already a membership account 
                 }
                 //Bad username/password or no ADLds account.
             }
-            //Current user already has an umbraco membership.
+            //Current user already has an Umbraco membership.
         }
 ###OnAuthenticate Event
 

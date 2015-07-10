@@ -19,7 +19,7 @@ All samples in this document will require the following usings:
 	using umbraco.BusinessLogic;
 
 ##Constructor
-The Document constructor is used to retrive a Document object with a given Id or Guid, there are optional parameters, which allows one to control setup and version.
+The Document constructor is used to retrieve a Document object with a given Id or Guid, there are optional parameters, which allows one to control setup and version.
 
 For all constructors, a null is returned if a document is not found with the given id, guid or version.
 
@@ -39,7 +39,7 @@ if noSetup is set to true, only the Id, property is set on the returned `Documen
 		Document d = new Document(guid, true); 
 	 
 ###Get Document by version
-All documents in umbraco is versioned. So everytime a document is changed, a new version is stored seperately. All versions get a unique Id assigned. The document returned will reflect the state of the document data in that specific version.
+All documents in Umbraco is versioned. So everytime a document is changed, a new version is stored seperately. All versions get a unique Id assigned. The document returned will reflect the state of the document data in that specific version.
 
 	
 		Document d = new Document(1234 versionGuid);

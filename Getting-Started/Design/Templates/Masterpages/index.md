@@ -15,7 +15,7 @@ When a new template is created, it will by default contain 3 lines of predefined
 	 	
 	</asp:Content>
 
-The first line, is the template declaration, it tells umbraco what language the template is written in, and if it inherits from another template. Masterpages in Umbraco will always inherit from another Masterpage, if its a root template, it will inherite from
+The first line, is the template declaration, it tells Umbraco what language the template is written in, and if it inherits from another template. Masterpages in Umbraco will always inherit from another Masterpage, if its a root template, it will inherite from
 `/umbraco/masterpages/default.master` which is the default umbraco masterpage, which is needed for the templating system to work.
     
 
@@ -68,7 +68,7 @@ Value from request collection: [@requestValueKey]
     
     
 ##Template inheritance
-Templates can inherite other templates and uses 2 elements to merge them. `<asp:contentplaceholder>` and `<asp:content>` To connect one template with another, use the dropdownlist in umbraco to specify the master template, this will change the template declation and make a database change.
+Templates can inherite other templates and uses 2 elements to merge them. `<asp:contentplaceholder>` and `<asp:content>` To connect one template with another, use the dropdownlist in Umbraco to specify the master template, this will change the template declation and make a database change.
 
 Lets imagine we have define the below template structure.
 
@@ -115,7 +115,7 @@ A placeholder can also contain a default value, incase it is not used by a inher
 	</asp:contentplaceholder>
 
 ###asp:content
-Content requires a placeholder in its master template to function, so the `contentplaceholderId` attribute must match the id of `contentplaceholder` element in the parent template, or you will get a YSOD detailing what content element cannot find its placeholder. All html in the umbraco templates must be wrapped in a asp:content element.
+Content requires a placeholder in its master template to function, so the `contentplaceholderId` attribute must match the id of `contentplaceholder` element in the parent template, or you will get a YSOD detailing what content element cannot find its placeholder. All html in the Umbraco templates must be wrapped in a asp:content element.
 
 	<asp:content runat="server" contentplaceholderid="placeholder">
 

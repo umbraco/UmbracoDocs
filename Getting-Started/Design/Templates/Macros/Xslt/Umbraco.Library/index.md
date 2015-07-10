@@ -1,6 +1,6 @@
 #This section is waiting for content
 
-This documention has not been written yet, but it is on the roadmap.
+This documentation has not been written yet, but it is on the roadmap.
 
 ###Progress
 Consult the Umbraco 4 documentation trello board to see what we are currently working on.

@@ -2,21 +2,21 @@
 
 ##[File & folder permissions](permissions.md)
 
-To ensure a stable and smoothly running umbraco installation, these permissions need to be set correctly.
+To ensure a stable and smoothly running Umbraco installation, these permissions need to be set correctly.
 
 ##Hosting
 
 ###Umbraco 7.x.x
 
-* IIS 7+ (II6 may still work but is untested)
-* SQL CE, SQL Server 2008 and higher or MySQL
+* IIS 7+ (II6 will not work because .NET 4.5 is incompatible with Windows Server 2003)
+* SQL CE, SQL Server 2008 and higher or MySQL (must support case insensitive queries)
 * ASP.NET 4.5 Full-Trust
 * Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
 
 ###Umbraco 6.x.x
 
 * IIS6+ (IIS 7 Preferred)
-* SQL CE, SQL Server 2008 and higher or MySQL
+* SQL CE, SQL Server 2008 and higher or MySQL (must support case insensitive queries)
 * ASP.NET 4
 Medium-Trust/Full-Trust (Should work in Medium-Trust environments, but Full-Trust is still preferred)
 * Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
@@ -24,7 +24,7 @@ Medium-Trust/Full-Trust (Should work in Medium-Trust environments, but Full-Trus
 ###Umbraco 4.7.x
 
 * IIS 6+  (IIS 7 Preferred)
-* SQL CE, SQL Server 2008 and higher or MySQL
+* SQL CE, SQL Server 2008 and higher or MySQL (must support case insensitive queries)
 * ASP.NET 4, MVC 3
 * Medium-Trust/Full-Trust (Should work in Medium-Trust environments, but Full-Trust is still preferred)
 * Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
