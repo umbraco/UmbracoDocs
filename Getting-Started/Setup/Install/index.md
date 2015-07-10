@@ -2,9 +2,9 @@
 
 The easiest way to get the latest version of Umbraco up and running is with Webmatrix.
 
-###1. Download and install [Webmatrix](http://webmatrix.com)
-###2. Download and unzip [Umbraco](http://our.umbraco.org/download)
-###3. Right click the folder and choose *Open as a Website with Microsoft Webmatrix*
+1. **Download and install [Webmatrix](http://webmatrix.com)**
+2. **Download and unzip [Umbraco](http://our.umbraco.org/download)**
+3. **Right click the folder and choose *Open as a Website with Microsoft Webmatrix***
 
 All you have to do is follow the instructions in the installer and that's it, you are now running a local instance of Umbraco. Below you'll find some in-depth tutorials on the different ways to install Umbraco.
 
