@@ -46,6 +46,10 @@
 				<h5><a href="Setup/Server-Setup/">Server Setup</a></h5>
 				<small>Setting up a SQL server for your installation</small>
 			</div>
+			<div class="col-xs-6">
+				<h5><a href="Setup/Upgrading/">Upgrading</a></h5>
+				<small>How to upgrade your copy of Umbraco to a newer version</small>
+			</div>
 		</div>
 	</div>
 </div>
