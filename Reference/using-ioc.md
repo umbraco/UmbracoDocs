@@ -1,12 +1,10 @@
 #Using IoC with MVC in Umbraco
 
-**Applies to: Umbraco 4.10.0+**
-
-_This section will show you how to setup Ioc/Dependency Injection with your Umbraco installation for MVC. The examples will use Autofac but you can use whatever you want_ 
+_This section will show you how to setup Ioc/Dependency Injection with your Umbraco installation. The examples will use Autofac but you can use whatever you want_ 
 
 ##Overview
 
-We don't use IoC in the Umbraco source code whatsoever. This isn't because we don't like it or don't want to use it, it's because we want you as a developer to be able to use whatever IoC framework that you would like to use without jumping through any hoops. With that said, it means it is possible to implement whatever IoC engine that you'd like!
+We don't use IoC in the Umbraco source code. This isn't because we don't like it or don't want to use it, it's because we want you as a developer to be able to use whatever IoC framework that you would like to use without jumping through any hoops. With that said, it means it is possible to implement whatever IoC engine that you'd like!
 
 ##Implementation
 
