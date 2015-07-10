@@ -1,8 +1,6 @@
 #Surface Controllers
 
-**Applies to: Umbraco 4.10.0+**
-
-_A SurfaceController is an MVC controller that interacts with the front-end rendering of an UmbracoPage. They can be used for rendering Child Action content, for handling form data submissions and for rendering Child Action macros. SurfaceControllers are auto-routed meaning that you don't have to add/create your own routes for these controllers to work._
+_A SurfaceController is an MVC controller that interacts with the front-end rendering of an UmbracoPage. They can be used for rendering MVC Child Actions and for handling form data submissions. SurfaceControllers are auto-routed meaning that you don't have to add/create your own routes for these controllers to work._
 
 ##What is a SurfaceController?
 
@@ -16,7 +14,6 @@ Since any SurfaceController inherits from the `Umbraco.Web.Mvc.SurfaceController
 * interacting with Umbraco routes during HTTP POSTs (i.e. `return CurrentUmbracoPage();` )
 * rendering forms in Umbraco (i.e. `@Html.BeginUmbracoForm<MySurfaceController>(...)` )
 * rendering ASP.Net MVC ChildAction (see [ChildActions](child-actions.md) documentation)
-* rendering ChildAction macros (coming soon...)
 
 ##Creating a SurfaceController
 

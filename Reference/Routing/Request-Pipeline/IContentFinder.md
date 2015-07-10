@@ -90,35 +90,7 @@ this example shows how to add custom content finder to (and how to remove Conten
     }
 
 #NotFoundHandlers
-In Umbraco v4 you could use the NotFoundHandlers.  These are currently (in v6/7) working as an implementation of the IContentFinders:
 
-    public class ContentFinderByNotFoundHandlers : IContentFinder
-    {
-      public bool TryFindContent(PublishedContentRequest request)
-      {
-        // Runs legacy NotFoundHandler
-        // As per 404handlers.config
-        //
-        // umbraco.SearchForAlias becomes ContentFinderByUrlAlias
-        // umbraco.SearchForProfile becomes ContentFinderByProfile
-        // umbraco.SearchForTemplate becomes ContentFinderByNiceUrlAndTemplate
-        // umbraco.handle404 becomes ContentFinderByLegacy404
-      …
-      }
-    } 
-
-This is enabled by default as the last content finder.  It runs every legacy `NotFoundHandler` as per 404handlers.config.  To set your own 404 finder, use the code below.  A ContentLastChanceFinder will always return a 404 status code.
+To set your own 404 finder create an IContentFinder and set it as the ContentLastChanceFinder.  A ContentLastChanceFinder will always return a 404 status code. Example:
 
     ContentLastChanceFinderResolver.Current.SetFinder(new My404ContentFinder());
-
-If you want to wrap your legacy NotFoundHandler in a ContentFinder, you can do this like this:
-
-    public class MyApplication : ApplicationEventHandler
-    {
-      protected override void ApplicationStarting(…)
-      {
-        ContentFinderResolver.Current
-          .InsertType<ContentFinderByNotFoundHandler<MyNotFoundHandler>>();
-      }
-    }
-

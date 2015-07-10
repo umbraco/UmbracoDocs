@@ -1,6 +1,6 @@
 #Routing in Umbraco
 
-_This section describes what the Umbraco Request Pipeline is and how Umbraco matches a document to a given request._
+_This section describes what the Umbraco Request Pipeline is, how Umbraco matches a document to a given request and how it generates a URL for a document._
 
 ## Request pipeline
 
