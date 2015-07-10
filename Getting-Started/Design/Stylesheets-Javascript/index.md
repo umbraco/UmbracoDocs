@@ -1,15 +1,11 @@
 #Working with stylesheets and javascript
 
-_Umbraco contains ClientDependency Framework which bundles and minifies CSS and JavaScript files.
-Visual Studio can also bundle and minify, but that is different from Umbraco's one.
-You can see the details of ClientDependency Framework in the following site.  [http://github.com/Shandem/ClientDependency](http://github.com/Shandem/ClientDependency)_
+##Bundling & Minification for JavaScript and CSS
 
-You can reference stylesheets and javascript files as normal html, /scripts and /css are the default folders umbraco will place these assets in
+You can of course use whatever tools you are comfortable with for bundling & minification but it's worth 
+noting that Umbraco ships with the ClientDependency Framework which offers simple runtime bundling & minification.
 
-    <script type="text/javascript" src="/scripts/my-script.js"></script>
-    <link rel="stylesheet" href="/css/style.css" />
-
-You can also bundle and minify as follows in a view template file - this means Umbraco will cache and minify these assets and serve them as a single file.
+You can bundle and minify as follows in a view template file.
 
 	@using ClientDependency.Core.Mvc
 	@using ClientDependency.Core
@@ -24,3 +20,5 @@ You can also bundle and minify as follows in a view template file - this means U
 		@Html.RenderCssHere()
 		@Html.RenderJsHere()
 	</head>
+	
+Full details of the ClientDependency Framework can be found here: [http://github.com/Shandem/ClientDependency](http://github.com/Shandem/ClientDependency)	

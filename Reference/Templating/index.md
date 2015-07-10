@@ -36,27 +36,3 @@ Umbraco can work with both MVC and Webforms templates at the same time, however 
 ##[Macros](Macros/index.md)
 
 Describes how to set up a macro, use macro parameters & configuring caching. Defines the different types of macros and provides details on the different macro engine APIs and their usage. 
-
-##Bundling & Minification for JavaScript and CSS
-
-You can of course use whatever tools you are comfortable with for bundling & minification but it's worth noting that Umbraco ships with the ClientDependency Framework which offers simple runtime bundling & minification.
-
-You can see the details of ClientDependency Framework in the following site.  [http://github.com/Shandem/ClientDependency](http://github.com/Shandem/ClientDependency)
-
-You can bundle and minify as follows in a view template file.
-
-	@using ClientDependency.Core.Mvc
-	@using ClientDependency.Core
-	@{
-		Html.RequiresJs("~/scripts/Script1.js", 1);
-		Html.RequiresJs("~/scripts/Script2.js", 2);
-
-		Html.RequiresCss("~/css/style.css");
-	}
-	<html>
-	<head>
-		@Html.RenderCssHere()
-		@Html.RenderJsHere()
-	</head>
-
-
