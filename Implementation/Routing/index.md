@@ -1,10 +1,13 @@
 #Routing
 
-###[Routing](Routing/)
-This section will describe how Umbraco Api controllers are routed and how to retreive their URLs
+##Pipeline
 
-###[Pipeline](Pipeline/)
-This section explains how Umbraco builds its URLs and how the URLs are mapped back to nodes
+Explains how Umbraco builds its URLs and how the URLs are mapped back to nodes
 
-###[MVC](MVC/)
-This section will define the syntax for rendering content in your views
+TODO: Add more copy, link to reference docs
+
+##Routing
+
+This section will describe how Umbraco routing for MVC and WebApi controllers work
+
+TODO: Add more copy, link to reference docs

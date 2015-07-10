@@ -41,18 +41,18 @@ Get an overview of how the Umbraco pipeline is structured. See what happens from
 		<div class="row explain">
 			<div class="col-xs-12">
 				<h4 class="text-right"><a href="Routing/">Routing</a></h4>
-			</div>
-			<div class="col-xs-6">
-				<h5><a href="Routing/MVC/">MVC</a></h5>
-				<small>hits the <a href="">mvc controller</a> or a <a href="">custom controller</a></small>
-			</div>	
+			</div>			
 			<div class="col-xs-6">
 				<h5><a href="Routing/Pipeline/">Pipeline</a></h5>
-				<small>Goes through the pipeline</small>
+				<small>Find document with the request pipeline</small>
 			</div>
 			<div class="col-xs-6">
-				<h5><a href="Routing/Routing/">Routing</a></h5>
-				<small>This section will describe how Umbraco Api controllers are routed and how to retreive their URLs</small>
+				<h5><a href="Routing/MVC/">Render Controller</a></h5>
+				<small>Match an MVC controller to handle the request</small>
+			</div>
+			<div class="col-xs-6">
+				<h5><a href="Routing/Routing/">Auto-routed Controllers</a></h5>
+				<small>How routing and URLs work for Umbraco WebApi and Surface Controllers</small>
 			</div>
 		</div>
 	</div>
