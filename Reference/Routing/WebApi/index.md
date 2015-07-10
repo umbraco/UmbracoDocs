@@ -1,7 +1,5 @@
 #Umbraco Api
 
-**Applies to: Umbraco 6.1.0+**
-
 _This section will describe how to work with Web Api in Umbraco to easily create REST services_ 
 
 Related links:

@@ -13,7 +13,7 @@ Since any SurfaceController inherits from the `Umbraco.Web.Mvc.SurfaceController
 
 * interacting with Umbraco routes during HTTP POSTs (i.e. `return CurrentUmbracoPage();` )
 * rendering forms in Umbraco (i.e. `@Html.BeginUmbracoForm<MySurfaceController>(...)` )
-* rendering ASP.Net MVC ChildAction (see [ChildActions](child-actions.md) documentation)
+* rendering ASP.Net MVC ChildAction 
 
 ##Creating a SurfaceController
 
