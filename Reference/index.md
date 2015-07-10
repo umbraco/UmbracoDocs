@@ -1,6 +1,9 @@
 #Developers' Reference
 _Developers' Reference primarily consists of API references of the different core Umbraco APIs. In many cases, the references come with code snippets with simple examples. For a more in-depth study of the different APIs, consult the "using-umbraco" and "extending-umbraco" sections of the documentation._
 
+##[Configuration](Configuration/index.md)
+Information about all of Umbraco's configuration files and options.
+
 ##[Templating](Templating/index.md)
 
 How to use **templates** and **macros**. Covers templates and macros from the basic definitions to advanced techniques and using APIs.
