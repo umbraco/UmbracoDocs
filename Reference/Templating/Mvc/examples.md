@@ -1,6 +1,6 @@
-#Lots of examples of using various techniques to render data in a view
+#View/Razor Examples
 
-_Lots of examples for reference_ 
+_Lots of examples of using various techniques to render data in a view_ 
 
 ##Rendering a field with UmbracoHelper
 
