@@ -6,10 +6,6 @@ _Describes how to set up a macro, use macro parameters & configuring caching. De
 
 A macro is a reusable piece of functionality that you can re-use throughout your site. Macros can be configured with parameters and be inserted into a Rich Text Editor. Your can define what macros are available for your editors to insert in to the rich text editor. When an editor inserts a macro into the rich text editor it will prompt them to fill out any of the defined parameters for the macro.
 
-##[Managing macros](managing-macros.md)
-
-Describes how to create/update a macro and its macro parameters
-
 ##Macro types
 
 All macro types will work in either MVC or WebForms templating engines
@@ -21,14 +17,3 @@ All macro types will work in either MVC or WebForms templating engines
 ###[Xslt macros](Xslt/index.md)
 
 Information, examples and best practices according to readability and performance in your XSLT/XPath snippets.
-
-## Working with macros
-
-### Razor
-
-####[Using Macro Parameters](using-macro-parameters.md)
-Using Macro parameters to pass changeable values to a Razor script to increase flexibility and reusability of the macro.
-
-### Webforms
-
-

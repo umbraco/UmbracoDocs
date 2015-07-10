@@ -1,6 +1,15 @@
 #Partial View Macros
 
-Partial view macros are the recommended macro type to use in Umbraco. They work in both MVC and Webforms and use the unified query syntax that is available via the [UmbracoHelper](../../../Querying/UmbracoHelper/index.md)
+_Partial view macros are the recommended macro type to use in Umbraco. They work in both MVC and Webforms and use the unified query syntax that is available via the `UmbracoHelper`_
+
+## View/Model Type
+
+All partial view macro views inherit from `Umbraco.Web.Macros.PartialViewMacroPage` and as such, the header of each partial view macro file will have this syntax:
+
+	@inherits Umbraco.Web.Macros.PartialViewMacroPage
+	
+The model type for a partial view macro is `Umbraco.Web.Models.PartialViewMacroModel` which contains all of the properties you will need to
+render out content as well as some additional properties about the macro itself: `MacroName`, `MacroAlias`, `MacroId`, and `MacroParameters`. 
 
 ##File information
 
@@ -26,30 +35,6 @@ The syntax in Partial View Macros is 100% on par with the **[MVC View](../../Mvc
 
 You can use @CurrentPage, @Model.Content, @Umbraco, ...
 
-## Converting a Partial View Macro from a legacy Razor Macro Script
+## Accessing macro parameters
 
-Partial view macros have superceded Razor macro scripts and offer more functionality. Converting to Partial View Macros from razor macro scripts is fairly easy since content traversing is similar between them.
-
-The differences to note are:
-
-* The view classes expose different objects
-	* To access macro information in Partial View Macros, use: `Model.MacroName`, `Model.MacroAlias`, `Model.MacroId`, `Model.MacroParameters`
-	* Partial View Macros do not expose the objects: `MacroModel`, `INode` or `RazorLibraryCore`, they expose `UmbracoHelper` which can be used instead.
-* The Models are different
-	* The Partial View Macro model is of type `Umbraco.Web.Models.PartialViewMacroModel` whereas razor macro script's model is purely a dynamic representation of the content item.
-	* To access the content item in Partial View Macros, use `Model.Content` which exposes an instance of `IPublishedContent` or use `CurrentPage` which exposes the dynamic representation of the content item (similar to how razor macro scripts work)
-
-Quick conversion guide:
-
-1. Create a new Partial Macro View
-2. Copy the content of the old macro script to the Partial View Macro.
-3. Change the 
-
-		@inherits umbraco.MacroEngines.DynamicNodeContext
-
-	to
-
-    	@inherits Umbraco.Web.Macros.PartialViewMacroPage
-
-4. Replace each reference from `Model` to `CurrentPage`
-5. Change the reference in the CMS back-end (under Developer/Macros) using the Partial View Macro instead of the macro script.
+You can access the macro's parameters using the `MacroParameters` property which is of type `IDictionary<string, object>`

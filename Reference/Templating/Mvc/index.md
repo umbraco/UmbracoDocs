@@ -13,8 +13,8 @@ Documentation covering how to use Partial Views. This is not documentation about
 ##[Child Actions](child-actions.md)
 Using MVC Child Actions in Umbraco
 
+##[Querying](querying.md)
+How to query for published data in your Views
+
 ##[Forms](forms.md)
 How to create html forms to submit data
-
-##[Querying](querying.md)
-How to query for data in your Views

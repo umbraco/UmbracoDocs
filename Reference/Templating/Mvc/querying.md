@@ -1,7 +1,5 @@
 #Querying & Traversal
 
-**Applies to: Umbraco 4.10.0+**
-
 _This section will describe how you can render content from other nodes besides the current page in your MVC Views_
 
 ##Querying for content and media by id

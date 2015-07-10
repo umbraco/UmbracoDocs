@@ -1,7 +1,5 @@
 #Using MVC Partial Views in Umbraco
 
-**Applies to: Umbraco 4.10.0+**
-
 _This section will show you how to use MVC Partial Views in Umbraco. Please note, this is documentation relating to the use of native MVC partial views, not '[Partial View Macros](../Macros/Partial-View-Macros/index.md)'_
 
 ##Overview
@@ -98,7 +96,5 @@ The above will cache the output of your partial view for one hour (3600 seconds)
 		bool cacheByPage = false,
 		bool cacheByMember = false,
 		ViewDataDictionary viewData = null)
-
-**Important:** As of v7.2.2 caching will not occur when debug is set to true in the 'compilation' section of the web.config.
 
 So you can specify to cache by member and/or by page and also specify additional view data to your partial view. **However**, if your view data is dynamic (meaning it could change per page request) the cached output will still be returned. This same principle applies if the model you are passing in is dynamic. Please be aware of this: if you have a different model or viewData for any page request, the result will be the cached result of the first execution.
