@@ -6,17 +6,17 @@ The @ symbol is used in Razor initiate code, and tell the compiler where to star
 
 	@*Writing a value inside a html element *@
 
-	<p>@Model.Name</p>
+	<p>@Model.Content.Name</p>
 
 	@*Inside an attribute*@
-	<a href="@Model.Url">@Model.Name</a>
+	<a href="@Model.Content.Url">@Model.Content.Name</a>
 
 	@*Using it to start logical structures*@
 	@if(somethingIsTrue){
 		<p>Write stuff</p>
 	}
 
-	@foreach(var item in collection){
+	@foreach(var item in Model.Content.Children){
 		<li>@item.Name</li>
 	}
 
@@ -24,8 +24,8 @@ The @ symbol is used in Razor initiate code, and tell the compiler where to star
 Commenting your code is important, use comments to explain what the code does. `@* *@` indicates a comment, which will not be visible in the rendered output.
 
 	@*Here we check if the name is equal to foobar*@
-	@if(Model.Name == "foobar"){
-		@foreach(var child in Model.Children){
+	@if(Model.Content.Name == "foobar"){
+		@foreach(var child in Model.Content.Children){
 			@* here we write stuff for each child page *@
 			<p>write stuff</p>
 		}
@@ -47,14 +47,14 @@ If/else statements performs one task if a condition is true, and another is the 
 ##Foreach loops
 A foreach loop goes through a collection of items, typically a collection of pages and performs an action for each item
 
-	@foreach(var item in Model.Children){
+	@foreach(var item in Model.Content.Children){
 		<p>The item name is: @Item.Name</p>
 	}
-	
+
 ## Switch block
 A Switch block is used when testing a large number of conditions
 
-	@switch(Model.WeekDay){
+	@switch(Model.Content.WeekDay){
 	case "Monday":
 		"<p>It is Monday</p>;
 		break;
@@ -68,4 +68,3 @@ A Switch block is used when testing a large number of conditions
 		"<p>It's some day of the week</p>"
 		break;
 	}
-

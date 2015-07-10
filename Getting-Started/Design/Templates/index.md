@@ -63,7 +63,7 @@ When a page using the textpage template renders, the final html will be merged t
 ```
 
 ##Injecting partial template
-Another way to resuse html is to use partials - which are small reusable views which can be injected into another view.
+Another way to reuse html is to use partials - which are small reusable views which can be injected into another view.
 
 Like templates, create a partial, by clicking "partial views" and selecting create - you can then optionally use a pre-made template.
 
@@ -80,3 +80,9 @@ the created partial can now be injected into any template by using the `@Html.Pa
 <h1>My new page</h1>
 @Html.Partial("a-new-view")
 ```
+
+
+###Find More information:
+
+- [Basic Razor syntax](basic-razor-syntax.md)
+- [Rendering content](Rendering-Content/)
