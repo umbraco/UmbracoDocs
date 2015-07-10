@@ -1,7 +1,7 @@
 #Design
 
 ###[Templates](Templates/)
-How to use templates and macros in Umbraco.
+Creating, managing and reusing templates in Umbraco
 
 ###[Razor](Razor/)
 Razor is the templating language used in Umbraco.
