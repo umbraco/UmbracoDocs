@@ -5,6 +5,9 @@ _Developers' Reference primarily consists of API references of the different cor
 ##[Configuration](Config/index.md)
 Information about all of Umbraco's configuration files and options.
 
+##[IoC & Dependency Injection](using-ioc.md)
+Info about setting up IoC/Dependency Injection to work with Umbraco
+
 ##[Templates](Templating/index.md)
 
 Working with Umbraco templates: views, partial views, child actions, razor syntax, macros and working with JavaScript/Css. 
@@ -15,7 +18,7 @@ Information about the data models used to display content in Umbraco and the var
 
 ##[Routing & Controllers](Routing/index.md)
 
-
+How routing works within Umbraco and how it interacts with MVC/WebApi controllers 
 
 ##[Searching](Searching/index.md)
 
