@@ -9,9 +9,27 @@ Information about all of Umbraco's configuration files and options.
 
 Working with Umbraco templates: views, partial views, child actions, razor syntax, macros and working with JavaScript/Css. 
 
+TODO: Move all of this inside of templates
+
+###[Using Razor axes](using-razor-axes.md)
+Razor axes is a feature of DynamicNode, which allows you to query for specific parts of the content tree without using hardcoded Ids.
+
+###[Using Pluralised queries](using-pluralised-queries.md)
+Pluralised queries enables you to query and filter pages with a simple syntax.
+
+###[Using Razor functions to make recursive queries](using-razor-functions-to-make-recursive-queries.md)
+A razor function is a small, embedded method you can call inside of your razor scripts
+
+###[Using Umbraco Dictionary Items](using-dictionary-items.md)
+How to access dictionary items from Razor
+
 ##[Querying & models](Querying/index.md)
 
 Information about the data models used to display content in Umbraco and the various ways of querying it. 
+
+##[Routing & Controllers](Routing/index.md)
+
+
 
 ##[Searching](Searching/index.md)
 

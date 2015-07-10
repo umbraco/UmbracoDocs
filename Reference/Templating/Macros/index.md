@@ -22,18 +22,23 @@ All macro types will work in either MVC or WebForms templating engines
 
 Information, examples and best practices according to readability and performance in your XSLT/XPath snippets.
 
-###[Razor macros](Razor/index.md)
+## Working with macros
 
-***Razor macros have been superseded by Partial View Macros, if you are using an Umbraco version greater than 4.10+ it is recommended to use Partial View Macros***
+### Razor
 
-Introduction to razor, going through the basics of scripting in razor.
+####[Using Macro Parameters](using-macro-parameters.md)
+Using Macro parameters to pass changeable values to a Razor script to increase flexibility and reusability of the macro.
 
-##Basic Syntax:
+### Webforms
+
+TODO: Link to another page for this!
+
+####Basic Syntax:
 This will insert a macro with the alias '`YourMacroAlias`' into the template 
 
 	<umbraco:Macro Alias="YourMacroAlias" runat="server"></umbraco:Macro>
 
-##Inline macros
+####Inline macros
 Macros can also render inline code, directly in the template
 
 	<umbraco:Macro runat="server" language="cshtml">
@@ -44,12 +49,12 @@ Macros can also render inline code, directly in the template
 	</umbraco:Macro>
 
 
-##Defining Property Values
+####Defining Property Values
 This will insert a macro with the alias 'YourMacroAlias' into the template and set the macro property named 'YourPropertyName' to the value 'hello'
 
 	<umbraco:Macro Alias="YourMacroAlias" runat="server" YourPropertyName="hello"></umbraco:Macro>
 
-##Passing a value from the current page, into a macro
+####Passing a value from the current page, into a macro
 This will insert a macro with the alias 'YourMacroAlias' into the template and set the macro property named 'YourPropertyName' to the current node ID of the content node currently being executed.
 
 	<umbraco:Macro Alias="YourMacroAlias" runat="server" YourPropertyName="[#pageID]"></umbraco:Macro>
