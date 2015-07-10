@@ -1,7 +1,11 @@
 #Design
 
+<<<<<<< HEAD
 ###[Templates](Templates/)
 Creating, managing and reusing templates in Umbraco
+=======
+TODO: Need more stuff here
+>>>>>>> origin/newdocs
 
 ##[Razor](Razor/)
 

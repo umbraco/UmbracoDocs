@@ -1,15 +1,35 @@
 #Developers' Reference
+
 _Developers' Reference primarily consists of API references of the different core Umbraco APIs. In many cases, the references come with code snippets with simple examples. For a more in-depth study of the different APIs, consult the "using-umbraco" and "extending-umbraco" sections of the documentation._
 
-##[Templating](Templating/index.md)
+##[Configuration](Config/index.md)
+Information about all of Umbraco's configuration files and options.
 
-How to use **templates** and **macros**. Covers templates and macros from the basic definitions to advanced techniques and using APIs.
+##[Templates](Templating/index.md)
 
-*This section contains all of the details about both templates types: MVC & WebForms.*
+Working with Umbraco templates: views, partial views, child actions, razor syntax, macros and working with JavaScript/Css. 
 
-##[Querying](Querying/index.md)
+TODO: Move all of this inside of templates
 
-Umbraco comes with various ways of querying, filtering and searching published content for use on your website.
+###[Using Razor axes](using-razor-axes.md)
+Razor axes is a feature of DynamicNode, which allows you to query for specific parts of the content tree without using hardcoded Ids.
+
+###[Using Pluralised queries](using-pluralised-queries.md)
+Pluralised queries enables you to query and filter pages with a simple syntax.
+
+###[Using Razor functions to make recursive queries](using-razor-functions-to-make-recursive-queries.md)
+A razor function is a small, embedded method you can call inside of your razor scripts
+
+###[Using Umbraco Dictionary Items](using-dictionary-items.md)
+How to access dictionary items from Razor
+
+##[Querying & models](Querying/index.md)
+
+Information about the data models used to display content in Umbraco and the various ways of querying it. 
+
+##[Routing & Controllers](Routing/index.md)
+
+
 
 ##[Searching](Searching/index.md)
 

@@ -4,7 +4,7 @@ _Templating in Umbraco consists of 2 larger concepts, namely Templates, and Macr
 
 ##[Managing templates](managing-templates.md)
 
-Describes how to create/modify templates and describes nested templates.
+Describes how to create/modify templates.
 
 ##Template options
 

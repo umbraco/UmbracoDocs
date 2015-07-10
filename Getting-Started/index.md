@@ -40,7 +40,7 @@
 			<div class="col-xs-6">
 				<h5><a href="Setup/Install/">Install</a></h5>
 				<small>How to install Umbraco</small>
-			</div>
+			</div>			
 			<div class="col-xs-6">
 				<h5><a href="Setup/Server-Setup/">Server Setup</a></h5>
 				<small>Setting up a SQL server for your installation</small>
