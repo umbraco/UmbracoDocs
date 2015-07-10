@@ -1,6 +1,6 @@
 #Querying & Models
 
-_Overview of various ways of querying, filtering and searching published content for use on your website. 
+_Overview of various ways of querying, filtering and searching published content for use on your website._
 
 ##[IPublishedContent](IPublishedContent/index.md)
 
