@@ -55,7 +55,7 @@ First it looks (in this order) for:
 - the *umbracoUrlName* property. on the node  `content.GetPropertyValue<string>("umbracoUrlName")`
 - content.Name
 
-Then uses Umbraco string extension `ToUrlSegment()` to produce a clean segment.  Read more about the [IShortStringHelper](IShortStringHelper.md)
+Then uses Umbraco string extension `ToUrlSegment()` to produce a clean segment.  
 
     // That one is initialized by default
     public class DefaultUrlSegmentProvider : IUrlSegmentProvider

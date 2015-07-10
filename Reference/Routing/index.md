@@ -1,7 +1,8 @@
 #Routing & Controllers
 
-Pipeline
-Api Controllers
+##[Pipeline](Request-Pipeline/index.md)
+
+##Api Controllers
 
 ##[Surface Controllers](surface-controllers.md)
 What is a Surface Controller and how to use them
