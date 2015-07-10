@@ -1,14 +1,17 @@
 #Setup
-*Covers how to install and configure your Umbraco installation*
+*How to install and configure your Umbraco installation*
 
 ##[Requirements](Requirements/)
 Defines the system requirements to run Umbraco.
 
 ##[Install](Install/)
-Install umbraco 7
+Umbraco installation steps and guidelines.
+
+##[Upgrading](Upgrading/)
+Covers the steps to upgrade your copy of Umbraco to a newer version.
 
 ##[Config](Config/)
-Configure your Umbraco Installation
+How to configure your Umbraco installation. Includes information about all of Umbraco's configuration files and options.
 
 ##[Server Setup](Server-Setup/)
-Setup a server for Umbraco
+Information about server setup for Umbraco including information about permissions and load balancing.
