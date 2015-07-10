@@ -1,13 +1,16 @@
 #Getting Started
 *All the basics of using Umbraco v7. From making a local installation to extending the backend.*
 
+##Create
+
+
 <div class="row implementation">
 	<div class="col-sm-12"></div>
 </div>
 
 <div class="row">
 	<div class="col-xs-3 point">
-		
+
 	</div>
 	<div class="col-xs-3">
 		<span class="dot big icon-Wrench">
@@ -23,7 +26,7 @@
 			<span class="line h-line"></span>
 		</span>
 	</div>
-	
+
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
@@ -37,10 +40,6 @@
 			<div class="col-xs-6">
 				<h5><a href="Setup/Install/">Install</a></h5>
 				<small>How to install Umbraco</small>
-			</div>
-			<div class="col-xs-6">
-				<h5><a href="Setup/Config/">Config</a></h5>
-				<small>Finds the matching content for the request</small>
 			</div>
 			<div class="col-xs-6">
 				<h5><a href="Setup/Server-Setup/">Server Setup</a></h5>
@@ -70,7 +69,7 @@
 			<span class="line h-line"></span>
 		</span>
 	</div>
-	
+
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
@@ -78,16 +77,16 @@
 				<small>Define content entry points with document types and datatypes.</small>
 			</div>
 			<div class="col-xs-6">
-				<h5><a href="Data/Document-Types/">Document Types</a></h5>
-				<small>Content has a content type that defines its data</small>
+				<h5><a href="Data/Defining-Content/">Defining content</a></h5>
+				<small>Setting up content types, defining fields and creating your first content</small>
 			</div>
 			<div class="col-xs-6">
-				<h5><a href="Data/Data-Types/">Data Types</a></h5>
-				<small>It has a template that defines its presentation</small>
+				<h5><a href="Data/Creating-Media/">Creating media</a></h5>
+				<small>Uploading files to media library, using upload fields and image cropper</small>
 			</div>
 			<div class="col-xs-6">
-				<h5><a href="Data/Content-Entry/">Content Entry</a></h5>
-				<small>Content is created through property editors</small>
+				<h5><a href="Data/Members/">Members</a></h5>
+				<small>Using members for authentication and user profiles</small>
 			</div>
 		</div>
 	</div>
@@ -109,25 +108,34 @@
 			<span class="line h-line"></span>
 		</span>
 	</div>
-	
+
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
 				<h4 class="text-right"><a href="Design/">Design</a></h4>
 				<small>Create templates and views with your own markup and use Razor to render content.</small>
 			</div>
+
 			<div class="col-xs-6">
 				<h5><a href="Design/Templates/">Templates</a></h5>
-				<small>Mark-up in MVC templates</small>
+				<small>Creating and managing templates</small>
 			</div>
+
 			<div class="col-xs-6">
-				<h5><a href="Design/Razor/">Razor</a></h5>
-				<small>The server language in Umbraco</small>
+				<h5><a href="Design/Rendering-Content/">Rendering content</a></h5>
+				<small>How to query and render published content</small>
 			</div>
+
 			<div class="col-xs-6">
-				<h5><a href="Design/Content-Media-API/">Content API</a></h5>
-				<small>There are API’s to query media, members and content in the cache</small>
+				<h5><a href="Design/Rendering-Media/">Rendering media</a></h5>
+				<small>How to query and render media</small>
 			</div>
+
+			<div class="col-xs-6">
+				<h5><a href="Design/Stylesheets-Javascript/">Stylesheets and javascript</a></h5>
+				<small>Working with css and javascript in Umbraco's templates</small>
+			</div>
+
 		</div>
 	</div>
 </div>
@@ -147,24 +155,27 @@
 			<span class="line h-line"></span>
 		</span>
 	</div>
-	
+
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
 				<h4 class="text-right"><a href="Code/">Code</a></h4>
 			</div>
 			<div class="col-xs-6">
-				<h5><a href="Code/MVC/">MVC</a></h5>
-				<small>Umbraco is built with the .NET MVC framework</small>
+				<h5><a href="Code/Umbraco-Services/">Using Umbraco's service APIs</a></h5>
+				<small>Create and update entities in Umbraco from code</small>
 			</div>
+
 			<div class="col-xs-6">
-				<h5><a href="Code/Events/">Events</a></h5>
-				<small>Use .NET events to hook into the the backoffice processes</small>
+				<h5><a href="Code/Custom-Form/">Custom form</a></h5>
+				<small>Tutorial on how to create a form with a custom controller</small>
 			</div>
+
 			<div class="col-xs-6">
-				<h5><a href="Code/Forms-Controllers/">Forms/Controllers</a></h5>
-				<small>Create, submit and handle HTML forms with controllers</small>
+				<h5><a href="Code/Events/">Subscribing to events</a></h5>
+				<small>Using events to modify content or run custom code</small>
 			</div>
+
 		</div>
 	</div>
 </div>
