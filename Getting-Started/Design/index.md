@@ -3,6 +3,11 @@
 ###[Templates](Templates/)
 Creating, managing and reusing templates in Umbraco
 
-##[Razor](Razor/)
+##[Rendering content](Rendering-Content/)
+How to query and render published content
 
-Working with the Razor templating language, includes tutorials
+##[Rendering media](Rendering-Media/)
+How to query and render media items
+
+##[Stylesheets and javascript](Stylesheets-Javascript/)
+Working with css and javascript in Umbraco's templates

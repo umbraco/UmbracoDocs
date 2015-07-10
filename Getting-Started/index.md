@@ -40,7 +40,7 @@
 			<div class="col-xs-6">
 				<h5><a href="Setup/Install/">Install</a></h5>
 				<small>How to install Umbraco</small>
-			</div>			
+			</div>
 			<div class="col-xs-6">
 				<h5><a href="Setup/Server-Setup/">Server Setup</a></h5>
 				<small>Setting up a SQL server for your installation</small>
@@ -112,7 +112,7 @@
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
-				<h4 class="text-right"><a href="Design/">Design</a></h4>
+				<h4 class="text-right">Design</h4>
 				<small>Create templates and views with your own markup and use Razor to render content.</small>
 			</div>
 
