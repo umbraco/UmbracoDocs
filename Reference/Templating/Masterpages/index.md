@@ -42,30 +42,13 @@ This will output an `<img/>` tag when the template renders:
 
 [See the full umbraco:image reference](umbracoimage.md)
 
-##[umbraco:macro](../Macros/index.md)
+##[umbraco:macro](umbracomacro.md)
+
 The umbraco:macro element renders the out of a macro with a given alias. Attributes on the element is passed to the macro as parameters for the rendering.  In the sample below, the macro with the alias "topnavigation" is rendered, and the parameter "className" is set to "greenList" which is passed on to the script associated with the macro.
 
 	<umbraco:macro alias="topnavigation" className="greenList" runat="server" />
 
-The umbraco:macro element can also be used inline, so a macro is not required, instead, code can be inserted directly in the template.
-
-	<umbraco:Macro runat="server" language="cshtml">
-		<h1>@Model.Name</h1>
-		@foreach(var child in Model.Children){
-			<a href="@Model.Url">@Model.Name</a>
-		}
-	</umbraco:Macro>
-	
-When attributes are passed into a macro, you can use the following syntax to send data from the current state to your macro.
-
-CurrentPage property value: [#propertyAlias]
-Recursive value: [$propertyAlias]
-Cookie value: [%cookieValueKey]
-Value from request collection: [@requestValueKey]
-
-
-[See the full umbraco:macro reference](umbracomacro.md)
-    
+[See the full umbraco:macro reference](umbracomacro.md)    
     
 ##Template inheritance
 Templates can inherite other templates and uses 2 elements to merge them. `<asp:contentplaceholder>` and `<asp:content>` To connect one template with another, use the dropdownlist in Umbraco to specify the master template, this will change the template declation and make a database change.
@@ -129,7 +112,3 @@ it is possible to run C# code diretly in the template, but is not in any way rec
 			throw new Exception("Explosion!");
 		}
 	%>
-
-##client dependency
-
-
