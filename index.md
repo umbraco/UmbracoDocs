@@ -44,9 +44,6 @@
 
 ----------------
 
-##Documentation
-*We are currently in the process of moving the documentation into the new structure you can see above. Below is the old documentation structure. It is here to preserve links in forum and blog posts and for users who are familiar with the old structure.*
-
 ###[Installation](Installation/index.md)
 Describes how Umbraco is installed, using either WebMatrix, Microsoft Platform Installer, or from a zip-file.
 
