@@ -1,8 +1,6 @@
 #Web.config
 
-**Applies to: versions 7.0.0 +**
-
-_This section defines the appSetting parameters found in the web.config for versions 7+_
+_This section defines the appSetting parameters found in the web.config_
 
 ##Explicit settings
 
@@ -39,7 +37,7 @@ If you are runing multiple sites, you don't want the top level node in your Url.
 ###umbracoUseDirectoryUrls
 
 Strips `.aspx` from URLs on the frontend when set to `true`.  
-This setting is only important to older IIS configurations where extionless URLs weren't supported very well.
+This setting is only important to older IIS configurations where extension-less URLs weren't supported very well.
 
 ###umbracoTimeOutInMinutes
 
@@ -49,7 +47,7 @@ Configures the number of minutes without any requests being made before the Umbr
 
 ###umbracoDefaultUILanguage
 
-Coming soon!
+The default language to use in the back office if a user isn't explicitly assigned one. The default is English (en)
 
 ###umbracoUseSSL
 
@@ -66,15 +64,6 @@ The default value is:
 
 The value must be set to a virtual path with a prefixed tilda (~)
 
-###umbracoStorageDirectory
-
-The default value is:
-*~/App_Data*
-
-The value must be set to a virtual path with a prefixed tilda (~)
-
-It is recommended to not change this path.
-
 ###umbracoContentXMLUseLocalTemp
 
 The default value is:
@@ -83,13 +72,6 @@ The default value is:
 Generally set to 'false' but when set to 'true' the content xml file (normally stored @ ~/App_Data/umbraco.config) will be stored in the local servers' Temp (CodeGen) folder. This is handy for load balanced environments when the website is running from a central SAN based file system (non-replicated). 
 
 If you are not running a load balanced environment on a central SAN based file system (or similar) ensure that this setting remains set to 'false'.
-
-###umbracoProfileUrl
-
-The default value is:
-*'profiler'*
-
-A legacy setting used for re-routing a member profile login page.
 
 ###umbracoVersionCheckPeriod
 

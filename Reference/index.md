@@ -4,15 +4,13 @@ _Developers' Reference primarily consists of API references of the different cor
 ##[Configuration](Config/index.md)
 Information about all of Umbraco's configuration files and options.
 
-##[Templating](Templating/index.md)
+##[Templates](Templating/index.md)
 
-How to use **templates** and **macros**. Covers templates and macros from the basic definitions to advanced techniques and using APIs.
+Working with Umbraco templates: views, partial views, child actions, razor syntax, macros and working with JavaScript/Css. 
 
-*This section contains all of the details about both templates types: MVC & WebForms.*
+##[Querying & models](Querying/index.md)
 
-##[Querying](Querying/index.md)
-
-Umbraco comes with various ways of querying, filtering and searching published content for use on your website.
+Information about the data models used to display content in Umbraco and the various ways of querying it. 
 
 ##[Searching](Searching/index.md)
 
