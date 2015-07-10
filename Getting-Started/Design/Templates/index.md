@@ -80,3 +80,9 @@ the created partial can now be injected into any template by using the `@Html.Pa
 <h1>My new page</h1>
 @Html.Partial("a-new-view")
 ```
+
+
+###Find More information:
+
+- [Basic Razor syntax](basic-razor-syntax.md)
+- [Rendering content](Rendering-Content/)
