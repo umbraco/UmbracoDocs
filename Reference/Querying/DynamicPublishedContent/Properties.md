@@ -15,64 +15,14 @@ Built-in properties, which exists on all dynamic content objects by default. The
 		<h1>@CurrentPage.Parent.Name</h1>
 	}
 
-###.Parent
-Returns a dynamic object, referencing the parent of the current page. If current page is at the top of the site tree, null will be returned
-
-###.Id
-Returns the unique Id for the current content item
-
-###.Template
-Returns the Template object used by this content item.
-
-###.SortOrder
-Returns the index the page is on, compared to its siblings
-
-###.Name
-Returns the Name of the current content item
-
-###.Visible
-Returns the navigational visibility of the current item if the umbracoNaviHide property is used
-
-###.Url
-Returns the complete Url to the page
-
-###.UrlName
-Returns the Url encoded name of the page
-
-###.NodeTypeAlias
-Returns the Alias of the Document type used by this content item.
-
-###.WriterName
-Returns the name of the Umbraco back office user that performed the last update operation on the content item.
-
-###.CreatorName
-Returns the name of the Umbraco back office user that initially created the content item.
-
-###.WriterId
-Returns the Id of the Umbraco back office user that performed the last update operation to the content item.
-
-###.CreatorId
-Returns the Id of the Umbraco back office user that initially created the content item.
-
-###.Path
-Returns a comma delimited string of Node Ids that represent the path of content items back to root.
-
-###.CreateDate
-Returns the DateTime the page was created
-
-###.UpdateDate
-Returns the DateTime the page was modified
-
-###.NiceUrl
-Same as Url
-
-###.Level
-Returns the Level this content item is on
+All [standard properties](../IPublishedContent/Properties.md) that are available on `IPublishedContent` are available on `DynamicPublishedContent`
 
 -----
 
 ##Custom properties
-All content and media items also contains a reference to all the data defined by their document type
+All content and media items also contains a reference to all the data defined by their document type, 
+property acccess for custom properties is the same for built in properties using the standard 
+`object.Property` C# syntax. 
 	
 ###CurrentPage.PropertyAlias
 Returns the property matching the PropertyAlias (replace with alias of property) 
@@ -80,7 +30,7 @@ Returns the property matching the PropertyAlias (replace with alias of property)
 	@*Get the property with alias: "siteName" from the current page  *@
 	@CurrentPage.siteName
 	
-###CurrentPage._propertyAlias
+###CurrentPage._propertyAlias (recursive access)
 Returns the property matching the propertyAlias (replace with alias of property) 
 by prefixing with '_' razor will first look on the current page. If no value is defined, it will then search ancestor pages for a property matching the alias, and return a value, if a property is found.
 
@@ -134,34 +84,3 @@ For example:
 		values.Add("keywords",keywords);
 		var items = @CurrentPage.Children.Where("Name.ContainsAny(keywords)", values); 
 	}
-
----
-
-##Permissions
-The following checks are to find out if the current website user has permissions or access to the current DynamicPublishedContent.   Commonly used in navigation scripts.
-
-###.HasAccess()
-Returns a boolean value representing whether or not the current website user has permissions to access the DynamicPublishedContent.
-
-###.IsProtected()
-Returns a boolean value representing whether a node has public access permissions set.
-
----
-##Media
-
-
-###.Media(string propertyAlias[,string mediaPropertyAlias])
-When a DynamicPublishedContent contains a media picker, a media item can be returned using this method.
-
-###.UmbracoFile
-Returns the path to the file stored if the media type is using the umbracoFile property alias for the upload field
-
-###.UmbracoSize
-Returns the size of the file in KB if the media type has the umbracoSize property alias
-
-###.UmbracoWidth
-Returns the width of stored a image if the media type has the umbracoWidth property alias
-
-###.UmbracoHeight
-Returns the height of a stored image if the media type has the umbracoHeight property alias
-	

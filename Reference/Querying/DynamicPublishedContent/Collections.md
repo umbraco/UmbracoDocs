@@ -1,7 +1,11 @@
-#DynamicPublishedContent
+#IPublishedContent Collections
+
+NOTE: All methods available on IPublishedContent are also available on DynamicPublishedContent. 
+The documentation on this page consists only of the specialized methods available on DynamicPublishedContent, 
+to see all methods available for IPublishedContent, see [this documentation](../IPublishedContent/Collections.md). 
 
 ##Collections
-All collections returned by Model are of type DynamicContentList, which itself has a collection of properties.
+All collections returned by Model are of type DynamicPublishedContentList, which itself has a collection of properties.
 
 ###.[DocumentTypeAlias]s (Pluralised Collections)
 Returns the children of the current page, matching the Document type alias
@@ -14,66 +18,6 @@ Returns the children of the current page, matching the Document type alias
 
 	@var page = CurrentPage.HomePages.First()
 
-
-###.Children
-Returns a collection of items just below the current content item
-
-	<ul>
-		@foreach(var item in CurrentPage.Children){
-			<li><a href="@item.Url">@item.Name</a></li>
-		}
-	</ul>
-
-
-###.Ancestors
-Returns all ancestors of the current page (parent page, grandparent and so on)
-
-	<ul>
-		@*Order items by their Level*@
-		@foreach(var item in CurrentPage.Ancestors.OrderBy("Level")){
-			<li><a href="@item.Url">@item.Name</a></li>
-		}
-	</ul>
-<span id="ancestorsorself"></span>
-###.AncestorsOrSelf
-Returns a collection of all ancestors of the current page (parent page, grandparent and so on), and the current page itself
-
-	@* Get the top item in the content tree, this will always be the Last ancestor found *@
-	var websiteRoot = CurrentPage.AncestorsOrSelf.Last();
-
-
-###.Descendants
-Returns all descendants of the current page (children, grandchildren etc)
-
-	<ul>
-		@* Filter collection by the document type alias *@
-		@foreach(var item in CurrentPage.Descendants.Where("NodeTypeAlias = @0", "newsItem")){
-			<li><a href="@item.Url">@item.Name</a></li>
-		}
-	</ul>
-
-###.DescendantsOrSelf
-Returns all descendants of the current page (children, grandchildren etc), and the current page itself
-
-	<ul>
-		@* Filter collection by the document type alias *@
-		@foreach(var item in CurrentPage.DescendantsOrSelf.Where("NodeTypeAlias = @0", "newsItem")){
-			<li><a href="@item.Url">@item.Name</a></li>
-		}
-	</ul>
-
-
-###.XPath(string XPath)
-Returns a collection of items that match the XPath expression specified.
-
-	@* select all the newsitems that have more than 0 pictures attached *@
-	@foreach(var item in @CurrentPage.XPath("//NewsItem[count(.//Pictures) > 0]"))
-	{
-    		@item.Name
-	}
-
-###.GetChildrenAsList
-Returns a `DynamicPublishedContentList` of `DynamicPublishedContent` of the child content items
 
 -----
 

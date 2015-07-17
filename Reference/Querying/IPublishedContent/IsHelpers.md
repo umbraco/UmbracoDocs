@@ -1,5 +1,5 @@
-#DynamicPublishedContent IsHelpers
-The IsHelper methods are a set of extension methods for DynamicPublishedContent to 'help' perform quick conditional queries against DynamicPublishedContent nodes in a collection.
+#IPublishedContent IsHelpers
+The IsHelper methods are a set of extension methods for IPublishedContent to help perform quick conditional queries against IPublishedContent nodes in a collection.
 
 IsHelper methods all work the same, and have 3 overloads. They're basically ternary operators, but work a little nicer in that they're easy to embed in properties and quicker to write as you don't need so many brackets to make Razor understand them.
 
@@ -8,10 +8,11 @@ The general use IsHelper is to allow you to dynamically inject class names and s
 ---
 
 ##How to use
-To use an IsHelper you need to be iterating over a collection of DynamicPublishedContents.
+To use an IsHelper you need to be iterating over a collection of IPublishedContent.
 
 	<ul>
-	@foreach(var item in CurrentPage.Children){
+	@foreach(var item in CurrentPage.Children)
+	{
 		<li class="@item.IsFirst("first","not-first")">@item.Name</li>
 	}
 	</ul>
@@ -20,7 +21,8 @@ Is helpers work like ternary operators. The example above uses the `.IsFirst()` 
 
 IsHelpers can also return simple boolean values.
 
-	@if(item.IsFirst()){
+	@if(item.IsFirst())
+	{
 		<p>Extra info for this item</p>
 	}
 
@@ -59,17 +61,17 @@ Test if current node position is even
 ###.IsOdd([string valueIfTrue][,string valueIfFalse])
 Test if current node position is odd
 
-###.IsEqual(DynamicPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
+###.IsEqual(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 Tests if the current node in your iteration is equivalent (by Id) to another node
 
-###.IsDescendant(DynamicPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
+###.IsDescendant(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 Tests if the current node in your iteration is a descendant of another node
 
-###.IsDescendantOrSelf(DynamicPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
+###.IsDescendantOrSelf(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 Tests if the current node in your iteration is a descendant of another node or is the node
 
-###.IsAncestor(DynamicPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
+###.IsAncestor(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 Tests if the current node in your iteration is an ancestor of another node
 
-###.IsAncestorOrSelf(DynamicPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
+###.IsAncestorOrSelf(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 Tests if the current node in your iteration is an ancestor of another node or is the node
