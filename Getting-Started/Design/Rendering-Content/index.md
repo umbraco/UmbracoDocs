@@ -7,7 +7,7 @@ Values of the current page can be rendered in 2 different ways, either by using 
 
 ```
 <h1>Hello @Umbraco.field("pageName")</h1>
-<p>@Umbraco.field("bodyText")</p>
+<p>@Umbraco.Field("bodyText")</p>
 ```
 There is a dialog (click ![Button](images/button.png)) on the backoffice template editor which can help you pick values and select common modifications:
 
@@ -15,10 +15,6 @@ There is a dialog (click ![Button](images/button.png)) on the backoffice templat
 
 ##Rendering a field with Model
 The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however simply want to render value "as-is" you can use the @Model.Content property of the view. For example:
-
-    @Model.Content.Properties["bodyContent"].Value
-
-Or alternatively:
 
     @Model.Content.GetPropertyValue("bodyContent")
 

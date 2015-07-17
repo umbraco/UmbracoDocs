@@ -119,11 +119,19 @@ Get an overview of how the Umbraco pipeline is structured. See what happens from
 				<h4><a href="Query-Data/">Query Data</a></h4>
 			</div>
 			<div class="col-xs-6">
-				<h5><a href="Query-Data/UmbracoHelper/">Content/Media</a></h5>
+				<h5><a href="../../Reference/IPublishedContent/">IPublishedContent</a></h5>
+				<small>IPublishedContent is the underlying model used in all Umbraco views</small>
+			</div>
+			<div class="col-xs-6">
+				<h5><a href="../../Reference/DynamicPublishedContent/">DynamicPublishedContent</a></h5>
+				<small>The dynamic version of IPublishedContent that can be used in all Umbraco views</small>
+			</div>
+			<div class="col-xs-6">
+				<h5><a href="../../Reference/UmbracoHelper/">Content/Media</a></h5>
 				<small>Use UmbracoHelper to query published media and content</small>
 			</div>
 			<div class="col-xs-6">
-				<h5><a href="Query-Data/MembershipHelper/">Members</a></h5>
+				<h5><a href="../../Reference/MembershipHelper/">Members</a></h5>
 				<small>This section covers the MembershipHelper</small>
 			</div>
 		</div>
