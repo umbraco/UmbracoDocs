@@ -1,10 +1,7 @@
 #Membershiphelper
 
-_MembershipHelper is a general helper class for access asp.net membership data, as well as Umbraco Member data, which are stored in a format similiar to Umbraco content and media_
-
-`MembershipHelper` also has a variety of helper methods that are useful when working in your views, controllers and webforms classes.
-
-`MembershipHelper` is also available from within [Partial View Macros](../../Templating/Macros/Partial-View-Macros/index.md) which is why Partial View Macros are the recommended macro format (which work in both MVC and WebForms).
+_`MembershipHelper` is a helper class for accessing member data in the form of `IPublishedContent`. 
+`MembershipHelper` has a variety of helper methods that are useful when working in your views, controllers and webforms classes._
 
 ##How to reference MembershipHelper?
 When working in templating, this helper will automatically be there for you to use as `@Members` which means you conveniently in your templates easily can access member data:

@@ -41,18 +41,18 @@ Get an overview of how the Umbraco pipeline is structured. See what happens from
 		<div class="row explain">
 			<div class="col-xs-12">
 				<h4 class="text-right"><a href="Routing/">Routing</a></h4>
-			</div>
-			<div class="col-xs-6">
-				<h5><a href="Routing/MVC/">MVC</a></h5>
-				<small>hits the <a href="">mvc controller</a> or a <a href="">custom controller</a></small>
-			</div>	
+			</div>			
 			<div class="col-xs-6">
 				<h5><a href="Routing/Pipeline/">Pipeline</a></h5>
-				<small>Goes through the pipeline</small>
+				<small>Find document with the request pipeline</small>
 			</div>
 			<div class="col-xs-6">
-				<h5><a href="Routing/Routing/">Routing</a></h5>
-				<small>This section will describe how Umbraco Api controllers are routed and how to retreive their URLs</small>
+				<h5><a href="Routing/MVC/">Render Controller</a></h5>
+				<small>Match an MVC controller to handle the request</small>
+			</div>
+			<div class="col-xs-6">
+				<h5><a href="Routing/Routing/">Auto-routed Controllers</a></h5>
+				<small>How routing and URLs work for Umbraco WebApi and Surface Controllers</small>
 			</div>
 		</div>
 	</div>
@@ -119,11 +119,19 @@ Get an overview of how the Umbraco pipeline is structured. See what happens from
 				<h4><a href="Query-Data/">Query Data</a></h4>
 			</div>
 			<div class="col-xs-6">
-				<h5><a href="Query-Data/UmbracoHelper/">Content/Media</a></h5>
+				<h5><a href="../Reference/Querying/IPublishedContent/">IPublishedContent</a></h5>
+				<small>IPublishedContent is the underlying model used in all Umbraco views</small>
+			</div>
+			<div class="col-xs-6">
+				<h5><a href="../Reference/Querying/DynamicPublishedContent/">DynamicPublishedContent</a></h5>
+				<small>The dynamic version of IPublishedContent that can be used in all Umbraco views</small>
+			</div>
+			<div class="col-xs-6">
+				<h5><a href="../Reference/Querying/UmbracoHelper/">UmbracoHelper</a></h5>
 				<small>Use UmbracoHelper to query published media and content</small>
 			</div>
 			<div class="col-xs-6">
-				<h5><a href="Query-Data/MembershipHelper/">Members</a></h5>
+				<h5><a href="../Reference/Querying/MembershipHelper/">Members</a></h5>
 				<small>This section covers the MembershipHelper</small>
 			</div>
 		</div>

@@ -1,10 +1,13 @@
 #Design
 
 ###[Templates](Templates/)
-How to use templates and macros in Umbraco.
+Creating, managing and reusing templates in Umbraco
 
-###[Razor](Razor/)
-Razor is the templating language used in Umbraco.
+##[Rendering content](Rendering-Content/)
+How to query and render published content
 
-###[Content/Media API](Content-Media-API/)
-Working with content and media using the Umbracos own API
+##[Rendering media](Rendering-Media/)
+How to query and render media items
+
+##[Stylesheets and javascript](Stylesheets-Javascript/)
+Working with css and javascript in Umbraco's templates

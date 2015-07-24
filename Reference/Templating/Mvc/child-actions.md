@@ -1,7 +1,5 @@
 #Using MVC Child Actions in Umbraco
 
-**Applies to: Umbraco 4.10.0+**
-
 _This section will demonstrate how to use MVC Child Actions when rendering a page in Umbraco_ 
 
 ##What is an MVC Child Action?

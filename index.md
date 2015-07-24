@@ -60,7 +60,7 @@ Cheatsheets for easy overview of different areas like the Razor API and Views sy
 Documentation for the Umbraco add-ons 'Forms' and 'Courier'
 
 ###[Extending Umbraco](Extending-Umbraco/index.md)
-Documentation on how to extend umbraco with your own editors, trees, sections, and how to distribute those extensions as packages. **(coming soon)**
+Documentation on how to extend umbraco with your own editors, trees, sections, and how to distribute those extensions as packages. 
 
 ###[Development Guidelines](Development-Guidelines/index.md)
 How to work with the Umbraco codebase.

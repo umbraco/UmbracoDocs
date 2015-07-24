@@ -112,7 +112,7 @@
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
-				<h4 class="text-right"><a href="Design/">Design</a></h4>
+				<h4 class="text-right">Design</h4>
 				<small>Create templates and views with your own markup and use Razor to render content.</small>
 			</div>
 
@@ -159,8 +159,9 @@
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
-				<h4 class="text-right"><a href="Code/">Code</a></h4>
+				<h4 class="text-right">Code</h4>
 			</div>
+
 			<div class="col-xs-6">
 				<h5><a href="Code/Umbraco-Services/">Using Umbraco's service APIs</a></h5>
 				<small>Create and update entities in Umbraco from code</small>

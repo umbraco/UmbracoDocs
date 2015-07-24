@@ -4,30 +4,23 @@ _UmbracoHelper is the unified way to work with published content/media on your w
 
 UmbracoHelper also has a variety of helper methods that are useful when working in your views, controllers and webforms classes.
 
-UmbracoHelper is also available from within [Partial View Macros](../../Templating/Macros/Partial-View-Macros/index.md) which is why Partial View Macros are the recommended macro format (which work in both MVC and WebForms).
-
-
 ##How to reference UmbracoHelper?
 
 Nearly all of Umbraco's base classes expose an intance of UmbracoHelper. If you are using MVC Views or Partial View Macros you can reference UmbracoHelper with the syntax: `@Umbraco`
 
-If you are using SurfaceControllers, RenderMvcControllers, or any controller inheriting from UmbracoController, these all expose an UmbracoHelper via the `Umbraco` property. 
-
-For WebApi, the base class `Umbraco.Web.WebApi.UmbracoApiController` exposes this property too.
+If you are using SurfaceControllers, RenderMvcControllers, UmbracoApiControllers, or any controller inheriting from UmbracoController, these all expose an UmbracoHelper via the `Umbraco` property. 
 
 If you are using WebForms and using controls you can inherit from : `Umbraco.Web.UI.Controls.UmbracoControl` or `Umbraco.Web.UI.Controls.UmbracoUserControl` both of which expose many handy Umbraco object including an UmbracoHelper via the `Umbraco` property.
 
 For webservices and http handlers, these base classes expose UmbracoHelper via the `Umbraco` property: `Umbraco.Web.WebServices.UmbracoHttpHandler`, `Umbraco.Web.WebServices.UmbracoWebService` 
 
-Lastly, if you need an UmbracoHelper in a custom class, service, view, etc... you can easily create one using this syntax:
+Lastly, if you need an UmbracoHelper in a custom class, service, view, etc... you can create one using this syntax:
 
 	var umbracoHelper = new Umbraco.Web.UmbracoHelper(Umbraco.Web.UmbracoContext.Current);
 
 ##IPublishedContent
 
 UmbracoHelper will expose all content in the form of `IPublishedContent`. To get a reference to the currently executing content item from the UmbracoHelper, use `UmbracoHelper.AssignedContentItem`
-
-**Are you using [MVC](../../Templating/Mvc/index.md)?** UmbracoHelper will expose the currently executing page model as per above, but when using MVC this model is instantly available in your views via your [view's model](../../Templating/Mvc/views.md).
 
 All samples below represent how you work with `UmbracoHelper` in Razor, except for the `@` syntax, it is the exact same with your work with this helper inside controllers or UserControls.
 
