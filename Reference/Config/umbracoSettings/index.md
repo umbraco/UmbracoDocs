@@ -454,6 +454,8 @@ The scheduledTasks element consist of the following attributes:
 
 **baseUrl**: **(v6.2.5 & v7.1.9+)** This is optional and should only be used if the base URL cannot be detected. This might occur if your hosting setup has some special proxies setup. See this issue for more details: http://issues.umbraco.org/issue/U4-5391
 
+Note: this setting is **obsolete** as of 7.2.7, use umbracoApplicationUrl instead (see Web.Routing below).
+
 For each task you want to run you should simply just add a **`<task>`** element.
 
 The task elements consist of the following attributes:
@@ -555,3 +557,25 @@ The providers section configures the different providers in use in Umbraco. Curr
             <DefaultBackofficeProvider>UsersMembershipProvider</DefaultBackofficeProvider>
         </users>
     </providers>
+
+##Web.Routing
+
+This section configures...
+
+**trySkipIisCustomErrors**: defines the value of Response.TrySkipIisCustomErrors when an error (404, 400, 500...) is encountered. You probably want it to be true in order to prevent IIS from displaying its own 404 or 500 pages, and instead have your own page displayed.
+
+**internalRedirectPreservesTemplate**: when true, an internal redirect does not reset the alternative template, if any.
+
+**disableAlternativeTemplates**: when true, the entire alternative templates feature of Umbraco is disabled.
+
+**disableFindContentByIdPath**: when true, urls such as /1234 do *not* find content with ID 1234.
+
+**umbracoApplicationUrl**: defines the Umbraco application url, ie how the server should reach itself. By default, Umbraco will guess that url from the first request made to the server. Use that setting if the guess is not correct (because you are behind a load-balancer, for example). Format is: "http://www.mysite.com/umbraco" ie it needs to contain the scheme (http/https), complete hostname, and umbraco path.
+
+    <web.routing
+        trySkipIisCustomErrors="false"
+        internalRedirectPreservesTemplate="false" 
+        disableAlternativeTemplates="false"
+        disableFindContentByIdPath="false"
+        umbracoApplicationUrl=""
+    />
