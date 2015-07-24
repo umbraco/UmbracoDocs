@@ -73,8 +73,8 @@
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
-				<h4 class="text-right"><a href="Data/">Data</a></h4>
-				<small>Define content entry points with document types and datatypes.</small>
+				<h4 class="text-right">Data</h4>
+				<small>Using the backoffice to create data</small>
 			</div>
 			<div class="col-xs-6">
 				<h5><a href="Data/Defining-Content/">Defining content</a></h5>
