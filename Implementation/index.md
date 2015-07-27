@@ -7,53 +7,18 @@ Get an overview of how the Umbraco pipeline is structured. See what happens from
 
 <div class="row">
 	<div class="col-xs-3">
-		<small class="text-center">User Request</small>
-		<span class="dot small">
-			<span class="line v-line"></span>
-		</span>
-
-	</div>
-	
-	<div class="col-xs-9">
-		<div class="row explain">
-		</div>
-	</div>
-</div>
-
-<div class="row">
-	<div class="col-xs-3">
-		<span class="dot big icon-Server-alt">
+		<span class="dot big icon-download">
 			<span class="line v-line top"></span>
 			<span class="line v-line"></span>
 			<span class="line h-line"></span>
 		</span>
-		<span class="dot small">
-			<span class="line v-line"></span>
-			<span class="line h-line"></span>
-		</span>
 	</div>
-	
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
-				<h4><a href="Query-Data/">Querying Published Data</a></h4>
-			</div>
-			<div class="col-xs-6">
-				<h5><a href="../Reference/Querying/IPublishedContent/">IPublishedContent</a></h5>
-				<small>IPublishedContent is the underlying model used in all Umbraco views</small>
-			</div>
-			<div class="col-xs-6">
-				<h5><a href="../Reference/Querying/DynamicPublishedContent/">DynamicPublishedContent</a></h5>
-				<small>The dynamic version of IPublishedContent that can be used in all Umbraco views</small>
-			</div>
-			<div class="col-xs-6">
-				<h5><a href="../Reference/Querying/UmbracoHelper/">UmbracoHelper</a></h5>
-				<small>Use UmbracoHelper to query published media and content</small>
-			</div>
-			<div class="col-xs-6">
-				<h5><a href="../Reference/Querying/MembershipHelper/">Members</a></h5>
-				<small>This section covers the MembershipHelper</small>
-			</div>
+				<h4 class="text-right">User Request</h4>
+				<small>A front-end request is made...</small>
+			</div>			
 		</div>
 	</div>
 </div>
@@ -79,6 +44,7 @@ Get an overview of how the Umbraco pipeline is structured. See what happens from
 		<div class="row explain">
 			<div class="col-xs-12">
 				<h4 class="text-right"><a href="Routing/">Routing</a></h4>
+				<small>Matching a URL to content</small>
 			</div>			
 			<div class="col-xs-6">
 				<h5><a href="Routing/Pipeline/">Pipeline</a></h5>
@@ -86,11 +52,7 @@ Get an overview of how the Umbraco pipeline is structured. See what happens from
 			</div>
 			<div class="col-xs-6">
 				<h5><a href="Routing/MVC/">Render Controller</a></h5>
-				<small>Match an MVC controller to handle the request</small>
-			</div>
-			<div class="col-xs-6">
-				<h5><a href="Routing/Routing/">Auto-routed Controllers</a></h5>
-				<small>How routing and URLs work for Umbraco WebApi and Surface Controllers</small>
+				<small>Match an MVC controller and action to handle the request</small>
 			</div>
 		</div>
 	</div>
@@ -98,12 +60,26 @@ Get an overview of how the Umbraco pipeline is structured. See what happens from
 
 <div class="row">
 	<div class="col-xs-3">
-		<span class="dot big icon-Folders">
+		<span class="dot big icon-article">
 			<span class="line v-line top"></span>
 			<span class="line v-line"></span>
 			<span class="line h-line"></span>
 		</span>
-		<span class="dot small">
+	</div>
+	<div class="col-xs-9">
+		<div class="row explain">
+			<div class="col-xs-12">
+				<h4 class="text-right">Execute request</h4>
+				<small>The MVC Action and View are executed</small>
+			</div>			
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-3">
+		<span class="dot big icon-Server-alt">
+			<span class="line v-line top"></span>
 			<span class="line v-line"></span>
 			<span class="line h-line"></span>
 		</span>
@@ -116,36 +92,42 @@ Get an overview of how the Umbraco pipeline is structured. See what happens from
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
-				<h4 class="text-right"><a href="Content-Definition/">Working With Content</a></h4>
+				<h4><a href="Query-Data/">Querying Published Data</a></h4>
+				<small>Working with published data during request execution</small>
 			</div>
 			<div class="col-xs-6">
-				<h5><a href="Content-Definition/Documents/">Documents</a></h5>
-				<small>Content has a content type that defines its data</small>
+				<h5><a href="../Reference/Querying/IPublishedContent/">IPublishedContent</a></h5>
+				<small>IPublishedContent is the underlying model used in all Umbraco views</small>
 			</div>
 			<div class="col-xs-6">
-				<h5><a href="Content-Definition/Media/">Media</a></h5>
-				<small>It has a template that defines its presentation</small>
+				<h5><a href="../Reference/Querying/DynamicPublishedContent/">DynamicPublishedContent</a></h5>
+				<small>The dynamic version of IPublishedContent that can be used in all Umbraco views</small>
 			</div>
 			<div class="col-xs-6">
-				<h5><a href="Content-Definition/Members/">Members</a></h5>
-				<small>Based on the schema a template is loaded</small>
+				<h5><a href="../Reference/Querying/UmbracoHelper/">UmbracoHelper</a></h5>
+				<small>Use UmbracoHelper to query published media and content</small>
 			</div>
 			<div class="col-xs-6">
-				<h5><a href="Content-Definition/Users/">Users</a></h5>
-				<small>Based on the schema a template is loaded</small>
+				<h5><a href="../Reference/Querying/MembershipHelper/">Members</a></h5>
+				<small>This section covers the MembershipHelper</small>
 			</div>
 		</div>
 	</div>
 </div>
 
-
-
 <div class="row">
 	<div class="col-xs-3">
-		<span class="dot small last">
+		<span class="dot big icon-download">
 			<span class="line v-line top"></span>
+			<span class="line v-line"></span>
+			<span class="line h-line"></span>
 		</span>
-		<small class="text-center">Content Delivery</small>
-
+	</div>
+	<div class="col-xs-9">
+		<div class="row explain">
+			<div class="col-xs-12">
+				<h4 class="text-right">Content is delivered</h4>
+			</div>			
+		</div>
 	</div>
 </div>
