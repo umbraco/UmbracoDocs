@@ -1,6 +1,6 @@
-#Built-in Umbraco v7+ Property Editors
+#Built-in Umbraco Property Editors
 
-This page contains a list of all the built-in Umbraco  v7+ property editors and a short description of what they do:
+This page contains a list of all the built-in Umbraco property editors and a short description of what they do:
 
 ##[Checkbox list](CheckBox-List.md)
 Displays a list of preset values as a list of checkbox controls
@@ -38,10 +38,10 @@ Adds an upload field, which allows documents or images to be uploaded to Umbraco
 Used mainly with container Media Types, the Folder Browser displays a list of thumbnail images.
 
 ##[Grid Layout](Grid-Layout.md)
-New to v7.2, gives editors a grid layout editor which allows them to insert different types of content in a predefined layout.
+Gives editors a grid layout editor which allows them to insert different types of content in a predefined layout.
 
 ##[Image Cropper](Image-Cropper.md)
-Used to crop and resize images to predefined sizes. Available from V7.1
+Used to crop and resize images to predefined sizes. 
 
 ##Label
 Label is a non-editable control, can only be used to display a pre-set text.
