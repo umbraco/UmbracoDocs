@@ -11,7 +11,7 @@ Document Types can define entire pages or more limited content that can be reuse
 ####Properties
 Each field on a Document Type is called a property. A property is given a name, an alias (used to output the properties content in a template) and a type. The type determines what type of data the property will store and the input method. There are a wide range of Data Types available out of the box (textstring, richtext, media picker and so forth) and you can customize and add additional Data Types in the __Developer__ section und __Data Types__.
 
-Additional information on Data Types can be found in the [Developer Reference](# ).
+[Additional information on Data Types can be found in here](../Data-Types/index.md)
 
 ##Creating a Document Type
 A Document Type is created in the settings section using the Document Type editor.
@@ -88,5 +88,4 @@ Go to the __Content__ section and click the menu icon next to the *Home* node an
 Document Types are very flexible and can be used in a myriad of ways from defining a piece of reusable content or an entire page, to acting as a container or repository.
 
 ##More information
-* [Document Types](../../../Using-Umbraco/Backoffice-Overview/Document-Types/)
-* [Data Types](../../../Using-Umbraco/Backoffice-Overview/Data-Types/)
+* [Data Types](../Data-Types/index.md)
