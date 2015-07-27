@@ -112,7 +112,7 @@
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
-				<h4 class="text-right"><a href="Setup/">Design</a></h4>
+				<h4 class="text-right"><a href="Design/">Design</a></h4>
 				<small>Create templates and views with your own markup and use Razor to render content.</small>
 			</div>
 
