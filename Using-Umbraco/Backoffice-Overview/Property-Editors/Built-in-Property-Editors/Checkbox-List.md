@@ -1,40 +1,44 @@
-#Checkbox list
+#Checkbox List
 
 `Returns: Comma Separated String`
 
-Displays a list of preset values as a list of checkbox controls. The preset values are modified in the developer section under "data types" / checkbox list where new items can be added. The text saved is a comma separated string of text values. 
+Displays a list of preset values as a list of checkbox controls. The text saved is a comma separated string of text values.
 
-NOTE: Unlike other data types, the Prevalue IDs are not directly accessible in xslt or razor
+NOTE: Unlike other property editors, the Prevalue IDs are not directly accessible in Razor
 
 ##Data Type Definition Example
 
-![Approved Color Data Type Definition](images/CheckBox-List-DataType.jpg?raw=true)
+![True/Checkbox List Definition](images/wip.png)
 
-##Content Example
+##Content Example 
 
-![Approved Color Data Type Definition](images/CheckBox-List-Content.jpg?raw=true)
+![Checkbox List Example](images/wip.png)
 
-##Razor Macro (DynamicNode) Example
+##MVC View Example
 
-	@{                                                   
-	  if (Model.HasValue("fruitList")){                                                        
-	    <ul>                                                        
-	      @foreach(var item in Model.GetProperty("fruitList").Value.Split(',')) { 
+###Typed:
+
+	@{
+	  if (Model.Content.HasValue("superHeros")){                                                     
+	       <ul>                                                        
+	      @foreach(var item in Model.Content.GetPropertyValue<string>("superHeros").Split(',')) { 
 	        <li>@item</li>
 	      }
-	    </ul>                                                                                        
+	    </ul>                                                                                       
 	  }
 	}
 
-##XSLT Macro Example
+###Dynamic: 
 
-	<xsl:if test="string-length($currentPage/fruitList) > 0">  
-	  <xsl:variable name="items" select="umbraco.library:Split($currentPage/fruitList,',')" />  
-	  <ul>  
-	  <xsl:for-each select="$items//value">
-	    <li>
-	      <xsl:value-of select="current()"/>
-	    </li>
-	  </xsl:for-each>
-	  </ul>    
-	</xsl:if>
+	@{
+	    if (CurrentPage.HasValue("superHeros"))
+	    {
+	        <ul>
+	            @foreach (var item in CurrentPage.superHeros.Split(','))
+	            {
+	                <li>@item</li>
+	            }
+	        </ul>
+	    }
+	}
+    

@@ -1,16 +1,16 @@
 #Content Picker
 
-`Returns: Node ID`
+`Returns: Node Id`
 
-The content picker opens a simple modal to pick a specific page from the content structure. The value saved is the selected nodes ID. 
+The content picker opens a panel to pick a specific page from the content structure. The value saved is the selected nodes ID.
 
 ##Data Type Definition Example
 
-![Content Picker Data Type Definition](images/Content-Picker-DataType.jpg?raw=true)
+![Content Picker Data Type Definition](images/wip.png)
 
-##Content Example
+##Content Example 
 
-![Content Picker Example](images/Content-Picker-Content.jpg?raw=true)
+![Content Picker Content](images/wip.png)
 
 ##MVC View Example
 
@@ -23,7 +23,7 @@ The content picker opens a simple modal to pick a specific page from the content
 	  }
 	}
 
-###Dynamic: 
+###Dynamic:                              
 
 	@{
 	  if (CurrentPage.HasValue("contentPicker")){
@@ -31,20 +31,4 @@ The content picker opens a simple modal to pick a specific page from the content
 	    <a href="@node.Url">@node.Name</a>
 	  }
 	}
-
-##Razor Macro (DynamicNode) Example
-
-	@{
-	  if (Model.HasValue("contentPicker")){
-	    var node = Library.NodeById(Model.contentPicker);
-	    <a href="@node.Url">@node.Name</a>
-	  }
-	}
-
-##XSLT Macro Example
-
-	<xsl:if test="number($currentPage/contentPicker) > 0">  
-	  <a href="{umbraco.library:NiceUrl($currentPage/contentPicker)}">
-	    <xsl:value-of select="umbraco.library:GetXmlNodeById($currentPage/contentPicker)/@nodeName"/>
-	  </a>
-	</xsl:if>
+	

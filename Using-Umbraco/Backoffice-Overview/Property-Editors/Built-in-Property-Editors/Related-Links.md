@@ -1,8 +1,8 @@
 #Related Links
 
-`Returns: Xml`
+`Returns: JArray`
 
-This datatype allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
+Related Links allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
 
 ##Data Type Definition Example
 
@@ -10,81 +10,39 @@ This datatype allows an editor to easily add an array of links. These can either
 
 ##Content Example 
 
-![Related Links Content](images/Related-Links-Content.jpg)
+![Media Picker Content](images/Related-Links-Content.jpg)
 
-##MVC View Example (using DynamicXml)
+##MVC View Example
 
 ###Typed:
 
-	@using Umbraco.Core.Dynamics;
-	@{
-	    if(Model.Content.HasValue("relatedLinks")){
-	        var relatedLinks = Model.Content.GetPropertyValue<DynamicXml>("relatedLinks");
-	        if (relatedLinks.Any()){
-	            <ul>
-	            @foreach (dynamic item in relatedLinks)
-	            {                   
-	                var linkUrl = (item.type.Equals("internal")) ? Umbraco.NiceUrl(int.Parse(item.link)) : item.link;                                     
-	                var linkTarget = (item.newwindow.Equals("1")) ? " target=\"_blank\"" : string.Empty;
-	                <li><a href="@linkUrl"@Html.Raw(linkTarget)>@item.title</a></li>                    
-	            }  
-	            </ul>             
-	        }
-	    }   
-	}
+	@using Newtonsoft.Json.Linq
+    @{      
+        if (Model.Content.HasValue("relatedLinks") && Model.Content.GetPropertyValue<string>("relatedLinks").Length > 2)
+        {
+            <ul>
+                @foreach (var item in Model.Content.GetPropertyValue<JArray>("relatedLinks"))
+                {
+                    var linkUrl = (item.Value<bool>("isInternal")) ? Umbraco.NiceUrl(item.Value<int>("internal")) : item.Value<string>("link");
+                    var linkTarget = item.Value<bool>("newWindow") ? "_blank" : null;
+                    <li><a href="@linkUrl" target="@linkTarget">@(item.Value<string>("caption"))</a></li>
+                }
+            </ul>
+        }
+    }  
 
-###Dynamic: 
-
-	@{
-		if(CurrentPage.HasValue("relatedLinks") && CurrentPage.relatedLinks.Any()){
-        	<ul>
-            @foreach (var item in CurrentPage.relatedLinks){
-            	var linkUrl = (item.type.Equals("internal")) ? Umbraco.NiceUrl(int.Parse(item.link)) : item.link;                                     
-                var linkTarget = (item.newwindow.Equals("1")) ? " target=\"_blank\"" : string.Empty;
-                <li><a href="@linkUrl"@Html.Raw(linkTarget)>@item.title</a></li>    
-            }   
-            </ul>            
-        }   
-	}   
-
-##Razor Macro (DynamicXml) Example
-
-	@{
-	    if (Model.HasValue("relatedLinks") && Model.relatedLinks.Any()){
-	        <ul>
-	        @foreach (var item in Model.relatedLinks){
-	            var linkUrl = (item.type.Equals("internal")) ? umbraco.library.NiceUrl(int.Parse(item.link)) : item.link;                                     
-	            var linkTarget = (item.newwindow.Equals("1")) ? " target=\"_blank\"" : string.Empty;
-	            <li><a href="@linkUrl"@Html.Raw(linkTarget)>@item.title</a></li>
-	        }
-	        </ul>       
-		}    
-	}
-
-
-##XSLT Macro Example
-
-	<xsl:if test="count($currentPage/relatedLinks/links/link) > 0">
-	    <ul>
-	        <xsl:for-each select="$currentPage/relatedLinks/links/link">
-	            <li><a>
-	            <xsl:choose>
-	              <xsl:when test="./@type = 'internal'">
-	                <xsl:attribute name="href">
-	                  <xsl:value-of select="umbraco.library:NiceUrl(./@link)"/>
-	                </xsl:attribute>
-	              </xsl:when>
-	              <xsl:otherwise>
-	                <xsl:attribute name="href">
-	                  <xsl:value-of select="./@link"/>
-	                </xsl:attribute>
-	              </xsl:otherwise>
-	            </xsl:choose>
-	            <xsl:if test="./@newwindow = '1'">
-	              <xsl:attribute name="target">_blank</xsl:attribute>
-	            </xsl:if>
-	            <xsl:value-of select="./@title"/>
-	            </a></li>
-	        </xsl:for-each>
-	    </ul>
-	</xsl:if>
+###Dynamic:       
+                       
+    @{
+        if (CurrentPage.HasValue("relatedLinks") && CurrentPage.relatedLinks.ToString().Length > 2)
+        {
+            <ul>
+                @foreach (var item in CurrentPage.relatedLinks)
+                {
+                    var linkUrl = (bool)item.isInternal ? Umbraco.NiceUrl(item.Value<int>("internal")) : item.link;
+                    var linkTarget = (bool)item.newWindow ? "_blank" : null;
+                    <li><a href="@linkUrl" target="@linkTarget">@item.caption</a></li>
+                }
+            </ul>
+        }
+    }    

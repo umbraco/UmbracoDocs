@@ -1,80 +1,137 @@
 #Image Cropper
 
-`Returns: XML`
+`Returns: JSON`
 
-The Image Cropper property editor displays an editor to allow backoffice users to position pre-defined crops on uploaded image. The crops are saved to disk within the media item folder path if the save setting is checked.
+Returns a path to an image, along with information about focal point and available crops
 
 ##Settings
 
-###Property alias
-Defines the [Upload](Upload.md) property alias of the file onto which the cropper should be activated. On the default Image Media Type this is 'umbracoFile'.  This property must exist on either the Media type or Document type for the cropper to function.
-
-###Save crop images
-Defines if the generated crop images are saved to disk or created on demand, when checked the settings will offer the option to alter the output quality of cropped images, the field expects a numeric value between 0 - 100. E.g. 90 = 90% compared to original image quality. It is recommended that this is checked for performance.
-
-###Show Label
-Defines if the property name is displayed to the user when selecting the crops.
-
-###Crops
-This area allows you to define multiple crops which the backoffice user is presented to select on the media item.  There are controls on the right to allow you to rearrange the order (Up, Down) and remove crop definitions. You cannot edit crop definitions but you can delete and recreate with different settings using the same Name.
-
-The following settings are used for a individual crop definition:
-
-- Name - the name of the crop (this is important and used when outputting the crop)
-- Target width - The width of the crop to save in pixels. If a value entered is greater than the original width the crop will still be saved and the output file will be scaled up causing loss of quality.
-- Target height - The height of the crop to save in pixels. If a value entered is greater than the original height the crop will still be saved and the output file will be scaled up causing loss of quality.
-- Default position - The default position of the crop marks when creating crops e.g. you may want to offset the crop so it is taken from the centre of the image.
-- Keep aspect - When checked will maintain the aspect ratio of the image when creating crops and will crop based on the longest dimension.
-
-When creating a crop definition you must click "Add" to add the definition to the list and then click the save button on the toolbar otherwise your crop definition will be lost.
+###Prevalues
+You can add, edit & delete crop presets the cropper UI can use.
 
 ##Data Type Definition Example
 
-![Image Cropper Property Editor Definition](images/Image-Cropper-DataType.jpg?raw=true)
+![Image Cropper Data Type Definition](images/Image-Cropper/datatype.png)
 
-##Media Type Definition Example
+##Content Example 
 
-The property alias which references the Image Cropper property editor will be output in the XML, in the example below this is "newsCrops".
+Provides a UI to upload an image, set a focal point on the image, and optionally crop and scale the image to predefined crops.
+So by default, images in the cropper will be shown based on a set focal point, and only use specific crops if they are available.
 
-![Image Cropper Property Editor Definition](images/Image-Cropper-MediaType.jpg?raw=true)
+The cropper comes in 3 modes:
 
-##Media Example
+- Uploading an image
+- Setting a focal point
+- Cropping the image to predefined crops
 
-The crops defined for the Media Type are shown below the image, clicking on a crop selector shows the resizable area on top of the image and can be moved and resized. As shown below if the source image does not have the required size for a defined crop the crop selector goes red instead of green.
+###Uploading images
+The editor exposes a simple drop area for files. Click it to upload an image.
+![Image Croppper Upload](images/Image-Cropper/upload.png)
 
-**Note:** When uploading a image into a Media Type or Document Type for the first time, the item needs to be reloaded before the crop selector can be shown, this can be done by clicking the item again in the tree or by clicking the save button twice.
+###Set focal point
+By default, the cropper allows the editor to set a focal point on the uploaded image.
+Below the image, all the preset crops are shown to give the editor a preview of what
+the image will look like to the end user. 
 
-![Image Cropper Property Editor Definition](images/Image-Cropper-Media.jpg?raw=true)
+![Image Croppper Focal point](images/Image-Cropper/focalpoint.png)
 
-##XML Media Type Example
+###Crop and resize
+If needed, the editor can crop the image to specific crop presets, to ensure the right part and size of the image
+is shown for a specific crop.
 
-    <newsImage id="1065" version="b32f5be6-de98-4dbf-af00-b208e5c153f8" parentID="1063" level="2" writerID="0" nodeType="1062" template="0" sortOrder="1" createDate="2012-07-09T13:08:30" updateDate="2012-07-09T13:08:30" nodeName="News Image 1" urlName="newsimage1" writerName="admin" nodeTypeAlias="newsImage" path="-1,1063,1065">
-        <umbracoFile>/media/193/tulips.jpg</umbracoFile>
-        <umbracoWidth>500</umbracoWidth>
-        <umbracoHeight>375</umbracoHeight>
-        <umbracoBytes>183121</umbracoBytes>
-        <umbracoExtension>jpg</umbracoExtension>
-        <newsCrops>
-            <crops date="2012-07-09T13:08:41">
-                <crop name="thumbCrop" x="68" y="0" x2="443" y2="375" url="/media/193/tulips_thumbCrop.jpg"/>
-                <crop name="mainCrop" x="62" y="0" x2="437" y2="375" url="/media/193/tulips_mainCrop.jpg"/>
-            </crops>
-        </newsCrops>
-    </newsImage>
+![Image Croppper Crop](images/Image-Cropper/crop.png)
 
-##XSLT Media Type Example
 
-      <xsl:variable name="mediaItem" select="umbraco.library:GetMedia(1065, 0)"/>
-      <xsl:if test="count($mediaItem/newsCrops/crops/crop) > 0">
-        <img src="{$mediaItem/newsCrops/crops/crop[@name = 'thumbCrop']/@url}" />
-      </xsl:if>
+##Sample code
 
-##Razor (DynamicMedia & DynamicXml) Media Type Example
+Image Cropper comes with a simple to use API to generate crop urls, or you can access its raw data directly as a
+dynamic object.
+
+
+
+####MVC View Example to output a "banner" crop from a cropper property with the alias "image"
     
-    @{
-      var mediaItem = Model.MediaById(1065);
-      if (@mediaItem.newsCrops.Count() > 0)
-      {
-          <img src="@mediaItem.newsCrops.Find("@name", "thumbCrop").url" />      
-      }
+    //show the crop preset "banner"
+    <img src='@CurrentPage.GetCropUrl("image", "banner")' />
+
+    //or from specific node:
+    <img src='@Umbraco.Content(1234).GetCropUrl("image", "banner")' />
+
+    //or from typed content:
+    <img src='@Model.Content.GetCropUrl("image", "banner")' />
+
+
+####MVC View Example to output create custom crops - in this case forcing a 300 x 400 px image
+            
+        @if (CurrentPage.HasValue("image"))
+        {
+            <img src='@Model.Content.GetCropUrl(propertyAlias: "image", height:300, width:400)'/>
+        }
+
+####Media example to output a "banner" crop from a cropper property with alias "umbracoFile"
+
+The cropped URL can also be found for media in a similar way:
+
+    @Umbraco.Media(1234).GetCropUrl("banner")
+    @Umbraco.TypedMedia(1234).GetCropUrl("banner")
+
+###Data returned
+
+The cropper returns a dynamic object, based on a json structure like this: 
+
+                            
+    {
+      "focalPoint": {
+        "left": 0.23049645390070922,
+        "top": 0.27215189873417722
+      },
+      "src": "/media/SampleImages/1063/pic01.jpg",
+      "crops": [
+        {
+          "alias": "banner",
+          "width": 800,
+          "height": 90
+        },
+        {
+          "alias": "highrise",
+          "width": 80,
+          "height": 400
+        },
+        {
+          "alias": "thumb",
+          "width": 90,
+          "height": 90
+        }
+      ]
     }
+
+So you can access each property directly:
+
+    <img src='@CurrentPage.image.src'/>
+
+Or iterate through them:
+                       
+    @foreach(var crop in CurrentPage.image.crops){
+        <img src="@CurrentPage.GetCropUrl("image", crop.alias)">    
+    }     
+
+
+##Powered by ImageProcessor
+[ImageProcessor](http://imageprocessor.org/) is an amazing project for modifying and processing images in a simple an efficient manner.
+
+We bundle this library in Umbraco 7.1 and you can therefore take full advantage of all its features out-of-the-box, like sharping, blurring, cropping, rotating and so.
+
+####MVC View Exemple on how to blur a crop
+
+    <img src='@CurrentPage.GetCropUrl("image", "banner")&blur=11,sigma-1.5,threshold-10' />
+
+Using ImageProcessors built-in [gaussianblur](http://imageprocessor.org/imageprocessor-web/imageprocessingmodule/gaussianblur.html)    
+
+##Upload property replacement
+
+You can replace an upload property with a cropper, existing images will keep returning their current path and work unmodified with the cropper 
+applied. The old image will even be available in the cropper, so you can modify it if you ever need to. 
+
+However, be aware that a cropper returns a dynamic object when saved, so if you perform any sort of string modifications on your upload property value, 
+you will most likely see some errors in your templates / macros.
+
