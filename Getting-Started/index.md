@@ -77,7 +77,7 @@
 				<small>Using the backoffice to create data</small>
 			</div>
 			<div class="col-xs-6">
-				<h5><a href="Data/Defining-Content/">Defining content</a></h5>
+				<h5><a href="Data/Defining-content/">Defining content</a></h5>
 				<small>Setting up content types, defining fields and creating your first content</small>
 			</div>
 			<div class="col-xs-6">
