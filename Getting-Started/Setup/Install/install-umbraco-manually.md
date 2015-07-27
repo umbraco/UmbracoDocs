@@ -31,27 +31,27 @@ Once WebMatrix is installed, you can simply right-click the folder in which you 
 ###Using IIS
 If you want to use IIS to host your Umbraco site, you can use a hostname that points to your local machine.
 
-	*Note: We strongly recommend using IIS7(.5). While IIS6 may work, this guide will cover IIS7 only. IIS7 is available in Windows 7 and Windows Server 2008.*
+*Note: We strongly recommend using IIS7(.5). While IIS6 may work, this guide will cover IIS7 only. IIS7 is available in Windows 7 and Windows Server 2008.*
 	
-	Create a new website in IIS by right-clicking *Sites* and choosing "Add site...". The site name can be anything you want.
+Create a new website in IIS by right-clicking *Sites* and choosing "Add site...". The site name can be anything you want.
 	
-	You will then be asked what kind of application this is, make sure to pick (or create) an application pool that uses ASP.NET 4.0 as its basis. (The default ASP.NET 4.0 is configured perfectly for this, so we recommend you pick that one.) Use the "Select.." button to pick a different application pool. You shouldn't have to change the other settings.
+You will then be asked what kind of application this is, make sure to pick (or create) an application pool that uses ASP.NET 4.0 as its basis. (The default ASP.NET 4.0 is configured perfectly for this, so we recommend you pick that one.) Use the "Select.." button to pick a different application pool. You shouldn't have to change the other settings.
 	
-	Finally fill in the hostname. In this example we'll use *MyUmbracoSite.local*.
+Finally fill in the hostname. In this example we'll use *MyUmbracoSite.local*.
 	
-	![Configure new website in IIS](images/Manual/2012-03-12_223022.png?raw=true)
+![Configure new website in IIS](images/Manual/2012-03-12_223022.png?raw=true)
 	
- 	As a final step, you will need to add the *MyUmbracoSite.local* hostname to your hosts file. If you haven't altered your host file before you will need to make sure that your current user has write permissions to the hosts file. The hosts file typically lives in C:\Windows\System32\drivers\etc\hosts (the file has no extension).
+ As a final step, you will need to add the *MyUmbracoSite.local* hostname to your hosts file. If you haven't altered your host file before you will need to make sure that your current user has write permissions to the hosts file. The hosts file typically lives in C:\Windows\System32\drivers\etc\hosts (the file has no extension).
 	
-	To enable you to write to the file, right-click it and click "Properties". Go to the "Security" tab and find the current logged in user, click the user and then the "Edit..." button. Check the *Allow Modify* permission there.
+To enable you to write to the file, right-click it and click "Properties". Go to the "Security" tab and find the current logged in user, click the user and then the "Edit..." button. Check the *Allow Modify* permission there.
 	
-	*Note: **this is not without risk**. If your user account can edit the hosts file, malware can do the same under your account and attempt to change the hosts file to redirect well known sites to malicious websites. Always make sure to revert the security settings if you want to be safe!*
+*Note: **this is not without risk**. If your user account can edit the hosts file, malware can do the same under your account and attempt to change the hosts file to redirect well known sites to malicious websites. Always make sure to revert the security settings if you want to be safe!*
 	
-	Add a line to the hosts file that points the new hostname to the local machine:
+Add a line to the hosts file that points the new hostname to the local machine:
 	
 	`127.0.0.1 MyUmbracoSite.local`
 	
-	You can now go to http://MyUmbracoSite.local and the install wizard should appear.
+You can now go to http://MyUmbracoSite.local and the install wizard should appear.
 
 *Please note: You will not be able to run Umbraco from Visual Studio's built-in webserver Casini. You do, however, have the option to configure VS to use IIS Express or IIS if needed.*
 
