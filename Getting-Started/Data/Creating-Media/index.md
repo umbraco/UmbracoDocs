@@ -93,6 +93,4 @@ If you select an image that has been uploaded to this folder you'll see the full
 
 
 ##More information
-* [Media](../../../Using-Umbraco/Backoffice-Overview/Media/)
-* [Data Types](../../../Using-Umbraco/Backoffice-Overview/Data-Types/)
-* [Image Cropper](../../../Using-Umbraco/Backoffice-Overview/Data-Types/Image-Cropper/)
+* [Data Types](../Data-Types/index.md)
