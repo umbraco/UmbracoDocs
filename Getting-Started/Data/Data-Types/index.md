@@ -1,7 +1,18 @@
 #Data-Types#
+
+##What is a data type?
+
+//TODO: Fill this in
+
 ##Creating a new Data-Type
 *Data types are created in the Developer Section of the backoffice*
+
+//TODO: Fill this in
+
 ###Default Data-Types##
+
+Here's a list of some of the default Data Type's that come installed with Umbraco. There are plenty more that you can create based on the installed Property Editors.
+
 ####Approved Color####
 Adds a list of approved colours which can be selected by clicking. The approved colours need to be added 
 as hex values (without the #) in the prevalues field. i.e. cccccc
@@ -67,8 +78,6 @@ Stylesheets
 --h2
 </pre>
 
-####Simple Editor####
-A very scaled down editor which only has bold, italic and link - It does not render the HTML live like the richtext editor, but shows the raw HTML and simply surrounds the selected text with the limited HTML tag buttons at the top.
 ####Tags####
 A textbox that allows you to use use multiple tags on a docType - This is what is used on Blog4Umbraco and is perfect if you need to categorise data.  You can specify a TAG Group when creating new versions of this datatype, in case you need to use TAGS on different sections of your site (i.e  News, Article, Events).
 ####Textbox multiple####
@@ -77,42 +86,10 @@ A simple textarea control to import text
 A normal html input text field
 ####True/False####
 A simple checkbox which saves either 0 or 1, depending on the checkbox being checked or not. A common use for instance is to create a property with the special alias 'umbracoNaviHide' and the Data-Type True/False to enable editors to hide nodes from appearing in a navigation menu.
-####Ultimate picker####
 ####Upload####
 Adds an upload field, which allows documents or images to be uploaded to umbraco. This does nto add them to the media library, they are simply added to the document data.
-##Custom Data-Types##
-If what you're after is not included in the Default Data-Types, you can create a custom Data-Type. Go to the Developer section and right click the Data Types node to create a new custom Data-Type. Reference your custom Data-Type to a [Property Editor](../Property-Editors/index.md). Now you can select your custom Data-Type in the Type dropdown of a Document Type property.
-Since Umbraco v4.8 some components from the popular uComponents package have been built in to the core of Umbraco. To take advantage of these new Property Editors, create a custom Data type:
-#### Multi-Node Tree Picker
-The multi-node tree picker data type allows your content editor to choose multiple nodes in the content or media trees to be saved with the current document type. This is useful for all sorts of situations such as relating a page to numerous other pages, creating a list of images/files from the media section, etc...
-The current version supports:
-
-* Rendering either the Media or Content tree
-* Choosing a starting node ID for the tree
-* An XPath filter to match the nodes that should, OR should not be clickable/selectable in the tree
-* Thumbnail preview for selected images when working with the media tree
-* Thumbnail preview can be enabled/disabled
-* Set a maximum number of nodes to be selected (by default this is unlimited)
-* Information tooltip display for each selected item which can be toggled on/off
-* The tooltip display contains a link to edit the selected item
-* The option to save as valid XML data for easy retrieval even in XSLT, OR saving as CSV (comma separated values)
-* Drag/Drop sorting of selected nodes
-
-
 ####Multiple Textstring####
 The Multiple Textstring data-type enables a content editor to make a list of text items. For best use with an unordered-list.
 ####Slider####
 The Slider data-type makes use of the jQuery UI Slider plugin; which makes selected elements into sliders. The slider can be moved with the mouse or the arrow keys.
-####XPath CheckBoxList####
-Uses an XPath expression to select nodes from the content tree to use as the checkbox options. The advantage of using XPath to define the nodes to use is that it allows a granular selection throughout the whole tree.
-
-Can use $currentPage and also $parentPage within the XPath expression (including use within any XPath predicates). ($parentPage allows the expression to be evaluated when the current node is unpublished, and the XPath expression depends on finding nodes based on a current ancestor).
-
-The property value stored can be a CSV string or an XML fragment of Node Ids or Node names.
-
-####XPath DropDownList####
-Uses an XPath expression to select nodes from the content tree to use as the dropdown options. The advantage of using XPath to define the nodes to use is that it allows a granular selection throughout the whole tree.
-
-The property value stored can be the Node Id or Node name.
-
  
