@@ -2,7 +2,7 @@
 
 _Covers the steps to upgrade your copy of Umbraco to a newer version._
 
-##[In general](general.md)
+##[General upgrade instructions](general.md)
 General upgrade instructions which must be followed for each upgrade. Usually, upgrading involves just copying a few files and updating config files.
 
 ##[Version specific](version-specific.md)

@@ -1,5 +1,5 @@
 # Converting Masterpages to Views
-Covers how you convert common syntax in Umbraco 4 Masterpages to Umbraco 4.11+ Views.
+Covers how you convert common syntax in Umbraco 4 Masterpages to Umbraco Views.
 
 ## Page declaration and reference to parent template  ##
 **Masterpage**

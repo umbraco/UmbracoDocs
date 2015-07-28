@@ -71,11 +71,11 @@
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
-				<h4 class="text-right">Data</h4>
+				<h4 class="text-right"><a href="Data/index.md">Data</a></h4>
 				<small>Using the backoffice to create data</small>
 			</div>
 			<div class="col-xs-6">
-				<h5><a href="Data/Defining-Content/">Defining content</a></h5>
+				<h5><a href="Data/Defining-content/">Defining content</a></h5>
 				<small>Setting up content types, defining fields and creating your first content</small>
 			</div>
 			<div class="col-xs-6">
@@ -110,7 +110,7 @@
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
-				<h4 class="text-right">Design</h4>
+				<h4 class="text-right"><a href="Design/">Design</a></h4>
 				<small>Create templates and views with your own markup and use Razor to render content.</small>
 			</div>
 
@@ -166,7 +166,7 @@
 			</div>
 
 			<div class="col-xs-6">
-				<h5><a href="Code/Custom-Form/">Custom form</a></h5>
+				<h5><a href="Code/Custom-Form/">Creating forms</a></h5>
 				<small>Tutorial on how to create a form with a custom controller</small>
 			</div>
 
