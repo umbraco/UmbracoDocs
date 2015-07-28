@@ -21,4 +21,4 @@ that you are not using an Umbraco base class, you can access the ApplicationCont
 There are quite a few different services exposed on the ServiceContext such as: ContentService, MediaService, MemberService, etc... 
 There is a service for each type of data in Umbraco.
 
-[See here For a full list of services available](../../../Reference/Management/Services/)  
+[See here For a full list of services available](../../Reference/Management/Services/)  
