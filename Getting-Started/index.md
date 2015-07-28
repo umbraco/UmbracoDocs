@@ -73,7 +73,7 @@
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
-				<h4 class="text-right">Data</h4>
+				<h4 class="text-right"><a href="Data/index.md">Data</a></h4>
 				<small>Using the backoffice to create data</small>
 			</div>
 			<div class="col-xs-6">
