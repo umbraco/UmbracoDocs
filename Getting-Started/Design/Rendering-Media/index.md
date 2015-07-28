@@ -15,3 +15,24 @@ A standard image in the media library is based on the Mediatype `image` which pr
 
 <img src="@file" height="@height" />
 ```
+##Rendering media item with Image Cropper
+If the Image Cropper is used as the upload field (umbracoFile) on a media type you can get the cropped image by calling the `GetCropUrl` function and referencing a crop alias.
+
+```
+@{
+    var mediaItem = Umbraco.Media(1234);
+    var croppedUrl = mediaItem.GetCropUrl("cropAlias");
+}
+
+<img src="@croppedUrl" />
+```
+If you want the original, uncropped image.
+
+```
+@{
+  var mediaItem = Umbraco.Media(1234);
+  var file = mediaItem.umbracoFile.src;
+}
+
+<img src="@file" />
+```
