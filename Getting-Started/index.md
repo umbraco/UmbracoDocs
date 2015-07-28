@@ -168,7 +168,7 @@
 			</div>
 
 			<div class="col-xs-6">
-				<h5><a href="Code/Custom-Form/">Custom form</a></h5>
+				<h5><a href="Code/Custom-Form/">Creating forms</a></h5>
 				<small>Tutorial on how to create a form with a custom controller</small>
 			</div>
 
