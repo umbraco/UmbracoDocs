@@ -25,7 +25,7 @@ This section also decribes the types of Controllers used in Umbraco, how they wo
 
 Details on how to implement search capabilities for your Umbraco website using Examine, which is a Lucene-based search engine for Umbraco.
 
-##[Events](Events-v6/index.md)
+##[Events](Events/index.md)
 
 Event model covering all major aspects of the system for triggering custom code or automation.  
 

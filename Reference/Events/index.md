@@ -2,7 +2,7 @@
 
 Umbraco uses .Net events to allow you to hook into the workflow processes for the backoffice. For example you might want to execute some code every time a page is published. Events allow you to do that.
 
-## [Application Startup & event registration](/Documentation/Reference/Events-v6/Application-Startup.md)
+## [Application Startup & event registration](Application-Startup.md)
 
 Umbraco allows you to execute code during application startup. This is also the correct place to register for many other types of events including the ability to bind to HttpApplication events. 
 
