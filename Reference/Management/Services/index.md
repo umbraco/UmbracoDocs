@@ -1,4 +1,6 @@
-#Developers Reference
+#Services Reference
+
+_The services layer of the Umbraco API is used to interact with persisted data, all services can be accessed via the ServiceContext_
 
 The intended audience for these reference pages are .net developers, it is assumed the reader already has a knowledge of the basics of Umbraco and knows .net & c#.
 
@@ -33,7 +35,5 @@ Service for doing CRUD type operations for `MemberGroup` objects / Member Roles.
 Service for doing CRUD type operations for `Relation` and `RelationType` objects.
 
 ##[SectionService](SectionService.md)
-
-**Introduced in Umbraco 7.0.0+**
 
 Service for doing CRUD type operations for `Section` objects
