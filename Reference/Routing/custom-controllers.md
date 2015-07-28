@@ -69,7 +69,8 @@ In an example above we reference that you can use the following sytnax once you'
 	//Do some stuff here, the return the base Index method
     return base.Index(model);
 
-This will work but the object (model) that you pass to the `Index` method must be an instance of `Umbraco.Web.Models.RenderModel` which will probably not be the case if you have a custom model. So to return a custom model to the current Umbraco template, we need to use different syntax. Here's an example:
+This will work but the object (model) that you pass to the `Index` method must be an instance of `Umbraco.Web.Models.RenderModel` which might not be the case if you have a custom model. 
+So to return a custom model to the current Umbraco template, we need to use different syntax. Here's an example:
 
 	public class HomeController : Umbraco.Web.Mvc.RenderMvcController
 	{
@@ -79,37 +80,12 @@ This will work but the object (model) that you pass to the `Index` method must b
 			var myCustomModel = new MyCustomModel();
 
 			//TODO: assign some values to the custom model...
-			
-			//now we need to return the current template with our custom model        
-			//NOTE: This example shows 2 different syntaxes, one that works with 
-			// Umbraco 4.10 and another that works with 
-			// Umbraco 4.11+
-			
-			//Example for 4.10:
-			
-			//get the template name from the route values:
-			var template = ControllerContext.RouteData.Values["action"].ToString();
-			//return an empty content result if the template doesn't physically 
-			//exist on the file system
-			if (!EnsurePhsyicalViewExists(template))
-			{
-				return Content("");
-			}
-			//return the current template with an instance of MyCustomModel
-			return View(template, myCustomModel);
 
-
-			//Example for 4.11+
-			
-			//simply use the protected method CurrentTemplate<T>, this does all of the
-			//above for you... much nicer.
 			return CurrentTemplate(myCustomModel);
 	    }
 	}
 
 ##Change the default controller
-
-**Applies to: Umbraco 6.1.0+**
 
 In some cases you might want to have your own custom controller execute for all MVC requests when you haven't hijacked a route. This is possible by assigning your own default controller during application startup.
 
@@ -117,23 +93,7 @@ The code to do this is simple, an example to register a default controller of ty
 
 	DefaultRenderMvcControllerResolver.Current.SetDefaultControllerType(typeof(MyCustomUmbracoController));
 
-You can execute this code during application startup before resolution is frozen. The 2 most common ways of doing this is:
-
-####Global.asax
-
-In your global asax, you can override the `OnApplicationStarting` method and put this custom code in that method. Example:
-
-    public class MyApplication : UmbracoApplication
-	{
-        protected override void OnApplicationStarting(object sender, EventArgs e)
-        {
-            DefaultRenderMvcControllerResolver.Current.SetDefaultControllerType(typeof(MyCustomUmbracoController));
-            base.OnApplicationStarting(sender, e);
-        }
-	}
-
-####Using ApplicationEventHandler
-
+You can execute this code during application startup before resolution is frozen. The most common way of doing this is using an `ApplicationEventHandler`.
 You can create an instance of `Umbraco.Core.ApplicationEventHandler` and override the method `ApplicationStarting`. Example:
 
     public class CustomApplicationEventHandler : ApplicationEventHandler
@@ -141,6 +101,5 @@ You can create an instance of `Umbraco.Core.ApplicationEventHandler` and overrid
         protected override void ApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
         {
             DefaultRenderMvcControllerResolver.Current.SetDefaultControllerType(typeof(MyCustomUmbracoController));
-            base.ApplicationStarting(umbracoApplication, applicationContext);
         }
     }
