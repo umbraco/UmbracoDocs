@@ -2,8 +2,6 @@
 *All the basics of using Umbraco v7. From making a local installation to extending the backend.*
 
 ##Create
-
-
 <div class="row implementation">
 	<div class="col-sm-12"></div>
 </div>
