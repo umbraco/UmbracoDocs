@@ -1,7 +1,7 @@
 #Defining content
-*A fundamental principle in Umbraco is that you cannot create content without defining it first. Here you'll find an explanation of how content is defined and quick guide for your first go (based on an empty installation).*
+Before a piece of content can be created it needs to be defined. That is why, when opening a blank installation of Umbraco, it is not possible to create content in the __Content__ section.
 
-Before a piece of content can be created it needs to be defined. That is why, when opening a blank installation of Umbraco, it is not possible to create content in the __Content__ section. All content needs a blueprint that holds information about what kind of data can be stored on the content node, which editors are used, how it is organized, where in the structure it is allowed and so forth. This blueprint or definition is called a Document Type.
+All content needs a blueprint that holds information about what kind of data can be stored on the content node, which editors are used, how it is organized, where in the structure it is allowed and so forth. This blueprint or definition is called a Document Type.
 
 ##What is a Document Type?
 In it's most basic form a document type is a form containing fieldsets (or tabs) where you can apply rules about where the content can be created, which template(s) are allowed, backoffice icon and so forth.
@@ -11,81 +11,79 @@ Document Types can define entire pages or more limited content that can be reuse
 ####Properties
 Each field on a Document Type is called a property. A property is given a name, an alias (used to output the properties content in a template) and a type. The type determines what type of data the property will store and the input method. There are a wide range of Data Types available out of the box (textstring, richtext, media picker and so forth) and you can customize and add additional Data Types in the __Developer__ section und __Data Types__.
 
-[Additional information on Data Types can be found in here](../Data-Types/index.md)
-
 ##Creating a Document Type
 A Document Type is created in the settings section using the Document Type editor.
 
 Go to the __Settings__ section in the backoffice. On the __Document Types__ node click the menu icon (or rightclick the node) to bring up the context menu. Here choose __Create new Document Type__.
 
-###Defining the root node
-First we're prompted to give the Document Type a name. This first Document Type will be the root node for our content so let's name it "Layout".
-
 ![Creating a Document Type](images/Document-Type-Create.jpg)
+
+###Naming Document Types
+Naming your Document Types is important in two ways. Good names make it easier to get an to find and edit your Document Types and the name will be displayed to the backoffice user when creating a piece of content based on this Document Type.
 
 __Create matching template__ will automatically create a template (can be found under __Templates__ in the __Settings__ sections) that will be assigned as the default template for the document type.
 
-Click the __Create__ and you will be taken to the Document Type editor.
+Click the __Create__ button to add the Document Type to the Document Type tree.
 
-We'll use this Document Type as a container for all pages and content and the matching template will be the master template for for HTML. So just a couple of things to do before making the text page Document Type. On the __Info__ tab click __Choose__ next to __Icon__ and on the right pane search for Home and select the icon. This icon will be used in the content tree, choosing apropriate icons for your content nodes is a good way to give editors a better overview of the content tree.
+##The Document Type editor
+You are now taken to the Document Type editor that is used to define and edit the Document Type. It consists of four tabs: __Info__, __Structure__, __Generic Properties__ and __Tabs__.
 
+###Info
 ![Choosing an icon for the Document Type](images/Document-Type-Choosing-Icon.jpg)
+On the __Info__ tab you can edit basic information about this Document Type and choose which templates are allowed.
 
-Go to the __Structure__ tab and tic the __Allow at root__ checkbox and save the Document Type by clicking save in the top right corner.
+* __Name:__ The name of the Document Type is shown in the Document Type tree and also when users create content based on this Document Type.
+* __Alias:__ The alias is used to reference the Document Type in code. Be carefull editing this on existing sites as all references will need to be updated accordingly.
+* __Icon:__ The icon displayed in the Content tree. Using descriptive icons is a great way to improve the overview in the content tree.
+* __Description:__ The descripition is shown to backoffice users when creating content based on this Document Type.
+* __Allowed templates__ will be available to the backoffice user on the Properties tab in the Content section.
+* __Default template:__ When creating a content node this template will be used.
 
+###Structure
 ![Allow at root](images/Document-Type-Allow-At-Root.jpg)
+The Structure tab is where you control the hierarchy of your site. Structure allows you to determine which content can be nested as children to the one you are creating.
 
-###Creating the root node
-Now go to the __Content section__, click on the menu icon next to __Content__ and Select the Layout Document Type. We'll name it home and click the __Save and Publish__ button.
+* __Allow at root:__ If this is checked you can create content based on this Document Type at the root of the content tree. A root node usualy holds basic information about the site. You can uncheck this after a root node has been created to disable adding additional nodes at this level.
+* __Enable list view:__ Child nodes under this Document Type will not be shown in the content tree but instead presented in a sortable list view complete with real time search. The *List view - Content* Data Type will be used as a default. When you save the Document Type you will have the option to edit this or create a custom list view. [configure the list view](#). //TODO: List view documentation.
+* __Allowed child node type:__ Choose what content can be created under nodes based on the current Document Type. This is where you define the actual structure  of your content tree. *Remember to uncheck a child node type if you want to restrict editors from creating additional nodes*
+* __Document Type Compositions__: Inherit tabs and properties from selected Document Types
 
-![First content created](images/Document-Type-Root-Node-Created.jpg)
+###Generic Properties
+![Adding a property](images/Document-Type-Adding-Properties.jpg)
+Create. edit and organize properties for this Document Type. Inherited Properties can not be edited.
 
-*Pro tip: Go back to the __Settings__ section and select the Layout Document Type. Go to the __Structure__ tab and uncheck __Allow at root__. This will prevent editors from creating multiple root nodes from the Document Type.*
+#####Adding properties
+To add a property to the Document Type select __Click here to add new property__.
 
-###Defining child nodes
-Next up we'll create a simple text page Document Type that will be used for subpages on the site.
+* __Name:__ The name  of the property will be shown in the Content section.
+* __Alias:__ Used to reference the property in your templates.
+* __Type:__ Selecting the type will decide the input method for this property. Ie *Richtext editor*, *Date Picker*, *checkbox* and so forth. You can edit or create new types in the __Developer Section__ under the __Data Type__ node.
+* __Tab:__ Place the property on a tab. Additional tabs can be created on the __Tabs__ tab. If the property is placed on the Generic Properties tab it will show on the Properties tab in the content view.
+* __Mandatory:__ Making the property mandatory means the content cannot be created/saved if the property has no value.
+* __Validation:__ Add a regular expression to validate the property upon save.
+* __Description:__ The description will be displayed below the property name in the Content section. A good description is important to the editing experience.
 
-Create a new Document Type and name it "Text page".
+#####Organizing properties
+Organize properties with drag and drop. If multiple tabs exists it is possible to drag properties between the different tabs. Inherited properties are not shown, re-ordering these must be done on the Document Type where they were created.
 
-Now we have the option to select a Master Document type, which means the document type will inherit properties from the master document type and be placed as a child node in the document type tree. This can be useful but with as of Umbraco 7.2 Document Type inheritance should be done with compositions (found on the __Structure__ tab). We'll leave it on __None__ and go ahead and create the Document Type.
+If an inherited tab has the same name as an existing tab they will be merged in the content section.
 
-Click __Choose__ next to __Icon__ and search for "document" and select the single page icon.
-
-####Adding tabs
-Before we start adding properties to the Document Type it is a good idea to create a tab to put these on otherwise all the properties will be shown in the default __Properties__ tab along with all the default properties (id, last edited, template and so forth).
-
-For the textpage we'll create a Content tab. Go to the __Tabs__ tab and type "Content" in the __New tab__ field and click the __New tab__ button. The new tab will be shown under __Name and sort order__.
-
+###Tabs
 ![Creating tabs](images/Document-Type-Create-Tab.jpg)
 
-If you have multiple tabs you can order them with drag and drop (the handle on the left) or by entering numeric sort order value in the sort order field.
+Create, edit and organize tabs to enhance the editing experience.
 
-####Adding properties
-Now that we have created our text page Document Type it is time to add some properties.
-Go to the __Generic properties__ tab and click __Add new property__.
+#####New Tab
+A new tab is created by entering a name into the input field and pressing the __New tab__ button.
 
-Give the property a name, the name will be shown to the editor so make relevant and easy to understand.Notice the alias is automatically generated based on the name. We'll name this "Body text".  
-
-In the __Type__ dropdown select __Richtext editor__.
-
-You can select which tab the property is placed on by selecting it from the __Tab__ dropdown. If no custom tabs have been made the property will be added to __Generic properties__. Select the Content tab.
-
-![Adding a property](images/Document-Type-Adding-Properties.jpg)
-
-Checking the __Mandatory__ checkbox makes the property mandatory and the content cannot be saved if no value is entered (into the Richtext editor in this case). You have the option to add additional validation by adding a regular expression in the __Validation__ field.
-
-The __Description field__ is the help text that will be shown to the editor in the back office.
-
-###Creating child nodes
-Before we can create a text page in the __Content__ section, we need to allow the text page Document Type to be created as a child node to the Home node. Select the Layout Document Type and go to the __Structure__ tab. Check the Text Page next to __Allow child node types__ and save the Document Type.
-
-![Allowing child nodes](images/Document-Type-Allow-Child-Node.jpg)
-
-Go to the __Content__ section and click the menu icon next to the *Home* node and select the Text page Document Type. We'll name the page "About us". We now have a very basic content structure.
-
-![Basic content structure](images/Document-Type-Child-Node-Created.jpg)
-
-Document Types are very flexible and can be used in a myriad of ways from defining a piece of reusable content or an entire page, to acting as a container or repository.
+#####Name and sort order
+Renaming a tab is done simply by changing the name in the input field and saving the Document Type. To change the order of tabs use the drag and drop handle to the left or enter a numeric value in the second input field. Tabs will be displayed from left (lowest value) to right (highest value) in the content section.
 
 ##More information
 * [Data Types](../Data-Types/index.md)
+
+##Tutorials
+* [Creating a basic website with Umbraco](#)
+
+##Umbraco.tv
+* [Document Types chapter](http://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/document-types/what-is-a-document-type/)
