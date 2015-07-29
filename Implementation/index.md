@@ -19,7 +19,7 @@ TODO: Come up with a clever description of this area
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
-				<h4 class="text-right"><a href="Default-Routing/index.md">Default Routing</a></h4>
+				<h4 class="text-right"><a href="Default-Routing/">Default Routing</a></h4>
 				<small>Describes the entire process - from a front-end user request to content delivery</small>
 			</div>			
 		</div>
@@ -38,7 +38,7 @@ TODO: Come up with a clever description of this area
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
-				<h4 class="text-right"><a href="Controllers/index.md">Controllers</a></h4>
+				<h4 class="text-right"><a href="Controllers/">Controllers</a></h4>
 				<small>The different type of controllers and what they can do</small>
 			</div>			
 		</div>
@@ -56,7 +56,7 @@ TODO: Come up with a clever description of this area
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
-				<h4 class="text-right"><a href="Custom-Routing/index.md">Custom Routing</a></h4>
+				<h4 class="text-right"><a href="Custom-Routing/">Custom Routing</a></h4>
 				<small>Custom URLs and custom MVC routes</small>
 			</div>			
 		</div>
@@ -73,7 +73,7 @@ TODO: Come up with a clever description of this area
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
-				<h4 class="text-right"><a href="Data-Persistence/index.md">Data Persistence</a></h4>
+				<h4 class="text-right"><a href="Data-Persistence/">Data Persistence</a></h4>
 				<small>Manipulating Umbraco database data (CRUD)</small>
 			</div>			
 		</div>

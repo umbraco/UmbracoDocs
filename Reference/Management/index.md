@@ -1,22 +1,11 @@
-#Developers Reference
+#Umbraco Persistence
 
-The intended audience for these reference pages are .net developers, it is assumed the reader already has a knowledge of the basics of Umbraco and knows .net & c#
+_Details of CRUD operations within Umbraco and how to interact with the data persisted in the database_
 
+The intended audience for these reference pages are .net developers, it is assumed the reader already has a knowledge of the basics of Umbraco and knows .net & c#.
 
-##[Content Types](ContentTypes/index.md)
-Content Types, defines the data you work with, use the DocumentType and MediaType APIs to define what values editors can add to your pages.  **Coming soon**
+##[Models](Models/index.md)
+Here you will find references for the models in the public api including the Content, ContentType, DataTypeDefinition, DictionaryItem, Language, Media, MediaType, Relation, RelationType, Task, TaskType and Template classes. 
 
-##[Documents](Documents/index.md)
-Create, Update, Move, Copy, delete and publish documents. 
-
-##[Media](Media/index.md)
-Create, Update, Move, Copy and delete media. 
-
-##[Members](Members/index.md)
-Create, Update, Move, Copy, assign groups and delete members. **Coming soon**
-
-##[Relations](Relations/index.md)
-Creating and finding relations between Umbraco items.
-
-##[Templates](Templates/index.md)
-Create templates programatically  **Coming soon**
+##[Services](Services/index.md)
+Here you will find references for the various services which are available for performing CRUD operations for the models mentioned above. 
