@@ -1,16 +1,16 @@
 #Creating media
 Media in Umbraco is handled in much the same way as content. Instead of defining Document Types you define Media Types that act as the base for media item. Unlike with normal content there are a three default Media Types:
 
-* Folder
-* Image
-* File
+- Folder
+- Image
+- File
 
 The __Folder__ Media Type is a container for organizing media items in the media tree. The __Image__ Media Type is used for uploading and storing images and the __File__ Media Type is used to upload other and store files in the Media section. This means you don't have to define your own Media Types to start using the section. You've already got the tools for organizing and uploading media.
 
 ###Creating a folder
 It is always a good idea to start by creating a folder for Media items. Make sure to name your folders in a way that makes it easy for editors to upload files and images in the right place.
 
-To create a media folder go to the Media section and click the menu icon to the right of __Media__, alternatively you can right click the __Media__ node and choose create. This will bring up the create dialogue. Pick the __Folder__, enter a name and press __save__. We'll name this folder "Images".
+To create a media folder go to the Media section and click the menu icon to the right of __Media__, alternatively you can right click the __Media__ node and choose create. This will bring up the create dialogue. Pick the __Folder__, enter a name and press __save__.
 
 ###Uploading images and files
 There are a couple different ways to do this. You can use the context menu as when creating a folder. Click the menu icon next to the folder and choose __Image__ or __File__, enter a name for your media item and click the __Choose File__ button.
@@ -28,18 +28,17 @@ By adding a __Media Picker__ property to a Document Type the editor will have th
 ##Creating a Media Type
 You can create your own Media Types and add properties, tabs and control the structure of the Media tree just as with Document Types. This means you can store information that is specific to the media on the media item itself.
 
-###Defining a Media Type
-For this example we'll make an employee image Media Type that uses Umbracos image cropper. Let's say we need two crops (eg. one for front page and one for an about us page) and a folder in the Media Section to place the images.
-
+![Creating a Media Type](images/Creating-Media-Create.jpg)
 A Media Type is created in the __Settings__ section using the Media Type editor.
 
-Go to the __Settings__ section in the backoffice. On the __Media Types__ node click the menu icon (or rightclick the node) to bring up the context menu. Here choose __Create new Media Type__ and name it "Employee image" press __Create__.
-
-![Creating a Media Type](images/Creating-Media-Create.jpg)
+Go to the __Settings__ section in the backoffice. On the __Media Types__ node click the menu icon (or rightclick the node) to bring up the context menu. Here choose __Create new Media Type__, enter a name and press __Create__.
 
 Click __Choose__ next to __Icon__, search for "user" and select an apropriate icon.
 
-![Choosing an icon](images/Creating-Media-Icon.jpg)
+##The Media Type editor
+You are now taken to the Media Type editor that is used to define and edit the Media Type. It consists of four tabs: __Info__, __Structure__, __Generic Properties__ and __Tabs__.
+
+The Media Type Editor works in much the same way as the Document Type editor.
 
 ####Adding tabs
 Before we start adding properties to the Media Type it is a good idea to create a tab to put these on otherwise all the properties will be shown in the default __Properties__ tab along with all the default properties (id, last edited and so forth).
@@ -51,11 +50,11 @@ Go to the __Tabs__ tab and create a tab called "Image".
 ####Adding properties
 We need to add the same properties as on the default __Image__ Media Type. These are:
 
-* umbracoFile
-* umbracoWidth
-* umbracoHeight
-* umbracoBytes
-* umbracoExtension
+- umbracoFile
+- umbracoWidth
+- umbracoHeight
+- umbracoBytes
+- umbracoExtension
 
 Go to the __Generic properties__ tab click __Add new property__. Name it "Image upload" and give it the alias "umbracoFile". Choose __Image cropper__ as the type and put it on the __Image__ tab.
 
@@ -91,6 +90,9 @@ To start uploading images to the folder simply drag and drop the files you want 
 
 If you select an image that has been uploaded to this folder you'll see the full image and the two crops we have defined below. Moving the blue focal point on the on the image will update the crops to focus accordingly. You can also edit the individual crops by selecting them and moving the image or adjust the slider to zoom.
 
-
 ##More information
-* [Data Types](../Data-Types/index.md)
+- [Rendering Media](../../Design/Rendering-Media/)
+- [Customizing Data Types](../Data-Types/index.md)
+
+##Related Services
+- [MediaService](../../../Reference/Management/Services/MediaService.md)

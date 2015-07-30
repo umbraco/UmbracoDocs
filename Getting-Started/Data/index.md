@@ -6,7 +6,7 @@ There are three kinds of content in Umbraco. Your normal website content that ex
 A fundamental principle in Umbraco is that all content types have a definition. These definitions are highly customisable, meaning you can add properties and have complete control over how the data is organized.
 
 ##[Defining Content](Defining-content/index.md)
-Defining Documents Types, adding properties and creating your first content.
+Defining Documents Types, adding properties and creating content.
 
 ##[Creating Media](Creating-Media/index.md)
 Defining Media Types and uploading files to the media section, using upload fields and image cropper.

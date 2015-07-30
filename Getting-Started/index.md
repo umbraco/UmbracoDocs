@@ -1,7 +1,6 @@
 #Getting Started
 *All the basics of using Umbraco v7. From making a local installation to extending the backend.*
 
-##Create
 <div class="row implementation">
 	<div class="col-sm-12"></div>
 </div>
@@ -71,7 +70,7 @@
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
-				<h4 class="text-right"><a href="Data/index.md">Data</a></h4>
+				<h4 class="text-right"><a href="Data/">Data</a></h4>
 				<small>Using the backoffice to create data</small>
 			</div>
 			<div class="col-xs-6">
@@ -86,6 +85,10 @@
 				<h5><a href="Data/Members/">Members</a></h5>
 				<small>Using members for authentication and user profiles</small>
 			</div>
+			<div class="col-xs-6">
+          <h5><a href="Data/Data-Types/">Customizing Data Types</a></h5>
+          <small>Creating and editing Data Types</small>
+      </div>
 		</div>
 	</div>
 </div>
