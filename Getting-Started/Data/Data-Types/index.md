@@ -28,7 +28,7 @@ When you're happy with the list press Save and it is now possible to select this
 ##Customizing Data-Types
 To customize an existing Data Type go to the __Developer__ section, expand the __Data-Types__ node and select the Data Type you want to edit.
 
-Aside from the Data Types That are available out of the box there are some additional Property Editors to choose from such as the __Slider__ and __Macro Container__.
+Aside from the Data Types that are available out of the box there are some additional Property Editors to choose from such as the __Slider__ and __Macro Container__.
 
 ##More information
 * [List of available Data types](../../../Reference/Data-Types/)
