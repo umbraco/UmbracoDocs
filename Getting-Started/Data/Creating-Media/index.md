@@ -90,9 +90,9 @@ To start uploading images to the folder simply drag and drop the files you want 
 
 If you select an image that has been uploaded to this folder you'll see the full image and the two crops we have defined below. Moving the blue focal point on the on the image will update the crops to focus accordingly. You can also edit the individual crops by selecting them and moving the image or adjust the slider to zoom.
 
-##More information
+###More information
 - [Rendering Media](../../Design/Rendering-Media/)
 - [Customizing Data Types](../Data-Types/index.md)
 
-##Related Services
+###Related Services
 - [MediaService](../../../Reference/Management/Services/MediaService.md)

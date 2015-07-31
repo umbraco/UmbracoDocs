@@ -102,17 +102,17 @@ A root node is created by clicking the menu icon next to __Content__ and then se
 #####Creating a child node
 A child node can be created by clicking the menu icon next to a node where the Document Type is allowed and then selecting the Document Type.
 
-##More information
+###More information
 - [Rendering Content](../../Design/Rendering-Content/)
 - [Customizing Data Types](../Data-Types/index.md)
 
-##Tutorials
-- [Creating a basic website with Umbraco](../../../Tutorials/Creating-Basic-Site/)
-
-##Related Services
+###Related Services
 - [ContentService](../../../Reference/Management/Services/ContentService.md)
 - [ContentTypeService](../../../Reference/Management/Services/ContentTypeService.md)
 
-##[Umbraco.tv](http://umbraco.tv)
+###Tutorials
+- [Creating a basic website with Umbraco](../../../Tutorials/Creating-Basic-Site/)
+
+###[Umbraco.tv](http://umbraco.tv)
 - [Chapter: Document Types](http://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/document-types/what-is-a-document-type/)
 - [Chapter: Creating content](http://umbraco.tv/videos/umbraco-v7/content-editor/basics/creating-content/)

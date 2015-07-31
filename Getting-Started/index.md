@@ -82,8 +82,8 @@
 				<small>Uploading files to media library, using upload fields and image cropper</small>
 			</div>
 			<div class="col-sm-6">
-				<h5><a href="Data/Members/">Members</a></h5>
-				<small>Using members for authentication and user profiles</small>
+				<h5><a href="Data/Members/">Creating Members</a></h5>
+				<small>Defining Member Types and creating members for authentication and user profiles</small>
 			</div>
 			<div class="col-sm-6">
           <h5><a href="Data/Data-Types/">Customizing Data Types</a></h5>
@@ -169,12 +169,12 @@
 			</div>
 
 			<div class="col-sm-6">
-				<h5><a href="Code/Custom-Form/">Creating forms</a></h5>
-				<small>Tutorial on how to create a form with a custom controller</small>
+				<h5><a href="Code/Subscribing-To-Events/">Creating forms</a></h5>
+				<small>Create, submit and handle HTML forms with controllers</small>
 			</div>
 
 			<div class="col-sm-6">
-				<h5><a href="Code/Events/">Subscribing to events</a></h5>
+				<h5><a href="Code/Subscribing-To-Events/">Subscribing to events</a></h5>
 				<small>Using events to modify content or run custom code</small>
 			</div>
 

@@ -11,7 +11,7 @@ Defining Documents Types, adding properties and creating content.
 ##[Creating Media](Creating-Media/index.md)
 Defining Media Types and uploading files to the media section, using upload fields and image cropper.
 
-##[Working with Members](Members/index.md)
+##[Creating Members](Members/index.md)
 Defining Member Types and creating members for authentication and user profiles
 
 ##[Customizing Data Types](Data-Types)

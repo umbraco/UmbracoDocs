@@ -92,14 +92,14 @@ __NOT A MEMBER OF GROUP(S):__ Lists all the groups that the member is not a part
 __NOT A MEMBER OF GROUP(S):__ Lists all the groups that the member is part of. To remove the member from a group simply click it and it will move to the other column.
 
 
-##More information
+###More information
 - [Customizing Data Types](../Data-Types/)
 
-##Related Services
+###Related Services
 - [MemberService](../../../Reference/Management/Services/MemberService.md)
 - [MemberType Serveice](../../../Reference/Management/Services/MemberTypeService.md)
 - [MemberGroup Service](../../../Reference/Management/Services/MemberGroupService.md)
 
-##[Umbraco.TV](http://umbraco.tv)
+###[Umbraco.TV](http://umbraco.tv)
 - [Members chapter](http://umbraco.tv/videos/umbraco-v7/content-editor/administrative-content/members/what-is-a-member/)
 - Member API chapter *(Coming soon)*

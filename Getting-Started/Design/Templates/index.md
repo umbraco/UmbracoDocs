@@ -77,4 +77,10 @@ the created partial can now be injected into any template by using the `@Html.Pa
 ###Find More information:
 
 - [Basic Razor syntax](basic-razor-syntax.md)
-- [Rendering content](Rendering-Content/)
+- [Rendering content](../Rendering-Content/)
+
+###Tutorials
+- [Creating a basic website with Umbraco](../../../Tutorials/Creating-Basic-Site/)
+
+###[Umbraco.TV](http://umbraco.tv)
+- [Templating chapter](http://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/templating/introduction/)

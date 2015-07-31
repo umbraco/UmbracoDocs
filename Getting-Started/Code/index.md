@@ -1,10 +1,10 @@
 #Code
 
-###[Mvc](Mvc/)
-Umbraco is built with the .NET MVC framework
+###[Using Umbracos Service APIs](Umbraco-Services/)
+Create and update entities in Umbraco from code
 
-###[Events](Events/)
-Use .NET events to hook into the the backoffice processes
+###[Subscribing to events](Subscribing-To-Events/)
+Using events to modify content or run custom code
 
-###[Forms/Controllers](Forms-Controllers/)
-Create, submit and handle HTML forms with controllers 
+###[Creating Forms](Creating-Forms/)
+Create, submit and handle HTML forms with controllers
