@@ -30,19 +30,19 @@
 				<h4 class="text-right"><a href="Setup/">Setup</a></h4>
 				<small>Covers how to install and configure your Umbraco installation</small>
 			</div>
-			<div class="col-xs-6">
+			<div class="col-sm-6">
 				<h5><a href="Setup/Requirements/">Requirements</a></h5>
 				<small>What is needed to run Umbraco?</small>
 			</div>
-			<div class="col-xs-6">
+			<div class="col-sm-6">
 				<h5><a href="Setup/Install/">Install</a></h5>
 				<small>How to install Umbraco</small>
 			</div>
-			<div class="col-xs-6">
+			<div class="col-sm-6">
 				<h5><a href="Setup/Server-Setup/">Server Setup</a></h5>
 				<small>Setting up a SQL server for your installation</small>
 			</div>
-			<div class="col-xs-6">
+			<div class="col-sm-6">
 				<h5><a href="Setup/Upgrading/">Upgrading</a></h5>
 				<small>How to upgrade your copy of Umbraco to a newer version</small>
 			</div>
@@ -73,19 +73,19 @@
 				<h4 class="text-right"><a href="Data/">Data</a></h4>
 				<small>Using the backoffice to create data</small>
 			</div>
-			<div class="col-xs-6">
+			<div class="col-sm-6">
 				<h5><a href="Data/Defining-content/">Defining content</a></h5>
 				<small>Setting up content types, defining fields and creating your first content</small>
 			</div>
-			<div class="col-xs-6">
+			<div class="col-sm-6">
 				<h5><a href="Data/Creating-Media/">Creating media</a></h5>
 				<small>Uploading files to media library, using upload fields and image cropper</small>
 			</div>
-			<div class="col-xs-6">
+			<div class="col-sm-6">
 				<h5><a href="Data/Members/">Members</a></h5>
 				<small>Using members for authentication and user profiles</small>
 			</div>
-			<div class="col-xs-6">
+			<div class="col-sm-6">
           <h5><a href="Data/Data-Types/">Customizing Data Types</a></h5>
           <small>Creating and editing Data Types</small>
       </div>
@@ -117,22 +117,22 @@
 				<small>Create templates and views with your own markup and use Razor to render content.</small>
 			</div>
 
-			<div class="col-xs-6">
+			<div class="col-sm-6">
 				<h5><a href="Design/Templates/">Templates</a></h5>
 				<small>Creating and managing templates</small>
 			</div>
 
-			<div class="col-xs-6">
+			<div class="col-sm-6">
 				<h5><a href="Design/Rendering-Content/">Rendering content</a></h5>
 				<small>How to query and render published content</small>
 			</div>
 
-			<div class="col-xs-6">
+			<div class="col-sm-6">
 				<h5><a href="Design/Rendering-Media/">Rendering media</a></h5>
 				<small>How to query and render media</small>
 			</div>
 
-			<div class="col-xs-6">
+			<div class="col-sm-6">
 				<h5><a href="Design/Stylesheets-Javascript/">Stylesheets and javascript</a></h5>
 				<small>Working with css and javascript in Umbraco's templates</small>
 			</div>
@@ -163,17 +163,17 @@
 				<h4 class="text-right">Code</h4>
 			</div>
 
-			<div class="col-xs-6">
+			<div class="col-sm-6">
 				<h5><a href="Code/Umbraco-Services/">Using Umbraco's service APIs</a></h5>
 				<small>Create and update entities in Umbraco from code</small>
 			</div>
 
-			<div class="col-xs-6">
+			<div class="col-sm-6">
 				<h5><a href="Code/Custom-Form/">Creating forms</a></h5>
 				<small>Tutorial on how to create a form with a custom controller</small>
 			</div>
 
-			<div class="col-xs-6">
+			<div class="col-sm-6">
 				<h5><a href="Code/Events/">Subscribing to events</a></h5>
 				<small>Using events to modify content or run custom code</small>
 			</div>
