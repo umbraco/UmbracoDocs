@@ -20,6 +20,6 @@ All pages in Razor, contains a standard property called `Children`, this returns
 		@foreach(var child in Model.Children){
 			<li><a href="@child.Url">@child.Name</a></li>
 		}
-	</li>
+	</ul>
 
 
