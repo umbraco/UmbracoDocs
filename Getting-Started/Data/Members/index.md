@@ -101,5 +101,5 @@ __NOT A MEMBER OF GROUP(S):__ Lists all the groups that the member is part of. T
 - [MemberGroup Service](../../../Reference/Management/Services/MemberGroupService.md)
 
 ###[Umbraco.TV](http://umbraco.tv)
-- [Members chapter](http://umbraco.tv/videos/umbraco-v7/content-editor/administrative-content/members/what-is-a-member/)
+- [Chapter: Members](http://umbraco.tv/videos/umbraco-v7/content-editor/administrative-content/members/what-is-a-member/)
 - Member API chapter *(Coming soon)*
