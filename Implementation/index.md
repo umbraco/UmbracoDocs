@@ -1,6 +1,6 @@
 #Implementation
 
-TODO: Come up with a clever description of this area
+*Get to know the Umbraco codebase. Developing an application requires knowledge about the tool your working with. This section will give you an introduction to the structure of Umbraco.*
 
 <div class="row implementation">
 	<div class="col-sm-12"></div>
@@ -21,7 +21,7 @@ TODO: Come up with a clever description of this area
 			<div class="col-xs-12">
 				<h4 class="text-right"><a href="Default-Routing/">Default Routing</a></h4>
 				<small>Describes the entire process - from a front-end user request to content delivery</small>
-			</div>			
+			</div>
 		</div>
 	</div>
 </div>
@@ -34,13 +34,13 @@ TODO: Come up with a clever description of this area
 			<span class="line h-line"></span>
 		</span>
 	</div>
-	
+
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
 				<h4 class="text-right"><a href="Controllers/">Controllers</a></h4>
 				<small>The different type of controllers and what they can do</small>
-			</div>			
+			</div>
 		</div>
 	</div>
 </div>
@@ -58,7 +58,7 @@ TODO: Come up with a clever description of this area
 			<div class="col-xs-12">
 				<h4 class="text-right"><a href="Custom-Routing/">Custom Routing</a></h4>
 				<small>Custom URLs and custom MVC routes</small>
-			</div>			
+			</div>
 		</div>
 	</div>
 </div>
@@ -75,7 +75,7 @@ TODO: Come up with a clever description of this area
 			<div class="col-xs-12">
 				<h4 class="text-right"><a href="Data-Persistence/">Data Persistence</a></h4>
 				<small>Manipulating Umbraco database data (CRUD)</small>
-			</div>			
+			</div>
 		</div>
 	</div>
 </div>
