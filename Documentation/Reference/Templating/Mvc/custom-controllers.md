@@ -53,7 +53,7 @@ First, the standard view that is created by Umbraco inherits from `Umbraco.Web.M
 
 	@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
-If you are returning a custom model, then this directive will need to change because your custom model will not be an instance of `Umbraco.Web.Models.RenderModel`. Instead change your @inherits directive to inherit from `Umbraco.Web.Mvc.UmbracoViewPage<T>` where 'T' is the type of your custom model. So for exammple, if your custom model is of type 'MyCustomModel' then your @inherits directive will look like:
+If you are returning a custom model, then this directive will need to change because your custom model will not be an instance of `Umbraco.Web.Models.RenderModel`. Instead change your @inherits directive to inherit from `Umbraco.Web.Mvc.UmbracoViewPage<T>` where 'T' is the type of your custom model. So for example, if your custom model is of type 'MyCustomModel' then your @inherits directive will look like:
 
 	@inherits Umbraco.Web.Mvc.UmbracoViewPage<MyCustomModel>
 
