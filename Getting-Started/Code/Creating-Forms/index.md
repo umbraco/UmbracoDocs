@@ -1,12 +1,12 @@
 #Creating forms
-Creating forms with Umbraco is easy. It does require that you know your way around .NET MVC. So if you are familiar with adding a view model, views and controllers you are ready to make your first form.
+Creating forms requires that you know your way around .NET MVC. So if you are familiar with adding view models, views and controllers you are ready to make your first form.
 
 *You can also use [Umbraco forms](http://umbraco.com/forms). It let's you and/or you're editors create and handle forms in the backoffice. This includes setting up validation, redirecting and sttoring and ssending form data. Great UI, easily extendable and supported by Umbraco HQ.*
 
 In this example we'll create a basic contact form contain name, email and message field.
 
 ###Creating the view model
-First were going to create the model for the contact form by adding a new class to the `/Models` folder. Lets's call it `ContactFormViewModel.cs`.
+First were going to create the model for the contact form by adding a new class to the `/Models` folder. Lets's call it `ContactFormViewModel.cs`
 
     using System;
     using System.Collections.Generic;
@@ -45,7 +45,7 @@ The view can be built with standard with standard MVC helpers:
     }
 
 ###Adding the controller
-Finally we're going to add the controller. Simply add a controller to the `/Controllers` folder, name it `ContactControler` and make sure to use an __empty MVC controller__ as the template.
+Finally we're going to add the controller. Simply add a controller to the `/Controllers` folder, name it `ContactController` and make sure to use an __empty MVC controller__ as the template.
 
 
     using MyFirstForm.Models;
@@ -66,10 +66,7 @@ Finally we're going to add the controller. Simply add a controller to the `/Cont
                 if (!ModelState.IsValid)
                     return CurrentUmbracoPage();
 
-
-                System.Diagnostics.Debug.WriteLine(model.Name.ToString());
-                System.Diagnostics.Debug.WriteLine(model.Email.ToString());
-                System.Diagnostics.Debug.WriteLine(model.Message.ToString());
+                /// Work with form data here
 
                 return RedirectToCurrentUmbracoPage();
             }
@@ -111,7 +108,9 @@ Select the expand the __Macros__ node and select the __Contact Form__ Macro. Che
 Now you can add the form to a page that has a rich text editor.
 
 ###More information
-[Surface Controllers](../../../Reference/Routing/surface-controllers.md)
+- [Surface Controllers](../../../Reference/Routing/surface-controllers.md)
+- [Custom controllers](../../../Reference/Routing/custom-controllers.md)
+- [Routing](../../../Reference/Routing/)
 
 ###Umbraco TV
-[Chapter: Surface Controllers](http://umbraco.tv/videos/umbraco-v7/developer/fundamentals/surface-controllers/)
+- [Chapter: Surface Controllers](http://umbraco.tv/videos/umbraco-v7/developer/fundamentals/surface-controllers/)

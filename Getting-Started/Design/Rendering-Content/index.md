@@ -34,3 +34,11 @@ In many cases, you want to do more then just display values from the current pag
 You can use the query helper (click ![Query button](images/query-button.png)) in the template editor to build more advanced queries:
 
 ![Query helper](images/query.png)
+
+###More information
+- [Razor examples](../../../Reference/Templating/Mvc/examples.md)
+- [Querying](../../..//Reference/Templating/Mvc/querying.md)
+
+###Umbraco TV
+- [Episode: Setting up our first template](http://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/templating/alt-template/)
+- [Episode: Insert Umbraco page field dialog](http://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/templating/insert-umbraco-page-field-dialog/)
