@@ -68,3 +68,7 @@ A Switch block is used when testing a large number of conditions
 		"<p>It's some day of the week</p>"
 		break;
 	}
+
+###More information
+- [More examples](../../../Reference/Templating/Mvc/examples)
+- [Querying](../../../Reference/Templating/querying)
