@@ -1,7 +1,7 @@
 #Sections
 There are eight default sections that come with Umbraco:
 
-###<img src="images/Content.jpg" style="width:60px;vertical-align:middle" style="width:60px;vertical-align:middle" /> Content
+###<img src="images/Content.jpg" style="width:60px;vertical-align:middle" /> Content
 The content section contains the content of the website. Content is displayed as nodes in the content tree. In order to create content you must define it using document types.
 
 ###<img src="images/Media.jpg" style="width:60px;vertical-align:middle" /> Media

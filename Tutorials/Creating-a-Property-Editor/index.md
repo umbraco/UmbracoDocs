@@ -1,4 +1,4 @@
-#Tutorial - Creating a v7 property editor
+#Tutorial - Creating a property editor
 
 ##Overview
 
@@ -14,7 +14,7 @@ So all the steps we will go through:
 - Complete the markdown editor
 
 ##Prerequisites
-This is about how to use AngularJS with Umbraco, so it does not cover AngularJS itself, as there are tons of resources on that already here: 
+This is about how to use AngularJS with Umbraco, so it does not cover AngularJS itself, as there are tons of resources on that already here:
 
 - [egghead.io](http://www.egghead.io/)
 - [angularjs.org/tutorial](http://docs.angularjs.org/tutorial)
@@ -23,7 +23,7 @@ This is about how to use AngularJS with Umbraco, so it does not cover AngularJS 
 ##The end result
 
 By the end of this guide, we will have a simple markdown editor running inside of Umbraco
-registered as a data type in the backoffice, assigned to a document type, and the editor can 
+registered as a data type in the backoffice, assigned to a document type, and the editor can
 create and modify data.
 
 ##Setting up a plugin
@@ -33,15 +33,15 @@ The first thing we must do is create a new folder inside `/App_Plugins` folder. 
 
 *(TODO: Add link to manifest documentation here)*
 
-Next We will create a simple manifest file to describe what this plugin does. This manifest will tell Umbraco about our new property editor and allows us to inject any needed files into the application, so we create the file `/App_Plugins/MarkDownEditor/package.manifest` 
+Next We will create a simple manifest file to describe what this plugin does. This manifest will tell Umbraco about our new property editor and allows us to inject any needed files into the application, so we create the file `/App_Plugins/MarkDownEditor/package.manifest`
 
 Inside this package manifest we add a bit of json to describe the property editor, have a look at the inline comments in the json below for details on each bit:
 
-	{   
-		//you can define multiple editors 	
-		propertyEditors: [		
+	{
+		//you can define multiple editors
+		propertyEditors: [
 			{
-				/*this must be a unique alias*/	
+				/*this must be a unique alias*/
 				alias: "My.MarkdownEditor",
 				/*the name*/
 				name: "Markdown editor",
@@ -62,45 +62,45 @@ Inside this package manifest we add a bit of json to describe the property edito
 ##Writing some basic html + js
 Then we add 2 files to the /app_plugins/markdowneditor/ folder:
 - ´markdowneditor.html`
-- `markdowneditor.controller.js`	
+- `markdowneditor.controller.js`
 
-These will be our main files for the editor, with the .html file handling the view and the .js 
-part handling the functionality. 
+These will be our main files for the editor, with the .html file handling the view and the .js
+part handling the functionality.
 
 In the .js file I will add a basic angularJS controller declaration
 
 	angular.module("umbraco")
 		.controller("My.MarkdownEditorController",
 		function () {
-			alert("The controller has landed");   
+			alert("The controller has landed");
 		});
 
-And in the .html file I'll add: 
+And in the .html file I'll add:
 
 	<div ng-controller="My.MarkdownEditorController">
 		<textarea ng-model="model.value"></textarea>
 	</div>
 
-Now our basic parts of the editor is done namely: 
+Now our basic parts of the editor is done namely:
 
 - The package manifest, telling Umbraco what to lod
 - The html view for the editor
 - The controller for wiring up the editor with angular.
 
 ##Register the datatype in Umbraco
-After the above edits are done, restart your application. Go to developer section, click the 3 dots next to the datatypes folder and create a new data type called "markdown". In the editor you can now select a property editor, where your newly added "markdown editor" will appear. 
+After the above edits are done, restart your application. Go to developer section, click the 3 dots next to the datatypes folder and create a new data type called "markdown". In the editor you can now select a property editor, where your newly added "markdown editor" will appear.
 
-Save the datatype, and add it to a document type of your choice, open a document of that type, and you will be greated with an alert message saying "The controller has landed", which means all is well, and you can now edit the assigned property's value with your editor. 
+Save the datatype, and add it to a document type of your choice, open a document of that type, and you will be greated with an alert message saying "The controller has landed", which means all is well, and you can now edit the assigned property's value with your editor.
 
 
 ##Add external dependencies
-Lets go a bit further, and load in a markdown editor JavaScript library, I've chosen pagedown, but you can use whatever you want. 
+Lets go a bit further, and load in a markdown editor JavaScript library, I've chosen pagedown, but you can use whatever you want.
 
-First of, I'll add some external files to our package folder, in /app_plugins/markdowneditor/lib folder, these files comes from the pagedown editor project found here: 
+First of, I'll add some external files to our package folder, in /app_plugins/markdowneditor/lib folder, these files comes from the pagedown editor project found here:
 
 [Pagedown-bootstrap on github.com](https://github.com/samwillis/pagedown-bootstrap)
 
-Then open the `markdowneditor.controller.js` file and edit it so it looks like this: 
+Then open the `markdowneditor.controller.js` file and edit it so it looks like this:
 
 	angular.module("umbraco")
 	.controller("My.MarkdownEditorController",
@@ -132,8 +132,8 @@ Now lets replace that `alert()` with some code that can instantiate the pagedown
     var editor2 = new Markdown.Editor(converter2, "-" + $scope.model.alias);
     editor2.run();
 
-and add that id to the text area in the html, for more info on the html structure, see the pagedown demo [here](https://github.com/samwillis/pagedown-bootstrap/blob/master/demo/browser/demo.html): 
-	
+and add that id to the text area in the html, for more info on the html structure, see the pagedown demo [here](https://github.com/samwillis/pagedown-bootstrap/blob/master/demo/browser/demo.html):
+
 	<div ng-controller="My.MarkdownEditorController" class="wmd-panel">
 		<div id="wmd-button-bar-{{model.alias}}"></div>
 
@@ -142,8 +142,10 @@ and add that id to the text area in the html, for more info on the html structur
 			</textarea>
 
 		<div id="wmd-preview-{{model.alias}}" class="wmd-panel wmd-preview"></div>
-	</div> 
+	</div>
 
-Now, clear the cache, reload the document and see the pagedown editor running. 
+Now, clear the cache, reload the document and see the pagedown editor running.
 
 When you save or publish the value of the editor is automaticly synced to the current content object and sent to the server, all through the power of angular and the `ng-model`attribute.
+
+[Go to part 2 of the tutorial](part-2.md)
