@@ -27,17 +27,17 @@ All implementations of SurfaceControllers inherit from the base class `Umbraco.W
 
 See [Reference documentation on Umbraco Api Controllers for full details](../../../Reference/Routing/WebApi/index.md)
 
-##Umbraco Authorized Controllers & Attributes
+##Umbraco Authorized Controllers and Attributes
 
 An Umbraco Authorized controller is used when the controller requires member or user authentication (authN) and/or authorization (authZ). If either the authN or authZ fail the controller will return a "401 - unathorized response."  
 
 ### Back office Authorization
 
-The Umbraco Authorized controllers & attributes for back office users are:
+The Umbraco Authorized controllers and attributes for back office users are:
 
 #### MVC
 
-Any MVC Controller or Action that is attributed with `Umbraco.Web.Mvc.UmbracoAuthorizeAttribute` will authenticate the request for a back office user. A base class implementation that already exists with this attribute is: `Umbraco.Web.Mvc.UmbracoAuthorizedController`. These MVC controllers are not auto-routed.
+Any MVC Controller or Action that is attributed with `Umbraco.Web.Mvc.UmbracoAuthorizeAttribute` will authenticate the request for a back office user. A base class implementation that already exists with this attribute is: `Umbraco.Web.Mvc.UmbracoAuthorizedController`. These MVC controllers are not auto-routed.  See [Routing requirements for backoffice authentication](../../../Reference/Routing/Authorized/index.md) for more details on routing requirements.
 
 #### WebApi
 
@@ -51,28 +51,27 @@ Another common base class implementation for the back office is `Umbraco.Web.Edi
 
 Authorizing a controller for a front-end member is achieved with attributes:
 
-* `Umbraco.Web.Mvc.MemberAuthorizeAttribute` - for MVC controllers
-* `Umbraco.Web.WebApi.MemberAuthorizeAttribute` - for WebApi controllers
+> `Umbraco.Web.Mvc.MemberAuthorizeAttribute` - for MVC controllers
+> `Umbraco.Web.WebApi.MemberAuthorizeAttribute` - for WebApi controllers
 
 You can attribute your controller or action with this attribute which will ensure that a member must be logged in to access the resource. An example:
 
-```
-[MemberAuthorize]
-public class AccountController : SurfaceController
-{	
-    [HttpPost]
-    public ActionResult UpdateAccountInfo(AccountInfo accountInfo)
-    {
-        //TODO: Update the account info for the current member
+
+    [MemberAuthorize]
+    public class AccountController : SurfaceController
+    {	
+      [HttpPost]
+      public ActionResult UpdateAccountInfo(AccountInfo accountInfo)
+      {
+          //TODO: Update the account info for the current member
+      }
     }
-}
-``` 
 
 
 There are a few properties that exist for the attribute to give you more control over the authorization process for which members can access the resource:
 
-* `AllowType` - Comma delimited list of allowed member types
-* `AllowGroup` - Comma delimited list of allowed member groups
+> `AllowType` - Comma delimited list of allowed member types
+> `AllowGroup` - Comma delimited list of allowed member groups
 
 ### Routing
 
