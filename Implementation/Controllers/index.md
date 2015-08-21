@@ -51,8 +51,8 @@ Another common base class implementation for the back office is `Umbraco.Web.Edi
 
 Authorizing a controller for a front-end member is achieved with attributes:
 
-> `Umbraco.Web.Mvc.MemberAuthorizeAttribute` - for MVC controllers
-> `Umbraco.Web.WebApi.MemberAuthorizeAttribute` - for WebApi controllers
+* `Umbraco.Web.Mvc.MemberAuthorizeAttribute` - for MVC controllers
+* `Umbraco.Web.WebApi.MemberAuthorizeAttribute` - for WebApi controllers
 
 You can attribute your controller or action with this attribute which will ensure that a member must be logged in to access the resource. An example:
 
@@ -70,8 +70,8 @@ You can attribute your controller or action with this attribute which will ensur
 
 There are a few properties that exist for the attribute to give you more control over the authorization process for which members can access the resource:
 
-> `AllowType` - Comma delimited list of allowed member types
-> `AllowGroup` - Comma delimited list of allowed member groups
+* `AllowType` - Comma delimited list of allowed member types
+* `AllowGroup` - Comma delimited list of allowed member groups
 
 ### Routing
 
