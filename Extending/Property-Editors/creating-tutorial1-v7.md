@@ -31,9 +31,13 @@ create and modify data.
 The first thing we must do is create a new folder inside `/App_Plugins` folder. We will call it
 `MarkDownEditor`
 
-*(TODO: Add link to manifest documentation here)*
+
 
 Next We will create a simple manifest file to describe what this plugin does. This manifest will tell Umbraco about our new property editor and allows us to inject any needed files into the application, so we create the file `/App_Plugins/MarkDownEditor/package.manifest` 
+
+[Manifest documentation is current found here](http://umbraco.github.io/Belle/#/tutorials/manifest)
+_TODO: Add manifest documentation here (see: https://github.com/umbraco/Umbraco4Docs/issues/201)_
+
 
 Inside this package manifest we add a bit of json to describe the property editor, have a look at the inline comments in the json below for details on each bit:
 
