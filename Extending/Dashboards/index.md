@@ -44,7 +44,6 @@ Defines a page tab that you would like your user control to be added to. The att
 control
 
 Defines the path to the user control you would like to be displayed on a tab.
-access - NEW IN UMBRACO 4.1!
 
 The <access /> element makes it possible to set permissions on sections, tabs and controls and you can either grant or deny certain usertypes access.
 

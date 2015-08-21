@@ -11,6 +11,6 @@ Covers:
 
 ## [Converting Masterpages to Views](masterpagestoviews.md)
 
-Covers how you convert common syntax in Umbraco 4 Masterpages to Umbraco Views.
+Covers how you convert common syntax in Umbraco Masterpages to Umbraco Views.
 
 This information has also been compiled into a [downloadable PDF cheat sheet](Masterpages2Views.pdf).
