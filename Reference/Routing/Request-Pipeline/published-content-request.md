@@ -36,16 +36,3 @@ Contains template information and the corresponding rendering engine:
     public RenderingEngine RenderingEngine { get; }
     public bool TrySetTemplate(string alias);
     public void SetTemplate(ITemplate template);
-
-
-//TODO: Move this to under custom routing!
-
-You can subscribe to an event to know when the `PublishedContentRequest` is ready to be processed.  It's up to you to change anything (content, template, ...): 
-
-    // public static event EventHandler<EventArgs> Prepared;
-    
-    PublishedContentRequest.Prepared += (sender, args) =>
-    {
-      var request = sender as PublishedContentRequest;
-      // do something…
-    }

@@ -45,4 +45,12 @@ See: [Custom routing documentation](../../Reference/Routing/custom-routes)
 
 ###PublishedContentRequest.Prepared event
 
-//TODO: add these docs (https://github.com/umbraco/Umbraco4Docs/issues/202)
+You can subscribe to an event to know when the `PublishedContentRequest` is ready to be processed.  It's up to you to change anything (content, template, ...): 
+
+    // public static event EventHandler<EventArgs> Prepared;
+    
+    PublishedContentRequest.Prepared += (sender, args) =>
+    {
+      var request = sender as PublishedContentRequest;
+      // do something…
+    }
