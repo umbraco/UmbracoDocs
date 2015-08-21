@@ -26,20 +26,19 @@ When you create a controller that inherits from `Umbraco.Web.Mvc.UmbracoAuthoriz
 Defining a route is done with the standard ASP.Net MVC routing practices. In Umbraco, you will normally create custom routes in `Umbraco.Core.ApplicationEventHandler.ApplicationStarted` event similar to the following:
 
 
-  protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext    
-     applicationContext) 
-  { 
-    RouteTable.Routes.MapRoute( 
+    protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext    
+    applicationContext) 
+    { 
+      RouteTable.Routes.MapRoute( 
       name: "cats", 
       url: "backoffice/cats/{action}/{id}", 
       defaults: new 
       { 
-         controller = "Cats", 
-         action = "Meow",
-         id = UrlParameter.Optional
+        controller = "Cats", 
+        action = "Meow",
+        id = UrlParameter.Optional
       }); 
-  }
-
+    }
 
 _NOTE the route must be prefixed with `backoffice` in order for Umbraco to check user authentication._
 
