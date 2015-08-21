@@ -57,6 +57,49 @@
 			<span class="line v-line"></span>
 			<span class="line h-line"></span>
 		</span>
+		<!--<span class="dot small">
+			<span class="line v-line"></span>
+			<span class="line h-line"></span>
+		</span>
+		<span class="dot small">
+			<span class="line v-line"></span>
+			<span class="line h-line"></span>
+		</span>-->
+	</div>
+
+	<div class="col-xs-9">
+		<div class="row explain">
+			<div class="col-xs-12">
+				<h4 class="text-right"><a href="Backoffice/">Backoffice overview</a></h4>
+				<small>Details of all the common terms and concepts that are used throughout the Umbraco backoffice.</small>
+			</div>
+			<!--<div class="col-sm-6">
+				<h5><a href="Data/Defining-content/">Defining content</a></h5>
+				<small>Setting up content types, defining fields and creating your first content</small>
+			</div>
+			<div class="col-sm-6">
+				<h5><a href="Data/Creating-Media/">Creating media</a></h5>
+				<small>Uploading files to media library, using upload fields and image cropper</small>
+			</div>
+			<div class="col-sm-6">
+				<h5><a href="Data/Members/">Creating Members</a></h5>
+				<small>Defining Member Types and creating members for authentication and user profiles</small>
+			</div>
+			<div class="col-sm-6">
+          <h5><a href="Data/Data-Types/">Customizing Data Types</a></h5>
+          <small>Creating and editing Data Types</small>
+      </div>-->
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-3">
+		<span class="dot big  icon-untitled">
+			<span class="line v-line top"></span>
+			<span class="line v-line"></span>
+			<span class="line h-line"></span>
+		</span>
 		<span class="dot small">
 			<span class="line v-line"></span>
 			<span class="line h-line"></span>

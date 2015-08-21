@@ -1,6 +1,6 @@
 #Default Data Types#
 
-Here's a list of some of the default Data Type's that come installed with Umbraco. There are plenty more that you can create based on the installed [Property Editors](../../../Reference/Property-Editors/).
+Here's a list of some of the default Data Type's that come installed with Umbraco. There are plenty more that you can create based on the installed [Property Editors](../../Backoffice/Property-Editors/).
 
 ####Approved Color####
 Adds a list of approved colours which can be selected by clicking. The approved colours need to be added

@@ -17,10 +17,8 @@ A section is defined in the `~/Config/applications.config` file. By default this
 
 The section API in v7+ is found in the interface `Umbraco.Core.Services.ISectionService` which is exposed on the ApplicationContext singleton. This API is used to control/query the storage for tree registrations in the ~/Config/applications.config file.
 
-[See the section service API reference here](../../Reference/Management-v6/Services/SectionService.md) 
+[See the section service API reference here](../../Reference/Management/Services/SectionService.md) 
 
 ##Section (Application) API v6
 
 The section API in v6/v4 is found in the class `umbraco.BusinessLogic.Application`. This API is used to control/query the storage for section registrations in the ~/Config/applications.config file.
-
- 
