@@ -60,11 +60,11 @@ You can attribute your controller or action with this attribute which will ensur
 [MemberAuthorize]
 public class AccountController : SurfaceController
 {	
-	[HttpPost]
-	public ActionResult UpdateAccountInfo(AccountInfo accountInfo)
-	{
-		//TODO: Update the account info for the current member
-	}
+    [HttpPost]
+    public ActionResult UpdateAccountInfo(AccountInfo accountInfo)
+    {
+        //TODO: Update the account info for the current member
+    }
 }
 ``` 
 

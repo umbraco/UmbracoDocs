@@ -11,8 +11,11 @@ How the Visual Studio solution is put together, what the funtionality of each pr
 ##[Working with the code](working-with-code.md)
 Describes the process of creating new classes and where they should be stored in regards to namespaces and projects. Also describes how to deal with updating legacy code and how it should be updated.
 
-##[Unit testing](unit-testing.md)
-Describes how to write unit testable code and how to write unit tests for the code in Umbraco.
+##Unit testing
+
+There are plenty of unit tests in the core of Umbraco both for c# found in Umbraco.Tests project and for JS found in the Umbraco.Web.UI.Client project.
+
+When submitting pull requests or working with the code we encourage all developers to make changes by writing unit tests, a PR will have a far higher chance of being pulled into the core quicker with passing unit tests.
 
 ##[Breaking changes](breaking-changes.md)
 Defines what a breaking change is in regards to the Umbraco core codebase and describes how to deal with required breaking changes.

@@ -87,36 +87,13 @@ Now this controller will be routed via the area called "AwesomeProducts". All pl
 
 For more information about areas, Urls and routing see the [routing section](routing.md)
 
-###Securing your API methods
-API methods can be secured so that only members logged into your site can use them, you can do this using the `Umbraco.Web.WebApi.MemberAuthorize` attribute.
-
-This attribute allows for the following protections to be set up:
-
-- AlowAll: boolean (true by default)
-- AllowType: list of allowed member types
-- AllowGroup: list of allowed member groups
-- AllowMembers: list of allowed members (login names)
-
-`AllowAll` is only there for backwards compatibility, if any of the other "Allow" properties are set then AllowAll is set to false.
-
-Example:
-	
-	[MemberAuthorize(AllowGroup = "Accounts,Editors")]
-	public class ProductsController : UmbracoApiController
-	{	    
-	    public IEnumerable<string> GetAllProducts()
-	    {
-	        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
-	    }
-	}
-	
-When a member is logged in and is member of the member group "Accounts" or "Editors", they will get the result of the API call as normal. Anybody else will get an error telling them they're not allowed to call this method.
-
-Any methods added to this class will have the same protection but you can also add the attribute to a single or a few of your methods when not all methods in your API Controller class need to have the same authorization.
-
 ##Backoffice controllers
 
 If you are creating a controller to work within the Umbraco back office then you will need to ensure that it is secured  properly by inheriting from: `UmbracoAuthorizedJsonController`. This controller type will auto-route your controller like the above examples except that it will add another Uri path: 'backoffice'. For example:
 
 *~/Umbraco/backoffice/Api/[YourControllerName]*
 *~/Umbraco/backoffice/[YourAreaName]/[YourControllerName]*
+
+### More Information
+
+* [Authenticating & Authorizing controllers](../Authorized/index.md)

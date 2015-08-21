@@ -8,7 +8,12 @@ will be authenticated. If you have a controller that is not routed within the pr
 
 You do not have to worry about routing if you are using WebApi and using `Umbraco.Web.WebApi.UmbracoAuthorizedApiController` (or any inherited controller) since these are auto routed. All implementations of `UmbracoAuthorizedApiController` (which includes `UmbracoAuthorizedJsonController`) are auto-routed with the default route:
 
-* `/umbraco/backoffice/api/{controller}/{action}` 
+* `/umbraco/backoffice/api/{controller}/{action}`
+
+In the case that an Umbraco Api Controller is a 'Plugin Controller', then the route would be:
+ 
+* `/umbraco/backoffice/api/{pluginname}/{controller}/{action}`
+
 
 ##MVC controllers for the back office
 

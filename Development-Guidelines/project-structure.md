@@ -8,7 +8,7 @@ The goal of the Umbraco project is to be able to be left with only a few Visual 
 * Umbraco.Core
 * Umbraco.Web
 * Umbraco.Web.UI
-* [Umbraco.Web.UI.Client](umbraco-web.ui-client.md) (**v7+ only**)
+* [Umbraco.Web.UI.Client](umbraco-web.ui-client.md)
 * Umbraco.Tests
 
 Achieving this goal will take quite a lot of time by slowly migrating over old code and refactoring it into new code under new namespaces and projects. This cannot all happen at the same time but starting down this path now means that we can  realize this goal sooner.
@@ -29,7 +29,7 @@ Achieving this goal will take quite a lot of time by slowly migrating over old c
 	* Legacy webforms files have their codebehind files in the Umbraco.Web project. If these legacy webforms files need to be worked on, we can migrate their codebehind files to the Umbraco.Web.UI project as we see fit.
 	* **ALL NEW ASPX, ASCX, ASMX and any other webforms file that requires a codebehind will exist under the Umbraco.Web.UI project**
 	* **MORE IMPORTANT -> BECAUSE THE NAMES OF THE FOLDERS ARE NOT PROPER CASE YOU WILL NEED TO ENSURE THAT THE NAMESPACE IS OF THE CORRECT CASE. SO WHEN YOU CREATE YOUR ASPX PAGE, THE NAMESPACE NAME MIGHT BE: *Umbraco.Web.UI.umbraco.settings* . YOU NEED TO CHANGE THIS TO: *Umbraco.Web.UI.Umbraco.Settings***
-* Umbraco.Web.UI.Client (**v7+ only**)
+* Umbraco.Web.UI.Client
 	* [See here for the sub-structure details of this project](umbraco-web.ui-client.md) 
 	* Contains all of the files used to create the v7 AngularJs back office application
 	* This project is part of the solution as a simple 'website', it does not compile
@@ -41,8 +41,6 @@ Achieving this goal will take quite a lot of time by slowly migrating over old c
 ##Legacy projects
 
 _The code in the legacy projects will eventually be migrated and refactored with correct naming and code conventions into the new projects and namespaces_
-
-**TODO: Documentation to be completed**
 
 * SqlCE4Umbraco
 * umbraco.businesslogic
