@@ -18,19 +18,13 @@ What it does:
 * Forwards missing content to 404
 * Forwards to either MVC or WebForms handlers
 
-//TODO: Link to reference article
-For in depth details, see Published Content Request Preparation
-
 ##Published Content Request Instance
 
 Once the request is prepared, an intance of `PublishedContentRequest` is available which represents the request that Umbraco must handle.  
 It contains everything that will be needed to render it including domain information, the content model to be rendered and the template to use.
 This information is also used during the [MVC Controller/Action selection process](../Controller/).
 
- //TODO: Link to reference article
- For in depth details, see Published Content Request
-
- ##Determining rendering engine
+##Determining rendering engine
 
  Umbraco supports both MVC and Webforms, though MVC is certainly the preferred and default engine that is used.
  Determining the rendering engine to use occurs once the published content request has been prepared and a template alias is known.
