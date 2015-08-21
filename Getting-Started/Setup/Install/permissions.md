@@ -34,7 +34,7 @@ are used for dynamically loading in and generating dlls</p>
 <th>Modify / Full control</th>
 <td>
 <p>Should always have modify rights as the folder and its files
-are used for cache and storage (from Umbraco 4.5 onwards)</p>
+are used for cache and storage</p>
 </td>
 </tr>
 <tr>
@@ -63,19 +63,11 @@ are used for css files</p>
 </td>
 </tr>
 <tr>
-<th>/Data</th>
-<th>Modify / Full control</th>
-<td>
-<p>Should always have modify rights as the folder and its files
-are used for cache and storage (until Umbraco 4.4, changed to App_Data in 4.5)</p>
-</td>
-</tr>
-<tr>
 <th>/MacroScripts</th>
 <th>Modify / Full control</th>
 <td>
 <p>Should always have modify rights as the folder and its files
-are used for Razor files (as of Umbraco 4.7)</p>
+are used for Razor files</p>
 </td>
 </tr>
 <tr>

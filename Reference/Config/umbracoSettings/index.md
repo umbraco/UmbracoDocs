@@ -183,16 +183,6 @@ Character encoding for Tidy.
         <!-- the encoding type for tidy. Default is UTF8, options are ASCII, Raw, Latin1, UTF8, ISO2022, MacroMan-->
         <TidyCharEncoding>UTF8</TidyCharEncoding>
 
-**UseLegacyXmlSchema**
-
-By default Umbraco uses the new XML schema, which was introduced with the release of Umbraco 4.5. If you need to be able to use the old schema, due to an upgrade from an older version
-of Umbraco, then change the setting to "true". This way you will not need to update the existing XSLT files to use the new format.
-
-*This setting will not exist in v7+*
-
-        <!-- to enable new content schema, this needs to be false -->
-        <UseLegacyXmlSchema>false</UseLegacyXmlSchema>
-
 **ForceSafeAliases**
 
 This setting allows you to disable the safe aliases, when you're creating properties on your document types. As the comment below states you really

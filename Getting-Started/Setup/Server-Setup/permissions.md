@@ -35,7 +35,7 @@ are used for dynamically loading in and generating dlls</p>
 <th>Modify / Full control</th>
 <td>
 <p>Should always have modify rights as the folder and its files
-are used for cache and storage (from Umbraco 4.5 onwards)</p>
+are used for cache and storage</p>
 </td>
 </tr>
 <tr>

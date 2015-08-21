@@ -1,7 +1,5 @@
 #BaseRestExtension.config
 
-**NOTE**: This pertains to Umbraco 4.10.0+, for earlier versions of Umbraco see [restExtension.conf](../restExtensions/index.md)
-
 BaseRestExtension.config contains the data necessary for the /Base system when exposing the methods in your class library.
 
 	<?xml version="1.0" encoding="utf-8"?>
