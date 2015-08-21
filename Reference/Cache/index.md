@@ -16,16 +16,32 @@ Describes the process of how to get, update and insert items in the cache
 
 ##ApplicationContext.Current.ApplicationCache
 
+TODO: fill in these docs(https://github.com/umbraco/UmbracoDocs/issues/208)
+
 ##ICacheRefresher
+
+TODO: fill in these docs(https://github.com/umbraco/UmbracoDocs/issues/208)
 
 ##ICacheRefresher&lt;T&gt;
 
+TODO: fill in these docs(https://github.com/umbraco/UmbracoDocs/issues/208)
+
 ##Events handling to refresh cache
+
+TODO: fill in these docs(https://github.com/umbraco/UmbracoDocs/issues/208)
 
 ##DistributedCache.Current
 
+TODO: fill in these docs(https://github.com/umbraco/UmbracoDocs/issues/208)
+
 ##DistributedCacheExtensions
+
+TODO: fill in these docs(https://github.com/umbraco/UmbracoDocs/issues/208)
 
 ##IServerMessenger
 
+TODO: fill in these docs(https://github.com/umbraco/UmbracoDocs/issues/208)
+
 ##DistributedCache.CacheChanged
+
+TODO: fill in these docs(https://github.com/umbraco/UmbracoDocs/issues/208)
