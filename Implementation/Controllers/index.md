@@ -38,7 +38,7 @@ The Umbraco Authorized controllers are:
 * Umbraco.Web.Editors.UmbracoAuthorizedJsonController
 * Umbraco.Web.WebApi.UmbracoAuthorizedApiController
 
-All implementations of SurfaceControllers inherit from the base classes:
+All implementations of Authorized Controllers must inherit from one of these the base classes:
 
 `Umbraco.Web.Mvc.UmbracoAuthorizedController`
 
@@ -46,5 +46,5 @@ All implementations of SurfaceControllers inherit from the base classes:
 
 `Umbraco.Web.WebApi.UmbracoAuthorizedApiController`
 
-###Members and Users - Routing
+####Members and Users - Routing
 There are specific rules used to determine if the request should used front end authN (members) or backoffice authN (users).  For details on the routes and route requirements see [Routing for authentication](../../../Reference/Routing/Authorized/index.md)  Umbraco Authorized controllers are not auto-routed so it is required to create routes specifically for your custom controllers.
