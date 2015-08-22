@@ -52,8 +52,8 @@ There are some special routes Umbraco checks to determine if the authentication 
          
 If any route has an extension in the path like `.aspx` or the below are always back office routes:
 
-> /Umbraco/RestServices
-> /Umbraco/BackOffice
+*  /Umbraco/RestServices
+*  /Umbraco/BackOffice
 
 If the route is not any of the above, and there's no extension then Umbraco cannot determine if it's back office or front-end - so front-end is assumed. This will occur if a `UmbracoApiController` is used rather than `UmbracoAuthorizedApiController` and the `[IsBackOffice]` attribute is not used.
 
