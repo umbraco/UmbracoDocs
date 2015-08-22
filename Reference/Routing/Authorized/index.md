@@ -12,7 +12,9 @@ You do not have to worry about routing if you are using WebApi and using `Umbrac
 
 In the case that an Umbraco Api Controller is a 'Plugin Controller', then the route would be:
  
-> `/umbraco/backoffice/api/{pluginname}/{controller}/{action}`
+> `/umbraco/backoffice/{pluginname}/{controller}/{action}`
+
+_Note:_ the {area} specified by the [PluginController] attribute replaces the /api/ area for the rouute.
 
 
 ##MVC controllers for the back office
