@@ -21,7 +21,7 @@ For details on how to contribute, see further down this page.
 [Extending (available here)](Documentation/Extending/) is documentation on customizing and extending the backoffice.
 
 ##Tutorials
-[Tutorials (available here)][Documentation/Tutorials/] is a collection of the more extensive tutorials used in the documentation.
+[Tutorials (available here)](Documentation/Tutorials/) is a collection of the more extensive tutorials used in the documentation.
 
 #Contributing to the guides
 To contribute to either the documentation or stubs, you can fork & clone our repository, make your edits, and simply push back to GitHub and send us a pull request. All items that get pulled into the main repository will automatically get pushed to [our.umbraco.org/documentation](http://our.umbraco.org/documentation).

@@ -29,26 +29,26 @@
 		</a>
 	</div>
 	<div class="col-sm-6">
-		<a href="Add-ons/" class="docs-section">
+		<a href="Reference/index.md" class="docs-section">
 			<img src="images/icon-add-on.png" alt="">
-			<h2>Add-on documentation</h2>
-			<p>Everything you need to know about Forms and Courier, the two premium packages developed and supported by HQ</p>
+			<h2>Developers' Reference</h2>
+			<p>Code reference for Umbracos management APIs, templating, querying, searching and more.</p>
 		</a>
 	</div>
 </div>
 </div>
 </br>
 
-###Contributing
-*The documentation project is open source and hosted on Github. If you have any corrections or additions to the documentation clone the project and make a pull request. [Guidelines](https://github.com/umbraco/Umbraco4Docs) on how to contribute to the documentation.*
+###[Umbraco Add ons](Add-ons/)
+Everything you need to know about Forms and Courier, the two premium packages developed and supported by HQ
 
-----------------
-
-###[Developers' Reference](Reference/index.md)
-Templating, querying, searching and other Umbraco APIs.
+###[Development Guidelines](Development-Guidelines/index.md)
+How to work with the Umbraco codebase.
 
 ###[Cheatsheets](Cheatsheets/index.md)
 Cheatsheets for easy overview of different areas like the Razor API and Views syntax.
 
-###[Development Guidelines](Development-Guidelines/index.md)
-How to work with the Umbraco codebase.
+###Contributing
+*The documentation project is open source and hosted on Github. If you have any corrections or additions to the documentation clone the project and make a pull request. [Guidelines](https://github.com/umbraco/Umbraco4Docs) on how to contribute to the documentation.*
+
+----------------
