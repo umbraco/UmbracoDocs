@@ -1,6 +1,6 @@
 #Configuration Files
 
-_This section will define the many configuration options in Umbraco and what they do_ 
+_This section will define the many configuration options in Umbraco and what they do_
 
 ###[web.config](webconfig/index.md)
 
@@ -12,27 +12,13 @@ There are quite a few umbraco options in the web.config file defined in appSetti
 
 ###[EmbeddedMedia.config](EmbeddedMedia/index.md)
 
-###ExamineIndex.config & ExamineSettings.config
+###[ExamineIndex.config](ExamineIndex/index.md)
 
-The full configuration options for these files can be found [Here](../../Reference/Searching/Examine/full-configuration.md) 
-
-###[feedProxy.config](feedProxy/index.md)
+###[ExamineSettings.config](ExamineIndex/index.md)
 
 ###[fileSystemProviders.config](fileSystemProviders/index.md)
 
-###[formHandlers.config](formHandlers/index.md)
-
-###[metablogConfig.config](metablogConfig/index.md)
-
-###[restExtensions.config](restExtensions/index.md)
-
-**NOTE**: this configuration file does not exist in v7+. This has been superceded by BaseRestExtensions.config from v4.10+.
-
 ###[BaseRestExtensions.config](BaseRestExtensions/index.md)
-
-###[scripting.config](scripting/index.md)
-
-###[skinning.config](skinning/index.md)
 
 ###[tinyMceConfig.config](tinyMceConfig/index.md)
 
@@ -41,10 +27,6 @@ The full configuration options for these files can be found [Here](../../Referen
 ###[umbracoSettings.config](umbracoSettings/index.md)
 
 Contains many Umbraco options, generally the default values work well in most installs however in some cases some of these options may need adjusting depending on each installation.
-
-###[xsltextensions.config](xsltextensions/index.md)
-
-**NOTE**: this configuration file does not exist in v7+. XSLT extensions in v7+ are registered via attributes in c#.
 
 ##clientdependency.config
 
