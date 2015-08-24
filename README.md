@@ -9,19 +9,19 @@ For details on how to contribute, see further down this page.
 #What's in the documentation
 
 ##Getting started
-[Getting started (available here)](Documentation/Getting-Started/) is an introduction to Umbraco containing explanations of basic concepts and short tutorials.
+[Getting started (available here)](Getting-Started/) is an introduction to Umbraco containing explanations of basic concepts and short tutorials.
 
 ##Implementation
-[Implementation (available here)](Documentation/Implementation/) is an overview of Umbracos structure and pipeline.
+[Implementation (available here)](Implementation/) is an overview of Umbracos structure and pipeline.
 
 ##Developers Reference
-[Reference (available here)](Documentation/Reference/index.md) is a collection of API references specifically for developers working with and extending Umbraco.
+[Reference (available here)](Reference/index.md) is a collection of API references specifically for developers working with and extending Umbraco.
 
 ##Extending
-[Extending (available here)](Documentation/Extending/) is documentation on customizing and extending the backoffice.
+[Extending (available here)](Extending/) is documentation on customizing and extending the backoffice.
 
 ##Tutorials
-[Tutorials (available here)](Documentation/Tutorials/) is a collection of the more extensive tutorials used in the documentation.
+[Tutorials (available here)](Tutorials/) is a collection of the more extensive tutorials used in the documentation.
 
 #Contributing to the guides
 To contribute to either the documentation or stubs, you can fork & clone our repository, make your edits, and simply push back to GitHub and send us a pull request. All items that get pulled into the main repository will automatically get pushed to [our.umbraco.org/documentation](http://our.umbraco.org/documentation).
