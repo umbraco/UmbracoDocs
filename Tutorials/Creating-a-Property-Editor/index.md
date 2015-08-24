@@ -152,4 +152,4 @@ Now, clear the cache, reload the document and see the pagedown editor running.
 
 When you save or publish the value of the editor is automaticly synced to the current content object and sent to the server, all through the power of angular and the `ng-model`attribute.
 
-[Go to part 2 of the tutorial](part-2.md)
+[Next - Adding configuration to a property editor](part-2.md)

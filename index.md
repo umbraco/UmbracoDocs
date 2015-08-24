@@ -45,10 +45,13 @@ Everything you need to know about Forms and Courier, the two premium packages de
 ###[Development Guidelines](Development-Guidelines/index.md)
 How to work with the Umbraco codebase.
 
+###[Tutorials](Tutorials/index.md)
+Step by step tutorials
+
 ###[Cheatsheets](Cheatsheets/index.md)
 Cheatsheets for easy overview of different areas like the Razor API and Views syntax.
 
 ###Contributing
-*The documentation project is open source and hosted on Github. If you have any corrections or additions to the documentation clone the project and make a pull request. [Guidelines](https://github.com/umbraco/Umbraco4Docs) on how to contribute to the documentation.*
+*The documentation project is open source and hosted on Github. If you have any corrections or additions to the documentation clone the project and make a pull request. [Guidelines](https://github.com/umbraco/UmbracoDocs) on how to contribute to the documentation.*
 
 ----------------

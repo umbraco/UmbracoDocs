@@ -73,4 +73,4 @@ So over the 3 previous steps, we've:
 - connected the editor with native dialogs and services
 - looked at koala pictures.
 
-[Go to part 4 of the tutorial](part-4.md)
+[Next - Adding server-side data to a property editor](part-4.md)

@@ -28,8 +28,8 @@ To contribute to either the documentation or stubs, you can fork & clone our rep
 
 ####Getting started with Git and GitHub
  * [Setting up Git for Windows and connecting to GitHub](http://windows.github.com)
- * [Forking a GitHub repository](http://help.github.com/fork-a-repo/)
- * [The simple guide to GIT](http://rogerdudler.github.com/git-guide/)
+ * [Forking a GitHub repository](https://help.github.com/articles/fork-a-repo/)
+ * [The simple guide to GIT](http://rogerdudler.github.io/git-guide/)
 
 ##Repository organisation
 All active work done on the documentation is currently being done on the 'master' branch.
@@ -46,7 +46,7 @@ Everything in the main repository will make it onto the [our.umbraco.org/documen
 
 ##Planning & discussions
 
-Use [Github issues](https://github.com/umbraco/UmbracoDocs/issues) for reporting issues.
+Use [Github issues](https://github.com/umbraco/UmbracoDocs/issues) for reporting and discussing issues.
 
 #Markdown conventions
 Keep custom HTML to a minimum. All script and style mark-up are cleaned by default.
@@ -60,7 +60,7 @@ Images are stored and linked relatively to .md pages, and should by convention a
 
 And store the image as `/documentation/reference/partials/images/img.jpg`
 
-Images can have a maximum width of **650px** and maximum height of **600px**. Please always try to use
+Images can have a maximum width of **800px**. Please always try to use
 the most efficient compression, `gif`, `png` or `jpg`. No `bmp`, `tiff` or `swf` (Flash), please.
 
 NB: In order to get images to display correctly on GitHub, all image URLs must end with "?raw=true"

@@ -58,4 +58,4 @@ Because we can also use the configuration directly in our html like here, where 
 	<div ng-show="model.config.preview" class="wmd-panel wmd-preview"></div>
 
 
-[Go to part 3 of the tutorial](part-3.md)
+[Next - Integrating services with a property editor](part-3.md)
