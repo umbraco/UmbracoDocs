@@ -17,7 +17,7 @@ Describes the different terms and objects used in Examine such as Indexers, Sear
 
 A detailed overview from top to bottom of how to use Examine
 
-## [Full configuration markup example](full-configuration.md)
+## [Full configuration markup example](../../Config/ExamineSettings/index.md)
 
 Shows all configuration options with an explanation for each
 
