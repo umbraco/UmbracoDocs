@@ -29,7 +29,7 @@
 		</a>
 	</div>
 	<div class="col-sm-6">
-		<a href="Reference/index.md" class="docs-section">
+		<a href="Reference/" class="docs-section">
 			<img src="images/icon-add-on.png" alt="">
 			<h2>Developers' Reference</h2>
 			<p>Code reference for Umbracos management APIs, templating, querying, searching and more.</p>
@@ -39,7 +39,7 @@
 </div>
 </br>
 
-###[Umbraco Add ons](Add-ons/)
+###[Umbraco Add ons](Add-ons/index.md)
 Everything you need to know about Forms and Courier, the two premium packages developed and supported by HQ
 
 ###[Development Guidelines](Development-Guidelines/index.md)
