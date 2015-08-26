@@ -22,7 +22,7 @@ What it does:
 
 Once the request is prepared, an intance of `PublishedContentRequest` is available which represents the request that Umbraco must handle.  
 It contains everything that will be needed to render it including domain information, the content model to be rendered and the template to use.
-This information is also used during the [MVC Controller/Action selection process](../Controller/).
+This information is also used during the [MVC Controller/Action selection process](../Controller-Selection/).
 
 ##Determining rendering engine
 
