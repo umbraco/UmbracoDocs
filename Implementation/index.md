@@ -1,6 +1,6 @@
 #Implementation
 
-*Get to know the Umbraco codebase. Developing an application requires knowledge about the tool your working with. This section will give you an introduction to the structure of Umbraco.*
+*Get to know the Umbraco codebase. Developing an application requires knowledge about the tool you're working with. This section will give you an introduction to the structure of Umbraco.*
 
 <div class="row implementation">
 	<div class="col-sm-12"></div>
