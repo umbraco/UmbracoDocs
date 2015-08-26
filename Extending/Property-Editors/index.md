@@ -16,8 +16,8 @@ Convert the stored property data value to a useful object returned by the Publis
 
 Property editors can be configured to support tag data. In v7 the tag system has been overhauled and updated for easier querying and seamless integration into any property editor, not just the tags property editor. This document covers how you can integrate tagging support with your property editor.
 
-##More information
+###More information
 - [Built in Property Editors](../../Getting-Started/Backoffice/Property-Editors/Built-in-Property-Editors/)
 
-##Umbraco TV
+###Umbraco TV
 - Chapter: [Property Editors](http://umbraco.tv/videos/umbraco-v7/developer/extending/property-editors/)
