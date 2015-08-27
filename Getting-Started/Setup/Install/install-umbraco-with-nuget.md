@@ -102,12 +102,12 @@ One important recommendation is to always remove the `install` folder immediatel
 
 You should also note that the Umbraco nuget package adds a build step to always include the Umbraco folders when you deploy using Web One-Click Publish with Visual Studio.  
 You can see these folders in `packages/UmbracoCms x.y.z/build/UmbracoCms.targets`  
-Should you need to exclude any of these folders or content, you can add a target to your `.pubxml` files in the `properties/Publish` folder.
+Should you need to exclude any of these folders or content, you can add a target to your `.pubxml` files in the `properties/Publish` folder. For instance if you need to exclude json data a plugin generates during production.
 
 ```
   <Target Name="StopUmbracoFromPublishingAppPlugins" AfterTargets="AddUmbracoFilesToOutput">
     <ItemGroup>
-      <FilesForPackagingFromProject Remove=".\App_Plugins\**\*.*"/>
+      <FilesForPackagingFromProject Remove=".\App_Plugins\UmbracoForms\Data\**\*.*"/>
     </ItemGroup>
   </Target>
 ```
