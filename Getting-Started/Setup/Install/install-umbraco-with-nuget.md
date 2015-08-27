@@ -104,11 +104,12 @@ You should also note that the Umbraco nuget package adds a build step to always 
 You can see these folders in packages/UmbracoCms x.y.z/build/UmbracoCms.targets  
 Should you need to exclude any of these folders or content, you can add a target to your .pubxml files under properties/Publish.
 
+```
   <Target Name="StopUmbracoFromPublishingAppPlugins" AfterTargets="AddUmbracoFilesToOutput">
     <ItemGroup>
       <FilesForPackagingFromProject Remove=".\App_Plugins\**\*.*"/>
     </ItemGroup>
   </Target>
-
+```
 
 [1]: http://youtrack.jetbrains.com/issue/RSRP-419513
