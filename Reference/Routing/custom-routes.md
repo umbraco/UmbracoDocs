@@ -12,8 +12,21 @@ Umbraco doesn't interfere with any user defined routes that you wish to have. Yo
 
 ##Custom routes within the Umbraco pipeline
 
-This is an advanced technique that some devs may be interested in. This post will describe how you can declare your own custom MVC routes in order to execute your own custom controllers in Umbraco but still be able to render Umbraco views with the same model that Umbraco uses natively.
+You can specify your own custom MVC routes to work within the Umbraco pipeline. This requires you to use an implementation of `Umbraco.Web.Mvc.UmbracoVirtualNodeRouteHandler` with your custom route. 
 
-See: [http://shazwazza.com/post/custom-mvc-routes-within-the-umbraco-pipeline/](http://shazwazza.com/post/custom-mvc-routes-within-the-umbraco-pipeline/)
+As an example:
 
-TODO: Write these docs (https://github.com/umbraco/Umbraco4Docs/issues/200)
+    //custom route to MyProductController which will use a node with ID 1234 as the 
+    // IPublishedContent for the current rendering page
+    routes.MapUmbracoRoute(
+        "test",
+        "Products/{action}/{sku}",
+        new
+        {
+            controller = "MyProduct",
+            sku = UrlParameter.Optional
+        },
+        new UmbracoVirtualNodeByIdRouteHandler(1234));
+
+TODO: Write these docs ([https://github.com/umbraco/Umbraco4Docs/issues/200](https://github.com/umbraco/Umbraco4Docs/issues/200)), in the meantime, this blog post describes a bit about this process See: [http://shazwazza.com/post/custom-mvc-routes-within-the-umbraco-pipeline/](http://shazwazza.com/post/custom-mvc-routes-within-the-umbraco-pipeline/)
+
