@@ -15,10 +15,13 @@ _This shows all of the configuration options for Examine. None of these options 
 
 
 	  <!--
-	  	* 	RebuildOnAppStart = if the index does not exist when the application is started
+	  	* 	RebuildOnAppStart = (optional, default is true)
+	  		If the index does not exist when the application is started
 			then this will rebuild all indexes on startup. If you don't want this to occur
 			then you can set this to false but you will need to manually rebuild your
-			indexes if they don't exist.
+			indexes if they don't exist. Warning: if you don't have indexes when your site is 
+			runing, parts of your site will not function as expected such as searching 
+			and media queries.
 	  -->
 	  <Examine RebuildOnAppStart="true">
 
