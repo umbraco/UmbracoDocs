@@ -36,18 +36,15 @@ _This shows all of the configuration options for Examine. None of these options 
 				Umbraco for the data that it requires. Generally this shouldn't need to change
 				unless you want to use test data from a non-umbraco source or you have very
 				custom requirements.
-			*   indexSet = explicitly specifies the index set to use. Generally this is wired up
-				based on naming convensions.
+			*   indexSet = (optional, will try to determine this based on naming conventions)
+				Explicitly specifies the index set to use. 
 			*   supportUnpublished = if you want the indexer to index content that is not published
 			*   supportProtected = if you want the indexer to index content that is protected
-			*   runAsync = will process the queue files into the index asynchronously, unless
-				you are testing, this should always be true.
-			*   interval = how often the async service will process the file queue in seconds
 			*   analyzer = the Lucene.Net analyzer to use when storing data.
 				See: http://www.aaron-powell.com/lucene-analyzer
-			*   enableDefaultEventHandler = will automatically listen for Umbraco events and index
-				when required.
-			*   logLevel="Info" or "Verbose". Info is the default, Verbose will show more detailed logs
+			*   enableDefaultEventHandler = (optional, default is true) will automatically listen for Umbraco
+				events and index when required
+			*   logLevel="Info" or "Verbose". (optional Info is the default) Verbose will show more detailed logs
 			-->
 			<add name="CWSIndexer"
 				 type="UmbracoExamine.UmbracoContentIndexer, UmbracoExamine"
@@ -55,8 +52,6 @@ _This shows all of the configuration options for Examine. None of these options 
 				 indexSet="CWSIndexSet"
 				 supportUnpublished="false"
 				 supportProtected="false"
-				 runAsync="true"
-				 interval="30"
 				 analyzer="Lucene.Net.Analysis.Standard.StandardAnalyzer, Lucene.Net"
 				 enableDefaultEventHandler="true"/>
 
