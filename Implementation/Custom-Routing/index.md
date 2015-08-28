@@ -27,19 +27,18 @@ You can specify your own custom MVC routes to work within the Umbraco pipeline. 
 
 As an example:
 
-```
-//custom route to MyProductController which will use a node with ID 1234 as the 
-// IPublishedContent for the current rendering page
-routes.MapUmbracoRoute(
-    "test",
-    "Products/{action}/{sku}",
-    new
-    {
-        controller = "MyProduct",
-        sku = UrlParameter.Optional
-    },
-    new UmbracoVirtualNodeByIdRouteHandler(1234));
-```
+    //custom route to MyProductController which will use a node with ID 1234 as the 
+    // IPublishedContent for the current rendering page
+    routes.MapUmbracoRoute(
+        "test",
+        "Products/{action}/{sku}",
+        new
+        {
+            controller = "MyProduct",
+            sku = UrlParameter.Optional
+        },
+        new UmbracoVirtualNodeByIdRouteHandler(1234));
+
 
 See: [Custom routing documentation](../../Reference/Routing/custom-routes)
 
