@@ -212,7 +212,7 @@
 			</div>
 
 			<div class="col-sm-6">
-				<h5><a href="Code/Subscribing-To-Events/">Creating forms</a></h5>
+				<h5><a href="Code/Creating-Forms/">Creating forms</a></h5>
 				<small>Create, submit and handle HTML forms with controllers</small>
 			</div>
 
