@@ -78,19 +78,19 @@ Get an overview of how the Umbraco pipeline is structured. See what happens from
 				<small>The MVC Action and View are executed. During this execution you can query for published data to be displayed/rendered.</small>
 			</div>
 			<div class="col-sm-6">
-				<h5><a href="../Reference/Querying/IPublishedContent/">IPublishedContent</a></h5>
+				<h5><a href="../../Reference/Querying/IPublishedContent/">IPublishedContent</a></h5>
 				<small>IPublishedContent is the underlying model used in all Umbraco views</small>
 			</div>
 			<div class="col-sm-6">
-				<h5><a href="../Reference/Querying/DynamicPublishedContent/">DynamicPublishedContent</a></h5>
+				<h5><a href="../../Reference/Querying/DynamicPublishedContent/">DynamicPublishedContent</a></h5>
 				<small>The dynamic version of IPublishedContent that can be used in all Umbraco views</small>
 			</div>
 			<div class="col-sm-6">
-				<h5><a href="../Reference/Querying/UmbracoHelper/">UmbracoHelper</a></h5>
+				<h5><a href="../../Reference/Querying/UmbracoHelper/">UmbracoHelper</a></h5>
 				<small>Use UmbracoHelper to query published media and content</small>
 			</div>
 			<div class="col-sm-6">
-				<h5><a href="../Reference/Querying/MembershipHelper/">Members</a></h5>
+				<h5><a href="../../Reference/Querying/MembershipHelper/">Members</a></h5>
 				<small>This section covers the MembershipHelper</small>
 			</div>
 		</div>
