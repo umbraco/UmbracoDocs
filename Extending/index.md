@@ -1,5 +1,9 @@
 #Extending Umbraco
 
+##[Backoffice API documentation](http://umbraco.github.io/Belle/#/api)
+
+Angular API reference for the Umbraco backoffice (Belle).
+
 ##[Dashboards](Dashboards/index.md)
 
 A Dashboard is a component for displaying elements on the right-hand side of the backoffice UI area.
@@ -16,6 +20,10 @@ A property editor is the editor used to insert content into Umbraco. [See here f
 
 This section will describe how to work with and create Property Editors.
 
+##[Server variables & URLs](version7-assets.md)
+
+Information on extending Umbraco, details such as dealing with server variables, service URLs, JavaScript and CSS assets, etc....
+
 ##[Macro Parameter Editors](Macro-Parameter-Editors/index.md)
 
 A Parameter Editor is the editor used to insert values into a [Macro](../reference/templating/macros/index.md).
@@ -31,22 +39,6 @@ The Umbraco back office can be configured so that the user interface runs in the
 Information on the packaging manifest format and how assets should be packaged as a zip file for easy distribution
 **(coming soon)**
 
-##[Version 7+ assets](version7-assets.md)
-
-Version 7+ specific information on extending Umbraco, details such as dealing with server variables, service URLs, JavaScript and CSS assets, etc....
-
 ##[Custom file systems (IFileSystem)](Custom-File-Systems.md)
 
 Details on implementing virtual file systems for things like media which will allow you to store your files outside of the physical file system (i.e. Cloud based for example)
-
-##Menu items
-
-*coming soon*
-
-##Image Url providers
-
-*coming soon*
-
-##Thumbnail providers
-
-*coming soon*

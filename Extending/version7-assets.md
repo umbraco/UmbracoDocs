@@ -1,4 +1,4 @@
-#Version 7 Server variables, URLs and Assets
+#Server variables & URLs
 
 _Describes how to deal with server variables and service URLs, along with how to work with custom JavaScript and CSS assets when creating custom sections, trees or property editors_
 
@@ -33,12 +33,12 @@ A handler for this method could look like:
             {
                 {"mySetting1", "blah"},
                 {"mySetting2", "another value"}
-            });        
-    } 
+            });
+    }
 
 ##URLs
 
-A good rule of thumb about service URLs is to not hard code them if possible. One of the reasons why we don't hard code URLs is in case that routing has to change for some reason (i.e. [the breaking change for 7.0.2](http://umbraco.com/follow-us/blog-archive/2014/1/17/heads-up,-breaking-change-coming-in-702-and-62.aspx)). Another reason is if you want to keep compatibility with a legacy controller and introduce a new API version route (i.e. */umbraco/backoffice/api/myservice/v2/getstuff*). Generally a change like this would just mean changing a route in c# and if the JavaScript could automatically know the URL without being hard coded, it will 'just work'. 
+A good rule of thumb about service URLs is to not hard code them if possible. One of the reasons why we don't hard code URLs is in case that routing has to change for some reason (i.e. [the breaking change for 7.0.2](http://umbraco.com/follow-us/blog-archive/2014/1/17/heads-up,-breaking-change-coming-in-702-and-62.aspx)). Another reason is if you want to keep compatibility with a legacy controller and introduce a new API version route (i.e. */umbraco/backoffice/api/myservice/v2/getstuff*). Generally a change like this would just mean changing a route in c# and if the JavaScript could automatically know the URL without being hard coded, it will 'just work'.
 
 ### Using Server Variables
 
@@ -46,14 +46,14 @@ In the core we add a new server variable for every api controller's base URL. Th
 
 	umbRequestHelper.getApiUrl("contentApiBaseUrl", "PostSort")  
 
-This method looks in the "umbracoUrls" key for URLs in the server variables collection, for example: 
+This method looks in the "umbracoUrls" key for URLs in the server variables collection, for example:
 
 	Umbraco.Sys.ServerVariables.umbracoUrls.contentApiBaseUrl
 
 The way that we add service URLs to the server variables collection in the core is by using strongly typed extension methods on the `UrlHelper`. This means that we have no magic strings that need changing in c# so refactoring is a breeze and we won't forget to update a hard coded string that we've forgotten about. These extension methods are public as well so you can use them too. For example, to generate the 'contentApiBaseUrl' to the server vars collection we use this code:
 
 	Url.GetUmbracoApiServiceBaseUrl<ContentController>(controller => controller.PostSave(null))
-    
+
 For a full reference to our URL generation, you can see the source of the [BackOfficeController](https://github.com/umbraco/Umbraco-CMS/blob/7.0.2/src/Umbraco.Web/Editors/BackOfficeController.cs).
 
 ### UrlHelper
@@ -62,8 +62,3 @@ Because the `Umbraco.Web.UI.JavaScript.ServerVariablesParser.Parsing` event does
 
 	if (HttpContext.Current == null) throw new InvalidOperationException("HttpContext is null");
 	var urlHelper = new UrlHelper(new RequestContext(new HttpContextWrapper(HttpContext.Current), new RouteData()))
-
-
-##Assets
-
-coming soon...
