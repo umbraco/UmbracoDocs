@@ -65,7 +65,7 @@ Inside this package manifest we add a bit of json to describe the property edito
 
 ##Writing some basic html + js
 Then we add 2 files to the /app_plugins/markdowneditor/ folder:
-- ´markdowneditor.html`
+- `markdowneditor.html`
 - `markdowneditor.controller.js`
 
 These will be our main files for the editor, with the .html file handling the view and the .js
@@ -87,7 +87,7 @@ And in the .html file I'll add:
 
 Now our basic parts of the editor is done namely:
 
-- The package manifest, telling Umbraco what to lod
+- The package manifest, telling Umbraco what to load
 - The html view for the editor
 - The controller for wiring up the editor with angular.
 
