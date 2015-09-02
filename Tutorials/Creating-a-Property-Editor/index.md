@@ -48,7 +48,7 @@ Inside this package manifest we add a bit of json to describe the property edito
 				/*this must be a unique alias*/
 				alias: "My.MarkdownEditor",
 				/*the name*/
-				name: "Markdown editor",
+				name: "My markdown editor",
 				/*the html file we will load for the editor*/
 				editor: {
 					view: "~/App_Plugins/MarkDownEditor/markdowneditor.html"
