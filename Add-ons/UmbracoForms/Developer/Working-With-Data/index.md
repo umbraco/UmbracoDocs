@@ -50,7 +50,7 @@ The properties available on a DynamicRecord are:
 
 In order to access custom form fields you can simply use the dot notation, using the field caption but removing all spaces and non alphanumeric characters.
 
-##Sample razor script (DynamicNode, pre Umbraco 6.0.0)
+##Sample razor script 
 
 Sample script that is outputting comments using a form created with the default comment form template.
 	
@@ -58,7 +58,7 @@ Sample script that is outputting comments using a form created with the default 
 
 	<ul id="comments">
 	 @foreach (dynamic record in Library
-	           .GetApprovedRecordsFromPage(@Model.Id).OrderBy("Created"))
+	           .GetApprovedRecordsFromPage(@CurrentPage.Id).OrderBy("Created"))
 	 {
 	     <li>
 	          @record.Created.ToString("dd MMMM yyy")
