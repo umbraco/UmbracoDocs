@@ -9,7 +9,7 @@ We're now going to make a simple page where we'll just put our contact details. 
 Some potential solutions:
 
 * Build your own contact form using Surface Controllers - [http://our.umbraco.org/documentation/Reference/Templating/Mvc/forms](http://our.umbraco.org/documentation/Reference/Templating/Mvc/forms) or [http://umbraco.tv/videos/developer/fundamentals/surface-controllers/](http://our.umbraco.org/documentation/Reference/Templating/Mvc/forms)
-* If you're not a programmer you can use a ready-made package - [http://umbraco.com/products/more-add-ons/contour.aspx](http://umbraco.com/products/more-add-ons/contour.aspx)
+* If you're not a programmer you can use the Umbraco built in package - Umbraco Forms. This has the added benefit editors can also create their own forms [http://umbraco.com/products-and-support/forms](http://umbraco.com/products-and-support/forms)
 
 
 For now let's create a simple page - a page where the user can provide a title and some rich text. This is very similar to our homepage document type at the moment but we're assuming that you'll go and develop this into something very specific (e.g. adding the featured article and other article content blocks). 
