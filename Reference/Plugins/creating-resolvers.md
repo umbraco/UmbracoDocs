@@ -22,7 +22,7 @@ As an example, we'll create a resolver to resolve an application error logger:
 		/// <param name="contentStore"></param>
 		public void SetErrorLogger(IErrorLogger errorLogger)
 		{
-			Value = contentStore;
+			Value = errorLogger;
 		}
 	
 		/// <summary>
