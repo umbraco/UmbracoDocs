@@ -18,4 +18,4 @@ Now let's fix the navigation menu - there are two ways of doing this, you could 
 
 ---
 ##Next - [Articles Parent and Article Items](Articles-Parent-and-Article-Items.md)
-How to have a parent page that lists and links to the child nodes automatically (e.g. Aricles home with infinite articles - useful for Blogs or News pages). 
+How to have a parent page that lists and links to the child nodes automatically (e.g. Articles home with infinite articles - useful for Blogs or News pages). 
