@@ -7,13 +7,15 @@ Save the file and add an editor to the `/app_plugins/yourpackage/package.manifes
 
     {
         "gridEditors": [
-            "name": "Code",
-            "alias": "code",
-            "view": "/app_plugins/yourpackage/editor.html",
-            "icon": "icon-code",
-            "config": {
-                "color": "red",
-                "text-align": "right"
+            {
+                "name": "Code",
+                "alias": "code",
+                "view": "/app_plugins/yourpackage/editor.html",
+                "icon": "icon-code",
+                "config": {
+                    "color": "red",
+                    "text-align": "right"
+                }
             }
         ]
     }
