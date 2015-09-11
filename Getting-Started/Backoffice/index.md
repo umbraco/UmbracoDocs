@@ -55,9 +55,6 @@ Similar to a Document type and a Media type. You are able to define custom prope
 ###[Templates](../Design/Templates/)
 A template is where you define the HTML markup of your website. A layout is a common template that contains common markup such as the `<head>` section.
 
-###Template Sections
-Template sections allow child templates that inherit the master layout template to insert html code up into the main layout template. For example a child template inserting code into the `<head>` tag
-
 ###Package
 A package is the Umbraco term for a module or plug-in used to extend Umbraco. Packages can be found in the [projects section of Our Umbraco](https://our.umbraco.org/projects/ "Projects on Our Umbraco").
 
