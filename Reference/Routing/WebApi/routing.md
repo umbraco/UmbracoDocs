@@ -16,7 +16,7 @@ All plugin based Umbraco api controlleres will be routed under the url path of:
 
 ##Urls
 
-We've added some handy UrlHelper extension methods so you can easily retreive the Url of your Umbraco Api controllers. The extension methods are found in the class: `Umbraco.Web.UrlHelperExtensions` so you'll need to ensure you have the namespace `Umbraco.Web` imported. 
+We've added some handy UrlHelper extension methods so you can easily retrieve the Url of your Umbraco Api controllers. The extension methods are found in the class: `Umbraco.Web.UrlHelperExtensions` so you'll need to ensure you have the namespace `Umbraco.Web` imported. 
 
 The method overloads are:
 
@@ -25,7 +25,7 @@ The method overloads are:
 	string GetUmbracoApiService(string actionName, string controllerName)
 	string GetUmbracoApiService(string actionName, string controllerName, string area)
 
-The easiest way to retreive a Url is to use your controller's type. Example:
+The easiest way to retrieve a Url is to use your controller's type. Example:
 
 	@Url.GetUmbracoApiService<ProductsApiController>("GetAllProducts")
 
