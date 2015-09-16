@@ -21,7 +21,7 @@ _Note:_ the {area} specified by the [PluginController] attribute replaces the /a
 
 If you are using MVC in the back office then you would normally inherit from `Umbraco.Web.Mvc.UmbracoAuthorizedController`. This type of controller is not auto-routed like Umbraco Api controllers so will require a custom route declaration to make it work.
 
-For more information on authenticated/authorized controllers & attributes see the [Controllers Documentation](../../Implementation/Controllers/index.md).
+For more information on authenticated/authorized controllers & attributes see the [Controllers Documentation](../../../Implementation/Controllers/index.md).
 
 ##Defining a route
 When you create a controller that inherits from `Umbraco.Web.Mvc.UmbracoAuthorizedController` you need to explicitly define a route.  
