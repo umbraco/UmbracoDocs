@@ -82,6 +82,7 @@ NuGet will do the following for you but if you're upgrading manually:
 * In your `web.config` file, add this in the `appSetting` section: `<add key="owin:appStartup" value="UmbracoDefaultOwinStartup" />`
 
 Other considerations:
+
 * WebApi has been updated, normally you don’t have to do anything unless you have custom webapi configuration:
   * See this article if you are using `WebApiConfig.Register`: [http://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2](http://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2) 
   * You need to update your `web.config` file to have the correct WebApi version references - this should be done by doing a compare/merge of your `~/web.config` file with the `~/web.config` file in the release
