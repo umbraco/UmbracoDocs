@@ -5,7 +5,7 @@ _The primary task of any template in Umbraco is to render the values of the curr
 ##Rendering values
 Values of the current page can be rendered in 2 different ways, either by using the Umbraco html helper, which lets you access each field by its alias like so:
 
-    <h1>Hello @Umbraco.field("pageName")</h1>
+    <h1>Hello @Umbraco.Field("pageName")</h1>
     <p>@Umbraco.Field("bodyText")</p>
 
 There is a dialog (click ![Button](images/button.png)) on the backoffice template editor which can help you pick values and select common modifications:
