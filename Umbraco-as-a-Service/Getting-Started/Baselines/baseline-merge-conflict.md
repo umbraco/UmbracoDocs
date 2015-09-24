@@ -1,20 +1,24 @@
 #Baseline Merge Conflicts
 Here we outline how to manually resolve a merge conflict after having updated the children for a Baseline project.
 
-On a Baseline project you can click to “Manage children”, which enables you to update all the child projects with the latest changes from the Live environment of the Baseline project.
+On a Baseline project you can click to _“Manage updates here”_, which enables you to update all the child projects with the latest changes from the Live environment of the Baseline project.
 
-![environment](images/image04.png)
+![environment](images/managechildrenhere.jpg)
 
 From the overview page you simply click the “Update all children” button to start the update process
 
-![environment](images/image01.png)
+![environment](images/updateallchildren.jpg)
 
 The overview will then change to show the progress and status for updating the various child projects.
 
-The outcome of the update will result in one of three statuses “Updated has completed”, “Error while updating from upstream” or “Encountered a merge conflict so abandoning update”.
+The outcome of the update will result in one of three statuses:
+ - Updated has completed
+ - Error while updating from upstream
+ - Encountered a merge conflict so abandoning update
+
 A merge conflict is something you currently need to handle manually in order to push future updates to the child project, which encountered a merge conflict upon updating.
 
-![environment](images/image00.png)
+![environment](images/mergeconflict.jpg)
 
 In order to resolve the conflict you need to open up the SCM / Kudu site for the development environment. Click the “[link]” (see screenshot above) for the project (see screenshot above) and find clone url for the development site, which is similar to this: `https://dev-my-website-alias.scm.umbraco.io/c565ead8-7a27-4696-9ab4-dad7eba2cd2c.git` and remove everything after the last slash, so you have a url that looks like this: `https://dev-my-website-alias.scm.umbraco.io`
 
