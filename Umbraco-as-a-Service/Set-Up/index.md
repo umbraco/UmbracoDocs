@@ -3,12 +3,6 @@ Now that you've created a project there are a few things you may want to do to m
 
 Most of the set up can be accomplished by using the options from your project's Settings drop down. Some of the setup applies to all of your projects, so you'll make these updates from your profile section.
 
-##Other Set Up Topics
-####[Working with your site locally](Working-Locally/)
-####[Adding team members](Team-Members/)
-####[Working with Visual Studio](Visual-Studio/)
-####[Additional media topics](Media/)
-
 #Project settings
 ![settings](images/settings.jpg)
 
@@ -71,3 +65,9 @@ From your profile settings you can set your timezone. This applies to the displa
 
 ###Experimental Features
 You can enable the availability of experimental features for your projects. This includes features that may not be functionally complete and are not supported by Umbraco HQ. We recommend enabling this only if you fully understand the feature you will be using or are strictly using the project as a test.
+
+####Other Set Up Topics
+ - [Working with your site locally](Working-Locally/)
+ - [Adding team members](Team-Members/)
+ - [Working with Visual Studio](Visual-Studio/)
+ - [Additional media topics](Media/)
