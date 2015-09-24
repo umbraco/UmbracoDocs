@@ -4,9 +4,11 @@ To work with a local copy of your site you'll need to use Windows and have a loc
 From the Umbraco as a Service portal copy your development environments git repository endpoint using the *Get Clone Url* option and then clone the site using your favorite Git client. We like [SourceTree](http://www.sourcetreeapp.com/) or [Git Extensions](http://code.google.com/p/gitextensions/). We'll use SourceTree in this example. Here are the steps to clone your site:
 
 1. Copy the Clone Url from the portal for your dev environment
-![clone dialog](images/getcloneurl.jpg)
+    ![clone dialog](images/getcloneurl.jpg)
+
 2. From SourceTree select Clone/New and paste the Url in the Source Path box
-![clone dialog](images/addrepo.jpg)
+    ![clone dialog](images/addrepo.jpg)
+
 3. Set your Destination Path to where you keep your local work
 4. You’ll be prompted to log in, use the same credentials as you use for Umbraco as a Service.
 5. Click Clone

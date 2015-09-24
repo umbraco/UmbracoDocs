@@ -51,25 +51,44 @@ On rare occasions you may find that a deployment fails and there is no useful in
 The first step is to find out what state the site’s Git repository is in (for the source site, usually dev but could also be stage).  In order to do this we’ll use the Kudu console that is available for every site in Umbraco as a Service.  Here are the steps to find out what state your repository is in:
 
 1. Copy the Url from your site’s HTTPS Clone Url in the portal
+
 2. Using the Url without the actual repository name, the GUID part, open a new browser tab and login.  Just the Url like `https://stage-mysite.scm.s1.umbraco.io/`
+
 3. You’ll see the Kudu site, which includes your site’s Git repository
+
 4. From the menu select Debug Console > Powershell
+
 5. In the file explorer navigate to site > repository
+
 6. Now in the Powershell console enter
   `PS> git status`
+
 7. The status of your repository will be displayed. If you see output similar to the following, you’re getting somewhere:
-  `. # On branch master  # Your branch and 'origin/master' have diverged`
+
+    `. # On branch master  # Your branch and 'origin/master' have diverged`
+
 8. Now you just need to resolve any merge conflicts and commit any outstanding unmerged paths.  In most cases, you can use the following Git command to commit the outstanding paths (it may take a minute or two for Git to process the commit):
-  `PS> git commit -m “Latest merged files here”`
+
+    `PS> git commit -m “Latest merged files here”`
+
 9. If the git commit didn’t work for you, you’ll need to go even a little deeper.  There are a few options here; 1) if the files marked as “Unmerged paths” have a name like ‘03dbdfb1-7780-4368-8f1e-2bc2a18012ec.courier’ you can remove them using the git command:
-`PS> git rm <full path from console>/03dbdfb1-8f1e-2bc2a18012ec.courier`
+
+    `PS> git rm <full path from console>/03dbdfb1-8f1e-2bc2a18012ec.courier`
+
 10. And 2) If the files listed in “Unmerged paths” are files your site is using, you’ll need to manually edit these files to resolve the merge conflict and then add the back to your repository using the git command:
-  `PS> git add myfilename`
+
+    `PS> git add myfilename`
+
 11. Once you have resolved any conflicts you need to commit any outstanding changes:
-  `PS> git commit -m “Manually resolved merge conflicts, yay!”``
+
+    `PS> git commit -m “Manually resolved merge conflicts, yay!”``
+
 12. Now check the status of the repository to make sure it’s clean:
-  `PS> git status`
+
+    `PS> git status`
+
 13. Whew!  Just imagine having to do this without Git!
+
 14. Now you can return to the Umbraco as a Service portal and again deploy your site
 
 ##Logfiles
@@ -81,9 +100,13 @@ If there's something wrong with you site that you can't directly see the cause o
 ###Second - Other logs
 These can all be accessed through Kudu:
 1. Copy the Url from your site’s HTTPS Clone Url in the portal
+
 2. Using the Url without the actual repository name, the GUID part, open a new browser tab and login.  Just the Url like `https://stage-mysite.scm.s1.umbraco.io/`
+
 3. You’ll see the Kudu site, which includes your site’s Git repository
+
 4. From the menu select Debug Console > Powershell
+
 5. In the file explorer navigate to site
 
 ####Courier logs
@@ -93,8 +116,11 @@ When your site structure doesn't deploy as you expected, there may be errors in 
 Whenever you push from local to staging or when you deploy using the Umbraco as a Service portal, you're deploying your site using git. This works as follows: you commit changes to git and push them to development, these changes are then stored in the site > repository folder. Then the state of the newest commit gets copied into the wwwroot folder, which is where your website lives.
 
 When you're in Kudu, you can go up to your `site` folder as described in the 5 steps above and then jump into the deployments folder. The `active` file has the identifier of the currently active deployment in it. If you go into the folder that has the same name as that identifier you can see a few files: `log.xml`, `manifest` and `status.xml`.
+
 - `status.xml` shows you detailed information of which commit was deployed to the `wwwroot` folder
+
 - `manifest` is used to track which files are in the currently active deploy so that additions, renames and deletions can be detected easily for the next deploy (this is an internal file which you should not touch)
+
 - `log.xml` shows you the same output you will have seen when pushing your changes using git, it will show you what happened during the push and if any errors occurred. This file is especially useful when trying to find errors for deploys using the portal (so from dev > live or from dev > staging > live). Even though the last line may end with "Deployment successful" it is possible that there were errors or suspicious messages before that so make sure to give them a read.
 
 It is possible that a deployment failed so that it is not the active deployment at the moment, there could be valueable information in the logs of this deployment. You can find out what the last attempted deploy was by going to your Kudu url and adding `/api/deployments` to the url (so for example: `https://stage-mysite.scm.s1.umbraco.io/api/deployments`. This will give you some JSON data and the first entry in here is the newest attempted deploy, again the id corresponds to a folder name which has the log.xml file in it.
