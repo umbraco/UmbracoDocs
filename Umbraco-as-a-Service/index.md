@@ -2,6 +2,18 @@
 
 Documentation for Umbraco as a Service. How to get started, how to set up your Umbraco as a Service project for development, how to successfully deploy, and how to troubleshoot issues.
 
+##[Getting Started](Getting-Started/)
+If you're new to Umbraco as a Service then start here. All about what Umbraco as a Service is and how you can use it to get your work done more efficiently - and have more fun.
+
+##[Set up a Project](Set-Up/)
+How to set up a project for development. Using just Umbraco as a Service, by cloning locally, and when working with a team.
+
+##[Deployment](Deployment/)
+The deployment process explained with best practices and a little Git mixed in.
+
+##[Troubleshooting](Troubleshooting/)
+Tips on identifying, finding and resolving issues.
+
 ##Overview
 Umbraco as a Service is the best way to create and manage an Umbraco project. It includes 10-years of experience and best-practices in an intuitive, simple, but robust approach. For use by a single site creator or a team of professional web developers, Umbraco as a Service removes the barriers that slow down projects and get in the way of beautiful, functional sites.
 
@@ -15,14 +27,4 @@ When you need to add members to your team, it’s as simple as adding an email a
 
 With all the success you’ll have building your site with Umbraco as a Service you’ll want to add more, which is easily done using the same account and team members. You can manage all your Umbraco sites from a single portal, with a single login.  That’s simplicity!
 
-##[Getting Started](Getting-Started/)
-If you're new to Umbraco as a Service then start here. All about what Umbraco as a Service is and how you can use it to get your work done more efficiently - and have more fun.
-
-##[Set up a Project](Set-Up/)
-How to set up a project for development. Using just Umbraco as a Service, by cloning locally, and when working with a team.
-
-##[Deployment](Deployment/)
-The deployment process explained with best practices and a little Git mixed in.
-
-##[Troubleshooting](Troubleshooting/)
-Tips on identifying, finding and resolving issues.
+[Learn more and sign up for Umbraco as a Service](https://umbraco.com/cloud)

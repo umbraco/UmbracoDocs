@@ -53,6 +53,9 @@ How to work with the Umbraco codebase.
 ###[Cheatsheets](Cheatsheets/index.md)
 Cheatsheets for easy overview of different areas like the Razor API and Views syntax.
 
+###[Umbraco as a Service](Umbraco-as-a-Service/)
+How to work with Umbraco as a Service.
+
 ---
 
 ###Contributing
