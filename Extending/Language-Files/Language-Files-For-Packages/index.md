@@ -32,7 +32,7 @@ For reference on the language file format see the core [language files on github
 Using core or custom language keys from your code:
 
 
-### From C#
+### From .net
 `Services` are available in most Umbraco baseclasses like Controllers and UserControls, from there, use TextService to localize string with format [area]/[key]:
 
     using Umbraco.Core.Services;
