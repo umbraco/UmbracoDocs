@@ -1,22 +1,22 @@
 #Flexible load balancing
 
-_Information on how to deploy Umbraco in a flexible Load Balanced scenario and other 
+_Information on how to deploy Umbraco in a flexible Load Balanced scenario and other
 details to consider when setting up Umbraco for load balancing._
 
-**_Traditional load balancing must be used for Umbraco versions less than 7.3.0._** 
+**_Traditional load balancing must be used for Umbraco versions less than 7.3.0._**
 
 **Be sure you read the [Overview](index.md) before you begin!**
 
 ##Design
 These instructions make the following assumptions:
 
-* All web servers can communicate with the database where Umbraco data is stored 
+* All web servers can communicate with the database where Umbraco data is stored
 * You are running Umbraco 7.3.0 or above
 * _**You will designate a single server to be the back-office server for which your editors will log into for editing content.**_ Umbraco will not work if the back-office is behind the load balancer *(see DNS for more information below)*.
 
 There are three design alternatives you can use to effectively load balance servers:
 
-1. You use cloud based auto-scaling appliances like [Microsoft's Azure Web Apps](https://azure.microsoft.com/en-us/services/app-service/web/) 
+1. You use cloud based auto-scaling appliances like [Microsoft's Azure Web Apps](https://azure.microsoft.com/en-us/services/app-service/web/)
 2. Each server hosts copies of the load balanced website files and a file replication service is running to ensure that all files on all servers are up to date
 3. The load balanced website files are located on a centralized file share (SAN/NAS/Custered File Server/Network Share)
 
@@ -35,18 +35,18 @@ The process is as follows:
 * Administrators and editors create, update, delete data/content on the master server
 * These events are converted into data structures called "instructions" and are stored in the database in a queue
 * Each front-end server checks to see if there are any outstanding instructions it hasn't processed yet
-* When a front-end server detects that there are pending instructions, it downloads them and processes them and in turn updates it's cache, cache files and indexes on it's own file system 
+* When a front-end server detects that there are pending instructions, it downloads them and processes them and in turn updates it's cache, cache files and indexes on it's own file system
 * There can be up to a 5 second delay between content updates and a front-end server's refreshing, this is expected and normal behavior.
 
 ## Option #1 : Cloud based auto-scale appliances
 
-We have focused primarily on Azure Web Apps when developing flexible load balancing for cloud based appliances. The documentation here is for Azure Web Apps but a similar setup would be achievable on other services supporting ASP.Net. 
+We have focused primarily on Azure Web Apps when developing flexible load balancing for cloud based appliances. The documentation here is for Azure Web Apps but a similar setup would be achievable on other services supporting ASP.Net.
 
 Ensure you read the [overview](index.md) before you begin - you will need to ensure that your asp.net & logging configurations are correct.
 
 ###Lucene/Examine configuration
 
-You cannot share indexes between servers and since Azure Web Apps use a shared file server, Examine settings need to be updated 
+You cannot share indexes between servers and since Azure Web Apps use a shared file server, Examine settings need to be updated
 
 * Ensure you are using the [latest Examine version from Nuget](https://www.nuget.org/packages/Examine)
 * In ExamineIndex.config, you need to tokenize the path for each of your indexes to include the machine name, this will ensure that your indexes are stored in different locations for each machine. An example of a tokenized path is: `~/App_Data/TEMP/ExamineIndexes/{machinename}/Internal/`
@@ -61,9 +61,9 @@ You cannot share indexes between servers and since Azure Web Apps use a shared f
 ### Steps
 
 1. Create an Azure SQL database
-2. Install Umbraco on your master environment and ensure to use your Azure SQL Database 
+2. Install Umbraco on your master environment and ensure to use your Azure SQL Database
 3. Install Umbraco on your front-end environment and ensure to use your Azure SQL Database
-4. Test: Perform some content updates on the master/administration environment, ensure they work successfully on that environment, then verify that those changes appear on the front-end environment 
+4. Test: Perform some content updates on the master/administration environment, ensure they work successfully on that environment, then verify that those changes appear on the front-end environment
 
 ### Scaling
 
@@ -75,9 +75,11 @@ Azure Web Apps can be manually or automatically scaled up or down and is support
 
 Since you have 2 x web apps, when you deploy you will need to deploy to both places - There is probably various automation techniques you can use to make this simple (this is outside the scope of this document)
 
+**Important note:** This also means that you should not be editing templates or views on a live server as master and front-end environments do not share the same file server. Changes should be made in a staging environment and then pushed to live environments.
+
 ## Option #2 : File Storage with File Replication
 
-If you are not using a cloud based setup then *this is the recommended setup*. 
+If you are not using a cloud based setup then *this is the recommended setup*.
 
 Ensure you read the [overview](index.md) before you begin - you will need to ensure that your asp.net & logging configurations are correct.
 
@@ -85,16 +87,16 @@ Ensure you read the [overview](index.md) before you begin - you will need to ens
 
 ### Scaling
 
-Scaling will still be a slightly manual process because it would involve you adding servers/sites but with flexible load balancing you don't have to configure anything in Umbraco, 
+Scaling will still be a slightly manual process because it would involve you adding servers/sites but with flexible load balancing you don't have to configure anything in Umbraco,
 you just need to point the site to the Umbraco database and update your load balancer to include the site.
 
 ## Option #3 : File Storage on SAN/NAS/Clustered File Server/Network Share
 
-Configuring your servers to work using a centrally located file system that is shared for all of your IIS instances can be tricky and can take a while to setup correctly. 
+Configuring your servers to work using a centrally located file system that is shared for all of your IIS instances can be tricky and can take a while to setup correctly.
 
 [See here for specific details about using Option #3: File Storage on SAN/NAS/Clustered File Server/Network Share](files-shared.md)
 
 ### Scaling
 
-Scaling will still be a slightly manual process because it would involve you adding servers/sites but with flexible load balancing you don't have to configure anything in Umbraco, 
+Scaling will still be a slightly manual process because it would involve you adding servers/sites but with flexible load balancing you don't have to configure anything in Umbraco,
 you just need to point the site to the Umbraco database and update your load balancer to include the site.

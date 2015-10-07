@@ -2,8 +2,7 @@
 
 _Information on how to deploy Umbraco in a traditional Load Balanced scenario and other details to consider when setting up Umbraco for load balancing._
 
-Traditional load balancing must be used for Umbraco versions less than 7.3.0. If you are using Umbraco 7.3.0+ then it is highly recommended to use
-the new **[Flexible Load Balancing](index.md)**
+Traditional load balancing must be used for Umbraco versions less than 7.3.0. If you are using Umbraco 7.3.0+ then it is highly recommended to use the new **[Flexible Load Balancing](index.md)**
 
 **Be sure you read the [Overview](index.md) before you begin!**
 
@@ -19,7 +18,7 @@ These instructions make the following assumptions:
 
 There are two design alternatives you can use to effectively load balance servers:
 
-1. Option #1 : Each server hosts copies of the load balanced website files and a file replication service is running to ensure that all files on all servers are up to date. __This is the recommended approach.__ 
+1. Option #1 : Each server hosts copies of the load balanced website files and a file replication service is running to ensure that all files on all servers are up to date. __This is the recommended approach.__
 2. Option #2 : The load balanced website files are located on a centralized file share (SAN/NAS/Custered File Server/Network Share).
 
 And you'll obviously need a load balancer to do your load balancing!
@@ -51,9 +50,9 @@ Of course you'll have your public website's DNS/address which you'll also need t
 
 ###Back office server
 
-You should designate one of these servers to be the back-office server for which your editors will use to log in to and edit content. This can be acheived by creating another public DNS entry/host header that you can assign to your designated server. 
+You should designate one of these servers to be the back-office server for which your editors will use to log in to and edit content. This can be acheived by creating another public DNS entry/host header that you can assign to your designated server.
 
-As an example, you could assign Server 1 as the designated back-office server. In this case you could create a DNS entry such as **admin.mywebsite.com** and add as a host header to Server 1. 
+As an example, you could assign Server 1 as the designated back-office server. In this case you could create a DNS entry such as **admin.mywebsite.com** and add as a host header to Server 1.
 
 You will then need to ensure that any public request going to this DNS entry only goes to Server 1. This can be acheived by assigning a secondary public IP address to the DNS entry and configuring your firewall to NAT this IP address to your Server 1 internal IP address. Other alternatives could possibly be acheived based on your firewall and the configuration that it supports.
 
@@ -76,14 +75,14 @@ Some important notes on NLB:
 
 ## Option #2 : File Storage on SAN/NAS/Clustered File Server/Network Share
 
-Configuring your servers to work using a centrally located file system that is shared for all of your IIS instances can be tricky and can take a while to setup correctly. 
+Configuring your servers to work using a centrally located file system that is shared for all of your IIS instances can be tricky and can take a while to setup correctly.
 
 [See here for specific details about using Option #2: File Storage on SAN/NAS/Clustered File Server/Network Share](files-shared.md)
 
 ##Umbraco Configuration
 
 Configuring Umbraco to support load balanced clusters is probably the easiest part. In the /config/umbracoSettings.config file you need to updated the distributed call section to the following (as an example)
-	
+
 	<distributedCall enable="true">
 	    <user>0</user>
 	    <servers>
@@ -111,12 +110,12 @@ As of Umbraco 6.2.1+ and 7.1.5+ there are another couple of options to take into
 **serverName** will be the most common attribute to use and will always work so long as you are not load balancing a single site on the same server. In this case you should add the serverName attribute to each server node listed so that each server knows if it is a master or slave and so that each server knows which internal URL it can use to ping itself. Take not that the serverName must match the machine name otherwise scheduled tasks will not work
 Example:
 
-		
+
 		<server serverName="MyServer1">server1.mywebsite.com</server>
 	        <server serverName="MyServer2">server2.mywebsite.com</server>
 	        <server serverName="MyServer3">server3.mywebsite.com</server>
-	        
-**appId** is a less common attribute to use but will need to be used in the case where you are load balancing a single site on the same server. The appId is determined by the result of: `HttpRuntime.AppDomainAppId`. This is generally the id of the IIS site hosting the web app (i.e. the value might look something like: /LM/W3SVC/69/ROOT ). You shouldn't specify both the serverName and appId together on the same xml server node, if you do the appId will take precedence. 
+
+**appId** is a less common attribute to use but will need to be used in the case where you are load balancing a single site on the same server. The appId is determined by the result of: `HttpRuntime.AppDomainAppId`. This is generally the id of the IIS site hosting the web app (i.e. the value might look something like: /LM/W3SVC/69/ROOT ). You shouldn't specify both the serverName and appId together on the same xml server node, if you do the appId will take precedence.
 Example:
 
 		<server appId="/LM/W3SVC/987/ROOT">server1.mywebsite.com</server>
@@ -128,7 +127,7 @@ Example:
 
 You staging environment should also be load balanced so that you can see any issues relating to load balancing in that environment before going to production.
 
-You'll need to test this solution **a lot** before going to production. You need to ensure there are no windows security issues, etc... The best way to determine issues is have a lot of people testing this setup and ensuring all errors and warnings in your application/system logs in Windows are fixed. 
+You'll need to test this solution **a lot** before going to production. You need to ensure there are no windows security issues, etc... The best way to determine issues is have a lot of people testing this setup and ensuring all errors and warnings in your application/system logs in Windows are fixed.
 
 To test Umbraco distributed calls, just create and publish some content on one server (i.e. http://server1.mywebsite.com/umbraco/umbraco.aspx), then browse to the front end content on another server (i.e. http://server2.mywebsite.com/public/page1.aspx if page1 was the newly published content). If the page shows up on the 2nd server, though it was published from the 1st server, then distributed calls are working! You'll need to thoroughly test this though.
 
