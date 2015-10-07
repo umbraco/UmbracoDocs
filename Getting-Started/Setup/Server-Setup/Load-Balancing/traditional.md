@@ -123,15 +123,5 @@ Example:
 	        <server serverName="MyServer3">server3.mywebsite.com</server>
 
 
-##Testing
-
-You staging environment should also be load balanced so that you can see any issues relating to load balancing in that environment before going to production.
-
-You'll need to test this solution **a lot** before going to production. You need to ensure there are no windows security issues, etc... The best way to determine issues is have a lot of people testing this setup and ensuring all errors and warnings in your application/system logs in Windows are fixed.
-
-To test Umbraco distributed calls, just create and publish some content on one server (i.e. http://server1.mywebsite.com/umbraco/umbraco.aspx), then browse to the front end content on another server (i.e. http://server2.mywebsite.com/public/page1.aspx if page1 was the newly published content). If the page shows up on the 2nd server, though it was published from the 1st server, then distributed calls are working! You'll need to thoroughly test this though.
-
-Ensure to analyze logs from all servers and check for any warnings and errors.
-
 ##Conclusion
 Though this is somewhat detailed, this is still a basic overview since all environments are different in some way. Hopefully this guide will point you in the right direction!
