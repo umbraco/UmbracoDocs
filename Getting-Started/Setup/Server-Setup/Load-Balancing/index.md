@@ -29,7 +29,11 @@ Umbraco versions before 7.3.0 must use a traditional load balancing technique.
 
 [Full documentation is available here](traditional.md)  
 
-##ASP.NET Configuration
+## Common load balancing setup information
+
+_The below section is common for all load balancing configurations, ensure that the following is instructions are followed regardless of what load balancing setup you choose._
+
+###ASP.NET Configuration
 
 * You will need to use a custom machine key so that all your machine key level encryption values are the same on all servers, without this you will end up with view state errors, validation errors and encryption/decryption errors since each server will have its own generated key.
 	* Here are a couple of tools that can be used to generate machine keys:
@@ -47,21 +51,19 @@ Umbraco versions before 7.3.0 must use a traditional load balancing technique.
 			</configuration>
 * If you use SessionState in your application, or are using the default TempDataProvider in MVC (which uses SessionState) then you will need to configure your application to use the SqlSessionStateStore provider (see [http://msdn.microsoft.com/en-us/library/aa478952.aspx](http://msdn.microsoft.com/en-us/library/aa478952.aspx) for more details).
 
-##Logging
+###Logging
 
 There are some logging configurations to take into account no matter what type of load balancing environment you are using.
 
 [Full documentation is available here](logging.md)
 
-##Testing
+###Testing
 
 You staging environment should also be load balanced so that you can see any issues relating to load balancing in that environment before going to production.
 
 You'll need to test this solution **a lot** before going to production. You need to ensure there are no windows security issues, etc... The best way to determine issues is have a lot of people testing this setup and ensuring all errors and warnings in your application/system logs in Windows are fixed.
 
-To test Umbraco distributed calls, just create and publish some content on one server (i.e. http://server1.mywebsite.com/umbraco/umbraco.aspx), then browse to the front end content on another server (i.e. http://server2.mywebsite.com/public/page1.aspx if page1 was the newly published content). If the page shows up on the 2nd server, though it was published from the 1st server, then distributed calls are working! You'll need to thoroughly test this though.
-
 Ensure to analyze logs from all servers and check for any warnings and errors.
 
-###More information
+##More information
 - Codegarden '15 session: [Umbraco Load Balancing](https://vimeo.com/channels/939955/132815038)
