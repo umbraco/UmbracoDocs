@@ -1,12 +1,12 @@
 #Creating forms
 Creating forms requires that you know your way around .NET MVC. So if you are familiar with adding view models, views and controllers you are ready to make your first form.
 
-*You can also use [Umbraco forms](http://umbraco.com/forms). It let's you and/or you're editors create and handle forms in the backoffice. This includes setting up validation, redirecting and sttoring and ssending form data. Great UI, easily extendable and supported by Umbraco HQ.*
+*You can also use [Umbraco forms](http://umbraco.com/forms). It lets you and/or your editors create and handle forms in the backoffice. This includes setting up validation, redirecting and storing and sending form data. Great UI, easily extendable and supported by Umbraco HQ.*
 
 In this example we'll create a basic contact form contain name, email and message field.
 
 ###Creating the view model
-First were going to create the model for the contact form by adding a new class to the `/Models` folder. Lets's call it `ContactFormViewModel.cs`
+First we're going to create the model for the contact form by adding a new class to the `/Models` folder. Lets's call it `ContactFormViewModel.cs`
 
     using System;
     using System.Collections.Generic;
@@ -90,7 +90,7 @@ To add the form to your site we'll make a macro. This also makes it possible to 
 ####Creating a macro
 Go to the developer section and right click the menu icon on the __Partial Views Macro Files__ node. Name the macro *Contact Form*, select an empty snippet and leave the __Create Macro__ checkbox checked.
 
-In the partial view we're are going to render our contact form using the view model we created earlier.
+In the partial view we're going to render our contact form using the view model we created earlier.
 
     @inherits Umbraco.Web.Macros.PartialViewMacroPage
 
