@@ -38,9 +38,9 @@ The process is as follows:
 * When a front-end server detects that there are pending instructions, it downloads them and processes them and in turn updates it's cache, cache files and indexes on it's own file system
 * There can be up to a 5 second delay between content updates and a front-end server's refreshing, this is expected and normal behavior.
 
-###Advanced techniques
+## Configuration files
 
-Once you are familiar with how flexible load balacning works, you might be interested in some [advanced techniques](flexible-advanced.md).
+There isn't any configuration file changes necessary! **You must not enable the distributed calls flag in the umbracoSettings.config** file for Flexible Load Balancing to work, that is purely for Traditional load balancing.
 
 ## Option #1 : Cloud based auto-scale appliances
 
@@ -104,3 +104,7 @@ Configuring your servers to work using a centrally located file system that is s
 
 Scaling will still be a slightly manual process because it would involve you adding servers/sites but with flexible load balancing you don't have to configure anything in Umbraco,
 you just need to point the site to the Umbraco database and update your load balancer to include the site.
+
+##Advanced techniques
+
+Once you are familiar with how flexible load balacning works, you might be interested in some [advanced techniques](flexible-advanced.md).
