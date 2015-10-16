@@ -38,6 +38,10 @@ The process is as follows:
 * When a front-end server detects that there are pending instructions, it downloads them and processes them and in turn updates it's cache, cache files and indexes on it's own file system
 * There can be up to a 5 second delay between content updates and a front-end server's refreshing, this is expected and normal behavior.
 
+###Advanced techniques
+
+Once you are familiar with how flexible load balacning works, you might be interested in some [advanced techniques](flexible-advanced.md).
+
 ## Option #1 : Cloud based auto-scale appliances
 
 We have focused primarily on Azure Web Apps when developing flexible load balancing for cloud based appliances. The documentation here is for Azure Web Apps but a similar setup would be achievable on other services supporting ASP.Net.
