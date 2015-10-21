@@ -7,9 +7,7 @@ Most of the set up can be accomplished by using the options from your project's 
 ![settings](images/settings.jpg)
 
 ##Naming a Project
-This is a very personal choice of course. If you didn't manage to get just the right name the first time, you can always rename your project using the Settings > Rename project option. Heed the warnings before you do this.
-
-Updating a project name will also update *all* of the project's Urls for the sites and the git repositories. That means that any links you have to the sites will be broken until you update them. *Fair warning, use with caution.*
+This is a very personal choice of course, but thake the time to get it right as you can't change a project's name once it's been created.  Umbraco as a Service ensures unique project name, so there's no worries about duplicate names.
 
 ##Deleting a Project
 This does what it says. Once you've confirmed deletion of a project it is permanently removed as are all data, media, databases, configuration, setup, and domain bindings. So, make sure this is what you want.
