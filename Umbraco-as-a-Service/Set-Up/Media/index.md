@@ -60,7 +60,103 @@ If you are using IISExpress (as with Visual Studio or WebMatrix) you’ll also n
     </location>
   </configuration>
   ```
+####Image Processor
+You’ll need to install the following ImageProcessor packages:
 
+* ImageProcessor.Web.4.4.0.0 or later
+* ImageProcessor.Web.Config.2.2.3.0 or later
+* ImageProcessor.Web.Plugins.AzureBlobCache.1.0.4.0 or later
+
+These packages are only available via Nuget, so ideally you’ll have your site setup to use Visual Studio.  You can find more information about ImageProcessor and related packages here [http://imageprocessor.org/](http://imageprocessor.org/)
+
+Since Umbraco includes a version of ImageProcessor.Web by default, you will need to update that package first using Nuget:
+
+```PM> Update-Package ImageProcessor.Web```
+
+Then install the other ImageProcessor packages:
+
+```PM> Install-Package ImageProcessor.Web.Config```
+
+```PM> Install-Package ImageProcessor.Web.Plugins.AzureBlobCache```
+
+
+####Configuration
+Once the packages have been installed you need to set your configuration as below.  Some of these may have been set when you installed the ImageProcessor packages.
+
+Update `~web.config`
+
+```xml
+<configuration>
+...
+  <sectionGroup name="imageProcessor">
+      <section name="security" requirePermission="false" type="ImageProcessor.Web.Configuration.ImageSecuritySection, ImageProcessor.Web" />
+      <section name="processing" requirePermission="false" type="ImageProcessor.Web.Configuration.ImageProcessingSection, ImageProcessor.Web" />
+      <section name="caching" requirePermission="false" type="ImageProcessor.Web.Configuration.ImageCacheSection, ImageProcessor.Web" />
+    </sectionGroup>
+  </configSections>
+...
+<imageProcessor>
+    <security configSource="config\imageprocessor\security.config" />
+    <caching configSource="config\imageprocessor\cache.config" />
+    <processing configSource="config\imageprocessor\processing.config" />
+  </imageProcessor>
+</configuration>
+```
+
+Update `~/config/imageprocessor/security.config`
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<security>
+  <services>
+    <!--<service name="LocalFileImageService" type="ImageProcessor.Web.Services.LocalFileImageService, ImageProcessor.Web" />-->
+    <service prefix="media/" name="CloudImageService" type="ImageProcessor.Web.Services.CloudImageService, ImageProcessor.Web">
+      <settings>
+        <setting key="MaxBytes" value="8194304"/>
+        <setting key="Timeout" value="30000"/>
+        <setting key="Host" value="http://<your blob account>.blob.core.windows.net/media/"/>
+      </settings>
+    </service>
+    <service prefix="remote.axd" name="RemoteImageService" type="ImageProcessor.Web.Services.RemoteImageService, ImageProcessor.Web">
+      <settings>
+        <setting key="MaxBytes" value="4194304" />
+        <setting key="Timeout" value="3000" />
+        <setting key="Protocol" value="http" />
+      </settings>
+      <whitelist>
+        <add url="http://<your Azure CDN>.vo.msecnd.net/" />
+        <add url="http://<your blob account>.blob.core.windows.net/" />
+        <add url="http://<your uaas site>.s1.umbraco.io" />
+        <add url="http://localhost" />
+        <add url="http://127.0.0.1" />
+      </whitelist>
+    </service>
+  </services>
+</security> 
+```
+
+Update `~/config/imageprocessor/cache.config'
+
+Note that you’ll need to create a container in your Azure Storage account for the cache.  In the below example we have created a container named simply “cache”.
+
+Remove the default “DiskCache” config entry.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<caching currentCache="AzureBlobCache">
+  <caches>
+  <cache name="AzureBlobCache" type="ImageProcessor.Web.Plugins.AzureBlobCache.AzureBlobCache, ImageProcessor.Web.Plugins.AzureBlobCache" maxDays="365">
+      <settings>
+        <setting key="CachedStorageAccount" value="DefaultEndpointsProtocol=https;AccountName=;AccountKey=" />
+        <setting key="CachedBlobContainer" value="http://<your blob account>.blob.core.windows.net/cache/" />
+        <setting key="CachedCDNRoot" value="http://<your Azure CDN>.vo.msecnd.net/" />
+        <setting key="SourceStorageAccount" value="DefaultEndpointsProtocol=https;AccountName=;AccountKey=" />
+        <setting key="SourceBlobContainer" value="http://<your blob account>.blob.core.windows.net/media/" />
+        <setting key="StreamCachedImage" value="false" />
+      </settings>
+    </cache></caches>
+</caching>
+```
 
 ##Environment and Deployment considerations
 By default this provider will use a single blob container for the media used by all sites in a project. So development and live will all use the same media files. If this works with your workflow it is the recommended configuration. If you cannot use the same media across all environments then you will need to set up a different blob storage container for each environments. Each container will have a unique address and access keys.
