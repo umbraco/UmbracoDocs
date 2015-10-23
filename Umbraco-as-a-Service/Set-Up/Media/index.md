@@ -1,4 +1,4 @@
-#Setup Your UaaS site to use Azure Storage for Media and Image Processor Cache
+#Setup Your Site to use Azure Storage for Media and Image Processor Cache
 For UaaS sites there are some scenarios when you may want, or need, to consider using Azure Blob Storage for your media.  Particularly if your site contains large amounts of media - about 1GB or more.  Having your site’s media in Azure Storage can also help your deployments complete more quickly and has the potential to positively affect site performance as the Image Processor cache is moved to Azure Storage.  It also allows you to easily serve your media from the Azure CDN.
 
 Setup consists of adding several packages to your site and setting the correct configuration.  Of course, before you begin you’ll need to create an Azure Storage Account and a container for your media and your ImageProcessor cache as well.  In this example we assume your media container is “media” and your cache is “cache”.  You can, optionally, enable an Azure CDN for this storage container and use it in the cache.config below.	
@@ -18,7 +18,7 @@ Currently this package is available by source code or MyGet:  [https://github.co
 There are detailed instructions available on the project page, also summarized here.
 
 Update `~/Config/FileSystemProviders.config` replacing the default provider with the following:
-<?xml version="1.0"?>
+```<?xml version="1.0"?>
 <FileSystemProviders>
   <Provider alias="media" type="Our.Umbraco.FileSystemProviders.Azure.AzureBlobFileSystem, Our.Umbraco.FileSystemProviders.Azure">
     <Parameters>
@@ -29,20 +29,20 @@ Update `~/Config/FileSystemProviders.config` replacing the default provider with
       <add key="maxDays" value="365" />
     </Parameters>
   </Provider>
-</FileSystemProviders>
+</FileSystemProviders>```
 
 In order to use Azure Storage for the ImageProcessor cache, you'll also need the following in `~web.config`
 
-<?xml version="1.0"?>
+```<?xml version="1.0"?>
 <configuration>
   <appSettings>
     <!--Disables the built in Virtual Path Provider which allows for relative paths-->
     <add key="AzureBlobFileSystem.DisableVirtualPathProvider" value="true" />
-</configuration>
+</configuration>```
 
 If you are using IISExpress (as with Visual Studio or WebMatrix) you’ll also need to add a static file handler mapping to `~web.config`
 
-<?xml version="1.0"?>
+```<?xml version="1.0"?>
   <configuration>
     <location path="Media">
       <system.webServer>
@@ -52,7 +52,7 @@ If you are using IISExpress (as with Visual Studio or WebMatrix) you’ll also n
         </handlers>
       </system.webServer>
     </location>
-  </configuration>
+  </configuration>```
 
 
 ##Environment and Deployment considerations
