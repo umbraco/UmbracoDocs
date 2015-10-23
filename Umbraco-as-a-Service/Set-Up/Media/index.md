@@ -13,7 +13,7 @@ If this sounds like you, you should evaluate the Azure Blob Storage provider. It
 ####File System Provider for Azure Blob Storage
 You’ll replace the default FileSystemProvider with the `Our.Umbraco.FileSystemProviders.Azure.AzureBlobFileSystem` provider.  We recommend doing this first and verifying it behaves as expected before proceeding with the ImageProcessor setup.
 
-Currently this package is available by source code or MyGet:  [https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure](https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure)
+Currently this package is available by source code or MyGet and the Umbraco package is available here [https://ci.appveyor.com/project/JamesSouth/umbracofilesystemproviders-azure/build/artifacts](https://ci.appveyor.com/project/JamesSouth/umbracofilesystemproviders-azure/build/artifacts)  The project source can be found here   [https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure](https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure)
 
 There are detailed instructions available on the project page, also summarized here.
 
