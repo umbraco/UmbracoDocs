@@ -18,7 +18,9 @@ Currently this package is available by source code or MyGet:  [https://github.co
 There are detailed instructions available on the project page, also summarized here.
 
 Update `~/Config/FileSystemProviders.config` replacing the default provider with the following:
-```<?xml version="1.0"?>
+
+```xml
+<?xml version="1.0"?>
 <FileSystemProviders>
   <Provider alias="media" type="Our.Umbraco.FileSystemProviders.Azure.AzureBlobFileSystem, Our.Umbraco.FileSystemProviders.Azure">
     <Parameters>
@@ -33,7 +35,8 @@ Update `~/Config/FileSystemProviders.config` replacing the default provider with
 
 In order to use Azure Storage for the ImageProcessor cache, you'll also need the following in `~web.config`
 
-```<?xml version="1.0"?>
+```xml
+<?xml version="1.0"?>
 <configuration>
   <appSettings>
     <!--Disables the built in Virtual Path Provider which allows for relative paths-->
@@ -42,7 +45,8 @@ In order to use Azure Storage for the ImageProcessor cache, you'll also need the
 
 If you are using IISExpress (as with Visual Studio or WebMatrix) you’ll also need to add a static file handler mapping to `~web.config`
 
-```<?xml version="1.0"?>
+```xml
+<?xml version="1.0"?>
   <configuration>
     <location path="Media">
       <system.webServer>
