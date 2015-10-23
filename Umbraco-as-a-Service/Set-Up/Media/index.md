@@ -6,7 +6,7 @@ Setup consists of adding several packages to your site and setting the correct c
 ##Media and Deployment
 As Umbraco as a Service deployments are done using a web connection, large media deployments can be slow and are subject to timeouts and other restrictions associated with large uploads over a web connection.
 
-If this sounds like you, you should evaluate the Azure Blob Storage provider. It is relatively simple to setup, has very few limitations and can result in better site performance as well as faster media loading times - especially if your media takes advantage of an Azure, or other, CDN.
+If this sounds like you, you should evaluate the Azure Blob Storage provider. It is relatively simple to setup, has very few limitations and can result in better site performance as well as faster media loading times - especially if your media takes advantage of an Azure CDN.
 
 ##Setup
 ###Packages
@@ -31,7 +31,8 @@ Update `~/Config/FileSystemProviders.config` replacing the default provider with
       <add key="maxDays" value="365" />
     </Parameters>
   </Provider>
-</FileSystemProviders>```
+</FileSystemProviders>
+```
 
 In order to use Azure Storage for the ImageProcessor cache, you'll also need the following in `~web.config`
 
@@ -41,7 +42,8 @@ In order to use Azure Storage for the ImageProcessor cache, you'll also need the
   <appSettings>
     <!--Disables the built in Virtual Path Provider which allows for relative paths-->
     <add key="AzureBlobFileSystem.DisableVirtualPathProvider" value="true" />
-</configuration>```
+</configuration>
+```
 
 If you are using IISExpress (as with Visual Studio or WebMatrix) you’ll also need to add a static file handler mapping to `~web.config`
 
@@ -56,7 +58,8 @@ If you are using IISExpress (as with Visual Studio or WebMatrix) you’ll also n
         </handlers>
       </system.webServer>
     </location>
-  </configuration>```
+  </configuration>
+  ```
 
 
 ##Environment and Deployment considerations
