@@ -30,7 +30,7 @@ To add configuration options to our markdown editor, open the `package.manifest`
 		]
 	}
 
-**Remember to: ** Separate the editor element and prevalue editor definition with a comma, or you will get a JSON error.
+**Remember to:** Separate the editor element and prevalue editor definition with a comma, or you will get a JSON error.
 
 So what did we just add? We added a prevalue editor, with a `fields` collection. This collection contains information about the UI we will render on the datatype configuration for this editor.
 
