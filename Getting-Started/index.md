@@ -40,7 +40,7 @@
 			</div>
 			<div class="col-sm-6">
 				<h5><a href="Setup/Server-Setup/">Server Setup</a></h5>
-				<small>Setting up a SQL server for your installation</small>
+				<small>Setting up a Web and SQL servers for your installation</small>
 			</div>
 			<div class="col-sm-6">
 				<h5><a href="Setup/Upgrading/">Upgrading</a></h5>
