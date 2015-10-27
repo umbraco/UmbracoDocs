@@ -35,7 +35,7 @@ The first thing we must do is create a new folder inside `/App_Plugins` folder. 
 
 Next we will create a simple manifest file to describe what this plugin does. This manifest will tell Umbraco about our new property editor and allows us to inject any needed files into the application, so we create the file `/App_Plugins/MarkDownEditor/package.manifest`
 
-[Manifest documentation is current found here](http://umbraco.github.io/Belle/#/tutorials/manifest)
+[Manifest documentation is currently found here](http://umbraco.github.io/Belle/#/tutorials/manifest)
 _TODO: Add manifest documentation here (see: https://github.com/umbraco/Umbraco4Docs/issues/201)_
 
 
@@ -152,6 +152,6 @@ and add that id to the textarea in the HTML, for more info on the HTML structure
 
 Now, clear the cache, reload the document and see the pagedown editor running.
 
-When you save or publish, the value of the editor is automaticly synced to the current content object and sent to the server, all through the power of angular and the `ng-model` attribute.
+When you save or publish, the value of the editor is automatically synced to the current content object and sent to the server, all through the power of angular and the `ng-model` attribute.
 
 [Next - Adding configuration to a property editor](part-2.md)
