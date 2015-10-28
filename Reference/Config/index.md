@@ -1,10 +1,10 @@
 #Configuration Files
 
-_This section will define the many configuration options in Umbraco and what they do_
+_This section will explain the many configuration options in Umbraco and what they do_
 
 ###[web.config](webconfig/index.md)
 
-There are quite a few umbraco options in the web.config file defined in appSettings. Click on your version below to view details:
+There are quite a few Umbraco options in the `web.config` file defined in `<appSettings>`. Click on your version below to view details:
 
 ###[404handlers.config](404handlers/index.md)
 
@@ -26,7 +26,7 @@ There are quite a few umbraco options in the web.config file defined in appSetti
 
 ###[umbracoSettings.config](umbracoSettings/index.md)
 
-Contains many Umbraco options, generally the default values work well in most installs however in some cases some of these options may need adjusting depending on each installation.
+Contains many Umbraco options, generally the default values work well in most installs; however, in some cases some of these options may need adjusting depending on each installation.
 
 ##clientdependency.config
 
