@@ -16,7 +16,7 @@
 		<a href="Implementation/" class="docs-section">
 		<img src="images/icon-implementation.png" alt="">
 			<h2>Implementation</h2>
-			<p>Get an overview of how the Umbraco pipeline is structured. Learn how to write queries and use the API's</p>
+			<p>Get an overview of how the Umbraco pipeline is structured. Learn how to write queries and use the APIs.</p>
 		</a>
 	</div>
 </div>
@@ -25,14 +25,14 @@
 		<a href="Extending/" class="docs-section">
 		<img src="images/icon-extending.png" alt="">
 			<h2>Extending</h2>
-			<p>Documentation on the areas in Umbraco that are extendable such as custmizing backoffice ui and creating packages.</p>
+			<p>Documentation on the areas in Umbraco that are extendable such as customizing backoffice UI and creating packages.</p>
 		</a>
 	</div>
 	<div class="col-sm-6">
 		<a href="Reference/" class="docs-section">
 			<img src="images/icon-add-on.png" alt="">
 			<h2>Developers' Reference</h2>
-			<p>Code reference for Umbracos management APIs, templating, querying, searching and more.</p>
+			<p>Code reference for Umbraco's management APIs, templating, querying, searching and more.</p>
 		</a>
 	</div>
 </div>
@@ -42,10 +42,10 @@
 ---
 
 ###[Tutorials](Tutorials/index.md)
-Step by step tutorials
+Step by step tutorials.
 
 ###[Umbraco Add ons](Add-ons/index.md)
-Everything you need to know about Forms and Courier, the two premium packages developed and supported by HQ
+Everything you need to know about Forms and Courier, the two premium packages developed and supported by HQ.
 
 ###[Development Guidelines](Development-Guidelines/index.md)
 How to work with the Umbraco codebase.
