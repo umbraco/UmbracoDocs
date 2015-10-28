@@ -50,7 +50,7 @@ Here are the steps to specify your own logic for validating a username and passw
 		    }
 		}
 
-1. Modify the ~/App_Start/UmbracoCustomOwinStartup.cs class
+1. Modify the `~/App_Start/UmbracoCustomOwinStartup.cs` class
 
 	* Replace the `app.ConfigureUserManagerForUmbracoBackOffice` call with a custom overload to specify your custom `IBackOfficeUserPasswordChecker`  
 
