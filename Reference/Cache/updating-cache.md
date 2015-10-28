@@ -9,21 +9,21 @@ The `Umbraco.Core.CacheHelper` contains 3 types of cache: Runtime Cache, Request
       ApplicationContext.ApplicationCache.RequestCache
       ApplicationContext.ApplicationCache.StaticCache
 
-##Adding and retreiving items in the cache
+##Adding and retrieving items in the cache
 
-Putting data in and getting data out of the cache is the easy, the easiest way is to use one of the many overloaded methods of: `GetCacheItem`. The `GetCacheItem` methods (all except one) are designed to "Get or Add" to the cache. For example, the following will retreive an item from the cache and if it doesn't exist will ensure that the item is added to it:
+Putting data in and getting data out of the cache is easy; The easiest way is to use one of the many overloaded methods of: `GetCacheItem`. The `GetCacheItem` methods (all except one) are designed to "Get or Add" to the cache. For example, the following will retrieve an item from the cache and if it doesn't exist will ensure that the item is added to it:
 
 	MyObject cachedItem = ApplicationContext.ApplicationCache.RuntimeCache
 				.GetCacheItem<MyObject>("MyCacheKey",
 					() => new MyObject());
 
-Notice 2 things: the `GetCacheItem` method is strongly typed and that we are supplying a callback method which is used to populate the cache if it doesn't exist. The example above is very simple, it will retreive a strongly typed object of `MyObject` from the cache with the key of "MyCacheKey", if the object doesn't exist in the cache a new instance of `MyObject` will be added to it with the same key.
+Notice 2 things: the `GetCacheItem` method is strongly typed and that we are supplying a callback method which is used to populate the cache if it doesn't exist. The example above is very simple, it will retrieve a strongly typed object of `MyObject` from the cache with the key of "MyCacheKey", if the object doesn't exist in the cache a new instance of `MyObject` will be added to it with the same key.
 
-There are many overloads of GetCacheItem allowing you to customize how your object is cached from cache dependencies to expiration times.
+There are many overloads of `GetCacheItem` allowing you to customize how your object is cached from cache dependencies to expiration times.
 
 ###Retrieving an item from the cache without a callback
  
-One of the overloads of GetCacheItem doesn't specify a callback, this will allow  you to simply retreive an item from the cache without populating it if it doesn't exist.
+One of the overloads of `GetCacheItem` doesn't specify a callback, this will allow  you to simply retrieve an item from the cache without populating it if it doesn't exist.
 
 The usage is very simple:
 

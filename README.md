@@ -32,7 +32,7 @@ To contribute to either the documentation or stubs, you can fork & clone our rep
  * [The simple guide to GIT](http://rogerdudler.github.io/git-guide/)
 
 ##Repository organisation
-All active work done on the documentation is currently being done on the 'master' branch.
+All active work done on the documentation is currently being done on the `master` branch.
 
 ###Contributing documentation
 All documents are written in Markdown, using a simple structure and stored as .md files.
@@ -49,7 +49,7 @@ Everything in the main repository will make it onto the [our.umbraco.org/documen
 Use [Github issues](https://github.com/umbraco/UmbracoDocs/issues) for reporting and discussing issues.
 
 #Markdown conventions
-Keep custom HTML to a minimum. All script and style mark-up are cleaned by default.
+Keep custom HTML to a minimum. All script and style markup are cleaned by default.
 For reference, the [Markdown syntax guide](http://daringfireball.net/projects/markdown/syntax) is available.
 
 ##Images
@@ -63,7 +63,7 @@ And store the image as `/documentation/reference/partials/images/img.jpg`
 Images can have a maximum width of **800px**. Please always try to use
 the most efficient compression, `gif`, `png` or `jpg`. No `bmp`, `tiff` or `swf` (Flash), please.
 
-NB: In order to get images to display correctly on GitHub, all image URLs must end with "?raw=true"
+NB: In order to get images to display correctly on GitHub, all image URLs must end with `?raw=true`.
 
 ##External links
 Include either the complete URL, or link using Markdown:
