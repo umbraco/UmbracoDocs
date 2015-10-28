@@ -29,6 +29,27 @@ Here are the steps to specify your own logic for validating a username and passw
 		* InvalidCredentials = The credentials entered are not valid and the authorization process should return an error
 		* FallbackToDefaultChecker = This is an optional result which can be used to fallback to Umbraco's default authorization process if the credentials could not be verified by your own custom implementation
 
+	For example, to always allow login when the user enters the password `test` you could do:
+	
+		using System.Threading.Tasks;
+		using Umbraco.Core.Models.Identity;
+		using Umbraco.Core.Security;
+		
+		namespace MyNamespace
+		{
+		    public class MyPasswordChecker : IBackOfficeUserPasswordChecker
+		    {
+		        public Task<BackOfficeUserPasswordCheckerResult> CheckPasswordAsync(BackOfficeIdentityUser user, string password)
+		        {
+		            var result = (password == "test") 
+		                ? Task.FromResult(BackOfficeUserPasswordCheckerResult.ValidCredentials)
+		                : Task.FromResult(BackOfficeUserPasswordCheckerResult.InvalidCredentials);
+		
+		            return result;
+		        }
+		    }
+		}
+
 1. Modify the ~/App_Start/UmbracoCustomOwinStartup.cs class
 
 	* Replace the `app.ConfigureUserManagerForUmbracoBackOffice` call with a custom overload to specify your custom `IBackOfficeUserPasswordChecker`  
@@ -47,3 +68,7 @@ Here are the steps to specify your own logic for validating a username and passw
                     userManager.BackOfficeUserPasswordChecker = new MyPasswordChecker();
                     return userManager;
                 });	
+                
+1. Make sure to switch the `owin:appStartup` appSetting in your `web.config` file to use `UmbracoCustomOwinStartup`: `<add key="owin:appStartup" value="UmbracoCustomOwinStartup"/>`
+
+**Note:** if the username entered in the login screen does not exist in Umbraco then `MyPasswordChecker()` does not run, instead Umbraco will immediately fall back to it's internal checks (default Umbraco behavior).
