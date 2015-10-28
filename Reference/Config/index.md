@@ -4,8 +4,6 @@ _This section will explain the many configuration options in Umbraco and what th
 
 ###[web.config](webconfig/index.md)
 
-There are quite a few Umbraco options in the `web.config` file defined in `<appSettings>`. Click on your version below to view details:
-
 ###[404handlers.config](404handlers/index.md)
 
 ###[applications.config](applications/index.md)
