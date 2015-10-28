@@ -95,3 +95,36 @@ app.UseUmbracoBackOfficeTokenAuth();
 
 There are plenty of options and extensibility points that can be set for the token auth server. The IdentityExtensions package installs these extension methods for you
 which are based on ASP.Net conventions. For more info about tokens, authentication and authorization visit [ASP.Net's documentation](http://www.asp.net/aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server).
+
+Here's an example token request for the default endpoint that the above method creates:
+
+```
+POST /umbraco/oauth/token HTTP/1.1
+Host: localhost
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&username=YOURUSERNAME&password=YOURPASSWORD
+``` 
+
+Of course you'll need to modify YOURUSERNAME and YOURPASSWORD with valid Umbraco user credentials.
+
+The response will look something like:
+
+```
+{
+  "access_token": "DUxMxH415liyvWcqtMQ9qMStu2rBGcWELRTlB1lUncAraw_xzyXUWmo2QNklI1YLlwQ_eliUV9x3t4MxJJ2lzraYlCGQIkKbzQ487G6vekbIPnaQ0mnEWwFBnSRK6bZa2CL_GdhTrlkMnrCDvhNjYh4U2lbvmAWuz8_23BIkH2K9G9JbVeTSnpk1o666fnITkbeLM602OSZqUT",
+  "token_type": "bearer",
+  "expires_in": 86399
+}
+```
+
+You can then use the value from `access_token` in the requests to the REST API endpoints, for example:
+
+```
+GET /umbraco/rest/v1/content HTTP/1.1
+Host: localhost
+Accept: application/hal+json
+Content-Type: application/hal+json
+Authorization: Bearer DUxMxH415liyvWcqtMQ9qMStu2rBGcWELRTlB1lUncAraw_xzyXUWmo2QNklI1YLlwQ_eliUV9x3t4MxJJ2lzraYlCGQIkKbzQ487G6vekbIPnaQ0mnEWwFBnSRK6bZa2CL_GdhTrlkMnrCDvhNjYh4U2lbvmAWuz8_23BIkH2K9G9JbVeTSnpk1o666fnITkbeLM602OSZqUT
+```
