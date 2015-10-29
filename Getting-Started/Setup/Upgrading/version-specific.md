@@ -72,6 +72,8 @@ Read and follow [the full v7 upgrade guide](upgrading-to-v7.md)
 * Copy in the /Views/Partials/Grid (contains Grid rendering views)
 
 ##Version 7.3.0
+Make sure to manually clear your cookies after updating all the files, otherwise you might an error relating to `Umbraco.Core.Security.UmbracoBackOfficeIdentity.AddUserDataClaims()`. The error looks like: `Value cannot be null. Parameter name: value`.
+
 NuGet will do the following for you but if you're upgrading manually:
 
 * Delete `bin/Microsoft.Web.Helpers.dll`
