@@ -39,12 +39,12 @@ So the addition here is the line that says `SCM_SCRIPT_GENERATOR_ARGS = --basic`
 Rest assured: this problem is on our list to fix as soon as possible but for now you can use this workaround.
 
 ####Some or all of my static assets (css, js, images) are not loading on my development environemt
-Symptom: When you try to go to the URL of your static assets (`http://mysite.s1.umbraco.io/assets/css/app.css` for example) you get a login prompt, upon completing that, you get redirected to something like `http://mysite.s1.umbraco.io/login.aspx?ReturnUrl=%2fassets%2fcss%2fapp.css`.
+Symptom: When you try to go to the URL of your static assets (`https://mysite.s1.umbraco.io/assets/css/app.css` for example) you get a login prompt, upon completing that, you get redirected to something like `https://mysite.s1.umbraco.io/login.aspx?ReturnUrl=%2fassets%2fcss%2fapp.css`.
 
 This issue is under investigation and seems to occur rather randomdly; it works fine for most people but for some it just starts failing for no good reason (that we've found yet). For now what you can do to fix the problem is:
 
 1. Copy the Url from your site’s HTTPS Clone Url in the portal 
-2. Using the Url without the actual repository name, the GUID part, open a new browser tab and login. Just the Url like https://dev-mysite.scm.s1.umbraco.io/
+2. Using the Url without the actual repository name, the GUID part, open a new browser tab and login. Just the Url like `https://dev-mysite.scm.s1.umbraco.io/`
 3. You’ll see the Kudu site
 4. Go to the "Site Extensions" menu item and click the "Restart site" button
 
@@ -64,7 +64,7 @@ The first step is to find out what state the site’s Git repository is in (for 
 
 1. Copy the Url from your site’s HTTPS Clone Url in the portal
 
-2. Using the Url without the actual repository name, the GUID part, open a new browser tab and login.  Just the Url like `https://stage-mysite.scm.s1.umbraco.io/`
+2. Using the Url without the actual repository name, the GUID part, open a new browser tab and login.  Just the Url like `https://dev-mysite.scm.s1.umbraco.io/`
 
 3. You’ll see the Kudu site, which includes your site’s Git repository
 
