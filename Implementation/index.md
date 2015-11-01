@@ -79,3 +79,20 @@
 		</div>
 	</div>
 </div>
+
+<div class="row">
+	<div class="col-xs-3">
+		<span class="dot big icon-Globe">
+			<span class="line v-line top"></span>
+			<span class="line h-line"></span>
+		</span>
+	</div>
+	<div class="col-xs-9">
+		<div class="row explain">
+			<div class="col-xs-12">
+				<h4 class="text-right"><a href="Rest-Api/">REST APIs</a></h4>
+				<small>Information about using the REST API add-on for Umbraco</small>
+			</div>
+		</div>
+	</div>
+</div>
