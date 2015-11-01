@@ -1,4 +1,5 @@
 # Security
+**Applies to version 7.3.1 and newer**
 
 _This section describes how authentication & authorization works in Umbraco_
 
