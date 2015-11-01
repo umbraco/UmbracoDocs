@@ -68,6 +68,7 @@
 		<span class="dot big icon-Server-alt">
 			<span class="line v-line top"></span>
 			<span class="line h-line"></span>
+			<span class="line v-line"></span>
 		</span>
 	</div>
 	<div class="col-xs-9">
