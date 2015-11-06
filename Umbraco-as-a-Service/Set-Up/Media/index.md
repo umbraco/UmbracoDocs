@@ -19,7 +19,7 @@ There are detailed instructions available on the project page, also summarized h
 
 Update `~/Config/FileSystemProviders.config` replacing the default provider with the following:
 
-```xml
+```
 <?xml version="1.0"?>
 <FileSystemProviders>
   <Provider alias="media" type="Our.Umbraco.FileSystemProviders.Azure.AzureBlobFileSystem, Our.Umbraco.FileSystemProviders.Azure">
@@ -36,7 +36,7 @@ Update `~/Config/FileSystemProviders.config` replacing the default provider with
 
 In order to use Azure Storage for the ImageProcessor cache, you'll also need the following in `~web.config`
 
-```xml
+```
 <?xml version="1.0"?>
 <configuration>
   <appSettings>
@@ -47,7 +47,7 @@ In order to use Azure Storage for the ImageProcessor cache, you'll also need the
 
 If you are using IISExpress (as with Visual Studio or WebMatrix) you’ll also need to add a static file handler mapping to `~web.config`
 
-```xml
+```
 <?xml version="1.0"?>
   <configuration>
     <location path="Media">
@@ -85,7 +85,7 @@ Once the packages have been installed you need to set your configuration as belo
 
 Update `~web.config`
 
-```xml
+```
 <configuration>
 ...
   <sectionGroup name="imageProcessor">
@@ -105,7 +105,7 @@ Update `~web.config`
 
 Update `~/config/imageprocessor/security.config`
 
-```xml
+```
 <?xml version="1.0" encoding="utf-8"?>
 <security>
   <services>
@@ -141,7 +141,7 @@ Note that you’ll need to create a container in your Azure Storage account for 
 
 Remove the default “DiskCache” config entry.
 
-```xml
+```
 <?xml version="1.0" encoding="utf-8"?>
 <caching currentCache="AzureBlobCache">
   <caches>
