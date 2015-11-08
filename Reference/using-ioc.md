@@ -4,7 +4,7 @@ _This section will show you how to setup Ioc/Dependency Injection with your Umbr
 
 ##Overview
 
-We don't use IoC in the Umbraco source code. This isn't because we don't like it or don't want to use it, it's because we want you as a developer to be able to use whatever IoC framework that you would like to use without jumping through any hoops. With that said, it means it is possible to implement whatever IoC engine that you'd like!
+Since Umbraco 7 we use IoC in the Umbraco source code for the backend site. With that said, it is possible to implement whatever IoC engine that you'd like you just need to re-register our api controllers!
 
 ##Implementation
 
@@ -42,6 +42,9 @@ Here's an example of a custom global.asax class which initializes the IoC contai
 
 			//register all controllers found in this assembly
 			builder.RegisterControllers(typeof(MyApplication).Assembly);
+
+			//re-register umbraco webapi controllers used by the admin site
+    			builder.RegisterApiControllers(typeof(UmbracoApplication).Assembly);
 
 			//add custom class to the container as Transient instance
 			builder.RegisterType<MyAwesomeContext>();
