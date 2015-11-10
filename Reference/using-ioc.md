@@ -43,6 +43,9 @@ Here's an example of a custom global.asax class which initializes the IoC contai
 			//register all controllers found in this assembly
 			builder.RegisterControllers(typeof(MyApplication).Assembly);
 
+			//register umbraco webapi controllers used by the admin site
+    			builder.RegisterApiControllers(typeof(UmbracoApplication).Assembly);
+
 			//add custom class to the container as Transient instance
 			builder.RegisterType<MyAwesomeContext>();
 
