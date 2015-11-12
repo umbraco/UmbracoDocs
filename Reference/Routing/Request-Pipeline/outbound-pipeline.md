@@ -91,9 +91,9 @@ The Url of a node consists out of a complete [URI](https://en.wikipedia.org/wiki
 
 In our example the "swibble" node could have the following URL: "http://example.com/our-products/swibble.aspx"
 
-This is handled by the Url Provider.  The Url provider is every time whenever you write (e.g.):
+Generating this url is handled by the Url Provider.  The Url provider is every time whenever you write (e.g.):
 
-	@Content.Model.url
+	@Content.Model.Url
 	@Umbraco.Url(1234)
 	@UmbracoContext.Current.UrlProvider.Geturl(1234)
 
@@ -102,9 +102,9 @@ The `UrlProviderResolver` searches for all Url providers and will take the first
     // That one is initialized by default
     public class DefaultUrlProvider : IUrlProvider
     { … }
-    // But feel free to use your owns
-    public class UrlProviderResolver
-    { … }
+    
+    // But feel free to use your own
+    UrlProviderResolver.Current.InsertType<MyUrlProvider>();
 
 To create your own Url provider, implement the `IUrlProvider` interface
 
@@ -123,6 +123,20 @@ It's tricky to implement your own provider, it is advised use override the defau
 - cache things,
 - be sure to know how to handle schema's (http vs https) and hostnames 
 - inbound might require rewriting
+
+When you interit from the DefaultUrlProvider, you need to implement the constructor specifying the `IRequestHandlerSection`.  The easiest way to retrieve this object is adding a constructor: 
+
+    public class MyUrlProvider : DefaultUrlProvider {
+      public MyUrlProvider()
+        : base(UmbracoConfig.For.UmbracoSettings().RequestHandler)
+      { }
+      
+      public override string GetUrl(UmbracoContext umbracoContext, int id, Uri current, UrlProviderMode mode)
+      {
+      	 // your own implementation
+      }
+    }
+
 
 **TODO: "Per-context UrlProvider".
 Stéphane mentions a "per context Url provider" on page 35 of his document.  We need to find out what this is!**
