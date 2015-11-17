@@ -121,7 +121,7 @@ Or iterate through them:
 
 We bundle this library in Umbraco 7.1 and you can therefore take full advantage of all its features out-of-the-box, like sharping, blurring, cropping, rotating and so.
 
-####MVC View Exemple on how to blur a crop
+####MVC View Example on how to blur a crop
 
     <img src='@CurrentPage.GetCropUrl("image", "banner")&blur=11,sigma-1.5,threshold-10' />
 
