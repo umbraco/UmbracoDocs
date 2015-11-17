@@ -40,7 +40,7 @@ The process is as follows:
 
 ## Configuration files
 
-There isn't any configuration file changes necessary! **You must not enable the distributed calls flag in the umbracoSettings.config** file for Flexible Load Balancing to work, that is purely for Traditional load balancing.
+There isn't any Umbraco configuration file changes necessary! **You must not enable the distributed calls flag in the umbracoSettings.config** file for Flexible Load Balancing to work, that is purely for Traditional load balancing. There are some Examine/Logging config file updates needed (see below and the [Overview](index.md))
 
 ## Option #1 : Cloud based auto-scale appliances
 
