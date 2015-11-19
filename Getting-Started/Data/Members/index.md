@@ -102,7 +102,7 @@ You can find out more about the services methods in the reference section of the
 
 ###Related Services
 - [MemberService](../../../Reference/Management/Services/MemberService.md)
-- [MemberType Serveice](../../../Reference/Management/Services/MemberTypeService.md)
+- [MemberType Service](../../../Reference/Management/Services/MemberTypeService.md)
 - [MemberGroup Service](../../../Reference/Management/Services/MemberGroupService.md)
 
 ###[Umbraco.TV](http://umbraco.tv)
