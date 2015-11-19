@@ -4,6 +4,7 @@ Sometimes you just need your configuration files to be a little bit different af
 ##Convention
 To transform any file that ends with `.config`, you can add a file with the extension `.{environment}.xdt.config` in the same folder.   
 The `{environment}` part needs to be replaced with the target environment, for which there's currently 2 possibilities for each project:
+
 1. `development`
 2. `live` 
 
@@ -11,6 +12,7 @@ The `{environment}` part needs to be replaced with the target environment, for w
 
 ##Example
 If you wanted to do a transform on your `web.config` file in the root of your site, you can create two files in the root of your site:
+
 1. `web.development.xdt.config`
 2. `web.live.xdt.config`
 
