@@ -1,5 +1,5 @@
 #Deployment
-Umbraco as a Service uses a deployment model that relies on Git, Kudu, and Courier core technology to move your changes from one environment to another. Umbraco as a Service uses a classic "left to right" deployment model, meaning that changes are first made in the development environment and then deployed to the live environment.  
+Umbraco as a Service uses a deployment model that relies on Git, [Kudu](https://github.com/projectkudu/kudu/wiki), and Courier core technology to move your changes from one environment to another. Umbraco as a Service uses a classic "left to right" deployment model, meaning that changes are first made in the development environment and then deployed to the live environment.  
 
 __Note:__ If your project contains a staging environment, deployments will be made from development to staging and then from staging to live.
 
