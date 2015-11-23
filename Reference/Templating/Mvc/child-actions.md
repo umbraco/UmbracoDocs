@@ -38,7 +38,7 @@ MVC allows you to have the same overloaded action names on your controllers, how
 
 The same view locations apply to Partial Views returned from Child Actions as the ones listed here: [Partial Views](partial-views.md)
 
-Also not that since this example is using a Surface Controller and if we were shipping this controller as part of a package, then the ~/App_Plugins view location will work too. See  [SurfaceControllers](surface-controllers.md) documentation under the heading *Plugin based controllers*.
+Also note that since this example is using a Surface Controller and if we were shipping this controller as part of a package, then the ~/App_Plugins view location will work too. See  [SurfaceControllers](surface-controllers.md) documentation under the heading *Plugin based controllers*.
 
 ##Rendering a Child Action
 To render a child action in your view is really easy, call the Html.Action method, pass in the Action name and your controller's name and the route values including your model. In this case we are passing in a new instance of a custom QueryParameters class and using a current 'search' query string from the Http request:
