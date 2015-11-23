@@ -34,18 +34,7 @@ Update `~/Config/FileSystemProviders.config` replacing the default provider with
 </FileSystemProviders>
 ```
 
-In order to use Azure Storage for the ImageProcessor cache, you'll also need the following in `~web.config`
-
-```
-<?xml version="1.0"?>
-<configuration>
-  <appSettings>
-    <!--Disables the built in Virtual Path Provider which allows for relative paths-->
-    <add key="AzureBlobFileSystem.DisableVirtualPathProvider" value="true" />
-</configuration>
-```
-
-If you are using IISExpress (as with Visual Studio or WebMatrix) you’ll also need to add a static file handler mapping to `~web.config`
+If you are using IISExpress (as with Visual Studio or WebMatrix) you’ll need to add a static file handler mapping to `~web.config`
 
 ```
 <?xml version="1.0"?>
@@ -135,11 +124,7 @@ Update `~/config/imageprocessor/security.config`
 </security> 
 ```
 
-Update `~/config/imageprocessor/cache.config'
-
-Note that you’ll need to create a container in your Azure Storage account for the cache.  In the below example we have created a container named simply “cache”.
-
-Remove the default “DiskCache” config entry.
+Update `~/config/imageprocessor/cache.config` by removing the default “DiskCache” config entry.
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
