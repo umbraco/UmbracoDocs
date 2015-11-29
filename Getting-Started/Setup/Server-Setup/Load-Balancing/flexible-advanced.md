@@ -23,56 +23,52 @@ for your front-end servers and your admin server... of course you could make thi
 
 The first thing to do is create a a couple classes for your front-end servers and master server to use:
 
-```
-public class MasterServerRegistrar : IServerRegistrar2
-{
-    public IEnumerable<IServerAddress> Registrations
-    {
-        get { return Enumerable.Empty<IServerAddress>(); }
-    }
-    public ServerRole GetCurrentServerRole()
-    {
-        return ServerRole.Master;
-    }
-    public string GetCurrentServerUmbracoApplicationUrl()
-    {
-        //NOTE: If you want to explicitly define the URL that your application is running on,
-        // this wil be used for the server to communicate with itself, you can return the 
-        // custom path here and it needs to be in this format:
-        // http://www.mysite.com/umbraco
+	public class MasterServerRegistrar : IServerRegistrar2
+	{
+		public IEnumerable<IServerAddress> Registrations
+		{
+			get { return Enumerable.Empty<IServerAddress>(); }
+		}
+		public ServerRole GetCurrentServerRole()
+		{
+			return ServerRole.Master;
+		}
+		public string GetCurrentServerUmbracoApplicationUrl()
+		{
+			//NOTE: If you want to explicitly define the URL that your application is running on,
+			// this wil be used for the server to communicate with itself, you can return the 
+			// custom path here and it needs to be in this format:
+			// http://www.mysite.com/umbraco
 
-        return null;
-    }
-}
+			return null;
+		}
+	}
 
-public class FrontEndReadOnlyServerRegistrar : IServerRegistrar2
-{
-    public IEnumerable<IServerAddress> Registrations
-    {
-        get { return Enumerable.Empty<IServerAddress>(); }
-    }        
-    public ServerRole GetCurrentServerRole()
-    {
-        return ServerRole.Slave;
-    }        
-    public string GetCurrentServerUmbracoApplicationUrl()
-    {
-        return null;
-    }
-}
-```
+	public class FrontEndReadOnlyServerRegistrar : IServerRegistrar2
+	{
+		public IEnumerable<IServerAddress> Registrations
+		{
+			get { return Enumerable.Empty<IServerAddress>(); }
+		}        
+		public ServerRole GetCurrentServerRole()
+		{
+			return ServerRole.Slave;
+		}        
+		public string GetCurrentServerUmbracoApplicationUrl()
+		{
+			return null;
+		}
+	}
 
 then you'll need to swap the default `DatabaseServerRegistrar` for the your custom registrars during application startup.
 You'll need to create an [ApplicationEventHandler](/Documentation/Reference/Events/Application-Startup) and override `ApplicationStarting`. 
 During this event you can swap the registrar objects:
 
-```
-//This should be executed on your master server
-ServerRegistrarResolver.Current.SetServerRegistrar(new MasterServerRegistrar());
+	//This should be executed on your master server
+	ServerRegistrarResolver.Current.SetServerRegistrar(new MasterServerRegistrar());
 
-//This should be executed on your slave servers
-ServerRegistrarResolver.Current.SetServerRegistrar(new FrontEndReadOnlyServerRegistrar());
-```
+	//This should be executed on your slave servers
+	ServerRegistrarResolver.Current.SetServerRegistrar(new FrontEndReadOnlyServerRegistrar());
 
 Now that your front-end servers are using your custom `FrontEndReadOnlyServerRegistrar` class, they will always be deemed 'Slave' servers and will not 
 attempt any master election or task scheduling and because you are no longer using the default `DatabaseServerRegistrar` they will not try to ping
