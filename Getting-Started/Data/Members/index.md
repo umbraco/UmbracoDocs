@@ -89,7 +89,7 @@ To assign a member to a specific group find the member you wish to assign and go
 
 __NOT A MEMBER OF GROUP(S):__ Lists all the groups that the member is not a part of. To assign a group to the member simply click it and it will move to the other column.
 
-__NOT A MEMBER OF GROUP(S):__ Lists all the groups that the member is part of. To remove the member from a group simply click it and it will move to the other column.
+__MEMBER OF GROUP(S):__ Lists all the groups that the member is part of. To remove the member from a group simply click it and it will move to the other column.
 
 #Technical
 As a developer you are able to leverage your website easily when you build on the members section of Umbraco.  
