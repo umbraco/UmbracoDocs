@@ -77,7 +77,7 @@ The `config.markup` is the string rendered server side in your template. `#value
         "view": "media",
         "icon": "icon-picture",
         "config": {
-            "size" {
+            "size": {
                 "height": 200,
                 "width": 200
             }
