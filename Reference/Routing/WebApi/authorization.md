@@ -8,6 +8,8 @@ _This section will describe how to secure your Umbraco Api controllers based on 
 
 Probably the easiest way to ensure your controller is secured for only back office users is to inherit from `Umbraco.Web.WebApi.UmbracoAuthorizedApiController`. This is essentially the same as applying the `UmbracoAuthorizeAttribute` to your controller (see below). We also expose the Umbraco user property `User UmbracoUser {get;}` on this base controller as well.
 
+The `UmbracoAuthorizedApiController` is automatically routed.  Check out the [routing documentation](../Authorized/index.md) for more information on this topic.
+
 ###Using UmbracoAuthorizeAttribute
 
 To secure your controller based on back offce membership use the attribute: `Umbraco.Web.WebApi.UmbracoAuthorizeAttribute`. 
