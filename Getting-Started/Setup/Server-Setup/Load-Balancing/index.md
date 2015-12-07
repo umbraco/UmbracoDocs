@@ -66,4 +66,4 @@ You'll need to test this solution **a lot** before going to production. You need
 Ensure to analyze logs from all servers and check for any warnings and errors.
 
 ##More information
-- Codegarden '15 session: [Umbraco Load Balancing](https://vimeo.com/channels/939955/132815038)
+- Codegarden '15 session: [Umbraco Load Balancing](https://vimeo.com/132815038)
