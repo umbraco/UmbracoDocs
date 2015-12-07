@@ -21,6 +21,8 @@ Notice 2 things: the `GetCacheItem` method is strongly typed and that we are sup
 
 There are many overloads of `GetCacheItem` allowing you to customize how your object is cached from cache dependencies to expiration times.
 
+To use this generic implementation, add the `Umbraco.Core.Cache` namespace to your code.
+
 ###Retrieving an item from the cache without a callback
  
 One of the overloads of `GetCacheItem` doesn't specify a callback, this will allow  you to simply retrieve an item from the cache without populating it if it doesn't exist.
