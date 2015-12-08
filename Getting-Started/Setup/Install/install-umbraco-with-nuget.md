@@ -50,7 +50,7 @@ On the next step, select the **Empty** template. It's important to to pick **emp
 
 ![](images/NuGet/new-project-vs2013-2.png)
 
-Or you can use one the VS2012/2013/2015 template:
+Or you can use the VS2012/2013/2015 template:
 
 * ASP.NET Empty Web Application
 
