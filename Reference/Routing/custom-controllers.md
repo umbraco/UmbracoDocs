@@ -38,14 +38,14 @@ To further extend this, we've also allowed routing to different Actions based on
 ##How the mapping works
 
 * Document Type name = controller name
-* 
+*
 Template name = action name, but if no action matches or is not specified then the 'Index' action will be executed.
 
 In the near future we will allow setting a custom default controller to execute for all requests instead of the standard UmbracoController. Currently you'd have to create a controller for every document type to have a custom controller execute for all requests.
 
 ##Returning a view with a custom model
 
-If you want to return a custom model to a view then there are a few steps that need to be taken. 
+If you want to return a custom model to a view then there are a few steps that need to be taken.
 
 ###Changing the @inherits directive of your template
 
@@ -53,7 +53,7 @@ First, the standard view that is created by Umbraco inherits from `Umbraco.Web.M
 
 	@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
-If you are returning a custom model, then this directive will need to change because your custom model will not be an instance of `Umbraco.Web.Models.RenderModel`. Instead change your @inherits directive to inherit from `Umbraco.Web.Mvc.UmbracoViewPage<T>` where 'T' is the type of your custom model. So for exammple, if your custom model is of type 'MyCustomModel' then your @inherits directive will look like:
+If you are returning a custom model, then this directive will need to change because your custom model will not be an instance of `Umbraco.Web.Models.RenderModel`. Instead change your @inherits directive to inherit from `Umbraco.Web.Mvc.UmbracoViewPage<T>` where 'T' is the type of your custom model. So for example, if your custom model is of type 'MyCustomModel' then your @inherits directive will look like:
 
 	@inherits Umbraco.Web.Mvc.UmbracoViewPage<MyCustomModel>
 
@@ -69,7 +69,7 @@ In an example above we reference that you can use the following sytnax once you'
 	//Do some stuff here, the return the base Index method
     return base.Index(model);
 
-This will work but the object (model) that you pass to the `Index` method must be an instance of `Umbraco.Web.Models.RenderModel` which might not be the case if you have a custom model. 
+This will work but the object (model) that you pass to the `Index` method must be an instance of `Umbraco.Web.Models.RenderModel` which might not be the case if you have a custom model.
 So to return a custom model to the current Umbraco template, we need to use different syntax. Here's an example:
 
 	public class HomeController : Umbraco.Web.Mvc.RenderMvcController
