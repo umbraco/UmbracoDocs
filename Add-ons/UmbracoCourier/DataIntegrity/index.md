@@ -43,6 +43,7 @@ WHERE id NOT IN (
     HAVING MIN(id) IS NOT NULL 
 )
 ```
+
 This query will **delete** all of the extraneous rows in the `cmsPropertyData` table that shouldn't have been there in the first place but will leave that first row intact. 
 
 You can now transfer your content again and it should update on the destination like it should've done in the first place.
