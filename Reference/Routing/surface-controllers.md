@@ -12,7 +12,7 @@ It is a regular ASP.Net MVC controller that:
 Since any SurfaceController inherits from the `Umbraco.Web.Mvc.SurfaceController` class, the class instantly supports many of the helper methods and properties that are available on the base SurfaceController class including `UmbracoHelper` and `UmbracoContext`. Therefore, all Surface Controllers have native Umbraco support for:
 
 * interacting with Umbraco routes during HTTP POSTs (i.e. `return CurrentUmbracoPage();` )
-* rendering forms in Umbraco (i.e. `@Html.BeginUmbracoForm<MySurfaceController>(...)` )
+* rendering forms in Umbraco (i.e. `@Html.BeginUmbracoForm<MyController>(...)` )
 * rendering ASP.Net MVC ChildAction 
 
 ##Creating a SurfaceController
@@ -26,12 +26,12 @@ A locally declared SurfaceController is one that is not shipped within an Umbrac
 To create a locally declared SurfaceController: 
 
 * Create a controller that inherits from `Umbraco.Web.Mvc.SurfaceController`
-* The controller must be a 'public' class.
-* The controller's name must be suffixed with the term 'SurfaceController'
+* The controller must be a public class.
+* The controller's name must be suffixed with the term `Controller`
 
 For example:
 
-	public class MySurfaceController : Umbraco.Web.Mvc.SurfaceController
+	public class MyController : Umbraco.Web.Mvc.SurfaceController
 	{
 		public ActionResult Index() 
 		{
@@ -56,7 +56,7 @@ They do not get routed via an MVC Area so any Views must exist in the following 
 If you are shipping a SurfaceController in a package then you should definitely be creating a plugin based SurfaceController. The only difference between creating a plugin based controller and locally declared controller is that you need to add an attribute to your class which defines the MVC Area you'd like your controller routed through. Here's an example:
 
 	[PluginController("SuperAwesomeAnalytics")]
-	public class MySurfaceController : Umbraco.Web.Mvc.SurfaceController
+	public class MyController : Umbraco.Web.Mvc.SurfaceController
 	{
 		public ActionResult Index() 
 		{
@@ -64,7 +64,7 @@ If you are shipping a SurfaceController in a package then you should definitely 
 		}
 	}
 
-In the above, I've specified that I'd like my MySurfaceController to belong to the MVC Area called 'SuperAwesomeAnalytics'. Perhaps it is obvious but if you are creating a package that contains many SurfaceControllers then you should most definitely ensure that all of your controllers are routed through the same MVC Area.
+In the above, I've specified that I'd like my MyController to belong to the MVC Area called 'SuperAwesomeAnalytics'. Perhaps it is obvious but if you are creating a package that contains many SurfaceControllers then you should most definitely ensure that all of your controllers are routed through the same MVC Area.
 
 ####Routing for plugin based controllers
 
