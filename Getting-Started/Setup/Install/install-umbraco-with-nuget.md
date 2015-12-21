@@ -8,7 +8,7 @@ _Follow these steps to do a full install of Umbraco with NuGet._
  - In VS13/15: use ASP.NET Web Application with an Empty template
 - Umbraco can in most cases **not** be installed in an existing MVC/Webforms project
 - When asked if you want to overwrite config files, choose **yes** to overwrite them
-- ReSharper 8 (last released in 2014) might have problems, try suspending it or upgrading to version 8.2.3
+- ReSharper 8 (last released in 2014) might have problems, try suspending it or upgrading to ReSharper version 8.2.3
 
 ##Note for ReSharper users
 We're aware of an ongoing issue with ReSharper 8 which interferes with the NuGet installation and causes it to fail (you can help getting this resolved by voting for [this issue][1]).  
