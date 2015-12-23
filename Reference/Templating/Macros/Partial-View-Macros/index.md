@@ -37,4 +37,6 @@ You can use @CurrentPage, @Model.Content, @Umbraco, ...
 
 ## Accessing macro parameters
 
-You can access the macro's parameters using the `MacroParameters` property which is of type `IDictionary<string, object>`
+You can access the macro's parameters using the `MacroParameters` property on the model which is of type `IDictionary<string, object>`
+
+    var myParam = Model.MacroParameters["aliasOfTheMacroParameter"];
