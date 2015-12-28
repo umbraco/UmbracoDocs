@@ -48,6 +48,11 @@ We have focused primarily on Azure Web Apps when developing flexible load balanc
 
 Ensure you read the [overview](index.md) before you begin - you will need to ensure that your asp.net & logging configurations are correct.
 
+### Azure Requirements
+
+* You will need to setup 2 x Azure Web Apps - one for the master (administrative) environment and another for your front-end environment
+* You will need 1 x SQL server that is shared with these 2 web apps
+
 ###Lucene/Examine configuration
 
 You cannot share indexes between servers and since Azure Web Apps use a shared file server, Examine settings need to be updated
@@ -57,10 +62,13 @@ You cannot share indexes between servers and since Azure Web Apps use a shared f
 * In ExamineSettings.config, you can add this attribute to all of your indexers and searchers: `useTempStorage="Sync"`
 * The 'Sync' setting will store your indexes in ASP.Net's temporary file folder which is on the local file system. Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Anytime the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local temp files are cleared out that the index files can be restored from the centrally stored index files. If you see issues with this syncing process (in your logs), you can change this value to be 'LocalOnly' which will only persist the index files to the local file system in ASP.Net temp files.
 
-### Azure Requirements
+### Umbraco XML cache file
 
-* You will need to setup 2 x Azure Web Apps - one for the master (administrative) environment and another for your front-end environment
-* You will need 1 x SQL server that is shared with these 2 web apps
+For your front-end Azure Web App instance, you'll need to ensure that the Umbraco XML config file is stored on the local server (since Azure uses a shared file system). To do this ensure this setting is true in your web.config:
+
+```
+<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
+```
 
 ### Steps
 
