@@ -52,28 +52,18 @@ dynamic object.
 ####MVC View Example to output a "banner" crop from a cropper property with the alias "image"
     
     //show the crop preset "banner"
-    <img src='@CurrentPage.GetCropUrl("image", "banner")' />
+    <img src='@Html.GetCropUrl(Model.Content, "image", "banner")' />
 
     //or from specific node:
-    <img src='@Umbraco.Content(1234).GetCropUrl("image", "banner")' />
-
-    //or from typed content:
-    <img src='@Model.Content.GetCropUrl("image", "banner")' />
+    <img src='@Html.GetCropUrl(Umbraco.TypedContent(1234), "image", "banner")' />
 
 
 ####MVC View Example to output create custom crops - in this case forcing a 300 x 400 px image
             
         @if (CurrentPage.HasValue("image"))
         {
-            <img src='@Model.Content.GetCropUrl(propertyAlias: "image", height:300, width:400)'/>
+            <img src='@Html.GetCropUrl(Model.Content, propertyAlias: "image", height:300, width:400)'/>
         }
-
-####Media example to output a "banner" crop from a cropper property with alias "umbracoFile"
-
-The cropped URL can also be found for media in a similar way:
-
-    @Umbraco.Media(1234).GetCropUrl("banner")
-    @Umbraco.TypedMedia(1234).GetCropUrl("banner")
 
 ###Data returned
 
@@ -107,13 +97,15 @@ The cropper returns a dynamic object, based on a json structure like this:
 
 So you can access each property directly:
 
-    <img src='@CurrentPage.image.src'/>
+    <img src='@Html.Raw(CurrentPage.image.src)'/>
 
 Or iterate through them:
                        
     @foreach(var crop in CurrentPage.image.crops){
-        <img src="@CurrentPage.GetCropUrl("image", crop.alias)">    
+        <img src="@Html.GetCropUrl(Model.Content, "image", crop.alias)">    
     }     
+
+If you choose to access properties directly, always remember to wrap the URL output in @Html.Raw() to prevent getting an encoded URL value in your view.
 
 
 ##Powered by ImageProcessor
@@ -123,7 +115,7 @@ We bundle this library in Umbraco 7.1 and you can therefore take full advantage 
 
 ####MVC View Example on how to blur a crop
 
-    <img src='@CurrentPage.GetCropUrl("image", "banner")&blur=11,sigma-1.5,threshold-10' />
+    <img src='@Html.GetCropUrl(Model.Content, "image", "banner")&blur=11&sigma=1.5&threshold=10' />
 
 Using ImageProcessors built-in [gaussianblur](http://imageprocessor.org/imageprocessor-web/imageprocessingmodule/gaussianblur.html)    
 
