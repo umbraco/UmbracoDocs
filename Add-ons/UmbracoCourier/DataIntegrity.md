@@ -48,6 +48,8 @@ This query will **delete** all of the extraneous rows in the `cmsPropertyData` t
 
 You can now transfer your content again and it should update on the destination like it should've done in the first place.
 
+The error you've seen in your backoffice should say something like `Source 0 / Destination: 18` which means that the source has no duplicate property data but your destination does. So to fix this, you only need to run the delete query on the destination, the source is fine.
+
 ##Future
 Courier version 2.51.4 and higher will detect if your source or target environment were impacted by this problem and will show you a link to this document if the problem is detected.
 
