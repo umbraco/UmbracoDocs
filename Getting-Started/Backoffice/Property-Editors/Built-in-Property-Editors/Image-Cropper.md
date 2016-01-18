@@ -124,7 +124,7 @@ From Umbraco v7.3.5 there is an optional parameter "htmlEncode" which you and sp
         }
     }
 
-#### Data returned
+### Data returned
 
 The cropper returns a dynamic object, based on a json structure like this: 
 
