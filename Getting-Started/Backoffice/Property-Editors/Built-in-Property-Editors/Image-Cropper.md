@@ -89,11 +89,11 @@ The cropped URL can also be found for media in a similar way:
 
 #### Typed (Umbraco v7.3.5+):
     
-	@{
+    @{
         var mediaItem = Umbraco.TypedMedia(1234);
         if (mediaItem != null)
         {
-            @Url.GetCropUrl(mediaItem, "banner")
+            <img src="@Url.GetCropUrl(mediaItem, "banner")" />
         }
     }
 
@@ -104,6 +104,25 @@ The cropped URL can also be found for media in a similar way:
 #### Dynamic:
 
     @Umbraco.Media(1234).GetCropUrl("banner")
+
+
+### CSS background example to output a "banner" crop from a cropper property with alias "umbracoFile"
+
+From Umbraco v7.3.5 there is an optional parameter "htmlEncode" which you and specify as false so that the Url is not Html encoded
+
+#### Typed (Umbraco v7.3.5+):
+
+    @{
+        var mediaItem = Umbraco.TypedMedia(1234);
+        if (mediaItem != null)
+        {
+            <style>
+                .myCssClass {
+                    background-image: url("@Url.GetCropUrl(mediaItem, "banner", false)");
+                }
+            </style>
+        }
+    }
 
 #### Data returned
 
