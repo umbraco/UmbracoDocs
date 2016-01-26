@@ -8,23 +8,21 @@ While Content deployments are done using the Umbraco backoffice you need to comm
 If you use a git tool like SourceTree, SmartGit or Git Extensions you should be able to see if there are any pending changes to files within /data/Revision and commit these. Once committed you need to push the committed changes to the remote Development environment (push to the origin master). If the remote has newer commits you need to pull these down and merge with your local changes, and then finally push the changes. Some git tools shows the output from the remote while others don’t.
 If you don't have any git tools installed you can use git bash and the following commands:
 
-```
-# Navigate to the Revision folder
-cd data/Revision
-# Check status of the repository for pending changes
-git status
-# Add pending changes
-git add -A
-# Commit staged files
-git commit -m "Adding updated schema changed"
-# Push to the remote Development environment
-git push origin master
-
-# If the push is rejected you will need to pull first
-git pull origin master
-# Try to push again if there were no conflicts
-git push origin master
-```
+    # Navigate to the Revision folder
+    cd data/Revision
+    # Check status of the repository for pending changes
+    git status
+    # Add pending changes
+    git add -A
+    # Commit staged files
+    git commit -m "Adding updated schema changed"
+    # Push to the remote Development environment
+    git push origin master
+    
+    # If the push is rejected you will need to pull first
+    git pull origin master
+    # Try to push again if there were no conflicts
+    git push origin master
 
 If you had to pull down new commits before you could push your changes, then there is a chance that the new commits contained schema changes as well. So in order to ensure that your local site is up-to-date you need to navigate to the /data/ folder and create a deploy  file if one doesn't already exist. From a command line you can simply enter
 
