@@ -78,7 +78,7 @@ Some examples:
 ###.Where
 
 	@* Returns all items in the collection that have a template assigned and have a name starting with 'S' *@
-	@var nodes = Model.Content.Descendants().Where(x = x.TemplateId > 0 && x.Name.StartsWith("S"))
+	@var nodes = Model.Content.Descendants().Where(x => x.TemplateId > 0 && x.Name.StartsWith("S"))
 
 ###.OrderBy
 
