@@ -146,6 +146,6 @@ If all values should use the same level you can use the short cut below
 
 ## Samples ##
 
-[Content Picker to `IPublishedContent` using attribute meta data](value-converters-v7-full-example-attributes.md)
+[Content Picker to `IPublishedContent` using attribute meta data](value-converters-full-example-attributes.md)
 
-[Content Picker to `IPublishedContent` using `IPropertyValueConverterMeta` interface](value-converters-v7-full-example-interface.md) (Umbraco v7.1.5+)
+[Content Picker to `IPublishedContent` using `IPropertyValueConverterMeta` interface](value-converters-full-example-interface.md) (Umbraco v7.1.5+)
