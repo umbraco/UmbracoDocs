@@ -2,7 +2,7 @@
 
 DynamicPublishedContent is the dynamic version of [IPublishedContent](../IPublishedContent/index.md), it allows for simpler access to property data 
 but it does not provide intellisense. All methods and properties that are available on IPublishedContent are also available
-on DynamicPublishedContnet. However, there are a few special methods specifically designed for DynamicPublishedContent
+on DynamicPublishedContent. However, there are a few special methods specifically designed for DynamicPublishedContent
 that are used for filtering, querying and collections.
 
 ##Get started
