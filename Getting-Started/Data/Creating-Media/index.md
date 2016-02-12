@@ -48,7 +48,7 @@ _TIP: Having different folders for different media types makes it possible to re
 
 Choose __New Media Type__. This will open the Media Type editor. It is basically the same editor used for creating Document Types, the difference is that Media Types define items for Media section and you do not have the ability to assign a template for the Media Type.  
 
-![Creating a Media Type](images/Creating-Media-Create-7.4.jpg)
+![Creating a Media Type](images/Creating-Media-Create-740.jpg)
 Name the Media Type "Employee Image". Choose an icon (user) by clicking the icon to the left of the name.
 
 ####Adding tabs
@@ -71,11 +71,11 @@ Click __Add editor__, search for "cropper" and choose __Image cropper__ under __
 
 Add two new crops called "Thumbnail" (200px x 350px) and "wideThumbnail" (350px x 200px).
 
-![Defining crops](images/Creating-Media-Crops-7.4.jpg)
+![Defining crops](images/Creating-Media-Crops-740.jpg)
 
 Name the remaining four properties "Width", "Height", "Size" and "Type" and give them the aliases seen above. They should all use the __Label__ editor. As mentioned before these properties will automatically be populated once an image has been uploaded.
 
-![Adding properties](images/Creating-Media-Properties-7.4.jpg)
+![Adding properties](images/Creating-Media-Properties-740.jpg)
 
 ###Defining a Media Type folder
 Next up we'll create a folder to hold the employee images. We could use the existing __Folder__ Media Type but that would mean editors can upload employee images to any folder of that type. If we create a folder specifically for employee images there is only one place to put them thus making it easier to have an organized Media section.
@@ -98,12 +98,12 @@ Go to the __Media__ section and click the menu icon next to Media and select the
 
 To start uploading images to the folder click the menu icon on the __Employee images__ node or use the __Create__ button in the content view and select __Employee image__.
 
-![Uploading Media](images/Creating-Media-Upload-7.4.jpg)
+![Uploading Media](images/Creating-Media-Upload-740.jpg)
 
 *Remember you can uncheck the __Allow at root__ option on the __Employee images__ Media Type to prevent editors from creating multiple folders of this type. This will not affect created folders, just disable the creation of new ones*
 
 ####Cropping the images
-![Cropping images](images/Creating-Media-Cropping-7.4.jpg)
+![Cropping images](images/Creating-Media-Cropping-740.jpg)
 
 If you select an image that has been uploaded to this folder you'll see the full image and the two crops we have defined below. Moving the blue focal point on the on the image will update the crops to focus accordingly. You can also edit the individual crops by selecting them and moving the image or adjust the slider to zoom.
 
