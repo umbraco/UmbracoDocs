@@ -87,17 +87,17 @@ Next add this c# to the .cshtml file:
 When rendering the .cshtml file will receive a dynamic model with the raw data of the editor:
 
     {
-      "value": "What ever value entered into the textarea",
-      "editor": {
-        "name": "Code",
-        "alias": "code",
-        "view": "/app_plugins/yourpackage/editor.html",
-        "icon": "icon-code",
-        "config": {
-          "color": "red",
-          "text-align": "right"
+        "value": "What ever value entered into the textarea",
+        "editor": {
+            "name": "Code",
+            "alias": "code",
+            "view": "/app_plugins/yourpackage/editor.html",
+            "icon": "icon-code",
+            "config": {
+                    "color": "red",
+                    "text-align": "right"
+                }
         }
-      }
     }
 
 So you can now use these value to build your razor output like so:
