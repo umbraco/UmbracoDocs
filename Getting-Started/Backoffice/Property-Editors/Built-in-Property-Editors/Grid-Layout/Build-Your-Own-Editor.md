@@ -51,13 +51,15 @@ Finally, we need to tell Umbraco load this JavaScript controller when the Umbrac
 
     {
         "gridEditors": [
-            "name": "Code",
-            "alias": "code",
-            "view": "/app_plugins/yourpackage/editor.html",
-            "icon": "icon-code",
-            "config": {
-                "color": "red",
-                "text-align": "right"
+            {
+                "name": "Code",
+                "alias": "code",
+                "view": "/app_plugins/yourpackage/editor.html",
+                "icon": "icon-code",
+                "config": {
+                    "color": "red",
+                    "text-align": "right"
+                }
             }
         ],
         javascript:[
