@@ -52,10 +52,12 @@ This section describes what a breaking change is in regards to the Umbraco codeb
 * Changes to HTML/Markup are not considered breaking changes
 * Changes to images are not considered breaking changes
 * Changes made to the inclusion, exclusion or location change of referenced JS/CSS libraries
+* Changes made to .less files are not considered breaking changes
 
 ###Breaking
 
-* Changing the file location of CSS, JS, or Images is a breaking change
+* Changing the file location of CSS or Images is a breaking change
+ 
 
 ##JavaScript
 
@@ -63,12 +65,14 @@ This section describes what a breaking change is in regards to the Umbraco codeb
 
 * Changes made to publicly accessible APIs that are not documented
 * Changes made to publicly accessible API methods that are prefixed with an underscore (meaning these are flagged as internal)
+* Changing the location of AngularJS service, controller, directive files
 
 ###Breaking
 
 * Changes made to publicly accessble APIs that are documented
-* Changing the location of JS files
-
+* Changing the location of JS library files
+* Changing the alias of AngularJS controller, service or directive
+ 
 ##Database
 
 ###Non-breaking
