@@ -49,6 +49,10 @@ Inside this package manifest we add a bit of JSON to describe the property edito
 				alias: "My.MarkdownEditor",
 				/*the name*/
 				name: "My markdown editor",
+				/*the icon*/
+				icon: "icon-code",
+				/*grouping for "Select editor" dialog*/
+				group: "Rich Content"
 				/*the HTML file we will load for the editor*/
 				editor: {
 					view: "~/App_Plugins/MarkDownEditor/markdowneditor.html"
