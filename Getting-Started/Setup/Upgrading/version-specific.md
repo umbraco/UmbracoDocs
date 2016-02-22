@@ -79,7 +79,7 @@ NuGet will do the following for you but if you're upgrading manually:
 * Delete `bin/Microsoft.Web.Helpers.dll`
 * Delete `bin/Microsoft.Web.Mvc.FixedDisplayModes.dll`
 * Delete `bin/System.Net.Http.dll`
-* Delete `bin/System.Net.Http.*.dll` (all dll files starting with `System.Net.Http`)
+* Delete `bin/System.Net.Http.*.dll` (all dll files starting with `System.Net.Http`) **EXCEPT** for `System.Net.Http.Formatting.dll`
 * Delete `bin/umbraco.XmlSerializers.dll`
 * In your `web.config` file, add this in the `appSetting` section: `<add key="owin:appStartup" value="UmbracoDefaultOwinStartup" />`
 
