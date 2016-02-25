@@ -17,5 +17,5 @@ This section describes the included bits and pieces that ships with Courier to g
 How Courier is supposed to be used, to deploy content and developer assets from one site to another. Gives insight in
 how Courier is built.
 
-##[Common Isues](CommonIssues.md)
+##[Common Issues](CommonIssues.md)
 For developers configuring or troubleshooting Courier
