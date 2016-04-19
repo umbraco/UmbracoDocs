@@ -59,7 +59,7 @@ The UmbracoHelper method provides many useful parameters to change how the value
 
 *NOTE: When accessing content dynamically you will not get intellisense if you are using Visual Studio to edit your templates.*
 
-##Rendering Macros
+## <a name="renderingMacros"></a>Rendering Macros
 
 Rendering a macro is easy using UmbracoHelper. There are 3 overloads, we'll start with the most basic:
 
