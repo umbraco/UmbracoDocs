@@ -98,3 +98,5 @@ The above will cache the output of your partial view for one hour (3600 seconds)
 		ViewDataDictionary viewData = null)
 
 So you can specify to cache by member and/or by page and also specify additional view data to your partial view. **However**, if your view data is dynamic (meaning it could change per page request) the cached output will still be returned. This same principle applies if the model you are passing in is dynamic. Please be aware of this: if you have a different model or viewData for any page request, the result will be the cached result of the first execution.
+
+Caching is only enabled when your application has debug="false". When debug="true" caching is disabled. Also, the cache of all CachedPartials is emptied on Umbraco publish events.
