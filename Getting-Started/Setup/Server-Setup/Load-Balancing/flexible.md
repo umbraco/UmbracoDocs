@@ -77,10 +77,7 @@ Ensure you read the [overview](index.md) before you begin - you will need to ens
 
 ###Lucene/Examine configuration
 
-You cannot share indexes between servers and since Azure Web Apps use a shared file server, Examine settings need to be updated
-
 * Ensure you are using the [latest Examine version from Nuget](https://www.nuget.org/packages/Examine)
-* In ExamineIndex.config, you need to tokenize the path for each of your indexes to include the machine name, this will ensure that your indexes are stored in different locations for each machine. An example of a tokenized path is: `~/App_Data/TEMP/ExamineIndexes/{machinename}/Internal/`
 * In ExamineSettings.config, you can add these properties to all of your indexers and searchers: 
 ```
 useTempStorage="Sync"
@@ -89,6 +86,15 @@ tempStorageDirectory="UmbracoExamine.LocalStorage.AzureLocalStorageDirectory, Um
 * The 'Sync' setting will store your indexes in the local workers file system instead of Azure Web Apps' 
 remote file system. Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Anytime the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local temp files are cleared out that the index files can be restored from the centrally stored index files. If you see issues with this syncing process (in your logs), you can also change this value to be 'LocalOnly' which will only persist the index files to the local file system
 but this does mean they will be rebuilt when the website is migrated between Azure workers.
+
+#####If you plan on using auto-scaling#####
+
+**Important!** Your Examine path settings need to be updated! Azure Web Apps uses a shared file system which means that if you increase your front-end environment scale setting to more than one worker your Lucene index files will be shared by more than one process. This will not work! In ExamineIndex.config, you need to tokenize the path for each of your indexes to include the machine name, this will ensure that your indexes are stored in different locations for each machine. An example of a tokenized path is: `~/App_Data/TEMP/ExamineIndexes/{machinename}/Internal/`. This however has some drawbacks for two reasons:
+
+* Azure web apps migrates your site between workers without warning which means the {machinename} will change and your index will be rebuilt when this occurs
+* When you scale out (increase the number of workers), the new worker will also rebuild it's own index
+
+We are working towards being able to mitigate these issues by adding the ability to store a master index in blob storage so that when new workers come online they can sync the existing index locally (this is not yet in place)
 
 ### Umbraco XML cache file
 
