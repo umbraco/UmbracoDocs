@@ -38,9 +38,31 @@ The process is as follows:
 * When a front-end server detects that there are pending instructions, it downloads them and processes them and in turn updates it's cache, cache files and indexes on it's own file system
 * There can be up to a 5 second delay between content updates and a front-end server's refreshing, this is expected and normal behavior.
 
-## Configuration files
+## Umbraco Configuration files
 
-There isn't any Umbraco configuration file changes necessary! **You must not enable the distributed calls flag in the umbracoSettings.config** file for Flexible Load Balancing to work, that is purely for Traditional load balancing. There are some Examine/Logging config file updates needed (see below and the [Overview](index.md))
+There isn't any _Umbraco_ configuration file changes necessary. **You must not enable the distributed calls flag in the umbracoSettings.config** file for Flexible Load Balancing to work, that is purely for Traditional load balancing. 
+
+There are some Examine/Logging config file updates needed (see below and the [Overview](index.md))
+
+##Internal Server Requests
+
+It is required that an Umbraco website instances can make internal requests to itself.
+This is required for 3 things:
+
+* Keep alive service - to ensure scheduled publishing occurs
+* Scheduled tasks - to initiate any configured scheduled tasks
+* Scheduled publishing - to initiate any scheduled publishing for documents
+
+Flexible Load Balancing will automatically elect a 'master' scheduling server to perform the above services. This means
+that all of the servers will need to be able to resolve either: itself or the load balanced front-end url.
+
+By default, Umbraco will globally set the 'base url' of the website to the address made by the first request when the AppDomain starts and it is assumed
+that your website can resolve that DNS address to itself or the main load balancer. 
+In many scenarios this is fine, but in case this is not adequate there's a few of options you can use:
+
+* set the `umbracoApplicationUrl` property in the [Web.Routing section of /Config/umbracoSettings.config](../../../../Reference/Config/umbracoSettings/index.md)
+* or in an [`ApplicationStarting` event of an application startup handler](../../../../Reference/Events/Application-Startup.md) you can specify a custom delegate to return the base url for a node by setting [`ApplicationUrlHelper.ApplicationUrlProvider`](https://github.com/umbraco/Umbraco-CMS/blob/75c2b07ad3a093b5b65b6ebd45697687c062f62a/src/Umbraco.Core/Sync/ApplicationUrlHelper.cs#L21)
+* [can set your front-end(s) (non-admin server) to be explicit slave servers](flexible-advanced.md) which means they will never be used as the master scheduler 
 
 ## Option #1 : Cloud based auto-scale appliances
 
@@ -59,8 +81,14 @@ You cannot share indexes between servers and since Azure Web Apps use a shared f
 
 * Ensure you are using the [latest Examine version from Nuget](https://www.nuget.org/packages/Examine)
 * In ExamineIndex.config, you need to tokenize the path for each of your indexes to include the machine name, this will ensure that your indexes are stored in different locations for each machine. An example of a tokenized path is: `~/App_Data/TEMP/ExamineIndexes/{machinename}/Internal/`
-* In ExamineSettings.config, you can add this attribute to all of your indexers and searchers: `useTempStorage="Sync"`
-* The 'Sync' setting will store your indexes in ASP.Net's temporary file folder which is on the local file system. Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Anytime the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local temp files are cleared out that the index files can be restored from the centrally stored index files. If you see issues with this syncing process (in your logs), you can change this value to be 'LocalOnly' which will only persist the index files to the local file system in ASP.Net temp files.
+* In ExamineSettings.config, you can add these properties to all of your indexers and searchers: 
+```
+useTempStorage="Sync"
+tempStorageDirectory="UmbracoExamine.LocalStorage.AzureLocalStorageDirectory, UmbracoExamine"
+```
+* The 'Sync' setting will store your indexes in the local workers file system instead of Azure Web Apps' 
+remote file system. Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Anytime the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local temp files are cleared out that the index files can be restored from the centrally stored index files. If you see issues with this syncing process (in your logs), you can also change this value to be 'LocalOnly' which will only persist the index files to the local file system
+but this does mean they will be rebuilt when the website is migrated between Azure workers.
 
 ### Umbraco XML cache file
 
