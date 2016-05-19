@@ -26,7 +26,7 @@ For options #2 and #3 you will obviously need a load balancer to do your load ba
 
 In order to understand how to host your site it is best to understand how Umbraco's flexible load balancing works.
 
-The following diagram shows the communication between each entity in the environment:
+The following diagram shows the data flow/communication between each item in the environment:
 
  ![umbraco flexible load balancing diagram](images/flexible-load-balancing.png)
 
@@ -38,31 +38,41 @@ The process is as follows:
 * When a front-end server detects that there are pending instructions, it downloads them and processes them and in turn updates it's cache, cache files and indexes on it's own file system
 * There can be up to a 5 second delay between content updates and a front-end server's refreshing, this is expected and normal behavior.
 
-## Umbraco Configuration files
+##Scheduling and master election
 
-There isn't any _Umbraco_ configuration file changes necessary. **You must not enable the distributed calls flag in the umbracoSettings.config** file for Flexible Load Balancing to work, that is purely for Traditional load balancing. 
-
-There are some Examine/Logging config file updates needed (see below and the [Overview](index.md))
-
-##Internal Server Requests
-
-It is required that an Umbraco website instances can make internal requests to itself.
-This is required for 3 things:
+Although there is a Master server designated for administration, by default this is not explicitly set as the "Scheduling server". 
+In Umbraco there can only be a single scheduling server which performs the following 3 things:
 
 * Keep alive service - to ensure scheduled publishing occurs
 * Scheduled tasks - to initiate any configured scheduled tasks
 * Scheduled publishing - to initiate any scheduled publishing for documents
 
-Flexible Load Balancing will automatically elect a 'master' scheduling server to perform the above services. This means
-that all of the servers will need to be able to resolve either: itself or the load balanced front-end url.
+Flexible Load Balancing will automatically elect a "Scheduling server" to perform the above services. This means
+that all of the servers will need to be able to resolve the URL of either: itself, the Master server, the internal load balancer or the public address.
 
-By default, Umbraco will globally set the 'base url' of the website to the address made by the first request when the AppDomain starts and it is assumed
-that your website can resolve that DNS address to itself or the main load balancer. 
+For example, In the following diagram the slave node **f02.mysite.local** is the elected "Scheduling server". In order for scheduling to work it needs to be able to send
+requests to itself, the Master server, the internal load balancer or the public address. The address used by the "Scheduling server" is called the "umbracoApplicationUrl". 
+
+![umbraco flexible load balancing diagram](images/flexible-load-balancing-scheduler.png)
+
+By default, Umbraco will set the "umbracoApplicationUrl" to the address made by the first accepted request when the AppDomain starts.
+It is assumed that this address will be a DNS address that the server can resolve.
+
+For example, if a public request reached the load balancer on "www.mysite.com", the load balancer may send the request on to the servers with the original address: "www.mysite.com" 
+so by default the "umbracoApplicationUrl" will be "www.mysite.com". However, load balancers may route the request internally under a different DNS name such as "f02.mysite.local" which 
+by default would mean the "umbracoApplicationUrl" is "f02.mysite.local". In any case the elected "Scheduling server" must be able to resolve this address. 
+
 In many scenarios this is fine, but in case this is not adequate there's a few of options you can use:
 
 * set the `umbracoApplicationUrl` property in the [Web.Routing section of /Config/umbracoSettings.config](../../../../Reference/Config/umbracoSettings/index.md)
 * or in an [`ApplicationStarting` event of an application startup handler](../../../../Reference/Events/Application-Startup.md) you can specify a custom delegate to return the base url for a node by setting [`ApplicationUrlHelper.ApplicationUrlProvider`](https://github.com/umbraco/Umbraco-CMS/blob/75c2b07ad3a093b5b65b6ebd45697687c062f62a/src/Umbraco.Core/Sync/ApplicationUrlHelper.cs#L21)
-* [can set your front-end(s) (non-admin server) to be explicit slave servers](flexible-advanced.md) which means they will never be used as the master scheduler 
+* [can set your front-end(s) (non-admin server) to be explicit slave servers](flexible-advanced.md) which means they will never be used as the master scheduler
+
+## Umbraco Configuration files
+
+There isn't any _Umbraco_ configuration file changes necessary. **You must not enable the distributed calls flag in the umbracoSettings.config** file for Flexible Load Balancing to work, that is purely for Traditional load balancing. 
+
+There are some Examine/Logging config file updates needed (see below and the [Overview](index.md))
 
 ## Option #1 : Cloud based auto-scale appliances
 
