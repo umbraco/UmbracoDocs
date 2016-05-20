@@ -215,3 +215,16 @@ Contents of the  FieldType.Textfield.cshtml view:
 	/>
 
 By default the form makes uses of jquery validate and jquery validate unobtrosive that's why you see attribute like data-val and data-val-required again this can be customized but it's important to keep the id of the control to @Model.Id since that is used to match the value to the form field.
+
+
+Customizing for a specific form
+
+If you wish to customize the markup for a specific form and not all your forms that is also possible.
+
+For a specific form you'll need to create the following folder: `~\Views\Partials\Forms\{FormId}` (FormId needs to be an existing form id, you find the id of the form in the URL when you are viewing the form in the backoffice
+
+![Form GUID](form-guid.png)
+
+As an example if your form id is 85514c04-e188-43d0-9246-98b34069750c then you can overwrite the form view by adding the Form.cshtml file to the directory First copying the default one and then making your changes is the best way to get started ~\umbraco\plugins\umbracoContour\Views\Forms\85514c04-e188-43d0-9246-98b34069750c/Form.cshtml
+
+You can also overwrite views for 1 or more fieldtypes by adding the views to the folder (again if you first copy the default one and then make your changes...) ~\umbraco\plugins\umbracoContour\Views\Forms\85514c04-e188-43d0-9246-98b34069750c\Fieldtype.Textfield.cshtml
