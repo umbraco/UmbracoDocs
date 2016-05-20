@@ -225,6 +225,6 @@ For a specific form you'll need to create the following folder: `~\Views\Partial
 
 ![Form GUID](form-guid.png)
 
-As an example if your form id is 85514c04-e188-43d0-9246-98b34069750c then you can overwrite the form view by adding the Form.cshtml file to the directory First copying the default one and then making your changes is the best way to get started ~\umbraco\plugins\umbracoContour\Views\Forms\85514c04-e188-43d0-9246-98b34069750c/Form.cshtml
+As an example if your form id is 0d3e6b2d-db8a-43e5-8f28-36241d712487 then you can overwrite the form view by adding the Form.cshtml file to the directory First copying the default one and then making your changes is the best way to get started ~\Views\Partials\Forms\0d3e6b2d-db8a-43e5-8f28-36241d712487/Form.cshtml
 
-You can also overwrite views for 1 or more fieldtypes by adding the views to the folder (again if you first copy the default one and then make your changes...) ~\umbraco\plugins\umbracoContour\Views\Forms\85514c04-e188-43d0-9246-98b34069750c\Fieldtype.Textfield.cshtml
+You can also overwrite views for 1 or more fieldtypes by adding the views to the folder (again if you first copy the default one and then make your changes...) ~\Views\Partials\Forms\0d3e6b2d-db8a-43e5-8f28-36241d712487\Fieldtype.Textfield.cshtml
