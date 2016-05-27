@@ -217,7 +217,7 @@ Contents of the  FieldType.Textfield.cshtml view:
 By default the form makes uses of jquery validate and jquery validate unobtrosive that's why you see attribute like data-val and data-val-required again this can be customized but it's important to keep the id of the control to @Model.Id since that is used to match the value to the form field.
 
 
-Customizing for a specific form
+###Customizing for a specific form
 
 If you wish to customize the markup for a specific form and not all your forms that is also possible.
 
