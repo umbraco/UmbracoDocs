@@ -6,11 +6,11 @@ Displays a calendar UI for selecting dates and time, the value saved is a standa
 
 ##Data Type Definition Example
 
-![Data Type Definition Example](images/DateTime-With-Time-DataType.png)
+![Data Type Definition Example](images/Date-Time-With-Time-Content.png)
 
 ##Content Example 
 
-![Content Example](images/DateTime-With-Time-Content.png)
+![Content Example](images/Date-Time-With-Time-Data-Type.png)
 
 ##MVC View Example - displays a datetime with time 
 
