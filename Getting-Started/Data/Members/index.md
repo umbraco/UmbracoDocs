@@ -12,11 +12,9 @@ There is also a number of default properties on the __Membership__ tab:
 - umbracoMemberFailedPasswordAttempts
 - umbracoMemberApproved
 - umbracoMemberLockedOut
-- umbracoMemberLastLockOutDate
+- umbracoMemberLastLockoutDate
 - umbracoMemberLastLogin
 - umbracoMemberLastPasswordChangeDate
-- umbracoMemberPassWordRetrievalAnswer
-- umbracoMemberPasswordRetrivalQuestion
 
 Once the member is created and saved you can access it by expanding the members tree and click __All Members__ to get a list view (with real time search) or select the member type to filter by, by selecting it in the Members tree.
 
