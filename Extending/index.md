@@ -1,9 +1,5 @@
 #Extending Umbraco
 
-##[Backoffice API documentation](http://umbraco.github.io/Belle/#/api)
-
-Angular API reference for the Umbraco backoffice (Belle).
-
 ##[Dashboards](Dashboards/index.md)
 
 A Dashboard is a component for displaying elements on the right-hand side of the backoffice UI area.
