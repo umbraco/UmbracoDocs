@@ -125,8 +125,8 @@ Returns a nicely formated URL including its domain, given a node ID. This can be
     <a href="@Umbraco.NiceUrlWithDomain(1234)">My link</a>
 
   
-##Working with  Media
-###.Media(1234);
+##Working with Media
+###.Media(int id);
 Given a node ID, returns a `dynamic` object, representing a single `IPublishedContent` Media entity 
 
     @{
