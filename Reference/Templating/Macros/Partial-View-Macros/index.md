@@ -40,3 +40,8 @@ You can use @CurrentPage, @Model.Content, @Umbraco, ...
 You can access the macro's parameters using the `MacroParameters` property on the model which is of type `IDictionary<string, object>`
 
     var myParam = Model.MacroParameters["aliasOfTheMacroParameter"];
+    
+Or you can use functions similar to those used to read document properties
+
+    var myParam = Model.GetParameterValue<int>("myAlias");
+    var myParam = Model.GetParameterValue<string>("myAlias", "Some default value");
