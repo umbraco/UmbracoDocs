@@ -16,7 +16,7 @@ If you wanted to do a transform on your `web.config` file in the root of your si
 1. `web.development.xdt.config`
 2. `web.live.xdt.config`
 
-Then, whenever you deploy froom local to development, the transforms in `web.development.xdt.config` will be applied. And of course when you deploy from development to live, the `web.live.xdt.config` transform will be applied.
+Then, whenever you deploy from local to development, the transforms in `web.development.xdt.config` will be applied. And of course when you deploy from development to live, the `web.live.xdt.config` transform will be applied.
 
 **Note:** if you only want to transform the file on the live environment then you don't create the `development.xdt.config`.
 
