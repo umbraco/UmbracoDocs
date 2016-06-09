@@ -2,6 +2,20 @@
 
 _Developers' Reference primarily consists of API references of the different core Umbraco APIs. In many cases, the references come with code snippets with simple examples. For a more in-depth study of the different APIs, consult the "using-umbraco" and "extending-umbraco" sections of the documentation._
 
+##API Documentation
+
+####[C# API Documentation](https://our.umbraco.org/apidocs/csharp/)
+
+__Note: opens a documentation browser that is different from the documentation section you're viewing now, we're planning to integrate both.__ 
+
+C# API references for the Umbraco Core and Web libraries
+
+####[Backoffice UI API documentation](https://our.umbraco.org/apidocs/ui/)
+
+__Note: opens a documentation browser that is different from the documentation section you're viewing now, we're planning to integrate both.__ 
+
+Angular, JS, CSS & Less UI API references for building Umbraco backoffice components
+
 ##[Configuration](Config/index.md)
 Information about all of Umbraco's configuration files and options.
 
