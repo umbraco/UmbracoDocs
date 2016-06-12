@@ -55,125 +55,86 @@ These are fairly simple, small checks that take an XPath query and confirm that 
 An example check:
 
 ```
-using System;
 using System.Collections.Generic;
-using Umbraco.Core;
-using Umbraco.Core.Models.Rdbms;
-using Umbraco.Core.Persistence;
-using Umbraco.Core.Persistence.SqlSyntax;
+using System.Linq;
 using Umbraco.Core.Services;
 
-namespace Umbraco.Web.HealthCheck.Checks.DataIntegrity
+namespace Umbraco.Web.HealthCheck.Checks.Config
 {
-    [HealthCheck(
-        "D999EB2B-64C2-400F-B50C-334D41F8589A",
-        "XML Data Integrity",
-        Description = "Checks the integrity of the XML data in Umbraco",
-        Group = "DataIntegrity")]
-    public class XmlDataIntegrityHealthCheck : HealthCheck
+    [HealthCheck("D0F7599E-9B2A-4D9E-9883-81C7EDC5616F", "Macro errors",
+        Description = "Checks to make sure macro errors are not set to throw a YSOD (yellow screen of death), which would prevent certain or all pages from loading completely.",
+        Group = "Configuration")]
+    public class MacroErrorsCheck : AbstractConfigCheck
     {
         private readonly ILocalizedTextService _textService;
 
-        public XmlDataIntegrityHealthCheck(HealthCheckContext healthCheckContext) : base(healthCheckContext)
+        public MacroErrorsCheck(HealthCheckContext healthCheckContext) : base(healthCheckContext)
         {
-            _sqlSyntax = HealthCheckContext.ApplicationContext.DatabaseContext.SqlSyntax;
-            _services = HealthCheckContext.ApplicationContext.Services;
-            _database = HealthCheckContext.ApplicationContext.DatabaseContext.Database;
             _textService = healthCheckContext.ApplicationContext.Services.TextService;
         }
 
-        private readonly ISqlSyntaxProvider _sqlSyntax;
-        private readonly ServiceContext _services;
-        private readonly UmbracoDatabase _database;
-
-        public override IEnumerable<HealthCheckStatus> GetStatus()
+        public override string FilePath
         {
-            return new[] { CheckContent(), CheckMedia(), CheckMembers() };
+            get { return "~/Config/umbracoSettings.config"; }
         }
 
-        public override HealthCheckStatus ExecuteAction(HealthCheckAction action)
+        public override string XPath
         {
-            switch (action.Alias)
+            get { return "/settings/content/MacroErrors"; }
+        }
+
+        public override ValueComparisonType ValueComparisonType
+        {
+            get { return ValueComparisonType.ShouldEqual; }
+        }
+
+        public override IEnumerable<AcceptableConfiguration> Values
+        {
+            get
             {
-                case "checkContentXmlTable":
-                    _services.ContentService.RebuildXmlStructures();
-                    return CheckContent();
-                case "checkMediaXmlTable":
-                    _services.MediaService.RebuildXmlStructures();
-                    return CheckMedia();
-                case "checkMembersXmlTable":
-                    _services.MemberService.RebuildXmlStructures();
-                    return CheckMembers();
-                default:
-                    throw new ArgumentOutOfRangeException();
+                var values = new List<AcceptableConfiguration>
+                {
+                    new AcceptableConfiguration
+                    {
+                        IsRecommended = true,
+                        Value = "inline"
+                    },
+                    new AcceptableConfiguration
+                    {
+                        IsRecommended = false,
+                        Value = "silent"
+                    }
+                };
+
+                return values;
+            }
+        }
+        
+        public override string CheckSuccessMessage
+        {
+            get
+            {
+                return _textService.Localize("healthcheck/macroErrorModeCheckSuccessMessage",
+                    new[] { CurrentValue, Values.First(v => v.IsRecommended).Value });
             }
         }
 
-        private HealthCheckStatus CheckMembers()
+        public override string CheckErrorMessage
         {
-            var total = _services.MemberService.Count();
-            var memberObjectType = Guid.Parse(Constants.ObjectTypes.Member);
-            var subQuery = new Sql()
-                .Select("Count(*)")
-                .From<ContentXmlDto>(_sqlSyntax)
-                .InnerJoin<NodeDto>(_sqlSyntax)
-                .On<ContentXmlDto, NodeDto>(_sqlSyntax, left => left.NodeId, right => right.NodeId)
-                .Where<NodeDto>(dto => dto.NodeObjectType == memberObjectType);
-            var totalXml = _database.ExecuteScalar<int>(subQuery);
-
-            var actions = new List<HealthCheckAction>();
-            if (totalXml != total)
-                actions.Add(new HealthCheckAction("checkMembersXmlTable", Id));
-            
-            return new HealthCheckStatus(_textService.Localize("healthcheck/xmlDataIntegrityCheckMembers", new[] { totalXml.ToString(), total.ToString() }))
+            get
             {
-                ResultType = totalXml == total ? StatusResultType.Success : StatusResultType.Error,
-                Actions = actions
-            };
+                return _textService.Localize("healthcheck/macroErrorModeCheckErrorMessage",
+                    new[] { CurrentValue, Values.First(v => v.IsRecommended).Value });
+            }
         }
 
-        private HealthCheckStatus CheckMedia()
+        public override string RectifySuccessMessage
         {
-            var total = _services.MediaService.Count();
-            var mediaObjectType = Guid.Parse(Constants.ObjectTypes.Media);
-            var subQuery = new Sql()
-                .Select("Count(*)")
-                .From<ContentXmlDto>(_sqlSyntax)
-                .InnerJoin<NodeDto>(_sqlSyntax)
-                .On<ContentXmlDto, NodeDto>(_sqlSyntax, left => left.NodeId, right => right.NodeId)
-                .Where<NodeDto>(dto => dto.NodeObjectType == mediaObjectType);
-            var totalXml = _database.ExecuteScalar<int>(subQuery);
-
-            var actions = new List<HealthCheckAction>();
-            if (totalXml != total)
-                actions.Add(new HealthCheckAction("checkMediaXmlTable", Id));
-
-            return new HealthCheckStatus(_textService.Localize("healthcheck/xmlDataIntegrityCheckMedia", new[] { totalXml.ToString(), total.ToString() }))
+            get
             {
-                ResultType = totalXml == total ? StatusResultType.Success : StatusResultType.Error,
-                Actions = actions
-            };
-        }
-
-        private HealthCheckStatus CheckContent()
-        {
-            var total = _services.ContentService.CountPublished();
-            var subQuery = new Sql()
-                .Select("DISTINCT cmsContentXml.nodeId")
-                .From<ContentXmlDto>(_sqlSyntax)
-                .InnerJoin<DocumentDto>(_sqlSyntax)
-                .On<DocumentDto, ContentXmlDto>(_sqlSyntax, left => left.NodeId, right => right.NodeId);
-            var totalXml = _database.ExecuteScalar<int>("SELECT COUNT(*) FROM (" + subQuery.SQL + ") as tmp");
-
-            var actions = new List<HealthCheckAction>();
-            if (totalXml != total)
-                actions.Add(new HealthCheckAction("checkContentXmlTable", Id));
-
-            return new HealthCheckStatus(_textService.Localize("healthcheck/xmlDataIntegrityCheckContent", new[] { totalXml.ToString(), total.ToString() }))
-            {
-                ResultType = totalXml == total ? StatusResultType.Success : StatusResultType.Error,
-                Actions = actions
-            };
+                return _textService.Localize("healthcheck/macroErrorModeCheckRectifySuccessMessage",
+                    new[] { CurrentValue, Values.First(v => v.IsRecommended).Value });
+            }
         }
     }
 }
