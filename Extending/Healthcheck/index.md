@@ -55,89 +55,123 @@ An example check:
 ```
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Web;
-using System.Web.Hosting;
-using Umbraco.Core.Logging;
+using Umbraco.Core;
+using Umbraco.Core.Models.Rdbms;
+using Umbraco.Core.Persistence;
+using Umbraco.Core.Persistence.SqlSyntax;
 using Umbraco.Core.Services;
 
-namespace Umbraco.Web.HealthCheck.Checks.SEO
+namespace Umbraco.Web.HealthCheck.Checks.DataIntegrity
 {
-    [HealthCheck("3A482719-3D90-4BC1-B9F8-910CD9CF5B32", "Robots.txt",
-    Description = "Create a robots.txt file to block access to system folders.",
-    Group = "SEO")]
-    public class RobotsTxt : HealthCheck
+    [HealthCheck(
+        "D999EB2B-64C2-400F-B50C-334D41F8589A",
+        "XML Data Integrity",
+        Description = "Checks the integrity of the XML data in Umbraco",
+        Group = "DataIntegrity")]
+    public class XmlDataIntegrityHealthCheck : HealthCheck
     {
         private readonly ILocalizedTextService _textService;
 
-        public RobotsTxt(HealthCheckContext healthCheckContext) : base(healthCheckContext)
+        public XmlDataIntegrityHealthCheck(HealthCheckContext healthCheckContext) : base(healthCheckContext)
         {
+            _sqlSyntax = HealthCheckContext.ApplicationContext.DatabaseContext.SqlSyntax;
+            _services = HealthCheckContext.ApplicationContext.Services;
+            _database = HealthCheckContext.ApplicationContext.DatabaseContext.Database;
             _textService = healthCheckContext.ApplicationContext.Services.TextService;
         }
-        
+
+        private readonly ISqlSyntaxProvider _sqlSyntax;
+        private readonly ServiceContext _services;
+        private readonly UmbracoDatabase _database;
+
         public override IEnumerable<HealthCheckStatus> GetStatus()
         {
-            return new[] { CheckForRobotsTxtFile() };
+            return new[] { CheckContent(), CheckMedia(), CheckMembers() };
         }
 
         public override HealthCheckStatus ExecuteAction(HealthCheckAction action)
         {
             switch (action.Alias)
             {
-                case "addDefaultRobotsTxtFile":
-                    return AddDefaultRobotsTxtFile();
+                case "checkContentXmlTable":
+                    _services.ContentService.RebuildXmlStructures();
+                    return CheckContent();
+                case "checkMediaXmlTable":
+                    _services.MediaService.RebuildXmlStructures();
+                    return CheckMedia();
+                case "checkMembersXmlTable":
+                    _services.MemberService.RebuildXmlStructures();
+                    return CheckMembers();
                 default:
                     throw new ArgumentOutOfRangeException();
             }
         }
 
-        private HealthCheckStatus CheckForRobotsTxtFile()
+        private HealthCheckStatus CheckMembers()
         {
-            var success = File.Exists(HostingEnvironment.MapPath("~/robots.txt"));
-            var message = success 
-                ? _textService.Localize("healthcheck/seoRobotsCheckSuccess") 
-                : _textService.Localize("healthcheck/seoRobotsCheckFailed");
+            var total = _services.MemberService.Count();
+            var memberObjectType = Guid.Parse(Constants.ObjectTypes.Member);
+            var subQuery = new Sql()
+                .Select("Count(*)")
+                .From<ContentXmlDto>(_sqlSyntax)
+                .InnerJoin<NodeDto>(_sqlSyntax)
+                .On<ContentXmlDto, NodeDto>(_sqlSyntax, left => left.NodeId, right => right.NodeId)
+                .Where<NodeDto>(dto => dto.NodeObjectType == memberObjectType);
+            var totalXml = _database.ExecuteScalar<int>(subQuery);
 
             var actions = new List<HealthCheckAction>();
-
-            if (success == false)
-                actions.Add(new HealthCheckAction("addDefaultRobotsTxtFile", Id)
-                // Override the "Rectify" button name and describe what this action will do
-                { Name = _textService.Localize("healthcheck/seoRobotsRectifyButtonName"),
-                    Description = _textService.Localize("healthcheck/seoRobotsRectifyDescription") });
-
-            return
-                new HealthCheckStatus(message)
-                {
-                    ResultType = success ? StatusResultType.Success : StatusResultType.Error,
-                    Actions = actions
-                };
+            if (totalXml != total)
+                actions.Add(new HealthCheckAction("checkMembersXmlTable", Id));
+            
+            return new HealthCheckStatus(_textService.Localize("healthcheck/xmlDataIntegrityCheckMembers", new[] { totalXml.ToString(), total.ToString() }))
+            {
+                ResultType = totalXml == total ? StatusResultType.Success : StatusResultType.Error,
+                Actions = actions
+            };
         }
 
-        private HealthCheckStatus AddDefaultRobotsTxtFile()
+        private HealthCheckStatus CheckMedia()
         {
-            var success = false;
-            var message = string.Empty;
-            const string content = @"# robots.txt for Umbraco
-User-agent: *
-Disallow: /aspnet_client/";
+            var total = _services.MediaService.Count();
+            var mediaObjectType = Guid.Parse(Constants.ObjectTypes.Media);
+            var subQuery = new Sql()
+                .Select("Count(*)")
+                .From<ContentXmlDto>(_sqlSyntax)
+                .InnerJoin<NodeDto>(_sqlSyntax)
+                .On<ContentXmlDto, NodeDto>(_sqlSyntax, left => left.NodeId, right => right.NodeId)
+                .Where<NodeDto>(dto => dto.NodeObjectType == mediaObjectType);
+            var totalXml = _database.ExecuteScalar<int>(subQuery);
 
-            try
-            {
-                File.WriteAllText(HostingEnvironment.MapPath("~/robots.txt"), content);
-                success = true;
-            }
-            catch (Exception exception)
-            {
-                LogHelper.Error<RobotsTxt>("Could not write robots.txt to the root of the site", exception);
-            }
+            var actions = new List<HealthCheckAction>();
+            if (totalXml != total)
+                actions.Add(new HealthCheckAction("checkMediaXmlTable", Id));
 
-            return
-                new HealthCheckStatus(message)
-                {
-                    ResultType = success ? StatusResultType.Success : StatusResultType.Error,
-                    Actions = new List<HealthCheckAction>()
-                };
+            return new HealthCheckStatus(_textService.Localize("healthcheck/xmlDataIntegrityCheckMedia", new[] { totalXml.ToString(), total.ToString() }))
+            {
+                ResultType = totalXml == total ? StatusResultType.Success : StatusResultType.Error,
+                Actions = actions
+            };
+        }
+
+        private HealthCheckStatus CheckContent()
+        {
+            var total = _services.ContentService.CountPublished();
+            var subQuery = new Sql()
+                .Select("DISTINCT cmsContentXml.nodeId")
+                .From<ContentXmlDto>(_sqlSyntax)
+                .InnerJoin<DocumentDto>(_sqlSyntax)
+                .On<DocumentDto, ContentXmlDto>(_sqlSyntax, left => left.NodeId, right => right.NodeId);
+            var totalXml = _database.ExecuteScalar<int>("SELECT COUNT(*) FROM (" + subQuery.SQL + ") as tmp");
+
+            var actions = new List<HealthCheckAction>();
+            if (totalXml != total)
+                actions.Add(new HealthCheckAction("checkContentXmlTable", Id));
+
+            return new HealthCheckStatus(_textService.Localize("healthcheck/xmlDataIntegrityCheckContent", new[] { totalXml.ToString(), total.ToString() }))
+            {
+                ResultType = totalXml == total ? StatusResultType.Success : StatusResultType.Error,
+                Actions = actions
+            };
         }
     }
 }
