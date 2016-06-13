@@ -64,7 +64,6 @@ These are fairly simple, small checks that take an XPath query and confirm that 
 
 An example check:
 
-   
      using System.Collections.Generic;
      using System.Linq;
      using Umbraco.Core.Services;
@@ -171,96 +170,94 @@ This can be anything you can think of, the results and the rectify action are co
 
 An example check:
 
-```
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Web;
-using System.Web.Hosting;
-using Umbraco.Core.Logging;
-using Umbraco.Core.Services;
-
-namespace Umbraco.Web.HealthCheck.Checks.SEO
-{
-    [HealthCheck("3A482719-3D90-4BC1-B9F8-910CD9CF5B32", "Robots.txt",
-    Description = "Create a robots.txt file to block access to system folders.",
-    Group = "SEO")]
-    public class RobotsTxt : HealthCheck
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Web;
+    using System.Web.Hosting;
+    using Umbraco.Core.Logging;
+    using Umbraco.Core.Services;
+    
+    namespace Umbraco.Web.HealthCheck.Checks.SEO
     {
-        private readonly ILocalizedTextService _textService;
-
-        public RobotsTxt(HealthCheckContext healthCheckContext) : base(healthCheckContext)
+        [HealthCheck("3A482719-3D90-4BC1-B9F8-910CD9CF5B32", "Robots.txt",
+        Description = "Create a robots.txt file to block access to system folders.",
+        Group = "SEO")]
+        public class RobotsTxt : HealthCheck
         {
-            _textService = healthCheckContext.ApplicationContext.Services.TextService;
-        }
-        
-        public override IEnumerable<HealthCheckStatus> GetStatus()
-        {
-            return new[] { CheckForRobotsTxtFile() };
-        }
-
-        public override HealthCheckStatus ExecuteAction(HealthCheckAction action)
-        {
-            switch (action.Alias)
+            private readonly ILocalizedTextService _textService;
+    
+            public RobotsTxt(HealthCheckContext healthCheckContext) : base(healthCheckContext)
             {
-                case "addDefaultRobotsTxtFile":
-                    return AddDefaultRobotsTxtFile();
-                default:
-                    throw new ArgumentOutOfRangeException();
+                _textService = healthCheckContext.ApplicationContext.Services.TextService;
             }
-        }
-
-        private HealthCheckStatus CheckForRobotsTxtFile()
-        {
-            var success = File.Exists(HttpContext.Current.Server.MapPath("~/robots.txt"));
-            var message = success 
-                ? _textService.Localize("healthcheck/seoRobotsCheckSuccess") 
-                : _textService.Localize("healthcheck/seoRobotsCheckFailed");
-
-            var actions = new List<HealthCheckAction>();
-
-            if (success == false)
-                actions.Add(new HealthCheckAction("addDefaultRobotsTxtFile", Id)
-                // Override the "Rectify" button name and describe what this action will do
-                { Name = _textService.Localize("healthcheck/seoRobotsRectifyButtonName"),
-                    Description = _textService.Localize("healthcheck/seoRobotsRectifyDescription") });
-
-            return
-                new HealthCheckStatus(message)
+            
+            public override IEnumerable<HealthCheckStatus> GetStatus()
+            {
+                return new[] { CheckForRobotsTxtFile() };
+            }
+    
+            public override HealthCheckStatus ExecuteAction(HealthCheckAction action)
+            {
+                switch (action.Alias)
                 {
-                    ResultType = success ? StatusResultType.Success : StatusResultType.Error,
-                    Actions = actions
-                };
-        }
-
-        private HealthCheckStatus AddDefaultRobotsTxtFile()
-        {
-            var success = false;
-            var message = string.Empty;
-            const string content = @"# robots.txt for Umbraco
-User-agent: *
-Disallow: /umbraco/";
-
-            try
-            {
-                File.WriteAllText(HostingEnvironment.MapPath("~/robots.txt"), content);
-                success = true;
+                    case "addDefaultRobotsTxtFile":
+                        return AddDefaultRobotsTxtFile();
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
             }
-            catch (Exception exception)
+    
+            private HealthCheckStatus CheckForRobotsTxtFile()
             {
-                LogHelper.Error<RobotsTxt>("Could not write robots.txt to the root of the site", exception);
+                var success = File.Exists(HttpContext.Current.Server.MapPath("~/robots.txt"));
+                var message = success 
+                    ? _textService.Localize("healthcheck/seoRobotsCheckSuccess") 
+                    : _textService.Localize("healthcheck/seoRobotsCheckFailed");
+    
+                var actions = new List<HealthCheckAction>();
+    
+                if (success == false)
+                    actions.Add(new HealthCheckAction("addDefaultRobotsTxtFile", Id)
+                    // Override the "Rectify" button name and describe what this action will do
+                    { Name = _textService.Localize("healthcheck/seoRobotsRectifyButtonName"),
+                        Description = _textService.Localize("healthcheck/seoRobotsRectifyDescription") });
+    
+                return
+                    new HealthCheckStatus(message)
+                    {
+                        ResultType = success ? StatusResultType.Success : StatusResultType.Error,
+                        Actions = actions
+                    };
             }
-
-            return
-                new HealthCheckStatus(message)
+    
+            private HealthCheckStatus AddDefaultRobotsTxtFile()
+            {
+                var success = false;
+                var message = string.Empty;
+                const string content = @"# robots.txt for Umbraco
+    User-agent: *
+    Disallow: /umbraco/";
+    
+                try
                 {
-                    ResultType = success ? StatusResultType.Success : StatusResultType.Error,
-                    Actions = new List<HealthCheckAction>()
-                };
+                    File.WriteAllText(HostingEnvironment.MapPath("~/robots.txt"), content);
+                    success = true;
+                }
+                catch (Exception exception)
+                {
+                    LogHelper.Error<RobotsTxt>("Could not write robots.txt to the root of the site", exception);
+                }
+    
+                return
+                    new HealthCheckStatus(message)
+                    {
+                        ResultType = success ? StatusResultType.Success : StatusResultType.Error,
+                        Actions = new List<HealthCheckAction>()
+                    };
+            }
         }
     }
-}
-```
 
 ##Disabling checks
 
