@@ -7,27 +7,36 @@ For inspiration when building your own checks you can look at the checks we've [
 
 ##Built-in checks
 
-Umbraco comes with the following check by default:
+Umbraco comes with the following checks by default:
 
-* Category "Configuration"
-  * Macro errors - checks that the errors are set to `inline` so that pages that error will still load (and just shows a small error message)
-  * Try Skip IIS Custom Errors - in IIS 7.5 and higher this should be set to `true` 
-* Category "Data Integrity"
-  * Data integrity - validates the XML structures for content, media and members that are stored in the `cmsContentXml` table
-* Category "Live environment" 
-  * Custom errors - should be set to `RemoteOnly` or `On` on your live site
-  * Trace mode - should be set to `enabled="false"` on your live site
-  * Compilation debug mode - should be set to `debug="false"` on your live site 
-* Category "Permissions" 
-  * File & folder permissions - checks that folders and files that are either required or recommended to set with write permissions can be accessed
-* Category "Security"
-  * HTTPS check - to determine if the current site is running on a secure connection
-  * `umbracoUseSSL` check - when the site is running on HTTPS, `umbracoUseSSL` needs to be enabled to secure the backoffice
-  * HTTPS connectivity check - when connecting to the site over HTTPS, does it return a valid response (i.e. the certificate has not expired)?
+* Category **Configuration**
+  * **Macro errors** - checks that the errors are set to `inline` so that pages that error will still load (and just shows a small error message)
+  * **Notification Email Settings** - checks that the from email address used for email notifications has been changed from it's default value
+  * **Try Skip IIS Custom Errors** - in IIS 7.5 and higher this should be set to `true` 
+* Category **Data Integrity**
+  * **Data integrity** - validates the XML structures for content, media and members that are stored in the `cmsContentXml` table
+* Category **Live environment** 
+  * **Custom errors** - should be set to `RemoteOnly` or `On` on your live site
+  * **Trace mode** - should be set to `enabled="false"` on your live site
+  * **Compilation debug mode** - should be set to `debug="false"` on your live site 
+* Category **Permissions**
+  * **File & folder permissions** - checks that folders and files that are either required or recommended to set with write permissions can be accessed
+* Category **Security**
+  * **Click-Jacking Protection** - checks to see if a header or meta-tag is in place to indicate whether the site can be hosted in an IFRAME.  Normally this is best set to deny permission for this to be done, to prevent what are known as [click-jacking](https://www.google.dk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiby7WgoKXNAhVTb5oKHW9RABkQFggbMAA&url=https%3A%2F%2Fwww.owasp.org%2Findex.php%2FClickjacking&usg=AFQjCNFQksJMzjjWK2fRnInWIPbe5ozHAw&bvm=bv.124272578,d.bGs) attacks
+  * **Excessive Headers** - checks to ensure that various headers that can provide details about the technology used to build and host the website have been removed
+  * **HTTPS check** - to determine if the current site is running on a secure connection
+  * **umbracoUseSSL check** - when the site is running on HTTPS, `umbracoUseSSL` needs to be enabled to secure the backoffice
+  * **HTTPS connectivity check** - when connecting to the site over HTTPS, does it return a valid response (i.e. the certificate has not expired)?
+* Category **Services**
+  * **SMTP settings** - checks that an SMTP server is configured and is accepting requests for sending emails
+  
+Each check returns a message indicating whether or not the issue in question has been found on the website installation, and if so whether the concern is an error that should be fixed, or less importantly, a warning you should be aware of.
+
+Some of them can also be rectified via the dashboard, simply be clicking the **Fix** button and in some cases providing some required information.  These changes usually involve writing to configuration files that will often trigger a restart of the website.  
 
 ##Custom checks
 
-You can build your own health checks. There are two types of health checks you can build: *configuration checks* and *general checks*.
+You can build your own health checks. There are two types of health checks you can build: **configuration checks** and **general checks**.
 
 Each health check is a class that needs to have a `HealthCheck` attribute. This attribute has a few things you need to fill in:
 
@@ -47,7 +56,8 @@ These are fairly simple, small checks that take an XPath query and confirm that 
 * `XPath` is the query you want to execute to find the configuration value you want to verify
 * `ValueComparisonType` can either be `ValueComparisonType.ShouldEqual` or `ValueComparisonType.ShouldNotEqual`
 * `Values` is a list of values that are available for this configuration item - in this example it can be `RemoteOnly` or `On`, they're both acceptable for a live site. 
-  * Make sure to set one of these values to `IsRecommended = true` - when the "Rectify" button is pressed, the recommended value will be stored
+  * For checks using the `ShouldEqual` comparison method, make sure to set one of these values to `IsRecommended = true` - when the "Fix" button is pressed, the recommended value will be stored
+  * Where `ShouldNotEqual` is used the fix will require the user to provide the correct setting
 * `CheckSuccessMessage`, `CheckErrorMessage` and `RectifySuccessMessage` are the messages returned to the user
   * It is highly recommended to use the `LocalizedTextService` so these can be localized. You can add the text in `~/Config/Lang/en-US.user.xml` (or whatever language you like)
   * Don't add the translations to `~/Umbraco/Config/Lang` files, the correct location is `~/Config/Lang/*-*.user.xml`
@@ -148,8 +158,8 @@ This can be anything you can think of, the results and the rectify action are co
 * All checks run when the dashboard is loaded, this means that the `GetStatus()` method gets executed
   * You can return multiple status checks from `GetStatus()`
 * A status check returns a `HealthCheckStatus`
-  * If a `HealthCheckStatus` has a `HealthCheckAction` defined then the "Rectify" button will perform that action once clicked
-  * Sometimes, the button to fix something should not be called "Rectify", change the `Name` property of a `HealthCheckAction` to provide a better name
+  * If a `HealthCheckStatus` has a `HealthCheckAction` defined then the "Fix" button will perform that action once clicked
+  * Sometimes, the button to fix something should not be called "Fix", change the `Name` property of a `HealthCheckAction` to provide a better name
   * `HealthCheckAction` has a `Description` property so that you can provide information on what clicking the "Rectify" button will do (or provide links to documentation, for example)
   * `HealthCheckStatus` has a few result levels:
     * `StatusResultType.Success`
