@@ -258,9 +258,3 @@ An example check:
             }
         }
     }
-
-##Disabling checks
-
-It is possible to disable selected health checks.
-
-TODO: Specify how.
