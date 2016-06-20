@@ -171,7 +171,7 @@ Umbraco comes with a build-in action handler that ensures that 2 pages does not 
 By setting the value to "true" tidy will be Used to clean Richtext Editor content.
 **NOTE: This has been changed from "True" to "False" as default with the release of 4.9**.
 
-The benefit of disabling tidy is that HTML5 elements and iframes can be inserted into the rich text editor without being removed.
+The benefit of disabling tidy is that HTML5 elements and IFRAMEs can be inserted into the rich text editor without being removed.
 
         <!-- clean editor content with use of tidy -->
         <TidyEditorContent>False</TidyEditorContent>
@@ -186,7 +186,7 @@ Character encoding for Tidy.
 **ForceSafeAliases**
 
 This setting allows you to disable the safe aliases, when you're creating properties on your document types. As the comment below states you really
-should not turn this of. Pleae also note that this option is most likely removed in a future Umbraco release - see http://issues.umbraco.org/issue/U4-867
+should not turn this off. Please also note that this option is most likely removed in a future Umbraco release - see http://issues.umbraco.org/issue/U4-867
 
         <!-- Whether to force safe aliases (no spaces, no special characters) at businesslogic level on contenttypes and propertytypes -->
         <!-- HIGHLY recommend to keep this to true to ensure valid and beautiful XML Schemas -->
@@ -194,7 +194,7 @@ should not turn this of. Pleae also note that this option is most likely removed
 
 **XmlCacheEnabled**
 
-Turn XML caching of content on/off. Umbraco Makes heavy use of caching content in memory to avoid database calls. This makes Umbraco faster and more efficient. You should not in any way turn this off, unless you have a very good reason to do so. It will make your website very slow.
+Turn XML caching of content on/off. Umbraco makes heavy use of caching content in memory to avoid database calls. This makes Umbraco faster and more efficient. You should not in any way turn this off unless you have a very good reason to do so. It will make your website very slow.
 
         <!-- Enable / disable XML content cache -->
         <XmlCacheEnabled>True</XmlCacheEnabled>
@@ -222,7 +222,7 @@ In case Umbraco is taking a bit of time to prepare content to display you can di
 
 **PropertyContextHelpOption**
 
-What kind of context help should be displayed next to editor fields in the content section, it can either be display as a small icon with text on mouse hover: (set it to "icon") Set to displaying the help text directly under the field name (set it to "text"), or not be displayed at all (set to "none").
+The setting controls what kind of context help is displayed next to editor fields in the content section.  It can either be display as a small icon with text on mouse hover: (set it to `icon`) Set to displaying the help text directly under the field name (set it to `text`), or not be displayed at all (set to `none`).
 
 <PropertyContextHelpOption>text</PropertyContextHelpOption>
 
@@ -251,8 +251,7 @@ This setting is used when you're running Umbraco in virtual directories.
 
 ##Security
 
-In the security section you have two options. **`<keepUserLoggedIn>`** and **`<hideDisabledUsersInBackoffice>`**. Both settings are dealing
-width backoffice users.
+In the security section you have three options: **`<keepUserLoggedIn>`**, **`<allowPasswordReset>`** and **`<hideDisabledUsersInBackoffice>`**. Both settings are dealing with backoffice users.
 
     <security>
         <!-- set to true to auto update login interval (and there by disabling the lock screen -->
@@ -260,6 +259,10 @@ width backoffice users.
 
         <!-- change in 4.8: Disabled users are now showed dimmed and last in the tree. If you prefer not to display them set this to true -->
         <hideDisabledUsersInBackoffice>false</hideDisabledUsersInBackoffice>
+
+        <!-- set to true to enable the UI and API to allow back-office users to reset their passwords -->
+        <allowPasswordReset>true</allowPasswordReset>  
+
     </security>
 
 **`<keepUserLoggedIn>`**
@@ -269,6 +272,9 @@ option to "false" and thereby enabling it.
 **`<hideDisabledUsersInBackoffice>`**
 As stated in the comment above, this setting was introduced in v4.8. If it's set to true it's not possible to see disabled users, which means it's
 not possible to re-enable their access to the back office again. It also means you can't create an identical username if the user was disabled by a mistake.
+
+**`<allowPasswordReset>`**
+The feature to allow users to reset their passwords if they have forgotten them was introduced in 7.5.  The feature is based on [a method provided by ASP.Net Identity](http://www.asp.net/identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity).  By default this is enabled but if you'd prefer to not allow users to do this it can be disabled at both the UI and API level by setting this value to `false`.
 
 ##RequestHandler
 
@@ -458,13 +464,13 @@ The task elements consist of the following attributes:
 
 **url:** Here the url for the page that should be called to run the task must be entered. Please note this can also point to an extensionless url or a service etc.
 
-**Please note:** that the scheduler is not in anyway a windows process so it is depending on the application pool Umbraco is located in. This means that if the application pool resets, so will the scheduler, so this is not a highly reliable way of scheduling tasks.
+**Please note:** that the scheduler is not in anyway a windows process so it depends on the application pool in which Umbraco is located. This means that if the application pool resets, so will the scheduler, so this is not a highly reliable way of scheduling tasks.
 
 ##DistributedCalls / Loadbalancing
 
-Umbraco comes with ability to distribute its cached content to multiple servers. Also know as loadbalancing. Umbraco has to be installed on all servers, but all servers sharing the same database.
+Umbraco comes with ability to distribute its cached content to multiple servers via a method known as load balancing. Umbraco has to be installed on all servers, with all servers sharing the same database.
 
-When the Umbraco instances are setup and files are synced between the instances, the instances need to know when to refresh their cache. This happens in the <servers> setting.
+*Prior to version 7.3*, when the Umbraco instances are setup and files are synced between the instances, the instances need to know when to refresh their cache. This happens in the <servers> setting.
 
 Every time some content is published in Umbraco. You can ask Umbraco to ping other hosts and tell them to update their cache. Make sure that these instances can be reached internally on port 80.
 
