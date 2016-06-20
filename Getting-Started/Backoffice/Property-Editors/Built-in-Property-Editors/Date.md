@@ -10,7 +10,7 @@ Displays a calendar UI for selecting dates, the value saved is a standard dateti
 
 ##Content Example 
 
-![Content Example](images/DateTime-Content.png)
+![Content Example](images/Date-Time-Content.png)
 
 ##MVC View Example - displays a datetime
 
