@@ -95,6 +95,26 @@ The above will cache the output of your partial view for one hour (3600 seconds)
 		int cachedSeconds,
 		bool cacheByPage = false,
 		bool cacheByMember = false,
-		ViewDataDictionary viewData = null)
+		ViewDataDictionary viewData = null
+		Func<object, ViewDataDictionary, string> contextualKeyBuilder = null)
 
-So you can specify to cache by member and/or by page and also specify additional view data to your partial view. **However**, if your view data is dynamic (meaning it could change per page request) the cached output will still be returned. This same principle applies if the model you are passing in is dynamic. Please be aware of this: if you have a different model or viewData for any page request, the result will be the cached result of the first execution.
+So you can specify to cache by member and/or by page and also specify additional view data to your partial view. If your view data is dynamic (meaning it could change per page request) you can tell Umbraco to cache multiple versions based on parameter values.  The Model however will not do the same so the result will be the cached result of the first execution.  If the Model is simply the current page and cacheByPage is enabled then there is no problem.
+
+To create multiple versions based on one or more viewData parameters you can do something like this:
+
+	@Html.CachedPartial("MediaGallery", Model, 3600, true, false, new ViewDataDictionary { { "year", Request.QueryString["year"] } }, (model, viewData) => viewData["year"].ToString() + viewData["Parameter2"].ToString() )
+
+Or using a custom helper function:
+
+	public static Func<object, ViewDataDictionary, string> CacheBy(this HtmlHelper htmlHelper, params string[] keys)
+	{
+		return (model, viewData) => String.Join("", keys.Select(s => viewData[s].ToString()));
+	}
+	
+	@Html.CachedPartial("MediaGallery", Model, 3600, true, false, new ViewDataDictionary { { "year", Request.QueryString["year"] } }, Html.CacheBy("yer", "Parameter2") )
+	
+Or even bassed off the Model, though is Model is just the current page then cacheByPage should be used instead:
+
+	@Html.CachedPartial("MediaGallery", Model, 3600, true, false, new ViewDataDictionary { }, (model, viewData) => model.myField )
+
+Regardless of the complexity here the contextualKeyBuilder function needs to return a single string value.
