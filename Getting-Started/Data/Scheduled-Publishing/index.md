@@ -3,7 +3,7 @@ Each document in Umbraco can be scheduled for publishing and unpublishing on a p
 
 ![Scheduled publishing](images/Publish-At.jpg)
 
-##Timezones <a href="#timezones"></a>
+##Timezones <a name="timezones"></a>
 Your server may be in a different timezone then where you are located. As of Umbraco version 7.5, you are able to select a date and time in your local timezone and Umbraco will make sure that the item gets published at the selected time. So if you select 12PM then the item will be published at 12PM in the timezone you are in. This may be 8PM on the server, which is indicated when you select the date and time.
 
 ![Scheduled publishing](images/Publish-Timezone-Difference.jpg)
