@@ -28,7 +28,10 @@ An important concept in regard to the git repository that is part of your Umbrac
 
 While you will commit all code except compiled dll's to your source code repository you treat the deployment repository differently in that you commit only the compiled dll's and no source code or project files.
 
-The following will guide you through how to set up and work with an Umbraco as a Service project in a VS solution.
+####Visual Studio Automation Script
+You can use the [Visual Studio automation script](http://umbracoreleases.blob.core.windows.net/download/UaaS.cmd) which will download the UaaS project and set up a Visual Studio solution for you. All you have to do is run the script and you're good to go. Read [this blogpost](https://cultiv.nl/blog/visual-studio-and-umbraco-as-a-service/) for more information.
+
+If you want to set it up yourself, the following will guide you through how to set up and work with an Umbraco as a Service project in a VS solution.
 
 ####Create a new project
 In Visual Studio create a new project, selecting the Empty Web Application option. If you will be extending Umbraco with your own MVC code (SurfaceControllers, etc.) you can start with the MVC 4 Web Application project type. Note that you'll need to remove some files if you start with this type of project.
