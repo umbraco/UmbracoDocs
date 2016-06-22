@@ -12,6 +12,14 @@ This approach is great if you are working alone or in a small team and you are c
 
 When you are happy with your changes you simply push them to Umbraco as a Service.
 
+If you are running into to build problems with temp files when using the Web Site approach do the following:
+
+![Property Pages](images/propertypages.png)
+Right click the website in Solution Explorer, choose *Property Pages* from the menu.
+
+![No build](images/nobuild.png)
+Now go to *Build* and set *Before running startup page* to *No Build*.
+
 ##Project/Solution
 If you are more comfortable with working in a solution where you have custom code in a reference project and then build/compile to the web site, there are a few more things to consider.
 
