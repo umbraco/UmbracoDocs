@@ -48,7 +48,7 @@ Each health check is a class that needs to have a `HealthCheck` attribute. This 
 
 ###Configuration checks
 
-These are fairly simple, small checks that take an XPath query and confirm that the value that's expected is there. If the value is not correct, clicking the "Rectify" button will set the recommended value. An example check:
+These are fairly simple, small checks that take an XPath query and confirm that the value that's expected is there. If the value is not correct, clicking the "Rectify" button will set the recommended value.
 
 * A configuration check needs to inherit from `Umbraco.Web.HealthCheck.Checks.Config.AbstractConfigCheck`
 * A configuration check needs the `HealthCheck` attribute as noted at the start of this document
