@@ -1,6 +1,7 @@
 #Working with Umbraco as a Service and nodejs cli
 
 One of the features built into Umbraco as a Service, is the ability to work locally with your Umbraco site, without having a Windows machine with a local web server installed on it. This enables i.e. people using a Mac to be using their favorite editor to modify code in their Umbraco as a Service site. The functionality requires that your machine has the following three tools installed
+
 * A git client - In order to clone a site and push changes.
 * Node.js + npm installed in a command line of choice. 
 * A code editor like Atom, Sublime or CS Code
@@ -9,14 +10,12 @@ To enable Node.js and npm you need to download the latest build from their site 
 
 The module you want to install is called uaas-cli, aka Umbraco as a Service Command line interface.
 To install the module for globally use in node use
-```
-npm install -g uaas-cli
-```
+
+`npm install -g uaas-cli`
 
 Use your git client to clone your UaaS site locally. Once you have it locally, open your command line tool, and simply type the following command from within the (cloned) website.
-```
-uaas watch
-```
+
+`uaas watch`
 
 This will start the module, type your credentials, and a local server will boot up, proxying the UaaS site, enabling you to start using this approach. The server will pr. default run on port 3000. But your browser should automatically be opened at the address.
 
