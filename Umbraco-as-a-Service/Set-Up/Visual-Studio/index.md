@@ -1,74 +1,54 @@
-#Working with your site in Visual Studio
-Working with your Umbraco as a Service site in Visual Studio is no different than working with any other Umbraco site in Visual Studio. There are a few considerations to take into account when first setting up, but the process of developing Umbraco websites with Visual Studio is identical.
+#Visual Studio Setup
 
-There are two ways to approach working with an Umbraco as a Service project in Visual Studio.
+This page describes how to setup your Visual Studio solution to work with an Umbraco as a Service Project.
 
-## Web Site
-The easiest way is to simply open the cloned project folder as a Web Site in VS.
+##The Visual Studio Solution
+We currently recommend using a Visual Studio solution with a Website Project for the Umbraco site (coming from the cloned git repository from the Umbraco as a Service Project), and a Class Library Project for the code that will be created for the Umbraco site. Tthis can be MVC Controllers, WebApi Controllers, Surface Controllers or data access plus whatever else you might need to write code for.
 
-![Open as Web Site](images/openwebsite.jpg)
+Below is a screenshot of how the Projects should be configured. Here we use the following naming convensions: `*.Web` for the Umbraco website and `*.Core` for the accompanying code.
 
-This approach is great if you are working alone or in a small team and you are comfortable with having your c# code in the `/App_Code/` and `/App_Plugins/` folders. By doing this there is literally nothing to set up. All you have to do is open the folder and you can run the site locally by pressing `Ctrl-F5`.
+![Visual Studio Project setup](images/vs-project-setup.png)
 
-When you are happy with your changes you simply push them to Umbraco as a Service.
+##Generate a Visual Studio Solution
+Manually creating and configuring a Visual Studio solution with the right Projects can take a bit of time, so we have made a little command line tool that will generate the correct solution for you.
+Download the UaaS.cmd tool from [umbra.co/uaas-cmd](umbra.co/uaas-cmd) and save it to a folder where you want to place the Visual Studio solution.
 
-*TIP:* If you are running into to build problems with temp files when using the Web Site approach do the following:
+![](images/cmd-in-empty-folder.png)
 
-![Property Pages](images/propertypages.png)
+Before running the UaaS.cmd tool you will need the git clone url for your Umbraco as a Service Project. So go to the Project in the Portal and copy the url from "Connect my machine".
 
-Right click the website in Solution Explorer, choose *Property Pages* from the menu.
+![](images/connect-my-machine.png)
 
-![No build](images/nobuild.png)
+Running the UaaS.cmd tool will download the latest Visual Studio generator (waasp.exe) and then prompt you to enter the git clone url for your Project.
+Then enter the "Namespace", which will be the name of the Visual Studio solution and thus the namespace for the solution as well.
 
-Now go to *Build* and set *Before running startup page* to *No Build*.
+If you haven't cloned the repository before or don't have a [git credentials manager](https://github.com/Microsoft/Git-Credential-Manager-for-Windows) installed you will be asked to enter the username and password for the Umbraco as a Service Project (these are the same credentials as you use to access the Portal and the Umbraco backoffice).
 
-##Project/Solution
-If you are more comfortable with working in a solution where you have custom code in a reference project and then build/compile to the web site, there are a few more things to consider.
+![](images/cmd-clone.png)
 
-####The Deployment repository
-An important concept in regard to the git repository that is part of your Umbraco as a Service site is that the repository is a *deployment* repository and not a *source code* repository. It is not intended to replace whatever source code repository you currently use (GitHub, BitBucket, etc.).
+Once its done running the tool will have created a Visual Studio solution file `*.sln` and two Projects. The one called `*.Web` contains the Umbraco site that was (git) cloned from your Project. The `*.Core` is a Class Library that you can use for your code, as mentioned above.
+Both projects are configured with the nuget packages for Umbraco using the version that corresponds to the site cloned from Umbraco as a Service.
 
-While you will commit all code except compiled dll's to your source code repository you treat the deployment repository differently in that you commit only the compiled dll's and no source code or project files.
+The result should look something like this within the folder where the UaaS.cmd tool ran:
 
-####Visual Studio Automation Script
-You can use the [Visual Studio automation script](http://umbracoreleases.blob.core.windows.net/download/UaaS.cmd) which will download the UaaS project and set up a Visual Studio solution for you. All you have to do is run the script and you're good to go. Read [this blogpost](https://cultiv.nl/blog/visual-studio-and-umbraco-as-a-service/) for more information.
+![](images/generated-solution.png)  
 
-If you want to set it up yourself, the following will guide you through how to set up and work with an Umbraco as a Service project in a VS solution.
+You can now open the solution in Visual Studio and hit F5 to start the site directly from Visual Studio.
 
-####Create a new project
-In Visual Studio create a new project, selecting the Empty Web Application option. If you will be extending Umbraco with your own MVC code (SurfaceControllers, etc.) you can start with the MVC 4 Web Application project type. Note that you'll need to remove some files if you start with this type of project.
+##The Git repositories
+One thing to notice about this setup is that you will get two git repositories just as you get two projects. The site cloned from your Umbraco as a Service Project will be contained within a git repository that is connected to your Project on Umbraco as a Service. Whenever you want to deploy changes to your (remote) Umbraco as a Service site you should commit everything within the `*.Web` folder, which is where the git repository for Umbraco as a Serivce is also located.
 
-![visualstudio](images/filenewproject.png)
+Going up one level to where the `*.sln` file is located you will notice a `.git` folder, which is the second git repository. You should use this repository for all the code you write as well as the solution and project files for Visual Studio.
 
-####Add Your site files
-If you haven't already, clone your development site to your local machine. Make sure you've also restored your content from your Umbraco as a Service site, which will create the local database you'll need to run your site locally. See the [Working Local documentation](../Working-Locally/) for details on how to do this if you haven't already.
+So think of everything within the `*.Web` folder as your deployment repository, and everything surrounding that folder as your source code repository. The Umbraco as a Service repository (within the `*.Web` folder) will not (and should not) be committed to the other git repository.
 
-- Copy your site files and folders into the project folder you just created
-    * Include the /.git folder
-- Check the *Show all files* option in Visual Studio
-- Include all folders and files your project requires to function when deployed and save. _Note:_ not all folders should be added to the project, as with any other Umbraco project you generally will include:
-    * /App_Code
-    * /App_Plugins
-    * /Config
-    * /css
-    * /js
-    * /Scripts
-    * /Views
-    * ...and any additional folders that contain files your site will need in order to fully function
+You can easily connect the source code repository to your own git repository host (like github, bitbucket, gitlab or Visual Studio Team Services).
+From the command line you can use the following git command: `git remote add origin https://github.com/user-account/repository-name.git`
 
-####Update .gitignore
-You may need to add a few entries to your .gitignore file so they are not deployed to your Umbraco as a Service site. For example, you can add these to your .gitignore file (you may have more to add as well):
+##What's next?
+Now that you've added your own touch to your site, and thoroughly tested of course, you're ready to deploy to your Umbraco as a Service development site (the destination might vary depending on the plan you chose). 
+The key thing to remember is that you'll commit anything that is required by your site to the local git repository and will not commit source or project files. That means you'll add .dll files to the git repository (which is found within the `*.Web` Project), which is typically something you wouldn't do with a source code repository.
 
-    Properties/
-    Web.Debug.config
-    Web.Release.config
-    *.csproj
-
-You should also exclude any folders that contain only source code. Folders such as /Controllers or /Models and any custom code you have are good examples. You should not add the /.git folder if that is an option.
-
-Make sure you then commit your updated .gitignore file to your local Umbraco as a Service repository. It is important that you do not deploy any .csproj (or .vbproj, etc.) files to your site. If you do your site may become unresponsive while the deploy process attempts to parse the file contents.
-
-####Getting Ready to deploy your updates
-Now that you've added your own touch to your site, and thoroughly tested of course, you're ready to deploy to your Umbraco as a Service development site. The key thing to remember is that you'll commit anything that is required by your site to the local git repository and will not commit source or project files. That means you'll add .dll files to the repository, which is typically something you wouldn't do with a source code repository.
+For more details about working with Visual Studio with your Umbraco as a Service setup please refer to the ["Working with Visual Studio"](../Working-With-Visual-Studio/) documentation.
 
 Once you have everything your site will need commited you can follow the [deployment workflow](../../Deployment/) to complete the deployment.
