@@ -16,7 +16,7 @@ Anything that is used within Umbraco like plugins and configuration should by de
 * Plugins (typically located in App_Plugins)
 * Meta data (the files that Umbraco Deploy serializes to disk for Document Types, Data Types, Media Types, Member Types, Member Groups, Templates and currently also Dictionary Items)
 
-Media files will also be placed under the `*.Web` folder and you will be able to see these through Visual Studio, because a Website projects shows all files on disk by default. Media files from the /media/ folder should not be committed to the git repository, but more on that in the section.
+Media files will also be placed under the `*.Web` folder and you will be able to see these through Visual Studio, because a Website projects shows all files on disk by default. Media files from the /media/ folder should not be committed to the git repository, but more on that in the next section about 'What should be committed'.
 
 For the `*.Core` project this is where you place all your code. This includes, but is not limited to:
 
