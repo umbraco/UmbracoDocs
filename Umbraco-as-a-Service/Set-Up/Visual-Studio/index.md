@@ -3,7 +3,7 @@
 This page describes how to setup your Visual Studio solution to work with an Umbraco as a Service Project.
 
 ##The Visual Studio Solution
-We currently recommend using a Visual Studio solution with a Website Project for the Umbraco site (coming from the cloned git repository from the Umbraco as a Service Project), and a Class Library Project for the code that will be created for the Umbraco site. Tthis can be MVC Controllers, WebApi Controllers, Surface Controllers or data access plus whatever else you might need to write code for.
+We currently recommend using a Visual Studio solution with a Website Project for the Umbraco site (coming from the cloned git repository from the Umbraco as a Service Project), and a Class Library Project for the code that will be created for the Umbraco site. This can be MVC Controllers, WebApi Controllers, Surface Controllers or data access plus whatever else you might need to write code for.
 
 Below is a screenshot of how the Projects should be configured. Here we use the following naming convensions: `*.Web` for the Umbraco website and `*.Core` for the accompanying code.
 
@@ -11,7 +11,7 @@ Below is a screenshot of how the Projects should be configured. Here we use the 
 
 ##Generate a Visual Studio Solution
 Manually creating and configuring a Visual Studio solution with the right Projects can take a bit of time, so we have made a little command line tool that will generate the correct solution for you.
-Download the UaaS.cmd tool from [umbra.co/uaas-cmd](umbra.co/uaas-cmd) and save it to a folder where you want to place the Visual Studio solution.
+Download the UaaS.cmd tool from [umbra.co/uaas-cmd](https://umbra.co/uaas-cmd) and save it to a folder where you want to place the Visual Studio solution.
 
 ![](images/cmd-in-empty-folder.png)
 
