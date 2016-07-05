@@ -38,17 +38,13 @@ Then you'll need to specify if all rules need to match. This setting is only imp
 - All: all of the rules must match
 - Any: any of the rules may match
 
-##Adding a new rule
+##Adding a new condition
 
-When adding a new rule you'll need to select the field where you want to evaluate the value and then you can also select an operator.
+When adding a new condition you'll need to select the field where you want to evaluate the value and then you can also select an operator.
 
 In this example I only want to show the email field if the value of the 'how should we contact you' field is 'Email'
 
-![Setup rule](SetupRule.png)
-
-Don't forget to hit the add icon so the new rule get's added
-
-![Setup rule add](SetupRuleAdd.png)
+![Setup rule](SetupCondition.png)
 
 ##Result
 
