@@ -45,7 +45,7 @@ The indicator that will be used, a typical indicator is just a *
 
  state and manually place it in the approves state then check this option (might be useful if there are workflows that happen on approval).
 
- ##Moderation
- Allow form submissions to be post moderated. Most use cases are for publically shown entries such as blog post comments or submissions for a social campaign.
+###Moderation
+Allow form submissions to be post moderated. Most use cases are for publically shown entries such as blog post comments or submissions for a social campaign.
 
  ![Form settings validation](FormSettingsModeration.png)

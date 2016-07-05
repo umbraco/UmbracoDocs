@@ -3,38 +3,25 @@ Submitting a form will result in the record data being stored in the database, i
 
 ##Adding a workflow
 
-###Navigate to the workflow page for your form
-You can either hit the workflow button on the form actions
+###Navigate to the workflow section at the bottom of your form
+Select the *configure workflow* option in the bottom right corner.
 
 ![Button](workflowbutton.png)
 
-or select the workflows node under your form in the tree
+From this point a right side overlay will open.
 
-![Workflow node](Workflownode.png)
-
-###Select the state to add a new workflow
-
-Once the page is loaded you should see an overview of the different basic record states
-
-- Submitted
-- Approved
-
-![Workflow page](WorkflowsPage.png)
-
-Typicaly workflows will be added on the submitted state, to start adding hit the 'add an action' button
+###Select the *Add workflow* button or modify a default workflow
 
 
-![Workflow add](WorkflowsPageAdd.png)
+![Workflow add](WorkflowsPage.png)
 
-A new modal window should open
-
-![Workflow add modal](WorkflowsAddModal.png)
+Another overlay will open, allowing you to choose a specific workflow.
 
 ###Select the type
 
 A new workflow can be of different types (an overview can be found [below](#Overviewofthedefaultworkflowtypes)). So first select the type
 
-![Workflow add select type](WorkflowsPageAddSelectType.png)
+![Workflow add modal](WorkflowsAddModal.png)
 
 
 ###Fill in type specific settings
@@ -42,12 +29,12 @@ Once the type has been selected you should see some additional settings (these d
 
 ![Workflow type settings](WorkflowsPageAddTypeSettings.png)
 
-Fill in the settings and hit add
+Fill in the settings and hit *Submit*
 
-![Workflow add](WorkflowsPageAddAdd.png)
+![Workflow add](WorkflowsPageAddSubmit.png)
 
 ###Overview
-You should now be back on the workflow page and get an overview of the attached workflows
+At the bottom of your form you should now get an overview of the attached workflows.
 
 ![Workflows overview](WorkflowOverview.png)
 
@@ -55,19 +42,19 @@ You should now be back on the workflow page and get an overview of the attached 
 
 ##Overview of the default workflow types
 There are a couple of default workflow types that can be used to extend the functionality of your form, here is an overview:
-###Perform filtering
-Delete a record if it contains certain values
-###Post as Xml
+###Change Record State
+Changes the state of the record being processed when it matches a word.  
+###Post as XML
 Posts the form as xml to a url
-###Post form to url
-Posts the form to a url, either as POST or GET
-###Save as file
-Saves the result of the form as a file
-
-###Save as Umbraco document
-Saves the form values as an Umbraco document node with a specific type
+###Save as an XML file
+Saves the result of the form as an XML file by using XSLT
+###Save as Umbraco Content Node
+Saves the form values as an Umbraco content node using a specific document type
 ###Send email
 Send the result of the form to an email address
-
+###Send form to URL
+Sends the form to a url, either as a HTTP POST or GET
 ###Send xslt transformed email
 Send the result of the form to an email address (full control over the email contents by supplying an xslt file)
+###Slack
+Posts the form data to a specific channel on Slack
