@@ -7,8 +7,6 @@ Besides the form design you can also setup some settings to customize how your f
 Displayed on the buttons that move an end user between multiple pages and submission of a Form.
 
 ![Form settings stylesheet](FormSettingsCaptions.png)
-###Disable default stylesheet
-More site design orientated (so probably for the developer) but enabling this option will prevent a default stylesheet being added to the pages where the form is placed.
 
 ##Styling
 Add a class/Multiple classes to wrap you form to enable custom styling, disable default styling and load assets with client dependencies.
