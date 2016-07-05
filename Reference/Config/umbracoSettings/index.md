@@ -493,39 +493,6 @@ As all instances share the same database the only authentication we need between
 
 Though the above example shows the server's as IP addresses, these can also be DNS names of servers. This is useful if you're server is running multiple websites on IIS.
 
-##Webservices
-
-Umbraco includes a simple set of webservices to control content, members, media files etc etc from external applications. They can be turned completely off on the <webservices> element or enabled one by one by enabling users access.
-
-documentServiceUsers: access to creating and publishing content
-url: /umbraco/webservices/api/documentservice.asmx
-
-fileServiceUsers: Access to change files
-fileServiceFolders: folders the fileServiceUsers have access to
-url: /umbraco/webservices/api/fileservice.asmx
-
-stylesheetServiceUsers: making changes to stylesheets
-url: /umbraco/webservices/api/StylesheetService.asmx
-
-memberServiceUsers: adding and editing members
-url: /umbraco/webservices/api/memberservice.asmx
-
-templateServiceUsers: editing template files
-url: /umbraco/webservices/api/templateservice.asmx
-
-    <!-- configuration for webservices -->
-    <!-- webservices are disabled by default. Set enable="True" to enable them -->
-    <webservices enabled="False">
-        <!-- You must set user-rights for each service. Enter the usernames seperated with comma (,) -->
-        <documentServiceUsers>your-username</documentServiceUsers>
-        <fileServiceUsers>your-username</fileServiceUsers>
-        <stylesheetServiceUsers>your-username</stylesheetServiceUsers>
-        <memberServiceUsers>your-username</memberServiceUsers>
-        <templateServiceUsers>your-username</templateServiceUsers>
-        <!-- type of files (extensions) that are allowed for the file service -->
-        <fileServiceFolders>css,xslt</fileServiceFolders>
-    </webservices>
-
 ##Repositories
 
 From the Developer section you can access packages. From here you have access to the Umbraco package repository from where you can download packages. It is however also possible to add other repositories to this list. If you or your company have a private repository, it can be added to this list.
