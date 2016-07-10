@@ -60,7 +60,7 @@ The media picker displays the current selected media and provides the option to 
 
 ##Member Group Picker
 
-##Member Picker
+##[Member Picker](Member-Picker.md)
 
 ##[Multinode Treepicker](Multinode-Treepicker.md)
 The multinode treepicker data type allows content editors to choose multiple nodes in the content or media trees.
