@@ -6,6 +6,14 @@ _Describes how to set up a macro, use macro parameters & configuring caching. De
 
 A macro is a reusable piece of functionality that you can re-use throughout your site. Macros can be configured with parameters and be inserted into a Rich Text Editor. Your can define what macros are available for your editors to insert in to the rich text editor. When an editor inserts a macro into the rich text editor it will prompt them to fill out any of the defined parameters for the macro.
 
+##Rendering Macros
+
+Here's a basic method to render macros:
+
+	@Umbraco.RenderMacro("myMacroAlias")
+
+[Overloaded Methods](../Mvc/views.md#renderingMacros)
+
 ##Macro types
 
 All macro types will work in either MVC or WebForms templating engines
