@@ -85,7 +85,7 @@ Related Links allows an editor to easily add an array of links. These can either
 ##Textarea
 A simple textarea control to input text.
 
-##Textbox
+##[Textbox](Textbox.md)
 A normal html input text field.
 
 ##[True/False](True-False.md)
