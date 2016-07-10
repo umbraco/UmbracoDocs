@@ -9,9 +9,9 @@ Displays a list of preset values as a list of checkbox controls
 Adds a list of approved colours which can be selected by clicking.
 
 ##[Content Picker](Content-Picker.md)
-The content picker opens a simple modal to pick a specific page from the content structure. 
+The content picker opens a simple modal to pick a specific page from the content structure.
 
-##Date
+##[Date](Date.md)
 Displays a calendar UI for selecting dates
 
 ##Date/Time
