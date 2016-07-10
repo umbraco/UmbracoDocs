@@ -16,6 +16,10 @@ A property editor is the editor used to insert content into Umbraco. [See here f
 
 This section will describe how to work with and create Property Editors.
 
+##[List Views](List-Views/index.md)
+
+How to add a custom layout to list views.
+
 ##[Server variables & URLs](version7-assets.md)
 
 Information on extending Umbraco, details such as dealing with server variables, service URLs, JavaScript and CSS assets, etc....
