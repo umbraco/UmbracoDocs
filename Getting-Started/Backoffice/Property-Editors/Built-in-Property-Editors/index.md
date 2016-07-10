@@ -14,7 +14,7 @@ The content picker opens a simple modal to pick a specific page from the content
 ##[Date](Date.md)
 Displays a calendar UI for selecting dates
 
-##Date/Time
+##[Date/Time](Date-Time.md)
 Displays a calendar UI for selecting dates and time
 
 ##[Dropdown list](DropDown-List.md)
