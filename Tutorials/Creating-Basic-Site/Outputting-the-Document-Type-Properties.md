@@ -1,6 +1,6 @@
 #Outputting the Document Type Properties
 
-What you’ll notice though is that our content we added to the homepage isn’t being output. We need to wire up the data type properties (the data fields we've created in Umbraco that the editors can edit) to the template.  Let’s look at our template and identify where the data properties we created before should go.  
+What you’ll notice is that the content we've added to the homepage isn’t being output. We need to wire up the data type properties (the data fields we've created in Umbraco that the editors can edit) to the template.  Let’s look at our template and identify where the content from the data properties we created before should go.  
 
 
 ![Where our Data Properties Content Should be Output](images/figure-17-where-our-data-fields-go.png?raw=true)
@@ -50,7 +50,7 @@ Finally we do the footer – between the `<h3></h3>` tags in the footer div (lin
 *Figure 21 - Footer Text*
 
 
-Now go and reload your homepage... voila! We have content!   Now, we could go back and add two tabs called Article 1, Article 2, Article Footer each containing a title and content field and wire these to the relevant places in the template. However this would limit the content manager to always having to have these sections. This might be OK but we could also use child nodes – we’ll learn about those later. 
+Now go and reload your homepage... voilà! We have content! Now, we could go back and add two tabs called Article 1, Article 2, Article Footer each containing a title and content field and wire these to the relevant places in the template. If there is only going to be two sections on the homepage this would work or we could use child nodes instead to provide flexibility – we’ll learn about those later. 
 
 
 ---

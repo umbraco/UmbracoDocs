@@ -7,7 +7,7 @@ The following sections of the "Creating a Basic Site" tutorial provide step by s
 To take you through a demo of installing a basic site in Umbraco you need the following:
 
 *    A clean, empty installation of Umbraco – e.g. no starter site installed, see the notes below what to do when running through the installation wizard. Use the latest main 7.X download. Follow the installation steps in the documentation [http://our.umbraco.org/documentation/Installation](http://our.umbraco.org/documentation/Installation)  
-*    To follow the instructions step by step, a copy of Initializr – a HTML5, responsive template which is a nice start for any website. [https://github.com/verekia/initializr-template/archive/master.zip](https://github.com/verekia/initializr-template/archive/master.zip) or, if you prefer, you can use your own flat HTML files.
+*    The tutorial instructions uses a copy of Initializr – a HTML5, responsive website template. [https://github.com/verekia/initializr-template/archive/master.zip](https://github.com/verekia/initializr-template/archive/master.zip) or, if you prefer, you can use your own flat HTML files.
 
 # **Getting Started**
 
@@ -54,7 +54,7 @@ You need to reinstall Umbraco if you can see the starter kit – if you did a ma
 
 ## Preparing the Initializr Template Site 
 
-Now unzip the Initializr contents to a folder onto your desktop (or a place of your choosing).  Now open the **_index.html_** from this directory in your preferred browser to see the template – you can see it’s full of lovely filler text with dummy links. We’re going to turn this into a fully fledged, working site! 
+Now unzip the Initializr contents to a folder onto your desktop (or a place of your choosing).  Now open the **_index.html_** from this directory in your preferred browser to see the template – you can see it’s full of lovely filler text with dummy links. We’re going to turn this into a fully fledged, Umbraco-powered site! 
 
  
 ![The Initializr Template](images/figure-5-initializr-template.png?raw=true)
