@@ -1,9 +1,7 @@
 #Creating (Editing) Your First Template
 
 
-Next click the expand node icon (it's the small triangle) behind the **_Settings >_** **_Templates folder_** - you should then see a child node titled "_Homepage_" - we created this automatically when we created the **_Document Type_** (remember that checkbox?).  
-
->NOTE - in early versions of 7.1 the tree doesn't automatically refresh to show you this, if it's missing try a hard refresh of Umbraco (Ctrl+F5) – should be fixed soon. 
+Next click the expand node icon (it's the small triangle) behind the **_Settings >_** **_Templates folder_** - you should then see a child node titled "_Homepage_" - Umbraco created this automatically when we created the **_Document Type_** (remember that option that said "..without template", we chose the one with and this is what it did).  
 
 
 Clicking on the **_Homepage node_** will load the template - which, except for a little bit of Razor code, is empty!
@@ -30,7 +28,7 @@ We now have a template. That's two out of the three stages complete for our firs
 
 # **Creating Your First Content Node**
 
-Our third and final stage to creating our first page in Umbraco is to create a content node where a content editor can add the content and then Umbraco will use this along with the Document Type and Template to serve up an HTML page to web visitors. 
+Our third and final stage to creating our first page in Umbraco is to create a content node where an editor can add the content which Umbraco will use, along with the Document Type and Template, to serve up an HTML page to web visitors. 
 
 
 We're now ready to create our first page in Umbraco!   Click the **_Content_** button (first option in the left hand menu).  
@@ -51,7 +49,7 @@ Hover over the grey text **_CONTENT_**  and you'll see the three dots **_..._** 
 Let's create our homepage. Click the icon and you'll see what we've just been setting up - our document type is now going to drive our homepage content – it gives us and the editors the fields they need. 
 
 
-In red at the top of the form you'll see "_Enter a name..._" click this and enter the name for your new content node.  We're going to call this "_Homepage_". 
+In the field at the top of the page you'll see "_Enter a name..._" click this and enter the name for your new content node.  We're going to call this "_Homepage_". 
 
 
 ![Create a Homepage](images/figure-15a-create-a-homepage-enter-name.png?raw=true)
@@ -78,6 +76,8 @@ Click the Footer tab and enter:
 
 
 Now click the green **_Save and publish_** button.  The menu will reload with our homepage node under the **_CONTENT_** label. And here's the good bit... go and refresh your webpage in your browser http://localhost – the default Umbraco page will be gone and we'll see a very bare, unstyled page! We’re getting there!
+
+>If you see a blank page then check you entered your template markup and remembered to save it.
 
 
 ![An Unstyled Homepage](images/figure-16-unstyled-homepage.png?raw=true)
