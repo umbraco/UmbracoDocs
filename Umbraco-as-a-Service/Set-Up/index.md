@@ -18,16 +18,16 @@ You can bind any hostname to your sites that you like. Keeping in mind, of cours
 Once you add a domain here makes sure to update the hostame DNS entry to resolve to the umbraco.io service. We recommend setting an ALIAS record for your site's root domain (e.g. mysite.umbraco.io), rather than an A record for the umbraco.io service IP address. Check with your DNS host or domain registrar for details on how to configure this for your domain.
 
 ###Hiding the Default umbraco.io Url
-Once you've assigned a hostname to your live site you may want to "hide" the site's default Url (e.g. mysite.umbraco.io) for various reasons. Perhaps for SEO or just making it clear to your users that the site can be accessed using just one hostname.
+Once you've assigned a hostname to your live site you may want to "hide" the site's default Url (e.g. mysite.s1.umbraco.io) for various reasons. Perhaps for SEO or just making it clear to your users that the site can be accessed using just one hostname.
 
 One approach for this is to add a redirect to your live site's web.config and to update the Deploy Url so you can still deploy to your live site. To accomplish this:
 
-1. Add a redirect rule to the live site's web.config in the <system.webServer><httpRedirect> section. For example, the following rule will redirect all requests for the site's mysite.umbraco.io Url to the mysite.com Url and respond with a permanent redirect status.
+1. Add a redirect rule to the live site's web.config in the <system.webServer><httpRedirect> section. For example, the following rule will redirect all requests for the site's mysite.s1.umbraco.io Url to the mysite.com Url and respond with a permanent redirect status.
 
         <add name="theoneurlredirect"
         redirect="Domain"
         ignoreCase="true" rewriteUrlParameter="IncludeQueryStringForRewrite"
-        virtualUrl="https{0,1}://<your site name here>.umbraco.io/(.*)"
+        virtualUrl="https{0,1}://<your site name here>.s1.umbraco.io/(.*)"
         redirectMode="Permanent"
         destinationUrl="http://<your actual domain here>.com/$1" />
 
