@@ -1,4 +1,4 @@
-#Creating a Basic Website using Umbraco v7.1+ Tutorial
+#Creating a Basic Website using Umbraco
 
 ##Introduction 
 This tutorial will take you step by step through an Umbraco website build. It will allow you to take any website "template" (e.g. flat HTML, CSS and JS) and install it into a fresh Umbraco and wire up the sections that need content managing in Umbraco.  Umbraco is a seriously powerful CMS but many find the learning curve of installing a website from scratch a little too much – this tutorial aims to explain the mysteries!
