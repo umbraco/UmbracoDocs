@@ -146,3 +146,37 @@ The parameter editors array follows the same format as the property editors desc
             '~/App_Plugins/SirTrevor/SirTrevor.css',
             '~/App_Plugins/SirTrevor/hibba.css'
     ]
+
+
+## JSON Schema
+The package.manifest JSON file has a hosted online JSON Schema file that allows editors such as Visual Studio and Visual Studio Code to have autocomplete/intellisense support when creating and editing package.manifest files and avoid mistakes or errors when creating your package.manifest files.
+
+### Setting up Visual Studio 2015
+
+To asscoiate the hosted JSON schema file to all package.manifest files you will need to perform the following inside of Visual Studio 2015.
+
+* Tools -> Options
+* Browse down to Text Editor -> File Extension
+* Add `manifest` into the Extension box
+* Select `JSON Editor` from dropdown and add the mapping
+* Open a `package.manifest` file and ensure in the top left hand corner you see the schema with the URL set to http://json.schemastore.org/package.manifest
+
+
+### Setting up Visual Studio Code
+
+To asscoiate the hosted JSON schema file to all package.manifest files you will need to perform the following inside of Visual Studio Code editor.
+
+* File -> Preferences -> User Settings
+* This will open two editors side by side with the default settings on the left and custom overrides on the right
+* In the right hand file add the following
+
+    {
+        "json.schemas": [
+            {
+                "fileMatch": [
+                    "manifest.json"
+                ],
+                "url": "http://json.schemastore.org/package.manifest"
+            }
+        ]
+    }
