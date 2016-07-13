@@ -8,6 +8,10 @@ This section describes how to work with and create Property Editors. A property 
 * [Intergrating services with a property editor](../../Tutorials/Creating-a-Property-Editor/part-3.md)
 * [Adding server side data to a property editor](../../Tutorials/Creating-a-Property-Editor/part-4.md)
 
+## [Package Manifest](package-manifest.md)
+
+Reference for package.manifest JSON file format to register one or more property editors for Umbraco.
+
 ## [Property Value Converters](value-converters.md)
 
 Convert the stored property data value to a useful object returned by the Published Content APIs
