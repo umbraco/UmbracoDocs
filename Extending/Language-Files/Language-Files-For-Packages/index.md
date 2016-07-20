@@ -1,8 +1,7 @@
 #Language file for packages
+**Applies to version 7.3.0 and newer**
 
 While the Umbraco Core ships with its own set of language files, package authors who wants their UI to be multi-lingual, will need to include their own set of language files as part of their package distribution.
-
-This feature was introduced in Umbraco 7.3.0.
 
 ## Including new language keys
 For each language your package support, you include a .xml file in the same format as the core language files, named with its language code. The language files must be located in a `lang` folder inside your package folder in `app_plugins`. So if your package assets are in `/app_plugins/mypackage` all language files must be placed like so
