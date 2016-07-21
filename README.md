@@ -56,14 +56,14 @@ For reference, the [Markdown syntax guide](http://daringfireball.net/projects/ma
 Images are stored and linked relatively to .md pages, and should by convention always be in an
 `images` folder. So to add an image to `/documentation/reference/partials/renderviewpage.md` you link it like so:
 
-	![My Image Alt Text](images/img.jpg?raw=true)
+	![My Image Alt Text](images/img.jpg)
 
 And store the image as `/documentation/reference/partials/images/img.jpg`
 
 Images can have a maximum width of **800px**. Please always try to use
 the most efficient compression, `gif`, `png` or `jpg`. No `bmp`, `tiff` or `swf` (Flash), please.
 
-NB: In order to get images to display correctly on GitHub, all image URLs must end with `?raw=true`.
+NB: In order to get images to display correctly on GitHub, all image URLs must end with ``.
 
 ##External links
 Include either the complete URL, or link using Markdown:

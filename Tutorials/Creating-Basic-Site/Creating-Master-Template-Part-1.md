@@ -17,7 +17,7 @@ To start we're going to unpick a little bit of what we did in creating the homep
 Go to the **_Settings > Templates_** and open up the tree.  At the moment we just have our **_Homepage_** template.  Hover over the **_Templates_** menu and click the menu **_..._** button. Create a new template called Master, click **_+ Create_** and then give it the name "_Master_" . Remember to click **_Save_**. 
 
 
-![Master Template](images/figure-22-master-template.png?raw=true)
+![Master Template](images/figure-22-master-template.png)
 
 
 *Figure 22 - Master Template*
@@ -28,7 +28,7 @@ Now we're going to move the **_Homepage_** template under the **_Master_** templ
 >NOTE: Due to a bug in older versions of Umbraco you may need to click off the **_Homepage node_** and back on to see this update. 
 
 
-![Homepage Template now sits under the Master](images/figure-23-homepage-has-master-template.png?raw=true)
+![Homepage Template now sits under the Master](images/figure-23-homepage-has-master-template.png)
 
 
 *Figure 23 - Homepage Template now sits under the Master*
@@ -37,7 +37,7 @@ Now we're going to move the **_Homepage_** template under the **_Master_** templ
 Now we need to move the parts of our HTML template that are common across all pages into the **_Master_**. This is where as a developer you might need to use your brain as it will be slightly different for different websites - e.g. do all pages contain a `<div id="main">` section so can we put this in the master or does this belong to only certain pages? For this site we'll assume this is part of the child page. In the template edit screen cut everything from the closing curly brace to line 37 `<div id="main-container">` - we're going to move the header and nav of the site to the master template. Cut this and click **_Save_**. 
 
 
-![Homepage Template After Cutting the Header](images/figure-24-homepage-after-cutting-the-header.png?raw=true)
+![Homepage Template After Cutting the Header](images/figure-24-homepage-after-cutting-the-header.png)
 
 
 *Figure 24 - Homepage Template After Cutting the Header*
@@ -46,7 +46,7 @@ Now we need to move the parts of our HTML template that are common across all pa
 Now click on your **_Master_** template and paste this HTML markup after the closing curly brace and remember to click **_Save_**.
 
 
-![Master Template after Pasting the Header](images/figure-25-master-template-with-header.png?raw=true)
+![Master Template after Pasting the Header](images/figure-25-master-template-with-header.png)
 
 *Figure 25 - Master Template after Pasting the Header*
 
@@ -54,7 +54,7 @@ Now click on your **_Master_** template and paste this HTML markup after the clo
 At the end of this markup we need to tell Umbraco to insert the child template's content - this is done by adding the code **_@RenderBody()_** at the end (around line 37). Click **_Save_**. 
 
 
-![Adding RenderBody() to the Master Template](images/figure-26-adding-renderbody.png?raw=true)
+![Adding RenderBody() to the Master Template](images/figure-26-adding-renderbody.png)
 
 
 *Figure 26 - Adding RenderBody() to the Master Template*
@@ -63,7 +63,7 @@ At the end of this markup we need to tell Umbraco to insert the child template's
 Now we'll do the same with the footer content. Cut everything from the opening of the **_footer-container _** div (approximately line 35) from the **_Settings > Templates > Homepage > template tab_**, click **_Save_** and then paste this into the **_Master_** template under the **_@RenderBody_** field we've just added. Remember to click **_Save_**. 
 
 
-![Completed Master Template](images/figure-27-master-template-complete.png?raw=true)
+![Completed Master Template](images/figure-27-master-template-complete.png)
 
 
 *Figure 27 - Completed Master Template*

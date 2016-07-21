@@ -6,7 +6,7 @@ Next click the expand node icon (it's the small triangle) behind the **_Settings
 
 Clicking on the **_Homepage node_** will load the template - which, except for a little bit of Razor code, is empty!
 
-![Empty Homepage Template](images/figure-13-empty-homepage-template.png?raw=true)
+![Empty Homepage Template](images/figure-13-empty-homepage-template.png)
 
 
 *Figure 13 - Homepage template*
@@ -15,7 +15,7 @@ Clicking on the **_Homepage node_** will load the template - which, except for a
 Leaving the code that's there (if you don't understand it, don't worry!) let's copy our template code in. Open up **_index.html_** from the **_Initializr_**  template in your favourite text editor (Notepad++ is good).  Copy and paste the whole thing into this template **after** the closing curly brace "}".  Your template should now look like below:
 
 
-![Homepage Template with Initializr HTML](images/figure-14-homepage-template-with-initializr-html.png?raw=true)
+![Homepage Template with Initializr HTML](images/figure-14-homepage-template-with-initializr-html.png)
 
 *Figure 14 – Homepage Template with Initializr HTML*
 
@@ -37,7 +37,7 @@ We're now ready to create our first page in Umbraco!   Click the **_Content_** b
 Hover over the grey text **_CONTENT_**  and you'll see the three dots **_..._** - click this.  If you've done everything correctly so far you should see the option to create our Homepage! 
 
 
-![Create a Homepage](images/figure-15-create-a-homepage.png?raw=true)
+![Create a Homepage](images/figure-15-create-a-homepage.png)
 
 
 *Figure 15 - Create a Homepage*
@@ -52,7 +52,7 @@ Let's create our homepage. Click the icon and you'll see what we've just been se
 In the field at the top of the page you'll see "_Enter a name..._" click this and enter the name for your new content node.  We're going to call this "_Homepage_". 
 
 
-![Create a Homepage](images/figure-15a-create-a-homepage-enter-name.png?raw=true)
+![Create a Homepage](images/figure-15a-create-a-homepage-enter-name.png)
 
 
 *Figure 15a - Create a Homepage - Enter a name...*
@@ -80,7 +80,7 @@ Now click the green **_Save and publish_** button.  The menu will reload with ou
 >If you see a blank page then check you entered your template markup and remembered to save it.
 
 
-![An Unstyled Homepage](images/figure-16-unstyled-homepage.png?raw=true)
+![An Unstyled Homepage](images/figure-16-unstyled-homepage.png)
 
 
 *Figure 16 – An Unstyled Homepage*
