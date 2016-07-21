@@ -16,14 +16,14 @@ To take you through a demo of installing a basic site in Umbraco you need the fo
 This guide doesn’t cover the installation of Umbraco – follow the instructions in http://our.umbraco.org/documentation/Installation. When you see the first splash screen click **_customize_** – either fill in your MS SQL blank DB credentials or use the CE option – then on the final screen use the “**_No thanks I do not want to use a starter website_**”. 
 
  
-![Umbraco Installation Splash Screen](images/figure-1-installation-splash-screen.png?raw=true)
+![Umbraco Installation Splash Screen](images/figure-1-installation-splash-screen.png)
 
 
 *Figure 1 - Installation Splash Screen - note the Customize link*
 
 
 
-![Install a starter website](images/figure-2-no-starter-website.png?raw=true)
+![Install a starter website](images/figure-2-no-starter-website.png)
 
 
 *Figure 2 - Install a starter website - No Thanks!*
@@ -35,7 +35,7 @@ This guide doesn’t cover the installation of Umbraco – follow the instructio
 When you hit your local host address (http://localhost or whatever you’ve set up) you should see the Umbraco empty page screen. 
 
  
-![This is correct – we have a blank, empty Umbraco website](images/figure-3-empty-umbraco-install.png?raw=true)
+![This is correct – we have a blank, empty Umbraco website](images/figure-3-empty-umbraco-install.png)
 
 
 *Figure 3 - This is correct – we have a blank, empty Umbraco website!*
@@ -43,7 +43,7 @@ When you hit your local host address (http://localhost or whatever you’ve set 
 If you can see the Umbraco Starter kit site you’ve missed the option to install Umbraco with no starter site.  
 
  
-![You should NOT see this!](images/figure-4-should-not-see-this.png?raw=true)
+![You should NOT see this!](images/figure-4-should-not-see-this.png)
 
 
 *Figure 4- You should NOT see this!*
@@ -57,7 +57,7 @@ You need to reinstall Umbraco if you can see the starter kit – if you did a ma
 Now unzip the Initializr contents to a folder onto your desktop (or a place of your choosing).  Now open the **_index.html_** from this directory in your preferred browser to see the template – you can see it’s full of lovely filler text with dummy links. We’re going to turn this into a fully fledged, Umbraco-powered site! 
 
  
-![The Initializr Template](images/figure-5-initializr-template.png?raw=true)
+![The Initializr Template](images/figure-5-initializr-template.png)
 
 
 *Figure 5 - The Initializr Template*
@@ -66,7 +66,7 @@ Now unzip the Initializr contents to a folder onto your desktop (or a place of y
 Log into your Umbraco installation (e.g. go to http://localhost/umbraco in your browser).  You should be faced with an empty Umbraco installation – but where to start!?
 
  
-![A barren, empty Umbraco installation](images/figure-6-umbraco-empty.png?raw=true)
+![A barren, empty Umbraco installation](images/figure-6-umbraco-empty.png)
 
 
 *Figure 6 - A barren, empty Umbraco installation*

@@ -26,7 +26,7 @@ Right, let’s get busy. Go to the **_Settings_** menu in Umbraco. This is the t
 **_Document Types_** is now (as of v7.4) positioned as the first option in the list and is always the starting point for any Umbraco build.  Hover over the **_Document Types_** **_node_** and you’ll see three dots **_..._** , click this to see the menu. Then you'll get three options, click **_Document Type_** option - we want a template automatically created for us. Using folders can help you organise your Document Types but we'll keep things simple for now.
 
 
-![Creating a Document Type](images/figure-7-creating-a-document-type.png?raw=true)
+![Creating a Document Type](images/figure-7-creating-a-document-type.png)
 
 
 *Figure 7 - Creating a Document Type*
@@ -38,7 +38,7 @@ Enter in the **_Description_** field "_This is our homepage template_".  This te
 Click **_Save_** to store our new DocumentType. 
 
 
-![Name your Document Type](images/figure-8-name-your-document-type.png?raw=true)
+![Name your Document Type](images/figure-8-name-your-document-type.png)
 
 
 *Figure 8 – Name your Document Type*
@@ -47,14 +47,14 @@ Click **_Save_** to store our new DocumentType.
 Umbraco now adds a **_Document Type_** to the tree under the node. Now we're going to give this Document Type an icon to help our editors in the **_Content_** tree later. Click the white document icon next to the name field, enter "_home_" into the search field that appears and select the house icon.
 
 
-![Adding an Icon to Document Type](images/figure-9-adding-an-icon-to-document-type.png?raw=true)
+![Adding an Icon to Document Type](images/figure-9-adding-an-icon-to-document-type.png)
 
 
 *Figure 9 - Adding an Icon to Document Type*
 
 Next click the  **_Permissions_** icon and check **_Allow as root_**.  This will allow us to create a homepage at the root of the content tree (simple huh?). 
 
-![Allow Homepage Document Type As Root](images/figure-9a-allow-document-type-as-root.png?raw=true)
+![Allow Homepage Document Type As Root](images/figure-9a-allow-document-type-as-root.png)
 
 
 *Figure 9a - Allow Homepage Document Type As Root*
@@ -62,7 +62,7 @@ Next click the  **_Permissions_** icon and check **_Allow as root_**.  This will
 Next we go back to the **_Design_** screen. Create a new tab called "_Contents_" remembering to click **_Save_** after).
 
 
-![Document Types - Adding Our First Content Tab](images/figure-10-document-types-adding-tabs.png?raw=true)
+![Document Types - Adding Our First Content Tab](images/figure-10-document-types-adding-tabs.png)
 
 
 *Figure 10 - Document Types - Adding Our First Content Tab*
@@ -70,7 +70,7 @@ Next we go back to the **_Design_** screen. Create a new tab called "_Contents_"
 
 Now click on the **_Add property_** link – this is where we can create each of the necessary data containers in which the editors can enter the necessary content for the homepage.  Enter the **_Name_** "_Page Title_". When you move to the next field you’ll see Umbraco helpfully gives you the alias "pageTitle".  Click the **_Add editor_** link and you'll see a long list of editors, select the "Textbox" (come back and explore this list of data types later - it's a hint to the power of Umbraco, we're just going to use the most simple data type for now).  
 
-![Selecting Textbox Data Type](images/figure-11a-selecting-textbox-data-type.png?raw=true)
+![Selecting Textbox Data Type](images/figure-11a-selecting-textbox-data-type.png)
 
 
 *Figure 11 - Selecting the Textbox Data Type*
@@ -80,7 +80,7 @@ Umbraco will generate a long name for the Data type - ignore this for now and se
 Now you can enter a **_Description_**, again helps the editor provide relevant content so we'll fill this in "_The main title of the page (e.g. Welcome to Widgets Ltd)._ " 
 
 
-![Creating our PageTitle Data Type](images/figure-11-creating-our-pagetitle-data-type.png?raw=true)
+![Creating our PageTitle Data Type](images/figure-11-creating-our-pagetitle-data-type.png)
 
 
 *Figure 11 - Creating our pageTitle Data Type*
@@ -112,7 +112,7 @@ Repeat this step, clicking the **_Add property_** at the bottom of the **_Conten
 
 You should now have a Document Type that looks like this:
 
-![Homepage Document Type with Properties](images/figure-12-homepage-document-type-with-properties.png?raw=true)
+![Homepage Document Type with Properties](images/figure-12-homepage-document-type-with-properties.png)
 
 
 *Figure 12 - Homepage Document Type with Properties*
