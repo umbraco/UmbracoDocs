@@ -3,7 +3,7 @@
 One of the features built into Umbraco as a Service, is the ability to work locally with your Umbraco site, without having a Windows machine with a local web server installed on it. This enables i.e. people using a Mac to be using their favorite editor to modify code in their Umbraco as a Service site. The functionality requires that your machine has the following three tools installed
 
 * A git client - In order to clone a site and push changes.
-* Node.js + npm installed in a command line of choice. 
+* Node.js (minimum version: 2.15) + npm installed in a command line of choice. 
 * A code editor like Atom, Sublime or CS Code
 
 To enable Node.js and npm you need to download the latest build from their site https://nodejs.org/en/download/. It is important to let the installer register itself to your PATH, so that the commands are available via your command line tool. 
