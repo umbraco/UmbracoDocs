@@ -16,11 +16,13 @@ Describes the process of how to get, update and insert items in the cache
 
 ## Refreshing/Invalidating cache
 
-### ICacheRefresher
-
+### [ICacheRefresher](cache-refresher.md)
 The standard way to invalidate cache in Umbraco is to implement an `ICacheRefresher`. 
+Ensures that content cache is refreshed among all server nodes participating in a load balanced scenario.
+
 
 The interface consists of the following methods. _Some of these methods may not be relevant to the needs of your own cache invalidation so not all of them may need to perform logic._
+
 
 * `Guid UniqueIdentifier { get; }` - which you'd return your own unique GUID identifier
 * `string Name { get; }` - the name of the cache refresher (informational purposes)
