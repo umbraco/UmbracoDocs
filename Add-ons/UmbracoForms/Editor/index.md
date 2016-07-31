@@ -14,7 +14,7 @@ Complete overview of all the default fieldtypes and how to use them
 Show field X if value of field Y is...
 
 ##[Attaching workflows](Attaching-Workflows/index.md)
-Extend the functionaly of your forms by adding workflows
+Extend the functionality of your forms by adding workflows
 
 ##[Viewing and exporting entries](Viewing-and-Exporting-Entries/index.md)
 Manage and export your data

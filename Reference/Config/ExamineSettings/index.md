@@ -19,8 +19,8 @@ _This shows all of the configuration options for Examine. None of these options 
 	  		If the index does not exist when the application is started
 			then this will rebuild all indexes on startup. If you don't want this to occur
 			then you can set this to false but you will need to manually rebuild your
-			indexes if they don't exist. Warning: if you don't have indexes when your site is 
-			runing, parts of your site will not function as expected such as searching 
+			indexes if they don't exist. Warning: if you don't have indexes when your site is
+			running, parts of your site will not function as expected such as searching
 			and media queries.
 	  -->
 	  <Examine RebuildOnAppStart="true">
@@ -40,7 +40,7 @@ _This shows all of the configuration options for Examine. None of these options 
 				unless you want to use test data from a non-umbraco source or you have very
 				custom requirements.
 			*   indexSet = (optional, will try to determine this based on naming conventions)
-				Explicitly specifies the index set to use. 
+				Explicitly specifies the index set to use.
 			*   supportUnpublished = if you want the indexer to index content that is not published
 			*   supportProtected = if you want the indexer to index content that is protected
 			*   analyzer = the Lucene.Net analyzer to use when storing data.
@@ -66,7 +66,7 @@ _This shows all of the configuration options for Examine. None of these options 
 			This shows the PDF specific configuration and the default values applied when
 			they are not specified.
 
-			*   extensions = comma seperated list of file extensions that our PDFs have
+			*   extensions = comma separated list of file extensions that our PDFs have
 				the default is just .pdf
 			*   umbracoFileProperty = the property of the media type that contains files
 			-->
@@ -108,7 +108,7 @@ _This shows all of the configuration options for Examine. None of these options 
 			This search provider is used to search the CWSIndexSet.
 
 			*   indexSet = explicitly specifies the index set to use. Generally this is wired up
-				based on naming convensions.
+				based on naming conventions.
 			-->
 			<add name="CWSSearcher"
 				 type="UmbracoExamine.UmbracoExamineSearcher, UmbracoExamine"
@@ -165,7 +165,7 @@ _This shows all of the configuration options for Examine. None of these options 
 			NUMBER, INT, FLOAT, DOUBLE, LONG, DATE, DATETIME, DATE.YEAR, DATE.MONTH,
 			DATE.DAY, DATE.HOUR, DATE.MINUTE,
 
-		  Data types are used for Range and mathematical queryies
+		  Data types are used for Range and mathematical queries
 
 		-->
 		<IndexSet SetName="CWSIndexSet"

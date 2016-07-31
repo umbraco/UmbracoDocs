@@ -4,7 +4,7 @@ _Information about REST APIs in Umbraco_
 
 ##Creating your own
 
-It is entirely possible and quite easy to create your own REST APIs for Umbraco by utilizing ASP.Net's WebApi in conjuntion with [Umbraco's UmbracoApiController's](../Controllers).
+It is entirely possible and quite easy to create your own REST APIs for Umbraco by utilizing ASP.Net's WebApi in conjunction with [Umbraco's UmbracoApiController's](../Controllers).
 
 ##Using an existing REST API platform
 

@@ -16,7 +16,7 @@ will also be `RenderModel` which exposes `IPublishedContent`. For example, to re
     @Model.Content.Name
 
 All Umbraco view page types inherit from `UmbracoViewPage<TModel>`. A neat trick is that if you want your view Model to simply be `IPublishedContent`
-you can chanage your view type to `UmbracoViewPage<IPublishedContent>` and the view will still render without issue even though the controller
+you can change your view type to `UmbracoViewPage<IPublishedContent>` and the view will still render without issue even though the controller
 is passing it a model of type RenderModel.
 
 ##[IPublishedContent](../../../Reference/Querying/IPublishedContent/index.md)
@@ -25,7 +25,7 @@ IPublishedContent is the standard model used for all published content, media an
 
 ##[DynamicPublishedContent](../../../Reference/Querying/DynamicPublishedContent/index.md)
 
-There's also a dynamic represenation of `IPublishedContent` called `DynamicPublishedContent`. This is available on `UmbracoTemplatePage` as the property `@CurrentPage`.
+There's also a dynamic representation of `IPublishedContent` called `DynamicPublishedContent`. This is available on `UmbracoTemplatePage` as the property `@CurrentPage`.
 Working with dynamics is simpler in some cases especially with regards to referencing property data. For example, to output your custom property 'markDown', you could just do:
 
 	@CurrentPage.markDown
@@ -38,4 +38,4 @@ UmbracoHelper is the unified way to work with published content/media on your we
 
 ##[MembershipHelper](../../../Reference/Querying/MemberShipHelper/index.md)
 
-MembershipHelper is a general helper class for access asp.net membership data, as well as Umbraco Member data, which are stored in a format similiar to Umbraco content and media
+MembershipHelper is a general helper class for access asp.net membership data, as well as Umbraco Member data, which are stored in a format similar to Umbraco content and media

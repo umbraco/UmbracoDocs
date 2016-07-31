@@ -1,6 +1,6 @@
 #Umbraco Api
 
-_This section will describe how to work with Web Api in Umbraco to easily create REST services_ 
+_This section will describe how to work with Web Api in Umbraco to easily create REST services_
 
 Related links:
 
@@ -25,11 +25,11 @@ This will expose the following properties for you to use:
 	DatabaseContext DatabaseContext {get;}
 	UmbracoHelper Umbraco {get;}
 	UmbracoContext UmbracoContext {get;}
-	
+
 
 ##Creating a Web Api controller
 
-There are 2 types of Umbraco Api controllers: 
+There are 2 types of Umbraco Api controllers:
 
 1. A locally declared controller - it is **not** routed via an Area
 1. A plugin based controller - it is routed via an Area
@@ -68,7 +68,7 @@ E.g *~/Umbraco/Api/Products/GetAllProducts*
 
 ###Plugin based controller
 
-If you are creating an Umbraco Api controller to be shipped in an Umbraco package you will need to add the `Umbraco.Web.Mvc.PluginController` attribute to your controller to ensure that it is routed via an area. The area name is up to you to specify in the attribute. 
+If you are creating an Umbraco Api controller to be shipped in an Umbraco package you will need to add the `Umbraco.Web.Mvc.PluginController` attribute to your controller to ensure that it is routed via an area. The area name is up to you to specify in the attribute.
 
 Example:
 
@@ -81,7 +81,7 @@ Example:
 	    }
 	}
 
-Now this controller will be routed via the area called "AwesomeProducts". All plugin based Umbraco api controlleres will be routed under the url path of:
+Now this controller will be routed via the area called "AwesomeProducts". All plugin based Umbraco api controllers will be routed under the url path of:
 
 *~/Umbraco/[YourAreaName]/[YourControllerName]*
 

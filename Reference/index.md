@@ -6,13 +6,13 @@ _Developers' Reference primarily consists of API references of the different cor
 
 ####[C# API Documentation](https://our.umbraco.org/apidocs/csharp/)
 
-__Note: opens a documentation browser that is different from the documentation section you're viewing now, we're planning to integrate both.__ 
+__Note: opens a documentation browser that is different from the documentation section you're viewing now, we're planning to integrate both.__
 
 C# API references for the Umbraco Core and Web libraries
 
 ####[Backoffice UI API documentation](https://our.umbraco.org/apidocs/ui/)
 
-__Note: opens a documentation browser that is different from the documentation section you're viewing now, we're planning to integrate both.__ 
+__Note: opens a documentation browser that is different from the documentation section you're viewing now, we're planning to integrate both.__
 
 Angular, JS, CSS & Less UI API references for building Umbraco backoffice components
 
@@ -24,16 +24,16 @@ Info about setting up IoC/Dependency Injection to work with Umbraco
 
 ##[Templates](Templating/index.md)
 
-Working with Umbraco templates: views, partial views, child actions, razor syntax, macros and working with JavaScript/Css. 
+Working with Umbraco templates: views, partial views, child actions, razor syntax, macros and working with JavaScript/Css.
 
 ##[Querying & models](Querying/index.md)
 
-Information about the data models used to display content in Umbraco and the various ways of querying it. 
+Information about the data models used to display content in Umbraco and the various ways of querying it.
 
 ##[Routing & Controllers](Routing/index.md)
 
-How routing works within Umbraco, how content is mapped to URLs and how URLs are generated for content. 
-This section also decribes the types of Controllers used in Umbraco, how they work and how they get routed. 
+How routing works within Umbraco, how content is mapped to URLs and how URLs are generated for content.
+This section also describes the types of Controllers used in Umbraco, how they work and how they get routed.
 
 ##[Searching](Searching/index.md)
 
