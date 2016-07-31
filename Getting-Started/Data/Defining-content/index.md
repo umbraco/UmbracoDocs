@@ -30,7 +30,7 @@ _Notice that the alias of the Document TYpe is automatically generated based on 
 
 Having a root node makes it easy to query content as you know everything will be under the root node.
 
-To set an icon for the Document Type click the document icon in the top left corner. This will open the icon select dialog. Search for _Home_ and select the icon. This icon will be used in the content tree, choosing apropriate icons for your content nodes is a good way to give editors a better overview of the content tree.
+To set an icon for the Document Type click the document icon in the top left corner. This will open the icon select dialog. Search for _Home_ and select the icon. This icon will be used in the content tree, choosing appropriate icons for your content nodes is a good way to give editors a better overview of the content tree.
 
 ![Choosing an icon for the Document Type](images/Document-Type-Choosing-Icon.jpg)
 
