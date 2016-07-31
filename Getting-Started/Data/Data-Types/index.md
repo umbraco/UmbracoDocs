@@ -13,7 +13,7 @@ To create a new Data Type go to the Developer section and click the menu icon to
 
 ![Dropdown List](images/Data-Types-Create.jpg)
 
-* __Property Editor:__ This is where you pick the Property Editor that our *Dropdown Cities* Data Type will be referencing. Pick the __Dropdown List__ and now you will see the cofiguration options that are available for a Data Type referencing the Dropdown List Property Editor.
+* __Property Editor:__ This is where you pick the Property Editor that our *Dropdown Cities* Data Type will be referencing. Pick the __Dropdown List__ and now you will see the configuration options that are available for a Data Type referencing the Dropdown List Property Editor.
 
 * __Property Editor Alias__
 The alias of the Property Editor being used.
