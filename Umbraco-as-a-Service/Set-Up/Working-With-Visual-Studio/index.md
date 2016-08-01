@@ -55,9 +55,9 @@ Running this command line tool will clone the Umbraco as a Service repository to
 
 ##Working with NuGet
 
-Some Umbraco packages are available on NuGet and you can install NuGet packages into the `*.Web` project to add functionality to your site. Remember, this is just a normal Visual Studio solution so you can work with NuGet packages exactly like you're used to, install them in the project where you need them. 
+Some Umbraco packages are available on NuGet and you can install NuGet packages into the `*.Web` project to add functionality to your site. Remember, this is just a normal Visual Studio solution so you can work with NuGet packages exactly like you're used to, install them in the project where you need them. Make sure that you should always install any NuGet packages you need in the `*.Web` project in order for them to work in your website and deploy to your other environments.
 
-If you need to program something in your `*.Core` project and you depend on a NuGet package for the code you're writing, you should install that NuGet package in both:
+For example, if you need to program something in your `*.Core` project and you depend on a NuGet package for the code you're writing, you should install that NuGet package in both:
 
 - Install it in `*.Core` so you can write the code you need against the library you working with (obtained from NuGet)
 - Also install it in `*.Web` so that the library files also end up in your website and your compiled code works there as well
