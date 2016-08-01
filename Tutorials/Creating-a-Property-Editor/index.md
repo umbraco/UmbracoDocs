@@ -130,7 +130,7 @@ Then open the `markdowneditor.controller.js` file and edit it so it looks like t
 			    alert("editor dependencies loaded");
 			});
 
-	    //load the seperat css for the editor to avoid it blocking our js loading
+	    //load the separate css for the editor to avoid it blocking our js loading
 	    assetsService.loadCss("/App_Plugins/MarkDownEditor/lib/markdown.css");
 	});
 
