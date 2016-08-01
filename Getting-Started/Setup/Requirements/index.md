@@ -10,6 +10,7 @@ The Umbraco UI should work in all modern browsers:
 ##Local Development
 * Microsoft Windows 7 SP1
 * Webmatrix 3
+* ASP.NET 4.5 Full-Trust
 
 ##Hosting
 * IIS 7+
