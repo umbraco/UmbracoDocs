@@ -18,7 +18,7 @@ Anything that is used within Umbraco like plugins and configuration should by de
 
 Media files will also be placed under the `*.Web` folder and you will be able to see these through Visual Studio, because a Website projects shows all files on disk by default. Media files from the /media/ folder should not be committed to the git repository, but more on that in the next section about 'What should be committed'.
 
-For the `*.Core` project this is where you place all your code. This includes, but is not limited to:
+We recommend placing all your code in the `*.Core` project (instead of, for example, using App_Code for that). This includes, but is not limited to:
 
 * Controllers for MVC, Web Api
 * Controllers for Umbraco Plugins, Surface, API
@@ -52,3 +52,12 @@ These are the files and folders you typically want to commit in your own source 
 When you are working in a team you will have additional people that will use this same setup, but they will only clone your source code repository from your Github, Bitbucket or Visual Studio Team Services account.
 In doing so they will, by default, not get the `*.Web` folder and the umbraco site, because that part is not contained within the source code repository. So to make it easy to get up and running we added a `UaaSClone.cmd`, which can be run after cloning the source code repository.
 Running this command line tool will clone the Umbraco as a Service repository to the right folder, so the Visual Studio setup remains valid. 
+
+##Working with NuGet
+
+Some Umbraco packages are available on NuGet and you can install NuGet packages into the `*.Web` project to add functionality to your site. Remember, this is just a normal Visual Studio solution so you can work with NuGet packages exactly like you're used to, install them in the project where you need them. 
+
+If you need to program something in your `*.Core` project and you depend on a NuGet package for the code you're writing, you should install that NuGet package in both:
+
+- Install it in `*.Core` so you can write the code you need against the library you working with (obtained from NuGet)
+- Also install it in `*.Web` so that the library files also end up in your website and your compiled code works there as well
