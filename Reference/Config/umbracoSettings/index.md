@@ -533,7 +533,7 @@ This section configures...
 
 **disableFindContentByIdPath**: when true, urls such as /1234 do *not* find content with ID 1234.
 
-**disableFindContentByIdPath**: when you move and rename pages in Umbraco, 301 permanent redirects are automatically created, set this to true if you do not want this behavior 
+**disableRedirectUrlTracking**: when you move and rename pages in Umbraco, 301 permanent redirects are automatically created, set this to true if you do not want this behavior 
 
 **Note** The URL tracking feature (and thus, this setting) is only available on Umbraco 7.5.0 and higher.
 
@@ -544,6 +544,6 @@ This section configures...
         internalRedirectPreservesTemplate="false" 
         disableAlternativeTemplates="false"
         disableFindContentByIdPath="false"
-        disableFindContentByIdPath="false"
+        disableRedirectUrlTracking="false"
         umbracoApplicationUrl=""
     />
