@@ -34,3 +34,7 @@ If you want the original, uncropped image.
     }
 
     <img src="@file" />
+
+###More information
+- [Media Picker](../../Backoffice/Property-Editors/Built-in-Property-Editors/Media-Picker.md)
+- [Image Cropper](../../Backoffice/Property-Editors/Built-in-Property-Editors/Image-Cropper.md)
