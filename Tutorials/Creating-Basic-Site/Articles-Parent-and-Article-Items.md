@@ -17,7 +17,7 @@ Create the following **_Tabs_** and **_Data Properties_**:
 >**"Articles Body Text"** - type = Rich Text Editor**
 
 
-![Articles Main Document Type Data Properties](images/figure-38-articles-main.png?raw=true)
+![Articles Main Document Type Data Properties](images/figure-38-articles-main.png)
 
 
 *Figure 38 - Articles Main Document Type Data Properties*
@@ -33,7 +33,7 @@ Create the following **_Tabs_** and **_Data Properties_**:
 >**"Article Contents"** - type = Rich Text Editor**
 
 
-![Article Item Document Type Data Properties](images/figure-39-articles-item.png?raw=true)
+![Article Item Document Type Data Properties](images/figure-39-articles-item.png)
 
 
 *Figure 39 - Article Item Document Type Data Properties*
@@ -48,7 +48,7 @@ Now go to **_Content > Homepage node (hover)> ..._** and create a node called "_
 Now you should have a content tree that looks like the image below (obviously with your own page node names).  Let's go update our templates we just created (automatically when we created the Document Types). First update them to use the Master as a parent **_Settings > Templates > Articles Main node > Properties tab > Master template dropdown_** = "Master" - do the same for the Articles Item remembering to click **_Save_**. 
 
 
-![Content Tree With Articles](images/figure-40-articles-created.png?raw=true)
+![Content Tree With Articles](images/figure-40-articles-created.png)
 
 
 *Figure 40 - Content Tree With Articles*
@@ -67,7 +67,7 @@ Click on the **_Developer_** menu from the left hand side menu and then hover ov
 Now all we have to do is wire up the Articles main page to list our child articles. Edit the Articles Main template **_Settings > Templates node > Master node > Articles Main node > Template tab_**.  Under the *articlesBodyText* tag enter a carriage return and then click the **_Insert Macro_** button, choose the ListArticles macro we just created and then click **_Save_**. 
 
 
-![Template for Articles Parent with the Macro Code](images/figure-41-articles-parent-with-macro-code.png?raw=true)
+![Template for Articles Parent with the Macro Code](images/figure-41-articles-parent-with-macro-code.png)
 
 
 *Figure 41 - Template for Articles Parent with the Macro Code*
@@ -99,7 +99,7 @@ Check what we have on our **_Articles_** page now - we're really getting somewhe
 Now check this in the browser!
 
 
-![Finished Articles Page](images/figure-43-finished-articles-page.png?raw=true)
+![Finished Articles Page](images/figure-43-finished-articles-page.png)
 
 
 *Figure 43 - Finished Articles Page*

@@ -72,6 +72,34 @@ Example usage of the ContentService events:
         </td>
     </tr>
     <tr>
+        <td>Publishing</td>
+        <td>(IPublishingStrategy sender, PublishEventArgs&lt;Umbraco.Core.Models.IContent&gt; e)</td>
+        <td>
+        Raised when ContentService.Publishing is called in the API.<br />
+        NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Publish method call (true by default).<br />
+        "sender" will be the current IPublishingStrategy object.<br />
+        "e" will provide:<br/>
+		<em>NOTE: If the entity is brand new then HasIdentity will equal false.</em>
+            <ol>
+                <li>PublishedEntities: Gets the collection of IContent objects being published.</li>
+            </ol>
+        </td>
+    </tr>
+    <tr>
+        <td>Published</td>
+        <td>(IPublishingStrategy sender, PublishEventArgs&lt;Umbraco.Core.Models.IContent&gt; e)</td>
+        <td>
+        Raised when ContentService.Publish is called in the API and after data has been published.<br />
+        NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Publish method call (true by default). <br />
+        "sender" will be the current IPublishingStrategy object.<br />
+        "e" will provide:<br/>
+		<em>NOTE: <a href="determining-new-entity">See here on how to determine if the entity is brand new</a></em>
+            <ol>
+                <li>PublishedEntities: Gets the published collection of IContent objects.</li>
+            </ol>
+        </td>
+    </tr>    
+    <tr>
         <td>Copying</td>
         <td>(IContentService sender, CopyEventArgs&lt;IContent&gt; e)</td>
         <td>

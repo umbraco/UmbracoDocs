@@ -13,6 +13,8 @@ Below is a screenshot of how the Projects should be configured. Here we use the 
 Manually creating and configuring a Visual Studio solution with the right Projects can take a bit of time, so we have made a little command line tool that will generate the correct solution for you.
 Download the UaaS.cmd tool from [umbra.co/uaas-cmd](https://umbra.co/uaas-cmd) and save it to a folder where you want to place the Visual Studio solution.
 
+**Note:** this is just a recommended setup. If you don't like the setup then you can play with it and make it your own. There's nothing magic about this setup, it is just adding a few files to your Umbraco as a Service website to give you a flying start to begin working with Visual Studio. If you want to name things differently or set up your VS solution differently then that's up to you. What follows is a recommendation and not the only way to work with Visual Studio.
+
 ![](images/cmd-in-empty-folder.png)
 
 Before running the UaaS.cmd tool you will need the git clone url for your Umbraco as a Service Project. So go to the Project in the Portal and copy the url from "Connect my machine".

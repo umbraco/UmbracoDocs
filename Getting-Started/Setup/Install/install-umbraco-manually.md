@@ -20,13 +20,13 @@ There are two ways to run the binaries in a webserver:
 
 You can download IIS Express from the [Web Platform Installer (WebPI)](http://www.microsoft.com/web/downloads/platform.aspx) (search for "IIS Express"). To be able to develop against IIS Express from Visual Studio 2010, you need to have VS2010 Service Pack 1 installed, which can also be acquired from the WebPI. 
 
-![IIS Express on the Web Platform Installer](images/Manual/2012-03-17_164508.png?raw=true)
+![IIS Express on the Web Platform Installer](images/Manual/2012-03-17_164508.png)
 
 While you will be able to launch IIS Express from the command line and use it to serve your site this way, it is much easier to use Microsoft WebMatrix (also available through the WebPI) which spins up an IIS Express instance when needed. In fact, choosing WebMatrix in the WebPI will automatically also download and install IIS Express as a dependency.
 
 Once WebMatrix is installed, you can simply right-click the folder in which you unzipped Umbraco, choose "Open as a Web Site with Microsoft WebMatrix" from the context menu (should be near the top). Once WebMatrix starts, just click the "Run" button to launch your site. WebMatrix has an additional benefit: it allows you to edit the files in your site out of the box.
 
-![Start Umbraco through Web Matrix](images/Manual/2012-03-17_173822.png?raw=true)
+![Start Umbraco through Web Matrix](images/Manual/2012-03-17_173822.png)
 
 ###Using IIS
 If you want to use IIS to host your Umbraco site, you can use a hostname that points to your local machine.
@@ -39,7 +39,7 @@ You will then be asked what kind of application this is, make sure to pick (or c
 	
 Finally fill in the hostname. In this example we'll use *MyUmbracoSite.local*.
 	
-![Configure new website in IIS](images/Manual/2012-03-12_223022.png?raw=true)
+![Configure new website in IIS](images/Manual/2012-03-12_223022.png)
 	
  As a final step, you will need to add the *MyUmbracoSite.local* hostname to your hosts file. If you haven't altered your host file before you will need to make sure that your current user has write permissions to the hosts file. The hosts file typically lives in C:\Windows\System32\drivers\etc\hosts (the file has no extension).
 	

@@ -6,13 +6,13 @@ UmbracoHelper also has a variety of helper methods that are useful when working 
 
 ##How to reference UmbracoHelper?
 
-Nearly all of Umbraco's base classes expose an intance of UmbracoHelper. If you are using MVC Views or Partial View Macros you can reference UmbracoHelper with the syntax: `@Umbraco`
+Nearly all of Umbraco's base classes expose an instance of UmbracoHelper. If you are using MVC Views or Partial View Macros you can reference UmbracoHelper with the syntax: `@Umbraco`
 
-If you are using SurfaceControllers, RenderMvcControllers, UmbracoApiControllers, or any controller inheriting from UmbracoController, these all expose an UmbracoHelper via the `Umbraco` property. 
+If you are using SurfaceControllers, RenderMvcControllers, UmbracoApiControllers, or any controller inheriting from UmbracoController, these all expose an UmbracoHelper via the `Umbraco` property.
 
 If you are using WebForms and using controls you can inherit from : `Umbraco.Web.UI.Controls.UmbracoControl` or `Umbraco.Web.UI.Controls.UmbracoUserControl` both of which expose many handy Umbraco object including an UmbracoHelper via the `Umbraco` property.
 
-For webservices and http handlers, these base classes expose UmbracoHelper via the `Umbraco` property: `Umbraco.Web.WebServices.UmbracoHttpHandler`, `Umbraco.Web.WebServices.UmbracoWebService` 
+For webservices and http handlers, these base classes expose UmbracoHelper via the `Umbraco` property: `Umbraco.Web.WebServices.UmbracoHttpHandler`, `Umbraco.Web.WebServices.UmbracoWebService`
 
 Lastly, if you need an UmbracoHelper in a custom class, service, view, etc... you can create one using this syntax:
 
@@ -27,29 +27,29 @@ All samples below represent how you work with `UmbracoHelper` in Razor, except f
 ##Working with Content
 
 ###.Content(int id);
-Given a node ID, returns a `dynamic` object, representing a single `IPublishedContent` entity 
+Given a node ID, returns a `dynamic` object, representing a single `IPublishedContent` entity
 
     @{
         var page = Umbraco.Content(1234);
     }
-    
+
     <h3>@page.PropertyAlias</h3>
-    
-    @foreach (var child in page.Children) { 
+
+    @foreach (var child in page.Children) {
         <a href="@child.Url">@child.Name</a>
     }
-	
+
 ###.ContentAtRoot();
 Returns a `dynamic` object, representing the root `IPublishedContent` entity
 
     // Get the children of the first content item found in the root
-    @foreach (var child in Umbraco.ContentAtRoot().First().Children) { 
+    @foreach (var child in Umbraco.ContentAtRoot().First().Children) {
         <a href="@child.Url">@child.Name</a>
     }
 
 ###.ContentAtXPath(string xpath, params XPathVariable[] variables);
-Queries the XML Cache for Content matching a given xpath query and returns a collection of dynamic objecs.
-    
+Queries the XML Cache for Content matching a given xpath query and returns a collection of dynamic objects.
+
     @{
         var newsArticles = Umbraco.ContentAtXPath("//newsArticle");
     }
@@ -63,7 +63,7 @@ Queries the XML Cache for Content matching a given Xpath query, returns first ma
     @{
         var newsArea = Umbraco.ContentSingleAtXPath("//newsArea");
     }
-    
+
 ###.TypedContent(int id)
 Given a node ID , returns a `IPublishedContent`
 
@@ -71,10 +71,10 @@ Given a node ID , returns a `IPublishedContent`
         var page = Umbraco.TypedContent(1234);
     }
 
-    <h3>@page.GetPropertyValue<string>("propertyAlias") 
+    <h3>@page.GetPropertyValue<string>("propertyAlias")
     </h3>
 
-    @foreach (var child in page.Children) { 
+    @foreach (var child in page.Children) {
         <a href="@child.Url">@child.Name</a>
     }
 
@@ -83,13 +83,13 @@ Given a node ID , returns a `IPublishedContent`
 Returns the root `IPublishedContent` from the Content tree
 
     // Get the children of the first content item found in the root
-    @foreach (var child in Umbraco.TypedContentAtRoot().First().Children) { 
+    @foreach (var child in Umbraco.TypedContentAtRoot().First().Children) {
         <a href="@child.Url">@child.Name</a>
     }
 
 
 ###.TypedContentAtXPath(string xpath)
-Queries the XML Cache for Content matching a given xpath query and returns a collection of `IPublished` objecs.
+Queries the XML Cache for Content matching a given xpath query and returns a collection of `IPublished` objects.
 
     @{
         var newsArticles = Umbraco.TypedContentAtXPath("//newsArticle");
@@ -124,10 +124,10 @@ Returns a nicely formated URL including its domain, given a node ID. This can be
 
     <a href="@Umbraco.NiceUrlWithDomain(1234)">My link</a>
 
-  
+
 ##Working with Media
 ###.Media(int id);
-Given a node ID, returns a `dynamic` object, representing a single `IPublishedContent` Media entity 
+Given a node ID, returns a `dynamic` object, representing a single `IPublishedContent` Media entity
 
     @{
         var media = Umbraco.Media(1234);
@@ -135,7 +135,7 @@ Given a node ID, returns a `dynamic` object, representing a single `IPublishedCo
 
     <h3>@media.PropertyAlias</h3>
 
-    @foreach (var child in media.Children) { 
+    @foreach (var child in media.Children) {
         <img src="@child.Url" alt="@child.Name">
     }
     //access a cropper on the umbracoFile property
@@ -145,7 +145,7 @@ Given a node ID, returns a `dynamic` object, representing a single `IPublishedCo
 ###.MediaAtRoot();
 Returns a `dynamic` object, representing the root `IPublishedContent` entity in the Media tree.
 
-    @foreach (var child in Umbraco.MediaAtRoot().Children) { 
+    @foreach (var child in Umbraco.MediaAtRoot().Children) {
         <img src="@child.Url" />
     }
 
@@ -163,7 +163,7 @@ Given a node ID , returns a `IPublishedContent` Media entity
 ###.TypedMediaAtRoot();
 Returns the root `IPublishedContent` entity from the Media tree.
 
-    @foreach (var child in Umbraco.TypedMediaAtRoot().Children) { 
+    @foreach (var child in Umbraco.TypedMediaAtRoot().Children) {
         <img src="@child.Url" />
     }
 
@@ -171,14 +171,14 @@ Returns the root `IPublishedContent` entity from the Media tree.
 ##Working with Members
 
 ###.Member(1234);
-Given a node ID, returns a `dynamic` object, representing a single `IPublishedContent` Member profile 
+Given a node ID, returns a `dynamic` object, representing a single `IPublishedContent` Member profile
 
     @{
         var member = Umbraco.TypedMember(1234);
         var email = member.Email;
         var custom = member.MyCustomPropertyAlias
     }
-    
+
 
 ###.TypedMember(1234);
 Given a node ID , returns a `IPublishedContent` Member profile
@@ -188,15 +188,15 @@ Given a node ID , returns a `IPublishedContent` Member profile
     }
 
     <h1>@member.Name profile</h1>
-    @foreach (var property in member.Properties) { 
+    @foreach (var property in member.Properties) {
         <label>@property.PropertyTypeAlias:</label> @property.GetValue<string>()
     }
 
 
 ###Member Helpers
 ###.MemberHasAccess(int nodeId, string path);
-Returns a `Boolean` on whether the currently logged in member has access to the page given its ID and path. 
-    
+Returns a `Boolean` on whether the currently logged in member has access to the page given its ID and path.
+
     @if(Umbraco.MemberHasAccess(CurrentPage.Id, CurrentPage.Path)){
         <h1>Welcome!</h1>
     }    
@@ -211,7 +211,7 @@ Returns a `Boolean` on whether there is currently a member profile
 ###.IsProtected(int pageId, string path)
 Returns a `Boolean` on whether a page with a given pageId and path has public access restrictions set.
 
-    @foreach (var child in CurrentPage.Children) { 
+    @foreach (var child in CurrentPage.Children) {
         <h2>@child.Name</h2>
             @if(Umbraco.IsProtected(child.id, child.Path)){
                 <blink>Members only</blink>
@@ -222,7 +222,7 @@ Returns a `Boolean` on whether a page with a given pageId and path has public ac
 ##Fetching misc data
 
 ###.GetDictionaryValue(string key);
-Returns a `string` 
+Returns a `string`
 
     <p>@Umbraco.GetDictionaryValue("createdOn"): @CurrentPage.CreateDate</p>
 
@@ -234,7 +234,7 @@ Returns a `string`
 ###.Search(string term, bool useWildCards, string searchProvider)
 Given a search term, it by default searches the Umbraco search index for content matching the term. Wildcards are enabled by default, and searchProvider can optionally be set a different one.
 
-Returns a collection of `dynamic` objects representin a `IPublishedContent` Entity. 
+Returns a collection of `dynamic` objects representing an `IPublishedContent` Entity.
 
     @foreach(var result in Umbraco.Search("news",useWildCards:true)){
         <a href="@result.Url">@result.BodyText</a>
@@ -256,7 +256,7 @@ Alternatively, you can use Examines `SearchCriteria` builder:
 
 
 ###.TypedSearch(string term, bool useWildCards, string searchProvider)
-Like .Search() but returns a collection of `IPublishedContent` objects, see sampel above.
+Like .Search() but returns a collection of `IPublishedContent` objects, see sample above.
 
 
 ##Templating Helpers
@@ -264,13 +264,13 @@ Like .Search() but returns a collection of `IPublishedContent` objects, see samp
 ###.Coalesce(params object[]);
 will take the first non-null value in the collection and return the value of it.
 
-    
+
     Umbraco.Coalesce(CurrentPage.Summary, CurrentPage.MaybeThere, CurrentPage.Name);
 
 
 ###.Concatenate(params object[]);
 Joins any number of int/string/objects into one string
-    
+
     Umbraco.Concatenate("Hi my name is ", CurrentPage.Name, " how are you?");
 
 ###.CreateMd5Hash(string text);
@@ -283,8 +283,8 @@ If the test is true, the string `valueIfTrue` will be returned, otherwise the `v
 
     <h1 class="Umbraco.If(CurrentPage.Name == "News", "this-is-news", "textpage">@CurrentPage.Name</h1>
 
-###.Join(string seperator, parmas object[] args)    
-Joins any number of int/string/objects into one string and seperates them with the string seperator parameter.
+###.Join(string separator, params object[] args)    
+Joins any number of int/string/objects into one string and separates them with the string separator parameter.
 
     Umbraco.Join("; ", "Red", 112, CurrentPage.Name);
 
@@ -292,7 +292,7 @@ Joins any number of int/string/objects into one string and seperates them with t
 Given a non-html string, it replaces all line-breaks with `<br/>`
 
     @{
-        var multiLine = @"helo
+        var multiLine = @"hello
                             my
                         name is    
                             ";
@@ -305,10 +305,10 @@ Strips all html tags from a given string, all contents of the tags will remain.
 
     Umbraco.StripHtml("<blink>Stop the blinking</blink>");
 
-###.Truncate(string html, int length, bool addElipsis)
-Truncates a string to a given length, can add a elipsis at the end (...). Method checks for open html tags, and makes sure to close them
-    
-    Umbraco.Truncate("I wish I was a tweet, atleast the get 140 chars", 10, true)
+###.Truncate(string html, int length, bool addEllipsis)
+Truncates a string to a given length, can add a ellipsis at the end (...). Method checks for open html tags, and makes sure to close them
+
+    Umbraco.Truncate("I wish I was a tweet, at least then I get 140 chars", 10, true)
 
 ###.RenderMacro(string alias, object parameters)
 Renders a macro in the current page content, given the macros alias, and parameters required by the macro.
