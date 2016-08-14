@@ -33,7 +33,7 @@ Defining a route is done with the standard ASP.Net MVC routing practices. In Umb
     {
       RouteTable.Routes.MapRoute(
       name: "cats",
-      url: "backoffice/cats/{action}/{id}",
+      url: "umbraco/backoffice/cats/{action}/{id}",
       defaults: new
       {
         controller = "Cats",
@@ -42,7 +42,7 @@ Defining a route is done with the standard ASP.Net MVC routing practices. In Umb
       });
     }
 
-_NOTE the route must be prefixed with `backoffice` in order for Umbraco to check user authentication._
+_NOTE the route must start with `umbraco/backoffice` in order for Umbraco to check user authentication._
 
 ###What about Surface Controllers?
 Surface Controllers should not be used in the back office.  Surface Controllers are not designed to work with the back office, they are not meant to be used there and will not be supported being used there.
