@@ -19,3 +19,6 @@ How to specify your own custom MVC routes in your Umbraco application
 
 ##[Routes & Authentication](Authorized/index.md)
 Routing requirements for authenticated controllers for both front-end and the back office
+
+##[URL Tracking](URL-Tracking/index.md)
+Moving and renaming Umbraco documents will lead to URL redirects to be created
