@@ -27,4 +27,4 @@ The "Forgot password?" link allows your backoffice users to reset their password
       </mailSettings>
     </system.net>
 
-This feature can be turned off completely using the `allowPasswordReset` configuration, see: [/Reference/Config/umbracoSettings/#security](/Reference/Config/umbracoSettings/#security) 
+This feature can be turned off completely using the `allowPasswordReset` configuration, see: [/Documentation/Reference/Config/umbracoSettings/#security](/Reference/Config/umbracoSettings/#security) 
