@@ -99,7 +99,6 @@ strongly typed model such as, or at the very least the JSON would be convertable
  or
  
  	@(Model.Content.GetPropertyValue<JObject>("nestedContent"))
----
 
 ##Property Methods
 **There are a few helpful methods to help check if a property exists, has a value or is null.**
