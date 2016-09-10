@@ -4,6 +4,8 @@
 
 The ApplicationTreeService is used to control/query the storage for tree registrations in the ~/Config/trees.config file.
 
+[Browse the API documentation for ApplicationTreeService](https://our.umbraco.org/apidocs/csharp/api/Umbraco.Core.Services.ApplicationTreeService.html).
+
  * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
 

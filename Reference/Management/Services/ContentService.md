@@ -4,6 +4,8 @@
 
 The ContentService acts as a "gateway" to Umbraco data for operations which are related to Content.
 
+[Browse the API documentation for ContentService](/apidocs/csharp/api/Umbraco.Core.Services.ContentService.html).
+
  * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
 
@@ -18,8 +20,6 @@ All samples in this document will require the following usings:
 	using Umbraco.Core.Services;
 
 **Please note that this page will be updated with samples and additional information about the methods listed below**
-
-You can also [browse the API documentation for ContentService](https://our.umbraco.org/apidocs/csharp/api/Umbraco.Core.Services.ContentService.html).
 
 ##Getting the service
 The ContentService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the ContentService is available through a local `Services` property.
