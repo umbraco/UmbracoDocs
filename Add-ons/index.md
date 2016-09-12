@@ -9,4 +9,4 @@ Umbraco Forms.
 
 
 ##[Umbraco Courier](UmbracoCourier/index.md)
-Architectual overview, extension and configuration guides, intended audience is.net developers who wish to configure, troubleshoot or extend Courier deployment functionality.
+Architectual overview, extension and configuration guides, intended audience is .NET developers who wish to configure, troubleshoot or extend Courier deployment functionality.
