@@ -1,7 +1,7 @@
 #Baselines
 A Baseline project is very similar to a Fork (forked repository) on github in that we create a clone of an existing project while maintaining a connection between the two projects. The connection exists between the _Live_ environment of the existing project (often referred to as the “master”) and the _Development_ environment of the newly created project - the Baseline “child”.
 
-Any project based on the Agency plan can act as the Master for new projects.
+Any project can act as the Master for new projects.
 
 The basic idea is that you have a Project that contains all your standard Umbraco packages/components, maybe even configured with some default Document Types, which you want to use as the baseline for future projects. When you need to make changes to your baseline you can then push these changes out to all the “child” projects with a click of a button.
 
