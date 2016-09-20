@@ -81,7 +81,8 @@ and will translate in to three different options where each string will become a
 
 **modifier** is a basic way to prepend, append or wrap the value from the editor in a simple string. This is especially useful when working with custom styles which often requires additional values to function. For instance if you want to set a background image you can get an image path from the image picker view. But in order for it to work with css it has to be wrapped in `url()`. In that case you set the **modifier** to `url('{0}')` which means that `{0}` is replaced with the editor value.
 
-**applyTo** This is a new setting in **Umbraco 7.5.4 & newer** which defines what this setting can be applied to. It should be either **row** or **cell** as a string, or a JSON object if you need a more specific configuration. A JSON configuration could look like this:
+**applyTo** defines what this setting can be applied to. It should be either **row** or **cell** as a string.
+**In Umbraco 7.5.4 & newer** a JSON object can also be used if you need a more specific configuration. A JSON configuration could look like this:
 
     "applyTo": {
         "row": "Headline,Article",
