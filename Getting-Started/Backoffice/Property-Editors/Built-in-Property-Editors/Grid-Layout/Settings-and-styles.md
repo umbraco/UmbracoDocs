@@ -65,7 +65,7 @@ Alternatively you can also pass in a path to a custom view like "/app_plugins/gr
 
 and will translate in to three different options where each string will become a radiobutton. The strings represent the value of the options.
 
-Prevalues can also be defined as an object of label/value allowing to have a displayed label instead of showing the actual underlying value. You can even mix and match these and use both label/value prevalues and simple string prevalues in the same configuration:
+**In Umbraco 7.5.4 & newer** Prevalues can also be defined as an object of label/value allowing to have a displayed label instead of showing the actual underlying value. You can even mix and match these and use both label/value prevalues and simple string prevalues in the same configuration:
 
     "prevalues":[
         {
@@ -81,7 +81,7 @@ Prevalues can also be defined as an object of label/value allowing to have a dis
 
 **modifier** is a basic way to prepend, append or wrap the value from the editor in a simple string. This is especially useful when working with custom styles which often requires additional values to function. For instance if you want to set a background image you can get an image path from the image picker view. But in order for it to work with css it has to be wrapped in `url()`. In that case you set the **modifier** to `url('{0}')` which means that `{0}` is replaced with the editor value.
 
-**applyTo** defines what this setting can be applied to. It should be either **row** or **cell** as a string, or a JSON object if you need a more specific configuration. A JSON configuration could look like this:
+**applyTo** This is a new setting in **Umbraco 7.5.4 & newer** which defines what this setting can be applied to. It should be either **row** or **cell** as a string, or a JSON object if you need a more specific configuration. A JSON configuration could look like this:
 
     "applyTo": {
         "row": "Headline,Article",
