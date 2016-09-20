@@ -67,6 +67,12 @@ Give the property a name, the name will be shown to the editor so make relevant 
 
 ![Adding a property](images/Document-Type-Adding-Properties.jpg)
 
+#####Keyboard Shortcuts
+If you are an experienced user you can use keyboard Shortcuts when you are working defining your document type, in the Document Type editor. To see which keyboard Shortcuts that are available simple click __ALT + __SHIFT + __K.
+Then you will see the overview like this.
+
+![Keyboard Shortcuts](images/Document-Type-Keyboard-Shortcuts.jpg)
+
 #####Property editors
 Clicking __Add editor__ will open the Select editor dialog. Here you can choose between all the __Available editors__ (this will create a new configuration) or __Reuse__ already configured editors. To make it easier to find what you need use the search field to filter by typing "Rich". Filtering will display configured properties first (under Reuse) and all available editors under that.
 
