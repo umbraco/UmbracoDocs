@@ -65,8 +65,30 @@ Alternatively you can also pass in a path to a custom view like "/app_plugins/gr
 
 and will translate in to three different options where each string will become a radiobutton. The strings represent the value of the options.
 
+Prevalues can also be defined as an object of label/value allowing to have a displayed label instead of showing the actual underlying value. You can even mix and match these and use both label/value prevalues and simple string prevalues in the same configuration:
+
+    "prevalues":[
+        {
+            "label": "Value one",
+            "value": "value_1"
+        },
+        {
+            "label": "Value two",
+            "value": "value_2"
+        },
+        "value_3"
+    ]
+
 **modifier** is a basic way to prepend, append or wrap the value from the editor in a simple string. This is especially useful when working with custom styles which often requires additional values to function. For instance if you want to set a background image you can get an image path from the image picker view. But in order for it to work with css it has to be wrapped in `url()`. In that case you set the **modifier** to `url('{0}')` which means that `{0}` is replaced with the editor value.
 
+**applyTo** defines what this setting can be applied to. It should be either **row** or **cell** as a string, or a JSON object if you need a more specific configuration. A JSON configuration could look like this:
+
+    "applyTo": {
+        "row": "Headline,Article",
+        "cell": "4,8,6"
+    }
+
+This would ensure the setting can only be used on rows named **Article** or **Headline**, or on cells sized: **4**, **8** or **6**. If it should only apply to cells you can remove the row property. If it should apply to all rows you can specify it by having the row property with null or an empty string as value.
 
 ###Sample settings
 There are many ways to combine these, here are some samples:
