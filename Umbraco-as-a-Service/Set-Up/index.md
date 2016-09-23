@@ -23,15 +23,16 @@ Once you've assigned a hostname to your live site you may want to "hide" the sit
 One approach for this is to add a redirect to your live site's web.config. To accomplish this, add a redirect rule to the live site's web.config in the `<system.webServer><rewrite><rules>` section. For example, the following rule will redirect all requests for the site's mysite.s1.umbraco.io Url to the mysite.com Url and respond with a permanent redirect status.
         
         
-            <rule name="Redirects umbraco.io to actual domain" stopProcessing="true">
-              <match url=".*" />
-              <conditions>
-                <add input="{HTTP_HOST}" pattern="^(.*)?.s1.umbraco.io$" />
-                <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
-                <add input="{REQUEST_URI}" negate="true" pattern="localhost" />
-              </conditions>
-              <action type="Redirect" url="http://<your actual domain here>.com/{R:0}" appendQueryString="true" redirectType="Permanent" />
-            </rule>
+    <rule name="Redirects umbraco.io to actual domain" stopProcessing="true">
+      <match url=".*" />
+      <conditions>
+        <add input="{HTTP_HOST}" pattern="^(.*)?.s1.umbraco.io$" />
+        <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
+        <add input="{REQUEST_URI}" negate="true" pattern="localhost" />
+      </conditions>
+      <action type="Redirect" url="http://<your actual domain here>.com/{R:0}" 
+              appendQueryString="true" redirectType="Permanent" />
+    </rule>
 
 **Note:** This will not rewrite anything under the `/umbraco` path so that you can still do content deployments. You don't have to give your editors the umbraco.io URL, and they won't see the umbraco.io URL if you give them the actual domain name. This rule will also not apply on your local copy of the site running on `localhost`.  
 
@@ -43,14 +44,14 @@ Once you've applied a certificate to your site you can make sure that anybody vi
 
 To accomplish this, add a redirect rule to the live site's web.config in the `<system.webServer><rewrite><rules>` section. For example, the following rule will redirect all requests for the site http://mysite.com URL to the secure https://mysite.com URL and respond with a permanent redirect status. 
 
-        <rule name="HTTP to HTTPS redirect" stopProcessing="true">
-          <match url="(.*)" />
-          <conditions>
-            <add input="{HTTPS}" pattern="off" ignoreCase="true" />
-            <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
-          </conditions>
-          <action type="Redirect" url="https://{HTTP_HOST}/{R:1}" redirectType="Permanent" />
-        </rule>        
+    <rule name="HTTP to HTTPS redirect" stopProcessing="true">
+      <match url="(.*)" />
+      <conditions>
+        <add input="{HTTPS}" pattern="off" ignoreCase="true" />
+        <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
+      </conditions>
+      <action type="Redirect" url="https://{HTTP_HOST}/{R:1}" redirectType="Permanent" />
+    </rule>        
 
 **Note:** This redirect rule will not apply when the request is already going to the secure HTTPS URL. This redirect rule will also not apply on your local copy of the site running on `localhost`.
 
