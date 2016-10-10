@@ -18,3 +18,6 @@ Learn how you can extend Umbraco Forms with your own custom providers
 
 ##[Configuration](Configuration/index.md)##
 Learn about some of the configuration options that are available to you to modify how Umbraco Forms works.
+
+##[Field Types](Field-Types/index.md)##
+Learn about the default Field Types that are shipped with Umbraco Forms and any sepcific details how these work.
