@@ -2,7 +2,7 @@
 Prevalue sources can be hooked to fields that use a list fieldtype (radiobuttonlist, checkboxlist, dropdownlist). Making it possible to retrieve a list of items from a certain source.
 
 ##Setting up a prevalue sources
-Prevalue sources can be managed in the corresponding part of the Contour section
+Prevalue sources can be managed in the corresponding part of the Umbraco Forms section
 
 ![Prevalue source tree](prevaluesourcetree.png)
 
