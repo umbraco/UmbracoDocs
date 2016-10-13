@@ -8,3 +8,6 @@ Getting Forms out of trial mode
 
 ##[Keeping Forms up to date](Upgrade.md)
 Simple upgrade instructions
+
+##[Manually upgrading Forms](ManualUpgrade.md)
+Manual upgrade instructions
