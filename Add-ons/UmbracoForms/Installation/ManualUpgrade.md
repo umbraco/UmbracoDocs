@@ -1,5 +1,5 @@
 #Manually upgrading forms
-We [made it easy to upgrade to the latest version of Umbraco Forms automatically](upgrading.md) but sometimes it's necessary to manually upgrade your install.
+We [made it easy to upgrade to the latest version of Umbraco Forms automatically](upgrade.md) but sometimes it's necessary to manually upgrade your install.
 
 #Download
 In order to upgrade you will want to [download the version of Forms you wish to upgrade to](https://our.umbraco.org/projects/developer-tools/umbraco-forms/). Instead of downloading the actual package, however, you want to download the `UmbracoForms.x.y.z.Files.zip` file (where x.y.z) is the version.
