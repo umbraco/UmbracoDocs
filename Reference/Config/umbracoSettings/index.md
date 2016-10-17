@@ -161,7 +161,7 @@ Umbraco can send out email notifications, set the sender email address for the n
 
 **EnsureUniqueNaming**
 
-Umbraco comes with a build-in action handler that ensures that 2 pages does not get identical urls. In case of identical names, the handler will attach a counter to the duplicate name.
+Umbraco comes with a built-in action handler that ensures that 2 pages does not get identical urls. In case of identical names, the handler will attach a counter to the duplicate name.
 
         <!-- if true umbraco will ensure that no page under the same parent has an identical name -->
         <ensureUniqueNaming>True</ensureUniqueNaming>
