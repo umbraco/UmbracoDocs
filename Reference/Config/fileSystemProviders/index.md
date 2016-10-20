@@ -1,6 +1,6 @@
-#This section is waiting for content
+#FileSystemProviders.config
 
-TODO: Fill out these docs (https://github.com/umbraco/UmbracoDocs/issues/218)
+The `fileSystemProviders.config` contains the configuration for file system providers that access the actual file system 
 
 ###Contribution
 Umbraco is a community powered project and we welcome any contribution, big or small, even fixing a typo is a valuable contribution.
