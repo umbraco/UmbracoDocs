@@ -68,8 +68,7 @@ Give the property a name, the name will be shown to the editor so make relevant 
 ![Adding a property](images/Document-Type-Adding-Properties.jpg)
 
 #####Keyboard Shortcuts
-If you are an experienced user you can use keyboard Shortcuts when you are working defining your document type, in the Document Type editor. To see which keyboard Shortcuts that are available simple click __ALT + __SHIFT + __K.
-Then you will see the overview like this.
+Keyboard shortcuts are available when you are working with the Document Type editor. To see which shortcuts are available simply click <kbd>ALT</kbd> + <kbd>SHIFT</kbd> + <kbd>K</kbd>:
 
 ![Keyboard Shortcuts](images/Document-Type-Keyboard-Shortcuts.jpg)
 
