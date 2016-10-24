@@ -70,7 +70,7 @@ Give the property a name, the name will be shown to the editor so make relevant 
 #####Keyboard Shortcuts
 Keyboard shortcuts are available when you are working with the Document Type editor. To see which shortcuts are available simply click <kbd>ALT</kbd> + <kbd>SHIFT</kbd> + <kbd>K</kbd>:
 
-![Keyboard Shortcuts](images/Document-Type-Keyboard-Shortcuts.jpg)
+![Keyboard Shortcuts](images/Document-Type-Keyboard-Shortcuts.jpg?width=400)
 
 #####Property editors
 Clicking __Add editor__ will open the Select editor dialog. Here you can choose between all the __Available editors__ (this will create a new configuration) or __Reuse__ already configured editors. To make it easier to find what you need use the search field to filter by typing "Rich". Filtering will display configured properties first (under Reuse) and all available editors under that.
