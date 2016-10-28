@@ -1,4 +1,4 @@
-#Troubleshooting Content deployments on Umbraco as a Servivce
+#Troubleshooting Content deployments on Umbraco Cloud
 ##When working on Umbraco Cloud
 
 If the schema (this includes DocumentTypes, MediaTypes, DataTypes, Templates, Macros and Dictionary items) is different between the two environments you are deploying between, you will need to deploy the updates for these before you can complete the Content deployment (this can contain Media from the Media section as well). Environments needs to be in-sync before a Content and/or Media deployment can succeed.
