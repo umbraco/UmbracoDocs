@@ -21,3 +21,6 @@ Learn about some of the configuration options that are available to you to modif
 
 ##[Field Types](Field-Types/index.md)##
 Learn about the default Field Types that are shipped with Umbraco Forms and any sepcific details how these work.
+
+##[Magic strings](Magic-Strings/index.md)##
+Learn about the magic string formats that Umbraco Forms supports, that can retrieve information from various sources such as Session, Cookies, Umbraco Page Fields, Member fields, Form fields to use in workflows.
