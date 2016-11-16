@@ -2,7 +2,7 @@
 Umbraco Forms available in version 4.4.0 and newer allows you to use an IFileSystem to abstract how and where the physical JSON files such as Forms, Workflows and PreValues.
 
 ## What on earth is an IFileSystem
-To summarise this allows the saving & getting of files to be abstracted away to a provider, where it can save & retrieve say from Azure Blob Cloud storage or some other place. You can [learn more about IFileSystems in the Umbraco core](../../../Extending/Custom-File-Systems.md) 
+To summarise this allows the saving & getting of files to be abstracted away to a provider, where it can save & retrieve say from Azure Blob Cloud storage or some other place. You can [learn more about IFileSystems in the Umbraco core](../../../../Extending/Custom-File-Systems.md) 
 
 ## Storing the JSON files in a different location on the server
 This uses the Umbraco core IFileSystem provider `Umbraco.Core.IO.PhysicalFileSystem` which with its property we can then specify a different location than the default location that Umbraco Forms stores its files, which is `App_Plugins/UmbracoForms/Data`
