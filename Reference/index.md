@@ -2,6 +2,10 @@
 
 _Developers' Reference primarily consists of API references of the different core Umbraco APIs. In many cases, the references come with code snippets with simple examples. For a more in-depth study of the different APIs, consult the "using-umbraco" and "extending-umbraco" sections of the documentation._
 
+##[Common Pitfalls & Anti-patterns](Common-Pitfalls/index.md)
+
+This section is ultra important! It will describe many common pitfalls that developers fall in to. Make sure you read this section - it might just save your site!
+
 ##API Documentation
 
 ####[C# API Documentation](https://our.umbraco.org/apidocs/csharp/)
