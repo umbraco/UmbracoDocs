@@ -42,7 +42,7 @@ You can specify:
     </Group>
     <Group match="admin" matchEmail="@umbraco.">
       <UserType>Admin</UserType>
-      <SdasasdtartNodeContent></StartNodeContent>
+      <StartNodeContent></StartNodeContent>
       <StartNodeMedia></StartNodeMedia>
       <Language>en</Language>
       <DisableUmbracoAccess>false</DisableUmbracoAccess>
