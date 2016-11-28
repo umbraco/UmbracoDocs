@@ -27,7 +27,7 @@ You can specify:
 * Apps: Aliases of the Umbraco apps the user should have access to
 
 
-´
+```
   <PermissionGroups>
     <Group match="*">
       <UserType>Editor</UserType>
