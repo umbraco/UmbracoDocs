@@ -72,8 +72,7 @@ So to summarize, to create a custom grid editor from scratch, you will need to:
 - Create a grid editor view `.html` file
 - Create a grid render `.cshtml` file
 - Create a grid editor controller `.js` file
-- Create a `package.manifest` file to make Umbraco load needed files
-- Register the editor in the `/config/grid.editors.js` file
+- Create a `package.manifest` to register the editor and make Umbraco load needed files
 
 This process tries to be as close to building property editors as currently possible.
 
