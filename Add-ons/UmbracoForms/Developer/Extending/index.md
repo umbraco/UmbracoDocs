@@ -17,5 +17,5 @@ A prevalue source type can connect to a 3rd party storage and retrieve a collect
 ### [Workflow Types](Adding-a-Workflowtype.md) ###
 A workflow can be executed each time a form changes state (when it is submitted for instance). A workflow is responsible for executing simple logic which can modify the record or notify 3rd party systems.
 
-### Export Types ###
+### [Export Types](Adding-a-Exporttype.md) ###
 Export types are responsible for turning form records into any other data format, which is then returned as a file.
