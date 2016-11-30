@@ -3,8 +3,14 @@ Sometimes things don't go perfectly (we know, surprise right?).  Following are s
 
 ##Deployment issues with Content
 Please refer to these two topics for troubleshooting Content deployments (this includes Media as well):
+
  - [Schema out of sync](Content-Deploy-Schema/)
  - [Errors during Content deployments](Content-Deploy-Error/)
+
+##Deployment/restore issues with structure
+Please refer to this topic for troubleshooting structure deploys and restores:
+
+ - [Errors during structure deployment/restore](Structure-Error/)
 
 ##Deployment issues
 The deployment process is complex, with the addition of your own custom code, various approaches to deployment, and other factors sometimes deployments can go awry.
