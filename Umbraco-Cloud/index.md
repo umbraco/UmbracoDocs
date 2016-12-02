@@ -17,7 +17,7 @@ Tips on identifying, finding and resolving issues.
 ##Overview
 Umbraco Cloud is the best way to create and manage an Umbraco project. It includes 10-years of experience and best-practices in an intuitive, simple, but robust approach. For use by a single site creator or a team of professional web developers, Umbraco Cloud removes the barriers that slow down projects and get in the way of beautiful, functional sites.
 
-Umbraco Cloud is Umbraco, but it’s a whole lot more. Built on the Microsoft Azure cloud and encompassing web standard approaches, Umbraco as as Service is familiar to Umbraco users new and old. Umbraco Cloud makes it simple to get started and places no limits on what you can accomplish - literally anything you can do with Umbraco and web technology you can do with Umbraco Cloud.
+Umbraco Cloud is Umbraco, but it’s a whole lot more. Built on the Microsoft Azure cloud and encompassing web standard approaches, Umbraco Cloud is familiar to Umbraco users new and old. Umbraco Cloud makes it simple to get started and places no limits on what you can accomplish - literally anything you can do with Umbraco and web technology you can do with Umbraco Cloud.
 
 Umbraco Cloud takes care of installation, infrastructure, and security and provides you the tools to work with your project in the cloud, or clone it (using Git) and work with it locally on your PC, your Mac, or your tablet.
 
