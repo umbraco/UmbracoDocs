@@ -20,6 +20,7 @@ By default all team members created through the Portal are created as admin user
 To match a Team Member with a group of permissions in the CloudUsers.config file you'll need to either match by e-mail or by the User Type of the Team Member using the "match" or "matchEmail" attributes.
 
 You can specify:
+
 * UserType: The name of a Back Office User Type thus default permissions on Content Nodes
 * Start Nodes for Content and Media: You'll need to add the Guid of the node.
 * Language: The Culture Code for the back office user interface language
