@@ -26,26 +26,26 @@ You can specify:
 * Disable Umbraco Access: When this is set to false, the user cannot login to the back office. Useful if your editors are working in the staging environment (by using the deploy feature, they'll still be able to push content to live)
 * Apps: Aliases of the Umbraco apps where the user should have access. You can specify "*" to give access to all apps.
 
-  <PermissionGroups>
-    <Group match="*">
-      <UserType>Editor</UserType>
-      <StartNodeContent>0319fe65-a558-45a1-bd88-f93429e1dc04</StartNodeContent>
-      <StartNodeMedia>fc22bc00-54ee-52bf-b54c-92477dc95136</StartNodeMedia>
-      <Language>da</Language>
-      <DisableUmbracoAccess>true</DisableUmbracoAccess>
-      <Apps>
-        <App>Content</App>
-        <App>Media</App>
-      </Apps>
-    </Group>
-    <Group match="admin" matchEmail="@umbraco.">
-      <UserType>Admin</UserType>
-      <StartNodeContent></StartNodeContent>
-      <StartNodeMedia></StartNodeMedia>
-      <Language>en</Language>
-      <DisableUmbracoAccess>false</DisableUmbracoAccess>
-      <Apps>
-        <App>*</App>
-      </Apps>
-    </Group>
-  </PermissionGroups>
+    <PermissionGroups>
+      <Group match="*">
+        <UserType>Editor</UserType>
+        <StartNodeContent>0319fe65-a558-45a1-bd88-f93429e1dc04</StartNodeContent>
+        <StartNodeMedia>fc22bc00-54ee-52bf-b54c-92477dc95136</StartNodeMedia>
+        <Language>da</Language>
+        <DisableUmbracoAccess>true</DisableUmbracoAccess>
+        <Apps>
+          <App>Content</App>
+          <App>Media</App>
+        </Apps>
+      </Group>
+      <Group match="admin" matchEmail="@umbraco.">
+        <UserType>Admin</UserType>
+        <StartNodeContent></StartNodeContent>
+        <StartNodeMedia></StartNodeMedia>
+        <Language>en</Language>
+        <DisableUmbracoAccess>false</DisableUmbracoAccess>
+        <Apps>
+          <App>*</App>
+        </Apps>
+      </Group>
+    </PermissionGroups>
