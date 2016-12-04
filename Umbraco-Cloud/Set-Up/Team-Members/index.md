@@ -27,7 +27,7 @@ You can specify:
 * Apps: Aliases of the Umbraco apps where the user should have access. You can specify "*" to give access to all apps.
 
 
-```
+`
   <PermissionGroups>
     <Group match="*">
       <UserType>Editor</UserType>
@@ -51,3 +51,4 @@ You can specify:
       </Apps>
     </Group>
   </PermissionGroups>
+  `
