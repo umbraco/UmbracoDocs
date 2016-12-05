@@ -258,7 +258,16 @@ advised to determine why and to try to resolve the underlying problem.
 
 ## Performing lookups and logic in Examine events
 
-_TODO: ...._
+There's a couple well known Examine events: `GatheringNodeData` and `DocumentWriting`. Both of these events
+allow the developer to modify the data that is going into the Lucene index but many times we see developers Performing
+Service lookups in these methods. For example, using `ApplicationContext.Current.Services.ContentService.GetById(e.NodeId)`
+inside of these events could cause an `N + 1` problem. This is because these events are executed for every single document
+being indexed and if you are rebuilding an index, this will mean this logic will fire for every single document and media item
+going into each index ... That could mean a tremendous amount of lookups and performance drain. 
+
+Similarly if you are executing other logic in these events that perform poorly, then anytime you save or publish content or media
+it will slow that process down. And of course if you rebuild an index then any slow code running in these events will cause the indexing
+to go ultra slow.
 
 ## RenderTemplate
 
