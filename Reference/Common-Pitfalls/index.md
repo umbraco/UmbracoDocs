@@ -412,7 +412,7 @@ This is slightly better:
 This means that there is now a minimum of __10,000__ new objects created and allocated in memory. The number of traversals/visits to each
 of these objects is now __5000__.
 
-## Too much Linq - XPath is still your friend (and XPathNodeIterator)
+## Too much Linq - XPath is still your friend 
 
 Based on the above 2 points, you can see that just iterating content with the traversal APIs will cause new
 instances of `IPublishedContent` to be created. When memory is used, Garbage Collection needs to occur and this 
