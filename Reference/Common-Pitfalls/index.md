@@ -203,9 +203,9 @@ If you need access to both the `UmbracoContext` and the `ApplicationContext` you
 * or inject these services into the services you are using 
 * or access each of these services from their own singleton constructs: `UmbracoContext.Current` and `ApplicationContext.Current`.
 
-## Using an Umbraco content items for volatile data 
+## Using Umbraco content items for volatile data 
 
-This is one of the Umbraco anti-patterns and could very well cause your site to perform ultra poorly. 
+This is one of the worst Umbraco anti-patterns and could very well cause your site to perform ultra poorly. 
 
 Umbraco's content should not be used for volatile data, Umbraco's APIs and the way Umbraco's data is persisted
 was never designed for this. If you need to store/write/track data that changes a lot you should use a 
@@ -255,6 +255,10 @@ The primary reasons your data will become out of sync are:
 
 It is not recommended to rebuild your indexes unless you absolutely need to and if you need to do this often then it is 
 advised to determine why and to try to resolve the underlying problem.
+
+## Performing lookups and logic in Examine events
+
+_TODO: ...._
 
 ## RenderTemplate
 
@@ -408,7 +412,7 @@ is for the Garbage Collector == more performance problems. Even worse is when yo
 large items in memory, they will remain in memory for a long time because they'll end up in something called "Generation 3" which the 
 GC tries to ignore for as long as possible because it knows it's gonna take a lot of resources to cleanup!
 
-So how do you avoid allocating all of these `IPublishedContent` instances? 
+So if you have a huge site and are running Linq queries over tons of content, how do you avoid allocating all of these `IPublishedContent` instances? 
 
 Instead of iterating over (and thus creating them) we can use regular old `XPath` or use the `XPathNodeIterator` directly:
 
@@ -416,6 +420,38 @@ Instead of iterating over (and thus creating them) we can use regular old `XPath
 * `UmbracoHelper.ContentQuery.TypedContentSingleAtXPath`
 * `UmbracoContext.ContentCache.GetXPathNavigator`
 
-Here's how to turn the above into a much more efficient query:
+The methods `TypedContentAtXPath` and `TypedContentSingleAtXPath` will return the resulting `IPublishedContent` instances based
+on your XPath query but without creating interim `IPublishedContent` instances to perform the query against. 
 
-_TODO: Finish this...._
+These 2 methods can certainly help avoid using Linq (and as such allocating IPublishedContent instances) 
+to perform almost any content filtering you want. 
+
+## XPathNodeIterator - for when you need direct XML support
+
+Using the `GetXPathNavigator` method is a little more advanced but can come in very handy to solve some performance problems when
+dealing with a ton of content. Of course when you use this method you'll now be working directly with XML.
+
+For example, here's how to turn the above recipe query into a much more efficient query 
+without allocating any `IPublishedContent` instances:
+
+```
+@{
+    var recipeNode = Umbraco.TypedContent(3251);
+    if (recipeNode == null) throw new NullReferenceException("No node found with ID " + 3251);
+    var xPath = $"//* [@isDoc and @id='{recipeNode.Id}']/* [@isDoc]";
+}
+<ul>
+@foreach(var recipe in UmbracoContext.ContentCache.GetXPathNavigator()
+                            .Select(xPath).Cast<XPathNavigator>()
+                            .OrderByDescending(x =>
+                                {
+                                    var vote = 0;
+                                    int.TryParse(x.GetAttribute("@id", ""), out vote);
+                                    return vote;
+                                })
+                            .Take(10))
+{
+    <li><a href="@recipe.Url">@recipe.GetAttribute("@nodeName", "")</a></li>    
+}
+</ul>
+```
