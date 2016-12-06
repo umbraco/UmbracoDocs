@@ -25,37 +25,40 @@ _This example shows how you can access all sorts of Umbraco services in a `Surfa
 relying on Singletons. These same properties exist on all of Umbraco's base clases that you commonly use
 including razor views._ 
 
-```csharp
-public class ContactFormSurfaceController: SurfaceController
-{
-    [HttpPost]
-    public ActionResult SubmitForm(ContactFormModel model)
-    {        
-        //TODO: All normal form processing logic is left out of this example for brevity
 
-        //You can access all of these because they are properties of the base class,
-        // notice there is no Singleton accessors used!
+    public class ContactFormSurfaceController: SurfaceController
+    {
+        [HttpPost]
+        public ActionResult SubmitForm(ContactFormModel model)
+        {        
+            //TODO: All normal form processing logic is left out of this example for brevity
 
-        //ProfilingLogger:
-        using (ProfilingLogger.TraceDuration<ContactFormSurfaceController>("start", "stop"))
-        {
-            //Logger:
-            Logger.Warn<ContactFormSurfaceController>("warning!");
-            //MembershipHelper:
-            Members.CurrentUserName;
-            //ServiceContext:
-            Services.ContentService.GetById(1234);
-            //ApplicationContext:
-            ApplicationContext.ApplicationCache.RuntimeCache.GetCacheItem("myKey", () => "hello world");
-            //UmbracoContext:
-            UmbracoContext.UrlProvider.GetUrl(4321);
-            //DatabaseContext:
-            DatabaseContext.Database.ExecuteScalar<int>("SELECT COUNT(*) FROM umbracoNode");   
-        }        
+            //You can access all of these because they are properties of the base class,
+            // notice there is no Singleton accessors used!
+
+            //ProfilingLogger:
+            using (ProfilingLogger.TraceDuration<ContactFormSurfaceController>("start", "stop"))
+            {
+                //Logger:
+                Logger.Warn<ContactFormSurfaceController>("warning!");
+                
+                //MembershipHelper:
+                Members.CurrentUserName;
+                
+                //ServiceContext:
+                Services.ContentService.GetById(1234);
+                
+                //ApplicationContext:
+                ApplicationContext.ApplicationCache.RuntimeCache.GetCacheItem("myKey", () => "hello world");
+                
+                //UmbracoContext:
+                UmbracoContext.UrlProvider.GetUrl(4321);
+                
+                //DatabaseContext:
+                DatabaseContext.Database.ExecuteScalar<int>("SELECT COUNT(*) FROM umbracoNode");   
+            }        
+        }
     }
-}
-```
-
 
 So next time you are using `ApplicationContext.Current` or `UmbracoContext.Current` think "Why am I doing this?", 
 "Is this already exposed as a property of the base class that I'm using?", "I'm using Dependency Injection, I should be injecting this instance into my class."
@@ -66,9 +69,7 @@ So next time you are using `ApplicationContext.Current` or `UmbracoContext.Curre
 
 __Example 1:__
 
-```csharp
-private static _umbracoHelper = new UmbracoHelper(UmbracoContext.Current); 
-```
+`private static _umbracoHelper = new UmbracoHelper(UmbracoContext.Current);`
 
 This practice can cause memory leaks along with inconsistent data results when using this `_umbracoHelper` instance. 
 
@@ -97,18 +98,12 @@ cache copy is stuck in memory, or that the `Security` property of the context wi
 
 __Other Examples:__
 
-```csharp
-private static _umbracoContext = UmbracoContext.Current;
-```
+    private static _umbracoContext = UmbracoContext.Current;
 
-```csharp
-//MembershipHelper is also a request scoped instance - it relies either on an UmbracoContext or an HttpContext
-private static _membershipHelper = new MembershipHelper(UmbracoContext.Current);
-```
+    //MembershipHelper is also a request scoped instance - it relies either on an UmbracoContext or an HttpContext
+    private static _membershipHelper = new MembershipHelper(UmbracoContext.Current);
 
-```csharp
-private static _request = HttpContext.Current.Request;
-```
+    private static _request = HttpContext.Current.Request;
 
 ## Querying with Descendants, DescendantsOrSelf
 
@@ -117,26 +112,25 @@ Here's a particularly bad scenario:
 
 * You have 10,000 content items in your tree
 * Your tree structure is something like this:
-```
-- Root
--- Home
---- Blog (list view with 9495 nodes)
---- Office Locations (list view with 500 nodes)
---- About Us
---- Contact Us
-```
+
+    - Root
+    -- Home
+    --- Blog (list view with 9495 nodes)
+    --- Office Locations (list view with 500 nodes)
+    --- About Us
+    --- Contact Us
+
 
 You create a menu on your Home page like:
 
-```
-<ul>
-    <li><a href="@Model.Site().Url">@Model.Site().Name</a></li>
-    @foreach(var node in Model.Site().DescendantsOrSelf().Where(x => x.Level == 2)) 
-    {
-        <li><a href="@node.Url">@node.Name</a></li>
-    }
-</ul>
-```
+    <ul>
+        <li><a href="@Model.Site().Url">@Model.Site().Name</a></li>
+        @foreach(var node in Model.Site().DescendantsOrSelf().Where(x => x.Level == 2)) 
+        {
+            <li><a href="@node.Url">@node.Name</a></li>
+        }
+    </ul>
+
 
 Which just renders out: _Home, Blog, Office Locations, About Us, Contact Us_
 
@@ -167,33 +161,29 @@ your website is going to suffer.
 Here's a common pitfall that is seen. Let's continue the menu example, in this example the menu is going to be rendered
 using the current page's root node::
 
-```
-<ul>
-    <li><a href="@Model.Site().Url">@Model.Site().Name</a></li>
-    @foreach(var node in Model.Site().Children) 
-    {
-        <li><a href="@node.Url">@node.Name</a></li>
-    }
-</ul>
-```
+    <ul>
+        <li><a href="@Model.Site().Url">@Model.Site().Name</a></li>
+        @foreach(var node in Model.Site().Children) 
+        {
+            <li><a href="@node.Url">@node.Name</a></li>
+        }
+    </ul>
 
 The syntax `@Model.Content.Site()` is actually shorthand for doing this:
 `Model.Content.AncestorsOrSelf(1)` which means it is going to traverse up the tree until it reaches an ancestor node
 with a level of one. As mentioned above, traversing costs resources and in this example there is 3x traversals being done
 for the same value. Instead this can be rewritten as:
 
-```
-@{
-    var site = @Model.Content.Site();
-}
-<ul>
-    <li><a href="@site.Url">@site.Name</a></li>
-    @foreach(var node in site.Children) 
-    {
-        <li><a href="@node.Url">@node.Name</a></li>
+    @{
+        var site = @Model.Content.Site();
     }
-</ul>
-```
+    <ul>
+        <li><a href="@site.Url">@site.Name</a></li>
+        @foreach(var node in site.Children) 
+        {
+            <li><a href="@node.Url">@node.Name</a></li>
+        }
+    </ul>
 
 ## Dynamics
 
@@ -235,13 +225,11 @@ that the data being queried is fast (comes from cache) and that you aren't inadv
 
 __For example__ when retrieving a content item in your views:
 
-```csharp
-//Services access in your views :(
-var dontDoThis = ApplicationContext.Services.ContentService.GetById(123);
+    //Services access in your views :(
+    var dontDoThis = ApplicationContext.Services.ContentService.GetById(123);
 
-//Content cache access in your views :)
-var doThis = Umbraco.TypedContent(123);
-```
+    //Content cache access in your views :)
+    var doThis = Umbraco.TypedContent(123);
 
 If you are using `Application.Services...` in your views, you should figure out why this is being done and in most cases remove this logic.   
 
@@ -350,45 +338,44 @@ There's a few reasons why this can become a huge performance problem:
 Here's an example of how this can go wrong very quickly:
 
 * Your tree structure is something like this:
-```
-- Root
--- Home
---- Recipes (node id = 3251, list view with 5000 nodes)
---- About Us
---- Contact Us
-```
-* You have a custom model that looks like:
-```csharp
-public class RecipeModel : PublishedContentWrapped
-{
-    public RecipeModel(IPublishedContent content) : base(content)
-    {
-        RelatedRecipes = content 
-            .Parent           
-            .Children
-            .Where(x => x.GetPropertyValue<IEnumerable<int>>("related")
-                            .Contains(content.Id));
 
-        Votes = content.GetPropertyValue<int>("votes");
+    - Root
+    -- Home
+    --- Recipes (node id = 3251, list view with 5000 nodes)
+    --- About Us
+    --- Contact Us
+
+* You have a custom model that looks like:
+
+    public class RecipeModel : PublishedContentWrapped
+    {
+        public RecipeModel(IPublishedContent content) : base(content)
+        {
+            RelatedRecipes = content 
+                .Parent           
+                .Children
+                .Where(x => x.GetPropertyValue<IEnumerable<int>>("related")
+                                .Contains(content.Id));
+
+            Votes = content.GetPropertyValue<int>("votes");
+        }
+
+        public int Votes { get; private set; }
+        public IEnumerable<RecipeModel> RelatedRecipes { get; private set; }
     }
 
-    public int Votes { get; private set; }
-    public IEnumerable<RecipeModel> RelatedRecipes { get; private set; }
-}
-```
 * You then run the following code to show to show the favorites 
-```
-@var recipeNode = Umbraco.TypedContent(3251);
-<ul>
-@foreach(var recipe in recipeNode.Children
-                            .Select(x => new RecipeModel(x))
-                            .OrderByDescending(x => x.Votes)
-                            .Take(10))
-{
-    <li><a href="@recipe.Url">@recipe.Name</a></li>    
-}
-</ul>
-```
+
+    @var recipeNode = Umbraco.TypedContent(3251);
+    <ul>
+    @foreach(var recipe in recipeNode.Children
+                                .Select(x => new RecipeModel(x))
+                                .OrderByDescending(x => x.Votes)
+                                .Take(10))
+    {
+        <li><a href="@recipe.Url">@recipe.Name</a></li>    
+    }
+    </ul>
 
 __Ouch!__ So just to show the top 10 voted recipe's this will end up doing the following:
 
@@ -409,38 +396,36 @@ Which leads us on to the next anti-pattern...
 
 The above example could be rewritten like this:
 
-```csharp
-public class RecipeModel : PublishedContentWrapped
-{
-    public RecipeModel(IPublishedContent content) : base(content)
+    public class RecipeModel : PublishedContentWrapped
     {
-    }
-
-    private int? _votes;
-    public int Votes 
-    {
-        get 
+        public RecipeModel(IPublishedContent content) : base(content)
         {
-            //Lazy load the property value and ensure it's not re-resolved once it's loaded
-            return _votes ?? (_votes = GetPropertyValue<int>("votes"));
-        } 
-    }
+        }
 
-    //Just return the Ids, they can be resolved to IPublishedContent instances in the view or elsewhere,
-    // doesn't need to be in the model - this would also be bad if the model was cached since all of the
-    // related entities would end up in the cache too.
-    private List<int> _related;
-    public IEnumerable<int> RelatedRecipes
-    {
-        get 
+        private int? _votes;
+        public int Votes 
         {
-            //Lazy load the property value and ensure it's not re-resolved once it's loaded            
-            return _related ?? 
-                (_related = GetPropertyValue<IEnumerable<int>>("related").ToList());
-        } 
-    }    
-}
-```
+            get 
+            {
+                //Lazy load the property value and ensure it's not re-resolved once it's loaded
+                return _votes ?? (_votes = GetPropertyValue<int>("votes"));
+            } 
+        }
+
+        //Just return the Ids, they can be resolved to IPublishedContent instances in the view or elsewhere,
+        // doesn't need to be in the model - this would also be bad if the model was cached since all of the
+        // related entities would end up in the cache too.
+        private List<int> _related;
+        public IEnumerable<int> RelatedRecipes
+        {
+            get 
+            {
+                //Lazy load the property value and ensure it's not re-resolved once it's loaded            
+                return _related ?? 
+                    (_related = GetPropertyValue<IEnumerable<int>>("related").ToList());
+            } 
+        }    
+    }
 
 This is slightly better:
 
@@ -453,17 +438,15 @@ of these objects is now __5000__.
 This is still not great though. There really isn't much reason to create a `RecipeModel` just to use it as a filter,
 this is allocating a lot of objects to memory for no real reason. This could just as easily be written like:
 
-```
-@var recipeNode = Umbraco.TypedContent(3251);
-<ul>
-@foreach(var recipe in recipeNode.Children
-                            .OrderByDescending(x => x.GetPropertyValue<int>("votes"))
-                            .Take(10))
-{
-    <li><a href="@recipe.Url">@recipe.Name</a></li>    
-}
-</ul>
-```
+    @var recipeNode = Umbraco.TypedContent(3251);
+    <ul>
+    @foreach(var recipe in recipeNode.Children
+                                .OrderByDescending(x => x.GetPropertyValue<int>("votes"))
+                                .Take(10))
+    {
+        <li><a href="@recipe.Url">@recipe.Name</a></li>    
+    }
+    </ul>
 
 This is slightly better:
 
@@ -501,24 +484,22 @@ dealing with a ton of content. Of course when you use this method you'll now be 
 For example, here's how to turn the above recipe query into a much more efficient query 
 without allocating any `IPublishedContent` instances:
 
-```
-@{
-    var recipeNode = Umbraco.TypedContent(3251);
-    if (recipeNode == null) throw new NullReferenceException("No node found with ID " + 3251);
-    var xPath = $"//* [@isDoc and @id='{recipeNode.Id}']/* [@isDoc]";
-}
-<ul>
-@foreach(var recipe in UmbracoContext.ContentCache.GetXPathNavigator()
-                            .Select(xPath).Cast<XPathNavigator>()
-                            .OrderByDescending(x =>
-                                {
-                                    var vote = 0;
-                                    int.TryParse(x.GetAttribute("@id", ""), out vote);
-                                    return vote;
-                                })
-                            .Take(10))
-{
-    <li><a href="@recipe.Url">@recipe.GetAttribute("@nodeName", "")</a></li>    
-}
-</ul>
-```
+    @{
+        var recipeNode = Umbraco.TypedContent(3251);
+        if (recipeNode == null) throw new NullReferenceException("No node found with ID " + 3251);
+        var xPath = $"//* [@isDoc and @id='{recipeNode.Id}']/* [@isDoc]";
+    }
+    <ul>
+    @foreach(var recipe in UmbracoContext.ContentCache.GetXPathNavigator()
+                                .Select(xPath).Cast<XPathNavigator>()
+                                .OrderByDescending(x =>
+                                    {
+                                        var vote = 0;
+                                        int.TryParse(x.GetAttribute("@id", ""), out vote);
+                                        return vote;
+                                    })
+                                .Take(10))
+    {
+        <li><a href="@recipe.Url">@recipe.GetAttribute("@nodeName", "")</a></li>    
+    }
+    </ul>
