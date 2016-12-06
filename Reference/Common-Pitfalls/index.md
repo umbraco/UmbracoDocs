@@ -233,6 +233,16 @@ your application.
 Your views should rely only on the readonly data access of the `UmbracoHelper` and the properties/methods that it exposes. This ensures
 that the data being queried is fast (comes from cache) and that you aren't inadvertently making database changes.
 
+__For example__ when retrieving a content item in your views:
+
+```csharp
+//Services access in your views :(
+var dontDoThis = ApplicationContext.Services.ContentService.GetById(123);
+
+//Content cache access in your views :)
+var doThis = Umbraco.TypedContent(123);
+```
+
 If you are using `Application.Services...` in your views, you should figure out why this is being done and in most cases remove this logic.   
 
 ## Using UmbracoContext to access ApplicationContext
