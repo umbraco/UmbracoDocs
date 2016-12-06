@@ -110,8 +110,7 @@ __Other Examples:__
 It's not 100% bad that you use these queries, you just need to understand the implications. 
 Here's a particularly bad scenario:
 
-* You have 10,000 content items in your tree
-Your tree structure is something like this:
+You have 10,000 content items in your tree and your tree structure is something like this:
 
     - Root
     -- Home
