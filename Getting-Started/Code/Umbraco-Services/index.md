@@ -1,6 +1,6 @@
 #Using Umbraco's service APIs
 
-_Whenever you need to modify an entity that Umbraco stores in the database - there is a service API available for it. this means that
+_Whenever you need to modify an entity that Umbraco stores in the database - there is a service API available for it.  This means that
 you can create, update and delete any of the core Umbraco entities directly from your custom code._
 
 
@@ -58,4 +58,4 @@ There is full api coverage of all Umbraco core entities:
 ###Umbraco TV
 - [Chapter: Content API](http://umbraco.tv/videos/umbraco-v7/developer/fundamentals/content-api/)
 - [Chapter: Media API](http://umbraco.tv/videos/umbraco-v7/developer/fundamentals/media-api/)
-- Chapter: Member API *(Comming soon)*
+- Chapter: Member API *(Coming soon)*
