@@ -257,6 +257,10 @@ If you need access to both the `UmbracoContext` and the `ApplicationContext` you
 * or inject these services into the services you are using 
 * or access each of these services from their own singleton constructs: `UmbracoContext.Current` and `ApplicationContext.Current`.
 
+The reason why this is bad practice is because it has caused confusion and problems in the past. In some cases developers would always
+access the `ApplicationContext` from the `UmbracoContext` but as we now know, this won't always work because the `UmbracoContext` is a request
+scoped instances which isn't going to be available when executing code in a non-request scope (i.e. background thread) 
+
 ## Using Umbraco content items for volatile data 
 
 This is one of the worst Umbraco anti-patterns and could very well cause your site to perform ultra poorly. 
