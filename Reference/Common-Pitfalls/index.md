@@ -111,7 +111,7 @@ It's not 100% bad that you use these queries, you just need to understand the im
 Here's a particularly bad scenario:
 
 * You have 10,000 content items in your tree
-* Your tree structure is something like this:
+Your tree structure is something like this:
 
     - Root
     -- Home
@@ -119,7 +119,6 @@ Here's a particularly bad scenario:
     --- Office Locations (list view with 500 nodes)
     --- About Us
     --- Contact Us
-
 
 You create a menu on your Home page like:
 
@@ -139,15 +138,13 @@ this means it is going to allocate 10,000 `IPublishedContent` instances in memor
 
 This can easily be re-written as:
 
-```
-<ul>
-    <li><a href="@Model.Site().Url">@Model.Site().Name</a></li>
-    @foreach(var node in Model.Site().Children) 
-    {
-        <li><a href="@node.Url">@node.Name</a></li>
-    }
-</ul>
-```
+    <ul>
+        <li><a href="@Model.Site().Url">@Model.Site().Name</a></li>
+        @foreach(var node in Model.Site().Children) 
+        {
+            <li><a href="@node.Url">@node.Name</a></li>
+        }
+    </ul>
 
 In many cases you might know that there is only ever going to be a small number of Descendants and if so then go nuts and use Descendants or DescendantsOrSelf, 
 it's just important to be aware of the implications of what you are writing.  
@@ -336,8 +333,7 @@ There's a few reasons why this can become a huge performance problem:
 * Creating an object can inadvertently happen a vast number of times, expecially when using Linq
 
 Here's an example of how this can go wrong very quickly:
-
-* Your tree structure is something like this:
+Your tree structure is something like this:
 
     - Root
     -- Home
@@ -345,7 +341,7 @@ Here's an example of how this can go wrong very quickly:
     --- About Us
     --- Contact Us
 
-* You have a custom model that looks like:
+You have a custom model that looks like:
 
     public class RecipeModel : PublishedContentWrapped
     {
@@ -364,7 +360,7 @@ Here's an example of how this can go wrong very quickly:
         public IEnumerable<RecipeModel> RelatedRecipes { get; private set; }
     }
 
-* You then run the following code to show to show the favorites 
+You then run the following code to show to show the favorites 
 
     @var recipeNode = Umbraco.TypedContent(3251);
     <ul>
