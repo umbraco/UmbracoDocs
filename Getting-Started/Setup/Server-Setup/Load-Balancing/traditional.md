@@ -1,10 +1,11 @@
-#Traditional load balancing
+#Traditional (Legacy/Deprecated) load balancing
 
 _Information on how to deploy Umbraco in a traditional Load Balanced scenario and other details to consider when setting up Umbraco for load balancing._
 
-Traditional load balancing must be used for Umbraco versions less than 7.3.0. If you are using Umbraco 7.3.0+ then it is highly recommended to use the new **[Flexible Load Balancing](index.md)**
+Traditional load balancing must be used for Umbraco versions less than 7.3.0. 
+__If you are using Umbraco 7.3.0+ then it is highly recommended to use the new [Flexible Load Balancing](index.md)__
 
-**Be sure you read the [Overview](index.md) before you begin!**
+__Be sure you read the [Overview](index.md) before you begin!__
 
 ##Design
 These instructions make the following assumptions:
