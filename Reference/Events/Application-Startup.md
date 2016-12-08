@@ -85,6 +85,13 @@ If you want more control over execution you can override these properties:
 * ExecuteWhenDatabaseNotConfigured
 	* By default this is false but if you want these methods to fire even if the database is not installed/ready then you can overrride this property and return true
 
+### IBootManager (EXPERT)
+
+In some cases you may be using a custom `IBootManager` which has the following methods: `Initialize`, `Startup`, `Complete`, this sequence of events and the logic that should be performed in these methods is exactly the same as the methods mentioned above in this order: 
+* `Initialize` --> `ApplicationInitialized`
+* `Startup` --> `ApplicationStarting`
+* `Complete` --> `ApplicationStarted`
+
 ## Binding to HttpApplication events
 
 Umbraco allows you to bind directly to HttpApplication events which is very handy since normally you would require an HttpModule to bind to these types of events. The HttpApplication events are listed here: [http://msdn.microsoft.com/en-us/library/system.web.httpapplication_events(v=vs.110).aspx](http://msdn.microsoft.com/en-us/library/system.web.httpapplication_events(v=vs.110).aspx)
