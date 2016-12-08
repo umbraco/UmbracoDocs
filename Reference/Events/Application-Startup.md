@@ -8,7 +8,7 @@ In order to bind to certain events in the Umbraco application you need to make t
 
 _if you are using a version previous to 6.1.0, see [here](../Events/application-startup.md) for application event details_
 
-The ApplicationEventHandler is an easy way to hook in to the Umbraco application startup process. It is a base class so all you need to do is override the methods that you wish to handle. It is important to know the difference between each of the methods (information is below). Most of the time you will just want to execute code on the *ApplicationStarted* method.
+The ApplicationEventHandler is an easy way to hook in to the Umbraco application startup process. It is a base class so all you need to do is override the methods that you wish to handle. It is important to know the difference between each of the methods (information is below). Almost always, you just want to use the __ApplicationStarted__ method.
 
 This example will populate some default data for newly created content items:
 
@@ -58,16 +58,25 @@ This example will populate some default data for newly created content items:
         }
     }
 
+## Startup methods
+
 These methods only execute if the application is installed and the database is ready. This will prevent many errors from occurring especially if Umbraco is not installed yet.
 
-The methods that can be overridden are:
+It's important to understand the difference between the methods that you can use! The methods that can be used/overridden are:
 
-* ApplicationInitialized
-	* Executes after the ApplicationContext and plugin resolvers are created
-* ApplicationStarting
-	* Executes before resolution is frozen so that you are able to modify any plugin resolvers
 * ApplicationStarted
-	* Executes after resolution is frozen so you can get objects from the plugin resolvers. **This will be the most common method to put logic in** unless you require to do anything out of the ordinary.
+	* __This will be the most common method to put logic in__
+	* Executes when the Umbraco boot sequence is complete, after resolution is frozen so you can retrieve objects from the plugin resolvers. 
+	* You could access the Umbraco services in this method if you needed to
+	* This executes __before__ ASP.NET has booted, before the global.asax Init method has executed and before any HttpModules have been initialized
+* ApplicationInitialized (EXPERT)
+	* Executes after the `ApplicationContext` and plugin resolvers are created
+	* This could be used to create your own plugin resolvers, otherwise it should not be used
+	* Never execute any logic or access any Umbraco services in this method
+* ApplicationStarting (EXPERT)
+	* Executes before resolution is frozen so that you are able to modify any plugin resolvers
+	* This could be used to modify any plugin resolvers (to add/remove/filter them) - this is the generally the only reason to use this method
+	* Never execute any logic or access any Umbraco services in this method
 
 If you want more control over execution you can override these properties:
 
