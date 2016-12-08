@@ -64,19 +64,22 @@ These methods only execute if the application is installed and the database is r
 
 It's important to understand the difference between the methods that you can use! The methods that can be used/overridden are:
 
+* ApplicationInitialized (EXPERT)
+	* Executes after the `ApplicationContext` and plugin resolvers are created
+	* This could be used to create your own plugin resolvers, otherwise it should not be used
+	* Never execute any logic or access any Umbraco services in this method
+	* _Executes 1st_
+* ApplicationStarting (EXPERT)
+	* Executes before resolution is frozen so that you are able to modify any plugin resolvers
+	* This could be used to modify any plugin resolvers (to add/remove/filter them) - this is the generally the only reason to use this method
+	* Never execute any logic or access any Umbraco services in this method
+	* _Executes 2nd_
 * ApplicationStarted
 	* __This will be the most common method to put logic in__
 	* Executes when the Umbraco boot sequence is complete, after resolution is frozen so you can retrieve objects from the plugin resolvers. 
 	* You could access the Umbraco services in this method if you needed to
 	* This executes __before__ ASP.NET has booted, before the global.asax Init method has executed and before any HttpModules have been initialized
-* ApplicationInitialized (EXPERT)
-	* Executes after the `ApplicationContext` and plugin resolvers are created
-	* This could be used to create your own plugin resolvers, otherwise it should not be used
-	* Never execute any logic or access any Umbraco services in this method
-* ApplicationStarting (EXPERT)
-	* Executes before resolution is frozen so that you are able to modify any plugin resolvers
-	* This could be used to modify any plugin resolvers (to add/remove/filter them) - this is the generally the only reason to use this method
-	* Never execute any logic or access any Umbraco services in this method
+	* _Executes 3rd_
 
 If you want more control over execution you can override these properties:
 
