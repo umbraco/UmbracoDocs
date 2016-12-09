@@ -15,7 +15,7 @@ it makes your code very difficult to test but more importantly using Singletons 
 to manage, APIs become leaky and ultimately you'll end up with more problems than when you started.
 
 In all Umbraco base classes that you'll normally use, these object are already exposed as properties, so please use these instead!
-For example, all Razor views that Umbraco creates expose an `Umbraco` property which is the UmbracoContext, they expose an `ApplicationContext` 
+For example, all Razor views that Umbraco creates expose an `UmbracoContext` property which is the UmbracoContext, they expose an `ApplicationContext` 
 property which is Umbraco's `ApplicationContext`. The other base classes that expose all the instances you need are things like `SurfaceController`,
 `UmbracoApiController`, `UmbracoController`, `RenderMvcController`, `UmbracoUserControl`, `UmbracoPage`, `UmbracoHttpHandler`, and the list goes on...
 
@@ -235,7 +235,7 @@ You should not access the `ApplicationContext` via the `UmbracoContext`.
 
 For example: `UmbracoContext.Current.Application` _<-- this is now deprecated/obsolete_
 
-If you need access to both the `UmbracoContext` and the `ApplicationContext` you should either 
+If you need access to both the `UmbracoContext` and the `ApplicationContext`, you should do one of the following:
 
 * Access these services via the properties exposed on the Umbraco base class you are using (i.e. Controllers, views, controls, http handler, etc...)
 * or inject these services into the services you are using 
@@ -243,7 +243,7 @@ If you need access to both the `UmbracoContext` and the `ApplicationContext` you
 
 The reason why this is bad practice is because it has caused confusion and problems in the past. In some cases developers would always
 access the `ApplicationContext` from the `UmbracoContext` but as we now know, this won't always work because the `UmbracoContext` is a request
-scoped instances which isn't going to be available when executing code in a non-request scope (i.e. background thread) 
+scoped instances which isn't going to be available when executing code in a non-request scope (i.e. background thread).
 
 ## Using Umbraco content items for volatile data 
 
