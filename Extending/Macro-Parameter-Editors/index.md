@@ -1,5 +1,7 @@
 #Macro Parameter Editors
 
+Seems to be depricated
+
 Every macro can contain parameters. There are a few default types.  A few default types are 
 
 * bool
