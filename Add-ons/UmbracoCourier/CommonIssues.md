@@ -35,7 +35,7 @@ http://nightly.umbraco.org/UmbracoCourier/2.7.8/nightly%20builds/
 
 And copy to /bin
 
-###Courier cannot pacage data type, Could not load assembly for type
+###Courier cannot package data type, Could not load assembly for type
 *Caused by* Courier not able to find a data types assembly or .cs class file which contains the Interface used
 by the data type
 
