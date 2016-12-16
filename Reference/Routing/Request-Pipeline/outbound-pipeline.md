@@ -27,7 +27,7 @@ To create a new Url segment provider, implement the following interface:
       string GetUrlSegment(IContentBase content);
     }
 
-The returned string will be your URL segment for this node.  You are free to return whatever string you like.
+The returned string will be your URL segment for this node.  You are free to return whatever string you like, but it cannot contain url segment separators `/` characters as this would create additional "segments". So something like `5678/swibble` is not allowed.
 
 #### Example
 
