@@ -8,3 +8,6 @@ Bootcamp is native vm softvare for Mac OS. See how to install Windows with Bootc
 Parallels is third party and enables integration between Mac OS and Windows ie. running Windows Apps from the dock. Get it [here](https://www.parallels.com). 
 
 When your vm is running windows, follow the instructions for [installing Umbraco](index.md).
+
+###VMWare Fusion
+VMWare Fusion is a third party virtualization software which can be used to run Windows on your Mac.  Get it [here](http://www.vmware.com/products/fusion.html).  Just like with Parallels you should follow these [install instructions for Umbraco](index.md) after you have Windows installed.
