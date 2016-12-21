@@ -10,7 +10,7 @@ By default, Umbraco uses an instance of `PhysicalFileSystem` to handle the media
     
 `PhysicalFileSystem` implements the `IFileSystem` interface, and it is possible to replace it with a custom class - eg. if you want your media files stored on Azure or something similar.
 
-If you configure Umbraco to use a custom file system provider for media, you most likely won't need to access the implementation directly. Umbraco uses a wrapper class called `MediaFileSystem`. Uou can get a reference to this wrapper class with the following code:
+If you configure Umbraco to use a custom file system provider for media, you most likely won't need to access the implementation directly. Umbraco uses a wrapper class called `MediaFileSystem`. You can get a reference to this wrapper class with the following code:
 
     MediaFileSystem media = FileSystemProviderManager.Current.GetFileSystemProvider<MediaFileSystem>();
 
