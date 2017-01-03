@@ -150,7 +150,7 @@ Returns all members in a given Group - same as "Role".
 Returns all members of a given Type
 
 ###.GetMembersByPropertyValue("city", "Horsens");
-Returns all Members, of any type, with a mathcing value in the property with the given property alias
+Returns all Members, of any type, with a mathcing value in the property with the given property alias. Note that the given property alias (first parameter) does not do an exact match. It does a "contains". So if you have two proerty aliases "city" and "birthCity" it will look for the value in both these fields.
 
 ###.GetMembersInRole(string role);
 Returns all members in a given Role
