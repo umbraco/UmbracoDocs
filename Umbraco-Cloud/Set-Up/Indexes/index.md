@@ -1,18 +1,15 @@
 # Index strategy for sites on Umbraco Cloud
-Umbraco utilizes Lucene indexes in order to fetch data in a fast way. Fetching data from an index is multiple times faster than having to go directly to the 
-database. 
+Umbraco utilizes Lucene indexes in order to fetch data in a fast way. Fetching data from an index is multiple times faster than having to go directly to the database. 
 
 The indexes are used in order to provide search capability in the backoffice (notice the search bar in the very top left of the backoffice), and they also serve as the cache for all metadata on media items.
 That means that once a media item is stored, metadata about the media item will be stored in the index, and fetched from it when requested.
 
 These indexes need to be kept in sync, and are required for Umbraco to start up. The way this is done, will directly affect your sites performance.
-When working on Umbraco Cloud, there is some key settings that changes, dependent on whether  you are working local or on your development/staging/live environment. 
-Working with Lucene indexes in Umbraco is done via an integration of Examine, which provides a simpler interface for interacting with the indexes. Tweaking settings is done through
-two key files; `~/Config/ExamineSettings.config` and `~/Config/ExamineIndexes.config`.
+When working on Umbraco Cloud, there is some key settings that changes, dependending on whether  you are working locally or on your development/staging/live environment. 
+Working with Lucene indexes in Umbraco is done via an integration of Examine, which provides a simpler interface for interacting with the indexes. Tweaking settings is done through two key configuration files; `~/Config/ExamineSettings.config` and `~/Config/ExamineIndexes.config`.
 
 ## ExamineSettings.config
-Using indexes is split up into two parts, the indexing part and the searching part. Both are defined in the `~/Config/ExamineSettings.config` file. Each part has a concept of providers
-and these are the one that we can do some tweaking on. 
+Using indexes is split up into two parts, the indexing part and the searching part. Both are defined in `~/Config/ExamineSettings.config`. Each part has the concept of providers and these are the ones that we can do some tweaking on. 
 A provider is defined as
 
     <add name="InternalIndexer" type="UmbracoExamine.UmbracoContentIndexer, UmbracoExamine"
