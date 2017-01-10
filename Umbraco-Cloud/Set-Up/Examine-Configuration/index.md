@@ -66,7 +66,7 @@ Example for the Internal index:
     <IndexSet SetName="InternalIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/Internal/"/>
 
 ## References
-* The .NET port of the original Lucene project. This is the library we implement in Umbraco - https://lucenenet.apache.org/
-* The original Java Lucene project - https://lucene.apache.org/
-* The source repository for Examine, which is the wrapper of the Lucene.NET implementation used in Umbraco - https://github.com/Shazwazza/Examine
-* A more detailed description of running you sites on Azure (which is a lot like running it Umbraco Cloud), this has a deeper description of the indexes and their values - https://cultiv.nl/blog/making-sure-your-umbraco-site-performs-on-azure/
+* [The .NET port of the original Lucene project](https://lucenenet.apache.org/). This is the library we implement in Umbraco
+* [The original Java Lucene project](https://lucene.apache.org/)
+* The [source repository for Examine](https://github.com/Shazwazza/Examine), which is the wrapper of the Lucene.NET implementation used in Umbraco
+* A [detailed description](https://cultiv.nl/blog/making-sure-your-umbraco-site-performs-on-azure/) of running you sites on Azure (Umbraco Cloud is running on Azure)
