@@ -9,7 +9,7 @@ When working on Umbraco Cloud, there is some key settings that changes, dependen
 Working with Lucene indexes in Umbraco is done via an integration of Examine, which provides a simpler interface for interacting with the indexes. Tweaking settings is done through two key configuration files; `~/Config/ExamineSettings.config` and `~/Config/ExamineIndexes.config`.
 
 ## ExamineSettings.config
-Using indexes is split up into two parts, the indexing part and the searching part. Both are defined in `~/Config/ExamineSettings.config`. Each part has the concept of providers and these are the ones that we can do some tweaking on. 
+The Examine settings are split into two parts, the internal index configuration and the external search configuration. Both are defined in `~/Config/ExamineSettings.config`. Each part has the concept of providers and these are the ones that we can do some tweaking on. 
 A provider is defined as
 
     <add name="InternalIndexer" type="UmbracoExamine.UmbracoContentIndexer, UmbracoExamine"
@@ -17,18 +17,17 @@ A provider is defined as
         supportProtected="true"
         analyzer="Lucene.Net.Analysis.WhitespaceAnalyzer, Lucene.Net"/>
 
-The above is the default indexer that indexes all content in an Umbraco installation. It comes with some attributes, but the important one for running Umbraco on Umbraco Cloud, is one that doesn't ship by default.
-Its `useTempStorage`. The attribute is very important as it defines where the indexes are stored. The trick is to store them on a location that is the fastest possible.
+The above is the default internal indexer for an Umbraco installation. In order to specify where the indexes are stored we need to add an attribute called `useTempStorage` to the providers.
 
-The following options is available 
-* default (meaning the setting isn't set)
+The following options are available 
+* `useTempStorage` is not set
   * This will store the indexes local to the files on the website, defaults to `~/App_Data/TEMP/ExamineIndexes`.
   * On Umbraco Cloud this location is in reality a network share, and is therefore slower than having the files stored locally.
   * The indexes will survive code change and configuration changes, but is in general slower than using `LocalOnly`
-* `LocalOnly`
+* `useTempStorage="LocalOnly"`
   * This setting is default on Umbraco Cloud. It will store the indexes in ASP.NET Temporary storage. The ASP.NET Temporary storage is local to the website and therefore the fastest place to store the files.
-  Trouble with having the files here, is that ASP.NET temp storage will be wiped and needs to rebuilds again, whenever a code change or configuration change happens.
-* `Sync`
+  Trouble with having the files here, is that ASP.NET temp storage will be wiped and needs to rebuild again, whenever a code change or configuration change happens.
+* `useTempStorage="Sync"`
   * Sync is a "Best of both"-option, but it also has some drawbacks. This will store the indexes in the default location, meaning `~/App_Data/TEMP/ExamineIndexes` AND store them in ASP.NET Temporary storage.
   The system will then write to both locations, but only read from the ASP.NET Temporary storage. The advantage is that when a code change or configuration change happens, the ASP.NET Temporary files
   will be wiped, but instead of the system having to rebuild the indexes, it will just copy them from the `~/App_Data/TEMP/ExamineIndexes` location. This adds a bit to the startup time, but if the site contains a large
@@ -37,7 +36,7 @@ The following options is available
 The conclusion on the settings is that the default setting on Umbraco Cloud is `LocalOnly`, we recommend this setting for most sites. 
 For your local development, `LocalOnly` will be a pain, and therefore it should just not have the setting at all. 
 Finally, if your site has a large amount of content and media, you should try out `Sync`. You will notice the need for `Sync` by your site having long startup time (speaking many minutes).
-On Umbraco Cloud we are adding ensuring that the ExamineSettings.config is running with `useTempStorage="LocalOnly"`. If you want to change this setting you need to add in a [Config Transform](../Config-Transforms/), that will change the settings.
+On Umbraco Cloud we are ensuring that the ExamineSettings.config is running with `useTempStorage="LocalOnly"`. If you want to change this setting you need to add in a [Config Transform](../Config-Transforms/), that will change the settings.
 And example would be this, if you need to change it to `Sync` for all indexes:
 
     <?xml version="1.0"?>
