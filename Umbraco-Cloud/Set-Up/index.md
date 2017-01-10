@@ -87,4 +87,4 @@ You can enable the availability of experimental features for your projects. This
  - [Working with Visual Studio](Visual-Studio/)
  - [Additional media topics](Media/)
  - [Config transforms for each environment](Config-Transforms/)
- - [Examine index management](/Examine-Configuration/)
+ - [Examine index management](Examine-Configuration/)
