@@ -20,13 +20,16 @@ A provider is defined as
 The above is the default internal indexer for an Umbraco installation. In order to specify where the indexes are stored we need to add an attribute called `useTempStorage` to the providers.
 
 The following options are available 
+
 * `useTempStorage` is not set
   * This will store the indexes local to the files on the website, defaults to `~/App_Data/TEMP/ExamineIndexes`.
   * On Umbraco Cloud this location is in reality a network share, and is therefore slower than having the files stored locally.
   * The indexes will survive code change and configuration changes, but is in general slower than using `LocalOnly`
+
 * `useTempStorage="LocalOnly"`
   * This setting is default on Umbraco Cloud. It will store the indexes in ASP.NET Temporary storage. The ASP.NET Temporary storage is local to the website and therefore the fastest place to store the files.
   Trouble with having the files here, is that ASP.NET temp storage will be wiped and needs to rebuild again, whenever a code change or configuration change happens.
+
 * `useTempStorage="Sync"`
   * Sync is a "Best of both"-option, but it also has some drawbacks. This will store the indexes in the default location, meaning `~/App_Data/TEMP/ExamineIndexes` AND store them in ASP.NET Temporary storage.
   The system will then write to both locations, but only read from the ASP.NET Temporary storage. The advantage is that when a code change or configuration change happens, the ASP.NET Temporary files
