@@ -70,8 +70,7 @@ There are two options to choose from with regards to a database environment:
 
 SQL CE is a good option if you want to get started quickly. You don't need to create a database in a server ahead of time and it's free. That said, it doesn't scale very well for sites with a large amount of content. Once you reach the point where SQL CE doesn't seem to cut it for your site, you can migrate it to a SQL Server database.
 
-To start using SQL CE, just choose it in the install wizzard: "*I want to use SQL CE 4, a free, quick-and-simple embedded database*".
-
+To start using SQL CE, just choose it in the install wizard: "*I want to use SQL CE 4, a free, quick-and-simple embedded database*".
 ###SQL Server 2008
 To be able to use SQL Server, you should setup an empty database before you can continue installing Umbraco. It's completely up to you how you want to configure this database, but make sure it's connectable over TCP/IP and that it has a SQL username and SQL password. (You can use Windows authentication, but that would require you to write your own connection string).
 
