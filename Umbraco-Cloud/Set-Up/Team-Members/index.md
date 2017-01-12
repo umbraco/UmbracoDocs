@@ -9,7 +9,7 @@ Roles for each environment can be set on the *Edit Team* page available from the
 
 * Admin: Has access to everything on a Project. An admin can Delete a project, and only admins can edit the Team (adding/removing other team members and changing permissions). An admin can deploy using Portal and has access to git.
 
-* Write: A team member with Write permissions can do everything on a Project except Delete, Rename and edit Team. A user with Write permissions is able to Deploy through the Portal and they have access to Development and Staging environments and the git repositories
+* Write: A team member with Write permissions can do everything on a Project except Delete and edit Team. A user with Write permissions is able to Deploy through the Portal and they have access to Development and Staging environments and the git repositories
 
 * Read: A team member with Read permissions can only view the Project in the Portal, and is not able to Deploy or change anything on the Project through the Portal.
 
