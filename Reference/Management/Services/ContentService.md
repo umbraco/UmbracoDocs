@@ -4,7 +4,7 @@
 
 The ContentService acts as a "gateway" to Umbraco data for operations which are related to Content.
 
-[Browse the API documentation for ContentService](/apidocs/csharp/api/Umbraco.Core.Services.ContentService.html).
+[Browse the API documentation for ContentService](https://our.umbraco.org/apidocs/csharp/api/Umbraco.Core.Services.ContentService.html).
 
  * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
