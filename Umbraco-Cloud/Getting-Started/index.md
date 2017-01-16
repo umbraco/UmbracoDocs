@@ -5,8 +5,11 @@ We're excited you have decided to use Umbraco Cloud!
 Since Umbraco Cloud _is_ Umbraco we thought we'd stick with a name that describes what it is. So there you go.
 
 ## Projects and Environments
-In Umbraco Cloud we organize your work into projects which are made of environments, teams, settings, and other related resources like databases and file storage. A project is comprised of two environments, _development_ and _live_. If needed a project based on the _Support_ plan can have an additional staging environment so the structure is _development_, _staging_ and _live_.
+In Umbraco Cloud we organize your work into projects which are made of environments, teams, settings, and other related resources like databases and file storage. A project is comprised of different numbers of environments depending on which plan you too. If you choose the _Starter_ plan then the project comes with one _live_ environment and you have the possibility to add a _development_ environment and a _staging_ environment. If needed a project based on the _Professtional_ plan can have an additional staging environment so the structure is _development_, _staging_ and _live_.
 
+When your project is running in trial mode your _live_ environment is also projected with the initial authorization dialog. The initial authorization dialog will be removed when you pay for the project. Then it´s only _development_ environment and _staging_ environment that has the initial authorization dialog added. 
+
+If you need to get access to allow any client to access your development or staging sites without the initial authorization dialog then you can whitelist the IP addrese. See [IP Whitelist](https://our.umbraco.org/documentation/Umbraco-Cloud/Set-Up/#ip-whitelist) for more information.
 ![environment](images/environment.png)
 
 ####Set up and Code
