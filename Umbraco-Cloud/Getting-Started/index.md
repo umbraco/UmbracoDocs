@@ -9,7 +9,7 @@ In Umbraco Cloud we organize your work into projects which are made of environme
 
 When your project is running in trial mode your _live_ environment is also projected with the initial authorization dialog. The initial authorization dialog will be removed when you pay for the project. Then it´s only _development_ environment and _staging_ environment that has the initial authorization dialog added. 
 
-If you need to get access to allow any client to access your development or staging sites without the initial authorization dialog then you can whitelist the IP addrese. See [IP Whitelist](https://our.umbraco.org/documentation/Umbraco-Cloud/Set-Up/#ip-whitelist) for more information.
+If you need to allow any client to access your development or staging sites without the initial authorization dialog then you can whitelist the IP addrese. See [IP Whitelist](https://our.umbraco.org/documentation/Umbraco-Cloud/Set-Up/#ip-whitelist) for more information.
 ![environment](images/environment.png)
 
 ####Set up and Code
