@@ -12,6 +12,10 @@ Please refer to this topic for troubleshooting structure deploys and restores:
 
  - [Errors during structure deployment/restore](Structure-Error/)
 
+## Known issues with 3rd party packages / datatypes
+Please refer to this topic for troubleshooting specific packages or datatypes that are not built into Umbraco
+- [Known issues with 3rd party packages / datatypes](Plugins-Known-Issues)
+
 ##Deployment issues
 The deployment process is complex, with the addition of your own custom code, various approaches to deployment, and other factors sometimes deployments can go awry.
 
