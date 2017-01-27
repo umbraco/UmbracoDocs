@@ -58,6 +58,7 @@ This section describes what a breaking change is in regards to the Umbraco codeb
 
 * Changing the file location of CSS or Images is a breaking change
  
+_It is advised to use Umbraco's Angular directives if you wish to create back office components, this will mean that you are not referencing CSS or Html markup directly_
 
 ##JavaScript
 
