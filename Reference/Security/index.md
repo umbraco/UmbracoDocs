@@ -83,3 +83,13 @@ Here are the steps to specify your own logic for validating a username and passw
 1. Make sure to switch the `owin:appStartup` appSetting in your `web.config` file to use `UmbracoCustomOwinStartup`: `<add key="owin:appStartup" value="UmbracoCustomOwinStartup"/>`
 
 **Note:** if the username entered in the login screen does not exist in Umbraco then `MyPasswordChecker()` does not run, instead Umbraco will immediately fall back to it's internal checks (default Umbraco behavior).
+
+### Authenticating with Active Directory credentials
+
+Umbraco 7.5.0+ comes with a built-in `IBackOfficeUserPasswordChecker` for Active Directory: `Umbraco.Core.Security.ActiveDirectoryBackOfficeUserPasswordChecker`. 
+
+So like the above docs, instead of setting up your own `IBackOfficeUserPasswordChecker`, you can just use `Umbraco.Core.Security.ActiveDirectoryBackOfficeUserPasswordChecker` and then specify your AD domain in your web.config:
+
+    <appSettings>
+      	<add key="ActiveDirectoryDomain" value="mydomain.local" />
+    </appSettings>
