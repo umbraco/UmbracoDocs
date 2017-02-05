@@ -127,22 +127,21 @@ If all values should use the same level you can use the short cut below
 
     public PropertyCacheLevel GetPropertyCacheLevel(PublishedPropertyType propertyType, PropertyCacheValue cacheValue)
     {
-        PropertyCacheLevel returnLevel;
         switch (cacheValue)
         {
             case PropertyCacheValue.Object:
-                returnLevel = PropertyCacheLevel.ContentCache; 
-                break;
+                return PropertyCacheLevel.ContentCache; 
+
             case PropertyCacheValue.Source:
-                returnLevel = PropertyCacheLevel.Content;
-                break;
+                return PropertyCacheLevel.Content;
+
             case PropertyCacheValue.XPath:
-                returnLevel = PropertyCacheLevel.Content;
-                break;
+                return PropertyCacheLevel.Content;
+
             default:
-                returnLevel = PropertyCacheLevel.None;
-                break;
+                return PropertyCacheLevel.None;
         }
+    }
 
 ## Samples ##
 
