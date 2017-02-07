@@ -17,13 +17,11 @@ We highly encourage the use of HTTPS on Umbraco websites especially in productio
 
 Another benefits of HTTPS is that you are able to use the [http2](https://en.wikipedia.org/wiki/HTTP/2) protocol if your web server and browser support it.
 
-### UseSSL configuration option
+__UseSSL configuration option__
 
 Umbraco allows you to force SSL/HTTPS for all back office communications very easily but using the following appSettings configuration:
 
-```xml
-<add key="umbracoUseSSL" value="true" />
-```	
+	<add key="umbracoUseSSL" value="true" />
 
 This options does several things when it is turned on:
 
