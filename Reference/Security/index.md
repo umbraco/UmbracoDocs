@@ -1,11 +1,43 @@
 # Security
-**Applies to version 7.3.1 and newer**
 
-_This section describes how authentication & authorization works in Umbraco_
+_This section includes information on Umbraco security, it's various security options and configuring how authentication & authorization works in Umbraco_
+
+## Umbraco Security overview
+
+We have a dedicated security page on our main site which provides most of the details you may need to know about security within the Umbraco CMS including how to report a vulnerability: [https://umbraco.com/products/umbraco-cms/security/](https://umbraco.com/products/umbraco-cms/security/)
+
+## SSL/HTTPS
+
+We highly encourage the use of HTTPS on Umbraco websites especially in production environments. By using HTTPS you greatly improve the security of your website. There are several benefits of HTTPS:
+
+* Trust - when your site is delivered over HTTPS your users will see that your site is secured, they are able to view the certificate assigned to your site and know that your site is legitimate
+* Removing an attack vector called ["Man in the middle"](https://www.owasp.org/index.php/Man-in-the-middle_attack) (or network Sniffing)
+* Gaurds against [Phishing](https://www.microsoft.com/en-us/safety/online-privacy/phishing-symptoms.aspx), an attacker will have a hard time obtaining an authentic SSL certificate
+* Google likes HTTPS, it may help your site's rankings
+
+Another benefits of HTTPS is that you are able to use the [http2](https://en.wikipedia.org/wiki/HTTP/2) protocol if your web server and browser support it.
+
+### UseSSL configuration option
+
+Umbraco allows you to force SSL/HTTPS for all back office communications very easily but using the following appSettings configuration:
+
+```xml
+<add key="umbracoUseSSL" value="true" />
+```	
+
+This options does several things when it is turned on:
+
+* Ensures that the back office authentication cookie is set to [secure only](https://www.owasp.org/index.php/SecureFlag) (so it can only be transmitted over https)
+* All non-https requests to any back office controller is redirected to https
+* All self delivered Umbraco requests (i.e. scheduled publishing, keep alive, etc...) are performed over https
+* All Umbraco notification emails with links generated have https links
+* All authorization attempts for back office handlers and services will be denied if the request is not over https
 
 ## Back office users
 
- Authentication for back office users in Umbraco uses [ASP.Net Identity](http://www.asp.net/identity) which is a very flexible and extensible framework for authentication. 
+**Applies to version 7.3.1 and newer**
+
+Authentication for back office users in Umbraco uses [ASP.Net Identity](http://www.asp.net/identity) which is a very flexible and extensible framework for authentication. 
  
 Out of the box Umbraco ships with a custom ASP.Net Identity implementation which uses Umbraco's database data. Normally this is fine for most Umbraco developers
 but in some cases the authentication process needs to be customized. ASP.Net Identity can be easily extended by using custom OAuth providers which is helpful if you want
