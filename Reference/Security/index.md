@@ -31,6 +31,21 @@ This options does several things when it is turned on:
 * All Umbraco notification emails with links generated have https links
 * All authorization attempts for back office handlers and services will be denied if the request is not over https
 
+Once you enable HTTPS for your site you should redirect all requests to your site to HTTPS, this can be done with an IIS rewrite rule. The IIS rewrite module needs to be installed for this to work, most hosting providers will have that enabled by default.
+
+In your `web.config` find or add the `<system.webServer><rewrite><rules>` section and put the following rule in there. This rule will redirect all requests for the site http://mysite.com URL to the secure https://mysite.com URL and respond with a permanent redirect status.
+
+	<rule name="HTTP to HTTPS redirect" stopProcessing="true">
+		<match url="(.*)" />
+		<conditions>
+			<add input="{HTTPS}" pattern="off" ignoreCase="true" />
+			<add input="{HTTP_HOST}" pattern="localhost" negate="true" />
+		</conditions>
+		<action type="Redirect" url="https://{HTTP_HOST}/{R:1}" redirectType="Permanent" />
+	</rule>        
+
+Note that the rule includes an ignore for `locahost`. If you run your local environment on a different URL than `localhost` you can add additional ignore rules. Additionally, if you have a staging environment that doesn't run on HTTPS, you can add that to the ignore rules too.
+
 ## Back office users
 
 **Applies to version 7.3.1 and newer**
