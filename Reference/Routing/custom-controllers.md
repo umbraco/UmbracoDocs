@@ -62,15 +62,17 @@ Please note that if your template uses a layout that expects the model to be of 
 1. Break the dependency on `Umbraco.Web.Models.RenderModel` in your layout by having it inherit from `Umbraco.Web.Mvc.UmbracoViewPage<dynamic>` (this means `@Model` will be of type `dynamic` in the layout).
 2. Make your custom model inherit from `Umbraco.Web.Models.RenderModel` and ensure you pass through the Umbraco model thus:-
 
-  public class MyNewViewModel : RenderModel
-  {
-      //Standard Model Pass Through
-      public MyNewViewModel(IPublishedContent content) : base(content) { }
+		public class MyNewViewModel : RenderModel
+		{
+			//Standard Model Pass Through
+			public MyNewViewModel(IPublishedContent content) : base(content) { }
+	
+			//Custom properties here...
+			public string MyProperty1 { get; set; }
+			public string MyProperty2 { get; set; }
+		}
 
-      //Custom properties here…..
-      public string myProperty1 { get; set; }
-      public string myProperty2 { get; set; }
-  } (this means `@Model...` will continue to work in the layouts used by your template).
+(this means `@Model...` will continue to work in the layouts used by your template).
 
 ###Returning the correct view from your controller
 
