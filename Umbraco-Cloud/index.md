@@ -11,6 +11,9 @@ How to set up a project for development. Using just Umbraco Cloud, by cloning lo
 ##[Deployment](Deployment/)
 The deployment process explained with best practices and a little Git mixed in.
 
+##[Upgrades](Upgrades/)
+An explanation of the Umbraco Cloud product upgrade process.
+
 ##[Troubleshooting](Troubleshooting/)
 Tips on identifying, finding and resolving issues.
 
