@@ -11,9 +11,9 @@ _This document describes when & what product updates are rolled out on Umbraco C
 
 ##When do upgrades happen?
 
-* The status page will include all important roll out information: http://status.umbraco.io/ 
-* We will release product updates only on Tuesday
-* The decision to roll out an upgrade will be made no later than the Thursday prior and that status page will be updated accordingly
+* The status page will include all important roll out information: __[http://status.umbraco.io/](http://status.umbraco.io/)__
+* We will release product updates only on __Tuesday__
+* The decision to roll out an upgrade will be made no later than the __Thursday__ prior and that status page will be updated accordingly
 * A product upgrade will be rolled out if:
 * A fix needs to be shipped due to a critical issue in any product
 * A patch version of Umbraco Core is ready for release
