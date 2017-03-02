@@ -49,7 +49,6 @@ to be configured to support scaling/auto-scaling.
 * Due to the nature of Lucene files and IO latency, you should update all of your Indexers and Searchers in the ~/Config/ExamineSettings.config file to have these two properties (see [here](http://issues.umbraco.org/issue/U4-7614) for more details):
 ```
 useTempStorage="Sync"
-tempStorageDirectory="UmbracoExamine.LocalStorage.AzureLocalStorageDirectory, UmbracoExamine"
 ```
 * You should ensure that `fcnMode="Single"` in your web.config's `<httpRuntime>` section (this is the default that is shipped with Umbraco, see [here](http://shazwazza.com/post/all-about-aspnet-file-change-notification-fcn/) for more details)
 * You should set your log4net minimum log priority to "WARN" in /Config/log4net.config if you are running a live site (of course if you are debugging this is irrelavent)
