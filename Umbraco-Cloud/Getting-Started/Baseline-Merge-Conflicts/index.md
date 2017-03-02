@@ -58,6 +58,6 @@ The merge conflict has now been resolved, and you can update your local reposito
 Please note that the changes from the commit haven’t been deployed to the website yet, as we have only applied the changes to the git repository. In order to deploy the recent changes to the website you can push your local changes to the development site (please refer to this documentation for pushing changes from your local repository) or you can use the Kudu api to trigger a deployment.
 You can use the following command from the Kudu Debug Console to deploy the latest changes:
 
-    curl https://dev-my-website-alias.scm.umbraco.io/api/deployments -X PUT -H "Content-Type: Application/json" --data "{ }" --user yourusername
+    curl https://dev-my-website-alias.scm.s1.umbraco.io/api/deployments -X PUT -H "Content-Type: Application/json" --data "{ }" --user yourusername:password
 
 If you prefer to use the Kudu REST API for triggering a deployment, you can find the details here: [https://github.com/projectkudu/kudu/wiki/REST-API#deployment](https://github.com/projectkudu/kudu/wiki/REST-API#deployment)
