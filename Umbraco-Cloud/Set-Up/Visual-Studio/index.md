@@ -5,7 +5,7 @@ This page describes how to setup your Visual Studio solution to work with an Umb
 ##The Visual Studio Solution
 We currently recommend using a Visual Studio solution with a Website Project for the Umbraco site (coming from the cloned git repository from the Umbraco Cloud Project), and a Class Library Project for the code that will be created for the Umbraco site. This can be MVC Controllers, WebApi Controllers, Surface Controllers or data access plus whatever else you might need to write code for.
 
-Below is a screenshot of how the Projects should be configured. Here we use the following naming convensions: `*.Web` for the Umbraco website and `*.Core` for the accompanying code.
+Below is a screenshot of how the Projects should be configured. Here we use the following naming conventions: `*.Web` for the Umbraco website and `*.Core` for the accompanying code.
 
 ![Visual Studio Project setup](images/vs-project-setup.png)
 
