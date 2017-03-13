@@ -15,5 +15,5 @@ The Umbraco UI should work in all modern browsers:
 ##Hosting
 * IIS 7+
 * SQL CE, SQL Server 2008 and higher or MySQL
-* ASP.NET 4.6.2 Full-Trust
+* ASP.NET 4.5 Full-Trust
 * Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
