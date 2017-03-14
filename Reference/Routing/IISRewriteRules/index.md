@@ -6,7 +6,7 @@ for doing static rewrites with IIS Rewrite rules. This documentation will list s
 
 ## Enabling the rules
 
-By default the web.config with Umbraco will contain a commented out section that looks like:
+By default the web.config with Umbraco (7.6+) will contain a commented out section that looks like:
 
     <!--
     If you wish to use IIS rewrite rules, see the documentation here: 
