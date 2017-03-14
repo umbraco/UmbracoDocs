@@ -8,15 +8,15 @@ for doing static rewrites with IIS Rewrite rules. This documentation will list s
 
 By default the web.config with Umbraco will contain a commented out section that looks like:
 
-  <!--
-  If you wish to use IIS rewrite rules, see the documentation here: 
-  https://our.umbraco.org/documentation/Reference/Routing/IISRewriteRules
-  -->
-  <!--
-  <rewrite>
-    <rules></rules>
-  </rewrite>
-  -->
+    <!--
+    If you wish to use IIS rewrite rules, see the documentation here: 
+    https://our.umbraco.org/documentation/Reference/Routing/IISRewriteRules
+    -->
+    <!--
+    <rewrite>
+      <rules></rules>
+    </rewrite>
+    -->
 
 
 If you wish to use the rules, be sure that you have the [IIS Rewrite Module](https://www.iis.net/learn/extensions/url-rewrite-module/using-the-url-rewrite-module) 
@@ -26,14 +26,14 @@ installed and uncomment the <rewrite> section. If you don't have the IIS Rewrite
 
 You can store the rules in an external file if you with by using this syntax:
 
-  <rewrite>
-    <rules configSource="config\IISRewriteRules.config" />
-  </rewrite>
+    <rewrite>
+      <rules configSource="config\IISRewriteRules.config" />
+    </rewrite>
 
 
 and creating a file at `~/Config/IISRewriteRules.config` with the content:
 
-  <rules></rules>
+    <rules></rules>
 
 
 ## Examples
@@ -45,22 +45,22 @@ and creating a file at `~/Config/IISRewriteRules.config` with the content:
 
 For example, to always remove trailing slash from the URL:
 
-  <rule name="Remove trailing slash" stopProcessing="true">  
-    <match url="(.*)/$" />  
-      <conditions>  
-        <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />  
-        <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />  
-      </conditions>  
-    <action type="Redirect" redirectType="Permanent" url="{R:1}" />  
-  </rule>  
+    <rule name="Remove trailing slash" stopProcessing="true">  
+      <match url="(.*)/$" />  
+        <conditions>  
+          <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />  
+          <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />  
+        </conditions>  
+      <action type="Redirect" redirectType="Permanent" url="{R:1}" />  
+    </rule>  
 
 Another example would be to enforce HTTPS only on your site:
 
-  <rule name="HTTP to HTTPS redirect" stopProcessing="true">
-    <match url="(.*)" />
-    <conditions>
-      <add input="{HTTPS}" pattern="off" ignoreCase="true" />
-      <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
-    </conditions>
-    <action type="Redirect" url="https://{HTTP_HOST}/{R:1}" redirectType="Permanent" />
-  </rule> 
+    <rule name="HTTP to HTTPS redirect" stopProcessing="true">
+      <match url="(.*)" />
+      <conditions>
+        <add input="{HTTPS}" pattern="off" ignoreCase="true" />
+        <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
+      </conditions>
+      <action type="Redirect" url="https://{HTTP_HOST}/{R:1}" redirectType="Permanent" />
+    </rule> 
