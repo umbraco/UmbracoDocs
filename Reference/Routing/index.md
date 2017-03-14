@@ -22,3 +22,6 @@ Routing requirements for authenticated controllers for both front-end and the ba
 
 ##[URL Tracking](URL-Tracking/index.md)
 Moving and renaming Umbraco documents will lead to URL redirects to be created
+
+##[IIS Rewrite Rules](IISRewriteRules/index.md)
+How to create static or regex based rewrite rules with a config file
