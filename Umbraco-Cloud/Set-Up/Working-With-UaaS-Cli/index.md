@@ -22,6 +22,22 @@ This will start the module, type in your credentials, and a local server will bo
 ![](images/cli-example.png)
 
 Now it is time to open your favorite code editor. The idea is that you are now able to change all front end files locally. By default we are watching the `/css`, `/views`, `/scripts` and `/images` folders, everything you are changing in these folders will be synced between your local files and the Umbraco Cloud site. A change to any of the files will also auto refresh your local browser, so you can see the change immediately. The files are also synced back onto Umbraco Cloud, meaning that the change is visible there as well.
+##Configuration
+
+If you have other files you need to watch, the configuration file is located in
+the `/App_Data` folder as `uaas.json` - it defaults to something like this:
+
+	{
+		"files": [
+			"css/**/*.css",
+			"scripts/**/*.js",
+			"Views/**/*.*",
+			"images/**/*.*"
+		],
+		"useHttps": false,
+		"username": "youremail@domain.com"
+	}
+
 
 Changing content needs to be done through the development environment. Whenever you do change some content, we will notify your local running instance, and sync the content, meaning that your browser will get updated with this.
 This flow enables you to do rapid frontend changes, and displaying them directly against the content on the Umbraco Cloud site.
