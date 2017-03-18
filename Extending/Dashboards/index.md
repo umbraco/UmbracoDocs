@@ -17,7 +17,7 @@ Like the other .config files Dashboard.config is a simple XML file with a fairly
 	        </areas>
 	
 	        <tab caption="[caption]"> <!-- Creates a tab in the Dashboard with the assigned Caption -->
-                <control>[path]</control> <!-- What control to load in that tab -->
+                <control>[path]</control> <!-- What control(v6) / angularJs View (v7) to load in that tab -->
 	        </tab>
 	        ...
 	   </section>
@@ -42,21 +42,26 @@ The area with the name 'default' is the first dashboard shown when a user login,
 ## Tab ##
 
 Defines a page tab that you would like your user control to be added to. The attribute 'caption' defines the text displayed on the tab.  There can be multiple tabs for each Dashboard "page"
-control
+control/view
 
-Defines the path to the user control you would like to be displayed on a tab.
+## Control ##
+
+In Umbraco 6, this setting defines the path to the user control you would like to be displayed on a tab. 
+In Umbraco 7 this is the path to an angularJS view.
+
+## Access / Permissions##
 
 The <access /> element makes it possible to set permissions on sections, tabs and controls and you can either grant or deny certain usertypes access.
 
-It works by adding an `<access/>` node under either a `<section />`, `<tab/>` or `<control />` node. As children of <access /> you can either add
+It works by adding an `<access/>` node under either a `<section />`, `<tab/>` or `<control />` node. 
 
-`<grant />` which grants permissions to those types of users (AND automatically deny access to those who're not there!)
+As children of <access /> you can either add `<grant />` which grants permissions to those types of users (AND automatically deny access to those who are not there!)
 
 `<grantBySection />` which grants permissions to those users who got access to specific sections. This can be useful for more granular permissions
 
 `<deny />` which denies permissions to those types of users (AND automatically grants everyone else)
 
-No matter the settings the root user (id:0) can see everything, so don't panic if you set deny permissions for administrators and still are able to see everything ;-)
+No matter the settings the root user (id:0) can see everything, so don't panic if you set deny permissions for administrators and they are still are able to see everything ;-)
 
 Example on permissions:
 
