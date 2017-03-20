@@ -1,4 +1,4 @@
-# Umbraco Reserved Document Type Routing Properties
+# Special Property Type aliases for routing
 
 _There are a few special/reserved Umbraco Property Type aliases that can be used which can easily 
 manipulate how the standard Umbraco routing pipeline works. You can add these Property Types to any Document Type
