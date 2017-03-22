@@ -29,3 +29,5 @@ to
 ##Place the Render scripts macro on your template
 
 Now we'll need to let Forms know where we want to output the script instead. So Navigate to the settings section and select  your template that should contain the scripts. There simply insert the *Render Umbraco Forms Scripts* macro.
+
+	@Umbraco.RenderMacro("FormsRenderScripts")
