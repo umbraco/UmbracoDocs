@@ -281,7 +281,7 @@ Returns a MD5 hash of a given string
 ###.If(bool test, string valueIfTrue, string valueIfFalse)
 If the test is true, the string `valueIfTrue` will be returned, otherwise the `valueIfFalse` will be returned.
 
-    <h1 class="Umbraco.If(CurrentPage.Name == "News", "this-is-news", "textpage">@CurrentPage.Name</h1>
+    <h1 class="@Umbraco.If(CurrentPage.Name == "News", "this-is-news", "textpage")>@CurrentPage.Name</h1>
 
 ###.Join(string separator, params object[] args)    
 Joins any number of int/string/objects into one string and separates them with the string separator parameter.
