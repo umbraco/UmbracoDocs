@@ -1,6 +1,6 @@
 #Inbound request pipeline
 
-The inbound process is triggered by the Umbraco (http) Module.  The **[published content request preparation](published-content-request-preparation.md)** process kicks in a creates an `PublishedContentRequest`.
+The inbound process is triggered by the Umbraco (http) Module.  The **[published content request preparation](published-content-request-preparation.md)** process kicks in and creates a `PublishedContentRequest`.
 
 The `PublishedContentRequest` object represents the request which Umbraco must handle.  It contains everything that will be needed to render it.  All this happens when the Umbraco modules thinks it's a document to render. 
 
