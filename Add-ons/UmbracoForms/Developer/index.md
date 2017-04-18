@@ -5,10 +5,16 @@ Developer documentation covers working with Umbraco Forms from a developer stand
 Before adding a form to your site we'll need to make sure you have the necessary client dependencies.
 
 ##[Custom markup](Custom-Markup/index.md)
-Write your forms your way. You have full control over your form's HTML markup and styling
+<strong>Version 4.x</strong> - Write your forms your way. You have full control over your form's HTML markup and styling
 
 ##[Rendering Forms scripts where you want](Rendering-Scripts/index.md)
-Control where you want Forms to render it's javascript
+<strong>Version 4.x</strong> - Control where you want Forms to render it's javascript
+
+##[Themes](Themes/index.md)
+<strong>Version 6.0.0+</strong> - Easier & more control of rendering Form HTML markup and styling using Themes that replaces the previous methods in Version 4.x
+
+##[Creating custom HTML emails](Email-Templates/index.md)
+<strong>Version 6.0.0+</strong> - Send custom HTML email templates using the new workflow 'Send email with template (Razor)'
 
 ##[Working with Record data](Working-With-Data/index.md)
 See how you can fetch and display record data from your razor macros
@@ -26,4 +32,4 @@ Learn about the default Field Types that are shipped with Umbraco Forms and any 
 Learn about the magic string formats that Umbraco Forms supports, that can retrieve information from various sources such as Session, Cookies, Umbraco Page Fields, Member fields, Form fields to use in workflows.
 
 ##[Storing Form Files with IFileSystem](IFileSystem/index.md)##
-Learn how you can implement a custom IFileSystem to store the Forms, Workflows, PreValues and other JSON based files to suit your needs. Available in Umbraco Forms 4.4.0 and greater
+<strong>Version 4.4.0+</strong> - Learn how you can implement a custom IFileSystem to store the Forms, Workflows, PreValues and other JSON based files to suit your needs.
