@@ -32,3 +32,15 @@ If you are not load balancing, the way that Umbraco determines the base URL to s
 * else it's based on the first request that the website receives and uses the base url of this request _(default)_
 
 If the `umbracoApplicationUrl` is used, the value also specfies the scheme (either http or https), howevever if any of the other optiosn are used, then if the appSetting `umbracoUseSSL` is set to `true`, then the request for scheduled publishing will always be sent to the HTTPS endpoint
+
+##Troubleshooting
+
+If your scheduled publishing/unpublishing is not working as you would expect it is most likely due to an issue that your server cannot communicate with the scheduled publishing endpoint. This can be caused by a number of reasons such as: 
+
+* url rewrites in place that prevent the endpoint from being reached
+* DNS misconfiguration not allowing the server to communicate to the base URL used in the first request that the website receives - which could be directly affected by a firewall/NAT/load balancer that your server sites behind
+* SSL and/or umbracoUseSSL misconfiguration not allowing the server to communicate to the scheduled publishing endpoint on the correct http/https scheme
+
+To better diagnose the issue you can temporarily change your log4net config settings to be DEBUG instead of INFO. This will give you all sorts of information including being able to see whether or not the scheduled publishing endpoint is being reached or not. 
+
+In some cases it might be easiest to specifiy the [umbracoSettings:settings/web.routing/@umbracoApplicationUrl](../../../Reference/Config/umbracoSettings/index.md#web-routing) setting to ensure that your server is communicating to itself on the correct base url.
