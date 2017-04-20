@@ -201,7 +201,7 @@ Turn XML caching of content on/off. Umbraco makes heavy use of caching content i
 
 **ContinouslyUpdateXmlDiskCache**
 
-Updates the XmlCache whenever content is published. If it's set to false, then writes to the disk cache will be queued and performed asynchronously.
+Updates the XmlCache whenever content is published, default is set to true. If it's set to false then it will never write the xml to disc. This will have an affect on start up times as Umbraco will have to fetch the initial Xml from the database instead of from disc. This is a legacy setting for older load balanced setups. You are advised to leave this set to true on new builds.
 
         <!-- Update disk cache every time content has changed -->
         <ContinouslyUpdateXmlDiskCache>True</ContinouslyUpdateXmlDiskCache>
