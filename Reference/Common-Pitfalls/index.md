@@ -122,8 +122,8 @@ You have 10,000 content items in your tree and your tree structure is something 
 You create a menu on your Home page like:
 
     <ul>
-        <li><a href="@Model.Site().Url">@Model.Site().Name</a></li>
-        @foreach(var node in Model.Site().DescendantsOrSelf().Where(x => x.Level == 2)) 
+        <li><a href="@Model.Content.Site().Url">@Model.Content.Site().Name</a></li>
+        @foreach(var node in Model.Content.Site().DescendantsOrSelf().Where(x => x.Level == 2)) 
         {
             <li><a href="@node.Url">@node.Name</a></li>
         }
@@ -138,8 +138,8 @@ this means it is going to allocate 10,000 `IPublishedContent` instances in memor
 This can easily be re-written as:
 
     <ul>
-        <li><a href="@Model.Site().Url">@Model.Site().Name</a></li>
-        @foreach(var node in Model.Site().Children) 
+        <li><a href="@Model.Content.Site().Url">@Model.Content.Site().Name</a></li>
+        @foreach(var node in Model.Content.Site().Children) 
         {
             <li><a href="@node.Url">@node.Name</a></li>
         }
@@ -158,20 +158,20 @@ Here's a common pitfall that is seen. Let's continue the menu example, in this e
 using the current page's root node::
 
     <ul>
-        <li><a href="@Model.Site().Url">@Model.Site().Name</a></li>
-        @foreach(var node in Model.Site().Children) 
+        <li><a href="@Model.Content.Site().Url">@Model.Content.Site().Name</a></li>
+        @foreach(var node in Model.Content.Site().Children) 
         {
             <li><a href="@node.Url">@node.Name</a></li>
         }
     </ul>
 
-The syntax `@Model.Site()` is actually shorthand for doing this:
+The syntax `@Model.Content.Site()` is actually shorthand for doing this:
 `Model.Content.AncestorsOrSelf(1)` which means it is going to traverse up the tree until it reaches an ancestor node
 with a level of one. As mentioned above, traversing costs resources and in this example there is 3x traversals being done
 for the same value. Instead this can be rewritten as:
 
     @{
-        var site = @Model.Site();
+        var site = @Model.Content.Site();
     }
     <ul>
         <li><a href="@site.Url">@site.Name</a></li>
