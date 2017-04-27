@@ -19,6 +19,15 @@ Since you aren't using UrlRewriting you will have probably never edited the UrlR
 * `<section name="urlrewritingnet" restartOnExternalChanges="true" requirePermission="false" type="UrlRewritingNet.Configuration.UrlRewriteSection, UrlRewritingNet.UrlRewriter" />`
 * `<urlrewritingnet configSource="config\UrlRewriting.config" />`
 
+####Forms
+
+Umbraco Forms 6.0.0 has been released to be compatible with Umbraco 7.6, it is a new major version release of Forms primarily due to the strict dependency on 7.6+. If you are using Forms, you will need to update it to version 6.0.0
+
+You will **[definitely want to read the specific Forms upgrade documentation here](https://our.umbraco.org/documentation/Add-ons/UmbracoForms/Installation/Version-Specific#version-4-to-version-6)**
+
+####Courier
+
+Umbraco Courier 3.1.0 has been released to be compatible with Umbraco 7.6. If you are using Courier, you will need to update it to version 3.1.0
 
 ##Version 7.4.0
 For manual upgrades: 
