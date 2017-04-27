@@ -1,8 +1,24 @@
 #Version specific upgrades
 
-*For now, this document will only list updates from the past two years, but it will eventually be improved to go further back.*
+*This document covers specific upgrade steps if a version requires them, most versions do not require specific upgrade steps and most of the time you will be able to upgrade directly from your current version to the latest version*
 
-Most of the time you will be able to upgrade directly from your current version to the latest version. Follow the steps in the [general upgrade guide](general.md), then these additional instructions for the specific versions. (Remember that new config files are not mentioned because they are already covered in the general upgrade guide.)
+Follow the steps in the [general upgrade guide](general.md), then these additional instructions for the specific versions. (Remember that new config files are not mentioned because they are already covered in the general upgrade guide.)
+
+##Version 7.6.0
+
+There are a few breaking changes in 7.6.0 be sure to [read about them here](760-breaking-changes.md) and [here's the list of these items on the tracker](http://issues.umbraco.org/issues/U4?q=Due+in+version%3A+7.6.0+Backwards+compatible%3F%3A+No+)
+
+###Upgrading via Nuget
+
+This is an important one and there was unfortunately not a perfect solution to this. We have removed the UrlRewriting dependency and no longer ship with it, however if you are using it we didn't want to have Nuget delete all of your rewrites. So the good news is that if you are using it, the Nuget upgrade will not delete your rewrite file and everything should just continue to work (though you should really be using IIS rewrites!). 
+
+However, if you are not using it, **you will get a YSOD after upgrading, here's how to fix it**
+
+Since you aren't using UrlRewriting you will have probably never edited the UrlRewriting file and in which case Nuget will detect that and remove it. However you will need to manually remove these UrlRewriting references from your web.config:
+
+* `<section name="urlrewritingnet" restartOnExternalChanges="true" requirePermission="false" type="UrlRewritingNet.Configuration.UrlRewriteSection, UrlRewritingNet.UrlRewriter" />`
+* `<urlrewritingnet configSource="config\UrlRewriting.config" />`
+
 
 ##Version 7.4.0
 For manual upgrades: 
