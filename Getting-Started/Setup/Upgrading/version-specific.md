@@ -6,9 +6,9 @@ Follow the steps in the [general upgrade guide](general.md), then these addition
 
 ##Version 7.6.0
 
-There are a few breaking changes in 7.6.0 be sure to [read about them here](760-breaking-changes.md) and [here's the list of these items on the tracker](http://issues.umbraco.org/issues/U4?q=Due+in+version%3A+7.6.0+Backwards+compatible%3F%3A+No+)
+There are a few breaking changes in 7.6.0 be sure to **[read about them here](760-breaking-changes.md)** and [here's the list of these items on the tracker](http://issues.umbraco.org/issues/U4?q=Due+in+version%3A+7.6.0+Backwards+compatible%3F%3A+No+)
 
-###Upgrading via Nuget
+####Upgrading via Nuget
 
 This is an important one and there was unfortunately not a perfect solution to this. We have removed the UrlRewriting dependency and no longer ship with it, however if you are using it we didn't want to have Nuget delete all of your rewrites. So the good news is that if you are using it, the Nuget upgrade will not delete your rewrite file and everything should just continue to work (though you should really be using IIS rewrites!). 
 
