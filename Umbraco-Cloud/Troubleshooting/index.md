@@ -12,6 +12,11 @@ Please refer to this topic for troubleshooting structure deploys and restores:
 
  - [Errors during structure deployment/restore](Structure-Error/)
 
+ ##Automated Minor upgrades##
+ Please refer to this topic for troubleshooting when minor upgrades are causing issues:
+
+- [Minor upgrades issues](Minor-Upgrades/)
+
 ## Known issues with 3rd party packages / datatypes
 Please refer to this topic for troubleshooting specific packages or datatypes that are not built into Umbraco
 - [Known issues with 3rd party packages / datatypes](Plugins-Known-Issues)
