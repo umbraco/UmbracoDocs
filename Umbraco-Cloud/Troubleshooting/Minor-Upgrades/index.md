@@ -8,6 +8,7 @@ In general, if anything should fail during this process, you can reach out for s
 
 ## Courier dependencies
 Symptoms, feedback given from the upgrade process: **Unable to upgrade as the site has custom Courier dependencies**
+
 Along with the upgrade to 7.6 we will replace the old deployment engine Umbaco Courier, and replace it with the new one called Umbraco Deploy. This means that if your code is dependent on Umbraco Courier to run, you will need to remove the dependencies on Umbraco Courier. 
 This will be things like custom Umbraco Courier resolvers. In Umbraco Deploy resolvers will be ValueConnectors and it will have these things built in for the most popular packages, and will have a generic connector for the remaining types.
 
