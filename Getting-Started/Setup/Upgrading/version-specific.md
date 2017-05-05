@@ -19,6 +19,7 @@ Since you aren't using UrlRewriting you will have probably never edited the UrlR
 * `<section name="urlrewritingnet" restartOnExternalChanges="true" requirePermission="false" type="UrlRewritingNet.Configuration.UrlRewriteSection, UrlRewritingNet.UrlRewriter" />`
 * `<urlrewritingnet configSource="config\UrlRewriting.config" />`
 * And the following http modules
+
 ```
     <system.web>
         <httpModules>
