@@ -35,7 +35,8 @@ Since you aren't using UrlRewriting you will have probably never edited the UrlR
 		   <add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter"/>
 		    ...
 	       </modules>
-	   </system.webServer>
+	    </system.webServer>
+
 
 
 ####Forms
