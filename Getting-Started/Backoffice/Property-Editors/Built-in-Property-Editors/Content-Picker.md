@@ -1,20 +1,22 @@
-#Content Picker
+# Content Picker
+
+`Alias: Umbraco.ContentPicker`
 
 `Returns: Node Id`
 
 The content picker opens a panel to pick a specific page from the content structure. The value saved is the selected nodes ID.
 
-##Data Type Definition Example
+## Data Type Definition Example
 
 ![Content Picker Data Type Definition](images/Content-Picker-DataType.png)
 
-##Content Example 
+## Content Example 
 
 ![Content Picker Content](images/Content-Picker-Content.png)
 
-##MVC View Example
+## MVC View Example
 
-###Typed:
+### Typed:
 
 	@{
 	  if (Model.Content.HasValue("contentPicker")){
@@ -23,7 +25,7 @@ The content picker opens a panel to pick a specific page from the content struct
 	  }
 	}
 
-###Dynamic:                              
+### Dynamic:                              
 
 	@{
 	  if (CurrentPage.HasValue("contentPicker")){
