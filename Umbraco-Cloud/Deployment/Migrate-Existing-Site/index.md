@@ -41,10 +41,11 @@ If you have used Courier with your site previously and deployments work as expec
 11. Now run the local Umbraco Cloud site with the updated files and database. The deploy engine will start when the deploy marker is detected.  This will likely complete relatively quickly. This  adds the users created by Umbraco Cloud to your existing database.
 12. Once complete verify your site has all meta data, content, and media as expected.
 13. Delete the folder `/data/Revision/` from the file system.  
-14. In the same browser session as the logged in umbraco user open a new tab at the address:  
-    * `http://localhost:port/umbraco/backoffice/api/CourierAdmin/Rebuild`
-    * That will create a serialized version of all your site's meta data and will display the following in the browser:
-    * `<string xmlns="http://schemas.microsoft.com/2003/10/Serialization/">Rebuilding</string>`
+14. * If your Umbraco Cloud project uses Umbraco Deploy (it does for Umbraco 7.6.0 and newer) - open a command prompt, cd to the `/data/` folder and add an export marker by typing `echo > deploy-export`.
+    * Otherwise, if your Umbraco Cloud project uses Courier (it does for Umbraco versions older than 7.6.0) - in the same browser session as the logged in umbraco user open a new tab at the address:  
+        * `http://localhost:port/umbraco/backoffice/api/CourierAdmin/Rebuild`
+        * That will create a serialized version of all your site's meta data and will display the following in the browser:
+        * `<string xmlns="http://schemas.microsoft.com/2003/10/Serialization/">Rebuilding</string>`
 15. At this point you are ready to deploy your site to Umbraco Cloud - Yay!
 16. Make sure you git add and commit all the files you added to the site including the serialized files in `/data/Revison/` but excluding `/media/`.  This should be set correctly by the included .gitignore file.
 17. Git push your commit to your Umbraco Cloud dev site checking that the "Deployment Complete" message is displayed.
