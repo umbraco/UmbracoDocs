@@ -1,4 +1,4 @@
-# Content Picker
+# (Obsolete) Content Picker
 
 `Alias: Umbraco.ContentPicker`
 

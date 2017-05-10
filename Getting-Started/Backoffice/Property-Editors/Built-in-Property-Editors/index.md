@@ -8,11 +8,11 @@ Displays a list of preset values as a list of checkbox controls
 ## Color Picker
 Adds a list of approved colours which can be selected by clicking.
 
-## [Content Picker (Legacy)](Content-Picker.md)
-The content picker allows the content editor to pick a specific node from the content structure.
-
 ## [Content Picker](Content-Picker2.md)
 The content picker allows the content editor to pick a specific node from the content structure.
+
+## [(Obsolete) Content Picker](Content-Picker.md)
+Made obsolete with the release of Umbraco v7.6, the content picker allows the content editor to pick a specific node from the content structure.
 
 ## [Date](Date.md)
 Displays a calendar UI for selecting dates
