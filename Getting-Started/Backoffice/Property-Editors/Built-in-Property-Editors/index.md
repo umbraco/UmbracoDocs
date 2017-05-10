@@ -58,7 +58,10 @@ The legacy media picker opens a simple dialogue to pick a specific media item fr
 
 ## Markdown editor
 
-## [Media Picker](Media-Picker.md)
+## [Media Picker](Media-Picker2.md)
+The media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files. There is a setting to enable multiple media items to be selected.
+
+## [(Obsolete) Media Picker](Media-Picker.md)
 The media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files. There is a setting to enable multiple media items to be selected.
 
 ## Member Group Picker
