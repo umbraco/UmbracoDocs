@@ -28,7 +28,7 @@ The content picker opens a panel to pick a specific page from the content struct
     }
 ```
 
-## MVC View Example - value converters disabled
+## MVC View Example - [value converters disabled](../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
 
 ### Typed:
 
