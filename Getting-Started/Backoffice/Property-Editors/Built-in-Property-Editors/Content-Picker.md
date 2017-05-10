@@ -18,7 +18,6 @@ The content picker opens a panel to pick a specific page from the content struct
 
 ### Typed Example: ###
 
-```c#
     @{
         IPublishedContent typedContentPicker = Model.Content.GetPropertyValue<IPublishedContent>("contentPicker");
         if (typedContentPicker != null)
@@ -26,7 +25,6 @@ The content picker opens a panel to pick a specific page from the content struct
             <p>@typedContentPicker.Name</p>                                                
         } 
     }
-```
 
 ## MVC View Example - [value converters disabled](../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
 

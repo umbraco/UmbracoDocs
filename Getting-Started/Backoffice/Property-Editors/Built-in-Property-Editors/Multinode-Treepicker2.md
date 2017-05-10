@@ -49,7 +49,6 @@ Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. 
 
 ### Typed:
 
-```c#
     @{
         var typedMultiNodeTreePicker = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("featuredArticles");
         foreach (var item in typedMultiNodeTreePicker)
@@ -57,4 +56,3 @@ Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. 
             <p>@item.Name</p>
         }
     }
-```

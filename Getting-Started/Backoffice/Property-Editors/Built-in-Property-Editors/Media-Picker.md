@@ -25,7 +25,6 @@ If checked, the picker will allow the user to select multiple media items using 
 
 ### Typed Example (multiple enabled): ##
 
-```c#
     @{
         var typedMultiMediaPicker = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("caseStudyImages");
         foreach (var item in typedMultiMediaPicker)
@@ -33,11 +32,9 @@ If checked, the picker will allow the user to select multiple media items using 
             <img src="@item.Url" style="width:200px"/>
         }
     }
-```
 
 ### Typed Example (multiple disabled): ##
 
-```c#
     @{
         var typedMediaPickerSingle = Model.Content.GetPropertyValue<IPublishedContent>("featuredBanner");
         if (typedMediaPickerSingle != null)
@@ -46,7 +43,6 @@ If checked, the picker will allow the user to select multiple media items using 
             <img src="@typedMediaPickerSingle.Url" style="width:200px" alt="@typedMediaPickerSingle.GetPropertyValue("alt")" />
         }
     }      
-```
 
 ## MVC View Example - [value converters disabled](../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
 

@@ -47,7 +47,6 @@ Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. 
 
 ### Typed:
 
-```c#
     @{
         var typedMultiNodeTreePicker = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("banner");
         foreach (var item in typedMultiNodeTreePicker)
@@ -55,7 +54,6 @@ Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. 
             <p>@item.Name</p>
         }
     }
-```
 
 ## MVC View Example - [value converters disabled](../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
 

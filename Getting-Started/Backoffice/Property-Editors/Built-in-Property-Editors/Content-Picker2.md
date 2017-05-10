@@ -16,7 +16,6 @@ The content picker opens a panel to pick a specific page from the content struct
 
 ## Typed Example: ##
 
-```c#
     @{
         IPublishedContent typedContentPicker = Model.Content.GetPropertyValue<IPublishedContent>("featurePicker");
         if (typedContentPicker != null)
@@ -24,4 +23,3 @@ The content picker opens a panel to pick a specific page from the content struct
             <p>@typedContentPicker.Name</p>                                                
         } 
     }
-```

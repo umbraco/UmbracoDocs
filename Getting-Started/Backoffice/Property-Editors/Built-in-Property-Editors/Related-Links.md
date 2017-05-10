@@ -18,7 +18,6 @@ Related Links allows an editor to easily add an array of links. These can either
 
 ### Typed:
 
-```c#
     @using Umbraco.Web.Models
     @{
         var typedRelatedLinksConverted = Model.Content.GetPropertyValue<RelatedLinks>("footerLinks");
@@ -34,7 +33,6 @@ Related Links allows an editor to easily add an array of links. These can either
             </ul>
         }
     }   
-```
 
 ## MVC View Example - [value converters disabled](../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
 
