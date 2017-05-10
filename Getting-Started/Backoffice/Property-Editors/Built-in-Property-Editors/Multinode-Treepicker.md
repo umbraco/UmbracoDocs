@@ -1,8 +1,8 @@
-#Multinode Treepicker
+# (Obsolete) Multinode Treepicker
 
 `Returns: ID or CSV`
 
-##Settings
+## Settings
 
 The mntp allows you to configure the type of tree to render, what part of the tree that should be rendered, and specifically for content, it allows you to select a dynamic root node based on the current document using the multinode tree picker. 
 
@@ -35,17 +35,31 @@ Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. 
 **note:** the ability to query for the content trees root node was added in 7.0.3 
 
 
-##Data Type Definition Example
+## Data Type Definition Example
 
 ![Multinode Treepicker Data Type Definition](images/Multinode-Treepicker-DataType.png)
 
-##Content Example 
+## Content Example 
 
 ![Multinode Treepicker](images/Multinode-Treepicker-Content.jpg)
 
-##MVC View Example
+## MVC View Example - [value converters enabled](../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
 
-###Typed:
+### Typed:
+
+```c#
+    @{
+        var typedMultiNodeTreePicker = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("banner");
+        foreach (var item in typedMultiNodeTreePicker)
+        {
+            <p>@item.Name</p>
+        }
+    }
+```
+
+## MVC View Example - [value converters disabled](../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
+
+### Typed:
 
 	@{
 	    if (Model.Content.HasValue("banner"))
@@ -60,7 +74,7 @@ Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. 
 	    }
 	}
 
-###Dynamic:                              
+### Dynamic:                              
 
 	@{
 	    var bannerList = CurrentPage.banner.ToString().Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);

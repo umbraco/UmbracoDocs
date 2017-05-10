@@ -62,14 +62,17 @@ The legacy media picker opens a simple dialogue to pick a specific media item fr
 The media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files. There is a setting to enable multiple media items to be selected.
 
 ## [(Obsolete) Media Picker](Media-Picker.md)
-The media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files. There is a setting to enable multiple media items to be selected.
+Made obsolete with the release of Umbraco v7.6, the media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files. There is a setting to enable multiple media items to be selected.
 
 ## Member Group Picker
 
 ## [Member Picker](Member-Picker.md)
 
-## [Multinode Treepicker](Multinode-Treepicker.md)
+## [Multinode Treepicker](Multinode-Treepicker2.md)
 The multinode treepicker data type allows content editors to choose multiple nodes in the content or media trees.
+
+## [(Obsolete) Multinode Treepicker](Multinode-Treepicker.md)
+Made obsolete with the release of Umbraco v7.6, the multinode treepicker data type allows content editors to choose multiple nodes in the content or media trees.
 
 ## [Multiple Textbox](Multiple-Textbox.md)
 The Multiple Textbox property editor enables a content editor to make a list of text items
