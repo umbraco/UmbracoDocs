@@ -1,4 +1,4 @@
-# Multiple Media Picker #
+# Media Picker #
 
 `Alias: Umbraco.MediaPicker2`
 

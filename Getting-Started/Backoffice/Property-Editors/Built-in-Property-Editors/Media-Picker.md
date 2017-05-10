@@ -1,6 +1,10 @@
 # (Obsolete) Media Picker
 
-`Returns: ID or CSV`
+`Alias: Umbraco.MultipleMediaPicker`
+
+`Returns: IEnumerable<IPublishedContent>` or `IPublishedContent` if value converters are enabled (default)
+
+`Returns: ID or CSV` if value converters are disabled
 
 The media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files.
 
