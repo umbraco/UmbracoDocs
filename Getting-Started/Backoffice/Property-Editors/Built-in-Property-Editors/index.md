@@ -12,7 +12,7 @@ Adds a list of approved colours which can be selected by clicking.
 The content picker allows the content editor to pick a specific node from the content structure.
 
 ## [(Obsolete) Content Picker](Content-Picker.md)
-Made obsolete with the release of Umbraco v7.6, the content picker allows the content editor to pick a specific node from the content structure.
+Made obsolete with the release of Umbraco v7.6 the content picker allows the content editor to pick a specific node from the content structure.
 
 ## [Date](Date.md)
 Displays a calendar UI for selecting dates
@@ -62,7 +62,7 @@ The legacy media picker opens a simple dialogue to pick a specific media item fr
 The media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files. There is a setting to enable multiple media items to be selected.
 
 ## [(Obsolete) Media Picker](Media-Picker.md)
-Made obsolete with the release of Umbraco v7.6, the media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files. There is a setting to enable multiple media items to be selected.
+Made obsolete with the release of Umbraco v7.6 the media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files. There is a setting to enable multiple media items to be selected.
 
 ## Member Group Picker
 
@@ -72,7 +72,7 @@ Made obsolete with the release of Umbraco v7.6, the media picker displays the cu
 The multinode treepicker data type allows content editors to choose multiple nodes in the content or media trees.
 
 ## [(Obsolete) Multinode Treepicker](Multinode-Treepicker.md)
-Made obsolete with the release of Umbraco v7.6, the multinode treepicker data type allows content editors to choose multiple nodes in the content or media trees.
+Made obsolete with the release of Umbraco v7.6 the multinode treepicker data type allows content editors to choose multiple nodes in the content or media trees.
 
 ## [Multiple Textbox](Multiple-Textbox.md)
 The Multiple Textbox property editor enables a content editor to make a list of text items
@@ -82,8 +82,11 @@ The Multiple Textbox property editor enables a content editor to make a list of 
 ## [Radio button list](RadioButton-List.md)
 Pretty much like the name indicates this property editor enables editors to choose from list of radio buttons.
 
-## [Related Links](Related-Links.md)
+## [Related Links](Related-Links2.md)
 Related Links allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
+
+## [(Obsolete) Related Links](Related-Links.md)
+Made obsolete with the release of Umbraco v7.6 the related links editor allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
 
 ## Rich Text Editor
 
