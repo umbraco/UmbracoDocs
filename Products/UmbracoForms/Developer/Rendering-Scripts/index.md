@@ -13,14 +13,14 @@ It should have the following contents
 		var s = Model.MacroParameters["FormGuid"].ToString();
 		var g = new Guid(s);
 		
-		Html.RenderAction("Render", "UmbracoForms", new {formId = g});
+		Html.RenderAction("Render", "UmbracoForms", new {formId = g, mode = "script"});
 	}
 
-Here we'll make a small change, in the RenderAction call we'll provide an additional argument mode = "form"
+Here we'll make a small change, in the RenderAction call we'll provide the argument mode = "form"
 
 so go from
 
-	Html.RenderAction("Render", "UmbracoForms", new {formId = g});	
+	Html.RenderAction("Render", "UmbracoForms", new {formId = g, mode = "script"});	
 
 to
 	
