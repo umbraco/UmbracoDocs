@@ -4,7 +4,7 @@
 
 ### UrlRewriting.Net ([U4-9004](http://issues.umbraco.org/issue/U4-9004))
 
-UrlRewriting was old, leaking memory, and slowing down website startup when dealing with more than a few rules. It's entirely replaced by the [IIS Url Rewrite](<https://www.iis.net/downloads/microsoft/url-rewrite>) extension.
+UrlRewriting was old, leaking memory, and slowing down website startup when dealing with more than a few rules. It's entirely replaced by the [IIS Url Rewrite](https://www.iis.net/downloads/microsoft/url-rewrite) extension.
 
 ### Json.Net ([U4-9499](http://issues.umbraco.org/issue/U4-9499))
 
