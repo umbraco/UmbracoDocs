@@ -6,12 +6,12 @@ Ever since Umbraco 7.6.0 Umbraco stores identifiers in UDI format for a number o
 Each UDI is unique between environments and makes it easier to deploy changes between environments. 
 
 ## Format
-An Umbraco UDI consists of three parts: the scheme, the type and a GUID Identifier. For example: `umb://document/4fed18d8-c5e3-4d5e-88cf-ff3a5b457bf2`.
+An Umbraco UDI consists of three parts: the scheme, the type and a GUID Identifier. For example: `umb://document/4fed18d8c5e34d5e88cfff3a5b457bf2`.
 
 Breaking it down:
 1. The scheme is `umb://` - this is always the same and makes it easy to identify an Umbraco UDI
 2. The type is `document` - so in this is an Umbraco node, but it could also be `media`, `member`, etc.
-3. The GUID Id is `4fed18d8-c5e3-4d5e-88cf-ff3a5b457bf2` - this is a GUID which is randomly generated when the item is being created
+3. The GUID Id is `4fed18d8c5e34d5e88cfff3a5b457bf2` - this is a GUID (dashes removed) which is randomly generated when the item is being created
 
 ## Usage
 Im most cases you will not have to change anything to use UDIs instead of integer Ids. All of the Services in Umbraco should accept a UDI as an argument instead of an integer.
