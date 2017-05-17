@@ -3,6 +3,7 @@ Umbraco Forms has some magic strings that enable you to render values from vario
 
 ## Request
 `[@SomeRequestItem]` this allows you to display an item from the current HTTPContext.Request with the key of SomeRequestItem
+Eg `[@http_referer]` will populate a field with the HTTP referer.
 
 ## Session & Cookies
 `[%SomeSessionOrCookieItem]` this allows you to display an item from the current HTTPContext.Session with the key of SomeSessionOrCookieItem. If it cannot be found in the collection of session keys, it will then try to find the item from the HttpContext.Cookies collection with the same key.
