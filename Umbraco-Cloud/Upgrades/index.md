@@ -6,7 +6,7 @@ _This document describes when & what product updates are rolled out on Umbraco C
 
 * Umbraco CMS patch updates
 * Forms 
-* Courier
+* Deploy / Courier
 * Internal Umbraco Cloud services (generally these updates will not affect running websites but in some cases if they do we will notify Umbraco Cloud users via the status page)
 
 ##When do upgrades happen?
@@ -17,7 +17,7 @@ _This document describes when & what product updates are rolled out on Umbraco C
 * A product upgrade will be rolled out if:
 * A fix needs to be shipped due to a critical issue in any product
 * A patch version of Umbraco Core is ready for release
-* A new version of Courier is ready for release
+* A new version of Deploy / Courier is ready for release
 * A new version of Forms is ready for release
 * Umbraco Cloud reserves the right to rollout an emergency product fix to fix a critical issue at any time
 

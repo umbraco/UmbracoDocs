@@ -18,26 +18,27 @@ Since you aren't using UrlRewriting you will have probably never edited the UrlR
 
 * `<section name="urlrewritingnet" restartOnExternalChanges="true" requirePermission="false" type="UrlRewritingNet.Configuration.UrlRewriteSection, UrlRewritingNet.UrlRewriter" />`
 * `<urlrewritingnet configSource="config\UrlRewriting.config" />`
-* And the following http modules
+* And the following http modules located in `<httpModules>` and `<modules>`
 
-```
-    <system.web>
-        <httpModules>
-	    <add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter"/>
-	    ...
-        </httpModules>
-    <system.web>
-
+```xml
+<system.web>
+  <httpModules>
+    <add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter"/>
     ...
+  </httpModules>
+<system.web>
 
-    <system.webServer>
-       <modules>
-           <remove name="UrlRewriteModule"/>
-           <add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter"/>
-	    ...
-       </modules>
-   </system.webServer>
- ```
+...
+
+<system.webServer>
+  <modules>
+    <remove name="UrlRewriteModule"/>
+    <add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter"/>
+    ...
+  </modules>
+</system.webServer>
+```
+
 
 ####Forms
 
