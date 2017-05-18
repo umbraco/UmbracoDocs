@@ -91,4 +91,13 @@ This renders a macro with some parameters using a dictionary
 	    <p>@umbracomember.GetPropertyValue<string>("bio")</p>
 	}
 
+## ModelsBuilder
 
+ModelsBuilder allows you to use strongly typed models in your views.
+Properties created on your document types can be accessed with this syntax:
+
+	@Model.BodyText
+
+When ModelsBuilder resolve your properties it will also try to use value converters to convert the values of your data into more convenient models allowing you to access nested objects as strong types instead of having to rely on dynamics and risking having a lot of potential errors when working with these.
+
+[ModelsBuilder documentation](modelsbuilder.md)
