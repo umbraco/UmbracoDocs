@@ -1,8 +1,8 @@
-#Working with MVC Views in Umbraco
+# Working with MVC Views in Umbraco
 
-_Working with MVC Views and Razor syntax in Umbraco_ 
+_Working with MVC Views and Razor syntax in Umbraco_
 
-##Properties available in Views
+## Properties available in Views
 
 All Umbraco views inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage` which exposes many properties that are available in razor:
 
@@ -14,7 +14,7 @@ All Umbraco views inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage` which expos
 * @ApplicationContext (of type `Umbraco.Core.ApplicationContext`)
 * @Members (of type `Umbraco.Web.Security.MemberShipHelper`) [See MemberShipHelper Documentation](../../Querying/MemberShipHelper/index.md)
 
-##Rendering a field with UmbracoHelper
+## Rendering a field with UmbracoHelper
 This is probably the most used method which simply renders the contents of a field for the current content item.
 
 	@Umbraco.Field("bodyContent")
@@ -36,7 +36,7 @@ The easiest way to use the Field method is to simply specify the optional parame
 	@Umbraco.Field("bodyContent", insertBefore : "<h2>", insertAfter : "</h2>")
 
 
-##Rendering a field with Model
+## Rendering a field with Model
 
 The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however simply want to render value "as-is" you can use the @Model.Content property of the view. For example:
 
@@ -51,7 +51,7 @@ You can also specify the output type that you want from the property. If the pro
  	@Model.Content.GetPropertyValue<double>("amount")
 	@Model.Content.GetPropertyValue<RawXElement>("xmlContents")
 
-##Rendering a field using @CurrentPage (dynamically)
+## Rendering a field using @CurrentPage (dynamically)
 
 The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however simply want to render value "as-is" you can use the @CurrentPage property of the view. The difference between @CurrentPage and @Model.Content is that @CurrentPage is the dynamic representation of the model which exposes many dynamic features for querying. For example, to render a field you simply use this syntax:
 
@@ -79,7 +79,7 @@ This renders a macro with some parameters using a dictionary
 [UmbracoHelper Documentation](../../Querying/UmbracoHelper/index.md)
 
 
-##Accessing Member data
+## Accessing Member data
 
 `@Members` is the gateway to everything related to members when templating your site. [MemberShipHelper Documentation](../../Querying/MemberShipHelper/index.md)
 
