@@ -12,6 +12,7 @@ Prerequisits for using the guide is that you have a running site, that contains 
 
 ## 1 Removing Umbraco Courier
 First you need to remove all Courier related files and folders.
+
 * /bin/Concorde.CacheHandler.dll
 * /bin/Concorde.CacheHandler.LiveEdit.dll
 * /bin/Concorde.CacheHandler.UI.dll
@@ -31,6 +32,7 @@ First you need to remove all Courier related files and folders.
 * /umbraco/Plugins/Courier/Webservices/Repository.asmx
 
 Finally these 3rd party dlls has been part of Courier. If you are not using them in your custom code, you should ensure that they get deleted as well.
+
 * /bin/FluentNHibernate.dll
 * /bin/NHibernate.dll
 * /bin/lesi.Collections.dll
