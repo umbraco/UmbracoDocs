@@ -20,6 +20,3 @@ Methods for IPublishedContent collections and filtering.
 
 ##[IsHelpers](IsHelpers.md)
 A library of extension methods to simplify working with IPublishedContent in collections to modify your HTML output. Examples could be injecting CSS classes for alternating rows or to modify margins.
-
-##[UDI identifiers](Udi.md)
-Ever since Umbraco 7.6.0 Umbraco stores identifiers in UDI format for a number of datatypes. So there is no longer a node Id to refer to.
