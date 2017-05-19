@@ -12,30 +12,30 @@ Prerequisits for using the guide is that you have a running site, that contains 
 
 ## 1 Removing Umbraco Courier
 First you need to remove all Courier related files and folders.
-- /bin/Concorde.CacheHandler.dll
-- /bin/Concorde.CacheHandler.LiveEdit.dll
-- /bin/Concorde.CacheHandler.UI.dll
-- /bin/Umbraco.Courier.Core.dll
-- /bin/Umbraco.Courier.DataResolvers.dll
-- /bin/Umbraco.Courier.EventHandlers.V7.dll
-- /bin/Umbraco.Courier.Persistence.dll
-- /bin/Umbraco.Courier.Persistence.V7.NHibernate.dll
-- /bin/Umbraco.Courier.Providers.dll
-- /bin/Umbraco.Courier.RepositoryProviders.dll
-- /bin/Umbraco.Courier.Contrib.Resolvers.dll
-- /bin/Umbraco.Courier.FormsProvider.dll
-- /bin/Archetype.Courier.dll
-- /App_Plugins/Deploy
-- /config/courier.config
-- /config/splashes/noNodes.aspx
-- /umbraco/Plugins/Courier/Webservices/Repository.asmx
+* /bin/Concorde.CacheHandler.dll
+* /bin/Concorde.CacheHandler.LiveEdit.dll
+* /bin/Concorde.CacheHandler.UI.dll
+* /bin/Umbraco.Courier.Core.dll
+* /bin/Umbraco.Courier.DataResolvers.dll
+* /bin/Umbraco.Courier.EventHandlers.V7.dll
+* /bin/Umbraco.Courier.Persistence.dll
+* /bin/Umbraco.Courier.Persistence.V7.NHibernate.dll
+* /bin/Umbraco.Courier.Providers.dll
+* /bin/Umbraco.Courier.RepositoryProviders.dll
+* /bin/Umbraco.Courier.Contrib.Resolvers.dll
+* /bin/Umbraco.Courier.FormsProvider.dll
+* /bin/Archetype.Courier.dll
+* /App_Plugins/Deploy
+* /config/courier.config
+* /config/splashes/noNodes.aspx
+* /umbraco/Plugins/Courier/Webservices/Repository.asmx
 
 Finally these 3rd party dlls has been part of Courier. If you are not using them in your custom code, you should ensure that they get deleted as well.
-- /bin/FluentNHibernate.dll
-- /bin/NHibernate.dll
-- /bin/lesi.Collections.dll
-- /bin/Antlr3.Runtime.dll
-- /bin/Castle.Core.dll
+* /bin/FluentNHibernate.dll
+* /bin/NHibernate.dll
+* /bin/lesi.Collections.dll
+* /bin/Antlr3.Runtime.dll
+* /bin/Castle.Core.dll
 
 Finally all .courier files found in /data/Revision needs to be deleted aswell, as they will no longer be used.
 
