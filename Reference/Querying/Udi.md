@@ -9,6 +9,7 @@
 An Umbraco UDI consists of three parts: the scheme, the type and a GUID Identifier. For example: `umb://document/4fed18d8c5e34d5e88cfff3a5b457bf2`.
 
 Breaking it down:
+
 1. The scheme is `umb://` - this is always the same and makes it easy to identify an Umbraco UDI
 2. The type is `document` - so in this is an Umbraco node, but it could also be `media`, `member`, etc.
 3. The GUID Id is `4fed18d8c5e34d5e88cfff3a5b457bf2` - this is a GUID (dashes removed) which is randomly generated when the item is being created
