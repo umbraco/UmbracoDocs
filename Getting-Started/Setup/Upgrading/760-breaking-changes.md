@@ -69,3 +69,5 @@ For a long time we had a "rel" attribute on an "img" tag when inserting into the
 ### Others
 
 We are shipping with SignalR in the core at version 2.2.1, if you already have SignalR installed into your app and are using an older version there may be conflicts.
+
+The creation and editing of WebForms templates will no longer be supported as for version 7.6.0.
