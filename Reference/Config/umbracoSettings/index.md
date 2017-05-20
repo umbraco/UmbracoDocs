@@ -248,6 +248,20 @@ This setting is used when you're running Umbraco in virtual directories.
         <!-- Setting this to true can increase render time for pages with a large number of links -->
         <!-- If running umbraco in virtual directory this *must* be set to true! -->
         <ResolveUrlsFromTextString>false</ResolveUrlsFromTextString>
+        
+**DisallowedUploadFiles**
+
+This settings consists of a "black list" of file extensions that editors shouldn't be allowed to upload via the back-office.
+
+        <!-- These file types will not be allowed to be uploaded via the upload control for media and content -->
+        <disallowedUploadFiles>ashx,aspx,ascx,config,cshtml,vbhtml,asmx,air,axd,swf,xml,xhtml,html,htm,svg,php,htaccess</disallowedUploadFiles>
+        
+**AllowedUploadFiles**
+
+If greater control is required than available from the above, this setting can be used to store a "white list" of file extensions.  If provided, only files with these extensions can be uploaded via the back-office.
+
+        <!-- If completed, only the file extensions listed below will be allowed to be uploaded.  If empty, disallowedUploadFiles will apply to prevent upload of specific file extensions. -->
+        <allowedUploadFiles></allowedUploadFiles>
 
 ##Security
 
