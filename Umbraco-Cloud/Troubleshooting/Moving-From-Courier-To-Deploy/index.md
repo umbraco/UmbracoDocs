@@ -8,7 +8,7 @@ If for some reason your Umbraco project was upgraded, but not switched to Deploy
 
 This is a guide for moving from Courier to Deploy. First step is to aquire the latest Umbraco Deploy package and a valid Deploy Key from the support heroes. Use the inapp chat in the Umbraco Cloud portal to get this.
 
-Prerequisits for using the guide is that you have a running site, that contains all metadata, like docuemnt types, data types and templates. 
+Prerequisits for using the guide is that you have a running site, that contains all metadata, like document types, data types and templates. 
 
 ## 1 Removing Umbraco Courier
 First you need to remove all Courier related files and folders.
