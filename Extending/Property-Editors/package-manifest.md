@@ -4,15 +4,16 @@ The package.manifest JSON file format is used to describe one or more custom Umb
 ## Sample Manifest
 This is a sample manifest, it is always stored in a folder in `/app_plugins/{YourPackageName}`, with the name `package.manifest`
 
-    {       
-        propertyEditors: [      
+    {
+        propertyEditors: [
             {
-            alias: "Sir.Trevor",
-            name: "Sir Trevor",         
-            editor: {               
-                view: "~/App_Plugins/SirTrevor/SirTrevor.html",
-                hideLabel: true,
-                valueType: "JSON"
+                alias: "Sir.Trevor",
+                name: "Sir Trevor",
+                editor: {
+                    view: "~/App_Plugins/SirTrevor/SirTrevor.html",
+                    hideLabel: true,
+                    valueType: "JSON"
+                }
             }
         ],
         javascript: [

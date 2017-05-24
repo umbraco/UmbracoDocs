@@ -19,13 +19,14 @@ You can create your own custom macro parameter types.
 All you need to do to create a macro parameter type in Umbraco 7, is to create a custom 'Property Editor' (or copy someone else's), see [Property Editors documentation](../../Extending/Property-Editors.md)
 and in the [Package Manifest file](../../Extending/Property-Editors/package-manifest.md) for the editor, set the isParameterEditor property to be true.
 
-    propertyEditors: [      
+    propertyEditors: [
         {
-        alias: "My.ParameterEditorAlias",
-        name: "Parameter Editor Name",
-        isParameterEditor: true,         
-        editor: {               
-            view: "~/App_Plugins/My.ParameterEditor/ParameterEditorView.html"           
+            alias: "My.ParameterEditorAlias",
+            name: "Parameter Editor Name",
+            isParameterEditor: true,
+            editor: {
+                view: "~/App_Plugins/My.ParameterEditor/ParameterEditorView.html"
+            }
         }
     ]
 ### PreValues/Configuration/DefaultValues ###
