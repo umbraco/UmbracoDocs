@@ -39,3 +39,21 @@ The upgrade process left off when it was needing three more steps. These three s
 3. The last thing to do is to go to the `/site/locks` folder (still through Kudu) and rename the file called `upgrading` to `upgraded-minor`. This will indicate to Umbraco Cloud, that the development environment is now ready to deploy all its changes to the next environment.
 
 Before deploying the upgrade to the next environment, you should verify that everything looks as expected on the development environment. 
+
+# Upgrading Baselines
+Currently the way to get children of a baseline upgraded, is a bit hacky. The reason is that there's no automation involved in running the upgrade process on the children of the baseline. The baseline itself should just be upgraded like any other project on Umbraco Cloud. 
+Click the Upgrade button, and follow the guide. Once it's done, and you are ready to update the children, there's a few steps involved.
+
+The first step is to push the changes to the child projects. Once that is done, the files on the child is now up to date.
+Next step is to manually run the installer on the project. This is simply done by making a request for the site. This will automatically start the install process. The process should be a simple follow through guide. Once it is done, the child project is done.
+
+If the child only contains one environment, you are now done. 
+
+If the child contains two or more environments, a little post processing is needed, to deploy the upgrade to the next environments.
+These steps will be automated in the future, but for now it's a manual process.
+
+You need to access Kudu for the child project, on the dev environment. Use the cmd part, and go to the /site/locks folder. This folder needs to contain two files, indication to the Cloud, that it is in a upgrading state. Create the files `upgrading` and `upgraded-minor`
+
+To create them, type `echo > upgrading` and `echo > upgraded-minor`
+
+That's it. Now the upgrade is ready to be deployed to the next environments, and it will automatically run the upgrader on those environments.
