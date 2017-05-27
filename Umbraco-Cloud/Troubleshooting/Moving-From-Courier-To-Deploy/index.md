@@ -65,7 +65,7 @@ To generate the files, start the site in IIS, and open a command prompt in the `
 
 ### Modify Workspace Dashboard
 
-When using Umbraco Courier the entry in the /Config/Dashboard.config sould contain the following:
+When using Umbraco Courier the entry in the `/Config/Dashboard.config` should contain the following:
 
     <section alias="UmbracoDeploy">
       <areas>
@@ -76,7 +76,7 @@ When using Umbraco Courier the entry in the /Config/Dashboard.config sould conta
       </tab>
     </section>
   
- When switching to Umbraco Deploy this needs to be modified as the location to the deploy dashboard has changed:
+ When switching to Umbraco Deploy this needs to be modified as the location to the deploy dashboard has changed. Make sure the entry looks like this:
  
      <section alias="Deploy">
        <areas>
