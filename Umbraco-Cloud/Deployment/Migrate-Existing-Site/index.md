@@ -8,7 +8,7 @@ Your Umbraco site has to fulfill these requirements
 * Has less than 5000 content nodes
 * Contains no member data (these you will need to import manually!)
 * No obsolete/old packages
-* Isn’t a site that has been upgraded from versions below Umbraco 7 - as legacy code from older versions can potentially cause issues
+* Isn’t a site that has been upgraded from versions below Umbraco 7 (as legacy code from older versions can potentially cause issues)
 
 If you have a site that does not meet the above requirements, feel free to contact us and we will help you find the best solution for your site.
 
