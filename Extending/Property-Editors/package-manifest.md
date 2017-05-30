@@ -58,7 +58,7 @@ The basic values on any editor is `alias`, `name`, and `editor` these three **mu
 * `defaultConfig` Provides a collection of default configuration values, in cases the property editor is not configured or is used a parameter editor, which doesnt allow configuration. The object is a key/value collection and must match the `prevalues` fields keys.
 
 ### Editor
-`editor` Besides setting a view, the editor can also contain additinal information.
+`editor` Besides setting a view, the editor can also contain additional information.
 
     editor: {
         view: "~/App_Plugins/SirTrevor/view.html",
@@ -82,7 +82,7 @@ The basic values on any editor is `alias`, `name`, and `editor` these three **mu
 * `JSON` Stored as ntext, but automatically serialized to dynamic object
 
 ### Pre Values
-`preValues` is a collection of prevalue editors, used for configurating the property editor, the prevalues object must return an array of editors, called `fields`.
+`preValues` is a collection of prevalue editors, used for configuring the property editor, the prevalues object must return an array of editors, called `fields`.
 
     prevalues: {
         fields:[
@@ -103,7 +103,7 @@ Each field contains a number of configuration values:
 
 `key` on a prevalue, determines where its stored in the database, so if you give your prevalue the key "wolf" - then this key will be used in the prevalue table.
 
-But it also means that when this property editor is used on a propety, then this prevalue will be exposed on the models configuration object like below, inside the property editors controller:
+But it also means that when this property editor is used on a property, then this prevalue will be exposed on the models configuration object like below, inside the property editors controller:
 
     //this is the property value
     $scope.model.value = "hello";
@@ -165,7 +165,7 @@ To asscoiate the hosted JSON schema file to all package.manifest files you will 
 
 ### Setting up Visual Studio Code
 
-To asscoiate the hosted JSON schema file to all package.manifest files you will need to perform the following inside of Visual Studio Code editor.
+To associate the hosted JSON schema file to all package.manifest files you will need to perform the following inside of Visual Studio Code editor.
 
 * File -> Preferences -> User Settings
 * This will open two editors side by side with the default settings on the left and custom overrides on the right
