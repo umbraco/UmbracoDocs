@@ -4,7 +4,8 @@ Sometimes you may already have an Umbraco site built that did not start with a c
 ## Requirements
 Before you start migrating your Umbraco 7 site to Umbraco Cloud there are a few things you need to consider. In order to migrate your site smoothly, we have made a list of requirements your project(s) needs to meet.
 
-Your Umbraco site has to fulfill these requirements
+Your Umbraco site has to fulfill these requirements:
+
 * Has less than 5000 content nodes
 * Contains no member data (these you will need to import manually!)
 * No obsolete/old packages
