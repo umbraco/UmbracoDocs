@@ -7,7 +7,7 @@ Follow the steps in the [general upgrade guide](general.md), then these addition
 ## Version 7.6.3
 In short:
 
-In Umbraco version 7.6.2 we made a mistake in the Property Value Converts (PVCs) which was corrected 2 days later in versaion 7.6.3. If you were having problems with querying the following datatypes in the frontend, then make sure to upgrade to 7.6.3:
+In Umbraco version 7.6.2 we made a mistake in the Property Value Converts (PVCs) which was corrected 2 days later in version 7.6.3. If you were having problems with querying the following datatypes in the frontend, then make sure to upgrade to 7.6.3:
 
  * Multi Node Tree Picker
  * Related Links
