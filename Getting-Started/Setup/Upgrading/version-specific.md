@@ -4,6 +4,59 @@
 
 Follow the steps in the [general upgrade guide](general.md), then these additional instructions for the specific versions. (Remember that new config files are not mentioned because they are already covered in the general upgrade guide.)
 
+## Version 7.6.3
+In short:
+
+In Umbraco version 7.6.2 we made a mistake in the Property Value Converts (PVCs) which was corrected 2 days later in versaion 7.6.3. If you were having problems with querying the following datatypes in the frontend, then make sure to upgrade to 7.6.3:
+
+ * Multi Node Tree Picker
+ * Related Links
+ * Member Picker
+
+Depending on if you tried to fix problem with those datatypes you will might need to fix them again after you upgrade to 7.6.3.
+
+## Property Value Converters?
+
+Umbraco stores data for datatypes in different ways, for a lot of pickers it will store (for example) 1072 or 1083,1283. These numbers refer to the identifier of the item in Umbraco. In the past, when building your templates you would manually have to take that value and find the content item it belongs to and then get the data you wanted from there, for example:
+
+		@{
+			IPublishedContent contactPage;
+			var contactPageId = Model.Content.GetPropertyValue<int>("contactPagePicker");
+			if(contactPageId > 0) {
+				 contactPage = Umbraco.TypedContent(contactPageId);
+			}
+		}
+
+		<p>
+		  <a href="@contactPage.Url">@contactPage.Name</a>
+		</p>
+
+
+Wouldn't it be nice if instead of that you could "just" do:
+
+		<p>
+			<a href="@Model.Content.ContactPagePicker.Url">@Model.ContactPagePicker.Name</a>
+		</p>
+		
+This is possible since 7.6.0 using Models Builder and through the inclusion of [core property value converters](https://our.umbraco.org/projects/developer-tools/umbraco-core-property-value-converters/), a brilliant package by Jeavon.
+
+In order to not break everybody's sites (the results of queries are different when PVCs are enabled) we disabled these PVCs by default. 
+
+Umbraco 7.6.0 also came with new pickers that store their data as a [UDI (Umbraco Identifier)](https://our.umbraco.org/Documentation/Reference/Querying/Udi). We wanted to make it easy to use these new pickers so by default we wanted PVCs to always be enabled for those pickers.
+
+Unfortunately we noticed that some new pickers also got their PVCs disabled when the configuration setting was set to false (`<EnablePropertyValueConverters>false</EnablePropertyValueConverters>`) - yet the content picker ignored this setting.
+
+In order to make everything consistent, we made sure that the UDI pickers would always use PVCs in 7.6.2... or so we thought! By accident we actually revesed the behavior. So when PVCs were enabled, the property would NOT be converted and when PVCs were disabled, the property would be converted after all. This is the exact opposite behavior of 7.6.2. Oops!
+So we have fixed this now in 7.6.3.
+
+This issue only affects:
+
+ * Multi Node Tree Picker
+ * Related Links
+ * Member Picker
+
+If you have already upgraded to 7.6.2 and fixed some of your queries for those three datatypes then you might have to fix them again in 7.6.3. We promise it's the last time you need to update them! We're sorry for the inconvenience.
+
 ##Version 7.6.0
 
 There are a few breaking changes in 7.6.0 be sure to **[read about them here](760-breaking-changes.md)** and [here's the list of these items on the tracker](http://issues.umbraco.org/issues/U4?q=Due+in+version%3A+7.6.0+Backwards+compatible%3F%3A+No+)
