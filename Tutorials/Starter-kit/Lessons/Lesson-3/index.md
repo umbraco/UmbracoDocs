@@ -25,7 +25,9 @@ ___
 ```
 5. You are approaching the finish line with step five
 6. All done! Go to the node and look at the marvel.
+
 ![An image](images/an-image.png)
+
 7. Apparently we're yet..
 
 
