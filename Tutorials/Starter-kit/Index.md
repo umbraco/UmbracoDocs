@@ -1,5 +1,5 @@
-#The fatastically named starter kit
-The **Fatastically named** starter kit is the default starter kit for Umbraco and is the perfect way to familiarise yourself with Umbraco CMS. Developed and maintained by Umbrac HQ and the Umbraco community it aims to give you the basic knowledge you need in order to hit the ground running.
+# The fantastically named starter kit
+The **Fantastically named** starter kit is the default starter kit for Umbraco and is the perfect way to familiarise yourself with Umbraco CMS. Developed and maintained by Umbrac HQ and the Umbraco community it aims to give you the basic knowledge you need in order to hit the ground running.
 
 Installing the starter kit wil give you a simple site where you can:
 
