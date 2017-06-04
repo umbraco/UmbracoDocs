@@ -10,12 +10,16 @@ Installing the starter kit wil give you a simple site where you can:
 ## Overview
 This will explain what the **Fantastically named** starter kit contains. Yada yada...
 
-* Homepage
-* Textpages 
-* Blog section
-* Products
-* Contact Form
-* And so forth
+### Homepage
+The homepage of the website
+### Textpages
+Generic textpages
+### Blog section
+Blog posts and blog overview
+### Products
+Product section, with featured products ready for shop integration
+### Contact page
+Contact form and map
 
 ## Lessons
 Once you've familirised yourself with the starter kit, you might already have spotted some places where you'd want some additional functionality. The following lessons will give you step-by-step instructions on how to add specific features.
