@@ -8,4 +8,4 @@ Nulla quis lorem ut libero malesuada feugiat. Vestibulum ante ipsum primis in fa
 
 * Great picker that is also awesome
 
-[Go to step 2](step-2.md)
+[Pevious](index.md) - [Next](step-2.md)
