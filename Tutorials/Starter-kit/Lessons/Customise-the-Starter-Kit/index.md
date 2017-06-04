@@ -11,8 +11,7 @@ Learn how to:
 * Upload images and use them with content items.
 * Preview your changes before publishing the content to the site.
 
-___
-
+## Steps
 1. Click on the *Home* node in the Content section
 2. Select the *Design* tab
 3. Choose a different font and color theme on the corresponding properties. Try different combinations and see what fits your site. You can save your changes by using `ctrl`/`cmd`+`s` or clicking the arrow next to *Save and publish*. This will not publish the changes to the website but you can see how it looks by clicking the *Preview* button.
