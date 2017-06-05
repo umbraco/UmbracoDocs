@@ -1,10 +1,10 @@
 # Customise La Solution de Démarrage
-Learn how to customise the La Solution de Démarrage.
+Learn how to customise the *La Solution de Démarrage* starter kit.
 
 ## Outcome
 A customised version of the site with your own home page image, site name, color theme, font, and perhaps a logo in the header.
 
-## Take Away
+## Takeaway
 Learn how to:
 * Navigate the editing area in the content section.
 * Interact with content properties.
