@@ -77,6 +77,9 @@ Made obsolete with the release of Umbraco v7.6 the multinode treepicker data typ
 ## [Multiple Textbox](Multiple-Textbox.md)
 The Multiple Textbox property editor enables a content editor to make a list of text items
 
+## [Nested Content](Nested-Content.md)
+A nested content property editor that allows you to use Document Types as a schema for list items.
+
 ## Numeric
 
 ## [Radio button list](RadioButton-List.md)
