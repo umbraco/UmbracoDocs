@@ -1,5 +1,5 @@
-# Customise La Solution de Démarrage
-Learn how to customise the *La Solution de Démarrage* starter kit.
+# Customise the Starter Kit
+Learn how to customise the starter kit.
 
 ## Outcome
 A customised version of the site with your own home page image, site name, color theme, font, and perhaps a logo in the header.
