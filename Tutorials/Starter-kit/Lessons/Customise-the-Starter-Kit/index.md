@@ -2,9 +2,9 @@
 Learn how to customise the La Solution de Démarrage.
 
 ## Outcome
-A customised version of the site with your own frontpage header, site name, new color theme, font and even an optional logo in the header.
+A customised version of the site with your own home page image, site name, color theme, font, and perhaps a logo in the header.
 
-## Takeaway
+## Take Away
 Learn how to:
 * Navigate the editing area in the content section.
 * Interact with content properties.
@@ -12,14 +12,14 @@ Learn how to:
 * Preview your changes before publishing the content to the site.
 
 ## Steps
-1. Click on the *Home* node in the Content section
-2. Select the *Design* tab
-3. Choose a different font and color theme on the corresponding properties. Try different combinations and see what fits your site. You can save your changes by using `ctrl`/`cmd`+`s` or clicking the arrow next to *Save and publish*. This will not publish the changes to the website but you can see how it looks by clicking the *Preview* button.
-4. You can change the background image of the frontpage. Click the edit button on the the *Hero Background* thumbnail. This will open the media picker dialog. Here you can either choose an existing image or upload your own. Simple select the image you want in the dialog and click submit in the lower right corner.
-5. In the editing area, find the *Site Name* property and change the name of the site to anything you want. This will be shown in the site navigation. If you want a logo instead of instead the Site name in the navigation menu you can upload and/or choose an image from the media library.
-6. When you're happy with the changes you can publish them to website by clicking the *Save and Publish* button. If you want to see the changes you've made to the site you can go to the properties tab and follow the *Link to document* the 
+1. Click on *Home* in the Content section.
+2. Select the *Design* tab.
+3. Choose a different font and color theme. Try different combinations and see what fits your site. Save your changes by using `ctrl`/`cmd`+`s` or clicking the arrow next to the **Save and publish** button. **Save** will not publish the changes to the website.  Click **Preview** to see how the page looks on various screen sizes.
+4. You can change the background image of the home page. Hover over the *Hero Background* thumbnail and click the edit icon to open the **Media Picker** dialog. Here you can either choose an existing image or upload your own. Select the image you want in the dialog and click submit in the lower right corner.
+5. Find the *Site Name* property and change the name of the site. This will be shown in the site navigation. If you want a logo instead of instead the Site name in the navigation menu you can upload and/or choose an image from the **Media Library**.
+6. When you're happy with the changes publish them to website by clicking the **Save and Publish** button. To see the changes you've made go to the properties tab and click the icon next to **Link to document**.
 
 ## Summary
-Nice job! In this lesson you've learned to edit properties on a content node and use the *Save*, *Preview* and *Save and Publish*.
+Nice job! In this lesson you've learned to edit properties on a page and use the **Save**, **Preview** and **Save and Publish** actions.
 
 [Back to Lessons](../index.md)
