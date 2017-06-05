@@ -4,7 +4,7 @@ or
 If you need some help... here's where to find it
 
 ## Outcome
-You're a registered user on **Our**, the community portal for Umbraco.  Maybe you've even signed up to attend a nearby meetup!
+You're a registered user on **Our**, the community portal for Umbraco.  Maybe you have even signed up to attend a nearby meetup!
 
 ## Steps
 1. Visit [Our Umbraco](https://our.umbraco.org/member/Signup) and register to become part of The Friendly CMS.
