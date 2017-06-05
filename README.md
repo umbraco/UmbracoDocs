@@ -6,7 +6,7 @@ We welcome valuable contributions from anyone willing to help. No matter if it i
 
 For details on how to contribute, see further down this page.
 
-#What's in the documentation
+# What's in the documentation
 
 ## Getting started
 [Getting started (available here)](Getting-Started/) is an introduction to Umbraco containing explanations of basic concepts and short tutorials.
