@@ -34,6 +34,12 @@ Each check returns a message indicating whether or not the issue in question has
 
 Some of them can also be rectified via the dashboard, simply be clicking the **Fix** button and in some cases providing some required information.  These changes usually involve writing to configuration files that will often trigger a restart of the website.  
 
+##Configuring and scheduling checks
+
+As well as viewing the results of health checks via the Developer section dashboard, you can set up the checks to be run on a schedule and be notified of the results by email, Slack and/or log files.  It's also possible to disable certain checks if they aren't applicable in your environment.
+
+For more on this see the [Reference > Config > Health checks page](../Reference/Config/Healthchecks/index.md).
+
 ##Custom checks
 
 You can build your own health checks. There are two types of health checks you can build: **configuration checks** and **general checks**.
