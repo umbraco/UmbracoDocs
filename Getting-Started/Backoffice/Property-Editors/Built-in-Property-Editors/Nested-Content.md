@@ -63,7 +63,7 @@ To delete an item simply click the delete icon. If the minimum number of items i
 
 If **Nested Content** is configured with a minimum and maximum item of 1, then it goes into single item mode.
 
-In single item mode, there is no icon displayed to add new items, and the single items editor will be open by default and it’s header bar removed.
+In single item mode, there is no icon displayed to add new items, and the single items editor will be open by default and it's header bar removed.
 
 In this mode,** Nested Content** works more like a fieldset than a list editor.
 
@@ -77,45 +77,41 @@ To render the stored value of your **Nested Content** property, a built in value
 
 Example:
 
-```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage
-@{
-	var items = Model.GetPropertyValue<IEnumerable<IPublishedContent>>("myProperyAlias");
-
-	foreach(var item in items)
-	{
-		// Render your content, e.g. item.GetPropertyValue<string>("heading")
-	}
-}
-```
+    @inherits Umbraco.Web.Mvc.UmbracoViewPage
+    @{
+        var items = Model.GetPropertyValue<IEnumerable<IPublishedContent>>("myProperyAlias");
+    
+        foreach(var item in items)
+        {
+            // Render your content, e.g. item.GetPropertyValue<string>("heading")
+        }
+    }
 
 Each item is treated as a standard `IPublishedContent` entity, that means you can use all the property value converters you are used to using, as-well as the built in `@Umbraco.Field(...)` helper methods.
 
 Example:
 
-```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage
-@{
-	var items = Model.GetPropertyValue<IEnumerable<IPublishedContent>>("myProperyAlias");
-
-	foreach(var item in items)
-	{
-		<h3>@item.GetPropertyValue("heading")</h3>
-		@Umbraco.Field(item, "bodyText")
-	}
-}
-```
+    @inherits Umbraco.Web.Mvc.UmbracoViewPage
+    @{
+        var items = Model.GetPropertyValue<IEnumerable<IPublishedContent>>("myProperyAlias");
+    
+        foreach(var item in items)
+        {
+            <h3>@item.GetPropertyValue("heading")</h3>
+            @Umbraco.Field(item, "bodyText")
+        }
+    }
 
 #### Single Item Mode
 
 If your **Nested Content** property editor is configured in single item mode then the value converter will automatically know this and will return a single `IPublishedContent` entity rather than an `IEnumerable<IPublishedContent>` list. Therefore, when using **Nested Content** in single item mode, you can simply call `GetPropertyValue<T>` with a generic type of `IPublishedContent` and you can start accessing the entities property straight away, rather than having to then fetch it from a list first.
 
 Example:
-```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage
-@{
-	var item = Model.GetPropertyValue<IPublishedContent>("myProperyAlias");
-}
-	<h3>@item.GetPropertyValue("heading")</h3>
-	@Umbraco.Field(item, "bodyText")
-```
+
+    @inherits Umbraco.Web.Mvc.UmbracoViewPage
+    @{
+        var item = Model.GetPropertyValue<IPublishedContent>("myProperyAlias");
+    }
+        <h3>@item.GetPropertyValue("heading")</h3>
+        @Umbraco.Field(item, "bodyText")
+
