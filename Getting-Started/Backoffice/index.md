@@ -80,3 +80,27 @@ A parameter editor defines the usage of a property editor for use as a parameter
 
 ###User
 A user is someone who has access to the **Umbraco backoffice** and is not to be confused with Member. When Umbraco has been installed a user will automatically be generated with the login (email) an password entered during installing. Users can be created, edited and managed in the User section.
+
+###Shortcuts
+Throughout the whole backoffice you can use several shortcuts. Most of them are implemented since Umbraco 7.6.5., but some of them will also work in older versions. All dialogs get autofocus and you can directly interact with them. 
+
+* General shortcut keys:
+** Ctrl + Shift + H: Open the help section
+** Ctrl + Shift + U: Open your user profile
+** Ctrl + Space: Set focus on the searchbox
+** Ctrl + ,: Set focus on the title bar (if available)
+** Ctrl + S: Save the current page
+** Esc: Close popups, dialogs and overlays
+** Ctrl + Alt + 1 to 9: Navigate sections in the section tree
+** Ctrl + 1 to 9: Navigate to the corresponding tab
+
+* On a node:
+** Ctrl + S: Saves the node
+** Ctrl + P: Publishes the node
+** Ctrl + U: Unpublish the node
+
+* In the content tree:
+** Arrow Down: Go to the next node
+** Arrow Up: Go to the previous node
+** Arrow Left: Close the node, if there are any children or go to the above node if not.
+** Arrow Right: Expand the node, if it has any children. If not, it opens the options menu
