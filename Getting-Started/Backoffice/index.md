@@ -100,7 +100,7 @@ Throughout the whole backoffice you can use several shortcuts. Most of them are 
 ** Ctrl + U: Unpublish the node
 
 * In the content tree:
-** Arrow Down: Go to the next node
+** Arrow Down: Go to the next node 
 ** Arrow Up: Go to the previous node
 ** Arrow Left: Close the node, if there are any children or go to the above node if not.
 ** Arrow Right: Expand the node, if it has any children. If not, it opens the options menu
