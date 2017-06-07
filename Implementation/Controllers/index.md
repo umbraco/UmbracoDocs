@@ -1,6 +1,6 @@
 #Controllers in Umbraco
 
-_There are are few types of controllers in Umbraco that perform different tasks_
+_There are a few types of controllers in Umbraco that perform different tasks_
 
 ##Render MVC Controllers
 
