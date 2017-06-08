@@ -78,7 +78,7 @@ Returns the property value for the specified property alias
 The result Type of this property value is `object` which is fine in most cases since when using
 the above syntax, Razor will automatically execute a `ToString()` on the result value.
 	
-###Model.Content.GetPropertyValue<T>(string)
+###Model.Content.GetPropertyValue\<T>(string)
 Returns the property value for the specified property alias converted to the specified output value. 
 
 For example, to return the `string` result of "siteName" you would do:
