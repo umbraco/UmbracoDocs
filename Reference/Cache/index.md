@@ -20,7 +20,7 @@ ApplicationCache is a container for the different cache types
 
 ## Refreshing/Invalidating cache
 
-### [ICacheRefresher](cache-refresher.md)
+### [ICacheRefresher](cache-refresher.md) / [ICacheRefresher&lt;T&gt;](cache-refresher-t.md)
 The standard way to invalidate cache in Umbraco is to implement an `ICacheRefresher`. 
 Ensures that content cache is refreshed among all server nodes participating in a load balanced scenario.
 
@@ -71,7 +71,8 @@ TODO: fill in these docs(https://github.com/umbraco/UmbracoDocs/issues/208)
 
 ## IServerMessenger
 
-TODO: fill in these docs(https://github.com/umbraco/UmbracoDocs/issues/208)
+Broadcasts distributed cache notifications to all servers of a load balanced environment.
+Also ensures that the notification is processed on the local environment.
 
 ## DistributedCache.CacheChanged
 
