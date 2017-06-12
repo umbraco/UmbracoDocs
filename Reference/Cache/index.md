@@ -37,7 +37,7 @@ The interface consists of the following methods. _Some of these methods may not 
 
 There are 2 other base types of `ICacheRefresher` which are: 
 
-* `ICacheRefresher<T>` - this inherits from `ICacheRefresher` but provides strongly typed methods for cache invalidation too. This is useful when executing the method to invoke the cache refresher when you have the instance of the object already since this can avoid some overhead of re-looking the object back up.
+* `ICacheRefresher<T>` [ICacheRefresher&lt;T&gt;](cache-refresher-t.md) - this inherits from `ICacheRefresher` but provides strongly typed methods for cache invalidation too. This is useful when executing the method to invoke the cache refresher when you have the instance of the object already since this can avoid some overhead of re-looking the object back up.
    * `void Refresh(T instance);` - this would invalidate/refresh a single cache for the specified object.
    * `void Remove(T instance);` - this would invalidate a single cache for the specified object.
 * `IJsonCacheRefresher` - this inherits from `ICacheRefresher` but provides more flexibility if you need to invalidate cache based on more complex scenarios. 
@@ -67,7 +67,7 @@ When an `ICacheRefresher` is executed via the `DistributedCache.Instance` a noti
 
 ## Events handling to refresh cache
 
-TODO: fill in these docs(https://github.com/umbraco/UmbracoDocs/issues/208)
+To use the extensions add a using to `Umbraco.Web.Cache`;  You can then call them on the DistributedCache.Instance object.
 
 ## IServerMessenger
 
