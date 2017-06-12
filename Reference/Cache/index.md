@@ -14,6 +14,10 @@ In normal environments caching seems to be a pretty standard and easy concept, h
 
 Describes the process of how to get, update and insert items in the cache
 
+## [ApplicationContext.Current.ApplicationCache](applicationcache.md)
+
+ApplicationCache is a container for the different cache types
+
 ## Refreshing/Invalidating cache
 
 ### [ICacheRefresher](cache-refresher.md)
