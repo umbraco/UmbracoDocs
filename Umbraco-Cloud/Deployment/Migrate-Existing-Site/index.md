@@ -6,7 +6,7 @@ Before you start migrating your Umbraco 7 site to Umbraco Cloud there are a few 
 
 Your Umbraco site has to fulfill these requirements:
 
-* Has no more content nodes than your plan covers (Starter plan: 1000 - Pro Plan: 25000)
+* Has no more content items than your plan covers (Starter plan: 1000 - Pro Plan: 25000)
 * Contains no member data (these you will need to import manually!)
 * No obsolete/old packages
 * Isn’t a site that has been upgraded from versions below Umbraco 7 (as legacy code from older versions can potentially cause issues)
