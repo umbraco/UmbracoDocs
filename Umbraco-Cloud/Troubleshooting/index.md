@@ -15,7 +15,7 @@ Please refer to this topic for troubleshooting structure deploys and restores:
 
  - [Errors during structure deployment/restore](Structure-Error/)
 
- ## Automated Minor upgrades
+## Automated Minor upgrades
   
  Please refer to this topic for troubleshooting when minor upgrades are causing issues:
 
