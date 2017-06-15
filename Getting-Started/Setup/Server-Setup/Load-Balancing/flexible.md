@@ -93,7 +93,7 @@ Examine v0.1.80 introduced a new `directoryFactory` which should be added to all
 
     directoryFactory="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory,Examine"
 
-The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accesses from the temporary storage directory.
+The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory.
 
 #### Pre Examine v0.1.80 ####
 
@@ -107,7 +107,7 @@ remote file system. Lucene has issues when working from a remote file share so t
 
 #### Examine v0.1.83+ ####
 
-Examine v0.1.83 introduced a new `directoryFactory` which should be added to all indexers
+Examine v0.1.83 introduced a new `directoryFactory` which should be added to all indexers in the `~/Config/ExamineSettings.config` file
 
     directoryFactory="Examine.LuceneEngine.Directories.TempEnvDirectoryFactory,Examine"
 
@@ -130,13 +130,13 @@ For **Umbraco v7.6+**
 
 	<add key="umbracoContentXMLStorage" value="EnvironmentTemp" />
 
-This will set Umbraco to store umbraco.config in the environment temporary folder
+This will set Umbraco to store `umbraco.config` in the environment temporary folder
 
 For **Umbraco Pre v7.6**
 
 	<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
 
-This will set Umbraco to store umbraco.config in the ASP.NET temporary folder
+This will set Umbraco to store `umbraco.config` in the ASP.NET temporary folder
 
 ### Steps
 

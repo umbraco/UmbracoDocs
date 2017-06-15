@@ -1,8 +1,8 @@
-#File Storage on SAN/NAS/Clustered File Server/Network Share
+# File Storage on SAN/NAS/Clustered File Server/Network Share
 
 _documentation about setting up load balanced environments using shared file systems_
 
-##Overview
+## Overview
 
 Configuring your servers to work using a centrally located file system that is shared for all of your IIS instances can be tricky and can take a while to setup correctly. 
 
@@ -10,30 +10,48 @@ A note when using this method to store your files centrally, you **must** make s
 
 There's a lot of work required to get this working, but once it's done it's fairly easy to maintain. We've this same setup working for many websites so hopefully these notes help you get started:
 
-##Umbraco configuration
+### Umbraco XML cache file
 
-One important configuration option that **must** be set when using a centralized storage is to store the umbraco.config file in the ASP.NET temp folder local to the individual server. Change this setting to 'true' in your web.config
+One important configuration option that **must** be set when using a centralized storage is to store the umbraco.config file in a folder that is local to the individual server.
+
+For **Umbraco v7.6+**
+
+	<add key="umbracoContentXMLStorage" value="EnvironmentTemp" />
+
+This will set Umbraco to store `umbraco.config` in the environment temporary folder
+
+**Or**
+
+	<add key="umbracoContentXMLStorage" value="AspNetTemp" />
+
+This will set Umbraco to store `umbraco.config` in the ASP.NET temporary folder
+
+For **Umbraco Pre v7.6**
 
 	<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
 
-##Lucene/Examine configuration
+This will set Umbraco to store `umbraco.config` in the ASP.NET temporary folder
+
+
+## Lucene/Examine configuration
 
 You cannot share indexes between servers, therefore when using a shared file server, Examine settings are a little bit tricky. 
 
-### Umbraco 7.2.8+
-If you are using Umbraco 7.2.8+, then Umbraco has this feature out-of-the-box:
+#### Examine v0.1.83+ ####
 
-* Ensure you are using the [latest Examine version from Nuget](https://www.nuget.org/packages/Examine)
+Examine v0.1.83 introduced a new `directoryFactory` which should be added to all indexers in the `~/Config/ExamineSettings.config` file
+
+    directoryFactory="Examine.LuceneEngine.Directories.TempEnvDirectoryFactory,Examine"
+
+The `TempEnvDirectoryFactory` allows Examine to store indexes directly in the environment temporary storage directory.
+
+#### Pre Examine v0.1.83 ####
+
 * In ExamineIndex.config, you can tokenize the path for each of your indexes to include the machine name, this will ensure that your indexes are stored in different locations for each machine. An example of a tokenized path is: `~/App_Data/TEMP/ExamineIndexes/{machinename}/Internal/`
 * In ExamineSettings.config, you can add this attribute to all of your indexers and searchers: `useTempStorage="Sync"`
 * The 'Sync' setting will store your indexes in ASP.Net's temporary file folder which is on the local file system. Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Anytime the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local temp files are cleared out that the index files can be restored from the centrally stored index files. If you see issues with this syncing process (in your logs), you can change this value to be 'LocalOnly' which will only persist the index files to the local file system in ASP.Net temp files.
 
-### Umbraco < 7.2.8
-However, if you are using a version less than 7.2.8 you will need to use this custom library:
-
-https://github.com/Shandem/UmbracoExamine.TempStorage
-
-##Windows Setup
+## Windows Setup
 
 * Create domain user account that will run your IIS websites. Example: MyDomain\WebsiteUser
 * Grant this domain user FULL access to your file share
@@ -46,7 +64,7 @@ https://github.com/Shandem/UmbracoExamine.TempStorage
 
 **Much of the above is covered in this Microsoft doc: [ASP.NET 3.5 Hosting](http://wiki.dev/GetFile.aspx?File=Wiggles-Hosting/ASPNET35_HostingDeploymentGuide.doc)**
 
-##IIS Setup
+## IIS Setup
 
 Since the files for the website will be hosted centrally, each IIS website on your servers will need to point to the same UNC share for the files. For example: *\\fileserver.mydomain.local\Inetpub\MySite*
 

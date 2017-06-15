@@ -5,7 +5,8 @@ The indexes are used in order to provide search capability in the backoffice (no
 That means that once a media item is stored, metadata about the media item will be stored in the index, and fetched from it when requested.
 
 These indexes need to be kept in sync, and are required for Umbraco to start up. The way this is done, will directly affect your sites performance.
-When working on Umbraco Cloud, there is some key settings that changes, dependending on whether  you are working locally or on your development/staging/live environment. 
+When working on Umbraco Cloud, there is some key settings that changes, depending on whether you are working locally or on your development/staging/live environment. 
+
 Working with Lucene indexes in Umbraco is done via an integration of Examine, which provides a simpler interface for interacting with the indexes. Tweaking settings is done through two key configuration files; `~/Config/ExamineSettings.config` and `~/Config/ExamineIndexes.config`.
 
 ## ExamineSettings.config
@@ -17,7 +18,21 @@ A provider is defined as
         supportProtected="true"
         analyzer="Lucene.Net.Analysis.WhitespaceAnalyzer, Lucene.Net"/>
 
-The above is the default internal indexer for an Umbraco installation. In order to specify where the indexes are stored we need to add an attribute called `useTempStorage` to the providers.
+The above is the default internal indexer for an Umbraco installation.
+
+#### Examine v0.1.80+ ####
+
+Examine v0.1.80 introduced a new `directoryFactory` which should be added to all indexers in the `~/Config/ExamineSettings.config` file. This setting is default on Umbraco Cloud.
+
+    directoryFactory="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory,Examine"
+
+The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory.
+
+#### Pre Examine v0.1.80 ####
+
+It's recommend that you **upgrade Examine** to the latest v0.1.x release as the configuration is **much simpler**, see above! 
+
+In order to specify where the indexes are stored we need to add an attribute called `useTempStorage` to the providers.
 
 The following options are available 
 
@@ -27,7 +42,7 @@ The following options are available
   * The indexes will survive code change and configuration changes, but is in general slower than using `LocalOnly`
 
 * `useTempStorage="LocalOnly"`
-  * This setting is default on Umbraco Cloud. It will store the indexes in ASP.NET Temporary storage. The ASP.NET Temporary storage is local to the website and therefore the fastest place to store the files.
+  * It will store the indexes in ASP.NET Temporary storage. The ASP.NET Temporary storage is local to the website and therefore the fastest place to store the files.
   Trouble with having the files here, is that ASP.NET temp storage will be wiped and needs to rebuild again, whenever a code change or configuration change happens.
 
 * `useTempStorage="Sync"`

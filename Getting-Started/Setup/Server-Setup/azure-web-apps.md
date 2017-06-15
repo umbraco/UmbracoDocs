@@ -55,10 +55,25 @@ Examine v0.1.80 introduced a new `directoryFactory` which should be added to all
 
     directoryFactory="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory,Examine"
 
-The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accesses from the temporary storage directory.
+The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory.
 
 #### Pre Examine v0.1.80 ####
 
 * If you have a {machinename} token in your `~/Config/ExamineIndex.config` file remove this part of the path. Example, if you have path that looks like: `~/App_Data/TEMP/ExamineIndexes/{machinename}/External/` it should be `~/App_Data/TEMP/ExamineIndexes/External/` 
 * Due to the nature of Lucene files and IO latency, you should update all of your Indexers and Searchers in the `~/Config/ExamineSettings.config` file to have these two properties (see [here](http://issues.umbraco.org/issue/U4-7614) for more details): `useTempStorage="Sync"`
 
+### Umbraco XML cache file
+
+For a single Azure Web App instance you need to ensure that the Umbraco XML config file is stored on the local server (since Azure uses a shared file system). To do this you need to add a new app setting to web.config:
+
+For **Umbraco v7.6+**
+
+	<add key="umbracoContentXMLStorage" value="EnvironmentTemp" />
+
+This will set Umbraco to store `umbraco.config` in the environment temporary folder
+
+For **Umbraco Pre v7.6**
+
+	<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
+
+This will set Umbraco to store `umbraco.config` in the ASP.NET temporary folder
