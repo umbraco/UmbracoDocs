@@ -36,7 +36,7 @@ The process is as follows:
 * These events are converted into data structures called "instructions" and are stored in the database in a queue
 * Each front-end server checks to see if there are any outstanding instructions it hasn't processed yet
 * When a front-end server detects that there are pending instructions, it downloads them and processes them and in turn updates it's cache, cache files and indexes on it's own file system
-* There can be up to a 5 second delay between content updates and a front-end server's refreshing, this is expected and normal behavior.
+* There can be up to a 5 second delay between content updates and a front-end server's refreshing, this is expected and normal behaviour.
 
 ## Scheduling and master election
 
@@ -124,11 +124,15 @@ We are working towards being able to mitigate these issues by adding the ability
 
 ### Umbraco XML cache file
 
-For your front-end Azure Web App instance, you'll need to ensure that the Umbraco XML config file is stored on the local server (since Azure uses a shared file system). To do this ensure this setting is true in your web.config:
+For your front-end Azure Web App instance, you'll need to ensure that the Umbraco XML config file is stored on the local server (since Azure uses a shared file system). To do this you need to add a new app setting to web.config:
 
-```
-<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
-```
+For **Umbraco v7.6+**
+
+	<add key="umbracoContentXMLStorage" value="EnvironmentTemp" />
+
+For **Umbraco Pre v7.6**
+
+	<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
 
 ### Steps
 
@@ -139,7 +143,7 @@ For your front-end Azure Web App instance, you'll need to ensure that the Umbrac
 
 ### Scaling
 
-**Do not scale your master/adminsitration environment** this is not supported and can cause issues.
+**Do not scale your master/administration environment** this is not supported and can cause issues.
 
 Azure Web Apps can be manually or automatically scaled up or down and is supported by Umbraco's flexible load balancing.
 
