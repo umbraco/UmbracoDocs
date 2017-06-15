@@ -89,7 +89,7 @@ Ensure you read the [overview](index.md) before you begin - you will need to ens
 
 #### Examine v0.1.80+ ####
 
-Examine v0.1.80 introduced a new `directoryFactory` which should be added to all indexers and searchers
+Examine v0.1.80 introduced a new `directoryFactory` which should be added to all indexers
 
     directoryFactory="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory,Examine"
 
@@ -107,7 +107,7 @@ remote file system. Lucene has issues when working from a remote file share so t
 
 #### Examine v0.1.83+ ####
 
-Examine v0.1.83 introduced a new `directoryFactory` which should be added to all indexers and searchers
+Examine v0.1.83 introduced a new `directoryFactory` which should be added to all indexers
 
     directoryFactory="Examine.LuceneEngine.Directories.TempEnvDirectoryFactory,Examine"
 
