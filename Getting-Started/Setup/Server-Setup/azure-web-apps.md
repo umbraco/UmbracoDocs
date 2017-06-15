@@ -1,4 +1,4 @@
-#Running Umbraco on Azure Web Apps
+# Running Umbraco on Azure Web Apps
 
 _This section describes best practices with running Umbraco on Azure Web Apps_
 
@@ -6,7 +6,7 @@ _This section describes best practices with running Umbraco on Azure Web Apps_
 
 This has been called a few names in the past, many people still know Azure Web Apps as Azure Web Sites. 
 
-> App Service is a fully Managed Platform for professional developers that brings a rich set of capabilities to web, mobile and integration scenarios. Quickly create and deploy mission critical web apps that scale with your business by using Azure App Service.
+> App Service is a fully Managed Platform for professional developers that brings a rich set of capabilities to web, mobile and integration scenarios. Quickly create and deploy mission critical web Apps that scale with your business by using Azure App Service.
 
 [You can read more about this here](https://azure.microsoft.com/en-us/documentation/articles/app-service-web-overview/)
 
@@ -46,7 +46,7 @@ ability of Azure Web Apps then you need to consult the
 to be configured to support scaling/auto-scaling.
 
 * You should ensure that `fcnMode="Single"` in your web.config's `<httpRuntime>` section (this is the default that is shipped with Umbraco, see [here](http://shazwazza.com/post/all-about-aspnet-file-change-notification-fcn/) for more details)
-* You should set your log4net minimum log priority to "WARN" in /Config/log4net.config if you are running a live site (of course if you are debugging this is irrelavent)
+* You should set your log4net minimum log priority to "WARN" in /Config/log4net.config if you are running a live site (of course if you are debugging this is irrelevant)
 * The minimum recommended Azure SQL Tier is "S2", however noticeable performance improvements are seen in higher Tiers 
 
 #### Examine v0.1.80+ ####
