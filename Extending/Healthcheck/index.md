@@ -51,7 +51,6 @@ Each health check is a class that needs to have a `HealthCheck` attribute. This 
 * Description - describes what the check does in detail
 * Group - this is the category for the check if you use an existing group name (like "Configuration") the check will be added in that category, otherwise a new category will appear in the dashboard
 
-
 ###Configuration checks
 
 These are fairly simple, small checks that take an XPath query and confirm that the value that's expected is there. If the value is not correct, clicking the "Rectify" button will set the recommended value.
@@ -264,3 +263,83 @@ An example check:
             }
         }
     }
+
+## Custom healthcheck notifications
+
+Health check notifications can be scheduled to run periodically and notify you of the results.  Within the core are notifications for email and to send a message to a channel within [Slack](https://slack.com/).  In a similar manner to how it's possible to create your own health checks, you can also create custom notification methods to send the message summarising the status of the health checks via other means.  Again, for further details on implementing this on this please refer the [existing notification methods within the core code base](https://github.com/umbraco/Umbraco-CMS/tree/dev-v7/src/Umbraco.Web/HealthCheck/NotificationMethods).
+
+Each notification method needs to implement the core interface `IHealthCheckNotificatationMethod` and, for ease of creation, can inherit from the base class `NotificationMethodBase`.  The class must also be decorated with an instance of the `HealthCheckNotificationMethod` attribute. There's one method to implement - `SendAsync(HealthCheckResults results)` - which is responsible for taking the results of the health checks and sending them via the mechanism of your choice.
+
+The following example shows how the core method for sending notification via email is implemented:
+
+    using System;
+    using System.Net.Mail;
+    using System.Threading.Tasks;
+    using Umbraco.Core.Configuration.HealthChecks;
+
+    namespace Umbraco.Web.HealthCheck.NotificationMethods
+    {
+        [HealthCheckNotificationMethod("email")]
+        public class EmailNotificationMethod : NotificationMethodBase, IHealthCheckNotificatationMethod
+        {
+            public EmailNotificationMethod(bool enabled, bool failureOnly, HealthCheckNotificationVerbosity verbosity,
+                    string recipientEmail, string subject)
+                : base(enabled, failureOnly, verbosity)
+            {
+                RecipientEmail = recipientEmail;
+                Subject = subject;
+                Verbosity = verbosity;
+            }
+
+            public string RecipientEmail { get; set; }
+
+            public string Subject { get; set; }
+
+            public async Task SendAsync(HealthCheckResults results)
+            {
+                if (ShouldSend(results) == false)
+                {
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(RecipientEmail))
+                {
+                    return;
+                }
+
+                using (var client = new SmtpClient())
+                using (var mailMessage = new MailMessage())
+                {
+                    mailMessage.To.Add(RecipientEmail);
+                    mailMessage.Body =
+                        string.Format(
+                            "<html><body><p>Results of the scheduled Umbraco Health Checks run on {0} at {1} are as follows:</p>{2}</body></html>",
+                            DateTime.Now.ToShortDateString(), 
+                            DateTime.Now.ToShortTimeString(),
+                            results.ResultsAsHtml(Verbosity));
+                    mailMessage.Subject = string.IsNullOrEmpty(Subject) ? "Umbraco Health Check Status" : Subject;
+                    mailMessage.IsBodyHtml = true;
+
+                    await client.SendMailAsync(mailMessage);
+                }
+            }
+        }
+    }
+    
+If custom configuration is required, this can be placed in `HealthChecks.config`, with the `alias` XML attribute for the `notificationMethod` element matching that used on the class level attribute  Again, the following extract shows how the email notification method is configured:
+
+    <HealthChecks>
+      <notificationSettings enabled="true" firstRunTime="" periodInHours="24">
+        <notificationMethods>
+          <notificationMethod alias="email" enabled="false" verbosity="Summary">
+            <settings>
+              <add key="recipientEmail" value="" />
+              <add key="subject" value="Umbraco Health Check Status" />
+            </settings>
+          </notificationMethod>      
+        </notificationMethods>
+    </HealthChecks> 
+
+
+
+
