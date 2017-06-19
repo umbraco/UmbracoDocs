@@ -51,7 +51,7 @@ to be configured to support scaling/auto-scaling.
 
 #### Examine v0.1.80+ ####
 
-Examine v0.1.80 introduced a new `directoryFactory` which should be added to all indexers in the `~/Config/ExamineSettings.config` file
+Examine v0.1.80 introduced a new `directoryFactory` named `SyncTempEnvDirectoryFactory` which should be added to all indexers in the `~/Config/ExamineSettings.config` file
 
     directoryFactory="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory,Examine"
 

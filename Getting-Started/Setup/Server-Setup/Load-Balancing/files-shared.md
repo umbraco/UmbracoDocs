@@ -39,7 +39,7 @@ You cannot share indexes between servers, therefore when using a shared file ser
 
 #### Examine v0.1.83+ ####
 
-Examine v0.1.83 introduced a new `directoryFactory` which should be added to all indexers in the `~/Config/ExamineSettings.config` file
+Examine v0.1.83 introduced a new `directoryFactory` named `TempEnvDirectoryFactory` which should be added to all indexers in the `~/Config/ExamineSettings.config` file
 
     directoryFactory="Examine.LuceneEngine.Directories.TempEnvDirectoryFactory,Examine"
 
