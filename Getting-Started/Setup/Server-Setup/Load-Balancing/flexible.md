@@ -93,7 +93,7 @@ Examine v0.1.80 introduced a new `directoryFactory` which should be added to all
 
     directoryFactory="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory,Examine"
 
-The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory.
+The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory. This setting is need because Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Any time the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local environment temp files are cleared out that the index files can be restored from the centrally stored index files
 
 #### Pre Examine v0.1.80 ####
 
@@ -107,7 +107,7 @@ remote file system. Lucene has issues when working from a remote file share so t
 
 #### Examine v0.1.83+ ####
 
-Examine v0.1.83 introduced a new `directoryFactory` which should be added to all indexers in the `~/Config/ExamineSettings.config` file
+Examine v0.1.83 introduced a new `directoryFactory` named `TempEnvDirectoryFactory` which should be added to all indexers in the `~/Config/ExamineSettings.config` file
 
     directoryFactory="Examine.LuceneEngine.Directories.TempEnvDirectoryFactory,Examine"
 

@@ -55,7 +55,7 @@ Examine v0.1.80 introduced a new `directoryFactory` which should be added to all
 
     directoryFactory="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory,Examine"
 
-The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory.
+The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory. This setting is required due to the nature of Lucene files and IO latency on Azure Web Apps.
 
 #### Pre Examine v0.1.80 ####
 
