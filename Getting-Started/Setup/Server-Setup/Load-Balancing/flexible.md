@@ -101,7 +101,7 @@ The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the re
 * The 'Sync' setting will store your indexes in the local workers file system instead of Azure Web Apps' 
 remote file system. Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Anytime the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local temp files are cleared out that the index files can be restored from the centrally stored index files. If you see issues with this syncing process (in your logs), you can also change this value to be 'LocalOnly' which will only persist the index files to the local file system but this does mean they will be rebuilt when the website is migrated between Azure workers.
 
-##### If you plan on using auto-scaling
+### If you plan on using auto-scaling
 
 **Important!** Your Examine path settings need to be updated! Azure Web Apps uses a shared file system which means that if you increase your front-end environment scale setting to more than one worker your Lucene index files will be shared by more than one process. This will not work!
 
