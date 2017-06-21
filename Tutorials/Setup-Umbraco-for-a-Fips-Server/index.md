@@ -14,7 +14,7 @@ FIPS can be enabled through your Local Group Policy, Registry Setting, or Networ
 
 ## What version of Umbraco is FIPS compliant?
 
-Umbraco 7.6.4 has implemented checks for when FIPS mode is enabled on the server that it is installed on.  When FIPS mode is detected, the cryptograpic algorithms for hashing are changed to a FIPS compliant algorithm.  When FIPS mode is disabled, then Umbraco uses backwards compatible algorithms (MD5) so as not to affect existing installs.  As of Umbraco version 7.6.4, the FIPS compliant cryptograpic alogrithm used is SHA1.
+Umbraco 7.6.4 has implemented checks for when FIPS mode is enabled on the server that it is installed on.  When FIPS mode is detected, the cryptographic algorithms for hashing are changed to a FIPS compliant algorithm.  When FIPS mode is disabled, then Umbraco uses backwards compatible algorithms (MD5) so as not to affect existing installs.  As of Umbraco version 7.6.4, the FIPS compliant cryptographic algorithm used is SHA1.
 
 ## Steps to making Umbraco FIPS compliant:
 
@@ -28,7 +28,7 @@ This is the lowest version that contains the detection of FIPS mode and switches
 
 ### 2. Update Lucene to FIPS compliant version
 
-Lucene.Net doesn't have automatic detection of FIPS mode, but it does have a flag that can be set in the code to enable FIPS compliant crytographic algorithms to be used.  Umbraco/Examine currently has a dependency on Lucene.Net version 2.9.4.
+Lucene.Net doesn't have automatic detection of FIPS mode, but it does have a flag that can be set in the code to enable FIPS compliant cryptographic algorithms to be used.  Umbraco/Examine currently has a dependency on Lucene.Net version 2.9.4.
 
 To update Lucene.Net to be FIPS compliant you will need to clone the [apache/lucenenet][4] mirror repository on GitHub.
 
@@ -53,7 +53,7 @@ static public bool FIPSCompliant = CryptoConfig.AllowOnlyFipsAlgorithms;
 Add the following using statement to the top of the file:
 
 ``` csharp
-using System.Security.Crypography;
+using System.Security.Cryptography;
 ```
 
 Compile the solution and copy the Lucene.Net.dll into the bin directory of the Umbraco website.
@@ -62,7 +62,7 @@ Compile the solution and copy the Lucene.Net.dll into the bin directory of the U
 
 Setup a VM, VPS, or extra Windows box and enable FIPS using one of the methods described in the "[How-to Enable FIPS on Windows][2]" article referenced above.
 
-If any third-party dependencies or packages do not supprt FIPS, then you will likely see an IIS error page (YSOD).  Make sure you have debug and &lt;customErrors mode="On"&gt; in the web.config to help identify the source of the problem.
+If any third-party dependencies or packages do not support FIPS, then you will likely see an IIS error page (YSOD).  Make sure you have debug and &lt;customErrors mode="On"&gt; in the web.config to help identify the source of the problem.
 
 ### 4. Fix any issues with packages or third-party tools
 
@@ -74,7 +74,7 @@ If you find any issues with Umbraco, please submit an issue on the Issue Tracker
 
 __Can I install Umbraco directly on a version of Windows with FIPS mode enabled?__
 
-Installing to the FIPS server may not work.  Its best to deploy an existing known working version to the FIPS server.
+Installing to the FIPS server may not work.  It's best to deploy an existing known working version to the FIPS server.
 
 [1]:http://csrc.nist.gov/publications/PubsFIPS.html#140-2
 [2]:https://www.howtogeek.com/245859/why-you-shouldnt-enable-fips-compliant-encryption-on-windows/
