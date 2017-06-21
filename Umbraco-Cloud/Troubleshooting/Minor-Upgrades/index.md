@@ -57,3 +57,8 @@ You need to access Kudu for the child project, on the dev environment. Use the c
 To create them, type `echo > upgrading` and `echo > upgraded-minor`
 
 That's it. Now the upgrade is ready to be deployed to the next environments, and it will automatically run the upgrader on those environments.
+
+## Errors while upgrading children from baseline
+If for some reason the update of a child fail, or the child is left in a weird state, where it has some wrong configuration files, it is most likely because the child was unable to be merged properly. When updating children from a baseline, a configuration file will be preferred from the child over the one from the baseline. This means that when the update from the baseline to the child runs, the configuration file sometimes won’t be changed. 
+To fix this, it is important to follow the flow shown in [Handling configuration files](../../Getting-Started/Baselines/#Handling-configuration-files). It prevents that the child will update configuration files, and will ensure the best flow between the baseline and the child.
+If the flow isn't used, then the repository will be in a state where the code has been updated, but the configuration files hasn’t been updated. The solution is to manually fix the configuration files on the child project. Do a compare of the configuration files on the baseline and the child, and make sure that all changes has been added to the child’s configuration files.
