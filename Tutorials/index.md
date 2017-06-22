@@ -11,7 +11,3 @@ This guide explains how to setup a simple property editor for the backoffice.
 ###[Multi language Setup](Multilanguage-Setup/index.md)
 
 Tips and methods for creating multi lingual websites.
-
-###[Setup Umbraco for a FIPS Compliant Server](Setup-Umbraco-for-a-Fips-Server/index.md)
-
-How to configure Umbraco to run on a FIPS compliant server.
