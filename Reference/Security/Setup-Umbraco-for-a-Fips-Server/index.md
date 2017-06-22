@@ -2,6 +2,8 @@
 
 _This tutorial walks through configuring Umbraco and Lucene to be FIPS compliant and serve up websites on a server with FIPS enabled._
 
+**_Disclaimer:_** FIPS should only be added for compliance. It is **NOT** a recommended approach for added security. For more information read [Why Microsoft is not recommending "FIPS Mode" anymore.](https://blogs.technet.microsoft.com/secguide/2014/04/07/why-were-not-recommending-fips-mode-anymore/)
+
 ## What is FIPS?
 
 The Federal Information Processing Standard (FIPS) Publication 140-2, ([FIPS PUB 140-2][1]), is a U.S. government computer security standard used to define approved cryptographic modules. The FIPS 140 standard also sets forth requirements for key generation and for key management.
