@@ -8,7 +8,7 @@ UrlRewriting was old, leaking memory, and slowing down website startup when deal
 
 ### Json.Net ([U4-9499](http://issues.umbraco.org/issue/U4-9499))
 
-Json.Net has been updated to version 10.0.0 to benefit from improvements in features, fixes and performances (see [release notes](https://github.com/JamesNK/Newtonsoft.Json/releases)). This *may* be a breaking change for people relying on one of the changed functionnality.
+Json.Net has been updated to version 10.0.0 to benefit from improvements in features, fixes and performances (see [release notes](https://github.com/JamesNK/Newtonsoft.Json/releases)). This *may* be a breaking change for people relying on one of the changed functionality.
 
 ### Log4net ([U4-1324](http://issues.umbraco.org/issue/U4-1324))
 
@@ -44,7 +44,7 @@ The new property value converters are controlled by an `umbracoSetting.config` s
 
 Although Umbraco has been using a PetaPoco-managed `UmbracoDatabase` instance since version 7 came out, we realized that some of our legacy code still bypassed that mechanism and used parallel, out-of-band database connections, causing issues with transactions.
 
-The legacy code has been refactored to rely on the `UmbracoDatabase` instance. However, because that database is disposed during `EndRequest`, code that run after it has been disposed may not work anymore, and should be updated to used either an `HttpModule` event that occurs before `EndRequest`, or the new `UmbracoModule.EndRequest` event.
+The legacy code has been refactored to rely on the `UmbracoDatabase` instance. However, because that database is disposed during `EndRequest`, code that ran after it has been disposed may not work anymore, and should be updated to used either an `HttpModule` event that occurs before `EndRequest`, or the new `UmbracoModule.EndRequest` event.
 
 More details are available on [issue 146](https://github.com/kipusoep/UrlTracker/issues/146) on the 301 Redirect Tracker GitHub issue tracker.
 
