@@ -19,13 +19,13 @@ The partial view comes with a standard view model `@inherits Umbraco.Web.Mvc.Umb
 12. The final thing we need to do is render the image selected on the Open Graph Image property. You'll still need to render the entire Url for the image. It's a little different than for the content url. Add: <meta property="og:image" content="@Url.GetAbsoluteMediaUrl(Model.OpenGraphImage)" />
 13 Your partial view is now complete and should only render on pages that are using the Open Graph composition. The final view should look like this:
 
-    ```
-    @inherits Umbraco.Web.Mvc.UmbracoViewPage<IOpenGraph>
 
+    @inherits Umbraco.Web.Mvc.UmbracoViewPage&#60;IOpenGraph>
+    
     <meta property="og:title" content="@Umbraco.Field("openGraphTitle", altFieldAlias:"sitename", recursive: true)" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="@Model.UrlAbsolute()" />
     <meta property="og:image" content="@Url.GetAbsoluteMediaUrl(Model.OpenGraphImage)" />
-    ```
-    
+
+
 [Previous](step-1.md) - [Next](summary.md)
