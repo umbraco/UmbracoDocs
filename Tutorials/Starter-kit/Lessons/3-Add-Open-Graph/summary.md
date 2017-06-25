@@ -1,6 +1,6 @@
 # Add Open Graph - Step 4
 
-All done, great job! Now test out if it works. Try adding it to more document types. Remember this is just one way of adding this functionality. You might want additional tag or the properties to be on a different tab (maybe Navigation & SEO).
+All done, great job! Now test out if it works. Try adding it to more document types. Remember this is just one way of adding this functionality. You might want additional Open Graph tags or the properties to be on a different tab (maybe Navigation & SEO).
 
 ## Summary
 In this lesson you you've learned:

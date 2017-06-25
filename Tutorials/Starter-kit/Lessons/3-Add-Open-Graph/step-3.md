@@ -6,11 +6,11 @@ Next step is to actually get the Open Graph code rendered on the website. This i
 3. Find the comment that says `<!-- This is a good place to render Open Graph -->`
 4. Write the following below the comment:
 
-```
-@if(Model.Content is IOpenGraph) {
-    @Html.Partial("openGraph")
-}
-```
-This will render a partial view *if* the composition is present on the current page which will be the case for Home and blog posts on the site. `IOpenGraph` is an interface created by adding the composition, if you know how that works you can see how powerful this is. If not, just enjoyed the handy helper to check for the composition.
+
+    @if(Model.Content is IOpenGraph) {
+        @Html.Partial("openGraph")
+    }
+
+This will render a partial view *if* the composition is present on the current page which will be the case for Home and blog posts on the site. `IOpenGraph` is an interface created by adding the composition, if you know how that works you can see how powerful this is. If not, just enjoy the handy helper to check for the composition.
 
 [Previous](step-1.md) - [Next](step-4.md)

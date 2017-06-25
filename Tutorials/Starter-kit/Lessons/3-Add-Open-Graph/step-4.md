@@ -7,7 +7,7 @@ The final piece to the puzzle is adding the partial view that will be rendered w
 The partial view comes with a standard view model `@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 ` which can be fine but as we are using compositions and only render this view on pages where the composition exists you can get a little more specific.
 
-3. In the editor, change the view model from `UmbracoTemplatePage` to `UmbracoViewPage` and pass in the specific model you've created by adding `<IOpenGraph>`. Now you can start rendering the meta tags and adding in the values.
+3. In the template editor, change the view model from `UmbracoTemplatePage` to `UmbracoViewPage` and pass in the specific model you've created by adding `<IOpenGraph>`. Now you can start rendering the meta tags and adding in the values.
 4. First add the tittle property `<meta property="og:title" content="" />`
 5. Set the cursor in the content attribute and click the *Insert+* button.
 6. Select Value
@@ -19,13 +19,11 @@ The partial view comes with a standard view model `@inherits Umbraco.Web.Mvc.Umb
 12. The final thing we need to do is render the image selected on the Open Graph Image property. You'll still need to render the entire Url for the image. It's a little different than for the content url. Add: <meta property="og:image" content="@Url.GetAbsoluteMediaUrl(Model.OpenGraphImage)" />
 13 Your partial view is now complete and should only render on pages that are using the Open Graph composition. The final view should look like this:
 
-```
-@inherits Umbraco.Web.Mvc.UmbracoViewPage<IOpenGraph>
+    @inherits Umbraco.Web.Mvc.UmbracoViewPage<IOpenGraph>
 
-<meta property="og:title" content="@Umbraco.Field("openGraphTitle", altFieldAlias:"sitename", recursive: true)" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="@Model.UrlAbsolute()" />
-<meta property="og:image" content="@Url.GetAbsoluteMediaUrl(Model.OpenGraphImage)" />
-```
+    <meta property="og:title" content="@Umbraco.Field("openGraphTitle", altFieldAlias:"sitename", recursive: true)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="@Model.UrlAbsolute()" />
+    <meta property="og:image" content="@Url.GetAbsoluteMediaUrl(Model.OpenGraphImage)" />
 
 [Previous](step-1.md) - [Next](summary.md)
