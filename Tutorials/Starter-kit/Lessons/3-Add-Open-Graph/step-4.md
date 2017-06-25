@@ -14,14 +14,14 @@ The partial view comes with a standard view model `@inherits Umbraco.Web.Mvc.Umb
 7. Under *Choose field*, select the `openGraphTitle` property.
 8. Add a *Fallback field*, select `siteName`, making sure that even though the Open Graph title isn't filled in, it will fallback to the title of the site (defined on Home)
 9. Check *Make this recursive* to ensure the fallback will work on all pages.
-10. Add the Open Graph meta tag for type of content, you can hardcode website in here <meta property="og:type" content="website" />
-11. Next up is adding the url for Open Graph. For this you'll need the entire url to page, not just relative to this page. There is a handy method for getting this from a content item. Add: <meta property="og:url" content="@Model.UrlAbsolute()" />
-12. The final thing we need to do is render the image selected on the Open Graph Image property. You'll still need to render the entire Url for the image. It's a little different than for the content url. Add: <meta property="og:image" content="@Url.GetAbsoluteMediaUrl(Model.OpenGraphImage)" />
+10. Add the Open Graph meta tag for type of content, you can hardcode website in here `<meta property="og:type" content="website" />`
+11. Next up is adding the url for Open Graph. For this you'll need the entire url to page, not just relative to this page. There is a handy method for getting this from a content item. Add: `<meta property="og:url" content="@Model.UrlAbsolute()" />`
+12. The final thing we need to do is render the image selected on the Open Graph Image property. You'll still need to render the entire Url for the image. It's a little different than for the content url. Add: `<meta property="og:image" content="@Url.GetAbsoluteMediaUrl(Model.OpenGraphImage)" />`
 13 Your partial view is now complete and should only render on pages that are using the Open Graph composition. The final view should look like this:
 
 
     @inherits Umbraco.Web.Mvc.UmbracoViewPage&#60;IOpenGraph>
-    
+
     <meta property="og:title" content="@Umbraco.Field("openGraphTitle", altFieldAlias:"sitename", recursive: true)" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="@Model.UrlAbsolute()" />
