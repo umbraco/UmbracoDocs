@@ -28,7 +28,7 @@ The partial view comes with a standard view model `@inherits Umbraco.Web.Mvc.Umb
 13. Your partial view is now complete and should only render on pages that are using the Open Graph composition. The final view should look like this:
 
 
-        @inherits Umbraco.Web.Mvc.UmbracoViewPage&#60;IOpenGraph>
+        @inherits Umbraco.Web.Mvc.UmbracoViewPage<IOpenGraph>
         
         <meta property="og:title" content="@Umbraco.Field("openGraphTitle", altFieldAlias:"sitename", recursive: true)" />
         <meta property="og:type" content="website" />
