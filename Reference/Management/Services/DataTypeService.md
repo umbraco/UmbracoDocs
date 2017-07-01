@@ -1,4 +1,4 @@
-#DataTypeService
+# DataTypeService
 
 **Applies to Umbraco 6.x and newer**
 
@@ -21,7 +21,7 @@ All samples in this document will require the following usings:
 
 **Please note that this page will be updated with samples and additional information about the methods listed below**
 
-##Getting the service
+## Getting the service
 The DataTypeService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the DataTypeService is available through a local `Services` property.
 
 	Services.DataTypeService
@@ -30,37 +30,37 @@ Getting the service through the `ApplicationContext`:
 
 	ApplicationContext.Current.Services.DataTypeService
 
-##Methods
+## Methods
 
-###.GetDataTypeDefinitionById(int id)
+### .GetDataTypeDefinitionById(int id)
 Gets a `DataTypeDefinition` by its `Int` Id.
 
-###.GetDataTypeDefinitionById(Guid id)
+### .GetDataTypeDefinitionById(Guid id)
 Gets a `DataTypeDefinition` by its unique `Guid` Id.
 
-###.GetAllDataTypeDefinitions(params int[] ids)
+### .GetAllDataTypeDefinitions(params int[] ids)
 Gets all `DataTypeDefinition` objects or those with the ids passed in.
 
-###.Save(IDataTypeDefinition dataTypeDefinition, int userId = 0)
+### .Save(IDataTypeDefinition dataTypeDefinition, int userId = 0)
 Saves a `DataTypeDefinition` object.
 
-###.Delete(IDataTypeDefinition dataTypeDefinition, int userId = 0)
+### .Delete(IDataTypeDefinition dataTypeDefinition, int userId = 0)
 Deletes a `DataTypeDefinition` object.
 
-###.GetDataTypeById(Guid id)
+### .GetDataTypeById(Guid id)
 Gets an `IDataType`  by its unique Id.
 
-###.GetAllDataTypes()
+### .GetAllDataTypes()
 Gets a complete list of all registered DataTypes as `IDataType` objects.
 
-###.GetDataTypeDefinitionByControlId(Guid id)
+### .GetDataTypeDefinitionByControlId(Guid id)
 Gets a `DataTypeDefinition` by its control Id.
 
-###.GetPreValueAsString(int id)
+### .GetPreValueAsString(int id)
 Gets a `String` all pre-values for a `DataTypeDefinition`.
 
-###.GetPreValuesByDataTypeId(int id)
+### .GetPreValuesByDataTypeId(int id)
 Gets a `IEnumerable<String>` all pre-value of a `DataTypeDefinition`.
 
-###.GetPreValuesCollectionByDataTypeId(int id)
+### .GetPreValuesCollectionByDataTypeId(int id)
 Gets a `PreValueCollection` for a `DataTypeDefinition`.
