@@ -60,7 +60,7 @@ Gets a `DataTypeDefinition` by its control Id.
 Gets a `String` containing all prevalues for a `DataTypeDefinition`.
 
 ### .GetPreValuesByDataTypeId(int id)
-Gets a `IEnumerable<String>` containing all prevalues for a `DataTypeDefinition`.
+Gets an `IEnumerable<String>` containing all prevalues for a `DataTypeDefinition`.
 
 ### .GetPreValuesCollectionByDataTypeId(int id)
 Gets a `PreValueCollection` for a `DataTypeDefinition`.
