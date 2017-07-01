@@ -57,10 +57,10 @@ Gets a complete list of all registered DataTypes as `IDataType` objects.
 Gets a `DataTypeDefinition` by its control Id.
 
 ### .GetPreValueAsString(int id)
-Gets a `String` all pre-values for a `DataTypeDefinition`.
+Gets a `String` containing all prevalues for a `DataTypeDefinition`.
 
 ### .GetPreValuesByDataTypeId(int id)
-Gets a `IEnumerable<String>` all pre-value of a `DataTypeDefinition`.
+Gets a `IEnumerable<String>` containing all prevalues for a `DataTypeDefinition`.
 
 ### .GetPreValuesCollectionByDataTypeId(int id)
 Gets a `PreValueCollection` for a `DataTypeDefinition`.
