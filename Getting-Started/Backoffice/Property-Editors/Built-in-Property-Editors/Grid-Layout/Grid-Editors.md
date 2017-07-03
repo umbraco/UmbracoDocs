@@ -87,3 +87,18 @@ The `config.markup` is the string rendered server side in your template. `#value
 
 In this sample `config.size` will resize the the image according to `height` and `width`. The above example will result in a rendered image that is 200x200 pixels no matter the size of the uploaded image. If the ratio of the size differs from the uploaded image it is possible to set a focal point that determines how the image should be cropped.
 ![Resizing](images/grid-resizing.png)
+
+### package.manifest
+
+As an alternative to `/config/grid.editors.config.js`, you can also define grid editors through a `package.manifest` file. If you create a new file at the `/App_Plugins/{YourPackageName}/package.manifest`, Umbraco will automatically pick it up. While the root JSON element of `/config/grid.editors.config.js` is an array of grdi editors, `package.manifest` files start with a JSON object with a number of different properties - one of them being `gridEditors`:
+
+    "gridEditors": [
+        {
+            "name": "Rich text editor",
+            "alias": "rte",
+            "view": "rte",
+            "icon": "icon-article"
+        }
+    ]
+
+You can read more about `package.manifest` files in general at the [Package Manifest](../../../../../Extending/Property-Editors/package-manifest.md) page.
