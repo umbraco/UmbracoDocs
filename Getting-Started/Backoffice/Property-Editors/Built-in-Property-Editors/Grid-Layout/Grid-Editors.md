@@ -8,7 +8,7 @@ A grid editor is the component responsible for getting data into the grid - that
 The view is what the editor sees, the controller handles how it acts and the cshtml determines how the entered data is rendered in the template.
 
 ### Default Grid editors
-The default editors are specified in `config/grid.editors.config.js`. They are written in the JSON format and each editor is an object like so:
+The default editors are specified in `/config/grid.editors.config.js`. They are written in the JSON format and each editor is an object like so:
 
     {
         "name": "Rich text editor",
@@ -40,7 +40,7 @@ The required values are:
 - **name**: The name of the editor
 - **alias**: Unique alias of the editor
 - **icon**: Icon shown to the editor, uses same icon classes as the rest of 
-- **view** the view defines the editor used to enter a value. By default Umbraco will look in `umbraco/views/propertyeditors/grid/editors` for a html view to use - but you can pass in your own path
+- **view** the view defines the editor used to enter a value. By default Umbraco will look in `/umbraco/views/propertyeditors/grid/editors` for a html view to use - but you can pass in your own path
 
 The built-in views you can use are: 
 
