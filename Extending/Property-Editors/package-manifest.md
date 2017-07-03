@@ -1,5 +1,5 @@
 # Package Manifest
-The package.manifest JSON file format is used to describe one or more custom Umbraco property editors. This page outlines the file format and properties found in the JSON
+The package.manifest JSON file format is used to describe one or more custom Umbraco property editors, grid editors or parameter editors. This page outlines the file format and properties found in the JSON.
 
 ## Sample Manifest
 This is a sample manifest, it is always stored in a folder in `/App_Plugins/{YourPackageName}`, with the name `package.manifest`
@@ -22,10 +22,11 @@ This is a sample manifest, it is always stored in a folder in `/App_Plugins/{You
     }
 
 ## Root elements
-The manifest can contain 4 root colllections, none of them are mandatory
+The manifest can contain five root colllections, none of them are mandatory:
 
     {
         "propertyEditors": [],
+        "gridEditors": [],
         "parameterEditors": [],
         "javascript": [],
         "css": []
@@ -126,6 +127,20 @@ The defaultConfig object, provides a collection of default configuration values,
         "editor": "hello",
         "random": 1234
     }
+
+## Grid Editors
+Similar to how the `propertyEditors` array defines one or more property editors, `gridEditors` can be used to define editors specific to the grid. Setting up the default richtext editor in the Umbraco grid could look like:
+
+    "gridEditors": [
+        {
+            "name": "Rich text editor",
+            "alias": "rte",
+            "view": "rte",
+            "icon": "icon-article"
+        }
+    ]
+    
+However the default grid editors are already configured in `/config/grid.editors.config.js` - you can use the file for inspiration, or see the [Grid Editors](../../Getting-Started/Backoffice/Property-Editors/Built-in-Property-Editors/Grid-Layout/Grid-Editors.md) page for more information on grid editors.
 
 ## Parameter Editors
 `parameterEditors` returns an array of editor objects, each object specifies an editor to make available to macro parameters as an editor component. These editors work solely as parameter editors, and will not show up on the property editors list.
