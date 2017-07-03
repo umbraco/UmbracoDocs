@@ -32,7 +32,7 @@ The manifest can contain 4 root colllections, none of them are mandatory
     }
 
 ## Property Editors
-`propertyEditors` returns an array of editor objects, each object specifies an editor to make available to data types as an editor component. These editors are primarily property editors for content, media and members, but can also be made available as a macro parameter editor.
+`propertyEditors` returns an array of property editor definitions, each object specifies an editor to make available to data types as an editor component. These editors are primarily property editors for content, media and members, but can also be made available as a macro parameter editor.
 
 The basic values on any editor is `alias`, `name`, and `editor` these three **must** be set. Furthermore the editor value is an object with additional configuration options on, but must contain a view value.
 
@@ -74,7 +74,7 @@ The basic values on any editor is `alias`, `name`, and `editor` these three **mu
 * `validation` Object describing required validators on the editor
 * `isReadOnly` Disables editing the value
 
-`valueType` sets what kind of data the editor will save in the database. by default this is set to `string`. The available options are:
+`valueType` sets what kind of data the editor will save in the database. By default this is set to `string`. The available options are:
 * `STRING` Stores the value as an nvarchar in the database
 * `DATETIME` Stores the value as datetime in the database
 * `TEXT` Stores the value as ntext in the database
@@ -114,9 +114,9 @@ But it also means that when this property editor is used on a property, then thi
     //this is our specific prevalue with the alias wolf
     $scope.model.config.wolf
 
-`view` config value points the prevalue editor to an editor to use. This follows the same concept as any other editor in umbraco, but with prevalue editors there are a couple of conventions.
+`view` config value points the prevalue editor to an editor to use. This follows the same concept as any other editor in Umbraco, but with prevalue editors there are a couple of conventions.
 
-If you just specify a name like `boolean` then umbraco will look at `/umbraco/views/prevalueeditors/boolean/boolean.html` for the editor view - if you wish to use your own, you specify the path like `~/app_data/package/prevalue-editor.html`.
+If you just specify a name like `boolean` then umbraco will look at `/umbraco/views/prevalueeditors/boolean/boolean.html` for the editor view - if you wish to use your own, you specify the path like `~/App_Data/package/prevalue-editor.html`.
 
 ### Default Config
 The defaultConfig object, provides a collection of default configuration values, in cases the property editor is not configured or is used a parameter editor, which doesnt allow configuration. The object is a key/value collection and must match the prevalue fields keys.
