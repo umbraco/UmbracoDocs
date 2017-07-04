@@ -17,7 +17,7 @@ The default editors are specified in `/config/grid.editors.config.js`. They are 
         "icon": "icon-article"
     }
 
-### Custom Grid Editors
+### Custom Grid editors
 You can easily customize the built-in editors to tailor the grid to your need.
 
 ##### package.manifest
