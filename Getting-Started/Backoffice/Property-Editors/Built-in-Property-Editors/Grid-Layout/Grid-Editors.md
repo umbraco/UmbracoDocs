@@ -17,10 +17,11 @@ The default editors are specified in `/config/grid.editors.config.js`. They are 
         "icon": "icon-article"
     }
 
-### Grid editor configuration
+### Custom Grid Editors
 You can easily customize the built-in editors to tailor the grid to your need.
 
-It is recommended that you define custom editors in a package.manifest file (not in the config file) like so:
+##### package.manifest
+It is recommended that you define custom editors in a `package.manifest` file (not in the config file described above) like so:
 
     {
         "gridEditors": 
@@ -33,10 +34,16 @@ It is recommended that you define custom editors in a package.manifest file (not
             }
         ]
     }
+    
+While the root JSON element of `/config/grid.editors.config.js` is an array of grid editors, `package.manifest` files start with a JSON object with a number of different properties - one of them being `gridEditors`.
 
-The package manifest should be placed in a folder inside the `/App_Plugins/` folder. You can define as many grid editors you want and it can be done over multiple manifests so you can use grid editors from packages etc. 
+The package manifest should be placed in a folder inside the `/App_Plugins/` folder - for instance `/App_Plugins/{YourPackageName}/package.manifest`. You can define as many grid editors you want and it can be done over multiple manifests so you can use grid editors from packages etc. With the `package.manifest` file in place, Umbraco will automatically pick it up during startup.
 
-The required values are:
+You can read more about `package.manifest` files in general at the [Package Manifest](../../../../../Extending/Property-Editors/package-manifest.md) page.
+
+##### Grid editor configuration
+
+For a grid editor, the required values are:
 - **name**: The name of the editor
 - **alias**: Unique alias of the editor
 - **icon**: Icon shown to the editor, uses same icon classes as the rest of 
@@ -87,18 +94,3 @@ The `config.markup` is the string rendered server side in your template. `#value
 
 In this sample `config.size` will resize the the image according to `height` and `width`. The above example will result in a rendered image that is 200x200 pixels no matter the size of the uploaded image. If the ratio of the size differs from the uploaded image it is possible to set a focal point that determines how the image should be cropped.
 ![Resizing](images/grid-resizing.png)
-
-### package.manifest
-
-As an alternative to `/config/grid.editors.config.js`, you can also define grid editors through a `package.manifest` file. If you create a new file at the `/App_Plugins/{YourPackageName}/package.manifest`, Umbraco will automatically pick it up. While the root JSON element of `/config/grid.editors.config.js` is an array of grdi editors, `package.manifest` files start with a JSON object with a number of different properties - one of them being `gridEditors`:
-
-    "gridEditors": [
-        {
-            "name": "Rich text editor",
-            "alias": "rte",
-            "view": "rte",
-            "icon": "icon-article"
-        }
-    ]
-
-You can read more about `package.manifest` files in general at the [Package Manifest](../../../../../Extending/Property-Editors/package-manifest.md) page.
