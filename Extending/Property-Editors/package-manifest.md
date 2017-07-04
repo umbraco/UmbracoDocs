@@ -22,7 +22,7 @@ This is a sample manifest, it is always stored in a folder in `/App_Plugins/{You
     }
 
 ## Root elements
-The manifest can contain five root colllections, none of them are mandatory:
+The manifest can contain five root collections, none of them are mandatory:
 
     {
         "propertyEditors": [],
