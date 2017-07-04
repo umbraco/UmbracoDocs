@@ -10,9 +10,10 @@ In general, if anything should fail during this process, you can reach out for s
 Symptoms, feedback given from the upgrade process: **Unable to upgrade as the site has custom Courier dependencies**
 
 Along with the upgrade to 7.6 we will replace the old deployment engine Umbaco Courier, and replace it with the new one called Umbraco Deploy. This means that if your code is dependent on Umbraco Courier to run, you will need to remove the dependencies on Umbraco Courier. 
-This will be things like custom Umbraco Courier resolvers. In Umbraco Deploy resolvers will be ValueConnectors and it will have these things built in for the most popular packages, and will have a generic connector for the remaining types.
+This will be things like custom Umbraco Courier resolvers. In Umbraco Deploy, resolvers will be ValueConnectors and it will have these things built in for the most popular packages, and will have a generic connector for the remaining types.
+If you need to create your own specialized ValueConnector, take a look at the  [ValueConnectors example repository](https://github.com/umbraco/Umbraco.Deploy.ValueConnectors). We are shipping with the [Umbraco.Deploy.Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib) dll, which contains common ValueConnectors for popular community packags.
 
-Your code will need to be updated and built without Umbraco Courier in order to go through the Upgrade process.
+Your code will need to be updated and built without Umbraco Courier in order to go through the Upgrade process. 
 
 ## Database upgrade failing
 Symptoms, feedback given from the upgrade process: **Unable to run the Umbraco installer**
@@ -45,6 +46,9 @@ Currently the way to get children of a baseline upgraded, is a bit hacky. The re
 Click the Upgrade button, and follow the guide. Once it's done, and you are ready to update the children, there's a few steps involved.
 
 The first step is to push the changes to the child projects. Once that is done, the files on the child is now up to date.
+
+*If all config files has been handed via the method mentioned in [Handling configuration files](../../Getting-Started/Baselines/#handling-configuration-files), then you shuold be good to go, else you need to make sure that the config files on the child projects has been proper updated, and have the same changes that the upgrade added for the baseline project it self.*
+
 Next step is to manually run the installer on the project. This is simply done by making a request for the site. This will automatically start the install process. The process should be a simple follow through guide. Once it is done, the child project is done.
 
 If the child only contains one environment, you are now done. 
