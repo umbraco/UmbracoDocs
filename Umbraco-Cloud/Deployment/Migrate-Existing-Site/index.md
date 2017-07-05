@@ -32,8 +32,8 @@ With that in mind, here are the steps to take.
     * `/app_data/cache`
     * `/app_data/preview`
     * `/app_data/umbraco.config`
-    * `/data/[*]` **except** for `/data/backoffice`
-5. Create a new Umbraco Cloud project.
+    * `/data/[*]` **except** for `/data/backoffice` (only relevant for Umbraco Cloud projects)
+5. Create a new Umbraco Cloud project - we recommend starting with at least two environments
 6. Login to the backoffice of all Cloud environment. Delete the default MediaTypes (*File*, *Folder* and *Image*) from the Media Types folder in the Settings section.
 7. Clone the Dev site to your local machine (see how: [Working Locally](https://our.umbraco.org/documentation/Umbraco-Cloud/Set-Up/Working-Locally/)).
 8. Verify the existing site and the cloned Umbraco Cloud site are the same umbraco version.
