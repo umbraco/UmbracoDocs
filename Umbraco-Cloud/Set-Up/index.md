@@ -15,7 +15,7 @@ This does what it says. Once you've confirmed deletion of a project it is perman
 ##Domains (Hostname binding)
 You can bind any hostname to your sites that you like. Keeping in mind, of course, that the hostname will need to have a DNS entry so that it resolves to the Umbraco Cloud service.
 
-There is a limit on how many hostnames that you can add per enviroment. You can bind a total of 15 hostnames to each of your Umbraco Cloud environments. 
+There is a limit on how many hostnames that you can add per Umbraco Cloud enviroment. You can bind a total of 15 hostnames to each of your Umbraco Cloud environments. 
 
 Once you add a domain here makes sure to update the hostame DNS entry to resolve to the umbraco.io service. We recommend setting an ALIAS record for your site's root domain (e.g. mysite.s1.umbraco.io), rather than an A record for the umbraco.io service IP address. Check with your DNS host or domain registrar for details on how to configure this for your domain.
 
