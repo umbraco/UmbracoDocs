@@ -59,10 +59,12 @@ Here's an example of a custom global.asax class which initializes the IoC contai
 If you like to use the `IApplicationEventHandler` alternative - here is an example for this approach:
 	
 	using Umbraco.Web;
-	public class MyApplication : IApplicationEventHandler
+	public class MyApplication : ApplicationEventHandler
 	{
-		public void OnApplicationStarted(
-			UmbracoApplication httpApplication, Umbraco.Core.ApplicationContext applicationContext)
+		protected override void ApplicationStarted(
+			UmbracoApplicationBase httpApplication, 
+			Umbraco.Core.ApplicationContext applicationContext
+		)
 		{
 			var builder = new ContainerBuilder();
 		
@@ -74,14 +76,6 @@ If you like to use the `IApplicationEventHandler` alternative - here is an examp
 
 			var container = builder.Build();
 			DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
-		}
-
-		public void OnApplicationInitialized(UmbracoApplication httpApplication, Umbraco.Core.ApplicationContext applicationContext)
-		{
-		}
-
-		public void OnApplicationStarting(UmbracoApplication httpApplication, Umbraco.Core.ApplicationContext applicationContext)
-		{
 		}
 	}
 
