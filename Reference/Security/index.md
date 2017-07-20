@@ -138,3 +138,7 @@ So like the above docs, instead of setting up your own `IBackOfficeUserPasswordC
     <appSettings>
       	<add key="ActiveDirectoryDomain" value="mydomain.local" />
     </appSettings>
+
+### [Setup Umbraco for a FIPS Compliant Server](Setup-Umbraco-for-a-Fips-Server/index.md)
+
+How to configure Umbraco to run on a FIPS compliant server.
