@@ -99,7 +99,7 @@ Congratulations! job done - no actually no, this is just the starting point the 
 
 We need to add something called a package.manifest file to our CustomWelcomeDashboard folder
 
-*__Note:__ This file allows Umbraco to load other resources to use with your HTML view - it's just a file - it's called by convention 'package.manifest' and will contain the configuration of the resources to load in JSON format*
+*__Note:__ This file allows Umbraco to load other resources to use with your HTML view - it is just a file - named by convention 'package.manifest' and will contain the configuration of the resources to load in JSON format*
 
 When Umbraco loads the dashboard it will look for this file in the same folder as your HTML view (remember the dashboard config points to the html view) and use the manifest to load the additional resources, eg CSS and JS files.
 
@@ -246,7 +246,7 @@ However looking at the console output will reveal the data retrieved by the **lo
 
 There is a bit of work to be done to provide something meaningful to the editor from the audit log!
 
-We can use the **entityResource**, an Umbraco Angular resource that enables us to retrieve more information about an entity given it's id.
+We can use the **entityResource**, an Umbraco Angular resource that enables us to retrieve more information about an entity given its id.
 
 Inject this into our angular controller:
 
@@ -254,7 +254,7 @@ Inject this into our angular controller:
 
 We need to loop through the response from the **logResource**, filter out 'saves' we're not interested in eg, Macro Saves, or DocType Saves, generally we need the entry in the log to have a nodeId and mention either Media or Content in the comment text. 
 
-The **entityResource** then has a **getById** method that accepts the Id of the item and the entity 'type' to retrieve useful information about the entity, ie it's name and icon.
+The **entityResource** then has a **getById** method that accepts the Id of the item and the entity 'type' to retrieve useful information about the entity, ie its name and icon.
 
 Putting this together:
 
