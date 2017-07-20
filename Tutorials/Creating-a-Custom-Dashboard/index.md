@@ -120,15 +120,15 @@ Inside this package manifest we add a bit of JSON to describe the dashboard's re
 Now create a stylesheet in our CustomWelcomeDashboard folder called 'customwelcomedashboard.css', and add some styles, I don't know perhaps a bit of purple:
 
     .welcome-dashboard h1 {
-    	font-size:4em;
-    	color:purple;
+        font-size:4em;
+        color:purple;
     }
 
 This stylesheet will now be loaded and applied to your dashboard. Add images and html markup as required:
 
 ![Custom Dashboard Welcome Message With styles...](images/welcomemessagewithstyles.jpg)
 
-(One caveat is the package.manifest file is loaded into memory when Umbraco starts up, so if you are adding a new stylesheet or javascript file you will need to start and stop your application for it to be loaded)
+*__Note:__ One caveat is the package.manifest file is loaded into memory when Umbraco starts up, so if you are adding a new stylesheet or javascript file you will need to start and stop your application for it to be loaded.*
 
 Hopefully, now you can see the potential of what you could provide to an editor as a basic welcome dashboard when they log in to Umbraco.
 
