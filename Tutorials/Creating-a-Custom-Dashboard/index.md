@@ -99,7 +99,7 @@ Congratulations! job done - no actually no, this is just the starting point the 
 
 We need to add something called a package.manifest file to our CustomWelcomeDashboard folder
 
-(this file allows Umbraco to load other resources to use with your HTML view - it's just a file - it's called by convention 'package.manifest' and will contain the configuration of the resources to load in JSON format)
+*This file allows Umbraco to load other resources to use with your HTML view - it's just a file - it's called by convention 'package.manifest' and will contain the configuration of the resources to load in JSON format*
 
 When Umbraco loads the dashboard it will look for this file in the same folder as your HTML view (remember the dashboard config points to the html view) and use the manifest to load the additional resources, eg CSS and JS files.
 
@@ -146,7 +146,7 @@ In our html view, we update the outer div to wire up to the controller to the vi
 
     <div class="welcome-dashboard" ng-controller="CustomWelcomeDashboardController as vm">
 
-(note: the use of vm (short for view model) to enable communication between the view and the controller)
+*__Note:__ The use of vm (short for view model) to enable communication between the view and the controller*
 
 Finally, we need to update the package.manifest file to load the additional controller js file when the dashboard is displayed:
 
@@ -180,7 +180,7 @@ and then we can use the userService's promise based **getCurrentUser()** method 
         vm.UserName = user.name;
     });
 
-(Tip: notice you can use console.log to write out to the browser console window what is being returned by the promise, it helps to debug, but also understand what properties are available to use)
+*__Tip:__ Notice you can use console.log to write out to the browser console window what is being returned by the promise, it helps to debug, but also understand what properties are available to use.*
 
 Finally we can now update our view to incorporate the current user's name in our Welcome Message:
 
@@ -297,7 +297,7 @@ and we should have a list of recently saved content and media:
 
 ![We know what you edited last week...](images/WeKnowWhatYouEditedLastWeek.jpg)
 
-(Note: the url /Umbraco/#/content/content/edit/1234 is the path to open up a particular entity (with id 1234) ready for editing.)
+*__Note:__ the url /Umbraco/#/content/content/edit/1234 is the path to open up a particular entity (with id 1234) ready for editing.*
 
 ## I know what you want to do today
 
