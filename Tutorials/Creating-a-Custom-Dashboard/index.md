@@ -108,10 +108,10 @@ This manifest file is simpler to the one you would create for a [custom property
 Inside this package manifest we add a bit of JSON to describe the dashboard's required javascript and stylesheet resources:
 
     {
-        javascript:[
+        "javascript":[
             /*javascript files listed here*/
         ],
-	    css: [
+	    "css": [
             /*list of stylesheets appear here:*/
             "~/app_plugins/CustomWelcomeDashboard/customwelcomedashboard.css"
 	    ]
@@ -154,11 +154,11 @@ In our html view, we update the outer div to wire up to the controller to the vi
 Finally, we need to update the package.manifest file to load the additional controller js file when the dashboard is displayed:
 
     {
-        javascript:[
+        "javascript":[
             /*any comma delimited list of javascript files appear here*/
             "~/app_plugins/CustomWelcomeDashboard/customwelcomedashboard.controller.js"
         ],
-        css: [
+        "css": [
             /*a comma delimited list of stylesheets appear here:*/
             "~/app_plugins/CustomWelcomeDashboard/customwelcomedashboard.css"
         ]
