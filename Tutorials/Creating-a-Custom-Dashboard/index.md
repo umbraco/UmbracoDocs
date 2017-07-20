@@ -99,7 +99,7 @@ Congratulations! job done - no actually no, this is just the starting point the 
 
 We need to add something called a package.manifest file to our CustomWelcomeDashboard folder
 
-*This file allows Umbraco to load other resources to use with your HTML view - it's just a file - it's called by convention 'package.manifest' and will contain the configuration of the resources to load in JSON format*
+*__Note:__ This file allows Umbraco to load other resources to use with your HTML view - it's just a file - it's called by convention 'package.manifest' and will contain the configuration of the resources to load in JSON format*
 
 When Umbraco loads the dashboard it will look for this file in the same folder as your HTML view (remember the dashboard config points to the html view) and use the manifest to load the additional resources, eg CSS and JS files.
 
