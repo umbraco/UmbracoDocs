@@ -2,7 +2,7 @@
 
 *This builds on the "[adding a type to the provider model](Adding-a-Type.md)" chapter*
 
-## CSHARP
+## C#
 
 Add a new class to the Visual Studio solution, make it inherit from Umbraco.Forms.Core.FieldType and fill in the constructor:
 
@@ -37,11 +37,11 @@ Add a new class to the Visual Studio solution, make it inherit from Umbraco.Form
         }
     }
 
-In the constructor we specify the standard provider information (remember to set the ID to a unique ID).
+In the constructor, we specify the standard provider information (remember to set the ID to a unique ID).
 
 And then we set the field type specific information. In this case a preview Icon for the form builder UI and what kind of data it will return, this can either be string, longstring, integer, datetime or boolean.
 
-## CSHTML view
+## Partial view
 
 Then we will start building the view at `Views\Partials\Forms\Fieldtypes\FieldType.MyCustomField.cshtml`:
 
@@ -54,9 +54,9 @@ Then we will start building the view at `Views\Partials\Forms\Fieldtypes\FieldTy
 
 The view simply takes care of generating the UI control and setting its value.
 
-On the view it is important to note that the id attribute is fetched from @Model.Id. You'll also see that we are using jquery validate unobtrusive to perform client side validation so that's why we are adding the data* attributes.
+On the view, it is important to note that the id attribute is fetched from @Model.Id. You'll also see that we are using jquery validate unobtrusive to perform client side validation so that's why we are adding the data* attributes.
 
-## Umbraco HTML view
+## Umbraco backoffice view
 
 The final step involves building the HTML view which will be rendered in Umbraco as an example of how our end result will look. We will create a file at `App_Plugins\UmbracoForms\Backoffice\Common\FieldTypes\mycustomfield.html` which will contain the following:
 
