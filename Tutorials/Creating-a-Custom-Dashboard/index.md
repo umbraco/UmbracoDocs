@@ -121,7 +121,7 @@ Now create a stylesheet in our CustomWelcomeDashboard folder called 'customwelco
 
     .welcome-dashboard h1 {
     	font-size:4em;
-	color:purple
+    	color:purple;
     }
 
 This stylesheet will now be loaded and applied to your dashboard. Add images and html markup as required:
