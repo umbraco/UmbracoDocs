@@ -109,11 +109,11 @@ Inside this package manifest we add a bit of JSON to describe the dashboard's re
 
     {
         javascript:[
-	    /*javascript files listed here*/
+            /*javascript files listed here*/
         ],
 	    css: [
-		/*list of stylesheets appear here:*/
-	    	"~/app_plugins/CustomWelcomeDashboard/customwelcomedashboard.css"
+            /*list of stylesheets appear here:*/
+            "~/app_plugins/CustomWelcomeDashboard/customwelcomedashboard.css"
 	    ]
     }
 
@@ -155,13 +155,13 @@ Finally, we need to update the package.manifest file to load the additional cont
 
     {
         javascript:[
-	    /*any comma delimited list of javascript files appear here*/
-	    "~/app_plugins/CustomWelcomeDashboard/customwelcomedashboard.controller.js"
+            /*any comma delimited list of javascript files appear here*/
+            "~/app_plugins/CustomWelcomeDashboard/customwelcomedashboard.controller.js"
         ],
-	    css: [
-		    /*a comma delimited list of stylesheets appear here:*/
-	    "~/app_plugins/CustomWelcomeDashboard/customwelcomedashboard.css"
-	    ]
+        css: [
+            /*a comma delimited list of stylesheets appear here:*/
+            "~/app_plugins/CustomWelcomeDashboard/customwelcomedashboard.css"
+        ]
     }
 
 If all is setup fine we should now receive the 'Hello world' alert every time the dashboard is reloaded in the content section of Umbraco, not very helpful, yet.
