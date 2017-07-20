@@ -230,7 +230,7 @@ Back in our controller we'll populate the array of entries using the **logResour
        .then(function (response) {
             console.log(response)
             vm.LogEntries = response;
-       }
+       });
 
 However looking at the console output will reveal the data retrieved by the **logResource** is a little sparse eg:
 
