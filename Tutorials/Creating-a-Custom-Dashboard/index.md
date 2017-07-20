@@ -6,14 +6,14 @@ This guide takes you through the steps to setup a simple Custom Dashboard in Umb
 
 ### What is a Dashboard?
 
-A tab on the right hand side of a section eg. the Redirect Url Management dashboard in the Content section:
+A tab on the right-hand side of a section eg. the Redirect Url Management dashboard in the Content section:
 
 ![Redirect Url Management Dashboard](images/whatisadashboard.jpg)
 
 ### Why?
 
 It is generally considered good practice when you build an Umbraco site to provide a custom dashboard to welcome your editors and provide information about the site and/or provide a helpful gateway to common functionality the editors will use.
-This guide will show the basics of creating a custom 'Welcome Message' dashboard and then show how you can go a little further to provide interaction using angularJS...
+This guide will show the basics of creating a custom 'Welcome Message' dashboard and then show how you can go a little further to provide interaction using AngularJS...
 
 So all the steps we will go through:
 
@@ -38,7 +38,7 @@ There are a lot of parallels with Creating a Property Editor, the tutorial '[Cre
 
 ### The end result
 
-At the end of this guide we should have a friendly welcoming dashboard displaying a list of the editor's recent site updates.
+At the end of this guide, we should have a friendly welcoming dashboard displaying a list of the editor's recent site updates.
 
 ## Setting up a plugin
 
@@ -47,7 +47,7 @@ The first thing we must do is create a new folder inside our site's '/App_Plugin
 
 ## Creating the dashboard view
 
-Next we will create a html file inside this folder called 'WelcomeDashboard.html' the html file will contain a fragment of a html document and so does not need &lt;html&gt;&lt;head&gt;&lt;body&gt; entities.
+Next we will create a HTML file inside this folder called 'WelcomeDashboard.html' the html file will contain a fragment of a html document and so does not need &lt;html&gt;&lt;head&gt;&lt;body&gt; entities.
 
 Add the following html to the WelcomeDashboard.html
 
@@ -81,13 +81,13 @@ So the terminology here gets a bit muddled but we're creating a 'Section' (but t
 
 The above configuration is effectively saying:
 
-> "Add a tab called 'Welcome' to the 'Content' area/section of the Umbraco site, use the WelcomeDashboard.html as the content (view) of the dashboard, and don't allow 'translators' to see it!"
+> "Add a tab called 'Welcome' to the 'Content' area/section of the Umbraco site, use the WelcomeDashboard.html as the content (view) of the dashboard and don't allow 'translators' to see it!"
 
 **Note:** The order in which the tab will appear in the Umbraco Backoffice depends on its position in the dashboard.config file, so to make our Custom Welcome message the first Tab the editors sees in the content section, make sure the above configuration is the 'first' section configuration in the dashboard.config file.
 
 **Note:** You can specify multiple controls to appear on a particular tab, and multiple tabs in a particular section.
 
-**Note:** You can remove existing dashboards, and control who gets to see them by updating the other configuration sectons in the Dashboard.config file
+**Note:** You can remove existing dashboards, and control who gets to see them by updating the other configuration sections in the Dashboard.config file
 
 ### The Result
 
@@ -95,13 +95,13 @@ The above configuration is effectively saying:
 
 ## Adding a bit of style
 
-Congratulations! job done - no actually no, this is just the starting point the dashboard can be styled as you want it to be with css, but there are a couple of further steps to undertake be able to apply a custom stylesheet to the dashboard:
+Congratulations! job done - no actually no, this is just the starting point the dashboard can be styled as you want it to be with CSS, but there are a couple of further steps to undertake be able to apply a custom stylesheet to the dashboard:
 
 We need to add something called a package.manifest file to our CustomWelcomeDashboard folder
 
-(this file allows Umbraco to load other resources to use with your html view - it's just a file - it's called by convention 'package.manifest' and will contain the configuration of the resources to load in JSON format)
+(this file allows Umbraco to load other resources to use with your HTML view - it's just a file - it's called by convention 'package.manifest' and will contain the configuration of the resources to load in JSON format)
 
-When Umbraco loads the dashboard it will look for this file in the same folder as your html view (remember the dashboard config points to the html view) and use the manifest to load the additional resources, eg css and js files.
+When Umbraco loads the dashboard it will look for this file in the same folder as your HTML view (remember the dashboard config points to the html view) and use the manifest to load the additional resources, eg CSS and JS files.
 
 This manifest file is simpler to the one you would create for a [custom property editor](../../Extending/Property-Editors/package-manifest.md)
 
@@ -125,13 +125,13 @@ This stylesheet will now be loaded and applied to your dashboard. Add images and
 
 ![Custom Dashboard Welcome Message With styles...](images/welcomemessagewithstyles.jpg)
 
-(one caveat is the package.manifest file is loaded into memory when Umbraco starts up, so if you are adding a new stylesheet or javascript file you will need to start and stop your application for it to be loaded)
+(One caveat is the package.manifest file is loaded into memory when Umbraco starts up, so if you are adding a new stylesheet or javascript file you will need to start and stop your application for it to be loaded)
 
-Hopefully now you can see the potential of what you could provide to an editor as a basic welcome dashboard when they login to Umbraco.
+Hopefully, now you can see the potential of what you could provide to an editor as a basic welcome dashboard when they log in to Umbraco.
 
 ## Adding functionality
 
-We can add functionality to the dashboard by associating an AngularJS controller with the html view.
+We can add functionality to the dashboard by associating an AngularJS controller with the HTML view.
 
 Let's add a new file to the CustomWelcomeDashboard folder called 'customwelcomedashboard.controller.js' where our controller code will live.
 
@@ -148,7 +148,7 @@ In our html view, we update the outer div to wire up to the controller to the vi
 
 (note: the use of vm (short for view model) to enable communication between the view and the controller)
 
-and finally we need to update the package.manifest file to load the additional controller js file when the dashboard is displayed:
+Finally, we need to update the package.manifest file to load the additional controller js file when the dashboard is displayed:
 
     {
         javascript:[
@@ -161,7 +161,7 @@ and finally we need to update the package.manifest file to load the additional c
 	    ]
     }
 
-If all is setup fine we should now receive the 'Hello world' alert everytime the dashboard is reloaded in the content section of Umbraco, not very helpful, yet.
+If all is setup fine we should now receive the 'Hello world' alert every time the dashboard is reloaded in the content section of Umbraco, not very helpful, yet.
 
 ### Going further - Umbraco Angular Services and Directives
 
@@ -208,7 +208,7 @@ We can make use of Umbraco's Angular resource for retrieving audit log informati
 
 We inject the logResource into our controller:
 
-    angular.module("umbraco").controller("CustomWelcomeDashboardController", function ($scope,userService,logResource) {
+    angular.module("umbraco").controller("CustomWelcomeDashboardController", function ($scope, userService, logResource) {
 
 Add a property on our ViewModel to store the log information:
 
@@ -247,7 +247,7 @@ We can use the **entityResource**, an Umbraco Angular resource that enables us t
 
 Inject this into our angular controller:
 
-    angular.module("umbraco").controller("CustomWelcomeDashboardController", function ($scope,userService,logResource,entityResource) {
+    angular.module("umbraco").controller("CustomWelcomeDashboardController", function ($scope, userService, logResource, entityResource) {
 
 We need to loop through the response from the **logResource**, filter out 'saves' we're not interested in eg, Macro Saves, or DocType Saves, generally we need the entry in the log to have a nodeId and mention either Media or Content in the comment text. 
 
