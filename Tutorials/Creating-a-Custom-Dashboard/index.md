@@ -59,7 +59,7 @@ Add the following html to the WelcomeDashboard.html
 
 ## Configuring the dashboard to appear
 
-Open up your dashboard.config file from the /config folder of your site. ([explanation of the Dashboard Config settings are here...](../../Extending/Dashboards/index.md))
+Open up your dashboard.config file from the /config folder of your site. [Explanation of the Dashboard Config settings are here...](../../Extending/Dashboards/index.md)
 
 Add the following section:
 
@@ -83,11 +83,11 @@ The above configuration is effectively saying:
 
 > "Add a tab called 'Welcome' to the 'Content' area/section of the Umbraco site, use the WelcomeDashboard.html as the content (view) of the dashboard and don't allow 'translators' to see it!"
 
-**Note:** The order in which the tab will appear in the Umbraco Backoffice depends on its position in the dashboard.config file, so to make our Custom Welcome message the first Tab the editors sees in the content section, make sure the above configuration is the 'first' section configuration in the dashboard.config file.
+*__Note:__ The order in which the tab will appear in the Umbraco Backoffice depends on its position in the dashboard.config file, so to make our Custom Welcome message the first Tab the editors sees in the content section, make sure the above configuration is the 'first' section configuration in the dashboard.config file.*
 
-**Note:** You can specify multiple controls to appear on a particular tab, and multiple tabs in a particular section.
+*__Note:__ You can specify multiple controls to appear on a particular tab, and multiple tabs in a particular section.*
 
-**Note:** You can remove existing dashboards, and control who gets to see them by updating the other configuration sections in the Dashboard.config file
+*__Note:__ You can remove existing dashboards, and control who gets to see them by updating the other configuration sections in the Dashboard.config file*
 
 ### The Result
 
