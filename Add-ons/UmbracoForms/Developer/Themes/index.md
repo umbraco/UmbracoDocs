@@ -1,5 +1,5 @@
 #Themes
-As of version 6.0.0 and newer Umbraco Forms supports Themes, allowing forms to be customised in a more simplier manner than found in version 4.x
+As of version 6.0.0 and newer Umbraco Forms supports Themes, allowing forms to be customised in a much simplier manner than found in version 4.x
 
 ##Creating a Theme
 To create a theme you simply need to create a folder at `/views/partials/forms/themes/` The name of the folder is the name of theme that will be visible in the backoffice when choosing it. 
@@ -36,13 +36,13 @@ Add a javascript command to execute when the form is rendering, used to properly
 
 ###SetFormFieldClass
 Adds a class to the form field html element of a given type. If no type is given, it will add the class to all fields
-```
-//Applies the CSS class 'form-control' to all fields - that GetFormFieldClass uses in FieldType views
-@Html.SetFormFieldClass("form-control")
 
-//Applies the CSS class 'some-other-class' for the FieldType of the Name 'Password'
-@Html.SetFormFieldClass("some-other-class", "Password")
-```
+    //Applies the CSS class 'form-control' to all fields - that GetFormFieldClass uses in FieldType views
+    @Html.SetFormFieldClass("form-control")
+
+    //Applies the CSS class 'some-other-class' for the FieldType of the Name 'Password'
+    @Html.SetFormFieldClass("some-other-class", "Password")
+
 
 ###GetFormFieldClass
 Retrieves all classes for a given field type, used when rendering form fieldtype partial views
@@ -50,13 +50,13 @@ Retrieves all classes for a given field type, used when rendering form fieldtype
 
 ###SetFormFieldWrapperClass
 Adds a class to the div element wrapping around form fields of a given type. If no type is given, it will add the class to all fields
-```
-//Applies the CSS class 'form-group' around all fields, label & help texts
-@Html.SetFormFieldWrapperClass("form-group")
 
-//Applies the CSS class 'some-other-class' for the FieldType of the Name 'Password'
-@Html.SetFormFieldWrapperClass("some-other-class", "Password")
-```
+    //Applies the CSS class 'form-group' around all fields, label & help texts
+    @Html.SetFormFieldWrapperClass("form-group")
+
+    //Applies the CSS class 'some-other-class' for the FieldType of the Name 'Password'
+    @Html.SetFormFieldWrapperClass("some-other-class", "Password")
+
 
 ###GetFormFieldWrapperClass
 Retrieves all wrapper classes for a given field type, used when rendering form fields, this class wraps both label, help-text and the field itself in the default view
@@ -64,16 +64,16 @@ Retrieves all wrapper classes for a given field type, used when rendering form f
 
 
 ##Rendering Script content seperately
-Sometimes when you insert a form into a page you do not wish the JavaScript includes and CSS referecnes to be rendered directly alongside the form itself and more typically you would like to render these before the closing `</body>` tag.
+Sometimes when you insert a form into a page you do not wish the JavaScript includes and CSS references to be rendered directly alongside the form itself and more typically you would like to render these before the closing `</body>` tag.
 To do this, when inserting the form using the macro ensure the checkbox for the property `Exclude Scripts` is checked/enabled and then you can use a snippet like below to render the necessary scripts in your main template before the clsoing `</body>`
 
-```
-@if (TempData["UmbracoForms"] != null)
-{
-    foreach (var form in (List<Guid>)TempData["UmbracoForms"])
+
+    @if (TempData["UmbracoForms"] != null)
     {
-        Html.RenderAction("RenderFormScripts", "UmbracoForms", new { formid = form, theme = "yourTheme" });
+        foreach (var form in (List<Guid>)TempData["UmbracoForms"])
+        {
+            Html.RenderAction("RenderFormScripts", "UmbracoForms", new { formid = form, theme = "yourTheme" });
+        }
     }
-}
-```
+
 
