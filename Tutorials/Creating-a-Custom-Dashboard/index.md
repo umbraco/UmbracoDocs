@@ -112,14 +112,17 @@ Inside this package manifest we add a bit of JSON to describe the dashboard's re
 	    /*javascript files listed here*/
         ],
 	    css: [
-		    /*list of stylesheets appear here:*/
-	    "~/app_plugins/CustomWelcomeDashboard/customwelcomedashboard.css"
+		/*list of stylesheets appear here:*/
+	    	"~/app_plugins/CustomWelcomeDashboard/customwelcomedashboard.css"
 	    ]
     }
 
 Now create a stylesheet in our CustomWelcomeDashboard folder called 'customwelcomedashboard.css', and add some styles, I don't know perhaps a bit of purple:
 
-    .welcome-dashboard h1 {font-size:4em ; color:purple}
+    .welcome-dashboard h1 {
+    	font-size:4em;
+	color:purple
+    }
 
 This stylesheet will now be loaded and applied to your dashboard. Add images and html markup as required:
 
