@@ -76,4 +76,6 @@ To do this, when inserting the form using the macro ensure the checkbox for the 
         }
     }
 
+When using your own theme, you need to copy the Script.cshtml file from the default theme folder and amend the js references to reference your own js files.
 
+Your js files are probably best located in /js or /scripts along with your other js files. You can't put these in /Views since they won't be served becasue of restrictions on that folder by the web.config file
