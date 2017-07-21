@@ -265,8 +265,8 @@ Putting this together:
             angular.forEach(response, function (item) {
                 // if no entity exists -1 is returned for the nodeId (eg saving a macro would create a log entry without a nodeid)
                 if (item.nodeId > 0) {
-                    //this is the only way to tell them apart!!
-                    if (item.comment.indexOf("Media") > -1 || item.comment.indexOf("Content") > -1) {
+                    //this is the only way to tell them apart - whether the comment includes the words Content or Media!!
+                    if (item.comment.match("(\\bContent\\b|\\bMedia\\b)")) {
                         if (item.comment.indexOf("Media") > -1) {
                             //log entry is a media item
                             item.entityType = "Media";
