@@ -1,4 +1,4 @@
-#Using IoC with MVC in Umbraco
+#Using IoC with Umbraco
 
 _This section will show you how to setup Ioc/Dependency Injection with your Umbraco installation. The examples will use Autofac but you can use whatever you want_ 
 
@@ -40,10 +40,11 @@ Here's an example of a custom global.asax class which initializes the IoC contai
 
 			var builder = new ContainerBuilder();
 
-			//register all controllers found in this assembly
+			//register all controllers found in your assembly
 			builder.RegisterControllers(typeof(MyApplication).Assembly);
 
-			//register umbraco webapi controllers used by the admin site
+			//register umbraco MVC + webapi controllers used by the admin site
+			builder.RegisterControllers(typeof(UmbracoApplication).Assembly);
     			builder.RegisterApiControllers(typeof(UmbracoApplication).Assembly);
 
 			//add custom class to the container as Transient instance
@@ -68,6 +69,10 @@ If you like to use the `IApplicationEventHandler` alternative - here is an examp
 		
 			//register all controllers found in this assembly
 			builder.RegisterControllers(typeof(MyApplication).Assembly);
+
+			//register umbraco MVC + webapi controllers used by the admin site
+			builder.RegisterControllers(typeof(UmbracoApplication).Assembly);
+    			builder.RegisterApiControllers(typeof(UmbracoApplication).Assembly);
 
 			//add custom class to the container as Transient instance
 			builder.RegisterType<MyAwesomeContext>();
@@ -123,6 +128,15 @@ As another example, you can do the same with SurfaceControllers. Here we are cre
 		}
 	}
 
+##What assemblies and controllers do I need to register?
+
+You need to register all assemblies that may contain MVC or WebApi controllers. In Umbraco this is the `umbraco` assembly which you can get a direct assembly reference to using the example syntax used above:
+
+```
+typeof(UmbracoApplication).Assembly
+```
+
+If you don't register assemblies that contain controllers you may end up with YSOD errors. If you do not register a controller then ASP.NET will try to create the controller but if it doesn't have an empty constructor you'll get a YSOD.
 
 ##Things to note
 
