@@ -20,7 +20,7 @@ Umbraco 7.6.4 has implemented checks for when FIPS mode is enabled on the server
 
 ## Steps to making Umbraco FIPS compliant:
 
-While Umbraco 7.6.4 is FIPS compliant, one of its key dependencies, Lucene.Net, requires a flag to be set in code and the library to be recompiled.
+While Umbraco 7.6.4 is FIPS compliant, one of its key dependencies, Lucene.Net, requires a flag to be set in order for FIPS compliant hashing algorithms to be used. This can be done in your Umbraco project and is detailed below.
 
 Below are the steps to get an Umbraco project able to work with FIPS mode enabled:
 
@@ -28,37 +28,37 @@ Below are the steps to get an Umbraco project able to work with FIPS mode enable
 
 This is the lowest version that contains the detection of FIPS mode and switches the hashing to use a FIPS compliant hash. See the general instructions for [Upgrading Existing Installs][3] in the documentation for more information and help.
 
-### 2. Update Lucene to FIPS compliant version
+### 2. Set Lucene to use a FIPS compliant hashing algorithm
 
-Lucene.Net doesn't have automatic detection of FIPS mode, but it does have a flag that can be set in the code to enable FIPS compliant cryptographic algorithms to be used.  Umbraco/Examine currently has a dependency on Lucene.Net version 2.9.4.
+Lucene.Net doesn't have automatic detection of FIPS mode, but it does have a flag that can be set to enable FIPS compliant cryptographic algorithms to be used.  Umbraco/Examine currently has a dependency on Lucene.Net version 2.9.4 as of Umbraco 7.6.4.
 
-To update Lucene.Net to be FIPS compliant you will need to clone the [apache/lucenenet][4] mirror repository on GitHub.
+To set Lucene.Net to be FIPS compliant you will create a new class in your project that will run before Umbraco Application Startup.  This class will set the SupportClass.Cryptography.FIPSCompliant to detect the current machine state and set it to True if FIPS is required.
 
-Once the repository has been cloned fetch all the tags using the following command-line git command:
-
-``` powershell
-git fetch --all --tags --prune
-```
-
-Then checkout a new branch based on the "Lucene.Net_2_9_4_RC3" and replace "your-branch-name" with a branch name you would like to create:
-
-``` powershell
-git checkout tags/Lucene.Net_2_9_4_RC3 -b your-branch-name
-```
-
-Modify [line 1421 in file src/core/SupportClass.cs][5] to be:
-
-``` csharp
-static public bool FIPSCompliant = CryptoConfig.AllowOnlyFipsAlgorithms;
-```
-
-Add the following using statement to the top of the file:
+Create the following class and place it in your Umbraco project in a location that is appropriate for your project setup:
 
 ``` csharp
 using System.Security.Cryptography;
+using System.Web;
+using MyProject.Events;
+
+[assembly: PreApplicationStartMethod(typeof(LuceneFipsFlagOnAppStartup), "Initialize")]
+
+namespace MyProject.Events
+{
+    public sealed class LuceneFipsFlagOnAppStartup
+    {
+        public static void Initialize()
+        {
+            SupportClass.Cryptography.FIPSCompliant = CryptoConfig.AllowOnlyFipsAlgorithms;
+        }
+    }
+}
 ```
 
-Compile the solution and copy the Lucene.Net.dll into the bin directory of the Umbraco website.
+You will likely want to rename the Namespace to conform to your Namespacing structure.
+
+Once you build the project, you will be ready to test.
+
 
 ### 3. Test with FIPS enabled
 
