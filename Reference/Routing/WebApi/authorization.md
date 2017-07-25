@@ -10,7 +10,9 @@ Probably the easiest way to ensure your controller is secured for only back offi
 
 The `UmbracoAuthorizedApiController` is automatically routed.  Check out the [routing documentation](../Authorized/index.md) for more information on this topic.
 
-###Using UmbracoAuthorizeAttribute
+###Using UmbracoAuthorizeAttribute (<7.2.2)
+
+**Please note, this attribute [will not work](http://issues.umbraco.org/issue/U4-6352) in Umbraco from version 7.2.2. Please get your controller to inherit from the `UmbracoAuthorizedApiController` as is shown above.**
 
 To secure your controller based on back offce membership use the attribute: `Umbraco.Web.WebApi.UmbracoAuthorizeAttribute`. 
 
