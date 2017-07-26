@@ -20,17 +20,17 @@ Umbraco 7.6.4 has implemented checks for when FIPS mode is enabled on the server
 
 ## Steps to making Umbraco FIPS compliant:
 
-While Umbraco 7.6.4 is FIPS compliant, one of its key dependencies, Lucene.Net, requires a flag to be set in order for FIPS compliant hashing algorithms to be used. This can be done in your Umbraco project and is detailed below.
+While Umbraco 7.6.4+ is FIPS compliant, one of its key dependencies, Lucene.Net, requires a flag to be set in order for FIPS compliant hashing algorithms to be used. This can be done in your Umbraco project and is detailed below.
 
 Below are the steps to get an Umbraco project able to work with FIPS mode enabled:
 
-### 1. Upgrade to Umbraco 7.6.4
+### 1. Upgrade to Umbraco 7.6.4+
 
 This is the lowest version that contains the detection of FIPS mode and switches the hashing to use a FIPS compliant hash. See the general instructions for [Upgrading Existing Installs][3] in the documentation for more information and help.
 
 ### 2. Set Lucene to use a FIPS compliant hashing algorithm
 
-Lucene.Net doesn't have automatic detection of FIPS mode, but it does have a flag that can be set to enable FIPS compliant cryptographic algorithms to be used.  Umbraco/Examine currently has a dependency on Lucene.Net version 2.9.4 as of Umbraco 7.6.4.
+Lucene.Net doesn't have automatic detection of FIPS mode, but it does have a flag that can be set to enable FIPS compliant cryptographic algorithms to be used.  Umbraco/Examine currently has a dependency on Lucene.Net version 2.9.4 as of Umbraco 7.6.4+.
 
 To set Lucene.Net to be FIPS compliant you will create a new class in your project that will run before Umbraco Application Startup.  This class will set the SupportClass.Cryptography.FIPSCompliant to detect the current machine state and set it to True if FIPS is required.
 
