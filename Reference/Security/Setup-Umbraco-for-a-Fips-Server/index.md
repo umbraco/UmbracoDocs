@@ -36,24 +36,22 @@ To set Lucene.Net to be FIPS compliant you will create a new class in your proje
 
 Create the following class and place it in your Umbraco project in a location that is appropriate for your project setup:
 
-``` csharp
-using System.Security.Cryptography;
-using System.Web;
-using MyProject.Events;
+    using System.Security.Cryptography;
+    using System.Web;
+    using MyProject.Events;
 
-[assembly: PreApplicationStartMethod(typeof(LuceneFipsFlagOnAppStartup), "Initialize")]
+    [assembly: PreApplicationStartMethod(typeof(LuceneFipsFlagOnAppStartup), "Initialize")]
 
-namespace MyProject.Events
-{
-    public sealed class LuceneFipsFlagOnAppStartup
+    namespace MyProject.Events
     {
-        public static void Initialize()
+        public sealed class LuceneFipsFlagOnAppStartup
         {
-            SupportClass.Cryptography.FIPSCompliant = CryptoConfig.AllowOnlyFipsAlgorithms;
+            public static void Initialize()
+            {
+                SupportClass.Cryptography.FIPSCompliant = CryptoConfig.AllowOnlyFipsAlgorithms;
+            }
         }
     }
-}
-```
 
 You will likely want to rename the Namespace to conform to your Namespacing structure.
 
