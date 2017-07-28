@@ -71,4 +71,4 @@ A Switch block is used when testing a large number of conditions
 
 ###More information
 - [More examples](../../../Reference/Templating/Mvc/examples)
-- [Querying](../../../Reference/Templating/querying)
+- [Querying](../../../Reference/Querying)
