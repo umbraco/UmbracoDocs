@@ -1,18 +1,22 @@
 #Umbraco Api - Authorization
 
-_This section will describe how to secure your Umbraco Api controllers based on a users membership_ 
+_This section will describe how to secure your Umbraco Api controllers based on a users membership._ 
 
 ##Authorizing for the back office
 
 ###Inheriting from UmbracoAuthorizedApiController
 
-Probably the easiest way to ensure your controller is secured for only back office users is to inherit from `Umbraco.Web.WebApi.UmbracoAuthorizedApiController`. This is essentially the same as applying the `UmbracoAuthorizeAttribute` to your controller (see below). We also expose the Umbraco user property `User UmbracoUser {get;}` on this base controller as well.
+Probably the easiest way to ensure your controller is secured for only back office users is to inherit from `Umbraco.Web.WebApi.UmbracoAuthorizedApiController`. This is similar to applying the `IsBackOfficeAttribute` to your controller (see below), but it will ensure all actions will be secured. We also expose the Umbraco user property `User UmbracoUser {get;}` on this base controller as well.
 
-The `UmbracoAuthorizedApiController` is automatically routed.  Check out the [routing documentation](../Authorized/index.md) for more information on this topic.
+Controllers inheriting from `UmbracoAuthorizedApiController`, or ones that have the `IsBackOfficeAttribute` are automatically routed. Check out the [routing documentation](../Authorized/index.md) for more information on this topic.
 
 ###Using UmbracoAuthorizeAttribute
 
-To secure your controller based on back offce membership use the attribute: `Umbraco.Web.WebApi.UmbracoAuthorizeAttribute`. 
+Using this attribute in conjunction with `IsBackOfficeAttribute` will allow you to secure some actions but still leave others open. If you don't use `IsBackOfficeAttribute` on your controller, then `UmbracoAuthorizeAttribute` will always cause your actions to return unauthorised, regardless of if you are logged into the back office.
+
+`Umbraco.Web.WebApi.UmbracoAuthorizeAttribute` can be either used on the controller or on an individual action. Applying it to the controller will ensure all actions require an Umbraco user to be logged in, where as using it on individual action will only secure that action.
+
+To secure your controller actions based on back office membership use the attribute: `Umbraco.Web.WebApi.UmbracoAuthorizeAttribute`. 
 
 *It's important to note the namespace since we have another class called UmbracoAuthorizeAttribute in a different namespace that is used for MVC.*
 
@@ -22,9 +26,20 @@ This attribute has no parameters it simply ensures that a valid back office user
 
 This will only allow a logged in back office user to to access the GetAllProducts action:
 
+	[IsBackOffice]
 	public class ProductsApiController : UmbracoApiController
 	{
 	    [Umbraco.Web.WebApi.UmbracoAuthorize]
+	    public IEnumerable<string> GetAllProducts()
+	    {
+	        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+	    }
+	}
+	
+Alternatively, this code would behave the same way:
+
+	public class ProductsApiController : UmbracoAuthorizedApiController
+	{
 	    public IEnumerable<string> GetAllProducts()
 	    {
 	        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
