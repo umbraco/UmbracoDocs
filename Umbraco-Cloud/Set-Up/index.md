@@ -17,16 +17,16 @@ An Umbraco Cloud project name is unique which means if a project with the name y
 This does what it says. Once you've confirmed deletion of a project it is permanently removed as are all data, media, databases, configuration, setup, and domain bindings. So, make sure this is what you want.
 
 ##Domains (Hostname binding)
-You can bind any hostname to your sites that you like. Keeping in mind, of course, that the hostname will need to have a DNS entry so that it resolves to the Umbraco Cloud service.
+You can bind any hostname to your project environments. Keeping in mind, of course, that the hostname will need to have a DNS entry so that it resolves to the Umbraco Cloud service.
 
-There is a limit on how many hostnames that you can add per Umbraco Cloud enviroment. You can bind a total of 15 hostnames to each of your Umbraco Cloud environments. 
+You can bind a total of 15 hostnames to each of your Umbraco Cloud environments. 
 
-Once you add a domain here makes sure to update the hostame DNS entry to resolve to the umbraco.io service. We recommend setting an ALIAS record for your site's root domain (e.g. mysite.s1.umbraco.io), rather than an A record for the umbraco.io service IP address. Check with your DNS host or domain registrar for details on how to configure this for your domain.
+Once you add a domain to one of your environments make sure to update the hostame DNS entry to resolve to the umbraco.io service. We recommend setting an ALIAS record for your root domain (e.g. mysite.s1.umbraco.io), rather than an A record for the umbraco.io service IP address. Check with your DNS host or domain registrar for details on how to configure this for your domain.
 
 ###Hiding the Default umbraco.io Url
-Once you've assigned a hostname to your live site you may want to "hide" the site's default Url (e.g. mysite.s1.umbraco.io) for various reasons. Perhaps for SEO or just making it clear to your users that the site can be accessed using just one hostname.
+Once you've assigned a hostname to your Live environment you may want to "hide" the projects default URL (e.g. mysite.s1.umbraco.io) for various reasons. Perhaps for SEO or just making it clear to your users that the site can be accessed using just one hostname.
 
-One approach for this is to add a redirect to your live site's web.config. To accomplish this, add a redirect rule to the live site's web.config in the `<system.webServer><rewrite><rules>` section. For example, the following rule will redirect all requests for the site's mysite.s1.umbraco.io Url to the mysite.com Url and respond with a permanent redirect status.
+One approach for this is to add a redirect to your projects web.config. To accomplish this, add a redirect rule to the `<system.webServer><rewrite><rules>` section in the web.config file. For example, the following rule will redirect all requests for the projects mysite.s1.umbraco.io URL to the mysite.com URL and respond with a permanent redirect status.
         
         
     <rule name="Redirects umbraco.io to actual domain" stopProcessing="true">
@@ -43,7 +43,7 @@ One approach for this is to add a redirect to your live site's web.config. To ac
 **Note:** This will not rewrite anything under the `/umbraco` path so that you can still do content deployments. You don't have to give your editors the umbraco.io URL, and they won't see the umbraco.io URL if you give them the actual domain name. This rule will also not apply on your local copy of the site running on `localhost`.  
 
 ##Security Certificates
-You can apply certificates to your live site by uploading them from the Manage Domains page. Your certificates need to be .pfx format and must be set to use a password. Each certificate can then be bound to a hostname you have already added to your site. Make certain you use the hostname you will bind the certificate to as the common name (CN) when generating the certificate.
+You can apply certificates to your Live environment by uploading them from the _Manage Domains_ page. Your certificates need to be .pfx format and must be set to use a password. Each certificate can then be bound to a hostname you have already added to your site. Make certain you use the hostname you will bind the certificate to as the common name (CN) when generating the certificate.
 
 ###Running your site on HTTPS only
 Once you've applied a certificate to your site you can make sure that anybody visiting your site will always end up on HTTPS instead of the insecure HTTP.
