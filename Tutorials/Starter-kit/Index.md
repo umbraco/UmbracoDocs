@@ -26,7 +26,7 @@ The contact page contains a customizable map and contact form.
 ## Lessons
 While familiarizing yourself with the starter kit you might have spotted some places where you would want some additional functionality. The following lessons will give you step-by-step instructions on how to add specific features.
 
-[Show me the lessons](/Starter-kit/Lessons/index.md)
+[Show me the lessons](Starter-kit/Lessons/index.md)
 
 ___
 
