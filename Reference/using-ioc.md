@@ -43,9 +43,16 @@ Here's an example of a custom global.asax class which initializes the IoC contai
 			//register all controllers found in your assembly
 			builder.RegisterControllers(typeof(MyApplication).Assembly);
 
-			//register umbraco MVC + webapi controllers used by the admin site
+			//register umbraco MVC + webapi controllers used in the back office
 			builder.RegisterControllers(typeof(UmbracoApplication).Assembly);
     			builder.RegisterApiControllers(typeof(UmbracoApplication).Assembly);
+			
+			//register webapi controllers for developer, users and forms
+			//treeviews used in the back office
+			builder.RegisterApiControllers(typeof(Diplo.TraceLogViewer
+				.Controllers.TraceLogController).Assembly);
+			builder.RegisterApiControllers(typeof(Umbraco.Forms.Web
+				.Trees.FormTreeController).Assembly);
 
 			//add custom class to the container as Transient instance
 			builder.RegisterType<MyAwesomeContext>();
@@ -70,9 +77,16 @@ If you like to use the `IApplicationEventHandler` alternative - here is an examp
 			//register all controllers found in this assembly
 			builder.RegisterControllers(typeof(MyApplication).Assembly);
 
-			//register umbraco MVC + webapi controllers used by the admin site
+			//register umbraco MVC + webapi controllers used in the back office
 			builder.RegisterControllers(typeof(UmbracoApplication).Assembly);
     			builder.RegisterApiControllers(typeof(UmbracoApplication).Assembly);
+			
+			//register webapi controllers for developer, users and forms
+			//treeviews used in the back office
+			builder.RegisterApiControllers(typeof(Diplo.TraceLogViewer
+				.Controllers.TraceLogController).Assembly);
+			builder.RegisterApiControllers(typeof(Umbraco.Forms.Web
+				.Trees.FormTreeController).Assembly);
 
 			//add custom class to the container as Transient instance
 			builder.RegisterType<MyAwesomeContext>();
@@ -130,7 +144,7 @@ As another example, you can do the same with SurfaceControllers. Here we are cre
 
 ##What assemblies and controllers do I need to register?
 
-You need to register all assemblies that may contain MVC or WebApi controllers. In Umbraco this is the `umbraco` assembly which you can get a direct assembly reference to using the example syntax used above:
+You need to register all assemblies that may contain MVC or WebApi controllers. In Umbraco, these include the `umbraco` assembly and assemblies containing treeviews used in the back office (see the examples above). You can get a direct assembly reference with the following syntax:
 
 ```
 typeof(UmbracoApplication).Assembly
