@@ -67,6 +67,29 @@ The installation of these packages will install snippets of code with readme fil
 
 ![OAuth login screen](images/google-oauth.png)
 
+#### Auto-linking accounts
+
+Traditionally a back office user will need to exist first and then that user can link their user account to an OAuth account in the back office, however in many cases the identity server you choose will be the source of truth for all of your users. In this case you would want to be able to create user accounts in your identity server and then have that user given access to the back office without having to create the user in the back office first. This is done via auto-linking. There are auto-link options you can specify for your OAuth provider (see http://issues.umbraco.org/issue/U4-6753 for other details). 
+
+Here's an example of specifying auto link options for your OAuth provider:
+
+    //create the options, all parameters are optional but if you wish to enable
+    //any auto-linking, the autoLinkExternalAccount parameter must be true
+    var autoLinkOptions = new ExternalSignInAutoLinkOptions(
+	autoLinkExternalAccount:true, 
+	defaultUserType: "editor", 
+	defaultCulture: "en-US");
+    
+    //an optional callback you can specify to give you more control over how the 
+    //back office user is created (auto-linked)
+    autoLinkOptions.OnAutoLinking = (BackOfficeIdentityUser user, ExternalLoginInfo info) =>
+    {
+	//this callback will execute when the user is being auto-linked but before it is created
+	//so you can modify the user before it's persisted
+    };
+    
+    identityServerOptions.SetExternalSignInAutoLinkOptions(autoLinkOptions);
+
 ### Replacing the basic username/password check
 
 Having the ability to simply replace the logic to validate a username and password against a custom data store is important to some developers. Normally in ASP.Net Identity this
