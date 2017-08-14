@@ -10,9 +10,9 @@ Alternatively the actions can be manually added to the package manifest by addin
 
 ##Standart fields on all actions
 
-· **Undo**, optional, is true by default.
-· **Alias**, mandatory, The alias of the package action to be executed
-· **Runat**, mandatory, can either be install or uninstall
+- **Undo**, optional, is true by default.
+- **Alias**, mandatory, The alias of the package action to be executed
+- **Runat**, mandatory, can either be install or uninstall
 
 ##Standard elements on all actions
 
@@ -34,12 +34,12 @@ Creates a new application, and adds it to the database.
 
 Alias: addApplication
 
-<Action runat="install"   
-[undo="false"]   
-alias="addApplication"   
-appName="Application Name"   
-appAlias="myApplication"   
-appIcon="application.gif"/>
+    <Action runat="install"   
+    [undo="false"]   
+    alias="addApplication"   
+    appName="Application Name"   
+    appAlias="myApplication"   
+    appIcon="application.gif"/>
 
 ##Add application tree
 
@@ -47,20 +47,20 @@ Creates a new application tree, and adds it to the db.
 
 Alias: addApplicationTree
 
-<Action runat="install"
-[undo="false"]
-alias="addApplicationTree"
-silent="[true/false]"
-initialize="[true/false]"
-sortOrder="1"
-applicationAlias="appAlias"
-treeAlias="myTree"
-treeTitle="My Tree"
-iconOpened="folder_o.gif"
-iconClosed="folder.gif"
-assemblyName="umbraco"
-treeHandlerType="treeClass"
-action="alert('you clicked');"/>
+    <Action runat="install"
+    [undo="false"]
+    alias="addApplicationTree"
+    silent="[true/false]"
+    initialize="[true/false]"
+    sortOrder="1"
+    applicationAlias="appAlias"
+    treeAlias="myTree"
+    treeTitle="My Tree"
+    iconOpened="folder_o.gif"
+    iconClosed="folder.gif"
+    assemblyName="umbraco"
+    treeHandlerType="treeClass"
+    action="alert('you clicked');"/>
 
 ##Add dashboard section
 
@@ -69,23 +69,24 @@ Creates a new dashboard section. Uses the standard dashboard xml as a child node
 You will need to locate this file in the `/WebSiteRoot/config/Dashboard.config`
 
 Alias: addDashboardSection
-<Action runat="install" [undo="false"]
-alias="addDashboardSection"
-dashboardAlias="MyDashboardSection">
-<section>
-<areas>
-<area>default</area>
-<area>content</area>
-</areas>
-<tab caption="Last Edits">
-<control>/usercontrols/latestEdits.ascx</control>
-<control>/usercontrols/PostCreate.ascx</control>
-</tab>
-<tab caption="Create blog post">
-<control>/usercontrols/new.ascx</control>
-</tab>
-</section>
-</Action>
+
+    <Action runat="install" [undo="false"]
+    alias="addDashboardSection"
+    dashboardAlias="MyDashboardSection">
+    <section>
+    <areas>
+    <area>default</area>
+    <area>content</area>
+    </areas>
+    <tab caption="Last Edits">
+    <control>/usercontrols/latestEdits.ascx</control>
+    <control>/usercontrols/PostCreate.ascx</control>
+    </tab>
+    <tab caption="Create blog post">
+    <control>/usercontrols/new.ascx</control>
+    </tab>
+    </section>
+    </Action>
 
 ##Allow document type
 
@@ -93,10 +94,10 @@ Allows a document type to be created below another document type. Ex: allow Text
 
 Alias: allowDocumentType
 
-<Action runat="install"
-alias="allowDocumenttype"
-documentTypeAlias="MyNewDocumentType"
-parentDocumentTypeAlias="HomePage"/>
+    <Action runat="install"
+    alias="allowDocumenttype"
+    documentTypeAlias="MyNewDocumentType"
+    parentDocumentTypeAlias="HomePage"/>
 
 ##Publish root document
 
@@ -104,9 +105,9 @@ Publishes a document located in the root of the website.
 
 Alias: publishRootDocument
 
-<Action runat="install"
-alias="publishRootDocument"
-documentName="News" />
+    <Action runat="install"
+    alias="publishRootDocument"
+    documentName="News" />
 
 ##Add string to html element
 
@@ -119,13 +120,13 @@ Alias: addStringToHtmlElement
 *{nodevalue}: the string to be copied to the target element.
 *Position: where to place the string in the element: (can only be end/ beginning)
 
-<Action runat="install"
-alias="addStringToHtmlElement"
-templateAlias="news"
-htmlElementId="newsSection"
-position="[beginning/end">
-<![CDATA[hello world!]]>
-</Action>
+    <Action runat="install"
+    alias="addStringToHtmlElement"
+    templateAlias="news"
+    htmlElementId="newsSection"
+    position="[beginning/end">
+    <![CDATA[hello world!]]>
+    </Action>
 
 ##Community made Package Actions
 
