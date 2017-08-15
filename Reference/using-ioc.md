@@ -159,9 +159,6 @@ Now create the following files to configure Unity correctly for an Umbraco site.
 	    {
 		var container = UnityConfig.GetConfiguredContainer();
 
-		// If you intend to use DI inside filter attributes
-		FilterProviders.Providers.Remove(FilterProviders.Providers.OfType<FilterAttributeFilterProvider>().First());
-		FilterProviders.Providers.Add(new UnityFilterAttributeFilterProvider(container));
 		// Web API
 		GlobalConfiguration.Configuration.DependencyResolver 
 			= new Microsoft.Practices.Unity.WebApi.UnityDependencyResolver(container);
@@ -189,25 +186,6 @@ Now create the following files to configure Unity correctly for an Umbraco site.
 
 		// Instantiate the HealthCheckController using it's default parameterless constructor
 		container.RegisterType<HealthCheckController>(new InjectionConstructor());
-		
-		// Some common examples
-		
-		// The commonly used Umbraco ApplicationContext
-		container.RegisterType<ApplicationContext>(
-		    new ContainerControlledLifetimeManager(), 
-		    new InjectionFactory(c => ApplicationContext.Current)
-		);
-
-		// An HttpContext abstraction that you may find useful
-		container.RegisterType<HttpContextBase>(
-			new PerRequestLifetimeManager(), 
-			new InjectionFactory(c => new HttpContextWrapper(HttpContext.Current))
-		);
-		// The request scoped Umbracohelper class
-		container.RegisterType<UmbracoHelper>(
-			new PerRequestLifetimeManager(), 
-			new InjectionConstructor(typeof(UmbracoContext))
-		);
 	    }
 
 	    public void OnApplicationInitialized(UmbracoApplicationBase httpApplication, ApplicationContext applicationContext) { }
