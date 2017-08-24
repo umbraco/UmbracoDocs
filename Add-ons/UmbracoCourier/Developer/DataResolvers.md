@@ -1,31 +1,31 @@
 #Data Resolvers
 
 ##Introduction
-This document outlines how 2 central components in Courier works:
+This document outlines how 2 central components in Courier work:
 
 1. Its data resolvers and how they can change and process data
 2. Its item event providers which can trigger and queue events
 
-These concepts are useful for people who wish either extend or change the way Courier works with the website content. 
+These concepts are useful for people who wish to either extend or change the way Courier works with the website content. 
 
-Data resolvers will show a developer how Courier can understand your data
-Item event handlers enables a developer to trigger and queue events, such as Lucene Indexing, triggering workflows and so on.
+Data resolvers will show a developer how Courier can understand your data. 
+Item event handlers enable a developer to trigger and queue events, such as Lucene Indexing, triggering workflows and so on.
 
 ##Intended audience
-Developers who understands .net, c# and has a clear idea of how Umbraco works, and what components in Umbraco does what. 
+Developers who understands .net, c# and have a clear idea of how Umbraco works and what components in Umbraco do what. 
 
-These concepts are targeted developers who wish to add support for 3rd party components such as Data Types, or change or extend the way Courier handles current built-in components.
+These concepts are targeted at developers who wish to add support for 3rd party components such as Data Types, or change or extend the way Courier handles current built-in components.
 
 ###Revision History
 * Version 1,  25/9/2011 Outline 
 
 ##What is Data Resolvers
 
-A data resolver is a custom model built into Courier 2, to handle 3rd party data types, storing data in a custom way, or other custom components in your website, where Courier doesn’t understand the stored data.
+A data resolver is a custom model built into Courier 2 to handle 3rd party data types, storing data in a custom way, or other custom components in your website, where Courier doesn’t understand the stored data.
 
 In short, a Data resolver is simply a .net class, which inherits from a specific base class, which allows the developer to hook into different events during the data packaging and extraction.
 
-Out of the box, Courier 2, can understand all standard data-types in Umbraco. This means that Courier knows that a Content picker contains a ID, pointing at a document, which then becomes a dependency, and the ID gets translated into a Guid which can safely be deployed to another location. It also knows that a template might contain references to JavaScript files or internal links, using the [locallink:] syntax. Or a a lot of other cases where data have a special meaning. 
+Out of the box, Courier 2, can understand all standard data-types in Umbraco. This means that Courier knows that a Content picker contains an ID for a document, which then becomes a dependency, and the ID gets translated into a Guid which can safely be deployed to another location. It also knows that a template might contain references to JavaScript files or internal links, using the [locallink:] syntax. Or a lot of other cases where data have a special meaning. 
 
 This is what dataresolvers do, add special meaning to specific data that matches certain criteria, for instance properties using a specific datatype, templates containing a certain keyword and so on.
 
@@ -221,12 +221,12 @@ For instance storing data like so:
 
 Courier can without issues transfer this, but does not know that the data contains node Ids, so on the other end, this data will break. 
 
-To make it work, Courier needs to know what IDs the xml contains, convert these ids into GUIDs and finally convert those GUIDs back to the corresponding Node IDs when the item is extracted in another location
+To make it work, Courier needs to know what IDs the xml contains, convert these IDs into GUIDs and finally convert those GUIDs back to the corresponding Node IDs when the item is extracted in another location
 
 To solve this, Courier 2.5 comes with a couple of simple helpers which can help digest this xml
 
 ##Umbraco.Courier.Core.Helpers.XmlDependencies.ReplaceIds
-This simply replace Node Ids with Guids, given a chunk of Valid Xml, and an Xpath Query it will go through the xml and replace ids.
+This simply replaces Node IDs with GUIDs, given a chunk of Valid Xml, and an Xpath Query it will go through the xml and replace IDs.
 
 	ReplaceIds(xml, xpath, attribute, direction, out replaceIds)
 	
@@ -278,7 +278,7 @@ A `List<string>` containing paths to all found resources
 	}
 	
 #PersistenceManager.Default.GetNodeId, GetUniqueId
-If the built-in replaces doesn’t work for your data, you can access node ids. And Unique Ids in the database through the Persistence Manager. This enables you to translate the Node ID => Guid or Guid => Node ID.
+If the built-in replaces doesn’t work for your data, you can access node IDs. And Unique Ids in the database through the Persistence Manager. This enables you to translate the Node ID => Guid or Guid => Node ID.
 
 As an optional parameter, you can pass the Umbraco NodeObjectType to this method to filter the type of node you wish to retrieve the id/guid of.
 
