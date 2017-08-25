@@ -3,20 +3,20 @@ These items are common terms and concepts that are used throughout the Umbraco b
 
 ###[Login screen](Login/)
 When you go to the backoffice for the first time, you're presented with the login screen.
-![Login screen](images/login.png "The login screen has a greeting, username/password field and optionally a 'Forgotten password' link.")
+![Login screen](images/umbraco7-6_login.jpg "The login screen has a greeting, username/password field and optionally a 'Forgotten password' link.")
 
 
 ###[Section](Sections/)
 A section in Umbraco is where you do specific tasks related to that section. For example content, settings, developer. You can navigate between the different sections of the backoffice by clicking the corresponding icon in the section menu.
 
-![Sections](images/sections.jpg "The Section menu is the vertical menu located on the left side of the backoffice.")
+![Sections](images/umbraco7-6_sections.jpg "The Section menu is the vertical menu located on the left side of the backoffice.")
 *The __Section menu__ is the vertical menu located on the left side of the backoffice.*
 
 ###Tree
 A tree is an hierarchical list of items related (and usually restricted) to a specific concept, which could be something like a content tree or a media tree. You can expand trees by clicking the down arrow <img src="images/expand-node.png" style="margin:0;width:15px" title="Expand a node in a tree" /> to the left of the node.
 [Read more..](../../Extending/Section-Trees/index.md)
 
-![Tree](images/tree.jpg "The content tree")
+![Tree](images/umbraco7-6_tree.jpg "The content tree")
 *The content tree*
 
 ###Node
@@ -24,7 +24,7 @@ A node is an item in a tree. The images and folders in the Media section are sho
 
 ###Dashboards
 A dashboard is the main view you are presented with when entering a section within the backoffice, and can be used to show valuable information to the users of the system.
-![Dashboard](images/dashboard.jpg "Default dashboard in the content section")
+![Dashboard](images/umbraco7-6_dashboard.jpg "Default dashboard in the content section")
 *Default dashboard in the content section*
 [Read more..](../../Extending/Dashboards/index.md)
 
@@ -47,7 +47,7 @@ Each document type property has a data type which defines the type of input of t
 [Read more..](../Data/Data-Types/)
 
 ###[Property Editors](Property-Editors/)
-A property editor is a way to insert content into Umbraco. An example of a property editor is the Rich Text Editor. It may be confused with Data Types. Its possible to have many Rich Text Editor Data Types with different settings that all use the Rich Text Editor property editor.
+A property editor is a way to insert content into Umbraco. An example of a property editor is the Rich Text Editor. It may be confused with Data Types. It's possible to have many Rich Text Editor Data Types with different settings that all use the Rich Text Editor property editor.
 
 ###Media
 Media items are used to store assets like images and video within the Media section and can be referenced from your content.
@@ -79,4 +79,4 @@ A parameter editor defines the usage of a property editor for use as a parameter
 [Read more..](../../Extending/Macro-Parameter-Editors/)
 
 ###User
-A user is someone who has access to the **Umbraco backoffice** and is not to be confused with Member. When Umbraco has been installed a user will automatically be generated with the login (email) an password entered during installing. Users can be created, edited and managed in the User section.
+A user is someone who has access to the **Umbraco backoffice** and is not to be confused with Member. When Umbraco has been installed a user will automatically be generated with the login (email) and password entered during installing. Users can be created, edited and managed in the User section.
