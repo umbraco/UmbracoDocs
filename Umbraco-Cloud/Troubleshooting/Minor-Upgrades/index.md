@@ -37,7 +37,7 @@ The upgrade process left off when it was needing three more steps. These three s
 
     The second thing you need to do, is to regenerate the metadata files used for transferring items like document types, data types and media types. This is done by accessing the Power tools(Kudu) on the project, open the cmd prompt and browse to the wwwroot/data folder. 
     Once there, you need to enter `echo > deploy-export`. This will generate the needed files for the upgraded site to work with Umbraco Deploy.
-3. The last thing to do is to go to the `/site/locks` folder (still through Kudu) and rename the file called `upgrading` to `upgraded-minor`. This will indicate to Umbraco Cloud, that the development environment is now ready to deploy all its changes to the next environment.
+3. The last thing to do is to go to the `/site/locks` folder (still through Kudu) and rename the file called `upgrading` to `upgraded-minor` - rename the file by typing `ren upgrading upgraded-minor`. This will indicate to Umbraco Cloud, that the development environment is now ready to deploy all its changes to the next environment.
 
 Before deploying the upgrade to the next environment, you should verify that everything looks as expected on the development environment. 
 
