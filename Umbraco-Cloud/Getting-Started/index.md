@@ -23,11 +23,11 @@ If the project contains a _Staging_ environment and you create your content here
 ##Finding your Umbraco Project
 To navigate to your project, simply log in to the Umbraco Cloud portal and then click on the project you want to use.
 
-![dashboard](images/projects.PNG)
+![dashboard](images/projects.png)
 
 We create your project’s URL using the name you used when you created the project, and then we add _s1.umbraco.io_. If you named your project __Snoopy__, your project URL will be _snoopy.s1.umbraco.io_ and your project’s Umbraco backoffice URL will be _snoopy.s1.umbraco.io/umbraco_. For the Development environment we prefix with _dev-_ so the URLs will be _dev-snoopy.s1.umbraco.io_ and _dev-snoopy.s1.umbraco.io/umbraco_. You'll find all environments for a project listed on the Project page.
 
-![project](images/project-page.PNG)
+![project](images/project-page.png)
 
 ##Logging in to Umbraco
 When working with a trial project on Umbraco Cloud you need to log in to work with the Umbraco backoffice and also to view your site. The user name and password for both locations are the same as the username and password you use for the portal. Once you upgrade to any of the non-Trial versions you’ll no longer need to login to view your live site but, of course, will still need to log in to the backoffice.
