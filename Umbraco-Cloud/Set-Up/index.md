@@ -67,7 +67,7 @@ You can add specific IP addresses to the whitelist to automatically allow any cl
 As with all things security related, make sure you use this feature judiciously as it will allow access to your Umbraco backoffice login page without requiring the initial authentication. Of course, the Umbraco backoffice will still require authentication.
 
 #Profile Settings
-![settings](images/profile.jpg)
+![settings](images/profile.png)
 
 ###Name
 The name that will be displayed on Umbraco Cloud
