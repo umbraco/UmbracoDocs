@@ -25,7 +25,7 @@ which are specific to members.
 Looks for a member with a given email, if found, returns a member profile as `IPublishedContent`
 
 ###.GetById(int id)
-Looks for a member withe a given node ID, if found, returns a member profile as `IPublishedContent`
+Looks for a member with a given node ID, if found, returns a member profile as `IPublishedContent`
 
 ###.GetByProviderKey(object key)
 looks for a member with a given provider key, If found, returns a member profile as `IPublishedContent`. Provider key, is the key, that
