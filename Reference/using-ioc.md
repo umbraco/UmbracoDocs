@@ -186,6 +186,7 @@ Now create the following files to configure Unity correctly for an Umbraco site.
 
 		// Instantiate the HealthCheckController using it's default parameterless constructor
 		container.RegisterType<HealthCheckController>(new InjectionConstructor());
+		container.RegisterType<LegacyTreeController>(new InjectionConstructor());
 	    }
 
 	    public void OnApplicationInitialized(UmbracoApplicationBase httpApplication, ApplicationContext applicationContext) { }
