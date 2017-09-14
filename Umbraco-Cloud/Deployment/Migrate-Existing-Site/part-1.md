@@ -24,3 +24,8 @@ Shut down the site, and delete the following files and folders from `/App_Data`:
 * `/preview`
 * `umbraco.config`
 
+![Local /App_Data](images/App_data-DELETE.png)
+
+That was it! Now you are ready to start the actual migraion process.
+
+[Up next: Merge with your Cloud project](part-2.md)
