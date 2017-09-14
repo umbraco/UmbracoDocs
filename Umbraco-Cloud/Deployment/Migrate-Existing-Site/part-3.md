@@ -17,9 +17,11 @@ In order for your project to run on the Umbraco Cloud environments you need to g
 * Open a command prompt
 * Navigate to the `/data` folder in your local Umbraco Cloud project files
 * Add an *export* marker by typing `echo > deploy-export`
-    * Generating the UDA files make take a while, depending on the extend of your project
+    * Generating the UDA files may take a while, depending on the extend of your project
 * You should now see that your `/data/revision` folder has been populated with UDA files corresponding to your projects metadata
 
 ![Run echo > deploy-export](images/deployexport.gif)
 
 At this point you are ready to deploy your site to Umbraco Cloud - Yay!
+
+[Previous chapter: Merge with your Umbraco Cloud project](part-2.md) -- [Next up: Deploy to the Cloud](part-4.md)
