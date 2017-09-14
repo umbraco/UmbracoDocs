@@ -54,7 +54,7 @@ With that in mind, here are the steps to take.
 12. Open a command prompt, cd to the `/data/` folder and add a deploy marker by typing `echo > deploy`.
 13. Now run the local Umbraco Cloud site with the updated files and database. The deploy engine will start when the deploy marker is detected.  This will likely complete relatively quickly. This  adds the users created by Umbraco Cloud to your existing database.
 14. Once complete verify your site has all meta data, content, and media as expected.
-15. Delete the folder `/data/Revision/` from the file system.  
+15. Make sure the folder `/data/Revision/` is empty.  
 16. * If your Umbraco Cloud project uses Umbraco Deploy (it does for Umbraco 7.6.0 and newer) - open a command prompt, cd to the `/data/` folder and add an export marker by typing `echo > deploy-export`.
     * Otherwise, if your Umbraco Cloud project uses Courier (it does for Umbraco versions older than 7.6.0) - in the same browser session as the logged in umbraco user open a new tab at the address:  
         * `http://localhost:port/umbraco/backoffice/api/CourierAdmin/Rebuild`
