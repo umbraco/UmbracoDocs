@@ -24,7 +24,7 @@ Shut down the site, and delete the following files and folders from `/App_Data`:
 * `/preview`
 * `umbraco.config`
 
-![delete-from-app-data](images/App_data-DELETE.png)
+![delete-from-app-data](images/App_Data-DELETE.png)
 
 That was it! Now you are ready to start the actual migraion process, or in other words: **now the real fun begins!**
 
