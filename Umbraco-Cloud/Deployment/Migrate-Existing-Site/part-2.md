@@ -11,11 +11,11 @@ Before the migration process can start, you will need to have an Umbraco Cloud p
 2. When your project is starting choose to start with a *clean slate* - you need to have an empty Cloud project for the migration to be succesful.
 3. We recommend that you setup your project with at least two environments.
 
-[Manage environments](images/setup-dev-env.PNG)
+![Manage environments](images/setup-dev-env.PNG)
 
 Before you clone down the Cloud project to your local machine, you need to login to the backoffices of your Umbraco Cloud environments and delete the default Media types (*File*, *Folder* and *Image*) from the *Settings* section. If you have two environments, it's important that you remember to do this, on both the Development and the Live environment.
 
-[Default media types](images/media-types.PNG)
+![Default media types](images/media-types.PNG)
 
 ## Clone down your Umbraco Cloud project
 
@@ -43,3 +43,12 @@ Run the site locally and verify your own project and the cloned Umbraco Cloud pr
     * You can find it in `App_Data/umbraco.sdf`
 4. If you are using a local SQL server make sure to update the connection string in `web.config` for the Umbraco Cloud project.
 
+Phew! That was a lot of merging and moving around, but don't worry! You are almost done with this part of the migration.
+The last thing to do before moving on, is to make sure your Umbraco Cloud user is added to the new database you've just merged into the project. 
+* Go to the `data/backoffice/users` folder in your Umbraco Cloud project files
+* Rename your user file by removing the leading underscore
+![Update user-file](images/update-user-file.png)
+
+That's it! Now you are ready to move on to the next part.
+
+[Previous chapter: Prepare your site for migration](part-1.md) -- [Up next: Generating metadata](part-3.md)
