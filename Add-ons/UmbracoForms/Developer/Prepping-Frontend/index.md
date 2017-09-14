@@ -1,5 +1,5 @@
 #Preparing your frontend
-In order for UmbracoForms to work correctly, Umbraco Forms needs three (3) client dependencies.
+In order for Umbraco Forms to work correctly, Umbraco Forms needs three (3) client dependencies.
 
 - jQuery
 - jQuery validate 
