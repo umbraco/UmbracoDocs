@@ -184,7 +184,9 @@ Now create the following files to configure Unity correctly for an Umbraco site.
 			new InjectionFactory(c => UmbracoContext.Current)
 		);
 
-		// Instantiate the HealthCheckController using it's default parameterless constructor
+		// Unity by default chooses the constructor with the most amount of arguments
+		// In the case of the LegacyTreeController this means we must instruct Unity instead to
+		// use the default constructor by passing in a parameterless InjectionConstructor during registration
 		container.RegisterType<LegacyTreeController>(new InjectionConstructor());
 	    }
 
