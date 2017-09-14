@@ -13,3 +13,33 @@ Before the migration process can start, you will need to have an Umbraco Cloud p
 
 [Manage environments](images/setup-dev-env.PNG)
 
+Before you clone down the Cloud project to your local machine, you need to login to the backoffices of your Umbraco Cloud environments and delete the default Media types (*File*, *Folder* and *Image*) from the *Settings* section. If you have two environments, it's important that you remember to do this, on both the Development and the Live environment.
+
+[Default media types](images/media-types.PNG)
+
+## Clone down your Umbraco Cloud project
+
+Now it's time to clone down your Umbraco Cloud project to your local machine. You can read more about how this is done, in the ['Working Locally'](https://our.umbraco.org/documentation/Umbraco-Cloud/Set-Up/Working-Locally/) chapter.
+
+Run the site locally and verify your own project and the cloned Umbraco Cloud project are using the same Umbraco version.
+
+### Move / Merge
+1. Copy all folders from your own project files to the Umbraco Cloud project files
+    * Excluding the following:
+        * `/Config`
+        * `/App_Data/umbraco.sdf`
+    * Make sure you do not overwrite any Umbraco Cloud specific files in the following folders:
+        * `/bin`
+        * `/data/backoffice/users` - *only relevant if you are migrating an old Cloud project*
+        * `/Umbraco`
+        * `/Umbraco_client`
+2. Merge the config files. Pay special attention to the following files:
+    * `/web.config` - in the `web.config` file for the Umbraco Cloud project you will see some new configuration related to Umbraco Deploy, Licenses and Forms. Make sure you do not overwrite these when you merge the files.
+    * `/Config/courier.config`
+    * `/Config/dashboard.config` - make sure to keep the *Deploy dashboard*!
+    * `/Config/UmbracoDeploy.config` - *only relevant if you are migrating an old Cloud project*
+3. If you are using SQL CE
+    * Make sure the SQL CE database from your own project replaces the one provided with your Umbraco Cloud project.
+    * You can find it in `App_Data/umbraco.sdf`
+4. If you are using a local SQL server make sure to update the connection string in `web.config` for the Umbraco Cloud project.
+
