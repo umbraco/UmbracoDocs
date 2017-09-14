@@ -22,18 +22,18 @@ which are specific to members.
 
 
 ###.GetByEmail(string email)
-Looks for a member with a given email, If found, returns a member profile as `IPublishedContent`
+Looks for a member with a given email, if found, returns a member profile as `IPublishedContent`
 
 ###.GetById(int id)
-Looks for a member withe a given node ID, If found, returns a member profile as `IPublishedContent`
+Looks for a member with a given node ID, if found, returns a member profile as `IPublishedContent`
 
 ###.GetByProviderKey(object key)
-looks for a member with a given provider key, If found, returns a member profile as `IPublishedContent`. Provider key, is the key, that
-the membership provider responsible for the member has assigned the member as its primary key. 
+looks for a member with a given provider key, if found, returns a member profile as `IPublishedContent`. Provider key is the key that
+the membership provider allocates for the member as its primary key. 
 Umbraco's default membership provider assigns a guid, alternative providers such as active directive likely uses another format.
 
 ###.GetByUsername(string username)
-Looks for a member withe a given username, If found, returns a member profile as `IPublishedContent`
+Looks for a member with a given username, if found, returns a member profile as `IPublishedContent`
 
 ###.GetCurrentLoginStatus()
 Gets the current members login status as a `LoginStatusModel`
@@ -44,7 +44,7 @@ Gets the current member profile as a `ProfileModel`
 
 
 ###.IsLoggedIn()
-Returns a boolean whether there is a Member currently logged in.
+Returns a boolean to state whether there is a member currently logged in.
 
 ###.Login(string username, string password)
 Attempts to log in a member with the given username and password
@@ -56,7 +56,7 @@ Determines if a member is authorized, based on memberType, associated roles, and
 Detects if the default Umbraco membership provider is in use.
 
 ###.RegisterMember(RegisterModel model)
-Registers a new Member
+Registers a new member
 
 ###.UpdateMemberProfile(ProfileModel model)
 Updates a current member profile
