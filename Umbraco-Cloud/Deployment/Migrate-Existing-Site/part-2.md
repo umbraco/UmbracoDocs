@@ -25,8 +25,8 @@ Now it's time to clone down your Umbraco Cloud project to your local machine. Yo
 Run the site locally and verify your own project and the cloned Umbraco Cloud project are using the same Umbraco version. After you've verified this, shut down the site, and it's now time to start merging the two projects.
 
 ## Move / Merge
-1. Copy all folders from your own project files to the Umbraco Cloud project files
-    * Excluding the following:
+1. Copy and replace all folders from your own project to the Umbraco Cloud project
+    * Excluding the following folders:
         * `/Config`
         * `/App_Data`
 2. Merge the config files. Pay special attention to the following files:
