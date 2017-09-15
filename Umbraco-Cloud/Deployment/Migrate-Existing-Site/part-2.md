@@ -28,12 +28,7 @@ Run the site locally and verify your own project and the cloned Umbraco Cloud pr
 1. Copy all folders from your own project files to the Umbraco Cloud project files
     * Excluding the following:
         * `/Config`
-        * `/App_Data/umbraco.sdf`
-    * Make sure you do not overwrite any Umbraco Cloud specific files in the following folders:
-        * `/bin`
-        * `/data/backoffice/users` - *only relevant if you are migrating a Cloud project*
-        * `/Umbraco`
-        * `/Umbraco_client`
+        * `/App_Data`
 2. Merge the config files. Pay special attention to the following files:
     * `/web.config` - in the `web.config` file for the Umbraco Cloud project you will see some new configuration related to Umbraco Deploy, Licenses and Forms. Make sure you do not overwrite these when you merge the files.
     * `/Config/dashboard.config` - make sure to keep the *Deploy dashboard*!
