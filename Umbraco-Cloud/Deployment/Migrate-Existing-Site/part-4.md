@@ -6,8 +6,8 @@ You are almost there! Just a few more steps, and you will be able to see how you
 1. In your Git client you should see a lot of changes ready to be committed
 2. Stage and commit the changes
 3. Do a *pull* just to be sure everything is in sync
-4. Push your migrated project to the Umbraco Cloud environment
-    * If you have a very large commit to push, you may need to configure your Git client for this.
+4. Push your migrated project to the Umbraco Cloud environment - check that the *'Deploy Complete'* message is displayed
+    * If you have a very large commit to push, you may need to configure your Git client for this
     * Use: git config http.postBuffer 524288000
 
 When the push is complete go check out the Umbraco Cloud Portal to verify the indicator on the Development environment is still *green*. Go to the backoffice of your Development environment and make sure all your metadata is there. You won't see any content or media on the environment yet - this you will move in the next few steps.
