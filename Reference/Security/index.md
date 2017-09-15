@@ -67,6 +67,29 @@ The installation of these packages will install snippets of code with readme fil
 
 ![OAuth login screen](images/google-oauth.png)
 
+#### Auto-linking accounts
+
+Traditionally a back office user will need to exist first and then that user can link their user account to an OAuth account in the back office, however in many cases the identity server you choose will be the source of truth for all of your users. In this case you would want to be able to create user accounts in your identity server and then have that user given access to the back office without having to create the user in the back office first. This is done via auto-linking. There are auto-link options you can specify for your OAuth provider (see http://issues.umbraco.org/issue/U4-6753 for other details). 
+
+Here's an example of specifying auto link options for your OAuth provider:
+
+    //create the options, all parameters are optional but if you wish to enable
+    //any auto-linking, the autoLinkExternalAccount parameter must be true
+    var autoLinkOptions = new ExternalSignInAutoLinkOptions(
+		autoLinkExternalAccount:true, 
+		defaultUserType: "editor", 
+		defaultCulture: "en-US");
+    
+    //an optional callback you can specify to give you more control over how the 
+    //back office user is created (auto-linked)
+    autoLinkOptions.OnAutoLinking = (BackOfficeIdentityUser user, ExternalLoginInfo info) =>
+    {
+		//this callback will execute when the user is being auto-linked but before it is created
+		//so you can modify the user before it's persisted
+    };
+    
+    identityServerOptions.SetExternalSignInAutoLinkOptions(autoLinkOptions);
+
 ### Replacing the basic username/password check
 
 Having the ability to simply replace the logic to validate a username and password against a custom data store is important to some developers. Normally in ASP.Net Identity this
@@ -133,11 +156,46 @@ Here are the steps to specify your own logic for validating a username and passw
 
 Umbraco 7.5.0+ comes with a built-in `IBackOfficeUserPasswordChecker` for Active Directory: `Umbraco.Core.Security.ActiveDirectoryBackOfficeUserPasswordChecker`. 
 
-So like the above docs, instead of setting up your own `IBackOfficeUserPasswordChecker`, you can just use `Umbraco.Core.Security.ActiveDirectoryBackOfficeUserPasswordChecker` and then specify your AD domain in your web.config:
+To configure Umbraco to use `ActiveDirectoryBackOfficeUserPasswordChecker`, first install the [Umbraco Identity Extensibility](https://github.com/umbraco/UmbracoIdentityExtensions) package:
+
+    Install-Package UmbracoCms.IdentityExtensions
+
+Then modify `~/App_Start/UmbracoStandardOwinStartup.cs` to override `UmbracoStandardOwinStartup.Configuration` like so:
+
+    public override void Configuration(IAppBuilder app)
+    {
+        //ensure the default options are configured
+        base.Configuration(app);
+        // active directory authentication
+        
+        app.ConfigureUserManagerForUmbracoBackOffice<BackOfficeUserManager, BackOfficeIdentityUser>(
+            ApplicationContext.Current,
+            (options, context) =>
+            {
+                var userManager = BackOfficeUserManager.Create(
+                    options,
+                    ApplicationContext.Current.Services.UserService,
+                    ApplicationContext.Current.Services.ExternalLoginService,
+                    MembershipProviderExtensions.GetUsersMembershipProvider().AsUmbracoMembershipProvider()
+                );
+                userManager.BackOfficeUserPasswordChecker = new ActiveDirectoryBackOfficeUserPasswordChecker();
+                return userManager;
+            });
+    }
+
+The `ActiveDirectoryBackOfficeUserPasswordChecker` will look in appSettings for the name of your domain. Add this setting to Web.config:
 
     <appSettings>
       	<add key="ActiveDirectoryDomain" value="mydomain.local" />
     </appSettings>
+
+Finally, to use your `UmbracoStandardOwinStartup` class during startup, add this setting to Web.config:
+
+    <appSettings>
+      	<add key="owin:appStartup" value="UmbracoStandardOwinStartup" />
+    </appSettings>
+
+**Note:** if the username entered in the login screen does not already exist in Umbraco then `ActiveDirectoryBackOfficeUserPasswordChecker()` does not run.  Umbraco will fall back to the default authentication.
 
 ### [Setup Umbraco for a FIPS Compliant Server](Setup-Umbraco-for-a-Fips-Server/index.md)
 

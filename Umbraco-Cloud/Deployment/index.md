@@ -55,7 +55,7 @@ This will not always work immediately, as the site meta data needs to be the sam
 ##Step-by-step
 Let’s go through a deploy step by step. Imagine you’ve finished working on new content for your great new project locally and want to deploy. You want to deploy the whole site so you start from the Home page and will choose to deploy everything under it.
 
-Click on the ellipsis next to the "Home" page in Umbraco and choose "Do something else."" There you get the choice of "Queue for transfer."" If you’re currently editing the Home page you could also use the Actions dropdown to get the the "Queue for transfer" item. In the following screenshot, both options are highlighted.
+Click on the ellipsis next to the "Home" page in Umbraco and choose "Do something else."" There you get the choice of "Queue for transfer."" If you’re currently editing the Home page you could also use the Actions dropdown to get the "Queue for transfer" item. In the following screenshot, both options are highlighted.
 
 ![clone dialog](images/image04.png)
 
