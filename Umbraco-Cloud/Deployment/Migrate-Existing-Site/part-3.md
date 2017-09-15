@@ -14,10 +14,12 @@ You have now moved and merged the files from your own project with the Umbraco C
 ## Generate UDA files
 In order for your project to run on the Umbraco Cloud environments you need to generate UDA files for all your metadata.
 * Make sure the folder `/data/revision` on your Umbraco Cloud project is empty
+    * If you have any files in the folder, you can safely removes those at this point
 * Open a command prompt
 * Navigate to the `/data` folder in your local Umbraco Cloud project files
 * Add an *export* marker by typing `echo > deploy-export`
     * Generating the UDA files may take a while, depending on the extend of your project
+    * You will see a `deploy-complete` marker once the export is done
 * You should now see that your `/data/revision` folder has been populated with UDA files corresponding to your projects metadata
 
 ![Run echo > deploy-export](images/deploy-export.gif)
