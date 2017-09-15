@@ -26,7 +26,7 @@ _You can also choose to create a Document Type without a template and create fol
 First we're prompted to give the Document Type a name. This first Document Type will be the root node for our content, name it "Home".
 
 ![Naming a Document Type](images/Document-Type-Name.jpg)
-_Notice that the alias of the Document TYpe is automatically generated based on the name. If you want to change the alias simply click the "lock" icon._
+_Notice that the alias of the Document Type is automatically generated based on the name. If you want to change the alias simply click the "lock" icon._
 
 Having a root node makes it easy to query content as you know everything will be under the root node.
 
@@ -34,7 +34,7 @@ To set an icon for the Document Type click the document icon in the top left cor
 
 ![Choosing an icon for the Document Type](images/Document-Type-Choosing-Icon.jpg)
 
-Go to the __Permissions__ tab and tic the __Yes - allow content of this type in the root__ checkbox and save the Document Type by clicking save in the bottom right corner.
+Go to the __Permissions__ tab and tick the __Yes - allow content of this type in the root__ checkbox and save the Document Type by clicking save in the bottom right corner.
 
 ![Allow at root](images/Document-Type-Allow-At-Root.jpg)
 
