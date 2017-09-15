@@ -20,7 +20,7 @@ In order for your project to run on the Umbraco Cloud environments you need to g
     * Generating the UDA files may take a while, depending on the extend of your project
 * You should now see that your `/data/revision` folder has been populated with UDA files corresponding to your projects metadata
 
-![Run echo > deploy-export](images/deployexport.gif)
+![Run echo > deploy-export](images/deploy-export.gif)
 
 At this point you are ready to deploy your site to Umbraco Cloud - Yay!
 
