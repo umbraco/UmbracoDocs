@@ -26,7 +26,17 @@ Returns all ancestors of the current page (parent page, grandparent and so on)
 			<li><a href="@item.Url">@item.Name</a></li>
 		}
 	</ul>
+
+###.Ancestor
+Returns the first ancestor of the current page
+
+	@* return the first ancestor item from the current page *@
+	@var nodes = Model.Content.Ancestor();
 	
+	@* return the first item, of a specific type, from the current page *@
+	@var nodes = Model.Content.Ancestor<DocumentTypeAlias>();
+
+
 <span id="ancestorsorself"></span>
 ###.AncestorsOrSelf
 Returns a collection of all ancestors of the current page (parent page, grandparent and so on), and the current page itself
