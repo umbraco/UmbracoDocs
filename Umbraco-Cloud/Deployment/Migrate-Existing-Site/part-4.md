@@ -20,7 +20,7 @@ When the push is complete go check out the Umbraco Cloud Portal to verify the in
 3. Right-click the top of the Content tree and choose *'Queue for transfer'*
     * **NOTE**: If you have a very large amount of content and media you may have the best result in deploying content and media independently
 
-![Queue for transfer](images/transfer-content.gif)
+![Queue for transfer](images/transfer.gif)
 
 **Voila!** You've now migrated your project to Umbraco Cloud. If your Umbraco Cloud project has two or more environments, it's now time to deploy your changes to the next environment - Staging or Live. You do this from the Umbraco Cloud Portal, using the green button on your Development environment *'Deploy changes to Staging/Live'*. Transfer content and media from the backoffice like before.
 
