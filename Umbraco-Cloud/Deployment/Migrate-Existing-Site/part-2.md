@@ -43,6 +43,7 @@ Run the site locally and verify your own project and the cloned Umbraco Cloud pr
     * Make sure the SQL CE database from your own project replaces the one provided with your Umbraco Cloud project.
     * You can find it in `App_Data/umbraco.sdf`
 5. If you are using a local SQL server make sure to update the connection string in the `web.config` for the Umbraco Cloud project.
+6. Copy the rest of the files / folder in the `/App_Data` folder from your own project to the Cloud project
 
 Phew! That was a lot of merging and moving around, but don't worry! You are almost done with this part of the migration.
 The last thing to do before moving on, is to make sure your Umbraco Cloud user will be added to the new database you've just merged into the project. 
