@@ -1,6 +1,6 @@
 # Prepare your site for migration
 
-After making sure that your project(s) meets all the requirements for being migrated to Umbraco Cloud, you are now ready to get started!
+After making sure that your project(s) meets all the [requirements](index.md) for being migrated to Umbraco Cloud, you are now ready to get started!
 
 ## Upgrade to latest Umbraco version
 First order of business is to upgrade your own project to the latest Umbraco version. Why? Because Umbraco Cloud always runs the latest version and you need to make sure your project runs the same Umbraco version as Umbraco Cloud.
