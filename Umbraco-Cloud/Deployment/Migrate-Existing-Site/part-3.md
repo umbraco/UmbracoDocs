@@ -1,6 +1,6 @@
 # Generating metadata
 
-You have now moved and merged the files from your own project with the Umbraco Cloud project files. So far, so good! In this part, you are going to generate the so-called UDA for all your project components.
+You have now moved and merged the files from your own project with the Umbraco Cloud project files. So far, so good! In this part, you are going to generate the so called UDA for all your projects metadata.
 
 ## Verify your Cloud project runs locally
 * Open a command prompt
