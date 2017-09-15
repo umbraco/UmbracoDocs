@@ -36,13 +36,13 @@ Run the site locally and verify your own project and the cloned Umbraco Cloud pr
         * `/Umbraco_client`
 2. Merge the config files. Pay special attention to the following files:
     * `/web.config` - in the `web.config` file for the Umbraco Cloud project you will see some new configuration related to Umbraco Deploy, Licenses and Forms. Make sure you do not overwrite these when you merge the files.
-    * `/Config/courier.config`
     * `/Config/dashboard.config` - make sure to keep the *Deploy dashboard*!
     * `/Config/UmbracoDeploy.config` - *only relevant if you are migrating a Cloud project*
-3. If you are using SQL CE
+3. Copy the rest of the `/Config` folder from your own project to the Cloud project
+4. If you are using SQL CE
     * Make sure the SQL CE database from your own project replaces the one provided with your Umbraco Cloud project.
     * You can find it in `App_Data/umbraco.sdf`
-4. If you are using a local SQL server make sure to update the connection string in the `web.config` for the Umbraco Cloud project.
+5. If you are using a local SQL server make sure to update the connection string in the `web.config` for the Umbraco Cloud project.
 
 Phew! That was a lot of merging and moving around, but don't worry! You are almost done with this part of the migration.
 The last thing to do before moving on, is to make sure your Umbraco Cloud user will be added to the new database you've just merged into the project. 
