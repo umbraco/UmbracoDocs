@@ -13,4 +13,4 @@ Next step is to actually get the Open Graph code rendered on the website. This i
 
 This will render a partial view *if* the composition is present on the current page which will be the case for Home and blog posts on the site. `IOpenGraph` is an interface created by adding the composition, if you know how that works you can see how powerful this is. If not, just enjoy the handy helper to check for the composition.
 
-[Previous](step-1.md) - [Next](step-4.md)
+[Previous](step-2.md) - [Next](step-4.md)
