@@ -11,12 +11,12 @@ Before the migration process can start, you will need to have an Umbraco Cloud p
 2. When your project is starting choose to start with a *clean slate* - you need to have an empty Cloud project for the migration to be succesful.
 3. We recommend that you setup your project with at least two environments.
 
-![Manage environments](images/setup-dev-env.PNG)
+![Manage environments](images/setup-dev-env.png)
 
 
 Before you clone down the Umbraco Cloud project to your local machine, login to the backoffices of your Umbraco Cloud environments and delete the default Media types (*File*, *Folder* and *Image*) from the *Settings* section. You need to do the same for the default Membertype, *Member*, found in the *Member* section. If you have two or more environments, it's important that you remember to do this, on all the environments.
 
-![Default media types](images/media-types.PNG)
+![Default media types](images/media-types.png)
 
 ## Clone down your Umbraco Cloud project
 
