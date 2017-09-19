@@ -41,7 +41,8 @@ Run the site locally and verify your own project and the cloned Umbraco Cloud pr
 6. Copy the rest of the files / folder in the `/App_Data` folder from your own project to the Cloud project
 
 Phew! That was a lot of merging and moving around, but don't worry! You are almost done with this part of the migration.
-The last thing to do before moving on, is to make sure your Umbraco Cloud user will be added to the new database you've just merged into the project. 
+The last thing to do before moving on, is to make sure your Umbraco Cloud user will be added to the new database you've just merged into the project.
+
 * Go to the `data/backoffice/users` folder in your Umbraco Cloud project files
 * Rename your user file by removing the leading underscore
 ![Update user-file](images/update-user-file.png)
