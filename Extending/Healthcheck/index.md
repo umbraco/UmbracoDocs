@@ -38,7 +38,7 @@ Some of them can also be rectified via the dashboard, simply be clicking the **F
 
 As well as viewing the results of health checks via the Developer section dashboard, you can set up the checks to be run on a schedule and be notified of the results by email, Slack and/or log files.  It's also possible to disable certain checks if they aren't applicable in your environment.
 
-For more on this see the [Reference > Config > Health checks page](../Reference/Config/Healthchecks/index.md).
+For more on this see the [Reference > Config > Health checks page](/documentation/Reference/Config/Healthchecks/index.md).
 
 ##Custom checks
 
