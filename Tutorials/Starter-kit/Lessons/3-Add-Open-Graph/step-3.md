@@ -6,6 +6,8 @@ Next step is to actually get the Open Graph code rendered on the website. This i
 3. Find the *head* html tags of the template
 4. Write the following at bottom of the *head*:
 
+
+
     @if(Model.Content is IOpenGraph){ 
         @Html.Partial("openGraph")
     }
