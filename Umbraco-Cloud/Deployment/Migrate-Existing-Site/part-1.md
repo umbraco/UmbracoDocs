@@ -14,15 +14,15 @@ Ideally your site will run locally using the SQL CE database as this will make c
 Now you're almost ready to start the actual migrating! The only thing left to is to clean up the your project a bit.
 
 While the project is still running you need to:
-* Go the backoffice of your project
-* Empty the Content and Media Recycle bins
+  * Go the backoffice of your project
+  * Empty the Content and Media Recycle bins
 
 Shut down the project, and delete the following files and folders from `/App_Data`
-* `/TEMP`
-* `/Logs`
-* `/cache`
-* `/preview`
-* `umbraco.config`
+  * `/TEMP`
+  * `/Logs`
+  * `/cache`
+  * `/preview`
+  * `umbraco.config`
 
 ![delete-from-app-data](images/App_Data-DELETE.png)
 
