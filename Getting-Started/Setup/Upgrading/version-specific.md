@@ -8,7 +8,7 @@ Follow the steps in the [general upgrade guide](general.md), then these addition
 
 Version 7.7.0 introduces User Groups and a better user management and security facilities. This means that anything to do with "User Types" no longer exist including several APIs that work with User Types. If your code or any package's code that you use makes reference to "User Type" APIs, you may need to make changes to your code. In many cases we've created backward compatibility shims for these scenarios and obsoleted APIs that should no longer be used but in some cases this was not possible. 
 
-For a full list of breaking changes see: http://issues.umbraco.org/issues/U4?q=Due+in+version%3A+7.7.0+Backwards+compatible%3F%3A+No+ 
+For a full list of breaking changes see: [the list on the issue tracker](http://issues.umbraco.org/issues/U4?q=Due+in+version%3A+7.7.0+Backwards+compatible%3F%3A+No+) 
 
 Version 7.7.0 no longer ships with the `CookComputing.XmlRpcV2` assembly so if you reference this assembly or have a package that requires this assembly, you may need to copy it back into your website from the backup you've taken before you began the 7.7.0 upgrade.
 
