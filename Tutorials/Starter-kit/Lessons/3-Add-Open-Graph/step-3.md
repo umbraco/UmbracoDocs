@@ -6,7 +6,6 @@ Next step is to actually get the Open Graph code rendered on the website. This i
 3. Find the comment that says `<!-- This is a good place to render Open Graph -->`
 4. Write the following below the comment:
 
-
     @if(Model.Content is IOpenGraph) {
         @Html.Partial("openGraph")
     }
