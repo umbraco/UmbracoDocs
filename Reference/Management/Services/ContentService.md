@@ -133,11 +133,31 @@ Gets an `Enumerable` list of `Content` objects for given `Content` object ID.
 ###.GetById(int id)
 Gets an `Content` object by Id as `Int`.
 
+	var contentService = Services.ContentService;
+	int targetContentId = 1001;
+
+	// gets the targeted Content item by the ID 1001
+	var myContent = GetById(targetContentId);
+
 ###.GetById(Guid key)
 Gets an `Content` object by Key as `Guid`. The Key corresponds to the 'UniqueId' column in the umbracoNode table in the database.
 
+	var contentService = Services.ContentService;
+	Guid targetContentId = new Guid("DEADBEEF-BEEF-BEEF-BEEF-DEADBEEF");
+
+	//gets the targeted Content item by the Guid ID: DEADBEEF-BEEF-BEEF-BEEF-DEADBEEF
+	var myContent = GetById(targetContentId);
+
 ###.GetByIds(IEnumerable<int> ids)
 Gets an `Enumerable` list of `Content` objects for given `Enumerable` list of `Content` object IDs.
+
+	var contentService = Services.ContentService;
+	var Ids = new List<int>{
+		1001,1002,1003,1004
+	};
+
+	//gets the targeted content items at IDs: 1001,1002,1003,1004
+	var myContentCollection = contentService.GetByIds(Ids);
 
 ###.GetContentOfContentType(int id)
 Gets an `Enumerable` list of `Content` objects by the Id of the `ContentType`.
