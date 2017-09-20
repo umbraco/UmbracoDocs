@@ -199,6 +199,46 @@ Saves and Publishes a single `Content` object.
 
 ###.SaveAndPublishWithStatus(IContent content, _[int userId = 0]_, _[bool raiseEvents = true]_)
 Saves and Publishes a single `Content` object, returning the result as a `Attempt<PublishStatus>`.
+	
+	// below assumes you have a document type of "myAwesomeDocumentType"
+
+	var contentService = Services.ContentService;
+
+	string myContentName = "Awesome Content Name";
+	
+	// set the content item's parent ID here - 
+	// the content will be published below
+	int myContentParentId = 1001;
+
+	// enter your documentTypeAlias here, alternatively if 
+	// you're using ModelsBuilder you can get the modelTypeAlias 
+	// using the second example (commented out)
+	string myDocumentTypeAlias = "myAwesomeDocumentType";
+	// string documentTypeAlias = MyAwesomeDocumentType.ModelTypeAlias;
+
+	int myUserId=0; //sets to the default admin user ID:0
+
+	var myContent = contentService.CreateContent(
+			myContentName,
+			myContentParentId,
+			myDocumentTypeAlias,
+			myUserId
+		);
+
+	string myPropertyAlias = "myDocumentPropertyAlias";
+	string myPropertyContent = "some content for the 'My Document Property Alias' goes in here";
+	myContent.SetValue(myPropertyAlias, myPropertyContent);
+
+	var saveStatus = SaveAndPublishWithStatus(myContent);
+
+	if (saveStatus.Success){
+		// content was saved and published successfully
+		var savedDocumentId = saveStatus.Result.ContentItem.Id;
+	}
+	else{
+		//something went wrong saving and publishing this item
+	}
+
 
 ###.SendToPublication(IContent content, _[int userId = 0]_)
 Sends a `Content` item to Publication, which executes handlers and events for the 'Send to Publication' action.
