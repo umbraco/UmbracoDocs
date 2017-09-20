@@ -126,9 +126,22 @@ Empties the Recycle Bin by deleting all `Content` that resides in the bin.
 
 ###.GetAncestors(IContent content)
 Gets an `Enumerable` list of `Content` objects for given `Content` object.
+	
+	var contentService = Services.ContentService;
+	int targetContentId=1001;
+	var myContent = contentService.GetById(targetContentId);
+
+	//gets the ancestors of the myContent IContent object
+	var myAncestors = contentService.GetAncestors(myContent);
 
 ###.GetAncestors(int id)
 Gets an `Enumerable` list of `Content` objects for given `Content` object ID.
+
+	var contentService = Services.ContentService;
+	int targetContentId=1001;
+
+	//gets the ancestors of the myContent IContent object
+	var myAncestors = contentService.GetAncestors(targetContentId);
 
 ###.GetById(int id)
 Gets an `Content` object by Id as `Int`.
