@@ -18,26 +18,22 @@ In order to fix this issue, it is required that all dictionary items are aligned
 
 2. Ensure you remove all duplicate entries in the backoffice if any.
 
-3. When you can successfully create a `deploy` marker and get a `deploy-complete` - your environment is "clean" and you are good to go.
+3. When you can successfully create a `deploy` marker and get a `deploy-complete` - your environment should be "clean" and you are good to go.
 
 4. Create a `deploy-repairdictionaryids` marker in the `/data/` folder.
 
-Doing this will make Deploy run through all of the existing UDA files and check if there is any duplicates existing for that particular `ItemKey` used in that UDA file. If it finds a duplicate - it will delete the duplicate in your site, not having the correct ID (according to the UDA file).
+Doing this will make Deploy run through all of the dictionary items in the database and remove any duplicates (there should be none, if you did the manual cleanup correctly).
 
-If no duplicate is found for this `ItemKey` - Deploy will continue to see if there is an existing dictionary item with the specific `ItemKey`, not having the _correct_ ID (again - according to the UDA file). If an existing item is found - it will reassign the `ID` of this item and all references to it, to the correct ID used in the UDA file.
+When done with this, it will go through all UDA files and check if there is any duplicates existing in your site for that particular `ItemKey` used in that UDA file. If it finds a duplicate - it will update the ID to match, so your dictionary item is syncronized with the UDA file.
 
-5. When this is done - you will need to transfer your UDA files to the next environment so you are sure the same ID's will be applied here.
+5. When this is done - you will need to transfer your UDA files to the next environment, to ensure the same ID's will be applied here.
 
-6. Clean out any duplicated entries using the backoffice (doesn't matter which one you delete as they should be identical and the ID will be fixed afterwards).
+6. Create a `deploy-repairdictionaryids` marker in the `/data/` folder.
 
-7. Create a `deploy-repairdictionaryids` marker in the `/data/` folder. Deploy will now update the ID's to match what is in the UDA files.
+Deploy will now again delete any existing duplicate entries and update the ID's of the remaining entries to match the IDs in the UDA files.
 
-8. Repeat steps 5-7 if there's any other environments.
+7. Repeat steps 5-6 if there's any other environments.
 
 ## Important Notes
 
-What Deploy will **not** help you with, is duplicated items that do not have a corresponding UDA file. Since we do not know what to do with a dictionary item that we don't have a matching UDA file for - duplicates with no UDA files will simply not be handled.
-
-In case you see this in your site, we suggest that you go to your backoffice and resave ONE of the duplicated items.
-
-This will result in a UDA file being created for that particular dictionary item - and re-running the `repairdictionaryids` task (by creating a marker) will now take care of the other duplicated item (since a single UDA file now exists for that `ItemKey`)
+What Deploy will **not** help you with, is duplicated items that do not have a corresponding UDA file. Since we do not know what to do with a dictionary item that we don't have a matching UDA file for - if we find duplicates with no UDA files, we will simply remove one of them to ensure there are no duplicate errors. For this item to be deployed, you will need to recreate a UDA file for it - this can be done simply by saving the item through the backoffice.
