@@ -242,12 +242,31 @@ Gets a collection of `Content` objects, which reside at the first level / root
 
 ###.HasChildren(int id)
 Checks whether a `Content` item has any children. Returns a `bool`.
+	var contentService = Services.ContentService;
+	var targetContentId = 1001;
+
+	//checks if this item has any child documents
+	bool documentHasChildren = contentService.HasChildren(targetContentId);
+
 
 ###.HasPublishedVersion(int id)
 Checks whether an `Content` item has any published versions. Returns a `bool`.
+	var contentService = Services.ContentService;
+	var targetContentId = 1001;
+
+	//checks if this item has a published version
+	bool documentHasPublishedVersion = contentService.HasPublishedVersion(targetContentId);
+
 
 ###.IsPublishable(IContent content)
 Checks if the passed in `Content` can be published based on the ancestors publish state. Returns a `bool`.
+	var contentService = Services.ContentService;
+	var targetContentId = 1001;
+	var targetContent = contentService.GetById(targetContentId);
+
+	//checks if this content item can be published 
+	bool documentIsPublishable = contentService.IsPublishable(targetContent);
+
 
 ###.Move(IContent content, int parentId, _[int userId = 0]_)
 Moves an `Content` object to a new location.
