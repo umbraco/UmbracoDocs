@@ -12,15 +12,27 @@ Upgrading to Deploy, one of the major improvements is that Deploy handles everyt
 
 ## Fixing
 
-In order to fix this issue, it is required that all dictionary items are aligned to have the same unique identifier for a specific `ItemKey` across all environments. The easiest way of doing this is to select an environment where you believe all your dictionary items are mostly correct, remove any duplicated items and then ensure that the changes are pushed to your other environments.
+In order to fix this issue, it is required that all dictionary items are aligned to have the same unique identifier for a specific `ItemKey` across all environments. The easiest way of doing this is to select an environment where you believe all your dictionary items are mostly correct, remove any duplicated items and then ensure that the changes are pushed to your other environments:
 
-- Ensure you do not have any duplicated dictionary items in your UDA files. If you do - these will need to be cleaned up as a first step. When you can successfully create a `deploy` marker and get a `deploy-complete` - you are good to go.
+1. Ensure you do not have any duplicated dictionary items in your UDA files. If you do - these will need to be cleaned up as a first step.
 
-- Create a `deploy-repairdictionaryids` marker in the `/data/` folder.
+2. Ensure you remove all duplicate entries in the backoffice if any.
+
+3. When you can successfully create a `deploy` marker and get a `deploy-complete` - your environment is "clean" and you are good to go.
+
+4. Create a `deploy-repairdictionaryids` marker in the `/data/` folder.
 
 Doing this will make Deploy run through all of the existing UDA files and check if there is any duplicates existing for that particular `ItemKey` used in that UDA file. If it finds a duplicate - it will delete the duplicate in your site, not having the correct ID (according to the UDA file).
 
 If no duplicate is found for this `ItemKey` - Deploy will continue to see if there is an existing dictionary item with the specific `ItemKey`, not having the _correct_ ID (again - according to the UDA file). If an existing item is found - it will reassign the `ID` of this item and all references to it, to the correct ID used in the UDA file.
+
+5. When this is done - you will need to transfer your UDA files to the next environment so you are sure the same ID's will be applied here.
+
+6. Clean out any duplicated entries using the backoffice (doesn't matter which one you delete as they should be identical and the ID will be fixed afterwards).
+
+7. Create a `deploy-repairdictionaryids` marker in the `/data/` folder. Deploy will now update the ID's to match what is in the UDA files.
+
+8. Repeat steps 5-7 if there's any other environments.
 
 ## Important Notes
 
