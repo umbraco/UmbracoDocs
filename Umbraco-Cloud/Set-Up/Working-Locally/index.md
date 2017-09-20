@@ -3,7 +3,7 @@ To work with a local copy of your site you'll need to use Windows and have a loc
 
 If you are using Windows, read on for how to work locally.
 
-From the Umbraco Cloud portal copy your development environments git repository endpoint using the *Connect my machine* option and then clone the site using your favorite Git client. We like [GitKraken](https://www.gitkraken.com/), [SourceTree](http://www.sourcetreeapp.com/) or [Git Extensions](http://gitextensions.github.io). 
+From the Umbraco Cloud portal copy your development environments git repository endpoint using the *How to connect my machine* option and then clone the site using your favorite Git client. We like [GitKraken](https://www.gitkraken.com/), [SourceTree](http://www.sourcetreeapp.com/) or [Git Extensions](http://gitextensions.github.io). 
 Here are the steps to clone your site (**We'll use GitKraken in this example.**):
 
 1. Click the Connect my machine button to get the Clone project dialog.
