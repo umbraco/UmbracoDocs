@@ -38,7 +38,7 @@ The result should look something like this within the folder where the UaaS.cmd 
 You can now open the solution in Visual Studio and hit F5 to start the site directly from Visual Studio.
 
 ##The Git repositories
-One thing to notice about this setup is that you will get two git repositories just as you get two projects. The site cloned from your Umbraco Cloud Project will be contained within a git repository that is connected to your Project on Umbraco Cloud. Whenever you want to deploy changes to your (remote) Umbraco Cloud site you should commit everything within the `*.Web` folder, which is where the git repository for Umbraco as a Serivce is also located.
+One thing to notice about this setup is that you will get two git repositories just as you get two projects. The site cloned from your Umbraco Cloud Project will be contained within a git repository that is connected to your Project on Umbraco Cloud. Whenever you want to deploy changes to your (remote) Umbraco Cloud site you should commit everything within the `*.Web` folder, which is where the git repository for Umbraco as a Service is also located.
 
 Going up one level to where the `*.sln` file is located you will notice a `.git` folder, which is the second git repository. You should use this repository for all the code you write as well as the solution and project files for Visual Studio.
 
