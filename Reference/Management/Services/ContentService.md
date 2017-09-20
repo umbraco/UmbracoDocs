@@ -216,9 +216,20 @@ Gets an `Enumerable` list of `Content` descendant objects, paged.
 
 ###.GetParent(IContent content)
 Get parent `Content` object, by `Content` object.
+	var contentService = Services.ContentService;
+	var targetContentId = 1001;
+	var targetContentItem = contentService.GetById(targetContentId);
+
+	//gets the parent of the document at ID 1001
+	var targetContentParentId = contentService.GetParent(targetContentItem);
 
 ###.GetParent(int id)
 Get parent `Content` object, by `Content` ID.
+	var contentService = Services.ContentService;
+	var targetContentId = 1001;
+
+	//gets the parent of the document at ID 1001
+	var targetContentParentId = contentService.GetParent(targetContentId);
 
 ###.GetPermissionsForEntity(IContent content)
 Gets a collection of `EntityPermission` permission objects for the `Content` item.
