@@ -78,6 +78,30 @@ Creates a `Content` object using the alias of the `ContentType` that this Conten
 
 ###.CreateContent(string name, IContent parentId, string contentTypeAlias, _[int userId = 0]_)
 Creates a `Content` object using the alias of the `ContentType` that this Content is based on.
+	
+	var contentService = Services.ContentService;
+
+	//the name for your new content item
+	string myContentName = "Awesome Content Name";
+
+	//Gets the parent object as a Content object
+	IContent myContentParentId = contentService.GetById(1001);
+
+	//the documentTypeAlias for this content item
+	string myDocumentTypeAlias = "myAwesomeDocumentType";
+
+	//the ID of the user for this item to be published by (0 is the default admin ID)
+	int myUserId = 0;
+
+	var myContent = contentService.CreateContent(
+		myContentName,
+		myContentParentId,
+		myDocumentTypeAlias,
+		myUserId);
+
+	// this content object is now available for use with other
+	// methods - such as Save/SaveAndPublish etc
+
 
 ###.CreateContentWithIdentity(string name, IContent parent, string contentTypeAlias, _[int userId = 0]_)
 Creates and saves an `Content` object using the alias `ContentType` that this `Content` should be based on.
