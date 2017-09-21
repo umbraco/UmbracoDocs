@@ -83,13 +83,9 @@ If everything went well, you should see the confirmation screen that the deploy 
 
 Sometimes a deploy is not possible, for example if you add a new property to the homepage document type and you don’t have that property in both environments. You’ll get an error with a hint on how to fix this.
 
-The problem will appear in your CourierTracelog.txt as a line looking like this:
-
-    2015-04-27 14:59:20,546 [10] INFO  Umbraco.Courier.Core.Packaging.RevisionPackaging - [Thread 45] Document types: Home hash-mismatch (local/remote) e5c6dc5f2eee6521b2d024f7777bbd9e / 2628e7c3e4bc7215fd398a2bbb13f423
-
-In order to compare the two environments, we create a hash of all of the important data of (in this case) the Home document type and see if the hash matches on both ends. More on this later in the Debugging section.
-
 ![clone dialog](images/schema-mismatch.png)
+
+If you are seeing this type of issue when trying to transfer content, head over to our chapter about [Schema Mismatch errors](../Troubleshooting/Content-Deploy-Schema/Local), where you can read about how to resolve the issues.
 
 ### UmbracoDeploy.config
 
@@ -100,25 +96,6 @@ You might notice a new file in your config folder called UmbracoDeploy.config. T
 **Note**: you’re free to update the “name” attribute to make it clearer in the interface where you’re deploying to. So if you want to name “Development” something like “The everything-goes area” then you can do that and it will be shown when deploying to that environment.
 
 ![clone dialog](images/change-env-name.png)
-
-### Debugging
-
-Earlier in the document we highlighted an error that you might see:
-
-    2015-04-27 14:59:20,546 [10] INFO  Umbraco.Courier.Core.Packaging.RevisionPackaging - [Thread 45] Document types: Home hash-mismatch (local/remote) e5c6dc5f2eee6521b2d024f7777bbd9e / 2628e7c3e4bc7215fd398a2bbb13f423
-
-This error is not very descriptive and if you’re not sure what the difference are then you can investigate it a little bit deeper. If you add a key to your appSettings section in web.config you get to actually see what data we’ve tried to compare, unhashed.
-In web.config (on both ends, both source and target), you can add the following key (note: on both the source and target environment):
-
-    <add key="DeployHashDebug" value="true" />
-
-Now when you get the above error, you’ll get the same message with a little more information:
-
-![clone dialog](images/image07.png)
-
-Using a text compare tool like WinMerge we can pretty easily figure out that the property “Test” was added to the local document type but isn’t found on the remote instance.
-
-![clone dialog](images/image00.png)
 
 ## Working locally (for developers)
 
