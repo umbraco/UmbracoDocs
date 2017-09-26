@@ -1,10 +1,10 @@
-#UmbracoHelper
+# UmbracoHelper
 
 _UmbracoHelper is the unified way to work with published content/media on your website. Whether you are using MVC or WebForms you will be able to use UmbracoHelper to query/traverse Umbraco published data._   
 
 UmbracoHelper also has a variety of helper methods that are useful when working in your views, controllers and webforms classes.
 
-##How to reference UmbracoHelper?
+## How to reference UmbracoHelper?
 
 Nearly all of Umbraco's base classes expose an instance of UmbracoHelper. If you are using MVC Views or Partial View Macros you can reference UmbracoHelper with the syntax: `@Umbraco`
 
@@ -18,15 +18,15 @@ Lastly, if you need an UmbracoHelper in a custom class, service, view, etc... yo
 
 	var umbracoHelper = new Umbraco.Web.UmbracoHelper(Umbraco.Web.UmbracoContext.Current);
 
-##IPublishedContent
+## IPublishedContent
 
 UmbracoHelper will expose all content in the form of `IPublishedContent`. To get a reference to the currently executing content item from the UmbracoHelper, use `UmbracoHelper.AssignedContentItem`
 
 All samples below represent how you work with `UmbracoHelper` in Razor, except for the `@` syntax, it is the exact same with your work with this helper inside controllers or UserControls.
 
-##Working with Content
+## Working with Content
 
-###.Content(int id);
+### .Content(int id);
 Given a node ID, returns a `dynamic` object, representing a single `IPublishedContent` entity
 
     @{
@@ -39,7 +39,7 @@ Given a node ID, returns a `dynamic` object, representing a single `IPublishedCo
         <a href="@child.Url">@child.Name</a>
     }
 
-###.ContentAtRoot();
+### .ContentAtRoot();
 Returns a `dynamic` object, representing the root `IPublishedContent` entity
 
     // Get the children of the first content item found in the root
@@ -47,24 +47,24 @@ Returns a `dynamic` object, representing the root `IPublishedContent` entity
         <a href="@child.Url">@child.Name</a>
     }
 
-###.ContentAtXPath(string xpath, params XPathVariable[] variables);
+### .ContentAtXPath(string xpath, params XPathVariable[] variables);
 Queries the XML Cache for Content matching a given xpath query and returns a collection of dynamic objects.
 
     @{
         var newsArticles = Umbraco.ContentAtXPath("//newsArticle");
     }
 
-###.ContentQuery
+### .ContentQuery
 Content query helper, which contains many helpful ways to find content. (description coming soon)
 
-###.ContentSingleAtXPath(string xpath, params XPathVariable[] variables);
+### .ContentSingleAtXPath(string xpath, params XPathVariable[] variables);
 Queries the XML Cache for Content matching a given Xpath query, returns first match as a `dynamic` object.
 
     @{
         var newsArea = Umbraco.ContentSingleAtXPath("//newsArea");
     }
 
-###.TypedContent(int id)
+### .TypedContent(int id)
 Given a node ID , returns a `IPublishedContent`
 
     @{
@@ -79,7 +79,7 @@ Given a node ID , returns a `IPublishedContent`
     }
 
 
-###.TypedContentAtRoot()
+### .TypedContentAtRoot()
 Returns the root `IPublishedContent` from the Content tree
 
     // Get the children of the first content item found in the root
@@ -88,7 +88,7 @@ Returns the root `IPublishedContent` from the Content tree
     }
 
 
-###.TypedContentAtXPath(string xpath)
+### .TypedContentAtXPath(string xpath)
 Queries the XML Cache for Content matching a given xpath query and returns a collection of `IPublished` objects.
 
     @{
@@ -97,7 +97,7 @@ Queries the XML Cache for Content matching a given xpath query and returns a col
     }
 
 
-###.TypedContentSingleAtXPath(string xpath)
+### .TypedContentSingleAtXPath(string xpath)
 Queries the XML Cache for Content matching a given Xpath query, returns first match as an `IPublished` object.
 
     @{
@@ -106,27 +106,27 @@ Queries the XML Cache for Content matching a given Xpath query, returns first ma
     }
 
 
-###Content helpers
+### Content helpers
 
-###.Field(string field)
+### .Field(string field)
 Given a property alias, it returns the value of that field from the Current Page.
 
     <h3>@Umbraco.Field("bodyText")</h3>
 
 
-###.NiceUrl(int nodeId)
+### .NiceUrl(int nodeId)
 Returns a nicely formated URL, given a node ID. This is also available from `IPublishedContent.Url`
 
     <a href="@Umbraco.NiceUrl(1234)">My link</a>
 
-###.NiceUrlWithDomain(int id)
+### .NiceUrlWithDomain(int id)
 Returns a nicely formated URL including its domain, given a node ID. This can be useful when linking between multiple sites with different domains on the same Umbraco installation.
 
     <a href="@Umbraco.NiceUrlWithDomain(1234)">My link</a>
 
 
-##Working with Media
-###.Media(int id);
+## Working with Media
+### .Media(int id);
 Given a node ID, returns a `dynamic` object, representing a single `IPublishedContent` Media entity
 
     @{
@@ -142,7 +142,7 @@ Given a node ID, returns a `dynamic` object, representing a single `IPublishedCo
     <img src="@Url.GetCropUrl(media, "umbracoFile", "banner") />
 
 
-###.MediaAtRoot();
+### .MediaAtRoot();
 Returns a `dynamic` object, representing the root `IPublishedContent` entity in the Media tree.
 
     @foreach (var child in Umbraco.MediaAtRoot().Children) {
@@ -150,7 +150,7 @@ Returns a `dynamic` object, representing the root `IPublishedContent` entity in 
     }
 
 
-###.TypedMedia(int id)
+### .TypedMedia(int id)
 Given a node ID , returns a `IPublishedContent` Media entity
 
     @{
@@ -160,7 +160,7 @@ Given a node ID , returns a `IPublishedContent` Media entity
     }
 
 
-###.TypedMediaAtRoot();
+### .TypedMediaAtRoot();
 Returns the root `IPublishedContent` entity from the Media tree.
 
     @foreach (var child in Umbraco.TypedMediaAtRoot().Children) {
@@ -168,9 +168,9 @@ Returns the root `IPublishedContent` entity from the Media tree.
     }
 
 
-##Working with Members
+## Working with Members
 
-###.Member(1234);
+### .Member(1234);
 Given a node ID, returns a `dynamic` object, representing a single `IPublishedContent` Member profile
 
     @{
@@ -180,7 +180,7 @@ Given a node ID, returns a `dynamic` object, representing a single `IPublishedCo
     }
 
 
-###.TypedMember(1234);
+### .TypedMember(1234);
 Given a node ID , returns a `IPublishedContent` Member profile
 
     @{
@@ -193,22 +193,22 @@ Given a node ID , returns a `IPublishedContent` Member profile
     }
 
 
-###Member Helpers
-###.MemberHasAccess(int nodeId, string path);
+### Member Helpers
+### .MemberHasAccess(int nodeId, string path);
 Returns a `Boolean` on whether the currently logged in member has access to the page given its ID and path.
 
     @if(Umbraco.MemberHasAccess(CurrentPage.Id, CurrentPage.Path)){
         <h1>Welcome!</h1>
     }    
 
-###.MemberIsLoggedOn()
+### .MemberIsLoggedOn()
 Returns a `Boolean` on whether there is currently a member profile
 
     @if(Umbraco.MemberIsLoggedOn()){
         <h1>Welcome!</h1>
     }
 
-###.IsProtected(int pageId, string path)
+### .IsProtected(int pageId, string path)
 Returns a `Boolean` on whether a page with a given pageId and path has public access restrictions set.
 
     @foreach (var child in CurrentPage.Children) {
@@ -219,19 +219,19 @@ Returns a `Boolean` on whether a page with a given pageId and path has public ac
     }
 
 
-##Fetching misc data
+## Fetching misc data
 
-###.GetDictionaryValue(string key);
+### .GetDictionaryValue(string key);
 Returns a `string`
 
     <p>@Umbraco.GetDictionaryValue("createdOn"): @CurrentPage.CreateDate</p>
 
-###.GetPreValueAsString(int prevalueId)
+### .GetPreValueAsString(int prevalueId)
 Returns a `string`
 
     <p>@Umbraco.GetPreValueAsString(CurrentPage.DropDownProperty)</p>
 
-###.Search(string term, bool useWildCards, string searchProvider)
+### .Search(string term, bool useWildCards, string searchProvider)
 Given a search term, it by default searches the Umbraco search index for content matching the term. Wildcards are enabled by default, and searchProvider can optionally be set a different one.
 
 Returns a collection of `dynamic` objects representing an `IPublishedContent` Entity.
@@ -255,40 +255,40 @@ Alternatively, you can use Examines `SearchCriteria` builder:
     }
 
 
-###.TypedSearch(string term, bool useWildCards, string searchProvider)
+### .TypedSearch(string term, bool useWildCards, string searchProvider)
 Like .Search() but returns a collection of `IPublishedContent` objects, see sample above.
 
 
-##Templating Helpers
+## Templating Helpers
 
-###.Coalesce(params object[]);
+### .Coalesce(params object[]);
 will take the first non-null value in the collection and return the value of it.
 
 
     Umbraco.Coalesce(CurrentPage.Summary, CurrentPage.MaybeThere, CurrentPage.Name);
 
 
-###.Concatenate(params object[]);
+### .Concatenate(params object[]);
 Joins any number of int/string/objects into one string
 
     Umbraco.Concatenate("Hi my name is ", CurrentPage.Name, " how are you?");
 
-###.CreateMd5Hash(string text);
+### .CreateMd5Hash(string text);
 Returns a MD5 hash of a given string
 
     Umbraco.CreateMd5Hash("my@email.com");
 
-###.If(bool test, string valueIfTrue, string valueIfFalse)
+### .If(bool test, string valueIfTrue, string valueIfFalse)
 If the test is true, the string `valueIfTrue` will be returned, otherwise the `valueIfFalse` will be returned.
 
     <h1 class="@Umbraco.If(CurrentPage.Name == "News", "this-is-news", "textpage")>@CurrentPage.Name</h1>
 
-###.Join(string separator, params object[] args)    
+### .Join(string separator, params object[] args)    
 Joins any number of int/string/objects into one string and separates them with the string separator parameter.
 
     Umbraco.Join("; ", "Red", 112, CurrentPage.Name);
 
-###.ReplaceLineBreaksForHtml(string text)
+### .ReplaceLineBreaksForHtml(string text)
 Given a non-html string, it replaces all line-breaks with `<br/>`
 
     @{
@@ -300,22 +300,22 @@ Given a non-html string, it replaces all line-breaks with `<br/>`
 
     @Umbraco.ReplaceLineBreaksForHtml(multiLine)
 
-###.StripHtml(string html)
+### .StripHtml(string html)
 Strips all html tags from a given string, all contents of the tags will remain.
 
     Umbraco.StripHtml("<blink>Stop the blinking</blink>");
 
-###.Truncate(string html, int length, bool addEllipsis)
+### .Truncate(string html, int length, bool addEllipsis)
 Truncates a string to a given length, can add a ellipsis at the end (...). Method checks for open html tags, and makes sure to close them
 
     Umbraco.Truncate("I wish I was a tweet, at least then I get 140 chars", 10, true)
 
-###.RenderMacro(string alias, object parameters)
+### .RenderMacro(string alias, object parameters)
 Renders a macro in the current page content, given the macros alias, and parameters required by the macro.
 
     @Umbraco.RenderMacro("navigation", new {root="1083", header="Hello"})
 
-###.RenderTemplate(int pageId, int? altTemplateId)
+### .RenderTemplate(int pageId, int? altTemplateId)
 Renders a template, as if a page with the given pageID was requested, optionally with an alternative template ID passed in.
 
     @Umbraco.RenderTemplate(1234)

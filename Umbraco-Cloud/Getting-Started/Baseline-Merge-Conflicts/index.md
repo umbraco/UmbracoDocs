@@ -1,4 +1,4 @@
-#Baseline Merge Conflicts
+# Baseline Merge Conflicts
 Here we outline how to manually resolve a merge conflict after having updated the children for a Baseline project.
 
 On a Baseline project you can click to _“Manage updates here”_, which enables you to update all the child projects with the latest changes from the Live environment of the Baseline project.

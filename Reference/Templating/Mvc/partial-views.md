@@ -1,8 +1,8 @@
-#Using MVC Partial Views in Umbraco
+# Using MVC Partial Views in Umbraco
 
 _This section will show you how to use MVC Partial Views in Umbraco. Please note, this is documentation relating to the use of native MVC partial views, not '[Partial View Macros](../Macros/Partial-View-Macros/index.md)'_
 
-##Overview
+## Overview
 
 Using Partial Views in Umbraco is exactly the same as using Partial Views in a normal MVC project. There is detailed documentation on the Internet about creating and using MVC partial views, for example:
 
@@ -10,7 +10,7 @@ Using Partial Views in Umbraco is exactly the same as using Partial Views in a n
 
 Partial views allow you to easily re-use components between your views (templates).
 
-##View Locations
+## View Locations
 
 The locations to store Partial Views when rendering in the Umbraco pipeline is:
 
@@ -27,7 +27,7 @@ If however you are [Hijacking an Umbraco route](custom-controllers.md) and speci
 
 	~/Views/{YourControllerName}
 
-##Example
+## Example
 
 A quick example of a content item that has a template that renders out a partial view template for each of its child documents:
 
@@ -56,7 +56,7 @@ The partial view (located at: `~/Views/Partials/ChildItem.cshtml`)
 
 	<strong>@Model.Name</strong>
 
-#Strongly typed Partial Views
+# Strongly typed Partial Views
 
 Normally you would create a partial view by simply using the `@model MyModel` syntax. However, inside of Umbraco you will probably want to have access to the handy properties available on your normal Umbraco views like the Umbraco helper: `@Umbraco` and the Umbraco context: `@UmbracoContext`. The good news is that this is completely possible. Instead of using the `@model MyModel` syntax, you just need to inherit from the correct view class, so do this instead:
 
@@ -81,7 +81,7 @@ The partial view can still inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage`, w
 
 Both of these will achieve the same result.
 
-##Caching
+## Caching
 
 You don't normally need to cache the output of Partial views, just like you don't normally need to cache the output of User Controls, but there are times when this is necessary. Just like macro caching, we provide caching output of partial views. This is done simply by using an HtmlHelper extension method:
 

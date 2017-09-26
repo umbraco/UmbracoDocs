@@ -1,11 +1,11 @@
-#IPublishedContent Collections
+# IPublishedContent Collections
 
 All collections of `IPublishedContent` are `IEnumerable<IPublishedContent>`. 
 This means that all c# Linq statements can be used to filter and query the collections.  
 
-##Collections
+## Collections
 
-###.Children
+### .Children
 Returns a collection of items just below the current content item
 
 	<ul>
@@ -16,7 +16,7 @@ Returns a collection of items just below the current content item
 	</ul>
 
 
-###.Ancestors
+### .Ancestors
 Returns all ancestors of the current page (parent page, grandparent and so on)
 
 	<ul>
@@ -27,7 +27,7 @@ Returns all ancestors of the current page (parent page, grandparent and so on)
 		}
 	</ul>
 
-###.Ancestor
+### .Ancestor
 Returns the first ancestor of the current page
 
 	@* return the first ancestor item from the current page *@
@@ -38,13 +38,13 @@ Returns the first ancestor of the current page
 
 
 <span id="ancestorsorself"></span>
-###.AncestorsOrSelf
+### .AncestorsOrSelf
 Returns a collection of all ancestors of the current page (parent page, grandparent and so on), and the current page itself
 
 	@* Get the top item in the content tree, this will always be the Last ancestor found *@
 	var websiteRoot = Model.Content.AncestorsOrSelf().Last();
 
-###.Descendants
+### .Descendants
 Returns all descendants of the current page (children, grandchildren etc)
 
 	<ul>
@@ -55,7 +55,7 @@ Returns all descendants of the current page (children, grandchildren etc)
 		}
 	</ul>
 
-###.DescendantsOrSelf
+### .DescendantsOrSelf
 Returns all descendants of the current page (children, grandchildren etc), and the current page itself
 
 	<ul>
@@ -66,7 +66,7 @@ Returns all descendants of the current page (children, grandchildren etc), and t
 		}
 	</ul>
 
-###.OfTypes
+### .OfTypes
 Filters a collection of content by content type alias 
 
 	<ul>
@@ -79,23 +79,23 @@ Filters a collection of content by content type alias
 
 -----
 
-##Filtering, Ordering & Extensions
+## Filtering, Ordering & Extensions
 
 Filtering and Ordering are done simply with Linq.
 
 Some examples:
 	
-###.Where
+### .Where
 
 	@* Returns all items in the collection that have a template assigned and have a name starting with 'S' *@
 	@var nodes = Model.Content.Descendants().Where(x => x.TemplateId > 0 && x.Name.StartsWith("S"))
 
-###.OrderBy
+### .OrderBy
 
 	@* Orders a collection by the property name "title" *@
 	@var nodes = Model.Content.Children.OrderBy(x => x.GetPropertyValue<string>("title"))
 	
-###.GroupBy
+### .GroupBy
 Groups collection by content type alias
 
 	@{
@@ -111,13 +111,13 @@ Groups collection by content type alias
 	}
 
 
-###.Take(int)
+### .Take(int)
 Return only the number of items for a collection specified by the integer value.
 	
 	@* return the first 3 items from the child collection *@
 	@var nodes = Model.Content.Children.Take(3);
 
-###.Skip(int)
+### .Skip(int)
 Return items from the collection after skipping the specified number of items.
 
 	@* Skip the first 3 items in the collection and return the rest *@
@@ -128,7 +128,7 @@ Return items from the collection after skipping the specified number of items.
 	@* using skip and take together you can perform paging operations *@
 	@var nodes = Model.Content.Skip(10).Take(10);
 
-###.Count()
+### .Count()
 Returns the number of items in the collection
 
 	@int numberOfChildren =  Model.Content.Children.Count();

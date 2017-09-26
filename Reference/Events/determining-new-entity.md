@@ -1,4 +1,4 @@
-#Determining if an entity is new#
+# Determining if an entity is new#
 
 Many of the Umbraco services expose a 'Saved' event (or similar), in some cases it is beneficial to know if this entity is a brand new entity that has just been persisted to the database, this is how you can determine this.
 

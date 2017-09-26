@@ -1,4 +1,4 @@
-#Tag cloud
+# Tag cloud
 
 If you use the Tag datatype in Umbraco V4, you can easily make an tag-cloud in XSLT:
 
