@@ -53,7 +53,7 @@ Here's an example of a custom global.asax class which initializes the IoC contai
 
 			var container = builder.Build();
 			DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
-            		GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
+			GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
 		}
 	}
 
