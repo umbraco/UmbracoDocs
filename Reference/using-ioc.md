@@ -13,7 +13,7 @@ Alternatively you can implement the `Umbraco.Web.IApplicationEventHandler` inter
 
 ##Autofac Example
 
-This example will setup Autofac to work with Umbraco (see [their documentation](http://autofac.readthedocs.org/en/latest/) for full details)
+This example will setup Autofac to work with Umbraco (see [their documentation](http://autofac.readthedocs.org/en/latest/) for full details). Our examples make use of the following NuGet packages: `Autofac`, `Autofac.Mvc5`, `Autofac.WebApi2`.
 
 For this example we're going to add a custom class to the IoC container as a Transient instance, here's the class:
 
@@ -42,6 +42,7 @@ Here's an example of a custom global.asax class which initializes the IoC contai
 
 			//register all controllers found in your assembly
 			builder.RegisterControllers(typeof(MyApplication).Assembly);
+			builder.RegisterApiControllers(typeof(MyApplication).Assembly);
 
 			//register umbraco MVC + webapi controllers used by the admin site
 			builder.RegisterControllers(typeof(UmbracoApplication).Assembly);
@@ -52,10 +53,13 @@ Here's an example of a custom global.asax class which initializes the IoC contai
 
 			var container = builder.Build();
 			DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+            		GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
 		}
 	}
 
-*(NOTE: do not forget to change the inherits clause of the global.asax file in the web root.)*
+Do not forget to change the Application tag inside the global.asax file in the web root:
+
+	<%@ Application CodeBehind="Global.asax.cs" Inherits="MyProject.MyNamespace.MyApplication" Language="C#" %>
 
 If you like to use the `IApplicationEventHandler` alternative - here is an example for this approach:
 	
@@ -69,6 +73,7 @@ If you like to use the `IApplicationEventHandler` alternative - here is an examp
 		
 			//register all controllers found in this assembly
 			builder.RegisterControllers(typeof(MyApplication).Assembly);
+			builder.RegisterApiControllers(typeof(MyApplication).Assembly);
 
 			//register umbraco MVC + webapi controllers used by the admin site
 			builder.RegisterControllers(typeof(UmbracoApplication).Assembly);
@@ -79,6 +84,7 @@ If you like to use the `IApplicationEventHandler` alternative - here is an examp
 
 			var container = builder.Build();
 			DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+			GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
 		}
 
 		public void OnApplicationInitialized(UmbracoApplication httpApplication, Umbraco.Core.ApplicationContext applicationContext)
