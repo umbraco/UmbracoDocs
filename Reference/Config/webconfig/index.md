@@ -53,6 +53,23 @@ The default language to use in the backoffice if a user isn't explicitly assigne
 
 Makes sure that all of the requests in the backoffice are called over HTTPS instead of HTTP when set to `true`.
 
+
+###umbracoCssDirectory 
+
+By adding this to appSettings you can specify a new/different folder for storing your css-files and still be able to edit them within Umbraco. Default folder is ~/css.
+
+###umbracoMediaPath
+
+By adding this to appSettings you can specify a new/different folder for storing your media files. Default folder is ~/media.
+
+###umbracoScriptsPath 
+
+By adding this to appSettings you can specify a new/different folder for storing your javascript files and still be able to edit them within Umbraco. Default folder is ~/scripts.
+
+
+
+
+
 ##Optional settings
 
 _These are settings that have default values but can be overridden by creating the appSetting and setting its value in the web.config_

@@ -9,7 +9,7 @@ In Umbraco Cloud we organize your work into projects which are made of environme
 
 When your project is running in trial mode your _live_ environment is protected with the basic authentication. The basic authentication  will be removed when you pay for the project. _Development_ and _Staging_ environments are always protected with basic authentication
 
-You can avoid basic authentication by whitelisting IP adresses for the appropriate environments. See [IP Whitelist](https://our.umbraco.org/documentation/Umbraco-Cloud/Set-Up/#ip-whitelist) for more information.
+You can avoid basic authentication by whitelisting IP addresses for the appropriate environments. See [IP Whitelist](https://our.umbraco.org/documentation/Umbraco-Cloud/Set-Up/#ip-whitelist) for more information.
 ![environment](images/environment.png)
 
 ####Set up and Code

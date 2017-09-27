@@ -62,7 +62,7 @@ To accomplish this, add a redirect rule to the live site's web.config in the `<s
 **Note:** This redirect rule will not apply when the request is already going to the secure HTTPS URL. This redirect rule will also not apply on your local copy of the site running on `localhost`.
 
 ##IP Whitelist
-You can add specific IP addresses to the whitelist to automatically allow any client from these addresses to access the frontend of your _Development_ or _Staging_ environments without the initial authorization dialog. This can alse reduce the amount of times you or your team will need to enter your credentials in order to access your projects.
+You can add specific IP addresses to the whitelist to automatically allow any client from these addresses to access the frontend of your _Development_ or _Staging_ environments without the initial authorization dialog. This can also reduce the amount of times you or your team will need to enter your credentials in order to access your projects.
 
 As with all things security related, make sure you use this feature judiciously as it will allow access to your Umbraco backoffice login page without requiring the initial authentication. Of course, the Umbraco backoffice will still require authentication.
 
