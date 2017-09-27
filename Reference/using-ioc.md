@@ -77,7 +77,7 @@ If you like to use the `IApplicationEventHandler` alternative - here is an examp
 
 			//register umbraco MVC + webapi controllers used by the admin site
 			builder.RegisterControllers(typeof(UmbracoApplication).Assembly);
-    			builder.RegisterApiControllers(typeof(UmbracoApplication).Assembly);
+			builder.RegisterApiControllers(typeof(UmbracoApplication).Assembly);
 
 			//add custom class to the container as Transient instance
 			builder.RegisterType<MyAwesomeContext>();
