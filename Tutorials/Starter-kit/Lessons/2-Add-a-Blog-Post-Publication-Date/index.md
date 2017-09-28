@@ -13,7 +13,7 @@ Learn how to:
 ## Steps - Part One
 1. In the **Settings** section, expand **Document Types**.
 2. Click on *Blogpost*: this is the Document Type that defines the fields for this type of page.
-3. Scroll to the bottom of the first section on the right and click **Add property**.  This opens the **Property Editor** dialog window.
+3. On the right side, you can see two tabs called *Content* and *Navigation & SEO*. At the bottom of the *Content* tab click **Add property**.  This opens the **Property Editor** dialog window.
 4. Enter a Name of *Publication Date*.
 5. Enter a Description of *The date of the blog post. This is the date used to display the most recent posts first.*.  Always try to add a meaningful description to help your editors.
 6. Click **Add editor** to specify what type of data is being stored.  We just need a standard date, so select the **Reuse** tab, then click on the **Date Picker** icon.
