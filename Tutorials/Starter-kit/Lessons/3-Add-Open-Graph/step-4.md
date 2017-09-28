@@ -12,7 +12,7 @@ The partial view comes with a standard view model `@inherits Umbraco.Web.Mvc.Umb
 6. Select Value
 7. Under *Choose field*, select the `openGraphTitle` property.
 8. Add a *Fallback field*, select `siteName`, making sure that even though the Open Graph title isn't filled in, it will fallback to the title of the site (defined on Home)
-9. Check *Make it recursive* to ensure the fallback will work on all pages.
+9. Check *Yes, make it recursive* to ensure the fallback will work on all pages.
 10. Add the Open Graph meta tag for type of content, you can hardcode website in here 
         
         <meta property="og:type" content="website" />
