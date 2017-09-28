@@ -35,6 +35,6 @@ The partial view comes with a standard view model `@inherits Umbraco.Web.Mvc.Umb
         <meta property="og:url" content="@Model.UrlAbsolute()" />
         <meta property="og:image" content="@Url.GetAbsoluteMediaUrl(Model.OpenGraphImage)" />
 
-**note:** Do not forget to fill up the newly created open graph fields with data in the content section, otherwise you will get an error message. 
+**Pro tip:** In order to keep the lesson short and to the point we have left out null checks from the code examples. So remeber to fill in the open graph properties, in the content section, to aviod exceptions when viewing the page.
 
 [Previous](step-3.md) - [Next](summary.md)
