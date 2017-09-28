@@ -4,7 +4,7 @@ _Documentation about how to setup your own custom controllers and routes that ne
 
 ##Where to put your routing logic?
 
-In Umbraco the best place to put your routing logic is in a custom `Umbraco.Web.ApplicationEventHandler` class and override the `ApplicationStarted` method. There you can add any custom routing logic you like and you can be sure that the Umbraco application has completed it's booting sequence.
+In Umbraco the best place to put your routing logic is in a custom `Umbraco.Core.ApplicationEventHandler` class and override the `ApplicationStarted` method. There you can add any custom routing logic you like and you can be sure that the Umbraco application has completed it's booting sequence.
 
 ##User defined routes
 
@@ -12,13 +12,13 @@ Umbraco doesn't interfere with any user defined routes that you wish to have. Yo
 
 ##Custom routes within the Umbraco pipeline
 
-You can specify your own custom MVC routes to work within the Umbraco pipeline. This requires you to use an implementation of `Umbraco.Web.Mvc.UmbracoVirtualNodeRouteHandler` with your custom route. 
+You can specify your own custom MVC routes to work within the Umbraco pipeline. This requires you to use an implementation of `Umbraco.Web.Mvc.UmbracoVirtualNodeRouteHandler` with your custom route.
 
 As an example:
 
     protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
     {
-        // Custom route to MyProductController which will use a node with a specific ID as the 
+        // Custom route to MyProductController which will use a node with a specific ID as the
         // IPublishedContent for the current rendering page
         RouteTable.Routes.MapUmbracoRoute(
             "ProductCustomRoute",
@@ -60,7 +60,7 @@ Controllers are straight forward and work like any other routed controller excep
         public ActionResult Product(RenderModel model, string sku)
         {
             //in my case, the IPublishedContent attached to this
-            // model will be my products node in Umbraco which i 
+            // model will be my products node in Umbraco which i
             // can now use to traverse to display the product list
             // or lookup the product by sku
 
@@ -75,4 +75,3 @@ Controllers are straight forward and work like any other routed controller excep
             }
         }
     }
-
