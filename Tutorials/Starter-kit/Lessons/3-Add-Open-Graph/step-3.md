@@ -15,17 +15,8 @@ This will render a partial view *if* the composition is present on the current p
 At the end the head should look like this
 
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-        <title>@Model.Content.Name - @home.Sitename</title>
-        <meta name="description" content="">
-        <meta name="author" content="">
+        ...
         
-        <link rel="stylesheet" href="@Url.Content("~/css/umbraco-starterkit-style.css")" />
-        @RenderSection("Header", required: false)
-
         @if (Model.Content is IOpenGraph) { @Html.Partial("openGraph") }    
     </head>
 
