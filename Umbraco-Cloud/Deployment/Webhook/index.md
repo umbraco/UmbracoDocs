@@ -1,8 +1,13 @@
 # Deployment Webhook
-You can now configure a deployment webhook to be triggered upon succesfull deployments to any of your environments. E.g: When deploying from local development environment to 'development' environment.
+You can now configure a deployment webhook to be triggered upon succesfull deployments to any of your environments. E.g: When deploying from local development environment to 'development' environment. Upon a succesfull deployment general information about the deployment will be posted in a json format to the specific url you have configured.
 
 ## Use cases
+This can find uses in many 'audit' cases when you would like to let others know about what is happening with your site.
 
+1. Any deployments to the Live site could be relevant for many parties in a company. Posting information about them in internal communication channels like slack is made possible using this feature.
+2. Monitoring of the whole deployment cycle. A succesfull deployment might result in a potentially breaking change. Integrating the webhook with other monitoring services, you could easily find out which deployment has caused the issue.
+3. Letting content editors know about particular deployments when a new document type was added as they can now easily use the new document type.
+4. etc ... 
 
 ## Configuration steps
 
