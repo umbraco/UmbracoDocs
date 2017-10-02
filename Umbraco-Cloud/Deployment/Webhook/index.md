@@ -1,26 +1,32 @@
 # Deployment Webhook
-You can now configure a deployment webhook to be triggered upon succesfull deployments to any of your environments (local -> development -> staging -> live).
+You can now configure a deployment webhook to be triggered upon succesfull deployments to any of your environments. E.g: When deploying from local development environment to 'development' environment.
+
+## Use cases
+
 
 ## Configuration steps
 
 1. Portal -> Settings -> Manage Webhooks.
 2. Select the environment for which to register a webhook.
-3. Fill in the url to which the information about a deployment should be posted to. Absolute url with http/https schema is an acceptable input to the field.
+3. Fill in the url to which the data about a deployment should be posted to. Absolute url with http/https schema is an acceptable input to the field.
 3. Add Webhook.
 
 ## Sample data
-General information in json format about the deployment will be posted to the url configured in the previous section.
+General information in json format about the deployment (to the configured environment) will be posted to the url (configured in the previous section).
 
 ### Headers
-The headers contains information about the payload being in json format as well as a version of the payload.
+The headers contains information about the payload 
+in json format as well as a version of the payload.
 
+```
 X-Umb-Webhook-Version: 1
 Content-Type: application/json; charset=utf-8
+```
 
 ### Contents
-Contents of the payload contain general information about the current deployment with links to the project in the portal or the site.
-Last part of the contents is a collection/enumeration of commits that were deployed to the environment, mentioning the author, the commit message and changed files. 
+Contents of the payload contain general information about the current deployment with links to the project in the portal or the site. Last part of the contents is a collection/enumeration of commits that were deployed to the environment, mentioning the author, the commit message and changed files. 
 
+```json
 {
    "Id":"40810bf1bbbfc16dd273162509de297ad386fb4e",
    "Status":"success",
@@ -60,5 +66,6 @@ Last part of the contents is a collection/enumeration of commits that were deplo
       }
    ]
 }
+```
 
 
