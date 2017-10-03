@@ -10,17 +10,17 @@ Nearly all of Umbraco's base classes expose an instance of UmbracoHelper. If you
 
 If you are using SurfaceControllers, RenderMvcControllers, UmbracoApiControllers, or any controller inheriting from UmbracoController, these all expose an UmbracoHelper via the `Umbraco` property.
 
-If you are using WebForms and using controls you can inherit from : `Umbraco.Web.UI.Controls.UmbracoControl` or `Umbraco.Web.UI.Controls.UmbracoUserControl` both of which expose many handy Umbraco object including an UmbracoHelper via the `Umbraco` property.
+If you are using WebForms and using controls you can inherit from : `Umbraco.Web.UI.Controls.UmbracoControl` or `Umbraco.Web.UI.Controls.UmbracoUserControl` both of which expose many handy Umbraco objects including an UmbracoHelper via the `Umbraco` property.
 
-For webservices and http handlers, these base classes expose UmbracoHelper via the `Umbraco` property: `Umbraco.Web.WebServices.UmbracoHttpHandler`, `Umbraco.Web.WebServices.UmbracoWebService`
+For webservices and HTTP handlers, these base classes expose UmbracoHelper via the `Umbraco` property: `Umbraco.Web.WebServices.UmbracoHttpHandler`, `Umbraco.Web.WebServices.UmbracoWebService`
 
-Lastly, if you need an UmbracoHelper in a custom class, service, view, etc... you can create one using this syntax:
+Lastly, if you need an UmbracoHelper in a custom class, service, view, etc., you can create one using this syntax:
 
 	var umbracoHelper = new Umbraco.Web.UmbracoHelper(Umbraco.Web.UmbracoContext.Current);
 
 ##IPublishedContent
 
-UmbracoHelper will expose all content in the form of `IPublishedContent`. To get a reference to the currently executing content item from the UmbracoHelper, use `UmbracoHelper.AssignedContentItem`
+UmbracoHelper will expose all content in the form of `IPublishedContent`. To get a reference to the currently executing content item from the UmbracoHelper, use `UmbracoHelper.AssignedContentItem`.
 
 All samples below represent how you work with `UmbracoHelper` in Razor, except for the `@` syntax, it is the exact same with your work with this helper inside controllers or UserControls.
 
@@ -48,7 +48,7 @@ Returns a `dynamic` object, representing the root `IPublishedContent` entity
     }
 
 ###.ContentAtXPath(string xpath, params XPathVariable[] variables);
-Queries the XML Cache for Content matching a given xpath query and returns a collection of dynamic objects.
+Queries the XML Cache for Content matching a given XPath query and returns a collection of dynamic objects.
 
     @{
         var newsArticles = Umbraco.ContentAtXPath("//newsArticle");
@@ -89,20 +89,20 @@ Returns the root `IPublishedContent` from the Content tree
 
 
 ###.TypedContentAtXPath(string xpath)
-Queries the XML Cache for Content matching a given xpath query and returns a collection of `IPublished` objects.
+Queries the XML Cache for Content matching a given XPath query and returns a collection of `IPublishedContent` objects.
 
     @{
         var newsArticles = Umbraco.TypedContentAtXPath("//newsArticle");
-        var bd = newsArticles.First().GetPropertyValue("bodyText")
+        var bd = newsArticles.First().GetPropertyValue("bodyText");
     }
 
 
 ###.TypedContentSingleAtXPath(string xpath)
-Queries the XML Cache for Content matching a given Xpath query, returns first match as an `IPublished` object.
+Queries the XML Cache for Content matching a given XPath query and returns the first match as an `IPublishedContent` object.
 
     @{
-        var newsArticles = Umbraco.TypedContentAtXPath("//newsArticle");
-        var bd = newsArticles.First().GetPropertyValue("bodyText")
+        var newsArticle = Umbraco.TypedContentAtXPath("//newsArticle");
+        var bd = newsArticle.GetPropertyValue("bodyText");
     }
 
 
@@ -115,12 +115,12 @@ Given a property alias, it returns the value of that field from the Current Page
 
 
 ###.NiceUrl(int nodeId)
-Returns a nicely formated URL, given a node ID. This is also available from `IPublishedContent.Url`
+Returns a nicely formatted URL, given a node ID. This is also available from `IPublishedContent.Url`
 
     <a href="@Umbraco.NiceUrl(1234)">My link</a>
 
 ###.NiceUrlWithDomain(int id)
-Returns a nicely formated URL including its domain, given a node ID. This can be useful when linking between multiple sites with different domains on the same Umbraco installation.
+Returns a nicely formatted URL including its domain, given a node ID. This can be useful when linking between multiple sites with different domains on the same Umbraco installation.
 
     <a href="@Umbraco.NiceUrlWithDomain(1234)">My link</a>
 
@@ -151,7 +151,7 @@ Returns a `dynamic` object, representing the root `IPublishedContent` entity in 
 
 
 ###.TypedMedia(int id)
-Given a node ID , returns a `IPublishedContent` Media entity
+Given a node ID, returns an `IPublishedContent` Media entity
 
     @{
         var media = Umbraco.TypedMedia(1234);
@@ -176,12 +176,12 @@ Given a node ID, returns a `dynamic` object, representing a single `IPublishedCo
     @{
         var member = Umbraco.TypedMember(1234);
         var email = member.Email;
-        var custom = member.MyCustomPropertyAlias
+        var custom = member.MyCustomPropertyAlias;
     }
 
 
 ###.TypedMember(1234);
-Given a node ID , returns a `IPublishedContent` Member profile
+Given a node ID, returns an `IPublishedContent` Member profile
 
     @{
         var member = Umbraco.TypedMember(1234);
@@ -219,7 +219,7 @@ Returns a `Boolean` on whether a page with a given pageId and path has public ac
     }
 
 
-##Fetching misc data
+##Fetching miscellaneous data
 
 ###.GetDictionaryValue(string key);
 Returns a `string`
@@ -232,7 +232,7 @@ Returns a `string`
     <p>@Umbraco.GetPreValueAsString(CurrentPage.DropDownProperty)</p>
 
 ###.Search(string term, bool useWildCards, string searchProvider)
-Given a search term, it by default searches the Umbraco search index for content matching the term. Wildcards are enabled by default, and searchProvider can optionally be set a different one.
+Given a search term, it by default searches the Umbraco search index for content matching the term. Wildcards are enabled by default, and searchProvider can optionally be set to a different one.
 
 Returns a collection of `dynamic` objects representing an `IPublishedContent` Entity.
 
@@ -240,7 +240,7 @@ Returns a collection of `dynamic` objects representing an `IPublishedContent` En
         <a href="@result.Url">@result.BodyText</a>
     }
 
-Alternatively, you can use Examines `SearchCriteria` builder:
+Alternatively, you can use Examine's `SearchCriteria` builder:
 
     @{
         var query = ExamineManager.Instance.CreateSearchCriteria()
@@ -274,7 +274,7 @@ Joins any number of int/string/objects into one string
     Umbraco.Concatenate("Hi my name is ", CurrentPage.Name, " how are you?");
 
 ###.CreateMd5Hash(string text);
-Returns a MD5 hash of a given string
+Returns an MD5 hash of a given string
 
     Umbraco.CreateMd5Hash("my@email.com");
 
@@ -289,7 +289,7 @@ Joins any number of int/string/objects into one string and separates them with t
     Umbraco.Join("; ", "Red", 112, CurrentPage.Name);
 
 ###.ReplaceLineBreaksForHtml(string text)
-Given a non-html string, it replaces all line-breaks with `<br/>`
+Given a non-HTML string, it replaces all line-breaks with `<br/>`
 
     @{
         var multiLine = @"hello
@@ -301,17 +301,17 @@ Given a non-html string, it replaces all line-breaks with `<br/>`
     @Umbraco.ReplaceLineBreaksForHtml(multiLine)
 
 ###.StripHtml(string html)
-Strips all html tags from a given string, all contents of the tags will remain.
+Strips all HTML tags from a given string; all contents of the tags will remain.
 
     Umbraco.StripHtml("<blink>Stop the blinking</blink>");
 
 ###.Truncate(string html, int length, bool addEllipsis)
-Truncates a string to a given length, can add a ellipsis at the end (...). Method checks for open html tags, and makes sure to close them
+Truncates a string to a given length, can add an ellipsis at the end (…). The method checks for open HTML tags, and makes sure to close them
 
     Umbraco.Truncate("I wish I was a tweet, at least then I get 140 chars", 10, true)
 
 ###.RenderMacro(string alias, object parameters)
-Renders a macro in the current page content, given the macros alias, and parameters required by the macro.
+Renders a macro in the current page content, given the macro's alias, and parameters required by the macro.
 
     @Umbraco.RenderMacro("navigation", new {root="1083", header="Hello"})
 
