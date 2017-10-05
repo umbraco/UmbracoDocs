@@ -1,4 +1,4 @@
-#Render grid in template
+# Render grid in template
 To render a property based on the grid inside a template you should use the HtmlHelper extension:
 
     @Html.GetGridHtml(Model.Content, "propertyAlias")

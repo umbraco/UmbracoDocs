@@ -1,12 +1,12 @@
-#Custom controllers (Hijacking Umbraco Routes)
+# Custom controllers (Hijacking Umbraco Routes)
 
 _If you need complete control over how your pages are rendered then Hijacking Umbraco Routes is for you_
 
-##What is Hijacking Umbraco Routes?
+## What is Hijacking Umbraco Routes?
 
 By default all of the front end routing is executed via the `Umbraco.Web.Mvc.RenderMvcController` Index Action which should work fine for most people. However, in some cases people may want complete control over this execution and may  want their own Action to execute. Some reasons for this may be: to control exactly how views are rendered, custom/granular security for certain pages/templates or to be able to execute any custom code in the controller that renders the front end. The good news is that this is completely possible. This process is all about convention and it's really simple!
 
-##Creating a custom controller
+## Creating a custom controller
 
  It's easiest to demonstrate with an example : let's say you have a Document Type called 'Home'.  You can create a custom locally declared controller in your MVC web project called 'HomeController' and ensure that it inherits from `Umbraco.Web.Mvc.RenderMvcController` and now all pages that are of document type 'Home' will be routed through your custom controller! Pretty easy right :-)
 OK so let's see how we can extend this concept. In order for you to run some code in your controller you'll need to override the Index Action. Here’s a quick example:
@@ -22,7 +22,7 @@ OK so let's see how we can extend this concept. In order for you to run some cod
 	}
 Now you can run any code that you want inside of that Action!
 
-##Routing via template
+## Routing via template
 
 To further extend this, we've also allowed routing to different Actions based on the Template that is being rendered. By default only the Index Action exists which will execute for all requests of the corresponding document type. However, if the template being rendered is called 'HomePage' and you have an Action on your controller called 'HomePage' then it will execute instead of the Index Action. As an example, say we have a Home Document Type which has 2 allowed Templates: ‘HomePage’ and ‘MobileHomePage’ and we only want to do some custom stuff for when the ‘MobileHomePage’ Template is executed:
 
@@ -35,7 +35,7 @@ To further extend this, we've also allowed routing to different Actions based on
 	    }
 	}
 
-##How the mapping works
+## How the mapping works
 
 * Document Type name = controller name
 *
@@ -43,11 +43,11 @@ Template name = action name, but if no action matches or is not specified then t
 
 In the near future we will allow setting a custom default controller to execute for all requests instead of the standard UmbracoController. Currently you'd have to create a controller for every document type to have a custom controller execute for all requests.
 
-##Returning a view with a custom model
+## Returning a view with a custom model
 
 If you want to return a custom model to a view then there are a few steps that need to be taken.
 
-###Changing the @inherits directive of your template
+### Changing the @inherits directive of your template
 
 First, the standard view that is created by Umbraco inherits from `Umbraco.Web.Mvc.UmbracoTemplatePage` which has a model defined of type `Umbraco.Web.Models.RenderModel`. You'll see the inherits directive at the top of the view as:
 
@@ -74,7 +74,7 @@ Please note that if your template uses a layout that expects the model to be of 
 
 (this means `@Model...` will continue to work in the layouts used by your template).
 
-###Returning the correct view from your controller
+### Returning the correct view from your controller
 
 In an example above we reference that you can use the following sytnax once you've hijacked a route:
 
@@ -97,7 +97,7 @@ So to return a custom model to the current Umbraco template, we need to use diff
 	    }
 	}
 
-##Change the default controller
+## Change the default controller
 
 In some cases you might want to have your own custom controller execute for all MVC requests when you haven't hijacked a route. This is possible by assigning your own default controller during application startup.
 

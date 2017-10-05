@@ -1,16 +1,16 @@
-#Creating a form
+# Creating a form
 This will show the basic steps of creating forms and adding them to your Umbraco site.
-##Navigate to the Forms section
+## Navigate to the Forms section
 Managing forms happens in the Forms section of the Umbraco backoffice so first navigate to this section by selecting it (you'll need to have Forms installed and have access to this section in order to see it).
 
 ![Forms Section](FormsSection.png)
 
-##Click the forms tree
+## Click the forms tree
 Next similar to most create actions in the Umbraco backoffice you'll have to click the forms tree/folder and that will show you the create option
 
 ![Forms tree](FormsTree.png)
 
-##Select if you want to start from scratch
+## Select if you want to start from scratch
 You should see the following dialog
 
 ![Forms create dialog](FormsCreateDialog.png)
@@ -18,7 +18,7 @@ You should see the following dialog
 Where you'll have the option to start from a template (the template will already have some fields defined so you don't start from a completely empty form).
 
 
-##Design the form
+## Design the form
 
 The next screen you should see after selecting the empty or form template is the form designer
 
@@ -26,18 +26,18 @@ The next screen you should see after selecting the empty or form template is the
 
 There is already a page, a fieldset and a container available. The rest of the form has to be added using the UI(unless you started from a template then you already get some fields).
 
-###Setting the form name
+### Setting the form name
 First we'll need to provide a name for our new form, you can do that in the top input.
 
 ![Forms designer Set Name](FormDesignerFormName.png)
 
-###Setting the page caption
+### Setting the page caption
 
 The page title can be placed in edit mode by simply clicking it.
 
 ![Forms designer page captin](FormDesignerPageCaption.png)
 
-###Adding fields
+### Adding fields
 
 To add a new field hit the add field button (+)
 
@@ -83,21 +83,21 @@ It's also possible to provide additional settings, like making a field mandatory
 
 You can then repeat this step untill you end up with the form you desire.
 
-##Saving the form
+## Saving the form
 Once you are satisfied with the form you can save the design by hitting the save button in the toolbar
 
 ![Form save form](FormDesignerSave.png)
 
 
-##Adding the form to the Umbraco site
+## Adding the form to the Umbraco site
 
-###Select page
+### Select page
 
 Navigate to the content section and select the content page where you want to insert the form (this page should have an RTE field)
 
 ![Content page](ContentPage.png)
 
-###Add Form macro
+### Add Form macro
 
 Hit the add macro button in the toolbar
 

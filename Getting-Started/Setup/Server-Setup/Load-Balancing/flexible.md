@@ -181,6 +181,6 @@ Configuring your servers to work using a centrally located file system that is s
 Scaling will still be a slightly manual process because it would involve you adding servers/sites but with flexible load balancing you don't have to configure anything in Umbraco,
 you just need to point the site to the Umbraco database and update your load balancer to include the site.
 
-##Advanced techniques
+## Advanced techniques
 
 Once you are familiar with how flexible load balancing works, you might be interested in some [advanced techniques](flexible-advanced.md).

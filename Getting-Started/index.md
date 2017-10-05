@@ -1,4 +1,4 @@
-#Getting Started
+# Getting Started
 *All the basics of using Umbraco v7. From making a local installation to extending the backend.*
 
 <div class="row implementation">

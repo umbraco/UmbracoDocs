@@ -1,4 +1,4 @@
-#Macro Parameter Editors
+# Macro Parameter Editors
 
 Every macro can contain parameters. There are some useful default types.  For example: 
 

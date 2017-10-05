@@ -1,4 +1,4 @@
-#LocalizationService
+# LocalizationService
 
 **Applies to Umbraco 6.x and newer**
 
@@ -21,7 +21,7 @@ All samples in this document will require the following usings:
 
 **Please note that this page will be updated with samples and additional information about the methods listed below**
 
-##Getting the service
+## Getting the service
 The LocalizationService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the LocalizationService is available through a local `Services` property.
 
 	Services.LocalizationService
@@ -30,46 +30,46 @@ Getting the service through the `ApplicationContext`:
 
 	ApplicationContext.Current.Services.LocalizationService
 
-##Methods
+## Methods
 
-###Delete(IDictionaryItem dictionaryItem, [int userid = 0])
+### Delete(IDictionaryItem dictionaryItem, [int userid = 0])
 Deletes a `IDictionaryItem` object and its related translations as well as its children.
 
-###Delete(ILanguage language, [int userid = 0])
+### Delete(ILanguage language, [int userid = 0])
 Deletes a `ILanguage` by removing it and its usages from the db 
 
-###DictionaryItemExists(string key)
+### DictionaryItemExists(string key)
 Checks if a `IDictionaryItem` with given key exists
 
-###GetAllLanguages()
+### GetAllLanguages()
 Gets all available languages as an `IEnumerable<Core.Models.ILanguage>`
 
-###GetDictionaryItemById(int id)
+### GetDictionaryItemById(int id)
 Gets a `IDictionaryItem` by its id
 
-###GetDictionaryItemById(Guid id)
+### GetDictionaryItemById(Guid id)
 Gets a `IDictionaryItem` by its id
 
-###GetDictionaryItemByKey(string key)
+### GetDictionaryItemByKey(string key)
 Gets a `IDictionaryItem` by its key
 
-###GetDictionaryItemChildren(Guid parentId)
+### GetDictionaryItemChildren(Guid parentId)
 Gets a list of children as `IEnumerable<IDictionaryItem>` for parent `IDictionaryItem`
 
-###GetLanguageByCultureCode(string cultureName)
+### GetLanguageByCultureCode(string cultureName)
 Gets a `ILanguage` by its culture code  (Culture Name - also referred to as 'Friendly name')
 
-###GetLanguageById(int id)
+### GetLanguageById(int id)
 Gets a `ILanguage` by its id 
 
-###GetLanguageByIsoCode(string isoCode)
+### GetLanguageByIsoCode(string isoCode)
 Gets a `Language` by its ISO code (ISO code of the language, i.e. `en-US`)
 
-###GetRootDictionaryItems()
+### GetRootDictionaryItems()
 Gets the root/top `IDictionaryItem` objects as `IEnumerable<Core.Models.IDictionaryItem>`
 
-###Save(IDictionaryItem dictionaryItem, [int userid = 0])
+### Save(IDictionaryItem dictionaryItem, [int userid = 0])
 Saves a `IDictionaryItem` object
 
-###Save(ILanguage language, [int userid = 0])
+### Save(ILanguage language, [int userid = 0])
 Saves a `ILanguage` object

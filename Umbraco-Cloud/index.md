@@ -1,23 +1,23 @@
-#Umbraco Cloud documentation
+# Umbraco Cloud documentation
 
 Documentation for Umbraco Cloud. How to get started, how to set up your Umbraco Cloud project for development, how to successfully deploy, and how to troubleshoot issues.
 
-##[Getting Started](Getting-Started/)
+## [Getting Started](Getting-Started/)
 If you're new to Umbraco Cloud then start here. All about what Umbraco Cloud is and how you can use it to get your work done more efficiently - and have more fun.
 
-##[Set up a Project](Set-Up/)
+## [Set up a Project](Set-Up/)
 How to set up a project for development. Using just Umbraco Cloud, by cloning locally, and when working with a team.
 
-##[Deployment](Deployment/)
+## [Deployment](Deployment/)
 The deployment process explained with best practices and a little Git mixed in.
 
-##[Upgrades](Upgrades/)
+## [Upgrades](Upgrades/)
 An explanation of the Umbraco Cloud product upgrade process.
 
-##[Troubleshooting](Troubleshooting/)
+## [Troubleshooting](Troubleshooting/)
 Tips on identifying, finding and resolving issues.
 
-##Overview
+## Overview
 Umbraco Cloud is the best way to create and manage an Umbraco project. It includes 10-years of experience and best-practices in an intuitive, simple, but robust approach. For use by a single site creator or a team of professional web developers, Umbraco Cloud removes the barriers that slow down projects and get in the way of beautiful, functional sites.
 
 Umbraco Cloud is Umbraco, but it’s a whole lot more. Built on the Microsoft Azure cloud and encompassing web standard approaches, Umbraco Cloud is familiar to Umbraco users new and old. Umbraco Cloud makes it simple to get started and places no limits on what you can accomplish - literally anything you can do with Umbraco and web technology you can do with Umbraco Cloud.

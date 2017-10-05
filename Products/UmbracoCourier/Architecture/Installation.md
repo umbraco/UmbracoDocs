@@ -1,6 +1,6 @@
-#Installation
+# Installation
 
-##Installing Courier 2 using a package
+## Installing Courier 2 using a package
 
 1. Open the embrace repository from the developer section in Umbraco
 2. Browse to the Umbraco PRO category
@@ -10,7 +10,7 @@
 6. If you have bought a license, copy the .lic file to the website's /bin folder or use the dashboard to configure your license
 7. That's it
 
-##Updating Courier 2 to 2.x
+## Updating Courier 2 to 2.x
 If you already have Courier 2.0 installed, follow these steps to upgrade to 2.x:
 
 1. Backup your /config/courier.config file
@@ -26,7 +26,7 @@ If you already have Courier 2.0 installed, follow these steps to upgrade to 2.x:
 5. You're done
 
 
-##Manual installation
+## Manual installation
 If for some reason the package installation fails or due to permissions or other reasons is not an option on your system, we provide a manual installation process.
 
 To manually install, download the manual install package from umbraco.com or one of the hotfix releases from nightly.umbraco.org
@@ -40,12 +40,12 @@ Folders containing the application files for Courier 2
  * **/sql/uninstall folder**
 Contains the single uninstall sql script, which will remove custom courier table as well as the any courier app entries, it will not remove any files
 
-###Installing the files
+### Installing the files
 Simply unzip the /bin, /config and /umbraco folders to the root of your website, the archive follows the structure needed to place the files correctly. Notice: the archive assumes your Umbraco director is located at /umbraco. If not you will need to move those files manually to the right location.
 
 If you have purchased Umbraco Courier, you can download a license file on umbraco.com. This license file must be placed in the websites /bin directory to be registered.
 
-###Installing the database
+### Installing the database
 To install the database we need to execute a sql script against the database Umbraco is installed on. Courier  currently only supports SQL server 2005 and 2008.
 
 * Open Microsoft Sql Server Management Studio and connect to your database. 
@@ -56,5 +56,5 @@ To install the database we need to execute a sql script against the database Umb
 
 If any errors are displayed, check your permissions. The install script requires database owner access, as it creates new tables. 
 
-###Uninstalling the database
+### Uninstalling the database
 In case of error you can use the /sql/uninstall/uninstall.sql file to remove all courier tables. Follow the same procedure as the one describing "installing the database"

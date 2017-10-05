@@ -1,10 +1,10 @@
-#Resolvers
+# Resolvers
 
 **Applies to: Umbraco 4.10.0+**
 
 _A Resolver is an class that returns a plugin object or multiple plugin objects. There are 2 types of Resolvers: A single object resolver and a multiple object resolver._ 
 
-##Single object resolver
+## Single object resolver
 A resolver that returns a single object. The best way to explain this is by example:
 
 `IContentStore routesCache = ContentStoreResolver.Current.ContentStore;`
@@ -17,7 +17,7 @@ As an example, to set a different IContentStore, we would execute this code:
 
 **All single object resolvers return an object that will exist as a *singleton* and one instance will exist for the lifetime of the application.**
 
-##Multiple object resolver
+## Multiple object resolver
 
 A resolver that returns multiple objects of one type. Again, an example works best to explain:
 

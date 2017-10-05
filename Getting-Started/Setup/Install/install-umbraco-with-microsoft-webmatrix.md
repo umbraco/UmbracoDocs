@@ -1,8 +1,8 @@
-#Install Umbraco with Microsoft WebMatrix
+# Install Umbraco with Microsoft WebMatrix
 
 Follow these simple steps to be up and running with WebMatrix quickly and easily. The benefit of using WebMatrix is that it is super simple to get up and running.
 
-##Download and Launch WebMatrix 3
+## Download and Launch WebMatrix 3
 
 1. Go to [http://www.microsoft.com/web/webmatrix/](http://www.microsoft.com/web/webmatrix/) and download WebMatrix 3 for free.
 
@@ -79,5 +79,5 @@ This section continues from where we left off but covers the installation and co
 ### Note
 *You can log into your Umbraco site by entering the following into your browser: http://yoursite.com/umbraco/*
 
-###Post installation
+### Post installation
 One important recommendation is to always remove the `install` folder immediately after installing Umbraco and never to upload it to a live server.

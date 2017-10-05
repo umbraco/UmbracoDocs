@@ -1,4 +1,4 @@
-#Working with Umbraco Cloud and nodejs cli
+# Working with Umbraco Cloud and nodejs cli
 
 One of the features built into Umbraco Cloud, is the ability to work locally with your Umbraco site, without having a Windows machine with a local web server installed on it. This enables e.g. people using a Mac to be using their favorite editor to modify code in their Umbraco Cloud site. The functionality requires that your machine has the following three tools installed:
 
@@ -24,7 +24,7 @@ This will start the module; you'll be asked to type in your credentials, and a l
 
 Now it is time to open your favorite code editor. The idea is that you are now able to change all front end files locally. By default we are watching the `/css`, `/Views`, `/scripts` and `/images` folders, everything you are changing in these folders will be synced between your local files and the Umbraco Cloud site. A change to any of the files will also auto refresh your local browser, so you can see the change immediately. The files are also synced back onto Umbraco Cloud, meaning that the change is visible there as well.
 
-##Configuration
+## Configuration
 
 If you have other files you need to watch, the configuration file is located in
 the `/App_Data` folder as `uaas.json` - it defaults to something like this:
@@ -40,7 +40,7 @@ the `/App_Data` folder as `uaas.json` - it defaults to something like this:
 		"username": "youremail@domain.com"
 	}
 
-##Content Changes
+## Content Changes
 
 Changing content needs to be done through the development environment. Whenever you do change some content, we will notify your local running instance, and sync the content, meaning that your browser will get updated with this.
 

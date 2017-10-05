@@ -1,11 +1,11 @@
-#Health check
+# Health check
 
 The developer section of the Umbraco backoffice holds a dashboard named "Health Check". It is a handy list of checks to see if your Umbraco installation is configured according to best practices. It's possible to add your custom built health checks.  
 This feature has been available since Umbraco version 7.5.
 
 For inspiration when building your own checks you can look at the checks we've [built into Umbraco](https://github.com/umbraco/Umbraco-CMS/tree/dev-v7/src/Umbraco.Web/HealthCheck/Checks). Some examples will follow in this document.
 
-##Built-in checks
+## Built-in checks
 
 Umbraco comes with the following checks by default:
 
@@ -34,13 +34,13 @@ Each check returns a message indicating whether or not the issue in question has
 
 Some of them can also be rectified via the dashboard, simply be clicking the **Fix** button and in some cases providing some required information.  These changes usually involve writing to configuration files that will often trigger a restart of the website.  
 
-##Configuring and scheduling checks
+## Configuring and scheduling checks
 
 As well as viewing the results of health checks via the Developer section dashboard, you can set up the checks to be run on a schedule and be notified of the results by email, Slack and/or log files.  It's also possible to disable certain checks if they aren't applicable in your environment.
 
 For more on this see the [Reference > Config > Health checks page](/documentation/Reference/Config/Healthchecks/index.md).
 
-##Custom checks
+## Custom checks
 
 You can build your own health checks. There are two types of health checks you can build: **configuration checks** and **general checks**.
 
@@ -51,7 +51,7 @@ Each health check is a class that needs to have a `HealthCheck` attribute. This 
 * Description - describes what the check does in detail
 * Group - this is the category for the check if you use an existing group name (like "Configuration") the check will be added in that category, otherwise a new category will appear in the dashboard
 
-###Configuration checks
+### Configuration checks
 
 These are fairly simple, small checks that take an XPath query and confirm that the value that's expected is there. If the value is not correct, clicking the "Rectify" button will set the recommended value.
 
@@ -153,7 +153,7 @@ An example check:
          }
      }
 
-###General checks
+### General checks
 This can be anything you can think of, the results and the rectify action are completely under your control.
 
 * A general check needs to inherit from `Umbraco.Web.HealthCheck.HealthCheck`

@@ -1,4 +1,4 @@
-#HealthChecks.config
+# HealthChecks.config
 
 The `HealthChecks.config` file contains the configuration for the health checks, allowing you to disable certain checks when not applicable and to manage the notifications.
 

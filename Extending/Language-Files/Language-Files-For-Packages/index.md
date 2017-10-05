@@ -1,4 +1,4 @@
-#Language file for packages
+# Language file for packages
 **Applies to version 7.3.0 and newer**
 
 While the Umbraco Core ships with its own set of language files, package authors who wants their UI to be multi-lingual, will need to include their own set of language files as part of their package distribution.

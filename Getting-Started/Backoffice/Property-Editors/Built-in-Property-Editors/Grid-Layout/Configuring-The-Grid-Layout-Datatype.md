@@ -1,8 +1,8 @@
-#Configuring the Grid Layout data type
+# Configuring the Grid Layout data type
 A grid layout contains multiple configuration options to allow developers to tailor the grid to a very specific site design.
 Configuring the layout can be divided into 2 overall parts:
 
-##Layouts
+## Layouts
 A layout is the general grid "container", it contains one or more sections which content editors can use to insert pre-configured **rows**. There are 2 main usage scenarios of layouts:
 
 1. a single column layout which to the content editor will act like a full page canvas to insert elements on
@@ -14,7 +14,7 @@ You can however configure as many layouts and layout sections as you wish, each 
 
 ![Grid layouts](images/layouts.png)
 
-##Row configurations
+## Row configurations
 A row in the grid editor contains one or more cells, which divide the row into areas where editors can enter content. So a row is merely a container of areas to insert content into. When you add a new row, you are asked to give it a name, then define cells inside the row by clicking the "+" icon. Each cell has a default width set to 4, but by clicking the inserted cell you can control its width.
 
 It is possible to setup configurable attributes(class, rel, href) and inline styling on rows.

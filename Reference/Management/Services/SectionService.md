@@ -1,4 +1,4 @@
-#SectionService
+# SectionService
 
 **Applies to Umbraco 7.x and newer**
 
@@ -21,7 +21,7 @@ All samples in this document will require the following usings:
 
 **Please note that this page will be updated with samples and additional information about the methods listed below**
 
-##Getting the service
+## Getting the service
 The SectionService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the SectionService is available through a local `Services` property.
 
 	Services.SectionService
@@ -30,22 +30,22 @@ Getting the service through the `ApplicationContext`:
 
 	ApplicationContext.Current.Services.SectionService
 
-##Methods
+## Methods
 
-###.GetSections()
+### .GetSections()
 Gets all `Umbraco.Core.Models.Section` objects
 
-###.GetAllowedSections(int userId)
+### .GetAllowedSections(int userId)
 Gets all `Umbraco.Core.Models.Section` objects that the user with the specified ID is allowed to access
 
-###.GetByAlias(string appAlias)
+### .GetByAlias(string appAlias)
 Gets the `Umbraco.Core.Models.Section` object by its alias
 
-###.MakeNew(string name, string alias, string icon)
+### .MakeNew(string name, string alias, string icon)
 Persists a new `Umbraco.Core.Models.Section` object
 
-###.MakeNew(string name, string alias, string icon, int sortOrder)
+### .MakeNew(string name, string alias, string icon, int sortOrder)
 Persists a new `Umbraco.Core.Models.Section` object
 
-###.DeleteSection(Section section)
+### .DeleteSection(Section section)
 Deletes the specified `Umbraco.Core.Models.Section` object

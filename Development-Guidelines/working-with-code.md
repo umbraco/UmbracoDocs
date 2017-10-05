@@ -1,8 +1,8 @@
-#Working with the code
+# Working with the code
 
 _Guidelines for creating and updating code in the Umbraco core_
 
-##General Guidelines
+## General Guidelines
 
 * All new code goes in either *Umbraco.Core* or *Umbraco.Web*
 	* Depending on what type of code you are writing. If it has to do with the web, then of course it goes in Umbraco.Web. If you could use it in a console app or something like that, then it goes in Umbraco.Core
@@ -18,14 +18,14 @@ _Guidelines for creating and updating code in the Umbraco core_
 * When obsoleting old code be sure to remove references throughout the codebase to this obsolete code and update the codebase to use the new classes and methods
 * All new classes should be marked 'internal' until we decide we want to publicly expose the APIs.
 
-##Developing for the v7 AngularJs back office
+## Developing for the v7 AngularJs back office
 
 Describes how to work with the code for building the v7 back office UI
 
 * [Building v7 AngularJs backoffice project](building-angular-project.md)
 * [Test driven development flow](test-driven-flow.md)
 
-##Potential issues
+## Potential issues
 
 * You may come across some issues when developing new classes in *Umbraco.Core* because you may need objects that exist in other projects
 	* This is because *Umbraco.Core* doesn't reference any other projects (except for umbraco.interfaces) and it **never** should
