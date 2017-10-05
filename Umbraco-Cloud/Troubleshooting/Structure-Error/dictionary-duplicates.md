@@ -1,6 +1,34 @@
 # Troubleshooting duplicate dictionary items
 
-If your site has been using Courier in the past and you have dictionary items that have been deployed between your environments, you may see errors and/or duplicated dictionary items when your site is upgraded to using Umbraco Deploy.
+If your Umbraco Cloud project has been using Courier in the past (Umbraco version 7.5.14 or lower) and you have dictionary items that have been deployed between your environments, you may see errors and/or duplicated dictionary items when your site is upgraded to using Umbraco Deploy (Umbraco verion 7.6 or higher).
+
+The error will show up as an extraction error on your Umbraco Cloud environment with a red indicator.
+
+![Extraction error](images/extraction-error.png)
+
+The error message itself will look something like this:
+
+    Some artifacts collide on unique identifiers.
+    This means that they have different Udis, yet
+    they refer to the same unique Umbraco object
+    and therefore cannot be processed.
+    ---------------------------------------------
+    Collisions for entity type "dictionary-item": 
+        Collisions for unique identifier "Welcome":
+            Artifact: umb://dictionary-item/01aaeeed662645c8b348b2aa5ff83d6d
+            {DictionaryItem umb://dictionary-item/fe1cae45094b43fba0545bdc45d121ed}
+
+Or in other cases, like this:
+
+    Some artifacts collide on unique identifiers.
+    This means that they have different Udis, yet
+    they refer to the same unique Umbraco object
+    and therefore cannot be processed.
+    ---------------------------------------------
+    Collisions for entity type "dictionary-item": 
+        Collisions for unique identifier "Welcome":
+            UdaFile: ~/data/revision/dictionary-item__0cff5cd8fca24b9a80d29390dfb917af.uda
+            UdaFile: ~/data/revision/dictionary-item__1f1d9fe32e094e6c9b3c8871e123e34c.uda
 
 ## Cause
 
