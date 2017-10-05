@@ -10,7 +10,7 @@ This can find uses in many 'audit' cases when you would like to let others know 
 
 ## Configuration steps
 
-![Adding deployment webhook](images/DeploymentWebhook.gif)
+![Adding deployment webhook](images/DeployWebhook.gif)
 
 1. From the Umbraco Cloud Portal go to *Settings* -> *Manage Webhooks*
 2. Select the environment for which to register a webhook
