@@ -1,4 +1,4 @@
-# Troubleshooting duplicate dictionary items
+# Troubleshooting duplicate dictionary items 
 
 If your Umbraco Cloud project has been using Courier in the past (Umbraco version 7.5.14 or lower) and you have dictionary items that have been deployed between your environments, you may see errors and/or duplicated dictionary items when your site is upgraded to using Umbraco Deploy (Umbraco verion 7.6 or higher).
 
