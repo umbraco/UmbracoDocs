@@ -16,7 +16,7 @@ The issue will show up as an extraction error on your Umbraco Cloud environment 
 
 ![Extraction error](images/extraction-error.png)
 
-There are two types of duplicate dictionary item errors. The first scenario (*Scenario 1*) is where you have duplicate *UDA files* for each of your dictionary items. When this is the case, you should see an error message looking like this:
+There are two types of duplicate dictionary item errors. The first scenario (*Scenario 1*) is when you have duplicate *UDA files* for each of your dictionary items. When this is the case, you will see an error message like this:
 
     Some artifacts collide on unique identifiers.
     This means that they have different Udis, yet
@@ -28,7 +28,7 @@ There are two types of duplicate dictionary item errors. The first scenario (*Sc
             UdaFile: ~/data/revision/dictionary-item__0cff5cd8fca24b9a80d29390dfb917af.uda
             UdaFile: ~/data/revision/dictionary-item__1f1d9fe32e094e6c9b3c8871e123e34c.uda
 
-The second scenario (*Scenario 2*) is where you do not have duplicate files for your dictionary items. In this scenario you will have one UDA file for each of your dictionary items, but each of them are references with a different id in the database. In this scenario you will see an error message like this:
+The second scenario (*Scenario 2*) is when you do not have duplicate files for your dictionary items. In this scenario you will have one UDA file for each of your dictionary items, but each of them are references with a different id in the database. In this scenario you will see an error message like this:
 
     Some artifacts collide on unique identifiers.
     This means that they have different Udis, yet
