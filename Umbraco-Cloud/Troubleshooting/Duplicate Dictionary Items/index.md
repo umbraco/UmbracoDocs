@@ -69,3 +69,5 @@ Deploy will now again delete any existing duplicate entries and update the ID's 
 ## Important Notes
 
 What Deploy will **not** help you with, is duplicated items that do not have a corresponding UDA file. Since we do not know what to do with a dictionary item that we don't have a matching UDA file for - if we find duplicates with no UDA files, we will simply remove one of them to ensure there are no duplicate errors. For this item to be deployed, you will need to recreate a UDA file for it - this can be done simply by saving the item through the backoffice.
+
+Once you've cleaned up the dictionary items on your Umbraco Cloud environments, it is important that you clone down a fresh clone of your project locally to ensure you have all the correct / updated files on your local machine.
