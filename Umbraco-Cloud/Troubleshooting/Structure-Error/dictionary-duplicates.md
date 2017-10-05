@@ -6,19 +6,8 @@ The error will show up as an extraction error on your Umbraco Cloud environment 
 
 ![Extraction error](images/extraction-error.png)
 
+There are two types of duplicate dictionary item errors. The first scenario is where you have duplicate *UDA files* for each of your dictionary items. When this is the case, you should see an error message looking like this:
 The error message itself will look something like this:
-
-    Some artifacts collide on unique identifiers.
-    This means that they have different Udis, yet
-    they refer to the same unique Umbraco object
-    and therefore cannot be processed.
-    ---------------------------------------------
-    Collisions for entity type "dictionary-item": 
-        Collisions for unique identifier "Welcome":
-            Artifact: umb://dictionary-item/01aaeeed662645c8b348b2aa5ff83d6d
-            {DictionaryItem umb://dictionary-item/fe1cae45094b43fba0545bdc45d121ed}
-
-Or in other cases, like this:
 
     Some artifacts collide on unique identifiers.
     This means that they have different Udis, yet
@@ -30,9 +19,22 @@ Or in other cases, like this:
             UdaFile: ~/data/revision/dictionary-item__0cff5cd8fca24b9a80d29390dfb917af.uda
             UdaFile: ~/data/revision/dictionary-item__1f1d9fe32e094e6c9b3c8871e123e34c.uda
 
+The second scenario is where you do not have duplicate files for your dictionary items. In this scenario you will have one UDA file for each of your dictionary items, but each of them are references with a different id in the database. In this scenario you will see an error message like this:
+
+    Some artifacts collide on unique identifiers.
+    This means that they have different Udis, yet
+    they refer to the same unique Umbraco object
+    and therefore cannot be processed.
+    ---------------------------------------------
+    Collisions for entity type "dictionary-item": 
+        Collisions for unique identifier "Welcome":
+            Artifact: umb://dictionary-item/01aaeeed662645c8b348b2aa5ff83d6d
+            {DictionaryItem umb://dictionary-item/fe1cae45094b43fba0545bdc45d121ed}
+
+
 ## Cause
 
-Due to how Umbraco Courier has been handling dictionary items in the past, old sites having used Courier to transfer these - are currently very likely to see errors when trying to use Deploy with these items.
+Due to how Umbraco Courier has been handling dictionary items in the past, old sites having used Courier to transfer these - are currently very likely to see errors when trying to use Umbraco Deploy with these items.
 
 Courier handled dictionary items only using their `ItemKey` (alias) and did not take into account that dictionary items also carried a unique identifier. Since this unique identifier was not known or handled by Courier - it would not be carried over to other environments when these dictionary items were deployed. As Courier never cared about or used this unique identifier - everything seemed to be in order most of the time.
 
