@@ -101,8 +101,8 @@ Queries the XML Cache for Content matching a given xpath query and returns a col
 Queries the XML Cache for Content matching a given Xpath query, returns first match as an `IPublished` object.
 
     @{
-        var newsArticles = Umbraco.TypedContentAtXPath("//newsArticle");
-        var bd = newsArticles.First().GetPropertyValue("bodyText")
+        var newsArticle = Umbraco.TypedContentSingleAtXPath("//newsArticle");
+        var bd = newsArticle.GetPropertyValue("bodyText")
     }
 
 
