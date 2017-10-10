@@ -18,7 +18,8 @@ When the push is complete go check out the Umbraco Cloud Portal to verify the in
 1. With all your metadata in place, it's time to transfer your content and media as well
 2. Go to the backoffice of your local clone of the Umbraco Cloud project
 3. Right-click the top of the Content tree and choose *'Queue for transfer'*
-    * **NOTE**: If you have a very large amount of content and media you may have the best result in deploying content and media independently
+    * **NOTE**: If you have a large amount of content and media you may have the best result in deploying content and media independently
+    * **Media**: If you have more than "a few" media items see our recommendations for working with [media in Umbraco Cloud](../../Set-up/Media/)
 
 ![Queue for transfer](images/transfer.gif)
 

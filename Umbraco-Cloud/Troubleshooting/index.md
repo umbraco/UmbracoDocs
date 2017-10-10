@@ -14,6 +14,7 @@ Please refer to these two topics for troubleshooting Content deployments (this i
 Please refer to this topic for troubleshooting structure deploys and restores:
 
  - [Errors during structure deployment/restore](Structure-Error/)
+ - [Errors related to duplicate dictionary items](Duplicate-Dictionary-Items/)
 
 ## Automated Minor upgrades
   
