@@ -42,7 +42,7 @@ In this error message you are able to see exactly which schema mismatches is pre
 
 1. Make a minor change to the schema with mismatches (in the example above it would be the **Homepage** document type), commit and push the change to the Cloud environment
     * This will update your schema on the target environment (the Cloud environment) and ensure it's in sync with the source environment
-2. If the mismatches are differences to `aliases` or `names`, changing these manually on the source environment will enable you to transfer your content
+2. If the mismatches are differences to `aliases` or `names`, changing these manually on the target environment will enable you to transfer your content
 
 ## Debugging (Courier)
 
