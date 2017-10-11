@@ -25,6 +25,7 @@ In this error message you are able to see exactly which schema mismatches is pre
 1. On the source environment (Development or Staging) make a minor change to the schema with mismatches (in the example above it would be the **Homepage** document type). Deploy the change to the next environment
     * This will update your schema on the target environment (Staging or Live) and ensure it's in sync with the source environment
 2. If the mismatches are differences to `aliases` or `names`, changing these manually on the target environment will enable you to transfer your content
+    * Do **not** make any major schema changes or create new schema on the Staging or Live environments. There is no way to sync these changes down to your *lower* environments
 
 ## Debugging (Courier)
 
