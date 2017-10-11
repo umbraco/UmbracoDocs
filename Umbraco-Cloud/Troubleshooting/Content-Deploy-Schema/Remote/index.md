@@ -1,5 +1,5 @@
-#Troubleshooting Content deployments on Umbraco Cloud
-##When working on Umbraco Cloud
+# Troubleshooting Content deployments on Umbraco Cloud
+## When working on Umbraco Cloud
 
 If the schema (this includes DocumentTypes, MediaTypes, DataTypes, Templates, Macros and Dictionary items) is different between the two environments you are deploying between, you will need to deploy the updates for these before you can complete the Content deployment (this can contain Media from the Media section as well). Environments needs to be in-sync before a Content and/or Media deployment can succeed.
 
@@ -9,7 +9,9 @@ Now that the schema changes are in sync between your Project's environments you 
 
 If you continue to see conflicts between the schema parts that were deployed then please refer to the Debugging section below.
 
-##Debugging
+## Debugging (Courier)
+
+*This debugging section is mainly for Umbraco Cloud projects using Courier. Documentation for Deploy will come soon.*
 
 If you continue to see conflicts between the schema parts (being DocumentTypes, DataTypes, Templates, etc.) that was just deployed you need to dive into the log files to debug exactly what the problem is.
 
