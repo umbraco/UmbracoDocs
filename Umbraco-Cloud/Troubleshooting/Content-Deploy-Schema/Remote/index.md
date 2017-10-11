@@ -29,7 +29,7 @@ In this error message you are able to see exactly which schema mismatches is pre
 
 ## Debugging (Courier)
 
-*This debugging section is mainly for Umbraco Cloud projects using Courier. Documentation for Deploy will come soon.*
+*If your project is using Courier, please see the documentation below for debugging schema mismatch errors.*
 
 If you continue to see conflicts between the schema parts (being DocumentTypes, DataTypes, Templates, etc.) that was just deployed you need to dive into the log files to debug exactly what the problem is.
 
