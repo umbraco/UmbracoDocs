@@ -2,10 +2,10 @@
 
 ##When working locally
 
-If the schema (this includes DocumentTypes, MediaTypes, DataTypes, Templates, Macros and Dictionary items) is different between your local environment and the remote Development environment you are deploying to - you cannot start a Content deployment. You will need to deploy these schema updates to ensure that the environments are in-sync before continuing to deployment Content (this can contain media from the media section as well).
+If the schema (this includes DocumentTypes, MediaTypes, DataTypes, Templates, Macros and Dictionary items) is different between your local environment and the remote Cloud environment you are deploying to - you cannot start a Content transfer. You will need to deploy these schema updates to ensure that the environments are in-sync before continuing to transfer your content/media (this can contain media from the media section as well).
 
-While Content deployments are done using the Umbraco backoffice you need to commit the changes to files within the /data/Revision folder in order to sync the remote Development environment. The files in this folder represent the serialized version of the schema (DocumentTypes, DataTypes, etc...), and are deployed through the git repository.
-If you use a git tool like SourceTree, SmartGit or Git Extensions you should be able to see if there are any pending changes to files within /data/Revision and commit these. Once committed you need to push the committed changes to the remote Development environment (push to the origin master). If the remote has newer commits you need to pull these down and merge with your local changes, and then finally push the changes. Some git tools shows the output from the remote while others don’t.
+While Content transfers are done using the Umbraco backoffice, you need to commit the changes to files within the /data/Revision folder in order to sync the remote Cloud environment. The files in this folder represent the serialized version of the schema (DocumentTypes, DataTypes, etc...), and are deployed through the git repository.
+If you use a git tool like GitKraken, SourceTree or Git Extensions you should be able to see if there are any pending changes to files within /data/Revision and commit these. Once committed you need to push the committed changes to the remote Development environment (push to the origin master). If the remote has newer commits you need to pull these down and merge with your local changes, and then finally push the changes. Some git tools shows the output from the remote while others don’t.
 If you don't have any git tools installed you can use git bash and the following commands:
 
     # Navigate to the Revision folder
@@ -28,7 +28,7 @@ If you had to pull down new commits before you could push your changes, then the
 
 `/…mysite/data> echo > deploy` 
 
-Now that the schema changes are in sync between your local site and the remote Development environment you should be able to deploy your Content changes through the Umbraco backoffice. Go to the Deployment dashboard in the Content section and reload the queue if it’s not shown. In some cases the queue might have been reset during the previous deployment, so if it remains empty please go back and select the Content and/or Media that you want to deploy.
+Now that the schema changes are in sync between your local site and the remote Cloud environment you should be able to transfer your Content changes through the Umbraco backoffice. Go to the Deployment dashboard in the Content section and reload the queue if it’s not shown. In some cases the queue might have been reset during the previous deployment, so if it remains empty please go back and select the Content and/or Media that you want to transfer.
 
 If you continue to see conflicts between the schema parts that were deployed then please refer to the Debugging section below.
 
