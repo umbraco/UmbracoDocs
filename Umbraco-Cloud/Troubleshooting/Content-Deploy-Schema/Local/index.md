@@ -34,7 +34,7 @@ If you continue to see conflicts between the schema parts that were deployed the
 
 ## Debugging (Courier)
 
-*This debugging section is relevant for Umbraco Cloud projects using Courier. Documentation for Deploy will come soon.*
+*This debugging section is mainly for Umbraco Cloud projects using Courier. Documentation for Deploy will come soon.*
 
 If you continue to see conflicts between the schema parts (being DocumentTypes, DataTypes, Templates, etc.) that was just deployed you need to dive into the log files to debug exactly what the problem is.
 
