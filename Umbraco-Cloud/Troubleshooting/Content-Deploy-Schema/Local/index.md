@@ -1,6 +1,6 @@
-#Troubleshooting Content deployments on Umbraco as a Servivce
+# Troubleshooting Content deployments on Umbraco as a Servivce
 
-##When working locally
+## When working locally
 
 If the schema (this includes DocumentTypes, MediaTypes, DataTypes, Templates, Macros and Dictionary items) is different between your local environment and the remote Cloud environment you are deploying to - you cannot start a Content transfer. You will need to deploy these schema updates to ensure that the environments are in-sync before continuing to transfer your content/media (this can contain media from the media section as well).
 
@@ -32,7 +32,9 @@ Now that the schema changes are in sync between your local site and the remote C
 
 If you continue to see conflicts between the schema parts that were deployed then please refer to the Debugging section below.
 
-##Debugging
+## Debugging (Courier)
+
+*This debugging section is mainly for Umbraco Cloud projects using Courier. Documentation for Deploy will come soon.*
 
 If you continue to see conflicts between the schema parts (being DocumentTypes, DataTypes, Templates, etc.) that was just deployed you need to dive into the log files to debug exactly what the problem is.
 
