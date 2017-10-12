@@ -31,13 +31,32 @@ Delimits dashboard information to apply to one or more sections. The Dashboard.c
 ## Areas
 
 Defines to which sections of the Umbraco UI to apply the subset of dashboard information.
-area - Always lowercase!
 
 The name* of the Umbraco UI Section where you want your user control to be displayed (e.g. content, media, developer, settings, members or a custom section name). You can add your controls to more than one section by adding multiple <area> nodes.
 
 The area with the name 'default' is the first dashboard shown when a user login, no matter which sections the user has access to!
 
-**A little gotcha**, make sure you include the name of your app in lowercase! 
+When adding a dashboard page to a custom application section, the area name MUST match exactly with the area name as defined in your application. For example, if your application is defined as follows:
+
+	[Application("TestSection", "Test", "icon-car", 15)]
+	public class TestSection : IApplication {}
+
+you MUST have the area defined under your section as shown in the following example:
+
+	<section alias="TestSection">
+		<areas>
+			<area>
+				Test
+			</area>
+		</areas>
+		<tab caption="Search">
+			<control>
+				~/App_Plugins/Test/backoffice/test.html
+			</control>
+		</tab>
+	</section>
+
+Please note that the section alias does not seem to matter, but for clarity it may be helpful to match it with your Application alias.
 
 ## Tab
 
