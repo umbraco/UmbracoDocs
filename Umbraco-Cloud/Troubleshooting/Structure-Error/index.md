@@ -37,6 +37,7 @@ In order to fix this problem you will have to decide which Document Type is "the
 Follow these simple steps to get your project back on track:
 
 1. Clone down the affected environment - if all environments are affected, you only need to clone down the Development environment
+    * You do not need to run the project locally. Cloning down is simply to add the file deletions to Git
 2. Compare the colliding `.uda` files to determine which file contains the most correct data - Use a file comparison tool like *DiffMerge* or *WinMerge* for this
 3. Delete the `.uda` file(s) you believe to be the wrong one(s)
     * If you are unsure which file is the correct one, take a backup of the `/data/revision` folder so you can always restore the files you've deleted
@@ -45,7 +46,7 @@ Follow these simple steps to get your project back on track:
 
 ### Additional notes
 
-Sometimes you might need to run another extraction on your Cloud environment after deploying in order to get a `deploy-complete` marker in your `/data/revision` folder and turn your environment *green*.
+Sometimes you might need to run another extraction on your Cloud environment after deploying in order to get a `deploy-complete` marker in your `/data/revision` folder and turn your environment *green*. To do this, follow these steps:
 
 1. Access **Kudu** on the affected environment
 2. Use the CMD console (found under the 'Debug console' menu) to navigate to your `site/wwwroot/data/` folder
@@ -77,13 +78,11 @@ Sometimes it's hard to determine by eye which one of your document types is "cor
 
 The courier files in `~/data/Revision/` are usually named after the unique Id of the thing you're trying to find, so in the case of content types you could use the file name (without the `.courier`) extension to find the corresponding type in the database. So if the filename is `efc3208b-efc6-44f8-928c-12c03ccf4700.courier` you might query the database like so:
 
-```
-SELECT Alias, Name, UniqueID
-  FROM cmsPropertyType
-  WHERE contentTypeId IN 
-	(SELECT umbracoNode.id FROM umbracoNode WHERE uniqueID = 'efc3208b-efc6-44f8-928c-12c03ccf4700')
-  ORDER BY Alias
-```
+    SELECT Alias, Name, UniqueID
+      FROM cmsPropertyType
+      WHERE contentTypeId IN 
+      (SELECT umbracoNode.id FROM umbracoNode WHERE uniqueID = 'efc3208b-efc6-44f8-928c-12c03ccf4700')
+      ORDER BY Alias
 
 This will give you the properties available on this content type in this environment and you can compare the properties to the ones in your log file to see if the environment you're perfoming the SQL query in is correct according to what you want the content type to be.
 
