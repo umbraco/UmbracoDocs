@@ -4,7 +4,7 @@
 
 > ***NOTE:** The following troubleshooting is for Umbraco Cloud projects using Courier.*
 > 
-> *Documentation for how to troubleshoot these type of issues when you project is using Deploy is underway.*
+> *Documentation for how to troubleshoot these type of issues when your project is using Deploy is underway.*
 
 On some occassions it's possible that you'll encounter an "Error in Courier files containing site structure". This usually means that two Courier files are created for the same content type.  
 
