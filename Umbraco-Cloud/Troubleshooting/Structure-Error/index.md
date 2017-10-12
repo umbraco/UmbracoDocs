@@ -30,20 +30,32 @@ If you have two or more Cloud environments, we recommend that you never create s
 ### Fixing
 
 In order to fix this problem you will have to decide which Document Type is "the most correct" one. The error message will give you a lot of details you can use in your investigation:
-  1. The affected content type (Document Type, Datatype, Member type, etc.)
-  2. The `unique identifier` (alias)
-  3. A list of the files containing the same `unique identifier`
+  * The affected content type (Document Type, Datatype, Member type, etc.)
+  * The `unique identifier` (alias)
+  * A list of the files containing the same `unique identifier`
 
-There are different ways you can go about figuring out which file is "the most correct" one
+Follow these simple steps to get your project back on track:
 
-  * Compare the colliding `.uda` files to determine which file contains the correct data - Use a file comparison tool like *DiffMerge* or *WinMerge* for this
-  * Compare 
+1. Clone down the affected environment - if all environments are affected, you only need to clone down the Development environment
+2. Compare the colliding `.uda` files to determine which file contains the most correct data - Use a file comparison tool like *DiffMerge* or *WinMerge* for this
+3. Delete the `.uda` file(s) you believe to be the wrong one(s)
+    * If you are unsure which file is the correct one, take a backup of the `/data/revision` folder so you can always restore the files you've deleted
+4. Use Git to commit and push the deletion to your Cloud environment
+5. If you have more than one Cloud environment affected by the collision issue, be sure to deploy the deletion all the way up to the Live environment
+
+### Additional notes
+
+Sometimes you might need to run another extraction on your Cloud environment after deploying in order to get a `deploy-complete` marker in your `/data/revision` folder and turn your environment *green*.
+
+1. Access **Kudu** on the affected environment
+2. Use the CMD console (found under the 'Debug console' menu) to navigate to your `site/wwwroot/data/` folder
+3. In the console, type the following command: `echo > deploy`
+4. When the extracion is done, you should see a `deploy-complete` marker, which means the extraction error was succesful
+
 
 ## Error in Courier files containing site structure (Courier)
 
 > ***NOTE:** The following troubleshooting is for Umbraco Cloud projects using Courier.*
-> 
-> *Documentation for how to troubleshoot these type of issues when your project is using Deploy is underway.*
 
 On some occassions it's possible that you'll encounter an "Error in Courier files containing site structure". This usually means that two Courier files are created for the same content type.  
 
