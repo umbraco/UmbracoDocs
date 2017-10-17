@@ -310,6 +310,11 @@ Truncates a string to a given length, can add a ellipsis at the end (...). Metho
 
     Umbraco.Truncate("I wish I was a tweet, at least then I get 140 chars", 10, true)
 
+###.TruncateByWords(string html, int words, bool addEllipsis)
+Truncates a string to a given amount of words, can add a elipsis at the end (...). Method checks for open html tags, and makes sure to close them
+
+    Umbraco.TruncateByWords("I wish I was a tweet, at least then I get 140 chars", 10, true)
+
 ###.RenderMacro(string alias, object parameters)
 Renders a macro in the current page content, given the macros alias, and parameters required by the macro.
 
