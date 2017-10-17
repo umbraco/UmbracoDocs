@@ -2,7 +2,7 @@
 
 ## Error in files containing site structure
 
-On some occassions it's possible that you'll encounter collision errors on your Umbraco Cloud environments. This means that two `.uda` files are created for the same content type. `.uda` files contains schema for each of your content types (e.g Document Types, Templates, Macros, Dictionary Items, Datatypes).
+On some occassions it's possible that you'll encounter collision errors on your Umbraco Cloud environments. This means that two `.uda` files are created for the same entity type. `.uda` files contains schema for each of your entity types (e.g Document Types, Templates, Macros, Dictionary Items, Datatypes).
 
 Example:
 
@@ -30,7 +30,7 @@ If you have two or more Cloud environments, we recommend that you never create s
 ### Fixing
 
 In order to fix this problem you will have to decide which Document Type is "the most correct" one. The error message will give you a lot of details you can use in your investigation:
-  * The affected content type (Document Type, Datatype, Member type, etc.)
+  * The affected entity type (Document Type, Datatype, Member type, etc.)
   * The `unique identifier` (alias)
   * A list of the files containing the same `unique identifier`
 
@@ -58,7 +58,7 @@ Sometimes you might need to run another extraction on your Cloud environment aft
 
 > ***NOTE:** The following troubleshooting is for Umbraco Cloud projects using Courier.*
 
-On some occassions it's possible that you'll encounter an "Error in Courier files containing site structure". This usually means that two Courier files are created for the same content type.  
+On some occassions it's possible that you'll encounter an "Error in Courier files containing site structure". This usually means that two Courier files are created for the same entity type.  
 
 For example: there are two files in the `~/data/Revision/documenttypes` folder which contain the same alias for a document type, let's say `home`. Each file has a different file name but the document type they refer to is both `home`. When Courier tries to create the site structure from those files it is expecting each file to try to create a document type with a unique alias.
 
@@ -70,7 +70,7 @@ The main cause of this problem is when a document type (or media type or member 
 
 ### Fixing
 
-In order to fix this conflict you will have to decide which document type is "the most correct" one. For some help with that the list of all properties in each Courier file will be logged in your `~/App_Data/Logs/CourierTraceLog.txt` file when you see the `Error in Courier files containing site structure` error. This might help you determine: the `home` document type with the extra 3 properties that I added today is the one that I want to have in all of my environments. You can then remove the non-relevant content type from git and deploy your changes to the next environment. This should clear up the error and allow you to move on. The log file will list the file names for each conflicting file. 
+In order to fix this conflict you will have to decide which document type is "the most correct" one. For some help with that the list of all properties in each Courier file will be logged in your `~/App_Data/Logs/CourierTraceLog.txt` file when you see the `Error in Courier files containing site structure` error. This might help you determine: the `home` document type with the extra 3 properties that I added today is the one that I want to have in all of my environments. You can then remove the non-relevant entity type from git and deploy your changes to the next environment. This should clear up the error and allow you to move on. The log file will list the file names for each conflicting file. 
 
 ### Troubleshooting using SQL queries
 
