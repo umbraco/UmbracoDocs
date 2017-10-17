@@ -23,7 +23,7 @@ In the case above, there are two files who share the same alias which leads to a
 
 ### Cause
 
-The main cause of this problem is when a Document Type (or Media Type, Datatype, etc) is manually created in two environments using the same name (and thus alias). 
+The main cause of this problem is when a Document Type (or Media Type, Datatype, etc) is manually created in two environments using the same alias. 
 
 If you have two or more Cloud environments, we recommend that you never create schema or make schema changes directly on the Live or Staging environments. You should work with schema only on your Development environment or even better, your local clone of the project.
 
@@ -66,7 +66,7 @@ If two files share that same alias this leads to a conflict, it's impossible for
 
 ### Cause
 
-The main cause of this problem is when a document type (or media type or member type) gets manually created on two environments using the same name (and thus alias). If you're new to Umbraco Cloud, for example, and have been using Umbraco for a while, it might actually be surprising that Umbraco takes care of syncing a document type between environments. You might have decided to create the same document type manually in each environment because that's what you're used to doing. 
+The main cause of this problem is when a document type (or media type or member type) gets manually created on two environments using the same alias. If you're new to Umbraco Cloud, for example, and have been using Umbraco for a while, it might actually be surprising that Umbraco takes care of syncing a document type between environments. You might have decided to create the same document type manually in each environment because that's what you're used to doing. 
 
 ### Fixing
 
