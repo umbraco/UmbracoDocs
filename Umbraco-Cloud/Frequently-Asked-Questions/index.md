@@ -1,6 +1,8 @@
-# Testing
+# Frequently asked questions
 
-## Are we allowed to perform penetration tests on our Umbraco Cloud site?
+## Testing
+
+### Are we allowed to perform penetration tests on our Umbraco Cloud site?
 
 Yes, we're happy for people to do penetration testing on the sites they have built on Cloud. We do ask you to please tell us about these tests beforehand so our support staff knows to look out for possible strange things happening on your site.
 
@@ -8,19 +10,19 @@ We are also happy to receive any test results you receive, so that we can improv
 
 Please contact us using the chat button at the bottom right corner of the [Umbraco Cloud portal](https://www.s1.umbraco.io/). 
 
-## Are we allowed to do (D)DOS testing on our Umbraco Cloud site?
+### Are we allowed to do (D)DOS testing on our Umbraco Cloud site?
 
 It is strictly forbidden to attempt to do a denial of service attack on your Cloud sites.
 
-## Are we allowed to do load testing on our Umbraco Cloud site?
+### Are we allowed to do load testing on our Umbraco Cloud site?
 
 We would like to talk to you beforehand about your test plan for a load test on your Cloud site.
 
 Please contact us using the chat button at the bottom right corner of the [Umbraco Cloud portal](https://www.s1.umbraco.io/). 
 
-# Security and encryption
+## Security and encryption
 
-## Does Umbraco Cloud support Let's Encrypt certificates?
+### Does Umbraco Cloud support Let's Encrypt certificates?
 
 Yes, any certificate that can be converted into a `pfx` file is supported on  Cloud.
 
@@ -28,15 +30,15 @@ However, we currently don't have an automated way to generate a Let's Encrypt ce
 
 Since it is easy to forget this, we recommend you use certificate monitoring tools on your site to remind you to do this.
 
-## Does Umbraco Cloud support http/2?
+### Does Umbraco Cloud support http/2?
 
 The lowest version of IIS to support http/2 is version 10, which runs only on Windows Server 2016. Currently our infrastructure is limited to Windows Server 2012 R2 instances and as such we do not support http/2 directly.
 
 As a workaround, you could consider setting up a product like CloudFlare, which offers free support for http/2 (they call it "Opportunistic Encryption") out of the box.
 
-# Building and deploying
+## Building and deploying
 
-## Umbraco Cloud creates a SQL CE / LocalDb database for me, can I use a shared SQL Server for my development team instead?
+### Umbraco Cloud creates a SQL CE / LocalDb database for me, can I use a shared SQL Server for my development team instead?
 
 No, you should not use a shared database for your team. Umbraco Cloud is made so that each team member can safely make any changes they need and then send them to your development environment on Cloud. Another developer can do the same and also send their changes to dev to test. Once you're happy with all of the changes, each developer can pull down the changes from development and continue working on the next change.
 
@@ -45,9 +47,9 @@ Not only does this promote working in small increments it also prevents two prob
  1. If you share a database between multiple developers, [Umbraco's flexible load balancing](https://our.umbraco.org/Documentation/Getting-Started/Setup/Server-Setup/Load-Balancing/flexible) automatically kicks in. Without a proper load balancing setup this means that often you will not see changes another team member has made, potentially overwriting their changes with your own changes.
  2. Our deployment engine (Umbraco Deploy) is not made for this and your local site will quickly get out of sync with changes both developers are making. Once you push your changes up to your Cloud instance you can expect to see errors and mismatches because changes have not been saved correctly.
 
-# Package support
+## Package support
 
-## Do you support package "x" on Umbraco Cloud?
+### Do you support package "x" on Umbraco Cloud?
 
 We have an indicator on each package in [the projects section of Our Umbraco](https://our.umbraco.org/projects/) which either says "Works on Umbraco Cloud" or "Untested or doesn't work on Umbraco Cloud".
 
@@ -57,7 +59,7 @@ If the indicator says "Untested or doesn't work on Umbraco Cloud" then we have n
 
 We're happy to hear from and work with package developers to make their packages Cloud compatible where possible. Make sure to reach out to us using the chat button at the bottom right corner of the [Umbraco Cloud portal](https://www.s1.umbraco.io/). 
 
-## How do I make my package support Umbraco Cloud?
+### How do I make my package support Umbraco Cloud?
 
 The biggest problem concerning Cloud support is when a package stored references to nodes, media items, or members in Umbraco.
 
