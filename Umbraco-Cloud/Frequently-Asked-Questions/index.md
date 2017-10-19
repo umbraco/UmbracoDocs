@@ -45,10 +45,6 @@ Not only does this promote working in small increments it also prevents two prob
  1. If you share a database between multiple developers, [Umbraco's flexible load balancing](https://our.umbraco.org/Documentation/Getting-Started/Setup/Server-Setup/Load-Balancing/flexible) automatically kicks in. Without a proper load balancing setup this means that often you will not see changes another team member has made, potentially overwriting their changes with your own changes.
  2. Our deployment engine (Umbraco Deploy) is not made for this and your local site will quickly get out of sync with changes both developers are making. Once you push your changes up to your Cloud instance you can expect to see errors and mismatches because changes have not been saved correctly.
 
-## Can we use tools like uSiteBuilder, uSync or other tools that help replicating database/content changes in multiple Umbraco environments.
-
-Umbraco Cloud ships with a tool called Umbraco Deploy, which makes sure that your database changes 
-
 # Package support
 
 ## Do you support package "x" on Umbraco Cloud?
