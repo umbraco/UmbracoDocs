@@ -1,5 +1,84 @@
 # Frequently asked questions
 
+## General
+
+### Can I try before I pay?
+
+Yes, your first project on Umbraco Cloud comes with a free 14 day trial period.
+
+### Is it a special version of Umbraco that’s used?
+
+No. It's the same as the latest version of Umbraco that you can download.
+
+### Can I run my high traffic site on Umbraco Cloud?
+
+Currently we have benchmarked a "well built" site with approximately 50,000 unique visitors per day (~1.5mm per month) that performs very well.
+
+### Can my site auto-scale or use dedicated worker resources?
+
+Not currently, but something we’re investigating as a future feature.
+
+### Can I setup a load balanced Umbraco Cloud site?
+
+Not currently.
+
+### Can I move my site away from Umbraco Cloud?
+
+Of course. Umbraco Cloud uses the very same Umbraco version that you can download and use on your own. So if you decide that Umbraco Cloud isn’t right for you or your sites then you can clone your site, restore your data locally, and delete your Umbraco Cloud project. We’ll be sad to see you go, but we understand there is a huge variety in requirements so we support and encourage you to choose the best solution for your specific site needs.
+
+### Can I move my existing site to Umbraco Cloud?
+
+Umbraco Cloud is best when used as the base for a new project. There is a specific way of working with Umbraco and Umbraco Cloud in order to take full-advantage of the service. That’s not to say you can’t migrate an existing site, only that some changes may be required in order for your site to fully work with Umbraco Cloud. For more information [read our guide to moving an existing site](https://our.umbraco.org/documentation/Umbraco-Cloud/Deployment/Migrate-Existing-Site/).
+
+## Technology
+
+### On what kind of server environment does my Cloud site run?
+
+All of our infrastructure is based on Windows Azure virtual machines.
+
+Currently all webservers run on Windows Server 2012 R2. Each Cloud site runs on a standard IIS version 8.5 instance. 
+
+All databases always run on the latest version of SQL Azure Server.
+
+### Can I choose which Azure Region my projects run in?
+
+No. All services currently run in the Azure West Europe region.
+
+### How many resources do I have available for my website?
+
+Each site runs in an isolated environment next to other websites on the same server, which is a shared environment. This means that we don't have exact details about the amount of resources you site can used, this is managed automatically by our infrastructure.
+
+We do have some limitations:
+
+- If your Cloud site is using over 90% CPU for more than 10 minutes, the priority for your CPU usage will be throttled down for each time you consecutively use more than 90% CPU per 10 minutes
+- Memory usages is limited to 2048 MB per Cloud site and when that limit is reached, your website will be restarted automatically to make sure sites with memory leaks don't take up all of the available memory on the server
+- There's a limitation of 20 domain names that you can point to 
+one Umbraco Cloud site - make sure to contact us if you need more than that
+
+In our experience there is only a few Cloud sites that have experienced these limitations and we're happy to work with people who have sites affected by these limitations.
+
+## Upgrades
+
+### When does Umbraco get upgraded in the various projects?
+
+We upgrade when we're very confident the release is solid.
+
+### How do Automated Upgrades work?
+
+We automatically upgrade to the latest patch version of Umbraco CMS (such as 7.4.x). For minor version upgrades, you’ll get a button in the interface to decide if you want to move to that version (such as 7.5.0) when it is released. When we make a new patch version, we first run it through our test suite, then test it on 10 test-sites (which are copies of "real" customer sites that we’ve been given permission to use). When all that passes, we roll out the upgrade in batches of 100 to customer accounts.
+
+[Read more about upgrades](https://our.umbraco.org/documentation/Umbraco-Cloud/Upgrades/)
+
+### Does leaving pending commits (dev to live) derail the upgrade process?
+
+Pending commits won't stop the auto-upgrade.
+
+### Is it OK to do manual updates? For example if a project on 7.4.3 is updated locally to 7.4.4, can we commit back to dev?
+
+Yes, that’s fine. In some cases you may want to upgrade sooner than the scheduled service upgrade or you may have a site we couldn't upgrade automatically for one reason or another.
+
+Do note, however that you will need to step through the upgrade installer manually on each environment, including live. Our automated upgrader makes sure that visitors to your live site will not be prompted to log in to the upgrade installer.
+
 ## Testing
 
 ### Are we allowed to perform penetration tests on our Umbraco Cloud site?
@@ -47,6 +126,28 @@ Not only does this promote working in small increments it also prevents two prob
  1. If you share a database between multiple developers, [Umbraco's flexible load balancing](https://our.umbraco.org/Documentation/Getting-Started/Setup/Server-Setup/Load-Balancing/flexible) automatically kicks in. Without a proper load balancing setup this means that often you will not see changes another team member has made, potentially overwriting their changes with your own changes.
  2. Our deployment engine (Umbraco Deploy) is not made for this and your local site will quickly get out of sync with changes both developers are making. Once you push your changes up to your Cloud instance you can expect to see errors and mismatches because changes have not been saved correctly.
 
+### Can I use custom .NET code?
+
+Yes, you can make your Umbraco implementations just as you're used to, including custom .NET assemblies.
+
+Umbraco Cloud sites run on IIS 8.5 so most things you can normally do on IIS, you can do on Umbraco Cloud. We don't, however, offer support for custom components that have to be installed on the server itself. If you can ship it in the bin folder, it should generally work on Cloud.
+
+If you have any experience with Azure Web Apps, Cloud works in the same way. So if you can make it run on Azure Web Apps, you can make it run on Umbraco Cloud.
+
+### Is it possible to add my own custom DLL’s for extending the Umbraco Backoffice?
+
+Yes, an Umbraco Cloud project is basically a normal Umbraco website where we give you multiple environments and easy deployment of code and content between these environments. It's really easy to get the site running locally (via git) which is the best way to add your own code (templates, cs files, packages, dll's and so forth).
+
+### Is it possible to add custom tables in addition to the Umbraco Cloud database?
+
+Yes, you can create custom tables in the database. Simply navigate to the connection strings to the databases on the different environments under the menu item connection details in the settings menu.
+
+Note that custom database tables and data do not replicate automatically accross Cloud environments. You might want to use Umbraco Migrations and our PetaPoco datalayer to make deployment of your custom data more automated.
+
+### I would love to use Websockets on my site, is this possible?
+
+Yes it is! Websockets are enabled on all sites.
+
 ## Package support
 
 ### Do you support package "x" on Umbraco Cloud?
@@ -73,3 +174,10 @@ These problems can be solved with so-called Umbraco Deploy connectors. We've set
 The code in the contrib project has plenty of code comments to help you understand what is going on and how you can build something like that for your own package.
 
 If you need help with this, don't hesitate to reach out to us and we'll be happy to give you some tips.
+
+## Backups and data retention
+
+### What backup and restore options are available on Umbraco Cloud?
+
+Database backups are not available as downloads by default, but a copy can be downloaded using a simple Powershell script (Umbraco Cloud support can provide you with instructions). By default 14 days point in time restore is available. Restore is dependent on your needs, requirements and database size and will be handled on a case by case basis. Contact Umbraco Cloud support through the portal to discuss your requirements. 
+
