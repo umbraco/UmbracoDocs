@@ -1,6 +1,9 @@
 #Working with MVC in Umbraco
 
-_How to work with MVC templates in Umbraco_ 
+_How to work with MVC templates in Umbraco_
+
+## [Models](Modelsbuilder/)
+The Umbraco modelsbuilder automatically generates models based on types (I.e. document types).
 
 ##[Views](views.md)
 Working with MVC Views and Razor syntax in Umbraco
