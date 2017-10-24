@@ -48,7 +48,7 @@ Indicates that a property implements a property type with a given alias. The att
 
 This will cause the property to _not_ be generated, since you already implement it.
 
-## Rename content type
+## Rename Content Type
 
 Indicates a different class name for a content type. The attribute is an assembly attribute. Use when alias and class name do not match.
 
@@ -56,7 +56,7 @@ Indicates a different class name for a content type. The attribute is an assembl
 
 This will cause the content type class to be generated, with the class name "ClassName" instead of "Alias".
 
-## Rename property type
+## Rename Property Type
 
 Indicates a different property name for a property type. The attribute must decorate the corresponding content type class. Use when alias and property name do not match.
 
@@ -73,14 +73,14 @@ Indicates the base class for all models. By default the base class is `Published
     [assembly:ModelsBaseClass(typeof (MyOwnBaseClass))]
 
 
-## Models namespace
+## Models Namespace
 
 Indicates the namespace for all models. Overrides every other namespace that might have been configured. The attribute is an assembly attribute.
 
     [assembly:ModelsNamespace("MyProject.ContentModels")]
 
 
-## Models using
+## Models Using
 
 Indicates extra `using` statements to be inserted in model files. The models generator already inserts some common `using` statements, plus tries to be clever, but it is not always enough. The attribute is an assembly attribute.
 
