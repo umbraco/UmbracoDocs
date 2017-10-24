@@ -1,12 +1,12 @@
-Models are generated as partial classes. In its most basic form (some code being omitted for simplicity's sake), a model for content type `MyDocument` ends up in file `MyDocument.generated.cs` and looks like:
+Models are generated as partial classes. In its most basic form (some code being omitted for simplicity's sake), a model for content type `TextPage` ends up in file `TextPage.generated.cs` and looks like:
 
-    [PublishedContentModel("myDocument")]
-    public partial class MyDocument : PublishedContentModel
+    [PublishedContentModel("textPage")]
+    public partial class TextPage : PublishedContentModel
     {
-      public new const string ModelTypeAlias = "myDocument";
+      public new const string ModelTypeAlias = "textPage";
       public new const PublishedItemType ModelItemType = PublishedItemType.Content;
       
-      public MyDocument(IPublishedContent content)
+      public TextPage(IPublishedContent content)
         : base(content)
       { }
 
@@ -20,32 +20,32 @@ Models are generated as partial classes. In its most basic form (some code being
         return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
       }
 
-      [ImplementPropertyType("myProperty")]
-      public int MyProperty { get { return this.GetPropertyValue<int>("myProperty"); } }
+      [ImplementPropertyType("header")]
+      public string Header { get { return this.GetPropertyValue<string>("header"); } }
     }
 
-What is really important is the `MyProperty` property. The rest is (a) a constructor and (b) some static helpers to get the `PublishedContentType` and the `PublishedPropertyType` objects:
+What is really important is the `Header` property. The rest is (a) a constructor and (b) some static helpers to get the `PublishedContentType` and the `PublishedPropertyType` objects:
 
-    var contentType = MyDocument.GetModelContentType(); // is a PublishedContentType
-    var propertyType = MyDocument.GetModelPropertyType(x => x.MyProperty); // is a PublishedPropertyType
+    var contentType = TextPage.GetModelContentType(); // is a PublishedContentType
+    var propertyType = TextPage.GetModelPropertyType(x => x.Header); // is a PublishedPropertyType
 
 ### Composition and Inheritance
 
 Content type _composition_ consists in having content types "inherit" properties from other content types. Contrary to C#, where a class can only inherit from one other class, Umbraco content types can be composed of several other content types.
 
-The `MyDocument` content type could be composed of the `MetaInfo` content type (and thus inherit properties `Author` and `Keywords`) and of the `PageInfo` content type (and thus inherit properties `Title` and `MainImage`).
+The `TextPage` content type could be composed of the `MetaInfo` content type (and thus inherit properties `Author` and `Keywords`) and of the `PageInfo` content type (and thus inherit properties `Title` and `MainImage`).
 
 Each content type that is involved in a composition is generated both as a class and as an interface, and so the `MetaInfo` content type would be generated as (some code removed for simplicity's sake):
 
 
-    // the composition interface
+    // The composition interface
     public partial interface IMetaInfo : IPublishedContent
     {
       public string Author { get; }
       public IEnumerable<string> Keywords { get; }
     }
 
-    // the composition class
+    // The composition class
     public partial class MetaInfo : PublishedContentModel
     {
       // the "static mixin getter" for the property
@@ -57,9 +57,9 @@ Each content type that is involved in a composition is generated both as a class
       public string Author { get { return MetaInfo.GetAuthor(this); } }
     }
 
-And the `MyDocument` model would be generated as (again, some code removed):
+And the `TextPage` model would be generated as (again, some code removed):
 
-    public partial class MyDocument : PublishedContentModel, IMetaInfo
+    public partial class TextPage : PublishedContentModel, IMetaInfo
     {
       // get the property value from the "static mixin getter"
       public string Author { get { return MetaInfo.GetAuthor(this); } }
@@ -67,22 +67,22 @@ And the `MyDocument` model would be generated as (again, some code removed):
 
 A content type _parent_ is a tree-related concept: In the Umbraco backoffice, a content type appears underneath its parent, if any. By convention, a content type is always **composed of its parent** and therefore inherits its properties. However, the parent content type is treated differently, and the child content type _directly inherits_ (as in C# inheritance) from the parent class.
 
-Therefore, assuming that the `MySubDocument` content type is a direct child of `MyDocument`, it would be generated as:
+Therefore, assuming that the `AboutPage` content type is a direct child of `TextPage`, it would be generated as:
 
 
-    // note: inherits from MyDocument
-    public partial class MySubDocument : MyDocument
+    // Note: Inherits from TextPage
+    public partial class AboutPage : TextPage
     {
       ...
     }
 
 ### Extending
 
-Because a model is generated as a partial class, it is possible to extend it, e.g. adding a property, by dropping the following code in a `MyDocument.cs` file:
+Because a model is generated as a partial class, it is possible to extend it, e.g. adding a property, by dropping the following code in a `TextPage.cs` file:
 
-    public partial class MyDocument
+    public partial class TextPage
     {
-      public int TenTimesMyProperty { get { return MyProperty * 10; } }
+      public string WrappedHeader { get { return "[" + Header + "]"; } }
     }
 
 In modes where models are built within the site (Dll, PureLive) any `*.cs` file in the `~/App_Data/Models` directory that is _not_ a `*.generated.cs` file, is preserved and compiled alongside the models. If models are built outside the site, e.g. in Visual Studio, just remember to include the files in the compilation.
@@ -126,17 +126,18 @@ And to simplify the view as:
 #### Bad
 
 Because, by default, the content object is passed to views, one can be tempted to add view-related properties to the model. Some properties that do _not_ belong to a _content_ model would be (these are actual ideas that have been discussed by ModelsBuilder users):
+
 * A `HomePage` property that would walk up the tree and return the "home page" content item
 * A `Menu` property that would list the content items to display in a top menu
 * etc.
 
 Generally speaking, anything that is tied to the current request, or that depends on more than just the modeled content, is a bad idea. There are much cleaner solutions, such as using true _view model_ classes that would be populated by a true controller and look like:
 
-    public class MyDocumentViewModel
+    public class TextPageViewModel
     {
-      public MyDocument Content; // the content model
-      public HomePage HomePage; // the home page content model
-      public IEnumerable<MenuItem> Menu; // the menu content models
+      public TextPage Content; // The content model
+      public HomePage HomePage; // The home page content model
+      public IEnumerable<MenuItem> Menu; // The menu content models
     }
 
 One can also extend Umbraco's views to provide a special view helper that would give access to important elements of the website, so that views could contain code such as:
@@ -147,11 +148,11 @@ One can also extend Umbraco's views to provide a special view helper that would 
 
 The scope and life-cycle of a model is _not specified_. In other words, you don't know whether the model exists only for you and for the context of the current request, or if it is cached by Umbraco and shared by all requests. Even though _as of version 7.4_ Umbraco creates distinct models for each request, this will not always be true.
 
-As a consequence, the following code has a major issue: the `MyDocument` model "caches" an instance of the `HomePageDocument` model that will never be updated if the home page is re-published.
+As a consequence, the following code has a major issue: the `TextPage` model "caches" an instance of the `HomePageDocument` model that will never be updated if the home page is re-published.
 
-    public partial class MyDocument
+    public partial class TextPage
     {
-      public MyDocument(IPublishedContent content)
+      public TextPage(IPublishedContent content)
         : base(content)
       {
         HomePage = content.AncestorOrSelf(1) as HomePageDocument;
