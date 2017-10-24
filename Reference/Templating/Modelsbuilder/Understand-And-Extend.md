@@ -1,4 +1,4 @@
-Models are generated as partial classes. In its most basic form (some code being ommitted for simplicity's sake), a model for content type `MyDocument` ends up in file `MyDocument.generated.cs` and looks like:
+Models are generated as partial classes. In its most basic form (some code being omitted for simplicity's sake), a model for content type `MyDocument` ends up in file `MyDocument.generated.cs` and looks like:
 
     [PublishedContentModel("myDocument")]
     public partial class MyDocument : PublishedContentModel
@@ -24,8 +24,7 @@ Models are generated as partial classes. In its most basic form (some code being
       public int MyProperty { get { return this.GetPropertyValue<int>("myProperty"); } }
     }
 
-What is really important is the `MyProperty` property. The rest is (a) a constructor and (b) some static helpers to get the `PublishedContentType` and the `PublishedPropertyType` objects: 
-
+What is really important is the `MyProperty` property. The rest is (a) a constructor and (b) some static helpers to get the `PublishedContentType` and the `PublishedPropertyType` objects:
 
     var contentType = MyDocument.GetModelContentType(); // is a PublishedContentType
     var propertyType = MyDocument.GetModelPropertyType(x => x.MyProperty); // is a PublishedPropertyType
@@ -66,7 +65,7 @@ And the `MyDocument` model would be generated as (again, some code removed):
       public string Author { get { return MetaInfo.GetAuthor(this); } }
     }
 
-A content type _parent_ is a tree-related concept: in the Umbraco backend, a content type appears underneath its parent, if any. By convention, a content type is always **composed of its parent** and therefore inherits its properties. However, the parent content type is treated differently, and the child content type _directly inherits_ (as in, C# inheritance) from the parent class.
+A content type _parent_ is a tree-related concept: In the Umbraco backoffice, a content type appears underneath its parent, if any. By convention, a content type is always **composed of its parent** and therefore inherits its properties. However, the parent content type is treated differently, and the child content type _directly inherits_ (as in C# inheritance) from the parent class.
 
 Therefore, assuming that the `MySubDocument` content type is a direct child of `MyDocument`, it would be generated as:
 
@@ -79,20 +78,20 @@ Therefore, assuming that the `MySubDocument` content type is a direct child of `
 
 ### Extending
 
-Because a model is generated as a partial class, it is possible to extend it, eg adding a property, by dropping the following code in a `MyDocument.cs` file:
+Because a model is generated as a partial class, it is possible to extend it, e.g. adding a property, by dropping the following code in a `MyDocument.cs` file:
 
     public partial class MyDocument
     {
       public int TenTimesMyProperty { get { return MyProperty * 10; } }
     }
 
-In modes where models are built within the site (Dll, PureLive) any `*.cs` file in the `~/App_Data/Models` directory that is _not_ a `*.generated.cs` file is preserved and compiled alongside the models. If models are built outside the site, eg in Visual Studio, just remember to include the files in the compilation.
+In modes where models are built within the site (Dll, PureLive) any `*.cs` file in the `~/App_Data/Models` directory that is _not_ a `*.generated.cs` file, is preserved and compiled alongside the models. If models are built outside the site, e.g. in Visual Studio, just remember to include the files in the compilation.
 
 If the custom partial class provides a **constructor** that has the same signature as the generated one, it will be detected and no constructor will be generated (as that would be redundant and would not compile).
 
 If the custom partial class **inherits** from a base class, it will be detected and the generated model will _not_ inherit from anything (as that would be redundant and would not compile). The base class _must_ inherit (directly or indirectly) from `PublishedContentModel` in order for the model to be valid, though.
 
-If the custom partial class **implements** a generated property, it will _not_ be detected and will cause a compilation error. The Models Builder needs to be explicitly notified about the situation: see [[Control Models Generation|Control-Generation]].
+If the custom partial class **implements** a generated property, it will _not_ be detected and will cause a compilation error. The ModelsBuilder needs to be explicitly notified about the situation: See [Control Models Generation](Control-Generation.md).
 
 If the custom partial class **implements** a static mixin getter (see above), it will be detected and the generated model will _not_ implement the getter (as that would be redundant and would not compile).
 
@@ -102,7 +101,7 @@ Extending models should be used to add stateless, local features to models, and 
 
 #### Good
 
-A customer had "posts" that had two "release date" properties. One was a true date picker property and was used to specify an actual date and to order posts. The other was a string and was used to specify dates such as "Summer 2015" or "Q1 2016". Alongside the title of the post, the customer wanted to display the text-date, if any, else the actual-date, if any, else the Umbraco update date. Of course, each view can contain code to deal with the situation, but it is much more efficient to extend the `Post` model:
+A customer has "posts" that has two "release date" properties. One is a true date picker property and is used to specify an actual date and to order the posts. The other is a string that's used to specify dates such as "Summer 2015" or "Q1 2016". Alongside the title of the post, the customer wants to display the text date, if present, else the actual date, if any. If none of those are present, the Umbraco update date should be used. Of course, each view can contain code to deal with the situation, but it is much more efficient to extend the `Post` model:
 
     public partial class Post
     {
@@ -126,7 +125,7 @@ And to simplify the view as:
 
 #### Bad
 
-Because, by default, the content object is passed to views, one can be tempted to add view-related properties to the model. Some properties that do _not_ belong to a _content_ model would be (these are actual ideas that have been discussed by Models Builder users):
+Because, by default, the content object is passed to views, one can be tempted to add view-related properties to the model. Some properties that do _not_ belong to a _content_ model would be (these are actual ideas that have been discussed by ModelsBuilder users):
 * A `HomePage` property that would walk up the tree and return the "home page" content item
 * A `Menu` property that would list the content items to display in a top menu
 * etc.
@@ -140,8 +139,7 @@ Generally speaking, anything that is tied to the current request, or that depend
       public IEnumerable<MenuItem> Menu; // the menu content models
     }
 
-One can also extend Umbraco's views to provide a special view helper that would give access to important elements of the website, so that views could contain code such as: 
-
+One can also extend Umbraco's views to provide a special view helper that would give access to important elements of the website, so that views could contain code such as:
 
     <a href="@MySite.HomePage.Url">@MySite.HomePage.Title</a>
 
@@ -162,4 +160,4 @@ As a consequence, the following code has a major issue: the `MyDocument` model "
       public HomePageDocument HomePage { get; private set; }
     }
 
-As a rule of thumb, models should never reference and cache other models.
+As a rule of thumb, models should never, *ever* reference and cache other models.
