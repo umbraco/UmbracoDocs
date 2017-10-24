@@ -4,7 +4,7 @@ This page covers specific upgrade documentation for specific versions
 ##Version 4 to Version 6
 Upgrading to Version 6 of Umbraco Forms, has a higher minimum dependancy on Umbraco CMS core of `7.6.0` & higher. The reasoning behind this is due to some underlying changes to ensure Forms works with Umbraco Cloud & Deploy.
 
-With Umbraco you have many options to upgrade Umbraco Forms, you can install the Umbraco package via the community package searach from our.umbraco.org or downloading directly from our.umbraco.org, alternatively you can download a regular ZIP containing the updated files which you can unzip & apply over the top of your existing install. Both of these approaches should not cause any upgrade problems.
+With Umbraco you have many options to upgrade Umbraco Forms, you can install the Umbraco package via the community package search from our.umbraco.org or downloading directly from our.umbraco.org, alternatively you can download a regular ZIP containing the updated files which you can unzip & apply over the top of your existing install. Both of these approaches should not cause any upgrade problems.
 
 ###Upgrading with Nuget
 Using Nuget to perform an Upgrade of Umbraco Forms to the next major version, you will run into a problem where the legacy MacroPartial view file will be removed from the site & thus cause any existing Umbraco Forms rendered on the site to stop functioning.
