@@ -4,25 +4,23 @@ Umbraco.ModelsBuilder is a tool that can generate a complete set of strongly-typ
 
 For each content (media, and member) type in the Umbraco setup, the generator creates a *.generated.cs file, corresponding the content type, and looking like:
 
-```
-namespace MyModels
-{
-  public partial class NewsItem : PublishedContentModel
-  {
-    public string Title { get { return this.GetPropertyValue<string>("title"); } }
-    public IHtmlString BodyText { get { return this.GetPropertyValue<IHtmlString>("bodyText"); } }
-  }
-}
-```
+
+      namespace MyModels
+      {
+        public partial class NewsItem : PublishedContentModel
+        {
+          public string Title { get { return this.GetPropertyValue<string>("title"); } }
+          public IHtmlString BodyText { get { return this.GetPropertyValue<IHtmlString>("bodyText"); } }
+        }
+      }
+
 
 Umbraco's content cache returns these objects _natively_: no need to map, convert, anything, the following code just runs:
 
-```
-@inherits UmbracoViewPage<NewsItem>
-@using MyModels
-<h1>@Model.Title</h1>
-@Model.BodyText
-```
+      @inherits UmbracoViewPage<NewsItem>
+      @using MyModels
+      <h1>@Model.Title</h1>
+      @Model.BodyText
 
 **Note**: if your view inherits from `UmbracoViewPage<NewsItem>` then the model is the content item itself and the syntax is `@Model.Title`. If, on the other hand, you view inherits from `UmbracoTemplatePage<NewsItem>` then the model is a `RenderModel` instance and the syntax is `@Model.Content.Title`.
 
