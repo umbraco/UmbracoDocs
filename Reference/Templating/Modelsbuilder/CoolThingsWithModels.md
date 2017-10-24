@@ -2,7 +2,7 @@
 
 ## Declarative style in Razor
 
-One cool thing that XSLT has is the **apply-templates** and **match="..."** that lets you declare how to handle various types of content. So you tell XSLT how to render some types of content, and then you just ask XSLT to "render that content" and it will figure it out. Much nicer that ugly huge **switch(...)** or **if-else** statements.
+One cool thing that XSLT has is the **apply-templates** and **match="..."** that lets you declare how to handle various types of content. So you tell XSLT how to render some types of content, and then you just ask XSLT to "render that content" and it will figure it out. Much nicer than ugly huge **switch(...)** or **if-else** statements.
 
 Turns out it is possible to have something similar in Razor. Assuming `content` is an `IPublishedContent` instance that can be of any content type (but is strongly typed, and is not a dynamic):
 

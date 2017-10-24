@@ -1,8 +1,8 @@
 # Control Models Generation
 
-Generation of models can be controlled through various C# attributes in the custom files (ie `*.cs`files that are not `*.generated.cs`files) in the models directory.
+Generation of models can be controlled through various C# attributes in the custom files (i.e. `*.cs` files that are not `*.generated.cs` files) in the models directory.
 
-**Note**: this section is probably slightly confusing - because some attribute behaviors are not precisely specified. Not always sure what happens with compositions etc. There is a current work-in-progress to refactor the attributes so that they make more sense.
+**Note**: This section is probably slightly confusing - because some attribute behaviors are not precisely specified. Not always sure what happens with compositions etc. There is a current work-in-progress to refactor the attributes so that they make more sense.
 
 ## Ignore Content Type
 
@@ -12,7 +12,7 @@ Indicates that a content type with a given alias should be ignored and not gener
 
 This will cause the content type class to _not_ be generated.
 
-**Note**: must document what happens when it is a parent content type, or when it is part of a composition.
+**Note**: Must document what happens when it is a parent content type, or when it is part of a composition.
 
 ## Ignore Property Type
 
@@ -34,7 +34,7 @@ Indicates that a class implements a content type with a given alias. The attribu
 
 This will cause the content type class to _not_ be generated, since you already implement it.
 
-**Note**: not sure of this. Maybe it's only renaming the generated class.
+**Note**: Not sure of this. Maybe it's only renaming the generated class.
 
 ## Implement Property Type
 
@@ -82,7 +82,7 @@ Indicates the namespace for all models. Overrides every other namespace that mig
 
 ## Models using
 
-Indicates extra "using" statements to be inserted in model files. The models generator already inserts some common "using" statements, plus tries to be clever, but it is not always enough. The attribute is an assembly attribute.
+Indicates extra `using` statements to be inserted in model files. The models generator already inserts some common `using` statements, plus tries to be clever, but it is not always enough. The attribute is an assembly attribute.
 
     [assembly:ModelsUsing("MyOtherProject.Some.Other.Thing")]
 
