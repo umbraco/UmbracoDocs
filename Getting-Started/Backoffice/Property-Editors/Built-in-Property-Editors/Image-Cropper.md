@@ -65,7 +65,7 @@ In Umbraco v7.3.5 a UrlHelper Extension method was introduced to replace the IPu
     <img src="@CurrentPage.GetCropUrl("image", "banner")" />
 
     //or from specific node:
-    <img src="@Umbraco.Content(1234).GetCropUrl("image", "banner")" />
+    <img src="@Umbraco.Media(1234).GetCropUrl("image", "banner")" />
 
 ### MVC View Example to output create custom crops - in this case forcing a 300 x 400 px image
 

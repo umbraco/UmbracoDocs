@@ -288,6 +288,7 @@ Putting this together:
                 console.log(logEntries);
                 vm.LogEntries = logEntries;
             });
+       });
  
 Finally update our view to use the additional retrieved entity information:
 
