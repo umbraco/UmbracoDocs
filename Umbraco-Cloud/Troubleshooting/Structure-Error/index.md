@@ -29,7 +29,7 @@ If you have two or more Cloud environments, we recommend that you never create s
 
 ### Fixing
 
-In order to fix this problem you will have to decide which Document Type is "the most correct" one. The error message will give you a lot of details you can use in your investigation:
+In order to fix this problem you will have to decide which Document Type is the correct one. The error message will give you a lot of details you can use in your investigation:
   * The affected entity type (Document Type, Datatype, Member type, etc.)
   * The `unique identifier` (alias)
   * A list of the files containing the same `unique identifier`
