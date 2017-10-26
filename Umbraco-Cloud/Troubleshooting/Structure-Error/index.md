@@ -36,7 +36,7 @@ In order to fix this problem you will have to decide which of the two colliding 
 
 ![Before extraction error](images/visualization1.png)
 
-Let’s image that we have a project with two Umbraco Cloud environments (Development and Live) and a local environment. A Document Type has been created on Live and a Document Type with the same alias has also been created on Development. 
+Let’s imagine that we have a project with two Umbraco Cloud environments (Development and Live) and a local environment. A Document Type has been created on Live and a Document Type with the same unique identifier has also been created on Development. 
 
 Up until now this project has been working fine, since no deployments has been made from Development to Live, since the Document Type was created on Development.
 
@@ -44,30 +44,30 @@ It’s now time to deploy the newest changes to the Live environment. Since a Do
 
 ![After extraction error](images/visualization2.png)
 
-On a deployment between Umbraco Cloud environments, all the `.uda` files in the `/data/revision` folder will get synced. This means that both the Development and the Live environments have two `.uda` files for the Document Type – the only thing that’s different between the two files are the GUID, since they were created in different environments.
+On a deployment between Umbraco Cloud environments, all the `.uda` files in the `/data/revision` folder will get synced. For this project this means that both the Development and the Live environments will have two `.uda` files for the Document Type – the only thing that’s different between the two files are the GUID, since they were created in different environments.
 
 **NOTE**: This is when you will see an extraction error like the one showed in the beginning of this article.
 
-The next step, is to decide which of these Document Types is the correct one. For this project, it’s decided that the Document Type created on the Live environment (DocType 2) is the correct one.
+The next step, is to decide which of these Document Types is the correct one. For this project, it’s decided that the Document Type created on the Live environment (DocType 1 and document-type__1.uda) is the correct one.
 
 ![Finding correct uda file](images/visualization3.png)
 
 In order to figure out which of the two colliding `.uda` files is the file for the Document Type created on the Live environment follow these steps:
 
-1.	Access **Kudu** for the Live environment
+1.	Access **Kudu** for the Live environment / the environment where the correct Document Type is
 2.	Remove both colliding `.uda` files from the `/data/revision` folder in both `/repository` and `/wwwroot`
 3.	In `/wwwroot/data` run this command: `echo > deploy-export` 
 4.	This will generate a `.uda` file for the Document Type, and this will be the correct one
 5.	Run `echo > deploy` in the same folder, to make sure everything is extracting correctly
 
-You now know which `.uda` file you want, and it’s time to get your environments in sync.
+You now know which `.uda` file you want, and it’s time to get the rest of your environments in sync.
 
 ![Finding correct uda file](images/visualization4.png)
 
 We strongly recommend that you resolve this locally since this will ensure that the changes you make are added to your Git history.
 
 1.	Clone down the Development environment – or simply do a pull via Git if you already have a local clone
-2.	Run the project locally and  verify that you get the same extraction error as on your Cloud environments (HINT: look for a `deploy-failed` marker in your local `/data/revision` folder)
+2.	Run the project locally and verify that you get the same extraction error as on your Cloud environments (HINT: look for a `deploy-failed` marker in your local `/data/revision` folder)
 3.	Access the local backoffice
 4.	Delete the Document Type from the backoffice
     * If you’ve pulled down a fresh clone of the Development environment, you will need to remove the wrong `.uda` file from the `/data/revision` folder, since you will not be able to see the Document Type in the backoffice because the extraction failed.
@@ -81,7 +81,7 @@ We strongly recommend that you resolve this locally since this will ensure that 
 
 When the push from local to the Development environment has completed, refresh the Umbraco Cloud portal and you will see that the Development environment is now green, which means that the extraction error has been resolved.
 
-The final step is to deploy the changes from Development to Live to ensure all your environments are in sync once again.
+The final step is to deploy the changes from Development to the rest of your environments, to ensure everything is completely in sync.
 
 ### Additional notes
 
