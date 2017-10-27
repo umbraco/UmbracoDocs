@@ -1,24 +1,26 @@
 # Install and configure Umbraco ModelsBuilder
 
 ## Install
-In order for the models builder to be used in a website, the Umbraco.ModelsBuilder NuGet package needs to be installed. From Umbraco 7.4+ the models builder is bundled with the main Umbraco distribution.
+
+In order for the ModelsBuilder to be used in a website, the [Umbraco.ModelsBuilder NuGet package](https://www.nuget.org/packages/Umbraco.ModelsBuilder/) needs to be installed. From Umbraco 7.4+ the ModelsBuilder is bundled with the main Umbraco distribution.
 
 ## Configure
-Then, the following application settings (in the `appSettings` section of the `web.config` file) control what the models builder actually does:
 
-* `Umbraco.ModelsBuilder.Enable` can be `true` or `false` (default) and acts as a giant kill-switch: when false, the models builder behaves as if it were not installed at all, and all other settings are ignored.
+Then, the following application settings (in the `appSettings` section of the `Web.config` file) control what the ModelsBuilder actually does:
 
-* `Umbraco.ModelsBuilder.ModelsMode` determines how the models builder generates models. Valid values are:
-    * `Nothing` (default): do not generate models
-    * `PureLive`: generate models in a dynamic in-memory assembly
-    * `Dll`: generate models in a Dll in `~/bin` (causes an application restart) whenever the user "clicks the button"
-    * `LiveDll`: generate models in a Dll in `~/bin` (causes an application restart) anytime a content type changes
-    * `AppData`: generate models in `~/App_Data/Models` (but do not compile them) whenever the user "clicks the button"
-    * `LiveAppData`: generate models in `~/App_Data/Models` (but do not compile them) anytime a content type changes
+* `Umbraco.ModelsBuilder.Enable` can be `true` or `false` (default) and acts as a giant kill-switch: When `false`, the ModelsBuilder behaves as if it were not installed at all, and all other settings are ignored.
 
-* `Umbraco.ModelsBuilder.EnableFactory` can be `true` (default) or `false` and determines whether the models builder registers the built-in `IPublishedContentFactory`. When false, models could be generated, but would *not* be used by Umbraco.
+* `Umbraco.ModelsBuilder.ModelsMode` determines how the ModelsBuilder generates models. Valid values are:
+    * `Nothing` (default): Do not generate models
+    * `PureLive`: Generate models in a dynamic in-memory assembly
+    * `Dll`: Generate models in a Dll in `~/bin` (causes an application restart) whenever the user "clicks the button"
+    * `LiveDll`: Generate models in a Dll in `~/bin` (causes an application restart) anytime a content type changes
+    * `AppData`: Generate models in `~/App_Data/Models` (but do not compile them) whenever the user "clicks the button"
+    * `LiveAppData`: Generate models in `~/App_Data/Models` (but do not compile them) anytime a content type changes
 
-* `Umbraco.ModelsBuilder.ModelsNamespace` (string, default is `Umbraco.Web.PublishedContentModels`) specifies the generated models namespace.
+* `Umbraco.ModelsBuilder.EnableFactory` can be `true` (default) or `false` and determines whether the ModelsBuilder registers the built-in `IPublishedContentFactory`. When `false`, models could be generated, but would *not* be used by Umbraco.
+
+* `Umbraco.ModelsBuilder.ModelsNamespace` (string, default is `Umbraco.Web.PublishedContentModels`) specifies the generated models' namespace.
 
 * `Umbraco.ModelsBuilder.LanguageVersion` (string, default is `CSharp5`) indicates the C# language version which is used when compiling the models in [`Live`]`Dll`. Can be set to `CSharp6` or `Experimental` to try the new C# features.
 
@@ -30,22 +32,23 @@ Then, the following application settings (in the `appSettings` section of the `w
 
 * `Umbraco.ModelsBuilder.ModelsDirectory` (string, default is `~/App_Data/Models`) indicates where to generate models and manage all files. Has to be a virtual directory (starting with `~/`) below the website root (see also: `AcceptUnsafeModelsDirectory`).
 
-* `Umbraco.ModelsBuilder.AcceptUnsafeModelsDirectory` (bool, default is false) indicates that the directory indicated in `ModelsDirectory` is allowed to be outside the website root (eg `~/../../some/place`). Because that can be a potential security risk, it is not allowed by default.
+* `Umbraco.ModelsBuilder.AcceptUnsafeModelsDirectory` (bool, default is `false`) indicates that the directory indicated in `ModelsDirectory` is allowed to be outside the website root (e.g. `~/../../some/place`). Because that can be a potential security risk, it is not allowed by default.
 
 * `Umbraco.ModelsBuilder.DebugLevel` (int, default is zero) indicates the debug level. For internal / development use. Set to greater than zero to enable detailed logging.
 
-## Models Builder Dashboard
+## ModelsBuilder Dashboard
 
-When the Models Builder is installed, a new dashboard is added to the *Developers* section of Umbraco's backend. The dashboard does three things:
+When the ModelsBuilder is installed, a new dashboard is added to the *Developers* section of Umbraco's backoffice. The dashboard does three things:
 
-* Details how the Models Builder is configured
+* Details how the ModelsBuilder is configured
 * Provides a way to generate models (in [Live]Dll and [Live]AppData modes only)
 * Reports the last error (if any) that would have prevented models from being properly generated
 
-## Models Builder API
+## ModelsBuilder API
 
-In addition, in order for the models builder to provide the API needed by the Visual Studio extension (or the console tool), **the Umbraco.ModelsBuilder.Api NuGet package needs to be installed**, and the following application setting needs to be configured:
+In addition, in order for the ModelsBuilder to provide the API needed by the Visual Studio extension (or the console tool), **the [Umbraco.ModelsBuilder.Api NuGet package](https://www.nuget.org/packages/Umbraco.ModelsBuilder.Api/) needs to be installed**, and the following application setting needs to be configured:
 
-* `Umbraco.ModelsBuilder.EnableApi` can be `true` or `false` (default) and controls whether the models builder provides the API.
+* `Umbraco.ModelsBuilder.EnableApi` can be `true` or `false` (default) and controls whether the ModelsBuilder provides the API.
 
-**WARNING** The API is provided when the website runs in debug mode, exclusively. Which means that the `debug` attribute of `web.config`'s `<compilation>` element must be set to `true`.
+**WARNING:** The API is provided when the website runs in debug mode, exclusively. Which means that the `debug` attribute of `Web.config`'s `<compilation>` element must be set to `true`.
+	
