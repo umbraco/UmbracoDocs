@@ -10,7 +10,7 @@ Indicates that a content type with a given alias should be ignored and not gener
 
     [assembly:IgnoreContentType("widgetsContainer")]
 
-This will cause the content type class `widgetContainer` to _not_ be generated.
+This will cause the content type class `widgetsContainer` to _not_ be generated.
 
 **Note**: Must document what happens when it is a parent content type, or when it is part of a composition.
 
