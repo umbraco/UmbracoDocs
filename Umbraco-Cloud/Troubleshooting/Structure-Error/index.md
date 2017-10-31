@@ -2,7 +2,7 @@
 
 ## Error in files containing site structure
 
-On some occassions it's possible that you'll encounter collision errors on your Umbraco Cloud environments. This means that two `.uda` files are created for the same entity type. `.uda` files contains schema for each of your entity types (e.g Document Types, Templates, Macros, Dictionary Items, Datatypes).
+On some occassions it's possible that you'll encounter collision errors on your Umbraco Cloud environments. This means that two `.uda` files are created for the same entity type. The `.uda` files contains schema for each of your entity types (e.g Document Types, Templates, Macros, Dictionary Items, Datatypes).
 
 Example:
 
@@ -30,6 +30,7 @@ If you have two or more Cloud environments, we recommend that you never create s
 ## Fixing
 
 In order to fix this problem you will have to decide which of the two colliding Document Types is the correct one. The error message will give you a lot of details you can use in your investigation:
+
   * The affected entity type (Document Type, Datatype, Member type, etc.)
   * The `unique identifier` (alias)
   * A list of the files containing the same `unique identifier`
