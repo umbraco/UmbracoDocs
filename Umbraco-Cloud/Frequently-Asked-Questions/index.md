@@ -46,7 +46,7 @@ No. All services currently run in the Azure West Europe region.
 
 ### How many resources do I have available for my website?
 
-Each site runs in an isolated environment next to other websites on the same server, which is a shared environment. This means that we don't have exact details about the amount of resources you site can used, this is managed automatically by our infrastructure.
+Each site runs in an isolated environment next to other websites on the same server, which is a shared environment. This means that we don't have exact details about the amount of resources you site can use, this is managed automatically by our infrastructure.
 
 We do have some limitations:
 
@@ -114,6 +114,16 @@ Since it is easy to forget this, we recommend you use certificate monitoring too
 The lowest version of IIS to support http/2 is version 10, which runs only on Windows Server 2016. Currently our infrastructure is limited to Windows Server 2012 R2 instances and as such we do not support http/2 directly.
 
 As a workaround, you could consider setting up a product like CloudFlare, which offers free support for http/2 (they call it "Opportunistic Encryption") out of the box.
+
+### There's a ARRAffinity cookie on my site which is not sent over HTTPS, is this a security risk?
+
+No this is not a security risk. This cookie is set by the load balancer (LB) and only used by the LB to track which server your site is on. It is set by the software we use (Azure Pack) and only useful when your website is being scaled to multiple servers. In Umbraco Cloud we cannot scale your site to multiple servers so the cookie is effectively unused.
+
+There is no vulnerable data in this cookie and manipulating or stealing this cookie can not lead to any security issues.
+
+In the future, the cookie will be set to `HttpOnly` on Umbraco Cloud to conform to best practices. This does not mean that there's anything wrong with the current way it is set.
+
+For more information see [the related github issue](https://github.com/Azure/app-service-announcements/issues/12).
 
 ## Building and deploying
 
