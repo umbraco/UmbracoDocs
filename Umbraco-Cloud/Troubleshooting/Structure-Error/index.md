@@ -27,7 +27,7 @@ The main cause of this problem is when a Document Type (or Media Type, Datatype,
 
 If you have two or more Cloud environments, we recommend that you never create schema or make schema changes directly on the Live or Staging environments. You should work with schema only on your Development environment or even better, your local clone of the project.
 
-### Fixing
+## Fixing
 
 In order to fix this problem you will have to decide which of the two colliding Document Types is the correct one. The error message will give you a lot of details you can use in your investigation:
   * The affected entity type (Document Type, Datatype, Member type, etc.)
@@ -40,6 +40,8 @@ Let’s imagine that we have a project with two Umbraco Cloud environments (Deve
 
 Up until now this project has been working fine, since no deployments has been made from Development to Live, since the Document Type was created on Development.
 
+### Deploying your changes
+
 It’s now time to deploy the newest changes to the Live environment. Since a Document Type with the same alias has been created in both the Development and the Live environment, the deployment will fail.
 
 ![After extraction error](images/visualization2.png)
@@ -48,9 +50,9 @@ On a deployment between Umbraco Cloud environments, all the `.uda` files in the 
 
 **NOTE**: This is when you will see an extraction error like the one showed in the beginning of this article.
 
-The next step, is to decide which of these Document Types is the correct one. For this project, it’s decided that the Document Type created on the Live environment (DocType 1 and document-type__1.uda) is the correct one.
+### Choosing the correct UDA file
 
-![Finding correct uda file](images/visualization3.png)
+The next step, is to decide which of these Document Types is the correct one. For this project, it’s decided that the Document Type created on the Live environment (DocType 1 and document-type__1.uda) is the correct one.
 
 In order to figure out which of the two colliding `.uda` files is the file for the Document Type created on the Live environment follow these steps:
 
@@ -60,9 +62,11 @@ In order to figure out which of the two colliding `.uda` files is the file for t
 4.	This will generate a `.uda` file for the Document Type, and this will be the correct one
 5.	Run `echo > deploy` in the same folder, to make sure everything is extracting correctly
 
+![Finding correct uda file](images/visualization3.png)
+
 You now know which `.uda` file you want, and it’s time to get the rest of your environments in sync.
 
-![Finding correct uda file](images/visualization4.png)
+### Getting your environment in sync
 
 We strongly recommend that you resolve this locally since this will ensure that the changes you make are added to your Git history.
 
@@ -77,9 +81,11 @@ We strongly recommend that you resolve this locally since this will ensure that 
 8.	**Important**: Before you commit and push the changes to the Development environment, you need to access the backoffice of the Development environment and remove the Document Type from there
 9.	You are now ready to **commit** and **push** the changes from your local clone to the Development environment, using your local Git client.
 
-![Finding correct uda file](images/visualization5.png)
+![Removing wrong UDA file](images/visualization4.png)
 
 When the push from local to the Development environment has completed, refresh the Umbraco Cloud portal and you will see that the Development environment is now green, which means that the extraction error has been resolved.
+
+![Deploying deletion](images/visualization5.png)
 
 The final step is to deploy the changes from Development to the rest of your environments, to ensure everything is completely in sync.
 
