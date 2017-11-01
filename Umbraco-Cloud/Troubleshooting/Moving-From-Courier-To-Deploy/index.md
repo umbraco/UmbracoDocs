@@ -16,6 +16,7 @@ First you need to remove all Courier related files and folders.
 * /bin/Concorde.CacheHandler.dll
 * /bin/Concorde.CacheHandler.LiveEdit.dll
 * /bin/Concorde.CacheHandler.UI.dll
+* /bin/Our.Umbraco.Courier.DataResolvers.dll
 * /bin/Umbraco.Courier.Core.dll
 * /bin/Umbraco.Courier.DataResolvers.dll
 * /bin/Umbraco.Courier.EventHandlers.V7.dll
