@@ -23,7 +23,7 @@ In the case above, there are two files who share the same alias which leads to a
 
 ### Cause
 
-The main cause of this problem is when a Document Type (or Media Type, Datatype, etc) is manually created in two environments using the same alias. 
+The main cause of this problem is when a Document Type (or Media Type, Data Type, etc) is manually created in two environments using the same alias. 
 
 If you have two or more Cloud environments, we recommend that you never create or make schema changes directly on the Live or Staging environments. You should work with schema only in your Development environment or even better, your local clone of the project.
 
@@ -31,13 +31,13 @@ If you have two or more Cloud environments, we recommend that you never create o
 
 In order to fix this problem, you will have to decide which of the two colliding Document Types is the correct one. The error message will give you a lot of details you can use in your investigation:
 
-  * The affected entity type (Document Type, Datatype, Member type, etc.)
+  * The affected entity type (Document Type, Data Type, Member type, etc.)
   * The `unique identifier` (alias)
   * A list of the files containing the same `unique identifier`
 
-![Before extraction error](images/visualization1.png)
-
 Let’s imagine that we have a project with two Umbraco Cloud environments (Development and Live) and a local environment. A Document Type has been created on Live and a Document Type with the same unique identifier has also been created on Development. 
+
+![Before extraction error](images/visualization1.png)
 
 Up until now, this project has been working fine, since no deployments have been made from Development to Live, since the Document Type was created on Development.
 
@@ -49,7 +49,7 @@ It’s now time to deploy the newest changes to the Live environment. Since a Do
 
 On a deployment between Umbraco Cloud environments, all the `.uda` files in the `/data/revision` folder will get synced. For this project, this means that both the Development and the Live environments will have two `.uda` files for the Document Type – the only thing that’s different between the two files are the GUID since they were created in different environments.
 
-**NOTE**: This is when you will see an extraction error like the one shown in the beginning of this article.
+**NOTE**: This is when you will see an extraction error like the one shown in the beginning of this article. It is simply not possible to add types with the same alias in the database.
 
 ### Choosing the correct UDA file
 
@@ -58,10 +58,11 @@ The next step is to decide which of these Document Types is the correct one. For
 In order to figure out which of the two colliding `.uda` files are the file for the Document Type created on the Live environment follow these steps:
 
 1.    Access **Kudu** for the Live environment / the environment where the correct Document Type is
-2.    Remove both colliding `.uda` files from the `/data/revision` folder in both `/repository` and `/wwwroot`
-3.    In `/wwwroot/data` run this command: `echo > deploy-export` 
-4.    This will generate a `.uda` file for the Document Type, and this will be the correct one
-5.    Run `echo > deploy` in the same folder, to make sure everything is extracting correctly
+2. Use the CMD console (found under the 'Debug console' menu) to navigate to your `site/wwwroot/data/` folder
+3.    Remove both colliding `.uda` files from the `/data/revision` folder in both `/repository` and `/wwwroot`
+4.    In `/wwwroot/data` run this command: `echo > deploy-export` 
+5.    This will generate a `.uda` file for the Document Type, and this will be the correct one
+6.    Run `echo > deploy` in the same folder, to make sure everything is extracting correctly
 
 ![Finding correct UDA file](images/visualization3.png)
 
@@ -76,7 +77,7 @@ We strongly recommend that you resolve this locally since this will ensure that 
 3.    Access the local backoffice
 4.    Delete the Document Type from the backoffice
     * If you’ve pulled down a fresh clone of the Development environment, you will need to remove the wrong `.uda` file from the `/data/revision` folder, since you will not be able to see the Document Type in the backoffice because the extraction failed.
-5.    Open CMD and navigate to your local `/data/revision` folder
+5.    Open CMD prompt and navigate to your local `/data/revision` folder
 6.    Type the following command: `echo > deploy`
 7.    You will now see a `deploy-complete` marker in your local `/data` folder
 8.    **Important**: Before you commit and push the changes to the Development environment, you need to access the backoffice of the Development environment and remove the Document Type from there
@@ -97,7 +98,7 @@ Sometimes you might need to run another extraction on your Cloud environment aft
 1. Access **Kudu** on the affected environment
 2. Use the CMD console (found under the 'Debug console' menu) to navigate to your `site/wwwroot/data/` folder
 3. In the console, type the following command: `echo > deploy`
-4. When the extraction is done, you should see a `deploy-complete` marker, which means the extraction error was successful
+4. When the extraction is done, you should see a `deploy-complete` marker, which means the extraction error was successful (and your in environment will be green on the project page)
 
 
 ## Error in Courier files containing site structure (Courier)
