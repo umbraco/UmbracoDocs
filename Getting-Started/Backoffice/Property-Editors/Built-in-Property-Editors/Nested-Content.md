@@ -13,7 +13,7 @@ The **Nested Content** property editor is set-up/configured in the same way as a
 
 You should then be presented with the **Nested Content** property editors data-type editor as shown below.
 
-![Nested Content - Data Type Definition](images/NestedContent-DataTypeDefinition.png)
+![Nested Content - Data Type Definition](images/NestedContent_DataTypeDefinition.png)
 
 The data-type editor allows you to configure the following properties:
 
@@ -31,25 +31,25 @@ Once your data type has been configured, simply set-up a property on your page d
 
 When viewing a **Nested Content** editor for the first time, you'll be presented with a simple icon and help text to get you started.
 
-![Nested Content - Add Content](images/NestedContent-AddContent.png)
+![Nested Content - Add Content](images/NestedContent_AddContent.png)
 
 Click the plus icon to start creating a new item in the list. 
 
 If your **Nested Content** editor is configured with multiple document-types you will be presented with a dialog window to select which document-type you would like to use.
 
-![Nested Content - Select Schema](images/NestedContent-SelectSchema.png) 
+![Nested Content - Select Schema](images/NestedContent_SelectSchema.png) 
 
 Simply click the icon of the document-type you wish to use and a new items will be created in the list using that document-type.
 
 If you only have one document-type configured for your **Nested Content** editor, then clicking the plus icon will not display the dialog and instead will jump straight to inserting an entry in the editor for you ready to edit.
 
-![Nested Content - New Item](images/NestedContent-NewItem.png)
+![Nested Content - New Item](images/NestedContent_NewItem.png)
 
 More items can be added to the list by clicking the plus icon for each additional item.
 
 To close the editor for an item or open the editor for another item in the list, you click the edit icon.
 
-![Nested Content - Edit Item](images/NestedContent-EditItem.png)
+![Nested Content - Edit Item](images/NestedContent_EditItem.png)
 
 To reorder the list, click and drag the move icon up and down to place the items in the order you want.
 
@@ -64,7 +64,7 @@ In single item mode, there is no icon displayed to add new items, and the single
 
 In this mode,**Nested Content** works more like a fieldset than a list editor.
 
-![Nested Content - Single Item Mode](images/NestedContent-SingleItemMode.png)
+![Nested Content - Single Item Mode](images/NestedContent_SingleItemMode.png)
 
 
 
