@@ -7,8 +7,6 @@
 
 **Nested Content** is a new list editing property editor for Umbraco 7.7, using Document Types to define the list item schema. By using document-types, you have the benefit of an easy/reusable UI that you are familiar with and get to re-use all the standard data-types as field editors.
 
-
-
 ## Configuring Nested Content
 
 The **Nested Content** property editor is set-up/configured in the same way as any standard property editor, via the *Data Types* admin interface. To set-up your Nested Content property, create a new *Data Type* and select **Nested Content** from the list of available property editors.
@@ -65,7 +63,7 @@ If **Nested Content** is configured with a minimum and maximum item of 1, then i
 
 In single item mode, there is no icon displayed to add new items, and the single items editor will be open by default and it's header bar removed.
 
-In this mode,** Nested Content** works more like a fieldset than a list editor.
+In this mode,**Nested Content** works more like a fieldset than a list editor.
 
 ![Nested Content - Single Item Mode](images/NestedContent-SingleItemMode.png)
 
@@ -73,13 +71,13 @@ In this mode,** Nested Content** works more like a fieldset than a list editor.
 
 ## Rendering Nested Content
 
-To render the stored value of your **Nested Content** property, a built in value convert is provided for you. Simply call the `GetPropertyValue<T>` method with a generic type of `IEnumerable<IPublishedContent>` and the stored value will be returned as a list of `IPublishedContent` entity.
+To render the stored value of your **Nested Content** property, a built in value converter is provided for you. Simply call the `GetPropertyValue<T>` method with a generic type of `IEnumerable<IPublishedContent>` and the stored value will be returned as a list of `IPublishedContent` entities.
 
 Example:
 
     @inherits Umbraco.Web.Mvc.UmbracoViewPage
     @{
-        var items = Model.GetPropertyValue<IEnumerable<IPublishedContent>>("myProperyAlias");
+        var items = Model.GetPropertyValue<IEnumerable<IPublishedContent>>("myPropertyAlias");
     
         foreach(var item in items)
         {
@@ -87,13 +85,13 @@ Example:
         }
     }
 
-Each item is treated as a standard `IPublishedContent` entity, that means you can use all the property value converters you are used to using, as-well as the built in `@Umbraco.Field(...)` helper methods.
+Each item is treated as a standard `IPublishedContent` entity, that means you can use all the property value converters you are used to using, as well as the built-in `@Umbraco.Field(...)` helper methods.
 
 Example:
 
     @inherits Umbraco.Web.Mvc.UmbracoViewPage
     @{
-        var items = Model.GetPropertyValue<IEnumerable<IPublishedContent>>("myProperyAlias");
+        var items = Model.GetPropertyValue<IEnumerable<IPublishedContent>>("myPropertyAlias");
     
         foreach(var item in items)
         {
@@ -104,13 +102,13 @@ Example:
 
 #### Single Item Mode
 
-If your **Nested Content** property editor is configured in single item mode then the value converter will automatically know this and will return a single `IPublishedContent` entity rather than an `IEnumerable<IPublishedContent>` list. Therefore, when using **Nested Content** in single item mode, you can simply call `GetPropertyValue<T>` with a generic type of `IPublishedContent` and you can start accessing the entities property straight away, rather than having to then fetch it from a list first.
+If your **Nested Content** property editor is configured in single item mode then the value converter will automatically know this and return a single `IPublishedContent` entity rather than an `IEnumerable<IPublishedContent>` list. Therefore, when using **Nested Content** in single item mode, you can simply call `GetPropertyValue<T>` with a generic type of `IPublishedContent` and you can start accessing the entity's properties straight away, rather than having to then fetch it from a list first.
 
 Example:
 
     @inherits Umbraco.Web.Mvc.UmbracoViewPage
     @{
-        var item = Model.GetPropertyValue<IPublishedContent>("myProperyAlias");
+        var item = Model.GetPropertyValue<IPublishedContent>("myPropertyAlias");
     }
         <h3>@item.GetPropertyValue("heading")</h3>
         @Umbraco.Field(item, "bodyText")
