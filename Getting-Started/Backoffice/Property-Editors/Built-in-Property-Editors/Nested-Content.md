@@ -39,7 +39,7 @@ If your **Nested Content** editor is configured with multiple document-types you
 
 ![Nested Content - Select Schema](images/NestedContent_SelectSchema.png) 
 
-Simply click the icon of the document-type you wish to use and a new items will be created in the list using that document-type.
+Simply click the icon of the document-type you wish to use and a new item will be created in the list using that document-type.
 
 If you only have one document-type configured for your **Nested Content** editor, then clicking the plus icon will not display the dialog and instead will jump straight to inserting an entry in the editor for you ready to edit.
 
@@ -62,7 +62,7 @@ If **Nested Content** is configured with a minimum and maximum item of 1, then i
 
 In single item mode, there is no icon displayed to add new items, and the single items editor will be open by default and its header bar removed.
 
-In this mode,**Nested Content** works more like a fieldset than a list editor.
+In this mode, **Nested Content** works more like a fieldset than a list editor.
 
 ![Nested Content - Single Item Mode](images/NestedContent_SingleItemMode.png)
 
@@ -101,7 +101,7 @@ Example:
 
 #### Single Item Mode
 
-If your **Nested Content** property editor is configured in single item mode then the value converter will automatically know this and return a single `IPublishedContent` entity rather than an `IEnumerable<IPublishedContent>` list. Therefore, when using **Nested Content** in single item mode, you can simply call `GetPropertyValue<T>` with a generic type of `IPublishedContent` and you can start accessing the entity's properties straight away, rather than having to then fetch it from a list first.
+If your **Nested Content** property editor is configured in single item mode, then the value converter will automatically know this and return a single `IPublishedContent` entity rather than an `IEnumerable<IPublishedContent>` list. Therefore, when using **Nested Content** in single item mode, you can simply call `GetPropertyValue<T>` with a generic type of `IPublishedContent` and you can start accessing the entity's properties straight away, rather than having to then fetch it from a list first.
 
 Example:
 
