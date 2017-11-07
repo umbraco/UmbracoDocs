@@ -80,4 +80,4 @@ Adds an upload field, which allows documents or images to be uploaded to umbraco
 ####Multiple Textstring####
 The Multiple Textstring data-type enables a content editor to make a list of text items. For best use with an unordered-list.
 ####Slider####
-The Slider data-type makes use of the jQuery UI Slider plugin; which makes selected elements into sliders. The slider can be moved with the mouse or the arrow keys.
+The Slider data-type makes use of the [jQuery UI Slider plugin](http://api.jqueryui.com/slider/); which makes selected elements into sliders. The slider can be moved with the mouse or the arrow keys.
