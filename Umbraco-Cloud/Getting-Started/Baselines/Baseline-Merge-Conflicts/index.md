@@ -17,6 +17,8 @@ A merge conflict is something you currently need to handle manually in order to 
 
 ![environment](images/mergeconflict.jpg)
 
+## Resolving merge conflicts
+
 In order to resolve the conflict you need to open up the SCM / Kudu site for the development environment. Click the “[link]” (see screenshot above) for the project (see screenshot above) and find clone url for the development site, which is similar to this: `https://dev-my-website-alias.scm.umbraco.io/c565ead8-7a27-4696-9ab4-dad7eba2cd2c.git` and remove everything after the last slash, so you have a url that looks like this: `https://dev-my-website-alias.scm.umbraco.io`
 
 ![environment](images/getcloneurl.jpg)
