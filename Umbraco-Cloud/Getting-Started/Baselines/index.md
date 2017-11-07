@@ -1,14 +1,14 @@
 #Baselines
-A Baseline project is very similar to a Fork (forked repository) on github in that we create a clone of an existing project while maintaining a connection between the two projects. The connection exists between the _Live_ environment of the existing project (often referred to as the “master”) and the _Development_ environment of the newly created project - the Baseline “child”.
+A Baseline project is very similar to a Fork (forked repository) on Github in that we create a clone of an existing project while maintaining a connection between the two projects. The connection exists between the _Live_ environment of the existing project (often referred to as the “master”) and the _Development_ environment - or Live, if there is no Development environment - of the newly created project, the Baseline “child”.
 
 Any project can act as the Master for new projects.
 
 The basic idea is that you have a Project that contains all your standard Umbraco packages/components, maybe even configured with some default Document Types, which you want to use as the baseline for future projects. When you need to make changes to your baseline you can then push these changes out to all the “child” projects with a click of a button.
 
 ##High-level Overview
-Using the “Create Project” option from the Umbraco Cloud portal you’ll have the option to create a new project based on an existing project (Agency plans). When you click create you’ll be redirected to the project page for the newly created project, which shows the creation progress. The two environments (Development and Live) are hidden by default, and won’t be available until the Development environment is ready. The Staging and Live environments will remain unavailable until the corresponding Sql Azure databases are ready - which can take several minutes.
+Using the “Create Project” option from the Umbraco Cloud Portal you’ll have the option to create a new project based on an existing project. When you click create you’ll be redirected to the project page for the newly created project, which shows the creation progress. It might take several minutes for the project to spin up and before your environments are ready. When your environments are ready your will see a *green* light next to the environment name.
 
-The creation process involves a lot of different parts, which are outlined below. Keep in mind that we are creating a new and empty project, which consists of three environments and that the Development environment will be a clone of the Live repository from the existing project (the Baseline “master”).
+The creation process involves a lot of different parts, which are outlined below. Keep in mind that we are creating a new and empty project, which consists of one or two environments, depending on the Plan your are on. Both environments will be a clone of the Live repository from the existing project (the Baseline “master”).
 
 When the Project is created the project's identity will be added to an index of Baseline (child) projects for the master/existing project. This will ensure that the master is aware of its children and can use that list later on, to push updates to all the children. Whoa!
 
