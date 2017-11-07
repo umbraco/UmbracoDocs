@@ -5,14 +5,28 @@ Any project can act as the Master for new projects.
 
 The basic idea is that you have a Project that contains all your standard Umbraco packages/components, maybe even configured with some default Document Types, which you want to use as the baseline for future projects. When you need to make changes to your baseline you can then push these changes out to all the “child” projects with a click of a button.
 
+##Creating a Baseline Child project
+
+Using the “Create Project” option from the Umbraco Cloud Portal, choose either the Starter or the Professional plan for your new project. 
+
+After choosing a name for your new project, you will have the option to create the project based on an already existing project - any of your projects can be used as a Baseline! 
+
+When you click create you’ll be redirected to the project page for the newly created project, which shows the creation progress. It might take several minutes for the project to spin up and before your environments are ready. When your environments are ready your will see a *green* light next to the environment name.
+
+![Creating a Baseline child project](images/create-baseline-child-project.gif)
+
+Depending on the size of the project you've chosen as a Baseline project, it might take several minutes before the project is ready. 
+
 ##High-level Overview
-Using the “Create Project” option from the Umbraco Cloud Portal you’ll have the option to create a new project based on an existing project. When you click create you’ll be redirected to the project page for the newly created project, which shows the creation progress. It might take several minutes for the project to spin up and before your environments are ready. When your environments are ready your will see a *green* light next to the environment name.
 
 The creation process involves a lot of different parts, which are outlined below. Keep in mind that we are creating a new and empty project, which consists of one or two environments, depending on the Plan your are on. Both environments will be a clone of the Live repository from the existing project (the Baseline “master”).
 
 When the Project is created the project's identity will be added to an index of Baseline (child) projects for the master/existing project. This will ensure that the master is aware of its children and can use that list later on, to push updates to all the children. Whoa!
 
 ###Steps
+
+**Note:** Since the following steps were outlined we've made quite a few improvements to the Baseline workflow. For the most part the steps are still relevant and we are working on getting them updated with the latest details.
+
 The process of creating a Baseline project is rather involved. While you don't have to worry about this (that's what Umbraco Cloud is for), it can be helpful to understand the parts that make up a baseline master-child relationship:
 
 * The Development site is created along with a new Sql Azure database
@@ -55,11 +69,26 @@ Between most of these steps we send updates to the Project page in the Portal, s
 
 The project should now be up and running, but both Staging and Live will be empty so the owner will have to deploy from Development to Staging and then from Staging to Live. This will push (and deploy of course) the content of the git repository to the other environments and everything will be up to date, and the Baseline “child” project is ready for business.
 
-##Updating a Baseline "Child"
+##Pushing upgrades to a Baseline "Child"
 When a project has one or more Baseline “children” it will appear on the Project page, and the user can click to get an overview of all the (Baseline) projects based on the current project.
-Clicking "update" on the overview page will trigger the update of all the projects listed on that page.  Make sure this is what you intend to do as the process will do what it says - that is, push the current Master branch to all the configured children.
 
-###Steps
+[Manage Baseline Children](images/mange-updates-here.png)
+
+From this page you will have an overview af all the child projects this Baseline project has. This is also where you go, when you want to push upgrades from your Baseline "master" to the child projects.
+
+###Upgrading child projects
+
+1. Select the child projects you want to push your upgrades to - you can select as many or as few as you like!
+2. Click **Update selected children**
+3. Make sure the selection looks correct then click **Confirm**
+4. Follow the process as the upgrades are pushed to the child projects one by one
+5. When the child projects *turn green* the upgrade was a success
+
+![Upgrades Baseline children](images/manage-baseline-children.gif)
+
+###Technical steps
+
+**Note:** Since the following steps were outlined we've made quite a few improvements to the Baseline workflow. For the most part the steps are still relevant and we are working on getting them updated with the latest details.
 
 * For the Development repository we fetch and merge from the upstream branch, which was configured upon creation.
 
@@ -67,7 +96,7 @@ Clicking "update" on the overview page will trigger the update of all the projec
 
 * If the merge was successful we continue to deploy the updated repository. Using Kudu’s Rest endpoints we trigger a deployment of the current state of the git repository (the HEAD).
 
-* When that is done we create a Courier “deploy” marker file in the wwwroot, which tells Courier to run when the application starts.
+* When that is done we create a “deploy” marker file in the wwwroot, which tells Umbraco Deploy to run when the application starts.
 
 * Finally we make a request to the website, which just had its changes deployed.
 
