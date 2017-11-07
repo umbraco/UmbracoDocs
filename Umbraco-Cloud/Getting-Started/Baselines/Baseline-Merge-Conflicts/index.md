@@ -3,12 +3,9 @@ Here we outline how to manually resolve a merge conflict after having updated th
 
 On a Baseline project you can click to _“Manage updates here”_, which enables you to push upgrades to your child projects from Live environment of the Baseline project.
 
-![environment](images/mange-updates-here.png)
+![Upgrades Baseline children](images/manage-baseline-children.gif)
 
-From the overview page you simply click the “Update all children” button to start the update process
-
-![environment](images/updateallchildren.jpg)
-
+Select the child projets you want to upgrade, and click **Update selected children**.
 The overview will then change to show the progress and status for updating the various child projects.
 
 The outcome of the update will result in one of three statuses:
