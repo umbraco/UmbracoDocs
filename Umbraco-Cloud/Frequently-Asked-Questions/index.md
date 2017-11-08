@@ -125,6 +125,43 @@ In the future, the cookie will be set to `HttpOnly` on Umbraco Cloud to conform 
 
 For more information see [the related github issue](https://github.com/Azure/app-service-announcements/issues/12).
 
+
+### How can I control who accesses my backoffice using IP filtering?
+
+On Cloud it is easy to add an IP filter of your choosing, there's a few things you need to pay attention to though: Umbraco Deploy will need to be able to talk to the different environments in your Cloud website (development, staging, live) and you should of course still be able to use the site locally.
+
+The following rule can be added to your web.config (in `system.webServer/rewrite/rules/`):
+
+    <rule name="Backoffice IP Filter" enabled="true">
+        <match url="(^umbraco/backoffice/(.*)|^umbraco)"/>
+        <conditions logicalGrouping="MatchAll">
+
+            <!-- Umbraco Cloud to Cloud connections should be allowed -->
+            <add input="{REMOTE_ADDR}" pattern="52.166.147.129" negate="true" />
+            <add input="{REMOTE_ADDR}" pattern="13.95.93.29" negate="true" />
+            <add input="{REMOTE_ADDR}" pattern="40.68.36.142" negate="true" />
+            <add input="{REMOTE_ADDR}" pattern="13.94.247.45" negate="true" />
+            
+            <!-- Don't apply rules on localhost so your local environment still works -->
+            <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
+
+            <!-- Add other client IPs that need access to the backoffice -->
+            <add input="{REMOTE_ADDR}" pattern="123.123.123.123" negate="true" />
+
+        </conditions>
+        <action type="CustomResponse" statusCode="403"/>
+    </rule> 
+
+What we're doing here is blocking all the requests to `umbraco/backoffice/` and all of the routes that start with this. 
+
+All of the Umbraco APIs use this route as a prefix, including Umbraco Deploy. So what we need to do first is to allow Umbraco Cloud to still be allowed to access the Deploy endpoints. That is achieved with the first 4 IP addresses, they're specific to the servers we use on Cloud.
+
+You will notice that the regex `^umbraco/backoffice/(.*)|^umbraco` also stops people from going to `yoursite.com/umbraco`, so even the login screen will not show up. Even if you remove the `|^umbraco` part in the end, it should be no problem. You'll get a login screen but any login attempts will be blocked before they reach Umbraco (because the login posts to `umbraco/backoffice/UmbracoApi/Authentication/PostLogin`).
+
+Then the last IP address is just an example, you can add the addresses that your organization uses as new items to this list.
+
+*Note*: It is possible to change the `umbraco/` route so if you've done that then you need to use the correct prefix. Doing this on Cloud is untested and at the moment not supported. 
+
 ## Building and deploying
 
 ### Umbraco Cloud creates a SQL CE / LocalDb database for me, can I use a shared SQL Server for my development team instead?
