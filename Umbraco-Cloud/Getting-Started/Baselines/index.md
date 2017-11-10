@@ -1,27 +1,29 @@
-# Baselines
-A Baseline project is very similar to a Fork (forked repository) on Github in that we create a clone of an existing project while maintaining a connection between the two projects. The connection exists between the _Live_ environment of the existing project (often referred to as the “master”) and the _Development_ environment - or Live, if there is no Development environment - of the newly created project, the Baseline “child”.
+#Baselines
+A Baseline Child project is very similar to a Fork (forked repository) on Github in that we create a clone of an existing project while maintaining a connection between the two projects. The connection exists between the _Live_ environment of the existing project, the **Baseline project**, and the _Development_ or Live environment - of the newly created project, the **Child project**.
 
-Any project can act as the Master for new projects.
+Any project can act as a Baseline project.
 
-The basic idea is that you have a Project that contains all your standard Umbraco packages/components, maybe even configured with some default Document Types, which you want to use as the baseline for future projects. When you need to make changes to your baseline you can then push these changes out to all the “child” projects with a click of a button.
+The basic idea is that you have a Project that contains all your standard Umbraco packages/components, maybe even configured with some default Document Types, which you want to use as a baseline for future projects. When you've made changes to your Baseline project you can then push these changes out to all the Child projects with a click of a button.
 
-## Creating a Baseline Child project
+##Creating a Baseline Child project
 
 Using the “Create Project” option from the Umbraco Cloud Portal, choose either the Starter or the Professional plan for your new project. 
 
-After choosing a name for your new project, you will have the option to create the project based on an already existing project - any of your projects can be used as a Baseline! 
+After choosing a name for your new project, you will have the option to create the project based on an already existing project - any of your projects can be used as a Baseline project! 
 
-When you click create you’ll be redirected to the project page for the newly created project, which shows the creation progress. It might take several minutes for the project to spin up and before your environments are ready. When your environments are ready your will see a *green* light next to the environment name.
+When you click create you’ll be redirected to the project page for the new Child project, which shows the creation progress. It might take several minutes for the project to spin up and before your environments are ready. 
+
+When your environments are ready your will see a *green* light next to the environment name.
 
 ![Creating a Baseline child project](images/create-baseline-child-project.gif)
 
-Depending on the size of the project you've chosen as a Baseline project, it might take several minutes before the project is ready. 
+Depending on the size of the project you've chosen as a Baseline project, it might take several minutes before the Child project is ready. 
 
-## High-level Overview
+##High-level Overview
 
-The creation process involves a lot of different parts, which are outlined below. Keep in mind that we are creating a new and empty project, which consists of one or two environments, depending on the Plan your are on. Both environments will be a clone of the Live repository from the existing project (the Baseline “master”).
+The creation process involves a lot of different parts, which are outlined below. Keep in mind that we are creating a new and empty project, which consists of one or two environments, depending on the Plan your are on. Both environments will be a clone of the Live repository from the Baseline project.
 
-When the Project is created the project's identity will be added to an index of Baseline (child) projects for the master/existing project. This will ensure that the master is aware of its children and can use that list later on, to push updates to all the children. Whoa!
+When the Project is created the project's identity will be added to an index of Child projects for the Baseline project. This will ensure that the Baseline project is aware of its *children* and can use that list later on, to push updates to all the children. Whoa!
 
 ### Steps
 
