@@ -56,7 +56,7 @@ So the short version is, you dont want to miss those dependencies, because your 
 
 ##What can and cannot courier do.
 The whole idea of Courier, builds around the idea of dependencies and references, which courier can understand to a certain degree.
-But there are several areas, where courier have zero chance of understanding what is going an. 
+But there are several areas, where Courier have zero chance of understanding what is going an. 
 
 ###When a datatype stores node ids
 Common thing, a data type stores a node ID, but courier doesnt know, so it cannot add the document as a dependency, and it cannot convert it into
@@ -74,7 +74,7 @@ revision files and xcopy them over, when you need to deploy really large things
 
 ##How to handle the initial deployment
 A common scenarion seen, is that people try to transfer their entire site in one go, to do the initial deploy. This is not recommended, and really just adds
-unnneeded overhead to your deployment. Courier adds a lot of extra data and overhead, because it needs to convert to a format that be transfered and
+unneeded overhead to your deployment. Courier adds a lot of extra data and overhead, because it needs to convert to a format that be transfered and
 referenced between the 2 sites, it also needs to compare data with this other site and determine which items should transfer, and which should not, finally it
 all happens over http, which is another bottleneck
 
