@@ -86,7 +86,7 @@ Due to courier handling pretty much every object of your site, it can quickly cr
 
 But for day to day work, let your developers handle deployments of document types, templates and so on, and do these in small batches, as even minor changes do have a great effect on your Umbraco database. F.ex. if you add a property type to a document type, that will add an additional row for each document version on your site to the property data table, so even small things can mean big changes.
 
-When your infrastructure (documnet types, templates, etc) is in place, your editors should in most cases not be bothered with too many big deployments using the right-click menu, Courier will try to skip as many things as possible, and only suggest things that have actually changed, but as you have probably guessed by now, this is no simple task. 
+When your infrastructure (document types, templates, etc) is in place, your editors should in most cases not be bothered with too many big deployments using the right-click menu. Courier will try to skip as many things as possible, and only suggest things that have actually changed, but as you have probably guessed by now, this is no simple task. 
 
 ##Ongoing finetuning
 We do finetune this process all the time, to cater to all the different ways an Umbraco site can be built, some scenarios we simply cant support out of the box, and some we can add configuration options for so it can fit with as many sites as possible. 
