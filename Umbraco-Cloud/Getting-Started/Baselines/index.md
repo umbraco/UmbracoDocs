@@ -1,4 +1,4 @@
-#Baselines
+# Baselines
 A Baseline Child project is very similar to a Fork (forked repository) on Github in that we create a clone of an existing project while maintaining a connection between the two projects. The connection exists between the _Live_ environment of the existing project, the **Baseline project**, and the _Development_ or Live environment - of the newly created project, the **Child project**.
 
 Any project can act as a Baseline project.
@@ -7,7 +7,7 @@ The basic idea is that you have a Project that contains all your standard Umbrac
 
 ![Basleine workflow](images/baseline-workflow.gif)
 
-##Creating a Baseline Child project
+## Creating a Baseline Child project
 
 Using the “Create Project” option from the Umbraco Cloud Portal, choose either the Starter or the Professional plan for your new project. 
 
@@ -21,7 +21,7 @@ When your environments are ready your will see a *green* light next to the envir
 
 Depending on the size of the project you've chosen as a Baseline project, it might take several minutes before the Child project is ready. 
 
-##High-level Overview
+## High-level Overview
 
 The creation process involves a lot of different parts, which are outlined below. Keep in mind that we are creating a new and empty project, which consists of one or two environments, depending on the Plan your are on. Both environments will be a clone of the Live repository from the Baseline project.
 
