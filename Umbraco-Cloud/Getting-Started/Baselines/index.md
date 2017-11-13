@@ -31,7 +31,7 @@ When the Child Project is created the project's identity will be added to an ind
 
 **Note:** Since the following steps were outlined we've made quite a few improvements to the Baseline workflow. For the most part the steps are still relevant and we are working on getting them updated with the latest details.
 
-The process of creating a Baseline project is rather involved. While you don't have to worry about this (that's what Umbraco Cloud is for), it can be helpful to understand the parts that make up a baseline master-child relationship:
+The process of creating a Child Project is rather involved. While you don't have to worry about this (that's what Umbraco Cloud is for), it can be helpful to understand the parts that make up the connection between a Baseline Project and its Child Projects:
 
 * The Development site is created along with a new Sql Azure database
 
@@ -43,7 +43,7 @@ The process of creating a Baseline project is rather involved. While you don't h
 
 * The git config file is updated in the Development repository.
 
-* The Development repository is then configured with an Upstream (remote tracking branch) for the Live repository from the Baseline “master”.
+* The Development repository is then configured with an Upstream (remote tracking branch) for the Live repository from the Baseline Project.
 
 * Now that the Development repository is configured we fetch from the remote (being the upstream branch). The changes are merged into the master branch.
 
@@ -71,24 +71,24 @@ The process of creating a Baseline project is rather involved. While you don't h
 
 Between most of these steps we send updates to the Project page in the Portal, so the progress bar, progress updates and the Activity Stream are updated.
 
-The project should now be up and running, but both Staging and Live will be empty so the owner will have to deploy from Development to Staging and then from Staging to Live. This will push (and deploy of course) the content of the git repository to the other environments and everything will be up to date, and the Baseline “child” project is ready for business.
+The project should now be up and running, but both Staging and Live will be empty so the owner will have to deploy from Development to Staging and then from Staging to Live. This will push (and deploy of course) the content of the git repository to the other environments and everything will be up to date, and the Child project is ready for business.
 
-## Pushing upgrades to a Baseline "Child"
-When a project has one or more Baseline “children” it will appear on the Project page, and the user can click to get an overview of all the (Baseline) projects based on the current project.
+## Pushing upgrades to a Child Project
+When a project has one or more Child Projects it will appear on the Project page, and the user can click to get an overview of all the Child Projects based on the current project.
 
 ![Manage Baseline Children](images/mange-updates-here.png)
 
-From this page you will have an overview af all the child projects this Baseline project has. This is also where you go, when you want to push upgrades from your Baseline "master" to the child projects.
+From this page you will have an overview af all the Child Projects this Baseline project has. This is also where you go, when you want to push upgrades from your Baseline Project to the Child Projects.
 
-### Upgrading child projects
+### Upgrading Child Projects
 
-1. Select the child projects you want to push your upgrades to - you can select as many or as few as you like!
+1. Select the Child Projects you want to push your upgrades to - you can select as many or as few as you like!
 2. Click **Update selected children**
 3. Make sure the selection looks correct then click **Confirm**
 4. Follow the process as the upgrades are pushed to the child projects one by one
-5. When the child projects *turn green* the upgrade was a success
+5. When the Child Projects *turn green* the upgrade was a success
 
-![Upgrades Baseline children](images/manage-baseline-children.gif)
+![Upgrade Child Projects](images/manage-baseline-children.gif)
 
 ### Technical steps
 
@@ -113,8 +113,8 @@ As with any git repository-based development it is not uncommon to have merge co
 
 ## Handling configuration files
 When you are doing your normal development process, you'd just be updating the configuration files in your solution as usual. When you are working with baselines there’s a thing to keep in eye. 
-When Umbraco Cloud is doing updates from the baseline to its children, all solvable merge conflicts on configuration files will be solved by using the setting on the child. That also means that if a file has been changed in both the baseline and in the child, the change won’t be pushed to the child. To have custom settings on the child, you should take advantage of the vendor specific transform files. 
+When Umbraco Cloud is doing updates from the Baseline Project to its children, all solvable merge conflicts on configuration files will be solved by using the setting on the Child Project. That also means that if a file has been changed in both the Baseline and in the Child Project, the change won’t be pushed to the Child. To have custom settings on the Child Project, you should take advantage of the vendor specific transform files. 
 
-On Umbraco Cloud, it is possible to create transform files that will be applied to certain environments by naming them like `web.live.xdt.config` (see [Config-Transforms](../../Set-Up/Config-Transforms/)). This should be used when a child needs different settings than the baseline has. It can be achieved by using a configuration file that is specific to the child, naming it like `child.web.live.xdt.config`, and only having that configuration file in the child’s repository. That will ensure that when doing deploys between the environments in the child, those settings will be applied to the final web.config, and when the child is updated from the baseline, the settings won’t be overwritten.
+On Umbraco Cloud, it is possible to create transform files that will be applied to certain environments by naming them like `web.live.xdt.config` (see [Config-Transforms](../../Set-Up/Config-Transforms/)). This should be used when a Child Project needs different settings than the Baseline Project has. It can be achieved by using a configuration file that is specific to the Child Project, naming it like `child.web.live.xdt.config`, and only having that configuration file in the Child Projects repository. That will ensure that when doing deploys between the environments in the Child Project, those settings will be applied to the final web.config, and when the Child is updated from the Baseline, the settings won’t be overwritten.
 
-This practice is especially important when the baseline get mayor new functionality, like new code that is dependent on the configuration files or when it gets upgrades applied.
+This practice is especially important when the Baseline Project gets major new functionality, like new code that is dependent on the configuration files or when it gets upgrades applied.
