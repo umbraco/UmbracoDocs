@@ -18,7 +18,7 @@ for that specific item to function on the site you want to transfer it to.
 
 When it has figured this out, it exports the selected item(s) and their dependencies to a folder, as xml files, along with any images, dlls, and so on. 
 
-Optionally it can compare the packaged items as it finds them, to figure out they have actually changed since the last update, and will skip those that have. 
+Optionally it can compare the packaged items as it finds them, to figure out if they have actually changed since the last update, and will skip those that have. 
 
 Finally, it will build a graph of the deployment, based on the order of dependencies, this means that courier knows that a for a document to be installed, it needs to have its document type, template, datatypes and so on present on the target website. 
 
