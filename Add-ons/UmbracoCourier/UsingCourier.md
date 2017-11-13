@@ -89,8 +89,8 @@ But for day to day work, let your developers handle deployments of document type
 When your infrastructure (document types, templates, etc) is in place, your editors should in most cases not be bothered with too many big deployments using the right-click menu. Courier will try to skip as many things as possible, and only suggest things that have actually changed, but as you have probably guessed by now, this is no simple task. 
 
 ##Ongoing finetuning
-We do finetune this process all the time, to cater to all the different ways an Umbraco site can be built, some scenarios we simply cant support out of the box, and some we can add configuration options for so it can fit with as many sites as possible. 
+We do finetune this process all the time, to cater to all the different ways an Umbraco site can be built. Some scenarios we simply cannot support out of the box, and some we can add configuration options for so it can fit with as many sites as possible. 
 
-Let us know in the Courier forum on Our, if certain scearions or setups give unreasonable large deployments, provide as many details as possible, or even better, provide us with a database backup, so we can try it out on our local machines and adjust the many variables. 
+Let us know in the [Courier forum](https://our.umbraco.org/forum/umbraco-courier/) on Our, if certain scenarions or setups give unreasonable large deployments. Please provide as many details as possible, or even better, provide us with a database backup, so we can try it out on our local machines and adjust the many variables. 
 
 
