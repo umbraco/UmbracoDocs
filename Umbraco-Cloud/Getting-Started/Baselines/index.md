@@ -76,7 +76,7 @@ The project should now be up and running, but both Staging and Live will be empt
 ## Pushing upgrades to a Baseline "Child"
 When a project has one or more Baseline “children” it will appear on the Project page, and the user can click to get an overview of all the (Baseline) projects based on the current project.
 
-[Manage Baseline Children](images/mange-updates-here.png)
+![Manage Baseline Children](images/mange-updates-here.png)
 
 From this page you will have an overview af all the child projects this Baseline project has. This is also where you go, when you want to push upgrades from your Baseline "master" to the child projects.
 
