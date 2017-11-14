@@ -24,7 +24,7 @@ The settings are simply set on the deploy element in the file. All settings are 
 
 
 
-## You get an error of type `Umbraco.Deploy.Exceptions.DependencyException`
+## You get an error of type `DependencyException`
 
 Sometimes you will get an error that looks like this:
 
