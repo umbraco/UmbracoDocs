@@ -25,7 +25,7 @@ Depending on the size of the project you've chosen as a Baseline project, it mig
 
 The creation process involves a lot of different parts, which are outlined below. Keep in mind that we are creating a new and empty project, which consists of one or two environments, depending on the Plan your are on. Both environments will be a clone of the Live repository from the Baseline project.
 
-When the Child Project is created the project's identity will be added to an index of Child projects for the Baseline project. This will ensure that the Baseline project is aware of its *children* and can use that list later on, to push updates to all the children. Whoa!
+When the Child project is created the project's identity will be added to an index of Child projects for the Baseline project. This will ensure that the Baseline project is aware of its *children* and can use that list later on, to push updates to all the children. Whoa!
 
 ### Steps
 
@@ -43,7 +43,7 @@ The process of creating a Child Project is rather involved. While you don't have
 
 * The git config file is updated in the Development repository.
 
-* The Development repository is then configured with an Upstream (remote tracking branch) for the Live repository from the Baseline Project.
+* The Development repository is then configured with an Upstream (remote tracking branch) for the Live repository from the Baseline project.
 
 * Now that the Development repository is configured we fetch from the remote (being the upstream branch). The changes are merged into the master branch.
 
@@ -113,8 +113,8 @@ As with any git repository-based development it is not uncommon to have merge co
 
 ## Handling configuration files
 When you are doing your normal development process, you'd just be updating the configuration files in your solution as usual. When you are working with baselines there’s a thing to keep in eye. 
-When Umbraco Cloud is doing updates from the Baseline Project to its children, all solvable merge conflicts on configuration files will be solved by using the setting on the Child Project. That also means that if a file has been changed in both the Baseline and in the Child Project, the change won’t be pushed to the Child. To have custom settings on the Child Project, you should take advantage of the vendor specific transform files. 
+When Umbraco Cloud is doing updates from the Baseline project to its children, all solvable merge conflicts on configuration files will be solved by using the setting on the Child project. That also means that if a file has been changed in both the Baseline and in the Child Project, the change won’t be pushed to the Child. To have custom settings on the Child project, you should take advantage of the vendor specific transform files. 
 
 On Umbraco Cloud, it is possible to create transform files that will be applied to certain environments by naming them like `web.live.xdt.config` (see [Config-Transforms](../../Set-Up/Config-Transforms/)). This should be used when a Child Project needs different settings than the Baseline Project has. It can be achieved by using a configuration file that is specific to the Child Project, naming it like `child.web.live.xdt.config`, and only having that configuration file in the Child Projects repository. That will ensure that when doing deploys between the environments in the Child Project, those settings will be applied to the final web.config, and when the Child is updated from the Baseline, the settings won’t be overwritten.
 
-This practice is especially important when the Baseline Project gets major new functionality, like new code that is dependent on the configuration files or when it gets upgrades applied.
+This practice is especially important when the Baseline project gets major new functionality, like new code that is dependent on the configuration files or when it gets upgrades applied.
