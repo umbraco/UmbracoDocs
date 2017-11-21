@@ -45,6 +45,8 @@ When you've bought an Umbraco Forms license you need to configure you license. Y
 
 You can either configure your license right away when you buy it, or you can do it later by visiting your account on Umbraco.com.
 
+![Configuring Umbraco Forms license](configure-forms-license.gif)
+
 ### Installing
 
 Once you've configured your license with the correct domains, you are ready to install the license on your Umbraco site:
@@ -53,3 +55,5 @@ Once you've configured your license with the correct domains, you are ready to i
 2. Place the file in your `/bin` folder
 
 The `.lic` file must be placed in the `/bin` directory to be registered by Umbraco Forms, if not, the application will automatically switch to trial mode.
+
+![Installing Umbraco Forms license](install-forms-license.gif)
