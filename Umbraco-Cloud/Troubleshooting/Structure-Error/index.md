@@ -73,7 +73,7 @@ You now know which `.uda` file you want, and it’s time to get the rest of your
 We strongly recommend that you resolve this locally since this will ensure that the changes you make are added to your Git history.
 
 1.    Clone down the Development environment – or simply do a pull via Git if you already have a local clone
-2.    Run the project locally and verify that you get the same extraction error as on your Cloud environments (HINT: look for a `deploy-failed` marker in your local `/data/revision` folder)
+2.    Run the project locally and verify that you get the same extraction error as on your Cloud environments (HINT: look for a `deploy-failed` marker in your local `/data ` folder)
 3.    Access the local backoffice
 4.    Delete the Document Type from the backoffice
     * If you’ve pulled down a fresh clone of the Development environment, you will need to remove the wrong `.uda` file from the `/data/revision` folder, since you will not be able to see the Document Type in the backoffice because the extraction failed.
