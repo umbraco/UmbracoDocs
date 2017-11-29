@@ -82,3 +82,7 @@ Follow these steps to generate UDA files:
 Generating UDA files manually might sometimes end up giving you collision errors on your environments due to duplicates. This can be resolved by following our [Structure Error](../../Troubleshooting/Structure-Error) documentation.
 
 ## Important notes
+
+Kudu is **not** a tool meant for adding and removing files on your project. This should always be done via Git([Local to Cloud](../../Deployment/Local-to-Cloud)) and the Deploy engine([Cloud to Cloud](../../Deployment/Cloud-to-Cloud)).
+
+We recommend that you **only** use Kudu when you are following one of our guides.
