@@ -24,7 +24,7 @@ Umbraco Cloud is Umbraco, but it’s a whole lot more. Built on the Microsoft Az
 
 Umbraco Cloud takes care of installation, infrastructure, and security and provides you the tools to work with your project in the cloud, or clone it (using Git) and work with it locally on your PC, your Mac, or your tablet.
 
-When you’re ready to show your work to the world, Umbraco Cloud provides a safe deployment mechanism that moves your site to the public web. And if you have changes hours, days, or weeks later, Umbraco Cloud has got you covered with a an easy to follow process for moving your changes, testing, and deploying to your public site. Try that with another CMS!
+When you’re ready to show your work to the world, Umbraco Cloud provides a safe deployment mechanism that moves your site to the public web. And if you have changes hours, days, or weeks later, Umbraco Cloud has got you covered with an easy to follow process for moving your changes, testing, and deploying to your public site. Try that with another CMS!
 
 When you need to add members to your team, it’s as simple as adding an email address and clicking a button. Need to remove a team member, Umbraco Cloud has that covered too.
 
