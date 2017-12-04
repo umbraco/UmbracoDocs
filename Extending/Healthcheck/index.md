@@ -10,25 +10,25 @@ For inspiration when building your own checks you can look at the checks we've [
 Umbraco comes with the following checks by default:
 
 * Category **Configuration**
-  * **Macro errors** - checks that the errors are set to `inline` so that pages that error will still load (and just shows a small error message)
-  * **Notification Email Settings** - checks that the from email address used for email notifications has been changed from it's default value
-  * **Try Skip IIS Custom Errors** - in IIS 7.5 and higher this should be set to `true` 
+  * **Macro errors (id: `D0F7599E-9B2A-4D9E-9883-81C7EDC5616F`)** - checks that the errors are set to `inline` so that pages that error will still load (and just shows a small error message)
+  * **Notification Email Settings (id: `3E2F7B14-4B41-452B-9A30-E67FBC8E1206`)** - checks that the from email address used for email notifications has been changed from it's default value
+  * **Try Skip IIS Custom Errors (id: `046A066C-4FB2-4937-B931-069964E16C66`)** - in IIS 7.5 and higher this should be set to `true` 
 * Category **Data Integrity**
-  * **Data integrity** - validates the XML structures for content, media and members that are stored in the `cmsContentXml` table
+  * **Data integrity (id: `D999EB2B-64C2-400F-B50C-334D41F8589A`)** - validates the XML structures for content, media and members that are stored in the `cmsContentXml` table
 * Category **Live environment** 
-  * **Custom errors** - should be set to `RemoteOnly` or `On` on your live site
-  * **Trace mode** - should be set to `enabled="false"` on your live site
-  * **Compilation debug mode** - should be set to `debug="false"` on your live site 
+  * **Custom errors (id: `4090C0A1-2C52-4124-92DD-F028FD066A64`)** - should be set to `RemoteOnly` or `On` on your live site
+  * **Trace mode (id: `9BED6EF4-A7F3-457A-8935-B64E9AA8BAB3`)** - should be set to `enabled="false"` on your live site
+  * **Compilation debug mode (id: `61214FF3-FC57-4B31-B5CF-1D095C977D6D`)** - should be set to `debug="false"` on your live site 
 * Category **Permissions**
-  * **File & folder permissions** - checks that folders and files that are either required or recommended to set with write permissions can be accessed
+  * **File & folder permissions (id: `53DBA282-4A79-4B67-B958-B29EC40FCC23`)** - checks that folders and files that are either required or recommended to set with write permissions can be accessed
 * Category **Security**
-  * **Click-Jacking Protection** - checks to see if a header or meta-tag is in place to indicate whether the site can be hosted in an IFRAME.  Normally this is best set to deny permission for this to be done, to prevent what are known as [click-jacking](https://www.google.dk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiby7WgoKXNAhVTb5oKHW9RABkQFggbMAA&url=https%3A%2F%2Fwww.owasp.org%2Findex.php%2FClickjacking&usg=AFQjCNFQksJMzjjWK2fRnInWIPbe5ozHAw&bvm=bv.124272578,d.bGs) attacks
-  * **Excessive Headers** - checks to ensure that various headers that can provide details about the technology used to build and host the website have been removed
-  * **HTTPS check** - to determine if the current site is running on a secure connection
+  * **Click-Jacking Protection (id: `ED0D7E40-971E-4BE8-AB6D-8CC5D0A6A5B0`)** - checks to see if a header or meta-tag is in place to indicate whether the site can be hosted in an IFRAME.  Normally this is best set to deny permission for this to be done, to prevent what are known as [click-jacking](https://www.google.dk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiby7WgoKXNAhVTb5oKHW9RABkQFggbMAA&url=https%3A%2F%2Fwww.owasp.org%2Findex.php%2FClickjacking&usg=AFQjCNFQksJMzjjWK2fRnInWIPbe5ozHAw&bvm=bv.124272578,d.bGs) attacks
+  * **Excessive Headers (id: `92ABBAA2-0586-4089-8AE2-9A843439D577`)** - checks to ensure that various headers that can provide details about the technology used to build and host the website have been removed
+  * **HTTPS check (id: `EB66BB3B-1BCD-4314-9531-9DA2C1D6D9A7`)** - to determine if the current site is running on a secure connection
   * **umbracoUseSSL check** - when the site is running on HTTPS, `umbracoUseSSL` needs to be enabled to secure the backoffice
   * **HTTPS connectivity check** - when connecting to the site over HTTPS, does it return a valid response (i.e. the certificate has not expired)?
 * Category **Services**
-  * **SMTP settings** - checks that an SMTP server is configured and is accepting requests for sending emails
+  * **SMTP settings (id: `1B5D221B-CE99-4193-97CB-5F3261EC73DF`)** - checks that an SMTP server is configured and is accepting requests for sending emails
   
 Each check returns a message indicating whether or not the issue in question has been found on the website installation, and if so whether the concern is an error that should be fixed, or less importantly, a warning you should be aware of.
 
@@ -36,7 +36,7 @@ Some of them can also be rectified via the dashboard, simply be clicking the **F
 
 ## Configuring and scheduling checks
 
-As well as viewing the results of health checks via the Developer section dashboard, you can set up the checks to be run on a schedule and be notified of the results by email, Slack and/or log files.  It's also possible to disable certain checks if they aren't applicable in your environment.
+As well as viewing the results of health checks via the Developer section dashboard, you can set up the checks to be run on a schedule and be notified of the results by email.  It's also possible to disable certain checks if they aren't applicable in your environment.
 
 For more on this see the [Reference > Config > Health checks page](/documentation/Reference/Config/Healthchecks/index.md).
 
