@@ -1,4 +1,4 @@
-#HealthChecks.config
+# HealthChecks.config
 
 The `HealthChecks.config` file contains the configuration for the health checks, allowing you to disable certain checks when not applicable and to manage the notifications.
 
@@ -25,7 +25,7 @@ The following is an example configuration installed with Umbraco.
 	  </notificationSettings>
 	</HealthChecks> 
     
-In the first `<disabledChecks>` section it's possible to mark certain checks as disabled.  To do so, uncomment one of the examples and update `id` field with the Id of the test to disable (the `disabledOn` and `disabledBy` fields are not required, in place currently just as placeholders for when this information is managed via a user interface).  The Ids for each core tests can be found on the Extending Health checks [page](../../Extending/Healthcheck/index.md).
+In the first `<disabledChecks>` section it's possible to mark certain checks as disabled.  To do so, uncomment one of the examples and update `id` field with the Id of the test to disable (the `disabledOn` and `disabledBy` fields are not required, in place currently just as placeholders for when this information is managed via a user interface).  The Ids for each core tests can be found on the Extending Health checks [page](../../../Extending/Healthcheck/index.md).
 
 To enable notifications set the `enabled` attribute on `<notificationSettings>` to `true`.
 
