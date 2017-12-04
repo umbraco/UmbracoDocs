@@ -1,11 +1,11 @@
-#Health check
+# Health check
 
 The developer section of the Umbraco backoffice holds a dashboard named "Health Check". It is a handy list of checks to see if your Umbraco installation is configured according to best practices. It's possible to add your custom built health checks.  
 This feature has been available since Umbraco version 7.5.
 
 For inspiration when building your own checks you can look at the checks we've [built into Umbraco](https://github.com/umbraco/Umbraco-CMS/tree/dev-v7/src/Umbraco.Web/HealthCheck/Checks). Some examples will follow in this document.
 
-##Built-in checks
+## Built-in checks
 
 Umbraco comes with the following checks by default:
 
@@ -34,13 +34,13 @@ Each check returns a message indicating whether or not the issue in question has
 
 Some of them can also be rectified via the dashboard, simply be clicking the **Fix** button and in some cases providing some required information.  These changes usually involve writing to configuration files that will often trigger a restart of the website.  
 
-##Configuring and scheduling checks
+## Configuring and scheduling checks
 
 As well as viewing the results of health checks via the Developer section dashboard, you can set up the checks to be run on a schedule and be notified of the results by email, Slack and/or log files.  It's also possible to disable certain checks if they aren't applicable in your environment.
 
 For more on this see the [Reference > Config > Health checks page](/documentation/Reference/Config/Healthchecks/index.md).
 
-##Custom checks
+## Custom checks
 
 You can build your own health checks. There are two types of health checks you can build: **configuration checks** and **general checks**.
 
@@ -51,7 +51,7 @@ Each health check is a class that needs to have a `HealthCheck` attribute. This 
 * Description - describes what the check does in detail
 * Group - this is the category for the check if you use an existing group name (like "Configuration") the check will be added in that category, otherwise a new category will appear in the dashboard
 
-###Configuration checks
+### Configuration checks
 
 These are fairly simple, small checks that take an XPath query and confirm that the value that's expected is there. If the value is not correct, clicking the "Rectify" button will set the recommended value.
 
@@ -153,7 +153,7 @@ An example check:
          }
      }
 
-###General checks
+### General checks
 This can be anything you can think of, the results and the rectify action are completely under your control.
 
 * A general check needs to inherit from `Umbraco.Web.HealthCheck.HealthCheck`
@@ -266,34 +266,44 @@ An example check:
 
 ## Custom healthcheck notifications
 
-Health check notifications can be scheduled to run periodically and notify you of the results.  Within the core are notifications for email and to send a message to a channel within [Slack](https://slack.com/).  In a similar manner to how it's possible to create your own health checks, you can also create custom notification methods to send the message summarising the status of the health checks via other means.  Again, for further details on implementing this on this please refer the [existing notification methods within the core code base](https://github.com/umbraco/Umbraco-CMS/tree/dev-v7/src/Umbraco.Web/HealthCheck/NotificationMethods).
+Health check notifications can be scheduled to run periodically and notify you of the results. Included with Umbraco is a notification method to deliver the results via email. In a similar manner to how it's possible to create your own health checks, you can also create custom notification methods to send the message summarising the status of the health checks via other means.  Again, for further details on implementing this on this please refer the [existing notification methods within the core code base](https://github.com/umbraco/Umbraco-CMS/tree/dev-v7/src/Umbraco.Web/HealthCheck/NotificationMethods).
 
-Each notification method needs to implement the core interface `IHealthCheckNotificatationMethod` and, for ease of creation, can inherit from the base class `NotificationMethodBase`.  The class must also be decorated with an instance of the `HealthCheckNotificationMethod` attribute. There's one method to implement - `SendAsync(HealthCheckResults results)` - which is responsible for taking the results of the health checks and sending them via the mechanism of your choice.
+Each notification method needs to implement the core interface `IHealthCheckNotificatationMethod` and, for ease of creation, can inherit from the base class `NotificationMethodBase`. The class must also be decorated with an instance of the `HealthCheckNotificationMethod` attribute. There's one method to implement - `SendAsync(HealthCheckResults results)` - which is responsible for taking the results of the health checks and sending them via the mechanism of your choice.
 
 The following example shows how the core method for sending notification via email is implemented:
 
     using System;
     using System.Net.Mail;
     using System.Threading.Tasks;
+    using Umbraco.Core;
+    using Umbraco.Core.Configuration;
     using Umbraco.Core.Configuration.HealthChecks;
+    using Umbraco.Core.Services;
 
     namespace Umbraco.Web.HealthCheck.NotificationMethods
     {
         [HealthCheckNotificationMethod("email")]
         public class EmailNotificationMethod : NotificationMethodBase, IHealthCheckNotificatationMethod
         {
+            private readonly ILocalizedTextService _textService;
+
             public EmailNotificationMethod(bool enabled, bool failureOnly, HealthCheckNotificationVerbosity verbosity,
-                    string recipientEmail, string subject)
+                    string recipientEmail)
+                : this(enabled, failureOnly, verbosity, recipientEmail, ApplicationContext.Current.Services.TextService)
+            {
+            }
+
+            internal EmailNotificationMethod(bool enabled, bool failureOnly, HealthCheckNotificationVerbosity verbosity,
+                string recipientEmail, ILocalizedTextService textService)
                 : base(enabled, failureOnly, verbosity)
             {
+                if (textService == null) throw new ArgumentNullException("textService");
+                _textService = textService;
                 RecipientEmail = recipientEmail;
-                Subject = subject;
                 Verbosity = verbosity;
             }
 
-            public string RecipientEmail { get; set; }
-
-            public string Subject { get; set; }
+            public string RecipientEmail { get; private set; }
 
             public async Task SendAsync(HealthCheckResults results)
             {
@@ -307,38 +317,45 @@ The following example shows how the core method for sending notification via ema
                     return;
                 }
 
-                using (var client = new SmtpClient())
-                using (var mailMessage = new MailMessage())
+                var message = _textService.Localize("healthcheck/scheduledHealthCheckEmailBody", new[]
                 {
-                    mailMessage.To.Add(RecipientEmail);
-                    mailMessage.Body =
-                        string.Format(
-                            "<html><body><p>Results of the scheduled Umbraco Health Checks run on {0} at {1} are as follows:</p>{2}</body></html>",
-                            DateTime.Now.ToShortDateString(), 
-                            DateTime.Now.ToShortTimeString(),
-                            results.ResultsAsHtml(Verbosity));
-                    mailMessage.Subject = string.IsNullOrEmpty(Subject) ? "Umbraco Health Check Status" : Subject;
-                    mailMessage.IsBodyHtml = true;
+                    DateTime.Now.ToShortDateString(),
+                    DateTime.Now.ToShortTimeString(),
+                    results.ResultsAsHtml(Verbosity)
+                });
 
-                    await client.SendMailAsync(mailMessage);
+                var subject = _textService.Localize("healthcheck/scheduledHealthCheckEmailSubject");
+
+                var mailSender = new EmailSender();
+                using (var mailMessage = new MailMessage(UmbracoConfig.For.UmbracoSettings().Content.NotificationEmailAddress,
+                    RecipientEmail,
+                    string.IsNullOrEmpty(subject) ? "Umbraco Health Check Status" : subject,
+                    message)
+                {
+                    IsBodyHtml = message.IsNullOrWhiteSpace() == false
+                                 && message.Contains("<") && message.Contains("</")
+                })
+                {
+                    await mailSender.SendAsync(mailMessage);
                 }
             }
         }
     }
-    
-If custom configuration is required, this can be placed in `HealthChecks.config`, with the `alias` XML attribute for the `notificationMethod` element matching that used on the class level attribute  Again, the following extract shows how the email notification method is configured:
 
-    <HealthChecks>
-      <notificationSettings enabled="true" firstRunTime="" periodInHours="24">
-        <notificationMethods>
-          <notificationMethod alias="email" enabled="false" verbosity="Summary">
-            <settings>
-              <add key="recipientEmail" value="" />
-              <add key="subject" value="Umbraco Health Check Status" />
-            </settings>
-          </notificationMethod>      
-        </notificationMethods>
-    </HealthChecks> 
+    
+If custom configuration is required for a custom notification method, this can be placed in `HealthChecks.config`, with the `alias` XML attribute for the `notificationMethod` element matching that used on the class level attribute. Again, the following extract shows how the email notification method is configured:
+
+	<HealthChecks>
+	  <notificationSettings enabled="true" firstRunTime="" periodInHours="24">
+	    <notificationMethods>
+	      <notificationMethod alias="email" enabled="true" verbosity="Summary">
+	        <settings>
+	          <add key="recipientEmail" value="alerts@mywebsite.tld" />
+	        </settings>
+	      </notificationMethod>
+	    </notificationMethods>
+	  </notificationSettings>
+	</HealthChecks> 
 
 
 
