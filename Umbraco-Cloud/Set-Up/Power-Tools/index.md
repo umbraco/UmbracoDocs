@@ -1,6 +1,6 @@
 # Power tools (Kudu)
 
-*What is Kudu!?*
+Kudu is an open source engine behind git deployments to Azure. It gives us basic access to the file system trough command line or powershell all from the comfort of a web browser. It also powers the way we deploy to Umbraco Cloud sites.
 
 ## How to access Kudu
 
