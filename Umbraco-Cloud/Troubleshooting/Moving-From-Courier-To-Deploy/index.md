@@ -3,7 +3,7 @@
 As of Umbraco 7.6, sites running on Umbraco Cloud will need to be running Umbraco Deploy, and not Umbraco Courier.
 Courier has been replaced by Deploy, and Deploy is highly specialized to be working on Umbraco Cloud.
 
-In normal circomstances, the move from Courier to Deploy will happen automagically when you click the button in the portal for upgrading to Umbraco 7.6. 
+In normal circumstances, the move from Courier to Deploy will happen automagically when you click the button in the portal for upgrading to Umbraco 7.6. 
 If for some reason your Umbraco project was upgraded, but not switched to Deploy. i.e. if you did the upgrade manually.
 
 This is a guide for moving from Courier to Deploy. First step is to aquire the latest Umbraco Deploy package and a valid Deploy Key from the support heroes. Use the inapp chat in the Umbraco Cloud portal to get this.
