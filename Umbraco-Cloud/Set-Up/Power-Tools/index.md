@@ -61,12 +61,15 @@ Generating UDA files manually ensures that you have everything you need in order
 UDA files are generated for the following types:
 
 * Data types
+* Data type containers
 * Dictionary items
 * Document types
+* Document type container
 * Languages
 * Macros
 * Media types
 * Member types
+* Relation types
 * Templates
 
 Follow these steps to generate UDA files:
