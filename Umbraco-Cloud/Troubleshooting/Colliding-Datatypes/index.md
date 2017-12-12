@@ -11,10 +11,6 @@ The data types in question are:
 
 Since these 5 data types are part of the Umbraco CMS, these will be created by default on each new environment on Umbraco Cloud. If metadata-files / structure files for these data types has been generated on your Live environment, you might run into extraction errors on your newly created Development or Staging environment - new environments will be exact clones of the Live environment, thus containing all structure and metadata files from that environment.
 
--- If you've used and worked with these data types on your Umbraco Cloud Live environment, you might get an extraction error on your newly created Development or Staging environment. 
-
--- The reason you are getting the error is because files containing metadata has been created on the Live environment. When a new environment is created, it's created based on the Live environment. 
-
 ## How do I know I have this issue?
 
 The issue will present itself as an extraction error on your Development or Staging environment once you're created them.
