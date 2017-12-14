@@ -88,6 +88,8 @@ Do note, however that you will need to step through the upgrade installer manual
 
 You will have to assume that every time we upgrade your site, any file that comes with Umbraco by default will be overwritten. Generally we only overwrite the files that have been changed in the newest release but there is no guarantee for that. So if you (for example) have customized the login page then you can assume it will be reverted on each upgrade. 
 
+As a workaround you could have an [ApplicationEventHandler](https://our.umbraco.org/Documentation/Reference/Events/Application-Startup#use-applicationeventhandler-to-register-events) in which you check if the file is different from your customized file and overwrite it again. Note that this is NOT possible if you customize any of the Umbraco dll files.
+
 ---
 
 ## Testing
