@@ -59,6 +59,10 @@ one Umbraco Cloud site - make sure to contact us if you need more than that
 
 In our experience there is only a few Cloud sites that have experienced these limitations and we're happy to work with people who have sites affected by these limitations.
 
+### Can I use Cloudflare in front of my Umbraco Cloud site
+
+Yes. Point the DNS for your to Cloudflare and tell Cloudflare about the IP address of your Umbraco Cloud site to use Cloudflare's full feature set.
+
 ---
 
 ## Upgrades
