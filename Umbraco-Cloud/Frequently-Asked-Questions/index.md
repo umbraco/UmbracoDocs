@@ -83,6 +83,11 @@ Yes, that’s fine. In some cases you may want to upgrade sooner than the schedu
 
 Do note, however that you will need to step through the upgrade installer manually on each environment, including live. Our automated upgrader makes sure that visitors to your live site will not be prompted to log in to the upgrade installer.
 
+
+### I have customized files that Umbraco ships with, will they be overwritten during upgrades?
+
+You will have to assume that every time we upgrade your site, any file that comes with Umbraco by default will be overwritten. Generally we only overwrite the files that have been changed in the newest release but there is no guarantee for that. So if you (for example) have customized the login page then you can assume it will be reverted on each upgrade. 
+
 ---
 
 ## Testing
