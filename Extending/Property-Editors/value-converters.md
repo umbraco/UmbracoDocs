@@ -143,6 +143,8 @@ If all values should use the same level you can use the short cut below
                 returnLevel = PropertyCacheLevel.None;
                 break;
         }
+	return returnLevel;
+    }
 
 ## Samples ##
 
