@@ -16,7 +16,7 @@ The deployment process explained with best practices and a little Git mixed in.
 An explanation of the Umbraco Cloud product upgrade process.
 
 ##[Troubleshooting](Troubleshooting/)
-Tips on identifying, finding and resolving issues.
+Tips on finding, identifying and resolving issues.
 
 ##Overview
 Umbraco Cloud is a new way to work with your favorite CMS! It includes 10-ears of experience and best-practices in an intuitive, simple, but robust approach. No matter if you’re working in a team or of you’re single handedly building a website, Umbraco Cloud removed the barriers that slow down projects and get in the way of beautiful, functional sites.
