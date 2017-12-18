@@ -1,6 +1,6 @@
 #Umbraco Cloud documentation
 
-Documentation for Umbraco Cloud. How to get started, how to set up your Umbraco Cloud project for development, how to successfully deploy, and how to troubleshoot issues.
+Welcome to the Umbraco Cloud documentation. Here you can read all about how to set up and work with Umbraco Cloud. You can find articles about the deployment workflow, how to work locally and all the features that comes with your Umrbaco Cloud project. You can also find articles about troubleshooting various issues.
 
 ##[Getting Started](Getting-Started/)
 If you're new to Umbraco Cloud then start here. All about what Umbraco Cloud is and how you can use it to get your work done more efficiently - and have more fun.
