@@ -2,7 +2,7 @@
 
 Here's a technical overview of the different parts that make up an environment on your Umbraco Cloud project:
 
-![Umbraco Cloud Environment Technical Overview](images/environment-tech-overview.PNG)
+![Umbraco Cloud Environment Technical Overview](images/environment-tech-overview.png)
 
 ## Site and Git repository
 
