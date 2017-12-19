@@ -16,7 +16,23 @@ By default the projects are ordered by latest updates - projects you've worked o
 
 In the top-right corner of the projects view you'll find an option to create more projects. Simply choose the plan you want and a project will be ready for you within a few minutes. 
 
+IMAGE
+
 ## Project Management
+
+Managing your individual projects has been made even simpler with Umbraco Cloud. 
+
+In the project view you will have a quick overview of the environments in your project:
+
+* Environment status
+* Links to backoffice, frontend and the environment history
+* Get URL for cloning down to your local machine
+* Option to restart environments
+* Access to Power Tools
+
+Aside from these features, it's also from the project view that changes are deployed from one Cloud environment to another - find out more in the [Cloud-to-Cloud](/Deployment/cloud-to-cloud) article.
+
+
 
 ### Connection details
 
