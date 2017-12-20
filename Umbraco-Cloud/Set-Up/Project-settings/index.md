@@ -16,7 +16,15 @@ You can bind a total of 15 hostnames to each of your Umbraco Cloud environments.
 
 Once you add a domain to one of your environments make sure to update the hostname DNS entry to resolve to the umbraco.io service. We recommend setting an ALIAS record for your root domain (e.g. mysite.s1.umbraco.io), rather than an A record for the umbraco.io service IP address. Check with your DNS host or domain registrar for details on how to configure this for your domain. 
 
-###Hiding the Default umbraco.io Url
+You will also need to add the hostnames to your root content node.
+
+* Go to the Umbraco Backoffice
+* *Right-click* the root content node
+* Choose **Culture and Hostnames**
+* Add your hostname
+* Hit *Save*
+
+### Hiding the Default umbraco.io Url
 Once you've assigned a hostname to your Live environment you may want to "hide" the projects default URL (e.g. mysite.s1.umbraco.io) for various reasons. Perhaps for SEO or just making it clear to your users that the site can be accessed using just one hostname.
 
 One approach for this is to add a redirect to your projects web.config. To accomplish this, add a redirect rule to the `<system.webServer><rewrite><rules>` section in the web.config file. For example, the following rule will redirect all requests for the projects mysite.s1.umbraco.io URL to the mysite.com URL and respond with a permanent redirect status.
