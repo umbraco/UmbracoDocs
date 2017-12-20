@@ -1,16 +1,16 @@
-#Multiple Textbox
+#Repeatable textstrings
 
 `Returns: array of strings`
 
-The Multiple Textbox property editor enables a content editor to make a list of text items. For best use with an unordered-list.
+The Repeatable textstrings property editor enables a content editor to make a list of text items. For best use with an unordered-list.
 
 ##Data Type Definition Example
 
-![Multiple Textbox Data Type Definition](images/wip.png)
+![Repeatable textstringsData Type Definition](images/wip.png)
 
 ##Content Example 
 
-![Multiple Textbox Content](images/wip.png)
+![Repeatable textstrings Content](images/wip.png)
 
 ##MVC View Example
 
