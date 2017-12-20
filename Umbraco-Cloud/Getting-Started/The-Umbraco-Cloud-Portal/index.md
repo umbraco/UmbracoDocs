@@ -32,20 +32,12 @@ In the project view you will have a quick overview of the environments in your p
 
 Aside from these features, it's also from the project view that changes are deployed from one Cloud environment to another - find out more in the [Cloud-to-Cloud](/Deployment/cloud-to-cloud) article.
 
+From **Settings** - in the top-right corner - you'll a lot more options to configure your project.
 
 
-### Connection details
-
-### Manage domains
-
-### Manage IP Whitelist
-
-### Upgrade your project
-
-### Renaming and deleting
-
-### Deployment Webhook
 
 ## Your Umbraco Cloud profile
+
+
 
 ## The chat
