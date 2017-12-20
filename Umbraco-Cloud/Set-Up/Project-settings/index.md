@@ -86,7 +86,9 @@ The option will not be avaliable when you are already on a Professional plan or 
 
 ## Renaming and deleting
 
-Sometimes you might want to rename your Umbraco Cloud project - find an option to do that from the *Settings* menu.
+Sometimes you might want to rename your Umbraco Cloud project - find an option to do that from the *Settings* menu. 
+
+**NOTE**: If you are working locally you need to make a fresh local clone of the project, once you’ve changed your project name.
 
 If you want to delete your Umbraco Cloud project you can find an option to do this from the *Settings* menu as well. Deleting your Umbraco Cloud project is permanent - all data, media, databases, configuration, setup, and domain bindings are removed in the process.
 

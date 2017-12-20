@@ -32,28 +32,40 @@ In the project view you will have a quick overview of the environments in your p
 
 Aside from these features, it's also from the project view that changes are deployed from one Cloud environment to another - find out more in the [Cloud-to-Cloud](/Deployment/cloud-to-cloud) article.
 
-From **Settings** - in the top-right corner - you'll a lot more options to configure your project.
+From [Settings](../../Set-up/project-settings) - in the top-right corner - you'll a lot more options to configure your project.
 
 ## Your Umbraco Cloud profile
 
 ![settings](images/profile.png)
 
-###Name
+### Name
+
 The name that will be displayed on Umbraco Cloud
 
-###Email
+### Email
+
 This email address is used for logging in to Umbraco Cloud and will receive email notifications from the Umbraco Cloud Portal.
 
-###Change password
+### Change password
+
 Change the password for your Umbraco Cloud account.
 
-##Advanced settings
+### Advanced settings
 
 ![Advanced settins](images/advanced.jpg)
-###Timezones
+
+#### Timezones
+
 From your profile settings you can set your timezone. This applies to the display of status messages in the Umbraco Cloud portal and makes it easier to determine the actual time a particular status was created.
 
-###Experimental Features
+#### Experimental Features
+
 You can enable the availability of experimental features for your projects. This includes features that may not be functionally complete and are not supported by Umbraco HQ. We recommend enabling this only if you fully understand the feature you will be using or are strictly using the project as a test.
 
 ## The chat
+
+In the bottom-right corner of the Umbraco Cloud Portal you'll find a chat-bubble. This is where you will be able to reach out to the Umbraco HQ Support Warriors should you encounter any issues while working with your Umbraco Cloud project.
+
+Note that with the Starter plan you are only entitled to support regarding specific Cloud issues. Are you on a Professional plan you will also be entitled to support regarding issues with the CMS.
+
+Read about the [Umbraco Cloud plans](https://umbraco.com/pricing/) to learn more about this.
