@@ -1,5 +1,11 @@
 # Manage your project settings
 
+When working with an Umbraco Cloud project you can handle a lot of the project configuration directly in the Umbraco Cloud Portal.
+
+The things you can configure includes hostnames / domains, SSL certificates, database connections and deployment webhooks.
+
+![settings](images/settings.jpg)
+
 ## Connection details
 
 This is where you go to find connection details to your [Umbraco Cloud databases](../../Databases).
@@ -68,9 +74,9 @@ For example, the following rule will redirect all requests for the site http://m
 
 ## Manage IP Whitelist
 
-This is where you go to whitelist IP's for the basic authentication that's enabled on Development and Staging environments.
+This is where you go to whitelist IP's for the basic authentication that's enabled on the Development and Staging environments. Simply add the IP's to the list on under the environment you want to open access to, and we'll take care of the rest!
 
-If you are on a Trial plan, you can also whitelist IP's for bypassing the basic authentication on the Live environment.
+If you are on a Trial plan, you can also whitelist IP's for bypassing the basic authentication on the Live environment - on paid projects the basic authentication will be disabled by default on the Live environment.
 
 ## Upgrade your project
 

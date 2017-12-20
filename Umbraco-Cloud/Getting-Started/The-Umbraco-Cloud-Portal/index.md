@@ -34,10 +34,26 @@ Aside from these features, it's also from the project view that changes are depl
 
 From **Settings** - in the top-right corner - you'll a lot more options to configure your project.
 
-
-
 ## Your Umbraco Cloud profile
 
+![settings](images/profile.png)
 
+###Name
+The name that will be displayed on Umbraco Cloud
+
+###Email
+This email address is used for logging in to Umbraco Cloud and will receive email notifications from the Umbraco Cloud Portal.
+
+###Change password
+Change the password for your Umbraco Cloud account.
+
+##Advanced settings
+
+![Advanced settins](images/advanced.jpg)
+###Timezones
+From your profile settings you can set your timezone. This applies to the display of status messages in the Umbraco Cloud portal and makes it easier to determine the actual time a particular status was created.
+
+###Experimental Features
+You can enable the availability of experimental features for your projects. This includes features that may not be functionally complete and are not supported by Umbraco HQ. We recommend enabling this only if you fully understand the feature you will be using or are strictly using the project as a test.
 
 ## The chat
