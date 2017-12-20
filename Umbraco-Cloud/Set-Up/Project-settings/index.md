@@ -27,8 +27,7 @@ You will also need to add the hostnames to your root content node.
 ### Hiding the Default umbraco.io Url
 Once you've assigned a hostname to your Live environment you may want to "hide" the projects default URL (e.g. mysite.s1.umbraco.io) for various reasons. Perhaps for SEO or just making it clear to your users that the site can be accessed using just one hostname.
 
-One approach for this is to add a redirect to your projects web.config. To accomplish this, add a redirect rule to the `<system.webServer><rewrite><rules>` section in the web.config file. For example, the following rule will redirect all requests for the projects mysite.s1.umbraco.io URL to the mysite.com URL and respond with a permanent redirect status.
-        
+One approach for this is to add a add a new rewrite rule to the `<system.webServer><rewrite><rules>` section in the `web.config` file. For example, the following rule will redirect all requests for the projects mysite.s1.umbraco.io URL to the mysite.com URL and respond with a permanent redirect status.        
         
     <rule name="Redirects umbraco.io to actual domain" stopProcessing="true">
       <match url=".*" />
@@ -43,13 +42,18 @@ One approach for this is to add a redirect to your projects web.config. To accom
 
 **Note:** This will not rewrite anything under the `/umbraco` path so that you can still do content deployments. You don't have to give your editors the umbraco.io URL, and they won't see the umbraco.io URL if you give them the actual domain name. This rule will also not apply on your local copy of the site running on `localhost`.  
 
-##Security Certificates
-You can apply certificates to your Live environment by uploading them from the _Manage Domains_ page. Your certificates need to be .pfx format and must be set to use a password. Each certificate can then be bound to a hostname you have already added to your site. Make certain you use the hostname you will bind the certificate to as the common name (CN) when generating the certificate.
+### Security Certificates
 
-###Running your site on HTTPS only
+On the **Manage domains** page you'll also find option to upload and configure SSL certificates for your Cloud environments.
+
+Your certificates need to be `.pfx` format and must be set to use a password. Each certificate can then be bound to a hostname you have already added to your site. Make certain you use the hostname you will bind the certificate to as the common name (CN) when generating the certificate.
+
+#### Running your site on HTTPS only
 Once you've applied a certificate to your site you can make sure that anybody visiting your site will always end up on HTTPS instead of the insecure HTTP.
 
-To accomplish this, add a redirect rule to the live site's web.config in the `<system.webServer><rewrite><rules>` section. For example, the following rule will redirect all requests for the site http://mysite.com URL to the secure https://mysite.com URL and respond with a permanent redirect status. 
+To accomplish this, add a rewrite rule to the live environment's `web.config` in the `<system.webServer><rewrite><rules>` section. 
+
+For example, the following rule will redirect all requests for the site http://mysite.com URL to the secure https://mysite.com URL and respond with a permanent redirect status. 
 
     <rule name="HTTP to HTTPS redirect" stopProcessing="true">
       <match url="(.*)" />
