@@ -6,7 +6,7 @@ Umbraco Cloud is a new way to work with your favorite CMS! It includes 10-ears o
 
 Umbraco Cloud is Umbraco - plus a whole lot more! Built on the Microsoft Azure Cloud and encompassing web standard approaches, Umbraco Cloud is familiar to Umbraco users new and old. We’ve made it painfully simple to get started with Umbraco Cloud and there are no limits to what you can accomplish - literally anything you can do with Umbraco and web technology you can do with Umbraco Cloud.
 
-Umbraco Cloud takes care of installation, infrastructure and security. We also provide you the tools to work with your project in the Cloud or or locally by cloning the project down to your PC, Mac or even your tablet.
+Umbraco Cloud takes care of installation, infrastructure and security. We also provide you the tools to work with your project in the Cloud or locally by cloning the project down to your PC, Mac or even your tablet.
 
 When you’re ready to show your work to the world, Umbraco Cloud provides a safe deployment mechanism that makes it easy for you to publish to the web. When you have changes or updates to your site, Umbraco Cloud has got you covered: An easy to follow process for moving, testing and deploying your changes to your public site. 
 
@@ -18,7 +18,7 @@ With all the success you’ll have building your site with Umbraco Cloud you’l
 
 The easiest way to get started with an Umbraco Cloud project is to take a 14-day free Trial - the project will automatically be created for you, and you are ready to get started within a few minutes.
 
-Since we take the liberty of setting up the entire project for you, I'd recommend that you [get to know your project](Project-overview) before you start builidng!
+Since we take the liberty of setting up the entire project for you, I'd recommend that you [get to know your project](Project-overview) before you start building!
 
 Once the project has been setup, you can choose to either start with a blank slate or go for a [*Starter kit*](https://our.umbraco.org/Documentation/Tutorials/Starter-kit/Index/) which will install a full template site for you.
 
