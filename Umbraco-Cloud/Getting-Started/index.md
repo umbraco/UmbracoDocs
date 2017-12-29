@@ -26,7 +26,7 @@ To start working with and building your site, you can either work directly in th
 
 ### Naming a Project
 
-When you creating a Trial project for the first time, a unique project name will be generated for you - and a project color will be chosen for you at random.
+When you create a Trial project for the first time, a unique project name will be generated for you - and a project color will be chosen for you at random.
 
 When you create a project from the Umbraco Cloud Portal you will get to choose your own name for the project. You will also be able to choose which color the project should have in your projects overview.  
 
