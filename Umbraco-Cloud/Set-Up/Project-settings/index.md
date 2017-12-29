@@ -35,7 +35,7 @@ You will also need to add the hostnames to your root content node.
 We create your project’s URL using the name you used when you created the project, and then we add _s1.umbraco.io_. 
 If you named your project **Snoopy**, your project URL will be *snoopy.s1.umbraco.io* and your project’s Umbraco backoffice URL will be *snoopy.s1.umbraco.io/umbraco*. 
 For the Development environment we prefix with *dev-* so the URLs will be *dev-snoopy.s1.umbraco.io* and *dev-snoopy.s1.umbraco.io/umbraco*. 
-You'll find all environments for a project listed on the [Project page](../../Getting-started/project-overview/#project-management).
+You'll find all environments for a project listed on the [Project page](../../Getting-started/The-Umbraco-Cloud-Portal/#project-management).
 
 Once you've assigned a hostname to your Live environment you may want to "hide" the projects default URL (e.g. mysite.s1.umbraco.io) for various reasons. Perhaps for SEO or just making it clear to your users that the site can be accessed using just one hostname.
 

@@ -1,7 +1,7 @@
 # Welcome to Umbraco Cloud
 In this article I will tell you all about Umbraco Cloud and how to get started! 
 
-## Overview
+## What is Umbraco Cloud?
 Umbraco Cloud is a new way to work with your favorite CMS! It includes 10-ears of experience and best-practices in an intuitive, simple, but robust approach. No matter if you’re working in a team or of you’re single handedly building a website, Umbraco Cloud removed the barriers that slow down projects and get in the way of beautiful, functional sites.
 
 Umbraco Cloud is Umbraco - plus a whole lot more! Built on the Microsoft Azure Cloud and encompassing web standard approaches, Umbraco Cloud is familiar to Umbraco users new and old. We’ve made it painfully simple to get started with Umbraco Cloud and there are no limits to what you can accomplish - literally anything you can do with Umbraco and web technology you can do with Umbraco Cloud.
