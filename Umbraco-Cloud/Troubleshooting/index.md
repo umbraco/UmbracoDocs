@@ -4,7 +4,7 @@ Sometimes things don't go perfectly (we know, surprise right?).  Following are s
 
 ## Deployment issues with Content
 
-Please refer to these two topics for troubleshooting Content deployments (this includes Media as well):
+Please refer to these two topics for troubleshooting Content transfer issues (this includes Media as well):
 
  - [Schema out of sync](Content-Deploy-Schema/)
  - [Errors during Content deployments](Content-Deploy-Error/)

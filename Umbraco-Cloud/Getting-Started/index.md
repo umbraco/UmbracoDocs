@@ -1,8 +1,7 @@
 #Welcome to Umbraco Cloud
 We're excited you have decided to use Umbraco Cloud!
 
-##What's up with the name Umbraco Cloud?
-Since Umbraco Cloud _is_ Umbraco in a cloud environment we thought we'd stick with a name that describes what it is. So there you go.
+In this article you can read all about how to manage your Umbraco Cloud projects, and learn what a project on Umbraco Cloud constists of.
 
 ## Projects and Environments
 In Umbraco Cloud we organize your work into projects which are made of environments, teams, settings, and other related resources like databases and file storage. A project is comprised of different numbers of environments depending on which plan you are on. If you choose the _Starter_ plan then the project comes with a single _live_ environment and you have the option to add a _development_ environment and a _staging_ environment. If you choose the _Professional_ plan the project will have a _Development_ AND a _Live_ environment. As with the _Starter_ Plan you can add/remove environments as needed.
