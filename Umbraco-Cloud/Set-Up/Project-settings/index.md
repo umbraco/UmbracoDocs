@@ -39,7 +39,7 @@ You'll find all environments for a project listed on the [Project page](../../Ge
 
 Once you've assigned a hostname to your Live environment you may want to "hide" the projects default URL (e.g. mysite.s1.umbraco.io) for various reasons. Perhaps for SEO or just making it clear to your users that the site can be accessed using just one hostname.
 
-One approach for this is to add a add a new rewrite rule to the `<system.webServer><rewrite><rules>` section in the `web.config` file. For example, the following rule will redirect all requests for the projects mysite.s1.umbraco.io URL to the mysite.com URL and respond with a permanent redirect status.        
+One approach for this is to add a new rewrite rule to the `<system.webServer><rewrite><rules>` section in the `web.config` file. For example, the following rule will redirect all requests for the projects mysite.s1.umbraco.io URL to the mysite.com URL and respond with a permanent redirect status.        
         
     <rule name="Redirects umbraco.io to actual domain" stopProcessing="true">
       <match url=".*" />
@@ -80,7 +80,7 @@ For example, the following rule will redirect all requests for the site http://m
 
 ## Manage IP Whitelist
 
-This is where you go to whitelist IP's for the basic authentication that's enabled on the Development and Staging environments. Simply add the IP's to the list on under the environment you want to open access to, and we'll take care of the rest!
+This is where you go to whitelist IP's for the basic authentication that's enabled on the Development and Staging environments. Simply add the IP's to the list under the environment you want to open access to, and we'll take care of the rest!
 
 If you are on a Trial plan, you can also whitelist IP's for bypassing the basic authentication on the Live environment - on paid projects the basic authentication will be disabled by default on the Live environment.
 
