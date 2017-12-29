@@ -2,6 +2,11 @@
 
 To make working with your Umbraco Cloud projects as simple as possible we've build the Umbraco Cloud Portal, where you can view and manage all your projects having only to remember one set of login credentials.
 
+This is also where you get to make your Umbraco project your own. Umbraco is built using web standards - things like HTML, CSS, and JavaScript. 
+You’ll find the HTML that makes up the Templates for your site in the Umbraco backoffice _Settings_ section, under the Templates tree. 
+This is plain-old-HTML, so feel free to change or replace what’s there. 
+The same goes for your project’s CSS (it’s in the Stylesheets tree) and the JavaScript (yup, in the Scripts tree). 
+
 ## Manage your projects
 
 When you login to the Umbraco Cloud Portal you will be presented with a view of all the Umbraco Cloud projects you've created or has been added to as a team member. 

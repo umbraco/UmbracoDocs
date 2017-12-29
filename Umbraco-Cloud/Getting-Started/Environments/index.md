@@ -28,7 +28,7 @@ Besides viewing the files on your Umbraco Cloud environments when cloning down t
 
 This is a dashboard that allows you to browse, view and edit all the files on your Umbraco Cloud environment. We recommend only using the tool when you are following one of our guides in the Troubleshooting section.
 
-In the [Power Tools article](../../Set-up/Power-tools) you can read more about how to access the dashboard, and how we recommend using it.
+In the [Power Tools](../../Set-up/Power-tools) article you can read more about how to access the dashboard, and how we recommend using it.
 
 ## Environment history
 
