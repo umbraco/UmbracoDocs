@@ -20,7 +20,7 @@ Read more about this and team member roles in the [Team Members article](../../S
 
 Each of your Umbraco Cloud environments will have it's own SQL Azure database. You will have full access to the databases, and you can create custom tables just like you'd expect on any other hosting provider.
 
-Learn more about how to connect to your Umbraco Cloud databases in the [Databases article](../../Databases).
+Learn more about how to connect to your Umbraco Cloud databases in the [Database](../../Databases) article.
 
 ## Power Tools (Kudu)
 
