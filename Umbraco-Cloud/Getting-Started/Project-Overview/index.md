@@ -19,11 +19,11 @@ Both the Development and the Staging environments are protected with **basic aut
 
 The final environment is the *Live* environment. This is your live site - the site that's visible to the public. When you are in Trial mode the Live environment will be protected by basic authentication - this will of course be removed, as soon as you setup a subscription for the project.
 
-For a more technical overview of your Cloud environments read the [Environments](/Environments) article and for more information about the workflow on Umbraco Cloud see the [Deployments](../../Deployment) article.
+For a more technical overview of your Cloud environments read the [Environments](../Environments) article and for more information about the workflow on Umbraco Cloud see the [Deployments](../../Deployment) article.
 
 ## Team Members
 
-Another major component on your Umbraco Cloud project is the team members. When you add team members to a project, they will automatically be added as backoffice users on all the environments as well. Team members can be added as *Admins*, *Writers* or *Readers*. Read the [Team Members](../../Set-up/Team-members) article to learn more about these roles.
+Another major component on your Umbraco Cloud project are the team members. When you add team members to a project, they will automatically be added as backoffice users on all the environments as well. Team members can be added as *Admins*, *Writers* or *Readers*. Read the [Team Members](../../Set-up/Team-members) article to learn more about these roles.
 
 ## Settings
 
