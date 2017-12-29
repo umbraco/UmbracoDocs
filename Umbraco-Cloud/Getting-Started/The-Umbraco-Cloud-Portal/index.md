@@ -2,20 +2,15 @@
 
 To make working with your Umbraco Cloud projects as simple as possible we've build the Umbraco Cloud Portal, where you can view and manage all your projects having only to remember one set of login credentials.
 
-This is also where you get to make your Umbraco project your own. Umbraco is built using web standards - things like HTML, CSS, and JavaScript. 
-You’ll find the HTML that makes up the Templates for your site in the Umbraco backoffice _Settings_ section, under the Templates tree. 
-This is plain-old-HTML, so feel free to change or replace what’s there. 
-The same goes for your project’s CSS (it’s in the Stylesheets tree) and the JavaScript (yup, in the Scripts tree). 
-
 ## Manage your projects
 
 When you login to the Umbraco Cloud Portal you will be presented with a view of all the Umbraco Cloud projects you've created or has been added to as a team member. 
 
 ![View all projects](images/view-projects.png)
 
-You can easily browse through the projects by using the search field. For quick access you can *favorite* the projects you are currently working, to make them appear as the first projects in the view.
+For quick access you can *favorite* the projects you are currently working, to make them appear as the first projects in the view. You can also browse through the projects by using the search field.
 
-By default the projects are ordered by latest updates - projects you've worked on recently will be showed on top and the ones you've haven't worked with in a while are in the bottom.  
+By default the projects are ordered by latest updates - projects you've worked on recently will be showed on top and the ones you haven't worked with in a while are in the bottom.  
 
 In the top-right corner of the projects view you'll find an option to create more projects. Simply choose the plan you want and a project will be ready for you within a few minutes. 
 
@@ -28,16 +23,18 @@ In the project view you will have a quick overview of the environments in your p
 ![Project overview](images/project-overview.png)
 
 * Environment status
-* Links to **backoffice**, **frontend** (View page) and the environment history
+* Links to **backoffice**, **frontend** (View page) and the **environment history**
 * Get URL for cloning down to your local machine
 * Option to restart environments
 * Access to Power Tools
 
-Aside from these features, it's also from the project view that changes are deployed from one Cloud environment to another - find out more in the [Cloud-to-Cloud](/Deployment/cloud-to-cloud) article.
+Aside from these features, it's also from the project view that changes are deployed from one Cloud environment to another - find out more in the [Cloud-to-Cloud](../../Deployment/cloud-to-cloud) article.
 
-From [Settings](../../Set-up/project-settings) - in the top-right corner - you'll a lot more options to configure your project.
+From [Settings](../../Set-up/project-settings) - in the top-right corner - you'll find a lot more options to configure your project.
 
 ## Your Umbraco Cloud profile
+
+You can find your Umbraco Cloud profile in the top-right corner.
 
 ![settings](images/profile.png)
 
