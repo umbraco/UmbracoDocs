@@ -3,14 +3,25 @@ Now that you've created a project there are a few things you may want to do to m
 
 Most of the set up can be accomplished by using the options from your project's Settings drop down. Some of the setup applies to all of your projects, so you'll make these updates from your profile section.
 
+## Managing your project
+
+Articles about configuring various settings on your project, as well as managing members, domains and certificates.
+
  - [Project settings](Project-settings/)
- - [Working with your site locally](Working-Locally/)
- - [Working with a Mac](Working-with-UaaS-Cli/)
  - [Adding team members](Team-Members/)
- - [Working with Visual Studio](Visual-Studio/)
- - [Additional media topics](Media/)
  - [SMTP Settings](SMTP-settings/)
- - [Power Tools (Kudu)](Power-Tools/)
- - [Project Settings in the Portal](Project-settings/)
  - [Manage domains and certificates](Manage-domains/)
+
+## Working with your Umbraco Cloud project
+
+Articles about how to work locally with your Umbraco Cloud project.
+
+ - [Working with your site locally](Working-Locally/)
+ - [Working with Visual Studio](Visual-Studio/)
+ - [Working with a Mac](Working-with-UaaS-Cli/)
+
+## Other topics
+
+ - [Additional media topics](Media/)
+ - [Power Tools (Kudu)](Power-Tools/)
  - [Config transforms for each environment](Config-Transforms/)
