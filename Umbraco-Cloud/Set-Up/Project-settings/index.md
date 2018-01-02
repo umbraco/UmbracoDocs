@@ -14,7 +14,11 @@ You will need to whitelist your IP in order to connect to the databases with you
 
 ## Manage domains
 
+Binding hostnames and domains to your Umbraco Cloud project is easily done from the Umbraco Cloud Portal - the page is called **Manage Domains**.
 
+This is also the page you go to, when you want to add security certificates to your project.
+
+You can find a lot more details about this in the [Manage domains](../Manage-Domains) article.
 
 ## Manage IP Whitelist
 
