@@ -1,8 +1,12 @@
 # Managing domains and certificates
 
+Under *Settings* in the Umbraco Cloud Portal you'll find a page called **Manage domains**. This is where you go when you want to bind domains to your Cloud environments and when you want to add security certificates to your environments.
+
 ## Domains
 
 When you've finished building your website with Umbraco Cloud you most likely want to bind a hostname to your project. This can be done from **Manage domains**.
+
+![Manage domains](images/manage-domains.png)
 
 You can bind any hostname to your project environments. Keeping in mind, of course, that the hostname will need to have a DNS entry so that it resolves to the Umbraco Cloud service.
 
@@ -17,6 +21,8 @@ You will also need to add the hostnames to your root content node.
 * Choose **Culture and Hostnames**
 * Add your hostname
 * Hit *Save*
+
+![Culture and Hostnames](images/culture-and-hostnames.png)
 
 ### Hiding the Default umbraco.io Url
 
@@ -43,6 +49,8 @@ One approach for this is to add a new rewrite rule to the `<system.webServer><re
 **Note:** This will not rewrite anything under the `/umbraco` path so that you can still do content deployments. You don't have to give your editors the umbraco.io URL, and they won't see the umbraco.io URL if you give them the actual domain name. This rule will also not apply on your local copy of the site running on `localhost`.  
 
 ## Security Certificates
+
+![Manage certificates](images/manage-certificates.png)
 
 On the **Manage domains** page you'll also find option to upload and configure SSL certificates for your Cloud environments.
 
