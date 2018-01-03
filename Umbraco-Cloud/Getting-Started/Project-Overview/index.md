@@ -6,12 +6,12 @@ Umbraco Cloud projects are made of three major components: environments, team me
 
 ## Environments
 
-The number of environments on your project is dependent on which plan you are on:
+The number of environments in your project is dependent on which plan you are on:
 
 * With the **Starter plan**, you get a single _Live_ environment and have the option to add additional environments - a _Development_ and a _Staging_ environment
 * With the **Professional plan**, you will get a _Development_ AND a _Live_ environment - as with the Starter Plan you can add/remove environments as needed
 
-When you have multiple environments on your Umbraco Cloud project the *Development* environment will be the *first* environment in the workflow. What this means, is that this is the environment you are going to work with when building the structure of your website. This is also the environment you clone down when you want to work with your project locally.
+When you have multiple environments in your Umbraco Cloud project the *Development* environment will be the *first* environment in the workflow. What this means, is that this is the environment you are going to work with when building the structure of your website. This is also the environment you clone down when you want to work with your project locally.
 
 The environment next in line in the workflow is the *Staging* environment. Having this environment enables you to give your team members different workspaces - the developers can work with code in the Development environment while the content editors can work with content in the Staging environment. All of this without affecting the actual public site.
 
