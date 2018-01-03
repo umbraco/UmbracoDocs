@@ -8,7 +8,7 @@ Here's a technical overview of the different parts that make up an environment o
 
 Your environments will have both a Git repository and a folder with your actual live site. The Git repository is what you clone down when you work with the project locally, and it's where your changes are pushed to.
 
-The live site contains the files used to show your website to the world. When you push changes from your local machine, they are pushed to the Git repository, and when this finishes succesfully the changes are extracted into the live site.
+The live site (`/site/wwwroot/`) contains the files used to show your website to the world. When you push changes from your local machine, they are pushed to the Git repository (`/site/repository/`), and when this finishes succesfully the changes are copied into the live site.
 
 ## Team members / Users
 
