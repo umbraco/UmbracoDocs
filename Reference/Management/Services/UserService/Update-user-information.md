@@ -1,13 +1,11 @@
 # Update user information
 
 ### Getting the user
-With the user service, we can programatically update the information of a backoffice user. We first need to get a reference to the user, which we can do in a a few different ways - eg. by the ID of the user, a username or an email address:
+With the user service, we can programatically update the information of a backoffice user. We first need to get a reference to the user, which we can do in a a few different ways - eg. by an email address:
 
-    IUser user1 = us.GetUserById(0);
-    IUser user2 = us.GetByUsername("john-doe@xample.org");
-    IUser user3 = us.GetByEmail("john-doe@xample.org");
+    IUser user = us.GetByEmail("john-doe@xample.org");
     
-As of Umbraco 7.7, the username is also the email address.
+You can see the [**Get a reference to a user** page](Get-a-reference-to-a-user.md) for other ways of looking up a user.
     
 ### Updating user properties
 Once you have a reference to a user, we can start updating it's properties - eg. setting the name:
