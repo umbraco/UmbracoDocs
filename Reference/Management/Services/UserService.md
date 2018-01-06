@@ -29,4 +29,8 @@ Getting the service through the `ApplicationContext`:
 
 ## Samples
 
-* [**Create a new user**](./UserService/Create-a-new-user.md)<br />Quick sample showing how to create a new user; including setting a password, assigning the user to a user group (from Umbraco 7.7 and up), and setting the name of the user.
+* [**Create a new user**](./Create-a-new-user.md)<br />Quick sample showing how to create a new backoffice user; including setting a password, assigning the user to a user group (from Umbraco 7.7 and up), and setting the name of the user.
+
+* [**Create a reference to a user**](./Get-a-reference-to-a-user.md)See the different ways to lookup a backoffice user.
+
+* [**Create a new user**](./Update-user-information.md)<br />See how you can update user information such as names and avatars.
