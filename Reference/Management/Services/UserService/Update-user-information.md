@@ -20,7 +20,7 @@ By setting the property, we only modify the user in memory, so we also need to c
 #### Setting the user avatar
 Similar to the name, we can also set the avatar of the user. By default, Umbraco will use the Gravatar image based on the user's email address. You can however set a custom avatar instead.
 
-If you upload a custom avatar through the backoffice, Umbraco will set a value like `UserAvatars/6708a49022a712eb7624c7b8aab811370526744b.jpg`. The virtual path of this file will then be `~/media/UserAvatars/6708a49022a712eb7624c7b8aab811370526744b.jpg. To set the avatar the same way as Umbraco, you can then update the `Avatar` property with a value like (you must manually upload the avatar to the folder):
+If you upload a custom avatar through the backoffice, Umbraco will set a value like `UserAvatars/6708a49022a712eb7624c7b8aab811370526744b.jpg`. The virtual path of this file will then be `~/media/UserAvatars/6708a49022a712eb7624c7b8aab811370526744b.jpg`. To set the avatar the same way as Umbraco, you can then update the `Avatar` property with a value like (you must manually upload the avatar to the folder):
 
     // Set the avatar
     user.Avatar = "UserAvatars/6708a49022a712eb7624c7b8aab811370526744b.jpg";
