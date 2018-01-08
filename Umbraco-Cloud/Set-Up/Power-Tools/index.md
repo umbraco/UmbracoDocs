@@ -52,6 +52,8 @@ Run an extraction following these steps:
 
 **NOTE**: Sometimes you might encounter a deploy-marker called `deploy`. This usually means that an extraction cannot run, and you need to restart your environment for the extraction to be able to run.
 
+Sometimes you might also need to run this extraction locally. This can be done by following the above steps using CMD (command prompt) on your local machine, and navigating to the `/data` folder in your local project folder.
+
 ### Generate UDA files
 
 Sometimes our guides requires you to generate UDA files for your projects metadata. Everytime you create something in the backoffice on your Umbraco Cloud project a UDA files will be generated.
