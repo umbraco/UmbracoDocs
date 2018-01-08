@@ -36,9 +36,17 @@ When you clone down your Umbraco Cloud project to your local machine, you'll eas
 
 In Kudu you can view your project files if you navigate to **CMD** under the **Debug console** menu. Here you'll be presented with a navigatable file structure.
 
-IMAGE
+All your project files will be under `/site`.
 
+![File structure](images/CMD-file-structure.png)
 
+I've highlighted the three folders you are going to use the most when visiting Kudu:
+
+* **deployments**: This folder contains log files for the deployments and extractions that has been run on the environment
+* **repository**: This is your Git repository - you'll find a clone of your site's structure files (`/wwwroot`) - this is the folder changes are pushed to and pulled from when working locally
+* **wwwroot**: This folder contains your site's structure files - these are the files used to run the site on the environment
+
+**Note**: `/wwwroot/` contains the files used to show your website to the world. When you push changes from your local machine, they are pushed to the Git repository (`/repository/`), and when this finishes succesfully the changes are copied into the live site.
 
 ### Run an extraction 
 
