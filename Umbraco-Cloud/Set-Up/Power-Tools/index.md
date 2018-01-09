@@ -30,6 +30,24 @@ You will need to allow for experimental features on your Umbraco Cloud profile b
 
 The power tools can be used for various things, and we are often referring to the tools in our troubleshooting guides.
 
+### View the files on your Cloud environments
+
+When you clone down your Umbraco Cloud project to your local machine, you'll easily be able to see all the project files in the folder you specify when cloning down the project. Sometimes you might also want to view the files you have on your Umbraco Cloud environments - perhaps to make sure that everything is in sync or if you suspect that a deployment or extraction hasn't gone quite as planned.
+
+In Kudu you can view your project files if you navigate to **CMD** under the **Debug console** menu. Here you'll be presented with a navigatable file structure.
+
+All your project files will be under `/site`.
+
+![File structure](images/CMD-file-structure.png)
+
+I've highlighted the three folders you are going to use the most when visiting Kudu:
+
+* **deployments**: This folder contains log files for the deployments and extractions that has been run on the environment
+* **repository**: This is your Git repository - you'll find a clone of your site's structure files (`/wwwroot`) - this is the folder changes are pushed to and pulled from when working locally
+* **wwwroot**: This folder contains your site's structure files - these are the files used to run the site on the environment
+
+**Note**: `/wwwroot/` contains the files used to show your website to the world. When you push changes from your local machine, they are pushed to the Git repository (`/repository/`), and when this finishes succesfully the changes are copied into the live site.
+
 ### Run an extraction 
 
 When you deploy from one environment to another on your Umbraco Cloud project, the Deploy engine is running an extraction. What this means, is that the files from the Git repository are merged into the files used on the site.
@@ -51,6 +69,8 @@ Run an extraction following these steps:
     2. `deploy-failed`: The extraction failed - open the file, to see the error message (the same error message will be shown on your environment in the Umbraco Cloud Portal)
 
 **NOTE**: Sometimes you might encounter a deploy-marker called `deploy`. This usually means that an extraction cannot run, and you need to restart your environment for the extraction to be able to run.
+
+Sometimes you might also need to run this extraction locally. This can be done by following the above steps using CMD (command prompt) on your local machine, and navigating to the `/data` folder in your local project folder.
 
 ### Generate UDA files
 
