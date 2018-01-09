@@ -4,7 +4,7 @@ When working with an Umbraco Cloud project you can handle a lot of the project c
 
 The things you can configure includes hostnames / domains, SSL certificates, database connections and deployment webhooks.
 
-![settings](images/settings.jpg)
+![settings](images/project-settings.png)
 
 ## Connection details
 
