@@ -30,7 +30,7 @@ When you create a trial project for the first time, a unique project name will b
 
 When you create a project from the Umbraco Cloud Portal you will get to choose your own name for the project. You will also be able to choose which color the project should have in your projects overview.  
 
-You can at anytime change the name of your project by using the [*Rename project*](../Set-up/project-settings/#renaming-and-deleting) option from the *Settings* menu.
+You can at any time change the name of your project by using the [*Rename project*](../Set-up/project-settings/#renaming-and-deleting) option from the *Settings* menu.
 
 An Umbraco Cloud project name is unique which means if a project with the name you choose already exists, you will need to choose another name before you can create the project.
 
