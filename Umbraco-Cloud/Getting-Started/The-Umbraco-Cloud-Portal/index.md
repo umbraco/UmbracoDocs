@@ -20,7 +20,7 @@ Managing your individual projects has been made even simpler with Umbraco Cloud.
 
 In the project view, you will have a quick overview of the environments in your project.
 
-![Project overview](images/project-overview.PNG)
+![Project overview](images/project-overview.png)
 
 * Environment status
 * Links to **backoffice**, **frontend** (View page) and the **environment history**
