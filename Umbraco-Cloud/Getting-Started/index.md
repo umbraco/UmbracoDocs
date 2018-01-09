@@ -39,4 +39,4 @@ An Umbraco Cloud project name is unique which means if a project with the name y
 
 You might not always want to start your Umbraco Cloud project with a clean slate. Perhaps you have an already existing site that you want to move on to the Cloud. For this purpose, we've created a [Migration guide](migrate-existing-site) that you can follow in order to successfully move your project to Umbraco Cloud.
 
-Another scenario could be if you are creating several similar projects. For this purpose we have built a feature called [Baselines](Baselines) that let's you create new projects based on existing Umbraco Cloud projects.
+Another scenario could be if you are creating several similar projects. For this purpose we have built a feature called [Baselines](Baselines) that lets you create new projects based on existing Umbraco Cloud projects.
