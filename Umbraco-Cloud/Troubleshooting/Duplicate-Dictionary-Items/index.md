@@ -40,6 +40,7 @@ The second scenario (*Scenario 2*) is when you do not have duplicate files for y
             Artifact: umb://dictionary-item/01aaeeed662645c8b348b2aa5ff83d6d
             {DictionaryItem umb://dictionary-item/fe1cae45094b43fba0545bdc45d121ed}
 
+You can find more details about UDA files in this article: [Generating UDA files](../../Set-up/Power-tools/Generating-UDA-files/#what-are-uda-files)
 
 ## Fixing
 
