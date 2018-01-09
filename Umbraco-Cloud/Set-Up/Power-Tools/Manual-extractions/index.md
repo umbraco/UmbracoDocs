@@ -18,8 +18,10 @@ Run an extraction following these steps:
     1. `deploy-complete`: The extraction succeeded and your environment is in good shape!
     2. `deploy-failed`: The extraction failed - open the file, to see the error message (the same error message will be shown on your environment in the Umbraco Cloud Portal)
 
+![Run manual extraction](images/manual-extraction.gif)
+
 **NOTE**: Sometimes you might encounter a deploy-marker called `deploy`. This usually means that an extraction cannot run, and you need to restart your environment for the extraction to be able to run.
 
 Sometimes you might also need to run this extraction locally. This can be done by following the above steps using CMD (command prompt) on your local machine, and navigating to the `/data` folder in your local project folder.
 
-Find general information about Kudu and how to access the tool in the [Power tools](../Manual-extractions) article.
+Find general information about Kudu and how to access the tool in the [Power tools](../) article.

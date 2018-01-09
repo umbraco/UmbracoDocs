@@ -16,4 +16,4 @@ I've highlighted the three folders you are going to use the most when visiting K
 
 **Note**: `/wwwroot/` contains the files used to show your website to the world. When you push changes from your local machine, they are pushed to the Git repository (`/repository/`), and when this finishes succesfully the changes are copied into the live site.
 
-Find general information about Kudu and how to access the tool in the [Power tools](../Manual-extractions) article.
+Find general information about Kudu and how to access the tool in the [Power tools](../) article.

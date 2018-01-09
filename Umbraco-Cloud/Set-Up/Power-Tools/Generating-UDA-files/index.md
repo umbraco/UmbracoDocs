@@ -71,4 +71,4 @@ Follow these steps to generate UDA files:
 
 Generating UDA files manually might sometimes end up giving you collision errors on your environments due to duplicates. This can be resolved by following our [Structure Error](../../../Troubleshooting/Structure-Error) documentation.
 
-Find general information about Kudu and how to access the tool in the [Power tools](../Manual-extractions) article.
+Find general information about Kudu and how to access the tool in the [Power tools](../) article.
