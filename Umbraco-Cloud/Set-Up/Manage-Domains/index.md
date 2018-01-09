@@ -1,6 +1,6 @@
 # Managing domains and certificates
 
-Under *Settings* in the Umbraco Cloud Portal you'll find a page called **Manage domains**. This is where you go when you want to bind domains to your Cloud environments and when you want to add security certificates to your environments.
+Under *Settings* in the Umbraco Cloud Portal, you'll find **Manage domains**. This is where you go when you want to bind domains to your Cloud environments and when you want to add security certificates to your environments.
 
 ## Domains
 
@@ -10,7 +10,7 @@ When you've finished building your website with Umbraco Cloud you most likely wa
 
 You can bind any hostname to your project environments. Keeping in mind, of course, that the hostname will need to have a DNS entry so that it resolves to the Umbraco Cloud service.
 
-You can bind a total of 15 hostnames to each of your Umbraco Cloud environments.
+You can bind a total of 15 hostnames to each Umbraco Cloud environments.
 
 Once you add a domain to one of your environments make sure to update the hostname DNS entry to resolve to the umbraco.io service. We recommend setting an ALIAS record for your root domain (e.g. mysite.s1.umbraco.io), rather than an A record for the umbraco.io service IP address. Check with your DNS host or domain registrar for details on how to configure this for your domain. 
 
@@ -26,7 +26,7 @@ You will also need to add the hostnames to your root content node.
 
 ### Hiding the Default umbraco.io Url
 
-We create your project’s URL using the name you used when you created the project, and then we add _s1.umbraco.io_. 
+We create your project’s URL based on the name of the project project, and then we add _s1.umbraco.io_. 
 If you named your project **Snoopy**, your project URL will be *snoopy.s1.umbraco.io* and your project’s Umbraco backoffice URL will be *snoopy.s1.umbraco.io/umbraco*. 
 For the Development environment we prefix with *dev-* so the URLs will be *dev-snoopy.s1.umbraco.io* and *dev-snoopy.s1.umbraco.io/umbraco*. 
 You'll find all environments for a project listed on the [Project page](../../Getting-started/The-Umbraco-Cloud-Portal/#project-management).
