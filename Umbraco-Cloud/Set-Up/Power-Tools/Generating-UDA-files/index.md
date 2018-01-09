@@ -4,6 +4,45 @@ Sometimes our guides requires you to generate UDA files for your projects metada
 
 Generating UDA files manually ensures that you have everything you need in order to deploy succesfully from one environment to another.
 
+## What are UDA files?
+
+When you create something in the backoffice of your Umbraco Cloud project and hit save, a UDA file will be generated.
+
+The UDA file contains metadata and detailed information about the type that was created.
+
+Here's an example of what a UDA file looks like for Umbraco Deploy 2:
+
+    {
+        "DefaultTemplate": null,
+        "AllowedTemplates": [],
+        "Icon": "icon-document",
+        "Thumbnail": "folder.png",
+        "Description": null,
+        "AllowedAtRoot": false,
+        "IsContainer": false,
+        "Parent": null,
+        "AllowedChildContentTypes": [],
+        "CompositionContentTypes": [
+            "umb://document-type/4c04d968448747d791b5eae254afc7ec"
+        ],
+        "PropertyGroups": [],
+        "PropertyTypes": [],
+        "Udi": "umb://document-type/f76e64bec5e741cd801b290c54bb16de",
+        "Dependencies": [
+            {
+            "Udi": "umb://document-type/4c04d968448747d791b5eae254afc7ec",
+            "Ordering": true,
+            "Mode": 0
+            }
+        ],
+        "Name": "TextPage2",
+        "Alias": "textPage2",
+        "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+        "__version": "2.0.3"
+    }
+
+This UDA file represents a Document Type with name **TextPage2**. All dependencies for the document type is listed in the file and also metadata like `AllowedAtRoot` and `Icon`.
+
 UDA files are generated for the following types:
 
 * Data types
@@ -17,6 +56,8 @@ UDA files are generated for the following types:
 * Member types
 * Relation types
 * Templates
+
+## Generate UDA files manually
 
 Follow these steps to generate UDA files:
 
