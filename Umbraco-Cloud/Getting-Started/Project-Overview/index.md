@@ -2,7 +2,7 @@
 
 Umbraco Cloud projects are made of three major components: environments, team members and a settings section.
 
-![Project overview](images/project-components.PNG)
+![Project overview](images/project-components.png)
 
 ## Environments
 
