@@ -126,6 +126,12 @@ We are working towards being able to mitigate these issues by adding the ability
 
 For your front-end Azure Web App instance, you'll need to ensure that the Umbraco XML config file is stored on the local server (since Azure uses a shared file system). To do this you need to add a new app setting to web.config:
 
+For **Umbraco v7.7.3+**
+
+	<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
+
+This will set Umbraco to store `umbraco.config` in the environment temporary folder
+
 For **Umbraco v7.6+**
 
 	<add key="umbracoContentXMLStorage" value="EnvironmentTemp" />
