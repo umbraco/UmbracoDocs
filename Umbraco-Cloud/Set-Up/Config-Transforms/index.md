@@ -37,3 +37,29 @@ Again, these type of prefixed files can be placed next to any other file so if y
 ## Useful links
 - [Config transform syntax](https://msdn.microsoft.com/en-us/library/dd465326)
 - [Test your config transforms online](https://webconfigtransformationtester.apphb.com/)
+
+## Forced transforms
+
+Whenever you deploy changes to any of your environments we force some config transforms to help make sure optimal settings are set for your website. 
+
+### Web.config forced transforms
+
+These are the transforms we do on the root `web.config` file regardless of the custom transforms you might have specified above, we enforce these transforms always.
+
+On live environments only:
+
+- We set `debug="false"` on the `compilation` node in `system.web` 
+- We set `mode="RemoteOnly"` on the `customErrors` node in `system.web`
+
+On all other environments:
+
+- We set `debug="true"` on the `compilation` node in `system.web` 
+- We set `mode="Off"` on the `customErrors` node in `system.web`
+- We set `waitChangeNotification="3" maxWaitChangeNotification="10"` on the `httpRuntime` node in `system.web` 
+- We set `numRecompilesBeforeAppRestart="50"`  on the `compilation` node in `system.web` 
+- We set the smtp `host=""` if the host was set to `127.0.0.1`
+
+
+Note that for the `compilation debug` and the `customErrors mode` there is a toggle in the Umbraco Cloud portal to temporarily toggle the opposite setting. This will change the debug/customErrors mode until the next deploy to this environment on each deploy the forced transforms will be performed again.
+
+![Toggle debug mode](images/toggle-debug.png)
