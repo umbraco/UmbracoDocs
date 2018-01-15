@@ -59,6 +59,10 @@ one Umbraco Cloud site - make sure to contact us if you need more than that
 
 In our experience there is only a few Cloud sites that have experienced these limitations and we're happy to work with people who have sites affected by these limitations.
 
+### Can I use Cloudflare in front of my Umbraco Cloud site
+
+Yes. Point the DNS for your to Cloudflare and tell Cloudflare about the IP address of your Umbraco Cloud site to use Cloudflare's full feature set.
+
 ---
 
 ## Upgrades
@@ -82,6 +86,13 @@ Pending commits won't stop the auto-upgrade.
 Yes, that’s fine. In some cases you may want to upgrade sooner than the scheduled service upgrade or you may have a site we couldn't upgrade automatically for one reason or another.
 
 Do note, however that you will need to step through the upgrade installer manually on each environment, including live. Our automated upgrader makes sure that visitors to your live site will not be prompted to log in to the upgrade installer.
+
+
+### I have customized files that Umbraco ships with, will they be overwritten during upgrades?
+
+You will have to assume that every time we upgrade your site, any file that comes with Umbraco by default will be overwritten. Generally we only overwrite the files that have been changed in the newest release but there is no guarantee for that. So if you (for example) have customized the login page then you can assume it will be reverted on each upgrade. 
+
+As a workaround you could have an [ApplicationEventHandler](https://our.umbraco.org/Documentation/Reference/Events/Application-Startup#use-applicationeventhandler-to-register-events) in which you check if the file is different from your customized file and overwrite it again. Note that this is NOT possible if you customize any of the Umbraco dll files.
 
 ---
 

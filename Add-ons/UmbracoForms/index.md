@@ -9,4 +9,4 @@ Extending Umbraco with the Forms section and keeping it up to date
 Documents how to interact with the interface and build forms in a couple of clicks.
 
 ##[For developers](Developer/index.md)
-Developer documents covers working with Umbraco Forms from a developer standpoint. It covers retrieving data from Forms, it shows how to extend the system by hooking into the provider model, and finally it describes the available events and workflows you can use to extend or integrate Umbraco Forms.
+Developer documents covers working with Umbraco Forms from a developer standpoint. It covers retrieving data from Forms, it shows how to extend the system by hooking into the provider model, and finally it describes the available events and workflows you can use to extend or integrate Umbraco Forms. 
