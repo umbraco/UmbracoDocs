@@ -144,6 +144,13 @@ In the future, the cookie will be set to `HttpOnly` on Umbraco Cloud to conform 
 
 For more information see [the related github issue](https://github.com/Azure/app-service-announcements/issues/12).
 
+### Can I use wildcard certificates on Umbraco Cloud? How about an EV, DV or OV certificate?
+
+Yes. You can use any valid certificate on Umbraco Cloud.
+
+### I get a warning that "your connection is not private" and the certificate is served for *.umbraco.io
+
+It seems that you didn't send up the bindings for the specific domain where this warning is showing. Check the bindings by going to the site in [the portal](https://www.s1.umbraco.io) by going to the "Manage hostnames" section for your site.
 
 ### How can I control who accesses my backoffice using IP filtering?
 
@@ -180,6 +187,10 @@ You will notice that the regex `^umbraco/backoffice/(.*)|^umbraco` also stops pe
 Then the last IP address is just an example, you can add the addresses that your organization uses as new items to this list.
 
 *Note*: It is possible to change the `umbraco/` route so if you've done that then you need to use the correct prefix. Doing this on Cloud is untested and at the moment not supported. 
+
+### Does Umbraco Cloud use Transparent Data Encryption (TDE) for databases?
+
+Yes, every site created after May 2nd 2017 will have TDE enabled by default. Folder older site we can enable this by request.
 
 ---
 
