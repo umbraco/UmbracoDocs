@@ -190,7 +190,7 @@ Then the last IP address is just an example, you can add the addresses that your
 
 ### Does Umbraco Cloud use Transparent Data Encryption (TDE) for databases?
 
-Yes, every site created after May 2nd 2017 will have TDE enabled by default. Folder older site we can enable this by request.
+Yes, every site created after May 2nd 2017 will have TDE enabled by default. For older sites we can enable this by request.
 
 ---
 
