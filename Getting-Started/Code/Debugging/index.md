@@ -47,7 +47,7 @@ If you click 'Show Trivial' you can seen the kind of detail the MiniProfiler mak
 
 and any underlying SQL Statements that are being executed for a a part of the execution
 
-![Show Trivial](images/underlying-sql-requests.png)
+![Underlying SQL queries](images/underlying-sql-queries.png)
 
 #### Writing to the MiniProfiler
 
