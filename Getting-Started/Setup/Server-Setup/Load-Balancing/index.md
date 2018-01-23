@@ -19,7 +19,7 @@ __It is highly recommended that you setup your staging environment to also be lo
 ## Flexible load balancing
 
 With Umbraco version 7.3.0, load balancing is easier than ever before.
-Setting up a load balanced environment is reasonably easy to acheive and can be done with only a few configuration file changes.
+Setting up a load balanced environment is reasonably easy to achieve and can be done with only a few configuration file changes.
 
 [Full documentation is available here](flexible.md)  
 
@@ -88,6 +88,12 @@ Yes. There are no problems with having your master admin server also serve front
 
 However, if you wish to have different security policies for your front-end servers and your back
 office servers, you may choose to not do this.
+
+__Question>__ _Can I use Courier combined with Load Balancing?_
+
+Yes! However, it is critical that when you are pushing changes via Courier to your load balanced environment that you configure Courier to only push those changes to your Master server. If you are pushing Content or Media changes, you will need to ensure that your Schema elements (i.e. Document and Media Types, etc...) are identical on both environments otherwise you'll be presented with an error. You can also push schema changes via Courier between environments.
+
+
 
 ## More information
 - Codegarden '15 session: [Umbraco Load Balancing](https://vimeo.com/132815038)

@@ -201,7 +201,7 @@ Turn XML caching of content on/off. Umbraco makes heavy use of caching content i
 
 **ContinouslyUpdateXmlDiskCache**
 
-Updates the XmlCache whenever content is published. If it's set to false, then writes to the disk cache will be queued and performed asynchronously.
+Updates the XmlCache whenever content is published, default is set to true. If it's set to false then it will never write the xml to disc. This will have an affect on start up times as Umbraco will have to fetch the initial Xml from the database instead of from disc. This is a legacy setting for older load balanced setups. You are advised to leave this set to true on new builds.
 
         <!-- Update disk cache every time content has changed -->
         <ContinouslyUpdateXmlDiskCache>True</ContinouslyUpdateXmlDiskCache>
@@ -248,6 +248,20 @@ This setting is used when you're running Umbraco in virtual directories.
         <!-- Setting this to true can increase render time for pages with a large number of links -->
         <!-- If running umbraco in virtual directory this *must* be set to true! -->
         <ResolveUrlsFromTextString>false</ResolveUrlsFromTextString>
+        
+**DisallowedUploadFiles**
+
+This settings consists of a "black list" of file extensions that editors shouldn't be allowed to upload via the back-office.
+
+        <!-- These file types will not be allowed to be uploaded via the upload control for media and content -->
+        <disallowedUploadFiles>ashx,aspx,ascx,config,cshtml,vbhtml,asmx,air,axd,swf,xml,xhtml,html,htm,svg,php,htaccess</disallowedUploadFiles>
+        
+**AllowedUploadFiles (introduced in 7.6.2)**
+
+If greater control is required than available from the above, this setting can be used to store a "white list" of file extensions.  If provided, only files with these extensions can be uploaded via the back-office.
+
+        <!-- If completed, only the file extensions listed below will be allowed to be uploaded.  If empty, disallowedUploadFiles will apply to prevent upload of specific file extensions. -->
+        <allowedUploadFiles></allowedUploadFiles>
 
 ##Security
 
@@ -331,6 +345,7 @@ If you don't want to have a trailing slash when directory urls are in use simply
 The **removeDoubleDashes** attribute makes sure the double dashes will not appear in the url. Set it to **false** if you want to have double dashes. NOTE that this attribute has no effect anymore starting with Umbraco 6.1 / 7.0 where double dashes are systematically removed.
 
 The **toAscii** attributes tells Umbraco to convert all urls to ASCII using the built-in transliteration library. It is disabled by default, ie by default urls remain UTF8. Set it to **true** if you want to have ASCII urls.
+Introduced in Umbraco 7.6.4 the toAscii attribute can be set to **try**. This will make the engine try to convert the name to an ASCII implementation. If it fails, it will fallback to the name. Reason is that some languages doesn't have ASCII implementations, therefore the urls would end up being empty.
 
 Within the **`<urlReplacing>`** section there are a lot of **`<char>`** elements with an **org** attribute. The attribute holds the character that should
 be replaced and withing the **`<char>`** tags the value it should be replaced width is entered.

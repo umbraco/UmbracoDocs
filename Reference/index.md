@@ -20,10 +20,16 @@ __Note: opens a documentation browser that is different from the documentation s
 
 Angular, JS, CSS & Less UI API references for building Umbraco backoffice components
 
+##[Security](Security/index.md)
+
+information on Umbraco security, it's various security options and configuring how authentication & authorization works in Umbraco
+
 ##[Configuration](Config/index.md)
+
 Information about all of Umbraco's configuration files and options.
 
 ##[IoC & Dependency Injection](using-ioc.md)
+
 Info about setting up IoC/Dependency Injection to work with Umbraco
 
 ##[Templates](Templating/index.md)

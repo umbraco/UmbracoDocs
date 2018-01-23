@@ -5,7 +5,7 @@ This page describes how to setup your Visual Studio solution to work with an Umb
 ##The Visual Studio Solution
 We currently recommend using a Visual Studio solution with a Website Project for the Umbraco site (coming from the cloned git repository from the Umbraco Cloud Project), and a Class Library Project for the code that will be created for the Umbraco site. This can be MVC Controllers, WebApi Controllers, Surface Controllers or data access plus whatever else you might need to write code for.
 
-Below is a screenshot of how the Projects should be configured. Here we use the following naming convensions: `*.Web` for the Umbraco website and `*.Core` for the accompanying code.
+Below is a screenshot of how the Projects should be configured. Here we use the following naming conventions: `*.Web` for the Umbraco website and `*.Core` for the accompanying code.
 
 ![Visual Studio Project setup](images/vs-project-setup.png)
 
@@ -38,7 +38,7 @@ The result should look something like this within the folder where the UaaS.cmd 
 You can now open the solution in Visual Studio and hit F5 to start the site directly from Visual Studio.
 
 ##The Git repositories
-One thing to notice about this setup is that you will get two git repositories just as you get two projects. The site cloned from your Umbraco Cloud Project will be contained within a git repository that is connected to your Project on Umbraco Cloud. Whenever you want to deploy changes to your (remote) Umbraco Cloud site you should commit everything within the `*.Web` folder, which is where the git repository for Umbraco as a Serivce is also located.
+One thing to notice about this setup is that you will get two git repositories just as you get two projects. The site cloned from your Umbraco Cloud Project will be contained within a git repository that is connected to your Project on Umbraco Cloud. Whenever you want to deploy changes to your (remote) Umbraco Cloud site you should commit everything within the `*.Web` folder, which is where the git repository for Umbraco as a Service is also located.
 
 Going up one level to where the `*.sln` file is located you will notice a `.git` folder, which is the second git repository. You should use this repository for all the code you write as well as the solution and project files for Visual Studio.
 

@@ -1,4 +1,4 @@
-#Running Umbraco on Azure Web Apps
+# Running Umbraco on Azure Web Apps
 
 _This section describes best practices with running Umbraco on Azure Web Apps_
 
@@ -6,7 +6,7 @@ _This section describes best practices with running Umbraco on Azure Web Apps_
 
 This has been called a few names in the past, many people still know Azure Web Apps as Azure Web Sites. 
 
-> App Service is a fully Managed Platform for professional developers that brings a rich set of capabilities to web, mobile and integration scenarios. Quickly create and deploy mission critical web apps that scale with your business by using Azure App Service.
+> App Service is a fully Managed Platform for professional developers that brings a rich set of capabilities to web, mobile and integration scenarios. Quickly create and deploy mission critical web Apps that scale with your business by using Azure App Service.
 
 [You can read more about this here](https://azure.microsoft.com/en-us/documentation/articles/app-service-web-overview/)
 
@@ -45,12 +45,35 @@ ability of Azure Web Apps then you need to consult the
 [Load Balancing documentation](load-balancing.md)__ since there is a lot more that needs
 to be configured to support scaling/auto-scaling.
 
-* If you have a {machinename} token in your ~/Config/ExamineIndex.config file remove this part of the path. Example, if you have path that looks like: "~/App_Data/TEMP/ExamineIndexes/{machinename}/External/" it should be "~/App_Data/TEMP/ExamineIndexes/External/" 
-* Due to the nature of Lucene files and IO latency, you should update all of your Indexers and Searchers in the ~/Config/ExamineSettings.config file to have these two properties (see [here](http://issues.umbraco.org/issue/U4-7614) for more details):
-```
-useTempStorage="Sync"
-tempStorageDirectory="UmbracoExamine.LocalStorage.AzureLocalStorageDirectory, UmbracoExamine"
-```
 * You should ensure that `fcnMode="Single"` in your web.config's `<httpRuntime>` section (this is the default that is shipped with Umbraco, see [here](http://shazwazza.com/post/all-about-aspnet-file-change-notification-fcn/) for more details)
-* You should set your log4net minimum log priority to "WARN" in /Config/log4net.config if you are running a live site (of course if you are debugging this is irrelavent)
-* The minimum recommended Azure SQL Tier is "S2", however noticable performance improvements are seen in higher Tiers 
+* You should set your log4net minimum log priority to "WARN" in /Config/log4net.config if you are running a live site (of course if you are debugging this is irrelevant)
+* The minimum recommended Azure SQL Tier is "S2", however noticeable performance improvements are seen in higher Tiers 
+
+#### Examine v0.1.80+ ####
+
+Examine v0.1.80 introduced a new `directoryFactory` named `SyncTempEnvDirectoryFactory` which should be added to all indexers in the `~/Config/ExamineSettings.config` file
+
+    directoryFactory="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory,Examine"
+
+The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory. This setting is required due to the nature of Lucene files and IO latency on Azure Web Apps.
+
+#### Pre Examine v0.1.80 ####
+
+* If you have a {machinename} token in your `~/Config/ExamineIndex.config` file remove this part of the path. Example, if you have path that looks like: `~/App_Data/TEMP/ExamineIndexes/{machinename}/External/` it should be `~/App_Data/TEMP/ExamineIndexes/External/` 
+* Due to the nature of Lucene files and IO latency, you should update all of your Indexers and Searchers in the `~/Config/ExamineSettings.config` file to have these two properties (see [here](http://issues.umbraco.org/issue/U4-7614) for more details): `useTempStorage="Sync"`
+
+### Umbraco XML cache file
+
+For a single Azure Web App instance you need to ensure that the Umbraco XML config file is stored on the local server (since Azure uses a shared file system). To do this you need to add a new app setting to web.config:
+
+For **Umbraco v7.6+**
+
+	<add key="umbracoContentXMLStorage" value="EnvironmentTemp" />
+
+This will set Umbraco to store `umbraco.config` in the environment temporary folder
+
+For **Umbraco Pre v7.6**
+
+	<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
+
+This will set Umbraco to store `umbraco.config` in the ASP.NET temporary folder

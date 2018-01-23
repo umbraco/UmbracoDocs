@@ -15,6 +15,8 @@ It is necessary to run the upgrade installer on each environment of your Umbraco
 You can simply open up the **Package Console** and type:
 `Update-Package UmbracoCms`
 
+You will be prompted to overwrite files, you should choose **"No to All"** by pressing the **"L"** . If there are any specific configuration changes required for the version you are upgrading to then they will be noted in the the **[version-specific guide](version-specific.md)**.
+
 Or you can open the **NuGet Package Manager** and select the **Updates** pane to get a list of available updates. Choose the package called **UmbracoCms** and click update. This will run through all the files and make sure you have the latest changes while leaving files you have updated.
 
 ####Upgrades to versions lower than 7.2.0

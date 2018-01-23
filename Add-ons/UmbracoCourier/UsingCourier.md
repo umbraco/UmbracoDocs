@@ -18,9 +18,9 @@ for that specific item to function on the site you want to transfer it to.
 
 When it has figured this out, it exports the selected item(s) and their dependencies to a folder, as xml files, along with any images, dlls, and so on. 
 
-Optionally it can compare the packaged items as it finds them, to figure out they have actually changed since the last update, and will skip those that have. 
+Optionally it can compare the packaged items as it finds them, to figure out if they have actually changed since the last update, and will skip those that have. 
 
-Finally, it will build a graph of the deployment, based on the order of dependencies, this means that courier knows that a for a document to be installed, it needs to have its document type, template, datatypes and so on present on the target website. 
+Finally, it will build a graph of the deployment, based on the order of dependencies, this means that Courier knows that for a document to be installed, it needs to have its document type, template, datatypes and so on present on the target website. 
 
 So, in short it:
 
@@ -56,7 +56,7 @@ So the short version is, you dont want to miss those dependencies, because your 
 
 ##What can and cannot courier do.
 The whole idea of Courier, builds around the idea of dependencies and references, which courier can understand to a certain degree.
-But there are several areas, where courier have zero chance of understanding what is going an. 
+But there are several areas, where Courier have zero chance of understanding what is going an. 
 
 ###When a datatype stores node ids
 Common thing, a data type stores a node ID, but courier doesnt know, so it cannot add the document as a dependency, and it cannot convert it into
@@ -74,7 +74,7 @@ revision files and xcopy them over, when you need to deploy really large things
 
 ##How to handle the initial deployment
 A common scenarion seen, is that people try to transfer their entire site in one go, to do the initial deploy. This is not recommended, and really just adds
-unnneeded overhead to your deployment. Courier adds a lot of extra data and overhead, because it needs to convert to a format that be transfered and
+unneeded overhead to your deployment. Courier adds a lot of extra data and overhead, because it needs to convert to a format that be transfered and
 referenced between the 2 sites, it also needs to compare data with this other site and determine which items should transfer, and which should not, finally it
 all happens over http, which is another bottleneck
 
@@ -82,15 +82,15 @@ So In short, when you initially want to deploy your site, and dont have 2 enviro
 
 
 ##Day to day work with Courier
-Due to courier handling pretty much every object of your site, it can quickly create some rather large deployments, even tho your editors just want to deploy a single document, they can all of sudden have a deployment with a lot of documents and files in them, due to the whole dependency setup, there is not many ways aroud this currently, Courier will check for dependencies, and it will include those that have changed, as it is right now. 
+Due to courier handling pretty much every object of your site, it can quickly create some rather large deployments. Even though your editors just want to deploy a single document, they can all of sudden have a deployment with a lot of documents and files in them, due to the whole dependency setup. There is not many ways around this currently. Courier will check for dependencies, and it will include those that have changed, as it is right now. 
 
-But for day to day work, let your developers handle deployments of document types, templates and so on, and do these in small batches, as even minor changes do have a great effect on your Umbraco database, f.ex. if you add a propertytype to a document type, that will add an additional row for each document version on your site to the property data table, so even small things can mean big changes.
+But for day to day work, let your developers handle deployments of document types, templates and so on, and do these in small batches, as even minor changes do have a great effect on your Umbraco database. F.ex. if you add a property type to a document type, that will add an additional row for each document version on your site to the property data table, so even small things can mean big changes.
 
-When your infrastructure (documnet types, templates, etc) is in place, your editors should in most cases not be bothered with too many big deployments using the right-click menu, Courier will try to skip as many things as possible, and only suggest things that have actually changed, but as you have probably guessed by now, this is no simple task. 
+When your infrastructure (document types, templates, etc) is in place, your editors should in most cases not be bothered with too many big deployments using the right-click menu. Courier will try to skip as many things as possible, and only suggest things that have actually changed, but as you have probably guessed by now, this is no simple task. 
 
 ##Ongoing finetuning
-We do finetune this process all the time, to cater to all the different ways an Umbraco site can be built, some scenarios we simply cant support out of the box, and some we can add configuration options for so it can fit with as many sites as possible. 
+We do finetune this process all the time, to cater to all the different ways an Umbraco site can be built. Some scenarios we simply cannot support out of the box, and some we can add configuration options for so it can fit with as many sites as possible. 
 
-Let us know in the Courier forum on Our, if certain scearions or setups give unreasonable large deployments, provide as many details as possible, or even better, provide us with a database backup, so we can try it out on our local machines and adjust the many variables. 
+Let us know in the [Courier forum](https://our.umbraco.org/forum/umbraco-courier/) on Our, if certain scenarions or setups give unreasonable large deployments. Please provide as many details as possible, or even better, provide us with a database backup, so we can try it out on our local machines and adjust the many variables. 
 
 

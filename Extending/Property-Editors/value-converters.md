@@ -137,10 +137,9 @@ If all values should use the same level you can use the short cut below
 
             case PropertyCacheValue.XPath:
                 return PropertyCacheLevel.Content;
-
-            default:
-                return PropertyCacheLevel.None;
         }
+  
+        return PropertyCacheLevel.None;
     }
 
 ## Samples ##

@@ -1,43 +1,65 @@
-#Buying and configuring a license
-Since Umbraco Forms is a commercial product you'll need to have a valid license file in order for it to fully work.
+# Umbraco Forms licenses
 
-If your Umbraco Forms installation is still in trial you should see the following notification on the Forms dashboard
+Umbraco Forms is a commercial product. When you install from the backoffice you will have a 14-day free trial to try-out the product.
 
-![Trail message](TrailMessage.png)
+After that, you'll need to have a **valid license** in order for Umbraco Forms to fully work.
 
-##Buying a license
-Licenses for Umbraco Forms can be purchased on http://umbraco.com. So if you hit the *buy license* button you'll be redirected to the umbraco.com website and are able to buy a license in the webshop. 
+## Licensing model
 
-##Configuring a license
-You can either download your license from the umbraco.com website and place it in the /bin directory of your site manually or you can use the *configure existing license* option on the Forms dashboard (please not that you'll need to have your umbraco.com account details in order to fetch the license)
+Umbraco Forms Licenses are sold per domain and will also work on all subdomains. You'll also get 2 development domains.
+A fully configured license could like this:
 
-##Licensing model
-Licenses are sold per domain and will also work on all subdomains. You'll also get 2 development domains.
-So a full license could like like
-
+- localhost
+- mysite.com
 - *.mysite.com
-- *.mydevdomain.com
-- *.myotherdevdomain.com
+- mysite.com.local
+- devdomain1.com
+- www.devdomain1.com
+- devdomain2.com
+- www.devdomain2.com
 
-Only 1 license can exist per Umbraco instance, if you wish to extend a license with additional domains that option is also possible on http://umbraco.com 
+Only 1 license can exist per Umbraco instance; If you wish to extend a license with additional domains that option is also possible.
 
-###How do I use the .lic license file?
-The .lic file must be placed in the /bin directory to be registered by Umbraco Forms, if not, the application will automatically switch to trial mode.
+### What does a license cover?
 
+* A single license covers a single installation of Umbraco Forms in production environments, as well as two additional development environments
+* The production domain includes all subdomains (e.g. `*.domain.tld`), as well as `.local` extension (e.g. `domain.tld.local`)
+* The development domains works with or without the `www` subdomain
+* The license allows for an unlimited number of forms
+* The license also will include `localhost` as a valid domain
 
-###What does a license cover?
-A single license covers a single installation of Umbraco Forms in production environments, as well as two additional development environments.  The license allows for an unlimited number of forms.  It is valid for 1 production domain, and 2 development domains.  Each domain includes all sub-domains `*.domain.tld`, as well as .local extension `domain.tld.local`.  The license also will include `localhost` as a valid domain.
+Data collected on non-licensed domains will not be stored, so please validate that all site-accessible domains are licensed, or that they properly redirect to the licensed domain.
+Usage of IP addresses is not available, thus hostnames must be used.
 
-Data collected on non-licensed domains will not be stored, so please validate that all site accessible domains are licensed, or properly redirect to the licensed domain.
-Usage of IP addresses is not available, thus host names must be used.
+### Can I add additional domains to the license?
 
+Yes, additional domains can be added for EUR 79. You can purchase additional domains to your license from your account on [Umbraco.com](https://umbraco.com).
 
-###Can I add additional domains to the license?
-Yes, additional domains can be added for EUR59 that can be ordered here.  
-  * Please note that this is an add-on domain for existing licenses. Refunds will not be given for this product.
+**Note** that this is an add-on domain for existing licenses. Refunds will not be given for this product.
 
-It is however only meant for websites which has several domains. If you wish to use Umbraco Contour on multiple websites you would need a license per site.
+It is however only meant for websites which has several domains. If you wish to use Umbraco Contour on multiple websites you need a license per site.
 
+## Configuring and installing your license
 
-Is Umbraco Forms open source?
-No, Umbraco Forms has a traditional closed source license, as all our commercial products have.
+Licenses for Umbraco Forms can be purchased on [umbraco.com](https://umbraco.com/products/umbraco-forms/). 
+
+Clicking the *Buy license* button from the Umbraco backoffice will redirect you to our website where you can buy an Umbraco Forms license. 
+
+### Configuring
+
+When you've bought an Umbraco Forms license you need to configure it. Your license can be configured with a total of 1 live domain and 2 development domains.
+
+You can either configure your license right away when you buy it, or you can do it later by visiting your account on Umbraco.com.
+
+![Configuring Umbraco Forms license](configure-forms-license.gif)
+
+### Installing
+
+Once you've configured your license with the correct domains, you are ready to install the license on your Umbraco site:
+
+1. Download your `.lic` license from your Umbraco.com account
+2. Place the file in your `/bin` folder
+
+The `.lic` file must be placed in the `/bin` directory to be registered by Umbraco Forms, if not, the application will automatically switch to trial mode.
+
+![Installing Umbraco Forms license](install-forms-license.gif)

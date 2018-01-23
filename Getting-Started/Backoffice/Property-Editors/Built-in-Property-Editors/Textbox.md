@@ -20,7 +20,7 @@ Textbox is a simple HTML input control for text
 
 	@{
 	   if (Model.Content.HasValue("pageTitle")){
-	       <p>@Model.Content.GetPropertyValue<string>("pageTitle")</p>
+	       <p>@(Model.Content.GetPropertyValue<string>("pageTitle"))</p>
 	   } 
 	}
 
