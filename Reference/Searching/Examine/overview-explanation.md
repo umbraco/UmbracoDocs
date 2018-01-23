@@ -270,6 +270,9 @@ And then in your code front the objects that you are iterating over are of type 
 
 In conclusion Examine is awesome and with a little bit of information and a little patience to get to know it, you can be up and running with some very complex querying.
 
-## Umbraco.TV
-There are video tutorials on Umbraco.TV detailing how to set-up and use Examine search indexes.
-<http://umbraco.com/help-and-support/video-tutorials/developing-with-umbraco/examine.aspx>
+## Examine Videos
+There are a few videos covering Examine available online:
+
+- [CodeGarden '10: Web Search With Examine](http://stream.umbraco.org/video/635188/codegarden-10-web-search-with) (Shannon Deminick)
+- [Umbraco Examine and Lucene.NET : Umbraco UK Festival 2012](https://www.youtube.com/watch?v=6AMb0rrSrJw) (Ismail Mayat)
+- [Searching - Let users find your content](https://www.youtube.com/watch?v=ShzdJm87hzM) (Casper Andersen)
