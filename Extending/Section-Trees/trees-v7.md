@@ -67,6 +67,17 @@ The `TreeNodesRendering` is raised whenever a list of child nodes are created
         {
             e.Nodes.RemoveAll(node => node.Title.StartsWith("Private"));
         }
+        
+        //this exmaple will add a new virtual item under a tree node that will run a custon action
+        var baseItem = e.Nodes.First(); //copy basic setting from en exsiting item, or manually set them all as needed
+        
+        var node =  sender.CreateTreeNode(item.Title, (string)baseItem.ParentId, new System.Net.Http.Formatting.FormDataCollection(""), item.Title);
+	node.Icon = baseItem.Icon;
+    	node.NodeType = baseItem.NodeType + "_virtual";
+    	foreach (var data in baseItem.AdditionalData)
+                        node.AdditionalData.Add(data.Key, data.Value);
+    	node.AdditionalData["jsClickCallback"] = "javascript:someFunction('" + item.Alias + "'");
+	e.Nodes.Add(node);
     }
 
 
@@ -93,7 +104,39 @@ The `MenuRendering` is raised whenever a menu is generated for a tree node
         {
             e.Menu.Items.Add(new MenuItem("tweetLink", "Tweet this"));
         }
+        
+        //this example will run triger an AngularJs service
+        // Note that the ActionMenuItem needs to be included, and a angualr service created and registered in your plugin manifest.
+        e.Menu.Items.Add(new CompareItemsAction());
     }
-
+    
+    //CompareItemsAction.cs
+    [ActionMenuItem("compareItems", "showDialog")]
+    public class CompareItemsAction : ActionMenuItem
+    {
+        public CompareItemsAction()
+        {
+            this.Alias = "compareItems";
+            this.Icon = "chip";
+            this.Name = "Compare";
+            this.SeperatorBefore = true;
+        }
+    }
+    
+    //compareitems.service.js
+    function compareItems(dialogService) {
+	return {
+            showDialog: function (item) {
+            	var dialog = dialogService.open({
+            	template: '/App_Plugins/CompareItems/views/dialog/compareitems.html', // Custom angular view to show.
+            	show: true,
+            	//modalClass: "umbModalBox ui-draggable", // Custom class to make a centered dialog instead of a sidebar.
+            	dialogData: { treeAlias: item.treeAlias, id: item.entity.id },
+            	    callback: function () { }
+		});
+	    }
+    	};
+    }
+    angular.module('umbraco.services').factory("compareItems", compareItems);
 
  
