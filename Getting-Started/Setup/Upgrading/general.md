@@ -41,6 +41,7 @@ Copy the following folders from inside the .zip file over the existing folders i
 - /bin
 - /Umbraco 
 - /Umbraco_Client
+- /Install (required for versions until v7)
 
 **Note:** There are hosting providers (we know of one: RackSpace Cloud) that require proper casing of file and folder names. Normally on Windows this is not a problem but if your hosting provider forces proper casing then you will need to verify that the folder and file names are in the same casing as in the newest version you're upgrading to.
 
