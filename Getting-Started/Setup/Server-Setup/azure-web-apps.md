@@ -68,7 +68,7 @@ For a single Azure Web App instance you need to ensure that the Umbraco XML conf
 
 For **Umbraco v7.7.3+**
 
-It is recommended that you upgrade your Azure Web App to support this setting to avoid locking issues with TEMP files during server migrations or slot swapping. 
+It is recommended that you upgrade your Azure Web App to support this setting to avoid locking issues with TEMP files during server migrations or slot swapping. See [U4-10503](http://issues.umbraco.org/issue/U4-10503) for more information on this.
 
 	<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
 
