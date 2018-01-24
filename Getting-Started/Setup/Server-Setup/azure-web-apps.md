@@ -66,6 +66,12 @@ The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the re
 
 For a single Azure Web App instance you need to ensure that the Umbraco XML config file is stored on the local server (since Azure uses a shared file system). To do this you need to add a new app setting to web.config:
 
+For **Umbraco v7.7.3+**
+
+	<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
+
+This will set Umbraco to store `umbraco.config` in the environment temporary folder
+
 For **Umbraco v7.6+**
 
 	<add key="umbracoContentXMLStorage" value="EnvironmentTemp" />
