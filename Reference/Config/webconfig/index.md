@@ -103,7 +103,7 @@ The default value is: `Default`
 
 This setting replaced the `umbracoContentXMLStorage` setting.
 
-This setting controls where Umbraco stores the XML cache file, the DistCache and PluginCache TEMP folders. Version 1.9.6+ of [ClientDependency Framework](https://github.com/Shazwazza/ClientDependency) also observes this setting.
+This setting controls where Umbraco stores the XML cache file, the DistCache and PluginCache TEMP folders. Version 1.9.6+ of [ClientDependency Framework](https://github.com/Shazwazza/ClientDependency) also observe this setting.
 
 The options are:
 
