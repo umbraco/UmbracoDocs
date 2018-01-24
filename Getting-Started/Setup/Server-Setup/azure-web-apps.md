@@ -72,7 +72,7 @@ It is recommended that you upgrade your Azure Web App to support this setting to
 
 	<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
 
-This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the environment temporary folder. More info on this setting is available [here](../../../Reference/Config/webconfig/index.md)
+This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the environment temporary folder. More info on this setting is available [here](../../../Reference/Config/webconfig/index.md#umbracolocaltempstorage-umbraco-v773)
 
 For **Umbraco v7.6+**
 
