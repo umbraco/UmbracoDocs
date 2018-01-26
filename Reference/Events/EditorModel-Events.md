@@ -16,25 +16,24 @@ Example usage of the **EditorModelEventManager** '*SendingContentModel*' event -
     {
         public class MyEventHandler : ApplicationEventHandler
         {
-
-			protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+            protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
             {
-				EditorModelEventManager.SendingContentModel += EditorModelEventManager_SendingContentModel;   
+                EditorModelEventManager.SendingContentModel += EditorModelEventManager_SendingContentModel;   
             }            
     
-             private void EditorModelEventManager_SendingContentModel(System.Web.Http.Filters.HttpActionExecutedContext sender, EditorModelEventArgs<Umbraco.Web.Models.ContentEditing.ContentItemDisplay> e)
-			{
-
-            //set a default value for NewsArticle PublishDate property, the editor can override this, but we will suggest it should be todays date
-            if (e.Model.ContentTypeAlias == "newsArticle")
-            {
-               var pubDateProperty = e.Model.Properties.FirstOrDefault(f => f.Alias == "publishDate");
-                if (pubDateProperty.Value == null || String.IsNullOrEmpty(pubDateProperty.Value.ToString())){
-				//set default value if the date property is null or empty
-                    pubDateProperty.Value = DateTime.UtcNow;
+            private void EditorModelEventManager_SendingContentModel(System.Web.Http.Filters.HttpActionExecutedContext sender, EditorModelEventArgs<Umbraco.Web.Models.ContentEditing.ContentItemDisplay> e)
+            {            
+                //set a default value for NewsArticle PublishDate property, the editor can override this, but we will suggest it should be todays date
+                if (e.Model.ContentTypeAlias == "newsArticle")
+                {
+                    var pubDateProperty = e.Model.Properties.FirstOrDefault(f => f.Alias == "publishDate");
+                    if (pubDateProperty.Value == null || String.IsNullOrEmpty(pubDateProperty.Value.ToString()))
+                    {
+                        //set default value if the date property is null or empty
+                        pubDateProperty.Value = DateTime.UtcNow;
+                    }
                 }
             }
-        }
         }
     }
 
