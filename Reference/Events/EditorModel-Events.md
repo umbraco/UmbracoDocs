@@ -49,45 +49,27 @@ Example usage of the **EditorModelEventManager** '*SendingContentModel*' event -
         <td>SendingContentModel</td>
         <td>(HttpActionExecutedContext sender,  EditorModelEventArgs&ltContentItemDisplay&gt; e)</td>
         <td>
-        Raised when ContentService.Save is called in the API.<br />
-        NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default).<br />
-        "sender" will be the current IContentService object.<br />
-        "e" will provide:<br/>
-		<em>NOTE: If the entity is brand new then HasIdentity will equal false.</em>
-            <ol>
-                <li>SavedEntities: Gets the collection of IContent objects being saved.</li>
-            </ol>
+        Raised just before the editor model is sent for editing in the content section <br />
+        NOTE: 'e' contains a model property of *Umbraco.Web.Models.ContentEditing.ContentItemDisplay* type which in turn contains the tabs and properties of the elements about to be loaded for editing
         </td>
     </tr>
     <tr>
             <td>SendingMediaModel</td>
         <td>(HttpActionExecutedContext sender,  EditorModelEventArgs&ltMediaItemDisplay&gt; e)</td>
         <td>
-        Raised when ContentService.Save is called in the API and after data has been persisted.<br />
-        NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default). <br />
-        "sender" will be the current IContentService object.<br />
-        "e" will provide:<br/>
-		<em>NOTE: <a href="determining-new-entity">See here on how to determine if the entity is brand new</a></em>
-            <ol>
-                <li>SavedEntities: Gets the saved collection of IContent objects.</li>
-            </ol>
+        Raised just before the editor model is sent for editing in the media section <br />
+        NOTE: 'e' contains a model property of *Umbraco.Web.Models.ContentEditing.MediaItemDisplay* type which in turn contains the tabs and properties of the elements about to be loaded for editing
         </td>
     </tr>
     <tr>
      <td>SendingMemberModel</td>
         <td>(HttpActionExecutedContext sender,  EditorModelEventArgs&ltMemberDisplay&gt; e)</td>
         <td>
-        Raised when ContentService.Publishing is called in the API.<br />
-        NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Publish method call (true by default).<br />
-        "sender" will be the current IPublishingStrategy object.<br />
-        "e" will provide:<br/>
-		<em>NOTE: If the entity is brand new then HasIdentity will equal false.</em>
-            <ol>
-                <li>PublishedEntities: Gets the collection of IContent objects being published.</li>
-            </ol>
+          Raised just before the editor model is sent for editing in the member section.<br />
+        NOTE: 'e' contains a model property of *Umbraco.Web.Models.ContentEditing.MemberDisplay* type which in turn contains the tabs and properties of the elements about to be loaded for editing 
         </td>
     </tr>   
-</table>
+   </table>
 
 ### EditorModelEventArgs ###
 
