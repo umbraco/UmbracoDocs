@@ -8,7 +8,7 @@ Umbraco does not support rewriting "rules" (e.g. regular expressions) nor comple
 
 ## Dashboard
 
-It is possible to list the redirect URLs via the *Redirect Url Management* dashboard in the *Developer* section. This dashboard lists the original URL, new URL, and date. It allows you to delete a URL, and to directly edit the corresponding document.
+It is possible to list the redirect URLs via the *Redirect Url Management* dashboard in the *Content* section. This dashboard lists the original URL, new URL, and date. It allows you to delete a URL, and to directly edit the corresponding document.
 
 In addition, the dashboard can be used to disable or enable the 301 Redirect Management (via the `web.routing` configuration attribute described below - note that this causes an application restart).
 
