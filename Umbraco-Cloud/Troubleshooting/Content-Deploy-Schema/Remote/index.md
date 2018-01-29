@@ -5,6 +5,7 @@
 If the schema (this includes DocumentTypes, MediaTypes, DataTypes, Templates, Macros and Dictionary items) is different between the two environments you are deploying between, you will need to deploy the updates for these before you can complete the Content transfer (this can contain Media from the Media section as well). Environments needs to be in-sync before a Content and/or Media transfer can succeed.
 
 While Content and Media transfer are done using the Umbraco backoffice you use the Umbraco Cloud Portal in order to deploy the schema changes, which exists on disk and are deployed through the underlying git repository. The deployment between your Umbraco Cloud environments is simple to do:
+
  * You will see a number of pending changes on your environments
  * Click the green "Deploy changes to Staging/Live" button and wait for it to finish.
    ![Pending deployments](images/pending-deployments.png) 
