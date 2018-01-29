@@ -13,7 +13,7 @@ Alternatively you can implement the `Umbraco.Web.IApplicationEventHandler` inter
 
 ##Autofac Example
 
-This example will setup Autofac to work with Umbraco (see [their documentation](http://autofac.readthedocs.org/en/latest/) for full details)
+This example will setup Autofac to work with Umbraco (see [their documentation](http://autofac.readthedocs.org/en/latest/) for full details). Our examples make use of the following NuGet packages: `Autofac`, `Autofac.Mvc5`, `Autofac.WebApi2`.
 
 For this example we're going to add a custom class to the IoC container as a Transient instance, here's the class:
 
@@ -42,20 +42,24 @@ Here's an example of a custom global.asax class which initializes the IoC contai
 
 			//register all controllers found in your assembly
 			builder.RegisterControllers(typeof(MyApplication).Assembly);
+			builder.RegisterApiControllers(typeof(MyApplication).Assembly);
 
 			//register umbraco MVC + webapi controllers used by the admin site
 			builder.RegisterControllers(typeof(UmbracoApplication).Assembly);
-    			builder.RegisterApiControllers(typeof(UmbracoApplication).Assembly);
+			builder.RegisterApiControllers(typeof(UmbracoApplication).Assembly);
 
 			//add custom class to the container as Transient instance
 			builder.RegisterType<MyAwesomeContext>();
 
 			var container = builder.Build();
 			DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+			GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
 		}
 	}
 
-*(NOTE: do not forget to change the inherits clause of the global.asax file in the web root.)*
+Do not forget to change the Application tag inside the global.asax file in the web root:
+
+	<%@ Application CodeBehind="Global.asax.cs" Inherits="MyProject.MyNamespace.MyApplication" Language="C#" %>
 
 If you like to use the `IApplicationEventHandler` alternative - here is an example for this approach:
 	
@@ -69,16 +73,18 @@ If you like to use the `IApplicationEventHandler` alternative - here is an examp
 		
 			//register all controllers found in this assembly
 			builder.RegisterControllers(typeof(MyApplication).Assembly);
+			builder.RegisterApiControllers(typeof(MyApplication).Assembly);
 
 			//register umbraco MVC + webapi controllers used by the admin site
 			builder.RegisterControllers(typeof(UmbracoApplication).Assembly);
-    			builder.RegisterApiControllers(typeof(UmbracoApplication).Assembly);
+			builder.RegisterApiControllers(typeof(UmbracoApplication).Assembly);
 
 			//add custom class to the container as Transient instance
 			builder.RegisterType<MyAwesomeContext>();
 
 			var container = builder.Build();
 			DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+			GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
 		}
 
 		public void OnApplicationInitialized(UmbracoApplication httpApplication, Umbraco.Core.ApplicationContext applicationContext)
@@ -152,47 +158,47 @@ Now create the following files to configure Unity correctly for an Umbraco site.
 
 	class UnityEvents : IApplicationEventHandler
 	{
-	    public void OnApplicationStarted(
-		UmbracoApplicationBase httpApplication,
-		ApplicationContext applicationContext
-	    )
-	    {
-		var container = UnityConfig.GetConfiguredContainer();
+		public void OnApplicationStarted(
+			UmbracoApplicationBase httpApplication,
+			ApplicationContext applicationContext
+		)
+		{
+			var container = UnityConfig.GetConfiguredContainer();
 
-		// Web API
-		GlobalConfiguration.Configuration.DependencyResolver 
-			= new Microsoft.Practices.Unity.WebApi.UnityDependencyResolver(container);
-		// MVC
-		DependencyResolver.SetResolver(new Microsoft.Practices.Unity.Mvc.UnityDependencyResolver(container));
+			// Web API
+			GlobalConfiguration.Configuration.DependencyResolver 
+				= new Microsoft.Practices.Unity.WebApi.UnityDependencyResolver(container);
+			// MVC
+			DependencyResolver.SetResolver(new Microsoft.Practices.Unity.Mvc.UnityDependencyResolver(container));
 
-		// This will automatically scan an assembly for classes fitting this convention:
-		// Interface name: IMyClass
-		// Class name: MyClass
-		// and automatically register those types for you.
-		// If you do decide to use this feature, make sure it is the first one called.
-		// Conflicting registrations that follow will override previous ones.
-		container.RegisterTypes(
-		    AllClasses.FromAssemblies(typeof(UnityEvents).Assembly),
-		    WithMappings.FromMatchingInterface,
-		    WithName.Default
-		);
+			// This will automatically scan an assembly for classes fitting this convention:
+			// Interface name: IMyClass
+			// Class name: MyClass
+			// and automatically register those types for you.
+			// If you do decide to use this feature, make sure it is the first one called.
+			// Conflicting registrations that follow will override previous ones.
+			container.RegisterTypes(
+				AllClasses.FromAssemblies(typeof(UnityEvents).Assembly),
+				WithMappings.FromMatchingInterface,
+				WithName.Default
+			);
 
-		// The UmbracoContext must be registered so that the umbraco backoffice controllers 
-		// can be successfully resolved
-		container.RegisterType<UmbracoContext>(
-			new PerRequestLifetimeManager(), 
-			new InjectionFactory(c => UmbracoContext.Current)
-		);
+			// The UmbracoContext must be registered so that the umbraco backoffice controllers 
+			// can be successfully resolved
+			container.RegisterType<UmbracoContext>(
+				new PerRequestLifetimeManager(), 
+				new InjectionFactory(c => UmbracoContext.Current)
+			);
 
-		// Unity by default chooses the constructor with the most amount of arguments
-		// In the case of the LegacyTreeController this means we must instruct Unity instead to
-		// use the default constructor by passing in a parameterless InjectionConstructor during registration
-		container.RegisterType<LegacyTreeController>(new InjectionConstructor());
-	    }
+			// Unity by default chooses the constructor with the most amount of arguments
+			// In the case of the LegacyTreeController this means we must instruct Unity instead to
+			// use the default constructor by passing in a parameterless InjectionConstructor during registration
+			container.RegisterType<LegacyTreeController>(new InjectionConstructor());
+		}
 
-	    public void OnApplicationInitialized(UmbracoApplicationBase httpApplication, ApplicationContext applicationContext) { }
+		public void OnApplicationInitialized(UmbracoApplicationBase httpApplication, ApplicationContext applicationContext) { }
 
-	    public void OnApplicationStarting(UmbracoApplicationBase httpApplication, ApplicationContext applicationContext) { }
+		public void OnApplicationStarting(UmbracoApplicationBase httpApplication, ApplicationContext applicationContext) { }
 	}
 	
 And here is the merged UnityActivator
@@ -203,21 +209,21 @@ And here is the merged UnityActivator
 	/// <summary>Provides the bootstrapping for integrating Unity when it is hosted in ASP.NET</summary>
 	public static class UnityActivator
 	{
-	    /// <summary>Integrates Unity when the application starts.</summary>
-	    public static void Start()
-	    {
-		// This is required if you intend to follow the example above and use the PerRequestLifetimeManager.
-		// If you are developing a library using umbracoCms.Core and Unity 
-		// you might want to reconsider depending on this module.
-		// If the library consumers also use Unity, they might also register the per request http module, 
-		// bloating the request pipeline with multiple modules performing similar tasks.
-		Microsoft.Web.Infrastructure.DynamicModuleHelper.DynamicModuleUtility.RegisterModule(typeof(UnityPerRequestHttpModule));
-	    }
+		/// <summary>Integrates Unity when the application starts.</summary>
+		public static void Start()
+		{
+			// This is required if you intend to follow the example above and use the PerRequestLifetimeManager.
+			// If you are developing a library using umbracoCms.Core and Unity 
+			// you might want to reconsider depending on this module.
+			// If the library consumers also use Unity, they might also register the per request http module, 
+			// bloating the request pipeline with multiple modules performing similar tasks.
+			Microsoft.Web.Infrastructure.DynamicModuleHelper.DynamicModuleUtility.RegisterModule(typeof(UnityPerRequestHttpModule));
+		}
 
-	    /// <summary>Disposes the Unity container when the application is shut down.</summary>
-	    public static void Shutdown()
-	    {
-		var container = UnityConfig.GetConfiguredContainer();
-		container.Dispose();
-	    }
+		/// <summary>Disposes the Unity container when the application is shut down.</summary>
+		public static void Shutdown()
+		{
+			var container = UnityConfig.GetConfiguredContainer();
+			container.Dispose();
+		}
 	}

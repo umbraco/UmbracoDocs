@@ -1,7 +1,7 @@
 #Build your own editor
 Create a file in `/app_plugins/yourpackage/editor.html` and add the following to the editor.html file: 
 
-    <textarea rows="1" ng-model="control.value" ng-style="control.config"></textarea>
+    <textarea rows="1" umb-auto-resize ng-model="control.value" ng-style="control.editor.config"></textarea>
 
 Save the file and add an editor to the `/app_plugins/yourpackage/package.manifest` file:
 
