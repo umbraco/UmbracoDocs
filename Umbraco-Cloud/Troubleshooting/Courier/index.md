@@ -6,3 +6,12 @@ On this page you can find troubleshooting guides that you should use when your p
 
 ## How do I know which engine my project is using?
 
+In the Umbraco Cloud Portal you can see which engine each environment is using.
+
+The environment in the image below is using Courier version 3.1.6
+
+![Courier Version](images/version-courier.png)
+
+## Troubleshooting guides
+
+* 
