@@ -14,7 +14,7 @@ If you continue to see conflicts between the schema parts that were deployed the
 
 ## Debugging
 
-**Note**: If your project is using Umbraco Courier, please refer to this troubleshoot article instead: [Schema Mismatches with Courier](../../Courier/Schema-Mismatch-Courier)
+**Note**: If your project is using Umbraco Courier, please refer to this article instead: [Schema Mismatches with Courier](../../Courier/Schema-Mismatch-Courier)
 
 When you run into schema mismatch errors, they will usually look something like this:
 
