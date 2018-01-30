@@ -16,3 +16,27 @@ Here's a quick step-by-step on how you deploy these changes to your Cloud enviro
 In the above example, GitKraken is used to stage, commit and deploy changes made to a Document type plus a newly added Datatype from a local environment to a Cloud Development environment.
 
 Once you’ve deployed your local changes to your Cloud environment deploying to your remaining Cloud environments (e.g. Staging and/or Live) is literally as simple a pressing the **'Deploy changes to ..'** button in the Umbraco Cloud portal. Learn more about how this is done in our section about [deploying between two Cloud environments](../Cloud-to-Cloud).
+
+## Deploying without using a Git client
+
+If you don't have any git tools installed on your local machine, you can use git bash and the following commands:
+
+    # Navigate to the Revision folder
+    cd data/Revision
+    # Check status of the repository for pending changes
+    git status
+    # Add pending changes
+    git add -A
+    # Commit staged files
+    git commit -m "Adding updated schema changed"
+    # Push to the remote Development environment
+    git push origin master
+    
+    # If the push is rejected you will need to pull first
+    git pull origin master
+    # Try to push again if there were no conflicts
+    git push origin master
+
+If you had to pull down new commits before you could push your changes, then there is a chance that the new commits contained schema changes as well. So in order to ensure that your local site is up-to-date you need to navigate to the `/data/`  folder and create a deploy-marker if one doesn't already exist. From a command line you can simply enter
+
+`/…mysite/data> echo > deploy` 
