@@ -14,8 +14,8 @@ The environment in the image below is using Courier version 3.1.6
 
 ## Troubleshooting guides
 
-* Schema mismatch when transferring content and/or media
-* Structure Errors
+* [Schema mismatch when transferring content and/or media](Schema-Mismatch-Courier)
+* [Structure Errors](Structure-Errors-Courier)
 
 ## Upgrading to Umbraco Deploy
 
