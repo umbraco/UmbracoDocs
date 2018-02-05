@@ -52,7 +52,7 @@ In order to fix this issue, it is required that all dictionary items are aligned
 3. When you can successfully create a `deploy` marker and get a `deploy-complete` in your `/data/` folder - your environment should be "clean" and you are good to go.
     * If you are encountering Scenario 2, you might not be able to get a `deploy-complete` marker. Instead you need to verify that you do **not** have any duplicate UDA files in your `/data/revisions` folder or dictionary item entries in the backoffice, and then move on to step 4.
 
-4. Create a `deploy-repairdictionaryids` marker in the `/data/` folder.
+4. Create a `deploy-repairdictionaryids` marker in the `/data/` folder. You can do it by typing this in CMD console in Kudu - `echo> deploy-repairdictionaryids`.
     * The command will **not** work on your local clone. If you've done the clean-up from step 1 and 2 on your local machine, you will need to commit and push these changes to your Cloud environment, and run the command there
 
 Doing this will make Deploy run through all of the dictionary items in the database and remove any duplicates (there should be none, if you did the manual cleanup correctly).
