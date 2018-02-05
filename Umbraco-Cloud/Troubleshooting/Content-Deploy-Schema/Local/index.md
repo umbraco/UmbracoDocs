@@ -6,7 +6,7 @@ If the schema (this includes DocumentTypes, MediaTypes, DataTypes, Templates, Ma
 
 While Content transfers are done using the Umbraco backoffice, you need to commit the changes to files within the `/data/revision` folder in order to sync the remote Cloud environment. The files in this folder represent the serialized version of the schema (DocumentTypes, DataTypes, etc...), and are deployed through the git repository.
 
-The following articles explains in detail how the deployment process works:
+The following article explains in detail how the deployment process works:
 
 * [Deploying from Local to Cloud](https://our.umbraco.org/documentation/Umbraco-Cloud/Deployment/Local-to-Cloud/)
 
