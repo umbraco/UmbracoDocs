@@ -85,7 +85,7 @@ By default, when defining a section it is required. To make the section optional
 
     @RenderSection("Head", required: false)
 
-On your child page call `@section Head {}` and then type your markup that will be pushed into the Master Template:
+On your child page template call `@section Head {}` and then type your markup that will be pushed into the Master Template:
 
     @section Head {
         <style>
