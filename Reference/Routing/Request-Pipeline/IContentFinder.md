@@ -95,12 +95,26 @@ To set your own 404 finder create an IContentFinder and set it as the ContentLas
 
     public class My404ContentFinder : IContentFinder {
     	public bool TryFindContent(PublishedContentRequest contentRequest) {
-	    if (contentRequest.Is404) {
-	    	//logic to find your 404 page and set it to contentRequest.PublishedContent
-		return contentRequest.PublishedContent != null;
-	    } else {
-	    	return false;
-	    }
+            //logic to find your 404 page and set it to contentRequest.PublishedContent
+	     CultureInfo culture = null;
+            if (contentRequest.HasDomain) {
+                culture = CultureInfo.GetCultureInfo(contentRequest.UmbracoDomain.LanguageIsoCode);
+            }
+
+            //replace 'home_doctype_alias' with the alias of your homepage
+            IPublishedContent rootNode = UmbracoContext.Current.ContentCache.GetByXPath("//home_doctype_alias").FirstOrDefault(n => n.GetCulture().ThreeLetterWindowsLanguageName == culture.ThreeLetterWindowsLanguageName);
+            //replace '404_doctype_alias' with the alias of your 404 page
+            IPublishedContent notFoundNode = UmbracoContext.Current.ContentCache.GetByXPath("//404_doctype_alias").FirstOrDefault(n => n.GetCulture().ThreeLetterWindowsLanguageName == culture.ThreeLetterWindowsLanguageName);
+
+            if (notFoundNode != null) {
+                contentRequest.PublishedContent = notFoundNode;
+            } else if (rootNode != null) {
+                contentRequest.PublishedContent = rootNode;
+            } else {
+                contentRequest.PublishedContent = UmbracoContext.Current.ContentCache.GetAtRoot().FirstOrDefault(n => n.GetTemplateAlias() != "");
+            }
+
+            return contentRequest.PublishedContent != null;
 	}
     }
     
