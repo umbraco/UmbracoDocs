@@ -200,3 +200,7 @@ Finally, to use your `UmbracoStandardOwinStartup` class during startup, add this
 ### [Setup Umbraco for a FIPS Compliant Server](Setup-Umbraco-for-a-Fips-Server/index.md)
 
 How to configure Umbraco to run on a FIPS compliant server.
+
+### [Security settings](Security-settings/index.md)
+
+Some security settings that can be used in Umbraco.
