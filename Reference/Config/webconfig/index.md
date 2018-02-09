@@ -53,7 +53,6 @@ The default language to use in the backoffice if a user isn't explicitly assigne
 
 Makes sure that all of the requests in the backoffice are called over HTTPS instead of HTTP when set to `true`.
 
-
 ### umbracoCssDirectory 
 
 By adding this to appSettings you can specify a new/different folder for storing your css-files and still be able to edit them within Umbraco. Default folder is ~/css.
@@ -83,6 +82,34 @@ The default value is: `false`
 Generally set to `false` but when set to `true` the content XML file (normally stored in `~/App_Data/umbraco.config`) will be stored in the local servers' Temp (CodeGen) folder. This is handy for load balanced environments when the website is running from a central SAN based file system (non-replicated). 
 
 If you are not running a load balanced environment on a central SAN based file system (or similar) ensure that this setting remains set to `false`.
+
+### umbracoContentXMLStorage (Umbraco v7.6+)
+
+The default value is: `Default`
+
+This setting replaced the `umbracoContentXMLUseLocalTemp` setting.
+
+This setting controls where Umbraco stores the XML cache file.
+
+The options are:
+
+- `Default` - Umbraco cache file will be stored in `App_Data` and the `DistCache` and `PluginCache` folders will be stored in the `App_Data/TEMP` folder
+- `EnvironmentTemp` - All files will be stored in the environment temporary folder
+- `AspNetTemp` - All Files will be stored in the ASP.NET temporary folder
+
+### umbracoLocalTempStorage (Umbraco v7.7.3+)
+
+The default value is: `Default`
+
+This setting replaced the `umbracoContentXMLStorage` setting.
+
+This setting controls where Umbraco stores the XML cache file, the DistCache and PluginCache TEMP folders. Version 1.9.6+ of [ClientDependency Framework](https://github.com/Shazwazza/ClientDependency) also observe this setting.
+
+The options are:
+
+- `Default` - Umbraco cache file will be stored in `App_Data` and the `DistCache` and `PluginCache` folders will be stored in the `App_Data/TEMP` folder
+- `EnvironmentTemp` - All files will be stored in the environment temporary folder
+- `AspNetTemp` - All Files will be stored in the ASP.NET temporary folder
 
 ### umbracoVersionCheckPeriod
 

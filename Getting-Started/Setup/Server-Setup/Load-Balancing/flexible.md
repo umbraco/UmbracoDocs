@@ -122,15 +122,15 @@ In ExamineIndex.config, you need to tokenize the path for each of your indexes t
 
 We are working towards being able to mitigate these issues by adding the ability to store a master index in blob storage so that when new workers come online they can sync the existing index locally (this is not yet in place)
 
-### Umbraco XML cache file
+### Umbraco XML cache file and other TEMP files
 
-For your front-end Azure Web App instance, you'll need to ensure that the Umbraco XML config file is stored on the local server (since Azure uses a shared file system). To do this you need to add a new app setting to web.config:
+For a front-end Azure Web App instance, you'll need to ensure that the Umbraco XML config file is stored on the local server (since Azure uses a shared file system). To do this you need to add a new app setting to web.config:
 
 For **Umbraco v7.7.3+**
 
 	<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
 
-This will set Umbraco to store `umbraco.config` in the environment temporary folder
+This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the environment temporary folder. More info on this setting is available [here](../../../Reference/Config/webconfig/index.md#umbracolocaltempstorage-umbraco-v773)
 
 For **Umbraco v7.6+**
 

@@ -16,15 +16,17 @@ One important configuration option that **must** be set when using a centralized
 
 For **Umbraco v7.7.3+**
 
+The umbracoLocalTempStorage setting controls where the `umbraco.config` and the other Umbraco TEMP files are stored. More info on this setting is available [here](../../../Reference/Config/webconfig/index.md#umbracolocaltempstorage-umbraco-v773)
+
 	<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
 
-This will set Umbraco to store `umbraco.config` in the environment temporary folder
+This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the environment temporary folder.
 
 **Or**
 
 	<add key="umbracoLocalTempStorage" value="AspNetTemp" />
 
-This will set Umbraco to store `umbraco.config` in the ASP.NET temporary folder
+This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the ASP.NET temporary folder
 
 For **Umbraco v7.6+**
 
