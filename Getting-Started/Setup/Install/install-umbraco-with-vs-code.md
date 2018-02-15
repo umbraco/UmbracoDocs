@@ -1,8 +1,8 @@
-#Install Umbraco with Visual Studio Code
+# Install Umbraco with Visual Studio Code
 
 Follow these simple steps to be up and running with VS Code quickly and easily. The benefit of using VS Code is that it is super simple to get up and running.
 
-##Download and Launch VS Code
+## Download and Launch VS Code
 
 1. Go to [https://code.visualstudio.com/](https://code.visualstudio.com/) and download VS Code for free.
 
@@ -39,5 +39,5 @@ This section continues from where we left off but covers the installation and co
 ### Note
 *You can log into your Umbraco site by entering the following into your browser: http://yoursite.com/umbraco/*
 
-###Post installation
+### Post installation
 One important recommendation is to always remove the `install` folder immediately after installing Umbraco and never to upload it to a live server.
