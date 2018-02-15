@@ -7,7 +7,7 @@ In order to upgrade you will want to [download the version of Forms you wish to 
 Note that this filename ends with `.Files.x.y.z.zip` and contains just the files that get installed when you install Umnbraco Forms.
 
 #Copy
-The easiest way to proceed next is to unzip the file you just downloaded and copy and overwrite (almost) everything into your website. Almost, because you might not want to overwrite `~/App_Plugins/UmbracoForms/UmbracoForms.config` because you might have updated it in the past. Make sure to compare your current version to the version in the zip file you just downloaded. If there's any new configuration options in there then copy those into your website's `UmbracoForms.config` file. 
+The easiest way to proceed is to unzip the file you just downloaded and copy and overwrite (almost) everything into your website. Almost, because you might not want to overwrite `~/App_Plugins/UmbracoForms/UmbracoForms.config` because you might have updated it in the past. Make sure to compare your current version to the version in the zip file you just downloaded. If there's any new configuration options in there then copy those into your website's `UmbracoForms.config` file. 
 
 #Upgrade marker
 Finally, you'll need to tell Umbraco Forms to update itself when you start the website next. In order to do that you need to have a `formsupdate` file (an empty text file without extension) in `~/App_Data/TEMP/`. The easiest way to create this file is by going into the root folder of your website and start a command line there. You can then type the following command: `echo > /App_Data/TEMP/formsupdate`

@@ -6,7 +6,7 @@ Managing forms happens in the Forms section of the Umbraco backoffice so first n
 ![Forms Section](FormsSection.png)
 
 ##Click the forms tree
-Similar to most create actions in the Umbraco backoffice, you'll have to click the ellipses on the forms tree/folder and that will show you the create option
+Similar to most create actions in the Umbraco backoffice, you'll have to click the ellipses on the forms tree/folder and that will show you the create option.
 
 ![Forms tree](FormsTree.png)
 
