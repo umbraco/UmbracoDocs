@@ -291,7 +291,7 @@ As stated in the comment above, this setting was introduced in v4.8. If it's set
 not possible to re-enable their access to the back office again. It also means you can't create an identical username if the user was disabled by a mistake.
 
 **`<usernameIsEmail>`**
-This settings specifies whether the username and email are seperate fields in the backoffice editor. When set to false, you can specify an emailaddress and loginname, and only the loginname can be used to log on. When set the true (the default value) the loginname is always the same as the emailaddress.
+This setting specifies whether the username and email address are seperate fields in the backoffice editor. When set to false, you can specify an email address and username, and only the username can be used to log on. When set the true (the default value) the username is always the same as the email address.
 
 **`<allowPasswordReset>`**
 The feature to allow users to reset their passwords if they have forgotten them was introduced in 7.5.  The feature is based on [a method provided by ASP.Net Identity](http://www.asp.net/identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity).  By default this is enabled but if you'd prefer to not allow users to do this it can be disabled at both the UI and API level by setting this value to `false`.
