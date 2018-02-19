@@ -9,7 +9,7 @@ These default values will be expressed below and you can insert these configurat
 
 Below you can see settings that affects content in Umbraco.
 
-## #Imaging
+### Imaging
 
 <small>This was introduced in 4.8 but is first used with the new media archive in 4.9</small>
 
@@ -490,7 +490,7 @@ The task elements consist of the following attributes:
 ## DistributedCalls / Loadbalancing
 
 **Please note:** this setting applies only to [legacy load balancing
-](../../../Getting-Started/Setup/Server-Setup/load-balancing/traditional).
+](../../../Getting-Started/Setup/Server-Setup/Load-Balancing/traditional.md).
 
 Umbraco comes with ability to distribute its cached content to multiple servers via a method known as load balancing. Umbraco has to be installed on all servers, with all servers sharing the same database.
 
