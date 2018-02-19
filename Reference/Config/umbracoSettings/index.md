@@ -274,6 +274,9 @@ In the security section you have three options: **`<keepUserLoggedIn>`**, **`<al
         <!-- change in 4.8: Disabled users are now showed dimmed and last in the tree. If you prefer not to display them set this to true -->
         <hideDisabledUsersInBackoffice>false</hideDisabledUsersInBackoffice>
 
+        <!-- by default this is true and if not specified in config will be true. set to false to always show a separate username field in the back office user editor -->
+        <usernameIsEmail>true</usernameIsEmail>
+
         <!-- set to true to enable the UI and API to allow back-office users to reset their passwords -->
         <allowPasswordReset>true</allowPasswordReset>  
 
@@ -286,6 +289,9 @@ option to "false" and thereby enabling it.
 **`<hideDisabledUsersInBackoffice>`**
 As stated in the comment above, this setting was introduced in v4.8. If it's set to true it's not possible to see disabled users, which means it's
 not possible to re-enable their access to the back office again. It also means you can't create an identical username if the user was disabled by a mistake.
+
+**`<usernameIsEmail>`**
+This setting specifies whether the username and email address are seperate fields in the backoffice editor. When set to false, you can specify an email address and username, and only the username can be used to log on. When set the true (the default value) the username is always the same as the email address.
 
 **`<allowPasswordReset>`**
 The feature to allow users to reset their passwords if they have forgotten them was introduced in 7.5.  The feature is based on [a method provided by ASP.Net Identity](http://www.asp.net/identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity).  By default this is enabled but if you'd prefer to not allow users to do this it can be disabled at both the UI and API level by setting this value to `false`.
