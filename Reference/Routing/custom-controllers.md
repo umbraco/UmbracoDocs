@@ -76,7 +76,7 @@ Please note that if your template uses a layout that expects the model to be of 
 
 ###Returning the correct view from your controller
 
-In an example above we reference that you can use the following sytnax once you've hijacked a route:
+In an example above we reference that you can use the following syntax once you've hijacked a route:
 
 	//Do some stuff here, the return the base Index method
     return base.Index(model);
