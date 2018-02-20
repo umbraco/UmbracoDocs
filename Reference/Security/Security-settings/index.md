@@ -32,7 +32,7 @@ For both of these Membership Providers you can specify the following settings (i
 It's impossible to brute force the authentication on the login screen because after 'maxInvalidPasswordAttempts' the account of the user will be locked, and until that account is unlocked in the Users section, no attempt will succeed.
 
 ### Password reset on login screen
-The settings for this feature are documented [here](../Config/umbracoSettings/index.md#security) and [here](../../Getting-Started/Backoffice/Login/index.md#password-reset)
+The settings for this feature are documented [here](../../Config/umbracoSettings/index.md#security) and [here](../../../Getting-Started/Backoffice/Login/index.md#password-reset)
 When you submit the password reset form an email is sent to the user with a link. This link contains a random token for this user that is valid for 24 hours. 
 
 ### Password reset of a non-existing user
@@ -43,7 +43,7 @@ If an user is locked out, it is possible to do a password reset. After the e-mai
 
 ## Other security settings
 
-- [The Umbraco timeout in minutes](../Config/webconfig/index.md#umbracotimeoutinminutes)
-- [disableAlternativeTemplates](../Config/umbracoSettings/index.md#webrouting) If set to false this can be used to try to render pages in a way that they are not supposed to
-- [disableFindContentByIdPath](../Config/umbracoSettings/index.md#webrouting) If set to false this can be used to do an enumeration of the nodes in your website and find hidden pages.
+- [The Umbraco timeout in minutes](../../Config/webconfig/index.md#umbracotimeoutinminutes)
+- [disableAlternativeTemplates](../../Config/umbracoSettings/index.md#webrouting) If set to false this can be used to try to render pages in a way that they are not supposed to
+- [disableFindContentByIdPath](../../Config/umbracoSettings/index.md#webrouting) If set to false this can be used to do an enumeration of the nodes in your website and find hidden pages.
 - Umbraco Forms: [AntiForgeryToken](../../../Add-ons/UmbracoForms/Developer/Configuration/index.md#enableantiforgerytoken) and DisableFormCaching 
