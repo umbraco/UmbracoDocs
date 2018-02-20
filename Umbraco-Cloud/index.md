@@ -12,8 +12,14 @@ Using just Umbraco Cloud, by cloning the down locally, and when working with a t
 ## [Deployment](Deployment/)
 The deployment process explained with best practices and a little Git mixed in.
 
+## [Databases](Databases/)
+How Umbraco Cloud manages databases between the different environments.
+
 ## [Upgrades](Upgrades/)
 An explanation of the Umbraco Cloud product upgrade process.
 
 ## [Troubleshooting](Troubleshooting/)
 Tips on finding, identifying and resolving issues.
+
+## [Frequently Asked Questions](Frequently-Asked-Questions/)
+Anything else not covered above.
