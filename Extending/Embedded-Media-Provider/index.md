@@ -77,7 +77,7 @@ http://ampdemo.azureedge.net/azuremediaplayer.html
 
 We can create a custom Embedded Media Provider to do the job of taking the Url of the Media asset and writing out the markup required to embed the IFrame in your content.
 
-    namespace tooorangey.Media.EmbedProviders
+    namespace Our.Umbraco.Media.EmbedProviders
     {
         public class AzureVideoEmbed : AbstractProvider
         {
@@ -100,7 +100,7 @@ We can create a custom Embedded Media Provider to do the job of taking the Url o
 Now we need to add the configuration for the custom provider to our /config/embeddedmedia.config file:
 
      <!-- Azure Video - format of urls: streaming.mediaservices.windows.net-->
-      <provider name="AzureVideo" type="tooorangey.Media.EmbedProviders.AzureVideoEmbed, tooorangey.Media">
+      <provider name="AzureVideo" type="Our.Umbraco.Media.EmbedProviders.AzureVideoEmbed, Our.Umbraco.Media">
         <urlShemeRegex><![CDATA[windows\.net/]]></urlShemeRegex>
       </provider>
 
