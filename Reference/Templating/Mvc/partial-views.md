@@ -95,7 +95,7 @@ The above will cache the output of your partial view for one hour (3600 seconds)
 		int cachedSeconds,
 		bool cacheByPage = false,
 		bool cacheByMember = false,
-		ViewDataDictionary viewData = null
+		ViewDataDictionary viewData = null,
 		Func<object, ViewDataDictionary, string> contextualKeyBuilder = null)
 
 So you can specify to cache by member and/or by page and also specify additional view data to your partial view. If your view data is dynamic (meaning it could change per page request) you can tell Umbraco to cache multiple versions based on parameter values.  The Model however will not do the same so the result will be the cached result of the first execution.  If the Model is simply the current page and cacheByPage is enabled then there is no problem.
