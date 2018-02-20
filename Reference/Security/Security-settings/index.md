@@ -44,6 +44,6 @@ If an user is locked out, it is possible to do a password reset. After the e-mai
 ## Other security settings
 
 - [The Umbraco timeout in minutes](../Config/webconfig/index.md#umbracotimeoutinminutes)
-- [disableAlternativeTemplates](../Coig/umbracoSettings/index.md#webroutinnfg) If set to false this can be used to try to render pages in a way that they are not supposed to
-- disableFindContentByIdPath (https://our.umbraco.org/documentation/Reference/Config/umbracoSettings/#web-routing). If set to false this can be used to do an enumeration of the nodes in your website and find hidden pages.
-- Umbraco Forms: AntiForgeryToken and DisableFormCaching (https://our.umbraco.org/documentation/Reference/Config/umbracoSettings/#web-routing)
+- [disableAlternativeTemplates](../Config/umbracoSettings/index.md#webrouting) If set to false this can be used to try to render pages in a way that they are not supposed to
+- [disableFindContentByIdPath](../Config/umbracoSettings/index.md#webrouting) If set to false this can be used to do an enumeration of the nodes in your website and find hidden pages.
+- Umbraco Forms: [AntiForgeryToken](../../../Add-ons/UmbracoForms/Developer/Configuration/index.md#enableantiforgerytoken) and DisableFormCaching 
