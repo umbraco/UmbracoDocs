@@ -44,6 +44,12 @@ This section describes what a breaking change is in regards to the Umbraco codeb
 * Changes made to public or protected method/property definitions
 * Changes made to a public interface
 
+##Back Office Controllers
+
+###Non-breaking
+
+* Any changes made to MVC or WebApi controllers found in the namespace `Umbraco.Web.Editors` - these controllers are used solely for the purposes of Umbraco's own management of the back office data. These controllers are not meant for public consumption. It is recommended to create your own controllers for your own components.
+
 ##UI files
 
 ###Non-breaking
@@ -58,6 +64,7 @@ This section describes what a breaking change is in regards to the Umbraco codeb
 
 * Changing the file location of CSS or Images is a breaking change
  
+_It is advised to use Umbraco's Angular directives if you wish to create back office components, this will mean that you are not referencing CSS or Html markup directly_
 
 ##JavaScript
 

@@ -95,12 +95,14 @@ Create a new file as `person.resource.js` and add:
 
 	//adds the resource to umbraco.resources module:
 	angular.module('umbraco.resources').factory('personResource', 
-		function($q, $http) {
+		function($q, $http, umbRequestHelper) {
 		    //the factory object returned
 		    return {
 		        //this calls the ApiController we setup earlier
 		        getAll: function () {
-		            return  $http.get("backoffice/My/PersonApi/GetAll");
+			    return umbRequestHelper.resourcePromise(
+			    	$http.get("backoffice/My/PersonApi/GetAll"),
+				"Failed to retrieve all Person data");
 		        }
 		    };
 		}
@@ -108,7 +110,7 @@ Create a new file as `person.resource.js` and add:
 
 This uses the standard angular factory pattern, so we can now inject this into any of our controllers under the name `personResource`.
 
-The `getAll()` method just returns an `$http.get` call, which handles calling the URL, and will return the data when it's ready.
+The `getAll()` method returns a promise from an `$http.get` call, which handles calling the URL, and will return the data when it's ready. You'll notice that the `$http.get` method is wapped inside `umbRequestHelper.resourcePromise`, the `umbRequestHelper.resourcePromise` will automatically handle any 500 errors for you which is why the 2nd string parameter is there - it defines the error message displayed.
 
 ##Create the view and controller
 We will now finally setup a new view and controller, which follows previous tutorials, so you can refer to those for more details: 

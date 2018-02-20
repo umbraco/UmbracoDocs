@@ -21,7 +21,7 @@ If the Image Cropper is used as the upload field (umbracoFile) on a media type y
 
     @{
         var mediaItem = Umbraco.Media(1234);
-        var croppedUrl = mediaItem.GetCropUrl("cropAlias");
+        var croppedUrl = Url.GetCropUrl(mediaItem, "cropAlias");
     }
 
     <img src="@croppedUrl" />
@@ -34,3 +34,7 @@ If you want the original, uncropped image.
     }
 
     <img src="@file" />
+
+###More information
+- [Media Picker](../../Backoffice/Property-Editors/Built-in-Property-Editors/Media-Picker.md)
+- [Image Cropper](../../Backoffice/Property-Editors/Built-in-Property-Editors/Image-Cropper.md)

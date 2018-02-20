@@ -34,10 +34,7 @@ The first thing we must do is create a new folder inside `/App_Plugins` folder. 
 
 
 Next we will create a simple manifest file to describe what this plugin does. This manifest will tell Umbraco about our new property editor and allows us to inject any needed files into the application, so we create the file `/App_Plugins/MarkDownEditor/package.manifest`
-
-[Manifest documentation is currently found here](http://umbraco.github.io/Belle/#/tutorials/manifest)
-_TODO: Add manifest documentation here (see: https://github.com/umbraco/Umbraco4Docs/issues/201)_
-
+[For full package.manifest JSON documentation see here](../../Extending/Property-Editors/package-manifest.md)
 
 Inside this package manifest we add a bit of JSON to describe the property editor, have a look at the inline comments in the JSON below for details on each bit:
 
@@ -121,17 +118,17 @@ Then open the `markdowneditor.controller.js` file and edit it so it looks like t
 	    //plugin folder
 	    assetsService
 			.load([
-				"/App_Plugins/MarkDownEditor/lib/markdown.converter.js",
-	            "/App_Plugins/MarkDownEditor/lib/markdown.sanitizer.js",
-	            "/App_Plugins/MarkDownEditor/lib/markdown.editor.js"
-	        ])
+				"~/App_Plugins/MarkDownEditor/lib/markdown.converter.js",
+				"~/App_Plugins/MarkDownEditor/lib/markdown.sanitizer.js",
+				"~/App_Plugins/MarkDownEditor/lib/markdown.editor.js"
+			])
 			.then(function () {
 			    //this function will execute when all dependencies have loaded
 			    alert("editor dependencies loaded");
 			});
 
-	    //load the seperat css for the editor to avoid it blocking our js loading
-	    assetsService.loadCss("/App_Plugins/MarkDownEditor/lib/markdown.css");
+	    //load the separate css for the editor to avoid it blocking our js loading
+	    assetsService.loadCss("~/App_Plugins/MarkDownEditor/lib/markdown.css");
 	});
 
 This loads in our external dependency, but only when it's needed by the editor.

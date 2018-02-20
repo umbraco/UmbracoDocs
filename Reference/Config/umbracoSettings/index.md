@@ -1,15 +1,15 @@
-#umbracoSettings
+# umbracoSettings
 
 Here you will be able to find documentation on all the options you can modify in the umbracoSettings.config file.
 
 ***NOTE**: in v7+ many of these settings are not explicitly contained in the configuration file that is shipped with Umbraco and most of these settings have default values assigned. 
 These default values will be expressed below and you can insert these configuration items in the file to override the defaults.*
 
-##Content
+## Content
 
 Below you can see settings that affects content in Umbraco.
 
-###Imaging
+### Imaging
 
 <small>This was introduced in 4.8 but is first used with the new media archive in 4.9</small>
 
@@ -69,7 +69,7 @@ If you need to create a custom media document type to handle images called somet
             </autoFillImageProperties>
         </imaging>
 
-###Scripteditor
+### Scripteditor
 
 This section is used for managing the options to create and edit script files in the Umbraco backoffice. 
 
@@ -106,7 +106,7 @@ This setting let's you control if an upload control can create new folders for f
               should be set to false if the application pool's user account hasn't got readrights of the driveroot up to the /media directory -->
         <UploadAllowDirectories>True</UploadAllowDirectories>
 
-###Errors
+### Errors
 
 In case of a 404 error (page not found) Umbraco can return a default page instead. this is set here. Notice you can also set a different error page, based on the current culture so a 404 page can be returned in the correct language
 
@@ -161,7 +161,7 @@ Umbraco can send out email notifications, set the sender email address for the n
 
 **EnsureUniqueNaming**
 
-Umbraco comes with a build-in action handler that ensures that 2 pages does not get identical urls. In case of identical names, the handler will attach a counter to the duplicate name.
+Umbraco comes with a built-in action handler that ensures that 2 pages does not get identical urls. In case of identical names, the handler will attach a counter to the duplicate name.
 
         <!-- if true umbraco will ensure that no page under the same parent has an identical name -->
         <ensureUniqueNaming>True</ensureUniqueNaming>
@@ -201,7 +201,7 @@ Turn XML caching of content on/off. Umbraco makes heavy use of caching content i
 
 **ContinouslyUpdateXmlDiskCache**
 
-Updates the XmlCache whenever content is published. If it's set to false, then writes to the disk cache will be queued and performed asynchronously.
+Updates the XmlCache whenever content is published, default is set to true. If it's set to false then it will never write the xml to disc. This will have an affect on start up times as Umbraco will have to fetch the initial Xml from the database instead of from disc. This is a legacy setting for older load balanced setups. You are advised to leave this set to true on new builds.
 
         <!-- Update disk cache every time content has changed -->
         <ContinouslyUpdateXmlDiskCache>True</ContinouslyUpdateXmlDiskCache>
@@ -248,8 +248,22 @@ This setting is used when you're running Umbraco in virtual directories.
         <!-- Setting this to true can increase render time for pages with a large number of links -->
         <!-- If running umbraco in virtual directory this *must* be set to true! -->
         <ResolveUrlsFromTextString>false</ResolveUrlsFromTextString>
+        
+**DisallowedUploadFiles**
 
-##Security
+This settings consists of a "black list" of file extensions that editors shouldn't be allowed to upload via the back-office.
+
+        <!-- These file types will not be allowed to be uploaded via the upload control for media and content -->
+        <disallowedUploadFiles>ashx,aspx,ascx,config,cshtml,vbhtml,asmx,air,axd,swf,xml,xhtml,html,htm,svg,php,htaccess</disallowedUploadFiles>
+        
+**AllowedUploadFiles (introduced in 7.6.2)**
+
+If greater control is required than available from the above, this setting can be used to store a "white list" of file extensions.  If provided, only files with these extensions can be uploaded via the back-office.
+
+        <!-- If completed, only the file extensions listed below will be allowed to be uploaded.  If empty, disallowedUploadFiles will apply to prevent upload of specific file extensions. -->
+        <allowedUploadFiles></allowedUploadFiles>
+
+## Security
 
 In the security section you have three options: **`<keepUserLoggedIn>`**, **`<allowPasswordReset>`** and **`<hideDisabledUsersInBackoffice>`**. Both settings are dealing with backoffice users.
 
@@ -259,6 +273,9 @@ In the security section you have three options: **`<keepUserLoggedIn>`**, **`<al
 
         <!-- change in 4.8: Disabled users are now showed dimmed and last in the tree. If you prefer not to display them set this to true -->
         <hideDisabledUsersInBackoffice>false</hideDisabledUsersInBackoffice>
+
+        <!-- by default this is true and if not specified in config will be true. set to false to always show a separate username field in the back office user editor -->
+        <usernameIsEmail>true</usernameIsEmail>
 
         <!-- set to true to enable the UI and API to allow back-office users to reset their passwords -->
         <allowPasswordReset>true</allowPasswordReset>  
@@ -273,10 +290,13 @@ option to "false" and thereby enabling it.
 As stated in the comment above, this setting was introduced in v4.8. If it's set to true it's not possible to see disabled users, which means it's
 not possible to re-enable their access to the back office again. It also means you can't create an identical username if the user was disabled by a mistake.
 
+**`<usernameIsEmail>`**
+This setting specifies whether the username and email address are separate fields in the backoffice editor. When set to false, you can specify an email address and username, only the username can be used to log on. When set the true (the default value) the username is hidden and always the same as the email address.
+
 **`<allowPasswordReset>`**
 The feature to allow users to reset their passwords if they have forgotten them was introduced in 7.5.  The feature is based on [a method provided by ASP.Net Identity](http://www.asp.net/identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity).  By default this is enabled but if you'd prefer to not allow users to do this it can be disabled at both the UI and API level by setting this value to `false`.
 
-##RequestHandler
+## RequestHandler
 
 The options in the request handler let us do some quite useful things, like setting domain prefixes, deciding whether or not to use trailing slashes and setting URL replacement for special characters.
 Let's have a further look at each option below.
@@ -331,13 +351,14 @@ If you don't want to have a trailing slash when directory urls are in use simply
 The **removeDoubleDashes** attribute makes sure the double dashes will not appear in the url. Set it to **false** if you want to have double dashes. NOTE that this attribute has no effect anymore starting with Umbraco 6.1 / 7.0 where double dashes are systematically removed.
 
 The **toAscii** attributes tells Umbraco to convert all urls to ASCII using the built-in transliteration library. It is disabled by default, ie by default urls remain UTF8. Set it to **true** if you want to have ASCII urls.
+Introduced in Umbraco 7.6.4 the toAscii attribute can be set to **try**. This will make the engine try to convert the name to an ASCII implementation. If it fails, it will fallback to the name. Reason is that some languages doesn't have ASCII implementations, therefore the urls would end up being empty.
 
 Within the **`<urlReplacing>`** section there are a lot of **`<char>`** elements with an **org** attribute. The attribute holds the character that should
 be replaced and withing the **`<char>`** tags the value it should be replaced width is entered.
 
 So if **`<char org="ñ">n</char>`** is added above the **ñ** will be shown as a **n** in the url.
 
-##Templates
+## Templates
 
     <templates>
         <defaultRenderingEngine>Mvc</defaultRenderingEngine>
@@ -358,7 +379,7 @@ But it is in no way recommended to do so.
 **`<enableSkinSupport>`**
 This setting only affects skinning when using Webforms Masterpages.
 
-##Developer
+## Developer
 
 The comment says it all :)
 
@@ -370,7 +391,7 @@ The comment says it all :)
         </appCodeFileExtensions>
     </developer>
 
-##Scripting
+## Scripting
 
 This is a legacy section which is used for the legacy Razor Macros (superceded by Partial View Macros in v4.10+), 
 generally you won't need to modify this section. If you need custom razor macro converters you should use implementations
@@ -398,14 +419,14 @@ of IRazorDataTypeModel instead of setting them in config.
         </razor>
     </scripting>
 
-##viewstateMoverModule
+## viewstateMoverModule
 
 The viewstate mover module is included by default. It enables you to move all asp.nets viewstate information to the end of the page, thereby making it easier for search engines to index your content instead of going through viewstate JavaScript code.Please note that this does not work will all asp.net controls.
 
     <!-- This moves the asp.net viewstate data to the end of the html document instead of having it in the beginning-->
     <viewstateMoverModule enable="false" />
 
-##Logging
+## Logging
 
 **enableLogging:** turn logging on and off
 
@@ -437,7 +458,7 @@ Standard logTypeAlias Entries are as follows and correspond to the entries found
         <!--<externalLogger assembly="~/bin/assemblyFileName.dll" type="fully.qualified.namespace.and.type" logAuditTrail="false" /> -->
     </logging>
 
-##ScheduledTasks
+## ScheduledTasks
 
 In this section you can add multiple scheduled tasks that should run a certain intervals.
 
@@ -466,7 +487,10 @@ The task elements consist of the following attributes:
 
 **Please note:** that the scheduler is not in anyway a windows process so it depends on the application pool in which Umbraco is located. This means that if the application pool resets, so will the scheduler, so this is not a highly reliable way of scheduling tasks.
 
-##DistributedCalls / Loadbalancing
+## DistributedCalls / Loadbalancing
+
+**Please note:** this setting applies only to [legacy load balancing
+](../../../Getting-Started/Setup/Server-Setup/Load-Balancing/traditional.md).
 
 Umbraco comes with ability to distribute its cached content to multiple servers via a method known as load balancing. Umbraco has to be installed on all servers, with all servers sharing the same database.
 
@@ -493,40 +517,7 @@ As all instances share the same database the only authentication we need between
 
 Though the above example shows the server's as IP addresses, these can also be DNS names of servers. This is useful if you're server is running multiple websites on IIS.
 
-##Webservices
-
-Umbraco includes a simple set of webservices to control content, members, media files etc etc from external applications. They can be turned completely off on the <webservices> element or enabled one by one by enabling users access.
-
-documentServiceUsers: access to creating and publishing content
-url: /umbraco/webservices/api/documentservice.asmx
-
-fileServiceUsers: Access to change files
-fileServiceFolders: folders the fileServiceUsers have access to
-url: /umbraco/webservices/api/fileservice.asmx
-
-stylesheetServiceUsers: making changes to stylesheets
-url: /umbraco/webservices/api/StylesheetService.asmx
-
-memberServiceUsers: adding and editing members
-url: /umbraco/webservices/api/memberservice.asmx
-
-templateServiceUsers: editing template files
-url: /umbraco/webservices/api/templateservice.asmx
-
-    <!-- configuration for webservices -->
-    <!-- webservices are disabled by default. Set enable="True" to enable them -->
-    <webservices enabled="False">
-        <!-- You must set user-rights for each service. Enter the usernames seperated with comma (,) -->
-        <documentServiceUsers>your-username</documentServiceUsers>
-        <fileServiceUsers>your-username</fileServiceUsers>
-        <stylesheetServiceUsers>your-username</stylesheetServiceUsers>
-        <memberServiceUsers>your-username</memberServiceUsers>
-        <templateServiceUsers>your-username</templateServiceUsers>
-        <!-- type of files (extensions) that are allowed for the file service -->
-        <fileServiceFolders>css,xslt</fileServiceFolders>
-    </webservices>
-
-##Repositories
+## Repositories
 
 From the Developer section you can access packages. From here you have access to the Umbraco package repository from where you can download packages. It is however also possible to add other repositories to this list. If you or your company have a private repository, it can be added to this list.
 
@@ -540,7 +531,7 @@ If you wish to add your own repository, contact [Umbraco corp](http://umbraco.co
 
 Also note that you can remove the official repository from the **<repositories>** list in case you do not want this functionality
 
-##Providers
+## Providers
 
 The providers section configures the different providers in use in Umbraco. Currently only the backend membership provider is set here.
 
@@ -554,7 +545,7 @@ The providers section configures the different providers in use in Umbraco. Curr
         </users>
     </providers>
 
-##Web.Routing
+## Web.Routing
 
 This section configures...
 
@@ -566,6 +557,10 @@ This section configures...
 
 **disableFindContentByIdPath**: when true, urls such as /1234 do *not* find content with ID 1234.
 
+**disableRedirectUrlTracking**: when you move and rename pages in Umbraco, 301 permanent redirects are automatically created, set this to true if you do not want this behavior 
+
+**Note** The URL tracking feature (and thus, this setting) is only available on Umbraco 7.5.0 and higher.
+
 **umbracoApplicationUrl**: defines the Umbraco application url, ie how the server should reach itself. By default, Umbraco will guess that url from the first request made to the server. Use that setting if the guess is not correct (because you are behind a load-balancer, for example). Format is: "http://www.mysite.com/umbraco" ie it needs to contain the scheme (http/https), complete hostname, and umbraco path.
 
     <web.routing
@@ -573,5 +568,6 @@ This section configures...
         internalRedirectPreservesTemplate="false" 
         disableAlternativeTemplates="false"
         disableFindContentByIdPath="false"
+        disableRedirectUrlTracking="false"
         umbracoApplicationUrl=""
     />

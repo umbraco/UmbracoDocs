@@ -1,7 +1,7 @@
 #Build your own editor
 Create a file in `/app_plugins/yourpackage/editor.html` and add the following to the editor.html file: 
 
-    <textarea rows="1" ng-model="control.value" ng-style="control.config"></textarea>
+    <textarea rows="1" umb-auto-resize ng-model="control.value" ng-style="control.editor.config"></textarea>
 
 Save the file and add an editor to the `/app_plugins/yourpackage/package.manifest` file:
 
@@ -72,8 +72,7 @@ So to summarize, to create a custom grid editor from scratch, you will need to:
 - Create a grid editor view `.html` file
 - Create a grid render `.cshtml` file
 - Create a grid editor controller `.js` file
-- Create a `package.manifest` file to make Umbraco load needed files
-- Register the editor in the `/config/grid.editors.js` file
+- Create a `package.manifest` to register the editor and make Umbraco load needed files
 
 This process tries to be as close to building property editors as currently possible.
 

@@ -14,7 +14,7 @@ We'll start by adding a new class to the project. Call it *LogWhenPublished*. Th
 
     public class LogWhenPublished : ApplicationEventHandler
     {
-        ///Here we'll subribe to an event
+        ///Here we'll subscribe to an event
     }
 
 First thing to do in our *LogWhenPublished* class is to override `ApplicationStarted` and then subscribe to an event in `Umbraco.Core.Services.Contentservice.Published`.

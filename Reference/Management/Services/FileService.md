@@ -4,6 +4,8 @@
 
 The FileService acts as a "gateway" to Umbraco data for operations which are related to Scripts, Stylesheets and Templates.
 
+[Browse the API documentation for FileService](https://our.umbraco.org/apidocs/csharp/api/Umbraco.Core.Services.FileService.html).
+
  * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
 

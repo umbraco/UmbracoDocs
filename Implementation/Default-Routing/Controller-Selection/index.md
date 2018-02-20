@@ -4,7 +4,7 @@ _Once the published content request has been created, and MVC is the selected re
 
 ##Defaults
 
-By default, Umbraco will execute every request via it's built in default controller: `Umbraco.Web.MVC.RenderMvcController`.
+By default, Umbraco will execute every request via its built in default controller: `Umbraco.Web.Mvc.RenderMvcController`.
 The MVC Action that executes by default for every request is the `Index` action on the `RenderMvcController`.  
 
 ##Changing the default
@@ -26,4 +26,4 @@ You can override the `Index` method to perform any customizations that you requi
 ##Custom controller selection
 
 Custom controllers can be created to execute for different Umbraco Document Types and Templates. This is termed 'Hijacking Umbraco Routes'.
-For full details on how this proces works, see [Custom Controllers](../../../Reference/Routing/custom-controllers.md) 
+For full details on how this process works, see [Custom Controllers](../../../Reference/Routing/custom-controllers.md)

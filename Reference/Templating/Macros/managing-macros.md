@@ -8,17 +8,17 @@ There are a couple of ways to create a macro.
 
 The first way is to manually create a macro in the macro tree in the developer section:
 
-![Create macro](images/create-macro-tree.png?raw=true)
+![Create macro](images/create-macro-tree.png)
 
 Give it a name in the dialog screen, and then you'll be presented with the macro editor:
 
-![Macro editor](images/macro-editor.png?raw=true)
+![Macro editor](images/macro-editor.png)
 
 From here you'll need to choose the macro type you want to render (see here for full details: [Macro Types](macro-types.md))
 
 The 2nd option to create a macro is to create the macro type directly on its tree and select the checkbox "Create macro". For example, if you create a Partial View Macro File in the Developer section, the dialog will prompt you to also create a macro for this item. 
 
-![Macro editor](images/create-macro-from-type.png?raw=true)
+![Macro editor](images/create-macro-from-type.png)
 
 ##Rich text options
 
@@ -50,7 +50,7 @@ Macro parameters can be used to change the output of a macro at runtime. Macro p
 
 The macro parameter dialog looks like this:
 
-![Macro editor](images/macro-parameter-editor.png?raw=true)
+![Macro editor](images/macro-parameter-editor.png)
 
 Here you can add/modify/remove macro parameters.
 

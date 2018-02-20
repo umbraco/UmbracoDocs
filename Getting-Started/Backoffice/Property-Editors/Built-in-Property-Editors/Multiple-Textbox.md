@@ -1,20 +1,22 @@
-#Multiple Textbox
+# Repeatable textstrings
+
+`Alias: Umbraco.MultipleTextstring`
 
 `Returns: array of strings`
 
-The Multiple Textbox property editor enables a content editor to make a list of text items. For best use with an unordered-list.
+The Repeatable textstrings property editor enables a content editor to make a list of text items. For best use with an unordered-list.
 
-##Data Type Definition Example
+## Data Type Definition Example
 
-![Multiple Textbox Data Type Definition](images/wip.png)
+![Repeatable textstrings Data Type Definition](images/Repeatable-Textstrings-DataType.png)
 
-##Content Example 
+## Content Example 
 
-![Multiple Textbox Content](images/wip.png)
+![Repeatable textstrings Content](images/Repeatable-Textstrings-Content.png)
 
-##MVC View Example
+## MVC View Example
 
-###Typed:
+### Typed:
 	
     @{
         if (Model.Content.GetPropertyValue<string[]>("keyFeatureList").Length > 0)
@@ -28,7 +30,7 @@ The Multiple Textbox property editor enables a content editor to make a list of 
         }
     }
 
-###Dynamic:                              
+### Dynamic:                              
 
     @{
         if (CurrentPage.keyFeatureList.Length > 0)

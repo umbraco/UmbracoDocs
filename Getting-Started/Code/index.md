@@ -1,5 +1,8 @@
 #Code
 
+###[Debugging your Umbraco site](Debugging/)
+Using Tracing and MiniProfiler to debug your code
+
 ###[Using Umbracos Service APIs](Umbraco-Services/)
 Create and update entities in Umbraco from code
 

@@ -104,9 +104,7 @@ You can now run the site like you would normally in Visual Studio (using **F5** 
 Follow the installation wizard and after a few easy steps and choices you should get a message saying the installation was a success.
 
 ##Post installation
-One important recommendation is to always remove the `install` folder immediately after installing Umbraco and never to upload it to a live server.
-
-You should also note that the Umbraco nuget package adds a build step to always include the Umbraco folders when you deploy using Web One-Click Publish with Visual Studio.  
+You should note that the Umbraco nuget package adds a build step to always include the Umbraco folders when you deploy using Web One-Click Publish with Visual Studio.  
 You can see these folders in `packages/UmbracoCms x.y.z/build/UmbracoCms.targets`  
 Should you need to exclude any of these folders or content, you can add a target to your `.pubxml` files in the `properties/Publish` folder. For instance if you need to exclude json data a plugin generates during production.
 

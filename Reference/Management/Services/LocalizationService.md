@@ -4,6 +4,8 @@
 
 The LocalizationService acts as a "gateway" to Umbraco data for operations which are related to Dictionary items and Languages.
 
+[Browse the API documentation for LocalizationService](https://our.umbraco.org/apidocs/csharp/api/Umbraco.Core.Services.LocalizationService.html).
+
  * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
 

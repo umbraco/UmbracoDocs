@@ -3,6 +3,8 @@
 _`MembershipHelper` is a helper class for accessing member data in the form of `IPublishedContent`. 
 `MembershipHelper` has a variety of helper methods that are useful when working in your views, controllers and webforms classes._
 
+Note: For a more detailed list, visit the [API documentation](https://our.umbraco.org/apidocs/csharp/api/Umbraco.Web.Security.MembershipHelper.html#methods)
+
 ##How to reference MembershipHelper?
 When working in templating, this helper will automatically be there for you to use as `@Members` which means you conveniently in your templates easily can access member data:
 
@@ -22,18 +24,18 @@ which are specific to members.
 
 
 ###.GetByEmail(string email)
-Looks for a member with a given email, If found, returns a member profile as `IPublishedContent`
+Looks for a member with a given email, if found, returns a member profile as `IPublishedContent`
 
 ###.GetById(int id)
-Looks for a member withe a given node ID, If found, returns a member profile as `IPublishedContent`
+Looks for a member with a given node ID, if found, returns a member profile as `IPublishedContent`
 
 ###.GetByProviderKey(object key)
-looks for a member with a given provider key, If found, returns a member profile as `IPublishedContent`. Provider key, is the key, that
-the membership provider responsible for the member has assigned the member as its primary key. 
+Looks for a member with a given provider key, if found, returns a member profile as `IPublishedContent`. Provider key is the key that
+the membership provider allocates for the member as its primary key. 
 Umbraco's default membership provider assigns a guid, alternative providers such as active directive likely uses another format.
 
 ###.GetByUsername(string username)
-Looks for a member withe a given username, If found, returns a member profile as `IPublishedContent`
+Looks for a member with a given username, if found, returns a member profile as `IPublishedContent`
 
 ###.GetCurrentLoginStatus()
 Gets the current members login status as a `LoginStatusModel`
@@ -44,7 +46,7 @@ Gets the current member profile as a `ProfileModel`
 
 
 ###.IsLoggedIn()
-Returns a boolean whether there is a Member currently logged in.
+Returns a boolean to state whether there is a member currently logged in.
 
 ###.Login(string username, string password)
 Attempts to log in a member with the given username and password
@@ -56,7 +58,7 @@ Determines if a member is authorized, based on memberType, associated roles, and
 Detects if the default Umbraco membership provider is in use.
 
 ###.RegisterMember(RegisterModel model)
-Registers a new Member
+Registers a new member
 
 ###.UpdateMemberProfile(ProfileModel model)
 Updates a current member profile

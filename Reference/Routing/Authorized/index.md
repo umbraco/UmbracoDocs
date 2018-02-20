@@ -2,7 +2,7 @@
 
 In order for Umbraco to authentication a request for the back office, the routing needs to be specific. Any URL that routes to :
 
-> /umbraco/backoffice/* 
+> /umbraco/backoffice/*
 
 will be authenticated. If you have a controller that is not routed within the prefix, it will not be authenticated for back office use.
 
@@ -11,10 +11,10 @@ You do not have to worry about routing if you are using WebApi and using `Umbrac
 > `/umbraco/backoffice/api/{controller}/{action}`
 
 In the case that an Umbraco Api Controller is a 'Plugin Controller', then the route would be:
- 
+
 > `/umbraco/backoffice/{pluginname}/{controller}/{action}`
 
-_Note:_ the {area} specified by the [PluginController] attribute replaces the /api/ area for the rouute.
+_Note:_ the {area} specified by the [PluginController] attribute replaces the /api/ area for the route.
 
 
 ##MVC controllers for the back office
@@ -29,27 +29,27 @@ Defining a route is done with the standard ASP.Net MVC routing practices. In Umb
 
 
     protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext    
-    applicationContext) 
-    { 
-      RouteTable.Routes.MapRoute( 
-      name: "cats", 
-      url: "backoffice/cats/{action}/{id}", 
-      defaults: new 
-      { 
-        controller = "Cats", 
+    applicationContext)
+    {
+      RouteTable.Routes.MapRoute(
+      name: "cats",
+      url: GlobalSettings.UmbracoMvcArea + "/backoffice/cats/{action}/{id}",
+      defaults: new
+      {
+        controller = "Cats",
         action = "Meow",
         id = UrlParameter.Optional
-      }); 
+      });
     }
 
-_NOTE the route must be prefixed with `backoffice` in order for Umbraco to check user authentication._
+_NOTE the route must be prefixed with Umbraco path which is configurable and resolved with `GlobalSettings.UmbracoMvcArea` and then by "backoffice" in order for Umbraco to check user authentication._
 
 ###What about Surface Controllers?
-Surface Controllers should not be used in the back office.  Surface Controllers are not designed to work with the back office, they are not meant to be used there and will not be supported being used there. 
+Surface Controllers should not be used in the back office.  Surface Controllers are not designed to work with the back office, they are not meant to be used there and will not be supported being used there.
 
 ##Special back office routes for user authentication
 There are some special routes Umbraco checks to determine if the authentication should check a member of a user.
-         
+
 If any route has an extension in the path like `.aspx` or the below are always back office routes:
 
 *  /Umbraco/RestServices

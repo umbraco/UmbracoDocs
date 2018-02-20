@@ -1,5 +1,5 @@
 #Data-Types
-*A Data Type defines the type of input for a property. So when adding a property (on Document Types, Media Types and Members) when selecting the Type you are selecting a Data Type. There are a number of of preconfigured Data Types available in Umbraco and more can be added in the Developer section.*
+*A Data Type defines the type of input for a property. So when adding a property (on Document Types, Media Types and Members) when selecting the Type you are selecting a Data Type. There are a number of preconfigured Data Types available in Umbraco and more can be added in the Developer section.*
 
 ##What is a data type?
 A Data Type can be something very simple (textstring, number, true/false,...) or more complex (multi node tree picker, image cropper, Grid Layout).
@@ -13,7 +13,7 @@ To create a new Data Type go to the Developer section and click the menu icon to
 
 ![Dropdown List](images/Data-Types-Create.jpg)
 
-* __Property Editor:__ This is where you pick the Property Editor that our *Dropdown Cities* Data Type will be referencing. Pick the __Dropdown List__ and now you will see the cofiguration options that are available for a Data Type referencing the Dropdown List Property Editor.
+* __Property Editor:__ This is where you pick the Property Editor that our *Dropdown Cities* Data Type will be referencing. Pick the __Dropdown List__ and now you will see the configuration options that are available for a Data Type referencing the Dropdown List Property Editor.
 
 * __Property Editor Alias__
 The alias of the Property Editor being used.

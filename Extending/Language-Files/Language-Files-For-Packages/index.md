@@ -1,4 +1,5 @@
 #Language file for packages
+**Applies to version 7.3.0 and newer**
 
 While the Umbraco Core ships with its own set of language files, package authors who wants their UI to be multi-lingual, will need to include their own set of language files as part of their package distribution.
 
@@ -27,27 +28,3 @@ For reference on the language file format see the core [language files on github
         </area>
     </language>
 
-
-## Using the language keys
-Using core or custom language keys from your code:
-
-
-### From .net
-`Services` are available in most Umbraco baseclasses like Controllers and UserControls, from there, use TextService to localize string with format [area]/[key]:
-
-    using Umbraco.Core.Services;
-    var localizedLabel = Services.TextService.Localize("dialog/myKey");
-
-
-### From Angular
-In the umbraco backoffice UI, labels can be localized with the `localize` directive:
-
-    <button>
-        <localize key="dialog_myKey">Default value</localize>
-    </button>
-
-Or from a controller by using the `LocalizationService` which returns a async translation in a promise like so:
-
-    localizationService.localize("dialog_myKey").then(function(value){
-	                element.html(value);
-    });

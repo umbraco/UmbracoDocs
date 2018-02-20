@@ -26,15 +26,15 @@ _You can also choose to create a Document Type without a template and create fol
 First we're prompted to give the Document Type a name. This first Document Type will be the root node for our content, name it "Home".
 
 ![Naming a Document Type](images/Document-Type-Name.jpg)
-_Notice that the alias of the Document TYpe is automatically generated based on the name. If you want to change the alias simply click the "lock" icon._
+_Notice that the alias of the Document Type is automatically generated based on the name. If you want to change the alias simply click the "lock" icon._
 
 Having a root node makes it easy to query content as you know everything will be under the root node.
 
-To set an icon for the Document Type click the document icon in the top left corner. This will open the icon select dialog. Search for _Home_ and select the icon. This icon will be used in the content tree, choosing apropriate icons for your content nodes is a good way to give editors a better overview of the content tree.
+To set an icon for the Document Type click the document icon in the top left corner. This will open the icon select dialog. Search for _Home_ and select the icon. This icon will be used in the content tree, choosing appropriate icons for your content nodes is a good way to give editors a better overview of the content tree.
 
 ![Choosing an icon for the Document Type](images/Document-Type-Choosing-Icon.jpg)
 
-Go to the __Permissions__ tab and tic the __Yes - allow content of this type in the root__ checkbox and save the Document Type by clicking save in the bottom right corner.
+Go to the __Permissions__ tab and tick the __Yes - allow content of this type in the root__ checkbox and save the Document Type by clicking save in the bottom right corner.
 
 ![Allow at root](images/Document-Type-Allow-At-Root.jpg)
 
@@ -66,6 +66,11 @@ Click the __Add property__ link in the Content tab. This opens the property sett
 Give the property a name, the name will be shown to the editor so make relevant and easy to understand. Notice the alias is automatically generated based on the name. We'll name this "Body Text".
 
 ![Adding a property](images/Document-Type-Adding-Properties.jpg)
+
+#####Keyboard Shortcuts
+Keyboard shortcuts are available when you are working with the Document Type editor. To see which shortcuts are available simply click <kbd>ALT</kbd> + <kbd>SHIFT</kbd> + <kbd>K</kbd>:
+
+![Keyboard Shortcuts](images/Document-Type-Keyboard-Shortcuts.jpg?width=400)
 
 #####Property editors
 Clicking __Add editor__ will open the Select editor dialog. Here you can choose between all the __Available editors__ (this will create a new configuration) or __Reuse__ already configured editors. To make it easier to find what you need use the search field to filter by typing "Rich". Filtering will display configured properties first (under Reuse) and all available editors under that.

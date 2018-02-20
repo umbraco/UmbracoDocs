@@ -3,21 +3,21 @@
 _Umbraco (since version 4) uses [ASP.NET master pages](http://www.asp.net/web-forms/tutorials/master-pages), so if you are familiar with these you will find this a breeze._
 
 _When creating a new template via the backoffice, Umbraco simply generates a masterpage file that inherits from
-"~/umbraco/masterpages/default.master", whilst storing the newly created template in 
+"~/umbraco/masterpages/default.master", whilst storing the newly created template in
 "~/masterpages/[Template_Alias].master"._
 
 ##Declaration
 When a new template is created, it will by default contain 3 lines of predefined markup:
 
 	<%@ Master Language="C#" MasterPageFile="~/umbraco/masterpages/default.master" AutoEventWireup="true" %>
-	
+
 	<asp:Content ContentPlaceHolderID="ContentPlaceHolderDefault" runat="server">
-	 	
+
 	</asp:Content>
 
-The first line, is the template declaration, it tells Umbraco what language the template is written in, and if it inherits from another template. Masterpages in Umbraco will always inherit from another Masterpage, if its a root template, it will inherite from
+The first line, is the template declaration, it tells Umbraco what language the template is written in, and if it inherits from another template. Masterpages in Umbraco will always inherit from another Masterpage, if its a root template, it will inherit from
 `/umbraco/masterpages/default.master` which is the default umbraco masterpage, which is needed for the templating system to work.
-    
+
 
 ##[umbraco:item](umbracoitem.md)
 The `umbraco:item` element is used to pull a property from the page, currently being rendered, the below sample renders the value with the alias "bodyText" from the current page, if the value does not exist, nothing is rendered
@@ -27,7 +27,7 @@ The `umbraco:item` element is used to pull a property from the page, currently b
 There are several advanced options for using` umbraco:item`, for controlling fall-back values, recursive lookups, casing, encoding and so on:
 
 	<umbraco:Item field="bodyText" useIfEmpty="contents" textIfEmpty="Fallback value" case="upper" recursive="true" runat="server" />
-                  
+
 
 [See the full umbraco:item reference](umbracoitem.md)
 
@@ -49,9 +49,9 @@ The umbraco:macro element renders the out of a macro with a given alias. Attribu
 	<umbraco:macro alias="topnavigation" className="greenList" runat="server" />
 
 [See the full umbraco:macro reference](umbracomacro.md)    
-    
+
 ##Template inheritance
-Templates can inherite other templates and uses 2 elements to merge them. `<asp:contentplaceholder>` and `<asp:content>` To connect one template with another, use the dropdownlist in Umbraco to specify the master template, this will change the template declation and make a database change.
+Templates can inherit other templates and uses 2 elements to merge them. `<asp:contentplaceholder>` and `<asp:content>` To connect one template with another, use the dropdownlist in Umbraco to specify the master template, this will change the template declaration and make a database change.
 
 Lets imagine we have define the below template structure.
 
@@ -62,7 +62,7 @@ Lets imagine we have define the below template structure.
 For inheritance to work, the parent template (master.master) needs to have a placeholder, and the child-templates needs to have a content area which matches the placeholder alias.
 
 So in master.master we have the default asp:content element, and inside of that, we have a placeholder with id "myarea"
-	
+
 	<%@ Master Language="C#" MasterPageFile="~/umbraco/masterpages/default.master" AutoEventWireup="true" %>
 	<asp:Content ContentPlaceHolderID="ContentPlaceHolderDefault" runat="server">
 	 	<div id="myDiv">
@@ -71,7 +71,7 @@ So in master.master we have the default asp:content element, and inside of that,
 	</asp:Content>
 
 In the child templates, we will now need to have a asp:content area which matches the placeholder id
-	
+
 	<%@ Master Language="C#" MasterPageFile="master.master" AutoEventWireup="true" %>
 	<asp:Content ContentPlaceHolderID="myarea" runat="server">
 	 	<h1>this is my child template</h1>
@@ -87,10 +87,10 @@ When the page is rendered, the resulting html in the browser will look like this
 
 
 ###asp:contentplaceholder
-ContentPlaceholder is, as the name implies a placeholder for content being merged from another template. The element requires a `Id`, and `runat="server"` 
+ContentPlaceholder is, as the name implies a placeholder for content being merged from another template. The element requires a `Id`, and `runat="server"`
 
 	<asp:contentplaceholder id="myArea" runat="server" />
-	
+
 A placeholder can also contain a default value, incase it is not used by a inheriting template
 
 	<asp:contentplaceholder id="myArea" runat="server">

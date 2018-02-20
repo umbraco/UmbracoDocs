@@ -1,6 +1,6 @@
 #Controllers in Umbraco
 
-_There are are few types of controllers in Umbraco that perform different tasks_
+_There are a few types of controllers in Umbraco that perform different tasks_
 
 ##Render MVC Controllers
 
@@ -23,13 +23,13 @@ See [Reference documentation on SurfaceControllers for full details](../../Refer
 
 An Umbraco API Controller is an ASP.Net WebApi controller that is used for creating REST services. These controllers are auto-routed meaning that you don't have to add/create your own routes for these controllers to work.
 
-All implementations of SurfaceControllers inherit from the base class `Umbraco.Web.WebApi.UmbracoApiController`.
+All implementations of Umbraco Api Controllers inherit from the base class `Umbraco.Web.WebApi.UmbracoApiController`.
 
 See [Reference documentation on Umbraco Api Controllers for full details](../../Reference/Routing/WebApi/index.md)
 
 ##Umbraco Authorized Controllers and Attributes
 
-An Umbraco Authorized controller is used when the controller requires member or user authentication (authN) and/or authorization (authZ). If either the authN or authZ fail the controller will return a "401 - unathorized response."  
+An Umbraco Authorized controller is used when the controller requires member or user authentication (authN) and/or authorization (authZ). If either the authN or authZ fail the controller will return a "401 - unauthorized response."  
 
 ### Back office Authorization
 

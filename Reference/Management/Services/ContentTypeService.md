@@ -4,6 +4,8 @@
 
 The ContentTypeService acts as a "gateway" to Umbraco data for operations which are related to ContentTypes and MediaTypes.
 
+[Browse the API documentation for ContentTypeService](https://our.umbraco.org/apidocs/csharp/api/Umbraco.Core.Services.ContentTypeService.html).
+
  * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
 
