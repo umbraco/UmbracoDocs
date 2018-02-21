@@ -2,6 +2,52 @@
 
 ## Installing Courier 3
 
+The following guide will use to example sites; *development.site* and *live.site*. The guide will go through how to install and configure Umbraco Courier on two environments in order to be able to use Courier to transfer types and content between the two.
+
+* Go to the **Developer** section of the backoffice
+* Find **Packages** in the left navigation tree
+* The **Umbraco Courier** package is usually one of the top packages - otherwise you can simply search for it
+* Follow the installation directions
+* Once Courier has been installed, make sure to **refresh the page**
+* Next step is to **add a location** 
+    * In the gif below Courier is installed on development.site project, and live.site is added as the location since this is the project I want to transfer to/from
+* The location you add, will be set in the `config/courier.config` file as a *repository*. Learn more about this in the [Repository Providers](RepositoryProviders.md) article.
+
+![InstallingCourier](images/InstallCourier.gif)
+
+Go through these steps on all the environments / projects where you want to use Courier.
+
+Before you can start transferring between your projects, you need to **add a Courier API key** to the `courier.config` file on all the projects.
+
+Find the courier.config file in the /config folder
+In the <security> section, find the <auth> section - it will look like this:
+<auth>
+     <method>credentials</method>
+     <apikey></apikey>
+   </auth>
+Change <method> to token
+Add a randomly generated api key with at least 10 characters - this could be anything, fx 1234567890
+The <auth> section should look something like this:
+<auth>
+     <method>token</method>
+     <apikey>1234567890</apikey>
+   </auth>
+Make sure to make this change on all the projects where you want to use Courier
+Important: For Courier to work between the projects, you need to use the same Courier API key on all projects
+
+You have now set up Courier on all your projects, and you are ready to start transferring between the environments!
+
+NOTE: If you are testing Courier locally, you need to setup local host names to run your projects from. Follow the steps outlined below to get up and running.
+Testing Courier locally
+When you are testing Courier on two Umbraco instances locally, it’s recommended that you bind local host names to the instances.
+
+Open the IIS (Internet Information Services) Manager on your local Windows machine
+In the navigation bar to the left, right-click on Sites, and choose Add Websites…
+Give the site a name - example: Development.site
+Add the path to the project directory
+Finally, set the hostname - example: development.site
+When you click ‘OK’ the website will start
+In the navigation to the left, click Browse yourdomain 
 
 
 ## Installing Courier 2 using a package
