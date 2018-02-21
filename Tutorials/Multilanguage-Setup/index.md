@@ -1,7 +1,7 @@
 #Multilanguage sites
 
 ##Multilingual frontend
-_Note: This will be shown on Umbraco 7.8.1, never and older versions may differ. Also this assumes you already have a site with content in one language ready to work with._
+_Note: This will be shown on Umbraco 7.8.1, newer and older versions may differ. Also this assumes you already have a site with content in one language ready to work with._
 
 ###First step 
 When setting up a multilingual site is to copy the content you have in the original language. To do this, chose the node you want to copy - in this example everything is copied at once by copying the Home node, left click Home and click copy in the menu.
