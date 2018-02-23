@@ -93,7 +93,7 @@ Examine v0.1.80 introduced a new `directoryFactory` named `SyncTempEnvDirectoryF
 
     directoryFactory="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory,Examine"
 
-The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory. This setting is need because Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Any time the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local environment temp files are cleared out that the index files can be restored from the centrally stored index files
+The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory. This setting is need because Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Any time the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local environment temp files are cleared out that the index files can be restored from the centrally stored index files.  
 
 #### Pre Examine v0.1.80 ####
 
@@ -111,7 +111,7 @@ Examine v0.1.83 introduced a new `directoryFactory` named `TempEnvDirectoryFacto
 
     directoryFactory="Examine.LuceneEngine.Directories.TempEnvDirectoryFactory,Examine"
 
-The `TempEnvDirectoryFactory` allows Examine to store indexes directly in the environment temporary storage directory.
+The `TempEnvDirectoryFactory` allows Examine to store indexes directly in the environment temporary storage directory, and should be used instead of `SyncTempEnvDirectoryFactory` mentioned above. 
 
 #### Pre Examine v0.1.83 ####
 
