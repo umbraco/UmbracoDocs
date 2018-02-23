@@ -25,5 +25,14 @@ These magic strings as we call them can be used in Workflows property/settings. 
 In addition to using these in Workflow settings, they can be used in default values in hidden fields for examples, normally referral codes from a session, cookie or request item.
 
 ## How can I parse these values elsewhere in my C# code or Razor Views?
-The method `ParsePlaceHolders()` is a public extension method extending the `string` object and could be used with anything that you wish to try and replace the above tokens in a string.
-You will need to reference the following namespace to ensure you can use this in your code `Umbraco.Forms.Core.Extensions`
+The `Umbraco.Forms.Data.StringHelpers` class contains helper methods for parsing magic strings:
+
+    // Does not parse Record-related magic strings - they are simply removed.
+    public static string ParsePlaceHolders(HttpContext context, string value) 
+    
+    // Uses the passed in Record to parse Record-related magic strings
+    public static string ParsePlaceHolders(Record record, string value)
+    
+    public static string ParsePlaceHolders(HttpContext context, Record record, string value)
+
+There is also a public extension method `ParsePlaceHolders()`extending the `string` object in the `Umbraco.Forms.Core.Extensions` namespace that can be used with anything that you wish to try and replace the above tokens in a string, but it doesn't currently work with Records.
