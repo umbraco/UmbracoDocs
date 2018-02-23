@@ -8,12 +8,12 @@ To understand how Courier works, and to use its API, you must know and understan
 
 These 3 concepts are what enables Courier to perform deployments in a way that can decouple the Courier client from the sites/destinations it's deploying to/from. 
 
-The below descriptions are from an API point of view, and provide simple exemples on how to use each concept. 
+The descriptions below are from an API point of view and provide simple exemples on how to use each concept. 
 
 ##Packaging
 Packaging collects data and files from a given target repository that supports packaging. Out of the box, any Courier enabled website supports this, however, you cannot perform a packaging on a network share or subversion repository.
 
-When an item has been packaged, its data is serialized to a xml file and stored at a given destination. For storage you can use the local storage on any repository the client is connected to. 
+When an item has been packaged its data is serialized to an xml file and stored at a given destination. For storage you can use the local storage on any repository the client is connected to. 
 
 So to take packaging step by step:
 
@@ -31,8 +31,8 @@ To translate this into code, we need a couple of things defined:
 So the code we are executing is not on either the devsite or qasite, but it could be. If no Source or Destination is set, Courier will try to use the local machine for storage. 
 
 
-###Configuration
-For our configuration, I've setup the 2 repositories in the courier.config file:
+###Configuration 
+For this configuration the following two repositories have been set up in the courier.config file:
 
 	<repositories>
         <repository name="QA site" alias="qasite" type="CourierWebserviceRepositoryProvider" visible="true">
@@ -50,12 +50,12 @@ For our configuration, I've setup the 2 repositories in the courier.config file:
 	    </repository>
     </repositories>
  
-Notice I use the webservice repository type for both, I could however, use any of the supported repositories as my **destination** as this is just a simple storage. 
+Notice the Webservice repository type is used for both. However, you can use any supported repository as your **destination**.
 
 ###Code
 
 ####Usings
-These are the required usings to work with the sample, only the Courier Core dll should be needed
+The following namespaces are required to work with the sample. Only Courier Core should be needed.
 
 	using Umbraco.Courier.Core;
     using Umbraco.Courier.Core.Storage;
@@ -70,14 +70,14 @@ Use `RepositoryStorage` to retrieve repositories from the courier.config
     Repository source = rs.GetByAlias("devsite");
 
 ####Creating a new RevisionPackaging
-To create a new Packaging operation, you need to specify a name of the data you are working with, this defines where the files are stored, then connect it with the 2 repositories.
+To create a new Packaging operation you need to (1) specify a name of the data you are working with (this defines where the files are stored) and (2) connect it with the two repositories.
 
 	var engine = new RevisionPackaging(Revision);
     engine.Source = source;
     engine.Destination = destination;        
 
 ####Instant Comparison
-If you want to allow Courier to perform comparison checking against a destination, you can enable this. This means that courier will do a hashed comparison of all items to determine if they are needed in the revision, this can save time, but it should only be used if you know the destination wont change before the extraction happens.
+If you want to allow Courier to perform comparison checking against a destination, you can enable this. This means that Courier will do a hashed comparison of all items to determine if they are needed in the revision. This can save time, but it should only be used if you know the destination won't change before the extraction happens.
 
 	engine.EnableInstantCompare(destination);
 
