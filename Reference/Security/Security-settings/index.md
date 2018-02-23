@@ -11,20 +11,20 @@ The settings for Umbraco passwords are handled by default through the ASP.NET Me
         <add name="UsersMembershipProvider" type="Umbraco.Web.Security.Providers.UsersMembershipProvider, Umbraco"  enablePasswordRetrieval="false" enablePasswordReset="false" requiresQuestionAndAnswer="false" allowManuallyChangingPassword="false" maxInvalidPasswordAttempts="100"/>
       </providers>
     </membership>
-
+    
 For both of these Membership Providers you can specify the following settings (if the attribute is not specified in the web.config the default value is used):
 
-- minRequiredNonalphanumericCharacters (default 0): The number of minimal non-alphanumeric characters that are required for a password
-- minRequiredPasswordLength (default 10): The minimal length of a password
-- useLegacyEncoding (default 'false'): Projects that have been upgraded from a pre Umbraco v7.6 version will have this setting set to 'true' as an older password encoding mechanism was used. This setting should not be used for new projects.
-- passwordFormat (default 'Hashed', possible options 'Clear', 'Encrypted', 'Hashed'): You can specify the way a password should be stored in the database. The options ‘clear’ and ‘encrypted’ should not be used.
-- enablePasswordReset (default 'false'): This setting is not used
-- enablePasswordRetrieval (default 'false'): This setting is not used
-- requiresQuestionAndAnswer (default 'false'): This setting is not used
-- allowManuallyChangingPassword (default 'false'): This setting is not used
-- maxInvalidPasswordAttempts (default 5): The number of attempts before a user or member is locked out
-- passwordAttemptWindow (default: 10 (minutes)): This setting is not currently used
-- passwordStrengthRegularExpression: You could specify a regular expression for a password
+- `minRequiredNonalphanumericCharacters` (default 0): The number of minimal non-alphanumeric characters that are required for a password
+- `minRequiredPasswordLength` (default 10): The minimal length of a password
+- `useLegacyEncoding` (default 'false'): Projects that have been upgraded from a pre Umbraco v7.6 version will have this setting set to 'true' as an older password encoding mechanism was used. This setting should not be used for new projects.
+- `passwordFormat` (default 'Hashed', possible options 'Clear', 'Encrypted', 'Hashed'): You can specify the way a password should be stored in the database. The options ‘clear’ and ‘encrypted’ should not be used.
+- `enablePasswordReset` (default 'false'): This setting is not used
+- `enablePasswordRetrieval` (default 'false'): This setting is not used
+- `requiresQuestionAndAnswer` (default 'false'): This setting is not used
+- `allowManuallyChangingPassword` (default 'false'): This setting is not used
+- `maxInvalidPasswordAttempts` (default 5): The number of attempts before a user or member is locked out
+- `passwordAttemptWindow` (default: 10 (minutes)): This setting is not currently used
+- `passwordStrengthRegularExpression` You could specify a regular expression for a password
 
 ## Login screen
 
