@@ -45,4 +45,4 @@ Check out the /config/embeddedmedia.config file for more examples.
 
 ### Custom Embedded Media Providers
 
-[More information about creating your own Custom Embedded Media Providers can be found here](../../Extending/Embedded-Media-Provider.md)
+[More information about creating your own Custom Embedded Media Providers can be found here](../../../Extending/Embedded-Media-Provider.md)
