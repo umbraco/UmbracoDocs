@@ -100,4 +100,23 @@ The above will cache the output of your partial view for one hour (3600 seconds)
 
 So you can specify to cache by member and/or by page and also specify additional view data to your partial view. **However**, if your view data is dynamic (meaning it could change per page request) the cached output will still be returned. This same principle applies if the model you are passing in is dynamic. Please be aware of this: if you have a different model or viewData for any page request, the result will be the cached result of the first execution. If this is not desired you can generate your own cache key to differentiate cache instances using the contextualKeyBuilder parameter
 
+To create multiple versions based on one or more viewData parameters you can do something like this:
+
+	@Html.CachedPartial("MediaGallery", Model, 3600, true, false, new ViewDataDictionary { { "year", Request.QueryString["year"] } }, (model, viewData) => viewData["year"].ToString() + viewData["Parameter2"].ToString() )
+
+Or using a custom helper function:
+
+	public static Func<object, ViewDataDictionary, string> CacheBy(this HtmlHelper htmlHelper, params string[] keys)
+	{
+		return (model, viewData) => String.Join("", keys.Select(s => viewData[s].ToString()));
+	}
+	
+	@Html.CachedPartial("MediaGallery", Model, 3600, true, false, new ViewDataDictionary { { "year", Request.QueryString["year"] } }, Html.CacheBy("yer", "Parameter2") )
+	
+Or even bassed off the Model, though is Model is just the current page then cacheByPage should be used instead:
+
+	@Html.CachedPartial("MediaGallery", Model, 3600, true, false, new ViewDataDictionary { }, (model, viewData) => model.myField )
+
+Regardless of the complexity here the contextualKeyBuilder function needs to return a single string value.
+
 Caching is only enabled when your application has debug="false". When debug="true" caching is disabled. Also, the cache of all CachedPartials is emptied on Umbraco publish events.
