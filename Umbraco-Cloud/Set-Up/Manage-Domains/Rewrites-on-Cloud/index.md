@@ -1,2 +1,8 @@
 # Rewrite rules on Umbraco Cloud
 
+To make rewrite rules on Umbraco Cloud as seamless as possible, we've installed the [IIS Rewrite Module](https://our.umbraco.org/Documentation/Reference/Routing/IISRewriteRules/) on all our Umbraco Cloud servers.
+
+## Best practices
+
+- umbraco backoffice access
+- Issues with deployments caused by rewrite rules
