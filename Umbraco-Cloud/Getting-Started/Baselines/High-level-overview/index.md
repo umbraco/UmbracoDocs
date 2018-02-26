@@ -56,8 +56,6 @@ The project should now be up and running, but both Staging and Live will be empt
 
 ### Upgrading Child projects
 
-**Note:** Since the following steps were outlined we've made quite a few improvements to the Baseline workflow. For the most part the steps are still relevant and we are working on getting them updated with the latest details.
-
 * For the Development repository we fetch and merge from the upstream branch, which was configured upon creation.
 
 * If the merge results in a merge conflict we reset the repository, so its not in a “merging state”.
