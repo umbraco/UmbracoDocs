@@ -7,6 +7,15 @@ The basic idea is that you have a project that contains all your standard Umbrac
 
 ![Basleine workflow](images/baseline-workflow.gif)
 
+In this article you'll find a guide on how to create Baseline Child projects.
+
+For some more in-depth information have a look at these articles:
+
+* [High-level overview](High-level-overview/)
+* [Upgrades Child projects](Upgrading-Child-Projects/)
+* [Configuration files](Configuration-files/)
+* [Baseline merge conflicts](Baseline-Merge-Conflicts/)
+
 ## Creating a Child project
 
 Using the “Create Project” option from the Umbraco Cloud Portal, choose either the Starter or the Professional plan for your new project. 
@@ -23,10 +32,10 @@ When your environments are ready your will see a *green* light next to the envir
 
 ### Restore content from the Baseline project
 
-When you've created the Child project you can also choose to restore content from your Baseline project.
+When you've created the Child project you can choose to restore content from your Baseline project:
 
-* *Right-click* the top of the Content tree in the Umbraco backoffice
-* Choose **Restore**
+* 'Right-click* the top of the Content tree in the Umbraco backoffice
+* Choose *Restore*
 * The *Baseline project* should already be selected as the environment to restore from
 * Click **Restore from Baseline**
 * Once the restore is complete, *reload* the content tree to see the content!
