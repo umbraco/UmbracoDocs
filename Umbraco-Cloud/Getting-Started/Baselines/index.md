@@ -44,26 +44,6 @@ When you've created the Child project you can choose to restore content from you
 
 
 
-
-
-### Technical steps
-
-**Note:** Since the following steps were outlined we've made quite a few improvements to the Baseline workflow. For the most part the steps are still relevant and we are working on getting them updated with the latest details.
-
-* For the Development repository we fetch and merge from the upstream branch, which was configured upon creation.
-
-* If the merge results in a merge conflict we reset the repository, so its not in a “merging state”.
-
-* If the merge was successful we continue to deploy the updated repository. Using Kudu’s Rest endpoints we trigger a deployment of the current state of the git repository (the HEAD).
-
-* When that is done we create a “deploy” marker file in the wwwroot, which tells Umbraco Deploy to run when the application starts.
-
-* Finally we make a request to the website, which just had its changes deployed.
-
-Between the steps listed above, when handling a queued message, we post updates back to the Portal. Some of these updates will also be posted to the stream of the project that is being updated.
-
-It is worth noting that at the time of this writing (August 2015) - when a merge conflict occurs while trying to do “git fetch + merge” the merge will be abandoned by doing a “git reset --hard”. This means that the repository will have an upstream branch that is not merged into master, and it will not be possible to merge future updates until a merge has been done manually. If its done through the Kudu DebugConsole it should be possible to choose whether to select Ours or Theirs when merging and thus resolving the conflict.
-
 ## Merge Conflicts
 As with any git repository-based development it is not uncommon to have merge conflicts as the various repositories begin to differ. For more on the merge strategy we use and how to approach resolving these conflicts read the [Resolving Baseline Merge Conflicts section](Baseline-Merge-Conflicts/).
 
