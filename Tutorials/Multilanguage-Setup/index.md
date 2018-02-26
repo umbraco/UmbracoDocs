@@ -52,25 +52,25 @@ There is of course a lot more you can do to customize this, but here are the fun
 ##Multilanguage backoffice
 To be able to translate the labels of tabs, name and description on your document types you can use the dictionary in Umbraco. You can also translate the name of your documents.
 
-It's quite simple to translate these labels. Consider the following text on a document type
+It's quite simple to translate these labels. Consider the following text on a document type:
 
 **Tab**: Content<br/>
 **Name**: Header<br/>
-**Description**: This is the header of page.
+**Description**: This is the header of the page.
 
 The name of document type is "Document".
 
 If you create dictionary items for these fields with translations to other languages you can actually reference these, and then have these labels translated so the text appears in the language of the editor logged into Umbraco.
-So simply just reference the name of the dictionary items like shown below
+You use a special syntax to reference the name of the dictionary items as shown below:
 
 **Tab**: #Content<br/>
 **Name**: #Header<br/>
 **Description**: #HeaderDescription
 
-The name of the document type can be referenced with #Document
+Likewise, the name of the document type can be referenced with #Document.
 
-That's pretty easy, huh? :)
+So it's the "hashtag" (#) symbol + the alias of dictionary item which will make Umbraco look in the Dictionary for the actual text content.
 
-###Important!
-At the time of this writing the default language of Umbraco is set to en-us and the default language of the administrator account is set to en-uk. This can create some confusion if you try to do the above since it will just display as [#Header] on the name label for instance. Therefore you should simply change the language of the administrator account to en-us.
+### Important!
+At the time of this writing the default language of Umbraco is set to "en-us" and the default language of the administrator account is set to "en-uk". This can create some confusion if you try to do the above since it will just display as [#Header] on the name label for instance. Therefore you should change the language of the administrator account to "en-us".
 This is currently neccesary for all version including and below Umbraco 6.1.1.

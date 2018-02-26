@@ -4,7 +4,7 @@
 
 ### Can I try before I pay?
 
-Yes, your first project on Umbraco Cloud comes with a free 14 day trial period.
+Yes, you can [take a free trial of Umbraco Cloud](https://umbraco.com/campaigns/try-umbraco-today/) and test it for 14 days with no obligation to buy.
 
 ### Is it a special version of Umbraco that’s used?
 
@@ -12,17 +12,17 @@ No. It's the same as the latest version of Umbraco that you can download.
 
 ### Can I run my high traffic site on Umbraco Cloud?
 
-Currently we have benchmarked a "well built" site with approximately 50,000 unique visitors per day (~1.5mm per month) that performs very well.
+Currently we have benchmarked a "well built" site with approximately 50,000 unique visitors per day (~1.5mm per month) that performs very well. For business critical, high traffic sites, we recommend that you look into Umbraco Cloud Professional and Umbraco Cloud Enterprise possibly in combination with a dedicated server.
 
 ### Can my site auto-scale or use dedicated worker resources?
 
-Not currently, but something we’re investigating as a future feature.
+Your site can't currently auto-scale, but it is something we’re investigating as a future feature. We do offer dedicated worker resources. [Reach out to us if you want to know more](https://umbraco.com/contact-us/).
 
 ### Can I setup a load balanced Umbraco Cloud site?
 
 Not currently.
 
-### Can I move my site away from Umbraco Cloud?
+### Can I move my site from Umbraco Cloud?
 
 Of course. Umbraco Cloud uses the very same Umbraco version that you can download and use on your own. So if you decide that Umbraco Cloud isn’t right for you or your sites then you can clone your site, restore your data locally, and delete your Umbraco Cloud project. We’ll be sad to see you go, but we understand there is a huge variety in requirements so we support and encourage you to choose the best solution for your specific site needs.
 

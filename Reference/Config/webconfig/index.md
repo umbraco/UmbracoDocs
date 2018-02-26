@@ -115,4 +115,4 @@ The options are:
 
 The default value is: `7`
 
-When this value is set above 0, the backoffice will check for a new version of Umbraco every 'x' number of days where 'x' is the value defined for this setting. By default Umbraco ships with a value of '7'.
+When this value is set above 0, the backoffice will check for a new version of Umbraco every 'x' number of days where 'x' is the value defined for this setting. Set this value to `0` to never check for a new version.

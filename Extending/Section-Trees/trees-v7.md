@@ -95,5 +95,9 @@ The `MenuRendering` is raised whenever a menu is generated for a tree node
         }
     }
 
+## Tree Actions and User Permissions
+
+[See a list of Tree Actions and User Permission Codes](tree-actions.md)
+
 
  

@@ -29,11 +29,11 @@ Adding the CSS and Javascript for your site into Umbraco.
 How to wire the Document Type Properties (Umbraco Data Fields) into the templates to output the editor's data in the right place.
 
 
-##[Creating Master Template Part 1](Creating-Master-Template-Part-1.md)
+##[Creating a Master Template Part 1](Creating-Master-Template-Part-1.md)
 How to create a Master Template and use this to create more pages whilst minimising duplicate HTML code from your flat source files.
 
 
-##[Creating Master Template Part 2](Creating-Master-Template-Part-2.md)
+##[Creating a Master Template Part 2](Creating-Master-Template-Part-2.md)
 Part 2 - using the Master template to create new page types. 
 
 
