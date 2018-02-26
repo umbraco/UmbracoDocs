@@ -19,7 +19,19 @@ When your environments are ready your will see a *green* light next to the envir
 
 ![Creating a Baseline child project](images/create-baseline-child-project.gif)
 
-Depending on the size of the project you've chosen as a Baseline project, it might take several minutes before the Child project is ready. 
+**Note:** Depending on the size of the project you've chosen as a Baseline project, it might take several minutes before the Child project is ready. 
+
+### Restore content from the Baseline project
+
+When you've created the Child project you can also choose to restore content from your Baseline project.
+
+* 'Right-click* the top of the Content tree in the Umbraco backoffice
+* Choose *Restore*
+* The *Baseline project* should already be selected as the environment to restore from
+* Click **Restore from Baseline**
+* Once the restore is complete, *reload* the content tree to see the content!
+
+![Restore content from Baseline project](images/RestoreFromBaseline.gif)
 
 ## High-level Overview
 
