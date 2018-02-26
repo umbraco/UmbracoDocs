@@ -1,4 +1,15 @@
-# Managing domains and certificates
+# Managing domains
+
+When you create an Umbraco Cloud project we create the project URLs based on the name you give your project. 
+
+Let's say you have a project named `Snoopy`. These will be the default domains:
+
+* Umbraco Cloud Portal: *www.s1.umbraco.io/project/snoopy*
+* Live site: *snoopy.s1.umbraco.io*
+* Development environment: *dev-snoopy.s1.umbraco.io*
+* Staging environment: *stage-snoopy.s1.umbraco.io*
+
+To access the backoffice, simply add `/umbraco` to the end of the Live, Development or Staging domain.
 
 Under *Settings* in the Umbraco Cloud Portal, you'll find **Manage domains**. This is where you go when you want to bind domains to your Cloud environments and when you want to add security certificates to your environments.
 
@@ -30,11 +41,6 @@ You will also need to add the hostnames to your root content node.
 ![Culture and Hostnames](images/culture-and-hostnames.png)
 
 ### Hiding the Default umbraco.io Url
-
-We create your project’s URL based on the name of the project project, and then we add _s1.umbraco.io_. 
-If you named your project **Snoopy**, your project URL will be *snoopy.s1.umbraco.io* and your project’s Umbraco backoffice URL will be *snoopy.s1.umbraco.io/umbraco*. 
-For the Development environment we prefix with *dev-* so the URLs will be *dev-snoopy.s1.umbraco.io* and *dev-snoopy.s1.umbraco.io/umbraco*. 
-You'll find all environments for a project listed on the [Project page](../../Getting-started/The-Umbraco-Cloud-Portal/#project-management).
 
 Once you've assigned a hostname to your Live environment you may want to "hide" the projects default URL (e.g. mysite.s1.umbraco.io) for various reasons. Perhaps for SEO or just making it clear to your users that the site can be accessed using just one hostname.
 
