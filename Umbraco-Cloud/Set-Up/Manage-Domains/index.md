@@ -11,16 +11,14 @@ Let's say you have a project named `Snoopy`. These will be the default domains:
 
 To access the backoffice, simply add `/umbraco` to the end of the Live, Development or Staging domain.
 
-Under *Settings* in the Umbraco Cloud Portal, you'll find **Manage domains**. This is where you go when you want to bind domains to your Cloud environments and when you want to add security certificates to your environments.
-
-For more details on managing domains and certificates on Umbraco Cloud, have a look at these articles:
+Related articles:
 
 * [Security Certificates](Security-Certificates)
 * [Rewrite rules on Umbraco Cloud](Rewrites-on-Cloud)
 
 ## Domains
 
-When you've finished building your website with Umbraco Cloud you most likely want to bind a hostname to your project. This can be done from **Manage domains**.
+Under *Settings* in the Umbraco Cloud Portal, you'll find **Manage domains**. This is where you go when you want to bind domains to your Cloud environments and when you want to add security certificates to your environments.
 
 ![Manage domains](images/manage-domains.png)
 
