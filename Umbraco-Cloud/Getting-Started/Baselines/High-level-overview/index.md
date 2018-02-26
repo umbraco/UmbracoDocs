@@ -4,9 +4,13 @@ The creation process involves a lot of different parts, which are outlined below
 
 When the Child project is created the project's identity will be added to an index of Child projects for the Baseline project. This will ensure that the Baseline project is aware of its *children* and can use that list later on, to push updates to all the children. Whoa!
 
-## Technical steps for Child project creation
+## Technical Steps
+
+In the following sections we've outlined the technical steps happening when a Child project is created and when a Child project is upgraded.
 
 **Note:** Since the following steps were outlined we've made quite a few improvements to the Baseline workflow. For the most part the steps are still relevant and we are working on getting them updated with the latest details.
+
+### Creating a Child project
 
 The process of creating a Child Project is rather involved. While you don't have to worry about this (that's what Umbraco Cloud is for), it can be helpful to understand the parts that make up the connection between a Baseline Project and its Child Projects:
 
@@ -50,7 +54,7 @@ Between most of these steps we send updates to the Project page in the Portal, s
 
 The project should now be up and running, but both Staging and Live will be empty so the owner will have to deploy from Development to Staging and then from Staging to Live. This will push (and deploy of course) the content of the git repository to the other environments and everything will be up to date, and the Child project is ready for business.
 
-## Technical steps for upgrading Child projects
+### Upgrading Child projects
 
 **Note:** Since the following steps were outlined we've made quite a few improvements to the Baseline workflow. For the most part the steps are still relevant and we are working on getting them updated with the latest details.
 
