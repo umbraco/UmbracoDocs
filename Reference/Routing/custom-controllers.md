@@ -38,10 +38,7 @@ To further extend this, we've also allowed routing to different Actions based on
 ##How the mapping works
 
 * Document Type name = controller name
-*
-Template name = action name, but if no action matches or is not specified then the 'Index' action will be executed.
-
-In the near future we will allow setting a custom default controller to execute for all requests instead of the standard UmbracoController. Currently you'd have to create a controller for every document type to have a custom controller execute for all requests.
+* Template name = action name (if no action matches or is not specified - then the 'Index' action will be executed).
 
 ##Returning a view with a custom model
 
