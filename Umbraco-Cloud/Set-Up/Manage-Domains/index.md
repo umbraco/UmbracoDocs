@@ -2,6 +2,11 @@
 
 Under *Settings* in the Umbraco Cloud Portal, you'll find **Manage domains**. This is where you go when you want to bind domains to your Cloud environments and when you want to add security certificates to your environments.
 
+For more details on managing domains and certificates on Umbraco Cloud, have a look at these articles:
+
+* [Security Certificates](Security-Certificates)
+* [Rewrite rules on Umbraco Cloud](Rewrites-on-Cloud)
+
 ## Domains
 
 When you've finished building your website with Umbraco Cloud you most likely want to bind a hostname to your project. This can be done from **Manage domains**.
