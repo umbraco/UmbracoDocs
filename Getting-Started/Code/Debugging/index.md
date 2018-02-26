@@ -67,7 +67,7 @@ and now in the profiler you can see
 
 #### Umbraco Productivity Tool- Chrome Extension
 
-If your using the Google Chrome browser you can install this [Umbraco Productivity Tool Chrome Extension](https://chrome.google.com/webstore/detail/umbraco-productivity/kepkgaeokeknlghbiiipbhgclikjgkdp?hl=en)
+If you are using the Google Chrome browser you can install this [Umbraco Productivity Tool Chrome Extension](https://chrome.google.com/webstore/detail/umbraco-productivity/kepkgaeokeknlghbiiipbhgclikjgkdp?hl=en)
 
 To enable you to easily access and switch between the Miniprofiler / Trace debugging modes.
 
