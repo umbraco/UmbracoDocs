@@ -31,7 +31,7 @@ Click on 'View Details' for a particualar request in the list to see the specifi
 
 ### MiniProfiler
 
-Umbraco includes the Mini Profiler project in its core (see http://miniprofiler.com/ for more details). 
+Umbraco includes the Mini Profiler project in its core (see [http://miniprofiler.com](http://miniprofiler.com) for more details). 
 The MiniProfiler profiles your code method calls, giving you a greater insight into code duration, and query time for underlying SQL queries. It's great for tracking down performance issues in your site's implementation.
 
 #### Displaying the MiniProfiler
@@ -64,6 +64,14 @@ If within your implementation there are certain lines of code that you think may
 and now in the profiler you can see 
 
 ![Show Trivial](images/writing-to-miniprofiler.png)
+
+#### Umbraco Productivity Tool- Chrome Extension
+
+If your using the Google Chrome browser you can install this [Umbraco Productivity Tool Chrome Extension](https://chrome.google.com/webstore/detail/umbraco-productivity/kepkgaeokeknlghbiiipbhgclikjgkdp?hl=en)
+
+To enable you to easily access and switch between the Miniprofiler / Trace debugging modes.
+
+![Umbraco Productivity Tool](images/umbraco-productivity-chrome-extension.png)
 
 ### Logging
 
