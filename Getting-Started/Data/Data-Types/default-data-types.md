@@ -32,6 +32,14 @@ Used mainly with container Media Types, the Folder Browser displays a list of th
 ####Label####
 Is a non-editable control, can only be used to display a present text. It can also be used in the
 media section to load in values related to the node, such as width, height and file size.
++####Markdown Editor####
+ +Is a simple editor where we can put in markdown text and code. The data can be outputted on view with using html markdown helper ( see nuget ) or the MarkdownDeep ( see nuget package ).
+ +In this last case you can elaborate markdown code in the view with:
+ +
+ +var val = content.GetPropertyValue<string>("markdown");
+ +var md = new MarkdownDeep.Markdown();
+ +md.Transform(val)
+ +
 ####Media Picker####
 The content picker opens a simple modal to pick a specific media item from the media tree.
 The value saved is the selected media node ID. This ID can be used in xslt with
