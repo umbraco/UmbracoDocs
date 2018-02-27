@@ -4,11 +4,11 @@ The creation process involves a lot of different parts, which are outlined below
 
 When the Child project is created the project's identity will be added to an index of Child projects for the Baseline project. This will ensure that the Baseline project is aware of its *children* and can use that list later on, to push updates to all the children. Whoa!
 
+**Note:** Since the following steps were outlined we've made quite a few improvements to the Baseline workflow. For the most part the steps are still relevant and we are working on getting them updated with the latest details.
+
 ## Technical Steps
 
 In the following sections we've outlined the technical steps happening when a Child project is created and when a Child project is upgraded.
-
-**Note:** Since the following steps were outlined we've made quite a few improvements to the Baseline workflow. For the most part the steps are still relevant and we are working on getting them updated with the latest details.
 
 ### Creating a Child project
 
