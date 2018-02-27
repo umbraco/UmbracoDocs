@@ -33,6 +33,7 @@ Displays a list of preset values where multiple can be selected. The value saved
 Displays a list of preset values where multiple can be selected. The value saved is a CSV of prevalue ids.
 
 ## Email address
+A single line textbox only allowing valid email addresses.
 
 ## File upload
 Adds an upload field, which allows documents or images to be uploaded to Umbraco
@@ -53,8 +54,11 @@ Label is a non-editable control, can only be used to display a pre-set text.
 The legacy media picker opens a simple dialogue to pick a specific media item from the media tree. The value saved is the selected media ID.
 
 ## List View
+This control gives the same functionality as the standard listview, but allows you to add the listview as a control on a tab while controlling the other tabs and properties.
 
 ## Macro container
+The Macro container was in the early days the only built-in way to allow repeated content out of the box.  It allows a content editor to add multiple blocks.  Each block is one of the selected Macro's, wrapping an xslt, usercontrols or Macro Partial.  
+Today there are other options to have repeated content like [Nested Content](Nested-Content.md), [Grid Layout](Grid-Layout.md) and many other controls in different packages.
 
 ## Markdown editor
 [Markdown](https://daringfireball.net/projects/markdown/) is a lightweight markup language with plain text formatting syntax. It is designed so that it can be converted to HTML.  The built-in editor allow the user to use the markdown formatting options.  
@@ -84,6 +88,7 @@ The Multiple Textbox property editor enables a content editor to make a list of 
 New to v7.7, the nested content property editor enables you to use Document Types as a schema for list items.
 
 ## Numeric
+A configurable number control allowing only numbers.
 
 ## [Radio button list](RadioButton-List.md)
 Pretty much like the name indicates this property editor enables editors to choose from list of radio buttons.
@@ -95,10 +100,13 @@ Related Links allows an editor to easily add an array of links. These can either
 Made obsolete with the release of Umbraco v7.6 the related links editor allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
 
 ## Rich Text Editor
+A [tinymce](https://www.tinymce.com/) based rich text editor which is highly configurable.  Probably one of the most used controls in Umbraco projects.
 
 ## Slider
+A slider with a number in a certain range.
 
 ## Tags
+A tag control which can be controlled by a certain group of tags.
 
 ## Textarea
 A simple textarea control to input text.
@@ -110,3 +118,4 @@ A normal html input text field.
 A simple checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
 
 ## User picker
+The easiest way to pick a person from user backend users.  See Members for front-end users.
