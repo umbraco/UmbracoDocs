@@ -5,7 +5,7 @@ _Follow these steps to do a full install of Umbraco with NuGet._
 ##Abbreviated version
 - You will get the best results if you install Umbraco in a **blank** web application Visual Studio project using .net versions higher than 4.5.0 and lower than 5.0.0.
  - In VS12: use ASP.NET Empty Web Application
- - In VS13/15: use ASP.NET Web Application with an Empty template
+ - In VS13/15/17: use ASP.NET Web Application with an Empty template
 - Umbraco can in most cases **not** be installed in an existing MVC/Webforms project
 - When asked if you want to overwrite config files, choose **"Yes"** to overwrite them
 - ReSharper 8 (last released in 2014) might have problems, try suspending it or upgrading to ReSharper version 8.2.3
@@ -49,7 +49,7 @@ It's important to pick only one of those as other templates cause errors beyond 
 
 ![](images/NuGet/new-project-vs2012.png)
 
-###Visual Studio 2013/2015
+###Visual Studio 2013/2015/2017
 Go to **File > New Project** and pick an ASP.NET  Web Application.    
 
 ![](images/NuGet/new-project-vs2013-1.png)

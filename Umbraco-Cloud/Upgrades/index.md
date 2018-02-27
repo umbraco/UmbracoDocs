@@ -15,10 +15,10 @@ _This document describes when & what product updates are rolled out on Umbraco C
 * We will release product updates only on __Tuesday__
 * The decision to roll out an upgrade will be made no later than the __Thursday__ prior and that status page will be updated accordingly
 * A product upgrade will be rolled out if:
-* A fix needs to be shipped due to a critical issue in any product
-* A patch version of Umbraco Core is ready for release
-* A new version of Deploy / Courier is ready for release
-* A new version of Forms is ready for release
+  * A fix needs to be shipped due to a critical issue in any product
+  * A patch version of Umbraco Core is ready for release
+  * A new version of Deploy / Courier is ready for release
+  * A new version of Forms is ready for release
 * Umbraco Cloud reserves the right to rollout an emergency product fix to fix a critical issue at any time
 
 ## The auto upgrade roll out process

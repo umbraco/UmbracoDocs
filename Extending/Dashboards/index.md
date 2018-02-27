@@ -78,11 +78,36 @@ Example on permissions:
 
 In order to customize the dashboard in Umbraco, one needs to do a couple of things.
 
+### Using AngularJs Views (v7+)
+
+**Create a Angular View(s)**
+The Dashboard will load one or more AngualrJs views and display them as a series of tabs. It is recommended that you store your views in a subfolder within the App_Plugins folder. 
+
+**Update the Dashboard.config**
+Once you have created the AngularJs View that you want to have loaded when a section loads, you must then update the Dashboard.config to tell Umbraco to load your View when a user enters a new section. Again, if you are doing this for yourself all you need to do is edit the Dashboard.config on your site to add the views. However, if you are adding a section to go with a package, you will want to include a Package Action to update the Dashboard.config during install. [Click here for more information on Package Actions.](../../Reference/Packaging/index.md)
+
+**Sample**  
+Below is an example of a valid Dashboard.config:
+
+	<?xml version="1.0" encoding="utf-8" ?> 
+	<dashBoard>
+		<section>
+			<areas>
+				<area>content</area>
+			</areas>
+			<tab caption="Welcome">
+				<control>/app_plugins/mycustomdashboard/customwelcome.html</control>
+			</tab>
+		</section>
+	</dashBoard>
+
+### Using Usercontrols (v6)
+
 **Create one or more UserControls**  
 The Dashboard loads one or more UserControls and displays them on a series of tabs. So in order to customize the control, one needs to first create the UserControls that are to be displayed on the page. If these are for your own personal use you can just place the UserControls in a location on your site that can be accessed by Umbraco. It is recommended that you place them in the /usercontrol directory, preferably in your own subfolder. If you are creating a package for others to use, you should include the usercontrols in the package for install with the rest of the package contents.
 
 **Update the Dashboard.config**  
-Once you have created the UserControls that you want to have loaded when a section loads, you must then update the Dashboard.config to tell Umbraco to load your UserControls when a user enters a new section. Again, if you are doing this for yourself all you need to do is edit the Dashboard.config on your site to add the controls. However, if you are adding a section to go with a package, you will want to include a Package Action to update the Dashboard.config during install. [Click here for more information on Package Actions.](https://our.umbraco.org/Documentation/Reference/Packaging/)
+Once you have created the UserControls that you want to have loaded when a section loads, you must then update the Dashboard.config to tell Umbraco to load your UserControls when a user enters a new section. Again, if you are doing this for yourself all you need to do is edit the Dashboard.config on your site to add the controls. However, if you are adding a section to go with a package, you will want to include a Package Action to update the Dashboard.config during install. [Click here for more information on Package Actions.](../../Reference/Packaging/index.md)
 
 **Sample**  
 Below is an example of a valid Dashboard.config:

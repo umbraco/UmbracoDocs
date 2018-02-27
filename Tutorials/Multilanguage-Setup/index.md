@@ -1,29 +1,76 @@
-#Multilanguage sites#
-_This section features some tips on how to translate labels for you document types like tabs, name and description. For more information on how to create a multilanguage frontend website please read this article [1-1 Multilingual Websites in Umbraco
-](http://24days.in/umbraco/2012/multilingual-1-1/)_
+#Multilanguage sites
 
-##Multilanguage backoffice##
+##Multilingual frontend
+_Note: This will be shown on Umbraco 7.8.1, newer and older versions may differ. Also this assumes you already have a site with content in one language ready to work with._
+
+###First step 
+When setting up a multilingual site is to copy the content you have in the original language. To do this, chose the node you want to copy - in this example everything is copied at once by copying the Home node, left click Home and click copy in the menu.
+
+![Copy content](images/1.png)
+Chose the parent of your new copied node, in this example it is Content (this means the copied Home node will be a sibling to the current home node), if you want all child nodes to be copied aswell check the 'Include descendants' box.
+
+![Copy settings](images/2.png)
+This will give you a full copy of all content pages as seen below:
+
+![Copied content](images/3.png)
+Now you can go to all the copied content nodes and update your text to whatever language you want.
+
+###Second step
+is to create the new language in the settings. To do this, simply go to the settings menu and under languages, click add new and chose your language.
+![Chosing a language](images/4.png)
+
+Now we go to our content nodes and assign a language to them. You do this by right clicking on the home node and picking 'Culture and Hostnames', then choose the language associated with the page. (NOTE: As you can see it is defaulting to 'Inherit', so if you set the top node all child nodes will inherit it)
+![Setting language](images/5.png)
+
+###Third step
+Dependant on how your site is set up, not all content is edited through the content section, some of it may be written in the template, for that dictionary items are useful. Here is an example of some button text that will be added to the dictionary (templates are found under the menu point Settings).
+![Adding button text to dictionary](images/6.png)
+
+Right click on dictionary in the menu and add new, give it a unique alias, then write the text that is relevant for each language.
+![Adding new dictionary item](images/7.png)
+
+Go back to your template and replace the text with @Umbraco.GetDictionaryValue("ReadMore") to show the dictionary item instead.
+![Replacing button text with dictionary item](images/8.png)
+
+###Fourth step
+To add languages to the url of your site, you first need to enable the full url, you do this by going to the Web.config file and changing the umbracoHideTopLevelNodeFromPath value from true to false.
+![Show top level in url](images/9.png)
+
+Next you can go change the name of the homepages to their a language name, if you change the English homepage to 'en' and the Danish homepage to 'dk' the links would look like this:
+![language url en](images/10.png)
+![language url dk](images/11.png)
+
+###Fifth and final step
+To make a language menu to switch between the languages you can go into your menu template file and add something like this:
+![adding language menu](images/12.png)
+Final result:
+![final result en](images/13.png)
+![final result dk](images/14.png)
+There is of course a lot more you can do to customize this, but here are the fundamentals!
+
+
+##Multilanguage backoffice
 To be able to translate the labels of tabs, name and description on your document types you can use the dictionary in Umbraco. You can also translate the name of your documents.
 
-It's quite simple to translate these labels. Consider the following text on a document type
+It's quite simple to translate these labels. Consider the following text on a document type:
 
 **Tab**: Content<br/>
 **Name**: Header<br/>
-**Description**: This is the header of page.
+**Description**: This is the header of the page.
 
 The name of document type is "Document".
 
 If you create dictionary items for these fields with translations to other languages you can actually reference these, and then have these labels translated so the text appears in the language of the editor logged into Umbraco.
-So simply just reference the name of the dictionary items like shown below
+You use a special syntax to reference the name of the dictionary items as shown below:
 
 **Tab**: #Content<br/>
 **Name**: #Header<br/>
 **Description**: #HeaderDescription
 
-The name of the document type can be referenced with #Document
+Likewise, the name of the document type can be referenced with #Document.
 
-That's pretty easy, huh? :)
+So it's the "hashtag" (#) symbol + the alias of dictionary item which will make Umbraco look in the Dictionary for the actual text content.
 
-###Important!###
-At the time of this writing the default language of Umbraco is set to en-us and the default language of the administrator account is set to en-uk. This can create some confusion if you try to do the above since it will just display as [#Header] on the name label for instance. Therefore you should simply change the language of the administrator account to en-us.
+### Important!
+At the time of this writing the default language of Umbraco is set to "en-us" and the default language of the administrator account is set to "en-uk". This can create some confusion if you try to do the above since it will just display as [#Header] on the name label for instance. Therefore you should change the language of the administrator account to "en-us".
 This is currently neccesary for all version including and below Umbraco 6.1.1.

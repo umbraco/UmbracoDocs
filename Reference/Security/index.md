@@ -197,6 +197,32 @@ Finally, to use your `UmbracoStandardOwinStartup` class during startup, add this
 
 **Note:** if the username entered in the login screen does not already exist in Umbraco then `ActiveDirectoryBackOfficeUserPasswordChecker()` does not run.  Umbraco will fall back to the default authentication.
 
+### Sensitive data
+
+Umbraco 7.9 and higher introduces a something called "Sensitive data" for member data. Marking fields as sensitive will hide the data in those fields for backoffice users that have no business viewing personal data of members.
+
+If you've upgraded from a version before 7.9.0, none of the backoffice users will have access to sensitive data by default. In order to start marking fields as sensitive, you can add the users who need access to this data to the "Sensitive data" user group. In the User management sections go to Groups and choose the Sensitive data group.
+
+![Sensitive data user group](images/sensitive-data-user-group.jpg)
+
+From there on, add the users who need access to this data to this group.
+
+![Update member type](images/update-member-type.png)
+
+When a user in the backoffice does not have access to this data they get told so:
+
+![Sensitive data hidden](images/sensitive-data-hidden.png)
+
+Users who don't have access to sensitive data also do not have access to the "Export member" functionality on each member.
+
+![Export member](images/export-member.png)
+
+
+
 ### [Setup Umbraco for a FIPS Compliant Server](Setup-Umbraco-for-a-Fips-Server/index.md)
 
 How to configure Umbraco to run on a FIPS compliant server.
+
+### [Security settings](Security-settings/index.md)
+
+Some security settings that can be used in Umbraco.

@@ -1,4 +1,4 @@
-#Getting Started
+# Getting Started
 *All the basics of using Umbraco v7. From making a local installation to extending the backend.*
 
 <div class="row implementation">
@@ -45,6 +45,10 @@
 			<div class="col-sm-6">
 				<h5><a href="Setup/Upgrading/">Upgrading</a></h5>
 				<small>How to upgrade your copy of Umbraco to a newer version</small>
+			</div>
+			<div class="col-sm-6">
+				<h5><a href="Setup/Config/">Configuration</a></h5>
+				<small>Information about all of the different configuration files that control Umbraco</small>
 			</div>
 		</div>
 	</div>
@@ -219,6 +223,11 @@
 			<div class="col-sm-6">
 				<h5><a href="Code/Subscribing-To-Events/">Subscribing to events</a></h5>
 				<small>Using events to modify content or run custom code</small>
+			</div>
+
+			<div class="col-sm-6">
+				<h5><a href="Code/Debugging/">Debugging</a></h5>
+				<small>Using the tools included with Umbraco to debug issues with your project</small>
 			</div>
 
 		</div>

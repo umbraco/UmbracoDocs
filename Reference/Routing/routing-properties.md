@@ -26,3 +26,7 @@ This property when created as a text string lets you provide a comma separated
 list of alternate full URL paths for the node. For example, if your URL was /some-category/some-page/content-node, 
 by adding an umbracoUrlAlias of "flowers", a user can navigate to the node by simply going to /flowers. 
 The URL alias remains in the browser address bar as a 'mask' over the real URL. You can also specify paths like "flowers/roses/red".
+
+## Filtering
+
+[See Filtering Property Conventions](../Querying/IPublishedContent/Collections.md#filtering-conventions)

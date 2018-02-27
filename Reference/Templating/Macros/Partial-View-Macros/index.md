@@ -40,3 +40,11 @@ You can use @CurrentPage, @Model.Content, @Umbraco, ...
 You can access the macro's parameters using the `MacroParameters` property on the model which is of type `IDictionary<string, object>`
 
     var myParam = Model.MacroParameters["aliasOfTheMacroParameter"];
+
+or via the typed GetParameterValue method in Umbraco.Web.Models namespace
+
+    var myParam = Model.GetParameterValue<string>("aliasOfTheMacroParameter");
+
+and with default value fallback
+
+    var myParam = Model.GetParameterValue<string>("aliasOfTheMacroParameter", "default value if parameter value has not been set");
