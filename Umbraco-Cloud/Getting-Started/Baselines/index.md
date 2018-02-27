@@ -7,14 +7,14 @@ The basic idea is that you have a project that contains all your standard Umbrac
 
 ![Basleine workflow](images/baseline-workflow.gif)
 
-In this article you'll find a guide on how to create Baseline Child projects.
-
 For some more in-depth information have a look at these articles:
 
 * ### [High-level Overview](High-level-overview/)
 * ### [Pushing upgrades to a Child Project](Upgrading-Child-Projects/)
 * ### [Handling configuration files](Configuration-files/)
 * ### [Baseline merge conflicts](Baseline-Merge-Conflicts/)
+
+Below you'll find a guide on how to create and setup Baseline Child projects.
 
 ## Creating a Child project
 
