@@ -84,6 +84,7 @@ When we roll out auto-upgrades to Umbraco Cloud projects the very first thing th
 Another reason why your project wasn't auto-upgraded could be, that it failed the test we perform after applying the auto-upgrade. This test compares the state of an environment from before the upgrade with the state of the same environment after the ugprade - if they do not match, we take the appropriate measures to rollback the environment to it's previous state and abort the upgrade of any remaining environments.
 
 Other reasons why you didn't receive the auto-upgrade:
+
 * If you are doing a deployment at the time we tried to run the auto-upgrader on your project
 * If your environments aren't running the same minor version - e.g. if you are in the middle of upgrading to a new minor version, and one environment is running 7.6.x while another environment on the same project is running 7.7.x.
 
