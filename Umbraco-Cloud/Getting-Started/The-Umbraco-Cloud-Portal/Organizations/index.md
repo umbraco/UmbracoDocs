@@ -5,11 +5,12 @@ Currently organizations are created by Umbraco HQ - so **reach out to support** 
 
 ## Invite organization to collaborate
 Once you have an organization you will be able to invite other organizations to collaborate for you.
-By inviting an organization the following will happen
-* You allow a superadmin in that organization to create projects on behalf of your organization
-* You will be able to choose from super admins in the invited organization, when adding members to a project.
-  * This effectively enables the super admin in that organization to access your project, but also allows her to invite other members from that organization.
+When you are in the Organisaztion view you'll have the option to invite either Members or other Organizations. When choosing to add other Organizations, you will need to find and choose the organization from a dropdown, like illustrated below.
 
 ![Invite organization](images/invite-organization.gif)
+
+By inviting an organization, you are allowing a Superadmin from that Organization to create projects on behalf of your Organization.
+
+When you have invited another Organization to collaborate, you will be able to choose from Superadmins in the invited organization, when adding members to a project. This effectively enables the Superadmin in that organization to access your project, but also allows her to invite other members from that organization.
 
 ![Invite organization](images/invite-from-organization.gif)
