@@ -34,6 +34,31 @@ _This example is for creating a .NET Core Console (command line) application_
 
 #### Console app notes
 
-The Headless client APIs are async but since a console app is non-async by nature, the above example uses `.Result` to block the operation until complete. It is possible to have a proper async console app, you just have to create an async method to run your operations. An example can be found in this repository's source code console application.
+The Headless client APIs are async but because a console app is non-async by nature, the above example uses `.Result` to block the operation until complete. It is possible to have a proper async console app, you just have to create an async method to run your operations. [An example can be found here](https://stackoverflow.com/a/17630538/694494).
 
-The above example is in it's simplest form, if you wish to use DI, logging, async, config files, etc... this is all possible, have a look at the example console app in this repository's source code.
+The above example is in it's simplest form, if you wish to use DI, logging, async, config files, etc... here is an example of how to do that:
+
+```cs
+static void Main(string[] args)
+{
+    var builder = new ConfigurationBuilder()
+        .SetBasePath(Directory.GetCurrentDirectory())
+        .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+
+    var configuration = builder.Build();
+
+    //setup a container
+    var services = new ServiceCollection()
+        .AddLogging(config => config.AddConsole().SetMinimumLevel(LogLevel.Debug))
+        //include the umbraco headless services and pass in the config instance
+        .AddUmbracoHeadlessClient(configuration)
+        .BuildServiceProvider();
+
+    var logger = services.GetRequiredService<ILogger<Program>>();
+    var client = services.GetRequiredService<HeadlessService>();
+    var getAllResult = client.Query().GetAll().Result.ToList();
+    logger.LogDebug($"GetAll query returned {getAllResult.Count}");
+
+    (services as IDisposable)?.Dispose();
+}
+```
