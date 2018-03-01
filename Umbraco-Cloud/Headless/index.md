@@ -21,4 +21,4 @@ You can however also choose to work directly with the API if you feel that the c
 
 Description of headless .net client
 
-[More about Headless .NET client](headless-net-client)
+[More about Headless .NET client](Headless-Net-Client)
