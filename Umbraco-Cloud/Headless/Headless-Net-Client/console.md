@@ -56,8 +56,11 @@ static void Main(string[] args)
 
     var logger = services.GetRequiredService<ILogger<Program>>();
     var client = services.GetRequiredService<HeadlessService>();
-    var getAllResult = client.Query().GetAll().Result.ToList();
-    logger.LogDebug($"GetAll query returned {getAllResult.Count}");
+    //get all all content and list their names
+    var allContent = headlessService.Query().GetAll().Result;
+    foreach(var item in allContent) {
+        logger.LogDebug($"{item.Id} - {item.Name}");
+    }
 
     (services as IDisposable)?.Dispose();
 }
