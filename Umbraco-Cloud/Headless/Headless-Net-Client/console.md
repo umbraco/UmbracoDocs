@@ -1,4 +1,4 @@
-### .NET Core Console
+### .NET Core Console Application
 
 _This example is for creating a .NET Core Console (command line) application_
 
