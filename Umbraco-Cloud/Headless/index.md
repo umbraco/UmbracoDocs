@@ -10,16 +10,15 @@ Headless provides you with an easy and comfortable way to manage your data using
 
 While Umbraco normally outputs a rendered web page, Headless outputs pure JSON data for your project to consume directly through the API or via a API client.
 
-TODO: Update this link to the headless signup page:
-[Learn more and sign up for Umbraco Headless](https://www.umbraco.com/headless/)
+[Learn more and sign up for Umbraco Headless](https://www.umbraco.com/headless)
 
 ## Getting Started with Headless
 
-The easiest way to get started with an Umbraco Headless project is to sign up for a new project using the Headless sign up link.
+The easiest way to get started with an Umbraco Headless project is to sign up for a new project using the [Headless sign up link](https://www.umbraco.com/headless).
 
-We set up the entire project for you, so everything is ready for you to start developing your headless website or application.
+We set up the project for you, so everything is ready for you to start developing your headless website or application.
 
-We would highly recommend looking into the available clients and using those to access the Headless API for your new project. You can however also choose to work directly with the API if you feel that the clients are not a good fit for your project.
+We highly recommend looking into the available clients and using those to access the Headless API for your new project. You can also choose to work directly with the Rest API if you feel that the clients are not a good fit for your project.
 
 ## Headless .NET client
 
