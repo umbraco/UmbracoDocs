@@ -5,7 +5,7 @@ Here's a list of some of the default Data Type's that come installed with Umbrac
 #### Approved Color ####
 Adds a list of approved colours which can be selected by clicking. The approved colours need to be added
 as hex values (without the #) in the prevalues field. i.e. cccccc
-#### Checkbox lis t####
+#### Checkbox list ####
 Displays a list of preset values as a list of checkbox controls. The preset values are modified in the developer
 section under "data types" / checkbox list where new items can be added. The value saved is a comma-separated
 string of prevalue IDs, which is easiliest processed with xslt. (umbraco.library:GetPrevalue())
