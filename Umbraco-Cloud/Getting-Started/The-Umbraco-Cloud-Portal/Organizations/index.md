@@ -1,11 +1,11 @@
 # Organizations 
 On Umbraco Cloud it is possible to be part of an organization. And organization is a way for you to associate users to one organization.
 The benefits are currently limited, but we are working on improving the features available for organizations.
-Currently organizations are created by Umbraco HQ - so **reach out to support** to hear more about the feature, and weather they apply for your scenario.
+Currently organizations are created by Umbraco HQ - so **reach out to support** to hear more about the feature, and whether they apply for your scenario.
 
 ## Invite organization to collaborate
-Once you have an organization you will be able to invite other organizations to collaborate for you.
-When you are in the Organisaztion view you'll have the option to invite either Members or other Organizations. When choosing to add other Organizations, you will need to find and choose the organization from a dropdown, like illustrated below.
+Once you have an organization you will be able to invite other organizations to collaborate with you.
+When you are in the Organization view you'll have the option to invite either Members or other Organizations. When choosing to add other Organizations, you will need to find and choose the organization from a dropdown, like illustrated below.
 
 ![Invite organization](images/invite-organization.gif)
 
