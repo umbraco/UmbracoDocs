@@ -41,20 +41,99 @@ Copies an `Content` object by creating a new `Content` object of the same type a
 ###.Count(_[string contentTypeAlias = null]_)
 Count all `Content` objects with given `ContentType`.
 
+	var contentService = Services.ContentService;
+	var myDocumentTypeAlias = "myAwesomeDocumentType";
+
+	var countOfMyAwesomeDocumentTypeItems = contentService.Count(myDocumentTypeAlias);
+	var countOfAllDocuments = contentService.Count();
+
 ###.CountChildren(int parentId, _[string contentTypeAlias = null]_)
 Count all Children for given parent `Content` object with `ContentType`.
+
+	var contentService = Services.ContentService;
+	var myDocumentTypeAlias = "myAwesomeDocumentType";
+	int parentNodeId = 1234;
+
+	//counts all of the documents below the document with ID 1234 with documentType "myAwesomeDocumentType"
+	var countOfMyAwesomeDocumentTypeItems = contentService.CountChildren(parentNodeId, myDocumentTypeAlias);
+	
+	//counts all of the documents below the document with ID 1234, ignores docTypeAlias
+	var countOfAllDocuments = contentService.CountChildren(parentNodeId);
 
 ###.CountDescendants(int parentId, _[string contentTypeAlias = null]_)
 Count all Descendants for given parent `Content` object with `ContentType`.
 
+	var contentService = Services.ContentService;
+	var myDocumentTypeAlias = "myAwesomeDocumentType";
+	int parentNodeId = 1234;
+
+	// counts all of the document descendants of the parentId 1234
+	var countOfMyAwesomeDocumentTypeDescendants = contentService.CountDescendants(parentNodeId);
+
+	// counts all of the document descendants of the parentId 1234 with the documentTypeAlias of "myAwesomeDocumentType"
+	var countOfMyAwesomeDocumentTypeDescendants = contentService.CountDescendants(parentNodeId, myDocumentTypeAlias);
+
 ###.CountPublished(_[string contentTypeAlias = null]_)
 Count all `Content` objects Published with `ContentType`.
+
+	var contentService = Services.ContentService;
+	var myDocumentTypeAlias = "myAwesomeDocumentType";
+
+	// counts all of the published myAwesomeDocuments
+	var countOfPublishedAwesomeDocuments = contentService.CountPublished(myDocumentTypeAlias);
 
 ###.CreateContent(string name, int parentId, string contentTypeAlias, _[int userId = 0]_)
 Creates a `Content` object using the alias of the `ContentType` that this Content is based on.
 
+	var contentService = Services.ContentService;
+
+	//the name for your new content item
+	string myContentName = "Awesome Content Name";
+
+	//the ID of the parent document for this content item
+	int myContentParentId = 1234;
+
+	//the documentTypeAlias for this content item
+	string myDocumentTypeAlias = "myAwesomeDocumentType";
+
+	//the ID of the user for this item to be published by (0 is the default admin ID)
+	int myUserId = 0;
+
+	var myContent = contentService.CreateContent(
+		myContentName,
+		myContentParentId,
+		myDocumentTypeAlias,
+		myUserId);
+
+	// this content object is now available for use with other
+	// methods - such as Save/SaveAndPublish etc
+
 ###.CreateContent(string name, IContent parentId, string contentTypeAlias, _[int userId = 0]_)
 Creates a `Content` object using the alias of the `ContentType` that this Content is based on.
+	
+	var contentService = Services.ContentService;
+
+	//the name for your new content item
+	string myContentName = "Awesome Content Name";
+
+	//Gets the parent object as a Content object
+	IContent myContentParentId = contentService.GetById(1234);
+
+	//the documentTypeAlias for this content item
+	string myDocumentTypeAlias = "myAwesomeDocumentType";
+
+	//the ID of the user for this item to be published by (0 is the default admin ID)
+	int myUserId = 0;
+
+	var myContent = contentService.CreateContent(
+		myContentName,
+		myContentParentId,
+		myDocumentTypeAlias,
+		myUserId);
+
+	// this content object is now available for use with other
+	// methods - such as Save/SaveAndPublish etc
+
 
 ###.CreateContentWithIdentity(string name, IContent parent, string contentTypeAlias, _[int userId = 0]_)
 Creates and saves an `Content` object using the alias `ContentType` that this `Content` should be based on.
@@ -79,18 +158,51 @@ Empties the Recycle Bin by deleting all `Content` that resides in the bin.
 
 ###.GetAncestors(IContent content)
 Gets an `Enumerable` list of `Content` objects for given `Content` object.
+	
+	var contentService = Services.ContentService;
+	int targetContentId=1234;
+	var myContent = contentService.GetById(targetContentId);
+
+	//gets the ancestors of the myContent IContent object
+	var myAncestors = contentService.GetAncestors(myContent);
 
 ###.GetAncestors(int id)
 Gets an `Enumerable` list of `Content` objects for given `Content` object ID.
 
+	var contentService = Services.ContentService;
+	int targetContentId=1234;
+
+	//gets the ancestors of the myContent IContent object
+	var myAncestors = contentService.GetAncestors(targetContentId);
+
 ###.GetById(int id)
 Gets an `Content` object by Id as `Int`.
+
+	var contentService = Services.ContentService;
+	int targetContentId = 1234;
+
+	// gets the targeted Content item by the ID 1234
+	var myContent = GetById(targetContentId);
 
 ###.GetById(Guid key)
 Gets an `Content` object by Key as `Guid`. The Key corresponds to the 'UniqueId' column in the umbracoNode table in the database.
 
+	var contentService = Services.ContentService;
+	Guid targetContentId = new Guid("DEADBEEF-BEEF-BEEF-BEEF-DEADBEEF");
+
+	//gets the targeted Content item by the Guid ID: DEADBEEF-BEEF-BEEF-BEEF-DEADBEEF
+	var myContent = GetById(targetContentId);
+
 ###.GetByIds(IEnumerable<int> ids)
 Gets an `Enumerable` list of `Content` objects for given `Enumerable` list of `Content` object IDs.
+
+	var contentService = Services.ContentService;
+	var Ids = new List<int>{
+		1234,1002,1003,1004
+	};
+
+	//gets the targeted content items at IDs: 1234,1002,1003,1004
+	var myContentCollection = contentService.GetByIds(Ids);
 
 ###.GetContentOfContentType(int id)
 Gets an `Enumerable` list of `Content` objects by the Id of the `ContentType`.
@@ -136,27 +248,67 @@ Gets an `Enumerable` list of `Content` descendant objects, paged.
 
 ###.GetParent(IContent content)
 Get parent `Content` object, by `Content` object.
+	var contentService = Services.ContentService;
+	var targetContentId = 1234;
+	var targetContentItem = contentService.GetById(targetContentId);
+
+	//gets the parent of the document at ID 1234
+	var targetContentParentId = contentService.GetParent(targetContentItem);
 
 ###.GetParent(int id)
 Get parent `Content` object, by `Content` ID.
+	var contentService = Services.ContentService;
+	var targetContentId = 1234;
+
+	//gets the parent of the document at ID 1234
+	var targetContentParentId = contentService.GetParent(targetContentId);
 
 ###.GetPermissionsForEntity(IContent content)
 Gets a collection of `EntityPermission` permission objects for the `Content` item.
 
 ###.GetPublishedVersion(int id)
 Gets the published version of a `Content` item.
+	var contentService = Services.ContentService;
+	var targetContentId = 1234;
+	var currentlySavedVersion = contentService.GetById(targetContentId);
+
+	var currentlyPublishedVersion = contentService.GetPublishedVersion(currentlySavedVersion);
 
 ###.GetRootContent()
 Gets a collection of `Content` objects, which reside at the first level / root
 
+	var contentService = Services.ContentService;
+
+	//gets all items (IEnumerable<Content>) at the top level of this website 
+	var rootContent = contentService.GetRootContent();
+
 ###.HasChildren(int id)
 Checks whether a `Content` item has any children. Returns a `bool`.
+	var contentService = Services.ContentService;
+	var targetContentId = 1234;
+
+	//checks if this item has any child documents
+	bool documentHasChildren = contentService.HasChildren(targetContentId);
+
 
 ###.HasPublishedVersion(int id)
 Checks whether an `Content` item has any published versions. Returns a `bool`.
+	var contentService = Services.ContentService;
+	var targetContentId = 1234;
+
+	//checks if this item has a published version
+	bool documentHasPublishedVersion = contentService.HasPublishedVersion(targetContentId);
+
 
 ###.IsPublishable(IContent content)
 Checks if the passed in `Content` can be published based on the ancestors publish state. Returns a `bool`.
+	var contentService = Services.ContentService;
+	var targetContentId = 1234;
+	var targetContent = contentService.GetById(targetContentId);
+
+	//checks if this content item can be published 
+	bool documentIsPublishable = contentService.IsPublishable(targetContent);
+
 
 ###.Move(IContent content, int parentId, _[int userId = 0]_)
 Moves an `Content` object to a new location.
@@ -199,6 +351,46 @@ Saves and Publishes a single `Content` object.
 
 ###.SaveAndPublishWithStatus(IContent content, _[int userId = 0]_, _[bool raiseEvents = true]_)
 Saves and Publishes a single `Content` object, returning the result as a `Attempt<PublishStatus>`.
+	
+	// below assumes you have a document type of "myAwesomeDocumentType"
+
+	var contentService = Services.ContentService;
+
+	string myContentName = "Awesome Content Name";
+	
+	// set the content item's parent ID here - 
+	// the content will be published below
+	int myContentParentId = 1234;
+
+	// enter your documentTypeAlias here, alternatively if 
+	// you're using ModelsBuilder you can get the modelTypeAlias 
+	// using the second example (commented out)
+	string myDocumentTypeAlias = "myAwesomeDocumentType";
+	// string documentTypeAlias = MyAwesomeDocumentType.ModelTypeAlias;
+
+	int myUserId=0; //sets to the default admin user ID:0
+
+	var myContent = contentService.CreateContent(
+			myContentName,
+			myContentParentId,
+			myDocumentTypeAlias,
+			myUserId
+		);
+
+	string myPropertyAlias = "myDocumentPropertyAlias";
+	string myPropertyContent = "some content for the 'My Document Property Alias' goes in here";
+	myContent.SetValue(myPropertyAlias, myPropertyContent);
+
+	var saveStatus = SaveAndPublishWithStatus(myContent);
+
+	if (saveStatus.Success){
+		// content was saved and published successfully
+		var savedDocumentId = saveStatus.Result.ContentItem.Id;
+	}
+	else{
+		//something went wrong saving and publishing this item
+	}
+
 
 ###.SendToPublication(IContent content, _[int userId = 0]_)
 Sends a `Content` item to Publication, which executes handlers and events for the 'Send to Publication' action.
