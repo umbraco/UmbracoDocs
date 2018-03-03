@@ -1,10 +1,10 @@
-#Installation and upgrading
+# Installation and upgrading
 
-##[Extending Umbraco with the Forms section](Installation.md)
+## [Extending Umbraco with the Forms section](Installation.md)
 Extend Umbraco with the form builder section in a few steps  
 
-##[Configuring a license](trial.md)
+## [Configuring a license](trial.md)
 Getting Forms out of trial mode
 
-##[Keeping Forms up to date](Upgrade.md)
+## [Keeping Forms up to date](Upgrade.md)
 Simple upgrade instructions

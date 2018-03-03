@@ -1,4 +1,4 @@
-#File and folder permissions
+# File and folder permissions
 
 _To ensure a stable and smoothly running Umbraco installation, these permissions need to be set correctly. These permissions should be setup before or during the installation of Umbraco. The user with the permissions set are the user used by the Application Pool used by the IIS website (usually Network Service or the IIS\_IUSRS group). If in doubt, ask your server admin / hosting company. Generally if you are using WebMatrix, permissions don't need to be strictly applied_
 

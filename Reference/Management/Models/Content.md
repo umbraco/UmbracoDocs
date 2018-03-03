@@ -1,4 +1,4 @@
-#Content
+# Content
 
 **Applies to Umbraco 6.x and newer**
 
@@ -18,7 +18,7 @@ All samples in this document will require the following usings:
 	using Umbraco.Core.Models;
 	using Umbraco.Core.Services;
 
-##Constructors
+## Constructors
 
 ### new Content(string name, IContent parent, IContentType contentType)
 Constructor for creating a new Content object where the necessary parameters are the name of the Content, the parent of the Content as an `IContent` object and the ContentType as an `IContentType` object for the Content being created.
@@ -32,85 +32,85 @@ Constructor for creating a new Content object where the necessary parameters are
 ### new Content(string name, int parentId, IContentType contentType, PropertyCollection properties)
 Constructor for creating a new Content object where the necessary parameters are the name of the Content, the id of the parent as `int`, the ContentType as an `IContentType` object and a `PropertyCollection` for the Content being created.
 
-##Properties
+## Properties
 
-###.CreateDate
+### .CreateDate
 Gets or Sets a `DateTime` object, indicating then the given Content was created.
 
 	//Given a `ContentService` object get Content by its Id and return CreateDate
 	var content = contentService.GetById(1234);
 	return content.CreateDate;
 
-###.CreatorId
+### .CreatorId
 Gets or Sets the Id of the `User` who created the Content.
 
 	//Given a `ContentService` object get Content by its Id and return the Id of the Creator
 	var content = contentService.GetById(1234);
 	return content.CreatorId;
 
-###.ContentType
+### .ContentType
 Returns a `ContentType` object representing the DocumentType used by the given `Content`.
 
 	//Given a `ContentService` object get Content by its Id and return ContentType
 	var content = contentService.GetById(1234);
 	return content.ContentType;
 
-###.ContentTypeId
+### .ContentTypeId
 Returns the id as an `int` of the `ContentType` object representing the DocumentType used by the given `Content`.
 
 	//Given a `ContentService` object get Content by its Id and return the Id of the ContentType
 	var content = contentService.GetById(1234);
 	return content.ContentTypeId;
 
-###.ExpireDate
+### .ExpireDate
 If set, returns the `DateTime` the Content is meant to be unpublished and become unavailable on the website.
 
 	//Given a `ContentService` object get Content by its Id and set the expire date to 5 days from now
 	var content = contentService.GetById(1234);
 	content.ExpireDate = DateTime.Now.AddDays(5);
 
-###.Id
+### .Id
 Returns the unique `Content` Id as a `Int`, this ID is based on a Database identity field, and is therefore not safe to reference in code which are moved between different instances, use Key instead. 
 
-###.Key
+### .Key
 Returns the `Guid` assigned to the Content during creation. This value is unique, and should never change, even if the content is moved between instances. 
 
 	//Given a `ContentService` object get Content by its Id and return the Key
 	var content = contentService.GetById(1234);
 	return content.Key;
 
-###.Language
+### .Language
 Gets or Sets the Language of the Content as a `string`. **Please note** that this property is introduced in v.6.0.0, but won't be fully utilized until multi-lingual support is added in a later version.
 
-###.Level
+### .Level
 Gets or Sets the given `Content` level in the site hirachy as an `Int`. Content placed at the root of the site, will return 1, content just underneath will return 2, and so on.
 
 	//Given a `ContentService` object get Content by its Id and return the Level
 	var content = contentService.GetById(1234);
 	return content.Level;
 
-###.Name
+### .Name
 Gets or Sets the name of the content as a `String`.
 
 	//Given a `ContentService` object get Content by its Id and return its Name
 	var content = contentService.GetById(1234);
 	return content.Name;
 
-###.ParentId
+### .ParentId
 Gets or Sets the parent `Content` Id as an `Int`.
 
 	//Given a `ContentService` object get Content by its Id and return the Id of the Parent Content
 	var content = contentService.GetById(1234);
 	return content.ParentId;
 
-###.Path
+### .Path
 Gets or Sets the path of the content as a `String`. This string contains a comma seperated list of the anscestors Ids including the current contents own id at the end of the string.
 
 	//Given a `ContentService` object get Content by its Id and return the Path
 	var content = contentService.GetById(1234);
 	return content.Path;
 
-###.Properties
+### .Properties
 Gets or Sets the `PropertyCollection` object, which is a collection of `Property` objects. Each property corresponds to a `PropertyType`, which is defined on the `ContentType`.
 
 	//Given a `ContentService` object get Content by its Id and loop through all Properties
@@ -121,7 +121,7 @@ Gets or Sets the `PropertyCollection` object, which is a collection of `Property
         Guid version = property.Version;
     } 
 
-###.PropertyGroups
+### .PropertyGroups
 Returns a list of `PropertyGroup` objects as defined on the `ContentType` that the Content is based on. A PropertyGroup corresponds to a Tab in the backoffice.
 
 	//Given a `ContentService` object get Content by its Id and loop through all PropertyGroups
@@ -133,7 +133,7 @@ Returns a list of `PropertyGroup` objects as defined on the `ContentType` that t
         PropertyTypeCollection propertyTypes = propertyGroup.PropertyTypes; //PropertyTypes within this group
     } 
 
-###.PropertyTypes
+### .PropertyTypes
 Returns a list of `PropertyType` objects as defined on the `ContentType` that the Content is based on. A `PropertyType` is what defines a `Property`. The PropertyTypes witin this list is the sum of those within all PropertyGroups as well as those not within a group.
 
 	//Given a `ContentService` object get Content by its Id and loop through all PropertyTypes
@@ -149,56 +149,56 @@ Returns a list of `PropertyType` objects as defined on the `ContentType` that th
 		int sortOrder = propertyType.SortOrder;
     } 
 
-###.Published
+### .Published
 Returns a `Bool` indicating whether the given `Content` is published and available on the website or not. **Notice:** the published flag does not check the current in-memory cache, so this flag is not a guarantee that the Content is/is not available in the cache and the frontend of the website.
 
 	//Given a `ContentService` object get Content by its Id and return Published
 	var content = contentService.GetById(1234);
 	return content.Published;
 
-###.ReleaseDate
+### .ReleaseDate
 If set, returns `DateTime` indicating when the `Content` should be published and made available on the website and cache.
 
 	//Given a `ContentService` object get Content by its Id and set the release date to 4 days from now
 	var content = contentService.GetById(1234);
 	content.ReleaseDate = DateTime.Now.AddDays(4);
 
-###.SortOrder
+### .SortOrder
 Returns the given `Content` index, compared to sibling content.
 
 	//Given a `ContentService` object get Content by its Id and return its SortOrder
 	var content = contentService.GetById(1234);
 	return content.SortOrder;
 
-###.Status
+### .Status
 Returns a `ContentStatus` enum with the status of the Content being either Unpublished, Published, Expired, Trashed or Awaiting Release.
 
 	//Given a `ContentService` object get Content by its Id and return its Status
 	var content = contentService.GetById(1234);
 	return content.Status;
 
-###.Template
+### .Template
 Gets or Sets the `ITemplate` object, which is the template explicitly set on the Content or the default template as defined on the `ContentType`.
 
 	//Given a `ContentService` object get Content by its Id and return its Template
 	var content = contentService.GetById(1234);
 	return content.Template;
 
-###.Trashed
+### .Trashed
 Returns a `Bool` indicating whether the given `Content` is currently in the recycle bin.
 
 	//Given a `ContentService` object get Content by its Id and return Trashed
 	var content = contentService.GetById(1234);
 	return content.Trashed;
 
-###.UpdateDate
+### .UpdateDate
 Gets or Sets a `DateTime` object, indicating when the given Content was last updated.
 
 	//Given a `ContentService` object get Content by its Id and return UpdateDate
 	var content = contentService.GetById(1234);
 	return content.UpdateDate;
 
-###.Version
+### .Version
 Returns the current Version Id as a `Guid`, 
 For each change made to a content item, its values are stored under a new Version. This version is identified by a `Guid`.
 
@@ -206,16 +206,16 @@ For each change made to a content item, its values are stored under a new Versio
 	var content = contentService.GetById(1234);
 	return content.Version;
 
-###.WriterId
+### .WriterId
 Gets or Sets the Id of the `User` who made the latest edit on the Content.
 
 	//Given a `ContentService` object get Content by its Id and return the Id of the Writer
 	var content = contentService.GetById(1234);
 	return content.WriterId;
 
-##Methods
+## Methods
 
-###.ChangeContentType(IContentType contentType)
+### .ChangeContentType(IContentType contentType)
 Changes the `IContentType` for the current Content object and removes PropertyTypes and Properties, which are not part of the new `ContentType`. **Please use with caution** as this remove differences between the new and old ContentType.
 
 	//Given a `ContentTypeService` object get the ContentType that we're changing to,
@@ -226,7 +226,7 @@ Changes the `IContentType` for the current Content object and removes PropertyTy
 	content.ChangeContentType(contentType);
 	contentService.Save(content);
 
-###.GetCreatorProfile()
+### .GetCreatorProfile()
 Gets the `IProfile` object for the Creator of this Content, which contains the Id and Name of the User who created this Content item.
 
 	//Given a `ContentService` object get Content by its Id and get the `IProfile` of the Creator
@@ -235,7 +235,7 @@ Gets the `IProfile` object for the Creator of this Content, which contains the I
 	var id = profile.Id;
 	string name = profile.Name;
 
-###.GetValue(string propertyTypeAlias)
+### .GetValue(string propertyTypeAlias)
 Gets the value of a Property as an `Object`.
 
 	//Given a `ContentService` object get Content by its Id and get a value by alias
@@ -243,14 +243,14 @@ Gets the value of a Property as an `Object`.
 	object value = content.GetValue("bodyText");
 	string text = value as string;
 
-###.GetValue< TPassType >(string propertyTypeAlias)
+### .GetValue< TPassType >(string propertyTypeAlias)
 Gets the value of a Property as the defined type 'TPassType'.
 
 	//Given a `ContentService` object get Content by its Id and get a value by alias while specifying the return type
 	var content = contentService.GetById(1234);
 	string value = content.GetValue<string>("bodyText");
 
-###.GetWriterProfile()
+### .GetWriterProfile()
 Gets the `IProfile` object for the Writer of this Content, which contains the Id and Name of the User who last updated this Content item.
 
 	//Given a `ContentService` object get Content by its Id and get the `IProfile` of the Writer
@@ -259,7 +259,7 @@ Gets the `IProfile` object for the Writer of this Content, which contains the Id
 	var id = profile.Id;
 	string name = profile.Name;
 
-###.HasProperty(string propertyTypeAlias)
+### .HasProperty(string propertyTypeAlias)
 Returns a `Bool` indicating whether the Content object has a property with the supplied alias.
 
 	//Given a `ContentService` object get Content by its Id and check if certain properties exist
@@ -267,14 +267,14 @@ Returns a `Bool` indicating whether the Content object has a property with the s
 	bool tagsExists = content.HasProperty("myTagProperty");
 	bool bodyTextExists = content.HasProperty("bodyText");
 
-###.IsValid()
+### .IsValid()
 Returns a `Bool` indicating whether the content and its properties are valid. If a property is set to Mandatory and blank upon saving the Content is not considered valid. This check is used when Content is published, so it won't be possible to publish invalid Content.
 
 	//Given a `ContentService` object get Content by its Id and check if Content is valid
 	var content = contentService.GetById(1234);
 	bool valid = content.IsValid();
 
-###.SetValue(string propertyTypeAlias, object value)
+### .SetValue(string propertyTypeAlias, object value)
 Sets the value of a property by its alias.
 
 	//Given a `ContentService` object get Content by its Id, set a few values
@@ -284,7 +284,7 @@ Sets the value of a property by its alias.
 	content.SetValue("date", DateTime.Now);
 	contentService.Save(content);
 
-###.ToXml()
+### .ToXml()
 Returns an `XElement` containing the Content data, based off the latest changes. Is used when the published content is sent to the in-memory xml cache.
 
 	//Given a `ContentService` object get Content by its Id and returns the xml

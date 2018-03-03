@@ -1,4 +1,4 @@
-#XPath and XSLT Loops
+# XPath and XSLT Loops
 
 Another useful command in XSLT is the "for-each" command.  This command takes an XPATH statement and iterates the results for each match, executing the nested commands each time.  The "for-each" command looks as follows:
 

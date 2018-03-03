@@ -39,7 +39,7 @@ umbraco.library:GetMedia(ID) to get the media items xml data
 #### Member Picker ####
 Displays a simple dropdown with all available members in. A single member can be selected.
 The value saved is the ID of the member
-####Numeric####
+#### Numeric####
 A simple textbox to input a numeric value.
 #### Radiobox ####
 this Data type enables editors to choose from list of radiobuttons. Options for the Radiobox need to be set in the Developer section by adding prevalues to the Data type

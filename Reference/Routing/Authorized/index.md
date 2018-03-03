@@ -1,4 +1,4 @@
-#Routing requirements for back office authentication
+# Routing requirements for back office authentication
 
 In order for Umbraco to authentication a request for the back office, the routing needs to be specific. Any URL that routes to :
 
@@ -17,13 +17,13 @@ In the case that an Umbraco Api Controller is a 'Plugin Controller', then the ro
 _Note:_ the {area} specified by the [PluginController] attribute replaces the /api/ area for the route.
 
 
-##MVC controllers for the back office
+## MVC controllers for the back office
 
 If you are using MVC in the back office then you would normally inherit from `Umbraco.Web.Mvc.UmbracoAuthorizedController`. This type of controller is not auto-routed like Umbraco Api controllers so will require a custom route declaration to make it work.
 
 For more information on authenticated/authorized controllers & attributes see the [Controllers Documentation](../../../Implementation/Controllers/index.md).
 
-##Defining a route
+## Defining a route
 When you create a controller that inherits from `Umbraco.Web.Mvc.UmbracoAuthorizedController` you need to explicitly define a route.  
 Defining a route is done with the standard ASP.Net MVC routing practices. In Umbraco, you will normally create custom routes in `Umbraco.Core.ApplicationEventHandler.ApplicationStarted` event similar to the following:
 
@@ -44,10 +44,10 @@ Defining a route is done with the standard ASP.Net MVC routing practices. In Umb
 
 _NOTE the route must be prefixed with Umbraco path which is configurable and resolved with `GlobalSettings.UmbracoMvcArea` and then by "backoffice" in order for Umbraco to check user authentication._
 
-###What about Surface Controllers?
+### What about Surface Controllers?
 Surface Controllers should not be used in the back office.  Surface Controllers are not designed to work with the back office, they are not meant to be used there and will not be supported being used there.
 
-##Special back office routes for user authentication
+## Special back office routes for user authentication
 There are some special routes Umbraco checks to determine if the authentication should check a member of a user.
 
 If any route has an extension in the path like `.aspx` or the below are always back office routes:
