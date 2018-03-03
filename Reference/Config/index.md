@@ -8,6 +8,10 @@ _This section will explain the many configuration options in Umbraco and what th
 
 ###[applications.config](applications/index.md)
 
+###[dashboards.config](dashboard/index.md)
+
+Configuration options for controlling which dashboards appear in which sections and who has the permissions to see them.
+
 ###[EmbeddedMedia.config](EmbeddedMedia/index.md)
 
 ###[ExamineIndex.config](ExamineIndex/index.md)
