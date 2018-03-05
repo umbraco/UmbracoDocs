@@ -69,7 +69,6 @@ Below are some simple examples that demonstrate the use of XPath. All examples a
 	<Track rating="5" length="P2M26S">Calm Like You</Track>
 	<Track rating="4" length="P7M10S">Knocked Up</Track>
 	<Track rating="4" length="P3M09S">McFearless</Track>
-	<Track rating="1" length="P3M59S">Black Thumbnail</Track>
 
 ### //Track/text()
 
