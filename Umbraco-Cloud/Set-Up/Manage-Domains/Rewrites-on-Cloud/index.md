@@ -18,8 +18,10 @@ The rewrite rules should be added to the `<system.webServer><rewrite>` module in
 
 ## Best practices
 
-- umbraco backoffice access
-- Issues with deployments caused by rewrite rules
+When you are doing rewrite rules on Umbraco Cloud there are a few important things to keep in mind:
+
+- Always make sure that you add a condition that negates the Umbraco Backoffice - `/umbraco`, otherwise you will not be able to do deployments to/from the environment
+- To be able to continue working locally with your Umbraco Cloud project, you also need to add a condition that negates `localhost`
 
 ## Hiding the Default umbraco.io Url
 
