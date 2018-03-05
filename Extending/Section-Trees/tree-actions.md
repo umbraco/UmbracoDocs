@@ -7,38 +7,36 @@ You can set a User's permissions for each item in the Umbraco Content tree from 
 If you are developing a custom section, or a custom Dashboard, you might want to display some different options based on a Users's Permission set on a particular item.
 
 For example, on a custom dashboard you might add a quick 'Create a Blog Post' button for an editor, but only if that editor has permissions to create a blog post, and so you could create some sort of API endpoint, to call from your AngularJS controller, that in turn uses the UserService to return the current user's permissions, and see whether they have the required permission to 'create' within the site's blog section...
-	
 
-	bool canCreateBlogs = false;
-	var us = Services.UserService;     
-	var user = us.GetByEmail(email);
-	var userPermissionsForBlog = us.GetPermissions(user, blogId);
-	foreach (var permission in userPermissionsForBlog)
-	    {
-		if (permission.AssignedPermissions.Contains("C"))
-		    {
-			canCreateBlogs = true;
-		    }
-	    }
-	
+    bool canCreateBlogs = false;
+    var us = Services.UserService; 
+    var user = us.GetByEmail(email);
+    var userPermissionsForBlog = us.GetPermissions(user, blogId);
+    foreach (var permission in userPermissionsForBlog)
+    {
+    	if (permission.AssignedPermissions.Contains("C"))
+    	{
+    		canCreateBlogs = true;
+    	}
+    }
 
 ## But how to know which letter corresponds to which Tree Action?
 
 Each tree action in Umbraco implements the IAction interface, and each Action has a corresponding 'Letter', and a boolean value describing whether Permissions can be assigned for an action.
 
-		public interface IAction : IDiscoverable
-	    {
-			char Letter {get;}
-			bool ShowInNotifier {get;}
-			bool CanBePermissionAssigned {get;}
-			string Icon {get;}
-			string Alias {get;}
-			string JsFunctionName {get;}
+	public interface IAction : IDiscoverable
+	{
+		char Letter {get;}
+		bool ShowInNotifier {get;}
+		bool CanBePermissionAssigned {get;}
+		string Icon {get;}
+		string Alias {get;}
+		string JsFunctionName {get;}
 		/// <summary>
 		/// A path to a supporting JavaScript file for the IAction. A script tag will be rendered out with the reference to the  JavaScript file.
 		/// </summary>
-			string JsSource {get;}
-		}
+		string JsSource {get;}
+	}
 
 
 When you pull back the AssignedPermissions for a user on a particular item, it is these letters that indicate which actions the User is permitted to peform in the context of the tree item.

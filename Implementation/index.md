@@ -5,10 +5,8 @@
 <div class="row implementation">
 	<div class="col-sm-12"></div>
 </div>
-
 <div class="row">
 	<div class="col-xs-3 point">
-
 	</div>
 	<div class="col-xs-3">
 		<span class="dot big icon-Forking">
@@ -25,7 +23,6 @@
 		</div>
 	</div>
 </div>
-
 <div class="row">
 	<div class="col-xs-3">
 		<span class="dot big icon-Circuits">
@@ -34,7 +31,6 @@
 			<span class="line h-line"></span>
 		</span>
 	</div>
-
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
@@ -44,7 +40,6 @@
 		</div>
 	</div>
 </div>
-
 <div class="row">
 	<div class="col-xs-3">
 		<span class="dot big icon-Directions-alt">
@@ -62,7 +57,6 @@
 		</div>
 	</div>
 </div>
-
 <div class="row">
 	<div class="col-xs-3">
 		<span class="dot big icon-Server-alt">
@@ -80,7 +74,6 @@
 		</div>
 	</div>
 </div>
-
 <div class="row">
 	<div class="col-xs-3">
 		<span class="dot big icon-Globe">
