@@ -1,20 +1,20 @@
-#Member Picker
+# Member Picker
 
 `Returns: Member ID`
 
 The member picker opens a panel to pick a specific member from the member section. The value saved is the selected member ID.
 
-##Data Type Definition Example
+## Data Type Definition Example
 
 ![Media Picker Data Type Definition](images/Member-Picker-DataType.png)
 
-##Content Example 
+## Content Example 
 
 ![Memebr Picker Content](images/Member-Picker-Content.png)
 
-##MVC View Example
+## MVC View Example
 
-###Typed:
+### Typed:
 
 	@{
 		if(Model.Content.HasValue("author")){
@@ -23,7 +23,7 @@ The member picker opens a panel to pick a specific member from the member sectio
 		}
 	}
 
-###Dynamic:                              
+### Dynamic:                              
 
 	@{
 		if(CurrentPage.HasValue("author")){

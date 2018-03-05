@@ -1,4 +1,4 @@
-#Inbound request pipeline
+# Inbound request pipeline
 
 The inbound process is triggered by the Umbraco (http) Module.  The **[published content request preparation](published-content-request-preparation.md)** process kicks in and creates a `PublishedContentRequest`.
 

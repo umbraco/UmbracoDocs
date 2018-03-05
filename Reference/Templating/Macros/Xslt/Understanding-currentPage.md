@@ -1,4 +1,4 @@
-#Understanding "currentPage"
+# Understanding "currentPage"
 As mentioned on the previous page, the currentPage parameter is important for us in Umbraco.  It is the complete XML document of the published site, and is how we reference the data stored in each document.  By default, the context of the XML document is set to the requested page.
 
 In XSLT, to reference the parameter, and other variable types, we use the "$" and the name of the variable or parameter, thus $currentPage.  However, before we use this parameter, we need to know what is in the XML document, and how to reference the content.

@@ -1,9 +1,9 @@
 # Themes
-
 As of version 6.0.0 and newer Umbraco Forms supports Themes, allowing forms to be customised in a much simpler manner than found in version 4.x.
 
 ## Creating a Theme
 To create a theme you simply need to create a folder at `/Views/Partials/Forms/Themes/`. The name of the folder is the name of theme that will be visible in the backoffice when choosing it.
+
 
 Copy the explicit files you wish to override in your theme, it may be a single file or all files from the default theme folder. Make the necessary changes you desire to CSS class names, markup etc. 
 *A side note to consider is that Umbraco Forms conditional JS logic does depend on some CSS classes currently and it is advised that you add any additional classes you require but do not remove those already being set.*
@@ -31,6 +31,7 @@ Sets the primary form theme stylesheet path. This overrides an already assigned 
 `@Html.SetFormThemeCssFile(Model, "~/App_Plugins/UmbracoForms/Assets/Themes/Default/style.css")`
 
 ### AddFormThemeScriptFile
+
 Add a JavaScript file path to include on form render
 
 `@Html.AddFormThemeScriptFile(Model, "~/App_Plugins/UmbracoForms/Assets/Themes/Default/umbracoforms-dependencies.js")`
@@ -42,6 +43,7 @@ Add a JavaScript command to execute when the form is rendering, used to properly
 
 ### SetFormFieldClass
 Adds a class to the form field HTML element of a given type. If no type is given, it will add the class to all fields
+
 
     // Applies the CSS class 'form-control' to all fields that GetFormFieldClass uses in FieldType views
     @Html.SetFormFieldClass("form-control")
@@ -66,12 +68,14 @@ Adds a class to the div element wrapping around form fields of a given type. If 
 
 
 ### GetFormFieldWrapperClass
+
 Retrieves all wrapper classes for a given field type, used when rendering form fields. This class wraps both label, help-text and the field itself in the default view
 
 `class="@Html.GetFormFieldWrapperClass(f.FieldTypeName)`
 
 
 ## Rendering Script content separately
+
 Sometimes when you insert a form into a page you do not wish the JavaScript includes and CSS references to be rendered directly alongside the form itself and more typically you would like to render these before the closing `</body>` tag.
 To do this, when inserting the form using the macro ensure the checkbox for the property `Exclude Scripts` is checked/enabled and then you can use a snippet like below to render the necessary scripts in your main template before the closing `</body>`
 

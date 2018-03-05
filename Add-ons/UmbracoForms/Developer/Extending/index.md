@@ -1,4 +1,4 @@
-#Extending #
+# Extending #
 
 ## [Provider model](Adding-a-Type.md) ##
 Most parts of Forms use a provider model, which makes it easy to add new parts to the application.

@@ -1,4 +1,4 @@
-#FileService
+# FileService
 
 **Applies to Umbraco 6.x and newer**
 
@@ -21,7 +21,7 @@ All samples in this document will require the following usings:
 
 **Please note that this page will be updated with samples and additional information about the methods listed below**
 
-##Getting the service
+## Getting the service
 The FileService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the FileService is available through a local `Services` property.
 
 	Services.FileService
@@ -30,16 +30,16 @@ Getting the service through the `ApplicationContext`:
 
 	ApplicationContext.Current.Services.FileService
 
-##Methods
+## Methods
 
-###.GetTemplate(string alias)
+### .GetTemplate(string alias)
 
 Gets a single `ITemplateObject` object.
 
-###.DeleteTemplate(string alias, int userId = 0)
+### .DeleteTemplate(string alias, int userId = 0)
 
 Delete a single `ITemplateObject` object.
 
-###.Save(ITemplate template)
+### .Save(ITemplate template)
 
 Saves a single `Template` object.

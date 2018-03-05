@@ -1,4 +1,4 @@
-#Date - Add 'th, st, rd, nd' extension
+# Date - Add 'th, st, rd, nd' extension
 Here's a really simple snippet which adds the correct extension to the date.
 
 	<xsl:variable name="dte" select="data [@alias = 'contentDate']"/>

@@ -1,16 +1,16 @@
-#Macro parameters in XSLT
+# Macro parameters in XSLT
 
-##Setting up the macro parameter
+## Setting up the macro parameter
 First let's create a simple xslt script which will have 2 simple parameters, a text string and a contentTree type - to recap: A text type is a simple string and a contentTree type is the xml of a selected node.
 
-##Adding the parameters
+## Adding the parameters
 - Create a xslt macro.
 - Look under the "parameters" tab on the macro settings screen.
 - Create a new parameter the alias "text" name "Text property" and type "text".
 - Create a second parameter called "contentTree" with the name "Select Node" and the type "contentTree".
  
 
-##Writing some basic xslt 
+## Writing some basic xslt 
 Okey so now we have a macro with some parameters. Let's get these parameters into the xslt. 
 
 Our Xslt code (without the stylesheet info):
@@ -20,7 +20,7 @@ Our Xslt code (without the stylesheet info):
 	  <xsl:copy-of select="/macro/contentTree"/> 
 	</xsl:template>
 
-##Working with parameters in XSLT
+## Working with parameters in XSLT
 Okey so far we've set up a simple xslt script, added 2 parameters and picked some simple data for the parameters when we inserted the macro in a template. 
 
 So what does the 2 parameters return?
@@ -45,7 +45,7 @@ The `<xsl:copy-of select="/macro/contentTree" />` returns:
 	
 So as you can see: the text parameter simply sends the text string we entered to the macro and the contentTree parameter sends a big chunk of xml describing the node we selected. If the node had any child nodes these would also be send to the xslt macro as xml.
 
-##Explaining how the parameters are send to the macro
+## Explaining how the parameters are send to the macro
 When you set up a macro parameter for a xslt macro, you basically tell Umbraco to send some xml to the xslt script. This xml looks something like this: 
 
 	<macro>
