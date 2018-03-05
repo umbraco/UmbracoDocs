@@ -1,10 +1,10 @@
-#Umbraco:macro
+# Umbraco:macro
 
 The umbraco:macro element renders the out of a macro with a given alias. Attributes on the element is passed to the macro as parameters for the rendering.  In the sample below, the macro with the alias "topnavigation" is rendered, and the parameter "className" is set to "greenList" which is passed on to the script associated with the macro.
 
 	<umbraco:macro alias="topnavigation" className="greenList" runat="server" />
 
-###Inline macros
+### Inline macros
 
 The umbraco:macro element can also be used inline, so a macro is not required, instead, code can be inserted directly in the template.
 
@@ -15,12 +15,12 @@ The umbraco:macro element can also be used inline, so a macro is not required, i
 		}
 	</umbraco:Macro>
 	
-###Defining Property Values
+### Defining Property Values
 This will insert a macro with the alias 'YourMacroAlias' into the template and set the macro property named 'YourPropertyName' to the value 'hello'
 
 	<umbraco:Macro Alias="YourMacroAlias" runat="server" YourPropertyName="hello"></umbraco:Macro>
 
-###Passing a value from the current page, into a macro
+### Passing a value from the current page, into a macro
 This will insert a macro with the alias 'YourMacroAlias' into the template and set the macro property named 'YourPropertyName' to the current node ID of the content node currently being executed.
 
 	<umbraco:Macro Alias="YourMacroAlias" runat="server" YourPropertyName="[#pageID]"></umbraco:Macro>

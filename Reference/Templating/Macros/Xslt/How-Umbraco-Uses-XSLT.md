@@ -1,7 +1,7 @@
-#How Umbraco uses XSLT
+# How Umbraco uses XSLT
 Umbraco utilizes XSLT to dynamically render content such as navigational structures, lists, and nearly anything you can dream of.  This is accomplished through the use of Macros.
 
-##Creating Your First XSLT Macro
+## Creating Your First XSLT Macro
 Creating an XSLT macro is very easy.
 
 1. Go to the developers section in the administration area.

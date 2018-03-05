@@ -1,8 +1,8 @@
-#Solution and project structure
+# Solution and project structure
 
 _How the Visual Studio solution is structured and what the functionality of each project is. This also describes the end goal of how we'd like the solution structured._
 
-##The goal
+## The goal
 The goal of the Umbraco project is to be able to be left with only a few Visual Studio projects:
 
 * Umbraco.Core
@@ -13,7 +13,7 @@ The goal of the Umbraco project is to be able to be left with only a few Visual 
 
 Achieving this goal will take quite a lot of time by slowly migrating over old code and refactoring it into new code under new namespaces and projects. This cannot all happen at the same time but starting down this path now means that we can  realize this goal sooner.
 
-##The structure
+## The structure
 
 * Umbraco.Core
 	* Contains all functionality in Umbraco that does not pertain to the Web. For example, it contains any classes and objects that could be used in a console application.
@@ -38,7 +38,7 @@ Achieving this goal will take quite a lot of time by slowly migrating over old c
 	* Contains all unit tests for Umbraco
 	* Uses Nunit for unit tests
 
-##Legacy projects
+## Legacy projects
 
 _The code in the legacy projects will eventually be migrated and refactored with correct naming and code conventions into the new projects and namespaces_
 

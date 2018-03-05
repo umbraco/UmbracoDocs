@@ -1,6 +1,6 @@
-#Tutorial - Creating a property editor
+# Tutorial - Creating a property editor
 
-##Overview
+## Overview
 
 This guide explains how to setup a simple property editor, how to hook it into Umbraco's datatypes
 how to hook it into angulars modules and its injector, and finally how you can test your property editor.
@@ -13,20 +13,20 @@ So all the steps we will go through:
 - Add external dependencies
 - Complete the markdown editor
 
-##Prerequisites
+## Prerequisites
 This is about how to use AngularJS with Umbraco, so it does not cover AngularJS itself, as there are tons of resources on that already here:
 
 - [egghead.io](http://www.egghead.io/)
 - [angularjs.org/tutorial](http://docs.angularjs.org/tutorial)
 - [Tekpub](http://tekpub.com/products/angular)
 
-##The end result
+## The end result
 
 By the end of this guide, we will have a simple markdown editor running inside of Umbraco
 registered as a data type in the backoffice, assigned to a document type, and the editor can
 create and modify data.
 
-##Setting up a plugin
+## Setting up a plugin
 
 The first thing we must do is create a new folder inside `/App_Plugins` folder. We will call it
 `MarkDownEditor`
@@ -64,7 +64,7 @@ Inside this package manifest we add a bit of JSON to describe the property edito
 	}
 
 
-##Writing some basic HTML + JS
+## Writing some basic HTML + JS
 Then we add 2 files to the /app_plugins/markdowneditor/ folder:
 - `markdowneditor.html`
 - `markdowneditor.controller.js`
@@ -92,13 +92,13 @@ Now our basic parts of the editor is done, namely:
 - The HTML view for the editor
 - The controller for wiring up the editor with angular.
 
-##Register the datatype in Umbraco
+## Register the datatype in Umbraco
 After the above edits are done, restart your application. Go to the Developer section, click the 3 dots next to the datatypes folder and create a new data type called "markdown". In the editor you can now select a property editor, where your newly added "markdown editor" will appear.
 
 Save the datatype, and add it to a document type of your choice, open a document of that type, and you will be greeted with an alert message saying "The controller has landed", which means all is well, and you can now edit the assigned property's value with your editor.
 
 
-##Add external dependencies
+## Add external dependencies
 Lets go a bit further, and load in a markdown editor JavaScript library, I've chosen [pagedown][PagedownBootstrap], but you can use whatever you want.
 
 First of, I'll add some external files to our package folder, in /app_plugins/markdowneditor/lib folder, these files comes from the pagedown editor project found here:

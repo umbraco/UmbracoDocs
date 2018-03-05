@@ -1,12 +1,12 @@
-#Custom markup
+# Custom markup
 With Umbraco Forms it's possible to customize the outputted markup of a form. So you have complete control over what Forms will output.
 
-##Customizing the default views
+## Customizing the default views
 The way the razor macro works is that it uses some razor views to output the form (1 for each fieldtype, 1 for the scripts and 1 for the rest of the form). The views are available for edit so you can customize them to your needs.
 
 The views can be found in the `~\Views\Partials\Forms\`
 
-###Form.cshtml
+### Form.cshtml
 
 This is the main view responsible for rendering the form markup.
 
@@ -199,10 +199,10 @@ The view is seperated in 2 parts, 1 is the actual form and the other part is wha
 
 This view can be customized, if you do so it will be customized for all your forms.
 
-###Script.cshtml
+### Script.cshtml
 This view renders the JavaScript that will take care of the conditional logic, custimization won't be needed here...
 
-###FieldType.*.cshtml
+### FieldType.*.cshtml
 The rest of the views start with FieldType. like FieldType.Textfield.cshtml and those will output the fields (so there is a view for each default fieldtype like textfield, textarea, checkbox...
 
 Contents of the  FieldType.Textfield.cshtml view:

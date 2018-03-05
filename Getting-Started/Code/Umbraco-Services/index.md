@@ -1,15 +1,15 @@
-#Using Umbraco's service APIs
+# Using Umbraco's service APIs
 
 _Whenever you need to modify an entity that Umbraco stores in the database - there is a service API available for it.  This means that
 you can create, update and delete any of the core Umbraco entities directly from your custom code._
 
 
-##Accessing the Umbraco services.
+## Accessing the Umbraco services.
 To use the service APIs - you must first access them. This is done through what is know as `ApplicationContext` which provides access to everything related
 to the Umbraco application.
 
 
-###Access via Controller
+### Access via Controller
 If accessing umbraco services inside your own controller class - then by inheriting from one of Umbraco's base controller classes you get access to all services through `Services`:
 
     public class EventController : Umbraco.Web.Mvc.SurfaceController
@@ -20,7 +20,7 @@ If accessing umbraco services inside your own controller class - then by inherit
         }
     }
 
-###Access via ApplicationEventHandler
+### Access via ApplicationEventHandler
 If we for instance subscribe to the ApplicationStarted event - we get access to this context - which then provides a `.Services` class which contains all the
 available services
 
@@ -33,7 +33,7 @@ available services
         }
     }
 
-##Services available
+## Services available
 There is full api coverage of all Umbraco core entities:
 
 - [ContentService](../../../Reference/Management/Services/ContentService.md)
@@ -50,12 +50,12 @@ There is full api coverage of all Umbraco core entities:
 - [ContentTypeService](../../../Reference/Management/Services/ContentTypeService.md)
 
 
-###More information
+### More information
 - [Umbraco Services API reference](../../../Reference/Management/Services/)
 - [Umbraco Events reference](../../../Reference/Events/)
 - [Routes and controllers](../../../Reference/Routing/)
 
-###Umbraco TV
+### Umbraco TV
 - [Chapter: Content API](http://umbraco.tv/videos/umbraco-v7/developer/fundamentals/content-api/)
 - [Chapter: Media API](http://umbraco.tv/videos/umbraco-v7/developer/fundamentals/media-api/)
 - Chapter: Member API *(Coming soon)*

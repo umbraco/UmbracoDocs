@@ -1,4 +1,4 @@
-#CSS and Javascript
+# CSS and Javascript
 
 
 Looking at our homepage we’re obviously missing the CSS and JS from the Initializr template. To include this navigate to the root of your website directory (e.g. "C:\inetpub\wwwroot" - this may be different depending on your installation type) in Windows Explorer and copy over the **_css\style.css_** file into the **_[your website root]\Css_** folder (replace Umbraco with wherever your Umbraco instance is being served from – e.g. “_C:\inetpub\wwwroot_”. Now refresh your webpage in your browser and you’ll see a more styled page.
@@ -19,5 +19,5 @@ Now using Chrome Developer Tools or Firebug whilst browsing http://localhost you
 
 ---
 
-##Next - [Outputting the Document Type Properties](Outputting-the-Document-Type-Properties.md)
+## Next - [Outputting the Document Type Properties](Outputting-the-Document-Type-Properties.md)
 How to wire the Umbraco Document Type Properties into the templates to output the editor's data in the right place.

@@ -5,7 +5,7 @@ Any project can act as a Baseline project.
 
 The basic idea is that you have a project that contains all your standard Umbraco packages/components, maybe even configured with some default Document Types, which you want to use as a baseline for future projects. When you've made changes to your Baseline project you can then push these changes out to all the Child projects with a click of a button.
 
-![Basleine workflow](images/baseline-workflow.gif)
+![Baseline workflow](images/baseline-workflow.gif)
 
 For some more in-depth information have a look at the [High-level Overview](High-level-overview/) article.
 

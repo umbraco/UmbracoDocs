@@ -1,4 +1,4 @@
-#BaseRestExtension.config
+# BaseRestExtension.config
 
 BaseRestExtension.config contains the data necessary for the /Base system when exposing the methods in your class library.
 
@@ -29,7 +29,7 @@ The method tag contains the following attributes:
 
 The user calling the method, will be allowed if she has access through at least one of the possible attribute values. If allowAll is set to true, the other attributes has no effect, everyone will be allowed. 
 
-###Example
+### Example
 
 _BaseRestExtensions.config_
 
