@@ -1,4 +1,4 @@
-#RelationType
+# RelationType
 
 **Applies to Umbraco 6.x and newer**
 
@@ -15,8 +15,8 @@ All samples in this document will require the following usings:
 	
 	using Umbraco.Core.Models;
 
-##Constructors
+## Constructors
 
-##Properties
+## Properties
 
-##Methods
+## Methods

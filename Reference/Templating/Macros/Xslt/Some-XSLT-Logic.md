@@ -1,4 +1,4 @@
-#Some XSLT Logic
+# Some XSLT Logic
 XSLT has some logic commands that are useful to processing criteria based output.  These commands are the "if" and "choose" commands.
 
 The "if" command is useful for deciding to show content or not based on a single criteria.  There is no "else" in XSLT, so, the if is somewhat limited.

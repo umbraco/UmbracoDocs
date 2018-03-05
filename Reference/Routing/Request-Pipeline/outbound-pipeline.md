@@ -1,4 +1,4 @@
-#Outbound request pipeline
+# Outbound request pipeline
 The **outbound pipeline** consists out of the following steps:
 
 1. [Create segments](#segments)
@@ -171,7 +171,7 @@ Keep in mind that this means publishing a unpublished node with a conflicting UR
 - The IUrlProvider also has a GetOtherUrls method (For the back-end)
 - Another implementation if the IUrlProvider is the `AliasUrlProvider`: this will show the umbracoUrlAlias url in the back-end
 
-###Url Provider Mode
+### Url Provider Mode
 Provider "mode" determines absolute vs. relative Urls.
 You can change the mode of the current provider
 

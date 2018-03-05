@@ -1,4 +1,4 @@
-#Using XPATH
+# Using XPATH
 Now that we know what is stored in the XML, and know where the XML is in our XSLT, we can now try to retrieve the data, and format it to our needs.
 
 As previous mentioned, XSLT uses an XML structure to define the processing rules.  So we need to learn what a few of the processing elements for XSLT are.

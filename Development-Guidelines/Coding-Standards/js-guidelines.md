@@ -1,17 +1,17 @@
-#JavaScript coding standards and guidelines
+# JavaScript coding standards and guidelines
 
 _All JavaScript in the Umbraco core should adhere to these guidelines. The legacy JS code in the core doesn't adhere to these guidelines but should be refactored so that it does._
 
 **All JavaScript in the back-office needs to be in a namespace and defined in a class.**
 
-##Namespaces
+## Namespaces
 To declare a namespace for your JavaScript class you simply use the following command (as an example to create a namespace called 'Umbraco.Controls'):
 
 	Umbraco.Sys.registerNamespace("Umbraco.Controls");
 
 The above code will require a reference to the NamespaceManager.js file which should generally be included by default in all pages in Umbraco.
 
-##jQuery
+## jQuery
 If you are going to use jQuery and its dollar ($) operator, you will need to wrap your code in a self executing function, this is to ensure that your code will still work with jQuery.noConflict() turned on. Example:
 
 	(function($) {
@@ -21,7 +21,7 @@ If you are going to use jQuery and its dollar ($) operator, you will need to wra
 
 To create jQuery plugins, see the [jQuery Plugin Guidelines](jquery-guidelines.md)
 
-##Creating classes
+## Creating classes
 
 There are actually quite a few different ways to create classes in JavaScript. For Umbraco  we have opted to use the 3rd party, classical inheritance library, [Base2](http://base2.googlecode.com/svn/version/1.0.2/doc/base2.html#/doc/!base2) to make class declarations simple and extendable:
 
@@ -80,7 +80,7 @@ Using the class above is easy:
 	printer2.name = "Shannon";
 	printer2.start();
 
-##Singleton classes
+## Singleton classes
 
 Sometimes it's useful to have a class that can only be instantiated once and shared, rather than have multiple unsynchronised instances floating around. In those circumstances a Singleton pattern should be used.
 
@@ -128,7 +128,7 @@ Using the singleton is very easy:
 	var printer = new NamePrinter("Shannon");
 	MyProject.MyNamespace.NamePrinterManager.getInstance().registerPrinter(printer);
 
-##Static classes
+## Static classes
 
 Sometimes its useful to have static classes that require no constructor. Before you make one of these, definitely make sure that you wont require different instances of one.
 
@@ -147,7 +147,7 @@ Using the class/method requires no instantiation but you can therefore have no s
 
 	MyProject.MyNamespace.Utility.showMsg("hello");
 
-##The different between a Singleton class and Static class
+## The different between a Singleton class and Static class
 
 Both singleton and static classes allow you access methods directly without having to create an entity of your own. The main difference between the two, and what should govern when to use one over the other, is one of state.
 

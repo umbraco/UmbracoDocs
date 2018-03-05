@@ -6,7 +6,7 @@ Follow these simple steps to be up and running with VS Code quickly and easily. 
 
 1. Go to [https://code.visualstudio.com/](https://code.visualstudio.com/) and download VS Code for free.
 
-1. Go to [https://www.microsoft.com/en-us/download/details.aspx?id=48264](https://www.microsoft.com/en-us/download/details.aspx?id=48264) and download IIS Express.
+1. Go to [https://www.microsoft.com/en-us/download/details.aspx?id=48264](https://www.microsoft.com/en-us/download/details.aspx?id=48264) and download IIS Express. <br/>*This is optional as the VS Code IIS Express extension will install this automatically for you now*
 
 1. Once installed, launch VS Code.
 
