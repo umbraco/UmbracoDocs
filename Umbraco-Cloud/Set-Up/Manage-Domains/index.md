@@ -11,11 +11,6 @@ Let's say you have a project named `Snoopy`. These will be the default domains:
 
 To access the backoffice, simply add `/umbraco` to the end of the Live, Development or Staging domain.
 
-Related articles:
-
-* [Security Certificates](Security-Certificates)
-* [Rewrite rules on Umbraco Cloud](Rewrites-on-Cloud)
-
 ## Domains
 
 Under *Settings* in the Umbraco Cloud Portal, you'll find **Manage domains**. This is where you go when you want to bind domains to your Cloud environments and when you want to add security certificates to your environments.
@@ -55,4 +50,8 @@ One approach for this is to add a new rewrite rule to the `<system.webServer><re
               appendQueryString="true" redirectType="Permanent" />
     </rule>
 
-**Note:** This will not rewrite anything under the `/umbraco` path so that you can still do content deployments. You don't have to give your editors the umbraco.io URL, and they won't see the umbraco.io URL if you give them the actual domain name. This rule will also not apply on your local copy of the site running on `localhost`.  
+**Note:** This will not rewrite anything under the `/umbraco` path so that you can still do content deployments. You don't have to give your editors the umbraco.io URL, and they won't see the umbraco.io URL if you give them the actual domain name. This rule will also not apply on your local copy of the site running on `localhost`. Read more about best practices and rewrites in the [Rewrites on Umbraco Cloud](Rewrites-on-Cloud) article.
+
+## [Security Certificates](Security-Certificates)
+
+## [Rewrites on Umbraco Cloud](Rewrites-on-Cloud)
