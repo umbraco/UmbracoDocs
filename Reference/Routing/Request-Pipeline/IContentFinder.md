@@ -102,9 +102,9 @@ To set your own 404 finder create an IContentFinder and set it as the ContentLas
             }
 
             //replace 'home_doctype_alias' with the alias of your homepage
-            IPublishedContent rootNode = UmbracoContext.Current.ContentCache.GetByXPath("//home_doctype_alias").FirstOrDefault(n => n.GetCulture().ThreeLetterWindowsLanguageName == culture.ThreeLetterWindowsLanguageName);
+            IPublishedContent rootNode = UmbracoContext.Current.ContentCache.GetByXPath("root/home_doctype_alias").FirstOrDefault(n => n.GetCulture().ThreeLetterWindowsLanguageName == culture.ThreeLetterWindowsLanguageName);
             //replace '404_doctype_alias' with the alias of your 404 page
-            IPublishedContent notFoundNode = UmbracoContext.Current.ContentCache.GetByXPath("//404_doctype_alias").FirstOrDefault(n => n.GetCulture().ThreeLetterWindowsLanguageName == culture.ThreeLetterWindowsLanguageName);
+            IPublishedContent notFoundNode = UmbracoContext.Current.ContentCache.GetByXPath(String.Format("root/homeDocType[id={0}]/404_doctype_alias", rootNode.Id)).FirstOrDefault(n => n.GetCulture().ThreeLetterWindowsLanguageName == culture.ThreeLetterWindowsLanguageName);
 
             if (notFoundNode != null) {
                 contentRequest.PublishedContent = notFoundNode;
