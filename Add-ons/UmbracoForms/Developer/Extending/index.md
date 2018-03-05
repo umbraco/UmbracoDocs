@@ -1,6 +1,6 @@
 #Extending #
 
-## Provider model ##
+## [Provider model](Adding-a-Type.md) ##
 Most parts of Forms use a provider model, which makes it easy to add new parts to the application.
 The model uses the notion that everything must have a type to exist. The type defines the capabilities of the item. For instance a Textfield on a form has a FieldType, this particular field type enables it to render an input field and save simple text strings. The same goes for workflows, which has a workflow type, datasources which have datasource type and so on. Using the model you can seamlessly add new types and thereby extend the application.
 In the current version it is possible to add new Field types, Data Source Types, Prevalue Source Types, Export Types, and Workflow Types.
