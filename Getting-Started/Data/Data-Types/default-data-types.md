@@ -46,11 +46,11 @@ This data type is used by Media Types that are set to display as list views.
 #### List View - Members ####
 This data type is used by Member Types that are set to display as list views. 
 
-### Media Picker ####
+#### Media Picker ####
 The picker opens a simple modal to pick a specific media item from the media tree.
 The value saved is the selected media node UDI.
 
-### Multiple Media Picker ####
+#### Multiple Media Picker ####
 The picker opens a simple modal to pick a multiple media item from the media tree.
 The value saved is a comma separated string of media node UDIs.
 
