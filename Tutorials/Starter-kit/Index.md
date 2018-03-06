@@ -33,6 +33,6 @@ ___
 #### Contribute to the Starter kit
 There is a number of ways you can contribute to Starter kit.
 
-* **Issues/bugs/feature requests:** Reporting issues and bugs is a great way to start contributing. The goal of the starter kit is to teach best practices, it is important that it works as expected and that the lessons are easy to follow. You can report issues/bugs for the starter kit and for the starter kit lessons on the [documentation repo](https://github.com/umbraco/UmbracoDocs/issues).
-* **Lessons:** Have a good idea for a lesson? You can submit your own lesson idea (on the documentation issue tracker) or even entire lessons to the documentation repository. It's easy to do, simply follow [this guide](https://our.umbraco.org/contribute).
+* **Issues/bugs/feature requests:** Reporting issues and bugs is a great way to start contributing. The goal of the starter kit is to teach best practices, it is important that it works as expected and that the lessons are easy to follow. You can report issues/bugs for the starter kit and for the starter kit lessons on the [project page](https://our.umbraco.org/projects/starter-kits/the-starter-kit/feedback/).
+* **Lessons:** Have a good idea for a lesson? You can submit your own lesson idea (on the documentation issue tracker) or even entire lessons to the [documentation repository](https://github.com/umbraco/UmbracoDocs/issues). It's easy to do, simply follow [this guide](https://our.umbraco.org/contribute).
 
