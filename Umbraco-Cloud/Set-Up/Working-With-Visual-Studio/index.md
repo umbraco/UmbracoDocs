@@ -32,8 +32,8 @@ Once you have added a new project to the solution right-click on the solution in
 
 ![](images/solution-dependencies.png)  
 
-## Using Umbraco namespaces in your *.Core project
-In order to use Umbraco's features in your *.Core project, you have to add references to the DLLs in your *.Web/bin.
+### Using Umbraco namespaces in your `*.Core` project
+In order to use Umbraco's features in your `*.Core` project, you have to add references to the DLLs in your `*.Web/bin`.
 
 You can do this by simply right-clicking on **References** and selecting **Add Reference**. Browse and select the DLLs you'd like to use and then hit **OK**. Don't forget to build.
 
