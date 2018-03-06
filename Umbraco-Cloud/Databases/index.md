@@ -20,7 +20,15 @@ If you need to open for specific ip addresses, simply click the "Add New IP Addr
 Once the firewall is open, it's time to fire up SQL Management Studio and connect to the database. Be aware that a database exist for each environment you have on Umbraco Cloud and any changes you make to custom tables needs to be done for each of them.
 
 To connect, simply go choose Connect Database Engine and copy paste the values from the Connection Details page on Umbraco Cloud where you'll find handy copy-short cut buttons to the right of each value. In the "Connect to Server" dialog in SQL Management Studio, choose "SQL Server Authentication" as the authentication type and also remember to click the "Options" button *before you connect* and paste the name of your database in the "Database" input field (if you don't security settings on Umbraco Cloud will prevent you from connecting). You can see it all in this short gif:
+
 ![Example video on connecting to the database with SQL Management Studio](images/sqlmanagementstudio.gif)
+
+## Connecting to your local Umbraco installation
+When cloning down your project to work locally you might want to have a look in your database every now and then. You can connect to your local Umbraco database through, for example, Visual Studio.
+
+In Visual Studio this is done through the Server Explorer. Simply add a new connection to an SQL server database file (App_Data/Umbraco.mdf):
+
+![Connecting to Umbraco.mdf in Visual Studio](images/connect-via-vsstudio.gif)
 
 ## Moving on
 Now that you've connected you can work with the databases on Umbraco Cloud, like you could on any other host. Just remember to let Umbraco Cloud do the work when it comes to the Umbraco related tables (Umbraco* and CMS* tables).
