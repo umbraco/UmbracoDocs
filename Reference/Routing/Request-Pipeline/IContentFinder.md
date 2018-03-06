@@ -1,4 +1,4 @@
-#IContentFinder
+# IContentFinder
 
 If you want to create your own content finder implement the IContentFinder interface:
 
@@ -15,7 +15,7 @@ If you want to create your own content finder implement the IContentFinder inter
 Umbraco runs all content finders, stops at the first one that returns true.
 Finder can set content, template, redirect…
 
-###Example 
+### Example 
 
     public class MyContentFinder : IContentFinder
     {
@@ -36,7 +36,7 @@ Finder can set content, template, redirect…
       }
     }
 
-###Example Default content finder
+### Example Default content finder
 
     public class ContentFinderByNiceUrl : IContentFinder
     {
@@ -89,7 +89,7 @@ this example shows how to add custom content finder to (and how to remove Conten
       }
     }
 
-#NotFoundHandlers
+# NotFoundHandlers
 
 To set your own 404 finder create an IContentFinder and set it as the ContentLastChanceFinder.  A ContentLastChanceFinder will always return a 404 status code. Example:
 

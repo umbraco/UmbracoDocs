@@ -1,4 +1,4 @@
-#The Basics
+# The Basics
 The standard XSLT file consists of a few different parts. Understanding these parts will allow you to do much more with XSLT than you probably realize.
 
 First, we have the XML declaration, since XSLT is structured off of XML. Then follows various entries at the top of the file - think of this a boilerplate code; Unless you are adding customized functions to your XSLT, this will typically not be edited.

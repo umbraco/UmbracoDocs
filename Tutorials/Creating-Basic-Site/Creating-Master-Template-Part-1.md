@@ -1,4 +1,4 @@
-#Creating More Pages
+# Creating More Pages
 
 ## Using a Maintainable Template Structure
 
@@ -11,7 +11,7 @@ Umbraco provides us with an elegant solution for a consistent base template - th
 To start we're going to unpick a little bit of what we did in creating the homepage to sit the homepage template under a master. 
 
 
-#Create a Master Template 
+# Create a Master Template 
 
 
 Go to the **_Settings > Templates_** and open up the tree.  At the moment we just have our **_Homepage_** template.  Hover over the **_Templates_** menu and click the menu **_..._** button. Create a new template called Master, click **_+ Create_** and then give it the name "_Master_" . Remember to click **_Save_**. 
@@ -161,5 +161,5 @@ Now we've done a lot of work - and what we should see if we refresh our localhos
 
 
 ---
-##Next - [Creating Master Template Part 2](Creating-Master-Template-Part-2.md)
+## Next - [Creating Master Template Part 2](Creating-Master-Template-Part-2.md)
 Part 2 - using the Master template to create new page types. 

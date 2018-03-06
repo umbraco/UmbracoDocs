@@ -39,7 +39,6 @@ You can do this by simply right-clicking on **References** and selecting **Add R
 
 ![](images/references.gif)
 
-
 ## Git - what should be committed
 
 When working with this solution setup its important to remember that you have one git repository for your source code, and one within the `*.Web` folder for committing and deploying your changes to Umbraco Cloud.

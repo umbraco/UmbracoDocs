@@ -4,10 +4,8 @@
 <div class="row implementation">
 	<div class="col-sm-12"></div>
 </div>
-
 <div class="row">
 	<div class="col-xs-3 point">
-
 	</div>
 	<div class="col-xs-3">
 		<span class="dot big icon-Wrench">
@@ -22,8 +20,11 @@
 			<span class="line v-line"></span>
 			<span class="line h-line"></span>
 		</span>
+		<span class="dot small">
+			<span class="line v-line"></span>
+			<span class="line h-line"></span>
+		</span>
 	</div>
-
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
@@ -53,7 +54,6 @@
 		</div>
 	</div>
 </div>
-
 <div class="row">
 	<div class="col-xs-3">
 		<span class="dot big  icon-untitled">
@@ -70,7 +70,6 @@
 			<span class="line h-line"></span>
 		</span>-->
 	</div>
-
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
@@ -96,7 +95,6 @@
 		</div>
 	</div>
 </div>
-
 <div class="row">
 	<div class="col-xs-3">
 		<span class="dot big  icon-untitled">
@@ -113,7 +111,6 @@
 			<span class="line h-line"></span>
 		</span>
 	</div>
-
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
@@ -139,7 +136,6 @@
 		</div>
 	</div>
 </div>
-
 <div class="row">
 	<div class="col-xs-3">
 		<span class="dot big icon-Palette">
@@ -156,38 +152,31 @@
 			<span class="line h-line"></span>
 		</span>
 	</div>
-
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
 				<h4 class="text-right"><a href="Design/">Design</a></h4>
 				<small>Create templates and views with your own markup and use Razor to render content.</small>
 			</div>
-
 			<div class="col-sm-6">
 				<h5><a href="Design/Templates/">Templates</a></h5>
 				<small>Creating and managing templates</small>
 			</div>
-
 			<div class="col-sm-6">
 				<h5><a href="Design/Rendering-Content/">Rendering content</a></h5>
 				<small>How to query and render published content</small>
 			</div>
-
 			<div class="col-sm-6">
 				<h5><a href="Design/Rendering-Media/">Rendering media</a></h5>
 				<small>How to query and render media</small>
 			</div>
-
 			<div class="col-sm-6">
 				<h5><a href="Design/Stylesheets-Javascript/">Stylesheets and javascript</a></h5>
 				<small>Working with css and javascript in Umbraco's templates</small>
 			</div>
-
 		</div>
 	</div>
 </div>
-
 <div class="row">
 	<div class="col-xs-3">
 		<span class="dot big icon-Code">
@@ -203,33 +192,27 @@
 			<span class="line h-line"></span>
 		</span>
 	</div>
-
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
 				<h4 class="text-right">Code</h4>
 			</div>
-
 			<div class="col-sm-6">
 				<h5><a href="Code/Umbraco-Services/">Using Umbraco's service APIs</a></h5>
 				<small>Create and update entities in Umbraco from code</small>
 			</div>
-
 			<div class="col-sm-6">
 				<h5><a href="Code/Creating-Forms/">Creating forms</a></h5>
 				<small>Create, submit and handle HTML forms with controllers</small>
 			</div>
-
 			<div class="col-sm-6">
 				<h5><a href="Code/Subscribing-To-Events/">Subscribing to events</a></h5>
 				<small>Using events to modify content or run custom code</small>
 			</div>
-
 			<div class="col-sm-6">
 				<h5><a href="Code/Debugging/">Debugging</a></h5>
 				<small>Using the tools included with Umbraco to debug issues with your project</small>
 			</div>
-
 		</div>
 	</div>
 </div>

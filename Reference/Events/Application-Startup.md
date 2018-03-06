@@ -1,4 +1,4 @@
-#Application startup events & event registration#
+# Application startup events & event registration#
 
 In order to bind to certain events in the Umbraco application you need to make these registrations during application startup. 
 
