@@ -59,11 +59,13 @@ This starts the download of a package that makes it very easy to set up OAuth lo
 
 Once the package is done installing a nice readme file will pop up and give you some useful information - feel free to completely ignore it and continue following this excellent tutorial!
 
-Next build your website and try to run it. If you followed this approach you might end up with an error just like I did with the Newtonsoft.json package dependancies. Just go back to the NuGet Package console and paste the following code:
+Depending on which version of Umbraco you are using, you might run into some dependency issues after installing the IdentityExtension package. These can usually be resolved by reinstalling the package causing the issues, using the following command:
 
-`Update-Package Newtonsoft.Json -Reinstall`
+`Update-Package Package.Name -Reinstall`
 
-This will update the package and dependencies. Now we need to build the website again then try to run it, hopefully you reach the Umbraco page just like I did:
+This will update the package and dependencies, and clear out the issues. 
+
+Now we need to build the website again then try to run it, hopefully you reach the Umbraco page just like I did:
 
 ![Umbraco homepage](images/umbracoHomepage.png)
 
