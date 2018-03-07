@@ -89,7 +89,7 @@ __NOT A MEMBER OF GROUP(S):__ Lists all the groups that the member is not a part
 
 __MEMBER OF GROUP(S):__ Lists all the groups that the member is part of. To remove the member from a group simply click it and it will move to the other column.
 
-# Security
+# Sensitive data
 Umbraco 7.9.0 provides the ability to mark members as sensitive. A sensitive user's data will not be displayed in the backoffice to other users unless they have apropriate permissions.
 
 More information can be found under [security](../../../Reference/Security/index.md)
