@@ -30,6 +30,8 @@ In Visual Studio this is done through the Server Explorer. Simply add a new conn
 
 ![Connecting to Umbraco.mdf in Visual Studio](images/connect-via-vsstudio.gif)
 
+If this is your first time connecting to a local database this way, you might have to choose a data source when clicking `Add Connection`. Select `Microsoft SQL Server Database File` and hit OK.
+
 Umbraco will create an mdf file (LocalDb) if you have SQL Server installed on your local machine, provided LocalDb is enabled and can be discovered by Deploy. If Deploy can't create an mdf file it will create a SQL CE (sdf) file instead. 
 
 ## Moving on
