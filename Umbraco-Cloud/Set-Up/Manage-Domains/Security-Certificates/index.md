@@ -2,9 +2,9 @@
 
 ![Manage certificates](images/manage-certificates.png)
 
-On the **Manage domains** page you'll also find option to upload and configure SSL certificates for your Cloud environments.
+On the **Manage domains** page you'll also find the option to upload and configure SSL certificates for your Cloud environments.
 
-Your certificates need to be `.pfx` format and must be set to use a password. Each certificate can then be bound to a hostname you have already added to your site. Make certain you use the hostname you will bind the certificate to as the common name (CN) when generating the certificate.
+Your certificates need to be `.pfx` format and must be set to use a password. Each certificate can then be bound to a hostname you have already added to your site. Make sure you use the hostname you will bind the certificate to as the common name (CN) when generating the certificate.
 
 ## Running your site on HTTPS only
 
