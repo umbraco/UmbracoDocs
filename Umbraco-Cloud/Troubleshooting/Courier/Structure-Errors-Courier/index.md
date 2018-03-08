@@ -1,14 +1,14 @@
 # Troubleshooting structure errors
 
-On some occasions it's possible that you'll encounter an "Error in Courier files containing site structure". This usually means that two Courier files are created for the same entity type.  
+On some occasions, it's possible that you'll encounter an "Error in Courier files containing site structure". This usually means that two Courier files are created for the same entity type.  
 
-For example there are two files in the `~/data/Revision/documenttypes` folder which contain the same alias for a document type, let's say `home`. Each file has a different file name but the document type they refer to is both `home`. When Courier tries to create the site structure from those files it is expecting each file to try to create a document type with a unique alias.
+For example, there are two files in the `~/data/Revision/documenttypes` folder which contain the same alias for a document type, let's say `home`. Each file has a different file name but the document type they refer to is both `home`. When Courier tries to create the site structure from those files it is expecting each file to try to create a document type with a unique alias.
 
 If two files share that same alias this leads to a conflict, it's impossible for Courier to know which is the "correct" one, so it has to give up and send an error back.
 
 ## Cause
 
-The main cause of this problem is when a document type (or media type or member type) gets manually created on two environments using the same alias. If you're new to Umbraco Cloud, for example, and have been using Umbraco for a while, it might actually be surprising that Umbraco takes care of syncing a document type between environments. You might have decided to create the same document type manually in each environment because that's what you're used to doing. 
+The main cause of this problem is when a document type (or media type or member type) gets manually created in two environments using the same alias. If you're new to Umbraco Cloud, for example, and have been using Umbraco for a while, it might actually be surprising that Umbraco takes care of syncing a document type between environments. You might have decided to create the same document type manually in each environment because that's what you're used to doing. 
 
 ## Fixing
 
