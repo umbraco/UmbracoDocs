@@ -41,7 +41,7 @@ Let’s imagine that we have a project with two Umbraco Cloud environments (Deve
 
 ![Before extraction error](images/visualization1.png)
 
-Up until now, this project has been working fine, since no deployments have been made from Development to Live, since the Document Type was created on Development.
+Up until now, this project has been working fine, since no deployments have been made from Development to Live since the Document Type was created on Development.
 
 ### Deploying your changes
 
@@ -49,19 +49,19 @@ It’s now time to deploy the newest changes to the Live environment. Since a Do
 
 ![After extraction error](images/visualization2.png)
 
-On a deployment between Umbraco Cloud environments, all the `.uda` files in the `/data/revision` folder will get synced. For this project, this means that both the Development and the Live environments will have two `.uda` files for the Document Type – the only thing that’s different between the two files are the GUID since they were created in different environments.
+On a deployment between Umbraco Cloud environments, all the `.uda` files in the `/data/revision` folder will get synced. For this project, this means that both the Development and the Live environments will have two different `.uda` files for the Document Type – the only thing that’s different between the two files are the GUID since they were created in different environments.
 
-**NOTE**: This is when you will see an extraction error like the one shown in the beginning of this article. It is simply not possible to add types with the same alias in the database.
+**NOTE**: This is when you will see an extraction error like the one shown at the beginning of this article. It is simply not possible to add types with the same alias in the database.
 
 ### Choosing the correct UDA file
 
-The next step is to decide which of these Document Types is the correct one. For this project, it’s decided that the Document Type created on the Live environment (DocType 1 and document-type__1.uda) is the correct one.
+The next step is to decide which of these Document Types is the correct one. For this project, it’s decided that the Document Type created in the Live environment (DocType 1 and document-type__1.uda) is the correct one.
 
 In order to figure out which of the two colliding `.uda` files are the file for the Document Type created on the Live environment follow these steps:
 
 1.    Access **Kudu** for the Live environment / the environment where the correct Document Type is
 2. Use the CMD console (found under the 'Debug console' menu) to navigate to your `site/wwwroot/data/` folder
-3.    Remove both colliding `.uda` files from the `/data/revision` folder in both `/repository` and `/wwwroot`
+3.    Remove both colliding `.uda` files from the `/data/revision` folder in both `/repository` and `/wwwroot` folder.
 4.    In `/wwwroot/data` run this command: `echo > deploy-export` 
 5.    This will generate a `.uda` file for the Document Type, and this will be the correct one
 6.    Run `echo > deploy` in the same folder, to make sure everything is extracting correctly
@@ -100,4 +100,4 @@ Sometimes you might need to run another extraction on your Cloud environment aft
 1. Access **Kudu** on the affected environment
 2. Use the CMD console (found under the 'Debug console' menu) to navigate to your `site/wwwroot/data/` folder
 3. In the console, type the following command: `echo > deploy`
-4. When the extraction is done, you should see a `deploy-complete` marker, which means the extraction error was successful (and your in environment will be green on the project page)
+4. When the extraction is done, you should see a `deploy-complete` marker, which means the extraction error was successful (and environment indicator will be green on the project page)
