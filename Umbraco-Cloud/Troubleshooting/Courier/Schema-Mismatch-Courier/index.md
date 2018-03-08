@@ -1,14 +1,14 @@
 # Troubleshooting Content/Media transfers 
 
-If the schema (this includes DocumentTypes, MediaTypes, DataTypes, Templates, Macros and Dictionary items) is different between the two environments you are deploying between, you will need to deploy the updates for these before you can complete the Content transfer (this can contain Media from the Media section as well). Environments needs to be in-sync before a Content and/or Media transfer can succeed.
+If the schema (this includes DocumentTypes, MediaTypes, DataTypes, Templates, Macros and Dictionary items) is different between the two environments you are deploying between, you will need to deploy the updates for these before you can complete the Content transfer (this can contain Media from the Media section as well). Environments need to be in-sync before a Content and/or Media transfer can succeed.
 
 ![Schema Mismatch - Courier](images/schema-issues-courier.png)
 
 In the image above the content transfer is not possible because a Document Type and a Data type is out of sync between the source and target environments. 
 
-While Content and Media transfer are done using the Umbraco backoffice you use the Umbraco Cloud Portal in order to deploy the schema changes, which exists on disk and are deployed through the underlying git repository. If you are working locally, you deploy the changes using your local Git client.
+While Content and Media transfers are done using the Umbraco backoffice you use the Umbraco Cloud Portal in order to deploy the schema changes, which exists on disk and are deployed through the underlying git repository. If you are working locally, you deploy the changes using your local Git client.
 
-The following articles explains in detail how the deployment process works:
+The following articles explain in detail how the deployment process works:
 
 * [Deploying from Local to Cloud](https://our.umbraco.org/documentation/Umbraco-Cloud/Deployment/Local-to-Cloud/)
 * [Deploying between two Cloud environment](https://our.umbraco.org/documentation/Umbraco-Cloud/Deployment/Cloud-to-Cloud/)
@@ -24,7 +24,7 @@ In order to find the log entries that deals with conflicts in the schema you sho
 
     2015-04-27 14:59:20,546 [10] INFO  Umbraco.Courier.Core.Packaging.RevisionPackaging - [Thread 45] Document types: Home hash-mismatch (local/remote) e5c6dc5f2eee6521b2d024f7777bbd9e / 2628e7c3e4bc7215fd398a2bbb13f423
 
-This error is not very descriptive and if you’re not sure what the difference are then you can investigate it a little bit deeper. If you add a key to your appSettings section in web.config you get to actually see what data we’ve tried to compare, unhashed.
+This error is not very descriptive and if you’re not sure what the differences are then you can investigate it a little bit deeper. If you add a key to your appSettings section in web.config you get to actually see what data we’ve tried to compare, unhashed.
 In web.config (on both ends, both source and target), you can add the following key (note: on both the source and target environment):
 
     <add key="DeployHashDebug" value="true" />
