@@ -110,7 +110,7 @@ A customer has "posts" that has two "release date" properties. One is a true dat
         get
         {
           if (!string.IsNullOrEmpty(this.TextDate)) return this.TextDate;
-          if (this.ActualDate != DateTime.MinDate) return this.ActualDate.ToString();
+          if (this.ActualDate != DateTime.MinValue) return this.ActualDate.ToString();
           return this.UpdateDate;
         }
       }
