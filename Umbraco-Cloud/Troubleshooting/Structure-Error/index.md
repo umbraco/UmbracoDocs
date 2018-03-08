@@ -100,4 +100,4 @@ Sometimes you might need to run another extraction on your Cloud environment aft
 1. Access **Kudu** on the affected environment
 2. Use the CMD console (found under the 'Debug console' menu) to navigate to your `site/wwwroot/data/` folder
 3. In the console, type the following command: `echo > deploy`
-4. When the extraction is done, you should see a `deploy-complete` marker, which means the extraction error was successful (and environment indicator will be green on the project page)
+4. When the extraction is done, you should see a `deploy-complete` marker, which means the extraction error was successful (and the environment indicator will be green on the project page)
