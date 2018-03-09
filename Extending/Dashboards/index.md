@@ -50,8 +50,5 @@ There are lots of packages listed on <a href="/projects/?category=Backoffice%20e
 
 For example, the snappily titled <a href="/projects/backoffice-extensions/the-dashboard/">'The Dashboard'</a> provides great information for editorial teams on what has been editied recently and by whom.
 
-
-Checkout the awesome package 'The Dashboard' for provideing great informatino on the editorial status of an Umbraco site.
-
 !['The Dashboard' Dashboard Package](images/the-dashboard-package.png)
 
