@@ -130,7 +130,7 @@ For **Umbraco v7.7.3+**
 
 	<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
 
-This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the environment temporary folder. More info on this setting is available [here](../../../../Reference/Config/webconfig/index.md#umbracolocaltempstorage-umbraco-v7.7.3)
+This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the environment temporary folder. More info on this setting is available [here](../../../../Reference/Config/webconfig/index.md#umbracolocaltempstorage-umbraco-v773)
 
 For **Umbraco v7.6+**
 
