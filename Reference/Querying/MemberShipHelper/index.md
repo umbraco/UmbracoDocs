@@ -40,10 +40,11 @@ Looks for a member with a given username, if found, returns a member profile as 
 ### .GetCurrentLoginStatus()
 Gets the current members login status as a `LoginStatusModel`
 
+### .GetCurrentMember()
+Get the currently logged in member as `IPublishedContent`
 
 ### .GetCurrentMemberProfileModel()
 Gets the current member profile as a `ProfileModel`
-
 
 ### .IsLoggedIn()
 Returns a boolean to state whether there is a member currently logged in.
