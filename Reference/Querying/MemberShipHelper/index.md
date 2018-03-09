@@ -44,6 +44,8 @@ Gets the current members login status as a `LoginStatusModel`
 ### .GetCurrentMemberProfileModel()
 Gets the current member profile as a `ProfileModel`
 
+### .GetCurrentMemberId()
+Gets the currently logged in member id, -1 if they are not logged in.
 
 ### .IsLoggedIn()
 Returns a boolean to state whether there is a member currently logged in.
