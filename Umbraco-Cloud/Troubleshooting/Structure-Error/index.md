@@ -61,7 +61,7 @@ In order to figure out which of the two colliding `.uda` files are the file for 
 
 1.    Access **Kudu** for the Live environment / the environment where the correct Document Type is
 2. Use the CMD console (found under the 'Debug console' menu) to navigate to your `site/wwwroot/data/` folder
-3.    Remove both colliding `.uda` files from the `/data/revision` folder in both `/repository` and `/wwwroot` folder.
+3.    Remove both colliding `.uda` files from the `/data/revision` folder in the `/wwwroot` folder.
 4.    In `/wwwroot/data` run this command: `echo > deploy-export` 
 5.    This will generate a `.uda` file for the Document Type, and this will be the correct one
 6.    Run `echo > deploy` in the same folder, to make sure everything is extracting correctly
