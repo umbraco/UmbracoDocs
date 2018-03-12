@@ -22,7 +22,6 @@ be the exact same api as with those.
 When looking at the currently logged in Member, you will get a `ProfileModel` back, which contains the same data, by with additional methods and properties available
 which are specific to members.
 
-
 ### .GetByEmail(string email)
 Looks for a member with a given email, if found, returns a member profile as `IPublishedContent`
 
@@ -45,6 +44,9 @@ Get the currently logged in member as `IPublishedContent`
 
 ### .GetCurrentMemberProfileModel()
 Gets the current member profile as a `ProfileModel`
+
+### .GetCurrentMemberId()
+Gets the currently logged in member id, -1 if they are not logged in.
 
 ### .IsLoggedIn()
 Returns a boolean to state whether there is a member currently logged in.
