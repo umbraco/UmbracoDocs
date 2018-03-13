@@ -147,3 +147,88 @@ This will return an appropriate HTTP status code and a JSON object like this:
         "message": "User created"
     }
 
+--- 
+
+## Console application example
+
+This is a (very crude) example of how the API could be used from a C# Console application. It creates a project, checks the status of the creation and when it is ready, lets you invite a user to the project:
+
+        using System;
+        using System.Dynamic;
+        using System.Net.Http;
+        using System.Net.Http.Headers;
+        using System.Text;
+        using System.Threading;
+        using Newtonsoft.Json;
+
+        namespace ConsoleApp1
+        {
+            class Program
+            {
+                static void Main(string[] args)
+                {
+                    Console.WriteLine("Token:");
+                    var token = Console.ReadLine();
+
+                    var client = new HttpClient();
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("token", token);
+
+                    Console.WriteLine("Project Name:");
+                    var projectName = Console.ReadLine();
+
+                    Console.WriteLine("Plan:");
+                    var plan = Console.ReadLine();
+
+                    Console.WriteLine("BaselineAlias:");
+                    var baselineAlias = Console.ReadLine();
+
+                    var createdProject = MakeRequest(client, "https://www.s1.umbraco.io/api/public/project/create", null, new { projectName, plan, baselineAlias});
+                    if (createdProject.creationStatus == "Creating")
+                    {
+                        Console.WriteLine("Project was initiated for creation. Start checking status.");
+                        var status = string.Empty;
+                        var finishedCreating = false;
+                        do
+                        {
+                            Thread.Sleep(1000);
+                            var creationStatus = MakeRequest(client, createdProject.creationStatusEndpoint, createdProject.projectId);
+                            finishedCreating = creationStatus.projectIsReady;
+                            status = creationStatus.creationStatus.ToString();
+                            Console.WriteLine($"CreationStatus checked. ProjectIsReady: {finishedCreating}, CreationStatus: {status}.");
+                        } while (finishedCreating == false);
+                    }
+
+                    Console.WriteLine("Project creation via API done");
+                    Console.WriteLine("");
+                    Console.WriteLine("Invite user to the project");
+
+                    Console.WriteLine("Email:");
+                    var email = Console.ReadLine();
+
+                    Console.WriteLine("Name:");
+                    var name = Console.ReadLine();
+
+                    var inviteUserStatus = MakeRequest(client, "https://www.s1.umbraco.io/api/public/project/invite", createdProject.projectId, new { email, name});
+                    Console.WriteLine(inviteUserStatus.message.ToString());
+                    Console.ReadLine();
+                }
+
+                private static dynamic MakeRequest(HttpClient client, string endpoint, string projectId = null, object content = null)
+                {
+                    var message = new HttpRequestMessage(HttpMethod.Post, endpoint);
+                    if (projectId != null)
+                        message.Headers.Add("X-Project-Id", projectId);
+                    if (content != null)
+                        message.Content = new StringContent(
+                            JsonConvert.SerializeObject(content),
+                            Encoding.UTF8,
+                            "application/json"
+                        );
+                    var response = client.SendAsync(message).Result;
+                    if (response.IsSuccessStatusCode)
+                        return JsonConvert.DeserializeObject(response.Content.ReadAsStringAsync().Result);
+
+                    throw new Exception(response.Content.ReadAsStringAsync().Result);
+                }
+            }
+        }
