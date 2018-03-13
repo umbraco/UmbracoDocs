@@ -28,6 +28,8 @@ In the project view, you will have a quick overview of the environments in your 
 * Option to restart environment
 * Access to Power Tools
 
+This is also where you go to manage the environments on your project: Click on **Manage environments** at the top of the page, and you can easily add and/or remove environments as needed. Read more about how the number of environments vary depending on the plan you are on, in the [Project overview](../Project-Overview) article.
+
 Aside from these features, it's also from the project view that changes are deployed from one Cloud environment to another - find out more in the [Cloud-to-Cloud](../../Deployment/cloud-to-cloud) article.
 
 From [Settings](../../Set-up/project-settings) - in the top-right corner - you'll find a lot more options to configure your project.
