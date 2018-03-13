@@ -27,4 +27,4 @@ Anything else not covered above.
 ---
 
 ## [Cloud API](Cloud-API/)
-Learn how to use the Umbraco Cloud REST API to create projects and invite users.
+Learn how to use the Umbraco Cloud REST API to automate project creation and team management.
