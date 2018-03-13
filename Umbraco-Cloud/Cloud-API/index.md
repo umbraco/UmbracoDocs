@@ -79,6 +79,8 @@ The request above will return a JSON object with a `creationStatus` which will t
 
 In the example below the project creation is still under-way:
 
+**Response**
+
     {
         "projectIsReady": false,
         "creationStatus": "Creating",
