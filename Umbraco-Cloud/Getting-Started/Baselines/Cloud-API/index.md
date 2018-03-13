@@ -58,4 +58,92 @@ If everything went as expected, the endpoint will return a `HTTP 200` status cod
         "creationStatusEndpoint": "https://www.s1.umbraco.io/api/public/project/creationstatus"
     }
 
-Because the creation of a project happens asynchronously we are providing you with another endpoint for checking the status of the creation (the creationStatusEndpoint listed in the above object) if you need to know when it is done.
+Because the creation of a project happens asynchronously we are providing you with another endpoint for checking the status of the creation (the creationStatusEndpoint listed in the above object) if you need to know when it is done. Read more about this endpoint below.
+
+### Project creating status
+
+The following endpoint is used to check the status of a project creation:
+
+    POST https://www.s1.umbraco.io/api/public/project/creationstatus
+
+The project id needs to passed along as a HTTP header called `X-Project-Id` - e.g. `X-Project-Id: 2af1dc0e-a454-4956-ba26-59036ac4bb99`
+
+**Request**
+
+    POST https://www.s1.umbraco.io/api/public/project/creationstatus
+    Authorization: token dXNlci1lbWFpbEBleGFtcGxlLmNvbTo2YTViMGM2ODdiNzk3M2RiNGIyNTY4YTU5ZjJjNDQ2ZWUxZWU5ZjlmMDYzMjJmMWJkNjk4MzcxOGE0OGI1YTZj
+    X-Project-Id: 2af1dc0e-a454-4956-ba26-59036ac4bb99
+    Content-Type: application/json
+
+The request above will return a JSON object with a `creationStatus` which will tell you whether a project is created or still in the process of being created.
+
+In the example below the project creation is still under-way:
+
+    {
+        "projectIsReady": false,
+        "creationStatus": "Creating",
+        "creationStatusEndpoint": "https://www.s1.umbraco.io/api/public/project/creationstatus",
+        "backofficeUrl": ""
+    }
+
+You should keep polling this until the `creationStatus` changes to "Created" (or `projectIsReady=true`). The `backofficeUrl` will also be filled with the correct url to the backoffice once the project has been created.
+
+### Invite to project
+
+The following endpoint is used for inviting users to a project. 
+
+    POST https://www.s1.umbraco.io/api/public/project/invite
+
+If the user is a new user we will create the user and send an activation email to the provided email and then add the project to the users overview. If the user is an existing user he/she will get an email telling them that they have been invited to the project.
+
+**Request**
+
+    POST https://www.s1.umbraco.io/api/public/project/invite
+    Authorization: token dXNlci1lbWFpbEBleGFtcGxlLmNvbTo2YTViMGM2ODdiNzk3M2RiNGIyNTY4YTU5ZjJjNDQ2ZWUxZWU5ZjlmMDYzMjJmMWJkNjk4MzcxOGE0OGI1YTZj
+    X-Project-Id: 2af1dc0e-a454-4956-ba26-59036ac4bb99
+    Content-Type: application/json
+                            
+    {
+        "email": "user-email@example.com", // Required
+        "name": "The users name", // Required
+        "isAdmin": false, //Optional
+        "title": "A title that goes into the title of the mail sent to the user", // Optional
+        "message": "A message that goes into the message of the mail sent to the user" // Optional
+    }
+
+This will return an appropriate HTTP status code and a JSON object like this:
+
+**Response**
+
+    {
+        "message": "An invitation to collaborate on 'Project Name' has been sent to 'user-email@example.com'"
+    }
+
+## User endpoints
+
+### Create a user
+
+The following endpoint is used for creating a user on Umbraco.io, and not necessarily add them to a project right away.
+
+    POST https://www.s1.umbraco.io/api/public/user/create
+
+**Request**
+
+    POST https://www.s1.umbraco.io/api/public/user/create
+    Authorization: token dXNlci1lbWFpbEBleGFtcGxlLmNvbTo2YTViMGM2ODdiNzk3M2RiNGIyNTY4YTU5ZjJjNDQ2ZWUxZWU5ZjlmMDYzMjJmMWJkNjk4MzcxOGE0OGI1YTZj
+    Content-Type: application/json
+                            
+    {
+        "email": "user-email@example.com", // Required
+        "name": "The users name", // Required
+        "password": "dontReuseOrRecycleYourPassword" //Required
+    }
+
+This will return an appropriate HTTP status code and a JSON object like this:
+
+**Response**
+
+    {
+        "message": "User created"
+    }
+
