@@ -33,7 +33,7 @@ In addition to just getting a single user, the user service also contains a `Get
     @{
 
         // Get a reference to the user service
-        IUserService us = ApplicationContext.Current.Services.UserService;
+        IUserService us = ApplicationContext.Services.UserService;
 
         // Get a reference to the user by an ID
         IUser user1 = us.GetUserById(0);
