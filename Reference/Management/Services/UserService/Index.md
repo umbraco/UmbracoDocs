@@ -19,13 +19,18 @@ All samples listed in this document will require the following usings:
 	using Umbraco.Core.Services;
 
 ## Getting the service
-The UserService is available through the `ApplicationContext`, but if you are using a `SurfaceController` or the `UmbracoUserControl` then the UserService is available through a local `Services` property.
 
-	Services.UserService
+If you wish to use use the user service in a class that inherits from one of the Umbraco base classes - eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController` - you can access the user service through a local `Services` property:
 
-Getting the service through the `ApplicationContext`:
+	IUserService us = Services.UserService;
+	
+In Razor views, you can access the UserService through the `ApplicationContext` property:
 
-	ApplicationContext.Current.Services.UserService
+	IUserService us = ApplicationContext.Services.UserService
+
+If neither a `Services` property or a `ApplicationContext` is available, you can also reference the `ApplicationContext` class directly:
+
+	IUserService us = ApplicationContext.Current.Services.UserService
 
 ## Samples
 
