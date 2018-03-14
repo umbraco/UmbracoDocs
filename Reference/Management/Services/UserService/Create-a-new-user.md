@@ -4,10 +4,12 @@ The document illustrates how you can create a new backoffice user from a Razor v
 
 
 ### Getting a reference to the UserService
-The first step is to get a reference to the `UserService`. This is useful, as we're using in multiple times, and therefore doesn't have to reference it through `ApplicationContext.Current.Services.UserService` each time:
+The first step is to get a reference to the `UserService`. This is useful, as we're using in multiple times, and therefore doesn't have to reference it through `ApplicationContext.Services.UserService` each time:
 
     // Get a reference to the user service
-    IUserService us = ApplicationContext.Current.Services.UserService;
+    IUserService us = ApplicationContext.Services.UserService;
+    
+If you're using something else than a Razor view, the approach for accessing the user service may be a little different. You can see the [parent page](./) for more examples.
     
 ### Creating the user
 With the reference in place, we can now create the user:
@@ -62,7 +64,7 @@ Again, to make sure the changes are persisted to the database, we need to call t
     @{
     
         // Get a reference to the user service
-        IUserService us = ApplicationContext.Current.Services.UserService;
+        IUserService us = ApplicationContext.Services.UserService;
     
         // Creates a new user
         IUser user = us.CreateUserWithIdentity("john-doe@xample.org", "john-doe@xample.org");
