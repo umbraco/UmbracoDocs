@@ -32,7 +32,7 @@ If you upload a custom avatar through the backoffice, Umbraco will set a value l
     @{
 
         // Get a reference to the user service
-        IUserService us = ApplicationContext.Current.Services.UserService;
+        IUserService us = ApplicationContext.Services.UserService;
 
         // Get a reference to the user
         IUser user = us.GetByEmail("john-doe@xample.org");
