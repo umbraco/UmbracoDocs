@@ -101,7 +101,9 @@ Finally open the web.config file in the root folder, here we will need to set th
 `<add key="owin:appStartup" value="UmbracoStandardOwinStartup" />`
 
 Then add the following in the appSettings aswell: 
+
 `<add key="GoogleOAuthClientID" value="this is where you paste in the client id"/>`
+
 `<add key="GoogleOAuthSecret" value="this is where you paste in the client secret"/>`
 
 And of course fill in the relevant information as the value fields - you can copy paste this from your Google API.
