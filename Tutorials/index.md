@@ -16,6 +16,10 @@ This guide explains how to setup a simple property editor for the backoffice.
 
 Tips and methods for creating multi lingual websites.
 
+### [Add Google authentication to your backoffice](Add-Google-Authentication/index.md)
+
+Learn how you can log in with your Google user in the backoffice.
+
 ### [Starter kit](Starter-kit/index.md)
 
 Information about the basic Umbraco starter kit.
