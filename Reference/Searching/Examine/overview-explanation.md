@@ -90,7 +90,7 @@ Let's look at each of the options.
 
 **supportProtected (optional)**: Set this to true if you want it to index your protected content.
 
-**analyzer (optional)**: The Lucene.Net analyzer to use when storing data. There are a number of different analyzers available and they all do slightly different things. If you want a good overview of the different analyzers check out <http://www.aaron-powell.com/lucene-analyzer>
+**analyzer (optional)**: The Lucene.Net analyzer to use when storing data. There are a number of different analyzers available and they all do slightly different things. If you want a good overview of the different analyzers check out <https://www.aaron-powell.com/posts/2010-05-27-lucene-analyzer/>
 
 **enableDefaultEventHandler (optional)**:Will automatically listen for Umbraco events and index when required. If you are relying on the standard Umbraco events, setting this False could be a simple way of disabling indexing if required.
 
@@ -249,7 +249,7 @@ The resultant query would look like this:
 
 The ^5 is the equivalent of .Boost(5)
 
-So as you can see, it can get pretty complex but also pretty powerful.  For more information I really suggest that you take the time to look through the official Lucene query syntax guide http://lucene.apache.org/java/2_4_0/queryparsersyntax.html as it will show you what can be used to achieve very complicated queries.
+So as you can see, it can get pretty complex but also pretty powerful.  For more information I really suggest that you take the time to look through the official Lucene query syntax guide https://lucene.apache.org/core/2_9_4/queryparsersyntax.html as it will show you what can be used to achieve very complicated queries.
 
 We haven't gone into the output of results but quickly here is what you could end up with in your codebehind using the above Raw query:
 
@@ -270,6 +270,9 @@ And then in your code front the objects that you are iterating over are of type 
 
 In conclusion Examine is awesome and with a little bit of information and a little patience to get to know it, you can be up and running with some very complex querying.
 
-## Umbraco.TV
-There are video tutorials on Umbraco.TV detailing how to set-up and use Examine search indexes.
-<http://umbraco.com/help-and-support/video-tutorials/developing-with-umbraco/examine.aspx>
+## Examine Videos
+There are a few videos covering Examine available online:
+
+- [CodeGarden '10: Web Search With Examine](http://stream.umbraco.org/video/635188/codegarden-10-web-search-with) (Shannon Deminick)
+- [Umbraco Examine and Lucene.NET : Umbraco UK Festival 2012](https://www.youtube.com/watch?v=6AMb0rrSrJw) (Ismail Mayat)
+- [Searching - Let users find your content](https://www.youtube.com/watch?v=ShzdJm87hzM) (Casper Andersen)

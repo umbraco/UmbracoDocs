@@ -1,6 +1,6 @@
-#Tag support for property editors
+# Tag support for property editors
 
-##What is tag support?
+## What is tag support?
 
 This document will explain how to add tagging support to property editors and what tagging support means. A property editor that has tag support enabled means 
 that any time a document is published (or saved in the case of media/members) that has a property editor with tagging support, the tags the are exposed
@@ -9,7 +9,7 @@ to query or render content based on tags on the front-end.
 
 *NOTE: The documentation for querying tag data is coming soon....*
 
-##Enabling tag support
+## Enabling tag support
 
 This will explain both ways to enable tag support for property editors: both in c# or by the manifest.
 

@@ -1,10 +1,10 @@
-#Language Files & Localization
+# Language Files & Localization
 
 Language files are used to translate the Umbraco back office user interface so that end users can use Umbraco in their native language. This is particularly important for content editors who do not speak English.
 
 If you are a package developer, [see here for docs on how to include translations for your own package](Language-Files-For-Packages/index.md).
 
-##Supported Languages
+## Supported Languages
 Current languages that are included in the core are:
 
 - English (UK)
@@ -25,21 +25,21 @@ Current languages that are included in the core are:
 - Swedish
 - Chinese (Simple)
 
-##Where to find the language files
+## Where to find the language files
 
-###Core language files
+### Core language files
 The core Umbraco language files are found at the following location within the Umbraco source:
 
 	Umbraco-CMS/src/Umbraco.Web.UI/Umbraco/Config/Lang/
 	
 These language files are the ones shipped with Umbraco and should not be modified. 
 
-###Package language files
+### Package language files
 If you are a package developer, [see here for docs on how to include translations for your own package](Language-Files-For-Packages/index.md), package language files are located in:
 
 	~/app_plugins/mypackage/lang/{language}.xml
 
-###User language files
+### User language files
 If you want to override Umbraco core translations or translations shipped with packages, you can do that too, these files are located here:
 
 	~/config/lang/{language}.user.xml
@@ -70,7 +70,7 @@ Or from a controller by using the `LocalizationService` which returns a async tr
 	                element.html(value);
     });
 
-##Help keep the language files up to date
+## Help keep the language files up to date
 
 As Umbraco is a continually evolving product it is inevitable that new text is added on a fairly regular basis to the English language version of these files and this may mean that some of the above languages are no longer up to date.
 

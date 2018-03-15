@@ -10,7 +10,7 @@ Version 7.7.0 introduces User Groups and a better user management and security f
 
 For a full list of breaking changes see: [the list on the issue tracker](http://issues.umbraco.org/issues/U4?q=Due+in+version%3A+7.7.0+Backwards+compatible%3F%3A+No+) 
 
-Version 7.7.0 no longer ships with the `CookComputing.XmlRpcV2` assembly so if you reference this assembly or have a package that requires this assembly, you may need to copy it back into your website from the backup you've taken before you began the 7.7.0 upgrade.
+Version 7.7.2 no longer ships with the `CookComputing.XmlRpcV2` assembly so if you reference this assembly or have a package that requires this assembly, you may need to copy it back into your website from the backup you've taken before you began the 7.7.2 upgrade.
 
 This version also ships with far less client files (i.e. js, css, images) that were only relevant for very old versions of Umbraco (i.e. < 7.0.0). There might be some packages that were referencing these old client files so if you seen missing image references you may need to contact the vendor of the package in question to update their references.
 

@@ -59,7 +59,7 @@ Add the following html to the WelcomeDashboard.html
 
 ## Configuring the dashboard to appear
 
-Open up your dashboard.config file from the /config folder of your site. [Explanation of the Dashboard Config settings are here...](../../Extending/Dashboards/index.md)
+Open up your dashboard.config file from the /config folder of your site. [Explanation of the Dashboard Config settings are here...](../../Reference/Config/dashboard/index.md)
 
 Add the following section:
 
@@ -288,6 +288,7 @@ Putting this together:
                 console.log(logEntries);
                 vm.LogEntries = logEntries;
             });
+       });
  
 Finally update our view to use the additional retrieved entity information:
 

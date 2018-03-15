@@ -1,9 +1,9 @@
-#Members
+# Members
 *Members are used for registering and authenticating external users of an Umbraco installation (ie. forum members, intranet users and so forth). Unlike with Document Types and Media Types everything is done in the Members section both defining and creating, and editing members. This guide will explain how to define and create members in the backoffice. If you want to work with members using the service APIs, links can be found at the end of document*
 
 There is a default Member Type that can be used to create members. You can of course customize it to fit your needs or create your own from scratch.
 
-##Creating a member
+## Creating a member
 Go to __Members__ section, click the menu icon next to __Members__ in the member tree and select __Member__. Members have a number mandatory properties. So aside from filling out the name you will need to fill out  __Login__, __Email__ and __Password__ on the __Properties__ tab before the member can be saved.
 
 There is also a number of default properties on the __Membership__ tab:
@@ -18,14 +18,14 @@ There is also a number of default properties on the __Membership__ tab:
 
 Once the member is created and saved you can access it by expanding the members tree and click __All Members__ to get a list view (with real time search) or select the member type to filter by, by selecting it in the Members tree.
 
-##Creating a Member Type
+## Creating a Member Type
 You can create your own Member Types and add properties and tabs just as with Document Types.
 
 Go to the __Members__ section, click the menu icon next to __Member Types__ and select __Create__. Name the new Member Type and click the __Create__ button.
 
 You are now taken to the Member Type editor that is used to define and edit the Memeber Type. It consists of three tabs: __Info__, __Generic Properties__ and __Tabs__.
 
-###Info
+### Info
 ![Members Info tab](images/Members-Info.jpg)
 Shows basic information about the Member Type and settings for custom properties.
 
@@ -42,11 +42,11 @@ __Property settings:__ If properties are added to the Member Type you can contro
   - __Member can edit:__ A logged in member can edit this property.
   - __Show on profile:__ The property will show on the profile for member that is logged in.
 
-###Generic Properties
+### Generic Properties
 ![Genric properties tab](images/Members-Generic-Properties.jpg)
 Create. edit and organize properties for this Member Type.
 
-#####Adding properties
+##### Adding properties
 To add a property to the Member Type select __Click here to add new property__.
 
 __Name:__ The name  of the property.
@@ -63,24 +63,24 @@ __Validation:__ Add a regular expression to validate the property upon save.
 
 __Description:__ The description will be displayed below the property name when creating/editing the member. A good description is important to the editing experience.
 
-#####Organizing properties
+##### Organizing properties
 Organize properties with drag and drop. If multiple tabs exists it is possible to drag properties between the different tabs.
 
-###Tabs
+### Tabs
 ![Members Tabs tab](images/Members-Tabs.jpg)
 A new tab is created by entering a name into the input field and pressing the __New tab__ button.
 
-#####Name and sort order
+##### Name and sort order
 Renaming a tab is done simply by changing the name in the input field and saving the Document Type. To change the order of tabs use the drag and drop handle to the left or enter a numeric value in the second input field. Tabs will be displayed from left (lowest value) to right (highest value) in the content section.
 
-##Creating Member Groups
+## Creating Member Groups
 Member Groups defines roles for your members that can be used for role based protection. A member can be in multiple groups.
 
 ![Creating a Member Group](images/Member-Groups-Create.jpg)
 
 To create a new Member Group click the menu icon next __Member Groups__ node in the Members section. Choose __Create__, name the group and save the group.
 
-###Assigning a Member Group
+### Assigning a Member Group
 To assign a member to a specific group find the member you wish to assign and go to the __Properties__ tab. Under the Member Group property there are two columns:
 
 ![Assigning a Member Group](images/Member-Groups-Assign.jpg)
@@ -89,20 +89,25 @@ __NOT A MEMBER OF GROUP(S):__ Lists all the groups that the member is not a part
 
 __MEMBER OF GROUP(S):__ Lists all the groups that the member is part of. To remove the member from a group simply click it and it will move to the other column.
 
-#Technical
+# Sensitive data
+Umbraco 7.9.0 provides the ability to mark members as sensitive. A sensitive members's data will not be displayed to backoffice users unless they have appropriate permissions.
+
+More information can be found under [security](../../../Reference/Security/#sensitive-data).
+
+# Technical
 As a developer you are able to leverage your website easily when you build on the members section of Umbraco.  
 Although the member section is by default in the Umbraco backoffice.  You will have some work to implement it on the front end of your website.
 The members come from a custom Asp.net membership provider.  While the member groups are coming from a custom Role provider. Both are defined in the web.config.
 You can find out more about the services methods in the reference section of the documentation by following the links below .
 
-###More information
+### More information
 - [Customizing Data Types](../Data-Types/)
 
-###Related Services
+### Related Services
 - [MemberService](../../../Reference/Management/Services/MemberService.md)
 - [MemberType Service](../../../Reference/Management/Services/MemberTypeService.md)
 - [MemberGroup Service](../../../Reference/Management/Services/MemberGroupService.md)
 
-###[Umbraco.TV](http://umbraco.tv)
+### [Umbraco.TV](http://umbraco.tv)
 - [Chapter: Members](http://umbraco.tv/videos/umbraco-v7/content-editor/administrative-content/members/what-is-a-member/)
 - Member API chapter *(Coming soon)*

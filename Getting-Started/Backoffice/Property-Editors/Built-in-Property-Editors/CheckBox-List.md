@@ -1,4 +1,4 @@
-#Checkbox List
+# Checkbox List
 
 `Returns: Comma Separated String`
 
@@ -6,17 +6,17 @@ Displays a list of preset values as a list of checkbox controls. The text saved 
 
 NOTE: Unlike other property editors, the Prevalue IDs are not directly accessible in Razor
 
-##Data Type Definition Example
+## Data Type Definition Example
 
 ![True/Checkbox List Definition](images/wip.png)
 
-##Content Example 
+## Content Example 
 
 ![Checkbox List Example](images/wip.png)
 
-##MVC View Example
+## MVC View Example
 
-###Typed:
+### Typed:
 
 	@{
 	  if (Model.Content.HasValue("superHeros")){                                                     
@@ -28,7 +28,7 @@ NOTE: Unlike other property editors, the Prevalue IDs are not directly accessibl
 	  }
 	}
 
-###Dynamic: 
+### Dynamic: 
 
 	@{
 	    if (CurrentPage.HasValue("superHeros"))

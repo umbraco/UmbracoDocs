@@ -1,32 +1,26 @@
-#Troubleshooting Content deployments on Umbraco Cloud
-##When working on Umbraco Cloud
+# Troubleshooting Content deployments on Umbraco Cloud
 
-If the schema (this includes DocumentTypes, MediaTypes, DataTypes, Templates, Macros and Dictionary items) is different between the two environments you are deploying between, you will need to deploy the updates for these before you can complete the Content deployment (this can contain Media from the Media section as well). Environments needs to be in-sync before a Content and/or Media deployment can succeed.
+## When working on Umbraco Cloud
 
-While Content deployments are done using the Umbraco backoffice you use the Umbraco Cloud Portal in order to deploy the schema changes, which exists on disk and are deployed through the underlying git repository. The deployment using git is simple to do, just a click of a button, so you don't have to worry about this part. You should see a number of pending changes between your environments (typically Development and Live for Agency Projects), so just click the "Deploy x commits to Live" button and wait for it to finish. When it’s done, all of the schema changes from the source environment (typically Development) will have been deployed to and extracted in the destination environment (typically Live).
+If the schema (this includes DocumentTypes, MediaTypes, DataTypes, Templates, Macros and Dictionary items) is different between the two environments you are deploying between, you will need to deploy the updates for these before you can complete the Content transfer (this can contain Media from the Media section as well). Environments need to be in-sync before a Content and/or Media transfer can succeed.
 
-Now that the schema changes are in sync between your Project's environments you should be able to deploy your Content changes through the Umbraco backoffice. Go to the Deployment dashboard in the Content section and reload the queue if it’s not shown. In some cases the queue may have been reset during the previous deployment, so if it remains empty please go back and select the Content and/or Media that you want to deploy.
+While Content and Media transfers are done using the Umbraco backoffice you use the Umbraco Cloud Portal in order to deploy the schema changes, which exists on disk and are deployed through the underlying git repository. 
+
+The deployment between your Umbraco Cloud environments is simple to do - simply follow the steps outlined the [Cloud to Cloud](https://our.umbraco.org/documentation/Umbraco-Cloud/Deployment/Cloud-to-Cloud/) article.
 
 If you continue to see conflicts between the schema parts that were deployed then please refer to the Debugging section below.
 
-##Debugging
+## Debugging
 
-If you continue to see conflicts between the schema parts (being DocumentTypes, DataTypes, Templates, etc.) that was just deployed you need to dive into the log files to debug exactly what the problem is.
+When you run into schema mismatch errors, they will usually look something like this:
 
-In order to find the log entries that deals with conflicts in the schema you should log for an entry like the following:
+![Schema Mismatch error message](images/schema-mismatch-on-transfer.png)
 
+In this error message, you are able to see exactly which schema mismatches is preventing the content transfer. If you do not have any pending deployments in your source environment (Development or Staging) in the Umbraco Cloud Portal, there are two ways to go about resolving the schema mismatch:
 
-    2015-04-27 14:59:20,546 [10] INFO  Umbraco.Courier.Core.Packaging.RevisionPackaging - [Thread 45] Document types: Home hash-mismatch (local/remote) e5c6dc5f2eee6521b2d024f7777bbd9e / 2628e7c3e4bc7215fd398a2bbb13f423
+1. On the source environment (Development or Staging) make a minor change to the schema with mismatches (in the example above it would be the **Homepage** document type). Deploy the change to the next environment
+    * This will update your schema in the target environment (Staging or Live) and ensure it's in sync with the source environment
+2. If the mismatches are differences to `aliases` or `names`, changing these manually on the target environment will enable you to transfer your content
+    * Do **not** make any major schema changes or create new schema on the Staging or Live environments. There is no way to sync these changes down to your *lower* environments
 
-This error is not very descriptive and if you’re not sure what the difference are then you can investigate it a little bit deeper. If you add a key to your appSettings section in web.config you get to actually see what data we’ve tried to compare, unhashed.
-In web.config (on both ends, both source and target), you can add the following key (note: on both the source and target environment):
-
-    <add key="DeployHashDebug" value="true" />
-
-Now when you get the above error, you’ll get the same message with a little more information:
-
-![clone dialog](images/image07.png)
-
-Using a text compare tool like WinMerge we can pretty easily figure out that the property “Test” was added to the local document type but isn’t found on the remote instance.
-
-![clone dialog](images/image00.png)
+**NOTE**: If your project is using Umbraco Courier, please refer to this article instead: [Schema Mismatches with Courier](../../Courier/Schema-Mismatch-Courier)

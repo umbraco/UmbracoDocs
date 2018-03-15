@@ -1,4 +1,4 @@
-#MediaService Events#
+# MediaService Events#
 
 The MediaService class implements IMediaService. It provides easy access to operations involving IMedia.
 

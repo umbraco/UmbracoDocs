@@ -1,8 +1,8 @@
-#Querying & Traversal
+# Querying & Traversal
 
 _This section will describe how you can render content from other nodes besides the current page in your MVC Views_
 
-##Querying for content and media by id
+## Querying for content and media by id
 
 The easiest way to get some content by Id is to use the following syntax (where 1234 is the content id you'd like to query for):
 	
@@ -30,7 +30,7 @@ The same query structures apply to media:
 	@Umbraco.Media(9999,8888,7777)	
 
 
-##Traversing
+## Traversing
 
 All of these extension methods are available on `Umbraco.Core.Models.IPublishedContent` so you can have strongly typed access to all of them with intellisense for both content and media. Additionally, all of these methods are available for the dynamic model representation too. The following methods return `IEnumerable<IPublishedContent>` (or dynamic if you are using @CurrentPage)
 
@@ -70,13 +70,13 @@ Additionally there are other methods that will return a single `IPublishedConten
 	Sibling(int number)
 	Sibling(string nodeTypeAlias)
 
-##Complex querying (Where)
+## Complex querying (Where)
 
 With the `IPublishedContent` model we support strongly typed Linq queries out of the box so you will have intellisense for that too. We also still support all of the dynamic query access that was supported for razor macros, however in some very minor cases the same syntax may not be supported. In some cases the dynamic queries may be less to type and in some cases the strongly typed way might be less to type so it will ultimately be your preference for what you use and you can most definitely inter-mingle the two.
 
-###Some examples
+### Some examples
 
-####Where children are visible
+#### Where children are visible
 
 	//dynamic access
 	@CurrentPage.Children.Where("Visible")
@@ -84,7 +84,7 @@ With the `IPublishedContent` model we support strongly typed Linq queries out of
 	//strongly typed access
 	@Model.Content.Children.Where(x => x.IsVisible())
 
-####Traverse for sitemap
+#### Traverse for sitemap
 
 	//dynamic access
 	var values = new Dictionary<string,object>();
@@ -94,7 +94,7 @@ With the `IPublishedContent` model we support strongly typed Linq queries out of
 	//strongly typed access
 	var items = @Model.Content.Children.Where(x => x.IsVisible() && x.Level <= 4)
 
-####Content sub menu
+#### Content sub menu
 
 	//dynamic access
 	//NOTE: you can also use NodeTypeAlias but is recommended to use DocumentTypeAlias
@@ -103,7 +103,7 @@ With the `IPublishedContent` model we support strongly typed Linq queries out of
 	//strongly typed
 	@Model.Content.AncestorOrSelf(1).Children.Where(x => x.DocumentTypeAlias == "DatatypesFolder").First().Children
 
-####Complex query
+#### Complex query
 
 Some complex queries cannot be written dynamically because the dynamic query parser may not understand precisely what you are coding. There are many edge cases where this occurs and for each one the parser will need to be updated to understand such an edge case. This is one reason why strongly typed querying is much better.
 
