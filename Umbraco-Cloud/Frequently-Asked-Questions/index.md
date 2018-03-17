@@ -4,7 +4,7 @@
 
 ### Can I try before I pay?
 
-Yes, your first project on Umbraco Cloud comes with a free 14 day trial period.
+Yes, you can [take a free trial of Umbraco Cloud](https://umbraco.com/campaigns/try-umbraco-today/) and test it for 14 days with no obligation to buy.
 
 ### Is it a special version of Umbraco that’s used?
 
@@ -12,23 +12,25 @@ No. It's the same as the latest version of Umbraco that you can download.
 
 ### Can I run my high traffic site on Umbraco Cloud?
 
-Currently we have benchmarked a "well built" site with approximately 50,000 unique visitors per day (~1.5mm per month) that performs very well.
+Currently we have benchmarked a "well built" site with approximately 50,000 unique visitors per day (~1.5mm per month) that performs very well. For business critical, high traffic sites, we recommend that you look into Umbraco Cloud Professional and Umbraco Cloud Enterprise possibly in combination with a dedicated server.
 
 ### Can my site auto-scale or use dedicated worker resources?
 
-Not currently, but something we’re investigating as a future feature.
+Your site can't currently auto-scale, but it is something we’re investigating as a future feature. We do offer dedicated worker resources. [Reach out to us if you want to know more](https://umbraco.com/contact-us/).
 
 ### Can I setup a load balanced Umbraco Cloud site?
 
 Not currently.
 
-### Can I move my site away from Umbraco Cloud?
+### Can I move my site from Umbraco Cloud?
 
 Of course. Umbraco Cloud uses the very same Umbraco version that you can download and use on your own. So if you decide that Umbraco Cloud isn’t right for you or your sites then you can clone your site, restore your data locally, and delete your Umbraco Cloud project. We’ll be sad to see you go, but we understand there is a huge variety in requirements so we support and encourage you to choose the best solution for your specific site needs.
 
 ### Can I move my existing site to Umbraco Cloud?
 
 Umbraco Cloud is best when used as the base for a new project. There is a specific way of working with Umbraco and Umbraco Cloud in order to take full-advantage of the service. That’s not to say you can’t migrate an existing site, only that some changes may be required in order for your site to fully work with Umbraco Cloud. For more information [read our guide to moving an existing site](https://our.umbraco.org/documentation/Umbraco-Cloud/Deployment/Migrate-Existing-Site/).
+
+---
 
 ## Technology
 
@@ -57,6 +59,12 @@ one Umbraco Cloud site - make sure to contact us if you need more than that
 
 In our experience there is only a few Cloud sites that have experienced these limitations and we're happy to work with people who have sites affected by these limitations.
 
+### Can I use Cloudflare in front of my Umbraco Cloud site
+
+Yes. Point the DNS for your to Cloudflare and tell Cloudflare about the IP address of your Umbraco Cloud site to use Cloudflare's full feature set.
+
+---
+
 ## Upgrades
 
 ### When does Umbraco get upgraded in the various projects?
@@ -69,6 +77,19 @@ We automatically upgrade to the latest patch version of Umbraco CMS (such as 7.4
 
 [Read more about upgrades](https://our.umbraco.org/documentation/Umbraco-Cloud/Upgrades/)
 
+### My project didn't receive the auto-upgrade. Why?
+
+When we roll out auto-upgrades to Umbraco Cloud projects the very first thing that happens is a check of all environments on a project. This check will verify whether the environments are responding and doesn't return an HTTP status error. If the auto-upgrader encounters HTTP status errors on any of the environments during this check, the upgrade process is aborted, and your project will not receive the upgrade.
+
+Another reason why your project wasn't auto-upgraded could be, that it failed the test we perform after applying the auto-upgrade. This test compares the state of an environment from before the upgrade with the state of the same environment after the ugprade - if they do not match, we take the appropriate measures to rollback the environment to it's previous state and abort the upgrade of any remaining environments.
+
+Other reasons why you didn't receive the auto-upgrade:
+
+ - If you are doing a deployment at the time we tried to run the auto-upgrader on your project
+ - If your environments aren't running the same minor version - e.g. if you are in the middle of upgrading to a new minor version, and one environment is running 7.6.x while another environment on the same project is running 7.7.x.
+
+You can find all the steps of the auto-upgrade process outlined in the [Upgrades](https://our.umbraco.org/documentation/Umbraco-Cloud/Upgrades/#the-process-of-auto-upgrading-an-umbraco-cloud-project) article.
+
 ### Does leaving pending commits (dev to live) derail the upgrade process?
 
 Pending commits won't stop the auto-upgrade.
@@ -78,6 +99,15 @@ Pending commits won't stop the auto-upgrade.
 Yes, that’s fine. In some cases you may want to upgrade sooner than the scheduled service upgrade or you may have a site we couldn't upgrade automatically for one reason or another.
 
 Do note, however that you will need to step through the upgrade installer manually on each environment, including live. Our automated upgrader makes sure that visitors to your live site will not be prompted to log in to the upgrade installer.
+
+
+### I have customized files that Umbraco ships with, will they be overwritten during upgrades?
+
+You will have to assume that every time we upgrade your site, any file that comes with Umbraco by default will be overwritten. Generally we only overwrite the files that have been changed in the newest release but there is no guarantee for that. So if you (for example) have customized the login page then you can assume it will be reverted on each upgrade. 
+
+As a workaround you could have an [ApplicationEventHandler](https://our.umbraco.org/Documentation/Reference/Events/Application-Startup#use-applicationeventhandler-to-register-events) in which you check if the file is different from your customized file and overwrite it again. Note that this is NOT possible if you customize any of the Umbraco dll files.
+
+---
 
 ## Testing
 
@@ -98,6 +128,8 @@ It is strictly forbidden to attempt to do a denial of service attack on your Clo
 We would like to talk to you beforehand about your test plan for a load test on your Cloud site.
 
 Please contact us using the chat button at the bottom right corner of the [Umbraco Cloud portal](https://www.s1.umbraco.io/). 
+
+---
 
 ## Security and encryption
 
@@ -124,6 +156,56 @@ There is no vulnerable data in this cookie and manipulating or stealing this coo
 In the future, the cookie will be set to `HttpOnly` on Umbraco Cloud to conform to best practices. This does not mean that there's anything wrong with the current way it is set.
 
 For more information see [the related github issue](https://github.com/Azure/app-service-announcements/issues/12).
+
+### Can I use wildcard certificates on Umbraco Cloud? How about an EV, DV or OV certificate?
+
+Yes. You can use any valid certificate on Umbraco Cloud.
+
+### I get a warning that "your connection is not private" and the certificate is served for *.umbraco.io
+
+It seems that you didn't send up the bindings for the specific domain where this warning is showing. Check the bindings by going to the site in [the portal](https://www.s1.umbraco.io) by going to the "Manage hostnames" section for your site.
+
+### How can I control who accesses my backoffice using IP filtering?
+
+On Cloud it is easy to add an IP filter of your choosing, there's a few things you need to pay attention to though: Umbraco Deploy will need to be able to talk to the different environments in your Cloud website (development, staging, live) and you should of course still be able to use the site locally.
+
+The following rule can be added to your web.config (in `system.webServer/rewrite/rules/`):
+
+    <rule name="Backoffice IP Filter" enabled="true">
+        <match url="(^umbraco/backoffice/(.*)|^umbraco)"/>
+        <conditions logicalGrouping="MatchAll">
+
+            <!-- Umbraco Cloud to Cloud connections should be allowed -->
+            <add input="{REMOTE_ADDR}" pattern="52.166.147.129" negate="true" />
+            <add input="{REMOTE_ADDR}" pattern="13.95.93.29" negate="true" />
+            <add input="{REMOTE_ADDR}" pattern="40.68.36.142" negate="true" />
+            <add input="{REMOTE_ADDR}" pattern="13.94.247.45" negate="true" />
+            
+            <!-- Don't apply rules on localhost so your local environment still works -->
+            <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
+
+            <!-- Add other client IPs that need access to the backoffice -->
+            <add input="{REMOTE_ADDR}" pattern="123.123.123.123" negate="true" />
+
+        </conditions>
+        <action type="CustomResponse" statusCode="403"/>
+    </rule> 
+
+What we're doing here is blocking all the requests to `umbraco/backoffice/` and all of the routes that start with this. 
+
+All of the Umbraco APIs use this route as a prefix, including Umbraco Deploy. So what we need to do first is to allow Umbraco Cloud to still be allowed to access the Deploy endpoints. That is achieved with the first 4 IP addresses, they're specific to the servers we use on Cloud.
+
+You will notice that the regex `^umbraco/backoffice/(.*)|^umbraco` also stops people from going to `yoursite.com/umbraco`, so even the login screen will not show up. Even if you remove the `|^umbraco` part in the end, it should be no problem. You'll get a login screen but any login attempts will be blocked before they reach Umbraco (because the login posts to `umbraco/backoffice/UmbracoApi/Authentication/PostLogin`).
+
+Then the last IP address is just an example, you can add the addresses that your organization uses as new items to this list.
+
+*Note*: It is possible to change the `umbraco/` route so if you've done that then you need to use the correct prefix. Doing this on Cloud is untested and at the moment not supported. 
+
+### Does Umbraco Cloud use Transparent Data Encryption (TDE) for databases?
+
+Yes, every site created after May 2nd 2017 will have TDE enabled by default. For older sites we can enable this by request.
+
+---
 
 ## Building and deploying
 
@@ -158,6 +240,8 @@ Note that custom database tables and data do not replicate automatically accross
 
 Yes it is! Websockets are enabled on all sites.
 
+---
+
 ## Package support
 
 ### Do you support package "x" on Umbraco Cloud?
@@ -184,6 +268,8 @@ These problems can be solved with so-called Umbraco Deploy connectors. We've set
 The code in the contrib project has plenty of code comments to help you understand what is going on and how you can build something like that for your own package.
 
 If you need help with this, don't hesitate to reach out to us and we'll be happy to give you some tips.
+
+---
 
 ## Backups and data retention
 

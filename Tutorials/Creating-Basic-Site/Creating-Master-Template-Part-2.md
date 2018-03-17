@@ -1,4 +1,4 @@
-#Creating More Pages Using the Master - Part 2
+# Creating More Pages Using the Master - Part 2
 
 ## Creating a Contact Us Page 
 
@@ -73,13 +73,13 @@ Our **_Content tree_** will now reload and there will be a **_Contact Us_** page
 
 e.g.  change the lines in the Master Template:
 
-####CSS
+#### CSS
 From: `<link rel="stylesheet" href="css/style.css">`
 
 
 To: `<link rel="stylesheet" href="/css/style.css">`
 
-###JS
+### JS
 From: `<script src="js/libs/modernizr-2.0.6.min.js"></script>`
 
 
@@ -126,5 +126,5 @@ Click **_Save_** and reload our Contact Us page.
 
 
 ---
-##Next - [Master Template The Navigation Menu](Master-Template-The-Navigation-Menu.md)
+## Next - [Master Template The Navigation Menu](Master-Template-The-Navigation-Menu.md)
 A simple solution for the template in the menu. 

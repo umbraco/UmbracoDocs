@@ -1,14 +1,14 @@
-#Creating Html Forms
+# Creating Html Forms
 
 _Creating an HTML form to submit data with MVC in Umbraco is very easy! You'll need to create a SurfaceController, a 'View Model' class and use a handy HtmlHelper extension method called BeginUmbracoForm._
 
-##Quick links - MVC form tutorials
+## Quick links - MVC form tutorials
 
 * [Creating an MVC form using a Partial View](Forms/tutorial-partial-views.md)
 * [Creating an MVC form using a Child Action](Forms/tutorial-child-action.md)
 * [Creating an MVC form with custom html markup](Forms/tutorial-custom-markup.md)
 
-##Creating a form - The View Model
+## Creating a form - The View Model
 
 First off we need to define the data that will be submitted, this is done by creating a 'View Model' class. Here's an example:
 	
@@ -27,7 +27,7 @@ First off we need to define the data that will be submitted, this is done by cre
 
 This class defines the data that will be submitted and also defines how the data will be validated upon submission and conveniently for us MVC automatically wires up these validation attributes with the front-end so JavaScript validation will automagically occur.
 
-##Creating the SurfaceController Action
+## Creating the SurfaceController Action
 
 Next up, we need to create an Action on a SurfaceController which accepts our submitted View Model. Here's an example (this is a locally declared controller):
 
@@ -61,7 +61,7 @@ Next up, we need to create an Action on a SurfaceController which accepts our su
 		}
 	}
 
-##Using BeginUmbracoForm
+## Using BeginUmbracoForm
 
 Lastly we need to render the HTML form to ensure that it posts to the surface controller created. The easiest way to do this is to create a separate PartialView to render your form with the model type declared as your ViewModel. There's a few overloads for the BeginUmbracoForm method, we'll start with the simplest one:
 
@@ -75,7 +75,7 @@ Lastly we need to render the HTML form to ensure that it posts to the surface co
 
 The above code snippet is a PartialView to render the form. Because the Model for the view is the ViewModel we want to scaffold the form, we can just do an `@Html.EditorFor(x => Model)` to automatically create all of the input fields.
 
-####BeginUmbracoForm Overloads
+#### BeginUmbracoForm Overloads
 
 This lists the different overloads available for BeginUmbracoForm:
 
@@ -102,7 +102,7 @@ This lists the different overloads available for BeginUmbracoForm:
 	BeginUmbracoForm(this HtmlHelper html, string action, string controllerName, string area)
 	BeginUmbracoForm(this HtmlHelper html, string action, string controllerName, string area, object additionalRouteVals, IDictionary<string, object> htmlAttributes)
 
-##Understanding the Routing Process
+## Understanding the Routing Process
 
 There's been numerous cases of people attempting to return a PartialView directly from their [HttpPost] action due to not fully understanding the routing process of POSTing data to the server. This will explain the sequence of events. For this example we'll assume that the page that is rendering is at the address: http://mysite.com/feedback
 
@@ -137,7 +137,7 @@ There's been numerous cases of people attempting to return a PartialView directl
 
 So you can see that if you returned a Partial View from within your [HttpPost] action, the only thing that would happen is that you'd end up displaying only the markup for the partial view to the end-user because you are not sending the request back to Umraco.
 
-##Display success messages
+## Display success messages
 
 Displaying a success message is easy. You can either send the user to a totally different page. For example you could use `return RedirectToUmbracoPage(nodeId)`. This page would typically be a child of the page where the form is located in, which is hidden in the navigation.
 

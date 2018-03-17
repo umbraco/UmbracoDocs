@@ -1,10 +1,10 @@
-#JQuery coding guidelines
+# JQuery coding guidelines
 
 _Ensure that you have read the [JavaScript Guidelines](js-guidelines.md) document before continuing. As documented in [JavaScript Guidelines](js-guidelines.md) method names are named in "camelCase" and therefore jQuery plugins (since they are methods) are named as "camelCase"._
 
 Just like with other JavaScript in the Umbraco back-office, you need to wrap your class in the jQuery self executing function if you want to use the dollar ($) operator.
 
-##Simple jQuery plugins
+## Simple jQuery plugins
 Simple jQuery plugins don't require an internal class to perform the functionality and therefor do not expose or return an API. These could be as simple as vertically aligning something:
 
 	(function($) {
@@ -18,10 +18,10 @@ Simple jQuery plugins don't require an internal class to perform the functionali
 	    };
 	})(jQuery);
 
-##Standard jQuery plugins
+## Standard jQuery plugins
 Most jQuery plugins will expose an API or a way in which a developer can interact with the plugin, not just instantiating it. To do this we need to create a class that does the work of the plugin and then expose that class via a different jQuery plugin.
 
-###Naming Conventions
+### Naming Conventions
 There are many different ways to expose an API for a jQuery plugin, in Umbraco the standard will be:
 
 * `$("#myId").myFirstJQueryPlugin();` = to instantiate the plugin
@@ -29,7 +29,7 @@ There are many different ways to expose an API for a jQuery plugin, in Umbraco t
 
 So essentially, we'll be creating 2 plugins, one to instantiate it and one to retrieve the API. The naming conventions are obvious, create your plugin name and then append the term *Api* to it to create your API plugin name.
 
-###Creating the plugins
+### Creating the plugins
 
 //using the same vertical align concept but we'll expose an API for it
 //( not that this is very useful :) )
@@ -83,7 +83,7 @@ Umbraco.Sys.registerNamespace("MyProject.MyNamespace");
 	 
 	})(jQuery);
 
-###Consuming the plugins
+### Consuming the plugins
 
 To use the plugin and api is very easy:
 

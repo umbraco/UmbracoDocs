@@ -1,4 +1,4 @@
-#MemberGroupService
+# MemberGroupService
 
 **Applies to Umbraco 7.1 and 6.2 and newer**
 
@@ -21,7 +21,7 @@ All samples in this document will require the following usings:
 
 **Please note that this page will be updated with samples and additional information about the methods listed below**
 
-##Getting the service
+## Getting the service
 The MemberGroupService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the MemberGroupService is available through a local `Services` property.
 
 	Services.MemberGroupService
@@ -30,19 +30,19 @@ Getting the service through the `ApplicationContext`:
 
 	ApplicationContext.Current.Services.MemberGroupService
 
-##Methods
+## Methods
 
-###.Delete(IMemberGroup)
+### .Delete(IMemberGroup)
 Deletes a given `MemberGroup`
 
-###.GetAll();
+### .GetAll();
 Returns a `MemberGroup` collection
 
-###.GetById(int id);
+### .GetById(int id);
 Returns a `MemberGroup` with a given Id
 
-###.GetByName(string name);
+### .GetByName(string name);
 Returns a `MemberGroup` with a given name
 
-###.Save(IMemberGroup group)
+### .Save(IMemberGroup group)
 Saves a `MemberGroup`

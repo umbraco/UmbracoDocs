@@ -21,6 +21,8 @@ In order for your project to run on the Umbraco Cloud environments you need to g
 * Add an *export* marker by typing `echo > deploy-export`
     * Generating the UDA files may take a while, depending on the extend of your project
     * You will see a `deploy-complete` marker once the export is done
+    * Run `echo > deploy` again in order to run an extraction of your UDA files
+    * When you see `deploy-complete` marker, your UDA files has been generated
 * You should now see that your `/data/revision` folder has been populated with UDA files corresponding to your projects metadata
 
 ![Run echo > deploy-export](images/deploy-export.gif)

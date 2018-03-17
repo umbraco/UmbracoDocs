@@ -1,8 +1,8 @@
-#Using MVC Partial Views in Umbraco
+# Using MVC Partial Views in Umbraco
 
 _This section will show you how to use MVC Partial Views in Umbraco. Please note, this is documentation relating to the use of native MVC partial views, not '[Partial View Macros](../Macros/Partial-View-Macros/index.md)'_
 
-##Overview
+## Overview
 
 Using Partial Views in Umbraco is exactly the same as using Partial Views in a normal MVC project. There is detailed documentation on the Internet about creating and using MVC partial views, for example:
 
@@ -10,7 +10,7 @@ Using Partial Views in Umbraco is exactly the same as using Partial Views in a n
 
 Partial views allow you to easily re-use components between your views (templates).
 
-##View Locations
+## View Locations
 
 The locations to store Partial Views when rendering in the Umbraco pipeline is:
 
@@ -27,7 +27,7 @@ If however you are [Hijacking an Umbraco route](custom-controllers.md) and speci
 
 	~/Views/{YourControllerName}
 
-##Example
+## Example
 
 A quick example of a content item that has a template that renders out a partial view template for each of its child documents:
 
@@ -56,7 +56,7 @@ The partial view (located at: `~/Views/Partials/ChildItem.cshtml`)
 
 	<strong>@Model.Name</strong>
 
-#Strongly typed Partial Views
+# Strongly typed Partial Views
 
 Normally you would create a partial view by simply using the `@model MyModel` syntax. However, inside of Umbraco you will probably want to have access to the handy properties available on your normal Umbraco views like the Umbraco helper: `@Umbraco` and the Umbraco context: `@UmbracoContext`. The good news is that this is completely possible. Instead of using the `@model MyModel` syntax, you just need to inherit from the correct view class, so do this instead:
 
@@ -81,7 +81,7 @@ The partial view can still inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage`, w
 
 Both of these will achieve the same result.
 
-##Caching
+## Caching
 
 You don't normally need to cache the output of Partial views, just like you don't normally need to cache the output of User Controls, but there are times when this is necessary. Just like macro caching, we provide caching output of partial views. This is done simply by using an HtmlHelper extension method:
 
@@ -99,5 +99,24 @@ The above will cache the output of your partial view for one hour (3600 seconds)
 		Func<object, ViewDataDictionary, string> contextualKeyBuilder = null)
 
 So you can specify to cache by member and/or by page and also specify additional view data to your partial view. **However**, if your view data is dynamic (meaning it could change per page request) the cached output will still be returned. This same principle applies if the model you are passing in is dynamic. Please be aware of this: if you have a different model or viewData for any page request, the result will be the cached result of the first execution. If this is not desired you can generate your own cache key to differentiate cache instances using the contextualKeyBuilder parameter
+
+To create multiple versions based on one or more viewData parameters you can do something like this:
+
+	@Html.CachedPartial("MediaGallery", Model, 3600, true, false, new ViewDataDictionary { { "year", Request.QueryString["year"] } }, (model, viewData) => viewData["year"].ToString() + viewData["Parameter2"].ToString() )
+
+Or using a custom helper function:
+
+	public static Func<object, ViewDataDictionary, string> CacheBy(this HtmlHelper htmlHelper, params string[] keys)
+	{
+		return (model, viewData) => String.Join("", keys.Select(s => viewData[s].ToString()));
+	}
+	
+	@Html.CachedPartial("MediaGallery", Model, 3600, true, false, new ViewDataDictionary { { "year", Request.QueryString["year"] } }, Html.CacheBy("yer", "Parameter2") )
+	
+Or even bassed off the Model, though is Model is just the current page then cacheByPage should be used instead:
+
+	@Html.CachedPartial("MediaGallery", Model, 3600, true, false, new ViewDataDictionary { }, (model, viewData) => model.myField )
+
+Regardless of the complexity here the contextualKeyBuilder function needs to return a single string value.
 
 Caching is only enabled when your application has debug="false". When debug="true" caching is disabled. Also, the cache of all CachedPartials is emptied on Umbraco publish events.
