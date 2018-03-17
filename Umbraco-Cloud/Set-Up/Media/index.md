@@ -98,7 +98,8 @@ Update `~/config/imageprocessor/security.config`
           <settings>
             <setting key="MaxBytes" value="8194304"/>
             <setting key="Timeout" value="30000"/>
-            <setting key="Host" value="http://<your blob account>.blob.core.windows.net/media/"/>
+            <setting key="Host" value="https://<your blob account>.blob.core.windows.net/"/>
+            <setting key="Container" value="media"/>
           </settings>
         </service>
         <service prefix="remote.axd" name="RemoteImageService" type="ImageProcessor.Web.Services.RemoteImageService, ImageProcessor.Web">
@@ -108,9 +109,9 @@ Update `~/config/imageprocessor/security.config`
             <setting key="Protocol" value="http" />
           </settings>
           <whitelist>
-            <add url="http://<your Azure CDN>.vo.msecnd.net/" />
-            <add url="http://<your blob account>.blob.core.windows.net/" />
-            <add url="http://<your umbraco cloud site>.s1.umbraco.io" />
+            <add url="https://<your Azure CDN>.vo.msecnd.net/" />
+            <add url="https://<your blob account>.blob.core.windows.net/" />
+            <add url="https://<your umbraco cloud site>.s1.umbraco.io" />
             <add url="http://localhost" />
             <add url="http://127.0.0.1" />
           </whitelist>
