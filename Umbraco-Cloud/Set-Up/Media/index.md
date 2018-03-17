@@ -25,7 +25,7 @@ Update `~/Config/FileSystemProviders.config` replacing the default provider with
       <Provider alias="media" type="Our.Umbraco.FileSystemProviders.Azure.AzureBlobFileSystem, Our.Umbraco.FileSystemProviders.Azure">
         <Parameters>
           <add key="containerName" value="media" />
-          <add key="rootUrl" value="http://[myAccountName].blob.core.windows.net/" />
+          <add key="rootUrl" value="https://[myAccountName].blob.core.windows.net/" />
           <add key="connectionString" value="DefaultEndpointsProtocol=https;AccountName=[myAccountName];AccountKey=[myAccountKey]"/>
           <!--Optional configuration value determining the maximum number of days to cache items in the browser. Defaults to 365 days. -->
           <add key="maxDays" value="365" />
