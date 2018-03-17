@@ -23,3 +23,8 @@ Tips on finding, identifying and resolving issues.
 
 ## [Frequently Asked Questions](Frequently-Asked-Questions/)
 Anything else not covered above.
+
+---
+
+## [Cloud API](Cloud-API/)
+Learn how to use the Umbraco Cloud REST API to automate project creation and team management.
