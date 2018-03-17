@@ -128,7 +128,9 @@ Update `~/config/imageprocessor/cache.config` by removing the default “DiskCac
           <settings>
             <setting key="CachedStorageAccount" value="DefaultEndpointsProtocol=https;AccountName=;AccountKey=" />
             <setting key="CachedBlobContainer" value="cache" />
-            <setting key="CachedCDNRoot" value="http://<your Azure CDN>.vo.msecnd.net/" />
+            <setting key="CachedCDNRoot" value="https://<your Azure CDN>.vo.msecnd.net/" />
+            <setting key="CachedCDNTimeout" value="2000" />
+            <setting key="UseCachedContainerInUrl" value="false" />
             <setting key="SourceStorageAccount" value="DefaultEndpointsProtocol=https;AccountName=;AccountKey=" />
             <setting key="SourceBlobContainer" value="media" />
             <setting key="StreamCachedImage" value="false" />
