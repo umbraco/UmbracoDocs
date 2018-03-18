@@ -74,7 +74,7 @@ Rest assured: This problem is on our list to fix as soon as possible but for now
 
 #### Some or all of my static assets (.css, .js, images) are not loading on my development environment
 
-Symptom: When you try to go to the URL of your static assets (`https://mysite.s1.umbraco.io/assets/css/app.css` for example) you get a login prompt, upon completing that, you get redirected to something like `https://mysite.s1.umbraco.io/login.aspx?ReturnURL=%2fassets%2fcss%2fapp.css`.
+Symptom: When you try to go to the URL of your static assets (`https://mysite.s1.umbraco.io/assets/css/app.css` for example) you get a login prompt, upon completing that, you get redirected to something like `https://mysite.s1.umbraco.io/login.aspx?ReturnUrl=%2fassets%2fcss%2fapp.css`.
 
 This issue is under investigation and seems to occur rather randomly; it works fine for most people but for some it just starts failing for no good reason (that we've found yet). For now what you can do to fix the problem is:
 
