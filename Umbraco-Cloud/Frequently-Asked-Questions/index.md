@@ -248,7 +248,7 @@ Yes it is! Websockets are enabled on all sites.
 
 We have an indicator on each package in [the projects section of Our Umbraco](https://our.umbraco.org/projects/) which either says "Works on Umbraco Cloud" or "Untested or doesn't work on Umbraco Cloud".
 
-If the indicator says "Works on Umbraco Cloud" it that means that Umbraco HQ has tested this package on Cloud and it works and changes made using this package are also deployable to the next environment.
+If the indicator says "Works on Umbraco Cloud" it means that Umbraco HQ has tested this package on Cloud and it works and changes made using this package are also deployable to the next environment.
 
 If the indicator says "Untested or doesn't work on Umbraco Cloud" then we have not tested it and cannot vouch for it on Cloud. It might work, and we're happy for you to test it on Cloud. 
 
