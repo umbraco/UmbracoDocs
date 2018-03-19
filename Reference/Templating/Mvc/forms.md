@@ -48,10 +48,10 @@ Next up, we need to create an Action on a SurfaceController which accepts our su
 		    //if validation passes perform whatever logic
 		    //In this sample we keep it empty, but try setting a breakpoint to see what is posted here
 			
-			//Perhaps you might want to store some data in TempData which will be available 
-			//in the View after the redirect below. An example might be to show a custom 'submit
-			//successful' message on the View, for example:
-			TempData.Add("CustomMessage", "Your form was successfully submitted at " + DateTime.Now)
+		    //Perhaps you might want to store some data in TempData which will be available 
+		    //in the View after the redirect below. An example might be to show a custom 'submit
+		    //successful' message on the View, for example:
+		    TempData.Add("CustomMessage", "Your form was successfully submitted at " + DateTime.Now);
 		
 		    //redirect to current page to clear the form
 		    return RedirectToCurrentUmbracoPage();
