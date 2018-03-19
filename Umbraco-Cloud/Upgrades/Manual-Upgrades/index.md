@@ -15,7 +15,9 @@ Common reasons for doing manual upgrades on Umbraco Cloud
 
 ## Product dependencies
 
+When you are manually upgrading an Umbraco Cloud project it's important that you take into account the dependencies that exist between the products on Umbraco Cloud. To continue reaping the full benefits of Umbraco Cloud make sure to check for dependencies when you upgrade to a new minor or major version of Umbraco CMS.
 
+[Learn more about the product dependencies on Umbraco Cloud](../Product-Dependencies)
 
 ## How to upgrade Umbraco CMS manually
 
