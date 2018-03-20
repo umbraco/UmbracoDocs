@@ -139,9 +139,9 @@ When you've upgraded everything locally, and made sure that everything runs with
 
 * Stage and commit all changes in Git
 * Push the changes to the Cloud environment
+* When everything is pushed, head on over to the Umbraco Cloud Portal
+* Access the backoffice of the Cloud environment you pushed the upgrade to - Development or Live
+* You will again be prompted to login to complete the upgrade
+* You will be sent to the backoffice once the upgrade is complete
 
-These are the files you need to merge:
-
-* All files in `/Config` folder
-* `Global.asax` 
-* `Web.config`
+Again it's **important** that you make sure everything runs without any errors before moving on to the next Cloud environment.
