@@ -133,6 +133,13 @@ Make sure that everything works on the local clone and that you can run the proj
 
 Before you deploy the upgraded project to the Cloud, it's important that you check if there are any [**dependencies**](../Product-Dependencies) on the new Umbraco version.
 
+Are there dependencies for Umbraco Forms or Umbraco Courier / Deploy you need to upgrade these locally, before moving on. 
+
+When you've upgraded everything locally, and made sure that everything runs without any errors, you are ready to deploy the upgrade to Umbraco Cloud.
+
+* Stage and commit all changes in Git
+* Push the changes to the Cloud environment
+
 These are the files you need to merge:
 
 * All files in `/Config` folder

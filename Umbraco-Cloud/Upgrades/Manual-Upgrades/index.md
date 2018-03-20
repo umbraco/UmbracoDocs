@@ -19,8 +19,8 @@ When you are manually upgrading an Umbraco Cloud project it's important that you
 
 [Learn more about the product dependencies on Umbraco Cloud](../Product-Dependencies)
 
-## How to upgrade Umbraco CMS manually
+## [How to upgrade Umbraco CMS manually](Manual-CMS-upgrade.md)
 
 ## How to upgrade Umbraco Forms manually
 
-## How to upgrade Umbraco Deploy manually
+## How to upgrade Umbraco Courier / Umbraco Deploy manually
