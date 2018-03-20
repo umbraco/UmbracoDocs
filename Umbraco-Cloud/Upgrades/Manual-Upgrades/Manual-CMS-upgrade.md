@@ -1,4 +1,4 @@
-# Manual opgrade of Umbraco CMS on Cloud
+# Manual upgrade of Umbraco CMS on Cloud
 
 This article will give you a step-by-step on how to manually upgrade your Umbraco Cloud project to run the latest version of Umbraco CMS.
 
