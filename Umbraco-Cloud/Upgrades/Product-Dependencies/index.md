@@ -20,4 +20,4 @@ In the table below you can see which version of Umbraco Forms and Courier / Depl
 |**7.8**       |6.x             |--                |2.x              |
 |**7.9**       |7.x             |--                |2.x              |
 
-**NOTE**: All Umbraco Cloud projects running Umbraco 7.6 or above should be using Umbraco Deploy instead of Umbraco Courier.
+**NOTE**: All Umbraco Cloud projects running Umbraco 7.6 or above should be using Umbraco Deploy instead of Umbraco Courier. If you are upgrading from Umbraco 7.5.x to 7.6 or above, you also need to [replace Umbraco Courier with Umbraco Deploy](../Moving-from-Courier-to-Deploy).
