@@ -15,6 +15,14 @@ Common reasons for doing manual upgrades on Umbraco Cloud
 * You've opted out of the automatic upgrades, and now you want to upgrade your project
 * You want to test the newest minor or major version locally before deploying to the Cloud environments
 
+## Upgrade order
+
+When you are manually upgrading your Umbraco Cloud project and you need to upgrade two or more products, this is the order you need to follow:
+
+1. Umbraco CMS
+2. Umbraco Forms
+3. Umbraco Deploy / Courier
+
 ## Product dependencies
 
 When you are manually upgrading an Umbraco Cloud project it's important that you take into account the dependencies that exist between the products on Umbraco Cloud. To continue reaping the full benefits of Umbraco Cloud make sure to check for dependencies when you upgrade to a new minor or major version of Umbraco CMS.
@@ -29,4 +37,4 @@ Make sure to follow the steps carefully when upgrading your Umbraco Cloud projec
 
 There are no Umbraco Cloud related files to be aware of when upgrading Umbraco Forms. Therefor you can simply follow the general Umbraco Forms upgrade notes. Be sure to take a look at the [version specific upgrade notes](https://our.umbraco.org/documentation/Add-ons/UmbracoForms/Installation/Version-Specific), as there might be extra steps you need to take depending on the version you are upgrading from and to.
 
-## How to upgrade Umbraco Courier / Umbraco Deploy manually
+## [How to upgrade Umbraco Courier / Deploy manually](Manual-Deploy-and-Courier-Upgrade)
