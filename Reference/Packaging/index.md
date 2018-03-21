@@ -8,7 +8,7 @@ Currently we have 10 actions available. If you need to perform more advanced ins
 With the build-in packager, it is possible to add the actions you need directly from the UI. Just add <Action> nodes to the textare.
 Alternatively the actions can be manually added to the package manifest by adding a <Actions> node containing the package actions xml.
 
-## Standart fields on all actions
+## Standard fields on all actions
 
 - **Undo**, optional, is true by default.
 - **Alias**, mandatory, The alias of the package action to be executed
