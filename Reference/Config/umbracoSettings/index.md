@@ -519,17 +519,7 @@ Though the above example shows the server's as IP addresses, these can also be D
 
 ## Repositories
 
-From the Developer section you can access packages. From here you have access to the Umbraco package repository from where you can download packages. It is however also possible to add other repositories to this list. If you or your company have a private repository, it can be added to this list.
-
-    <!-- Configuration for repositories -->
-    <!-- Add or remove repositories here. You will need the repository's unique key to be able to connect to it.-->
-    <repositories>
-        <repository name="Umbraco package Repository" guid="65194810-1f85-11dd-bd0b-0800200c9a66" />
-    </repositories>
-
-If you wish to add your own repository, contact [Umbraco corp](http://umbraco.com/contact.aspx) to get a **unique key**.
-
-Also note that you can remove the official repository from the **<repositories>** list in case you do not want this functionality
+This is a legacy setting that is no longer in use. 
 
 ## Providers
 
