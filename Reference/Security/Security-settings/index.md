@@ -21,7 +21,7 @@ For both of these Membership Providers you can specify the following settings (i
 - `enablePasswordReset` (default 'false'): This setting is not used
 - `enablePasswordRetrieval` (default 'false'): This setting is not used
 - `requiresQuestionAndAnswer` (default 'false'): This setting is not used
-- `allowManuallyChangingPassword` (default 'false'): This setting is not used
+- `allowManuallyChangingPassword` (default 'false'): Must be set to 'true' if you want to change passwords from code (e.g. calling the MemberService.SavePassword()-function)
 - `maxInvalidPasswordAttempts` (default 5): The number of attempts before a user or member is locked out
 - `passwordAttemptWindow` (default: 10 (minutes)): This setting is not currently used
 - `passwordStrengthRegularExpression` You could specify a regular expression for a password
