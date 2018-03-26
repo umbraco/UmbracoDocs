@@ -13,7 +13,8 @@ If this sounds like you, you should evaluate the Azure Blob Storage provider. It
 #### File System Provider for Azure Blob Storage
 You’ll replace the default FileSystemProvider with the `Our.Umbraco.FileSystemProviders.Azure.AzureBlobFileSystem` provider.  We recommend doing this first and verifying it behaves as expected before proceeding with the ImageProcessor setup.
 
-Currently this package is available by source code or MyGet and the Umbraco package is available here [https://ci.appveyor.com/project/JamesSouth/umbracofilesystemproviders-azure/build/artifacts](https://ci.appveyor.com/project/JamesSouth/umbracofilesystemproviders-azure/build/artifacts)  The project source can be found here   [https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure](https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure)
+The package is available on Our Umbraco [https://our.umbraco.org/projects/collaboration/umbracofilesystemprovidersazure/](https://our.umbraco.org/projects/collaboration/umbracofilesystemprovidersazure/)
+The project source can be found here   [https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure](https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure)
 
 There are detailed instructions available on the project page, also summarized here.
 
@@ -49,7 +50,7 @@ If you are using IISExpress (as with Visual Studio or WebMatrix) you’ll need t
       </configuration>
       
 #### Image Processor
-You’ll need to install the following ImageProcessor packages:
+You’ll need to install the following ImageProcessor packages (latest versions recommended):
 
 * ImageProcessor.Web.4.4.0.0 or later
 * ImageProcessor.Web.Config.2.2.3.0 or later
