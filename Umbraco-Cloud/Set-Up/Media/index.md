@@ -25,7 +25,7 @@ Update `~/Config/FileSystemProviders.config` replacing the default provider with
       <Provider alias="media" type="Our.Umbraco.FileSystemProviders.Azure.AzureBlobFileSystem, Our.Umbraco.FileSystemProviders.Azure">
         <Parameters>
           <add key="containerName" value="media" />
-          <add key="rootUrl" value="http://[myAccountName].blob.core.windows.net/" />
+          <add key="rootUrl" value="https://[myAccountName].blob.core.windows.net/" />
           <add key="connectionString" value="DefaultEndpointsProtocol=https;AccountName=[myAccountName];AccountKey=[myAccountKey]"/>
           <!--Optional configuration value determining the maximum number of days to cache items in the browser. Defaults to 365 days. -->
           <add key="maxDays" value="365" />
@@ -98,7 +98,8 @@ Update `~/config/imageprocessor/security.config`
           <settings>
             <setting key="MaxBytes" value="8194304"/>
             <setting key="Timeout" value="30000"/>
-            <setting key="Host" value="http://<your blob account>.blob.core.windows.net/media/"/>
+            <setting key="Host" value="https://<your blob account>.blob.core.windows.net/"/>
+            <setting key="Container" value="media"/>
           </settings>
         </service>
         <service prefix="remote.axd" name="RemoteImageService" type="ImageProcessor.Web.Services.RemoteImageService, ImageProcessor.Web">
@@ -108,9 +109,9 @@ Update `~/config/imageprocessor/security.config`
             <setting key="Protocol" value="http" />
           </settings>
           <whitelist>
-            <add url="http://<your Azure CDN>.vo.msecnd.net/" />
-            <add url="http://<your blob account>.blob.core.windows.net/" />
-            <add url="http://<your umbraco cloud site>.s1.umbraco.io" />
+            <add url="https://<your Azure CDN>.vo.msecnd.net/" />
+            <add url="https://<your blob account>.blob.core.windows.net/" />
+            <add url="https://<your umbraco cloud site>.s1.umbraco.io" />
             <add url="http://localhost" />
             <add url="http://127.0.0.1" />
           </whitelist>
@@ -127,7 +128,9 @@ Update `~/config/imageprocessor/cache.config` by removing the default “DiskCac
           <settings>
             <setting key="CachedStorageAccount" value="DefaultEndpointsProtocol=https;AccountName=;AccountKey=" />
             <setting key="CachedBlobContainer" value="cache" />
-            <setting key="CachedCDNRoot" value="http://<your Azure CDN>.vo.msecnd.net/" />
+            <setting key="CachedCDNRoot" value="https://<your Azure CDN>.vo.msecnd.net/" />
+            <setting key="CachedCDNTimeout" value="2000" />
+            <setting key="UseCachedContainerInUrl" value="true" />
             <setting key="SourceStorageAccount" value="DefaultEndpointsProtocol=https;AccountName=;AccountKey=" />
             <setting key="SourceBlobContainer" value="media" />
             <setting key="StreamCachedImage" value="false" />
