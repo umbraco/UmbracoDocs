@@ -10,22 +10,22 @@ Make sure you can run your Cloud project locally and restore content and media. 
 
 ## Get the latest version of Umbraco
 
-* Download the latest version Umbraco CMS from Our
+* [Download the latest version Umbraco CMS from Our](https://our.umbraco.org/download/)
 * Unzip the folder to your computer
 * Copy the following folders from the inzipped folder to your Cloud project folder:
     * `/bin`
     * `/Umbraco`
-    * `Umbraco_Client`
+    * `/Umbraco_Client`
 
 ## Merge configuration files
 
-In this step you need to merge the configuration files containing changes. For the we recommend using a tool like [WinMerge](http://winmerge.org/) or [DiifMerge](https://sourcegear.com/diffmerge/).
+In this step you need to merge the configuration files containing changes. For this we recommend using a tool like [WinMerge](http://winmerge.org/) or [DiffMerge](https://sourcegear.com/diffmerge/).
 
-The reason you shouldn't just overwrite these files is that this will also overwrite any **custom configuration** you might have as well as **Umbraco Cloud specific settings**.
+The reason you shouldn't just overwrite these files is that this will also overwrite any **custom configuration** you might have as well as **Umbraco Cloud specific settings**. Read more about which Cloud specific details you should watch out for in the following sections.
 
 ### Web.config
 
-When merging the `web.config` file make sure that you **do not overwrite** the following settings:
+When merging the `web.config` file make sure that you **do not overwrite / remove** the following settings:
 
 **< configSettings >**
 
@@ -60,7 +60,7 @@ When merging the `web.config` file make sure that you **do not overwrite** the f
 
 ### Dashboard.config
 
-When merging the `Dashboard.config` file make sure that you **do not overwrite** the following settings:
+When merging the `Dashboard.config` file make sure that you **do not overwrite / remove** the following settings:
 
 **Deploy**
 
@@ -109,11 +109,11 @@ Note that you **should not merge in** the following section from the new version
 
 ### Other config files
 
-The following config files contains differences, and you need to keep the ones from your Cloud project:
+The following config files contains differences, and in most cases you need to keep the ones from your Cloud project:
 
-* /Splashes/noNodes.aspx
-* trees.config
-* umbracoSettings.config
+* `/Splashes/noNodes.aspx`
+* `trees.config`
+* `umbracoSettings.config`
 
 ## Run the upgrader locally
 
