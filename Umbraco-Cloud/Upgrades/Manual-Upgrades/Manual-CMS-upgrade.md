@@ -123,11 +123,11 @@ When you are done merging the new version of Umbraco with your clone of the Umbr
 * When the project spins up, you'll be prompted to login to verify the upgrade
 * On the installation screen you need to verify the upgrade:
     ![Verify upgrade](images/upgrade-screen.png)
-* Hit **Continue**
+* Hit **Continue** - this will complete upgrading the database
 * The upgrade will finish up
 * When it's complete you will be sent to the Umbraco backoffice
 
-Make sure that everything works on the local clone and that you can run the project without any errors.
+Make sure that everything works on the local clone and that you can **run the project without any errors**.
 
 ## Push upgrade to Cloud
 
@@ -141,7 +141,7 @@ When you've upgraded everything locally, and made sure that everything runs with
 * Push the changes to the Cloud environment
 * When everything is pushed, head on over to the Umbraco Cloud Portal
 * Access the backoffice of the Cloud environment you pushed the upgrade to - Development or Live
-* You will again be prompted to login to complete the upgrade
+* You will again be prompted to login to complete the database upgrade
 * You will be sent to the backoffice once the upgrade is complete
 
 Again it's **important** that you make sure everything runs without any errors before moving on to the next Cloud environment.
