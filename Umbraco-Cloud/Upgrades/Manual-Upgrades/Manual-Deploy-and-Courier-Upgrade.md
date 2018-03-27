@@ -8,7 +8,7 @@ Whether your project is running Courier or Deploy is dependent on which version 
 
 **NOTE**: All new projects on Umbraco Cloud use Umbraco Deploy. The same goes for projects running Umbraco CMS version 7.6 and higher.
 
-Here are the steps you need to follow carefully to manually upgrade Deploy on your Umrbaco Cloud project:
+Here are the steps you need to follow carefully to manually upgrade Deploy on your Umbraco Cloud project:
 
 1. Download the latest version of Umbraco Deploy here: http://nightly.umbraco.org/?container=umbraco-deploy-release
     * Check [Product Dependencies](../Product-Dependencies) to be sure you download the correct version of Deploy
@@ -28,7 +28,7 @@ Here are the steps you need to follow carefully to manually upgrade Deploy on yo
 Here are the steps you need to follow carefully to manually upgrade Courier on your Umbraco Cloud project:
 
 1. Download the latest version of Umbraco Courier here: http://nightly.umbraco.org/?container=umbraco-courier-release
-    * Choose the file called Courier.Concorde.UI.vX.Y.Z.zip - where *X.Y.Z* in the version number
+    * Choose the file called Courier.Concorde.UI.vX.Y.Z.zip - where *X.Y.Z* is the version number
 2. Unzip the file on your computer
 3. Copy/Paste the files from the unzipped folder to your local project folder
     * If you've added custom configuration in the `courier.config` file you may not want to overwrite this file

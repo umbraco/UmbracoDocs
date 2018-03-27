@@ -24,6 +24,6 @@ In the table below you can see which version of Umbraco Forms and Courier / Depl
 
 ## [How to upgrade Umbraco CMS manually](../Manual-upgrades/Manual-CMS-upgrade.md)
 
-## How to upgrade Umbraco Forms manually
+## [How to upgrade Umbraco Forms manually](https://our.umbraco.org/documentation/Add-ons/UmbracoForms/Installation/ManualUpgrade)
 
-## How to upgrade Umbraco Courier / Umbraco Deploy manually
+## [How to upgrade Umbraco Courier / Deploy manually](/Manual-upgrades/Manual-Deploy-and-Courier-Upgrade)
