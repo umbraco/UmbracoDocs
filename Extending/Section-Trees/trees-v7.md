@@ -24,6 +24,8 @@ Decorate your '*TreeController*' with the *Tree* Attribute, which is used to def
 
 ...would register a custom tree with a title 'Favourite Things Name' in the Developer section of Umbraco.
 
+[How to create your own custom section](../../Extending/Section-Trees/sections.md) 
+
 ### Implementing the Tree
 
        protected override TreeNodeCollection GetTreeNodes(string id, FormDataCollection queryStrings)
