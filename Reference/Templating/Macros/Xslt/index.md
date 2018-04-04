@@ -30,7 +30,7 @@ XPath works on the premise of Axes, which is how the data relates to the current
 ## [XPath and XSLT Loops](XPath-and-XSLT-Loops.md)
 This command takes an XPATH statement and iterates the results for each match, executing the nested commands each time
 
-## [Umbraco.library](../../../Api/UmbracoLibrary/index.md)
+## [Umbraco.library](UmbracoLibrary/index.md)
 Umbraco.library is a collection of helpers available to both Razor and XSLT
 
 ## What is XSLT
