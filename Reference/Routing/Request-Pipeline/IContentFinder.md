@@ -56,22 +56,6 @@ Finder can set content, template, redirect…
 Default finder will look for content under the domain root.
 This is an un-breaking change.
 
-### Broken example
-
-**TO CHECK: I think this example was included in the presentation to show that Umbraco v4 was broken. Using this example you can mimic this behaviour.**
-
-    public class MyContentFinder : ContentFinderByNiceUrl
-    {
-      public override bool TryFindContent(PublishedContentRequest request)
-      {
-        if (base.TryFindContent(request)) return true;
-        if (!request.HasDomain) return false;
-        var path = request.Uri.GetAbsolutePathDecoded();
-        var node = FindContent(request, path);
-        return node != null;
-      }
-    }
-
 ### Example wire up
 
 this example shows how to add custom content finder to (and how to remove ContentFinderByNiceUrl from) the ContentFinderResolver.
@@ -91,6 +75,34 @@ this example shows how to add custom content finder to (and how to remove Conten
 
 # NotFoundHandlers
 
-To set your own 404 finder create an IContentFinder and set it as the ContentLastChanceFinder.  A ContentLastChanceFinder will always return a 404 status code. Example:
+To set your own 404 finder create an IContentFinder and set it as the ContentLastChanceFinder.
+A ContentLastChanceFinder will always return a 404 status code. This example creates a new implementation of the IContentFinder and checks whether the requested content could not be found by using the default `Is404` property presented in the `PublishedContentRequest` class.
+
+    public class My404ContentFinder : IContentFinder {
+    	public bool TryFindContent(PublishedContentRequest contentRequest) {
+            //logic to find your 404 page and set it to contentRequest.PublishedContent
+	     CultureInfo culture = null;
+            if (contentRequest.HasDomain) {
+                culture = CultureInfo.GetCultureInfo(contentRequest.UmbracoDomain.LanguageIsoCode);
+            }
+
+            //replace 'home_doctype_alias' with the alias of your homepage
+            IPublishedContent rootNode = UmbracoContext.Current.ContentCache.GetByXPath("root/home_doctype_alias").FirstOrDefault(n => n.GetCulture().ThreeLetterWindowsLanguageName == culture.ThreeLetterWindowsLanguageName);
+            //replace '404_doctype_alias' with the alias of your 404 page
+            IPublishedContent notFoundNode = UmbracoContext.Current.ContentCache.GetByXPath(String.Format("root/homeDocType[id={0}]/404_doctype_alias", rootNode.Id)).FirstOrDefault(n => n.GetCulture().ThreeLetterWindowsLanguageName == culture.ThreeLetterWindowsLanguageName);
+
+            if (notFoundNode != null) {
+                contentRequest.PublishedContent = notFoundNode;
+            } else if (rootNode != null) {
+                contentRequest.PublishedContent = rootNode;
+            } else {
+                contentRequest.PublishedContent = UmbracoContext.Current.ContentCache.GetAtRoot().FirstOrDefault(n => n.GetTemplateAlias() != "");
+            }
+
+            return contentRequest.PublishedContent != null;
+	    }
+    }
+    
+Example on how to register your own implementation:
 
     ContentLastChanceFinderResolver.Current.SetFinder(new My404ContentFinder());
