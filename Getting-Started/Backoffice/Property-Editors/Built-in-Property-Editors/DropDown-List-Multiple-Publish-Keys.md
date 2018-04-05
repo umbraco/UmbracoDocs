@@ -1,20 +1,20 @@
-#Dropdown list multiple, publish keys
+# Dropdown list multiple, publish keys
 
 `Returns: Comma Separated String`
 
 Displays a list of preset values as a list where multiple values can be selected. The value saved is a comma separated string of the prevalue ids. 
 
-##Data Type Definition Example
+## Data Type Definition Example
 
 ![Dropdown list multiple Data Type Definition](images/wip.png)
 
-##Content Example 
+## Content Example 
 
 ![Dropdown list multiple Content](images/wip.png)
 
-##MVC View Example
+## MVC View Example
 
-###Typed:
+### Typed:
 	
 	@{
 	    if (Model.Content.HasValue("superHeros"))
@@ -37,7 +37,7 @@ Displays a list of preset values as a list where multiple values can be selected
 	    }
 	}
 
-###Dynamic:                              
+### Dynamic:                              
 
 	@{
 	    if (CurrentPage.HasValue("superHeros"))

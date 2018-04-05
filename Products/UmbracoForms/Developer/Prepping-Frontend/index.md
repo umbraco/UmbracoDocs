@@ -1,7 +1,7 @@
-#Preparing your frontend
+# Preparing your frontend
 In order to work correctly Umbraco Forms needs some client dependencies, being jquery, jquery validate and jquery validate unobtrusive. 
 
-##Adding the scripts to your template
+## Adding the scripts to your template
 Simply add those to your template these can be in the head or at the bottom of the page (if you add them to the bottom you'll need to perform an [extra step](../Rendering-Scripts/index.md)).
 
 Easiest way to add the dependencies is to fetch them from a cdn (like http://www.asp.net/ajax/cdn).

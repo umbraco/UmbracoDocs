@@ -1,4 +1,4 @@
-#Creating (Editing) Your First Template
+# Creating (Editing) Your First Template
 
 
 Next click the expand node icon (it's the small triangle) behind the **_Settings >_** **_Templates folder_** - you should then see a child node titled "_Homepage_" - Umbraco created this automatically when we created the **_Document Type_** (remember that option that said "..without template", we chose the one with and this is what it did).  
@@ -87,5 +87,5 @@ Now click the green **_Save and publish_** button.  The menu will reload with ou
 
 
 ---
-##Next - [CSS & Javascript](CSS-And-Javascript.md)
+## Next - [CSS & Javascript](CSS-And-Javascript.md)
 Adding the CSS and Javascript for your site into Umbraco.

@@ -1,8 +1,8 @@
-#Creating Resolvers
+# Creating Resolvers
 
 _A Resolver should be created for any plugin type.  Resolvers are the standard way to retreive/create/register plugin types._ 
 
-##Creating a single object resolver
+## Creating a single object resolver
 
 As an example, we'll create a resolver to resolve an application error logger:
 	
@@ -46,7 +46,7 @@ Its usage is then very easy:
 	//set the error logger (can only be done during application startup)
 	ErrorLoggerResolver.Current.SetErrorLogger(new MyCustomErrorLogger("../my-file-path"));
 
-##Creating a multiple object resolver
+## Creating a multiple object resolver
 
 Creating a multiple object resolver is just as simple. As an example we'll create a LanguageConvertersResolver.
 

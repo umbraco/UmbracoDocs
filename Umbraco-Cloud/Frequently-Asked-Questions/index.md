@@ -4,7 +4,7 @@
 
 ### Can I try before I pay?
 
-Yes, your first project on Umbraco Cloud comes with a free 14 day trial period.
+Yes, you can [take a free trial of Umbraco Cloud](https://umbraco.com/campaigns/try-umbraco-today/) and test it for 14 days with no obligation to buy.
 
 ### Is it a special version of Umbraco that’s used?
 
@@ -12,17 +12,17 @@ No. It's the same as the latest version of Umbraco that you can download.
 
 ### Can I run my high traffic site on Umbraco Cloud?
 
-Currently we have benchmarked a "well built" site with approximately 50,000 unique visitors per day (~1.5mm per month) that performs very well.
+Currently we have benchmarked a "well built" site with approximately 50,000 unique visitors per day (~1.5 million per month) that performs very well. For business critical, high traffic sites, we recommend that you look into Umbraco Cloud Professional and Umbraco Cloud Enterprise possibly in combination with a dedicated server.
 
 ### Can my site auto-scale or use dedicated worker resources?
 
-Not currently, but something we’re investigating as a future feature.
+Your site can't currently auto-scale, but it is something we’re investigating as a future feature. We do offer dedicated worker resources. [Reach out to us if you want to know more](https://umbraco.com/contact-us/).
 
 ### Can I setup a load balanced Umbraco Cloud site?
 
 Not currently.
 
-### Can I move my site away from Umbraco Cloud?
+### Can I move my site from Umbraco Cloud?
 
 Of course. Umbraco Cloud uses the very same Umbraco version that you can download and use on your own. So if you decide that Umbraco Cloud isn’t right for you or your sites then you can clone your site, restore your data locally, and delete your Umbraco Cloud project. We’ll be sad to see you go, but we understand there is a huge variety in requirements so we support and encourage you to choose the best solution for your specific site needs.
 
@@ -61,7 +61,7 @@ In our experience there is only a few Cloud sites that have experienced these li
 
 ### Can I use Cloudflare in front of my Umbraco Cloud site
 
-Yes. Point the DNS for your to Cloudflare and tell Cloudflare about the IP address of your Umbraco Cloud site to use Cloudflare's full feature set.
+Yes. Point the DNS for your domain(s) to Cloudflare and tell Cloudflare about the IP address of your Umbraco Cloud site to use Cloudflare's full feature set.
 
 ---
 
@@ -76,6 +76,19 @@ We upgrade when we're very confident the release is solid.
 We automatically upgrade to the latest patch version of Umbraco CMS (such as 7.4.x). For minor version upgrades, you’ll get a button in the interface to decide if you want to move to that version (such as 7.5.0) when it is released. When we make a new patch version, we first run it through our test suite, then test it on 10 test-sites (which are copies of "real" customer sites that we’ve been given permission to use). When all that passes, we roll out the upgrade in batches of 100 to customer accounts.
 
 [Read more about upgrades](https://our.umbraco.org/documentation/Umbraco-Cloud/Upgrades/)
+
+### My project didn't receive the auto-upgrade. Why?
+
+When we roll out auto-upgrades to Umbraco Cloud projects the very first thing that happens is a check of all environments on a project. This check will verify whether the environments are responding and doesn't return an HTTP status error. If the auto-upgrader encounters HTTP status errors on any of the environments during this check, the upgrade process is aborted, and your project will not receive the upgrade.
+
+Another reason why your project wasn't auto-upgraded could be, that it failed the test we perform after applying the auto-upgrade. This test compares the state of an environment from before the upgrade with the state of the same environment after the upgrade - if they do not match, we take the appropriate measures to rollback the environment to its previous state and abort the upgrade of any remaining environments.
+
+Other reasons why you didn't receive the auto-upgrade:
+
+ - If you are doing a deployment at the time we tried to run the auto-upgrader on your project
+ - If your environments aren't running the same minor version - e.g. if you are in the middle of upgrading to a new minor version, and one environment is running 7.6.x while another environment on the same project is running 7.7.x.
+
+You can find all the steps of the auto-upgrade process outlined in the [Upgrades](https://our.umbraco.org/documentation/Umbraco-Cloud/Upgrades/#the-process-of-auto-upgrading-an-umbraco-cloud-project) article.
 
 ### Does leaving pending commits (dev to live) derail the upgrade process?
 
@@ -92,7 +105,7 @@ Do note, however that you will need to step through the upgrade installer manual
 
 You will have to assume that every time we upgrade your site, any file that comes with Umbraco by default will be overwritten. Generally we only overwrite the files that have been changed in the newest release but there is no guarantee for that. So if you (for example) have customized the login page then you can assume it will be reverted on each upgrade. 
 
-As a workaround you could have an [ApplicationEventHandler](https://our.umbraco.org/Documentation/Reference/Events/Application-Startup#use-applicationeventhandler-to-register-events) in which you check if the file is different from your customized file and overwrite it again. Note that this is NOT possible if you customize any of the Umbraco dll files.
+As a workaround you could have an [ApplicationEventHandler](https://our.umbraco.org/Documentation/Reference/Events/Application-Startup#use-applicationeventhandler-to-register-events) in which you check if the file is different from your customized file and overwrite it again. Note that this is NOT possible if you customize any of the Umbraco DLL files.
 
 ---
 
@@ -150,7 +163,7 @@ Yes. You can use any valid certificate on Umbraco Cloud.
 
 ### I get a warning that "your connection is not private" and the certificate is served for *.umbraco.io
 
-It seems that you didn't send up the bindings for the specific domain where this warning is showing. Check the bindings by going to the site in [the portal](https://www.s1.umbraco.io) by going to the "Manage hostnames" section for your site.
+It seems that you didn't set up the bindings for the specific domain where this warning is showing. Check the bindings by going to the site in [the portal](https://www.s1.umbraco.io) by going to the "Manage hostnames" section for your site.
 
 ### How can I control who accesses my backoffice using IP filtering?
 
@@ -213,15 +226,15 @@ Umbraco Cloud sites run on IIS 8.5 so most things you can normally do on IIS, yo
 
 If you have any experience with Azure Web Apps, Cloud works in the same way. So if you can make it run on Azure Web Apps, you can make it run on Umbraco Cloud.
 
-### Is it possible to add my own custom DLL’s for extending the Umbraco Backoffice?
+### Is it possible to add my own custom DLLs for extending the Umbraco Backoffice?
 
-Yes, an Umbraco Cloud project is basically a normal Umbraco website where we give you multiple environments and easy deployment of code and content between these environments. It's really easy to get the site running locally (via git) which is the best way to add your own code (templates, cs files, packages, dll's and so forth).
+Yes, an Umbraco Cloud project is basically a normal Umbraco website where we give you multiple environments and easy deployment of code and content between these environments. It's really easy to get the site running locally (via git) which is the best way to add your own code (templates, cs files, packages, DLLs and so forth).
 
 ### Is it possible to add custom tables in addition to the Umbraco Cloud database?
 
-Yes, you can create custom tables in the database. Simply navigate to the connection strings to the databases on the different environments under the menu item connection details in the settings menu.
+Yes, you can create custom tables in the database. Simply navigate to the connection strings to the databases of the different environments under the menu item "Connection details" in the "Settings" menu.
 
-Note that custom database tables and data do not replicate automatically accross Cloud environments. You might want to use Umbraco Migrations and our PetaPoco datalayer to make deployment of your custom data more automated.
+Note that custom database tables and data do not replicate automatically across Cloud environments. You might want to use Umbraco Migrations and our PetaPoco datalayer to make deployment of your custom data more automated.
 
 ### I would love to use Websockets on my site, is this possible?
 
@@ -235,7 +248,7 @@ Yes it is! Websockets are enabled on all sites.
 
 We have an indicator on each package in [the projects section of Our Umbraco](https://our.umbraco.org/projects/) which either says "Works on Umbraco Cloud" or "Untested or doesn't work on Umbraco Cloud".
 
-If the indicator says "Works on Umbraco Cloud" then that means that Umbraco HQ has tested this package on Cloud and it works and changes made using this package are also deployable to the next environment.
+If the indicator says "Works on Umbraco Cloud" it means that Umbraco HQ has tested this package on Cloud and it works and changes made using this package are also deployable to the next environment.
 
 If the indicator says "Untested or doesn't work on Umbraco Cloud" then we have not tested it and cannot vouch for it on Cloud. It might work, and we're happy for you to test it on Cloud. 
 
@@ -243,9 +256,9 @@ We're happy to hear from and work with package developers to make their packages
 
 ### How do I make my package support Umbraco Cloud?
 
-The biggest problem concerning Cloud support is when a package stored references to nodes, media items, or members in Umbraco.
+The biggest problem concerning Cloud support is when a package stores references to nodes, media items, or members in Umbraco.
 
-There's 2 challenges here: 
+There are two challenges here: 
 
  1. Your package is referring to an integer identifier, for example a content item with id `1023`. On the next environment that same content item exists but since the content is a bit different there, the id is `1039` instead. Umbraco Deploy needs to know how to connect the correct identifier.
  2. Even if the identifier is correct on both environments your package might rely on the other item (the one you're referring to) to exist in the next environment. So if the content item you're referring to (`1023`) does not exist on the environment where you're pushing the content to you might see errors in your package.

@@ -1,4 +1,4 @@
-#Published Content Request
+# Published Content Request
 
 The `PublishedContentRequest` object represents the request which Umbraco must handle.  
 It contains everything that will be needed to render it.  

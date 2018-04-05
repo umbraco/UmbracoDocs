@@ -75,7 +75,8 @@ this example shows how to add custom content finder to (and how to remove Conten
 
 # NotFoundHandlers
 
-To set your own 404 finder create an IContentFinder and set it as the ContentLastChanceFinder. A ContentLastChanceFinder will always return a 404 status code. This example creates a new implementation of the IContentFinder and checks whether the requested content could not be found by using the default `Is404` property presented in the `PublishedContentRequest` class.
+To set your own 404 finder create an IContentFinder and set it as the ContentLastChanceFinder.
+A ContentLastChanceFinder will always return a 404 status code. This example creates a new implementation of the IContentFinder and checks whether the requested content could not be found by using the default `Is404` property presented in the `PublishedContentRequest` class.
 
     public class My404ContentFinder : IContentFinder {
     	public bool TryFindContent(PublishedContentRequest contentRequest) {

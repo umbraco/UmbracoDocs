@@ -1,8 +1,8 @@
-#Server variables & URLs
+# Server variables & URLs
 
 _Describes how to deal with server variables and service URLs, along with how to work with custom JavaScript and CSS assets when creating custom sections, trees or property editors_
 
-##Server Variables
+## Server Variables
 
 In v7 once a user is authenticated a request is made to retreive the Server Variables collection from the server which creates a global dictionary object that is accessible in JavaScript. This dictionary contains information based on the current Umbraco environment for which the JavaScript and client side needs to know about. Information such as whether the application is running in debug mode, the service API URLs, or other non-sensitive global server side variables.
 
@@ -18,7 +18,7 @@ which returns whether or not the application has the debug="true" setting in the
 
 It's also worth mentioning that the server variables collection when requested gets minified and then compressed so even though there might be quite a few values in there, the request size will be small.
 
-###Adding your own
+### Adding your own
 
 From version 7.0.2+ you can subscribe to an event if you need to add your data to the server variables collection:
 
@@ -36,7 +36,7 @@ A handler for this method could look like:
             });
     }
 
-##URLs
+## URLs
 
 A good rule of thumb about service URLs is to not hard code them if possible. One of the reasons why we don't hard code URLs is in case that routing has to change for some reason (i.e. [the breaking change for 7.0.2](http://umbraco.com/follow-us/blog-archive/2014/1/17/heads-up,-breaking-change-coming-in-702-and-62.aspx)). Another reason is if you want to keep compatibility with a legacy controller and introduce a new API version route (i.e. */umbraco/backoffice/api/myservice/v2/getstuff*). Generally a change like this would just mean changing a route in c# and if the JavaScript could automatically know the URL without being hard coded, it will 'just work'.
 
