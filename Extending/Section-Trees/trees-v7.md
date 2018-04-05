@@ -24,7 +24,17 @@ Decorate your '*TreeController*' with the *Tree* Attribute, which is used to def
 
 ...would register a custom tree with a title 'Favourite Things Name' in the Developer section of Umbraco.
 
-[How to create your own custom section](../../Extending/Section-Trees/sections.md) 
+You can also specify the icon to show for the tree, and 'sort order' if more than one tree appears in a section.
+
+    [Tree("developer", "favouriteThingsAlias", "Favourite Things Name", iconClosed:"icon-folder", iconOpen:"icon-folder",sortOrder:8)]
+
+NB: An entry in the ['~/config/trees.config' file.](../../Reference/Config/trees/index.md) will be added for your custom tree.
+
+eg:
+
+    <add initialize="true" sortOrder="0" alias="favouriteThingsAlias" application="developer" title="Favourite Things Name" iconClosed="icon-folder" iconOpen="icon-folder-open" type="Our.Umbraco.Controllers.FavouriteThingsTreeController, Our.Umbraco" />
+
+[See Also: How to create your own custom section](../../Extending/Section-Trees/sections.md) 
 
 ### Implementing the Tree
 
