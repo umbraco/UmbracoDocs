@@ -8,7 +8,7 @@ True/False is a simple checkbox which saves either 0 or 1, depending on the chec
 
 ![True/False Data Type Definition](images/True-False-DataType-742.jpg)
 
-From Umbraco version 7.4.2 the True/False property has a setting which allows you to set the default value of the checkbox, either 0 or 1.
+The True/False property has a setting which allows you to set the default value of the checkbox, either checked (true) or unchecked (false). This property was added in Umbraco 7.4.2.
 
 ## Content Example 
 
