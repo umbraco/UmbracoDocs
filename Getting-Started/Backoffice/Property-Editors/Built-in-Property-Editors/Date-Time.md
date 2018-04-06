@@ -2,11 +2,13 @@
 
 `Returns: DateTime`
 
-Displays a calendar UI for selecting dates and time, the value saved is a standard dateTime valu
+Displays a calendar UI for selecting dates and time which is saved as a DateTime value.
 
 ## Data Type Definition Example
 
 ![Data Type Definition Example](images/Date-Time-With-Time-Data-Type.png)
+
+The only setting that is available for manipulating the DateTime property is to set a format. By default the format of the output will be `YYYY-MM-DD HH:mm:ss`, but you can easily changes this to something else ( see [MomentJS.com](http://momentjs.com/) for the supported formats ).
 
 ## Content Example 
 
