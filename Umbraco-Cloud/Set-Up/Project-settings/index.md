@@ -6,19 +6,23 @@ The things you can configure include hostnames / domains, SSL certificates, data
 
 ![settings](images/project-settings.png)
 
-## Connection details
+## [Edit team](../Team-Members)
 
-This is where you go to find connection details to your [Umbraco Cloud databases](../../Databases).
+From this page you can manage the team members on your project.
+
+This is also where you need to go, to add a [Technical contact](../Team-Members/Technical-contact.md) to your project.
+
+## [Connection details](../../Databases)
+
+This is where you go to find connection details to your Umbraco Cloud databases.
 
 You will need to whitelist your IP in order to connect to the databases with your local machine - this can also be done from this page.
 
-## Manage domains
+## [Manage domains](../Manage-Domains)
 
 Binding hostnames and domains to your Umbraco Cloud project is easily done from the Umbraco Cloud Portal - the page is called **Manage Domains**.
 
 This is also the page you go to when you want to add security certificates to your project.
-
-You can find a lot more details about this in the [Manage domains](../Manage-Domains) article.
 
 ## Manage IP Whitelist
 
@@ -42,8 +46,6 @@ If you want to delete your Umbraco Cloud project you can find the option to do t
 
 **Note**: Deleting your Umbraco Cloud project will also cancel any subscriptions you have set up for your project.
 
-## Deployment Webhook
+## [Deployment Webhook](../../Deployment/Deployment-webhook)
 
 On Umbraco Cloud projects we've made it possible to configure a deployment webhook on your environments. This will be triggered upon succesfull deployments, and you can configure where you want information about the deployment to be posted.
-
-Read the [Deployment Webhook](../../Deployment/Deployment-webhook) article for more details on how to set this up.
