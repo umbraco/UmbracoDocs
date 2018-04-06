@@ -131,3 +131,9 @@ The options are:
 The default value is: `7`
 
 When this value is set above 0, the backoffice will check for a new version of Umbraco every 'x' number of days where 'x' is the value defined for this setting. Set this value to `0` to never check for a new version.
+
+### umbracoDisableElectionForSingleServer (Umbraco v7.6+)
+
+The default value is: `false`
+
+When this value is set to true your Umbraco installation will be treated as a single server, so no [master election](https://our.umbraco.org/documentation/Getting-Started/Setup/Server-Setup/load-balancing/flexible#scheduling-and-master-election) will happen, which is needed for a load balanced setup.
