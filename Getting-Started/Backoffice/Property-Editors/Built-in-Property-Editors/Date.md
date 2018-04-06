@@ -8,7 +8,7 @@ Displays a calendar UI for selecting dates which are saved as a DateTime value.
 
 ![Data Type Definition Example](images/DateTime-DataType.png)
 
-The only setting that is available for manipulating the Date property is to set a format. By default the format of the output will be `YYYY-MM-DD`, but you can easily changes this to something else ( see [MomentJS.com](http://momentjs.com/) for the supported formats ).
+The only setting that is available for manipulating the Date property is to set a format. By default the format of the date in the umbraco backoffice will be `YYYY-MM-DD`, but you can easily change this to something else. See [MomentJS.com](http://momentjs.com/) for the supported formats.
 
 ## Content Example 
 
