@@ -172,7 +172,7 @@ On Cloud it is easy to add an IP filter of your choosing, there's a few things y
 The following rule can be added to your web.config (in `system.webServer/rewrite/rules/`):
 
     <rule name="Backoffice IP Filter" enabled="true">
-        <match url="(^umbraco/backoffice/(.*)|^umbraco)"/>
+        <match url="(^umbraco/backoffice/(.*)|^umbraco($|/$))"/>
         <conditions logicalGrouping="MatchAll">
 
             <!-- Umbraco Cloud to Cloud connections should be allowed -->
