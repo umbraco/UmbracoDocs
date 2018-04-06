@@ -136,4 +136,4 @@ When this value is set above 0, the backoffice will check for a new version of U
 
 The default value is: `false`
 
-When this value is ste to true your Umbraco installation will be treated as a single server, so no [master election](https://our.umbraco.org/documentation/Getting-Started/Setup/Server-Setup/load-balancing/flexible#scheduling-and-master-election) will happen, which is needed for a load balanced setup.
+When this value is set to true your Umbraco installation will be treated as a single server, so no [master election](https://our.umbraco.org/documentation/Getting-Started/Setup/Server-Setup/load-balancing/flexible#scheduling-and-master-election) will happen, which is needed for a load balanced setup.
