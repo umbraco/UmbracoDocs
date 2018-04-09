@@ -1,14 +1,13 @@
-# ContentService
+# ConsentService
 
 **Applies to Umbraco 7.9 and newer**
 
-[Browse the API documentation for ContentService](https://our.umbraco.org/apidocs/csharp/api/Umbraco.Core.Services.IConsentService.html).
+[Browse the API documentation for ConsentService](https://our.umbraco.org/apidocs/csharp/api/Umbraco.Core.Services.IConsentService.html).
 
  * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
 
-
-A service for handling lawful data processing requirements
+A service for handling lawful data processing requirements.
 
 ## What is a Consent
 A consent is fully identified by a source (whoever is consenting), a context (for example, an application), and an action (whatever is consented).
