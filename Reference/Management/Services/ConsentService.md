@@ -25,3 +25,23 @@ entity that was created.
 Revoking a consent is performed by registering a revoked consent.
 
 A consent *cannot be deleted*.  It can only be revoked by registering a "revoked consent".
+
+## Examples
+
+    // store a new consent
+    var newConsent = Services.ConsentService.RegisterConsent("userId", "Our.Custom.Umbraco.Plugin", "AllowedToEmail", ConsentState.Granted, "some comments");
+    
+    // lookup a consent
+    var consents = Services.ConsentService.LookupConsent("userId", "Our.Custom.Umbraco.Plugin", "AllowedToEmail", sourceStartsWith : true);
+    if (consents != null && consents.Any()) 
+    {
+        var currentConsent = consents.First(c => c.Current == true);
+        if(currentConsent.State  == Consent​State.Granted) 
+    	{
+    		// Do what you need
+    	}
+    	else 
+    	{
+    	    // the state is None, Pending or Revoked
+    	}
+    }
