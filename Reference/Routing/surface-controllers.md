@@ -43,13 +43,13 @@ For example:
 
 All locally declared controllers get routed to:
 
-/umbraco/surface/{controllername}/{action}/{id}
+    /umbraco/surface/{controllername}/{action}/{id}
 
 They do not get routed via an MVC Area so any Views must exist in the following folders:
 
-* ~/Views/{controllername}/ 
-* ~/Views/Shared/
-* ~/Views/
+* `~/Views/{controllername}/`
+* `~/Views/Shared/`
+* `~/Views/`
 
 ## Plugin based controllers
 
@@ -70,9 +70,9 @@ In the above, I've specified that I'd like my MyController to belong to the MVC 
 
 All plugin based controllers get routed to:
 
-/umbraco/{areaname}/{controllername}/{action}/{id}
+    /umbraco/{areaname}/{controllername}/{action}/{id}
 
 Since they get routed via an MVC Area your views should be placed in the following folder:
 
-* ~/App_Plugins/{areaname}/Views/{controllername}/
-* ~/App_Plugins/{areaname}/Views/Shared/
+* `~/App_Plugins/{areaname}/Views/{controllername}/`
+* `~/App_Plugins/{areaname}/Views/Shared/`
