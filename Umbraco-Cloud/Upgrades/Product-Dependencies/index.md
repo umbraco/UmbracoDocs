@@ -9,7 +9,7 @@ The products are:
 * Umbraco Courier
 * Umbraco Deploy
 
-In the table below you can see which version of Umbraco Forms and Courier / Deploy you should be running on your Umbraco Cloud project depending on which version of Umbraco CMS you are running.
+In the table below you can see which version of Umbraco Forms and Courier / Deploy you should be running on your Umbraco Cloud project depending on which version of Umbraco CMS, you are running.
 
 |Umbraco CMS   |Umbraco Forms   |Umbraco Courier   |Umbraco Deploy   |
 |--------------|----------------|------------------|-----------------|
