@@ -6,26 +6,26 @@ This article will give you a step-by-step on how to manually upgrade your Umbrac
 
 When upgrading an Umbraco Cloud project manually, the very first step is to [clone down your Cloud Development environment to your local machine](../../Setup/Working-locally).
 
-Make sure you can run your Cloud project locally and restore content and media. It's important that you check that everything works once the upgrade has been applied and for this you need to have a clone locally that resembles the Cloud environment as much as possible.
+Make sure you can run your Cloud project locally and restore content and media. It's important that you check that everything works once the upgrade has been applied and for this, you need to have a clone locally that resembles the Cloud environment as much as possible.
 
 ## Get the latest version of Umbraco
 
 * [Download the latest version Umbraco CMS from Our](https://our.umbraco.org/download/)
 * Unzip the folder to your computer
-* Copy the following folders from the inzipped folder to your Cloud project folder:
+* Copy the following folders from the unzipped folder to your Cloud project folder:
     * `/bin`
     * `/Umbraco`
     * `/Umbraco_Client`
 
 ## Merge configuration files
 
-In this step you need to merge the configuration files containing changes. For this we recommend using a tool like [WinMerge](http://winmerge.org/) or [DiffMerge](https://sourcegear.com/diffmerge/).
+In this step, you need to merge the configuration files containing changes. For this, we recommend using a tool like [WinMerge](http://winmerge.org/) or [DiffMerge](https://sourcegear.com/diffmerge/).
 
 The reason you shouldn't just overwrite these files is that this will also overwrite any **custom configuration** you might have as well as **Umbraco Cloud specific settings**. Read more about which Cloud specific details you should watch out for in the following sections.
 
 ### Web.config
 
-When merging the `web.config` file make sure that you **do not overwrite / remove** the following settings:
+When merging the `web.config` file make sure that you **do not overwrite/remove** the following settings:
 
 **< configSettings >**
 
@@ -109,7 +109,7 @@ Note that you **should not merge in** the following section from the new version
 
 ### Other config files
 
-The following config files contains differences, and in most cases you need to keep the ones from your Cloud project:
+The following config files contain differences, and in most cases, you need to keep the ones from your Cloud project:
 
 * `/Splashes/noNodes.aspx`
 * `trees.config`
@@ -120,7 +120,7 @@ The following config files contains differences, and in most cases you need to k
 When you are done merging the new version of Umbraco with your clone of the Umbraco Cloud project, follow these steps to complete the upgrade:
 
 * Run the project locally
-* When the project spins up, you'll be prompted to login to verify the upgrade
+* When the project spins up, you'll be prompted to log in to verify the upgrade
 * On the installation screen you need to verify the upgrade:
     ![Verify upgrade](images/upgrade-screen.png)
 * Hit **Continue** - this will complete upgrading the database
@@ -141,7 +141,7 @@ When you've upgraded everything locally, and made sure that everything runs with
 * Push the changes to the Cloud environment
 * When everything is pushed, head on over to the Umbraco Cloud Portal
 * Access the backoffice of the Cloud environment you pushed the upgrade to - Development or Live
-* You will again be prompted to login to complete the database upgrade
+* You will again be prompted to log in to complete the database upgrade
 * You will be sent to the backoffice once the upgrade is complete
 
 Again it's **important** that you make sure everything runs without any errors before moving on to the next Cloud environment.
