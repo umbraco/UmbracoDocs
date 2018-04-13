@@ -72,6 +72,8 @@ In many scenarios this is fine, but in case this is not adequate there's a few o
 
 There isn't any _Umbraco_ configuration file changes necessary. **You must not enable the distributed calls flag in the umbracoSettings.config** file for Flexible Load Balancing to work, that is purely for Traditional load balancing. 
 
+Also check if the app-setting [umbracoDisableElectionForSingleServer](../../../../Reference/Config/webconfig/index.md) is set to false or removed in the web.config. Otherwise your servers will all be setup as single servers.
+
 There are some Examine/Logging config file updates needed (see below and the [Overview](index.md))
 
 ## Option #1 : Cloud based auto-scale appliances
