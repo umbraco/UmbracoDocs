@@ -4,6 +4,9 @@ _The services layer of the Umbraco API is used to interact with persisted data, 
 
 The intended audience for these reference pages are .net developers, it is assumed the reader already has a knowledge of the basics of Umbraco and knows .net & c#.
 
+## [ConsentService](ConsentService.md)
+A service for handling lawful data processing requirements.
+
 ## [ContentService](ContentService.md)
 Service for doing CRUD type operations, as well as publishing for `Content` objects.
 
@@ -35,5 +38,4 @@ Service for doing CRUD type operations for `MemberGroup` objects / Member Roles.
 Service for doing CRUD type operations for `Relation` and `RelationType` objects.
 
 ## [SectionService](SectionService.md)
-
 Service for doing CRUD type operations for `Section` objects
