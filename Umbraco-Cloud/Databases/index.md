@@ -35,7 +35,14 @@ If this is your first time connecting to a local database this way, you might ha
 Umbraco will create an mdf file (LocalDb) if you have SQL Server installed on your local machine, provided LocalDb is enabled and can be discovered by Deploy. If Deploy can't create an mdf file it will create a SQL CE (sdf) file instead. 
 
 ## Backups
-It's possible to create a backup of a Cloud database. It can be done by creating a PowerShell script based on the following:
+It's possible to create a backup of a Cloud database. It can be done by creating a PowerShell script.
+
+Make sure to change the following:
+- Location of the Dac assembly (if needed)
+- Your connection string
+- Database name
+- Backup directory (if needed)
+
 ```
 # Location of Microsoft.SqlServer.Dac.dll
 $DacAssembly = "C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Extensions\Application\Microsoft.SqlServer.Dac.dll"
@@ -72,7 +79,6 @@ $services.ExportBacpac("$backupDirectory$databaseName-$dateTime.bacpac", $databa
 $watch.Stop()
 Write-Host "Backup completed in" $watch.Elapsed.ToString()
 ```
-Make sure to update the connectionString to match your Cloud connection details.
 
 ## Moving on
 Now that you've connected you can work with the databases on Umbraco Cloud, like you could on any other host. Just remember to let Umbraco Cloud do the work when it comes to the Umbraco related tables (Umbraco* and CMS* tables).
