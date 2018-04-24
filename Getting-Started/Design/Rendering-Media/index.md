@@ -67,5 +67,5 @@ If you want the original, uncropped image, you can ignore the GetCropUrl extensi
     <img src="@mediaItem.Url" />
 
 ### More information
-- [Media Picker](../../Backoffice/Property-Editors/Built-in-Property-Editors/Media-Picker.md)
+- [Media Picker](../../Backoffice/Property-Editors/Built-in-Property-Editors/Media-Picker2.md)
 - [Image Cropper](../../Backoffice/Property-Editors/Built-in-Property-Editors/Image-Cropper.md)
