@@ -10,7 +10,7 @@ With that said, it is possible to apply selected changes to your Live environmen
 
 There are two roads to take:
 
-## 1. Move files manually
+## 1. [Move files manually](Move-files-manually/)
 
-## 2. Use Git magic
+## 2. [Use Git magic](Using-Git/)
 
