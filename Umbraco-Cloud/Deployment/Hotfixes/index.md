@@ -4,5 +4,13 @@ When you have an Umbraco Cloud project with multiple environments, you might run
 
 Let's say you have 2 environments, a Live environment and a Development environment. You are currently working on building some changes on your Development environment, but these changes wont be ready for the Live environment for another few weeks. Now you need to apply a minor change to your Live environment - a *hotfix*. Normally you would do this, by making the hotfix on the Development environment and deploy it to the Live environment. In this scenario that's not possible, as you do not want to deploy the other changes you are still working on.
 
-Following the workflow of an Umbraco Cloud project, the 
+Following the workflow of an Umbraco Cloud project, you should never make changes directly on your Live environment. You should only make changes on the Live environment if that's the only environment you have. Read the [Environments](../../Getting-Started/Environments) article to learn more about environments on a Cloud project.
+
+With that said, it is possible to apply selected changes to your Live environment without breaking the workflow of Umbraco Cloud. 
+
+There are two roads to take:
+
+## 1. Move files manually
+
+## 2. Use Git magic
 
