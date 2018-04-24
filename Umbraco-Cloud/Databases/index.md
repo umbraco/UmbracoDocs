@@ -34,5 +34,45 @@ If this is your first time connecting to a local database this way, you might ha
 
 Umbraco will create an mdf file (LocalDb) if you have SQL Server installed on your local machine, provided LocalDb is enabled and can be discovered by Deploy. If Deploy can't create an mdf file it will create a SQL CE (sdf) file instead. 
 
+## Backups
+It's possible to create a backup of a Cloud database. It can be done by creating a PowerShell script based on the following:
+```
+# Location of Microsoft.SqlServer.Dac.dll
+$DacAssembly = "C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Extensions\Application\Microsoft.SqlServer.Dac.dll"
+
+# Connection details can be found under "Settings" > "Connection details" on Umbraco.io
+# If your password contains $ you'll have to escape them with a backtick (`)
+$connectionString = "server=example.com;database=julemand;user id=root@example;password=pa`$`$word"
+
+# The name of the database
+$databaseName = "julemand"
+
+# Bacpac files will be written to this directory - make sure it already exists
+$backupDirectory = "C:\dbbackup\"
+
+# Load DAC assembly
+Write-Host "Loading Dac Assembly: $DacAssembly"
+Add-Type -Path $DacAssembly
+Write-Host "Dac Assembly loaded."
+
+# Initialize Dac
+$now = $(Get-Date).ToString("HH:mm:ss")
+$services = new-object Microsoft.SqlServer.Dac.DacServices $connectionString
+if ($services -eq $null)
+{
+    exit
+}
+
+$dateTime = $(Get-Date).ToString("yyyy-MM-dd-HH.mm.ss")
+
+Write-Host "Starting backup of $databaseName at $now"
+$watch = New-Object System.Diagnostics.StopWatch
+$watch.Start()
+$services.ExportBacpac("$backupDirectory$databaseName-$dateTime.bacpac", $databaseName)
+$watch.Stop()
+Write-Host "Backup completed in" $watch.Elapsed.ToString()
+```
+Make sure to update the connectionString to match your Cloud connection details.
+
 ## Moving on
 Now that you've connected you can work with the databases on Umbraco Cloud, like you could on any other host. Just remember to let Umbraco Cloud do the work when it comes to the Umbraco related tables (Umbraco* and CMS* tables).
