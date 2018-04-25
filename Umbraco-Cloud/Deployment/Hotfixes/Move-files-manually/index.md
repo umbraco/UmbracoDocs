@@ -61,8 +61,13 @@ Once you've checked that everything works locally, you are ready to push to the 
 10. **Note** that when changes are pushing directly to a Live environment and you have more than one environment, the changes are not automatically extracted into the site
 11. Access KUDU on the Live environment
 12. Navigate to `site/wwwroot/data` in the _CMD Console_
-13. Create a _deploy_ marker by typing the following: `echo > deploy`
-14. Once this is complete and you see a `deploy-complete` marker, you will see the changes reflected on the Live environment
+13. Delete the _deploy_ markers already in the folder - `deploy-complete` and `deploy-ready`
+14. Create a _deploy_ marker by typing the following: `echo > deploy`
+15. Once this is complete and you see a `deploy-complete` marker, you will see the changes reflected on the Live environment
+
+You have now applied a hotfix to the Live environment.
+
+When you are ready building on your Development environment, simply follow the [normal workflow of Cloud](../Deployment) to deploy the changes to the Live environment.
 
 ## Important notes
 
