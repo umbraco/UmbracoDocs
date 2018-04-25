@@ -71,5 +71,6 @@ When you are ready building on your Development environment, simply follow the [
 
 ## Important notes
 
+* Once you've applied the hotfix, we recommend that you delete the local clone of the Live environment. If you need to apply another hotfix at some point, simply clone the environment down again.
 * Make sure that the changes you push directly to your Live environment is also pushed to the Development environment. This will ensure that your environments are kept in sync.
 * This guide can also be used for applying a hotfix to a _Staging_ environment.
