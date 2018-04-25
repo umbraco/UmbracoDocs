@@ -6,9 +6,9 @@ Next step is to actually get the Open Graph code rendered on the website. This i
 3. Find the *head* HTML tags at the top of the template
 4. Write the following at bottom of the *head*:
 
-    @if(Model.Content is IOpenGraph){ 
-        @Html.Partial("openGraph")
-    }
+        @if(Model.Content is IOpenGraph){
+            @Html.Partial("openGraph")
+        }
 
 This will render a partial view *if* the composition is present on the current page which will be the case for Home and blog posts on the site. `IOpenGraph` is an interface created by adding the composition, if you know how that works you can see how powerful this is. If not, just enjoy the handy helper to check for the composition.
 
