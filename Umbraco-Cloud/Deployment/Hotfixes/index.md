@@ -12,11 +12,11 @@ With that said, it **is** possible to apply selected changes to your Live enviro
 
 There are two roads to take:
 
-## 1. [Move files manually](Move-files-manually/)
+## [1. Move files manually](Move-files-manually/)
 
 One way to apply a hotfix to a Live environment would be to clone down both your Development and your Live environment to your local machine. Then you take the changed files from the cloned Development environment and copy them into the cloned Live environment, and commit and push them to the Live environment on Cloud. Using this guide would also allow you to test the changes on a cloned version of your Live environment before pushing to the Cloud.
 
-## 2. [Use Git magic](Using-Git/)
+## [2. Use Git magic](Using-Git/)
 
 Another way to apply a hotfix to a Live environment on Cloud is to clone down the Development environment and then use Git to push selected changes to the Live environment. This guide requires some knowledge about Git, and you should only go with this guide if you feel comfortable working with Git.
 
