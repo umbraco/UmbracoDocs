@@ -71,7 +71,7 @@ This is not best in terms of efficiently. It implies that a lot of objects are c
 
 Ultimately, the idea is to cache the content objects themselves. Which would mean that the content returned by the cache is *global* to the entire application, and that the *same* content model *object* is returned to all requests for as long as that content does not change. Because that object is shared by requests, property values are converted once, which is more efficient.
 
-Which prompts **rule number 1**: Cntent models must be *stateless* with regards to the current request. If you add a property to a model, and the value of that property depends on the current request, then you must *not* store that value as a field. It must be re-calculated each time, or stored in a cache at the request's level.
+Which prompts **rule number 1**: Content models must be *stateless* with regards to the current request. If you add a property to a model, and the value of that property depends on the current request, then you must *not* store that value as a field. It must be re-calculated each time, or stored in a cache at the request's level.
 
 A cache that would cache the content objects, would refresh (replace) the object corresponding to a content item, when that content item is modified (published). So, a new object is created, property values will be converted again, etc.
 

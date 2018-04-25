@@ -1,16 +1,16 @@
-#Umbraco Api - Authorization
+# Umbraco Api - Authorization
 
 _This section will describe how to secure your Umbraco Api controllers based on a users membership_ 
 
-##Authorizing for the back office
+## Authorizing for the back office
 
-###Inheriting from UmbracoAuthorizedApiController
+### Inheriting from UmbracoAuthorizedApiController
 
 Probably the easiest way to ensure your controller is secured for only back office users is to inherit from `Umbraco.Web.WebApi.UmbracoAuthorizedApiController`. This is essentially the same as applying the `UmbracoAuthorizeAttribute` to your controller (see below). We also expose the Umbraco user property `User UmbracoUser {get;}` on this base controller as well.
 
 The `UmbracoAuthorizedApiController` is automatically routed.  Check out the [routing documentation](../Authorized/index.md) for more information on this topic.
 
-###Using UmbracoAuthorizeAttribute
+### Using UmbracoAuthorizeAttribute
 
 To secure your controller based on back offce membership use the attribute: `Umbraco.Web.WebApi.UmbracoAuthorizeAttribute`. 
 
@@ -31,7 +31,7 @@ This will only allow a logged in back office user to to access the GetAllProduct
 	    }
 	}
 
-##Using MemberAuthorizeAttribute
+## Using MemberAuthorizeAttribute
 
 To secure your controller based on front-end membership use the attribute: `Umbraco.Web.WebApi.MemberAuthorizeAttribute`. 
 

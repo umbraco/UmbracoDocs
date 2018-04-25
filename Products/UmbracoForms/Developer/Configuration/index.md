@@ -1,7 +1,7 @@
-#Configuration
+# Configuration
 With Umbraco Forms it's possible to customize the functionality with various configuration values.
 
-##Editing configuration values
+## Editing configuration values
 The configuration for Umbraco Forms can be changed by modifing the XML based config file found at `/App_Plugins/UmbracoForms/UmbracoForms.config`
 
 ### EnableAntiForgeryToken

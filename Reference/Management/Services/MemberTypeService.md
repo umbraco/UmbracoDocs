@@ -1,4 +1,4 @@
-#MemberTypeService
+# MemberTypeService
 
 **Applies to Umbraco 7.1 and 6.2 and newer**
 
@@ -23,7 +23,7 @@ All samples in this document will require the following usings:
 
 
 
-##Getting the service
+## Getting the service
 The MemberTypeService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the MemberTypeService is available through a local `Services` property.
 
 	Services.MemberTypeService
@@ -32,16 +32,16 @@ Getting the service through the `ApplicationContext`:
 
 	ApplicationContext.Current.Services.MemberTypeService
 
-##Methods
+## Methods
 
-###.Delete(IMemberType memberType);
+### .Delete(IMemberType memberType);
 Deletes a `MemberType`
 
-###.Get(string alias)
+### .Get(string alias)
 Returns a `MemberType` with a given alias
 
-###.GetAll(int[] ids);
+### .GetAll(int[] ids);
 Returns a collection of `MemberType` with the given ids
 
-###.Save(IMemberType memberType)
+### .Save(IMemberType memberType)
 Saves a `MemberType`

@@ -93,7 +93,7 @@ Examine v0.1.80 introduced a new `directoryFactory` named `SyncTempEnvDirectoryF
 
     directoryFactory="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory,Examine"
 
-The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory. This setting is need because Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Any time the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local environment temp files are cleared out that the index files can be restored from the centrally stored index files
+The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory. This setting is need because Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Any time the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local environment temp files are cleared out that the index files can be restored from the centrally stored index files.  
 
 #### Pre Examine v0.1.80 ####
 
@@ -111,7 +111,7 @@ Examine v0.1.83 introduced a new `directoryFactory` named `TempEnvDirectoryFacto
 
     directoryFactory="Examine.LuceneEngine.Directories.TempEnvDirectoryFactory,Examine"
 
-The `TempEnvDirectoryFactory` allows Examine to store indexes directly in the environment temporary storage directory.
+The `TempEnvDirectoryFactory` allows Examine to store indexes directly in the environment temporary storage directory, and should be used instead of `SyncTempEnvDirectoryFactory` mentioned above. 
 
 #### Pre Examine v0.1.83 ####
 
@@ -122,9 +122,15 @@ In ExamineIndex.config, you need to tokenize the path for each of your indexes t
 
 We are working towards being able to mitigate these issues by adding the ability to store a master index in blob storage so that when new workers come online they can sync the existing index locally (this is not yet in place)
 
-### Umbraco XML cache file
+### Umbraco XML cache file and other TEMP files
 
-For your front-end Azure Web App instance, you'll need to ensure that the Umbraco XML config file is stored on the local server (since Azure uses a shared file system). To do this you need to add a new app setting to web.config:
+For a front-end Azure Web App instance, you'll need to ensure that the Umbraco XML config file is stored on the local server (since Azure uses a shared file system). To do this you need to add a new app setting to web.config:
+
+For **Umbraco v7.7.3+**
+
+	<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
+
+This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the environment temporary folder. More info on this setting is available [here](../../../../Reference/Config/webconfig/index.md#umbracolocaltempstorage-umbraco-v773)
 
 For **Umbraco v7.6+**
 
@@ -181,6 +187,6 @@ Configuring your servers to work using a centrally located file system that is s
 Scaling will still be a slightly manual process because it would involve you adding servers/sites but with flexible load balancing you don't have to configure anything in Umbraco,
 you just need to point the site to the Umbraco database and update your load balancer to include the site.
 
-##Advanced techniques
+## Advanced techniques
 
 Once you are familiar with how flexible load balancing works, you might be interested in some [advanced techniques](flexible-advanced.md).

@@ -1,4 +1,4 @@
-#MediaType
+# MediaType
 
 **Applies to Umbraco 6.x and newer**
 
@@ -20,7 +20,7 @@ All samples in this document will require the following usings:
 	using Umbraco.Core.Models;
 	using Umbraco.Core.Services;
 
-##Constructors
+## Constructors
 
 ### new MediaType(int parentId)
 Constructor for creating a new `MediaType` object where the necessary parameter is the Id of the parent `MediaType` as an `Int`.
@@ -28,16 +28,16 @@ Constructor for creating a new `MediaType` object where the necessary parameter 
 ### new MediaType(IMediaType parent)
 Constructor for creating a new `MediaType` object where the necessary parameter is the parent `MediaType` as an `IMediaType` object.
 
-##Properties
+## Properties
 
-###.Alias
+### .Alias
 Gets or Sets the Alias as a `String` of the MediaType.
 
 	//Given a `ContentTypeService` object get MediaType by its Id and return Alias
 	var mediaType = contentTypeService.GetMediaType(1234);
 	return mediaType.Alias;
 
-###.AllowedContentTypes
+### .AllowedContentTypes
 Gets or Sets an `Enumerable` list of `ContentTypeSort` objects of the MediaTypes allowed under the current MediaType.
 
 The `ContentTypeSort` is a simple object with a lazy Id, int SortOrder and string Alias used to sort the MediaTypes within the list of AllowedContentTypes.
@@ -46,7 +46,7 @@ The `ContentTypeSort` is a simple object with a lazy Id, int SortOrder and strin
 	var mediaType = contentTypeService.GetMediaType(1234);
 	return mediaType.AllowedContentTypes;
 
-###.ContentTypeComposition
+### .ContentTypeComposition
 Gets a list of `MediaTypes` as `IContentTypeComposition` objects that make up a composition of PropertyGroups and PropertyTypes for the current MediaType.
 
 The ContentTypeComposition provides a mixin-type functionality in that you can compose a MediaType of one or more other MediaTypes in a complex structure. But please note that the backoffice does not fully support these complex structures yet.
@@ -55,117 +55,117 @@ The ContentTypeComposition provides a mixin-type functionality in that you can c
 	var mediaType = contentTypeService.GetMediaType(1234);
 	return mediaType.ContentTypeComposition;
 
-###.CompositionPropertyGroups
+### .CompositionPropertyGroups
 Gets a list of all 'PropertyGroup` objects from the composition including PropertyGroups from the current MediaType.
 
 	//Given a `ContentTypeService` object get MediaType by its Id and return CompositionPropertyGroups
 	var mediaType = contentTypeService.GetMediaType(1234);
 	return mediaType.CompositionPropertyGroups;
 
-###.CompositionPropertyTypes
+### .CompositionPropertyTypes
 Gets a list of all `PropertyType` objects from the composition including PropertyTypes from the current MediaType.
 
 	//Given a `ContentTypeService` object get MediaType by its Id and return CompositionPropertyTypes
 	var mediaType = contentTypeService.GetMediaType(1234);
 	return mediaType.CompositionPropertyTypes;
 
-###.CreateDate
+### .CreateDate
 Gets or Sets a `DateTime` object, indicating then the given MediaType was created.
 
 	//Given a `ContentTypeService` object get MediaType by its Id and return CreateDate
 	var mediaType = contentTypeService.GetMediaType(1234);
 	return mediaType.CreateDate;
 
-###.CreatorId
+### .CreatorId
 Gets or Sets the Id of the `User` who created the MediaType.
 
 	//Given a `ContentTypeService` object get MediaType by its Id and return the Id of the Creator
 	var mediaType = contentTypeService.GetMediaType(1234);
 	return mediaType.CreatorId;
 
-###.Description
+### .Description
 Gets or Sets the Description as a `String` for the MediaType.
 
 	//Given a `ContentTypeService` object get MediaType by its Id and return the Description
 	var mediaType = contentTypeService.GetMediaType(1234);
 	return mediaType.Description;
 
-###.Icon
+### .Icon
 Gets or Sets the Icon as a `String` for the MediaType.
 
 	//Given a `ContentTypeService` object get MediaType by its Id and return the Icon
 	var mediaType = contentTypeService.GetMediaType(1234);
 	return mediaType.Icon;
 
-###.Id
+### .Id
 Gets the unique `MediaType` Id as a `Int`, this ID is based on a Database identity field, and is therefore not safe to reference in code which are moved between different instances, use Key instead. 
 
-###.Key
+### .Key
 Gets the `Guid` assigned to the MediaType during creation. This value is unique, and should never change, even if the content is moved between instances. 
 
 	//Given a `ContentTypeService` object get MediaType by its Id and return the Key
 	var mediaType = contentTypeService.GetMediaType(1234);
 	return mediaType.Key;
 
-###.Level
+### .Level
 Gets or Sets the given `MediaType` level in the site hirachy as an `Int`. MediaTypes placed at the root of the tree, will return 1, content just underneath will return 2, and so on.
 
 	//Given a `ContentTypeService` object get MediaType by its Id and return the Level
 	var mediaType = contentTypeService.GetMediaType(1234);
 	return mediaType.Level;
 
-###.Name
+### .Name
 Gets or Sets the name of the MediaType as a `String`.
 
 	//Given a `ContentTypeService` object get MediaType by its Id and return its Name
 	var mediaType = contentTypeService.GetMediaType(1234);
 	return mediaType.Name;
 
-###.ParentId
+### .ParentId
 Gets or Sets the parent `MediaType` Id as an `Int`.
 
 	//Given a `ContentTypeService` object get MediaType by its Id and return the Id of the Parent MediaType
 	var mediaType = contentTypeService.GetMediaType(1234);
 	return mediaType.ParentId;
 
-###.Path
+### .Path
 Gets or Sets the path of the MediaType as a `String`. This string contains a comma seperated list of the anscestors Ids including the current MediaTypes own id at the end of the string.
 
 	//Given a `ContentTypeService` object get MediaType by its Id and return the Path
 	var mediaType = contentTypeService.GetMediaType(1234);
 	return mediaType.Path;
 
-###.PropertyGroups
+### .PropertyGroups
 Gets or Sets a `PropertyGroupCollection` containing a list of PropertyGroups for the current MediaType.
 
 	//Given a `ContentTypeService` object get MediaType by its Id and return PropertyGroups
 	var mediaType = contentTypeService.GetMediaType(1234);
 	return mediaType.PropertyGroups;
 
-###.PropertyTypes
+### .PropertyTypes
 Gets an `Enumerable` list of PropertyTypes aggregated for all groups within the current MediaType, as well as PropertyTypes not within a group.
 
 	//Given a `ContentTypeService` object get MediaType by its Id and return PropertyTypes
 	var mediaType = contentTypeService.GetMediaType(1234);
 	return mediaType.PropertyTypes;
 
-###.SortOrder
+### .SortOrder
 Gets the given `MediaType` index, compared to sibling content.
 
 	//Given a `ContentTypeService` object get MediaType by its Id and return its SortOrder
 	var mediaType = contentTypeService.GetMediaType(1234);
 	return mediaType.SortOrder;
 
-###.Thumbnail
+### .Thumbnail
 Gets or Sets the Thumbnail as a `String` for the MediaType.
 
 	//Given a `ContentTypeService` object get MediaType by its Id and return the Thumbnail
 	var mediaType = contentTypeService.GetMediaType(1234);
 	return mediaType.Thumbnail;
 
-##Methods
+## Methods
 
-###.AddContentType(IContentTypeComposition mediaType)
+### .AddContentType(IContentTypeComposition mediaType)
 Adds a new `MediaType` to the list of composite MediaTypes.
 
 	//Given a `ContentTypeService` object get a few MediaTypes by their alias
@@ -177,7 +177,7 @@ Adds a new `MediaType` to the list of composite MediaTypes.
 	videoContentType.AddContentType(seoContentType);
 	contentTypeService.Save(videoContentType);
 
-###.CompositionAliases()
+### .CompositionAliases()
 Returns an `Enumerable` list of MediaType aliases as `String` from the current composition.
 
 	//Given a `ContentTypeService` object get a MediaType by its alias and loop through CompositionAliases
@@ -187,7 +187,7 @@ Returns an `Enumerable` list of MediaType aliases as `String` from the current c
         string alias = alias;
     }
 
-###.CompositionIds()
+### .CompositionIds()
 Returns an `Enumerable` list of MediaType Ids as `Int` from the current composition.
 
 	//Given a `ContentTypeService` object get a MediaType by its alias and loop through CompositionIds
@@ -197,7 +197,7 @@ Returns an `Enumerable` list of MediaType Ids as `Int` from the current composit
         string id = id;
     }
 
-###.ContentTypeCompositionExists(string alias)
+### .ContentTypeCompositionExists(string alias)
 Checks if a `MediaType` with the supplied alias exists in the list of composite MediaTypes.
 
 	//Given a `ContentTypeService` object get a MediaType by its alias
@@ -205,7 +205,7 @@ Checks if a `MediaType` with the supplied alias exists in the list of composite 
 	var mediaType = contentTypeService.GetMediaType("video");
 	bool result = mediaType.ContentTypeCompositionExists("meta");
 
-###.RemoveContentType(string alias)
+### .RemoveContentType(string alias)
 Removes a `MediaType` with the supplied alias from the the list of composite MediaTypes.
 
 	//Given a `ContentTypeService` object get a MediaType by its alias and 
@@ -215,7 +215,7 @@ Removes a `MediaType` with the supplied alias from the the list of composite Med
 	if(success)
 		contentTypeService.Save(mediaType);
 
-###.RemovePropertyType(string propertyTypeAlias)
+### .RemovePropertyType(string propertyTypeAlias)
 Removes a `PropertyType` from the current `MediaType`.
 
 	//Given a `ContentTypeService` object get a MediaType by its alias

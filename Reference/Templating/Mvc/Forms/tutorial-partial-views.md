@@ -1,10 +1,10 @@
-#Creating an MVC form using a Partial View
+# Creating an MVC form using a Partial View
 
 **Applies to: Umbraco 4.10.0+**
 
 _This tutorial will explain how to create a form using  a Partial View in Umbraco. This is probably the simplest way to create a form in Umbraco with MVC._
 
-##The View Model
+## The View Model
 
 The view model that will be used in this tutorial will be as follows:
 	
@@ -23,7 +23,7 @@ The view model that will be used in this tutorial will be as follows:
 
 This class defines the data that will be submitted and also defines how the data will be validated upon submission and conveniently for us MVC automatically wires up these validation attributes with the front-end so JavaScript validation will automagically occur.
 
-##The Surface Controller
+## The Surface Controller
 
 For this tutorial, the Surface controller that we will create will contain one action which is used to accept the POSTed values from the form. In this example, the action will:
 
@@ -56,7 +56,7 @@ For this tutorial, the Surface controller that we will create will contain one a
 		}
 	}
 
-##Create a Partial View to render the form
+## Create a Partial View to render the form
 
 The best way to render a form in MVC is to have a Partial View render the form with a strongly typed model. For this example, we'll create a partial view at location: *~/Views/Partials/BlogCommentForm.cshtml* with a strongly typed model of the model created previously. This example shows how to use the BeginUmbracoForm method with the strongly typed overload to specify which Surface controller and Action to POST to. For brevity, this will auto-scaffold all of the fields for the model using `Html.EditorFor(x => Model)` but you could create the input fields separately if you need more granular control over the markup.
 
@@ -68,7 +68,7 @@ The best way to render a form in MVC is to have a Partial View render the form w
 		<input type="submit"/>
 	}
 
-##Render the Partial View
+## Render the Partial View
 
 The last step is to render the partial view that we've just created in your Umbraco template's view:
 

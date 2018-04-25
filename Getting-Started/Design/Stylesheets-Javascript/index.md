@@ -1,6 +1,6 @@
-#Working with stylesheets and javascript
+# Working with stylesheets and javascript
 
-##Bundling & Minification for JavaScript and CSS
+## Bundling & Minification for JavaScript and CSS
 
 You can of course use whatever tools you are comfortable with for bundling & minification but it's worth 
 noting that Umbraco ships with the ClientDependency Framework which offers simple runtime bundling & minification.

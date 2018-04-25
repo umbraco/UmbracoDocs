@@ -89,7 +89,7 @@ The basic values on any editor is `alias`, `name`, and `editor` these three **mu
         "fields": [
             {
                 "label": "Enable something",
-                "description": "This is a describtion",
+                "description": "This is a description",
                 "key": "enableStuff",
                 "view": "boolean"
             }            

@@ -1,12 +1,12 @@
-#REST APIs in Umbraco
+# REST APIs in Umbraco
 
 _Information about REST APIs in Umbraco_
 
-##Creating your own
+## Creating your own
 
 It is entirely possible and quite easy to create your own REST APIs for Umbraco by utilizing ASP.Net's WebApi in conjunction with [Umbraco's UmbracoApiController's](../Controllers).
 
-##Using an existing REST API platform
+## Using an existing REST API platform
 
 A free add-on for Umbraco 7.3+ has been built by the Umbraco HQ that gives you a nice REST API for working with content, media, members & relations.
 The source code for this project lives at GitHub: [https://github.com/umbraco/UmbracoRestApi](https://github.com/umbraco/UmbracoRestApi)
