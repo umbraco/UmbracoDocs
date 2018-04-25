@@ -16,6 +16,8 @@ Three commits has been pushed from my local clone to the Development environment
 
 Here are the steps to follow in order to apply selected changes to the Live environment without deploying directly from Development to Live.
 
+### Move the files
+
 1. Clone down the Live environment
     * The _clone URL_ for the Live environment can be found in the Umbraco Cloud Portal:
 
@@ -33,4 +35,23 @@ Here are the steps to follow in order to apply selected changes to the Live envi
 4. You can now _Stage_ and _Commit_ these changes to the repository for the Live environment in Git
 
 One of the benefits of having the Live environment cloned down, is that you can test the new changes locally before sending it to the Live environment.
+
+### Test changes locally
+
+5. Run the Live environment through IIS
+6. Open _CMD_ and nagivate to the `/data/revision` folder where you have your local clone of the Live environment
+7. Create a _deploy_ marker by typing the following: `echo > deploy` - learn more about this command in the [Power Tools]() articles
+8. The changes will now be reflected in the backoffice of your local clone of the Live environment
+
+Once you've checked that everything works locally, you are ready to push to the Live environment
+
+### Push to Live
+
+9. Push the committed changes to the Live environment using Git
+10. **Note** that when changes are pushing directly to a Live environment the changes are not automatically extracted into the site
+11. Access KUDU on the Live environment
+12. Navigate to `site/wwwroot/data` in the _CMD Console_
+13. Create a _deploy_ marker by typing the following: `echo > deploy`
+14. Once this is complete, you will see the changes reflected on the Live environment
+
 
