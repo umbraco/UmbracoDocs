@@ -139,10 +139,14 @@ Here are the steps to specify your own logic for validating a username and passw
                 (options, context) =>
                 {
                     var membershipProvider = Umbraco.Core.Security.MembershipProviderExtensions.GetUsersMembershipProvider().AsUmbracoMembershipProvider();
+		    var settingContent = Umbraco.Core.Configuration.UmbracoConfig.For.UmbracoSettings().Content;
                     var userManager = BackOfficeUserManager.Create(options, 
                         applicationContext.Services.UserService,
+                        applicationContext.Services.EntityService,
                         applicationContext.Services.ExternalLoginService,
-                        membershipProvider);
+                        membershipProvider,
+			settingContent);
+			
                     //Set your own custom IBackOfficeUserPasswordChecker   
                     userManager.BackOfficeUserPasswordChecker = new MyPasswordChecker();
                     return userManager;
@@ -168,15 +172,20 @@ Then modify `~/App_Start/UmbracoStandardOwinStartup.cs` to override `UmbracoStan
         base.Configuration(app);
         // active directory authentication
         
+        var applicationContext = ApplicationContext.Current;
         app.ConfigureUserManagerForUmbracoBackOffice<BackOfficeUserManager, BackOfficeIdentityUser>(
-            ApplicationContext.Current,
+            applicationContext,
             (options, context) =>
             {
+                var membershipProvider = Umbraco.Core.Security.MembershipProviderExtensions.GetUsersMembershipProvider().AsUmbracoMembershipProvider();
+		var settingContent = Umbraco.Core.Configuration.UmbracoConfig.For.UmbracoSettings().Content;
                 var userManager = BackOfficeUserManager.Create(
                     options,
-                    ApplicationContext.Current.Services.UserService,
-                    ApplicationContext.Current.Services.ExternalLoginService,
-                    MembershipProviderExtensions.GetUsersMembershipProvider().AsUmbracoMembershipProvider()
+                    applicationContext.Services.UserService,
+                    applicationContext.Services.EntityService,
+                    applicationContext.Services.ExternalLoginService,
+                    membershipProvider,
+		    settingContent
                 );
                 userManager.BackOfficeUserPasswordChecker = new ActiveDirectoryBackOfficeUserPasswordChecker();
                 return userManager;

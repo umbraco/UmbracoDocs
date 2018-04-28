@@ -38,6 +38,3 @@ This section continues from where we left off but covers the installation and co
 
 ### Note
 *You can log into your Umbraco site by entering the following into your browser: http://yoursite.com/umbraco/*
-
-### Post installation
-One important recommendation is to always remove the `install` folder immediately after installing Umbraco and never to upload it to a live server.
