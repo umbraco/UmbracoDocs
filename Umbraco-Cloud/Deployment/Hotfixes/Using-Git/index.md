@@ -55,3 +55,14 @@ Before you push the newly created branch to Umbraco Cloud we need to change the 
 10. You will be prompted to login - use your Umbraco Cloud credentials
 11. Now you will see that the history from the Live repository is visible in the Git history
 12. Next step; Check out the new branch and hit **Push**
+13. Choose to push to the newly added remote, and write **master** to make sure you are pushing to the master branch on the Live environment
+
+    ![Choose remote](images/choose-remote.png)
+
+14. Hit **Submit** and the push will start
+15. **Note** that when changes are pushing directly to a Live environment and you have more than one environment, the changes are not automatically extracted into the site
+16. Access KUDU on the Live environment
+17. Navigate to `site/wwwroot/data` in the _CMD Console_
+18. Delete the _deploy_ markers already in the folder - `deploy-complete` and `deploy-ready`
+19. Create a _deploy_ marker by typing the following: `echo > deploy`
+20. Once this is complete and you see a `deploy-complete` marker, you will see the changes reflected on the Live environment
