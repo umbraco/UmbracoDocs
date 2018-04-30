@@ -61,8 +61,11 @@ Before you push the newly created branch to Umbraco Cloud we need to change the 
 
 14. Hit **Submit** and the push will start
 15. **Note** that when changes are pushing directly to a Live environment and you have more than one environment, the changes are not automatically extracted into the site
-16. Access KUDU on the Live environment
-17. Navigate to `site/wwwroot/data` in the _CMD Console_
-18. Delete the _deploy_ markers already in the folder - `deploy-complete` and `deploy-ready`
-19. Create a _deploy_ marker by typing the following: `echo > deploy`
-20. Once this is complete and you see a `deploy-complete` marker, you will see the changes reflected on the Live environment
+16. Find a guide on how to do this, in the [Manual Extraction](../../Set-Up/Power-Tools/Manual-extractions) article'
+
+You have now applied a hotfix to the Live environment.
+
+When you are ready building on your Development environment, simply follow the [normal workflow of Cloud](../Deployment) to deploy the changes to the Live environment.
+
+## Important notes
+

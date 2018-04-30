@@ -50,7 +50,7 @@ One of the benefits of having the Live environment cloned down, is that you can 
 
 5. Run the Live repository through IIS
 6. Open _CMD_ and nagivate to the `/data/revision` folder in your Live repository
-7. Create a _deploy_ marker by typing the following: `echo > deploy` - learn more about this command in the [Power Tools]() articles
+7. Create a _deploy_ marker by typing the following: `echo > deploy` - learn more about this command in the [Power Tools](../../Set-up/Power-Tools) articles
 8. The changes will now be reflected in the backoffice of your local Live environment
 
 Once you've checked that everything works locally, you are ready to push to the Live environment
@@ -59,11 +59,7 @@ Once you've checked that everything works locally, you are ready to push to the 
 
 9. Push the committed changes to the Live environment using Git
 10. **Note** that when changes are pushing directly to a Live environment and you have more than one environment, the changes are not automatically extracted into the site
-11. Access KUDU on the Live environment
-12. Navigate to `site/wwwroot/data` in the _CMD Console_
-13. Delete the _deploy_ markers already in the folder - `deploy-complete` and `deploy-ready`
-14. Create a _deploy_ marker by typing the following: `echo > deploy`
-15. Once this is complete and you see a `deploy-complete` marker, you will see the changes reflected on the Live environment
+11. Find a guide on how to do this, in the [Manual Extraction](../../Set-Up/Power-Tools/Manual-extractions) article
 
 You have now applied a hotfix to the Live environment.
 
