@@ -171,7 +171,7 @@ with a level of one. As mentioned above, traversing costs resources and in this 
 for the same value. Instead this can be rewritten as:
 
     @{
-        var site = @Model.Content.Site();
+        var site = Model.Content.Site();
     }
     <ul>
         <li><a href="@site.Url">@site.Name</a></li>
