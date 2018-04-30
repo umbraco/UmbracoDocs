@@ -11,7 +11,7 @@ You have an Umbraco Cloud project with two environments, Development and Live.
 
 You have been working on building the site on a local clone of the Development environment, and now you want to send some but not all changes to the Live environment.
 
-Three commits have been pushed from your local clone to the Development environment. Out of these three commits, you only need some of the changes on the Live environment.
+Three commits have been pushed from your local clone to the Development environment. Out of these three commits, you only need the changes from one of the commits on the Live environment.
 
 ![Commits](images/commits-for-cherry.png)
 
