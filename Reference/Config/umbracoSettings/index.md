@@ -222,15 +222,17 @@ In case Umbraco is taking a bit of time to prepare content to display you can di
 
 **PropertyContextHelpOption**
 
+***This option has become obsolete in v7+. It will always be displayed as text***
+
 The setting controls what kind of context help is displayed next to editor fields in the content section.  It can either be display as a small icon with text on mouse hover: (set it to `icon`) Set to displaying the help text directly under the field name (set it to `text`), or not be displayed at all (set to `none`).
 
-<PropertyContextHelpOption>text</PropertyContextHelpOption>
+	<PropertyContextHelpOption>text</PropertyContextHelpOption>
 
 **PreviewBadge**
 
 This allows you to customize the preview badge being shown when you're previewing a node.
 
-<PreviewBadge><![CDATA[<a id="umbracoPreviewBadge" style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px; background: url('{1}/preview/previewModeBadge.png') no-repeat;" href="{0}/endPreview.aspx?redir={2}"><span style="display:none;">In Preview Mode - click to end</span></a>]]></PreviewBadge>
+	<PreviewBadge><![CDATA[<a id="umbracoPreviewBadge" style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px; background: url('{1}/preview/previewModeBadge.png') no-repeat;" href="{0}/endPreview.aspx?redir={2}"><span style="display:none;">In Preview Mode - click to end</span></a>]]></PreviewBadge>
 
 **UmbracoLibraryCacheDuration**
 
@@ -262,6 +264,21 @@ If greater control is required than available from the above, this setting can b
 
         <!-- If completed, only the file extensions listed below will be allowed to be uploaded.  If empty, disallowedUploadFiles will apply to prevent upload of specific file extensions. -->
         <allowedUploadFiles></allowedUploadFiles>
+
+
+**loginBackgroundImage (introduced in 7.6.0)**
+
+You can specify your own background image for the login screen here. The image will automatically get an overlay to match back office colors. This path is relative to the ~/umbraco path. The default location is: /umbraco/assets/img/installer.jpg
+
+	 <loginBackgroundImage>../App_Plugins/Backgrounds/login.png</loginBackgroundImage>
+
+**EnablePropertyValueConverters (introduced in 7.6.0)**
+
+Enables [value converters](../../../Extending/Property-Editors/value-converters.md) for all built in property editors so that they return strongly typed object, recommended for use with [Models Builder](../../templating/modelsbuilder/index.md)
+
+On new installs this set to true. When you are upgrading from a lower version than 7.6.0 it is recommend to set this setting to false. More information can be found in the explanation of the [breaking changes in 7.6.0](../../../Getting-Started/Setup/Upgrading/760-breaking-changes#property-value-converters-u4-7318)
+
+	<EnablePropertyValueConverters>true</EnablePropertyValueConverters>
 
 ## Security
 
