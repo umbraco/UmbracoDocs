@@ -274,7 +274,7 @@ You can specify your own background image for the login screen here. The image w
 
 **EnablePropertyValueConverters (introduced in 7.6.0)**
 
-Enables [value converters](../../../Extending/Property-Editors/value-converters.md) for all built in property editors so that they return strongly typed object, recommended for use with Models Builder
+Enables [value converters](../../../Extending/Property-Editors/value-converters.md) for all built in property editors so that they return strongly typed object, recommended for use with [Models Builder](../../templating/modelsbuilder/index.md)
 
 ## Security
 
