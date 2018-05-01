@@ -224,13 +224,13 @@ In case Umbraco is taking a bit of time to prepare content to display you can di
 
 The setting controls what kind of context help is displayed next to editor fields in the content section.  It can either be display as a small icon with text on mouse hover: (set it to `icon`) Set to displaying the help text directly under the field name (set it to `text`), or not be displayed at all (set to `none`).
 
-<PropertyContextHelpOption>text</PropertyContextHelpOption>
+	<PropertyContextHelpOption>text</PropertyContextHelpOption>
 
 **PreviewBadge**
 
 This allows you to customize the preview badge being shown when you're previewing a node.
 
-<PreviewBadge><![CDATA[<a id="umbracoPreviewBadge" style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px; background: url('{1}/preview/previewModeBadge.png') no-repeat;" href="{0}/endPreview.aspx?redir={2}"><span style="display:none;">In Preview Mode - click to end</span></a>]]></PreviewBadge>
+	<PreviewBadge><![CDATA[<a id="umbracoPreviewBadge" style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px; background: url('{1}/preview/previewModeBadge.png') no-repeat;" href="{0}/endPreview.aspx?redir={2}"><span style="display:none;">In Preview Mode - click to end</span></a>]]></PreviewBadge>
 
 **UmbracoLibraryCacheDuration**
 
