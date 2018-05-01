@@ -222,6 +222,8 @@ In case Umbraco is taking a bit of time to prepare content to display you can di
 
 **PropertyContextHelpOption**
 
+***This option has become obsolete in v7+. It will always be displayed as text***
+
 The setting controls what kind of context help is displayed next to editor fields in the content section.  It can either be display as a small icon with text on mouse hover: (set it to `icon`) Set to displaying the help text directly under the field name (set it to `text`), or not be displayed at all (set to `none`).
 
 	<PropertyContextHelpOption>text</PropertyContextHelpOption>
