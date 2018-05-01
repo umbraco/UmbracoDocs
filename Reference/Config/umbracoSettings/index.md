@@ -272,6 +272,10 @@ You can specify your own background image for the login screen here. The image w
 
 	 <loginBackgroundImage>../App_Plugins/Backgrounds/login.png</loginBackgroundImage>
 
+**EnablePropertyValueConverters (introduced in 7.6.0)**
+
+Enables [value converters](../../../Extending/Property-Editors/value-converters.md) for all built in property editors so that they return strongly typed object, recommended for use with Models Builder
+
 ## Security
 
 In the security section you have three options: **`<keepUserLoggedIn>`**, **`<allowPasswordReset>`** and **`<hideDisabledUsersInBackoffice>`**. Both settings are dealing with backoffice users.
