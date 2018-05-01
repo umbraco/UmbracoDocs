@@ -7,11 +7,11 @@ These default values will be expressed below and you can insert these configurat
 
 ## Backoffice
 
-Below you can see the settings that affect the Umbraco backoffice
+Below you can see the settings that affect the Umbraco backoffice (v7.8+)
 
 ### Tours
 
-This was introduced in 7.8. The section issued for mananging backoffice tours functionality
+The section is used for controlling the backoffice tours functionality
 
 	<backOffice>
         <tours enable="true"></tours>
@@ -20,7 +20,7 @@ This was introduced in 7.8. The section issued for mananging backoffice tours fu
 There is only one supported attribute on the tours element :
 
 **`enable`**
-If not set this will be true. Set it to false to turn off [backoffice tours](../../../Extending/Backoffice-Tours/index.md)
+By default this is set to true. Set it to false to turn off [backoffice tours](../../../Extending/Backoffice-Tours/index.md)
 
 ## Content
 
