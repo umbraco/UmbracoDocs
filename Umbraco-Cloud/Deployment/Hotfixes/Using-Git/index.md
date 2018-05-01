@@ -65,6 +65,8 @@ Before you push the newly created branch to Umbraco Cloud we need to change the 
 
 You have now applied a hotfix to the Live environment.
 
+Make sure that you merge and remove the branch you've created on the Development repository, before pushing to the Development environment on Cloud - you can always create a new branch, if you need to apply another hotfix to the Live environment.
+
 When you are ready building on your Development environment, simply follow the [normal workflow of Cloud](../Deployment) to deploy the changes to the Live environment.
 
 ## Important notes
