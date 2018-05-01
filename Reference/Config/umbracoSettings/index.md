@@ -265,6 +265,13 @@ If greater control is required than available from the above, this setting can b
         <!-- If completed, only the file extensions listed below will be allowed to be uploaded.  If empty, disallowedUploadFiles will apply to prevent upload of specific file extensions. -->
         <allowedUploadFiles></allowedUploadFiles>
 
+
+**loginBackgroundImage (introduced in 7.6.0)**
+
+You can specify your own background image for the login screen here. The image will automatically get an overlay to match back office colors. This path is relative to the ~/umbraco path. The default location is: /umbraco/assets/img/installer.jpg
+
+	 <loginBackgroundImage>../App_Plugins/Backgrounds/login.png</loginBackgroundImage>
+
 ## Security
 
 In the security section you have three options: **`<keepUserLoggedIn>`**, **`<allowPasswordReset>`** and **`<hideDisabledUsersInBackoffice>`**. Both settings are dealing with backoffice users.
