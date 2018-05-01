@@ -3,6 +3,7 @@
 In this article you'll find a step-by-step guide on how to apply a hotfix to a Live environment by using only Git.
 
 Tools used:
+
 * GitKraken
 
 ## The scenario
@@ -11,7 +12,7 @@ You have an Umbraco Cloud project with two environments, Development and Live.
 
 You have been working on building the site on a local clone of the Development environment, and now you want to send some but not all changes to the Live environment.
 
-Three commits have been pushed from your local clone to the Development environment. Out of these three commits, you only need the changes from one of the commits on the Live environment.
+A set of commits have been pushed from your local clone to the Development environment. Out of these commits, you only need the changes from two of the commits on the Live environment.
 
 ![Commits](images/commits-for-cherry.png)
 
@@ -61,7 +62,7 @@ Before you push the newly created branch to Umbraco Cloud we need to change the 
 
 14. Hit **Submit** and the push will start
 15. **Note** that when changes are pushing directly to a Live environment and you have more than one environment, the changes are not automatically extracted into the site
-16. Find a guide on how to do this, in the [Manual Extraction](../../Set-Up/Power-Tools/Manual-extractions) article'
+16. Find a guide on how to extract the files, in the [Manual Extraction](../../../Set-Up/Power-Tools/Manual-extractions) article
 
 You have now applied a hotfix to the Live environment.
 

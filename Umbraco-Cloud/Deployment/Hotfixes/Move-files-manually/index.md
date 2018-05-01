@@ -33,7 +33,7 @@ For the sake of simplicity here's an explanation of the names I'll be using in t
 
         ![Live Clone URL](images/live-clone-url.png)
 
-2. Locate the files from the Development reposiroty that you want to move to Live
+2. Locate the files from the Development repository that you want to move to Live
     * Check the commits in the Git history for the Development repository to verify which files you need
 
         ![Files changes or added](images/commit-files-changed.png)
