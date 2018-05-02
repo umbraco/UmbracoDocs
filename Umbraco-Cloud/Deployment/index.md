@@ -9,7 +9,7 @@ __Note:__ If your project contains a Staging environment, deployments will be ma
 Umbraco Cloud uses a two-part deployment approach where we keep meta data (Document types, templates, etc) and content (Content nodes and Media) as separate parts of a deployment. In order to be able to distinguish between the two types of deployments we use the term *transfer* for content and media deployments and the term *deploy* for meta data deployments.
 In summary:
 
-1. Meta data such as Document Types, Templates, Macros, Views and files are stored in a git repository and are **deployed** between environments using either a git client or the Umbraco Cloud Portal.
+1. Meta data such as Document Types, Templates, Macros, Views and config files are stored in a git repository and are **deployed** between environments using either a git client or the Umbraco Cloud Portal.
 
 2. Content and Media items are **not** stored in the git repository. These needs to be **transferred** directly from the Umbraco backoffice using the *"Queue for Transfer"* option. Once a content editor has all the items needed for a transfer (which could be just a single item) they will use the Deployment Dashboard in the Content section to transfer the items in the queue.
 
@@ -28,6 +28,21 @@ Moving your content and media between your environments is done through the Umbr
   - [Restore Content and / or Media](Restoring-content)
 
 **Note:** Transferring and restoring content and media is the same whether you are working between Local and Cloud or you are working between two Cloud environments. 
+
+## Environment restarts
+Some deployments can cause an Umbraco Cloud environment to restart. See the table below to learn which actions initiates an application restart.
+
+|Action:                            |Application Restart? |
+|-----------------------------------|---------------------|
+|Config file change                 |Yes                  |
+|Meta data deployment               |No                   |
+|File change - fx _css-file_        |No                   |
+|Content and/or Media transfer      |No                   |
+
+### Manual restart
+From the Umbraco Cloud Portal you can manually restart your environments. 
+
+![Restart an environment](images/restart-environment.gif)
 
 ## UmbracoDeploy.config
 
