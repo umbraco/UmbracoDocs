@@ -11,7 +11,7 @@ To ensure a stable and smoothly running Umbraco installation, these permissions 
 * IIS 7+ (II6 will not work because .NET 4.5 is incompatible with Windows Server 2003)
 * SQL CE, SQL Server 2008 and higher or MySQL (must support case insensitive queries)
 * ASP.NET 4.5 Full-Trust
-* Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
+* Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (usually IIS APPPOOL\appPoolName or a specific local account or in some circumstances NETWORK SERVICE)
 
 ### Umbraco 6.x.x
 
