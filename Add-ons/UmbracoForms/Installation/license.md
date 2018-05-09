@@ -37,7 +37,7 @@ Yes, additional domains can be added for EUR 94. You can purchase additional dom
 
 **Note** that this is an add-on domain for existing licenses. Refunds will not be given for this product.
 
-It is however only meant for websites which has several domains. If you wish to use Umbraco Contour on multiple websites you need a license per site.
+It is however only meant for websites which has several domains. If you wish to use Umbraco Forms on multiple websites you need a license per site.
 
 ## Configuring and installing your license
 
