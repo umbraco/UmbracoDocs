@@ -58,6 +58,14 @@ The group property is used to group related tours in the help drawer under a com
 
 ![Tour group highlighted](images/tourgroup.png)
 
+### groupOrder property
+
+This is used to control the order of the groups in the help drawer. This must be a integer value.
+
+### allowDisable
+
+A boolean value that indicates if the "Don't show this tour again" should be shown on the tour steps. If the user clicks this link the tour will not be shown in the help drawer anymore.
+
 
 
 
