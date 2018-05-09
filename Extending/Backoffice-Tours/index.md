@@ -75,6 +75,13 @@ You can set a culture (eg. nl-NL) and this tour will only be shown for users tha
 ### sections
 This is an array of section aliases that user needs to be able to access. If the user doesn't have access to all the sections the tour will not be shown in the help drawer. Eg. if the tour requires to content,media and settings and the logged in user only has access to content and media, the tour will not be shown for this user.
 
+### steps
+
+This is array of step JSON objects that user needs to take to complete the tour.
+
+
+
+
 
 
 
