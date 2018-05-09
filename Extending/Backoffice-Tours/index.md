@@ -47,3 +47,9 @@ A tour JSON object looks like this.
 This is the name that is displayed in the help drawer for the tour.
 
 ![Tour name highlighted](images/tourname.png)
+
+### alias property
+
+This is the unique alias of your tour. This is used to track the progress a user has made during taking a tour. The information of the tour progress is stored in the TourData column of the UmbracoUsers table in the database.
+
+
