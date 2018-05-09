@@ -42,4 +42,8 @@ A tour JSON object looks like this.
 		"steps": []
 	}
 
-### name
+### name property
+
+This is the name that is displayed in the help drawer for the tour.
+
+![Tour name highlighted](images/tourname.png)
