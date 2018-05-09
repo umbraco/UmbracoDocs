@@ -42,29 +42,35 @@ A tour JSON object looks like this.
 		"steps": []
 	}
 
-### name property
+Below is a explanation of each of the properties on the object
+
+### name 
 
 This is the name that is displayed in the help drawer for the tour.
 
 ![Tour name highlighted](images/tourname.png)
 
-### alias property
+### alias 
 
 This is the unique alias of your tour. This is used to track the progress a user has made during taking a tour. The information of the tour progress is stored in the TourData column of the UmbracoUsers table in the database.
 
-### group property
+### group 
 
 The group property is used to group related tours in the help drawer under a common subject (eg. Getting started). 
 
 ![Tour group highlighted](images/tourgroup.png)
 
-### groupOrder property
+### groupOrder 
 
 This is used to control the order of the groups in the help drawer. This must be a integer value.
 
-### allowDisable
+### allowDisable 
 
 A boolean value that indicates if the "Don't show this tour again" should be shown on the tour steps. If the user clicks this link the tour will not be shown in the help drawer anymore.
+
+### culture (introduced in v7.11)
+
+You can set a culture (eg. nl-NL) and this tour will only be shown for users that have set this culture on their profile. If ommitted or left empty the tour will be shown to all users.
 
 
 
