@@ -52,4 +52,12 @@ This is the name that is displayed in the help drawer for the tour.
 
 This is the unique alias of your tour. This is used to track the progress a user has made during taking a tour. The information of the tour progress is stored in the TourData column of the UmbracoUsers table in the database.
 
+### group property
+
+The group property is used to group related tours in the help drawer under a common subject (eg. Getting started). 
+
+![Tour group highlighted](images/tourgroup.png)
+
+
+
 
