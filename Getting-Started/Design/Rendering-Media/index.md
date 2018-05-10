@@ -8,24 +8,21 @@ In the following examples we will be looking at rendering out an Image, however 
 A media node is not just a file, but like content, it is a collection of fields, such width, height and the path to the stored file. The benefit of this is that accessing media is very similar to accessing a content node.
 
 ### Example 1: Accessing an image media item based on its ID
-A standard image in the media library is based on the Mediatype `image` which provides a number of standard values - if you want to add more, simply edit the media type under **settings**.
+A standard image in the media library is based on the Mediatype `image` which provides a number of standard values - if you want to add more, simply edit the media type under **settings**. In the example we are going to get our image and render out an img tag using the url for our media item and the Name as our Alt description.
 
 _Assumption: We are going to assume that our media item has an ID of **1234**, and that we are **not using Models Builder**_
 
     @{
-        var mediaItem = Umbraco.TypedMedia(1234);
-        var height = mediaItem.GetPropertyValue<string>("umbracoHeight");
+        //We are using the TypedMedia method off of the Umbraco helper to retrieve our media item based on its ID.
+        var mediaItem = Umbraco.TypedMedia(1234);        
 
-        //There are two ways to get your media item url, this is one way.
-        var file = mediaItem.GetPropertyValue<string>("umbracoFile");
-
-        //This is the other
+        //To get the url for your media item, you use the Url property on your media item.
         var url = mediaItem.Url
     }
 
-    <img src="@file" height="@height" />
+    <img src="@url" alt="@mediaItem.Name" />
 
-But wait a second, why do we have to access properties in the old IPublishedContent approach when Umbraco now comes with [ModelsBuilder](../../../Reference/Templating/Modelsbuilder/index.md) you may be asking yourself. Well, if you are using Umbraco version 7.4.0 or newer, you don't. You can happily use a nicely TypedModel for your media item if ModelsBuilder is enabled.
+But wait a second, if you are using Umbraco v7.4.0+ it now comes with [ModelsBuilder](../../../Reference/Templating/Modelsbuilder/index.md). What this means is that you can use strongyl typed models for your media items if ModelsBuilder is enabled (which it is by default).
 
 ### Example 2: Accessing a typed image media item based on its ID
 As with example one, we are accessing a MediaType `image` using the same ID assumption. 
@@ -42,8 +39,6 @@ As with example one, we are accessing a MediaType `image` using the same ID assu
 
 ### Other Media Items
 Accessing other media items can be performed in the same way, the techniques aren't limited to just the Image type, but it is one of the most common use cases.
-
-
 
 ## Image Cropper
 Although not used on most media items, Image Cropper is generally used with Images. So it is useful to consider this as Umbraco uses it as the default upload property on the Image media type.
@@ -67,5 +62,5 @@ If you want the original, uncropped image, you can ignore the GetCropUrl extensi
     <img src="@mediaItem.Url" />
 
 ### More information
-- [Media Picker](../../Backoffice/Property-Editors/Built-in-Property-Editors/Media-Picker.md)
+- [Media Picker](../../Backoffice/Property-Editors/Built-in-Property-Editors/Media-Picker2.md)
 - [Image Cropper](../../Backoffice/Property-Editors/Built-in-Property-Editors/Image-Cropper.md)
