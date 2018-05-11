@@ -1,6 +1,6 @@
 # Dashboard
 
-As with the other .config files in the `/config` directory the Dashboard.config file lets you customize a portion of the Umbraco experience. In this case the Dashboard.config file controls what shows up in the Dashboard section of the UI when a section of the site loads. The Dashboard is the area on the right side of the UI where most of the data entry and functional interaction takes place, [See examples](../../Extending/Dashboards/index.md)
+As with the other .config files in the `/config` directory the Dashboard.config file lets you customize a portion of the Umbraco experience. In this case the Dashboard.config file controls what shows up in the Dashboard section of the UI when a section of the site loads. The Dashboard is the area on the right side of the UI where most of the data entry and functional interaction takes place, [see examples](../../../Extending/Dashboards/index.md).
 
 By default, Umbraco shows a blank Dashboard when a new section loads and only shows a form when you take action within the section (i.e. when you click on a node in the Content section, the Dashboard shows the form to update that node's data). But what if you wanted to present your users with some options even before they click on a node?  Well, that is what the Dashboard.config allows you to do.
 
