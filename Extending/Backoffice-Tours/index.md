@@ -16,22 +16,22 @@ If you want to include a tour with your custom plugin you can store the tour fil
 
 ## The JSON format
 
-A tour file contains an array of tour JSON objects. So it's possible to have multiple, (un)related tours in one file.
+A tour file contains an array of tour configuration JSON objects. So it's possible to have multiple, (un)related tours in one file.
 
 	[
 		{
-			//tour object
+			//tour configuration object
 		},
 		{
-			//tour object
+			//tour configuration object
 		}
 	]
 
-## The tour object
+## The tour configuration object
 
-A tour JSON object contains all the data related to a tour.
+A tour configuration JSON object contains all the data related to a tour.
 
-Example tour object :
+Example tour configuration object :
 
 	{
 		"name": "My Awesome tour",
@@ -44,7 +44,7 @@ Example tour object :
 		"steps": []
 	}
 
-Below is a explanation of each of the properties on the object
+Below is a explanation of each of the properties on the tour configuration object
 
 ### name 
 
@@ -79,13 +79,13 @@ This is an array of section aliases that user needs to be able to access. If the
 
 ### steps
 
-This is array of step JSON objects that user needs to take to complete the tour.
+This is array of tour step JSON objects that user needs to take to complete the tour.
 
-## The step object
+## The tour step object
 
-A step JSON object contains all the data related to a tour step.
+A tour step JSON object contains all the data related to a tour step.
 
-Example step object :
+Example tour step object :
 
 	{
         "title": "A meaningful title",
@@ -100,7 +100,7 @@ Example step object :
         "customProperties": null
       },
 
-Below is a explanation of each of the properties on the object
+Below is a explanation of each of the properties on the tour step object
 
 
 
