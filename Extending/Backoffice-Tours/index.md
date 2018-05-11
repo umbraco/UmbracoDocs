@@ -118,6 +118,23 @@ This the text that will be shown on the tour step. This can contain html markup
 
 ![Tour content highlighted](images/stepcontent.png)
 
+### type
+
+The type of step. Currently only one type is supported : "intro". This will center the step and show a "Start tour" button
+
+### element
+
+A CSS selector for the element you wish to highlight. The tour step will position it self near the element. 
+
+A lot of elements in the umbraco backoffice have a data-element attribute. It's recommended to use that, because id and class are subject to changes. Eg
+
+	[data-element='section-content']
+
+TIP : Use the dev tools from your browser to find the id, class, data-attribute...
+
+![Step element example highlighting content section](images/element.png)
+
+
 
 
 
