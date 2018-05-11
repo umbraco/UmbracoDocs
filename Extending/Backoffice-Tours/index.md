@@ -134,6 +134,25 @@ TIP : Use the dev tools from your browser to find the id, class, data-attribute.
 
 ![Step element example highlighting content section](images/element.png)
 
+### elementPreventClick
+
+Setting this to true will prevent that no javacript events are bound to the highlighted element. A "Next" button will be added to the tour step.
+
+This is very useful when you want to highlight for example a button, but want to prevent the user clicking on it.
+
+### event
+
+The javascript event that is bound to the highlighted element that should trigger the next tour step e.g. click, hover,...
+
+If not set or ommitted a "Next" button will be added to the tour.
+
+###  eventElement
+A CSS selector for the element you wish to bind the javascript event to. This is useful for when you want to highlight a bigger portion of the backoffice but want to user to click on something inside the highlighted element. If not set, the selector in the element property will be used.
+
+The image below shows the entire tree highlighted, but requires the user to click on a specific tree element.
+
+![Step eventElement hightlighted](images/step-event-element.png)
+
 
 
 
