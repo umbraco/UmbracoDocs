@@ -105,6 +105,19 @@ Example tour step object :
 
 Below is a explanation of each of the properties on the tour step object
 
+### title
+
+This the title shown on the tour step.
+
+
+![Tour step highlighted](images/steptitle.png)
+
+### content
+
+This the text that will be shown on the tour step. This can contain html markup
+
+![Tour content highlighted](images/stepcontent.png)
+
 
 
 
