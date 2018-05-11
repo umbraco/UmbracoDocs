@@ -163,7 +163,9 @@ Here you can enter a path to your own custom angular view that will be used for 
 
 This usefull if you want to validate input from the user during the tour step.
 
+### customProperties
 
+A json object that is passed to the scope of a custom  step view, so you can use this data in your view with $scope.model.currentStep.customProperties
 
 
 
