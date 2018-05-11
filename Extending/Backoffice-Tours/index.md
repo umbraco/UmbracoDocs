@@ -70,11 +70,14 @@ This is used to control the order of the groups in the help drawer. This must be
 
 A boolean value that indicates if the "Don't show this tour again" should be shown on the tour steps. If the user clicks this link the tour will not be shown in the help drawer anymore.
 
+![Tour allow disable link highlighted](images/tourallowdisable.png)
+
 ### culture (introduced in v7.11)
 
 You can set a culture (eg. nl-NL) and this tour will only be shown for users that have set this culture on their profile. If ommitted or left empty the tour will be shown to all users.
 
 ### sections
+
 This is an array of section aliases that user needs to be able to access. If the user doesn't have access to all the sections the tour will not be shown in the help drawer. Eg. if the tour requires to content,media and settings and the logged in user only has access to content and media, the tour will not be shown for this user.
 
 ### steps
