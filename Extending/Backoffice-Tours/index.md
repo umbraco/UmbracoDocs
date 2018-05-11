@@ -29,7 +29,9 @@ A tour file contains an array of tour JSON objects. So it's possible to have mul
 
 ## The tour object
 
-A tour JSON object looks like this.
+A tour JSON object contains all the data related to a tour.
+
+Example tour object :
 
 	{
 		"name": "My Awesome tour",
@@ -78,6 +80,27 @@ This is an array of section aliases that user needs to be able to access. If the
 ### steps
 
 This is array of step JSON objects that user needs to take to complete the tour.
+
+## The step object
+
+A step JSON object contains all the data related to a tour step.
+
+Example step object :
+
+	{
+        "title": "A meaningful title",
+        "content": "<p>Some text explaining the step</p>",
+        "type": null,
+        "element": "#section-avatar",
+        "elementPreventClick": false,
+        "backdropOpacity": 0.6,
+        "event": "click",
+        "view": null,
+        "eventElement": "#section-avatar .umb-avatar",
+        "customProperties": null
+      },
+
+Below is a explanation of each of the properties on the object
 
 
 
