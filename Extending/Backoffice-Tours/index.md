@@ -153,6 +153,17 @@ The image below shows the entire tree highlighted, but requires the user to clic
 
 ![Step eventElement hightlighted](images/step-event-element.png)
 
+### backdropOpacity
+
+A decimal value between 0 and 1 to indicate how transparent the background overlay will be. 
+
+### view
+
+Here you can enter a path to your own custom angular view that will be used for displaying the tour step
+
+This usefull if you want to validate input from the user during the tour step.
+
+
 
 
 
