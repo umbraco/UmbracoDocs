@@ -10,9 +10,17 @@ Following the workflow of Umbraco Cloud, you should never make changes directly 
 
 With that said, it **is** possible to apply selected changes to your Live environment without breaking the workflow of Umbraco Cloud. 
 
-There are two roads you can take:
+There are two approaches you can use:
 
-## [1. Move files manually](Move-files-manually/)
+## [1. Deploy hotfix with Git branching](Using-Git/)
+
+Another way to apply a hotfix to a Live environment on Cloud is to clone down the Development environment and then use Git to push selected changes to the Live environment. This guide requires some knowledge about Git, and you should only go with this guide if you feel comfortable working with Git.
+
+![Use Git](images/hotfix-using-git.gif)
+
+Read the guide here: [Deploy hotfix with Git](Using-Git/)
+
+## [2. Move files manually](Move-files-manually/)
 
 One way to apply a hotfix to a Live environment would be to clone down both your Development and your Live environment to your local machine. Take the changed and/or updated files from the cloned Development environment and copy them into the cloned Live environment, and push them to the Live environment on Cloud. Using this guide will also allow you to test the changes on a cloned version of your Live environment before pushing to the Cloud.
 
@@ -20,11 +28,5 @@ One way to apply a hotfix to a Live environment would be to clone down both your
 
 Read the guide here: [Move files manually](Move-files-manually/)
 
-## [2. Use Git "magic"](Using-Git/)
 
-Another way to apply a hotfix to a Live environment on Cloud is to clone down the Development environment and then use Git to push selected changes to the Live environment. This guide requires some knowledge about Git, and you should only go with this guide if you feel comfortable working with Git.
-
-![Use Git](images/hotfix-using-git.gif)
-
-Read the guide here: [Deploy hotfix with Git](Using-Git/)
 
