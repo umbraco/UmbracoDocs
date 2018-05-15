@@ -1,6 +1,6 @@
 # Backoffice tours
 
-Backoffice tours are managed in a JSON format and stored in files on disk. The filenames should end with the .json extension.
+Backoffice tours are managed in a JSON format and stored in files on disk. The filenames should end with the `.json` extension.
 
 ## Tour file locations
 
@@ -8,11 +8,11 @@ The tour functionality will load information from multiple locations.
 
 ### Core tours and custom tours
 
-The tour file that ships with Umbraco are stored in /Config/BackofficeTours. This is also the recommended place for storing your own tour files.
+The tour file that ships with Umbraco are stored in `/Config/BackofficeTours`. This is also the recommended location for storing your own tour files.
 
 ### Plugin tours
 
-If you want to include a tour with your custom plugin you can store the tour file in /App_Plugins/<YourPlugin>/backoffice/tours. It is recommend that you place the tour files here when you are creating a plugin.
+If you want to include a tour with your custom plugin you can store the tour file in `/App_Plugins/<YourPlugin>/backoffice/tours`. It is recommend that you place the tour files in this location when you are creating a plugin.
 
 ## The JSON format
 
@@ -68,17 +68,17 @@ This is used to control the order of the groups in the help drawer. This must be
 
 ### allowDisable 
 
-A boolean value that indicates if the "Don't show this tour again" should be shown on the tour steps. If the user clicks this link the tour will not be shown in the help drawer anymore.
+A boolean value that indicates if the "Don't show this tour again" should be shown on the tour steps. If the user clicks this link the tour will not be shown in the help drawer any more.
 
 ![Tour allow disable link highlighted](images/tourallowdisable.png)
 
 ### culture (introduced in v7.11)
 
-You can set a culture (eg. nl-NL) and this tour will only be shown for users that have set this culture on their profile. If ommitted or left empty the tour will be shown to all users.
+You can set a culture (eg. nl-NL) and this tour will only be shown for users that have set this culture on their profile. If omitted or left empty the tour will be shown to all users.
 
 ### sections
 
-This is an array of section aliases that user needs to be able to access. If the user doesn't have access to all the sections the tour will not be shown in the help drawer. Eg. if the tour requires to content,media and settings and the logged in user only has access to content and media, the tour will not be shown for this user.
+This is an array of section aliases that user needs to be able to access. If the user doesn't have access to all the sections the tour will not be shown in the help drawer. e.g. if the tour requires to content,media and settings and the logged in user only has access to content and media, the tour will not be shown for this user.
 
 ### steps
 
@@ -114,7 +114,7 @@ This the title shown on the tour step.
 
 ### content
 
-This the text that will be shown on the tour step. This can contain html markup
+This the text that will be shown on the tour step. This can contain html mark-up
 
 ![Tour content highlighted](images/stepcontent.png)
 
@@ -126,7 +126,7 @@ The type of step. Currently only one type is supported : "intro". This will cent
 
 A CSS selector for the element you wish to highlight. The tour step will position it self near the element. 
 
-A lot of elements in the umbraco backoffice have a data-element attribute. It's recommended to use that, because id and class are subject to changes. Eg
+A lot of elements in the Umbraco backoffice have a data-element attribute. It's recommended to use that, because id and class are subject to changes. e.g
 
 	[data-element='section-content']
 
@@ -136,15 +136,15 @@ TIP : Use the dev tools from your browser to find the id, class, data-attribute.
 
 ### elementPreventClick
 
-Setting this to true will prevent that no javacript events are bound to the highlighted element. A "Next" button will be added to the tour step.
+Setting this to true will prevent that no JavaScript events are bound to the highlighted element. A "Next" button will be added to the tour step.
 
 This is very useful when you want to highlight for example a button, but want to prevent the user clicking on it.
 
 ### event
 
-The javascript event that is bound to the highlighted element that should trigger the next tour step e.g. click, hover,...
+The JavaScript event that is bound to the highlighted element that should trigger the next tour step e.g. click, hover,...
 
-If not set or ommitted a "Next" button will be added to the tour.
+If not set or omitted a "Next" button will be added to the tour.
 
 ###  eventElement
 A CSS selector for the element you wish to bind the javascript event to. This is useful for when you want to highlight a bigger portion of the backoffice but want to user to click on something inside the highlighted element. If not set, the selector in the element property will be used.
@@ -165,13 +165,4 @@ This usefull if you want to validate input from the user during the tour step.
 
 ### customProperties
 
-A json object that is passed to the scope of a custom  step view, so you can use this data in your view with $scope.model.currentStep.customProperties
-
-
-
-
-
-
-
-
-
+A JSON object that is passed to the scope of a custom  step view, so you can use this data in your view with $scope.model.currentStep.customPropertie
