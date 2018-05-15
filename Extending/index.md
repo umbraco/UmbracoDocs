@@ -1,5 +1,9 @@
 # Extending Umbraco
 
+## [Backoffice tours](Backoffice-Tours/index.md)
+
+Backoffice tours is the integrated and interactive help for the backoffice
+
 ## [Dashboards](Dashboards/index.md)
 
 A Dashboard is a component for displaying elements on the right-hand side of the backoffice UI area.
