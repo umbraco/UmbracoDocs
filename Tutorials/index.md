@@ -6,7 +6,7 @@ Step by step guide of everything you need to get a basic site up and running in 
 
 ### [Creating a Custom Dashboard](Creating-a-Custom-Dashboard)
 
-Custom dashboards is a great way to help editors maintain a site by providing useful information. This guide takes you through the steps to setup a  custom dashboard in Umbraco.
+Custom dashboards are a great way to help editors maintain a site by providing useful information. This guide takes you through the steps to setup a custom dashboard in Umbraco.
 
 ### [Creating a Property Editor](Creating-a-Property-Editor/)
 
@@ -18,7 +18,7 @@ Tips and methods for creating multi lingual websites.
 
 ### [Add Google authentication to your backoffice](Add-Google-Authentication/index.md)
 
-Learn how you can log in with your Google user in the backoffice.
+Learn how you can use your Google user to log into the Umbraco backoffice.
 
 ### [Starter kit](Starter-kit/index.md)
 
