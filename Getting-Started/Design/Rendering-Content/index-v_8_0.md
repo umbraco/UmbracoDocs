@@ -1,7 +1,7 @@
 ---
 title: "Rendering content"
 tags: "content razor v8"
-versionFrom:8.0.0
+versionFrom: 8.0.0
 ---
 # Rendering content
 
@@ -9,7 +9,7 @@ _The primary task of any template in Umbraco is to render the values of the curr
 
 ## Display a value in your template view
 
-Each property in your [document type]() has an alias, this is used to specify where in the template view to display the value.
+Each property in your [document type](../../Data/Defining-content/index.md#what-is-a-document-type) has an alias, this is used to specify where in the template view to display the value.
 
     <h1>@Model.Value("pageTitle")</h1>
     <div>@Model.Value("bodyContent")</div>
@@ -31,7 +31,7 @@ You can specify the type of data being returned to help you format the value for
 
 ### Working with the grid
 
-See [Writing out Umbraco Grid Properties]()....
+See [Writing out Umbraco Grid Properties](../../Backoffice/Property-Editors/Built-in-Property-Editors/Grid-Layout/Render-Grid-In-Template.md#render-grid-in-template)....
 
 
 ## Query content
