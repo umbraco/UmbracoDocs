@@ -46,7 +46,7 @@ You can do this by querying content relative to your current page in template vi
         }
     </ul>
 
-You can use the query helper (click "Query Builder") in the template editor to build more advanced queries
+You can use the Query Builder in the template editor to build more advanced queries
 ![Query button](images/button-v8.png)
 
 ![Query helper](images/query-v8.png)
