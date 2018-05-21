@@ -1,6 +1,6 @@
 ---
 title: "Rendering content"
-tags: "content razor v8"
+tags: "content razor v8 version8"
 versionFrom: 8.0.0
 ---
 # Rendering content
