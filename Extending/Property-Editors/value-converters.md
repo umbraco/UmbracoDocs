@@ -103,7 +103,7 @@ In the example below the Content Picker is being converted to `IPublishedContent
 
 ### Property Value Cache Level ###
 
-**Note**: This data is not currently used in Umbraco v7.1.x but it will be by the future "object cache layer" to determine at which level each value returned by the `ConvertDataToSource`, `ConvertSourceToObject` & `ConvertSourceToXPath` methods should be cached at.
+**Note**: This data is not currently used in Umbraco v7.1.x but it will be by the future "object cache layer" to determine at which level each value returned by the `ConvertDataToSource`, `ConvertSourceToObject` & `ConvertSourceToXPath` methods should be cached.
 
 #### Properties ####
 
