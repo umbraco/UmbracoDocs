@@ -58,13 +58,13 @@ Using core or custom language keys from your code:
 
 
 ### From Angular
-In the umbraco backoffice UI, labels can be localized with the `localize` directive:
+In the Umbraco backoffice UI, labels can be localized with the `localize` directive:
 
     <button>
         <localize key="dialog_myKey">Default value</localize>
     </button>
 
-Or from a controller by using the `LocalizationService` which returns a async translation in a promise like so:
+Or from a controller by using the `LocalizationService` which returns an async translation in a promise:
 
     localizationService.localize("dialog_myKey").then(function(value){
 	                element.html(value);
