@@ -129,7 +129,7 @@ Gets the `Guid` assigned to the ContentType during creation. This value is uniqu
 	return contentType.Key;
 
 ### .Level
-Gets or Sets the given `ContentType` level in the site hirachy as an `Int`. ContentTypes placed at the root of the tree, will return 1, content just underneath will return 2, and so on.
+Gets or Sets the given `ContentType` level in the site hierachy as an `Int`. ContentTypes placed at the root of the tree, will return 1, content just underneath will return 2, and so on.
 
 	//Given a `ContentTypeService` object get ContentType by its Id and return the Level
 	var contentType = contentTypeService.GetContentType(1234);
