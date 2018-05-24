@@ -5,7 +5,7 @@ versionFrom: 8.0.0
 ---
 # Rendering content
 
-_The primary task of any template in Umbraco is to render the values of the current page or the result of query against the content cache._
+_The primary task of any template in Umbraco is to render the values of the current page or the result of a query against the content cache._
 
 ## Display a value in your template view
 
@@ -17,7 +17,7 @@ Each property in your [document type](../../Data/Defining-content/index.md#what-
 
 ### Specifying types of data
 
-You can specify the type of data being returned to help you format the value for display, consider the publish date in our example.
+You can specify the type of data being returned to help you format the value for display, consider the publish date in our example:
 
     <h1>@(Model.Value<string>("pageTitle"))</h1>
     <div>@(Model.Value<HtmlString>("bodyContent"))</div>
