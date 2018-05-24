@@ -160,7 +160,7 @@ Here are the steps to specify your own logic for validating a username and passw
 
 Umbraco 7.5.0+ comes with a built-in `IBackOfficeUserPasswordChecker` for Active Directory: `Umbraco.Core.Security.ActiveDirectoryBackOfficeUserPasswordChecker`. 
 
-Remeber to add the namespace Umbraco.Core.Models.Identity to solve BackOfficeIdentityUser.
+Remember to add the namespace `Umbraco.Core.Models.Identity` to resolve the `BackOfficeIdentityUser`.
 
 To configure Umbraco to use `ActiveDirectoryBackOfficeUserPasswordChecker`, first install the [Umbraco Identity Extensibility](https://github.com/umbraco/UmbracoIdentityExtensions) package:
 
