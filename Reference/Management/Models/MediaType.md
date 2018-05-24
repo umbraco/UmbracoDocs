@@ -108,7 +108,7 @@ Gets the `Guid` assigned to the MediaType during creation. This value is unique,
 	return mediaType.Key;
 
 ### .Level
-Gets or Sets the given `MediaType` level in the site hierachy as an `Int`. MediaTypes placed at the root of the tree, will return 1, content just underneath will return 2, and so on.
+Gets or Sets the given `MediaType` level in the site hierarchy as an `Int`. MediaTypes placed at the root of the tree, will return 1, content just underneath will return 2, and so on.
 
 	//Given a `ContentTypeService` object get MediaType by its Id and return the Level
 	var mediaType = contentTypeService.GetMediaType(1234);
