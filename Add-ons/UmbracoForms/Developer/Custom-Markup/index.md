@@ -2,7 +2,7 @@
 With Umbraco Forms it's possible to customize the outputted markup of a form. So you have complete control over what Forms will output.
 
 ## Customizing the default views
-The way the razor macro works is that it uses some razor views to output the form (1 for each fieldtype, 1 for the scripts and 1 for the rest of the form). The views are available for edit so you can customize them to your needs.
+The way the razor macro works is that it uses some razor views to output the form (1 for each fieldtype, 1 for the scripts and 1 for the rest of the form). The views are available to edit so you can customize them to your needs.
 
 The views can be found in the `~\Views\Partials\Forms\`
 
@@ -195,12 +195,12 @@ Default contents of the view:
         }
     }
 
-The view is seperated in 2 parts, 1 is the actual form and the other part is what will be shown if the form is submitted.
+The view is seperated into two parts, one is the actual form and the other will be shown if the form is submitted.
 
 This view can be customized, if you do so it will be customized for all your forms.
 
 ### Script.cshtml
-This view renders the JavaScript that will take care of the conditional logic, custimization won't be needed here...
+This view renders the JavaScript that will take care of the conditional logic, customization won't be needed here...
 
 ### FieldType.*.cshtml
 The rest of the views start with FieldType. like FieldType.Textfield.cshtml and those will output the fields (so there is a view for each default fieldtype like textfield, textarea, checkbox...
@@ -214,17 +214,17 @@ Contents of the  FieldType.Textfield.cshtml view:
 	@{if (Model.Validate) {<text> data-val-regex="@Model.InvalidErrorMessage" data-regex="@Model.Regex"</text>}}
 	/>
 
-By default the form makes uses of jquery validate and jquery validate unobtrosive that's why you see attribute like data-val and data-val-required again this can be customized but it's important to keep the id of the control to @Model.Id since that is used to match the value to the form field.
+By default the form makes uses of jquery validate and jquery validate unobtrusive. That's why you see attributes like data-val and data-val-required, again this can be customized but it's important to keep the id of the control to @Model.Id since that is used to match the value to the form field.
 
 
 ### Customizing for a specific form
 
 If you wish to customize the markup for a specific form and not all your forms that is also possible.
 
-For a specific form you'll need to create the following folder: `~\Views\Partials\Forms\{FormId}` (FormId needs to be an existing form id, you find the id of the form in the URL when you are viewing the form in the backoffice
+For a specific form you'll need to create the following folder: `~\Views\Partials\Forms\{FormId}` (FormId needs to be an existing form id, you find the id of the form in the URL when you are viewing the form in the backoffice.)
 
 ![Form GUID](form-guid.png)
 
-As an example if your form id is 0d3e6b2d-db8a-43e5-8f28-36241d712487 then you can overwrite the form view by adding the Form.cshtml file to the directory First copying the default one and then making your changes is the best way to get started ~\Views\Partials\Forms\0d3e6b2d-db8a-43e5-8f28-36241d712487\Form.cshtml
+As an example if your form id is 0d3e6b2d-db8a-43e5-8f28-36241d712487 then you can overwrite the form view by adding the Form.cshtml file to the directory, first copying the default one and then making your changes is the best way to get started ~\Views\Partials\Forms\0d3e6b2d-db8a-43e5-8f28-36241d712487\Form.cshtml
 
-You can also overwrite views for 1 or more fieldtypes by adding the views to the folder (again if you first copy the default one and then make your changes...) ~\Views\Partials\Forms\0d3e6b2d-db8a-43e5-8f28-36241d712487\Fieldtype.Textfield.cshtml
+You can also overwrite views for one or more fieldtypes by adding the views to the folder (again if you first copy the default one and then make your changes...) ~\Views\Partials\Forms\0d3e6b2d-db8a-43e5-8f28-36241d712487\Fieldtype.Textfield.cshtml
