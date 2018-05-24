@@ -7,25 +7,25 @@ If you wish to have one or more templates selectable from the 'Send email with t
 The Razor view must inherit from FormsHtmlModel like so:
 `@inherits UmbracoViewPage<Umbraco.Forms.Core.Models.FormsHtmlModel>`
 
-Then you have a model that contains the Form fields of your form where you can display the result in your email HTML markup, along with the usual normal UmbracoHelper methods such as `Umbraco.TypedContent` and `Umbraco.TypedMedia` etc..
+Then you have a model that contains your Form fields which can be used in your email HTML markup, along with the UmbracoHelper methods such as `Umbraco.TypedContent` and `Umbraco.TypedMedia` etc.
 
 Below is an example of a very simple email template with the HTML styling removed from the email example template that we ship with:
 
     @inherits UmbracoViewPage<Umbraco.Forms.Core.Models.FormsHtmlModel>
 
     @{
-        //This is an example email template where you can use Razor Views to send HTML emails
+        // This is an example email template where you can use Razor Views to send HTML emails
 
-        //You can use Umbraco.TypedContent & Umbraco.TypedMedia etc to use Images & content from your site
-        //directly in your email templates too
+        // You can use Umbraco.TypedContent & Umbraco.TypedMedia etc to use Images & content from your site
+        // directly in your email templates too
 
-        //Strongly Typed
-        //@Model.GetValue("aliasFormField")
-        //@foreach (var color in Model.GetValues("checkboxField")){}
+        // Strongly Typed
+        // @Model.GetValue("aliasFormField")
+        // @foreach (var color in Model.GetValues("checkboxField")){}
 
-        //Dynamics
-        //@Model.DynamicFields.aliasFormField
-        //@foreach(var color in Model.DynamicFields.checkboxField){}
+        // Dynamics
+        // @Model.DynamicFields.aliasFormField
+        // @foreach(var color in Model.DynamicFields.checkboxField){}
     }
 
     <h1>Explicitly Named Fields</h1>
