@@ -27,7 +27,7 @@ Build your solution after adding the model.
 ### Creating the view
 Next we add the view for the form to the `/View/Partials` folder. Because we've added the model and built the solution we can add it as a strongly typed view.
 
-The view can be built with standard with standard MVC helpers:
+The view can be built with standard MVC helpers:
 
     @model MyFirstForm.Models.ContactFormViewModel
 
