@@ -4,7 +4,7 @@ _Developers' Reference primarily consists of API references of the different cor
 
 ## [Common Pitfalls & Anti-patterns](Common-Pitfalls/index.md)
 
-This section is ultra important! It will describe many common pitfalls that developers fall in to. Make sure you read this section - it might just save your site!
+This section is ultra important! It describes many common pitfalls that developers fall in to. Make sure you read this section - it might just save your site!
 
 ## API Documentation
 
@@ -12,17 +12,17 @@ This section is ultra important! It will describe many common pitfalls that deve
 
 __Note: opens a documentation browser that is different from the documentation section you're viewing now, we're planning to integrate both.__
 
-C# API references for the Umbraco Core and Web libraries
+C# API references for the Umbraco Core and Web libraries.
 
 #### [Backoffice UI API documentation](https://our.umbraco.org/apidocs/ui/)
 
 __Note: opens a documentation browser that is different from the documentation section you're viewing now, we're planning to integrate both.__
 
-Angular, JS, CSS & Less UI API references for building Umbraco backoffice components
+Angular, JS, CSS & Less UI API references for building Umbraco backoffice components.
 
 ## [Security](Security/index.md)
 
-information on Umbraco security, it's various security options and configuring how authentication & authorization works in Umbraco
+Information on Umbraco security, its various security options and configuring how authentication & authorization works in Umbraco.
 
 ## [Configuration](Config/index.md)
 
