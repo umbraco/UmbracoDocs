@@ -6,7 +6,7 @@ Creating forms requires that you know your way around .NET MVC. So if you are fa
 In this example we'll create a basic contact form contain name, email and message field.
 
 ### Creating the view model
-First we're going to create the model for the contact form by adding a new class to the `/Models` folder. Lets's call it `ContactFormViewModel.cs`
+First we're going to create the model for the contact form by adding a new class to the `/Models` folder. Let's call it `ContactFormViewModel.cs`
 
     using System;
     using System.Collections.Generic;
@@ -25,7 +25,7 @@ First we're going to create the model for the contact form by adding a new class
 Build your solution after adding the model.
 
 ### Creating the view
-Next we add the view for the form to the `/View/Partials` folder. Because we've added the model and build the solution we can add it as a strongly typed view.
+Next we add the view for the form to the `/View/Partials` folder. Because we've added the model and built the solution we can add it as a strongly typed view.
 
 The view can be built with standard with standard MVC helpers:
 
