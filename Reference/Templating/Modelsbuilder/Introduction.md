@@ -1,4 +1,4 @@
-# Umbraco ModelsBuilder Introduction
+# Umbraco Models Builder Introduction
 
 Models Builder is a tool that can generate a complete set of strongly-typed published content models for Umbraco 7.1.4+. Starting with Umbraco 7.4.0, Models Builder is bundled with the main Umbraco distribution. Models can be used anywhere content is retrieved from the content cache, i.e. in MVC views, controllers, etc. In other words, the content cache does not just return `IPublishedContent` objects anymore, but strongly typed models.
 
