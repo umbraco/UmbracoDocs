@@ -1,11 +1,11 @@
-# JQuery coding guidelines
+# jQuery coding guidelines
 
 _Ensure that you have read the [JavaScript Guidelines](js-guidelines.md) document before continuing. As specified in the [JavaScript Guidelines](js-guidelines.md) document, method names are named in "camelCase" and therefore jQuery plugins (since they are methods) are named as "camelCase"._
 
-Just like other JavaScript in the Umbraco back-office, you need to wrap your class in the JQuery self executing function if you want to use the dollar ($) operator.
+Just like other JavaScript in the Umbraco back-office, you need to wrap your class in the jQuery self executing function if you want to use the dollar ($) operator.
 
-## Simple JQuery plugins
-Simple JQuery plugins don't require an internal class to perform the functionality and therefor do not expose or return an API. These could be as simple as vertically aligning something:
+## Simple jQuery plugins
+Simple jQuery plugins don't require an internal class to perform the functionality and therefor do not expose or return an API. These could be as simple as vertically aligning something:
 
 	(function($) {
 	    $.fn.verticalAlign = function(opts) {
@@ -18,8 +18,8 @@ Simple JQuery plugins don't require an internal class to perform the functionali
 	    };
 	})(jQuery);
 
-## Standard JQuery plugins
-Most JQuery plugins will expose an API or a way in which a developer can interact with the plugin, not just instantiating it. To do this we need to create a class that does the work of the plugin and then expose that class via a different jQuery plugin.
+## Standard jQuery plugins
+Most jQuery plugins will expose an API or a way in which a developer can interact with the plugin, not just instantiating it. To do this we need to create a class that does the work of the plugin and then expose that class via a different jQuery plugin.
 
 ### Naming Conventions
 There are many different ways to expose an API for a jQuery plugin, in Umbraco the standard will be:
@@ -74,7 +74,7 @@ Umbraco.Sys.registerNamespace("MyProject.MyNamespace");
 	             _e.css('margin-top', top);
 	          }
 	       }
-	       // store the api object in the JQuery data object for 
+	       // store the api object in the jQuery data object for 
 	       // the current selector
 	       _e.data("api", api);
 
