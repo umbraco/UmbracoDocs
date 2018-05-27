@@ -1,7 +1,7 @@
 # Tutorial - adding configuration to a property editor
 
 ## Overview
-This is step 2 in our guide to building a property editor. This step continues work on the markdown editor we built in [step 1](index.md), but goes further to show you how you can add configuration options to the editor.
+This is step 2 in our guide to building a property editor. This step continues work on the markdown editor we built in [step 1](./), but goes further to show you how you can add configuration options to the editor.
 
 
 ## Configuration?
