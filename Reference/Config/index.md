@@ -3,41 +3,76 @@
 _This section will explain the many configuration options in Umbraco and what they do_
 
 ### [web.config](webconfig/index.md)
+This file can be found at the following path: /web.config
 
 ### [404handlers.config](404handlers/index.md)
+Configuration file for legacy NotFoundHandlers
+
+This file can be found at the following path: /config/404handlers.config
 
 ### [applications.config](applications/index.md)
+Configutation options of setting up sections within the Umbraco Backoffice.
+
+This file can be found at the following path: /config/applications.config
 
 ### [dashboards.config](dashboard/index.md)
+Configuration options for controlling which dashboards appear in which sections of the backoffice and who has the permissions to see them.
 
-Configuration options for controlling which dashboards appear in which sections and who has the permissions to see them.
+This file can be found at the following path: /config/Dashboard.config
+
 
 ### [EmbeddedMedia.config](EmbeddedMedia/index.md)
+This configuration file lists the Embedded Media Providers configured for use in your Umbraco site.
+
+This file can be found at the following path: /config/EmbeddedMedia.config
 
 ### [ExamineIndex.config](ExamineIndex/index.md)
+The 'ExamineIndex.config' file contains the configuration for the Examine IndexSets used for storing indexed content in an Umbraco installation.
+
+This file can be found at the following path: /config/ExamineIndex.config
 
 ### [ExamineSettings.config](ExamineIndex/index.md)
+The 'ExamineIndex.config' file contains the configuration for the Examine IndexSets used for storing indexed content in an Umbraco installation.
+
+This file can be found at the following path: /config/ExamineSettings.config
 
 ### [fileSystemProviders.config](fileSystemProviders/index.md)
+The 'fileSystemProviders.config' file contains the configuration for the file system providers used by Umbraco to interact with file systems.
+
+This file can be found at the following path: /config/FileSystemProviders.config
+
 
 ### [BaseRestExtensions.config](BaseRestExtensions/index.md)
+The 'BaseRestExtension.config' contains the data necessary for the /Base system when exposing the methods in your class library.
+
+This file can be found at the following path: /config/BaseRestExtensions.config
 
 ### [tinyMceConfig.config](tinyMceConfig/index.md)
+The 'tinyMceConfig.config' contains configuration options for the [TinyMce](https://www.tinymce.com/) editors in the Umbraco Backoffice. 
+
+This file can be found at the following path: /config/tinyMceConfig.config
 
 ### [trees.config](trees/index.md)
+The 'trees.config' file contains the configuration for trees that are loaded within each section of the Umbraco Backoffice.
+
+This file can be found at the following path: /config/trees.config
 
 ### [umbracoSettings.config](umbracoSettings/index.md)
 
-Contains many Umbraco options, generally the default values work well in most installs; however, in some cases some of these options may need adjusting depending on each installation.
+Contains many Umbraco options. Generally the default values work well in most installs; however, in some cases some of these options may need adjusting depending on each installation.
+
+This file can be found at the following path: /config/umbracoSettings.config
 
 ## clientdependency.config
 
 The ClientDependency configuration options can be found on the [ClientDependency website](https://github.com/Shandem/ClientDependency/wiki/Configuration).
 
+This file can be found at the following path: /config/ClientDependency.config
+
 ## log4net.config
 
 The log4net configuration options can be found on the [log4net website](http://logging.apache.org/log4net/release/manual/configuration.html).
 
-## UrlRewriting.config
+This file can be found at the following path: /config/log4net.config
 
-The UrlRewriting documentation can be [downloaded in PDF format](http://www.urlrewriting.net/Download.ashx?File=4640f315-27ae-4ab0-8930-6957cfd1f138).
+
