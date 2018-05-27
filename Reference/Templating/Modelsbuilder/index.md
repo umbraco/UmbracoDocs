@@ -10,4 +10,4 @@ A tool that can generate a complete set of strongly-typed published content mode
 * [IPublishedContentModelFactory](IPublishedContentModelFactory.md)  
 * [Cool things to do with models](CoolThingsWithModels.md)  
 
-> **The Umbraco Models Builder is an open-source project that can be forked on GitHub and gladly accepts pull requests. Don't hesitate to contribute [here](https://github.com/zpqrtbnk/Zbu.ModelsBuilder)!**
+> **Umbraco Models Builder is an open-source project that can be forked on GitHub and gladly accepts pull requests. Don't hesitate to contribute [here](https://github.com/zpqrtbnk/Zbu.ModelsBuilder)!**
