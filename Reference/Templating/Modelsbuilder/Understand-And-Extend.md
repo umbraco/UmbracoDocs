@@ -91,7 +91,7 @@ If the custom partial class provides a **constructor** that has the same signatu
 
 If the custom partial class **inherits** from a base class, it will be detected and the generated model will _not_ inherit from anything (as that would be redundant and would not compile). The base class _must_ inherit (directly or indirectly) from `PublishedContentModel` in order for the model to be valid, though.
 
-If the custom partial class **implements** a generated property, it will _not_ be detected and will cause a compilation error. The ModelsBuilder needs to be explicitly notified about the situation: See [Control Models Generation](Control-Generation.md).
+If the custom partial class **implements** a generated property, it will _not_ be detected and will cause a compilation error. Models Builder needs to be explicitly notified about the situation: See [Control Models Generation](Control-Generation.md).
 
 If the custom partial class **implements** a static mixin getter (see above), it will be detected and the generated model will _not_ implement the getter (as that would be redundant and would not compile).
 
@@ -125,7 +125,7 @@ And to simplify the view as:
 
 #### Bad
 
-Because, by default, the content object is passed to views, one can be tempted to add view-related properties to the model. Some properties that do _not_ belong to a _content_ model would be (these are actual ideas that have been discussed by ModelsBuilder users):
+Because, by default, the content object is passed to views, one can be tempted to add view-related properties to the model. Some properties that do _not_ belong to a _content_ model would be (these are actual ideas that have been discussed by Models Builder users):
 
 * A `HomePage` property that would walk up the tree and return the "home page" content item
 * A `Menu` property that would list the content items to display in a top menu
