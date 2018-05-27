@@ -6,7 +6,7 @@ _This section will demonstrate how to use MVC Child Actions when rendering a pag
 
 A Child Action in ASP.Net MVC is kind of similar to that of a User Control in ASP.Net web forms. It allows for a controller to execute for a portion of the rendered area of a view, just like in Web Forms where you can execute a UserControl for a portion of the rendered area of a page.
 
-There is quite a lot of documentation on MVC Child Actions on the net, for example: http://[stackoverflow.com/questions/8886433/asp-net-mvc-child-actions](http://stackoverflow.com/questions/8886433/asp-net-mvc-child-actions)
+There is quite a lot of documentation on MVC Child Actions on the net, for example: [https://stackoverflow.com/questions/8886433/asp-net-mvc-child-actions](https://stackoverflow.com/questions/8886433/asp-net-mvc-child-actions)
 
 Child Actions can be very powerful especially when you want to have re-usable controller code to execute that you otherwise wouldn't want executing inside of your view. This also makes unit testing this code much easier since you only have to test controller code, not code in a view.
 

@@ -76,7 +76,7 @@ The `TempEnvDirectoryFactory` allows Examine to store indexes directly in the en
 ** EXAMPLE: %windir%\Microsoft.NET\Framework64\v2.0.50727\Aspnet_regiis.exe -ga ActiveDirectoryDomain\ProcessIdentity
 * Restart the server
 
-**Much of the above is covered in this Microsoft doc: [ASP.NET 3.5 Hosting](http://wiki.dev/GetFile.aspx?File=Wiggles-Hosting/ASPNET35_HostingDeploymentGuide.doc)**
+**Much of the above is covered in this Microsoft doc: [ASP.NET 3.5 Hosting](https://www.microsoft.com/en-us/download/confirmation.aspx?id=14047)**
 
 ## IIS Setup
 
