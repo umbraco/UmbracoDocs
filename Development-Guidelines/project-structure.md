@@ -23,7 +23,7 @@ Achieving this goal will take quite a lot of time by slowly migrating over old c
 	* Contains all functionality in Umbraco pertaining to the web.
 	* Contains all of the legacy code (including code behinds) that exists in the umbraco.dll file under the old namespaces but this code will slowly be migrated over to the new namespaces
 	* Assembly:  **umbraco.dll**
-		* Unfortunately due to the legacy code this project cannot produce a consistent DLL called Umbraco.Web.dll so we are stuck with umbraco.dll until maybe one day when 'the goal' is acheived we might be able to make a switch but this is a low priority.
+		* Unfortunately due to the legacy code this project cannot produce a consistent DLL called Umbraco.Web.dll so we are stuck with umbraco.dll until maybe one day when 'the goal' is achieved we might be able to make a switch but this is a low priority.
 * Umbraco.Web.UI
 	* Contains ONLY rendering files, webforms files and MVC Views: *JS, CSS, ASPX, ASCX, ASMX, CSHTML*
 	* Legacy webforms files have their codebehind files in the Umbraco.Web project. If these legacy webforms files need to be worked on, we can migrate their codebehind files to the Umbraco.Web.UI project as we see fit.

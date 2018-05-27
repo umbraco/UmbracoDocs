@@ -5,7 +5,7 @@ _Ensure that you have read the [JavaScript Guidelines](js-guidelines.md) documen
 Just like with other JavaScript in the Umbraco back-office, you need to wrap your class in the jQuery self executing function if you want to use the dollar ($) operator.
 
 ## Simple jQuery plugins
-Simple jQuery plugins don't require an internal class to perform the functionality and therefor do not expose or return an API. These could be as simple as vertically aligning something:
+Simple jQuery plugins don't require an internal class to perform the functionality and therefore do not expose or return an API. These could be as simple as vertically aligning something:
 
 	(function($) {
 	    $.fn.verticalAlign = function(opts) {

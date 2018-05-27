@@ -81,7 +81,7 @@ It's also possible to provide additional settings, like making a field mandatory
 
 ![Forms field additional settings](FormsFieldSettings.gif)
 
-You can then repeat this step untill you end up with the form you desire.
+You can then repeat this step until you end up with the form you desire.
 
 ## Saving the form
 Once you are satisfied with the form you can save the design by hitting the save button in the toolbar

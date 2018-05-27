@@ -129,7 +129,7 @@ Gets or Sets the parent `MediaType` Id as an `Int`.
 	return mediaType.ParentId;
 
 ### .Path
-Gets or Sets the path of the MediaType as a `String`. This string contains a comma seperated list of the anscestors Ids including the current MediaTypes own id at the end of the string.
+Gets or Sets the path of the MediaType as a `String`. This string contains a comma separated list of the anscestors Ids including the current MediaTypes own id at the end of the string.
 
 	//Given a `ContentTypeService` object get MediaType by its Id and return the Path
 	var mediaType = contentTypeService.GetMediaType(1234);

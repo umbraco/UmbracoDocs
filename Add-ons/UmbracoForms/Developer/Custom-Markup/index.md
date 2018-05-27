@@ -195,7 +195,7 @@ Default contents of the view:
         }
     }
 
-The view is seperated in 2 parts, 1 is the actual form and the other part is what will be shown if the form is submitted.
+The view is separated in 2 parts, 1 is the actual form and the other part is what will be shown if the form is submitted.
 
 This view can be customized, if you do so it will be customized for all your forms.
 

@@ -18,7 +18,7 @@ The basic configuration for an IndexSet involves specifying the following two at
 
 * **SetName** - the name of the IndexSet, it's convention to have 'IndexSet' at the end of the name, eg ExampleIndexSet will work 'by convention' with an ExampleIndexer and an ExampleSearcher.
 * **IndexPath** - the path on disk where your Examine Index files will be stored.
-* **IndexParentId** - the Umbraco id of the item in the tree to begin indexing beneath, this defaults to -1 (the root of the site). You could use this to create seperate IndexSets for different parts of your site.
+* **IndexParentId** - the Umbraco id of the item in the tree to begin indexing beneath, this defaults to -1 (the root of the site). You could use this to create separate IndexSets for different parts of your site.
 eg
 
         <IndexSet SetName="ExampleIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/Example/" />

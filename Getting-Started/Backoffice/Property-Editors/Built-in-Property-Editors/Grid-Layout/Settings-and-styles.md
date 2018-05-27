@@ -6,7 +6,7 @@ A grid layout can also expose custom settings - such as data-attributes or styli
 These settings and styles must be configured by developers when setting up the grid layout data type.
 
 ### Configuring a custom setting or style
-To add a setting, click the edit settings link. This will expand a dialog showing you the raw configuration data. This data is in the JSON format and will only save if its valid JSON.
+To add a setting, click the edit settings link. This will expand a dialog showing you the raw configuration data. This data is in the JSON format and will only save if it's valid JSON.
 
 The settings data could look like this, with an object for each setting:
 

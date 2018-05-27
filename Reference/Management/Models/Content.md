@@ -104,7 +104,7 @@ Gets or Sets the parent `Content` Id as an `Int`.
 	return content.ParentId;
 
 ### .Path
-Gets or Sets the path of the content as a `String`. This string contains a comma seperated list of the anscestors Ids including the current contents own id at the end of the string.
+Gets or Sets the path of the content as a `String`. This string contains a comma separated list of the anscestors Ids including the current contents own id at the end of the string.
 
 	//Given a `ContentService` object get Content by its Id and return the Path
 	var content = contentService.GetById(1234);

@@ -3,7 +3,7 @@
 ## LeBlender
 The popular LeBlender plugin works great with Umbraco Cloud, if you use the [Umbraco Courier Contrib](https://github.com/umbraco/Umbraco.Courier.Contrib) resolvers.
 
-There is one little problem, however, LeBlender creates it's own Rich Text Editor datatype that is almost indistinguishable from the one that is built into Umbraco. Normally that would not be a problem, but this RTE can only contain 500 characters of text because it's configured incorrectly.
+There is one little problem, however, LeBlender creates its own Rich Text Editor datatype that is almost indistinguishable from the one that is built into Umbraco. Normally that would not be a problem, but this RTE can only contain 500 characters of text because it's configured incorrectly.
 
 ![RTE datatype configuration](images/rte-datatype-configuration.png)
 
