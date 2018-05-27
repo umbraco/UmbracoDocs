@@ -1,3 +1,5 @@
+# Understand and Extend
+
 Models are generated as partial classes. In its most basic form (some code being omitted for simplicity's sake), a model for content type `TextPage` ends up in file `TextPage.generated.cs` and looks like:
 
     [PublishedContentModel("textPage")]
