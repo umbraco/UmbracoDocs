@@ -22,7 +22,7 @@ Automated documentation files by ngdoc project from inline comments in source fi
 Folder containing all 3rd party dependencies used by the Umbraco web application
 
 */node_modules*
-Dependencies used by nodeJS and Grunt to build the project
+Dependencies used by Node.js and Grunt to build the project
 
 */src*
 The source code of Umbraco 7 UI
