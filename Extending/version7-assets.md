@@ -54,7 +54,7 @@ The way that we add service URLs to the server variables collection in the core 
 
 	Url.GetUmbracoApiServiceBaseUrl<ContentController>(controller => controller.PostSave(null))
 
-For a full reference to our URL generation, you can see the source of the [BackOfficeController](https://github.com/umbraco/Umbraco-CMS/blob/7.0.2/src/Umbraco.Web/Editors/BackOfficeController.cs).
+For a full reference to our URL generation, you can see the source of the [BackOfficeController](https://github.com/umbraco/Umbraco-CMS/blob/dev-v7/src/Umbraco.Web/Editors/BackOfficeController.cs).
 
 ### UrlHelper
 
