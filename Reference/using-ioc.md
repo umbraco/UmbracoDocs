@@ -96,7 +96,7 @@ If you like to use the `IApplicationEventHandler` alternative - here is an examp
 		}
 	}
 
-In this example we will assume that we have a Document Type called 'Home' Now we're going to create a custom controller to hijack a route for all content pages of type Home *(NOTE: we can target custom template names too, see the [Hijacking routes](routing/custom-controllers) documentation for full details).* Notice that the constructor accepts a parameter the custom class, this will be injected via IoC.
+In this example we will assume that we have a Document Type called 'Home' Now we're going to create a custom controller to hijack a route for all content pages of type Home *(NOTE: we can target custom template names too, see the [Hijacking routes](Routing/custom-controllers.md) documentation for full details).* Notice that the constructor accepts a parameter the custom class, this will be injected via IoC.
 
 	public class HomeController : RenderMvcController
 	{
