@@ -19,7 +19,7 @@ If you are going to use jQuery and its dollar ($) operator, you will need to wra
 	  alert($);
 	})(jQuery);
 
-To create JQuery plugins, see the [jQuery Plugin Guidelines](jquery-guidelines.md)
+To create jQuery plugins, see the [jQuery Plugin Guidelines](jquery-guidelines.md)
 
 ## Creating classes
 
