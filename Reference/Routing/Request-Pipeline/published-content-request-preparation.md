@@ -85,7 +85,7 @@ Note: a missing template goes to MVC
 
 There's one by default but you can use your own, so still time to change the view...
 
-As a reminder, [Route hijacking](../../Reference/Templating/Mvc/custom-routes.md) works like this: 
+As a reminder, [Route hijacking](../custom-routes.md) works like this: 
 
 - create a **MyContentType**Controller
   - Will run in place of the default controller
