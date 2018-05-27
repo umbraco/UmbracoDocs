@@ -16,7 +16,7 @@ Both sections and trees can be created to extend Umbraco.
 
 ## [Property Editors](Property-Editors/index.md)
 
-A property editor is the editor used to insert content into Umbraco. [See here for definition.](../using-umbraco/backoffice-overview/property-editors/index.md)
+A property editor is the editor used to insert content into Umbraco. [See here for definition.](Property-Editors/index.md)
 
 This section will describe how to work with and create Property Editors.
 
