@@ -1,16 +1,16 @@
-# Install and configure Umbraco ModelsBuilder
+# Install and configure Umbraco Models Builder
 
 ## Install
 
-In order for the ModelsBuilder to be used in a website, the [Umbraco.ModelsBuilder NuGet package](https://www.nuget.org/packages/Umbraco.ModelsBuilder/) needs to be installed. From Umbraco 7.4+ the ModelsBuilder is bundled with the main Umbraco distribution.
+In order for Models Builder to be used in a website, the [Umbraco.ModelsBuilder NuGet package](https://www.nuget.org/packages/Umbraco.ModelsBuilder/) needs to be installed. From Umbraco 7.4+, Models Builder is bundled with the main Umbraco distribution.
 
 ## Configure
 
-Then, the following application settings (in the `appSettings` section of the `Web.config` file) control what the ModelsBuilder actually does:
+Then, the following application settings (in the `appSettings` section of the `Web.config` file) control what Models Builder actually does:
 
-* `Umbraco.ModelsBuilder.Enable` can be `true` or `false` (default) and acts as a giant kill-switch: When `false`, the ModelsBuilder behaves as if it were not installed at all, and all other settings are ignored.
+* `Umbraco.ModelsBuilder.Enable` can be `true` or `false` (default) and acts as a giant kill-switch: When `false`, Models Builder behaves as if it were not installed at all, and all other settings are ignored.
 
-* `Umbraco.ModelsBuilder.ModelsMode` determines how the ModelsBuilder generates models. Valid values are:
+* `Umbraco.ModelsBuilder.ModelsMode` determines how Models Builder generates models. Valid values are:
     * `Nothing` (default): Do not generate models
     * `PureLive`: Generate models in a dynamic in-memory assembly
     * `Dll`: Generate models in a Dll in `~/bin` (causes an application restart) whenever the user "clicks the button"
@@ -18,7 +18,7 @@ Then, the following application settings (in the `appSettings` section of the `W
     * `AppData`: Generate models in `~/App_Data/Models` (but do not compile them) whenever the user "clicks the button"
     * `LiveAppData`: Generate models in `~/App_Data/Models` (but do not compile them) anytime a content type changes
 
-* `Umbraco.ModelsBuilder.EnableFactory` can be `true` (default) or `false` and determines whether the ModelsBuilder registers the built-in `IPublishedContentFactory`. When `false`, models could be generated, but would *not* be used by Umbraco.
+* `Umbraco.ModelsBuilder.EnableFactory` can be `true` (default) or `false` and determines whether Models Builder registers the built-in `IPublishedContentFactory`. When `false`, models could be generated, but would *not* be used by Umbraco.
 
 * `Umbraco.ModelsBuilder.ModelsNamespace` (string, default is `Umbraco.Web.PublishedContentModels`) specifies the generated models' namespace.
 
@@ -36,19 +36,19 @@ Then, the following application settings (in the `appSettings` section of the `W
 
 * `Umbraco.ModelsBuilder.DebugLevel` (int, default is zero) indicates the debug level. For internal / development use. Set to greater than zero to enable detailed logging.
 
-## ModelsBuilder Dashboard
+## Models Builder Dashboard
 
-When the ModelsBuilder is installed, a new dashboard is added to the *Developers* section of Umbraco's backoffice. The dashboard does three things:
+When Models Builder is installed, a new dashboard is added to the *Developers* section of Umbraco's backoffice. The dashboard does three things:
 
-* Details how the ModelsBuilder is configured
+* Details how Models Builder is configured
 * Provides a way to generate models (in [Live]Dll and [Live]AppData modes only)
 * Reports the last error (if any) that would have prevented models from being properly generated
 
-## ModelsBuilder API
+## Models Builder API
 
-In addition, in order for the ModelsBuilder to provide the API needed by the Visual Studio extension (or the console tool), **the [Umbraco.ModelsBuilder.Api NuGet package](https://www.nuget.org/packages/Umbraco.ModelsBuilder.Api/) needs to be installed**, and the following application setting needs to be configured:
+In addition, in order for Models Builder to provide the API needed by the Visual Studio extension (or the console tool), **the [Umbraco.ModelsBuilder.Api NuGet package](https://www.nuget.org/packages/Umbraco.ModelsBuilder.Api/) needs to be installed**, and the following application setting needs to be configured:
 
-* `Umbraco.ModelsBuilder.EnableApi` can be `true` or `false` (default) and controls whether the ModelsBuilder provides the API.
+* `Umbraco.ModelsBuilder.EnableApi` can be `true` or `false` (default) and controls whether Models Builder provides the API.
 
 **WARNING:** The API is provided when the website runs in debug mode, exclusively. Which means that the `debug` attribute of `Web.config`'s `<compilation>` element must be set to `true`.
 	
