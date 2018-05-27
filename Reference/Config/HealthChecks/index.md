@@ -37,4 +37,4 @@ Each notification method can separately be enabled or disabled. The attribute `v
 
 An email notification method is built-in to Umbraco. The email method is configured within the `<settings>` section of `<notificationMethod alias="email">`, the email address to send the notification to must be provided as the `recipientEmail` value.
 
-Please note that to use health check notifications you must ensure to set the `umbracoApplicationUrl` value in `umbracoSettings.config`.  Without this the checks will only work when requested via the developer section dashboard.  For more information on this setting, please see [Config > UmbracoSettings](../../../Reference/Config/umbracoSettings/index.md#webrouting).
+Please note that to use health check notifications you must ensure to set the `umbracoApplicationUrl` value in `umbracoSettings.config`.  Without this the checks will only work when requested via the developer section dashboard.  For more information on this setting, please see [Config > UmbracoSettings](../../../Reference/Config/umbracoSettings/#webrouting).
