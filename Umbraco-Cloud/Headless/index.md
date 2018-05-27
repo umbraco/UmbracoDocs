@@ -26,4 +26,4 @@ The Headless .NET client is the simplest way to integrate your .NET project with
 
 If you are developing a .NET or .NET Core application or website, accessing your data is a small matter of installing the NuGet package in your project, modifying a few configuration options and then you are ready to go.
 
-For more about getting started using the Headless .NET client please read the __[Headless .NET client documentation](Headless-Net-Client/index.md)__
+For more about getting started using the Headless .NET client please read the __[Headless .NET client documentation](Headless-Net-Client/)__
