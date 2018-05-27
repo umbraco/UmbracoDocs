@@ -1,6 +1,6 @@
 # Add a Blog Post Publication Date
 
-In [Part One](index.md) we added a new property to the *Blogpost* Document Type.
+In [Part One](./) we added a new property to the *Blogpost* Document Type.
 Now in Part Two we're going to display that instead of the creation date.
 
 ## Steps - Part Two
