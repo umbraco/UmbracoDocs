@@ -22,6 +22,7 @@ _This example is for creating a staticly routed website which means that it's a 
         }
         ```
 * You need to bootstrap the headless client which is done in your `Startup.cs` file:
+   * Add `using Umbraco.Headless.Client;`.
    * In `ConfigureServices` add the headless client services: `services.AddUmbracoHeadlessClient(Configuration);`
 * Now run the project
    * `dotnet run`
