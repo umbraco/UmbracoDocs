@@ -47,6 +47,6 @@ Information on the packaging manifest format and how assets should be packaged a
 
 Details on implementing virtual file systems for things like media which will allow you to store your files outside of the physical file system (i.e. Cloud based for example)
 
-## [Embedded Media Providers](Embedded-Media-Provider.md)
+## [Embedded Media Providers](Embedded-Media-Provider/index.md)
 
 Details on how to create a custom Embedded Media Provider to enable editors to embed third party media content into Umbraco via the embed button in the Rich Text Area.
