@@ -26,7 +26,7 @@ The following is an example configuration installed with Umbraco.
 	</HealthChecks> 
     
 In the first `<disabledChecks>` section it's possible to mark certain checks as disabled.  To do so, uncomment one of the examples and update `id` field with the Id of the test to disable (the `disabledOn` and `disabledBy` fields are not required, in place currently just as placeholders for when this information is managed via a user interface).  The Ids for each core tests can be found on the [Extending Health checks](../../../Extending/Healthcheck/#built-in-checks).
-                       
+
 To enable notifications set the `enabled` attribute on `<notificationSettings>` to `true`.
 
 The timing for notifications can be modified by setting the `periodInHours` attribute to the number of hours that should elapse between tests.  If `firstRunTime` is empty, the tests will run for the first time just after the application is started.  To ensure the tests run at a later time - perhaps during low traffic hours, set the time in `hhmm` format (e.g. 2300) and the tests will not run until that time is reached.
