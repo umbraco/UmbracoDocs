@@ -30,7 +30,7 @@ For more about getting started using the Headless .NET client please read the __
 
 ## Headless Node.js Client
 
-With the Headless Node.js client you can use Umbrasco as the backend for any Node.js powered implementation.
+With the Headless Node.js client, you can use Umbraco as the backend for any Node.js powered implementation.
 
 The client is available through npm and requires very little setup, so you should be up and running in no time.
 
