@@ -11,7 +11,7 @@ Umbraco comes with the following checks by default:
 
 * Category **Configuration**
   * **Macro errors (id: `D0F7599E-9B2A-4D9E-9883-81C7EDC5616F`)** - checks that the errors are set to `inline` so that pages that error will still load (and just shows a small error message)
-  * **Notification Email Settings (id: `3E2F7B14-4B41-452B-9A30-E67FBC8E1206`)** - checks that the from email address used for email notifications has been changed from it's default value
+  * **Notification Email Settings (id: `3E2F7B14-4B41-452B-9A30-E67FBC8E1206`)** - checks that the from email address used for email notifications has been changed from its default value
   * **Try Skip IIS Custom Errors (id: `046A066C-4FB2-4937-B931-069964E16C66`)** - in IIS 7.5 and higher this should be set to `true` 
 * Category **Data Integrity**
   * **Data integrity (id: `D999EB2B-64C2-400F-B50C-334D41F8589A`)** - validates the XML structures for content, media and members that are stored in the `cmsContentXml` table
