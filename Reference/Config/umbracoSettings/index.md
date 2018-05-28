@@ -427,7 +427,7 @@ The comment says it all :)
 
 ## Scripting
 
-This is a legacy section which is used for the legacy Razor Macros (superceded by Partial View Macros in v4.10+), 
+This is a legacy section which is used for the legacy Razor Macros (superseded by Partial View Macros in v4.10+), 
 generally you won't need to modify this section. If you need custom razor macro converters you should use implementations
 of IRazorDataTypeModel instead of setting them in config.
 

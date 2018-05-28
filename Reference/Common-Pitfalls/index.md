@@ -81,7 +81,7 @@ an object that has an Application based scope/lifespan ... here's the gist:
 * Application scope - if an object has an Application scope/lifespan, that means that this single object
 instance will exist for the lifetime of the application. The single instance will be shared by every thread that
 accesses it. Static variables will always be Appplication scope/lifespan.
-* Request scope - The web world is made up of requests and each request is it's own thread. When an object is has a Request scope
+* Request scope - The web world is made up of requests and each request is its own thread. When an object is has a Request scope
 it only survives as long as the web request survives, at the end of the web request, it may either be disposed or cleared from memory
 by the garbage collector. Request scoped object instances are not accessed by every other thread in the application - __unless you do something like the above!__
 

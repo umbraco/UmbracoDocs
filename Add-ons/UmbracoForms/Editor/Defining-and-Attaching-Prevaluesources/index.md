@@ -55,7 +55,7 @@ Choose the correct type (so the name of the prevalue source), you should now see
 There are a couple of default prevalue source types that can be used, here is an overview:
 
 #### Get values from textfile
-Upload textfile that contains the prevalues (seperated by linebreak)
+Upload textfile that contains the prevalues (separated by linebreak)
 
 #### SQL Database
 Connects to a OLEDB compatible Database Table and constructs a prevalue source from it, which is editable from the forms UI
