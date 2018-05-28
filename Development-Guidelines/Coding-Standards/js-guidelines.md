@@ -23,7 +23,7 @@ To create jQuery plugins, see the [jQuery Plugin Guidelines](jquery-guidelines.m
 
 ## Creating classes
 
-There are actually quite a few different ways to create classes in JavaScript. For Umbraco	we have opted to use the 3rd party, classical inheritance library, [Base2](http://base2.googlecode.com/svn/version/1.0.2/doc/base2.html#/doc/!base2) to make class declarations simple and extendable:
+There are actually quite a few different ways to create classes in JavaScript. For Umbraco we have opted to use the 3rd party, classical inheritance library, [Base2](http://base2.googlecode.com/svn/version/1.0.2/doc/base2.html#/doc/!base2) to make class declarations simple and extendable:
 
 	Umbraco.Sys.registerNamespace("MyProject.MyNamespace");
 	 
