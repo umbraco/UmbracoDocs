@@ -63,7 +63,7 @@ Umbraco Cloud uses web sockets to communicate between your browser session and t
 
 #### I have a package.json file in the root of my website and my deploys keep failing
 
-With the package.json file in place, our service will take that to mean: "Look, I'm a node.js project, don't treat me as an ASP.NET site!". In order to remedy this you can go into your local clone of the website and find the `.deployment` file and make it look like this:
+With the package.json file in place, our service will take that to mean: "Look, I'm a Node.js project, don't treat me as an ASP.NET site!". In order to remedy this you can go into your local clone of the website and find the `.deployment` file and make it look like this:
 
     [config]
     SCM_SCRIPT_GENERATOR_ARGS = --basic
