@@ -5,6 +5,23 @@ Here you will be able to find documentation on all the options you can modify in
 ***NOTE**: in v7+ many of these settings are not explicitly contained in the configuration file that is shipped with Umbraco and most of these settings have default values assigned. 
 These default values will be expressed below and you can insert these configuration items in the file to override the defaults.*
 
+## Backoffice
+
+Below you can see the settings that affect the Umbraco backoffice (v7.8+)
+
+### Tours
+
+The section is used for controlling the backoffice tours functionality
+
+	<backOffice>
+        <tours enable="true"></tours>
+    </backOffice>
+
+There is only one supported attribute on the tours element :
+
+**`enable`**
+By default this is set to true. Set it to false to turn off [backoffice tours](../../../Extending/Backoffice-Tours/index.md)
+
 ## Content
 
 Below you can see settings that affects content in Umbraco.
@@ -222,15 +239,17 @@ In case Umbraco is taking a bit of time to prepare content to display you can di
 
 **PropertyContextHelpOption**
 
+***This option has become obsolete in v7+. It will always be displayed as text***
+
 The setting controls what kind of context help is displayed next to editor fields in the content section.  It can either be display as a small icon with text on mouse hover: (set it to `icon`) Set to displaying the help text directly under the field name (set it to `text`), or not be displayed at all (set to `none`).
 
-<PropertyContextHelpOption>text</PropertyContextHelpOption>
+	<PropertyContextHelpOption>text</PropertyContextHelpOption>
 
 **PreviewBadge**
 
 This allows you to customize the preview badge being shown when you're previewing a node.
 
-<PreviewBadge><![CDATA[<a id="umbracoPreviewBadge" style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px; background: url('{1}/preview/previewModeBadge.png') no-repeat;" href="{0}/endPreview.aspx?redir={2}"><span style="display:none;">In Preview Mode - click to end</span></a>]]></PreviewBadge>
+	<PreviewBadge><![CDATA[<a id="umbracoPreviewBadge" style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px; background: url('{1}/preview/previewModeBadge.png') no-repeat;" href="{0}/endPreview.aspx?redir={2}"><span style="display:none;">In Preview Mode - click to end</span></a>]]></PreviewBadge>
 
 **UmbracoLibraryCacheDuration**
 
@@ -262,6 +281,21 @@ If greater control is required than available from the above, this setting can b
 
         <!-- If completed, only the file extensions listed below will be allowed to be uploaded.  If empty, disallowedUploadFiles will apply to prevent upload of specific file extensions. -->
         <allowedUploadFiles></allowedUploadFiles>
+
+
+**loginBackgroundImage (introduced in 7.6.0)**
+
+You can specify your own background image for the login screen here. The image will automatically get an overlay to match back office colors. This path is relative to the ~/umbraco path. The default location is: /umbraco/assets/img/installer.jpg
+
+	 <loginBackgroundImage>../App_Plugins/Backgrounds/login.png</loginBackgroundImage>
+
+**EnablePropertyValueConverters (introduced in 7.6.0)**
+
+Enables [value converters](../../../Extending/Property-Editors/value-converters.md) for all built in property editors so that they return strongly typed object, recommended for use with [Models Builder](../../templating/modelsbuilder/index.md)
+
+On new installs this set to true. When you are upgrading from a lower version than 7.6.0 it is recommend to set this setting to false. More information can be found in the explanation of the [breaking changes in 7.6.0](../../../Getting-Started/Setup/Upgrading/760-breaking-changes#property-value-converters-u4-7318)
+
+	<EnablePropertyValueConverters>true</EnablePropertyValueConverters>
 
 ## Security
 
@@ -393,7 +427,7 @@ The comment says it all :)
 
 ## Scripting
 
-This is a legacy section which is used for the legacy Razor Macros (superceded by Partial View Macros in v4.10+), 
+This is a legacy section which is used for the legacy Razor Macros (superseded by Partial View Macros in v4.10+), 
 generally you won't need to modify this section. If you need custom razor macro converters you should use implementations
 of IRazorDataTypeModel instead of setting them in config.
 
@@ -519,17 +553,7 @@ Though the above example shows the server's as IP addresses, these can also be D
 
 ## Repositories
 
-From the Developer section you can access packages. From here you have access to the Umbraco package repository from where you can download packages. It is however also possible to add other repositories to this list. If you or your company have a private repository, it can be added to this list.
-
-    <!-- Configuration for repositories -->
-    <!-- Add or remove repositories here. You will need the repository's unique key to be able to connect to it.-->
-    <repositories>
-        <repository name="Umbraco package Repository" guid="65194810-1f85-11dd-bd0b-0800200c9a66" />
-    </repositories>
-
-If you wish to add your own repository, contact [Umbraco corp](http://umbraco.com/contact.aspx) to get a **unique key**.
-
-Also note that you can remove the official repository from the **<repositories>** list in case you do not want this functionality
+This is a legacy setting that is no longer in use. 
 
 ## Providers
 

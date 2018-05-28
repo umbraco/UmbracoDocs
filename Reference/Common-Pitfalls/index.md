@@ -81,7 +81,7 @@ an object that has an Application based scope/lifespan ... here's the gist:
 * Application scope - if an object has an Application scope/lifespan, that means that this single object
 instance will exist for the lifetime of the application. The single instance will be shared by every thread that
 accesses it. Static variables will always be Appplication scope/lifespan.
-* Request scope - The web world is made up of requests and each request is it's own thread. When an object is has a Request scope
+* Request scope - The web world is made up of requests and each request is its own thread. When an object is has a Request scope
 it only survives as long as the web request survives, at the end of the web request, it may either be disposed or cleared from memory
 by the garbage collector. Request scoped object instances are not accessed by every other thread in the application - __unless you do something like the above!__
 
@@ -171,7 +171,7 @@ with a level of one. As mentioned above, traversing costs resources and in this 
 for the same value. Instead this can be rewritten as:
 
     @{
-        var site = @Model.Content.Site();
+        var site = Model.Content.Site();
     }
     <ul>
         <li><a href="@site.Url">@site.Name</a></li>
@@ -329,7 +329,7 @@ some data but in most cases they should not perform any logic.
 There's a few reasons why this can become a huge performance problem:
 
 * The consumer of an API doesn't expect that by creating an object that they should be worried about performance
-* Creating an object can inadvertently happen a vast number of times, expecially when using Linq
+* Creating an object can inadvertently happen a vast number of times, especially when using Linq
 
 Here's an example of how this can go wrong very quickly:
 Your tree structure is something like this:
@@ -374,7 +374,7 @@ You then run the following code to show to show the favorites
 
 __Ouch!__ So just to show the top 10 voted recipe's this will end up doing the following:
 
-* This will iterate over all Recipess, create and allocate 5000 instances of `IPublishedContent`
+* This will iterate over all Recipes, create and allocate 5000 instances of `IPublishedContent`
 * This will create and allocate 5000 instances of `RecipeModel`
 * For each `RecipeModel` created, this will traverse upwards, iterate all 5000 recipes then resolve property data for 2 properties
 

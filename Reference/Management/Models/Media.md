@@ -71,7 +71,7 @@ Returns the `Guid` assigned to the Media during creation. This value is unique, 
 	return media.Key;
 
 ### .Level
-Gets or Sets the given `Media` level in the site hirachy as an `Int`. Media placed at the root of the tree, will return 1, Media just underneath will return 2, and so on.
+Gets or Sets the given `Media` level in the site hierarchy as an `Int`. Media placed at the root of the tree, will return 1, Media just underneath will return 2, and so on.
 
 	//Given a `MediaService` object get Media by its Id and return the Level
 	var media = mediaService.GetById(1234);
@@ -92,7 +92,7 @@ Gets or Sets the parent `Media` Id as an `Int`.
 	return media.ParentId;
 
 ### .Path
-Gets or Sets the path of the Media as a `String`. This string contains a comma seperated list of the anscestors Ids including the current medias own id at the end of the string.
+Gets or Sets the path of the Media as a `String`. This string contains a comma separated list of the anscestors Ids including the current medias own id at the end of the string.
 
 	//Given a `MediaService` object get Media by its Id and return the Path
 	var media = mediaService.GetById(1234);

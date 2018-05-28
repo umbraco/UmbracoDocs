@@ -10,7 +10,7 @@ This section describes how to work with and create Property Editors. A property 
 
 ## [Package Manifest](package-manifest.md)
 
-Reference for package.manifest JSON file format to register one or more property editors for Umbraco.
+Reference for the package.manifest JSON file format to register one or more property editors for Umbraco.
 
 ## [Property Value Converters](value-converters.md)
 
@@ -18,7 +18,7 @@ Convert the stored property data value to a useful object returned by the Publis
 
 ## [Tag support](tag-support.md)
 
-Property editors can be configured to support tag data. In v7 the tag system has been overhauled and updated for easier querying and seamless integration into any property editor, not just the tags property editor. This document covers how you can integrate tagging support with your property editor.
+Property editors can be configured to support tag data. In v7 the tag system has been overhauled and updated for easier querying and seamless integration into any property editor, not just the tags property editor. This document covers how you can integrate tagging support within your property editor.
 
 ### More information
 - [Built in Property Editors](../../Getting-Started/Backoffice/Property-Editors/Built-in-Property-Editors/)

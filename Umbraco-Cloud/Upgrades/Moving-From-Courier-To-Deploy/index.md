@@ -44,7 +44,7 @@ Finally all `.courier` files found in `/data/Revision` needs to be deleted aswel
 
 ## 2 Adding Umbraco Deploy
 
-Adding Umbraco Deploy will be simple, all content from the package recieved, except /config/UmbracoDeploy.config needs to be copied into the webroot.
+Adding Umbraco Deploy will be simple, all content from the package received, except `/config/UmbracoDeploy.config` needs to be copied into the webroot.
 
 Next you need to update the web.config to letting it know about Umbraco Deploy. 
 First add the following section to the `configuration/configSections` part

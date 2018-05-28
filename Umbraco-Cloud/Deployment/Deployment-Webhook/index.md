@@ -1,11 +1,11 @@
 # Deployment Webhook
-You can now configure a deployment webhook to be triggered upon succesfull deployments to any of your Umbraco Cloud environments, e.g. when deploying from your local environment to your Cloud Development environment. Upon a succesfull deployment general information about the deployment will be posted in a json format to the specific url you have configured.
+You can now configure a deployment webhook to be triggered upon successful deployments to any of your Umbraco Cloud environments, e.g. when deploying from your local environment to your Cloud Development environment. Upon a successful deployment general information about the deployment will be posted in a JSON format to the specific url you have configured.
 
 ## Use cases
 This can find uses in many 'audit' cases when you would like to let others know about what is happening with your site. Here are some example of cases where this feature could be useful:
 
 1. Any deployments to the Live site could be relevant for many parties in a company. Posting information about them in internal communication channels like *Slack* is made possible using this feature.
-2. Monitoring of the whole deployment cycle. A succesfull deployment might result in a potentially breaking change. Integrating the webhook with other monitoring services, you could easily find out which deployment has caused the issue.
+2. Monitoring of the whole deployment cycle. A successful deployment might result in a potentially breaking change. Integrating the webhook with other monitoring services, you could easily find out which deployment has caused the issue.
 3. Letting content editors know about particular deployments when a new document type was added as they can now easily use the new document type.
 
 ## Configuration steps
@@ -18,11 +18,11 @@ This can find uses in many 'audit' cases when you would like to let others know 
 3. Add Webhook
 
 ## Sample data
-General information about the deployment (to the configured environment) will be posted in json format to the url (configured in the previous section).
+General information about the deployment (to the configured environment) will be posted in JSON format to the url (configured in the previous section).
 
 ### Headers
 The headers contains information about the payload 
-in json format as well as a version of the payload.
+in JSON format as well as a version of the payload.
 
     X-Umb-Webhook-Version: 1
     Content-Type: application/json; charset=utf-8

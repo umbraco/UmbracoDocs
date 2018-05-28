@@ -55,7 +55,7 @@ Yes, as Archetype is third-party created datatype you’ll need to include the a
 
 #### I’m using BuzzHybrid / DonutCaching / LatestHotStuff / other custom add-ins or I’ve created my own datatypes - do I need to do anything special?
 
-Probably not!  In most cases simply including the custom files (and configuration) is enough for Umbraco Cloud to understand how to deploy your site.  In some cases, namely where you’ve created a data type that serializes data or otherwise stores property data in a non-standard format, you’ll need to also create a corresponding data resolver.  Fortunately these are easily created using the guide and samples [here](https://github.com/umbraco/Courier/blob/master/Documentation/Developer%20Documentation/Data%20Resolvers.md)
+Probably not! In most cases simply including the custom files (and configuration) is enough for Umbraco Cloud to understand how to deploy your site.  In some cases, namely where you’ve created a data type that serializes data or otherwise stores property data in a non-standard format, you’ll need to also create a corresponding data resolver.  Fortunately these are easily created using the guide and samples [here](https://github.com/umbraco/Courier/blob/master/Documentation/Developer%20Documentation/Data%20Resolvers.md)
 
 #### I press the “Deploy to Staging/Live” button, then nothing happens.  What’s going on?
 
@@ -63,23 +63,23 @@ Umbraco Cloud uses web sockets to communicate between your browser session and t
 
 #### I have a package.json file in the root of my website and my deploys keep failing
 
-With the package.json file in place, our service will take that to mean: "look, I'm a node.js project, don't treat me as a ASP.NET site!". In order to remedy this you can go into your local clone of the website and find the `.deployment` file and make it look like this:
+With the package.json file in place, our service will take that to mean: "Look, I'm a Node.js project, don't treat me as an ASP.NET site!". In order to remedy this you can go into your local clone of the website and find the `.deployment` file and make it look like this:
 
     [config]
     SCM_SCRIPT_GENERATOR_ARGS = --basic
     POST_DEPLOYMENT_ACTIONS_DIR = C:\KuduService\artifacts\
 
 So the addition here is the line that says `SCM_SCRIPT_GENERATOR_ARGS = --basic`.   
-Rest assured: this problem is on our list to fix as soon as possible but for now you can use this workaround.
+Rest assured: This problem is on our list to fix as soon as possible but for now you can use this workaround.
 
-#### Some or all of my static assets (css, js, images) are not loading on my development environemt
+#### Some or all of my static assets (.css, .js, images) are not loading on my development environment
 
 Symptom: When you try to go to the URL of your static assets (`https://mysite.s1.umbraco.io/assets/css/app.css` for example) you get a login prompt, upon completing that, you get redirected to something like `https://mysite.s1.umbraco.io/login.aspx?ReturnUrl=%2fassets%2fcss%2fapp.css`.
 
 This issue is under investigation and seems to occur rather randomly; it works fine for most people but for some it just starts failing for no good reason (that we've found yet). For now what you can do to fix the problem is:
 
-1. Copy the Url from your site’s HTTPS Clone Url in the portal 
-2. Using the Url without the actual repository name, the GUID part, open a new browser tab and login. Just the Url like `https://dev-mysite.scm.s1.umbraco.io/`
+1. Copy the URL from your site’s HTTPS Clone URL in the portal 
+2. Using the URL without the actual repository name, the GUID part, open a new browser tab and login. Just the URL like `https://dev-mysite.scm.s1.umbraco.io/`
 3. You’ll see the Kudu site
 4. Go to the "Site Extensions" menu item and click the "Restart site" button
 
@@ -91,23 +91,23 @@ This will recycle the application pool for your site and should allow you to loa
 
 This usually mean that the user's account does not have the same user name and password on the environment you're deploying to. So when that user is deploying from development to staging they will get this error if they either don't exist on the staging environment or if their password is different between the dev and staging environment.
 
-#### My deployment did not complete successfully.  How do I find what went wrong and what needs to change?
+#### My deployment did not complete successfully. How do I find out what went wrong and what needs to change?
 
 On rare occasions you may find that a deployment fails and there is no useful information in the error message.  In most cases you should try the deployment a second time, but if that also fails you will need to dig a little deeper.
 
 ## It’s time to get your Git on!  
 
-The first step is to find out what state the site’s Git repository is in (for the source site, usually dev but could also be stage).  In order to do this we’ll use the Kudu console that is available for every site in Umbraco Cloud.  Here are the steps to find out what state your repository is in:
+The first step is to find out what state the site’s Git repository is in (for the source site, usually dev but could also be stage). In order to do this we’ll use the Kudu console that is available for every site in Umbraco Cloud.  Here are the steps to find out what state your repository is in:
 
-1. Copy the Url from your site’s HTTPS Clone Url in the portal
+1. Copy the URL from your site’s HTTPS Clone URL in the portal
 
-2. Using the Url without the actual repository name, the GUID part, open a new browser tab and login.  Just the Url like `https://dev-mysite.scm.s1.umbraco.io/`
+2. Using the URL without the actual repository name, the GUID part, open a new browser tab and login. Just the URL like `https://dev-mysite.scm.s1.umbraco.io/`
 
 3. You’ll see the Kudu site, which includes your site’s Git repository
 
 4. From the menu select Debug Console > Powershell
 
-5. In the file explorer navigate to site > repository
+5. In the file explorer navigate to Site > Repository
 
 6. Now in the Powershell console enter
   `PS> git status`
@@ -116,29 +116,29 @@ The first step is to find out what state the site’s Git repository is in (for 
 
     `. # On branch master  # Your branch and 'origin/master' have diverged`
 
-8. Now you just need to resolve any merge conflicts and commit any outstanding unmerged paths.  In most cases, you can use the following Git command to commit the outstanding paths (it may take a minute or two for Git to process the commit):
+8. Now you need to resolve any merge conflicts and commit any outstanding unmerged paths. In most cases, you can use the following Git command to commit the outstanding paths (it may take a minute or two for Git to process the commit):
 
     `PS> git commit -m “Latest merged files here”`
 
-9. If the git commit didn’t work for you, you’ll need to go even a little deeper.  There are a few options here; 1) if the files marked as “Unmerged paths” have a name like ‘03dbdfb1-7780-4368-8f1e-2bc2a18012ec.courier’ you can remove them using the git command:
+9. If the git commit didn’t work for you, you’ll need to go even a little deeper. There are a few options here; 1) if the files marked as “Unmerged paths” have a name like ‘03dbdfb1-7780-4368-8f1e-2bc2a18012ec.courier’ you can remove them using the git command:
 
     `PS> git rm <full path from console>/03dbdfb1-8f1e-2bc2a18012ec.courier`
 
-10. And 2) If the files listed in “Unmerged paths” are files your site is using, you’ll need to manually edit these files to resolve the merge conflict and then add the back to your repository using the git command:
+10. And 2) If the files listed in “Unmerged paths” are files your site is using, you’ll need to manually edit these files to resolve the merge conflict and then add them back to your repository using the git command:
 
     `PS> git add myfilename`
 
 11. Once you have resolved any conflicts you need to commit any outstanding changes:
 
-    `PS> git commit -m “Manually resolved merge conflicts, yay!”``
+    `PS> git commit -m “Manually resolved merge conflicts, yay!”`
 
 12. Now check the status of the repository to make sure it’s clean:
 
     `PS> git status`
 
-13. Whew!  Just imagine having to do this without Git!
+13. Whew! Just imagine having to do this without Git!
 
-14. Now you can return to the Umbraco Cloud portal and again deploy your site
+14. Now you can return to the Umbraco Cloud portal and deploy your site again
 
 ## Logfiles
 
@@ -146,14 +146,14 @@ Still nothing? Time to check the logs, of which there are several. Remember that
 
 ### First - Umbraco Logs
 
-If there's something wrong with you site that you can't directly see the cause of, check the logs for Umbraco first. In your backoffice you can go to the Developer section and open up the "Trace Logs" tree. From there you can pick the date on which you're seeing problems and peruse the logs for suspicious entries.
+If there's something wrong with your site that you can't directly see the cause of, check the logs for Umbraco first. In your backoffice you can go to the Developer section and open up the "Trace Logs" tree. From there you can pick the date on which you're seeing problems and peruse the logs for suspicious entries.
 
 ### Second - Other logs
 
 These can all be accessed through Kudu:
-1. Copy the Url from your site’s HTTPS Clone Url in the portal
+1. Copy the URL from your site’s HTTPS Clone URL in the portal
 
-2. Using the Url without the actual repository name, the GUID part, open a new browser tab and login.  Just the Url like `https://stage-mysite.scm.s1.umbraco.io/`
+2. Using the URL without the actual repository name, the GUID part, open a new browser tab and login. Just the URL like `https://stage-mysite.scm.s1.umbraco.io/`
 
 3. You’ll see the Kudu site, which includes your site’s Git repository
 
@@ -177,4 +177,4 @@ When you're in Kudu, you can go up to your `site` folder as described in the 5 s
 
 - `log.log` shows you the same output you will have seen when pushing your changes using git, it will show you what happened during the push and if any errors occurred. This file is especially useful when trying to find errors for deploys using the portal (so from dev > live or from dev > staging > live). Even though the last line may end with "Deployment successful" it is possible that there were errors or suspicious messages before that so make sure to give them a read.
 
-It is possible that a deployment failed so that it is not the active deployment at the moment, there could be valueable information in the logs of this deployment. You can find out what the last attempted deploy was by going to your Kudu url and adding `/api/deployments` to the url (so for example: `https://stage-mysite.scm.s1.umbraco.io/api/deployments`. This will give you some JSON data and the first entry in here is the newest attempted deploy, again the id corresponds to a folder name which has the log.log file in it.
+It is possible that a deployment failed so that it is not the active deployment at the moment, there could be valuable information in the logs of this deployment. You can find out what the last attempted deploy was by going to your Kudu URL and adding `/api/deployments` to the URL (so for example: `https://stage-mysite.scm.s1.umbraco.io/api/deployments`. This will give you some JSON data and the first entry in here is the newest attempted deploy. Again the id corresponds to a folder name which has the log.log file in it.

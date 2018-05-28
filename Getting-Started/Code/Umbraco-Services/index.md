@@ -36,7 +36,7 @@ available services
 ## Services available
 There is full api coverage of all Umbraco core entities:
 
-- ConsentService
+- [ConsentService](../../../Reference/Management/Services/ConsentService.md)
 - [ContentService](../../../Reference/Management/Services/ContentService.md)
 - [ApplicationTreeService](../../../Reference/Management/Services/TreeService.md)
 - [DataTypeService](../../../Reference/Management/Services/DataTypeService.md)

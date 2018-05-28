@@ -129,7 +129,7 @@ Gets the `Guid` assigned to the ContentType during creation. This value is uniqu
 	return contentType.Key;
 
 ### .Level
-Gets or Sets the given `ContentType` level in the site hirachy as an `Int`. ContentTypes placed at the root of the tree, will return 1, content just underneath will return 2, and so on.
+Gets or Sets the given `ContentType` level in the site hierarchy as an `Int`. ContentTypes placed at the root of the tree, will return 1, content just underneath will return 2, and so on.
 
 	//Given a `ContentTypeService` object get ContentType by its Id and return the Level
 	var contentType = contentTypeService.GetContentType(1234);
@@ -150,7 +150,7 @@ Gets or Sets the parent `ContentType` Id as an `Int`.
 	return contentType.ParentId;
 
 ### .Path
-Gets or Sets the path of the ContentType as a `String`. This string contains a comma seperated list of the anscestors Ids including the current ContentTypes own id at the end of the string.
+Gets or Sets the path of the ContentType as a `String`. This string contains a comma separated list of the anscestors Ids including the current ContentTypes own id at the end of the string.
 
 	//Given a `ContentTypeService` object get ContentType by its Id and return the Path
 	var contentType = contentTypeService.GetContentType(1234);

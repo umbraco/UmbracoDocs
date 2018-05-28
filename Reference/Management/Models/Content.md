@@ -83,7 +83,7 @@ Returns the `Guid` assigned to the Content during creation. This value is unique
 Gets or Sets the Language of the Content as a `string`. **Please note** that this property is introduced in v.6.0.0, but won't be fully utilized until multi-lingual support is added in a later version.
 
 ### .Level
-Gets or Sets the given `Content` level in the site hirachy as an `Int`. Content placed at the root of the site, will return 1, content just underneath will return 2, and so on.
+Gets or Sets the given `Content` level in the site hierarchy as an `Int`. Content placed at the root of the site, will return 1, content just underneath will return 2, and so on.
 
 	//Given a `ContentService` object get Content by its Id and return the Level
 	var content = contentService.GetById(1234);
@@ -104,7 +104,7 @@ Gets or Sets the parent `Content` Id as an `Int`.
 	return content.ParentId;
 
 ### .Path
-Gets or Sets the path of the content as a `String`. This string contains a comma seperated list of the anscestors Ids including the current contents own id at the end of the string.
+Gets or Sets the path of the content as a `String`. This string contains a comma separated list of the anscestors Ids including the current contents own id at the end of the string.
 
 	//Given a `ContentService` object get Content by its Id and return the Path
 	var content = contentService.GetById(1234);

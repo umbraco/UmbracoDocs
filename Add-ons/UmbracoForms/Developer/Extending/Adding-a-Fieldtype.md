@@ -54,7 +54,7 @@ Then we will start building the view at `Views\Partials\Forms\Fieldtypes\FieldTy
 
 The view simply takes care of generating the UI control and setting its value.
 
-On the view, it is important to note that the id attribute is fetched from @Model.Id. You'll also see that we are using jquery validate unobtrusive to perform client side validation so that's why we are adding the data* attributes.
+On the view, it is important to note that the id attribute is fetched from @Model.Id. You'll also see that we are using jQuery validate unobtrusive to perform client side validation so that's why we are adding the data* attributes.
 
 ## Umbraco backoffice view
 

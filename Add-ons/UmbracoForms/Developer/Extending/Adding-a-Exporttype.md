@@ -4,7 +4,7 @@
 Add a new class to your project and have it inherit from `Umbraco.Forms.Core.ExportType` and you have two options when implementing the class.
 
 ## Basic Example
-When implementing the method `public override string ExportRecords(RecordExportFilter filter)` in your export provider class. You simply need to return the final string you wish to write to a file. Such as .txt file or .csv and you can perform your logic to build up say a simple comma seperated string for a CSV file in the `ExportRecords` method.
+When implementing the method `public override string ExportRecords(RecordExportFilter filter)` in your export provider class. You simply need to return the final string you wish to write to a file. Such as .txt file or .csv and you can perform your logic to build up say a simple comma separated string for a CSV file in the `ExportRecords` method.
 
 In the constructor of your provider, note that you will need a further two properties, `FileExtension` and `Icon`. The FileExtension property is the file extension such as `zip`, `txt` or `csv` of the file you will be generating & serving from the file system as the export file.
 

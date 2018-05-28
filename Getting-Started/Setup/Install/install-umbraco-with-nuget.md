@@ -18,7 +18,7 @@ After you're done installing or updating you can re-enable ReSharper in the same
 ## NuGet version
 Before you start: make sure your NuGet version is up to date. We use the latest version while testing and can't guarantee that the install process works with older versions of NuGet.
 
-In Visual Studio, go to Tools > Extensions and Updates, then Updates > Visual Studio Gallery. Check if there's a NuGet Update available and install it.
+In Visual Studio, go to Tools > Extensions and Updates, then Updates > Visual Studio Gallery. Check if there's a NuGet update available and install it.
 
 ![](images/NuGet/nuget-update.png)
 
@@ -28,7 +28,7 @@ Also make sure that the execution policy in the Package Manager Console is set t
 If you don't already have NuGet installed, you can read all about the installation process here: [http://docs.nuget.org/docs/start-here/installing-nuget](http://docs.nuget.org/docs/start-here/installing-nuget).
 
 ## New solution
-To install Umbraco we need a Visual Studio solution to install it in. 
+To install Umbraco we first need a Visual Studio solution.
 
 ### Visual Studio 2012
 Go to **File > New Project** and pick ASP.NET Web Application. Click **OK** and then choose one of the following:
@@ -44,11 +44,11 @@ It's important to pick only one of those as other templates cause errors beyond 
 ![](images/NuGet/new-project-vs2012.png)
 
 ### Visual Studio 2013/2015/2017
-Go to **File > New Project** and pick an ASP.NET  Web Application.    
+Go to **File > New Project** and pick an ASP.NET Web Application.    
 
 ![](images/NuGet/new-project-vs2013-1.png)
 
-On the next step, select the **Empty** template. It's important to to pick **empty** as other templates include incompatible versions of MVC and Json.NET. (Don't enable any of the checkboxes to add folders or core references. Umbraco will add them for you).  
+On the next step, select the **Empty** template. It's important to pick **empty** as other templates include incompatible versions of MVC and Json.NET. (Don't enable any of the checkboxes to add folders or core references. Umbraco will add them for you).  
 
 ![](images/NuGet/new-project-vs2013-2.png)
 
@@ -88,7 +88,7 @@ Then simply type `Install-Package UmbracoCms` to start installing the latest ver
 
 ![](images/NuGet/package-manager-console.png)
 
-During this process it will ask if it is allowed to overwrite your web.config file. In this case, overwriting the file is safe because we just started a new project. If you're installing Umbraco in an existing project, however, you might want to create a backup of your existing web.config file before answering "Yes".
+During this process it will ask if it is allowed to overwrite your web.config file. In this case, overwriting the file is safe because we just started a new project. However, if you're installing Umbraco into an existing project you might want to create a backup of your existing web.config file before answering "Yes".
 
 ![](images/NuGet/package-manager-console-overwrite.png)
 

@@ -76,7 +76,7 @@ _It is advised to use Umbraco's Angular directives if you wish to create back of
 
 ### Breaking
 
-* Changes made to publicly accessble APIs that are documented
+* Changes made to publicly accessible APIs that are documented
 * Changing the location of JS library files
 * Changing the alias of AngularJS controller, service or directive
  

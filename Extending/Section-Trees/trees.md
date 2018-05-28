@@ -1,6 +1,6 @@
 # Trees
 
-Trees are also in a config file located: `~/Config/trees.config` . Each config item defines a tree and for what section it belongs to. For example, this is the definition of the user tree:
+Trees are also in a [config file located: `~/Config/trees.config`](../../Reference/Config/trees/index.md). Each config item defines a tree and for what section it belongs to. For example, this is the definition of the user tree:
 
     <add application="users" alias="users" title="Users" 
          type="umbraco.loadUsers, umbraco" 

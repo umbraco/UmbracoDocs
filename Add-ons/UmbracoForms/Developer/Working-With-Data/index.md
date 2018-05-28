@@ -34,7 +34,7 @@ Returns all records from the form with the id = formId on the Umbraco page with 
 Returns all records from the form with the ID = formId as a DynamicRecordList
 
 ## DynamicRecordsList and DynamicRecord
-As you see all of these methods will return an object of type DynamicRecordList so you can easily iterate trough the DynamicRecord objects.
+As you see all of these methods will return an object of type DynamicRecordList so you can easily iterate through the DynamicRecord objects.
 
 The properties available on a DynamicRecord are:
 
