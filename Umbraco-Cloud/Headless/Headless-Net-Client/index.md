@@ -2,7 +2,9 @@
 
 ### IMPORTANT
 
-Before you start, you'll need to create a Headless project on Cloud which can be done by following the instructions at __[https://www.umbraco.com/headless]()__.
+Before you start, you'll need to create a Headless project on Cloud which can be done by following the instructions at __[umbraco.com/headless](https://www.umbraco.com/headless)__. 
+
+_Be aware that the Umbraco headless is still in beta._
 
 ## Setup/Installation
 
