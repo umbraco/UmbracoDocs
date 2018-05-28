@@ -10,11 +10,11 @@ Headless provides you with an easy and comfortable way to manage your data using
 
 While Umbraco normally outputs a rendered web page, Headless outputs pure JSON data for your project to consume directly through the API or via a API client.
 
-__[Learn more and sign up for Umbraco Headless](https://www.umbraco.com/headless)__
+[Learn more and sign up for Umbraco Headless](https://www.umbraco.com/headless)
 
 ## Getting Started with Headless
 
-The easiest way to get started with an Umbraco Headless project is to sign up for a new project using the __[Headless sign up link](https://www.umbraco.com/headless)__.
+The easiest way to get started with an Umbraco Headless project is to sign up for a new project using the [Headless sign up link](https://www.umbraco.com/headless).
 
 We set up the project for you, so everything is ready for you to start developing your headless website or application.
 
@@ -26,7 +26,7 @@ The Headless .NET client is the simplest way to integrate your .NET project with
 
 If you are developing a .NET or .NET Core application or website, accessing your data is a small matter of installing the NuGet package in your project, modifying a few configuration options and then you are ready to go.
 
-For more about getting started using the Headless .NET client please read the __[Headless .NET client documentation](Headless-Net-Client/)__
+For more about getting started using the Headless .NET client please read the [Headless .NET client documentation](Headless-Net-Client/)
 
 ## Headless Node.js Client
 
@@ -34,4 +34,4 @@ With the Headless Node.js client, you can use Umbraco as the backend for any Nod
 
 The client is available through npm and requires very little setup, so you should be up and running in no time.
 
-For more about getting started using the Headless Node.js client please read the __[Headless Node.js client documentation]()Headless-Node-Client/)__
+For more about getting started using the Headless Node.js client please read the [Headless Node.js client documentation](Headless-Node-Client/)
