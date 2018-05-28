@@ -33,7 +33,7 @@ And once you are using strongly typed models, there are some [cool things](CoolT
 ## Installing
 
 Starting with version 7.4.0, the `Umbraco.ModelsBuilder` nuget package is bundled with the main Umbraco distribution. 
-See the [releases](https://github.com/zpqrtbnk/Zbu.ModelsBuilder/releases) page for more details.
+See [https://github.com/zpqrtbnk/Zbu.ModelsBuilder/releases](https://github.com/zpqrtbnk/Zbu.ModelsBuilder/releases) for more details.
 
 ## Documentation
 
