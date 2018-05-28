@@ -75,4 +75,6 @@ The log4net configuration options can be found on the [log4net website](http://l
 
 This file can be found at the following path: /config/log4net.config
 
+## UrlRewriting.config
 
+This is now obsolete and there are better ways to do UrlRewriting, such as within [IIS](https://docs.microsoft.com/en-us/iis/extensions/url-rewrite-module/creating-rewrite-rules-for-the-url-rewrite-module). However, the UrlRewriting documentation can be [downloaded in PDF format](https://github.com/aspnetde/UrlRewritingNet/blob/master/docs/UrlRewritingNet20_English.pdf) for legacy projects.
