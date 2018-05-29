@@ -57,7 +57,7 @@ You can now go to http://MyUmbracoSite.local and the install wizard should appea
 
 In order for Umbraco to have the correct permissions to write files to disk, you should give the IIS_IUSRS user modify permissions in the folder in which you've unzipped your Umbraco files. 
 
-While giving broad permissions is usually fine for development environments, you may want to restrict permissions further on a public-facing server. See [permissions](permissions.md) for more details.
+While giving broad permissions is usually fine for development environments, you may want to restrict permissions further on a public-facing server. See [permissions](../Server-Setup/permissions.md) for more details.
 
 ### Choose database environment
 There are two options to choose from with regards to a database environment:
