@@ -22,6 +22,8 @@ Displays a calendar UI for selecting dates and time
 
 ## [Dropdown list](DropDown-List.md)
 Displays a list of preset values. The value saved is a text value.
+## [Dropdown](Dropdown.md)
+Displays a list of preset values. The content editor can select either a single or multiple values.
 
 ## [Dropdown list, publishing keys](DropDown-List-Publishing-Keys.md)
 Displays a list of preset values as a list. The value saved is a prevalue ID
