@@ -149,7 +149,7 @@ In this example we will create a collection of text files, one for each submissi
                 //For loop to match the schema position to the submission data
                 for (int i = 0; i < schemaItems.Count; i++)
                 {
-                    //Concat a string of the name of the field & it's stored data
+                    //Concat a string of the name of the field & its stored data
                     fileContents += schemaItems[i].Name + ": " + submissionData[i] + Environment.NewLine;
                 }
 

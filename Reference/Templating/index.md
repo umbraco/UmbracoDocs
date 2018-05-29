@@ -19,7 +19,7 @@ Describes how to work with MVC views, the razor syntax and APIs available as wel
 
 #### [Working with WebForms (masterpages, usercontrols, etc...)](Masterpages/index.md)
 
-Describes how to work with WebForms (masterpages) templating syntax and it's various components like UserControls, etc...
+Describes how to work with WebForms (masterpages) templating syntax and its various components like UserControls, etc...
 
 If you prefer to work with Webforms, you can change the default template engine in the */Config/umbracoSettings.config* file, find this section and set the type you'd like to use (*Mvc* or *WebForms*):
 

@@ -1,6 +1,6 @@
 # Security
 
-_This section includes information on Umbraco security, it's various security options and configuring how authentication & authorization works in Umbraco_
+_This section includes information on Umbraco security, its various security options and configuring how authentication & authorization works in Umbraco_
 
 ## Umbraco Security overview
 
@@ -63,7 +63,7 @@ The Umbraco back office supports custom OAuth providers for performing authentic
 
 To install and configure a custom OAuth provider you should use the Identity Extensions package: [https://github.com/umbraco/UmbracoIdentityExtensions](https://github.com/umbraco/UmbracoIdentityExtensions)
 
-The installation of these packages will install snippets of code with readme files on how to get up and running. Depending on the provider you've configured and it's caption/color, the end result will look similar to:
+The installation of these packages will install snippets of code with readme files on how to get up and running. Depending on the provider you've configured and its caption/color, the end result will look similar to:
 
 ![OAuth login screen](images/google-oauth.png)
 
@@ -154,7 +154,7 @@ Here are the steps to specify your own logic for validating a username and passw
                 
 1. Make sure to switch the `owin:appStartup` appSetting in your `web.config` file to use `UmbracoCustomOwinStartup`: `<add key="owin:appStartup" value="UmbracoCustomOwinStartup"/>`
 
-**Note:** if the username entered in the login screen does not exist in Umbraco then `MyPasswordChecker()` does not run, instead Umbraco will immediately fall back to it's internal checks (default Umbraco behavior).
+**Note:** if the username entered in the login screen does not exist in Umbraco then `MyPasswordChecker()` does not run, instead Umbraco will immediately fall back to its internal checks (default Umbraco behavior).
 
 ### Authenticating with Active Directory credentials
 

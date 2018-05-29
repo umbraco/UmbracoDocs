@@ -82,7 +82,7 @@ that exist outside of the web domain, that you do not hard code back office user
 it would be advised to authenticate your apps based on a member's credentials that your app users would need to enter._
 
 To enable token based authentication, see the file that has been installed at ~/App_Startup/UmbracoAuthTokenServerExtensions.cs which contains a lot of detail about
-how to enable a token authentication server. In it's simplest form, this can be enabled with the following startup code:
+how to enable a token authentication server. In its simplest form, this can be enabled with the following startup code:
 
 	app.UseUmbracoBackOfficeTokenAuth();
 
