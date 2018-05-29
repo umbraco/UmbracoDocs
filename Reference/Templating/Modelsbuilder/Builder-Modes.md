@@ -73,6 +73,6 @@ These new files are the generated models. They are automatically added to the Vi
 
 If there are some non-generated C# files (i.e. `*.cs` but not `*.generated.cs`) in the folder, Models Builder will parse them for instructions (see [documentation for configuring and extending models](Control-Generation.md)) and Visual Studio will compile them too.
 
-In order for Visual Studio to compile the project successfully, it needs to reference the Models Builder Dll, so you probably want to install the [Models Builder NuGet package](https://www.nuget.org/packages/Umbraco.Models Builder/) in the project.
+In order for Visual Studio to compile the project successfully, it needs to reference the Models Builder Dll, so you probably want to install the [Models Builder NuGet package](https://www.nuget.org/packages/Umbraco.ModelsBuilder/) in the project.
 
 **Note**: The settings/options (URL, username and password) are saved _for each solution_ in a file named after the solution, i.e. for solution `<solution>.sln` the file would be `<solution>.UmbracoModelsBuilder.user` in the same directory. It is therefore possible to switch between solutions without re-entering the settings. Because the file contains a password and is relevant to one developer only, it _should not_ be source-controlled.
