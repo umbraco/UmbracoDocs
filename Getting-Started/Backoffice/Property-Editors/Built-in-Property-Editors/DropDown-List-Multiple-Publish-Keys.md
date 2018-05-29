@@ -1,4 +1,4 @@
-# Dropdown list multiple, publish keys
+# (Obsolete) Dropdown list multiple, publish keys
 
 `Returns: Comma Separated String`
 

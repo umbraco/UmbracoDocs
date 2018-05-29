@@ -20,19 +20,20 @@ Displays a calendar UI for selecting dates
 ## [Date/Time](Date-Time.md)
 Displays a calendar UI for selecting dates and time
 
-## [Dropdown list](DropDown-List.md)
-Displays a list of preset values. The value saved is a text value.
 ## [Dropdown](Dropdown.md)
 Displays a list of preset values. The content editor can select either a single or multiple values.
 
-## [Dropdown list, publishing keys](DropDown-List-Publishing-Keys.md)
-Displays a list of preset values as a list. The value saved is a prevalue ID
+## [(Obsolete) Dropdown list](DropDown-List.md)
+Made obsolete with the release of Umbraco v7.10. Displays a list of preset values. The value saved is a text value.
 
-## [Dropdown list multiple](DropDown-List-Multiple.md)
-Displays a list of preset values where multiple can be selected. The value saved is a CSV of the text values.
+## [(Obsolete) Dropdown list, publishing keys](DropDown-List-Publishing-Keys.md)
+Made obsolete with the release of Umbraco v7.10. Displays a list of preset values as a list. The value saved is a prevalue ID
 
-## [Dropdown list multiple, publish keys](DropDown-List-Multiple-Publish-Keys.md)
-Displays a list of preset values where multiple can be selected. The value saved is a CSV of prevalue ids.
+## [(Obsolete) Dropdown list multiple](DropDown-List-Multiple.md)
+Made obsolete with the release of Umbraco v7.10. Displays a list of preset values where multiple can be selected. The value saved is a CSV of the text values.
+
+## [(Obsolete) Dropdown list multiple, publish keys](DropDown-List-Multiple-Publish-Keys.md)
+Made obsolete with the release of Umbraco v7.10. Displays a list of preset values where multiple can be selected. The value saved is a CSV of prevalue ids.
 
 ## Email address
 A single line textbox only allowing valid email addresses.
