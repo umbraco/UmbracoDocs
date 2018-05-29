@@ -191,7 +191,7 @@ There are a few reasons for this:
 * Many querying concepts in Dynamics are difficult to understand and need to be memorize due to all of the string syntax required
 * It is much harder to debug and to know if there are errors since the syntax is not typed or compiled
 * No intellisense is possible inside Visual Studio
-* [ModelsBuilder](../Templating/Modelsbuilder/) is part of the Umbraco Core and provides much nicer and strongly typed access to property accessors and querying in your views
+* [Models Builder](../Templating/Modelsbuilder/) is part of the Umbraco Core and provides much nicer and strongly typed access to property accessors and querying in your views
 
 How do you know if you are using Dynamics?
 
