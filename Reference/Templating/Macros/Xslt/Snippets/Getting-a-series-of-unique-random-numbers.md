@@ -95,4 +95,4 @@ The following example shows how to list 8 randomly-selected nodes that fall belo
 		</msxsl:script>
 	</xsl:stylesheet>
 	
-The code on this page, and the GetRandom() method in umbraco.library, is based on [this blog post by Eli Robillard.](http://weblogs.asp.net/erobillard/archive/2004/05/06/127374.aspx)
+The code on this page, and the GetRandom() method in umbraco.library, is based on [this blog post by Eli Robillard.](https://weblogs.asp.net/erobillard/Random-Numbers-in-C_2300_)
