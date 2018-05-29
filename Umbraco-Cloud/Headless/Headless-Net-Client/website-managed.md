@@ -115,7 +115,7 @@ You can also inject the `HeadlessService` or `IHeadlessConfig` into any view by 
 
 Just like in Umbraco, with this engine you can hijack routes! 
 
-* Create a new controller to hijack a route for a document type. For example, if you document type is called `Page`, then create a controller: `/Controllers/PageController.cs`
+* Create a new controller to hijack a route for a document type. For example, if your document type is called `Page`, then create a controller: `/Controllers/PageController.cs`
 ```cs
 public class PageController : DefaultUmbracoController
 {
