@@ -42,7 +42,7 @@ async function run(){
     //client is connected and ready
 
     //get the site
-    // NOTE: this currently wont work without a content item as it needs to be implemented.
+    // NOTE: this currently will not work without a content item as it needs to be implemented.
     // getSite will only work when called WITH a content item argument (getting the ancestor site of that content item).
     // var site = await headlessService.getSite(content);
     // console.log("site name: " + site.name);

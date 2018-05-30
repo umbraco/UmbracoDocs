@@ -11,7 +11,7 @@ Anything that is used within Umbraco like plugins and configuration should by de
 
 * Website assets like css, javascript and related images
 * Views, Partial Views and Partial View Macro
-* Configuration (web.config and all the umbraco specific or related config files)
+* Configuration (web.config and all the Umbraco specific or related config files)
 * Usercontrol ascx-files
 * Plugins (typically located in App_Plugins)
 * Meta data (the files that Umbraco Deploy serializes to disk for Document Types, Data Types, Media Types, Member Types, Member Groups, Templates and currently also Dictionary Items)
@@ -57,7 +57,7 @@ These are the files and folders you typically want to commit in your own source 
 ## Setup for new team members
 
 When you are working in a team you will have additional people that will use this same setup, but they will only clone your source code repository from your Github, Bitbucket or Visual Studio Team Services account.
-In doing so they will, by default, not get the `*.Web` folder and the umbraco site, because that part is not contained within the source code repository. So to make it easy to get up and running we added a `UaaSClone.cmd`, which can be run after cloning the source code repository.
+In doing so they will, by default, not get the `*.Web` folder and the Umbraco site, because that part is not contained within the source code repository. So to make it easy to get up and running we added a `UaaSClone.cmd`, which can be run after cloning the source code repository.
 Running this command line tool will clone the Umbraco Cloud repository to the right folder, so the Visual Studio setup remains valid. 
 
 ## Working with NuGet

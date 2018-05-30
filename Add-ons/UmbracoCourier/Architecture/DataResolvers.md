@@ -58,7 +58,7 @@ A dataresolver is a way to add meaning to objects courier doesn't understand. Fo
 ### LocalLinks
 * **Full name:** `Umbraco.Courier.DataResolvers.LocalLinks`
 * **Triggers on:** Propertydata, which contains a the string {locallink: 
-* Resolves the ID to a guid, and adds the linked document as a dependency
+* Resolves the ID to a GUID, and adds the linked document as a dependency
 
 ##### Configuration
 	<localLinks>

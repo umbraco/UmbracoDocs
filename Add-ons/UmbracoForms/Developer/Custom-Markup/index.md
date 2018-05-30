@@ -200,7 +200,7 @@ The view is separated in 2 parts, 1 is the actual form and the other part is wha
 This view can be customized, if you do so it will be customized for all your forms.
 
 ### Script.cshtml
-This view renders the JavaScript that will take care of the conditional logic, custimization won't be needed here...
+This view renders the JavaScript that will take care of the conditional logic, customization won't be needed here...
 
 ### FieldType.*.cshtml
 The rest of the views start with FieldType. like FieldType.Textfield.cshtml and those will output the fields (so there is a view for each default fieldtype like textfield, textarea, checkbox...
@@ -214,7 +214,7 @@ Contents of the  FieldType.Textfield.cshtml view:
 	@{if (Model.Validate) {<text> data-val-regex="@Model.InvalidErrorMessage" data-regex="@Model.Regex"</text>}}
 	/>
 
-By default the form makes uses of jQuery validate and jquery validate unobtrosive that's why you see attribute like data-val and data-val-required again this can be customized but it's important to keep the id of the control to @Model.Id since that is used to match the value to the form field.
+By default the form makes uses of jQuery validate and jQuery validate unobtrusive that's why you see attribute like data-val and data-val-required again this can be customized but it's important to keep the id of the control to @Model.Id since that is used to match the value to the form field.
 
 
 ### Customizing for a specific form

@@ -23,7 +23,7 @@ The different sections, dashboards and their configuration (sort order and users
 	        </areas>
 	
 	        <tab caption="[caption]"> <!-- Creates a tab in the Dashboard with the assigned caption -->
-				<access><!-- control which umbraco roles can see the tab -->
+				<access><!-- control which Umbraco roles can see the tab -->
 					<deny>translator</deny>
                   <grant>editor</grant>
 				</access>

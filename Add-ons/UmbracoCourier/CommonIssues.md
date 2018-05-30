@@ -42,7 +42,7 @@ by the data type
 *How to spot* Courier returns "cannot package GUID from datatypes provider" 
 
 *Solution* Make sure you have all your datatype dependencies in place, usually its ucomponents and similar projects
-that are missing dlls, also, if you dont use a datatype, delete it from your site, so you dont accidently 
+that are missing dlls, also, if you don't use a datatype, delete it from your site, so you don't accidently 
 transfer a broken datatype. Make sure to clear courier cache and restart application.
 
 
@@ -74,7 +74,7 @@ this will make transfers slower, but can be set in /config/courier.config file
 *Solution:* upgrade to 2.7.8.14 which has a bug fix
 http://nightly.umbraco.org/UmbracoCourier/2.7.8/nightly%20builds/
 
-### Tabs dont inherit on Umbraco 6
+### Tabs don't inherit on Umbraco 6
 *Caused by:* Changes in the V6 datalayer in the way tabs are inherited from parent document types
 
 *How to spot:* Inherited tabs are created as new tabs on the document type

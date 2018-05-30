@@ -244,5 +244,5 @@ A more complicated example with the SiteDomainHelper:
 Back-end on www.alpha.com/umbraco
 then link is "www.bravo.com/bravo-2" ; alternate link is "mobile.bravo.com/bravo-2".  
 
-If you have good ideas on creating better implementations, please share them on the [umbraco dev group](https://groups.google.com/forum/#!forum/umbraco-dev).
+If you have good ideas on creating better implementations, please share them on the [Umbraco dev group](https://groups.google.com/forum/#!forum/umbraco-dev).
 
