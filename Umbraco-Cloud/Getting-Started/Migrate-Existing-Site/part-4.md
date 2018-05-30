@@ -12,7 +12,7 @@ You are almost there! Just a few more steps, and you will be able to see how you
 
 When the push is complete go check out the Umbraco Cloud Portal to verify the indicator on the Development environment is still *green*. Go to the backoffice of your Development environment and make sure all your metadata is there. You won't see any content or media on the environment yet - this you will move in the next few steps.
 
-![Changes commited to Development environment](images/changes-on-dev.png)
+![Changes committed to Development environment](images/changes-on-dev.png)
 
 ## Transfer your content and media
 1. With all your metadata in place, it's time to transfer your content and media as well

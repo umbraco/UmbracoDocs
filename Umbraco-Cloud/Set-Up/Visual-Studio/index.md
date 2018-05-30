@@ -53,4 +53,4 @@ The key thing to remember is that you'll commit anything that is required by you
 
 For more details about working with Visual Studio with your Umbraco Cloud setup please refer to the ["Working with Visual Studio"](../Working-With-Visual-Studio/) documentation.
 
-Once you have everything your site will need commited you can follow the [deployment workflow](../../Deployment/) to complete the deployment.
+Once you have everything your site will need committed you can follow the [deployment workflow](../../Deployment/) to complete the deployment.

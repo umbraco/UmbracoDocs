@@ -2,14 +2,14 @@
 
 Umbraco Cloud supports doing the minor upgrades of your projects in an automated manor. The feature is available when a new minor version of Umbraco is released (i.e. 7.5.0 or 7.6.0).
 
-The upgrade will cover most issues it encounters, but at certain Umbraco configurations, it needs some manual intervention. This is usually related to custom code being dependent on some API's that have either changed or been removed for the new minor upgrader.
+The upgrade will cover most issues it encounters, but at certain Umbraco configurations, it needs some manual intervention. This is usually related to custom code being dependent on some API's that have either changed or been removed for the new minor upgrade.
 
 In general, if anything should fail during this process, you can reach out for support, using the in-app chat in the bottom right corner. We will help you though the upgrade process, should anything happen.
 
 ## Courier dependencies
 Symptoms, feedback given from the upgrade process: **Unable to upgrade as the site has custom Courier dependencies**
 
-Along with the upgrade to 7.6 we will replace the old deployment engine Umbaco Courier, and replace it with the new one called Umbraco Deploy. This means that if your code is dependent on Umbraco Courier to run, you will need to remove the dependencies on Umbraco Courier. 
+Along with the upgrade to 7.6 we will replace the old deployment engine Umbraco Courier, and replace it with the new one called Umbraco Deploy. This means that if your code is dependent on Umbraco Courier to run, you will need to remove the dependencies on Umbraco Courier. 
 This will be things like custom Umbraco Courier resolvers. In Umbraco Deploy, resolvers will be ValueConnectors and it will have these things built in for the most popular packages, and will have a generic connector for the remaining types.
 If you need to create your own specialized ValueConnector, take a look at the  [ValueConnectors example repository](https://github.com/umbraco/Umbraco.Deploy.ValueConnectors). We are shipping with the [Umbraco.Deploy.Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib) dll, which contains common ValueConnectors for popular community packags.
 
@@ -47,7 +47,7 @@ Click the Upgrade button, and follow the guide. Once it's done, and you are read
 
 The first step is to push the changes to the child projects. Once that is done, the files on the child is now up to date.
 
-*If all config files has been handed via the method mentioned in [Handling configuration files](../../Getting-Started/Baselines/#handling-configuration-files), then you shuold be good to go, else you need to make sure that the config files on the child projects has been proper updated, and have the same changes that the upgrade added for the baseline project it self.*
+*If all config files has been handed via the method mentioned in [Handling configuration files](../../Getting-Started/Baselines/#handling-configuration-files), then you should be good to go, else you need to make sure that the config files on the child projects has been proper updated, and have the same changes that the upgrade added for the baseline project it self.*
 
 Next step is to manually run the installer on the project. This is simply done by making a request for the site. This will automatically start the install process. The process should be a simple follow through guide. Once it is done, the child project is done.
 
@@ -60,7 +60,7 @@ You need to access Kudu for the child project, on the dev environment. Use the c
 
 To create them, type `echo > upgrading` and `echo > upgraded-minor`
 
-That's it. Now the upgrade is ready to be deployed to the next environments, and it will automatically run the upgrader on those environments.
+That's it. Now the upgrade is ready to be deployed to the next environments, and it will automatically run the upgrade on those environments.
 
 ## Errors while upgrading children from baseline
 If for some reason the update of a child fail, or the child is left in a weird state, where it has some wrong configuration files, it is most likely because the child was unable to be merged properly. When updating children from a baseline, a configuration file will be preferred from the child over the one from the baseline. This means that when the update from the baseline to the child runs, the configuration file sometimes won’t be changed. 

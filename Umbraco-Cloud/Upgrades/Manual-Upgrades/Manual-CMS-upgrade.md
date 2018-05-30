@@ -115,7 +115,7 @@ The following config files contain differences, and in most cases, you need to k
 * `trees.config`
 * `umbracoSettings.config`
 
-## Run the upgrader locally
+## Run the upgrade locally
 
 When you are done merging the new version of Umbraco with your clone of the Umbraco Cloud project, follow these steps to complete the upgrade:
 

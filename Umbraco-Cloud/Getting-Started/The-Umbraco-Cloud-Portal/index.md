@@ -62,11 +62,11 @@ Change the password for your Umbraco Cloud account.
 
 ### Advanced settings
 
-![Advanced settins](images/advanced.jpg)
+![Advanced settings](images/advanced.jpg)
 
-#### Timezones
+#### Time zones
 
-From your profile settings you can set your timezone. This applies to the display of status messages in the Umbraco Cloud portal and makes it easier to determine the actual time a particular status was created.
+From your profile settings you can set your time zone. This applies to the display of status messages in the Umbraco Cloud portal and makes it easier to determine the actual time a particular status was created.
 
 #### Experimental Features
 
