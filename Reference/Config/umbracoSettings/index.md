@@ -299,7 +299,7 @@ On new installs this set to true. When you are upgrading from a lower version th
 
 ## Security
 
-In the security section you have three options: **`<keepUserLoggedIn>`**, **`<allowPasswordReset>`** and **`<hideDisabledUsersInBackoffice>`**. Both settings are dealing with backoffice users.
+In the security section you have the following settings which deal with backoffice users.
 
     <security>
         <!-- set to true to auto update login interval (and there by disabling the lock screen -->
@@ -312,7 +312,13 @@ In the security section you have three options: **`<keepUserLoggedIn>`**, **`<al
         <usernameIsEmail>true</usernameIsEmail>
 
         <!-- set to true to enable the UI and API to allow back-office users to reset their passwords -->
-        <allowPasswordReset>true</allowPasswordReset>  
+        <allowPasswordReset>true</allowPasswordReset>
+
+        <!-- set to a different value if you require the authentication cookie for back-office users to be renamed -->
+        <authCookieName>UMB_UCONTEXT</authCookieName>  
+
+        <!-- set to a different value if you require the authentication cookie for back-office users to be set against a different domain -->
+        <authCookieDomain></authCookieDomain>  
 
     </security>
 
@@ -329,6 +335,12 @@ This setting specifies whether the username and email address are separate field
 
 **`<allowPasswordReset>`**
 The feature to allow users to reset their passwords if they have forgotten them was introduced in 7.5.  The feature is based on [a method provided by ASP.Net Identity](http://www.asp.net/identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity).  By default this is enabled but if you'd prefer to not allow users to do this it can be disabled at both the UI and API level by setting this value to `false`.
+
+**`<authCookieName>`**
+The authentication cookie which is set in the browser when a back-office user logs in, and defaults to `UMB_UCONTEXT`.  This setting is excluded from the configuration file, but can be added in if a different cookie name needs to be set.
+
+**`<authCookieDomain>`**
+The authentication cookie which is set in the browser when a back-office user logs in is automatically set to the current domain.  This setting is excluded from the configuration file, but can be added in if a different domain is required.
 
 ## RequestHandler
 
