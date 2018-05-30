@@ -21,6 +21,9 @@ An explanation of the Umbraco Cloud product upgrade process.
 ## [Troubleshooting](Troubleshooting/)
 Tips on finding, identifying and resolving issues.
 
+## [Headless](Headless)
+Documentation on Umbraco Headless.
+
 ## [Frequently Asked Questions](Frequently-Asked-Questions/)
 Anything else not covered above.
 

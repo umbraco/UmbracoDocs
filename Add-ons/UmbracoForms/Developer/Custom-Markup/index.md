@@ -195,7 +195,8 @@ Default contents of the view:
         }
     }
 
-The view is seperated into two parts, one is the actual form and the other will be shown if the form is submitted.
+
+The view is separated into two parts, one is the actual form and the other will be shown if the form is submitted.
 
 This view can be customized, if you do so it will be customized for all your forms.
 
@@ -214,8 +215,7 @@ Contents of the  FieldType.Textfield.cshtml view:
 	@{if (Model.Validate) {<text> data-val-regex="@Model.InvalidErrorMessage" data-regex="@Model.Regex"</text>}}
 	/>
 
-By default the form makes uses of jquery validate and jquery validate unobtrusive. That's why you see attributes like data-val and data-val-required, again this can be customized but it's important to keep the id of the control to @Model.Id since that is used to match the value to the form field.
-
+By default the form makes uses of jQuery validate and jQuery validate unobtrusive. That's why you see attributes like data-val and data-val-required, again this can be customized but it's important to keep the id of the control to @Model.Id since that is used to match the value to the form field.
 
 ### Customizing for a specific form
 

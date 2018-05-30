@@ -1,6 +1,6 @@
 # System Requirements
 
-## [File & folder permissions](permissions.md)
+## [File & folder permissions](../Server-Setup/permissions.md)
 
 To ensure a stable and smoothly running Umbraco installation, these permissions need to be set correctly.
 

@@ -25,7 +25,7 @@ The following is an example configuration installed with Umbraco.
 	  </notificationSettings>
 	</HealthChecks> 
     
-In the first `<disabledChecks>` section it's possible to mark certain checks as disabled.  To do so, uncomment one of the examples and update `id` field with the Id of the test to disable (the `disabledOn` and `disabledBy` fields are not required, in place currently just as placeholders for when this information is managed via a user interface).  The Ids for each core tests can be found on the Extending Health checks [page](../../../Extending/Healthcheck/index.md#built-in-checks).
+In the first `<disabledChecks>` section it's possible to mark certain checks as disabled.  To do so, uncomment one of the examples and update `id` field with the Id of the test to disable (the `disabledOn` and `disabledBy` fields are not required, in place currently just as placeholders for when this information is managed via a user interface).  The Ids for each core tests can be found on the [Extending Health checks](../../../Extending/Healthcheck/#built-in-checks).
 
 To enable notifications set the `enabled` attribute on `<notificationSettings>` to `true`.
 
@@ -37,4 +37,4 @@ Each notification method can separately be enabled or disabled. The attribute `v
 
 An email notification method is built-in to Umbraco. The email method is configured within the `<settings>` section of `<notificationMethod alias="email">`, the email address to send the notification to must be provided as the `recipientEmail` value.
 
-Please note that to use health check notifications you must ensure to set the `umbracoApplicationUrl` value in `umbracoSettings.config`.  Without this the checks will only work when requested via the developer section dashboard.  For more information on this setting, please see [Config > UmbracoSettings](Config/umbracoSettings/index.md#web-routing).
+Please note that to use health check notifications you must ensure to set the `umbracoApplicationUrl` value in `umbracoSettings.config`.  Without this the checks will only work when requested via the developer section dashboard.  For more information on this setting, please see [Config > UmbracoSettings](../../../Reference/Config/umbracoSettings/#webrouting).

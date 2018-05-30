@@ -1,6 +1,6 @@
 # Dashboards
 
-Each section of the Umbraco backoffice has it's own set of default dashboards.
+Each section of the Umbraco backoffice has its own set of default dashboards.
 
 The dashboard area of Umbraco is used to display the current editor for whichever item is selected in the tree, but when no items are selected, for example when the section first loads, that's when the default set of dashboards are displayed for that section, arranged over multiple tabs.
 

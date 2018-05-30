@@ -4,7 +4,7 @@ _Documentation about how to setup your own custom controllers and routes that ne
 
 ## Where to put your routing logic?
 
-In Umbraco the best place to put your routing logic is in a custom `Umbraco.Core.ApplicationEventHandler` class and override the `ApplicationStarted` method. There you can add any custom routing logic you like and you can be sure that the Umbraco application has completed it's booting sequence.
+In Umbraco the best place to put your routing logic is in a custom `Umbraco.Core.ApplicationEventHandler` class and override the `ApplicationStarted` method. There you can add any custom routing logic you like and you can be sure that the Umbraco application has completed its booting sequence.
 
 ## User defined routes
 

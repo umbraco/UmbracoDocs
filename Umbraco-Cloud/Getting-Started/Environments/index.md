@@ -18,7 +18,7 @@ Read more about this and team member roles in the [Team Members article](../../S
 
 ## SQL Database
 
-Each of your Umbraco Cloud environments has it's own SQL Azure database. You have full access to the databases, and you can create custom tables just like you'd expect from any other hosting provider.
+Each of your Umbraco Cloud environments has its own SQL Azure database. You have full access to the databases, and you can create custom tables just like you'd expect from any other hosting provider.
 
 Learn more about how to connect to your Umbraco Cloud databases in the [Database](../../Databases) article.
 

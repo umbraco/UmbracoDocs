@@ -41,9 +41,9 @@ You can do this by simply right-clicking on **References** and selecting **Add R
 
 ## Git - what should be committed
 
-When working with this solution setup its important to remember that you have one git repository for your source code, and one within the `*.Web` folder for committing and deploying your changes to Umbraco Cloud.
+When working with this solution setup it's important to remember that you have one git repository for your source code, and one within the `*.Web` folder for committing and deploying your changes to Umbraco Cloud.
 
-The cloned git repository from Umbraco Cloud comes with its own `.gitignore` so files that should NOT be committed are already handled. As a rule of thumb all files that are required to run the Umbraco site should be committed to the git repository in the `*.Web` folder and deployed to Umbraco Cloud. This includes assemblies (`*.dll`). Please note that its especially important to commit the files under the `*.Web/data/` folder as these files are the serialized versions of the meta data (Document Types, Data Types, Media Types, Member Types, Member Groups, Templates and currently also Dictionary Items) for the site.
+The cloned git repository from Umbraco Cloud comes with its own `.gitignore` so files that should NOT be committed are already handled. As a rule of thumb all files that are required to run the Umbraco site should be committed to the git repository in the `*.Web` folder and deployed to Umbraco Cloud. This includes assemblies (`*.dll`). Please note that it's especially important to commit the files under the `*.Web/data/` folder as these files are the serialized versions of the meta data (Document Types, Data Types, Media Types, Member Types, Member Groups, Templates and currently also Dictionary Items) for the site.
 
 For the `*.Core` part of the solution as well as the solution file and default `.gitignore` file you commit that to the source code repository. You should ideally set a remote for this git repository to your own git host like Github, Bitbucket or Visual Studio Team Services.
 

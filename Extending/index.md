@@ -16,7 +16,7 @@ Both sections and trees can be created to extend Umbraco.
 
 ## [Property Editors](Property-Editors/index.md)
 
-A property editor is the editor used to insert content into Umbraco. [See here for definition.](../using-umbraco/backoffice-overview/property-editors/index.md)
+A property editor is the editor used to insert content into Umbraco. [See here for definition.](Property-Editors/index.md)
 
 This section will describe how to work with and create Property Editors.
 
@@ -47,6 +47,6 @@ Information on the packaging manifest format and how assets should be packaged a
 
 Details on implementing virtual file systems for things like media which will allow you to store your files outside of the physical file system (i.e. Cloud based for example)
 
-## [Embedded Media Providers](Embedded-Media-Provider.md)
+## [Embedded Media Providers](Embedded-Media-Provider/index.md)
 
 Details on how to create a custom Embedded Media Provider to enable editors to embed third party media content into Umbraco via the embed button in the Rich Text Area.

@@ -1,6 +1,6 @@
 # Security
 
-_This section includes information on Umbraco security, it's various security options and configuring how authentication & authorization works in Umbraco_
+_This section includes information on Umbraco security, its various security options and configuring how authentication & authorization works in Umbraco_
 
 ## Umbraco Security overview
 
@@ -12,7 +12,7 @@ We highly encourage the use of HTTPS on Umbraco websites especially in productio
 
 * Trust - when your site is delivered over HTTPS your users will see that your site is secured, they are able to view the certificate assigned to your site and know that your site is legitimate
 * Removing an attack vector called ["Man in the middle"](https://www.owasp.org/index.php/Man-in-the-middle_attack) (or network Sniffing)
-* Gaurds against [Phishing](https://www.microsoft.com/en-us/safety/online-privacy/phishing-symptoms.aspx), an attacker will have a hard time obtaining an authentic SSL certificate
+* Gaurds against [Phishing](https://en.wikipedia.org/wiki/Phishing), an attacker will have a hard time obtaining an authentic SSL certificate
 * Google likes HTTPS, it may help your site's rankings
 
 Another benefits of HTTPS is that you are able to use the [http2](https://en.wikipedia.org/wiki/HTTP/2) protocol if your web server and browser support it.
@@ -63,7 +63,7 @@ The Umbraco back office supports custom OAuth providers for performing authentic
 
 To install and configure a custom OAuth provider you should use the Identity Extensions package: [https://github.com/umbraco/UmbracoIdentityExtensions](https://github.com/umbraco/UmbracoIdentityExtensions)
 
-The installation of these packages will install snippets of code with readme files on how to get up and running. Depending on the provider you've configured and it's caption/color, the end result will look similar to:
+The installation of these packages will install snippets of code with readme files on how to get up and running. Depending on the provider you've configured and its caption/color, the end result will look similar to:
 
 ![OAuth login screen](images/google-oauth.png)
 
@@ -154,7 +154,7 @@ Here are the steps to specify your own logic for validating a username and passw
                 
 1. Make sure to switch the `owin:appStartup` appSetting in your `web.config` file to use `UmbracoCustomOwinStartup`: `<add key="owin:appStartup" value="UmbracoCustomOwinStartup"/>`
 
-**Note:** if the username entered in the login screen does not exist in Umbraco then `MyPasswordChecker()` does not run, instead Umbraco will immediately fall back to it's internal checks (default Umbraco behavior).
+**Note:** if the username entered in the login screen does not exist in Umbraco then `MyPasswordChecker()` does not run, instead Umbraco will immediately fall back to its internal checks (default Umbraco behavior).
 
 ### Authenticating with Active Directory credentials
 

@@ -16,7 +16,7 @@ The process of creating a Child Project is rather involved. While you don't have
 
 * The Development site is created along with a new Sql Azure database
 
-* The Staging and Live sites are created with Sql Azure credentials, but no database as we’ll make a copy of the Development database when its ready. We’ll use these pre-defined credentials later on.
+* The Staging and Live sites are created with Sql Azure credentials, but no database as we’ll make a copy of the Development database when it's ready. We’ll use these pre-defined credentials later on.
 
 * A ConnectionString is configured for each site (umbracoDbDsn)
 

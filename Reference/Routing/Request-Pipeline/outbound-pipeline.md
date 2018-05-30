@@ -9,7 +9,7 @@ To explain things we will use the following content tree:
 ![simple content tree](images/simple-content-tree.png)
 
 ## 1. <a name="segments"></a> Create segments
-When the URL is build up, Umbraco will convert every node into a segment.  Each published [Content](../..//Reference/Management-v6/Models/Content.md) has a url segment. 
+When the URL is build up, Umbraco will convert every node into a segment.  Each published [Content](../../../Reference/Management/Models/Content) has a url segment. 
 
 In our example "Our Products" will become "our-products" and "Swibble" will become "swibble".
 

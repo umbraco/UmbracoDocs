@@ -81,7 +81,7 @@ an object that has an Application based scope/lifespan ... here's the gist:
 * Application scope - if an object has an Application scope/lifespan, that means that this single object
 instance will exist for the lifetime of the application. The single instance will be shared by every thread that
 accesses it. Static variables will always be Appplication scope/lifespan.
-* Request scope - The web world is made up of requests and each request is it's own thread. When an object is has a Request scope
+* Request scope - The web world is made up of requests and each request is its own thread. When an object is has a Request scope
 it only survives as long as the web request survives, at the end of the web request, it may either be disposed or cleared from memory
 by the garbage collector. Request scoped object instances are not accessed by every other thread in the application - __unless you do something like the above!__
 
@@ -133,7 +133,7 @@ You create a menu on your Home page like:
 Which just renders out: _Home, Blog, Office Locations, About Us, Contact Us_
 
 BUT! ...  this is going to perform most horribly. This is going to iterate over every single node in Umbraco, all 10,000 of them. Further more, 
-this means it is going to allocate 10,000 `IPublishedContent` instances in memory just in order to check it's `Level` value. 
+this means it is going to allocate 10,000 `IPublishedContent` instances in memory just in order to check its `Level` value. 
 
 This can easily be re-written as:
 
@@ -191,7 +191,7 @@ There are a few reasons for this:
 * Many querying concepts in Dynamics are difficult to understand and need to be memorize due to all of the string syntax required
 * It is much harder to debug and to know if there are errors since the syntax is not typed or compiled
 * No intellisense is possible inside Visual Studio
-* [ModelsBuilder](../Templating/Modelsbuilder/) is part of the Umbraco Core and provides much nicer and strongly typed access to property accessors and querying in your views
+* [Models Builder](../Templating/Modelsbuilder/) is part of the Umbraco Core and provides much nicer and strongly typed access to property accessors and querying in your views
 
 How do you know if you are using Dynamics?
 
@@ -208,7 +208,7 @@ instead it can just be written as something that compiles
 __NOTE about the Query Builder:__ _We are aware that the Query Builder in the template editor of the back office currently 
 uses dynamics. We will eventually replace the query logic in this dialog with strongly typed model (Models Builder) syntax to follow
 these best practices. In the meantime if you are concerned about performance and have a large site then we'd recommend if you use the 
-Query Builder to update it's results with strongly typed syntax._
+Query Builder to update its results with strongly typed syntax._
 
 ## Using the Services layer in your views
 
@@ -315,7 +315,7 @@ to go ultra slow.
 
 There is an API in Umbraco that should never be used unless you really really know what you are doing. This API method
 is called `RenderTemplate`. It allows you to be able to render a particular content item's template and get a `string` 
-in response. In some cases this may be useful, perhaps you want to send an email based on a content item and it's template, but
+in response. In some cases this may be useful, perhaps you want to send an email based on a content item and its template, but
 you must be very careful not to use this for purposes it is not meant to be used for.
 
 Generally speaking this method should not be used for the normal rendering of content. If abused this could cause severe
@@ -382,7 +382,7 @@ This means that there is now a minimum of __20,000__ new objects created and all
 of these objects is now 5000 x 5000 = __25,000,000 (25 MILLION TIMES!)__
 
 _Side note: The other problem is the logic used to lookup related recipes is incredibly inneficient. Instead, each reciple
-should have a picker to choose it's related recipe's and then each of those can just be looked up by their ID.
+should have a picker to choose its related recipe's and then each of those can just be looked up by their ID.
 (There's probably a few other ways to achieve this too!)_
 
 Which leads us on to the next anti-pattern...

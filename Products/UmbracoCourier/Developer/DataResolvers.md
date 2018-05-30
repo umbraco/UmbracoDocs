@@ -182,7 +182,7 @@ It looks at that configuration and tells courier the files it can find so courie
 	        get { return new Guid("a4ca44c9-ebb6-48e8-8d39-96bfdf619825"); }
 	    }
 	    
-	    //happens while we package the data type and it's configuration
+	    //happens while we package the data type and its configuration
 	    //as well as prevalues
 	    public override void PackagingDataType(ItemProviders.DataType item)
 	    {

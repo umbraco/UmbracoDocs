@@ -8,7 +8,7 @@ Before adding a form to your site we'll need to make sure you have the necessary
 Write your forms your way. You have full control over your form's HTML markup and styling
 
 ## [Rendering Forms scripts where you want](Rendering-Scripts/index.md)
-Control where you want Forms to render it's javascript
+Control where you want Forms to render its javascript
 
 ## [Working with Record data](Working-With-Data/index.md)
 See how you can fetch and display record data from your razor macros
