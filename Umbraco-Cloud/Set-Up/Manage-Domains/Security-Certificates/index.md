@@ -17,7 +17,7 @@ Your certificates need to be **`.pfx`** format and must be set to use a password
 * Choose your hostname from the *Hostname* dropdown
 * Choose your newly uploaded certificate from the *Certificate* dropdown
 * Click **Set Binding**
-* You've now succesfully uploaded your certificate!
+* You've now successfully uploaded your certificate!
 
 ![Upload and bind certificate](images/upload-and-bind-cert.gif)
 

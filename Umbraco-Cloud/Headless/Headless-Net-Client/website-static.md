@@ -1,6 +1,6 @@
 ### ASP.NET Core MVC (Static route website)
 
-_This example is for creating a staticly routed website which means that it's a normal MVC application that defines it's own routes, like a broshure website. URLs will not be dynamic._
+_This example is for creating a statically routed website which means that it's a normal MVC application that defines it's own routes, like a brochure website. URLs will not be dynamic._
 
 #### Setup, bootstrap & launch
 

@@ -109,7 +109,7 @@ var headlessService = new UmbracoHeadless.HeadlessService(config);
 await headlessService.authenticate();
 ```
 
-### Everthing is Async
+### Everything is Async
 
 All methods are async so must be returned as either a promise or using
 async/await:
