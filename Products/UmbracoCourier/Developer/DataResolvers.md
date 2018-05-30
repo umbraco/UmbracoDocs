@@ -280,9 +280,9 @@ A `List<string>` containing paths to all found resources
 # PersistenceManager.Default.GetNodeId, GetUniqueId
 If the built-in replaces doesn’t work for your data, you can access node ids. And Unique Ids in the database through the Persistence Manager. This enables you to translate the Node ID => Guid or Guid => Node ID.
 
-As an optional parameter, you can pass the Umbraco NodeObjectType to this method to filter the type of node you wish to retrieve the id/guid of.
+As an optional parameter, you can pass the Umbraco NodeObjectType to this method to filter the type of node you wish to retrieve the id/GUID of.
 
-A refence to all NodeObjectTypes is located in Umbraco.Courier.ItemProviders.NodeObjectTypes
+A reference to all NodeObjectTypes is located in Umbraco.Courier.ItemProviders.NodeObjectTypes
 
 	int nodeId = PersistenceManager.Default.GetNodeId(docGUID);
 	int nodeId2 = PersistenceManager.Default.GetNodeId(docGUID, NodeObjectTypes.Document);

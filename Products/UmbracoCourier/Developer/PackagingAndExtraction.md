@@ -77,7 +77,7 @@ To create a new Packaging operation, you need to specify a name of the data you 
     engine.Destination = destination;        
 
 #### Instant Comparison
-If you want to allow Courier to perform comparison checking against a destination, you can enable this. This means that courier will do a hashed comparison of all items to determine if they are needed in the revision, this can save time, but it should only be used if you know the destination wont change before the extraction happens.
+If you want to allow Courier to perform comparison checking against a destination, you can enable this. This means that courier will do a hashed comparison of all items to determine if they are needed in the revision, this can save time, but it should only be used if you know the destination will not change before the extraction happens.
 
 	engine.EnableInstantCompare(destination);
 

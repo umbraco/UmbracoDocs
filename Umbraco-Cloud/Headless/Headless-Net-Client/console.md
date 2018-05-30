@@ -50,7 +50,7 @@ static void Main(string[] args)
     //setup a container
     var services = new ServiceCollection()
         .AddLogging(config => config.AddConsole().SetMinimumLevel(LogLevel.Debug))
-        //include the umbraco headless services and pass in the config instance
+        //include the Umbraco headless services and pass in the config instance
         .AddUmbracoHeadlessClient(configuration)
         .BuildServiceProvider();
 
