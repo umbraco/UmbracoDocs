@@ -134,4 +134,4 @@ public class PageController : DefaultUmbracoController
     }
 }
 ```
-* The of course the Model of your view `/Views/Page/Index.cshtml` will need to be the custom `Page` model returned in your controller
+* Then of course the Model of your view `/Views/Page/Index.cshtml` will need to be the custom `Page` model returned in your controller
