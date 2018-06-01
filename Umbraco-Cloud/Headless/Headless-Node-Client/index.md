@@ -4,6 +4,8 @@ Javascript Client Library for working with the Umbraco Headless API.
 
 The following assumes that you have already installed [NodeJs](https://nodejs.org/)
 
+NodeJs version 8.11.2 LTS or later is recommended but it might work fine with previous releases as well.
+
 ## Getting started
 
 Install the umbraco-headless package through npm.<br/>
