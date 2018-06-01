@@ -87,7 +87,7 @@ It's possible to set multiple dynamic sources for a Macro Parameter, and these w
 
     @Umbraco.RenderMacro("ListStatusUpdates", new {numberOfItems="[@limit],[#limit],[$globalLimit],4"})
 
-In this example the Macro will first look for a parameter on the querystring called limit to take it's value, then if this is missing it will look for a document type property called 'limit' on the current page, then seek a property called 'globalLimit' all the way recursively up the Umbraco Content Tree, finally settling on 4, as the value to use if the previous three do not exist.
+In this example the Macro will first look for a parameter on the querystring called limit to take its value, then if this is missing it will look for a document type property called 'limit' on the current page, then seek a property called 'globalLimit' all the way recursively up the Umbraco Content Tree, finally settling on 4, as the value to use if the previous three do not exist.
 
 ### Caching Macro Output
 

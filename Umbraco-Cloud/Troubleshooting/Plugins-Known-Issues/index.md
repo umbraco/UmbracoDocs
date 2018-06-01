@@ -29,4 +29,4 @@ This can be fixed as follows. Clone your Cloud site to your local machine if you
 
 3. In `~/data/Revision/datatypes` find all `.courier` files with this XML element in them: `<PropertyEditorAlias>rte</PropertyEditorAlias>`. Open those files up and replace `<DataBaseDataType>Nvarchar</DataBaseDataType>` with `<DataBaseDataType>Ntext</DataBaseDataType>`.
 
-When you're done making these changes locally you can commit them to git and push the changes to your Cloud site. After that it done you should be able to add more than 500 characters in your rich text editors. Even if you create a new RTE datatype now from the LeBlender one, it will store it's data in the correct column too so you should not see the `String or binary data would be truncated` error again.
+When you're done making these changes locally you can commit them to git and push the changes to your Cloud site. After that it done you should be able to add more than 500 characters in your rich text editors. Even if you create a new RTE datatype now from the LeBlender one, it will store its data in the correct column too so you should not see the `String or binary data would be truncated` error again.
