@@ -1,4 +1,4 @@
-### [ASP.NET Core MVC (Content Managed website)](managed-website.md)
+### ASP.NET Core MVC (Content Managed website)
 
 _This example is for creating a fully content managed website where URLs will be dynamic and be based on the same URLs generated in Umbraco. This also gives you the ability to Hijack routes for specific Document Types like in a normal Umbraco installation._
 
@@ -115,7 +115,7 @@ You can also inject the `HeadlessService` or `IHeadlessConfig` into any view by 
 
 Just like in Umbraco, with this engine you can hijack routes! 
 
-* Create a new controller to hijack a route for a document type. For example, if you document type is called `Page`, then create a controller: `/Controllers/PageController.cs`
+* Create a new controller to hijack a route for a document type. For example, if your document type is called `Page`, then create a controller: `/Controllers/PageController.cs`
 ```cs
 public class PageController : DefaultUmbracoController
 {
@@ -134,4 +134,4 @@ public class PageController : DefaultUmbracoController
     }
 }
 ```
-* The of course the Model of your view `/Views/Page/Index.cshtml` will need to be the custom `Page` model returned in your controller
+* Then of course the Model of your view `/Views/Page/Index.cshtml` will need to be the custom `Page` model returned in your controller

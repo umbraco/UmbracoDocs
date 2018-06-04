@@ -27,7 +27,7 @@ to be configured to support scaling/auto-scaling.
 
 ## Web worker migrations
 
-It's important to know that Azure Web Apps may move your website between it's 'workers' at any
+It's important to know that Azure Web Apps may move your website between its 'workers' at any
 given time. This is normally a transparent operation but in some cases you may be affected by this 
 if any of your code or libraries use the following variables:
 

@@ -60,7 +60,7 @@ By default Examine will index all field values as strings.  What this means is t
 
 Available Types are: NUMBER, INT, FLOAT, DOUBLE, LONG, DATE, DATETIME, DATE.YEAR, DATE.MONTH, DATE.DAY, DATE.HOUR, DATE.MINUTE
 
-To specify the type of a field, add a Type attribute to it's specification in the IndexUserFields list
+To specify the type of a field, add a Type attribute to its specification in the IndexUserFields list
 
 eg: 
 
@@ -99,4 +99,4 @@ and if you want to be able to sort search results by this field add EnableSortin
 
 ## Further information
 
-You can find more information about Examine, it's conventions and documentation at the [Examine GitHub Repository Wiki](https://github.com/Shazwazza/Examine/wiki)
+You can find more information about Examine, its conventions and documentation at the [Examine GitHub Repository Wiki](https://github.com/Shazwazza/Examine/wiki)

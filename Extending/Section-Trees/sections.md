@@ -35,7 +35,7 @@ inside this folder create a file called **en-us.xml** this is the 'default' fall
     <?xml version="1.0" encoding="utf-8" standalone="yes"?>
     <language alias="en" intName="English (US)" localName="English (US)" lcid="" culture="en-US">
      <area alias="sections">
-       <key alias="favThings">My Favourite Things</key>
+       <key alias="favStuff">My Favourite Things</key>
      </area>
     </language>
 
