@@ -83,6 +83,8 @@ Your site's /config folder contains the set of configuration files for your Umbr
 
 When you create and edit DocumentTypes, MediaTypes, DataTypes, Macros, DictionaryItems, Languages, MemberTypes & Templates('names' not the actual files) in the Umbraco Backoffice these values are stored in the Umbraco Database, making them difficult to source control. However there is a third party package called uSync - https://our.umbraco.org/projects/developer-tools/usync/ which when installed will serialize these settings to disk, in a folder called /uSync - enabling you to source control these changes too.
 
-## Example GitIgnore
+## Example gitignore
 
-Should probably include an example git ignore here...
+github has a repository of gitignore files which are a great starting point for working with Umbraco and source control.
+
+Combining: [VisualStudio.gitignore](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore) & [Umbraco.gitignore](https://github.com/github/gitignore/blob/master/Umbraco.gitignore)
