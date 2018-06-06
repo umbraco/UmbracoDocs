@@ -10,5 +10,5 @@ Angular, JS, CSS & Less UI API references for building Umbraco backoffice compon
 - umbraco.services
 - umbraco.resources
 
-__Note: opens a documentation browser that is different from the documentation section you're viewing now, we're planning to integrate both.__
+__Note: opens a documentation browser that is different from the documentation section you're viewing now.__
 
