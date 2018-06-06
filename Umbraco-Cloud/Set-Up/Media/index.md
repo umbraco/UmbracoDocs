@@ -112,7 +112,7 @@ Update `~/config/imageprocessor/security.config`
           <whitelist>
             <add url="https://<your Azure CDN>.vo.msecnd.net/" />
             <add url="https://<your blob account>.blob.core.windows.net/" />
-            <add url="https://<your umbraco cloud site>.s1.umbraco.io" />
+            <add url="https://<your Umbraco cloud site>.s1.umbraco.io" />
             <add url="http://localhost" />
             <add url="http://127.0.0.1" />
           </whitelist>

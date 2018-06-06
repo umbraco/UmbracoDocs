@@ -1,8 +1,8 @@
 # Generate UDA files
 
-Sometimes our guides requires you to generate UDA files for your projects metadata. Everytime you create something in the backoffice on your Umbraco Cloud project a UDA files will be generated.
+Sometimes our guides requires you to generate UDA files for your projects metadata. Every time you create something in the backoffice on your Umbraco Cloud project a UDA files will be generated.
 
-Generating UDA files manually ensures that you have everything you need in order to deploy succesfully from one environment to another.
+Generating UDA files manually ensures that you have everything you need in order to deploy successfully from one environment to another.
 
 ## What are UDA files?
 

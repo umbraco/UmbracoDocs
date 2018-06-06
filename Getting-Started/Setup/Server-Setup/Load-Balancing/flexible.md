@@ -28,7 +28,7 @@ In order to understand how to host your site it is best to understand how Umbrac
 
 The following diagram shows the data flow/communication between each item in the environment:
 
- ![umbraco flexible load balancing diagram](images/flexible-load-balancing.png)
+ ![Umbraco flexible load balancing diagram](images/flexible-load-balancing.png)
 
 The process is as follows:
 
@@ -53,7 +53,7 @@ that all of the servers will need to be able to resolve the URL of either: itsel
 For example, In the following diagram the slave node **f02.mysite.local** is the elected "Scheduling server". In order for scheduling to work it needs to be able to send
 requests to itself, the Master server, the internal load balancer or the public address. The address used by the "Scheduling server" is called the "umbracoApplicationUrl". 
 
-![umbraco flexible load balancing diagram](images/flexible-load-balancing-scheduler.png)
+![Umbraco flexible load balancing diagram](images/flexible-load-balancing-scheduler.png)
 
 By default, Umbraco will set the "umbracoApplicationUrl" to the address made by the first accepted request when the AppDomain starts.
 It is assumed that this address will be a DNS address that the server can resolve.

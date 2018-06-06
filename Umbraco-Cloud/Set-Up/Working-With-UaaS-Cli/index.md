@@ -1,4 +1,4 @@
-# Working with Umbraco Cloud and nodejs cli
+# Working with Umbraco Cloud and Node.js cli
 
 One of the features built into Umbraco Cloud is the ability to work locally with your Umbraco site - without having a Windows machine with a local web server installed on it. This enables e.g. people on OS X or a Linux based OS to be using their favorite editor to modify code in their Umbraco Cloud site. The functionality requires that your machine has the following three tools installed:
 

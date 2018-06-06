@@ -44,7 +44,7 @@ Here's an example of a custom global.asax class which initializes the IoC contai
 			builder.RegisterControllers(typeof(MyApplication).Assembly);
 			builder.RegisterApiControllers(typeof(MyApplication).Assembly);
 
-			//register umbraco MVC + webapi controllers used by the admin site
+			//register Umbraco MVC + web API controllers used by the admin site
 			builder.RegisterControllers(typeof(UmbracoApplication).Assembly);
 			builder.RegisterApiControllers(typeof(UmbracoApplication).Assembly);
 
@@ -75,7 +75,7 @@ If you like to use the `IApplicationEventHandler` alternative - here is an examp
 			builder.RegisterControllers(typeof(MyApplication).Assembly);
 			builder.RegisterApiControllers(typeof(MyApplication).Assembly);
 
-			//register umbraco MVC + webapi controllers used by the admin site
+			//register Umbraco MVC + web API controllers used by the admin site
 			builder.RegisterControllers(typeof(UmbracoApplication).Assembly);
 			builder.RegisterApiControllers(typeof(UmbracoApplication).Assembly);
 
@@ -183,7 +183,7 @@ Now create the following files to configure Unity correctly for an Umbraco site.
 				WithName.Default
 			);
 
-			// The UmbracoContext must be registered so that the umbraco backoffice controllers 
+			// The UmbracoContext must be registered so that the Umbraco backoffice controllers 
 			// can be successfully resolved
 			container.RegisterType<UmbracoContext>(
 				new PerRequestLifetimeManager(), 

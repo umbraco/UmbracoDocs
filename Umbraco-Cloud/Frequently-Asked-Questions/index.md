@@ -38,7 +38,7 @@ Umbraco Cloud is best when used as the base for a new project. There is a specif
 
 All of our infrastructure is based on Windows Azure virtual machines.
 
-Currently all webservers run on Windows Server 2012 R2. Each Cloud site runs on a standard IIS version 8.5 instance. 
+Currently all web servers run on Windows Server 2012 R2. Each Cloud site runs on a standard IIS version 8.5 instance. 
 
 All databases always run on the latest version of SQL Azure Server.
 

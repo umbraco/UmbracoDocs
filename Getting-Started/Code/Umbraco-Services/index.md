@@ -10,7 +10,7 @@ to the Umbraco application.
 
 
 ### Access via Controller
-If accessing umbraco services inside your own controller class - then by inheriting from one of Umbraco's base controller classes you get access to all services through `Services`:
+If accessing Umbraco services inside your own controller class - then by inheriting from one of Umbraco's base controller classes you get access to all services through `Services`:
 
     public class EventController : Umbraco.Web.Mvc.SurfaceController
     {

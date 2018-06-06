@@ -22,7 +22,7 @@ To match a Team Member with a group of permissions in the CloudUsers.config file
 You can specify:
 
 * UserType: The name of a Back Office User Type thus default permissions on Content Nodes
-* Start Nodes for Content and Media: You'll need to add the Guid of the node.
+* Start Nodes for Content and Media: You'll need to add the GUID of the node.
 * Language: The Culture Code for the back office user interface language
 * Disable Umbraco Access: When this is set to false, the user cannot login to the back office. Useful if your editors are working in the staging environment (by using the deploy feature, they'll still be able to push content to live)
 * Apps: Aliases of the Umbraco apps where the user should have access. You can specify "*" to give access to all apps.
