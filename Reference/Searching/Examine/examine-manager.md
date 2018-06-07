@@ -1,5 +1,5 @@
 # Examine Manager
-_The Examine.ExamineManager is a singleton object which exposes all of the index and search providers which are registered in the configuration of the application_
+_The Examine.ExamineManager is a singleton object which exposes all of the index and search providers which are registered in the configuration of the application. As with all singletons in Umbraco, we recommend reviewing the [Common Pitfalls & Anti-Patterns](../../Common-Pitfalls/index.md) page to ensure the correct usage._
 
 Accessing the singleton can be done easily like:
 
@@ -23,6 +23,28 @@ For simple searching the method to use is:
 	
 	ISearchResults Search(string searchText, bool useWildcards);
 
+An example using this method is below:
+
+    using Examine.LuceneEngine.SearchCriteria;
+
+	var query = Request.QueryString["query"];
+
+    var searcher = Examine.ExamineManager.Instance.SearchProviderCollection["ExternalSearcher"];
+    
+    // the boolean parameter is whether to use wildcards when searching.
+    var searchResults = searcher.Search(query, true).OrderByDescending("createDate");
+    if(searchResults.Any())
+    {
+        <ul>
+            @foreach (var result in searchResults)
+            {
+                <li>
+                    <a href="@result.Url">@result.Name</a>
+                </li>
+            }
+        </ul>
+    }
+
 To create custom search criteria for advanced searching for use with the Fluent API there are 4 methods available:
 
 	ISearchCriteria CreateSearchCriteria();
@@ -33,8 +55,6 @@ To create custom search criteria for advanced searching for use with the Fluent 
 Once you've customized the criteria with the Fluent API you can pass that criteria in to this method to get results:
 
 	ISearchResults Search(ISearchCriteria searchParameters);
-
-**Fluent API documentation coming soon!**
 
 ## Indexing
 
@@ -51,6 +71,3 @@ The indexing methds available are:
 	void RebuildIndex();
 	void ReIndexNode(XElement node, string type);
 	void ReIndexNode(XElement node, string type, IEnumerable<BaseIndexProvider> providers);
-
-**Indexing documentation coming soon!**
-
