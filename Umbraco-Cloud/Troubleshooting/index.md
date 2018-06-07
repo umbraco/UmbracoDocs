@@ -46,7 +46,7 @@ In some cases you may have some special datatypes or may have created custom cod
 #### I already have my site created as a standalone site/solution, how do I deploy my changes to Umbraco Cloud?
 
 There are different approaches to this scenario.  The one you’ll use depends on how you created your site.  In most cases, copying your production ready files (including any compiled code you have) into a local clone of your site will be all you need.  Of course, if you have created Umbraco specific items (document types, etc...) in a site that was not originally cloned from Umbraco Cloud, then you’ll also need to update those items.  The most straightforward way is to create the items in the cloned site, but you may also do a database merge, file import, or other method that you are familiar with.  
-In any case, the idea is to tell the cloned umbraco site about all your items so umbraco can create the serialized version of these.
+In any case, the idea is to tell the cloned Umbraco site about all your items so Umbraco can create the serialized version of these.
 Once you have your local site as you like, then the process to deploy to your Umbraco Cloud dev site is identical to the above.  Pretty simple!
 
 #### I’m using Archetype, do I need to do anything special?

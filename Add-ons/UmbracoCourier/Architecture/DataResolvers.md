@@ -58,7 +58,7 @@ A dataresolver is a way to add meaning to objects courier doesn't understand. Fo
 ### LocalLinks
 * **Full name:** `Umbraco.Courier.DataResolvers.LocalLinks`
 * **Triggers on:** Propertydata, which contains a the string {locallink: 
-* Resolves the ID to a guid, and adds the linked document as a dependency
+* Resolves the ID to a GUID, and adds the linked document as a dependency
 
 ##### Configuration
 	<localLinks>
@@ -72,7 +72,7 @@ A dataresolver is a way to add meaning to objects courier doesn't understand. Fo
 ### MacroParameters
 * **Full name:** `Umbraco.Courier.DataResolvers.MacroParameters`
 * **Triggers on:** Propertydata and Templates, which contains `<umbraco:macro/>` elements
-* Looks at each property and checks if it contains a node ID reference. If it does, the reference is changed to a Guid, and the node is added as a dependency.
+* Looks at each property and checks if it contains a node ID reference. If it does, the reference is changed to a GUID, and the node is added as a dependency.
 
 ##### Configuration
 Configuring which datatypes can contain macro elements to resolve

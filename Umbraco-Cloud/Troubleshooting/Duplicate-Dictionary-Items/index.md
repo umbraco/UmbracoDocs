@@ -8,7 +8,7 @@ Due to how Umbraco Courier has been handling dictionary items in the past, old s
 
 Courier handled dictionary items only using their `ItemKey` (alias) and did not take into account that dictionary items also carried a unique identifier. Since this unique identifier was not known or handled by Courier - it would not be carried over to other environments when these dictionary items were deployed. As Courier never cared about or used this unique identifier - everything seemed to be in order most of the time.
 
-Upgrading to Deploy, one of the major improvements is that Deploy handles everything by its unique identifier making it much more stable. However when dictionary items are in a state of not having consistent unique identifiers across each individual environment - they will simply not work with Deploy unless they are syncronized.
+Upgrading to Deploy, one of the major improvements is that Deploy handles everything by its unique identifier making it much more stable. However when dictionary items are in a state of not having consistent unique identifiers across each individual environment - they will simply not work with Deploy unless they are synchronized.
 
 ## Identify the issue
 
@@ -58,7 +58,7 @@ In order to fix this issue, it is required that all dictionary items are aligned
 
 Doing this will make Deploy run through all of the dictionary items in the database and remove any duplicates (there should be none, if you did the manual cleanup correctly).
 
-When done with this, it will go through all UDA files and check if there is any duplicates existing in your site for that particular `ItemKey` used in that UDA file. If it finds a duplicate - it will update the ID to match, so your dictionary item is syncronized with the UDA file.
+When done with this, it will go through all UDA files and check if there is any duplicates existing in your site for that particular `ItemKey` used in that UDA file. If it finds a duplicate - it will update the ID to match, so your dictionary item is synchronized with the UDA file.
 
 5. When this is done - and you end up with a `deploy-complete` marker - you will need to transfer your dictionary item UDA files to the next environment, to ensure the same ID's will be applied here.
 

@@ -1,4 +1,4 @@
-# Dropdown list multiple
+# (Obsolete) Dropdown list multiple
 
 `Returns: Comma Separated String`
 

@@ -56,7 +56,6 @@ The built-in views you can use are:
 - embed
 - macro
 - media
-- rte
 
 In most cases you will either use the textstring or media view, or built your own from scratch. The textstring and media editors come with some additional configuration to make it easy and quick to customise these.
 

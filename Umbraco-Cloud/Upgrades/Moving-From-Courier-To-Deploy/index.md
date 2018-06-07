@@ -3,12 +3,12 @@
 As of Umbraco 7.6, sites running on Umbraco Cloud will need to be running Umbraco Deploy, and not Umbraco Courier.
 Courier has been replaced by Deploy, and Deploy is highly specialized to be working on Umbraco Cloud.
 
-In normal circumstances, the move from Courier to Deploy will happen automagically when you click the button in the portal for upgrading to Umbraco 7.6. 
+In normal circumstances, the move from Courier to Deploy will happen automatically when you click the button in the portal for upgrading to Umbraco 7.6. 
 If for some reason your Umbraco project was upgraded, but not switched to Deploy. i.e. if you did the upgrade manually.
 
-This is a guide for moving from Courier to Deploy. First step is to aquire the latest Umbraco Deploy package and a valid Deploy Key from the support heroes. Use the inapp chat in the Umbraco Cloud portal to get this.
+This is a guide for moving from Courier to Deploy. First step is to acquire the latest Umbraco Deploy package and a valid Deploy Key from the support heroes. Use the in-app chat in the Umbraco Cloud portal to get this.
 
-Prerequisits for using the guide is that you have a running site, that contains all metadata, like document types, data types and templates. 
+Prerequisites for using the guide is that you have a running site, that contains all metadata, like document types, data types and templates. 
 
 ## 1 Removing Umbraco Courier
 First you need to remove all Courier related files and folders.
@@ -40,7 +40,7 @@ Finally these 3rd party dlls has been part of Courier. If you are not using them
 * /bin/Antlr3.Runtime.dll
 * /bin/Castle.Core.dll
 
-Finally all `.courier` files found in `/data/Revision` needs to be deleted aswell, as they will no longer be used. **NOTE:** Do not remove the `/data/Revision` folder itself, only the contents inside the `/data/Revision` folder - you will need this folder for Deploy as well.
+Finally all `.courier` files found in `/data/Revision` needs to be deleted as well, as they will no longer be used. **NOTE:** Do not remove the `/data/Revision` folder itself, only the contents inside the `/data/Revision` folder - you will need this folder for Deploy as well.
 
 ## 2 Adding Umbraco Deploy
 

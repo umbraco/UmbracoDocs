@@ -4,7 +4,7 @@ A resource resolver is slightly different from data resololvers, as it only trig
 #### MacroParameters
 * **Full name:** `Umbraco.Courier.ResourceResolvers.MacroParameters`
 * **Triggers on:**  Files with the extension .master and contains umbraco:macro elements.
-* Modifies the template file itself to convert any Node Ids in any macro to a guid, and vice versa.
+* Modifies the template file itself to convert any Node Ids in any macro to a GUID, and vice versa.
 
 #### TemplateResources
 * **Full name:** `Umbraco.Courier.ResourceResolvers.TemplateResources`
