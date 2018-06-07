@@ -84,7 +84,7 @@ are used for template files</p>
 <th>Modify / Full control</th>
 <td>
 <p>Should always have modify rights as the folder and its files
-are used for media files uploaded via umbraco cms interface</p>
+are used for media files uploaded via Umbraco CMS interface</p>
 </td>
 </tr>
 <tr>

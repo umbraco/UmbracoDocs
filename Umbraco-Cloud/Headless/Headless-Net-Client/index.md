@@ -31,7 +31,7 @@ _Below are examples for various types of projects_
 
 ### [ASP.NET Core MVC (Static route website)](website-static.md)
 
-_This example is for creating a staticly routed website which means that it's a normal MVC application that defines it's own routes, like a broshure website. URLs will not be dynamic._
+_This example is for creating a statically routed website which means that it's a normal MVC application that defines it's own routes, like a brochure website. URLs will not be dynamic._
 
 ### [ASP.NET Core MVC (Content Managed website)](website-managed.md)
 

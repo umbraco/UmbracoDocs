@@ -25,7 +25,7 @@ A data resolver is a custom model built into Courier 2 to handle 3rd party data 
 
 In short, a Data resolver is simply a .net class, which inherits from a specific base class, which allows the developer to hook into different events during the data packaging and extraction.
 
-Out of the box, Courier 2, can understand all standard data-types in Umbraco. This means that Courier knows that a Content picker contains an ID for a document, which then becomes a dependency, and the ID gets translated into a Guid which can safely be deployed to another location. It also knows that a template might contain references to JavaScript files or internal links, using the [locallink:] syntax. Or a lot of other cases where data have a special meaning. 
+Out of the box, Courier 2, can understand all standard data-types in Umbraco. This means that Courier knows that a Content picker contains an ID for a document, which then becomes a dependency, and the ID gets translated into a GUID which can safely be deployed to another location. It also knows that a template might contain references to JavaScript files or internal links, using the [locallink:] syntax. Or a lot of other cases where data have a special meaning. 
 
 This is what dataresolvers do, add special meaning to specific data that matches certain criteria, for instance properties using a specific datatype, templates containing a certain keyword and so on.
 
@@ -186,7 +186,7 @@ It looks at that configuration and tells courier the files it can find so courie
 	    //as well as prevalues
 	    public override void PackagingDataType(ItemProviders.DataType item)
 	    {
-	        //we go through the settings/prevaues and save references to images stored in the datatype
+	        //we go through the settings/prevalues and save references to images stored in the datatype
 	        foreach (var setting in item.Prevalues.Where(x => x.Value.Contains("|") ))
 	        {
 	            //split the settings on the | char
@@ -201,7 +201,7 @@ It looks at that configuration and tells courier the files it can find so courie
 	    //here we intercept the actual data and replace any unicorn mention with "horse"
 	    public override void PackagingProperty(Core.Item item, ItemProviders.ContentProperty propertyData)
 	    {
-	        //get the refence to the property data object the data is part of
+	        //get the reference to the property data object the data is part of
 	        var properties = (ContentPropertyData)item;
 	 
 	        if (propertyData.Value.ToString() == "unicorn")
@@ -278,11 +278,11 @@ A `List<string>` containing paths to all found resources
 	}
 	
 # PersistenceManager.Default.GetNodeId, GetUniqueId
-If the built-in replaces doesn’t work for your data, you can access node IDs. And Unique Ids in the database through the Persistence Manager. This enables you to translate the Node ID => Guid or Guid => Node ID.
+If the built-in replaces doesn’t work for your data, you can access node IDs. And Unique Ids in the database through the Persistence Manager. This enables you to translate the Node ID => GUID or GUID => Node ID.
 
-As an optional parameter, you can pass the Umbraco NodeObjectType to this method to filter the type of node you wish to retrieve the id/guid of.
+As an optional parameter, you can pass the Umbraco NodeObjectType to this method to filter the type of node you wish to retrieve the id/GUID of.
 
-A refence to all NodeObjectTypes is located in Umbraco.Courier.ItemProviders.NodeObjectTypes
+A reference to all NodeObjectTypes is located in Umbraco.Courier.ItemProviders.NodeObjectTypes
 
 	int nodeId = PersistenceManager.Default.GetNodeId(docGUID);
 	int nodeId2 = PersistenceManager.Default.GetNodeId(docGUID, NodeObjectTypes.Document);

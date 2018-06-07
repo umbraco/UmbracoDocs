@@ -63,7 +63,7 @@ You can now login (no user/pass) and browse the UI with dummy data, this setup i
 
 ## Running from Visual Studio
 
-**Note:** we will make this even easier so the steps with node and Grunt wont be required for .net developers in Visual Studio, but for now the below is needed:
+**Note:** we will make this even easier so the steps with node and Grunt will not be required for .net developers in Visual Studio, but for now the below is needed:
 
 To run from Visual Studio, simply open the solution and run the `Umbraco.Web.UI` project as a normal website project. But to get the latest Umbraco 7 files into this site you still need to open a terminal at `Umbraco.Web.Ui.Client` and run either:
 

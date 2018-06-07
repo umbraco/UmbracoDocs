@@ -4,7 +4,7 @@ In this article, you can read all about Umbraco Headless and how to get started 
 
 ## What is Umbraco Headless?
 
-Umbraco Headless is a new way of providing a data source for your project. Headless is very flexible and can be used in a wide variety of projects, including but not limited to websites, chatbots and apps.
+Umbraco Headless is a new way of providing a data source for your project. Headless is very flexible and can be used in a wide variety of projects, including but not limited to websites, chat bots and apps.
 
 Headless provides you with an easy and comfortable way to manage your data using the backoffice tools you already know, while at the same time making it super easy to consume this data in any of your projects.
 
