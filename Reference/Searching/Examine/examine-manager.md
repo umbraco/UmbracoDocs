@@ -53,4 +53,3 @@ The indexing methds available are:
 	void ReIndexNode(XElement node, string type, IEnumerable<BaseIndexProvider> providers);
 
 **Indexing documentation coming soon!**
-
