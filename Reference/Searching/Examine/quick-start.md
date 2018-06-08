@@ -2,23 +2,23 @@
 
 **Applies to: Umbraco 7+**
 
-[TODO: check what indexes are provided out of the box] _This guide will help you get setup quickly using Examine with minimal configuration options. Umbraco ships Examine with 2 internal indexes which should not be used for searching when returning results on a public website because it indexes content that has not been published yet. So to get started we need to create a new index._
+_This guide will help you get setup quickly using Examine with minimal configuration options. Umbraco ships Examine with 2 internal indexes which should not be used for searching when returning results on a public website because it indexes content that has not been published yet. It also ships with an external index that you can use to get up and running.._
 
 ## Create an index
 
-To create a searchable index we need to create 3 things: an **Indexer** a **Searcher** and an **Index Set**.
+To create a searchable index we need to create 3 components: an **Indexer** a **Searcher** and an **Index Set**. Umbraco 7 ships with these three components ready to go, but you can use the below as a reference as you walk through your implementation.
 
-1. Open ~/Config/ExamineSettings.config and add an *indexer* under the 'ExamineIndexProviders/providers' section (in this example it is named *ExternalIndexer*):
+1. Open ~/config/ExamineSettings.config and add an *indexer* under the 'ExamineIndexProviders/providers' section (in this example it is named *ExternalIndexer*):
 
 		<add name="ExternalIndexer" type="UmbracoExamine.UmbracoContentIndexer, UmbracoExamine"/>
 
-1. In the same file (~/Config/ExamineSettings.config) add a *searcher* under the 'ExamineSearchProviders/providers' section (in this example it is named *ExternalSearcher*):
+1. In the same file (~/config/ExamineSettings.config) add a *searcher* under the 'ExamineSearchProviders/providers' section (in this example it is named *ExternalSearcher*):
 
 		<add name="ExternalSearcher" type="UmbracoExamine.UmbracoExamineSearcher, UmbracoExamine" />
 
 1. In the same file we'll change the default search provider to the one we've created, set defaultProvider="**ExternalSearcher**"
 
-1. Open ~/Config/ExamineIndex.config and add an *index set* (in this example it is named *ExternalIndexSet*):
+1. Open ~/config/ExamineIndex.config and add an *index set* (in this example it is named *ExternalIndexSet*):
 
 		<IndexSet SetName="ExternalIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/External/" />
 
@@ -40,11 +40,8 @@ In all of these examples we assume that the page that is being loaded has a quer
 
 *NOTE*: Since this is a simple quick start tutorial, these examples will search against all published content in your Umbraco site. There are many different ways in which we can limit the search to only find content based on a certain criteria.
 
-For more detailed examples of implementing search with Examine, you can read [Examining Examine](overview-explanation.md) by Peter Gregory.
-
 ### MVC
 
-[TODO: check these methods still apply for both MVC and Razor]
 In MVC we have a method called `TypedSearch` on the `UmbracoHelper` which will return a list of `IPublishedContent` objects.
 
     @if (!string.IsNullOrEmpty(Request.QueryString["query"]))    
@@ -57,16 +54,22 @@ In MVC we have a method called `TypedSearch` on the `UmbracoHelper` which will r
                 </li>
             }
         </ul>
-    }   
+    }
 
-### Razor
+### ExamineManager
 
-In razor macros there's a `Search` method on the `DynamicNode` model which will return a `DynamicNodeList`:
+To complete more complex searches, we can use the ExamineManager and our custom search provider to expose further functionality, such as being able to handle mispellings, for example.
 
-    @if (!string.IsNullOrEmpty(Request.QueryString["query"]))    
+    var query = Request.QueryString["query"];
+
+    var searcher = Examine.ExamineManager.Instance.SearchProviderCollection["ExternalSearcher"];
+    
+    // the boolean parameter is whether to use wildcards when searching.
+    var searchResults = Searcher.Search(query, true).OrderByDescending(x => x.Score);
+    if(searchResults.Any())
     {
         <ul>
-            @foreach (var result in Model.Search(Request.QueryString["query"]))
+            @foreach (var result in searchResults)
             {
                 <li>
                     <a href="@result.Url">@result.Name</a>
@@ -74,3 +77,31 @@ In razor macros there's a `Search` method on the `DynamicNode` model which will 
             }
         </ul>
     }
+
+### Fluent API
+
+Examine offers a fluent search API which aims to make constructing complex searches simple. The underlying API is determined by the provider implementation, with Examine just exposing the appropriate methods. With the fluent API, we can introduce fuzzy-text search and boosting, which allows us to favour a search result if our search term is found in particular fields, including custom fields added to document types. 
+
+    var query = Request.QueryString["query"];
+    var searcher = Examine.ExamineManager.Instance.SearchProviderCollection["ExternalSearcher"];
+
+    var searchCriteria = searcher.CreateSearchCriteria(Examine.SearchCriteria.BooleanOperation.Or);
+    var searchQuery = searchCriteria.Field("nodeName", query.Boost(5)).Or().Field("nodeName", query.Fuzzy());
+    var searchResults = searcher.Search(searchQuery.Compile()).OrderByDescending(x => x.Score);
+    if(searchResults.Any())
+    {
+        <ul>
+            @foreach (var result in searchResults)
+            {
+                <li>
+                    <a href="@result.Url">@result.Name</a>
+                </li>
+            }
+        </ul>
+    }
+
+## Recommended resources
+For more detailed examples of implementing search with Examine, the following resources can be extremely helpful
+
+- [Examining Examine](overview-explanation.md) by Peter Gregory.
+- [The worlds friendliest post on getting started with Examine](https://24days.in/umbraco-cms/2013/getting-started-with-examine/) (24 Days in Umbraco)
