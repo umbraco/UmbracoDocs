@@ -23,6 +23,17 @@ If you're using the Field method from within a partial view then be aware that y
 
 	@Umbraco.Field(CurrentPage, "bodyContent")
 
+You will also need to pass the "Context" to the @Umbraco.Field() method if you're looping over a selection like this where we pass the "item" variable.
+
+	@{
+		var selection = Model.Content.Site().FirstChild("events").Children("event").Where(x => x.IsVisible());
+	}
+	<ul>
+		@foreach(var item in selection){
+        		@Umbraco.Field(item, "eventLink")
+		}
+	</ul>
+
 There are several optional parameters. Here is the list with their default values:
 
 * altFieldAlias = ""
