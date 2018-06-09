@@ -21,7 +21,7 @@ This is probably the most used method which simply renders the contents of a fie
 	
 If you're using the Field method from within a partial view then be aware that you will need to pass the context so the Field method knows where to get the desired value from. For instance you can pass "CurrentPage" like this:
 
-	@Umbraco.Field(CurrentPage, "bodyContent")
+	@Umbraco.Field(Model.Content, "eventLink")
 
 You will also need to pass the "Context" to the @Umbraco.Field() method if you're looping over a selection like this where we pass the "item" variable.
 
