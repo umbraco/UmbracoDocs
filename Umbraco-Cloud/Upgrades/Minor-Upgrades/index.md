@@ -1,6 +1,6 @@
 # Troubleshooting Automated minor upgrades
 
-Umbraco Cloud supports doing the minor upgrades of your projects in an automated manor. The feature is available when a new minor version of Umbraco is released (i.e. 7.5.0 or 7.6.0).
+Umbraco Cloud supports doing the minor upgrades of your projects in an automated manner. The feature is available when a new minor version of Umbraco is released (i.e. 7.5.0 or 7.6.0).
 
 The upgrade will cover most issues it encounters, but at certain Umbraco configurations, it needs some manual intervention. This is usually related to custom code being dependent on some API's that have either changed or been removed for the new minor upgrade.
 
