@@ -19,7 +19,7 @@ This is probably the most used method which simply renders the contents of a fie
 
 	@Umbraco.Field("bodyContent")
 	
-If you're using the Field method from within a partial view then be aware that you will need to pass the context so the Field method knows where to get the deisred value from. For instance you can pass "CurrentPage" like this:
+If you're using the Field method from within a partial view then be aware that you will need to pass the context so the Field method knows where to get the desired value from. For instance you can pass "CurrentPage" like this:
 
 	@Umbraco.Field(CurrentPage, "bodyContent")
 
