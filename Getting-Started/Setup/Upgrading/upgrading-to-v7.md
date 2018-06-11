@@ -117,7 +117,7 @@ which have not been completed for v7.0:
 ### Related links property editor and xslt
 Since this is an advanced prop editor the data format has changed from xml to json this shouldn't have any effect when retrieving the data from razor but if you are outputting related links data with xslt you'll need to update your xslt snippet. Making use of the new library method umbraco.library:JsonToXml and taking into account that the xml structure has also slightly changed.
 
-### Guid -> Alias mapping
+### GUID -> Alias mapping
 
 There are several database changes made in v7, one of which is the change of referencing a property editor from a GUID to a string alias. If you have a legacy property editor that you'd like to map to a new v7 property editor you can add your custom GUID -> Alias map during application startup. Do do this you'd add your map with this method: `Umbraco.Core.PropertyEditors.LegacyPropertyEditorIdToAliasConverter.CreateMap`
 

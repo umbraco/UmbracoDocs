@@ -20,17 +20,20 @@ Displays a calendar UI for selecting dates
 ## [Date/Time](Date-Time.md)
 Displays a calendar UI for selecting dates and time
 
-## [Dropdown list](DropDown-List.md)
-Displays a list of preset values. The value saved is a text value.
+## [Dropdown](Dropdown.md)
+Introduced in Umbraco v 7.10. Displays a list of preset values. The content editor can select either a single or multiple values.
 
-## [Dropdown list, publishing keys](DropDown-List-Publishing-Keys.md)
-Displays a list of preset values as a list. The value saved is a prevalue ID
+## [(Obsolete) Dropdown list](DropDown-List.md)
+Made obsolete with the release of Umbraco v7.10. Displays a list of preset values. The value saved is a text value.
 
-## [Dropdown list multiple](DropDown-List-Multiple.md)
-Displays a list of preset values where multiple can be selected. The value saved is a CSV of the text values.
+## [(Obsolete) Dropdown list, publishing keys](DropDown-List-Publishing-Keys.md)
+Made obsolete with the release of Umbraco v7.10. Displays a list of preset values as a list. The value saved is a prevalue ID
 
-## [Dropdown list multiple, publish keys](DropDown-List-Multiple-Publish-Keys.md)
-Displays a list of preset values where multiple can be selected. The value saved is a CSV of prevalue ids.
+## [(Obsolete) Dropdown list multiple](DropDown-List-Multiple.md)
+Made obsolete with the release of Umbraco v7.10. Displays a list of preset values where multiple can be selected. The value saved is a CSV of the text values.
+
+## [(Obsolete) Dropdown list multiple, publish keys](DropDown-List-Multiple-Publish-Keys.md)
+Made obsolete with the release of Umbraco v7.10. Displays a list of preset values where multiple can be selected. The value saved is a CSV of prevalue ids.
 
 ## Email address
 A single line textbox only allowing valid email addresses.
@@ -57,11 +60,11 @@ The legacy media picker opens a simple dialogue to pick a specific media item fr
 This control gives the same functionality as the standard listview, but allows you to add the listview as a control on a tab while controlling the other tabs and properties.
 
 ## Macro container
-The Macro container was in the early days the only built-in way to allow repeated content out of the box.  It allows a content editor to add multiple blocks.  Each block is one of the selected Macro's, wrapping an xslt, usercontrols or Macro Partial.  
+The Macro container was in the early days the only built-in way to allow repeated content out of the box.  It allows a content editor to add multiple blocks.  Each block is one of the selected Macro's, wrapping an xslt, usercontrols or Macro Partial.
 Today there are other options to have repeated content like [Nested Content](Nested-Content.md), [Grid Layout](Grid-Layout.md) and many other controls in different packages.
 
 ## Markdown editor
-[Markdown](https://daringfireball.net/projects/markdown/) is a lightweight markup language with plain text formatting syntax. It is designed so that it can be converted to HTML.  The built-in editor allow the user to use the markdown formatting options.  
+[Markdown](https://daringfireball.net/projects/markdown/) is a lightweight markup language with plain text formatting syntax. It is designed so that it can be converted to HTML.  The built-in editor allow the user to use the markdown formatting options.
 
 The markdown editor will be interpreted by the Models Builder. Behind the scenes, Umbraco uses the [Markdown nuget package](https://www.nuget.org/packages/Markdown/).
 

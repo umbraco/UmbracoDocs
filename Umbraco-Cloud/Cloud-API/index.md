@@ -41,7 +41,7 @@ To use this endpoint, make a request like this:
     {
         "projectName": "Name of the project", // Required
         "plan": "Single", // Required. Options are: "Single or Studio"
-        "ownerId": "c5821a98-ce88-4796-be90-e29f0a05fa39", // Optional. Can be a guid of an organization or an email. If nothing is provided the owner becomes the user the token is associated with
+        "ownerId": "c5821a98-ce88-4796-be90-e29f0a05fa39", // Optional. Can be a GUID of an organization or an email. If nothing is provided the owner becomes the user the token is associated with
         "baselineAlias": "an-alias-of-a-baseline" // Optional. If the project needs to be a child, then you can provide the alias of the baseline
     }
 

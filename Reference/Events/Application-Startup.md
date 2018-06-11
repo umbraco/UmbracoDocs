@@ -13,10 +13,10 @@ The ApplicationEventHandler is an easy way to hook in to the Umbraco application
 This example will populate some default data for newly created content items:
 
     using Umbraco.Core;
-	using Umbraco.Core.Events;
-	using Umbraco.Core.Logging;
-	using Umbraco.Core.Models;
-	using Umbraco.Core.Services;
+    using Umbraco.Core.Events;
+    using Umbraco.Core.Logging;
+    using Umbraco.Core.Models;
+    using Umbraco.Core.Services;
 
     namespace MyProject.EventHandlers
     {
@@ -24,36 +24,36 @@ This example will populate some default data for newly created content items:
         {
             protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
             {
-				//Listen for when content is being saved
+                //Listen for when content is being saved
                 ContentService.Saving += ContentService_Saving;     
             }
             
-			/// <summary>
-	        /// Listen for when content is being saved, check if it is a new item and fill in some
-			/// default data.
-	        /// </summary>
+            /// <summary>
+            /// Listen for when content is being saved, check if it is a new item and fill in some
+            /// default data.
+            /// </summary>
             private void ContentService_Saving(IContentService sender, SaveEventArgs<IContent> e)
             {                
-				foreach (var content in e.SavedEntities
-					//Check if the content item type has a specific alias
-                	.Where(c => c.Alias.InvariantEquals("MyContentType"))
-					//Check if it is a new item
-                	.Where(c => c.IsNewEntity()))
-	            {
-					//check if the item has a property called 'richText'
-	                if (content.HasProperty("richText"))
-	                {
-						//get the rich text value
-	                    var val = c.GetValue<string>("richText");
-						
-						//if there is a rich text value, set a default value in a 
-						// field called 'excerpt' that is the first
-						// 200 characters of the rich text value
-	                    c.SetValue("excerpt", val == null
-	                        ? string.Empty 
-	                        : string.Join("", val.StripHtml().StripNewLines().Take(200)));
-	                }
-	            }
+                foreach (var content in e.SavedEntities
+                    //Check if the content item type has a specific alias
+                    .Where(c => c.Alias.InvariantEquals("MyContentType"))
+                    //Check if it is a new item
+                    .Where(c => c.IsNewEntity()))
+                {
+                    //check if the item has a property called 'richText'
+                    if (content.HasProperty("richText"))
+                    {
+                        //get the rich text value
+                        var val = c.GetValue<string>("richText");
+                        
+                        //if there is a rich text value, set a default value in a 
+                        // field called 'excerpt' that is the first
+                        // 200 characters of the rich text value
+                        c.SetValue("excerpt", val == null
+                            ? string.Empty 
+                            : string.Join("", val.StripHtml().StripNewLines().Take(200)));
+                    }
+                }
             }
         }
     }
@@ -102,10 +102,10 @@ Umbraco allows you to bind directly to HttpApplication events which is very hand
 In order to bind to these events you need to first listen to the `UmbracoApplicationBase.ApplicationInit` event. Here is an example:
 
     using Umbraco.Core;
-	using Umbraco.Core.Events;
-	using Umbraco.Core.Logging;
-	using Umbraco.Core.Models;
-	using Umbraco.Core.Services;
+    using Umbraco.Core.Events;
+    using Umbraco.Core.Logging;
+    using Umbraco.Core.Models;
+    using Umbraco.Core.Services;
 
     namespace MyProject.EventHandlers
     {
@@ -113,26 +113,26 @@ In order to bind to these events you need to first listen to the `UmbracoApplica
         {
             protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
             {
-				//Listen for the ApplicationInit event which then allows us to bind to the
-				//HttpApplication events.
+                //Listen for the ApplicationInit event which then allows us to bind to the
+                //HttpApplication events.
                 UmbracoApplicationBase.ApplicationInit += UmbracoApplicationBase_ApplicationInit;     
             }
             
-			/// <summary>
-        	/// Bind to the events of the HttpApplication
-        	/// </summary>
-			void UmbracoApplicationBase_ApplicationInit(object sender, EventArgs e)
-	        {
-	            var app = (HttpApplication) sender;
-	            app.PostRequestHandlerExecute += UmbracoApplication_PostRequestHandlerExecute;
-	        }
+            /// <summary>
+            /// Bind to the events of the HttpApplication
+            /// </summary>
+            void UmbracoApplicationBase_ApplicationInit(object sender, EventArgs e)
+            {
+                var app = (HttpApplication) sender;
+                app.PostRequestHandlerExecute += UmbracoApplication_PostRequestHandlerExecute;
+            }
 
-			/// <summary>
-	        /// At the end of a handled request do something... 
-	        /// </summary>	        
-	        void UmbracoApplication_PostRequestHandlerExecute(object sender, EventArgs e)
-	        {
-	            //Do something...
-	        }
+            /// <summary>
+            /// At the end of a handled request do something... 
+            /// </summary>            
+            void UmbracoApplication_PostRequestHandlerExecute(object sender, EventArgs e)
+            {
+                //Do something...
+            }
         }
     }

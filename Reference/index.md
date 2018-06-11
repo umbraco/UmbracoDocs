@@ -10,13 +10,13 @@ This section is ultra important! It describes many common pitfalls that develope
 
 #### [C# API Documentation](https://our.umbraco.org/apidocs/csharp/)
 
-__Note: opens a documentation browser that is different from the documentation section you're viewing now, we're planning to integrate both.__
+__Note: opens a documentation browser that is different from the documentation section you're viewing now.__
 
 C# API references for the Umbraco Core and Web libraries.
 
 #### [Backoffice UI API documentation](https://our.umbraco.org/apidocs/ui/)
 
-__Note: opens a documentation browser that is different from the documentation section you're viewing now, we're planning to integrate both.__
+__Note: opens a documentation browser that is different from the documentation section you're viewing now.__
 
 Angular, JS, CSS & Less UI API references for building Umbraco backoffice components.
 

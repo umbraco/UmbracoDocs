@@ -16,7 +16,7 @@ When a new template is created, it will by default contain 3 lines of predefined
 	</asp:Content>
 
 The first line, is the template declaration, it tells Umbraco what language the template is written in, and if it inherits from another template. Masterpages in Umbraco will always inherit from another Masterpage, if it's a root template, it will inherit from
-`/umbraco/masterpages/default.master` which is the default umbraco masterpage, which is needed for the templating system to work.
+`/umbraco/masterpages/default.master` which is the default Umbraco masterpage, which is needed for the templating system to work.
 
 
 ## [umbraco:item](umbracoitem.md)

@@ -94,7 +94,7 @@ Add this in the file as seen here:
 
 ![Set client info](images/setClientInfo.png)
 
-The ConfigurationManager is missing a dependancy so add the following at the top: `using System.Configuration;`
+The ConfigurationManager is missing a dependency so add the following at the top: `using System.Configuration;`
 
 Finally open the web.config file in the root folder, here we will need to set the client id and secret from the google api. But first locate the code that says 
 `<add key="owin:appStartup" value="UmbracoDefaultOwinStartup" />` and change the value to 
