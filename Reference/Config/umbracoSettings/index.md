@@ -299,17 +299,17 @@ On new installs this set to true. When you are upgrading from a lower version th
 
 ## Security
 
-In the security section you have the following settings which deal with backoffice users.
+In the security section you have the following options: **`<keepUserLoggedIn>`**, **`<usernameIsEmail>`**,  **`<hideDisabledUsersInBackoffice>`**,  **`<allowPasswordReset>`**,  **`<authCookieName>`** and  **`<authCookieDomain>`**. These settings deal with backoffice users and settings for the backoffice authentication cookies.
 
     <security>
         <!-- set to true to auto update login interval (and there by disabling the lock screen -->
         <keepUserLoggedIn>true</keepUserLoggedIn>
 
-        <!-- change in 4.8: Disabled users are now showed dimmed and last in the tree. If you prefer not to display them set this to true -->
-        <hideDisabledUsersInBackoffice>false</hideDisabledUsersInBackoffice>
-
         <!-- by default this is true and if not specified in config will be true. set to false to always show a separate username field in the back office user editor -->
         <usernameIsEmail>true</usernameIsEmail>
+
+        <!-- change in 4.8: Disabled users are now showed dimmed and last in the tree. If you prefer not to display them set this to true -->
+        <hideDisabledUsersInBackoffice>false</hideDisabledUsersInBackoffice>
 
         <!-- set to true to enable the UI and API to allow back-office users to reset their passwords -->
         <allowPasswordReset>true</allowPasswordReset>
