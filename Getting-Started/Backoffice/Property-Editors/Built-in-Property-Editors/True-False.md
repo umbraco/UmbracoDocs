@@ -29,7 +29,7 @@ The True/False property has a setting which allows you to set the default value 
 
 ### Dynamic (Obsolete):
 
-The below example is using Dynamic access content access, which is considered obsolete and is not recommended to use. However the example is included for historical reasons if for instance a developer has overtaken a project where this approach is being used. This approach will be obsolete when Umbraco 8 is released and therefore is best to use the strongly typed example listed above.
+See [Common pitfalls](https://our.umbraco.org/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
 
 	@{
 		foreach (var page in CurrentPage.Children){
