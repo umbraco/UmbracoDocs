@@ -18,6 +18,21 @@ All Umbraco views inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage` which expos
 This is probably the most used method which simply renders the contents of a field for the current content item.
 
 	@Umbraco.Field("bodyContent")
+	
+If you're using the Field method from within a partial view then be aware that you will need to pass the context so the Field method knows where to get the desired value from. For instance you can pass "CurrentPage" like this:
+
+	@Umbraco.Field(Model.Content, "eventLink")
+
+You will also need to pass the "Context" to the @Umbraco.Field() method if you're looping over a selection like this where we pass the "item" variable.
+
+	@{
+		var selection = Model.Content.Site().FirstChild("events").Children("event").Where(x => x.IsVisible());
+	}
+	<ul>
+		@foreach(var item in selection){
+        		@Umbraco.Field(item, "eventLink")
+		}
+	</ul>
 
 There are several optional parameters. Here is the list with their default values:
 
@@ -34,7 +49,7 @@ There are several optional parameters. Here is the list with their default value
 The easiest way to use the Field method is to simply specify the optional parameters you'd like to set. For example, if we want to set the insertBefore and insertAfter parameters we'd do:
 
 	@Umbraco.Field("bodyContent", insertBefore : "<h2>", insertAfter : "</h2>")
-
+	
 
 ## Rendering a field with Model
 
