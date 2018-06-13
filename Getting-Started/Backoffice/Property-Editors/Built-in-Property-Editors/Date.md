@@ -20,7 +20,9 @@ The only setting that is available for manipulating the Date property is to set 
 
 	@(Model.Content.GetPropertyValue<DateTime>("datePicker").ToString("dd MM yyyy"))
 
-### Dynamic: 
+### Dynamic (Obsolete):
+
+See [Common pitfalls](https://our.umbraco.org/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
 
 	@{
 		@CurrentPage.datePicker.ToString("dd-MM-yyyy")
