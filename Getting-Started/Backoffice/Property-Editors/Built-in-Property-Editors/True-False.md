@@ -27,7 +27,7 @@ The True/False property has a setting which allows you to set the default value 
 		}	
 	}
 
-### Dynamic (Obsolete): 
+### Dynamic (Obsolete):
 
 See [Common pitfalls](https://our.umbraco.org/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
 
