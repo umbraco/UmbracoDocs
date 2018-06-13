@@ -59,7 +59,7 @@ In Umbraco v7.3.5 a UrlHelper Extension method was introduced to replace the IPu
 
     <img src="@Model.Content.GetCropUrl("image", "banner")" />
 
-#### Dynamic:
+#### Dynamic (Obsolete):
     
     //show the crop preset "banner"
     <img src="@CurrentPage.GetCropUrl("image", "banner")" />
@@ -101,7 +101,7 @@ The cropped URL can also be found for media in a similar way:
 
     @Umbraco.TypedMedia(1234).GetCropUrl("banner")
 
-#### Dynamic:
+#### Dynamic (Obsolete):
 
     @Umbraco.Media(1234).GetCropUrl("banner")
 
@@ -176,7 +176,7 @@ We bundle this library in Umbraco 7.1+ and you can therefore take full advantage
 
     <img src="@Url.GetCropUrl(Model.Content, propertyAlias: "image", cropAlias: "banner", useCropDimensions:true, furtherOptions: "&blur=11&sigma=1.5&threshold=10")" />
 
-#### Dynamic:
+#### Dynamic (Obsolete):
 
     <img src='@CurrentPage.GetCropUrl("image", "banner")&blur=11&sigma=1.5&threshold=10' />
 
