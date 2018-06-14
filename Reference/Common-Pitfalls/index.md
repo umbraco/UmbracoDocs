@@ -379,8 +379,7 @@ __Ouch!__ So just to show the top 10 voted recipe's this will end up doing the f
 This means that there is now a minimum of __20,000__ new objects created and allocated in memory. The number of traversals/visits to each
 of these objects is now 5000 x 5000 = __25,000,000 (25 MILLION TIMES!)__
 
-_Side note: The other problem is the logic used to lookup related recipes is incredibly inefficient. Instead, each recipe
-should have a picker to choose its related recipe's and then each of those can just be looked up by their ID.
+_Side note: The other problem is the logic used to lookup related recipes is incredibly inefficient. Instead, each recipe should have a picker to choose its related recipe's and then each of those can just be looked up by their ID.
 (There's probably a few other ways to achieve this too!)_
 
 Which leads us on to the next anti-pattern...
