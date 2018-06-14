@@ -119,4 +119,3 @@ In Umbraco, we usually apply these XPath expressions to a variable or parameter 
 For more information, see the following pages:
 
 - [MSDN XPath Examples](http://msdn.microsoft.com/en-us/library/ms256086.aspx)
-- [knol XPath article](http://knol.google.com/k/jackie-sprott/xpath/2i2dcklqevrpq/6) - This is where the XML sample data came from
