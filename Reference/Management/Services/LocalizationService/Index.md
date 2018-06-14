@@ -22,10 +22,15 @@ All samples in this document will require the following usings:
 **Please note that this page will be updated with samples and additional information about the methods listed below**
 
 ## Getting the service
-The LocalizationService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the LocalizationService is available through a local `Services` property.
 
-	Services.LocalizationService
+If you wish to use use the localization service in a class that inherits from one of the Umbraco base classes - eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController` - you can access the localization service through a local `Services` property:
 
-Getting the service through the `ApplicationContext`:
+	ILocalizationService localizationService = Services.LocalizationService;
+	
+In Razor views, you can access the localization service through the `ApplicationContext` property:
+
+    ILocalizationService localizationService = ApplicationContext.Services.LocalizationService;
+
+If neither a `Services` property or a `ApplicationContext` property is available, you can also reference the `ApplicationContext` class directly and using the static `Current` property:
 
 	ApplicationContext.Current.Services.LocalizationService
