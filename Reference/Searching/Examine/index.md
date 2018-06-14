@@ -4,7 +4,7 @@ _Examine uses Lucene as its search and index engine. Searching using Examine wit
 
 ## What is Examine?
 
-Examine allows you to index and search data quickly and easily. It is a library that sits on top of Lucene, a very high performance search engine library written in Java. Examine is built on top of a .NET-implementation of Lucene to provide very effecient APIs to make searching and indexing as straight forward as possible. Umbraco provides a further layer on top, Umbraco Examine, that opens up the Umbraco-specific APIs for searching content and media out of the box.
+Examine allows you to index and search data quickly and easily. It is a library that sits on top of Lucene, a very high performance search engine library written in Java. Examine is built on top of a .NET-implementation of Lucene to provide very effecient APIs to make searching and indexing as straight forward as possible. Umbraco provides a further layer on top, UmbracoExamine, that opens up the Umbraco-specific APIs for searching content and media out of the box.
 
 Examine is provider based so is very extensible and allows you to configure as many indexes as you like and each may be configured individually. The back-office search in Umbraco also uses this same search engine, so you can trust that you're in good hands.
 
