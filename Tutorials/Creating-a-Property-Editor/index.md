@@ -17,7 +17,7 @@ This is about how to use AngularJS with Umbraco, so it does not cover AngularJS 
 
 - [egghead.io](http://www.egghead.io/)
 - [angularjs.org/tutorial](http://docs.angularjs.org/tutorial)
-- [Tekpub](http://tekpub.com/products/angular)
+- [Pluralsight](https://www.pluralsight.com/paths/angular-js)
 
 ## The end result
 
