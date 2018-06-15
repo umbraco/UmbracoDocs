@@ -231,7 +231,8 @@ The `MenuRendering` is raised whenever a menu is generated for a tree node
             //optional, if you want to load a legacy page, otherwise it will just follow convention
             i.AdditionalData.Add("actionUrl", "my/long/url/to/webformshorror.aspx");
             
-            //optional, if you dont want to follow conventions, but do want to use a angular view
+            //optional, if you don't want to follow the naming conventions, but do want to use a angular view
+            //you can also use a direct path "../App_Plugins/my/long/url/to/view.html"
             i.AdditionalData.Add("actionView", "my/long/url/to/view.html");
             
 	        //sets the icon to icon-wine-glass 
