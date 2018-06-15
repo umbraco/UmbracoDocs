@@ -225,7 +225,21 @@ The `MenuRendering` is raised whenever a menu is generated for a tree node
         if (sender.TreeAlias == "content"
             && sender.Security.CurrentUser.UserType.Alias == "admin")
         {
-            e.Menu.Items.Add(new MenuItem("tweetLink", "Tweet this"));
+            //creates a menu action that will open /umbraco/currentSection/itemAlias.html
+            var i = new Umbraco.Web.Models.Trees.MenuItem("itemAlias", "Item name");
+            
+            //optional, if you want to load a legacy page, otherwise it will just follow convention
+            i.AdditionalData.Add("actionUrl", "my/long/url/to/webformshorror.aspx");
+            
+            //optional, if you don't want to follow the naming conventions, but do want to use a angular view
+            //you can also use a direct path "../App_Plugins/my/long/url/to/view.html"
+            i.AdditionalData.Add("actionView", "my/long/url/to/view.html");
+            
+	        //sets the icon to icon-wine-glass 
+	        i.Icon = "wine-glass"
+
+   	        //insert at index 5
+            e.Menu.Items.Insert(5,i);
         }
     }
 
