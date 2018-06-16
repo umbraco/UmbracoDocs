@@ -1,4 +1,4 @@
-#404handlers.config
+# 404handlers.config
 
 Configuration file for legacy *NotFoundHandlers* - to register custom code within the Umbraco incoming request pipeline, including the legacy way to handle a custom 404 error.
 
