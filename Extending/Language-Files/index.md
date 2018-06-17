@@ -63,6 +63,12 @@ In the Umbraco backoffice UI, labels can be localized with the `localize` direct
     <button>
         <localize key="dialog_myKey">Default value</localize>
     </button>
+    
+The localize directive can also be used as an attribute like below where the value of the title attribute is then populated with the dictionary key "title_name" from the language file using "@title_name".
+
+    <button localize="title" title="@title_name">
+        <localize key="dialog_myKey">Default value</localize>
+    </button>
 
 Or from a controller by using the `LocalizationService` which returns an async translation in a promise:
 
