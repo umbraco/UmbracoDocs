@@ -15,7 +15,7 @@ So all the steps we will go through:
 ## Prerequisites
 This is about how to use AngularJS with Umbraco, so it does not cover AngularJS itself, as there are tons of resources on that already here:
 
-- [egghead.io](http://www.egghead.io/)
+- [egghead.io](https://egghead.io/courses/angularjs-fundamentals)
 - [angularjs.org/tutorial](http://docs.angularjs.org/tutorial)
 - [Pluralsight](https://www.pluralsight.com/paths/angular-js)
 
