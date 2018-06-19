@@ -1,20 +1,14 @@
-# Security Certificates
+# Upload certificates manually
 
-All new projects on Umbraco Cloud are automatically protected by Umbraco Latch. This means, that the default Umbraco Cloud URL for your project as well as any new hostnames you add will be assigned a TLS certificate automatically.
-
-![Adding a hostname](images/adding-hostname-to-cloud.gif)
-
-On the **Manage domains** page you'll also find the option to upload and configure HTTPS certificates for your Cloud environments.
+Under **Manage Certificates** you'll find an option to manually upload your own certificate and assign it to one of the hostnames you've added.
 
 Your certificates need to be **`.pfx`** format and must be set to use a password. Each certificate can then be bound to a hostname you have already added to your site. Make sure you use the hostname you will bind the certificate to as the common name (CN) when generating the certificate.
-
-### Upload certificate
 
 * Upload your certificate from your local machine
 * Type in the password for your certificate
 * Click **Upload**
 
-### Bind certificate to hostname
+## Bind certificate to hostname
 
 * Choose your hostname from the *Hostname* dropdown
 * Choose your newly uploaded certificate from the *Certificate* dropdown
@@ -23,7 +17,7 @@ Your certificates need to be **`.pfx`** format and must be set to use a password
 
 ![Upload and bind certificate](images/upload-and-bind-cert.gif)
 
-## Running your site on HTTPS only
+# Running your site on HTTPS only
 
 Once you've applied a certificate to your site you can make sure that anybody visiting your site will always end up on HTTPS instead of the insecure HTTP.
 
