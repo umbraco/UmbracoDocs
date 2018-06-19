@@ -1,6 +1,8 @@
 # Security Certificates
 
-![Manage certificates](images/manage-certificates.png)
+All new projects on Umbraco Cloud are automatically protected by Umbraco Latch. This means, that the default Umbraco Cloud URL for your project as well as any new hostnames you add will be assigned a TLS certificate automatically.
+
+![Adding a hostname](images/adding-hostname-to-cloud.gif)
 
 On the **Manage domains** page you'll also find the option to upload and configure HTTPS certificates for your Cloud environments.
 
