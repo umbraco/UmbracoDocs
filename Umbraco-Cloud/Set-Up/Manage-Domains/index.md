@@ -1,4 +1,4 @@
-# Managing domains
+# Managing hostnames
 
 When you create an Umbraco Cloud project we create the project URLs based on the name you give your project. 
 
@@ -13,9 +13,9 @@ To access the backoffice, simply add `/umbraco` to the end of the Live, Developm
 
 ## Domains
 
-Under *Settings* in the Umbraco Cloud Portal, you'll find **Manage domains**. This is where you go when you want to bind domains to your Cloud environments and when you want to add security certificates to your environments.
+Under *Settings* in the Umbraco Cloud Portal, you'll find **Manage Hostnames**. This is where you go when you want to bind domains to your Cloud environments and when you want to add security certificates to your environments.
 
-![Manage domains](images/manage-domains.png)
+![Manage domains](images/manage-hostnames.png)
 
 You can bind any hostname to your project environments. Keeping in mind, of course, that the hostname will need to have a DNS entry so that it resolves to the Umbraco Cloud service.
 
