@@ -37,4 +37,6 @@ Once you've assigned a domain to your Umbraco Cloud environment, you may want to
 
 ## [Security Certificates](Security-Certificates)
 
+All hostnames added to an Umbraco Cloud project will automatically be protected by **Umbraco Latch**: A TLS certificate will be assigned to your hostnames. You will also be able to manually add your own certificate if you prefer.
+
 ## [Rewrites on Umbraco Cloud](Rewrites-on-Cloud)
