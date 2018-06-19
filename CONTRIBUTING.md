@@ -9,6 +9,24 @@ To contribute to either the documentation or stubs, you can fork & clone our rep
 ## Repository organisation
 All active work done on the documentation is currently being done on the `master` branch.
 
+### Keeping your UmbracoDocs fork in sync with the main repository
+If you decide to clone the UmbracoDocs repository on your local machine for making larger changes that can't be done directly on GitHub then we recommend you sync with our repository before you submit your pull request. That way, you can fix any potential merge conflicts and make our lives a little bit easier.
+
+To sync your fork with this original one, you'll have to add the upstream url, you only have to do this once:
+
+```
+git remote add upstream https://github.com/umbraco/UmbracoDocs.git
+```
+
+Then when you want to get the changes from the main repository:
+
+```
+git fetch upstream
+git rebase upstream/master
+```
+
+In this command we're syncing with the `master` branch, but you can of course choose another one if needed.
+
 ### Contributing documentation
 All documents are written in Markdown, using a simple structure and stored as .md files.
 These are then pulled to [our.umbraco.org/documentation](http://our.umbraco.org/documentation) for easy browsing.
