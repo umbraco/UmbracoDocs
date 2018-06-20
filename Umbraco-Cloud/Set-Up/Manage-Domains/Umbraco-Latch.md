@@ -14,3 +14,7 @@ In order for Umbraco Latch to be applied to your hostname, you need to make sure
 You will not get an Umbraco Latch certificate if you are using a CDN service (ex. CloudFlare) on your Umbraco Cloud project.
 
 In that case you can manually add a TLS certificate to your project instead. Read more about how to do that in the [Upload certificates manually](Security-certificates) article.
+
+## Read more
+
+* [Umbraco Latch on Umbraco.com](https://umbraco.com/products/umbraco-latch/)

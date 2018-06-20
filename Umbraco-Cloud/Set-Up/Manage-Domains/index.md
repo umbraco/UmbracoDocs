@@ -44,3 +44,5 @@ All hostnames added to an Umbraco Cloud project will automatically be protected 
 You can manually add your own certificate to your Umbraco Cloud project and bind it to one of the hostnames you've added.
 
 ## [Rewrites on Umbraco Cloud](Rewrites-on-Cloud)
+
+Learn more about best practices for working with rewrite rules on Umbraco Cloud projects.
