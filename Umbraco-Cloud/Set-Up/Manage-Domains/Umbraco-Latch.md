@@ -4,8 +4,13 @@ All new projects on Umbraco Cloud are automatically protected by Umbraco Latch. 
 
 ![Adding a hostname](images/adding-hostname-to-cloud.gif)
 
-In order for Umbraco Latch to be applied to your hostname, you need to make sure of the following:
+In order for Umbraco Latch to be applied to your hostname, you need to make sure you have either of the following:
 
-* The correct DNS records are setup for the hostname
-* The domain is live
+* DNS has been setup with a CNAME pointing at the Cloud URL (mysite.s1.umbraco.io)
+* DNS has been setup with an A-Record pointing at the Cloud IP (23.100.15.180)
 
+## Latch and CDN
+
+You will not get an Umbraco Latch certificate if you are using a CDN service (ex. CloudFlare) on your Umbraco Cloud project.
+
+In that case you can manually add a TLS certificate to your project instead. Read more about how to do that in the [Upload certificates manually](Security-certificates) article.
