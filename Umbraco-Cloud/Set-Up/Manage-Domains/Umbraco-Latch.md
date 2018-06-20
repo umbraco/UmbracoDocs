@@ -17,4 +17,5 @@ In that case you can manually add a TLS certificate to your project instead. Rea
 
 ## Read more
 
+* [Redirect from HTTP to HTTPS](Rewrites-on-Cloud#running-your-site-on-https-only)
 * [Umbraco Latch on Umbraco.com](https://umbraco.com/products/umbraco-latch/)

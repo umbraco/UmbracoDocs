@@ -15,4 +15,8 @@ Your certificates need to be **`.pfx`** format and must be set to use a password
 * Click **Set Binding**
 * You've now successfully uploaded your certificate!
 
-![Upload and bind certificate](images/upload-and-bind-cert.gif)
+![Upload and bind certificate](images/upload-bind-cert.gif)
+
+## Read more
+
+* [Redirect from HTTP to HTTPS](../Rewrites-on-Cloud#running-your-site-on-https-only)
