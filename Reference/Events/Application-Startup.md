@@ -1,4 +1,4 @@
-# Application startup events & event registration
+# Adding startup events & event registration
 
 In order to bind to certain events in the Umbraco application you need to make these registrations during application startup. 
 
@@ -6,9 +6,9 @@ In order to bind to certain events in the Umbraco application you need to make t
 
 **Applies to: Umbraco 6.1.0+**
 
-_if you are using a version previous to 6.1.0, see [here](../Events/application-startup.md) for application event details_
+The [ApplicationEventHandler](../../apidocs/csharp/api/Umbraco.Core.ApplicationEventHandler.html) is a plugin type that allows developers to execute code during the Umbraco bootup process.
 
-The ApplicationEventHandler is an easy way to hook in to the Umbraco application startup process. It is a base class so all you need to do is override the methods that you wish to handle. It is important to know the difference between each of the methods (information is below). Almost always, you just want to use the __ApplicationStarted__ method.
+This is the preferred way to hook in to the Umbraco application startup process. It is a base class so all you need to do is override the methods that you wish to handle. It is important to know the difference between each of the methods (information is below). Almost always, you just want to use the __ApplicationStarted__ method.
 
 This example will populate some default data for newly created content items:
 
@@ -88,51 +88,7 @@ If you want more control over execution you can override these properties:
 * ExecuteWhenDatabaseNotConfigured
 	* By default this is false but if you want these methods to fire even if the database is not installed/ready then you can overrride this property and return true
 
-### IBootManager (EXPERT)
-
-In some cases you may be using a custom `IBootManager` which has the following methods: `Initialize`, `Startup`, `Complete`, this sequence of events and the logic that should be performed in these methods is exactly the same as the methods mentioned above in this order: 
-* `Initialize` --> `ApplicationInitialized`
-* `Startup` --> `ApplicationStarting`
-* `Complete` --> `ApplicationStarted`
-
-## Binding to HttpApplication events
-
-Umbraco allows you to bind directly to HttpApplication events which is very handy since normally you would require an HttpModule to bind to these types of events. The HttpApplication events are listed here: [http://msdn.microsoft.com/en-us/library/system.web.httpapplication_events(v=vs.110).aspx](http://msdn.microsoft.com/en-us/library/system.web.httpapplication_events(v=vs.110).aspx)
-
-In order to bind to these events you need to first listen to the `UmbracoApplicationBase.ApplicationInit` event. Here is an example:
-
-    using Umbraco.Core;
-    using Umbraco.Core.Events;
-    using Umbraco.Core.Logging;
-    using Umbraco.Core.Models;
-    using Umbraco.Core.Services;
-
-    namespace MyProject.EventHandlers
-    {
-        public class RegisterEvents : ApplicationEventHandler
-        {
-            protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
-            {
-                //Listen for the ApplicationInit event which then allows us to bind to the
-                //HttpApplication events.
-                UmbracoApplicationBase.ApplicationInit += UmbracoApplicationBase_ApplicationInit;     
-            }
-            
-            /// <summary>
-            /// Bind to the events of the HttpApplication
-            /// </summary>
-            void UmbracoApplicationBase_ApplicationInit(object sender, EventArgs e)
-            {
-                var app = (HttpApplication) sender;
-                app.PostRequestHandlerExecute += UmbracoApplication_PostRequestHandlerExecute;
-            }
-
-            /// <summary>
-            /// At the end of a handled request do something... 
-            /// </summary>            
-            void UmbracoApplication_PostRequestHandlerExecute(object sender, EventArgs e)
-            {
-                //Do something...
-            }
-        }
-    }
+## Related Links
+* [Troubleshooting Slow Startup](./Troubleshooting-Slow-Start)
+* [More information about BootManager](./Understanding-BootManager) (EXPERT)
+* [Overriding UmbracoApplication](./Extending-UmbracoApplication) (EXPERT)
