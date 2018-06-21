@@ -1,4 +1,4 @@
-# Managing domains
+# Managing hostnames
 
 When you create an Umbraco Cloud project we create the project URLs based on the name you give your project. 
 
@@ -13,9 +13,9 @@ To access the backoffice, simply add `/umbraco` to the end of the Live, Developm
 
 ## Domains
 
-Under *Settings* in the Umbraco Cloud Portal, you'll find **Manage domains**. This is where you go when you want to bind domains to your Cloud environments and when you want to add security certificates to your environments.
+Under *Settings* in the Umbraco Cloud Portal, you'll find **Manage Hostnames**. This is where you go when you want to bind domains to your Cloud environments.
 
-![Manage domains](images/manage-domains.png)
+![Manage domains](images/manage-hostnames.png)
 
 You can bind any hostname to your project environments. Keeping in mind, of course, that the hostname will need to have a DNS entry so that it resolves to the Umbraco Cloud service.
 
@@ -35,6 +35,14 @@ You will also need to add the hostnames to your root content node.
 
 Once you've assigned a domain to your Umbraco Cloud environment, you may want to hide the default umbraco.io URL (e.g. *snoopy.s1.umbraco.io*). We've created a rewrite rule for this purpose - find it in the [Rewrites on Cloud](Rewrites-on-Cloud/#hiding-the-default-umbraco-io-url) article. 
 
-## [Security Certificates](Security-Certificates)
+## [Umbraco Latch](Umbraco-Latch)
+
+All hostnames added to an Umbraco Cloud project will automatically be protected by **Umbraco Latch**: A TLS certificate will be assigned to your hostnames.
+
+## [Upload certificates manually](Security-Certificates)
+
+You can manually add your own certificate to your Umbraco Cloud project and bind it to one of the hostnames you've added.
 
 ## [Rewrites on Umbraco Cloud](Rewrites-on-Cloud)
+
+Learn more about best practices for working with rewrite rules on Umbraco Cloud projects.
