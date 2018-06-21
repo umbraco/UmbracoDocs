@@ -1,4 +1,4 @@
-# 1. Upload certificates manually
+# Upload certificates manually
 
 Under **Manage Certificates** you'll find an option to manually upload your own certificate and assign it to one of the hostnames you've added.
 
