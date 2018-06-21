@@ -1,8 +1,8 @@
-# Application startup events & event registration#
+# Application startup events & event registration
 
 In order to bind to certain events in the Umbraco application you need to make these registrations during application startup. 
 
-## Use ApplicationEventHandler to register events ##
+## Use ApplicationEventHandler to register events
 
 **Applies to: Umbraco 6.1.0+**
 
