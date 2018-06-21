@@ -1,6 +1,6 @@
 ## Binding to HttpApplication events
 
-It is not necesary to override and replace the UmbracoApplication.
+It is not necesary to override and replace the [UmbracoApplication](../../apidocs/csharp/api/Umbraco.Web.UmbracoApplication.html).  If you consider changing the default `global.asax`, read on!
 
 Umbraco allows you to bind directly to HttpApplication events which is very handy since normally you would require an HttpModule to bind to these types of events. 
 
