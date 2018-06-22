@@ -11,7 +11,7 @@ To get content from Headless, you'll use the Headless Service described in the o
 Often you just need to get either all content of a specific Document Type or getting content that matches one or few properties. For this purpose you can use the fluent interface provided, where you get the convenience of using Intellisense. For queries more complex than this scenario - such as grouped queries - you'll get better results using XPath or Lucene queries which is explained below.
 
 ##### Getting started
-When you query headless you can choose to either get all content that matches your query (GetAll()) or getting the first item (GetFirst()):
+When you query headless you can choose to either get all content that matches your query (`GetAll()`) or getting the first item (`GetFirst()`):
 ```
 using Umbraco.Headless.Client.Models;
 using Umbraco.Headless.Client.QueryBuilder;
@@ -106,7 +106,7 @@ If you need more advanced queries, so you use XPath or Lucene instead of the flu
 ```
 using Umbraco.Headless.Client.Models;
 using Umbraco.Headless.Client.QueryBuilder;
-using using Our.Umbraco.Headless.Examples.Models;
+using Our.Umbraco.Headless.Examples.Models;
 
 ...
 var content = await HeadlessClient.Instance.Query("tags:'pinotnoir'", QueryType.Lucene).GetAll();
