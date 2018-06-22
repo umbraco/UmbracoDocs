@@ -147,7 +147,7 @@ With this, the entire flow is:
 6. the resource resolve the Promise
 7. the controller populates the view
 
-Easy huh? - honestly tho, there is a good amount of things to keep track of, but each component is tiny and flexible. 
+Easy huh? - honestly though, there is a good amount of things to keep track of, but each component is tiny and flexible. 
 
 ## Wrap-up
 The important part of the above is the way you create an `ApiController` call to the database for your own data, and finally expose the data to angular as a service using `$http`.
