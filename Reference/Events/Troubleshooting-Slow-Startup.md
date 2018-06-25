@@ -2,7 +2,7 @@
 
 Slow startup can occur if: 
 * no Examine indexes exist
-* models builder is used and is using Live modes and it's the first time it's compiling (you can use DLL mode to avoid this entirely)
+* models builder is used in [Pure Live mode](../Reference/Templating/Modelsbuilder/Builder-Modes#pure-live-models). Depending on the number of models, compilation (the first time) will take some time. You can use the other modes (DLL, AppData or API) to avoid this entirely.
 * the umbraco cache file (/app_data/umbraco.config) doesn't exist
 * the `/App_Data/TEMP/PluginCache` is empty or if one of your DLLs has changed. This means a new scan of plugins will occur. Plugin scanning has also been heavily optimized since v7.5 (IIRC)
 * third party packages and plugins may also run code on startup, and may have configuration or settings to avoid this, or there may be workarounds or indeed 'different' plugins
