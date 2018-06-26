@@ -89,7 +89,7 @@ When using Umbraco Courier the entry in the `/Config/Dashboard.config` should co
     </section>
 
 ### Setup Deploy Api Key
-Final step is to setup a valid deploy key. You need to get this from Support as well. Once you have it, add it as a appsetting in the web.config file.
+Final step is to setup a valid deploy key. You need to get this from Support as well. Once you have it, add it as an appsetting in the web.config file.
 
         <add key="Umbraco.Deploy.ApiKey" value="[UniqueKey]" />
 
