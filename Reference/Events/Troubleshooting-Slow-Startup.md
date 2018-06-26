@@ -25,6 +25,6 @@ If your rendering is slow, be sure to review which controller is used. By defaul
 There's several factors that can cause this part to be slow but this all comes down to implementation details. Especially if you have decided that caching will solve all of your issues. If that is the case, than the first request will always be slow and fixing that comes down to solving the performance issues that have been 'fixed' by putting caching in front of them.
 
 ## Related Links
-* [More information about BootManager](./Understanding-BootManager.md) (EXPERT)
+* [More information about BootManager](./Understanding-BootManagers.md) (EXPERT)
 * [Adding startup logic and plugin on c# events](./Application-Startup.md) (EXPERT)
 * [Overriding UmbracoApplication](./Extending-UmbracoApplication.md) (EXPERT)

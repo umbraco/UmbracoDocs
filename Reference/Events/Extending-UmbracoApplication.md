@@ -45,6 +45,6 @@ In order to bind to these events you need to first listen to the `UmbracoApplica
     }
 
 ## Related Links
-* [Troubleshooting Slow Startup](./Troubleshooting-Slow-Start)
-* [More information about BootManager](./Understanding-BootManager) (EXPERT)
-* [Adding startup logic and plugin on c# events](./Application-Startup) (EXPERT)
+* [Troubleshooting Slow Startup](./Troubleshooting-Slow-Startup.md)
+* [More information about BootManager](./Understanding-BootManagers.md) (EXPERT)
+* [Adding startup logic and plugin on c# events](./Application-Startup.md) (EXPERT)

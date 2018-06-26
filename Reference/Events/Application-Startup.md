@@ -100,6 +100,6 @@ Finally (very EXPERT), users can [register a filter](../../apidocs/csharp/api/Um
 **BEWARE**! Handlers order is an important thing, and removing handlers or reordering handlers can have unexpected consequences.
 
 ## Related Links
-* [Troubleshooting Slow Startup](./Troubleshooting-Slow-Start.md)
-* [More information about BootManager](./Understanding-BootManager.md) (EXPERT)
+* [Troubleshooting Slow Startup](./Troubleshooting-Slow-Startup.md)
+* [More information about BootManager](./Understanding-BootManagers.md) (EXPERT)
 * [Overriding UmbracoApplication](./Extending-UmbracoApplication.md) (EXPERT)

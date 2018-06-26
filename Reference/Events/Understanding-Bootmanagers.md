@@ -18,6 +18,6 @@ In some (rare) cases you may be using a custom `IBootManager` which has the foll
 * `Complete` --> `ApplicationStarted`
 
 ## Related Links
-* [Troubleshooting Slow Startup](./Troubleshooting-Slow-Start.md)
+* [Troubleshooting Slow Startup](./Troubleshooting-Slow-Startup.md)
 * [Adding startup logic and plugin on c# events](./Application-Startup.md) (EXPERT)
 * [Overriding UmbracoApplication](./Extending-UmbracoApplication.md) (EXPERT)
