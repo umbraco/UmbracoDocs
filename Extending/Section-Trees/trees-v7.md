@@ -95,7 +95,7 @@ eg:
 
 ### Responding to Tree Actions
 
-The actions on items in an Umbraco Tree will trigger 'by convention' a request to load an AngularJS view, with a name corresponding to the name of the action, from a sub-folder of the views folder matching the name of the 'customTreeAlias'.
+The actions on items in an Umbraco Tree will trigger 'by convention' a request to load an AngularJS view, with a name corresponding to the name of the action, from a subfolder of the views folder matching the name of the 'customTreeAlias'.
 
 For example, 'Clicking on' one of the 'Favourite Things' in the custom tree example outlined above will 'by convention' trigger the loading of an 'edit.html' view from the folder: */views/favouriteThings/edit.html*
 and the 'Delete' menu item would load a view from: */views/favouriteThings/delete.html*
