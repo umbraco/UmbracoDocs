@@ -156,7 +156,7 @@ Otherwise, just name your actions differently.
 
 ## Accessing ViewData 
 
-When you are adding any data to the ViewData collection in your [HttpPost] action, this ViewData gets set on the 'root' view context. Therefore in order to retreive the data in the ViewData collection from your ChildAction view, you'll need to access it by:
+When you are adding any data to the ViewData collection in your [HttpPost] action, this ViewData gets set on the 'root' view context. Therefore in order to retrieve the data in the ViewData collection from your ChildAction view, you'll need to access it by:
 
 	@ParentActionViewContext.ViewData
 

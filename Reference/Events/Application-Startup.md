@@ -86,7 +86,7 @@ If you want more control over execution you can override these properties:
 * ExecuteWhenApplicationNotConfigured
 	* By default this is false but if you want these methods to fire even when the application is not configured you can override this property and return true
 * ExecuteWhenDatabaseNotConfigured
-	* By default this is false but if you want these methods to fire even if the database is not installed/ready then you can overrride this property and return true
+	* By default this is false but if you want these methods to fire even if the database is not installed/ready then you can override this property and return true
 
 ### IBootManager (EXPERT)
 
@@ -132,7 +132,7 @@ In order to bind to these events you need to first listen to the `UmbracoApplica
             /// </summary>            
             void UmbracoApplication_PostRequestHandlerExecute(object sender, EventArgs e)
             {
-                //Do something...
+                // Do something...
             }
         }
     }

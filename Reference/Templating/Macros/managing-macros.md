@@ -42,7 +42,7 @@ If selected, then this result of this macro will be cached based on the current 
 
 > Cache personalized
 
-Similar to the 'cache by page', this will cache the output of a macro based on a member that is logged in. If you macro is static (the same) no mattter what member is logged in, or if your website does not have membership then it is better to not check this box.
+Similar to the 'cache by page', this will cache the output of a macro based on a member that is logged in. If you macro is static (the same) no matter what member is logged in, or if your website does not have membership then it is better to not check this box.
 
 ## Macro parameters
 

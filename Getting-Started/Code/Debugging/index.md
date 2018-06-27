@@ -25,7 +25,7 @@ Click 'Clear current trace' and then in a different tab visit the url of the pag
 
 The trace requests for this page will appear if you refresh your trace.axd tab.
 
-Click on 'View Details' for a particualar request in the list to see the specific trace information for the page.
+Click on 'View Details' for a particular request in the list to see the specific trace information for the page.
 
 ![Trace Request Details](images/trace-request-details.png)
 
@@ -69,7 +69,7 @@ and now in the profiler you can see
 
 If you are using the Google Chrome browser you can install this [Umbraco Productivity Tool Chrome Extension](https://chrome.google.com/webstore/detail/umbraco-productivity/kepkgaeokeknlghbiiipbhgclikjgkdp?hl=en)
 
-To enable you to easily access and switch between the Miniprofiler / Trace debugging modes.
+To enable you to easily access and switch between the Mini-profiler / Trace debugging modes.
 
 ![Umbraco Productivity Tool](images/umbraco-productivity-chrome-extension.png)
 

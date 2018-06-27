@@ -35,9 +35,9 @@ To show some code as fast as possible here is a commented code sample which outl
 	//inherit from ItemDataResolver and implement ResolvableTypes and ShouldExecute
 	public class test : ItemDataResolverProvider
 	{
-	    //resolvableTypes are the types of content which can be processed by this resolver
-	    //all built-in classes are available under Umbraco.Courier.ItemProviders
-	    //this class handles all templates and nothing else
+	    // resolvableTypes are the types of content which can be processed by this resolver
+	    // all built-in classes are available under Umbraco.Courier.ItemProviders
+	    // this class handles all templates and nothing else
 	    public override List<Type> ResolvableTypes
 	    {
 	        get { return new List<Type> { typeof(Template) }; }
@@ -226,14 +226,14 @@ To make it work, Courier needs to know what IDs the xml contains, convert these 
 To solve this, Courier 2.5 comes with a couple of simple helpers which can help digest this xml
 
 ## Umbraco.Courier.Core.Helpers.XmlDependencies.ReplaceIds
-This simply replaces Node IDs with GUIDs, given a chunk of Valid Xml, and an Xpath Query it will go through the xml and replace IDs.
+This simply replaces Node IDs with GUIDs, given a chunk of Valid Xml, and an XPath Query it will go through the xml and replace IDs.
 
 	ReplaceIds(xml, xpath, attribute, direction, out replaceIds)
 	
 ### Parameters
 
 * Xml: The xml to search for IDs
-* Xpath: the query to find the IDs
+* XPath: the query to find the IDs
 * Attribute: optional, the name of an attribute on the found nodes which contains the ID
 * Direction; enum, can be either FromNodeIdToGuid, or FromGuidToNodeId
 * ReplacedIds: optional, returns a list of NodeIds replace by the method
@@ -242,11 +242,11 @@ This simply replaces Node IDs with GUIDs, given a chunk of Valid Xml, and an Xpa
 The Xml as a string with all IDs replaced
 
 ### Sample
-	string dataXpath = "//nodeId";
+	string dataXPath = "//nodeId";
 	List<string> replacedIds = new List<string>();
 	propertyData.Value = XmlDependencies.ReplaceIds(
 	                        propertyData.Value.ToString(),
-	                        dataXpath,  IdentifierReplaceDirection.FromNodeIdToGuid,
+	                        dataXPath,  IdentifierReplaceDirection.FromNodeIdToGuid,
 	                        out replacedIds);
 	 
 	//these are the IDs we found in the picker, those documents are a dependency
@@ -257,22 +257,22 @@ The Xml as a string with all IDs replaced
 
 
 ## Umbraco.Courier.Core.Helpers.XmlDependencies.FindResources
-Searches xml for resource paths, using an Xpath Query
+Searches xml for resource paths, using an XPath Query
 
 	FindResources(xml, xpath, attribute);
 
 ### Parameters
 
 * Xml: The xml to search for resource paths
-* Xpath: the query to find the resource paths
+* XPath: the query to find the resource paths
 * Attribute: optional, the name of an attribute on the found nodes which contains the path
 
 ### Returns
 A `List<string>` containing paths to all found resources
 
 ### Sample
-	string resourceXpath = "//url";
-	foreach (var resource in XmlDependencies.FindResources(propertyData.Value.ToString(), resourceXpath, null))
+	string resourceXPath = "//url";
+	foreach (var resource in XmlDependencies.FindResources(propertyData.Value.ToString(), resourceXPath, null))
 	{
 	    item.Resources.Add(resource);
 	}

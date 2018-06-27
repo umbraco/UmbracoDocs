@@ -4,11 +4,11 @@
 
 ## Settings
 
-The mntp allows you to configure the type of tree to render, what part of the tree that should be rendered, and specifically for content, it allows you to select a dynamic root node based on the current document using the multinode tree picker. 
+The Multinode Treepicker allows you to configure the type of tree to render, what part of the tree that should be rendered, and specifically for content, it allows you to select a dynamic root node based on the current document using the multinode tree picker. 
 
 **Node type:** set the type of node, root node of the tree, or query for the root node
 
-For querying for a root node, you can use dynamic placeholders in the xpath query, following the below sample queries 
+For querying for a root node, you can use dynamic placeholders in the XPath query, following the below sample queries 
 
 	//get the first textpage below the current document
 	$current/textpage: current page or closest found ancestor

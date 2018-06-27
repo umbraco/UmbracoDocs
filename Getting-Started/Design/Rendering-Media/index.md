@@ -57,7 +57,7 @@ If your media type is for images and it has Image Cropper as the upload field (u
 
 This example assumes that you have set up a crop called **myCropAlias** on your Image Cropper data type.        
 
-If you want the original, uncropped image, you can ignore the GetCropUrl extension method and use one of the previously discussed approaches as shown below.
+If you want the original, un-cropped image, you can ignore the GetCropUrl extension method and use one of the previously discussed approaches as shown below.
 
     <img src="@mediaItem.Url" />
 

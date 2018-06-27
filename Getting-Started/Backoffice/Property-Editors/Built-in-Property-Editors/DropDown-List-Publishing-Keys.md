@@ -15,7 +15,7 @@ You can add, edit & delete the data prevalues rendered within the dropdown list.
 
 ## Content Example 
 
-![Downdown List Content](images/Dropdown-List-Keys-Content.png)
+![Dropdown List Content](images/Dropdown-List-Keys-Content.png)
 
 ## MVC View Example to output selected value
 

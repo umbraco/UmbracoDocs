@@ -152,4 +152,4 @@ A very basic example deriving from a DropDownList ASP.NET server control
 
 
 ### Further information ###
-* A nice blogpost by Richard Soeteman: [Create A Custom Macro ParameterType](http://www.richardsoeteman.net/2010/01/04/CreateACustomMacroParameterType.aspx)
+* A nice blog post by Richard Soeteman: [Create A Custom Macro ParameterType](http://www.richardsoeteman.net/2010/01/04/CreateACustomMacroParameterType.aspx)

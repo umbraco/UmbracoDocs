@@ -180,7 +180,7 @@ We bundle this library in Umbraco 7.1+ and you can therefore take full advantage
 
     <img src='@CurrentPage.GetCropUrl("image", "banner")&blur=11&sigma=1.5&threshold=10' />
 
-Using ImageProcessors built-in [gaussianblur](http://imageprocessor.org/imageprocessor-web/imageprocessingmodule/gaussianblur/)    
+Using ImageProcessors built-in [gaussian blur](http://imageprocessor.org/imageprocessor-web/imageprocessingmodule/gaussianblur/)    
 
 ## Upload property replacement
 

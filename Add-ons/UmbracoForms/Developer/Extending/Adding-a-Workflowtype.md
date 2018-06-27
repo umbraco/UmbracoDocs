@@ -8,7 +8,7 @@ Add a new class to your project and have it inherit from Umbraco.Forms.Core.Work
 		Log.Add(LogTypes.Debug, -1, "the IP " + record.IP + " has submitted a record");
 		//we can then iterate through the fields
 		foreach(RecordField rf in record.RecordFields.Values){
-			//and we can then do something with the collection of values on each field
+			// and we can then do something with the collection of values on each field
 			List<object> vals = rf.Values;
 
 			//or just get it as a string
@@ -20,7 +20,7 @@ Add a new class to your project and have it inherit from Umbraco.Forms.Core.Work
 		store.UpdateRecord(record, e.Form);
 		store.Dispose();
 
-		//we then invoke the recordservice which handles all record states //and make the service delete the record.
+		//we then invoke the recordservice which handles all record states // and make the service delete the record.
 		Umbraco.Forms.Core.Services.RecordService rs = new RecordService(record);
 		rs.Delete();
 		rs.Dispose();

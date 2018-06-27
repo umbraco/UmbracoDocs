@@ -11,14 +11,14 @@ Simply open a terminal / cmd in the Umbraco.Web.UI.Client folder and run:
 
 	npm install
 
-This should setup the entire Grunt, karma and jsint setup we use for tests and pruning.
+This should setup the entire Grunt, Karma and jsint setup we use for tests and pruning.
 
 ## Automated testing
 To start working on the client files, and have them automatically built and merged into the client project, as well as the VS project, simply run the command
 
 	grunt dev
 
-This will start a webserver on :8080 and tell karma to run tests every time a .js or .less file is changed. 
+This will start a webserver on :8080 and tell Karma to run tests every time a .js or .less file is changed. 
 After linting and tests have passed, all the client files are copied to umbraco.web.ui/umbraco folder, so it also keeps the server project up to date on any client changes. This should all happen in the background.
 
 ## Adding a new service

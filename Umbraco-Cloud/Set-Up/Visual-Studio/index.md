@@ -29,7 +29,7 @@ If you haven't cloned the repository before or don't have a [git credentials man
 ![](images/cmd-clone.png)
 
 Once its done running the tool will have created a Visual Studio solution file `*.sln` and two Projects. The one called `*.Web` contains the Umbraco site that was (git) cloned from your Project. The `*.Core` is a Class Library that you can use for your code, as mentioned above.
-Both projects are configured with the nuget packages for Umbraco using the version that corresponds to the site cloned from Umbraco Cloud.
+Both projects are configured with the NuGet packages for Umbraco using the version that corresponds to the site cloned from Umbraco Cloud.
 
 The result should look something like this within the folder where the UaaS.cmd tool ran:
 
@@ -44,7 +44,7 @@ Going up one level to where the `*.sln` file is located you will notice a `.git`
 
 So think of everything within the `*.Web` folder as your deployment repository, and everything surrounding that folder as your source code repository. The Umbraco Cloud repository (within the `*.Web` folder) will not (and should not) be committed to the other git repository.
 
-You can easily connect the source code repository to your own git repository host (like github, bitbucket, gitlab or Visual Studio Team Services).
+You can easily connect the source code repository to your own git repository host (like github, Bitbucket, GitLab or Visual Studio Team Services).
 From the command line you can use the following git command: `git remote add origin https://github.com/user-account/repository-name.git`
 
 ## What's next?

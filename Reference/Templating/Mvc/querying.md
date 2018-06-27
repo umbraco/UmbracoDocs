@@ -34,7 +34,7 @@ The same query structures apply to media:
 
 All of these extension methods are available on `Umbraco.Core.Models.IPublishedContent` so you can have strongly typed access to all of them with intellisense for both content and media. Additionally, all of these methods are available for the dynamic model representation too. The following methods return `IEnumerable<IPublishedContent>` (or dynamic if you are using @CurrentPage)
 
-	Children() //this is the same as using the Children property on the content item.
+	Children() // this is the same as using the Children property on the content item.
 	Ancestors()
 	Ancestors(int level)
 	Ancestors(string nodeTypeAlias)
@@ -72,7 +72,7 @@ Additionally there are other methods that will return a single `IPublishedConten
 
 ## Complex querying (Where)
 
-With the `IPublishedContent` model we support strongly typed Linq queries out of the box so you will have intellisense for that too. We also still support all of the dynamic query access that was supported for razor macros, however in some very minor cases the same syntax may not be supported. In some cases the dynamic queries may be less to type and in some cases the strongly typed way might be less to type so it will ultimately be your preference for what you use and you can most definitely inter-mingle the two.
+With the `IPublishedContent` model we support strongly typed LINQ queries out of the box so you will have intellisense for that too. We also still support all of the dynamic query access that was supported for razor macros, however in some very minor cases the same syntax may not be supported. In some cases the dynamic queries may be less to type and in some cases the strongly typed way might be less to type so it will ultimately be your preference for what you use and you can most definitely inter-mingle the two.
 
 ### Some examples
 

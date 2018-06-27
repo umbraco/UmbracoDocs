@@ -84,7 +84,7 @@ Here's an example of specifying auto link options for your OAuth provider:
     //back office user is created (auto-linked)
     autoLinkOptions.OnAutoLinking = (BackOfficeIdentityUser user, ExternalLoginInfo info) =>
     {
-		//this callback will execute when the user is being auto-linked but before it is created
+		// this callback will execute when the user is being auto-linked but before it is created
 		//so you can modify the user before it's persisted
     };
     
@@ -147,7 +147,7 @@ Here are the steps to specify your own logic for validating a username and passw
                         membershipProvider,
 			settingContent);
 			
-                    //Set your own custom IBackOfficeUserPasswordChecker   
+                    // Set your own custom IBackOfficeUserPasswordChecker   
                     userManager.BackOfficeUserPasswordChecker = new MyPasswordChecker();
                     return userManager;
                 });	
@@ -170,7 +170,7 @@ Then modify `~/App_Start/UmbracoStandardOwinStartup.cs` to override `UmbracoStan
 
     public override void Configuration(IAppBuilder app)
     {
-        //ensure the default options are configured
+        // ensure the default options are configured
         base.Configuration(app);
         // active directory authentication
         

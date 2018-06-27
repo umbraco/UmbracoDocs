@@ -8,7 +8,7 @@ All Umbraco views inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage` which expos
 
 * @Umbraco (of type `Umbraco.Web.UmbracoHelper`) -> contains many helpful methods, from rendering macros and fields to retreiving content based on an Id and tons of other helpful methods. [See UmbracoHelper Documentation](../../Querying/UmbracoHelper/index.md)
 * @Html (of type `HtmlHelper`) -> the same HtmlHelper you know and love from Microsoft but we've added a bunch of handy extension methods like @Html.BeginUmbracoForm
-* @CurrentPage (of type `DynamicPublishedContent`) -> the dynamic representation of the current page model which allows dynamic access to fields and also dynamic Linq
+* @CurrentPage (of type `DynamicPublishedContent`) -> the dynamic representation of the current page model which allows dynamic access to fields and also dynamic LINQ
 * @Model (of type `Umbraco.Web.Mvc.RenderModel`) -> the model for the view which contains a property called `Content` which gives you access to the typed current page (of type `IPublishedContent`). 
 * @UmbracoContext (of type `Umbraco.Web.UmbracoContext`)
 * @ApplicationContext (of type `Umbraco.Core.ApplicationContext`)

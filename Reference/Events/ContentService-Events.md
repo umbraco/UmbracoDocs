@@ -104,7 +104,7 @@ Example usage of the ContentService events:
         <td>(IContentService sender, CopyEventArgs&lt;IContent&gt; e)</td>
         <td>
         Raised when ContentService.Copy is called in the API.<br />
-        The event is fired after a copy object has been created and had its parentId updated and its state has been set to unpublished. <br />
+        The event is fired after a copy object has been created and had its parentId updated and its state has been set to un-published. <br />
         "sender" will be the current IContentService object.<br />
         "e" will provide:
             <ol>
@@ -248,7 +248,7 @@ Example usage of the ContentService events:
         "sender" will be the current IContentService object.<br />
         "e" will provide:
             <ol>
-                <li>Entity: Gets the IContent object being rolledback.</li>
+                <li>Entity: Gets the IContent object being rolled back.</li>
             </ol>
         </td>
     </tr>
@@ -260,7 +260,7 @@ Example usage of the ContentService events:
         "sender" will be the current IContentService object.<br />
         "e" will provide:
             <ol>
-                <li>Entity: Gets the rolledback IContent object.</li>
+                <li>Entity: Gets the rolled back IContent object.</li>
             </ol>
         </td>
     </tr>

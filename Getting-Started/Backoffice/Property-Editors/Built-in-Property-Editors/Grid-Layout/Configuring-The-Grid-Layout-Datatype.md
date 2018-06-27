@@ -25,4 +25,4 @@ You can add as many cells as you like. If they overflow the total width of the r
 
 ![Grid layouts](images/cells.png)
 
-Each cell can by default contain any type of editor such as simple textstring editors, imagespicker, embedded media or Umbraco macros. To override this behavior, uncheck the **allow all editors** option and you can specify which editors will be available for the row. 
+Each cell can by default contain any type of editor such as simple textstring editors, imagespicker, embedded media or Umbraco macros. To override this behavior, un-check the **allow all editors** option and you can specify which editors will be available for the row. 

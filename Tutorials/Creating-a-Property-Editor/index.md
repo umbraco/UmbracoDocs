@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide explains how to setup a simple property editor, how to hook it into Umbraco's datatypes, how to hook it into angulars modules and its injector, and finally how you can test your property editor.
+This guide explains how to setup a simple property editor, how to hook it into Umbraco's datatypes, how to hook it into angular's modules and its injector, and finally how you can test your property editor.
 
 So all the steps we will go through:
 
@@ -122,7 +122,7 @@ Then open the `markdowneditor.controller.js` file and edit it so it looks like t
 				"~/App_Plugins/MarkDownEditor/lib/markdown.editor.js"
 			])
 			.then(function () {
-			    //this function will execute when all dependencies have loaded
+			    // this function will execute when all dependencies have loaded
 			    alert("editor dependencies loaded");
 			});
 

@@ -135,7 +135,7 @@ There's been numerous cases of people attempting to return a PartialView directl
 	2. The call to `return CurrentUmbracoPage()` sends the request back through the Umbraco pipeline and maintains the current ModelState and ViewData
 	3. The process starts again at **2. Umbraco page rendered**
 
-So you can see that if you returned a Partial View from within your [HttpPost] action, the only thing that would happen is that you'd end up displaying only the markup for the partial view to the end-user because you are not sending the request back to Umraco.
+So you can see that if you returned a Partial View from within your [HttpPost] action, the only thing that would happen is that you'd end up displaying only the markup for the partial view to the end-user because you are not sending the request back to Umbraco.
 
 ## Display success messages
 

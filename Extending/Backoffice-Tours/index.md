@@ -151,7 +151,7 @@ A CSS selector for the element you wish to attach the JavaScript event. This is 
 
 The image below shows the entire tree highlighted, but requires the user to click on a specific tree element.
 
-![Step eventElement hightlighted](images/step-event-element.png)
+![Step eventElement highlighted](images/step-event-element.png)
 
 ### backdropOpacity
 

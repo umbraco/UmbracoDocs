@@ -109,7 +109,7 @@ It also means when this property editor is used on a property the prevalue will 
     // this is the property value
     $scope.model.value = "hello";
 
-    // this is the configration on the property editor
+    // this is the configuration on the property editor
     $scope.model.config
 
     // this is our specific prevalue with the alias wolf

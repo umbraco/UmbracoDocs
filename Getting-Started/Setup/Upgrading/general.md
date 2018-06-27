@@ -72,7 +72,7 @@ The installer will do two things:
 * Update the version number in the Web.config 
 * Upgrade your database in case there are any changes
 
-We are aware that, currently, the installer is asking you for the database details of a **blank database** while upgrading. In the near future this will be prefilled with your existing details and the wording will be updated. So no need to be scared. Just enter the details of your existing database and Umbraco will upgrade it to the latest version when necessary.
+We are aware that, currently, the installer is asking you for the database details of a **blank database** while upgrading. In the near future this will be pre-filled with your existing details and the wording will be updated. So no need to be scared. Just enter the details of your existing database and Umbraco will upgrade it to the latest version when necessary.
 
 ## Post installation
 One important recommendation is to always remove the `install` folder immediately after upgrading Umbraco and never to upload it to a live server.

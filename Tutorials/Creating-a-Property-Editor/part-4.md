@@ -98,7 +98,7 @@ Create a new file as `person.resource.js` and add:
 		function($q, $http, umbRequestHelper) {
 		    //the factory object returned
 		    return {
-		        //this calls the ApiController we setup earlier
+		        // this calls the ApiController we setup earlier
 		        getAll: function () {
 			    return umbRequestHelper.resourcePromise(
 			    	$http.get("backoffice/My/PersonApi/GetAll"),

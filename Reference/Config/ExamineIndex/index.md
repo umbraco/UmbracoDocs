@@ -6,7 +6,7 @@ The 'ExamineIndex.config' file contains the configuration for the Examine IndexS
 
 Umbraco ships with three IndexSets:
 
-* **InternalIndexSet** - used to power the Umbraco Backoffice search, and therefore includes unpublished content - (do not remove this)
+* **InternalIndexSet** - used to power the Umbraco Backoffice search, and therefore includes un-published content - (do not remove this)
 * **InternalMemberIndexSet** - used by the Umbraco Backoffice to index Members - (do not remove this)
 * **ExternalIndexSet** - Available to use for searching published content on the Umbraco site implementation.
 

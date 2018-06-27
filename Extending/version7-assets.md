@@ -4,7 +4,7 @@ _Describes how to deal with server variables and service URLs, along with how to
 
 ## Server Variables
 
-In v7 once a user is authenticated a request is made to retreive the Server Variables collection from the server which creates a global dictionary object that is accessible in JavaScript. This dictionary contains information based on the current Umbraco environment for which the JavaScript and client side needs to know about. Information such as whether the application is running in debug mode, the service API URLs, or other non-sensitive global server side variables.
+In v7 once a user is authenticated a request is made to retrieve the Server Variables collection from the server which creates a global dictionary object that is accessible in JavaScript. This dictionary contains information based on the current Umbraco environment for which the JavaScript and client side needs to know about. Information such as whether the application is running in debug mode, the service API URLs, or other non-sensitive global server side variables.
 
 In JavaScript, the server variables dictionary can be accessed by:
 

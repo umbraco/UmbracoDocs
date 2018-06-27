@@ -15,7 +15,7 @@ OK so let's see how we can extend this concept. In order for you to run some cod
 	{
 	    public override ActionResult Index(RenderModel model)
 	    {
-	        //Do some stuff here, then return the base method
+	        // Do some stuff here, then return the base method
 	        return base.Index(model);
 	    }
 
@@ -30,7 +30,7 @@ To further extend this, we've also allowed routing to different Actions based on
 	{
 	    public ActionResult MobileHomePage(RenderModel model)
 	    {
-	        //Do some stuff here, the return the base Index method
+	        // Do some stuff here, the return the base Index method
 	        return base.Index(model);
 	    }
 	}
@@ -75,7 +75,7 @@ Please note that if your template uses a layout that expects the model to be of 
 
 In an example above we reference that you can use the following syntax once you've hijacked a route:
 
-	//Do some stuff here, the return the base Index method
+	// Do some stuff here, the return the base Index method
     return base.Index(model);
 
 This will work but the object (model) that you pass to the `Index` method must be an instance of `Umbraco.Web.Models.RenderModel` which might not be the case if you have a custom model.
