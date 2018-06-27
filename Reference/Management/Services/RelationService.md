@@ -60,7 +60,6 @@ Gets an enumerable list of `Relation` objects that have the specified ParentId.
 	    var relType = rs.GetRelationTypeByAlias("memberFavorites");
 	    var favorites = new List<IPublishedContent>();
 	 
-	 
 	    if (memberId > 0)
 	    {
 	        var relations = rs.GetByParentId(memberId).Where(r => r.RelationType.Alias == "memberFavorites");
@@ -128,7 +127,7 @@ Saves a single `Relation` object.
 	 
 		if (!areRelated)
 		{
-			//create relation
+			// create relation
 			var relType = rs.GetRelationTypeByAlias("memberFavorites");
 			var r = new Relation(memberId, contentId, relType);
 			rs.Save(r);

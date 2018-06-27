@@ -20,10 +20,10 @@ A tour file contains an array of tour configuration JSON objects. So it's possib
 
 	[
 		{
-			//tour configuration object
+			// tour configuration object
 		},
 		{
-			//tour configuration object
+			// tour configuration object
 		}
 	]
 

@@ -79,7 +79,7 @@ We'll create a simple 'Image Position' Macro Parameter type providing a Radio Bu
          if ($scope.model.value == null) {
             $scope.model.value = 'FullWidth';
          }
-         //could read positions from defaultConfig
+         // could read positions from defaultConfig
         $scope.positions = [
             {
                 Name: 'FullWidth'

@@ -31,30 +31,30 @@ including razor views._
         [HttpPost]
         public ActionResult SubmitForm(ContactFormModel model)
         {        
-            //TODO: All normal form processing logic is left out of this example for brevity
+            // TODO: All normal form processing logic is left out of this example for brevity
 
-            //You can access all of these because they are properties of the base class,
+            // You can access all of these because they are properties of the base class,
             // notice there is no Singleton accessors used!
 
-            //ProfilingLogger:
+            // ProfilingLogger:
             using (ProfilingLogger.TraceDuration<ContactFormSurfaceController>("start", "stop"))
             {
-                //Logger:
+                // Logger:
                 Logger.Warn<ContactFormSurfaceController>("warning!");
                 
-                //MembershipHelper:
+                // MembershipHelper:
                 Members.CurrentUserName;
                 
-                //ServiceContext:
+                // ServiceContext:
                 Services.ContentService.GetById(1234);
                 
-                //ApplicationContext:
+                // ApplicationContext:
                 ApplicationContext.ApplicationCache.RuntimeCache.GetCacheItem("myKey", () => "hello world");
                 
-                //UmbracoContext:
+                // UmbracoContext:
                 UmbracoContext.UrlProvider.GetUrl(4321);
                 
-                //DatabaseContext:
+                // DatabaseContext:
                 DatabaseContext.Database.ExecuteScalar<int>("SELECT COUNT(*) FROM umbracoNode");   
             }        
         }
@@ -99,7 +99,7 @@ __Other Examples:__
 
     private static _umbracoContext = UmbracoContext.Current;
 
-    //MembershipHelper is also a request scoped instance - it relies either on an UmbracoContext or an HttpContext
+    // MembershipHelper is also a request scoped instance - it relies either on an UmbracoContext or an HttpContext
     private static _membershipHelper = new MembershipHelper(UmbracoContext.Current);
 
     private static _request = HttpContext.Current.Request;
@@ -220,10 +220,10 @@ that the data being queried is fast (comes from cache) and that you aren't inadv
 
 __For example__, when retrieving a content item in your views:
 
-    //Services access in your views :(
+    // Services access in your views :(
     var dontDoThis = ApplicationContext.Services.ContentService.GetById(123);
 
-    //Content cache access in your views :)
+    // Content cache access in your views :)
     var doThis = Umbraco.TypedContent(123);
 
 If you are using `Application.Services...` in your views, you should figure out why this is being done and, in most cases, remove this logic.   
@@ -399,12 +399,12 @@ The above example could be rewritten like this:
         {
             get 
             {
-                //Lazy load the property value and ensure it's not re-resolved once it's loaded
+                // Lazy load the property value and ensure it's not re-resolved once it's loaded
                 return _votes ?? (_votes = GetPropertyValue<int>("votes"));
             } 
         }
 
-        //Just return the Ids, they can be resolved to IPublishedContent instances in the view or elsewhere,
+        // Just return the Ids, they can be resolved to IPublishedContent instances in the view or elsewhere,
         // doesn't need to be in the model - this would also be bad if the model was cached since all of the
         // related entities would end up in the cache too.
         private List<int> _related;
@@ -412,7 +412,7 @@ The above example could be rewritten like this:
         {
             get 
             {
-                //Lazy load the property value and ensure it's not re-resolved once it's loaded            
+                // Lazy load the property value and ensure it's not re-resolved once it's loaded            
                 return _related ?? 
                     (_related = GetPropertyValue<IEnumerable<int>>("related").ToList());
             } 

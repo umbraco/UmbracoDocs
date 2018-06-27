@@ -40,15 +40,15 @@ Here's an example of a custom global.asax class which initializes the IoC contai
 
 			var builder = new ContainerBuilder();
 
-			//register all controllers found in your assembly
+			// register all controllers found in your assembly
 			builder.RegisterControllers(typeof(MyApplication).Assembly);
 			builder.RegisterApiControllers(typeof(MyApplication).Assembly);
 
-			//register Umbraco MVC + web API controllers used by the admin site
+			// register Umbraco MVC + web API controllers used by the admin site
 			builder.RegisterControllers(typeof(UmbracoApplication).Assembly);
 			builder.RegisterApiControllers(typeof(UmbracoApplication).Assembly);
 
-			//add custom class to the container as Transient instance
+			// add custom class to the container as Transient instance
 			builder.RegisterType<MyAwesomeContext>();
 
 			var container = builder.Build();
@@ -71,15 +71,15 @@ If you like to use the `IApplicationEventHandler` alternative - here is an examp
 		{
 			var builder = new ContainerBuilder();
 		
-			//register all controllers found in this assembly
+			// register all controllers found in this assembly
 			builder.RegisterControllers(typeof(MyApplication).Assembly);
 			builder.RegisterApiControllers(typeof(MyApplication).Assembly);
 
-			//register Umbraco MVC + web API controllers used by the admin site
+			// register Umbraco MVC + web API controllers used by the admin site
 			builder.RegisterControllers(typeof(UmbracoApplication).Assembly);
 			builder.RegisterApiControllers(typeof(UmbracoApplication).Assembly);
 
-			//add custom class to the container as Transient instance
+			// add custom class to the container as Transient instance
 			builder.RegisterType<MyAwesomeContext>();
 
 			var container = builder.Build();
@@ -109,9 +109,9 @@ In this example we will assume that we have a Document Type called 'Home' Now we
 
 		public override ActionResult Index(Umbraco.Web.Models.RenderModel model)
 		{
-			//get the current template name
+			// get the current template name
 			var template = this.ControllerContext.RouteData.Values["action"].ToString();
-			//return the view with the model as the id of the custom class
+			// return the view with the model as the id of the custom class
 			return View(template, _myAwesome.MyId);
 		}
 	}

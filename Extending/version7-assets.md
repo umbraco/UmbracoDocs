@@ -28,7 +28,7 @@ A handler for this method could look like:
 
     private void Parsing(object sender, Dictionary<string, object> dictionary)
     {
-		//add stuff to the dictionary, preferably under your own custom section such as:
+		// add stuff to the dictionary, preferably under your own custom section such as:
         dictionary.Add("myPackage", new Dictionary<string, object>
             {
                 {"mySetting1", "blah"},

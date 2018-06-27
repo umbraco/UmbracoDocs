@@ -71,6 +71,6 @@ So to add a service, which requires data from the server we should:
 There is a static servervariables file in /mocks which describes the urls used by the rest service, this is currently needed as we don't have this set as an angular service, and no real conventions for these urls yet. Longer-term it would be great to have a urlBuilder which could do
 
 	urlService.url("contentTypes", "GetAllowedChildren");
-	//would return /<umbracodir>/<apibaseDir>/contentyTypes/getAllowedChildren
+	// would return /<umbracodir>/<apibaseDir>/contentyTypes/getAllowedChildren
 
 But for now, they are set in the servervariables file.	

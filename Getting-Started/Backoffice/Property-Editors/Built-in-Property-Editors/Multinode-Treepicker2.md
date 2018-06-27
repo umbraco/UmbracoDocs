@@ -12,16 +12,16 @@ The Multinode Treepicker allows you to configure the type of tree to render, wha
 
 For querying for a root node, you can use dynamic placeholders in the XPath query, following the below sample queries 
 
-	//get the first textpage below the current document
+	// get the first textpage below the current document
 	$current/textpage: current page or closest found ancestor
 	
-	//get a descendant of type news article somewhere below the parent
+	// get a descendant of type news article somewhere below the parent
 	$parent//newsArticle: parent page or closest found ancestor
 	
-	//go to the root the content tree
+	// go to the root the content tree
 	$root
 	
-	//go the ancestor at @level=1 where your website root usually is.
+	// go the ancestor at @level=1 where your website root usually is.
 	$site: Ancestor node at level 1 
 
 It is important to notice that all placeholders above acts against published content only. So if you therefore try to fetch `$parent` of the the current document, then Umbraco will return that or its closest published ancestor. So in case parent is not published, it will try the parent of that parent, and so on.  

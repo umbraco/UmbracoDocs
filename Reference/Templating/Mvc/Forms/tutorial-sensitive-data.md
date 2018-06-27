@@ -38,20 +38,20 @@ For this tutorial, the Surface controller that we will create will contain one a
 		[HttpPost]
 		public ActionResult CreateComment(CommentViewModel model)
 		{    
-		    //model not valid, do not save, but return current Umbraco page
+		    // model not valid, do not save, but return current Umbraco page
 		    if (!ModelState.IsValid)
 			{
-				//Perhaps you might want to add a custom message to the ViewBag
-				//which will be available on the View when it renders (since we're not 
-				//redirecting)	    	
+				// Perhaps you might want to add a custom message to the ViewBag
+				// which will be available on the View when it renders (since we're not 
+				// redirecting)	    	
 		   		return CurrentUmbracoPage();
 			}
 				    
-			//Add a message in TempData which will be available 
-			//in the View after the redirect 
+			// Add a message in TempData which will be available 
+			// in the View after the redirect 
 			TempData.Add("CustomMessage", "Your form was successfully submitted at " + DateTime.Now)
 		
-		    //redirect to current page to clear the form
+		    // redirect to current page to clear the form
 		    return RedirectToCurrentUmbracoPage();		    
 		}
 	}

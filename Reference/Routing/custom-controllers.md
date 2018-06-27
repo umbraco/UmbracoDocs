@@ -61,10 +61,10 @@ Please note that if your template uses a layout that expects the model to be of 
 
 		public class MyNewViewModel : RenderModel
 		{
-			//Standard Model Pass Through
+			// Standard Model Pass Through
 			public MyNewViewModel(IPublishedContent content) : base(content) { }
 	
-			//Custom properties here...
+			// Custom properties here...
 			public string MyProperty1 { get; set; }
 			public string MyProperty2 { get; set; }
 		}
@@ -85,10 +85,10 @@ So to return a custom model to the current Umbraco template, we need to use diff
 	{
 	    public ActionResult MobileHomePage(RenderModel model)
 	    {
-	        //we will create a custom model
+	        // we will create a custom model
 			var myCustomModel = new MyCustomModel();
 
-			//TODO: assign some values to the custom model...
+			// TODO: assign some values to the custom model...
 
 			return CurrentTemplate(myCustomModel);
 	    }

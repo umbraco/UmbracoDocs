@@ -32,7 +32,7 @@ This is what dataresolvers do, add special meaning to specific data that matches
 ## Sample Data Resolver
 To show some code as fast as possible here is a commented code sample which outlines a simple resolver:
 
-	//inherit from ItemDataResolver and implement ResolvableTypes and ShouldExecute
+	// inherit from ItemDataResolver and implement ResolvableTypes and ShouldExecute
 	public class test : ItemDataResolverProvider
 	{
 	    // resolvableTypes are the types of content which can be processed by this resolver
@@ -43,9 +43,9 @@ To show some code as fast as possible here is a commented code sample which outl
 	        get { return new List<Type> { typeof(Template) }; }
 	    }
 	 
-	    //ShouldExecute, a fast way to determine if the provider should trigger or not, under a specific event
-	    //in this case the resolver will only trigger during Packaging Event and if the template has any 
-	    //JavaScript resources packaged
+	    // ShouldExecute, a fast way to determine if the provider should trigger or not, under a specific event
+	    // in this case the resolver will only trigger during Packaging Event and if the template has any 
+	    // JavaScript resources packaged
 	    public override bool ShouldExecute(Item item, Core.Enums.ItemEvent itemEvent)
 	    {
 	        if (itemEvent == Core.Enums.ItemEvent.Packaging)
@@ -57,13 +57,13 @@ To show some code as fast as possible here is a commented code sample which outl
 	        return false;
 	    }
 	 
-	    //Implements the packaging event, here we can change the content of the item being processed 
-	    //we have access to all the data  and can replace anything, which will then be saved to the revision.
+	    // Implements the packaging event, here we can change the content of the item being processed 
+	    // we have access to all the data  and can replace anything, which will then be saved to the revision.
 	    public override void Packaging(Item item)
 	    {
-	        //here we simply just fetch the JavaScript resource and could then do something with those                foreach (var jsFile in item.Resources.Where(x => x.ExtractToPath.EndsWith(".js")))
+	        // here we simply just fetch the JavaScript resource and could then do something with those                foreach (var jsFile in item.Resources.Where(x => x.ExtractToPath.EndsWith(".js")))
 	        {
-	            //do something with that jsFile
+	            // do something with that jsFile
 	        }
 	    }
 	}
@@ -170,38 +170,38 @@ Besides this simplified event model, the Resolver matching is purely done based 
 
 ## Sample PropertyDataResolverProvider
  This sample goes through processing a datatype which stores a list of images in a custom format like so: 
-“Name|image1.gif” “Name2|image2.gif “, “Nameshdshd|image45.png” in its configuration.
+“Name|image1.gif” “Name2|image2.gif “, “Name3|image45.png” in its configuration.
 It looks at that configuration and tells courier the files it can find so courier remembers to transfer them, and finally this sample changes some data on the media / document properties using this data type.
 
-	//inherit from PropertyDataResolverProvider
+	// inherit from PropertyDataResolverProvider
 	public class ImageDropdownlist : PropertyDataResolverProvider
 	{
-	    //the GUID of the datatype
+	    // the GUID of the datatype
 	    public override Guid DataTypeId
 	    {
 	        get { return new Guid("a4ca44c9-ebb6-48e8-8d39-96bfdf619825"); }
 	    }
 	    
-	    //happens while we package the data type and its configuration
-	    //as well as prevalues
+	    // happens while we package the data type and its configuration
+	    // as well as prevalues
 	    public override void PackagingDataType(ItemProviders.DataType item)
 	    {
-	        //we go through the settings/prevalues and save references to images stored in the datatype
+	        // we go through the settings/prevalues and save references to images stored in the datatype
 	        foreach (var setting in item.Prevalues.Where(x => x.Value.Contains("|") ))
 	        {
-	            //split the settings on the | char
+	            // split the settings on the | char
 	            var currentSetting = setting.Value.Split('|');
 	            var file = currentSetting[1];
 	 
-	            //simply add to the item.Resources to store and transfer as part of the revision
+	            // simply add to the item.Resources to store and transfer as part of the revision
 	            item.Resources.Add(file);
 	        }
 	    }
 	 
-	    //here we intercept the actual data and replace any unicorn mention with "horse"
+	    // here we intercept the actual data and replace any unicorn mention with "horse"
 	    public override void PackagingProperty(Core.Item item, ItemProviders.ContentProperty propertyData)
 	    {
-	        //get the reference to the property data object the data is part of
+	        // get the reference to the property data object the data is part of
 	        var properties = (ContentPropertyData)item;
 	 
 	        if (propertyData.Value.ToString() == "unicorn")
@@ -211,7 +211,7 @@ It looks at that configuration and tells courier the files it can find so courie
 
 
 # Helpers for working with custom XML data
-A common use-case is a data type storing node ID references in an xml structure. Due to Umbracos history and xml usage, this is a common road for data type developers to take. 
+A common use-case is a data type storing node ID references in an xml structure. Due to Umbraco's history and xml usage, this is a common road for data type developers to take. 
 For instance storing data like so:
 	
 	<nodes>
@@ -249,7 +249,7 @@ The Xml as a string with all IDs replaced
 	                        dataXPath,  IdentifierReplaceDirection.FromNodeIdToGuid,
 	                        out replacedIds);
 	 
-	//these are the IDs we found in the picker, those documents are a dependency
+	// these are the IDs we found in the picker, those documents are a dependency
 	foreach (string guid in replacedIds)
 	{
 	    item.Dependencies.Add(guid, ProviderIDCollection.documentItemProviderGuid);

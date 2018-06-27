@@ -40,10 +40,10 @@ In the example above we have a constructor that accepts a default `IErrorLogger`
 
 Its usage is then very easy:
 
-	//get the error logger
+	// get the error logger
 	IErrorLogger logger = ErrorLoggerResolver.Current.ErrorLogger;
 
-	//set the error logger (can only be done during application startup)
+	// set the error logger (can only be done during application startup)
 	ErrorLoggerResolver.Current.SetErrorLogger(new MyCustomErrorLogger("../my-file-path"));
 
 ## Creating a multiple object resolver

@@ -209,7 +209,7 @@ Checks if a `MediaType` with the supplied alias exists in the list of composite 
 Removes a `MediaType` with the supplied alias from the the list of composite MediaTypes.
 
 	// Given a `ContentTypeService` object get a MediaType by its alias and 
-	//remove the 'Meta' MediaType from its composition.
+	// remove the 'Meta' MediaType from its composition.
 	var mediaType = contentTypeService.GetMediaType("video");
 	bool success = mediaType.RemoveContentType("meta");
 	if(success)

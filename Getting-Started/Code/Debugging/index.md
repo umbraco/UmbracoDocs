@@ -57,7 +57,7 @@ If within your implementation there are certain lines of code that you think may
     using(profiler.DebugDuration<Products>("Artificially Slow Example"))
     {
         // you would place the code you wanted to measure in here...
-        //just make this sleep for a second, for example purposes:
+        // just make this sleep for a second, for example purposes:
         System.Threading.Thread.Sleep(1000);
     }
 

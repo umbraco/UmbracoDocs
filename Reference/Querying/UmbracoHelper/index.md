@@ -138,7 +138,7 @@ Given a node ID, returns a `dynamic` object, representing a single `IPublishedCo
     @foreach (var child in media.Children) {
         <img src="@child.Url" alt="@child.Name">
     }
-    //access a cropper on the umbracoFile property
+    // access a cropper on the umbracoFile property
     <img src="@Url.GetCropUrl(media, "umbracoFile", "banner") />
 
 
