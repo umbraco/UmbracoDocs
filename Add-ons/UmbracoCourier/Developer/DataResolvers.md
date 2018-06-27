@@ -42,7 +42,7 @@ To show some code as fast as possible here is a commented code sample which outl
 	    {
 	        get { return new List<Type> { typeof(Template) }; }
 	    }
-	 
+
 	    // ShouldExecute, a fast way to determine if the provider should trigger or not, under a specific event
 	    // in this case the resolver will only trigger during Packaging Event and if the template has any 
 	    // JavaScript resources packaged
@@ -61,10 +61,11 @@ To show some code as fast as possible here is a commented code sample which outl
 	    // we have access to all the data  and can replace anything, which will then be saved to the revision.
 	    public override void Packaging(Item item)
 	    {
-	        // here we simply just fetch the JavaScript resource and could then do something with those                foreach (var jsFile in item.Resources.Where(x => x.ExtractToPath.EndsWith(".js")))
-	        {
-	            // do something with that jsFile
-	        }
+		// here we simply just fetch the JavaScript resource and could then do something with those
+		foreach (var jsFile in item.Resources.Where(x => x.ExtractToPath.EndsWith(".js")))
+			{
+				// do something with that jsFile
+			}
 	    }
 	}
 	
