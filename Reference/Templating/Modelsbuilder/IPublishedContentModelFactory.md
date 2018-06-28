@@ -75,7 +75,7 @@ Which prompts **rule number 1**: Content models must be *stateless* with regards
 
 A cache that would cache the content objects, would refresh (replace) the object corresponding to a content item, when that content item is modified (published). So, a new object is created, property values will be converted again, etc.
 
-Things become more complicated when a content references another content. Say, content A contains a content picker that has been used to pick content B, and that picker has a value converter that directly returns a content object. If content B is un-published then... content A does *not* change yet the value returned by the property *must* change.
+Things become more complicated when a content references another content. Say, content A contains a content picker that has been used to pick content B, and that picker has a value converter that directly returns a content object. If content B is unpublished then... content A does *not* change yet the value returned by the property *must* change.
 
 The content cache would take care of that situation for converted properties automatically (using hints given by the converter via the `PropertyValueCacheAttribute` attribute). But anything else, any custom reference stored, e.g. in a field, would *not* be refreshed and therefore would be out-of-sync.
 

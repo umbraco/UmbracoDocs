@@ -104,7 +104,7 @@ Example usage of the ContentService events:
         <td>(IContentService sender, CopyEventArgs&lt;IContent&gt; e)</td>
         <td>
         Raised when ContentService.Copy is called in the API.<br />
-        The event is fired after a copy object has been created and had its parentId updated and its state has been set to un-published. <br />
+        The event is fired after a copy object has been created and had its parentId updated and its state has been set to unpublished. <br />
         "sender" will be the current IContentService object.<br />
         "e" will provide:
             <ol>

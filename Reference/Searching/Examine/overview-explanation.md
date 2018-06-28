@@ -86,7 +86,7 @@ Let's look at each of the options.
 
 **indexSet (optional)**: Explicitly specifies the index set to use. Generally this is wired up based on naming conventions.
 
-**supportUnpublished (optional)**: As the name implies specifies whether or not you want to index un-published content.
+**supportUnpublished (optional)**: As the name implies specifies whether or not you want to index unpublished content.
 
 **supportProtected (optional)**: Set this to true if you want it to index your protected content.
 

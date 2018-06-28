@@ -63,7 +63,7 @@ Returns the id as an `int` of the `ContentType` object representing the Document
 	return content.ContentTypeId;
 
 ### .ExpireDate
-If set, returns the `DateTime` the Content is meant to be un-published and become unavailable on the website.
+If set, returns the `DateTime` the Content is meant to be unpublished and become unavailable on the website.
 
 	// Given a `ContentService` object get Content by its Id and set the expire date to 5 days from now
 	var content = contentService.GetById(1234);
