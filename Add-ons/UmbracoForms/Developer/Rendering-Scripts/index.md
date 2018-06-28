@@ -31,3 +31,11 @@ to
 Now we'll need to let Forms know where we want to output the script instead. So Navigate to the settings section and select  your template that should contain the scripts. There simply insert the *Render Umbraco Forms Scripts* macro.
 
 	@Umbraco.RenderMacro("FormsRenderScripts")
+
+Maybe you end up with an error like this "CS0234: The type or namespace name 'RenderMacro' does not exist in the namespace 'Umbraco' (are you missing an assembly reference?)". This is probably due to the fact that you're using custom controllers and viewmodels where the UmbracoContext is not exposed. The fix is to create your own UmbracoContext first:
+
+@{
+    // create your own umbraco context
+    var umbraco = new UmbracoHelper(UmbracoContext.Current);
+}
+@umbraco.RenderMacro("FormsRenderForm", new { FormGuid = "1203e391-30bb-4ffc-8fe6-1785d6093108" })
