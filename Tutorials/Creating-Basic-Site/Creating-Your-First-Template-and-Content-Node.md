@@ -75,15 +75,15 @@ Click the Footer tab and enter:
 >**Footer Text**	 "Copyright Widgets Ltd 2014" 
 
 
-Now click the green **_Save and publish_** button.  The menu will reload with our homepage node under the **_CONTENT_** label. And here's the good bit... go and refresh your webpage in your browser http://localhost – the default Umbraco page will be gone and we'll see a very bare, un-styled page! We’re getting there!
+Now click the green **_Save and publish_** button.  The menu will reload with our homepage node under the **_CONTENT_** label. And here's the good bit... go and refresh your webpage in your browser http://localhost – the default Umbraco page will be gone and we'll see a very bare, unstyled page! We’re getting there!
 
 >If you see a blank page then check you entered your template markup and remembered to save it.
 
 
-![An Un-styled Homepage](images/figure-16-unstyled-homepage.png)
+![An Unstyled Homepage](images/figure-16-unstyled-homepage.png)
 
 
-*Figure 16 – An Un-styled Homepage*
+*Figure 16 – An Unstyled Homepage*
 
 
 ---
