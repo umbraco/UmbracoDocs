@@ -1,6 +1,6 @@
 # Scheduled Publishing
 
-Each document in Umbraco can be scheduled for publishing and un-publishing on a pre-defined date and time. In order to do this, go to the "Properties" tab and find the "Publish at" and "Unpublish at" fields. There you can select the exact date and time to publish and unpublish the current content item.
+Each document in Umbraco can be scheduled for publishing and unpublishing on a pre-defined date and time. In order to do this, go to the "Properties" tab and find the "Publish at" and "Unpublish at" fields. There you can select the exact date and time to publish and unpublish the current content item.
 
 ![Scheduled publishing](images/Publish-At.jpg)
 
