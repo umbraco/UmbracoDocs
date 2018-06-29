@@ -68,6 +68,8 @@ You can also specify the output type that you want from the property. If the pro
 
 ## Rendering a field using @CurrentPage (dynamically)
 
+**Attention! This approach is considered obsolete** - See [Common pitfalls](https://our.umbraco.org/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
+
 The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however simply want to render value "as-is" you can use the @CurrentPage property of the view. The difference between @CurrentPage and @Model.Content is that @CurrentPage is the dynamic representation of the model which exposes many dynamic features for querying. For example, to render a field you simply use this syntax:
 
 	@CurrentPage.bodyContent
