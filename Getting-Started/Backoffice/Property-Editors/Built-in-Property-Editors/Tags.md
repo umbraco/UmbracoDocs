@@ -1,5 +1,6 @@
 # Tags
 `Alias: Umbraco.Tags`
+
 `Returns: CSV` or `JSON`
 
 The Tags property editor allows you to add multiple tags to a node.
