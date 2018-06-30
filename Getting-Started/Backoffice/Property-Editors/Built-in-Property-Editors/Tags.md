@@ -1,25 +1,42 @@
 # Tags
-`Alias: `
-`Returns: String Array`
+`Alias: Umbraco.Tags`
+`Returns: CSV` or `JSON`
 
-Allows you tag add multiple tags to a node.
+The Tags property editor allows you to add multiple tags to a node.
 
 ## Data Type Definition Example
 
-![Data Type Definition Example](images/DateTime-DataType.png)
+![Data Type Definition Example](images/tags/configuration.png)
 
 Data can be saved in either CSV format or in JSON format. By default data is saved in CSV format. The difference between using CSV and JSON is that with JSON you can save a tag, which includes comma seperated values.
-*TODO - ADD MEANINGFUL JSON TAG EXAMPLE AND ACTUALLY TEST CSV VS. JSON ON THIS ONE!*
 
-Whenever you add a new tag on a node the tag will also be available for use in other nodes, which will occur when you type using typeahead functionality. So if you need different tag groups you can create a new instance of the tags property editor and change the group name.
-*TODO - ADD CONFIG EXAMPLE SCREENDUMP FOR THIS ONE?*
+Since the release of Umbraco 7.6 there are built-in property value converters, which means you don't need to worry about writing them yourself or parse the JSON output when choosing "JSON" in the storage type field. Therefore code example last on this page will work out of the box without further ado.
 
-## Content Example
+## Content Examples
 
-![Content Example](images/Date-Time-Content.png)
+### CSV tags
 
-## MVC View Example - displays a datetime
+![CSV tags example](images/tags/7.6/csv-example.png)
+
+### JSON tags
+
+![JSON tags example](images/tags/7.6/json-example.png)
+
+### Tags typeahead
+
+Whenever a tag has been added it will be visible in the typeahead when you start typing on other pages.
+
+![Tags typeahead example](images/tags/7.6/typeahead.png)
+
+## MVC View Example - displays a list of tags
 
 ### Typed:
 
-	@(Model.Content.GetPropertyValue<DateTime>("datePicker").ToString("dd MM yyyy"))
+    @if(Model.Content.Tags.Any()){
+        <ul>
+            foreach(var tag in Model.Content.Tags){
+                <li>@tag</li>
+            }
+        </ul>
+    }
+
