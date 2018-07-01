@@ -108,16 +108,11 @@ are used, these must be in `images` folders next to the .md file referencing the
 
 # Annotating a document
 
-The documentation markdown files are allowed to contain meta data.  This is done by adding (YAML)[https://en.wikipedia.org/wiki/YAML] at the top of the document.
+To add version information and extra keywords, [every document can be annotated using YAML](adding-metadata.md). 
 
-    ---
-    keywords: content razor v8 version8
-    versionFrom: 8.0.0
-	versionFrom: 7.3.4
-    ---
+# Multi version documentation
+With the introduction every new version of Umbraco new features are introduced.  This means that not every document will work for your possibly older version.
 
-Currently there are 3 different types of meta data supported.  
-
-1. **keywords**:  with space separated property adding the possibility to supply other keywords which improve findability
-2. **versionFrom**: an optional property with semver notation to indicate from which version this page is valid (or the feature the page describes has been introduced).
-3. **versionTo**: an optional property with semver notation to indicate till which version this page page valid
+Therefor we introduced 2 different mechanisms.
+1. the [YAML meta data describing](adding-metadata.md) `versionFrom` and `versionTo`.
+2. the possibility [to add multiple files about the same topic](file-naming-conventions.md)
