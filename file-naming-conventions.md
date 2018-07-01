@@ -59,6 +59,6 @@ file name                       | versionFrom | versionTo | renders out
 ------- |:-------------:| -----:| ---        
 `flexible-vpost-7.6.md`  | 7.6.0        | 7.7.2    | 7.6.0 - 7.7.2
 `flexible-vpre-7.3.md`   |              | 7.3.0    | pre 7.3.0
-`flexible.md`            | 7.7.3        |          | 7.7.3 +
+`flexible.md`            |              |          | current
 `flexible-v8.md`         | 8.0.0        |          | 8.0.0 +
 `flexible-v7.7.7.md`     | 7.7.7        | 7.7.7    | 7.7.7 (only)
