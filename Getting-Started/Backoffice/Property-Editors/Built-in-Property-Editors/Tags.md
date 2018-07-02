@@ -1,3 +1,8 @@
+---
+keywords: tags property editors v7.6 version7.6
+versionFrom: 7.6.0
+---
+
 # Tags
 `Alias: Umbraco.Tags`
 
