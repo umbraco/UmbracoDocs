@@ -1,6 +1,6 @@
 # Multi version documentation conventions
 
-To support multi version documentation have introduce these conventions.
+To support multi version documentation we have introduce these conventions.
 
 1) a file without a version postfix is about the current and most recent version
 2) add a new file with a version postfix
