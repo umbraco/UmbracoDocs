@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide explains how to setup a simple property editor, how to hook it into Umbraco's datatypes, how to hook it into angulars modules and its injector, and finally how you can test your property editor.
+This guide explains how to set up a simple property editor, how to hook it into Umbraco's datatypes, how to hook it into Angular's modules and its injector, and finally how you can test your property editor.
 
 So all the steps we will go through:
 
@@ -35,7 +35,7 @@ The first thing we must do is create a new folder inside `/App_Plugins` folder. 
 Next we will create a simple manifest file to describe what this plugin does. This manifest will tell Umbraco about our new property editor and allows us to inject any needed files into the application, so we create the file `/App_Plugins/MarkDownEditor/package.manifest`
 [For full package.manifest JSON documentation see here](../../Extending/Property-Editors/package-manifest.md)
 
-Inside this package manifest we add a bit of JSON to describe the property editor, have a look at the inline comments in the JSON below for details on each bit:
+Inside this package manifest we add a bit of JSON to describe the property editor. Have a look at the inline comments in the JSON below for details on each bit:
 
 	{
 		//you can define multiple editors
@@ -94,13 +94,13 @@ Now our basic parts of the editor is done, namely:
 ## Register the datatype in Umbraco
 After the above edits are done, restart your application. Go to the Developer section, click the 3 dots next to the datatypes folder and create a new data type called "markdown". In the editor you can now select a property editor, where your newly added "markdown editor" will appear.
 
-Save the datatype, and add it to a document type of your choice, open a document of that type, and you will be greeted with an alert message saying "The controller has landed", which means all is well, and you can now edit the assigned property's value with your editor.
+Save the datatype, and add it to a document type of your choice. Open a document of that type, and you will be greeted with an alert message saying "The controller has landed", which means all is well. You can now edit the assigned property's value with your editor.
 
 
 ## Add external dependencies
 Lets go a bit further, and load in a markdown editor JavaScript library, I've chosen [pagedown][PagedownBootstrap], but you can use whatever you want.
 
-First of, I'll add some external files to our package folder, in /app_plugins/markdowneditor/lib folder, these files comes from the pagedown editor project found here:
+First of, I'll add some external files to our package folder, in /app_plugins/markdowneditor/lib folder. These files comes from the pagedown editor project found here:
 
 [Pagedown-bootstrap on github.com][PagedownBootstrap]
 
@@ -132,13 +132,13 @@ Then open the `markdowneditor.controller.js` file and edit it so it looks like t
 
 This loads in our external dependency, but only when it's needed by the editor.
 
-Now lets replace that `alert()` with some code that can instantiate the pagedown editor:
+Now let's replace that `alert()` with some code that can instantiate the pagedown editor:
 
 	var converter2 = new Markdown.Converter();
     var editor2 = new Markdown.Editor(converter2, "-" + $scope.model.alias);
     editor2.run();
 
-and add that id to the textarea in the HTML, for more info on the HTML structure, see the pagedown demo [here](https://github.com/samwillis/pagedown-bootstrap/blob/master/demo/browser/demo.html):
+and add that id to the textarea in the HTML. For more info on the HTML structure, see the pagedown demo [here](https://github.com/samwillis/pagedown-bootstrap/blob/master/demo/browser/demo.html):
 
 	<div ng-controller="My.MarkdownEditorController" class="wmd-panel">
 		<div id="wmd-button-bar-{{model.alias}}"></div>
@@ -150,7 +150,7 @@ and add that id to the textarea in the HTML, for more info on the HTML structure
 		<div id="wmd-preview-{{model.alias}}" class="wmd-panel wmd-preview"></div>
 	</div>
 
-Now, clear the cache, reload the document and see the pagedown editor running.
+Now, clear the cache, reload the document, and see the pagedown editor running.
 
 When you save or publish, the value of the editor is automatically synced to the current content object and sent to the server, all through the power of angular and the `ng-model` attribute.
 
