@@ -23,7 +23,7 @@ _This example is for creating a .NET Core Console (command line) application_
    ```
    * Start using the `HeadlessService`:
    ```cs
-    //get all all content and list their names
+    // get all all content and list their names
     var allContent = headlessService.Query().GetAll().Result;
     foreach(var item in allContent) {
         Console.WriteLine($"{item.Id} - {item.Name}");
@@ -47,16 +47,17 @@ static void Main(string[] args)
 
     var configuration = builder.Build();
 
-    //setup a container
+    // setup a container
     var services = new ServiceCollection()
         .AddLogging(config => config.AddConsole().SetMinimumLevel(LogLevel.Debug))
-        //include the Umbraco headless services and pass in the config instance
+        
+        // include the Umbraco headless services and pass in the config instance
         .AddUmbracoHeadlessClient(configuration)
         .BuildServiceProvider();
 
     var logger = services.GetRequiredService<ILogger<Program>>();
     var client = services.GetRequiredService<HeadlessService>();
-    //get all all content and list their names
+    // get all all content and list their names
     var allContent = headlessService.Query().GetAll().Result;
     foreach(var item in allContent) {
         logger.LogDebug($"{item.Id} - {item.Name}");

@@ -10,7 +10,7 @@ The 'trees.config' file contains the configuration for [trees](../../../Extendin
 
 Each Tree element defined in trees.config requires the following attributes:
 
-* **alias** - The alias of the tree. to refer to the tree programatically and the key to use in Language Translation files.
+* **alias** - The alias of the tree. to refer to the tree programmatically and the key to use in Language Translation files.
 * **title** - The title of the tree.
 * **iconClosed** - The icon to display when the tree element is closed.
 * **iconOpen** - The icon to display when the tree element has been expanded.

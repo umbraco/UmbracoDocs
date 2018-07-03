@@ -7,7 +7,7 @@ When creating a data type, you specify the property editor for the data type to 
 ![Data Type Definition](Built-in-Property-Editors/images/Media-Picker-DataType.jpg)
 
 ## [Built-in Property Editors in Umbraco](Built-in-Property-Editors/index.md)
-Umbraco comes preinstalled with many useful property editors...
+Umbraco comes pre-installed with many useful property editors...
 
 ## More information
 - [Customizing Data Types](../../Data/Data-Types/)

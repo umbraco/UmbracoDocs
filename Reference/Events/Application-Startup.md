@@ -24,7 +24,7 @@ This example will populate some default data for newly created content items:
         {
             protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
             {
-                //Listen for when content is being saved
+                // Listen for when content is being saved
                 ContentService.Saving += ContentService_Saving;     
             }
             
@@ -35,18 +35,18 @@ This example will populate some default data for newly created content items:
             private void ContentService_Saving(IContentService sender, SaveEventArgs<IContent> e)
             {                
                 foreach (var content in e.SavedEntities
-                    //Check if the content item type has a specific alias
+                    // Check if the content item type has a specific alias
                     .Where(c => c.Alias.InvariantEquals("MyContentType"))
-                    //Check if it is a new item
+                    // Check if it is a new item
                     .Where(c => c.IsNewEntity()))
                 {
-                    //check if the item has a property called 'richText'
+                    // Check if the item has a property called 'richText'
                     if (content.HasProperty("richText"))
                     {
-                        //get the rich text value
+                        // get the rich text value
                         var val = c.GetValue<string>("richText");
                         
-                        //if there is a rich text value, set a default value in a 
+                        // if there is a rich text value, set a default value in a 
                         // field called 'excerpt' that is the first
                         // 200 characters of the rich text value
                         c.SetValue("excerpt", val == null
@@ -86,7 +86,7 @@ If you want more control over execution you can override these properties:
 * ExecuteWhenApplicationNotConfigured
 	* By default this is false but if you want these methods to fire even when the application is not configured you can override this property and return true
 * ExecuteWhenDatabaseNotConfigured
-	* By default this is false but if you want these methods to fire even if the database is not installed/ready then you can overrride this property and return true
+	* By default this is false but if you want these methods to fire even if the database is not installed/ready then you can override this property and return true
 
 ### IBootManager (EXPERT)
 
@@ -113,8 +113,8 @@ In order to bind to these events you need to first listen to the `UmbracoApplica
         {
             protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
             {
-                //Listen for the ApplicationInit event which then allows us to bind to the
-                //HttpApplication events.
+                // Listen for the ApplicationInit event which then allows us to bind to the
+                // HttpApplication events.
                 UmbracoApplicationBase.ApplicationInit += UmbracoApplicationBase_ApplicationInit;     
             }
             
@@ -132,7 +132,7 @@ In order to bind to these events you need to first listen to the `UmbracoApplica
             /// </summary>            
             void UmbracoApplication_PostRequestHandlerExecute(object sender, EventArgs e)
             {
-                //Do something...
+                // Do something...
             }
         }
     }

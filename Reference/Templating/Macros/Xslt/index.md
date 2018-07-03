@@ -28,7 +28,7 @@ Variables and parameters are temporary storage devices in XSLT for holding simpl
 XPath works on the premise of Axes, which is how the data relates to the current node.
 
 ## [XPath and XSLT Loops](XPath-and-XSLT-Loops.md)
-This command takes an XPATH statement and iterates the results for each match, executing the nested commands each time
+This command takes an XPath statement and iterates the results for each match, executing the nested commands each time
 
 ## [Umbraco.library](Umbraco.Library/index.md)
 Umbraco.library is a collection of helpers available to both Razor and XSLT

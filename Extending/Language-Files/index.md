@@ -51,7 +51,7 @@ Using core or custom language keys from your code:
 
 
 ### From .net
-`Services` are available in most Umbraco baseclasses like Controllers and UserControls, from there, use TextService to localize string with format [area]/[key]:
+`Services` are available in most Umbraco base classes like Controllers and UserControls, from there, use TextService to localize string with format [area]/[key]:
 
     using Umbraco.Core.Services;
     var localizedLabel = Services.TextService.Localize("dialog/myKey");

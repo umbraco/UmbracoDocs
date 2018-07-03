@@ -2,7 +2,7 @@
 
 `Returns: String`
 
-Introduced in Umbraco v7.10. Displays a list of preset values. Either a single value or multiple values (formatted as a comma-seperated string) can be returned.
+Introduced in Umbraco v7.10. Displays a list of preset values. Either a single value or multiple values (formatted as a comma-separated string) can be returned.
 
 ## Settings
 

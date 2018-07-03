@@ -63,7 +63,7 @@ You can attribute your controller or action with this attribute which will ensur
       [HttpPost]
       public ActionResult UpdateAccountInfo(AccountInfo accountInfo)
       {
-          //TODO: Update the account info for the current member
+          // TODO: Update the account info for the current member
       }
     }
 

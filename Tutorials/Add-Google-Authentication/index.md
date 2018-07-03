@@ -69,7 +69,7 @@ Now we need to build the website again then try to run it, hopefully you reach t
 
 ![Umbraco homepage](images/umbracoHomepage.png)
 
-Next we will install the package we need for Google authentication, for that paste the following in the Nuget Package console:
+Next we will install the package we need for Google authentication, for that paste the following in the NuGet Package console:
 
 `Install-Package UmbracoCms.IdentityExtensions.Google`
 
@@ -100,7 +100,7 @@ Finally open the web.config file in the root folder, here we will need to set th
 `<add key="owin:appStartup" value="UmbracoDefaultOwinStartup" />` and change the value to 
 `<add key="owin:appStartup" value="UmbracoStandardOwinStartup" />`
 
-Then add the following in the appSettings aswell: 
+Then add the following in the appSettings as well: 
 
 `<add key="GoogleOAuthClientID" value="this is where you paste in the client id"/>`
 

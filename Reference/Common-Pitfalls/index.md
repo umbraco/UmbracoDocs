@@ -31,30 +31,30 @@ including razor views._
         [HttpPost]
         public ActionResult SubmitForm(ContactFormModel model)
         {        
-            //TODO: All normal form processing logic is left out of this example for brevity
+            // TODO: All normal form processing logic is left out of this example for brevity
 
-            //You can access all of these because they are properties of the base class,
+            // You can access all of these because they are properties of the base class,
             // notice there is no Singleton accessors used!
 
-            //ProfilingLogger:
+            // ProfilingLogger:
             using (ProfilingLogger.TraceDuration<ContactFormSurfaceController>("start", "stop"))
             {
-                //Logger:
+                // Logger:
                 Logger.Warn<ContactFormSurfaceController>("warning!");
                 
-                //MembershipHelper:
+                // MembershipHelper:
                 Members.CurrentUserName;
                 
-                //ServiceContext:
+                // ServiceContext:
                 Services.ContentService.GetById(1234);
                 
-                //ApplicationContext:
+                // ApplicationContext:
                 ApplicationContext.ApplicationCache.RuntimeCache.GetCacheItem("myKey", () => "hello world");
                 
-                //UmbracoContext:
+                // UmbracoContext:
                 UmbracoContext.UrlProvider.GetUrl(4321);
                 
-                //DatabaseContext:
+                // DatabaseContext:
                 DatabaseContext.Database.ExecuteScalar<int>("SELECT COUNT(*) FROM umbracoNode");   
             }        
         }
@@ -78,9 +78,9 @@ __Why?__
 It's important to understand the difference between an object that has a Request based scope/lifespan and 
 an object that has an Application based scope/lifespan ... here's the gist:
 
-* Application scope - if an object has an Application scope/lifespan, that means that this single object
+* Application scope - if an object has an application scope/lifespan, that means that this single object
 instance will exist for the lifetime of the application. The single instance will be shared by every thread that
-accesses it. Static variables will always be Appplication scope/lifespan.
+accesses it. Static variables will always be application scope/lifespan.
 * Request scope - The web world is made up of requests and each request has its own thread. When an object is in the scope of a Request it only survives as long as the web request survives. At the end of the web request, it may either be disposed or cleared from memory
 by the garbage collector. Request scoped object instances are not accessed by every other thread in the application - __unless you do something like the above!__
 
@@ -99,7 +99,7 @@ __Other Examples:__
 
     private static _umbracoContext = UmbracoContext.Current;
 
-    //MembershipHelper is also a request scoped instance - it relies either on an UmbracoContext or an HttpContext
+    // MembershipHelper is also a request scoped instance - it relies either on an UmbracoContext or an HttpContext
     private static _membershipHelper = new MembershipHelper(UmbracoContext.Current);
 
     private static _request = HttpContext.Current.Request;
@@ -220,10 +220,10 @@ that the data being queried is fast (comes from cache) and that you aren't inadv
 
 __For example__, when retrieving a content item in your views:
 
-    //Services access in your views :(
+    // Services access in your views :(
     var dontDoThis = ApplicationContext.Services.ContentService.GetById(123);
 
-    //Content cache access in your views :)
+    // Content cache access in your views :)
     var doThis = Umbraco.TypedContent(123);
 
 If you are using `Application.Services...` in your views, you should figure out why this is being done and, in most cases, remove this logic.   
@@ -327,7 +327,7 @@ Constructors should generally not perform any logic, they should set some parame
 There's a few reasons why this can become a huge performance problem:
 
 * The consumer of an API doesn't expect that by creating an object that they should be worried about performance
-* Creating an object can inadvertently happen a vast number of times, especially when using Linq
+* Creating an object can inadvertently happen a vast number of times, especially when using LINQ
 
 Here's an example of how this can go wrong very quickly:
 Your tree structure is something like this:
@@ -399,12 +399,12 @@ The above example could be rewritten like this:
         {
             get 
             {
-                //Lazy load the property value and ensure it's not re-resolved once it's loaded
+                // Lazy load the property value and ensure it's not re-resolved once it's loaded
                 return _votes ?? (_votes = GetPropertyValue<int>("votes"));
             } 
         }
 
-        //Just return the Ids, they can be resolved to IPublishedContent instances in the view or elsewhere,
+        // Just return the Ids, they can be resolved to IPublishedContent instances in the view or elsewhere,
         // doesn't need to be in the model - this would also be bad if the model was cached since all of the
         // related entities would end up in the cache too.
         private List<int> _related;
@@ -412,7 +412,7 @@ The above example could be rewritten like this:
         {
             get 
             {
-                //Lazy load the property value and ensure it's not re-resolved once it's loaded            
+                // Lazy load the property value and ensure it's not re-resolved once it's loaded            
                 return _related ?? 
                     (_related = GetPropertyValue<IEnumerable<int>>("related").ToList());
             } 
@@ -445,7 +445,7 @@ This is slightly better:
 This means that there is now a minimum of __10,000__ new objects created and allocated in memory. The number of traversals/visits to each
 of these objects is now __5000__.
 
-## Too much Linq - XPath is still your friend 
+## Too much LINQ - XPath is still your friend 
 
 Based on the above 2 points, you can see that just iterating content with the traversal APIs will cause new
 instances of `IPublishedContent` to be created. When memory is used, Garbage Collection needs to occur and this 
@@ -454,7 +454,7 @@ is for the Garbage Collector == more performance problems. Even worse is when yo
 large items in memory, they will remain in memory for a long time because they'll end up in something called "Generation 3" which the 
 GC tries to ignore for as long as possible because it knows it's going to take a lot of resources to cleanup!
 
-So, if you have a huge site and are running Linq queries over tons of content, how do you avoid allocating all of these `IPublishedContent` instances? 
+So, if you have a huge site and are running LINQ queries over tons of content, how do you avoid allocating all of these `IPublishedContent` instances? 
 
 Instead of iterating over (and thus creating them) we can use regular old `XPath` or use the `XPathNodeIterator` directly:
 
@@ -465,7 +465,7 @@ Instead of iterating over (and thus creating them) we can use regular old `XPath
 The methods `TypedContentAtXPath` and `TypedContentSingleAtXPath` will return the resulting `IPublishedContent` instances based
 on your XPath query but without creating interim `IPublishedContent` instances to perform the query against. 
 
-These 2 methods can certainly help avoid using Linq (and as such allocating IPublishedContent instances) 
+These 2 methods can certainly help avoid using LINQ (and as such allocating IPublishedContent instances) 
 to perform almost any content filtering you want. 
 
 ## XPathNodeIterator - for when you need direct XML support

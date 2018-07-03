@@ -36,28 +36,28 @@ Next up, we need to create an Action on a SurfaceController which accepts our su
 		[HttpPost]
 		public ActionResult CreateComment(CommentViewModel model)
 		{    
-		    //model not valid, do not save, but return current Umbraco page
+		    // model not valid, do not save, but return current Umbraco page
 		    if (!ModelState.IsValid)
 			{
-				//Perhaps you might want to add a custom message to the ViewBag
-				//which will be available on the View when it renders (since we're not 
-				//redirecting)	    	
+				// Perhaps you might want to add a custom message to the ViewBag
+				// which will be available on the View when it renders (since we're not 
+				// redirecting)	    	
 		   		return CurrentUmbracoPage();
 			}
 		
-		    //if validation passes perform whatever logic
-		    //In this sample we keep it empty, but try setting a breakpoint to see what is posted here
+		    // if validation passes perform whatever logic
+		    // In this sample we keep it empty, but try setting a breakpoint to see what is posted here
 			
-		    //Perhaps you might want to store some data in TempData which will be available 
-		    //in the View after the redirect below. An example might be to show a custom 'submit
-		    //successful' message on the View, for example:
+		    // Perhaps you might want to store some data in TempData which will be available 
+		    // in the View after the redirect below. An example might be to show a custom 'submit
+		    // successful' message on the View, for example:
 		    TempData.Add("CustomMessage", "Your form was successfully submitted at " + DateTime.Now);
 		
-		    //redirect to current page to clear the form
+		    // redirect to current page to clear the form
 		    return RedirectToCurrentUmbracoPage();
 		
-		    //Or redirect to specific page
-		    //return RedirectToUmbracoPage(12345)
+		    // Or redirect to specific page
+		    // return RedirectToUmbracoPage(12345)
 		}
 	}
 
@@ -79,15 +79,15 @@ The above code snippet is a PartialView to render the form. Because the Model fo
 
 This lists the different overloads available for BeginUmbracoForm:
 
-	//as seen in the above example
+	// as seen in the above example
 	BeginUmbracoForm(this HtmlHelper html, string action, string controllerName)
 	
-	//The next three are the same as above but allow you to specify additional route values and/or html attributes for the form tag	
+	// The next three are the same as above but allow you to specify additional route values and/or html attributes for the form tag	
 	BeginUmbracoForm(this HtmlHelper html, string action, string controllerName, object additionalRouteVals)
 	BeginUmbracoForm(this HtmlHelper html, string action, string controllerName, object additionalRouteVals, object htmlAttributes)	
 	BeginUmbracoForm(this HtmlHelper html, string action, string controllerName, object additionalRouteVals, IDictionary<string, object> htmlAttributes)
 	
-	//Allows you to specify the action name and controller type either by a generic type or type object:
+	// Allows you to specify the action name and controller type either by a generic type or type object:
 	BeginUmbracoForm(this HtmlHelper html, string action, Type surfaceType)
 	BeginUmbracoForm<T>(this HtmlHelper html, string action)
 	BeginUmbracoForm(this HtmlHelper html, string action, Type surfaceType, object additionalRouteVals)
@@ -97,8 +97,8 @@ This lists the different overloads available for BeginUmbracoForm:
 	BeginUmbracoForm(this HtmlHelper html, string action, Type surfaceType, object additionalRouteVals, IDictionary<string, object> htmlAttributes)
 	BeginUmbracoForm<T>(this HtmlHelper html, string action, object additionalRouteVals, IDictionary<string, object> htmlAttributes)
 	
-	//The following are only used for plugin based surface controllers. If you don't want to specify
-	//the controller type, you can specify the area that the plugin SurfaceController is routed to
+	// The following are only used for plugin based surface controllers. If you don't want to specify
+	// the controller type, you can specify the area that the plugin SurfaceController is routed to
 	BeginUmbracoForm(this HtmlHelper html, string action, string controllerName, string area)
 	BeginUmbracoForm(this HtmlHelper html, string action, string controllerName, string area, object additionalRouteVals, IDictionary<string, object> htmlAttributes)
 
@@ -135,7 +135,7 @@ There's been numerous cases of people attempting to return a PartialView directl
 	2. The call to `return CurrentUmbracoPage()` sends the request back through the Umbraco pipeline and maintains the current ModelState and ViewData
 	3. The process starts again at **2. Umbraco page rendered**
 
-So you can see that if you returned a Partial View from within your [HttpPost] action, the only thing that would happen is that you'd end up displaying only the markup for the partial view to the end-user because you are not sending the request back to Umraco.
+So you can see that if you returned a Partial View from within your [HttpPost] action, the only thing that would happen is that you'd end up displaying only the markup for the partial view to the end-user because you are not sending the request back to Umbraco.
 
 ## Display success messages
 

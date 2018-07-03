@@ -73,19 +73,19 @@ Traditionally a back office user will need to exist first and then that user can
 
 Here's an example of specifying auto link options for your OAuth provider:
 
-    //create the options, all parameters are optional but if you wish to enable
-    //any auto-linking, the autoLinkExternalAccount parameter must be true
+    // create the options, all parameters are optional but if you wish to enable
+    // any auto-linking, the autoLinkExternalAccount parameter must be true
     var autoLinkOptions = new ExternalSignInAutoLinkOptions(
 		autoLinkExternalAccount:true, 
 		defaultUserType: "editor", 
 		defaultCulture: "en-US");
     
-    //an optional callback you can specify to give you more control over how the 
-    //back office user is created (auto-linked)
+    // an optional callback you can specify to give you more control over how the 
+    // back office user is created (auto-linked)
     autoLinkOptions.OnAutoLinking = (BackOfficeIdentityUser user, ExternalLoginInfo info) =>
     {
-		//this callback will execute when the user is being auto-linked but before it is created
-		//so you can modify the user before it's persisted
+		// this callback will execute when the user is being auto-linked but before it is created
+		// so you can modify the user before it's persisted
     };
     
     identityServerOptions.SetExternalSignInAutoLinkOptions(autoLinkOptions);
@@ -147,7 +147,7 @@ Here are the steps to specify your own logic for validating a username and passw
                         membershipProvider,
 			settingContent);
 			
-                    //Set your own custom IBackOfficeUserPasswordChecker   
+                    // Set your own custom IBackOfficeUserPasswordChecker   
                     userManager.BackOfficeUserPasswordChecker = new MyPasswordChecker();
                     return userManager;
                 });	
@@ -170,7 +170,7 @@ Then modify `~/App_Start/UmbracoStandardOwinStartup.cs` to override `UmbracoStan
 
     public override void Configuration(IAppBuilder app)
     {
-        //ensure the default options are configured
+        // ensure the default options are configured
         base.Configuration(app);
         // active directory authentication
         

@@ -11,7 +11,7 @@ Configuration file for legacy NotFoundHandlers
 This file can be found at the following path: /config/404handlers.config
 
 ### [applications.config](applications/index.md)
-Configutation options of setting up sections within the Umbraco Backoffice.
+Configuration options of setting up sections within the Umbraco Backoffice.
 
 This file can be found at the following path: /config/applications.config
 
