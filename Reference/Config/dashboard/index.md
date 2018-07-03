@@ -81,7 +81,7 @@ In order to customize the dashboard in Umbraco, one needs to do a couple of thin
 ### Using AngularJs Views (v7+)
 
 **Create a Angular View(s)**
-The Dashboard will load one or more AngualrJs views and display them as a series of tabs. It is recommended that you store your views in a subfolder within the App_Plugins folder. 
+The Dashboard will load one or more AngularJs views and display them as a series of tabs. It is recommended that you store your views in a subfolder within the App_Plugins folder. 
 
 **Update the Dashboard.config**
 Once you have created the AngularJs View that you want to have loaded when a section loads, you must then update the Dashboard.config to tell Umbraco to load your View when a user enters a new section. Again, if you are doing this for yourself all you need to do is edit the Dashboard.config on your site to add the views. However, if you are adding a section to go with a package, you will want to include a Package Action to update the Dashboard.config during install.

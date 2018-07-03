@@ -91,5 +91,5 @@ To use the plugin and api is very easy:
 NOTE: this is an example plugin, I realize this is not really that useful as a non-simple plugin!
 
 	$("#myId").verticalAlign();
-	//now to get the api and do the alignment
+	// now to get the api and do the alignment
 	$("#myId").verticalAlignApi().align();

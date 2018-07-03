@@ -108,7 +108,7 @@ If the user is a new user we will create the user and send an activation email t
     {
         "email": "user-email@example.com", // Required
         "name": "The users name", // Required
-        "isAdmin": false, //Optional
+        "isAdmin": false, // Optional
         "title": "A title that goes into the title of the mail sent to the user", // Optional
         "message": "A message that goes into the message of the mail sent to the user" // Optional
     }
@@ -138,7 +138,7 @@ The following endpoint is used for creating a user on Umbraco.io, and not necess
     {
         "email": "user-email@example.com", // Required
         "name": "The users name", // Required
-        "password": "dontReuseOrRecycleYourPassword" //Required
+        "password": "dontReuseOrRecycleYourPassword" // Required
     }
 
 This will return an appropriate HTTP status code and a JSON object like this:

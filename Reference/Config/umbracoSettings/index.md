@@ -37,7 +37,7 @@ This section is used for managing thumbnail creation, allowed attributes and, wh
             <imageFileTypes>jpeg,jpg,gif,bmp,png,tiff,tif</imageFileTypes>
             <!-- what attributes that are allowed in the editor on an img tag -->
             <allowedAttributes>alt,border,class,style,align,id,name,onclick,usemap</allowedAttributes>
-            <!-- automatically updates dimension, filesize and extension attributes on upload -->
+            <!-- automatically updates dimension, file size and extension attributes on upload -->
             <autoFillImageProperties>
                 <uploadField alias="umbracoFile">
                     <widthFieldAlias>umbracoWidth</widthFieldAlias>
@@ -69,7 +69,7 @@ If you need to create a custom media document type to handle images called somet
             <imageFileTypes>jpeg,jpg,gif,bmp,png,tiff,tif</imageFileTypes>
             <!-- what attributes that are allowed in the editor on an img tag -->
             <allowedAttributes>alt,border,class,style,align,id,name,onclick,usemap</allowedAttributes>
-            <!-- automatically updates dimension, filesize and extension attributes on upload -->
+            <!-- automatically updates dimension, file size and extension attributes on upload -->
             <autoFillImageProperties>
                 <uploadField alias="umbracoFile">
                     <widthFieldAlias>umbracoWidth</widthFieldAlias>
@@ -120,7 +120,7 @@ If you change the value to "true" then you will see the code in a simple textare
 This setting let's you control if an upload control can create new folders for files uploaded, or if the file should be stored in the /media folder root with a unique ID prefixed to the filename.
 
          <!-- should umbraco store the uploaded files like /media/xxx/filename.ext or like /media/xxx-filename.ext
-              should be set to false if the application pool's user account hasn't got readrights of the driveroot up to the /media directory -->
+              should be set to false if the application pool's user account hasn't got read rights of the drive root up to the /media directory -->
         <UploadAllowDirectories>True</UploadAllowDirectories>
 
 ### Errors

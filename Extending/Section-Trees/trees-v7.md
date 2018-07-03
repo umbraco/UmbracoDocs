@@ -40,10 +40,10 @@ eg:
 
        protected override TreeNodeCollection GetTreeNodes(string id, FormDataCollection queryStrings)
             {
-                //check if we're rendering the root node's children
+                // check if we're rendering the root node's children
                 if (id == Constants.System.Root.ToInvariantString())
                 {
-                    //you can get your custom nodes from anywhere, and they can represent anything... 
+                    // you can get your custom nodes from anywhere, and they can represent anything... 
                     Dictionary<int, string> favouriteThings = new Dictionary<int, string>();
                     favouriteThings.Add(1, "Raindrops on Roses");
                     favouriteThings.Add(2, "Whiskers on Kittens");
@@ -51,14 +51,14 @@ eg:
                     favouriteThings.Add(4, "Warm Woolen Mittens");
                     favouriteThings.Add(5, "Cream coloured Unicorns");
                     favouriteThings.Add(6, "Schnitzel with Noodles");
-                    //create our node collection
+                    // create our node collection
                     var nodes = new TreeNodeCollection();
                 
-                //loop through our favourite things and create a tree item for each one
+                // loop through our favourite things and create a tree item for each one
                 foreach (var thing in favouriteThings)
                 {
-                    //add each node to the tree collection using the base CreateTreeNode method
-                    //it has several overloads, using here unique Id of tree item, -1 is the Id of the parent node to create, eg the root of this tree is -1 by convention - the querystring collection passed into this route - the name of the tree node -  css class of icon to display for the node - and whether the item has child nodes
+                    // add each node to the tree collection using the base CreateTreeNode method
+                    // it has several overloads, using here unique Id of tree item, -1 is the Id of the parent node to create, eg the root of this tree is -1 by convention - the querystring collection passed into this route - the name of the tree node -  css class of icon to display for the node - and whether the item has child nodes
                     var node = CreateTreeNode(thing.Key.ToString(), "-1", queryStrings, thing.Value, "icon-presentation", false);
                     nodes.Add(node);
 
@@ -66,14 +66,14 @@ eg:
                 return nodes;
             }
 
-            //this tree doesn't suport rendering more than 1 level
+            // this tree doesn't support rendering more than 1 level
             throw new NotSupportedException();
         }
     
     
     protected override MenuItemCollection GetMenuForNode(string id, FormDataCollection queryStrings)
     {
-        //create a Menu Item Collection to return so people can interact with the nodes in your tree
+        // create a Menu Item Collection to return so people can interact with the nodes in your tree
         var menu = new MenuItemCollection();
 
         if (id == Constants.System.Root.ToInvariantString())
@@ -85,7 +85,7 @@ eg:
             menu.Items.Add<RefreshNode, ActionRefresh>(ui.Text("actions", ActionRefresh.Instance.Alias), true);
             return menu;
         }                   
-        //add a delete action to each individual item
+        // add a delete action to each individual item
         menu.Items.Add<ActionDelete>(ui.Text("actions", ActionDelete.Instance.Alias));   
 
         return menu;
@@ -164,13 +164,13 @@ The `RootNodeRendering` is raised whenever a tree's root node is created.
 
 **Usage:**
 
-	//register the event listener:
+	// register the event listener:
 	TreeControllerBase.RootNodeRendering += TreeControllerBase_RootNodeRendering;
 
-	//the event listener method:
+	// the event listener method:
     void TreeControllerBase_RootNodeRendering(TreeControllerBase sender, TreeNodeRenderingEventArgs e)
     {
-        //normally you will want to target a specific tree, this can be done by checking the 
+        // normally you will want to target a specific tree, this can be done by checking the 
         // tree alias of by checking the tree type (casting 'sender')
         if (sender.TreeAlias == "content")
         {
@@ -188,13 +188,13 @@ The `TreeNodesRendering` is raised whenever a list of child nodes are created
 
 **Usage:**
 
-	//register the event listener:
+	// register the event listener:
     TreeControllerBase.TreeNodesRendering += TreeControllerBase_TreeNodesRendering;
 
-	//the event listener method:
+	// the event listener method:
     void TreeControllerBase_TreeNodesRendering(TreeControllerBase sender, TreeNodesRenderingEventArgs e)
     {
-        //this example will filter any content tree node whose node name starts with
+        // this example will filter any content tree node whose node name starts with
         // 'Private', for any user that is of the type 'customUser'
         if (sender.TreeAlias == "content"
             && sender.Security.CurrentUser.UserType.Alias == "customUser")
@@ -214,31 +214,31 @@ The `MenuRendering` is raised whenever a menu is generated for a tree node
 
 **Usage:**
 
-	//register the event listener:
+	// register the event listener:
     TreeControllerBase.MenuRendering += TreeControllerBase_MenuRendering;
 
-	//the event listener method:
+	// the event listener method:
     void TreeControllerBase_MenuRendering(TreeControllerBase sender, MenuRenderingEventArgs e)
     {
-        //this example will add a custom menu item for all admin users
+        // this example will add a custom menu item for all admin users
         // for all content tree nodes
         if (sender.TreeAlias == "content"
             && sender.Security.CurrentUser.UserType.Alias == "admin")
         {
-            //creates a menu action that will open /umbraco/currentSection/itemAlias.html
+            // creates a menu action that will open /umbraco/currentSection/itemAlias.html
             var i = new Umbraco.Web.Models.Trees.MenuItem("itemAlias", "Item name");
             
-            //optional, if you want to load a legacy page, otherwise it will just follow convention
+            // optional, if you want to load a legacy page, otherwise it will just follow convention
             i.AdditionalData.Add("actionUrl", "my/long/url/to/webformshorror.aspx");
             
-            //optional, if you don't want to follow the naming conventions, but do want to use a angular view
-            //you can also use a direct path "../App_Plugins/my/long/url/to/view.html"
+            // optional, if you don't want to follow the naming conventions, but do want to use a angular view
+            // you can also use a direct path "../App_Plugins/my/long/url/to/view.html"
             i.AdditionalData.Add("actionView", "my/long/url/to/view.html");
             
-	        //sets the icon to icon-wine-glass 
+	        // sets the icon to icon-wine-glass 
 	        i.Icon = "wine-glass"
 
-   	        //insert at index 5
+   	        // insert at index 5
             e.Menu.Items.Insert(5,i);
         }
     }

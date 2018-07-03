@@ -56,9 +56,9 @@ You’ll need to install the following ImageProcessor packages (latest versions 
 * ImageProcessor.Web.Config.2.2.3.0 or later
 * ImageProcessor.Web.Plugins.AzureBlobCache.1.0.4.0 or later
 
-These packages are only available via Nuget, so ideally you’ll have your site setup to use Visual Studio.  You can find more information about ImageProcessor and related packages here [http://imageprocessor.org/](http://imageprocessor.org/)
+These packages are only available via NuGet, so ideally you’ll have your site setup to use Visual Studio.  You can find more information about ImageProcessor and related packages here [http://imageprocessor.org/](http://imageprocessor.org/)
 
-Since Umbraco includes a version of ImageProcessor.Web by default, you will need to update that package first using Nuget:
+Since Umbraco includes a version of ImageProcessor.Web by default, you will need to update that package first using NuGet:
 
 ```PM> Update-Package ImageProcessor.Web```
 

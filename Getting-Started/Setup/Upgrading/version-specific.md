@@ -77,13 +77,13 @@ The three most important things to note are:
  2. In umbracoSettings.config leave `EnablePropertyValueConverters` set to `false` - this will help your existing content queries to still work
  3. In tinyMceConfig.config make sure to remove `<plugin loadOnFrontend="true">umbracolink</plugin>` so that the rich text editor works as it should
 
-#### Upgrading via Nuget
+#### Upgrading via NuGet
 
-This is an important one and there was unfortunately not a perfect solution to this. We have removed the UrlRewriting dependency and no longer ship with it, however if you are using it we didn't want to have Nuget delete all of your rewrites. So the good news is that if you are using it, the Nuget upgrade will not delete your rewrite file and everything should just continue to work (though you should really be using IIS rewrites!). 
+This is an important one and there was unfortunately not a perfect solution to this. We have removed the UrlRewriting dependency and no longer ship with it, however if you are using it we didn't want to have NuGet delete all of your rewrites. So the good news is that if you are using it, the NuGet upgrade will not delete your rewrite file and everything should just continue to work (though you should really be using IIS rewrites!). 
 
 However, if you are not using it, **you will get a YSOD after upgrading, here's how to fix it**
 
-Since you aren't using UrlRewriting you will have probably never edited the UrlRewriting file and in which case Nuget will detect that and remove it. However you will need to manually remove these UrlRewriting references from your web.config:
+Since you aren't using UrlRewriting you will have probably never edited the UrlRewriting file and in which case NuGet will detect that and remove it. However you will need to manually remove these UrlRewriting references from your web.config:
 
 * `<section name="urlrewritingnet" restartOnExternalChanges="true" requirePermission="false" type="UrlRewritingNet.Configuration.UrlRewriteSection, UrlRewritingNet.UrlRewriter" />`
 * `<urlrewritingnet configSource="config\UrlRewriting.config" />`
