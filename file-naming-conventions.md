@@ -1,13 +1,8 @@
 # Multi version documentation conventions
 
-To support multi version documentation have introduce these conventions.
+To support multi version documentation we work according to these conventions.
 
-1) a file without a version postfix is about the current and most recent version
-2) add a new file with a version postfix
-3) add an optional `versionFrom` YAML attribute to the top of the file
-4) add an optional `versionTo` YAML attribute to the top of the file
-
-## file naming
+## File naming
 
 Naming conventions for documentation files:
 
@@ -15,7 +10,7 @@ The current version of a documentation page will be the normal existing filename
 
 When creating alternate versions of the documentation page that apply in different Umbraco versions, we will append to the filename portion a -v followed by information which explains roughly to which version the documentation applies.
 
-### Example
+### Indicating ranges on file naming
 
 Documentation that only applies to a single Umbraco version would be `flexible-v.7.7.7.md`.
 
@@ -26,10 +21,18 @@ and `flexible-vpre-v7.3.md` would contain the documentation for versions before 
 
 The `vpost` and `vpre` notations are not used to render to the user.
 
+For SEO reasons it is not necessary to change a file name when a feature becomes obsolete.  
+
 ## Adding meta data
 
 It is the YAML meta data in the document itself, that will be used as the point of truth for when a (semver) version applies from and to.
-The YAML will be added to an examine index, along with the filename.
+The YAML will be added to an examine index, along with the filename and is used later on for searching on (major) version.  Or to show the information to the user.
+
+For versioning we use 2 YAML attributes: 
+1) optional `versionFrom` to indicate a start version
+2) optional `versionTo` to indicate which version the support ended.
+
+Only the current version of the document can have both `versionFrom` and `versionTo` missing.  Otherwise at least one of the should be filled in.
 
 ## Discovering other pages
 
