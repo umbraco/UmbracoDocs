@@ -124,7 +124,7 @@ It's tricky to implement your own provider, it is advised use override the defau
 - be sure to know how to handle schema's (http vs https) and hostnames 
 - inbound might require rewriting
 
-When you interit from the DefaultUrlProvider, you need to implement the constructor specifying the `IRequestHandlerSection`.  The easiest way to retrieve this object is adding a constructor: 
+When you inherit from the DefaultUrlProvider, you need to implement the constructor specifying the `IRequestHandlerSection`.  The easiest way to retrieve this object is adding a constructor: 
 
     public class MyUrlProvider : DefaultUrlProvider {
       public MyUrlProvider()

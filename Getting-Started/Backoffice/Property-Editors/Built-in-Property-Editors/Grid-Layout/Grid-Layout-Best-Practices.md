@@ -23,7 +23,7 @@ With the above usage scenarios in mind, consider the grids limitations. First of
 Keep all customisation in the `/App_Plugins/` folder. This makes it easier to share across multiple projects and ensures that nothing is lost in an update process.
 
 ### Keep it simple
-The grid cannot solve every problem, neither was it meant to. It absolutely shines when configured correctly and designed to solve well-defined editor tasks, like entering content in a pre-defined layout and pre-configured options.
+The grid cannot solve every problem, neither was it meant to. It absolutely shines when configured correctly and designed to solve well-defined editor tasks, like entering content in a pre-defined layout and preconfigured options.
 If you put a standard grid editor on every page, expecting editors to do magic, you will be disappointed - and so will your editor.
 
 So keep the use cases simple, spend time to configure and tune the grid in detail, this will truly make your editors love you.

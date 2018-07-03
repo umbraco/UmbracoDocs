@@ -70,8 +70,8 @@ Examine offers a fluent search API which aims to make constructing complex searc
     var searcher = Examine.ExamineManager.Instance.SearchProviderCollection["ExternalSearcher"];
 
     var searchCriteria = searcher.CreateSearchCriteria(Examine.SearchCriteria.BooleanOperation.Or);
-    var searchQuery = searchCriteria.Field("nodeName", query.Boost(5)).Or().Field("nodeName", query.Fuzzy());
-    var searchResults = searcher.Search(searchQuery.Compile()).OrderByDescending("createDate");
+    var searchQuery = searchCriteria.Field("nodeName", query.Boost(5)).Or().Field("nodeName", query.Fuzzy()).And().OrderByDescending("createDate");
+    var searchResults = searcher.Search(searchQuery.Compile());
     if(searchResults.Any())
     {
         <ul>

@@ -10,7 +10,7 @@ The member picker opens a panel to pick a specific member from the member sectio
 
 ## Content Example 
 
-![Memebr Picker Content](images/Member-Picker-Content.png)
+![Member Picker Content](images/Member-Picker-Content.png)
 
 ## MVC View Example
 

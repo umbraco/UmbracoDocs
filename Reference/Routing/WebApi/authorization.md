@@ -12,7 +12,7 @@ The `UmbracoAuthorizedApiController` is automatically routed.  Check out the [ro
 
 ### Using UmbracoAuthorizeAttribute
 
-To secure your controller based on back offce membership use the attribute: `Umbraco.Web.WebApi.UmbracoAuthorizeAttribute`. 
+To secure your controller based on back office membership use the attribute: `Umbraco.Web.WebApi.UmbracoAuthorizeAttribute`. 
 
 *It's important to note the namespace since we have another class called UmbracoAuthorizeAttribute in a different namespace that is used for MVC.*
 
@@ -39,17 +39,17 @@ To secure your controller based on front-end membership use the attribute: `Umbr
 
 There are 4 parameters that can be supplied to control how the authorization works:
 
-	//Flag for whether to allow all site visitors or just authenticated members
-	//This is the same as applying the [AllowAnonymous] attribute
+	// Flag for whether to allow all site visitors or just authenticated members
+	// This is the same as applying the [AllowAnonymous] attribute
 	bool AllowAll
 
-	//Comma delimited list of allowed member types
+	// Comma delimited list of allowed member types
 	string AllowType
 
-	//Comma delimited list of allowed member groups
+	// Comma delimited list of allowed member groups
 	string AllowGroup
 
-	//Comma delimited list of allowed member Ids
+	// Comma delimited list of allowed member Ids
 	string AllowMembers
 
 You can apply the attribute at the controller level or at the action level. 

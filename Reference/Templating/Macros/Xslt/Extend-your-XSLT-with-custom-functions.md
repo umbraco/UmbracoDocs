@@ -30,7 +30,7 @@ Furthermore we're using the msxml:assembly-statement to load and prepare the Sys
 	]]>
 	</msxml:script>
 
-The C# codeblock itself is surrounded by a <![CDATA-statement.. This is not a requirement, but generally a good idea, because it prevents the XSLT-parser from thinking it is dealing with XSLT-markup itself
+The C# code block itself is surrounded by a <![CDATA-statement.. This is not a requirement, but generally a good idea, because it prevents the XSLT-parser from thinking it is dealing with XSLT-markup itself
 
 	<xsl:template match="/">
 		<xsl:value-of select="umbraco.library:ChangeContentType('text/xml')"/>

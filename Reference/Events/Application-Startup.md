@@ -35,18 +35,17 @@ This example will populate some default data for newly created content items:
             private void ContentService_Saving(IContentService sender, SaveEventArgs<IContent> e)
             {
                 foreach (var content in e.SavedEntities
-                    //Check if the content item type has a specific alias
+                    // Check if the content item type has a specific alias
                     .Where(c => c.Alias.InvariantEquals("MyContentType"))
-                    //Check if it is a new item
+                    // Check if it is a new item
                     .Where(c => c.IsNewEntity()))
                 {
-                    //check if the item has a property called 'richText'
+                    // Check if the item has a property called 'richText'
                     if (content.HasProperty("richText"))
                     {
-                        //get the rich text value
+                        // get the rich text value
                         var val = c.GetValue<string>("richText");
-
-                        //if there is a rich text value, set a default value in a 
+                        // if there is a rich text value, set a default value in a 
                         // field called 'excerpt' that is the first
                         // 200 characters of the rich text value
                         c.SetValue("excerpt", val == null
@@ -86,7 +85,7 @@ If you want more control over execution you can override these properties:
 * ExecuteWhenApplicationNotConfigured
   * By default this is false but if you want these methods to fire even when the application is not configured you can override this property and return true
 * ExecuteWhenDatabaseNotConfigured
-  * By default this is false but if you want these methods to fire even if the database is not installed/ready then you can overrride this property and return true
+	* By default this is false but if you want these methods to fire even if the database is not installed/ready then you can override this property and return true
 
 ## Ordering (EXPERT)
 
@@ -99,6 +98,7 @@ For example, the [CacheRefresherEventHandler](../../apidocs/csharp/api/Umbraco.W
 Finally (very EXPERT), users can [register a filter](../../apidocs/csharp/api/Umbraco.Core.ObjectResolution.ApplicationEventsResolver.html#Umbraco_Core_ObjectResolution_ApplicationEventsResolver_FilterCollection) to process the list (after it has been ordered) and re-order it, or remove handlers.
 
 **BEWARE**! Handlers order is an important thing, and removing handlers or reordering handlers can have unexpected consequences.
+
 
 ## Related Links
 

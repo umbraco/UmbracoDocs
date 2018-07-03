@@ -8,7 +8,7 @@ We strongly encourage the use of HTTPS with Umbraco installations especially in 
 To ensure a stable and smoothly running Umbraco installation, these permissions need to be set correctly.
 
 ## [Load Balanced setup](Load-Balancing/index.md)
-Information on how to deploy Umbraco in a Load Balanced scenario and other details to consider when settting up Umbraco for load balancing.
+Information on how to deploy Umbraco in a Load Balanced scenario and other details to consider when setting up Umbraco for load balancing.
 
 ## [Running Umbraco on Azure Web Apps](azure-web-apps.md)
 Best practices for running Umbraco on Azure Web Apps
