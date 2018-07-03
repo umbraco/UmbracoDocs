@@ -28,7 +28,7 @@ Dependencies used by Node.js and Grunt to build the project
 The source code of Umbraco 7 UI
 
 */test*
-Test configuration and test files used by the karma testrunner to unit-test the project.
+Test configuration and test files used by the Karma testrunner to unit-test the project.
 
 ## Source folders
 Inside the /src folder, the Umbraco 7 source code is divided into 3 groups of code: 

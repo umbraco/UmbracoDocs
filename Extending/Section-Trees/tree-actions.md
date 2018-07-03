@@ -4,7 +4,7 @@ Items in an Umbraco Tree can have associated Actions, the actions visible to the
 
 You can set a User's permissions for each item in the Umbraco Content tree from the User Section of the Umbraco Backoffice.
 
-If you are developing a custom section, or a custom Dashboard, you might want to display some different options based on a Users's Permission set on a particular item.
+If you are developing a custom section, or a custom Dashboard, you might want to display some different options based on a User's permission set on a particular item.
 
 For example, on a custom dashboard you might add a quick 'Create a Blog Post' button for an editor, but only if that editor has permissions to create a blog post, and so you could create some sort of API endpoint, to call from your AngularJS controller, that in turn uses the UserService to return the current user's permissions, and see whether they have the required permission to 'create' within the site's blog section...
 
@@ -22,7 +22,7 @@ For example, on a custom dashboard you might add a quick 'Create a Blog Post' bu
 
 ## But how to know which letter corresponds to which Tree Action?
 
-Each tree action in Umbraco implements the IAction interface, and each Action has a corresponding 'Letter', and a boolean value describing whether Permissions can be assigned for an action.
+Each tree action in Umbraco implements the IAction interface, and each Action has a corresponding 'Letter', and a boolean value describing whether permissions can be assigned for an action.
 
 	public interface IAction : IDiscoverable
 	{
@@ -39,7 +39,7 @@ Each tree action in Umbraco implements the IAction interface, and each Action ha
 	}
 
 
-When you pull back the AssignedPermissions for a user on a particular item, it is these letters that indicate which actions the User is permitted to peform in the context of the tree item.
+When you pull back the AssignedPermissions for a user on a particular item, it is these letters that indicate which actions the User is permitted to perform in the context of the tree item.
 
 ### User Permission Codes
 
@@ -81,4 +81,4 @@ Here's a list of the current User Permission codes, their alias, whether they ca
 | ®      | create               | False                      | add                 | javascript:actionNewRelationType();                                                                                                     |
 | V      | ActionRestore        | False                      |                     | This action is invoked when the content item is to be restored from the recycle bin                                                     |
 | -      | Action Null          | False                      |                     | This is used internally to assign no permissions to a node for a user and shouldn't be used in code                                     |
-| ,      | ContextMenuSeperator | False                      |                     | Used simply to define context menu seperator items. This should not be used directly in any code except for creating menus              |
+| ,      | ContextMenuSeperator | False                      |                     | Used simply to define context menu separator items. This should not be used directly in any code except for creating menus              |

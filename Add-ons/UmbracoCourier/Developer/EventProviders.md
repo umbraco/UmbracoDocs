@@ -34,10 +34,10 @@ Item event providers are triggered from either the Item provider itself during e
 
 For both of them, you call the Courier Execution Context, and tell it to either queue the event for later or trigger it now.
 
-	//execute the event code now
+	// execute the event code now
 	ExecutionContext.ExecuteEvent("TweeTOnDeploy", item.ItemId, null);
 	 
-	//execute the event when Deployment is completed
+	// execute the event when Deployment is completed
 	ExecutionContext.QueueEvent("TweeTOnDeploy", item.ItemId, null, Umbraco.Courier.Core.Enums.EventManagerSystemQueues.DeploymentComplete);
 	
 	

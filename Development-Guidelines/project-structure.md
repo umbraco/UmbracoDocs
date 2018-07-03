@@ -36,7 +36,7 @@ Achieving this goal will take quite a lot of time by slowly migrating over old c
 	* The project contains its own build system and can operate as a stand-alone website using mock-data for any developers who do not wish to develop with Visual Studio to help create the JS, CSS and markup used to create the new Umbraco back office UI. 
 * Umbraco.Tests
 	* Contains all unit tests for Umbraco
-	* Uses Nunit for unit tests
+	* Uses NUnit for unit tests
 
 ## Legacy projects
 

@@ -59,7 +59,7 @@ The configuration would look like this:
 
 Recycle the application pool, the new provider should be available for editors to use:
 
-![Embeddeding a Media Item from Deviant Art website](images/deviantart-embedded-media.png)
+![Embedding a Media Item from Deviant Art website](images/deviantart-embedded-media.png)
 
 ## Custom Embedded Media Providers
 

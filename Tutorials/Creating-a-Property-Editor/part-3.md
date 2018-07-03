@@ -9,7 +9,7 @@ First up, we need to get access to the service, this is done in the constructor 
 
 	angular.module("umbraco")
 		.controller("My.MarkdownEditorController",
-		//inject Umbraco's assetsServce and dialog service
+		// inject Umbraco's assetsServce and dialog service
 		function ($scope,assetsService, dialogService) { ... }
 
 this works the same way as with the *assetsService* we added in step 1.
@@ -17,14 +17,14 @@ this works the same way as with the *assetsService* we added in step 1.
 ## Hooking into pagedown
 The pagedown editor we are using, has a nice event system in place, so we can easily hook into the events triggered by the media chooser, by adding a hook, after the editor has started:
 
-	//Start the editor
+	// Start the editor
 	var converter2 = new Markdown.Converter();
     var editor2 = new Markdown.Editor(converter2, "-" + $scope.model.alias);
     editor2.run();
 
-	//subscribe to the image dialog clicks
+	// subscribe to the image dialog clicks
     editor2.hooks.set("insertImageDialog", function (callback) {
-           //here we can intercept our own dialog handling
+           // here we can intercept our own dialog handling
 
            return true; // tell the editor that we'll take care of getting the image url
        });
@@ -34,11 +34,11 @@ Notice the callback, this callback is used to return whatever data we want to ed
 
 So now that we have access to the editor events, we will trigger a media picker dialog, by using the `dialogService`. You can inject whatever HTML you want with this service, but it also has a number of shorthands for things like a media picker:
 
-	//the callback is called when the use selects images
+	// the callback is called when the use selects images
 	dialogService.mediaPicker({callback: function(data){
-							//data.selection contains an array of images
+							// data.selection contains an array of images
 	                        $(data.selection).each(function(i, item){
-	                               //try using $log.log(item) to see what this data contains
+	                               // try using $log.log(item) to see what this data contains
 	                        });
 	                   }});
 

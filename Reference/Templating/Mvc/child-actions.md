@@ -20,10 +20,10 @@ This documentation is going to use [SurfaceControllers](surface-controllers.md) 
 		public ActionResult SearchResults(QueryParameters query)
 		{		
 			SearchResults result;
-			//TODO: do some searching (perhaps using Examine) 
-			//using the information contained in the custom class QueryParameters
+			// TODO: do some searching (perhaps using Examine) 
+			// using the information contained in the custom class QueryParameters
 	
-			//return the SearchResults to the view
+			// return the SearchResults to the view
 			return PartialView("SearchResults", result);
 		}
 	}
@@ -57,10 +57,10 @@ This syntax becomes slightly different for Child Actions contained in Surface Co
 		public ActionResult SearchResults(QueryParameters query)
 		{		
 			SearchResults result;
-			//TODO: do some searching (perhaps using Examine) 
-			//using the information contained in the custom class QueryParameters
+			// TODO: do some searching (perhaps using Examine) 
+			// using the information contained in the custom class QueryParameters
 	
-			//return the SearchResults to the view
+			// return the SearchResults to the view
 			return PartialView("SearchResults", result);
 		}
 	}

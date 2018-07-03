@@ -47,7 +47,7 @@ In the `PersonApiController.cs` file, add:
 	    [Umbraco.Web.Mvc.PluginController("My")]
 	    public class PersonApiController : UmbracoAuthorizedJsonController
 	    {
-	        //we will add a method here later
+	        // we will add a method here later
 	    }
 	}
 
@@ -77,11 +77,11 @@ Now we need the `GetAll()` method which returns a collection of people, insert t
 
 Inside the `GetAll()` method, we now write a bit of code, that connects to the database, creates a query and returns the data, mapped to the `Person` class above: 
 
-	//get the database
+	// get the database
 	var db = UmbracoContext.Application.DatabaseContext.Database;
-	//build a query to select everything the people table
+	// build a query to select everything the people table
 	var query = new Sql().Select("*").From("people");
-	//fetch data from DB with the query and map to Person object
+	// fetch data from DB with the query and map to Person object
 	return db.Fetch<Person>(query);
 
 We are now done with the server-side of things, with the file saved in App_Code you can now open the URL: `/umbraco/backoffice/My/PersonApi/GetAll`.
@@ -93,12 +93,12 @@ Now that we have the server-side in place, and a URL to call, we will setup a se
 
 Create a new file as `person.resource.js` and add: 
 
-	//adds the resource to umbraco.resources module:
+	// adds the resource to umbraco.resources module:
 	angular.module('umbraco.resources').factory('personResource', 
 		function($q, $http, umbRequestHelper) {
-		    //the factory object returned
+		    // the factory object returned
 		    return {
-		        //this calls the ApiController we setup earlier
+		        // this calls the ApiController we setup earlier
 		        getAll: function () {
 			    return umbRequestHelper.resourcePromise(
 			    	$http.get("backoffice/My/PersonApi/GetAll"),

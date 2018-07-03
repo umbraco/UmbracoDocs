@@ -44,7 +44,7 @@ leaves out the rest of the default namespaces):
       exclude-result-prefixes="... ... umbraco.examine">
 
 If the namespace isn't readily available when creating a new XSLT file,
-it's a good indication the configuration wasn't succesful. You might
+it's a good indication the configuration wasn't successful. You might
 want to go to the forum for help!
 
 ### Test whether Examine works

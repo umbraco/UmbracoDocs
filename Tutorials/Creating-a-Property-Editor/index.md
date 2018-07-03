@@ -38,7 +38,7 @@ Next we will create a simple manifest file to describe what this plugin does. Th
 Inside this package manifest we add a bit of JSON to describe the property editor. Have a look at the inline comments in the JSON below for details on each bit:
 
 	{
-		//you can define multiple editors
+		// you can define multiple editors
 		propertyEditors: [
 			{
 				/*this must be a unique alias*/
@@ -56,7 +56,7 @@ Inside this package manifest we add a bit of JSON to describe the property edito
 			}
 		]
 		,
-		//array of files we want to inject into the application on app_start
+		// array of files we want to inject into the application on app_start
 		javascript: [
 		    '~/App_Plugins/MarkDownEditor/markdowneditor.controller.js'
 		]
@@ -110,11 +110,11 @@ Then open the `markdowneditor.controller.js` file and edit it so it looks like t
 
 	angular.module("umbraco")
 	.controller("My.MarkdownEditorController",
-	//inject umbracos assetsService
+	// inject umbracos assetsService
 	function ($scope,assetsService) {
 
-	    //tell the assetsService to load the markdown.editor libs from the markdown editors
-	    //plugin folder
+	    // tell the assetsService to load the markdown.editor libs from the markdown editors
+	    // plugin folder
 	    assetsService
 			.load([
 				"~/App_Plugins/MarkDownEditor/lib/markdown.converter.js",
@@ -122,11 +122,11 @@ Then open the `markdowneditor.controller.js` file and edit it so it looks like t
 				"~/App_Plugins/MarkDownEditor/lib/markdown.editor.js"
 			])
 			.then(function () {
-			    //this function will execute when all dependencies have loaded
+			    // this function will execute when all dependencies have loaded
 			    alert("editor dependencies loaded");
 			});
 
-	    //load the separate css for the editor to avoid it blocking our js loading
+	    // load the separate css for the editor to avoid it blocking our js loading
 	    assetsService.loadCss("~/App_Plugins/MarkDownEditor/lib/markdown.css");
 	});
 

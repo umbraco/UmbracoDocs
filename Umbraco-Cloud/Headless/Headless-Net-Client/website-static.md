@@ -54,7 +54,7 @@ You can also inject the `HeadlessService` or `IHeadlessConfig` into any view by 
     ```cs
     public async Task<IActionResult> Headless()
     {
-        //Get all content
+        // Get all content
         var allContent = await _headlessService.Query().GetAll();
         return View(allContent);
     }

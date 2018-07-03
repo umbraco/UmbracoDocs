@@ -28,7 +28,7 @@ The different values are:
 - **key** : The key the entered setting value will be stored under.
 - **view** : The editor used to enter a setting value with.
 - **prevalues** : For views that need predefined values, e.g. the radiobuttonlist view.
-- **modifier (optional)** : A string formater to modify the output of the editor to prepend or append extra values.
+- **modifier (optional)** : A string formatter to modify the output of the editor to prepend or append extra values.
 - **applyTo (optional)** : States whether the setting can be used on a cell or a row. If either not present or empty, the setting will be shown both on Rows and Cells.
 
 **label** and **description** are straight-forward.
