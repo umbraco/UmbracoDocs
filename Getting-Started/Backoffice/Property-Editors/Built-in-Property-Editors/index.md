@@ -108,7 +108,7 @@ A [tinymce](https://www.tinymce.com/) based rich text editor which is highly con
 ## Slider
 A slider with a number in a certain range.
 
-## Tags
+## [Tags](Tags.md)
 A tag control which can be controlled by a certain group of tags.
 
 ## Textarea
