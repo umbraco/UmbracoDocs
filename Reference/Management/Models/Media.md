@@ -11,7 +11,7 @@ All samples in this document will require references to the following dll:
 
 * Umbraco.Core.dll
 
-All samples in this document will require the following using statement:
+All samples in this document will require the following using statements:
 	
 	using Umbraco.Core.Models;
 	using Umbraco.Core.Services;
