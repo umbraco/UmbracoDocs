@@ -13,7 +13,7 @@ Each property in your [document type](../../Data/Defining-content/index.md#what-
 
     <h1>@Model.Value("pageTitle")</h1>
     <div>@Model.Value("bodyContent")</div>
-    <div>@Model.Value("articleDate")</div>
+    <time>@Model.Value("articleDate")</time>
 
 ### Specifying types of data
 
@@ -21,13 +21,13 @@ You can specify the type of data being returned to help you format the value for
 
     <h1>@(Model.Value<string>("pageTitle"))</h1>
     <div>@(Model.Value<HtmlString>("bodyContent"))</div>
-    <div>Article date: @(Model.Value<DateTime>("articleDate").ToString("dd/MM/yyyy"))</div>
+    <p>Article date: <time>@(Model.Value<DateTime>("articleDate").ToString("dd/MM/yyyy"))</time></p>
 
 ### Using ModelsBuilder
 
 	<h1>@Model.PageTitle</h1>
 	<div>@Model.BodyContent</div>
-	<div>@Model.ArticleDate.ToString("dd/MM/yyyy")</div>
+	<time>@Model.ArticleDate.ToString("dd/MM/yyyy")</time>
 
 ### Working with the grid
 
