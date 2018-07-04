@@ -27,17 +27,17 @@ Data can be saved in either CSV format or in JSON format. By default data is sav
 
 ### CSV tags
 
-![CSV tags example](images/tags/7/csv-example.png)
+![CSV tags example](images/tags/7_4/csv-example.png)
 
 ### JSON tags
 
-![JSON tags example](images/tags/7/json-example.png)
+![JSON tags example](images/tags/7_4/json-example.png)
 
 ### Tags typeahead
 
 Whenever a tag has been added it will be visible in the typeahead when you start typing on other pages.
 
-![Tags typeahead example](images/tags/7/typeahead.png)
+![Tags typeahead example](images/tags/7_4/typeahead.png)
 
 ## MVC View Example - displays a list of tags
 
