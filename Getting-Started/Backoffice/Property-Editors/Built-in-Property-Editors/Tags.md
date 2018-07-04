@@ -28,17 +28,17 @@ Since the release of Umbraco 7.6 there are built-in property value converters, w
 
 ### CSV tags
 
-![CSV tags example](images/tags/7.6/csv-example.png)
+![CSV tags example](images/tags/7_6/csv-example.png)
 
 ### JSON tags
 
-![JSON tags example](images/tags/7.6/json-example.png)
+![JSON tags example](images/tags/7_6/json-example.png)
 
 ### Tags typeahead
 
 Whenever a tag has been added it will be visible in the typeahead when you start typing on other pages.
 
-![Tags typeahead example](images/tags/7.6/typeahead.png)
+![Tags typeahead example](images/tags/7_6/typeahead.png)
 
 ## MVC View Example - displays a list of tags
 
@@ -46,7 +46,7 @@ Whenever a tag has been added it will be visible in the typeahead when you start
 
     @if(Model.Content.Tags.Any()){
         <ul>
-            foreach(var tag in Model.Content.Tags){
+            @foreach(var tag in Model.Content.Tags){
                 <li>@tag</li>
             }
         </ul>
