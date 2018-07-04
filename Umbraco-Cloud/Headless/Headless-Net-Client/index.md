@@ -44,3 +44,7 @@ _This example is for creating a .NET Core Console (command line) application_
 ### [ASP.NET Framework website](website-framework.md)
 
 _This example shows how to build a traditional ASP.NET Framework website on Windows and Visual Studio using the Umbraco Headless Client._
+
+### [Query data with the .NET Headless Client](Query.md)
+
+_This article will cover both basic queries where you filter on a document type and a single property but also more advanced ones where you can use either XPath or Lucene queries for maximum flexibility_
