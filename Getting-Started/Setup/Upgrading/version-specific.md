@@ -6,7 +6,9 @@ Follow the steps in the [general upgrade guide](general.md), then these addition
 
 ## Version 7.7.0
 
-Version 7.7.0 introduces User Groups and a better user management and security facilities. This means that anything to do with "User Types" no longer exist including several APIs that work with User Types. If your code or any package's code that you use makes reference to "User Type" APIs, you may need to make changes to your code. In many cases we've created backward compatibility shims for these scenarios and obsoleted APIs that should no longer be used but in some cases this was not possible. 
+Version 7.7.0 introduces User Groups and a better user management and security facilities. This means that anything to do with "User Types" no longer exist including several APIs that work with User Types. If your code or any package's code that you use makes reference to "User Type" APIs, you may need to make changes to your code. In many cases we've created backward compatibility shims for these scenarios and obsoleted APIs that should no longer be used but in some cases this was not possible.
+
+Also we're now by default using the e-mail address and not the username for the credentials. So when trying to login to the backoffice one will now need to use the e-mail address as opposed to the username, which was used in previous versions. If you do an upgrade from an older version and would like to keep using the username you will need to change the `<usernameIsEmail>true</usernameIsEmail>` setting to **false**.
 
 For a full list of breaking changes see: [the list on the issue tracker](http://issues.umbraco.org/issues/U4?q=Due+in+version%3A+7.7.0+Backwards+compatible%3F%3A+No+) 
 
