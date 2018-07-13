@@ -16,6 +16,8 @@ When you create a **new project** the user used to create the project will autom
 
 ![Technical Contact](images/technical-contact.png)
 
+<iframe width="800" height="450" src="https://www.youtube.com/embed/4--pI7aNmrI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 Fill in the fields:
 
 * Full name
