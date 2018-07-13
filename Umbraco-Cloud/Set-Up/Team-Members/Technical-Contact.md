@@ -21,7 +21,3 @@ Fill in the fields:
 * Full name
 * Email
 * Phone number
-
-## Related
-
-* [Youtube Tutorial](https://www.youtube.com/watch?v=4--pI7aNmrI)
