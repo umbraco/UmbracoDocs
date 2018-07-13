@@ -16,6 +16,8 @@ When you create a **new project** the user used to create the project will autom
 
 ![Technical Contact](images/technical-contact.png)
 
+[![Add a Technical Contact](https://img.youtube.com/vi/4--pI7aNmrI/0.jpg)](https://www.youtube.com/watch?v=4--pI7aNmrI)
+
 Fill in the fields:
 
 * Full name
