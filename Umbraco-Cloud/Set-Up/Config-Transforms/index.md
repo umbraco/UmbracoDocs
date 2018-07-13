@@ -20,6 +20,11 @@ Then, whenever you deploy from local to development, the transforms in `web.deve
 
 **Note:** if you only want to transform the file on the live environment then you don't create the `development.xdt.config`.
 
+## Test your config transforms
+Before applying the config transform files to your environments we recommend that you run a test using this tool: [Webconfig Transformation Tester](https://webconfigtransformationtester.apphb.com/)
+
+Using the tool will let you test whether the config transform file transforms your config files correctly. The tool can be used for all config files.
+
 ## All config files
 For each deploy, we'll search for all of the `.{environment}.xdt.config` files in your site and apply transforms, so you can also transform (for example) `~/config/Dashboard.config` by creating a `~/config/Dashboard.live.xdt.config` file. Just make sure the transform file follows the naming convention and it exists in the same folder as the config file you want to transform.
 
