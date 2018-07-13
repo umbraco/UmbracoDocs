@@ -32,4 +32,4 @@ Both `IFileSystem` and `FileSystemProviderManager` are located in the `Umbraco.C
 
 **Custom providers**
 
-[Azure Blob Storage Provider](https://our.umbraco.org/projects/collaboration/umbracofilesystemprovidersazure/) by James, Dirk and Jeavon
+[Azure Blob Storage Provider](https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/) by James, Dirk and Jeavon

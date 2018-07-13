@@ -13,7 +13,7 @@ If this sounds like you, you should evaluate the Azure Blob Storage provider. It
 #### File System Provider for Azure Blob Storage
 You’ll replace the default FileSystemProvider with the `Our.Umbraco.FileSystemProviders.Azure.AzureBlobFileSystem` provider.  We recommend doing this first and verifying it behaves as expected before proceeding with the ImageProcessor setup.
 
-The package is available on Our Umbraco [https://our.umbraco.org/projects/collaboration/umbracofilesystemprovidersazure/](https://our.umbraco.org/projects/collaboration/umbracofilesystemprovidersazure/)
+The package is available on Our Umbraco [https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/](https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/)
 The project source can be found here   [https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure](https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure)
 
 There are detailed instructions available on the project page, also summarized here.
@@ -56,7 +56,7 @@ You’ll need to install the following ImageProcessor packages (latest versions 
 * ImageProcessor.Web.Config.2.2.3.0 or later
 * ImageProcessor.Web.Plugins.AzureBlobCache.1.0.4.0 or later
 
-These packages are only available via NuGet, so ideally you’ll have your site setup to use Visual Studio.  You can find more information about ImageProcessor and related packages here [http://imageprocessor.org/](http://imageprocessor.org/)
+These packages are only available via NuGet, so ideally you’ll have your site setup to use Visual Studio.  You can find more information about ImageProcessor and related packages here [https://imageprocessor.org/](https://imageprocessor.org/)
 
 Since Umbraco includes a version of ImageProcessor.Web by default, you will need to update that package first using NuGet:
 

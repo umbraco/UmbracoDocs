@@ -91,6 +91,6 @@ When your infrastructure (document types, templates, etc) is in place, your edit
 ## Ongoing fine tuning
 We fine tune this process all the time, to cater to all the different ways an Umbraco site can be built. Some scenarios we simply cannot support out of the box, and some we can add configuration options for so it can fit with as many sites as possible. 
 
-Let us know in the [Courier forum](https://our.umbraco.org/forum/umbraco-courier/) on Our, if certain scenarios or setups give unreasonable large deployments. Please provide as many details as possible, or even better, provide us with a database backup, so we can try it out on our local machines and adjust the many variables. 
+Let us know in the [Courier forum](https://our.umbraco.com/forum/umbraco-courier/) on Our, if certain scenarios or setups give unreasonable large deployments. Please provide as many details as possible, or even better, provide us with a database backup, so we can try it out on our local machines and adjust the many variables. 
 
 

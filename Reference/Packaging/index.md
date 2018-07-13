@@ -132,6 +132,6 @@ Alias: addStringToHtmlElement
 
 Richard Soeteman has created the Codeplex project PackageActionsContrib which contains community submitted Package Actions which other developers may find useful.
 
-You can find out more about the package actions contribution project at http://packageactioncontrib.codeplex.com
+You can find out more about the package actions contribution project at https://packageactioncontrib.codeplex.com
 
 It is also worth checking the patches section of the project as new package actions have been submitted by other developers that have not yet been integrated into the PackageActionsContrib project that you might find useful.

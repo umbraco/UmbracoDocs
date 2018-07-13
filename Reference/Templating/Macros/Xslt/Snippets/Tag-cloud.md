@@ -50,4 +50,4 @@ The CSS stylesheet:
 
 Example of the tag cloud in use can be found at http://bentzen.dk (Broken Link)
 
-Another Example at: [www.blogfodder.co.uk/.../...g-Tags-In-Umbraco.aspx](http://www.blogfodder.co.uk/2009/12/22/using-tags-in-umbraco)
+Another Example at: [www.blogfodder.co.uk/.../...g-Tags-In-Umbraco.aspx](https://www.blogfodder.co.uk/2009/12/22/using-tags-in-umbraco)

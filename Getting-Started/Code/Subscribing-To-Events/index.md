@@ -69,4 +69,4 @@ As you can see our custom code has been executed when we published a piece of co
 - [Events Reference](../../../Reference/Events/)
 
 ### Umbraco TV
-- [Chapter: Events](http://umbraco.tv/videos/umbraco-v7/developer/extending/events/)
+- [Chapter: Events](https://umbraco.tv/videos/umbraco-v7/developer/extending/events/)

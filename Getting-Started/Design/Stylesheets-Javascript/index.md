@@ -21,4 +21,4 @@ You can bundle and minify as follows in a view template file.
 		@Html.RenderJsHere()
 	</head>
 	
-Full details of the ClientDependency Framework can be found here: [http://github.com/Shandem/ClientDependency](http://github.com/Shandem/ClientDependency)	
+Full details of the ClientDependency Framework can be found here: [https://github.com/Shandem/ClientDependency](https://github.com/Shandem/ClientDependency)	

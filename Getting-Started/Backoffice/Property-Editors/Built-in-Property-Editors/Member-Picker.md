@@ -25,7 +25,7 @@ The member picker opens a panel to pick a specific member from the member sectio
 
 ### Dynamic (Obsolete):
 
-See [Common pitfalls](https://our.umbraco.org/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
+See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
 
 	@{
 		if(CurrentPage.HasValue("author")){

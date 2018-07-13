@@ -6,7 +6,7 @@ In this tutorial we will add a server-side API controller, which will query a cu
 The end result will be a person-list, populated from a custom table. When clicked it will store the ID of the selected person.
 
 ## Setup the database
-First thing we need is some data; below is a simple SQL Script for creating a `people` table with some random data in it. You could also use [http://generatedata.com](http://generatedata.com) for larger amounts of data:
+First thing we need is some data; below is a simple SQL Script for creating a `people` table with some random data in it. You could also use [https://generatedata.com](https://generatedata.com) for larger amounts of data:
 
 	CREATE TABLE people (
 	    id INTEGER NOT NULL IDENTITY(1, 1),
