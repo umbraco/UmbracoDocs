@@ -8,14 +8,14 @@ Textarea is a simple HTML textarea control for multiple lines of text.
 
 ## Data Type Definition Example
 
-![Textarea Data Type Definition](images/textbox/7/textarea-setup.png)
+![Textarea Data Type Definition](images/textarea/7/textarea-setup.png)
 
 
 ## Settings
 
 ## Content Example:
 
-![Textarea Content Example](images/textbox/7/textarea-content.png)
+![Textarea Content Example](images/textarea/7/textarea-content.png)
 
 
 ## MVC View Example:
