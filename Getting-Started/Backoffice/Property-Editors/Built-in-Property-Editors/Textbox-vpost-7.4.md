@@ -6,6 +6,8 @@ versionTo: 7.5.14
 
 # Textbox
 
+`Alias: Umbraco.Textbox`
+
 `Returns: String`
 
 Textbox is a simple HTML input control for text.

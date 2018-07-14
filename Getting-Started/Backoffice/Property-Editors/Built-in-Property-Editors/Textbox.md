@@ -5,6 +5,8 @@ versionFrom: 7.6.0
 
 # Textbox
 
+`Alias: Umbraco.Textbox`
+
 `Returns: String`
 
 Textbox is a simple HTML input control for text. It can be configured to have a fixed character limit. The default maximum amount of characters is 500 unless it's specifically changed to a lower amount.
