@@ -19,7 +19,7 @@ Textarea is a simple HTML textarea control for multiple lines of text. It can be
 
 ### With a character limit
 
-![Textarea Data Type Definition With a Character Limit](images/textbox/7.6/textarea-setup-limit.png)
+![Textarea Data Type Definition With a Character Limit](images/textarea/7.6/textarea-setup-limit.png)
 
 ## Settings
 
@@ -31,7 +31,7 @@ Textarea is a simple HTML textarea control for multiple lines of text. It can be
 
 ### With a character limit
 
-![Textbox Content Example Without a Character Limit](images/textbox/7.6/textarea-content-limit.png)
+![Textbox Content Example Without a Character Limit](images/textarea/7.6/textarea-content-limit.png)
 
 
 ## MVC View Example:
