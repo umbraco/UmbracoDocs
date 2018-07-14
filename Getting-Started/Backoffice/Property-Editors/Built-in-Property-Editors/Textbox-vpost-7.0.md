@@ -18,7 +18,7 @@ Textbox is a simple HTML input control for text.
 
 ## Content Example:
 
-![Textbox Content Example](images/textbox/7Textbox-Content.png)
+![Textbox Content Example](images/textbox/7/Textbox-Content.png)
 
 ## MVC View Example:
 
