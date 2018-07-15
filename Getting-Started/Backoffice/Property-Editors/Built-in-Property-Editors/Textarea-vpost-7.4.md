@@ -27,7 +27,7 @@ Textarea is a simple HTML textarea control for multiple lines of text.
 ## MVC View Example:
 
 	@{
-	   if (Model.Content.HasValue("textarea")){
-	       <p>@(Model.Content.Textarea</p>
+	   if (Model.Content.HasValue("description")){
+	       <p>@(Model.Content.GetPropertyValue<string>("description"))</p>
 	   }
 	}
