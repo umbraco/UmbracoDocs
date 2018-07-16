@@ -4,27 +4,27 @@
 
 Displays a list of preset values as a list of checkbox controls. The text saved is a comma separated string of text values.
 
-NOTE: Unlike other property editors, the Prevalue IDs are not directly accessible in Razor
+*NOTE: Unlike other property editors, the Prevalue IDs are not directly accessible in Razor*
 
 ## Data Type Definition Example
 
-![True/Checkbox List Definition](images/wip.png)
+![True/Checkbox List Definition](images/checkbox-list/checkbox-list-setup.png)
 
-## Content Example 
+## Content Example
 
-![Checkbox List Example](images/wip.png)
+![Checkbox List Example](images/checkbox-list/checkbox-list-content.png)
 
 ## MVC View Example
 
 ### Typed
 
 	@{
-	  if (Model.Content.HasValue("superHeros")){                                                     
-	       <ul>                                                        
-	      @foreach(var item in Model.Content.GetPropertyValue<string>("superHeros").Split(',')) { 
+	  if (Model.Content.HasValue("superHeros")){
+	       <ul>
+	      @foreach(var item in Model.Content.GetPropertyValue<string>("superHeros").Split(',')) {
 	        <li>@item</li>
 	      }
-	    </ul>                                                                                       
+	    </ul>
 	  }
 	}
 
@@ -43,4 +43,4 @@ See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pit
 	        </ul>
 	    }
 	}
-    
+
