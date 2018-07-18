@@ -59,7 +59,7 @@ There are some logging configurations to take into account no matter what type o
 
 ### Testing
 
-You staging environment should also be load balanced so that you can see any issues relating to load balancing in that environment before going to production.
+Your staging environment should also be load balanced so that you can see any issues relating to load balancing in that environment before going to production.
 
 You'll need to test this solution **a lot** before going to production. You need to ensure there are no windows security issues, etc... The best way to determine issues is have a lot of people testing this setup and ensuring all errors and warnings in your application/system logs in Windows are fixed.
 

@@ -1,4 +1,4 @@
-#Partial View Macros
+# Partial View Macros
 
 _Partial view macros are the recommended macro type to use in Umbraco. They work in both MVC and Webforms and use the unified query syntax that is available via the `UmbracoHelper`_
 
@@ -11,7 +11,7 @@ All partial view macro views inherit from `Umbraco.Web.Macros.PartialViewMacroPa
 The model type for a partial view macro is `Umbraco.Web.Models.PartialViewMacroModel` which contains all of the properties you will need to
 render out content as well as some additional properties about the macro itself: `MacroName`, `MacroAlias`, `MacroId`, and `MacroParameters`. 
 
-##File information
+## File information
 
 By default Partial View Macros are stored in this folder: 
 

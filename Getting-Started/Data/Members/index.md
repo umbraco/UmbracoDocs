@@ -23,7 +23,7 @@ You can create your own Member Types and add properties and tabs just as with Do
 
 Go to the __Members__ section, click the menu icon next to __Member Types__ and select __Create__. Name the new Member Type and click the __Create__ button.
 
-You are now taken to the Member Type editor that is used to define and edit the Memeber Type. It consists of three tabs: __Info__, __Generic Properties__ and __Tabs__.
+You are now taken to the Member Type editor that is used to define and edit the Member Type. It consists of three tabs: __Info__, __Generic Properties__ and __Tabs__.
 
 ### Info
 ![Members Info tab](images/Members-Info.jpg)
@@ -43,7 +43,7 @@ __Property settings:__ If properties are added to the Member Type you can contro
   - __Show on profile:__ The property will show on the profile for member that is logged in.
 
 ### Generic Properties
-![Genric properties tab](images/Members-Generic-Properties.jpg)
+![Generic properties tab](images/Members-Generic-Properties.jpg)
 Create. edit and organize properties for this Member Type.
 
 ##### Adding properties
@@ -88,6 +88,11 @@ To assign a member to a specific group find the member you wish to assign and go
 __NOT A MEMBER OF GROUP(S):__ Lists all the groups that the member is not a part of. To assign a group to the member simply click it and it will move to the other column.
 
 __MEMBER OF GROUP(S):__ Lists all the groups that the member is part of. To remove the member from a group simply click it and it will move to the other column.
+
+# Sensitive data
+Umbraco 7.9.0 provides the ability to mark members as sensitive. A sensitive members's data will not be displayed to backoffice users unless they have appropriate permissions.
+
+More information can be found under [security](../../../Reference/Security/#sensitive-data).
 
 # Technical
 As a developer you are able to leverage your website easily when you build on the members section of Umbraco.  

@@ -1,10 +1,10 @@
-#Creating an MVC form using a Child Action
+# Creating an MVC form using a Child Action
 
 **Applies to: Umbraco 4.10.0+**
 
 _This tutorial will explain how to create a form using  a Child Action in Umbraco._
 
-##The View Model
+## The View Model
 
 The view model that will be used in this tutorial will be as follows:
 	
@@ -23,7 +23,7 @@ The view model that will be used in this tutorial will be as follows:
 
 This class defines the data that will be submitted and also defines how the data will be validated upon submission and conveniently for us MVC automatically wires up these validation attributes with the front-end so JavaScript validation will automagically occur.
 
-##The Surface Controller
+## The Surface Controller
 
 For this tutorial, the Surface controller that we will create will contain 2 actions, one which is used to accept the POSTed values from the form and the other is used to render the view containing the form. 
 
@@ -44,9 +44,9 @@ The HttpPost Action will:
 
 	public class BlogPostSurfaceController : Umbraco.Web.Mvc.SurfaceController
 	{
-		//Important to attribute your child action with ChildActionOnly
-		//otherwise the action will become publicly routable (i.e. have
-		//a publicly available Url) 
+		// Important to attribute your child action with ChildActionOnly
+		// otherwise the action will become publicly routable (i.e. have
+		// a publicly available Url) 
 		[ChildActionOnly]
 		public ActionResult ShowCommentForm(int memberId) 
 		{
@@ -63,25 +63,25 @@ The HttpPost Action will:
 		[HttpPost]
 		public ActionResult CreateComment(CommentViewModel model)
 		{    
-		    //model not valid, do not save, but return current Umbraco page
+		    // model not valid, do not save, but return current Umbraco page
 		    if (!ModelState.IsValid)
 			{
-				//Perhaps you might want to add a custom message to the ViewBag
-				//which will be available on the View when it renders (since we're not 
-				//redirecting)	    	
+				// Perhaps you might want to add a custom message to the ViewBag
+				// which will be available on the View when it renders (since we're not 
+				// redirecting)	    	
 		   		return CurrentUmbracoPage();
 			}
 				    
-			//Add a message in TempData which will be available 
-			//in the View after the redirect 
+			// Add a message in TempData which will be available 
+			// in the View after the redirect 
 			TempData.Add("CustomMessage", "Your form was successfully submitted at " + DateTime.Now)
 		
-		    //redirect to current page to clear the form
+		    // redirect to current page to clear the form
 		    return RedirectToCurrentUmbracoPage();		    
 		}
 	}
 
-##Create a Partial View to render the form
+## Create a Partial View to render the form
 
 The best way to render a form in MVC is to have a Partial View render the form with a strongly typed model. For this example, we'll create a partial view at location: *~/Views/Partials/BlogCommentForm.cshtml* with a strongly typed model of the model created previously. This example shows how to use the BeginUmbracoForm method with the strongly typed overload to specify which Surface controller and Action to POST to. For brevity, this will auto-scaffold all of the fields for the model using `Html.EditorFor(x => Model)` but you could create the input fields separately if you need more granular control over the markup.
 
@@ -93,7 +93,7 @@ The best way to render a form in MVC is to have a Partial View render the form w
 		<input type="submit"/>
 	}
 
-##Render the Child Action
+## Render the Child Action
 
 The last step is to render the Child Action that we've just created in your Umbraco template's view:
 
@@ -119,7 +119,7 @@ and then change your action to look like:
 		return PartialView("BlogCommentForm", model);
 	}
 
-##Action naming
+## Action naming
 
 When naming your actions you may be tempted to name them the same for rendering a form and handling the POST for the form. For example with the above you might want to do this:
 
@@ -154,9 +154,9 @@ If you really want to name your actions the same you can use a new attribute whi
 
 Otherwise, just name your actions differently.
 
-##Accessing ViewData 
+## Accessing ViewData 
 
-When you are adding any data to the ViewData collection in your [HttpPost] action, this ViewData gets set on the 'root' view context. Therefore in order to retreive the data in the ViewData collection from your ChildAction view, you'll need to access it by:
+When you are adding any data to the ViewData collection in your [HttpPost] action, this ViewData gets set on the 'root' view context. Therefore in order to retrieve the data in the ViewData collection from your ChildAction view, you'll need to access it by:
 
 	@ParentActionViewContext.ViewData
 

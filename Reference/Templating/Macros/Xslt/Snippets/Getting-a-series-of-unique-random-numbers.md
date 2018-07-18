@@ -1,5 +1,5 @@
-#Getting a series of unique random numbers
-If you've tried looping through subnodes to display, for example, random images - you will have noticed the propensity of most solutions to display some identical nodes.This is because most "random" solutions use a time-based seed for their random-number generation. This becomes a problem when you're requesting multiple random numbers within a very short time frame (milliseconds). The seed will be the same, and therefore the random numbers don't differ.
+# Getting a series of unique random numbers
+If you've tried looping through sub nodes to display, for example, random images - you will have noticed the propensity of most solutions to display some identical nodes.This is because most "random" solutions use a time-based seed for their random-number generation. This becomes a problem when you're requesting multiple random numbers within a very short time frame (milliseconds). The seed will be the same, and therefore the random numbers don't differ.
 
 Umbraco's XSLT extension library has a way around this, but you need a bit of extra inline code in your XSLT to be able to take advantage of it.
 
@@ -95,4 +95,4 @@ The following example shows how to list 8 randomly-selected nodes that fall belo
 		</msxsl:script>
 	</xsl:stylesheet>
 	
-The code on this page, and the GetRandom() method in umbraco.library, is based on [this blog post by Eli Robillard.](http://weblogs.asp.net/erobillard/archive/2004/05/06/127374.aspx)
+The code on this page, and the GetRandom() method in umbraco.library, is based on [this blog post by Eli Robillard.](https://weblogs.asp.net/erobillard/Random-Numbers-in-C_2300_)

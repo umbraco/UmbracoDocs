@@ -1,8 +1,8 @@
-#Finding types
+# Finding types
 
-_Whenever types need to be found in assemblies in order to add them to resolvers, the PluginManager should be used. The TypeFinder should never be used directly in any code except for in PluginManager extension methods or in the PluingManager itself._ 
+_Whenever types need to be found in assemblies in order to add them to resolvers, the PluginManager should be used. The TypeFinder should never be used directly in any code except for in PluginManager extension methods or in the PluginManager itself._ 
 
-##The Plugin Manager
+## The Plugin Manager
 
 The `Umbraco.Core.PluginManager` class is responsible for finding and caching all plugin types. It is also responsible for instantiating these types. It contains 4 important methods:
 
@@ -15,7 +15,7 @@ The `Umbraco.Core.PluginManager` class is responsible for finding and caching al
 * T CreateInstance<T>(Type type, bool throwException = false)
 	* Used to create an instance of the specified type based on the resolved/cached plugin types
 
-##Finding types
+## Finding types
 
 It is definitely possible to simply use  the methods above to find types in your code but this is not recommended practice. It is recommended to create extension methods for the PluginManager named accordingly to find specific types. For example: 
 

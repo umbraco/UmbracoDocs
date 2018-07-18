@@ -1,4 +1,4 @@
-#Routing
+# Routing
 Get an overview of how the Umbraco pipeline is structured. See what happens from user request to content delivery.
 
 <div class="row implementation">
@@ -6,9 +6,7 @@ Get an overview of how the Umbraco pipeline is structured. See what happens from
 </div>
 
 <div class="row">
-	<div class="col-xs-3 point">
-
-	</div>
+	<div class="col-xs-3 point"></div>
 	<div class="col-xs-3">
 		<span class="dot big icon-Download">
 			<span class="line v-line"></span>
@@ -37,8 +35,7 @@ Get an overview of how the Umbraco pipeline is structured. See what happens from
 			<span class="line h-line"></span>
 		</span>
 	</div>
-
-	<div class="col-xs-9">
+    <div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
 				<h4 class="text-right">Request Pipeline</h4>

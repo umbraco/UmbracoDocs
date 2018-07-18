@@ -16,7 +16,7 @@ One important configuration option that **must** be set when using a centralized
 
 For **Umbraco v7.7.3+**
 
-The umbracoLocalTempStorage setting controls where the `umbraco.config` and the other Umbraco TEMP files are stored. More info on this setting is available [here](../../../Reference/Config/webconfig/index.md#umbracolocaltempstorage-umbraco-v773)
+The `umbracoLocalTempStorage` setting controls where the `umbraco.config` and the other Umbraco TEMP files are stored. This setting can be configured in the [Web.config](../../../../Reference/Config/webconfig/#umbracolocaltempstorage-umbraco-v773).
 
 	<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
 
@@ -76,7 +76,7 @@ The `TempEnvDirectoryFactory` allows Examine to store indexes directly in the en
 ** EXAMPLE: %windir%\Microsoft.NET\Framework64\v2.0.50727\Aspnet_regiis.exe -ga ActiveDirectoryDomain\ProcessIdentity
 * Restart the server
 
-**Much of the above is covered in this Microsoft doc: [ASP.NET 3.5 Hosting](http://wiki.dev/GetFile.aspx?File=Wiggles-Hosting/ASPNET35_HostingDeploymentGuide.doc)**
+**Much of the above is covered in this Microsoft doc: [ASP.NET 3.5 Hosting](https://www.microsoft.com/en-us/download/confirmation.aspx?id=14047)**
 
 ## IIS Setup
 

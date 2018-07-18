@@ -1,20 +1,20 @@
-#Radiobutton List
+# Radiobutton List
 
 `Returns: Prevalue ID`
 
 Pretty much like the name indicates this Data type enables editors to choose from list of radiobutton
 
-##Data Type Definition Example
+## Data Type Definition Example
 
 ![Radiobutton List Data Type Definition](images/wip.png)
 
-##Content Example 
+## Content Example 
 
 ![Radiobutton List Content](images/wip.png)
 
-##MVC View Example
+## MVC View Example
 
-###Typed:
+### Typed:
 
     @if (Model.Content.HasValue("miniFigure"))
     {
@@ -22,7 +22,9 @@ Pretty much like the name indicates this Data type enables editors to choose fro
         <p>@preValue</p>
     }
 
-###Dynamic:                              
+### Dynamic (Obsolete):
+
+See [Common pitfalls](https://our.umbraco.org/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
 
     @if (CurrentPage.HasValue("miniFigure"))
     {

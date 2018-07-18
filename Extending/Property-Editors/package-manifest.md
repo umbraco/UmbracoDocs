@@ -33,9 +33,9 @@ The manifest can contain five root collections, none of them are mandatory:
     }
 
 ## Property Editors
-`propertyEditors` returns an array of property editor definitions, each object specifies an editor to make available to data types as an editor component. These editors are primarily property editors for content, media and members, but can also be made available as a macro parameter editor.
+`propertyEditors` returns an array of property editor definitions, each object specifies an editor to make available to data types as an editor component. These editors are primarily property editors for content, media and members. They can also be made available as a macro parameter editor.
 
-The basic values on any editor is `alias`, `name`, and `editor` these three **must** be set. Furthermore the editor value is an object with additional configuration options on, but must contain a view value.
+The basic values on any editor are `alias`, `name` and `editor`. These three **must** be set. Furthermore the editor value is an object with additional configuration options, it must contain a view value.
 
     {
         "alias": "my.editor.alias",
@@ -49,14 +49,14 @@ The basic values on any editor is `alias`, `name`, and `editor` these three **mu
     }
 
 * `alias` The alias of the editor, this must be unique, its recommended to prefix with your own "namespace"
-* `name` The name visible to the user in the ui, should also be unique.
+* `name` The name visible to the user in the UI, should also be unique.
 * `editor` Object containing editor configuration (see below)
 * `isParameterEditor` enables the property editor as a macro parameter editor can be true/false
 * `prevalues` Configuration of editor prevalues (see below)
-* `defaultConfig` Default configation values (see below)
-* `icon` A CSS class for the icon to be used in the 'Select Editor' dialog: eg `icon-autofill`
+* `defaultConfig` Default configuration values (see below)
+* `icon` A CSS class for the icon to be used in the 'Select Editor' dialog: e.g. `icon-autofill`
 * `group` The group to place this editor in within the 'Select Editor' dialog. Use a new group name or alternatively use an existing one such as `Pickers`
-* `defaultConfig` Provides a collection of default configuration values, in cases the property editor is not configured or is used a parameter editor, which doesnt allow configuration. The object is a key/value collection and must match the `prevalues` fields keys.
+* `defaultConfig` Provides a collection of default configuration values, in case the property editor is not configured or is using a parameter editor, which doesn't allow configuration. The object is a key/value collection and must match the `prevalues` fields keys.
 
 ### Editor
 `editor` Besides setting a view, the editor can also contain additional information.
@@ -69,18 +69,18 @@ The basic values on any editor is `alias`, `name`, and `editor` these three **mu
         "isReadOnly": false 
     }
 
-* `view` Path to the html file to use for rendering the editor
+* `view` Path to the HTML file to use for rendering the editor
 * `hideLabel` Turn the label on/off
-* `valueType` Sets the DB type the value is stored as, by default its `string`
+* `valueType` Sets the database type the value is stored as, by default it's `string`
 * `validation` Object describing required validators on the editor
 * `isReadOnly` Disables editing the value
 
-`valueType` sets what kind of data the editor will save in the database. By default this is set to `string`. The available options are:
+`valueType` sets the kind of data the editor will save in the database, its default setting is `string`. The available options are:
 * `STRING` Stores the value as an nvarchar in the database
 * `DATETIME` Stores the value as datetime in the database
 * `TEXT` Stores the value as ntext in the database
 * `INT` Stores the value as a bigint in the database
-* `JSON` Stored as ntext, but automatically serialized to dynamic object
+* `JSON` Stored as ntext and automatically serialized to a dynamic object
 
 ### Pre Values
 `preValues` is a collection of prevalue editors, used for configuring the property editor, the prevalues object must return an array of editors, called `fields`.
@@ -89,7 +89,7 @@ The basic values on any editor is `alias`, `name`, and `editor` these three **mu
         "fields": [
             {
                 "label": "Enable something",
-                "description": "This is a describtion",
+                "description": "This is a description",
                 "key": "enableStuff",
                 "view": "boolean"
             }            
@@ -102,25 +102,25 @@ Each field contains a number of configuration values:
 * `key` The key the prevalue is stored under (see below)
 * `view` Path to the editor used to configure this prevalue (see below)
 
-`key` on a prevalue, determines where its stored in the database, so if you give your prevalue the key "wolf" - then this key will be used in the prevalue table.
+`key` on a prevalue, determines where it's stored in the database. If you give your prevalue the key "wolf" then this key will be used in the prevalue table.
 
-But it also means that when this property editor is used on a property, then this prevalue will be exposed on the models configuration object like below, inside the property editors controller:
+It also means when this property editor is used on a property the prevalue will be exposed on the models configuration object as shown below, inside the property editors controller:
 
-    //this is the property value
+    // this is the property value
     $scope.model.value = "hello";
 
-    ///this is the configration on the property editor:
+    // this is the configuration on the property editor
     $scope.model.config
 
-    //this is our specific prevalue with the alias wolf
+    // this is our specific prevalue with the alias wolf
     $scope.model.config.wolf
 
 `view` config value points the prevalue editor to an editor to use. This follows the same concept as any other editor in Umbraco, but with prevalue editors there are a couple of conventions.
 
-If you just specify a name like `boolean` then umbraco will look at `/umbraco/views/prevalueeditors/boolean/boolean.html` for the editor view - if you wish to use your own, you specify the path like `~/App_Data/package/prevalue-editor.html`.
+If you just specify a name like `boolean` then Umbraco will look at `/umbraco/views/prevalueeditors/boolean/boolean.html` for the editor view - if you wish to use your own, you specify the path like `~/App_Data/package/prevalue-editor.html`.
 
 ### Default Config
-The defaultConfig object, provides a collection of default configuration values, in cases the property editor is not configured or is used a parameter editor, which doesnt allow configuration. The object is a key/value collection and must match the prevalue fields keys.
+The defaultConfig object provides a collection of default configuration values in case the property editor is not configured or is using a parameter editor, which doesn't allow configuration. The object is a key/value collection and must match the prevalue field keys.
 
     "defaultConfig": {
         "wolf": "nope",
@@ -140,12 +140,12 @@ Similar to how the `propertyEditors` array defines one or more property editors,
         }
     ]
     
-However the default grid editors are already configured in `/config/grid.editors.config.js` - you can use the file for inspiration, or see the [Grid Editors](../../Getting-Started/Backoffice/Property-Editors/Built-in-Property-Editors/Grid-Layout/Grid-Editors.md) page for more information on grid editors.
+However the default grid editors are already configured in `/config/grid.editors.config.js`. You can use the file for inspiration, or see the [Grid Editors](../../Getting-Started/Backoffice/Property-Editors/Built-in-Property-Editors/Grid-Layout/Grid-Editors.md) page for more information on grid editors.
 
 ## Parameter Editors
-`parameterEditors` returns an array of editor objects, each object specifies an editor to make available to macro parameters as an editor component. These editors work solely as parameter editors, and will not show up on the property editors list.
+`parameterEditors` returns an array of editor objects, each object specifies an editor to make available to macro parameters as an editor component. These editors work solely as parameter editors and will not show up on the property editors list.
 
-The parameter editors array follows the same format as the property editors described above, however, it cannot contain prevalues since there are no configuration options for macro parameter editors.
+The parameter editors array follows the same format as the property editors described above, however it cannot contain prevalues since there are no configuration options for macro parameter editors.
 
 ## JavaScript
 `javascript` returns a string[] of javascript files to load on application start
@@ -165,16 +165,16 @@ The parameter editors array follows the same format as the property editors desc
 
 
 ## JSON Schema
-The package.manifest JSON file has a hosted online JSON Schema file that allows editors such as Visual Studio and Visual Studio Code to have autocomplete/intellisense support when creating and editing package.manifest files and avoid mistakes or errors when creating your package.manifest files.
+The package.manifest JSON file has a hosted online JSON schema file that allows editors such as Visual Studio and Visual Studio Code to have autocomplete/intellisense support when creating and editing package.manifest files. This helps to avoid mistakes or errors when creating your package.manifest files.
 
 ### Setting up Visual Studio 2015
 
-To asscoiate the hosted JSON schema file to all package.manifest files you will need to perform the following inside of Visual Studio 2015.
+To associate the hosted JSON schema file to all package.manifest files you will need to perform the following inside of Visual Studio 2015.
 
 * Tools -> Options
 * Browse down to Text Editor -> File Extension
 * Add `manifest` into the Extension box
-* Select `JSON Editor` from dropdown and add the mapping
+* Select `JSON Editor` from the dropdown and add the mapping
 * Open a `package.manifest` file and ensure in the top left hand corner you see the schema with the URL set to http://json.schemastore.org/package.manifest
 
 

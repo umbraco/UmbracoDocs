@@ -65,6 +65,21 @@ By adding this to appSettings you can specify a new/different folder for storing
 
 By adding this to appSettings you can specify a new/different folder for storing your Javascript files and still be able to edit them within Umbraco. Default folder is ~/scripts.
 
+### SMTP Settings
+
+By adding this settings to the web.config you will be able to send out emails from your Umbraco installation. This could be notifications emails if you are using content workflow, or you are using Umbraco Forms you also need to specifiy SMTP settings to be able use the email workflows. The forgot password function from the backoffice also needs a SMTP server to send the email with the reset link.
+
+```
+  <system.net>
+        <mailSettings>
+        <smtp from="noreply@example.com">
+            <network host="127.0.0.1" userName="username" password="password" />
+        </smtp>
+        </mailSettings>
+    </system.net>
+ ```
+
+
 ## Optional settings
 
 _These are settings that have default values but can be overridden by creating the appSetting and setting its value in the web.config_
@@ -116,3 +131,11 @@ The options are:
 The default value is: `7`
 
 When this value is set above 0, the backoffice will check for a new version of Umbraco every 'x' number of days where 'x' is the value defined for this setting. Set this value to `0` to never check for a new version.
+
+### umbracoDisableElectionForSingleServer (Umbraco v7.6+)
+
+The default value is: `false`
+
+This is not a setting that commonly needs to be configured.
+
+This value is primarily used on Umbraco Cloud for a small startup performance optimization. When this is true, the website instance will automatically be configured to not support load balancing and the website instance will be configured to be the 'master' server for scheduling so no [master election](https://our.umbraco.org/documentation/Getting-Started/Setup/Server-Setup/load-balancing/flexible#scheduling-and-master-election) occurs. This will save 1 database call during startup. 

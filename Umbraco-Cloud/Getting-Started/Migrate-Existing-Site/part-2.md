@@ -8,7 +8,7 @@ Before the migration process can start, you will need to have an Umbraco Cloud p
 ![How to start an Umbraco Cloud trial](images/start-trial.gif)
 
 1. The best way to get started with Umbraco Cloud is to start a trial. You can do this, by visiting [umbraco.com](http://umbraco.com).
-2. When your project is starting choose to start with a *clean slate* - you need to have an empty Cloud project for the migration to be succesful.
+2. When your project is starting choose to start with a *clean slate* - you need to have an empty Cloud project for the migration to be successful.
 3. We recommend that you setup your project with at least two environments.
 
 ![Manage environments](images/setup-dev-env.png)

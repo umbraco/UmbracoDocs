@@ -1,6 +1,6 @@
 # Power tools (Kudu)
 
-Kudu is an open source engine behind git deployments to Azure. It gives us basic access to the file system trough command line or powershell all from the comfort of a web browser. It also powers the way we deploy to Umbraco Cloud sites.
+Kudu is an open source engine behind git deployments to Azure. It gives us basic access to the file system through command line or powershell, all from the comfort of a web browser. It also powers the way we deploy to Umbraco Cloud sites.
 
 ## How to access Kudu
 
@@ -28,7 +28,7 @@ You will need to allow for experimental features on your Umbraco Cloud profile b
 
 ## What can you do from Kudu?
 
-The power tools can be used for various things, and we are often referring to the tools in our troubleshooting guides.
+The power tools can be used for various things, we often refer to the tools in our troubleshooting guides.
 
 * [The file structure](File-structure-on-cloud)
 * [Run an extraction manually](Manual-extractions)

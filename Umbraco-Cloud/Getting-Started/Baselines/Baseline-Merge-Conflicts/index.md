@@ -5,7 +5,7 @@ On a Baseline project you can click to _“Manage updates here”_, which enable
 
 ![Upgrades Baseline children](images/manage-baseline-children.gif)
 
-Select the child projets you want to upgrade, and click **Update selected children**.
+Select the child projects you want to upgrade, and click **Update selected children**.
 The overview will then change to show the progress and status for updating the various child projects.
 
 The outcome of the update will result in one of three statuses:

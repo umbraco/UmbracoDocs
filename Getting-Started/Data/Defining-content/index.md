@@ -5,7 +5,7 @@
 Before a piece of content can be created it needs to be defined. That is why, when opening a blank installation of Umbraco, it is not possible to create content in the __Content__ section. All content needs a blueprint that holds information about what kind of data can be stored on the content node, which editors are used, how it is organized, where in the structure it is allowed and so forth. This blueprint or definition is called a Document Type.
 
 ## What is a Document Type?
-In it's most basic form a document type is a form containing fieldsets (or tabs) where you can apply rules about where the content can be created, which template(s) are allowed, backoffice icon and so forth.
+In its most basic form a document type is a form containing fieldsets (or tabs) where you can apply rules about where the content can be created, which template(s) are allowed, backoffice icon and so forth.
 
 Document Types can define entire pages or more limited content that can be reused on other nodes ie. a SEO tab. This means that you are in complete control of what type of content can be created where.
 
@@ -67,7 +67,7 @@ Give the property a name, the name will be shown to the editor so make relevant 
 
 ![Adding a property](images/Document-Type-Adding-Properties.jpg)
 
-#####Keyboard Shortcuts
+##### Keyboard Shortcuts
 Keyboard shortcuts are available when you are working with the Document Type editor. To see which shortcuts are available simply click <kbd>ALT</kbd> + <kbd>SHIFT</kbd> + <kbd>K</kbd>:
 
 ![Keyboard Shortcuts](images/Document-Type-Keyboard-Shortcuts.jpg?width=400)

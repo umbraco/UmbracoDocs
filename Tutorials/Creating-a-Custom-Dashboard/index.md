@@ -30,9 +30,9 @@ So all the steps we will go through:
 ### Prerequisites
 This tutorial uses AngularJS with Umbraco, so it does not cover AngularJS itself, there are tons of resources on that already here:
 
-- [egghead.io](http://www.egghead.io/)
+- [egghead.io](https://egghead.io/courses/angularjs-fundamentals)
 - [angularjs.org/tutorial](http://docs.angularjs.org/tutorial)
-- [Tekpub](http://tekpub.com/products/angular)
+- [Pluralsight](https://www.pluralsight.com/paths/angular-js)
 
 There are a lot of parallels with Creating a Property Editor, the tutorial '[Creating a Property Editor Tutorial](../../Tutorials/creating-a-property-editor/index.md)' is very much worth a read through too.
 
@@ -59,7 +59,7 @@ Add the following html to the WelcomeDashboard.html
 
 ## Configuring the dashboard to appear
 
-Open up your dashboard.config file from the /config folder of your site. [Explanation of the Dashboard Config settings are here...](../../Extending/Dashboards/index.md)
+Open up your dashboard.config file from the /config folder of your site. [Explanation of the Dashboard Config settings are here...](../../Reference/Config/dashboard/index.md)
 
 Add the following section:
 
@@ -261,23 +261,24 @@ Putting this together:
        logResource.getUserLog("save", new Date()).then(function (response) {
             console.log(response);
             var logEntries = [];
+            
             // loop through the response, and filter out save log entries we are not interested in
             angular.forEach(response, function (item) {
                 // if no entity exists -1 is returned for the nodeId (eg saving a macro would create a log entry without a nodeid)
                 if (item.nodeId > 0) {
-                    //this is the only way to tell them apart - whether the comment includes the words Content or Media!!
+                    // this is the only way to tell them apart - whether the comment includes the words Content or Media!!
                     if (item.comment.match("(\\bContent\\b|\\bMedia\\b)")) {
                         if (item.comment.indexOf("Media") > -1) {
-                            //log entry is a media item
+                            // log entry is a media item
                             item.entityType = "Media";
                             item.editUrl = "media/media/edit/" + item.nodeId;
                         }
                         if (item.comment.indexOf("Content") > -1) {
-                            //log entry is a media item
+                            // log entry is a media item
                             item.entityType = "Document";
                             item.editUrl = "content/content/edit/" + item.nodeId;
                         }
-                        //use entityResource to retrieve details of the content/media item
+                        // use entityResource to retrieve details of the content/media item
                         entityResource.getById(item.nodeId, item.entityType).then(function (ent) {
                             console.log(ent);
                             item.Content = ent;

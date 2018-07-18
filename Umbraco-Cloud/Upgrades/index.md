@@ -27,7 +27,7 @@ Before a live upgrade is rolled out on Umbraco Cloud:
 
 * Write release notes and include special upgrade instructions and/or blog post if necessary
 * Create a new version on the issue tracker
-* Take the build from AppVeyor and push to Nuget
+* Take the build from AppVeyor and push to NuGet
 * Update Our.umbraco.org release page
 * Update Umbraco Cloud’s site creation engine with the new version so that all new sites are built with the latest version  
 * Run the auto-upgrader on Umbraco Cloud on a subset of test sites to verify there are no issues

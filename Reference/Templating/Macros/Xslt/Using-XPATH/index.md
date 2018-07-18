@@ -1,4 +1,4 @@
-#Using XPATH
+# Using XPath
 Now that we know what is stored in the XML, and know where the XML is in our XSLT, we can now try to retrieve the data, and format it to our needs.
 
 As previous mentioned, XSLT uses an XML structure to define the processing rules.  So we need to learn what a few of the processing elements for XSLT are.
@@ -11,7 +11,7 @@ First, one of the most important elements is the "value-of" command.  It is writ
 
 This command is one of the most prevalent, and has a couple additional attributes to allow for the output to be controlled as needed.  We will look into that later.
 
-In the template area of the XSLT file, we can write our first output now using the value-of  command.  We know our data is in the $currentPage parameter, and its context is focused on the requested page's node.  Thus, if we want to get the name of the current page, we can use the "nodeName" attribute of the node to display the name.  Attributes are referenced in XPATH using the "@" with the name of the attribute following, thus "@nodeName
+In the template area of the XSLT file, we can write our first output now using the value-of  command.  We know our data is in the $currentPage parameter, and its context is focused on the requested page's node.  Thus, if we want to get the name of the current page, we can use the "nodeName" attribute of the node to display the name.  Attributes are referenced in XPath using the "@" with the name of the attribute following, thus "@nodeName
 
 	<xsl:template match="/">
 		<xsl:value-of select="$currentPage/@nodeName"/>

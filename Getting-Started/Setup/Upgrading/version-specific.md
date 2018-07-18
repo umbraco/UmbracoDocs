@@ -6,7 +6,9 @@ Follow the steps in the [general upgrade guide](general.md), then these addition
 
 ## Version 7.7.0
 
-Version 7.7.0 introduces User Groups and a better user management and security facilities. This means that anything to do with "User Types" no longer exist including several APIs that work with User Types. If your code or any package's code that you use makes reference to "User Type" APIs, you may need to make changes to your code. In many cases we've created backward compatibility shims for these scenarios and obsoleted APIs that should no longer be used but in some cases this was not possible. 
+Version 7.7.0 introduces User Groups and a better user management and security facilities. This means that anything to do with "User Types" no longer exist including several APIs that work with User Types. If your code or any package's code that you use makes reference to "User Type" APIs, you may need to make changes to your code. In many cases we've created backward compatibility shims for these scenarios and obsoleted APIs that should no longer be used but in some cases this was not possible.
+
+Also we're now by default using the e-mail address and not the username for the credentials. So when trying to login to the backoffice one will now need to use the e-mail address as opposed to the username, which was used in previous versions. If you do an upgrade from an older version and would like to keep using the username you will need to change the `<usernameIsEmail>true</usernameIsEmail>` setting to **false**.
 
 For a full list of breaking changes see: [the list on the issue tracker](http://issues.umbraco.org/issues/U4?q=Due+in+version%3A+7.7.0+Backwards+compatible%3F%3A+No+) 
 
@@ -77,13 +79,13 @@ The three most important things to note are:
  2. In umbracoSettings.config leave `EnablePropertyValueConverters` set to `false` - this will help your existing content queries to still work
  3. In tinyMceConfig.config make sure to remove `<plugin loadOnFrontend="true">umbracolink</plugin>` so that the rich text editor works as it should
 
-#### Upgrading via Nuget
+#### Upgrading via NuGet
 
-This is an important one and there was unfortunately not a perfect solution to this. We have removed the UrlRewriting dependency and no longer ship with it, however if you are using it we didn't want to have Nuget delete all of your rewrites. So the good news is that if you are using it, the Nuget upgrade will not delete your rewrite file and everything should just continue to work (though you should really be using IIS rewrites!). 
+This is an important one and there was unfortunately not a perfect solution to this. We have removed the UrlRewriting dependency and no longer ship with it, however if you are using it we didn't want to have NuGet delete all of your rewrites. So the good news is that if you are using it, the NuGet upgrade will not delete your rewrite file and everything should just continue to work (though you should really be using IIS rewrites!). 
 
 However, if you are not using it, **you will get a YSOD after upgrading, here's how to fix it**
 
-Since you aren't using UrlRewriting you will have probably never edited the UrlRewriting file and in which case Nuget will detect that and remove it. However you will need to manually remove these UrlRewriting references from your web.config:
+Since you aren't using UrlRewriting you will have probably never edited the UrlRewriting file and in which case NuGet will detect that and remove it. However you will need to manually remove these UrlRewriting references from your web.config:
 
 * `<section name="urlrewritingnet" restartOnExternalChanges="true" requirePermission="false" type="UrlRewritingNet.Configuration.UrlRewriteSection, UrlRewritingNet.UrlRewriter" />`
 * `<urlrewritingnet configSource="config\UrlRewriting.config" />`
@@ -170,7 +172,7 @@ Other considerations:
 		</nodeType>
 
 	* The &lt;usercontrol&gt; value has changed to: **/create/user.ascx**, this is a required change otherwise creating a new user will not work.
-* There is a breaking change to be aware of, full details can be found [here](http://umbraco.com/follow-us/blog-archive/2014/1/17/heads-up,-breaking-change-coming-in-702-and-62.aspx).
+* There is a breaking change to be aware of, full details can be found [here](https://umbraco.com/blog/heads-up-breaking-change-coming-in-702-and-62/).
 
 ## Version 7.0.0 to 7.0.1
 * Remove all uGoLive dlls from /bin

@@ -6,7 +6,7 @@ Here's a technical overview of the different parts that make up an environment o
 
 ## Site and Git repository
 
-Each environmenton Umbraco Cloud has both a Git repository and a folder with your actual live site. The Git repository is what you clone down when you work with the project locally, and it's where your changes are pushed to.
+Each environment on Umbraco Cloud has both a Git repository and a folder with your actual live site. The Git repository is what you clone down when you work with the project locally, and it's where your changes are pushed to.
 
 The live site (`/site/wwwroot/`) contains the files used to show your website to the world. When you push changes from your local machine, they are pushed to the Git repository (`/site/repository/`), and when this finishes successfully the changes are copied into the live site.
 
@@ -18,7 +18,7 @@ Read more about this and team member roles in the [Team Members article](../../S
 
 ## SQL Database
 
-Each of your Umbraco Cloud environments has it's own SQL Azure database. You have full access to the databases, and you can create custom tables just like you'd expect from any other hosting provider.
+Each of your Umbraco Cloud environments has its own SQL Azure database. You have full access to the databases, and you can create custom tables just like you'd expect from any other hosting provider.
 
 Learn more about how to connect to your Umbraco Cloud databases in the [Database](../../Databases) article.
 
