@@ -80,13 +80,3 @@ To create a new Packaging operation you need to (1) specify a name of the data y
 If you want to allow Courier to perform comparison checking against a destination, you can enable this. This means that Courier will do a hashed comparison of all items to determine if they are needed in the revision. This can save time, but it should only be used if you know the destination won't change before the extraction happens.
 
 	engine.EnableInstantCompare(destination);
-
-            
-
-
-
-
-## Extraction
-
-
-## Transfering
