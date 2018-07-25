@@ -21,7 +21,7 @@ You can bind any hostname to your project environments. Keeping in mind, of cour
 
 You can bind a total of 15 hostnames to each Umbraco Cloud environments.
 
-Once you add a domain to one of your environments make sure to update the hostname DNS entry to resolve to the umbraco.io service. We recommend setting an ALIAS record for your root domain (e.g. mysite.s1.umbraco.io), rather than an A record for the umbraco.io service IP address. Check with your DNS host or domain registrar for details on how to configure this for your domain. 
+Once you add a domain to one of your environments make sure to update the hostname DNS entry to resolve to the umbraco.io service. We recommend setting an ALIAS record for your root domain (e.g. mysite.s1.umbraco.io), rather than an A record for the umbraco.io service IP address - 23.100.15.180. Check with your DNS host or domain registrar for details on how to configure this for your domain. 
 
 You will also need to add the hostnames to your root content node.
 
