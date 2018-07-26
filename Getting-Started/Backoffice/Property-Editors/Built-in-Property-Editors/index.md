@@ -90,7 +90,7 @@ The Multiple Textbox property editor enables a content editor to make a list of 
 ## [Nested Content](Nested-Content.md)
 New to v7.7, the nested content property editor enables you to use Document Types as a schema for list items.
 
-## Numeric
+## [Numeric](Numeric.md)
 A configurable number control allowing only numbers.
 
 ## [Radio button list](RadioButton-List.md)
