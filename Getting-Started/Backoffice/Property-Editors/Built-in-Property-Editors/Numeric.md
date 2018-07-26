@@ -29,7 +29,7 @@ This allows you to setup a maximum value. If you will always need a maximum valu
 ## MVC View Example:
 
     @{
-        if(Model.Content.HasValue("numeric")){
-            <p>@(Model.Content.GetPropertyValue<string>("numeric"))</p>
+        if(Model.Content.HasValue("amount")){
+            <p>@(Model.Content.GetPropertyValue<string>("amount"))</p>
         }
     }
