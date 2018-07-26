@@ -1,3 +1,8 @@
+---
+keywords: numeric property editors v7.3 version7.3
+versionFrom: 7.3.0
+---
+
 # Numeric
 
 `Alias: Umbraco.Integer`
