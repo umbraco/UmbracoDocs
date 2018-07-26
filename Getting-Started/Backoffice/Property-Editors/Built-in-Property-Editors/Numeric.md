@@ -2,7 +2,7 @@
 
 `Alias: Umbraco.Integer`
 
-`Returns: String`
+`Returns: Integer`
 
 Numeric is a simple HTML input control for entering numbers. Since it's a standard HTML element the options and behaviour is all controlled by the browser and therefore is beyond the control of Umbraco.
 
