@@ -20,7 +20,7 @@ The problem here is that when the Umbraco backoffice reads the values for each p
 ## Solution
 The solution is to delete all of the duplicated rows that shouldn't be there, so for each property only the first row should be left behind.
 
-First of all, you need to update [Courier to at least version 2.51.4](https://our.umbraco.org/projects/umbraco-pro/umbraco-courier-2/)  on all of your environments. This will prevent the problem from re-occuring. We fixed how Courier transfers content the first time and this problem will not occur again after v2.51.4.   
+First of all, you need to update [Courier to at least version 2.51.4](https://our.umbraco.com/projects/umbraco-pro/umbraco-courier-2/)  on all of your environments. This will prevent the problem from re-occuring. We fixed how Courier transfers content the first time and this problem will not occur again after v2.51.4.   
 
 **Note:** At this point you should **back up** your database in both environments (so the source and the target database).
 

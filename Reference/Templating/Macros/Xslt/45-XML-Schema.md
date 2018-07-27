@@ -70,4 +70,4 @@ update the ```UseLegacyXmlSchema``` setting in the
 page for a step-by-step
 guide](/wiki/reference/xslt/45-xml-schema/switching-between-old-and-new-schema).
 
-Here is a [topic on why Umbraco uses the new xml schema](http://our.umbraco.org/forum/developers/xslt/9665-Why-a-new-XML-Schema)
+Here is a [topic on why Umbraco uses the new xml schema](http://our.umbraco.com/forum/developers/xslt/9665-Why-a-new-XML-Schema)

@@ -28,7 +28,7 @@ Before a live upgrade is rolled out on Umbraco Cloud:
 * Write release notes and include special upgrade instructions and/or blog post if necessary
 * Create a new version on the issue tracker
 * Take the build from AppVeyor and push to NuGet
-* Update Our.umbraco.org release page
+* Update our.umbraco.com release page
 * Update Umbraco Cloud’s site creation engine with the new version so that all new sites are built with the latest version  
 * Run the auto-upgrader on Umbraco Cloud on a subset of test sites to verify there are no issues
 * Run the auto-upgrader on all Umbraco Cloud sites
@@ -60,7 +60,7 @@ If a project is a project that has had child projects created off it, the upgrad
 ## What is a breaking change?
 It is important that developers understand what is considered a breaking change in Umbraco products. In most cases an auto-upgrade will not have any breaking changes and we strive to ensure this is the case. However, in some rare cases developers may be using Umbraco’s internal code or Umbraco’s code that is not intended for public consumption and in some releases that code may change. It is important for developers to understand the risks of using Umbraco code that is not considered a breaking change when it is updated since this may directly affect a site that is auto-upgraded. 
 
-What is a breaking change is documented here: [https://our.umbraco.org/documentation/development-guidelines/breaking-changes](https://our.umbraco.org/documentation/development-guidelines/breaking-changes)
+What is a breaking change is documented here: [https://our.umbraco.com/documentation/development-guidelines/breaking-changes](https://our.umbraco.com/documentation/development-guidelines/breaking-changes)
 
 ## Can I opt out of product auto upgrades?
 

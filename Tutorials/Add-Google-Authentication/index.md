@@ -49,7 +49,7 @@ Now just fill in your email and leave the page open - you will need the Client I
 
 ## Installing Visual Studio packages
 
-Now that you have the Google API all set up you have to go to your existing solution in Visual Studio. If you don't know how to clone down a Cloud site to use in Visual Studio then there is an excellent guide [here!](https://our.umbraco.org/documentation/Umbraco-Cloud/Set-Up/Visual-Studio/) 
+Now that you have the Google API all set up you have to go to your existing solution in Visual Studio. If you don't know how to clone down a Cloud site to use in Visual Studio then there is an excellent guide [here!](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Visual-Studio/) 
 
 In Visual Studio, go to the Tools menu, then NuGet Package Manager - Package Manager Console. This adds a package manager console at the bottom where you can install packages with commands. In this console write the following:
 

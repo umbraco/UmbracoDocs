@@ -22,7 +22,7 @@ The only setting that is available for manipulating the Date property is to set 
 
 ### Dynamic (Obsolete):
 
-See [Common pitfalls](https://our.umbraco.org/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
+See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
 
 	@{
 		@CurrentPage.datePicker.ToString("dd-MM-yyyy")

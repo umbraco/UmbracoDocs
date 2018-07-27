@@ -10,7 +10,7 @@ By default the web.config with Umbraco (7.6+) will contain a commented out secti
 
     <!--
     If you wish to use IIS rewrite rules, see the documentation here: 
-    https://our.umbraco.org/documentation/Reference/Routing/IISRewriteRules
+    https://our.umbraco.com/documentation/Reference/Routing/IISRewriteRules
     -->
     <!--
     <rewrite>

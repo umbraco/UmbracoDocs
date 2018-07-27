@@ -20,7 +20,7 @@ Before you clone down the Umbraco Cloud project to your local machine, login to 
 
 ## Clone down your Umbraco Cloud project
 
-Now it's time to clone down your Umbraco Cloud project to your local machine. You can read more about how this is done, in the ['Working Locally'](https://our.umbraco.org/documentation/Umbraco-Cloud/Set-Up/Working-Locally/) chapter.
+Now it's time to clone down your Umbraco Cloud project to your local machine. You can read more about how this is done, in the ['Working Locally'](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Working-Locally/) chapter.
 
 Run the site locally and verify your own project and the cloned Umbraco Cloud project are using the same Umbraco version. After you've verified this, shut down the site, and it's now time to start merging the two projects.
 

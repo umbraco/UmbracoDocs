@@ -29,7 +29,7 @@ The True/False property has a setting which allows you to set the default value 
 
 ### Dynamic (Obsolete):
 
-See [Common pitfalls](https://our.umbraco.org/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
+See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
 
 	@{
 		foreach (var page in CurrentPage.Children){

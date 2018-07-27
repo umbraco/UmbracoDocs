@@ -86,7 +86,7 @@ The configuration for log4net is found in your Umbraco site here: /config/log4ne
 Full details of Log4Net configuration options can be found here: http://logging.apache.org/log4net/release/manual/configuration.html
 
 The default location for trace logs in your application will be /app_data/logs/ with a file created for each day of logging information.
-There is a useful Umbraco Package called Diplo Trace Log Viewer that will enable you to see this log file information from the developer section of the Umbraco Backoffice: https://our.umbraco.org/projects/developer-tools/diplo-trace-log-viewer/
+There is a useful Umbraco Package called Diplo Trace Log Viewer that will enable you to see this log file information from the developer section of the Umbraco Backoffice: https://our.umbraco.com/projects/developer-tools/diplo-trace-log-viewer/
 
 ##### Writing to the logs
 

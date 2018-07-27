@@ -50,4 +50,4 @@ To configure your SMTP service you will need to following details:
 
 When you've configured these settings for your SMTP service, you will be able to send emails from your Umbraco Cloud project.
 
-**NOTE**: You can test if you've configured your SMTP service correctly by running a [Health Check](https://our.umbraco.org/Documentation/Extending/Healthcheck/) from the Umbraco backoffice. 
+**NOTE**: You can test if you've configured your SMTP service correctly by running a [Health Check](https://our.umbraco.com/Documentation/Extending/Healthcheck/) from the Umbraco backoffice. 

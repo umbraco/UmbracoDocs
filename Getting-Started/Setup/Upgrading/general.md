@@ -34,7 +34,7 @@ Now here comes the tricky bit: We'll be mean and overwrite your web.config file 
 
 ## Manually Upgrading from a zip file package
 
-Download the .zip file for the new version you are upgrading to from [http://our.umbraco.org/download](http://our.umbraco.org/download)
+Download the .zip file for the new version you are upgrading to from [http://our.umbraco.com/download](http://our.umbraco.com/download)
 
 Copy the following folders from inside the .zip file over the existing folders in your site:
 

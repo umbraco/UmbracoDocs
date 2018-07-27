@@ -14,7 +14,7 @@ Follow these simple steps to be up and running with VS Code quickly and easily. 
 
 	![VS Code install extension](images/VsCode/1.png)
 
-1. Download a fresh Umbraco installation from  [https://our.umbraco.org/download/](https://our.umbraco.org/download/) then unzip and drag it into VS Code.
+1. Download a fresh Umbraco installation from  [https://our.umbraco.com/download/](https://our.umbraco.com/download/) then unzip and drag it into VS Code.
 
 	![Fresh Umbraco installation](images/VsCode/2.png)
 
