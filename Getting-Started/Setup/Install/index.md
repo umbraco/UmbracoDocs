@@ -4,7 +4,7 @@ The easiest way to get the latest version of Umbraco up and running is with VS C
 
 1. **Download and install [Visual Studio Code](https://code.visualstudio.com/)**
 1. **Download and install [IIS Express](https://www.microsoft.com/en-us/download/details.aspx?id=48264) (Optional as IIS Express for VSCode will install it)**
-1. **Download and unzip [Umbraco](http://our.umbraco.com/download)**
+1. **Download and unzip [Umbraco](https://our.umbraco.com/download)**
 1. **Install the [IIS Express Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=warren-buckley.iis-express)**
 1. **Open the unzipped root folder in VS Code**
 1. **Run the website with the IIS Express Extension(CTRL+F5)**

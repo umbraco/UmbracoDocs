@@ -188,11 +188,11 @@ Other considerations:
 Read and follow [the full v7 upgrade guide](upgrading-to-v7.md)
 
 ## Version 4.10.x/4.11.x to 6.0.0
-* If your site was ever a version between 4.10.0 and 4.11.4 and you have just upgraded to 6.0.0 install the [fixup package](http://our.umbraco.com/projects/developer-tools/path-fixup) and run it after the upgrade process is finished.
+* If your site was ever a version between 4.10.0 and 4.11.4 and you have just upgraded to 6.0.0 install the [fixup package](https://our.umbraco.com/projects/developer-tools/path-fixup) and run it after the upgrade process is finished.
 * The DocType Mixins package is **NOT** compatible with v6+ and will cause problems in your document types.
 
 ## Version 4.10.x to 4.11.x
-* If your site was ever a version between 4.10.0 and 4.11.4 install the [fixup package](http://our.umbraco.com/projects/developer-tools/path-fixup) and run it after the upgrade process is finished.
+* If your site was ever a version between 4.10.0 and 4.11.4 install the [fixup package](https://our.umbraco.com/projects/developer-tools/path-fixup) and run it after the upgrade process is finished.
 
 ## Version 4.8.0 to 4.10.0
 * Delete the bin/umbraco.linq.core.dll file
@@ -206,7 +206,7 @@ Read and follow [the full v7 upgrade guide](upgrading-to-v7.md)
 * Delete the bin/App_Browsers.dll file
 * Delete the bin/App_global.asax.dll file
 * Delete the bin/Fizzler.Systems.HtmlAgilityPack.dll file
-* For people using uComponents 3.1.2 or below, 4.8.0 breaks support for it. Either upgrade to a newer version beforehand or follow the workaround [posted here](http://our.umbraco.com/projects/backoffice-extensions/ucomponents/questionssuggestions/33021-Upgrading-to-Umbraco-48-breaks-support-for-uComponents)
+* For people using uComponents 3.1.2 or below, 4.8.0 breaks support for it. Either upgrade to a newer version beforehand or follow the workaround [posted here](https://our.umbraco.com/projects/backoffice-extensions/ucomponents/questionssuggestions/33021-Upgrading-to-Umbraco-48-breaks-support-for-uComponents)
 
 ## Version 4.7.1.1 to 4.7.2
 * Delete the bin/umbraco.MacroEngines.Legacy.dll file

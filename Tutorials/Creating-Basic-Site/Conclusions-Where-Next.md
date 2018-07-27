@@ -6,8 +6,8 @@ This is not the limit of Umbraco - you've barely scratched the surface in this g
 
 *    For further reading / exercises work through the video tutorials: [http://umbraco.tv/videos/umbraco-v7/implementor/](http://umbraco.tv/videos/umbraco-v7/implementor/)
 *    For hands on training and developer certification, attend an official Umbraco Master Class course in a city near you [https://umbraco.com/products/training](https://umbraco.com/products/training)
-*    There is also the online Official Documentation. [http://our.umbraco.com/documentation](http://our.umbraco.com/documentation) 
-*    For help and guidance on anything this guide doesn't cover the forums are a great place to start: [http://our.umbraco.com/forum ](http://our.umbraco.com/forum )
+*    There is also the online Official Documentation. [https://our.umbraco.com/documentation](https://our.umbraco.com/documentation) 
+*    For help and guidance on anything this guide doesn't cover the forums are a great place to start: [https://our.umbraco.com/forum ](https://our.umbraco.com/forum )
 
 ---
 # Happy Umbraco-ing!

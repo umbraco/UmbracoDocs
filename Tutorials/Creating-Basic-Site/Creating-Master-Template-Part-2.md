@@ -8,7 +8,7 @@ We're now going to make a simple page where we'll just put our contact details. 
 
 Some potential solutions:
 
-* Build your own contact form using Surface Controllers - [http://our.umbraco.com/documentation/Reference/Templating/Mvc/forms](http://our.umbraco.com/documentation/Reference/Templating/Mvc/forms) or [http://umbraco.tv/videos/developer/fundamentals/surface-controllers/](http://our.umbraco.com/documentation/Reference/Templating/Mvc/forms)
+* Build your own contact form using Surface Controllers - [https://our.umbraco.com/documentation/Reference/Templating/Mvc/forms](https://our.umbraco.com/documentation/Reference/Templating/Mvc/forms) or [http://umbraco.tv/videos/developer/fundamentals/surface-controllers/](https://our.umbraco.com/documentation/Reference/Templating/Mvc/forms)
 * If you're not a programmer you can use the Umbraco built in package - Umbraco Forms. This has the added benefit editors can also create their own forms [http://umbraco.com/products-and-support/forms](http://umbraco.com/products-and-support/forms)
 
 ### Creating a Simple Content Only Contact Us Page 
