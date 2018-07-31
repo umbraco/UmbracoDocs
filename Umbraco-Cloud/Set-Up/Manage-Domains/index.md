@@ -31,7 +31,7 @@ You will also have to specify the hostname for each root node if you are using a
 * Add your hostname
 * Hit *Save*
 
-![Culture and Hostnames](images/culture-and-hostnames.PNG)
+![Culture and Hostnames](images/culture-and-hostnames.png)
 
 Once you've assigned a domain to your Umbraco Cloud environment, you may want to hide the default umbraco.io URL (e.g. *snoopy.s1.umbraco.io*). We've created a rewrite rule for this purpose - find it in the [Rewrites on Cloud](Rewrites-on-Cloud/#hiding-the-default-umbraco-io-url) article. 
 
