@@ -32,6 +32,8 @@ As Umbraco Cloud doesn't provide SMTP servers, this is something you will need t
 * [SendGrid](https://sendgrid.com/) - very simple and easy to setup
 * [MailGun](https://www.mailgun.com/) - mainly for developers, as it is a bit more on the technical side
 
+<iframe width="800" height="450" src="https://www.youtube.com/embed/YcoFF-Ke55o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 Setting up the SMTP server is step one. Step two is to configure the service in your `web.config` file - in the `system.net/mailSettings` section.
 
     <system.net>
