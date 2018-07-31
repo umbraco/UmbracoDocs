@@ -1,6 +1,6 @@
 # Manually run extractions on your Cloud environments
 
-When you deploy from one environment to another on your Umbraco Cloud project, the Deploy engine is running an extraction. What this means, is that the files from the Git repository are merged into the files used on the site.
+When you deploy from one environment to another on your Umbraco Cloud project, the files from the Git repository are merged into the files used on the site. The Deploy engine then runs an extraction. What this means is that the files on the disk will be deserialized into the database on the Cloud environment.
 
 Run an extraction following these steps:
 
