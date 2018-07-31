@@ -23,7 +23,7 @@ You can bind a total of 15 hostnames to each Umbraco Cloud environments.
 
 Once you add a domain to one of your environments make sure to update the hostname DNS entry to resolve to the umbraco.io service. We recommend setting an ALIAS record for your root domain (e.g. mysite.s1.umbraco.io), rather than an A record for the umbraco.io service IP address. Check with your DNS host or domain registrar for details on how to configure this for your domain. 
 
-You will also need to add the hostnames to your root content node.
+If you are using a multisite setup, you will need to specify the hostname for each root node.
 
 * Go to the Umbraco Backoffice
 * *Right-click* the root content node
@@ -31,7 +31,7 @@ You will also need to add the hostnames to your root content node.
 * Add your hostname
 * Hit *Save*
 
-![Culture and Hostnames](images/culture-and-hostnames.png)
+![Culture and Hostnames](images/culture-and-hostnames.PNG)
 
 Once you've assigned a domain to your Umbraco Cloud environment, you may want to hide the default umbraco.io URL (e.g. *snoopy.s1.umbraco.io*). We've created a rewrite rule for this purpose - find it in the [Rewrites on Cloud](Rewrites-on-Cloud/#hiding-the-default-umbraco-io-url) article. 
 
