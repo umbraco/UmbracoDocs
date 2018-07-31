@@ -23,7 +23,6 @@ If you're using Visual Studio 2015+ check this path:
 `$(solutionDir)\.vs\config\applicationhost.config`
 
 In Visual Studio 2015+ you can also configure which applicationhost.config file is used by altering the `<UseGlobalApplicationHostFile>true|false</UseGlobalApplicationHostFile>` setting in the project file (eg: MyProject.csproj). (source: MSDN forum)
-```
 
 ## Using Custom Tables with Umbraco Cloud
 Umbraco Cloud will ensure that your Umbraco related data is always up to date, but it won't know anything about data in custom tables unless told. Nothing new here, it's basically just like any other host when it comes to non-Umbraco data.
