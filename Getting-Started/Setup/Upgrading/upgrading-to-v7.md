@@ -2,7 +2,7 @@
 
 *This document should be used as a reference, not a step by step guide. Upgrading will largely depend on what version of Umbraco you are currently running, what packages you have installed and the many aspects of your own Umbraco installation.*
 
-The [standard upgrade instructions](http://our.umbraco.org/documentation/Installation/Upgrading/general) still apply to this process as well.
+The [standard upgrade instructions](https://our.umbraco.com/documentation/Installation/Upgrading/general) still apply to this process as well.
 
 ## Backup
 
@@ -21,7 +21,7 @@ Umbraco 7 requires browsers with proper html 5 support, these include Chrome, Fi
 
 Before you upgrade you should read the list of breaking changes, in some cases you may need to change some of your codebase if code has been removed from the core or if one of these breaking changes direclty affects your install.
 
-See: [List of breaking changes](http://our.umbraco.org/contribute/releases/700)
+See: [List of breaking changes](https://our.umbraco.com/contribute/releases/700)
 
 ## Examine
 
@@ -62,7 +62,7 @@ It is recommended that you use a Diff tool to compare the configuration file cha
 * /views/web.config updates
 * new /macroscripts/web.config
 * /config/umbracoSettings.config
-	* Umbraco is now shipped with minimal settings but the [full settings](http://our.umbraco.org/documentation/Using-Umbraco/Config-files/umbracoSettings/) are still available
+	* Umbraco is now shipped with minimal settings but the [full settings](https://our.umbraco.com/documentation/Using-Umbraco/Config-files/umbracoSettings/) are still available
 	* umbracoSettings is now a true ASP.Net configuration section [http://issues.umbraco.org/issue/U4-58](http://issues.umbraco.org/issue/U4-58)
 	* remove the &lt;EnableCanvasEditing&gt; element
 	* remove the &lt;webservices&gt; element

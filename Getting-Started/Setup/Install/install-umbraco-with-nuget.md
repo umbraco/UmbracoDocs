@@ -25,7 +25,7 @@ In Visual Studio, go to Tools > Extensions and Updates, then Updates > Visual St
 Also make sure that the execution policy in the Package Manager Console is set to **RemoteSigned**. You can check this by going to Tools > NuGet Package Manager > Package Manager Console. Once that loads, type `Get-ExecutionPolicy` if it's set to "Restricted" then make sure to change that by typing the following command: `Set-ExecutionPolicy RemoteSigned`
 
 ## Install NuGet in Visual Studio
-If you don't already have NuGet installed, you can read all about the installation process here: [http://docs.nuget.org/docs/start-here/installing-nuget](http://docs.nuget.org/docs/start-here/installing-nuget).
+If you don't already have NuGet installed, you can read all about the installation process here: [https://docs.nuget.org/docs/start-here/installing-nuget](https://docs.nuget.org/docs/start-here/installing-nuget).
 
 ## New solution
 To install Umbraco we first need a Visual Studio solution.
@@ -110,4 +110,4 @@ Should you need to exclude any of these folders or content, you can add a target
   </Target>
 ```
 
-[1]: http://youtrack.jetbrains.com/issue/RSRP-419513
+[1]: https://youtrack.jetbrains.com/issue/RSRP-419513

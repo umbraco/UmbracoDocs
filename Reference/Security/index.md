@@ -50,7 +50,7 @@ Note that the rule includes an ignore for `locahost`. If you run your local envi
 
 **Applies to version 7.3.1 and newer**
 
-Authentication for back office users in Umbraco uses [ASP.Net Identity](http://www.asp.net/identity) which is a very flexible and extensible framework for authentication. 
+Authentication for back office users in Umbraco uses [ASP.Net Identity](https://www.asp.net/identity) which is a very flexible and extensible framework for authentication. 
  
 Out of the box Umbraco ships with a custom ASP.Net Identity implementation which uses Umbraco's database data. Normally this is fine for most Umbraco developers
 but in some cases the authentication process needs to be customized. ASP.Net Identity can be easily extended by using custom OAuth providers which is helpful if you want

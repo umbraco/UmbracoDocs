@@ -21,7 +21,7 @@ The easiest way to get started with an Umbraco Cloud project is to take a 14-day
 
 Since we take the liberty of setting up the entire project for you, I'd recommend that you get to know your project before you start building!
 
-Once the project has been set up, you can choose to either start with a blank slate or go for a [*Starter kit*](https://our.umbraco.org/Documentation/Tutorials/Starter-kit/Index/) which will install a full template site for you.
+Once the project has been set up, you can choose to either start with a blank slate or go for a [*Starter kit*](https://our.umbraco.com/Documentation/Tutorials/Starter-kit/Index/) which will install a full template site for you.
 
 To start working with and building your site, you can either work directly in the backoffice on the Cloud environment or you can [clone down the project to your local machine](../set-up/working-locally) - for Mac users, see [Working with UaaS-Cli](../Set-up/working-with-uaas-cli).
 
