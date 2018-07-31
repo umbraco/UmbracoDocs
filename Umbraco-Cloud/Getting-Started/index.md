@@ -19,6 +19,8 @@ With all the success you’ll have building your site with Umbraco Cloud you’l
 
 The easiest way to get started with an Umbraco Cloud project is to take a 14-day free trial - the project will automatically be created for you, and you are ready to get started within a few minutes.
 
+<iframe width="800" height="450" src="https://www.youtube.com/embed/iCB-8LKgIOA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 Since we take the liberty of setting up the entire project for you, I'd recommend that you get to know your project before you start building!
 
 Once the project has been set up, you can choose to either start with a blank slate or go for a [*Starter kit*](https://our.umbraco.com/Documentation/Tutorials/Starter-kit/Index/) which will install a full template site for you.
