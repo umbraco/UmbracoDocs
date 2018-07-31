@@ -15,6 +15,8 @@ In summary:
 
 With this arrangement you don't need to grant Umbraco Cloud portal access to your content editors but can, instead, allow them access only to the required backoffice sections of your sites. This also allows developers to focus on deploying meta data which is stored in the site's git repository and content editors to focus on transferring content which is stored as Umbraco data.
 
+<iframe width="800" height="450" src="https://www.youtube.com/embed/sjId_hN1ba0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ### Deploying meta data
 In order to be able to transfer content and media, the source environment and the target environment needs to have the same setup - meaning they need to be completely in sync and have the same file structure. To achieve this you need to deploy your meta data changes to the target environment. 
 
