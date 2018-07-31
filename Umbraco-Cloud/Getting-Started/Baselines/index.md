@@ -9,6 +9,8 @@ The basic idea is that you have a project that contains all your standard Umbrac
 
 For some more in-depth information have a look at the [High-level Overview](High-level-overview/) article.
 
+Find a thorough guide about the Baseline setup on our Youtube Channel: [How to work with baseline on Umbraco Cloud](https://www.youtube.com/watch?v=t4zI8_F33LM)
+
 Below you'll find a guide on how to create and setup Baseline Child projects.
 
 ## Creating a Child project
