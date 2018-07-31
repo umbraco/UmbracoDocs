@@ -53,6 +53,8 @@ This describes how an Umbraco Cloud project is auto-upgraded:
 
 When Umbraco CMS minor version upgrades are available your site will not be auto upgraded to this version. You will need to press the Upgrade button in the Umbraco Cloud portal to perform the upgrade. This will upgrade your Development environment so you can test how everything works on a Cloud environments before pushing the upgrade to your Live site. For Starter plans, you will need to add a Development environment first before you can perform the semi-automatic upgrade. Find pricing details for Umbraco Cloud Starter plans on our [website](https://umbraco.com/pricing/).
 
+<iframe width="800" height="450" src="https://www.youtube.com/embed/BK9q4FHI2sU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## How do baseline updates work?
 
 If a project is a project that has had child projects created off it, the upgrade process for patch versions is the same as described above. The difference is that we always upgrade the baseline as the first project, and afterwards we upgrade the child projects. This ensures that if for some reason an update is done from the baseline to the children in the meantime, the patch upgrade will also be sent to the children.
