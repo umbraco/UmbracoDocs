@@ -9,17 +9,20 @@ The basic idea is that you have a project that contains all your standard Umbrac
 
 For some more in-depth information have a look at the [High-level Overview](High-level-overview/) article.
 
-Find a thorough guide about the Baseline setup on our Youtube Channel: [How to work with baseline on Umbraco Cloud](https://www.youtube.com/watch?v=t4zI8_F33LM)
+## Video Tutorial
 
-Below you'll find a guide on how to create and setup Baseline Child projects.
+<iframe width="800" height="450" src="https://www.youtube.com/embed/t4zI8_F33LM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-## Creating a Child project
+## Step-by-step
 
-Using the “Create Project” option from the Umbraco Cloud Portal, choose either the Starter or the Professional plan for your new project. 
+### Creating a Child project
 
-After choosing a name for your new project, you will have the option to create the project based on an already existing project - any of your projects can be used as a Baseline project! 
-
-When you click create you’ll be redirected to the project page for the new Child project, which shows the creation progress. It might take several minutes for the project to spin up and before your environments are ready. 
+* Choose the “Create new Project” option from the Umbraco Cloud Portal - choose either the Starter or the Professional plan for your new project
+* Choose a new for your new project
+* From the *Choose baseline (Optional)* dropdown, choose which if your other Cloud project the new project should be based on
+    - Note that any Umbraco Cloud project can be used as a Baseline project
+* Click **Create project** and you will be redirected to the new project where you can follow the creation progress.
+    - It might take several minutes for the project to spin up and before your environments are ready. 
 
 When your environments are ready your will see a *green* light next to the environment name.
 
