@@ -10,7 +10,11 @@ The deployment between your Umbraco Cloud environments is simple to do - simply 
 
 If you continue to see conflicts between the schema parts that were deployed then please refer to the Debugging section below.
 
-## Debugging
+## Video Tutorial
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/uygPdVoLcvU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+## Step-by-step
 
 When you run into schema mismatch errors, they will usually look something like this:
 
