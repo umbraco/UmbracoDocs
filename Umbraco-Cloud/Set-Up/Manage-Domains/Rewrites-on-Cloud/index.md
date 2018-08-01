@@ -42,7 +42,7 @@ One approach for this is to add a new rewrite rule to the `<system.webServer><re
               appendQueryString="true" redirectType="Permanent" />
     </rule>
 
-**Note:** This will not rewrite anything under the `/umbraco` path so that you can still do content deployments. You don't have to give your editors the umbraco.io URL, and they won't see the umbraco.io URL if you give them the actual domain name. This rule will also not apply on your local copy of the site running on `localhost`.
+**Note:** This will not rewrite anything under the `/umbraco` path so that you can still do content deployments. You don't have to give your editors the umbraco.io URL, and they won't see the umbraco.io URL if you give them the actual hostname. This rule will also not apply on your local copy of the site running on `localhost`.
 
 ## Running your site on HTTPS only
 
