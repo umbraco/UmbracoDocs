@@ -11,6 +11,10 @@ Let's say you have a project named `Snoopy`. These will be the default hostnames
 
 To access the backoffice, simply add `/umbraco` to the end of the Live, Development or Staging hostname.
 
+## Video tutorial
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/eOgQKJ1nQbw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## Domains
 
 Under *Settings* in the Umbraco Cloud Portal, you'll find **Manage Hostnames**. This is where you go when you want to bind hostnames to your Cloud environments.
