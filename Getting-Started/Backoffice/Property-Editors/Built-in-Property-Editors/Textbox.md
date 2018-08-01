@@ -15,11 +15,11 @@ Textbox is a simple HTML input control for text. It can be configured to have a 
 
 ### Without a character limit
 
-![Textbox Data Type Definition](images/textbox/7.6/textbox-setup.png)
+![Textbox Data Type Definition](images/textbox/7_6/textbox-setup.png)
 
 ### With a character limit
 
-![Textbox Data Type Definition With a Character Limit](images/textbox/7.6/textbox-setup-limit.png)
+![Textbox Data Type Definition With a Character Limit](images/textbox/7_6/textbox-setup-limit.png)
 
 ## Settings
 
@@ -27,11 +27,11 @@ Textbox is a simple HTML input control for text. It can be configured to have a 
 
 ### Without a character limit
 
-![Textbox Content Example](images/textbox/7.6/textbox-content.png)
+![Textbox Content Example](images/textbox/7_6/textbox-content.png)
 
 ### With a character limit
 
-![Textbox Content Example Without a Character Limit](images/textbox/7.6/textbox-content-limit.png)
+![Textbox Content Example Without a Character Limit](images/textbox/7_6/textbox-content-limit.png)
 
 ## MVC View Example:
 
