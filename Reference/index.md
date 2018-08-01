@@ -55,7 +55,7 @@ Event model covering all major aspects of the system for triggering custom code 
 
 ## [Rest APIs](Routing/WebApi/index.md)
 
-How to use [Web API](http://www.asp.net/web-api) with Umbraco to easily create REST services.
+How to use [Web API](https://www.asp.net/web-api) with Umbraco to easily create REST services.
 
 ## [Management APIs](Management-v6/index.md)
 

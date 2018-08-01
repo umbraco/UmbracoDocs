@@ -1,6 +1,6 @@
 # Masterpages
 
-_Umbraco (since version 4) uses [ASP.NET master pages](http://www.asp.net/web-forms/tutorials/master-pages), so if you are familiar with these you will find this a breeze._
+_Umbraco (since version 4) uses [ASP.NET master pages](https://www.asp.net/web-forms/tutorials/master-pages), so if you are familiar with these you will find this a breeze._
 
 _When creating a new template via the backoffice, Umbraco simply generates a masterpage file that inherits from
 "~/umbraco/masterpages/default.master", whilst storing the newly created template in

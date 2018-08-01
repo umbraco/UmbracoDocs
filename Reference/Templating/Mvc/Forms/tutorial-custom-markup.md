@@ -91,7 +91,7 @@ The best way to render a form in MVC is to have a Partial View render the form w
 		<input type="submit"/>
 	}
 
-There are numerous [HtmlHelper methods](http://msdn.microsoft.com/en-us/library/system.web.mvc.htmlhelper_methods(v=vs.108).aspx) that you can use to render a form. In the above we've used the strongly typed helper methods: `LabelFor`, `TextBoxFor`, `TextAreaFor` and `ValidationMessageFor`. 
+There are numerous [HtmlHelper methods](https://msdn.microsoft.com/en-us/library/system.web.mvc.htmlhelper_methods(v=vs.108).aspx) that you can use to render a form. In the above we've used the strongly typed helper methods: `LabelFor`, `TextBoxFor`, `TextAreaFor` and `ValidationMessageFor`. 
 
 ## Render the Partial View
 

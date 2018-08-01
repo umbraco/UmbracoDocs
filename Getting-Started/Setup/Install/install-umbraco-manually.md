@@ -18,7 +18,7 @@ There are two ways to run the binaries in a webserver:
 
 ### Using IIS Express
 
-You can download IIS Express from the [Web Platform Installer (WebPI)](http://www.microsoft.com/web/downloads/platform.aspx) (search for "IIS Express"). To be able to develop against IIS Express from Visual Studio 2010, you need to have VS2010 Service Pack 1 installed, which can also be acquired from the WebPI. 
+You can download IIS Express from the [Web Platform Installer (WebPI)](https://www.microsoft.com/web/downloads/platform.aspx) (search for "IIS Express"). To be able to develop against IIS Express from Visual Studio 2010, you need to have VS2010 Service Pack 1 installed, which can also be acquired from the WebPI. 
 
 ![IIS Express on the Web Platform Installer](images/Manual/2012-03-17_164508.png)
 

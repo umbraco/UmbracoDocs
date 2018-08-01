@@ -2,29 +2,11 @@
 
 Kudu is an open source engine behind git deployments to Azure. It gives us basic access to the file system through command line or powershell, all from the comfort of a web browser. It also powers the way we deploy to Umbraco Cloud sites.
 
-## How to access Kudu
+In order to access Kudu you will have to be an admin on the project.
 
-Two things are required for you to be able to access Kudu:
+Kudu is available for each environment on your Umbraco Cloud project. You can find the link by clicking the environment name in the Umbraco Cloud portal. When you are prompted to login, use your Umbraco Cloud credentials.
 
-1. Your profile needs **admin rights** on the project
-2. You must **allow experimental features** on your profile (read more about this below)
-
-Kudu is available for each environment on your Umbraco Cloud project. You can find the link by clicking the environment name in the Umbraco Cloud portal.
-
-![Find Power Tools](images/access-kudu.gif)
-
-When you are prompted to login, use your Umbraco Cloud credentials.
-
-### Allow experimental features
-
-You will need to allow for experimental features on your Umbraco Cloud profile before you can see the Power Tools option.
-
-1. Find your profile by clicking your name / image in the top-right of the Umbraco Cloud Portal
-2. Expand "*Advanced settings*"
-3. Make sure "*Allow experimental features*" is ticked
-4. Update your profile
-
-![Allow experimental features](images/allow-exp-features.gif)
+<iframe width="800" height="450" src="https://www.youtube.com/embed/rXQP4cMi1lc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## What can you do from Kudu?
 

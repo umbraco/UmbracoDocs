@@ -58,7 +58,7 @@ As an example, you could assign Server 1 as the designated back-office server. I
 You will then need to ensure that any public request going to this DNS entry only goes to Server 1. This can be achieved by assigning a secondary public IP address to the DNS entry and configuring your firewall to NAT this IP address to your Server 1 internal IP address. Other alternatives could possibly be achieved based on your firewall and the configuration that it supports.
 
 ## Load Balancer
-A load balancer will balance the traffic between your servers. There are many load balancers out there and hardware ones are generally the most effective way to balance traffic. If you don't have a hardware load balancer, don't worry - you can use software. Windows Server comes with [NLB (Network Load Balancing)](http://technet.microsoft.com/en-us/library/cc758834%28WS.10%29.aspx). It's relatively easy to setup and free.
+A load balancer will balance the traffic between your servers. There are many load balancers out there and hardware ones are generally the most effective way to balance traffic. If you don't have a hardware load balancer, don't worry - you can use software. Windows Server comes with [NLB (Network Load Balancing)](https://technet.microsoft.com/en-us/library/cc758834%28WS.10%29.aspx). It's relatively easy to setup and free.
 
 Some important notes on NLB:
 

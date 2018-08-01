@@ -108,6 +108,6 @@ You can find out more about the services methods in the reference section of the
 - [MemberType Service](../../../Reference/Management/Services/MemberTypeService.md)
 - [MemberGroup Service](../../../Reference/Management/Services/MemberGroupService.md)
 
-### [Umbraco.TV](http://umbraco.tv)
-- [Chapter: Members](http://umbraco.tv/videos/umbraco-v7/content-editor/administrative-content/members/what-is-a-member/)
+### [Umbraco.TV](https://umbraco.tv)
+- [Chapter: Members](https://umbraco.tv/videos/umbraco-v7/content-editor/administrative-content/members/what-is-a-member/)
 - Member API chapter *(Coming soon)*
