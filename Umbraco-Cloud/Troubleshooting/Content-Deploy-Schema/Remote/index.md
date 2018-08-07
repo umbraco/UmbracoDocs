@@ -6,11 +6,15 @@ If the schema (this includes DocumentTypes, MediaTypes, DataTypes, Templates, Ma
 
 While Content and Media transfers are done using the Umbraco backoffice you use the Umbraco Cloud Portal in order to deploy the schema changes, which exists on disk and are deployed through the underlying git repository. 
 
-The deployment between your Umbraco Cloud environments is simple to do - simply follow the steps outlined the [Cloud to Cloud](https://our.umbraco.org/documentation/Umbraco-Cloud/Deployment/Cloud-to-Cloud/) article.
+The deployment between your Umbraco Cloud environments is simple to do - simply follow the steps outlined the [Cloud to Cloud](https://our.umbraco.com/documentation/Umbraco-Cloud/Deployment/Cloud-to-Cloud/) article.
 
 If you continue to see conflicts between the schema parts that were deployed then please refer to the Debugging section below.
 
-## Debugging
+## Video Tutorial
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/uygPdVoLcvU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+## Step-by-step
 
 When you run into schema mismatch errors, they will usually look something like this:
 

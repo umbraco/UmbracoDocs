@@ -111,7 +111,7 @@ A slider with a number in a certain range.
 ## [Tags](Tags.md)
 A tag control which can be controlled by a certain group of tags.
 
-## Textarea
+## [Textarea](Textarea.md)
 A simple textarea control to input text.
 
 ## [Textbox](Textbox.md)

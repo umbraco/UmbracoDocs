@@ -28,7 +28,7 @@ Please read our [Contributing Guidelines](CONTRIBUTING.md) to learn how you can 
 
 # Markdown conventions
 Keep custom HTML to a minimum. All script and style markup are cleaned by default.
-For reference, the [Markdown syntax guide](http://daringfireball.net/projects/markdown/syntax) is available.
+For reference, the [Markdown syntax guide](https://daringfireball.net/projects/markdown/syntax) is available.
 
 ## Images
 Images are stored and linked relatively to .md pages, and should by convention always be in an
@@ -46,11 +46,11 @@ NB: In order to get images to display correctly on GitHub, all image URLs must e
 ## External links
 Include either the complete URL, or link using Markdown:
 
-	http://yahoo.com/something
+	https://yahoo.com/something
 
 	or
 
-	[yahoo something](http://yahoo.com/something)
+	[yahoo something](https://yahoo.com/something)
 
 
 ## Internal links

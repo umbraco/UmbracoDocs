@@ -27,7 +27,7 @@ a production website that gets restarted by changing the global.asax, ~/Resource
 
 This scenario can be caused by various changes, it doesn't always come down to shipping new code! If you bump the global.asax, this will also cause a Cold start
 
-A good reference is the BuildManager source code that controls this, see here: http://referencesource.microsoft.com/#System.Web/Compilation/BuildManager.cs,577 ... you can see what files are monitored which will force a Cold start
+A good reference is the BuildManager source code that controls this, see here: https://referencesource.microsoft.com/#System.Web/Compilation/BuildManager.cs,577 ... you can see what files are monitored which will force a Cold start
 
 A Cold start means that the CodeGen folder is cleared and all of the intermediate ASP.NET compilations will be gone and will need to be done again. So again, its important to understand the above comment with regards to debug='true' and Debug/Release modes.
 

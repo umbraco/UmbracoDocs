@@ -3,6 +3,27 @@ When working with Umbraco Cloud, the way you work with databases might differ fr
 
 So when you clone a site locally, Umbraco Cloud automatically creates a local database and populates it with data from your website running on the Cloud. If you don't specify anything before starting up your site locally, it'll be a SQL CE database that lives in the /App_Data folder. If you wish to use a local SQL Server instead, you can update the connection string in the web.config, but it's important that you do so before your site start up the first time.
 
+## LocalDB
+By default when Umbraco Cloud restores a local database it will be an Umbraco.sdf file in `/App_Data` folder. However if LocalDB is installed and configurated, the restore will create a Umbraco.mdf file. To use LocalDB ensure `applicationHost.config` is configurated with `loadUserProfile="true"` and `setProfileEnvironment="true"`: https://blogs.msdn.microsoft.com/sqlexpress/2011/12/08/using-localdb-with-full-iis-part-1-user-profile/
+
+```
+<add name="ASP.NET v4.0" autoStart="true" managedRuntimeVersion="v4.0" managedPipelineMode="Integrated">
+   <processModel identityType="ApplicationPoolIdentity" loadUserProfile="true" setProfileEnvironment="true" />
+</add>
+```
+
+Usually `applicationHost.config` is located in this folder for IIS:
+`C:\Windows\System32\inetsrv\config`
+
+and in one of thes folders for IIS Express:
+
+`C:\Users\<user>\Documents\IISExpress\config\`
+
+If you're using Visual Studio 2015+ check this path:
+`$(solutionDir)\.vs\config\applicationhost.config`
+
+In Visual Studio 2015+ you can also configure which applicationhost.config file is used by altering the `<UseGlobalApplicationHostFile>true|false</UseGlobalApplicationHostFile>` setting in the project file (eg: MyProject.csproj). (source: MSDN forum)
+
 ## Using Custom Tables with Umbraco Cloud
 Umbraco Cloud will ensure that your Umbraco related data is always up to date, but it won't know anything about data in custom tables unless told. Nothing new here, it's basically just like any other host when it comes to non-Umbraco data.
 
@@ -21,7 +42,7 @@ Once the firewall is open, it's time to fire up SQL Management Studio and connec
 
 To connect, simply go choose Connect Database Engine and copy paste the values from the Connection Details page on Umbraco Cloud where you'll find handy copy-short cut buttons to the right of each value. In the "Connect to Server" dialog in SQL Management Studio, choose "SQL Server Authentication" as the authentication type and also remember to click the "Options" button *before you connect* and paste the name of your database in the "Database" input field (if you don't security settings on Umbraco Cloud will prevent you from connecting). You can see it all in this short gif:
 
-![Example video on connecting to the database with SQL Management Studio](images/sqlmanagementstudio.gif)
+<iframe width="800" height="450" src="https://www.youtube.com/embed/f3YIEHGHZB4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Connecting to your local Umbraco installation
 When cloning down your project to work locally you might want to have a look in your database every now and then. You can connect to your local Umbraco database through, for example, Visual Studio.
