@@ -1,5 +1,15 @@
 # Technical overview of an Umbraco Cloud environment
 
+When you have multiple environments in your Umbraco Cloud project the *Development* environment will be the *first* environment in the workflow. What this means, is that this is the environment you are going to work with when building the structure of your website. This is also the environment you clone down when you want to work with your project locally.
+
+The environment next in line in the workflow is the *Staging* environment. Having this environment enables you to give your team members different workspaces - the developers can work with code in the Development environment while the content editors can work with content in the Staging environment. All of this without affecting the actual public site.
+
+Both the Development and the Staging environments are protected with **basic authentication**. This means that you have to log in to see the frontend of these environments. Alternatively, you can [whitelist IP's](../../Set-up/project-settings/#manage-ip-whitelist) to allow access to the environments.
+
+The final environment is the *Live* environment. This is your live site - the site that's visible to the public. When you are in trial mode the Live environment will be protected by basic authentication - this will, of course, be removed, as soon as you set up a subscription for the project.
+
+For more information about the workflow on Umbraco Cloud see the [Deployments](../../Deployment) article.
+
 Here's a technical overview of the different parts that make up an environment on your Umbraco Cloud project:
 
 ![Umbraco Cloud Environment Technical Overview](images/environment-tech-overview.png)
