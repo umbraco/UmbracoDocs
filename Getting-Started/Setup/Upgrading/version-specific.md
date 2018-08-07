@@ -50,11 +50,11 @@ Wouldn't it be nice if instead of that you could "just" do:
 			<a href="@Model.Content.ContactPagePicker.Url">@Model.ContactPagePicker.Name</a>
 		</p>
 		
-This is possible since 7.6.0 using Models Builder and through the inclusion of [core property value converters](https://our.umbraco.org/projects/developer-tools/umbraco-core-property-value-converters/), a brilliant package by Jeavon.
+This is possible since 7.6.0 using Models Builder and through the inclusion of [core property value converters](https://our.umbraco.com/projects/developer-tools/umbraco-core-property-value-converters/), a brilliant package by Jeavon.
 
 In order to not break everybody's sites (the results of queries are different when PVCs are enabled) we disabled these PVCs by default. 
 
-Umbraco 7.6.0 also came with new pickers that store their data as a [UDI (Umbraco Identifier)](https://our.umbraco.org/Documentation/Reference/Querying/Udi). We wanted to make it easy to use these new pickers so by default we wanted PVCs to always be enabled for those pickers.
+Umbraco 7.6.0 also came with new pickers that store their data as a [UDI (Umbraco Identifier)](https://our.umbraco.com/Documentation/Reference/Querying/Udi). We wanted to make it easy to use these new pickers so by default we wanted PVCs to always be enabled for those pickers.
 
 Unfortunately we noticed that some new pickers also got their PVCs disabled when the configuration setting was set to false (`<EnablePropertyValueConverters>false</EnablePropertyValueConverters>`) - yet the content picker ignored this setting.
 
@@ -114,7 +114,7 @@ Since you aren't using UrlRewriting you will have probably never edited the UrlR
 
 Umbraco Forms 6.0.0 has been released to be compatible with Umbraco 7.6, it is a new major version release of Forms primarily due to the strict dependency on 7.6+. If you are using Forms, you will need to update it to version 6.0.0
 
-There is **[important Forms upgrade documentation that you will need to read the here](https://our.umbraco.org/documentation/Add-ons/UmbracoForms/Installation/Version-Specific#version-4-to-version-6)**
+There is **[important Forms upgrade documentation that you will need to read the here](https://our.umbraco.com/documentation/Add-ons/UmbracoForms/Installation/Version-Specific#version-4-to-version-6)**
 
 #### Courier
 
@@ -143,12 +143,12 @@ NuGet will do the following for you but if you're upgrading manually:
 Other considerations:
 
 * WebApi has been updated, normally you don’t have to do anything unless you have custom webapi configuration:
-  * See this article if you are using `WebApiConfig.Register`: [http://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2](http://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2) 
+  * See this article if you are using `WebApiConfig.Register`: [https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2](https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2) 
   * You need to update your `web.config` file to have the correct WebApi version references - this should be done by doing a compare/merge of your `~/web.config` file with the `~/web.config` file in the release
 * MVC has been updated to MVC5
   * You need to update your `web.config` file to have the correct MVC version references - this should be done by doing a compare/merge of your `~/web.config` file with the `~/web.config` file in the release
   * The upgrader will take care of updating all other web.config’s (in all other folders, for example, the `Views` and `App_Plugins` folders) to have the correct settings
-  * For general ASP.Net MVC 5 upgrade details see: [http://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2](http://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2) 
+  * For general ASP.Net MVC 5 upgrade details see: [https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2](https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2) 
 * It is not required that you merge the changes for the Examine index paths in the ExamineIndex.config file. However, if you do, your indexes will be rebuilt on startup because Examine will detect that they don’t exist at the new location.
 * It's highly recommended to clear browser cache - the ClientDependency version is automatically bumped during install which should force browser cache to refresh, however in some edge cases this might not be enough.
 
@@ -188,11 +188,11 @@ Other considerations:
 Read and follow [the full v7 upgrade guide](upgrading-to-v7.md)
 
 ## Version 4.10.x/4.11.x to 6.0.0
-* If your site was ever a version between 4.10.0 and 4.11.4 and you have just upgraded to 6.0.0 install the [fixup package](http://our.umbraco.org/projects/developer-tools/path-fixup) and run it after the upgrade process is finished.
+* If your site was ever a version between 4.10.0 and 4.11.4 and you have just upgraded to 6.0.0 install the [fixup package](https://our.umbraco.com/projects/developer-tools/path-fixup) and run it after the upgrade process is finished.
 * The DocType Mixins package is **NOT** compatible with v6+ and will cause problems in your document types.
 
 ## Version 4.10.x to 4.11.x
-* If your site was ever a version between 4.10.0 and 4.11.4 install the [fixup package](http://our.umbraco.org/projects/developer-tools/path-fixup) and run it after the upgrade process is finished.
+* If your site was ever a version between 4.10.0 and 4.11.4 install the [fixup package](https://our.umbraco.com/projects/developer-tools/path-fixup) and run it after the upgrade process is finished.
 
 ## Version 4.8.0 to 4.10.0
 * Delete the bin/umbraco.linq.core.dll file
@@ -206,7 +206,7 @@ Read and follow [the full v7 upgrade guide](upgrading-to-v7.md)
 * Delete the bin/App_Browsers.dll file
 * Delete the bin/App_global.asax.dll file
 * Delete the bin/Fizzler.Systems.HtmlAgilityPack.dll file
-* For people using uComponents 3.1.2 or below, 4.8.0 breaks support for it. Either upgrade to a newer version beforehand or follow the workaround [posted here](http://our.umbraco.org/projects/backoffice-extensions/ucomponents/questionssuggestions/33021-Upgrading-to-Umbraco-48-breaks-support-for-uComponents)
+* For people using uComponents 3.1.2 or below, 4.8.0 breaks support for it. Either upgrade to a newer version beforehand or follow the workaround [posted here](https://our.umbraco.com/projects/backoffice-extensions/ucomponents/questionssuggestions/33021-Upgrading-to-Umbraco-48-breaks-support-for-uComponents)
 
 ## Version 4.7.1.1 to 4.7.2
 * Delete the bin/umbraco.MacroEngines.Legacy.dll file

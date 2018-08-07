@@ -22,4 +22,4 @@ Here are the auto-magical steps Umbraco Cloud goes through when you hit the *"De
 
 If you have more than one Umbraco Cloud environment we strongly recommend that you **only make changes to meta data on the Development environment**. Making changes directly on your Staging and/or Live environments can cause merge-conflicts when you deploy from your Development environment. 
 
-Refer to our troubleshooting documentation about [how to resolve structure errors](https://our.umbraco.org/documentation/Umbraco-Cloud/Troubleshooting/Structure-Error/), if you should run into issues while deploying between your Umbraco Cloud environments.
+Refer to our troubleshooting documentation about [how to resolve structure errors](https://our.umbraco.com/documentation/Umbraco-Cloud/Troubleshooting/Structure-Error/), if you should run into issues while deploying between your Umbraco Cloud environments.

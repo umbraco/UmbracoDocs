@@ -14,10 +14,10 @@ The bottom line is the UI project has zero dependencies on asp.net or Windows. H
 Umbraco 7 needs a couple of things to run:
 
 ### Node.js 
-To compile and run the UI project you need Node.js installed, you can get that at [http://nodejs.org](nodejs.org) for both Windows and OSX.
+To compile and run the UI project you need Node.js installed, you can get that at [https://nodejs.org](nodejs.org) for both Windows and OSX.
 
 ### Grunt
-When you have Node.js installed, you need to install Grunt. Grunt is a simple JavaScript task runner, basically like NAnt, MSBuild or any traditional build system [http://gruntjs.com](more about grunt here).
+When you have Node.js installed, you need to install Grunt. Grunt is a simple JavaScript task runner, basically like NAnt, MSBuild or any traditional build system [https://gruntjs.com](more about grunt here).
 
 To install, open a terminal and run: 
 	

@@ -31,7 +31,7 @@ To take advantage of the GetRandom() method in the library, and to return a rand
 Don't forget to add the prefix and namespace information to the <xsl:stylesheet> element. Shown below are the parts that you will need to add to your existing <xsl:stylesheet> declaration.
 
 	<xsl:stylesheet
-		xmlns:randomTools="http://www.umbraco.org/randomTools"
+		xmlns:randomTools="https://www.umbraco.org/randomTools"
 		exclude-result-prefixes="randomTools">
 
 You can then generate a random number by calling the inline function. The following example will return a random number between 1 and 100:
@@ -50,7 +50,7 @@ The following example shows how to list 8 randomly-selected nodes that fall belo
 		xmlns:msxml="urn:schemas-microsoft-com:xslt"
 		xmlns:msxsl="urn:schemas-microsoft-com:xslt"
 		xmlns:umbraco.library="urn:umbraco.library"
-		xmlns:randomTools="http://www.umbraco.org/randomTools"
+		xmlns:randomTools="https://www.umbraco.org/randomTools"
 		exclude-result-prefixes="msxml umbraco.library msxsl randomTools">
 
 		<xsl:output method="xml" omit-xml-declaration="yes" />

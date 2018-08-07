@@ -1,6 +1,8 @@
 # Config transforms
 Sometimes you just need your configuration files to be a little bit different after you deploy. It's possible to transform your config files for each environment in your project.
 
+<iframe width="800" height="450" src="https://www.youtube.com/embed/YkF2FotjWDk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## Convention
 To transform any file that ends with `.config`, you can add a file with the extension `.{environment}.xdt.config` in the same folder.   
 The `{environment}` part needs to be replaced with the target environment, for which there's currently 2 possibilities for each project:

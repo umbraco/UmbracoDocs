@@ -6,7 +6,7 @@ In order for Umbraco Forms to work correctly, Umbraco Forms needs three (3) clie
 - jQuery validate unobtrusive. 
 
 ## Adding the scripts to your template
-Easiest way to add the dependencies is to fetch them from a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network) (like http://www.asp.net/ajax/cdn).
+Easiest way to add the dependencies is to fetch them from a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network) (like https://www.asp.net/ajax/cdn).
 
 Simply add the three (3) client dependencies below to your template within the head tags or at the bottom of the page.
 

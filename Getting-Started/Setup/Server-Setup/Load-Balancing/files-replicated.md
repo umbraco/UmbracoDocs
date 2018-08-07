@@ -4,13 +4,13 @@ _documentation about setting up load balanced environments using file replicatio
 
 ## Replication techniques
 
-A common way to replicate files on Windows Server is to use [DFS](http://msdn.microsoft.com/en-us/library/windows/desktop/bb540031(v=vs.85).aspx), which is included with Windows Server.
+A common way to replicate files on Windows Server is to use [DFS](https://msdn.microsoft.com/en-us/library/windows/desktop/bb540031(v=vs.85).aspx), which is included with Windows Server.
 
 Additional DFS resources:
 
 * [Implementing DFS Replication in Windows Server 2003](http://www.windowsnetworking.com/articles_tutorials/Implementing-DFS-Replication.html)
-* [Overview of DFS Replication in Windows Server 2008 R2](http://technet.microsoft.com/en-us/library/cc771058.aspx)
-* [Watch an intro to installing and working with DFS](http://www.youtube.com/watch?v=DYfBoUt2RVE)
+* [Overview of DFS Replication in Windows Server 2008 R2](https://technet.microsoft.com/en-us/library/cc771058.aspx)
+* [Watch an intro to installing and working with DFS](https://www.youtube.com/watch?v=DYfBoUt2RVE)
 
 There are other alternatives for file replication out there, some free and some licensed. You'll need to decide which solution is best for your environment.
 

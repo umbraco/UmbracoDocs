@@ -40,5 +40,5 @@ You can use the query helper (click ![Query button](images/query-button.png)) in
 - [Querying](../../..//Reference/Templating/Mvc/querying.md)
 
 ### Umbraco TV
-- [Episode: Setting up our first template](http://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/templating/alt-template/)
-- [Episode: Insert Umbraco page field dialog](http://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/templating/insert-umbraco-page-field-dialog/)
+- [Episode: Setting up our first template](https://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/templating/alt-template/)
+- [Episode: Insert Umbraco page field dialog](https://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/templating/insert-umbraco-page-field-dialog/)

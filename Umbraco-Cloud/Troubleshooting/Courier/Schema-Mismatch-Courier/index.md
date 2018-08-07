@@ -10,8 +10,8 @@ While Content and Media transfers are done using the Umbraco backoffice you use 
 
 The following articles explain in detail how the deployment process works:
 
-* [Deploying from Local to Cloud](https://our.umbraco.org/documentation/Umbraco-Cloud/Deployment/Local-to-Cloud/)
-* [Deploying between two Cloud environment](https://our.umbraco.org/documentation/Umbraco-Cloud/Deployment/Cloud-to-Cloud/)
+* [Deploying from Local to Cloud](https://our.umbraco.com/documentation/Umbraco-Cloud/Deployment/Local-to-Cloud/)
+* [Deploying between two Cloud environment](https://our.umbraco.com/documentation/Umbraco-Cloud/Deployment/Cloud-to-Cloud/)
 
 If you continue to see conflicts between the schema parts that were deployed then please refer to the Debugging section below.
 
