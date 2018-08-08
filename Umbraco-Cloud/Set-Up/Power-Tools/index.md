@@ -6,7 +6,7 @@ In order to access Kudu you will have to be an admin on the project.
 
 Kudu is available for each environment on your Umbraco Cloud project. You can find the link by clicking the environment name in the Umbraco Cloud portal. When you are prompted to login, use your Umbraco Cloud credentials.
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/rXQP4cMi1lc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/rXQP4cMi1lc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## What can you do from Kudu?
 
