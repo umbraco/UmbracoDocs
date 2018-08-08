@@ -6,7 +6,7 @@ You will also need to use the restore option when setting up new Umbraco Cloud e
 
 ## Video Tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/ha4KDpE81dg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/ha4KDpE81dg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Step-by-step 
 
