@@ -3,7 +3,7 @@ To work with a local copy of your site you'll need to use Windows and have a loc
 
 ## Video tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/p5oMCMboxQ8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/p5oMCMboxQ8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Step-by-step
 
