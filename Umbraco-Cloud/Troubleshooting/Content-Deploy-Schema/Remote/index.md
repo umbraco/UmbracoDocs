@@ -12,7 +12,7 @@ If you continue to see conflicts between the schema parts that were deployed the
 
 ## Video Tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/uygPdVoLcvU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/uygPdVoLcvU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Step-by-step
 
