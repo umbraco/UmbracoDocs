@@ -23,4 +23,4 @@ NuGet is the package manager for the Microsoft development platform, including .
 
 ### [Running Umbraco on a Mac](running-umbraco-on-a-mac.md)
 Umbraco does not run natively on Mac OS but it's really easy to get Windows up and running on your Mac.
-Click on the link [tools and information on how to run Umbraco on a mac](running-umbraco-on-a-mac.md) to find out ore about how to do this and the tools available to you to find out more about how to do this and the
+Click on the link [tools and information on how to run Umbraco on a mac](running-umbraco-on-a-mac.md) to find out more about how to do this and the tools available to you.
