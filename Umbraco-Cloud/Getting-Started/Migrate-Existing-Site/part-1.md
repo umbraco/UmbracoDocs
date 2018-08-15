@@ -18,7 +18,7 @@ Now you're almost ready to start the actual migrating! The only thing left to is
 While the project is still running you need to:
 
   * Go the backoffice of your project
-  * Empty the Content and Media Recycle bins
+  * Empty the recycle bins from both Content and Media
 
 Shut down the project, and delete the following files and folders from `/App_Data`
 
