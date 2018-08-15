@@ -11,7 +11,7 @@ Finally in Part Three we shall change the blog listing.
 ```
 3. Scroll further back up the page to where we get the blog posts (as the **Children** of this page).  Change this to:
 ```
-var blogposts = startNode.Children.OrderByDescending(x => x.GetPropertyValue<DateTime>("PublicationDate")).Take(3);
+var blogposts = startNode.Children.OrderByDescending(x => x.GetPropertyValue<DateTime>("PublicationDate")).ToList();
 ```
 Because we are sorting by a custom property we need to use the generic GetPropertyValue method.
 4. Then click *Save*. A confirmation message should appear confirming that the Partial view has saved.  
