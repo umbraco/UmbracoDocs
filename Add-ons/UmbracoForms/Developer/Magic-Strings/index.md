@@ -1,5 +1,5 @@
 # Magic strings
-Umbraco Forms has some magic strings that enable you to render values from various sources, such as Session, Cookies, Umbraco Page fields. T
+Umbraco Forms has some magic strings that enable you to render values from various sources, such as Session, Cookies, Umbraco Page fields. 
 
 ## Where can I use these magic strings?
 These magic strings as we call them can be used in form fields (as a label, description or default value) and in workflows. They can be used in default values in hidden fields for examples, normally referral codes from a session, cookie or request item.
@@ -7,6 +7,7 @@ These magic strings as we call them can be used in form fields (as a label, desc
 These values can be usedalso in Workflows property/settings. So a name and email address field from the form can be used in an email workflow to send the customer a personalised thank you email.
 
 ## Request
+
 `[@SomeRequestItem]` this allows you to display an item from the current HTTPContext.Request with the key of SomeRequestItem.
 Some examples of variables that are normally available in HttpContext.Request:
 
@@ -33,7 +34,7 @@ Some extra variables are:
 `[$myRecursiveItem]` this allows you to parse the Umbraco document-type property myRecursiveItem. So if the current page does not contain a value for this then it will request it from the parent up until the root or until it finds a value.
 
 ## Parsing Umbraco Form field items
-`{myAliasForFormField}` this allows you to display the entered value for that specific field from the form submission. Used in workflows to send an automated email back to the customer based on the email address submitted in the form.
+`{myAliasForFormField}` this allows you to display the entered value for that specific field from the form submission. Used in workflows to send an automated email back to the customer based on the email address submitted in the form. The value here needs to be the alias of the field, and not the name of the field.  
 
 ## Parsing Member properties from a form submission
 `{member.FOO}` with the prefix of member. in the same syntax above will allow you to retrieve information about the submission if it was submitted by a logged in member.

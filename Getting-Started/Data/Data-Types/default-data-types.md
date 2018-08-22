@@ -25,7 +25,7 @@ but with no time information.
 Displays a calendar UI for selecting dates and time, the value saved is a standard dateTime value.
 
 #### Dropdown ####
-Displays a list of preset values as a list where only a single can be selected. The default data type does not contain any prevlaues. The value saved is the selected value as a string.
+Displays a list of preset values as a list where only a single value can be selected. The default data type does not contain any prevalues. The value saved is the selected value as a string.
 
 #### Dropdown multiple ####
 Displays a list of preset values as a list where multiple values can be selected. The default data type does not contain any prevlaues .The value saved is a comma separated string of prevalue IDs.

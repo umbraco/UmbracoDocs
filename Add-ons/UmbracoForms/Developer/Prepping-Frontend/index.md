@@ -20,7 +20,7 @@ Here's how to add the three (3) client dependencies below to your template withi
 
 **Example before closing `body` tag**
 
-When adding the script to the bottom of the page, you'll also need to perform an [extra step](../Rendering-Scripts/index.md).
+When adding the script to the bottom of the page, you'll also need to perform an extra step — if you're using Themes (v6.0.0+) have a [look here](../Themes/#rendering-script-content-separately). Otherwise, have a look at [this page](../Rendering-Scripts/index.md) for instructions.
 	
     <body>
         <!-- Page content here -->
