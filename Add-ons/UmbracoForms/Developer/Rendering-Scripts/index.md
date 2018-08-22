@@ -13,18 +13,24 @@ It should have the following contents
 		var s = Model.MacroParameters["FormGuid"].ToString();
 		var g = new Guid(s);
 		
-		Html.RenderAction("Render", "UmbracoForms", new {formId = g});
+		var recordGuid = Guid.Empty;
+
+    		if (string.IsNullOrEmpty(Request.QueryString["recordId"]) == false)
+    		{
+        		Guid.TryParse(Request.QueryString["recordId"], out recordGuid);
+    		}
+		Html.RenderAction("Render", "UmbracoForms", new {formId = g, recordId = recordGuid });	
 	}
 
 Here we'll make a small change: In the RenderAction call we'll provide an additional argument: `mode = "form"`
 
 So change this:
 
-	Html.RenderAction("Render", "UmbracoForms", new {formId = g});	
+	Html.RenderAction("Render", "UmbracoForms", new {formId = g, recordId = recordGuid });	
 
 to this:
 	
-	Html.RenderAction("Render", "UmbracoForms", new {formId = g, mode = "form"});
+	Html.RenderAction("Render", "UmbracoForms", new {formId = g, recordId = recordGuid, mode = "form" });
 
 ## Place the Render Scripts macro on your template
 
