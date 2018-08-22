@@ -13,23 +13,23 @@ A standard image in the media library is based on the Mediatype `image` which pr
 _Assumption: We are going to assume that our media item has an ID of **1234**, and that we are **not using Models Builder**_
 
     @{
-        //We are using the TypedMedia method off of the Umbraco helper to retrieve our media item based on its ID.
+        // We are using the TypedMedia method off of the Umbraco helper to retrieve our media item based on its ID.
         var mediaItem = Umbraco.TypedMedia(1234);        
 
-        //To get the url for your media item, you use the Url property on your media item.
+        // To get the url for your media item, you use the Url property on your media item.
         var url = mediaItem.Url
     }
 
     <img src="@url" alt="@mediaItem.Name" />
 
-But wait a second, if you are using Umbraco v7.4.0+ it now comes with [ModelsBuilder](../../../Reference/Templating/Modelsbuilder/index.md). This means is that you can use strongly typed models for your media items if ModelsBuilder is enabled (which it is by default).
+But wait a second, if you are using Umbraco v7.4.0+ it now comes with [Models Builder](../../../Reference/Templating/Modelsbuilder/index.md). This means is that you can use strongly typed models for your media items if Models Builder is enabled (which it is by default).
 
 ### Example 2: Accessing a typed image media item based on its ID
 As with example one, we are accessing a MediaType `image` using the same ID assumption. 
 
     @{
-        //We can use the OfType extension method to convert the IPublishedContent 
-        // returned by TypedMedia to the ModelsBuilder implementation.
+        // We can use the OfType extension method to convert the IPublishedContent 
+        // returned by TypedMedia to the Models Builder implementation.
         var mediaItem = Umbraco.TypedMedia(1234).OfType<Image>();
     }
 
@@ -48,8 +48,8 @@ If your media type is for images and it has Image Cropper as the upload field (u
 ### Example of using Image Cropper with the Models Builder strongly typed `Image` model
 
     @{
-        //We can use the OfType extension method to convert the IPublishedContent 
-        // returned by TypedMedia to the ModelsBuilder implementation.
+        // We can use the OfType extension method to convert the IPublishedContent 
+        // returned by TypedMedia to the Models Builder implementation.
         var mediaItem = Umbraco.TypedMedia(1234).OfType<Image>();
     }
 

@@ -28,14 +28,14 @@ In order to understand how to host your site it is best to understand how Umbrac
 
 The following diagram shows the data flow/communication between each item in the environment:
 
- ![umbraco flexible load balancing diagram](images/flexible-load-balancing.png)
+ ![Umbraco flexible load balancing diagram](images/flexible-load-balancing.png)
 
 The process is as follows:
 
 * Administrators and editors create, update, delete data/content on the master server
 * These events are converted into data structures called "instructions" and are stored in the database in a queue
 * Each front-end server checks to see if there are any outstanding instructions it hasn't processed yet
-* When a front-end server detects that there are pending instructions, it downloads them and processes them and in turn updates it's cache, cache files and indexes on it's own file system
+* When a front-end server detects that there are pending instructions, it downloads them and processes them and in turn updates it's cache, cache files and indexes on its own file system
 * There can be up to a 5 second delay between content updates and a front-end server's refreshing, this is expected and normal behaviour.
 
 ## Scheduling and master election
@@ -53,7 +53,7 @@ that all of the servers will need to be able to resolve the URL of either: itsel
 For example, In the following diagram the slave node **f02.mysite.local** is the elected "Scheduling server". In order for scheduling to work it needs to be able to send
 requests to itself, the Master server, the internal load balancer or the public address. The address used by the "Scheduling server" is called the "umbracoApplicationUrl". 
 
-![umbraco flexible load balancing diagram](images/flexible-load-balancing-scheduler.png)
+![Umbraco flexible load balancing diagram](images/flexible-load-balancing-scheduler.png)
 
 By default, Umbraco will set the "umbracoApplicationUrl" to the address made by the first accepted request when the AppDomain starts.
 It is assumed that this address will be a DNS address that the server can resolve.
@@ -118,7 +118,7 @@ The `TempEnvDirectoryFactory` allows Examine to store indexes directly in the en
 In ExamineIndex.config, you need to tokenize the path for each of your indexes to include the machine name, this will ensure that your indexes are stored in different locations for each machine. An example of a tokenized path is: `~/App_Data/TEMP/ExamineIndexes/{machinename}/Internal/`. This however has some drawbacks for two reasons:
 
 * Azure web apps migrates your site between workers without warning which means the {machinename} will change and your index will be rebuilt when this occurs
-* When you scale out (increase the number of workers), the new worker will also rebuild it's own index
+* When you scale out (increase the number of workers), the new worker will also rebuild its own index
 
 We are working towards being able to mitigate these issues by adding the ability to store a master index in blob storage so that when new workers come online they can sync the existing index locally (this is not yet in place)
 

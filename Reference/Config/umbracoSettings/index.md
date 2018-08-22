@@ -17,10 +17,19 @@ The section is used for controlling the backoffice tours functionality
         <tours enable="true"></tours>
     </backOffice>
 
-There is only one supported attribute on the tours element :
+There is only one supported attribute on the tours element:
 
 **`enable`**
 By default this is set to true. Set it to false to turn off [backoffice tours](../../../Extending/Backoffice-Tours/index.md)
+
+### Obsolete datatypes
+
+This section is used for controlling whether or not the datatypes marked as obsolete should be visible in the dropdown when creating new datatypes
+
+    <showDeprecatedPropertyEditors>false</showDeprecatedPropertyEditors>
+
+**`enable`**
+By default this is set to false. To make the obsolete datatypes visible in the dropdown change the value to **true**.
 
 ## Content
 
@@ -37,7 +46,7 @@ This section is used for managing thumbnail creation, allowed attributes and, wh
             <imageFileTypes>jpeg,jpg,gif,bmp,png,tiff,tif</imageFileTypes>
             <!-- what attributes that are allowed in the editor on an img tag -->
             <allowedAttributes>alt,border,class,style,align,id,name,onclick,usemap</allowedAttributes>
-            <!-- automatically updates dimension, filesize and extension attributes on upload -->
+            <!-- automatically updates dimension, file size and extension attributes on upload -->
             <autoFillImageProperties>
                 <uploadField alias="umbracoFile">
                     <widthFieldAlias>umbracoWidth</widthFieldAlias>
@@ -69,7 +78,7 @@ If you need to create a custom media document type to handle images called somet
             <imageFileTypes>jpeg,jpg,gif,bmp,png,tiff,tif</imageFileTypes>
             <!-- what attributes that are allowed in the editor on an img tag -->
             <allowedAttributes>alt,border,class,style,align,id,name,onclick,usemap</allowedAttributes>
-            <!-- automatically updates dimension, filesize and extension attributes on upload -->
+            <!-- automatically updates dimension, file size and extension attributes on upload -->
             <autoFillImageProperties>
                 <uploadField alias="umbracoFile">
                     <widthFieldAlias>umbracoWidth</widthFieldAlias>
@@ -120,7 +129,7 @@ If you change the value to "true" then you will see the code in a simple textare
 This setting let's you control if an upload control can create new folders for files uploaded, or if the file should be stored in the /media folder root with a unique ID prefixed to the filename.
 
          <!-- should umbraco store the uploaded files like /media/xxx/filename.ext or like /media/xxx-filename.ext
-              should be set to false if the application pool's user account hasn't got readrights of the driveroot up to the /media directory -->
+              should be set to false if the application pool's user account hasn't got read rights of the drive root up to the /media directory -->
         <UploadAllowDirectories>True</UploadAllowDirectories>
 
 ### Errors
@@ -270,7 +279,7 @@ This setting is used when you're running Umbraco in virtual directories.
         
 **DisallowedUploadFiles**
 
-This settings consists of a "black list" of file extensions that editors shouldn't be allowed to upload via the back-office.
+This setting consists of a "black list" of file extensions that editors shouldn't be allowed to upload via the back-office.
 
         <!-- These file types will not be allowed to be uploaded via the upload control for media and content -->
         <disallowedUploadFiles>ashx,aspx,ascx,config,cshtml,vbhtml,asmx,air,axd,swf,xml,xhtml,html,htm,svg,php,htaccess</disallowedUploadFiles>
@@ -293,26 +302,32 @@ You can specify your own background image for the login screen here. The image w
 
 Enables [value converters](../../../Extending/Property-Editors/value-converters.md) for all built in property editors so that they return strongly typed object, recommended for use with [Models Builder](../../templating/modelsbuilder/index.md)
 
-On new installs this set to true. When you are upgrading from a lower version than 7.6.0 it is recommend to set this setting to false. More information can be found in the explanation of the [breaking changes in 7.6.0](../../../Getting-Started/Setup/Upgrading/760-breaking-changes#property-value-converters-u4-7318)
+On new installs this set to true. When you are upgrading from a lower version than 7.6.0 it is recommended to set this setting to false. More information can be found in the explanation of the [breaking changes in 7.6.0](../../../Getting-Started/Setup/Upgrading/760-breaking-changes#property-value-converters-u4-7318)
 
 	<EnablePropertyValueConverters>true</EnablePropertyValueConverters>
 
 ## Security
 
-In the security section you have three options: **`<keepUserLoggedIn>`**, **`<allowPasswordReset>`** and **`<hideDisabledUsersInBackoffice>`**. Both settings are dealing with backoffice users.
+In the security section you have the following options: **`<keepUserLoggedIn>`**, **`<usernameIsEmail>`**,  **`<hideDisabledUsersInBackoffice>`**,  **`<allowPasswordReset>`**,  **`<authCookieName>`** and  **`<authCookieDomain>`**. These settings deal with backoffice users and settings for the backoffice authentication cookies.
 
     <security>
         <!-- set to true to auto update login interval (and there by disabling the lock screen -->
         <keepUserLoggedIn>true</keepUserLoggedIn>
 
-        <!-- change in 4.8: Disabled users are now showed dimmed and last in the tree. If you prefer not to display them set this to true -->
-        <hideDisabledUsersInBackoffice>false</hideDisabledUsersInBackoffice>
-
         <!-- by default this is true and if not specified in config will be true. set to false to always show a separate username field in the back office user editor -->
         <usernameIsEmail>true</usernameIsEmail>
 
+        <!-- change in 4.8: Disabled users are now showed dimmed and last in the tree. If you prefer not to display them set this to true -->
+        <hideDisabledUsersInBackoffice>false</hideDisabledUsersInBackoffice>
+
         <!-- set to true to enable the UI and API to allow back-office users to reset their passwords -->
-        <allowPasswordReset>true</allowPasswordReset>  
+        <allowPasswordReset>true</allowPasswordReset>
+
+        <!-- set to a different value if you require the authentication cookie for back-office users to be renamed -->
+        <authCookieName>UMB_UCONTEXT</authCookieName>  
+
+        <!-- set to a different value if you require the authentication cookie for back-office users to be set against a different domain -->
+        <authCookieDomain></authCookieDomain>  
 
     </security>
 
@@ -328,7 +343,13 @@ not possible to re-enable their access to the back office again. It also means y
 This setting specifies whether the username and email address are separate fields in the backoffice editor. When set to false, you can specify an email address and username, only the username can be used to log on. When set the true (the default value) the username is hidden and always the same as the email address.
 
 **`<allowPasswordReset>`**
-The feature to allow users to reset their passwords if they have forgotten them was introduced in 7.5.  The feature is based on [a method provided by ASP.Net Identity](http://www.asp.net/identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity).  By default this is enabled but if you'd prefer to not allow users to do this it can be disabled at both the UI and API level by setting this value to `false`.
+The feature to allow users to reset their passwords if they have forgotten them was introduced in 7.5. he feature is based on [a method provided by ASP.Net Identity](https://www.asp.net/identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity). By default, this is enabled but if you'd prefer to not allow users to do this it can be disabled at both the UI and API level by setting this value to `false`.
+
+**`<authCookieName>`**
+The authentication cookie which is set in the browser when a back-office user logs in, and defaults to `UMB_UCONTEXT`. This setting is excluded from the configuration file but can be added in if a different cookie name needs to be set.
+
+**`<authCookieDomain>`**
+The authentication cookie which is set in the browser when a back-office user logs in is automatically set to the current domain.  This setting is excluded from the configuration file but can be added in if a different domain is required.
 
 ## RequestHandler
 
@@ -374,7 +395,7 @@ Let's have a further look at each option below.
 As mentioned in the comment above, this should be set to true when running with multiple root notes. This makes sure that you're not able to access content from
 site-1.com on the domain of site-b.com, which can lead to duplicate content issues.
 
-In order for this to work it requires that you setup some unique hostnames by right clicking the root nodes and choosing **manage hostnames** where you
+In order for this to work it requires you to setup some unique hostnames by right clicking the root nodes and choosing **manage hostnames** where you
 then setup the domain and culture for the sites.
 
 **`<addTrailingSlash>`**
@@ -390,7 +411,7 @@ Introduced in Umbraco 7.6.4 the toAscii attribute can be set to **try**. This wi
 Within the **`<urlReplacing>`** section there are a lot of **`<char>`** elements with an **org** attribute. The attribute holds the character that should
 be replaced and withing the **`<char>`** tags the value it should be replaced width is entered.
 
-So if **`<char org="ñ">n</char>`** is added above the **ñ** will be shown as a **n** in the url.
+So, if **`<char org="ñ">n</char>`** is added above the **ñ** will be shown as a **n** in the url.
 
 ## Templates
 
@@ -405,7 +426,7 @@ Tells Umbraco whether to create MVC Views or Webforms Master Pages when creating
 
 **`useAspNetMasterPages`**
 This is a legacy setting and should not normally be changed.
-Enabled by default, You can turn off masterpages and go back and use the old templating engine (From v3 of Umbraco). 
+Enabled by default, you can turn off masterpages and go back and use the old templating engine (From v3 of Umbraco). 
 But it is in no way recommended to do so.
 
 *In v7+ this setting is removed*
@@ -427,7 +448,7 @@ The comment says it all :)
 
 ## Scripting
 
-This is a legacy section which is used for the legacy Razor Macros (superceded by Partial View Macros in v4.10+), 
+This is a legacy section which is used for the legacy Razor Macros (superseded by Partial View Macros in v4.10+), 
 generally you won't need to modify this section. If you need custom razor macro converters you should use implementations
 of IRazorDataTypeModel instead of setting them in config.
 
@@ -455,7 +476,7 @@ of IRazorDataTypeModel instead of setting them in config.
 
 ## viewstateMoverModule
 
-The viewstate mover module is included by default. It enables you to move all asp.nets viewstate information to the end of the page, thereby making it easier for search engines to index your content instead of going through viewstate JavaScript code.Please note that this does not work will all asp.net controls.
+The viewstate mover module is included by default. It enables you to move all asp.nets viewstate information to the end of the page, thereby making it easier for search engines to index your content instead of going through viewstate JavaScript code. Please note that this does not work will all asp.net controls.
 
     <!-- This moves the asp.net viewstate data to the end of the html document instead of having it in the beginning-->
     <viewstateMoverModule enable="false" />
@@ -494,7 +515,7 @@ Standard logTypeAlias Entries are as follows and correspond to the entries found
 
 ## ScheduledTasks
 
-In this section you can add multiple scheduled tasks that should run a certain intervals.
+In this section you can add multiple scheduled tasks that should run at certain intervals.
 
     <scheduledTasks baseUrl="OptionalCustomBaseUrl.com/umbraco/">
         <!-- add tasks that should be called with an interval (seconds) -->
@@ -519,7 +540,7 @@ The task elements consist of the following attributes:
 
 **url:** Here the url for the page that should be called to run the task must be entered. Please note this can also point to an extensionless url or a service etc.
 
-**Please note:** that the scheduler is not in anyway a windows process so it depends on the application pool in which Umbraco is located. This means that if the application pool resets, so will the scheduler, so this is not a highly reliable way of scheduling tasks.
+**Please note:** that the scheduler is not in any way a windows process so it depends on the application pool in which Umbraco is located. This means that if the application pool resets, so will the scheduler, so this is not a highly reliable way of scheduling tasks.
 
 ## DistributedCalls / Loadbalancing
 
@@ -583,9 +604,9 @@ This section configures...
 
 **disableRedirectUrlTracking**: when you move and rename pages in Umbraco, 301 permanent redirects are automatically created, set this to true if you do not want this behavior 
 
-**Note** The URL tracking feature (and thus, this setting) is only available on Umbraco 7.5.0 and higher.
+**Note:** The URL tracking feature (and thus, this setting) is only available on Umbraco 7.5.0 and higher.
 
-**umbracoApplicationUrl**: defines the Umbraco application url, ie how the server should reach itself. By default, Umbraco will guess that url from the first request made to the server. Use that setting if the guess is not correct (because you are behind a load-balancer, for example). Format is: "http://www.mysite.com/umbraco" ie it needs to contain the scheme (http/https), complete hostname, and umbraco path.
+**umbracoApplicationUrl**: defines the Umbraco application url, i.e. how the server should reach itself. By default, Umbraco will guess that url from the first request made to the server. Use that setting if the guess is not correct (because you are behind a load-balancer, for example). Format is: "http://www.mysite.com/umbraco" i.e. it needs to contain the scheme (http/https), complete hostname, and umbraco path.
 
     <web.routing
         trySkipIisCustomErrors="false"

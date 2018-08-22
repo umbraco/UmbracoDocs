@@ -5,7 +5,7 @@
 Before a piece of content can be created it needs to be defined. That is why, when opening a blank installation of Umbraco, it is not possible to create content in the __Content__ section. All content needs a blueprint that holds information about what kind of data can be stored on the content node, which editors are used, how it is organized, where in the structure it is allowed and so forth. This blueprint or definition is called a Document Type.
 
 ## What is a Document Type?
-In it's most basic form a document type is a form containing fieldsets (or tabs) where you can apply rules about where the content can be created, which template(s) are allowed, backoffice icon and so forth.
+In its most basic form a document type is a form containing fieldsets (or tabs) where you can apply rules about where the content can be created, which template(s) are allowed, backoffice icon and so forth.
 
 Document Types can define entire pages or more limited content that can be reused on other nodes ie. a SEO tab. This means that you are in complete control of what type of content can be created where.
 
@@ -122,6 +122,6 @@ Document Types are very flexible and can be used in a myriad of ways from defini
 ### Tutorials
 - [Creating a basic website with Umbraco](../../../Tutorials/Creating-Basic-Site/)
 
-### [Umbraco TV](http://umbraco.tv)
-- [Chapter: Document Types](http://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/document-types/what-is-a-document-type/)
-- [Chapter: Creating content](http://umbraco.tv/videos/umbraco-v7/content-editor/basics/creating-content/)
+### [Umbraco TV](https://umbraco.tv)
+- [Chapter: Document Types](https://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/document-types/what-is-a-document-type/)
+- [Chapter: Creating content](https://umbraco.tv/videos/umbraco-v7/content-editor/basics/creating-content/)

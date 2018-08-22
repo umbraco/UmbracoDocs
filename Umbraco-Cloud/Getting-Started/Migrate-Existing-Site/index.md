@@ -14,8 +14,21 @@ Your Umbraco site has to fulfill these requirements:
 If you have a site that does not meet the above requirements, feel free to contact us and we will help you find the best solution for your site.
 
 ## Understanding what you have
-Prior to undertaking a migration you'll want to make sure you know the packages, add-ons, and custom code your site is using.  This is especially important if you are using custom property editors that will require data resolvers in order to work properly with the Umbraco Cloud deployment engine. Some common property editors that will require a data resolver are; [Archetype](https://github.com/leekelleher/Archetype.Courier), [Mortar](https://github.com/leekelleher/umbraco-mortar/tree/develop/Src/Our.Umbraco.Mortar.Courier), and [Nested Content](https://github.com/leekelleher/umbraco-nested-content) which do not currently contain a data resolver and will not deploy properly. There are certainly other property editors that will require a custom data resolver but, for the most part, property editors that store data as umbraco data will deploy without requiring any special attention.
+Prior to undertaking a migration you'll want to make sure you know the packages, add-ons, and custom code your site is using.  This is especially important if you are using custom property editors that will require connectors in order to work properly with the Umbraco Cloud deployment engine. Connectors are used by Umbraco Deploy to aid with the deployment and transferring of content/property-data between environments on Umbraco Cloud.
 
-If you have used Courier with your site previously and deployments work as expected, then you can be relatively certain it will also deploy properly with Umbraco Cloud.
+There are some common property editors that will require a connector, like [Mortar](https://github.com/leekelleher/umbraco-mortar/tree/develop/src/Our.Umbraco.Mortar.Courier) and [Archetype](https://github.com/leekelleher/Archetype.Courier), which do not currently contain a connector and will not deploy properly. There are certainly other property editors that will require a custom connector but, for the most part, property editors that store data as Umbraco data will deploy without requiring any special attention.
+
+To help smooth this process for you, we've build a project called [Umbraco.Deploy.Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib) which contains connectors for the most common Umbraco packages:
+
+* Archetype
+* Content List
+* DocType Grid Editor
+* LeBlender
+* Multi Url Picker
+* nuPickers
+* Property List
+* Stacked Content
+* Tuple
+* UrlPicker
 
 With that in mind, let's get started: [Prepare your site for migration](part-1.md)

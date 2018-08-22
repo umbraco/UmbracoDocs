@@ -6,7 +6,7 @@ _documentation about setting up load balanced environments using shared file sys
 
 Configuring your servers to work using a centrally located file system that is shared for all of your IIS instances can be tricky and can take a while to setup correctly. 
 
-A note when using this method to store your files centrally, you **must** make sure that your file storage system is HA (Highly Available) which means that there's not single point of failure. If you're hosting your files on a File Server share, you need to make the file share clustered (using [MSCS](http://en.wikipedia.org/wiki/Microsoft_Cluster_Server) or similar). Windows Server 2008 supports connecting directly to a SAN via [iSCSI](http://en.wikipedia.org/wiki/ISCSI) if your SAN supports it (there are also many other ways to connect to a SAN to share folders), otherwise you should be able to connect to a NAS via a UNC path but you must ensure that it is a windows/NTFS file system - IIS will not work properly using a linux shared file system.
+A note when using this method to store your files centrally, you **must** make sure that your file storage system is HA (Highly Available) which means that there's not single point of failure. If you're hosting your files on a File Server share, you need to make the file share clustered (using [MSCS](https://en.wikipedia.org/wiki/Microsoft_Cluster_Server) or similar). Windows Server 2008 supports connecting directly to a SAN via [iSCSI](https://en.wikipedia.org/wiki/ISCSI) if your SAN supports it (there are also many other ways to connect to a SAN to share folders), otherwise you should be able to connect to a NAS via a UNC path but you must ensure that it is a windows/NTFS file system - IIS will not work properly using a linux shared file system.
 
 There's a lot of work required to get this working, but once it's done it's fairly easy to maintain. We've this same setup working for many websites so hopefully these notes help you get started:
 
@@ -16,7 +16,7 @@ One important configuration option that **must** be set when using a centralized
 
 For **Umbraco v7.7.3+**
 
-The umbracoLocalTempStorage setting controls where the `umbraco.config` and the other Umbraco TEMP files are stored. More info on this setting is available [here](../../../Reference/Config/webconfig/index.md#umbracolocaltempstorage-umbraco-v773)
+The `umbracoLocalTempStorage` setting controls where the `umbraco.config` and the other Umbraco TEMP files are stored. This setting can be configured in the [Web.config](../../../../Reference/Config/webconfig/#umbracolocaltempstorage-umbraco-v773).
 
 	<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
 

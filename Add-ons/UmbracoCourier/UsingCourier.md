@@ -26,7 +26,7 @@ So, in short it:
 
 - Collects the items you tell it to
 - Collects the dependencies of these items 
-- Compares the items and depedencies to the target website. 
+- Compares the items and dependencies to the target website. 
 - Stores the entire collection of files and data
 - Builds a graph of the deployment to ensure that things are installed in the right order
 - Sends the files and data to the target site, which will then install them
@@ -44,7 +44,7 @@ Lets consider the amount of dependencies that goes into moving a document
 - The template
 - Css, js and images referenced in the template
 - macros in the template
-- document ids passed as paramereters to the macro, which leads to another document its data and so on.
+- document ids passed as parameters to the macro, which leads to another document its data and so on.
 
 We can sort these things into hard and soft dependencies, the hard ones are document type, data types and template, without these, the document
 cannot exist in the database, due to ID references. 
@@ -52,33 +52,33 @@ cannot exist in the database, due to ID references.
 The soft ones are all the items that make the page and editor actually work, so if you try to view a page without a template, it breaks, try to edit
 a document with a datatype missing its configuration or a needed dll, it breaks. 
 
-So the short version is, you dont want to miss those dependencies, because your site wont work, and you will have no idea why. 
+So the short version is, you don't want to miss those dependencies, because your site will not work, and you will have no idea why. 
 
 ## What can and cannot courier do.
 The whole idea of Courier, builds around the idea of dependencies and references, which courier can understand to a certain degree.
 But there are several areas, where Courier have zero chance of understanding what is going an. 
 
 ### When a datatype stores node ids
-Common thing, a data type stores a node ID, but courier doesnt know, so it cannot add the document as a dependency, and it cannot convert it into
-a guid, so it will be transferable, however, you can add the datatype to the courier.config to tell courier to look for ids and convert them
+Common thing, a data type stores a node ID, but courier doesn't know, so it cannot add the document as a dependency, and it cannot convert it into
+a GUID, so it will be transferable, however, you can add the datatype to the courier.config to tell courier to look for ids and convert them
 
 ### Data in external tables are referenced.
-Courier doesnt know about it, cant deploy it, you can write your own provider for it, but this provides you with overhead, and it would
+Courier doesn't know about it, cant deploy it, you can write your own provider for it, but this provides you with overhead, and it would
 be better if you structured your external data so it can be moveable (avoid IDENTITY and so on.)
 
 ### You try to transfer really large files
 Hard to spot, but if a changeset contains large files, and you try to transfer these over a webservice connection
-it will die, you can increase the request limit and so, but it wont ever be 100% solid to do, so better to zip your
+it will die, you can increase the request limit and so, but it will not ever be 100% solid to do, so better to zip your
 revision files and xcopy them over, when you need to deploy really large things
 
 
 ## How to handle the initial deployment
-A common scenarion seen, is that people try to transfer their entire site in one go, to do the initial deploy. This is not recommended, and really just adds
+A common scenario seen, is that people try to transfer their entire site in one go, to do the initial deploy. This is not recommended, and really just adds
 unneeded overhead to your deployment. Courier adds a lot of extra data and overhead, because it needs to convert to a format that be transfered and
 referenced between the 2 sites, it also needs to compare data with this other site and determine which items should transfer, and which should not, finally it
 all happens over http, which is another bottleneck
 
-So In short, when you initially want to deploy your site, and dont have 2 environments to sync, just deploy your files and database as normally, and let courier handle the ongoing day-to-day changes which you subsequently will have to deploy. 
+So In short, when you initially want to deploy your site, and don't have 2 environments to sync, just deploy your files and database as normally, and let courier handle the ongoing day-to-day changes which you subsequently will have to deploy. 
 
 
 ## Day to day work with Courier
@@ -88,9 +88,9 @@ But for day to day work, let your developers handle deployments of document type
 
 When your infrastructure (document types, templates, etc) is in place, your editors should in most cases not be bothered with too many big deployments using the right-click menu. Courier will try to skip as many things as possible, and only suggest things that have actually changed, but as you have probably guessed by now, this is no simple task. 
 
-## Ongoing finetuning
-We do finetune this process all the time, to cater to all the different ways an Umbraco site can be built. Some scenarios we simply cannot support out of the box, and some we can add configuration options for so it can fit with as many sites as possible. 
+## Ongoing fine tuning
+We fine tune this process all the time, to cater to all the different ways an Umbraco site can be built. Some scenarios we simply cannot support out of the box, and some we can add configuration options for so it can fit with as many sites as possible. 
 
-Let us know in the [Courier forum](https://our.umbraco.org/forum/umbraco-courier/) on Our, if certain scenarions or setups give unreasonable large deployments. Please provide as many details as possible, or even better, provide us with a database backup, so we can try it out on our local machines and adjust the many variables. 
+Let us know in the [Courier forum](https://our.umbraco.com/forum/umbraco-courier/) on Our, if certain scenarios or setups give unreasonable large deployments. Please provide as many details as possible, or even better, provide us with a database backup, so we can try it out on our local machines and adjust the many variables. 
 
 

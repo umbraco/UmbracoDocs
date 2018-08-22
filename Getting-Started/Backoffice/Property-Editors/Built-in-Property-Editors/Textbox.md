@@ -10,13 +10,11 @@ Textbox is a simple HTML input control for text
 
 ## Settings
 
-## Content Example 
+## Content Example:
 
 ![Textbox Content Example](images/Textbox-Content.png)
 
-## MVC View Example
-
-### Typed:
+## MVC View Example:
 
 	@{
 	   if (Model.Content.HasValue("pageTitle")){
@@ -24,10 +22,13 @@ Textbox is a simple HTML input control for text
 	   } 
 	}
 
-### Dynamic: 
 
-	@{       
-	   if (CurrentPage.HasValue("pageTitle")){
-	       <p>@CurrentPage.pageTitle</p>
-	   } 	       
+### Dynamic (Obsolete):
+
+See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
+	
+	@{       	
+	   if (CurrentPage.HasValue("pageTitle")){	
+	       <p>@CurrentPage.pageTitle</p>	
+	   } 	       	
 	}

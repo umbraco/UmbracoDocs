@@ -3,7 +3,7 @@
 _Follow these steps to do a full manual install of Umbraco._
 
 ## Download Umbraco binaries
-The stable releases of the Umbraco binaries are available from [our.umbraco.org/download](http://our.umbraco.org/download/). If you don't mind working with experimental builds, you could download a [nightly release](http://nightly.umbraco.org/) at your own peril (no guarantees that it will work).
+The stable releases of the Umbraco binaries are available from [our.umbraco.com/download](https://our.umbraco.com/download/). If you don't mind working with experimental builds, you could download a [nightly release](http://nightly.umbraco.org/) at your own peril (no guarantees that it will work).
 
 ## Unzip files
 Once you have the binary release of your liking saved to disk, make sure that the file has not been blocked by Windows. Right-click the file you downloaded and choose "Properties". If it says at the bottom of the properties window: "This file came from another computer and might be blocked to help protect this computer" then make sure to click the "Unblock" button so that all of the binary files will be unzipped later on.
@@ -18,7 +18,7 @@ There are two ways to run the binaries in a webserver:
 
 ### Using IIS Express
 
-You can download IIS Express from the [Web Platform Installer (WebPI)](http://www.microsoft.com/web/downloads/platform.aspx) (search for "IIS Express"). To be able to develop against IIS Express from Visual Studio 2010, you need to have VS2010 Service Pack 1 installed, which can also be acquired from the WebPI. 
+You can download IIS Express from the [Web Platform Installer (WebPI)](https://www.microsoft.com/web/downloads/platform.aspx) (search for "IIS Express"). To be able to develop against IIS Express from Visual Studio 2010, you need to have VS2010 Service Pack 1 installed, which can also be acquired from the WebPI. 
 
 ![IIS Express on the Web Platform Installer](images/Manual/2012-03-17_164508.png)
 
@@ -57,7 +57,7 @@ You can now go to http://MyUmbracoSite.local and the install wizard should appea
 
 In order for Umbraco to have the correct permissions to write files to disk, you should give the IIS_IUSRS user modify permissions in the folder in which you've unzipped your Umbraco files. 
 
-While giving broad permissions is usually fine for development environments, you may want to restrict permissions further on a public-facing server. See [permissions](permissions.md) for more details.
+While giving broad permissions is usually fine for development environments, you may want to restrict permissions further on a public-facing server. See [permissions](../Server-Setup/permissions.md) for more details.
 
 ### Choose database environment
 There are two options to choose from with regards to a database environment:

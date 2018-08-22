@@ -2,7 +2,7 @@
 
 *This document should be used as a reference, not a step by step guide. Upgrading will largely depend on what version of Umbraco you are currently running, what packages you have installed and the many aspects of your own Umbraco installation.*
 
-The [standard upgrade instructions](http://our.umbraco.org/documentation/Installation/Upgrading/general) still apply to this process as well.
+The [standard upgrade instructions](https://our.umbraco.com/documentation/Installation/Upgrading/general) still apply to this process as well.
 
 ## Backup
 
@@ -21,7 +21,7 @@ Umbraco 7 requires browsers with proper html 5 support, these include Chrome, Fi
 
 Before you upgrade you should read the list of breaking changes, in some cases you may need to change some of your codebase if code has been removed from the core or if one of these breaking changes direclty affects your install.
 
-See: [List of breaking changes](http://our.umbraco.org/contribute/releases/700)
+See: [List of breaking changes](https://our.umbraco.com/contribute/releases/700)
 
 ## Examine
 
@@ -62,7 +62,7 @@ It is recommended that you use a Diff tool to compare the configuration file cha
 * /views/web.config updates
 * new /macroscripts/web.config
 * /config/umbracoSettings.config
-	* Umbraco is now shipped with minimal settings but the [full settings](http://our.umbraco.org/documentation/Using-Umbraco/Config-files/umbracoSettings/) are still available
+	* Umbraco is now shipped with minimal settings but the [full settings](https://our.umbraco.com/documentation/Using-Umbraco/Config-files/umbracoSettings/) are still available
 	* umbracoSettings is now a true ASP.Net configuration section [http://issues.umbraco.org/issue/U4-58](http://issues.umbraco.org/issue/U4-58)
 	* remove the &lt;EnableCanvasEditing&gt; element
 	* remove the &lt;webservices&gt; element
@@ -117,7 +117,7 @@ which have not been completed for v7.0:
 ### Related links property editor and xslt
 Since this is an advanced prop editor the data format has changed from xml to json this shouldn't have any effect when retrieving the data from razor but if you are outputting related links data with xslt you'll need to update your xslt snippet. Making use of the new library method umbraco.library:JsonToXml and taking into account that the xml structure has also slightly changed.
 
-### Guid -> Alias mapping
+### GUID -> Alias mapping
 
 There are several database changes made in v7, one of which is the change of referencing a property editor from a GUID to a string alias. If you have a legacy property editor that you'd like to map to a new v7 property editor you can add your custom GUID -> Alias map during application startup. Do do this you'd add your map with this method: `Umbraco.Core.PropertyEditors.LegacyPropertyEditorIdToAliasConverter.CreateMap`
 

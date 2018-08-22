@@ -3,7 +3,7 @@
 _`MembershipHelper` is a helper class for accessing member data in the form of `IPublishedContent`. 
 `MembershipHelper` has a variety of helper methods that are useful when working in your views, controllers and webforms classes._
 
-Note: For a more detailed list, visit the [API documentation](https://our.umbraco.org/apidocs/csharp/api/Umbraco.Web.Security.MembershipHelper.html#methods)
+Note: For a more detailed list, visit the [API documentation](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Web.Security.MembershipHelper.html#methods)
 
 ## How to reference MembershipHelper?
 When working in templating, this helper will automatically be there for you to use as `@Members` which means you conveniently in your templates easily can access member data:

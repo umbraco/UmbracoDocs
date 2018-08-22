@@ -18,7 +18,7 @@ The basic configuration for an IndexSet involves specifying the following two at
 
 * **SetName** - the name of the IndexSet, it's convention to have 'IndexSet' at the end of the name, eg ExampleIndexSet will work 'by convention' with an ExampleIndexer and an ExampleSearcher.
 * **IndexPath** - the path on disk where your Examine Index files will be stored.
-* **IndexParentId** - the Umbraco id of the item in the tree to begin indexing beneath, this defaults to -1 (the root of the site). You could use this to create seperate IndexSets for different parts of your site.
+* **IndexParentId** - the Umbraco id of the item in the tree to begin indexing beneath, this defaults to -1 (the root of the site). You could use this to create separate IndexSets for different parts of your site.
 eg
 
         <IndexSet SetName="ExampleIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/Example/" />
@@ -60,7 +60,7 @@ By default Examine will index all field values as strings.  What this means is t
 
 Available Types are: NUMBER, INT, FLOAT, DOUBLE, LONG, DATE, DATETIME, DATE.YEAR, DATE.MONTH, DATE.DAY, DATE.HOUR, DATE.MINUTE
 
-To specify the type of a field, add a Type attribute to it's specification in the IndexUserFields list
+To specify the type of a field, add a Type attribute to its specification in the IndexUserFields list
 
 eg: 
 
@@ -99,4 +99,4 @@ and if you want to be able to sort search results by this field add EnableSortin
 
 ## Further information
 
-You can find more information about Examine, it's conventions and documentation at the [Examine GitHub Repository Wiki](https://github.com/Shazwazza/Examine/wiki)
+You can find more information about Examine, its conventions and documentation at the [Examine GitHub Repository Wiki](https://github.com/Shazwazza/Examine/wiki)

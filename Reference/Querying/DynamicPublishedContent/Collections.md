@@ -63,7 +63,7 @@ Returns the previous sibling item in the tree by one position or by the value sp
 
 ### .AncestorOrSelf()
 The AncestorOrSelf() method has a number of overloads that allow you to quickly traverse the tree and return an item that matches the overloaded criteria.
-Using the menthod without any parameters will return the top most node in tree that you are currently navigating.
+Using the method without any parameters will return the top most node in tree that you are currently navigating.
 
 **Notice** `.AncestorOrSelf()` should not be confused with the collection [`.AncestorsOrSelf()`](#ancestorsorself)
 

@@ -1,6 +1,8 @@
 # Config transforms
 Sometimes you just need your configuration files to be a little bit different after you deploy. It's possible to transform your config files for each environment in your project.
 
+<iframe width="800" height="450" src="https://www.youtube.com/embed/YkF2FotjWDk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## Convention
 To transform any file that ends with `.config`, you can add a file with the extension `.{environment}.xdt.config` in the same folder.   
 The `{environment}` part needs to be replaced with the target environment, for which there's currently 2 possibilities for each project:
@@ -20,8 +22,16 @@ Then, whenever you deploy from local to development, the transforms in `web.deve
 
 **Note:** if you only want to transform the file on the live environment then you don't create the `development.xdt.config`.
 
+## Test your config transforms
+Before applying the config transform files to your environments we recommend that you run a test using this tool: [Webconfig Transformation Tester](https://webconfigtransformationtester.apphb.com/)
+
+Using the tool will let you test whether the config transform file transforms your config files correctly. The tool can be used for all config files.
+
 ## All config files
-For each deploy, we'll search for all of the `.{environment}.xdt.config` files in your site and apply transforms, so you can also transform (for example) `~/config/Dashboard.config` by creating a `~/config/Dashboard.live.xdt.config` file. Just make sure the transform file follows the naming convention and it exists in the same folder as the config file you want to transform.   
+For each deploy, we'll search for all of the `.{environment}.xdt.config` files in your site and apply transforms, so you can also transform (for example) `~/config/Dashboard.config` by creating a `~/config/Dashboard.live.xdt.config` file. Just make sure the transform file follows the naming convention and it exists in the same folder as the config file you want to transform.
+
+## Baseline config transforms
+It is possible to apply config transforms for specific child sites from a baseline. For more info see [Baseline Configuration Files documentation](https://our.umbraco.com/documentation/Umbraco-Cloud/Getting-Started/Baselines/Configuration-files/)
 
 ## Including transforms in Umbraco packages
 For package developers it can be useful to add a config transform that needs to happen on each environment, for example if you're making a package called uPaintItBlack where you want to set an AppSetting in web.config. The AppSetting in `development` should be _a red door_ so you set the AppSetting value to `"red"`. On `staging` it should be _a green sea_ so you set the AppSetting to `"green"` (or to _a deeper `"blue"`_). Of course on `live` you've painted it black so you set it to `"black"`. 

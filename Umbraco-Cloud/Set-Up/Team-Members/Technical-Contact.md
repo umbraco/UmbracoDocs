@@ -12,9 +12,9 @@ When you create a **new project** the user used to create the project will autom
 
 * Go to the Project in the Umbraco Cloud Portal
 * Find the **Edit team** page under the _Settings_ menu
-* Below the team members you'll find this form:
+* Below the team members you'll find the form to add a Technical Contact
 
-![Technical Contact](images/technical-contact.png)
+<iframe width="800" height="450" src="https://www.youtube.com/embed/4--pI7aNmrI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Fill in the fields:
 

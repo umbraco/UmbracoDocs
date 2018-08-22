@@ -25,13 +25,13 @@ Click 'Clear current trace' and then in a different tab visit the url of the pag
 
 The trace requests for this page will appear if you refresh your trace.axd tab.
 
-Click on 'View Details' for a particualar request in the list to see the specific trace information for the page.
+Click on 'View Details' for a particular request in the list to see the specific trace information for the page.
 
 ![Trace Request Details](images/trace-request-details.png)
 
 ### MiniProfiler
 
-Umbraco includes the Mini Profiler project in its core (see [http://miniprofiler.com](http://miniprofiler.com) for more details). 
+Umbraco includes the Mini Profiler project in its core (see [https://miniprofiler.com](https://miniprofiler.com) for more details). 
 The MiniProfiler profiles your code method calls, giving you a greater insight into code duration, and query time for underlying SQL queries. It's great for tracking down performance issues in your site's implementation.
 
 #### Displaying the MiniProfiler
@@ -57,7 +57,7 @@ If within your implementation there are certain lines of code that you think may
     using(profiler.DebugDuration<Products>("Artificially Slow Example"))
     {
         // you would place the code you wanted to measure in here...
-        //just make this sleep for a second, for example purposes:
+        // just make this sleep for a second, for example purposes:
         System.Threading.Thread.Sleep(1000);
     }
 
@@ -69,7 +69,7 @@ and now in the profiler you can see
 
 If you are using the Google Chrome browser you can install this [Umbraco Productivity Tool Chrome Extension](https://chrome.google.com/webstore/detail/umbraco-productivity/kepkgaeokeknlghbiiipbhgclikjgkdp?hl=en)
 
-To enable you to easily access and switch between the Miniprofiler / Trace debugging modes.
+To enable you to easily access and switch between the Mini-profiler / Trace debugging modes.
 
 ![Umbraco Productivity Tool](images/umbraco-productivity-chrome-extension.png)
 
@@ -83,10 +83,10 @@ The configuration for log4net is found in your Umbraco site here: /config/log4ne
 
     <priority value="Info"/>
 
-Full details of Log4Net configuration options can be found here: http://logging.apache.org/log4net/release/manual/configuration.html
+Full details of Log4Net configuration options can be found here: https://logging.apache.org/log4net/release/manual/configuration.html
 
 The default location for trace logs in your application will be /app_data/logs/ with a file created for each day of logging information.
-There is a useful Umbraco Package called Diplo Trace Log Viewer that will enable you to see this log file information from the developer section of the Umbraco Backoffice: https://our.umbraco.org/projects/developer-tools/diplo-trace-log-viewer/
+There is a useful Umbraco Package called Diplo Trace Log Viewer that will enable you to see this log file information from the developer section of the Umbraco Backoffice: https://our.umbraco.com/projects/developer-tools/diplo-trace-log-viewer/
 
 ##### Writing to the logs
 

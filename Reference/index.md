@@ -8,15 +8,15 @@ This section is ultra important! It describes many common pitfalls that develope
 
 ## API Documentation
 
-#### [C# API Documentation](https://our.umbraco.org/apidocs/csharp/)
+#### [C# API Documentation](https://our.umbraco.com/apidocs/csharp/)
 
-__Note: opens a documentation browser that is different from the documentation section you're viewing now, we're planning to integrate both.__
+__Note: opens a documentation browser that is different from the documentation section you're viewing now.__
 
 C# API references for the Umbraco Core and Web libraries.
 
-#### [Backoffice UI API documentation](https://our.umbraco.org/apidocs/ui/)
+#### [Backoffice UI API documentation](https://our.umbraco.com/apidocs/ui/)
 
-__Note: opens a documentation browser that is different from the documentation section you're viewing now, we're planning to integrate both.__
+__Note: opens a documentation browser that is different from the documentation section you're viewing now.__
 
 Angular, JS, CSS & Less UI API references for building Umbraco backoffice components.
 
@@ -55,7 +55,7 @@ Event model covering all major aspects of the system for triggering custom code 
 
 ## [Rest APIs](Routing/WebApi/index.md)
 
-How to use [Web API](http://www.asp.net/web-api) with Umbraco to easily create REST services.
+How to use [Web API](https://www.asp.net/web-api) with Umbraco to easily create REST services.
 
 ## [Management APIs](Management-v6/index.md)
 

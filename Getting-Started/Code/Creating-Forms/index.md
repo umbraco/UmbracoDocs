@@ -113,4 +113,4 @@ Now you can add the form to a page that has a rich text editor.
 - [Routing](../../../Reference/Routing/)
 
 ### Umbraco TV
-- [Chapter: Surface Controllers](http://umbraco.tv/videos/umbraco-v7/developer/fundamentals/surface-controllers/)
+- [Chapter: Surface Controllers](https://umbraco.tv/videos/umbraco-v7/developer/fundamentals/surface-controllers/)

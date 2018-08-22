@@ -41,7 +41,7 @@ To use this endpoint, make a request like this:
     {
         "projectName": "Name of the project", // Required
         "plan": "Single", // Required. Options are: "Single or Studio"
-        "ownerId": "c5821a98-ce88-4796-be90-e29f0a05fa39", // Optional. Can be a guid of an organization or an email. If nothing is provided the owner becomes the user the token is associated with
+        "ownerId": "c5821a98-ce88-4796-be90-e29f0a05fa39", // Optional. Can be a GUID of an organization or an email. If nothing is provided the owner becomes the user the token is associated with
         "baselineAlias": "an-alias-of-a-baseline" // Optional. If the project needs to be a child, then you can provide the alias of the baseline
     }
 
@@ -108,7 +108,7 @@ If the user is a new user we will create the user and send an activation email t
     {
         "email": "user-email@example.com", // Required
         "name": "The users name", // Required
-        "isAdmin": false, //Optional
+        "isAdmin": false, // Optional
         "title": "A title that goes into the title of the mail sent to the user", // Optional
         "message": "A message that goes into the message of the mail sent to the user" // Optional
     }
@@ -138,7 +138,7 @@ The following endpoint is used for creating a user on Umbraco.io, and not necess
     {
         "email": "user-email@example.com", // Required
         "name": "The users name", // Required
-        "password": "dontReuseOrRecycleYourPassword" //Required
+        "password": "dontReuseOrRecycleYourPassword" // Required
     }
 
 This will return an appropriate HTTP status code and a JSON object like this:

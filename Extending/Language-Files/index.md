@@ -51,7 +51,7 @@ Using core or custom language keys from your code:
 
 
 ### From .net
-`Services` are available in most Umbraco baseclasses like Controllers and UserControls, from there, use TextService to localize string with format [area]/[key]:
+`Services` are available in most Umbraco base classes like Controllers and UserControls, from there, use TextService to localize string with format [area]/[key]:
 
     using Umbraco.Core.Services;
     var localizedLabel = Services.TextService.Localize("dialog/myKey");
@@ -61,6 +61,12 @@ Using core or custom language keys from your code:
 In the Umbraco backoffice UI, labels can be localized with the `localize` directive:
 
     <button>
+        <localize key="dialog_myKey">Default value</localize>
+    </button>
+    
+The localize directive can also be used as an attribute like below where the value of the title attribute is then populated with the dictionary key "title_name" from the language file using "@title_name".
+
+    <button localize="title" title="@title_name">
         <localize key="dialog_myKey">Default value</localize>
     </button>
 
@@ -84,7 +90,7 @@ The language files are fairly simple XML files with a straight-forward layout as
 	<language alias="en" intName="English (UK)" localName="English (UK)" lcid="" culture="en-GB">
 		<creator>
 			<name>The Umbraco community</name>
-			<link>http://our.umbraco.org</link>
+			<link>https://our.umbraco.com</link>
 		</creator>
 		<area alias="actions">
 			<key alias="assignDomain">Culture and Hostnames</key>
@@ -100,7 +106,7 @@ In the above example of a missing translation for "assignDomain", locate this st
 	<language alias="es" intName="Spanish" localName="español" lcid="10" culture="es-ES">
 		<creator>
 	    	<name>The Umbraco community</name>
-	    	<link>http://our.umbraco.org</link>
+	    	<link>https://our.umbraco.com</link>
 		</creator>
 		<area alias="actions">
 		    <key alias="assignDomain">Administrar hostnames</key>

@@ -38,20 +38,20 @@ For this tutorial, the Surface controller that we will create will contain one a
 		[HttpPost]
 		public ActionResult CreateComment(CommentViewModel model)
 		{    
-		    //model not valid, do not save, but return current Umbraco page
+		    // model not valid, do not save, but return current Umbraco page
 		    if (!ModelState.IsValid)
 			{
-				//Perhaps you might want to add a custom message to the ViewBag
-				//which will be available on the View when it renders (since we're not 
-				//redirecting)	    	
+				// Perhaps you might want to add a custom message to the ViewBag
+				// which will be available on the View when it renders (since we're not 
+				// redirecting)	    	
 		   		return CurrentUmbracoPage();
 			}
 				    
-			//Add a message in TempData which will be available 
-			//in the View after the redirect 
+			// Add a message in TempData which will be available 
+			// in the View after the redirect 
 			TempData.Add("CustomMessage", "Your form was successfully submitted at " + DateTime.Now)
 		
-		    //redirect to current page to clear the form
+		    // redirect to current page to clear the form
 		    return RedirectToCurrentUmbracoPage();		    
 		}
 	}
@@ -91,7 +91,7 @@ The best way to render a form in MVC is to have a Partial View render the form w
 		<input type="submit"/>
 	}
 
-There are numerous [HtmlHelper methods](http://msdn.microsoft.com/en-us/library/system.web.mvc.htmlhelper_methods(v=vs.108).aspx) that you can use to render a form. In the above we've used the strongly typed helper methods: `LabelFor`, `TextBoxFor`, `TextAreaFor` and `ValidationMessageFor`. 
+There are numerous [HtmlHelper methods](https://msdn.microsoft.com/en-us/library/system.web.mvc.htmlhelper_methods(v=vs.108).aspx) that you can use to render a form. In the above we've used the strongly typed helper methods: `LabelFor`, `TextBoxFor`, `TextAreaFor` and `ValidationMessageFor`. 
 
 ## Render the Partial View
 

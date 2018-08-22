@@ -11,14 +11,14 @@ Simply open a terminal / cmd in the Umbraco.Web.UI.Client folder and run:
 
 	npm install
 
-This should setup the entire Grunt, karma and jsint setup we use for tests and pruning.
+This should setup the entire Grunt, Karma and jsint setup we use for tests and pruning.
 
 ## Automated testing
 To start working on the client files, and have them automatically built and merged into the client project, as well as the VS project, simply run the command
 
 	grunt dev
 
-This will start a webserver on :8080 and tell karma to run tests every time a .js or .less file is changed. 
+This will start a webserver on :8080 and tell Karma to run tests every time a .js or .less file is changed. 
 After linting and tests have passed, all the client files are copied to umbraco.web.ui/umbraco folder, so it also keeps the server project up to date on any client changes. This should all happen in the background.
 
 ## Adding a new service
@@ -71,6 +71,6 @@ So to add a service, which requires data from the server we should:
 There is a static servervariables file in /mocks which describes the urls used by the rest service, this is currently needed as we don't have this set as an angular service, and no real conventions for these urls yet. Longer-term it would be great to have a urlBuilder which could do
 
 	urlService.url("contentTypes", "GetAllowedChildren");
-	//would return /<umbracodir>/<apibaseDir>/contentyTypes/getAllowedChildren
+	// would return /<umbracodir>/<apibaseDir>/contentyTypes/getAllowedChildren
 
 But for now, they are set in the servervariables file.	

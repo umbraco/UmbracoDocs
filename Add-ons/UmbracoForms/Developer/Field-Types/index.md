@@ -9,3 +9,8 @@ This displays the picked date in the correct locale, but using JavaScript we upd
 
 To achieve this a new Razor partial view is included `/Views/Partials/Forms/DatePicker.cshtml` once on a page with a form that includes a date picker, this includes the MomentJS library to help with the date locale formatting & the appropiate changes to Pikaday.js to support the locales.
 If you wish to use a different DatePicker component this is the file that you would customise to your needs.
+
+### datepicker configuration of the year range
+The datepicker has one configuration setting  to control the number of year shown. The default is 10 years which makes the picker unusable for picking birth dates.
+
+Go to `~/App_Data/UmbracoForms/umbracoforms.config` and update `<setting key="DatePickerYearRange" value="10" />` to a higher number (e.g. 100)

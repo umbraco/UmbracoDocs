@@ -9,7 +9,7 @@ To explain things we will use the following content tree:
 ![simple content tree](images/simple-content-tree.png)
 
 ## 1. <a name="segments"></a> Create segments
-When the URL is build up, Umbraco will convert every node into a segment.  Each published [Content](../..//Reference/Management-v6/Models/Content.md) has a url segment. 
+When the URL is build up, Umbraco will convert every node into a segment.  Each published [Content](../../../Reference/Management/Models/Content) has a url segment. 
 
 In our example "Our Products" will become "our-products" and "Swibble" will become "swibble".
 
@@ -124,7 +124,7 @@ It's tricky to implement your own provider, it is advised use override the defau
 - be sure to know how to handle schema's (http vs https) and hostnames 
 - inbound might require rewriting
 
-When you interit from the DefaultUrlProvider, you need to implement the constructor specifying the `IRequestHandlerSection`.  The easiest way to retrieve this object is adding a constructor: 
+When you inherit from the DefaultUrlProvider, you need to implement the constructor specifying the `IRequestHandlerSection`.  The easiest way to retrieve this object is adding a constructor: 
 
     public class MyUrlProvider : DefaultUrlProvider {
       public MyUrlProvider()
@@ -244,5 +244,5 @@ A more complicated example with the SiteDomainHelper:
 Back-end on www.alpha.com/umbraco
 then link is "www.bravo.com/bravo-2" ; alternate link is "mobile.bravo.com/bravo-2".  
 
-If you have good ideas on creating better implementations, please share them on the [umbraco dev group](https://groups.google.com/forum/#!forum/umbraco-dev).
+If you have good ideas on creating better implementations, please share them on the [Umbraco dev group](https://groups.google.com/forum/#!forum/umbraco-dev).
 

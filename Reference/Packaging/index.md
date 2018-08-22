@@ -1,6 +1,6 @@
 # What are package actions?
 
-Package actions are a simple way to perform common tasks while installing packages / nitros. It is XML based and could be compared to for example nant tasks. Actions perform small configuration related tasks, which could for example be allowing a document type on another type, moving a document to another location or adding a string to an existing template.
+Package actions are a simple way to perform common tasks while installing packages / nitros. It is XML based and could be compared to for example NAnt tasks. Actions perform small configuration related tasks, which could for example be allowing a document type on another type, moving a document to another location or adding a string to an existing template.
 Currently we have 10 actions available. If you need to perform more advanced installation routines, you will have to build a custom installer (.ascx based) or write your own package action using the IPackageAction Interface, which will then automatically be picked up by umbraco.
 
 ## Adding actions to a package script
@@ -132,6 +132,6 @@ Alias: addStringToHtmlElement
 
 Richard Soeteman has created the Codeplex project PackageActionsContrib which contains community submitted Package Actions which other developers may find useful.
 
-You can find out more about the package actions contribution project at http://packageactioncontrib.codeplex.com
+You can find out more about the package actions contribution project at https://packageactioncontrib.codeplex.com
 
 It is also worth checking the patches section of the project as new package actions have been submitted by other developers that have not yet been integrated into the PackageActionsContrib project that you might find useful.

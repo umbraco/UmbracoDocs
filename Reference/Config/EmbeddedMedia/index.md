@@ -2,7 +2,7 @@
 
 /config/EmbeddedMedia.config
 
-This configuration file lists the [Embedded Media Providers](../../Extending/Embedded-Media-Provider.md) configured for use in your Umbraco site.
+This configuration file lists the [Embedded Media Providers](../../../extending/Embedded-Media-Provider/) configured for use in your Umbraco site.
 
 ## Providers
 
@@ -22,7 +22,7 @@ Each Embedded Media Provider is listed as a *provider* element. The *provider* c
 - **provider type** - the 'type' of the code that provides the implementation, eg.  "YourEmbedNamespace.YourOEmbedClass, YourDllName"
 - **urlShemeRegex** - The regex to match the url entered by the editor to the specific provider
 - **apiEndPoint** - Used with the generic Umbraco oEmbed providers, sets the url of the oEmbed endpoint to use for the provider
-- **requestParams** -  Used with the generic Umbraco oEmbed providers, sets the type of the method responsible for sending additional querystirng parameters to the embed Url, there are two methods provided: 
+- **requestParams** -  Used with the generic Umbraco oEmbed providers, sets the type of the method responsible for sending additional querystring parameters to the embed Url, there are two methods provided: 
   - Umbraco.Web.Media.EmbedProviders.Settings.Dictionary, umbraco
   - Umbraco.Web.Media.EmbedProviders.Settings.String, umbraco
 

@@ -2,7 +2,7 @@
 
 _There are a few special/reserved Umbraco Property Type aliases that can be used which can easily 
 manipulate how the standard Umbraco routing pipeline works. You can add these Property Types to any Document Type
-and if values are assigned to these properties, Umbraco will adjust it's routing accordingly. See below for full details._
+and if values are assigned to these properties, Umbraco will adjust its routing accordingly. See below for full details._
 
 ## umbracoRedirect
 
@@ -18,7 +18,7 @@ This essentially performs a rewrite.
 ## umbracoUrlName
 
 This property when created as a text string lets you provide a different URL name to what is created by default by the name of the node.
-If you enter a value for this property and save/publish the content node you will see that it's main URL is updated with a new path suffix.
+If you enter a value for this property and save/publish the content node you will see that its main URL is updated with a new path suffix.
 
 ## umbracoUrlAlias
 
