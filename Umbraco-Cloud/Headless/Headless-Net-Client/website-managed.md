@@ -7,9 +7,9 @@ _This example is for creating a fully content managed website where URLs will be
 * Go to a new folder to create a new .NET Core website and add references:
    * _(Ensure you've created the `Nuget.config`, see above)_
    * `dotnet new mvc`
-   * `dotnet add package UmbracoCms.Headless.Client -v 0.9.0-*`   
+   * `dotnet add package UmbracoCms.Headless.Client -v 0.9.7-*`   
       * _NOTE: You use this same command to update to the latest version_
-   * `dotnet add package UmbracoCms.Headless.Client.Web -v 0.9.0-*`   
+   * `dotnet add package UmbracoCms.Headless.Client.Web -v 0.9.7-*`   
 * Add a config file
     * use the standard .NET Core naming conventions: `appsettings.json`
     * this needs to contain the `umbracoHeadless` section:
@@ -29,7 +29,7 @@ _This example is for creating a fully content managed website where URLs will be
 * You will need to add a view to be rendered (TODO: We need to optimize the NuGet install for the `UmbracoCms.Headless.Client.Web` package to do most of this for us)
    * Add a view file for the path `/Views/DefaultUmbraco/Index.cshtml`
    ```
-    @using Umbraco.Headless.Client.Models
+    @using Umbraco.Headless.Client.Net.Models
     @model ContentItem
 
     @{
@@ -50,15 +50,15 @@ _This example is for creating a fully content managed website where URLs will be
    * `dotnet run`
       * _If you want to launch in debug mode, set the environment variable in the current cmd window before running this command: `set ASPNETCORE_ENVIRONMENT=Development`_
 
-Now you can have the `Umbraco.Headless.Client.Services.HeadlessService` injected into any of your controllers, services, etc... The `Umbraco.Headless.Client.Services.HeadlessService` is the starting point for all headless operations.
+Now you can have the `Umbraco.Headless.Client.Net.Services.PublishedContentService` injected into any of your controllers, services, etc... The `Umbraco.Headless.Client.Net.Services.PublishedContentService` is the starting point for all headless operations.
 
-You can also inject the `HeadlessService` or `IHeadlessConfig` into any view by using this syntax:
+You can also inject the `PublishedContentService` or `IHeadlessConfig` into any view by using this syntax:
 ```
-@using Umbraco.Headless.Client.Configuration
-@using Umbraco.Headless.Client.Services
+@using Umbraco.Headless.Client.Net.Web.Configuration
+@using Umbraco.Headless.Client.Net.Services
 
 @inject IHeadlessConfiguration HeadlessConfig
-@inject HeadlessService HeadlessService
+@inject PublishedContentService PublishedContentService
 ```
 
 #### Example usage
@@ -67,9 +67,9 @@ You can also inject the `HeadlessService` or `IHeadlessConfig` into any view by 
 
 * To make a dynamic navigation system, create a view at `/Views/Shared/HeaderNav.cshtml`
 ```
-@using Umbraco.Headless.Client.Services
-@model Umbraco.Headless.Client.Models.ContentItem
-@inject HeadlessService HeadlessService
+@using Umbraco.Headless.Client.Net.Services
+@model Umbraco.Headless.Client.Net.Models.ContentItem
+@inject PublishedContentService PublishedContentService
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
@@ -85,7 +85,7 @@ You can also inject the `HeadlessService` or `IHeadlessConfig` into any view by 
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a href="@Model.Url">Home</a></li>
-                @foreach (var child in await HeadlessService.GetChildren(Model))
+                @foreach (var child in await PublishedContentService.GetChildren(Model.Id))
                 {
                     <li><a href="@child.Url">@child.Name</a></li>
                 }
@@ -96,13 +96,13 @@ You can also inject the `HeadlessService` or `IHeadlessConfig` into any view by 
 ```
 * In the `/Views/Shared/_Layout.cshtml` file, we will fetch the `Site` node for the current content item:
 ```
-@using Umbraco.Headless.Client.Models
-@using Umbraco.Headless.Client.Services
-@model Umbraco.Headless.Client.Models.ContentItem
-@inject HeadlessService HeadlessService
+@using Umbraco.Headless.Client.Net.Models
+@using Umbraco.Headless.Client.Net.Services
+@model Umbraco.Headless.Client.Net.Models.ContentItem
+@inject PublishedContentService PublishedContentService
 
 @{
-    var site = await HeadlessService.GetSite(Model);
+    var site = await PublishedContentService.GetSite(Model);
 }
 ```
 * Replace the navigation structure in the `/Views/Shared/_Layout.cshtml` file and render the navigation partial view created above. (_The nav structure element to replace is this one `<nav class="navbar navbar-inverse navbar-fixed-top">`_)
@@ -119,7 +119,7 @@ Just like in Umbraco, with this engine you can hijack routes!
 ```cs
 public class PageController : DefaultUmbracoController
 {
-    public PageController(UmbracoContext umbracoContext, HeadlessService headlessService) : base(umbracoContext, headlessService)
+    public PageController(UmbracoContext umbracoContext, PublishedContentService publishedContentService) : base(umbracoContext, publishedContentService)
     {
     }
 
@@ -127,8 +127,6 @@ public class PageController : DefaultUmbracoController
     {
         // get the content for the current route
         var content = UmbracoContext.GetContent();
-        // map the ContentItem to a custom model called Page (which would inherit from ContentItem)
-        var model  = HeadlessService.MapTo<Page>(content);
         // return the view which will be located at /Views/Page/Index.cshtml
         return Task.FromResult((IActionResult)View(model));
     }
