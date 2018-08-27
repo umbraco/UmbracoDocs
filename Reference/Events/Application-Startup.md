@@ -6,7 +6,7 @@ In order to bind to certain events in the Umbraco application you need to make t
 
 > Applies to: Umbraco 6.1.0+
 
-The [ApplicationEventHandler](../../apidocs/csharp/api/Umbraco.Core.ApplicationEventHandler.html) is a plugin type that allows developers to execute code during the Umbraco bootup process.
+The [ApplicationEventHandler](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Core.ApplicationEventHandler.html) is a plugin type that allows developers to execute code during the Umbraco bootup process.
 
 This is the preferred way to hook in to the Umbraco application startup process. It is a base class so all you need to do is override the methods that you wish to handle. It is important to know the difference between each of the methods (information is below). Almost always, you just want to use the __ApplicationStarted__ method.
 
