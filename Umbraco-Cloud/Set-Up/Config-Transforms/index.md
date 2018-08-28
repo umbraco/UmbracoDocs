@@ -1,5 +1,7 @@
 # Config transforms
-Sometimes you just need your configuration files to be a little bit different after you deploy. It's possible to transform your config files for each environment in your project.
+Sometimes you just need your configuration files to be a little bit different after you deploy. It's possible to transform your config files for each environment in your project using config transforms.
+
+In this article you can learn more about config transforms, as well as how and when to use them.
 
 <iframe width="800" height="450" src="https://www.youtube.com/embed/YkF2FotjWDk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
@@ -10,7 +12,7 @@ The `{environment}` part needs to be replaced with the target environment, for w
 1. `development`
 2. `live` 
 
-**Note:** Some sites have a 3rd option: `staging`. 
+**Note:** Some sites will also have a 3rd option: `staging`. 
 
 ## Example
 If you wanted to do a transform on your `web.config` file in the root of your site, you can create two files in the root of your site:
@@ -18,7 +20,7 @@ If you wanted to do a transform on your `web.config` file in the root of your si
 1. `web.development.xdt.config`
 2. `web.live.xdt.config`
 
-Then, whenever you deploy from local to development, the transforms in `web.development.xdt.config` will be applied. And of course when you deploy from development to live, the `web.live.xdt.config` transform will be applied.
+When you push the files to your Cloud environments, these files will be added to the projects *repository*. Whenever you deploy from local to development, the transforms in `web.development.xdt.config` will be applied. And of course when you deploy from development to live, the `web.live.xdt.config` transform will be applied.
 
 **Note:** if you only want to transform the file on the live environment then you don't create the `development.xdt.config`.
 
