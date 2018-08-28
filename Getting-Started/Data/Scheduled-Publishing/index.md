@@ -1,8 +1,8 @@
 # Scheduled Publishing
 
-Each document in Umbraco can be scheduled for publishing and unpublishing on a pre-defined date and time. In order to do this, go to the "Properties" tab and find the "Publish at" and "Unpublish at" fields. There you can select the exact date and time to publish and unpublish the current content item.
+Each document in Umbraco can be scheduled for publishing and unpublishing on a pre-defined date and time. In order to do this, go to the **Info** tab and find the **Scheduled Publishing** box in the right side. There you can select the exact date and time to publish and unpublish the current content item.
 
-![Scheduled publishing](images/Publish-At.jpg)
+![Scheduled publishing](images/Scheduled-publishing.png)
 
 ## Timezones <a name="timezones"></a>
 
@@ -16,7 +16,7 @@ If you are in the same timezone as the server, this message will not appear unde
 
 ## Permissions
 
-You can only select a date and time if you have permissions to publish the selected content item, so if your user is in the "Writer" role you might not be able to select a time here
+All users with access to the Content section in the Umbraco backoffice are able to schedule content for publish / unpublish.
 
 ## Configuration
 
