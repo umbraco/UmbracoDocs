@@ -11,15 +11,13 @@ _This example is for creating a .NET Core Console (command line) application_
    * Add the required `using` to the file:
    ```cs
     using Umbraco.Headless.Client.Services;
-    using Umbraco.Headless.Client.Configuration;
    ```
    * Create an instance of the `PublishedContentService` and pass in the endpoint and credentials:
    ```cs
    var publishedContentService = new PublishedContentService(
-                new HeadlessConfiguration(
                     "https://YOUR-PROJECT-URL.s1.umbraco.io",
                     "YOUR@USERNAME.com",
-                    "YOUR-PASSWORD"));
+                    "YOUR-PASSWORD");
    ```
    * Start using the `PublishedContentService`:
    ```cs
