@@ -56,6 +56,12 @@ Displays a recaptcha field (words seen in distorted text images), where the user
 
 ![Recaptcha](recaptcha.png)
 
+For Recaptcha2 you will need to configure your site key by adding the following key/value pair to your appsettings in the web.config as follows:
+
+    <add key="RecaptchaSiteKey" value="000-sHZZenninFziVUV9TN24FqhwZvc2b4e8BLrG"/>
+    
+You can create a key by [logging into your Recaptcha account](https://www.google.com/recaptcha/).
+
 ## Hidden
 Hidden field, won't be visible to the user
 
