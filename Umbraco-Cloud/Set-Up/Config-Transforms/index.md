@@ -20,14 +20,18 @@ If you wanted to do a transform on your `web.config` file in the root of your si
 1. `web.development.xdt.config`
 2. `web.live.xdt.config`
 
-When you push the files to your Cloud environments, these files will be added to the projects *repository*. Whenever you deploy from local to development, the transforms in `web.development.xdt.config` will be applied. And of course when you deploy from development to live, the `web.live.xdt.config` transform will be applied.
+In order for these files to be added correctly to your project you need to create the files on a local clone of your Cloud project.
 
-**Note:** if you only want to transform the file on the live environment then you don't create the `development.xdt.config`.
+When you deploy the files to your Cloud environments, these files will be added to the projects *repository*-folder. 
+
+When the repository is extracted into `wwwroot`(this happens automatically on deployment) the transforms in `web.development.xdt.config` will be applied to the `web.config` in the Development environment. And of course when you deploy from Development to Live, the `web.live.xdt.config` transform will be applied to the `web.config` in the Live environment.
+
+**Note:** If you only want to transform the file on the Live environment then you don't create the `development.xdt.config`.
 
 ## Test your config transforms
 Before applying the config transform files to your environments we recommend that you run a test using this tool: [Webconfig Transformation Tester](https://webconfigtransformationtester.apphb.com/)
 
-Using the tool will let you test whether the config transform file transforms your config files correctly. The tool can be used for all config files.
+Using the tool will let you test whether the transform file transforms your config files correctly. The tool can be used for all config files.
 
 ## All config files
 For each deploy, we'll search for all of the `.{environment}.xdt.config` files in your site and apply transforms, so you can also transform (for example) `~/config/Dashboard.config` by creating a `~/config/Dashboard.live.xdt.config` file. Just make sure the transform file follows the naming convention and it exists in the same folder as the config file you want to transform.
