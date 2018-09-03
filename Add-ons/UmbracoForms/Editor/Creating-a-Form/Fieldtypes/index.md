@@ -56,6 +56,13 @@ Displays a recaptcha field (words seen in distorted text images), where the user
 
 ![Recaptcha](recaptcha.png)
 
+You will need to configure your site keys adding your public and private keys in the `UmbracoForms.config` file located in `~/App_Plugins/UmbracoForms/`:
+
+    <setting key="RecaptchaPublicKey" value="sHZZenninFziVUV9TN24FqhwZvc2b4e8BLrG" />
+    <setting key="RecaptchaPrivateKey" value="sHZZenninFziVUV9TN24FqhwZvc2b4e8BLrG-" />
+    
+You can create your keys by [logging into your Recaptcha account](https://www.google.com/recaptcha/).
+
 ## Hidden
 Hidden field, won't be visible to the user
 
