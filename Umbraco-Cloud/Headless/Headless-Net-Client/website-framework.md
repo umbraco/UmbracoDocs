@@ -16,28 +16,28 @@ _This example shows how to build a traditional ASP.NET Framework website on Wind
 
 #### Quick start
 
-At this stage the client is installed and you have a working website. So now we can start using the `HeadlessService`. There are several ways that you can use the `HeadlessService` and in many cases you will be using IoC/Dependency Injection (_recommended_) however for this demo, we will manage our own singleton for brevity.
+At this stage the client is installed and you have a working website. So now we can start using the `PublishedContentService`. There are several ways that you can use the `PublishedContentService` and in many cases you will be using IoC/Dependency Injection (_recommended_) however for this demo, we will manage our own singleton for brevity.
 
 * Create a Singleton class:
     ```cs
     public class HeadlessClient
     {
-        public static HeadlessService Instance { get; } = new HeadlessService();
+        public static PublishedContentService Instance { get; } = new PublishedContentService(ConfigurationManager.AppSettings["umbracoHeadless:url"]);
     }
     ```
 * Modify the `HomeController`, add a new action:
     ```cs
     public async Task<ActionResult> Headless()
     {
-        // Get all content
-        var allContent = await HeadlessClient.Instance.Query().GetAll();
-        return View(allContent);
+        // Get all content by ContentType
+        var content = await HeadlessClient.Instance.GetAll("contentTypeAlias");
+        return View(content);
     }
     ```
 * Create a view at `/Views/Home/Headless.cshtml`:
     ```
     @model IEnumerable<ContentItem>
-    @using Umbraco.Headless.Client.Models
+    @using Umbraco.Headless.Client.Net.Models
 
     @{
         ViewBag.Title = "Headless test";
