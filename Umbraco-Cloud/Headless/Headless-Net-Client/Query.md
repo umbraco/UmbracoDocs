@@ -26,7 +26,9 @@ var query = Query
     .EqualTo("Unicorn Pinot Noir");
 
 var contentWithSpecificName = 
-    await HeadlessClient.Instance.Query(query).First();
+    await HeadlessClient.Instance.Query(query);
+    
+contentWithSpecificName.First();
 
 // Example of filtering by custom property with the alias tags and get all content that matches
 
