@@ -18,12 +18,14 @@ _This example is for creating a statically routed website which means that it's 
             "umbracoHeadless": {
                 "url": "https://YOUR-PROJECT-URL.s1.umbraco.io",
                 "username": "YOUR@USERNAME.com",
-                "password": "YOUR-PASSWORD"
+                "password": "YOUR-PASSWORD",
+                "imageBaseUrl": "https://YOUR-PROJECT-URL.s1.umbraco.io",
+                "restApiVersion": "1.0.0"
             }
         }
         ```
 * You need to bootstrap the headless client which is done in your `Startup.cs` file:
-   * Add `using Umbraco.Headless.Client.Net;`.
+   * Add `using Umbraco.Headless.Client.Net.Web;`.
    * In `ConfigureServices` add the headless client services: `services.AddUmbracoHeadlessClient(Configuration);`
 * Now run the project
    * `dotnet run`
