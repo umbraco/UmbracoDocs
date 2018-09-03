@@ -10,7 +10,7 @@ _This example is for creating a .NET Core Console (command line) application_
 * Update the `Program.cs` file to use the Headless client:
    * Add the required `using` to the file:
    ```cs
-    using Umbraco.Headless.Client.Services;
+    using Umbraco.Headless.Client.Net.Services;
    ```
    * Create an instance of the `PublishedContentService` and pass in the endpoint and credentials:
    ```cs
@@ -62,5 +62,17 @@ static void Main(string[] args)
     }
 
     (services as IDisposable)?.Dispose();
+}
+```
+
+Make sure you also set the configuration in an appsettings.json file to the following:
+
+```
+"umbracoHeadless": {
+    "url": "https://YOUR-PROJECT-ALIAS.s1.umbraco.io",
+    "username": "CLOUD@EMAIL.COM",
+    "password": "CLOUDPASSWORD
+    "imageBaseUrl": "https://YOUR-PROJECT-ALIAS.s1.umbraco.io",
+    "restApiVersion": "1.0.0"
 }
 ```
