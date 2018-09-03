@@ -21,7 +21,7 @@ All [standard properties](../IPublishedContent/Properties.md) that are available
 
 ## Custom properties
 All content and media items also contains a reference to all the data defined by their document type, 
-property acccess for custom properties is the same for built in properties using the standard 
+property access for custom properties is the same for built in properties using the standard 
 `object.Property` C# syntax. 
 	
 ### CurrentPage.PropertyAlias
@@ -51,7 +51,7 @@ Property `bodyText` is therefore referenced as `_bodyText`
 Returns a boolean value representing if the DynamicPublishedContent has a property with the specified alias.
 
 ### .HasValue(string propertyAlias)
-Retruns a boolean value representing if the DynamicPublishedContent property has had a value set.
+Returns a boolean value representing if the DynamicPublishedContent property has had a value set.
 
 ### .IsNull(string propertyAlias)
 Returns a boolean value representing if the DynamicPublishedContent property is Null.

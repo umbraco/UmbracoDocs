@@ -28,7 +28,7 @@ Of course. Umbraco Cloud uses the very same Umbraco version that you can downloa
 
 ### Can I move my existing site to Umbraco Cloud?
 
-Umbraco Cloud is best when used as the base for a new project. There is a specific way of working with Umbraco and Umbraco Cloud in order to take full-advantage of the service. That’s not to say you can’t migrate an existing site, only that some changes may be required in order for your site to fully work with Umbraco Cloud. For more information [read our guide to moving an existing site](https://our.umbraco.org/documentation/Umbraco-Cloud/Deployment/Migrate-Existing-Site/).
+Umbraco Cloud is best when used as the base for a new project. There is a specific way of working with Umbraco and Umbraco Cloud in order to take full-advantage of the service. That’s not to say you can’t migrate an existing site, only that some changes may be required in order for your site to fully work with Umbraco Cloud. For more information [read our guide to moving an existing site](https://our.umbraco.com/documentation/Umbraco-Cloud/Deployment/Migrate-Existing-Site/).
 
 ---
 
@@ -75,7 +75,7 @@ We upgrade when we're very confident the release is solid.
 
 We automatically upgrade to the latest patch version of Umbraco CMS (such as 7.4.x). For minor version upgrades, you’ll get a button in the interface to decide if you want to move to that version (such as 7.5.0) when it is released. When we make a new patch version, we first run it through our test suite, then test it on 10 test-sites (which are copies of "real" customer sites that we’ve been given permission to use). When all that passes, we roll out the upgrade in batches of 100 to customer accounts.
 
-[Read more about upgrades](https://our.umbraco.org/documentation/Umbraco-Cloud/Upgrades/)
+[Read more about upgrades](https://our.umbraco.com/documentation/Umbraco-Cloud/Upgrades/)
 
 ### My project didn't receive the auto-upgrade. Why?
 
@@ -88,7 +88,7 @@ Other reasons why you didn't receive the auto-upgrade:
  - If you are doing a deployment at the time we tried to run the auto-upgrader on your project
  - If your environments aren't running the same minor version - e.g. if you are in the middle of upgrading to a new minor version, and one environment is running 7.6.x while another environment on the same project is running 7.7.x.
 
-You can find all the steps of the auto-upgrade process outlined in the [Upgrades](https://our.umbraco.org/documentation/Umbraco-Cloud/Upgrades/#the-process-of-auto-upgrading-an-umbraco-cloud-project) article.
+You can find all the steps of the auto-upgrade process outlined in the [Upgrades](https://our.umbraco.com/documentation/Umbraco-Cloud/Upgrades/#the-process-of-auto-upgrading-an-umbraco-cloud-project) article.
 
 ### Does leaving pending commits (dev to live) derail the upgrade process?
 
@@ -105,7 +105,7 @@ Do note, however that you will need to step through the upgrade installer manual
 
 You will have to assume that every time we upgrade your site, any file that comes with Umbraco by default will be overwritten. Generally we only overwrite the files that have been changed in the newest release but there is no guarantee for that. So if you (for example) have customized the login page then you can assume it will be reverted on each upgrade. 
 
-As a workaround you could have an [ApplicationEventHandler](https://our.umbraco.org/Documentation/Reference/Events/Application-Startup#use-applicationeventhandler-to-register-events) in which you check if the file is different from your customized file and overwrite it again. Note that this is NOT possible if you customize any of the Umbraco DLL files.
+As a workaround you could have an [ApplicationEventHandler](https://our.umbraco.com/Documentation/Reference/Events/Application-Startup#use-applicationeventhandler-to-register-events) in which you check if the file is different from your customized file and overwrite it again. Note that this is NOT possible if you customize any of the Umbraco DLL files.
 
 ---
 
@@ -215,7 +215,7 @@ No, you should not use a shared database for your team. Umbraco Cloud is made so
 
 Not only does this promote working in small increments it also prevents two problems:
 
- 1. If you share a database between multiple developers, [Umbraco's flexible load balancing](https://our.umbraco.org/Documentation/Getting-Started/Setup/Server-Setup/Load-Balancing/flexible) automatically kicks in. Without a proper load balancing setup this means that often you will not see changes another team member has made, potentially overwriting their changes with your own changes.
+ 1. If you share a database between multiple developers, [Umbraco's flexible load balancing](https://our.umbraco.com/Documentation/Getting-Started/Setup/Server-Setup/Load-Balancing/flexible) automatically kicks in. Without a proper load balancing setup this means that often you will not see changes another team member has made, potentially overwriting their changes with your own changes.
  2. Our deployment engine (Umbraco Deploy) is not made for this and your local site will quickly get out of sync with changes both developers are making. Once you push your changes up to your Cloud instance you can expect to see errors and mismatches because changes have not been saved correctly.
 
 ### Can I use custom .NET code?
@@ -246,7 +246,7 @@ Yes it is! Websockets are enabled on all sites.
 
 ### Do you support package "x" on Umbraco Cloud?
 
-We have an indicator on each package in [the projects section of Our Umbraco](https://our.umbraco.org/projects/) which either says "Works on Umbraco Cloud" or "Untested or doesn't work on Umbraco Cloud".
+We have an indicator on each package in [the projects section of Our Umbraco](https://our.umbraco.com/projects/) which either says "Works on Umbraco Cloud" or "Untested or doesn't work on Umbraco Cloud".
 
 If the indicator says "Works on Umbraco Cloud" it means that Umbraco HQ has tested this package on Cloud and it works and changes made using this package are also deployable to the next environment.
 

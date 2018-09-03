@@ -11,7 +11,7 @@ Configuration file for legacy NotFoundHandlers
 This file can be found at the following path: /config/404handlers.config
 
 ### [applications.config](applications/index.md)
-Configutation options of setting up sections within the Umbraco Backoffice.
+Configuration options of setting up sections within the Umbraco Backoffice.
 
 This file can be found at the following path: /config/applications.config
 
@@ -71,7 +71,7 @@ This file can be found at the following path: /config/ClientDependency.config
 
 ## log4net.config
 
-The log4net configuration options can be found on the [log4net website](http://logging.apache.org/log4net/release/manual/configuration.html).
+The log4net configuration options can be found on the [log4net website](https://logging.apache.org/log4net/release/manual/configuration.html).
 
 This file can be found at the following path: /config/log4net.config
 

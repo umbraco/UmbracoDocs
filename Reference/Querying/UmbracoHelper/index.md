@@ -47,8 +47,8 @@ Returns a `dynamic` object, representing the root `IPublishedContent` entity
         <a href="@child.Url">@child.Name</a>
     }
 
-### .ContentAtXPath(string xpath, params XPathVariable[] variables);
-Queries the XML Cache for Content matching a given xpath query and returns a collection of dynamic objects.
+### .ContentAtXPath(string XPath, params XPathVariable[] variables);
+Queries the XML Cache for Content matching a given XPath query and returns a collection of dynamic objects.
 
     @{
         var newsArticles = Umbraco.ContentAtXPath("//newsArticle");
@@ -57,8 +57,8 @@ Queries the XML Cache for Content matching a given xpath query and returns a col
 ### .ContentQuery
 Content query helper, which contains many helpful ways to find content. (description coming soon)
 
-### .ContentSingleAtXPath(string xpath, params XPathVariable[] variables);
-Queries the XML Cache for Content matching a given Xpath query, returns first match as a `dynamic` object.
+### .ContentSingleAtXPath(string XPath, params XPathVariable[] variables);
+Queries the XML Cache for Content matching a given XPath query, returns first match as a `dynamic` object.
 
     @{
         var newsArea = Umbraco.ContentSingleAtXPath("//newsArea");
@@ -138,7 +138,7 @@ Given a node ID, returns a `dynamic` object, representing a single `IPublishedCo
     @foreach (var child in media.Children) {
         <img src="@child.Url" alt="@child.Name">
     }
-    //access a cropper on the umbracoFile property
+    // access a cropper on the umbracoFile property
     <img src="@Url.GetCropUrl(media, "umbracoFile", "banner") />
 
 
@@ -312,7 +312,7 @@ Truncates a string to a given length, can add an ellipsis at the end (…). The 
     Umbraco.Truncate("I wish I was a tweet, at least then I get 140 chars", 10, true)
 
 ### .TruncateByWords(string html, int words, bool addEllipsis)
-Truncates a string to a given amount of words, can add a elipsis at the end (…). Method checks for open HTML tags, and makes sure to close them.
+Truncates a string to a given amount of words, can add a ellipsis at the end (…). Method checks for open HTML tags, and makes sure to close them.
 
     Umbraco.TruncateByWords("I wish I was a tweet, at least then I get 140 chars", 10, true)
 

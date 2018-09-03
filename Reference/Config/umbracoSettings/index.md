@@ -22,6 +22,15 @@ There is only one supported attribute on the tours element:
 **`enable`**
 By default this is set to true. Set it to false to turn off [backoffice tours](../../../Extending/Backoffice-Tours/index.md)
 
+### Obsolete datatypes
+
+This section is used for controlling whether or not the datatypes marked as obsolete should be visible in the dropdown when creating new datatypes
+
+    <showDeprecatedPropertyEditors>false</showDeprecatedPropertyEditors>
+
+**`enable`**
+By default this is set to false. To make the obsolete datatypes visible in the dropdown change the value to **true**.
+
 ## Content
 
 Below you can see settings that affects content in Umbraco.
@@ -37,7 +46,7 @@ This section is used for managing thumbnail creation, allowed attributes and, wh
             <imageFileTypes>jpeg,jpg,gif,bmp,png,tiff,tif</imageFileTypes>
             <!-- what attributes that are allowed in the editor on an img tag -->
             <allowedAttributes>alt,border,class,style,align,id,name,onclick,usemap</allowedAttributes>
-            <!-- automatically updates dimension, filesize and extension attributes on upload -->
+            <!-- automatically updates dimension, file size and extension attributes on upload -->
             <autoFillImageProperties>
                 <uploadField alias="umbracoFile">
                     <widthFieldAlias>umbracoWidth</widthFieldAlias>
@@ -69,7 +78,7 @@ If you need to create a custom media document type to handle images called somet
             <imageFileTypes>jpeg,jpg,gif,bmp,png,tiff,tif</imageFileTypes>
             <!-- what attributes that are allowed in the editor on an img tag -->
             <allowedAttributes>alt,border,class,style,align,id,name,onclick,usemap</allowedAttributes>
-            <!-- automatically updates dimension, filesize and extension attributes on upload -->
+            <!-- automatically updates dimension, file size and extension attributes on upload -->
             <autoFillImageProperties>
                 <uploadField alias="umbracoFile">
                     <widthFieldAlias>umbracoWidth</widthFieldAlias>
@@ -120,7 +129,7 @@ If you change the value to "true" then you will see the code in a simple textare
 This setting let's you control if an upload control can create new folders for files uploaded, or if the file should be stored in the /media folder root with a unique ID prefixed to the filename.
 
          <!-- should umbraco store the uploaded files like /media/xxx/filename.ext or like /media/xxx-filename.ext
-              should be set to false if the application pool's user account hasn't got readrights of the driveroot up to the /media directory -->
+              should be set to false if the application pool's user account hasn't got read rights of the drive root up to the /media directory -->
         <UploadAllowDirectories>True</UploadAllowDirectories>
 
 ### Errors
@@ -334,7 +343,7 @@ not possible to re-enable their access to the back office again. It also means y
 This setting specifies whether the username and email address are separate fields in the backoffice editor. When set to false, you can specify an email address and username, only the username can be used to log on. When set the true (the default value) the username is hidden and always the same as the email address.
 
 **`<allowPasswordReset>`**
-The feature to allow users to reset their passwords if they have forgotten them was introduced in 7.5. he feature is based on [a method provided by ASP.Net Identity](http://www.asp.net/identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity). By default, this is enabled but if you'd prefer to not allow users to do this it can be disabled at both the UI and API level by setting this value to `false`.
+The feature to allow users to reset their passwords if they have forgotten them was introduced in 7.5. he feature is based on [a method provided by ASP.Net Identity](https://www.asp.net/identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity). By default, this is enabled but if you'd prefer to not allow users to do this it can be disabled at both the UI and API level by setting this value to `false`.
 
 **`<authCookieName>`**
 The authentication cookie which is set in the browser when a back-office user logs in, and defaults to `UMB_UCONTEXT`. This setting is excluded from the configuration file but can be added in if a different cookie name needs to be set.

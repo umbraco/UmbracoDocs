@@ -4,7 +4,7 @@ Follow these simple steps to be up and running with WebMatrix quickly and easily
 
 ## Download and Launch WebMatrix 3
 
-1. Go to [http://www.microsoft.com/web/webmatrix/](http://www.microsoft.com/web/webmatrix/) and download WebMatrix 3 for free.
+1. Go to [https://www.microsoft.com/web/webmatrix/](https://www.microsoft.com/web/webmatrix/) and download WebMatrix 3 for free.
 
 1. Once installed, launch WebMatrix.
 

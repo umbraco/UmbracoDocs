@@ -1,8 +1,8 @@
 # Scheduled Publishing
 
-Each document in Umbraco can be scheduled for publishing and unpublishing on a pre-defined date and time. In order to do this, go to the "Properties" tab and find the "Publish at" and "Unpublish at" fields. There you can select the exact date and time to publish and unpublish the current content item.
+Each document in Umbraco can be scheduled for publishing and unpublishing on a pre-defined date and time. In order to do this, go to the **Info** tab and find the **Scheduled Publishing** box in the right side. There you can select the exact date and time to publish and unpublish the current content item.
 
-![Scheduled publishing](images/Publish-At.jpg)
+![Scheduled publishing](images/Scheduled-publishing.png)
 
 ## Timezones <a name="timezones"></a>
 
@@ -16,7 +16,7 @@ If you are in the same timezone as the server, this message will not appear unde
 
 ## Permissions
 
-You can only select a date and time if you have permissions to publish the selected content item, so if your user is in the "Writer" role you might not be able to select a time here
+All users with access to the Content section in the Umbraco backoffice are able to schedule content for publish / unpublish.
 
 ## Configuration
 
@@ -31,7 +31,7 @@ If you are not load balancing, the way that Umbraco determines the base URL to s
 * else umbracoSettings:distributedCall/servers if we have the server in there _(deprecated, see load balance docs)_
 * else it's based on the first request that the website receives and uses the base url of this request _(default)_
 
-If the `umbracoApplicationUrl` is used, the value also specfies the scheme (either http or https), howevever if any of the other options are used, then if the appSetting `umbracoUseSSL` is set to `true`, then the request for scheduled publishing will always be sent to the HTTPS endpoint
+If the `umbracoApplicationUrl` is used, the value also specifies the scheme (either http or https), however if any of the other options are used, then if the appSetting `umbracoUseSSL` is set to `true`, then the request for scheduled publishing will always be sent to the HTTPS endpoint
 
 ## Troubleshooting
 
@@ -43,4 +43,4 @@ If your scheduled publishing/unpublishing is not working as you would expect it 
 
 To better diagnose the issue you can temporarily change your log4net config settings to be DEBUG instead of INFO. This will give you all sorts of information including being able to see whether or not the scheduled publishing endpoint is being reached or not. 
 
-In some cases it might be easiest to specifiy the [umbracoSettings:settings/web.routing/@umbracoApplicationUrl](../../../Reference/Config/umbracoSettings/index.md#web-routing) setting to ensure that your server is communicating to itself on the correct base url.
+In some cases it might be easiest to specify the [umbracoSettings:settings/web.routing/@umbracoApplicationUrl](../../../Reference/Config/umbracoSettings/index.md#web-routing) setting to ensure that your server is communicating to itself on the correct base url.

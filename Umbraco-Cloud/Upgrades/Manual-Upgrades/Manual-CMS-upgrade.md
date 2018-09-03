@@ -10,7 +10,7 @@ Make sure you can run your Cloud project locally and restore content and media. 
 
 ## Get the latest version of Umbraco
 
-* [Download the latest version Umbraco CMS from Our](https://our.umbraco.org/download/)
+* [Download the latest version Umbraco CMS from Our](https://our.umbraco.com/download/)
 * Unzip the folder to your computer
 * Copy the following folders from the unzipped folder to your Cloud project folder:
     * `/bin`

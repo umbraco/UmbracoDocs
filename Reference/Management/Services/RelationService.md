@@ -4,7 +4,7 @@
 
 The RelationService acts as a "gateway" to Umbraco data for operations which are related to Relations.
 
-[Browse the API documentation for RelationService](https://our.umbraco.org/apidocs/csharp/api/Umbraco.Core.Services.RelationService.html).
+[Browse the API documentation for RelationService](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Core.Services.RelationService.html).
 
  * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
@@ -13,7 +13,7 @@ All samples in this document will require references to the following dll:
 
 * Umbraco.Core.dll
 
-All samples in this document will require the following usings:
+All samples in this document will require the following using statements:
 	
 	using Umbraco.Core;
 	using Umbraco.Core.Models;
@@ -59,7 +59,6 @@ Gets an enumerable list of `Relation` objects that have the specified ParentId.
 	    var rs = ApplicationContext.Current.Services.RelationService;
 	    var relType = rs.GetRelationTypeByAlias("memberFavorites");
 	    var favorites = new List<IPublishedContent>();
-	 
 	 
 	    if (memberId > 0)
 	    {
@@ -128,7 +127,7 @@ Saves a single `Relation` object.
 	 
 		if (!areRelated)
 		{
-			//create relation
+			// create relation
 			var relType = rs.GetRelationTypeByAlias("memberFavorites");
 			var r = new Relation(memberId, contentId, relType);
 			rs.Save(r);

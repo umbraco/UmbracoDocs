@@ -8,7 +8,7 @@ _Be aware that the Umbraco headless is still in beta._
 
 ## Setup/Installation
 
-The Headless client nuget package is hosted on a custom MyGet feed, so you need to create a `Nuget.config` file for your project which can be done via the command line. If you don't do this then you would need to use the `--source` parameter and a few other tricks so it's just simpler to use a `Nuget.config` file. 
+The Headless client nuget package is hosted on a custom MyGet feed, so you need to create a `NuGet.config` file for your project which can be done via the command line. If you don't do this then you would need to use the `--source` parameter and a few other tricks so it's just simpler to use a `Nuget.config` file. 
 
 So __before__ you run any script for creating a project, you will need to do this in the new folder where you are creating your project (`sln` file):
 
@@ -44,3 +44,7 @@ _This example is for creating a .NET Core Console (command line) application_
 ### [ASP.NET Framework website](website-framework.md)
 
 _This example shows how to build a traditional ASP.NET Framework website on Windows and Visual Studio using the Umbraco Headless Client._
+
+### [Query data with the .NET Headless Client](Query.md)
+
+_This article will cover both basic queries where you filter on a document type and a single property but also more advanced ones where you can use either XPath or Lucene queries for maximum flexibility_

@@ -29,7 +29,7 @@ At this stage the client is installed and you have a working website. So now we 
     ```cs
     public async Task<ActionResult> Headless()
     {
-        //Get all content
+        // Get all content
         var allContent = await HeadlessClient.Instance.Query().GetAll();
         return View(allContent);
     }

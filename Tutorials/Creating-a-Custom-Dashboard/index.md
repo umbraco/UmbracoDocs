@@ -31,7 +31,7 @@ So all the steps we will go through:
 This tutorial uses AngularJS with Umbraco, so it does not cover AngularJS itself, there are tons of resources on that already here:
 
 - [egghead.io](https://egghead.io/courses/angularjs-fundamentals)
-- [angularjs.org/tutorial](http://docs.angularjs.org/tutorial)
+- [angularjs.org/tutorial](https://docs.angularjs.org/tutorial)
 - [Pluralsight](https://www.pluralsight.com/paths/angular-js)
 
 There are a lot of parallels with Creating a Property Editor, the tutorial '[Creating a Property Editor Tutorial](../../Tutorials/creating-a-property-editor/index.md)' is very much worth a read through too.
@@ -168,7 +168,7 @@ If all is setup fine we should now receive the 'Hello world' alert every time th
 
 ### Going further - Umbraco Angular Services and Directives
 
-Umbraco has a fine selection of angular directives, resources and services that you can use in your custom property editors and dashboards, the details are here: https://our.umbraco.org/apidocs/ui/#/api
+Umbraco has a fine selection of angular directives, resources and services that you can use in your custom property editors and dashboards, the details are here: https://our.umbraco.com/apidocs/ui/#/api
 
 For this example it would be nice to welcome the editor by name (Umbraco is a place where everybody knows your name...), to achieve this we can use the **userService** here to customise our dashboard welcome message and increase friendliness:
 
@@ -261,23 +261,24 @@ Putting this together:
        logResource.getUserLog("save", new Date()).then(function (response) {
             console.log(response);
             var logEntries = [];
+            
             // loop through the response, and filter out save log entries we are not interested in
             angular.forEach(response, function (item) {
                 // if no entity exists -1 is returned for the nodeId (eg saving a macro would create a log entry without a nodeid)
                 if (item.nodeId > 0) {
-                    //this is the only way to tell them apart - whether the comment includes the words Content or Media!!
+                    // this is the only way to tell them apart - whether the comment includes the words Content or Media!!
                     if (item.comment.match("(\\bContent\\b|\\bMedia\\b)")) {
                         if (item.comment.indexOf("Media") > -1) {
-                            //log entry is a media item
+                            // log entry is a media item
                             item.entityType = "Media";
                             item.editUrl = "media/media/edit/" + item.nodeId;
                         }
                         if (item.comment.indexOf("Content") > -1) {
-                            //log entry is a media item
+                            // log entry is a media item
                             item.entityType = "Document";
                             item.editUrl = "content/content/edit/" + item.nodeId;
                         }
-                        //use entityResource to retrieve details of the content/media item
+                        // use entityResource to retrieve details of the content/media item
                         entityResource.getById(item.nodeId, item.entityType).then(function (ent) {
                             console.log(ent);
                             item.Content = ent;

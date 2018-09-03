@@ -8,7 +8,7 @@ All Umbraco views inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage` which expos
 
 * @Umbraco (of type `Umbraco.Web.UmbracoHelper`) -> contains many helpful methods, from rendering macros and fields to retreiving content based on an Id and tons of other helpful methods. [See UmbracoHelper Documentation](../../Querying/UmbracoHelper/index.md)
 * @Html (of type `HtmlHelper`) -> the same HtmlHelper you know and love from Microsoft but we've added a bunch of handy extension methods like @Html.BeginUmbracoForm
-* @CurrentPage (of type `DynamicPublishedContent`) -> the dynamic representation of the current page model which allows dynamic access to fields and also dynamic Linq
+* @CurrentPage (of type `DynamicPublishedContent`) -> the dynamic representation of the current page model which allows dynamic access to fields and also dynamic LINQ
 * @Model (of type `Umbraco.Web.Mvc.RenderModel`) -> the model for the view which contains a property called `Content` which gives you access to the typed current page (of type `IPublishedContent`). 
 * @UmbracoContext (of type `Umbraco.Web.UmbracoContext`)
 * @ApplicationContext (of type `Umbraco.Core.ApplicationContext`)
@@ -67,6 +67,8 @@ You can also specify the output type that you want from the property. If the pro
 	@Model.Content.GetPropertyValue<RawXElement>("xmlContents")
 
 ## Rendering a field using @CurrentPage (dynamically)
+
+**Attention! This approach is considered obsolete** - See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
 
 The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however simply want to render value "as-is" you can use the @CurrentPage property of the view. The difference between @CurrentPage and @Model.Content is that @CurrentPage is the dynamic representation of the model which exposes many dynamic features for querying. For example, to render a field you simply use this syntax:
 

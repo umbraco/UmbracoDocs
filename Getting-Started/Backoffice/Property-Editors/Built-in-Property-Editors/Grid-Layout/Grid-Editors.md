@@ -3,7 +3,7 @@ A grid editor is the component responsible for getting data into the grid - that
 
 - .html view file
 - .js controller
-- .cshtml serverside renderer
+- .cshtml server side renderer
 
 The view is what the editor sees, the controller handles how it acts and the cshtml determines how the entered data is rendered in the template.
 

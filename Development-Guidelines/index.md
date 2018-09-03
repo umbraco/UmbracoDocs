@@ -6,7 +6,7 @@ _All about working with the Umbraco codebase_
 The naming conventions used throughout the codebase including C#, JS and CSS and how classes in C# and JavaScript should be created and used.
 
 ## [The solution and project structure](project-structure.md)
-How the Visual Studio solution is put together, the funtionality of each project and the end goal of the structure.
+How the Visual Studio solution is put together, the functionality of each project and the end goal of the structure.
 
 ## [Working with the code](working-with-code.md)
 Describes the process of creating new classes and where they should be stored in regards to namespaces and projects. Also describes how to deal with updating legacy code and how it should be updated.

@@ -10,11 +10,11 @@ An `IBootManager` is a bootstrapper that initializing all required objects durin
 
 This is a ver easy process, for example to initialize the custom resolvers we've made in the previous steps we would just do the following:
 
-	//initialize the singleton with a DefaultErrorLogger
+	// initialize the singleton with a DefaultErrorLogger
 	ErrorLoggerResolver.Current = new ErrorLoggerResolver(new DefaultErrorLogger());
 
-	//initialize the language converters singleton with 
-	//our default language converter types
+	// initialize the language converters singleton with 
+	// our default language converter types
 	LanguageConvertersResolver.Current = new LanguageConvertersResolver(
 		new Type[] {
 			typeof(EnglishLanguageConverter),

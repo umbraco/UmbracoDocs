@@ -4,7 +4,7 @@
 
 The SectionService is used to control/query the storage for section registrations in the ~/Config/applications.config file.
 
-[Browse the API documentation for ISectionService](https://our.umbraco.org/apidocs/csharp/api/Umbraco.Core.Services.ISectionService.html).
+[Browse the API documentation for ISectionService](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Core.Services.ISectionService.html).
 
  * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
@@ -13,7 +13,7 @@ All samples in this document will require references to the following dll:
 
 * Umbraco.Core.dll
 
-All samples in this document will require the following usings:
+All samples in this document will require the following using statements:
 	
 	using Umbraco.Core;
 	using Umbraco.Core.Models;

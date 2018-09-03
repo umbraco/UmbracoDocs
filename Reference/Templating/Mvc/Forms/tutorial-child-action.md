@@ -44,9 +44,9 @@ The HttpPost Action will:
 
 	public class BlogPostSurfaceController : Umbraco.Web.Mvc.SurfaceController
 	{
-		//Important to attribute your child action with ChildActionOnly
-		//otherwise the action will become publicly routable (i.e. have
-		//a publicly available Url) 
+		// Important to attribute your child action with ChildActionOnly
+		// otherwise the action will become publicly routable (i.e. have
+		// a publicly available Url) 
 		[ChildActionOnly]
 		public ActionResult ShowCommentForm(int memberId) 
 		{
@@ -63,20 +63,20 @@ The HttpPost Action will:
 		[HttpPost]
 		public ActionResult CreateComment(CommentViewModel model)
 		{    
-		    //model not valid, do not save, but return current Umbraco page
+		    // model not valid, do not save, but return current Umbraco page
 		    if (!ModelState.IsValid)
 			{
-				//Perhaps you might want to add a custom message to the ViewBag
-				//which will be available on the View when it renders (since we're not 
-				//redirecting)	    	
+				// Perhaps you might want to add a custom message to the ViewBag
+				// which will be available on the View when it renders (since we're not 
+				// redirecting)	    	
 		   		return CurrentUmbracoPage();
 			}
 				    
-			//Add a message in TempData which will be available 
-			//in the View after the redirect 
+			// Add a message in TempData which will be available 
+			// in the View after the redirect 
 			TempData.Add("CustomMessage", "Your form was successfully submitted at " + DateTime.Now)
 		
-		    //redirect to current page to clear the form
+		    // redirect to current page to clear the form
 		    return RedirectToCurrentUmbracoPage();		    
 		}
 	}
@@ -156,7 +156,7 @@ Otherwise, just name your actions differently.
 
 ## Accessing ViewData 
 
-When you are adding any data to the ViewData collection in your [HttpPost] action, this ViewData gets set on the 'root' view context. Therefore in order to retreive the data in the ViewData collection from your ChildAction view, you'll need to access it by:
+When you are adding any data to the ViewData collection in your [HttpPost] action, this ViewData gets set on the 'root' view context. Therefore in order to retrieve the data in the ViewData collection from your ChildAction view, you'll need to access it by:
 
 	@ParentActionViewContext.ViewData
 

@@ -32,7 +32,7 @@ The Repeatable textstrings property editor enables a content editor to make a li
 
 ### Dynamic (Obsolete):
 
-See [Common pitfalls](https://our.umbraco.org/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
+See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
 
     @{
         if (CurrentPage.keyFeatureList.Length > 0)

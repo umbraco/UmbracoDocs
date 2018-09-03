@@ -5,7 +5,7 @@ This page contains a list of all the built-in Umbraco  v7+ property editors and 
 ## [Checkbox list](CheckBox-List.md)
 Displays a list of preset values as a list of checkbox controls
 
-## Color Picker
+## [Color Picker](Color-Picker.md)
 Adds a list of approved colours which can be selected by clicking.
 
 ## [Content Picker](Content-Picker2.md)
@@ -66,7 +66,7 @@ Today there are other options to have repeated content like [Nested Content](Nes
 ## Markdown editor
 [Markdown](https://daringfireball.net/projects/markdown/) is a lightweight markup language with plain text formatting syntax. It is designed so that it can be converted to HTML.  The built-in editor allow the user to use the markdown formatting options.
 
-The markdown editor will be interpreted by the Models Builder. Behind the scenes, Umbraco uses the [Markdown nuget package](https://www.nuget.org/packages/Markdown/).
+The markdown editor will be interpreted by the Models Builder. Behind the scenes, Umbraco uses the [Markdown NuGet package](https://www.nuget.org/packages/Markdown/).
 
 ## [Media Picker](Media-Picker2.md)
 The media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files. There is a setting to enable multiple media items to be selected.
@@ -108,10 +108,10 @@ A [tinymce](https://www.tinymce.com/) based rich text editor which is highly con
 ## Slider
 A slider with a number in a certain range.
 
-## Tags
+## [Tags](Tags.md)
 A tag control which can be controlled by a certain group of tags.
 
-## Textarea
+## [Textarea](Textarea.md)
 A simple textarea control to input text.
 
 ## [Textbox](Textbox.md)

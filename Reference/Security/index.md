@@ -50,7 +50,7 @@ Note that the rule includes an ignore for `locahost`. If you run your local envi
 
 **Applies to version 7.3.1 and newer**
 
-Authentication for back office users in Umbraco uses [ASP.Net Identity](http://www.asp.net/identity) which is a very flexible and extensible framework for authentication. 
+Authentication for back office users in Umbraco uses [ASP.Net Identity](https://www.asp.net/identity) which is a very flexible and extensible framework for authentication. 
  
 Out of the box Umbraco ships with a custom ASP.Net Identity implementation which uses Umbraco's database data. Normally this is fine for most Umbraco developers
 but in some cases the authentication process needs to be customized. ASP.Net Identity can be easily extended by using custom OAuth providers which is helpful if you want
@@ -73,19 +73,19 @@ Traditionally a back office user will need to exist first and then that user can
 
 Here's an example of specifying auto link options for your OAuth provider:
 
-    //create the options, all parameters are optional but if you wish to enable
-    //any auto-linking, the autoLinkExternalAccount parameter must be true
+    // create the options, all parameters are optional but if you wish to enable
+    // any auto-linking, the autoLinkExternalAccount parameter must be true
     var autoLinkOptions = new ExternalSignInAutoLinkOptions(
 		autoLinkExternalAccount:true, 
 		defaultUserType: "editor", 
 		defaultCulture: "en-US");
     
-    //an optional callback you can specify to give you more control over how the 
-    //back office user is created (auto-linked)
+    // an optional callback you can specify to give you more control over how the 
+    // back office user is created (auto-linked)
     autoLinkOptions.OnAutoLinking = (BackOfficeIdentityUser user, ExternalLoginInfo info) =>
     {
-		//this callback will execute when the user is being auto-linked but before it is created
-		//so you can modify the user before it's persisted
+		// this callback will execute when the user is being auto-linked but before it is created
+		// so you can modify the user before it's persisted
     };
     
     identityServerOptions.SetExternalSignInAutoLinkOptions(autoLinkOptions);
@@ -147,7 +147,7 @@ Here are the steps to specify your own logic for validating a username and passw
                         membershipProvider,
 			settingContent);
 			
-                    //Set your own custom IBackOfficeUserPasswordChecker   
+                    // Set your own custom IBackOfficeUserPasswordChecker   
                     userManager.BackOfficeUserPasswordChecker = new MyPasswordChecker();
                     return userManager;
                 });	
@@ -170,7 +170,7 @@ Then modify `~/App_Start/UmbracoStandardOwinStartup.cs` to override `UmbracoStan
 
     public override void Configuration(IAppBuilder app)
     {
-        //ensure the default options are configured
+        // ensure the default options are configured
         base.Configuration(app);
         // active directory authentication
         

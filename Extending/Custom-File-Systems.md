@@ -16,7 +16,7 @@ If you configure Umbraco to use a custom file system provider for media, you mos
 
 This will be enough in most cases and is the way Umbraco will access the file system provider. The wrapper class implements the same interface `IFileSystem` as any custom providers should do, so you will be able to call the same methods.
 
-If your custom file system provider has some extra logic that you need to access, you can of course get a reference to the actual instance of IFileSystem. This can be archieved through the following code:
+If your custom file system provider has some extra logic that you need to access, you can of course get a reference to the actual instance of IFileSystem. This can be archived through the following code:
 
     IFileSystem fs = FileSystemProviderManager.Current.GetUnderlyingFileSystemProvider("media");
     
@@ -32,4 +32,4 @@ Both `IFileSystem` and `FileSystemProviderManager` are located in the `Umbraco.C
 
 **Custom providers**
 
-[Azure Blob Storage Provider](https://our.umbraco.org/projects/collaboration/umbracofilesystemprovidersazure/) by James, Dirk and Jeavon
+[Azure Blob Storage Provider](https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/) by James, Dirk and Jeavon

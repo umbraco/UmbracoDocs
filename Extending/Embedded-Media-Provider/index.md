@@ -47,19 +47,19 @@ OEmbedJson, OEmbedPhoto, OEmbedRich, OEmbedVideo, OEmbedResponse
 ### Configuration Example
 
 Let's allow our editors to embed artwork from the popular DeviantArt website - the world's largest online social community for artists and art enthusiasts. We can see they have information on using OEmbed: https://www.deviantart.com/developers/oembed
-and the format of their OEmbed implementation returns a JSON format, from a url http://backend.deviantart.com/oembed?url=[urltoembed] , so we'll need to use the OEmbedJson provider, we can see 'links' to media shared on deviantart are in the format: http://fav.me/[uniquemediaidentifier] so we'll need a regex to match any urls pasted into the embed panel that start with *fav.me*
+and the format of their OEmbed implementation returns a JSON format, from a url https://backend.deviantart.com/oembed?url=[urltoembed] , so we'll need to use the OEmbedJson provider, we can see 'links' to media shared on deviantart are in the format: https://fav.me/[uniquemediaidentifier] so we'll need a regex to match any urls pasted into the embed panel that start with *fav.me*
 
 The configuration would look like this:
 
       <provider name="DeviantArt" type="Umbraco.Web.Media.EmbedProviders.OEmbedJson, umbraco">
         <urlShemeRegex><![CDATA[fav\.me/]]></urlShemeRegex>
-        <apiEndpoint><![CDATA[http://backend.deviantart.com/oembed?url=]]></apiEndpoint>
+        <apiEndpoint><![CDATA[https://backend.deviantart.com/oembed?url=]]></apiEndpoint>
         <requestParams type="Umbraco.Web.Media.EmbedProviders.Settings.Dictionary, umbraco"></requestParams>
       </provider>
 
 Recycle the application pool, the new provider should be available for editors to use:
 
-![Embeddeding a Media Item from Deviant Art website](images/deviantart-embedded-media.png)
+![Embedding a Media Item from Deviant Art website](images/deviantart-embedded-media.png)
 
 ## Custom Embedded Media Providers
 
@@ -73,7 +73,7 @@ Umbraco provides an AbstractProvider class (or AbstractOEmbedProvider) to get yo
 ### Custom Embedded Media Provider Example
 
 Azure Media Services - https://azure.microsoft.com/en-gb/services/media-services/ - provide 'broadcast-quality' video streaming services, you can embed the Azure Media Player into your site to play a video using an IFrame: 
-http://ampdemo.azureedge.net/azuremediaplayer.html
+https://ampdemo.azureedge.net/azuremediaplayer.html
 
 We can create a custom Embedded Media Provider to do the job of taking the Url of the Media asset and writing out the markup required to embed the IFrame in your content.
 

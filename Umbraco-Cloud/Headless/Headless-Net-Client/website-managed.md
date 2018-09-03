@@ -26,7 +26,7 @@ _This example is for creating a fully content managed website where URLs will be
    * In `ConfigureServices` add the headless client services: `services.AddUmbracoHeadlessClient(Configuration);`
    * In `ConfigureServices` add the headless web routing engine: `services.AddUmbracoHeadlessWebEngine();`
    * In `Configure` replace the `UseMvc` block with `app.UseUmbracoHeadlessWebEngine();` (or you can just put this line above the existing `UseMvc` block)
-* You will need to add a view to be rendered (TODO: We need to optimize the Nuget install for the `UmbracoCms.Headless.Client.Web` package to do most of this for us)
+* You will need to add a view to be rendered (TODO: We need to optimize the NuGet install for the `UmbracoCms.Headless.Client.Web` package to do most of this for us)
    * Add a view file for the path `/Views/DefaultUmbraco/Index.cshtml`
    ```
     @using Umbraco.Headless.Client.Models
@@ -125,11 +125,11 @@ public class PageController : DefaultUmbracoController
 
     public override Task<IActionResult> Index()
     {
-        //get the content for the current route
+        // get the content for the current route
         var content = UmbracoContext.GetContent();
-        //map the ContentItem to a custom model called Page (which would inherit from ContentItem)
+        // map the ContentItem to a custom model called Page (which would inherit from ContentItem)
         var model  = HeadlessService.MapTo<Page>(content);
-        //return the view which will be located at /Views/Page/Index.cshtml
+        // return the view which will be located at /Views/Page/Index.cshtml
         return Task.FromResult((IActionResult)View(model));
     }
 }

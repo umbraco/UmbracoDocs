@@ -19,7 +19,7 @@ Displays a list of preset values as a list where multiple values can be selected
 	@{
 	    if (Model.Content.HasValue("superHeros"))
 	    {
-	        // this conditional is required becuase of a bug where a single item is returned as value instead of id
+	        // this conditional is required because of a bug where a single item is returned as value instead of id
 	        var superHeros = Model.Content.GetPropertyValue<string>("superHeros").Split(',');
 	        <ul>
 	            @if (superHeros.Count() == 1)
@@ -42,7 +42,7 @@ Displays a list of preset values as a list where multiple values can be selected
 	@{
 	    if (CurrentPage.HasValue("superHeros"))
 	    {
-	        // this conditional is required becuase of a bug where a single item is returned as value instead of id
+	        // this conditional is required because of a bug where a single item is returned as value instead of id
 	        var superHeros = ((string)CurrentPage.superHeros).Split(',');
 	        <ul>
 	            @if (superHeros.Count() == 1)

@@ -59,14 +59,14 @@ Controllers are straight forward and work like any other routed controller excep
     {
         public ActionResult Product(RenderModel model, string sku)
         {
-            //in my case, the IPublishedContent attached to this
+            // in my case, the IPublishedContent attached to this
             // model will be my products node in Umbraco which i
             // can now use to traverse to display the product list
             // or lookup the product by sku
 
             if (string.IsNullOrEmpty(sku))
             {
-                //render the products list if no sku
+                // render the products list if no sku
                 return RenderProductsList(model);
             }
             else
