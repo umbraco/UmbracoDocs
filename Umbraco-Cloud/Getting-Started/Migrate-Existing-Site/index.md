@@ -43,3 +43,18 @@ To help smooth this process for you, there is a community project called [Umbrac
 * UrlPicker
 
 With that in mind, let's get started: [Prepare your site for migration](part-1.md)
+
+## Tools
+
+There are a few tools we recommend using to make the migration process as smooth as possible. We've made a checklist for you here:
+
+* Git needs to be installed on your computer
+    * Optional: Git client, like [GitKraken](https://www.gitkraken.com/)
+* Visual Studio OR Visual Studio Code + IIS Express
+* Merging tool - like [WinMerge](http://winmerge.org/) or [DiffMerge](https://sourcegear.com/diffmerge/)
+
+Aside from these tools you'll also need:
+
+* A local copy of your existing site
+* A new and clean Umbraco Cloud project
+    * We strongly recommend having a project with **at least 2 environments**
