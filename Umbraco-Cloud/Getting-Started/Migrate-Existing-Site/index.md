@@ -2,7 +2,7 @@
 
 Sometimes you may already have an Umbraco site built that did not start with a clone of an Umbraco Cloud site. Or perhaps you have decided to move a site that's already live to Umbraco Cloud. In any case, migrating an existing site is not difficult, but it does require some specific steps, and an understanding of how Umbraco Cloud deployments work can be very helpful.
 
-## Requirements
+## 1. Requirements
 
 Before you start migrating your Umbraco site to Umbraco Cloud there are a few things you need to consider. In order to migrate your site smoothly, we have made a list of requirements your project(s) needs to meet.
 
@@ -44,7 +44,7 @@ To help smooth this process for you, there is a community project called [Umbrac
 
 With that in mind, let's get started: [Prepare your site for migration](part-1.md)
 
-## Tools
+## 2. Tools
 
 There are a few tools we recommend using to make the migration process as smooth as possible. We've made a checklist for you here:
 
@@ -59,7 +59,7 @@ Aside from these tools you'll also need:
 * A new and clean Umbraco Cloud project
     * We strongly recommend having a project with **at least 2 environments**
 
-## Prepare your site
+## 3. Prepare your site
 
 After making sure that your existing site meets all the requirements for being migrated to Umbraco Cloud, you are now ready to get started.
 
@@ -77,4 +77,26 @@ After upgrading your project make sure it runs without any errors. *Hint: Check 
 
 Ideally your site will run locally using the SQL CE database as this will make content migration easier. Don't worry - if that's not possible you will still be able to complete the migration.
 
+### Cleaning your project
+
+Beofre moving on to the next step, you need to clean up the local clone of your existing site a bit.
+
+While the site is running you need to:
+
+  * Go the backoffice of your project
+  * Empty the recycle bins from both the Content and Media sections
+
+Now, shut down the project, and delete the following files and folders from `/App_Data`
+
+  * `/TEMP`
+  * `/Logs`
+  * `/cache`
+  * `/preview`
+  * `umbraco.config`
+
+![delete-from-app-data](images/App_Data-DELETE.png)
+
+That was it! Now you are ready to start the actual migraion process, or in other words: **now the real fun begins!**
+
+## 4. Prepare your Cloud project
 
