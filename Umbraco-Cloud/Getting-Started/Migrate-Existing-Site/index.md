@@ -100,3 +100,32 @@ That was it! Now you are ready to start the actual migraion process, or in other
 
 ## 4. Prepare your Cloud project
 
+In this next part you are going to setup your Umbraco Cloud project and clone it down to your local machine.
+
+### Setup your Umbraco Cloud project
+
+Before the migration process can start, you will need to have an Umbraco Cloud project you can migrate your own project into.
+
+![How to start an Umbraco Cloud trial](images/start-trial.gif)
+
+1. The best way to get started with Umbraco Cloud is to [create a trial project](https://umbraco.com/)
+2. When your project is starting choose to start with a *clean slate* - you need to have an empty Cloud project for the migration to be successful
+3. We recommend that you setup your project with at least two environments.
+
+![Manage environments](images/setup-dev-env.png)
+
+Before doing anything else, you need to delete the default **Media and Member types**:
+
+1. Head to the backoffice of the Development environment
+2. Navigate to the *Settings* section
+3. Open the *Media types* folder
+4. Delete **File**, **Folder** and **Image**
+5. Navigate to the *Member* section
+6. Open the *Member types* folder
+7. Delete **Member**
+8. Repeat these steps on all the Cloud environments
+
+![Default media types](images/media-types.png)
+
+## 5. Clone down the Cloud project
+
