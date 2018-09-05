@@ -2,6 +2,22 @@
 
 Sometimes you may already have an Umbraco site built that did not start with a clone of an Umbraco Cloud site. Or perhaps you have decided to move a site that's already live to Umbraco Cloud. In any case, migrating an existing site is not difficult, but it does require some specific steps, and an understanding of how Umbraco Cloud deployments work can be very helpful.
 
+These are the steps you need to go through to complete the migration successfully:
+1. [Requirements](#requirements)
+2. [Tools](#tools)
+3. [Prepare your site](#prepare-your-site)
+4. [Prepare your Cloud project](#prepare-your-cloud-project)
+5. [Clone down the Cloud project](#clone-down-the-cloud-project)
+6. [Move and Merge files](#move-and-merge-files)
+7. [Generate meta data](#generate-meta-data)
+8. [Deploy to Umbraco Cloud](#deploy-to-umbraco-cloud)
+
+## Video tutorial
+
+On our Youtube channel you can find a playlist with 7 videos that will take your through this migration guide.
+
+You can find the playlist here: [Migrate an existing site to Umbraco Cloud](https://www.youtube.com/playlist?list=PLG_nqaT-rbpwIwsrS6i8o_4kV51Jz94fV)
+
 ## 1. Requirements
 
 Before you start migrating your Umbraco site to Umbraco Cloud there are a few things you need to consider. In order to migrate your site smoothly, we have made a list of requirements your project(s) needs to meet.
@@ -231,7 +247,7 @@ Go to the backoffice of your Development environment and make sure all your meta
     * **NOTE**: If you have a large amount of content and media you may have the best result in deploying content and media independently
     * **Media**: If you have more than "a few" media items see our recommendations for working with [media in Umbraco Cloud](../../Set-up/Media/)
 
-![Queue for transfer](images/transfer.gif)
+![Queue for transfer](images/transfer.gif) <-- måske link til video her i stedet!!
 
 **Voila!** You've now migrated your site to Umbraco Cloud.
 
