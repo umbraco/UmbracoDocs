@@ -60,8 +60,6 @@ To help smooth this process for you, there is a community project called [Umbrac
 * Tuple
 * UrlPicker
 
-With that in mind, let's get started: [Prepare your site for migration](part-1.md)
-
 ## 2. Tools
 
 There are a few tools we recommend using to make the migration process as smooth as possible. We've made a checklist for you here:
@@ -76,6 +74,8 @@ Aside from these tools you'll also need:
 * A local copy of your existing site
 * A new and clean Umbraco Cloud project
     * We strongly recommend having a project with **at least 2 environments**
+
+With that in mind, let's get started.
 
 ## 3. Prepare your site
 
