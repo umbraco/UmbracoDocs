@@ -112,7 +112,7 @@ Now, shut down the project, and delete the following files and folders from `/Ap
 
 ![delete-from-app-data](images/App_Data-DELETE.png)
 
-That was it! Now you are ready to start the actual migraion process, or in other words: **now the real fun begins!**
+That was it! Now you are ready to start the actual migration process, or in other words: **now the real fun begins!**
 
 ## 4. Prepare your Cloud project
 
@@ -159,7 +159,7 @@ Merging your existing site into the Umbraco Cloud project is a matter of moving 
     * Excluding the following folders:
         * `/Config`
         * `/App_Data`
-    * If you existing site uses Umbraco Forms, make sure you **do not overwrite** the `App_Plugins/UmbracoLicenses/umbracoForms.lic` file
+    * If your existing site uses Umbraco Forms, make sure you **do not overwrite** the `App_Plugins/UmbracoLicenses/umbracoForms.lic` file
 2. Merge the config files. Pay special attention to the following files:
     * `/web.config` - in the `web.config` file for the Umbraco Cloud project you will see some new configuration related to Umbraco Deploy, Licenses and Forms. Make sure you **do not overwrite** these when you merge the files.
     * `/Config/dashboard.config` - make sure to keep the **Deploy dashboard**!
@@ -195,7 +195,7 @@ That's it! Now that you've merged your existing site with the local clone of the
 * All the content is there
 * All Document Types, Templates, Stylesheets etc,  is in the backoffice
 
-With that confirmed, it's time to prepare to migrated project for Umbraco Cloud.
+With that confirmed, it's time to prepare to migrate the project to Umbraco Cloud.
 
 ## 7. Generate meta data
 
@@ -213,7 +213,7 @@ For more details about UDA files, read the [UDA Files](../../Set-Up/Power-Tools/
     * Generating the UDA files may take a while, depending on the extend of your project
     * You will see a `deploy-complete` marker once the export is done
     * Run `echo > deploy` again in order to double-check that the UDA files have been generated correctly
-    * When you see `deploy-complete` marker, it means everything is working as expected
+    * When you see a `deploy-complete` marker, it means everything is working as expected
 * You should now see that your `/data/revision` folder has been populated with UDA files corresponding to your projects metadata
 
 ![Run echo > deploy-export](images/deploy-export.gif)
