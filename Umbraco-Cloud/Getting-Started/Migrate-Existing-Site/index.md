@@ -75,8 +75,6 @@ Aside from these tools you'll also need:
 * A new and clean Umbraco Cloud project
     * We strongly recommend having a project with **at least 2 environments**
 
-With that in mind, let's get started.
-
 ## 3. Prepare your site
 
 After making sure that your existing site meets all the requirements for being migrated to Umbraco Cloud, you are now ready to get started.
