@@ -18,7 +18,7 @@ Articles about configuring various settings on your project, as well as managing
 Articles about how to work locally with your Umbraco Cloud project.
 
  - [Working with your site locally](Working-Locally/)
- - [Working with Visual Studio](Visual-Studio/)
+ - [Working with Visual Studio](Working-With-Visual-Studio/)
  - [Working with a Mac](Working-with-UaaS-Cli/)
 
 ## Other topics
