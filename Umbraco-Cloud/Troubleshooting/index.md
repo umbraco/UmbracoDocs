@@ -31,7 +31,6 @@ What is interesting for Troubleshooting is the Red and Yellow states, Yellow nor
 The first thing to check is what type of error it is, you can do so by clicking the more button on the state:
 INSERT PICTURE
 We have some guides on how to fix the most common errors below:
-* [Schema mismatch]()
 * [Dependency Exception]()
 * [Collision error]()
 * [Duplicate dictionary]()
