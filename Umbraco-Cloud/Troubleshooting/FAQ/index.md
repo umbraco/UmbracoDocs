@@ -2,7 +2,7 @@
 
 ## I’m using Archetype, do I need to do anything special?
 
-Yes, as Archetype is third-party created datatype you’ll need to include the appropriate data resolver.  You simply include the data resolver in your site’s /bin/ folder and make sure you commit and push the file when you deploy your site.  You can find the data resolver for Archetype here: [Archetype.Courier](https://github.com/leekelleher/Archetype.Courier)
+Yes, as Archetype is third-party created datatype you’ll need to include the appropriate data resolver.  You simply include the data resolver in your site’s `/bin/` folder and make sure you commit and push the file when you deploy your site.  You can find the data resolver for Archetype here: [Archetype.Courier](https://github.com/leekelleher/Archetype.Courier)
 
 ## I’m using BuzzHybrid / DonutCaching / LatestHotStuff / other custom add-ins or I’ve created my own datatypes - do I need to do anything special?
 
