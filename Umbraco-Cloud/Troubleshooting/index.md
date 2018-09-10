@@ -16,17 +16,18 @@ An error in the Frontend often looks like this:
 
 ## The Umbraco Cloud Portal
 Errors in the Cloud Portal are shown as a colored indicator on an environment. An environment can have three colors:
-* Green - this is the "healthy" state where everything is fine
-* Yellow - this is the "busy" state that normally occurs when a deployment is in process or an environment is being added
-* Red - this is the "error" state which normally has information about what went wrong
+* __Green__ - this is the "healthy" state where everything is fine
+* __Yellow__ - this is the "busy" state that normally occurs when a deployment is in process or an environment is being added
+* __Red__ - this is the "error" state which normally has information about what went wrong
 
 **Note:** If an environment is busy or has an error and you try to deploy again it will not be able to, the error will always need to be resolved before another deployment can be started.
 
 What is interesting for Troubleshooting is the Red and Yellow states, Yellow normally doesn't mean an error occured, but sometimes a deployment will get stuck and just keep spinning for a long time without ever finishing - often a browser refresh will reveal this yellow state has switched to red.
 
-### If you have a red environment what do you do?
-The first thing to check is what type of error it is, you can do so by clicking the more button on the state:
-INSERT PICTURE
+#### If you have a red environment what do you do?
+The first thing to check is what type of error it is, you can do so by clicking the __**More info**__ button on the state:
+![Portal error](images/portal-error2.png)
+
 We have some guides on how to fix the most common errors below:
 * [Dependency Exception]()
 * [Collision error]()
@@ -47,11 +48,11 @@ Errors in the backoffice can be presented in many different ways, the most commo
 * A blank page when visiting the backoffice
 * Missing sections / trees
 
-### If the error is during a content transfer / restore:
+#### If the error is during a content transfer / restore:
 Start by clicking "View more details", often it will give you a link to a specific article with a guide on how to fix it. We have some guides on how to fix the most common errors below:
 * [Schema mismatch]()
 * [Dependency Exception]()
-* [Sql timeouts]()
+* [SQL Timeouts](Deployments/Deploy-Settings)
 * [Deploy busy]()
 
 If your issue is not covered above, here are some general guidelines on what you should do when you have content transfer / restore errors:
@@ -60,7 +61,9 @@ The first thing to ensure is that any schema changes has been pushed through Git
 
 Another thing to check would be the log files, relevant information can often be found in the [umbracoTraceLogs]() for both the source and target environments, so make sure to check both.
 
-### If the error is something not loading in the backoffice:
+If you have issues with new user emails / Umbraco Forms emails not being sent it is likely because of your SMTP settings not being set or configured correctly, read more [here!](../Set-Up/SMTP-settings)
+
+#### If the error is something not loading in the backoffice:
 This can have many different causes, and as such we don't have specific guides on this, but to narrow it down there are some things you should check:
 
 * Do you have any rewrite rules? Often rewrite rules that are not set up correctly will cause issues with the backoffice, make sure that the following are negated:
