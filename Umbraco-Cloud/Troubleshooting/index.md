@@ -29,9 +29,9 @@ The first thing to check is what type of error it is, you can do so by clicking 
 ![Portal error](images/portal-error2.png)
 
 We have some guides on how to fix the most common errors below:
-* [Dependency Exception]()
-* [Collision error]()
-* [Duplicate dictionary]()
+* [Collision error](Deployments/Structure-Error)
+* [Duplicate dictionary](Deployments/Duplicate-Dictionary-Items)
+* [Baseline merge issues](../Getting-Started/Baselines/Baseline-Merge-Conflicts)
 
 If your issue is not covered above here are some general guidelines on what you should do when you have error states on Cloud environments:
 
@@ -50,10 +50,11 @@ Errors in the backoffice can be presented in many different ways, the most commo
 
 #### If the error is during a content transfer / restore:
 Start by clicking "View more details", often it will give you a link to a specific article with a guide on how to fix it. We have some guides on how to fix the most common errors below:
-* [Schema mismatch]()
-* [Dependency Exception]()
+* [Schema mismatch](Deployments/Schema-Mismatches)
+* [Dependency Exception](Deployments/Dependency-Exceptions)
 * [SQL Timeouts](Deployments/Deploy-Settings)
 * [Deploy busy]()
+* [Media path too long](Deployments/Path-too-long-exception)
 
 If your issue is not covered above, here are some general guidelines on what you should do when you have content transfer / restore errors:
 
