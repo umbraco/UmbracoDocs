@@ -4,17 +4,17 @@ If an error occurs when you are using Umbraco Cloud there are several places tha
 
 ## [Umbraco Cloud Portal]()
 An error in the Cloud Portal often looks like this:
-INSERT PICTURE
+![Portal error](images/portal-error.png)
 Click [here]() for more details!
 
 ## [Umbraco Backoffice]()
 An error in the Backoffice often looks like this:
-INSERT PICTURE
+![Backoffice error](images/backoffice-error.png)
 Click [here]() for more details!
 
 ## [Frontend]()
 An error in the Frontend often looks like this:
-INSERT PICTURE
+![Frontend error](images/frontend-error.png)
 Click [here]() for more details!
 
 ## The Umbraco Cloud Portal
