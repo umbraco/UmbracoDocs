@@ -2,20 +2,17 @@
 
 If an error occurs when you are using Umbraco Cloud there are several places that can take place and a lot of possible reasons for it. To help you troubleshoot you should start by determining where this error is reported and what causes the error - is it a deployment error reported in the Portal or maybe an error with a package that gives you an error in the Frontend? The approach you need to follow to fix these errors are very different, so jump to the section that seems right to your issue below:
 
-## [Umbraco Cloud Portal]()
+## [Umbraco Cloud Portal](#the-umbraco-cloud-portal)
 An error in the Cloud Portal often looks like this:
 ![Portal error](images/portal-error.png)
-Click [here]() for more details!
 
-## [Umbraco Backoffice]()
+## [Umbraco Backoffice](#the-umbraco-backoffice)
 An error in the Backoffice often looks like this:
 ![Backoffice error](images/backoffice-error.png)
-Click [here]() for more details!
 
-## [Frontend]()
+## [Frontend](#the-frontend)
 An error in the Frontend often looks like this:
 ![Frontend error](images/frontend-error.png)
-Click [here]() for more details!
 
 ## The Umbraco Cloud Portal
 Errors in the Cloud Portal are shown as a colored indicator on an environment. An environment can have three colors:
@@ -39,7 +36,7 @@ If your issue is not covered above here are some general guidelines on what you 
 
 The reason an environment is in an error state is that the Umbraco Deploy engine sets markers on the environment, the green one sets a `deploy` marker, the yellow one a `deploy-progress` marker and the red one a `deploy-failed` marker.
 
-Sometimes a deployment will fail due to another deployment in progress, this means you can kick in another deployment later and the deployment will go from failed to complete without needing to do anything extra - read more about [manual data extractions]()!
+Sometimes a deployment will fail due to another deployment in progress, this means you can kick in another deployment later and the deployment will go from failed to complete without needing to do anything extra - read more about [manual data extractions](../Set-Up/Power-Tools/Manual-extractions)!
 
 Often the deployment fails because of an error that won't be fixed simply by redoing it, for that you will need to have a look at the log files - you can check both the regular [umbracoTraceLogs]() and the [deploy logs]().
 
@@ -70,7 +67,7 @@ This can have many different causes, and as such we don't have specific guides o
     * ^/umbraco 
     * ^/DependencyHandler.axd
     * ^/App_Plugins
-    * You can see examples on how to set up rewrites correctly [here]()
+    * You can see examples on how to set up rewrites correctly [here](../Set-Up/Manage-Domains/Rewrites-on-Cloud)
 * Do you get any errors in your browser console that may help you figure it out?
 * Do you get any errors in your umbracoTraceLog?
 * If something isn't loading after a package was installed it could be because the package overwrites something like the dashboard.config file - try to turn the package off and see if that helps. 
@@ -88,7 +85,7 @@ A **blank or not loading page** is likely due to bad rewrite rules - often it wi
 * ^/umbraco 
 * ^/DependencyHandler.axd
 * ^/App_Plugins
-* You can see examples on how to set up rewrites correctly [here]()
+* You can see examples on how to set up rewrites correctly [here](../Set-Up/Manage-Domains/Rewrites-on-Cloud)
 
 You should also check your console log in your browser to see if something is failing to load. Finally you can check the [umbracoTraceLogs]() and see if any errors are thrown!
 
