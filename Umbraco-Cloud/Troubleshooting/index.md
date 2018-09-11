@@ -39,7 +39,7 @@ The reason an environment is in an error state is that the Umbraco Deploy engine
 
 Sometimes a deployment will fail due to another deployment in progress, this means you can kick in another deployment later and the deployment will go from failed to complete without needing to do anything extra - read more about [manual data extractions](../Set-Up/Power-Tools/Manual-extractions)!
 
-Often the deployment fails because of an error that won't be fixed simply by redoing it, for that you will need to have a look at the log files - you can check both the regular [umbracoTraceLogs]() and the [deploy logs]().
+Often the deployment fails because of an error that won't be fixed simply by redoing it, for that you will need to have a look at the log files - you can check both the regular [umbracoTraceLogs](Log-Files/#umbraco-logs) and the [deploy logs](Log-Files/#deploy-logs).
 
 
 ## The Umbraco Backoffice
@@ -53,14 +53,13 @@ Start by clicking "View more details", often it will give you a link to a specif
 * [Schema mismatch](Deployments/Schema-Mismatches)
 * [Dependency Exception](Deployments/Dependency-Exceptions)
 * [SQL Timeouts](Deployments/Deploy-Settings)
-* [Deploy busy]()
 * [Media path too long](Deployments/Path-too-long-exception)
 
 If your issue is not covered above, here are some general guidelines on what you should do when you have content transfer / restore errors:
 
 The first thing to ensure is that any schema changes has been pushed through Git or deployed between environments so the environments are in sync. 
 
-Another thing to check would be the log files, relevant information can often be found in the [umbracoTraceLogs]() for both the source and target environments, so make sure to check both.
+Another thing to check would be the log files, relevant information can often be found in the [umbracoTraceLogs](Log-Files/#umbraco-logs) for both the source and target environments, so make sure to check both.
 
 If you have issues with new user emails / Umbraco Forms emails not being sent it is likely because of your SMTP settings not being set or configured correctly, read more [here!](../Set-Up/SMTP-settings)
 
@@ -83,7 +82,7 @@ Errors in the frontend are presented in three ways:
 * Blank / not loading
 * 404 (Page not found)
 
-A **YSOD page** will either show the full error stacktrace or a generic error message if you have customErrors turned off. The full error message can be found in the [umbracoTraceLogs](). Not much more to say about this - if you can't figure out what is wrong when you have the stacktrace, try looking at the namespaces to see if you can figure out what process is throwing errors.
+A **YSOD page** will either show the full error stacktrace or a generic error message if you have customErrors turned off. The full error message can be found in the [umbracoTraceLogs](Log-Files/#umbraco-logs). Not much more to say about this - if you can't figure out what is wrong when you have the stacktrace, try looking at the namespaces to see if you can figure out what process is throwing errors.
 
 A **blank or not loading page** is likely due to bad rewrite rules - often it will end in a rewrite loop. Make sure you don't rewrite anything on these paths:
 * ^/umbraco 
@@ -91,6 +90,6 @@ A **blank or not loading page** is likely due to bad rewrite rules - often it wi
 * ^/App_Plugins
 * You can see examples on how to set up rewrites correctly [here](../Set-Up/Manage-Domains/Rewrites-on-Cloud)
 
-You should also check your console log in your browser to see if something is failing to load. Finally you can check the [umbracoTraceLogs]() and see if any errors are thrown!
+You should also check your console log in your browser to see if something is failing to load. Finally you can check the [umbracoTraceLogs](Log-Files/#umbraco-logs) and see if any errors are thrown!
 
 A **404 page** could also be rewrite rules - look above what to check for. Other than that make sure your site and content structure is set up correctly - if you try to access a content node with no template related to it it will throw this error!
