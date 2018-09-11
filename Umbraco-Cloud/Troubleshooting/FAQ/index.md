@@ -1,4 +1,5 @@
 # Troubleshooting FAQ
+We have gathered a list of frequently asked questions below that have something to do with troubleshooting on Umbraco Cloud. These are not covered by the other sections.
 
 ## I’m using Archetype, do I need to do anything special?
 
