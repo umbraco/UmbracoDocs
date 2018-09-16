@@ -6,7 +6,7 @@ A grid layout can also expose custom settings - such as data-attributes or styli
 These settings and styles must be configured by developers when setting up the grid layout data type.
 
 ### Configuring a custom setting or style
-To add a setting, click the edit settings link. This will expand a dialog showing you the raw configuration data. This data is in the JSON format and will only save if its valid JSON.
+To add a setting, click the edit settings link. This will expand a dialog showing you the raw configuration data. This data is in the JSON format and will only save if it's valid JSON.
 
 The settings data could look like this, with an object for each setting:
 
@@ -28,7 +28,7 @@ The different values are:
 - **key** : The key the entered setting value will be stored under.
 - **view** : The editor used to enter a setting value with.
 - **prevalues** : For views that need predefined values, e.g. the radiobuttonlist view.
-- **modifier (optional)** : A string formater to modify the output of the editor to prepend or append extra values.
+- **modifier (optional)** : A string formatter to modify the output of the editor to prepend or append extra values.
 - **applyTo (optional)** : States whether the setting can be used on a cell or a row. If either not present or empty, the setting will be shown both on Rows and Cells.
 
 **label** and **description** are straight-forward.

@@ -1,7 +1,7 @@
 # IPublishedContent Collections
 
 All collections of `IPublishedContent` are `IEnumerable<IPublishedContent>`. 
-This means that all c# Linq statements can be used to filter and query the collections.  
+This means that all c# LINQ statements can be used to filter and query the collections.  
 
 ## Collections
 
@@ -81,7 +81,7 @@ Filters a collection of content by content type alias
 
 ## Filtering, Ordering & Extensions
 
-Filtering and Ordering are done simply with Linq.
+Filtering and Ordering are done simply with LINQ.
 
 Some examples:
 	

@@ -6,7 +6,7 @@ _This section will demonstrate how to use MVC Child Actions when rendering a pag
 
 A Child Action in ASP.Net MVC is kind of similar to that of a User Control in ASP.Net web forms. It allows for a controller to execute for a portion of the rendered area of a view, just like in Web Forms where you can execute a UserControl for a portion of the rendered area of a page.
 
-There is quite a lot of documentation on MVC Child Actions on the net, for example: http://[stackoverflow.com/questions/8886433/asp-net-mvc-child-actions](http://stackoverflow.com/questions/8886433/asp-net-mvc-child-actions)
+There is quite a lot of documentation on MVC Child Actions on the net, for example: [https://stackoverflow.com/questions/8886433/asp-net-mvc-child-actions](https://stackoverflow.com/questions/8886433/asp-net-mvc-child-actions)
 
 Child Actions can be very powerful especially when you want to have re-usable controller code to execute that you otherwise wouldn't want executing inside of your view. This also makes unit testing this code much easier since you only have to test controller code, not code in a view.
 
@@ -20,10 +20,10 @@ This documentation is going to use [SurfaceControllers](surface-controllers.md) 
 		public ActionResult SearchResults(QueryParameters query)
 		{		
 			SearchResults result;
-			//TODO: do some searching (perhaps using Examine) 
-			//using the information contained in the custom class QueryParameters
+			// TODO: do some searching (perhaps using Examine) 
+			// using the information contained in the custom class QueryParameters
 	
-			//return the SearchResults to the view
+			// return the SearchResults to the view
 			return PartialView("SearchResults", result);
 		}
 	}
@@ -57,10 +57,10 @@ This syntax becomes slightly different for Child Actions contained in Surface Co
 		public ActionResult SearchResults(QueryParameters query)
 		{		
 			SearchResults result;
-			//TODO: do some searching (perhaps using Examine) 
-			//using the information contained in the custom class QueryParameters
+			// TODO: do some searching (perhaps using Examine) 
+			// using the information contained in the custom class QueryParameters
 	
-			//return the SearchResults to the view
+			// return the SearchResults to the view
 			return PartialView("SearchResults", result);
 		}
 	}
@@ -75,4 +75,4 @@ Now the syntax to render a Child Action becomes:
 
 the only thing that is changed is that we've told it to route to the 'area' called "MyCustomSearchPackage". If this syntax seems strange to you please note that this routing logic and syntax is standard and very common practice in ASP.Net MVC.
 
-More documentation regarding Child Actions and how to render them can be found on the net, a nice write up can also be found here: [http://haacked.com/archive/2009/11/18/aspnetmvc2-render-action.aspx](http://haacked.com/archive/2009/11/18/aspnetmvc2-render-action.aspx)
+More documentation regarding Child Actions and how to render them can be found on the net, a nice write up can also be found here: [https://haacked.com/archive/2009/11/18/aspnetmvc2-render-action.aspx](https://haacked.com/archive/2009/11/18/aspnetmvc2-render-action.aspx)

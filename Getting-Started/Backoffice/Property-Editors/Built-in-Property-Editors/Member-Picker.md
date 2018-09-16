@@ -10,7 +10,7 @@ The member picker opens a panel to pick a specific member from the member sectio
 
 ## Content Example 
 
-![Memebr Picker Content](images/Member-Picker-Content.png)
+![Member Picker Content](images/Member-Picker-Content.png)
 
 ## MVC View Example
 
@@ -23,7 +23,9 @@ The member picker opens a panel to pick a specific member from the member sectio
 		}
 	}
 
-### Dynamic:                              
+### Dynamic (Obsolete):
+
+See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
 
 	@{
 		if(CurrentPage.HasValue("author")){

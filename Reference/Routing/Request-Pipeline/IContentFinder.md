@@ -80,15 +80,15 @@ A ContentLastChanceFinder will always return a 404 status code. This example cre
 
     public class My404ContentFinder : IContentFinder {
     	public bool TryFindContent(PublishedContentRequest contentRequest) {
-            //logic to find your 404 page and set it to contentRequest.PublishedContent
+            // logic to find your 404 page and set it to contentRequest.PublishedContent
 	     CultureInfo culture = null;
             if (contentRequest.HasDomain) {
                 culture = CultureInfo.GetCultureInfo(contentRequest.UmbracoDomain.LanguageIsoCode);
             }
 
-            //replace 'home_doctype_alias' with the alias of your homepage
+            // replace 'home_doctype_alias' with the alias of your homepage
             IPublishedContent rootNode = UmbracoContext.Current.ContentCache.GetByXPath("root/home_doctype_alias").FirstOrDefault(n => n.GetCulture().ThreeLetterWindowsLanguageName == culture.ThreeLetterWindowsLanguageName);
-            //replace '404_doctype_alias' with the alias of your 404 page
+            // replace '404_doctype_alias' with the alias of your 404 page
             IPublishedContent notFoundNode = UmbracoContext.Current.ContentCache.GetByXPath(String.Format("root/homeDocType[id={0}]/404_doctype_alias", rootNode.Id)).FirstOrDefault(n => n.GetCulture().ThreeLetterWindowsLanguageName == culture.ThreeLetterWindowsLanguageName);
 
             if (notFoundNode != null) {

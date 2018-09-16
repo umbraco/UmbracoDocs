@@ -38,5 +38,5 @@ Aside from the Data Types that are available out of the box there are some addit
 * [DataTypeService](../../../Reference/Management/Services/DataTypeService.md)
 
 ### Umbraco.tv
-* [Episode: Data Types](http://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/document-types/data-types/)
-* [Episode: Customizing Data Types](http://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/document-types/customizing-data-types/)
+* [Episode: Data Types](https://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/document-types/data-types/)
+* [Episode: Creating and Reusing Editors](https://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/document-types/creating-and-reusing-editors/)

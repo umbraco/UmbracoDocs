@@ -4,7 +4,7 @@ The easiest way to get the latest version of Umbraco up and running is with VS C
 
 1. **Download and install [Visual Studio Code](https://code.visualstudio.com/)**
 1. **Download and install [IIS Express](https://www.microsoft.com/en-us/download/details.aspx?id=48264) (Optional as IIS Express for VSCode will install it)**
-1. **Download and unzip [Umbraco](http://our.umbraco.org/download)**
+1. **Download and unzip [Umbraco](https://our.umbraco.com/download)**
 1. **Install the [IIS Express Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=warren-buckley.iis-express)**
 1. **Open the unzipped root folder in VS Code**
 1. **Run the website with the IIS Express Extension(CTRL+F5)**
@@ -21,5 +21,6 @@ Visual Studio Code is a simple-to use-editor with an embedded webserver (through
 ### [NuGet installation](install-umbraco-with-nuget.md)
 NuGet is the package manager for the Microsoft development platform, including .NET. The NuGet client tools provide the ability to produce and consume packages. NuGet allows you to install Umbraco without ever having to leave Visual Studio.
 
-### [Running Umbraco on a mac](running-umbraco-on-a-mac.md)
-Umbraco does not run natively on Mac OS but it's really easy to get Windows up and running on your mac.
+### [Running Umbraco on a Mac](running-umbraco-on-a-mac.md)
+Umbraco does not run natively on Mac OS but it's really easy to get Windows up and running on your Mac.
+Click on the link [tools and information on how to run Umbraco on a mac](running-umbraco-on-a-mac.md) to find out more about how to do this and the tools available to you.

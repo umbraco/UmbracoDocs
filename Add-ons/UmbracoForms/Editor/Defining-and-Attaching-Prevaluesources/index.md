@@ -54,16 +54,16 @@ Choose the correct type (so the name of the prevalue source), you should now see
 ## Overview of the default prevalue source types
 There are a couple of default prevalue source types that can be used, here is an overview:
 
-### Get values from textfile
-Upload textfile that contains the prevalues (seperated by linebreak)
+#### Get values from textfile
+Upload textfile that contains the prevalues (separated by linebreak)
 
-### SQL Database
+#### SQL Database
 Connects to a OLEDB compatible Database Table and constructs a prevalue source from it, which is editable from the forms UI
 
 
-### Umbraco data type Prevalues
+#### Umbraco data type Prevalues
 Connects to an Umbraco data type and uses its prevalue collection
 
 
-### Umbraco Documents
+#### Umbraco Documents
 Uses nodes from a specific source as prevalues

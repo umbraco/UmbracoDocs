@@ -4,7 +4,7 @@
 
 The MemberGroupService acts as a "gateway" to Umbraco data for operations which are related to Member groups, which are also known as Member Roles.
 
-[Browse the API documentation for MemberGroupService](https://our.umbraco.org/apidocs/csharp/api/Umbraco.Core.Services.MemberGroupService.html).
+[Browse the API documentation for MemberGroupService](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Core.Services.MemberGroupService.html).
 
  * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
@@ -13,7 +13,7 @@ All samples in this document will require references to the following dll:
 
 * Umbraco.Core.dll
 
-All samples in this document will require the following usings:
+All samples in this document will require the following using statements:
 	
 	using Umbraco.Core;
 	using Umbraco.Core.Models;

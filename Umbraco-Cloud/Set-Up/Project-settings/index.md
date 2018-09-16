@@ -48,4 +48,4 @@ If you want to delete your Umbraco Cloud project you can find the option to do t
 
 ## [Deployment Webhook](../../Deployment/Deployment-webhook)
 
-On Umbraco Cloud projects we've made it possible to configure a deployment webhook on your environments. This will be triggered upon succesfull deployments, and you can configure where you want information about the deployment to be posted.
+On Umbraco Cloud projects we've made it possible to configure a deployment webhook on your environments. This will be triggered upon successful deployments, you can configure where you would like information about the deployment to be posted.

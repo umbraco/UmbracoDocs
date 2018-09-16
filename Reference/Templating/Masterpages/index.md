@@ -1,6 +1,6 @@
 # Masterpages
 
-_Umbraco (since version 4) uses [ASP.NET master pages](http://www.asp.net/web-forms/tutorials/master-pages), so if you are familiar with these you will find this a breeze._
+_Umbraco (since version 4) uses [ASP.NET master pages](https://www.asp.net/web-forms/tutorials/master-pages), so if you are familiar with these you will find this a breeze._
 
 _When creating a new template via the backoffice, Umbraco simply generates a masterpage file that inherits from
 "~/umbraco/masterpages/default.master", whilst storing the newly created template in
@@ -15,8 +15,8 @@ When a new template is created, it will by default contain 3 lines of predefined
 
 	</asp:Content>
 
-The first line, is the template declaration, it tells Umbraco what language the template is written in, and if it inherits from another template. Masterpages in Umbraco will always inherit from another Masterpage, if its a root template, it will inherit from
-`/umbraco/masterpages/default.master` which is the default umbraco masterpage, which is needed for the templating system to work.
+The first line, is the template declaration, it tells Umbraco what language the template is written in, and if it inherits from another template. Masterpages in Umbraco will always inherit from another Masterpage, if it's a root template, it will inherit from
+`/umbraco/masterpages/default.master` which is the default Umbraco masterpage, which is needed for the templating system to work.
 
 
 ## [umbraco:item](umbracoitem.md)

@@ -23,7 +23,7 @@ You can create your own Member Types and add properties and tabs just as with Do
 
 Go to the __Members__ section, click the menu icon next to __Member Types__ and select __Create__. Name the new Member Type and click the __Create__ button.
 
-You are now taken to the Member Type editor that is used to define and edit the Memeber Type. It consists of three tabs: __Info__, __Generic Properties__ and __Tabs__.
+You are now taken to the Member Type editor that is used to define and edit the Member Type. It consists of three tabs: __Info__, __Generic Properties__ and __Tabs__.
 
 ### Info
 ![Members Info tab](images/Members-Info.jpg)
@@ -43,7 +43,7 @@ __Property settings:__ If properties are added to the Member Type you can contro
   - __Show on profile:__ The property will show on the profile for member that is logged in.
 
 ### Generic Properties
-![Genric properties tab](images/Members-Generic-Properties.jpg)
+![Generic properties tab](images/Members-Generic-Properties.jpg)
 Create. edit and organize properties for this Member Type.
 
 ##### Adding properties
@@ -108,6 +108,6 @@ You can find out more about the services methods in the reference section of the
 - [MemberType Service](../../../Reference/Management/Services/MemberTypeService.md)
 - [MemberGroup Service](../../../Reference/Management/Services/MemberGroupService.md)
 
-### [Umbraco.TV](http://umbraco.tv)
-- [Chapter: Members](http://umbraco.tv/videos/umbraco-v7/content-editor/administrative-content/members/what-is-a-member/)
+### [Umbraco.TV](https://umbraco.tv)
+- [Chapter: Members](https://umbraco.tv/videos/umbraco-v7/content-editor/administrative-content/members/what-is-a-member/)
 - Member API chapter *(Coming soon)*

@@ -3,7 +3,7 @@
 ## LeBlender
 The popular LeBlender plugin works great with Umbraco Cloud, if you use the [Umbraco Courier Contrib](https://github.com/umbraco/Umbraco.Courier.Contrib) resolvers.
 
-There is one little problem, however, LeBlender creates it's own Rich Text Editor datatype that is almost indistinguishable from the one that is built into Umbraco. Normally that would not be a problem, but this RTE can only contain 500 characters of text because it's configured incorrectly.
+There is one little problem, however, LeBlender creates its own Rich Text Editor datatype that is almost indistinguishable from the one that is built into Umbraco. Normally that would not be a problem, but this RTE can only contain 500 characters of text because it's configured incorrectly.
 
 ![RTE datatype configuration](images/rte-datatype-configuration.png)
 
@@ -29,4 +29,4 @@ This can be fixed as follows. Clone your Cloud site to your local machine if you
 
 3. In `~/data/Revision/datatypes` find all `.courier` files with this XML element in them: `<PropertyEditorAlias>rte</PropertyEditorAlias>`. Open those files up and replace `<DataBaseDataType>Nvarchar</DataBaseDataType>` with `<DataBaseDataType>Ntext</DataBaseDataType>`.
 
-When you're done making these changes locally you can commit them to git and push the changes to your Cloud site. After that it done you should be able to add more than 500 characters in your rich text editors. Even if you create a new RTE datatype now from the LeBlender one, it will store it's data in the correct column too so you should not see the `String or binary data would be truncated` error again.
+When you're done making these changes locally you can commit them to git and push the changes to your Cloud site. After that it done you should be able to add more than 500 characters in your rich text editors. Even if you create a new RTE datatype now from the LeBlender one, it will store its data in the correct column too so you should not see the `String or binary data would be truncated` error again.

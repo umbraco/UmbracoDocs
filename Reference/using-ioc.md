@@ -13,7 +13,7 @@ Alternatively you can implement the `Umbraco.Web.IApplicationEventHandler` inter
 
 ## Autofac Example
 
-This example will setup Autofac to work with Umbraco (see [their documentation](http://autofac.readthedocs.org/en/latest/) for full details). Our examples make use of the following NuGet packages: `Autofac`, `Autofac.Mvc5`, `Autofac.WebApi2`.
+This example will setup Autofac to work with Umbraco (see [their documentation](https://autofac.readthedocs.org/en/latest/) for full details). Our examples make use of the following NuGet packages: `Autofac`, `Autofac.Mvc5`, `Autofac.WebApi2`.
 
 For this example we're going to add a custom class to the IoC container as a Transient instance, here's the class:
 
@@ -40,15 +40,15 @@ Here's an example of a custom global.asax class which initializes the IoC contai
 
 			var builder = new ContainerBuilder();
 
-			//register all controllers found in your assembly
+			// register all controllers found in your assembly
 			builder.RegisterControllers(typeof(MyApplication).Assembly);
 			builder.RegisterApiControllers(typeof(MyApplication).Assembly);
 
-			//register umbraco MVC + webapi controllers used by the admin site
+			// register Umbraco MVC + web API controllers used by the admin site
 			builder.RegisterControllers(typeof(UmbracoApplication).Assembly);
 			builder.RegisterApiControllers(typeof(UmbracoApplication).Assembly);
 
-			//add custom class to the container as Transient instance
+			// add custom class to the container as Transient instance
 			builder.RegisterType<MyAwesomeContext>();
 
 			var container = builder.Build();
@@ -71,15 +71,15 @@ If you like to use the `IApplicationEventHandler` alternative - here is an examp
 		{
 			var builder = new ContainerBuilder();
 		
-			//register all controllers found in this assembly
+			// register all controllers found in this assembly
 			builder.RegisterControllers(typeof(MyApplication).Assembly);
 			builder.RegisterApiControllers(typeof(MyApplication).Assembly);
 
-			//register umbraco MVC + webapi controllers used by the admin site
+			// register Umbraco MVC + web API controllers used by the admin site
 			builder.RegisterControllers(typeof(UmbracoApplication).Assembly);
 			builder.RegisterApiControllers(typeof(UmbracoApplication).Assembly);
 
-			//add custom class to the container as Transient instance
+			// add custom class to the container as Transient instance
 			builder.RegisterType<MyAwesomeContext>();
 
 			var container = builder.Build();
@@ -96,7 +96,7 @@ If you like to use the `IApplicationEventHandler` alternative - here is an examp
 		}
 	}
 
-In this example we will assume that we have a Document Type called 'Home' Now we're going to create a custom controller to hijack a route for all content pages of type Home *(NOTE: we can target custom template names too, see the [Hijacking routes](custom-controllers.md) documentation for full details).* Notice that the constructor accepts a parameter the custom class, this will be injected via IoC.
+In this example we will assume that we have a Document Type called 'Home' Now we're going to create a custom controller to hijack a route for all content pages of type Home *(NOTE: we can target custom template names too, see the [Hijacking routes](routing/custom-controllers) documentation for full details).* Notice that the constructor accepts a parameter the custom class, this will be injected via IoC.
 
 	public class HomeController : RenderMvcController
 	{
@@ -109,9 +109,9 @@ In this example we will assume that we have a Document Type called 'Home' Now we
 
 		public override ActionResult Index(Umbraco.Web.Models.RenderModel model)
 		{
-			//get the current template name
+			// get the current template name
 			var template = this.ControllerContext.RouteData.Values["action"].ToString();
-			//return the view with the model as the id of the custom class
+			// return the view with the model as the id of the custom class
 			return View(template, _myAwesome.MyId);
 		}
 	}
@@ -183,7 +183,7 @@ Now create the following files to configure Unity correctly for an Umbraco site.
 				WithName.Default
 			);
 
-			// The UmbracoContext must be registered so that the umbraco backoffice controllers 
+			// The UmbracoContext must be registered so that the Umbraco backoffice controllers 
 			// can be successfully resolved
 			container.RegisterType<UmbracoContext>(
 				new PerRequestLifetimeManager(), 

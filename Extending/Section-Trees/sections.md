@@ -26,7 +26,7 @@ You will also need to allow your current Umbraco User access to this new Custom 
 
 ![Custom Section appears displaying Alias](images/custom-section-alias.png)
 
-When your new custom section appears, you'll notice only the section 'Alias' is displayed inside square brackets. This is because Umbraco caters for Multiple Lanaguages in the backoffice, and is looking for a translation file for the current backoffice culture, containing a translation key for your custom section alias.
+When your new custom section appears, you'll notice only the section 'Alias' is displayed inside square brackets. This is because Umbraco caters for Multiple Languages in the backoffice, and is looking for a translation file for the current backoffice culture, containing a translation key for your custom section alias.
 
 Create a /lang folder in the folder where you are creating the implementation for your custom section(if not create one in the app_plugins folder eg */app_plugins/favouritethings/lang*)
 
@@ -35,7 +35,7 @@ inside this folder create a file called **en-us.xml** this is the 'default' fall
     <?xml version="1.0" encoding="utf-8" standalone="yes"?>
     <language alias="en" intName="English (US)" localName="English (US)" lcid="" culture="en-US">
      <area alias="sections">
-       <key alias="favThings">My Favourite Things</key>
+       <key alias="favStuff">My Favourite Things</key>
      </area>
     </language>
 

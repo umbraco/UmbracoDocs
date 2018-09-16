@@ -53,7 +53,7 @@ When you set up a macro parameter for a xslt macro, you basically tell Umbraco t
 		<parameteralias2>Value</parameteralias2>
 	</macro>
 	
-So with this information along with some basic xpath we can query the xml from the parameters. Which is what are doing with "/macro/text" which will get the value from the "text" parameter and the "/macro/contentTree" which will get the value of the parameter with the alias "contentTree" we could then go on a do some basic xpath work on the contentTree macro to return the selected nodes name like this:
+So with this information along with some basic XPath we can query the xml from the parameters. Which is what are doing with "/macro/text" which will get the value from the "text" parameter and the "/macro/contentTree" which will get the value of the parameter with the alias "contentTree" we could then go on a do some basic XPath work on the contentTree macro to return the selected nodes name like this:
 
 	<xsl:value-of select="/macro/contentTree/node/nodeName"/> 
 

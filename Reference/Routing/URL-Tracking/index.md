@@ -4,7 +4,7 @@
 
 Whenever a document is published, and this causes changes to its URL (and any of its descendants' URLs), Umbraco makes a note of the old URLs. Whenever an incoming request is served and the default content finders cannot find a matching published document, Umbraco checks whether the URL matches one of these saved URLs. If a match is found, Umbraco returns a "301 Redirect" response pointing to the new URL of the document.
 
-The URL Redirect Management functionality does not support rewriting "rules" (e.g. regular expressions), nor complex scenarios (e.g. changing the culture and hostnames configuration). There are already powerful solutions to deal with these types of situations, such as Microsoft's own [Url Rewrite](http://www.iis.net/downloads/microsoft/url-rewrite) module for IIS. Read the [Creating IIS Rewrite Rules](../IISRewriteRules) article for more details about the module.
+The URL Redirect Management functionality does not support rewriting "rules" (e.g. regular expressions), nor complex scenarios (e.g. changing the culture and hostnames configuration). There are already powerful solutions to deal with these types of situations, such as Microsoft's own [Url Rewrite](https://www.iis.net/downloads/microsoft/url-rewrite) module for IIS. Read the [Creating IIS Rewrite Rules](../IISRewriteRules) article for more details about the module.
 
 ## Dashboard
 

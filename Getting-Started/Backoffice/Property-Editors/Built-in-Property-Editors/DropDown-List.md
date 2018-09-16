@@ -1,4 +1,4 @@
-# Dropdown List
+# (Obsolete) Dropdown List
 
 `Returns: String`
 
@@ -39,7 +39,7 @@ You can add, edit & delete the data prevalues rendered within the dropdown list.
 
     @{
         var valueToMatch = "SuperMan";
-        //Get the first node inside the root
+        // Get the first node inside the root
         var firstTypedContentAtRoot = Umbraco.TypedContentAtRoot().FirstOrDefault();
         if (firstTypedContentAtRoot != null)
         {
@@ -61,7 +61,7 @@ You can add, edit & delete the data prevalues rendered within the dropdown list.
 
     @{
 		var valueToMatch = "SuperMan";
-        //Get the first node inside the root
+        // Get the first node inside the root
         var firstContentAtRoot = Umbraco.ContentAtRoot().FirstOrDefault();
         if (firstContentAtRoot != null)
         {
