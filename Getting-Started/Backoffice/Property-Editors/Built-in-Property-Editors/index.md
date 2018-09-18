@@ -8,7 +8,7 @@ This page contains a list of all the built-in Umbraco  v7+ property editors and 
 Displays a list of preset values as a list of checkbox controls
 
 ## [Color Picker](Color-Picker.md)
-`Alias: Umbraco.ColorPicker`
+`Alias: Umbraco.ColorPickerAlias`
 
 Adds a list of approved colours which can be selected by clicking.
 
@@ -18,7 +18,7 @@ Adds a list of approved colours which can be selected by clicking.
 The content picker allows the content editor to pick a specific node from the content structure.
 
 ## [(Obsolete) Content Picker](Content-Picker.md)
-`Alias: Umbraco.ContentPicker`
+`Alias: Umbraco.ContentPickerAlias`
 
 Made obsolete with the release of Umbraco v7.6 the content picker allows the content editor to pick a specific node from the content structure.
 
