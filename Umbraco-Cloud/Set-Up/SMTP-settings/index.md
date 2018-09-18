@@ -46,7 +46,7 @@ Setting up the SMTP server is step one. Step two is to configure the service in 
 
 To configure your SMTP service you will need to following details:
 
-* **host**: IP address for your SMTP service
+* **host**: IP address or hostname for your SMTP service
 * **userName**: Your username for the SMTP service
 * **password**: The password you use to access your SMTP service
 
