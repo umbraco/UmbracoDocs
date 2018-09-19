@@ -2,9 +2,9 @@
 
 This guide will cover the following sections:
  - [Ways of contributing](#ways-of-contributing)
- - [Markdown syntax](#markdown-syntax)
+ - [Markdown conventions](#markdown-conventions)
  - [Contribution badge](#contribution-badge)
- - [Documentation & Pull Request teams](#documentation-and-pull-request-teams)
+ - [Documentation Curators](#documentation-curators)
 
  ## Ways of contributing
 This guide will cover how to contribute to the Umbraco Documentation, if you are interested in contributing to the Umbraco CMS you can find out how in their [contribution guidelines](https://github.com/umbraco/Umbraco-CMS/blob/dev-v7/.github/CONTRIBUTING.md).
@@ -32,6 +32,8 @@ The issue repository has several labels, these are not something you can add you
 ### Creating a pull request
 A pull request is simply a way of submitting changes to something that can then be reviewed. We have this flow to ensure that all of the changes in the documentation is formatted correctly, has updated information and is written well. There are two ways to create a pull request, you can either edit a file directly on Github and your changes will then be submitted as a pull request, or you can create a fork of the Github repository, make changes and then make a pull request to sync your fork with the main repository.
 
+**Note:** It may be helpful for you to read our [Markdown guidelines](#markdown-conventions) on how to set up Documentation articles before you start writing!
+
 #### Creating a PR directly in Github
 Github has some great functionality that allows you to submit a PR directly from our [repository](https://github.com/umbraco/UmbracoDocs/), and there is also a button on every single documentation article at the top that links you directly to Github in order to edit that specific file:
 ![Our edit button](images/edit-this-page.png)
@@ -55,7 +57,10 @@ git remote add upstream https://github.com/umbraco/UmbracoDocs/
 git fetch upstream
 git rebase upstream/master
 ```
-If you do this locally and then push it to your fork you will have a synced up fork to start working with!
+If you do this locally and then push it to your fork you will have a synced up fork to start working with! Once you have made some changes and you are happy with the result, you can create a pull request (you may have to rebase again and resolve merged conflicts if a lot of things has been merged in since your last sync).
+![Creating a PR](images/pull-request.png)
+
+And that is all you need to do to create a fork, sync it and make a pull request to the main repository! 
 
 
 #### Labels for PRs
@@ -64,9 +69,62 @@ If you do this locally and then push it to your fork you will have a synced up f
 - `D-Team` - this label is usually used when the PR is about something with Umbraco Core that the documentation team is not familiar with, it requires a review from the Umbraco development team
 - `Umbraco Cloud`, `Umbraco Forms`, etc - if the issue is specific to something other than Umbraco CMS it will get the relevant Umbraco product label
 
- ## Markdown syntax
+## Markdown conventions
+For reference, the [Markdown syntax guide](https://daringfireball.net/projects/markdown/syntax) is available.
+
+### Structure
+For the documentation project, each individual topic is contained in its own folder.
+Each folder must have an `index.md` file which links to the individual sub-pages, if images are used, these must be in `images` folders next to the .md file referencing them relatively.
+
+* topic
+	* images
+		* images.jpg
+	* Subtopic
+		* images
+		* index.md
+	* index.md
+	* otherpage.md
+
+### Images
+Images are stored and linked relatively to .md pages, and should by convention always be in an `images` folder. So to add an image to `/documentation/reference/partials/renderviewpage.md` you link it like so:
+
+	![My Image Alt Text](images/img.jpg)
+
+And store the image as `/documentation/reference/partials/images/img.jpg`
+
+Images can have a maximum width of **800px**. Please always try to use the most efficient compression, `gif`, `png` or `jpg`. No `bmp`, `tiff` or `swf` (Flash).
+
+### External links
+Include either the complete URL, or link using Markdown:
+
+	https://yahoo.com/something
+
+	or
+
+	[yahoo something](https://yahoo.com/something)
+
+
+### Internal links
+If you need to link between pages, always link relatively, and include the .md extension.
+
+	[Umbraco.Helpers](Umbraco.Helpers.md)
+
+	or
+
+	[Umbraco.Helpers](../../Reference/Umbraco.Helpers.md)
+
+### Formatting code
+Indent your sample with a single tab, which will cause it to be rendered as `<pre><code>` tags.
+For inline code, wrap in ` (backtick) chars.
+
+Use # for the headline, ## for sub headers and ### for parameters (on code reference pages)
+
+For optional parameters wrap in _ (underscore) - end result: `###_optionalParameter_`
 
  ## Contribution badge
+If you make a pull request to any Umbraco repository that gets merged in you will get a Contributor badge on your member profile on Our:
+![Contributor badge on our](images/c-trib-badge.png)
+The Documentation Curators will search for your profile when merging a PR in and add the badge, but if it is forgotten just make a comment on the closed PR and we will do it as soon as possible!
 
- ## Documentation and Pull Request teams
-
+ ## Documentation Curators
+ All the work of adding labels, going through issues and PR's and managing the Documentation repository is done by the Umbraco Documentation Curators team. If you wish to know more about who they are and how they work there is some information about them here: https://our.umbraco.com/community/the-documentation-curators/
