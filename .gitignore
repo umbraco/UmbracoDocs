@@ -2,3 +2,4 @@
 .DS_Store
 [Tt]humbs.db
 *.orig
+.vscode
