@@ -6,7 +6,7 @@ If you are running your site on Umbraco Cloud - and why wouldn't you be? - then 
 
 ## Outside of Umbraco Cloud
 
-If you are hosting your Umbraco implementation outside of 'Umbraco Cloud', then it's genuinely considered 'good practice' to setup source/version control for your site implementation files, particularly if you are working with a team, to track changes and manage conflicts with other developer's work.
+If you are hosting your Umbraco implementation outside of 'Umbraco Cloud', then it's generally considered 'good practice' to setup source/version control for your site implementation files, particularly if you are working with a team, to track changes and manage conflicts with other developer's work.
 
 So if you've made the decision to try to attempt to source/version control your Umbraco implementation work, perhaps setting up a ['Git Repository'](https://en.wikipedia.org/wiki/Git) - then a frequently asked question is:
 
