@@ -79,10 +79,10 @@ The Media section of Umbraco (unless configured otherwise) stores files in the /
 The **App_Plugins** folder is the home for all third party packages installed on your site
 Depending on how you installed the plugin - Nuget vs The Backoffice, how you deploy your site to your production environment, and whether the plugin requires site specific configuration... will affect how you choose to version control a particular third party plugin. 
 
-** Nuget + Buildserver - if the plugin is installed via NuGet then as long as the packages.config file in the root of your project is source controlled, then the installed files for individual plugins shouldn't need to be source controlled (and your deployment process should pull the packages implementation files from Nuget during the build and deployment process).
-** Nuget + Manual deploy - here you don't necessarily need to source control the files, but you do need to remember to deploy them.
-** Backoffice - if your working with other developers, then it may be easier to add the plugin files to source control, or at least communicate to them that the particular package needs be installed via the backoffice
-** Backoffice + Buildserver - you'll need to include the plugin files in source control as the build server won't know to restore them - if the plugin/package doesn't come with a NuGet resource, consider setting up your own local NuGet repository for your build server to pull the files from.
+- **Nuget + Buildserver** - if the plugin is installed via NuGet then as long as the packages.config file in the root of your project is source controlled, then the installed files for individual plugins shouldn't need to be source controlled (and your deployment process should pull the packages implementation files from Nuget during the build and deployment process).
+- **Nuget + Manual deploy** - here you don't necessarily need to source control the files, but you do need to remember to deploy them.
+- **Backoffice** - if your working with other developers, then it may be easier to add the plugin files to source control, or at least communicate to them that the particular package needs be installed via the backoffice
+- **Backoffice + Buildserver** - you'll need to include the plugin files in source control as the build server won't know to restore them - if the plugin/package doesn't come with a NuGet resource, consider setting up your own local NuGet repository for your build server to pull the files from.
 
 **Note**
 Each plugin could be different depending on its implementation and functionality, it may contain files that it would be useful to track via Source control, and also files that should be ignored: check with the plugin's supporting website/developer for more information.
