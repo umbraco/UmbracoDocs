@@ -142,7 +142,7 @@ There are several add-on packages that can help add source control to these stru
 
 If you are working with continuous integration, then
 
--*[Chauffeur](https://github.com/aaronpowell/Chauffeur)*, is another package worth investigating, allowing the issuing of command line deliverables against an Umbraco install.
+- *[Chauffeur](https://github.com/aaronpowell/Chauffeur)*, is another package worth investigating, allowing the issuing of command line deliverables against an Umbraco install.
 
 **Note**
 It's possible to use [Umbraco Courier](https://our.umbraco.com/packages/umbraco-pro/umbraco-courier/) (Umbraco Cloud uses Umbraco Deploy) to try to move these kinds of changes through your different Umbraco development/staging/production environments, and potentially [source control 'Courier Revision Sets' for team development](http://stream.umbraco.org/video/2198253/team-development-with-courier)
