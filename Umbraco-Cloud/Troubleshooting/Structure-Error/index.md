@@ -79,7 +79,7 @@ We strongly recommend that you resolve this locally since this will ensure that 
 3.    Access the local backoffice
 4.    Delete the Document Type from the backoffice
     * If you’ve pulled down a fresh clone of the Development environment, you will need to remove the wrong `.uda` file from the `/data/revision` folder, since you will not be able to see the Document Type in the backoffice because the extraction failed.
-5.    Open CMD prompt and navigate to your local `/data/revision` folder
+5.    Open CMD prompt and navigate to your local `/data` folder
 6.    Type the following command: `echo > deploy`
 7.    You will now see a `deploy-complete` marker in your local `/data` folder
 8.    **Important**: Before you commit and push the changes to the Development environment, you need to access the backoffice of the Development environment and remove the Document Type from there
@@ -95,7 +95,7 @@ The final step is to deploy the changes from Development to the rest of your env
 
 ### Additional notes
 
-Sometimes you might need to run another extraction on your Cloud environment after deploying in order to get a `deploy-complete` marker in your `/data/revision` folder and turn your environment *green*. To do this, follow these steps:
+Sometimes you might need to run another extraction on your Cloud environment after deploying in order to get a `deploy-complete` marker in your `/data` folder and turn your environment *green*. To do this, follow these steps:
 
 1. Access **Kudu** on the affected environment
 2. Use the CMD console (found under the 'Debug console' menu) to navigate to your `site/wwwroot/data/` folder
