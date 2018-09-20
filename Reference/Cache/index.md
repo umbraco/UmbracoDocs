@@ -18,24 +18,25 @@ You can [update and insert items in the cache](updating-cache.md).
 
 ### [ICacheRefresher](cache-refresher.md)
 
-The standard way to invalidate cache in Umbraco is to implement an `ICacheRefresher`. 
-Ensures that content cache is refreshed among all server nodes participating in a load balanced scenario.
+The standard way to invalidate cache in Umbraco is to implement an `ICacheRefresher`.
 
-The interface consists of the following methods. _Some of these methods may not be relevant to the needs of your own cache invalidation so not all of them may need to perform logic._
+The interface consists of the following methods:
 
 * `Guid UniqueIdentifier { get; }` - which you'd return your own unique GUID identifier
 * `string Name { get; }` - the name of the cache refresher (informational purposes)
-* `void RefreshAll();` - this would invalidate or refresh all caches of the caching type that this `ICacheRefresher` is created for. For example, if you were caching `Employee` objects, this method would invalidate all `Employee` caches. 
+* `void RefreshAll();` - this would invalidate or refresh all caches of the caching type that this `ICacheRefresher` is created for. For example, if you were caching `Employee` objects, this method would invalidate all `Employee` caches.
 * `void Refresh(int Id);` - this would invalidate or refresh a single cache for an object with the provided INT id.
 * `void Refresh(Guid Id);` - this would invalidate or refresh a single cache for an object with the provided GUID id.
 * `void Remove(int Id);` - this would invalidate a single cache for an object with the provided INT id. In many cases Remove and Refresh perform the same operation but in some cases `Refresh` doesn't just remove/invalidate a cache entry, it might update it. `Remove` is specifically used to remove/invalidate a cache entry.
 
+ _Some of these methods may not be relevant to the needs of your own cache invalidation so not all of them may need to perform logic._
+
 There are 2 other base types of `ICacheRefresher` which are:
 
-* [`ICacheRefresher<T>`](cache-refresher-t.md) - this inherits from `ICacheRefresher` but provides strongly typed methods for cache invalidation too. This is useful when executing the method to invoke the cache refresher when you have the instance of the object already since this can avoid some overhead of re-looking the object back up.
+* [`ICacheRefresher<T>`](cache-refresher-t.md) - this inherits from `ICacheRefresher` and provides a set of strongly typed methods for cache invalidation. This is useful when executing the method to invoke the cache refresher, when you have the instance of the object already since this avoids the overhead of retrieving the object again.
   * `void Refresh(T instance);` - this would invalidate/refresh a single cache for the specified object.
   * `void Remove(T instance);` - this would invalidate a single cache for the specified object.
-* `IJsonCacheRefresher` - this inherits from `ICacheRefresher` but provides more flexibility if you need to invalidate cache based on more complex scenarios.
+* `IJsonCacheRefresher` - this inherits from `ICacheRefresher` but provides more flexibility if you need to invalidate cache based on more complex scenarios (e.g. the [MemberGroupCacheRefresher](https://github.com/umbraco/Umbraco-CMS/blob/dev-v7/src/Umbraco.Web/Cache/MemberGroupCacheRefresher.cs)).
   * `void Refresh(string jsonPayload)` - Invalidates/refreshes any cache based on the information provided in the JSON. The JSON value is any value that is used when executing the method to invoke the cache refresher.
 
 There are serveral examples of `ICacheRefresher`'s in the core: https://github.com/umbraco/Umbraco-CMS/tree/dev-v7/src/Umbraco.Web/Cache
@@ -62,12 +63,12 @@ When an `ICacheRefresher` is executed via the `DistributedCache.Instance` a noti
 
 ## Events handling to refresh cache
 
-To use the extensions add a using to `Umbraco.Web.Cache`;  You can then call them on the DistributedCache.Instance object.
+To use the extensions add a using to `Umbraco.Web.Cache`;  You can then invoke them on the DistributedCache.Instance object.
 
 ## IServerMessenger
 
-The server messenger broadcasts distributed cache notifications to all servers of a load balanced environment.
-Also ensures that the notification is processed on the local environment.
+The server messenger broadcasts 'distributed cache notifications' to each server in the load balanced environment.
+The server messenger ensures that the notification is processed on the local environment.
 
 ## [ApplicationContext.Current.ApplicationCache](applicationcache.md)
 
