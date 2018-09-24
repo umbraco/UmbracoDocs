@@ -39,4 +39,4 @@ Umbraco.Deploy.Exceptions.RemoteApiException: The remote API has thrown an excep
 
 This is a known issue with Microsoft servers, that limits the amounts of characters allowed in a path.
 
-The following command should short for files with a name less than 80 characters - has been reported to not work though:
+More info is comming shortly on how to fix this error!
