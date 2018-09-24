@@ -103,7 +103,7 @@ Content, media, members and data type trees will no longer raise the legacy tree
 
 ### Legacy business logic events
 
-The content, media, member and data type editors have been re-created and are solely using the new Umbraco Services data layer. This means that operations performed in the back office will no longer raise the legacy business logic events (for example, events based on `umbraco.cms.businesslogic.web.Document`). It is recommended to change your event handlers to subsribe to the new Services data layer events. These are static events and are found in the various services, for example:  `Umbraco.Core.Services.ContentService.Saved`
+The content, media, member and data type editors have been re-created and are solely using the new Umbraco Services data layer. This means that operations performed in the backoffice will no longer raise the legacy business logic events (for example, events based on `umbraco.cms.businesslogic.web.Document`). It is recommended to change your event handlers to subsribe to the new Services data layer events. These are static events and are found in the various services, for example:  `Umbraco.Core.Services.ContentService.Saved`
 
 ## Property Editors
 

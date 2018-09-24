@@ -49,7 +49,7 @@ Server 3
 
 Of course you'll have your public website's DNS/address which you'll also need to add to the host header for each of your IIS server's websites. For instance, if the public website address is: http://www.mywebsite.com then you'll need to add www.mywebsite.com as a host header to IIS website on each server. This DNS entry will point to the public IP address of your load balancer.
 
-### Back office server
+### Backoffice server
 
 You should designate one of these servers to be the back-office server for which your editors will use to log in to and edit content. This can be achieved by creating another public DNS entry/host header that you can assign to your designated server.
 

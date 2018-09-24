@@ -31,9 +31,9 @@ Achieving this goal will take quite a lot of time by slowly migrating over old c
 	* **MORE IMPORTANT -> BECAUSE THE NAMES OF THE FOLDERS ARE NOT PROPER CASE YOU WILL NEED TO ENSURE THAT THE NAMESPACE IS OF THE CORRECT CASE. SO WHEN YOU CREATE YOUR ASPX PAGE, THE NAMESPACE NAME MIGHT BE: *Umbraco.Web.UI.umbraco.settings* . YOU NEED TO CHANGE THIS TO: *Umbraco.Web.UI.Umbraco.Settings***
 * Umbraco.Web.UI.Client
 	* [See here for the sub-structure details of this project](umbraco-web.ui-client.md) 
-	* Contains all of the files used to create the v7 AngularJS back office application
+	* Contains all of the files used to create the v7 AngularJS backoffice application
 	* This project is part of the solution as a simple 'website', it does not compile
-	* The project contains its own build system and can operate as a stand-alone website using mock-data for any developers who do not wish to develop with Visual Studio to help create the JS, CSS and markup used to create the new Umbraco back office UI. 
+	* The project contains its own build system and can operate as a stand-alone website using mock-data for any developers who do not wish to develop with Visual Studio to help create the JS, CSS and markup used to create the new Umbraco backoffice UI. 
 * Umbraco.Tests
 	* Contains all unit tests for Umbraco
 	* Uses NUnit for unit tests

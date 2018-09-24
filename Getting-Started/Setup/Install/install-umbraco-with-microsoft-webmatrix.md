@@ -60,7 +60,7 @@ This section continues from where we left off but covers the installation and co
 
 	![Web Installer - Database Install](images/WebMatrix/web-db-install.png)
 
-1. On the next screen you need to fill in the form to create a user so you can access the back office of Umbraco. Once completed click **Create user**
+1. On the next screen you need to fill in the form to create a user so you can access the backoffice of Umbraco. Once completed click **Create user**
 
 	![Web Installer - Create User](images/WebMatrix/web-user.png)
 

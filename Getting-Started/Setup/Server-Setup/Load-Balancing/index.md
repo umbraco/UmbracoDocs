@@ -71,7 +71,7 @@ _Here's some common questions that are asked regarding Load Balancing with Umbra
 
 __Question>__ _Why do I need to have a single web instance for Umbraco admin?_
 	
-_TL:DR_ You must not load balance the Umbraco back office, you will end up with data integrity or corruption issues.
+_TL:DR_ You must not load balance the Umbraco backoffice, you will end up with data integrity or corruption issues.
 
 The reason you need a single server is because there is no way (currently) to 
 guarantee transactional safety between servers because we don't currently use database level locking, we only 

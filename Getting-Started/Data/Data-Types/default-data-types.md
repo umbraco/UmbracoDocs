@@ -73,7 +73,7 @@ The TinyMCE based wysiwyg editor. This is the standard editor used to edit any l
 In the default settings some tags such as bullet list can be used. If you want to use other tags like h1 or h2, you need to add stylesheets.
 
 Create child stylesheets for each tag(h1 or h2) under a base one.
-Go to "Back office->Developer->Data Types->Richtext editor" and associate rich text editor with the base.
+Go to "Backoffice->Developer->Data Types->Richtext editor" and associate rich text editor with the base.
 Also turn on "styleselect" in the toolbar section.
 You can find a new button in the toolbar of the content editor.
 
