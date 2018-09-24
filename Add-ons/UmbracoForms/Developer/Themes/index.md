@@ -77,7 +77,12 @@ Retrieves all wrapper classes for a given field type, used when rendering form f
 ## Rendering Script content separately
 
 Sometimes when you insert a form into a page you do not wish the JavaScript includes and CSS references to be rendered directly alongside the form itself and more typically you would like to render these before the closing `</body>` tag.
-To do this, when inserting the form using the macro, ensure the checkbox for the property `Exclude Scripts` is checked/enabled and then you can use a snippet like below to render the necessary scripts in your main template before the closing `</body>`:
+To do this, when inserting the form using the macro, ensure the checkbox for the parameter `includeScripts` is set to `false` like this:
+
+    
+    @Html.Action("RenderForm", "UmbracoForms", new { formid = Model.Form, theme = "yourThemeName", includeScripts = false })
+
+and then you can use a snippet like below to render the necessary scripts in your main template before the closing `</body>`:
 
 
     @if (TempData["UmbracoForms"] != null)
