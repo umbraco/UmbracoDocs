@@ -26,7 +26,7 @@ This led to a lot of confusion and also opened up the possibility that the actio
 
 So in this revised version, an undo attribute has been put on all actions. An action will always contain an undo action which is turned on by default, but can be turned off.
 
-At the same time, all actions that was actually only there to perform uninstall actions has been removed. Depending on community feedback, some of these might be included again.
+At the same time, all actions which were only actually there to perform uninstall actions have been removed. Depending on community feedback, some of these might be included again.
 
 ## Add application
 
