@@ -1,4 +1,4 @@
-# BackOffice overview
+# Backoffice overview
 These items are common terms and concepts that are used throughout the Umbraco backoffice.
 
 ### [Login screen](Login/)

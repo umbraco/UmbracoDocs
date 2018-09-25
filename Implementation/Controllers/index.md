@@ -31,21 +31,21 @@ See [Reference documentation on Umbraco Api Controllers for full details](../../
 
 An Umbraco Authorized controller is used when the controller requires member or user authentication (authN) and/or authorization (authZ). If either the authN or authZ fail the controller will return a "401 - unauthorized response."  
 
-### Back office Authorization
+### Backoffice Authorization
 
-The Umbraco Authorized controllers and attributes for back office users are:
+The Umbraco Authorized controllers and attributes for backoffice users are:
 
 #### MVC
 
-Any MVC Controller or Action that is attributed with `Umbraco.Web.Mvc.UmbracoAuthorizeAttribute` will authenticate the request for a back office user. A base class implementation that already exists with this attribute is: `Umbraco.Web.Mvc.UmbracoAuthorizedController`. These MVC controllers are not auto-routed.  See [Routing requirements for backoffice authentication](../../Reference/Routing/Authorized/index.md) for more details on routing requirements.
+Any MVC Controller or Action that is attributed with `Umbraco.Web.Mvc.UmbracoAuthorizeAttribute` will authenticate the request for a backoffice user. A base class implementation that already exists with this attribute is: `Umbraco.Web.Mvc.UmbracoAuthorizedController`. These MVC controllers are not auto-routed.  See [Routing requirements for backoffice authentication](../../Reference/Routing/Authorized/index.md) for more details on routing requirements.
 
 #### WebApi
 
-Any WebApi Controller or Action that is attributed with `Umbraco.Web.WebApi.UmbracoAuthorizeAttribute` will authenticate the request for a back office user.
+Any WebApi Controller or Action that is attributed with `Umbraco.Web.WebApi.UmbracoAuthorizeAttribute` will authenticate the request for a backoffice user.
 
-A base class implementation that already exists with this attribute is: `Umbraco.Web.WebApi.UmbracoAuthorizedApiController`. Since this controller inherits from `Umbraco.Web.WebApi.UmbracoApiController` it is auto-routed. This controller is also attributed with `Umbraco.Web.WebApi.IsBackOfficeAttribute` to ensure that it is routed correctly to be authenticated for the back office.
+A base class implementation that already exists with this attribute is: `Umbraco.Web.WebApi.UmbracoAuthorizedApiController`. Since this controller inherits from `Umbraco.Web.WebApi.UmbracoApiController` it is auto-routed. This controller is also attributed with `Umbraco.Web.WebApi.IsBackOfficeAttribute` to ensure that it is routed correctly to be authenticated for the backoffice.
 
-Another common base class implementation for the back office is `Umbraco.Web.Editors.UmbracoAuthorizedJsonController` which inherits from `Umbraco.Web.WebApi.UmbracoAuthorizedApiController` but has some special filters applied to it to automatically handle anti-forgery tokens for use with AngularJS in the back office.
+Another common base class implementation for the backoffice is `Umbraco.Web.Editors.UmbracoAuthorizedJsonController` which inherits from `Umbraco.Web.WebApi.UmbracoAuthorizedApiController` but has some special filters applied to it to automatically handle anti-forgery tokens for use with AngularJS in the backoffice.
 
 ### Members & Front-end Authorization
 

@@ -1,6 +1,6 @@
 # Umbraco.Web.UI.Client project structure
 
-_This is the AngularJS back office UI project_
+_This is the AngularJS backoffice UI project_
 
 ## Overview
 This document outlines the location of different files in the Umbraco 7 source code.

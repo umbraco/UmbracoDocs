@@ -19,17 +19,17 @@ Another benefits of HTTPS is that you are able to use the [http2](https://en.wik
 
 __UseSSL configuration option__
 
-Umbraco allows you to force SSL/HTTPS for all back office communications very easily but using the following appSettings configuration:
+Umbraco allows you to force SSL/HTTPS for all backoffice communications very easily but using the following appSettings configuration:
 
 	<add key="umbracoUseSSL" value="true" />
 
 This options does several things when it is turned on:
 
-* Ensures that the back office authentication cookie is set to [secure only](https://www.owasp.org/index.php/SecureFlag) (so it can only be transmitted over https)
-* All non-https requests to any back office controller is redirected to https
+* Ensures that the backoffice authentication cookie is set to [secure only](https://www.owasp.org/index.php/SecureFlag) (so it can only be transmitted over https)
+* All non-https requests to any backoffice controller is redirected to https
 * All self delivered Umbraco requests (i.e. scheduled publishing, keep alive, etc...) are performed over https
 * All Umbraco notification emails with links generated have https links
-* All authorization attempts for back office handlers and services will be denied if the request is not over https
+* All authorization attempts for backoffice handlers and services will be denied if the request is not over https
 
 Once you enable HTTPS for your site you should redirect all requests to your site to HTTPS, this can be done with an IIS rewrite rule. The IIS rewrite module needs to be installed for this to work, most hosting providers will have that enabled by default.
 
@@ -46,11 +46,11 @@ In your `web.config` find or add the `<system.webServer><rewrite><rules>` sectio
 
 Note that the rule includes an ignore for `locahost`. If you run your local environment on a different URL than `localhost` you can add additional ignore rules. Additionally, if you have a staging environment that doesn't run on HTTPS, you can add that to the ignore rules too.
 
-## Back office users
+## Backoffice users
 
 **Applies to version 7.3.1 and newer**
 
-Authentication for back office users in Umbraco uses [ASP.Net Identity](https://www.asp.net/identity) which is a very flexible and extensible framework for authentication. 
+Authentication for backoffice users in Umbraco uses [ASP.Net Identity](https://www.asp.net/identity) which is a very flexible and extensible framework for authentication. 
  
 Out of the box Umbraco ships with a custom ASP.Net Identity implementation which uses Umbraco's database data. Normally this is fine for most Umbraco developers
 but in some cases the authentication process needs to be customized. ASP.Net Identity can be easily extended by using custom OAuth providers which is helpful if you want
@@ -59,7 +59,7 @@ any part of the process of authentication.
 
 ### Custom OAuth providers
 
-The Umbraco back office supports custom OAuth providers for performing authentication of your users. For example: Any OpenIDConnect provider such as Azure Active Directory or Identity Server, Google, Facebook, Microsoft Account, etc...
+The Umbraco backoffice supports custom OAuth providers for performing authentication of your users. For example: Any OpenIDConnect provider such as Azure Active Directory or Identity Server, Google, Facebook, Microsoft Account, etc...
 
 To install and configure a custom OAuth provider you should use the Identity Extensions package: [https://github.com/umbraco/UmbracoIdentityExtensions](https://github.com/umbraco/UmbracoIdentityExtensions)
 
@@ -69,7 +69,7 @@ The installation of these packages will install snippets of code with readme fil
 
 #### Auto-linking accounts
 
-Traditionally a back office user will need to exist first and then that user can link their user account to an OAuth account in the back office, however in many cases the identity server you choose will be the source of truth for all of your users. In this case you would want to be able to create user accounts in your identity server and then have that user given access to the back office without having to create the user in the back office first. This is done via auto-linking. There are auto-link options you can specify for your OAuth provider (see http://issues.umbraco.org/issue/U4-6753 for other details). 
+Traditionally a backoffice user will need to exist first and then that user can link their user account to an OAuth account in the backoffice, however in many cases the identity server you choose will be the source of truth for all of your users. In this case you would want to be able to create user accounts in your identity server and then have that user given access to the backoffice without having to create the user in the backoffice first. This is done via auto-linking. There are auto-link options you can specify for your OAuth provider (see http://issues.umbraco.org/issue/U4-6753 for other details). 
 
 Here's an example of specifying auto link options for your OAuth provider:
 
@@ -81,7 +81,7 @@ Here's an example of specifying auto link options for your OAuth provider:
 		defaultCulture: "en-US");
     
     // an optional callback you can specify to give you more control over how the 
-    // back office user is created (auto-linked)
+    // backoffice user is created (auto-linked)
     autoLinkOptions.OnAutoLinking = (BackOfficeIdentityUser user, ExternalLoginInfo info) =>
     {
 		// this callback will execute when the user is being auto-linked but before it is created
@@ -96,7 +96,7 @@ Having the ability to simply replace the logic to validate a username and passwo
 would require you to override the `UmbracoBackOfficeUserManager.CheckPasswordAsync` implementation and then replace the `UmbracoBackOfficeUserManager` with your own class during startup. 
 Since this is a common task we've made this process a lot easier with an interface called `IBackOfficeUserPasswordChecker`.
 
-Here are the steps to specify your own logic for validating a username and password for the back office:
+Here are the steps to specify your own logic for validating a username and password for the backoffice:
 
 1. Install the UmbracoIdentityExtensions package https://github.com/umbraco/UmbracoIdentityExtensions 
 

@@ -1,4 +1,4 @@
-# Working with the back office UI AngularJs project 
+# Working with the backoffice UI AngularJs project 
 
 ## Overview
 Umbraco 7 has a slightly unorthodox project structure, compared to a normal asp.net project. This is by design, a choice from the beginning to embrace a much larger group than "just" the developers who know how to use Visual Studio. 

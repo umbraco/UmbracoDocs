@@ -18,9 +18,9 @@ _Guidelines for creating and updating code in the Umbraco core_
 * When obsoleting old code be sure to remove references throughout the codebase to this obsolete code and update the codebase to use the new classes and methods
 * All new classes should be marked 'internal' until we decide we want to publicly expose the APIs.
 
-## Developing for the v7 AngularJS back office
+## Developing for the v7 AngularJS backoffice
 
-Describes how to work with the code for building the v7 back office UI
+Describes how to work with the code for building the v7 backoffice UI
 
 * [Building v7 AngularJS backoffice project](building-angular-project.md)
 * [Test driven development flow](test-driven-flow.md)

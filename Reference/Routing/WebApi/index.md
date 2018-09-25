@@ -89,7 +89,7 @@ For more information about areas, Urls and routing see the [routing section](rou
 
 ## Backoffice controllers
 
-If you are creating a controller to work within the Umbraco back office then you will need to ensure that it is secured  properly by inheriting from: `UmbracoAuthorizedApiController` or `UmbracoAuthorizedJsonController`. This controller type will auto-route your controller like the above examples except that it will add another Uri path: 'backoffice'. For example:
+If you are creating a controller to work within the Umbraco backoffice then you will need to ensure that it is secured  properly by inheriting from: `UmbracoAuthorizedApiController` or `UmbracoAuthorizedJsonController`. This controller type will auto-route your controller like the above examples except that it will add another Uri path: 'backoffice'. For example:
 
 *~/Umbraco/backoffice/Api/[YourControllerName]*
 *~/Umbraco/backoffice/[YourAreaName]/[YourControllerName]*

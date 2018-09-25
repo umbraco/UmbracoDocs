@@ -294,7 +294,7 @@ If greater control is required than available from the above, this setting can b
 
 **loginBackgroundImage (introduced in 7.6.0)**
 
-You can specify your own background image for the login screen here. The image will automatically get an overlay to match back office colors. This path is relative to the ~/umbraco path. The default location is: /umbraco/assets/img/installer.jpg
+You can specify your own background image for the login screen here. The image will automatically get an overlay to match backoffice colors. This path is relative to the ~/umbraco path. The default location is: /umbraco/assets/img/installer.jpg
 
 	 <loginBackgroundImage>../App_Plugins/Backgrounds/login.png</loginBackgroundImage>
 
@@ -314,7 +314,7 @@ In the security section you have the following options: **`<keepUserLoggedIn>`**
         <!-- set to true to auto update login interval (and there by disabling the lock screen -->
         <keepUserLoggedIn>true</keepUserLoggedIn>
 
-        <!-- by default this is true and if not specified in config will be true. set to false to always show a separate username field in the back office user editor -->
+        <!-- by default this is true and if not specified in config will be true. set to false to always show a separate username field in the backoffice user editor -->
         <usernameIsEmail>true</usernameIsEmail>
 
         <!-- change in 4.8: Disabled users are now showed dimmed and last in the tree. If you prefer not to display them set this to true -->
@@ -337,7 +337,7 @@ option to "false" and thereby enabling it.
 
 **`<hideDisabledUsersInBackoffice>`**
 As stated in the comment above, this setting was introduced in v4.8. If it's set to true it's not possible to see disabled users, which means it's
-not possible to re-enable their access to the back office again. It also means you can't create an identical username if the user was disabled by a mistake.
+not possible to re-enable their access to the backoffice again. It also means you can't create an identical username if the user was disabled by a mistake.
 
 **`<usernameIsEmail>`**
 This setting specifies whether the username and email address are separate fields in the backoffice editor. When set to false, you can specify an email address and username, only the username can be used to log on. When set the true (the default value) the username is hidden and always the same as the email address.
@@ -422,7 +422,7 @@ So, if **`<char org="ñ">n</char>`** is added above the **ñ** will be shown as 
     </templates>
 
 **`<defaultRenderingEngine>`**
-Tells Umbraco whether to create MVC Views or Webforms Master Pages when creating a template. This does not limit you from using one technology or the other, it is just a flag to indicate to Umbraco what type of templates to create in the back office.
+Tells Umbraco whether to create MVC Views or Webforms Master Pages when creating a template. This does not limit you from using one technology or the other, it is just a flag to indicate to Umbraco what type of templates to create in the backoffice.
 
 **`useAspNetMasterPages`**
 This is a legacy setting and should not normally be changed.
@@ -584,7 +584,7 @@ The providers section configures the different providers in use in Umbraco. Curr
 
     <providers>
         <users>
-            <!-- if you wish to use your own membershipprovider for authenticating to the Umbraco back office -->
+            <!-- if you wish to use your own membershipprovider for authenticating to the Umbraco backoffice -->
             <!-- specify it here (remember to add it to the web.config as well) -->
             <DefaultBackofficeProvider>UsersMembershipProvider</DefaultBackofficeProvider>
         </users>

@@ -1,4 +1,4 @@
-# Working with the back office UI AngularJS project 
+# Working with the backoffice UI AngularJS project 
 
 _This document tries to outline what is required to have a test-driven setup for
 angular development in Umbraco 7. It goes through the setup process as well as how
