@@ -1,4 +1,4 @@
-# Contribute to Umbraco
+# Contribute to Umbraco Documentation
 
 This guide will cover the following sections:
  - [Ways of contributing](#ways-of-contributing)
@@ -18,7 +18,7 @@ The Umbraco Documentation uses [Github issues]((https://github.com/umbraco/Umbra
 You are very welcome to create an issue if you feel some documentation is missing or wrong, the issue board is also used for discussions about possible improvements or ways to deal with something in the documentation. You can also find a button in the top right corner of every page in the documentation itself that looks like this:
 ![Our issue button](images/report-issue.png)
 
-#### Issue labels
+#### Issue labels 
 The issue repository has several labels, these are not something you can add yourself but they may be added to your issue and other issues. Here is a quick overview of the commonly used labels and what they mean:
 
 - `discuss` - this label is added to issues that are not a tangible problem or very large, an issue with the discuss label is something everyone is encouraged to give their opinion on!
@@ -41,22 +41,30 @@ Github has some great functionality that allows you to submit a PR directly from
 This is very helpful to fix typos and adding small things, but if you are working on a larger update that includes pictures and editing several files in one pull request then it is not a good way to work, then you should create a fork.
 
 #### Creating a PR through a fork
-There is a lot of great guides on how to set up a fork and work with forks, so below there will be a quick guide on how to do it, if you wish for some more general information, Github has a [guide here!](https://help.github.com/articles/fork-a-repo/)
+There is a lot of great guides on how to set up a fork and work with forks, so below there will be a quick guide on how to do it. If you wish for some more general information, Github has a [guide here](https://help.github.com/articles/fork-a-repo/).
 
-**Step 1: Creating a fork**
-A fork of the Umbraco Documentation repository means that you get a copy of the whole repository on your own Github profile, you can create a fork by simply clicking a button:
+**Step 1: Creating a fork** 
+
+A fork of the Umbraco Documentation repository means that you get a copy of the whole repository on your own Github profile. You can create a fork by simply clicking a button:
 ![Creating a fork](images/fork-repository.png)
 
-Once the fork has been created you will have your own copy of the documentation, if you clone your fork down you can make changes to a lot of things and then push all the changes up to your fork, finally you can submit a pull request where you try to sync your copy with the "real" repository:
+Once the fork has been created you will have your own copy of the documentation. If you clone your fork down you can make changes to a lot of things and then push all the changes up to your fork. 
+
+When you are done and happy with the changes you've made, you can submit a pull request where you try to sync your copy with the "real" repository:
 ![Fork of documentation](images/example-of-fork.png)
 
-Sometimes - like in the example above - you may end up forking and then not working on the documentation for a while, then once you start you are some commits behind, so before making changes and making a pull request you should do a rebase, for this you set the main repository as an upstream to sync from, fetch the updates and update your own fork to ensure you are in sync:
+**Step 2: Syncing your fork**
 
-```
+Sometimes - like in the example above - you may end up forking and then not working on the documentation for a while. Once you start you are some commits behind, so before making changes and making a pull request you should do a rebase. For this you set the main repository as an upstream to sync from, fetch the updates and update your own fork to ensure you are in sync:
+
+```cmd
 git remote add upstream https://github.com/umbraco/UmbracoDocs/
 git fetch upstream
 git rebase upstream/master
 ```
+
+**Step 3: Creating a PR**
+
 If you do this locally and then push it to your fork you will have a synced up fork to start working with! Once you have made some changes and you are happy with the result, you can create a pull request (you may have to rebase again and resolve merged conflicts if a lot of things has been merged in since your last sync).
 ![Creating a PR](images/pull-request.png)
 
@@ -66,11 +74,11 @@ And that is all you need to do to create a fork, sync it and make a pull request
 #### Labels for PRs
 - `Dependant On Release` - this label is for documentation pull requests that are made in advance of a new Umbraco release, will be merged in once the changes have been released
 - `need-OUR-update` - this label is used for PR's awaiting some new functionality being added to the Our Umbraco website
-- `D-Team` - this label is usually used when the PR is about something with Umbraco Core that the documentation team is not familiar with, it requires a review from the Umbraco development team
+- `D-Team` - this label is usually used when the PR is about something with Umbraco Core that the documentation team is not familiar with, meaning it requires a review from the Umbraco development team
 - `Umbraco Cloud`, `Umbraco Forms`, etc - if the issue is specific to something other than Umbraco CMS it will get the relevant Umbraco product label
 
 ## Markdown conventions
-For reference, the [Markdown syntax guide](https://daringfireball.net/projects/markdown/syntax) is available.
+The Umbraco Documentation uses Markdown for all of the documentation - but more precisely we use the CommonMark specification, read more about the difference [here](https://commonmark.org/).
 
 ### Structure
 For the documentation project, each individual topic is contained in its own folder.
@@ -123,7 +131,9 @@ For optional parameters wrap in _ (underscore) - end result: `###_optionalParame
 
  ## Contribution badge
 If you make a pull request to any Umbraco repository that gets merged in you will get a Contributor badge on your member profile on Our:
+
 ![Contributor badge on our](images/c-trib-badge.png)
+
 The Documentation Curators will search for your profile when merging a PR in and add the badge, but if it is forgotten just make a comment on the closed PR and we will do it as soon as possible!
 
  ## Documentation Curators
