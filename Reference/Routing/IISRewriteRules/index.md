@@ -24,7 +24,7 @@ installed and uncomment the <rewrite> section. If you don't have the IIS Rewrite
 
 ## Storing rules in an external file
 
-You can store the rules in an external file if you with by using this syntax:
+You can store the rules in an external file if you wish by using this syntax:
 
     <rewrite>
       <rules configSource="config\IISRewriteRules.config" />
