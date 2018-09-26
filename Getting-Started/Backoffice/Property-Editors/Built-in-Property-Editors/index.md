@@ -160,7 +160,7 @@ Pretty much like the name indicates this property editor enables editors to choo
 ## [(Obsolete)Related Links](Related-Links.md)
 `Alias: Umbraco.RelatedLinks`
 
-Made obsolete with the release of Umbraco v7.6 the related links editor allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
+Made obsolete with the release of Umbraco v7.6. Related Links editor allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
 
 ## [Related Links](Related-Links2.md)
 `Alias: Umbraco.RelatedLinks2`
