@@ -157,15 +157,15 @@ A configurable number control allowing only numbers.
 
 Pretty much like the name indicates this property editor enables editors to choose from list of radio buttons.
 
-## [Related Links](Related-Links2.md)
+## [(Obsolete)Related Links](Related-Links.md)
 `Alias: Umbraco.RelatedLinks`
 
-Related Links allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
+Made obsolete with the release of Umbraco v7.6. Related Links editor allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
 
-## [(Obsolete) Related Links](Related-Links.md)
+## [Related Links](Related-Links2.md)
 `Alias: Umbraco.RelatedLinks2`
 
-Made obsolete with the release of Umbraco v7.6 the related links editor allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
+Related Links allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
 
 ## Rich Text Editor
 `Alias: Umbraco.TinyMCEv3`
