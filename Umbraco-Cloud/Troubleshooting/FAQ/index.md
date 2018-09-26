@@ -3,9 +3,9 @@ We have gathered a list of frequently asked questions below that have something 
 
 ## I’m using Archetype, do I need to do anything special?
 
-Yes, as Archetype is third-party created datatype you’ll need to include the appropriate data resolver.  You simply include the data resolver in your site’s `/bin/` folder and make sure you commit and push the file when you deploy your site.  You can find the data resolver for Archetype here: [Archetype.Courier](https://github.com/leekelleher/Archetype.Courier)
+Yes, as Archetype is a third-party created data type you’ll need to include the appropriate data resolver.  You simply include the data resolver in your site’s `/bin/` folder and make sure you commit and push the file when you deploy your site.  You can find the data resolver for Archetype here: [Archetype.Courier](https://github.com/leekelleher/Archetype.Courier)
 
-## I’m using BuzzHybrid / DonutCaching / LatestHotStuff / other custom add-ins or I’ve created my own datatypes - do I need to do anything special?
+## I’m using BuzzHybrid / DonutCaching / LatestHotStuff / other custom add-ins or I’ve created my own data types - do I need to do anything special?
 
 Probably not! In most cases simply including the custom files (and configuration) is enough for Umbraco Cloud to understand how to deploy your site.  In some cases, namely where you’ve created a data type that serializes data or otherwise stores property data in a non-standard format, you’ll need to also create a corresponding data resolver.  Fortunately these are easily created using the guide and samples [here](https://github.com/umbraco/Courier/blob/master/Documentation/Developer%20Documentation/Data%20Resolvers.md)
 

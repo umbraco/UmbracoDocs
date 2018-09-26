@@ -39,11 +39,11 @@ And copy to /bin
 *Caused by* Courier not able to find a data types assembly or .cs class file which contains the Interface used
 by the data type
 
-*How to spot* Courier returns "cannot package GUID from datatypes provider" 
+*How to spot* Courier returns "cannot package GUID from data types provider" 
 
-*Solution* Make sure you have all your datatype dependencies in place, usually its ucomponents and similar projects
-that are missing dlls, also, if you don't use a datatype, delete it from your site, so you don't accidently 
-transfer a broken datatype. Make sure to clear courier cache and restart application.
+*Solution* Make sure you have all your data type dependencies in place, usually its ucomponents and similar projects
+that are missing dlls, also, if you don't use a data type, delete it from your site, so you don't accidently 
+transfer a broken data type. Make sure to clear courier cache and restart application.
 
 
 ### Courier cannot package items on V4

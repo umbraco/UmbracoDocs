@@ -19,17 +19,17 @@ This version also ships with far less client files (i.e. js, css, images) that w
 ## Version 7.6.3
 In short:
 
-In Umbraco version 7.6.2 we made a mistake in the Property Value Converts (PVCs) which was corrected 2 days later in version 7.6.3. If you were having problems with querying the following datatypes in the frontend, then make sure to upgrade to 7.6.3:
+In Umbraco version 7.6.2 we made a mistake in the Property Value Converts (PVCs) which was corrected 2 days later in version 7.6.3. If you were having problems with querying the following data types in the frontend, then make sure to upgrade to 7.6.3:
 
  * Multi Node Tree Picker
  * Related Links
  * Member Picker
 
-Depending on if you tried to fix problem with those datatypes you will might need to fix them again after you upgrade to 7.6.3.
+Depending on if you tried to fix problem with those data types you will might need to fix them again after you upgrade to 7.6.3.
 
 ## Property Value Converters?
 
-Umbraco stores data for datatypes in different ways, for a lot of pickers it will store (for example) 1072 or 1083,1283. These numbers refer to the identifier of the item in Umbraco. In the past, when building your templates you would manually have to take that value and find the content item it belongs to and then get the data you wanted from there, for example:
+Umbraco stores data for data types in different ways, for a lot of pickers it will store (for example) 1072 or 1083,1283. These numbers refer to the identifier of the item in Umbraco. In the past, when building your templates you would manually have to take that value and find the content item it belongs to and then get the data you wanted from there, for example:
 
 		@{
 			IPublishedContent contactPage;
@@ -67,7 +67,7 @@ This issue only affects:
  * Related Links
  * Member Picker
 
-If you have already upgraded to 7.6.2 and fixed some of your queries for those three datatypes then you might have to fix them again in 7.6.3. We promise it's the last time you need to update them! We're sorry for the inconvenience.
+If you have already upgraded to 7.6.2 and fixed some of your queries for those three data types then you might have to fix them again in 7.6.3. We promise it's the last time you need to update them! We're sorry for the inconvenience.
 
 ## Version 7.6.0
 
