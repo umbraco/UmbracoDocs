@@ -4,7 +4,7 @@
 
 > **NOTE:** If your project is using Umbraco Courier, please refer to this article instead: [Schema Mismatches with Courier](../../Courier/Structure-Errors-Courier)
 
-On some occasions, it's possible that you'll encounter collision errors on your Umbraco Cloud environments. This means that two `.uda` files are created for the same entity type. The `.uda` files contain schema for each of your entity types (e.g Document Types, Templates, Macros, Dictionary Items, Datatypes).
+On some occasions, it's possible that you'll encounter collision errors on your Umbraco Cloud environments. This means that two `.uda` files are created for the same entity type. The `.uda` files contain schema for each of your entity types (e.g Document Types, Templates, Macros, Dictionary Items, Data types).
 
 Example:
 

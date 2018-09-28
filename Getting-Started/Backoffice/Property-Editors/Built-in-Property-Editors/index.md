@@ -32,6 +32,11 @@ Displays a calendar UI for selecting dates
 
 Displays a calendar UI for selecting dates and time
 
+## Decimal
+`Alias: Umbraco.Decimal`
+
+A configurable number control allowing only numbers inclusing decimals.
+
 ## [Dropdown](Dropdown.md)
 `Alias: Umbraco.DropDown.Flexible`
 
@@ -54,7 +59,6 @@ Made obsolete with the release of Umbraco v7.10. Displays a list of preset value
 
 ## [(Obsolete) Dropdown list multiple, publish keys](DropDown-List-Multiple-Publish-Keys.md)
 `Alias: Umbraco.DropdownlistMultiplePublishKeys`
-
 
 Made obsolete with the release of Umbraco v7.10. Displays a list of preset values where multiple can be selected. The value saved is a CSV of prevalue ids.
 
@@ -124,8 +128,11 @@ Made obsolete with the release of Umbraco v7.6 the media picker displays the cur
 ## Member Group Picker
 `Alias: Umbraco.MemberGroupPicker`
 
-## [Member Picker](Member-Picker.md)
+## [(Obsolete)Member Picker](Member-Picker.md)
 `Alias: Umbraco.MemberPicker`
+
+## Member Picker
+`Alias: Umbraco.MemberPicker2`
 
 ## [Multinode Treepicker](Multinode-Treepicker2.md)
 `Alias: Umbraco.MultiNodeTreePicker2`
@@ -133,12 +140,12 @@ Made obsolete with the release of Umbraco v7.6 the media picker displays the cur
 The multinode treepicker data type allows content editors to choose multiple nodes in the content or media trees.
 
 ## [(Obsolete) Multinode Treepicker](Multinode-Treepicker.md)
-`Alias: Umbraco.MultipleTextstring`
+`Alias: Umbraco.MultiNodeTreePicker`
 
 Made obsolete with the release of Umbraco v7.6 the multinode treepicker data type allows content editors to choose multiple nodes in the content or media trees.
 
 ## [Multiple Textbox](Multiple-Textbox.md)
-`Alias: Umbraco.TextboxMultiple`
+`Alias: Umbraco.MultipleTextstring`
 
 The Multiple Textbox property editor enables a content editor to make a list of text items
 
@@ -158,14 +165,14 @@ A configurable number control allowing only numbers.
 Pretty much like the name indicates this property editor enables editors to choose from list of radio buttons.
 
 ## [Related Links](Related-Links2.md)
-`Alias: Umbraco.RelatedLinks`
+`Alias: Umbraco.RelatedLinks2`
 
 Related Links allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
 
 ## [(Obsolete) Related Links](Related-Links.md)
-`Alias: Umbraco.RelatedLinks2`
+`Alias: Umbraco.RelatedLinks`
 
-Made obsolete with the release of Umbraco v7.6 the related links editor allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
+Made obsolete with the release of Umbraco v7.6. Related Links editor allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
 
 ## Rich Text Editor
 `Alias: Umbraco.TinyMCEv3`

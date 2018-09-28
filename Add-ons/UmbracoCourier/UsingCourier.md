@@ -20,7 +20,7 @@ When it has figured this out, it exports the selected item(s) and their dependen
 
 Optionally it can compare the packaged items as it finds them, to figure out if they have actually changed since the last update, and will skip those that have. 
 
-Finally, it will build a graph of the deployment, based on the order of dependencies, this means that Courier knows that for a document to be installed, it needs to have its document type, template, datatypes and so on present on the target website. 
+Finally, it will build a graph of the deployment, based on the order of dependencies, this means that Courier knows that for a document to be installed, it needs to have its document type, template, data types and so on present on the target website. 
 
 So, in short it:
 
@@ -39,8 +39,8 @@ Lets consider the amount of dependencies that goes into moving a document
 - The document data
 - Property Editors used to edit the document data
 - The document type
-- Datatypes used in the document type
-- Dlls, files, settings, content referenced by datatypes, like the RTE, and the content picker
+- Data types used in the document type
+- Dlls, files, settings, content referenced by data types, like the RTE, and the content picker
 - The template
 - Css, js and images referenced in the template
 - macros in the template
@@ -50,7 +50,7 @@ We can sort these things into hard and soft dependencies, the hard ones are docu
 cannot exist in the database, due to ID references. 
 
 The soft ones are all the items that make the page and editor actually work, so if you try to view a page without a template, it breaks, try to edit
-a document with a datatype missing its configuration or a needed dll, it breaks. 
+a document with a data type missing its configuration or a needed dll, it breaks. 
 
 So the short version is, you don't want to miss those dependencies, because your site will not work, and you will have no idea why. 
 
@@ -58,9 +58,9 @@ So the short version is, you don't want to miss those dependencies, because your
 The whole idea of Courier, builds around the idea of dependencies and references, which courier can understand to a certain degree.
 But there are several areas, where Courier have zero chance of understanding what is going an. 
 
-### When a datatype stores node ids
+### When a data type stores node ids
 Common thing, a data type stores a node ID, but courier doesn't know, so it cannot add the document as a dependency, and it cannot convert it into
-a GUID, so it will be transferable, however, you can add the datatype to the courier.config to tell courier to look for ids and convert them
+a GUID, so it will be transferable, however, you can add the data type to the courier.config to tell courier to look for ids and convert them
 
 ### Data in external tables are referenced.
 Courier doesn't know about it, cant deploy it, you can write your own provider for it, but this provides you with overhead, and it would

@@ -1,10 +1,10 @@
 # Tag cloud
 
-If you use the Tag datatype in Umbraco V4, you can easily make an tag-cloud in XSLT:
+If you use the Tag data type in Umbraco V4, you can easily make an tag-cloud in XSLT:
 
 The variable TagFactor is used to calculate the ratio between the tags.
 
-The bold value "Umbraco" is the name of the Tag group used in the datatype.
+The bold value "Umbraco" is the name of the Tag group used in the data type.
 
 The example below has 6 different size of tags, and the style/size of the tags in the cloud is modified through css
 

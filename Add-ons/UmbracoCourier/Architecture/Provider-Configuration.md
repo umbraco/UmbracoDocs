@@ -31,7 +31,7 @@ Single option to turn of whether allowed/child media types should be added as a 
 
 - Option to include all allowed templates as a dependency
 - option to include all allowed types as a dependency 
-- option filter out certain datatypes.
+- option filter out certain data types.
 
 <!-- -->
 
@@ -41,9 +41,9 @@ Single option to turn of whether allowed/child media types should be added as a 
       <includeAllTemplates>false</includeAllTemplates>
       <includeChildDocumentTypes>true</includeChildDocumentTypes>
       
-      <!-- By default we won't add the built-in datatypes as dependencies, if needed, they can be removed from the list below -->
-      <!-- Only datatypes which are installed as standard, and does not have any settings are ignored -->
-      <!-- to add, find the datatype in the umbracoNode table and copy its uniqueId value to a node below-->
+      <!-- By default we won't add the built-in data types as dependencies, if needed, they can be removed from the list below -->
+      <!-- Only data types which are installed as standard, and does not have any settings are ignored -->
+      <!-- to add, find the data type in the umbracoNode table and copy its uniqueId value to a node below-->
       <ignoredDataTypes>
         <add key="contentPicker">A6857C73-D6E9-480C-B6E6-F15F6AD11125</add>
         <add key="textstring">0CC0EBA1-9960-42C9-BF9B-60E150B429AE</add>
