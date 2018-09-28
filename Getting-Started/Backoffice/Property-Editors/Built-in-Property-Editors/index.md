@@ -32,7 +32,7 @@ Displays a calendar UI for selecting dates
 
 Displays a calendar UI for selecting dates and time
 
-## [Umbraco.Decimal]
+## Decimal
 `Alias: Umbraco.Decimal`
 
 A configurable number control allowing only numbers inclusing decimals.
