@@ -134,7 +134,7 @@ Please contact us using the chat button at the bottom right corner of the [Umbra
 
 ### Does Umbraco Cloud support Let's Encrypt certificates?
 
-Yes, we have now launched [Umbraco Latch](https://umbraco.com/blog/introducing-umbraco-latch/) which automates the process of installing and renewing Let's Encyrpt certificates, all new sites are automatically setup with a Let's Encyrpt certificate and HTTPS enabled by default. 
+Yes, we have now launched [Umbraco Latch](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Manage-Domains/Umbraco-Latch) which automates the process of installing and renewing Let's Encyrpt certificates, all new sites are automatically setup with a Let's Encyrpt certificate and HTTPS enabled by default. 
 
 ### Does Umbraco Cloud support http/2?
 
