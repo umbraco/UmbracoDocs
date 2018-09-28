@@ -48,16 +48,15 @@ No. All services currently run in the Azure West Europe region.
 
 ### How many resources do I have available for my website?
 
-Each site runs in an isolated environment next to other websites on the same server, which is a shared environment. This means that we don't have exact details about the amount of resources you site can use, this is managed automatically by our infrastructure.
+Each site runs in an isolated environment next to other websites on the same server, which is a shared environment. This means that we don't have exact details about the amount of resources your site can use, this is managed automatically by our infrastructure.
 
 We do have some limitations:
 
 - If your Cloud site is using over 90% CPU for more than 10 minutes, the priority for your CPU usage will be throttled down for each time you consecutively use more than 90% CPU per 10 minutes
 - Memory usages is limited to 2048 MB per Cloud site and when that limit is reached, your website will be restarted automatically to make sure sites with memory leaks don't take up all of the available memory on the server
-- There's a limitation of 20 domain names that you can point to 
-one Umbraco Cloud site - make sure to contact us if you need more than that
+- There's a limitation of 20 domain names that you can point to one Umbraco Cloud site - make sure to contact us if you need more than that
 
-In our experience there is only a few Cloud sites that have experienced these limitations and we're happy to work with people who have sites affected by these limitations.
+In our experience there are only a few Cloud sites that have experienced these limitations and we're happy to work with people who have sites affected by these limitations.
 
 ### Can I use Cloudflare in front of my Umbraco Cloud site
 
@@ -135,11 +134,7 @@ Please contact us using the chat button at the bottom right corner of the [Umbra
 
 ### Does Umbraco Cloud support Let's Encrypt certificates?
 
-Yes, any certificate that can be converted into a `pfx` file is supported on  Cloud.
-
-However, we currently don't have an automated way to generate a Let's Encrypt certificate for you and bind it to your site. This means that you'll be responsible for generating a certificate every 90 days (the maximum validity period of a Let's Encrypt certificate) and updating your site with the new certificate.
-
-Since it is easy to forget this, we recommend you use certificate monitoring tools on your site to remind you to do this.
+Yes, we have now launched [Umbraco Latch](https://umbraco.com/blog/introducing-umbraco-latch/) which automates the process of installing and renewing Let's Encyrpt certificates, all new sites are automatically setup with a Let's Encyrpt certificate and HTTPS enabled by default. 
 
 ### Does Umbraco Cloud support http/2?
 
