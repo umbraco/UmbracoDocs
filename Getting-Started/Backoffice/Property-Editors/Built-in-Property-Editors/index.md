@@ -172,7 +172,7 @@ Related Links allows an editor to easily add an array of links. These can either
 ## [(Obsolete) Related Links](Related-Links.md)
 `Alias: Umbraco.RelatedLinks`
 
-Made obsolete with the release of Umbraco v7.6 the related links editor allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
+Made obsolete with the release of Umbraco v7.6. Related Links editor allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
 
 ## Rich Text Editor
 `Alias: Umbraco.TinyMCEv3`
