@@ -32,6 +32,11 @@ Displays a calendar UI for selecting dates
 
 Displays a calendar UI for selecting dates and time
 
+## [Umbraco.Decimal]
+`Alias: Umbraco.Decimal`
+
+A configurable number control allowing only numbers inclusing decimals.
+
 ## [Dropdown](Dropdown.md)
 `Alias: Umbraco.DropDown.Flexible`
 
@@ -54,7 +59,6 @@ Made obsolete with the release of Umbraco v7.10. Displays a list of preset value
 
 ## [(Obsolete) Dropdown list multiple, publish keys](DropDown-List-Multiple-Publish-Keys.md)
 `Alias: Umbraco.DropdownlistMultiplePublishKeys`
-
 
 Made obsolete with the release of Umbraco v7.10. Displays a list of preset values where multiple can be selected. The value saved is a CSV of prevalue ids.
 
