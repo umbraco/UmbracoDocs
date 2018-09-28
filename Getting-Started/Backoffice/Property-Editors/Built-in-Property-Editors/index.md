@@ -128,8 +128,11 @@ Made obsolete with the release of Umbraco v7.6 the media picker displays the cur
 ## Member Group Picker
 `Alias: Umbraco.MemberGroupPicker`
 
-## [Member Picker](Member-Picker.md)
+## [(Obsolete)Member Picker](Member-Picker.md)
 `Alias: Umbraco.MemberPicker`
+
+## Member Picker
+`Alias: Umbraco.MemberPicker2`
 
 ## [Multinode Treepicker](Multinode-Treepicker2.md)
 `Alias: Umbraco.MultiNodeTreePicker2`
