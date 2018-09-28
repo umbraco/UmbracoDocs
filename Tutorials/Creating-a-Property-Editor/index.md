@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide explains how to set up a simple property editor, how to hook it into Umbraco's datatypes, how to hook it into Angular's modules and its injector, and finally how you can test your property editor.
+This guide explains how to set up a simple property editor, how to hook it into Umbraco's data types, how to hook it into Angular's modules and its injector, and finally how you can test your property editor.
 
 So all the steps we will go through:
 
@@ -91,10 +91,10 @@ Now our basic parts of the editor is done, namely:
 - The HTML view for the editor
 - The controller for wiring up the editor with angular.
 
-## Register the datatype in Umbraco
-After the above edits are done, restart your application. Go to the Developer section, click the 3 dots next to the datatypes folder and create a new data type called "markdown". In the editor you can now select a property editor, where your newly added "markdown editor" will appear.
+## Register the data type in Umbraco
+After the above edits are done, restart your application. Go to the Developer section, click the 3 dots next to the data types folder and create a new data type called "markdown". In the editor you can now select a property editor, where your newly added "markdown editor" will appear.
 
-Save the datatype, and add it to a document type of your choice. Open a document of that type, and you will be greeted with an alert message saying "The controller has landed", which means all is well. You can now edit the assigned property's value with your editor.
+Save the data type, and add it to a document type of your choice. Open a document of that type, and you will be greeted with an alert message saying "The controller has landed", which means all is well. You can now edit the assigned property's value with your editor.
 
 
 ## Add external dependencies

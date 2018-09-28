@@ -23,7 +23,7 @@ The `field` attribute defines which field of the current page will be used as th
 If a `nodeid` is specified, then that node will be used to get the `field` from.
 
 ## Parameters
-The `parameters` are provider specific. The default provider supports the upload datatypes thumbnails, and the Image Cropper datatypes crops.
+The `parameters` are provider specific. The default provider supports the upload data types thumbnails, and the Image Cropper data types crops.
 
 <table>
 	<tr>

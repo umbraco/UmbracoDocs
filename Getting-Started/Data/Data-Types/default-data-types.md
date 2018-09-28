@@ -65,7 +65,7 @@ A simple textbox to input a numeric value.
 This Data type enables editors to choose from list of radiobuttons. 
 
 #### Related Links ####
-This datatype allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
+This data type allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
 
 #### Richtext Editor ####
 The TinyMCE based wysiwyg editor. This is the standard editor used to edit any larger amount of text. The editor has a lot of settings, which can be changed under the developer section in "data types" / Richtext editor. The editor also supports TinyMCE plugins which can be controlled in the configuration file located at /config/tinyMce.config
@@ -90,7 +90,7 @@ Stylesheets
 </pre>
 
 #### Tags ####
-A textbox that allows you to use use multiple tags on a docType. You can specify a TAG Group for this datatype, in case you need to use TAGS on different sections of your site (i.e  News, Article, Events).
+A textbox that allows you to use use multiple tags on a docType. You can specify a TAG Group for this data type, in case you need to use TAGS on different sections of your site (i.e  News, Article, Events).
 
 #### Textarea ####
 A simple textarea

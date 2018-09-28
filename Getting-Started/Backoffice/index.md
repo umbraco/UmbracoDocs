@@ -43,7 +43,7 @@ Each field has a specific data type e.g. text, number, ...
 Every document type has properties. These are the fields that the content editor is allowed to edit for the node.
 
 ### Data Type
-Each document type property has a data type which defines the type of input of that property. Data types reference a Property Editor and are configured in the Umbraco backoffice in the developer section.  A datatype can be something very simple (textstring, number, true/false,...) or more complex (multi node tree picker, image cropper, ...)
+Each document type property has a data type which defines the type of input of that property. Data types reference a Property Editor and are configured in the Umbraco backoffice in the developer section.  A data type can be something very simple (textstring, number, true/false,...) or more complex (multi node tree picker, image cropper, ...)
 [Read more..](../Data/Data-Types/)
 
 ### [Property Editors](Property-Editors/)
