@@ -7,7 +7,8 @@ _This example is for creating a statically routed website which means that it's 
 * Go to a new folder to create a new .NET Core website and add references:
    * _(Ensure you've created the `Nuget.config`, see above)_
    * `dotnet new mvc`
-   * `dotnet add package UmbracoCms.Headless.Client -v 0.9.0-*`   
+   * `dotnet add package UmbracoCms.Headless.Client -v 0.9.7-*`   
+   * `dotnet add package UmbracoCms.Headless.Client.Web -v 0.9.7-*`  
       * _NOTE: You use this same command to update to the latest version_
 * Add a config file
     * use the standard .NET Core naming conventions: `appsettings.json`
@@ -17,52 +18,54 @@ _This example is for creating a statically routed website which means that it's 
             "umbracoHeadless": {
                 "url": "https://YOUR-PROJECT-URL.s1.umbraco.io",
                 "username": "YOUR@USERNAME.com",
-                "password": "YOUR-PASSWORD"
+                "password": "YOUR-PASSWORD",
+                "imageBaseUrl": "https://YOUR-PROJECT-URL.s1.umbraco.io",
+                "restApiVersion": "1.0.0"
             }
         }
         ```
 * You need to bootstrap the headless client which is done in your `Startup.cs` file:
-   * Add `using Umbraco.Headless.Client;`.
+   * Add `using Umbraco.Headless.Client.Net.Web;`.
    * In `ConfigureServices` add the headless client services: `services.AddUmbracoHeadlessClient(Configuration);`
 * Now run the project
    * `dotnet run`
       * _If you want to launch in debug mode, set the environment variable in the current cmd window before running this command: `set ASPNETCORE_ENVIRONMENT=Development`_
 
-Now you can have the `Umbraco.Headless.Client.Services.HeadlessService` injected into any of your controllers, services, etc... The `Umbraco.Headless.Client.Services.HeadlessService` is the starting point for all headless operations.
+Now you can have the `Umbraco.Headless.Client.Net.Services.PublishedContentService` injected into any of your controllers, services, etc. The `Umbraco.Headless.Client.Net.Services.PublishedContentService` is the starting point for all headless operations.
 
-You can also inject the `HeadlessService` or `IHeadlessConfig` into any view by using this syntax:
+You can also inject the `PublishedContentService` or `IHeadlessConfig` into any view by using this syntax:
 ```
-@using Umbraco.Headless.Client.Configuration
-@using Umbraco.Headless.Client.Services
+@using Umbraco.Headless.Client.Net.Web.Configuration
+@using Umbraco.Headless.Client.Net.Services
 
 @inject IHeadlessConfiguration HeadlessConfig
-@inject HeadlessService HeadlessService
+@inject PublishedContentService PublishedContentService
 ```
 
 #### Example usage
 
-* Add `using Umbraco.Headless.Client.Services;` to the `HomeController`
-* Inject the `HeadlessService` into the `HomeController` ctor and store a reference:
+* Add `using Umbraco.Headless.Client.Net.Services;` to the `HomeController`
+* Inject the `PublishedContentService` into the `HomeController` ctor and store a reference:
    ```cs
-    public HomeController(HeadlessService headlessService)
+    public HomeController(PublishedContentService PublishedContentService)
     {
-        this._headlessService = headlessService;
+        this._publishedContentService = PublishedContentService;
     }
-    private readonly HeadlessService _headlessService;
+    private readonly PublishedContentService _publishedContentService;
    ```
 * Create a new controller Action:
     ```cs
     public async Task<IActionResult> Headless()
     {
-        // Get all content
-        var allContent = await _headlessService.Query().GetAll();
-        return View(allContent);
+        // Get content by ContentType
+        var content = await _publishedContentService.GetAll("contentTypeAlias");
+        return View(content);
     }
     ```
 * Create a view at `/Views/Home/Headless.cshtml`:
     ```
     @model IEnumerable<ContentItem>
-    @using Umbraco.Headless.Client.Models
+    @using Umbraco.Headless.Client.Net.Models
 
     @{
         ViewData["Title"] = "Headless test";

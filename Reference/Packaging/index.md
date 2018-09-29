@@ -26,7 +26,7 @@ This led to a lot of confusion and also opened up the possibility that the actio
 
 So in this revised version, an undo attribute has been put on all actions. An action will always contain an undo action which is turned on by default, but can be turned off.
 
-At the same time, all actions that was actually only there to perform uninstall actions has been removed. Depending on community feedback, some of these might be included again.
+At the same time, all actions which were only actually there to perform uninstall actions have been removed. Depending on community feedback, some of these might be included again.
 
 ## Add application
 
@@ -132,6 +132,6 @@ Alias: addStringToHtmlElement
 
 Richard Soeteman has created the Codeplex project PackageActionsContrib which contains community submitted Package Actions which other developers may find useful.
 
-You can find out more about the package actions contribution project at http://packageactioncontrib.codeplex.com
+You can find out more about the package actions contribution project at https://packageactioncontrib.codeplex.com
 
 It is also worth checking the patches section of the project as new package actions have been submitted by other developers that have not yet been integrated into the PackageActionsContrib project that you might find useful.

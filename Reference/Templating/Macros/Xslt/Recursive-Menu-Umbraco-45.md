@@ -1,6 +1,6 @@
 # Recursive Menu Umbraco 4.5
 
-Credits for this snippet go out to [Lordtoro](http://lordtoro.wordpress.com/2010/07/10/recursive-navigation-in-umbraco-4-5-0/).
+Credits for this snippet go out to [Lordtoro](https://lordtoro.wordpress.com/2010/07/10/recursive-navigation-in-umbraco-4-5-0/).
 
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE xsl:stylesheet [ <!ENTITY nbsp " "> ]>

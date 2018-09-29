@@ -14,17 +14,17 @@ Roles for each environment can be set on the *Edit Team* page available from the
 * Read: A team member with Read permissions can only view the Project in the Portal, and is not able to Deploy or change anything on the Project through the Portal.
 
 
-## Team Member Permissions in the Umbraco Back Office 
+## Team Member Permissions in the Umbraco Backoffice 
 By default all team members created through the Portal are created as admin users in the backoffice. This can be overwritten by adding custom rules to the CloudUsers.config file in the /config directory. 
 
 To match a Team Member with a group of permissions in the CloudUsers.config file you'll need to either match by e-mail or by the User Type of the Team Member using the "match" or "matchEmail" attributes.
 
 You can specify:
 
-* UserType: The name of a Back Office User Type thus default permissions on Content Nodes
+* UserType: The name of a Backoffice User Type thus default permissions on Content Nodes
 * Start Nodes for Content and Media: You'll need to add the GUID of the node.
-* Language: The Culture Code for the back office user interface language
-* Disable Umbraco Access: When this is set to false, the user cannot login to the back office. Useful if your editors are working in the staging environment (by using the deploy feature, they'll still be able to push content to live)
+* Language: The Culture Code for the backoffice user interface language
+* Disable Umbraco Access: When this is set to false, the user cannot login to the backoffice. Useful if your editors are working in the staging environment (by using the deploy feature, they'll still be able to push content to live)
 * Apps: Aliases of the Umbraco apps where the user should have access. You can specify "*" to give access to all apps.
 
         <PermissionGroups>

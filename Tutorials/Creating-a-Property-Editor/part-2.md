@@ -32,13 +32,13 @@ To add configuration options to our markdown editor, open the `package.manifest`
 
 **Remember to:** Separate the editor element and prevalue editor definition with a comma, or you will get a JSON error.
 
-So what did we just add? We added a prevalue editor, with a `fields` collection. This collection contains information about the UI we will render on the datatype configuration for this editor.
+So what did we just add? We added a prevalue editor, with a `fields` collection. This collection contains information about the UI we will render on the data type configuration for this editor.
 
 So the first one gets the label "Preview" and uses the view "boolean", so this will allow us to turn preview on/off and will provide the user with a simple checkbox. The name "boolean" comes from the convention that all preview editors are stored in `/umbraco/views/prevalueeditors/` and then found via `<name>.html`
 
 Same with the next one, only that it will provide the user with a textarea to input a default value for the editor.
 
-Save the manifest, **restart the app pool** and have a look at the markdown datatype in Umbraco now. You should now see that you have 2 configuration options.
+Save the manifest, **restart the app pool** and have a look at the markdown data type in Umbraco now. You should now see that you have 2 configuration options.
 
 ## Using the configuration
 The next step is to gain access to our new configuration options. For this, open the `markdowneditor.controller.js` file.

@@ -1,4 +1,4 @@
-# BackOffice overview
+# Backoffice overview
 These items are common terms and concepts that are used throughout the Umbraco backoffice.
 
 ### [Login screen](Login/)
@@ -43,7 +43,7 @@ Each field has a specific data type e.g. text, number, ...
 Every document type has properties. These are the fields that the content editor is allowed to edit for the node.
 
 ### Data Type
-Each document type property has a data type which defines the type of input of that property. Data types reference a Property Editor and are configured in the Umbraco backoffice in the developer section.  A datatype can be something very simple (textstring, number, true/false,...) or more complex (multi node tree picker, image cropper, ...)
+Each document type property has a data type which defines the type of input of that property. Data types reference a Property Editor and are configured in the Umbraco backoffice in the developer section.  A data type can be something very simple (textstring, number, true/false,...) or more complex (multi node tree picker, image cropper, ...)
 [Read more..](../Data/Data-Types/)
 
 ### [Property Editors](Property-Editors/)
@@ -68,7 +68,7 @@ A template is where you define the HTML markup of your website. A layout is a co
 [Read more](../Design/Templates/)
 
 ### Package
-A package is the Umbraco term for a module or plug-in used to extend Umbraco. Packages can be found in the [projects section of Our Umbraco](https://our.umbraco.org/projects/ "Projects on Our Umbraco").
+A package is the Umbraco term for a module or plug-in used to extend Umbraco. Packages can be found in the [projects section of Our Umbraco](https://our.umbraco.com/projects/ "Projects on Our Umbraco").
 
 ### Macros
 A macro is a reusable piece of functionality that you can reuse throughout your site. Macros can be configured with parameters and be inserted into a Rich Text Editor. You can define what macros are available for your editors to insert in to the rich text editor. When an editor inserts a macro into the rich text editor it will prompt them to fill out any of the defined parameters for the macro.

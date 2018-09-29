@@ -2,7 +2,7 @@
 
 A library of API Reference documentation is auto-generated from the comments within the Umbraco Source Code.
 
-## [Backoffice UI](https://our.umbraco.org/apidocs/ui/#/api/)
+## [Backoffice UI](https://our.umbraco.com/apidocs/ui/#/api/)
 
 Angular, JS, CSS & Less UI API references for building Umbraco backoffice components.
 

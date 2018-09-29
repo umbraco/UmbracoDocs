@@ -25,4 +25,4 @@ Property editors can be configured to support tag data. In v7 the tag system has
 - The full [Umbraco Backoffice UI API documentation](../../../apidocs/ui/) for all the angular services, directives and resources.
 
 ### Umbraco TV
-- Chapter: [Property Editors](http://umbraco.tv/videos/umbraco-v7/developer/extending/property-editors/)
+- Chapter: [Property Editors](https://umbraco.tv/videos/umbraco-v7/developer/extending/property-editors/)

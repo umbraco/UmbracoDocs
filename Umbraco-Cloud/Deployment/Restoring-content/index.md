@@ -4,9 +4,13 @@ When you have already created some content on your Cloud environment and you clo
 
 You will also need to use the restore option when setting up new Umbraco Cloud environments. The restore option also comes in really handy if you have content editors creating content on the Live or Staging environments and you want to work with this content when building templates on the Development environment or on your Local clone.
 
-There are two ways to restore your content and media.
+## Video Tutorial
 
-## 1. When starting up the project locally
+<iframe width="800" height="450" src="https://www.youtube.com/embed/ha4KDpE81dg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+## Step-by-step 
+
+### Restore when starting up the project locally
 
 The first time you run your project locally you will have the option to restore your content and media before going to the Umbraco backoffice.
 
@@ -17,7 +21,7 @@ The first time you run your project locally you will have the option to restore 
 
 ![Restore from start-up](images/restore-initial-startup.gif)
 
-## 2. Restore from the Umbraco backoffice
+### Restore from the Umbraco backoffice
 
 The second option for restoring your content and media is found in the Umbraco backoffice - use this option when setting up new Cloud environments!
 
@@ -33,7 +37,7 @@ The second option for restoring your content and media is found in the Umbraco b
 
 ![Restore from backoffice](images/restore-backoffice.gif)
 
-## Partial restores
+### Partial restores
 
 If your project has a lot of content nodes and/or media items you might not want to restore everything every time a minor change has been made to the content.
 

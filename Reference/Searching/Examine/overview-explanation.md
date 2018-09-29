@@ -1,6 +1,6 @@
 # Overview & Explanation - "Examining Examine by Peter Gregory"
 
-<small>Originally published on the Umbraco blog - [Examining Examine: Friday, September 16, 2011 by Peter Gregory](http://umbraco.com/follow-us/blog-archive/2011/9/16/examining-examine.aspx)</small>
+<small>Originally published on the Umbraco blog - [Examining Examine: Friday, September 16, 2011 by Peter Gregory](https://umbraco.com/follow-us/blog-archive/2011/9/16/examining-examine.aspx)</small>
 
 When Umbraco Examine was released many developers including myself thought all my search woes were solved. I figured I would be able to just fire up Umbraco, configure examine and BAM! I would have a search engine that gave me exactly what I needed. But after giving it an initial go and trying it out, most developers left it alone and put it in the too hard basket as they did not understand what was going on under the surface or why their search results were not what they expected. What I want to try and achieve in this post is to demystify Umbraco Examine and provide a few tips I have picked up while working with it.
 
@@ -8,10 +8,10 @@ When Umbraco Examine was released many developers including myself thought all m
 First, for those that don't know what I am on about let's just start by telling you what Examine is.  Examine is a provider based Indexer/Searcher API and wraps the Lucene.Net indexing/searching engine. Examine makes it super easy to work with Lucene indexes and allows you to query or index almost any content with very little effort. Lucene is SUPER fast and when managed correctly can allow you to open up super fast searching on absurd amounts of data.
 
 ## What is Umbraco Examine?
-Umbraco Examine is the Umbraco implementation of Examine. Examine is not exclusive to Umbraco and can actually be used as a completely stand alone component on any project that needs a fast Index. Umbraco Examine is a combination of Umbraco, Examine and Lucene.Net and uses Umbraco as the data source for its Lucene index. Lucene has been a part of Umbraco from the early days and powers the back office search.
+Umbraco Examine is the Umbraco implementation of Examine. Examine is not exclusive to Umbraco and can actually be used as a completely stand alone component on any project that needs a fast Index. Umbraco Examine is a combination of Umbraco, Examine and Lucene.Net and uses Umbraco as the data source for its Lucene index. Lucene has been a part of Umbraco from the early days and powers the backoffice search.
 
 ## The Basics of Examine
-Out of the box Umbraco comes configured to index content and members in the back office for the back office or internal search engine that appears in the header. As Examine is configuration driven you can quickly modify or set up indexes and searchers. The best place to start is with an index set.
+Out of the box Umbraco comes configured to index content and members in the backoffice for the backoffice or internal search engine that appears in the header. As Examine is configuration driven you can quickly modify or set up indexes and searchers. The best place to start is with an index set.
 
 You configure an index set in the /config/examineIndex.config file. This file defines our indexes. As mentioned earlier, there are two internal default indexes configured in this file, and they are called "InternalIndexSet" and "InternalMemberIndexSet". Index sets are extremely easy to set up. The quickest way to get your index set up and running is with a single line of code.
 

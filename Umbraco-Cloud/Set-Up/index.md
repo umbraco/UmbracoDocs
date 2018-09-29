@@ -11,13 +11,14 @@ Articles about configuring various settings on your project, as well as managing
  - [Adding team members](Team-Members/)
  - [SMTP Settings](SMTP-settings/)
  - [Manage domains and certificates](Manage-domains/)
+ - [Manage environments](Manage-Environments/)
 
 ## Working with your Umbraco Cloud project
 
 Articles about how to work locally with your Umbraco Cloud project.
 
  - [Working with your site locally](Working-Locally/)
- - [Working with Visual Studio](Visual-Studio/)
+ - [Working with Visual Studio](Working-With-Visual-Studio/)
  - [Working with a Mac](Working-with-UaaS-Cli/)
 
 ## Other topics

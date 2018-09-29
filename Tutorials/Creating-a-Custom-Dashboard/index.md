@@ -31,7 +31,7 @@ So all the steps we will go through:
 This tutorial uses AngularJS with Umbraco, so it does not cover AngularJS itself, there are tons of resources on that already here:
 
 - [egghead.io](https://egghead.io/courses/angularjs-fundamentals)
-- [angularjs.org/tutorial](http://docs.angularjs.org/tutorial)
+- [angularjs.org/tutorial](https://docs.angularjs.org/tutorial)
 - [Pluralsight](https://www.pluralsight.com/paths/angular-js)
 
 There are a lot of parallels with Creating a Property Editor, the tutorial '[Creating a Property Editor Tutorial](../../Tutorials/creating-a-property-editor/index.md)' is very much worth a read through too.
@@ -168,7 +168,7 @@ If all is setup fine we should now receive the 'Hello world' alert every time th
 
 ### Going further - Umbraco Angular Services and Directives
 
-Umbraco has a fine selection of angular directives, resources and services that you can use in your custom property editors and dashboards, the details are here: https://our.umbraco.org/apidocs/ui/#/api
+Umbraco has a fine selection of angular directives, resources and services that you can use in your custom property editors and dashboards, the details are here: https://our.umbraco.com/apidocs/ui/#/api
 
 For this example it would be nice to welcome the editor by name (Umbraco is a place where everybody knows your name...), to achieve this we can use the **userService** here to customise our dashboard welcome message and increase friendliness:
 
@@ -306,7 +306,7 @@ and we should have a list of recently saved content and media:
 
 ## I know what you want to do today
 
-One of the key user journeys an editor will make in the back office is to create a new thing of some sort, and if it is a person's job to create new blog entries in the same section two or three times a day, why not create them some handy shortcuts to achieve these common tasks:
+One of the key user journeys an editor will make in the backoffice is to create a new thing of some sort, and if it is a person's job to create new blog entries in the same section two or three times a day, why not create them some handy shortcuts to achieve these common tasks:
 
 We can use the knowledge that by convention a link to 'edit a page' (as used above) when passed the additional querystring parameters doctype=alias and create=true, can be made to present the user with a brand new content item of the alias type to create within the section.
 

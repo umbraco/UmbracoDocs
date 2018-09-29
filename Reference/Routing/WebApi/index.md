@@ -8,7 +8,7 @@ Related links:
 * [Umbraco api authorization](authorization.md)
 
 ## What is Web API?
-The Microsoft Web API reference can be found [here](http://www.asp.net/web-api) - *"ASP.NET Web API is a framework that makes it easy to build HTTP services that reach a broad range of clients, including browsers and mobile devices. ASP.NET Web API is an ideal platform for building RESTful applications on the .NET Framework."*
+The Microsoft Web API reference can be found [here](https://www.asp.net/web-api) - *"ASP.NET Web API is a framework that makes it easy to build HTTP services that reach a broad range of clients, including browsers and mobile devices. ASP.NET Web API is an ideal platform for building RESTful applications on the .NET Framework."*
 
 Essentially it's a great platform for building REST services.
 
@@ -48,7 +48,7 @@ All controller class names must be suffixed with "**Controller**" and inherit fr
 
 ### Locally declared controller
 
-This is the most common way to create an Umbraco Api controller, you simply inherit from the class `Umbraco.Web.WebApi.UmbracoApiController` and that is all. You will of course need to follow the guidelines specified by Microsoft for creating a Web Api controller, documentation can be found [here](http://www.asp.net/web-api).
+This is the most common way to create an Umbraco Api controller, you simply inherit from the class `Umbraco.Web.WebApi.UmbracoApiController` and that is all. You will of course need to follow the guidelines specified by Microsoft for creating a Web Api controller, documentation can be found [here](https://www.asp.net/web-api).
 
 Example:
 
@@ -89,7 +89,7 @@ For more information about areas, Urls and routing see the [routing section](rou
 
 ## Backoffice controllers
 
-If you are creating a controller to work within the Umbraco back office then you will need to ensure that it is secured  properly by inheriting from: `UmbracoAuthorizedApiController` or `UmbracoAuthorizedJsonController`. This controller type will auto-route your controller like the above examples except that it will add another Uri path: 'backoffice'. For example:
+If you are creating a controller to work within the Umbraco backoffice then you will need to ensure that it is secured  properly by inheriting from: `UmbracoAuthorizedApiController` or `UmbracoAuthorizedJsonController`. This controller type will auto-route your controller like the above examples except that it will add another Uri path: 'backoffice'. For example:
 
 *~/Umbraco/backoffice/Api/[YourControllerName]*
 *~/Umbraco/backoffice/[YourAreaName]/[YourControllerName]*

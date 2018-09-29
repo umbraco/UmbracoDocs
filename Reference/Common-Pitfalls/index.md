@@ -204,7 +204,7 @@ A large problem with the performance of dynamics is having to parse string synta
 `@CurrentPage.Children.Where("DocumentTypeAlias == \"DatatypesFolder\" && Visible")` and turn that into something that is compilable when 
 instead it can just be written as something that compiles
 
-__NOTE about the Query Builder:__ _We are aware that the Query Builder in the template editor of the back office currently 
+__NOTE about the Query Builder:__ _We are aware that the Query Builder in the template editor of the backoffice currently 
 uses dynamics. We will eventually replace the query logic in this dialog with strongly typed model (Models Builder) syntax to follow
 these best practices. In the meantime if you are concerned about performance and have a large site then we'd recommend if you use the 
 Query Builder to update its results with strongly typed syntax._

@@ -1,6 +1,6 @@
 # Language Files & Localization
 
-Language files are used to translate the Umbraco back office user interface so that end users can use Umbraco in their native language. This is particularly important for content editors who do not speak English.
+Language files are used to translate the Umbraco backoffice user interface so that end users can use Umbraco in their native language. This is particularly important for content editors who do not speak English.
 
 If you are a package developer, [see here for docs on how to include translations for your own package](Language-Files-For-Packages/index.md).
 
@@ -90,7 +90,7 @@ The language files are fairly simple XML files with a straight-forward layout as
 	<language alias="en" intName="English (UK)" localName="English (UK)" lcid="" culture="en-GB">
 		<creator>
 			<name>The Umbraco community</name>
-			<link>http://our.umbraco.org</link>
+			<link>https://our.umbraco.com</link>
 		</creator>
 		<area alias="actions">
 			<key alias="assignDomain">Culture and Hostnames</key>
@@ -106,7 +106,7 @@ In the above example of a missing translation for "assignDomain", locate this st
 	<language alias="es" intName="Spanish" localName="español" lcid="10" culture="es-ES">
 		<creator>
 	    	<name>The Umbraco community</name>
-	    	<link>http://our.umbraco.org</link>
+	    	<link>https://our.umbraco.com</link>
 		</creator>
 		<area alias="actions">
 		    <key alias="assignDomain">Administrar hostnames</key>

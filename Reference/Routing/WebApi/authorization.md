@@ -2,25 +2,25 @@
 
 _This section will describe how to secure your Umbraco Api controllers based on a users membership_ 
 
-## Authorizing for the back office
+## Authorizing for the backoffice
 
 ### Inheriting from UmbracoAuthorizedApiController
 
-Probably the easiest way to ensure your controller is secured for only back office users is to inherit from `Umbraco.Web.WebApi.UmbracoAuthorizedApiController`. This is essentially the same as applying the `UmbracoAuthorizeAttribute` to your controller (see below). We also expose the Umbraco user property `User UmbracoUser {get;}` on this base controller as well.
+Probably the easiest way to ensure your controller is secured for only backoffice users is to inherit from `Umbraco.Web.WebApi.UmbracoAuthorizedApiController`. This is essentially the same as applying the `UmbracoAuthorizeAttribute` to your controller (see below). We also expose the Umbraco user property `User UmbracoUser {get;}` on this base controller as well.
 
 The `UmbracoAuthorizedApiController` is automatically routed.  Check out the [routing documentation](../Authorized/index.md) for more information on this topic.
 
 ### Using UmbracoAuthorizeAttribute
 
-To secure your controller based on back office membership use the attribute: `Umbraco.Web.WebApi.UmbracoAuthorizeAttribute`. 
+To secure your controller based on backoffice membership use the attribute: `Umbraco.Web.WebApi.UmbracoAuthorizeAttribute`. 
 
 *It's important to note the namespace since we have another class called UmbracoAuthorizeAttribute in a different namespace that is used for MVC.*
 
-This attribute has no parameters it simply ensures that a valid back office user is logged in.
+This attribute has no parameters it simply ensures that a valid backoffice user is logged in.
 
 **Examples:**
 
-This will only allow a logged in back office user to to access the GetAllProducts action:
+This will only allow a logged in backoffice user to to access the GetAllProducts action:
 
 	public class ProductsApiController : UmbracoApiController
 	{

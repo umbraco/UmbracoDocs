@@ -25,7 +25,7 @@ Since Partial View Macros are just a normal MVC partial view, their file extensi
 
 	Umbraco.Web.Macros.PartialViewMacroPage
 
-Therefore all files will contain this header (which is done automatically for you if creating Partial View Macros via the Umbraco back office):
+Therefore all files will contain this header (which is done automatically for you if creating Partial View Macros via the Umbraco backoffice):
 
 	@inherits Umbraco.Web.Macros.PartialViewMacroPage
 

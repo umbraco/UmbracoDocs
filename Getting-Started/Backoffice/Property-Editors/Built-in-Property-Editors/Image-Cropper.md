@@ -166,7 +166,7 @@ Or iterate through them:
 
 
 ## Powered by ImageProcessor
-[ImageProcessor](http://imageprocessor.org/) is an amazing project for modifying and processing images in a simple an efficient manner.
+[ImageProcessor](https://imageprocessor.org/) is an amazing project for modifying and processing images in a simple an efficient manner.
 
 We bundle this library in Umbraco 7.1+ and you can therefore take full advantage of all its features out-of-the-box, like sharping, blurring, cropping, rotating and so.
 
@@ -180,7 +180,7 @@ We bundle this library in Umbraco 7.1+ and you can therefore take full advantage
 
     <img src='@CurrentPage.GetCropUrl("image", "banner")&blur=11&sigma=1.5&threshold=10' />
 
-Using ImageProcessors built-in [gaussian blur](http://imageprocessor.org/imageprocessor-web/imageprocessingmodule/gaussianblur/)    
+Using ImageProcessors built-in [gaussian blur](https://imageprocessor.org/imageprocessor-web/imageprocessingmodule/gaussianblur/)    
 
 ## Upload property replacement
 
