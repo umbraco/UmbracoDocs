@@ -32,24 +32,18 @@ This allows you to setup a maximum value. If you will always need a maximum valu
 By casting the output as an int it's possible for you to do mathematical operations with the value.
 
     @{
-        int price = 0;
-        int vat = 0.25;
-        int total = 0;
-        int vatTotal = 0;
+        int students = Model.Content.HasValue("students") ? Model.Content.GetPropertyValue<int>("students") : 0;
+        int teachers = Model.Content.HasValue("teachers") ? Model.Content.GetPropertyValue<int>("teachers") : 0;
+        int totalTravellers = students + teachers;
 
-        if(Model.Content.HasValue("price")){
-            vatTotal = price * vat;
-            total = price + vatTotal;
-
-            <p>@total</p>
-        }
+        <p>@totalTravellers</p>
     }
 
 ### Rendering the out casting to a string
 You can also render the output by casting it to a string, which means you will not be able to do mathematical operations
 
     @{
-        if(Model.Content.HasValue("amount")){
-            <p>@(Model.Content.GetPropertyValue<string>("amount"))</p>
+        if(Model.Content.HasValue("students")){
+            <p>@(Model.Content.GetPropertyValue<string>("students"))</p>
         }
     }
