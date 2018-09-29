@@ -30,6 +30,6 @@ This allows you to setup a maximum value. If you will always need a maximum valu
 
     @{
         if(Model.Content.HasValue("amount")){
-            <p>@(Model.Content.GetPropertyValue<string>("amount"))</p>
+            <p>@(Model.Content.GetPropertyValue<int>("amount"))</p>
         }
     }
