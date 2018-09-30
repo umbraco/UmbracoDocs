@@ -68,7 +68,15 @@ Example usage of the **EditorModelEventManager** '*SendingContentModel*' event -
           Raised just before the editor model is sent for editing in the member section.<br />
         NOTE: 'e' contains a model property of *Umbraco.Web.Models.ContentEditing.MemberDisplay* type which in turn contains the tabs and properties of the elements about to be loaded for editing 
         </td>
-    </tr>   
+    </tr> 
+	<tr>
+     <td>SendingUserModel (v7.7.10+)</td>
+        <td>(HttpActionExecutedContext sender,  EditorModelEventArgs&ltUserDisplay&gt; e)</td>
+        <td>
+          Raised just before the editor model is sent for editing in the user section.<br />
+        NOTE: 'e' contains a model property of *Umbraco.Web.Models.ContentEditing.UserDisplay* type which in turn contains the tabs and properties of the elements about to be loaded for editing 
+        </td>
+    </tr>     
    </table>
 
 ### EditorModelEventArgs ###
