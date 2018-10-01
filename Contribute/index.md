@@ -14,7 +14,7 @@ There are two ways to contribute to the Umbraco Documentation:
 - [Creating a pull request](#creating-a-pull-request)
 
 ### Creating an issue
-The Umbraco Documentation uses [Github issues]((https://github.com/umbraco/UmbracoDocs/issues)) to manage issues with the documentation.
+The Umbraco Documentation uses [Github issues](https://github.com/umbraco/UmbracoDocs/issues) to manage issues with the documentation.
 You are very welcome to create an issue if you feel some documentation is missing or wrong, the issue board is also used for discussions about possible improvements or ways to deal with something in the documentation. You can also find a button in the top right corner of every page in the documentation itself that looks like this:
 ![Our issue button](images/report-issue.png)
 
