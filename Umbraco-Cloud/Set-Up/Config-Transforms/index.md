@@ -10,11 +10,11 @@ Config Transforms are a way to transform your config files without changing the 
 
 To transform a config file, you need to create a new file in the same folder with the following naming convention: `{config-file name}.{environment}.xdt.config`.
 
-If you want to do a transform on your `web.config` file for the Live environment on your project, the config transform you need to create will look like this:
+If you want to do a transform on your `Web.config` file for the Live environment of your project, the config transform you need to create will look like this:
 
-`web.live.xdt.config`
+`Web.live.xdt.config`
 
-The `{environment}` part needs to be replaced with the target environment, for which there's currently 3 possibilities for each project:
+The `{environment}` part needs to be replaced with the target environment, for which there are currently 3 possibilities for each project:
 
 1. `development`
 2. `staging`
@@ -22,11 +22,11 @@ The `{environment}` part needs to be replaced with the target environment, for w
 
 This file needs to be created on a local clone of your project, as this will ensure that the file is added to the project repository.
 
-When the file is deployed to the Live environment the transforms will be applied to the `web.config` file in the `wwwroot` folder. In the case that you also have a Development and/or Staging environment, the `web.live.xdt.config` will **only** transform the `web.config` on the Live environment.
+When the file is deployed to the Live environment the transforms will be applied to the `Web.config` file in the `wwwroot` folder. In the case that you also have a Development and/or Staging environment, the `Web.live.xdt.config` will **only** transform the `Web.config` on the Live environment.
 
-For each deploy, the Umbraco Cloud engine searches for all of the `.{environment}.xdt.config` files in your site and apply the transforms. This means you can transform any config file, for example `~/config/Dashboard.config` by creating a `~/config/Dashboard.live.xdt.config` file. Just make sure the transform file follows the naming convention and it exists in the same folder as the config file you want to transform.
+For each deploy, the Umbraco Cloud engine searches for all of the `.{environment}.xdt.config` files in your site and applies the transforms. This means you can transform any config file, for example `~/config/Dashboard.config` by creating a `~/config/Dashboard.live.xdt.config` file. Just make sure the transform file follows the naming convention and it exists in the same folder as the config file you want to transform.
 
-**Note**: Using config transforms to remove and/or add sections to config files is currently only possible for the `web.config` file.
+**Note**: Using config transforms to remove and/or add sections to config files is currently only possible for the `Web.config` file.
 
 ## Syntax and testing
 
@@ -77,7 +77,7 @@ Whenever you deploy changes to any of your environments we force some config tra
 
 ### Web.config forced transforms
 
-These are the transforms we do on the root `web.config` file regardless of the custom transforms you might have specified above, we enforce these transforms always.
+These are the transforms we do on the root `Web.config` file regardless of the custom transforms you might have specified above, we enforce these transforms always.
 
 On live environments only:
 
@@ -93,7 +93,7 @@ On all other environments:
 - We set the smtp `host=""` if the host was set to `127.0.0.1`
 
 
-Note that for the `compilation debug` and the `customErrors mode` there is a toggle in the Umbraco Cloud portal to temporarily toggle the opposite setting. This will change the debug/customErrors mode until the next deploy to this environment on each deploy the forced transforms will be performed again.
+Note that for the `compilation debug` and the `customErrors mode` there is a toggle in the Umbraco Cloud portal to temporarily toggle the opposite setting. This will change the debug/customErrors mode until the next deploy to this environment. On each deploy the forced transforms will be performed again.
 
 ![Toggle debug mode](images/toggle-debug.png)
 
@@ -101,12 +101,16 @@ Note that for the `compilation debug` and the `customErrors mode` there is a tog
 It is possible to apply config transforms for specific child sites from a baseline. For more info see [Baseline Configuration Files documentation](https://our.umbraco.com/documentation/Umbraco-Cloud/Getting-Started/Baselines/Configuration-files/)
 
 ## Including transforms in Umbraco packages
-For package developers it can be useful to add a config transform that needs to happen on each environment, for example if you're making a package called uPaintItBlack where you want to set an AppSetting in web.config. The AppSetting in `development` should be _a red door_ so you set the AppSetting value to `"red"`. On `staging` it should be _a green sea_ so you set the AppSetting to `"green"` (or to _a deeper `"blue"`_). Of course on `live` you've painted it black so you set it to `"black"`. 
+For package developers it can be useful to add a config transform that needs to happen on each environment. As an example, let's say we're making a package called **EnvironmentColor** where you want to set an AppSetting in Web.config to a different color in each environment, so you can have it be `red` on the Live environment, `orange` on Staging and `yellow` on Development.
 
-In that case you can make 3 transform files, the filename needs to start with something that's specific to your plugin, it can be any word, for example `RollingStones` or `uPaintItBlack`:
+We need to create 3 transform files named after the package - a good convention is to use your company name and the package name to make sure that even if someone else creates a package with the same name, there won't be any clashes on the filenames. We'll use the name **AcmeEnvironmentColor**:
 
-- `~/uPaintItBlack.web.development.xdt.config`
-- `~/uPaintItBlack.web.staging.xdt.config`
-- `~/uPaintItBlack.web.live.xdt.config`
+- `~/AcmeEnvironmentColor.Web.development.xdt.config`
+- `~/AcmeEnvironmentColor.Web.staging.xdt.config`
+- `~/AcmeEnvironmentColor.Web.live.xdt.config`
 
-Again, these type of prefixed files can be placed next to any other file so if you also need to transform `~/config/Dashboard.config` specifically for your plugin then you can create `~/config/uPaintItBlack.Dashboard.{environment}.xdt.config`.
+Again, these types of prefixed files can be placed next to any other file so if you also need to transform `~/config/Dashboard.config` specifically for your package, then you can create three transform files for that as well, e.g.:
+
+- `~/config/AcmeEnvironmentColor.Dashboard.development.xdt.config`
+- `~/config/AcmeEnvironmentColor.Dashboard.staging.xdt.config`
+- `~/config/AcmeEnvironmentColor.Dashboard.live.xdt.config`
