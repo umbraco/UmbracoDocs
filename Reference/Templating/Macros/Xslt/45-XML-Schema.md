@@ -66,8 +66,8 @@ XSLT file from the old to the new schema:
 
 However if you wish to revert back to the old XML Schema you need to
 update the ```UseLegacyXmlSchema``` setting in the
-```config/UmbracoSettings.config``` file, [make sure to read this wiki
+```config/UmbracoSettings.config``` file, make sure to read this wiki
 page for a step-by-step
-guide](/wiki/reference/xslt/45-xml-schema/switching-between-old-and-new-schema).
+guide.
 
 Here is a [topic on why Umbraco uses the new xml schema](https://our.umbraco.com/forum/developers/xslt/9665-Why-a-new-XML-Schema)
