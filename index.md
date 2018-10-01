@@ -9,14 +9,14 @@
 		<a href="Getting-Started/" class="docs-section">
 			<img src="images/icon-getting-started.png" alt="">
 			<h2>Getting Started</h2>
-			<p>All the basics of using Umbraco v7. From your first local installation, to a fully functional customized CMS.</p>
+			<p>All the basics of using Umbraco v7 - from your first local installation to a fully functional customized CMS.</p>
 		</a>
 	</div>
 	<div class="col-sm-6">
 		<a href="Implementation/" class="docs-section">
 		<img src="images/icon-implementation.png" alt="">
 			<h2>Implementation</h2>
-			<p>Get an overview of how the Umbraco pipeline is structured. Learn how to write queries and use the APIs.</p>
+			<p>Get an overview of how the Umbraco pipeline is structured and learn how to write queries and use the APIs.</p>
 		</a>
 	</div>
 </div>
@@ -45,7 +45,7 @@
 Step by step tutorials.
 
 ### [Umbraco Add ons](Add-ons/index.md)
-Everything you need to know about Forms and Courier, the two premium packages developed and supported by HQ.
+Everything you need to know about Forms and Courier - the two premium packages developed and supported by HQ.
 
 ### [Development Guidelines](Development-Guidelines/index.md)
 How to work with the Umbraco codebase.
@@ -54,7 +54,7 @@ How to work with the Umbraco codebase.
 Cheatsheets for easy overview of different areas like the Razor API and Views syntax.
 
 ### [Umbraco Cloud](Umbraco-Cloud/)
-How to use Umbraco Cloud: Get started, set up your Umbraco Cloud project, deploy and troubleshoot issues.
+How to use Umbraco Cloud: Get started, set up your Umbraco Cloud project and deploy and troubleshoot issues.
 
 ---
 
