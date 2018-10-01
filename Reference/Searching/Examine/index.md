@@ -16,6 +16,10 @@ Get up and running with Examine straight away with this quick start guide
 
 Describes the different terms and objects used in Examine such as Indexers, Searchers, Index Set, etc...
 
+## [Examine Management in the back-office](examine-management.md)
+
+Provides an overview of the available Examine functionality available directly within the Umbraco back-office
+
 ## [Overview & Explanation - "Examining Examine by Peter Gregory"](overview-explanation.md)
 
 A detailed overview from top to bottom of how to use Examine
