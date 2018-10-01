@@ -1,5 +1,7 @@
 # Custom MVC Routes
 
+**Umbraco 7.3.0+**
+
 _Documentation about how to setup your own custom controllers and routes that need to exist alongside of the Umbraco pipeline_
 
 ## Where to put your routing logic?
