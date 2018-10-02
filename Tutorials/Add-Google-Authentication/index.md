@@ -22,7 +22,7 @@ Developers who won't mind configuring a Google API, running the solution in Visu
 Here is what you will need for this tutorial:
 - [Visual Studio](https://visualstudio.microsoft.com/) installed
 - A [Google](https://myaccount.google.com/) account
-- A working [Umbraco Solution](https://our.umbraco.com/documentation/Getting-Started/)
+- A working [Umbraco solution](../../Getting-Started/)
 
 ## Setting up a Google OAuth API
 
