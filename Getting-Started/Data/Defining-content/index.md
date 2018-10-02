@@ -26,7 +26,7 @@ You can also use compositions to create a new document type. Compositions allows
 
 ![Creating a Compositions](images/Doc-Type-Composition-Create.png)
 
-The grayed out Document Type Composition Master is a parent to the particular Document Type we are looking at. By default, this means that this Document Type will inherit the properties from the Master Document Type and unless we move it this is what you get. The other document type that is check, Banner, is just using the compositions as intedned which aslo says we want ht eproerties setup on the Banner Document Type to be on this Document type as well.
+The grayed out Document Type Composition Master is a parent to the particular Document Type we are looking at. By default, this means that this Document Type will inherit the properties from the Master Document Type and unless we move it to another location, this is how it will stay. The other document type that is checked is the Banner type. This means that the Document will also inherit the properties from the Banner Type into this Document Type.
 
 ### Defining the root node
 First we're prompted to give the Document Type a name. This first Document Type will be the root node for our content, name it "Home".
