@@ -68,7 +68,7 @@ This section continues from where we left off but covers the installation and co
 
 1. After deciding whether to skip or install a starter kit you are finished!
 
-1. Now click the **Set up your new website** to be logged into the Umbraco back-office.
+1. Now click the **Set up your new website** to be logged into the Umbraco backoffice.
 
 	![Web Installer - Install Complete](images/WebMatrix/web-finish.png)
 
