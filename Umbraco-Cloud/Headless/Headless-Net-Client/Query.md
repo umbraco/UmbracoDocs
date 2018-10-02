@@ -52,7 +52,7 @@ using Umbraco.Headless.Client.Net.Models;
 namespace Our.Umbraco.Headless.Examples.Models
 {
     // The alias of our Document Type is "wine" and matching isn't case sensitive
-    public class Wine : ContentItem
+    public class Wine : ContentBase
     {
         // we can add the custom properties from our document type 
         // as Strongly Typed .NET Properties
