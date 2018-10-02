@@ -11,20 +11,20 @@ Below you can see the settings that affect the Umbraco backoffice (v7.8+)
 
 ### Tours
 
-The section is used for controlling the backoffice tours functionality
+The section is used for controlling the backoffice tours functionality.
 
 	<backOffice>
         <tours enable="true"></tours>
     </backOffice>
 
-There is only one supported attribute on the tours element:
+There is only one supported attribute on the tours element :
 
 **`enable`**
 By default this is set to true. Set it to false to turn off [backoffice tours](../../../Extending/Backoffice-Tours/index.md)
 
 ### Obsolete data types
 
-This section is used for controlling whether or not the data types marked as obsolete should be visible in the dropdown when creating new data types
+This section is used for controlling whether or not the data types marked as obsolete should be visible in the dropdown when creating new data types.
 
     <showDeprecatedPropertyEditors>false</showDeprecatedPropertyEditors>
 
@@ -602,7 +602,7 @@ This section configures...
 
 **disableFindContentByIdPath**: when true, urls such as /1234 do *not* find content with ID 1234.
 
-**disableRedirectUrlTracking**: when you move and rename pages in Umbraco, 301 permanent redirects are automatically created, set this to true if you do not want this behavior 
+**disableRedirectUrlTracking**: when you move and rename pages in Umbraco, 301 permanent redirects are automatically created, set this to true if you do not want this behavior.
 
 **Note:** The URL tracking feature (and thus, this setting) is only available on Umbraco 7.5.0 and higher.
 
