@@ -20,9 +20,9 @@ Developers who won't mind configuring a Google API, running the solution in Visu
 
 ### Prerequisites
 Here is what you will need for this tutorial:
-- Visual studio installed
-- A Google account
-- A working Umbraco solution
+- [Visual Studio](https://visualstudio.microsoft.com/) installed
+- A [Google](https://myaccount.google.com/) account
+- A working [Umbraco solution](../../Getting-Started/)
 
 ## Setting up a Google OAuth API
 
@@ -30,7 +30,7 @@ The first thing to do is set up a Google API. To do this you need to go to https
 
 First thing to do is to add a new API, you may have some already if you are using Firebase or any other Google product, but just click the + at the top:
 
-![Add new API](images/addNewAPi.png)
+![Add new API](images/addNewApi.png)
 
 After you have given your new API a name and gone through the basic setup you need to add an API from the API library on the lefthand menu. Find the Google+ API and Enable it:
 
