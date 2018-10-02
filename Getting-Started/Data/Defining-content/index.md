@@ -24,6 +24,7 @@ _You can also choose to create a Document Type without a template and create fol
 
 You can also use compositions to create a new document type. Compositions allows you to inhert properties from other tabs. When using a mixed setup, you can take advantage of nesting and use compositions by visiting the Structure tab. A checklist like this should appear:
 ![Creating a Compositions](images/Doc-Type-Composition-Create.png)
+
 The grayed out Document Type Composition Master is a parent to the particular Document Type we are looking at. By default, this means that this Document Type will inherit the properties from the Master Document Type and unless we move it this is what you get. The other document type that is check, Banner, is just using the compositions as intedned which aslo says we want ht eproerties setup on the Banner Document Type to be on this Document type as well.
 
 ### Defining the root node
