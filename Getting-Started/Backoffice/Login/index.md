@@ -1,4 +1,12 @@
 # Login screen
+To access the backoffice, you will need to login. You can do this by adding `/umbraco` to the end of your website address e.g. http://www.myUmbracoWebsite.com/umbraco
+
+The login screen will look similiar to this. 
+
+![Login screen](images/umbraco7-6_login.jpg "The login screen has a greeting, username/password field and optionally a 'Forgotten password' link.")
+The login screen has a greeting, username/password field and optionally a 'Forgotten password' link.
+
+Below, you will find instructions on how to customise the login screen. 
 
 ## Greeting
 The login screen features a greeting, which you can personalize by changing the language file of your choice. For example for en-US you would add the following keys to: `~/Config/Lang/en-US.user.xml`
