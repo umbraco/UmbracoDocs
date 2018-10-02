@@ -73,10 +73,10 @@ and if you want to be able to sort search results by this field add EnableSortin
 ## Example Default ExamineIndex.Config file
 
     <ExamineLuceneIndexSets>
-      <!-- The internal index set used by Umbraco back-office - DO NOT REMOVE -->
+      <!-- The internal index set used by Umbraco backoffice - DO NOT REMOVE -->
       <IndexSet SetName="InternalIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/Internal/"/>
 
-      <!-- The internal index set used by Umbraco back-office for indexing members - DO NOT REMOVE -->
+      <!-- The internal index set used by Umbraco backoffice for indexing members - DO NOT REMOVE -->
       <IndexSet SetName="InternalMemberIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/InternalMember/">
         <IndexAttributeFields>
           <add Name="id" />

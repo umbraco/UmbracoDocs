@@ -2,7 +2,7 @@
 
 _All JavaScript in the Umbraco core should adhere to these guidelines. The legacy JS code in the core doesn't adhere to these guidelines but should be refactored so that it does._
 
-**All JavaScript in the back-office needs to be in a namespace and defined in a class.**
+**All JavaScript in the backoffice needs to be in a namespace and defined in a class.**
 
 ## Namespaces
 To declare a namespace for your JavaScript class you simply use the following command (as an example to create a namespace called 'Umbraco.Controls'):

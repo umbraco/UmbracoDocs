@@ -12,7 +12,7 @@ These instructions make the following assumptions:
 
 * All web servers can communicate with the database where Umbraco data is stored
 * You are running Umbraco 7.3.0 or above
-* _**You will designate a single server to be the back-office server for which your editors will log into for editing content.**_ Umbraco will not work correctly if the back-office is behind the load balancer.
+* _**You will designate a single server to be the backoffice server for which your editors will log into for editing content.**_ Umbraco will not work correctly if the backoffice is behind the load balancer.
 
 There are three design alternatives you can use to effectively load balance servers:
 
