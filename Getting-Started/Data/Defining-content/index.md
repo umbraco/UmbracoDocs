@@ -22,10 +22,9 @@ Go to the __Settings__ section in the backoffice. On the __Document Types__ node
 ![Creating a Document Type](images/Document-Type-Create.jpg)
 _You can also choose to create a Document Type without a template and create folders to organize your Document Types._
 
-![Creating a Compositions](images/Doc-Type-Composition-Create.png)
 You can also use compositions to create a new document type. Compositions allows you to inhert properties from other tabs. When using a mixed setup, you can take advantage of nesting and use compositions by visiting the Structure tab. A checklist like this should appear:
 ![Creating a Compositions](images/Doc-Type-Composition-Create.png)
-The grayed out Document Type Composition Master is a parent to the particular Document Type we are looking at. By default, this means that this Document Type will inherit the properties from the Master Document Type and unless we move it this is what you get. The other document type that is check, Banner, is just using the compositions as intedned which aslo says we want ht eproerties setup on the Banner Document Type to be on this Document type as well.
+The grayed out Document Type Composition Master is a parent to the particular Document Type we are looking at. By default, this means that this Document Type will inherit the properties from the Master Document Type and unless we move it to another location, this is what you will get. Another document type, Banner, is also checked. This means that we also want the properties setup on the Banner Document Type to be on this Document type as well.
 
 ### Defining the root node
 First we're prompted to give the Document Type a name. This first Document Type will be the root node for our content, name it "Home".
