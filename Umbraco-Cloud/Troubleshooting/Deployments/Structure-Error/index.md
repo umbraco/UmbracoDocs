@@ -4,7 +4,7 @@
 
 > **NOTE:** If your project is using Umbraco Courier, please refer to this article instead: [Schema Mismatches with Courier](../../Courier/Structure-Errors-Courier)
 
-On some occasions, it's possible that you'll encounter collision errors on your Umbraco Cloud environments. This means that two `.uda` files are created for the same entity type. The `.uda` files contain schema for each of your entity types (e.g Document Types, Templates, Macros, Dictionary Items, Data types).
+On some occasions, it's possible that you'll encounter collision errors on your Umbraco Cloud environments. This means that two `.uda` files are created for the same entity. The `.uda` files contain schema data for each of your entities (e.g Document Types, Templates, Macros, Dictionary Items, Data types).
 
 Example:
 
@@ -19,13 +19,13 @@ Example:
         UdaFile: ~/data/revision/document-type__f848c577f02b4ee5aea84f87458072a4.uda
 
 
-In the example above there are two files in the `~/data/revision` folder which contain the same alias, `unique identifier`, for a Document Type. Each file has a different name, but the Document Type they refer to is both `home`. When Deploy tries to create the site structure from these files, it is inspecting each file to try to create a Document Type with a unique alias.
+In the example above there are two files in the `~/data/revision` folder which contain the same alias, for a Document Type. Each file has a different file name due to having a different unique key (UDI), but the Document Type they both contain is `home`. When Deploy tries to create the site structure from these files, it is inspecting each file to try to create a Document Type with the aliases specified.
 
-In the case above, there are two files who share the same alias which leads to a conflict: it's impossible for Deploy to know which is the "correct" file, so it gives up and sends an error back.
+In the case above, there are two files (Document Type representations) who share the same alias which leads to a conflict: it's impossible for Deploy to know which is the "correct" file, so it gives up and sends an error back.
 
 ### Cause
 
-The main cause of this problem is when a Document Type (or Media Type, Data Type, etc) is manually created in two environments using the same alias. 
+The main cause of this problem is when a Document Type (or Media Type, Data Type, etc) is manually created in two environments using the same alias. Since each of the environments are isolated and do not know what the other one is doing until they are syncronized - creating a Document Type in each environment will actually create duplicate Document Types that are considered separate entities even though they look the same and share the same alias in the backoffice of both environments.
 
 If you have two or more Cloud environments, we recommend that you never create or make schema changes directly on the Live or Staging environments. You should work with schema only in your Development environment or even better, your local clone of the project.
 
@@ -34,10 +34,10 @@ If you have two or more Cloud environments, we recommend that you never create o
 In order to fix this problem, you will have to decide which of the two colliding Document Types is the correct one. The error message will give you a lot of details you can use in your investigation:
 
   * The affected entity type (Document Type, Data Type, Member type, etc.)
-  * The `unique identifier` (alias)
-  * A list of the files containing the same `unique identifier`
+  * The alias of the entity which has duplicated `.uda` files
+  * A list of the files containing the same alias
 
-Let’s imagine that we have a project with two Umbraco Cloud environments (Development and Live) and a local environment. A Document Type has been created on Live and a Document Type with the same unique identifier has also been created on Development. 
+Let’s imagine that we have a project with two Umbraco Cloud environments (Development and Live) and a local environment. A Document Type has been created on Live and a Document Type with the same alias has also been created on Development. 
 
 ![Before extraction error](images/visualization1.png)
 
