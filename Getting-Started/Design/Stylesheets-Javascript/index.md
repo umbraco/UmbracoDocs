@@ -1,6 +1,6 @@
-#Working with stylesheets and javascript
+# Working with stylesheets and javascript
 
-##Bundling & Minification for JavaScript and CSS
+## Bundling & Minification for JavaScript and CSS
 
 You can of course use whatever tools you are comfortable with for bundling & minification but it's worth 
 noting that Umbraco ships with the ClientDependency Framework which offers simple runtime bundling & minification.
@@ -21,4 +21,4 @@ You can bundle and minify as follows in a view template file.
 		@Html.RenderJsHere()
 	</head>
 	
-Full details of the ClientDependency Framework can be found here: [http://github.com/Shandem/ClientDependency](http://github.com/Shandem/ClientDependency)	
+Full details of the ClientDependency Framework can be found here: [https://github.com/Shandem/ClientDependency](https://github.com/Shandem/ClientDependency)	

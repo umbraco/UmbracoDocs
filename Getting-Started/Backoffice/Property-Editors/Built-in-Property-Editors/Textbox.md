@@ -1,33 +1,34 @@
-#Textbox
+# Textbox
 
 `Returns: String`
 
 Textbox is a simple HTML input control for text
 
-##Data Type Definition Example
+## Data Type Definition Example
 
 ![Textbox Data Type Definition](images/Textbox-DataType.png)
 
-##Settings
+## Settings
 
-##Content Example 
+## Content Example:
 
 ![Textbox Content Example](images/Textbox-Content.png)
 
-##MVC View Example
-
-###Typed:
+## MVC View Example:
 
 	@{
 	   if (Model.Content.HasValue("pageTitle")){
-	       <p>@Model.Content.GetPropertyValue<string>("pageTitle")</p>
+	       <p>@(Model.Content.GetPropertyValue<string>("pageTitle"))</p>
 	   } 
 	}
 
-###Dynamic: 
 
-	@{       
-	   if (CurrentPage.HasValue("pageTitle")){
-	       <p>@CurrentPage.pageTitle</p>
-	   } 	       
+### Dynamic (Obsolete):
+
+See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
+	
+	@{       	
+	   if (CurrentPage.HasValue("pageTitle")){	
+	       <p>@CurrentPage.pageTitle</p>	
+	   } 	       	
 	}

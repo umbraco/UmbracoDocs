@@ -1,10 +1,10 @@
-#Language Files & Localization
+# Language Files & Localization
 
-Language files are used to translate the Umbraco back office user interface so that end users can use Umbraco in their native language. This is particularly important for content editors who do not speak English.
+Language files are used to translate the Umbraco backoffice user interface so that end users can use Umbraco in their native language. This is particularly important for content editors who do not speak English.
 
 If you are a package developer, [see here for docs on how to include translations for your own package](Language-Files-For-Packages/index.md).
 
-##Supported Languages
+## Supported Languages
 Current languages that are included in the core are:
 
 - English (UK)
@@ -25,21 +25,21 @@ Current languages that are included in the core are:
 - Swedish
 - Chinese (Simple)
 
-##Where to find the language files
+## Where to find the language files
 
-###Core language files
+### Core language files
 The core Umbraco language files are found at the following location within the Umbraco source:
 
 	Umbraco-CMS/src/Umbraco.Web.UI/Umbraco/Config/Lang/
 	
 These language files are the ones shipped with Umbraco and should not be modified. 
 
-###Package language files
+### Package language files
 If you are a package developer, [see here for docs on how to include translations for your own package](Language-Files-For-Packages/index.md), package language files are located in:
 
 	~/app_plugins/mypackage/lang/{language}.xml
 
-###User language files
+### User language files
 If you want to override Umbraco core translations or translations shipped with packages, you can do that too, these files are located here:
 
 	~/config/lang/{language}.user.xml
@@ -51,26 +51,32 @@ Using core or custom language keys from your code:
 
 
 ### From .net
-`Services` are available in most Umbraco baseclasses like Controllers and UserControls, from there, use TextService to localize string with format [area]/[key]:
+`Services` are available in most Umbraco base classes like Controllers and UserControls, from there, use TextService to localize string with format [area]/[key]:
 
     using Umbraco.Core.Services;
     var localizedLabel = Services.TextService.Localize("dialog/myKey");
 
 
 ### From Angular
-In the umbraco backoffice UI, labels can be localized with the `localize` directive:
+In the Umbraco backoffice UI, labels can be localized with the `localize` directive:
 
     <button>
         <localize key="dialog_myKey">Default value</localize>
     </button>
+    
+The localize directive can also be used as an attribute like below where the value of the title attribute is then populated with the dictionary key "title_name" from the language file using "@title_name".
 
-Or from a controller by using the `LocalizationService` which returns a async translation in a promise like so:
+    <button localize="title" title="@title_name">
+        <localize key="dialog_myKey">Default value</localize>
+    </button>
+
+Or from a controller by using the `LocalizationService` which returns an async translation in a promise:
 
     localizationService.localize("dialog_myKey").then(function(value){
 	                element.html(value);
     });
 
-##Help keep the language files up to date
+## Help keep the language files up to date
 
 As Umbraco is a continually evolving product it is inevitable that new text is added on a fairly regular basis to the English language version of these files and this may mean that some of the above languages are no longer up to date.
 
@@ -84,7 +90,7 @@ The language files are fairly simple XML files with a straight-forward layout as
 	<language alias="en" intName="English (UK)" localName="English (UK)" lcid="" culture="en-GB">
 		<creator>
 			<name>The Umbraco community</name>
-			<link>http://our.umbraco.org</link>
+			<link>https://our.umbraco.com</link>
 		</creator>
 		<area alias="actions">
 			<key alias="assignDomain">Culture and Hostnames</key>
@@ -100,7 +106,7 @@ In the above example of a missing translation for "assignDomain", locate this st
 	<language alias="es" intName="Spanish" localName="español" lcid="10" culture="es-ES">
 		<creator>
 	    	<name>The Umbraco community</name>
-	    	<link>http://our.umbraco.org</link>
+	    	<link>https://our.umbraco.com</link>
 		</creator>
 		<area alias="actions">
 		    <key alias="assignDomain">Administrar hostnames</key>

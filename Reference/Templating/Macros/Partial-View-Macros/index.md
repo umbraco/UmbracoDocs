@@ -1,4 +1,4 @@
-#Partial View Macros
+# Partial View Macros
 
 _Partial view macros are the recommended macro type to use in Umbraco. They work in both MVC and Webforms and use the unified query syntax that is available via the `UmbracoHelper`_
 
@@ -11,7 +11,7 @@ All partial view macro views inherit from `Umbraco.Web.Macros.PartialViewMacroPa
 The model type for a partial view macro is `Umbraco.Web.Models.PartialViewMacroModel` which contains all of the properties you will need to
 render out content as well as some additional properties about the macro itself: `MacroName`, `MacroAlias`, `MacroId`, and `MacroParameters`. 
 
-##File information
+## File information
 
 By default Partial View Macros are stored in this folder: 
 
@@ -25,7 +25,7 @@ Since Partial View Macros are just a normal MVC partial view, their file extensi
 
 	Umbraco.Web.Macros.PartialViewMacroPage
 
-Therefore all files will contain this header (which is done automatically for you if creating Partial View Macros via the Umbraco back office):
+Therefore all files will contain this header (which is done automatically for you if creating Partial View Macros via the Umbraco backoffice):
 
 	@inherits Umbraco.Web.Macros.PartialViewMacroPage
 
@@ -40,3 +40,11 @@ You can use @CurrentPage, @Model.Content, @Umbraco, ...
 You can access the macro's parameters using the `MacroParameters` property on the model which is of type `IDictionary<string, object>`
 
     var myParam = Model.MacroParameters["aliasOfTheMacroParameter"];
+
+or via the typed GetParameterValue method in Umbraco.Web.Models namespace
+
+    var myParam = Model.GetParameterValue<string>("aliasOfTheMacroParameter");
+
+and with default value fallback
+
+    var myParam = Model.GetParameterValue<string>("aliasOfTheMacroParameter", "default value if parameter value has not been set");

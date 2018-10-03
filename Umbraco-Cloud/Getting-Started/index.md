@@ -1,41 +1,44 @@
-#Welcome to Umbraco Cloud
-We're excited you have decided to use Umbraco Cloud!
+# Welcome to Umbraco Cloud
 
-##What's up with the name Umbraco Cloud?
-Since Umbraco Cloud _is_ Umbraco in a cloud environment we thought we'd stick with a name that describes what it is. So there you go.
+In this article, you can read all about Umbraco Cloud and how to get started!
 
-## Projects and Environments
-In Umbraco Cloud we organize your work into projects which are made of environments, teams, settings, and other related resources like databases and file storage. A project is comprised of different numbers of environments depending on which plan you too. If you choose the _Starter_ plan then the project comes with a single _live_ environment and you have the option to add a _development_ environment and a _staging_ environment. If you choose the _Professional_ plan the project will have a a _Development_ AND a _Live_ environment. As with the _Starter_ Plan you can add/remove environments as needed.
+## What is Umbraco Cloud?
+Umbraco Cloud is a new way to work with your favorite CMS! It includes 10 years of experience and best-practices in an intuitive, simple, but robust approach. No matter if you’re working in a team or if you’re single-handedly building a website, Umbraco Cloud removed the barriers that slow down projects and get in the way of beautiful, functional sites.
 
-When your project is running in trial mode your _live_ environment is protected with the basic authentication. The basic authentication  will be removed when you pay for the project. _Development_ and _Staging_ environments are always protected with besic authentication
+Umbraco Cloud is Umbraco - plus a whole lot more! Built on the Microsoft Azure Cloud and encompassing web standard approaches, Umbraco Cloud is familiar to Umbraco users new and old. We’ve made it painfully simple to get started with Umbraco Cloud and there are no limits to what you can accomplish - literally anything you can do with Umbraco and web technology you can do with Umbraco Cloud.
 
-You can avoid basic authentication by whitelisting IP adresses for the appropriate environments. See [IP Whitelist](https://our.umbraco.org/documentation/Umbraco-Cloud/Set-Up/#ip-whitelist) for more information.
-![environment](images/environment.png)
+Umbraco Cloud takes care of installation, infrastructure and security. We also provide you the tools to work with your project in the Cloud or locally by cloning the project down to your PC, Mac or even your tablet.
 
-####Set up and Code
-For developers, you will use the development environment to set up the site. To create and test code, clone _development_ to your local machine and then, once things are just how you like, push the changes back to Umbraco Cloud. Your changes will be added to the _development_ environment automatically and added to the deployment queue. To deploy to _live_, simply push the deploy button and everything will be deployed to the _live_ environment. See more about this in the [deployment section](../Deployment/index.md).
+When you’re ready to show your work to the world, Umbraco Cloud provides a safe deployment mechanism that makes it easy for you to publish to the web. When you have changes or updates to your site, Umbraco Cloud has got you covered: An easy to follow process for moving, testing and deploying your changes to your public site.
 
-####Content
-For content editors, you will use the live site to create and edit your content. Developers can always restore to the latest content in the development or local sites.
+With all the success you’ll have building your site with Umbraco Cloud you’ll want to add more, which is easily done using the same account and team members - all this is done from one single place: 
 
-If the project contains a _staging_ environment and you author your content here, be aware that content doesn't get added to the deployment queue automatically. Once you're ready to deploy the content to the _live_ environment, add it to the deployment queue using the __Queue for transfer__ feature in the backoffice.
+[Learn more and sign up for Umbraco Cloud](https://umbraco.com/campaigns/try-umbraco-today/)
 
-##Finding your Umbraco Project
-To navigate to your project, simply log in to the Umbraco Cloud portal and then click on Projects then the project you want to use.
+## An Umbraco Cloud project
 
-![dashboard](images/dashboard.jpg)
+The easiest way to get started with an Umbraco Cloud project is to take a 14-day free trial - the project will automatically be created for you, and you are ready to get started within a few minutes.
 
-We create your site’s Url using the name you used when you created the site, then we add _s1.umbraco.io_. If you named your project __Snoopy__, your site’s Url will be _snoopy.s1.umbraco.io_ and your site’s Umbraco back office Url will be _snoopy.s1.umbraco.io/umbraco_. For the development environment we prefix with _dev-_ so the the urls will be _dev-snoopy.s1.umbraco.io_ and _dev-snoopy.s1.umbraco.io/umbraco_. You'll find all environments for a project listed on the Project page.
+<iframe width="800" height="450" src="https://www.youtube.com/embed/iCB-8LKgIOA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-![project](images/project.jpg)
+Since we take the liberty of setting up the entire project for you, I'd recommend that you get to know your project before you start building!
 
-##Logging in to Umbraco
-When working with a trial project on Umbraco Cloud you need to log in to work with the Umbraco back office and also to view your site. The user name and password for both locations are the same as the user name and password you use for the portal. Once you upgrade to any of the non-Trial versions you’ll no longer need to login to view your live site but, of course, will still need to log in to the back office.
+Once the project has been set up, you can choose to either start with a blank slate or go for a [*Starter kit*](https://our.umbraco.com/Documentation/Tutorials/Starter-kit/Index/) which will install a full template site for you.
 
-From your site’s Project page select the *Go To Backoffice* link to login to the back office and the *View Page* link to view your site.
+To start working with and building your site, you can either work directly in the backoffice on the Cloud environment or you can [clone down the project to your local machine](../set-up/working-locally) - for Mac users, see [Working with UaaS-Cli](../Set-up/working-with-uaas-cli).
 
-##Making changes to your site
-This is where you get to make your Umbraco site your own. Umbraco is built using web standards - things like Html, css, and JavaScript. You’ll find the Html that makes up the Templates for your site in the Umbraco back office Settings section, under the Templates tree. This is plain-old-html, so feel free to change or replace what’s there. The same goes for your site’s Css (it’s in the Stylesheets tree) and the JavaScript (yup, in the Scripts tree). See the [Umbraco documentation](https://our.umbraco.org/documentation/Getting-Started/) for more information.
+### Naming a Project
 
-##Starting with a Baseline
-Beyond the basics of creating a new project, you may wish to start with a Baseline project. Read more about Baselines and how to work with [Baseline Projects](Baselines/).
+When you create a trial project for the first time, a unique project name will be generated for you - and a project color will be chosen for you at random.
+
+When you create a project from the Umbraco Cloud Portal you will get to choose your own name for the project. You will also be able to choose which color the project should have in your projects overview.  
+
+You can at any time change the name of your project by using the [*Rename project*](../Set-up/project-settings/#renaming-and-deleting) option from the *Settings* menu.
+
+An Umbraco Cloud project name is unique which means if a project with the name you choose already exists, you will need to choose another name before you can create the project.
+
+## Different ways to start an Umbraco Cloud project
+
+You might not always want to start your Umbraco Cloud project with a clean slate. Perhaps you have an already existing site that you want to move on to the Cloud. For this purpose, we've created a [Migration guide](migrate-existing-site) that you can follow in order to successfully move your project to Umbraco Cloud.
+
+Another scenario could be if you are creating several similar projects. For this purpose we have built a feature called [Baselines](Baselines) that lets you create new projects based on existing Umbraco Cloud projects.

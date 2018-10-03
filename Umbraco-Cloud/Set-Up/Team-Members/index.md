@@ -1,10 +1,10 @@
-#Team members in the Portal and Umbraco Backoffice users
-You can add team members to your projects from the Umbraco Cloud portal and these get automatically added as users in the backoffice of all environments for the project. The users will also be created in local clones of your development site. The same username and password is used to login in all parts of Umbraco Cloud - portal, backoffice, Kudu console.
+# Team members in the Portal and Umbraco Backoffice users
+You can add team members to your projects from the Umbraco Cloud Portal. These get automatically added as users in the backoffice of all environments for the project. The users will also be created in local clones of your development environment. The same username and password is used to login in all parts of Umbraco Cloud - Portal, backoffice and the KUDU console.
 
-![Add team member](images/add-team-member.jpg)
+![Add team member](images/add-team-member.png)
 When adding a team member the default permission will be *Read*. If the *Admin* checkbox is ticked they will be given Admin rights to the project.
 
-##Team member roles
+## Team member roles
 Roles for each environment can be set on the *Edit Team* page available from the *Settings* dropdown.
 
 * Admin: Has access to everything on a Project. An admin can Delete a project, and only admins can edit the Team (adding/removing other team members and changing permissions). An admin can deploy using Portal and has access to git.
@@ -14,17 +14,17 @@ Roles for each environment can be set on the *Edit Team* page available from the
 * Read: A team member with Read permissions can only view the Project in the Portal, and is not able to Deploy or change anything on the Project through the Portal.
 
 
-## Team Member Permissions in the Umbraco Back Office 
+## Team Member Permissions in the Umbraco Backoffice 
 By default all team members created through the Portal are created as admin users in the backoffice. This can be overwritten by adding custom rules to the CloudUsers.config file in the /config directory. 
 
 To match a Team Member with a group of permissions in the CloudUsers.config file you'll need to either match by e-mail or by the User Type of the Team Member using the "match" or "matchEmail" attributes.
 
 You can specify:
 
-* UserType: The name of a Back Office User Type thus default permissions on Content Nodes
-* Start Nodes for Content and Media: You'll need to add the Guid of the node.
-* Language: The Culture Code for the back office user interface language
-* Disable Umbraco Access: When this is set to false, the user cannot login to the back office. Useful if your editors are working in the staging environment (by using the deploy feature, they'll still be able to push content to live)
+* UserType: The name of a Backoffice User Type thus default permissions on Content Nodes
+* Start Nodes for Content and Media: You'll need to add the GUID of the node.
+* Language: The Culture Code for the backoffice user interface language
+* Disable Umbraco Access: When this is set to false, the user cannot login to the backoffice. Useful if your editors are working in the staging environment (by using the deploy feature, they'll still be able to push content to live)
 * Apps: Aliases of the Umbraco apps where the user should have access. You can specify "*" to give access to all apps.
 
         <PermissionGroups>
@@ -50,3 +50,7 @@ You can specify:
             </Apps>
           </Group>
         </PermissionGroups>
+
+## [Technical contact](Technical-contact.md)
+
+In order for us to reach the correct person when sending out information about server maintenance you need to add a technical contact to your Umbraco Cloud project.

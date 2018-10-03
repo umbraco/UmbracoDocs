@@ -1,6 +1,6 @@
-#IPublishedContent Property Access
+# IPublishedContent Property Access
 
-##Umbraco Properties
+## Umbraco Properties
 
 Built-in properties, which exists on all content objects by default
 
@@ -15,61 +15,61 @@ Built-in properties, which exists on all content objects by default
 		<h1>@Model.Content.Parent.Name</h1>
 	}
 
-###.Parent
+### .Parent
 Returns the parent content item
 
-###.Id
+### .Id
 Returns the unique Id for the current content item
 
-###.TemplateId
+### .TemplateId
 Returns the Template object used by this content item.
 
-###.SortOrder
+### .SortOrder
 Returns the index the page is on, compared to its siblings
 
-###.Name
+### .Name
 Returns the Name of the current content item
 
-###.Url
+### .Url
 Returns the complete Url to the page
 
-###.UrlName
+### .UrlName
 Returns the Url encoded name of the page
 
-###.DocumentTypeAlias
+### .DocumentTypeAlias
 Returns the Alias of the Document type used by this content item.
 
-###.WriterName
-Returns the name of the Umbraco back office user that performed the last update operation on the content item.
+### .WriterName
+Returns the name of the Umbraco backoffice user that performed the last update operation on the content item.
 
-###.CreatorName
-Returns the name of the Umbraco back office user that initially created the content item.
+### .CreatorName
+Returns the name of the Umbraco backoffice user that initially created the content item.
 
-###.WriterId
-Returns the Id of the Umbraco back office user that performed the last update operation to the content item.
+### .WriterId
+Returns the Id of the Umbraco backoffice user that performed the last update operation to the content item.
 
-###.CreatorId
-Returns the Id of the Umbraco back office user that initially created the content item.
+### .CreatorId
+Returns the Id of the Umbraco backoffice user that initially created the content item.
 
-###.Path
+### .Path
 Returns a comma delimited string of Node Ids that represent the path of content items back to root.
 
-###.CreateDate
+### .CreateDate
 Returns the DateTime the page was created
 
-###.UpdateDate
+### .UpdateDate
 Returns the DateTime the page was modified
 
-###.Level
+### .Level
 Returns the Level this content item is on
 
 -----
 
-##Custom properties
+## Custom properties
 All content and media items also contains a reference to all the data defined by their document type. 
 Custom property access is done with the various methods of: `GetPropertyValue`
 	
-###Model.Content.GetPropertyValue(string)
+### Model.Content.GetPropertyValue(string)
 Returns the property value for the specified property alias 
 
 	@*Get the property with alias: "siteName" from the current page  *@
@@ -78,7 +78,7 @@ Returns the property value for the specified property alias
 The result Type of this property value is `object` which is fine in most cases since when using
 the above syntax, Razor will automatically execute a `ToString()` on the result value.
 	
-###Model.Content.GetPropertyValue<T>(string)
+### Model.Content.GetPropertyValue&lt;T>(string)
 Returns the property value for the specified property alias converted to the specified output value. 
 
 For example, to return the `string` result of "siteName" you would do:
@@ -86,13 +86,13 @@ For example, to return the `string` result of "siteName" you would do:
  	@(Model.Content.GetPropertyValue<string>("siteName"))
 		 
  Some property value converters support multiple return value formats, for example if a property value
- normally returns a comma seperated value list like: "5677,3456,8776", then the property value
+ normally returns a comma separated value list like: "5677,3456,8776", then the property value
  converter for the property editor might support converting directly to an enumerable list of integers, for example:
  
  	@(Model.Content.GetPropertyValue<IEnumerable<int>>("mediaIds"))
 
 Another example might be if a property editor stores a JSON value, it might support converting to a custom 
-strongly typed model such as, or at the very least the JSON would be convertable to a `JObject` instance, for example:
+strongly typed model such as, or at the very least the JSON would be convertible to a `JObject` instance, for example:
 
  	@(Model.Content.GetPropertyValue<NestedContentModel>("nestedContent"))
 		 
@@ -100,14 +100,14 @@ strongly typed model such as, or at the very least the JSON would be convertable
  
  	@(Model.Content.GetPropertyValue<JObject>("nestedContent"))
 
-##Property Methods
+## Property Methods
 **There are a few helpful methods to help check if a property exists, has a value or is null.**
 
-###.HasProperty(string propertyAlias)
+### .HasProperty(string propertyAlias)
 Returns a boolean value representing if the IPublishedContent has a property with the specified alias.
 
-###.HasValue(string propertyAlias)
-Retruns a boolean value representing if the IPublishedContent property has had a value set.
+### .HasValue(string propertyAlias)
+Returns a boolean value representing if the IPublishedContent property has had a value set.
 
-###.IsNull(string propertyAlias)
+### .IsNull(string propertyAlias)
 Returns a boolean value representing if the IPublishedContent property is Null.

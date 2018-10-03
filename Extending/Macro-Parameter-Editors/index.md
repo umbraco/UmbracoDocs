@@ -1,4 +1,4 @@
-#Macro Parameter Editors
+# Macro Parameter Editors
 
 Every macro can contain parameters. There are some useful default types.  For example: 
 
@@ -19,13 +19,14 @@ You can create your own custom macro parameter types.
 All you need to do to create a macro parameter type in Umbraco 7, is to create a custom 'Property Editor' (or copy someone else's), see [Property Editors documentation](../../Extending/Property-Editors.md)
 and in the [Package Manifest file](../../Extending/Property-Editors/package-manifest.md) for the editor, set the isParameterEditor property to be true.
 
-    propertyEditors: [      
+    propertyEditors: [
         {
-        alias: "My.ParameterEditorAlias",
-        name: "Parameter Editor Name",
-        isParameterEditor: true,         
-        editor: {               
-            view: "~/App_Plugins/My.ParameterEditor/ParameterEditorView.html"           
+            alias: "My.ParameterEditorAlias",
+            name: "Parameter Editor Name",
+            isParameterEditor: true,
+            editor: {
+                view: "~/App_Plugins/My.ParameterEditor/ParameterEditorView.html"
+            }
         }
     ]
 ### PreValues/Configuration/DefaultValues ###
@@ -78,7 +79,7 @@ We'll create a simple 'Image Position' Macro Parameter type providing a Radio Bu
          if ($scope.model.value == null) {
             $scope.model.value = 'FullWidth';
          }
-         //could read positions from defaultConfig
+         // could read positions from defaultConfig
         $scope.positions = [
             {
                 Name: 'FullWidth'
@@ -151,4 +152,4 @@ A very basic example deriving from a DropDownList ASP.NET server control
 
 
 ### Further information ###
-* A nice blogpost by Richard Soeteman: [Create A Custom Macro ParameterType](http://www.richardsoeteman.net/2010/01/04/CreateACustomMacroParameterType.aspx)
+* A nice blog post by Richard Soeteman: [Create A Custom Macro ParameterType](http://www.richardsoeteman.net/2010/01/04/CreateACustomMacroParameterType.aspx)

@@ -1,4 +1,4 @@
-#IPublishedContent IsHelpers
+# IPublishedContent IsHelpers
 The IsHelper methods are a set of extension methods for IPublishedContent to help perform quick conditional queries against IPublishedContent nodes in a collection.
 
 IsHelper methods all work the same, and have 3 overloads. They're basically ternary operators, but work a little nicer in that they're easy to embed in properties and quicker to write as you don't need so many brackets to make Razor understand them.
@@ -7,7 +7,7 @@ The general use IsHelper is to allow you to dynamically inject class names and s
 
 ---
 
-##How to use
+## How to use
 To use an IsHelper you need to be iterating over a collection of IPublishedContent.
 
 	<ul>
@@ -28,50 +28,50 @@ IsHelpers can also return simple boolean values.
 
 ---
 
-##IsHelper Methods
+## IsHelper Methods
 
-###.IsFirst([string valueIfTrue][,string valueIfFalse])
+### .IsFirst([string valueIfTrue][,string valueIfFalse])
 Test if current node is the first item in the collection
 
-###.IsNotFirst([string valueIfTrue][,string valueIfFalse])
+### .IsNotFirst([string valueIfTrue][,string valueIfFalse])
 Test if current node is not first item in the collection
 
-###.IsLast([string valueIfTrue][,string valueIfFalse])
+### .IsLast([string valueIfTrue][,string valueIfFalse])
 Test if current node is the last item in the collection
 
-###.IsNotLast([string valueIfTrue][,string valueIfFalse])
+### .IsNotLast([string valueIfTrue][,string valueIfFalse])
 Test if current node is not the last item in the collection
 
-###.IsPosition(int index[,string valueIfTrue][,string valueIfFalse])
+### .IsPosition(int index[,string valueIfTrue][,string valueIfFalse])
 Test if current node is at the specified index in the collection
 
-###.IsNotPosition(int index[,string valueIfTrue][,string valueIfFalse])
+### .IsNotPosition(int index[,string valueIfTrue][,string valueIfFalse])
 Test if current node is not at the specified index in the collection
 
-###.IsModZero([string valueIfTrue][,string valueIfFalse])
+### .IsModZero([string valueIfTrue][,string valueIfFalse])
 Test if current node position evenly dividable (modulus) by a given number
 
-###.IsNotModZero([string valueIfTrue][,string valueIfFalse])
+### .IsNotModZero([string valueIfTrue][,string valueIfFalse])
 Test if current node position is not evenly dividable (modulus) by a given number
 
 
-###.IsEven([string valueIfTrue][,string valueIfFalse])
+### .IsEven([string valueIfTrue][,string valueIfFalse])
 Test if current node position is even
 
-###.IsOdd([string valueIfTrue][,string valueIfFalse])
+### .IsOdd([string valueIfTrue][,string valueIfFalse])
 Test if current node position is odd
 
-###.IsEqual(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
+### .IsEqual(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 Tests if the current node in your iteration is equivalent (by Id) to another node
 
-###.IsDescendant(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
+### .IsDescendant(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 Tests if the current node in your iteration is a descendant of another node
 
-###.IsDescendantOrSelf(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
+### .IsDescendantOrSelf(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 Tests if the current node in your iteration is a descendant of another node or is the node
 
-###.IsAncestor(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
+### .IsAncestor(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 Tests if the current node in your iteration is an ancestor of another node
 
-###.IsAncestorOrSelf(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
+### .IsAncestorOrSelf(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 Tests if the current node in your iteration is an ancestor of another node or is the node

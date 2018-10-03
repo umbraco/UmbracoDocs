@@ -12,7 +12,7 @@ These instructions make the following assumptions:
 
 * All web servers can communicate with the database where Umbraco data is stored
 * You are running Umbraco 7.3.0 or above
-* _**You will designate a single server to be the back-office server for which your editors will log into for editing content.**_ Umbraco will not work correctly if the back-office is behind the load balancer.
+* _**You will designate a single server to be the backoffice server for which your editors will log into for editing content.**_ Umbraco will not work correctly if the backoffice is behind the load balancer.
 
 There are three design alternatives you can use to effectively load balance servers:
 
@@ -28,15 +28,15 @@ In order to understand how to host your site it is best to understand how Umbrac
 
 The following diagram shows the data flow/communication between each item in the environment:
 
- ![umbraco flexible load balancing diagram](images/flexible-load-balancing.png)
+ ![Umbraco flexible load balancing diagram](images/flexible-load-balancing.png)
 
 The process is as follows:
 
 * Administrators and editors create, update, delete data/content on the master server
 * These events are converted into data structures called "instructions" and are stored in the database in a queue
 * Each front-end server checks to see if there are any outstanding instructions it hasn't processed yet
-* When a front-end server detects that there are pending instructions, it downloads them and processes them and in turn updates it's cache, cache files and indexes on it's own file system
-* There can be up to a 5 second delay between content updates and a front-end server's refreshing, this is expected and normal behavior.
+* When a front-end server detects that there are pending instructions, it downloads them and processes them and in turn updates it's cache, cache files and indexes on its own file system
+* There can be up to a 5 second delay between content updates and a front-end server's refreshing, this is expected and normal behaviour.
 
 ## Scheduling and master election
 
@@ -53,7 +53,7 @@ that all of the servers will need to be able to resolve the URL of either: itsel
 For example, In the following diagram the slave node **f02.mysite.local** is the elected "Scheduling server". In order for scheduling to work it needs to be able to send
 requests to itself, the Master server, the internal load balancer or the public address. The address used by the "Scheduling server" is called the "umbracoApplicationUrl". 
 
-![umbraco flexible load balancing diagram](images/flexible-load-balancing-scheduler.png)
+![Umbraco flexible load balancing diagram](images/flexible-load-balancing-scheduler.png)
 
 By default, Umbraco will set the "umbracoApplicationUrl" to the address made by the first accepted request when the AppDomain starts.
 It is assumed that this address will be a DNS address that the server can resolve.
@@ -85,34 +85,64 @@ Ensure you read the [overview](index.md) before you begin - you will need to ens
 * You will need to setup 2 x Azure Web Apps - one for the master (administrative) environment and another for your front-end environment
 * You will need 1 x SQL server that is shared with these 2 web apps
 
-###Lucene/Examine configuration
+### Lucene/Examine configuration
 
-* Ensure you are using the [latest Examine version from Nuget](https://www.nuget.org/packages/Examine)
-* In ExamineSettings.config, you can add these properties to all of your indexers and searchers: 
-```
-useTempStorage="Sync"
-tempStorageDirectory="UmbracoExamine.LocalStorage.AzureLocalStorageDirectory, UmbracoExamine"
-```
+#### Examine v0.1.80+ ####
+
+Examine v0.1.80 introduced a new `directoryFactory` named `SyncTempEnvDirectoryFactory` which should be added to all indexers
+
+    directoryFactory="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory,Examine"
+
+The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory. This setting is need because Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Any time the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local environment temp files are cleared out that the index files can be restored from the centrally stored index files.  
+
+#### Pre Examine v0.1.80 ####
+
+* In ExamineSettings.config, you can add these properties to all of your indexers and searchers: `useTempStorage="Sync" tempStorageDirectory="UmbracoExamine.LocalStorage.AzureLocalStorageDirectory, UmbracoExamine"`
 * The 'Sync' setting will store your indexes in the local workers file system instead of Azure Web Apps' 
-remote file system. Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Anytime the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local temp files are cleared out that the index files can be restored from the centrally stored index files. If you see issues with this syncing process (in your logs), you can also change this value to be 'LocalOnly' which will only persist the index files to the local file system
-but this does mean they will be rebuilt when the website is migrated between Azure workers.
+remote file system. Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Anytime the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local temp files are cleared out that the index files can be restored from the centrally stored index files. If you see issues with this syncing process (in your logs), you can also change this value to be 'LocalOnly' which will only persist the index files to the local file system but this does mean they will be rebuilt when the website is migrated between Azure workers.
 
-#####If you plan on using auto-scaling#####
+### If you plan on using auto-scaling
 
-**Important!** Your Examine path settings need to be updated! Azure Web Apps uses a shared file system which means that if you increase your front-end environment scale setting to more than one worker your Lucene index files will be shared by more than one process. This will not work! In ExamineIndex.config, you need to tokenize the path for each of your indexes to include the machine name, this will ensure that your indexes are stored in different locations for each machine. An example of a tokenized path is: `~/App_Data/TEMP/ExamineIndexes/{machinename}/Internal/`. This however has some drawbacks for two reasons:
+**Important!** Your Examine path settings need to be updated! Azure Web Apps uses a shared file system which means that if you increase your front-end environment scale setting to more than one worker your Lucene index files will be shared by more than one process. This will not work!
+
+#### Examine v0.1.83+ ####
+
+Examine v0.1.83 introduced a new `directoryFactory` named `TempEnvDirectoryFactory` which should be added to all indexers in the `~/Config/ExamineSettings.config` file
+
+    directoryFactory="Examine.LuceneEngine.Directories.TempEnvDirectoryFactory,Examine"
+
+The `TempEnvDirectoryFactory` allows Examine to store indexes directly in the environment temporary storage directory, and should be used instead of `SyncTempEnvDirectoryFactory` mentioned above. 
+
+#### Pre Examine v0.1.83 ####
+
+In ExamineIndex.config, you need to tokenize the path for each of your indexes to include the machine name, this will ensure that your indexes are stored in different locations for each machine. An example of a tokenized path is: `~/App_Data/TEMP/ExamineIndexes/{machinename}/Internal/`. This however has some drawbacks for two reasons:
 
 * Azure web apps migrates your site between workers without warning which means the {machinename} will change and your index will be rebuilt when this occurs
-* When you scale out (increase the number of workers), the new worker will also rebuild it's own index
+* When you scale out (increase the number of workers), the new worker will also rebuild its own index
 
 We are working towards being able to mitigate these issues by adding the ability to store a master index in blob storage so that when new workers come online they can sync the existing index locally (this is not yet in place)
 
-### Umbraco XML cache file
+### Umbraco XML cache file and other TEMP files
 
-For your front-end Azure Web App instance, you'll need to ensure that the Umbraco XML config file is stored on the local server (since Azure uses a shared file system). To do this ensure this setting is true in your web.config:
+For a front-end Azure Web App instance, you'll need to ensure that the Umbraco XML config file is stored on the local server (since Azure uses a shared file system). To do this you need to add a new app setting to web.config:
 
-```
-<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
-```
+For **Umbraco v7.7.3+**
+
+	<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
+
+This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the environment temporary folder. More info on this setting is available [here](../../../../Reference/Config/webconfig/index.md#umbracolocaltempstorage-umbraco-v773)
+
+For **Umbraco v7.6+**
+
+	<add key="umbracoContentXMLStorage" value="EnvironmentTemp" />
+
+This will set Umbraco to store `umbraco.config` in the environment temporary folder
+
+For **Umbraco Pre v7.6**
+
+	<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
+
+This will set Umbraco to store `umbraco.config` in the ASP.NET temporary folder
 
 ### Steps
 
@@ -123,7 +153,7 @@ For your front-end Azure Web App instance, you'll need to ensure that the Umbrac
 
 ### Scaling
 
-**Do not scale your master/adminsitration environment** this is not supported and can cause issues.
+**Do not scale your master/administration environment** this is not supported and can cause issues.
 
 Azure Web Apps can be manually or automatically scaled up or down and is supported by Umbraco's flexible load balancing.
 
@@ -157,6 +187,6 @@ Configuring your servers to work using a centrally located file system that is s
 Scaling will still be a slightly manual process because it would involve you adding servers/sites but with flexible load balancing you don't have to configure anything in Umbraco,
 you just need to point the site to the Umbraco database and update your load balancer to include the site.
 
-##Advanced techniques
+## Advanced techniques
 
 Once you are familiar with how flexible load balancing works, you might be interested in some [advanced techniques](flexible-advanced.md).

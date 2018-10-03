@@ -1,8 +1,8 @@
-#Creating Resolvers
+# Creating Resolvers
 
-_A Resolver should be created for any plugin type.  Resolvers are the standard way to retreive/create/register plugin types._ 
+_A Resolver should be created for any plugin type.  Resolvers are the standard way to retrieve/create/register plugin types._ 
 
-##Creating a single object resolver
+## Creating a single object resolver
 
 As an example, we'll create a resolver to resolve an application error logger:
 	
@@ -36,17 +36,17 @@ As an example, we'll create a resolver to resolve an application error logger:
 	
 All you need to do is inherit from `Umbraco.Core.ObjectResolution.SingleObjectResolverBase<TResolver, TResolved>` and then add whatever constructors, properties and methods you would like to expose. 
 
-In the example above we have a constructor that accepts a default `IErrorLogger`. Normally in Umbraco this resolver will be constructored in a `IBootManager` with a default object. The we expose a method to allow developers to change to a custom `IErrorLogger` at runtime called `SetErrorLogger`. Then we create a property to expose the `IErrorLogger` called ErrorLogger.
+In the example above we have a constructor that accepts a default `IErrorLogger`. Normally in Umbraco this resolver will be constructed in a `IBootManager` with a default object. The we expose a method to allow developers to change to a custom `IErrorLogger` at runtime called `SetErrorLogger`. Then we create a property to expose the `IErrorLogger` called ErrorLogger.
 
 Its usage is then very easy:
 
-	//get the error logger
+	// get the error logger
 	IErrorLogger logger = ErrorLoggerResolver.Current.ErrorLogger;
 
-	//set the error logger (can only be done during application startup)
+	// set the error logger (can only be done during application startup)
 	ErrorLoggerResolver.Current.SetErrorLogger(new MyCustomErrorLogger("../my-file-path"));
 
-##Creating a multiple object resolver
+## Creating a multiple object resolver
 
 Creating a multiple object resolver is just as simple. As an example we'll create a LanguageConvertersResolver.
 

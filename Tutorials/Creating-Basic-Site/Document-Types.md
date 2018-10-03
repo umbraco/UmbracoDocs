@@ -1,4 +1,4 @@
-#Document Types
+# Document Types
 
 ## Data first 
 ### nothing in = nothing out!
@@ -122,5 +122,5 @@ We’ve now created our first Document Type – Umbraco needs three things to cr
 
 
 ---
-##Next - [Creating Your First Template and Content Node](Creating-Your-First-Template-and-Content-Node.md)
+## Next - [Creating Your First Template and Content Node](Creating-Your-First-Template-and-Content-Node.md)
 How to create your first template and create a content node. 
