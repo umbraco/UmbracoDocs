@@ -57,6 +57,7 @@ For example, the following rule will redirect all requests for the site http://m
       <conditions>
         <add input="{HTTPS}" pattern="off" ignoreCase="true" />
         <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
+        <add input="{REQUEST_URI}" negate="true" pattern="^/.well-known/acme-challenge" />
       </conditions>
       <action type="Redirect" url="https://{HTTP_HOST}/{R:1}" redirectType="Permanent" />
     </rule>        
