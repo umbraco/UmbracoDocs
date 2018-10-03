@@ -17,7 +17,7 @@ The section is used for controlling the backoffice tours functionality.
         <tours enable="true"></tours>
     </backOffice>
 
-There is only one supported attribute on the tours element :
+There is only one supported attribute on the tours element:
 
 **`enable`**
 By default this is set to true. Set it to false to turn off [backoffice tours](../../../Extending/Backoffice-Tours/index.md)
