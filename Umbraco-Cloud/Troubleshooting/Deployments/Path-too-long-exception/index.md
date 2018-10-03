@@ -40,7 +40,7 @@ Umbraco.Deploy.Exceptions.RemoteApiException: The remote API has thrown an excep
 This is a known issue with Microsoft servers, that limits the amounts of characters allowed in a path.
 
 ## Solution
-In order to fix this error, you will need to use [Power-tools Kudu] (https://our.umbraco.com/documentation/Umbraco-Cloud/Set-up/Power-tools/)
+In order to fix this error, you will need to use [Power-tools Kudu](../../Set-up/Power-tools/)
 1. Go to Kudu and navigate to CMD under the Debug console menu. Here you'll be presented with a navigable file structure. 
 2. Navigate to site/wwwroot/media
 3. Write this command in CMD prompt - ```dir /s /b > out.txt```
