@@ -13,7 +13,7 @@ To access the current page in your macros or templates, copy-paste the below Raz
 	<h1>@pageName</h1>
 
 ## [Properties](Properties.md)
-Listing and explanation of IPublishedContent properties & standard helpers for Content and Media.
+Listing and explanation of IPublishedContent properties, standard helpers & extension methods for Content and Media.
 
 ## [Collections & Filtering](Collections.md)
 Methods for IPublishedContent collections and filtering.

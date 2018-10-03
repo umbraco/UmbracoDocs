@@ -111,3 +111,8 @@ Returns a boolean value representing if the IPublishedContent property has had a
 
 ### .IsNull(string propertyAlias)
 Returns a boolean value representing if the IPublishedContent property is Null.
+
+## Extension Methods
+
+### .GetKey()
+Returns the Guid Identifier of the IPublishedContent
