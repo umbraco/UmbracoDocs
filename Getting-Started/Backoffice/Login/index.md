@@ -3,7 +3,7 @@ To access the backoffice, you will need to login. You can do this by adding `/um
 
 The login screen will look similiar to this. 
 
-![Login screen](images/umbraco7-6_login.jpg "The login screen has a greeting, username/password field and optionally a 'Forgotten password' link.")
+![Login screen](../images/umbraco7-6_login.jpg "The login screen has a greeting, username/password field and optionally a 'Forgotten password' link.")
 The login screen has a greeting, username/password field and optionally a 'Forgotten password' link.
 
 Below, you will find instructions on how to customise the login screen. 
