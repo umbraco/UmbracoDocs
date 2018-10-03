@@ -4,10 +4,10 @@
 _Note: This will be shown on Umbraco 7.8.1, newer and older versions may differ. Also this assumes you already have a site with content in one language ready to work with._
 
 ### First step 
-When setting up a multilingual site is to copy the content you have in the original language. To do this, chose the node you want to copy - in this example everything is copied at once by copying the Home node, left click Home and click copy in the menu.
+when setting up a multilingual site is to copy the content you have in the original language. To do this, chose the node you want to copy - in this example everything is copied at once by copying the Home node, left click Home and click copy in the menu.
 
 ![Copy content](images/1.png)
-Chose the parent of your new copied node, in this example it is Content (this means the copied Home node will be a sibling to the current home node), if you want all child nodes to be copied aswell check the 'Include descendants' box.
+Chose the parent of your new copied node, in this example it is Content (this means the copied Home node will be a sibling to the current home node), if you want all child nodes to be copied as well check the 'Include descendants' box.
 
 ![Copy settings](images/2.png)
 This will give you a full copy of all content pages as seen below:
@@ -36,7 +36,7 @@ Go back to your template and replace the text with @Umbraco.GetDictionaryValue("
 To add languages to the url of your site, you first need to enable the full url, you do this by going to the Web.config file and changing the umbracoHideTopLevelNodeFromPath value from true to false.
 ![Show top level in url](images/9.png)
 
-Next you can go change the name of the homepages to their a language name, if you change the English homepage to 'en' and the Danish homepage to 'dk' the links would look like this:
+Next you can go and change the name of the homepages to their language name, if you change the English homepage to 'en' and the Danish homepage to 'dk' the links would look like this:
 ![language url en](images/10.png)
 ![language url dk](images/11.png)
 
