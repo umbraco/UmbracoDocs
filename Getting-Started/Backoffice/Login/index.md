@@ -38,7 +38,7 @@ The "Forgot password?" link allows your backoffice users to reset their password
 This feature can be turned off completely using the `allowPasswordReset` configuration, see: [/Documentation/Reference/Config/umbracoSettings/#security](/Documentation/Reference/Config/umbracoSettings/#security) 
 
 ## Background image
-You can customise the background image for the backoffice login screen. In `~/Config/umbracoSetting.config` find the `loginBackgroundImage`and change the path to the image you want to use.
+You can customise the background image for the backoffice login screen. In `~/Config/umbracoSettings.config` find the `loginBackgroundImage`and change the path to the image you want to use.
 
     <settings>
         <content>
