@@ -64,3 +64,13 @@ Another example would be to enforce HTTPS only on your site:
       </conditions>
       <action type="Redirect" url="https://{HTTP_HOST}/{R:1}" redirectType="Permanent" />
     </rule> 
+
+Another example would be to redirect from non-www to www:
+
+    <rule name="Non WWW to WWW" stopProcessing="true">
+      <match url="(.*)" ignoreCase="true" />
+      <conditions>
+        <add input="{HTTP_HOST}" pattern="^google\.com" />
+      </conditions>
+      <action type="Redirect" url="https://www.google.com/{R:1}" redirectType="Permanent" />
+    </rule> 
