@@ -38,7 +38,7 @@ For example, the `SliderValueConverter` returns a `decimal` or a `Range<decimal>
 
 This change only impacts new installs (no change for upgrades).
 
-The new property value converters are controlled by an `umbracoSetting.config` setting: in section `settings/content`, setting `EnablePropertyValueConverters` needs to be present and `true` to activate them.
+The new property value converters are controlled by an `umbracoSettings.config` setting: in section `settings/content`, setting `EnablePropertyValueConverters` needs to be present and `true` to activate them.
 
 ### Database ([U4-9201](http://issues.umbraco.org/issue/U4-9201))
 
