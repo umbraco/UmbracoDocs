@@ -49,8 +49,13 @@ And that is all you need to do to create a fork, sync it and make a pull request
 - `Umbraco Cloud`, `Umbraco Forms`, etc - if the issue is specific to something other than Umbraco CMS it will get the relevant Umbraco product label
 
 ## Creating an issue
-The Umbraco Documentation uses [Github issues]((https://github.com/umbraco/UmbracoDocs/issues)) to manage issues with the documentation.
-You are very welcome to create an issue if you feel some documentation is missing or wrong, the issue board is also used for discussions about possible improvements or ways to deal with something in the documentation. You can also find a button in the top right corner of every page in the documentation itself that looks like this:
+The Umbraco Documentation uses [Github issues](https://github.com/umbraco/UmbracoDocs/issues) to manage issues with the documentation.
+You can make an issue for any of the following:
+* If the issue will need more than one PR.
+* If you feel some documentation is wrong or missing and you do not have time or knowledge to do a PR
+* Open a discussion about possible improvements or ways to deal with something in the documentation
+
+You can also find a button in the top right corner of every page in the documentation itself that looks like this:
 ![Our issue button](images/report-issue.png)
 
 ### Issue labels 
@@ -72,6 +77,5 @@ If you make a pull request to any Umbraco repository that gets merged in you wil
 
 ![Contributor badge on our](images/c-trib-badge.png)
 
-The Documentation Curators will search for your profile when merging a PR in and add the badge, but if it is forgotten just make a comment on the closed PR and we will do it as soon as possible!
-
-
+The Documentation Curators will search for your profile when merging a PR in and add the badge. 
+If it is forgotten just make a comment on the closed PR and we will do it as soon as possible!
