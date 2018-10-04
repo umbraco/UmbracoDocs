@@ -1,32 +1,42 @@
 # Contribute to Umbraco Documentation
 
-## Creating a pull request
-A pull request is simply a way of submitting changes to something that can then be reviewed. We have this flow to ensure that all of the changes in the documentation is formatted correctly, has updated information and is written well. There are two ways to create a pull request, you can either edit a file directly on Github and your changes will then be submitted as a pull request, or you can create a fork of the Github repository, make changes and then make a pull request to sync your fork with the main repository.
+## What is a pull request?
+A pull request (PR) is a way of submitting changes to a project that can then be reviewed by the Documentation Curators. 
+
+Let’s say you’ve found a typing or syntax error in one of the articles on the documentation, and you want to correct it. You can do that with a pull request.
+
+There are two ways to create a pull request.
+
+1. You can either edit a file directly on Github or 
+2. You can create a fork of the Github repository
 
 **Note:** It may be helpful for you to read our [Markdown guidelines](Markdown-Conventions) on how to set up Documentation articles before you start writing!
 
-### Creating a PR directly in Github
+### Option 1. Creating a PR directly in Github
 Github has some great functionality that allows you to submit a PR directly from our [repository](https://github.com/umbraco/UmbracoDocs/), and there is also a button on every single documentation article at the top that links you directly to Github in order to edit that specific file:
 ![Our edit button](images/edit-this-page.png)
 
-This is very helpful to fix typos and adding small things, but if you are working on a larger update that includes pictures and editing several files in one pull request then it is not a good way to work, then you should create a fork.
+This is very helpful to fix typing errors or adding small things, but if you are working on a larger update that includes pictures and editing several files in one pull request then it is not the best way to work. You'd be better creating a fork.
 
-### Creating a PR through a fork
-There is a lot of great guides on how to set up a fork and work with forks, so below there will be a quick guide on how to do it. If you wish for some more general information, Github has a [guide here](https://help.github.com/articles/fork-a-repo/).
+### Options 2. Creating a PR through a fork
+There are a lot of great tutorials available online on how to set up a fork and work with one but we have also created a a quick guide on how to do it. If you want some more information, Github has a [guide here](https://help.github.com/articles/fork-a-repo/).
+
+You should also follow the instructions on how to [setup Git](https://help.github.com/articles/set-up-git/) before you go any futher.
 
 **Step 1: Creating a fork** 
+Once you have setup Git you can create a fork of the [Umbraco Documentation repository](https://github.com/umbraco/UmbracoDocs/).
 
-A fork of the Umbraco Documentation repository means that you get a copy of the whole repository on your own Github profile. You can create a fork by simply clicking a button:
+When you make a fork, you get a copy of the whole repository on your own Github profile. You can create a fork by clicking the fork button at the top of the screen:
 ![Creating a fork](images/fork-repository.png)
 
-Once the fork has been created you will have your own copy of the documentation. If you clone your fork down you can make changes to a lot of things and then push all the changes up to your fork. 
+Once the fork has been created you will have your own copy of the documentation. If you clone your fork, you will have all the files on your computer which means you can make changes to a lot of files and then push all the changes back up to your fork in one go.
 
-When you are done and happy with the changes you've made, you can submit a pull request where you try to sync your copy with the "real" repository:
+When you are done and happy with the changes you've made, you can submit a pull request to sync your copy with the "real" repository:
 ![Fork of documentation](images/example-of-fork.png)
 
 **Step 2: Syncing your fork**
 
-Sometimes - like in the example above - you may end up forking and then not working on the documentation for a while. Once you start you are some commits behind, so before making changes and making a pull request you should do a rebase. For this you set the main repository as an upstream to sync from, fetch the updates and update your own fork to ensure you are in sync:
+Sometimes - like in the example above - you may end up forking and then not working on the documentation for a while. Once you do start, you may find that you no longer have the most recent version. If this happens, before making changes and making a pull request, you should do a rebase. For this you set the main repository as an upstream to sync from, fetch the updates and update your own fork to ensure you are in sync:
 
 ```cmd
 git remote add upstream https://github.com/umbraco/UmbracoDocs/
@@ -73,7 +83,7 @@ The issue repository has several labels, these are not something you can add you
 All the work of adding labels, going through issues and PR's and managing the Documentation repository is done by the Umbraco Documentation Curators team. If you wish to know more about who they are and how they work there is some information about them here: https://our.umbraco.com/community/the-documentation-curators/
 
 ## Contribution badge
-If you make a pull request to any Umbraco repository that gets merged in you will get a Contributor badge on your member profile on Our:
+If you make a pull request to any Umbraco repository that gets merged in you will get a Contributor badge on your member profile on [Our](https://our.umbraco.com):
 
 ![Contributor badge on our](images/c-trib-badge.png)
 
