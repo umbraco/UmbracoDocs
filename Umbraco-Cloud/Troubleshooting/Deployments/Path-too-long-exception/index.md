@@ -18,10 +18,10 @@ Umbraco.Deploy.Exceptions.RemoteApiException: The remote API has thrown an excep
    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at Umbraco.Deploy.Environments.RemoteUmbracoEnvironment.d__16.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
+--- End of stack trace from previeous location where exception was thrown ---
    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at Umbraco.Deploy.Environments.RemoteUmbracoEnvironment.d__32.MoveNext()
+   at Umbraco.Deploy.Environments.RemotUmbracoEnvironment.d__32.MoveNext()
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
@@ -46,7 +46,7 @@ In order to fix this error, you will need to use [Power-tools Kudu](../../Set-up
 3. Write this command in CMD prompt - ```dir /s /b > out.txt```
 4. That will generate an ```out.txt``` file which you have to download
 
-![out.txt](images/out.txt.JPG)
+![out.txt](images/out.txt.jpg)
 
 5. Open that file with any editor that shows number of characters in line
 6. Locate files with a path longer than 80 characters
