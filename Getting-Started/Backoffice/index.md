@@ -80,3 +80,10 @@ A parameter editor defines the usage of a property editor for use as a parameter
 
 ### User
 A user is someone who has access to the **Umbraco backoffice** and is not to be confused with Member. When Umbraco has been installed a user will automatically be generated with the login (email) and password entered during installing. Users can be created, edited and managed in the User section.
+
+### Member vs User
+| Member | User |
+|:-------|:-----|
+| To view protected content on the frontend (such as public facing website), **Member** needs to be logged for granting access. | **Users** can access the admin backend, they can also be restricted to view specific content. |
+| Members only get to view the content prescribed by the admin user, they are denied to access other sections of the system. | **Users** can create, view and update content, templates, stylesheets and other back office settings. |
+| **Editors** need **Members** permissions to edit content and able to view members frontend content. |  **Editors** need **Users** permissions to edit content | 
