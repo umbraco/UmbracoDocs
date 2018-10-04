@@ -5,7 +5,7 @@ With Umbraco Forms it's possible to customize the functionality with various con
 The configuration for Umbraco Forms can be changed by modifying the XML based config file found at `/App_Plugins/UmbracoForms/UmbracoForms.config`
 
 ### UploadStorageDirectory
-This is *legacy and is no longer in use* - Forms that use an upload field will use the same IFileSystem as the media section - https://our.umbraco.com/documentation/Add-ons/UmbracoForms/Developer/IFileSystem/#forms-containing-upload-fields
+This is *legacy and is no longer in use* - Forms that use an upload field will use the same IFileSystem as the [media section](../IFileSystem/#forms-containing-upload-fields)
 
 ### IgnoreWorkFlowsOnEdit
 This configuration expects 'True' or 'False' and allows you to toggle if a form submission is edited again, that the workflows on the form will re-fire after an update to the form submission. This is used in conjuction with the `AllowEditableFormSubmisisons` configuration value.
