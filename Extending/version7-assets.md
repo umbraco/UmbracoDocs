@@ -38,7 +38,11 @@ A handler for this method could look like:
 
 ## URLs
 
-A good rule of thumb about service URLs is to not hard code them if possible. One of the reasons why we don't hard code URLs is in case that routing has to change for some reason (i.e. [the breaking change for 7.0.2](https://umbraco.com/blog/heads-up-breaking-change-coming-in-702-and-62/)). Another reason is if you want to keep compatibility with a legacy controller and introduce a new API version route (i.e. */umbraco/backoffice/api/myservice/v2/getstuff*). Generally a change like this would just mean changing a route in C# and if the JavaScript could automatically know the URL without being hard coded, it will 'just work'. It is also possible to customize the path of the Umbraco backoffice of your site, which will cause any hardcoded value in a package or custom code to be incompatible with your site. Therefore we always recommend using Umbraco helper methods or variables for constructing routes and paths even though it seems to work when using a hardcoded value.
+A good rule of thumb about service URLs is to not hard code them if possible. One of the reasons why we don't hard code URLs is in case that routing has to change for some reason (i.e. [the breaking change for 7.0.2](https://umbraco.com/blog/heads-up-breaking-change-coming-in-702-and-62/)).
+
+Another reason is if you want to keep compatibility with a legacy controller and introduce a new API version route (i.e. */umbraco/backoffice/api/myservice/v2/getstuff*). Generally a change like this would just mean changing a route in C# and if the JavaScript could automatically know the URL without being hard coded, it will 'just work'.
+
+Furthermore it is also possible to customize the path of the Umbraco backoffice of your site, which will cause any hardcoded value in a package or custom code to be incompatible with your site. Therefore we always recommend using Umbraco helper methods or variables for constructing routes and paths even though it seems to work when using a hardcoded value.
 
 ### Using Server Variables
 
