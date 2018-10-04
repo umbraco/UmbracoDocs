@@ -21,6 +21,10 @@ You will not get an Umbraco Latch certificate if you are using a CDN service (e.
 
 In that case you can manually add a TLS certificate to your project instead. Read more about how to do that in the [Upload certificates manually](Security-certificates) article.
 
+## Note
+
+Umbraco Latch can issue 5 certificates for a single domain per week. If this limit is exceeded, you will have to wait a week in order to regenerate the certificate for the domain. 
+
 ## Read more
 
 * [Redirect from HTTP to HTTPS](Rewrites-on-Cloud#running-your-site-on-https-only)
