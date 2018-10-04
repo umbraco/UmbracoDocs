@@ -34,10 +34,10 @@ In the developer section you work with packages, data types, macros, relations, 
 - Partial View Macro Files
 
 ### <img src="images/Members.png" style="width:60px;vertical-align:middle" /> Members
-Manage, create and customize members.
+Manage, create and customize members, member types and member groups.
 
 ### <img src="images/Users.png" style="width:60px;vertical-align:middle" /> Users
-Manage, create and customize backoffice users.
+Manage, create and customize backoffice users and user groups.
 
 ### <img src="images/Forms.png" style="width:60px;vertical-align:middle" /> Forms
 You can install Umbraco Forms directly from the backoffice by clicking the install button. Once installed this section is where you create and manage your forms.
