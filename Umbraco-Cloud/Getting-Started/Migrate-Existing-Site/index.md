@@ -30,7 +30,7 @@ Your Umbraco site has to fulfill these requirements:
     * Content items includes content nodes and media items
     * Read more about the Umbraco Cloud Plans on [Umbraco.com](https://umbraco.com/pricing/)
 * Contains no member data
-    * If you do have member data, these will need to be importet manually after the migration
+    * If you do have member data, these will need to be imported manually after the migration
 * No obsolete/old packages
     * Not all packages will work on Umbraco Cloud
     * Read more about this in the section below
@@ -95,7 +95,7 @@ Ideally your site will run locally using the SQL CE database as this will make c
 
 ### Cleaning your project
 
-Beofre moving on to the next step, you need to clean up the local clone of your existing site a bit.
+Before moving on to the next step, you need to clean up the local clone of your existing site a bit.
 
 While the site is running you need to:
 
@@ -153,7 +153,7 @@ Run the site locally and verify your own project and the cloned Umbraco Cloud pr
 
 ## 6. Move and merge files
 
-Merging your existing site into the Umbraco Cloud project is a matter of moving and merging files between the two projects. When following the steps outlines below it is important that you do not overwrite any settings and configuration related to Umbraco Deploy.
+Merging your existing site into the Umbraco Cloud project is a matter of moving and merging files between the two projects. When following the steps outlined below it is important that you do not overwrite any settings and configuration related to Umbraco Deploy.
 
 1. Copy and replace all folders from your own project to the Umbraco Cloud project
     * Excluding the following folders:
@@ -206,11 +206,11 @@ In this next part, it is time to generate the so called UDA-files for all your p
 For more details about UDA files, read the [UDA Files](../../Set-Up/Power-Tools/Generating-UDA-files/#what-are-uda-files) article.
 
 * Make sure the folder `/data/revision` on your Umbraco Cloud project is empty
-    * If you have any files in the folder, you can safely removes those at this point
+    * If you have any files in the folder, you can safely remove those at this point
 * Open a command prompt
 * Navigate to the `/data` folder in your local Umbraco Cloud project files
 * Add an *export* marker by typing `echo > deploy-export`
-    * Generating the UDA files may take a while, depending on the extend of your project
+    * Generating the UDA files may take a while, depending on the extent of your project
     * You will see a `deploy-complete` marker once the export is done
     * Run `echo > deploy` again in order to double-check that the UDA files have been generated correctly
     * When you see a `deploy-complete` marker, it means everything is working as expected
