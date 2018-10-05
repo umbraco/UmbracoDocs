@@ -83,3 +83,14 @@ are used, these must be in `images` folders next to the .md file referencing the
 		* index.md
 	* index.md
 	* otherpage.md
+
+# Annotating a document
+
+To add version information and extra keywords, [every document can be annotated using YAML](adding-metadata.md). 
+
+# Multi version documentation
+With the introduction every new version of Umbraco new features are introduced.  This means that not every document will work for your possibly older version.
+
+Therefor we introduced 2 different mechanisms.
+1. the [YAML meta data describing](adding-metadata.md) `versionFrom` and `versionTo`.
+2. the possibility [to add multiple files about the same topic](file-naming-conventions.md)
