@@ -49,3 +49,47 @@ For inline code, wrap in ` (backtick) chars.
 Use # for the headline, ## for sub headers and ### for parameters (on code reference pages)
 
 For optional parameters wrap in _ (underscore) - end result: `###_optionalParameter_`
+
+## Custom Markdown
+The Markdown conversion library used in the documentation is called [Markdig](https://github.com/lunet-io/markdig). It has the possibility of adding classes to markdown that you can then target with CSS. There are a few custom Markdown classes that can be used:
+
+```
+:::note
+This is a note, it contains useful information and also a link: https://thisisalink.com/useful/resource, please make sure it looks nice on Our!
+:::
+
+:::warning
+This is a warning, it contains useful information and also a link: https://thisisalink.com/useful/resource, please make sure it looks nice on Our!
+:::
+
+:::tip
+This is a tip, it contains useful information and also a link: https://thisisalink.com/useful/resource, please make sure it looks nice on Our!
+:::
+
+:::checklist
+- Item 1
+- Item 2
+- Item 3
+- Item 4
+::: 
+```
+Will render like this:
+
+:::note
+This is a note, it contains useful information and also a link: https://thisisalink.com/useful/resource, please make sure it looks nice on Our!
+:::
+
+:::warning
+This is a warning, it contains useful information and also a link: https://thisisalink.com/useful/resource, please make sure it looks nice on Our!
+:::
+
+:::tip
+This is a tip, it contains useful information and also a link: https://thisisalink.com/useful/resource, please make sure it looks nice on Our!
+:::
+
+:::checklist
+- Item 1
+- Item 2
+- Item 3
+- Item 4
+::: 
