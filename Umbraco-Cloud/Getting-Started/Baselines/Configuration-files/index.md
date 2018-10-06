@@ -18,7 +18,7 @@ Just a few examples of what could be transformed in the child sites.
 	<appSettings xdt:Transform="InsertIfMissing">
         <!-- Updates the value of the appSetting called owin:appStartup -->
         <add key="owin:appStartup" value="MyCustomOwinStartup" xdt:Locator="Match(key)" xdt:Transform="SetAttributes(value)" />
-        <!-- Adds the appsetting MyOwnAppSetting, if it isnt already there -->
+        <!-- Adds the appsetting MyOwnAppSetting, if it isn't already there -->
         <add key="MyOwnAppSetting" value="AmazingValue" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing" />
         <!-- Ensures a custom value is there and set to a certain value (remove and add) -->
         <add key="MyOwnAppSetting2" xdt:Locator="Match(key)" xdt:Transform="RemoveAll" />

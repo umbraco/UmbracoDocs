@@ -409,7 +409,7 @@ The **toAscii** attributes tells Umbraco to convert all urls to ASCII using the 
 Introduced in Umbraco 7.6.4 the toAscii attribute can be set to **try**. This will make the engine try to convert the name to an ASCII implementation. If it fails, it will fallback to the name. Reason is that some languages doesn't have ASCII implementations, therefore the urls would end up being empty.
 
 Within the **`<urlReplacing>`** section there are a lot of **`<char>`** elements with an **org** attribute. The attribute holds the character that should
-be replaced and withing the **`<char>`** tags the value it should be replaced width is entered.
+be replaced and within the **`<char>`** tags the value it should be replaced with is entered.
 
 So, if **`<char org="ñ">n</char>`** is added above the **ñ** will be shown as a **n** in the url.
 

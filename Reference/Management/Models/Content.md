@@ -134,7 +134,7 @@ Returns a list of `PropertyGroup` objects as defined on the `ContentType` that t
     } 
 
 ### .PropertyTypes
-Returns a list of `PropertyType` objects as defined on the `ContentType` that the Content is based on. A `PropertyType` is what defines a `Property`. The PropertyTypes witin this list is the sum of those within all PropertyGroups as well as those not within a group.
+Returns a list of `PropertyType` objects as defined on the `ContentType` that the Content is based on. A `PropertyType` is what defines a `Property`. The PropertyTypes within this list is the sum of those within all PropertyGroups as well as those not within a group.
 
 	// Given a `ContentService` object get Content by its Id and loop through all PropertyTypes
 	var content = contentService.GetById(1234);

@@ -2,7 +2,7 @@
 
 > **NOTE:** If your project is using Umbraco Courier, please refer to this article as well: [Courier in debug mode](../../../Add-ons/UmbracoCourier/Architecture/Configuration#debugmode)
 
-To get access to the different types of log files on Umbraco Cloud it is nessecary to use [Kudu](../../Set-Up/Power-Tools). Once you access the server files through Kudu there are several different types of logs you will have access to:
+To get access to the different types of log files on Umbraco Cloud it is necessary to use [Kudu](../../Set-Up/Power-Tools). Once you access the server files through Kudu there are several different types of logs you will have access to:
 
 * Umbraco logs
 * Deploy logs

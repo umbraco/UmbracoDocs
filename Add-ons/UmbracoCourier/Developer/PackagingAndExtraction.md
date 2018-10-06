@@ -1,10 +1,10 @@
-# Packaging, Extracting and transfering
+# Packaging, Extracting and transferring
 
 To understand how Courier works, and to use its API, you must know and understand 3 central concepts Courier uses:
 
 - Packaging
 - Extraction
-- Transfering
+- Transferring
 
 These 3 concepts are what enables Courier to perform deployments in a way that can decouple the Courier client from the sites/destinations it's deploying to/from. 
 

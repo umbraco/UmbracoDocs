@@ -8,14 +8,14 @@ The configuration for Umbraco Forms can be changed by modifying the XML based co
 This is *legacy and is no longer in use* - Forms that use an upload field will use the same IFileSystem as the [media section](../IFileSystem/#forms-containing-upload-fields)
 
 ### IgnoreWorkFlowsOnEdit
-This configuration expects 'True' or 'False' and allows you to toggle if a form submission is edited again, that the workflows on the form will re-fire after an update to the form submission. This is used in conjuction with the `AllowEditableFormSubmisisons` configuration value.
+This configuration expects 'True' or 'False' and allows you to toggle if a form submission is edited again, that the workflows on the form will re-fire after an update to the form submission. This is used in conjunction with the `AllowEditableFormSubmisisons` configuration value.
 
 ### ExecuteWorkflowAsync
 This configuration key is *experimental* and will allow Workflows to be executed in an async manner<br/>
-The value can be `True/False` or a list of form names that ignore workflows that are comma seperated `form name,contact form`
+The value can be `True/False` or a list of form names that ignore workflows that are comma separated `form name,contact form`
 
 ### DisableFormCaching
-This configuration value expects a `True/False` value and can be used to toggle if Forms should be read from the JSON representaion on disk or from the relevant Forms IFileSystem. Forms are cached for 10 minutes.
+This configuration value expects a `True/False` value and can be used to toggle if Forms should be read from the JSON representation on disk or from the relevant Forms IFileSystem. Forms are cached for 10 minutes.
 
 ### DisableDefaultWorkflow
 This configuration value expects a `True/False` value and can be used to toggle if new forms that are created adds an email workflow to send the result of the form to the current user who created the form.

@@ -6,7 +6,7 @@ The [standard upgrade instructions](https://our.umbraco.com/documentation/Instal
 
 ## Backup
 
-Just like with any upgrade, it is critical that you back up your website and database before upgrading. There are several database changes made during install and you cannot revert an v7 database to a v6 databse.
+Just like with any upgrade, it is critical that you back up your website and database before upgrading. There are several database changes made during install and you cannot revert an v7 database to a v6 database.
 
 ## .Net 4.5
 

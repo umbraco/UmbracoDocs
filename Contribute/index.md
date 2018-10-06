@@ -24,11 +24,11 @@ This is very helpful to fix typing errors or adding small things, but if you are
 
 ### Options 2. Creating a PR through a fork
 
-There are a lot of great tutorials available online on [how to fork a repository (Github)](https://help.github.com/articles/fork-a-repo/) and work with one. But we have also created a quick guide on how to do it.
+There are a lot of great tutorials available online on [how to fork a repository (GitHub)](https://help.github.com/articles/fork-a-repo/) and work with one. But we have also created a quick guide on how to do it.
 
-If you do not have installed Git on your computer, you should also follow the [instructions on how to setup Git](https://help.github.com/articles/set-up-git/) before you go any further.
+If you do not have installed Git on your computer, you should also follow the [instructions on how to set up Git](https://help.github.com/articles/set-up-git/) before you go any further.
 
-If git is installed on your computer, follow the [Create a Pull Request using a fork](Pull-Requests) guide.
+If Git is installed on your computer, follow the [Create a Pull Request using a fork](Pull-Requests) guide.
 
 ## Creating an issue
 

@@ -15,18 +15,18 @@ The `insertTextAfter` allows you to add text before your field is outputted, onl
 	<umbraco:item field="bodyText" insertTextAfter="I am some text after the field." runat="server"/>
 
 ## formatAsDate
-`formatAsDate` allows you to ouput your field as a date - obviously not a richtext editor field but a field that stores dates.
+`formatAsDate` allows you to output your field as a date - obviously not a richtext editor field but a field that stores dates.
 
 	<umbraco:item field="startDate" formatAsDate="true" runat="server" />
 
 ## formatAsDateWithTime
-This is just like formatAsDate but instead this will also ouput the time along with the date, if you use this attribute you will also need to use the `formatAsDateWithTimeSeperator` attribute.
+This is just like formatAsDate but instead this will also output the time along with the date, if you use this attribute you will also need to use the `formatAsDateWithTimeSeperator` attribute.
 
 	<umbraco:item field="startDate" formatAsDateWithTime="true" formatAsDateWithTimeSeperator=" " runat="server"/>
 
 
 ## formatAsDateWithTimeSeparator
-This is just like `formatAsDate` but instead this will also ouput the time along with the date, if you use this attribute you will also need to use the `formatAsDateWithTimeSeparator` attribute.
+This is just like `formatAsDate` but instead this will also output the time along with the date, if you use this attribute you will also need to use the `formatAsDateWithTimeSeparator` attribute.
 
 	<umbraco:item field="startDate" formatAsDateWithTime="true" formatAsDateWithTimeSeperator=" " runat="server"/>
 
@@ -77,5 +77,5 @@ For example, retrieving the URL to an image requires calling `umbraco.library:Ge
 	              
 Common uses will probably include calling single XSLT functions for parsing values prior to render.
 
-Another useful attribute is XsltDisableEscaping, whereby the value returned by the transfrmation specified in the Xslt attribute requires escaping. This might be useful when parsing content or data that contains HTML, and therefore requires escaping to be succesfully rendered to the page.
+Another useful attribute is XsltDisableEscaping, whereby the value returned by the transfrmation specified in the Xslt attribute requires escaping. This might be useful when parsing content or data that contains HTML, and therefore requires escaping to be successfully rendered to the page.
 

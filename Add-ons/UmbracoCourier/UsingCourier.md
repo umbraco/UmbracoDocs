@@ -62,7 +62,7 @@ Common thing, a data type stores a node ID, but courier doesn't know, so it cann
 a GUID, so it will be transferable, however, you can add the data type to the courier.config to tell courier to look for ids and convert them
 
 ### Data in external tables are referenced.
-Courier doesn't know about it, cant deploy it, you can write your own provider for it, but this provides you with overhead, and it would
+Courier doesn't know about it, can't deploy it, you can write your own provider for it, but this provides you with overhead, and it would
 be better if you structured your external data so it can be moveable (avoid IDENTITY and so on.)
 
 ### You try to transfer really large files
@@ -73,7 +73,7 @@ revision files and xcopy them over, when you need to deploy really large things
 
 ## How to handle the initial deployment
 A common scenario seen, is that people try to transfer their entire site in one go, to do the initial deploy. This is not recommended, and really just adds
-unneeded overhead to your deployment. Courier adds a lot of extra data and overhead, because it needs to convert to a format that be transfered and
+unneeded overhead to your deployment. Courier adds a lot of extra data and overhead, because it needs to convert to a format that be transferred and
 referenced between the 2 sites, it also needs to compare data with this other site and determine which items should transfer, and which should not, finally it
 all happens over http, which is another bottleneck
 

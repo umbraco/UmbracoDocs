@@ -39,7 +39,7 @@ There are 2 other base types of `ICacheRefresher` which are:
 * `IJsonCacheRefresher` - this inherits from `ICacheRefresher` but provides more flexibility if you need to invalidate cache based on more complex scenarios (e.g. the [MemberGroupCacheRefresher](https://github.com/umbraco/Umbraco-CMS/blob/dev-v7/src/Umbraco.Web/Cache/MemberGroupCacheRefresher.cs)).
   * `void Refresh(string jsonPayload)` - Invalidates/refreshes any cache based on the information provided in the JSON. The JSON value is any value that is used when executing the method to invoke the cache refresher.
 
-There are serveral examples of `ICacheRefresher`'s in the core: https://github.com/umbraco/Umbraco-CMS/tree/dev-v7/src/Umbraco.Web/Cache
+There are several examples of `ICacheRefresher`'s in the core: https://github.com/umbraco/Umbraco-CMS/tree/dev-v7/src/Umbraco.Web/Cache
 
 ### Executing an ICacheRefresher
 

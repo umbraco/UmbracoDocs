@@ -30,7 +30,7 @@ Example usage of the **EditorModelEventManager** '*SendingContentModel*' event -
     
             private void EditorModelEventManager_SendingContentModel(System.Web.Http.Filters.HttpActionExecutedContext sender, EditorModelEventArgs<Umbraco.Web.Models.ContentEditing.ContentItemDisplay> e)
             {            
-                // set a default value for NewsArticle PublishDate property, the editor can override this, but we will suggest it should be todays date
+                // set a default value for NewsArticle PublishDate property, the editor can override this, but we will suggest it should be today's date
                 if (e.Model.ContentTypeAlias == "newsArticle")
                 {
                     var pubDateProperty = e.Model.Properties.FirstOrDefault(f => f.Alias == "publishDate");

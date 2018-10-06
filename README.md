@@ -91,6 +91,6 @@ To add version information and extra keywords, [every document can be annotated 
 # Multi version documentation
 With the introduction every new version of Umbraco new features are introduced.  This means that not every document will work for your possibly older version.
 
-Therefor we introduced 2 different mechanisms.
-1. the [YAML meta data describing](Contribute/adding-metadata.md) `versionFrom` and `versionTo`.
+Therefore we introduced 2 different mechanisms.
+1. the [YAML metadata describing](Contribute/adding-metadata.md) `versionFrom` and `versionTo`.
 2. the possibility [to add multiple files about the same topic](Contribute/file-naming-conventions.md)

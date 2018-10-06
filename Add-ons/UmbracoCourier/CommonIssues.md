@@ -130,7 +130,7 @@ API
 
 *Solution;* upgrade to latest version, since this has been fixed since 2.7.6
 
-### Sort order on documents is not transfered
+### Sort order on documents is not transferred
 *Caused by:* Courier not logging sort order changes, due to the way the core does sorting from its API
 
 *How to spot:* Change sorting order on a collection of document, then transfer their parent + children. The sort order will not 
