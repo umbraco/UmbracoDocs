@@ -150,7 +150,7 @@ There is no vulnerable data in this cookie and manipulating or stealing this coo
 
 In the future, the cookie will be set to `HttpOnly` on Umbraco Cloud to conform to best practices. This does not mean that there's anything wrong with the current way it is set.
 
-For more information see [the related github issue](https://github.com/Azure/app-service-announcements/issues/12).
+For more information see [the related GitHub issue](https://github.com/Azure/app-service-announcements/issues/12).
 
 ### Can I use wildcard certificates on Umbraco Cloud? How about an EV, DV or OV certificate?
 

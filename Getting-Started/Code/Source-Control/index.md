@@ -153,6 +153,6 @@ If you are working with GIT, you can add a gitignore file to specify intentional
 
 ### Example gitignore
 
-github has a repository of gitignore files which are a great starting point for working with Umbraco and source control.
+GitHub has a repository of gitignore files which are a great starting point for working with Umbraco and source control.
 
 Combining: [VisualStudio.gitignore](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore) & [Umbraco.gitignore](https://github.com/github/gitignore/blob/master/Umbraco.gitignore)

@@ -12,7 +12,7 @@ For each language your package supports, you include an .xml file in the same fo
 ## Language file format
 Each language file can include one or more area, each area contains a collection of language keys with the translation.
 
-For reference on the language file format see the core [language files on github](https://github.com/umbraco/Umbraco-CMS/tree/dev-v7/src/Umbraco.Web.UI/umbraco/config/lang)
+For reference on the language file format see the core [language files on GitHub](https://github.com/umbraco/Umbraco-CMS/tree/dev-v7/src/Umbraco.Web.UI/umbraco/config/lang)
 
 ### Sample structure:
 
