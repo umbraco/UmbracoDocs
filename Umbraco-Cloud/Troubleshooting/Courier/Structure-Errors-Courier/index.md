@@ -12,7 +12,7 @@ The main cause of this problem is when a document type (or media type or member 
 
 ## Fixing
 
-In order to fix this conflict, you will have to decide which document type is "the most correct" one. For some help with that, the list of all properties in each Courier file will be logged in your `~/App_Data/Logs/CourierTraceLog.txt` file when you see the `Error in Courier files containing site structure` error. This might help you determine: the `home` document type with the extra 3 properties that I added today is the one that I want to have in all of my environments. You can then remove the non-relevant entity type from git and deploy your changes to the next environment. This should clear up the error and allow you to move on. The log file will list the file names for each conflicting file. 
+In order to fix this conflict, you will have to decide which document type is "the most correct" one. For some help with that, the list of all properties in each Courier file will be logged in your `~/App_Data/Logs/CourierTraceLog.txt` file when you see the `Error in Courier files containing site structure` error. This might help you determine: the `home` document type with the extra 3 properties that I added today is the one that I want to have in all of my environments. You can then remove the non-relevant entity type from Git and deploy your changes to the next environment. This should clear up the error and allow you to move on. The log file will list the file names for each conflicting file. 
 
 ## Troubleshooting using SQL queries
 
@@ -28,6 +28,6 @@ The courier files in `~/data/Revision/` are usually named after the unique Id of
 
 This will give you the properties available on this content type in this environment and you can compare the properties to the ones in your log file to see if the environment you're performing the SQL query in is correct according to what you want the content type to be.
 
-Again, once you've decided which Courier file in `~/App_Data/Revision/` contains the best representation of your content type then you can remove the duplicate from disk and commit the removal to git. This should unblock your future deploys from popping up this error.
+Again, once you've decided which Courier file in `~/App_Data/Revision/` contains the best representation of your content type then you can remove the duplicate from disk and commit the removal to Git. This should unblock your future deploys from popping up this error.
 
 It's important to note that only you can decide which document type you want to keep, Courier cannot guess which document type you think is the most complete.

@@ -19,7 +19,7 @@ Once you’ve deployed your local changes to your Cloud environment deploying to
 
 ## Deploying without using a Git client
 
-If you don't have a git client installed on your local machine, or prefer to work with git through command line, you can use eg. git bash and the following commands:
+If you don't have a Git client installed on your local machine, or prefer to work with Git through command line, you can use eg. Git Bash and the following commands:
 
     # Navigate to the repository folder
     cd mySite

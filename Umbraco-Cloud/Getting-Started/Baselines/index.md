@@ -43,7 +43,7 @@ When you've created the Child project you can choose to restore content from you
 ![Restore content from Baseline project](images/RestoreFromBaseline.gif)
 
 ## [Merge Conflicts](Baseline-Merge-Conflicts/)
-As with any git repository-based development it is not uncommon to have merge conflicts as the various repositories begin to differ. Read this article for more on the merge strategy we use and how to approach resolving these conflicts.
+As with any Git repository-based development it is not uncommon to have merge conflicts as the various repositories begin to differ. Read this article for more on the merge strategy we use and how to approach resolving these conflicts.
 
 ## [Pushing upgrades to a Child Project](Upgrading-Child-Projects/)
 In this article you'll find a guide on how to upgrade your Child project with changes from your Baseline project.

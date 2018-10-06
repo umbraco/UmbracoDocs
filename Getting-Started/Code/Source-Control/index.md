@@ -149,7 +149,7 @@ It's possible to use [Umbraco Courier](https://our.umbraco.com/packages/umbraco-
 
 ## Git
 
-If you are working with GIT, you can add a gitignore file to specify intentionally untracked files that Git should ignore.
+If you are working with Git, you can add a gitignore file to specify intentionally untracked files that Git should ignore.
 
 ### Example gitignore
 
