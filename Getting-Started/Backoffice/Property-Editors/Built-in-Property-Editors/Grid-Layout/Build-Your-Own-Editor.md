@@ -47,7 +47,7 @@ To wire up a controller to this view, create the file `/app_plugins/yourpackage/
         $scope.control.value = "my new value";
     });
 
-Finally, we need to tell Umbraco load this JavaScript controller when the Umbraco application boots, this is also just like building a property editor, so add your javascript(and css dependencies) in the `package.manifest` file in the `/yourpackage` folder, and configure it to load your controller file. 
+Finally, we need to tell Umbraco load this JavaScript controller when the Umbraco application boots, this is also just like building a property editor, so add your JavaScript (and css dependencies) in the `package.manifest` file in the `/yourpackage` folder, and configure it to load your controller file. 
 
     {
         "gridEditors": [

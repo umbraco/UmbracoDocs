@@ -162,9 +162,9 @@ Could not load type 'umbraco.BusinessLogic.Utils.TypeFinder' from assembly 'busi
 
 The TypeFinder has been deprecated since 4.10 and is now found under Umbraco.Core.TypeFinder
 
-### Javascript in menu actions
+### JavaScript in menu actions
 
-While you need to have JavaScript  inside menu actions to trigger a response, it is highly recommended that you use the recommended UmbClientMgr methods, and not try to override parent.right.document and similar tricks to get to the right-hand frame.
+While you need to have JavaScript inside menu actions to trigger a response, it is highly recommended that you use the recommended UmbClientMgr methods, and not try to override parent.right.document and similar tricks to get to the right-hand frame.
 
 ### Use the recommended Umbraco uicontrols
 

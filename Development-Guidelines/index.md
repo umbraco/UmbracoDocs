@@ -3,7 +3,7 @@
 _All about working with the Umbraco codebase_
 
 ## [Coding and naming conventions](Coding-Standards/index.md)
-The naming conventions used throughout the codebase including C#, JS and CSS and how classes in C# and JavaScript should be created and used.
+The naming conventions used throughout the codebase including C#, JavaScript and CSS and how classes in C# and JavaScript should be created and used.
 
 ## [The solution and project structure](project-structure.md)
 How the Visual Studio solution is put together, the functionality of each project and the end goal of the structure.
@@ -13,7 +13,7 @@ Describes the process of creating new classes and where they should be stored in
 
 ## Unit testing
 
-There are plenty of unit tests in the core of Umbraco both for C# found in Umbraco.Tests project and for JS found in the Umbraco.Web.UI.Client project.
+There are plenty of unit tests in the core of Umbraco both for C# found in Umbraco.Tests project and for JavaScript found in the Umbraco.Web.UI.Client project.
 
 When submitting pull requests or working with the code we encourage all developers to make changes by writing unit tests, a PR will have a far higher chance of being pulled into the core quicker with passing unit tests.
 

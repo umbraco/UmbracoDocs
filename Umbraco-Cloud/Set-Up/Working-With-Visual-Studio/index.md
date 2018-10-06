@@ -66,7 +66,7 @@ _So what goes where?_
 
 Anything that is used within Umbraco like plugins and configuration should by default be placed in the `*.Web` project. Here is a list of other elements that you want to place in the Website project:
 
-* Website assets like css, javascript and related images
+* Website assets like css, JavaScript and related images
 * Views, Partial Views and Partial View Macros
 * Configuration (web.config and all the Umbraco specific or related config files in ~/Config/)
 * Usercontrol ascx-files

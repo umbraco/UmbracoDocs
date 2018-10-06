@@ -63,7 +63,7 @@ By adding this to appSettings you can specify a new/different folder for storing
 
 ### umbracoScriptsPath 
 
-By adding this to appSettings you can specify a new/different folder for storing your Javascript files and still be able to edit them within Umbraco. Default folder is ~/scripts.
+By adding this to appSettings you can specify a new/different folder for storing your JavaScript files and still be able to edit them within Umbraco. Default folder is ~/scripts.
 
 ### SMTP Settings
 

@@ -69,7 +69,7 @@ Now go back **Content > Homepage (hover) > ... > Create** now we have the **Simp
 *Figure 33 - Creating Our Contact Us Page*
 
 
-Our **_Content tree_** will now reload and there will be a **_Contact Us_** page under the homepage.  This is the recommended structure for most sites - your primary level 1 pages will sit under the Homepage. Go look at this page - if you look at the **_Properties tab_** you can see a **_Link To document row_** - click this. You might find an unstyled page again. This is because the template designers have assumed that your site will be a flat structure - e.g. all pages sitting at the same level so the browser can't find the CSS or JS at the page level below the homepage. You need to update the **_Master_** template to add a leading slash on the JS and CSS source lines. 
+Our **_Content tree_** will now reload and there will be a **_Contact Us_** page under the homepage.  This is the recommended structure for most sites - your primary level 1 pages will sit under the Homepage. Go look at this page - if you look at the **_Properties tab_** you can see a **_Link To document row_** - click this. You might find an unstyled page again. This is because the template designers have assumed that your site will be a flat structure - e.g. all pages sitting at the same level so the browser can't find the CSS or JavaScript at the page level below the homepage. You need to update the **_Master_** template to add a leading slash on the JavaScript and CSS source lines. 
 
 e.g.  change the lines in the Master Template:
 
@@ -79,7 +79,7 @@ From: `<link rel="stylesheet" href="css/style.css">`
 
 To: `<link rel="stylesheet" href="/css/style.css">`
 
-### JS
+### JavaScript
 From: `<script src="js/libs/modernizr-2.0.6.min.js"></script>`
 
 

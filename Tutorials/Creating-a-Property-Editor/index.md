@@ -7,7 +7,7 @@ This guide explains how to set up a simple property editor, how to hook it into 
 So all the steps we will go through:
 
 - Setting up a plugin
-- Write some basic "Hello World" HTML + JS
+- Write some basic "Hello World" HTML + JavaScript
 - Register the data type in Umbraco
 - Add external dependencies
 - Complete the markdown editor
@@ -63,7 +63,7 @@ Inside this package manifest we add a bit of JSON to describe the property edito
 	}
 
 
-## Writing some basic HTML + JS
+## Writing some basic HTML + JavaScript
 Then we add 2 files to the /app_plugins/markdowneditor/ folder:
 - `markdowneditor.html`
 - `markdowneditor.controller.js`
@@ -126,7 +126,7 @@ Then open the `markdowneditor.controller.js` file and edit it so it looks like t
 			    alert("editor dependencies loaded");
 			});
 
-	    // load the separate css for the editor to avoid it blocking our js loading
+	    // load the separate css for the editor to avoid it blocking our JavaScript loading
 	    assetsService.loadCss("~/App_Plugins/MarkDownEditor/lib/markdown.css");
 	});
 

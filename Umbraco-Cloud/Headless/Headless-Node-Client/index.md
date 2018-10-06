@@ -1,6 +1,6 @@
 # Umbraco-Headless-Client-NodeJs
 
-Javascript Client Library for working with the Umbraco Headless API.
+JavaScript Client Library for working with the Umbraco Headless API.
 
 The following assumes that you have already installed [NodeJs](https://nodejs.org/)
 

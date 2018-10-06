@@ -63,7 +63,7 @@ Umbraco.Sys.registerNamespace("MyProject.MyNamespace");
 	        return $(this).data("api");
 	    }
 	 
-	    // create a js class to support the plugin
+	    // create a JavaScript class to support the plugin
 	 
 	    MyProject.MyNamespace.verticalAligner = function(elem) {
 	       // the jQuery selector

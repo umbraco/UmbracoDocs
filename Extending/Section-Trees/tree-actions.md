@@ -43,9 +43,9 @@ When you pull back the AssignedPermissions for a user on a particular item, it i
 
 ### User Permission Codes
 
-Here's a list of the current User Permission codes, their alias, whether they can be permission assigned, their icon, and the javascript function they call... (if relevant)
+Here's a list of the current User Permission codes, their alias, whether they can be permission assigned, their icon, and the JavaScript function they call... (if relevant)
 
-| Letter | Alias                | Can be Permission Assigned | Icon                | Javascript Function                                                                                                                     |
+| Letter | Alias                | Can be Permission Assigned | Icon                | JavaScript Function                                                                                                                     |
 |--------|----------------------|----------------------------|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
 | F      | Action Browse        | True                       |                     | This action is used as a security constraint that grants a user the ability to view nodes in a tree that has permissions applied to it. |
 | ï      | createblueprint      | True                       | blueprint           |                                                                                                                                         |

@@ -42,7 +42,7 @@ Let's consider the number of dependencies that goes into moving a document
 - Data types used in the document type
 - Dlls, files, settings, content referenced by data types, like the RTE, and the content picker
 - The template
-- Css, js and images referenced in the template
+- Css, JavaScript and images referenced in the template
 - macros in the template
 - document ids passed as parameters to the macro, which leads to another document its data and so on.
 
