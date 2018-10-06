@@ -33,7 +33,7 @@ You can specify the type of data being returned to help you format the value for
 
 See [Writing out Umbraco Grid Properties](../../Backoffice/Property-Editors/Built-in-Property-Editors/Grid-Layout/Render-Grid-In-Template.md#render-grid-in-template)....
 
-### Using fallbacks
+### Using fall-back methods
 
 The `.Value()` method has a number of optional parameters that support scenarios where we want to "fall-back" to some other content, when the property value does not exist on the current content item.
 
@@ -41,7 +41,7 @@ Most simply, we can display a static, default value when a property value is not
 
     @Model.Value("pageTitle", fallback: Fallback.ToDefaultValue, defaultValue: "Default page title")
 
-A second supported method is to recurse up the tree ancestors to try to find a value.  So if the current content item isn't populated for a property, we can retrieve the value from the parent, grand-parent, or a higher ancestor in the tree.  The first ancestor encountered that has a value will be the one returned.
+A second supported method is to traverse up the tree ancestors to try to find a value.  If the current content item isn't populated for a property, we can retrieve the value from the parent, grand-parent, or a higher ancestor in the tree.  The first ancestor encountered that has a value will be the one returned.
 
     @Model.Value("pageTitle", fallback: Fallback.ToAncestors)
 
@@ -49,20 +49,20 @@ If developing a multi-lingual site and fall-back languages* have been configured
 
     @Model.Value("pageTitle", "fr", fallback: Fallback.ToLanguage)
 
-We can also combine these options to create some more sophisticated scenarios.  For example we might want to fall-back via language first, and if that doesn't find any populated content, then try to recurse through the ancestors of the tree.  We can do that using the following syntax, with the other of the options provided determining the order that content will be attempted to be retrieved:
+We can also combine these options to create some more sophisticated scenarios.  For example we might want to fall-back via language first, and if that doesn't find any populated content, then try to find a value by traversing through the ancestors of the tree.  We can do that using the following syntax, with the order of the fall-back options provided determining the order that content will be attempted to be retrieved:
 
     @Model.Value("pageTitle", "fr", fallback: Fallback.To(Fallback.Language, Fallback.Ancestors))
 
-In this final example, we are looking for content firstly on the current node for the default language, and if not found we'll search through the ancestors.  Failing to find any populated value, we'll use the provided default:
+In this further example, we are looking for content firstly on the current node for the default language, and if not found we'll search through the ancestors.  If failing to find any populated value from them, we'll use the provided default:
 
     @Model.Value("pageTitle", fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue), defaultValue: "Default page title")
 
 We can use similar overloads when working with ModelsBuilder, for example:
 
     @model.Value(x => x.PageTitle, "fr", fallback: Fallback.ToLanguage)
-	@model.Value(x => x.PageTitle, fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue), defaultValue: "Default page title")
+    @model.Value(x => x.PageTitle, fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue), defaultValue: "Default page title")
 
-* Fall-back languages can be configured vla the Languages tree within the Settings section.  Each language can optionally be provided with a fall-back language, that will be used when content is not populated for the language requested and the appropriate overload parameters are provided.  It's possible to chain these language fall-backs, so requesting content for Portuguese, could fall-back to Spanish and then on to English.
+* Fall-back languages can be configured via the Languages tree within the Settings section.  Each language can optionally be provided with a fall-back language, that will be used when content is not populated for the language requested and the appropriate overload parameters are provided.  It's possible to chain these language fall-backs, so requesting content for Portuguese, could fall-back to Spanish and then on to English.
 
 ![Configuring fall-back languages](images/language-fallback.png)
 
