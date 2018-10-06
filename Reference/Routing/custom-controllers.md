@@ -95,6 +95,25 @@ So to return a custom model to the current Umbraco template, we need to use diff
 	    }
 	}
 
+## Passing values to the controller using query string
+
+You can also pass values to directly to the controller action using a query string. All you have to do is to put those fields in action definition and attach values with correct fields names to your URL:
+
+	?myfield1=hello&myfield2=umbraco
+
+This way, fields defined in the action's parameters will get automatically populated:
+
+	public class HomeController : Umbraco.Web.Mvc.RenderMvcController
+	{
+	    public ActionResult MobileHomePage(RenderModel model, string myField1, string myField2)
+	    {
+			//myField1 == "hello"
+			//myField2 == "umbraco"
+
+			return CurrentTemplate(myCustomModel);
+	    }
+	}
+
 ## Change the default controller
 
 In some cases you might want to have your own custom controller execute for all MVC requests when you haven't hijacked a route. This is possible by assigning your own default controller during application startup.
