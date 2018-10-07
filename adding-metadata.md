@@ -6,7 +6,7 @@ To add meta data, the metadata is between lines with each 3 dashes.  Every line 
 
     ---
     keywords: content razor v8 version8
-    versionFrom: 8.0.0
+    versionTo: 8.0.0
 	versionFrom: 7.3.4
     ---
 
