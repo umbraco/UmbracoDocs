@@ -8,7 +8,7 @@ Related links:
 * [Umbraco api authorization](authorization.md)
 
 ## What is Web API?
-The Microsoft Web API reference can be found [on the official ASP.net Web API website](https://www.asp.net/web-api) - *"ASP.NET Web API is a framework that makes it easy to build HTTP services that reach a broad range of clients, including browsers and mobile devices. ASP.NET Web API is an ideal platform for building RESTful applications on the .NET Framework."*
+The Microsoft Web API reference can be found on the [official ASP.net Web API website](https://www.asp.net/web-api) - *"ASP.NET Web API is a framework that makes it easy to build HTTP services that reach a broad range of clients, including browsers and mobile devices. ASP.NET Web API is an ideal platform for building RESTful applications on the .NET Framework."*
 
 Essentially it's a great platform for building REST services.
 
@@ -48,7 +48,7 @@ All controller class names must be suffixed with "**Controller**" and inherit fr
 
 ### Locally declared controller
 
-This is the most common way to create an Umbraco Api controller, you simply inherit from the class `Umbraco.Web.WebApi.UmbracoApiController` and that is all. You will of course need to follow the guidelines specified by Microsoft for creating a Web Api controller, documentation can be found [on the official ASP.net Web API website](https://www.asp.net/web-api).
+This is the most common way to create an Umbraco Api controller, you simply inherit from the class `Umbraco.Web.WebApi.UmbracoApiController` and that is all. You will of course need to follow the guidelines specified by Microsoft for creating a Web Api controller, documentation can be found on the [official ASP.net Web API website](https://www.asp.net/web-api).
 
 Example:
 
