@@ -118,4 +118,4 @@ In Umbraco, we usually apply these XPath expressions to a variable or parameter 
 
 For more information, see the following pages:
 
-- [MSDN XPath Examples](http://msdn.microsoft.com/en-us/library/ms256086.aspx)
+- [MSDN XPath Examples](https://msdn.microsoft.com/en-us/library/ms256086.aspx)

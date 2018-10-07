@@ -13,7 +13,7 @@ If this sounds like you, you should evaluate the Azure Blob Storage provider. It
 #### File System Provider for Azure Blob Storage
 You’ll replace the default FileSystemProvider with the `Our.Umbraco.FileSystemProviders.Azure.AzureBlobFileSystem` provider.  We recommend doing this first and verifying it behaves as expected before proceeding with the ImageProcessor setup.
 
-The package is available on Our Umbraco [https://our.umbraco.org/projects/collaboration/umbracofilesystemprovidersazure/](https://our.umbraco.org/projects/collaboration/umbracofilesystemprovidersazure/)
+The package is available on Our Umbraco [https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/](https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/)
 The project source can be found here   [https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure](https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure)
 
 There are detailed instructions available on the project page, also summarized here.
@@ -56,7 +56,7 @@ You’ll need to install the following ImageProcessor packages (latest versions 
 * ImageProcessor.Web.Config.2.2.3.0 or later
 * ImageProcessor.Web.Plugins.AzureBlobCache.1.0.4.0 or later
 
-These packages are only available via NuGet, so ideally you’ll have your site setup to use Visual Studio.  You can find more information about ImageProcessor and related packages here [http://imageprocessor.org/](http://imageprocessor.org/)
+These packages are only available via NuGet, so ideally you’ll have your site setup to use Visual Studio.  You can find more information about ImageProcessor and related packages here [https://imageprocessor.org/](https://imageprocessor.org/)
 
 Since Umbraco includes a version of ImageProcessor.Web by default, you will need to update that package first using NuGet:
 
@@ -141,3 +141,14 @@ Update `~/config/imageprocessor/cache.config` by removing the default “DiskCac
 
 ## Environment and Deployment considerations
 By default this provider will use a single blob container for the media used by all sites in a project. So development and live will all use the same media files. If this works with your workflow it is the recommended configuration. If you cannot use the same media across all environments then you will need to set up a different blob storage container for each environments. Each container will have a unique address and access keys.
+
+## Excluding media from deployments
+This is not something that should be done unless you really have a good reason to do it. But if nothing works and you wish to deploy changes without getting a lot of errors related to media files you can set the following in the `~/config/UmbracoDeploy.Settings.config` file:
+```
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+  <excludedEntityTypes>
+    <add type="media-file" />
+  </excludedEntityTypes>
+</settings>
+```

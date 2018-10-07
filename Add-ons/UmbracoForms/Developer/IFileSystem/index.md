@@ -16,7 +16,7 @@ Adding the following to your IFileSystem config file found at `Config/FileSystem
 
 
 ## Storing the JSON files using the community Umbraco Azure Blob Provider
-The Umbraco community has created a [great open source IFileSystem provider that is currently used for storing your media files in Azure Blob storage.](https://our.umbraco.org/projects/collaboration/umbracofilesystemprovidersazure/) The same provider can be installed and configured as below in the IFileSystem config file at `Config/FileSystemProviders.config`
+The Umbraco community has created a [great open source IFileSystem provider that is currently used for storing your media files in Azure Blob storage.](https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/) The same provider can be installed and configured as below in the IFileSystem config file at `Config/FileSystemProviders.config`
 Note you may or may not have a similar looking configuration if using this provider to store your media files in Azure blob too, the differences here will be the `alias="forms"` and the `containerName` property of where you want to store your forms based data
 
     <Provider alias="forms" type="Our.Umbraco.FileSystemProviders.Azure.AzureBlobFileSystem, Our.Umbraco.FileSystemProviders.Azure">

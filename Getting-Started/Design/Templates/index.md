@@ -120,5 +120,5 @@ the created partial can now be injected into any template by using the `@Html.Pa
 ### Tutorials
 - [Creating a basic website with Umbraco](../../../Tutorials/Creating-Basic-Site/)
 
-### [Umbraco.TV](http://umbraco.tv)
-- [Chapter: Templating](http://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/templating/introduction/)
+### [Umbraco.TV](https://umbraco.tv)
+- [Chapter: Templating](https://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/templating/introduction/)

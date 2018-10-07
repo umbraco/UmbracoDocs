@@ -11,7 +11,7 @@ Below you can see the settings that affect the Umbraco backoffice (v7.8+)
 
 ### Tours
 
-The section is used for controlling the backoffice tours functionality
+The section is used for controlling the backoffice tours functionality.
 
 	<backOffice>
         <tours enable="true"></tours>
@@ -21,6 +21,15 @@ There is only one supported attribute on the tours element:
 
 **`enable`**
 By default this is set to true. Set it to false to turn off [backoffice tours](../../../Extending/Backoffice-Tours/index.md)
+
+### Obsolete data types
+
+This section is used for controlling whether or not the data types marked as obsolete should be visible in the dropdown when creating new data types.
+
+    <showDeprecatedPropertyEditors>false</showDeprecatedPropertyEditors>
+
+**`enable`**
+By default this is set to false. To make the obsolete data types visible in the dropdown change the value to **true**.
 
 ## Content
 
@@ -270,14 +279,14 @@ This setting is used when you're running Umbraco in virtual directories.
         
 **DisallowedUploadFiles**
 
-This setting consists of a "black list" of file extensions that editors shouldn't be allowed to upload via the back-office.
+This setting consists of a "black list" of file extensions that editors shouldn't be allowed to upload via the backoffice.
 
         <!-- These file types will not be allowed to be uploaded via the upload control for media and content -->
         <disallowedUploadFiles>ashx,aspx,ascx,config,cshtml,vbhtml,asmx,air,axd,swf,xml,xhtml,html,htm,svg,php,htaccess</disallowedUploadFiles>
         
 **AllowedUploadFiles (introduced in 7.6.2)**
 
-If greater control is required than available from the above, this setting can be used to store a "white list" of file extensions.  If provided, only files with these extensions can be uploaded via the back-office.
+If greater control is required than available from the above, this setting can be used to store a "white list" of file extensions.  If provided, only files with these extensions can be uploaded via the backoffice.
 
         <!-- If completed, only the file extensions listed below will be allowed to be uploaded.  If empty, disallowedUploadFiles will apply to prevent upload of specific file extensions. -->
         <allowedUploadFiles></allowedUploadFiles>
@@ -285,7 +294,7 @@ If greater control is required than available from the above, this setting can b
 
 **loginBackgroundImage (introduced in 7.6.0)**
 
-You can specify your own background image for the login screen here. The image will automatically get an overlay to match back office colors. This path is relative to the ~/umbraco path. The default location is: /umbraco/assets/img/installer.jpg
+You can specify your own background image for the login screen here. The image will automatically get an overlay to match backoffice colors. This path is relative to the ~/umbraco path. The default location is: /umbraco/assets/img/installer.jpg
 
 	 <loginBackgroundImage>../App_Plugins/Backgrounds/login.png</loginBackgroundImage>
 
@@ -305,19 +314,19 @@ In the security section you have the following options: **`<keepUserLoggedIn>`**
         <!-- set to true to auto update login interval (and there by disabling the lock screen -->
         <keepUserLoggedIn>true</keepUserLoggedIn>
 
-        <!-- by default this is true and if not specified in config will be true. set to false to always show a separate username field in the back office user editor -->
+        <!-- by default this is true and if not specified in config will be true. set to false to always show a separate username field in the backoffice user editor -->
         <usernameIsEmail>true</usernameIsEmail>
 
         <!-- change in 4.8: Disabled users are now showed dimmed and last in the tree. If you prefer not to display them set this to true -->
         <hideDisabledUsersInBackoffice>false</hideDisabledUsersInBackoffice>
 
-        <!-- set to true to enable the UI and API to allow back-office users to reset their passwords -->
+        <!-- set to true to enable the UI and API to allow backoffice users to reset their passwords -->
         <allowPasswordReset>true</allowPasswordReset>
 
-        <!-- set to a different value if you require the authentication cookie for back-office users to be renamed -->
+        <!-- set to a different value if you require the authentication cookie for backoffice users to be renamed -->
         <authCookieName>UMB_UCONTEXT</authCookieName>  
 
-        <!-- set to a different value if you require the authentication cookie for back-office users to be set against a different domain -->
+        <!-- set to a different value if you require the authentication cookie for backoffice users to be set against a different domain -->
         <authCookieDomain></authCookieDomain>  
 
     </security>
@@ -328,19 +337,19 @@ option to "false" and thereby enabling it.
 
 **`<hideDisabledUsersInBackoffice>`**
 As stated in the comment above, this setting was introduced in v4.8. If it's set to true it's not possible to see disabled users, which means it's
-not possible to re-enable their access to the back office again. It also means you can't create an identical username if the user was disabled by a mistake.
+not possible to re-enable their access to the backoffice again. It also means you can't create an identical username if the user was disabled by a mistake.
 
 **`<usernameIsEmail>`**
 This setting specifies whether the username and email address are separate fields in the backoffice editor. When set to false, you can specify an email address and username, only the username can be used to log on. When set the true (the default value) the username is hidden and always the same as the email address.
 
 **`<allowPasswordReset>`**
-The feature to allow users to reset their passwords if they have forgotten them was introduced in 7.5. he feature is based on [a method provided by ASP.Net Identity](http://www.asp.net/identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity). By default, this is enabled but if you'd prefer to not allow users to do this it can be disabled at both the UI and API level by setting this value to `false`.
+The feature to allow users to reset their passwords if they have forgotten them was introduced in 7.5. he feature is based on [a method provided by ASP.Net Identity](https://www.asp.net/identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity). By default, this is enabled but if you'd prefer to not allow users to do this it can be disabled at both the UI and API level by setting this value to `false`.
 
 **`<authCookieName>`**
-The authentication cookie which is set in the browser when a back-office user logs in, and defaults to `UMB_UCONTEXT`. This setting is excluded from the configuration file but can be added in if a different cookie name needs to be set.
+The authentication cookie which is set in the browser when a backoffice user logs in, and defaults to `UMB_UCONTEXT`. This setting is excluded from the configuration file but can be added in if a different cookie name needs to be set.
 
 **`<authCookieDomain>`**
-The authentication cookie which is set in the browser when a back-office user logs in is automatically set to the current domain.  This setting is excluded from the configuration file but can be added in if a different domain is required.
+The authentication cookie which is set in the browser when a backoffice user logs in is automatically set to the current domain.  This setting is excluded from the configuration file but can be added in if a different domain is required.
 
 ## RequestHandler
 
@@ -413,7 +422,7 @@ So, if **`<char org="ñ">n</char>`** is added above the **ñ** will be shown as 
     </templates>
 
 **`<defaultRenderingEngine>`**
-Tells Umbraco whether to create MVC Views or Webforms Master Pages when creating a template. This does not limit you from using one technology or the other, it is just a flag to indicate to Umbraco what type of templates to create in the back office.
+Tells Umbraco whether to create MVC Views or Webforms Master Pages when creating a template. This does not limit you from using one technology or the other, it is just a flag to indicate to Umbraco what type of templates to create in the backoffice.
 
 **`useAspNetMasterPages`**
 This is a legacy setting and should not normally be changed.
@@ -575,7 +584,7 @@ The providers section configures the different providers in use in Umbraco. Curr
 
     <providers>
         <users>
-            <!-- if you wish to use your own membershipprovider for authenticating to the Umbraco back office -->
+            <!-- if you wish to use your own membershipprovider for authenticating to the Umbraco backoffice -->
             <!-- specify it here (remember to add it to the web.config as well) -->
             <DefaultBackofficeProvider>UsersMembershipProvider</DefaultBackofficeProvider>
         </users>
@@ -593,7 +602,7 @@ This section configures...
 
 **disableFindContentByIdPath**: when true, urls such as /1234 do *not* find content with ID 1234.
 
-**disableRedirectUrlTracking**: when you move and rename pages in Umbraco, 301 permanent redirects are automatically created, set this to true if you do not want this behavior 
+**disableRedirectUrlTracking**: when you move and rename pages in Umbraco, 301 permanent redirects are automatically created, set this to true if you do not want this behavior.
 
 **Note:** The URL tracking feature (and thus, this setting) is only available on Umbraco 7.5.0 and higher.
 

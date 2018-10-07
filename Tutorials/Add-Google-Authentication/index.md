@@ -20,9 +20,9 @@ Developers who won't mind configuring a Google API, running the solution in Visu
 
 ### Prerequisites
 Here is what you will need for this tutorial:
-- Visual studio installed
-- A Google account
-- A working Umbraco solution
+- [Visual Studio](https://visualstudio.microsoft.com/) installed
+- A [Google](https://myaccount.google.com/) account
+- A working [Umbraco solution](../../Getting-Started/)
 
 ## Setting up a Google OAuth API
 
@@ -30,7 +30,7 @@ The first thing to do is set up a Google API. To do this you need to go to https
 
 First thing to do is to add a new API, you may have some already if you are using Firebase or any other Google product, but just click the + at the top:
 
-![Add new API](images/addNewAPi.png)
+![Add new API](images/addNewApi.png)
 
 After you have given your new API a name and gone through the basic setup you need to add an API from the API library on the lefthand menu. Find the Google+ API and Enable it:
 
@@ -49,7 +49,7 @@ Now just fill in your email and leave the page open - you will need the Client I
 
 ## Installing Visual Studio packages
 
-Now that you have the Google API all set up you have to go to your existing solution in Visual Studio. If you don't know how to clone down a Cloud site to use in Visual Studio then there is an excellent guide [here!](https://our.umbraco.org/documentation/Umbraco-Cloud/Set-Up/Visual-Studio/) 
+Now that you have the Google API all set up you have to go to your existing solution in Visual Studio. If you don't know how to clone down a Cloud site to use in Visual Studio then there is an excellent guide [here!](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Visual-Studio/) 
 
 In Visual Studio, go to the Tools menu, then NuGet Package Manager - Package Manager Console. This adds a package manager console at the bottom where you can install packages with commands. In this console write the following:
 

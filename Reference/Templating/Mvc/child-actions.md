@@ -75,4 +75,4 @@ Now the syntax to render a Child Action becomes:
 
 the only thing that is changed is that we've told it to route to the 'area' called "MyCustomSearchPackage". If this syntax seems strange to you please note that this routing logic and syntax is standard and very common practice in ASP.Net MVC.
 
-More documentation regarding Child Actions and how to render them can be found on the net, a nice write up can also be found here: [http://haacked.com/archive/2009/11/18/aspnetmvc2-render-action.aspx](http://haacked.com/archive/2009/11/18/aspnetmvc2-render-action.aspx)
+More documentation regarding Child Actions and how to render them can be found on the net, a nice write up can also be found here: [https://haacked.com/archive/2009/11/18/aspnetmvc2-render-action.aspx](https://haacked.com/archive/2009/11/18/aspnetmvc2-render-action.aspx)

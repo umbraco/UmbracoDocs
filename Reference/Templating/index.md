@@ -30,7 +30,7 @@ If you prefer to work with Webforms, you can change the default template engine 
 
 #### Hybrid templates
 
-Umbraco can work with both MVC and Webforms templates at the same time, however there can only be one default. Umbraco will first check for an MVC view file before it checks for a Webforms master page file. For example, if a template was created in the back office called "Home", then when rendering a content page with this template Umbraco will check these locations and use the first one that is found:
+Umbraco can work with both MVC and Webforms templates at the same time, however there can only be one default. Umbraco will first check for an MVC view file before it checks for a Webforms master page file. For example, if a template was created in the backoffice called "Home", then when rendering a content page with this template Umbraco will check these locations and use the first one that is found:
 
 ~/Views/Home.cshtml
 ~/Masterpages/Home.master

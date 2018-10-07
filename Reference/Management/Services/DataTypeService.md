@@ -4,7 +4,7 @@
 
 The DataTypeService acts as a "gateway" to Umbraco data for operations which are related to DataTypes and DataTypeDefinitions.
 
-[Browse the API documentation for DataTypeService](https://our.umbraco.org/apidocs/csharp/api/Umbraco.Core.Services.DataTypeService.html).
+[Browse the API documentation for DataTypeService](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Core.Services.DataTypeService.html).
 
  * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
