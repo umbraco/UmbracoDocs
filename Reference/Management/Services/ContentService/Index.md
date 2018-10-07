@@ -1,3 +1,8 @@
+---
+keywords: services content service
+versionFrom: 6.0.0
+---
+    
 # ContentService
 
 **Applies to Umbraco 6.x and newer**
