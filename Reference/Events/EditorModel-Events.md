@@ -1,4 +1,9 @@
-# EditorModel Events #
+---
+keywords: EditorModelEventManager
+versionFrom: 7.4.0
+---
+
+# EditorModel Events
 
 **Umbraco 7.4.0+**
 
