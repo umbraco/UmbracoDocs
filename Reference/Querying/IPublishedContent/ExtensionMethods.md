@@ -1,4 +1,4 @@
 # IPublishedContent Extension Methods
 
-### .GetKey() (version 7.6+)
+### .GetKey()
 Returns the Guid Identifier of the IPublishedContent
