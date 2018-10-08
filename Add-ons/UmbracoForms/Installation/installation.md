@@ -1,8 +1,6 @@
 # Extending Umbraco with the full Forms section
 
-Since Umbraco v7.2, Umbraco contains the forms section by default however by default you'll only get to view the dashboard with an intro video and the option to install Forms.
-
-This makes it super easy for you to get started with Umbraco Forms.
+Since Umbraco v7.2, Umbraco contains the Forms section by default. From there it's super easy to install and get started using Umbraco Forms.
 
 ## Installing Umbraco Forms
 
