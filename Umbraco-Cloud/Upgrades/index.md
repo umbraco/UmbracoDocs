@@ -65,5 +65,15 @@ It is important that developers understand what is considered a breaking change 
 What is a breaking change is documented here: [https://our.umbraco.com/documentation/development-guidelines/breaking-changes](https://our.umbraco.com/documentation/development-guidelines/breaking-changes)
 
 ## Can I opt out of product auto upgrades?
+:::warning
+If a project is opted out from being auto upgraded, Umbraco reserves the right to either shut down the project or force an upgrade on the project if a security related issue is discovered with the project that may endanger other sites.
+:::
 
-In order for us to be able to support a site on Umbraco Cloud we must ensure that all sites are running the latest versions of our products so that we know the site is running in it’s most stable state. In rare cases you may contact us to opt-out your site from auto upgrades if you are on a Pro plan. However, if you choose to do this then that site will no longer be supported. If a project is opted out from being auto upgraded, Umbraco reserves the right to either shut down the project or force an upgrade on the project if a security related issue is discovered with the project.
+In rare cases you may contact us to opt-out your site from auto upgrades if you are on a Pro plan, this is always a temporary measure and only with good reason. If you choose to do this then that site will no longer be supported. 
+
+When you reach out about opting out of automatic upgrades you must supply the following:
+:::list
+- Project alias
+- Reason for opting out
+- Time period for opting out
+:::
