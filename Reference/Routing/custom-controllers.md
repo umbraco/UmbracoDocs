@@ -4,12 +4,13 @@ _If you need complete control over how your pages are rendered then Hijacking Um
 
 ## What is Hijacking Umbraco Routes?
 
-By default all of the front end routing is executed via the `Umbraco.Web.Mvc.RenderMvcController` Index Action which should work fine for most people. However, in some cases people may want complete control over this execution and may  want their own Action to execute. Some reasons for this may be: to control exactly how views are rendered, custom/granular security for certain pages/templates or to be able to execute any custom code in the controller that renders the front end. The good news is that this is completely possible. This process is all about convention and it's really simple!
+By default all of the front end routing is executed via the `Umbraco.Web.Mvc.RenderMvcController` Index Action which should work fine for most people. However, in some cases people may want complete control over this execution and may  want their own Action to execute. Some reasons for this may be: to control exactly how views are rendered, custom/granular security for certain pages/templates or to be able to execute any custom code in the controller that renders the front end. The good news is that this is completely possible.
 
 ## Creating a custom controller
 
- It's easiest to demonstrate with an example : let's say you have a Document Type called 'Home'.  You can create a custom locally declared controller in your MVC web project called 'HomeController' and ensure that it inherits from `Umbraco.Web.Mvc.RenderMvcController` and now all pages that are of document type 'Home' will be routed through your custom controller! Pretty easy right :-)
-OK so let's see how we can extend this concept. In order for you to run some code in your controller you'll need to override the Index Action. Here’s a quick example:
+ Let's demonstrate with an example : let's say you have a Document Type called 'Home'.  You can create a custom locally declared controller in your MVC web project called 'HomeController' and ensure that it inherits from `Umbraco.Web.Mvc.RenderMvcController`. Now all pages that are of document type 'Home' will be routed through your custom controller!
+
+In order for you to run some code in your controller you'll need to override the Index Action. Here’s an example:
 
 	public class HomeController : Umbraco.Web.Mvc.RenderMvcController
 	{
@@ -98,7 +99,7 @@ So to return a custom model to the current Umbraco template, we need to use diff
 
 In some cases you might want to have your own custom controller execute for all MVC requests when you haven't hijacked a route. This is possible by assigning your own default controller during application startup.
 
-The code to do this is simple, an example to register a default controller of type 'MyCustomUmbracoController' :
+An example to register a default controller of type 'MyCustomUmbracoController' is below :
 
 	DefaultRenderMvcControllerResolver.Current.SetDefaultControllerType(typeof(MyCustomUmbracoController));
 

@@ -15,7 +15,7 @@ These instructions make the following assumptions:
 * You have administration access to all servers
 * All servers can communicate via HTTP protocol with each other
 * You should be running in ASP.NET Full Trust (medium trust may cause some issues with load balancing)
-* _**You will designate a single server to be the back-office server for which your editors will log into for editing content.**_ Umbraco will not work if the back-office is behind the load balancer *(see DNS for more information below)*.
+* _**You will designate a single server to be the backoffice server for which your editors will log into for editing content.**_ Umbraco will not work if the backoffice is behind the load balancer *(see DNS for more information below)*.
 
 There are two design alternatives you can use to effectively load balance servers:
 
@@ -49,16 +49,16 @@ Server 3
 
 Of course you'll have your public website's DNS/address which you'll also need to add to the host header for each of your IIS server's websites. For instance, if the public website address is: http://www.mywebsite.com then you'll need to add www.mywebsite.com as a host header to IIS website on each server. This DNS entry will point to the public IP address of your load balancer.
 
-### Back office server
+### Backoffice server
 
-You should designate one of these servers to be the back-office server for which your editors will use to log in to and edit content. This can be achieved by creating another public DNS entry/host header that you can assign to your designated server.
+You should designate one of these servers to be the backoffice server for which your editors will use to log in to and edit content. This can be achieved by creating another public DNS entry/host header that you can assign to your designated server.
 
-As an example, you could assign Server 1 as the designated back-office server. In this case you could create a DNS entry such as **admin.mywebsite.com** and add as a host header to Server 1.
+As an example, you could assign Server 1 as the designated backoffice server. In this case you could create a DNS entry such as **admin.mywebsite.com** and add as a host header to Server 1.
 
 You will then need to ensure that any public request going to this DNS entry only goes to Server 1. This can be achieved by assigning a secondary public IP address to the DNS entry and configuring your firewall to NAT this IP address to your Server 1 internal IP address. Other alternatives could possibly be achieved based on your firewall and the configuration that it supports.
 
 ## Load Balancer
-A load balancer will balance the traffic between your servers. There are many load balancers out there and hardware ones are generally the most effective way to balance traffic. If you don't have a hardware load balancer, don't worry - you can use software. Windows Server comes with [NLB (Network Load Balancing)](http://technet.microsoft.com/en-us/library/cc758834%28WS.10%29.aspx). It's relatively easy to setup and free.
+A load balancer will balance the traffic between your servers. There are many load balancers out there and hardware ones are generally the most effective way to balance traffic. If you don't have a hardware load balancer, don't worry - you can use software. Windows Server comes with [NLB (Network Load Balancing)](https://technet.microsoft.com/en-us/library/cc758834%28WS.10%29.aspx). It's relatively easy to setup and free.
 
 Some important notes on NLB:
 

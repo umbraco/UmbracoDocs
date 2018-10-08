@@ -10,7 +10,7 @@ By default the web.config with Umbraco (7.6+) will contain a commented out secti
 
     <!--
     If you wish to use IIS rewrite rules, see the documentation here: 
-    https://our.umbraco.org/documentation/Reference/Routing/IISRewriteRules
+    https://our.umbraco.com/documentation/Reference/Routing/IISRewriteRules
     -->
     <!--
     <rewrite>
@@ -24,7 +24,7 @@ installed and uncomment the <rewrite> section. If you don't have the IIS Rewrite
 
 ## Storing rules in an external file
 
-You can store the rules in an external file if you with by using this syntax:
+You can store the rules in an external file if you wish by using this syntax:
 
     <rewrite>
       <rules configSource="config\IISRewriteRules.config" />
@@ -40,7 +40,7 @@ and creating a file at `~/Config/IISRewriteRules.config` with the content:
 
 * Main documentation: [https://www.iis.net/learn/extensions/url-rewrite-module](https://www.iis.net/learn/extensions/url-rewrite-module)
 * A great site showing 10 very handy IIS Rewrite rules: [http://ruslany.net/2009/04/10-url-rewriting-tips-and-tricks/](http://ruslany.net/2009/04/10-url-rewriting-tips-and-tricks/)
-* Another site showing some handy examples of IIS Rewrite rules: [http://odetocode.com/blogs/scott/archive/2014/03/27/some-useful-iis-rewrite-rules.aspx](http://odetocode.com/blogs/scott/archive/2014/03/27/some-useful-iis-rewrite-rules.aspx)
+* Another site showing some handy examples of IIS Rewrite rules: [https://odetocode.com/blogs/scott/archive/2014/03/27/some-useful-iis-rewrite-rules.aspx](https://odetocode.com/blogs/scott/archive/2014/03/27/some-useful-iis-rewrite-rules.aspx)
 * If you needed to a lot of static rewrites using rewrite maps: [https://www.iis.net/learn/extensions/url-rewrite-module/rule-with-rewrite-map-rule-template](https://www.iis.net/learn/extensions/url-rewrite-module/rule-with-rewrite-map-rule-template)
 
 For example, to always remove trailing slash from the URL:
@@ -63,4 +63,14 @@ Another example would be to enforce HTTPS only on your site:
         <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
       </conditions>
       <action type="Redirect" url="https://{HTTP_HOST}/{R:1}" redirectType="Permanent" />
+    </rule> 
+
+Another example would be to redirect from non-www to www:
+
+    <rule name="Non WWW to WWW" stopProcessing="true">
+      <match url="(.*)" ignoreCase="true" />
+      <conditions>
+        <add input="{HTTP_HOST}" pattern="^google\.com" />
+      </conditions>
+      <action type="Redirect" url="https://www.google.com/{R:1}" redirectType="Permanent" />
     </rule> 

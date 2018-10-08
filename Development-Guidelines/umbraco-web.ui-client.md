@@ -1,6 +1,6 @@
 # Umbraco.Web.UI.Client project structure
 
-_This is the AngularJS back office UI project_
+_This is the AngularJS backoffice UI project_
 
 ## Overview
 This document outlines the location of different files in the Umbraco 7 source code.
@@ -13,7 +13,7 @@ The folders found in the root of the client-side project and their contents:
 This folder contains various client-side assets, most of them are obsolete by now and will over time be merged into the source
 
 */build*
-Folder containing the compiled and minified bits outputted by Grunt
+Folder containing the compiled and minified bits outputted by gulp
 
 */docs*
 Automated documentation files by ngdoc project from inline comments in source files as well as from .ngdoc files in /docs/src/
@@ -22,7 +22,7 @@ Automated documentation files by ngdoc project from inline comments in source fi
 Folder containing all 3rd party dependencies used by the Umbraco web application
 
 */node_modules*
-Dependencies used by Node.js and Grunt to build the project
+Dependencies used by Node.js and gulp to build the project
 
 */src*
 The source code of Umbraco 7 UI

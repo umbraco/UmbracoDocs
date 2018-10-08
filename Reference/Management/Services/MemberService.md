@@ -4,7 +4,7 @@
 
 The MemberService acts as a "gateway" to Umbraco data for operations which are related to Members.
 
-[Browse the API documentation for MemberService](https://our.umbraco.org/apidocs/csharp/api/Umbraco.Core.Services.MemberService.html).
+[Browse the API documentation for MemberService](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Core.Services.MemberService.html).
 
  * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
@@ -140,6 +140,9 @@ Returns a single `Member` with a given Membership provider key.
 ### .GetByUsername(string username);
 Returns a single `Member` with a given Username
 
+### .GetCount(MemberCountType memberCountType);
+Returns a count `int` of members from the specified `MemberCountType` enum: All, Approved, LockedOut or Online.
+
 ### .GetDefaultMemberType();
 Returns the default `MemberType`
 
@@ -154,6 +157,9 @@ Returns all Members, of any type, with a mathcing value in the property with the
 
 ### .GetMembersInRole(string role);
 Returns all members in a given Role
+
+### .GetPagedXmlEntries(long pageIndex, int pageSize, out long totalRecords);
+Returns a paged collection of members as `IEnumerable<XElement>`
 
 ### .Save(IMember member);
 Saves a `Member`,

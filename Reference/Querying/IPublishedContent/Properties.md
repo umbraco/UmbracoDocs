@@ -40,16 +40,16 @@ Returns the Url encoded name of the page
 Returns the Alias of the Document type used by this content item.
 
 ### .WriterName
-Returns the name of the Umbraco back office user that performed the last update operation on the content item.
+Returns the name of the Umbraco backoffice user that performed the last update operation on the content item.
 
 ### .CreatorName
-Returns the name of the Umbraco back office user that initially created the content item.
+Returns the name of the Umbraco backoffice user that initially created the content item.
 
 ### .WriterId
-Returns the Id of the Umbraco back office user that performed the last update operation to the content item.
+Returns the Id of the Umbraco backoffice user that performed the last update operation to the content item.
 
 ### .CreatorId
-Returns the Id of the Umbraco back office user that initially created the content item.
+Returns the Id of the Umbraco backoffice user that initially created the content item.
 
 ### .Path
 Returns a comma delimited string of Node Ids that represent the path of content items back to root.

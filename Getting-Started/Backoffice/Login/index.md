@@ -1,4 +1,12 @@
 # Login screen
+To access the backoffice, you will need to login. You can do this by adding `/umbraco` to the end of your website address e.g. http://mywebsite.com/umbraco
+
+The login screen will look similiar to this. 
+
+![Login screen](../images/umbraco7-6_login.jpg "The login screen has a greeting, username/password field and optionally a 'Forgotten password' link.")
+The login screen has a greeting, username/password field and optionally a 'Forgotten password' link.
+
+Below, you will find instructions on how to customise the login screen. 
 
 ## Greeting
 The login screen features a greeting, which you can personalize by changing the language file of your choice. For example for en-US you would add the following keys to: `~/Config/Lang/en-US.user.xml`
@@ -30,7 +38,7 @@ The "Forgot password?" link allows your backoffice users to reset their password
 This feature can be turned off completely using the `allowPasswordReset` configuration, see: [/Documentation/Reference/Config/umbracoSettings/#security](/Documentation/Reference/Config/umbracoSettings/#security) 
 
 ## Background image
-You can customise the background image for the backoffice login screen. In `~/Config/umbracoSetting.config` find the `loginBackgroundImage`and change the path to the image you want to use.
+You can customise the background image for the backoffice login screen. In `~/Config/umbracoSettings.config` find the `loginBackgroundImage`and change the path to the image you want to use.
 
     <settings>
         <content>

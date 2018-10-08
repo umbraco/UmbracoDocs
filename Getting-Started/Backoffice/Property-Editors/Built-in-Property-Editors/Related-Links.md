@@ -1,5 +1,7 @@
 # (Obsolete) Related Links
 
+### For the new version of this data type see: [Related-Links2](Related-Links2.md)
+
 `Returns: RelatedLinks` if value converters are enabled (default)
 
 `Returns: JArray` if value converters are disabled
