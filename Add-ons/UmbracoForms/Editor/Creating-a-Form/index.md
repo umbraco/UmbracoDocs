@@ -21,14 +21,20 @@ You will see the following dialog
 
 You'll have the option to start from scratch or you can choose to start with a template that will already have some fields defined.
 
+In this walk-through we'll select **Empty form**.
 
 ## Design the form
 
-The next screen you should see after selecting the empty or form template is the form designer
+The next screen you will see is the form designer.
 
-![Forms designer](FormDesignerStart.png)
+![Forms designer](images/FormDesignerStart.png)
 
-There is already a page, a fieldset and a container available. The rest of the form has to be added using the UI (unless you started from a template then you already get some fields).
+There is already a page, a fieldset and a container available. The rest of the form has to be added using the UI..
+
+:::note
+In Umbraco Forms version 7 or higher there will be a predefined *dataConsent* field added to all new forms.
+See this blog post for more details: [Umbraco version 7.9 and Forms 7.0](https://umbraco.com/blog/umbraco-version-79-and-forms-70-is-out/)
+:::
 
 ### Setting the form name
 First we'll need to provide a name for our new form, you can do that in the top input.
