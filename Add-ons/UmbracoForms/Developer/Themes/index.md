@@ -7,6 +7,8 @@ To create a theme you simply need to create a folder at `/views/partials/forms/t
 Copy the explicit files you wish to override in your theme, it may be a single file or all files from the default theme folder. Make the necessary changes you desire to CSS class names, markup etc. 
 *A side note to consider is that Umbraco Forms conditional JS logic does depend on some CSS classes currently and that is advised that you add any additional classes you require but do not*
 
+When using your own theme, you need to copy the Script.cshtml file from the default theme folder and amend the js references to reference your own js files. Your js files are probably best located in `/js` or `/scripts` along with your other js files. You can't put these in `/Views` since they won't be served becasue of restrictions on that folder by the web.config file.
+
 We highly recommend you never customise any files found in the `default` theme folder, as any customisations to these files that you do will most likely be lost with any future upgrades you do to Umbraco Forms.
 
 ##Theme Fallbacks
@@ -75,7 +77,3 @@ To do this, when inserting the form using the macro ensure the checkbox for the 
             Html.RenderAction("RenderFormScripts", "UmbracoForms", new { formid = form, theme = "yourTheme" });
         }
     }
-
-When using your own theme, you need to copy the Script.cshtml file from the default theme folder and amend the js references to reference your own js files.
-
-Your js files are probably best located in /js or /scripts along with your other js files. You can't put these in /Views since they won't be served becasue of restrictions on that folder by the web.config file
