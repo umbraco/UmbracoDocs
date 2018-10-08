@@ -1,4 +1,4 @@
-#Umbraco 7.6 Breaking Changes
+# Umbraco 7.6 Breaking Changes
 
 ## Dependencies
 
@@ -38,7 +38,7 @@ For example, the `SliderValueConverter` returns a `decimal` or a `Range<decimal>
 
 This change only impacts new installs (no change for upgrades).
 
-The new property value converters are controlled by an `umbracoSetting.config` setting: in section `settings/content`, setting `EnablePropertyValueConverters` needs to be present and `true` to activate them.
+The new property value converters are controlled by an `umbracoSettings.config` setting: in section `settings/content`, setting `EnablePropertyValueConverters` needs to be present and `true` to activate them.
 
 ### Database ([U4-9201](http://issues.umbraco.org/issue/U4-9201))
 
@@ -54,7 +54,7 @@ Version 7.6 introduces the notion of *scopes*, which allow for wrapping multiple
 
 Scopes *should not* change how Umbraco is functioning.
 
-Introducing scopes means that some public APIs signatures are changing. Most of these changes target internal and/or non-breaking APIs (as per our [guidelines](https://our.umbraco.org/Documentation/Development-Guidelines/breaking-changes)) and therefore should have no impact on sites&mdash;but may break unit tests.
+Introducing scopes means that some public APIs signatures are changing. Most of these changes target internal and/or non-breaking APIs (as per our [guidelines](https://our.umbraco.com/Documentation/Development-Guidelines/breaking-changes)) and therefore should have no impact on sites&mdash;but may break unit tests.
 
 ### Property Editors storing UDI instead of ID ([U4-9310](http://issues.umbraco.org/issue/U4-9310))
 

@@ -1,5 +1,5 @@
-#Recursive Menu
-Credits for this snippet go out to Lordtoro ([lordtoro.wordpress.com/.../](http://lordtoro.wordpress.com/2010/07/10/recursive-navigation-in-umbraco-4-5-0/))
+# Recursive Menu
+Credits for this snippet go out to Lordtoro ([lordtoro.wordpress.com/.../](https://lordtoro.wordpress.com/2010/07/10/recursive-navigation-in-umbraco-4-5-0/))
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<!DOCTYPE xsl:stylesheet [ <!ENTITY nbsp " "> ]>

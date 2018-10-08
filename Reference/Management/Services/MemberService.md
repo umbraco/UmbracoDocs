@@ -1,10 +1,10 @@
-#MemberService
+# MemberService
 
 **Applies to Umbraco 7.1 and 6.2 and newer**
 
 The MemberService acts as a "gateway" to Umbraco data for operations which are related to Members.
 
-[Browse the API documentation for MemberService](https://our.umbraco.org/apidocs/csharp/api/Umbraco.Core.Services.MemberService.html).
+[Browse the API documentation for MemberService](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Core.Services.MemberService.html).
 
  * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
@@ -13,7 +13,7 @@ All samples in this document will require references to the following dll:
 
 * Umbraco.Core.dll
 
-All samples in this document will require the following usings:
+All samples in this document will require the following using statements:
 	
 	using Umbraco.Core;
 	using Umbraco.Core.Models;
@@ -21,7 +21,7 @@ All samples in this document will require the following usings:
 
 **Please note that this page will be updated with samples and additional information about the methods listed below**
 
-##Getting the service
+## Getting the service
 The MemberService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the MemberService is available through a local `Services` property.
 
 	Services.MemberService
@@ -30,48 +30,48 @@ Getting the service through the `ApplicationContext`:
 
 	ApplicationContext.Current.Services.MemberService
 
-##Methods
+## Methods
 
-###.AddRole(string role);
+### .AddRole(string role);
 Adds a new Role with a given name
 
-###.AssignRole(int memberId, string role);
+### .AssignRole(int memberId, string role);
 Assigns a role to a specific `Member`
 
-###.AssignRoles(int[] memberIds, string role);
+### .AssignRoles(int[] memberIds, string role);
 Assigns a role to multiple `Member`s
 
-###.CreateMember(string username, string email, string displayName, string memberTypeAlias);
+### .CreateMember(string username, string email, string displayName, string memberTypeAlias);
 Creates a new `Member`, but does not instantly persist it
 
-###.CreateMemberWithIdentity(string username, string email, string displayName, string memberTypeAlias);
+### .CreateMemberWithIdentity(string username, string email, string displayName, string memberTypeAlias);
 Creates a new `Member`, persists the data, and assign a unique key
 
-###.CreateWithIdentity(string username, string email, string password, string memberTypeAlias);
+### .CreateWithIdentity(string username, string email, string password, string memberTypeAlias);
 Creates a new `Member` with a given password, persists the data, and assign a unique key
 
-###.Delete(IMember member);
+### .Delete(IMember member);
 Deletes a `Member`
 
-###.DeleteMembersOfType(int id);
+### .DeleteMembersOfType(int id);
 Deletes all members of a given type
 
-###.DeleteRole(string role, bool throwOnExist);
+### .DeleteRole(string role, bool throwOnExist);
 Deletes a role, define if deletion should throw an exception if the role is in use by any members
 
-###.DissociateRole(int memberId, string role);
+### .DissociateRole(int memberId, string role);
 Removes the role from a given `Member`
 
-###.DissociateRoles(int[] ids, string[] roles);
+### .DissociateRoles(int[] ids, string[] roles);
 Removes multiple roles from multiple `Member` s
 
-###.Exists(int id);
+### .Exists(int id);
 Returns true/false if a gven member ID exists
 
-###.Exists(string username);
+### .Exists(string username);
 Returns true/false if a gven member login exists
 
-###.FindByEmail("gmail.com", int pageIndex, int pageSize, out int totalRecords, [`StringPropertyMatchType`]);
+### .FindByEmail("gmail.com", int pageIndex, int pageSize, out int totalRecords, [`StringPropertyMatchType`]);
 Searches for all members with a given email, supports paging returned results.
 
 Search supports multiple match types: 
@@ -82,7 +82,7 @@ Search supports multiple match types:
 - *EndsWith* email must end with term
 - *Wildcard* email must match wildcard string like "*mail.*"
 
-###.FindByUsername(string username, int pageIndex, int pageSize, out int totalRecords, [`StringPropertyMatchType`]);
+### .FindByUsername(string username, int pageIndex, int pageSize, out int totalRecords, [`StringPropertyMatchType`]);
 Searches for all members with a given username, supports paging returned results.
 
 Search supports multiple match types: 
@@ -93,7 +93,7 @@ Search supports multiple match types:
 - *EndsWith* username must end with term
 - *Wildcard* username must match wildcard string like "j*n"
 
-###.FindMembersByDisplayName(string name, int pageIndex, int pageSize, out int totalRecords, [`StringPropertyMatchType`]);
+### .FindMembersByDisplayName(string name, int pageIndex, int pageSize, out int totalRecords, [`StringPropertyMatchType`]);
 Searches for all members with a given display name, supports paging returned results.
 
 Search supports multiple match types: 
@@ -104,7 +104,7 @@ Search supports multiple match types:
 - *EndsWith* display name must end with term
 - *Wildcard* display name must match wildcard string like "j*n"
 
-###.FindMembersInRole(string role, string username, [`StringPropertyMatchType`]);
+### .FindMembersInRole(string role, string username, [`StringPropertyMatchType`]);
 Searches for all members with a given username with a given Role assigned.
 
 Search supports multiple match types: 
@@ -116,47 +116,53 @@ Search supports multiple match types:
 - *Wildcard* username must match wildcard string like "j*n"
 
 
-###.GetAll(int pageIndex, int pageSize, out int totalRecords)
+### .GetAll(int pageIndex, int pageSize, out int totalRecords)
 Returns all members, in paged results.
 
-###.GetAllMembers(int[] ids);
+### .GetAllMembers(int[] ids);
 Returns a collection of members with the given ID's
 
-###.GetAllRoles();
+### .GetAllRoles();
 Returns all roles
 
-###.GetByEmail(string email);
+### .GetByEmail(string email);
 Returns a single `Member` with a given Email
 
-###.GetById(int id);
+### .GetById(int id);
 Returns a single `Member` with a given ID
 
-###.GetByKey(Guid key);
+### .GetByKey(Guid key);
 Returns a single `Member` with a given Key
 
-###.GetByProviderKey(object key);
+### .GetByProviderKey(object key);
 Returns a single `Member` with a given Membership provider key.
 
-###.GetByUsername(string username);
+### .GetByUsername(string username);
 Returns a single `Member` with a given Username
 
-###.GetDefaultMemberType();
+### .GetCount(MemberCountType memberCountType);
+Returns a count `int` of members from the specified `MemberCountType` enum: All, Approved, LockedOut or Online.
+
+### .GetDefaultMemberType();
 Returns the default `MemberType`
 
-###.GetMembersByGroup(string role);
+### .GetMembersByGroup(string role);
 Returns all members in a given Group - same as "Role".
 
-###.GetMembersByMemberType("MemberType")
+### .GetMembersByMemberType("MemberType")
 Returns all members of a given Type
 
-###.GetMembersByPropertyValue("city", "Horsens");
+### .GetMembersByPropertyValue("city", "Horsens");
 Returns all Members, of any type, with a mathcing value in the property with the given property alias
 
-###.GetMembersInRole(string role);
+### .GetMembersInRole(string role);
 Returns all members in a given Role
 
-###.Save(IMember member);
+### .GetPagedXmlEntries(long pageIndex, int pageSize, out long totalRecords);
+Returns a paged collection of members as `IEnumerable<XElement>`
+
+### .Save(IMember member);
 Saves a `Member`,
 
-###.SavePassword(IMember member, "newSecretPass1234");
+### .SavePassword(IMember member, "newSecretPass1234");
 Sets a password on a given `Member`

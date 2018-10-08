@@ -1,8 +1,8 @@
-#tinyMceConfig
+# tinyMceConfig
 
 Here you will find documentation relating to the options you can add/modify in the  tinyMceConfig.config file. The configuration you set here will be used by each TinyMce instance as it is initialized in Umbraco.
 
-##commands
+## commands
 
 Inside of the `<commands>` node you will find multiple `<command>` nodes. Each one of these nodes defines a icon/button that can appear on the formatting bar inside of Umbraco and the command that is triggered when it is clicked.
 
@@ -23,7 +23,7 @@ To further break this down, the `value` attribute is usually an empty value as m
 
 `priority` defines the sort order for the commands and should be sequentially incremented for each new command.
 
-##plugins
+## plugins
 
 Inside of the `<plugins>` node you can find one or more `<plugin>` nodes. Each one of these nodes defines a plugin which extends the functionality of TinyMce. Below you will find the standard plugins configured in a clean install of Umbraco v6.x.
 
@@ -41,7 +41,7 @@ Inside of the `<plugins>` node you can find one or more `<plugin>` nodes. Each o
     </plugins>
 
 
-##validElements
+## validElements
 
 The `validElements` node defines which elements will remain in the edited text when the TinyMce Rich Text Editor (RTE) saves. You can use this to limit the returned HTML to a subset.
 
@@ -64,7 +64,7 @@ Here is an example of the standard valid elements that come with a clean install
     	param[name|value|_value|class],embed[type|width|height|src|class|*],map[name|class],area[shape|coords|href|alt|target|class],bdo[class],button[class],iframe[*]]]>
     </validElements>
 
-###Control characters:
+### Control characters:
 
 The following table of control characters is taken from [the official TinyMce documentation](http://www.tinymce.com/wiki.php/configuration:valid_elements "the official TinyMce documentation") on the topic:
 
@@ -138,13 +138,17 @@ If applied in extended_valid_elements, it is only effective for the elements in 
 </tbody>
 </table>
 
-##invalidElements
+## invalidElements
 
 This option should contain a comma separated list of element names to exclude from the saved content. Elements in this list will be removed when your content is saved.
 
     <invalidElements>font</invalidElements>
 
-##customConfig
+# extendedValidElements
+
+Extended valid elements is a configuration option of TinyMCE that is normally used to apply extensions to the `validElements` setting of TinyMCE. This configuration setting is however not available in the current implementation of TinyMCE in Umbraco CMS.
+
+## customConfig
 
 The `customConfig` node contains any custom configuration you would like applied to TinyMce when each instance is initialized. For examples of configuration options see the [official TinyMce Configuration options documentation](http://www.tinymce.com/wiki.php/Configuration3x "official TinyMce Configuration Options documentation").
 

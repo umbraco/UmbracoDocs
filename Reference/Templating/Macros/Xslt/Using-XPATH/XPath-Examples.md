@@ -1,4 +1,4 @@
-#XPath Examples
+# XPath Examples
 
 Below are some simple examples that demonstrate the use of XPath. All examples are evaluated against the following XML:
 
@@ -21,7 +21,7 @@ Below are some simple examples that demonstrate the use of XPath. All examples a
     	</Album>
 	</Catalog>
 
-###//Album
+### //Album
 
 	<Album artist="The Last Shadow Puppets" title="The Age Of The Understatement">
         <Track rating="4" length="P3M7S">The Age Of The Understatement</Track>
@@ -39,12 +39,12 @@ Below are some simple examples that demonstrate the use of XPath. All examples a
         <Track rating="1" length="P3M59S">Black Thumbnail</Track>
     </Album>
 
-###//Album/@title
+### //Album/@title
 
 	title="The Age Of The Understatement"
 	title="Because Of The Times"
 
-###//Album\[@artist="Kings Of Leon"]
+### //Album\[@artist="Kings Of Leon"]
 
 	<Album artist="Kings Of Leon" title="Because Of The Times">
 		<Track rating="4" length="P7M10S">Knocked Up</Track>
@@ -54,7 +54,7 @@ Below are some simple examples that demonstrate the use of XPath. All examples a
 		<Track rating="1" length="P3M59S">Black Thumbnail</Track>
 	</Album>
 
-###//Track\[../@artist='The Last Shadow Puppets']
+### //Track\[../@artist='The Last Shadow Puppets']
 
 	<Track rating="4" length="P3M7S">The Age Of The Understatement</Track>
 	<Track rating="3" length="P2M18S">Standing Next To Me</Track>
@@ -63,15 +63,14 @@ Below are some simple examples that demonstrate the use of XPath. All examples a
 	<Track rating="2" length="P2M37S">The Chamber</Track>
 	<Track rating="3" length="P2M44S">Only The Truth</Track>
 
-###//Track\[@rating >= 4]
+### //Track\[@rating >= 4]
 
 	<Track rating="4" length="P3M7S">The Age Of The Understatement</Track>
 	<Track rating="5" length="P2M26S">Calm Like You</Track>
 	<Track rating="4" length="P7M10S">Knocked Up</Track>
 	<Track rating="4" length="P3M09S">McFearless</Track>
-	<Track rating="1" length="P3M59S">Black Thumbnail</Track>
 
-###//Track/text()
+### //Track/text()
 
 	The Age Of The Understatement
 	Standing Next To Me
@@ -85,11 +84,11 @@ Below are some simple examples that demonstrate the use of XPath. All examples a
 	McFearless
 	Black Thumbnail
 
-##How does this apply to Umbraco?
+## How does this apply to Umbraco?
 
 In Umbraco, we usually apply these XPath expressions to a variable or parameter such as $currentPage, or a custom variable that contains an XML node set.
 
-###To list all nodes below the current page that match nodeTypeAlias="Article", we could do the following:
+### To list all nodes below the current page that match nodeTypeAlias="Article", we could do the following:
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<!DOCTYPE xsl:stylesheet [ <!ENTITY nbsp "&#x00A0;"> ]>
@@ -119,5 +118,4 @@ In Umbraco, we usually apply these XPath expressions to a variable or parameter 
 
 For more information, see the following pages:
 
-- [MSDN XPath Examples](http://msdn.microsoft.com/en-us/library/ms256086.aspx)
-- [knol XPath article](http://knol.google.com/k/jackie-sprott/xpath/2i2dcklqevrpq/6) - This is where the XML sample data came from
+- [MSDN XPath Examples](https://msdn.microsoft.com/en-us/library/ms256086.aspx)

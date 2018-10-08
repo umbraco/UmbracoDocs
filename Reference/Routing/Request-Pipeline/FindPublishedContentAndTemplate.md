@@ -1,4 +1,4 @@
-#FindPublishedContentAndTemplate()
+# FindPublishedContentAndTemplate()
 
 This method is called on the "PublishedContentRequest.PrepareRequest()" method.  
 We discuss shortly what this method is doing:

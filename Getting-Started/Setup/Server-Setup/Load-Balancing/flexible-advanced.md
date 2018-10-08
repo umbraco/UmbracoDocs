@@ -1,4 +1,4 @@
-#Advanced techniques with Flexible Load Balancing
+# Advanced techniques with Flexible Load Balancing
 
 _This describes some more advanced techniques that you could achieve with flexible load balancing_
 
@@ -24,7 +24,7 @@ The first thing to do is create a a couple classes for your front-end servers an
 		}
 		public string GetCurrentServerUmbracoApplicationUrl()
 		{
-			//NOTE: If you want to explicitly define the URL that your application is running on,
+			// NOTE: If you want to explicitly define the URL that your application is running on,
 			// this wil be used for the server to communicate with itself, you can return the 
 			// custom path here and it needs to be in this format:
 			// http://www.mysite.com/umbraco
@@ -53,10 +53,10 @@ then you'll need to swap the default `DatabaseServerRegistrar` for the your cust
 You'll need to create an [ApplicationEventHandler](/Documentation/Reference/Events/Application-Startup) and override `ApplicationStarting`. 
 During this event you can swap the registrar objects:
 
-	//This should be executed on your master server
+	// This should be executed on your master server
 	ServerRegistrarResolver.Current.SetServerRegistrar(new MasterServerRegistrar());
 
-	//This should be executed on your slave servers
+	// This should be executed on your slave servers
 	ServerRegistrarResolver.Current.SetServerRegistrar(new FrontEndReadOnlyServerRegistrar());
 
 Now that your front-end servers are using your custom `FrontEndReadOnlyServerRegistrar` class, they will always be deemed 'Slave' servers and will not 

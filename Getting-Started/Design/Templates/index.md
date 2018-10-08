@@ -85,8 +85,15 @@ By default, when defining a section it is required. To make the section optional
 
     @RenderSection("Head", required: false)
 
- On your child page call `@section Head {}` and then type your markup that will be pushed into the Master Template.  
+On your child page template call `@section Head {}` and then type your markup that will be pushed into the Master Template:
 
+    @section Head {
+        <style>
+            body {
+                background: #ff0000;
+            }
+        </style>
+    }
 
 ## Injecting partial template
 Another way to reuse html is to use partials - which are small reusable views which can be injected into another view.
@@ -113,5 +120,5 @@ the created partial can now be injected into any template by using the `@Html.Pa
 ### Tutorials
 - [Creating a basic website with Umbraco](../../../Tutorials/Creating-Basic-Site/)
 
-### [Umbraco.TV](http://umbraco.tv)
-- [Chapter: Templating](http://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/templating/introduction/)
+### [Umbraco.TV](https://umbraco.tv)
+- [Chapter: Templating](https://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/templating/introduction/)

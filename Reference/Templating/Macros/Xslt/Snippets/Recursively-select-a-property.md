@@ -1,4 +1,4 @@
-#Recursively select a property
+# Recursively select a property
 
 Sometimes in your XSLT you need to access the data not just on the $currentPage but possibly any parent nodes.
 

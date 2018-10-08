@@ -27,7 +27,7 @@ to be configured to support scaling/auto-scaling.
 
 ## Web worker migrations
 
-It's important to know that Azure Web Apps may move your website between it's 'workers' at any
+It's important to know that Azure Web Apps may move your website between its 'workers' at any
 given time. This is normally a transparent operation but in some cases you may be affected by this 
 if any of your code or libraries use the following variables:
 
@@ -45,7 +45,7 @@ ability of Azure Web Apps then you need to consult the
 [Load Balancing documentation](load-balancing.md)__ since there is a lot more that needs
 to be configured to support scaling/auto-scaling.
 
-* You should ensure that `fcnMode="Single"` in your web.config's `<httpRuntime>` section (this is the default that is shipped with Umbraco, see [here](http://shazwazza.com/post/all-about-aspnet-file-change-notification-fcn/) for more details)
+* You should ensure that `fcnMode="Single"` in your web.config's `<httpRuntime>` section (this is the default that is shipped with Umbraco, see [here](https://shazwazza.com/post/all-about-aspnet-file-change-notification-fcn/) for more details)
 * You should set your log4net minimum log priority to "WARN" in /Config/log4net.config if you are running a live site (of course if you are debugging this is irrelevant)
 * The minimum recommended Azure SQL Tier is "S2", however noticeable performance improvements are seen in higher Tiers 
 
@@ -62,9 +62,17 @@ The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the re
 * If you have a {machinename} token in your `~/Config/ExamineIndex.config` file remove this part of the path. Example, if you have path that looks like: `~/App_Data/TEMP/ExamineIndexes/{machinename}/External/` it should be `~/App_Data/TEMP/ExamineIndexes/External/` 
 * Due to the nature of Lucene files and IO latency, you should update all of your Indexers and Searchers in the `~/Config/ExamineSettings.config` file to have these two properties (see [here](http://issues.umbraco.org/issue/U4-7614) for more details): `useTempStorage="Sync"`
 
-### Umbraco XML cache file
+### Umbraco XML cache file and other TEMP files
 
 For a single Azure Web App instance you need to ensure that the Umbraco XML config file is stored on the local server (since Azure uses a shared file system). To do this you need to add a new app setting to web.config:
+
+For **Umbraco v7.7.3+**
+
+For Umbraco installations that are hosted by Azure Web Apps it is recommend that Umbraco is upgraded to the latest version if the current version is pre v7.7.3. This is so that the umbracoLocalTempStorage setting can be utilised to avoid locking issues with TEMP files during automated server migrations or slot swapping. See [U4-10503](http://issues.umbraco.org/issue/U4-10503) for more information on this.
+
+	<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
+
+This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the environment temporary folder. More info on this setting is available [here](../../../Reference/Config/webconfig/index.md#umbracolocaltempstorage-umbraco-v773)
 
 For **Umbraco v7.6+**
 

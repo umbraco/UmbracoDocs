@@ -1,10 +1,10 @@
-#Adding a Export type to Umbraco Forms
+# Adding a Export type to Umbraco Forms
 *This builds on the "[adding a type to the provider model](Adding-a-Type.md)" chapter and applies to Umbraco Forms version 4.4.1 and higher*
 
 Add a new class to your project and have it inherit from `Umbraco.Forms.Core.ExportType` and you have two options when implementing the class.
 
 ## Basic Example
-When implementing the method `public override string ExportRecords(RecordExportFilter filter)` in your export provider class. You simply need to return the final string you wish to write to a file. Such as .txt file or .csv and you can perform your logic to build up say a simple comma seperated string for a CSV file in the `ExportRecords` method.
+When implementing the method `public override string ExportRecords(RecordExportFilter filter)` in your export provider class. You simply need to return the final string you wish to write to a file. Such as .txt file or .csv and you can perform your logic to build up say a simple comma separated string for a CSV file in the `ExportRecords` method.
 
 In the constructor of your provider, note that you will need a further two properties, `FileExtension` and `Icon`. The FileExtension property is the file extension such as `zip`, `txt` or `csv` of the file you will be generating & serving from the file system as the export file.
 
@@ -96,83 +96,83 @@ In this example we will create a collection of text files, one for each submissi
         /// <returns>The final file path to serve up as the export - this is unlikely to change through the export logic</returns>
         public override string ExportToFile(RecordExportFilter filter, string filepath)
         {
-            //Before Save - Check Path, Directory & Previous File export does not exist
+            // Before Save - Check Path, Directory & Previous File export does not exist
             string pathToSaveZipFile = filepath;
 
-            //Check our path does not contain \\
-            //If not just simply may the filePath
+            // Check our path does not contain \\
+            // If not just simply may the filePath
             if (filepath.Contains('\\') == false)
             {
                 pathToSaveZipFile = IOHelper.MapPath(filepath);
             }
 
-            //Get the directory (strip out \\ if it exists)
+            // Get the directory (strip out \\ if it exists)
             var dir = filepath.Substring(0, filepath.LastIndexOf('\\'));
             var tempFileDir = Path.Combine(dir, "text-files");
 
 
-            //If the path does not end with our file extension, ensure it's added
+            // If the path does not end with our file extension, ensure it's added
             if (pathToSaveZipFile.EndsWith("." + FileExtension) == false)
             {
                 pathToSaveZipFile += "." + FileExtension;
             }
 
-            //Check that the directory where we will save the ZIP file temporarily exists
-            //If not just create it
+            // Check that the directory where we will save the ZIP file temporarily exists
+            // If not just create it
             if (Directory.Exists(tempFileDir) == false)
             {   
                 Directory.CreateDirectory(tempFileDir);
             }
 
-            //Check if the zip file exists already - if so delete it, as we have a new update
+            // Check if the zip file exists already - if so delete it, as we have a new update
             if (File.Exists(pathToSaveZipFile))
             {
                 File.Delete(pathToSaveZipFile);
             }
             
 
-            //Query the DB for submissions to export based on the filter
+            // Query the DB for submissions to export based on the filter
             var submissions = FormRecordSearcher.QueryDataBase(filter);
 
-            //Get the schema objects to a list so we can get items using position index
+            // Get the schema objects to a list so we can get items using position index
             var schemaItems = submissions.schema.ToList();
 
-            //We will use this to store our contents of our file to save as a text file
+            // We will use this to store our contents of our file to save as a text file
             var fileContents = string.Empty;
 
-            //For each submission we have build up a string to save to a text file
+            // For each submission we have build up a string to save to a text file
             foreach (var submission in submissions.Results)
             {
-                //The submitted data for the form submission
+                // The submitted data for the form submission
                 var submissionData = submission.Fields.ToList();
 
-                //For loop to match the schema position to the submission data
+                // For loop to match the schema position to the submission data
                 for (int i = 0; i < schemaItems.Count; i++)
                 {
-                    //Concat a string of the name of the field & it's stored data
+                    // Concat a string of the name of the field & its stored data
                     fileContents += schemaItems[i].Name + ": " + submissionData[i] + Environment.NewLine;
                 }
 
-                //Now save the contents to a text file
-                //Base it on the format of the record submission unique id
+                // Now save the contents to a text file
+                // Base it on the format of the record submission unique id
                 var textFileName = Path.Combine(tempFileDir, submission.UniqueId + ".txt");
                 File.WriteAllText(textFileName, fileContents);
 
-                //Reset fileContents to be empty again
+                // Reset fileContents to be empty again
                 fileContents = string.Empty;
             }
 
-            //Now we have a temp folder full of text files
-            //Generate a zip file containing them & save that
+            // Now we have a temp folder full of text files
+            // Generate a zip file containing them & save that
             ZipFile.CreateFromDirectory(tempFileDir, pathToSaveZipFile);
 
-            //Tidy up after ourselves & delete the temp folder of text files
+            // Tidy up after ourselves & delete the temp folder of text files
             if (Directory.Exists(tempFileDir))
             {
                 Directory.Delete(tempFileDir, true);
             }
 
-            //Return the path where we saved the zip file containing the text files
+            // Return the path where we saved the zip file containing the text files
             return pathToSaveZipFile;
         }
 

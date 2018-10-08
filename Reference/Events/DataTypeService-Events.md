@@ -1,4 +1,4 @@
-#DataTypeService Events#
+# DataTypeService Events#
 
 The DataTypeService class implements IDataTypeService. It provides easy access to operations involving IDataType and IDataTypeDefinition.
 

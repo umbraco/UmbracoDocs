@@ -1,9 +1,9 @@
-#Provider configuration
+# Provider configuration
 
 _Courier comes with a number of built-in providers to package and extract data, some of these have different confiuration settings, which can be found below_
 
 
-###Files
+### Files
 Configuration can expose certain folders and files in the item picker in the courier section use `file` and `folder` elements
 in the configuration to add specific paths, wildcards are not accepted:
 
@@ -12,14 +12,14 @@ in the configuration to add specific paths, wildcards are not accepted:
         <file>~/media/assets/somefile.png</file>
     </fileItemProvider>
 
-###Folders
+### Folders
 Same as above, but only with folders
 
     <folderItemProvider>
       <folder>~/media/assets/somefolder</folder>
     </folderItemProvider>
 
-###Mediatypes
+### Mediatypes
 
 Single option to turn of whether allowed/child media types should be added as a dependency or not
 
@@ -27,11 +27,11 @@ Single option to turn of whether allowed/child media types should be added as a 
         <includeChildMediaTypes>true</includeChildMediaTypes>
     </mediaTypeItemProvider>
   
-###DocumentTypes
+### DocumentTypes
 
 - Option to include all allowed templates as a dependency
 - option to include all allowed types as a dependency 
-- option filter out certain datatypes.
+- option filter out certain data types.
 
 <!-- -->
 
@@ -41,9 +41,9 @@ Single option to turn of whether allowed/child media types should be added as a 
       <includeAllTemplates>false</includeAllTemplates>
       <includeChildDocumentTypes>true</includeChildDocumentTypes>
       
-      <!-- By default we won't add the built-in datatypes as dependencies, if needed, they can be removed from the list below -->
-      <!-- Only datatypes which are installed as standard, and does not have any settings are ignored -->
-      <!-- to add, find the datatype in the umbracoNode table and copy its uniqueId value to a node below-->
+      <!-- By default we won't add the built-in data types as dependencies, if needed, they can be removed from the list below -->
+      <!-- Only data types which are installed as standard, and does not have any settings are ignored -->
+      <!-- to add, find the data type in the umbracoNode table and copy its uniqueId value to a node below-->
       <ignoredDataTypes>
         <add key="contentPicker">A6857C73-D6E9-480C-B6E6-F15F6AD11125</add>
         <add key="textstring">0CC0EBA1-9960-42C9-BF9B-60E150B429AE</add>
@@ -61,7 +61,7 @@ Single option to turn of whether allowed/child media types should be added as a 
     </documentTypeItemProvider>
     
     
-###Media
+### Media
 
 - Option to include parent nodes as a forced dependency 
 - option to automaticly include all children (in case a folder is transfered).
@@ -73,7 +73,7 @@ Single option to turn of whether allowed/child media types should be added as a 
       <includeParents>false</includeParents>
     </mediaItemProvider>
 
-###Documents
+### Documents
 
 - Option to include parents as dependencies.
 
@@ -83,7 +83,7 @@ Single option to turn of whether allowed/child media types should be added as a 
       <includeParents>true</includeParents>
     </documentItemProvider>
     
-###Templates
+### Templates
 
 - Option to collect macros found in templates as a dependecy, 
 - toggle if courier should look for files linked in the template(js,css,image files)
@@ -99,7 +99,7 @@ Single option to turn of whether allowed/child media types should be added as a 
       <macroParametersAreDependencies>true</macroParametersAreDependencies>
     </templateItemProvider>
 
-###Ignore
+### Ignore
 You can ignore providers during app start by passing in their name:
 <!-- -->
 

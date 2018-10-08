@@ -1,8 +1,8 @@
-#List all subpages below current, vb in xslt.
+# List all subpages below current, vb in xslt.
 
 Here's yet another sample with vb in xslt. I believe many vb-coders feel xslt is a bit hard to get used to, I know I do. The flexibility of umbraco, xslt and .net let vb-coders still use their "mother tongue" even for ui-editable macros.
 
-Edit: This is considered to be bad practice, and I guess the recommendation should be : use this as a quick way of adding functions in c# or vb, but move the code to .dll's asap, for example into xslt extensions. [our.umbraco.org/.../6508-VB-or-C](http://our.umbraco.org/forum/developers/xslt/6508-VB-or-C#-within-xslt-xslt-only-used-for-the-call-bad-practice)
+Edit: This is considered to be bad practice, and I guess the recommendation should be : use this as a quick way of adding functions in c# or vb, but move the code to .dll's asap, for example into xslt extensions. [our.umbraco.com/.../6508-VB-or-C](https://our.umbraco.com/forum/developers/xslt/6508-VB-or-C#-within-xslt-xslt-only-used-for-the-call-bad-practice)
 
 	<xsl:stylesheet 
 		version="1.0" 

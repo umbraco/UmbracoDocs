@@ -1,4 +1,4 @@
-#Creating More Pages Using the Master - Part 2
+# Creating More Pages Using the Master - Part 2
 
 ## Creating a Contact Us Page 
 
@@ -8,8 +8,8 @@ We're now going to make a simple page where we'll just put our contact details. 
 
 Some potential solutions:
 
-* Build your own contact form using Surface Controllers - [http://our.umbraco.org/documentation/Reference/Templating/Mvc/forms](http://our.umbraco.org/documentation/Reference/Templating/Mvc/forms) or [http://umbraco.tv/videos/developer/fundamentals/surface-controllers/](http://our.umbraco.org/documentation/Reference/Templating/Mvc/forms)
-* If you're not a programmer you can use the Umbraco built in package - Umbraco Forms. This has the added benefit editors can also create their own forms [http://umbraco.com/products-and-support/forms](http://umbraco.com/products-and-support/forms)
+* Build your own contact form using Surface Controllers - [https://our.umbraco.com/documentation/Reference/Templating/Mvc/forms](https://our.umbraco.com/documentation/Reference/Templating/Mvc/forms) or [https://umbraco.tv/videos/developer/fundamentals/surface-controllers/](https://our.umbraco.com/documentation/Reference/Templating/Mvc/forms)
+* If you're not a programmer you can use the Umbraco built in package - Umbraco Forms. This has the added benefit editors can also create their own forms [https://umbraco.com/products-and-support/forms](https://umbraco.com/products-and-support/forms)
 
 ### Creating a Simple Content Only Contact Us Page 
 
@@ -73,13 +73,13 @@ Our **_Content tree_** will now reload and there will be a **_Contact Us_** page
 
 e.g.  change the lines in the Master Template:
 
-####CSS
+#### CSS
 From: `<link rel="stylesheet" href="css/style.css">`
 
 
 To: `<link rel="stylesheet" href="/css/style.css">`
 
-###JS
+### JS
 From: `<script src="js/libs/modernizr-2.0.6.min.js"></script>`
 
 
@@ -126,5 +126,5 @@ Click **_Save_** and reload our Contact Us page.
 
 
 ---
-##Next - [Master Template The Navigation Menu](Master-Template-The-Navigation-Menu.md)
+## Next - [Master Template The Navigation Menu](Master-Template-The-Navigation-Menu.md)
 A simple solution for the template in the menu. 

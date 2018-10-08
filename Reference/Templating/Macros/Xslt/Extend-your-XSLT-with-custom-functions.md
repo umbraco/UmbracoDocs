@@ -1,4 +1,4 @@
-#Extend your XSLT with custom functions
+# Extend your XSLT with custom functions
 Sometimes the built-in functions aren't enough. Fortunately the XSLT-parser allows us to extend it with our own C# or Javascript code.
 The following is an entire xslt-file, which is split up in parts to explain what is going on. 
 
@@ -30,7 +30,7 @@ Furthermore we're using the msxml:assembly-statement to load and prepare the Sys
 	]]>
 	</msxml:script>
 
-The C# codeblock itself is surrounded by a <![CDATA-statement.. This is not a requirement, but generally a good idea, because it prevents the XSLT-parser from thinking it is dealing with XSLT-markup itself
+The C# code block itself is surrounded by a <![CDATA-statement.. This is not a requirement, but generally a good idea, because it prevents the XSLT-parser from thinking it is dealing with XSLT-markup itself
 
 	<xsl:template match="/">
 		<xsl:value-of select="umbraco.library:ChangeContentType('text/xml')"/>

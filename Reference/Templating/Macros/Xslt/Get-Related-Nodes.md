@@ -1,4 +1,4 @@
-#Get Related Nodes
+# Get Related Nodes
 Get nodes related to the current page
 
 	<xsl:variable name="relations" select="umbraco.library:GetRelatedNodesAsXml($currentPage/@id)//relation[@parentId = $currentPage/@id]"/>
