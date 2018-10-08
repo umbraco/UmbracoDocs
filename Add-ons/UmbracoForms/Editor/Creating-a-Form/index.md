@@ -37,21 +37,21 @@ See this blog post for more details: [Umbraco version 7.9 and Forms 7.0](https:/
 :::
 
 ### Setting the form name
-First we'll need to provide a name for our new form, you can do that in the top input.
+First we will need to give our new form a name.
 
-![Forms designer Set Name](FormDesignerFormName.png)
+![Forms designer Set Name](images/FormDesignerFormName.png)
 
-### Setting the (optional) page name
+### Setting the page name (optional)
 
-The page name can be placed in edit mode by simply clicking it.
+Simply click the page name in order to change it.
 
-![Forms designer page caption](FormDesignerPageCaption.png)
+![Forms designer page caption](images/FormDesignerPageCaption.png)
 
-### Setting the (optional) page group
+### Setting the page group (optional)
 
-The same functionality works for the page group. The page group will be placed in edit mode by simply clicking on it.
+As you can give each page a name, you can also name the groups.
 
-![Forms designer page captin](FormDesignerPageGroup.png)
+![Forms designer page captin](images/FormDesignerPageGroup.png)
 
 ### Adding fields
 
