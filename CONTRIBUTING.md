@@ -39,3 +39,4 @@ Everything in the main repository will make it onto the [our.umbraco.com/documen
 
 ## Planning & discussions
 If you want to report an issue, or you planning a big change, use [Github issues](https://github.com/umbraco/UmbracoDocs/issues) for opening a discussion. If you want to do a small change, don't hesitate to do a pull request, we don't need you to create an issue first.
+## [CLICK HERE FOR MORE DETAILS ABOUT UMBRACO](https://umbraco.com/blog/happy-hacktoberfest/)
