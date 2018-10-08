@@ -47,23 +47,29 @@ Simply click the page name in order to change it.
 
 ![Forms designer page caption](images/FormDesignerPageCaption.png)
 
+To add more pages, simply click **Add new page** at the bottom of the page forms designer.
+
 ### Setting the page group (optional)
 
 As you can give each page a name, you can also name the groups.
 
 ![Forms designer page captin](images/FormDesignerPageGroup.png)
 
+To add another group to your form, simply click **Add new group** which you can find at the bottom of each page in the form designer.
+
 ### Adding fields
 
 To add a new field hit the Add Question button
 
-![Forms designer add field](FormDesignerAddField.png)
+![Forms designer add field](images/FormDesignerAddField.png)
 
-That should display the following dialog
+This will open the following dialog
 
-![Forms add field dialog](FormDesignerAddFieldDialog.png)
+![Forms add field dialog](images/FormDesignerAddFieldDialog.png)
 
-From the dialog above you'll need to choose which type of field or layout element you wish to add. These are also known as *answer types* because they decide the type of answer that will be displayed to the end user. The available field types/answer types are:
+From this dialog you need to give the field a **name**. You can also add a **help text** to make it easier for your users to know how to fill in the field.
+
+In the dialog you'll also need to choose which type of field or layout element you wish to add. These are also known as **answer types** because they decide the type of answer that will be displayed to the end user. The available field types/answer types are:
 
 - Short Answer
 - Long Answer
@@ -72,16 +78,28 @@ From the dialog above you'll need to choose which type of field or layout elemen
 - File upload
 - Password
 - Multiple Choice
+- Data Consent
 - Dropdown
 - Single Choice
 - Title and Description
 - Recaptcha
 - Hidden
+- Recaptcha2
 
-Once the type has been selected a new field should have been added to your form with the appropriate name and help text.
+Once the type has been selected, there are a number of additional settings that can be applied to the field:
+
+* Mark whether the field stores *sensitive data*
+    * This will prevent the data from this field from being downloaded and viewed by users who does not have permission to do so
+* You can give the field a *default value*
+* Add a *placeholder* to make it easier for the user to fill in the form
+* Mark whether the field is *mandatory*, and customize the message
+* Add *validation* to the field
+    * There are a number of predefined validation, and it is possible to add your own custom validation as well
+* Set *Conditions* for the field
+
+Once the type has been selected, and you have added the configuration you want, click **Submit** and you will see that the field has been added to the form designer.
 
 ![Forms field added](FormDesignerFieldAdded.png)
-
 
 It's also possible to provide additional settings, such as making a field mandatory, or validation options. Some of the additional settings shown below will be dependent on which answer field was chosen. For example when we choose *Short Answer* as our answer type we get two additional settings (Default Value and Placeholder) which will differ depending on answer type selected. To see the specific settings of each answer type click the settings cog.
 
