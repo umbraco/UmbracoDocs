@@ -97,33 +97,29 @@ Once you've added a few fields to your form, you might want to change the order 
 When reordering your form, you can simply drag and drop the fields to make it look like you want. Click **I am done reordering** to get back to the form designer.
 
 ## Saving the form
+
 Once you are satisfied with the form you can save the design by hitting the save button in the toolbar
 
-![Form save form](FormDesignerSave.png)
-
+![Form save form](images/FormDesignerSave.png)
 
 ## Adding the form to the Umbraco site
 
 ### Select page
 
-Navigate to the content section and select the content page where you want to insert the form (this page should either have an RTE field or Grid)
+Navigate to the Content section of the Umbraco Backoffice and select the content page where you want to insert the form (this page should either have an RTE field or a Grid Editor)
 
-![Content page](ContentExamples.png)
+![Content page](images/ContentExamples.png)
 
 ### Add Form macro
 
-Hit the *add macro* button in the toolbar of the RTE or the *insert macro* option from the Grid.
+* Hit the *add macro* button in the toolbar of the RTE or the *insert macro* option from the Grid.
+* Under 'Choose a Form' click **Add** and select the form you want to insert
 
-![Content page add macro](ContentExampleMacroButton.png)
+    ![Coontent page add macro](images/ContentPageAddMacroDialog.png)
 
-Select the insert form from Umbraco Forms macro
+* (Optional) Click **Add** under 'Theme' to choose which theme the form should use
+* Finally you have an option to **exclude scripts**
 
-![Coontent page add macro](ContentPageAddMacroDialog.png)
+The form should be inserted now and all that's needed to put it on your site is a *Save and publish* of the content page!
 
-Select the form you want to insert and hit select
-
-![Forms content page add form](ContentPageAddMacroDialogChooseForm.png)
-
-The form should be inserted now and all that's needed to put it on your site is a save and publish of the content page!
-
-![Content page with form](ContentExamplesWithForm.png)
+![Content page with form](images/ContentExamplesWithForm.png)
