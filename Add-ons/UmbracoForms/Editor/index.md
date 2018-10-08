@@ -4,7 +4,7 @@ Documents how to use the different parts of the Forms interface.
 ## [Creating a form, the basics](Creating-a-Form/index.md)
 Create new forms and add them to your Umbraco site in minutes.
 
-## [Form settings](Creating-a-form/Form-Settings/index.md)
+## [Form settings](Creating-a-form/Form-Settings)
 A look at the settings tab of the form designer
 
 ## [Overview of the default fieldtypes](Creating-a-form/Fieldtypes/index.md)
