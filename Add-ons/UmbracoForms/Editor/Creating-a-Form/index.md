@@ -69,43 +69,32 @@ This will open the following dialog
 
 From this dialog you need to give the field a **name**. You can also add a **help text** to make it easier for your users to know how to fill in the field.
 
-In the dialog you'll also need to choose which type of field or layout element you wish to add. These are also known as **answer types** because they decide the type of answer that will be displayed to the end user. The available field types/answer types are:
-
-- Short Answer
-- Long Answer
-- Date
-- Checkbox
-- File upload
-- Password
-- Multiple Choice
-- Data Consent
-- Dropdown
-- Single Choice
-- Title and Description
-- Recaptcha
-- Hidden
-- Recaptcha2
+In the dialog you'll also need to choose which type of field or layout element you wish to add. These are also known as **answer types** because they decide the type of answer that will be displayed to the end user. Find a full list of the available answer types here: [Answer types](Fieldtypes).
 
 Once the type has been selected, there are a number of additional settings that can be applied to the field:
 
-* Mark whether the field stores *sensitive data*
+* Mark whether the field stores **sensitive data**
     * This will prevent the data from this field from being downloaded and viewed by users who does not have permission to do so
-* You can give the field a *default value*
-* Add a *placeholder* to make it easier for the user to fill in the form
-* Mark whether the field is *mandatory*, and customize the message
-* Add *validation* to the field
+* You can give the field a **default value**
+* Add a **placeholder** to make it easier for the user to fill in the form
+* Mark whether the field is **mandatory**, and customize the message
+* Add **validation** to the field
     * There are a number of predefined validation, and it is possible to add your own custom validation as well
-* Set *Conditions* for the field
+* Set **Conditions** for the field (read more: [Conditional logic](Conditional-Logic))
+
+Some of the additional settings is dependent on which answer type was chosen. For example when we choose *Short Answer* as our answer type we get two additional settings (Default Value and Placeholder).
 
 Once the type has been selected, and you have added the configuration you want, click **Submit** and you will see that the field has been added to the form designer.
 
-![Forms field added](FormDesignerFieldAdded.png)
+![Forms field added](images/FormDesignerFieldAdded.png)
 
-It's also possible to provide additional settings, such as making a field mandatory, or validation options. Some of the additional settings shown below will be dependent on which answer field was chosen. For example when we choose *Short Answer* as our answer type we get two additional settings (Default Value and Placeholder) which will differ depending on answer type selected. To see the specific settings of each answer type click the settings cog.
+To edit a field that has already been added to the form, simply click the little *cog* icon next to the field to open the dialog. To delete a field or a group, click the *recycle bin* icon.
 
-![Forms field additional settings](FormsFieldSettings.gif)
+### Structure your form
 
-You can then repeat this step until you end up with the form you desire.
+Once you've added a few fields to your form, you might want to change the order of questions. This can be done by clicking **Reorder** in the top-right corner of the form designer.
+
+When reordering your form, you can simply drag and drop the fields to make it look like you want. Click **I am done reordering** to get back to the form designer.
 
 ## Saving the form
 Once you are satisfied with the form you can save the design by hitting the save button in the toolbar
