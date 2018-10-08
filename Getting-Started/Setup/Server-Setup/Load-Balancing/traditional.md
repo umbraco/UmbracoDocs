@@ -15,7 +15,7 @@ These instructions make the following assumptions:
 * You have administration access to all servers
 * All servers can communicate via HTTP protocol with each other
 * You should be running in ASP.NET Full Trust (medium trust may cause some issues with load balancing)
-* _**You will designate a single server to be the back-office server for which your editors will log into for editing content.**_ Umbraco will not work if the back-office is behind the load balancer *(see DNS for more information below)*.
+* _**You will designate a single server to be the backoffice server for which your editors will log into for editing content.**_ Umbraco will not work if the backoffice is behind the load balancer *(see DNS for more information below)*.
 
 There are two design alternatives you can use to effectively load balance servers:
 
@@ -51,9 +51,9 @@ Of course you'll have your public website's DNS/address which you'll also need t
 
 ### Backoffice server
 
-You should designate one of these servers to be the back-office server for which your editors will use to log in to and edit content. This can be achieved by creating another public DNS entry/host header that you can assign to your designated server.
+You should designate one of these servers to be the backoffice server for which your editors will use to log in to and edit content. This can be achieved by creating another public DNS entry/host header that you can assign to your designated server.
 
-As an example, you could assign Server 1 as the designated back-office server. In this case you could create a DNS entry such as **admin.mywebsite.com** and add as a host header to Server 1.
+As an example, you could assign Server 1 as the designated backoffice server. In this case you could create a DNS entry such as **admin.mywebsite.com** and add as a host header to Server 1.
 
 You will then need to ensure that any public request going to this DNS entry only goes to Server 1. This can be achieved by assigning a secondary public IP address to the DNS entry and configuring your firewall to NAT this IP address to your Server 1 internal IP address. Other alternatives could possibly be achieved based on your firewall and the configuration that it supports.
 

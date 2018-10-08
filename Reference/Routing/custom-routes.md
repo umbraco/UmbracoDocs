@@ -1,4 +1,11 @@
+---
+keywords: customizing external source integration
+versionFrom: 7.3.0
+---
+    
 # Custom MVC Routes
+
+**This feature was introduced in Umbraco 7.3.0+**
 
 _Documentation about how to setup your own custom controllers and routes that need to exist alongside of the Umbraco pipeline_
 

@@ -1,3 +1,8 @@
+---
+keywords: numeric property editors v7.3 version7.3
+versionFrom: 7.3.0
+---
+
 # Numeric
 
 `Alias: Umbraco.Integer`
@@ -7,11 +12,6 @@
 Numeric is a simple HTML input control for entering numbers. Since it's a standard HTML element the options and behaviour is all controlled by the browser and therefore is beyond the control of Umbraco.
 
 ## Data Type Definition Example
-
-![Numeric Data Type Definition](images/numeric/7.3/numeric-datatype.png)
-
-### Minimum
-This allows you to setup a minimum value. If you will always need a minimum value of 10 this is where you set it up and whenever you use the datatype the value will always start at 10. It's not possible to change the value to anything lower than 10. Only higher values will be accepted.
 
 ### Step Size
 This allows you to control by how much a value should be allowed to increase/decrease when clicking the up/down arrows. If you try to enter a value that does not match with the step setting then it will not be accepted.

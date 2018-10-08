@@ -1,3 +1,8 @@
+---
+keywords: tags property editors v7.6 version7.6
+versionFrom: 7.6.0
+---
+
 # Tags
 `Alias: Umbraco.Tags`
 
@@ -17,7 +22,7 @@ The **Tag group** setting provides a way to categorize your tags in groups. So f
 
 Data can be saved in either CSV format or in JSON format. By default data is saved in CSV format. The difference between using CSV and JSON is that with JSON you can save a tag, which includes comma seperated values.
 
-Since the release of Umbraco 7.6 there are built-in property value converters, which means you don't need to worry about writing them yourself or parse the JSON output when choosing "JSON" in the storage type field. Therefore [the last code example](#mvc-view-example---display-a-list-of-tags) on this page will work out of the box without further ado.
+Since the release of Umbraco 7.6 there are built-in property value converters, which means you don't need to worry about writing them yourself or parse the JSON output when choosing "JSON" in the storage type field. Therefore [the last code example](mvc-view-example-displays-a-list-of-tags) on this page will work out of the box without further ado.
 
 ## Content Examples
 
@@ -35,7 +40,7 @@ Whenever a tag has been added it will be visible in the typeahead when you start
 
 ![Tags typeahead example](images/tags/7_6/typeahead.png)
 
-## MVC View Example - display a list of tags
+## MVC View Example - displays a list of tags
 
 ### Typed:
 

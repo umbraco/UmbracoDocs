@@ -11,7 +11,7 @@ Below you can see the settings that affect the Umbraco backoffice (v7.8+)
 
 ### Tours
 
-The section is used for controlling the backoffice tours functionality
+The section is used for controlling the backoffice tours functionality.
 
 	<backOffice>
         <tours enable="true"></tours>
@@ -24,7 +24,7 @@ By default this is set to true. Set it to false to turn off [backoffice tours](.
 
 ### Obsolete data types
 
-This section is used for controlling whether or not the data types marked as obsolete should be visible in the dropdown when creating new data types
+This section is used for controlling whether or not the data types marked as obsolete should be visible in the dropdown when creating new data types.
 
     <showDeprecatedPropertyEditors>false</showDeprecatedPropertyEditors>
 
@@ -279,14 +279,14 @@ This setting is used when you're running Umbraco in virtual directories.
         
 **DisallowedUploadFiles**
 
-This setting consists of a "black list" of file extensions that editors shouldn't be allowed to upload via the back-office.
+This setting consists of a "black list" of file extensions that editors shouldn't be allowed to upload via the backoffice.
 
         <!-- These file types will not be allowed to be uploaded via the upload control for media and content -->
         <disallowedUploadFiles>ashx,aspx,ascx,config,cshtml,vbhtml,asmx,air,axd,swf,xml,xhtml,html,htm,svg,php,htaccess</disallowedUploadFiles>
         
 **AllowedUploadFiles (introduced in 7.6.2)**
 
-If greater control is required than available from the above, this setting can be used to store a "white list" of file extensions.  If provided, only files with these extensions can be uploaded via the back-office.
+If greater control is required than available from the above, this setting can be used to store a "white list" of file extensions.  If provided, only files with these extensions can be uploaded via the backoffice.
 
         <!-- If completed, only the file extensions listed below will be allowed to be uploaded.  If empty, disallowedUploadFiles will apply to prevent upload of specific file extensions. -->
         <allowedUploadFiles></allowedUploadFiles>
@@ -320,13 +320,13 @@ In the security section you have the following options: **`<keepUserLoggedIn>`**
         <!-- change in 4.8: Disabled users are now showed dimmed and last in the tree. If you prefer not to display them set this to true -->
         <hideDisabledUsersInBackoffice>false</hideDisabledUsersInBackoffice>
 
-        <!-- set to true to enable the UI and API to allow back-office users to reset their passwords -->
+        <!-- set to true to enable the UI and API to allow backoffice users to reset their passwords -->
         <allowPasswordReset>true</allowPasswordReset>
 
-        <!-- set to a different value if you require the authentication cookie for back-office users to be renamed -->
+        <!-- set to a different value if you require the authentication cookie for backoffice users to be renamed -->
         <authCookieName>UMB_UCONTEXT</authCookieName>  
 
-        <!-- set to a different value if you require the authentication cookie for back-office users to be set against a different domain -->
+        <!-- set to a different value if you require the authentication cookie for backoffice users to be set against a different domain -->
         <authCookieDomain></authCookieDomain>  
 
     </security>
@@ -346,10 +346,10 @@ This setting specifies whether the username and email address are separate field
 The feature to allow users to reset their passwords if they have forgotten them was introduced in 7.5. he feature is based on [a method provided by ASP.Net Identity](https://www.asp.net/identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity). By default, this is enabled but if you'd prefer to not allow users to do this it can be disabled at both the UI and API level by setting this value to `false`.
 
 **`<authCookieName>`**
-The authentication cookie which is set in the browser when a back-office user logs in, and defaults to `UMB_UCONTEXT`. This setting is excluded from the configuration file but can be added in if a different cookie name needs to be set.
+The authentication cookie which is set in the browser when a backoffice user logs in, and defaults to `UMB_UCONTEXT`. This setting is excluded from the configuration file but can be added in if a different cookie name needs to be set.
 
 **`<authCookieDomain>`**
-The authentication cookie which is set in the browser when a back-office user logs in is automatically set to the current domain.  This setting is excluded from the configuration file but can be added in if a different domain is required.
+The authentication cookie which is set in the browser when a backoffice user logs in is automatically set to the current domain.  This setting is excluded from the configuration file but can be added in if a different domain is required.
 
 ## RequestHandler
 
@@ -602,7 +602,7 @@ This section configures...
 
 **disableFindContentByIdPath**: when true, urls such as /1234 do *not* find content with ID 1234.
 
-**disableRedirectUrlTracking**: when you move and rename pages in Umbraco, 301 permanent redirects are automatically created, set this to true if you do not want this behavior 
+**disableRedirectUrlTracking**: when you move and rename pages in Umbraco, 301 permanent redirects are automatically created, set this to true if you do not want this behavior.
 
 **Note:** The URL tracking feature (and thus, this setting) is only available on Umbraco 7.5.0 and higher.
 

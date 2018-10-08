@@ -92,7 +92,7 @@ Now our basic parts of the editor is done, namely:
 - The controller for wiring up the editor with angular.
 
 ## Register the data type in Umbraco
-After the above edits are done, restart your application. Go to the Developer section, click the 3 dots next to the data types folder and create a new data type called "markdown". In the editor you can now select a property editor, where your newly added "markdown editor" will appear.
+After the above edits are done, restart your application. Go to the Developer section, click the 3 dots next to the data types folder and create a new data type called "markdown". In the editor you can now select a property editor, where your newly added "My markdown editor" will appear.
 
 Save the data type, and add it to a document type of your choice. Open a document of that type, and you will be greeted with an alert message saying "The controller has landed", which means all is well. You can now edit the assigned property's value with your editor.
 
