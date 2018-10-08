@@ -13,6 +13,11 @@ Numeric is a simple HTML input control for entering numbers. Since it's a standa
 
 ## Data Type Definition Example
 
+![Numeric Data Type Definition](images/numeric/7.3/numeric-datatype.png)
+
+### Minimum
+This allows you to setup a minimum value. If you will always need a minimum value of 10 this is where you set it up and whenever you use the datatype the value will always start at 10. It's not possible to change the value to anything lower than 10. Only higher values will be accepted.
+
 ### Step Size
 This allows you to control by how much a value should be allowed to increase/decrease when clicking the up/down arrows. If you try to enter a value that does not match with the step setting then it will not be accepted.
 
@@ -39,7 +44,7 @@ By casting the output as an int it's possible for you to do mathematical operati
         <p>@totalTravellers</p>
     }
 
-### Rendering the out casting to a string
+### Rendering the output casting to a string
 You can also render the output by casting it to a string, which means you will not be able to do mathematical operations
 
     @{
