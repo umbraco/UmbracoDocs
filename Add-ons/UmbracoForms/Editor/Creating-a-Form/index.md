@@ -1,21 +1,25 @@
 # Creating a form
-This will show the basic steps of creating forms and adding them to your Umbraco site.
-## Navigate to the Forms section
-Managing forms happens in the Forms section of the Umbraco backoffice so first navigate to this section by selecting it (you'll need to have Forms installed and have access to this section in order to see it).
 
-![Forms Section](FormsSection.png)
+This will show the basic steps of creating a form and adding them to your Umbraco site.
+
+## Navigate to the Forms section
+
+Managing forms happens in the Forms section of the Umbraco backoffice. You need to have access to the section in order to see it. 
+
+![Forms Section](images/FormsSection.png)
 
 ## Click the forms tree
+
 Similar to most create actions in the Umbraco backoffice, you'll have to click the ellipses on the forms tree/folder and that will show you the create option.
 
 ![Forms tree](FormsTree.png)
 
 ## Select if you want to start from scratch
-You should see the following dialog
+You will see the following dialog
 
 ![Forms create dialog](FormsCreateDialog.png)
 
-Where you'll have the option to start from a template (the template will already have some fields defined so you don't start from a completely empty form).
+You'll have the option to start from scratch or you can choose to start with a template that will already have some fields defined.
 
 
 ## Design the form
