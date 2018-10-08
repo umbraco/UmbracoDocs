@@ -72,7 +72,7 @@ If a project is opted out from being auto upgraded, Umbraco reserves the right t
 In rare cases you may contact us to opt-out your site from auto upgrades if you are on a Pro plan, this is always a temporary measure and only with good reason. If you choose to do this then that site will no longer be supported. 
 
 When you reach out about opting out of automatic upgrades you must supply the following:
-:::list
+:::checklist
 - Project alias
 - Reason for opting out
 - Time period for opting out
