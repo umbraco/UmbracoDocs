@@ -75,7 +75,7 @@ __Rollback__: Can rollback a site page and revert changes by going back to a pre
 
 __Send to Translation__: Can send potential content and nodes to Translators for review and further development.
 
-__Sort:__: Can change the sort order of nodes in the content or media tree of website.
+__Sort__: Can change the sort order of nodes in the content or media tree of website.
 
 __Send to Publish__: Can send potential content and nodes to Editors for review and further development.
 
@@ -83,7 +83,7 @@ __Translate__: Enables the logging of information of who edited which nodes.
 
 __Update__: Allows a User to update the contents of a node that already has content.
 
-###Setting User Permissions
+### Setting User Permissions
 When a new user is created, you can set different permissions for that user on different domains and subdomains. You can also set permissions on different user types, even for the default types.
 
 # Technical
@@ -94,4 +94,3 @@ As a developer you are only able to leverage your website from the backoffice wh
 
 ### [Umbraco.TV](https://umbraco.tv)
 - [Chapter: Users](https://umbraco.tv/videos/umbraco-v7/content-editor/administrative-content/users/what-is-a-user/)
-- User API chapter *(Coming soon)*
