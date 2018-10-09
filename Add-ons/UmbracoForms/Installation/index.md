@@ -1,6 +1,10 @@
 # Installation and upgrading
 
+<<<<<<< Updated upstream
 ## [Extending Umbraco with the Forms section](Install)
+=======
+## [Extending Umbraco with the Forms section](Installation.md)
+>>>>>>> Stashed changes
 Extend Umbraco with the form builder section in a few steps  
 
 ## [Configuring a license](license.md)
