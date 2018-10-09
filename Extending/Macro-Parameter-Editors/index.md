@@ -1,6 +1,6 @@
 # Macro Parameter Editors
 
-Every macro can contain parameters. There are some useful default types.  For example: 
+Every macro can contain parameters. There are some useful default types.  For example:
 
 * True/False
 * TextBox
@@ -16,7 +16,7 @@ You can create your own custom macro parameter types.
 ## Umbraco 7 - Creating your own macro parameter type ##
 
 ### isParameterEditor ###
-All you need to do to create a macro parameter type in Umbraco 7, is to create a custom 'Property Editor' (or copy someone else's), see [Property Editors documentation](../../Extending/Property-Editors.md)
+All you need to do to create a macro parameter type in Umbraco 7, is to create a custom 'Property Editor' (or copy someone else's), see [Property Editors documentation](../../Extending/Property-Editors/index.md)
 and in the [Package Manifest file](../../Extending/Property-Editors/package-manifest.md) for the editor, set the isParameterEditor property to be true.
 
     propertyEditors: [
@@ -47,7 +47,7 @@ We'll create a simple 'Image Position' Macro Parameter type providing a Radio Bu
 #### Package Manifest ####
 
     {
-     "propertyEditors": [ 
+     "propertyEditors": [
      {
         "alias": "tooorangey.ImagePosition",
         "name": "Image Position",
@@ -123,7 +123,7 @@ id</th><th>macroPropertyTypeAlias</th><th>macroPropertyTypeRenderAssembly</th><t
 ### Example ###
 A very basic example deriving from a DropDownList ASP.NET server control
 
-    public class MyCustomPicker : DropDownList,  IMacroGuiRendering 
+    public class MyCustomPicker : DropDownList,  IMacroGuiRendering
     {
 		protected override void OnLoad(EventArgs e)
         {
@@ -131,7 +131,7 @@ A very basic example deriving from a DropDownList ASP.NET server control
             if(this.Items.Count == 0)
             {
                 // set properties
-                this.SelectionMode = ListSelectionMode.Multiple;           
+                this.SelectionMode = ListSelectionMode.Multiple;
 
                 // load data
                 ...
