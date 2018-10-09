@@ -4,12 +4,12 @@
 Once you have setup Git you can create a fork of the [Umbraco Documentation repository](https://github.com/umbraco/UmbracoDocs/).
 
 When you make a fork, you get a copy of the whole repository on your own Github profile. You can create a fork by clicking the fork button at the top of the screen:
-![Creating a fork](images/fork-repository.png)
+![Creating a fork](../images/fork-repository.png)
 
 Once the fork has been created you will have your own copy of the documentation. If you clone your fork, you will have all the files on your computer which means you can make changes to a lot of files and then push all the changes back up to your fork in one go.
 
 When you are done and happy with the changes you've made, you can submit a pull request to sync your copy with the "real" repository:
-![Fork of documentation](images/example-of-fork.png)
+![Fork of documentation](../images/example-of-fork.png)
 
 ## Step 2: Syncing your fork
 
@@ -24,7 +24,7 @@ git rebase upstream/master
 ## Step 3: Creating a PR
 
 If you do this locally and then push it to your fork you will have a synced up fork to start working with! Once you have made some changes and you are happy with the result, you can create a pull request (you may have to rebase again and resolve merged conflicts if a lot of things has been merged in since your last sync).
-![Creating a PR](images/pull-request.png)
+![Creating a PR](../images/pull-request.png)
 
 And that is all you need to do to create a fork, sync it and make a pull request to the main repository! 
 
