@@ -31,4 +31,4 @@ And that is all you need to do to create a fork, sync it and make a pull request
 ## Step 4: Wait from an action
 
 Hopefully your work will be merged immediatly.  It might happen that your pull request receives a comment and a *request for changes*. We hope you are able to work with us to update your PR so we can merge it in!
-Sometimes a label is added to a PR.  We have described a [list of different labels we often use](github-issues.md).
+Sometimes a label is added to a PR.  We have described a [list of different labels we often use](../github-issues.md).
