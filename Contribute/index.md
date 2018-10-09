@@ -28,7 +28,7 @@ There are a lot of great tutorials available online on [how to fork a repository
 
 If you do not have installed Git on your computer, you should also follow the [instructions on how to setup Git](https://help.github.com/articles/set-up-git/) before you go any further.
 
-If git is installed on your computer, follow the [Create a Pull Request using a fork](Pull-Requests/pr-through-a-fork) guide.
+If git is installed on your computer, follow the [Create a Pull Request using a fork](Pull-Requests) guide.
 
 ## Creating an issue
 
