@@ -3,14 +3,7 @@ Forms will output some JavaScript, and by default this is rendered just below th
 
 In many cases you might prefer rendering your scripts at the bottom of the page, e.g. before the closing `</body>` tag, as this generally improves site performance.
 
-Depending on how you are adding your form to the frontend, there are a few steps you need to take in order to be able to render the scripts where you want.
-
-## Inserting forms using a Macro
-
-
-When you are inserting your form using a Macro - either from a Grid Editor or a RTE - ensure that the checkbox for the property `Exclude Scripts` is checked/enabled.
-
-To do this, when inserting the form using the macro, ensure the checkbox for the property `Exclude Scripts` is checked/enabled and then you can use a snippet like below to render the necessary scripts in your main template before the closing `</body>`:
+In order to be able to render your scripts where you want, you need to add the following snippet to your template. Make sure you add it below your scripts, just before the closing `</body>` tag:
 
 
     @if (TempData["UmbracoForms"] != null)
@@ -20,6 +13,16 @@ To do this, when inserting the form using the macro, ensure the checkbox for the
             Html.RenderAction("RenderFormScripts", "UmbracoForms", new { formid = form, theme = "yourTheme" });
         }
     }
+
+Whether you are inserting your form using a macro or adding it directly in your template, you need to make sure `ExcludeScripts` is checked/enabled.
+
+When inserting forms using the **Insert Form with Theme** macro:
+
+![Exclude scripts](images/exclude-scripts.png)
+
+When **inserting forms directly in your template**:
+
+    @Umbraco.RenderMacro("renderUmbracoForm", new {FormGuid="dfea5397-36cd-4596-8d3c-d210502b67de", FormTheme="bootstrap3-horizontal", ExcludeScripts="1"})
 
 
 ## When using Forms 4.x
