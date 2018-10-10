@@ -10,8 +10,8 @@ Once you have the binary release of your liking saved to disk, make sure that th
 
 Now you can unzip the file to a location of your choosing (for example: `D:\Dev\MyUmbracoSite\`)
 
-## Choose your webserver
-There are two ways to run the binaries in a webserver:
+## Choose your web server
+There are two ways to run the binaries in a web server:
 
 1. The easy way: using IIS Express
 2. Internet Information Server (IIS)
@@ -37,7 +37,7 @@ Create a new website in IIS by right-clicking *Sites* and choosing "Add site..."
 	
 You will then be asked what kind of application this is, make sure to pick (or create) an application pool that uses ASP.NET 4.0 as its basis. (The default ASP.NET 4.0 is configured perfectly for this, so we recommend you pick that one.) Use the "Select.." button to pick a different application pool. You shouldn't have to change the other settings.
 	
-Finally fill in the hostname. In this example we'll use *MyUmbracoSite.local*.
+Finally, fill in the hostname. In this example, we'll use *MyUmbracoSite.local*.
 	
 ![Configure new website in IIS](images/Manual/2012-03-12_223022.png)
 	
@@ -45,7 +45,7 @@ Finally fill in the hostname. In this example we'll use *MyUmbracoSite.local*.
 	
 To enable you to write to the file, right-click it and click "Properties". Go to the "Security" tab and find the current logged in user, click the user and then the "Edit..." button. Check the *Allow Modify* permission there.
 	
-*Note: **this is not without risk**. If your user account can edit the hosts file, malware can do the same under your account and attempt to change the hosts file to redirect well known sites to malicious websites. Always make sure to revert the security settings if you want to be safe!*
+*Note: **this is not without risk**. If your user account can edit the hosts file, malware can do the same under your account and attempt to change the hosts file to redirect well-known sites to malicious websites. Always make sure to revert the security settings if you want to be safe!*
 	
 Add a line to the hosts file that points the new hostname to the local machine:
 	
@@ -53,13 +53,13 @@ Add a line to the hosts file that points the new hostname to the local machine:
 	
 You can now go to http://MyUmbracoSite.local and the install wizard should appear.
 
-*Please note: You will not be able to run Umbraco from Visual Studio's built-in webserver Casini. You do, however, have the option to configure VS to use IIS Express or IIS if needed.*
+*Please note: You will not be able to run Umbraco from Visual Studio's built-in web server Casini. You do, however, have the option to configure VS to use IIS Express or IIS if needed.*
 
-In order for Umbraco to have the correct permissions to write files to disk, you should give the IIS_IUSRS user modify permissions in the folder in which you've unzipped your Umbraco files. 
+For Umbraco to have the correct permissions to write files to disk, you should give the IIS_IUSRS user modify permissions in the folder in which you've unzipped your Umbraco files. 
 
-While giving broad permissions is usually fine for development environments, you may want to restrict permissions further on a public-facing server. See [permissions](../Server-Setup/permissions.md) for more details.
+While giving full permissions is usually fine for development environments, you may want to restrict permissions further on a public-facing server. See [permissions](../Server-Setup/permissions.md) for more details.
 
-### Choose database environment
+### Choose the database environment
 There are two options to choose from with regards to a database environment:
 
 1. SQL Compact Edition
@@ -72,11 +72,11 @@ SQL CE is a good option if you want to get started quickly. You don't need to cr
 
 To start using SQL CE, just choose it in the install wizard: "*I want to use SQL CE 4, a free, quick-and-simple embedded database*".
 ### SQL Server 2008
-To be able to use SQL Server, you should setup an empty database before you can continue installing Umbraco. It's completely up to you how you want to configure this database, but make sure it's connectable over TCP/IP and that it has a SQL username and SQL password. (You can use Windows authentication, but that would require you to write your own connection string).
+To be able to use SQL Server, you should set up an empty database before you can continue installing Umbraco. It's completely up to you how you want to configure this database, but make sure it's connectable over TCP/IP and that it has a SQL username and SQL password. (You can use Windows authentication, but that would require you to write your own connection string).
 
-Generally, for development environments you would ensure that the database user has database owner rights, but make sure to comply with the rules you or your workspace has set up for this.
+Generally, for development environments, you would ensure that the database user has database owner rights, but make sure to comply with the rules you or your workspace has set up for this.
 
 Once you've created the database and credentials, enter those details in the install wizard after choosing the *I already have a blank SQL Server 2008 database* option.
 
 ## Finishing off
-Follow the installation wizard and after a few easy steps and choices you should get a message saying the installation was a success.
+Follow the installation wizard, and after a few easy steps and choices, you should get a message saying the installation was a success.
