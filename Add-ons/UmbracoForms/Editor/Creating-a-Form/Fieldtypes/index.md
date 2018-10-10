@@ -1,5 +1,6 @@
 # Overview of the default fieldtypes
-Umbraco Forms comes with a bunch of default fieldtypes (also known as answer types) you can choose from when adding new fields to your forms. Here is a detailed overview.
+
+Umbraco Forms comes with a bunch of default fieldtypes (also known as **answer types**) you can choose from when adding new fields to your forms. Here is a detailed overview.
 
 ## Short Answer
 Simple textbox allows up to 250 characters

@@ -19,7 +19,7 @@ It only takes a few steps to install Umbraco Forms.
 
 Once the installation is successfull you will be able to start using Umbraco Forms. 
 
-For details on how to proceed, check out the [editor documentation](../../Editor/index.md)
+For details on how to proceed, check out the [editor documentation](../../Editor)
 
 ![Create form](images/start-with-forms.png)
 

@@ -29,7 +29,8 @@ The next screen you will see is the form designer.
 
 ![Forms designer](images/FormDesignerStart.png)
 
-There is already a page, a fieldset and a container available. The rest of the form has to be added using the UI..
+There is already a page, a fieldset and a container available. The rest of the form has to be added using the UI.
+
 
 :::note
 In Umbraco Forms version 7 or higher there will be a predefined *dataConsent* field added to all new forms.
