@@ -8,7 +8,7 @@ Naming conventions for documentation files:
 
 The current version of a documentation page will be the normal existing filename format eg `flexible.md` or `index.md`
 
-When creating alternate versions of the documentation page that apply in different Umbraco versions, we will append to the filename portion a -v followed by information which explains roughly to which version the documentation applies.
+When creating alternate versions of the documentation page that apply in different Umbraco versions, we will append to the filename portion a `-v` followed by information which explains roughly to which version the documentation applies.
 
 ### Indicating ranges on file naming
 
@@ -25,12 +25,13 @@ For SEO reasons it is not necessary to change a file name when a feature becomes
 
 ## Adding meta data
 
-It is the YAML meta data in the document itself, that will be used as the point of truth for when a (semver) version applies from and to.
+It is the [YAML meta data](adding-metadata.md) in the document itself, that will be used as the point of truth for when a (semver) version applies from and to.
 The YAML will be added to an examine index, along with the filename and is used later on for searching on (major) version.  Or to show the information to the user.
 
-For versioning we use 2 YAML attributes: 
-1) optional `versionFrom` to indicate a start version
-2) optional `versionTo` to indicate which version the support ended.
+For versioning we use 2 YAML attributes:
+
+1. optional `versionFrom` to indicate a start version
+2. optional `versionTo` to indicate which version the support ended.
 
 Only the current version of the document can have both `versionFrom` and `versionTo` missing.  Otherwise at least one of the should be filled in.
 
