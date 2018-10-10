@@ -1,4 +1,9 @@
 # Rendering Forms scripts where you want
+
+:::tip
+If you are using Umbraco Forms v 4.x, you need to follow the guide found here: [When using Forms 4.x](#when-using-forms-4-x)
+:::
+
 Forms will output some JavaScript, and by default this is rendered just below the markup. 
 
 In many cases you might prefer rendering your scripts at the bottom of the page, e.g. before the closing `</body>` tag, as this generally improves site performance.
