@@ -1,6 +1,6 @@
 # Common issues
 
-_Document to outline commonly found issues with courier, and possible solutions_
+_Document to outline commonly found issues with Courier and possible solutions_
 
 ### Try this first
 For all issues, always try these steps first:
@@ -9,17 +9,17 @@ For all issues, always try these steps first:
 - Ensure you have the latest version, current 2.7.8.14
 
 ### Get the latest version here:
-Nightly.umbraco.org contains all builds, current recommended version is **2.7.8.35** which contains all the latest 
+Nightly.umbraco.org contains all builds, the current recommended version is **2.7.8.35** which contains all the latest 
 bug fixes for v4 and v6
 
 http://nightly.umbraco.org/UmbracoCourier/2.7.8/nightly%20builds/
 
 ### Key not found exception
-*Caused by:* Courier not being able to find a specific provider, commonly the datalayer provider. Usually because Courier
+*Caused by:* Courier not being able to find a specific provider, commonly the datalayer provider. Usually, because Courier
 didn't load the datalayer dll or one of its dependencies. 
 
 *How to spot:* Enable debugging in /config/courier.config, restart the app and check the 
-/app_data/courier/logs/error_log.txt file for exceptions related to loading providers. Usually it will say which dll 
+/app_data/courier/logs/error_log.txt file for exceptions related to loading providers. Usually, it will say which dll 
 had issues loading. 
 
 If no exceptions in the log, it might be missing the dll, or have the dll for the wrong version.
@@ -27,7 +27,7 @@ If no exceptions in the log, it might be missing the dll, or have the dll for th
 Courier for V6 expects to have umbraco.courier.persistence.v6.nhibernate.dll and for V4 it should have 
 umbraco.courier.persistence.v4.nhibernate.dll
 
-*Solution:* Ensure that all dlls are loaded properly, and that it has all the dlls expected. Also, for it should only have
+*Solution:* Ensure that all dlls are loaded properly and that it has all the dlls expected. Also, for it should only have
 the proper dlls for the specific versions. 
 
 Get the dlls from 2.7.8.14 here: 
@@ -41,9 +41,9 @@ by the data type
 
 *How to spot* Courier returns "cannot package GUID from data types provider" 
 
-*Solution* Make sure you have all your data type dependencies in place, usually its ucomponents and similar projects
-that are missing dlls, also, if you don't use a data type, delete it from your site, so you don't accidently 
-transfer a broken data type. Make sure to clear courier cache and restart application.
+*Solution* Make sure you have all your data type dependencies in place, usually its components and similar projects
+that are missing dlls, also, if you don't use a data type, delete it from your site, so you don't accidentally 
+transfer a broken data type. Make sure to clear courier cache and restart the application.
 
 
 ### Courier cannot package items on V4
@@ -63,13 +63,13 @@ the files due to permissions or locks
 *How to spot* find the corresponding item in /app_data/courier/cache and see if it changes on save/publish
 
 *Solution:* Clear the /app_data/Courie/cache folder and retry packaging, in some cases caching might need to be turned off
-this will make transfers slower, but can be set in /config/courier.config file
+this will make transfers slower but can be set in /config/courier.config file
 
 
 ### Content are deployed but not published
 *Caused by:* Exception during extraction which might get the publish event not to fire
 
-*How to spot:* Content transfers with no error, but changes are not visble on the website
+*How to spot:* Content transfers with no error, but changes are not visible on the website
 
 *Solution:* upgrade to 2.7.8.14 which has a bug fix
 http://nightly.umbraco.org/UmbracoCourier/2.7.8/nightly%20builds/
@@ -82,14 +82,14 @@ http://nightly.umbraco.org/UmbracoCourier/2.7.8/nightly%20builds/
 *Solution:* Upgrade to 2.7.8.14
 http://nightly.umbraco.org/UmbracoCourier/2.7.8/nightly%20builds/
 
-### Files on NAS are not transfered
+### Files on NAS are not transferred
 *Caused by:* file paths break the way courier looks up files and cannot find them when transferring
 
 *How to spot:* Files are not included in the revisions
 
 *Solution:* Upgrade to 2.7.8.14
 
-### Files are transfered as 0 byte files
+### Files are transferred as 0 byte files
 *Caused by:* Courier not able to find file, then loads nothing into the file object
 
 *How to spot:* Files are transferred but end up as 0 byte files on the destination
@@ -99,7 +99,7 @@ http://nightly.umbraco.org/UmbracoCourier/2.7.8/nightly%20builds/
 ### StackOverflowException during deployment
 *Caused by:* template or other file starting with the '_' character
 
-*How spot:* Transfer never completes, and the task manager just clears out the task with no errror or feedback
+*How spot:* Transfer never completes, and the task manager just clears out the task with no error or feedback
 
 *Solution:* Fixed: Upgrade to 2.7.8.14 
 
@@ -122,16 +122,16 @@ save item and re-transfer to fix
 restrictions
 
 ### Dll is not allowed to call Courier API
-*Caused by:* Courier express licensing prohibits 3rd party dlls to call the api, so some dlls were not allowed to 
+*Caused by:* Courier express licensing prohibits 3rd party dlls to call the API, so some dlls were not allowed to 
 load
 
-*How to spot:* Save a content item, courier should throw an exception, saying the dll is not allowed to call Couriers
+*How to spot:* Save a content item, Courier should throw an exception, saying the dll is not allowed to call Courier's
 API
 
 *Solution;* upgrade to latest version, since this has been fixed since 2.7.6
 
 ### Sort order on documents is not transfered
-*Caused by:* Courier not logging sort order changes, due to the way the core does sorting from its api
+*Caused by:* Courier not logging sort order changes, due to the way the core does sorting from its API
 
 *How to spot:* Change sorting order on a collection of document, then transfer their parent + children. The sort order will not 
 be correct on the destination site
