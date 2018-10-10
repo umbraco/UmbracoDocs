@@ -8,7 +8,7 @@ Before adding a form to your site we'll need to make sure you have the necessary
 **Version 4.x** - Write your forms your way. You have full control over your form's HTML markup and styling.
 
 ## [Rendering Forms scripts where you want](Rendering-Scripts/index.md)
-**Version 4.x** - Control where you want Forms to render its JavaScript.
+Control where you want Forms to render its JavaScript.
 
 ## [Themes](Themes/index.md)
 **Version 6.0.0+** - Easier & more control of rendering Form HTML markup and styling using Themes that replaces the previous methods in Version 4.x
