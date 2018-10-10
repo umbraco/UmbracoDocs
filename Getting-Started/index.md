@@ -74,7 +74,7 @@
 		<div class="row explain">
 			<div class="col-xs-12">
 				<h4 class="text-right"><a href="Backoffice/">Backoffice overview</a></h4>
-				<small>Details of all the common terms and concepts that are used throughout the Umbraco backoffice.</small>
+				<small>Details of all the common terms and concepts that are used throughout the Umbraco backoffice</small>
 			</div>
 			<!--<div class="col-sm-6">
 				<h5><a href="Data/Defining-content/">Defining content</a></h5>
@@ -156,7 +156,7 @@
 		<div class="row explain">
 			<div class="col-xs-12">
 				<h4 class="text-right"><a href="Design/">Design</a></h4>
-				<small>Create templates and views with your own markup and use Razor to render content.</small>
+				<small>Create templates and views with your own markup and use Razor to render content</small>
 			</div>
 			<div class="col-sm-6">
 				<h5><a href="Design/Templates/">Templates</a></h5>
