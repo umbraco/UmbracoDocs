@@ -102,8 +102,8 @@ The easiest way to check that your config is correct is to first go and look in 
 Using Luke, you can open up your index and see its content. It should give you statistics on the elements, number of documents indexed etc. If however you don't see indexed items then it's likely you have either made a mistake in your indexSet configuration or it has not indexed yet. When you are finished with Luke it's important to close the index to get Luke to release its lock on the files.
 
 Luke can also be used to run raw Lucene searches against your index. This can be helpful during development or to debug your queries. Later on in this document you will start to learn how these raw queries fit together.
-Setting up your Search Provider
 
+## Setting up your Search Provider
 We have a provider for our indexing, now we need to set up our search provider.  We do this by adding a new provider in the `<ExamineSearchProviders>` section of the `ExamineSettings.config` file.  The simplest search provider element looks like this:
 
 	<add name="WebsiteSearcher" type="UmbracoExamine.UmbracoExamineSearcher, UmbracoExamine" 	analyzer="Lucene.Net.Analysis.Standard.StandardAnalyzer, Lucene.Net"/>
@@ -116,7 +116,7 @@ Let's break it down, again.
 
 **analyzer (optional)**: Just like the indexer our search provider also needs to know what type of analyzer to use when searching the index. Make sure that your search is using the same analyzer as your indexer. Think of it as the language the indexer writes, the searcher needs to be able to read, just like if you write in English don't expect to be able to read French.
 
-Awesome! Our configuration is now complete! Our site should now be indexing our content and has a way of accessing it via a search provider.  However, configuration is only part of the story... we now need to do some coding.
+Awesome! Our configuration is now complete! Our site should now be indexing our content and has a way of accessing it via a search provider.  However, configuration is only part of the story... now we need to do some coding.
 
 ## Querying with Examine
 So without further ado let's cut straight to the chase and focus on querying your indexes.  We are going to look first at the Fluent API which allows you to quickly create queries using an easy to learn chaining syntax, and then at building your own Raw Lucene queries for more complex scenarios.
@@ -133,7 +133,7 @@ Next we want to create an instance of `ISearchCriteria` that we will use to buil
 
 	var searchCriteria = Searcher.CreateSearchCriteria();
 
-Next we are going to chain up query. Lets look at one of the most common tasks you would be using examine for, which is to search a set of nodes for a particular word. We have a number of operators available to us to do this.  These are `Or()`, `And()`, `Not()` and `Equals()`. Lets look at the `Or()` operator.
+Next we are going to chain up the query. Lets look at one of the most common tasks you would be using examine for, which is to search a set of nodes for a particular word. We have a number of operators available to us to do this.  These are `Or()`, `And()`, `Not()` and `Equals()`. Lets look at the `Or()` operator.
 
 	var query = searchCriteria.Field("nodeName","hello").Or().Field("metaTitle","hello").Compile();
 	var searchResults = Searcher.Search(query);
@@ -152,13 +152,13 @@ Fortunately there is an easy way to fix this behaviour, by specifying the defaul
 
 	var searchCriteria = Searcher.CreateSearchCriteria(BooleanOperation.Or);
 
-Now when Examine passes the query to Lucene it will pass as this:
+Now when Examine passes the query to Lucene it will pass it as this:
 
 	nodeName:hello metaTitle:hello
 
 Which in simple terms means give me anything where nodeName or metaTitle contain hello.  Much better.
 
-So with this knowledge let's look at another example using the And() operator.
+So with this knowledge let's look at another example using the `And()` operator.
 
 	var query = searchCriteria.Fields("nodeName","hello").And().Field("metaTitle",hello").Compile();
 
@@ -174,7 +174,7 @@ With the BooleanOperation.Or we would get this:
 
 Which means give me results where nodeName SHOULD contain hello AND metaTitle MUST contain hello.
 
-What if we want grouping?  Well with Examine you get GroupedAnd() and GroupedOr() which as you would expect mean we can group up fields to look in and pass in a query term. I'm going to assume that I am using the BooleanOperation.Or from now on so will only show the result that it gives using that default operator.
+What if we want grouping?  Well with Examine you get `GroupedAnd()` and `GroupedOr()` which as you would expect mean we can group up fields to look in and pass in a query term. I'm going to assume that I am using the BooleanOperation.Or from now on so will only show the result that it gives using that default operator.
 
 	var query = searchCriteria.GroupedOr(new string[] { "nodeName", "metaTitle"}, "hello").Compile();
 
@@ -182,11 +182,11 @@ This would give a Lucene query that looks like this:
 
 	(nodeName:hello metaTitle:hello)
 
-You can also pass in a group of query value.
+You can also pass in a group of query values.
 
 	var query = searchCriteria.GroupedOr(new string[] { "nodeName", "metaTitle"}, new string[]{"hello", "goodbye"}).Compile();
 
-this would end up being:
+this would end up becomming:
 
 	(nodeName:hello metaTitle:goodbye)
 
@@ -208,7 +208,7 @@ Sometimes users will query your site looking for a term that they could have mis
 The optional value you pass into Fuzzy between 0 and 1 specifies how Fuzzy or how close the match is to the original. For instance a match of 0.5 will not return when a threshold of 0.8 is specified.
 
 ### Boosting
-Sometime you want to give a field more relevance than others. Thankfully we can use the concept of Boosting. What this does is give a particular query a higher relevance. That means that you can for instance say that if the nodeName contains the query then Boost it because its more relevant than those that only contain the term in the body.
+Sometimes you want hits in particular fields to result in higher relevance (score). Thankfully we can use the concept of Boosting to achieve this. By using Boost we can for instance define that if a match is found in the "nodeName" or the "metaTitle" it is more relevant than a match in the body.
 
 	var query = searchCriteria.Fields("nodeName","hello".Boost(8)).Or().Field("metaTitle","hello".Boost(5)).Compile();
 
