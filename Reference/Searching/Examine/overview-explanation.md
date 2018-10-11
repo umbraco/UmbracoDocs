@@ -62,7 +62,7 @@ So now we have defined our index, we actually now need to tell Examine what to d
 
 This file contains two main sections, `<ExamineIndexProviders>` and `<ExamineSearchProviders>`
 
-**Setting Up your IndexProvider**
+## Setting Up your IndexProvider
 We will start out by creating our ExamineIndexProvider. As the name suggests this tells Examine how to manage our Index.  Again, contrary to what you may have been told you can actually leave out most of the optional configuration and simply specify your indexer in a single line of code.
 
 	<add name="WebsiteIndexer" type="UmbracoExamine.UmbracoContentIndexer, UmbracoExamine"/>
