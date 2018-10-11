@@ -14,7 +14,7 @@ The bottom line is the UI project has zero dependencies on asp.net or Windows. H
 Umbraco 7 needs a couple of things to run:
 
 ### Node.js 
-To compile and run the UI project you need Node.js installed, you can get that at [https://nodejs.org](nodejs.org) for both Windows and OSX.
+To compile and run the UI project you need Node.js installed, you can get that at [https://nodejs.org](https://nodejs.org) for both Windows and OSX.
 
 ### gulp
 When you have Node.js installed, you need to install gulp. gulp is a simple JavaScript task runner, basically like NAnt, MSBuild or any traditional build system [more about gulp here](https://gulpjs.com).
