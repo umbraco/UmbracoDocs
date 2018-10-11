@@ -12,7 +12,7 @@ Bigger textfield that allows multiline text and more than 250 characters.
 
 ![Textarea](images/longanswer.png)
 
-## Date
+## [Date](Date)
 Will display a picker that allows to user to select a date.
 
 ![Datepicker](images/date.png)
@@ -58,7 +58,7 @@ Outputs a title and description that are set as prevalues.
 
 ![Radiobuttonlist](images/titleanddescription.png)
 
-## Recaptcha
+## [Recaptcha](Recaptcha)
 The field displays a simple checkbox for the user to check in order for the form to be validated
 
 ![Recaptcha2](images/recaptcha2.png)
