@@ -3,7 +3,7 @@ We recently discovered a bug introduced in Courier 2.51.0, which has now been fi
 This bug affects people who use inherited document types or compositions on their document types.
 
 ## Symptoms
-It is pretty easy to notice if you've been affected by this bug. The first time you transfered content using Courier it all went well and your content updated on the target environment.  
+It is pretty easy to notice if you've been affected by this bug. The first time you transferred content using Courier it all went well and your content updated on the target environment.  
 However, any updates you make on the source environment and then try to transfer seem to never arrive on the target environment.
 
 ## Problem explanation
@@ -15,14 +15,14 @@ As you can see the `propertyTypeId` is duplicated here. The next time you do a C
 
 ![database updated](images/courierpropertydataupdated.png)
 
-The problem here is that when the Umbraco backoffice reads the values for each property from the database it will take the last row and show it to you in the Umbraco interface. So in the backoffice you'd still see "This is some text".
+The problem here is that when the Umbraco backoffice reads the values for each property from the database it will take the last row and show it to you in the Umbraco interface. So in the backoffice, you'd still see "This is some text".
  
 ## Solution
 The solution is to delete all of the duplicated rows that shouldn't be there, so for each property only the first row should be left behind.
 
-First of all, you need to update [Courier to at least version 2.51.4](https://our.umbraco.com/projects/umbraco-pro/umbraco-courier-2/)  on all of your environments. This will prevent the problem from re-occuring. We fixed how Courier transfers content the first time and this problem will not occur again after v2.51.4.   
+First of all, you need to update [Courier to at least version 2.51.4](https://our.umbraco.com/projects/umbraco-pro/umbraco-courier-2/)  on all of your environments. This will prevent the problem from re-occurring. We fixed how Courier transfers content the first time and this problem will not occur again after v2.51.4.   
 
-**Note:** At this point you should **back up** your database in both environments (so the source and the target database).
+**Note:** At this point, you should **back up** your database in both environments (so the source and the target database).
 
 In order to figure out if you are affected by this problem you can run the following (safe) select query on the source and on the target database:
 

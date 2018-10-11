@@ -4,10 +4,10 @@ _Documentation for Umbraco Forms and Umbraco Courier products. These products ar
 offered as complementary paid-for options by the Umbraco HQ_
 
 ## [Umbraco Forms](UmbracoForms/index.md)
-Developer, editor and installation documentation for Umbraco Forms. Intended audience is developers looking to configure and extend
+Developer, editor and installation documentation for Umbraco Forms. The intended audience is developers looking to configure and extend
 Umbraco Forms.
 
 
 ## [Umbraco Courier](UmbracoCourier/index.md)
-Architectural overview, extension and configuration guides, intended audience is .NET developers who wish to configure, troubleshoot or extend Courier deployment functionality.
+Architectural overview, extension and configuration guides, the intended audience is .NET developers who wish to configure, troubleshoot or extend Courier deployment functionality.
 

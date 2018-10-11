@@ -1,6 +1,6 @@
 # Using Courier
 
-_Outlines the common gotchas, and the recommended way to work with Courier, to perform as smooth deployments of a Umbraco site as possible_
+_Outlines the common gotchas, and the recommended way to work with Courier, to perform as smooth deployments of an Umbraco site as possible_
 
 This document will try to outline what Courier does, why it does it, and how you can work with it to make your deployments as smooth as possible.
 It will go through the following: 
@@ -9,10 +9,10 @@ It will go through the following:
 - Why it does that
 - What it can and cannot do out of the box
 - How to handle the initial deployment
-- Working with courier on a day to day basis.
+- Working with Courier on a day to day basis.
 
 
-## What Courier does.
+## What Courier does?
 From a high-level view, Courier is pretty simple. You tell it to deploy an item from one site to another, and Courier then figures out what is needed
 for that specific item to function on the site you want to transfer it to. 
 
@@ -22,7 +22,7 @@ Optionally it can compare the packaged items as it finds them, to figure out if 
 
 Finally, it will build a graph of the deployment, based on the order of dependencies, this means that Courier knows that for a document to be installed, it needs to have its document type, template, data types and so on present on the target website. 
 
-So, in short it:
+So, in short, it:
 
 - Collects the items you tell it to
 - Collects the dependencies of these items 
@@ -32,8 +32,8 @@ So, in short it:
 - Sends the files and data to the target site, which will then install them
 
 ## Why does it perform all those things? 
-The objective of Courier is to move functioning items from once place to another, but due to the way Umbraco is built, this is not a trivial task.
-Lets consider the amount of dependencies that goes into moving a document
+The objective of Courier is to move functioning items from one place to another, but due to the way Umbraco is built, this is not a trivial task.
+Let's consider the number of dependencies that goes into moving a document
 
 - The document itself
 - The document data
@@ -49,14 +49,13 @@ Lets consider the amount of dependencies that goes into moving a document
 We can sort these things into hard and soft dependencies, the hard ones are document type, data types and template, without these, the document
 cannot exist in the database, due to ID references. 
 
-The soft ones are all the items that make the page and editor actually work, so if you try to view a page without a template, it breaks, try to edit
-a document with a data type missing its configuration or a needed dll, it breaks. 
+The soft ones are all the items that make the page and editor actually work, so if you try to view a page without a template, it breaks. Try to edit a document with a data type missing its configuration or a needed dll, it breaks. 
 
 So the short version is, you don't want to miss those dependencies, because your site will not work, and you will have no idea why. 
 
-## What can and cannot courier do.
-The whole idea of Courier, builds around the idea of dependencies and references, which courier can understand to a certain degree.
-But there are several areas, where Courier have zero chance of understanding what is going an. 
+## What Courier can and cannot do.
+The whole idea of Courier builds around the idea of dependencies and references, which courier can understand to a certain degree.
+But there are several areas, where Courier has zero chance of understanding what is going an. 
 
 ### When a data type stores node ids
 Common thing, a data type stores a node ID, but courier doesn't know, so it cannot add the document as a dependency, and it cannot convert it into
@@ -78,7 +77,7 @@ unneeded overhead to your deployment. Courier adds a lot of extra data and overh
 referenced between the 2 sites, it also needs to compare data with this other site and determine which items should transfer, and which should not, finally it
 all happens over http, which is another bottleneck
 
-So In short, when you initially want to deploy your site, and don't have 2 environments to sync, just deploy your files and database as normally, and let courier handle the ongoing day-to-day changes which you subsequently will have to deploy. 
+So In short, when you initially want to deploy your site and don't have 2 environments to sync, just deploy your files and database as normal, and let courier handle the ongoing day-to-day changes which you subsequently will have to deploy. 
 
 
 ## Day to day work with Courier
@@ -91,6 +90,6 @@ When your infrastructure (document types, templates, etc) is in place, your edit
 ## Ongoing fine tuning
 We fine tune this process all the time, to cater to all the different ways an Umbraco site can be built. Some scenarios we simply cannot support out of the box, and some we can add configuration options for so it can fit with as many sites as possible. 
 
-Let us know in the [Courier forum](https://our.umbraco.com/forum/umbraco-courier/) on Our, if certain scenarios or setups give unreasonable large deployments. Please provide as many details as possible, or even better, provide us with a database backup, so we can try it out on our local machines and adjust the many variables. 
+Let us know in the [Courier forum](https://our.umbraco.com/forum/umbraco-courier/) if certain scenarios or setups give unreasonable large deployments. Please provide as many details as possible, or even better, provide us with a database backup, so we can try it out on our local machines and adjust the many variables. 
 
 
