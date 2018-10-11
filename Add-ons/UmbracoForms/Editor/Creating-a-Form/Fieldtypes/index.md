@@ -63,15 +63,6 @@ The field displays a simple checkbox for the user to check in order for the form
 
 ![Recaptcha2](images/recaptcha2.png)
 
-You will need to configure your site keys adding your public and private keys in the `UmbracoForms.config` file located in `~/App_Plugins/UmbracoForms/`:
-
-    <setting key="RecaptchaPublicKey" value="sHZZenninFziVUV9TN24FqhwZvc2b4e8BLrG" />
-    <setting key="RecaptchaPrivateKey" value="sHZZenninFziVUV9TN24FqhwZvc2b4e8BLrG-" />
-    
-You can create your keys by [logging into your Recaptcha account](https://www.google.com/recaptcha/).
-
-**Note**: Don't forget to make the recatpcha field mandatory.
-
 :::tip
 As ReCaptcha v1 is shut down, we **strongly** recommend that you use the ReCaptcha2 field type.
 :::
