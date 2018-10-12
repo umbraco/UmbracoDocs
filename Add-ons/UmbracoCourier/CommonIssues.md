@@ -20,9 +20,9 @@ didn't load the datalayer dll or one of its dependencies.
 
 *How to spot:* Enable debugging in /config/courier.config, restart the app and check the 
 /app_data/courier/logs/error_log.txt file for exceptions related to loading providers. Usually, it will say which dll 
-had issues loading.
+had issues loading. 
 
-If no exceptions in the log, it might be missing the dll, or have the dll for the wrong version.
+If no exceptions in the log, it might be missing the dll, or have the dll for the wrong version. 
 
 Courier for V6 expects to have umbraco.courier.persistence.v6.nhibernate.dll and for V4 it should have
 umbraco.courier.persistence.v4.nhibernate.dll
@@ -30,7 +30,7 @@ umbraco.courier.persistence.v4.nhibernate.dll
 *Solution:* Ensure that all dlls are loaded properly and that it has all the dlls expected. Also, for it should only have
 the proper dlls for the specific versions. 
 
-Get the dlls from 2.7.8.14 here:
+Get the dlls from 2.7.8.14 here: 
 https://umbraconightlies.blob.core.windows.net/umbraco-courier/2.7.8/nightly%20builds/Courier_2.7.8.14.v6.zip
 
 And copy to /bin
@@ -49,7 +49,7 @@ transfer a broken data type. Make sure to clear courier cache and restart the ap
 *Caused by:* Missing dlls or dlls from the wrong courier version
 
 *How to spot:* On v6 sites, it has dlls from V4 distribution, on V4 sites it has V6 dlls, or are missing dlls. To debug,
-put courier in debug mode in /config/courier.config and restart application, it should throw exceptions to
+put courier in debug mode in /config/courier.config and restart application, it should throw exceptions to 
 /app_data/courier/logs/log_error.txt about missing dependencies or wrong versions
 
 *Solution:* Uninstall courier, and reinstall 2.7.8.14 from nightly:
@@ -117,7 +117,7 @@ save item and re-transfer to fix
 
 *How to spot:* Registered repository is not listed in the UI, or you get an exception during packaging
 
-*Solution:* Ensure all registered dlls are allowed in the licensing, upgrade to 2.7.8.14 which is less strict on domain
+*Solution:* Ensure all registered dlls are allowed in the licensing, upgrade to 2.7.8.14 which is less strict on domain 
 restrictions
 https://umbraconightlies.blob.core.windows.net/umbraco-courier/2.7.8/nightly%20builds/Courier_2.7.8.14.v6.zip
 
@@ -133,7 +133,7 @@ API
 ### Sort order on documents is not transfered
 *Caused by:* Courier not logging sort order changes, due to the way the core does sorting from its API
 
-*How to spot:* Change sorting order on a collection of document, then transfer their parent + children. The sort order will not
+*How to spot:* Change sorting order on a collection of document, then transfer their parent + children. The sort order will not 
 be correct on the destination site
 
 *Solution:* clear the /app_data/courier/cache folder and re-package the items
