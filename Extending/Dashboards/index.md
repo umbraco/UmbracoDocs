@@ -2,11 +2,11 @@
 
 Each section of the Umbraco backoffice has its own set of default dashboards.
 
-The dashboard area of Umbraco is used to display the current editor for whichever item is selected in the tree, but when no items are selected, for example when the section first loads, that's when the default set of dashboards are displayed for that section, arranged over multiple tabs.
+The dashboard area of Umbraco is used to display the current editor for an item selected in the tree, but if no items are selected, for example when the section first loads, that's when the default set of dashboards are displayed for that section, arranged over multiple tabs.
 
 ![Content Section Dashboards](images/content-dashboards.png)
 
-In the above screenshot you can see the default set of dashboards for the Content section. For most users these will be: 'Get Started' and 'Redirect Url Management'. In the screenshot below, the Developer section has 'Get Started', 'Examine Management', 'Models Builder' and 'Health Check'.
+In the above screenshot, you can see the default set of dashboards for the Content section. For most users these will be: 'Get Started' and 'Redirect Url Management'. In the screenshot below, the Developer section has 'Get Started', 'Examine Management', 'Models Builder' and 'Health Check'.
 
 ![Developer Section Dashboards](images/developer-dashboards.png)
 
@@ -38,7 +38,7 @@ The different sections, dashboards and their configuration (sort order and users
 
 ## Custom Dashboards
 
-Additionally You can create your own custom dashboards, for extending Umbraco with single page AngularJS applications, or to support your site implementation - it is considered 'good practice' to create a custom Welcome Dashboard for your Umbraco implementation to support the day-to-day activities of editors using the Umbraco backoffice with 'quick links' and 'site statistics/information'.
+Additionally, you can create your own custom dashboards, for extending Umbraco with single page AngularJS applications, or to support your site implementation - it is considered 'good practice' to create a custom Welcome Dashboard for your Umbraco implementation to support the day-to-day activities of editors using the Umbraco backoffice with 'quick links' and 'site statistics/information'.
 
 ![Example Custom Welcome Dashboard](images/welcome-example.png)
 
