@@ -22,7 +22,7 @@ This is about how to use AngularJS with Umbraco, so it does not cover AngularJS 
 ## The end result
 
 By the end of this guide, we will have a simple markdown editor running inside of Umbraco
-registered as a data type in the back office, assigned to a document type, and the editor can
+registered as a data type in the backoffice, assigned to a document type, and the editor can
 create and modify data.
 
 ## Setting up a plugin
