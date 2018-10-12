@@ -2,7 +2,7 @@
 
 The Umbraco backoffice consists of Sections, also referred to as Applications, which contain Trees. 
 
-Each section is identified by an icon in the left hand side navigation ribbon of the Umbraco Backoffice.
+Each section is identified by an icon in the left-hand side navigation ribbon of the Umbraco Backoffice.
 
 [Configuration for sections is defined in the `~/Config/applications.config` file.](../../Reference/Config/applications/index.md) 
 
