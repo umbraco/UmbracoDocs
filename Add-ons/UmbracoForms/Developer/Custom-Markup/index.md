@@ -1,5 +1,10 @@
 # Custom markup
-With Umbraco Forms it's possible to customize the outputted markup of a form. So you have complete control over what Forms will output.
+With Umbraco Forms it's possible to customize the outputted markup of a form, which means you have complete control over what Forms will output.
+
+:::warning
+When using Forms version 6 or higher, we strongly recommend that you use **Themes** when you want to customize your forms.
+This will ensure that nothing is overwritten when Forms is upgraded to newer versions.
+:::
 
 ## Customizing the default views
 The way the razor macro works is that it uses some razor views to output the form (1 for each fieldtype, 1 for the scripts and 1 for the rest of the form). The views are available to edit so you can customize them to your needs.
