@@ -19,7 +19,7 @@ To use a theme with a Form is simple; Use the "Insert Form" macro where you will
 
 ![Choosing and using a theme](images/select-a-theme.png)
 
-When you are rendering your form directly in your template, you need to specify your theme by filling out the `FormTheme` value:
+When you are rendering your form directly in your template, you need to specify your theme by filling out the `FormTheme` attribute:
 
     @Umbraco.RenderMacro("renderUmbracoForm", new {FormGuid="dfea5397-36cd-4596-8d3c-d210502b67de", FormTheme="yourTheme", ExcludeScripts="0"})
 
