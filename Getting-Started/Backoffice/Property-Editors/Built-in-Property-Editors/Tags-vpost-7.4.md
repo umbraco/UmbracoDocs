@@ -21,7 +21,7 @@ The **Tag group** setting provides a way to categorize your tags in groups. So f
 
 ### Storage type
 
-Data can be saved in either CSV format or in JSON format. By default data is saved in CSV format. The difference between using CSV and JSON is that with JSON you can save a tag, which includes comma seperated values and when saving using JSON you will need to either create a [property value converter](../../../../Extending/Property-Editors/value-converters.md "Read more about property value converters") or parse the JSON in the view. [The JSON code example](#typed-using-json) on the last part of this page will show how to parse the JSON in the view.
+Data can be saved in either CSV format or in JSON format. By default data is saved in CSV format. The difference between using CSV and JSON is that with JSON you can save a tag, which includes comma separated values and when saving using JSON you will need to either create a [property value converter](../../../../Extending/Property-Editors/value-converters.md "Read more about property value converters") or parse the JSON in the view. [The JSON code example](#typed-using-json) on the last part of this page will show how to parse the JSON in the view.
 
 ## Content Examples
 

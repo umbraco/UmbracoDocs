@@ -75,18 +75,3 @@ Adds a class to the div element wrapping around form fields of a given type. If 
 Retrieves all wrapper classes for a given field type, used when rendering form fields. This class wraps both label, help-text and the field itself in the default view
 
 `class="@Html.GetFormFieldWrapperClass(f.FieldTypeName)`
-
-
-## Rendering Script content separately
-
-Sometimes when you insert a form into a page you do not wish the JavaScript includes and CSS references to be rendered directly alongside the form itself and more typically you would like to render these before the closing `</body>` tag.
-To do this, when inserting the form using the macro, ensure the checkbox for the property `Exclude Scripts` is checked/enabled and then you can use a snippet like below to render the necessary scripts in your main template before the closing `</body>`:
-
-
-    @if (TempData["UmbracoForms"] != null)
-    {
-        foreach (var form in (List<Guid>)TempData["UmbracoForms"])
-        {
-            Html.RenderAction("RenderFormScripts", "UmbracoForms", new { formid = form, theme = "yourTheme" });
-        }
-    }

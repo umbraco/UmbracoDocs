@@ -40,7 +40,7 @@ You can make an issue for any of the following:
 - Open a discussion about possible improvements or ways to deal with something in the documentation
 
 You can also find a button in the top right corner of every page in the documentation itself that looks like this:
-![Our issue button](images/report-issue.png).  
+![Our issue button](images/report-issue.png)  
 
 We compiled a [list of labels](github-issues.md) which we use regulary to tag issues.
 
@@ -50,9 +50,9 @@ To add version information and extra keywords, [every document can be annotated 
 
 ## Multi version documentation
 
-With the introduction every new version of Umbraco new features are introduced.  This means that not every document will work for your possibly older version.
+With the introduction of every new version of Umbraco, new features are introduced.  This means that not every document will work for your possibly older version.
 
-Therefor we introduced 2 different mechanisms.
+Therefore we introduced 2 different mechanisms.
 
 1. the [YAML meta data describing](adding-metadata.md) `versionFrom` and `versionTo`.
 2. the possibility [to add multiple files about the same topic](file-naming-conventions.md)

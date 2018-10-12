@@ -154,7 +154,7 @@ The Multiple Textbox property editor enables a content editor to make a list of 
 
 New to v7.7, the nested content property editor enables you to use Document Types as a schema for list items.
 
-## Numeric
+## [Numeric](Numeric.md)
 `Alias: Umbraco.Integer`
 
 A configurable number control allowing only numbers.
