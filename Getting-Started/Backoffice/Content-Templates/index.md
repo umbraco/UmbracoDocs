@@ -23,7 +23,7 @@ The new content template will be created in 'Content Templates' node of the sett
 
 ![New Content Template](../images/05-Find-Content-Template.png)
 
-## Create - Method 2
+## *Create - Method 2*
 
 Click on the 'Settings' menu:
 
