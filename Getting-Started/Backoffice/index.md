@@ -14,7 +14,7 @@ A section in Umbraco is where you do specific tasks related to that section. For
 *The __Section menu__ is the vertical menu located on the left side of the backoffice.*
 
 ### [Tree](../../Extending/Section-Trees/index.md)
-A tree is an hierarchical list of items related (and usually restricted) to a specific concept, which could be something like a content tree or a media tree. You can expand trees by clicking the down arrow <img src="images/expand-node.png" style="margin:0;width:15px" title="Expand a node in a tree" /> to the left of the node.
+A tree is an hierarchical list of items related (and usually restricted) to a specific concept, which could be something like a content tree or a media tree. You can expand trees by clicking the down arrow <img src="images/expand-node.png" style="margin:0;width:15px" title="Expand a node in a tree" /> to the left of the node or by double-clicking the node.
 [Read more about the Tree](../../Extending/Section-Trees/index.md)
 
 ![Tree](images/umbraco7-6_tree.jpg "The content tree")
