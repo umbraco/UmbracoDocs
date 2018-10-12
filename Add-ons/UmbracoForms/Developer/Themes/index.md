@@ -4,17 +4,29 @@ As of version 6.0.0 and newer Umbraco Forms supports Themes, allowing forms to b
 ## Creating a Theme
 To create a theme you simply need to create a folder at `/Views/Partials/Forms/Themes/`. The name of the folder is the name of theme that will be visible in the backoffice when choosing it.
 
-
 Copy the explicit files you wish to override in your theme, it may be a single file or all files from the default theme folder. Make the necessary changes you desire to CSS class names, markup etc. 
-*A side note to consider is that Umbraco Forms conditional JS logic does depend on some CSS classes currently and it is advised that you add any additional classes you require but do not remove those already being set.*
+
+:::note
+Umbraco Forms conditional JS logic depends on some CSS classes currently and it is advised that you add any additional classes you require but **do not remove those already being set**.
+:::
 
 When using your own theme, you need to copy the Script.cshtml file from the default theme folder and amend the js references to reference your own js files. Your js files are probably best located in `/js` or `/scripts` along with your other js files. You can't put these in `/Views` since they won't be served becasue of restrictions on that folder by the web.config file.
 
-We highly recommend you never customise any files found in the `default` theme folder, as any customisations to these files will most likely be lost with any future upgrades you do to Umbraco Forms.
+We highly recommend you never customize any files found in the `default` theme folder, as any customizations to these files will most likely be lost with any future upgrades you do to Umbraco Forms.
 
+## Using a Theme
+To use a theme with a Form is simple; Use the "Insert Form" macro where you will be presented with the options of the form you wish to insert along with an option to pick a theme. This displays the list of theme folders found at `Views/Partials/Forms/Themes`.
+
+![Choosing and using a theme](images/select-a-theme.png)
+
+When you are rendering your form directly in your template, you need to specify your theme by filling out the `FormTheme` attribute:
+
+    @Umbraco.RenderMacro("renderUmbracoForm", new {FormGuid="dfea5397-36cd-4596-8d3c-d210502b67de", FormTheme="yourTheme", ExcludeScripts="0"})
+
+If you do not pick and/or set a theme, the `default` theme will be used to render the form.
 
 ## Theme Fallbacks
-When using a theme, Umbraco Forms will try to use a view from the theme folder, but then fallback to the same view in the default theme folder if it can't be found. This allows you to create a theme by only modifying the files necessary to make your customisations.
+When using a theme, Umbraco Forms will try to use a view from the theme folder, but then fallback to the same view in the default theme folder if it can't be found. This allows you to create a theme by only modifying the files necessary to make your customizations.
 
 Files which can be overridden:
 
@@ -22,9 +34,6 @@ Files which can be overridden:
 * Form.cshtml (overrides the generation of the fields on the current page)
 * Script.cshtml (overrides the way files are included with the form)
 * /Fieldtypes/FieldType*.cshtml (overrides a specific view for a field)
-
-## Using a Theme
-To use a theme with a Form is simple; Use the "Insert Form" macro where you will be presented with the options of the form you wish to insert along with an option to pick a theme. This displays the list of theme folders found at `Views/Partials/Forms/Themes`. If you do not pick and set a theme, the `default` theme will be used to render the form.
 
 ## Helper Methods
 
