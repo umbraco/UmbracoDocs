@@ -17,7 +17,7 @@ Now you can go to all the copied content nodes and update your text to whatever 
 
 ### Second step
 The second step is to create the new language in the settings. To do this, simply go to the settings menu and under languages, click add new and chose your language.
-![Chosing a language](images/4.png)
+![Choosing a language](images/4.png)
 
 Now we go to our content nodes and assign a language to them. You do this by right clicking on the home node and picking 'Culture and Hostnames', then choose the language associated with the page. (NOTE: As you can see it is defaulting to 'Inherit', so if you set the top node all child nodes will inherit it)
 ![Setting language](images/5.png)
@@ -73,4 +73,4 @@ So it's the "hashtag" (#) symbol + the alias of dictionary item which will make 
 
 ### Important!
 At the time of this writing the default language of Umbraco is set to "en-us" and the default language of the administrator account is set to "en-uk". This can create some confusion if you try to do the above since it will just display as [#Header] on the name label for instance. Therefore you should change the language of the administrator account to "en-us".
-This is currently neccesary for all version including and below Umbraco 6.1.1.
+This is currently necessary for all version including and below Umbraco 6.1.1.
