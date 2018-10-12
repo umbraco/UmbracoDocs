@@ -39,7 +39,7 @@ And copy to /bin
 *Caused by* Courier not able to find a data types assembly or .cs class file which contains the Interface used
 by the data type
 
-*How to spot* Courier returns "cannot package GUID from data types provider"
+*How to spot* Courier returns "cannot package GUID from data types provider" 
 
 *Solution* Make sure you have all your data type dependencies in place, usually its components and similar projects
 that are missing dlls, also, if you don't use a data type, delete it from your site, so you don't accidentally 
@@ -136,4 +136,4 @@ API
 *How to spot:* Change sorting order on a collection of document, then transfer their parent + children. The sort order will not 
 be correct on the destination site
 
-*Solution:* clear the /app_data/courier/cache folder and re-package the items
+*Solution:* clear the /app_data/courer/cache folder and re-packge the items
