@@ -25,8 +25,6 @@ Default contents of the view:
         Html.EnableUnobtrusiveJavaScript(true);
     }
 
-
-
     @if (Model.SubmitHandled)
     {
         if (Model.RenderMode == "full" || Model.RenderMode == "form")
@@ -39,117 +37,122 @@ Default contents of the view:
         if (Model.RenderMode == "full" || Model.RenderMode == "form")
         {
 
-             <div id="contour_form_@{@Model.FormName.Replace(" ", "")}" class="contour @Model.CssClass">
+            <div id="contour_form_@Model.FormClientId" class="contour @Model.CssClass">
 
-                 @using (Html.BeginUmbracoForm<Umbraco.Forms.Web.Controllers.UmbracoFormsController>("HandleForm"))
-                 {
-                     @Html.HiddenFor(x => Model.FormId)
-                     @Html.HiddenFor(x => Model.FormName)
-                     @Html.HiddenFor(x => Model.RecordId)
-                     @Html.HiddenFor(x => Model.PreviousClicked)
+                @using (Html.BeginUmbracoForm<Umbraco.Forms.Web.Controllers.UmbracoFormsController>("HandleForm"))
+                {
+                    @Html.AntiForgeryToken()
 
-                     <input type="hidden" name="FormStep" value="@Model.FormStep" />
+                    <input type="hidden" name="FormId" value="@Model.FormId" />
+                    @Html.HiddenFor(x => Model.FormName)
+                    @Html.HiddenFor(x => Model.RecordId)
+                    @Html.HiddenFor(x => Model.PreviousClicked)
 
-                     <div class="contourPage">
-                
-                         @if (string.IsNullOrEmpty(Model.CurrentPage.Caption) == false)
-                         {
-                             <h4 class="contourPageName">@Html.Raw(Model.CurrentPage.Caption)</h4>
-                         }
-                
-                         @if (Model.ShowValidationSummary)
-                         {
-                             @Html.ValidationSummary(false)
-                         }
+                    <input type="hidden" name="FormStep" value="@Model.FormStep" />
+                    <input type="hidden" name="RecordState" value="@Model.RecordState" />
 
-                         @foreach (FieldsetViewModel fs in Model.CurrentPage.Fieldsets)
-                         {
-                             <fieldset class="contourFieldSet">
-                                 @if (string.IsNullOrEmpty(fs.Caption) == false)
-                                 {
-                                     <legend>@Html.Raw(fs.Caption)</legend>
-                                 }
+                    <div class="contourPage">
 
-                                 <div class="row-fluid">
-                                     @foreach (var c in fs.Containers)
-                                     {
+                        @if (string.IsNullOrEmpty(Model.CurrentPage.Caption) == false)
+                        {
+                            <h4 class="contourPageName">@Html.Raw(Model.CurrentPage.Caption)</h4>
+                        }
 
-                                         <div class="@("span" + c.Width) @("col-md-" + c.Width)">
-                                             @foreach (FieldViewModel f in c.Fields)
-                                             {
-                                                 bool hidden = f.HasCondition && f.ConditionActionType == FieldConditionActionType.Show;
+                        @if (Model.ShowValidationSummary)
+                        {
+                            @Html.ValidationSummary(false)
+                        }
 
-                                                 <div class="@f.CssClass" @{
-                                                                              if (hidden)
-                                                                              {
-                                                                                  <text> style="display: none"</text>
-                                                                              }
-                                                                          }>
-                                              
-                                                     @if (!f.HideLabel)
-                                                     {
-                                                         <label for="@f.Id" class="fieldLabel">@Html.Raw(f.Caption) @if (f.ShowIndicator)
-                                                                                                                    {
-                                                                                                                        <span class="contourIndicator">@Model.Indicator</span>
-                                                                                                                    }</label>
-                                                     }
-                                                     @if (!string.IsNullOrEmpty(f.ToolTip))
-                                                     {
-                                                         <span class="help-block">@f.ToolTip</span>
-                                                     }
-                                                
-                                                     <div>
-                                                         @Html.Partial(FieldViewResolver.GetFieldView(Model.FormId.ToString(), f.FieldTypeName, f.Caption), f)
-                                                         @if (Model.ShowFieldValidaton)
-                                                         {
-                                                             @Html.ValidationMessage(f.Id)
-                                                         }
-                                                     </div>
-                                                 </div>
+                        @foreach (FieldsetViewModel fs in Model.CurrentPage.Fieldsets)
+                        {
+                            <fieldset class="contourFieldSet" id="@fs.Id">
+                                @if (string.IsNullOrEmpty(fs.Caption) == false)
+                                {
+                                    <legend>@Html.Raw(fs.Caption)</legend>
+                                }
 
-                                             }
+                                <div class="row-fluid">
+                                    @foreach (var c in fs.Containers)
+                                    {
 
-                                         </div>
+                                        <div class="@("span" + c.Width) @("col-md-" + c.Width)">
+                                            @foreach (FieldViewModel f in c.Fields)
+                                            {
+                                                bool hidden = f.HasCondition && f.ConditionActionType == FieldConditionActionType.Show;
 
-                                     }  
-                                 </div>
+                                                <div class="@f.CssClass" @{ if (hidden) { <text> style="display: none" </text>   } }>
 
-                             </fieldset>
-                         }
+                                                    @if (!f.HideLabel)
+                                                    {
+                                                        <label for="@f.Id" class="fieldLabel">
+                                                            @Html.Raw(f.Caption) @if (f.ShowIndicator)
+                                                            {
+                                                                <span class="contourIndicator">@Model.Indicator</span>
+                                                            }
+                                                        </label>
+                                                    }
+                                                    @if (!string.IsNullOrEmpty(f.ToolTip))
+                                                    {
+                                                        <span class="help-block">@f.ToolTip</span>
+                                                    }
 
-                         <div style="display: none">
-                             <input type="text" name="@Model.FormId.ToString().Replace("-", "")" />
-                         </div>
+                                                    <div>
+                                                        @Html.Partial(FieldViewResolver.GetFieldView(Model.FormId.ToString(), f.FieldType.FieldTypeViewName, f.Caption), f)
+                                                        @if (Model.ShowFieldValidaton)
+                                                        {
+                                                            @Html.ValidationMessage(f.Id)
+                                                        }
+                                                    </div>
+                                                </div>
+        }
+                                        </div>
+        }
+                                </div>
+
+                            </fieldset>
+        }
+
+                        <div style="display: none">
+                            <input type="text" name="@Model.FormId.ToString().Replace("-", "")" />
+                        </div>
 
 
-                         <div class="contourNavigation row-fluid">
-                             <div class="col-md-12">
-                                 @if (Model.IsMultiPage)
-                                 {
-                                     if (!Model.IsFirstPage)
-                                     {
-                                         <input class="btn prev cancel" type="submit" value="@Model.PreviousCaption" name="__prev"/>
-                                     }
-                                     if (!Model.IsLastPage)
-                                     {
-                                         <input type="submit" class="btn next" value="@Model.NextCaption" name="next"/>
-                                     }
-                                     if (Model.IsLastPage)
-                                     {
-                                         <input type="submit" class="btn primary" value="@Model.SubmitCaption" name="submit"/>
-                                     }
-                                 }
-                                 else
-                                 {
-                                     <input type="submit" class="btn primary" value="@Model.SubmitCaption" name="submit"/>
-                                 }
-                             </div>
-                         </div>
+                        <div class="contourNavigation row-fluid">
+                            <div class="col-md-12">
+                                @if (Model.IsMultiPage)
+                                {
+                                    if (!Model.IsFirstPage)
+                                    {
+                                        <input class="btn prev cancel" type="submit" value="@Model.PreviousCaption" name="__prev" />
+                                    }
+                                    if (!Model.IsLastPage)
+                                    {
+                                        <input type="submit" class="btn next" value="@Model.NextCaption" name="next" />
+                                    }
+                                    if (Model.IsLastPage)
+                                    {
+                                        <input type="submit" class="btn primary" value="@Model.SubmitCaption" name="submitbtn" />
+                                    }
+                                }
+                                else
+                                {
+                                    <input type="submit" class="btn primary" value="@Model.SubmitCaption" name="submitbtn" />
+                                }
+                            </div>
+                        </div>
 
-                     </div>
-                 }
-             </div>
+                    </div>
+        }
+            </div>
 
+        }
+
+        if (Model.CurrentPage.PartialViewFiles.Any())
+        {
+            foreach (var partial in Model.CurrentPage.PartialViewFiles)
+            {
+                @Html.Partial(partial.Value)
+            }
         }
 
         if (Model.RenderMode == "full" || Model.RenderMode == "script")
@@ -176,7 +179,7 @@ Default contents of the view:
                     {
                         <text>@Html.Raw(cmd)</text>
                     }
-        
+
                 </script>
             }
 
@@ -189,11 +192,11 @@ Default contents of the view:
                 else
                 {
                     <link rel="stylesheet" href="@Url.Content(css.Value)" />
+                    }
                 }
-            }
 
+            }
         }
-    }
 
 
 The view is separated into two parts, one is the actual form and the other will be shown if the form is submitted.
