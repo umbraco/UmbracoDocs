@@ -26,4 +26,6 @@ Are there no pending deployments in your source environment, there are two ways 
 
 If the mismatches involves differences to `aliases` or `names`, changing these manually on the target environment will enable you to transfer your content.
 
-**NOTE**: If your project is using Umbraco Courier, please refer to this article instead: [Schema Mismatches with Courier](../../Courier/Schema-Mismatch-Courier)
+:::note
+If your project is using Umbraco Courier, please refer to this article instead: [Schema Mismatches with Courier](../../Courier/Schema-Mismatch-Courier)
+:::
