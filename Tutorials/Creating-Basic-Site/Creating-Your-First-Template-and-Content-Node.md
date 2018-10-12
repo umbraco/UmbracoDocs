@@ -31,7 +31,7 @@ We now have a template. That's two out of the three stages complete for our firs
 Our third and final stage to creating our first page in Umbraco is to create a content node where an editor can add the content which Umbraco will use, along with the Document Type and Template, to serve up an HTML page to web visitors. 
 
 
-We're now ready to create our first page in Umbraco!   Click the **_Content_** button (first option in the left hand menu).  
+We're now ready to create our first page in Umbraco!   Click the **_Content_** button (first option in the left-hand menu).  
 
 
 Hover over the grey text **_CONTENT_**  and you'll see the three dots **_..._** - click this.  If you've done everything correctly so far you should see the option to create our Homepage! 
