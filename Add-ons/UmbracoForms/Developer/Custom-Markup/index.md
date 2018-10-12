@@ -29,16 +29,24 @@ This view can be customized, if you do so it will be customized for all your for
 This view renders the JavaScript that will take care of the conditional logic, customization won't be needed here.
 
 ### FieldType.*.cshtml
-The rest of the views start with FieldType. like `FieldType.Textfield.cshtml` and those will output the fields. There is a view for each default fieldtype like *textfield*, *textarea*, *checkbox*, etc)
+The rest of the views start with FieldType, like `FieldType.Textfield.cshtml` and those will output the fields. There is a view for each default fieldtype like *textfield*, *textarea*, *checkbox*, etc)
 
-Contents of the `FieldType.Textfield.cshtml` view:
+Contents of the `FieldType.Textfield.cshtml` view (from the default theme):
 
-	@model Umbraco.Forms.Mvc.Models.FieldViewModel
-	<input type="text" name="@Model.Name" id="@Model.Id" class="text" value="@Model.Value" maxlength="500"
-	@{if(Model.Mandatory || Model.Validate){<text>data-val="true"</text>}}
-	@{if (Model.Mandatory) {<text> data-val-required="@Model.RequiredErrorMessage"</text>}}
-	@{if (Model.Validate) {<text> data-val-regex="@Model.InvalidErrorMessage" data-regex="@Model.Regex"</text>}}
-	/>
+    @model Umbraco.Forms.Mvc.Models.FieldViewModel
+    @using Umbraco.Forms.Mvc
+
+    <input type="text" 
+        name="@Model.Name" 
+        id="@Model.Id" 
+        class="@Html.GetFormFieldClass(Model.FieldTypeName) text" 
+        value="@Model.ValueAsHtmlString" 
+        maxlength="500"
+        @{if(string.IsNullOrEmpty(Model.PlaceholderText) == false){<text>placeholder="@Model.PlaceholderText"</text>}}
+        @{if(Model.Mandatory || Model.Validate){<text>data-val="true"</text>}}
+        @{if (Model.Mandatory) {<text> data-val-required="@Model.RequiredErrorMessage"</text>}}
+        @{if (Model.Validate) {<text> data-val-regex="@Model.InvalidErrorMessage" data-regex="@Html.Raw(Model.Regex)"</text>}}
+    />
 
 By default the form makes use of jQuery validate and jQuery validate unobtrusive. That's why you see attributes like `data-val` and `data-val-required`.
 
