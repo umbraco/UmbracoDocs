@@ -12,9 +12,9 @@ Custom dashboards are a great way to help editors maintain a site by providing u
 
 This guide explains how to setup a simple property editor for the backoffice.
 
-### [Multi language Setup](Multilanguage-Setup/index.md)
+### [Multi-language Setup](Multilanguage-Setup/index.md)
 
-Tips and methods for creating multi lingual websites.
+Tips and methods for creating multi-lingual websites.
 
 ### [Add Google authentication to your backoffice](Add-Google-Authentication/index.md)
 
