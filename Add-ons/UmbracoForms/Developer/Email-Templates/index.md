@@ -13,7 +13,7 @@ The Razor view must inherit from FormsHtmlModel:
 
 Then you have a model that contains your Form fields which can be used in your email HTML markup, along with the UmbracoHelper methods such as `Umbraco.TypedContent` and `Umbraco.TypedMedia` etc.
 
-Below is an example of a very simple email template with the HTML styling removed from the email example template that we ship with:
+Below is an example of a very simple email template:
 
     @inherits UmbracoViewPage<Umbraco.Forms.Core.Models.FormsHtmlModel>
 
@@ -27,9 +27,6 @@ Below is an example of a very simple email template with the HTML styling remove
         // @Model.GetValue("aliasFormField")
         // @foreach (var color in Model.GetValues("checkboxField")){}
 
-        // Dynamics
-        // @Model.DynamicFields.aliasFormField
-        // @foreach(var color in Model.DynamicFields.checkboxField){}
     }
 
     <h1>Explicitly Named Fields</h1>
