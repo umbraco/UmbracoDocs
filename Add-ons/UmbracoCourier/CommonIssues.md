@@ -22,7 +22,7 @@ didn't load the datalayer dll or one of its dependencies.
 /app_data/courier/logs/error_log.txt file for exceptions related to loading providers. Usually, it will say which dll 
 had issues loading. 
 
-If no exceptions in the log, it might be missing the dll, or have the dll for the wrong version. 
+If no exceptions in the log, it might be missing the dll, or have the dll for the wrong version.
 
 Courier for V6 expects to have umbraco.courier.persistence.v6.nhibernate.dll and for V4 it should have
 umbraco.courier.persistence.v4.nhibernate.dll
