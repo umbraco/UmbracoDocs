@@ -23,7 +23,7 @@ The new content template will be created in 'Content Templates' node of the sett
 
 ![New Content Template](../images/05-Find-Content-Template.png)
 
-## *Create - Method 2*
+## Create - Method 2
 
 Click on the 'Settings' menu:
 
@@ -53,7 +53,7 @@ To edit an existing content template, select a content template from the 'Conten
 
 ## Use
 
-Once you have created a content template, you can use the template to create new content nodes. To use a content template,right click the content tree and select 'Create':
+Once you have created a content template, you can use the template to create new content nodes. To use a content template, right click the content tree and select 'Create':
 
 ![Create From Template](../images/12-Create-From-Template.png)
 
