@@ -82,3 +82,6 @@ A parameter editor defines the usage of a property editor for use as a parameter
 
 ### User
 A user is someone who has access to the **Umbraco backoffice** and is not to be confused with Member. When Umbraco has been installed a user will automatically be generated with the login (email) and password entered during installing. Users can be created, edited and managed in the User section.
+
+### [Content Templates](Content-Templates/)
+Content Templates provide a blueprint for content nodes based on an existing node.
