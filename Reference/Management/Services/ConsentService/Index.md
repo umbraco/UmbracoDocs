@@ -1,3 +1,6 @@
+---
+versionFrom:7.9.0
+---
 # ConsentService
 
 **Applies to Umbraco 7.9 and newer**
