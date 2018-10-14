@@ -1,5 +1,5 @@
 # Content Templates
-Content Templates allow a content editor to create a blueprint for new content nodes based on an existing node.
+Content Templates allows a content editor to create a blueprint for new content nodes based on an existing node.
 
 ## Create - Method 1
 
