@@ -25,8 +25,9 @@ Go to the **_Settings > Templates_** and open up the tree.  At the moment we jus
 
 Now we're going to move the **_Homepage_** template under the **_Master_** template. To do this select the **_Settings > Homepage node_** and from the **_Properties tab > Master template dropdown_**, select _"Master"_ and then click **_Save_**.  This will update the Razor code section to change `Layout = null;` to `Layout = "Master.cshtml";` 
 
->NOTE: Due to a bug in older versions of Umbraco you may need to click off the **_Homepage node_** and back on to see this update. 
-
+:::note
+Due to a bug in older versions of Umbraco you may need to click off the **_Homepage node_** and back on to see this update. 
+:::
 
 ![Homepage Template now sits under the Master](images/figure-23-homepage-has-master-template.png)
 
