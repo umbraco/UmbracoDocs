@@ -16,41 +16,32 @@ The achieve that, we need to enabling conditions for the **Email** and **Phone**
 
 Enabling conditions will give you more options:
 
-![Conditions](Conditions.png)
+![Conditions](images/conditions.png)
 
-### Action type
+### Action and Logic types
 
-First thing that needs to be chosen is the action type this can be either show or hide
-
-![ActionType](ActionType.png)
+First thing that needs to be chosen is the **action type**:
 
 - Show: the field will be hidden unless the rules match
 - Hide: the field will be hidden if the rules match
 
-### Logic type
+Next up, you'll need to specify the **logic type**. This setting is only important if you have multple rules.
 
-Then you'll need to specify if all rules need to match. This setting is only important if you have multple rules.
-
-![LogicType](LogicType.png)
-
-- All: all of the rules must match
-- Any: any of the rules may match
+- All: All of the rules must match
+- Any: Any of the rules may match
 
 ## Adding a new condition
 
 When adding a new condition you'll need to select the field where you want to evaluate the value and then you can also select an operator.
 
-In this example I only want to show the email field if the value of the 'how should we contact you' field is 'Email'
+In this example we only want to show the 'Email' field if the value of the 'How should we contact you' field is 'Email'. In the same way we only want to show the 'Phone' field, if the value of the 'How should we contact you' field is 'Phone'.
 
-![Setup rule](SetupCondition.png)
+![Setup rule](images/exampleConditions.png)
 
 ## Result
 
-If I setup a similar rule for the phone field I get the following result
+When both conditions have been set as shown above, this is how it will look on the frontend:
 
-![Form render](ExampleFormRender.png)
+![Frontend Example](images/exampleFrontend.png)
 
-By default the email and phone field are hidden but when I select the corresponding option from the 'how should we contact you' field it get's shown
-
-
-![Form render](ExampleFormRender2.png)
+As we in this little tutorial have chosen to use a `checkbox`, it's possible to choose both 'Email' and 'Phone' in the 'How should we contact you' field. In that case, both fields will be shown.
