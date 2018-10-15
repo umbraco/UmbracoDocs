@@ -21,7 +21,7 @@ Go to the **_Settings > Templates > Homepage_**. Scroll down and highlight the t
 *Figure 18 - Preparing to replace the hardcoded text with an Umbraco Data Property*
 
 
-Click the button **_Insert Umbraco Page Field_** and under the **_Choose field_** drop down select **_pageTitle_** from the **_Custom Fields_** section. 
+Click the button **_Insert Umbraco Page Field_** and under the **_Choose field_** dropdown select **_pageTitle_** from the **_Custom Fields_** section. 
 
 
 ![Umbraco Page Field](images/figure-19-umbraco-page-field.png)

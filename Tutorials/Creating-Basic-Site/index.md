@@ -1,7 +1,7 @@
 # Creating a Basic Website using Umbraco
 
 ## Introduction 
-This tutorial will take you step by step through an Umbraco website build. It will allow you to take any website "template" (e.g. flat HTML, CSS and JS) and install it into a fresh Umbraco and wire up the sections that need content managing in Umbraco.  Umbraco is a seriously powerful CMS but many find the learning curve of installing a website from scratch a little too much – this tutorial aims to explain the mysteries!
+This tutorial will take you step-by-step through an Umbraco website build. It will allow you to take any website "template" (e.g. flat HTML, CSS, and JS) and install it into a fresh Umbraco and wire up the sections that need content managing in Umbraco.  Umbraco is a seriously powerful CMS but many find the learning curve of installing a website from scratch a little too much – this tutorial aims to explain the mysteries!
 
 
 We avoid using one of the starter kits as when it comes to building your own site as, though these are extremely useful, they won’t provide you with an understanding of the basics of Umbraco features like Document Types and Templates and how these work together to build pages. 
@@ -42,7 +42,7 @@ A simple solution for the template in the menu.
 
 
 ## [Articles Parent and Article Items](Articles-Parent-and-Article-Items.md)
-How to have a parent page that lists and links to child nodes automatically (e.g. an article list page containing an flexible / infinite number of articles - useful for Blogs or News pages). 
+How to have a parent page that lists and links to child nodes automatically (e.g. an article list page containing an flexible/infinite number of articles - useful for Blogs or News pages). 
 
 
 ## [Conclusions and Where Next?](Conclusions-Where-Next.md)

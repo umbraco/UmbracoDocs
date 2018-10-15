@@ -23,7 +23,7 @@ Go to the **_Settings > Templates_** and open up the tree.  At the moment we jus
 *Figure 22 - Master Template*
 
 
-Now we're going to move the **_Homepage_** template under the **_Master_** template. To do this select the **_Settings > Homepage node_** and from the **_Properties tab > Master template drop down_**, select _"Master"_ and then click **_Save_**.  This will update the Razor code section to change `Layout = null;` to `Layout = "Master.cshtml";` 
+Now we're going to move the **_Homepage_** template under the **_Master_** template. To do this select the **_Settings > Homepage node_** and from the **_Properties tab > Master template dropdown_**, select _"Master"_ and then click **_Save_**.  This will update the Razor code section to change `Layout = null;` to `Layout = "Master.cshtml";` 
 
 >NOTE: Due to a bug in older versions of Umbraco you may need to click off the **_Homepage node_** and back on to see this update. 
 
@@ -34,7 +34,7 @@ Now we're going to move the **_Homepage_** template under the **_Master_** templ
 *Figure 23 - Homepage Template now sits under the Master*
 
 
-Now we need to move the parts of our HTML template that are common across all pages into the **_Master_**. This is where as a developer you might need to use your brain as it will be slightly different for different websites - e.g. do all pages contain a `<div id="main">` section so can we put this in the master or does this belong to only certain pages? For this site we'll assume this is part of the child page. In the template edit screen cut everything from the closing curly brace to line 37 `<div id="main-container">` - we're going to move the header and nav of the site to the master template. Cut this and click **_Save_**. 
+Now we need to move the parts of our HTML template that are common across all pages into the **_Master_**. This is where as a developer you might need to use your brain as it will be slightly different for different websites - e.g. do all pages contain a `<div id="main">` section so can we put this in the master or does this belong to only certain pages? For this site, we'll assume this is part of the child page. In the template edit screen cut everything from the closing curly brace to line 37 `<div id="main-container">` - we're going to move the header and nav of the site to the master template. Cut this and click **_Save_**. 
 
 
 ![Homepage Template After Cutting the Header](images/figure-24-homepage-after-cutting-the-header.png)

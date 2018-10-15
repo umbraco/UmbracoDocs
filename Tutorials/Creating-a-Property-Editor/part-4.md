@@ -1,7 +1,7 @@
 # Tutorial - Adding server-side data to a property editor
 
 ## Overview
-In this tutorial we will add a server-side API controller, which will query a custom table in the Umbraco database, and then return the data to a simple angular controller + view.
+In this tutorial, we will add a server-side API controller, which will query a custom table in the Umbraco database, and then return the data to a simple angular controller + view.
 
 The end result will be a person-list, populated from a custom table. When clicked it will store the ID of the selected person.
 
@@ -51,7 +51,7 @@ In the `PersonApiController.cs` file, add:
 	    }
 	}
 
-This is a very basic API controller which inherits from `UmbracoAuthorizedJsonController` this specific class will only return JSON data, and only to requests which are authorized to access the backoffice.
+This is a very basic API controller which inherits from `UmbracoAuthorizedJsonController` this specific class will only return JSON data and only to requests which are authorized to access the backoffice.
 
 ## Setup the GetAll() method
 Now that we have a controller, we need to create a method, which can return a collection of people, which our editor will use. 
@@ -110,7 +110,7 @@ Create a new file as `person.resource.js` and add:
 
 This uses the standard angular factory pattern, so we can now inject this into any of our controllers under the name `personResource`.
 
-The `getAll()` method returns a promise from an `$http.get` call, which handles calling the URL, and will return the data when it's ready. You'll notice that the `$http.get` method is wapped inside `umbRequestHelper.resourcePromise`, the `umbRequestHelper.resourcePromise` will automatically handle any 500 errors for you which is why the 2nd string parameter is there - it defines the error message displayed.
+The `getAll()` method returns a promise from an `$http.get` call, which handles calling the URL, and will return the data when it's ready. You'll notice that the `$http.get` method is wrapped inside `umbRequestHelper.resourcePromise`, the `umbRequestHelper.resourcePromise` will automatically handle any 500 errors for you which is why the 2nd string parameter is there - it defines the error message displayed.
 
 ## Create the view and controller
 We will now finally setup a new view and controller, which follows previous tutorials, so you can refer to those for more details: 

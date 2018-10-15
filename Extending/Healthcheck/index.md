@@ -22,7 +22,7 @@ Umbraco comes with the following checks by default:
 * Category **Permissions**
   * **File & folder permissions (id: `53DBA282-4A79-4B67-B958-B29EC40FCC23`)** - checks that folders and files that are either required or recommended to set with write permissions can be accessed
 * Category **Security**
-  * **Click-Jacking Protection (id: `ED0D7E40-971E-4BE8-AB6D-8CC5D0A6A5B0`)** - checks to see if a header or meta-tag is in place to indicate whether the site can be hosted in an IFRAME.  Normally this is best set to deny permission for this to be done, to prevent what are known as [click-jacking](https://www.owasp.org/index.php/Clickjacking) attacks
+  * **Click-Jacking Protection (id: `ED0D7E40-971E-4BE8-AB6D-8CC5D0A6A5B0`)** - checks to see if a header or meta-tag is in place to indicate whether the site can be hosted in an IFRAME.  Normally this is best set to deny permission for this to be done, to prevent what is known as [click-jacking](https://www.owasp.org/index.php/Clickjacking) attacks
   * **Excessive Headers (id: `92ABBAA2-0586-4089-8AE2-9A843439D577`)** - checks to ensure that various headers that can provide details about the technology used to build and host the website have been removed
   * **HTTPS check (id: `EB66BB3B-1BCD-4314-9531-9DA2C1D6D9A7`)** - to determine if the current site is running on a secure connection
   * **umbracoUseSSL check** - when the site is running on HTTPS, `umbracoUseSSL` needs to be enabled to secure the backoffice
@@ -32,7 +32,7 @@ Umbraco comes with the following checks by default:
   
 Each check returns a message indicating whether or not the issue in question has been found on the website installation, and if so whether the concern is an error that should be fixed, or less importantly, a warning you should be aware of.
 
-Some of them can also be rectified via the dashboard, simply be clicking the **Fix** button and in some cases providing some required information.  These changes usually involve writing to configuration files that will often trigger a restart of the website.  
+Some of them can also be rectified via the dashboard, simply by clicking the **Fix** button and in some cases providing some required information.  These changes usually involve writing to configuration files that will often trigger a restart of the website.  
 
 ## Configuring and scheduling checks
 

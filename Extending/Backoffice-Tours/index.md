@@ -21,7 +21,7 @@ The tour files that ship with Umbraco are stored in `/Config/BackofficeTours`. T
 
 ### Plugin tours
 
-If you want to include a tour with your custom plugin you can store the tour file in `/App_Plugins/<YourPlugin>/backoffice/tours`. It is recommend that you place the tour files in this location when you are creating a plugin.
+If you want to include a tour with your custom plugin you can store the tour file in `/App_Plugins/<YourPlugin>/backoffice/tours`. It is recommended that you place the tour files in this location when you are creating a plugin.
 
 ## The JSON format
 
@@ -123,13 +123,13 @@ This the title shown on the tour step.
 
 ### content
 
-This text will be shown on the tour step, it can contain html mark-up
+This text will be shown on the tour step, it can contain HTML markup
 
 ![Tour content highlighted](images/stepcontent.png)
 
 ### type
 
-The type of step. Currently only one type is supported : "intro". This will center the step and show a "Start tour" button
+The type of step. Currently, only one type is supported : "intro". This will center the step and show a "Start tour" button
 
 ### element
 

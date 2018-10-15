@@ -318,11 +318,11 @@ Add the following to our view:
 
 Where 1075, is the id of our blog section, and BlogPost is the alias of the type of document we want to create.
 
-![Handy short cut buttons](images/CreateNewBlogPost.jpg)
+![Handy shortcut buttons](images/CreateNewBlogPost.jpg)
 
 ## Custom External Data - creating your own angular resource
 
-You can create your own custom angular services / resources, to interact with your own serverside data (using UmbracoAuthorizedJsonController), The property editor tutorial has a step explaining how to do this [part 4 - Adding server-side data to a property editor](../../Tutorials/creating-a-property-editor/part-4.md).
+You can create your own custom angular services/resources, to interact with your own serverside data (using UmbracoAuthorizedJsonController), The property editor tutorial has a step explaining how to do this [part 4 - Adding server-side data to a property editor](../../Tutorials/creating-a-property-editor/part-4.md).
 
 ## What else? - what are you waiting for?
 
