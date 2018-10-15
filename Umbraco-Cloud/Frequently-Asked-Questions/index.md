@@ -1,5 +1,9 @@
 # Frequently asked questions
 
+Here you will find answers to the questions we most commonly hear from people that are wondering about if Umbraco Cloud is the right fit for their project. The answers you will find here are of a more technical nature and are directed at developers.
+
+If you are interested in more general and easy-to-understand information about the product, you should visit the FAQ we have on our website, [umbraco.com](https://umbraco.com/products/umbraco-cloud/faq/).
+
 ## General
 
 ### Can I try before I pay?
