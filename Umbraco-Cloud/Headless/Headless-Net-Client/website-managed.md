@@ -40,7 +40,7 @@ _This example is for creating a fully content managed website where URLs will be
 
     <h3>Properties</h3>
     <ul>
-        @foreach (var p in Model.Properties.Properties)
+        @foreach (var p in Model.Properties)
         {
             <li>@p.Alias = @p.Value</li>
         }
