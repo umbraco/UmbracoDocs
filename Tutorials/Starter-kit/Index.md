@@ -13,7 +13,7 @@ Installing the starter kit will give you a simple site where you can:
 ### Home
 The home (or front page) of the site.
 ### Text pages
-Generic text page with multi column layout options.
+Generic text page with multi-column layout options.
 ### Blog
 Blog section for the site, with blog overview and blog posts.
 ### Products

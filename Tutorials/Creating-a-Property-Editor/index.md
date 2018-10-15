@@ -32,7 +32,7 @@ The first thing we must do is create a new folder inside `/App_Plugins` folder. 
 
 
 
-Next we will create a simple manifest file to describe what this plugin does. This manifest will tell Umbraco about our new property editor and allows us to inject any needed files into the application, so we create the file `/App_Plugins/MarkDownEditor/package.manifest`
+Next, we will create a simple manifest file to describe what this plugin does. This manifest will tell Umbraco about our new property editor and allows us to inject any needed files into the application, so we create the file `/App_Plugins/MarkDownEditor/package.manifest`
 [For full package.manifest JSON documentation see here](../../Extending/Property-Editors/package-manifest.md)
 
 Inside this package manifest we add a bit of JSON to describe the property editor. Have a look at the inline comments in the JSON below for details on each bit:
@@ -98,9 +98,9 @@ Save the data type, and add it to a document type of your choice. Open a documen
 
 
 ## Add external dependencies
-Lets go a bit further, and load in a markdown editor JavaScript library, I've chosen [pagedown][PagedownBootstrap], but you can use whatever you want.
+Let's go a bit further, and load in a markdown editor JavaScript library, I've chosen [pagedown][PagedownBootstrap], but you can use whatever you want.
 
-First of, I'll add some external files to our package folder, in /app_plugins/markdowneditor/lib folder. These files comes from the pagedown editor project found here:
+First of, I'll add some external files to our package folder, in /app_plugins/markdowneditor/lib folder. These files come from the pagedown editor project found here:
 
 [Pagedown-bootstrap on github.com][PagedownBootstrap]
 
