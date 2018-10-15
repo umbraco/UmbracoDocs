@@ -1,5 +1,5 @@
 # Baselines
-A Baseline Child project is very similar to a Fork (forked repository) on Github in that we create a clone of an existing project while maintaining a connection between the two projects. The connection exists between the _Live_ environment of the existing project, the **Baseline project**, and the _Development_ or Live environment - of the newly created project, the **Child project**.
+A Baseline Child project is very similar to a Fork (forked repository) on GitHub in that we create a clone of an existing project while maintaining a connection between the two projects. The connection exists between the _Live_ environment of the existing project, the **Baseline project**, and the _Development_ or Live environment - of the newly created project, the **Child project**.
 
 Any project can act as a Baseline project.
 
@@ -43,7 +43,7 @@ When you've created the Child project you can choose to restore content from you
 ![Restore content from Baseline project](images/RestoreFromBaseline.gif)
 
 ## [Merge Conflicts](Baseline-Merge-Conflicts/)
-As with any git repository-based development it is not uncommon to have merge conflicts as the various repositories begin to differ. Read this article for more on the merge strategy we use and how to approach resolving these conflicts.
+As with any Git repository-based development it is not uncommon to have merge conflicts as the various repositories begin to differ. Read this article for more on the merge strategy we use and how to approach resolving these conflicts.
 
 ## [Pushing upgrades to a Child Project](Upgrading-Child-Projects/)
 In this article you'll find a guide on how to upgrade your Child project with changes from your Baseline project.

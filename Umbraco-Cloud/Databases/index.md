@@ -15,7 +15,7 @@ By default when Umbraco Cloud restores a local database it will be an Umbraco.sd
 Usually `applicationHost.config` is located in this folder for IIS:
 `C:\Windows\System32\inetsrv\config`
 
-and in one of thes folders for IIS Express:
+and in one of these folders for IIS Express:
 
 `C:\Users\<user>\Documents\IISExpress\config\`
 

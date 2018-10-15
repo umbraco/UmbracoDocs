@@ -23,7 +23,7 @@ Now we go to our content nodes and assign a language to them. You do this by rig
 ![Setting language](images/5.png)
 
 ### Third step
-Dependant on how your site is set up, not all content is edited through the content section, some of it may be written in the template, for that dictionary items are useful. Here is an example of some button text that will be added to the dictionary (templates are found under the menu point Settings).
+Dependent on how your site is set up, not all content is edited through the content section, some of it may be written in the template, for that dictionary items are useful. Here is an example of some button text that will be added to the dictionary (templates are found under the menu point Settings).
 ![Adding button text to dictionary](images/6.png)
 
 Right click on dictionary in the menu and add new, give it a unique alias, then write the text that is relevant for each language.

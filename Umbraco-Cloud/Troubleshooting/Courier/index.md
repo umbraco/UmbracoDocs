@@ -46,11 +46,11 @@ The first step is to find out what state the site’s Git repository is in (for 
 
     `PS> git commit -m “Latest merged files here”`
 
-9. If the git commit didn’t work for you, you’ll need to go even a little deeper. There are a few options here; 1) if the files marked as “Unmerged paths” have a name like ‘03dbdfb1-7780-4368-8f1e-2bc2a18012ec.courier’ you can remove them using the git command:
+9. If the Git commit didn’t work for you, you’ll need to go even a little deeper. There are a few options here; 1) if the files marked as “Unmerged paths” have a name like ‘03dbdfb1-7780-4368-8f1e-2bc2a18012ec.courier’ you can remove them using the Git command:
 
     `PS> git rm <full path from console>/03dbdfb1-8f1e-2bc2a18012ec.courier`
 
-10. And 2) If the files listed in “Unmerged paths” are files your site is using, you’ll need to manually edit these files to resolve the merge conflict and then add them back to your repository using the git command:
+10. And 2) If the files listed in “Unmerged paths” are files your site is using, you’ll need to manually edit these files to resolve the merge conflict and then add them back to your repository using the Git command:
 
     `PS> git add myfilename`
 

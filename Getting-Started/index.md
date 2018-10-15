@@ -171,8 +171,8 @@
 				<small>How to query and render media</small>
 			</div>
 			<div class="col-sm-6">
-				<h5><a href="Design/Stylesheets-Javascript/">Stylesheets and javascript</a></h5>
-				<small>Working with css and javascript in Umbraco's templates</small>
+				<h5><a href="Design/Stylesheets-JavaScript/">Stylesheets and JavaScript</a></h5>
+				<small>Working with css and JavaScript in Umbraco's templates</small>
 			</div>
 		</div>
 	</div>

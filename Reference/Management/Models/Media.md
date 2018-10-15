@@ -122,7 +122,7 @@ Returns a list of `PropertyGroup` objects as defined on the `MediaType` that the
     } 
 
 ### .PropertyTypes
-Returns a list of `PropertyType` objects as defined on the `MediaType` that the Media is based on. A `PropertyType` is what defines a `Property`. The PropertyTypes witin this list is the sum of those within all PropertyGroups as well as those not within a group.
+Returns a list of `PropertyType` objects as defined on the `MediaType` that the Media is based on. A `PropertyType` is what defines a `Property`. The PropertyTypes within this list is the sum of those within all PropertyGroups as well as those not within a group.
 
 	// Given a `MediaService` object get Media by its Id and loop through all PropertyTypes
 	var media = mediaService.GetById(1234);

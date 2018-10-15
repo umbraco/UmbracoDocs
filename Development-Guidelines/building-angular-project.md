@@ -51,7 +51,7 @@ this will do the following:
 
 - Compile and merge the project files
 - Compile less files to one .css file
-- Lint JS files for syntax and style errors
+- Lint JavaScript files for syntax and style errors
 - Run unit tests
 - Setup a watcher to monitor for ongoing changes
 - Start a webserver on port 9999
@@ -59,7 +59,7 @@ this will do the following:
 
 gulp is doing all of this for us. Notice that it sets up a watcher, which means that every time you make a change, it will automatically recompile and test your code. If something is wrong the terminal will tell you why. 
 
-You can now login (no user/pass) and browse the UI with dummy data, this setup is perfect for fast CSS and JS changes that do not require any *real* data.
+You can now login (no user/pass) and browse the UI with dummy data, this setup is perfect for fast CSS and JavaScript changes that do not require any *real* data.
 
 ## Running from Visual Studio
 

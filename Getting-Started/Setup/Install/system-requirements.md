@@ -62,7 +62,7 @@ The Umbraco UI should work in all modern browsers:
 ### Umbraco 7.x.x
 * Firefox (Latest)
 * Chrome (Latest)
-* IE10+ (will not alway work correctly in lower versions)
+* IE10+ (will not always work correctly in lower versions)
 
 ### Umbraco 4/6
 * Firefox (Latest)

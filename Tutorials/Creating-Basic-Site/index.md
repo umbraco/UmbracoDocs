@@ -1,8 +1,7 @@
 # Creating a Basic Website using Umbraco
 
 ## Introduction 
-This tutorial will take you step-by-step through an Umbraco website build. It will allow you to take any website "template" (e.g. flat HTML, CSS, and JS) and install it into a fresh Umbraco and wire up the sections that need content managing in Umbraco.  Umbraco is a seriously powerful CMS but many find the learning curve of installing a website from scratch a little too much – this tutorial aims to explain the mysteries!
-
+This tutorial will take you step by step through an Umbraco website build. It will allow you to take any website "template" (e.g. flat HTML, CSS and JavaScript) and install it into a fresh Umbraco and wire up the sections that need content managing in Umbraco.  Umbraco is a seriously powerful CMS but many find the learning curve of installing a website from scratch a little too much – this tutorial aims to explain the mysteries!
 
 We avoid using one of the starter kits as when it comes to building your own site as, though these are extremely useful, they won’t provide you with an understanding of the basics of Umbraco features like Document Types and Templates and how these work together to build pages. 
 
@@ -21,8 +20,8 @@ How to create Document Types and what they do.
 How to create your first template and create a content node. 
 
 
-## [CSS & Javascript](CSS-And-Javascript.md)
-Adding the CSS and Javascript for your site into Umbraco.
+## [CSS & JavaScript](CSS-And-JavaScript.md)
+Adding the CSS and JavaScript for your site into Umbraco.
 
 
 ## [Outputting the Document Type Properties](Outputting-the-Document-Type-Properties.md)

@@ -4,13 +4,13 @@ As of version 6.0.0 and newer Umbraco Forms supports Themes, allowing forms to b
 ## Creating a Theme
 To create a theme you simply need to create a folder at `/Views/Partials/Forms/Themes/`. The name of the folder is the name of theme that will be visible in the backoffice when choosing it.
 
-Copy the explicit files you wish to override in your theme, it may be a single file or all files from the default theme folder. Make the necessary changes you desire to CSS class names, markup etc. 
+Copy the explicit files you wish to override in your theme, it may be a single file or all files from the default theme folder. Make the necessary changes you desire to CSS class names, markup etc.
 
 :::note
-Umbraco Forms conditional JS logic depends on some CSS classes currently and it is advised that you add any additional classes you require but **do not remove those already being set**.
+Umbraco Forms conditional JavaScript logic depends on some CSS classes currently and it is advised that you add any additional classes you require but **do not remove those already being set**.
 :::
 
-When using your own theme, you need to copy the Script.cshtml file from the default theme folder and amend the js references to reference your own js files. Your js files are probably best located in `/js` or `/scripts` along with your other js files. You can't put these in `/Views` since they won't be served becasue of restrictions on that folder by the web.config file.
+When using your own theme, you need to copy the Script.cshtml file from the default theme folder and amend the js references to reference your own js files. Your js files are probably best located in `/js` or `/scripts` along with your other js files. You can't put these in `/Views` since they won't be served because of restrictions on that folder by the web.config file.
 
 We highly recommend you never customize any files found in the `default` theme folder, as any customizations to these files will most likely be lost with any future upgrades you do to Umbraco Forms.
 

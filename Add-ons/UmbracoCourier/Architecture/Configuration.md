@@ -27,7 +27,7 @@ Encode all resources and items as bas64 to avoid illegal characters
 	<disableBase64Encoding>false</disableBase64Encoding >
 
 ### Strip resources from courier files
-Strip the raw byte data from .courier files before transfering
+Strip the raw byte data from .courier files before transferring
 
 	<stripResourcesFromCourierFiles>false</stripResourcesFromCourierFiles>
 
@@ -40,10 +40,10 @@ The root folder containing all Couriers data. This folder needs changed, if Cour
 	</paths>
 
 ### Revisions folder
-Specifies the folder within the root folder, which holds each indivual revision folder.
+Specifies the folder within the root folder, which holds each individual revision folder.
 
 	<paths>  
-	    <revisions>/folder</revisons>
+	    <revisions>/folder</revisions>
 	</paths>
 
 ### Masterpages folder

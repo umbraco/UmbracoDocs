@@ -31,7 +31,7 @@ First thing that needs to be chosen is the action type this can be either show o
 
 ### Logic type
 
-Then you'll need to specify if all rules need to match. This setting is only important if you have multple rules.
+Then you'll need to specify if all rules need to match. This setting is only important if you have multiple rules.
 
 ![LogicType](LogicType.png)
 
@@ -52,7 +52,7 @@ If I setup a similar rule for the phone field I get the following result
 
 ![Form render](ExampleFormRender.png)
 
-By default the email and phone field are hidden but when I select the corresponding option from the 'how should we contact you' field it get's shown
+By default the email and phone field are hidden but when I select the corresponding option from the 'how should we contact you' field it gets shown
 
 
 ![Form render](ExampleFormRender2.png)

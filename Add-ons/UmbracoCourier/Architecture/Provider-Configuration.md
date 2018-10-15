@@ -37,7 +37,7 @@ Single option to turn of whether allowed/child media types should be added as a 
 
 
     <documentTypeItemProvider>
-      <!-- Include all avaiable templates as dependencies, if false, only the current standard template is included -->
+      <!-- Include all available templates as dependencies, if false, only the current standard template is included -->
       <includeAllTemplates>false</includeAllTemplates>
       <includeChildDocumentTypes>true</includeChildDocumentTypes>
       
@@ -64,7 +64,7 @@ Single option to turn of whether allowed/child media types should be added as a 
 ### Media
 
 - Option to include parent nodes as a forced dependency 
-- option to automaticly include all children (in case a folder is transfered).
+- option to automatically include all children (in case a folder is transferred).
 
 <!-- -->
 
@@ -85,7 +85,7 @@ Single option to turn of whether allowed/child media types should be added as a 
     
 ### Templates
 
-- Option to collect macros found in templates as a dependecy, 
+- Option to collect macros found in templates as a dependency, 
 - toggle if courier should look for files linked in the template(js,css,image files)
 - Collect locallink: references and add the documents as dependencies
 - Parse macro's and add any nodeIds passed to the macro as a dependency

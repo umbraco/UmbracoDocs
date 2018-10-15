@@ -34,7 +34,7 @@ The `parameters` are provider specific. The default provider supports the upload
 	<tr>
 		<td>thumb</td>
 		<td>int</td>
-		<td>Specifiy the size of the thumb that you want to display. For example thumb=200.</td>
+		<td>Specify the size of the thumb that you want to display. For example thumb=200.</td>
 	</tr>
 	<tr>
 		<td>crop</td>

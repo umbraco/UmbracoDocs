@@ -101,11 +101,11 @@ We need to add something called a package.manifest file to our CustomWelcomeDash
 
 *__Note:__ This file allows Umbraco to load other resources to use with your HTML view - it is just a file - named by convention 'package.manifest' and will contain the configuration of the resources to load in JSON format*
 
-When Umbraco loads the dashboard it will look for this file in the same folder as your HTML view (remember the dashboard config points to the html view) and use the manifest to load the additional resources, eg CSS and JS files.
+When Umbraco loads the dashboard it will look for this file in the same folder as your HTML view (remember the dashboard config points to the html view) and use the manifest to load the additional resources, eg CSS and JavaScript files.
 
 This manifest file is simpler to the one you would create for a [custom property editor](../../Extending/Property-Editors/package-manifest.md)
 
-Inside this package manifest we add a bit of JSON to describe the dashboard's required javascript and stylesheet resources:
+Inside this package manifest we add a bit of JSON to describe the dashboard's required JavaScript and stylesheet resources:
 
     {
         "javascript":[
@@ -128,7 +128,7 @@ This stylesheet will now be loaded and applied to your dashboard. Add images and
 
 ![Custom Dashboard Welcome Message With styles...](images/welcomemessagewithstyles.jpg)
 
-*__Note:__ One caveat is the package.manifest file is loaded into memory when Umbraco starts up, so if you are adding a new stylesheet or javascript file you will need to start and stop your application for it to be loaded.*
+*__Note:__ One caveat is the package.manifest file is loaded into memory when Umbraco starts up, so if you are adding a new stylesheet or JavaScript file you will need to start and stop your application for it to be loaded.*
 
 Hopefully, now you can see the potential of what you could provide to an editor as a basic welcome dashboard when they log in to Umbraco.
 
@@ -151,11 +151,11 @@ In our html view, we update the outer div to wire up to the controller to the vi
 
 *__Note:__ The use of vm (short for view model) to enable communication between the view and the controller*
 
-Finally, we need to update the package.manifest file to load the additional controller js file when the dashboard is displayed:
+Finally, we need to update the package.manifest file to load the additional controller JavaScript file when the dashboard is displayed:
 
     {
         "javascript":[
-            /*any comma delimited list of javascript files appear here*/
+            /*any comma delimited list of JavaScript files appear here*/
             "~/app_plugins/CustomWelcomeDashboard/customwelcomedashboard.controller.js"
         ],
         "css": [

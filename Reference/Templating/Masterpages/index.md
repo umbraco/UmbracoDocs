@@ -91,7 +91,7 @@ ContentPlaceholder is, as the name implies a placeholder for content being merge
 
 	<asp:contentplaceholder id="myArea" runat="server" />
 
-A placeholder can also contain a default value, incase it is not used by a inheriting template
+A placeholder can also contain a default value, in case it is not used by a inheriting template
 
 	<asp:contentplaceholder id="myArea" runat="server">
 		<p>Show this, if no inheritance</p>

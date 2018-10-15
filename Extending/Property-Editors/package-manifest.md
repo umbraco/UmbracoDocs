@@ -148,7 +148,7 @@ However the default grid editors are already configured in `/config/grid.editors
 The parameter editors array follows the same format as the property editors described above, however it cannot contain prevalues since there are no configuration options for macro parameter editors.
 
 ## JavaScript
-`javascript` returns a string[] of javascript files to load on application start
+`javascript` returns a string[] of JavaScript files to load on application start
 
     "javascript": [
             "~/App_Plugins/SirTrevor/SirTrevor.controller.js",

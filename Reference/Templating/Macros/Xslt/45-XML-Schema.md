@@ -20,10 +20,10 @@ new XML Schema.
     </root>
 
 - `<node>` for content nodes
-- Documemt Types identified as an attribute on the node `<node nodeTypeAlias="home">`
+- Document Types identified as an attribute on the node `<node nodeTypeAlias="home">`
 - Document Type properties are child nodes of the content `<node>`
   stored in `<data>` nodes for each property
-- A specific Document Type property is identified as an attribue on
+- A specific Document Type property is identified as an attribute on
   the data node `<data alias="bodyText">`
 
 ## New Schema

@@ -1,6 +1,6 @@
 # Property Editors #
 
-A Property Editor is the editor that a Data Type references. A Data Type is defined by a user in the Umbraco backoffice and references a Property Editor. In Umbraco a Property Editor is defined in a JSON manifest file and associated JS files.
+A Property Editor is the editor that a Data Type references. A Data Type is defined by a user in the Umbraco backoffice and references a Property Editor. In Umbraco a Property Editor is defined in a JSON manifest file and associated JavaScript files.
 
 When creating a data type, you specify the property editor for the data type to use by selecting from the "property editor" list (as shown below)
 

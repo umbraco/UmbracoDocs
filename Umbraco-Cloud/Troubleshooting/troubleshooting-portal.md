@@ -10,7 +10,7 @@ Errors in the Cloud Portal are shown as a colored indicator on an environment. A
 
 **Note:** If an environment is busy or has an error and you try to deploy again it will not be able to, the error will always need to be resolved before another deployment can be started.
 
-What is interesting for Troubleshooting is the Red and Yellow states, Yellow normally doesn't mean an error occured, but sometimes a deployment will get stuck and just keep spinning for a long time without ever finishing - often a browser refresh will reveal this yellow state has switched to red.
+What is interesting for Troubleshooting is the Red and Yellow states, Yellow normally doesn't mean an error occurred, but sometimes a deployment will get stuck and just keep spinning for a long time without ever finishing - often a browser refresh will reveal this yellow state has switched to red.
 
 #### If you have a red environment what do you do?
 The first thing to check is what type of error it is, you can do so by clicking the __**More info**__ button on the state:

@@ -20,7 +20,7 @@ To create a searchable index we need to create 3 components: an **Indexer** a **
 
 		<IndexSet SetName="ExternalIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/External/" />
 
-Thats it, now we have a searchable index configured using Examine. Examine will detect that the index doesn't exist on the file system yet so the index will be rebuilt during application startup. Once that happens the index will automatically stay up to date with the data in Umbraco.
+That's it, now we have a searchable index configured using Examine. Examine will detect that the index doesn't exist on the file system yet so the index will be rebuilt during application startup. Once that happens the index will automatically stay up to date with the data in Umbraco.
 
 *NOTE*: If you intend to load-balance your website, you will need to update your Examine configuration. Further details on how this can be achieved can be found [here](../../../Getting-Started/Setup/Server-Setup/Load-Balancing/index.md), with guides for both traditional and flexible load balancing available.
 

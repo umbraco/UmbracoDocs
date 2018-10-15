@@ -6,7 +6,7 @@ If the schema (this includes DocumentTypes, MediaTypes, DataTypes, Templates, Ma
 
 In the image above the content transfer is not possible because a Document Type and a Data type is out of sync between the source and target environments. 
 
-While Content and Media transfers are done using the Umbraco backoffice you use the Umbraco Cloud Portal in order to deploy the schema changes, which exists on disk and are deployed through the underlying git repository. If you are working locally, you deploy the changes using your local Git client.
+While Content and Media transfers are done using the Umbraco backoffice you use the Umbraco Cloud Portal in order to deploy the schema changes, which exists on disk and are deployed through the underlying Git repository. If you are working locally, you deploy the changes using your local Git client.
 
 The following articles explain in detail how the deployment process works:
 

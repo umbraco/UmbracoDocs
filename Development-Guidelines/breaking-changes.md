@@ -57,7 +57,7 @@ This section describes what a breaking change is in regards to the Umbraco codeb
 * Changes to CSS are not considered breaking changes
 * Changes to HTML/Markup are not considered breaking changes
 * Changes to images are not considered breaking changes
-* Changes made to the inclusion, exclusion or location change of referenced JS/CSS libraries
+* Changes made to the inclusion, exclusion or location change of referenced JavaScript/CSS libraries
 * Changes made to .less files are not considered breaking changes
 
 ### Breaking
@@ -77,7 +77,7 @@ _It is advised to use Umbraco's Angular directives if you wish to create backoff
 ### Breaking
 
 * Changes made to publicly accessible APIs that are documented
-* Changing the location of JS library files
+* Changing the location of JavaScript library files
 * Changing the alias of AngularJS controller, service or directive
  
 ## Database

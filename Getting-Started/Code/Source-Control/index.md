@@ -92,7 +92,7 @@ Each plugin could be different depending on its implementation and functionality
 #### Front-end build
 
 A lot depends on how you maintain the front-end build of your website, eg are you using css preprocesors such as SCSS/LESS etc - gulp/grunt tasks to amalgamate and minify script resources.
-But generally you will need to source control all of your website's static assets: Javascript, Css, Fonts, Page Furniture Images etc.
+But generally you will need to source control all of your website's static assets: JavaScript, Css, Fonts, Page Furniture Images etc.
 
 #### Views/Templates/Partials
 
@@ -149,10 +149,10 @@ It's possible to use [Umbraco Courier](https://our.umbraco.com/packages/umbraco-
 
 ## Git
 
-If you are working with GIT, you can add a gitignore file to specify intentionally untracked files that Git should ignore.
+If you are working with Git, you can add a gitignore file to specify intentionally untracked files that Git should ignore.
 
 ### Example gitignore
 
-github has a repository of gitignore files which are a great starting point for working with Umbraco and source control.
+GitHub has a repository of gitignore files which are a great starting point for working with Umbraco and source control.
 
 Combining: [VisualStudio.gitignore](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore) & [Umbraco.gitignore](https://github.com/github/gitignore/blob/master/Umbraco.gitignore)
