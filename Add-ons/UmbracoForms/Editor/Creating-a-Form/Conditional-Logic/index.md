@@ -1,22 +1,20 @@
 # Setting up conditional logic on fields
 
-Only showing a field if the value of another field is ... That's what you can do with conditional logic.
+Some times you might have a field in your form, that you only want to show if the user has entered a specific value in another field: *Only showing a field if the value of another field is ...*. You can achieve this by setting up **conditional logic**.
 
-## Example form
+## Example
+
 Take a look at the following as an example
 
-![Example form](ExampleForm.png)
+![Example form](images/ExampleForm.png)
 
-It make sense to only show the email/phone field when that corresponds with the option chosen in the 'how should we contact you?' field.
+In this case it would make sense to **only show the email/phone field when that corresponds with the option chosen in the 'How should we contact you?' field**.
 
-## Enabling conditional logic
+The achieve that, we need to enabling conditions for the **Email** and **Phone** fields. This can be done in the additional settings.
 
-Enabling conditions for a field can be done on the additional settings of a field.
+![Enable conditions](images/EnableConditions.png)
 
-
-![Enable conditions](EnableConditions.png)
-
-Simply check the enable conditions box and you should then see more options
+Enabling conditions will give you more options:
 
 ![Conditions](Conditions.png)
 
