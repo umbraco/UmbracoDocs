@@ -18,13 +18,15 @@ _This example is for creating a fully content managed website where URLs will be
             "umbracoHeadless": {
                 "url": "https://YOUR-PROJECT-URL.s1.umbraco.io",
                 "username": "YOUR@USERNAME.com",
-                "password": "YOUR-PASSWORD"
+                "password": "YOUR-PASSWORD",
+                "imageBaseUrl": "https://YOUR-PROJECT-URL.s1.umbraco.io",
+                "restApiVersion": "1.0.0"
             }
         }
         ```
 * You need to bootstrap the headless client which is done in your `Startup.cs` file:
    * In `ConfigureServices` add the headless client services: `services.AddUmbracoHeadlessClient(Configuration);`
-   * In `ConfigureServices` add the headless web routing engine: `services.AddUmbracoHeadlessWebEngine();`
+   * In `ConfigureServices` add the headless web routing engine: `services.AddUmbracoHeadlessWebEngine(Configuration);`
    * In `Configure` replace the `UseMvc` block with `app.UseUmbracoHeadlessWebEngine();` (or you can just put this line above the existing `UseMvc` block)
 * You will need to add a view to be rendered (TODO: We need to optimize the NuGet install for the `UmbracoCms.Headless.Client.Web` package to do most of this for us)
    * Add a view file for the path `/Views/DefaultUmbraco/Index.cshtml`
