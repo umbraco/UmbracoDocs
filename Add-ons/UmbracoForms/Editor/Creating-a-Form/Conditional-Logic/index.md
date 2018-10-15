@@ -1,6 +1,10 @@
 # Setting up conditional logic on fields
 
-Some times you might have a field in your form, that you only want to show if the user has entered a specific value in another field: *Only showing a field if the value of another field is ...*. You can achieve this by setting up **conditional logic**.
+Some times you might have a field in your form, that you only want to show if the user has entered a specific value in another field: 
+
+*Only show this field if the value of that field is x*
+
+You can achieve this by setting up **conditional logic**.
 
 ## Example
 
@@ -37,6 +41,10 @@ When adding a new condition you'll need to select the field where you want to ev
 In this example we only want to show the 'Email' field if the value of the 'How should we contact you' field is 'Email'. In the same way we only want to show the 'Phone' field, if the value of the 'How should we contact you' field is 'Phone'.
 
 ![Setup rule](images/exampleConditions.png)
+
+You will also be able to see the conditions added to each file, from the forms designer:
+
+![See conditions in the Forms designer](images/exampleBackoffice.png)
 
 ## Result
 
