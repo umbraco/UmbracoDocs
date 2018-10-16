@@ -66,6 +66,22 @@ The following settings can be configured:
 * Message (required)
 * Attachment - specify whether file uploads should be attached to the email
 
+## Send email with template (Razor)
+
+![Send email with template](images/send-email-razor.png)
+
+This workflow will use a template to send the results of the form to a specified email address. 
+
+You can create your own custom Razor templates to be used to send out emails upon forms submission. Read more about how to create these templates in the [Email Templates](../../Developer/Email-Templates) article.
+
+The following settings can be configured:
+
+* Email (required)
+* SenderEmail - also configurable in `Config/umbracosettings.config`
+* Subject (required)
+* Email Template - specify which template you want to use (required)
+* Attachment - specify whether file uploads should be attached to the email
+
 ## Send form to URL
 Sends the form to a url, either as a HTTP POST or GET
 
