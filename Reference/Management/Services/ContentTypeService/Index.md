@@ -22,10 +22,15 @@ All samples in this document will require the following using statements:
 **Please note that this page will be updated with samples and additional information about the methods listed below**
 
 ## Getting the service
-The ContentTypeService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the ContentTypeService is available through a local `Services` property.
 
-	Services.ContentTypeService
+If you wish to use use the content type service in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController`), you can access the content type service through a local `Services` property:
 
-Getting the service through the `ApplicationContext`:
+	IContentTypeService contentTypeService = Services.ContentTypeService;
 
-	ApplicationContext.Current.Services.ContentTypeService
+In Razor views, you can access the content type service through the `ApplicationContext` property:
+
+    IContentTypeService contentTypeService = ApplicationContext.Services.ContentTypeService;
+
+If neither a `Services` property or a `ApplicationContext` property is available, you can also reference the `ApplicationContext` class directly and using the static `Current` property:
+
+	IContentTypeService contentTypeService = ApplicationContext.Current.Services.ContentTypeService;
