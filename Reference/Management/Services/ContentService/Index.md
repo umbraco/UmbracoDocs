@@ -38,4 +38,4 @@ In Razor views, you can access the content service through the `ApplicationConte
 
 If neither a `Services` property or a `ApplicationContext` property is available, you can also reference the `ApplicationContext` class directly and using the static `Current` property:
 
-	IContentService contentService = ApplicationContext.Current.Services.contentService;
+	IContentService contentService = ApplicationContext.Current.Services.ContentService;
