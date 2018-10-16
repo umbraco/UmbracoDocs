@@ -11,3 +11,6 @@ When your vm is running Windows, follow the instructions for [installing Umbraco
 
 ### VMWare Fusion
 VMWare Fusion is third party virtualization software that can be used to run Windows on your Mac.  Get it [here](https://www.vmware.com/products/fusion.html). In the same way as Parallels, you should follow these [install instructions for Umbraco](index.md) after you have installed Windows.
+
+### VirtualBox
+VirtualBox is another free and open-source virtualization software. Please follow [this](http://osxdaily.com/2015/03/25/install-run-windows-10-mac-virtualbox-os-x/) detailed instructions to get up and running with Windows on your Mac.
