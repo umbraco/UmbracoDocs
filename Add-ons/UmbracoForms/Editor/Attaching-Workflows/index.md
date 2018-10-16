@@ -23,6 +23,9 @@ A new workflow can be of different types, and Umbraco Forms ships with a few def
 ![Workflow add modal](images/WorkflowsAddModel.png)
 
 ### Fill in type specific settings
+
 Once the type has been selected you will need to configure the workflow. There are various settings depending on the type that has been selected.
+
+To be able to use data from the submitted form in your workflow, head over to the [Magic Strings](../../Developer/Magic-Strings) article and learn more about how that's done.
 
 Fill in the settings and hit *Submit*. The workflow will now have been added to your form, and it will be shown at the bottom of the page.
