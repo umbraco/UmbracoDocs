@@ -1,4 +1,4 @@
-# Health check
+# Health Check
 
 The developer section of the Umbraco backoffice holds a dashboard named "Health Check". It is a handy list of checks to see if your Umbraco installation is configured according to best practices. It's possible to add your custom built health checks.  
 This feature has been available since Umbraco version 7.5.
@@ -157,7 +157,7 @@ An example check:
 This can be anything you can think of, the results and the rectify action are completely under your control.
 
 * A general check needs to inherit from `Umbraco.Web.HealthCheck.HealthCheck`
-* A general check needs the HealthCheck attribute as noted at the start of this document
+* A general check needs the `HealthCheck` attribute as noted at the start of this document
 * All checks run when the dashboard is loaded, this means that the `GetStatus()` method gets executed
   * You can return multiple status checks from `GetStatus()`
 * A status check returns a `HealthCheckStatus`
@@ -264,7 +264,7 @@ An example check:
         }
     }
 
-## Custom healthcheck notifications
+## Custom health check notifications
 
 Health check notifications can be scheduled to run periodically and notify you of the results. Included with Umbraco is a notification method to deliver the results via email. In a similar manner to how it's possible to create your own health checks, you can also create custom notification methods to send the message summarising the status of the health checks via other means.  Again, for further details on implementing this on this please refer the [existing notification methods within the core code base](https://github.com/umbraco/Umbraco-CMS/tree/dev-v7/src/Umbraco.Web/HealthCheck/NotificationMethods).
 
