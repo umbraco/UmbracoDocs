@@ -1,5 +1,5 @@
 ---
-versionFrom:7.9.0
+versionFrom: 7.9.0
 ---
 # ConsentService
 
