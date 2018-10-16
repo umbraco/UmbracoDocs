@@ -83,10 +83,40 @@ The following settings can be configured:
 * Attachment - specify whether file uploads should be attached to the email
 
 ## Send form to URL
-Sends the form to a url, either as a HTTP POST or GET
 
-## Send xslt transformed email
-Send the result of the form to an email address (full control over the email contents by supplying an xslt file)
+![Send to URL](images/send-to-URL.png)
+
+This workflow sends the form to a url, either as a HTTP POST or GET.
+
+The following settings can be configured:
+
+* URL (required)
+* Method - POST, GET, PUT or DELETE (required)
+* Fields - map the needed fields
+* User and password
+
+## Send XSLT transformed email
+
+![Send XSLT Email](images/xslt-email.png)
+
+Send the result of the form to an email address and have full control over the email contents by supplying an xslt file.
+
+The following settings can be configured:
+
+* Email (required)
+* SenderEmail - also configurable in `Config/umbracosettings.config`
+* Subject (required)
+* XSLT File - specify which file should be used to transform the content
 
 ## Slack
-Posts the form data to a specific channel on Slack
+
+![Send to Slack](images/email-slack.png)
+
+This workflow lets you post the form data to a specific channel on Slack.
+
+The following settings can be configured:
+
+* API Token (required)
+* Channel (required)
+* Username (required)
+* Avatar URL (required)
