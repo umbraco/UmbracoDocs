@@ -22,7 +22,7 @@ Milliseconds before a webclient connection times out.
 	<timeout>30000</timeout>
 
 ### Base64 encoding
-Encode all resources and items as bas64 to avoid illegal characters
+Encode all resources and items as base64 to avoid illegal characters
 
 	<disableBase64Encoding>false</disableBase64Encoding >
 
@@ -33,7 +33,7 @@ Strip the raw byte data from .courier files before transferring
 
 ## Path settings
 ### Root folder
-The root folder containing all Couriers data. This folder needs changed, if Courier runs outside of the standard Umbraco webcontext. 
+The root folder containing all Courier's data. This folder needs changed, if Courier runs outside of the standard Umbraco webcontext. 
 	
 	<paths>  
 	    <root>~/path/to/courier</root>
@@ -47,7 +47,7 @@ Specifies the folder within the root folder, which holds each individual revisio
 	</paths>
 
 ### Masterpages folder
-The Sql connection to the SQL database Courier should use. Notice this is not nessary as long as the repository pattern is used, as that will then be handled by the Umbraco website data is pulled/pushed from.
+The Sql connection to the SQL database Courier should use. Notice this is not necessary as long as the repository pattern is used, as that will then be handled by the Umbraco website data is pulled/pushed from.
 
 	<paths>  
 	    <masterPages>/folder</masterPages>
@@ -67,7 +67,7 @@ In case of too long paths, shorten file names
 ## Ignoring providers
 If there is an issue with a specific provider, no matter what type of provider. You can turn it off by ignoring it. 
 
-This is done by adding its full namespace and class to the configuration, you can ignore any item provider, data resolver, repository provider or any other functionality that’s loaded through Couriers provider model.
+This is done by adding its full namespace and class to the configuration, you can ignore any item provider, data resolver, repository provider or any other functionality that’s loaded through Courier's provider model.
 
 	<ignore>
 	    <!-- Ignore the lucene indexer -->

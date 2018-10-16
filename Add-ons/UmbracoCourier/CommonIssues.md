@@ -47,22 +47,22 @@ transfer a broken data type. Make sure to clear courier cache and restart the ap
 
 
 ### Courier cannot package items on V4
-*Caused by:* Missing dlls or dlls from the wrong courier version
+*Caused by:* Missing dlls or dlls from the wrong Courier version
 
 *How to spot:* On v6 sites, it has dlls from V4 distribution, on V4 sites it has V6 dlls, or are missing dlls. To debug,
-put courier in debug mode in /config/courier.config and restart application, it should throw exceptions to 
+put Courier in debug mode in /config/courier.config and restart application, it should throw exceptions to 
 /app_data/courier/logs/log_error.txt about missing dependencies or wrong versions
 
 *Solution:* Uninstall courier, and reinstall 2.7.8.14 from nightly:
 http://nightly.umbraco.org/UmbracoCourier/2.7.8/nightly%20builds/
 
 ### Latest changes aren't deployed / courier can't detect changes
-*Caused by:* When changes are made, courier stores a serialized copy in its cache folder, in some cases, it cannot update
+*Caused by:* When changes are made, Courier stores a serialized copy in its cache folder, in some cases, it cannot update
 the files due to permissions or locks
 
 *How to spot* find the corresponding item in /app_data/courier/cache and see if it changes on save/publish
 
-*Solution:* Clear the /app_data/Courie/cache folder and retry packaging, in some cases caching might need to be turned off
+*Solution:* Clear the /app_data/Courier/cache folder and retry packaging, in some cases caching might need to be turned off
 this will make transfers slower but can be set in /config/courier.config file
 
 
@@ -136,7 +136,7 @@ API
 *How to spot:* Change sorting order on a collection of document, then transfer their parent + children. The sort order will not 
 be correct on the destination site
 
-*Solution:* clear the /app_data/courer/cache folder and re-packge the items
+*Solution:* clear the /app_data/courer/cache folder and re-package the items
 
 
 

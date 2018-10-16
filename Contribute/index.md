@@ -42,7 +42,7 @@ You can make an issue for any of the following:
 You can also find a button in the top right corner of every page in the documentation itself that looks like this:
 ![Our issue button](images/report-issue.png)  
 
-We compiled a [list of labels](github-issues.md) which we use regulary to tag issues.
+We compiled a [list of labels](github-issues.md) which we use regularly to tag issues.
 
 ## Annotating a document
 

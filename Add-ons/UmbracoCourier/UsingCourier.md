@@ -54,34 +54,34 @@ The soft ones are all the items that make the page and editor actually work, so 
 So the short version is, you don't want to miss those dependencies, because your site will not work, and you will have no idea why. 
 
 ## What Courier can and cannot do.
-The whole idea of Courier builds around the idea of dependencies and references, which courier can understand to a certain degree.
-But there are several areas, where Courier has zero chance of understanding what is going an. 
+The whole idea of Courier builds around the idea of dependencies and references, which Courier can understand to a certain degree.
+But there are several areas, where Courier has zero chance of understanding what is going on. 
 
 ### When a data type stores node ids
-Common thing, a data type stores a node ID, but courier doesn't know, so it cannot add the document as a dependency, and it cannot convert it into
-a GUID, so it will be transferable, however, you can add the data type to the courier.config to tell courier to look for ids and convert them
+Common thing, a data type stores a node ID, but Courier doesn't know, so it cannot add the document as a dependency, and it cannot convert it into
+a GUID, so it will be transferable, however, you can add the data type to the courier.config to tell Courier to look for ids and convert them
 
 ### Data in external tables are referenced.
 Courier doesn't know about it, can't deploy it, you can write your own provider for it, but this provides you with overhead, and it would
-be better if you structured your external data so it can be moveable (avoid IDENTITY and so on.)
+be better if you structured your external data so that it can be movable (avoid IDENTITY and so on.)
 
 ### You try to transfer really large files
-Hard to spot, but if a changeset contains large files, and you try to transfer these over a webservice connection
-it will die, you can increase the request limit and so, but it will not ever be 100% solid to do, so better to zip your
-revision files and xcopy them over, when you need to deploy really large things
+It can be hard to spot, but if a changeset contains large files, and you try to transfer these over a webservice connection
+it will die. You can increase the request limit and so, but it will not ever be 100% solid to do, so it's better to zip your
+revision files and xcopy them over, when you need to deploy really large things.
 
 
 ## How to handle the initial deployment
 A common scenario seen, is that people try to transfer their entire site in one go, to do the initial deploy. This is not recommended, and really just adds
 unneeded overhead to your deployment. Courier adds a lot of extra data and overhead, because it needs to convert to a format that be transferred and
 referenced between the 2 sites, it also needs to compare data with this other site and determine which items should transfer, and which should not, finally it
-all happens over http, which is another bottleneck
+all happens over http, which is another bottleneck.
 
-So In short, when you initially want to deploy your site and don't have 2 environments to sync, just deploy your files and database as normal, and let courier handle the ongoing day-to-day changes which you subsequently will have to deploy. 
+So in short, when you initially want to deploy your site and don't have 2 environments to sync, just deploy your files and database as normal, and let Courier handle the ongoing day-to-day changes which you subsequently will have to deploy. 
 
 
 ## Day to day work with Courier
-Due to courier handling pretty much every object of your site, it can quickly create some rather large deployments. Even though your editors just want to deploy a single document, they can all of sudden have a deployment with a lot of documents and files in them, due to the whole dependency setup. There is not many ways around this currently. Courier will check for dependencies, and it will include those that have changed, as it is right now. 
+Due to Courier handling pretty much every object of your site, it can quickly create some rather large deployments. Even though your editors just want to deploy a single document, they can all of sudden have a deployment with a lot of documents and files in them, due to the whole dependency setup. There is not many ways around this currently. Courier will check for dependencies, and it will include those that have changed, as it is right now. 
 
 But for day to day work, let your developers handle deployments of document types, templates and so on, and do these in small batches, as even minor changes do have a great effect on your Umbraco database. F.ex. if you add a property type to a document type, that will add an additional row for each document version on your site to the property data table, so even small things can mean big changes.
 
