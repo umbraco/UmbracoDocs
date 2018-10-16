@@ -24,6 +24,9 @@ Current languages that are included in the core are:
 - Russian
 - Swedish
 - Chinese (Simple)
+- Chinese (Taiwan)
+- Czech
+- Turkish
 
 ## Where to find the language files
 
@@ -50,8 +53,8 @@ By default, these files are empty but you can add any new keys you want or overr
 Using core or custom language keys from your code:
 
 
-### From .net
-`Services` are available in most Umbraco base classes like Controllers and UserControls, from there, use TextService to localize string with format [area]/[key]:
+### From .NET
+`Services` are available in most Umbraco base classes like Controllers and UserControls, from there, use `TextService` to localize string with format [area]/[key]:
 
     using Umbraco.Core.Services;
     var localizedLabel = Services.TextService.Localize("dialog/myKey");
@@ -80,7 +83,7 @@ Or from a controller by using the `LocalizationService` which returns an async t
 
 As Umbraco is a continually evolving product it is inevitable that new text is added on a fairly regular basis to the English language version of these files and this may mean that some of the above languages are no longer up to date.
 
-If a translation is missing the key "alias" used will be shown within the user interface, as an example:
+If a translation is missing, the key "alias" used will be shown within the user interface, as an example:
 
 	[assignDomain]
 
@@ -116,4 +119,4 @@ In the above example of a missing translation for "assignDomain", locate this st
 		...
 	</language>
 
-If you do update any of the core language files or you add a new language, don't forget to help the rest of the community by submitting a Pull request so that your changes are merged into the core.
+If you do update any of the core language files or you add a new language, don't forget to help the rest of the community by [submitting a pull request](/Contribute/index.md) so that your changes are merged into the core.
