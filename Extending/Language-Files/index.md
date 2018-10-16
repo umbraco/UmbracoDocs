@@ -119,4 +119,4 @@ In the above example of a missing translation for "assignDomain", locate this st
 		...
 	</language>
 
-If you do update any of the core language files or you add a new language, don't forget to help the rest of the community by [submitting a pull request](/Contribute/index.md) so that your changes are merged into the core.
+If you do update any of the core language files or you add a new language, don't forget to help the rest of the community by [submitting a pull request](../../Contribute/index.md) so that your changes are merged into the core.
