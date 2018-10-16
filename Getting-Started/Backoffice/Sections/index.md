@@ -8,11 +8,11 @@ There are eight default sections that come with Umbraco:
 ### <img src="images/Content.png" style="width:60px;vertical-align:middle" /> Content
 The content section contains the content of the website. Content is displayed as nodes in the content tree. Nodes can also show content state:
 
-* <img src="images/is-container.svg"/> Node is a container (such as a List View)
-* <img src="images/protected.svg"> Node is protected from being available to the public
-* <img src="images/locked.svg"> Node is currently locked / non-deletable
-* <img src="images/has-unpublished-version.svg"> Node has unpublished versions (but is currently published)
-* When the node is grayed out, it has not been published
+* Grayed out nodes have not been published
+* <img src="images/has-unpublished-version.svg" width="12px"> nodes have unpublished versions (but are currently published)
+* <img src="images/protected.svg" width="12px"> nodes are protected from the public (require logging in)
+* <img src="images/locked.svg" width="12px"> nodes are currently locked/non-deletable
+* <img src="images/is-container.svg" width="12px"> nodes are containers (such as List Views)
 
 In order to create content you must define it using Document Types.
 
