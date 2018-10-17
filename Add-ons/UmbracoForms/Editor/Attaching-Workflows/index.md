@@ -4,7 +4,7 @@ In this article you can learn how to add extra functionality to your form by att
 
 Workflows are a way of defining what happens when a form is submitted. This could be sending an email, or creating a content node.
 
-Submitting a form will by default result in the record data being stored in the database. This can be configured in the Forms settings: [Store records](https://our.umbraco.com/documentation/Add-ons/UmbracoForms/Editor/Creating-a-form/Form-Settings/#store-records-version-7).
+Submitting a form will by default result in the record data being stored in the database. This can be configured in the Forms settings: [Store records](../Creating-a-form/Form-Settings/#store-records-version-7).
 
 ## Adding a workflow
 
