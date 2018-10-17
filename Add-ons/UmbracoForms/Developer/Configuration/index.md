@@ -42,7 +42,7 @@ If you do set this to `True` then you need to add `@Html.AntiForgeryToken()` to 
 There are several configuration keys that start with `Default` this allows you to configure the values for when a new form is created.
 
 ### DefaultManualApproval
-This setting needs to be a `True` or `False` value and will allow you to toggle if a form allows submissions to be post moderated. Most use cases are for publicly shown entries such as blog post comments or submisisons for a social campaign.
+This setting needs to be a `True` or `False` value and will allow you to toggle if a form allows submissions to be post moderated. Most use cases are for publicly shown entries such as blog post comments or submissions for a social campaign.
 
 ### DefaultDisableStylesheet
 This setting needs to be a `True` or `False` value and will allow you to toggle if the form will include some default styling with the Umbraco Forms CSS stylesheet.
