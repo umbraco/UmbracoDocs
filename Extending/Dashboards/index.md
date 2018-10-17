@@ -2,7 +2,7 @@
 
 Each section of the Umbraco backoffice has its own set of default dashboards.
 
-The dashboard area of Umbraco is used to display the current editor for an item selected in the tree, but if no items are selected, for example when the section first loads, that's when the default set of dashboards are displayed for that section, arranged over multiple tabs.
+The dashboard area of Umbraco is used to display an 'editor' for the selected item in the tree. If no item is selected, for example when the section 'first loads', then the default set of section dashboards are displayed in the dashboard area, arranged over multiple tabs.
 
 ![Content Section Dashboards](images/content-dashboards.png)
 
