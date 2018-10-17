@@ -1,3 +1,7 @@
+---
+versionFrom:8.0.0
+---
+
 # Extending Umbraco
 
 :::warning

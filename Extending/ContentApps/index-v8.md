@@ -1,3 +1,7 @@
+---
+versionFrom:8.0.0
+---
+
 # Content Apps
 
 These are a new concept in v8. 'Content' and 'Info', highlighted in the image below, are the built-in content apps for all items in the Content section. 
