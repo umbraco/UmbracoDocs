@@ -82,7 +82,7 @@
 			</div>
 			<div class="col-sm-6">
 				<h5><a href="Data/Creating-Media/">Creating media</a></h5>
-				<small>Uploading files to media library, using upload fields and image cropper</small>
+				<small>Uploading files to the media library, using upload fields and an image cropper</small>
 			</div>
 			<div class="col-sm-6">
 				<h5><a href="Data/Members/">Creating Members</a></h5>
