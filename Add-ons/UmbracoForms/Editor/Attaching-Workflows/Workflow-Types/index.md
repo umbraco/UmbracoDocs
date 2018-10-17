@@ -20,7 +20,7 @@ Besides a name, the following configuration can be set:
 
 * URL (required)
 * Method
-* Xsltfile - used to transform the XML
+* XsltFile - used to transform the XML
 * Headers - map the needed files
 * User and password
 
