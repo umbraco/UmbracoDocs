@@ -8,7 +8,7 @@ The configuration for Umbraco Forms can be changed by modifying the XML based co
 This is *legacy and is no longer in use* - Forms that use an upload field will use the same IFileSystem as the [media section](../IFileSystem/#forms-containing-upload-fields)
 
 ### IgnoreWorkFlowsOnEdit
-This configuration expects 'True' or 'False' and allows you to toggle if a form submission is edited again, that the workflows on the form will re-fire after an update to the form submission. This is used in conjunction with the `AllowEditableFormSubmisisons` configuration value.
+This configuration expects 'True' or 'False' and allows you to toggle if a form submission is edited again, that the workflows on the form will re-fire after an update to the form submission. This is used in conjunction with the `AllowEditableFormSubmissions` configuration value.
 
 ### ExecuteWorkflowAsync
 This configuration key is *experimental* and will allow Workflows to be executed in an async manner<br/>
@@ -20,7 +20,7 @@ This configuration value expects a `True/False` value and can be used to toggle 
 ### DisableDefaultWorkflow
 This configuration value expects a `True/False` value and can be used to toggle if new forms that are created adds an email workflow to send the result of the form to the current user who created the form.
 
-### AllowEditableFormSubmisisons
+### AllowEditableFormSubmissions
 This configuration value expects a `True/False` value and can be used to toggle the functionality to allow a form submission to be editable and re-submitted. When the value is set to true it allows Form Submissions to be edited using the following querystring for the page containing the form on the site. `?recordId=GUID` Replace `GUID` with the GUID of the form submission.<br/>
 **BEWARE** Enable this feature ONLY if you do understand the security implications.
 
