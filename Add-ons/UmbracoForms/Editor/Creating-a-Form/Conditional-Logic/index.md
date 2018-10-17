@@ -38,7 +38,7 @@ Next up, you'll need to specify the **logic type**. This setting is only importa
 
 When adding a new condition you'll need to select the field where you want to evaluate the value and then you can also select an operator.
 
-In this example we only want to show the 'Email' field if the value of the 'How should we contact you' field is 'Email'. In the same way we only want to show the 'Phone' field, if the value of the 'How should we contact you' field is 'Phone'.
+In this example we only want to show the 'Email' field if the value of the 'How should we contact you' field is `Email`. In the same way we only want to show the 'Phone' field, if the value of the 'How should we contact you' field is `Phone`.
 
 ![Setup rule](images/exampleConditions.png)
 
