@@ -85,7 +85,7 @@
 		<div class="row explain">
 			<div class="col-xs-12">
 				<h4 class="text-right"><a href="Rest-Api/">REST APIs</a></h4>
-				<small>Information about using the REST API add-on for Umbraco</small>
+				<small>(Discontinued) Information about using the REST API add-on for Umbraco</small>
 			</div>
 		</div>
 	</div>
