@@ -6,13 +6,13 @@ These are a new concept in v8. 'Content' and 'Info', highlighted in the image be
 
 We can also add our own custom content apps to appear alongside the built-in ones. These can be for all content and media items, or they can be dependent on content type.  They can also be dependent on the current user's permissions.
 
-They are intended to enhance the editor's experience by displaying extra information, such as Google Analytics data. not for doing data-entry.
+They are intended to enhance the editor's experience by displaying extra information, such as Google Analytics data, not for doing data-entry.
 
 ## Creating a Custom Content App
 
 This guide explains how to set up a custom content app in the following steps:
 
-* Adding a content app that appears for all content and media items and displays some information about the current item
+* Adding a content app that displays for all content and media items
 * Limiting the content app to appear for only specific content types
 * Limiting which user groups can see the content app
 
@@ -22,27 +22,27 @@ A basic understanding of how to use AngularJS with Umbraco is required.  If you 
 
 The first thing we do is create a new folder inside `/App_Plugins` folder. We will call it `MyContentApp`
 
-Next we will create a simple manifest file to describe what this content app does. This manifest will tell Umbraco about our new content app and allows us to inject any needed files into the application, so we create the file `/App_Plugins/MyContentApp/package.manifest`
+Next we need to create a manifest file to describe what this content app does. This manifest will tell Umbraco about our new content app and allows us to inject any needed files into the application.  
 
-Inside this package manifest we add a bit of JSON to describe the content app. Have a look at the inline comments in the JSON below for details on each bit:
+Add the file `/App_Plugins/MyContentApp/package.manifest` and inside add the JSON to describe the content app. Have a look at the inline comments in the JSON below for details on each bit:
 
-	{
-		// define the content apps you want to create
-		contentApps: [
+    {
+        // define the content apps you want to create
+        contentApps: [
             {
                 "name": "Cake", // required - the name that appears under the icon, everyone loves cake, right?
                 "alias": "appCake", // required - unique alias for your app
                 "weight": 0, // optional, default is 0, use values between -99 and +99 to appear between the existing Content (-100) and Info (100) apps
                 "icon": "icon-cupcake", // required - the icon to use
-                "view": "~/App_Plugins/MyContentApp/mycontentapp.html", // required - the location of the view file
+                "view": "~/App_Plugins/MyContentApp/mycontentapp.html" // required - the location of the view file
             }
         ]
-		,
-		// array of files we want to inject into the application on app_start
-		javascript: [
-		    '~/App_Plugins/MyContentApp/mycontentapp.controller.js'
-		]
-	}
+        ,
+        // array of files we want to inject into the application on app_start
+        javascript: [
+            '~/App_Plugins/MyContentApp/mycontentapp.controller.js'
+        ]
+    }
 
 ### Creating the View and the Controller
 
@@ -86,15 +86,27 @@ And in the .html file:
 
 ### Checking it works
 
-After the above edits are done, restart your application. Go to any content node and you should now see an app called Cake. Clicking on the icon should say "Hello" and confirm the details of the current item.
+After the above edits are done, restart your application. Go to any content node and you should now see an app called Cake. Clicking on the icon should say "Hello" and confirm the details of the current item and user.  You can now adapt your content app to retrieve external data using the standard Umbraco and AngularJS approach.
 
 ### Limiting according Content Type
 
-TODO
+You can set your content app to only show for specific content types by updating your `package.manifest` file and adding a 'show' directive. For example:
 
-### Limiting according to User Permissions
+    "show": [ 
+        "-content/homePage", // hide for content type 'homePage'
+        "+content/*", // show for all other content types
+        "+media/*" // show for all media types
+    ]
 
-TODO
+If the 'show' directive is omitted then the app will be shown for all content types.
+
+### Limiting according to User Role
+
+In a similar way you can limit your content app according to user roles (groups).  For example:
+
+    "show": [
+        "+role/admin"  // show for 'admin' user group
+    ]
 
 ## Creating a Content App in C#
 
