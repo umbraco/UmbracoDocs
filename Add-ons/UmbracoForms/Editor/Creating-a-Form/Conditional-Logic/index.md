@@ -14,7 +14,7 @@ Take a look at the following as an example
 
 In this case it would make sense to **only show the email/phone field when that corresponds with the option chosen in the 'How should we contact you?' field**.
 
-The achieve that, we need to enabling conditions for the **Email** and **Phone** fields. This can be done in the additional settings.
+To achieve that, we need to enable conditions for the **Email** and **Phone** fields. This can be done in the additional settings.
 
 ![Enable conditions](images/EnableConditions.png)
 
