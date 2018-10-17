@@ -5,7 +5,7 @@ This is step 2 in our guide to building a property editor. This step continues w
 
 
 ## Configuration?
-So an important part of building good property editors, is to build something relatively flexible, so you can reuse it many many times, for different things; Like the rich text editor in Umbraco, that allows you to choose which buttons and stylesheets you want to use on each instance of the editor.
+So an important part of building good property editors is to build something relatively flexible, so you can reuse it many many times, for different things; Like the rich text editor in Umbraco, that allows you to choose which buttons and stylesheets you want to use on each instance of the editor.
 
 So an editor can be used several times, with different configurations, and that is what we will be working on now.
 
@@ -49,7 +49,7 @@ Let's first add the default value functionality. Basically, when the ´$scope.mo
 	    $scope.model.value = $scope.model.config.defaultValue;
 	}
 
-You see whats new? - the `$scope.model.config` object is. And the other thing you will notice is that because of our configuration, we now have access to `$scope.model.config.defaultValue` which contains the configiration value for that key, it's that easy to setup and use configuration values from code.
+You see what's new? - the `$scope.model.config` object is. And the other thing you will notice is that because of our configuration, we now have access to `$scope.model.config.defaultValue` which contains the configiration value for that key, it's that easy to setup and use configuration values from code.
 
 However, you can also use these values without any JavaScript, so open the `markdowneditor.html` file instead.
 

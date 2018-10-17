@@ -14,7 +14,7 @@ The bottom line is the UI project has zero dependencies on asp.net or Windows. H
 Umbraco 7 needs a couple of things to run:
 
 ### Node.js 
-To compile and run the UI project you need Node.js installed, you can get that at [https://nodejs.org](nodejs.org) for both Windows and OSX.
+To compile and run the UI project you need [Node.js](https://nodejs.org) installed, it is needed for both Windows and OSX.
 
 ### gulp
 When you have Node.js installed, you need to install gulp. gulp is a simple JavaScript task runner, basically like NAnt, MSBuild or any traditional build system [more about gulp here](https://gulpjs.com).
@@ -51,7 +51,7 @@ this will do the following:
 
 - Compile and merge the project files
 - Compile less files to one .css file
-- Lint JS files for syntax and style errors
+- Lint JavaScript files for syntax and style errors
 - Run unit tests
 - Setup a watcher to monitor for ongoing changes
 - Start a webserver on port 9999
@@ -59,7 +59,7 @@ this will do the following:
 
 gulp is doing all of this for us. Notice that it sets up a watcher, which means that every time you make a change, it will automatically recompile and test your code. If something is wrong the terminal will tell you why. 
 
-You can now login (no user/pass) and browse the UI with dummy data, this setup is perfect for fast CSS and JS changes that do not require any *real* data.
+You can now login (no user/pass) and browse the UI with dummy data, this setup is perfect for fast CSS and JavaScript changes that do not require any *real* data.
 
 ## Running from Visual Studio
 
@@ -90,6 +90,6 @@ Before running build.bat, then the latest UI files will be included.
 ## Conclusion
 Having Umbraco 7 UI as a separate project does indeed give us a bit more complexity when building and running from Visual Studio, since 2 build systems are in play: gulp and MSBuild. 
 
-However the alternative would be to shove everything into the MSBuild process, making the entire thing inaccessible to a large number of frontend developers and with a clunkier and less up to date system.
+However, the alternative would be to shove everything into the MSBuild process, making the entire thing inaccessible to a large number of frontend developers and with a clunkier and less up to date system.
 
 So see it as an additional powerful tool in your arsenal, once you see the power, you don't want to go back.

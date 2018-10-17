@@ -8,7 +8,7 @@ The bold value "Umbraco" is the name of the Tag group used in the data type.
 
 The example below has 6 different size of tags, and the style/size of the tags in the cloud is modified through css
 
-Please note: The page/blogpost etc where the macro is used, must take care of the requst variable ?tag=something
+Please note: The page/blogpost etc where the macro is used, must take care of the request variable ?tag=something
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	

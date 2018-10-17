@@ -66,7 +66,7 @@ _So what goes where?_
 
 Anything that is used within Umbraco like plugins and configuration should by default be placed in the `*.Web` project. Here is a list of other elements that you want to place in the Website project:
 
-* Website assets like css, javascript and related images
+* Website assets like css, JavaScript and related images
 * Views, Partial Views and Partial View Macros
 * Configuration (web.config and all the Umbraco specific or related config files in ~/Config/)
 * Usercontrol ascx-files
@@ -96,7 +96,7 @@ When working with this solution setup it's important to remember that you have o
 
 The cloned git repository from Umbraco Cloud comes with its own `.gitignore` so files that should NOT be committed are already handled. As a rule of thumb all files that are required to run the Umbraco site should be committed to the git repository in the `*.Web` folder and deployed to Umbraco Cloud. This includes assemblies (`*.dll`). 
 
-For the `*.Core` part of the solution as well as the solution file and default `.gitignore` file you commit that to the source code repository. You should ideally set a remote for this git repository to your own git host like Github, BitBucket or Visual Studio Team Services.
+For the `*.Core` part of the solution as well as the solution file and default `.gitignore` file you commit that to the source code repository. You should ideally set a remote for this git repository to your own git host like GitHub, BitBucket or Visual Studio Team Services.
 
 These are the files and folders you typically want to commit in your own source code repository:
 
@@ -107,7 +107,7 @@ These are the files and folders you typically want to commit in your own source 
 
 ## Setup for new team members
 
-When you are working in a team you will have additional people that will use this same setup, but they will only clone your source code repository from your Github, Bitbucket or Visual Studio Team Services account. In doing so they will, by default, not get the `*.Web` folder and the Umbraco site, because that part is not contained within the source code repository. 
+When you are working in a team you will have additional people that will use this same setup, but they will only clone your source code repository from your GitHub, Bitbucket or Visual Studio Team Services account. In doing so they will, by default, not get the `*.Web` folder and the Umbraco site, because that part is not contained within the source code repository. 
 So to make it easy to get up and running we added a `UaaSClone.cmd`, which can be run after cloning the source code repository.
 Running this command line tool will clone the Umbraco Cloud repository to the right folder, and set up Visual Studio for them.
 

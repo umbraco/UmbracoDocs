@@ -3,17 +3,17 @@
 ## Creating a Contact Us Page 
 
 
-We're now going to make a simple page where we'll just put our contact details. For added functionality you might want to look at replacing this with a fully fledged contact us form.
+We're now going to make a simple page where we'll just put our contact details. For added functionality, you might want to look at replacing this with a fully fledged contact us form.
 
 
 Some potential solutions:
 
 * Build your own contact form using Surface Controllers - [https://our.umbraco.com/documentation/Reference/Templating/Mvc/forms](https://our.umbraco.com/documentation/Reference/Templating/Mvc/forms) or [https://umbraco.tv/videos/developer/fundamentals/surface-controllers/](https://our.umbraco.com/documentation/Reference/Templating/Mvc/forms)
-* If you're not a programmer you can use the Umbraco built in package - Umbraco Forms. This has the added benefit editors can also create their own forms [https://umbraco.com/products-and-support/forms](https://umbraco.com/products-and-support/forms)
+* If you're not a programmer you can use the Umbraco built-in package - Umbraco Forms. This has the added benefit editors can also create their own forms [https://umbraco.com/products-and-support/forms](https://umbraco.com/products-and-support/forms)
 
 ### Creating a Simple Content Only Contact Us Page 
 
-For now let's create a simple content-only contact us page - a page where the user can provide a title and some rich text. This is very similar to our homepage document type at the moment but we're assuming that you'll go and develop this into something very specific (e.g. adding the featured article and other article content blocks). 
+For now, let's create a simple content-only contact us page - a page where the user can provide a title and some rich text. This is very similar to our homepage document type at the moment but we're assuming that you'll go and develop this into something very specific (e.g. adding the featured article and other article content blocks). 
 
 
 Go to **_Settings > Document Types_** (hover) **_> ... > + Create_ > Document Type** .  Let's create one called "_Simple Content Page_". 
@@ -46,7 +46,7 @@ Now let's create a page using our new **_Document Type_** and **_Template_** - g
 *Figure 31 - Umbraco Content Error - No Document Types Available**
 
 
-This is by design - Umbraco limits the editors to only being able to create content in the places that you, the developer, allow. This will stop a user from breaking a site design (or an entire site) when they create a new homepage under the news container node later! Unfortunately this functionality also confuses a lot of new Umbracians - hence why we show you this error here.  
+This is by design - Umbraco limits the editors to only being able to create content in the places that you, the developer, allow. This will stop a user from breaking a site design (or an entire site) when they create a new homepage under the news container node later! Unfortunately, this functionality also confuses a lot of new Umbracians - hence why we show you this error here.  
 
 Go to **_Settings > Document Types > Homepage_** on the **_Permissions_**  screen you'll see a list of **_Allowed child node types_** (be careful not to confuse this with the **_Permissions screen_**'s **_Allowed templates_** - we'll cover that later).  We need to allow users to be able to create child nodes below our Homepage of type "_Simple Content Page_". Click **_Add child_** and select the **_Simple Content Page_** and hit **_Save_**. 
 
@@ -69,7 +69,7 @@ Now go back **Content > Homepage (hover) > ... > Create** now we have the **Simp
 *Figure 33 - Creating Our Contact Us Page*
 
 
-Our **_Content tree_** will now reload and there will be a **_Contact Us_** page under the homepage.  This is the recommended structure for most sites - your primary level 1 pages will sit under the Homepage. Go look at this page - if you look at the **_Properties tab_** you can see a **_Link To document row_** - click this. You might find an unstyled page again. This is because the template designers have assumed that your site will be a flat structure - e.g. all pages sitting at the same level so the browser can't find the CSS or JS at the page level below the homepage. You need to update the **_Master_** template to add a leading slash on the JS and CSS source lines. 
+Our **_Content tree_** will now reload and there will be a **_Contact Us_** page under the homepage.  This is the recommended structure for most sites - your primary level 1 pages will sit under the Homepage. Go look at this page - if you look at the **_Properties tab_** you can see a **_Link To document row_** - click this. You might find an unstyled page again. This is because the template designers have assumed that your site will be a flat structure - e.g. all pages sitting at the same level so the browser can't find the CSS or JavaScript at the page level below the homepage. You need to update the **_Master_** template to add a leading slash on the JavaScript and CSS source lines. 
 
 e.g.  change the lines in the Master Template:
 
@@ -79,7 +79,7 @@ From: `<link rel="stylesheet" href="css/style.css">`
 
 To: `<link rel="stylesheet" href="/css/style.css">`
 
-### JS
+### JavaScript
 From: `<script src="js/libs/modernizr-2.0.6.min.js"></script>`
 
 
@@ -119,7 +119,7 @@ Now add some content under the **_Content > Homepage node > Contact Us node_**. 
 What you may notice is that the footer is now empty - we don't have our content from our Homepage node. We need to tell Umbraco to get the content from the parent **_Homepage_** tab. To do this we edit the template (the Master). 
 
 
-Highlight the Umbraco field in the footer `<h3>` tags and then click the **_Insert Umbraco page field_** button again ![Umbraco Page Field Button](images/umbraco-page-field.png)  here is where all of the options we ignored earlier come into play - choose footerText again from the **_Choose field dropdown_** but this time we'll check the **_Recursive_** checkbox. This tells Umbraco that if the field doesn't exist at the node level for the page we're requesting (e.g. Contact Us) it will look up the content tree (so in our example go to the **_Homepage_** for this content) - this means you could also create a **_footerText_** element at the Contact Us page if you wanted the editor to override the site wide default but for fields like this it's not normally used.  Click **_Insert_** and you'll see a different bit of Razor is added : `@Umbraco.Field("footerText", recursive: true)` 
+Highlight the Umbraco field in the footer `<h3>` tags and then click the **_Insert Umbraco page field_** button again ![Umbraco Page Field Button](images/umbraco-page-field.png)  here is where all of the options we ignored earlier come into play - choose footerText again from the **_Choose field dropdown_** but this time we'll check the **_Recursive_** checkbox. This tells Umbraco that if the field doesn't exist at the node level for the page we're requesting (e.g. Contact Us) it will look up the content tree (so in our example go to the **_Homepage_** for this content) - this means you could also create a **_footerText_** element at the Contact Us page if you wanted the editor to override the site-wide default but for fields like this it's not normally used.  Click **_Insert_** and you'll see a different bit of Razor is added : `@Umbraco.Field("footerText", recursive: true)` 
 
 
 Click **_Save_** and reload our Contact Us page. 

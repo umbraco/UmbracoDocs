@@ -6,7 +6,7 @@ The [standard upgrade instructions](https://our.umbraco.com/documentation/Instal
 
 ## Backup
 
-Just like with any upgrade, it is critical that you back up your website and database before upgrading. There are several database changes made during install and you cannot revert an v7 database to a v6 databse.
+Just like with any upgrade, it is critical that you back up your website and database before upgrading. There are several database changes made during install and you cannot revert an v7 database to a v6 database.
 
 ## .Net 4.5
 
@@ -162,9 +162,9 @@ Could not load type 'umbraco.BusinessLogic.Utils.TypeFinder' from assembly 'busi
 
 The TypeFinder has been deprecated since 4.10 and is now found under Umbraco.Core.TypeFinder
 
-### Javascript in menu actions
+### JavaScript in menu actions
 
-While you need to have JavaScript  inside menu actions to trigger a response, it is highly recommended that you use the recommended UmbClientMgr methods, and not try to override parent.right.document and similar tricks to get to the right-hand frame.
+While you need to have JavaScript inside menu actions to trigger a response, it is highly recommended that you use the recommended UmbClientMgr methods, and not try to override parent.right.document and similar tricks to get to the right-hand frame.
 
 ### Use the recommended Umbraco uicontrols
 

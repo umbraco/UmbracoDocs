@@ -25,7 +25,7 @@ The first thing to do is create a a couple classes for your front-end servers an
 		public string GetCurrentServerUmbracoApplicationUrl()
 		{
 			// NOTE: If you want to explicitly define the URL that your application is running on,
-			// this wil be used for the server to communicate with itself, you can return the 
+			// this will be used for the server to communicate with itself, you can return the 
 			// custom path here and it needs to be in this format:
 			// http://www.mysite.com/umbraco
 

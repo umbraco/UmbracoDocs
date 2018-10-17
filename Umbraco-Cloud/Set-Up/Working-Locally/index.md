@@ -1,5 +1,5 @@
 # Working with a local clone of an Umbraco Cloud site
-To work with a local copy of your site you'll need to use Windows and have a local web server installed (like WebMatrix / IIS). If you're not using Windows you can still work with your site's files (Templates, Css, JS, etc...) but you'll need to deploy these to your development site before you can "see" your updates - head over to our chapter on [Working with UaaS Cli](../Working-With-UaaS-Cli/) for more documentation on this. 
+To work with a local copy of your site you'll need to use Windows and have a local web server installed (like WebMatrix / IIS). If you're not using Windows you can still work with your site's files (Templates, Css, JavaScript, etc...) but you'll need to deploy these to your development site before you can "see" your updates - head over to our chapter on [Working with UaaS Cli](../Working-With-UaaS-Cli/) for more documentation on this. 
 
 ## Video tutorial
 

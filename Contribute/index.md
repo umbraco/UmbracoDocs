@@ -8,31 +8,31 @@ Let’s say you’ve found a typing or syntax error in one of the articles on th
 
 There are two ways to create a pull request.
 
-1. You can either edit a file directly on Github or
-2. You can create a fork of the Github repository
+1. You can either edit a file directly on GitHub or
+2. You can create a fork of the GitHub repository
 
 :::note
 It may be helpful for you to read our [Markdown guidelines](Markdown-Conventions) on how to set up Documentation articles before you start writing!
 :::
 
-### Option 1. Creating a PR directly in Github
+### Option 1. Creating a PR directly in GitHub
 
-Github has some great functionality that allows you to submit a PR directly from our [repository](https://github.com/umbraco/UmbracoDocs/), and there is also a button on every single documentation article at the top that links you directly to Github in order to edit that specific file:
+GitHub has some great functionality that allows you to submit a PR directly from our [repository](https://github.com/umbraco/UmbracoDocs/), and there is also a button on every single documentation article at the top that links you directly to GitHub in order to edit that specific file:
 ![Our edit button](images/edit-this-page.png)
 
 This is very helpful to fix typing errors or adding small things, but if you are working on a larger update that includes pictures and editing several files in one pull request then it is not the best way to work. You'd be better creating a fork.
 
 ### Options 2. Creating a PR through a fork
 
-There are a lot of great tutorials available online on [how to fork a repository (Github)](https://help.github.com/articles/fork-a-repo/) and work with one. But we have also created a quick guide on how to do it.
+There are a lot of great tutorials available online on [how to fork a repository (GitHub)](https://help.github.com/articles/fork-a-repo/) and work with one. But we have also created a quick guide on how to do it.
 
-If you do not have installed Git on your computer, you should also follow the [instructions on how to setup Git](https://help.github.com/articles/set-up-git/) before you go any further.
+If you do not have installed Git on your computer, you should also follow the [instructions on how to set up Git](https://help.github.com/articles/set-up-git/) before you go any further.
 
-If git is installed on your computer, follow the [Create a Pull Request using a fork](Pull-Requests) guide.
+If Git is installed on your computer, follow the [Create a Pull Request using a fork](Pull-Requests) guide.
 
 ## Creating an issue
 
-The Umbraco Documentation uses [Github issues](https://github.com/umbraco/UmbracoDocs/issues) to manage issues with the documentation.
+The Umbraco Documentation uses [GitHub issues](https://github.com/umbraco/UmbracoDocs/issues) to manage issues with the documentation.
 You can make an issue for any of the following:
 
 - If you feel some documentation is wrong or missing and you do not have time or knowledge to do a PR
@@ -40,9 +40,9 @@ You can make an issue for any of the following:
 - Open a discussion about possible improvements or ways to deal with something in the documentation
 
 You can also find a button in the top right corner of every page in the documentation itself that looks like this:
-![Our issue button](images/report-issue.png).  
+![Our issue button](images/report-issue.png)  
 
-We compiled a [list of labels](github-issues.md) which we use regulary to tag issues.
+We compiled a [list of labels](github-issues.md) which we use regularly to tag issues.
 
 ## Annotating a document
 
@@ -50,9 +50,9 @@ To add version information and extra keywords, [every document can be annotated 
 
 ## Multi version documentation
 
-With the introduction every new version of Umbraco new features are introduced.  This means that not every document will work for your possibly older version.
+With the introduction of every new version of Umbraco, new features are introduced.  This means that not every document will work for your possibly older version.
 
-Therefor we introduced 2 different mechanisms.
+Therefore we introduced 2 different mechanisms.
 
 1. the [YAML meta data describing](adding-metadata.md) `versionFrom` and `versionTo`.
 2. the possibility [to add multiple files about the same topic](file-naming-conventions.md)

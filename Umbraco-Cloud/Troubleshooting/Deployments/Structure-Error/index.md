@@ -27,7 +27,7 @@ In the case above, there are two files (Document Type representations) who share
 
 ### Cause
 
-The main cause of this problem is when a Document Type (or Media Type, Data Type, etc) is manually created in two environments using the same alias. Since each of the environments are isolated and do not know what the other one is doing until they are syncronized - creating a Document Type in each environment will actually create duplicate Document Types that are considered separate entities even though they look the same and share the same alias in the backoffice of both environments.
+The main cause of this problem is when a Document Type (or Media Type, Data Type, etc) is manually created in two environments using the same alias. Since each of the environments are isolated and do not know what the other one is doing until they are synchronized - creating a Document Type in each environment will actually create duplicate Document Types that are considered separate entities even though they look the same and share the same alias in the backoffice of both environments.
 
 If you have two or more Cloud environments, we recommend that you never create or make schema changes directly on the Live or Staging environments. You should work with schema only in your Development environment or even better, your local clone of the project.
 

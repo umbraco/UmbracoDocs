@@ -6,9 +6,9 @@ _Guidelines for creating and updating code in the Umbraco core_
 
 * All new code goes in either *Umbraco.Core* or *Umbraco.Web*
 	* Depending on the type of code you are writing, if it has to do with the web, then it goes in Umbraco.Web. If you could use it in a console app or something like that, then it goes in Umbraco.Core
-* *Umbraco.Web.UI* is **only** for rendering files: *JS, CSS, ASPX, ASCX, CSHTML*
+* *Umbraco.Web.UI* is **only** for rendering files: *JavaScript, CSS, ASPX, ASCX, CSHTML*
 	* Any new *ASPX, ASCX* will also put their code behind files here too
-	* All old code behind files exist in *Umbraco.Web*, these can be migrated over to *Umbraco.Web.UI* if and when you work on them
+	* All old code behind files exists in *Umbraco.Web*, these can be migrated over to *Umbraco.Web.UI* if and when you work on them
 * If you are updating existing code, you should consider moving it to the correct project and namespace, refactoring it to have consistent and correct naming conventions and code reviewing the legacy code to bring it up to date (i.e. removing what isn't needed and fixing what you see)
 	* However this is not a requirement as in some cases this may take more time than you wish to commit to which is ok. Eventually this code will be moved and refactored, we don't have to do it all at once
 * If you are updating existing code you should still put any new classes that are created for the legacy code into the new projects/namespaces

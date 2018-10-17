@@ -7,7 +7,7 @@ This guide explains how to set up a simple property editor, how to hook it into 
 So all the steps we will go through:
 
 - Setting up a plugin
-- Write some basic "Hello World" HTML + JS
+- Write some basic "Hello World" HTML + JavaScript
 - Register the data type in Umbraco
 - Add external dependencies
 - Complete the markdown editor
@@ -32,7 +32,7 @@ The first thing we must do is create a new folder inside `/App_Plugins` folder. 
 
 
 
-Next we will create a simple manifest file to describe what this plugin does. This manifest will tell Umbraco about our new property editor and allows us to inject any needed files into the application, so we create the file `/App_Plugins/MarkDownEditor/package.manifest`
+Next, we will create a simple manifest file to describe what this plugin does. This manifest will tell Umbraco about our new property editor and allows us to inject any needed files into the application, so we create the file `/App_Plugins/MarkDownEditor/package.manifest`
 [For full package.manifest JSON documentation see here](../../Extending/Property-Editors/package-manifest.md)
 
 Inside this package manifest we add a bit of JSON to describe the property editor. Have a look at the inline comments in the JSON below for details on each bit:
@@ -63,7 +63,7 @@ Inside this package manifest we add a bit of JSON to describe the property edito
 	}
 
 
-## Writing some basic HTML + JS
+## Writing some basic HTML + JavaScript
 Then we add 2 files to the /app_plugins/markdowneditor/ folder:
 - `markdowneditor.html`
 - `markdowneditor.controller.js`
@@ -98,9 +98,9 @@ Save the data type, and add it to a document type of your choice. Open a documen
 
 
 ## Add external dependencies
-Lets go a bit further, and load in a markdown editor JavaScript library, I've chosen [pagedown][PagedownBootstrap], but you can use whatever you want.
+Let's go a bit further, and load in a markdown editor JavaScript library, I've chosen [pagedown][PagedownBootstrap], but you can use whatever you want.
 
-First of, I'll add some external files to our package folder, in /app_plugins/markdowneditor/lib folder. These files comes from the pagedown editor project found here:
+First of, I'll add some external files to our package folder, in /app_plugins/markdowneditor/lib folder. These files come from the pagedown editor project found here:
 
 [Pagedown-bootstrap on github.com][PagedownBootstrap]
 
@@ -126,7 +126,7 @@ Then open the `markdowneditor.controller.js` file and edit it so it looks like t
 			    alert("editor dependencies loaded");
 			});
 
-	    // load the separate css for the editor to avoid it blocking our js loading
+	    // load the separate css for the editor to avoid it blocking our JavaScript loading
 	    assetsService.loadCss("~/App_Plugins/MarkDownEditor/lib/markdown.css");
 	});
 

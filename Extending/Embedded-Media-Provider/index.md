@@ -1,6 +1,6 @@
 # Embedded Media Providers
 
-The Rich Text Editor in Umbraco has an 'Embed' button, that when pressed, slides open a panel to enable editors to paste the Url of a third party media resource to embed in content.
+The Rich Text Editor in Umbraco has an 'Embed' button, that when pressed, slides open a panel to enable editors to paste the Url of a third-party media resource to embed in content.
 
 ![The Rich Text Editor Embed Button](images/Embed-Button.png)
 
@@ -14,7 +14,7 @@ It is the job of an 'Embedded Media Provider', to accept the pasted Url, and to 
 
 The list of available Embedded Media Providers in an Umbraco install are configured in the file **/config/embeddedmedia.config**
 
-Umbraco ships with configuration to embed media from the following third party providers:
+Umbraco ships with configuration to embed media from the following third-party providers:
 
 * Flickr
 * SlideShare
@@ -63,11 +63,11 @@ Recycle the application pool, the new provider should be available for editors t
 
 ## Custom Embedded Media Providers
 
-If your third party media provider does not support OEmbed or there is some quirk with the content being embedded that you cannot use the existing Umbraco generic OEmbed providers, then you can create your own custom implementation of an Embedded Media Provider!
+If your third-party media provider does not support OEmbed or there is some quirk with the content being embedded that you cannot use the existing Umbraco generic OEmbed providers, then you can create your own custom implementation of an Embedded Media Provider!
 
 Umbraco provides an AbstractProvider class (or AbstractOEmbedProvider) to get your custom implementation started, and you need to implement only two methods:
 
-* SupportsDimension - whether the third party provider supports the concept of dimensions (eg images and videos).
+* SupportsDimension - whether the third-party provider supports the concept of dimensions (eg images and videos).
 * GetMarkUp - the method responsible for writing out the markup to embed based on the Url the editors have pasted into the embed panel.
 
 ### Custom Embedded Media Provider Example

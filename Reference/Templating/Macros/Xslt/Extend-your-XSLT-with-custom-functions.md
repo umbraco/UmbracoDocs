@@ -1,5 +1,5 @@
 # Extend your XSLT with custom functions
-Sometimes the built-in functions aren't enough. Fortunately the XSLT-parser allows us to extend it with our own C# or Javascript code.
+Sometimes the built-in functions aren't enough. Fortunately the XSLT-parser allows us to extend it with our own C# or JavaScript code.
 The following is an entire xslt-file, which is split up in parts to explain what is going on. 
 
 Here we're telling the parser to create a new xml namespace for our functions.

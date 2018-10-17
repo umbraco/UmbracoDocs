@@ -3,7 +3,7 @@
 ## Step 1: Creating a fork
 Once you have setup Git you can create a fork of the [Umbraco Documentation repository](https://github.com/umbraco/UmbracoDocs/).
 
-When you make a fork, you get a copy of the whole repository on your own Github profile. You can create a fork by clicking the fork button at the top of the screen:
+When you make a fork, you get a copy of the whole repository on your own GitHub profile. You can create a fork by clicking the fork button at the top of the screen:
 ![Creating a fork](../images/fork-repository.png)
 
 Once the fork has been created you will have your own copy of the documentation. If you clone your fork, you will have all the files on your computer which means you can make changes to a lot of files and then push all the changes back up to your fork in one go.
@@ -30,5 +30,5 @@ And that is all you need to do to create a fork, sync it and make a pull request
 
 ## Step 4: Wait from an action
 
-Hopefully your work will be merged immediatly.  It might happen that your pull request receives a comment and a *request for changes*. We hope you are able to work with us to update your PR so we can merge it in!
+Hopefully your work will be merged immediately.  It might happen that your pull request receives a comment and a *request for changes*. We hope you are able to work with us to update your PR so we can merge it in!
 Sometimes a label is added to a PR.  We have described a [list of different labels we often use](../github-issues.md).

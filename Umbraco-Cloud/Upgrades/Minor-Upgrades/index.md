@@ -11,7 +11,7 @@ Symptoms, feedback given from the upgrade process: **Unable to upgrade as the si
 
 Along with the upgrade to 7.6 we will replace the old deployment engine Umbraco Courier, and replace it with the new one called Umbraco Deploy. This means that if your code is dependent on Umbraco Courier to run, you will need to remove the dependencies on Umbraco Courier. 
 This will be things like custom Umbraco Courier resolvers. In Umbraco Deploy, resolvers will be ValueConnectors and it will have these things built in for the most popular packages, and will have a generic connector for the remaining types.
-If you need to create your own specialized ValueConnector, take a look at the  [ValueConnectors example repository](https://github.com/umbraco/Umbraco.Deploy.ValueConnectors). We are shipping with the [Umbraco.Deploy.Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib) dll, which contains common ValueConnectors for popular community packags.
+If you need to create your own specialized ValueConnector, take a look at the  [ValueConnectors example repository](https://github.com/umbraco/Umbraco.Deploy.ValueConnectors). We are shipping with the [Umbraco.Deploy.Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib) dll, which contains common ValueConnectors for popular community packages.
 
 Your code will need to be updated and built without Umbraco Courier in order to go through the Upgrade process. 
 

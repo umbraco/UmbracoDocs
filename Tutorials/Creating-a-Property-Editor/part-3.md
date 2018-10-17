@@ -1,8 +1,8 @@
 # Tutorial - Integrating services with a property editor
 
 ## Overview
-This is step 3 in the property editor tutorial. In this part we will integrate one of the built-in
-Umbraco services. For this sample we will use the *dialog service* to hook into the *media picker* and return image data to the markdown editor.
+This is step 3 in the property editor tutorial. In this part, we will integrate one of the built-in
+Umbraco services. For this sample, we will use the *dialog service* to hook into the *media picker* and return image data to the markdown editor.
 
 ## Injecting the service.
 First up, we need to get access to the service, this is done in the constructor of the controller, where we add it as a parameter:

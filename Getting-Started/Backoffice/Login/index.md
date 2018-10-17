@@ -1,7 +1,7 @@
 # Login screen
 To access the backoffice, you will need to login. You can do this by adding `/umbraco` to the end of your website address e.g. http://mywebsite.com/umbraco
 
-The login screen will look similiar to this. 
+The login screen will look similar to this. 
 
 ![Login screen](images/umbraco7-6_login.jpg "The login screen has a greeting, username/password field and optionally a 'Forgotten password' link.")
 The login screen has a greeting, username/password field and optionally a 'Forgotten password' link.

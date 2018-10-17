@@ -36,7 +36,7 @@ Once the settings are populated save the prevalue source by hitting the save ico
 ![Save](save.png)
 
 ### Watch preview of the values
-If the settings are succesfully validated and they return results you should get an overview of the values.
+If the settings are successfully validated and they return results you should get an overview of the values.
 
 ![Preview](preview.png)
 

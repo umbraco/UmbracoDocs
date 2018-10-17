@@ -18,7 +18,7 @@ C# API references for the Umbraco Core and Web libraries.
 
 __Note: opens a documentation browser that is different from the documentation section you're viewing now.__
 
-Angular, JS, CSS & Less UI API references for building Umbraco backoffice components.
+Angular, JavaScript, CSS & Less UI API references for building Umbraco backoffice components.
 
 ## [Security](Security/index.md)
 

@@ -1,7 +1,7 @@
 # Rendering Forms scripts where you want
 
 :::tip
-If you are using Umbraco Forms v 4.x, you need to follow the guide found here: [When using Forms 4.x](#when-using-forms-4-x)
+If you are using Umbraco Forms v 4.x, you need to follow the guide found here: [When using Forms 4.x](#when-using-forms-4x)
 :::
 
 Forms will output some JavaScript, and by default this is rendered just below the markup. 

@@ -1,16 +1,14 @@
 # Using Umbraco's service APIs
 
-_Whenever you need to modify an entity that Umbraco stores in the database - there is a service API available for it.  This means that
-you can create, update and delete any of the core Umbraco entities directly from your custom code._
+_Whenever you need to modify an entity that Umbraco stores in the database, there is a service API available to help you. This means that you can create, update and delete any of the core Umbraco entities directly from your custom code._
 
 
-## Accessing the Umbraco services.
-To use the service APIs - you must first access them. This is done through what is know as `ApplicationContext` which provides access to everything related
-to the Umbraco application.
+## Accessing the Umbraco services
+To use the service APIs you must first access them. This is done through what is known as the `ApplicationContext` which provides access to everything related to the Umbraco application.
 
 
 ### Access via Controller
-If accessing Umbraco services inside your own controller class - then by inheriting from one of Umbraco's base controller classes you get access to all services through `Services`:
+If you are accessing Umbraco services inside your own controller class, you get access to all services through `Services` by inheriting from one of Umbraco's base controller classes:
 
     public class EventController : Umbraco.Web.Mvc.SurfaceController
     {
@@ -21,8 +19,7 @@ If accessing Umbraco services inside your own controller class - then by inherit
     }
 
 ### Access via ApplicationEventHandler
-If we for instance subscribe to the ApplicationStarted event - we get access to this context - which then provides a `.Services` class which contains all the
-available services
+If we for instance subscribe to the ApplicationStarted event we get access to the ApplicationContext, which then provides a `.Services` class through which all the available services can be used.
 
     public class EventHandler : Umbraco.Core.ApplicationEventHandler
     {
@@ -34,7 +31,7 @@ available services
     }
 
 ## Services available
-There is full api coverage of all Umbraco core entities:
+There is full API coverage of all Umbraco core entities:
 
 - [ConsentService](../../../Reference/Management/Services/ConsentService.md)
 - [ContentService](../../../Reference/Management/Services/ContentService.md)
@@ -59,4 +56,4 @@ There is full api coverage of all Umbraco core entities:
 ### Umbraco TV
 - [Chapter: Content API](https://umbraco.tv/videos/umbraco-v7/developer/fundamentals/content-api/)
 - [Chapter: Media API](https://umbraco.tv/videos/umbraco-v7/developer/fundamentals/media-api/)
-- Chapter: Member API *(Coming soon)*
+- [Chapter: Member API](https://umbraco.tv/videos/umbraco-v7/developer/fundamentals/member-api/)

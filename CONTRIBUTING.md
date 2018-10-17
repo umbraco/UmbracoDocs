@@ -39,4 +39,4 @@ First fork and clone the repository so that you have your own working copy. Then
 Everything in the main repository will make it onto the [our.umbraco.com/documentation](https://our.umbraco.com/documentation) site, which is why we have chosen a pull request workflow to keep everything simple and straightforward.
 
 ## Planning & discussions
-If you want to report an issue, or you planning a big change, use [Github issues](https://github.com/umbraco/UmbracoDocs/issues) for opening a discussion. If you want to do a small change, don't hesitate to do a pull request, we don't need you to create an issue first.
+If you want to report an issue, or you planning a big change, use [GitHub issues](https://github.com/umbraco/UmbracoDocs/issues) for opening a discussion. If you want to do a small change, don't hesitate to do a pull request, we don't need you to create an issue first.

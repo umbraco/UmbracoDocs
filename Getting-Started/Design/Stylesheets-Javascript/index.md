@@ -1,4 +1,4 @@
-# Working with stylesheets and javascript
+# Working with stylesheets and JavaScript
 
 ## Bundling & Minification for JavaScript and CSS
 
