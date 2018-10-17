@@ -4,7 +4,23 @@ _This example is for creating a statically routed website which means that it's 
 
 #### Setup, bootstrap & launch
 
-* Go to a new folder to create a new .NET Core website and add references:
+The Headless client nuget package is hosted on a custom MyGet feed, so you need to create a `NuGet.config` file for your project which can be done via the command line. If you don't do this then you would need to use the `--source` parameter and a few other tricks so it's just simpler to use a `Nuget.config` file. 
+
+So __before__ you run any script for creating a project, you will need to do this in the new folder where you are creating your project:
+
+* `dotnet new nugetconfig`
+* Edit the `Nuget.config` file, remove the `<clear/>` and add our custom source, it should look like this:
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <configuration>
+        <packageSources>
+            <add key="umbracoMyGet" 
+                 value="https://www.myget.org/F/uaas/api/v3/index.json" 
+                 protocolVersion="3" />
+        </packageSources>
+    </configuration>
+    ```
+Now to create a new .NET Core website and add references:
    * _(Ensure you've created the `Nuget.config`, see above)_
    * `dotnet new mvc`
    * `dotnet add package UmbracoCms.Headless.Client -v 0.9.7-*`   
@@ -45,7 +61,7 @@ You can also inject the `PublishedContentService` or `IHeadlessConfig` into any 
 #### Example usage
 
 * Add `using Umbraco.Headless.Client.Net.Services;` to the `HomeController`
-* Inject the `PublishedContentService` into the `HomeController` ctor and store a reference:
+* Inject the `PublishedContentService` into the `HomeController` and store a reference:
    ```cs
     public HomeController(PublishedContentService PublishedContentService)
     {
