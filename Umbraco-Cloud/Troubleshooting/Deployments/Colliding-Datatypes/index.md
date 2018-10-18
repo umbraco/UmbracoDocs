@@ -39,4 +39,4 @@ See steps below on how to resolve the issue.
 
 When you've followed these steps, go through your Development / Staging environment and make sure everything has been created as expected.
 
-Final step you need to take before your Development / Staging environment is completely insync with your Live environment is to [restore the content](../../Deployment/Restoring-content).
+Final step you need to take before your Development / Staging environment is completely insync with your Live environment is to [restore the content](../../../Deployment/Restoring-content).
