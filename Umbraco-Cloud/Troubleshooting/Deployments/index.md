@@ -13,6 +13,7 @@ The most common [Deployment](../../Deployment/Cloud-to-Cloud) issues are listed 
 * [Duplicate Dictionary Items](Duplicate-Dictionary-Items)
 * [Collision Errors](Structure-Error)
 * [Dependency Exception](Dependency-Exceptions)
+* [Colliding Data Types](Colliding-Datatypes)
 
 The most common Content [Transfer](../../Deployment/Content-Transfer) / [Restore](../../Deployment/Restoring-content) issues are listed below:
 * [Schema mismatch](Schema-Mismatches)
