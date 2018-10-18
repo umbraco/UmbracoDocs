@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Extending Umbraco
 
 ## [Backoffice tours](Backoffice-Tours/index.md)
