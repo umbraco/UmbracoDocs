@@ -23,3 +23,7 @@ Learn how you can use your Google user to log into the Umbraco backoffice.
 ### [Starter kit](Starter-kit/index.md)
 
 Information about the basic Umbraco starter kit.
+
+### [Adding a sitemap.xml to your Umbraco site](Sitemap/index.md)
+
+Learn how to quickly add a sitemap.xml to your Umbraco driven website.
