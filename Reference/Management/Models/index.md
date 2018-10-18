@@ -13,10 +13,10 @@ API reference for the ContentType class.
 ## [DataTypeDefinition](DataTypeDefinition.md)
 API reference for the DataTypeDefinition class.
 
-## DictionaryItem
+## [DictionaryItem](DictionaryItem.md)
 API reference for the DictionaryItem and DictionaryTranslation classes.
 
-## Language
+## [Language](Language.md)
 API reference for the Language class.
 
 ## [Media](Media.md)
@@ -25,17 +25,17 @@ API reference for the Media class.
 ## [MediaType](MediaType.md)
 API reference for the MediaType class.
 
-## Relation
+## [Relation](Relation.md)
 API reference for the Relation class.
 
-## RelationType
+## [RelationType](RelationType.md)
 API reference for the RelationType class.
 
-## Task
+## [Task](Task.md)
 API reference for the Task class.
 
-## TaskType
+## [TaskType](TaskType.md)
 API reference for the TaskType class.
 
-## Template
+## [Template](Template.md)
 API reference for the Template class.
