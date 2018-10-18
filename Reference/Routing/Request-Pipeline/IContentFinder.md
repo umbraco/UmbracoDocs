@@ -19,19 +19,19 @@ Finder can set content, template, redirect…
 
     public class MyContentFinder : IContentFinder
     {
-      public bool TryFindContent(PublishedContentRequest request)
+      public bool TryFindContent(PublishedContentRequest contentRequest)
       {
-        var path = request.Uri.GetAbsolutePathDecoded();
+        var path = contentRequest.Uri.GetAbsolutePathDecoded();
         if (!path.StartsWith("/woot"))
         return false; // not found
 
         // have we got a node with ID 1234?
-        var contentCache = UmbracoContext.Current.ContentCache;
+        var contentCache = contentRequest.RoutingContext.UmbracoContext.ContentCache;
         var content = contentCache.GetById(1234);
         if (content == null) return false; // not found
 
         // render that node
-        request.PublishedContent = content;
+        contentRequest.PublishedContent = content;
         return true;
       }
     }
@@ -40,15 +40,15 @@ Finder can set content, template, redirect…
 
     public class ContentFinderByNiceUrl : IContentFinder
     {
-      public virtual bool TryFindContent(PublishedContentRequest request)
+      public virtual bool TryFindContent(PublishedContentRequest contentRequest)
       {
-        string path = request.HasDomain
+        string path = contentRequest.HasDomain
           // eg. 5678/path/to/node
-          ? request.Domain.RootNodeId.ToString() + …
+          ? contentRequest.Domain.RootNodeId.ToString() + …
           // eg. /path/to/node
-          : request.Uri.GetAbsolutePathDecoded();
+          : contentRequest.Uri.GetAbsolutePathDecoded();
       
-        var node = FindContent(request, path);
+        var node = FindContent(contentRequest, path);
         return node != null;
       }
     }
@@ -87,16 +87,16 @@ A ContentLastChanceFinder will always return a 404 status code. This example cre
             }
 
             // replace 'home_doctype_alias' with the alias of your homepage
-            IPublishedContent rootNode = UmbracoContext.Current.ContentCache.GetByXPath("root/home_doctype_alias").FirstOrDefault(n => n.GetCulture().ThreeLetterWindowsLanguageName == culture.ThreeLetterWindowsLanguageName);
+            IPublishedContent rootNode = contentRequest.RoutingContext.UmbracoContext.ContentCache.GetByXPath("root/home_doctype_alias").FirstOrDefault(n => n.GetCulture().ThreeLetterWindowsLanguageName == culture.ThreeLetterWindowsLanguageName);
             // replace '404_doctype_alias' with the alias of your 404 page
-            IPublishedContent notFoundNode = UmbracoContext.Current.ContentCache.GetByXPath(String.Format("root/homeDocType[id={0}]/404_doctype_alias", rootNode.Id)).FirstOrDefault(n => n.GetCulture().ThreeLetterWindowsLanguageName == culture.ThreeLetterWindowsLanguageName);
+            IPublishedContent notFoundNode = contentRequest.RoutingContext.UmbracoContext.ContentCache.GetByXPath(String.Format("root/homeDocType[id={0}]/404_doctype_alias", rootNode.Id)).FirstOrDefault(n => n.GetCulture().ThreeLetterWindowsLanguageName == culture.ThreeLetterWindowsLanguageName);
 
             if (notFoundNode != null) {
                 contentRequest.PublishedContent = notFoundNode;
             } else if (rootNode != null) {
                 contentRequest.PublishedContent = rootNode;
             } else {
-                contentRequest.PublishedContent = UmbracoContext.Current.ContentCache.GetAtRoot().FirstOrDefault(n => n.GetTemplateAlias() != "");
+                contentRequest.PublishedContent = contentRequest.RoutingContext.UmbracoContext.ContentCache.GetAtRoot().FirstOrDefault(n => n.GetTemplateAlias() != "");
             }
 
             return contentRequest.PublishedContent != null;
