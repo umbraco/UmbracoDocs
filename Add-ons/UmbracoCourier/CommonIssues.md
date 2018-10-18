@@ -6,7 +6,7 @@ _Document to outline commonly found issues with Courier and possible solutions_
 For all issues, always try these steps first:
 - Enable debugging in /config/courier.config and restart the app to see if courier has problems with loading dlls
 - Clear the cache folder in /app_data/courier/cache
-- Ensure you have the latest version, current **3.1.7**
+- Ensure you have the latest version**
 
 ### Get the latest version here:
 Nightly.umbraco.org contains all builds, the current recommended version is **3.1.7** which contains all the latest bug fixes.
