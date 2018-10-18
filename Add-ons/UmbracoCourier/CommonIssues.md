@@ -5,11 +5,11 @@ _Document to outline commonly found issues with Courier and possible solutions_
 ### Try this first
 For all issues, always try these steps first:
 - Enable debugging in /config/courier.config and restart the app to see if courier has problems with loading dlls.
-- Clear the cache folder in /app_data/courier/cache
-- Ensure you have the latest version**
+- Clear the cache folder in /app_data/courier/cache.
+- Ensure you have the latest version.
 
 ### Get the latest version here:
-Nightly.umbraco.org contains all builds. We always recommended running the latest version, which contains all the latest bug fixes.
+**Nightly.umbraco.org** contains all builds. We always recommended running the latest version, which contains all the latest bug fixes.
 
 [Access all the builds on Nightly Umbraco](http://nightly.umbraco.org/?container=umbraco-courier-release).
 
@@ -27,9 +27,7 @@ umbraco.courier.persistence.v4.nhibernate.dll
 *Solution:* Ensure that all dlls are loaded properly and that it has all the dlls expected. Also, for it should only have
 the proper dlls for the specific versions. 
 
-[Access all the builds on Nightly Umbraco](http://nightly.umbraco.org/?container=umbraco-courier-release).
-
-And copy to /bin
+Get the dlls from the latest version [here](http://nightly.umbraco.org/?container=umbraco-courier-release) and copy to /bin.
 
 ### Courier cannot package data type, Could not load assembly for type
 *Caused by* Courier not able to find a data types assembly or .cs class file which contains the Interface used
@@ -41,7 +39,6 @@ by the data type.
 that are missing dlls, also, if you don't use a data type, delete it from your site, so you don't accidentally 
 transfer a broken data type. Make sure to clear courier cache and restart the application.
 
-
 ### Courier cannot package items on V4
 *Caused by:* Missing dlls or dlls from the wrong Courier version.
 
@@ -50,6 +47,7 @@ put Courier in debug mode in /config/courier.config and restart application, it 
 /app_data/courier/logs/log_error.txt about missing dependencies or wrong versions.
 
 *Solution:* Uninstall courier, and reinstall the latest version from Nightly Umbraco.
+
 [Access all the builds on Nightly Umbraco](http://nightly.umbraco.org/?container=umbraco-courier-release).
 
 ### Latest changes aren't deployed / courier can't detect changes
@@ -67,6 +65,7 @@ this will make transfers slower but can be set in /config/courier.config file.
 *How to spot:* Content transfers with no error, but changes are not visible on the website.
 
 *Solution:* upgrade to the latest version, which has a bug fix.
+
 [Access all the builds on Nightly Umbraco](http://nightly.umbraco.org/?container=umbraco-courier-release).
 
 ### Tabs don't inherit on Umbraco 6
@@ -75,6 +74,7 @@ this will make transfers slower but can be set in /config/courier.config file.
 *How to spot:* Inherited tabs are created as new tabs on the document type.
 
 *Solution:* Upgrade to the latest version.
+
 [Access all the builds on Nightly Umbraco](http://nightly.umbraco.org/?container=umbraco-courier-release).
 
 ### Files on NAS are not transferred
@@ -83,6 +83,7 @@ this will make transfers slower but can be set in /config/courier.config file.
 *How to spot:* Files are not included in the revisions.
 
 *Solution:* Upgrade to the latest version.
+
 [Access all the builds on Nightly Umbraco](http://nightly.umbraco.org/?container=umbraco-courier-release).
 
 ### Files are transferred as 0 byte files
@@ -91,6 +92,7 @@ this will make transfers slower but can be set in /config/courier.config file.
 *How to spot:* Files are transferred but end up as 0 byte files on the destination.
 
 *Solution:* Fixed issue, upgrade to the latest version.
+
 [Access all the builds on Nightly Umbraco](http://nightly.umbraco.org/?container=umbraco-courier-release).
 
 ### StackOverflowException during deployment
@@ -99,6 +101,7 @@ this will make transfers slower but can be set in /config/courier.config file.
 *How spot:* Transfer never completes, and the task manager just clears out the task with no error or feedback.
 
 *Solution:* Fixed: Upgrade to the latest version.
+
 [Access all the builds on Nightly Umbraco](http://nightly.umbraco.org/?container=umbraco-courier-release).
 
 ### Properties and tabs are not sorted correctly after transfer
@@ -116,6 +119,7 @@ save item and re-transfer to fix.
 
 *Solution:* Ensure all registered dlls are allowed in the licensing, upgrade to the latest version which is less strict on domain 
 restrictions.
+
 [Access all the builds on Nightly Umbraco](http://nightly.umbraco.org/?container=umbraco-courier-release).
 
 ### Dll is not allowed to call Courier API
@@ -126,6 +130,7 @@ load.
 API.
 
 *Solution:* upgrade to the latest version, since this has been fixed since **2.7.6**.
+
 [Access all the builds on Nightly Umbraco](http://nightly.umbraco.org/?container=umbraco-courier-release).
 
 ### Sort order on documents is not transferred
