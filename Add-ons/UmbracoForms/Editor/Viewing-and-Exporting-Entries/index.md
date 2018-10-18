@@ -35,15 +35,9 @@ When selecting entries it's possible to execute actions. To select an entry, sim
 
 ![Record bulk actions](images/BulkActions.png)
 
-After checking at least 1 record you should see the available actions.
+After checking at least 1 record you will see the available actions in the top-right corner.
+
 By default there are 2 possible actions:
 
 - Approve
 - Delete
-
-### Approve
-
-Will place the records in the approved state
-### Delete
-
-Deletes the records from the database (not possible to undo)
