@@ -8,6 +8,6 @@ versionFrom: 8.0.0
 These features are only available in v8
 :::
 
-## [Content Apps](ContentApps/)
+## [Content Apps](Content-Apps/)
 
 New feature in v8
