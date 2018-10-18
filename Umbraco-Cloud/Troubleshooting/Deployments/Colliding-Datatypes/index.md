@@ -33,8 +33,8 @@ See steps below on how to resolve the issue.
 2. Find the **Data Types** folder in the Developer section
 3. Delete **only** the data types mentioned in the error message
     * In the case above, I would need to delete *Member Picker*, *Multiple Media Picker*, *Related Links* and *Content Picker*
-4. [Access Kudu](../../../Set-up/Power-Tools/#how-to-access-kudu) for the affected environment
-5. Follow the [Kudu Documentation](../../../Set-up/Power-Tools/#run-an-extraction) to run an extraction on the environment
+4. [Access Kudu](../../../Set-up/Power-Tools) for the affected environment
+5. Follow the [Kudu Documentation](../../../Set-up/Power-Tools/Manual-Extractions) to run an extraction on the environment
 6. When you get a `deploy-complete` marker, the issue has been resolved!
 
 When you've followed these steps, go through your Development / Staging environment and make sure everything has been created as expected.
