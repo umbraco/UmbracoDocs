@@ -114,4 +114,67 @@ In a similar way you can limit your content app according to user roles (groups)
 
 ## Creating a Content App in C#
 
-*Coming soon!*
+This is an example of how to register a content app with C# and perform your own custom logic to show a content app.
+
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Umbraco.Core.Components;
+    using Umbraco.Core.Models;
+    using Umbraco.Core.Models.ContentEditing;
+    using Umbraco.Core.Models.Membership;
+
+    namespace Umbraco.Web.UI
+    {
+        public class CoffeeContentAppComponent : UmbracoComponentBase, IUmbracoUserComponent
+        {
+            public override void Compose(Composition composition)
+            {
+                base.Compose(composition);
+
+                //Add our content app into the composition aka into the DI
+                composition.ContentApps().Append<CoffeeContentApp>();
+            }
+        }
+
+        public class CoffeeContentApp : IContentAppDefinition
+        {
+            public ContentApp GetContentAppFor(object source, IEnumerable<IReadOnlyUserGroup> userGroups)
+            {
+                //Some logic depending on the object type
+                //To show or hide ContentApp
+                switch (source)
+                {
+                    //Do not show content app if doctype/content type is a container
+                    case IContent content when content.ContentType.IsContainer:
+                        return null;
+
+                    //Don't show for media items
+                    case IMedia media:
+                        return null;
+
+                    case IContent content:
+                        break;
+
+                    default:
+                        throw new NotSupportedException($"Object type {source.GetType()} is not supported here.");
+                }
+
+                //Can implement some logic with userGroups if needed
+                //Allowing us to dsiplay the content app with some restrictions for certain groups
+                if (userGroups.Any(x=> x.Alias.ToLowerInvariant() == "admin") == false)
+                    return null;
+
+                var coffeeApp = new ContentApp
+                {
+                    Alias = "appCake",
+                    Name = "Cake",
+                    Icon = "icon-cupcake",
+                    View = "/App_Plugins/MyContentApp/mycontentapp.html",
+                    Weight = 0
+                };
+            
+                return coffeeApp;
+            }
+        }
+    }
