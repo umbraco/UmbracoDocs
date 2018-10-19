@@ -178,3 +178,12 @@ This is an example of how to register a content app with C# and perform your own
             }
         }
     }
+
+You will still need to add all of the files you added above but, because your C# code is adding the content app, the package.manifest file can be simplified like this:
+
+    {
+        // array of files we want to inject into the application on app_start
+        javascript: [
+            '~/App_Plugins/MyContentApp/mycontentapp.controller.js'
+        ]
+    }
