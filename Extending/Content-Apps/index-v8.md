@@ -126,18 +126,18 @@ This is an example of how to register a content app with C# and perform your own
 
     namespace Umbraco.Web.UI
     {
-        public class CoffeeContentAppComponent : UmbracoComponentBase, IUmbracoUserComponent
+        public class CakeContentAppComponent : UmbracoComponentBase, IUmbracoUserComponent
         {
             public override void Compose(Composition composition)
             {
                 base.Compose(composition);
 
                 //Add our content app into the composition aka into the DI
-                composition.ContentApps().Append<CoffeeContentApp>();
+                composition.ContentApps().Append<CakeContentApp>();
             }
         }
 
-        public class CoffeeContentApp : IContentAppDefinition
+        public class CakeContentApp : IContentAppDefinition
         {
             public ContentApp GetContentAppFor(object source, IEnumerable<IReadOnlyUserGroup> userGroups)
             {
@@ -165,7 +165,7 @@ This is an example of how to register a content app with C# and perform your own
                 if (userGroups.Any(x=> x.Alias.ToLowerInvariant() == "admin") == false)
                     return null;
 
-                var coffeeApp = new ContentApp
+                var cakeApp = new ContentApp
                 {
                     Alias = "appCake",
                     Name = "Cake",
@@ -174,7 +174,7 @@ This is an example of how to register a content app with C# and perform your own
                     Weight = 0
                 };
             
-                return coffeeApp;
+                return cakeApp;
             }
         }
     }
