@@ -19,63 +19,16 @@ All samples in this document will require the following using statements:
 	using Umbraco.Core.Models;
 	using Umbraco.Core.Services;
 
-**Please note that this page will be updated with samples and additional information about the methods listed below**
-
 ## Getting the service
-The ContentTypeService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the ContentTypeService is available through a local `Services` property.
 
-	Services.ContentTypeService
+If you wish to use use the content type service in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController`), you can access the content type service through a local `Services` property:
 
-Getting the service through the `ApplicationContext`:
+	IContentTypeService contentTypeService = Services.ContentTypeService;
 
-	ApplicationContext.Current.Services.ContentTypeService
+In Razor views, you can access the content type service through the `ApplicationContext` property:
 
-## Methods
+    IContentTypeService contentTypeService = ApplicationContext.Services.ContentTypeService;
 
-### .GetContentType(int id)
-Gets a `ContentType` object by its Id.
+If neither a `Services` property or a `ApplicationContext` property is available, you can also reference the `ApplicationContext` class directly and using the static `Current` property:
 
-### .GetContentType(string alias)
-Gets a `ContentType` object by its Alias.
-
-### .GetAllContentTypes(params int[] ids)
-Gets a list of all available `ContentType` objects.
-
-### .GetContentTypeChildren(int id)
-Gets a list of children for a `ContentType` object by the Parent Id.
-
-### .Save(IContentType contentType, int userId = 0)
-Saves a single `ContentType` object.
-
-### .Save(IEnumerable<IContentType> contentTypes, int userId = 0)
-Saves a list of `ContentType` objects.
-
-### .Delete(IContentType contentType, int userId = 0)
-Deletes a single `ContentType` object
-
-### .Delete(IEnumerable<IContentType> contentTypes, int userId = 0)
-Deletes a list of `ContentType` objects.
-
-### .GetMediaType(int id)
-Gets a `MediaType` object by its Id.
-
-### .GetMediaType(string alias)
-Gets a `MediaType` object by its Alias.
-
-### .GetAllMediaTypes(params int[] ids)
-Gets a list of all available `MediaType` objects.
-
-### .GetMediaTypeChildren(int id);
-Gets a list of children for a `MediaType` object by the Parent Id.
-
-### .Save(IMediaType mediaType, int userId = 0)
-Saves a single `MediaType` object.
-
-### .Save(IEnumerable<IMediaType> mediaTypes, int userId = 0)
-Saves a list of `MediaType` objects.
-
-### .Delete(IMediaType mediaType, int userId = 0)
-Deletes a single `MediaType` object.
-
-### .Delete(IEnumerable<IMediaType> mediaTypes, int userId = 0)
-Deletes a list of `MediaType` objects.
+	IContentTypeService contentTypeService = ApplicationContext.Current.Services.ContentTypeService;
