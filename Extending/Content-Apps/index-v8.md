@@ -94,13 +94,17 @@ After the above edits are done, restart your application. Go to any content node
 
 ### Limiting according Content Type
 
-You can set your content app to only show for specific content types by updating your `package.manifest` file and adding a 'show' directive. For example:
+You can set your content app to only show for specific content types by updating your `package.manifest` file and adding a 'show' directive to the content app definition. For example:
 
-    "show": [ 
-        "-content/homePage", // hide for content type 'homePage'
-        "+content/*", // show for all other content types
-        "+media/*" // show for all media types
-    ]
+     contentApps: [
+        {
+            ...,
+            "show": [ 
+                "-content/homePage", // hide for content type 'homePage'
+                "+content/*", // show for all other content types
+                "+media/*" // show for all media types
+            ]
+        }
 
 If the 'show' directive is omitted then the app will be shown for all content types.
 
@@ -108,9 +112,13 @@ If the 'show' directive is omitted then the app will be shown for all content ty
 
 In a similar way you can limit your content app according to user roles (groups).  For example:
 
-    "show": [
-        "+role/admin"  // show for 'admin' user group
-    ]
+    contentApps: [
+        {
+            ...,
+            "show": [
+                "+role/admin"  // show for 'admin' user group
+            ]
+        }
 
 ## Creating a Content App in C#
 
