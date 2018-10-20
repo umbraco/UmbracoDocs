@@ -22,7 +22,7 @@ Go to the __Settings__ section in the backoffice. On the __Document Types__ node
 ![Creating a Document Type](images/Document-Type-Create.jpg)
 _You can also choose to create a Document Type without a template and create folders to organize your Document Types._
 
-You can also use compositions to create a new document type. Compositions allows you to inhert properties from other tabs. When using a mixed setup, you can take advantage of nesting and use compositions by visiting the Structure tab. A checklist like this should appear:
+You can also use compositions to create a new document type. Compositions allows you to inherit properties from other tabs. When using a mixed setup, you can take advantage of nesting and use compositions by visiting the Structure tab. A checklist like this should appear:
 
 ![Creating a Compositions](images/Doc-Type-Composition-Create.png)
 
