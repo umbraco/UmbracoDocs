@@ -6,7 +6,7 @@ To support multi version documentation we work according to these conventions.
 
 Naming conventions for documentation files:
 
-The current version of a documentation page will be the normal existing filename format eg `flexible.md` or `index.md`
+The current version of a documentation page will be the normal existing filename format e.g. `flexible.md` or `index.md`
 
 When creating alternate versions of the documentation page that apply in different Umbraco versions, we will append to the filename portion a `-v` followed by information which explains roughly to which version the documentation applies.
 
@@ -16,8 +16,8 @@ Documentation that only applies to a single Umbraco version would be `flexible-v
 
 But for documentation that applies to a range of versions, to make this as obvious as possible from the filename we will use vpost and vpre in the filename to indicate this eg:
 
-`flexible-vpost-v7.6.md` would contain the documentation for after v7.6 but before the next documentation version
-and `flexible-vpre-v7.3.md` would contain the documentation for versions before v7.3...
+`flexible-vpost-v7.6.md` would contain the documentation used after v7.6 but before the next documentation version
+and `flexible-vpre-v7.3.md` would contain the documentation for versions before v7.3.
 
 The `vpost` and `vpre` notations are not used to render to the user.
 
@@ -37,7 +37,7 @@ Only the current version of the document can have both `versionFrom` and `versio
 
 ## Discovering other pages
 
-Alternative pages for a documentation will be discovered by searching the examine index for other files beginning with the same name eg
+Alternative pages for documentation will be discovered by searching the examine index for other files beginning with the same name e.g.
 
 If we are on the page
 
