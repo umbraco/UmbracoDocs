@@ -4,13 +4,32 @@ versionFrom: 8.0.0
 
 # Content Apps
 
-These are a new concept in v8. 'Content' and 'Info', highlighted in the image below, are the built-in content apps for all items in the Content section. 
+## What are Content Apps?
+
+Content Apps encapsulate **companion read-only information** relating to the current content item in the Umbraco backoffice.
+
+Content Apps are a new concept in v8. Editors can switch from editing 'Content' to accessing contextual information related to the item they are editing.
 
 ![Content Apps in back office](images/content-apps-location.png)
 
-We can also add our own custom content apps to appear alongside the built-in ones. These can be for all content and media items, or they can be dependent on content type.  They can also be dependent on the current user's permissions.
+### Default Content Apps
+**'Info'** - The 'Info' Content App is a default Content App for all items, similar to the 'Info' tab in Umbraco V7 for displaying Links, History and Status of the current content item.
 
-Content Apps are intended to enhance the editor's experience by displaying extra information related to the current content item, such as Google Analytics data, not for doing data-entry.
+### Custom Content Apps
+
+You can extend Umbraco by creating your own custom companion Content Apps. For example, you could create a Google Analytics integration within a Content App that displays to editors, the current 'page views' for the content item they are editing.
+
+#### Controlling Appearance/Position
+
+You can associate an icon with your custom content app, control the position (between 'Content' and 'Info') where your custom Content App should appear via a 'weighting' number
+
+#### Permissions ####
+
+Content Apps can be configured to appear dependent on Section, Content Type and User Group Permissions. 
+
+#### Read-Only?
+
+Content Apps are designed to be companions to the Content Item, to enhance the editor's experience by enabling quick access to contextual information for the particular content item they are editing, they are not intended to be used for the editing of content, they are not the equivalent of V7's tabs!
 
 ## Creating a Custom Content App
 
@@ -92,7 +111,7 @@ And in the .html file:
 
 After the above edits are done, restart your application. Go to any content node and you should now see an app called Cake. Clicking on the icon should say "Hello cakes are awesome" and confirm the details of the current item and user.  You can now adapt your content app to retrieve external data using the standard Umbraco and AngularJS approach.
 
-### Limiting according Content Type
+### Limiting according to Content Type
 
 You can set your content app to only show for specific content types by updating your `package.manifest` file and adding a 'show' directive to the content app definition. For example:
 
@@ -110,7 +129,7 @@ If the 'show' directive is omitted then the app will be shown for all content ty
 
 ### Limiting according to User Role
 
-In a similar way you can limit your content app according to user roles (groups).  For example:
+In a similar way, you can limit your content app according to user roles (groups).  For example:
 
     contentApps: [
         {
