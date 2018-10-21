@@ -10,7 +10,7 @@ This displays the picked date in the correct locale, but using JavaScript we upd
 
 To achieve this, a Razor partial view is included - you can find it here: `/Views/Partials/Forms/DatePicker.cshtml`. 
 
-This includes the MomentJS library to help with the date locale formatting & the appropiate changes to Pikaday.js to support the locales. If you wish to use a different DatePicker component this is the file that you would customize to your needs.
+This includes the MomentJS library to help with the date locale formatting & the appropriate changes to Pikaday.js to support the locales. If you wish to use a different DatePicker component this is the file that you would customize to your needs.
 
 ## Configure the Year range
 The Date picker has a configuration setting to control the number of years shown in the picker. The default value is 10 years.
