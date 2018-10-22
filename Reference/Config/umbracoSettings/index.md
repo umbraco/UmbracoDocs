@@ -22,6 +22,10 @@ There is only one supported attribute on the tours element:
 **`enable`**
 By default this is set to true. Set it to false to turn off [backoffice tours](../../../Extending/Backoffice-Tours/index.md)
 
+## Content
+
+Below you can see settings that affects content in Umbraco.
+
 ### Obsolete data types
 
 This section is used for controlling whether or not the data types marked as obsolete should be visible in the dropdown when creating new data types.
@@ -30,10 +34,6 @@ This section is used for controlling whether or not the data types marked as obs
 
 **`enable`**
 By default this is set to false. To make the obsolete data types visible in the dropdown change the value to **true**.
-
-## Content
-
-Below you can see settings that affects content in Umbraco.
 
 ### Imaging
 
