@@ -4,7 +4,7 @@ To add a new type, no matter if it's a workflow, field, data source, etc, there 
 
 ## Preparations
 
-Create a new asp.net or class project in Visual Studio add references to the Umbraco.Forms.Core.dll.
+Create a new ASP.NET or class project in Visual Studio add references to the Umbraco.Forms.Core.dll.
 
 ## Adding the type to Forms
 

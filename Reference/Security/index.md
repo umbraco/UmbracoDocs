@@ -50,11 +50,11 @@ Note that the rule includes an ignore for `locahost`. If you run your local envi
 
 **Applies to version 7.3.1 and newer**
 
-Authentication for backoffice users in Umbraco uses [ASP.Net Identity](https://www.asp.net/identity) which is a very flexible and extensible framework for authentication. 
+Authentication for backoffice users in Umbraco uses [ASP.NET Identity](https://www.asp.net/identity) which is a very flexible and extensible framework for authentication. 
  
-Out of the box Umbraco ships with a custom ASP.Net Identity implementation which uses Umbraco's database data. Normally this is fine for most Umbraco developers
-but in some cases the authentication process needs to be customized. ASP.Net Identity can be easily extended by using custom OAuth providers which is helpful if you want
-your users to authenticate with a custom OAuth provider like Azure Active Directory, or even Google accounts. ASP.Net identity is also flexible enough for you to override/replace 
+Out of the box Umbraco ships with a custom ASP.NET Identity implementation which uses Umbraco's database data. Normally this is fine for most Umbraco developers
+but in some cases the authentication process needs to be customized. ASP.NET Identity can be easily extended by using custom OAuth providers which is helpful if you want
+your users to authenticate with a custom OAuth provider like Azure Active Directory, or even Google accounts. ASP.NET identity is also flexible enough for you to override/replace 
 any part of the process of authentication.
 
 ### Custom OAuth providers
@@ -92,7 +92,7 @@ Here's an example of specifying auto link options for your OAuth provider:
 
 ### Replacing the basic username/password check
 
-Having the ability to simply replace the logic to validate a username and password against a custom data store is important to some developers. Normally in ASP.Net Identity this
+Having the ability to simply replace the logic to validate a username and password against a custom data store is important to some developers. Normally in ASP.NET Identity this
 would require you to override the `UmbracoBackOfficeUserManager.CheckPasswordAsync` implementation and then replace the `UmbracoBackOfficeUserManager` with your own class during startup. 
 Since this is a common task we've made this process a lot easier with an interface called `IBackOfficeUserPasswordChecker`.
 

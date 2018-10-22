@@ -6,7 +6,7 @@ The model uses the notion that everything must have a type to exist. The type de
 In the current version it is possible to add new Field types, Data Source Types, Prevalue Source Types, Export Types and Workflow Types.
 
 ### [Field types](Adding-a-Fieldtype.md) ###
-A field type handles rendering of the UI for a field in a form. It renders a standard asp.net webcontrol and is able to return a list of values when the form is saved.
+A field type handles rendering of the UI for a field in a form. It renders a standard ASP.NET webcontrol and is able to return a list of values when the form is saved.
 
 ### Data Source Types ###
 A data source type enables Umbraco Forms to connect to a custom source of data. A datasource can consist of any kind of storage as long as it possible to return a list of fields Umbraco Forms can map values to. For example: a Database data source can return a list of columns Forms can send data to, which enables Umbraco Forms to map a form to a data source. A data source type is responsible for connecting Forms to external storage.

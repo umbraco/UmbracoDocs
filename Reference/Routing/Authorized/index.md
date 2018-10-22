@@ -25,7 +25,7 @@ For more information on authenticated/authorized controllers & attributes see th
 
 ## Defining a route
 When you create a controller that inherits from `Umbraco.Web.Mvc.UmbracoAuthorizedController` you need to explicitly define a route.  
-Defining a route is done with the standard ASP.Net MVC routing practices. In Umbraco, you will normally create custom routes in `Umbraco.Core.ApplicationEventHandler.ApplicationStarted` event similar to the following:
+Defining a route is done with the standard ASP.NET MVC routing practices. In Umbraco, you will normally create custom routes in `Umbraco.Core.ApplicationEventHandler.ApplicationStarted` event similar to the following:
 
 
     protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext    
