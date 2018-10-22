@@ -63,7 +63,7 @@ It is recommended that you use a Diff tool to compare the configuration file cha
 * new /macroscripts/web.config
 * /config/umbracoSettings.config
 	* Umbraco is now shipped with minimal settings but the [full settings](https://our.umbraco.com/documentation/Using-Umbraco/Config-files/umbracoSettings/) are still available
-	* umbracoSettings is now a true ASP.Net configuration section [https://issues.umbraco.org/issue/U4-58](https://issues.umbraco.org/issue/U4-58)
+	* umbracoSettings is now a true ASP.NET configuration section [https://issues.umbraco.org/issue/U4-58](https://issues.umbraco.org/issue/U4-58)
 	* remove the &lt;EnableCanvasEditing&gt; element
 	* remove the &lt;webservices&gt; element
 * Removed xsltExtensions.config
@@ -168,4 +168,4 @@ While you need to have JavaScript inside menu actions to trigger a response, it 
 
 ### Use the recommended Umbraco uicontrols
 
-If you have a webforms page in the backoffice, it is recommended that you use the built-in asp.net controls to render panels, panes, tabviews, properties and so on. If you use the raw html, or try to style it to match the backoffice, you will get out of sync, therefore, follow the guidelines set by Umbraco's internal editors and use the asp.net custom controls for UI.
+If you have a webforms page in the backoffice, it is recommended that you use the built-in ASP.NET controls to render panels, panes, tabviews, properties and so on. If you use the raw html, or try to style it to match the backoffice, you will get out of sync, therefore, follow the guidelines set by Umbraco's internal editors and use the ASP.NET custom controls for UI.

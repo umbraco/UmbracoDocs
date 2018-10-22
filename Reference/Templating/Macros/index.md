@@ -28,7 +28,7 @@ The same implementation logic can be used in lots of different places on your si
 All macro types will work in either MVC or WebForms templating engines, it is possible, (for mainly historical reasons) to be able to implement a Macro in four different ways:
 * MVC Partial View - (aka Partial View Macros), [Details of implementing a Partial View Macro](Partial-View-Macros/index.md)  **This is the recommended macro type to use**, it uses the exact same syntax and objects as MVC views.
 * XSLT - [Xslt macros Information](Xslt/index.md), examples and best practices according to readability and performance in your XSLT/XPath snippets.
-* User Control - Asp.Net User Control
+* User Control - ASP.NET User Control
 * Razor script - (aka known as Dynamic Node Razor), before it was possible to use true MVC Partial Views in Umbraco, there was a way to implement Macros using 'Razor-like' syntax.
 
 ## Rendering Macros

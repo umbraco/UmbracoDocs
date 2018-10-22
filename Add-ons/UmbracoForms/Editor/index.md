@@ -21,6 +21,10 @@ Show field X if value of field Y is...
 
 Extend the functionality of your forms by adding workflows
 
+## [Workflow Types](Attaching-Workflows/Workflow-Types)
+
+Get a full overview of the default workflow types
+
 ## [Viewing and exporting entries](Viewing-and-Exporting-Entries/index.md)
 
 Manage and export your data
@@ -28,3 +32,7 @@ Manage and export your data
 ## [Defining and attaching prevalue sources](Defining-and-Attaching-Prevaluesources/index.md)
 
 Create re-usable prevalue sources that can be linked to list fields
+
+## [Prevalue source types](Defining-and-Attaching-Prevaluesources/Prevalue-source-types)
+
+Get an overview of the default prevalue source types

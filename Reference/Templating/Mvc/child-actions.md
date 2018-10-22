@@ -4,7 +4,7 @@ _This section will demonstrate how to use MVC Child Actions when rendering a pag
 
 ## What is an MVC Child Action?
 
-A Child Action in ASP.Net MVC is kind of similar to that of a User Control in ASP.Net web forms. It allows for a controller to execute for a portion of the rendered area of a view, just like in Web Forms where you can execute a UserControl for a portion of the rendered area of a page.
+A Child Action in ASP.NET MVC is kind of similar to that of a User Control in ASP.NET web forms. It allows for a controller to execute for a portion of the rendered area of a view, just like in Web Forms where you can execute a UserControl for a portion of the rendered area of a page.
 
 There is quite a lot of documentation on MVC Child Actions on the net, for example: [https://stackoverflow.com/questions/8886433/asp-net-mvc-child-actions](https://stackoverflow.com/questions/8886433/asp-net-mvc-child-actions)
 
@@ -73,6 +73,6 @@ Now the syntax to render a Child Action becomes:
 			query = new QueryParameters(Request.QueryString["search"]) 
 		})
 
-the only thing that is changed is that we've told it to route to the 'area' called "MyCustomSearchPackage". If this syntax seems strange to you please note that this routing logic and syntax is standard and very common practice in ASP.Net MVC.
+the only thing that is changed is that we've told it to route to the 'area' called "MyCustomSearchPackage". If this syntax seems strange to you please note that this routing logic and syntax is standard and very common practice in ASP.NET MVC.
 
 More documentation regarding Child Actions and how to render them can be found on the net, a nice write up can also be found here: [https://haacked.com/archive/2009/11/18/aspnetmvc2-render-action.aspx](https://haacked.com/archive/2009/11/18/aspnetmvc2-render-action.aspx)
