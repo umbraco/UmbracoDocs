@@ -73,7 +73,7 @@ Add two new crops called "Thumbnail" (200px x 350px) and "wideThumbnail" (350px 
 
 ![Defining crops](images/Creating-Media-Crops-740.jpg)
 
-Name the remaining four properties "Width", "Height", "Size" and "Type" and give them the aliases seen above. They should all use the __Label__ editor. As mentioned before these properties will automatically be populated once an image has been uploaded.
+Name the remaining four properties "Width", "Height", "Size" and "Type" and give them the aliases seen below. They should all use the __Label__ editor. As mentioned before these properties will automatically be populated once an image has been uploaded.
 
 ![Adding properties](images/Creating-Media-Properties-740.jpg)
 
