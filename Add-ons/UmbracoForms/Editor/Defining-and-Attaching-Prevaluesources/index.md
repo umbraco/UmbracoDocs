@@ -35,15 +35,16 @@ Once the settings are populated, save the prevalue source by hitting the Save bu
 ![Preview](images/preview.png)
 
 ## Attaching a prevalue source to a field
-Now move to the form where you want to use the prevalue source add or edit a field and go to the additional settings (the fieldtype has to support prevalues so checkboxlist, radiobuttonlist, dropdownlist). When there is at least 1 prevalue source you should now see a new option called prevalue source where we can choose 1 of the available prevalue sources.
 
-![Prevalue source](FieldPrevalueSource.png)
+Once a prevalue source has been created, we can now use it when building forms in the Forms designer.
 
-Choose the correct type (so the name of the prevalue source), you should now see a render of the field in the designer using the values coming from the attached source
+The example below is the settings for a Multiple Choice fieldtype. When there is at least one prevalue source defined in your project, the Prevalues section will contain a dropdown from where you can choose to use a prevalue source.
 
-![Preview](fieldpreview.png)
+![Prevalue source](images/FieldPrevalueSource.png)
 
+Once you have chosen the prevalue source you want, you will see a rander of the field in the Forms designer using the values from the attached source.
 
+![Preview](images/fieldpreview.png)
 
 ## Overview of the default prevalue source types
 There are a couple of default prevalue source types that can be used, here is an overview:
