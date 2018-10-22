@@ -40,7 +40,7 @@ and follow the prompts
 It is recommended that you use a Diff tool to compare the configuration file changes with your own current configuration files.
 
 * /web.config updates
-	* Details are listed here: [http://issues.umbraco.org/issue/U4-2900](http://issues.umbraco.org/issue/U4-2900)
+	* Details are listed here: [https://issues.umbraco.org/issue/U4-2900](https://issues.umbraco.org/issue/U4-2900)
 	* You'll need to compare the new v7 web.config with your current web.config, here's a quick reference of what needs to change:
 		* remove &lt;section name="BaseRestExtensions"&gt; section
 		* remove &lt;section name="FileSystemProviders"&gt; section
@@ -63,11 +63,11 @@ It is recommended that you use a Diff tool to compare the configuration file cha
 * new /macroscripts/web.config
 * /config/umbracoSettings.config
 	* Umbraco is now shipped with minimal settings but the [full settings](https://our.umbraco.com/documentation/Using-Umbraco/Config-files/umbracoSettings/) are still available
-	* umbracoSettings is now a true ASP.NET configuration section [http://issues.umbraco.org/issue/U4-58](http://issues.umbraco.org/issue/U4-58)
+	* umbracoSettings is now a true ASP.NET configuration section [https://issues.umbraco.org/issue/U4-58](https://issues.umbraco.org/issue/U4-58)
 	* remove the &lt;EnableCanvasEditing&gt; element
 	* remove the &lt;webservices&gt; element
 * Removed xsltExtensions.config
-	* [http://issues.umbraco.org/issue/U4-2742](http://issues.umbraco.org/issue/U4-2742)
+	* [https://issues.umbraco.org/issue/U4-2742](https://issues.umbraco.org/issue/U4-2742)
 * /config/applications.config and /config/trees.config have some icon paths and names updated, you will need to merge the new changes into your existing config files.
 * /config/tinyMceConfig.config
 	* The inlinepopups is compatible supported in v7, you will need to remove this element: &lt;plugin loadOnFrontend="true"&gt;inlinepopups&lt;/plugin&gt;
@@ -135,8 +135,8 @@ All database changes will be taken care of during the upgrade installation proce
 
 For database change details see (including all child tasks):
 
-* [http://issues.umbraco.org/issue/U4-2886](http://issues.umbraco.org/issue/U4-2886)
-* [http://issues.umbraco.org/issue/U4-3015](http://issues.umbraco.org/issue/U4-3015)
+* [https://issues.umbraco.org/issue/U4-2886](https://issues.umbraco.org/issue/U4-2886)
+* [https://issues.umbraco.org/issue/U4-3015](https://issues.umbraco.org/issue/U4-3015)
 
 ## Tags
 
