@@ -24,9 +24,9 @@ This is very helpful to fix typing errors or adding small things, but if you are
 
 ### Options 2. Creating a PR through a fork
 
-There are a lot of great tutorials available online on [how to fork a repository (GitHub)](https://help.github.com/articles/fork-a-repo/) and work with one. But we have also created a quick guide on how to do it.
+There are a lot of great tutorials available online on [how to fork a repository (GitHub)](https://help.github.com/articles/fork-a-repo/) and work with one, but we have also created a quick guide on how to do it.
 
-If you do not have installed Git on your computer, you should also follow the [instructions on how to set up Git](https://help.github.com/articles/set-up-git/) before you go any further.
+If you do not have Git installed on your computer, you should also follow the [instructions on how to set up Git](https://help.github.com/articles/set-up-git/) before you go any further.
 
 If Git is installed on your computer, follow the [Create a Pull Request using a fork](Pull-Requests) guide.
 
@@ -35,9 +35,9 @@ If Git is installed on your computer, follow the [Create a Pull Request using a 
 The Umbraco Documentation uses [GitHub issues](https://github.com/umbraco/UmbracoDocs/issues) to manage issues with the documentation.
 You can make an issue for any of the following:
 
-- If you feel some documentation is wrong or missing and you do not have time or knowledge to do a PR
+- If you feel some documentation is wrong or missing and you do not have time or knowledge to do a PR.
 - If the issue will need more than one PR.
-- Open a discussion about possible improvements or ways to deal with something in the documentation
+- Open a discussion about possible improvements or ways to deal with something in the documentation.
 
 You can also find a button in the top right corner of every page in the documentation itself that looks like this:
 ![Our issue button](images/report-issue.png)  
@@ -54,8 +54,8 @@ With the introduction of every new version of Umbraco, new features are introduc
 
 Therefore we introduced 2 different mechanisms.
 
-1. the [YAML meta data describing](adding-metadata.md) `versionFrom` and `versionTo`.
-2. the possibility [to add multiple files about the same topic](file-naming-conventions.md)
+1. The [YAML meta data describing](adding-metadata.md) `versionFrom` and `versionTo`.
+2. The possibility [to add multiple files about the same topic](file-naming-conventions.md)
 
 - [Adding meta data](adding-metadata.md) using YAML
 - [File naming conventions](file-naming-conventions.md)
