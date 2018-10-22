@@ -10,7 +10,7 @@ Prevalue sources can be managed in the corresponding part of the Umbraco Forms s
 
 Right-click the prevalue source tree and select create. You will see a new page where you'll need to setup and configure your prevalue source.
 
-After setting a name, you need to select the type of prevalue source you'll want to use. An overview of the different default types can be found [below](#overview-of-the-default-prevalue-source-types)
+After setting a name, you need to select the type of prevalue source you'll want to use. An overview of the different default types can be found in the [Prevalue source types](Prevalue-source-types) article.
 
 ![Choose type](images/choosetype.png)
 
