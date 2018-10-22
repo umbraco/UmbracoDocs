@@ -38,4 +38,4 @@ UmbracoHelper is the unified way to work with published content/media on your we
 
 ## [MembershipHelper](../../../Reference/Querying/MemberShipHelper/index.md)
 
-MembershipHelper is a general helper class for access asp.net membership data, as well as Umbraco Member data, which are stored in a format similar to Umbraco content and media
+MembershipHelper is a general helper class for access ASP.NET membership data, as well as Umbraco Member data, which are stored in a format similar to Umbraco content and media

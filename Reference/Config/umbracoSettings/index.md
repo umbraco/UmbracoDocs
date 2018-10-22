@@ -343,7 +343,7 @@ not possible to re-enable their access to the backoffice again. It also means yo
 This setting specifies whether the username and email address are separate fields in the backoffice editor. When set to false, you can specify an email address and username, only the username can be used to log on. When set the true (the default value) the username is hidden and always the same as the email address.
 
 **`<allowPasswordReset>`**
-The feature to allow users to reset their passwords if they have forgotten them was introduced in 7.5. he feature is based on [a method provided by ASP.Net Identity](https://www.asp.net/identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity). By default, this is enabled but if you'd prefer to not allow users to do this it can be disabled at both the UI and API level by setting this value to `false`.
+The feature to allow users to reset their passwords if they have forgotten them was introduced in 7.5. he feature is based on [a method provided by ASP.NET Identity](https://www.asp.net/identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity). By default, this is enabled but if you'd prefer to not allow users to do this it can be disabled at both the UI and API level by setting this value to `false`.
 
 **`<authCookieName>`**
 The authentication cookie which is set in the browser when a backoffice user logs in, and defaults to `UMB_UCONTEXT`. This setting is excluded from the configuration file but can be added in if a different cookie name needs to be set.
@@ -476,9 +476,9 @@ of IRazorDataTypeModel instead of setting them in config.
 
 ## viewstateMoverModule
 
-The viewstate mover module is included by default. It enables you to move all asp.nets viewstate information to the end of the page, thereby making it easier for search engines to index your content instead of going through viewstate JavaScript code. Please note that this does not work will all asp.net controls.
+The viewstate mover module is included by default. It enables you to move all ASP.NET viewstate information to the end of the page, thereby making it easier for search engines to index your content instead of going through viewstate JavaScript code. Please note that this does not work will all ASP.NET controls.
 
-    <!-- This moves the asp.net viewstate data to the end of the html document instead of having it in the beginning-->
+    <!-- This moves the ASP.NET viewstate data to the end of the html document instead of having it in the beginning-->
     <viewstateMoverModule enable="false" />
 
 ## Logging

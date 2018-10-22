@@ -1,13 +1,13 @@
 # Working with the backoffice UI AngularJs project 
 
 ## Overview
-Umbraco 7 has a slightly unorthodox project structure, compared to a normal asp.net project. This is by design, a choice from the beginning to embrace a much larger group than "just" the developers who know how to use Visual Studio. 
+Umbraco 7 has a slightly unorthodox project structure, compared to a normal ASP.NET project. This is by design, a choice from the beginning to embrace a much larger group than "just" the developers who know how to use Visual Studio. 
 
 As a result, the Umbraco UI is not a Visual Studio project, but simply a collection of folders and files, following certain conventions, and a small configuration file called `gulpfile` - we will get to the gulp part in a moment. 
 
 This means that anyone with a text editor can open the UI source, make changes and run the project, without having Visual Studio installed - we will get into how to do that in a moment as well. 
 
-The bottom line is the UI project has zero dependencies on asp.net or Windows. However you will need Node.js installed, but don't worry we will get into that in a second.
+The bottom line is the UI project has zero dependencies on ASP.NET or Windows. However you will need Node.js installed, but don't worry we will get into that in a second.
 
 
 ## Prerequisites

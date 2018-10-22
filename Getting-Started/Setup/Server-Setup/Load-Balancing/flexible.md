@@ -76,9 +76,9 @@ There are some Examine/Logging config file updates needed (see below and the [Ov
 
 ## Option #1 : Cloud based auto-scale appliances
 
-We have focused primarily on Azure Web Apps when developing flexible load balancing for cloud based appliances. The documentation here is for Azure Web Apps but a similar setup would be achievable on other services supporting ASP.Net.
+We have focused primarily on Azure Web Apps when developing flexible load balancing for cloud based appliances. The documentation here is for Azure Web Apps but a similar setup would be achievable on other services supporting ASP.NET.
 
-Ensure you read the [overview](index.md) before you begin - you will need to ensure that your asp.net & logging configurations are correct.
+Ensure you read the [overview](index.md) before you begin - you will need to ensure that your ASP.NET & logging configurations are correct.
 
 ### Azure Requirements
 
@@ -167,7 +167,7 @@ Since you have 2 x web apps, when you deploy you will need to deploy to both pla
 
 If you are not using a cloud based setup then *this is the recommended setup*.
 
-Ensure you read the [overview](index.md) before you begin - you will need to ensure that your asp.net & logging configurations are correct.
+Ensure you read the [overview](index.md) before you begin - you will need to ensure that your ASP.NET & logging configurations are correct.
 
 [See here for specific details about using Option #2: File Storage with Replication](files-replicated.md)
 

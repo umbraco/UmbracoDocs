@@ -97,7 +97,7 @@ More information can be found under [security](../../../Reference/Security/#sens
 # Technical
 As a developer you are able to leverage your website easily when you build on the Members section of Umbraco.
 Although the Members section is by default in the Umbraco backoffice, you will be able to implement some work on the front end of your website.
-Members come from a custom Asp.net membership provider, while Member Groups come from a custom Role provider. Both are defined in the web.config.
+Members come from a custom ASP.NET membership provider, while Member Groups come from a custom Role provider. Both are defined in the web.config.
 You can find out more about the services methods in the reference section of the documentation by following the links below.
 
 ### More information
