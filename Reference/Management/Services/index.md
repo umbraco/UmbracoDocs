@@ -16,6 +16,9 @@ Service for doing CRUD type operations against `ContentType` and `MediaType` obj
 ## [DataTypeService](DataTypeService.md)
 Service for doing CRUD type operations for `DataTypeDefinition` and `DataType` objects.
 
+## [DomainService](DomainService.md)
+Service for doing CRUD type operations for domains.
+
 ## [FileService](FileService.md)
 Service for doing CRUD type operations for `Script`, `Stylesheet` and `Template` objects.
 
