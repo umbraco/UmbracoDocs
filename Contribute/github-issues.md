@@ -2,7 +2,7 @@
 
 On GitHub our issues and pull requests are marked with labels.  The most common ones are explained below.
 
-## Labels for PRs
+## Labels for pull requests
 
 - `Dependant On Release` - this label is for documentation pull requests that are made in advance of a new Umbraco release, will be merged in once the changes have been released
 - `need-OUR-update` - this label is used for PR's awaiting some new functionality being added to the Our Umbraco website

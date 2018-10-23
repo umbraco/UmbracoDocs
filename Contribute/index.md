@@ -6,7 +6,7 @@ A pull request (PR) is a way of submitting changes to a project that can then be
 
 Let’s say you’ve found a typing or syntax error in one of the articles on the documentation, and you want to correct it. You can do that with a pull request.
 
-There are two ways to create a pull request.
+There are two ways to create a pull request:
 
 1. You can either edit a file directly on GitHub or
 2. You can create a fork of the GitHub repository
@@ -15,7 +15,7 @@ There are two ways to create a pull request.
 It may be helpful for you to read our [Markdown guidelines](Markdown-Conventions) on how to set up Documentation articles before you start writing!
 :::
 
-### Option 1. Creating a PR directly in GitHub
+### Option 1. Creating a PR directly on GitHub
 
 GitHub has some great functionality that allows you to submit a PR directly from our [repository](https://github.com/umbraco/UmbracoDocs/), and there is also a button on every single documentation article at the top that links you directly to GitHub in order to edit that specific file:
 ![Our edit button](images/edit-this-page.png)
@@ -52,13 +52,10 @@ To add version information and extra keywords, [every document can be annotated 
 
 With the introduction of every new version of Umbraco, new features are introduced.  This means that not every document will work for your possibly older version.
 
-Therefore we introduced 2 different mechanisms.
+Therefore we introduced 2 different mechanisms:
 
 1. The [YAML meta data describing](adding-metadata.md) `versionFrom` and `versionTo`.
 2. The possibility [to add multiple files about the same topic](file-naming-conventions.md)
-
-- [Adding meta data](adding-metadata.md) using YAML
-- [File naming conventions](file-naming-conventions.md)
 
 ## Documentation Curators
 
