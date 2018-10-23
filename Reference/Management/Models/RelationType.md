@@ -29,35 +29,35 @@ Constructor for creating a new RelationType object where the necessary parameter
 Gets or sets the Name of the RelationType as a `String`.
 
 	// Given a `RelationService` object get RelationType by its Id and return Name
-	var relation = relationService.GetById(1234);
-	return relation.RelationType.Name;
+	var relationType = relationService.GetRelationTypeById(1234);
+	return relationType.Name;
 
 ### .Alias
 Gets or sets the Alias of the RelationType as `String`.
 
 	// Given a `RelationService` object get RelationType by its Id and return Alias
-	var relation = relationService.GetById(1234);
-	return relation.RelationType.Alias;
+	var relationType = relationService.GetRelationTypeById(1234);
+	return relationType.Alias;
     
 ### .IsBidirectional
 Gets or sets a `boolean` indicating whether the RelationType is Bidirectional (true) or Parent to Child (false)
 
 	// Given a `RelationService` object get RelationType by its Id and return IsBidirectional
-	var relation = relationService.GetById(1234);
-	return relation.RelationType.IsBidirectional;
+	var relationType = relationService.GetRelationTypeById(1234);
+	return relationType.IsBidirectional;
     
  ### .ParentObjectType
   Gets or sets the Parents object type id as `Guid`
   
 	// Given a `RelationService` object get RelationType by its Id and return IsBidirectional
-	var relation = relationService.GetById(1234);
-	return relation.RelationType.ParentObjectType;
+	var relationType = relationService.GetRelationTypeById(1234);
+	return relationType.ParentObjectType;
     
  ### .ChildObjectType
   Gets or sets the Childs object type id as `Guid`
   
 	// Given a `RelationService` object get RelationType by its Id and return IsBidirectional
-	var relation = relationService.GetById(1234);
-	return relation.RelationType.ChildObjectType;
+	var relationType = relationService.GetRelationTypeById(1234);
+	return relationType.ChildObjectType;
     
 ## Methods
