@@ -8,7 +8,7 @@ A tool that can generate a complete set of strongly-typed published content mode
 * [Understand And Extend Models](Understand-And-Extend.md)
 * [Control Models Generation](Control-Generation.md)
 * [IPublishedContentModelFactory](IPublishedContentModelFactory.md)
-* [Cool things to do with models](CoolThingsWithModels.md)
 * [Using Interfaces](Using-Interfaces.md)
+* [Cool things to do with models](CoolThingsWithModels.md)
 
 > **Umbraco Models Builder is an open-source project that can be forked on GitHub and gladly accepts pull requests. Don't hesitate to contribute [here](https://github.com/zpqrtbnk/Zbu.ModelsBuilder)!**
