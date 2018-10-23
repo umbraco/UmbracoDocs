@@ -9,7 +9,7 @@ Gives editors a grid layout editor which allows them to insert different types o
 ## [What are Grid Layouts](Grid-Layout/What-Are-Grid-Layouts.md)
 The basic concept of Grid Layouts
 
-## [Configuring the Grid Layout data type](Grid-Layout/configuring-the-grid-layout-data type.md)
+## [Configuring the Grid Layout data type](Grid-Layout/Configuring-The-Grid-Layout-Datatype.md)
 How to setup your Grid Layout data type
 
 ## [Settings and styling](Grid-Layout/Settings-and-styles.md)
