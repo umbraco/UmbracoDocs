@@ -13,7 +13,7 @@ By default Umbraco uses MVC templates.
 
 #### [Working with MVC (views, razor, etc...)](Mvc/index.md)
 
-Describes how to work with MVC views, the razor syntax and APIs available as well details on how to create forms, step-by-step guides and other advanced techniques.
+Describes how to work with MVC views, the razor syntax, and APIs available, as well details on how to create forms, step-by-step guides and other advanced techniques.
 
 
 
@@ -30,7 +30,7 @@ If you prefer to work with Webforms, you can change the default template engine 
 
 #### Hybrid templates
 
-Umbraco can work with both MVC and Webforms templates at the same time, however there can only be one default. Umbraco will first check for an MVC view file before it checks for a Webforms master page file. For example, if a template was created in the backoffice called "Home", then when rendering a content page with this template Umbraco will check these locations and use the first one that is found:
+Umbraco can work with both MVC and Webforms templates at the same time; however, there can only be one default. Umbraco will first check for an MVC view file before it checks for a Webforms master page file. For example, if a template was created in the backoffice called "Home", then when rendering a content page with this template Umbraco will check these locations and use the first one that is found:
 
 ~/Views/Home.cshtml
 ~/Masterpages/Home.master
