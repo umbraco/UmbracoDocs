@@ -19,8 +19,6 @@ All samples in this document will require the following using statements:
 	using Umbraco.Core.Models;
 	using Umbraco.Core.Services;
 
-**Please note that this page will be updated with samples and additional information about the methods listed below**
-
 ## Getting the service
 
 If you wish to use use the localization service in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController`), you can access the localization service through a local `Services` property:

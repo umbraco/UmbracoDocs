@@ -19,8 +19,6 @@ All samples in this document will require the following using statements:
 	using Umbraco.Core.Models;
 	using Umbraco.Core.Services;
 
-**Please note that this page will be updated with samples and additional information about the methods listed below**
-
 ## Getting the service
 The FileService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the FileService is available through a local `Services` property.
 
