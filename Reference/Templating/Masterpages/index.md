@@ -15,7 +15,7 @@ When a new template is created, it will by default contain 3 lines of predefined
 
 	</asp:Content>
 
-The first line, is the template declaration, it tells Umbraco what language the template is written in, and if it inherits from another template. Masterpages in Umbraco will always inherit from another Masterpage, if it's a root template, it will inherit from
+The first line is the template declaration. It tells Umbraco what language the template is written in and if it inherits from another template. Masterpages in Umbraco will always inherit from another Masterpage. If it's a root template, it will inherit from
 `/umbraco/masterpages/default.master` which is the default Umbraco masterpage, which is needed for the templating system to work.
 
 
@@ -24,7 +24,7 @@ The `umbraco:item` element is used to pull a property from the page, currently b
 
 	<umbraco:item field="bodyText" runat="server" />
 
-There are several advanced options for using` umbraco:item`, for controlling fall-back values, recursive lookups, casing, encoding and so on:
+There are several advanced options for using` umbraco:item`: for controlling fall-back values, recursive lookups, casing, encoding and so on:
 
 	<umbraco:Item field="bodyText" useIfEmpty="contents" textIfEmpty="Fallback value" case="upper" recursive="true" runat="server" />
 
@@ -44,22 +44,22 @@ This will output an `<img/>` tag when the template renders:
 
 ## [umbraco:macro](umbracomacro.md)
 
-The umbraco:macro element renders the out of a macro with a given alias. Attributes on the element is passed to the macro as parameters for the rendering.  In the sample below, the macro with the alias "topnavigation" is rendered, and the parameter "className" is set to "greenList" which is passed on to the script associated with the macro.
+The umbraco:macro element renders the out of a macro with a given alias. Attributes on the element are passed to the macro as parameters for the rendering.  In the sample below, the macro with the alias "topnavigation" is rendered, and the parameter "className" is set to "greenList" which is passed on to the script associated with the macro.
 
 	<umbraco:macro alias="topnavigation" className="greenList" runat="server" />
 
 [See the full umbraco:macro reference](umbracomacro.md)    
 
 ## Template inheritance
-Templates can inherit other templates and uses 2 elements to merge them. `<asp:contentplaceholder>` and `<asp:content>` To connect one template with another, use the dropdownlist in Umbraco to specify the master template, this will change the template declaration and make a database change.
+Templates can inherit other templates and uses 2 elements to merge them. `<asp:contentplaceholder>` and `<asp:content>` To connect one template with another, use the dropdownlist in Umbraco to specify the master template. This will change the template declaration and make a database change.
 
-Lets imagine we have define the below template structure.
+Let's imagine we have defined the below template structure.
 
 - Master.master
 	- Homepage.master
 	- Textpage.master
 
-For inheritance to work, the parent template (master.master) needs to have a placeholder, and the child-templates needs to have a content area which matches the placeholder alias.
+For inheritance to work, the parent template (master.master) needs to have a placeholder and the child-templates needs to have a content area which matches the placeholder alias.
 
 So in master.master we have the default asp:content element, and inside of that, we have a placeholder with id "myarea"
 
@@ -87,7 +87,7 @@ When the page is rendered, the resulting html in the browser will look like this
 
 
 ### asp:contentplaceholder
-ContentPlaceholder is, as the name implies a placeholder for content being merged from another template. The element requires a `Id`, and `runat="server"`
+ContentPlaceholder is, as the name implies, a placeholder for content being merged from another template. The element requires an `Id`, and `runat="server"`
 
 	<asp:contentplaceholder id="myArea" runat="server" />
 
