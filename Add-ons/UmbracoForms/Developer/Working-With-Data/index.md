@@ -33,7 +33,7 @@ Returns all records from all forms on the Umbraco page with the id = pageId as a
 
 	DynamicRecordList GetRecordsFromFormOnPage(int pageId, string formId)
 
-Returns all records from the form with the id = formId on the Umbraco page with the id = pageId as a DynamicRecordList.
+Returns all records from the form with the id = `formId` on the Umbraco page with the id = `pageId` as a DynamicRecordList.
 
 ### GetRecordsFromForm
 
