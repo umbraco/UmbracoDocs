@@ -27,7 +27,7 @@ Returns all records with the state set to approved from the form with the ID = `
 
 	DynamicRecordList GetRecordsFromPage(int pageId)
 
-Returns all records from all forms on the Umbraco page with the id = pageId as a DynamicRecordList.
+Returns all records from all forms on the Umbraco page with the id = `pageId` as a DynamicRecordList.
 
 ### GetRecordsFromFormOnPage
 
