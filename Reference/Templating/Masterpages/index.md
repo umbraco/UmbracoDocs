@@ -53,7 +53,7 @@ The umbraco:macro element renders the out of a macro with a given alias. Attribu
 ## Template inheritance
 Templates can inherit other templates and uses 2 elements to merge them. `<asp:contentplaceholder>` and `<asp:content>` To connect one template with another, use the dropdownlist in Umbraco to specify the master template. This will change the template declaration and make a database change.
 
-Let's imagine we have define the below template structure.
+Let's imagine we have defined the below template structure.
 
 - Master.master
 	- Homepage.master
