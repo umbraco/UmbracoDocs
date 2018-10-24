@@ -1,6 +1,6 @@
 # Working with Record data
 
-Umbraco Forms includes some helper methods that return dynamic objects, making it easy to output records using razor.
+Umbraco Forms includes some helper methods that return dynamic objects, which makes it easy to output records in your templates using razor.
 
 ## Available methods
 The static methods can be found in Umbraco.Forms.Mvc.DynamicObjects.Library
@@ -8,11 +8,15 @@ The static methods can be found in Umbraco.Forms.Mvc.DynamicObjects.Library
 ### GetApprovedRecordsFromPage
 
 	DynamicRecordList GetApprovedRecordsFromPage(int pageId)
-Returns all records with the state set to approved from all forms on the Umbraco page with the id = pageId as a DynamicRecordList
+
+Returns all records with the state set to approved from all forms on the Umbraco page with the id = `pageId` as a DynamicRecordList. 
+
+Note that this will only work when the forms are added using a macro in either an RTE or a Grid.
 
 ### GetApprovedRecordsFromFormOnPage
 
 	DynamicRecordList GetApprovedRecordsFromFormOnPage(int pageId, string formId)
+
 Returns all records with the state set to approved from the form with the id = formId on the Umbraco page with the id = pageId as a DynamicRecordList
 
 ### GetApprovedRecordsFromForm
