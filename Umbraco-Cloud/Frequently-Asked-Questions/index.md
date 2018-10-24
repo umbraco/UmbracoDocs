@@ -32,7 +32,7 @@ Of course. Umbraco Cloud uses the very same Umbraco version that you can downloa
 
 ### Can I move my existing site to Umbraco Cloud?
 
-Umbraco Cloud is best when used as the base for a new project. There is a specific way of working with Umbraco and Umbraco Cloud in order to take full-advantage of the service. That’s not to say you can’t migrate an existing site, only that some changes may be required in order for your site to fully work with Umbraco Cloud. For more information [read our guide to moving an existing site](https://our.umbraco.com/documentation/Umbraco-Cloud/Deployment/Migrate-Existing-Site/).
+Umbraco Cloud is best when used as the base for a new project. There is a specific way of working with Umbraco and Umbraco Cloud in order to take full advantage of the service. That’s not to say you can’t migrate an existing site, only that some changes may be required in order for your site to fully work with Umbraco Cloud. For more information [read our guide to moving an existing site](https://our.umbraco.com/documentation/Umbraco-Cloud/Deployment/Migrate-Existing-Site/).
 
 ---
 
@@ -166,7 +166,7 @@ It seems that you didn't set up the bindings for the specific domain where this 
 
 ### How can I control who accesses my backoffice using IP filtering?
 
-On Cloud it is easy to add an IP filter of your choosing, there's a few things you need to pay attention to though: Umbraco Deploy will need to be able to talk to the different environments in your Cloud website (development, staging, live) and you should of course still be able to use the site locally.
+On Cloud it is easy to add an IP filter of your choosing, there are a few things you need to pay attention to though: Umbraco Deploy will need to be able to talk to the different environments in your Cloud website (development, staging, live) and you should of course still be able to use the site locally.
 
 The following rule can be added to your web.config (in `system.webServer/rewrite/rules/`):
 
