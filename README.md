@@ -89,7 +89,7 @@ are used, these must be in `images` folders next to the .md file referencing the
 To add version information and extra keywords, [every document can be annotated using YAML](Contribute/adding-metadata.md). 
 
 # Multi version documentation
-With the introduction every new version of Umbraco new features are introduced.  This means that not every document will work for your possibly older version.
+Every new version of Umbraco introduces new features. This means that every document might not work for your possibly older version.
 
 Therefore we introduced 2 different mechanisms.
 1. the [YAML metadata describing](Contribute/adding-metadata.md) `versionFrom` and `versionTo`.
