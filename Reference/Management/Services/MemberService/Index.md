@@ -64,10 +64,10 @@ Removes the role from a given `Member`
 Removes multiple roles from multiple `Member` s
 
 ### .Exists(int id);
-Returns true/false if a gven member ID exists
+Returns true/false if a given member ID exists
 
 ### .Exists(string username);
-Returns true/false if a gven member login exists
+Returns true/false if a given member login exists
 
 ### .FindByEmail("gmail.com", int pageIndex, int pageSize, out int totalRecords, [`StringPropertyMatchType`]);
 Searches for all members with a given email, supports paging returned results.

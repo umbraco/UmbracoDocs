@@ -29,7 +29,7 @@ First thing that needs to be chosen is the **action type**:
 - Show: the field will be hidden unless the rules match
 - Hide: the field will be hidden if the rules match
 
-Next up, you'll need to specify the **logic type**. This setting is only important if you have multple rules.
+Next up, you'll need to specify the **logic type**. This setting is only important if you have multiple rules.
 
 - All: All of the rules must match
 - Any: Any of the rules may match
