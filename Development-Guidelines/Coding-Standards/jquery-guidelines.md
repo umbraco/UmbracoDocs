@@ -31,7 +31,7 @@ So essentially, we'll be creating 2 plugins, one to instantiate it and one to re
 
 ### Creating the plugins
 
-```
+```javascript
 // using the same vertical align concept but we'll expose an API for it
 // ( not that this is very useful :) )
  
