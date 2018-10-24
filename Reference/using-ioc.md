@@ -11,6 +11,20 @@ We don't use IoC in the Umbraco source code. This isn't because we don't like it
 In most IoC frameworks you would setup your container in your global.asax class. To do that in Umbraco, you will need to inherit from our global.asax class called: `Umbraco.Web.UmbracoApplication`. You should then override the `OnApplicationStarted` method to build your container and initialize any of the IoC stuff that you require.
 Alternatively you can implement the `Umbraco.Web.IApplicationEventHandler` interface.
 
+## What assemblies and controllers do I need to register?
+
+You need to register all assemblies that may contain MVC or WebApi controllers. In Umbraco this is the `umbraco` assembly which you can get a direct assembly reference to using the example syntax used above:
+
+```
+typeof(UmbracoApplication).Assembly
+```
+
+If you don't register assemblies that contain controllers you may end up with YSOD errors. If you do not register a controller then ASP.NET will try to create the controller but if it doesn't have an empty constructor you'll get a YSOD.
+
+## Things to note
+
+We use a custom MVC controller builder in our code called `Umbraco.Web.Mvc.MasterControllerFactory`, which needs to always be the default controller factory, if you change this Umbraco will probably not work anymore. The good news is that you can specify 'slave' factories so you can specify custom controller factories for different purposes. You would just need to create a new class that inherits from `Umbraco.Web.Mvc.IFilteredControllerFactory` and ensure that the class is public (so it can be found). If your IoC implementation affects the default controller factory, you may have to modify it in order to support this implementation. For the most part, most IoC frameworks will just target setting a custom DependencyResolver which is 100% ok.
+
 ## Autofac Example
 
 This example will setup Autofac to work with Umbraco (see [their documentation](https://autofac.readthedocs.org/en/latest/) for full details). Our examples make use of the following NuGet packages: `Autofac`, `Autofac.Mvc5`, `Autofac.WebApi2`.
@@ -134,20 +148,6 @@ As another example, you can do the same with SurfaceControllers. Here we are cre
 		}
 	}
 
-## What assemblies and controllers do I need to register?
-
-You need to register all assemblies that may contain MVC or WebApi controllers. In Umbraco this is the `umbraco` assembly which you can get a direct assembly reference to using the example syntax used above:
-
-```
-typeof(UmbracoApplication).Assembly
-```
-
-If you don't register assemblies that contain controllers you may end up with YSOD errors. If you do not register a controller then ASP.NET will try to create the controller but if it doesn't have an empty constructor you'll get a YSOD.
-
-## Things to note
-
-We use a custom MVC controller builder in our code called `Umbraco.Web.Mvc.MasterControllerFactory`, which needs to always be the default controller factory, if you change this Umbraco will probably not work anymore. The good news is that you can specify 'slave' factories so you can specify custom controller factories for different purposes. You would just need to create a new class that inherits from `Umbraco.Web.Mvc.IFilteredControllerFactory` and ensure that the class is public (so it can be found). If your IoC implementation affects the default controller factory, you may have to modify it in order to support this implementation. For the most part, most IoC frameworks will just target setting a custom DependencyResolver which is 100% ok.
-
 ## Unity Example
 
 Install the Unity, Unity.Mvc and Unity.AspNet.WebApi packages.
@@ -156,12 +156,9 @@ Leave the UnityConfig file as is.
 
 Now create the following files to configure Unity correctly for an Umbraco site.
 
-	class UnityEvents : IApplicationEventHandler
+	public class UnityEvents : ApplicationEventHandler
 	{
-		public void OnApplicationStarted(
-			UmbracoApplicationBase httpApplication,
-			ApplicationContext applicationContext
-		)
+        protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
 		{
 			var container = UnityConfig.GetConfiguredContainer();
 
@@ -195,10 +192,6 @@ Now create the following files to configure Unity correctly for an Umbraco site.
 			// use the default constructor by passing in a parameterless InjectionConstructor during registration
 			container.RegisterType<LegacyTreeController>(new InjectionConstructor());
 		}
-
-		public void OnApplicationInitialized(UmbracoApplicationBase httpApplication, ApplicationContext applicationContext) { }
-
-		public void OnApplicationStarting(UmbracoApplicationBase httpApplication, ApplicationContext applicationContext) { }
 	}
 	
 And here is the merged UnityActivator
@@ -227,3 +220,51 @@ And here is the merged UnityActivator
 			container.Dispose();
 		}
 	}
+
+## LightInject Example
+
+Install the LightInject, LightInject.Mvc and LightInject.WebApi NuGet packages.
+Same as with other Containers, we need to initialize our service container when the Umbraco application started and then register desired services inside of it.
+
+Now create the following files to configure Unity correctly for an Umbraco site.
+
+	public class LightInjectEvents : ApplicationEventHandler
+	{
+        protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+		{
+            var container = new ServiceContainer();
+
+            // Our services registrations here... 
+            // Documentation: https://www.lightinject.net/
+
+            // Registration of the Controllers and WebApi Controllers from the executing assemply
+            container.RegisterControllers(Assembly.GetExecutingAssembly());
+            container.RegisterApiControllers(Assembly.GetExecutingAssembly());
+
+            // Enabling required configuration and settings
+            container.EnableMvc();
+            container.EnablePerWebRequestScope();
+            container.EnableWebApi(GlobalConfiguration.Configuration);
+
+            // Setting up the resolver
+            var resolver = new LightInjectWebApiDependencyResolver(container);
+            GlobalConfiguration.Configuration.DependencyResolver = resolver;
+            DependencyResolver.SetResolver(new LightInjectMvcDependencyResolver(container));
+		}
+	}
+    
+If we're going to call/implement this class outside of the Web application or inside of the package for example, it might be useful (and sometimes required) to also register all the other existing Controllers and API Controllers inside of the whole solution. Especially if we'll be willing to use them or inject them in our own registrations. Below code is scanning through the assemblies within the current domain and registering existing controllers which are implementing IHttpController interface.
+
+        private static void RegisterAssembliesServices(IServiceRegistry container)
+        {
+            foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                var controllerTypes = assembly.GetTypes().Where(t => !t.IsAbstract && typeof(IHttpController).IsAssignableFrom(t));
+                foreach (var controllerType in controllerTypes)
+                {
+                    container.Register(controllerType, new PerRequestLifeTime());
+                }
+            }
+        }
+        
+We can call the helper method after our own services registrations.
