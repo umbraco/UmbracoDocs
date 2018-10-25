@@ -8,7 +8,7 @@ First thing to have in place when installing AI is of course an AI resource on A
 
 After that, you can go ahead and grab your `instrumentation key`, from the AI Resouce overview
 
-![alt text](images/01-Instrumentation-Key.png "Instrumentation Key")
+![alt text](images/01-Instrumentation-key.png "Instrumentation Key")
 
 ### Cloud solution
 The next thing we need to look at is how to enable AI your Umbraco solution.
