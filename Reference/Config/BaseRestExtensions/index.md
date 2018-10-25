@@ -36,7 +36,7 @@ _BaseRestExtensions.config_
 	<?xml version="1.0" encoding="utf-8"?>
 	<BaseRestExtensions>
 	  
-	  <extension alias="test" type="BasetTest.TestClass,basetest">
+	  <extension alias="test" type="BaseTest.TestClass,basetest">
 	    <method name="Hello" returnXml="false" allowAll="true"></method>
 	  </extension>
 	  

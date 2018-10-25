@@ -18,7 +18,7 @@ There are three design alternatives you can use to effectively load balance serv
 
 1. You use cloud based auto-scaling appliances like [Microsoft's Azure Web Apps](https://azure.microsoft.com/en-us/services/app-service/web/)
 2. Each server hosts copies of the load balanced website files and a file replication service is running to ensure that all files on all servers are up to date
-3. The load balanced website files are located on a centralized file share (SAN/NAS/Custered File Server/Network Share)
+3. The load balanced website files are located on a centralized file share (SAN/NAS/Clustered File Server/Network Share)
 
 For options #2 and #3 you will obviously need a load balancer to do your load balancing!
 
@@ -36,7 +36,7 @@ The process is as follows:
 * These events are converted into data structures called "instructions" and are stored in the database in a queue
 * Each front-end server checks to see if there are any outstanding instructions it hasn't processed yet
 * When a front-end server detects that there are pending instructions, it downloads them and processes them and in turn updates it's cache, cache files and indexes on its own file system
-* There can be up to a 5 second delay between content updates and a front-end server's refreshing, this is expected and normal behaviour.
+* There can be up to a 5 second delay between content updates and a front-end server's refreshing, this is expected and normal behavior.
 
 ## Scheduling and master election
 

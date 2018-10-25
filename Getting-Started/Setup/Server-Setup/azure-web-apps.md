@@ -68,7 +68,7 @@ For a single Azure Web App instance you need to ensure that the Umbraco XML conf
 
 For **Umbraco v7.7.3+**
 
-For Umbraco installations that are hosted by Azure Web Apps it is recommend that Umbraco is upgraded to the latest version if the current version is pre v7.7.3. This is so that the umbracoLocalTempStorage setting can be utilised to avoid locking issues with TEMP files during automated server migrations or slot swapping. See [U4-10503](http://issues.umbraco.org/issue/U4-10503) for more information on this.
+For Umbraco installations that are hosted by Azure Web Apps it is recommend that Umbraco is upgraded to the latest version if the current version is pre v7.7.3. This is so that the umbracoLocalTempStorage setting can be utilized to avoid locking issues with TEMP files during automated server migrations or slot swapping. See [U4-10503](http://issues.umbraco.org/issue/U4-10503) for more information on this.
 
 	<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
 

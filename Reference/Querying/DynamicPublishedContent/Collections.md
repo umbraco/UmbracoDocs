@@ -7,7 +7,7 @@ to see all methods available for IPublishedContent, see [this documentation](../
 ## Collections
 All collections returned by Model are of type DynamicPublishedContentList, which itself has a collection of properties.
 
-### .[DocumentTypeAlias]s (Pluralised Collections)
+### .[DocumentTypeAlias]s (Pluralized Collections)
 Returns the children of the current page, matching the Document type alias
 
 **Get all children of type with alias: 'textPage'**

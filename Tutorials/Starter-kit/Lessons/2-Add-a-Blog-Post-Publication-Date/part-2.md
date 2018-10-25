@@ -6,7 +6,7 @@ Now in Part Two we're going to display that instead of the creation date.
 ## Steps - Part Two
 1. Edit the blog posts (click on *Blog* in the **Content** section to display the list) and add publication dates. Remember to publish your changes!  As this field is flagged as Mandatory you now can't save a post without it.
 2. Go to the **Settings** section
-3. Expland **Templates**, and *Master*, then click on *Blogpost*: this is the template that is rendering the full page view of a blog post
+3. Expand **Templates**, and *Master*, then click on *Blogpost*: this is the template that is rendering the full page view of a blog post
 4. Find the element with the class `blogpost-date` and change it to use a nicely formatted Publication Date, i.e.:
 ```
 <small class="blogpost-date">@Model.Content.PublicationDate.ToLongDateString()</small>

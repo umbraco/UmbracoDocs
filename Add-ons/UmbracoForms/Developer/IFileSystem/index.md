@@ -37,7 +37,7 @@ Note you may or may not have a similar looking configuration if using this provi
         </Parameters>
     </Provider>
 
-*Note* The Azure Blob container cannot be called `forms` as this will give unexpected behaviour, and we recommend you call it `form-data` or similar.
+*Note* The Azure Blob container cannot be called `forms` as this will give unexpected behavior, and we recommend you call it `form-data` or similar.
 
 ## Creating your own custom provider for your needs
 This requires creating a C# class that inherits from the Umbraco Core CMS class `Umbraco.Core.IO.IFileSystem` and implementing methods such as `public IEnumerable<string> GetDirectories(string path)` and more.

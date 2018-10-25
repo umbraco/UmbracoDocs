@@ -148,7 +148,7 @@ So Examine feeds the query to Lucene as follows.
 
 The + specifies that it MUST meet this rule.
 
-Fortunately there is an easy way to fix this behaviour, by specifying the default operator for our search criteria to be BooleanOperation.Or.  The simplest way of explaining what this does is that without it the default operation that Examine uses in Lucene terms is MUST (or AND in Examine terms). Because of this default behaviour, it means that if you are unaware of it you will probably see some strange results. By passing in the default operator of OR (in Lucene terms SHOULD) you stop the default AND operation. To fix this change the creation of the instance of the ISearchCriteria to pass in a BooleanOperation.Or like this:
+Fortunately there is an easy way to fix this behavior, by specifying the default operator for our search criteria to be BooleanOperation.Or.  The simplest way of explaining what this does is that without it the default operation that Examine uses in Lucene terms is MUST (or AND in Examine terms). Because of this default behavior, it means that if you are unaware of it you will probably see some strange results. By passing in the default operator of OR (in Lucene terms SHOULD) you stop the default AND operation. To fix this change the creation of the instance of the ISearchCriteria to pass in a BooleanOperation.Or like this:
 
 	var searchCriteria = Searcher.CreateSearchCriteria(BooleanOperation.Or);
 
@@ -186,7 +186,7 @@ You can also pass in a group of query values.
 
 	var query = searchCriteria.GroupedOr(new string[] { "nodeName", "metaTitle"}, new string[]{"hello", "goodbye"}).Compile();
 
-this would end up becomming:
+this would end up becoming:
 
 	(nodeName:hello metaTitle:goodbye)
 
