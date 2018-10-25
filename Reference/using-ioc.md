@@ -268,3 +268,9 @@ If we're going to call/implement this class outside of the Web application or in
         }
         
 We can call the helper method after our own services registrations.
+
+## Our.Umbraco.IoC
+
+There is also another way of dealing with IoC containers in Umbraco solution and it's with using the package created by one of the Core developers - Shannon Deminick - called: Our.Umbraco.IoC (https://github.com/Shazwazza/Our.Umbraco.IoC).
+
+It supports Autofac and LightInject currently, but the project is open for another contributions.
