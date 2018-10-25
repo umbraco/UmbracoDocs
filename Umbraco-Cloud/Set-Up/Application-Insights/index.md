@@ -4,7 +4,7 @@
 This guide will instruct you how to install Application Insights (AI) for your cloud solution.
 
 ### Azure portal
-First thing to have in place when installing AI is ofcourse an AI resource on Azure, so go ahead and open your favorite browser and log onto [Azure Portal](https://portal.azure.com) and spin up a new AI Resource.
+First thing to have in place when installing AI is of course an AI resource on Azure, so go ahead and open your favorite browser and log onto the [Azure Portal](https://portal.azure.com) and spin up a new AI Resource.
 
 After that, you can go ahead and grab your `instrumentation key`, from the AI Resouce overview
 
