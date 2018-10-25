@@ -13,7 +13,7 @@ After that, you can go ahead and grab your `instrumentation key`, from the AI Re
 ### Cloud solution
 The next thing we need to look at is how to enable AI for your Umbraco solution.
 
-The easiest way is to open your favorite Visual studio Instance, go to Package Manager Console and go
+The easiest way is to open your favorite Visual Studio instance, go to Package Manager Console and go
 
 ```Install-Package Microsoft.ApplicationInsights.Web ``` 
 
