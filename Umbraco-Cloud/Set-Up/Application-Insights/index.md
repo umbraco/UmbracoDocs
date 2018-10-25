@@ -17,7 +17,7 @@ The easiest way is to open your favorite Visual Studio instance, go to Package M
 
 ```Install-Package Microsoft.ApplicationInsights.Web ``` 
 
-This will install application insights and all of its dependencies. It will also create a `ApplicationInsights.config` file.
+This will install application insights and all of its dependencies. It will also create an `ApplicationInsights.config` file.
 
 Go ahead, open this file and paste in your `instrumentation key` found in the previous section.
 
