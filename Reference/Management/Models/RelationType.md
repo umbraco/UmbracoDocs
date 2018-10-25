@@ -59,5 +59,3 @@ Gets or sets a `boolean` indicating whether the RelationType is Bidirectional (t
 	// Given a `RelationService` object get RelationType by its Id and return IsBidirectional
 	var relationType = relationService.GetRelationTypeById(1234);
 	return relationType.ChildObjectType;
-    
-## Methods
