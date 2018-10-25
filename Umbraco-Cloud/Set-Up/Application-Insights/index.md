@@ -28,3 +28,8 @@ Upload the changes to your solution and that is it!
 ## Application insights limitations on Umbraco Cloud
 
 Unless you have opt-in for a dedicated Umbraco Cloud server, you are sharing computing power with other Umbraco Cloud users. By default Application Insights is configured to provide information about resources allocated and used by the system, do note however that these can be misrepresentative!
+
+
+## Microsoft documentation
+
+For further information check out Microsoft's own documentation of [Application Insights](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-overview)
