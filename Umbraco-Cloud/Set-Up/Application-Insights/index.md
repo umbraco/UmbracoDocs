@@ -11,7 +11,7 @@ After that, you can go ahead and grab your `instrumentation key`, from the AI Re
 ![alt text](images/01-Instrumentation-key.png "Instrumentation Key")
 
 ### Cloud solution
-The next thing we need to look at is how to enable AI your Umbraco solution.
+The next thing we need to look at is how to enable AI for your Umbraco solution.
 
 The easiest way is to open your favorite Visual studio Instance, go to Package Manager Console and go
 
