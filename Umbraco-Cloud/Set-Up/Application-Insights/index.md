@@ -21,7 +21,7 @@ This will install application insights and all of its dependencies. It will also
 
 Go ahead, open this file and paste in your `instrumentation key` found in the previous section.
 
-![alt text](images/02-Insert-Instrumentation-Key.png "Insert Instrumentation Key")
+![alt text](images/02-Insert-Instrumentation-key.png "Insert Instrumentation Key")
 
 Upload the changes to your solution and that is it!
 
