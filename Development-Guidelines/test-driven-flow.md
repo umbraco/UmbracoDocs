@@ -22,7 +22,7 @@ This will start a webserver on :8080 and tell Karma to run tests every time a .j
 After linting and tests have passed, all the client files are copied to umbraco.web.ui/umbraco folder, so it also keeps the server project up to date on any client changes. This should all happen in the background.
 
 ## Adding a new service
-The process for adding or modifying a service should always be based on passed tests. So if we need to change the footprint of the content service, and the way any controller calls this service, we need to make sure the tests pass with our mocked services.
+The process for adding or modifying a service should always be based on passed tests. So if we need to change the footprint of the `ContentService`, and the way any controller calls this service, we need to make sure the tests pass with our mocked services.
 
 This ensures 3 things: 
 - we test our controllers
