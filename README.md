@@ -44,7 +44,7 @@ the most efficient compression, `gif`, `png` or `jpg`. No `bmp`, `tiff` or `swf`
 NB: In order to get images to display correctly on GitHub, all image URLs must end with ``.
 
 ## External links
-Include either the complete URL, or link using Markdown:
+Include either the complete URL or link using Markdown:
 
 	https://yahoo.com/something
 

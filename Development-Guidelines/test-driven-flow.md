@@ -11,7 +11,7 @@ Simply open a terminal / cmd in the Umbraco.Web.UI.Client folder and run:
 
 	npm install
 
-This should setup the entire gulp, Karma and jsint setup we use for tests and pruning.
+This should setup the entire gulp, Karma and jsint set up we use for tests and pruning.
 
 ## Automated testing
 To start working on the client files, and have them automatically built and merged into the client project, as well as the VS project, simply run the command
@@ -52,7 +52,7 @@ The `returnApplicationTrees` function then looks like this:
 		return [200, tree, null];
 	}
 
-It returns an array of 3 items, the http status code, the expected data and finally it can return a collection of http headers.
+It returns an array of 3 items, the http status code, the expected data and finally, it can return a collection of http headers.
 
 	_backendData.tree.getApplication(app);
 

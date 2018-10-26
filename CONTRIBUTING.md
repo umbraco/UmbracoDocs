@@ -7,7 +7,7 @@ To contribute to either the documentation or stubs, you can fork & clone our rep
  * [Forking a GitHub repository](https://help.github.com/articles/fork-a-repo/)
  * [The simple guide to Git](https://rogerdudler.github.io/git-guide/)
 
-## Repository organisation
+## Repository organization
 All active work done on the documentation is currently being done on the `master` branch.
 
 ### Keeping your UmbracoDocs fork in sync with the main repository
@@ -26,7 +26,7 @@ git fetch upstream
 git rebase upstream/master
 ```
 
-In this command we're syncing with the `master` branch, but you can of course choose another one if needed.
+In this command, we're syncing with the `master` branch, but you can, of course choose another one if needed.
 
 ### Contributing documentation
 All documents are written in Markdown, using a simple structure and stored as .md files.

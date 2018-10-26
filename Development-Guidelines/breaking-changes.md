@@ -4,7 +4,7 @@ _Defines what a breaking change is in regards to the Umbraco core codebase and d
 
 ## What is a breaking change?
 
-This section describes what a breaking change is in regards to the Umbraco codebase. Generally breaking changes are only made on major releases, however in minor releases there may be changes to the codebase that some developers may consider 'breaking' as well. The following points describe what changes to the core codebase are or are not considered breaking changes.
+This section describes what a breaking change is in regards to the Umbraco codebase. Generally breaking changes are only made on major releases, however, in minor releases there may be changes to the codebase that some developers may consider 'breaking' as well. The following points describe what changes to the core codebase are or are not considered breaking changes.
 
 ## General codebase
 
@@ -35,7 +35,7 @@ This section describes what a breaking change is in regards to the Umbraco codeb
 			{
 				public int Id {get;set;}
 			}
-	* With the above change, any API usage of MyClass will not break, however if a developer is using reflection to target `MyClass` explicitly, in some cases this will break the reflection call. We **do not** consider these types of changes as breaking changes.
+	* With the above change, any API usage of MyClass will not break, however, if a developer is using reflection to target `MyClass` explicitly, in some cases this will break the reflection call. We **do not** consider these types of changes as breaking changes.
 * Changes made to any non-public or non-protected property, methods, interfaces or classes are not considered breaking
 	* Generally these types of changes will never break a developers usage unless they are using reflection to target non-public/non-protected objects. 
 

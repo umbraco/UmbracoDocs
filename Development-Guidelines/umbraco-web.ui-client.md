@@ -33,7 +33,7 @@ Test configuration and test files used by the Karma testrunner to unit-test the 
 ## Source folders
 Inside the /src folder, the Umbraco 7 source code is divided into 3 groups of code: 
 
-- Less files
+- Fewer files
 - Common / shared JavaScript 
 - Views 
 
@@ -60,7 +60,7 @@ Example resources could be:
 - /src/common/resources/media.resource.js
 - /src/common/resources/entity.resource.js
 
-All resources return a promise when data is fetched, they use the same pattern for errors and generally require a HTTP backend to work.
+All resources return a promise when data is fetched, they use the same pattern for errors and generally require an HTTP backend to work.
 On our serverless setup, we use a mocked http backend to simulate data.
 
 ### Packages
