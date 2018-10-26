@@ -8,7 +8,7 @@ Step by step guide of everything you need to get a basic site up and running in 
 
 Custom dashboards are a great way to help editors maintain a site by providing useful information. This guide takes you through the steps to setup a custom dashboard in Umbraco.
 
-### [Creating a Property Editor](Creating-a-Property-Editor/)
+### [Creating a Property Editor](Creating-a-Property-Editor/index.md)
 
 This guide explains how to setup a simple property editor for the backoffice.
 
