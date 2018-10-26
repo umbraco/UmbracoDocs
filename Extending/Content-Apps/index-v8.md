@@ -112,7 +112,7 @@ In a similar way you can limit your content app according to user roles (groups)
         "+role/admin"  // show for 'admin' user group
     ]
 
-If a role restriction is given in the manifest, it overrides any other restrictions on based on type.
+If a role restriction is given in the manifest, it overrides any other restrictions based on type.
 
 ## Creating a Content App in C#
 
