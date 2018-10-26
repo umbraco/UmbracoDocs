@@ -206,7 +206,7 @@ Checks if a `MediaType` with the supplied alias exists in the list of composite 
 	bool result = mediaType.ContentTypeCompositionExists("meta");
 
 ### .RemoveContentType(string alias)
-Removes a `MediaType` with the supplied alias from the the list of composite MediaTypes.
+Removes a `MediaType` with the supplied alias from the list of composite MediaTypes.
 
 	// Given a `ContentTypeService` object get a MediaType by its alias and 
 	// remove the 'Meta' MediaType from its composition.
