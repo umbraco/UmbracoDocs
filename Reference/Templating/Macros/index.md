@@ -21,7 +21,7 @@ Inserting into a Rich Text Area
 
 ![Define the parameters](images/pick-images-for-macro-example.png)
 
-The same implementation logic can be used in lots of different places on your site, and the editor can customize the output by choosing different parameters.
+The same implementation logic can be used in lots of different places on your site, and the editor can customise the output by choosing different parameters.
 
 ## Macro types
 

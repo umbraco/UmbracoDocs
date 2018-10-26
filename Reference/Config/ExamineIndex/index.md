@@ -37,7 +37,7 @@ In addition to the basic configuration of an IndexSet you can also specify the f
 * **IncludeNodeTypes** - only allow certain document types (by alias) to be added to the index.
 * **ExcludeNodeTypes** - disallow certain document types (by alias) from being added to the index.
 
-If a filter isn't specified then the default behavior is to index all, eg if IncludeNodeTypes isn't specified in the IndexSet all document types will be indexed.
+If a filter isn't specified then the default behaviour is to index all, eg if IncludeNodeTypes isn't specified in the IndexSet all document types will be indexed.
 eg:
 
     <ExamineLuceneIndexSets>

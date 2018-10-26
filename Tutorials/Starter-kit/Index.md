@@ -1,5 +1,5 @@
 # The Starter Kit
-The *Starter kit* is the default starter kit for Umbraco 7.6.4+ and is the perfect way to familiarize yourself with Umbraco CMS. Developed and maintained by Umbraco HQ and the Umbraco community it aims to give you the basic knowledge you need in order to hit the ground running.
+The *Starter kit* is the default starter kit for Umbraco 7.6.4+ and is the perfect way to familiarise yourself with Umbraco CMS. Developed and maintained by Umbraco HQ and the Umbraco community it aims to give you the basic knowledge you need in order to hit the ground running.
 
 Installing the starter kit will give you a simple site where you can:
 

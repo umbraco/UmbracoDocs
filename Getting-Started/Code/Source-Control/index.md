@@ -136,7 +136,7 @@ When you create and edit DocumentTypes, MediaTypes, DataTypes, Macros, Dictionar
 
 There are several add-on packages that can help add source control to these structure changes:
 
-- *[uSync](https://our.umbraco.org/projects/developer-tools/usync/)* - which can be configured to serialize these changes to files on disk, in a folder called /uSync - enabling you to source/version control these changes too and synchronize them to other environments.
+- *[uSync](https://our.umbraco.org/projects/developer-tools/usync/)* - which can be configured to serialize these changes to files on disk, in a folder called /uSync - enabling you to source/version control these changes too and synchronise them to other environments.
 
 - *[uSync Snapshots](https://our.umbraco.com/packages/developer-tools/usyncsnapshots/)* - an extension to uSync, for taking 'before' and 'after' snapshots of an Umbraco site, for managing a release of a 'set of changes' between environments.
 

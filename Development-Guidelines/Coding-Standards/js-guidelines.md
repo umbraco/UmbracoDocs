@@ -82,7 +82,7 @@ Using the class above is easy:
 
 ## Singleton classes
 
-Sometimes it's useful to have a class that can only be instantiated once and shared, rather than have multiple unsynchronized instances floating around. In those circumstances a Singleton pattern should be used.
+Sometimes it's useful to have a class that can only be instantiated once and shared, rather than have multiple unsynchronised instances floating around. In those circumstances a Singleton pattern should be used.
 
 Define a singleton class:
 

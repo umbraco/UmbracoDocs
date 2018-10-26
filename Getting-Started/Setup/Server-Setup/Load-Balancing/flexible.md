@@ -36,7 +36,7 @@ The process is as follows:
 * These events are converted into data structures called "instructions" and are stored in the database in a queue
 * Each front-end server checks to see if there are any outstanding instructions it hasn't processed yet
 * When a front-end server detects that there are pending instructions, it downloads them and processes them and in turn updates it's cache, cache files and indexes on its own file system
-* There can be up to a 5 second delay between content updates and a front-end server's refreshing, this is expected and normal behavior.
+* There can be up to a 5 second delay between content updates and a front-end server's refreshing, this is expected and normal behaviour.
 
 ## Scheduling and master election
 
