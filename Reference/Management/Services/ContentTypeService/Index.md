@@ -2,7 +2,7 @@
 
 **Applies to Umbraco 6.x and newer**
 
-The ContentTypeService acts as a "gateway" to Umbraco data for operations which are related to ContentTypes and MediaTypes.
+The content type service acts as a "gateway" to Umbraco data for operations which are related to both content types and media types.
 
 [Browse the API documentation for ContentTypeService](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Core.Services.ContentTypeService.html).
 
@@ -32,3 +32,9 @@ In Razor views, you can access the content type service through the `Application
 If neither a `Services` property or a `ApplicationContext` property is available, you can also reference the `ApplicationContext` class directly and using the static `Current` property:
 
 	IContentTypeService contentTypeService = ApplicationContext.Current.Services.ContentTypeService;
+
+## Samples
+
+* [**Retrieving content types**](Retrieving-content-types.md)<br />See examples on how to retrieve content types via the service - either individually or as a collection.
+
+* [**Retrieving content type containers**](Retrieving-content-type-containers.md)<br />See examples on how to retrieve content type containers (folders) via the service - either individually or as a collection.
