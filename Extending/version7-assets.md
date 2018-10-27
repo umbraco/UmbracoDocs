@@ -1,6 +1,6 @@
 # Server variables & URLs
 
-_Describes how to deal with server variables and service URLs, along with how to work with custom JavaScript and CSS assets when creating custom sections, trees or property editors_
+_Describes how to deal with server variables and service URLs, along with how to work with custom JavaScript and CSS assets when creating custom sections, trees or property editors._
 
 ## Server Variables
 
@@ -16,7 +16,7 @@ This is not an angular service, it is simply a namespaced global variable. An ex
 
 which returns whether or not the application has the debug="true" setting in the web.config file.
 
-It's also worth mentioning that the server variables collection when requested gets minified and then compressed so even though there might be quite a few values in there, the request size will be small.
+It's also worth mentioning that the server variables collection when requested gets minified and then compressed, so even though there might be quite a few values in there, the request size will be small.
 
 ### Adding your own
 
@@ -38,7 +38,7 @@ A handler for this method could look like:
 
 ## URLs
 
-A good rule of thumb about service URLs is to not hard code them if possible. One of the reasons why we don't hard code URLs is in case that routing has to change for some reason (i.e. [the breaking change for 7.0.2](https://umbraco.com/blog/heads-up-breaking-change-coming-in-702-and-62/)).
+A good rule of thumb about service URLs is to not hard code them if possible. One of the reasons why we don't hard code URLs is that in case the routing has to change for some reason (i.e. [the breaking change for 7.0.2](https://umbraco.com/blog/heads-up-breaking-change-coming-in-702-and-62/)).
 
 Another reason is if you want to keep compatibility with a legacy controller and introduce a new API version route (i.e. */umbraco/backoffice/api/myservice/v2/getstuff*). Generally a change like this would just mean changing a route in C# and if the JavaScript could automatically know the URL without being hard coded, it will 'just work'.
 
