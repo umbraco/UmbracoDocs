@@ -18,7 +18,7 @@ For details on how to contribute, see further down this page.
 [Reference (available here)](Reference/index.md) is a collection of API references specifically for developers working with and extending Umbraco.
 
 ## Extending
-[Extending (available here)](Extending/) is documentation on customizing and extending the backoffice.
+[Extending (available here)](Extending/) is documentation on customizing and extending the back office.
 
 ## Tutorials
 [Tutorials (available here)](Tutorials/) is a collection of the more extensive tutorials used in the documentation.
@@ -92,5 +92,5 @@ To add version information and extra keywords, [every document can be annotated 
 Every new version of Umbraco introduces new features. This means that every document might not work for your possibly older version.
 
 Therefore we introduced 2 different mechanisms.
-1. the [YAML metadata describing](Contribute/adding-metadata.md) `versionFrom` and `versionTo`.
-2. the possibility [to add multiple files about the same topic](Contribute/file-naming-conventions.md)
+1. The [YAML metadata describing](Contribute/adding-metadata.md) `versionFrom` and `versionTo`.
+2. The possibility [to add multiple files about the same topic](Contribute/file-naming-conventions.md).
