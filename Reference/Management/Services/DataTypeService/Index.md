@@ -33,15 +33,11 @@ If you wish to use use the data type service in a class that inherits from one o
 ```c#
 IDataTypeService dataTypeService = Services.DataTypeService;
 ```
-
 In Razor views, you can access the data type service through the `ApplicationContext` property:
-
 ```c#
 IDataTypeService dataTypeService = ApplicationContext.Services.DataTypeService;
 ```
-
 If neither a `Services` property or a `ApplicationContext` property is available, you can also reference the `ApplicationContext` class directly and using the static `Current` property:
-
 ```c#
 IDataTypeService dataTypeService = ApplicationContext.Current.Services.DataTypeService;
 ```
