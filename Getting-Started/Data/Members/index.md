@@ -1,10 +1,10 @@
 # Members
-*Members are used for registering and authenticating external users of an Umbraco installation (ie. forum members, intranet users and so forth). Unlike with Document Types and Media Types everything is done in the Members section both defining and creating, and editing members. This guide will explain how to define and create members in the backoffice. If you want to work with members using the service APIs, links can be found at the end of document*
+*Members are used for registering and authenticating external users of an Umbraco installation (ie. forum members, intranet users and so forth). Unlike with Document Types and Media Types everything is done in the Members section both defining and creating, and editing members. This guide will explain how to define and create members in the back office. If you want to work with members using the service APIs, links can be found at the end of the document*
 
-There is a default Member Type that can be used to create members. You can of course customize it to fit your needs or create your own from scratch.
+There is a default Member Type that can be used to create members. You can, of course, customize it to fit your needs or create your own from scratch.
 
 ## Creating a Member
-Go to the __Members__ section, click the menu icon next to __Members__ in the member tree and select __Member__. Members have a number of mandatory properties. So aside from filling out the name you will need to fill out  __Login__, __Email__ and __Password__ on the __Properties__ tab before the member can be saved.
+Go to the __Members__ section, click the menu icon next to __Members__ in the member tree and select __Member__. Members have a number of mandatory properties. So aside from filling out the name, you will need to fill out  __Login__, __Email__ and __Password__ on the __Properties__ tab before the member can be saved.
 
 There is also a number of default properties on the __Membership__ tab:
 
@@ -16,7 +16,7 @@ There is also a number of default properties on the __Membership__ tab:
 - umbracoMemberLastLogin
 - umbracoMemberLastPasswordChangeDate
 
-Once the Member is created and saved you can access it by expanding the Members tree and clicking __All Members__ to get a list view (with real time search) or selecting the member type to filter by in the Members tree.
+Once the Member is created and saved you can access it by expanding the Members tree and clicking __All Members__ to get a list view (with real-time search) or selecting the member type to filter by in the Members tree.
 
 ## Creating a Member Type
 You can create your own Member Types and add properties and tabs just as with Document Types.
@@ -74,7 +74,7 @@ A new tab is created by entering a name into the input field and pressing the __
 Renaming a tab is done simply by changing the name in the input field and saving the Document Type. To change the order of the tabs use the drag and drop handle to the left or enter a numeric value in the second input field. Tabs will be displayed from left (lowest value) to right (highest value) in the content section.
 
 ## Creating Member Groups
-Member Groups define roles for your members that can be used for role based protection. A member can be in multiple groups.
+Member Groups define roles for your members that can be used for role-based protection. A member can be in multiple groups.
 
 ![Creating a Member Group](images/Member-Groups-Create.jpg)
 
@@ -90,13 +90,13 @@ __NOT A MEMBER OF GROUP(S):__ Lists all the groups that the member is not a part
 __MEMBER OF GROUP(S):__ Lists all the groups that the member is a part of. To remove the member from a group simply click it and it will move to the other column.
 
 # Sensitive data
-Umbraco 7.9.0 provides the ability to mark members as sensitive. A sensitive member's data will not be displayed to backoffice users unless they have appropriate permissions.
+Umbraco 7.9.0 provides the ability to mark members as sensitive. A sensitive member's data will not be displayed to back office users unless they have appropriate permissions.
 
 More information can be found under [security](../../../Reference/Security/#sensitive-data).
 
 # Technical
 As a developer you are able to leverage your website easily when you build on the Members section of Umbraco.
-Although the Members section is by default in the Umbraco backoffice, you will be able to implement some work on the front end of your website.
+Although the Members section is by default in the Umbraco back office, you will be able to implement some work on the front end of your website.
 Members come from a custom ASP.NET membership provider, while Member Groups come from a custom Role provider. Both are defined in the web.config.
 You can find out more about the services methods in the reference section of the documentation by following the links below.
 
