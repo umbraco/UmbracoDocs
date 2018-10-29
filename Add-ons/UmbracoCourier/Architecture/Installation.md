@@ -107,7 +107,7 @@ Simply unzip the /bin, /config and /umbraco folders to the root of your website,
 If you have purchased Umbraco Courier, you can download a license file on umbraco.com. This license file must be placed in the websites /bin directory to be registered.
 
 ### Installing the database
-To install the database we need to execute a sql script against the database Umbraco is installed on. Courier  currently only supports SQL server 2005 and 2008.
+To install the database, we need to execute a sql script against the database Umbraco is installed on. Courier  currently only supports SQL server 2005 and 2008.
 
 * Open Microsoft Sql Server Management Studio and connect to your database. 
 * Right click your Umbraco database and choose "new query" 
