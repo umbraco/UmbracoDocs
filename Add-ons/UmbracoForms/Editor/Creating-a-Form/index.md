@@ -116,7 +116,7 @@ Navigate to the Content section of the Umbraco Backoffice and select the content
 * Hit the *add macro* button in the toolbar of the RTE or the *insert macro* option from the Grid.
 * Under 'Choose a Form' click **Add** and select the form you want to insert
 
-    ![Coontent page add macro](images/ContentPageAddMacroDialog.png)
+    ![Content page add macro](images/ContentPageAddMacroDialog.png)
 
 * (Optional) Click **Add** under 'Theme' to choose which theme the form should use
 * Finally you have an option to **exclude scripts**
