@@ -46,7 +46,7 @@ Furthermore it is also possible to customize the path of the Umbraco backoffice 
 
 ### Using Server Variables
 
-In the core we add a new server variable for every api controller's base URL. This allows us to to version some API routes and not others if required. The other reason we do this is because of the `umbRequestHelper` angular service that we've built which generates our URLs for us based on the server variables, for example this returns our service url for the ContentController's PostSort action:
+In the core we add a new server variable for every api controller's base URL. This allows us to version some API routes and not others if required. The other reason we do this is because of the `umbRequestHelper` angular service that we've built which generates our URLs for us based on the server variables, for example this returns our service url for the ContentController's PostSort action:
 
 	umbRequestHelper.getApiUrl("contentApiBaseUrl", "PostSort")  
 
