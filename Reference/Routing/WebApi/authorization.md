@@ -20,7 +20,7 @@ This attribute has no parameters it simply ensures that a valid backoffice user 
 
 **Examples:**
 
-This will only allow a logged in backoffice user to to access the GetAllProducts action:
+This will only allow a logged in backoffice user to access the GetAllProducts action:
 
 	public class ProductsApiController : UmbracoApiController
 	{

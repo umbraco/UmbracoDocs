@@ -8,7 +8,7 @@ With Umbraco you have many options to upgrade Umbraco Forms; you can install the
 
 ### Upgrading with NuGet
 Using NuGet to perform an Upgrade of Umbraco Forms to the next major version, you will run into a problem where the legacy MacroPartial view file will be removed from the site & thus cause any existing Umbraco Forms rendered on the site to stop functioning.
-Before running the site after the NuGet upgrade again; consider this may need to be done on each environmet depending on your deployment process/setup. You will need to from your source control copy/restore the following file `Views/MacroPartials/InsertUmbracoForm.cshtml`
+Before running the site after the NuGet upgrade again; consider this may need to be done on each environment depending on your deployment process/setup. You will need to from your source control copy/restore the following file `Views/MacroPartials/InsertUmbracoForm.cshtml`
 
 The file needs to be here before the site is restarted - due to the migration/upgrade tasks listed below.
 

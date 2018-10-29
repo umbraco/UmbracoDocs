@@ -174,4 +174,4 @@ This is useful if you would like to validate input from the user during the tour
 
 ### customProperties
 
-A JSON object that is passed to the scope of a custom step view, so you can use this data in your view with $scope.model.currentStep.customPropertie
+A JSON object that is passed to the scope of a custom step view, so you can use this data in your view with $scope.model.currentStep.customProperties
