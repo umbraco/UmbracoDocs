@@ -79,7 +79,7 @@ Example:
 
     @inherits Umbraco.Web.Mvc.UmbracoViewPage
     @{
-        var items = Model.GetPropertyValue<IEnumerable<IPublishedContent>>("myPropertyAlias");
+        var items = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("myPropertyAlias");
     
         foreach(var item in items)
         {
@@ -93,7 +93,7 @@ Example:
 
     @inherits Umbraco.Web.Mvc.UmbracoViewPage
     @{
-        var items = Model.GetPropertyValue<IEnumerable<IPublishedContent>>("myPropertyAlias");
+        var items = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("myPropertyAlias");
     
         foreach(var item in items)
         {
@@ -110,7 +110,7 @@ Example:
 
     @inherits Umbraco.Web.Mvc.UmbracoViewPage
     @{
-        var item = Model.GetPropertyValue<IPublishedContent>("myPropertyAlias");
+        var item = Model.Content.GetPropertyValue<IPublishedContent>("myPropertyAlias");
     }
         <h3>@item.GetPropertyValue("heading")</h3>
         @Umbraco.Field(item, "bodyText")
