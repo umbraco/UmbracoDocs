@@ -6,8 +6,8 @@ _Easy to print cheatsheets covering different areas of Umbraco_
 
 Covers: 
 
-* DynamicPublishedContent for MVC Templates, Partials, MacroPartials
-* Strongly typed PublishedContent for MVC Templates, Partials, MacroPartials
+* Dynamic Published Content for MVC Templates, Partials, MacroPartials
+* Strongly typed Published Content for MVC Templates, Partials, MacroPartials
 
 ## [Converting Masterpages to Views](masterpagestoviews.md)
 
