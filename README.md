@@ -1,10 +1,8 @@
 # Umbraco Documentation project
-
+ [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
+ 
 # Reading & using the docs
 This is the documentation project for Umbraco. The scope of this project is to provide overviews of concepts, tutorials, example code, and links to API reference.
-We welcome valuable contributions from anyone willing to help. No matter if it is correcting spelling mistakes, raising an issue or writing a tutorial, everything counts and helps make Umbraco easier to use for everyone.
-
-For details on how to contribute, see further down this page.
 
 # What's in the documentation
 
@@ -22,9 +20,6 @@ For details on how to contribute, see further down this page.
 
 ## Tutorials
 [Tutorials (available here)](Tutorials/) is a collection of the more extensive tutorials used in the documentation.
-
-# Contributing to the documentation
-Please read our [Contributing Guidelines](CONTRIBUTING.md) to learn how you can get involved and help with the Umbraco Documentation.
 
 # Markdown conventions
 Keep custom HTML to a minimum. All script and style markup are cleaned by default.
@@ -94,3 +89,10 @@ With the introduction every new version of Umbraco new features are introduced. 
 Therefore we introduced 2 different mechanisms.
 1. the [YAML metadata describing](Contribute/adding-metadata.md) `versionFrom` and `versionTo`.
 2. the possibility [to add multiple files about the same topic](Contribute/file-naming-conventions.md)
+
+# Contributing [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/umbraco/UmbracoDocs/issues) [![GitHub contributors](https://img.shields.io/github/contributors/umbraco/UmbracoDocs.svg)](https://GitHub.com/umbraco/UmbracoDocsgraphs/contributors/)
+We :heart: valuable contributions from everyone who are willing to help. It does not matter to us, if it's something trivial like, correcting spelling mistakes or raising an issue or writing a tutorial! Every little help counts and it helps make Umbraco easier to use for everyone.
+Otherwise, [bug reports](https://github.com/umbraco/UmbracoDocs/issues/), [bug fixes](https://github.com/umbraco/UmbracoDocs/pulls) and any feedback on Umbraco is always appreciated.
+Look at the [Contributor Guidelines](CONTRIBUTING.md) to learn how you can get involved and help with the Umbraco Documentation.
+## License [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+This library is released under the [MIT License](license)
