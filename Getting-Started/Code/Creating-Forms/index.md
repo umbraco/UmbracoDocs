@@ -102,7 +102,7 @@ In the partial view, we're going to render our contact form using the view model
 
 
 #### Adding the macro
-The last thing to do before we can add the form to a page is to `allow the Macro in a rich text editor`.
+The last thing to do before we can add the form to a page is to **allow the Macro in a rich text editor**.
 Select the expand the __Macros__ node and select the __Contact Form__ Macro. Check the to boxes under __Editor Settings__.
 
 Now you can add the form to a page that has a rich text editor.
