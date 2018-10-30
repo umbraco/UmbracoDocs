@@ -14,7 +14,7 @@ using Umbraco's built in Singleton accessors like:
 it makes your code very difficult to test but more importantly using Singletons and Statics in your code make it very hard 
 to manage, APIs become leaky and ultimately you'll end up with more problems than when you started.
 
-In all Umbraco base classes that you'll normally use, these object are already exposed as properties, so please use these instead!
+In all Umbraco base classes that you'll normally use, these objects are already exposed as properties, so please use these instead!
 For example, all Razor views that Umbraco creates expose an `UmbracoContext` property which is the UmbracoContext, they expose an `ApplicationContext` 
 property which is Umbraco's `ApplicationContext`. The other base classes that expose all the instances you need are things like `SurfaceController`,
 `UmbracoApiController`, `UmbracoController`, `RenderMvcController`, `UmbracoUserControl`, `UmbracoPage`, `UmbracoHttpHandler`, and the list goes on...
@@ -60,7 +60,7 @@ including razor views._
         }
     }
 
-So next time you are using `ApplicationContext.Current` or `UmbracoContext.Current` think "Why am I doing this?", 
+So next time you are using `ApplicationContext.Current` or `UmbracoContext.Current`, think "Why am I doing this?", 
 "Is this already exposed as a property of the base class that I'm using?", "I'm using Dependency Injection, I should be injecting this instance into my class."
 
 
@@ -187,7 +187,7 @@ There are a few reasons for this:
 
 * Dynamics are much slower than their strongly typed equivalent
 * The codebase for Dynamics is difficult to maintain and its massive
-* Many querying concepts in Dynamics are difficult to understand and need to be memorize due to all of the string syntax required
+* Many querying concepts in Dynamics are difficult to understand and need to be memorized due to all of the string syntax required
 * It is much harder to debug and to know if there are errors since the syntax is not typed or compiled
 * No intellisense is possible inside Visual Studio
 * [Models Builder](../Templating/Modelsbuilder/) is part of the Umbraco Core and provides much nicer and strongly typed access to property accessors and querying in your views
@@ -240,9 +240,9 @@ If you need access to both the `UmbracoContext` and the `ApplicationContext`, yo
 * or inject these services into the services you are using 
 * or access each of these services from their own singleton constructs: `UmbracoContext.Current` and `ApplicationContext.Current`.
 
-The reason why this is bad practice is because it has caused confusion and problems in the past. In some cases developers would always
+The reason why this is bad practice is that it has caused confusion and problems in the past. In some cases developers would always
 access the `ApplicationContext` from the `UmbracoContext` but as we now know, this won't always work because the `UmbracoContext` is a request
-scoped instances which isn't going to be available when executing code in a non-request scope (i.e. background thread).
+scoped instance which isn't going to be available when executing code in a non-request scope (i.e. background thread).
 
 ## Using Umbraco content items for volatile data 
 
@@ -257,7 +257,7 @@ Some examples of what not to do are:
 * Hit counters to track the number of times your page has been viewed - use something like Google Analytics for this or a custom database table
 * Creating new nodes for form submissions - this should be stored in a custom database table
 * Importing lots of data into Umbraco content nodes that could easily just be stored in a custom database table (i.e. it's not going to be edited).
-In some cases this might be ok but many times we've seen bulk imports occur on a hourly/daily schedule which is generally unnecessary.
+In some cases this might be ok but many times we've seen bulk imports occur on an hourly/daily schedule which is generally unnecessary.
 
 ## Processing during startup
 

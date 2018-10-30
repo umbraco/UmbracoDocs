@@ -10,10 +10,10 @@ The Client-side part of Umbraco 7 is located in the project folder: `Umbraco.Web
 The folders found in the root of the client-side project and their contents:
 
 */assets*
-This folder contains various client-side assets, most of them are obsolete by now and will over time be merged into the source
+This folder contains various client-side assets, most of them are obsolete now and will over time be merged into the source
 
 */build*
-Folder containing the compiled and minified bits outputted by gulp
+Folder containing the compiled and minified bits outputted by Gulp
 
 */docs*
 Automated documentation files by ngdoc project from inline comments in source files as well as from .ngdoc files in /docs/src/

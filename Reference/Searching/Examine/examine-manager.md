@@ -62,7 +62,7 @@ When calling the index methods on the `ExamineManager` it will call the same met
 
 	var externalIndexer = ExamineManager.Instance.IndexProviderCollection["ExternalIndexer"];
 
-The indexing methds available are:
+The indexing methods available are:
 
 	void DeleteFromIndex(string nodeId);
 	void DeleteFromIndex(string nodeId, IEnumerable<BaseIndexProvider> providers);

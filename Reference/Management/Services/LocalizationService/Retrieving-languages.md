@@ -1,4 +1,4 @@
-# Referencing languages
+# Retrieving languages
 
 ### Getting a single language
 

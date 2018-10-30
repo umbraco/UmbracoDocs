@@ -1,6 +1,6 @@
 # Templates
 
-_Templating in Umbraco builds on the concept of Razor Views from asp.net MVC - if you already know this, then you are ready to create your first template - if not, this is a quick and handy guide._
+_Templating in Umbraco builds on the concept of Razor Views from ASP.NET MVC - if you already know this, then you are ready to create your first template - if not, this is a quick and handy guide._
 
 ## Creating your first template
 By default all document types should have a template attached - but in case you need an alternative template or a new one, you can create one:
@@ -17,7 +17,7 @@ To use a template on a document, you must first allow it on the content's type. 
 
 
 ## Inheriting a master template
-A template can inherit content from a master template by using the asp.net views Layout feature. Lets say we have a template called **masterview**, containing the following html:
+A template can inherit content from a master template by using the ASP.NET views Layout feature. Lets say we have a template called **masterview**, containing the following html:
 
     @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
     @{

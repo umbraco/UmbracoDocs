@@ -48,7 +48,7 @@ Contents of the `FieldType.Textfield.cshtml` view (from the default theme):
         @{if (Model.Validate) {<text> data-val-regex="@Model.InvalidErrorMessage" data-regex="@Html.Raw(Model.Regex)"</text>}}
     />
 
-By default the form makes use of jQuery validate and jQuery validate unobtrusive. That's why you see attributes like `data-val` and `data-val-required`.
+By default the form makes use of jQuery validate and jQuery validate unobtrusive which is why you see attributes like `data-val` and `data-val-required`.
 
 This can be customized but it's important to keep the ID of the control to `@Model.Id` since that is used to match the value to the form field.
 

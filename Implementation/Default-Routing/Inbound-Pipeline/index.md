@@ -1,6 +1,6 @@
 # Umbraco's request pipeline
 
-_The process of Umbraco accepting a request, how it matches a URL to a content item and executes the ASP.Net handler._
+_The process of Umbraco accepting a request, how it matches a URL to a content item and executes the ASP.NET handler._
 
 ## Published Content Request Preparation
 

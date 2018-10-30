@@ -6,7 +6,7 @@ A pull request (PR) is a way of submitting changes to a project that can then be
 
 Let’s say you’ve found a typing or syntax error in one of the articles on the documentation, and you want to correct it. You can do that with a pull request.
 
-There are two ways to create a pull request.
+There are two ways to create a pull request:
 
 1. You can either edit a file directly on GitHub or
 2. You can create a fork of the GitHub repository
@@ -15,7 +15,7 @@ There are two ways to create a pull request.
 It may be helpful for you to read our [Markdown guidelines](Markdown-Conventions) on how to set up Documentation articles before you start writing!
 :::
 
-### Option 1. Creating a PR directly in GitHub
+### Option 1. Creating a PR directly on GitHub
 
 GitHub has some great functionality that allows you to submit a PR directly from our [repository](https://github.com/umbraco/UmbracoDocs/), and there is also a button on every single documentation article at the top that links you directly to GitHub in order to edit that specific file:
 ![Our edit button](images/edit-this-page.png)
@@ -24,9 +24,9 @@ This is very helpful to fix typing errors or adding small things, but if you are
 
 ### Options 2. Creating a PR through a fork
 
-There are a lot of great tutorials available online on [how to fork a repository (GitHub)](https://help.github.com/articles/fork-a-repo/) and work with one. But we have also created a quick guide on how to do it.
+There are a lot of great tutorials available online on [how to fork a repository (GitHub)](https://help.github.com/articles/fork-a-repo/) and work with one, but we have also created a quick guide on how to do it.
 
-If you do not have installed Git on your computer, you should also follow the [instructions on how to set up Git](https://help.github.com/articles/set-up-git/) before you go any further.
+If you do not have Git installed on your computer, you should also follow the [instructions on how to set up Git](https://help.github.com/articles/set-up-git/) before you go any further.
 
 If Git is installed on your computer, follow the [Create a Pull Request using a fork](Pull-Requests) guide.
 
@@ -35,9 +35,9 @@ If Git is installed on your computer, follow the [Create a Pull Request using a 
 The Umbraco Documentation uses [GitHub issues](https://github.com/umbraco/UmbracoDocs/issues) to manage issues with the documentation.
 You can make an issue for any of the following:
 
-- If you feel some documentation is wrong or missing and you do not have time or knowledge to do a PR
+- If you feel some documentation is wrong or missing and you do not have time or knowledge to do a PR.
 - If the issue will need more than one PR.
-- Open a discussion about possible improvements or ways to deal with something in the documentation
+- Open a discussion about possible improvements or ways to deal with something in the documentation.
 
 You can also find a button in the top right corner of every page in the documentation itself that looks like this:
 ![Our issue button](images/report-issue.png)  
@@ -52,13 +52,10 @@ To add version information and extra keywords, [every document can be annotated 
 
 With the introduction of every new version of Umbraco, new features are introduced.  This means that not every document will work for your possibly older version.
 
-Therefore we introduced 2 different mechanisms.
+Therefore we introduced 2 different mechanisms:
 
-1. the [YAML meta data describing](adding-metadata.md) `versionFrom` and `versionTo`.
-2. the possibility [to add multiple files about the same topic](file-naming-conventions.md)
-
-- [Adding meta data](adding-metadata.md) using YAML
-- [File naming conventions](file-naming-conventions.md)
+1. The [YAML meta data describing](adding-metadata.md) `versionFrom` and `versionTo`.
+2. The possibility [to add multiple files about the same topic](file-naming-conventions.md)
 
 ## Documentation Curators
 

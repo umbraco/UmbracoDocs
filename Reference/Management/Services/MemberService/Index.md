@@ -19,8 +19,6 @@ All samples in this document will require the following using statements:
 	using Umbraco.Core.Models;
 	using Umbraco.Core.Services;
 
-**Please note that this page will be updated with samples and additional information about the methods listed below**
-
 ## Getting the service
 The MemberService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the MemberService is available through a local `Services` property.
 
@@ -66,10 +64,10 @@ Removes the role from a given `Member`
 Removes multiple roles from multiple `Member` s
 
 ### .Exists(int id);
-Returns true/false if a gven member ID exists
+Returns true/false if a given member ID exists
 
 ### .Exists(string username);
-Returns true/false if a gven member login exists
+Returns true/false if a given member login exists
 
 ### .FindByEmail("gmail.com", int pageIndex, int pageSize, out int totalRecords, [`StringPropertyMatchType`]);
 Searches for all members with a given email, supports paging returned results.

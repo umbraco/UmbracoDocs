@@ -1,4 +1,4 @@
-# Dataresolvers
+﻿# Dataresolvers
 A dataresolver is a way to add meaning to objects courier doesn't understand. For instance, if you have a document with a custem data type, and the data type stores a NodeID reference to another page (like a content picker), Courier doesn't know the number refers to another node, but by adding a dataresolver, you can tell courier that items with the data type, contains a node ID, and add the needed dependencies and resources to have a successful deployment.
 
 ### AscxFiles
@@ -156,4 +156,4 @@ Configuring which macro property types contains references to other nodes
 ### UsercontrolWrapper
 * **Full name:** `Umbraco.Courier.DataResolvers.UsercontrolWrapper`
 * **Triggers on:**  The UsercontrolWrapper Data types
-*If the data type has a .ascx file selected as render, the file is added as a resource to ensure it is trasfered with the data type.
+*If the data type has a .ascx file selected as render, the file is added as a resource to ensure it is transferred with the data type.

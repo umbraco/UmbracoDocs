@@ -149,7 +149,7 @@ Using the class/method requires no instantiation but you can therefore have no s
 
 ## The difference between a Singleton class and Static class
 
-Both singleton and static classes allow you access methods directly without having to create an entity of your own. The main difference between the two, and what should govern when to use one over the other, is one of state.
+Both singleton and static classes allow you to access methods directly without having to create an entity of your own. The main difference between the two, and what should govern when to use one over the other, is one of state.
 
 A singleton class can hold information which can be manipulated and retrieved via its public methods and will be stored between method calls, whereas static methods should only manipulate and return values which it can gather from its parameters and should not be persisted between individual method calls.
 
