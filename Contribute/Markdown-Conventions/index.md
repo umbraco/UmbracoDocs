@@ -39,7 +39,7 @@ or
 ## Internal links
 
 If you need to link between pages, always link relatively and optionally include the .md extension based on the scenario. For example 
-if you need to provide hyperlink to an `index.md` file which is in the current folder then only the path including the folder name is required. Otherwise if the file is not in the current folder then you need to provide the path to the file including the full file name in the hyperlink.
+if you need to provide hyperlink to an `index.md` file which is in the current folder then only the path including the folder name is required. If you want provide hyperlink to any file other than `index.md` in the current folder then only the path including the folder name along with the filename is required.The `.md` extension is not required in this case.
 
     [Umbraco.Helpers](Umbraco.Helpers.md)
 
