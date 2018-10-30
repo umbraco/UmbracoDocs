@@ -9,9 +9,9 @@ EditorModelEventManager.SendingContentModel += (sender, e) => {
     foreach (var tab in e.Model.Tabs)
     {
 
-	// Change the label of the "Content" tab to "Hello World"
+	    // Change the label of the "Content" tab to "Hello World"
         if (tab.Label == "Content")
-	{
+        {
             tab.Label = "Hello World";
         }
 
@@ -53,15 +53,15 @@ EditorModelEventManager.SendingContentModel += (sender, e) => {
     foreach (var tab in e.Model.Tabs)
     {
 
-	// Add a "h5yr" class to the "Umbraco" tab
+        // Add a "h5yr" class to the "Umbraco" tab
         if (tab.Label == "Umbraco")
-	{
+        {
             tab.CssClass = "h5yr";
         }
 
-	// Add a "design" class to the "Design" tab
+        // Add a "design" class to the "Design" tab
         if (tab.Label == "Design")
-	{
+        {
             tab.CssClass = "design";
         }
 
