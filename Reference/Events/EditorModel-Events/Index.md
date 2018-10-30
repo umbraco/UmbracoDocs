@@ -116,3 +116,10 @@ A model representing a member to be displayed in the backoffice
 * MemberProviderFieldMapping - This is used to indicate how to map the membership provider properties to the save model, this mapping will change if a developer has opted to have custom member property aliases specified in their membership provider config, or if we are editing a member that is not an Umbraco member (custom provider)
 * Tabs - Defines the tabs containing display properties
 * Properties - properties based on the properties in the tabs collection
+
+## Samples
+
+The events exposed by the `EditorModelEventManager` class gives you a lot of options to customize the backoffice experienced. You can can find inspiration from the various samples provided below:
+
+- [**Customizing tabs**](Customizing-tabs/)
+- [**Customizing the "Links" box**](Customizing-the-links-box/)
