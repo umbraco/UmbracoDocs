@@ -139,6 +139,8 @@ In a similar way, you can limit your content app according to user roles (groups
             ]
         }
 
+If a role restriction is given in the manifest, it overrides any other restrictions based on type.
+
 ## Creating a Content App in C#
 
 This is an example of how to register a content app with C# and perform your own custom logic to show a content app.

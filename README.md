@@ -16,7 +16,7 @@ This is the documentation project for Umbraco. The scope of this project is to p
 [Reference (available here)](Reference/index.md) is a collection of API references specifically for developers working with and extending Umbraco.
 
 ## Extending
-[Extending (available here)](Extending/) is documentation on customizing and extending the backoffice.
+[Extending (available here)](Extending/) is documentation on customizing and extending the back office.
 
 ## Tutorials
 [Tutorials (available here)](Tutorials/) is a collection of the more extensive tutorials used in the documentation.
@@ -103,4 +103,3 @@ License [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./L
 This library is released under the [MIT License][license]
 
 [license]: LICENSE
-

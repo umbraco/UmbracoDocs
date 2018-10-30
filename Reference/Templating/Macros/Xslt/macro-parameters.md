@@ -11,7 +11,7 @@ First let's create a simple xslt script which will have 2 simple parameters, a t
  
 
 ## Writing some basic xslt 
-Okey so now we have a macro with some parameters. Let's get these parameters into the xslt. 
+Okay so now we have a macro with some parameters. Let's get these parameters into the xslt. 
 
 Our Xslt code (without the stylesheet info):
 
@@ -21,7 +21,7 @@ Our Xslt code (without the stylesheet info):
 	</xsl:template>
 
 ## Working with parameters in XSLT
-Okey so far we've set up a simple xslt script, added 2 parameters and picked some simple data for the parameters when we inserted the macro in a template. 
+Okay so far we've set up a simple xslt script, added 2 parameters and picked some simple data for the parameters when we inserted the macro in a template. 
 
 So what does the 2 parameters return?
 The `<xsl:copy-of select="/macro/text" />` returns:

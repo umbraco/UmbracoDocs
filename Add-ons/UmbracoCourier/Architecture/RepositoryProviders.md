@@ -36,6 +36,6 @@ The courier webservice provider can connect any other website running Umbraco, w
 * **Password**: (optional) Instead of user ID, you can set a specific password
 * **PasswordEncoding**: (optional) specify if Courier should keep password clear or Hashed to match your target repository
 
-**Note**: Courier alwas encrypts credentials. Encoding is more to do with how Umbraco stores user passwords.
+**Note**: Courier always encrypts credentials. Encoding is more to do with how Umbraco stores user passwords.
 Custom Umbraco Membership Providers
 If you use a custom Umbraco membership provider, you must always specify the login and password on the repository configuration. And set passwordEncoding to Clear.

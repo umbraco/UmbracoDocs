@@ -1,6 +1,6 @@
 # Provider configuration
 
-_Courier comes with a number of built-in providers to package and extract data, some of these have different confiuration settings, which can be found below_
+_Courier comes with a number of built-in providers to package and extract data, some of these have different configuration settings, which can be found below_
 
 
 ### Files

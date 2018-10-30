@@ -237,7 +237,7 @@ Sets the default `Template` for the current ContentType.
 	contentTypeService.Save(contentType);
 
 ### .RemoveContentType(string alias)
-Removes a `ContentType` with the supplied alias from the the list of composite ContentTypes.
+Removes a `ContentType` with the supplied alias from the list of composite ContentTypes.
 
 	// Given a `ContentTypeService` object get a ContentType by its alias and 
 	// remove the 'Meta' ContentType from its composition.

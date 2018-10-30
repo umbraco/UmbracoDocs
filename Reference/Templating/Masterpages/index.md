@@ -105,7 +105,7 @@ Content requires a placeholder in its master template to function, so the `conte
 
 
 ## inline code
-it is possible to run C# code diretly in the template, but is not in any way recommended. However, if it is required, the standard masterpages syntax can be used:
+it is possible to run C# code directly in the template, but is not in any way recommended. However, if it is required, the standard masterpages syntax can be used:
 
 	<%
 		if(SomeCondition){

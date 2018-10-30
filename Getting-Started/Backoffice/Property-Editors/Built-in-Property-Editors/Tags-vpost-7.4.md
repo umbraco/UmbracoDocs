@@ -58,7 +58,7 @@ Whenever a tag has been added it will be visible in the typeahead when you start
     }
 
 ### Typed - Using JSON:
-Notice that Newtonsoft.Json is referenced in the below example. It's already a part of the Umbraco codebase and it's needed for doing the Desirializing of the JSON object so it's possible to loop over the tags later on.
+Notice that Newtonsoft.Json is referenced in the below example. It's already a part of the Umbraco codebase and it's needed for doing the Deserializing of the JSON object so it's possible to loop over the tags later on.
 
     @inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Home>
     @using ContentModels = Umbraco.Web.PublishedContentModels;

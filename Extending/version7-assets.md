@@ -38,7 +38,7 @@ A handler for this method could look like:
 
 ## URLs
 
-A good rule of thumb about service URLs is to not hard code them if possible. One of the reasons why we don't hard code URLs is in case that routing has to change for some reason (i.e. [the breaking change for 7.0.2](https://umbraco.com/blog/heads-up-breaking-change-coming-in-702-and-62/)).
+A good rule of thumb about service URLs is to not hard code them if possible. One of the reasons why we don't hard code URLs is in case the routing has to change for some reason (i.e. [the breaking change for 7.0.2](https://umbraco.com/blog/heads-up-breaking-change-coming-in-702-and-62/)).
 
 Another reason is if you want to keep compatibility with a legacy controller and introduce a new API version route (i.e. */umbraco/backoffice/api/myservice/v2/getstuff*). Generally a change like this would just mean changing a route in C# and if the JavaScript could automatically know the URL without being hard coded, it will 'just work'.
 
@@ -46,7 +46,7 @@ Furthermore it is also possible to customize the path of the Umbraco backoffice 
 
 ### Using Server Variables
 
-In the core we add a new server variable for every api controller's base URL. This allows us to to version some API routes and not others if required. The other reason we do this is because of the `umbRequestHelper` angular service that we've built which generates our URLs for us based on the server variables, for example this returns our service url for the ContentController's PostSort action:
+In the core we add a new server variable for every api controller's base URL. This allows us to version some API routes and not others if required. The other reason we do this is because of the `umbRequestHelper` angular service that we've built which generates our URLs for us based on the server variables, for example this returns our service url for the ContentController's PostSort action:
 
 	umbRequestHelper.getApiUrl("contentApiBaseUrl", "PostSort")  
 

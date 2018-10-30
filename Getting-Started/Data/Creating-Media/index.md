@@ -17,7 +17,7 @@ There are a couple different ways to do this. You can use the context menu as wh
 
 An easier way to do it is to simply drag and drop the file to the upload area. Umbraco will automatically detect if it is an image or a file and create a media item in the folder. You can even drop entire folders (with subfolders) and the folder and file structure will be recreated. Alternatively you can click __- or click here to choose files__ and get a standard OS file picker dialog.
 
-The default __Image__ Media Type has 5 properties that will be populated once the the image is uploaded. These are __Upload Image__, __Width__, __Height__, __Size__ and __Type__ and can be viewed in the __Media__ section and accessed in your templates.
+The default __Image__ Media Type has 5 properties that will be populated once the image is uploaded. These are __Upload Image__, __Width__, __Height__, __Size__ and __Type__ and can be viewed in the __Media__ section and accessed in your templates.
 
 ### Organizing and editing media items
 The default view for the media section is a card view that let's you preview the images and files.
@@ -85,7 +85,7 @@ Go back to the __Settings__ and create a new Media Type and name it "Employee Im
 
 We want the same basic functionality (same properties and tabs) as the __Folder__ Media type and that can be achieved by clicking __Compositions__ and selecting the __Folder__ Media Type. Now Employee images will inherit tabs and properties from the Folder Media Type.
 
-![Compositons](images/Creating-Media-Compositions.jpg)
+![Compositions](images/Creating-Media-Compositions.jpg)
 
 Finally we need to allow the employee images in our new folder. Go to the __Permissions__ tab. Click __Add child__ under __Employee images__.
 

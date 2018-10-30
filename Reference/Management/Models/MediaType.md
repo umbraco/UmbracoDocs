@@ -129,7 +129,7 @@ Gets or Sets the parent `MediaType` Id as an `Int`.
 	return mediaType.ParentId;
 
 ### .Path
-Gets or Sets the path of the MediaType as a `String`. This string contains a comma separated list of the anscestors Ids including the current MediaTypes own id at the end of the string.
+Gets or Sets the path of the MediaType as a `String`. This string contains a comma separated list of the ancestor Ids including the current MediaTypes own id at the end of the string.
 
 	// Given a `ContentTypeService` object get MediaType by its Id and return the Path
 	var mediaType = contentTypeService.GetMediaType(1234);
@@ -206,7 +206,7 @@ Checks if a `MediaType` with the supplied alias exists in the list of composite 
 	bool result = mediaType.ContentTypeCompositionExists("meta");
 
 ### .RemoveContentType(string alias)
-Removes a `MediaType` with the supplied alias from the the list of composite MediaTypes.
+Removes a `MediaType` with the supplied alias from the list of composite MediaTypes.
 
 	// Given a `ContentTypeService` object get a MediaType by its alias and 
 	// remove the 'Meta' MediaType from its composition.
