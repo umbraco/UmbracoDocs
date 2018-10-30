@@ -163,7 +163,7 @@ Given a node ID, returns an `IPublishedContent` Media entity
 ### .TypedMediaAtRoot();
 Returns the root `IPublishedContent` entity from the Media tree.
 
-    @foreach (var child in Umbraco.TypedMediaAtRoot().Children) {
+    @foreach (var child in Umbraco.TypedMediaAtRoot()) {
         <img src="@child.Url" />
     }
 
