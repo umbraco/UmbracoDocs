@@ -30,7 +30,7 @@ Working with dynamics is simpler in some cases especially with regards to refere
 
 	@CurrentPage.markDown
 
-However, dynamics does not provide any intellisense and is compiled at runtime.
+However, a dynamic object does not provide any intellisense and is compiled at runtime.
 
 ## [UmbracoHelper](../../../Reference/Querying/UmbracoHelper/index.md)
 
