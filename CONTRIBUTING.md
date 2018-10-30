@@ -13,6 +13,12 @@ All active work done on the documentation is currently being done on the `master
 ### Keeping your UmbracoDocs fork in sync with the main repository
 If you decide to clone the UmbracoDocs repository on your local machine for making larger changes that can't be done directly on GitHub then we recommend you sync with our repository before you submit your pull request. That way, you can fix any potential merge conflicts and make our lives a little bit easier.
 
+To clone the repo on your local machine, you have to follow this:
+
+```
+git clone https://github.com/umbraco/UmbracoDocs.git
+```
+
 To sync your fork with this original one, you'll have to add the upstream url, you only have to do this once:
 
 ```
