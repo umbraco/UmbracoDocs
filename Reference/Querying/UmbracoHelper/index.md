@@ -145,7 +145,7 @@ Given a node ID, returns a `dynamic` object, representing a single `IPublishedCo
 ### .MediaAtRoot();
 Returns a `dynamic` object, representing the root `IPublishedContent` entity in the Media tree.
 
-    @foreach (var child in Umbraco.MediaAtRoot().Children) {
+    @foreach (var child in Umbraco.MediaAtRoot()) {
         <img src="@child.Url" />
     }
 
