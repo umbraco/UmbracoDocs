@@ -1,6 +1,8 @@
-# ContentTypeService
+---
+versionFrom: 6.0.0
+---
 
-**Applies to Umbraco 6.x and newer**
+# ContentTypeService
 
 The content type service acts as a "gateway" to Umbraco data for operations which are related to both content types and media types.
 
