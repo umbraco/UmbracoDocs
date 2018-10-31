@@ -10,7 +10,7 @@ complexity that the [master election](flexible.md#scheduling-and-master-election
 This is configurable and in order to do this you will need to have separate application startup handlers
 for your front-end servers and your admin server... you can make this a configuration option in your own code.
 
-The first thing to do is create a a couple classes for your front-end servers and master server to use:
+The first thing to do is create a couple classes for your front-end servers and master server to use:
 
 	public class MasterServerRegistrar : IServerRegistrar2
 	{
