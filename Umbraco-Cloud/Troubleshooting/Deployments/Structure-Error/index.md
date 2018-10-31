@@ -27,9 +27,15 @@ In the case above, there are two files (Document Type representations) who share
 
 ### Cause
 
+<iframe width="800" height="450" src="https://www.youtube.com/embed/pF5SUh30FKI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 The main cause of this problem is when a Document Type (or Media Type, Data Type, etc) is manually created in two environments using the same alias. Since each of the environments are isolated and do not know what the other one is doing until they are synchronized - creating a Document Type in each environment will actually create duplicate Document Types that are considered separate entities even though they look the same and share the same alias in the backoffice of both environments.
 
 If you have two or more Cloud environments, we recommend that you never create or make schema changes directly on the Live or Staging environments. You should work with schema only in your Development environment or even better, your local clone of the project.
+
+## Video tutorial
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/S8tOVxKkqw8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Fixing
 
