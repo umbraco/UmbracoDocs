@@ -28,20 +28,20 @@ Here is what you will need for this tutorial:
 
 The first thing to do is set up a Google API. To do this you need to go to https://console.developers.google.com/, then log in with your Google account. 
 
-the first thing to do is to add a new API, you may have some already if you are using Firebase or any other Google product, but just click the + at the top:
+The first thing to do is to add a new API, you may have some already if you are using Firebase or any other Google product, but just click the + at the top:
 
 ![Add new API](images/addNewApi.png)
 
-After you have given your new API a name and gone through the basic setup you need to add an API from the API library on the lefthand menu. Find the Google+ API and Enable it:
+After you have given your new API a name and gone through the basic setup you need to add an API from the API library on the lefthand menu. Find the Google+ API and enable it:
 
 ![Add Google Plus API](images/addGooglePlus.png)
 
-Once you have enabled your new API you will need credentials, simply click on the button and fill in the info as below:
+Once you have enabled your new API, you will need credentials. Simply click on the button and fill in the info as below:
 
 ![Create Credentials](images/createCredentials.png)
 ![Fill out credentials](images/fillOutCredentials.png)
 
-Add in your credentials and the domains that it should cover, as you can see I am using an Umbraco Cloud page and have chosen the path domain/google-signin as the redirect URL.
+Add in your credentials and the domains that it should cover. As you can see I am using an Umbraco Cloud page and have chosen the path domain/google-signin as the redirect URL.
 
 ![Fill out credentials](images/credentials.png)
 
@@ -79,11 +79,11 @@ Now you have installed both packages, and your site still works (hopefully)! Now
 
 ## Configuring the solution to allow Google logins
 
-The first thing to do is locate the files we just installed from the packages, they are located in the App_Code/App_start folder. There are two files we need to edit, first one is the file called UmbracoGoogleAuthExtensions.cs the only thing you need to touch here is the callback path, this is what we set on the API as the redirect URL, if you followed my example it should be set to /google-signin:
+The first thing to do is locate the files we just installed from the packages. They are located in the App_Code/App_start folder. There are two files we need to edit, first one is the file called UmbracoGoogleAuthExtensions.cs. The only thing you need to touch here is the callback path, this is what we set on the API as the redirect URL. If you followed my example it should be set to /google-signin:
 
 ![Callback path](images/callbackPath.png)
 
-The second file we need to configure is the UmbracoStandardOwinStartup.cs file, here we need to add the following code:
+The second file we need to configure is the UmbracoStandardOwinStartup.cs file. Here we need to add the following code:
 ```
 var clientId = ConfigurationManager.AppSettings["GoogleOAuthClientID"];
 var secret = ConfigurationManager.AppSettings["GoogleOAuthSecret"];
