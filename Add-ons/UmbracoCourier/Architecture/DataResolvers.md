@@ -155,3 +155,4 @@ Configuring which macro property types contains references to other nodes
 ### UsercontrolWrapper
 * **Full name:** `Umbraco.Courier.DataResolvers.UsercontrolWrapper`
 * **Triggers on:**  The UsercontrolWrapper Data types
+*If the data type has a .ascx file selected as render, the file is added as a resource to ensure it is transferred with the data type.
