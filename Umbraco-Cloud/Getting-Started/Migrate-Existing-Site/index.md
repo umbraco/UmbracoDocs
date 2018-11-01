@@ -14,7 +14,7 @@ These are the steps you need to go through to complete the migration successfull
 
 ## Video tutorial
 
-On our Youtube channel you can find a playlist with 7 videos that will take your through this migration guide.
+On our Youtube channel you can find a playlist with 7 videos that will take you through the migration guide.
 
 <iframe width="800" height="450" src="https://www.youtube.com/embed/xzua-5f2Nf4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
