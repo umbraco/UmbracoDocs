@@ -7,7 +7,7 @@ To contribute to either the documentation or stubs, you can fork & clone our rep
  * [Forking a GitHub repository](https://help.github.com/articles/fork-a-repo/)
  * [The simple guide to Git](https://rogerdudler.github.io/git-guide/)
 
-## Repository organization
+## Repository organisation
 All active work done on the documentation is currently being done on the `master` branch.
 
 ### Keeping your UmbracoDocs fork in sync with the main repository

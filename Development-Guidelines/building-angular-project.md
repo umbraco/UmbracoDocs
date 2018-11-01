@@ -50,7 +50,7 @@ So to get the project up and running in a browser as fast as possible, open a te
 this will do the following: 
 
 - Compile and merge the project files
-- Compile fewer files to one .css file
+- Compile less files to one .css file
 - Lint JavaScript files for syntax and style errors
 - Run unit tests
 - Setup a watcher to monitor for ongoing changes

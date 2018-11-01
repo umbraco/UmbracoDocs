@@ -33,7 +33,7 @@ Test configuration and test files used by the Karma testrunner to unit-test the 
 ## Source folders
 Inside the /src folder, the Umbraco 7 source code is divided into 3 groups of code: 
 
-- Fewer files
+- Less files
 - Common / shared JavaScript 
 - Views 
 
