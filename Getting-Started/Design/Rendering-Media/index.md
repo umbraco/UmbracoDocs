@@ -22,7 +22,7 @@ _Assumption: We are going to assume that our media item has an ID of **1234**, a
 
     <img src="@url" alt="@mediaItem.Name" />
 
-But wait a second, if you are using Umbraco v7.4.0+ it now comes with [Models Builder](../../../Reference/Templating/Modelsbuilder/index.md). This means is that you can use strongly typed models for your media items if Models Builder is enabled (which it is by default).
+But wait a second, if you are using Umbraco v7.4.0+ it now comes with [Models Builder](../../../Reference/Templating/Modelsbuilder/index.md). This means that you can use strongly typed models for your media items if Models Builder is enabled (which it is by default).
 
 ### Example 2: Accessing a typed image media item based on its ID
 As with example one, we are accessing a MediaType `image` using the same ID assumption. 
