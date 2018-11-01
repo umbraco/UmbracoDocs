@@ -150,7 +150,7 @@ Gets or Sets the parent `ContentType` Id as an `Int`.
 	return contentType.ParentId;
 
 ### .Path
-Gets or Sets the path of the ContentType as a `String`. This string contains a comma separated list of the anscestors Ids including the current ContentTypes own id at the end of the string.
+Gets or Sets the path of the ContentType as a `String`. This string contains a comma separated list of the ancestors Ids including the current ContentTypes own id at the end of the string.
 
 	// Given a `ContentTypeService` object get ContentType by its Id and return the Path
 	var contentType = contentTypeService.GetContentType(1234);

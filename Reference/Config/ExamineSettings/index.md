@@ -95,7 +95,7 @@ _This shows all of the configuration options for Examine. None of these options 
 		</ExamineIndexProviders>
 
 		<!--
-		Seachers ...
+		Searchers ...
 
 		**** YOU MUST SPECIFY A DEFAULT SEARCH PROVIDER *****
 		This is used when issuing the search command without explicitly referring to a

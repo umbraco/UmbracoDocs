@@ -30,6 +30,6 @@ Shut down the project, and delete the following files and folders from `/App_Dat
 
 ![delete-from-app-data](images/App_Data-DELETE.png)
 
-That was it! Now you are ready to start the actual migraion process, or in other words: **now the real fun begins!**
+That was it! Now you are ready to start the actual migration process, or in other words: **now the real fun begins!**
 
 [Up next: Merge with your Cloud project](part-2.md)

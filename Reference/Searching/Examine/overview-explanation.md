@@ -186,7 +186,7 @@ You can also pass in a group of query values.
 
 	var query = searchCriteria.GroupedOr(new string[] { "nodeName", "metaTitle"}, new string[]{"hello", "goodbye"}).Compile();
 
-this would end up becomming:
+this would end up becoming:
 
 	(nodeName:hello metaTitle:goodbye)
 
