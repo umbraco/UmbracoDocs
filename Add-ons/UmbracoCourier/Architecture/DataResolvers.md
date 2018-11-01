@@ -1,5 +1,5 @@
-
-
+# Dataresolvers	
+A dataresolver is a way to add meaning to objects courier doesn't understand. For instance, if you have a document with a custem data type, and the data type stores a NodeID reference to another page (like a content picker), Courier doesn't know the number refers to another node, but by adding a dataresolver, you can tell courier that items with the data type, contains a node ID, and add the needed dependencies and resources to have a successful deployment.
 ### AscxFiles
 * **Full name:** `Umbraco.Courier.DataResolvers.ascxFiles`
 * **Triggers on:** Macros which have a .ascx file as its macro file
