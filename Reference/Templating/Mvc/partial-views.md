@@ -113,7 +113,7 @@ Or using a custom helper function:
 	
 	@Html.CachedPartial("MediaGallery", Model, 3600, true, false, new ViewDataDictionary { { "year", Request.QueryString["year"] } }, Html.CacheBy("yer", "Parameter2") )
 	
-Or even bassed off the Model, though is Model is just the current page then cacheByPage should be used instead:
+Or even based off the Model, though is Model is just the current page then cacheByPage should be used instead:
 
 	@Html.CachedPartial("MediaGallery", Model, 3600, true, false, new ViewDataDictionary { }, (model, viewData) => model.myField )
 

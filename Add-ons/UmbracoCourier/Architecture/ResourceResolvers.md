@@ -1,5 +1,5 @@
 # ResourceResolvers
-A resource resolver is slightly different from data resololvers, as it only triggers when a resource/file is packaged and extracted. This means it can only modify the file itself, but not call back to the item, which the resource belongs to
+A resource resolver is slightly different from data resolvers, as it only triggers when a resource/file is packaged and extracted. This means it can only modify the file itself, but not call back to the item, which the resource belongs to
 
 #### MacroParameters
 * **Full name:** `Umbraco.Courier.ResourceResolvers.MacroParameters`

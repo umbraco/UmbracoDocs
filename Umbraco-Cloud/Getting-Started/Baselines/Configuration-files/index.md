@@ -53,7 +53,7 @@ Just a few examples of what could be transformed in the child sites.
 </configuration>
 ```
 
-## Setting custom rewrite rules for the child proejct (i.e. child-iisrewrite.web.live.xdt.config)
+## Setting custom rewrite rules for the child project (i.e. child-iisrewrite.web.live.xdt.config)
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
