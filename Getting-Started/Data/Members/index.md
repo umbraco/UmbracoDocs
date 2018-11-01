@@ -1,5 +1,5 @@
 # Members
-*Members are used for registering and authenticating external users of an Umbraco installation (ie. forum members, intranet users and so forth). Unlike with Document Types and Media Types everything is done in the Members section both defining and creating, and editing members. This guide will explain how to define and create members in the back office. If you want to work with members using the service APIs, links can be found at the end of the document*
+*Members are used for registering and authenticating external users of an Umbraco installation (ie. forum members, intranet users and so forth). Unlike with Document Types and Media Types everything is done in the Members section both defining and creating, and editing members. This guide will explain how to define and create members in the backoffice. If you want to work with members using the service APIs, links can be found at the end of the document*
 
 There is a default Member Type that can be used to create members. You can, of course, customize it to fit your needs or create your own from scratch.
 
@@ -90,13 +90,13 @@ __NOT A MEMBER OF GROUP(S):__ Lists all the groups that the member is not a part
 __MEMBER OF GROUP(S):__ Lists all the groups that the member is a part of. To remove the member from a group simply click it and it will move to the other column.
 
 # Sensitive data
-Umbraco 7.9.0 provides the ability to mark members as sensitive. A sensitive member's data will not be displayed to back office users unless they have appropriate permissions.
+Umbraco 7.9.0 provides the ability to mark members as sensitive. A sensitive member's data will not be displayed to backoffice users unless they have appropriate permissions.
 
 More information can be found under [security](../../../Reference/Security/#sensitive-data).
 
 # Technical
 As a developer you are able to leverage your website easily when you build on the Members section of Umbraco.
-Although the Members section is by default in the Umbraco back office, you will be able to implement some work on the front end of your website.
+Although the Members section is by default in the Umbraco backoffice, you will be able to implement some work on the front end of your website.
 Members come from a custom ASP.NET membership provider, while Member Groups come from a custom Role provider. Both are defined in the web.config.
 You can find out more about the services methods in the reference section of the documentation by following the links below.
 
