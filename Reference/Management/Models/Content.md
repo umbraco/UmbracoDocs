@@ -1,6 +1,8 @@
+---
+keywords: Content
+versionFrom: 6.0.0
+---
 # Content
-
-**Applies to Umbraco 6.x and newer**
 
 The `Content` class represents a single item in the content tree, its values are fetched directly from the database, not from the cache. **Notice** the Content class should strictly be used for simple CRUD operations, not complex queries, as it is not flexible nor fast enough for this.
 
