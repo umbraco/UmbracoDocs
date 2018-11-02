@@ -9,7 +9,7 @@ First up, we need to get access to the service, this is done in the constructor 
 
 	angular.module("umbraco")
 		.controller("My.MarkdownEditorController",
-		// inject Umbraco's assetsServce and dialog service
+		// inject Umbraco's assetsService and dialog service
 		function ($scope,assetsService, dialogService) { ... }
 
 this works the same way as with the *assetsService* we added in step 1.

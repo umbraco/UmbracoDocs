@@ -104,5 +104,5 @@ You can ignore providers during app start by passing in their name:
 <!-- -->
 
     <ignore>
-        <add>TemplateItemProvder</add>
+        <add>TemplateItemProvider</add>
     </ignore>

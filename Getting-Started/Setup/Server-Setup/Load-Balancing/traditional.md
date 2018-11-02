@@ -20,7 +20,7 @@ These instructions make the following assumptions:
 There are two design alternatives you can use to effectively load balance servers:
 
 1. Option #1 : Each server hosts copies of the load balanced website files and a file replication service is running to ensure that all files on all servers are up to date. __This is the recommended approach.__
-2. Option #2 : The load balanced website files are located on a centralized file share (SAN/NAS/Custered File Server/Network Share).
+2. Option #2 : The load balanced website files are located on a centralized file share (SAN/NAS/Clustered File Server/Network Share).
 
 And you'll obviously need a load balancer to do your load balancing!
 
@@ -63,7 +63,7 @@ A load balancer will balance the traffic between your servers. There are many lo
 Some important notes on NLB:
 
 * [Load balancing with VMWare & NLB](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/implmenting_ms_network_load_balancing.pdf)
-* Ensure that the internal IP Addresses for NLB have DNS registration disabled, are not configured to a a client for Microsoft Networks and have Netbios over TCPIP disabled
+* Ensure that the internal IP Addresses for NLB have DNS registration disabled, are not configured to a client for Microsoft Networks and have Netbios over TCP/IP disabled
 * Windows Server 2008 changed the way that TCP-IP works and have disabled forwarding. In order for NLB to work with 2 network cards (the recommended way), you have to enable forwarding for the private NIC:
 	* [Balancing Act: Dual-NIC Configuration with Windows Server 2008 NLB Clusters](https://blogs.technet.microsoft.com/networking/2008/11/20/balancing-act-dual-nic-configuration-with-windows-server-2008-nlb-clusters/)
 
