@@ -91,7 +91,7 @@ Each plugin could be different depending on its implementation and functionality
 
 #### Front-end build
 
-A lot depends on how you maintain the front-end build of your website, eg are you using css preprocesors such as SCSS/LESS etc - gulp/grunt tasks to amalgamate and minify script resources.
+A lot depends on how you maintain the front-end build of your website, eg are you using css preprocessors such as SCSS/LESS etc - gulp/grunt tasks to amalgamate and minify script resources.
 But generally you will need to source control all of your website's static assets: JavaScript, Css, Fonts, Page Furniture Images etc.
 
 #### Views/Templates/Partials

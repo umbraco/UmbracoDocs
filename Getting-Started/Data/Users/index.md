@@ -1,5 +1,5 @@
 # Users
-*Users (not to be confused with Members) are employees who have access to the Umbraco backoffice. These could include Content Editors, Translators, Web Designers, and Developers alike. This guide will explain how to define, create, and manage users in the backoffice.*
+*Users (not to be confused with [Members](../Members)) are employees who have access to the Umbraco backoffice. These could include Content Editors, Translators, Web Designers, and Developers alike. This guide will explain how to define, create, and manage users in the backoffice.*
 
 There is a default User Type that can be used to create users. You can of course customize it to fit your needs or create your own from scratch.
 

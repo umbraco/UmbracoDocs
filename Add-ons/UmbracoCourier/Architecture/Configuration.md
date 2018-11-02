@@ -17,7 +17,7 @@ Courier keeps an ongoing cache of items to speed up transfers, this can be turne
 ## Transfer settings
 
 ### Timeout
-Milliseconds before a webclient connection times out.
+Milliseconds before a web client connection times out.
 
 	<timeout>30000</timeout>
 
@@ -27,13 +27,13 @@ Encode all resources and items as base64 to avoid illegal characters
 	<disableBase64Encoding>false</disableBase64Encoding >
 
 ### Strip resources from courier files
-Strip the raw byte data from .courier files before transferring
+Strip the raw byte data from the courier files before transferring
 
 	<stripResourcesFromCourierFiles>false</stripResourcesFromCourierFiles>
 
 ## Path settings
 ### Root folder
-The root folder containing all Courier's data. This folder needs changed, if Courier runs outside of the standard Umbraco webcontext. 
+The root folder containing all Courier's data. This folder needs changed, if Courier runs outside of the standard Umbraco web context. 
 	
 	<paths>  
 	    <root>~/path/to/courier</root>
