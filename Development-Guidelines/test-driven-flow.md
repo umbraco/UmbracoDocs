@@ -22,7 +22,7 @@ This will start a webserver on :8080 and tell Karma to run tests every time a .j
 After linting and tests have passed, all the client files are copied to umbraco.web.ui/umbraco folder, so it also keeps the server project up to date on any client changes. This should all happen in the background.
 
 ## Adding a new service
-The process for adding or modifying a service should always be based on passed tests. So if we need to change the footprint of the contentservice, and the way any controller calls this service, we need to make sure the tests pass with our mocked services.
+The process for adding or modifying a service should always be based on passed tests. So if we need to change the footprint of the `ContentService`, and the way any controller calls this service, we need to make sure the tests pass with our mocked services.
 
 This ensures 3 things: 
 - we test our controllers
@@ -68,9 +68,9 @@ So to add a service, which requires data from the server we should:
 - define the url in umbraco.httpbackend.js
 
 ### ServerVariables
-There is a static servervariables file in /mocks which describes the urls used by the rest service, this is currently needed as we don't have this set as an angular service, and no real conventions for these urls yet. Longer-term it would be great to have a urlBuilder which could do
+There is a static server variables file in /mocks which describes the urls used by the rest service, this is currently needed as we don't have this set as an angular service, and no real conventions for these urls yet. Longer-term it would be great to have a urlBuilder which could do
 
 	urlService.url("contentTypes", "GetAllowedChildren");
-	// would return /<umbracodir>/<apibaseDir>/contentyTypes/getAllowedChildren
+	// would return /<umbracodir>/<apibaseDir>/contentTypes/getAllowedChildren
 
-But for now, they are set in the servervariables file.	
+But for now, they are set in the server variables file.

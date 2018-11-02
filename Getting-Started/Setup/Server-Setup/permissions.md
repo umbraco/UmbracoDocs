@@ -51,7 +51,7 @@ are used by packages</p>
 <th>Modify / Full control</th>
 <td>
 <p>Needed for installing packages, if no packages are installed,
-this can be set to read accees only</p>
+this can be set to read access only</p>
 </td>
 </tr>
 <tr>

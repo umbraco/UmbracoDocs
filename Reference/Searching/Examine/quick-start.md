@@ -58,7 +58,7 @@ In MVC we have a method called `TypedSearch` on the `UmbracoHelper` which will r
 
 ### ExamineManager
 
-To complete more complex searches, we can use the ExamineManager and our custom search provider to expose further functionality, such as being able to handle mispellings, for example. There is an example using this available on the [ExamineManager](examine-manager.md) page.
+To complete more complex searches, we can use the ExamineManager and our custom search provider to expose further functionality, such as being able to handle misspellings, for example. There is an example using this available on the [ExamineManager](examine-manager.md) page.
 
 ### Fluent API
 

@@ -44,7 +44,7 @@ In your `web.config` find or add the `<system.webServer><rewrite><rules>` sectio
 		<action type="Redirect" url="https://{HTTP_HOST}/{R:1}" redirectType="Permanent" />
 	</rule>        
 
-Note that the rule includes an ignore for `locahost`. If you run your local environment on a different URL than `localhost` you can add additional ignore rules. Additionally, if you have a staging environment that doesn't run on HTTPS, you can add that to the ignore rules too.
+Note that the rule includes an ignore for `localhost`. If you run your local environment on a different URL than `localhost` you can add additional ignore rules. Additionally, if you have a staging environment that doesn't run on HTTPS, you can add that to the ignore rules too.
 
 ## Backoffice users
 

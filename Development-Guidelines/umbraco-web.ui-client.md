@@ -4,7 +4,7 @@ _This is the AngularJS backoffice UI project_
 
 ## Overview
 This document outlines the location of different files in the Umbraco 7 source code.
-The Client-side part of Umbraco 7 is located in the project folder: `Umbraco.Web.Ui.Client
+The Client-side part of Umbraco 7 is located in the project folder: `Umbraco.Web.Ui.Client`.
 
 ## Root folders
 The folders found in the root of the client-side project and their contents:

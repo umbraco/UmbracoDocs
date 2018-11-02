@@ -39,7 +39,7 @@ In this example below we will create a single HTML file which takes all the subm
 
     @{
         var submissions = Model.Results.ToList();
-        var schmeaItems = Model.schema.ToList();
+        var schemaItems = Model.schema.ToList();
     }
 
     <h1>Form Submissions</h1>
@@ -48,9 +48,9 @@ In this example below we will create a single HTML file which takes all the subm
     {
         var values = submission.Fields.ToList();
 
-        for (int i = 0; i < schmeaItems.Count; i++)
+        for (int i = 0; i < schemaItems.Count; i++)
         {
-            <strong>@schmeaItems[i].Name</strong> @values[i] <br />
+            <strong>@schemaItems[i].Name</strong> @values[i] <br />
         }
 
         <hr/>

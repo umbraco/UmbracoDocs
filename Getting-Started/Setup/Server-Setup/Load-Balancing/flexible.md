@@ -18,7 +18,7 @@ There are three design alternatives you can use to effectively load balance serv
 
 1. You use cloud based auto-scaling appliances like [Microsoft's Azure Web Apps](https://azure.microsoft.com/en-us/services/app-service/web/)
 2. Each server hosts copies of the load balanced website files and a file replication service is running to ensure that all files on all servers are up to date
-3. The load balanced website files are located on a centralized file share (SAN/NAS/Custered File Server/Network Share)
+3. The load balanced website files are located on a centralized file share (SAN/NAS/Clustered File Server/Network Share)
 
 For options #2 and #3 you will obviously need a load balancer to do your load balancing!
 

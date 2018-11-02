@@ -151,7 +151,7 @@ Returns all members in a given Group - same as "Role".
 Returns all members of a given Type
 
 ### .GetMembersByPropertyValue("city", "Horsens");
-Returns all Members, of any type, with a mathcing value in the property with the given property alias
+Returns all Members, of any type, with a matching value in the property with the given property alias
 
 ### .GetMembersInRole(string role);
 Returns all members in a given Role

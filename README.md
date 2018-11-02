@@ -61,9 +61,9 @@ If you need to link between pages, always link relatively, and include the .md e
 Indent your sample with a single tab, which will cause it to be rendered as `<pre><code>` tags.
 For inline code, wrap in ` (backtick) chars.
 
-Use # for the headline, ## for sub headers and ### for parameters (on code reference pages)
+Use # for the headline, ## for sub headers and ### for parameters (on code reference pages).
 
-For optional parameters wrap in _ (underscore) - end result: `###_optionalParameter_`
+For optional parameters wrap in _ (underscore) - end result: `###_optionalParameter_`.
 
 ## Structure
 For the documentation project, each individual topic is contained in its own folder.
