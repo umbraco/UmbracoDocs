@@ -21,7 +21,7 @@ __UseSSL configuration option__
 
 Umbraco allows you to force SSL/HTTPS for all backoffice communications very easily but using the following appSettings configuration:
 
-	<add key="umbracoUseSSL" value="true" />
+    <add key="umbracoUseSSL" value="true" />
 
 This options does several things when it is turned on:
 
@@ -35,14 +35,14 @@ Once you enable HTTPS for your site you should redirect all requests to your sit
 
 In your `web.config` find or add the `<system.webServer><rewrite><rules>` section and put the following rule in there. This rule will redirect all requests for the site http://mysite.com URL to the secure https://mysite.com URL and respond with a permanent redirect status.
 
-	<rule name="HTTP to HTTPS redirect" stopProcessing="true">
-		<match url="(.*)" />
-		<conditions>
-			<add input="{HTTPS}" pattern="off" ignoreCase="true" />
-			<add input="{HTTP_HOST}" pattern="localhost" negate="true" />
-		</conditions>
-		<action type="Redirect" url="https://{HTTP_HOST}/{R:1}" redirectType="Permanent" />
-	</rule>        
+    <rule name="HTTP to HTTPS redirect" stopProcessing="true">
+        <match url="(.*)" />
+        <conditions>
+            <add input="{HTTPS}" pattern="off" ignoreCase="true" />
+            <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
+        </conditions>
+        <action type="Redirect" url="https://{HTTP_HOST}/{R:1}" redirectType="Permanent" />
+    </rule>
 
 Note that the rule includes an ignore for `localhost`. If you run your local environment on a different URL than `localhost` you can add additional ignore rules. Additionally, if you have a staging environment that doesn't run on HTTPS, you can add that to the ignore rules too.
 
@@ -79,59 +79,7 @@ You are able [check the username and password against your own credentials](cust
 
 ### Authenticating with Active Directory credentials
 
-Umbraco comes with a built-in `IBackOfficeUserPasswordChecker` for Active Directory: `Umbraco.Core.Security.ActiveDirectoryBackOfficeUserPasswordChecker`.
-
-Remember to add the namespace `Umbraco.Core.Models.Identity` to resolve the `BackOfficeIdentityUser`.
-
-To configure Umbraco to use `ActiveDirectoryBackOfficeUserPasswordChecker`, first install the [Umbraco Identity Extensibility](https://github.com/umbraco/UmbracoIdentityExtensions) package:
-
-    Install-Package UmbracoCms.IdentityExtensions
-
-Then modify `~/App_Start/UmbracoStandardOwinStartup.cs` to override `UmbracoStandardOwinStartup.Configuration` like so:
-
-    public override void Configuration(IAppBuilder app)
-    {
-        // ensure the default options are configured
-        base.Configuration(app);
-        // active directory authentication
-
-        var applicationContext = ApplicationContext.Current;
-        app.ConfigureUserManagerForUmbracoBackOffice<BackOfficeUserManager, BackOfficeIdentityUser>(
-            applicationContext,
-            (options, context) =>
-            {
-                var membershipProvider = Umbraco.Core.Security.MembershipProviderExtensions.GetUsersMembershipProvider().AsUmbracoMembershipProvider();
-		var settingContent = Umbraco.Core.Configuration.UmbracoConfig.For.UmbracoSettings().Content;
-                var userManager = BackOfficeUserManager.Create(
-                    options,
-                    applicationContext.Services.UserService,
-                    applicationContext.Services.EntityService,
-                    applicationContext.Services.ExternalLoginService,
-                    membershipProvider,
-		    settingContent
-                );
-                userManager.BackOfficeUserPasswordChecker = new ActiveDirectoryBackOfficeUserPasswordChecker();
-                return userManager;
-            });
-    }
-
-The `ActiveDirectoryBackOfficeUserPasswordChecker` will look in appSettings for the name of your domain. Add this setting to Web.config:
-
-    <appSettings>
-        <add key="ActiveDirectoryDomain" value="mydomain.local" />
-    </appSettings>
-
-Finally, to use your `UmbracoStandardOwinStartup` class during startup, add this setting to Web.config:
-
-    <appSettings>
-        <add key="owin:appStartup" value="UmbracoStandardOwinStartup" />
-    </appSettings>
-
-If the active directory setup uses usernames instead of emails for authentication this will need configuring against the Umbraco user. This can be done in Umbraco back office under a specific user in user management by setting the name and Username to be the active directory username. Making Username visible for editing requires `usernameIsEmail` in umbracoSettings.config to be set to false:
-
-	<usernameIsEmail>false</usernameIsEmail>
-
-**Note:** if the username entered in the login screen does not already exist in Umbraco then `ActiveDirectoryBackOfficeUserPasswordChecker()` does not run.  Umbraco will fall back to the default authentication.
+You want to [connect the backoffice to Active Directory](authenticate-with-AD.md)? Should be pretty straight forward with the `ActiveDirectoryBackOfficeUserPasswordChecker`.
 
 ### Sensitive data
 
