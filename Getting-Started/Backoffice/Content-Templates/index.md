@@ -1,9 +1,14 @@
+---
+versionFrom: 7.7.0
+---
+
 # Content Templates
+
 Content Templates allows a content editor to create a blueprint for new content nodes based on an existing node.
 
 ## Create - Method 1
 
-Select the 'Content' menu: 
+Select the 'Content' menu:
 
 ![Content Menu](images/01-Content-Menu.png)
 
