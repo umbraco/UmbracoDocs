@@ -48,13 +48,11 @@ Note that the rule includes an ignore for `localhost`. If you run your local env
 
 ## Backoffice users
 
-**Applies to version 7.3.1 and newer**
+Authentication for backoffice users in Umbraco uses [ASP.NET Identity](https://www.asp.net/identity) which is a very flexible and extensible framework for authentication.
 
-Authentication for backoffice users in Umbraco uses [ASP.NET Identity](https://www.asp.net/identity) which is a very flexible and extensible framework for authentication. 
- 
 Out of the box Umbraco ships with a custom ASP.NET Identity implementation which uses Umbraco's database data. Normally this is fine for most Umbraco developers
 but in some cases the authentication process needs to be customized. ASP.NET Identity can be easily extended by using custom OAuth providers which is helpful if you want
-your users to authenticate with a custom OAuth provider like Azure Active Directory, or even Google accounts. ASP.NET identity is also flexible enough for you to override/replace 
+your users to authenticate with a custom OAuth provider like Azure Active Directory, or even Google accounts. ASP.NET identity is also flexible enough for you to override/replace
 any part of the process of authentication.
 
 ### Custom OAuth providers
@@ -67,83 +65,21 @@ The installation of these packages will install snippets of code with readme fil
 
 ![OAuth login screen](images/google-oauth.png)
 
-#### Auto-linking accounts
+#### Auto-linking accounts for custom OAuth providers
 
-Traditionally a backoffice user will need to exist first and then that user can link their user account to an OAuth account in the backoffice, however in many cases the identity server you choose will be the source of truth for all of your users. 
+Traditionally a backoffice user will need to exist first and then that user can link their user account to an OAuth account in the backoffice, however in many cases the identity server you choose will be the source of truth for all of your users.
 
 In this case you would want to be able to create user accounts in your identity server and then have that user given access to the backoffice without having to create the user in the backoffice first. This is done via auto-linking.
 
 Read more about [auto linking](auto-linking.md)
 
-### Replacing the basic username/password check
+### Custom password check
 
-Having the ability to simply replace the logic to validate a username and password against a custom data store is important to some developers. Normally in ASP.NET Identity this
-would require you to override the `UmbracoBackOfficeUserManager.CheckPasswordAsync` implementation and then replace the `UmbracoBackOfficeUserManager` with your own class during startup. 
-Since this is a common task we've made this process a lot easier with an interface called `IBackOfficeUserPasswordChecker`.
-
-Here are the steps to specify your own logic for validating a username and password for the backoffice:
-
-1. Install the UmbracoIdentityExtensions package https://github.com/umbraco/UmbracoIdentityExtensions 
-
-1. Create an implementation of `Umbraco.Core.Security.IBackOfficeUserPasswordChecker`
-
-	* There is one method in this interface: `Task<BackOfficeUserPasswordCheckerResult> CheckPasswordAsync(BackOfficeIdentityUser user, string password);`
-	* The result of this method can be 3 things:
-		* ValidCredentials = The credentials entered are valid and the authorization should proceed
-		* InvalidCredentials = The credentials entered are not valid and the authorization process should return an error
-		* FallbackToDefaultChecker = This is an optional result which can be used to fallback to Umbraco's default authorization process if the credentials could not be verified by your own custom implementation
-
-	For example, to always allow login when the user enters the password `test` you could do:
-	
-		using System.Threading.Tasks;
-		using Umbraco.Core.Models.Identity;
-		using Umbraco.Core.Security;
-		
-		namespace MyNamespace
-		{
-		    public class MyPasswordChecker : IBackOfficeUserPasswordChecker
-		    {
-		        public Task<BackOfficeUserPasswordCheckerResult> CheckPasswordAsync(BackOfficeIdentityUser user, string password)
-		        {
-		            var result = (password == "test") 
-		                ? Task.FromResult(BackOfficeUserPasswordCheckerResult.ValidCredentials)
-		                : Task.FromResult(BackOfficeUserPasswordCheckerResult.InvalidCredentials);
-		
-		            return result;
-		        }
-		    }
-		}
-
-1. Modify the `~/App_Start/UmbracoCustomOwinStartup.cs` class
-
-	* Replace the `app.ConfigureUserManagerForUmbracoBackOffice` call with a custom overload to specify your custom `IBackOfficeUserPasswordChecker`  
-
-            var applicationContext = ApplicationContext.Current;
-            app.ConfigureUserManagerForUmbracoBackOffice<BackOfficeUserManager, BackOfficeIdentityUser>(
-                applicationContext,
-                (options, context) =>
-                {
-                    var membershipProvider = Umbraco.Core.Security.MembershipProviderExtensions.GetUsersMembershipProvider().AsUmbracoMembershipProvider();
-		    var settingContent = Umbraco.Core.Configuration.UmbracoConfig.For.UmbracoSettings().Content;
-                    var userManager = BackOfficeUserManager.Create(options, 
-                        applicationContext.Services.UserService,
-                        applicationContext.Services.EntityService,
-                        applicationContext.Services.ExternalLoginService,
-                        membershipProvider,
-			settingContent);
-			
-                    // Set your own custom IBackOfficeUserPasswordChecker   
-                    userManager.BackOfficeUserPasswordChecker = new MyPasswordChecker();
-                    return userManager;
-                });	
-                
-1. Make sure to switch the `owin:appStartup` appSetting in your `web.config` file to use `UmbracoCustomOwinStartup`: `<add key="owin:appStartup" value="UmbracoCustomOwinStartup"/>`
-
-**Note:** if the username entered in the login screen does not exist in Umbraco then `MyPasswordChecker()` does not run, instead Umbraco will immediately fall back to its internal checks (default Umbraco behavior).
+You are able [check the username and password against your own credentials](custom-password-checker.md) store by implementing a new  `IBackOfficeUserPasswordChecker`.
 
 ### Authenticating with Active Directory credentials
 
-Umbraco 7.5.0+ comes with a built-in `IBackOfficeUserPasswordChecker` for Active Directory: `Umbraco.Core.Security.ActiveDirectoryBackOfficeUserPasswordChecker`. 
+Umbraco comes with a built-in `IBackOfficeUserPasswordChecker` for Active Directory: `Umbraco.Core.Security.ActiveDirectoryBackOfficeUserPasswordChecker`.
 
 Remember to add the namespace `Umbraco.Core.Models.Identity` to resolve the `BackOfficeIdentityUser`.
 
@@ -158,7 +94,7 @@ Then modify `~/App_Start/UmbracoStandardOwinStartup.cs` to override `UmbracoStan
         // ensure the default options are configured
         base.Configuration(app);
         // active directory authentication
-        
+
         var applicationContext = ApplicationContext.Current;
         app.ConfigureUserManagerForUmbracoBackOffice<BackOfficeUserManager, BackOfficeIdentityUser>(
             applicationContext,
@@ -182,13 +118,13 @@ Then modify `~/App_Start/UmbracoStandardOwinStartup.cs` to override `UmbracoStan
 The `ActiveDirectoryBackOfficeUserPasswordChecker` will look in appSettings for the name of your domain. Add this setting to Web.config:
 
     <appSettings>
-      	<add key="ActiveDirectoryDomain" value="mydomain.local" />
+        <add key="ActiveDirectoryDomain" value="mydomain.local" />
     </appSettings>
 
 Finally, to use your `UmbracoStandardOwinStartup` class during startup, add this setting to Web.config:
 
     <appSettings>
-      	<add key="owin:appStartup" value="UmbracoStandardOwinStartup" />
+        <add key="owin:appStartup" value="UmbracoStandardOwinStartup" />
     </appSettings>
 
 If the active directory setup uses usernames instead of emails for authentication this will need configuring against the Umbraco user. This can be done in Umbraco back office under a specific user in user management by setting the name and Username to be the active directory username. Making Username visible for editing requires `usernameIsEmail` in umbracoSettings.config to be set to false:
