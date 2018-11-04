@@ -44,17 +44,17 @@ In your `web.config` find or add the `<system.webServer><rewrite><rules>` sectio
 		<action type="Redirect" url="https://{HTTP_HOST}/{R:1}" redirectType="Permanent" />
 	</rule>        
 
-Note that the rule includes an ignore for `localhost`. If you run your local environment on a different URL than `localhost` you can add additional ignore rules. Additionally, if you have a staging environment that doesn't run on HTTPS, you can add that to the ignore rules too.
+Note that the rule includes an ignore for `locahost`. If you run your local environment on a different URL than `localhost` you can add additional ignore rules. Additionally, if you have a staging environment that doesn't run on HTTPS, you can add that to the ignore rules too.
 
 ## Backoffice users
 
 **Applies to version 7.3.1 and newer**
 
-Authentication for backoffice users in Umbraco uses [ASP.NET Identity](https://www.asp.net/identity) which is a very flexible and extensible framework for authentication. 
+Authentication for backoffice users in Umbraco uses [ASP.Net Identity](https://www.asp.net/identity) which is a very flexible and extensible framework for authentication. 
  
-Out of the box Umbraco ships with a custom ASP.NET Identity implementation which uses Umbraco's database data. Normally this is fine for most Umbraco developers
-but in some cases the authentication process needs to be customized. ASP.NET Identity can be easily extended by using custom OAuth providers which is helpful if you want
-your users to authenticate with a custom OAuth provider like Azure Active Directory, or even Google accounts. ASP.NET identity is also flexible enough for you to override/replace 
+Out of the box Umbraco ships with a custom ASP.Net Identity implementation which uses Umbraco's database data. Normally this is fine for most Umbraco developers
+but in some cases the authentication process needs to be customized. ASP.Net Identity can be easily extended by using custom OAuth providers which is helpful if you want
+your users to authenticate with a custom OAuth provider like Azure Active Directory, or even Google accounts. ASP.Net identity is also flexible enough for you to override/replace 
 any part of the process of authentication.
 
 ### Custom OAuth providers
@@ -69,15 +69,30 @@ The installation of these packages will install snippets of code with readme fil
 
 #### Auto-linking accounts
 
-Traditionally a backoffice user will need to exist first and then that user can link their user account to an OAuth account in the backoffice, however in many cases the identity server you choose will be the source of truth for all of your users. 
+Traditionally a backoffice user will need to exist first and then that user can link their user account to an OAuth account in the backoffice, however in many cases the identity server you choose will be the source of truth for all of your users. In this case you would want to be able to create user accounts in your identity server and then have that user given access to the backoffice without having to create the user in the backoffice first. This is done via auto-linking. There are auto-link options you can specify for your OAuth provider (see http://issues.umbraco.org/issue/U4-6753 for other details). 
 
-In this case you would want to be able to create user accounts in your identity server and then have that user given access to the backoffice without having to create the user in the backoffice first. This is done via auto-linking.
+Here's an example of specifying auto link options for your OAuth provider:
 
-Read more about [auto linking](auto-linking.md)
+    // create the options, all parameters are optional but if you wish to enable
+    // any auto-linking, the autoLinkExternalAccount parameter must be true
+    var autoLinkOptions = new ExternalSignInAutoLinkOptions(
+		autoLinkExternalAccount:true, 
+		defaultUserType: "editor", 
+		defaultCulture: "en-US");
+    
+    // an optional callback you can specify to give you more control over how the 
+    // backoffice user is created (auto-linked)
+    autoLinkOptions.OnAutoLinking = (BackOfficeIdentityUser user, ExternalLoginInfo info) =>
+    {
+		// this callback will execute when the user is being auto-linked but before it is created
+		// so you can modify the user before it's persisted
+    };
+    
+    identityServerOptions.SetExternalSignInAutoLinkOptions(autoLinkOptions);
 
 ### Replacing the basic username/password check
 
-Having the ability to simply replace the logic to validate a username and password against a custom data store is important to some developers. Normally in ASP.NET Identity this
+Having the ability to simply replace the logic to validate a username and password against a custom data store is important to some developers. Normally in ASP.Net Identity this
 would require you to override the `UmbracoBackOfficeUserManager.CheckPasswordAsync` implementation and then replace the `UmbracoBackOfficeUserManager` with your own class during startup. 
 Since this is a common task we've made this process a lot easier with an interface called `IBackOfficeUserPasswordChecker`.
 
@@ -191,17 +206,13 @@ Finally, to use your `UmbracoStandardOwinStartup` class during startup, add this
       	<add key="owin:appStartup" value="UmbracoStandardOwinStartup" />
     </appSettings>
 
-If the active directory setup uses usernames instead of emails for authentication this will need configuring against the Umbraco user. This can be done in Umbraco back office under a specific user in user management by setting the name and Username to be the active directory username. Making Username visible for editing requires `usernameIsEmail` in umbracoSettings.config to be set to false:
-
-	<usernameIsEmail>false</usernameIsEmail>
-
 **Note:** if the username entered in the login screen does not already exist in Umbraco then `ActiveDirectoryBackOfficeUserPasswordChecker()` does not run.  Umbraco will fall back to the default authentication.
 
 ### Sensitive data
 
-Marking fields as sensitive will hide the data in those fields for backoffice users that have no business viewing personal data of members.
+Umbraco 7.9 and higher introduces a something called "Sensitive data" for member data. Marking fields as sensitive will hide the data in those fields for backoffice users that have no business viewing personal data of members.
 
-In order to start marking fields as sensitive, you can add the users who need access to this data to the "Sensitive data" user group. In the User management sections go to Groups and choose the Sensitive data group.
+If you've upgraded from a version before 7.9.0, none of the backoffice users will have access to sensitive data by default. In order to start marking fields as sensitive, you can add the users who need access to this data to the "Sensitive data" user group. In the User management sections go to Groups and choose the Sensitive data group.
 
 ![Sensitive data user group](images/sensitive-data-user-group.jpg)
 
