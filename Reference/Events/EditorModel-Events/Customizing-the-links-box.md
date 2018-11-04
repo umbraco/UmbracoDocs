@@ -2,7 +2,7 @@
 
 For a content item, Umbraco will show a **Links** box under the **Info** tab. By default, this box will show one or more links to content item.
 
-![image](https://user-images.githubusercontent.com/3634580/47749133-baa97500-dc8c-11e8-80be-2068d16c7dce.png)
+![image](Images/properties-info-tab.png)
 
 With the `SendingContentModel` event, we can manipulate the links in the `Urls` property - eg. replace it with some custom links (although a URL provider may be more suitable):
 
