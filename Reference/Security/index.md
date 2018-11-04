@@ -67,8 +67,6 @@ Users who don't have access to sensitive data also do not have access to the "Ex
 
 ![Export member](images/export-member.png)
 
-
-
 ### [Setup Umbraco for a FIPS Compliant Server](Setup-Umbraco-for-a-Fips-Server/index.md)
 
 How to configure Umbraco to run on a FIPS compliant server.

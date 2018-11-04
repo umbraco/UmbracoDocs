@@ -26,6 +26,7 @@ For example, to always allow login when the user enters the password `test` you 
     using Umbraco.Core.Models.Identity;
     using Umbraco.Core.Security;
 
+```C#
     namespace MyNamespace
     {
         public class MyPasswordChecker : IBackOfficeUserPasswordChecker
@@ -40,11 +41,13 @@ For example, to always allow login when the user enters the password `test` you 
             }
         }
     }
+```
 
 1. Modify the `~/App_Start/UmbracoCustomOwinStartup.cs` class
 
     * Replace the `app.ConfigureUserManagerForUmbracoBackOffice` call with a custom overload to specify your custom `IBackOfficeUserPasswordChecker`  
 
+```C#
             var applicationContext = ApplicationContext.Current;
             app.ConfigureUserManagerForUmbracoBackOffice<BackOfficeUserManager, BackOfficeIdentityUser>(
                 applicationContext,
@@ -63,7 +66,10 @@ For example, to always allow login when the user enters the password `test` you 
                     userManager.BackOfficeUserPasswordChecker = new MyPasswordChecker();
                     return userManager;
                 });
+```
 
 1. Make sure to switch the `owin:appStartup` appSetting in your `web.config` file to use `UmbracoCustomOwinStartup`: `<add key="owin:appStartup" value="UmbracoCustomOwinStartup"/>`
 
-**Note:** if the username entered in the login screen does not exist in Umbraco then `MyPasswordChecker()` does not run, instead Umbraco will immediately fall back to its internal checks (default Umbraco behavior).
+:::note
+if the username entered in the login screen does not exist in Umbraco then `MyPasswordChecker()` does not run, instead Umbraco will immediately fall back to its internal checks (default Umbraco behavior).
+:::

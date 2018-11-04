@@ -5,7 +5,9 @@ keywords: oauth, security
 
 # Auto Linking accounts
 
-**This article contains information from the old issue tracker [U4-6753 - Identity support must have an option to enable auto-linked accounts](https://issues.umbraco.org/issue/U4-6753)**
+:::note
+This article contains information from the old issue tracker [U4-6753 - Identity support must have an option to enable auto-linked accounts](https://issues.umbraco.org/issue/U4-6753)
+:::
 
 For some providers it doesn't make sense to have to link external accounts after a local account has been created. These providers would be OAuth providers such as Active Directory providers where the admin knows that only their user's with auth against the end-point.
 
@@ -17,8 +19,10 @@ To do this there is an extension method on `Microsoft.Owin.Security.Authenticati
 
 This is done during the configuration of the OAuth provider, the options class allows you to dynamically return data for each of it's methods if required, alternatively you can specify what the methods will return based on it's ctor arguments. Generally there would be very little to configure and if you wanted to auto-link/create local accounts based on your external OAuth provider you can just do (for example):
 
+```C#
     googleOptions.SetExternalSignInAutoLinkOptions(
       new ExternalSignInAutoLinkOptions(autoLinkExternalAccount: true));
+```
 
 The custom options also have a field to display a custom angular view after the linking has taken place, this view can be used to gather further user information such as their name, a local login name or password, etc... This hasn't been implemented yet, will do soon.
 
@@ -26,6 +30,7 @@ The custom options also have a field to display a custom angular view after the 
 
 Here's an example of specifying auto link options for your OAuth provider:
 
+```C#
     // create the options, all parameters are optional but if you wish to enable
     // any auto-linking, the autoLinkExternalAccount parameter must be true
     var autoLinkOptions = new ExternalSignInAutoLinkOptions(
@@ -42,3 +47,4 @@ Here's an example of specifying auto link options for your OAuth provider:
     };
 
     identityServerOptions.SetExternalSignInAutoLinkOptions(autoLinkOptions);
+```
