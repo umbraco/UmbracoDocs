@@ -1,7 +1,3 @@
----
-versionFrom: 7.0.0
----
-
 # Rendering content
 
 _The primary task of any template in Umbraco is to render the values of the current page or the result of query against the content cache._
