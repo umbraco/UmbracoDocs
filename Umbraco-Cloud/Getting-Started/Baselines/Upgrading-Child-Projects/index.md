@@ -29,10 +29,12 @@ On this page you'll notice that all the children will be marked as if they have 
 
 The upgrade itself will happen, once you click the upgrade button. This will start by triggering the update, where all the files are updated on the children from the baseline. Once the files are in place we also run the upgrade process, making sure that the children are fully upgraded, once done. 
 
-When using the feature, it is important that the Baseline Child projects have been setup following our [best practices for handling config files](../Configuration-files). This means that any changes to the Child project, shoud be applied via a config transform file. The reason is that the Child projects config files will be merged by choosing the parents config files first, to ensure that changes to config files, that has been made in the minor upgrade, will also be applied to the childsites.
+When using the feature, it is important that the Baseline Child projects have been setup following our [best practices for handling config files](../Configuration-files). This means that any changes to the Child project, shoud be applied via a config transform file. The reason is that the Child projects config files will be merged by choosing the parents config files first, to ensure that changes to config files, that has been made in the minor upgrade, will also be applied to the child projects.
 
 ### Errors while upgrading children from baseline
-If for some reason the update of a child fail, or the child is left in a weird state, where it has some wrong configuration files, it is most likely because the child was unable to be merged properly. When updating Child projects from a Baseline project, a configuration file will be preferred from the child over the one from the baseline. This means that when the update from the baseline to the child runs, the configuration file sometimes won’t be changed. 
+If for some reason the update of a Child projects fails, or the Child project is left in a bad state, where it has some wrong configuration files, it is most likely because the Child project was unable to be merged properly. 
+
+When updating Child projects from a Baseline project, a configuration from the Child project will take precedence over the Baseline project configuration. This means that when the update from the baseline to the child runs, the configuration file sometimes won’t be changed. 
 
 To fix this, it is important to follow the flow shown in [Handling configuration files](../Configuration-files/). It prevents that the child will update configuration files, and will ensure the best flow between the baseline and the child.
 
