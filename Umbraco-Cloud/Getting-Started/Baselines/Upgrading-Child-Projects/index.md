@@ -23,7 +23,7 @@ Following [Minor upgrades](../../Upgrades/#minor-version-upgrades) guide and pro
 
 Once the upgrade has been verified on the Baseline project, and you've made sure everything works as expected, you should go to the **Manage Child Projects** page on the Baseline. 
 
-On this page you'll notice that all the children will be marked as if they have a pending upgrade. At this point you are able to select one or more projects to upgrade. 
+On this page you'll notice that all the children will be marked with pending upgrades. At this point you are able to select one or more projects to upgrade. 
 
 ![Minor upgrade labels](images/minor-upgrades.png)
 
