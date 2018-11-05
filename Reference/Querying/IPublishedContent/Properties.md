@@ -40,16 +40,16 @@ Returns the Url encoded name of the page
 Returns the Alias of the Document type used by this content item.
 
 ### .WriterName
-Returns the name of the Umbraco back office user that performed the last update operation on the content item.
+Returns the name of the Umbraco backoffice user that performed the last update operation on the content item.
 
 ### .CreatorName
-Returns the name of the Umbraco back office user that initially created the content item.
+Returns the name of the Umbraco backoffice user that initially created the content item.
 
 ### .WriterId
-Returns the Id of the Umbraco back office user that performed the last update operation to the content item.
+Returns the Id of the Umbraco backoffice user that performed the last update operation to the content item.
 
 ### .CreatorId
-Returns the Id of the Umbraco back office user that initially created the content item.
+Returns the Id of the Umbraco backoffice user that initially created the content item.
 
 ### .Path
 Returns a comma delimited string of Node Ids that represent the path of content items back to root.
@@ -86,13 +86,13 @@ For example, to return the `string` result of "siteName" you would do:
  	@(Model.Content.GetPropertyValue<string>("siteName"))
 		 
  Some property value converters support multiple return value formats, for example if a property value
- normally returns a comma seperated value list like: "5677,3456,8776", then the property value
+ normally returns a comma separated value list like: "5677,3456,8776", then the property value
  converter for the property editor might support converting directly to an enumerable list of integers, for example:
  
  	@(Model.Content.GetPropertyValue<IEnumerable<int>>("mediaIds"))
 
 Another example might be if a property editor stores a JSON value, it might support converting to a custom 
-strongly typed model such as, or at the very least the JSON would be convertable to a `JObject` instance, for example:
+strongly typed model such as, or at the very least the JSON would be convertible to a `JObject` instance, for example:
 
  	@(Model.Content.GetPropertyValue<NestedContentModel>("nestedContent"))
 		 
@@ -107,7 +107,7 @@ strongly typed model such as, or at the very least the JSON would be convertable
 Returns a boolean value representing if the IPublishedContent has a property with the specified alias.
 
 ### .HasValue(string propertyAlias)
-Retruns a boolean value representing if the IPublishedContent property has had a value set.
+Returns a boolean value representing if the IPublishedContent property has had a value set.
 
 ### .IsNull(string propertyAlias)
 Returns a boolean value representing if the IPublishedContent property is Null.

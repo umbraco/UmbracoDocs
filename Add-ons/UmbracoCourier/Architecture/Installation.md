@@ -1,6 +1,67 @@
-#Installation
+# Installation
 
-##Installing Courier 2 using a package
+## Installing Courier 3
+
+The following guide will use to example sites; *development.site* and *live.site*. The guide will go through how to install and configure Umbraco Courier on two environments in order to be able to use Courier to transfer types and content between the two.
+
+* Go to the **Developer** section of the backoffice
+* Find **Packages** in the left navigation tree
+* The **Umbraco Courier** package is usually one of the top packages - otherwise you can simply search for it
+* Follow the installation directions
+* Once Courier has been installed, make sure to **refresh the page**
+* Next step is to **add a location** 
+    * In the gif below Courier is installed on development.site project, and live.site is added as the location since this is the project I want to transfer to/from
+* The location you add, will be set in the `config/courier.config` file as a *repository*. Learn more about this in the [Repository Providers](RepositoryProviders.md) article.
+
+![InstallingCourier](images/InstallCourier.gif)
+
+Go through these steps on all the environments / projects where you want to use Courier.
+
+Before you can start transferring between your projects, you need to **add a Courier API key** to the `courier.config` file on all the projects.
+
+* Find the `courier.config` file in the `/config` folder
+* In the `<security>` section, find the `<auth>` section - it will look like this:
+
+        <auth>
+            <method>credentials</method>
+            <apikey></apikey>
+        </auth>
+
+* Change `<method>` to **token**
+* Add a **randomly generated api key with at least 10 characters** - this could be anything, fx 1234567890
+* The <auth> section should look something like this:
+
+        <auth>
+            <method>token</method>
+            <apikey>1234567890</apikey>
+        </auth>
+
+* Make sure to make this change on all the projects where you want to use Courier
+* **Important:** For Courier to work between the projects, you need to use the same Courier API key on all projects
+
+You have now set up Courier on all your projects, and you are ready to start transferring between the environments!
+
+**NOTE:** If you are testing Courier locally, you need to setup local host names to run your projects from. Follow the steps outlined below to get up and running.
+
+### Testing Courier locally
+
+When you are testing Courier on two Umbraco instances locally, it’s recommended that you bind local host names to the instances.
+
+* Open **IIS (Internet Information Services) Manager** on your local Windows machine
+* In the navigation bar to the left, right-click on **Sites**, and choose **Add Websites…**
+* Give the site a name - example: Development.site
+* Add the **path to the project directory**
+* Finally, set the hostname - *example: development.site*
+* When you click ‘*OK*’ the website will start
+* In the navigation to the left, click **Browse _yourdomain_** 
+
+![Setup Local hostnames](images/setupLocalIIShostnames.gif)
+
+
+----
+
+
+## Installing Courier 2 using a package
 
 1. Open the embrace repository from the developer section in Umbraco
 2. Browse to the Umbraco PRO category
@@ -10,7 +71,7 @@
 6. If you have bought a license, copy the .lic file to the website's /bin folder or use the dashboard to configure your license
 7. That's it
 
-##Updating Courier 2 to 2.x
+## Updating Courier 2 to 2.x
 If you already have Courier 2.0 installed, follow these steps to upgrade to 2.x:
 
 1. Backup your /config/courier.config file
@@ -26,7 +87,7 @@ If you already have Courier 2.0 installed, follow these steps to upgrade to 2.x:
 5. You're done
 
 
-##Manual installation
+## Manual installation
 If for some reason the package installation fails or due to permissions or other reasons is not an option on your system, we provide a manual installation process.
 
 To manually install, download the manual install package from umbraco.com or one of the hotfix releases from nightly.umbraco.org
@@ -40,13 +101,13 @@ Folders containing the application files for Courier 2
  * **/sql/uninstall folder**
 Contains the single uninstall sql script, which will remove custom courier table as well as the any courier app entries, it will not remove any files
 
-###Installing the files
+### Installing the files
 Simply unzip the /bin, /config and /umbraco folders to the root of your website, the archive follows the structure needed to place the files correctly. Notice: the archive assumes your Umbraco director is located at /umbraco. If not you will need to move those files manually to the right location.
 
 If you have purchased Umbraco Courier, you can download a license file on umbraco.com. This license file must be placed in the websites /bin directory to be registered.
 
-###Installing the database
-To install the database we need to execute a sql script against the database Umbraco is installed on. Courier  currently only supports SQL server 2005 and 2008.
+### Installing the database
+To install the database, we need to execute a sql script against the database Umbraco is installed on. Courier  currently only supports SQL server 2005 and 2008.
 
 * Open Microsoft Sql Server Management Studio and connect to your database. 
 * Right click your Umbraco database and choose "new query" 
@@ -56,5 +117,5 @@ To install the database we need to execute a sql script against the database Umb
 
 If any errors are displayed, check your permissions. The install script requires database owner access, as it creates new tables. 
 
-###Uninstalling the database
+### Uninstalling the database
 In case of error you can use the /sql/uninstall/uninstall.sql file to remove all courier tables. Follow the same procedure as the one describing "installing the database"

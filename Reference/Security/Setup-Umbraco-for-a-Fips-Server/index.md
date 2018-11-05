@@ -76,8 +76,8 @@ __Can I install Umbraco directly on a version of Windows with FIPS mode enabled?
 
 Installing to the FIPS server may not work.  It's best to deploy an existing known working version to the FIPS server.
 
-[1]:http://csrc.nist.gov/publications/PubsFIPS.html#140-2
+[1]:https://csrc.nist.gov/publications/PubsFIPS.html#140-2
 [2]:https://www.howtogeek.com/245859/why-you-shouldnt-enable-fips-compliant-encryption-on-windows/
-[3]:Getting-Started\Setup\Upgrading\index.md
+[3]:../../../Getting-Started/Setup/Upgrading/
 [4]:https://github.com/apache/lucenenet
 [5]:https://github.com/apache/lucenenet/blob/Lucene.Net_2_9_4_RC3/src/core/SupportClass.cs#L1421

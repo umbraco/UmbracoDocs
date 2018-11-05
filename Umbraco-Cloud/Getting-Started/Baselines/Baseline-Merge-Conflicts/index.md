@@ -5,7 +5,7 @@ On a Baseline project you can click to _“Manage updates here”_, which enable
 
 ![Upgrades Baseline children](images/manage-baseline-children.gif)
 
-Select the child projets you want to upgrade, and click **Update selected children**.
+Select the child projects you want to upgrade, and click **Update selected children**.
 The overview will then change to show the progress and status for updating the various child projects.
 
 The outcome of the update will result in one of three statuses:
@@ -21,7 +21,7 @@ A merge conflict is something you currently need to handle manually in order to 
 
 **Note:** Since the following documentation was outlined we've made quite a few improvements to the Baseline workflow. For the most part this documentation is still relevant and we are working on getting them updated with the latest details.
 
-In order to resolve the conflict you need to open up the SCM / Kudu site for the development environment. Click the “[link]” (see screenshot above) for the project (see screenshot above) and find clone url for the development site, which is similar to this: `https://dev-my-website-alias.scm.umbraco.io/c565ead8-7a27-4696-9ab4-dad7eba2cd2c.git` and remove everything after the last slash, so you have a url that looks like this: `https://dev-my-website-alias.scm.umbraco.io`
+In order to resolve the conflict you need to go to the **child site** open up the SCM / Kudu site for the development environment. Click the “[link]” (see screenshot above) for the project (see screenshot above) and find clone url for the development site, which is similar to this: `https://dev-my-website-alias.scm.umbraco.io/c565ead8-7a27-4696-9ab4-dad7eba2cd2c.git` and remove everything after the last slash, so you have a url that looks like this: `https://dev-my-website-alias.scm.umbraco.io`
 
 ![environment](images/getcloneurl.jpg)
 
@@ -50,13 +50,13 @@ In the above output two files are listed and we want to pick the ones that comes
 
 _Note_: If you wanted to select the files from the Baseline project instead of the ones from the current project, you should simply write “--theirs” instead of “--ours” in the command from above. “Ours” corresponds to the current project (the development site) and “Theirs” corresponds to the Baseline project.
 
-Now you need to add the (modified) files to git and finally commit the changes using the following commands:
+Now you need to add the (modified) files to Git and finally commit the changes using the following commands:
 
     git add .
     git commit -m “Resolving merge conflicts”
 
 The merge conflict has now been resolved, and you can update your local repository with the latest changes by pulling from the development site.
-Please note that the changes from the commit haven’t been deployed to the website yet, as we have only applied the changes to the git repository. In order to deploy the recent changes to the website you can push your local changes to the development site (please refer to this documentation for pushing changes from your local repository) or you can use the Kudu api to trigger a deployment.
+Please note that the changes from the commit haven’t been deployed to the website yet, as we have only applied the changes to the Git repository. In order to deploy the recent changes to the website you can push your local changes to the development site (please refer to this documentation for pushing changes from your local repository) or you can use the Kudu api to trigger a deployment.
 You can use the following command from the Kudu Debug Console to deploy the latest changes:
 
     curl https://dev-my-website-alias.scm.s1.umbraco.io/api/deployments -X PUT -H "Content-Type: Application/json" --data "{ }" --user yourusername:password

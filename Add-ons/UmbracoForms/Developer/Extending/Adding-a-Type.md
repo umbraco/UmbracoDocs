@@ -4,7 +4,7 @@ To add a new type, no matter if it's a workflow, field, data source, etc, there 
 
 ## Preparations
 
-Create a new asp.net or class project in Visual Studio add references to the Umbraco.Forms.Core.dll.
+Create a new ASP.NET or class project in Visual Studio add references to the Umbraco.Forms.Core.dll.
 
 ## Adding the type to Forms
 
@@ -87,7 +87,7 @@ Here is an example of overriding the Textarea field aka Long Answer that is take
 
     public class TextareaWithCount : Umbraco.Forms.Core.Providers.FieldTypes.Textarea
     {
-        //Added a new setting when we add our field to the form
+        // Added a new setting when we add our field to the form
         [Umbraco.Forms.Core.Attributes.Setting("Max length",
         description = "Max length",
         view = "TextField")]
@@ -95,10 +95,10 @@ Here is an example of overriding the Textarea field aka Long Answer that is take
 
         public TextareaWithCount()
         {
-            //Set a different view for this fieldtype
+            // Set a different view for this fieldtype
             this.FieldTypeViewName = "FieldType.TextareaWithCount.cshtml";
 
-            //We can change the default name of 'Long answer' to something that suits us
+            // We can change the default name of 'Long answer' to something that suits us
             this.Name = "Long Answer with Limit";
         }
 

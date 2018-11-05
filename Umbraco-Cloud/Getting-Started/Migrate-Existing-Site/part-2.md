@@ -7,8 +7,8 @@ Before the migration process can start, you will need to have an Umbraco Cloud p
 
 ![How to start an Umbraco Cloud trial](images/start-trial.gif)
 
-1. The best way to get started with Umbraco Cloud is to start a trial. You can do this, by visiting [umbraco.com](http://umbraco.com).
-2. When your project is starting choose to start with a *clean slate* - you need to have an empty Cloud project for the migration to be succesful.
+1. The best way to get started with Umbraco Cloud is to start a trial. You can do this, by visiting [umbraco.com](https://umbraco.com).
+2. When your project is starting choose to start with a *clean slate* - you need to have an empty Cloud project for the migration to be successful.
 3. We recommend that you setup your project with at least two environments.
 
 ![Manage environments](images/setup-dev-env.png)
@@ -20,7 +20,7 @@ Before you clone down the Umbraco Cloud project to your local machine, login to 
 
 ## Clone down your Umbraco Cloud project
 
-Now it's time to clone down your Umbraco Cloud project to your local machine. You can read more about how this is done, in the ['Working Locally'](https://our.umbraco.org/documentation/Umbraco-Cloud/Set-Up/Working-Locally/) chapter.
+Now it's time to clone down your Umbraco Cloud project to your local machine. You can read more about how this is done, in the ['Working Locally'](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Working-Locally/) chapter.  If you have a Visual Studio solution with different projects, read first about the [Visual Studio Setup](../Set-Up/Visual-Studio/).
 
 Run the site locally and verify your own project and the cloned Umbraco Cloud project are using the same Umbraco version. After you've verified this, shut down the site, and it's now time to start merging the two projects.
 

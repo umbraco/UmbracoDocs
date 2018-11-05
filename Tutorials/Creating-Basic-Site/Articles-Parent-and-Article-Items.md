@@ -1,13 +1,13 @@
-#Articles Parent and Article Items - A Parent Page with Infinite Children
+# Articles Parent and Article Items - A Parent Page with Infinite Children
 
-Having an Articles Parent page and a number of associated child articles which the editors can add to freely provides a good example page of the power of Umbraco. We'll assume our fictional company, Widgets Ltd, write about ten articles a month and want the articles page to act like a blog (e.g. you could use this functionality for a blog or news and events pages).
+Having an Articles Parent page, and a number of associated child articles which the editors can add to freely, provides a good example page of the power of Umbraco. We'll assume our fictional company, Widgets Ltd, write about ten articles a month and want the articles page to act like a blog (e.g. you could use this functionality for a blog or news and events pages).
 
 
 Create two new Document Types "_Articles Main_" and "_Articles Item_" **_Document Types Settings > Document Types (hover) > ... > + Create_**. Remember to use the option that creates the template for you.  
 
 
 Create the following **_Tabs_** and **_Data Properties_**:
-####Articles Main
+#### Articles Main
 >Tab = Intro
 
 
@@ -23,7 +23,7 @@ Create the following **_Tabs_** and **_Data Properties_**:
 *Figure 38 - Articles Main Document Type Data Properties*
 
 
-####Articles Item
+#### Articles Item
 >Tab = Contents
 
 
@@ -45,7 +45,7 @@ Now go to the **_Settings > Document Types >Articles Main node > Permissions scr
 Now go to **_Content > Homepage node (hover)> ..._** and create a node called "_Articles_" of type **_Articles Main_** (if you don't have this option go back and check your allowed child nodes - did you forget to click **_Save_**)?  Give the Articles node some content and a title and then create a couple of article item content nodes under this node (**_Content > Homepage node > Articles node (hover) >  ..._** 
 
 
-Now you should have a content tree that looks like the image below (obviously with your own page node names).  Let's go update our templates we just created (automatically when we created the Document Types). First update them to use the Master as a parent **_Settings > Templates > Articles Main node > Properties tab > Master template dropdown_** = "Master" - do the same for the Articles Item remembering to click **_Save_**. 
+Now you should have a content tree that looks like the image below (obviously with your own page node names).  Let's go update our templates we just created (automatically when we created the Document Types). First, update them to use the Master as a parent **_Settings > Templates > Articles Main node > Properties tab > Master template dropdown_** = "Master" - do the same for the Articles Item remembering to click **_Save_**. 
 
 
 ![Content Tree With Articles](images/figure-40-articles-created.png)
@@ -61,7 +61,7 @@ Copy the template content from the **_Simple Content Page_**  template and paste
 If we now go and check our Articles Main page in the browser we should see our content. We'd like to list the child article items under the intro content so that our visitors can see a list of our articles. Umbraco makes this easy for us but we need to use a bit of Razor.
 
 
-Click on the **_Developer_** menu from the left hand side menu and then hover over the **_Partial View Macros Files node_** to get the more menu **_..._** then **_click + Create_**. Name this "_listArticles_" and select the "_List Child Pages Ordered By Date_" in the **_Choose a snippet_** field and click **_Create_**.
+Click on the **_Developer_** menu from the left-hand side menu and then hover over the **_Partial View Macros Files node_** to get the more menu **_..._** then **_click + Create_**. Name this "_listArticles_" and select the "_List Child Pages Ordered By Date_" in the **_Choose a snippet_** field and click **_Create_**.
 
 
 Now all we have to do is wire up the Articles main page to list our child articles. Edit the Articles Main template **_Settings > Templates node > Master node > Articles Main node > Template tab_**.  Under the *articlesBodyText* tag enter a carriage return and then click the **_Insert Macro_** button, choose the ListArticles macro we just created and then click **_Save_**. 
@@ -106,6 +106,6 @@ Now check this in the browser!
 
 
 ---
-##Next - [Conclusions and Where Next?](Conclusions-Where-Next.md)
+## Next - [Conclusions and Where Next?](Conclusions-Where-Next.md)
 By this point you'll have a basic working site - where next?  You've barely scratched the surface of the power of Umbraco!
 

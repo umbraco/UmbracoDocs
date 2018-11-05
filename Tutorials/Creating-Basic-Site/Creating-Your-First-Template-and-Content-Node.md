@@ -1,4 +1,4 @@
-#Creating (Editing) Your First Template
+# Creating (Editing) Your First Template
 
 
 Next click the expand node icon (it's the small triangle) behind the **_Settings >_** **_Templates folder_** - you should then see a child node titled "_Homepage_" - Umbraco created this automatically when we created the **_Document Type_** (remember that option that said "..without template", we chose the one with and this is what it did).  
@@ -31,7 +31,7 @@ We now have a template. That's two out of the three stages complete for our firs
 Our third and final stage to creating our first page in Umbraco is to create a content node where an editor can add the content which Umbraco will use, along with the Document Type and Template, to serve up an HTML page to web visitors. 
 
 
-We're now ready to create our first page in Umbraco!   Click the **_Content_** button (first option in the left hand menu).  
+We're now ready to create our first page in Umbraco!   Click the **_Content_** button (first option in the left-hand menu).  
 
 
 Hover over the grey text **_CONTENT_**  and you'll see the three dots **_..._** - click this.  If you've done everything correctly so far you should see the option to create our Homepage! 
@@ -87,5 +87,5 @@ Now click the green **_Save and publish_** button.  The menu will reload with ou
 
 
 ---
-##Next - [CSS & Javascript](CSS-And-Javascript.md)
-Adding the CSS and Javascript for your site into Umbraco.
+## Next - [CSS & JavaScript](CSS-And-JavaScript.md)
+Adding the CSS and JavaScript for your site into Umbraco.

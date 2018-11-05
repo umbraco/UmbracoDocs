@@ -1,8 +1,8 @@
-#Recursively select a property
+# Recursively select a property
 
 Sometimes in your XSLT you need to access the data not just on the $currentPage but possibly any parent nodes.
 
-For example using the related links data type to ouput a list of links on the currentPage works OK if I have that property on that page
+For example using the related links data type to output a list of links on the currentPage works OK if I have that property on that page
 
 	<xsl:for-each select="$currentPage/data [@alias='links']//link>
 		...

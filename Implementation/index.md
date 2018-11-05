@@ -1,14 +1,12 @@
-#Implementation
+# Implementation
 
 *Get to know the Umbraco codebase. Developing an application requires knowledge about the tool you're working with. This section will give you an introduction to the structure of Umbraco.*
 
 <div class="row implementation">
 	<div class="col-sm-12"></div>
 </div>
-
 <div class="row">
 	<div class="col-xs-3 point">
-
 	</div>
 	<div class="col-xs-3">
 		<span class="dot big icon-Forking">
@@ -25,7 +23,6 @@
 		</div>
 	</div>
 </div>
-
 <div class="row">
 	<div class="col-xs-3">
 		<span class="dot big icon-Circuits">
@@ -34,7 +31,6 @@
 			<span class="line h-line"></span>
 		</span>
 	</div>
-
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
@@ -44,7 +40,6 @@
 		</div>
 	</div>
 </div>
-
 <div class="row">
 	<div class="col-xs-3">
 		<span class="dot big icon-Directions-alt">
@@ -62,7 +57,6 @@
 		</div>
 	</div>
 </div>
-
 <div class="row">
 	<div class="col-xs-3">
 		<span class="dot big icon-Server-alt">
@@ -80,7 +74,6 @@
 		</div>
 	</div>
 </div>
-
 <div class="row">
 	<div class="col-xs-3">
 		<span class="dot big icon-Globe">
@@ -91,8 +84,8 @@
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
-				<h4 class="text-right"><a href="Rest-Api/">REST APIs</a></h4>
-				<small>Information about using the REST API add-on for Umbraco</small>
+				<h4 class="text-right"><a href="https://github.com/umbraco/UmbracoRestApi">REST APIs</a></h4>
+				<small>(Discontinued) Information about using the REST API add-on for Umbraco</small>
 			</div>
 		</div>
 	</div>

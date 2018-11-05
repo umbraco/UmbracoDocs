@@ -1,4 +1,4 @@
-#BaseRestExtension.config
+# BaseRestExtension.config
 
 BaseRestExtension.config contains the data necessary for the /Base system when exposing the methods in your class library.
 
@@ -29,14 +29,14 @@ The method tag contains the following attributes:
 
 The user calling the method, will be allowed if she has access through at least one of the possible attribute values. If allowAll is set to true, the other attributes has no effect, everyone will be allowed. 
 
-###Example
+### Example
 
 _BaseRestExtensions.config_
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<BaseRestExtensions>
 	  
-	  <extension alias="test" type="BasetTest.TestClass,basetest">
+	  <extension alias="test" type="BaseTest.TestClass,basetest">
 	    <method name="Hello" returnXml="false" allowAll="true"></method>
 	  </extension>
 	  
@@ -57,7 +57,7 @@ Visit the /base url. For example: http://example.com/base/test/Hello/.
 	Hello World
 
 **Also check out the examples included with Umbraco:**
-- [BaseRestExtensions.config](https://github.com/umbraco/Umbraco-CMS/blob/6.2.0/src/Umbraco.Web.UI/config/BaseRestExtensions.config)
-- [MemberRest.cs](https://github.com/umbraco/Umbraco-CMS/blob/6.2.0/src/Umbraco.Web/BaseRest/MemberRest.cs)
+- [BaseRestExtensions.config](https://github.com/umbraco/Umbraco-CMS/blob/dev-v7/src/Umbraco.Web.UI/config/BaseRestExtensions.config)
+- [MemberRest.cs](https://github.com/umbraco/Umbraco-CMS/blob/dev-v7/src/Umbraco.Web/BaseRest/MemberRest.cs)
 
 The config is clean and  simple.  If you are familiar with C# and interested in taking a peek behind the scenes check out https://github.com/umbraco/Umbraco-CMS/tree/6.2.0/src/Umbraco.Web/BaseRest/Configuration

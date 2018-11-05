@@ -1,4 +1,4 @@
-#Using events
+# Using events
 
 Umbraco uses .Net events to allow you to hook into the workflow processes for the backoffice. For example you might want to execute some code every time a page is published. Events allow you to do that.
 
@@ -10,7 +10,7 @@ Umbraco allows you to execute code during application startup. This is also the 
 
 Typically, the events available exist in pairs, with a "before" and "after" event. For example the ContentService class has the concept of publishing, and fires events when this occurs. In that case there is both a ContentService.Publishing and ContentService.Published event. 
 
-Which one you want to use depends on what you want to achieve. If you want to be able to cancel the action, then you would use the "before" event, and use the eventargs to cancel it. See the sample handler further down. If you want to execute some code after the publishing has succeeded, then you would use the "after" event.
+Which one you want to use depends on what you want to achieve. If you want to be able to cancel the action, then you would use the "before" event, and use the event arguments to cancel it. See the sample handler further down. If you want to execute some code after the publishing has succeeded, then you would use the "after" event.
 
 ## Content and Media events
 
@@ -26,3 +26,7 @@ Which one you want to use depends on what you want to achieve. If you want to be
 ## Tree events
 
 * See [Tree Events](../../Extending-Umbraco/Section-Trees/trees.md) for a listing of the tree events.  
+
+## Editor Model events
+See [EditorModelEventManager Events](EditorModel-Events.md) for a listing of the EditorModel events 
+<small>*(hint: useful for manipulating the model before it is sent to an editor in the backoffice - eg. perhaps to set a default value of a property on a new document)*</small>

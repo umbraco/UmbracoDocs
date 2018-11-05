@@ -1,4 +1,4 @@
-#XSLT-snippet for VB-coders
+# XSLT-snippet for VB-coders
 
 There's a coveniant way to add VB-code directly in the Umbraco UI, as a XSLT-macro. Just add a new empty XSLT-file and paste this snippet.
 
@@ -22,7 +22,7 @@ There's a coveniant way to add VB-code directly in the Umbraco UI, as a XSLT-mac
      ====================================================================================
 
         This is a sample of how to use VB-code in a XSLT-macro in
-        Umbraco. A conveniant way to quickly add code.
+        Umbraco. A convenient way to quickly add code.
  
         You need to add xmlns:vb="urn:mycompany.com:xslt" and 
         exclude-result-prefixes="vb" to the stylesheet element, as above

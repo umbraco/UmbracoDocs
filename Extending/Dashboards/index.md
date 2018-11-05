@@ -1,111 +1,54 @@
-# Dashboard
+# Dashboards
 
-As with the other .config files in the `/config` directory the Dashboard.config file lets you customize a portion of the Umbraco experience. In this case the Dashboard.config file controls what shows up in the Dashboard section of the UI when a section of the site loads. The Dashboard is the area on the right side of the UI where most of the data entry and functional interaction takes place.
+Each section of the Umbraco backoffice has its own set of default dashboards.
 
-By default, Umbraco shows a blank Dashboard when a new section loads and only shows a form when you take action within the section (i.e. when you click on a node in the Content section, the Dashboard shows the form to update that node's data). But what if you wanted to present your users with some options even before they click on a node?  Well, that is what the Dashboard.config allows you to do.
+The dashboard area of Umbraco is used to display an 'editor' for the selected item in the tree. If no item is selected, for example when the section 'first loads', then the default set of section dashboards are displayed in the dashboard area, arranged over multiple tabs.
 
-## Layout
+![Content Section Dashboards](images/content-dashboards.png)
 
-Like the other .config files Dashboard.config is a simple XML file with a fairly straightforward layout as seen below.
+In the above screenshot, you can see the default set of dashboards for the Content section. For most users these will be: 'Get Started' and 'Redirect Url Management'. In the screenshot below, the Developer section has 'Get Started', 'Examine Management', 'Models Builder' and 'Health Check'.
+
+![Developer Section Dashboards](images/developer-dashboards.png)
+
+The different sections, dashboards and their configuration (sort order and users rights) are all configured in the [/config/dashboards.config](../../Reference/Config/dashboard/index.md) file.
+
+## Configuration Example
 
 	<?xml version="1.0" encoding="utf-8" ?> 
 	<dashBoard> <!-- Root of the dashboard XML tree -->
 	   <section>  <!-- Defines a dashboard layout for a group of sections -->
 	        <areas> <!-- Declares which sections (i.e. content,media,users,[your own]-->
-                <area>[area name]</area> <!-- A section to apply this to -->
+                <area>[area name]</area> <!-- A section to apply this to eg 'content' -->
                 ...
 	        </areas>
 	
 	        <tab caption="[caption]"> <!-- Creates a tab in the Dashboard with the assigned caption -->
-                <control>[path]</control> <!-- What control(v6) / AngularJS View (v7) to load in that tab -->
+				<access><!-- control which Umbraco roles can see the tab -->
+					<deny>translator</deny>
+                  <grant>editor</grant>
+				</access>
+                <control>[path]</control> <!-- path AngularJS View (v7) to load into the tab -->
 	        </tab>
 	        ...
 	   </section>
 	   ...
 	</dashBoard>
 
-## Section (different from a Umbraco UI Section)
+[More on Configuring Dashboards](../../Reference/Config/dashboard/index.md)
 
-Delimits dashboard information to apply to one or more sections. The Dashboard.config may include multiple sections.
+## Custom Dashboards
 
-## Areas
+Additionally, you can create your own custom dashboards, for extending Umbraco with single page AngularJS applications, or to support your site implementation - it is considered 'good practice' to create a custom Welcome Dashboard for your Umbraco implementation to support the day-to-day activities of editors using the Umbraco backoffice with 'quick links' and 'site statistics/information'.
 
-Defines to which sections of the Umbraco UI to apply the subset of dashboard information.
+![Example Custom Welcome Dashboard](images/welcome-example.png)
 
-`area` - Always lowercase!
+[Check out our Creating a Custom Dashboard tutorial](../../Tutorials/Creating-a-Custom-Dashboard/index.md)
 
-The name of the Umbraco UI Section where you want your user control to be displayed (e.g. content, media, developer, settings, members or a custom section name). You can add your controls to more than one section by adding multiple <area> nodes.
+## Package Dashboards
 
-The area with the name 'default' is the first dashboard shown when a user logs in, *no matter which sections the user has access to.*
+There are lots of packages listed on <a href="/projects/?category=Backoffice%20extensions">our umbraco</a> that provide custom dashboard functionality.
 
-**A little gotcha:** Make sure you include the name of your app in lowercase!
+For example, the snappily titled <a href="/projects/backoffice-extensions/the-dashboard/">'The Dashboard'</a> provides great information for editorial teams on what has been edited recently and by whom.
 
-## Tab
+!['The Dashboard' Dashboard Package](images/the-dashboard-package.png)
 
-Defines a page tab that you would like your user control to be added to. The attribute 'caption' defines the text displayed on the tab.  There can be multiple tabs for each Dashboard "page" control/view.
-
-## Control
-
-In Umbraco 6, this setting defines the path to the user control you would like to be displayed on a tab. 
-In Umbraco 7 this is the path to an AngularJS view.
-
-## Access / Permissions
-
-The `<access />` element makes it possible to set permissions on sections, tabs and controls and you can either grant or deny certain usertypes access.
-
-It works by adding an `<access />` node under either a `<section />`, `<tab />` or `<control />` node.
-
-As children of `<access />` you can either add `<grant />` which grants permissions to those types of users (AND automatically denies access to those who are not there!).
-
-`<grantBySection />` which grants permissions to those users who has access to specific sections. This can be useful for more granular permissions.
-
-`<deny />` which denies permissions to those types of users (AND automatically grants everyone else).
-
-No matter the settings, the root user (id:0) can see everything, so don't panic if you set deny permissions for administrators and they are still are able to see everything ;-)
-
-Example on permissions:
-
-	<tab caption="Last Edits">
-		<access>
-			<grant>writer</grant>
-			<grant>editor</grant>
-			<grantBySection>content</grantBySection>
-		</access>
-		<control>/usercontrols/dashboard/latestEdits.ascx</control>
-	</tab>
-
-## Customizing
-
-In order to customize the dashboard in Umbraco, one needs to do a couple of things.
-
-**Create one or more UserControls**  
-The Dashboard loads one or more UserControls and displays them on a series of tabs. So in order to customize the control, one needs to first create the UserControls that are to be displayed on the page. If these are for your own personal use you can just place the UserControls in a location on your site that can be accessed by Umbraco. It is recommended that you place them in the /usercontrol directory, preferably in your own subfolder. If you are creating a package for others to use, you should include the usercontrols in the package for install with the rest of the package contents.
-
-**Update the Dashboard.config**  
-Once you have created the UserControls that you want to have loaded when a section loads, you must then update the Dashboard.config to tell Umbraco to load your UserControls when a user enters a new section. Again, if you are doing this for yourself all you need to do is edit the Dashboard.config on your site to add the controls. However, if you are adding a section to go with a package, you will want to include a Package Action to update the Dashboard.config during install. [Click here for more information on Package Actions.](https://our.umbraco.org/Documentation/Reference/Packaging/)
-
-**Sample**  
-Below is an example of a valid Dashboard.config:
-
-	<?xml version="1.0" encoding="utf-8" ?> 
-	<dashBoard>
-		<section>
-			<areas>
-				<area>content</area>
-			</areas>
-			<tab caption="Last Edits">
-				<access>
-					<deny>editor</deny>
-				</access>
-				<control>/usercontrols/dashboard/latestEdits.ascx</control>
-			</tab>
-			<tab caption="Latest Items">
-				<control>/usercontrols/dashboard/newestItems.ascx</control>
-			</tab>
-			<tab caption="Create blog post">
-				<control>/usercontrols/umbracoBlog/dashboardBlogPostCreate.ascx</control>
-			</tab>
-		</section>
-	</dashBoard>
-
-What this does is every time a user clicks on the Content section of the Umbraco UI, it loads a page with three tabs called "Last Edits", "Latest Items" and "Create blog post". For each tab a UserControl is loaded to provide the functionality that the developer created for those tabs. The UI finds the UserControls via the paths provided.

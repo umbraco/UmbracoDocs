@@ -1,51 +1,43 @@
-#Viewing and exporting entries
+# Viewing and exporting entries
 
 The entries viewer for each form can be found when expanding the form in the tree
 
-![Tree](tree.png)
+![Tree](images/tree.png)
 
-##Overview
+## Overview
 
-When accessing the entries viewer you should get a screen similar to the following
+When accessing the Entries viewer, you will be able to see all entries submitted via the form.
 
-![Entries viewer](EntriesViewer.png)
+![Entries viewer](images/EntriesViewer.png)
 
-##Filtering
+By default the list is filtered to show only entries from the past month. If you want to change this simply update the filter settings.
 
-By default you'll see the records of the last 24 hours, if you want to change this simply update the filter settings
+![Filter](images/Filter.png)
 
-![Filter](Filter.png)
+You can also filter the entries by specific words by using the search field to the left.
 
-##Exporting data
+## Exporting data
 
-You can export all of the records for your form. Hit the export button in the toolbar to open the export overlay.
-
-![Export all button](ExportAllButton.png)
+You can export all of the entries from your form, by clicking the *Export* button in the top-right, to open the Export overlay.
 
 Then in the overlay simply select the format of the export
 
-![Export all dialog](ExportAllDialog.png)
+![Export all dialog](images/ExportAllDialog.png)
 
 The options are
 
 - Excel File
-- Save all Uploaded Files
+- Save all Uploaded Files (only visible if you have a *File Upload* field in the form)
 
-##Record actions
+## Record actions
 
-When selecting records it's possible to execute actions. Simply select the records by checking them (a checkbox is available for each record).
+When selecting entries it's possible to execute actions. To select an entry, simply click anywhere on the entry. Note that clicking the first value - *Name* in the example below - will open a view, where you can see the entire entry.
 
-![Record bulk actions](BulkActions.png)
+![Record bulk actions](images/BulkActions.png)
 
-After checking at least 1 record you should see the available actions.
+After checking at least 1 record you will see the available actions in the top-right corner.
+
 By default there are 2 possible actions:
 
 - Approve
 - Delete
-
-###Approve
-
-Will place the records in the approved state
-###Delete
-
-Deletes the records from the database (not possible to undo)

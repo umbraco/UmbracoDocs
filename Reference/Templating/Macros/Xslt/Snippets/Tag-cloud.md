@@ -1,14 +1,14 @@
-#Tag cloud
+# Tag cloud
 
-If you use the Tag datatype in Umbraco V4, you can easily make an tag-cloud in XSLT:
+If you use the Tag data type in Umbraco V4, you can easily make an tag-cloud in XSLT:
 
 The variable TagFactor is used to calculate the ratio between the tags.
 
-The bold value "Umbraco" is the name of the Tag group used in the datatype.
+The bold value "Umbraco" is the name of the Tag group used in the data type.
 
 The example below has 6 different size of tags, and the style/size of the tags in the cloud is modified through css
 
-Please note: The page/blogpost etc where the macro is used, must take care of the requst variable ?tag=something
+Please note: The page/blogpost etc where the macro is used, must take care of the request variable ?tag=something
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	
@@ -50,4 +50,4 @@ The CSS stylesheet:
 
 Example of the tag cloud in use can be found at http://bentzen.dk (Broken Link)
 
-Another Example at: [www.blogfodder.co.uk/.../...g-Tags-In-Umbraco.aspx](http://www.blogfodder.co.uk/2009/12/22/using-tags-in-umbraco)
+Another Example at: [www.blogfodder.co.uk/.../...g-Tags-In-Umbraco.aspx](https://www.blogfodder.co.uk/2009/12/22/using-tags-in-umbraco)

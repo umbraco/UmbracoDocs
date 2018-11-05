@@ -1,8 +1,8 @@
-#ContentService Events#
+# ContentService Events
 
 The ContentService class is the most commonly used type when extending Umbraco using events. ContentService implements IContentService. It provides easy access to operations involving IContent.
 
-## Usage ##
+## Usage
 
 Example usage of the ContentService events:
 
@@ -35,7 +35,7 @@ Example usage of the ContentService events:
         }
     }
 
-## Events ##
+## Events
 
 <table>
     <tr>
@@ -248,7 +248,7 @@ Example usage of the ContentService events:
         "sender" will be the current IContentService object.<br />
         "e" will provide:
             <ol>
-                <li>Entity: Gets the IContent object being rolledback.</li>
+                <li>Entity: Gets the IContent object being rolled back.</li>
             </ol>
         </td>
     </tr>
@@ -260,7 +260,7 @@ Example usage of the ContentService events:
         "sender" will be the current IContentService object.<br />
         "e" will provide:
             <ol>
-                <li>Entity: Gets the rolledback IContent object.</li>
+                <li>Entity: Gets the rolled back IContent object.</li>
             </ol>
         </td>
     </tr>

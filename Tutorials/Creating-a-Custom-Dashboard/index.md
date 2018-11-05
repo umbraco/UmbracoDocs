@@ -30,9 +30,9 @@ So all the steps we will go through:
 ### Prerequisites
 This tutorial uses AngularJS with Umbraco, so it does not cover AngularJS itself, there are tons of resources on that already here:
 
-- [egghead.io](http://www.egghead.io/)
-- [angularjs.org/tutorial](http://docs.angularjs.org/tutorial)
-- [Tekpub](http://tekpub.com/products/angular)
+- [egghead.io](https://egghead.io/courses/angularjs-fundamentals)
+- [angularjs.org/tutorial](https://docs.angularjs.org/tutorial)
+- [Pluralsight](https://www.pluralsight.com/paths/angular-js)
 
 There are a lot of parallels with Creating a Property Editor, the tutorial '[Creating a Property Editor Tutorial](../../Tutorials/creating-a-property-editor/index.md)' is very much worth a read through too.
 
@@ -59,7 +59,7 @@ Add the following html to the WelcomeDashboard.html
 
 ## Configuring the dashboard to appear
 
-Open up your dashboard.config file from the /config folder of your site. [Explanation of the Dashboard Config settings are here...](../../Extending/Dashboards/index.md)
+Open up your dashboard.config file from the /config folder of your site. [Explanation of the Dashboard Config settings are here...](../../Reference/Config/dashboard/index.md)
 
 Add the following section:
 
@@ -101,11 +101,11 @@ We need to add something called a package.manifest file to our CustomWelcomeDash
 
 *__Note:__ This file allows Umbraco to load other resources to use with your HTML view - it is just a file - named by convention 'package.manifest' and will contain the configuration of the resources to load in JSON format*
 
-When Umbraco loads the dashboard it will look for this file in the same folder as your HTML view (remember the dashboard config points to the html view) and use the manifest to load the additional resources, eg CSS and JS files.
+When Umbraco loads the dashboard it will look for this file in the same folder as your HTML view (remember the dashboard config points to the html view) and use the manifest to load the additional resources, eg CSS and JavaScript files.
 
 This manifest file is simpler to the one you would create for a [custom property editor](../../Extending/Property-Editors/package-manifest.md)
 
-Inside this package manifest we add a bit of JSON to describe the dashboard's required javascript and stylesheet resources:
+Inside this package manifest we add a bit of JSON to describe the dashboard's required JavaScript and stylesheet resources:
 
     {
         "javascript":[
@@ -128,7 +128,7 @@ This stylesheet will now be loaded and applied to your dashboard. Add images and
 
 ![Custom Dashboard Welcome Message With styles...](images/welcomemessagewithstyles.jpg)
 
-*__Note:__ One caveat is the package.manifest file is loaded into memory when Umbraco starts up, so if you are adding a new stylesheet or javascript file you will need to start and stop your application for it to be loaded.*
+*__Note:__ One caveat is the package.manifest file is loaded into memory when Umbraco starts up, so if you are adding a new stylesheet or JavaScript file you will need to start and stop your application for it to be loaded.*
 
 Hopefully, now you can see the potential of what you could provide to an editor as a basic welcome dashboard when they log in to Umbraco.
 
@@ -151,11 +151,11 @@ In our html view, we update the outer div to wire up to the controller to the vi
 
 *__Note:__ The use of vm (short for view model) to enable communication between the view and the controller*
 
-Finally, we need to update the package.manifest file to load the additional controller js file when the dashboard is displayed:
+Finally, we need to update the package.manifest file to load the additional controller JavaScript file when the dashboard is displayed:
 
     {
         "javascript":[
-            /*any comma delimited list of javascript files appear here*/
+            /*any comma delimited list of JavaScript files appear here*/
             "~/app_plugins/CustomWelcomeDashboard/customwelcomedashboard.controller.js"
         ],
         "css": [
@@ -168,7 +168,7 @@ If all is setup fine we should now receive the 'Hello world' alert every time th
 
 ### Going further - Umbraco Angular Services and Directives
 
-Umbraco has a fine selection of angular directives, resources and services that you can use in your custom property editors and dashboards, the details are here: https://our.umbraco.org/apidocs/ui/#/api
+Umbraco has a fine selection of angular directives, resources and services that you can use in your custom property editors and dashboards, the details are here: https://our.umbraco.com/apidocs/ui/#/api
 
 For this example it would be nice to welcome the editor by name (Umbraco is a place where everybody knows your name...), to achieve this we can use the **userService** here to customise our dashboard welcome message and increase friendliness:
 
@@ -261,23 +261,24 @@ Putting this together:
        logResource.getUserLog("save", new Date()).then(function (response) {
             console.log(response);
             var logEntries = [];
+            
             // loop through the response, and filter out save log entries we are not interested in
             angular.forEach(response, function (item) {
                 // if no entity exists -1 is returned for the nodeId (eg saving a macro would create a log entry without a nodeid)
                 if (item.nodeId > 0) {
-                    //this is the only way to tell them apart - whether the comment includes the words Content or Media!!
+                    // this is the only way to tell them apart - whether the comment includes the words Content or Media!!
                     if (item.comment.match("(\\bContent\\b|\\bMedia\\b)")) {
                         if (item.comment.indexOf("Media") > -1) {
-                            //log entry is a media item
+                            // log entry is a media item
                             item.entityType = "Media";
                             item.editUrl = "media/media/edit/" + item.nodeId;
                         }
                         if (item.comment.indexOf("Content") > -1) {
-                            //log entry is a media item
+                            // log entry is a media item
                             item.entityType = "Document";
                             item.editUrl = "content/content/edit/" + item.nodeId;
                         }
-                        //use entityResource to retrieve details of the content/media item
+                        // use entityResource to retrieve details of the content/media item
                         entityResource.getById(item.nodeId, item.entityType).then(function (ent) {
                             console.log(ent);
                             item.Content = ent;
@@ -305,7 +306,7 @@ and we should have a list of recently saved content and media:
 
 ## I know what you want to do today
 
-One of the key user journeys an editor will make in the back office is to create a new thing of some sort, and if it is a person's job to create new blog entries in the same section two or three times a day, why not create them some handy shortcuts to achieve these common tasks:
+One of the key user journeys an editor will make in the backoffice is to create a new thing of some sort, and if it is a person's job to create new blog entries in the same section two or three times a day, why not create them some handy shortcuts to achieve these common tasks:
 
 We can use the knowledge that by convention a link to 'edit a page' (as used above) when passed the additional querystring parameters doctype=alias and create=true, can be made to present the user with a brand new content item of the alias type to create within the section.
 
@@ -317,11 +318,11 @@ Add the following to our view:
 
 Where 1075, is the id of our blog section, and BlogPost is the alias of the type of document we want to create.
 
-![Handy short cut buttons](images/CreateNewBlogPost.jpg)
+![Handy shortcut buttons](images/CreateNewBlogPost.jpg)
 
 ## Custom External Data - creating your own angular resource
 
-You can create your own custom angular services / resources, to interact with your own serverside data (using UmbracoAuthorizedJsonController), The property editor tutorial has a step explaining how to do this [part 4 - Adding server-side data to a property editor](../../Tutorials/creating-a-property-editor/part-4.md).
+You can create your own custom angular services/resources, to interact with your own serverside data (using UmbracoAuthorizedJsonController), The property editor tutorial has a step explaining how to do this [part 4 - Adding server-side data to a property editor](../../Tutorials/creating-a-property-editor/part-4.md).
 
 ## What else? - what are you waiting for?
 

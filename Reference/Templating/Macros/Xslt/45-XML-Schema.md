@@ -19,14 +19,12 @@ new XML Schema.
       </node>
     </root>
 
-
--   ```<node>``` for content nodes
--   Documemt Types identified as an attribute on the node ```<node
-    nodeTypeAlias="home">```
--   Document Type properties are child nodes of the content ```<node>```
-    stored in ```<data>``` nodes for each property
--   A specific Document Type property is identified as an attribue on
-    the data node ```<data alias="bodyText">```
+- `<node>` for content nodes
+- Document Types identified as an attribute on the node `<node nodeTypeAlias="home">`
+- Document Type properties are child nodes of the content `<node>`
+  stored in `<data>` nodes for each property
+- A specific Document Type property is identified as an attribute on
+  the data node `<data alias="bodyText">`
 
 ## New Schema
 
@@ -44,30 +42,28 @@ new XML Schema.
       </Home>
     </root>
 
--   Each document type has its own node using the document type alias -
-    ```<Home>``` as opposed to ```<node documentTypeAlias="home">```
--   Each property has its own node underneath the document type node
-    ```<umbracoNaviHide>``` as opposed to ```<data alias="umbracoNaviHide">```
--   The way to tell the difference between a document type node and a
-    property node is that the document type node has the blank attribute
-    isDoc ```<home isDoc"">```
+- Each document type has its own node using the document type alias -
+  `<Home>` as opposed to `<node documentTypeAlias="home">`
+- Each property has its own node underneath the document type node
+  `<umbracoNaviHide>` as opposed to `<data alias="umbracoNaviHide">`
+- The way to tell the difference between a document type node and a
+  property node is that the document type node has the blank attribute
+  isDoc `<home isDoc"">`
 
 ## Tools
 
 There are some tools available to automate the process of converting
 XSLT file from the old to the new schema:
 
--   [XsltUpdater for
-    Umbraco](/projects/developer-tools/xsltupdater-for-umbraco)
--   [Online converter by Tommy
-    Poulsen](http://blackpoint.dk/umbraco-workbench/tools/convert-xml-schema-to-45-.aspx?p=2)
+- [XsltUpdater for
+  Umbraco](/projects/developer-tools/xsltupdater-for-umbraco)
+- [Online converter by Tommy
+  Poulsen](http://blackpoint.dk/umbraco-workbench/tools/convert-xml-schema-to-45-.aspx?p=2)
 
 ## Reverting back to the old schema
 
 However if you wish to revert back to the old XML Schema you need to
-update the ```UseLegacyXmlSchema``` setting in the
-```config/UmbracoSettings.config``` file, [make sure to read this wiki
-page for a step-by-step
-guide](/wiki/reference/xslt/45-xml-schema/switching-between-old-and-new-schema).
+update the `UseLegacyXmlSchema` setting in the
+`config/UmbracoSettings.config` file.
 
-Here is a [topic on why Umbraco uses the new xml schema](http://our.umbraco.org/forum/developers/xslt/9665-Why-a-new-XML-Schema)
+Here is a [topic on why Umbraco uses the new xml schema](https://our.umbraco.com/forum/developers/xslt/9665-Why-a-new-XML-Schema)

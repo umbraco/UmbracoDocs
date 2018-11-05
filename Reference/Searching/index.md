@@ -1,6 +1,5 @@
 # Searching
-_Search in Umbraco can be implemented in several ways. Out of the box, Umbraco 4 supports 2 methods: Examine, which is a lucene implementation for Umbraco, and XsltSearch which is an easy to use searcher for small sites._
-
+_Search in Umbraco is powered by Examine out of the box, which is a Lucene-based search and index engine for Umbraco. Umbraco provides everything required to have powerful and fast search up and running on your website, but of course you can extend or replace the available configuration to exactly match your requirements. This documentation focuses on the Examine implementation._
 
 ## [Examine](Examine/index.md)
-Walkthrough of the many options and settings in Examine for Umbraco 4.
+Understand how Examine works and walk through the many available options and settings in Umbraco.

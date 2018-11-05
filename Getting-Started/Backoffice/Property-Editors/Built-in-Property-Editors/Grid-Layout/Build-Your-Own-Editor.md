@@ -1,7 +1,7 @@
-#Build your own editor
+# Build your own editor
 Create a file in `/app_plugins/yourpackage/editor.html` and add the following to the editor.html file: 
 
-    <textarea rows="1" ng-model="control.value" ng-style="control.config"></textarea>
+    <textarea rows="1" umb-auto-resize ng-model="control.value" ng-style="control.editor.config"></textarea>
 
 Save the file and add an editor to the `/app_plugins/yourpackage/package.manifest` file:
 
@@ -34,7 +34,7 @@ If you wish to use something entirely different you can give the editor a separa
         "render": "/app_plugins/yourpackage/custom-render.cshtml"
     }
 
-###Grid editor controller
+### Grid editor controller
 If you are building something just slightly more complex then a text area, you will need to add a controller to the grid editor view. So first add a ng-controller attribute to the grid editor html - this works just like building a property editor: 
 
     <div ng-controller="my.custom.grideditorcontroller">
@@ -47,7 +47,7 @@ To wire up a controller to this view, create the file `/app_plugins/yourpackage/
         $scope.control.value = "my new value";
     });
 
-Finally, we need to tell Umbraco load this JavaScript controller when the Umbraco application boots, this is also just like building a property editor, so add your javascript(and css dependecies) in the `package.manifest` file in the `/yourpackage` folder, and configure it to load your controller file. 
+Finally, we need to tell Umbraco load this JavaScript controller when the Umbraco application boots, this is also just like building a property editor, so add your JavaScript (and css dependencies) in the `package.manifest` file in the `/yourpackage` folder, and configure it to load your controller file. 
 
     {
         "gridEditors": [
@@ -77,7 +77,7 @@ So to summarize, to create a custom grid editor from scratch, you will need to:
 This process tries to be as close to building property editors as currently possible.
 
 
-###Rendering grid editor content 
+### Rendering grid editor content 
 Next add this c# to the .cshtml file: 
 
     @inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>

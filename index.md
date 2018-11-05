@@ -41,24 +41,24 @@
 
 ---
 
-###[Tutorials](Tutorials/index.md)
+### [Tutorials](Tutorials/index.md)
 Step by step tutorials.
 
-###[Umbraco Add ons](Add-ons/index.md)
+### [Umbraco Add ons](Add-ons/index.md)
 Everything you need to know about Forms and Courier, the two premium packages developed and supported by HQ.
 
-###[Development Guidelines](Development-Guidelines/index.md)
+### [Development Guidelines](Development-Guidelines/index.md)
 How to work with the Umbraco codebase.
 
-###[Cheatsheets](Cheatsheets/index.md)
+### [Cheatsheets](Cheatsheets/index.md)
 Cheatsheets for easy overview of different areas like the Razor API and Views syntax.
 
-###[Umbraco Cloud](Umbraco-Cloud/)
-Documentation for Umbraco as a Service. How to get started, how to set up your Umbraco as a Service project for development, how to successfully deploy, and how to troubleshoot issues.
+### [Umbraco Cloud](Umbraco-Cloud/)
+How to use Umbraco Cloud: Get started, set up your Umbraco Cloud project, deploy and troubleshoot issues.
 
 ---
 
-###Contributing
-*The documentation project is open source and hosted on Github. If you have any corrections or additions to the documentation clone the project and make a pull request. [Guidelines](https://github.com/umbraco/UmbracoDocs) on how to contribute to the documentation.*
+### Contributing
+*The documentation project is open source and hosted on GitHub. If you have any corrections or additions to the documentation clone the project and make a pull request. [Guidelines](https://github.com/umbraco/UmbracoDocs) on how to contribute to the documentation.*
 
 ----------------

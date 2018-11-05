@@ -1,5 +1,5 @@
-#More Commands and the umbraco.library
-There are many additional commands in the XSLT arsenal, but some of the most powerful aspects are those provided by Umbraco itself.  Umbraco implements [a library of useful items](http://our.umbraco.org/wiki/reference/umbracolibrary) that can be called in XSLT.  There are many commands, which I will cover a few, and reference the rest.
+# More Commands and the umbraco.library
+There are many additional commands in the XSLT arsenal, but some of the most powerful aspects are those provided by Umbraco itself.  Umbraco implements [a library of useful items](https://our.umbraco.com/wiki/reference/umbracolibrary) that can be called in XSLT.  There are many commands, which I will cover a few, and reference the rest.
 
 One of the most prevalent library methods is that of NiceUrl.  NiceUrl is the method that is used to generate all the friendly URLs used in the site.  To use the NiceUrl function, we will continue the list of child pages before, and make them linked.
 

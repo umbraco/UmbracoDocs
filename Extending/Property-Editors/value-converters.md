@@ -2,18 +2,18 @@
 
 **Applies to Umbraco 7 and newer**
 
-A property value converter converts a property editors database stored value to another type. The converted value can be accessed from MVC Razor or any other Published Content API. 
+A Property Value Converter converts a property editor's database-stored value to another type. The converted value can be accessed from MVC Razor or any other Published Content API. 
 
 Starting with Umbraco v7, published property values have four "Values":
 
-- Data - The raw data stored in the database, this is generally a `String`
-- Source - A object of type that is appropriate to the property, e.g. a nodeId should be a `Int` or a collection of nodeId's would be a array of `Int[]`
-- Object - The object to be used when accessing the property using a Published Content API e.g. UmbracoHelper `GetPropertyValue<T>` method
-- XPath - The object to be used when the property is accessed by XPath, this should generally be a `String` or a `XPathNodeIterator` 
+- **Data** - The raw data stored in the database, this is generally a `String`
+- **Source** - An object of a type that is appropriate to the property, e.g. a nodeId should be an `Int` or a collection of nodeIds would be an integer array, `Int[]`
+- **Object** - The object to be used when accessing the property using a Published Content API, e.g. UmbracoHelper's `GetPropertyValue<T>` method
+- **XPath** - The object to be used when the property is accessed by XPath; This should generally be a `String` or an `XPathNodeIterator`
 
 **Note**: XPath is not currently used in Umbraco v7.1.x but it will be in a future version
 
-For example the standard Umbraco Core "Content Picker" stores a nodeId as `String` type. However if you implement a converter it could return a `IPublishedContent` object.
+For example the standard Umbraco Core "Content Picker" stores a nodeId as `String` type. However if you implement a converter it could return an `IPublishedContent` object.
 
 ## Implementing the Interface ##
 
@@ -25,9 +25,9 @@ Implement `IPropertyValueConverter` from the `Umbraco.Core` namespace on your cl
 
 ### bool IsConverter(PublishedPropertyType propertyType) ###
 
-This method is called for each PublishedPropertyType (document type property) at application startup. By returning True your value converter will be registered for that property type and your conversion methods will be executed when ever that value is requested. 
+This method is called for each PublishedPropertyType (document type property) at application startup. By returning `True` your value converter will be registered for that property type and your conversion methods will be executed when ever that value is requested. 
 
-Example, checking if the PublishedPropertyType PropertyEditorAlias property is equal to the alias of the core content editor
+Example: Checking if the PublishedPropertyType PropertyEditorAlias property is equal to the alias of the core content editor
 
 	public bool IsConverter(PublishedPropertyType propertyType)
 	{
@@ -36,7 +36,7 @@ Example, checking if the PublishedPropertyType PropertyEditorAlias property is e
 
 ### object ConvertDataToSource(PublishedPropertyType propertyType, object data, bool preview) ###
 
-This method should convert the raw data value into a appropriate type, for example, a nodeId stored as a `String` should be converted to a `Int`. This method returns the "Source".  Include a `using Umbraco.Core` to be able to use the TryConvertTo extension method.
+This method should convert the raw data value into an appropriate type, for example, a nodeId stored as a `String` should be converted to an `Int`. This method returns the "Source".  Include a `using Umbraco.Core` to be able to use the `TryConvertTo` extension method.
 
     public object ConvertDataToSource(PublishedPropertyType propertyType, object data, bool preview)
     {
@@ -51,9 +51,9 @@ This method should convert the raw data value into a appropriate type, for examp
 
 ### object ConvertSourceToObject(PublishedPropertyType propertyType, object source, bool preview) ###
 
-This method converts the Source to a Object, the returned value is used by the `GetPropertyValue<T>` method of `IPublishedContent`. 
+This method converts the Source to an Object, the returned value is used by the `GetPropertyValue<T>` method of `IPublishedContent`. 
 
-The below example converts the nodeId (converted to Int by ConvertDataToSource) into a IPublishedContent object using the UmbracoHelper TypedContent method.  
+The below example converts the nodeId (converted to Int by ConvertDataToSource) into an IPublishedContent object using the UmbracoHelper TypedContent method.  
 
 	public object ConvertSourceToObject(PublishedPropertyType propertyType, object source, bool preview)
 	{
@@ -103,14 +103,14 @@ In the example below the Content Picker is being converted to `IPublishedContent
 
 ### Property Value Cache Level ###
 
-**Note**: This data is not currently used in Umbraco v7.1.x but it will be by the future "object cache layer" to determine at which level each value returned by the `ConvertDataToSource`, `ConvertSourceToObject` & `ConvertSourceToXPath` methods should be cached at.
+**Note**: This data is not currently used in Umbraco v7.1.x but it will be by the future "object cache layer" to determine at which level each value returned by the `ConvertDataToSource`, `ConvertSourceToObject` & `ConvertSourceToXPath` methods should be cached.
 
 #### Properties ####
 
 Level - Content (this Published Content), ContentCache (any Published Content), Request, None<br/>
 Value - All, Source, Object, XPath
 
-In the example below the Content Picker is being converted to `IPublishedContent` so both the Source and XPath values can be cached at the content level but the Object value can only be cached at the ContentCache level. This is because the picked node may change when it's published and we don't want the converted value to become stale therefore we should clear it.
+In the example below the Content Picker is being converted to `IPublishedContent` so both the Source and XPath values can be cached at the content level but the Object value can only be cached at the ContentCache level. This is because the picked node may change when it's published and we don't want the converted value to become stale; therefore we should clear it.
 
 #### Class Attribute ####
 
@@ -119,7 +119,7 @@ In the example below the Content Picker is being converted to `IPublishedContent
     [PropertyValueCache(PropertyCacheValue.XPath, PropertyCacheLevel.Content)]
     public class ContentPickerPropertyConverter : IPropertyValueConverter
 
-If all values should use the same level you can use the short cut below
+If all values should use the same level you can use the shortcut below
 
     [PropertyValueCache(PropertyCacheValue.All, PropertyCacheLevel.ContentCache)]
 
@@ -127,23 +127,19 @@ If all values should use the same level you can use the short cut below
 
     public PropertyCacheLevel GetPropertyCacheLevel(PublishedPropertyType propertyType, PropertyCacheValue cacheValue)
     {
-        PropertyCacheLevel returnLevel;
         switch (cacheValue)
         {
             case PropertyCacheValue.Object:
-                returnLevel = PropertyCacheLevel.ContentCache; 
-                break;
+                return PropertyCacheLevel.ContentCache; 
+
             case PropertyCacheValue.Source:
-                returnLevel = PropertyCacheLevel.Content;
-                break;
+                return PropertyCacheLevel.Content;
+
             case PropertyCacheValue.XPath:
-                returnLevel = PropertyCacheLevel.Content;
-                break;
-            default:
-                returnLevel = PropertyCacheLevel.None;
-                break;
+                return PropertyCacheLevel.Content;
         }
-	return returnLevel;
+  
+        return PropertyCacheLevel.None;
     }
 
 ## Samples ##

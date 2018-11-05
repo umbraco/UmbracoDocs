@@ -1,45 +1,45 @@
-#Dropdown List
+# (Obsolete) Dropdown List
 
 `Returns: String`
 
 Displays a list of preset values. The value saved is a text value.
 
-##Settings
+## Settings
 
-###Prevalues
+### Prevalues
 You can add, edit & delete the data prevalues rendered within the dropdown list.
 
-##Data Type Definition Example
+## Data Type Definition Example
 
 ![Dropdown List Data Type Definition](images/Dropdown-List-DataType.png)
 
-##Content Example 
+## Content Example 
 
 ![Downdown List Content](images/Dropdown-List-Content.png)
 
-##MVC View Example to output selected value
+## MVC View Example to output selected value
 
-###Typed:
+### Typed:
 
     @if (Model.Content.HasValue("superHero"))
     {
         <p>@Model.Content.GetPropertyValue("superHero")</p>
     }
 
-###Dynamic:     
+### Dynamic:     
                          
     @if (CurrentPage.HasValue("superHero"))
     {
         <p>@CurrentPage.superHero</p>
     }    
 
-##MVC View Example list all nodes which have a certain item selected in the dropdown list
+## MVC View Example list all nodes which have a certain item selected in the dropdown list
 
-###Typed:
+### Typed:
 
     @{
         var valueToMatch = "SuperMan";
-        //Get the first node inside the root
+        // Get the first node inside the root
         var firstTypedContentAtRoot = Umbraco.TypedContentAtRoot().FirstOrDefault();
         if (firstTypedContentAtRoot != null)
         {
@@ -57,11 +57,11 @@ You can add, edit & delete the data prevalues rendered within the dropdown list.
         }
     }
 
-###Dynamic:                             
+### Dynamic:                             
 
     @{
 		var valueToMatch = "SuperMan";
-        //Get the first node inside the root
+        // Get the first node inside the root
         var firstContentAtRoot = Umbraco.ContentAtRoot().FirstOrDefault();
         if (firstContentAtRoot != null)
         {

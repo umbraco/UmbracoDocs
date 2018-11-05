@@ -1,4 +1,4 @@
-#Configuration
+# Configuration
 
 Courier 2.5 comes with sensible defaults, but in special cases, you might need to add or modify core settings.
 
@@ -6,7 +6,7 @@ Core settings are configuration options which covers the entire Courier applicat
 
 **For provider configuration:** look under the appropriate provider type in documentation
 
-##Cache Settings
+## Cache Settings
 Courier keeps an ongoing cache of items to speed up transfers, this can be turned off:
 
 	<cache>
@@ -14,60 +14,60 @@ Courier keeps an ongoing cache of items to speed up transfers, this can be turne
 	</cache>
 
 
-##Transfer settings
+## Transfer settings
 
-###Timeout
-Milliseconds before a webclient connection times out.
+### Timeout
+Milliseconds before a web client connection times out.
 
 	<timeout>30000</timeout>
 
-###Base64 encoding
-Encode all resources and items as bas64 to avoid illegal characters
+### Base64 encoding
+Encode all resources and items as base64 to avoid illegal characters
 
 	<disableBase64Encoding>false</disableBase64Encoding >
 
-###Strip resources from courier files
-Strip the raw byte data from .courier files before transfering
+### Strip resources from courier files
+Strip the raw byte data from the courier files before transferring
 
 	<stripResourcesFromCourierFiles>false</stripResourcesFromCourierFiles>
 
-##Path settings
-###Root folder
-The root folder containing all Couriers data. This folder needs changed, if Courier runs outside of the standard Umbraco webcontext. 
+## Path settings
+### Root folder
+The root folder containing all Courier's data. This folder needs changed, if Courier runs outside of the standard Umbraco web context. 
 	
 	<paths>  
 	    <root>~/path/to/courier</root>
 	</paths>
 
-###Revisions folder
-Specifies the folder within the root folder, which holds each indivual revision folder.
+### Revisions folder
+Specifies the folder within the root folder, which holds each individual revision folder.
 
 	<paths>  
-	    <revisions>/folder</revisons>
+	    <revisions>/folder</revisions>
 	</paths>
 
-###Masterpages folder
-The Sql connection to the SQL database Courier should use. Notice this is not nessary as long as the repository pattern is used, as that will then be handled by the Umbraco website data is pulled/pushed from.
+### Masterpages folder
+The Sql connection to the SQL database Courier should use. Notice this is not necessary as long as the repository pattern is used, as that will then be handled by the Umbraco website data is pulled/pushed from.
 
 	<paths>  
 	    <masterPages>/folder</masterPages>
 	</paths>
 
-###Database connection
+### Database connection
 	
 	<databaseConnectionString>
 	   DATABASE=yahahdasd;USER ID=etc
 	</databaseConnectionString>
 
-###Use short courier file names
+### Use short courier file names
 In case of too long paths, shorten file names
 
 	<enableShortFileNames>false</enableShortFileNames>
 
-##Ignoring providers
+## Ignoring providers
 If there is an issue with a specific provider, no matter what type of provider. You can turn it off by ignoring it. 
 
-This is done by adding its full namespace and class to the configuration, you can ignore any item provider, data resolver, repository provider or any other functionality that’s loaded through Couriers provider model.
+This is done by adding its full namespace and class to the configuration, you can ignore any item provider, data resolver, repository provider or any other functionality that’s loaded through Courier's provider model.
 
 	<ignore>
 	    <!-- Ignore the lucene indexer -->
@@ -78,14 +78,14 @@ This is done by adding its full namespace and class to the configuration, you ca
 	</ignore>
 
 
-##Settings for debugging
+## Settings for debugging
 
-###Debugmode
+### Debugmode
 Enables logging to the /app_data/courier/logs folder, by default **false**
 
 	<debugMode>true</debugMode>
 
-###Map graphs
+### Map graphs
 If enabled, Courier will generate a blumind compatible mindmap after each extraction to map dependencies, by default **false**
 
 	<mapGraphs>true</mapGraphs>

@@ -1,4 +1,4 @@
-#Advanced techniques with Flexible Load Balancing
+# Advanced techniques with Flexible Load Balancing
 
 _This describes some more advanced techniques that you could achieve with flexible load balancing_
 
@@ -10,7 +10,7 @@ complexity that the [master election](flexible.md#scheduling-and-master-election
 This is configurable and in order to do this you will need to have separate application startup handlers
 for your front-end servers and your admin server... you can make this a configuration option in your own code.
 
-The first thing to do is create a a couple classes for your front-end servers and master server to use:
+The first thing to do is create a couple classes for your front-end servers and master server to use:
 
 	public class MasterServerRegistrar : IServerRegistrar2
 	{
@@ -24,8 +24,8 @@ The first thing to do is create a a couple classes for your front-end servers an
 		}
 		public string GetCurrentServerUmbracoApplicationUrl()
 		{
-			//NOTE: If you want to explicitly define the URL that your application is running on,
-			// this wil be used for the server to communicate with itself, you can return the 
+			// NOTE: If you want to explicitly define the URL that your application is running on,
+			// this will be used for the server to communicate with itself, you can return the 
 			// custom path here and it needs to be in this format:
 			// http://www.mysite.com/umbraco
 
@@ -53,10 +53,10 @@ then you'll need to swap the default `DatabaseServerRegistrar` for the your cust
 You'll need to create an [ApplicationEventHandler](/Documentation/Reference/Events/Application-Startup) and override `ApplicationStarting`. 
 During this event you can swap the registrar objects:
 
-	//This should be executed on your master server
+	// This should be executed on your master server
 	ServerRegistrarResolver.Current.SetServerRegistrar(new MasterServerRegistrar());
 
-	//This should be executed on your slave servers
+	// This should be executed on your slave servers
 	ServerRegistrarResolver.Current.SetServerRegistrar(new FrontEndReadOnlyServerRegistrar());
 
 Now that your front-end servers are using your custom `FrontEndReadOnlyServerRegistrar` class, they will always be deemed 'Slave' servers and will not 
@@ -65,7 +65,7 @@ attempt any master election or task scheduling.
 By setting your master server to use your custom `MasterServerRegistrar` class, it will always be deemed the 'Master' and will always be the one that 
 executes all task scheduling.
 
-## Front-end servers - Readonly database access
+## Front-end servers - Read-only database access
 
 _This description pertains ONLY to Umbraco database tables_
 
@@ -80,7 +80,7 @@ used for task scheduling. Only a single server can execute task scheduling and t
 to use a master server election process without the need for any configuration. So in the case that a front-end
 server becomes the master task scheduler, **it will actually require write access to all of the Umbraco tables**.
 
-In order to have readonly database access configured for your front-end servers, you need to implement 
+In order to have read-only database access configured for your front-end servers, you need to implement
 the [Explicit master scheduling server](#explicit-master-scheduling-server) configuration mentioned above.
 
 Now that your front-end servers are using your custom `FrontEndReadOnlyServerRegistrar` class, they will always be deemed 'Slave' servers and will not 

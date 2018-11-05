@@ -38,7 +38,7 @@ _The below section is common for all load balancing configurations, ensure that 
 * You will need to use a custom machine key so that all your machine key level encryption values are the same on all servers, without this you will end up with view state errors, validation errors and encryption/decryption errors since each server will have its own generated key.
 	* Here are a couple of tools that can be used to generate machine keys:
 		* 	[http://www.betterbuilt.com/machinekey/](http://www.betterbuilt.com/machinekey/)
-		* 	[http://www.developerfusion.com/tools/generatemachinekey/](http://www.developerfusion.com/tools/generatemachinekey/)
+		* 	[http://www.developerfusion.com/tools/generatemachinekey/](https://www.developerfusion.com/tools/generatemachinekey/)
 	* 	Then you need to update your web.config accordingly, note that the validation/decryption types may be different for your environment depending on how you've generated your keys.
 
 			<configuration>
@@ -49,7 +49,7 @@ _The below section is common for all load balancing configurations, ensure that 
 							decryption="AES" />
 			  </system.web>
 			</configuration>
-* If you use SessionState in your application, or are using the default TempDataProvider in MVC (which uses SessionState) then you will need to configure your application to use the SqlSessionStateStore provider (see [http://msdn.microsoft.com/en-us/library/aa478952.aspx](http://msdn.microsoft.com/en-us/library/aa478952.aspx) for more details).
+* If you use SessionState in your application, or are using the default TempDataProvider in MVC (which uses SessionState) then you will need to configure your application to use the SqlSessionStateStore provider (see [https://msdn.microsoft.com/en-us/library/aa478952.aspx](https://msdn.microsoft.com/en-us/library/aa478952.aspx) for more details).
 
 ### Logging
 
@@ -59,7 +59,7 @@ There are some logging configurations to take into account no matter what type o
 
 ### Testing
 
-You staging environment should also be load balanced so that you can see any issues relating to load balancing in that environment before going to production.
+Your staging environment should also be load balanced so that you can see any issues relating to load balancing in that environment before going to production.
 
 You'll need to test this solution **a lot** before going to production. You need to ensure there are no windows security issues, etc... The best way to determine issues is have a lot of people testing this setup and ensuring all errors and warnings in your application/system logs in Windows are fixed.
 
@@ -71,7 +71,7 @@ _Here's some common questions that are asked regarding Load Balancing with Umbra
 
 __Question>__ _Why do I need to have a single web instance for Umbraco admin?_
 	
-_TL:DR_ You must not load balance the Umbraco back office, you will end up with data integrity or corruption issues.
+_TL:DR_ You must not load balance the Umbraco backoffice, you will end up with data integrity or corruption issues.
 
 The reason you need a single server is because there is no way (currently) to 
 guarantee transactional safety between servers because we don't currently use database level locking, we only 

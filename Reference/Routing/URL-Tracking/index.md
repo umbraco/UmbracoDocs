@@ -2,13 +2,13 @@
 
 ## User Overview
 
-Whenever a document is published, and this causes changes to its URL (and any of its descendants' URLs), Umbraco saves the old URLs. Whenever an incoming request is served and the default content finders cannot find a matching document, Umbraco checks whether the URL matches one of these saved URLs. If a match is found, Umbraco returns a "301 Redirect" answer pointing to the new URL of the document.
+Whenever a document is published, and this causes changes to its URL (and any of its descendants' URLs), Umbraco makes a note of the old URLs. Whenever an incoming request is served and the default content finders cannot find a matching published document, Umbraco checks whether the URL matches one of these saved URLs. If a match is found, Umbraco returns a "301 Redirect" response pointing to the new URL of the document.
 
-Umbraco does not support rewriting "rules" (e.g. regular expressions) nor complex scenarios (e.g. changing the culture and hostnames configuration). There already are powerful solutions to deal what that type of situations, such as Microsoft's own [Url Rewrite](http://www.iis.net/downloads/microsoft/url-rewrite) module for IIS.
+The URL Redirect Management functionality does not support rewriting "rules" (e.g. regular expressions), nor complex scenarios (e.g. changing the culture and hostnames configuration). There are already powerful solutions to deal with these types of situations, such as Microsoft's own [Url Rewrite](https://www.iis.net/downloads/microsoft/url-rewrite) module for IIS. Read the [Creating IIS Rewrite Rules](../IISRewriteRules) article for more details about the module.
 
 ## Dashboard
 
-It is possible to list the redirect URLs via the *Redirect Url Management* dashboard in the *Developer* section. This dashboard lists the original URL, new URL, and date. It allows you to delete a URL, and to directly edit the corresponding document.
+It is possible to list the redirect URLs via the *Redirect Url Management* dashboard in the *Content* section. This dashboard lists the original URL, new URL, and date. It allows you to delete a URL, and to directly edit the corresponding document.
 
 In addition, the dashboard can be used to disable or enable the 301 Redirect Management (via the `web.routing` configuration attribute described below - note that this causes an application restart).
 

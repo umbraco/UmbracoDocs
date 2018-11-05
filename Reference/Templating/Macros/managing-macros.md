@@ -1,8 +1,8 @@
-#Managing macros
+# Managing macros
 
 _Describes how to create/update a macro and its parameters_
 
-##Creating macros
+## Creating macros
 
 There are a couple of ways to create a macro. 
 
@@ -20,7 +20,7 @@ The 2nd option to create a macro is to create the macro type directly on its tre
 
 ![Macro editor](images/create-macro-from-type.png)
 
-##Rich text options
+## Rich text options
 
 > Use in editor
 
@@ -30,7 +30,7 @@ If selected will allow an editor to insert this macro in to a rich text field
 
 If selected, when an editor inserts this macro in to a rich text editor, the actual contents of the macro will be displayed in the editor based on the current page context. If a macro is processor intensive then it is recommended to not check this option and instead a default message will be displayed in the editor indicating that it's a macro element.
 
-##Caching options
+## Caching options
 
 > Cache period
 
@@ -42,9 +42,9 @@ If selected, then this result of this macro will be cached based on the current 
 
 > Cache personalized
 
-Similar to the 'cache by page', this will cache the output of a macro based on a member that is logged in. If you macro is static (the same) no mattter what member is logged in, or if your website does not have membership then it is better to not check this box.
+Similar to the 'cache by page', this will cache the output of a macro based on a member that is logged in. If you macro is static (the same) no matter what member is logged in, or if your website does not have membership then it is better to not check this box.
 
-##Macro parameters
+## Macro parameters
 
 Macro parameters can be used to change the output of a macro at runtime. Macro parameters are often used as a way for your editors to change the output of a macro when they insert them into rich text editors. As an example, suppose you have a widget that displays a list of links which are children of a particular content item. You could define a macro parameter that indicates for which content item to render child links for and your editor can select this content item when inserting the macro into the rich text editor.
 
@@ -54,7 +54,7 @@ The macro parameter dialog looks like this:
 
 Here you can add/modify/remove macro parameters.
 
-###Default macro parameter types
+### Default macro parameter types
 
 This list defines the different types of macro parameters:
 

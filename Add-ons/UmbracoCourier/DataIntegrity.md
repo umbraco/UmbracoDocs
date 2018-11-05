@@ -1,12 +1,12 @@
-#Courier data integrity fix
+# Courier data integrity fix
 We recently discovered a bug introduced in Courier 2.51.0, which has now been fixed in 2.51.4 and all versions above 2.51.4.  
 This bug affects people who use inherited document types or compositions on their document types.
 
-##Symptoms
-It is pretty easy to notice if you've been affected by this bug. The first time you transfered content using Courier it all went well and your content updated on the target environment.  
+## Symptoms
+It is pretty easy to notice if you've been affected by this bug. The first time you transferred content using Courier it all went well and your content updated on the target environment.  
 However, any updates you make on the source environment and then try to transfer seem to never arrive on the target environment.
 
-##Problem explanation
+## Problem explanation
 When you first deploy content with inherited or composed document types, Courier would insert too many rows in the `cmsPropertyData` table, that looks a bit like this:
 
 ![database](images/courierpropertydata.png)
@@ -15,14 +15,14 @@ As you can see the `propertyTypeId` is duplicated here. The next time you do a C
 
 ![database updated](images/courierpropertydataupdated.png)
 
-The problem here is that when the Umbraco backoffice reads the values for each property from the database it will take the last row and show it to you in the Umbraco interface. So in the backoffice you'd still see "This is some text".
+The problem here is that when the Umbraco backoffice reads the values for each property from the database it will take the last row and show it to you in the Umbraco interface. So in the backoffice, you'd still see "This is some text".
  
-##Solution
+## Solution
 The solution is to delete all of the duplicated rows that shouldn't be there, so for each property only the first row should be left behind.
 
-First of all, you need to update [Courier to at least version 2.51.4](https://our.umbraco.org/projects/umbraco-pro/umbraco-courier-2/)  on all of your environments. This will prevent the problem from re-occuring. We fixed how Courier transfers content the first time and this problem will not occur again after v2.51.4.   
+First of all, you need to update [Courier to at least version 2.51.4](https://our.umbraco.com/projects/umbraco-pro/umbraco-courier-2/)  on all of your environments. This will prevent the problem from re-occurring. We fixed how Courier transfers content the first time and this problem will not occur again after v2.51.4.   
 
-**Note:** At this point you should **back up** your database in both environments (so the source and the target database).
+**Note:** At this point, you should **back up** your database in both environments (so the source and the target database).
 
 In order to figure out if you are affected by this problem you can run the following (safe) select query on the source and on the target database:
 
@@ -50,7 +50,7 @@ You can now transfer your content again and it should update on the destination 
 
 The error you've seen in your backoffice should say something like `Source 0 / Destination: 18` which means that the source has no duplicate property data but your destination does. So to fix this, you only need to run the delete query on the destination, the source is fine.
 
-##Future
+## Future
 Courier version 2.51.4 and higher will detect if your source or target environment were impacted by this problem and will show you a link to this document if the problem is detected.
 
 We opted not to automatically fix this for you because we want to make absolutely sure that we don't delete any data in an unrecoverable way, this is why we keep urging you to make sure to make backups before doing anything.

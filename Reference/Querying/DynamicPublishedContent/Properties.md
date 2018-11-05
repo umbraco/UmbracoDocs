@@ -1,6 +1,6 @@
-#DynamicPublishedContent
+# DynamicPublishedContent
 
-##Properties
+## Properties
 Built-in properties, which exists on all dynamic content objects by default. These are referenced in Razor as a standard property
 `object.Property` using standard C# syntax. 
 
@@ -19,18 +19,18 @@ All [standard properties](../IPublishedContent/Properties.md) that are available
 
 -----
 
-##Custom properties
+## Custom properties
 All content and media items also contains a reference to all the data defined by their document type, 
-property acccess for custom properties is the same for built in properties using the standard 
+property access for custom properties is the same for built in properties using the standard 
 `object.Property` C# syntax. 
 	
-###CurrentPage.PropertyAlias
+### CurrentPage.PropertyAlias
 Returns the property matching the PropertyAlias (replace with alias of property) 
 
 	@*Get the property with alias: "siteName" from the current page  *@
 	@CurrentPage.siteName
 	
-###CurrentPage._propertyAlias (recursive access)
+### CurrentPage._propertyAlias (recursive access)
 Returns the property matching the propertyAlias (replace with alias of property) 
 by prefixing with '_' razor will first look on the current page. If no value is defined, it will then search ancestor pages for a property matching the alias, and return a value, if a property is found.
 
@@ -44,23 +44,23 @@ Property `bodyText` is therefore referenced as `_bodyText`
 
 ---
 
-##Property Methods
+## Property Methods
 **There are a few helpful methods to help check if a property exists, has a value or is null.**
 
-###.HasProperty(string propertyAlias)
+### .HasProperty(string propertyAlias)
 Returns a boolean value representing if the DynamicPublishedContent has a property with the specified alias.
 
-###.HasValue(string propertyAlias)
-Retruns a boolean value representing if the DynamicPublishedContent property has had a value set.
+### .HasValue(string propertyAlias)
+Returns a boolean value representing if the DynamicPublishedContent property has had a value set.
 
-###.IsNull(string propertyAlias)
+### .IsNull(string propertyAlias)
 Returns a boolean value representing if the DynamicPublishedContent property is Null.
 
 **Further useful property methods**
 
 It is possible to use any standard C# method on a property such as .Contains (example below). They can also be chained, e.g. `@item.Name.SubString(1,3).Contains("v")`
 
-###.Contains(string needle)
+### .Contains(string needle)
 Returns a boolean value representing if the needle was found in the property (haystack).
 
 For example:
@@ -70,7 +70,7 @@ For example:
 	    @item.Name 
 	}
 
-###.ContainsAny(List&lt;string&gt; needles)
+### .ContainsAny(List&lt;string&gt; needles)
 A property extension method, it returns a boolean value representing if any of the needles in the list were found in the property.
 
 For example:

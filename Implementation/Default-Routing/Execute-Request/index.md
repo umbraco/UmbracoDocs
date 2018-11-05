@@ -1,8 +1,8 @@
-#Executing an Umbraco request
+# Executing an Umbraco request
 
 _During the Umbraco request execution, an MVC Action is called which executes a Razor view to render content to the end-user_
 
-##Using the Model
+## Using the Model
 
 Whenever a content item is rendered on the front-end, it is based on a model of type `IPublishedContent`.
 This model contains all of the information about the content item associated with the current request.
@@ -19,23 +19,23 @@ All Umbraco view page types inherit from `UmbracoViewPage<TModel>`. A neat trick
 you can change your view type to `UmbracoViewPage<IPublishedContent>` and the view will still render without issue even though the controller
 is passing it a model of type RenderModel.
 
-##[IPublishedContent](../../../Reference/Querying/IPublishedContent/index.md)
+## [IPublishedContent](../../../Reference/Querying/IPublishedContent/index.md)
 
 IPublishedContent is the standard model used for all published content, media and members in Umbraco. It is a strongly typed model and is very flexible.
 
-##[DynamicPublishedContent](../../../Reference/Querying/DynamicPublishedContent/index.md)
+## [DynamicPublishedContent](../../../Reference/Querying/DynamicPublishedContent/index.md)
 
 There's also a dynamic representation of `IPublishedContent` called `DynamicPublishedContent`. This is available on `UmbracoTemplatePage` as the property `@CurrentPage`.
 Working with dynamics is simpler in some cases especially with regards to referencing property data. For example, to output your custom property 'markDown', you could just do:
 
 	@CurrentPage.markDown
 
-However, dynamics do not provider any intellisense and are compiled at runtime
+However, a dynamic object does not provide any intellisense and is compiled at runtime.
 
-##[UmbracoHelper](../../../Reference/Querying/UmbracoHelper/index.md)
+## [UmbracoHelper](../../../Reference/Querying/UmbracoHelper/index.md)
 
 UmbracoHelper is the unified way to work with published content/media on your website. Whether you are using MVC or WebForms you will be able to use UmbracoHelper to query/traverse Umbraco published data.
 
-##[MembershipHelper](../../../Reference/Querying/MemberShipHelper/index.md)
+## [MembershipHelper](../../../Reference/Querying/MemberShipHelper/index.md)
 
-MembershipHelper is a general helper class for access asp.net membership data, as well as Umbraco Member data, which are stored in a format similar to Umbraco content and media
+MembershipHelper is a general helper class for accessing ASP.NET membership data, as well as Umbraco Member data, which are stored in a format similar to Umbraco content and media.

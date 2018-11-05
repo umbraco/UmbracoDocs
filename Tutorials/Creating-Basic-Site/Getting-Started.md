@@ -1,19 +1,19 @@
 # Introduction 
 
-The following sections of the "Creating a Basic Site" tutorial provide step by step instructions through an Umbraco website build starting from a set of flat HTML, CSS and JS files. It will allow you to take any website "template" and install it into a fresh Umbraco and wire up the sections that need content managing in Umbraco.  
+The following sections of the "Creating a Basic Site" tutorial provide step by step instructions through an Umbraco website build starting from a set of flat HTML, CSS and JavaScript files. It will allow you to take any website "template" and install it into a fresh Umbraco and wire up the sections that need content managing in Umbraco.  
 
 # **What You’ll Need**
 
 To take you through a demo of installing a basic site in Umbraco you need the following:
 
-*    A clean, empty installation of Umbraco – e.g. no starter site installed, see the notes below what to do when running through the installation wizard. Use the latest main 7.X download. Follow the installation steps in the documentation [http://our.umbraco.org/documentation/Installation](http://our.umbraco.org/documentation/Installation)  
+*    A clean, empty installation of Umbraco – e.g. no starter site installed, see the notes below what to do when running through the installation wizard. Use the latest main 7.X download. Follow the installation steps in the documentation [https://our.umbraco.com/documentation/Installation](https://our.umbraco.com/documentation/Installation)  
 *    The tutorial instructions uses a copy of Initializr – a HTML5, responsive website template. [https://github.com/verekia/initializr-template/archive/master.zip](https://github.com/verekia/initializr-template/archive/master.zip) or, if you prefer, you can use your own flat HTML files.
 
 # **Getting Started**
 
 ## Installing an Empty Umbraco
 
-This guide doesn’t cover the installation of Umbraco – follow the instructions in http://our.umbraco.org/documentation/Installation. When you see the first splash screen click **_customize_** – either fill in your MS SQL blank DB credentials or use the CE option – then on the final screen use the “**_No thanks I do not want to use a starter website_**”. 
+This guide doesn’t cover the installation of Umbraco – follow the instructions in https://our.umbraco.com/documentation/Installation. When you see the first splash screen click **_customize_** – either fill in your MS SQL blank DB credentials or use the CE option – then on the final screen use the “**_No thanks I do not want to use a starter website_**”. 
 
  
 ![Umbraco Installation Splash Screen](images/figure-1-installation-splash-screen.png)

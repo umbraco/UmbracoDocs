@@ -37,7 +37,7 @@ _This shows all of the configuration options for Examine. None of these options 
 
 			*   dataService = the type that this provider will instantiate in order to query
 				Umbraco for the data that it requires. Generally this shouldn't need to change
-				unless you want to use test data from a non-umbraco source or you have very
+				unless you want to use test data from a non-Umbraco source or you have very
 				custom requirements.
 			*   indexSet = (optional, will try to determine this based on naming conventions)
 				Explicitly specifies the index set to use.
@@ -95,7 +95,7 @@ _This shows all of the configuration options for Examine. None of these options 
 		</ExamineIndexProviders>
 
 		<!--
-		Seachers ...
+		Searchers ...
 
 		**** YOU MUST SPECIFY A DEFAULT SEARCH PROVIDER *****
 		This is used when issuing the search command without explicitly referring to a

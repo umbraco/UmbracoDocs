@@ -1,4 +1,4 @@
-#Umbraco:image
+# Umbraco:image
 
 **Applies to: Umbraco 4.11.0+**
 
@@ -16,14 +16,14 @@ The complete syntax for the control is this:
 
 All other attributes, such as `width|height|class` will be passed through to the generated `<img/>` tag.
 
-##Field
+## Field
 The `field` attribute defines which field of the current page will be used as the image. If the field contains a number, then a media item will be used to generate the url. If the field contains an image path (for example from the upload control), then that path is used directly.
 
-##NodeId
+## NodeId
 If a `nodeid` is specified, then that node will be used to get the `field` from.
 
-##Parameters
-The `parameters` are provider specific. The default provider supports the upload datatypes thumbnails, and the Image Cropper datatypes crops.
+## Parameters
+The `parameters` are provider specific. The default provider supports the upload data types thumbnails, and the Image Cropper data types crops.
 
 <table>
 	<tr>
@@ -34,7 +34,7 @@ The `parameters` are provider specific. The default provider supports the upload
 	<tr>
 		<td>thumb</td>
 		<td>int</td>
-		<td>Specifiy the size of the thumb that you want to display. For example thumb=200.</td>
+		<td>Specify the size of the thumb that you want to display. For example thumb=200.</td>
 	</tr>
 	<tr>
 		<td>crop</td>
@@ -43,7 +43,7 @@ The `parameters` are provider specific. The default provider supports the upload
 	</tr>
 </table>
 
-###Example:
+### Example:
 
 	<umbraco:Image runat="server" field="bannerImage" Parameters="crop=small" />
 
@@ -51,7 +51,7 @@ This generates:
 
 	<img src="/media/19/myimage_small.jpg" />
 
-##Provider
+## Provider
 A custom provider can be created by implementing the `IImageUrlProvider` interface. An example would be an ImageGen provider which could be used like this:
 
 	<umbraco:Image runat="server" field="bannerImage" Parameters="width=400&height=150" Provider="imageGen" />

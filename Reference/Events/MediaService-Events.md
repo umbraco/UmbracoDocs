@@ -1,8 +1,8 @@
-#MediaService Events#
+# MediaService Events
 
 The MediaService class implements IMediaService. It provides easy access to operations involving IMedia.
 
-## Usage ##
+## Usage
 Example usage of the MediaService events:
 
     using Umbraco.Core;
@@ -30,7 +30,7 @@ Example usage of the MediaService events:
         }
     }
 
-## Events ##
+## Events
 <table>
     <tr>
         <th>Event</th>

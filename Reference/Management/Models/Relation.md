@@ -1,22 +1,24 @@
-#Relation
+---
+versionFrom: 6.0.0
+---
 
-**Applies to Umbraco 6.x and newer**
+# Relation
 
-Intro text here
+Note: **Applies to Umbraco 6.x and newer**
 
- * **Namespace:** `Umbraco.Core.Models` 
- * **Assembly:** `Umbraco.Core.dll`
+Represents a Relation between two items
+
+- **Namespace:** `Umbraco.Core.Models`
+- **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
 
-* Umbraco.Core.dll
+- Umbraco.Core.dll
 
-All samples in this document will require the following usings:
-	
-	using Umbraco.Core.Models;
+All samples in this document will require the following using statement:
 
-##Constructors
+    using Umbraco.Core.Models;
 
-##Properties
+## Code reference
 
-##Methods
+More information about this object can be found in the [Relation Model Core documentation](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Core.Models.Relation.html)
