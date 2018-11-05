@@ -27,7 +27,7 @@ On this page you'll notice that all the children will be marked with pending upg
 
 ![Minor upgrade labels](images/minor-upgrades.png)
 
-The upgrade itself will happen, once you click the upgrade button. This will start by triggering the update, where all the files are updated on the children from the baseline. Once the files are in place we also run the upgrade process, making sure that the children are fully upgraded, once done. 
+The upgrade itself will happen, once you click the upgrade button. This will start by triggering the update, where all the files are updated on the children from the baseline. Once the files are in place we also run the upgrade process, making sure that the children are fully upgraded. 
 
 When using the feature, it is important that the Baseline Child projects have been setup following our [best practices for handling config files](../Configuration-files). This means that any changes to the Child project, shoud be applied via a config transform file. The reason is that the Child projects config files will be merged by choosing the parents config files first, to ensure that changes to config files, that has been made in the minor upgrade, will also be applied to the childsites.
 
