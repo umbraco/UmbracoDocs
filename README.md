@@ -18,7 +18,7 @@ For details on how to contribute, see further down this page.
 [Reference (available here)](Reference/index.md) is a collection of API references specifically for developers working with and extending Umbraco.
 
 ## Extending
-[Extending (available here)](Extending/) is documentation on customizing and extending the back office.
+[Extending (available here)](Extending/) is documentation on customizing and extending the backoffice.
 
 ## Tutorials
 [Tutorials (available here)](Tutorials/) is a collection of the more extensive tutorials used in the documentation.
