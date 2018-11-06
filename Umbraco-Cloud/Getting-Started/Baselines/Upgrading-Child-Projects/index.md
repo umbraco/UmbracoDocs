@@ -17,7 +17,7 @@ From this page you will have an overview af all the Child Projects this Baseline
 
 ## Deploying Minor upgrades to Child projects
 
-To do a minor upgrade of a Baseline project and its Child projects, the initial task is to run the minor upgrade on the baseline it self. This is done as you'd expect in the Umbraco Cloud portal by clicking the "Upgrade available!" button on the Development environment. 
+To do a minor upgrade of a Baseline project and its Child projects, the initial task is to run the minor upgrade on the baseline it self. This is done in the Umbraco Cloud portal by clicking the "Upgrade available!" button on the Development environment, once the environments on the project are in sync. 
 
 Following [Minor upgrades](../../Upgrades/#minor-version-upgrades) guide and process will leave the Baseline project upgraded to the latest version, while all the children are untouched for now.
 
