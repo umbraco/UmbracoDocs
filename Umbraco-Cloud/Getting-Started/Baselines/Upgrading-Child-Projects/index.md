@@ -17,13 +17,17 @@ From this page you will have an overview af all the Child Projects this Baseline
 
 ## Deploying Minor upgrades to Child projects
 
-To do a minor upgrade of a Baseline project and its Child projects, the initial task is to run the minor upgrade on the baseline it self. This is done in the Umbraco Cloud portal by clicking the "Upgrade available!" button on the Development environment, once the environments on the project are in sync. 
+To do a minor upgrade of a Baseline project and its Child projects, the initial task is to run the minor upgrade on the Baseline project it self. This is done in the Umbraco Cloud portal by clicking the "Upgrade available!" button on the Development environment, once the environments on the project are in sync. 
 
 Following [Minor upgrades](../../Upgrades/#minor-version-upgrades) guide and process will leave the Baseline project upgraded to the latest version, while all the children are untouched for now.
 
 Once the upgrade has been verified on the Baseline project, and you've made sure everything works as expected, you should go to the **Manage Child Projects** page on the Baseline. 
 
 On this page you'll notice that all the children now have an available upgrade. At this point you are able to select the projects to upgrade.
+
+:::note
+We recommend that you setup a Development environment on your Child project before deploying the upgrade. That way you'll have an environment to test on, and verify that everything has been deployed correctly.
+:::
 
 At first any pending changes made on the Baseline will be deployed to the child site. Once the changes have been deployed, the child site will be upgraded to the same version as the Baseline site. All the products (CMS, Courier to Deploy and Forms) will be upgraded.
 
