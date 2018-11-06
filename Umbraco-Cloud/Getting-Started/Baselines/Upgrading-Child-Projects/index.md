@@ -25,13 +25,15 @@ Once the upgrade has been verified on the Baseline project, and you've made sure
 
 On this page you'll notice that all the children now have an available upgrade. At this point you are able to select the projects to upgrade.
 
-:::note
-We recommend that you setup a Development environment on your Child project before deploying the upgrade. That way you'll have an environment to test on, and verify that everything has been deployed correctly.
-:::
-
 At first any pending changes made on the Baseline will be deployed to the child site. Once the changes have been deployed, the child site will be upgraded to the same version as the Baseline site. All the products (CMS, Courier to Deploy and Forms) will be upgraded.
 
 ![Minor upgrade labels](images/minor-upgrades.png)
+
+:::note
+We recommend that you setup a Development environment on your Child project before deploying the upgrade. That way you'll have an environment to test on, and verify that everything has been deployed correctly.
+
+Once you are happy with the Development environment, you can go ahead and deploy to the Live environment as well.
+:::
 
 The upgrade itself will happen, once you click the upgrade button. This will start by triggering the update, where all the files are updated on the children from the baseline. Once the files are in place we also run the upgrade process, making sure that the children are fully upgraded. 
 
