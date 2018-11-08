@@ -168,6 +168,95 @@ Returns the root `IPublishedContent` entity from the Media tree.
     }
 
 
+## Working with Tags
+### .TagQuery;
+Gets a lazily loaded reference to the tag context to allow you to work with tags
+
+    @{
+        var tagQuery = Umbraco.TagQuery;
+    }
+
+
+### .TagQuery.GetAllContentTags([string tagGroup]);
+Get a collection of tags used by content items on the site, you can optionally pass in a group name to only list tags belonging to a specific tag group
+
+    @{
+        var allTags = Umbraco.TagQuery.GetAllContentTags();
+        
+        var newsTags = Umbraco.TagQuery.GetAllContentTags("news");
+    }
+    
+    
+### .TagQuery.GetAllMediaTags([string tagGroup]);
+Get a collection of tags used by media items on the site, you can optionally pass in a group name to only list tags belonging to a specific tag group
+
+    @{
+        var allTags = Umbraco.TagQuery.GetAllMediaTags();
+        
+        var newsTags = Umbraco.TagQuery.GetAllMediaTags("news");
+    }
+    
+    
+### .TagQuery.GetAllMemberTags([string tagGroup]);
+Get a collection of tags used by members on the site, you can optionally pass in a group name to only list tags belonging to a specific tag group
+
+    @{
+        var allTags = Umbraco.TagQuery.GetAllMemberTags();
+        
+        var newsTags = Umbraco.TagQuery.GetAllMemberTags("news");
+    }
+    
+    
+### .TagQuery.GetAllTags([string tagGroup]);
+Get a collection of tags used on the site, you can optionally pass in a group name to only list tags belonging to a specific tag group
+
+    @{
+        var allTags = Umbraco.TagQuery.GetAllTags();
+        
+        var newsTags = Umbraco.TagQuery.GetAllTags("news");
+    }
+    
+    
+### .TagQuery.GetContentByTag(string tag, [string tagGroup]);
+Get a collection of IPublishedContent by tag, and you can optionally filter by tag group as well
+
+    @{
+        var taggedContent = Umbraco.TagQuery.GetContentByTag("News");
+    }
+    
+    
+### .TagQuery.GetContentByTagGroup(string tagGroup);
+Get a collection of IPublishedContent by tag group
+
+    @{
+        var taggedContent = Umbraco.TagQuery.GetContentByTagGroup("BlogTags");
+    }
+    
+    
+### .TagQuery.GetMediaByTag(string tag, [string tagGroup]);
+Get a collection of Media by tag, and you can optionally filter by tag group as well
+
+    @{
+        var taggedContent = Umbraco.TagQuery.GetMediaByTag("BlogTags");
+    }
+    
+    
+### .TagQuery.GetTagsForEntity(int contentId, [string tagGroup]);
+Get a collection of tags by entity id (queries content, media and members), and you can optionally filter by tag group as well
+
+    @{
+        var taggedContent = Umbraco.TagQuery.GetMediaByTagGroup("BlogTags");
+    }
+    
+    
+### .TagQuery.GetTagsForProperty(int contentId, string propertyTypeAlias, [string tagGroup]);
+Get a collection of tags assigned to a property of an entity (queries content, media and members), and you can optionally filter by tag group as well
+
+    @{
+        var taggedContent = Umbraco.TagQuery.GetMediaByTagGroup("BlogTags");
+    }
+
+
 ## Working with Members
 
 ### .Member(1234);
