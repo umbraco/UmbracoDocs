@@ -1,6 +1,6 @@
 # Umbraco Forms on Cloud
 
-In this article you can learn about how Umbraco Forms is handled on Umbraco Cloud and read about the workflow and best practices.
+In this article you can learn about how Umbraco Forms are handled on Umbraco Cloud and read about the workflow and best practices.
 
 Umbraco Forms is a package that is included with your Umbraco Cloud project. It gives you a nice integrated UI where you can create forms for your website. The package is built specifically for Umbraco and is maintained by Umbraco HQ.
 
