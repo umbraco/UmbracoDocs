@@ -8,7 +8,7 @@ Read more about the product in the [Umbraco Forms section](../../../Add-ons/Umbr
 
 ## How are Forms handled on Cloud?
 
-Umbraco Forms is currently handled as metada, and will be deployed along with the rest of your metadata and structure files, e.g. Document Types, Templates and Stylesheets.
+Umbraco Forms are currently handled as metada, and will be deployed along with the rest of your metadata and structure files, e.g. Document Types, Templates and Stylesheets.
 
 When you create a Form on your Umbraco Cloud project, a UDA file will be generated. This UDA file will contain all the metadata from your form, and be very similar to the `JSON` file that is also generated when you create a new form - this file can be found in `~/App_Data/UmbracoForms/Data/forms`.
 
