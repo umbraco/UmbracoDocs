@@ -6,11 +6,11 @@ This guide takes you through the steps to setup a simple Custom Dashboard in Umb
 
 ### What is a Dashboard?
 
-A tab on the right-hand side of a section eg. the Redirect Url Management dashboard in the Content section:
+A Dashboard is a tab on the right-hand side of a section eg. the Redirect Url Management dashboard in the Content section:
 
 ![Redirect Url Management Dashboard](images/whatisadashboard.jpg)
 
-### Why?
+### Why provide a Custom Dashboard for your editors?
 
 It is generally considered good practice when you build an Umbraco site to provide a custom dashboard to welcome your editors and provide information about the site and/or provide a helpful gateway to common functionality the editors will use.
 This guide will show the basics of creating a custom 'Welcome Message' dashboard and then show how you can go a little further to provide interaction using AngularJS...
@@ -19,7 +19,7 @@ So all the steps we will go through:
 
 - Setting up the dashboard plugin
 - Writing a basic Welcome Message view
-- Configure the Custom Welcome Dashboard to be displayed.
+- Configure the Custom Welcome Dashboard to be displayed
 - Adding styles
 - Adding an AngularJS controller
 - Display the current user's name in our welcome message
@@ -83,7 +83,7 @@ The above configuration is effectively saying:
 
 > "Add a tab called 'Welcome' to the 'Content' area/section of the Umbraco site, use the WelcomeDashboard.html as the content (view) of the dashboard and don't allow 'translators' to see it!"
 
-*__Note:__ The order in which the tab will appear in the Umbraco Backoffice depends on its position in the dashboard.config file, so to make our Custom Welcome message the first Tab the editors sees in the content section, make sure the above configuration is the 'first' section configuration in the dashboard.config file.*
+*__Note:__ The order in which the tab will appear in the Umbraco Backoffice depends on its position in the dashboard.config file, so to make our Custom Welcome message the first Tab the editors see in the content section, make sure the above configuration is the 'first' section configuration in the dashboard.config file.*
 
 *__Note:__ You can specify multiple controls to appear on a particular tab, and multiple tabs in a particular section.*
 
@@ -95,7 +95,7 @@ The above configuration is effectively saying:
 
 ## Adding a bit of style
 
-Congratulations! job done - no actually no, this is just the starting point the dashboard can be styled as you want it to be with CSS, but there are a couple of further steps to undertake be able to apply a custom stylesheet to the dashboard:
+Congratulations! job done - no actually no, this is just the starting point. The dashboard can be styled as you want it to be with CSS, but there are a couple of further steps to undertake be able to apply a custom stylesheet to the dashboard:
 
 We need to add something called a package.manifest file to our CustomWelcomeDashboard folder
 
@@ -324,7 +324,7 @@ Where 1075, is the id of our blog section, and BlogPost is the alias of the type
 
 You can create your own custom angular services/resources, to interact with your own serverside data (using UmbracoAuthorizedJsonController), The property editor tutorial has a step explaining how to do this [part 4 - Adding server-side data to a property editor](../../Tutorials/creating-a-property-editor/part-4.md).
 
-## What else? - what are you waiting for?
+## What else? What are you waiting for?
 
 Perhaps the Dashboard is a gateway to a third party system or a tool to search specific content, or tools to help clean up existing content. extend extend extend
 
