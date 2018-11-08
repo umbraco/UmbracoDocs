@@ -14,7 +14,7 @@ When you create a Form on your Umbraco Cloud project, a UDA file will be generat
 
 Once you deploy a form, the engine behind Cloud will use the UDA file to extract the form on the next environment in the workflow.
 
-Entries submitted are not transferred to the next environment, as they are *environment specific*. If you need to move entries from one environment to another, you need to run a export/import script on the databases.
+Entries submitted are not transferred to the next environment, as they are *environment specific*. If you need to move entries from one environment to another, you need to run an export/import script on the databases.
 
 ## Recommended workflow
 
