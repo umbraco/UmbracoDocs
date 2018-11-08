@@ -4,7 +4,7 @@ In this article you can learn about how Umbraco Forms is handled on Umbraco Clou
 
 Umbraco Forms is a package that is included with your Umbraco Cloud project. It gives you a nice integrated UI where you can create forms for your website. The package is built specifically for Umbraco and is maintained by Umbraco HQ.
 
-Read more about the product in the [Umbraco Forms section](../../Add-ons/UmbracoForms).
+Read more about the product in the [Umbraco Forms section](../../../Add-ons/UmbracoForms).
 
 ## How are Forms handled on Cloud?
 
