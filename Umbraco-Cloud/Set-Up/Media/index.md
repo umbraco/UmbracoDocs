@@ -10,32 +10,49 @@ If this sounds like you, you should evaluate the Azure Blob Storage provider. It
 
 ## Setup
 ### Packages
-#### File System Provider for Azure Blob Storage
-You’ll replace the default FileSystemProvider with the `Our.Umbraco.FileSystemProviders.Azure.AzureBlobFileSystem` provider.  We recommend doing this first and verifying it behaves as expected before proceeding with the ImageProcessor setup.
 
-The package is available on Our Umbraco [https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/](https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/)
-The project source can be found here   [https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure](https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure)
+These packages are only available via NuGet, so ideally you’ll have your site setup to use Visual Studio. You can copy/paste the `PM>` commands into the Package Manager Console. If you don't see the Package Manager Console window, you can open it from the menu View -> Other Windows -> Package Manager Console.
+
+#### File System Provider for Azure Blob Storage
+
+You’ll replace the default FileSystemProvider with the `UmbracoFileSystemProviders.Azure` provider.  We recommend doing this first and verifying it behaves as expected before proceeding with the ImageProcessor setup.
+
+```PM> Install-Package UmbracoFileSystemProviders.Azure```
+
+The package is also available on Our Umbraco [https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/](https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/)
+The project source can be found here [https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure](https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure)
 
 There are detailed instructions available on the project page, also summarized here.
 
 Update `~/Config/FileSystemProviders.config` replacing the default provider with the following:
 
-
     <?xml version="1.0"?>
     <FileSystemProviders>
+      <!-- Media -->
       <Provider alias="media" type="Our.Umbraco.FileSystemProviders.Azure.AzureBlobFileSystem, Our.Umbraco.FileSystemProviders.Azure">
         <Parameters>
-          <add key="containerName" value="media" />
-          <add key="rootUrl" value="https://[myAccountName].blob.core.windows.net/" />
+          <add key="containerName" value="media"/>
+          <add key="rootUrl" value="http://[myAccountName].blob.core.windows.net/"/>
           <add key="connectionString" value="DefaultEndpointsProtocol=https;AccountName=[myAccountName];AccountKey=[myAccountKey]"/>
-          <!--Optional configuration value determining the maximum number of days to cache items in the browser. Defaults to 365 days. -->
-          <add key="maxDays" value="365" />
+          <!--
+            Optional configuration value determining the maximum number of days to cache items in the browser.
+            Defaults to 365 days.
+          -->
+          <add key="maxDays" value="365"/>
+          <!--
+            When true this allows the VirtualPathProvider to use the deafult "media" route prefix regardless 
+            of the container name.
+          -->
+          <add key="useDefaultRoute" value="true"/>
+          <!--
+            When true blob containers will be private instead of public what means that you can't access the original blob file directly from its blob url.
+          -->
+          <add key="usePrivateContainer" value="false"/>
         </Parameters>
       </Provider>
     </FileSystemProviders>
 
-
-If you are using IISExpress (as with Visual Studio or WebMatrix) you’ll need to add a static file handler mapping to `~web.config`
+If you are using IISExpress (as with Visual Studio) you’ll need to add a static file handler mapping to `~web.config`
 
     <?xml version="1.0"?>
       <configuration>
@@ -48,23 +65,23 @@ If you are using IISExpress (as with Visual Studio or WebMatrix) you’ll need t
           </system.webServer>
         </location>
       </configuration>
-      
+
 #### Image Processor
 You’ll need to install the following ImageProcessor packages (latest versions recommended):
 
-* ImageProcessor.Web.4.4.0.0 or later
-* ImageProcessor.Web.Config.2.2.3.0 or later
-* ImageProcessor.Web.Plugins.AzureBlobCache.1.0.4.0 or later
+* ImageProcessor.Web.4.9.3.25 or later
+* ImageProcessor.Web.Config.2.4.1.19 or later
+* ImageProcessor.Web.Plugins.AzureBlobCache.1.4.2.19 or later
 
-These packages are only available via NuGet, so ideally you’ll have your site setup to use Visual Studio.  You can find more information about ImageProcessor and related packages here [https://imageprocessor.org/](https://imageprocessor.org/)
+You can find more information about ImageProcessor and related packages here [https://imageprocessor.org/](https://imageprocessor.org/)
 
-Since Umbraco includes a version of ImageProcessor.Web by default, you will need to update that package first using NuGet:
+Since Umbraco includes a version of ImageProcessor.Web and ImageProcessor.Web.Config by default, you will need to update those packages first using NuGet:
 
 ```PM> Update-Package ImageProcessor.Web```
 
-Then install the other ImageProcessor packages:
+```PM> Update-Package ImageProcessor.Web.Config```
 
-```PM> Install-Package ImageProcessor.Web.Config```
+Then install the ImageProcessor package that places the cached files in the Azure Blob storage:
 
 ```PM> Install-Package ImageProcessor.Web.Plugins.AzureBlobCache```
 
@@ -91,16 +108,18 @@ Update `~web.config`
 
 Update `~/config/imageprocessor/security.config`
 
+You have to manually add `prefix="media/"` to the service element, otherwise ImageProcessor will not run and the original image will be served.
+
     <?xml version="1.0" encoding="utf-8"?>
     <security>
       <services>
         <!--<service name="LocalFileImageService" type="ImageProcessor.Web.Services.LocalFileImageService, ImageProcessor.Web" />-->
         <service prefix="media/" name="CloudImageService" type="ImageProcessor.Web.Services.CloudImageService, ImageProcessor.Web">
           <settings>
+            <setting key="Container" value="media"/>
             <setting key="MaxBytes" value="8194304"/>
             <setting key="Timeout" value="30000"/>
             <setting key="Host" value="https://<your blob account>.blob.core.windows.net/"/>
-            <setting key="Container" value="media"/>
           </settings>
         </service>
         <service prefix="remote.axd" name="RemoteImageService" type="ImageProcessor.Web.Services.RemoteImageService, ImageProcessor.Web">
@@ -118,25 +137,26 @@ Update `~/config/imageprocessor/security.config`
           </whitelist>
         </service>
       </services>
-    </security> 
+    </security>
 
 Update `~/config/imageprocessor/cache.config` by removing the default “DiskCache” config entry.
 
     <?xml version="1.0" encoding="utf-8"?>
     <caching currentCache="AzureBlobCache">
       <caches>
-      <cache name="AzureBlobCache" type="ImageProcessor.Web.Plugins.AzureBlobCache.AzureBlobCache, ImageProcessor.Web.Plugins.AzureBlobCache" maxDays="365">
+        <cache name="AzureBlobCache" type="ImageProcessor.Web.Plugins.AzureBlobCache.AzureBlobCache, ImageProcessor.Web.Plugins.AzureBlobCache" maxDays="365" memoryMaxMinutes="60" browserMaxDays="7">
           <settings>
-            <setting key="CachedStorageAccount" value="DefaultEndpointsProtocol=https;AccountName=;AccountKey=" />
+            <setting key="CachedStorageAccount" value="DefaultEndpointsProtocol=https;AccountName=[myAccountName];AccountKey=[myAccountKey]" />
             <setting key="CachedBlobContainer" value="cache" />
-            <setting key="CachedCDNRoot" value="https://<your Azure CDN>.vo.msecnd.net/" />
-            <setting key="CachedCDNTimeout" value="2000" />
             <setting key="UseCachedContainerInUrl" value="true" />
-            <setting key="SourceStorageAccount" value="DefaultEndpointsProtocol=https;AccountName=;AccountKey=" />
+            <setting key="CachedCDNRoot" value="[CdnRootUrl]" />
+            <setting key="CachedCDNTimeout" value="2000" />
+            <setting key="SourceStorageAccount" value="DefaultEndpointsProtocol=https;AccountName=[myAccountName];AccountKey=[myAccountKey]" />
             <setting key="SourceBlobContainer" value="media" />
             <setting key="StreamCachedImage" value="false" />
           </settings>
-        </cache></caches>
+        </cache>
+      </caches>
     </caching>
 
 ## Environment and Deployment considerations
