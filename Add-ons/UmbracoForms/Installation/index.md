@@ -3,7 +3,7 @@
 ## [Extending Umbraco with the Forms section](Install)
 Extend Umbraco with the form builder section in a few steps  
 
-## [Configuring a license](license.md)
+## [Configuring a license](../The-licensing-model)
 Getting Forms out of trial mode
 
 ## [Keeping Forms up to date](Upgrade.md)

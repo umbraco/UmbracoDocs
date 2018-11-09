@@ -4,6 +4,9 @@
 ## [Installing Courier](Installation.md)
 Guide on how to install Courier
 
+## [Configuring a license](../../The-Licensing-model)
+Configure the domains you need to be able to use Courier on.
+
 ## [Configuring Courier](Configuration.md)
 Overview on how to configure Courier and its different providers
 
