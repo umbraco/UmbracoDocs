@@ -13,3 +13,4 @@ To help you troubleshoot you should start by determining where this error is rep
 ## Is your issue related to something else?
 - [Minor upgrades issues](../Upgrades/Minor-Upgrades/)
 - [Baseline merge conflicts](../Getting-Started/Baselines/Baseline-Merge-Conflicts)
+- [How Umbraco Forms are handled on Cloud](../Deployment/Umbraco-Forms-on-Cloud)
