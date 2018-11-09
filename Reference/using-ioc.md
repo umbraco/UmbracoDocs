@@ -4,18 +4,18 @@ _This section will show you how to setup Ioc/Dependency Injection with your Umbr
 
 ## Overview
 
-We don't use IoC in the Umbraco source code. This isn't because we don't like it or don't want to use it, it's because we want you as a developer to be able to use whatever IoC framework that you would like to use without jumping through any hoops. With that said, it means it is possible to implement whatever IoC engine that you'd like!
+We don't use IoC in the Umbraco source code. This isn't because we don't like it or don't want to use it; it's because we want you as a developer to be able to use whatever IoC framework that you would like to use without jumping through any hoops. With that said, it means it is possible to implement whatever IoC engine that you'd like!
 
 ## Implementation
 
-In most IoC frameworks you would setup your container in your global.asax class. To do that in Umbraco, you will need to inherit from our global.asax class called: `Umbraco.Web.UmbracoApplication`. You should then override the `OnApplicationStarted` method to build your container and initialize any of the IoC stuff that you require.
-Alternatively you can implement the `Umbraco.Web.IApplicationEventHandler` interface.
+In most IoC frameworks, you would setup your container in your global.asax class. To do that in Umbraco, you will need to inherit from our global.asax class called: `Umbraco.Web.UmbracoApplication`. You should then override the `OnApplicationStarted` method to build your container, and initialize any of the IoC stuff that you require.
+Alternatively, you can implement the `Umbraco.Web.IApplicationEventHandler` interface.
 
 ## Autofac Example
 
 This example will setup Autofac to work with Umbraco (see [their documentation](https://autofac.readthedocs.org/en/latest/) for full details). Our examples make use of the following NuGet packages: `Autofac`, `Autofac.Mvc5`, `Autofac.WebApi2`.
 
-For this example we're going to add a custom class to the IoC container as a Transient instance, here's the class:
+For this example, we're going to add a custom class to the IoC container as a Transient instance; here's the class:
 
 	public class MyAwesomeContext
 	{
@@ -61,7 +61,7 @@ Do not forget to change the Application tag inside the global.asax file in the w
 
 	<%@ Application CodeBehind="Global.asax.cs" Inherits="MyProject.MyNamespace.MyApplication" Language="C#" %>
 
-If you like to use the `IApplicationEventHandler` alternative - here is an example for this approach:
+If you like to use the `IApplicationEventHandler` alternative, here is an example for this approach:
 	
 	using Umbraco.Web;
 	public class MyApplication : IApplicationEventHandler
@@ -96,7 +96,7 @@ If you like to use the `IApplicationEventHandler` alternative - here is an examp
 		}
 	}
 
-In this example we will assume that we have a Document Type called 'Home' Now we're going to create a custom controller to hijack a route for all content pages of type Home *(NOTE: we can target custom template names too, see the [Hijacking routes](routing/custom-controllers) documentation for full details).* Notice that the constructor accepts a parameter the custom class, this will be injected via IoC.
+In this example, we will assume that we have a Document Type called 'Home'. Now we're going to create a custom controller to hijack a route for all content pages of type Home *(NOTE: we can target custom template names too - see the [Hijacking routes](routing/custom-controllers) documentation for full details).* Notice that the constructor accepts a parameter the custom class; this will be injected via IoC.
 
 	public class HomeController : RenderMvcController
 	{
@@ -116,7 +116,7 @@ In this example we will assume that we have a Document Type called 'Home' Now we
 		}
 	}
 
-As another example, you can do the same with SurfaceControllers. Here we are creating a locally declared SurfaceController that has a Child Action and again just like the previous controller it will have a new instance of the custom class injected:
+As another example, you can do the same with SurfaceControllers. Here we are creating a locally declared SurfaceController that has a Child Action, and again, just like the previous controller, it will have a new instance of the custom class injected:
 
 	public class MyTestSurfaceController : SurfaceController
 	{
@@ -142,16 +142,16 @@ You need to register all assemblies that may contain MVC or WebApi controllers. 
 typeof(UmbracoApplication).Assembly
 ```
 
-If you don't register assemblies that contain controllers you may end up with YSOD errors. If you do not register a controller then ASP.NET will try to create the controller but if it doesn't have an empty constructor you'll get a YSOD.
+If you don't register assemblies that contain controllers, you may end up with YSOD errors. If you do not register a controller, then ASP.NET will try to create the controller, but if it doesn't have an empty constructor, you'll get a YSOD.
 
 ## Things to note
 
-We use a custom MVC controller builder in our code called `Umbraco.Web.Mvc.MasterControllerFactory`, which needs to always be the default controller factory, if you change this Umbraco will probably not work anymore. The good news is that you can specify 'slave' factories so you can specify custom controller factories for different purposes. You would just need to create a new class that inherits from `Umbraco.Web.Mvc.IFilteredControllerFactory` and ensure that the class is public (so it can be found). If your IoC implementation affects the default controller factory, you may have to modify it in order to support this implementation. For the most part, most IoC frameworks will just target setting a custom DependencyResolver which is 100% ok.
+We use a custom MVC controller builder in our code called `Umbraco.Web.Mvc.MasterControllerFactory`, which needs to always be the default controller factory; if you change this, Umbraco will probably not work anymore. The good news is that you can specify 'slave' factories so you can specify custom controller factories for different purposes. You would just need to create a new class that inherits from `Umbraco.Web.Mvc.IFilteredControllerFactory` and ensure that the class is public (so it can be found). If your IoC implementation affects the default controller factory, you may have to modify it in order to support this implementation. For the most part, most IoC frameworks will just target setting a custom DependencyResolver which is 100% ok.
 
 ## Unity Example
 
 Install the Unity, Unity.Mvc and Unity.AspNet.WebApi packages.
-Remove the Mvc and Api specific files created, we will be merging those files shortly.
+Remove the Mvc and Api specific files created; we will be merging those files shortly.
 Leave the UnityConfig file as is.
 
 Now create the following files to configure Unity correctly for an Umbraco site.
@@ -184,15 +184,15 @@ Now create the following files to configure Unity correctly for an Umbraco site.
 			);
 
 			// The UmbracoContext must be registered so that the Umbraco backoffice controllers 
-			// can be successfully resolved
+			// can be successfully resolved.
 			container.RegisterType<UmbracoContext>(
 				new PerRequestLifetimeManager(), 
 				new InjectionFactory(c => UmbracoContext.Current)
 			);
 
-			// Unity by default chooses the constructor with the most amount of arguments
-			// In the case of the LegacyTreeController this means we must instruct Unity instead to
-			// use the default constructor by passing in a parameterless InjectionConstructor during registration
+			// Unity by default chooses the constructor with the most amount of arguments.
+			// In the case of the LegacyTreeController, this means we must instruct Unity instead to
+			// use the default constructor by passing in a parameterless InjectionConstructor during registration.
 			container.RegisterType<LegacyTreeController>(new InjectionConstructor());
 		}
 
@@ -201,19 +201,19 @@ Now create the following files to configure Unity correctly for an Umbraco site.
 		public void OnApplicationStarting(UmbracoApplicationBase httpApplication, ApplicationContext applicationContext) { }
 	}
 	
-And here is the merged UnityActivator
+And here is the merged UnityActivator:
 
 	[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(UnityActivator), "Start")]
 	[assembly: WebActivatorEx.ApplicationShutdownMethod(typeof(UnityActivator), "Shutdown")]
 
-	/// <summary>Provides the bootstrapping for integrating Unity when it is hosted in ASP.NET</summary>
+	/// <summary>Provides the bootstrapping for integrating Unity when it is hosted in ASP.NET.</summary>
 	public static class UnityActivator
 	{
 		/// <summary>Integrates Unity when the application starts.</summary>
 		public static void Start()
 		{
 			// This is required if you intend to follow the example above and use the PerRequestLifetimeManager.
-			// If you are developing a library using umbracoCms.Core and Unity 
+			// If you are developing a library using umbracoCms.Core and Unity, 
 			// you might want to reconsider depending on this module.
 			// If the library consumers also use Unity, they might also register the per request http module, 
 			// bloating the request pipeline with multiple modules performing similar tasks.
