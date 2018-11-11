@@ -41,7 +41,7 @@ EditorModelEventManager.SendingContentModel += (sender, e) => {
 Notice that the example doesn't check the content type, so will apply for all **Advanced** tabs across all content items where a tab with this name is present.
 
 :::tip
-The `CssClass` property as shown in the example below is first available from Umbraco 7.13.
+The `CssClass` property as shown in the example below is available from Umbraco 7.13.
 :::
 
 It's also possible to to change the look of a tab. This could be by making the label bold, or appending an icon to the tab - both accomplished by specifying one or more CSS class names for the `CssClass` property:
