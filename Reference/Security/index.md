@@ -41,7 +41,7 @@ Read more about [auto linking](auto-linking.md)
 
 ### Custom password check
 
-You are able [check the username and password against your own credentials](custom-password-checker.md) store by implementing a new  `IBackOfficeUserPasswordChecker`.
+You are able [check the username and password against your own credentials store](custom-password-checker.md) by implementing a new  `IBackOfficeUserPasswordChecker`.
 
 ### Authenticating with Active Directory credentials
 
