@@ -22,7 +22,7 @@ EditorModelEventManager.SendingContentModel += (sender, e) => {
 
 In this Umbraco, we iterate over the tabs provided in the model, and change the label of the **Content** tab to **Hello World**.
 
-For another scenario, we could have an **Advanced*' tab we only wish to show to for certain users:
+For another scenario, we could have an **Advanced** tab we only wish to show to for certain users:
 
 ```C#
 EditorModelEventManager.SendingContentModel += (sender, e) => {
