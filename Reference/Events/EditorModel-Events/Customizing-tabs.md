@@ -9,7 +9,7 @@ EditorModelEventManager.SendingContentModel += (sender, e) => {
     foreach (var tab in e.Model.Tabs)
     {
 
-	    // Change the label of the "Content" tab to "Hello World"
+        // Change the label of the "Content" tab to "Hello World"
         if (tab.Label == "Content")
         {
             tab.Label = "Hello World";
