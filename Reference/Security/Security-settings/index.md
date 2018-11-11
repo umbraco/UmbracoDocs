@@ -8,8 +8,25 @@ The settings for Umbraco passwords are handled by default through the ASP.NET Me
     <membership defaultProvider="UmbracoMembershipProvider" userIsOnlineTimeWindow="15">
       <providers>
         <clear />
-        <add name="UmbracoMembershipProvider" type="Umbraco.Web.Security.Providers.MembersMembershipProvider, Umbraco" minRequiredNonalphanumericCharacters="0" minRequiredPasswordLength="10" useLegacyEncoding="false" enablePasswordRetrieval="false" enablePasswordReset="false" requiresQuestionAndAnswer="false" defaultMemberTypeAlias="Member" passwordFormat="Hashed" allowManuallyChangingPassword="false" maxInvalidPasswordAttempts="50"/>
-        <add name="UsersMembershipProvider" type="Umbraco.Web.Security.Providers.UsersMembershipProvider, Umbraco"  enablePasswordRetrieval="false" enablePasswordReset="false" requiresQuestionAndAnswer="false" allowManuallyChangingPassword="false" maxInvalidPasswordAttempts="100"/>
+        <add name="UmbracoMembershipProvider" 
+             type="Umbraco.Web.Security.Providers.MembersMembershipProvider, Umbraco" 
+             minRequiredNonalphanumericCharacters="0" 
+             minRequiredPasswordLength="10" 
+             useLegacyEncoding="false" 
+             enablePasswordRetrieval="false" 
+             enablePasswordReset="false" 
+             requiresQuestionAndAnswer="false" 
+             defaultMemberTypeAlias="Member" 
+             passwordFormat="Hashed" 
+             allowManuallyChangingPassword="false" 
+             maxInvalidPasswordAttempts="50"/>
+        <add name="UsersMembershipProvider" 
+             type="Umbraco.Web.Security.Providers.UsersMembershipProvider, Umbraco"  
+             enablePasswordRetrieval="false" 
+             enablePasswordReset="false" 
+             requiresQuestionAndAnswer="false" 
+             allowManuallyChangingPassword="false" 
+             maxInvalidPasswordAttempts="100"/>
       </providers>
     </membership>
 ```
