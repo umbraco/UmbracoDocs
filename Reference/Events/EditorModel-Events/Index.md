@@ -122,5 +122,5 @@ A model representing a member to be displayed in the backoffice
 
 The events exposed by the `EditorModelEventManager` class gives you a lot of options to customize the backoffice experience. You can can find inspiration from the various samples provided below:
 
-* [Customizing tabs](Customizing-tabs/)
-* [Customizing the "Links" box](Customizing-the-links-box/)
+* [Customizing tabs](Customizing-tabs)
+* [Customizing the "Links" box](Customizing-the-links-box)
