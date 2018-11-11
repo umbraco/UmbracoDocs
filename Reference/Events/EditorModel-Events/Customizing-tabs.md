@@ -72,4 +72,4 @@ EditorModelEventManager.SendingContentModel += (sender, e) => {
 
 With the correct CSS, the two tabs could then look like:
 
-![image](https://user-images.githubusercontent.com/3634580/47519269-7f263980-d88d-11e8-8abd-9b976cdb9239.png)
+![image](Images/content-tabs-example.png)
