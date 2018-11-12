@@ -93,12 +93,6 @@ This can be done by adding the following into either `serilog.config` or the sub
 If you change the **serilog:minimum-level** to be **Error** then the following example above would only log messages from *Microsoft.AspNetCore.Mvc* and not any warning, info or debug messages from the *Microsoft* namespace
 :::
 
-
-### Writing to a different source
-Serilog has a similar concept to Log4Net with its appenders, which are referred to Serilog Sinks.
-A Serilog Sink, allows you to persist the structured log message
-*******WARREN TODO*******
-
 ### Writing your own log messages to a custom file
 Add the following to the `/config/serilog.user.config` file, which will create a new JSON log file
 
@@ -120,6 +114,27 @@ With the above example we are able to write to a seperate JSON log file, but add
 <!-- Common use case is to include SourceType starting with your own namespace -->
 <add key="serilog:using:FilterExpressions" value="Serilog.Filters.Expressions" />
 <add key="serilog:filter:ByIncluding.expression" value="StartsWith(SourceContext, 'MyNamespace')" />
+```
+
+### Writing log events to different storage types
+Serilog has a similar concept to Log4Net with its appenders, which are referred to Serilog Sinks.
+A Serilog Sink, allows you to persist the structured log message to a data store of your choice. In v8.0+ we use the *Serilog.Sinks.File* to allow us to write a .txt or .json file to disk. But the Serilog project anmd the wider Serilog community allows you to store these logs in various locations.
+
+Here are some examples:
+* [Azure Table Storage](https://github.com/serilog/serilog-sinks-azuretablestorage)
+* [Elastic Search](https://github.com/serilog/serilog-sinks-elasticsearch)
+* [Elmah.io](https://github.com/serilog/serilog-sinks-elmahio)
+* [Seq](https://github.com/serilog/serilog-sinks-seq)
+* [SQL Server](https://github.com/serilog/serilog-sinks-mssqlserver)
+* [Windows Event Log](https://github.com/serilog/serilog-sinks-eventlog)
+* [Many more](https://github.com/serilog/serilog/wiki/Provided-Sinks)
+
+For example you could install the Nuget package `PM> Install-Package Serilog.Sinks.Seq` and update the `serilog.user.config` file with the following XML snippet and if you already have the file example above it will write to that location as well as Seq.
+
+```xml
+<add key="serilog:using:Seq" value="Serilog.Sinks.Seq" />
+<add key="serilog:write-to:Seq.serverUrl" value="http://localhost:5341" />
+<add key="serilog:write-to:Seq.apiKey" value="[optional API key here]" />
 ```
 
 ### Adding a custom log property to all log items
