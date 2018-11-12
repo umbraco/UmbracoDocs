@@ -10,7 +10,7 @@ NB Do not enable trace in your production environment, it reveals an awful lot a
 
 By default trace is disabled, to enable: update the web.config; look for the trace element in the System.Web section and set the enabled attribute to true
 
-    <trace enabled="true" requestLimit="100" pageOutput="false"   
+    <trace enabled="true" requestLimit="100" pageOutput="false"
                   traceMode="SortByTime" localOnly="true"/>
 
 #### Viewing Trace
@@ -31,7 +31,7 @@ Click on 'View Details' for a particular request in the list to see the specific
 
 ### MiniProfiler
 
-Umbraco includes the Mini Profiler project in its core (see [https://miniprofiler.com](https://miniprofiler.com) for more details). 
+Umbraco includes the Mini Profiler project in its core (see [https://miniprofiler.com](https://miniprofiler.com) for more details).
 The MiniProfiler profiles your code method calls, giving you a greater insight into code duration, and query time for underlying SQL queries. It's great for tracking down performance issues in your site's implementation.
 
 #### Displaying the MiniProfiler
@@ -61,11 +61,11 @@ If within your implementation there are certain lines of code that you think may
         System.Threading.Thread.Sleep(1000);
     }
 
-and now in the profiler you can see 
+and now in the profiler you can see
 
 ![Show Trivial](images/writing-to-miniprofiler.png)
 
-#### Umbraco Productivity Tool- Chrome Extension
+#### Umbraco Productivity Tool - Chrome Extension
 
 If you are using the Google Chrome browser you can install this [Umbraco Productivity Tool Chrome Extension](https://chrome.google.com/webstore/detail/umbraco-productivity/kepkgaeokeknlghbiiipbhgclikjgkdp?hl=en)
 
@@ -73,41 +73,5 @@ To enable you to easily access and switch between the Mini-profiler / Trace debu
 
 ![Umbraco Productivity Tool](images/umbraco-productivity-chrome-extension.png)
 
-### Logging
-
-Umbraco uses the Apache Log4Net library to output log statements to a set of Trace logs, to help you investigate problems with your Umbraco Installation. You can write to these log files from your custom code.
- 
-![Trace Logs](images/trace-logs.png)
-
-The configuration for log4net is found in your Umbraco site here: /config/log4net.config you can set the priority of the level of the logs information to be stored here:
-
-    <priority value="Info"/>
-
-Full details of Log4Net configuration options can be found here: https://logging.apache.org/log4net/release/manual/configuration.html
-
-The default location for trace logs in your application will be /app_data/logs/ with a file created for each day of logging information.
-There is a useful Umbraco Package called Diplo Trace Log Viewer that will enable you to see this log file information from the developer section of the Umbraco Backoffice: https://our.umbraco.com/projects/developer-tools/diplo-trace-log-viewer/
-
-##### Writing to the logs
-
-Umbraco provides a helper to enable you to log information from within your custom code.
-
-You will need to add a reference to Umbraco.Core.Logging in your class / view:
-
-    using Umbraco.Core.Logging;
-
-and then from within your code you can use the helper to log information
-
-    LogHelper.Info(typeof(NameOfClassYouAreLoggingFrom), "Your logging message");
-
-or more generically if you are not sure of the class...
-
-    LogHelper.Info(this.GetType(),"Your logging message");
-
-There are methods to add logging at different priority levels:
-
-* Debug - Used in development and testing, contains the most information, and likely information to help you diagnose a problem - avoid running a production site 'in debug'.
-* Information - Useful status information regarding the running and management of your site, eg xx started correctly.
-* Warn - For exceptions that are expected and handled in your code but useful to flog - eg missing configuration.
-* Error - For exceptions that are not handled in code.
-
+### [Logging](Logging/)
+Learn how Umbraco writes log files and how you can write to them.
