@@ -80,11 +80,10 @@ The above examples will write to the log file, however we will not get a seperat
 
 Where as the previous example we would be able to find all log messages that use the message template `We are saying hello to {Name}`
 
-If you are writing custom code and wish to use the logger, it's available in the following:
+If you are writing custom code and wish to use the logger, it's available in the following places:
 * SurfaceController
 * UmbracoApiController
 * UmbracoAuthorizedApiController
-
 
 If you wish to use it in any other place you can retrieve it by using the `Current.Logger` from the `Umbraco.Core.Composing` namespace.
 
@@ -189,13 +188,41 @@ In the `/config/serilog.user.config` file you can add the following lines, which
 
 ## Advanced
 ### Full C# control over Serilog configuration
-*******WARREN TODO*******
+If you like using Serilog but prefer to use C# to configure the logging pipeline then you can do so with the following example
 
-### Changing Serilog to another Logging Framework
-*******WARREN TODO (CONSIDER THIS)*******
+```csharp
+using Umbraco.Web;
+using Umbraco.Core.Logging.Serilog;
+using Serilog;
+using Serilog.Events;
+using ILogger = Umbraco.Core.Logging.ILogger;
 
-### Using SEQ CLI to parse a json log file from a remote server
-*******WARREN TODO (CONSIDER THIS)*******
+namespace MyNamespace
+{
+    public class FineTuneLogging : UmbracoApplication
+    {
+        protected override ILogger GetLogger()
+        {
+            var loggerConfig = new LoggerConfiguration();
+            loggerConfig
+                .Enrich.WithProperty("MyProperty", "whatIWant")
+                .MinimalConfiguration()
+                .OutputDefaultTextFile(LogEventLevel.Error)
+                .OutputDefaultJsonFile(LogEventLevel.Information)
+                .ReadFromConfigFile()
+                .ReadFromUserConfigFile();
+
+            return new SerilogLogger(loggerConfig);
+        }
+    }
+}
+
+```
+
+You will then need to update the `global.asax` file on disk to use our FineTuneLogging class like so
+```
+<%@ Application Inherits="MyNamespace.FineTuneLogging" Language="C#" %>
+```
 
 
 ## Serilog project/references shipped
