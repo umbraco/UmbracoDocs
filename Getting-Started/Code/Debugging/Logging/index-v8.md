@@ -60,6 +60,9 @@ Serilog uses levels as the primary means for assigning importance to log events.
 1. **Error** - indicating a failure within the application or connected system
 1. **Fatal** - critical errors causing complete failure of the application
 
+## Configuration
+Serilog can be configured and extended by using the two XML configuration files on disk found at `/config/serilog.config` which is used to modify the main Umbraco logging piepleine and a second configuration file that is at `/config/serilog.user.config` which is a sublogger and allows you to make modifications without effecting the main Umbraco logger.
+
 ## Changing the log level
 
 ## Writing your own log messages to a custom file
@@ -79,6 +82,7 @@ In the `/config/serilog.user.config` file you can add the following lines, which
 <add key="serilog:enrich:with-property:environment" value="Production" />
 ```
 
+## Changing the location of the file output
 
 
 ## Advanced
@@ -87,11 +91,6 @@ In the `/config/serilog.user.config` file you can add the following lines, which
 ### Changing Serilog to another Logging Framework
 
 
-
-<hr/>
-
-* default log info
-* where on disk and what is created
 
 
 * configuring
@@ -103,6 +102,14 @@ In the `/config/serilog.user.config` file you can add the following lines, which
 * use local/free SEQ and CLI tool to import log from a remote server
 
 
+## Serilog project/references shipped
+Umbraco v8.0+ ships with the following Serilog projects, where you can find further information & details with the GitHub readme files as needed.
+* [Serilog](https://github.com/serilog/serilog)
+* [Serilog.Enrichers.Process](https://github.com/serilog/serilog-enrichers-process)
+* [Serilog.Enrichers.Thread](https://github.com/serilog/serilog-enrichers-thread)
+* [Serilog.Formatting.Compact](https://github.com/serilog/serilog-formatting-compact)
+* [Serilog.Settings.AppSettings](https://github.com/serilog/Serilog-Settings-AppSettings)
+* [Serilog.Sinks.File](https://github.com/serilog/serilog-sinks-file)
 
 ## Further Resources
 If you are interested in learning more then the following resources will beneficial:
@@ -110,7 +117,7 @@ If you are interested in learning more then the following resources will benefic
 * [Serilog](https://serilog.net/)
 * [Serilog Community Gitter Chatroom](https://gitter.im/serilog/serilog)
 * [Nicholas Blumhardt Blog, creator of Serilog](https://nblumhardt.com/)
-* [Nicholas Blumhardt Blog, creator of Serilog](https://nblumhardt.com/)
 * [Serilog Pluralsight Course](https://www.pluralsight.com/courses/modern-structured-logging-serilog-seq)
+* [Seq](https://getseq.net/) This is FREE for a single machine such as your own local development computer
 
 
