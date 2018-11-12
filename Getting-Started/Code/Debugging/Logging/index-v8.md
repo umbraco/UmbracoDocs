@@ -14,7 +14,7 @@ The default location of these files are written to `App_Data/Logs` and contains 
 
 
 ## Structured logging
-Serilog is a logging framework that allows us to do structured logging or write log messages using the message template format, allowing us to
+Serilog is a logging framework that allows us to do structured logging or write log messages using the message template format, allowing us to *******WARREN TODO*******
 
 
 ```
@@ -49,6 +49,7 @@ To learn more about structured logging and message templates you can read more a
 ...
 Bad usages & why
 Good usages
+*******WARREN TODO*******
 
 ## Log Levels
 Serilog uses levels as the primary means for assigning importance to log events. The levels in increasing order of importance are:
@@ -60,19 +61,53 @@ Serilog uses levels as the primary means for assigning importance to log events.
 1. **Error** - indicating a failure within the application or connected system
 1. **Fatal** - critical errors causing complete failure of the application
 
+The default log levels we ship with in Umbraco v8.0+ are:
+* .txt file **Debug**
+* .json file **Verbose**
+
 ## Configuration
 Serilog can be configured and extended by using the two XML configuration files on disk found at `/config/serilog.config` which is used to modify the main Umbraco logging piepleine and a second configuration file that is at `/config/serilog.user.config` which is a sublogger and allows you to make modifications without effecting the main Umbraco logger.
 
-## Changing the log level
+### Changing the log level
+This can be done by adding the following into either `serilog.config` or the sub logger configuration file `serilog.user.config`
 
-## Writing your own log messages to a custom file
+```xml
+<add key="serilog:minimum-level" value="Verbose" />
+```
 
-## Writing to a different source
+:::warning
+If you change the main Umbraco logger in serilog.config to log only **Warning** you would not be able to have the serilog.user.config sub logger to be set to **Debug** as only Warning messages and higher will flow down into the child sub logger
+:::
+
+
+### Changing the log level for specific namespaces
+This can be done by adding the following into either `serilog.config` or the sub logger configuration file `serilog.user.config`
+
+```xml
+<add key="serilog:minimum-level:override:Microsoft" value="Warning" />
+<add key="serilog:minimum-level:override:Microsoft.AspNetCore.Mvc" value="Error" />
+<add key="serilog:minimum-level:override:YourNameSpace" value="Information" />
+```
+
+:::warning
+If you change the **serilog:minimum-level** to be **Error** then the following example above would only log messages from *Microsoft.AspNetCore.Mvc* and not any warning, info or debug messages from the *Microsoft* namespace
+:::
+
+### Changing the location of the main Umbraco Log file output
+*******WARREN TODO*******
+
+### Writing to a different source
 Serilog has a similar concept to Log4Net with its appenders, which are referred to Serilog Sinks.
 A Serilog Sink, allows you to persist the structured log message
+*******WARREN TODO*******
 
-## Adding a custom log property to all log items
+### Writing your own log messages to a custom file
+Add the following to the `/config/serilog.user.config` file, which will create
+*******WARREN TODO*******
+
+### Adding a custom log property to all log items
 You may wish to add a log property to all log messages. A good example could be a Log property for the `environment` to determine if the log message came from `development` or `production`.
+
 This is useful when you could be writing logs from all environments or multiple customer projects into a single logging source, such as ElasticSearch, this would then easily allow you to search and filter for a specific project and its environment to see the log messages.
 
 In the `/config/serilog.user.config` file you can add the following lines, which the values could be changed or transformed as needed.
@@ -82,24 +117,15 @@ In the `/config/serilog.user.config` file you can add the following lines, which
 <add key="serilog:enrich:with-property:environment" value="Production" />
 ```
 
-## Changing the location of the file output
-
-
 ## Advanced
 ### Full C# control over Serilog configuration
+*******WARREN TODO*******
 
 ### Changing Serilog to another Logging Framework
+*******WARREN TODO*******
 
-
-
-
-* configuring
-** Create own txt/json log file - containing only
-
-* note changes to config files will need a recyle of app - verify this
-
-
-* use local/free SEQ and CLI tool to import log from a remote server
+### Using SEQ CLI to parse a json log file from a remote server
+*******WARREN TODO (CONSIDER THIS)*******
 
 
 ## Serilog project/references shipped
