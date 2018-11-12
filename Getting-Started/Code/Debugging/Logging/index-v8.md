@@ -46,10 +46,48 @@ Here is an example of the same log message represented as JSON, you can see here
 To learn more about structured logging and message templates you can read more about it over on the https://messagetemplates.org website
 
 ## Writing to the log
-...
-Bad usages & why
-Good usages
-*******WARREN TODO*******
+Umbraco writes log messages, but you are also able to use the Umbraco logger to write the log file as needed, so you can get further insights and details about your implementation.
+
+Here is a simple example of using the logger to write an Information message to the log which will contain one property of **Name** which will output the name variable that is passed into the method
+
+```csharp
+using Umbraco.Web.WebApi;
+
+namespace MyNamespace
+{
+    public class MyApiController : UmbracoApiController
+    {
+        public string GetSayHello(string name)
+        {
+            Logger.Info(typeof(MyApiController), "We are saying hello to {Name}", name);
+            return $"Hello {name}";
+        }
+    }
+}
+```
+
+The incorrect way to log the message would be use string interpolation or string concatanation such as
+
+```csharp
+//Do not use :(
+Logger.Info(typeof(MyApiController), $"We are saying hello to {name}");
+
+//Do not use :(
+Logger.Info(typeof(MyApiController), "We are saying hello to " + name);
+```
+
+The above examples will write to the log file, however we will not get a seperate property logged with the message and we have no easy way to search for all log messages of this type.
+
+Where as the previous example we would be able to find all log messages that use the message template `We are saying hello to {Name}`
+
+If you are writing custom code and wish to use the logger, it's available in the following:
+* SurfaceController
+* UmbracoApiController
+* UmbracoAuthorizedApiController
+
+
+If you wish to use it in any other place you can retrieve it by using the `Current.Logger` from the `Umbraco.Core.Composing` namespace.
+
 
 ## Log Levels
 Serilog uses levels as the primary means for assigning importance to log events. The levels in increasing order of importance are:
@@ -154,7 +192,7 @@ In the `/config/serilog.user.config` file you can add the following lines, which
 *******WARREN TODO*******
 
 ### Changing Serilog to another Logging Framework
-*******WARREN TODO*******
+*******WARREN TODO (CONSIDER THIS)*******
 
 ### Using SEQ CLI to parse a json log file from a remote server
 *******WARREN TODO (CONSIDER THIS)*******
