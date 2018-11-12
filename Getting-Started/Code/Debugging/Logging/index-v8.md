@@ -14,7 +14,7 @@ The default location of these files are written to `App_Data/Logs` and contains 
 
 
 ## Structured logging
-Serilog is a logging framework that allows us to do structured logging or write log messages using the message template format, allowing us to *******WARREN TODO*******
+Serilog is a logging framework that allows us to do structured logging or write log messages using the message template format, allowing us to have a more detailed log message, rather than the traditional text message in a long txt file.
 
 
 ```
@@ -43,7 +43,7 @@ Here is an example of the same log message represented as JSON, you can see here
 }
 ```
 
-To learn more about structured logging and message templates you can read more about it over on the https://messagetemplates.org website
+To learn more about structured logging and message templates you can read more about it over on the https://messagetemplates.org website or alternatively watch this video from Serilog creator - https://www.youtube.com/watch?v=OhmNp8UPEEg
 
 ## Writing to the log
 Umbraco writes log messages, but you are also able to use the Umbraco logger to write the log file as needed, so you can get further insights and details about your implementation.
@@ -52,6 +52,7 @@ Here is a simple example of using the logger to write an Information message to 
 
 ```csharp
 using Umbraco.Web.WebApi;
+using Umbraco.Core.Logging;
 
 namespace MyNamespace
 {
@@ -59,7 +60,7 @@ namespace MyNamespace
     {
         public string GetSayHello(string name)
         {
-            Logger.Info(typeof(MyApiController), "We are saying hello to {Name}", name);
+            Logger.Info<MyApiController>("We are saying hello to {Name}", name);
             return $"Hello {name}";
         }
     }
@@ -71,9 +72,11 @@ The incorrect way to log the message would be use string interpolation or string
 ```csharp
 //Do not use :(
 Logger.Info(typeof(MyApiController), $"We are saying hello to {name}");
+Logger.Info<MyApiController>($"We are saying hello to {name}");
 
 //Do not use :(
 Logger.Info(typeof(MyApiController), "We are saying hello to " + name);
+Logger.Info<MyApiController>("We are saying hello to " + name);
 ```
 
 The above examples will write to the log file, however we will not get a seperate property logged with the message and we have no easy way to search for all log messages of this type.
