@@ -2,6 +2,7 @@
 keywords: logging serilog messagetemplates logs v8 version8
 versionFrom: 8.0.0
 ---
+
 # Logging
 
 In Umbraco v8.0+ we have changed the underlying logging framework from Log4Net to Serilog.
@@ -12,10 +13,9 @@ The default location of these files are written to `App_Data/Logs` and contains 
 * `/App_Data/Logs/UmbracoTraceLog.DELLBOOK.20181108.txt`
 * `/App_Data/Logs/UmbracoTraceLog.DELLBOOK.20181108.json`
 
-
 ## Structured logging
-Serilog is a logging framework that allows us to do structured logging or write log messages using the message template format, allowing us to have a more detailed log message, rather than the traditional text message in a long txt file.
 
+Serilog is a logging framework that allows us to do structured logging or write log messages using the message template format, allowing us to have a more detailed log message, rather than the traditional text message in a long txt file.
 
 ```
 2018-11-12 08:34:50,419 [P27004/D2/T1] INFO   Umbraco.Core.Runtime.CoreRuntime - Booted. (4586ms) [Timing 9e76e5f]
@@ -46,6 +46,7 @@ Here is an example of the same log message represented as JSON, you can see here
 To learn more about structured logging and message templates you can read more about it over on the https://messagetemplates.org website or alternatively watch this video from Serilog creator - https://www.youtube.com/watch?v=OhmNp8UPEEg
 
 ## Writing to the log
+
 Umbraco writes log messages, but you are also able to use the Umbraco logger to write the log file as needed, so you can get further insights and details about your implementation.
 
 Here is a simple example of using the logger to write an Information message to the log which will contain one property of **Name** which will output the name variable that is passed into the method
@@ -92,6 +93,7 @@ If you wish to use it in any other place you can retrieve it by using the `Curre
 
 
 ## Log Levels
+
 Serilog uses levels as the primary means for assigning importance to log events. The levels in increasing order of importance are:
 
 1. **Verbose** - tracing information and debugging minutiae; generally only switched on in unusual situations
@@ -106,9 +108,11 @@ The default log levels we ship with in Umbraco v8.0+ are:
 * .json file **Verbose**
 
 ## Configuration
+
 Serilog can be configured and extended by using the two XML configuration files on disk found at `/config/serilog.config` which is used to modify the main Umbraco logging piepleine and a second configuration file that is at `/config/serilog.user.config` which is a sublogger and allows you to make modifications without effecting the main Umbraco logger.
 
 ### Changing the log level
+
 This can be done by adding the following into either `serilog.config` or the sub logger configuration file `serilog.user.config`
 
 ```xml
@@ -121,6 +125,7 @@ If you change the main Umbraco logger in serilog.config to log only **Warning** 
 
 
 ### Changing the log level for specific namespaces
+
 This can be done by adding the following into either `serilog.config` or the sub logger configuration file `serilog.user.config`
 
 ```xml
@@ -134,6 +139,7 @@ If you change the **serilog:minimum-level** to be **Error** then the following e
 :::
 
 ### Writing your own log messages to a custom file
+
 Add the following to the `/config/serilog.user.config` file, which will create a new JSON log file
 
 ```xml
@@ -147,6 +153,7 @@ Add the following to the `/config/serilog.user.config` file, which will create a
 ```
 
 ### Filtering user log file to include only log messages from your namespace
+
 With the above example we are able to write to a seperate JSON log file, but adding these additional lines to `serilog.user.config` will allow you to filter and include log messages. For further details on specific expressions you can write, refer to the readme of the [Serilog Filters Expression project](https://github.com/serilog/serilog-filters-expressions)
 
 ```xml
@@ -157,6 +164,7 @@ With the above example we are able to write to a seperate JSON log file, but add
 ```
 
 ### Writing log events to different storage types
+
 Serilog has a similar concept to Log4Net with its appenders, which are referred to Serilog Sinks.
 A Serilog Sink, allows you to persist the structured log message to a data store of your choice. In v8.0+ we use the *Serilog.Sinks.File* to allow us to write a .txt or .json file to disk. But the Serilog project anmd the wider Serilog community allows you to store these logs in various locations.
 
@@ -178,6 +186,7 @@ For example you could install the Nuget package `PM> Install-Package Serilog.Sin
 ```
 
 ### Adding a custom log property to all log items
+
 You may wish to add a log property to all log messages. A good example could be a Log property for the `environment` to determine if the log message came from `development` or `production`.
 
 This is useful when you could be writing logs from all environments or multiple customer projects into a single logging source, such as ElasticSearch, this would then easily allow you to search and filter for a specific project and its environment to see the log messages.
@@ -190,7 +199,9 @@ In the `/config/serilog.user.config` file you can add the following lines, which
 ```
 
 ## Advanced
+
 ### Full C# control over Serilog configuration
+
 If you like using Serilog but prefer to use C# to configure the logging pipeline then you can do so with the following example
 
 ```csharp
@@ -219,16 +230,16 @@ namespace MyNamespace
         }
     }
 }
-
 ```
 
 You will then need to update the `global.asax` file on disk to use our FineTuneLogging class like so
+
 ```
 <%@ Application Inherits="MyNamespace.FineTuneLogging" Language="C#" %>
 ```
 
-
 ## Serilog project/references shipped
+
 Umbraco v8.0+ ships with the following Serilog projects, where you can find further information & details with the GitHub readme files as needed.
 * [Serilog](https://github.com/serilog/serilog)
 * [Serilog.Enrichers.Process](https://github.com/serilog/serilog-enrichers-process)
@@ -239,6 +250,7 @@ Umbraco v8.0+ ships with the following Serilog projects, where you can find furt
 * [Serilog.Sinks.File](https://github.com/serilog/serilog-sinks-file)
 
 ## Further Resources
+
 If you are interested in learning more then the following resources will beneficial:
 
 * [Serilog](https://serilog.net/)
