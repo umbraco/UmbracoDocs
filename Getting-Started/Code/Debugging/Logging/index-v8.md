@@ -85,13 +85,35 @@ The above examples  which use the bad approach will write to the log file, howev
 
 Where as the previous example we would be able to find all log messages that use the message template `We are saying hello to {Name}`
 
-If you are writing custom code and wish to use the logger, it's available in the following places:
+If you are writing custom code and are inheriting from one of these special Umbraco base classes:
+
+* RenderMvcController
 * SurfaceController
 * UmbracoApiController
 * UmbracoAuthorizedApiController
 
-If you wish to use it in any other place you can retrieve it by using the `Current.Logger` from the `Umbraco.Core.Composing` namespace.
+Then you can access the logging functionality via a special 'Logger' property included in those base classes and use the friendlier syntax of `Logger.Info<T>` to pass the type, if you add a reference to `Umbraco.Core.Logging` as a Using statement.
 
+Outside of these places, eg a ContentFinder or your own custom code, you can get a reference to the logger from the `Umbraco.Core.Composing` namespace, using the `Current.Logger` instance.
+
+```csharp
+using Umbraco.Core.Composing;
+using Umbraco.Core.Logging;
+using Umbraco.Web.Routing;
+
+namespace MyNamespace
+{
+    public class MyContentFinder : IContentFinder
+    {
+        public bool TryFindContent(PublishedRequest frequest)
+        {
+            Current.Logger.Info<MyContentFinder>("Trying to find content for url {RequestUrl}", frequest.Uri);
+
+            //Do Content Finder Logic...
+        }
+    }
+}
+```
 
 ## Log Levels
 
@@ -132,7 +154,7 @@ This can be done by adding the following into either `serilog.config` or the sub
 ```xml
 <add key="serilog:minimum-level:override:Microsoft" value="Warning" />
 <add key="serilog:minimum-level:override:Microsoft.AspNet.Mvc" value="Error" />
-<add key="serilog:minimum-level:override:YourNameSpace" value="Information" />
+<add key="serilog:minimum-level:override:MyNamespace" value="Information" />
 ```
 
 :::warning
