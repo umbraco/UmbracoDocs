@@ -1,5 +1,5 @@
 ---
-versionTo: 7.13.0
+versionTo: 8.0.0
 ---
 ### Logging
 
