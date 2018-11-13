@@ -1,3 +1,6 @@
+---
+versionTo: 7.13.0
+---
 ### Logging
 
 Umbraco uses the Apache Log4Net library to output log statements to a set of Trace logs, to help you investigate problems with your Umbraco Installation. You can write to these log files from your custom code.
