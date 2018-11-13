@@ -187,7 +187,7 @@ For example you could install the Nuget package `PM> Install-Package Serilog.Sin
 
 ### Adding a custom log property to all log items
 
-You may wish to add a log property to all log messages. A good example could be a Log property for the `environment` to determine if the log message came from `development` or `production`.
+You may wish to add a log property to all log messages. A good example could be a log property for the `environment` to determine if the log message came from `development` or `production`.
 
 This is useful when you could be writing logs from all environments or multiple customer projects into a single logging source, such as ElasticSearch, this would then easily allow you to search and filter for a specific project and its environment to see the log messages.
 
