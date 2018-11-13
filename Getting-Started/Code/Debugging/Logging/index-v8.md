@@ -135,7 +135,7 @@ This can be done by adding the following into either `serilog.config` or the sub
 ```
 
 :::warning
-If you change the **serilog:minimum-level** to be **Error** then the following example above would only log Error messages from *Microsoft.AspNetCore.Mvc* and not any warning, info or debug messages from the *Microsoft* namespace
+If you change the **serilog:minimum-level** to be **Error** then the following example above would only log Error messages from *Microsoft.AspNet.Mvc* and not any warning, info or debug messages from the *Microsoft* namespace
 :::
 
 ### Writing your own log messages to a custom file
@@ -168,14 +168,7 @@ With the above example we are able to write to a seperate JSON log file, but add
 Serilog has a similar concept to Log4Net with its appenders, which are referred to as Serilog Sinks.
 A Serilog Sink, allows you to persist the structured log message to a data store of your choice. In v8.0+ we use the *Serilog.Sinks.File* to allow us to write a .txt or .json file to disk. But the Serilog project and the wider Serilog community allows you to store these logs in various locations.
 
-Here are some examples:
-* [Azure Table Storage](https://github.com/serilog/serilog-sinks-azuretablestorage)
-* [Elastic Search](https://github.com/serilog/serilog-sinks-elasticsearch)
-* [Elmah.io](https://github.com/serilog/serilog-sinks-elmahio)
-* [Seq](https://github.com/serilog/serilog-sinks-seq)
-* [SQL Server](https://github.com/serilog/serilog-sinks-mssqlserver)
-* [Windows Event Log](https://github.com/serilog/serilog-sinks-eventlog)
-* [Many more](https://github.com/serilog/serilog/wiki/Provided-Sinks)
+[An extensive list of examples can be found here](https://github.com/serilog/serilog/wiki/Provided-Sinks)
 
 For example you could install the Nuget package `PM> Install-Package Serilog.Sinks.Seq` and update the `serilog.user.config` file with the following XML snippet and if you already have the file example above it will write to that location as well as Seq.
 
