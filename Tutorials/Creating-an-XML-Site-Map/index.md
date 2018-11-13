@@ -32,7 +32,7 @@ Each page on your site needs to have it's own <url entry in the list.
 There are many ways of approaching this task, the best approach will be determined by the size of your site, and your preference for implementing functionality in Umbraco, for simplicity sake we're going to write this code directly in a template, but you may want to use route hijacking to write the code in an MVC controller or XSLT is still a really good fit for this kind of task.
 
 We'll create a new Document Type called 'XmlSiteMap' with corresponding 'XmlSiteMap' template, visiting this page will trigger the rendering of the sitemap.
-Create a 'SiteMap' composition, containint a consistent set of 'site map' related properties, andd add this to all the document types of the site, that can appear on the sitemap.
+Create a 'SiteMap' composition, containing a consistent set of 'site map' related properties, and add this to all the document types of the site, that can appear on the sitemap.
 
 The 'sitemap' composition will contain a 'hide from Xml Site Map' checkbox, to give editors the ability to hide a page from the sitemap on a page by page basis, if it doesn't make sense for a particular document type to appear in the sitemap, then instead of requiring editors to have to tick this box on every page of that type, we'll also create on the 'xmlsitemap' document type, a 'blacklisted document types' property, where editors can list document types by alias which should never appear on the sitemap, (or you could probably take a 'whitelist' property in case it is easier to say which types should be included rather than the ones that will be excluded.)
 
