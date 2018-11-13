@@ -130,7 +130,7 @@ This can be done by adding the following into either `serilog.config` or the sub
 
 ```xml
 <add key="serilog:minimum-level:override:Microsoft" value="Warning" />
-<add key="serilog:minimum-level:override:Microsoft.AspNetCore.Mvc" value="Error" />
+<add key="serilog:minimum-level:override:Microsoft.AspNet.Mvc" value="Error" />
 <add key="serilog:minimum-level:override:YourNameSpace" value="Information" />
 ```
 
