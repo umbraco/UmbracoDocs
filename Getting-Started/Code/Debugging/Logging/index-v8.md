@@ -51,7 +51,7 @@ Umbraco writes log messages, but you are also able to use the Umbraco logger to 
 
 Here is a simple example of using the logger to write an Information message to the log which will contain one property of **Name** which will output the name variable that is passed into the method
 
-```csharp
+```cs
 using Umbraco.Web.WebApi;
 using Umbraco.Core.Logging;
 
