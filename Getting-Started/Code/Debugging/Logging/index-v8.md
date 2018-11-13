@@ -135,7 +135,7 @@ This can be done by adding the following into either `serilog.config` or the sub
 ```
 
 :::warning
-If you change the **serilog:minimum-level** to be **Error** then the following example above would only log messages from *Microsoft.AspNetCore.Mvc* and not any warning, info or debug messages from the *Microsoft* namespace
+If you change the **serilog:minimum-level** to be **Error** then the following example above would only log Error messages from *Microsoft.AspNetCore.Mvc* and not any warning, info or debug messages from the *Microsoft* namespace
 :::
 
 ### Writing your own log messages to a custom file
