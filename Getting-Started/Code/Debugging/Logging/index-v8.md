@@ -166,7 +166,7 @@ With the above example we are able to write to a seperate JSON log file, but add
 ### Writing log events to different storage types
 
 Serilog has a similar concept to Log4Net with its appenders, which are referred to as Serilog Sinks.
-A Serilog Sink, allows you to persist the structured log message to a data store of your choice. In v8.0+ we use the *Serilog.Sinks.File* to allow us to write a .txt or .json file to disk. But the Serilog project anmd the wider Serilog community allows you to store these logs in various locations.
+A Serilog Sink, allows you to persist the structured log message to a data store of your choice. In v8.0+ we use the *Serilog.Sinks.File* to allow us to write a .txt or .json file to disk. But the Serilog project and the wider Serilog community allows you to store these logs in various locations.
 
 Here are some examples:
 * [Azure Table Storage](https://github.com/serilog/serilog-sinks-azuretablestorage)
