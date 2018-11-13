@@ -71,16 +71,17 @@ namespace MyNamespace
 The incorrect way to log the message would be use string interpolation or string concatanation such as
 
 ```csharp
-//Do not use :(
-Logger.Info(typeof(MyApiController), $"We are saying hello to {name}");
+//GOOD - Do use :)
+Logger.Info<MyApiController>("We are saying hello to {Name}", name);
+
+//BAD - Do not use :(
 Logger.Info<MyApiController>($"We are saying hello to {name}");
 
-//Do not use :(
-Logger.Info(typeof(MyApiController), "We are saying hello to " + name);
+//BAD - Do not use :(
 Logger.Info<MyApiController>("We are saying hello to " + name);
 ```
 
-The above examples will write to the log file, however we will not get a seperate property logged with the message and we have no easy way to search for all log messages of this type.
+The above examples  which use the bad approach will write to the log file, however we will not get a seperate property logged with the message and we have no easy way to search for all log messages of this type.
 
 Where as the previous example we would be able to find all log messages that use the message template `We are saying hello to {Name}`
 
