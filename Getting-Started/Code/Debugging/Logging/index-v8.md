@@ -43,7 +43,7 @@ Here is an example of the same log message represented as JSON, you can see here
 }
 ```
 
-To learn more about structured logging and message templates you can read more about it over on the https://messagetemplates.org website or alternatively watch this video from Serilog creator - https://www.youtube.com/watch?v=OhmNp8UPEEg
+To learn more about structured logging and message templates you can read more about it over on the https://messagetemplates.org website or alternatively watch this video from the Serilog creator - https://www.youtube.com/watch?v=OhmNp8UPEEg
 
 ## Writing to the log
 
