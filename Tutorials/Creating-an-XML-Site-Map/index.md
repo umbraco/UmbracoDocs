@@ -25,7 +25,7 @@ See [Sitemaps XML format](https://www.sitemaps.org/protocol.html) for the XML sc
        </url>
     </urlset> 
 
-Each page on your site needs to have it's own <url entry in the list.
+Each page on your site needs to have it's own `<url>` entry in the list.
 
 ### Approach
 
@@ -40,11 +40,8 @@ The implementation will start at the homepage of the site and loop through all t
 
 ## Create the Document Type
 
-XmlSiteMap - Map Icon
-MaxSiteMapLevel
-DocumentTypeBlackList
-
-with template XmlSiteMap
+![The XmlSiteMap doc type](images/xmlSiteMap_doctype.png)
+With template XmlSiteMap
 
 Allow to be created at the root of the site.
 
@@ -52,27 +49,30 @@ Allow to be created at the root of the site.
 
 A site map entry will allow you to state the relative priority of any particular page in terms of it's importance within your site, where a value of 1.0 is super very important, and 0.1 close to insignificant, you can also state 'how often' the content will change on a particular page, eg weekly, monthly etc, and this will help the search engine know when to return to reindex the updated content.
 
-XmlSiteMapComposition
-Search Engine Relative Priority - dropdown - 0.1 through to 1.0
+Name: __XmlSiteMapComposition__
+__Search Engine Relative Priority__ - dropdown - 0.1 through to 1.0
 (Relative priority of this page between 0 and 1, where 1 is the most important page on the site and 0 isn't)
 
-Search Engine Change Frequency - dropdown - always, hourly, daily, weekly, monthly, yearly, never
-(How often the content of this page changes, for google site map, if left blank will inherit the setting for the section
-)
-Hide From Xml Sitemap (hideFromXmlSitemap) - checkbox.
+__Search Engine Change Frequency__ - dropdown - always, hourly, daily, weekly, monthly, yearly, never 
+(How often the content of this page changes, for google site map, if left blank will inherit the setting for the section)
+
+__Hide From Xml Sitemap__ (hideFromXmlSitemap) - checkbox. 
+
+At this point your composition should look similar to this:
+![The XmlSiteMap composition](images/xmlComposition.png)
 
 Add this composition to all of the document types on your site!
 
 Now editors have the ability to set these values for each page of the site, but again, rather than expect them to set them on every single page, when we check the values of these properties, if they are blank, we'll use the values from the parent or parent's parent nodes, using 'recursion' up the Umbraco Content Tree, enabling the values to be set in one place, on a News Section, to apply to all News Articles.
 
-### Building the template
+### Building the XmlSiteMap.cshtml template
 
 We'll start by writing out in the template the xml schema for the sitemap and because we don't want our template to inherit any 'master' html layout we'll set the 'layout' to be null.
 
     @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
     @{Layout = null; Response.ContentType = "text/xml"; }<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">[INSERT SITE MAP CONTENT HERE]</urlset>
 
-Notice how we're not adding any spaces or carriage returns before the <urlset opening declaration, even though it would be easier to read if we did, we want to avoid making the xml invalid.
+Notice how we're not adding any spaces or carriage returns before the `<urlset>` opening declaration, even though it would be easier to read if we did, we want to avoid making the XML invalid.
 
 ### Getting a reference to the sitemap starting point
 
@@ -82,30 +82,31 @@ IPublishedContent siteHomePage = Model.Content.Site();
 
 ### Rendering a site map entry
 
-We will retrieve each page in the site as ***IPublishedContent***, we're not really concerned with any of the different types of properties a page may have, for the site map, we're only interested in the Url, when it was last modified etc, whether it was hidden, but you could write this with Modelsbuilder too (should this example use modelsbuilder? hmmm) - as we'll be writing out this url markup for an IPublishedContent item in different places as we loop to build the sitemap, let's create a Razor Helper that we can pass the IPublishedContent object to, to be responsible for rendering the markup.
+We will retrieve each page in the site as **IPublishedContent**, we're not really concerned with any of the different types of properties a page may have, for the site map, we're only interested in the Url, when it was last modified etc, whether it was hidden, but you could write this with Modelsbuilder too (should this example use modelsbuilder? hmmm) - as we'll be writing out this url markup for an IPublishedContent item in different places as we loop to build the sitemap, let's create a Razor Helper that we can pass the IPublishedContent object to, to be responsible for rendering the markup.
 
-    @helper RenderSiteMapUrlEntry(IPublishedContent node)
-        {
-            //we're passing 'true' as an additional parameter to GetPropertyValue to read the value from the parent nodes, so this setting could be set 'per section
-            var changeFreq = node.GetPropertyValue<string>("searchEngineChangeFrequency", true);
-            if (String.IsNullOrEmpty(changeFreq))
-            {
-                changeFreq = "monthly";
-            }
-            //with the relative priority, this is a per page setting, so we're not passing true
-            var priority = node.GetPropertyValue<string>("searchEngineRelativePriority");
-            if (String.IsNullOrEmpty(priority))
-            {
-                priority = "0.5";
-            }
-            <url>
-                <loc>@EnsureUrlStartsWithDomain(node.UrlWithDomain)</loc>
-                <lastmod>@(string.Format("{0:s}+00:00", node.UpdateDate))</lastmod>
-                <changefreq>@changeFreq</changefreq>
-                <priority>@priority</priority>
-            </url>
-
+```chsarp
+@helper RenderSiteMapUrlEntry(IPublishedContent node)
+{
+    //we're passing 'true' as an additional parameter to GetPropertyValue to read the value from the parent nodes, so this setting could be set 'per section
+    var changeFreq = node.GetPropertyValue<string>("searchEngineChangeFrequency", true);
+    if (String.IsNullOrEmpty(changeFreq))
+    {
+        changeFreq = "monthly";
     }
+    //with the relative priority, this is a per page setting, so we're not passing true
+    var priority = node.GetPropertyValue<string>("searchEngineRelativePriority");
+    if (String.IsNullOrEmpty(priority))
+    {
+        priority = "0.5";
+    }
+    <url>
+        <loc>@EnsureUrlStartsWithDomain(node.UrlWithDomain())</loc>
+        <lastmod>@(string.Format("{0:s}+00:00", node.UpdateDate))</lastmod>
+        <changefreq>@changeFreq</changefreq>
+        <priority>@priority</priority>
+    </url>
+}
+```
 
 #### EnsureUrlStartsWithDomain - Razor Function
 
@@ -113,26 +114,27 @@ We'll create a Razor Function to handle ensuring the urls on our sitemap have th
 
 Razor functions exist inside a single @functions block inside your template
 
-    @functions {
-        private static string EnsureUrlStartsWithDomain(string url)
-        {
-            if (url.StartsWith("http")){
-                return url;
-            }
-        else {
-            //whatever makes sense for your site here...
-            var domainPrefix = string.Format("https://{0}/", HttpContext.Current.Request.ServerVariables["HTTP_HOST"]);
-            return domainPrefix + url;
-        }}
-
-    }
+```chsarp
+@functions {
+    private static string EnsureUrlStartsWithDomain(string url)
+    {
+        if (url.StartsWith("http")){
+            return url;
+        }
+    else {
+        //whatever makes sense for your site here...
+        var domainPrefix = string.Format("https://{0}/", HttpContext.Current.Request.ServerVariables["HTTP_HOST"]);
+        return domainPrefix + url;
+    }}
+}
+```
 
 #### Xml Sitemap for the homepage
 
 So for the homepage we'll now have:
 
-     @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-        @{Layout = null; Response.ContentType = "text/xml";IPublishedContent siteHomePage = Model.Content.Site(); }<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">@RenderSiteMapUrlEntry(siteHomePage)</urlset>
+    @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+    @{Layout = null; Response.ContentType = "text/xml";IPublishedContent siteHomePage = Model.Content.Site(); }<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">@RenderSiteMapUrlEntry(siteHomePage)</urlset>
 
 and this will render a sitemap entry for the homepage, which isn't very comprehensive!
 
@@ -174,19 +176,19 @@ If we create a helper called perhaps 'RenderSiteMapUrlEntriesForChildren' that t
 
     @helper RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
     {          
-            foreach (var page in parentPage.Children)
-            {
-                @RenderSiteMapUrlEntry(page)
-                if (page.Children.Any()){
+        foreach (var page in parentPage.Children)
+        {
+            @RenderSiteMapUrlEntry(page)
+            if (page.Children.Any()){
                 @RenderSiteMapUrlEntriesForChildren(page)
-                }               
-            }
+            }               
+        }
     }
 
 Now updating our template to call this helper:
 
     @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-            @{Layout = null; Response.ContentType = "text/xml";IPublishedContent siteHomePage = Model.Content.Site(); }<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">@RenderSiteMapUrlEntry(siteHomePage)@RenderSiteMapUrlEntriesForChildren(siteHomePage)</urlset>
+    @{Layout = null; Response.ContentType = "text/xml";IPublishedContent siteHomePage = Model.Content.Site(); }<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">@RenderSiteMapUrlEntry(siteHomePage)@RenderSiteMapUrlEntriesForChildren(siteHomePage)</urlset>
 
 we have a full sitemap rendered for the site!
 
