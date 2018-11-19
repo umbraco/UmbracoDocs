@@ -30,5 +30,36 @@ Once the deployment is complete, you will notice the following:
 * The template is correctly updated
 * The Document Type you deleted on Development is still present in the backoffice on the Live environment
 
-You might wonder why the Document Type that you've just deleted, is still there. The reason is, that we only delete the associated UDA file, and not the database entry that references the Document Type. In order to delete the Document Type complete from your project, you need to delete it from the Live environment as well. This will also delete the reference to the Document Type in the Live database, and you will be completely rid of the Document Type.
+You might wonder why the Document Type that you've just deleted, is still there. The reason is, that we only delete the associated UDA file, and not the database entry that references the Document Type. 
+
+In order to completely delete the Document Type from your project, you need to delete it from the Live environment as well. This will delete the reference to the Document Type in the Live database, and you will be completely rid of it.
+
+## Which deletions are deployed?
+
+Every **file** that's deleted, will also be deleted on the next environment when you deploy. However, there are some differences depending on what you have deleted.
+
+Here's an overview of what exactly is deleted on the next environment.
+
+### Deleting Schema (Document Types, Datatypes etc.)
+
+Deleted:
+* The associated UDA file is deleted
+
+Not deleted:
+* The entry in the database
+* The item will still be visible in the backoffice
+
+### Deleting a Template
+
+Deleted:
+* The associated UDA file
+* The associated `.cshtml` file (the view file)
+
+Not deleted:
+* The entry in the database
+* The template file will still be visible in the backoffice, but it will be empty
+
+### Deleting files (css files, config files etc.)
+
+As these are **only** files, everything will be deleted on the next environment upon deployment.
 
