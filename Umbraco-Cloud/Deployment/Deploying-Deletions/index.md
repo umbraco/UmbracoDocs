@@ -42,6 +42,11 @@ Here's an overview of what exactly is deleted on the next environment.
 
 ### Deleting Schema (Document Types, Datatypes etc.)
 
+|Deleted         |Not deleted                                  |
+|----------------|---------------------------------------------|
+|`.uda`-file     |Database entry                               |
+|                |Item will still be visible in the backoffice | 
+
 Deleted:
 * The associated UDA file is deleted
 
@@ -50,6 +55,11 @@ Not deleted:
 * The item will still be visible in the backoffice
 
 ### Deleting a Template
+
+|Deleted                        |Not deleted                                             |
+|-------------------------------|--------------------------------------------------------|
+|`.uda`-file                    |Database entry                                          |
+|`.cshtml`-file (the view file) |Item will be empty, but still visible in the backoffice |
 
 Deleted:
 * The associated UDA file
