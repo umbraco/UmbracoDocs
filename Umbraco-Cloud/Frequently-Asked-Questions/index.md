@@ -241,7 +241,7 @@ Yes it is! Websockets are enabled on all sites.
 
 ### My deletions are not picked up when deployed to the next environment
 
-When you've deleted something (e.g. content, media or schema) on one environment, the deletions will not be picket up on the next environment when you deploy.
+When you've deleted something (e.g. content, media or schema) on one environment, the deletions will not be picked up on the next environment when you deploy.
 
 This is intended behaviour.
 
