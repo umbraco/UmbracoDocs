@@ -12,7 +12,7 @@ The workflow described above does not pick up deletions of content and schema fr
 
 Let's say you've deleted a Document Type on your Development environment, and now you want to deploy this deletion to the Live environment, along with some other changes you've made.
 
-Before you deploy the changes, the Development environment will show that the following changes are ready to be deploy:
+Before you deploy the changes, the Development environment will show that the following changes are ready to be deployed:
 
 ![Changes ready for deployment](images/deletions-of-doctype.png)
 
