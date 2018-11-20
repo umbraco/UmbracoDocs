@@ -65,7 +65,7 @@ As these are **only** files, everything will be deleted on the next environment 
 
 ### Deleting content and / or media
 
-Content and media deletions will not be picked up by deployments.
+Content and media deletions will not be picked up by deployments and will have to be deleted on each environment you wish to delete the content or media on.
 
 
 
