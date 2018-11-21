@@ -239,6 +239,16 @@ Note that custom database tables and data do not replicate automatically across 
 
 Yes it is! Websockets are enabled on all sites.
 
+### My deletions are not picked up when deployed to the next environment
+
+When you've deleted something (e.g. content, media or schema) on one environment, the deletions will not be picked up on the next environment when you deploy.
+
+This is intended behaviour.
+
+We will **only delete the files** and not the database entries, as this could potentially cause you to lose data on your Live / production environment.
+
+You can read much more about these deletions in the [Deploying Deletions](../Deployment/Deploying-Deletions) article.
+
 ---
 
 ## Package support
