@@ -7,16 +7,18 @@ Just like other JavaScript in the Umbraco backoffice, you need to wrap your clas
 ## Simple jQuery plugins
 Simple jQuery plugins don't require an internal class to perform the functionality and therefore do not expose or return an API. These could be as simple as vertically aligning something:
 
-	(function($) {
-	    $.fn.verticalAlign = function(opts) {
-	        // we are not using opts (options) for this plugin
-	        // but you could!
-	        return this.each(function() {
-	            var top = (($(this).parent().height() - $(this).height()) / 2);
-	            $(this).css('margin-top', top);
-	        });
-	    };
-	})(jQuery);
+```javascript
+(function($) {
+	$.fn.verticalAlign = function(opts) {
+		// we are not using opts (options) for this plugin
+		// but you could!
+		return this.each(function() {
+			var top = (($(this).parent().height() - $(this).height()) / 2);
+			$(this).css('margin-top', top);
+		});
+	};
+})(jQuery);
+```
 
 ## Standard jQuery plugins
 Most jQuery plugins will expose an API or a way in which a developer can interact with the plugin, not just instantiating it. To do this we need to create a class that does the work of the plugin and then expose that class via a different jQuery plugin.
@@ -92,6 +94,8 @@ To use the plugin and API is very easy:
 
 NOTE: this is an example plugin, I realize this is not really that useful as a non-simple plugin!
 
-	$("#myId").verticalAlign();
-	// now to get the api and do the alignment
-	$("#myId").verticalAlignApi().align();
+```javascript
+$("#myId").verticalAlign();
+// now to get the api and do the alignment
+$("#myId").verticalAlignApi().align();
+```
