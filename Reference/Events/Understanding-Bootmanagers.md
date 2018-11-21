@@ -2,9 +2,9 @@
 
 After IIS started the W3 process, Umbraco will begin launching.  There is a bootstrapper for the `Umbraco Application` which initializes all objects.
 
-The responsible objects for the startup are the [CoreBootManager](../../apidocs/csharp/api/Umbraco.Core.CoreBootManager.html) and [WebBootManager](apidocs/csharp/api/Umbraco.Web.WebBootManager.html) where the latter includes the Web portion of the application.
+The responsible objects for the startup are the [CoreBootManager](/apidocs/csharp/api/Umbraco.Core.CoreBootManager.html) and [WebBootManager](/apidocs/csharp/api/Umbraco.Web.WebBootManager.html) where the latter includes the Web portion of the application.
 
-The boot managers initialize the [UmbracoApplication](apidocs/csharp/api/Umbraco.Web.UmbracoApplication.html) (the global.asax) object.  After it has initialized the UmbracoApplication, it will initialize the ApplicationContext.  
+The boot managers initialize the [UmbracoApplication](/apidocs/csharp/api/Umbraco.Web.UmbracoApplication.html) (the global.asax) object.  After it has initialized the UmbracoApplication, it will initialize the ApplicationContext.  
 
 The bootmanager will initialize the ApplicationContext with: the database context, services context, profiling and logger. It will also register the Application Startup handlers which will execute later using the [ApplicationEventsResolver](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Core.ObjectResolution.ApplicationEventsResolver.html).
 
