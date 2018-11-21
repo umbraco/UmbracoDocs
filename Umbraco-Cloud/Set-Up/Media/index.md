@@ -89,7 +89,7 @@ You’ll need to install the following ImageProcessor packages (latest versions 
 
 You can find more information about ImageProcessor and related packages here [https://imageprocessor.org/](https://imageprocessor.org/)
 
-Since Umbraco includes a version of ImageProcessor.Web by default, you will need to update those packages first using NuGet:
+Since Umbraco includes a version of ImageProcessor.Web by default, you will need to update that package first using NuGet:
 
 ```PM> Update-Package ImageProcessor.Web```
 
