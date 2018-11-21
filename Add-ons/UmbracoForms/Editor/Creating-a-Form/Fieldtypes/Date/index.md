@@ -17,6 +17,8 @@ The Date picker has a configuration setting to control the number of years shown
 
 You can find the settings for changing this configuration in `~/App_Data/UmbracoForms/umbracoforms.config`:
 
-    <setting key="DatePickerYearRange" value="10" />
+```xml
+<setting key="DatePickerYearRange" value="10" />
+```
 
 Update `value` to a higher number (e.g. 100) to increase the numbers of years available in the Date picker.
