@@ -10,7 +10,7 @@ The databases are environment specific. When you deploy from one environment to 
 
 The workflow described above does not pick up deletions of content and schema from the database, which is why you'll need to delete the content and / or schema on all your environments, in order to fully complete the deletion.
 
-REASONS WHY
+The main reason we do not delete schema and content on deployments, is because it could lead to loss of data. Image that you delete a Document Type on your Development environment, and push this deletion to your Live environment. On the Live environment you have a lot of content nodes using the deleted Document Type, so when the deployments goes through all of those content nodes will be deleted along with the Document Type.
 
 ## Example scenario
 
