@@ -9,62 +9,66 @@ If you wish to have one or more templates selectable from the 'Send email with t
 
 The Razor view must inherit from FormsHtmlModel:
 
-    @inherits UmbracoViewPage<Umbraco.Forms.Core.Models.FormsHtmlModel>
+```csharp
+@inherits UmbracoViewPage<Umbraco.Forms.Core.Models.FormsHtmlModel>
+```
 
 Then you have a model that contains your Form fields which can be used in your email HTML markup, along with the UmbracoHelper methods such as `Umbraco.TypedContent` and `Umbraco.TypedMedia` etc.
 
 Below is an example of a very simple email template:
 
-    @inherits UmbracoViewPage<Umbraco.Forms.Core.Models.FormsHtmlModel>
+```csharp
+@inherits UmbracoViewPage<Umbraco.Forms.Core.Models.FormsHtmlModel>
 
-    @{
-        // This is an example email template where you can use Razor Views to send HTML emails
+@{
+    // This is an example email template where you can use Razor Views to send HTML emails
 
-        // You can use Umbraco.TypedContent & Umbraco.TypedMedia etc to use Images & content from your site
-        // directly in your email templates too
+    // You can use Umbraco.TypedContent & Umbraco.TypedMedia etc to use Images & content from your site
+    // directly in your email templates too
 
-        // Strongly Typed
-        // @Model.GetValue("aliasFormField")
-        // @foreach (var color in Model.GetValues("checkboxField")){}
+    // Strongly Typed
+    // @Model.GetValue("aliasFormField")
+    // @foreach (var color in Model.GetValues("checkboxField")){}
 
+}
+
+<h1>Explicitly Named Fields</h1>
+<h2>Name:</h2>
+@Model.GetValue("name")
+
+<h2>Favourite Colors</h2>
+<ul>
+    @foreach(var color in Model.GetValues("favColors")){
+        <li>@color</li>
     }
+</ul>
 
-    <h1>Explicitly Named Fields</h1>
-    <h2>Name:</h2>
-    @Model.GetValue("name")
+<hr/>
 
-    <h2>Favourite Colors</h2>
-    <ul>
-        @foreach(var color in Model.GetValues("favColors")){
-            <li>@color</li>
-        }
-    </ul>
+<h1>Generic/reusable template</h1>
+@foreach (var field in Model.Fields)
+{
+    <h2>@field.Name</h2>
 
-    <hr/>
-
-    <h1>Generic/reusable template</h1>
-    @foreach (var field in Model.Fields)
+    switch (field.FieldType)
     {
-        <h2>@field.Name</h2>
+        case "FieldType.FileUpload.cshtml":
+            <a href="@siteDomain/@field.GetValue()">@field.GetValue()</a>
+            break;
 
-        switch (field.FieldType)
-        {
-            case "FieldType.FileUpload.cshtml":
-                <a href="@siteDomain/@field.GetValue()">@field.GetValue()</a>
-                break;
+        case "FieldType.DatePicker.cshtml":
+            @(Convert.ToDateTime(field.GetValue()).ToString("f"))
+            break;
 
-            case "FieldType.DatePicker.cshtml":
-               @(Convert.ToDateTime(field.GetValue()).ToString("f"))
-                break;
-
-            case "FieldType.CheckboxList.cshtml":            
-                foreach (var color in field.GetValues())
-                {
-                    @color<br/>
-                }
-                break;
-            default:
-                @field.GetValue()
-                break;
-        }
+        case "FieldType.CheckboxList.cshtml":            
+            foreach (var color in field.GetValues())
+            {
+                @color<br/>
+            }
+            break;
+        default:
+            @field.GetValue()
+            break;
     }
+}
+```

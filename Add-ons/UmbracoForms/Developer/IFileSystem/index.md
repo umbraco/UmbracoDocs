@@ -8,34 +8,37 @@ To summarise this allows the saving & getting of files to be abstracted away to 
 This uses the Umbraco core IFileSystem provider `Umbraco.Core.IO.PhysicalFileSystem` which with its property we can then specify a different location than the default location that Umbraco Forms stores its files, which is `App_Plugins/UmbracoForms/Data`
 Adding the following to your IFileSystem config file found at `Config/FileSystemProviders.config` will allow you to store the files elsewhere to suit your requirements
 
-    <Provider alias="forms" type="Umbraco.Core.IO.PhysicalFileSystem, Umbraco.Core">
-        <Parameters>
-            <add key="virtualRoot" value="~/App_Data/Forms" />
-        </Parameters>
-    </Provider>
-
+```xml
+<Provider alias="forms" type="Umbraco.Core.IO.PhysicalFileSystem, Umbraco.Core">
+    <Parameters>
+        <add key="virtualRoot" value="~/App_Data/Forms" />
+    </Parameters>
+</Provider>
+```
 
 ## Storing the JSON files using the community Umbraco Azure Blob Provider
 The Umbraco community has created a [great open source IFileSystem provider that is currently used for storing your media files in Azure Blob storage.](https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/) The same provider can be installed and configured as below in the IFileSystem config file at `Config/FileSystemProviders.config`
 Note you may or may not have a similar looking configuration if using this provider to store your media files in Azure blob too, the differences here will be the `alias="forms"` and the `containerName` property of where you want to store your forms based data
 
-    <Provider alias="forms" type="Our.Umbraco.FileSystemProviders.Azure.AzureBlobFileSystem, Our.Umbraco.FileSystemProviders.Azure">
-        <Parameters>
-            <add key="containerName" value="form-data"/>
-            <add key="rootUrl" value="http://[ACCOUNTNAME].blob.core.windows.net/"/>
-            <add key="connectionString" value="DefaultEndpointsProtocol=https;AccountName=[ACCOUNTNAME];AccountKey=[YOURACCOUNTKEY]"/>
-            <!--
-                Optional configuration value determining the maximum number of days to cache items in the browser.
-                Defaults to 365 days.
-            -->
-            <add key="maxDays" value="365"/>
-            <!--
-                When true this allows the VirtualPathProvider to use the default "media" route prefix regardless 
-                of the container name.
-            -->
-            <add key="useDefaultRoute" value="true"/>
-        </Parameters>
-    </Provider>
+```xml
+<Provider alias="forms" type="Our.Umbraco.FileSystemProviders.Azure.AzureBlobFileSystem, Our.Umbraco.FileSystemProviders.Azure">
+    <Parameters>
+        <add key="containerName" value="form-data"/>
+        <add key="rootUrl" value="http://[ACCOUNTNAME].blob.core.windows.net/"/>
+        <add key="connectionString" value="DefaultEndpointsProtocol=https;AccountName=[ACCOUNTNAME];AccountKey=[YOURACCOUNTKEY]"/>
+        <!--
+            Optional configuration value determining the maximum number of days to cache items in the browser.
+            Defaults to 365 days.
+        -->
+        <add key="maxDays" value="365"/>
+        <!--
+            When true this allows the VirtualPathProvider to use the default "media" route prefix regardless 
+            of the container name.
+        -->
+        <add key="useDefaultRoute" value="true"/>
+    </Parameters>
+</Provider>
+```
 
 *Note* The Azure Blob container cannot be called `forms` as this will give unexpected behaviour, and we recommend you call it `form-data` or similar.
 

@@ -12,15 +12,18 @@ A dataresolver is a way to add meaning to objects courier doesn't understand. Fo
 * If value is set, and is an int, courier will convert the value to the Node GUID, add the node as a dependency. On extraction the GUID will be converted back to the right ID.
 
 ##### Configuration
-	<contentPickers>
-	    <!-- add new datatype elements for data types that stores page ids (ex: "1242" or "1726,2362,2323") -->
-	    <add key="contentPicker">158aa029-24ed-4948-939e-c3da209e5fba</add>
-	    <add key="ultimatePicker">cdbf0b5d-5cb2-445f-bc12-fcaaec07cf2c</add>
-	            
-	    <add key="Ucomponents-XpathCheckboxlist">d2d46927-f4f8-4b1b-add7-661cc09a0539</add>
-	    <add key="Ucomponents-XpathDropdownlist">57a62843-c488-4c29-8125-52f51873613e</add>
-	    <add key="Ucomponents-AutoComplete">31aa0d5c-f8e1-4cdc-a66e-c7f8c09498ef</add>
-	</contentPickers>
+
+```xml
+<contentPickers>
+    <!-- add new datatype elements for data types that stores page ids (ex: "1242" or "1726,2362,2323") -->
+    <add key="contentPicker">158aa029-24ed-4948-939e-c3da209e5fba</add>
+    <add key="ultimatePicker">cdbf0b5d-5cb2-445f-bc12-fcaaec07cf2c</add>
+            
+    <add key="Ucomponents-XpathCheckboxlist">d2d46927-f4f8-4b1b-add7-661cc09a0539</add>
+    <add key="Ucomponents-XpathDropdownlist">57a62843-c488-4c29-8125-52f51873613e</add>
+    <add key="Ucomponents-AutoComplete">31aa0d5c-f8e1-4cdc-a66e-c7f8c09498ef</add>
+</contentPickers>
+```
 
 ### CSSResources
 * **Full name:** `Umbraco.Courier.DataResolvers.CssResources`
@@ -50,10 +53,12 @@ A dataresolver is a way to add meaning to objects courier doesn't understand. Fo
 
 ##### Configuration
 
-	<keyValuePrevalueEditors>
-	    <!-- Prevalue editors that store values as a key value pair in the built-in umbracp prevalue storage, identified by their full class-name -->
-	    <add key="KeyValuePrevalueEditor">umbraco.editorControls.KeyValuePrevalueEditor</add>
-	</keyValuePrevalueEditors>
+```xml
+<keyValuePrevalueEditors>
+    <!-- Prevalue editors that store values as a key value pair in the built-in umbracp prevalue storage, identified by their full class-name -->
+    <add key="KeyValuePrevalueEditor">umbraco.editorControls.KeyValuePrevalueEditor</add>
+</keyValuePrevalueEditors>
+```
 
 ### LocalLinks
 * **Full name:** `Umbraco.Courier.DataResolvers.LocalLinks`
@@ -61,13 +66,16 @@ A dataresolver is a way to add meaning to objects courier doesn't understand. Fo
 * Resolves the ID to a GUID, and adds the linked document as a dependency
 
 ##### Configuration
-	<localLinks>
-	    <!-- Propertytypes that CAN contain locallinks (like the ones inserted with TinyMCE) -->
-	    <add key="TinyMCE3">5e9b75ae-face-41c8-b47e-5f4b0fd82f83</add>
-	    <add key="TextboxMultiple">67db8357-ef57-493e-91ac-936d305e0f2a</add>
-	    <add key="Textstring">ec15c1e5-9d90-422a-aa52-4f7622c63bea</add>
-	    <add key="Simple Editor">60b7dabf-99cd-41eb-b8e9-4d2e669bbde9</add>
-	</localLinks>
+
+```xml
+<localLinks>
+    <!-- Propertytypes that CAN contain locallinks (like the ones inserted with TinyMCE) -->
+    <add key="TinyMCE3">5e9b75ae-face-41c8-b47e-5f4b0fd82f83</add>
+    <add key="TextboxMultiple">67db8357-ef57-493e-91ac-936d305e0f2a</add>
+    <add key="Textstring">ec15c1e5-9d90-422a-aa52-4f7622c63bea</add>
+    <add key="Simple Editor">60b7dabf-99cd-41eb-b8e9-4d2e669bbde9</add>
+</localLinks>
+```
 
 ### MacroParameters
 * **Full name:** `Umbraco.Courier.DataResolvers.MacroParameters`
@@ -77,27 +85,31 @@ A dataresolver is a way to add meaning to objects courier doesn't understand. Fo
 ##### Configuration
 Configuring which data types can contain macro elements to resolve
 
-	<macros>
-	    <!-- Propertytypes that CAN contain macro mark-up (like the ones inserted with TinyMCE) -->
-	    <add key="TinyMCE3">5e9b75ae-face-41c8-b47e-5f4b0fd82f83</add>
-	    <add key="TextboxMultiple">67db8357-ef57-493e-91ac-936d305e0f2a</add>
-	    <add key="Textstring">ec15c1e5-9d90-422a-aa52-4f7622c63bea</add>
-	    <add key="Simple Editor">60b7dabf-99cd-41eb-b8e9-4d2e669bbde9</add>
-	</macros>
+```xml
+<macros>
+    <!-- Propertytypes that CAN contain macro mark-up (like the ones inserted with TinyMCE) -->
+    <add key="TinyMCE3">5e9b75ae-face-41c8-b47e-5f4b0fd82f83</add>
+    <add key="TextboxMultiple">67db8357-ef57-493e-91ac-936d305e0f2a</add>
+    <add key="Textstring">ec15c1e5-9d90-422a-aa52-4f7622c63bea</add>
+    <add key="Simple Editor">60b7dabf-99cd-41eb-b8e9-4d2e669bbde9</add>
+</macros>
+```
 
 Configuring which macro property types contains references to other nodes
 
-	<macroPropertyTypeResolvers>
-	    <contentPickers>
-	        <!-- Macro Property Types, that store Content IDs, to link to media or content -->
-	        <add key="Media Current">mediaCurrent</add>
-	        <add key="Content Subs">contentSubs</add>
-	        <add key="Content Random">contentRandom</add>
-	        <add key="Content picker">contentPicker</add>
-	        <add key="Content tree">contentTree</add>
-	        <add key="Content All">contentAll</add>
-	    </contentPickers>
-	</macroPropertyTypeResolvers>
+```xml
+<macroPropertyTypeResolvers>
+    <contentPickers>
+        <!-- Macro Property Types, that store Content IDs, to link to media or content -->
+        <add key="Media Current">mediaCurrent</add>
+        <add key="Content Subs">contentSubs</add>
+        <add key="Content Random">contentRandom</add>
+        <add key="Content picker">contentPicker</add>
+        <add key="Content tree">contentTree</add>
+        <add key="Content All">contentAll</add>
+    </contentPickers>
+</macroPropertyTypeResolvers>
+```
 
 ### MediaPicker
 * **Full name:** `Umbraco.Courier.DataResolvers.MediaPicker`
@@ -106,12 +118,13 @@ Configuring which macro property types contains references to other nodes
 
 ##### Configuration:
 
-	<mediaPickers>
-	    <!-- add new datatype elements for data types that stores media ids (ex: "1242" or "1726,2362,2323") -->
-	    <add key="mediaPicker">EAD69342-F06D-4253-83AC-28000225583B</add>
-	    <add key="damp2">ef94c406-9e83-4058-a780-0375624ba7ca</add>
-	</mediaPickers>
-
+```xml
+<mediaPickers>
+    <!-- add new datatype elements for data types that stores media ids (ex: "1242" or "1726,2362,2323") -->
+    <add key="mediaPicker">EAD69342-F06D-4253-83AC-28000225583B</add>
+    <add key="damp2">ef94c406-9e83-4058-a780-0375624ba7ca</add>
+</mediaPickers>
+```
 
 ### RelatedLinks
 * **Full name:** `Umbraco.Courier.DataResolvers.RelatedLinks`
@@ -147,11 +160,13 @@ Configuring which macro property types contains references to other nodes
 
 ##### Configuration
 
-	<files>
-	    <!-- add new datatype elements for data types that stores files as a path ex: /meda/223/file.png -->
-	    <add key="Upload">5032a6e6-69e3-491d-bb28-cd31cd11086c</add>
-	    <add key="Ucomponents-Filepicker">318a9c2e-3966-4979-8c1d-575c5d5f669b</add>
-	</files>
+```xml
+<files>
+    <!-- add new datatype elements for data types that stores files as a path ex: /meda/223/file.png -->
+    <add key="Upload">5032a6e6-69e3-491d-bb28-cd31cd11086c</add>
+    <add key="Ucomponents-Filepicker">318a9c2e-3966-4979-8c1d-575c5d5f669b</add>
+</files>
+```
 
 ### UsercontrolWrapper
 * **Full name:** `Umbraco.Courier.DataResolvers.UsercontrolWrapper`

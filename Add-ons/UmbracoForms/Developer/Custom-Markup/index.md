@@ -33,20 +33,22 @@ The rest of the views start with FieldType, like `FieldType.Textfield.cshtml` an
 
 Contents of the `FieldType.Textfield.cshtml` view (from the default theme):
 
-    @model Umbraco.Forms.Mvc.Models.FieldViewModel
-    @using Umbraco.Forms.Mvc
+```csharp
+@model Umbraco.Forms.Mvc.Models.FieldViewModel
+@using Umbraco.Forms.Mvc
 
-    <input type="text" 
-        name="@Model.Name" 
-        id="@Model.Id" 
-        class="@Html.GetFormFieldClass(Model.FieldTypeName) text" 
-        value="@Model.ValueAsHtmlString" 
-        maxlength="500"
-        @{if(string.IsNullOrEmpty(Model.PlaceholderText) == false){<text>placeholder="@Model.PlaceholderText"</text>}}
-        @{if(Model.Mandatory || Model.Validate){<text>data-val="true"</text>}}
-        @{if (Model.Mandatory) {<text> data-val-required="@Model.RequiredErrorMessage"</text>}}
-        @{if (Model.Validate) {<text> data-val-regex="@Model.InvalidErrorMessage" data-regex="@Html.Raw(Model.Regex)"</text>}}
-    />
+<input type="text" 
+    name="@Model.Name" 
+    id="@Model.Id" 
+    class="@Html.GetFormFieldClass(Model.FieldTypeName) text" 
+    value="@Model.ValueAsHtmlString" 
+    maxlength="500"
+    @{if(string.IsNullOrEmpty(Model.PlaceholderText) == false){<text>placeholder="@Model.PlaceholderText"</text>}}
+    @{if(Model.Mandatory || Model.Validate){<text>data-val="true"</text>}}
+    @{if (Model.Mandatory) {<text> data-val-required="@Model.RequiredErrorMessage"</text>}}
+    @{if (Model.Validate) {<text> data-val-regex="@Model.InvalidErrorMessage" data-regex="@Html.Raw(Model.Regex)"</text>}}
+/>
+```
 
 By default the form makes use of jQuery validate and jQuery validate unobtrusive which is why you see attributes like `data-val` and `data-val-required`.
 

@@ -20,14 +20,15 @@ The courier webservice provider can connect any other website running Umbraco, w
 
 
 #### Configuration XML
-	<repository name="Live" alias="1" type="CourierWebserviceRepositoryProvider" visible="true">
-	    <url>http://cws.local</url>
-	    <user>0</user>
-	    
-	    <login>login</login>
-	    <password>pass</password>
-	    <passwordEncoding>Clear|Hashed</passwordEncoding>
-	</repository>
+```xml
+<repository name="Live" alias="1" type="CourierWebserviceRepositoryProvider" visible="true">
+	<url>http://cws.local</url>
+	<user>0</user>	
+	<login>login</login>
+	<password>pass</password>
+	<passwordEncoding>Clear|Hashed</passwordEncoding>
+</repository>
+```
 
 #### Settings
 * **Url**: url to the website where the other instance is accessible
