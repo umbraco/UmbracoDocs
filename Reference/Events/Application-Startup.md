@@ -102,6 +102,6 @@ Finally (very EXPERT), users can [register a filter](../../apidocs/csharp/api/Um
 
 ## Related Links
 
-* [Troubleshooting Slow Startup](/Troubleshooting-Slow-Startup.md)
-* [More information about BootManager](/Understanding-BootManagers.md) (EXPERT)
-* [Overriding UmbracoApplication](/Extending-UmbracoApplication.md) (EXPERT)
+* [Troubleshooting Slow Startup](Troubleshooting-Slow-Startup.md)
+* [More information about BootManager](Understanding-BootManagers.md) (EXPERT)
+* [Overriding UmbracoApplication](Extending-UmbracoApplication.md) (EXPERT)
