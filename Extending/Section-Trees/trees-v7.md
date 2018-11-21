@@ -18,78 +18,86 @@ Decorate your '*TreeController*' with the *Tree* Attribute, which is used to def
 
 **For example**... 
 
-    [Tree("developer", "favouriteThingsAlias", "Favourite Things Name")]
-    public class FavouriteThingsTreeController : TreeController
-    {  
+```csharp
+[Tree("developer", "favouriteThingsAlias", "Favourite Things Name")]
+public class FavouriteThingsTreeController : TreeController
+{  
+```
 
 ...would register a custom tree with a title 'Favourite Things Name' in the Developer section of Umbraco.
 
 You can also specify the icon to show for the tree, and 'sort order' if more than one tree appears in a section.
 
-    [Tree("developer", "favouriteThingsAlias", "Favourite Things Name", iconClosed:"icon-folder", iconOpen:"icon-folder",sortOrder:8)]
+```csharp
+[Tree("developer", "favouriteThingsAlias", "Favourite Things Name", iconClosed:"icon-folder", iconOpen:"icon-folder",sortOrder:8)]
+```
 
 NB: An entry in the ['~/config/trees.config' file.](../../Reference/Config/trees/index.md) will be added for your custom tree.
 
 eg:
 
-    <add initialize="true" sortOrder="0" alias="favouriteThingsAlias" application="developer" title="Favourite Things Name" iconClosed="icon-folder" iconOpen="icon-folder-open" type="Our.Umbraco.Controllers.FavouriteThingsTreeController, Our.Umbraco" />
+```xml
+<add initialize="true" sortOrder="0" alias="favouriteThingsAlias" application="developer" title="Favourite Things Name" iconClosed="icon-folder" iconOpen="icon-folder-open" type="Our.Umbraco.Controllers.FavouriteThingsTreeController, Our.Umbraco" />
+```
 
 [See Also: How to create your own custom section](../../Extending/Section-Trees/sections.md) 
 
 ### Implementing the Tree
 
-       protected override TreeNodeCollection GetTreeNodes(string id, FormDataCollection queryStrings)
-            {
-                // check if we're rendering the root node's children
-                if (id == Constants.System.Root.ToInvariantString())
-                {
-                    // you can get your custom nodes from anywhere, and they can represent anything... 
-                    Dictionary<int, string> favouriteThings = new Dictionary<int, string>();
-                    favouriteThings.Add(1, "Raindrops on Roses");
-                    favouriteThings.Add(2, "Whiskers on Kittens");
-                    favouriteThings.Add(3, "Skys full of Stars");
-                    favouriteThings.Add(4, "Warm Woolen Mittens");
-                    favouriteThings.Add(5, "Cream coloured Unicorns");
-                    favouriteThings.Add(6, "Schnitzel with Noodles");
-                    // create our node collection
-                    var nodes = new TreeNodeCollection();
-                
-                // loop through our favourite things and create a tree item for each one
-                foreach (var thing in favouriteThings)
-                {
-                    // add each node to the tree collection using the base CreateTreeNode method
-                    // it has several overloads, using here unique Id of tree item, -1 is the Id of the parent node to create, eg the root of this tree is -1 by convention - the querystring collection passed into this route - the name of the tree node -  css class of icon to display for the node - and whether the item has child nodes
-                    var node = CreateTreeNode(thing.Key.ToString(), "-1", queryStrings, thing.Value, "icon-presentation", false);
-                    nodes.Add(node);
-
-                }
-                return nodes;
-            }
-
-            // this tree doesn't support rendering more than 1 level
-            throw new NotSupportedException();
-        }
-    
-    
-    protected override MenuItemCollection GetMenuForNode(string id, FormDataCollection queryStrings)
+```csharp
+protected override TreeNodeCollection GetTreeNodes(string id, FormDataCollection queryStrings)
     {
-        // create a Menu Item Collection to return so people can interact with the nodes in your tree
-        var menu = new MenuItemCollection();
-
+        // check if we're rendering the root node's children
         if (id == Constants.System.Root.ToInvariantString())
         {
-            // root actions, perhaps users can create new items in this tree, or perhaps it's not a content tree, it might be a read only tree, or each node item might represent something entirely different...
-            // add your menu items here following the pattern of <Umbraco.Web.Models.Trees.ActionMenuItem,umbraco.interfaces.IAction>
-            menu.Items.Add<CreateChildEntity, ActionNew>(ui.Text("actions", ActionNew.Instance.Alias));
-            // add refresh menu item            
-            menu.Items.Add<RefreshNode, ActionRefresh>(ui.Text("actions", ActionRefresh.Instance.Alias), true);
-            return menu;
-        }                   
-        // add a delete action to each individual item
-        menu.Items.Add<ActionDelete>(ui.Text("actions", ActionDelete.Instance.Alias));   
+            // you can get your custom nodes from anywhere, and they can represent anything... 
+            Dictionary<int, string> favouriteThings = new Dictionary<int, string>();
+            favouriteThings.Add(1, "Raindrops on Roses");
+            favouriteThings.Add(2, "Whiskers on Kittens");
+            favouriteThings.Add(3, "Skys full of Stars");
+            favouriteThings.Add(4, "Warm Woolen Mittens");
+            favouriteThings.Add(5, "Cream coloured Unicorns");
+            favouriteThings.Add(6, "Schnitzel with Noodles");
+            // create our node collection
+            var nodes = new TreeNodeCollection();
+        
+        // loop through our favourite things and create a tree item for each one
+        foreach (var thing in favouriteThings)
+        {
+            // add each node to the tree collection using the base CreateTreeNode method
+            // it has several overloads, using here unique Id of tree item, -1 is the Id of the parent node to create, eg the root of this tree is -1 by convention - the querystring collection passed into this route - the name of the tree node -  css class of icon to display for the node - and whether the item has child nodes
+            var node = CreateTreeNode(thing.Key.ToString(), "-1", queryStrings, thing.Value, "icon-presentation", false);
+            nodes.Add(node);
 
-        return menu;
+        }
+        return nodes;
     }
+
+    // this tree doesn't support rendering more than 1 level
+    throw new NotSupportedException();
+}
+    
+
+protected override MenuItemCollection GetMenuForNode(string id, FormDataCollection queryStrings)
+{
+    // create a Menu Item Collection to return so people can interact with the nodes in your tree
+    var menu = new MenuItemCollection();
+
+    if (id == Constants.System.Root.ToInvariantString())
+    {
+        // root actions, perhaps users can create new items in this tree, or perhaps it's not a content tree, it might be a read only tree, or each node item might represent something entirely different...
+        // add your menu items here following the pattern of <Umbraco.Web.Models.Trees.ActionMenuItem,umbraco.interfaces.IAction>
+        menu.Items.Add<CreateChildEntity, ActionNew>(ui.Text("actions", ActionNew.Instance.Alias));
+        // add refresh menu item            
+        menu.Items.Add<RefreshNode, ActionRefresh>(ui.Text("actions", ActionRefresh.Instance.Alias), true);
+        return menu;
+    }                   
+    // add a delete action to each individual item
+    menu.Items.Add<ActionDelete>(ui.Text("actions", ActionDelete.Instance.Alias));   
+
+    return menu;
+}
+```
 
 ![Favourite Things Custom Tree](images/favourite-things-custom-tree.png)
 
@@ -102,9 +110,11 @@ and the 'Delete' menu item would load a view from: */views/favouriteThings/delet
 
 It's recommended, particularly if you're creating a custom tree as part of an Umbraco package/plugin, to change the location of this default folder to the app_plugins folder and you achieve this by decorating you mvc *TreeController* with the *PluginController* attribute.
 
-    [Tree("developer", "favouriteThingsAlias", "Favourite Things Name")]
-    [PluginController("favouriteThings")]
-    public class FavouriteThingsTreeController : TreeController
+```csharp
+[Tree("developer", "favouriteThingsAlias", "Favourite Things Name")]
+[PluginController("favouriteThings")]
+public class FavouriteThingsTreeController : TreeController
+```
 
 The edit view in the example would now be loaded from the location: */app_plugins/favouriteThings/backoffice/favouriteThingsAlias/edit.html*
 
@@ -114,27 +124,31 @@ You can instruct the Umbraco backoffice to load additional javascript resources 
 
 **For example**...
 
-    {
-     "javascript": [
-       "~/App_Plugins/favouriteThings/favouriteThings.resource.js",
-       "~/App_Plugins/favouriteThings/backoffice/favouriteThingsAlias/edit.controller.js",
-       "~/App_Plugins/favouriteThings/backoffice/favouriteThingsAlias/delete.controller.js"
-     ]
-    }
+```json
+{
+    "javascript": [
+    "~/App_Plugins/favouriteThings/favouriteThings.resource.js",
+    "~/App_Plugins/favouriteThings/backoffice/favouriteThingsAlias/edit.controller.js",
+    "~/App_Plugins/favouriteThings/backoffice/favouriteThingsAlias/delete.controller.js"
+    ]
+}
+```
 
 ...this manifest would load files for two controllers to work with the edit and delete views and a general resource file, perhaps containing code to retrieve, create, edit and delete 'favourite things' from some external non-Umbraco API.
 
 Our Tree Action View would then be wired to the loaded controller using the ng-controller attribute, perhaps the delete view would look a little bit like this:
 
-    <div class="umb-dialog umb-pane" ng-controller="Our.Umbraco.FavouriteThings.DeleteController">
-        <div class="umb-dialog-body">
-            <p class="umb-abstract">
-                Are you sure you want to delete this favourite thing: <strong>{{currentNode.name}}</strong> ?
-            </p>
-            <umb-confirm on-confirm="performDelete" on-cancel="cancel">
-            </umb-confirm>
-        </div>
+```csharp
+<div class="umb-dialog umb-pane" ng-controller="Our.Umbraco.FavouriteThings.DeleteController">
+    <div class="umb-dialog-body">
+        <p class="umb-abstract">
+            Are you sure you want to delete this favourite thing: <strong>{{currentNode.name}}</strong> ?
+        </p>
+        <umb-confirm on-confirm="performDelete" on-cancel="cancel">
+        </umb-confirm>
     </div>
+</div>
+```
 
 Take a look at the [umbEditor directives in the backoffice API Documentation](https://our.umbraco.com/apidocs/ui/#/api/umbraco.directives.directive:umbEditorHeader), for lots of common interaction directives that can be used to deliver a consistent backoffice editing experience for items in your custom tree.
 
@@ -160,23 +174,27 @@ The `RootNodeRendering` is raised whenever a tree's root node is created.
 
 **Definition:**
 
-    public static event TypedEventHandler<TreeControllerBase, TreeNodeRenderingEventArgs> RootNodeRendering;
+```csharp
+public static event TypedEventHandler<TreeControllerBase, TreeNodeRenderingEventArgs> RootNodeRendering;
+```
 
 **Usage:**
 
-	// register the event listener:
-	TreeControllerBase.RootNodeRendering += TreeControllerBase_RootNodeRendering;
+```csharp
+// register the event listener:
+TreeControllerBase.RootNodeRendering += TreeControllerBase_RootNodeRendering;
 
-	// the event listener method:
-    void TreeControllerBase_RootNodeRendering(TreeControllerBase sender, TreeNodeRenderingEventArgs e)
+// the event listener method:
+void TreeControllerBase_RootNodeRendering(TreeControllerBase sender, TreeNodeRenderingEventArgs e)
+{
+    // normally you will want to target a specific tree, this can be done by checking the 
+    // tree alias of by checking the tree type (casting 'sender')
+    if (sender.TreeAlias == "content")
     {
-        // normally you will want to target a specific tree, this can be done by checking the 
-        // tree alias of by checking the tree type (casting 'sender')
-        if (sender.TreeAlias == "content")
-        {
-            e.Node.Title = "My new title";
-        }
-    }	
+        e.Node.Title = "My new title";
+    }
+}	
+```
 
 ### TreeNodesRendering
 
@@ -184,25 +202,28 @@ The `TreeNodesRendering` is raised whenever a list of child nodes are created
 
 **Definition:**
 
-    public static event TypedEventHandler<TreeControllerBase, TreeNodesRenderingEventArgs> TreeNodesRendering;
+```csharp
+public static event TypedEventHandler<TreeControllerBase, TreeNodesRenderingEventArgs> TreeNodesRendering;
+```
 
 **Usage:**
 
-	// register the event listener:
-    TreeControllerBase.TreeNodesRendering += TreeControllerBase_TreeNodesRendering;
+```csharp
+// register the event listener:
+TreeControllerBase.TreeNodesRendering += TreeControllerBase_TreeNodesRendering;
 
-	// the event listener method:
-    void TreeControllerBase_TreeNodesRendering(TreeControllerBase sender, TreeNodesRenderingEventArgs e)
+// the event listener method:
+void TreeControllerBase_TreeNodesRendering(TreeControllerBase sender, TreeNodesRenderingEventArgs e)
+{
+    // this example will filter any content tree node whose node name starts with
+    // 'Private', for any user that is of the type 'customUser'
+    if (sender.TreeAlias == "content"
+        && sender.Security.CurrentUser.UserType.Alias == "customUser")
     {
-        // this example will filter any content tree node whose node name starts with
-        // 'Private', for any user that is of the type 'customUser'
-        if (sender.TreeAlias == "content"
-            && sender.Security.CurrentUser.UserType.Alias == "customUser")
-        {
-            e.Nodes.RemoveAll(node => node.Title.StartsWith("Private"));
-        }
+        e.Nodes.RemoveAll(node => node.Title.StartsWith("Private"));
     }
-
+}
+```
 
 ### MenuRendering
 
@@ -210,38 +231,42 @@ The `MenuRendering` is raised whenever a menu is generated for a tree node
 
 **Definition:**
 
-    public static event TypedEventHandler<TreeControllerBase, MenuRenderingEventArgs> MenuRendering;
+```csharp
+public static event TypedEventHandler<TreeControllerBase, MenuRenderingEventArgs> MenuRendering;
+```
 
 **Usage:**
 
-	// register the event listener:
-    TreeControllerBase.MenuRendering += TreeControllerBase_MenuRendering;
+```csharp
+// register the event listener:
+TreeControllerBase.MenuRendering += TreeControllerBase_MenuRendering;
 
-	// the event listener method:
-    void TreeControllerBase_MenuRendering(TreeControllerBase sender, MenuRenderingEventArgs e)
+// the event listener method:
+void TreeControllerBase_MenuRendering(TreeControllerBase sender, MenuRenderingEventArgs e)
+{
+    // this example will add a custom menu item for all admin users
+    // for all content tree nodes
+    if (sender.TreeAlias == "content"
+        && sender.Security.CurrentUser.UserType.Alias == "admin")
     {
-        // this example will add a custom menu item for all admin users
-        // for all content tree nodes
-        if (sender.TreeAlias == "content"
-            && sender.Security.CurrentUser.UserType.Alias == "admin")
-        {
-            // creates a menu action that will open /umbraco/currentSection/itemAlias.html
-            var i = new Umbraco.Web.Models.Trees.MenuItem("itemAlias", "Item name");
-            
-            // optional, if you want to load a legacy page, otherwise it will just follow convention
-            i.AdditionalData.Add("actionUrl", "my/long/url/to/webformshorror.aspx");
-            
-            // optional, if you don't want to follow the naming conventions, but do want to use a angular view
-            // you can also use a direct path "../App_Plugins/my/long/url/to/view.html"
-            i.AdditionalData.Add("actionView", "my/long/url/to/view.html");
-            
-	        // sets the icon to icon-wine-glass 
-	        i.Icon = "wine-glass"
+        // creates a menu action that will open /umbraco/currentSection/itemAlias.html
+        var i = new Umbraco.Web.Models.Trees.MenuItem("itemAlias", "Item name");
+        
+        // optional, if you want to load a legacy page, otherwise it will just follow convention
+        i.AdditionalData.Add("actionUrl", "my/long/url/to/webformshorror.aspx");
+        
+        // optional, if you don't want to follow the naming conventions, but do want to use a angular view
+        // you can also use a direct path "../App_Plugins/my/long/url/to/view.html"
+        i.AdditionalData.Add("actionView", "my/long/url/to/view.html");
+        
+        // sets the icon to icon-wine-glass 
+        i.Icon = "wine-glass"
 
-   	        // insert at index 5
-            e.Menu.Items.Insert(5,i);
-        }
+        // insert at index 5
+        e.Menu.Items.Insert(5,i);
     }
+}
+```
 
 ## Tree Actions and User Permissions
 
