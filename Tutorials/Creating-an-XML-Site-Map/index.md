@@ -14,17 +14,17 @@ There isn't an 'out of the box' XML sitemap generator with Umbraco, this tutoria
 Essentially this is just a list of urls for the content on your site.
 
 See [Sitemaps XML format](https://www.sitemaps.org/protocol.html) for the XML schema the sitemap needs to conform to:
-
-    <?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-       <url>
-          <loc>https://www.example.com/</loc>
-          <lastmod>2005-01-01</lastmod>
-          <changefreq>monthly</changefreq>
-          <priority>0.8</priority>
-       </url>
-    </urlset> 
-
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://www.example.com/</loc>
+        <lastmod>2005-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+</urlset> 
+```
 Each page on your site needs to have it's own `<url>` entry in the list.
 
 ### Approach
@@ -43,7 +43,7 @@ The implementation will start at the homepage of the site and loop through all t
 ![The XmlSiteMap doc type](images/xmlSiteMap_doctype.png)
 With template XmlSiteMap
 
-Allow to be created at the root of the site.
+Allow to be created under the homepage node.
 
 ## Create Xml Site Map Composition
 
@@ -68,23 +68,23 @@ Now editors have the ability to set these values for each page of the site, but 
 ### Building the XmlSiteMap.cshtml template
 
 We'll start by writing out in the template the xml schema for the sitemap and because we don't want our template to inherit any 'master' html layout we'll set the 'layout' to be null.
-
-    @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-    @{Layout = null; Response.ContentType = "text/xml"; }<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">[INSERT SITE MAP CONTENT HERE]</urlset>
-
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{Layout = null; Response.ContentType = "text/xml"; }<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">[INSERT SITE MAP CONTENT HERE]</urlset>
+```
 Notice how we're not adding any spaces or carriage returns before the `<urlset>` opening declaration, even though it would be easier to read if we did, we want to avoid making the XML invalid.
 
 ### Getting a reference to the sitemap starting point
 
 We're going to start at the site homepage, and since our XmlSiteMap page is created underneath this page, we can use the 'Site()' helper to find the starting point for the sitemap as IPublishedContent.
 
-IPublishedContent siteHomePage = Model.Content.Site();
+`IPublishedContent siteHomePage = Model.Content.Site();`
 
 ### Rendering a site map entry
 
 We will retrieve each page in the site as **IPublishedContent**, we're not really concerned with any of the different types of properties a page may have, for the site map, we're only interested in the Url, when it was last modified etc, whether it was hidden, but you could write this with Modelsbuilder too (should this example use modelsbuilder? hmmm) - as we'll be writing out this url markup for an IPublishedContent item in different places as we loop to build the sitemap, let's create a Razor Helper that we can pass the IPublishedContent object to, to be responsible for rendering the markup.
 
-```chsarp
+```csharp
 @helper RenderSiteMapUrlEntry(IPublishedContent node)
 {
     //we're passing 'true' as an additional parameter to GetPropertyValue to read the value from the parent nodes, so this setting could be set 'per section
@@ -114,7 +114,7 @@ We'll create a Razor Function to handle ensuring the urls on our sitemap have th
 
 Razor functions exist inside a single @functions block inside your template
 
-```chsarp
+```csharp
 @functions {
     private static string EnsureUrlStartsWithDomain(string url)
     {
@@ -132,13 +132,13 @@ Razor functions exist inside a single @functions block inside your template
 #### Xml Sitemap for the homepage
 
 So for the homepage we'll now have:
-
-    @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-    @{Layout = null; Response.ContentType = "text/xml";IPublishedContent siteHomePage = Model.Content.Site(); }<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">@RenderSiteMapUrlEntry(siteHomePage)</urlset>
-
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{Layout = null; Response.ContentType = "text/xml";IPublishedContent siteHomePage = Model.Content.Site(); }<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">@RenderSiteMapUrlEntry(siteHomePage)</urlset>
+```
 and this will render a sitemap entry for the homepage, which isn't very comprehensive!
 
-[screenshot here]
+![Example of Sitemap](images/sitemap.png)
 
 #### Looping through the rest of the site
 
@@ -149,24 +149,25 @@ We can use IPublishedContent's .Children method to return all the pages direct u
     IEnumerable<IPublishedContent> sitePages = siteHomePage.Children();
 
 So it would just be a case of looping through these children, and writing out their sitemap markup, and then in turn looking at their children 'The grandchildren' etc and so on...
-
-    foreach (var page in sitePages){
-        @RenderSiteMapUrlEntry(page)
-        if (page.Children.Any()){
-            var subPages = page.Children();
-            foreach (var subPage in subPages){
-                @RenderSiteMapUrlEntry(subPage)
-                if (subPage.Children.Any()){
-                    var subSubPages = subPages.Children();
-                    foreach (var subSubPage in subSubPages){
-                        //... on forever how do we stop?
-                    }
+```csharp
+foreach (var page in sitePages){
+    @RenderSiteMapUrlEntry(page)
+    if (page.Children.Any()){
+        var subPages = page.Children();
+        foreach (var subPage in subPages){
+            @RenderSiteMapUrlEntry(subPage)
+            if (subPage.Children.Any()){
+                var subSubPages = subPages.Children();
+                foreach (var subSubPage in subSubPages){
+                    //... on forever how do we stop?
                 }
             }
         }
     }
+}
+```
 
-So hopefully you can see the problem here, how deep do we go? how do we handle the repetition forever...
+So hopefully you can see the problem here, how deep do we go? How do we handle the repetition forever...
 
 ... well we can use recursion - we can create a further razor helper that 'calls itself' [insert inception reference here]...
 
@@ -174,25 +175,29 @@ So hopefully you can see the problem here, how deep do we go? how do we handle t
 
 If we create a helper called perhaps 'RenderSiteMapUrlEntriesForChildren' that then accepts a 'Parent Page' parameter as the starting point, then we can find the children of this Parent Page, write out their Site Map Entry, and then... call this same method again... from itself - recursion!
 
-    @helper RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
-    {          
-        foreach (var page in parentPage.Children)
-        {
-            @RenderSiteMapUrlEntry(page)
-            if (page.Children.Any()){
-                @RenderSiteMapUrlEntriesForChildren(page)
-            }               
-        }
+```csharp
+@helper RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
+{          
+    foreach (var page in parentPage.Children)
+    {
+        @RenderSiteMapUrlEntry(page)
+        if (page.Children.Any()){
+            @RenderSiteMapUrlEntriesForChildren(page)
+        }               
     }
+}
+```
 
 Now updating our template to call this helper:
 
-    @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-    @{Layout = null; Response.ContentType = "text/xml";IPublishedContent siteHomePage = Model.Content.Site(); }<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">@RenderSiteMapUrlEntry(siteHomePage)@RenderSiteMapUrlEntriesForChildren(siteHomePage)</urlset>
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{Layout = null; Response.ContentType = "text/xml";IPublishedContent siteHomePage = Model.Content.Site(); }<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">@RenderSiteMapUrlEntry(siteHomePage)@RenderSiteMapUrlEntriesForChildren(siteHomePage)</urlset>
+```
 
 we have a full sitemap rendered for the site!
 
-[Screenshot]
+![Example of Sitemap with children](images/sitemapWithChildren.png)
 
 #### Checking if a page should be on the sitemap
 
@@ -202,57 +207,66 @@ This is all very well, but what if some super secret pages shouldn't be on the s
 
 We added a hideFromXmlSitemap checkbox to hopefully all of our document types, let's update the helper to only return children that haven't got the checkbox set, excluding these pages (and any beneath them) from the sitemap.
 
-    @helper RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
-    {          
-            foreach (var page in parentPage.Children.Where(f=>!f.GetPropertyValue<bool>("hideFromXmlSiteMap"))
-            {
-                @RenderSiteMapUrlEntry(page)
-                if (page.Children.Any(f=>!f.GetPropertyValue<bool>("hideFromXmlSiteMap")){
-                @RenderSiteMapUrlEntriesForChildren(page)
-                }               
-            }
+```csharp
+@helper RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
+{          
+    foreach (var page in parentPage.Children.Where(f=>!f.GetPropertyValue<bool>("hideFromXmlSiteMap")))
+    {
+        @RenderSiteMapUrlEntry(page)
+        if (page.Children.Any(f=>!f.GetPropertyValue<bool>("hideFromXmlSiteMap"))){
+            @RenderSiteMapUrlEntriesForChildren(page)
+        }               
     }
+}
+```
 
 ##### Depth
 
 What if we only want the sitemap to go three levels deep?
 
-We added a property on the XmlSiteMap document type called depth... we can read that in our template and pass it to our helper
+We added a property on the XmlSiteMap document type called depth... we can read that in our template and pass it to our helper:
 
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{Layout = null; Response.ContentType = "text/xml"; int maxSiteMapDepth = Model.Content.HasValue("maxSiteMapDepth") ? Model.Content.GetPropertyValue<int>("maxSiteMapDepth") : int.MaxValue; IPublishedContent siteHomePage = Model.Content.Site(); }<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">@RenderSiteMapUrlEntry(siteHomePage)@RenderSiteMapUrlEntriesForChildren(siteHomePage, maxSiteMapDepth)</urlset>
 
-    int maxSiteMapDepth = Model.Content.HasValue("maxSiteMapDepth") ? Model.Content.GetPropertyValue<int>("maxSiteMapDepth") :  int.MaxValue;
+.....
 
-    @helper RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage, int maxSiteMapDepth)
-        {          
-                foreach (var page in parentPage.Children.Where(f=>!f.GetPropertyValue<bool>("hideFromXmlSiteMap"))
-                {
-                    @RenderSiteMapUrlEntry(page)
-                    if (page.Level < maxSiteMapDepth && page.Children.Any(f=>!f.GetPropertyValue<bool>("hideFromXmlSiteMap")){
-                    @RenderSiteMapUrlEntriesForChildren(page, maxSiteMapDepth)
-                    }               
-                }
-        }
+@helper RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage, int maxSiteMapDepth)
+{          
+    foreach (var page in parentPage.Children.Where(f=>!f.GetPropertyValue<bool>("hideFromXmlSiteMap"))
+    {
+        @RenderSiteMapUrlEntry(page)
+        if (page.Level < maxSiteMapDepth && page.Children.Any(f=>!f.GetPropertyValue<bool>("hideFromXmlSiteMap")){
+            @RenderSiteMapUrlEntriesForChildren(page, maxSiteMapDepth)
+        }               
+    }
+}
+```
 
 ##### DocumentType Blacklist
 
 Automatically exclude certain document types regardless of their 'hide from sitemap' setting.
 
-    string blacklistedDocumentTypeList = Model.Content.GetPropertyValue<string>("documentTypeBlackList");
-    string[] blackListedDocumentTypes = (!String.IsNullOrEmpty(blacklistedDocumentTypeList)) ? blacklistedDocumentTypeList.split(new char[]{','}, StringSplitOptions.RemoveEmptyEntries) : new string[];
+```csharp
+string blacklistedDocumentTypeList = Model.Content.GetPropertyValue<string>("documentTypeBlackList");
+string[] blackListedDocumentTypes = (!String.IsNullOrEmpty(blacklistedDocumentTypeList)) ? blacklistedDocumentTypeList.split(new char[]{','}, StringSplitOptions.RemoveEmptyEntries) : new string[];
+```
 
 and pass this into our helper
 
-       @helper RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage, int maxSiteMapDepth, string[] documentTypeBlacklist)
-            {          
-                    foreach (var page in parentPage.Children.Where(f=>!documentTypeBlackList.Contains(f.DocumentTypeAlias) && !f.GetPropertyValue<bool>("hideFromXmlSiteMap"))
-                    {
-                        @RenderSiteMapUrlEntry(page)
-                        if (page.Level < maxSiteMapDepth && page.Children.Any(f=>!f.GetPropertyValue<bool>("hideFromXmlSiteMap")){
-                        @RenderSiteMapUrlEntriesForChildren(page, maxSiteMapDepth, documentTypeBlacklist)
-                        }               
-                    }
-            }
-
+```csharp
+@helper RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage, int maxSiteMapDepth, string[] documentTypeBlacklist)
+{          
+    foreach (var page in parentPage.Children.Where(f=>!documentTypeBlackList.Contains(f.DocumentTypeAlias) && !f.GetPropertyValue<bool>("hideFromXmlSiteMap"))
+    {
+        @RenderSiteMapUrlEntry(page)
+        if (page.Level < maxSiteMapDepth && page.Children.Any(f=>!f.GetPropertyValue<bool>("hideFromXmlSiteMap")){
+            @RenderSiteMapUrlEntriesForChildren(page, maxSiteMapDepth, documentTypeBlacklist)
+        }               
+    }
+}
+```
 
 ### The finished sitemap template
 
