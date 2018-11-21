@@ -16,15 +16,16 @@ For reference on the language file format see the core [language files on GitHub
 
 ### Sample structure:
 
-    <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-    <language alias="da" intName="Danish" localName="dansk" lcid="6" culture="da-DK">
-        <creator>
-            <name>The Umbraco community</name>
-            <link>http://mydomain.com</link>
-        </creator>
-        <area alias="dialog">
-            <key alias="myKey">Min nøgle</key>
-            <key alias="otherKey">Min anden nøgle</key>
-        </area>
-    </language>
-
+```xml
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language alias="da" intName="Danish" localName="dansk" lcid="6" culture="da-DK">
+    <creator>
+        <name>The Umbraco community</name>
+        <link>http://mydomain.com</link>
+    </creator>
+    <area alias="dialog">
+        <key alias="myKey">Min nøgle</key>
+        <key alias="otherKey">Min anden nøgle</key>
+    </area>
+</language>
+```

@@ -51,11 +51,13 @@ and the format of their OEmbed implementation returns a JSON format, from a url 
 
 The configuration would look like this:
 
-      <provider name="DeviantArt" type="Umbraco.Web.Media.EmbedProviders.OEmbedJson, umbraco">
-        <urlShemeRegex><![CDATA[fav\.me/]]></urlShemeRegex>
-        <apiEndpoint><![CDATA[https://backend.deviantart.com/oembed?url=]]></apiEndpoint>
-        <requestParams type="Umbraco.Web.Media.EmbedProviders.Settings.Dictionary, umbraco"></requestParams>
-      </provider>
+```xml
+<provider name="DeviantArt" type="Umbraco.Web.Media.EmbedProviders.OEmbedJson, umbraco">
+    <urlShemeRegex><![CDATA[fav\.me/]]></urlShemeRegex>
+    <apiEndpoint><![CDATA[https://backend.deviantart.com/oembed?url=]]></apiEndpoint>
+    <requestParams type="Umbraco.Web.Media.EmbedProviders.Settings.Dictionary, umbraco"></requestParams>
+</provider>
+```
 
 Recycle the application pool, the new provider should be available for editors to use:
 
@@ -77,31 +79,33 @@ https://ampdemo.azureedge.net/azuremediaplayer.html
 
 We can create a custom Embedded Media Provider to do the job of taking the Url of the Media asset and writing out the markup required to embed the IFrame in your content.
 
-    namespace Our.Umbraco.Media.EmbedProviders
+```csharp
+namespace Our.Umbraco.Media.EmbedProviders
+{
+    public class AzureVideoEmbed : AbstractProvider
     {
-        public class AzureVideoEmbed : AbstractProvider
+        public override bool SupportsDimensions
         {
-            public override bool SupportsDimensions
-            {
-                get { return true; }
-            }
+            get { return true; }
+        }
 
-            public override string GetMarkup(string url, int maxWidth, int maxHeight)
-            {
-                // format of markup
-                string videoFormat = "<div class=\"iplayer-container\"><iframe src=\"//aka.ms/ampembed?url={0}\" name=\"azuremediaplayer\" scrolling=\"no\" frameborder=\"no\" align=\"center\" autoplay=\"false\" width=\"{1}\" height=\"{2}\" allowfullscreen></iframe></div>";
-                // pass in encoded Url, with and height, and turn off autoplay...                
-                var videoPlayerMarkup = string.Format(videoFormat, HttpUtility.UrlEncode(url) + "&amp;autoplay=false", maxWidth, maxHeight);
-                return videoPlayerMarkup;
-            }
+        public override string GetMarkup(string url, int maxWidth, int maxHeight)
+        {
+            // format of markup
+            string videoFormat = "<div class=\"iplayer-container\"><iframe src=\"//aka.ms/ampembed?url={0}\" name=\"azuremediaplayer\" scrolling=\"no\" frameborder=\"no\" align=\"center\" autoplay=\"false\" width=\"{1}\" height=\"{2}\" allowfullscreen></iframe></div>";
+            // pass in encoded Url, with and height, and turn off autoplay...                
+            var videoPlayerMarkup = string.Format(videoFormat, HttpUtility.UrlEncode(url) + "&amp;autoplay=false", maxWidth, maxHeight);
+            return videoPlayerMarkup;
         }
     }
+}
+```
 
 Now we need to add the configuration for the custom provider to our /config/embeddedmedia.config file:
 
-     <!-- Azure Video - format of urls: streaming.mediaservices.windows.net-->
-      <provider name="AzureVideo" type="Our.Umbraco.Media.EmbedProviders.AzureVideoEmbed, Our.Umbraco.Media">
-        <urlShemeRegex><![CDATA[windows\.net/]]></urlShemeRegex>
-      </provider>
-
-
+```xml
+<!-- Azure Video - format of urls: streaming.mediaservices.windows.net-->
+<provider name="AzureVideo" type="Our.Umbraco.Media.EmbedProviders.AzureVideoEmbed, Our.Umbraco.Media">
+    <urlShemeRegex><![CDATA[windows\.net/]]></urlShemeRegex>
+</provider>
+```

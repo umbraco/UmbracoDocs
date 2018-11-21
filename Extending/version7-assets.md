@@ -8,11 +8,15 @@ In v7 once a user is authenticated a request is made to retrieve the Server Vari
 
 In JavaScript, the server variables dictionary can be accessed by:
 
-	Umbraco.Sys.ServerVariables
+```javascript
+Umbraco.Sys.ServerVariables
+```
 
 This is not an angular service, it is simply a namespaced global variable. An example might be:
 
-	Umbraco.Sys.ServerVariables.isDebuggingEnabled
+```javascript
+Umbraco.Sys.ServerVariables.isDebuggingEnabled
+```
 
 which returns whether or not the application has the debug="true" setting in the web.config file.
 
@@ -22,19 +26,23 @@ It's also worth mentioning that the server variables collection when requested g
 
 From version 7.0.2+ you can subscribe to an event if you need to add your data to the server variables collection:
 
-	Umbraco.Web.UI.JavaScript.ServerVariablesParser.Parsing
+```csharp
+Umbraco.Web.UI.JavaScript.ServerVariablesParser.Parsing
+```
 
 A handler for this method could look like:
 
-    private void Parsing(object sender, Dictionary<string, object> dictionary)
-    {
-		// add stuff to the dictionary, preferably under your own custom section such as:
-        dictionary.Add("myPackage", new Dictionary<string, object>
-            {
-                {"mySetting1", "blah"},
-                {"mySetting2", "another value"}
-            });
-    }
+```csharp
+private void Parsing(object sender, Dictionary<string, object> dictionary)
+{
+	// add stuff to the dictionary, preferably under your own custom section such as:
+	dictionary.Add("myPackage", new Dictionary<string, object>
+		{
+			{"mySetting1", "blah"},
+			{"mySetting2", "another value"}
+		});
+}
+```
 
 ## URLs
 
@@ -48,15 +56,21 @@ Furthermore it is also possible to customize the path of the Umbraco backoffice 
 
 In the core we add a new server variable for every api controller's base URL. This allows us to version some API routes and not others if required. The other reason we do this is because of the `umbRequestHelper` angular service that we've built which generates our URLs for us based on the server variables, for example this returns our service url for the ContentController's PostSort action:
 
-	umbRequestHelper.getApiUrl("contentApiBaseUrl", "PostSort")  
+```csharp
+umbRequestHelper.getApiUrl("contentApiBaseUrl", "PostSort")  
+```
 
 This method looks in the "umbracoUrls" key for URLs in the server variables collection, for example:
 
-	Umbraco.Sys.ServerVariables.umbracoUrls.contentApiBaseUrl
+```csharp
+Umbraco.Sys.ServerVariables.umbracoUrls.contentApiBaseUrl
+```
 
 The way that we add service URLs to the server variables collection in the core is by using strongly typed extension methods on the `UrlHelper`. This means that we have no magic strings that need changing in c# so refactoring is a breeze and we won't forget to update a hard coded string that we've forgotten about. These extension methods are public as well so you can use them too. For example, to generate the 'contentApiBaseUrl' to the server vars collection we use this code:
 
-	Url.GetUmbracoApiServiceBaseUrl<ContentController>(controller => controller.PostSave(null))
+```csharp
+Url.GetUmbracoApiServiceBaseUrl<ContentController>(controller => controller.PostSave(null))
+```
 
 For a full reference to our URL generation, you can see the source of the [BackOfficeController](https://github.com/umbraco/Umbraco-CMS/blob/dev-v7/src/Umbraco.Web/Editors/BackOfficeController.cs).
 
@@ -64,5 +78,7 @@ For a full reference to our URL generation, you can see the source of the [BackO
 
 Because the `Umbraco.Web.UI.JavaScript.ServerVariablesParser.Parsing` event doesn't contain an instance of a UrlHelper to use, you'll have to create one which can be done with this code:
 
-	if (HttpContext.Current == null) throw new InvalidOperationException("HttpContext is null.");
-	var urlHelper = new UrlHelper(new RequestContext(new HttpContextWrapper(HttpContext.Current), new RouteData()))
+```csharp
+if (HttpContext.Current == null) throw new InvalidOperationException("HttpContext is null.");
+var urlHelper = new UrlHelper(new RequestContext(new HttpContextWrapper(HttpContext.Current), new RouteData()))
+```
