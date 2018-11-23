@@ -250,76 +250,88 @@ Automatically exclude certain document types regardless of their 'hide from site
 
 ```csharp
 string blacklistedDocumentTypeList = Model.Content.GetPropertyValue<string>("documentTypeBlackList");
-string[] blackListedDocumentTypes = (!String.IsNullOrEmpty(blacklistedDocumentTypeList)) ? blacklistedDocumentTypeList.split(new char[]{','}, StringSplitOptions.RemoveEmptyEntries) : new string[];
+string[] blackListedDocumentTypes = (!String.IsNullOrEmpty(blacklistedDocumentTypeList)) ? blacklistedDocumentTypeList.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries) : new string[] { };
 ```
 
 and pass this into our helper
 
 ```csharp
 @helper RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage, int maxSiteMapDepth, string[] documentTypeBlacklist)
-{          
-    foreach (var page in parentPage.Children.Where(f=>!documentTypeBlackList.Contains(f.DocumentTypeAlias) && !f.GetPropertyValue<bool>("hideFromXmlSiteMap"))
+{
+    foreach (var page in parentPage.Children.Where(f => !documentTypeBlacklist.Contains(f.DocumentTypeAlias) && !f.GetPropertyValue<bool>("hideFromXmlSiteMap")))
     {
         @RenderSiteMapUrlEntry(page)
-        if (page.Level < maxSiteMapDepth && page.Children.Any(f=>!f.GetPropertyValue<bool>("hideFromXmlSiteMap")){
+        if (page.Level < maxSiteMapDepth && page.Children.Any(f => !f.GetPropertyValue<bool>("hideFromXmlSiteMap")))
+        {
             @RenderSiteMapUrlEntriesForChildren(page, maxSiteMapDepth, documentTypeBlacklist)
-        }               
+        }
     }
 }
 ```
 
 ### The finished sitemap template
 
-      @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-                @{Layout = null; Response.ContentType = "text/xml";IPublishedContent siteHomePage = Model.Content.Site();int maxSiteMapDepth = Model.Content.HasValue("maxSiteMapDepth") ? Model.Content.GetPropertyValue<int>("maxSiteMapDepth") :  int.MaxValue;string blacklistedDocumentTypeList = Model.Content.GetPropertyValue<string>("documentTypeBlackList"); string[] blackListedDocumentTypes = (!String.IsNullOrEmpty(blacklistedDocumentTypeList)) ? blacklistedDocumentTypeList.split(new char[]{','}, StringSplitOptions.RemoveEmptyEntries) : new string[];}<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">@RenderSiteMapUrlEntry(siteHomePage)@RenderSiteMapUrlEntriesForChildren(siteHomePage,maxSiteMapDepth,blackListedDocumentTypes)</urlset>
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{Layout = null;
+    Response.ContentType = "text/xml";
+    string blacklistedDocumentTypeList = Model.Content.GetPropertyValue<string>("documentTypeBlackList");
+    string[] blackListedDocumentTypes = (!String.IsNullOrEmpty(blacklistedDocumentTypeList)) ? blacklistedDocumentTypeList.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries) : new string[] { };
+    int maxSiteMapDepth = Model.Content.HasValue("maxSiteMapDepth") ? Model.Content.GetPropertyValue<int>("maxSiteMapDepth") : int.MaxValue;
+    IPublishedContent siteHomePage = Model.Content.Site();
+}<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">@RenderSiteMapUrlEntry(siteHomePage)@RenderSiteMapUrlEntriesForChildren(siteHomePage, maxSiteMapDepth, blackListedDocumentTypes)</urlset>
 
-     @helper RenderSiteMapUrlEntry(IPublishedContent node)
-            {
-                //we're passing 'true' as an additional parameter to GetPropertyValue to read the value from the parent nodes, so this setting could be set 'per section
-                var changeFreq = node.GetPropertyValue<string>("searchEngineChangeFrequency", true);
-                if (String.IsNullOrEmpty(changeFreq))
-                {
-                    changeFreq = "monthly";
-                }
-                //with the relative priority, this is a per page setting, so we're not passing true
-                var priority = node.GetPropertyValue<string>("searchEngineRelativePriority");
-                if (String.IsNullOrEmpty(priority))
-                {
-                    priority = "0.5";
-                }
-                <url>
-                    <loc>@EnsureUrlStartsWithDomain(node.UrlWithDomain)</loc>
-                    <lastmod>@(string.Format("{0:s}+00:00", node.UpdateDate))</lastmod>
-                    <changefreq>@changeFreq</changefreq>
-                    <priority>@priority</priority>
-                </url>
+@helper RenderSiteMapUrlEntry(IPublishedContent node)
+{
+    //we're passing 'true' as an additional parameter to GetPropertyValue to read the value from the parent nodes, so this setting could be set 'per section
+    var changeFreq = node.GetPropertyValue<string>("searchEngineChangeFrequency", true);
+    if (String.IsNullOrEmpty(changeFreq))
+    {
+        changeFreq = "monthly";
+    }
+    //with the relative priority, this is a per page setting, so we're not passing true
+    var priority = node.GetPropertyValue<string>("searchEngineRelativePriority");
+    if (String.IsNullOrEmpty(priority))
+    {
+        priority = "0.5";
+    }
+    <url>
+        <loc>@EnsureUrlStartsWithDomain(node.UrlWithDomain())</loc>
+        <lastmod>@(string.Format("{0:s}+00:00", node.UpdateDate))</lastmod>
+        <changefreq>@changeFreq</changefreq>
+        <priority>@priority</priority>
+    </url>
+}
 
+@helper RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage, int maxSiteMapDepth, string[] documentTypeBlacklist)
+{
+    foreach (var page in parentPage.Children.Where(f => !documentTypeBlacklist.Contains(f.DocumentTypeAlias) && !f.GetPropertyValue<bool>("hideFromXmlSiteMap")))
+    {
+        @RenderSiteMapUrlEntry(page)
+        if (page.Level < maxSiteMapDepth && page.Children.Any(f => !f.GetPropertyValue<bool>("hideFromXmlSiteMap")))
+        {
+            @RenderSiteMapUrlEntriesForChildren(page, maxSiteMapDepth, documentTypeBlacklist)
         }
+    }
+}
 
-     @helper RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage, int maxSiteMapDepth, string[] documentTypeBlacklist)
-            {          
-                    foreach (var page in parentPage.Children.Where(f=>!documentTypeBlackList.Contains(f.DocumentTypeAlias) && !f.GetPropertyValue<bool>("hideFromXmlSiteMap"))
-                    {
-                        @RenderSiteMapUrlEntry(page)
-                        if (page.Level < maxSiteMapDepth && page.Children.Any(f=>!f.GetPropertyValue<bool>("hideFromXmlSiteMap")){
-                        @RenderSiteMapUrlEntriesForChildren(page, maxSiteMapDepth, documentTypeBlacklist)
-                        }               
-                    }
-            }
-
-       @functions {
-            private static string EnsureUrlStartsWithDomain(string url)
-            {
-                if (url.StartsWith("http")){
-                    return url;
-                }
-            else {
-                //whatever makes sense for your site here...
-                var domainPrefix = string.Format("https://{0}/", HttpContext.Current.Request.ServerVariables["HTTP_HOST"]);
-                return domainPrefix + url;
-            }}
-
+@functions {
+    private static string EnsureUrlStartsWithDomain(string url)
+    {
+        if (url.StartsWith("http"))
+        {
+            return url;
         }
+        else
+        {
+            //whatever makes sense for your site here...
+            var domainPrefix = string.Format("https://{0}/", HttpContext.Current.Request.ServerVariables["HTTP_HOST"]);
+            return domainPrefix + url;
+        }
+    }
+}
+```
+
 #### Add sitemap to robots.txt
 
 Finally let search engines know the url for your sitemap by updating your robots.txt file accordingly:
