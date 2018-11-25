@@ -28,7 +28,7 @@ API reference for the MediaType class.
 ## Relation
 API reference for the Relation class.
 
-## RelationType
+## [RelationType](RelationType.md)
 API reference for the RelationType class.
 
 ## Task
