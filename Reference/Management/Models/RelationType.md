@@ -15,8 +15,10 @@ All samples in this document will require references to the following dll:
 
 All samples in this document will require the following using statement:
 	
-	using Umbraco.Core.Models;
-    using Umbraco.Core.Services;
+```csharp
+using Umbraco.Core.Models;
+using Umbraco.Core.Services;
+```
 
 ## Constructors
 
@@ -31,34 +33,44 @@ Constructor for creating a new RelationType object where the necessary parameter
 ### .Name
 Gets or sets the Name of the RelationType as a `String`.
 
-	// Given a `RelationService` object get RelationType by its Id and return Name
-	var relationType = relationService.GetRelationTypeById(1234);
-	return relationType.Name;
+```csharp
+// Given a `RelationService` object get RelationType by its Id and return Name
+var relationType = relationService.GetRelationTypeById(1234);
+return relationType.Name;
+```
 
 ### .Alias
 Gets or sets the Alias of the RelationType as `String`.
 
-	// Given a `RelationService` object get RelationType by its Id and return Alias
-	var relationType = relationService.GetRelationTypeById(1234);
-	return relationType.Alias;
-    
+```csharp
+// Given a `RelationService` object get RelationType by its Id and return Alias
+var relationType = relationService.GetRelationTypeById(1234);
+return relationType.Alias;
+```
+
 ### .IsBidirectional
 Gets or sets a `boolean` indicating whether the RelationType is Bidirectional (true) or Parent to Child (false)
 
-	// Given a `RelationService` object get RelationType by its Id and return IsBidirectional
-	var relationType = relationService.GetRelationTypeById(1234);
-	return relationType.IsBidirectional;
+```csharp
+// Given a `RelationService` object get RelationType by its Id and return IsBidirectional
+var relationType = relationService.GetRelationTypeById(1234);
+return relationType.IsBidirectional;
+```
+
+### .ParentObjectType
+Gets or sets the Parents object type key as `Guid`
+
+```csharp
+// Given a `RelationService` object get RelationType by its Id and return IsBidirectional
+var relationType = relationService.GetRelationTypeById(1234);
+return relationType.ParentObjectType;
+```
     
- ### .ParentObjectType
-  Gets or sets the Parents object type key as `Guid`
-  
-	// Given a `RelationService` object get RelationType by its Id and return IsBidirectional
-	var relationType = relationService.GetRelationTypeById(1234);
-	return relationType.ParentObjectType;
-    
- ### .ChildObjectType
-  Gets or sets the Childs object type key as `Guid`
-  
-	// Given a `RelationService` object get RelationType by its Id and return IsBidirectional
-	var relationType = relationService.GetRelationTypeById(1234);
-	return relationType.ChildObjectType;
+### .ChildObjectType
+Gets or sets the Childs object type key as `Guid`
+
+```csharp
+// Given a `RelationService` object get RelationType by its Id and return IsBidirectional
+var relationType = relationService.GetRelationTypeById(1234);
+return relationType.ChildObjectType;
+```
