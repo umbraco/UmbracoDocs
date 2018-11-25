@@ -72,7 +72,7 @@ The following settings can be configured:
 
 This workflow will use a template to send the results of the form to a specified email address. 
 
-You can create your own custom Razor templates to be used to send out emails upon forms submission. Read more about how to create these templates in the [Email Templates](../../Developer/Email-Templates) article.
+You can create your own custom Razor templates to be used to send out emails upon forms submission. Read more about how to create these templates in the [Email Templates](../../../Developer/Email-Templates) article.
 
 The following settings can be configured:
 

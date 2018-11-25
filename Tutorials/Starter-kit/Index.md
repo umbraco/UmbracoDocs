@@ -17,7 +17,7 @@ Generic text page with multi-column layout options.
 ### Blog
 Blog section for the site, with blog overview and blog posts.
 ### Products
-Product section, with featured products ready for shop integration
+Product section, with featured products ready for shop integration.
 ### People
 People section, with people profiles. Can be used for an employee section, for example. 
 ### Contact page

@@ -7,7 +7,7 @@ As a result, the Umbraco UI is not a Visual Studio project, but simply a collect
 
 This means that anyone with a text editor can open the UI source, make changes and run the project, without having Visual Studio installed - we will get into how to do that in a moment as well. 
 
-The bottom line is the UI project has zero dependencies on ASP.NET or Windows. However you will need Node.js installed, but don't worry we will get into that in a second.
+The bottom line is the UI project has zero dependencies on ASP.NET or Windows. However, you will need Node.js installed, but don't worry we will get into that in a second.
 
 
 ## Prerequisites
@@ -36,12 +36,12 @@ In your terminal, browse to the `Umbraco.Web.Ui.Client` folder and run the comma
 
 	npm install
 
-This will output a ton of feedback in your terminal, when it stops, your project is ready to run. 
+This will output a ton of feedback in your terminal when it stops, your project is ready to run. 
 
-This might seem like a lot of stuff to do, but think of it this way, every time you setup this environment, all you have to do is run `npm install` and everything will be running smoothly.
+This might seem like a lot of stuff to do, but think of it this way, every time you set up this environment, all you have to do is run `npm install` and everything will be running smoothly.
 
 ## Running from source without Visual Studio or IIS
-The Umbraco 7 project includes a complete mocked data model and an embedded webserver to run off. 
+The Umbraco 7 project includes a complete mocked data model and an embedded web server to run off. 
 
 So to get the project up and running in a browser as fast as possible, open a terminal, browse to `Umbraco.Web.Ui.Client` folder and run the command: 
 
@@ -54,7 +54,7 @@ this will do the following:
 - Lint JavaScript files for syntax and style errors
 - Run unit tests
 - Setup a watcher to monitor for ongoing changes
-- Start a webserver on port 9999
+- Start a web server on port 9999
 - Open a browser to display localhost:9999/belle
 
 gulp is doing all of this for us. Notice that it sets up a watcher, which means that every time you make a change, it will automatically recompile and test your code. If something is wrong the terminal will tell you why. 
@@ -88,7 +88,7 @@ Before running build.bat, then the latest UI files will be included.
 
 
 ## Conclusion
-Having Umbraco 7 UI as a separate project does indeed give us a bit more complexity when building and running from Visual Studio, since 2 build systems are in play: gulp and MSBuild. 
+Having Umbraco 7 UI as a separate project does indeed give us a bit more complexity when building and running from Visual Studio since 2 build systems are in play: gulp and MSBuild. 
 
 However, the alternative would be to shove everything into the MSBuild process, making the entire thing inaccessible to a large number of frontend developers and with a clunkier and less up to date system.
 

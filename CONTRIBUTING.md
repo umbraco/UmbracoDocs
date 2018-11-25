@@ -26,7 +26,7 @@ git fetch upstream
 git rebase upstream/master
 ```
 
-In this command we're syncing with the `master` branch, but you can of course choose another one if needed.
+In this command, we're syncing with the `master` branch, but you can, of course choose another one if needed.
 
 ### Contributing documentation
 All documents are written in Markdown, using a simple structure and stored as .md files.

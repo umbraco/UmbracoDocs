@@ -9,7 +9,7 @@ __Note:__ If your project contains a Staging environment, deployments will be ma
 Umbraco Cloud uses a two-part deployment approach where we keep meta data (Document types, templates, etc) and content (Content nodes and Media) as separate parts of a deployment. In order to be able to distinguish between the two types of deployments we use the term *transfer* for content and media deployments and the term *deploy* for meta data deployments.
 In summary:
 
-1. Meta data such as Document Types, Templates, Macros, Views and config files are stored in a git repository and are **deployed** between environments using either a git client or the Umbraco Cloud Portal.
+1. Meta data such as Document Types, Templates, Forms, Views and config files are stored in a git repository and are **deployed** between environments using either a git client or the Umbraco Cloud Portal.
 
 2. Content and Media items are **not** stored in the git repository. These needs to be **transferred** directly from the Umbraco backoffice using the *"Queue for Transfer"* option. Once a content editor has all the items needed for a transfer (which could be just a single item) they will use the Deployment Dashboard in the Content section to transfer the items in the queue.
 
@@ -26,6 +26,7 @@ In order to be able to transfer content and media, the source environment and th
 
   - [Deploy changes from Local to Cloud](Local-to-Cloud)
   - [Deploy changes from one Cloud environment to another](Cloud-to-Cloud)
+  - [How Forms are handled on Cloud](Umbraco-Forms-on-Cloud)
 
 ### Transfer Content and Media
 Moving your content and media between your environments is done through the Umbraco backoffice. You can transfer content from one environment to another, e.g. from Local to your Development environment. You also have the option to restore content and media to your Local or Development environment from your Live or Staging environment.
