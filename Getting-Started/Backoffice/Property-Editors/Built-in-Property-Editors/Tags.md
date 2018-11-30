@@ -44,9 +44,9 @@ Whenever a tag has been added it will be visible in the typeahead when you start
 
 ### Typed:
 
-    @if(Model.Content.Tags.Any()){
+    @if(Model.Content.GetPropertyValue<IEnumerable<string>>("tags") !=null){
         <ul>
-            @foreach(var tag in Model.Content.Tags){
+            @foreach(var tag in Model.Content.GetPropertyValue<IEnumerable<string>>("tags")){
                 <li>@tag</li>
             }
         </ul>
