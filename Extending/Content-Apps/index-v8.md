@@ -49,10 +49,10 @@ Next we need to create a manifest file to describe what this content app does. T
 
 Add the file `/App_Plugins/CakeContentApp/package.manifest` and inside add the JSON to describe the content app. Have a look at the inline comments in the JSON below for details on each bit:
 
-```json
+```json5
 {
     // define the content apps you want to create
-    contentApps: [
+    "contentApps": [
         {
             "name": "Cake", // required - the name that appears under the icon, everyone loves cake, right?
             "alias": "appCake", // required - unique alias for your app
@@ -60,11 +60,10 @@ Add the file `/App_Plugins/CakeContentApp/package.manifest` and inside add the J
             "icon": "icon-cupcake", // required - the icon to use
             "view": "~/App_Plugins/CakeContentApp/cakecontentapp.html" // required - the location of the view file
         }
-    ]
-    ,
+    ],
     // array of files we want to inject into the application on app_start
-    javascript: [
-        '~/App_Plugins/CakeContentApp/cakecontentapp.controller.js'
+    "javascript": [
+        "~/App_Plugins/CakeContentApp/cakecontentapp.controller.js"
     ]
 }
 ```
@@ -121,16 +120,18 @@ After the above edits are done, restart your application. Go to any content node
 
 You can set your content app to only show for specific content types by updating your `package.manifest` file and adding a 'show' directive to the content app definition. For example:
 
-```json
- contentApps: [
-    {
-        ...,
-        "show": [ 
-            "-content/homePage", // hide for content type 'homePage'
-            "+content/*", // show for all other content types
-            "+media/*" // show for all media types
-        ]
-    }
+```json5
+{
+    "contentApps": [
+        {
+            "show": [ 
+                "-content/homePage", // hide for content type 'homePage'
+                "+content/*", // show for all other content types
+                "+media/*" // show for all media types
+            ]
+        }
+    ]
+}
 ```
 
 If the 'show' directive is omitted then the app will be shown for all content types.
@@ -139,14 +140,16 @@ If the 'show' directive is omitted then the app will be shown for all content ty
 
 In a similar way, you can limit your content app according to user roles (groups).  For example:
 
-```json
-contentApps: [
-    {
-        ...,
-        "show": [
-            "+role/admin"  // show for 'admin' user group
-        ]
-    }
+```json5
+{
+    "contentApps": [
+        {
+            "show": [ 
+                "+role/admin"  // show for 'admin' user group
+            ]
+        }
+    ]
+}
 ```
 
 If a role restriction is given in the manifest, it overrides any other restrictions based on type.
@@ -222,11 +225,11 @@ namespace Umbraco.Web.UI
     
 You will still need to add all of the files you added above but, because your C# code is adding the content app, the package.manifest file can be simplified like this:
 
-```json
+```json5
 {
     // array of files we want to inject into the application on app_start
-    javascript: [
-        '~/App_Plugins/MyContentApp/mycontentapp.controller.js'
+    "javascript": [
+        "~/App_Plugins/MyContentApp/mycontentapp.controller.js"
     ]
 }
 ```
