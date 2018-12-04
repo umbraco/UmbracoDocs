@@ -209,7 +209,7 @@ and for reference the full contents of /customwelcomedashboard.controller.js at 
 
 A returning editor may find it useful to see a list of the last few articles they have been editing, with a handy link to load and continue editing (instead of having to remember, and find the item again in the Umbraco Content Tree).
 
-We can make use of Umbraco's Angular resource for retrieving audit log information, the **logResource** using the **getUserLog** method to return a list of items the user has saved recently.
+We can make use of Umbraco's Angular resource for retrieving audit log information, the **logResource** using the **getPagedUserLog** method to return a list of activities the current user has performed recently.
 
 We inject the logResource into our controller:
 
@@ -217,67 +217,76 @@ We inject the logResource into our controller:
 
 Add a property on our ViewModel to store the log information:
 
-    vm.LogEntries = [];
+     vm.UserLogHistory = [];
 
 Add to our WelcomeDashboard.html view some markup using angular's *ng-repeat* to display a list of these log entries:
 
     <h2>We know what you edited last week...</h2>
         <ul>
-            <li ng-repeat="logEntry in vm.LogEntries">{{logEntry.nodeId}} - {{logEntry.comment}} - {{logEntry.timestamp  | date:'medium'}}</li>
+            <li ng-repeat="logEntry in vm.UserLogHistory.items">{{logEntry.nodeId}} - {{logEntry.comment}} - {{logEntry.timestamp  | date:'medium'}}</li>
         </ul>
 
-Back in our controller we'll populate the array of entries using the **logResource**, returning any log entries of 'Save' type:
+Back in our controller we'll populate the array of entries using the **logResource**, the getPagedUserLog method expects to receive a JSON object containing information to filter the log by:
 
-     logResource.getUserLog("save",new Date())
-       .then(function (response) {
+    var userLogOptions = {
+        pageSize: 10,
+        pageNumber: 1,
+        orderDirection: "Descending",
+        sinceDate: new Date(2018, 0, 1)
+    };
+
+These options should retrieve the last ten activities for the current user in descending order since the start of 2018, we pass the options into the **getPagedUserLog** like so:
+
+    logResource.getPagedUserLog(userLogOptions)
+        .then(function (response) {
             console.log(response)
-            vm.LogEntries = response;
-       });
+            vm.UserLogHistory = response;
+        });
 
-However looking at the console output will reveal the data retrieved by the **logResource** is a little sparse eg:
+Take a look at the output of console.log of the response in your browser to see the kind of information retrieved  from the log:
 
-    Object
-        $$hashKey:"265"
-        Content:
-            Object
-                comment:"Save Content performed by user"
-                logType:1
-                nodeId:1063
-                timestamp:"2017-03-18T14:09:40.91"
-                userId:0
+    {pageNumber: 2, pageSize: 10, totalPages: 6, totalItems: 60, items: Array(10)}
+        items: Array(10)
+            0:
+                $$hashKey: "03L"
+                comment: "Save and Publish performed by user"
+                logType: "Publish"
+                nodeId: 1101
+                timestamp: "2018-11-25T13:40:11.137Z"
+                userAvatars: (5) ["https://www.gravatar.com/avatar/1da605eb2601035122149d0bc1edb5ea?d=404&s=30", "https://www.gravatar.com/avatar/1da605eb2601035122149d0bc1edb5ea?d=404&s=60", "https://www.gravatar.com/avatar/1da605eb2601035122149d0bc1edb5ea?d=404&s=90", "https://www.gravatar.com/avatar/1da605eb2601035122149d0bc1edb5ea?d=404&s=150", "https://www.gravatar.com/avatar/1da605eb2601035122149d0bc1edb5ea?d=404&s=300"]
+                userId: 0
+                userName: "marc"
 
-There is a bit of work to be done to provide something meaningful to the editor from the audit log!
+It's nearly all we need but missing information about the item that was saved and published!
 
-We can use the **entityResource**, an Umbraco Angular resource that enables us to retrieve more information about an entity given its id.
+We can use the **entityResource**, another Umbraco Angular resource to enables us to retrieve more information about an entity given its id.
 
 Inject this into our angular controller:
 
     angular.module("umbraco").controller("CustomWelcomeDashboardController", function ($scope, userService, logResource, entityResource) {
 
-We need to loop through the response from the **logResource**, filter out 'saves' we're not interested in eg, Macro Saves, or DocType Saves, generally we need the entry in the log to have a nodeId and mention either Media or Content in the comment text. 
+We need to loop through the log items from the **logResource**, and since this includes everything, we need to filter out activities we're not interested in eg, Macro Saves, or DocType Saves, generally we need the entry in the log to have a nodeId, have a 'logType' of 'save' and have an entity type of Media or Content. 
 
 The **entityResource** then has a **getById** method that accepts the Id of the item and the entity 'type' to retrieve useful information about the entity, ie its name and icon.
 
 Putting this together:
 
-       logResource.getUserLog("save", new Date()).then(function (response) {
-            console.log(response);
-            var logEntries = [];
-            
+      logResource.getPagedUserLog(userLogoptions)
+        .then(function (response) {
+            console.log(response)
+            vm.UserLogHistory = response;
+            var filteredLogEntries = [];
             // loop through the response, and filter out save log entries we are not interested in
-            angular.forEach(response, function (item) {
+            angular.forEach(response.items, function (item) {
                 // if no entity exists -1 is returned for the nodeId (eg saving a macro would create a log entry without a nodeid)
                 if (item.nodeId > 0) {
-                    // this is the only way to tell them apart - whether the comment includes the words Content or Media!!
-                    if (item.comment.match("(\\bContent\\b|\\bMedia\\b)")) {
-                        if (item.comment.indexOf("Media") > -1) {
+                   if (item.logType == "Save") {
+                        if (item.entityType == "Media") {
                             // log entry is a media item
-                            item.entityType = "Media";
                             item.editUrl = "media/media/edit/" + item.nodeId;
                         }
-                        if (item.comment.indexOf("Content") > -1) {
+                        if (item.entityType == "Document") {
                             // log entry is a media item
-                            item.entityType = "Document";
                             item.editUrl = "content/content/edit/" + item.nodeId;
                         }
                         // use entityResource to retrieve details of the content/media item
@@ -285,19 +294,18 @@ Putting this together:
                             console.log(ent);
                             item.Content = ent;
                         });
-                        logEntries.push(item);
+                        filteredLogEntries.push(item);
                     }
                 }
-                console.log(logEntries);
-                vm.LogEntries = logEntries;
             });
-       });
+            vm.UserLogHistory.items = filteredLogEntries;
+        });
  
 Finally update our view to use the additional retrieved entity information:
 
         <h2>We know what you edited last week...</h2>
         <ul class="unstyled">
-            <li ng-repeat="logEntry in vm.LogEntries"><i class="{{logEntry.Content.icon}}"></i> <a href="/Umbraco/#/{{logEntry.editUrl}}">{{logEntry.Content.name}}</a> - <span class="text-muted">(Edited on: {{logEntry.timestamp  | date:'medium'}})</span></li>
+            <li ng-repeat="logEntry in vm.UserLogHistory.items"><i class="{{logEntry.Content.icon}}"></i> <a href="/Umbraco/#/{{logEntry.editUrl}}">{{logEntry.Content.name}}</a> - <span class="text-muted">(Edited on: {{logEntry.timestamp  | date:'medium'}})</span></li>
         </ul>
 
 and we should have a list of recently saved content and media:
@@ -305,6 +313,8 @@ and we should have a list of recently saved content and media:
 ![We know what you edited last week...](images/WeKnowWhatYouEditedLastWeek.jpg)
 
 *__Note:__ the url /Umbraco/#/content/content/edit/1234 is the path to open up a particular entity (with id 1234) ready for editing.*
+
+*__Note:__ The logResource has unfortunately undergone a few breaking changes, (including problems with SQLCE dbs), prior to 7.6.4 the resource will 404 - from 7.6.4 to 7.13 - you can use logResource.getUserLog("save", new Date()).then(function (response) - after 7.13 you can use getPagedUserLog detailed above, which should work on SQLCE too*
 
 ## I know what you want to do today
 
