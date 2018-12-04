@@ -1,6 +1,6 @@
 # Enable logging on Umbraco Cloud projects
 
-On all Umbraco Cloud projects, logging is currently disabled. We are working on getting the resolved as soon as possible.
+On all Umbraco Cloud projects, logging is currently disabled. We are working on getting it resolved as soon as possible.
 
 If you need logging on your site beofre we roll out the fix, here's a guide on how to do just that.
 
