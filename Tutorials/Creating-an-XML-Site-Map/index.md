@@ -234,6 +234,7 @@ We added a hideFromXmlSitemap checkbox to all of our document types via our XmlS
 ```
 
 Now revisit a page in the content tree, and tick the Hide from SiteMap option, if all has gone well, it will disappear from the XmlSitemap page!
+
 ##### Depth
 
 What if we only want to restrict 'how deep' the sitemap should go?
@@ -264,7 +265,7 @@ Set your MaxSiteMap depth to be 2 on your XmlSiteMap content item, and save and 
 
 Our Xml Sitemap includes an entry for itself on the XML Sitemap, I thought we had excluded that document type, when we created the documentTypeBlacklist property...
 
-... we did but we haven't checked this value in the helper yet...
+... we did but we haven't checked this value in the helper yet.
 
 ```csharp
 string blacklistedDocumentTypeList = Model.Content.GetPropertyValue<string>("blacklistedDocumentTypes");
@@ -370,5 +371,3 @@ Visit [Xml-Sitemaps.com](https://www.xml-sitemaps.com/validate-xml-sitemap.html)
 #### Summary
 
 This is just one way to add an XML Sitemap to your site, depending on your site it might not be the 'best way' eg it will be much faster using XSLT! particulary for large sites -but this tutorial aims to serve as an introduction to Razor and IPublishedContent, and working with the Umbraco content tree, rather than a 'best practice' way to achieve an Xml SiteMap.
-
-
