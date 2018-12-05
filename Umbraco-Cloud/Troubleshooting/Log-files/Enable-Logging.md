@@ -108,4 +108,4 @@ All this does is to find the *appender* with the *name* `rollingFile` and then i
 `App_Data\Logs\UmbracoTraceLog.%property{log4net:HostName}.txt` to
 `App_Data\Logs\Dev-UmbracoTraceLog.%property{log4net:HostName}.txt`
 
-This same kind of config transform can be added for all of the custom appenders as well, the only important part is to add an environment specific naming for each file!
+This same kind of config transform can be added for all of the custom appenders as well. The important part is to add an environment specific naming for each file!
