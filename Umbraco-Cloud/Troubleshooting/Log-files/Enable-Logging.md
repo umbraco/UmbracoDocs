@@ -79,7 +79,9 @@ Other than that you may have some custom log appenders added below that. Adding 
 
 To ensure you have different names for your log files you should follow the [guidelines for config transforms on Cloud](../../Set-Up/Config-Transforms)
 
-So one or two config transforms will have to be made, a file called `log4net.development.xdt.config` and if you have a staging environment, one called `log4net.staging.xdt.config`
+One or two config transforms will have to be made, depending on how many environments you have on your project. 
+
+One file called `log4net.development.xdt.config` and if you have a staging environment, one called `log4net.staging.xdt.config`
 
 Inside these files you need to have something like this:
 
