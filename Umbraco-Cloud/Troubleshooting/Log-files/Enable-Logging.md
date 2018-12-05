@@ -103,7 +103,7 @@ Inside these files you need to have something like this:
 </log4net>
 ```
 
-All this does is to find the *appender* with the *name* `rollingFile` and then it replaces the values inside it, these values are copied from the original file but the path of the log file has been changed from:
+All this does is to find the *appender* with the *name* `rollingFile` and then it replaces the values inside it. These values are copied from the original file but the path of the log file has been changed from:
 
 `App_Data\Logs\UmbracoTraceLog.%property{log4net:HostName}.txt` to
 `App_Data\Logs\Dev-UmbracoTraceLog.%property{log4net:HostName}.txt`
