@@ -14,6 +14,7 @@ There isn't an 'out of the box' XML sitemap generator with Umbraco, this tutoria
 Essentially this is just a list of urls for the content on your site:
 
 See [Sitemaps XML format](https://www.sitemaps.org/protocol.html) for the XML schema the sitemap needs to conform to:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -23,8 +24,9 @@ See [Sitemaps XML format](https://www.sitemaps.org/protocol.html) for the XML sc
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-</urlset> 
+</urlset>
 ```
+
 The XML Sitemap is a guide for search engines to discover and index your content, it doesn't need to be exhaustive, each page on your site that you wish to feature will be represented by a `<url>` entry in the list.
 
 ### Approach
@@ -32,10 +34,9 @@ The XML Sitemap is a guide for search engines to discover and index your content
 There are many ways of approaching this task, the best approach will be determined by the size of your site, and your preference for implementing functionality in Umbraco, for simplicity sake we're going to write this code directly in a template using Razor and IPublishedContent, but you may want to use route hijacking to write the code in an MVC controller or XSLT is still a really good fit for this kind of task.
 
 1. We'll create a new Document Type called 'XmlSiteMap' with corresponding 'XmlSiteMap' template (visiting this page will trigger the rendering of the XML Sitemap).
-  - The XmlSiteMap document type will contain a 'Blacklisted Document Types' property to the XmlSiteMap Document Type to list types of content we wish to exclude from the Site Map (or you could probably take a 'whitelist' approach if it is easier to specify types that should be included rather than define those that will be excluded.)
+    - The XmlSiteMap document type will contain a 'Blacklisted Document Types' property to the XmlSiteMap Document Type to list types of content we wish to exclude from the Site Map (or you could probably take a 'whitelist' approach if it is easier to specify types that should be included rather than define those that will be excluded.)
 2. We'll create a 'SiteMap' Composition, containing a consistent set of 'Site Map related properties, and we'll add this to all of the different document types of the site.
-  - The 'SiteMap' Composition will contain a 'hide from Xml Site Map' checkbox, to give editors the ability to hide a certain page from the XML Sitemap.
-
+    - The 'SiteMap' Composition will contain a 'hide from Xml Site Map' checkbox, to give editors the ability to hide a certain page from the XML Sitemap.
 3. The implementation will start at the homepage of the site and loop through all the children, iterating in turn through the children of the children, etc, checking at each level whether to continue further based on the properties of the page.
 
 ## 1. Create the XmlSiteMap Document Type
@@ -52,20 +53,17 @@ Create your XmlSiteMap page in your content tree.
 
 and add the xmlSiteMap document type to your 'Blacklist'.
 
-
 ## 2. Create XmlSiteMapSettings Composition
 
 A site map entry will allow you to state the relative priority of any particular page in terms of its importance within your site, where a value of 1.0 is super very important, and 0.1 close to insignificant, you can also state 'how often' the content will change on a particular page, eg weekly, monthly etc, and this will help the search engine know when to return to reindex any regularly updated content.
 
 Create the XmlSiteMapSettings composition (Document Type Without Template) with name: __XmlSiteMapSettings__
-- __Search Engine Relative Priority__ - Slider - MinValue: 0.1, MaxValue: 1, Step Increments 0.1, InitialValue 0.5
- 
-(Relative priority of this page between 0.1 and 1.0, where 1.0 is the most important page on the site and 0.1 isn't)
 
+- __Search Engine Relative Priority__ - Slider - MinValue: 0.1, MaxValue: 1, Step Increments 0.1, InitialValue 0.5
+    (Relative priority of this page between 0.1 and 1.0, where 1.0 is the most important page on the site and 0.1 isn't)
 - __Search Engine Change Frequency__ - Dropdown - always, hourly, daily, weekly, monthly, yearly, never 
 (How often the content of this page changes, for google site map, if left blank will inherit the setting for the section)
-
-- __Hide From Xml Sitemap__ (hideFromXmlSitemap) - checkbox. 
+- __Hide From Xml Sitemap__ (hideFromXmlSitemap) - checkbox.
 
 At this point your composition should look similar to this:
 ![The XmlSiteMap composition](images/create-sitemap-settings-composition.png)
@@ -82,10 +80,12 @@ Now editors have the ability to set these values for each page of the site, but 
 ### 3. Building the XmlSiteMap.cshtml template
 
 We'll start by writing out in the template the xml schema for the sitemap and because we don't want our template to inherit any 'master' html layout we'll set the 'layout' to be null.
+
 ```csharp
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{Layout = null; Response.ContentType = "text/xml"; }<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">[INSERT SITE MAP CONTENT HERE]</urlset>
 ```
+
 Notice how we're not adding any spaces or carriage returns before the `<urlset>` opening declaration, even though it would be easier to read if we did, we want to avoid making the XML invalid.
 
 ### Getting a reference to the sitemap starting point
@@ -122,7 +122,7 @@ We're using __IPublishedContent__ in this example but if you prefer to use __Mod
 
 #### EnsureUrlStartsWithDomain - Razor Function
 
-[Razor Functions](https://blogs.msdn.microsoft.com/timlee/2010/07/30/using-functions-in-an-asp-net-page-with-razor-syntax/) are similar to Razor Helpers, but instead of writing out html, they can return a value, again enabling you to write key functionality in a single place in your views - [you can also share functions across multiple razor views!](https://farm-fresh-code.blogspot.com/2011/05/sharing-razor-functions-across-views.html)  - We'll create a Razor Function to ensure the urls we display on our sitemap have the correct domain (you aren't meant to have relative urls on an Xml Sitemap - citation needed), 
+[Razor Functions](https://blogs.msdn.microsoft.com/timlee/2010/07/30/using-functions-in-an-asp-net-page-with-razor-syntax/) are similar to Razor Helpers, but instead of writing out html, they can return a value, again enabling you to write key functionality in a single place in your views - [you can also share functions across multiple razor views!](https://farm-fresh-code.blogspot.com/2011/05/sharing-razor-functions-across-views.html)  - We'll create a Razor Function to ensure the urls we display on our sitemap have the correct domain (you aren't meant to have relative urls on an Xml Sitemap - citation needed),
 
 Razor functions exist inside a __single__ @functions block inside your template
 
@@ -145,10 +145,12 @@ Razor functions exist inside a __single__ @functions block inside your template
 #### Xml Sitemap for the homepage
 
 So for the homepage we'll now have:
+
 ```csharp
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{Layout = null; Response.ContentType = "text/xml";IPublishedContent siteHomePage = Model.Content.Site(); }<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">@RenderSiteMapUrlEntry(siteHomePage)</urlset>
 ```
+
 visit the url of your sitemap page (http://yoursite.com/sitemap) and this will render a single sitemap entry for the homepage, which ermmmm, isn't very comprehensive!
 
 ![Example of Sitemap](images/sitemap.png)
@@ -162,6 +164,7 @@ We can use __IPublishedContent__'s _.Children_ method to return all the pages di
     IEnumerable<IPublishedContent> sitePages = siteHomePage.Children();
 
 So we need to loop through each of these 'child' pages, and write out their sitemap markup using our helper, and then in turn loop through their children (grandchildren?)  etc and so on... (great-great-grandchildren...)
+
 ```csharp
 foreach (var page in sitePages){
     @RenderSiteMapUrlEntry(page)
@@ -190,13 +193,13 @@ If we create a helper called perhaps 'RenderSiteMapUrlEntriesForChildren' that t
 
 ```csharp
 @helper RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
-{          
+{
     foreach (var page in parentPage.Children)
     {
         @RenderSiteMapUrlEntry(page)
         if (page.Children.Any()){
             @RenderSiteMapUrlEntriesForChildren(page)
-        }               
+        }
     }
 }
 ```
@@ -222,13 +225,13 @@ We added a hideFromXmlSitemap checkbox to all of our document types via our XmlS
 
 ```csharp
 @helper RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
-{          
+{
     foreach (var page in parentPage.Children.Where(f=>!f.GetPropertyValue<bool>("hideFromXmlSiteMap")))
     {
         @RenderSiteMapUrlEntry(page)
         if (page.Children.Any(f=>!f.GetPropertyValue<bool>("hideFromXmlSiteMap"))){
             @RenderSiteMapUrlEntriesForChildren(page)
-        }               
+        }
     }
 }
 ```
@@ -248,13 +251,13 @@ If we add to our XmlSiteMap document type a new property of numeric type called 
 .....
 
 @helper RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage, int maxSiteMapDepth)
-{          
+{
     foreach (var page in parentPage.Children.Where(f=>!f.GetPropertyValue<bool>("hideFromXmlSiteMap")))
     {
         @RenderSiteMapUrlEntry(page)
         if (page.Level < maxSiteMapDepth && page.Children.Any(f=>!f.GetPropertyValue<bool>("hideFromXmlSiteMap"))){
             @RenderSiteMapUrlEntriesForChildren(page, maxSiteMapDepth)
-        }               
+        }
     }
 }
 ```
