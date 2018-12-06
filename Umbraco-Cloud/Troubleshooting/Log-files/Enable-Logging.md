@@ -1,7 +1,7 @@
 # Enable logging on Umbraco Cloud projects
 
 :::warning
-If you do this on several environments you need to use unique names on each. Check out the [config transforms section](../../Set-Up/Config-Transforms)
+If you do this on several environments you need to use unique names on each. Check out the [config transforms section](#config-transforms-of-log4netconfig)
 :::
 
 On all Umbraco Cloud projects, logging is currently disabled. We are working on getting it resolved as soon as possible.
