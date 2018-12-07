@@ -216,6 +216,7 @@ namespace Umbraco.Web.UI
                 View = "/App_Plugins/CakeContentApp/cakecontentapp.html",
                 Weight = 0
             };
+        
             return cakeApp;
         }
     }
