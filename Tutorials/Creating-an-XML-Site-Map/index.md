@@ -358,7 +358,7 @@ now we can pass this value into our helper
 
 Finally let search engines know the url for your sitemap by updating your robots.txt file accordingly:
 
-    Sitemap: https://www.yourlovelysite.com/xnlsitemap
+    Sitemap: https://www.yourlovelysite.com/xmlsitemap
     User-agent: *
 
 Once you introduce a Sitemap for the first time, you might suddenly find yourself being crawled by multiple different search engine bots, which is exactly what you want, however if your site or hosting is a littly creaky, you might want to add a crawl rate to the robots.txt to instruct well behaved search engine bots to give a bit of breathing space to your site in between crawl requests:
@@ -373,4 +373,4 @@ Visit [Xml-Sitemaps.com](https://www.xml-sitemaps.com/validate-xml-sitemap.html)
 
 #### Summary
 
-This is just one way to add an XML Sitemap to your site, depending on your site it might not be the 'best way' eg it will be much faster using XSLT! particulary for large sites -but this tutorial aims to serve as an introduction to Razor and IPublishedContent, and working with the Umbraco content tree, rather than a 'best practice' way to achieve an Xml SiteMap.
+This is just one way to add an XML Sitemap to your site, depending on your site it might not always be the 'best way' eg it will be much faster using XSLT! - particulary for large sites - however this tutorial aims to serve as an introduction to Razor, Helpers, Functions, IPublishedContent, and working with the Umbraco Content Tree, it is not trying to establish the 'only best practice' way to achieve an Xml SiteMap!
