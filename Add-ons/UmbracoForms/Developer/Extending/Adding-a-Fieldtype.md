@@ -64,7 +64,7 @@ On the view, it is important to note that the id attribute is fetched from @Mode
 
 The final step involves building the HTML view which will be rendered in Umbraco as an example of how our end result will look. We will create a file at `App_Plugins\UmbracoForms\Backoffice\Common\FieldTypes\mycustomfield.html` which will contain the following:
 
-```csharp
+```html
 <input 
     type="text" tabindex="-1" 
     class="input-block-level"
