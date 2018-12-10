@@ -12,7 +12,7 @@ Here's how to add the three (3) client dependencies below to your template withi
 
 **Example within `head` tags.**
 
-```csharp
+```html
 <head>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
@@ -24,7 +24,7 @@ Here's how to add the three (3) client dependencies below to your template withi
 
 When adding the script to the bottom of the page, you'll also need to perform an extra step — have a look at [this page](../Rendering-Scripts/index.md) for instructions.
 	
-```csharp
+```html
 <body>
     <!-- Page content here -->
     
