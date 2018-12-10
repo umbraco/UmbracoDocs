@@ -69,89 +69,91 @@ These are fairly simple, small checks that take an XPath query and confirm that 
 
 An example check:
 
-     using System.Collections.Generic;
-     using System.Linq;
-     using Umbraco.Core.Services;
-     
-     namespace Umbraco.Web.HealthCheck.Checks.Config
-     {
-         [HealthCheck("D0F7599E-9B2A-4D9E-9883-81C7EDC5616F", "Macro errors",
-             Description = "Checks to make sure macro errors are not set to throw a YSOD (yellow screen of death), which would prevent certain or all pages from loading completely.",
-             Group = "Configuration")]
-         public class MacroErrorsCheck : AbstractConfigCheck
-         {
-             private readonly ILocalizedTextService _textService;
-     
-             public MacroErrorsCheck(HealthCheckContext healthCheckContext) : base(healthCheckContext)
-             {
-                 _textService = healthCheckContext.ApplicationContext.Services.TextService;
-             }
-     
-             public override string FilePath
-             {
-                 get { return "~/Config/umbracoSettings.config"; }
-             }
-     
-             public override string XPath
-             {
-                 get { return "/settings/content/MacroErrors"; }
-             }
-     
-             public override ValueComparisonType ValueComparisonType
-             {
-                 get { return ValueComparisonType.ShouldEqual; }
-             }
-     
-             public override IEnumerable<AcceptableConfiguration> Values
-             {
-                 get
-                 {
-                     var values = new List<AcceptableConfiguration>
-                     {
-                         new AcceptableConfiguration
-                         {
-                             IsRecommended = true,
-                             Value = "inline"
-                         },
-                         new AcceptableConfiguration
-                         {
-                             IsRecommended = false,
-                             Value = "silent"
-                         }
-                     };
-     
-                     return values;
-                 }
-             }
-             
-             public override string CheckSuccessMessage
-             {
-                 get
-                 {
-                     return _textService.Localize("healthcheck/macroErrorModeCheckSuccessMessage",
-                         new[] { CurrentValue, Values.First(v => v.IsRecommended).Value });
-                 }
-             }
-     
-             public override string CheckErrorMessage
-             {
-                 get
-                 {
-                     return _textService.Localize("healthcheck/macroErrorModeCheckErrorMessage",
-                         new[] { CurrentValue, Values.First(v => v.IsRecommended).Value });
-                 }
-             }
-     
-             public override string RectifySuccessMessage
-             {
-                 get
-                 {
-                     return _textService.Localize("healthcheck/macroErrorModeCheckRectifySuccessMessage",
-                         new[] { Values.First(v => v.IsRecommended).Value });
-                 }
-             }
-         }
-     }
+```csharp
+using System.Collections.Generic;
+using System.Linq;
+using Umbraco.Core.Services;
+
+namespace Umbraco.Web.HealthCheck.Checks.Config
+{
+    [HealthCheck("D0F7599E-9B2A-4D9E-9883-81C7EDC5616F", "Macro errors",
+        Description = "Checks to make sure macro errors are not set to throw a YSOD (yellow screen of death), which would prevent certain or all pages from loading completely.",
+        Group = "Configuration")]
+    public class MacroErrorsCheck : AbstractConfigCheck
+    {
+        private readonly ILocalizedTextService _textService;
+
+        public MacroErrorsCheck(HealthCheckContext healthCheckContext) : base(healthCheckContext)
+        {
+            _textService = healthCheckContext.ApplicationContext.Services.TextService;
+        }
+
+        public override string FilePath
+        {
+            get { return "~/Config/umbracoSettings.config"; }
+        }
+
+        public override string XPath
+        {
+            get { return "/settings/content/MacroErrors"; }
+        }
+
+        public override ValueComparisonType ValueComparisonType
+        {
+            get { return ValueComparisonType.ShouldEqual; }
+        }
+
+        public override IEnumerable<AcceptableConfiguration> Values
+        {
+            get
+            {
+                var values = new List<AcceptableConfiguration>
+                {
+                    new AcceptableConfiguration
+                    {
+                        IsRecommended = true,
+                        Value = "inline"
+                    },
+                    new AcceptableConfiguration
+                    {
+                        IsRecommended = false,
+                        Value = "silent"
+                    }
+                };
+
+                return values;
+            }
+        }
+        
+        public override string CheckSuccessMessage
+        {
+            get
+            {
+                return _textService.Localize("healthcheck/macroErrorModeCheckSuccessMessage",
+                    new[] { CurrentValue, Values.First(v => v.IsRecommended).Value });
+            }
+        }
+
+        public override string CheckErrorMessage
+        {
+            get
+            {
+                return _textService.Localize("healthcheck/macroErrorModeCheckErrorMessage",
+                    new[] { CurrentValue, Values.First(v => v.IsRecommended).Value });
+            }
+        }
+
+        public override string RectifySuccessMessage
+        {
+            get
+            {
+                return _textService.Localize("healthcheck/macroErrorModeCheckRectifySuccessMessage",
+                    new[] { Values.First(v => v.IsRecommended).Value });
+            }
+        }
+    }
+}
+```
 
 ### General checks
 This can be anything you can think of, the results and the rectify action are completely under your control.
@@ -175,94 +177,95 @@ This can be anything you can think of, the results and the rectify action are co
 
 An example check:
 
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Web;
-    using System.Web.Hosting;
-    using Umbraco.Core.Logging;
-    using Umbraco.Core.Services;
-    
-    namespace Umbraco.Web.HealthCheck.Checks.SEO
+```csharp
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Web;
+using System.Web.Hosting;
+using Umbraco.Core.Logging;
+using Umbraco.Core.Services;
+
+namespace Umbraco.Web.HealthCheck.Checks.SEO
+{
+    [HealthCheck("3A482719-3D90-4BC1-B9F8-910CD9CF5B32", "Robots.txt",
+    Description = "Create a robots.txt file to block access to system folders.",
+    Group = "SEO")]
+    public class RobotsTxt : HealthCheck
     {
-        [HealthCheck("3A482719-3D90-4BC1-B9F8-910CD9CF5B32", "Robots.txt",
-        Description = "Create a robots.txt file to block access to system folders.",
-        Group = "SEO")]
-        public class RobotsTxt : HealthCheck
+        private readonly ILocalizedTextService _textService;
+
+        public RobotsTxt(HealthCheckContext healthCheckContext) : base(healthCheckContext)
         {
-            private readonly ILocalizedTextService _textService;
-    
-            public RobotsTxt(HealthCheckContext healthCheckContext) : base(healthCheckContext)
+            _textService = healthCheckContext.ApplicationContext.Services.TextService;
+        }
+        
+        public override IEnumerable<HealthCheckStatus> GetStatus()
+        {
+            return new[] { CheckForRobotsTxtFile() };
+        }
+
+        public override HealthCheckStatus ExecuteAction(HealthCheckAction action)
+        {
+            switch (action.Alias)
             {
-                _textService = healthCheckContext.ApplicationContext.Services.TextService;
-            }
-            
-            public override IEnumerable<HealthCheckStatus> GetStatus()
-            {
-                return new[] { CheckForRobotsTxtFile() };
-            }
-    
-            public override HealthCheckStatus ExecuteAction(HealthCheckAction action)
-            {
-                switch (action.Alias)
-                {
-                    case "addDefaultRobotsTxtFile":
-                        return AddDefaultRobotsTxtFile();
-                    default:
-                        throw new ArgumentOutOfRangeException();
-                }
-            }
-    
-            private HealthCheckStatus CheckForRobotsTxtFile()
-            {
-                var success = File.Exists(HttpContext.Current.Server.MapPath("~/robots.txt"));
-                var message = success 
-                    ? _textService.Localize("healthcheck/seoRobotsCheckSuccess") 
-                    : _textService.Localize("healthcheck/seoRobotsCheckFailed");
-    
-                var actions = new List<HealthCheckAction>();
-    
-                if (success == false)
-                    actions.Add(new HealthCheckAction("addDefaultRobotsTxtFile", Id)
-                    // Override the "Rectify" button name and describe what this action will do
-                    { Name = _textService.Localize("healthcheck/seoRobotsRectifyButtonName"),
-                        Description = _textService.Localize("healthcheck/seoRobotsRectifyDescription") });
-    
-                return
-                    new HealthCheckStatus(message)
-                    {
-                        ResultType = success ? StatusResultType.Success : StatusResultType.Error,
-                        Actions = actions
-                    };
-            }
-    
-            private HealthCheckStatus AddDefaultRobotsTxtFile()
-            {
-                var success = false;
-                var message = string.Empty;
-                const string content = @"# robots.txt for Umbraco
-    User-agent: *
-    Disallow: /umbraco/";
-    
-                try
-                {
-                    File.WriteAllText(HostingEnvironment.MapPath("~/robots.txt"), content);
-                    success = true;
-                }
-                catch (Exception exception)
-                {
-                    LogHelper.Error<RobotsTxt>("Could not write robots.txt to the root of the site", exception);
-                }
-    
-                return
-                    new HealthCheckStatus(message)
-                    {
-                        ResultType = success ? StatusResultType.Success : StatusResultType.Error,
-                        Actions = new List<HealthCheckAction>()
-                    };
+                case "addDefaultRobotsTxtFile":
+                    return AddDefaultRobotsTxtFile();
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
+
+        private HealthCheckStatus CheckForRobotsTxtFile()
+        {
+            var success = File.Exists(HttpContext.Current.Server.MapPath("~/robots.txt"));
+            var message = success 
+                ? _textService.Localize("healthcheck/seoRobotsCheckSuccess") 
+                : _textService.Localize("healthcheck/seoRobotsCheckFailed");
+
+            var actions = new List<HealthCheckAction>();
+
+            if (success == false)
+                actions.Add(new HealthCheckAction("addDefaultRobotsTxtFile", Id)
+                // Override the "Rectify" button name and describe what this action will do
+                { Name = _textService.Localize("healthcheck/seoRobotsRectifyButtonName"),
+                    Description = _textService.Localize("healthcheck/seoRobotsRectifyDescription") });
+
+            return
+                new HealthCheckStatus(message)
+                {
+                    ResultType = success ? StatusResultType.Success : StatusResultType.Error,
+                    Actions = actions
+                };
+        }
+
+        private HealthCheckStatus AddDefaultRobotsTxtFile()
+        {
+            var success = false;
+            var message = string.Empty;
+            const string content = @"# robots.txt for Umbraco
+User-agent: *
+Disallow: /umbraco/";
+
+            try
+            {
+                File.WriteAllText(HostingEnvironment.MapPath("~/robots.txt"), content);
+                success = true;
+            }
+            catch (Exception exception)
+            {
+                LogHelper.Error<RobotsTxt>("Could not write robots.txt to the root of the site", exception);
+            }
+
+            return
+                new HealthCheckStatus(message)
+                {
+                    ResultType = success ? StatusResultType.Success : StatusResultType.Error,
+                    Actions = new List<HealthCheckAction>()
+                };
+        }
     }
+}
 
 ## Custom health check notifications
 
@@ -272,91 +275,90 @@ Each notification method needs to implement the core interface `IHealthCheckNoti
 
 The following example shows how the core method for sending notification via email is implemented:
 
-    using System;
-    using System.Net.Mail;
-    using System.Threading.Tasks;
-    using Umbraco.Core;
-    using Umbraco.Core.Configuration;
-    using Umbraco.Core.Configuration.HealthChecks;
-    using Umbraco.Core.Services;
+```csharp
+using System;
+using System.Net.Mail;
+using System.Threading.Tasks;
+using Umbraco.Core;
+using Umbraco.Core.Configuration;
+using Umbraco.Core.Configuration.HealthChecks;
+using Umbraco.Core.Services;
 
-    namespace Umbraco.Web.HealthCheck.NotificationMethods
+namespace Umbraco.Web.HealthCheck.NotificationMethods
+{
+    [HealthCheckNotificationMethod("email")]
+    public class EmailNotificationMethod : NotificationMethodBase, IHealthCheckNotificatationMethod
     {
-        [HealthCheckNotificationMethod("email")]
-        public class EmailNotificationMethod : NotificationMethodBase, IHealthCheckNotificatationMethod
+        private readonly ILocalizedTextService _textService;
+
+        public EmailNotificationMethod(bool enabled, bool failureOnly, HealthCheckNotificationVerbosity verbosity,
+                string recipientEmail)
+            : this(enabled, failureOnly, verbosity, recipientEmail, ApplicationContext.Current.Services.TextService)
         {
-            private readonly ILocalizedTextService _textService;
+        }
 
-            public EmailNotificationMethod(bool enabled, bool failureOnly, HealthCheckNotificationVerbosity verbosity,
-                    string recipientEmail)
-                : this(enabled, failureOnly, verbosity, recipientEmail, ApplicationContext.Current.Services.TextService)
+        internal EmailNotificationMethod(bool enabled, bool failureOnly, HealthCheckNotificationVerbosity verbosity,
+            string recipientEmail, ILocalizedTextService textService)
+            : base(enabled, failureOnly, verbosity)
+        {
+            if (textService == null) throw new ArgumentNullException("textService");
+            _textService = textService;
+            RecipientEmail = recipientEmail;
+            Verbosity = verbosity;
+        }
+
+        public string RecipientEmail { get; private set; }
+
+        public async Task SendAsync(HealthCheckResults results)
+        {
+            if (ShouldSend(results) == false)
             {
+                return;
             }
 
-            internal EmailNotificationMethod(bool enabled, bool failureOnly, HealthCheckNotificationVerbosity verbosity,
-                string recipientEmail, ILocalizedTextService textService)
-                : base(enabled, failureOnly, verbosity)
+            if (string.IsNullOrEmpty(RecipientEmail))
             {
-                if (textService == null) throw new ArgumentNullException("textService");
-                _textService = textService;
-                RecipientEmail = recipientEmail;
-                Verbosity = verbosity;
+                return;
             }
 
-            public string RecipientEmail { get; private set; }
-
-            public async Task SendAsync(HealthCheckResults results)
+            var message = _textService.Localize("healthcheck/scheduledHealthCheckEmailBody", new[]
             {
-                if (ShouldSend(results) == false)
-                {
-                    return;
-                }
+                DateTime.Now.ToShortDateString(),
+                DateTime.Now.ToShortTimeString(),
+                results.ResultsAsHtml(Verbosity)
+            });
 
-                if (string.IsNullOrEmpty(RecipientEmail))
-                {
-                    return;
-                }
+            var subject = _textService.Localize("healthcheck/scheduledHealthCheckEmailSubject");
 
-                var message = _textService.Localize("healthcheck/scheduledHealthCheckEmailBody", new[]
-                {
-                    DateTime.Now.ToShortDateString(),
-                    DateTime.Now.ToShortTimeString(),
-                    results.ResultsAsHtml(Verbosity)
-                });
-
-                var subject = _textService.Localize("healthcheck/scheduledHealthCheckEmailSubject");
-
-                var mailSender = new EmailSender();
-                using (var mailMessage = new MailMessage(UmbracoConfig.For.UmbracoSettings().Content.NotificationEmailAddress,
-                    RecipientEmail,
-                    string.IsNullOrEmpty(subject) ? "Umbraco Health Check Status" : subject,
-                    message)
-                {
-                    IsBodyHtml = message.IsNullOrWhiteSpace() == false
-                                 && message.Contains("<") && message.Contains("</")
-                })
-                {
-                    await mailSender.SendAsync(mailMessage);
-                }
+            var mailSender = new EmailSender();
+            using (var mailMessage = new MailMessage(UmbracoConfig.For.UmbracoSettings().Content.NotificationEmailAddress,
+                RecipientEmail,
+                string.IsNullOrEmpty(subject) ? "Umbraco Health Check Status" : subject,
+                message)
+            {
+                IsBodyHtml = message.IsNullOrWhiteSpace() == false
+                                && message.Contains("<") && message.Contains("</")
+            })
+            {
+                await mailSender.SendAsync(mailMessage);
             }
         }
     }
-
+}
+```
     
 If custom configuration is required for a custom notification method, this can be placed in `HealthChecks.config`, with the `alias` XML attribute for the `notificationMethod` element matching that used on the class level attribute. Again, the following extract shows how the email notification method is configured:
 
-	<HealthChecks>
-	  <notificationSettings enabled="true" firstRunTime="" periodInHours="24">
-	    <notificationMethods>
-	      <notificationMethod alias="email" enabled="true" verbosity="Summary">
-	        <settings>
-	          <add key="recipientEmail" value="alerts@mywebsite.tld" />
-	        </settings>
-	      </notificationMethod>
-	    </notificationMethods>
-	  </notificationSettings>
-	</HealthChecks> 
-
-
-
-
+```xml
+<HealthChecks>
+    <notificationSettings enabled="true" firstRunTime="" periodInHours="24">
+    <notificationMethods>
+        <notificationMethod alias="email" enabled="true" verbosity="Summary">
+        <settings>
+            <add key="recipientEmail" value="alerts@mywebsite.tld" />
+        </settings>
+        </notificationMethod>
+    </notificationMethods>
+    </notificationSettings>
+</HealthChecks> 
+```

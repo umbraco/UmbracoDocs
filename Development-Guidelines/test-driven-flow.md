@@ -40,21 +40,27 @@ would return.
 
 So in the case of getting tree items we define:
 
-	$httpBackend
-		.whenGET( urlRegex('/umbraco/UmbracoTrees/ApplicationTreeApi/GetApplicationTrees') )
-		.respond(returnApplicationTrees);
+```javascript
+$httpBackend
+	.whenGET( urlRegex('/umbraco/UmbracoTrees/ApplicationTreeApi/GetApplicationTrees') )
+	.respond(returnApplicationTrees);
+```
 
 The `returnApplicationTrees` function then looks like this: 
 
-	function returnApplicationTrees(status, data, headers){
-		var app = getParameterByName(data, "application");
-		var tree = _backendData.tree.getApplication(app);
-		return [200, tree, null];
-	}
+```javascript
+function returnApplicationTrees(status, data, headers){
+	var app = getParameterByName(data, "application");
+	var tree = _backendData.tree.getApplication(app);
+	return [200, tree, null];
+}
+```
 
 It returns an array of 3 items, the http status code, the expected data and finally, it can return a collection of http headers.
 
-	_backendData.tree.getApplication(app);
+```javascript
+_backendData.tree.getApplication(app);
+```
 
 Refers to a helper method in `umbraco.httpbackend.helper.js` which contains all the helper methods we use to return static json. 
 
@@ -70,8 +76,10 @@ So to add a service, which requires data from the server we should:
 ### ServerVariables
 There is a static servervariables file in /mocks which describes the urls used by the rest service, this is currently needed as we don't have this set as an angular service, and no real conventions for these urls yet. Longer-term it would be great to have a urlBuilder which could do
 
-	urlService.url("contentTypes", "GetAllowedChildren");
-	// would return /<umbracodir>/<apibaseDir>/contentyTypes/getAllowedChildren
+```javascript
+urlService.url("contentTypes", "GetAllowedChildren");
+// would return /<umbracodir>/<apibaseDir>/contentyTypes/getAllowedChildren
+```
 
 But for now, they are set in the servervariables file.	
 =======
@@ -117,21 +125,27 @@ would return.
 
 So in the case of getting tree items we define:
 
-	$httpBackend
-		.whenGET( urlRegex('/umbraco/UmbracoTrees/ApplicationTreeApi/GetApplicationTrees') )
-		.respond(returnApplicationTrees);
+```javascript
+$httpBackend
+	.whenGET( urlRegex('/umbraco/UmbracoTrees/ApplicationTreeApi/GetApplicationTrees') )
+	.respond(returnApplicationTrees);
+```
 
 The `returnApplicationTrees` function then looks like this: 
 
-	function returnApplicationTrees(status, data, headers){
-		var app = getParameterByName(data, "application");
-		var tree = _backendData.tree.getApplication(app);
-		return [200, tree, null];
-	}
+```javascript
+function returnApplicationTrees(status, data, headers){
+	var app = getParameterByName(data, "application");
+	var tree = _backendData.tree.getApplication(app);
+	return [200, tree, null];
+}
+```
 
 It returns an array of 3 items, the http status code, the expected data and finally it can return a collection of http headers.
 
-	_backendData.tree.getApplication(app);
+```javascript
+_backendData.tree.getApplication(app);
+```
 
 Refers to a helper method in `umbraco.httpbackend.helper.js` which contains all the helper methods we use to return static json. 
 
@@ -147,7 +161,9 @@ So to add a service, which requires data from the server we should:
 ### ServerVariables
 There is a static server variables file in /mocks which describes the urls used by the rest service, this is currently needed as we don't have this set as an angular service, and no real conventions for these urls yet. Longer-term it would be great to have a urlBuilder which could do
 
-	urlService.url("contentTypes", "GetAllowedChildren");
-	// would return /<umbracodir>/<apibaseDir>/contentTypes/getAllowedChildren
+```javascript
+urlService.url("contentTypes", "GetAllowedChildren");
+// would return /<umbracodir>/<apibaseDir>/contentTypes/getAllowedChildren
+```
 
 But for now, they are set in the server variables file.

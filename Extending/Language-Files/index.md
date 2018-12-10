@@ -56,28 +56,35 @@ Using core or custom language keys from your code:
 ### From .NET
 `Services` are available in most Umbraco base classes like Controllers and UserControls, from there, use `TextService` to localize string with format [area]/[key]:
 
-    using Umbraco.Core.Services;
-    var localizedLabel = Services.TextService.Localize("dialog/myKey");
-
+```csharp
+using Umbraco.Core.Services;
+var localizedLabel = Services.TextService.Localize("dialog/myKey");
+```
 
 ### From Angular
 In the Umbraco backoffice UI, labels can be localized with the `localize` directive:
 
-    <button>
-        <localize key="dialog_myKey">Default value</localize>
-    </button>
-    
+```xml
+<button>
+	<localize key="dialog_myKey">Default value</localize>
+</button>
+```
+  
 The localize directive can also be used as an attribute like below where the value of the title attribute is then populated with the dictionary key "title_name" from the language file using "@title_name".
 
-    <button localize="title" title="@title_name">
-        <localize key="dialog_myKey">Default value</localize>
-    </button>
+```xml
+<button localize="title" title="@title_name">
+	<localize key="dialog_myKey">Default value</localize>
+</button>
+```
 
 Or from a controller by using the `LocalizationService` which returns an async translation in a promise:
 
-    localizationService.localize("dialog_myKey").then(function(value){
-	                element.html(value);
-    });
+```javascript
+localizationService.localize("dialog_myKey").then(function(value){
+				element.html(value);
+});
+```
 
 ## Help keep the language files up to date
 
@@ -89,34 +96,38 @@ If a translation is missing, the key "alias" used will be shown within the user 
 
 The language files are fairly simple XML files with a straight-forward layout as seen below.
 
-	<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-	<language alias="en" intName="English (UK)" localName="English (UK)" lcid="" culture="en-GB">
-		<creator>
-			<name>The Umbraco community</name>
-			<link>https://our.umbraco.com</link>
-		</creator>
-		<area alias="actions">
-			<key alias="assignDomain">Culture and Hostnames</key>
-			<key alias="auditTrail">Audit Trail</key>
-			...
-		</area>
+```xml
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language alias="en" intName="English (UK)" localName="English (UK)" lcid="" culture="en-GB">
+	<creator>
+		<name>The Umbraco community</name>
+		<link>https://our.umbraco.com</link>
+	</creator>
+	<area alias="actions">
+		<key alias="assignDomain">Culture and Hostnames</key>
+		<key alias="auditTrail">Audit Trail</key>
 		...
-	</language>
+	</area>
+	...
+</language>
+```
 	
 In the above example of a missing translation for "assignDomain", locate this string in the en.xml file and then copy the whole "Key" element into the relevant language file and translate the text, as an example here is the Spanish version of the above snippet:
 
-	<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-	<language alias="es" intName="Spanish" localName="español" lcid="10" culture="es-ES">
-		<creator>
-	    	<name>The Umbraco community</name>
-	    	<link>https://our.umbraco.com</link>
-		</creator>
-		<area alias="actions">
-		    <key alias="assignDomain">Administrar hostnames</key>
-		    <key alias="auditTrail">Auditoría</key>
-			...
-		</area>
+```xml
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language alias="es" intName="Spanish" localName="español" lcid="10" culture="es-ES">
+	<creator>
+		<name>The Umbraco community</name>
+		<link>https://our.umbraco.com</link>
+	</creator>
+	<area alias="actions">
+		<key alias="assignDomain">Administrar hostnames</key>
+		<key alias="auditTrail">Auditoría</key>
 		...
-	</language>
+	</area>
+	...
+</language>
+```
 
 If you do update any of the core language files or you add a new language, don't forget to help the rest of the community by [submitting a pull request](../../Contribute/index.md) so that your changes are merged into the core.

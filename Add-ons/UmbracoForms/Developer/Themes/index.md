@@ -21,7 +21,9 @@ To use a theme with a Form is simple; Use the "Insert Form" macro where you will
 
 When you are rendering your form directly in your template, you need to specify your theme by filling out the `FormTheme` attribute:
 
-    @Umbraco.RenderMacro("renderUmbracoForm", new {FormGuid="dfea5397-36cd-4596-8d3c-d210502b67de", FormTheme="yourTheme", ExcludeScripts="0"})
+```csharp
+@Umbraco.RenderMacro("renderUmbracoForm", new {FormGuid="dfea5397-36cd-4596-8d3c-d210502b67de", FormTheme="yourTheme", ExcludeScripts="0"})
+```
 
 If you do not pick and/or set a theme, the `default` theme will be used to render the form.
 
@@ -40,47 +42,58 @@ Files which can be overridden:
 ### SetFormThemeCssFile
 Sets the primary form theme stylesheet path. This overrides an already assigned stylesheet and will be rendered out when inserting the form into the page
 
-`@Html.SetFormThemeCssFile(Model, "~/App_Plugins/UmbracoForms/Assets/Themes/Default/style.css")`
+```csharp
+@Html.SetFormThemeCssFile(Model, "~/App_Plugins/UmbracoForms/Assets/Themes/Default/style.css")
+```
 
 ### AddFormThemeScriptFile
 
 Add a JavaScript file path to include on form render
 
-`@Html.AddFormThemeScriptFile(Model, "~/App_Plugins/UmbracoForms/Assets/Themes/Default/umbracoforms-dependencies.js")`
+```csharp
+@Html.AddFormThemeScriptFile(Model, "~/App_Plugins/UmbracoForms/Assets/Themes/Default/umbracoforms-dependencies.js")
+```
 
 ### AddFormThemeScriptCommand
 Add a JavaScript command to execute when the form is rendering, used to properly initialize fields on form render
 
-`@Html.AddFormThemeScriptCommand(Model, "alert('hello')")`
+```csharp
+@Html.AddFormThemeScriptCommand(Model, "alert('hello')")
+```
 
 ### SetFormFieldClass
 Adds a class to the form field HTML element of a given type. If no type is given, it will add the class to all fields
 
+```csharp
+// Applies the CSS class 'form-control' to all fields that GetFormFieldClass uses in FieldType views
+@Html.SetFormFieldClass("form-control")
 
-    // Applies the CSS class 'form-control' to all fields that GetFormFieldClass uses in FieldType views
-    @Html.SetFormFieldClass("form-control")
-
-    // Applies the CSS class 'some-other-class' for the FieldType of the name 'Password'
-    @Html.SetFormFieldClass("some-other-class", "Password")
-
+// Applies the CSS class 'some-other-class' for the FieldType of the name 'Password'
+@Html.SetFormFieldClass("some-other-class", "Password")
+```
 
 ### GetFormFieldClass
 Retrieves all classes for a given field type, used when rendering form fieldtype partial views
 
-`class="@Html.GetFormFieldClass(Model.FieldTypeName)"`
+```csharp
+class="@Html.GetFormFieldClass(Model.FieldTypeName)"
+```
 
 ### SetFormFieldWrapperClass
 Adds a class to the div element wrapping around form fields of a given type. If no type is given, it will add the class to all fields
 
-    // Applies the CSS class 'form-group' around all fields, labels & help texts
-    @Html.SetFormFieldWrapperClass("form-group")
+```csharp
+// Applies the CSS class 'form-group' around all fields, labels & help texts
+@Html.SetFormFieldWrapperClass("form-group")
 
-    // Applies the CSS class 'some-other-class' for the FieldType of the name 'Password'
-    @Html.SetFormFieldWrapperClass("some-other-class", "Password")
-
+// Applies the CSS class 'some-other-class' for the FieldType of the name 'Password'
+@Html.SetFormFieldWrapperClass("some-other-class", "Password")
+```
 
 ### GetFormFieldWrapperClass
 
 Retrieves all wrapper classes for a given field type, used when rendering form fields. This class wraps both label, help-text and the field itself in the default view
 
-`class="@Html.GetFormFieldWrapperClass(f.FieldTypeName)`
+```csharp
+class="@Html.GetFormFieldWrapperClass(f.FieldTypeName)
+```

@@ -27,14 +27,16 @@ If you want to include a tour with your custom plugin you can store the tour fil
 
 A tour file contains an array of tour configuration JSON objects. So it's possible to have multiple, (un)related tours in one file.
 
-	[
-		{
-			// tour configuration object
-		},
-		{
-			// tour configuration object
-		}
-	]
+```json
+[
+	{
+		// tour configuration object
+	},
+	{
+		// tour configuration object
+	}
+]
+```
 
 ## The tour configuration object
 
@@ -42,16 +44,18 @@ A tour configuration JSON object contains all the data related to a tour.
 
 Example tour configuration object :
 
-	{
-		"name": "My Awesome tour",
-		"alias": "myUniqueAlias",
-		"group": "Get things done!!!",
-		"groupOrder": 1,
-		"allowDisable": true,
-		"culture" : "en-US",
-		"requiredSections": ["content","media"],
-		"steps": []
-	}
+```json
+{
+	"name": "My Awesome tour",
+	"alias": "myUniqueAlias",
+	"group": "Get things done!!!",
+	"groupOrder": 1,
+	"allowDisable": true,
+	"culture" : "en-US",
+	"requiredSections": ["content","media"],
+	"steps": []
+}
+```
 
 Below is an explanation of each of the properties on the tour configuration object
 
@@ -99,18 +103,20 @@ A tour step JSON object contains all the data related to a tour step.
 
 Example tour step object:
 
-	{
-        "title": "A meaningful title",
-        "content": "<p>Some text explaining the step</p>",
-        "type": null,
-        "element": "#section-avatar",
-        "elementPreventClick": false,
-        "backdropOpacity": 0.6,
-        "event": "click",
-        "view": null,
-        "eventElement": "#section-avatar .umb-avatar",
-        "customProperties": null
-      },
+```json
+{
+	"title": "A meaningful title",
+	"content": "<p>Some text explaining the step</p>",
+	"type": null,
+	"element": "#section-avatar",
+	"elementPreventClick": false,
+	"backdropOpacity": 0.6,
+	"event": "click",
+	"view": null,
+	"eventElement": "#section-avatar .umb-avatar",
+	"customProperties": null
+},
+```
 
 Below is an explanation of each of the properties on the tour step object
 

@@ -95,7 +95,7 @@ angular.module("umbraco")
 
 And in the .html file:
 
-```html
+```csharp
 <div class="umb-box" ng-controller="My.CakeContentApp as vm">
     <div class="umb-box-header">
         <div class="umb-box-header-title">
@@ -216,7 +216,7 @@ namespace Umbraco.Web.UI
                 View = "/App_Plugins/CakeContentApp/cakecontentapp.html",
                 Weight = 0
             };
-
+        
             return cakeApp;
         }
     }

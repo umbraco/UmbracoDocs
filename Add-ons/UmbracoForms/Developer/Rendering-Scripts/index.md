@@ -10,14 +10,15 @@ In many cases you might prefer rendering your scripts at the bottom of the page,
 
 In order to be able to render your scripts where you want, you need to add the following snippet to your template. Make sure you add it below your scripts, just before the closing `</body>` tag:
 
-
-    @if (TempData["UmbracoForms"] != null)
+```csharp
+@if (TempData["UmbracoForms"] != null)
+{
+    foreach (var form in (List<Guid>)TempData["UmbracoForms"])
     {
-        foreach (var form in (List<Guid>)TempData["UmbracoForms"])
-        {
-            Html.RenderAction("RenderFormScripts", "UmbracoForms", new { formid = form, theme = "yourTheme" });
-        }
+        Html.RenderAction("RenderFormScripts", "UmbracoForms", new { formid = form, theme = "yourTheme" });
     }
+}
+```
 
 Whether you are inserting your form using a macro or adding it directly in your template, you need to make sure `ExcludeScripts` is checked/enabled.
 
@@ -27,8 +28,9 @@ When inserting forms using the **Insert Form with Theme** macro:
 
 When **inserting forms directly in your template**:
 
-    @Umbraco.RenderMacro("renderUmbracoForm", new {FormGuid="dfea5397-36cd-4596-8d3c-d210502b67de", FormTheme="bootstrap3-horizontal", ExcludeScripts="1"})
-
+```csharp
+@Umbraco.RenderMacro("renderUmbracoForm", new {FormGuid="dfea5397-36cd-4596-8d3c-d210502b67de", FormTheme="bootstrap3-horizontal", ExcludeScripts="1"})
+```
 
 ## When using Forms 4.x
 
@@ -37,40 +39,50 @@ First we'll need to tell the Forms partial macro (that is used to render forms) 
 
 It should have the following contents 
 
-	@inherits Umbraco.Web.Macros.PartialViewMacroPage
-		
-	@if (Model.MacroParameters["FormGuid"] != null)
-	{
-		var s = Model.MacroParameters["FormGuid"].ToString();
-		var g = new Guid(s);
-		
-		Html.RenderAction("Render", "UmbracoForms", new {formId = g});
-	}
+```csharp
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+    
+@if (Model.MacroParameters["FormGuid"] != null)
+{
+    var s = Model.MacroParameters["FormGuid"].ToString();
+    var g = new Guid(s);
+    
+    Html.RenderAction("Render", "UmbracoForms", new {formId = g});
+}
+```
 
 Here we'll make a small change: In the RenderAction call we'll provide an additional argument: `mode = "form"`
 
 So change this:
 
-	Html.RenderAction("Render", "UmbracoForms", new {formId = g});	
+```csharp
+Html.RenderAction("Render", "UmbracoForms", new {formId = g});	
+```
 
 to this:
-	
-	Html.RenderAction("Render", "UmbracoForms", new {formId = g, mode = "form"});
+
+```csharp	
+Html.RenderAction("Render", "UmbracoForms", new {formId = g, mode = "form"});
+```
 
 ### Place the Render Scripts macro on your template
 
 Now we'll need to let Forms know where we want to output the script instead. So navigate to the Settings section and select the template that should contain the scripts. Insert the *Render Umbraco Forms Scripts* macro where you need the scripts rendered:
 
-	@Umbraco.RenderMacro("FormsRenderScripts")
+```csharp
+@Umbraco.RenderMacro("FormsRenderScripts")
+```
 
 ### Using RenderMacro in non umbraco controllers
 
 Maybe you end up with an error like this "CS0234: The type or namespace name 'RenderMacro' does not exist in the namespace 'Umbraco' (are you missing an assembly reference?)". This is probably due to the fact that you're using custom controllers and viewmodels where the UmbracoContext is not exposed. The fix is to create your own UmbracoContext first:
 
-    @{
-        // create your own umbraco context
-        var umbraco = new UmbracoHelper(UmbracoContext.Current);
-    }
-    @umbraco.RenderMacro("FormsRenderForm", new { FormGuid = "1203e391-30bb-4ffc-8fe6-1785d6093108" })
+```csharp
+@{
+    // create your own umbraco context
+    var umbraco = new UmbracoHelper(UmbracoContext.Current);
+}
+@umbraco.RenderMacro("FormsRenderForm", new { FormGuid = "1203e391-30bb-4ffc-8fe6-1785d6093108" })
+```
 
 Please be aware, that is not the suggested way of inserting an Umbraco Form. We suggest you inherit from Umbraco Controllers. If you can not do that, you will need to create a new UmbracoContext. If you do so, please also read the Common Pitfalls.

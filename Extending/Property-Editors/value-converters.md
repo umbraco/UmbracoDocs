@@ -19,7 +19,9 @@ For example the standard Umbraco Core "Content Picker" stores a nodeId as `Strin
 
 Implement `IPropertyValueConverter` from the `Umbraco.Core` namespace on your class
 
-	public class ContentPickerPropertyConverter : IPropertyValueConverter
+```csharp
+public class ContentPickerPropertyConverter : IPropertyValueConverter
+```
 
 ## Methods ##
 
@@ -29,25 +31,29 @@ This method is called for each PublishedPropertyType (document type property) at
 
 Example: Checking if the PublishedPropertyType PropertyEditorAlias property is equal to the alias of the core content editor
 
-	public bool IsConverter(PublishedPropertyType propertyType)
-	{
-	    return propertyType.PropertyEditorAlias.Equals("Umbraco.ContentPickerAlias");
-	}
+```csharp
+public bool IsConverter(PublishedPropertyType propertyType)
+{
+    return propertyType.PropertyEditorAlias.Equals("Umbraco.ContentPickerAlias");
+}
+```
 
 ### object ConvertDataToSource(PublishedPropertyType propertyType, object data, bool preview) ###
 
 This method should convert the raw data value into an appropriate type, for example, a nodeId stored as a `String` should be converted to an `Int`. This method returns the "Source".  Include a `using Umbraco.Core` to be able to use the `TryConvertTo` extension method.
 
-    public object ConvertDataToSource(PublishedPropertyType propertyType, object data, bool preview)
+```csharp
+public object ConvertDataToSource(PublishedPropertyType propertyType, object data, bool preview)
+{
+    var attemptConvertInt = data.TryConvertTo<int>();
+    if (attemptConvertInt.Success)
     {
-        var attemptConvertInt = data.TryConvertTo<int>();
-        if (attemptConvertInt.Success)
-        {
-            return attemptConvertInt.Result;
-        }
-
-        return null;
+        return attemptConvertInt.Result;
     }
+
+    return null;
+}
+```
 
 ### object ConvertSourceToObject(PublishedPropertyType propertyType, object source, bool preview) ###
 
@@ -55,16 +61,18 @@ This method converts the Source to an Object, the returned value is used by the 
 
 The below example converts the nodeId (converted to Int by ConvertDataToSource) into an IPublishedContent object using the UmbracoHelper TypedContent method.  
 
-	public object ConvertSourceToObject(PublishedPropertyType propertyType, object source, bool preview)
-	{
-	    if (source == null || UmbracoContext.Current == null) // add using Umbraco.Web
-	    {
-	        return null;
-	    }
-	
-	    var umbHelper = new UmbracoHelper(UmbracoContext.Current);
-	    return umbHelper.TypedContent(source);
-	}
+```csharp
+public object ConvertSourceToObject(PublishedPropertyType propertyType, object source, bool preview)
+{
+    if (source == null || UmbracoContext.Current == null) // add using Umbraco.Web
+    {
+        return null;
+    }
+
+    var umbHelper = new UmbracoHelper(UmbracoContext.Current);
+    return umbHelper.TypedContent(source);
+}
+```
 
 ### object ConvertSourceToXPath(PublishedPropertyType propertyType, object source, bool preview) ###
 
@@ -72,10 +80,12 @@ This method converts the Source to XPath, the return value should generally be o
 
 In the example below, we convert the nodeId (converted by ConvertDataToSource) back into a `String`
 
-    public object ConvertSourceToXPath(PublishedPropertyType propertyType, object source, bool preview)
-    {
-        return source.ToString();
-    }
+```csharp
+public object ConvertSourceToXPath(PublishedPropertyType propertyType, object source, bool preview)
+{
+    return source.ToString();
+}
+```
 
 **Note**: This method is not currently requested in Umbraco v7.1.x but it will be in a future version
 
@@ -91,15 +101,19 @@ In the example below the Content Picker is being converted to `IPublishedContent
 
 #### Class Attribute ####
 
-	[PropertyValueType(typeof(IPublishedContent))]
-	public class ContentPickerPropertyConverter : IPropertyValueConverter
+```csharp
+[PropertyValueType(typeof(IPublishedContent))]
+public class ContentPickerPropertyConverter : IPropertyValueConverter
+```
 
 #### Interface ####
 
-    public Type GetPropertyValueType(PublishedPropertyType propertyType)
-    {
-        return typeof(IPublishedContent);
-    }
+```csharp
+public Type GetPropertyValueType(PublishedPropertyType propertyType)
+{
+    return typeof(IPublishedContent);
+}
+```
 
 ### Property Value Cache Level ###
 
@@ -114,33 +128,39 @@ In the example below the Content Picker is being converted to `IPublishedContent
 
 #### Class Attribute ####
 
-    [PropertyValueCache(PropertyCacheValue.Source, PropertyCacheLevel.Content)]
-    [PropertyValueCache(PropertyCacheValue.Object, PropertyCacheLevel.ContentCache)]
-    [PropertyValueCache(PropertyCacheValue.XPath, PropertyCacheLevel.Content)]
-    public class ContentPickerPropertyConverter : IPropertyValueConverter
+```csharp
+[PropertyValueCache(PropertyCacheValue.Source, PropertyCacheLevel.Content)]
+[PropertyValueCache(PropertyCacheValue.Object, PropertyCacheLevel.ContentCache)]
+[PropertyValueCache(PropertyCacheValue.XPath, PropertyCacheLevel.Content)]
+public class ContentPickerPropertyConverter : IPropertyValueConverter
+```
 
 If all values should use the same level you can use the shortcut below
 
-    [PropertyValueCache(PropertyCacheValue.All, PropertyCacheLevel.ContentCache)]
+```csharp
+[PropertyValueCache(PropertyCacheValue.All, PropertyCacheLevel.ContentCache)]
+```
 
 #### Interface ####
 
-    public PropertyCacheLevel GetPropertyCacheLevel(PublishedPropertyType propertyType, PropertyCacheValue cacheValue)
+```csharp
+public PropertyCacheLevel GetPropertyCacheLevel(PublishedPropertyType propertyType, PropertyCacheValue cacheValue)
+{
+    switch (cacheValue)
     {
-        switch (cacheValue)
-        {
-            case PropertyCacheValue.Object:
-                return PropertyCacheLevel.ContentCache; 
+        case PropertyCacheValue.Object:
+            return PropertyCacheLevel.ContentCache; 
 
-            case PropertyCacheValue.Source:
-                return PropertyCacheLevel.Content;
+        case PropertyCacheValue.Source:
+            return PropertyCacheLevel.Content;
 
-            case PropertyCacheValue.XPath:
-                return PropertyCacheLevel.Content;
-        }
-  
-        return PropertyCacheLevel.None;
+        case PropertyCacheValue.XPath:
+            return PropertyCacheLevel.Content;
     }
+
+    return PropertyCacheLevel.None;
+}
+```
 
 ## Samples ##
 
