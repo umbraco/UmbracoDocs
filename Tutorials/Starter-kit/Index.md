@@ -3,7 +3,7 @@ The *Starter kit* is the default starter kit for Umbraco 7.6.4+ and is the perfe
 
 Installing the starter kit will give you a simple site where you can:
 
-* Show the content creation and editing capabilities in Umbraco from a content editors' point of view.
+* Show the content creation and editing capabilities in Umbraco from a content editor's point of view.
 * Learn how to set up Umbraco by exploring the starter kit.
 * Enhance the starter kit by following the lessons provided. The lessons aim to give you a good understanding of how you can tailor the editing experience and add features to an Umbraco site. 
 
