@@ -38,7 +38,7 @@ This section will describe how to work with and create Parameter Editors.
 
 The Umbraco backoffice can be configured so that the user interface runs in the user's native language. This is made possible with community generated language files, if your language is not currently supported, why not help to add support?
 
-## [Health Checks](Healthcheck/index.md)
+## [Health Checks](Health-Check)
 
 Developers can create their own Umbraco Health Checks and Health Check notification methods.
 
