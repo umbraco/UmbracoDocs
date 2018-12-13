@@ -56,17 +56,17 @@ Authorizing a controller for a front-end member is achieved with attributes:
 
 You can attribute your controller or action with this attribute which will ensure that a member must be logged in to access the resource. An example:
 
-
-    [MemberAuthorize]
-    public class AccountController : SurfaceController
+```csharp
+[MemberAuthorize]
+public class AccountController : SurfaceController
+{
+    [HttpPost]
+    public ActionResult UpdateAccountInfo(AccountInfo accountInfo)
     {
-      [HttpPost]
-      public ActionResult UpdateAccountInfo(AccountInfo accountInfo)
-      {
-          // TODO: Update the account info for the current member
-      }
+        // TODO: Update the account info for the current member
     }
-
+}
+```
 
 There are a few properties that exist for the attribute to give you more control over the authorization process for which members can access the resource:
 
