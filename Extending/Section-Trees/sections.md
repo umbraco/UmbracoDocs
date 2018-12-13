@@ -12,7 +12,9 @@ To create a new custom section in your Umbraco backoffice, add an entry in the `
 
 eg, adding the following...
 
-      <add alias="favStuff" name="My Favourite Things" icon="icon-hearts" sortOrder="7" />
+```xml
+<add alias="favStuff" name="My Favourite Things" icon="icon-hearts" sortOrder="7" />
+```
 
 ... would create a new Section in your Umbraco backoffice called 'My Favourite Things' and be represented by a heart in the section navigation.
 
@@ -32,12 +34,14 @@ Create a /lang folder in the folder where you are creating the implementation fo
 
 inside this folder create a file called **en-us.xml** this is the 'default' fallback language translation file, and add the following definition:
 
-    <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-    <language alias="en" intName="English (US)" localName="English (US)" lcid="" culture="en-US">
-     <area alias="sections">
-       <key alias="favStuff">My Favourite Things</key>
-     </area>
-    </language>
+```xml
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language alias="en" intName="English (US)" localName="English (US)" lcid="" culture="en-US">
+  <area alias="sections">
+    <key alias="favStuff">My Favourite Things</key>
+  </area>
+</language>
+```
 
 Recycle the application pool, and the square brackets will be gone, and your section will have the title 'My Favourite Things'
 

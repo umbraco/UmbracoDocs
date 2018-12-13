@@ -22,19 +22,23 @@ Before you can start transferring between your projects, you need to **add a Cou
 * Find the `courier.config` file in the `/config` folder
 * In the `<security>` section, find the `<auth>` section - it will look like this:
 
-        <auth>
-            <method>credentials</method>
-            <apikey></apikey>
-        </auth>
+```xml
+<auth>
+    <method>credentials</method>
+    <apikey></apikey>
+</auth>
+```
 
 * Change `<method>` to **token**
 * Add a **randomly generated api key with at least 10 characters** - this could be anything, fx 1234567890
 * The <auth> section should look something like this:
 
-        <auth>
-            <method>token</method>
-            <apikey>1234567890</apikey>
-        </auth>
+```xml
+<auth>
+    <method>token</method>
+    <apikey>1234567890</apikey>
+</auth>
+```
 
 * Make sure to make this change on all the projects where you want to use Courier
 * **Important:** For Courier to work between the projects, you need to use the same Courier API key on all projects

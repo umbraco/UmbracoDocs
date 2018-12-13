@@ -19,7 +19,7 @@ npm install umbraco-headless
 Get access to the api by including it in your project and supplying site and
 credentials:
 
-```
+```js
 var UmbracoHeadless = require('umbraco-headless');
 
 // this will change when proper token authentication is added
@@ -82,7 +82,7 @@ node .
 ### Using VS Code?
 If you are using VSCode as your editor then you can easily set up the editor to debug and easily inspect the values returned from the Umbraco Headless site by configuring the `.vscode/launch.json` file like so
 
-```
+```json5
 {
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
@@ -103,11 +103,13 @@ If you are using VSCode as your editor then you can easily set up the editor to 
 
 Create as a new with a site configuration
 
-`var headlessService = new UmbracoHeadless.HeadlessService(config);`
+```js
+var headlessService = new UmbracoHeadless.HeadlessService(config);
+```
 
 You can choose to either authenticate explicitly or let the client authenticate when first used.
 
-```
+```js
 var UmbracoHeadless = require('umbraco-headless');
 var headlessService = new UmbracoHeadless.HeadlessService(config);
 await headlessService.authenticate();
@@ -118,7 +120,7 @@ await headlessService.authenticate();
 All methods are async so must be returned as either a promise or using
 async/await:
 
-```
+```js
 async function run(){
   var content = await headlessService.getById(1123);
   console.log(content.name);

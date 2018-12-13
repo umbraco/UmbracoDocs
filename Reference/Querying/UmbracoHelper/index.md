@@ -22,7 +22,7 @@ Lastly, if you need an UmbracoHelper in a custom class, service, view, etc., you
 
 UmbracoHelper will expose all content in the form of `IPublishedContent`. To get a reference to the currently executing content item from the UmbracoHelper, use `UmbracoHelper.AssignedContentItem`.
 
-All samples below represent how you work with `UmbracoHelper` in Razor, except for the `@` syntax, it is the exact same with your work with this helper inside controllers or UserControls.
+The samples below demonstrate using `UmbracoHelper` in Razor. Aside from the `@` syntax, usage is the same inside controllers or UserControls.
 
 ## Working with Content
 

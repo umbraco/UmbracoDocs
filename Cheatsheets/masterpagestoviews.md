@@ -4,20 +4,26 @@ Covers how you convert common syntax in Umbraco Masterpages to Umbraco Views.
 ## Page declaration and reference to parent template  ##
 **Masterpage**
 
-    <%@ master language="C#" masterpagefile="~/masterpages/umbMaster.master">
+```csharp
+<%@ master language="C#" masterpagefile="~/masterpages/umbMaster.master">
+```
 
 **Razor View**
 
-	@inherits Umbraco.Web.Mvc.UmbracoTemplatePage    
-	@{  
-		Layout= "~/Views/umbMaster.cshtml";
-	}
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage    
+@{  
+	Layout= "~/Views/umbMaster.cshtml";
+}
+```
 
 ## Server side forms ##
 **Masterpage**
-	
-	<form runat="server">
-        
+
+```csharp	
+<form runat="server">
+```
+
 **Razor View**
 
 Remove, not required in views
@@ -25,91 +31,121 @@ Remove, not required in views
 
 ## Content area ##
 **Masterpage**
-	
-	<asp:content contentplaceholderid="footer"> 
-		<p>Hello</p> 
-	</asp:content>
-        
+
+```csharp	
+<asp:content contentplaceholderid="footer"> 
+	<p>Hello</p> 
+</asp:content>
+```
+
 **Razor View**
 
-	@section footer { 
-		<p>Hello</p>
-	} 
+```csharp
+@section footer { 
+	<p>Hello</p>
+} 
+```
 
 ## Content placeholder ##
 **Masterpage**
-	
-	<asp:contentplaceholder id="footer"> 
-        
+
+```csharp	
+<asp:contentplaceholder id="footer"> 
+```
+
 **Razor View**
 
-	@RenderSection("footer")
+```csharp
+@RenderSection("footer")
+```
 
 If the View that inherits from this view is not required to define a "footer" section then you can add an extra `false` parameter (if you omit the boolean, it defaults to `true`):
 
-	@RenderSection("footer", false)
+```csharp
+@RenderSection("footer", false)
+```
 
 If you want to render the main body area then you can simply do the following (only allowed once per View): 
 
-	@RenderBody() 
-
+```csharp
+@RenderBody() 
+```
 
 ## Umbraco item ##
 **Masterpage**
-	
-	<umbraco:item field="bodyText" /> 
-        
+
+```csharp
+<umbraco:item field="bodyText" /> 
+```
+
 **Razor View**
 
-	@CurrentPage.bodyText 
-	
+```csharp
+@CurrentPage.bodyText 
+```
 
 ## Umbraco item with parameters ##
 **Masterpage**
-	
-	<umbraco:Item field="PostDate" useIfEmpty="createDate" formatAsDate="true" runat="server" /> 
-        
+
+```csharp	
+<umbraco:Item field="PostDate" useIfEmpty="createDate" formatAsDate="true" runat="server" /> 
+```
+
 **Razor View**
 
-	@Umbraco.Field("PostDate", altFieldAlias: "CreateDate", formatAsDate: true)  
-	
+```csharp
+@Umbraco.Field("PostDate", altFieldAlias: "CreateDate", formatAsDate: true)  
+```
+
 ## Umbraco Macro ##
 **Masterpage**
-	
-	<umbraco:macro alias="topNavigation" /> 
-        
+
+```csharp	
+<umbraco:macro alias="topNavigation" /> 
+```
+
 **Razor View**
 
-	@Umbraco.RenderMacro("topNavigation") 
-	
+```csharp
+@Umbraco.RenderMacro("topNavigation") 
+```
 
 ## Umbraco Macro with parameters ##
 **Masterpage**
-	
-	<umbraco:macro alias="topNavigation" nodeId="1082" name="John" /> 
-        
+
+```csharp
+<umbraco:macro alias="topNavigation" nodeId="1082" name="John" /> 
+```
+
 **Razor View**
 
-	@Umbraco.RenderMacro("topNavigation" new{ nodeId = 1082, name="John" })
-
-
+```csharp
+@Umbraco.RenderMacro("topNavigation" new{ nodeId = 1082, name="John" })
+```
 
 ## ASP.NET Textbox Control ##
 **Masterpage**
-	
-	<asp:textbox id="tb_member" runat="server" />
-        
+
+```csharp	
+<asp:textbox id="tb_member" runat="server" />
+```
+
 **Razor View**
 
-	@Html.TextBoxFor(model => model.MemberId)
+```csharp
+@Html.TextBoxFor(model => model.MemberId)
+```
 
 Or with some styling and a placeholder:
 
-	@Html.TextAreaFor(model => model.MemberId, 
- 			htmlAttributes: new { @class="span9 tokeninput", placeholder="Who should be notified?" })
+```csharp
+@Html.TextAreaFor(model => model.MemberId, 
+		htmlAttributes: new { @class="span9 tokeninput", placeholder="Who should be notified?" })
+```
 
 Or even in mostly plain HTML:
 
-	<input type="text" name="MemberId" value="@Model.MemberId" 
-		class="span9 tokeninput" placeholder="Who should be notified?" />
-
+```csharp
+<input type="text" name="MemberId" value="@Model.MemberId" 
+	class="span9 tokeninput" placeholder="Who should be notified?" />
+```

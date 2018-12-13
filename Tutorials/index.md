@@ -4,6 +4,10 @@
 
 Step by step guide of everything you need to get a basic site up and running in Umbraco.
 
+### [Creating a basic XML SiteMap with Razor](Creating-An-XML-Site-Map/index.md)
+
+Working within a Razor view/template to create an XML Site Map for search engines
+
 ### [Creating a Custom Dashboard](Creating-a-Custom-Dashboard)
 
 Custom dashboards are a great way to help editors maintain a site by providing useful information. This guide takes you through the steps to setup a custom dashboard in Umbraco.

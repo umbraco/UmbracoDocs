@@ -34,22 +34,24 @@ So the code we are executing is not on either the devsite or qasite, but it coul
 ### Configuration 
 For this configuration the following two repositories have been set up in the courier.config file:
 
-	<repositories>
-        <repository name="QA site" alias="qasite" type="CourierWebserviceRepositoryProvider" visible="true">
-            <url>http://qa.local</url>
-            <login>admin</login>
-            <password>1234</password>
-            <passwordEncoding>Hashed</passwordEncoding>
-        </repository>
+```xml
+<repositories>
+    <repository name="QA site" alias="qasite" type="CourierWebserviceRepositoryProvider" visible="true">
+        <url>http://qa.local</url>
+        <login>admin</login>
+        <password>1234</password>
+        <passwordEncoding>Hashed</passwordEncoding>
+    </repository>
 
-		<repository name="DEV site" alias="devsite" type="CourierWebserviceRepositoryProvider" visible="true">
-            <url>http://dev.local</url>
-            <login>admin</login>
-            <password>1234</password>
-            <passwordEncoding>Hashed</passwordEncoding>
-	    </repository>
-    </repositories>
- 
+    <repository name="DEV site" alias="devsite" type="CourierWebserviceRepositoryProvider" visible="true">
+        <url>http://dev.local</url>
+        <login>admin</login>
+        <password>1234</password>
+        <passwordEncoding>Hashed</passwordEncoding>
+    </repository>
+</repositories>
+ ```
+
 Notice the Webservice repository type is used for both. However, you can use any supported repository as your **destination**.
 
 ### Code
@@ -57,26 +59,34 @@ Notice the Webservice repository type is used for both. However, you can use any
 #### Usings
 The following namespaces are required to work with the sample. Only Courier Core should be needed.
 
-	using Umbraco.Courier.Core;
-    using Umbraco.Courier.Core.Storage;
-    using Umbraco.Courier.Core.Packaging;
-    using Umbraco.Courier.Core.Collections.Manifests;
+```csharp
+using Umbraco.Courier.Core;
+using Umbraco.Courier.Core.Storage;
+using Umbraco.Courier.Core.Packaging;
+using Umbraco.Courier.Core.Collections.Manifests;
+```
 
 #### Connecting to destination and source
 Use `RepositoryStorage` to retrieve repositories from the courier.config 
 
-	var rs = new RepositoryStorage();
-	Repository destination = rs.GetByAlias("qasite");
-    Repository source = rs.GetByAlias("devsite");
+```csharp
+var rs = new RepositoryStorage();
+Repository destination = rs.GetByAlias("qasite");
+Repository source = rs.GetByAlias("devsite");
+```
 
 #### Creating a new RevisionPackaging
 To create a new Packaging operation you need to (1) specify a name of the data you are working with (this defines where the files are stored) and (2) connect it with the two repositories.
 
-	var engine = new RevisionPackaging(Revision);
-    engine.Source = source;
-    engine.Destination = destination;        
+```csharp
+var engine = new RevisionPackaging(Revision);
+engine.Source = source;
+engine.Destination = destination;        
+```
 
 #### Instant Comparison
 If you want to allow Courier to perform comparison checking against a destination, you can enable this. This means that Courier will do a hashed comparison of all items to determine if they are needed in the revision. This can save time, but it should only be used if you know the destination won't change before the extraction happens.
 
-	engine.EnableInstantCompare(destination);
+```csharp
+engine.EnableInstantCompare(destination);
+```

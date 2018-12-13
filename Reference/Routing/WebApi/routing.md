@@ -33,5 +33,4 @@ Generally a UrlHelper instance will be available on most base classes like Contr
 
 	var requestContext = HttpContext.Current.Request.RequestContext;
     var urlHelper = new System.Web.Mvc.UrlHelper(requestContext);
-    var apiControllerUrl = urlHelper.GetUmbracoApiService("GetAllProducts");
-
+    var url = urlHelper.GetUmbracoApiService("GetAllProducts", "ProductsApiController");
