@@ -91,9 +91,9 @@ the umbracoServer table.
 
 ## Controlling how often the load balancing instructions from the database are processed and pruned
 
-During startup the `DatabaseServerMessengerOptions` can be tweaked to control how often the load balancing instructions from the database are processed and pruned.
+During start up the `DatabaseServerMessengerOptions` can be adjusted to control how often the load balancing instructions from the database are processed and pruned.
 
-e.g.
+e.g. This example should be added within a `[ApplicationStarting](/Documentation/Reference/Events/Application-Startup.md#startup-methods)` event
 
 ```csharp
 	ServerMessengerResolver.Current.SetServerMessenger(
@@ -110,3 +110,9 @@ e.g.
 		)
 	);
 ```
+
+Parameters:
+- DaysToRetainInstructions - The number of days to keep instructions in the database; records older than this number will be pruned.
+- MaxProcessingInstructionCount - The maximum number of instructions that can be processed at startup; otherwise the server cold-boots (rebuilds its caches)
+- ThrottleSeconds  - The number of seconds to wait between each sync operations
+-PruneThrottleSeconds - The number of seconds to wait between each prune operation
