@@ -283,12 +283,6 @@ Given a node ID, returns an `IPublishedContent` Member profile
 
 
 ### Member Helpers
-### .MemberHasAccess(int nodeId, string path);
-Returns a `Boolean` on whether the currently logged in member has access to the page given its ID and path.
-
-    @if(Umbraco.MemberHasAccess(CurrentPage.Id, CurrentPage.Path)){
-        <h1>Welcome!</h1>
-    }    
 
 ### .MemberIsLoggedOn()
 Returns a `Boolean` on whether there is currently a member profile
@@ -297,12 +291,19 @@ Returns a `Boolean` on whether there is currently a member profile
         <h1>Welcome!</h1>
     }
 
-### .IsProtected(int pageId, string path)
-Returns a `Boolean` on whether a page with a given pageId and path has public access restrictions set.
+### .MemberHasAccess(string path);
+Returns a `Boolean` on whether the currently logged in member has access to the page given its [Umbraco path](../IPublishedContent/Properties.md#path).
+
+    @if(Umbraco.MemberHasAccess(CurrentPage.Path)){
+        <h1>Welcome!</h1>
+    } 
+
+### .IsProtected(string path)
+Returns a `Boolean` on whether a page with a given [Umbraco path](../IPublishedContent/Properties.md#path) has public access restrictions set.
 
     @foreach (var child in CurrentPage.Children) {
         <h2>@child.Name</h2>
-            @if(Umbraco.IsProtected(child.id, child.Path)){
+            @if(Umbraco.IsProtected(child.Path)){
                 <blink>Members only</blink>
             }
     }
