@@ -177,7 +177,7 @@ This can be anything you can think of, the results and the rectify action are co
 
 An example check:
 
-```
+```csharp
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -266,7 +266,7 @@ Disallow: /umbraco/";
         }
     }
 }
-
+```
 ## Custom health check notifications
 
 Health check notifications can be scheduled to run periodically and notify you of the results. Included with Umbraco is a notification method to deliver the results via email. In a similar manner to how it's possible to create your own health checks, you can also create custom notification methods to send the message summarising the status of the health checks via other means.  Again, for further details on implementing this on this please refer the [existing notification methods within the core code base](https://github.com/umbraco/Umbraco-CMS/tree/dev-v7/src/Umbraco.Web/HealthCheck/NotificationMethods).
