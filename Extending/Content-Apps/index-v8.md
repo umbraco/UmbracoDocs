@@ -21,7 +21,7 @@ You can extend Umbraco by creating your own custom companion Content Apps. For e
 
 #### Controlling Appearance/Position
 
-You can associate an icon with your custom content app, control the position (between 'Content' and 'Info') where your custom Content App should appear via a 'weighting' number
+You can associate an icon with your custom Content App, control the position (between 'Content' and 'Info') where your custom Content App should appear via a 'weighting' number
 
 #### Permissions ####
 
@@ -29,15 +29,15 @@ Content Apps can be configured to appear dependent on Section, Content Type and 
 
 #### Read-Only?
 
-Content Apps are designed to be companions to the Content Item, to enhance the editor's experience by enabling quick access to contextual information for the particular content item they are editing, they are not intended to be used for the editing of content, they are not the equivalent of V7's tabs!
+Content Apps are designed to be companions to the Content Item. They should enhance the editor's experience by enabling quick access to contextual information for the particular content item they are editing. Content Apps are not intended to be used for the editing of content, they are not the equivalent of V7's tabs!
 
 ## Creating a Custom Content App
 
-This guide explains how to set up a custom content app in the following steps:
+This guide explains how to set up a custom Content App in the following steps:
 
-* Adding a content app that displays for all content and media items
-* Limiting the content app to appear for only specific content types
-* Limiting which user groups can see the content app
+* Adding a Content App that displays for all content and media items
+* Limiting the Content App to appear for only specific content types
+* Limiting which user groups can see the Content App
 
 A basic understanding of how to use AngularJS with Umbraco is required.  If you have created a property value editor before, this will all feel very familiar.
 
@@ -45,9 +45,9 @@ A basic understanding of how to use AngularJS with Umbraco is required.  If you 
 
 The first thing we do is create a new folder inside `/App_Plugins` folder. We will call it `CakeContentApp`
 
-Next we need to create a manifest file to describe what this content app does. This manifest will tell Umbraco about our new content app and allows us to inject any needed files into the application.  
+Next we need to create a manifest file to describe what this Content App does. This manifest will tell Umbraco about our new Content App and allows us to inject any needed files into the application.  
 
-Add the file `/App_Plugins/CakeContentApp/package.manifest` and inside add the JSON to describe the content app. Have a look at the inline comments in the JSON below for details on each bit:
+Create a new file in the `/App_Plugins/CakeContentApp/` folder and name it `package.manifest`. In this new file, copy the code snippet below and save it. This code describes the Content App. To help you understand the JSON, read the inline comments for details on each bit:
 
 ```json5
 {
@@ -70,11 +70,11 @@ Add the file `/App_Plugins/CakeContentApp/package.manifest` and inside add the J
 
 ### Creating the View and the Controller
 
-Then add 2 files to the /app_plugins/CakeContentApp/ folder:
+Add 2 additional files to the `/App_Plugins/CakeContentApp/` folder:
 - `cakecontentapp.html`
 - `cakecontentapp.controller.js`
 
-These will be our main files for the app, with the .html file handling the view and the .js file handling the functionality.
+These 2 files will be our main files for the app, with the .html file handling the view and the .js file handling the functionality.
 
 In the .js file we declare our AngularJS controller and inject umbraco's editorState and userService:
 
@@ -114,11 +114,11 @@ And in the .html file:
 
 ### Checking it works
 
-After the above edits are done, restart your application. Go to any content node and you should now see an app called Cake. Clicking on the icon should say "Hello cakes are awesome" and confirm the details of the current item and user.  You can now adapt your content app to retrieve external data using the standard Umbraco and AngularJS approach.
+After the above edits are done, restart your application. Go to any content node and you should now see an app called Cake. Clicking on the icon should say "Hello cakes are awesome" and confirm the details of the current item and user.  You can now adapt your Content App to retrieve external data using the standard Umbraco and AngularJS approach.
 
 ### Limiting according to Content Type
 
-You can set your content app to only show for specific content types by updating your `package.manifest` file and adding a 'show' directive to the content app definition. For example:
+You can set your Content App to only show for specific content types by updating your `package.manifest` file and adding a 'show' directive to the Content App definition. For example:
 
 ```json5
 {
@@ -138,7 +138,7 @@ If the 'show' directive is omitted then the app will be shown for all content ty
 
 ### Limiting according to User Role
 
-In a similar way, you can limit your content app according to user roles (groups).  For example:
+In a similar way, you can limit your Content App according to user roles (groups).  For example:
 
 ```json5
 {
@@ -156,7 +156,7 @@ If a role restriction is given in the manifest, it overrides any other restricti
 
 ## Creating a Content App in C#
 
-This is an example of how to register a content app with C# and perform your own custom logic to show a content app.
+This is an example of how to register a Content App with C# and perform your own custom logic to show a Content App.
 
 ```csharp
 using System;
@@ -177,6 +177,7 @@ namespace Umbraco.Web.UI
 
             // Add our cake content app into the composition aka into the DI
             composition.ContentApps().Append<CakeContentApp>();
+
         }
     }
 
@@ -188,6 +189,29 @@ namespace Umbraco.Web.UI
             // To show or hide CakeContentApp
             switch (source)
             {
+                // Some logic depending on the object type
+                // To show or hide CakeContentApp
+                switch (source)
+                {
+                    // Do not show Content App if doctype/content type is a container
+                    case IContent content when content.ContentType.IsContainer:
+                        return null;
+
+                    // Don't show for media items
+                    case IMedia media:
+                        return null;
+
+                    case IContent content:
+                        break;
+
+                    default:
+                        throw new NotSupportedException($"Object type {source.GetType()} is not supported here.");
+                }
+
+                // Can implement some logic with userGroups if needed
+                // Allowing us to display the Content App with some restrictions for certain groups
+                if (userGroups.Any(x=> x.Alias.ToLowerInvariant() == "admin") == false)
+
                 // Do not show content app if doctype/content type is a container
                 case IContent content when content.ContentType.IsContainer:
                     return null;
@@ -223,7 +247,7 @@ namespace Umbraco.Web.UI
 }
 ```
     
-You will still need to add all of the files you added above but, because your C# code is adding the content app, the package.manifest file can be simplified like this:
+You will still need to add all of the files you added above but, because your C# code is adding the Content App, the package.manifest file can be simplified like this:
 
 ```json5
 {
