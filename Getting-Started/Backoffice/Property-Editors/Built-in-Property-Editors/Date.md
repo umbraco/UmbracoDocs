@@ -19,7 +19,7 @@ The only setting that is available for manipulating the Date property is to set 
 ### Typed
 
 ```csharp
-    @(Model.Content.GetPropertyValue<DateTime>("datePicker").ToString("dd MM yyyy"))
+@(Model.Content.GetPropertyValue<DateTime>("datePicker").ToString("dd MM yyyy"))
 ```
 
 ### Dynamic (Obsolete)

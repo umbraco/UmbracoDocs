@@ -1,3 +1,7 @@
+---
+versionFrom: 7.10.0
+---
+
 # Dropdown
 
 `Returns: String`
@@ -7,9 +11,11 @@ Introduced in Umbraco v7.10. Displays a list of preset values. Either a single v
 ## Settings
 
 ### Enable multiple choice
+
 If ticked, editors will be able to select multiple values from the dropdown otherwise only a single value can be selected.
 
 ### Prevalues
+
 Prevalues are the options which are shown in the dropdown list. You can add, edit, or remove values here.
 
 ## Data Type Definition Example
@@ -28,22 +34,26 @@ Prevalues are the options which are shown in the dropdown list. You can add, edi
 
 ## MVC View Example
 
-### Typed - single item:
+### Typed - single item
 
-    @if (Model.Content.HasValue("category"))
-    {
-        <p>@(Model.Content.GetPropertyValue<string>("category"))</p>
-    }
+```csharp
+@if (Model.Content.HasValue("category"))
+{
+    <p>@(Model.Content.GetPropertyValue<string>("category"))</p>
+}
+```
 
-### Typed - multiple items:
+### Typed - multiple items
 
-    @if (Model.Content.HasValue("categories"))
-    {
-        var categories = Model.Content.GetPropertyValue<string>("categories").Split(',');
-        <ul>
-            @foreach (var category in categories)
-            {
-                <li>@category</li>
-            }
-        </ul>
-    }
+```csharp
+@if (Model.Content.HasValue("categories"))
+{
+    var categories = Model.Content.GetPropertyValue<string>("categories").Split(',');
+    <ul>
+        @foreach (var category in categories)
+        {
+            <li>@category</li>
+        }
+    </ul>
+}
+```
