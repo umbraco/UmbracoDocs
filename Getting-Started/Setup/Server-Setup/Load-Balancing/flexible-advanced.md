@@ -12,6 +12,7 @@ for your front-end servers and your admin server... you can make this a configur
 
 The first thing to do is create a couple classes for your front-end servers and master server to use:
 
+```csharp
 	public class MasterServerRegistrar : IServerRegistrar2
 	{
 		public IEnumerable<IServerAddress> Registrations
@@ -48,9 +49,10 @@ The first thing to do is create a couple classes for your front-end servers and 
 			return null;
 		}
 	}
+```
 
 then you'll need to swap the default `DatabaseServerRegistrar` for the your custom registrars during application startup.
-You'll need to create an [ApplicationEventHandler](/Documentation/Reference/Events/Application-Startup) and override `ApplicationStarting`. 
+You'll need to create an [ApplicationEventHandler](../../../../Reference/Events/Application-Startup.md) and override `ApplicationStarting`. 
 During this event you can swap the registrar objects:
 
 	// This should be executed on your master server
@@ -86,3 +88,31 @@ the [Explicit master scheduling server](#explicit-master-scheduling-server) conf
 Now that your front-end servers are using your custom `FrontEndReadOnlyServerRegistrar` class, they will always be deemed 'Slave' servers and will not 
 attempt any master election or task scheduling and because you are no longer using the default `DatabaseServerRegistrar` they will not try to ping
 the umbracoServer table.
+
+## Controlling how often the load balancing instructions from the database are processed and pruned
+
+During start up the `DatabaseServerMessengerOptions` can be adjusted to control how often the load balancing instructions from the database are processed and pruned.
+
+e.g. This example should be added within a [`ApplicationStarting`](../../../../Reference/Events/Application-Startup.md#startup-methods) event
+
+```csharp
+	ServerMessengerResolver.Current.SetServerMessenger(
+		new BatchedDatabaseServerMessenger(
+			applicationContext,
+			true,
+			new DatabaseServerMessengerOptions()
+			{
+				DaysToRetainInstructions = 2, // 2 days
+				ThrottleSeconds = 5, // 5 second
+				MaxProcessingInstructionCount = 1000,
+				PruneThrottleSeconds = 60 // 1 minute
+			}
+		)
+	);
+```
+
+Parameters:
+- DaysToRetainInstructions - The number of days to keep instructions in the database; records older than this number will be pruned.
+- MaxProcessingInstructionCount - The maximum number of instructions that can be processed at startup; otherwise the server cold-boots (rebuilds its caches)
+- ThrottleSeconds  - The number of seconds to wait between each sync operations
+- PruneThrottleSeconds - The number of seconds to wait between each prune operation
