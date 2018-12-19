@@ -22,11 +22,11 @@ Here are the steps to specify your own logic for validating a username and passw
 
 For example, to always allow login when the user enters the password `test` you could do:
 
+```C#
     using System.Threading.Tasks;
     using Umbraco.Core.Models.Identity;
     using Umbraco.Core.Security;
 
-```C#
     namespace MyNamespace
     {
         public class MyPasswordChecker : IBackOfficeUserPasswordChecker
