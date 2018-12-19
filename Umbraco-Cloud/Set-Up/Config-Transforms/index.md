@@ -84,7 +84,7 @@ On live environments only:
 - We set `debug="false"` on the `compilation` node in `system.web` 
 - We set `mode="RemoteOnly"` on the `customErrors` node in `system.web`
 
-On all other environments:
+On all other Cloud environments:
 
 - We set `debug="true"` on the `compilation` node in `system.web` 
 - We set `mode="Off"` on the `customErrors` node in `system.web`
