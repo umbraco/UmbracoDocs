@@ -27,18 +27,19 @@ You can specify your own custom MVC routes to work within the Umbraco pipeline. 
 
 As an example:
 
-    //custom route to MyProductController which will use a node with ID 1234 as the
-    // IPublishedContent for the current rendering page
-    routes.MapUmbracoRoute(
-        "test",
-        "Products/{action}/{sku}",
-        new
-        {
-            controller = "MyProduct",
-            sku = UrlParameter.Optional
-        },
-        new UmbracoVirtualNodeByIdRouteHandler(1234));
-
+```csharp
+//custom route to MyProductController which will use a node with ID 1234 as the
+// IPublishedContent for the current rendering page
+routes.MapUmbracoRoute(
+    "test",
+    "Products/{action}/{sku}",
+    new
+    {
+        controller = "MyProduct",
+        sku = UrlParameter.Optional
+    },
+    new UmbracoVirtualNodeByIdRouteHandler(1234));
+```
 
 See: [Custom routing documentation](../../Reference/Routing/custom-routes)
 
@@ -46,10 +47,11 @@ See: [Custom routing documentation](../../Reference/Routing/custom-routes)
 
 You can subscribe to an event to know when the `PublishedContentRequest` is ready to be processed.  It's up to you to change anything (content, template, ...):
 
+```csharp
     // public static event EventHandler<EventArgs> Prepared;
-
     PublishedContentRequest.Prepared += (sender, args) =>
     {
       var request = sender as PublishedContentRequest;
       // do something…
     }
+```
