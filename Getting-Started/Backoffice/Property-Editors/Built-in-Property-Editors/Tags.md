@@ -42,13 +42,28 @@ Whenever a tag has been added it will be visible in the typeahead when you start
 
 ## MVC View Example - displays a list of tags
 
-### Typed:
+### Typed using models builder
 
-    @if(Model.Content.GetPropertyValue<IEnumerable<string>>("tags") !=null){
-        <ul>
-            @foreach(var tag in Model.Content.GetPropertyValue<IEnumerable<string>>("tags")){
-                <li>@tag</li>
-            }
-        </ul>
-    }
+```csharp
+@if(Model.Content.Tags.Any()){
+    <ul>
+        @foreach(var tag in Model.Content.Tags){
+            <li>@tag</li>
+        }
+    </ul>
+}
+```
+
+### using GetPropertyValue
+
+```csharp
+@if(Model.Content.GetPropertyValue<IEnumerable<string>>("tags") !=null){
+    <ul>
+        @foreach(var tag in Model.Content.GetPropertyValue<IEnumerable<string>>("tags")){
+            <li>@tag</li>
+        }
+    </ul>
+}
+```
+
 
