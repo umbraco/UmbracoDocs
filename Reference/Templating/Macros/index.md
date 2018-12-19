@@ -64,7 +64,7 @@ For common Macro Parameter scenarios, for example taking the value from the quer
 
 Notice the dynamic parameters are passed as strings (even for age which would normally take an integer), this example means take the personName and personAge from the document of the current page, read the schoolName from any ancestor property in the content tree, and read the current page value from a querystring parameter called 'page'.
 
-#### Meaning of al the symbols
+#### Meaning of all the symbols
 
 ##### Request Collection
 
