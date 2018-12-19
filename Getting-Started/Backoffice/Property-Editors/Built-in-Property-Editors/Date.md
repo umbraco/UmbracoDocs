@@ -10,20 +10,26 @@ Displays a calendar UI for selecting dates which are saved as a DateTime value.
 
 The only setting that is available for manipulating the Date property is to set a format. By default the format of the date in the Umbraco backoffice will be `YYYY-MM-DD`, but you can easily change this to something else. See [MomentJS.com](https://momentjs.com/) for the supported formats.
 
-## Content Example 
+## Content Example
 
 ![Content Example](images/Date-Time-Content.png)
 
 ## MVC View Example - displays a datetime
 
-### Typed:
+### Typed
 
-	@(Model.Content.GetPropertyValue<DateTime>("datePicker").ToString("dd MM yyyy"))
+```csharp
+    @(Model.Content.GetPropertyValue<DateTime>("datePicker").ToString("dd MM yyyy"))
+```
 
-### Dynamic (Obsolete):
+### Dynamic (Obsolete)
 
+:::warning
 See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
+:::
 
-	@{
-		@CurrentPage.datePicker.ToString("dd-MM-yyyy")
-	}
+```csharp
+@{
+    @CurrentPage.datePicker.ToString("dd-MM-yyyy")
+}
+```

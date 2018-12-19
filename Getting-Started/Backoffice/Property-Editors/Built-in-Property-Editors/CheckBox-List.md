@@ -18,29 +18,34 @@ Displays a list of preset values as a list of checkbox controls. The text saved 
 
 ### Typed
 
-	@{
-	  if (Model.Content.HasValue("superHeros")){
-	       <ul>
-	      @foreach(var item in Model.Content.GetPropertyValue<string>("superHeros").Split(',')) {
-	        <li>@item</li>
-	      }
-	    </ul>
-	  }
-	}
+```csharp
+@{
+    if (Model.Content.HasValue("superHeros")){
+        <ul>
+            @foreach(var item in Model.Content.GetPropertyValue<string>("superHeros").Split(',')) {
+                <li>@item</li>
+            }
+        </ul>
+    }
+}
+```
 
 ### Dynamic (Obsolete)
 
+:::warning
 See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
+:::
 
-	@{
-	    if (CurrentPage.HasValue("superHeros"))
-	    {
-	        <ul>
-	            @foreach (var item in CurrentPage.superHeros.Split(','))
-	            {
-	                <li>@item</li>
-	            }
-	        </ul>
-	    }
-	}
-
+```csharp
+@{
+    if (CurrentPage.HasValue("superHeros"))
+    {
+        <ul>
+            @foreach (var item in CurrentPage.superHeros.Split(','))
+            {
+                <li>@item</li>
+            }
+        </ul>
+    }
+}
+```
