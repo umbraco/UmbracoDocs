@@ -8,6 +8,7 @@ The settings for Umbraco passwords are handled by default through the ASP.NET Me
     <membership defaultProvider="UmbracoMembershipProvider" userIsOnlineTimeWindow="15">
       <providers>
         <clear />
+        <!-- Used for members in the Member section of Umbraco -->
         <add name="UmbracoMembershipProvider"
              type="Umbraco.Web.Security.Providers.MembersMembershipProvider, Umbraco"
              minRequiredNonalphanumericCharacters="0"
@@ -20,6 +21,8 @@ The settings for Umbraco passwords are handled by default through the ASP.NET Me
              passwordFormat="Hashed"
              allowManuallyChangingPassword="false"
              maxInvalidPasswordAttempts="50"/>
+          
+        <!-- Used for users who have permission to log into Umbraco's backoffice, listed in the Users section of Umbraco --> 
         <add name="UsersMembershipProvider"
              type="Umbraco.Web.Security.Providers.UsersMembershipProvider, Umbraco"
              enablePasswordRetrieval="false"
