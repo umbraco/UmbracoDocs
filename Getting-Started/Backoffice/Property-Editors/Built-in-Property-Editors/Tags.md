@@ -4,6 +4,7 @@ versionFrom: 7.12.0
 ---
 
 # Tags
+
 `Alias: Umbraco.Tags`
 
 `Returns: CSV` or `JSON`
@@ -65,5 +66,3 @@ Whenever a tag has been added it will be visible in the typeahead when you start
     </ul>
 }
 ```
-
-
