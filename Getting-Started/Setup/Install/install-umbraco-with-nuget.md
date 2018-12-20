@@ -3,7 +3,7 @@
 _Follow these steps to do a full install of Umbraco with NuGet._
 
 ## Abbreviated version
-- You will get the best results if you install Umbraco in a **blank** web application Visual Studio project
+- You will get the best results if you install Umbraco in a **blank** C# web application Visual Studio project
  - In VS12: use ASP.NET Empty Web Application
  - In VS13/15/17: use ASP.NET Web Application with an Empty template
 - Umbraco can in most cases **not** be installed in an existing MVC/Webforms project
