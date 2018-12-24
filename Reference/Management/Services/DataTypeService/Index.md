@@ -15,50 +15,28 @@ All samples in this document will require references to the following dll:
 
 All samples in this document will require the following using statements:
 	
-	using Umbraco.Core;
-	using Umbraco.Core.Models;
-	using Umbraco.Core.Services;
+```c#
+using Umbraco.Core;
+using Umbraco.Core.Models;
+using Umbraco.Core.Services;
+```
 
 ## Getting the service
-The DataTypeService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the DataTypeService is available through a local `Services` property.
 
-	Services.DataTypeService
+If you wish to use use the data type service in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController`), you can access the data type service through a local `Services` property:
 
-Getting the service through the `ApplicationContext`:
+```c#
+IDataTypeService dataTypeService = Services.DataTypeService;
+```
 
-	ApplicationContext.Current.Services.DataTypeService
+In Razor views, you can access the data type service through the `ApplicationContext` property:
 
-## Methods
+```c#
+IDataTypeService dataTypeService = ApplicationContext.Services.DataTypeService;
+```
 
-### .GetDataTypeDefinitionById(int id)
-Gets a `DataTypeDefinition` by its `Int` Id.
+If neither a `Services` property or a `ApplicationContext` property is available, you can also reference the `ApplicationContext` class directly and using the static `Current` property:
 
-### .GetDataTypeDefinitionById(Guid id)
-Gets a `DataTypeDefinition` by its unique `Guid` Id.
-
-### .GetAllDataTypeDefinitions(params int[] ids)
-Gets all `DataTypeDefinition` objects or those with the ids passed in.
-
-### .Save(IDataTypeDefinition dataTypeDefinition, int userId = 0)
-Saves a `DataTypeDefinition` object.
-
-### .Delete(IDataTypeDefinition dataTypeDefinition, int userId = 0)
-Deletes a `DataTypeDefinition` object.
-
-### .GetDataTypeById(Guid id)
-Gets an `IDataType`  by its unique Id.
-
-### .GetAllDataTypes()
-Gets a complete list of all registered DataTypes as `IDataType` objects.
-
-### .GetDataTypeDefinitionByControlId(Guid id)
-Gets a `DataTypeDefinition` by its control Id.
-
-### .GetPreValueAsString(int id)
-Gets a `String` containing all prevalues for a `DataTypeDefinition`.
-
-### .GetPreValuesByDataTypeId(int id)
-Gets an `IEnumerable<String>` containing all prevalues for a `DataTypeDefinition`.
-
-### .GetPreValuesCollectionByDataTypeId(int id)
-Gets a `PreValueCollection` for a `DataTypeDefinition`.
+```c#
+IDataTypeService dataTypeService = ApplicationContext.Current.Services.DataTypeService;
+```
