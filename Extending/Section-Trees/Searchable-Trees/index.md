@@ -13,43 +13,43 @@ You can create your own search mechanisms for your own custom sections or replac
 To create a search for your own custom tree you need to create a C# class that implements the interface `Umbraco.Web.Search.ISearchableTree`
 
 ### ISearchableTree
-```
-   public interface ISearchableTree
-    {
-        //
-        // Summary:
-        //     The alias of the tree that the Umbraco.Web.Search.ISearchableTree belongs to
-        string TreeAlias { get; }
 
-        //
-        // Summary:
-        //     Searches for results based on the entity type
-        // Parameters:
-        //   query:
-        //   pageSize:
-        //   pageIndex:
-        //   totalFound:
-        //   searchFrom:
-        //     A starting point for the search, generally a node id, but for members this is
-        //     a member type alias
-        IEnumerable<SearchResultItem> Search(string query, int pageSize, long pageIndex, out long totalFound, string searchFrom = null);
-    }
-```
+```csharp
+public interface ISearchableTree
+{
+    //
+    // Summary:
+    //     The alias of the tree that the Umbraco.Web.Search.ISearchableTree belongs to
+    string TreeAlias { get; }
 
+    //
+    // Summary:
+    //     Searches for results based on the entity type
+    // Parameters:
+    //   query:
+    //   pageSize:
+    //   pageIndex:
+    //   totalFound:
+    //   searchFrom:
+    //     A starting point for the search, generally a node id, but for members this is
+    //     a member type alias
+    IEnumerable<SearchResultItem> Search(string query, int pageSize, long pageIndex, out long totalFound, string searchFrom = null);
+}
+```
 
 Your implementation needs to return an IEnumerable of `SearchResultItem` items:
 
-```
-    public class SearchResultItem : EntityBasic
-    {
-        public SearchResultItem();
+```csharp
+public class SearchResultItem : EntityBasic
+{
+    public SearchResultItem();
 
-        //
-        // Summary:
-        //     The score of the search result
-        [System.Runtime.Serialization.DataMemberAttribute(Name = "score")]
-        public float Score { get; set; }
-    }
+    //
+    // Summary:
+    //     The score of the search result
+    [System.Runtime.Serialization.DataMemberAttribute(Name = "score")]
+    public float Score { get; set; }
+}
 ```
 
 A `SearchResultItem` consists of a Score (a Float value) identifying it's relevance to the search term, and the set of `EntityBasic` properties that all Umbraco objects share: eg Name, Id, Udi, Icon, Trashed, Key, ParentId, Path, Alias, AdditionalData
@@ -57,7 +57,8 @@ A `SearchResultItem` consists of a Score (a Float value) identifying it's releva
 #### Example implementation of ISearchableTree
 
 If we have a custom section Tree with alias 'favouriteThingsAlias' (see the [custom tree example](../trees-v7.md)) then we could implement searchability by creating the following c# class in our site:
-```
+
+```csharp
   public class FavouriteThingsSearchableTree : ISearchableTree
     {
         public string TreeAlias => "favouriteThingsAlias";
@@ -87,6 +88,7 @@ If we have a custom section Tree with alias 'favouriteThingsAlias' (see the [cus
         }
     }
 ```
+
 That's all we need, after an application pool recycle, if we now search in the backoffice we'll see matches from our custom 'Favourite Things' tree:
 
 ![Content Section Dashboards](images/favouritethings-search.png)
@@ -104,20 +106,22 @@ perhaps you want to replace Examine search in the backoffice with an external Se
 ### Example
 
 First create your replacement custom `ISearchableTree` implementation, using the same approach as above, but specifying the TreeAlias of the Tree you aim to replace, eg 'Member'
-```
- public string TreeAlias => "Member";
-```
-To avoid your custom implementation clashing with the default `ISearchableTree` for a Tree, you need to remove it's `ISearchableTree` implementation by Type at 'ApplicationStarting' using the `SearchableTreeResolver`:
-```
-    public class ApplicationStartUp : ApplicationEventHandler
-    {
-        protected override void ApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
-        {
-            //Remove the existing ISearchableTree implementation for the Member Tree
-            SearchableTreeResolver.Current.RemoveType<MemberTreeController>();
-        }
 
+```csharp
+public string TreeAlias => "Member";
+```
+
+To avoid your custom implementation clashing with the default `ISearchableTree` for a Tree, you need to remove it's `ISearchableTree` implementation by Type at 'ApplicationStarting' using the `SearchableTreeResolver`:
+
+```csharp
+public class ApplicationStartUp : ApplicationEventHandler
+{
+    protected override void ApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+    {
+        //Remove the existing ISearchableTree implementation for the Member Tree
+        SearchableTreeResolver.Current.RemoveType<MemberTreeController>();
     }
+}
 ```
 
 This would then allow your custom implementation of ISearchableTree with TreeAlias 'Member' to be used when searching the Member Section Tree.
