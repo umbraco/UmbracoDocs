@@ -1,3 +1,7 @@
+---
+versionFrom: 6.0.0
+---
+
 # UmbracoHelper
 
 _UmbracoHelper is the unified way to work with published content/media on your website. Whether you are using MVC or WebForms you will be able to use UmbracoHelper to query/traverse Umbraco published data._
