@@ -13,9 +13,9 @@ Then, the following application settings (in the `appSettings` section of the `W
 * `Umbraco.ModelsBuilder.ModelsMode` determines how Models Builder generates models. Valid values are:
     * `Nothing` (default): Do not generate models
     * `PureLive`: Generate models in a dynamic in-memory assembly
-    * `Dll`: Generate models in a Dll in `~/bin` (causes an application restart) whenever the user "clicks the button"
+    * `Dll`: Generate models in a Dll in `~/bin` (causes an application restart) whenever the user clicks the "generate models" button in the Developer section
     * `LiveDll`: Generate models in a Dll in `~/bin` (causes an application restart) anytime a content type changes
-    * `AppData`: Generate models in `~/App_Data/Models` (but do not compile them) whenever the user "clicks the button"
+    * `AppData`: Generate models in `~/App_Data/Models` (but do not compile them) whenever the user clicks the "generate models" button in the Developer section
     * `LiveAppData`: Generate models in `~/App_Data/Models` (but do not compile them) anytime a content type changes
 
 * `Umbraco.ModelsBuilder.EnableFactory` can be `true` (default) or `false` and determines whether Models Builder registers the built-in `IPublishedContentFactory`. When `false`, models could be generated, but would *not* be used by Umbraco.
