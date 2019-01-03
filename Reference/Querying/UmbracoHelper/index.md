@@ -467,16 +467,14 @@ Umbraco.Join("; ", "Red", 112, CurrentPage.Name);
 
 Given a non-HTML string, it replaces all line-breaks with `<br/>`
 
-```csharp
-@{
-    var multiLine = @"hello
-                        my
-                    name is
-                        ";
-}
+    @{
+        var multiLine = @"hello
+                            my
+                        name is
+                            ";
+    }
 
-@Umbraco.ReplaceLineBreaksForHtml(multiLine)
-```
+    @Umbraco.ReplaceLineBreaksForHtml(multiLine)
 
 ### .StripHtml(string html)
 
