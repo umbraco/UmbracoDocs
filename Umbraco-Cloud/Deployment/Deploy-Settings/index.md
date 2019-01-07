@@ -61,14 +61,3 @@ These timeout settings default to 8 minutes, but if you are transfering a lot of
    <deploy sessionTimeout="1200" sourceDeployTimeout="1200" httpClientTimeout="1200" databaseCommandTimeout="1200" />
 </settings>
 ```
-
-## IgnoreBrokenDependencies
-
-This setting can be set to allow a deployment to continue and finish even if there is an error. This is **not recommended** as doing so may work for that deployment but will create more issues down the line.
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<settings xmlns="urn:umbracodeploy-settings">
-   <deploy ignoreBrokenDependencies="true" /> 
-</settings>
-```
