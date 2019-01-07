@@ -62,4 +62,4 @@ public class TestWorkflow : WorkflowType
 
 The Execute() method gets a Record and a RecordEventArgs argument. These 2 arguments contains all information related to the workflow. The record contains all data and meta data submitted by the form. The RecordEventArgs contains references to what form the record is from, what state it is in and a reference to the current HttpContext
 
-The sample above uses 2 different areas to work with the record. The first is the RecordStorage class which handles all storage of the record data. The second is the RecordService, this handles record state changes and record events. Both the RecordService and RecordStorage is described in detail in the reference chapter.
+The sample above uses 2 different areas to work with the record. The first is the RecordStorage class which handles all storage of the record data. The second is the RecordService, this handles record state changes and record events.
