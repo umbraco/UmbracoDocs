@@ -4,30 +4,59 @@
 Add a new class to your project and have it inherit from Umbraco.Forms.Core.WorkflowType, implement the class. For this sample we will focus on the execute method. This method process the current record (the data submitted by the form) and have the ability to change data and state.
 
 ```csharp
-public override WorkflowExecutionStatus Execute(Record record, RecordEventArgs e) {
-	// first we log it
-	Log.Add(LogTypes.Debug, -1, "the IP " + record.IP + " has submitted a record");
+using System;
+using System.Collections.Generic;
+using umbraco.BusinessLogic;
+using Umbraco.Forms.Core;
+using Umbraco.Forms.Core.Enums;
+using Umbraco.Forms.Data.Storage;
+using Umbraco.Forms.Web.Services;
 
-	// we can then iterate through the fields
-	foreach(RecordField rf in record.RecordFields.Values){
-		// and we can then do something with the collection of values on each field
-		List<object> vals = rf.Values;
+/// <summary>
+/// Summary description for Class1
+/// </summary>
+public class TestWorkflow : WorkflowType
+{
 
-		// or just get it as a string
-		rf.ValuesAsString();
-	}
+    public TestWorkflow()
+    {
+        this.Id = new Guid("ccbeb0d5-adaa-4729-8b4c-4bb439dc0202");
+        this.Name = "TestWorkflow";
+        this.Description = "This workflow is just for testing";
+        this.Icon = "icon-chat-active";
+        this.Group = "Services";
+    }
+    public override WorkflowExecutionStatus Execute(Record record, RecordEventArgs e)
+    {
+        // first we log it
+        Log.Add(LogTypes.Debug, -1, "the IP " + record.IP + " has submitted a record");
 
-	// If we altered a field, we can save it using the record storage
-	Umbraco.Forms.Data.Storage.RecordStorage store = new RecordStorage();
-	store.UpdateRecord(record, e.Form);
-	store.Dispose();
+        // we can then iterate through the fields
+        foreach (RecordField rf in record.RecordFields.Values)
+        {
+            // and we can then do something with the collection of values on each field
+            List<object> vals = rf.Values;
 
-	// we then invoke the recordservice which handles all record states // and make the service delete the record.
-	Umbraco.Forms.Core.Services.RecordService rs = new RecordService(record);
-	rs.Delete();
-	rs.Dispose();
+            // or just get it as a string
+            rf.ValuesAsString();
+        }
 
-	return WorkflowExecutionStatus.Completed;
+        // If we altered a field, we can save it using the record storage
+        RecordStorage store = new RecordStorage();
+        store.UpdateRecord(record, e.Form);
+        store.Dispose();
+
+        // we then invoke the recordservice which handles all record states // and make the service delete the record.
+        RecordService rs = new RecordService();
+        rs.Delete(record, e.Form);
+
+        return WorkflowExecutionStatus.Completed;
+    }
+
+    public override List<Exception> ValidateSettings()
+    {
+        return new List<Exception>();
+    }
 }
 ```
 
