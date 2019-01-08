@@ -11,3 +11,5 @@ Umbraco Forms.
 ## [Umbraco Courier](UmbracoCourier/index.md)
 Architectural overview, extension and configuration guides, the intended audience is .NET developers who wish to configure, troubleshoot or extend Courier deployment functionality.
 
+## [The Licensing Model](The-Licensing-model)
+Learn more about the licensing model we use for our licensed products, Umbraco Courier and Umbraco Forms.
