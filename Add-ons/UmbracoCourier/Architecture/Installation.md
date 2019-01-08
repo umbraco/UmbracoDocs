@@ -1,6 +1,6 @@
 # Installation
 
-## Installing Courier 3
+## Installing Courier
 
 The following guide will use two example sites; *development.site* and *live.site*. The guide will go through how to install and configure Umbraco Courier on two sites in order to be able to use Courier to transfer types and content between the two.
 
@@ -60,3 +60,7 @@ When you are testing Courier on two Umbraco sites locally, it’s recommended th
 * In the navigation to the left, click **Browse _yourdomain_** 
 
 ![Setup Local hostnames](images/setupLocalIIShostnames.gif)
+
+## Reference
+
+* [Install older versions of Courier](../Old-Courier-versions/Installation)
