@@ -1,3 +1,10 @@
+---
+product: "UmbracoCms"
+complexity: "Intermediate"
+audience: "Developers"
+meta.Title: "Controllers in Umbraco"
+meta.Description: "An Umbraco API Controller is an ASP.NET WebApi controller that is used for creating REST services."
+---
 # Controllers in Umbraco
 
 _There are a few types of controllers in Umbraco that perform different tasks_
