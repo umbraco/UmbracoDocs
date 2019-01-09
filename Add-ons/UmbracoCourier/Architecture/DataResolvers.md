@@ -1,5 +1,5 @@
 # Dataresolvers	
-A dataresolver is a way to add meaning to objects courier doesn't understand. For instance, if you have a document with a custem data type, and the data type stores a NodeID reference to another page (like a content picker), Courier doesn't know the number refers to another node, but by adding a dataresolver, you can tell courier that items with the data type, contains a node ID, and add the needed dependencies and resources to have a successful deployment.
+A dataresolver is a way to add meaning to objects Courier doesn't understand. For instance, if you have a document with a custem data type, and that data type stores a NodeID reference to another page (like a content picker), Courier doesn't know that the number refers to another node. By adding a dataresolver, you can tell Courier that items with the data type, contains a NodeID, and it will add the needed dependencies and resources to have a successful deployment.
 
 ### AscxFiles
 * **Full name:** `Umbraco.Courier.DataResolvers.ascxFiles`
@@ -11,7 +11,7 @@ A dataresolver is a way to add meaning to objects courier doesn't understand. Fo
 * **Triggers on:** Propertydata, which have a contentpicker as data type (configured in courier.config)
 * If value is set, and is an int, courier will convert the value to the Node GUID, add the node as a dependency. On extraction the GUID will be converted back to the right ID.
 
-##### Configuration
+**Configuration**
 
 ```xml
 <contentPickers>
@@ -27,13 +27,14 @@ A dataresolver is a way to add meaning to objects courier doesn't understand. Fo
 
 ### CSSResources
 * **Full name:** `Umbraco.Courier.DataResolvers.CssResources`
-* **Triggers on:**Stylesheets
-* Includes images included in the stylesheet as resources.
+* **Triggers on:** Stylesheets
+* Includes images included in the stylesheet as resources
 
 ### DampResolver
 * **Full name:** `Umbraco.Courier.DataResolvers.DampResolver`
 * **Triggers on:** Propertydata, which have a DAMP pick as data type
-* If value is set, and is an int, courier will convert the value to the media GUID, add the media item as a dependency. On extraction the GUID will be converted back to the right ID.
+* If value is set, and is an `int`, Courier will convert the value to the media GUID and add the media item as a dependency 
+* On extraction the GUID will be converted back to the right ID.
 
 ### EmbeddedContent
 * **Full name:** `Umbraco.Courier.DataResolvers.EmbeddedContent`
@@ -42,16 +43,16 @@ A dataresolver is a way to add meaning to objects courier doesn't understand. Fo
 
 ### Images
 * **Full name:** `Umbraco.Courier.DataResolvers.Images`
-* **Triggers on:** Propertydata, which contains a RTE 
-* Finds linked images in the RTE html and sorts out IDs paths, and resources.
+* **Triggers on:** Propertydata, which contains an RTE 
+* Finds linked images in the RTE HTML and sorts out IDs, paths and resources
 
 
 ### KeyValuePrevalueEditor
 * **Full name:** `Umbraco.Courier.DataResolvers.KeyValuePrevalueEditor`
-* **Triggers on:** Propertydata, which contains a keyvalue editor like dropdownlist, radiobutton list, checkboxlist 
-* Resolves prevalues from IDs to actual value, and back again on extraction.
+* **Triggers on:** Propertydata, which contains a keyvalue editor like dropdownlist, radiobutton list or checkboxlist 
+* Resolves prevalues from IDs to actual value, and back again on extraction
 
-##### Configuration
+**Configuration**
 
 ```xml
 <keyValuePrevalueEditors>
@@ -65,7 +66,7 @@ A dataresolver is a way to add meaning to objects courier doesn't understand. Fo
 * **Triggers on:** Propertydata, which contains a the string {locallink: 
 * Resolves the ID to a GUID, and adds the linked document as a dependency
 
-##### Configuration
+**Configuration**
 
 ```xml
 <localLinks>
@@ -80,9 +81,9 @@ A dataresolver is a way to add meaning to objects courier doesn't understand. Fo
 ### MacroParameters
 * **Full name:** `Umbraco.Courier.DataResolvers.MacroParameters`
 * **Triggers on:** Propertydata and Templates, which contains `<umbraco:macro/>` elements
-* Looks at each property and checks if it contains a node ID reference. If it does, the reference is changed to a GUID, and the node is added as a dependency.
+* Looks at each property and checks if it contains a node ID reference - If it does, the reference is changed to a GUID, and the node is added as a dependency
 
-##### Configuration
+**Configuration**
 Configuring which data types can contain macro elements to resolve
 
 ```xml
@@ -113,10 +114,11 @@ Configuring which macro property types contains references to other nodes
 
 ### MediaPicker
 * **Full name:** `Umbraco.Courier.DataResolvers.MediaPicker`
-* **Triggers on:** Propertydata, which have a mediapicker as data type (configured in courier.config)
-* If value is set, and is an int, courier will convert the value to the media GUID, add the node as a dependency. On extraction the GUID will be converted back to the right ID.
+* **Triggers on:** Propertydata, which have a mediapicker as data type (configured in `courier.config`)
+* If value is set, and is an `int`, Courier will convert the value to the media GUID, add the node as a dependency
+* On extraction the GUID will be converted back to the right ID
 
-##### Configuration:
+**Configuration**
 
 ```xml
 <mediaPickers>
@@ -129,23 +131,26 @@ Configuring which macro property types contains references to other nodes
 ### RelatedLinks
 * **Full name:** `Umbraco.Courier.DataResolvers.RelatedLinks`
 * **Triggers on:** Propertydata, which have a RelatedLinks type as data type
-* If values are set, courier will convert the values to the corresponding GUIDs, add the nodes as dependencies. On extraction the GUIDs will be converted back to the right IDs.
+* If values are set, Courier will convert the values to the corresponding GUIDs, add the nodes as dependencies
+* On extraction the GUIDs will be converted back to the right IDs
 
 
 ### RTEstylesheets
 * **Full name:** `Umbraco.Courier.DataResolvers.RTEstylesheets`
-* **Triggers on:** The Rich text editor DataType
+* **Triggers on:** The Rich text editor data type
 * If the RTE have any stylesheets associated, these will be added as dependencies to the data type
 
 ### Tags
 * **Full name:** `Umbraco.Courier.DataResolvers.Tags`
 * **Triggers on:**  Propertydata, which have a Tags type as data type
-* Selected tags are included as separate dependencies and extracted along with the document.
+* Selected tags are included as separate dependencies and extracted along with the document
 
 ### TemplateResources
 * **Full name:** `Umbraco.Courier.DataResolvers.TemplateResources`
 * **Triggers on:**  Templates
-* Detects linked images, JavaScript files and stylesheets. These are added as resources and dependencies on packaging. It also detects locallinks in the template and adds the linked Node as a dependency.
+* Detects linked images, JavaScript files and stylesheets
+* These are added as resources and dependencies on packaging
+* It also detects locallinks in the template and adds the linked Node as a dependency
 
 ### UltimatePicker
 * **Full name:** `Umbraco.Courier.DataResolvers.UltimatePicker`
@@ -156,9 +161,9 @@ Configuring which macro property types contains references to other nodes
 ### Upload
 * **Full name:** `Umbraco.Courier.DataResolvers.Upload`
 * **Triggers on:**  Propertydata, which have a Upload type as data type
-* If upload field contains a file, the file is added as a resource on the document.
+* If upload field contains a file, the file is added as a resource on the document
 
-##### Configuration
+**Configuration**
 
 ```xml
 <files>
@@ -171,4 +176,4 @@ Configuring which macro property types contains references to other nodes
 ### UsercontrolWrapper
 * **Full name:** `Umbraco.Courier.DataResolvers.UsercontrolWrapper`
 * **Triggers on:**  The UsercontrolWrapper Data types
-*If the data type has a .ascx file selected as render, the file is added as a resource to ensure it is transferred with the data type.
+* If the data type has a `.ascx` file selected as render, the file is added as a resource to ensure it is transferred with the data type
