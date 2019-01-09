@@ -85,17 +85,28 @@ angular.module("umbraco")
         var vm = this;
         vm.CurrentNodeId = editorState.current.id;
         vm.CurrentNodeAlias = editorState.current.contentTypeAlias;
+        vm.Counter = 0;
+
+        vm.UpdateCounter = function () {
+            vm.Counter++;
+
+            $scope.model.badge = {
+                count: vm.Counter,
+                type: vm.Counter > 9 ? "alert" : vm.Counter > 4 ? "warning" : null
+            };
+        };
 
         var user = userService.getCurrentUser().then(function (user) {
             console.log(user);
             vm.UserName = user.name;
         });
+        
     });
 ```
 
 And in the .html file:
 
-```csharp
+```html
 <div class="umb-box" ng-controller="My.CakeContentApp as vm">
     <div class="umb-box-header">
         <div class="umb-box-header-title">
@@ -103,6 +114,9 @@ And in the .html file:
         </div>
     </div>
     <div class="umb-box-content">
+        <h3>Count: {{vm.Counter}}</h3>
+        <button ng-click="vm.UpdateCounter()" class="btn" prevent-default>Update Counter</button>
+
         <ul>
             <li>Current node id: <b>{{vm.CurrentNodeId}}</b></li>
             <li>Current node alias: <b>{{vm.CurrentNodeAlias}}</b></li>
