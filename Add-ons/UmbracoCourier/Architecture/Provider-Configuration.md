@@ -3,9 +3,8 @@
 _Courier comes with a number of built-in providers to package and extract data, some of these have different configuration settings, which can be found below_
 
 
-### Files
-Configuration can expose certain folders and files in the item picker in the courier section use `file` and `folder` elements
-in the configuration to add specific paths, wildcards are not accepted:
+## Files
+Configuration can expose certain folders and files in the item picker in the Courier section. Use `file` and `folder` elements in the configuration to add specific paths - wildcards are not accepted:
 
 ```xml
 <fileItemProvider>
@@ -14,16 +13,18 @@ in the configuration to add specific paths, wildcards are not accepted:
 </fileItemProvider>
 ```
 
-### Folders
+## Folders
 Same as above, but only with folders
 
 ```xml
 <folderItemProvider>
-    <folder>~/media/assets/somefolder</folder>
+    <include>
+        <folder>~/media/assets/somefolder</folder>
+    </include>
 </folderItemProvider>
 ```
 
-### Mediatypes
+## Mediatypes
 
 Single option to turn of whether allowed/child media types should be added as a dependency or not
 
@@ -33,11 +34,11 @@ Single option to turn of whether allowed/child media types should be added as a 
 </mediaTypeItemProvider>
 ```
 
-### DocumentTypes
+## DocumentTypes
 
 - Option to include all allowed templates as a dependency
-- option to include all allowed types as a dependency 
-- option filter out certain data types.
+- Option to include all allowed types as a dependency 
+- Option filter out certain data types.
 
 ```xml
 <documentTypeItemProvider>
@@ -57,7 +58,6 @@ Single option to turn of whether allowed/child media types should be added as a 
     <add key="memberpicker">2B24165F-9782-4AA3-B459-1DE4A4D21F60</add>
     <add key="simpleeditor">1251C96C-185C-4E9B-93F4-B48205573CBD</add>
     <add key="truefalse">92897BC6-A5F3-4FFE-AE27-F2E7E33DDA49</add>
-    <add key="contentpicker">A6857C73-D6E9-480C-B6E6-F15F6AD11125</add>
     <add key="datepicker">5046194E-4237-453C-A547-15DB3A07C4E1</add>
     <add key="datepickerWithTime">E4D66C0F-B935-4200-81F0-025F7256B89A</add>
     <add key="numeric">2E6D3631-066E-44B8-AEC4-96F09099B2B5</add>
@@ -65,7 +65,7 @@ Single option to turn of whether allowed/child media types should be added as a 
 </documentTypeItemProvider>
 ```
     
-### Media
+## Media
 
 - Option to include parent nodes as a forced dependency 
 - option to automatically include all children (in case a folder is transferred).
@@ -73,11 +73,11 @@ Single option to turn of whether allowed/child media types should be added as a 
 ```xml
 <mediaItemProvider>
     <includeChildren>false</includeChildren>
-    <includeParents>false</includeParents>
+    <includeParents>true</includeParents>
 </mediaItemProvider>
 ```
 
-### Documents
+## Documents
 
 - Option to include parents as dependencies.
 
@@ -87,27 +87,28 @@ Single option to turn of whether allowed/child media types should be added as a 
 </documentItemProvider>
 ```
   
-### Templates
+## Templates
 
-- Option to collect macros found in templates as a dependency, 
-- toggle if courier should look for files linked in the template(js,css,image files)
-- Collect locallink: references and add the documents as dependencies
-- Parse macro's and add any nodeIds passed to the macro as a dependency
+- Option to collect macros found in templates as a dependency 
+- Toggle whether Courier should look for files linked in the template(js,css,image files)
+- Collect locallink references and add the documents as dependencies
+- Parse macros and add any NodeIDs passed to the macro as a dependency
 
 ```xml
 <templateItemProvider>
     <macrosAreDependencies>true</macrosAreDependencies>
     <processTemplateResources>true</processTemplateResources>
-    <localLinksAreDependencies>true</localLinksAreDependencies>
-    <macroParametersAreDependencies>true</macroParametersAreDependencies>
+    <localLinksAreDependencies>false</localLinksAreDependencies>
+    <macroParametersAreDependencies>false</macroParametersAreDependencies>
 </templateItemProvider>
 ```
 
-### Ignore
+## Ignore
 You can ignore providers during app start by passing in their name:
 
 ```xml
+<!-- Add the fully classified Class name to ignore a provider from loading... -->
 <ignore>
-    <add>TemplateItemProvider</add>
+    <!--<add>my.namespace.*</add>-->
 </ignore>
 ```
