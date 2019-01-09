@@ -106,7 +106,7 @@ angular.module("umbraco")
 
 And in the .html file:
 
-```html
+```csharp
 <div class="umb-box" ng-controller="My.CakeContentApp as vm">
     <div class="umb-box-header">
         <div class="umb-box-header-title">
