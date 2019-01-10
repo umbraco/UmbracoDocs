@@ -12,7 +12,7 @@ If this sounds like you, you should evaluate the Azure Blob Storage provider. It
 
 ### Changing the .NET framework target version
 
-Umbraco Cloud runs .NET version 4.5 by default, but most of the packages you will need requires version 4.52, luckily this is also the maximum version compatible with Cloud currently. So the first thing to do is to change your project to target that.
+Umbraco Cloud runs .NET version 4.5 by default, but most of the packages you will need requires version 4.5.2, luckily this is also the maximum version compatible with Cloud currently. So the first thing to do is to change your project to target that.
 
 After cloning down the site you can go to the property pages and change the Target Framework:
 
