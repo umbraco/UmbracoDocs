@@ -57,6 +57,10 @@ They do not get routed via an MVC Area so any Views must exist in the following 
 * `~/Views/Shared/`
 * `~/Views/`
 
+:::tip
+If you get a 404 error when trying to access your Surface Controller you may have forgotten to add a namespace to it!
+:::
+
 ## Plugin based controllers
 
 If you are shipping a SurfaceController in a package then you should definitely be creating a plugin based SurfaceController. The only difference between creating a plugin based controller and locally declared controller is that you need to add an attribute to your class which defines the MVC Area you'd like your controller routed through. Here's an example:
@@ -76,10 +80,6 @@ namespace name.Core.Controllers
 ```
 
 In the above, I've specified that I'd like my MyController to belong to the MVC Area called 'SuperAwesomeAnalytics'. Perhaps it is obvious but if you are creating a package that contains many SurfaceControllers then you should most definitely ensure that all of your controllers are routed through the same MVC Area.
-
-:::tip
-If you get a 404 error when trying to access your Surface Controller you may have forgotten to add a namespace to it!
-:::
 
 #### Routing for plugin based controllers
 
