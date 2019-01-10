@@ -28,16 +28,22 @@ To create a locally declared SurfaceController:
 * Create a controller that inherits from `Umbraco.Web.Mvc.SurfaceController`
 * The controller must be a public class.
 * The controller's name must be suffixed with the term `Controller`
+* The controller must be inside a namespace
 
 For example:
 
-	public class MyController : Umbraco.Web.Mvc.SurfaceController
-	{
-		public ActionResult Index() 
-		{
-			return Content("hello world");
-		}
-	}
+```csharp
+namespace name.Core.Controllers
+{
+    public class MyController : Umbraco.Web.Mvc.SurfaceController
+    {
+        public ActionResult Index() 
+        {
+            return Content("hello world");
+        }
+    }
+}
+```
 
 #### Routing for locally declared controllers
 
@@ -55,6 +61,9 @@ They do not get routed via an MVC Area so any Views must exist in the following 
 
 If you are shipping a SurfaceController in a package then you should definitely be creating a plugin based SurfaceController. The only difference between creating a plugin based controller and locally declared controller is that you need to add an attribute to your class which defines the MVC Area you'd like your controller routed through. Here's an example:
 
+```chsarp
+namespace name.Core.Controllers
+{
 	[PluginController("SuperAwesomeAnalytics")]
 	public class MyController : Umbraco.Web.Mvc.SurfaceController
 	{
@@ -63,6 +72,8 @@ If you are shipping a SurfaceController in a package then you should definitely 
 			return Content("hello world");
 		}
 	}
+}
+```
 
 In the above, I've specified that I'd like my MyController to belong to the MVC Area called 'SuperAwesomeAnalytics'. Perhaps it is obvious but if you are creating a package that contains many SurfaceControllers then you should most definitely ensure that all of your controllers are routed through the same MVC Area.
 
