@@ -35,7 +35,7 @@ Displays a calendar UI for selecting dates and time
 ## Decimal
 `Alias: Umbraco.Decimal`
 
-A configurable number control allowing only numbers inclusing decimals.
+A configurable number control allowing only numbers including decimals.
 
 ## [Dropdown](Dropdown.md)
 `Alias: Umbraco.DropDown.Flexible`

@@ -103,9 +103,9 @@ This is a great candidate for a [Razor Helper](https://weblogs.asp.net/scottgu/a
 ```csharp
 @helper RenderSiteMapUrlEntry(IPublishedContent node)
 {
-    //we're passing 'true' as an additional parameter to HasValue and GetPropertyValue this means the value will be sought 'recursively' up the content tree, until a value is found.
+    // we're passing 'true' as an additional parameter to HasValue and GetPropertyValue this means the value will be sought 'recursively' up the content tree, until a value is found.
     var changeFreq = node.HasValue("searchEngineChangeFrequency", true) ? node.GetPropertyValue<string>("searchEngineChangeFrequency", true) : "monthly";
-    //with the relative priority, this is a per page setting only, so we're not using recursion, so we won't pass 'true' here and we'll default to 0.5 if no value is set
+    // with the relative priority, this is a per page setting only, so we're not using recursion, so we won't pass 'true' here and we'll default to 0.5 if no value is set
     var priority = node.HasValue("searchEngineRelativePriority") ? node.GetPropertyValue<string>("searchEngineRelativePriority") : "0.5";
     <url>
         <loc>@EnsureUrlStartsWithDomain(node.UrlWithDomain())</loc>
@@ -134,7 +134,7 @@ Razor functions exist inside a __single__ @functions block inside your template
             return url;
         }
         else {
-            //whatever makes sense for your site here...
+            // whatever makes sense for your site here...
             var domainPrefix = string.Format("https://{0}/", HttpContext.Current.Request.ServerVariables["HTTP_HOST"]);
             return domainPrefix + url;
         }
@@ -175,7 +175,7 @@ foreach (var page in sitePages){
             if (childPage.Children.Any()){
                 var grandChildPages = childPage.Children();
                 foreach (var grandChildPage in grandChildPages){
-                    //... on forever how do we stop?
+                    // ... on forever how do we stop?
                 }
             }
         }
@@ -305,13 +305,13 @@ now we can pass this value into our helper
 
 @helper RenderSiteMapUrlEntry(IPublishedContent node)
 {
-    //we're passing 'true' as an additional parameter to GetPropertyValue to read the value from the parent nodes, so this setting could be set 'per section
+    // we're passing 'true' as an additional parameter to GetPropertyValue to read the value from the parent nodes, so this setting could be set 'per section
     var changeFreq = node.GetPropertyValue<string>("searchEngineChangeFrequency", true);
     if (String.IsNullOrEmpty(changeFreq))
     {
         changeFreq = "monthly";
     }
-    //with the relative priority, this is a per page setting, so we're not passing true
+    // with the relative priority, this is a per page setting, so we're not passing true
     var priority = node.GetPropertyValue<string>("searchEngineRelativePriority");
     if (String.IsNullOrEmpty(priority))
     {
@@ -346,7 +346,7 @@ now we can pass this value into our helper
         }
         else
         {
-            //whatever makes sense for your site here...
+            // whatever makes sense for your site here...
             var domainPrefix = string.Format("https://{0}/", HttpContext.Current.Request.ServerVariables["HTTP_HOST"]);
             return domainPrefix + url;
         }
@@ -361,7 +361,7 @@ Finally let search engines know the url for your sitemap by updating your robots
     Sitemap: https://www.yourlovelysite.com/xmlsitemap
     User-agent: *
 
-Once you introduce a Sitemap for the first time, you might suddenly find yourself being crawled by multiple different search engine bots, which is exactly what you want, however if your site or hosting is a littly creaky, you might want to add a crawl rate to the robots.txt to instruct well behaved search engine bots to give a bit of breathing space to your site in between crawl requests:
+Once you introduce a Sitemap for the first time, you might suddenly find yourself being crawled by multiple different search engine bots, which is exactly what you want, however if your site or hosting is a little creaky, you might want to add a crawl rate to the robots.txt to instruct well behaved search engine bots to give a bit of breathing space to your site in between crawl requests:
 
     Sitemap: https://www.yourlovelysite.com/xmlsitemap
     User-agent: *
@@ -373,4 +373,4 @@ Visit [Xml-Sitemaps.com](https://www.xml-sitemaps.com/validate-xml-sitemap.html)
 
 #### Summary
 
-This is just one way to add an XML Sitemap to your site, depending on your site it might not always be the 'best way' eg it will be much faster using XSLT! - particulary for large sites - however this tutorial aims to serve as an introduction to Razor, Helpers, Functions, IPublishedContent, and working with the Umbraco Content Tree, it is not trying to establish the 'only best practice' way to achieve an Xml SiteMap!
+This is just one way to add an XML Sitemap to your site, depending on your site it might not always be the 'best way' eg it will be much faster using XSLT! - particularly for large sites - however this tutorial aims to serve as an introduction to Razor, Helpers, Functions, IPublishedContent, and working with the Umbraco Content Tree, it is not trying to establish the 'only best practice' way to achieve an Xml SiteMap!

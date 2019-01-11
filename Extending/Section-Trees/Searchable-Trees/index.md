@@ -65,7 +65,7 @@ If we have a custom section Tree with alias 'favouriteThingsAlias' (see the [cus
 
         public IEnumerable<SearchResultItem> Search(string query, int pageSize, long pageIndex, out long totalFound, string searchFrom = null)
         {
-            // your custom search implmentation starts here
+            // your custom search implementation starts here
             Dictionary<int, string> favouriteThings = new Dictionary<int, string>();
             favouriteThings.Add(1, "Raindrops on Roses");
             favouriteThings.Add(2, "Whiskers on Kittens");

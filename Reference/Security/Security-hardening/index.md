@@ -66,4 +66,4 @@ After:
 
 ![Web.config - after](images/webconfig-after.png)
 
-From now on, you can only get access to the loginscreen by going to this path and no longer by going to /umbraco/.
+From now on, you can only get access to the login screen by going to this path and no longer by going to /umbraco/.

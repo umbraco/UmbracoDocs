@@ -4,7 +4,7 @@ _This example is for creating a statically routed website which means that it's 
 
 #### Setup, bootstrap & launch
 
-The Headless client nuget package is hosted on a custom MyGet feed, so you need to create a `NuGet.config` file for your project which can be done via the command line. If you don't do this then you would need to use the `--source` parameter and a few other tricks so it's just simpler to use a `Nuget.config` file. 
+The Headless client NuGet package is hosted on a custom MyGet feed, so you need to create a `NuGet.config` file for your project which can be done via the command line. If you don't do this then you would need to use the `--source` parameter and a few other tricks so it's just simpler to use a `Nuget.config` file. 
 
 So __before__ you run any script for creating a project, you will need to do this in the new folder where you are creating your project:
 

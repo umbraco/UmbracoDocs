@@ -76,7 +76,7 @@ Add 2 additional files to the `/App_Plugins/CakeContentApp/` folder:
 
 These 2 files will be our main files for the app, with the .html file handling the view and the .js file handling the functionality.
 
-In the .js file we declare our AngularJS controller and inject umbraco's editorState and userService:
+In the .js file we declare our AngularJS controller and inject Umbraco's editorState and userService:
 
 ```javascript
 angular.module("umbraco")
