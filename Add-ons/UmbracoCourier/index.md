@@ -24,4 +24,4 @@ How Courier is supposed to be used, to deploy content and developer assets from 
 These are the howtos, which describes how you extend courier, and add new providers or hook into existing ones.
 
 ## [Common Issues](CommonIssues)
-For developers configuring or troubleshooting Courier
+For developers configuring or troubleshooting Courier.
