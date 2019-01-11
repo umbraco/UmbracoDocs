@@ -17,7 +17,7 @@ For data resolvers for the most commonly used community packages, download and a
 Even though Nested Content is part of Umbraco (since version 7.7), you need the Courier.Contrib package installed, in order to Courier to able to handle Nested Content data.
 :::
 
-You can also create your own data resolvers. Read the [Data Resolvers](Developer/DataResolvers) article to learn more about that.
+You can also create your own data resolvers. Read the [Data Resolvers](Developer/DataResolvers.md) article to learn more about that.
 
 ## Most common issues, and how to solve them
 
