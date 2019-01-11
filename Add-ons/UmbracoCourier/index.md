@@ -17,11 +17,11 @@ Configure the domains you need to be able to use Courier on.
 ## [Configuring Courier](Configuration)
 Learn about the various ways to configure Courier.
 
-## [Using Courier](UsingCourier)
+## [Using Courier](UsingCourier.md)
 How Courier is supposed to be used, to deploy content and developer assets from one site to another. Gives insight into how Courier is built.
 
 ## [Developer Documentation](Developer)
 These are the howtos, which describes how you extend courier, and add new providers or hook into existing ones.
 
-## [Common Issues](CommonIssues)
+## [Common Issues](CommonIssues.md)
 For developers configuring or troubleshooting Courier.
