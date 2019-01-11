@@ -11,7 +11,7 @@ The following guide will use two example sites; *development.site* and *live.sit
 * Once Courier has been installed, make sure to **refresh the page**
 * Next step is to **add a location** 
     * In the gif below Courier is installed on development.site, and live.site is added as the location
-* The location you add, will be set in the `config/courier.config` file as a *repository*. Learn more about this in the [Repository Providers](../Configuration/RepositoryProviders) article.
+* The location you add, will be set in the `config/courier.config` file as a *repository*. Learn more about this in the [Repository Providers](../Configuration/RepositoryProviders.md) article.
 
 ![InstallingCourier](images/InstallCourier.gif)
 
