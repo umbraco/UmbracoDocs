@@ -194,8 +194,7 @@ To associate the hosted JSON schema file to all package.manifest files you will 
 * Browse down to Text Editor -> File Extension
 * Add `manifest` into the Extension box
 * Select `JSON Editor` from the dropdown and add the mapping
-* Open a `package.manifest` file and ensure in the top left hand corner you see the schema with the URL set to http://json.schemastore.org/package.manifest
-
+* Open a `package.manifest` file and ensure in the top left hand corner you see the schema with the URL set to http://json.schemastore.org/package.manifest. You can also add the schema inline in the json file (see below).
 
 ### Setting up Visual Studio Code
 
@@ -215,5 +214,17 @@ To associate the hosted JSON schema file to all package.manifest files you will 
             "url": "http://json.schemastore.org/package.manifest"
         }
     ]
+}
+```
+
+### adding inline schema
+
+Editors like visual studio can use the `$schema` notation in your file.  
+
+```json
+{
+    "$schema" : "http://json.schemastore.org/package.manifest",
+    "javascript": [],
+    "other properties": ""    
 }
 ```
