@@ -8,13 +8,13 @@ You can purchase Courier from [Umbraco Apps](https://umbraco.com/apps/umbraco-co
 
 In this section you can find all the information you need in order to install, configure and work with Courier on a daily basis.
 
-## [Install Courier](Installation)
+## [Install Courier](Installing)
 Thorough step-by-step documentation on how to install Courier and setup local test environments.
 
 ## [Configuring a license](../The-Licensing-model)
 Configure the domains you need to be able to use Courier on.
 
-## [Configuring Courier](Architecture/Configuration)
+## [Configuring Courier](Configuration)
 Learn about the various ways to configure Courier.
 
 ## [Using Courier](UsingCourier)
@@ -25,8 +25,3 @@ These are the howtos, which describes how you extend courier, and add new provid
 
 ## [Common Issues](CommonIssues)
 For developers configuring or troubleshooting Courier
-
---- 
-
-## [Courier Architecture](Architecture/)
-This section describes the included bits and pieces that ships with Courier to give an overview of what each bit does, and how it can be turned on/off if needed.
