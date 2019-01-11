@@ -13,9 +13,6 @@ Overview on how to configure Courier and its different providers
 
 ----
 
-## [Included Data resolvers](DataResolvers.md)
-Courier includes a number of core Resolvers to work with core data like content pickers and RTE content
-
 ## [Included Resource resolvers](ResourceResolvers.md)
 Courier includes a number of resource resolvers to modify deployed files as they are packaged and extracted
 
