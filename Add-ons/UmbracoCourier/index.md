@@ -7,8 +7,10 @@ With Courier installed on your site, you can simply tell it to deploy an item fr
 In this section you can find all the information you need in order to install, configure and work with Courier on a daily basis.
 
 ## [Install Courier](Architecture/Installation.md)
+Thorough step-by-step documentation on how to install Courier and setup local test environments.
 
 ## [Configuring Courier](Architecture/Configuration.md)
+Learn about the various ways to configure Courier.
 
 ## [Using Courier](UsingCourier.md)
 How Courier is supposed to be used, to deploy content and developer assets from one site to another. Gives insight into how Courier is built.
