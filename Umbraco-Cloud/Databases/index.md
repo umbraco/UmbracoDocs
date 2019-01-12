@@ -55,7 +55,7 @@ In Visual Studio this is done through the Server Explorer. Add a new connection 
 
 If this is your first time connecting to a local database this way, you might have to choose a data source when clicking `Add Connection`. Select `Microsoft SQL Server Database File` and hit OK.
 
-Umbraco will create an mdf file (LocalDb) if you have SQL Server installed on your local machine, provided LocalDb is enabled and can be discovered by Deploy. If Deploy can't create an mdf file it will create a SQL CE (sdf) file instead. 
+Umbraco will create an mdf file (LocalDB) if you have SQL Server installed on your local machine, provided LocalDB is enabled and can be discovered by Deploy. If Deploy can't create an mdf file it will create a SQL CE (sdf) file instead. 
 
 ## Backups
 It's possible to create a backup of a Cloud database. It can be done by creating a PowerShell script.
