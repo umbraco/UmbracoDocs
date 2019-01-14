@@ -26,7 +26,7 @@ Same as above, but only with folders
 
 ## Mediatypes
 
-Single option to turn of whether allowed/child media types should be added as a dependency or not
+Single option to choose whether allowed/child media types should be added as a dependency or not
 
 ```xml
 <mediaTypeItemProvider>
