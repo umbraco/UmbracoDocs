@@ -6,7 +6,7 @@ versionTo: 7.3.0
 
 ## IsProtected
 
-Previously you had to add a child Id to the `IsProtected` mehthod on the `UmbracoHelper`.
+Previously you had to add a child Id to the `IsProtected` method on the `UmbracoHelper`.
 
 ```csharp
 // Old example (pre 7.3)
@@ -18,4 +18,4 @@ Previously you had to add a child Id to the `IsProtected` mehthod on the `Umbrac
 }
 ```
 
-In newer version the child id parameter is removed, an only the Path parameter is necessary.
+In the newer version the child id parameter is removed, only the Path parameter is necessary.

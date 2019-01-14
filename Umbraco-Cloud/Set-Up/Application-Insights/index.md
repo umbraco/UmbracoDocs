@@ -1,4 +1,4 @@
-# Application Insigths on Umbraco cloud
+# Application Insights on Umbraco cloud
 
 ## Installing application Insights 
 This guide will instruct you how to install Application Insights (AI) for your cloud solution.
@@ -6,7 +6,7 @@ This guide will instruct you how to install Application Insights (AI) for your c
 ### Azure portal
 First thing to have in place when installing AI is of course an AI resource on Azure, so go ahead and open your favorite browser and log onto the [Azure Portal](https://portal.azure.com) and spin up a new AI Resource.
 
-After that, you can go ahead and grab your `instrumentation key`, from the AI Resouce overview
+After that, you can go ahead and grab your `instrumentation key`, from the AI Resource overview
 
 ![alt text](images/01-Instrumentation-key.png "Instrumentation Key")
 
@@ -17,7 +17,7 @@ The easiest way is to open your favorite Visual Studio instance, go to Package M
 
 ```Install-Package Microsoft.ApplicationInsights.Web ``` 
 
-This will install Application Ansights and all of its dependencies. It will also create an `ApplicationInsights.config` file.
+This will install Application Insights and all of its dependencies. It will also create an `ApplicationInsights.config` file.
 
 Go ahead, open this file and paste in your `instrumentation key` found in the previous section.
 

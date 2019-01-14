@@ -10,7 +10,7 @@ This is the documentation project for Umbraco. The scope of this project is to p
 [Getting started (available here)](Getting-Started/) is an introduction to Umbraco containing explanations of basic concepts and short tutorials.
 
 ## Implementation
-[Implementation (available here)](Implementation/) is an overview of Umbracos structure and pipeline.
+[Implementation (available here)](Implementation/) is an overview of Umbraco's structure and pipeline.
 
 ## Developers Reference
 [Reference (available here)](Reference/index.md) is a collection of API references specifically for developers working with and extending Umbraco.

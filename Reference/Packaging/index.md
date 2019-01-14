@@ -5,7 +5,7 @@ Currently we have 10 actions available. If you need to perform more advanced ins
 
 ## Adding actions to a package script
 
-With the build-in packager, it is possible to add the actions you need directly from the UI. Just add <Action> nodes to the textare.
+With the build-in packager, it is possible to add the actions you need directly from the UI. Just add <Action> nodes to the textarea.
 Alternatively the actions can be manually added to the package manifest by adding a <Actions> node containing the package actions xml.
 
 ## Standard fields on all actions

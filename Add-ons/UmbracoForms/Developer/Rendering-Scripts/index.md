@@ -73,13 +73,13 @@ Now we'll need to let Forms know where we want to output the script instead. So 
 @Umbraco.RenderMacro("FormsRenderScripts")
 ```
 
-### Using RenderMacro in non umbraco controllers
+### Using RenderMacro in non Umbraco controllers
 
 Maybe you end up with an error like this "CS0234: The type or namespace name 'RenderMacro' does not exist in the namespace 'Umbraco' (are you missing an assembly reference?)". This is probably due to the fact that you're using custom controllers and viewmodels where the UmbracoContext is not exposed. The fix is to create your own UmbracoContext first:
 
 ```csharp
 @{
-    // create your own umbraco context
+    // create your own Umbraco context
     var umbraco = new UmbracoHelper(UmbracoContext.Current);
 }
 @umbraco.RenderMacro("FormsRenderForm", new { FormGuid = "1203e391-30bb-4ffc-8fe6-1785d6093108" })

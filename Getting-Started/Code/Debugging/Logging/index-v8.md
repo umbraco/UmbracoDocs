@@ -7,7 +7,7 @@ versionFrom: 8.0.0
 
 In Umbraco v8.0+ we have changed the underlying logging framework from [Log4Net](https://logging.apache.org/log4net/) to [Serilog](https://serilog.net/).
 
-Out of the box for v8.0+ we will write two log files to disk, a .txt file in the same identical format as previously logged by Log4Net, so that you can continue to use any tools or regular expressions you may have used and secondly we will write a JSON file that contains a more rich logfile, that allows tools to perform searches & correlation on log patterns alot easier.
+Out of the box for v8.0+ we will write two log files to disk, a .txt file in the same identical format as previously logged by Log4Net, so that you can continue to use any tools or regular expressions you may have used and secondly we will write a JSON file that contains a more rich logfile, that allows tools to perform searches & correlation on log patterns a lot easier.
 
 The default location of these files are written to `App_Data/Logs` and contains the Machine name, along with the date too:
 * `/App_Data/Logs/UmbracoTraceLog.DELLBOOK.20181108.txt`
@@ -21,7 +21,7 @@ Serilog is a logging framework that allows us to do structured logging or write 
 2018-11-12 08:34:50,419 [P27004/D2/T1] INFO   Umbraco.Core.Runtime.CoreRuntime - Booted. (4586ms) [Timing 9e76e5f]
 ```
 
-Here is an example of the same log message represented as JSON, you can see here we have much more information that would allow us to search & filter logs based on these properties with an appropiate logging system.
+Here is an example of the same log message represented as JSON, you can see here we have much more information that would allow us to search & filter logs based on these properties with an appropriate logging system.
 
 ```json
 {
@@ -81,7 +81,7 @@ Logger.Info<MyApiController>($"We are saying hello to {name}");
 Logger.Info<MyApiController>("We are saying hello to " + name);
 ```
 
-The above examples  which use the bad approach will write to the log file, however we will not get a seperate property logged with the message and we have no easy way to search for all log messages of this type.
+The above examples  which use the bad approach will write to the log file, however we will not get a separate property logged with the message and we have no easy way to search for all log messages of this type.
 
 Where as the previous example we would be able to find all log messages that use the message template `We are saying hello to {Name}`
 
@@ -177,7 +177,7 @@ Add the following to the `/config/serilog.user.config` file, which will create a
 
 ### Filtering user log file to include only log messages from your namespace
 
-With the above example we are able to write to a seperate JSON log file, but adding these additional lines to `serilog.user.config` will allow you to filter and include log messages. For further details on specific expressions you can write, refer to the readme of the [Serilog Filters Expression project](https://github.com/serilog/serilog-filters-expressions)
+With the above example we are able to write to a separate JSON log file, but adding these additional lines to `serilog.user.config` will allow you to filter and include log messages. For further details on specific expressions you can write, refer to the readme of the [Serilog Filters Expression project](https://github.com/serilog/serilog-filters-expressions)
 
 ```xml
 <!-- Filters all sink's in the serilog.user.config to use this expression -->

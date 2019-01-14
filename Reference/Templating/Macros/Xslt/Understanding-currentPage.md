@@ -34,7 +34,7 @@ These are store as attributes of the document, which is called "node".  The prop
 
 This is structured similar to the following in the XML document.
 
-	<!DOCTYPE umbraco [
+	<!DOCTYPE Umbraco [
 	<!ELEMENT nodes ANY>
 	<!ELEMENT node ANY>
 	<!ATTLIST node id ID #REQUIRED>
