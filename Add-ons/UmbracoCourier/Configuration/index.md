@@ -60,7 +60,7 @@ Specifies the folder within the root folder, which holds each individual revisio
 ```
 
 ### Masterpages folder
-The Sql connection to the SQL database Courier should use. Notice this is not necessary as long as the repository pattern is used, as that will then be handled by the Umbraco website data is pulled/pushed from.
+The SQL connection to the SQL database Courier should use. Notice this is not necessary as long as the repository pattern is used, as that will then be handled by the Umbraco website data is pulled/pushed from.
 
 ```xml
 <paths>  
