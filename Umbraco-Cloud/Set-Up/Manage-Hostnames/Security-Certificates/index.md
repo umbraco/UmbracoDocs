@@ -23,5 +23,5 @@ You've now successfully added your certificate to the Cloud project!
 
 ## Read more
 
-* [Automatic certificates with Umbraco Latch](../Umbraco-Latch)
+* [Automatic certificates with Umbraco Latch](../../Umbraco-Latch)
 * [Redirect from HTTP to HTTPS](../Rewrites-on-Cloud#running-your-site-on-https-only)

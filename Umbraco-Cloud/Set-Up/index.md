@@ -12,6 +12,7 @@ Articles about configuring various settings on your project, as well as managing
  - [SMTP Settings](SMTP-settings/)
  - [Manage domains and certificates](Manage-domains/)
  - [Manage environments](Manage-Environments/)
+ - [Apply SSL with Umbraco Latch](Umbraco-Latch/)
 
 ## Working with your Umbraco Cloud project
 

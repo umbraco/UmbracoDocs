@@ -9,7 +9,7 @@ In order for Umbraco Latch to be applied to your hostname, you need to make sure
 * CNAME pointing at the Cloud URL mysite.s1.umbraco.io
 * A Record pointing at the Cloud IP: 23.100.15.180
 
-Learn more about our recommendations for DNS records in the [Manage Hostnames](index.md) article.
+Learn more about our recommendations for DNS records in the [Manage Hostnames](../Manage-Hostnames) article.
 
 ## HTTPS by default
 
