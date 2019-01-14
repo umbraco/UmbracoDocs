@@ -79,7 +79,7 @@ Single option to choose whether allowed/child media types should be added as a d
 
 ## Documents
 
-- Option to include parents as dependencies.
+- Option to include parents as dependencies
 
 ```xml
 <documentItemProvider>

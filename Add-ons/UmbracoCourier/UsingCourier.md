@@ -4,7 +4,7 @@ _Outlines the common gotchas, and the recommended way to work with Courier, to p
 
 This document will try to outline what Courier does, why it does it, and how you can work with it to make your deployments as smooth as possible.
 
-The following topic will be covered: 
+The following topics will be covered: 
 
 - A high-level overview of what Courier does and why
 - What Courier can and cannot do out of the box
@@ -59,12 +59,12 @@ The short version is, you do not want to miss those dependencies, because your s
 The whole idea of Courier builds around the idea of dependencies and references, which Courier can understand to a certain degree.
 There are several areas, where Courier has no chance of understanding what is going on. 
 
-### When a data type stores node ids
+### When a data type stores node IDs
 Common thing: Storing a node ID in a data type without telling Courier about it, will not work as Courier won't be able to add the node as a dependency. It will not be transferable as it cannot convert it into a GUID.
 
 You can add the data type to the `courier.config` to tell Courier to look for IDs and convert them.
 
-### Data in external tables are referenced.
+### Data in external tables are referenced
 Courier doesn't know about the external tables and will not be able to deploy it. 
 
 You can write your own providers for it, but this provides you with overhead and it would
