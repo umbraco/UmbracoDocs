@@ -11,7 +11,7 @@ For all issues, always try these steps first:
 
 If you are using custom data types and/or packages that are not part of Umbraco out of the box, you need to add data resolvers for these.
 
-For data resolvers for the most commonly used community packages, download and add the **Courier.Contrib** package to your sites.
+To get data resolvers for the most commonly used community packages, download and add the [Courier.Contrib](https://github.com/umbraco/Umbraco.Courier.Contrib) package to your sites.
 
 :::note
 Even though Nested Content is part of Umbraco (since version 7.7), you need the Courier.Contrib package installed, in order to Courier to able to handle Nested Content data.
