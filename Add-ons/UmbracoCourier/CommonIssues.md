@@ -1,6 +1,6 @@
 # Common issues
 
-_Document to outline commonly found issues with Courier and possible solutions_
+_Here you can find common issues with Courier and possible solutions_
 
 ## Try this first
 For all issues, always try these steps first:
