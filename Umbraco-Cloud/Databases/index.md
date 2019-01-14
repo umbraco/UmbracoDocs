@@ -49,7 +49,7 @@ To connect, choose "Connect Database Engine" and copy the values from the Connec
 ## Connecting to your local Umbraco installation
 When cloning down your project to work locally you might want to have a look in your database every now and then. You can connect to your local Umbraco database through, for example, Visual Studio.
 
-In Visual Studio this is done through the Server Explorer. Add a new connection to a SQL server database file. Umbraco's file can be found in `App_Data`:
+In Visual Studio this is done through the Server Explorer. Add a new connection to a SQL server database file. Umbraco's database file can be found in `App_Data`:
 
 ![Connecting to Umbraco.mdf in Visual Studio](images/connect-via-vsstudio.gif)
 
