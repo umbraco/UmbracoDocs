@@ -66,6 +66,10 @@ In our experience there are only a few Cloud sites that have experienced these l
 
 Yes. Point the DNS for your domain(s) to Cloudflare and tell Cloudflare about the IP address of your Umbraco Cloud site to use Cloudflare's full feature set.
 
+### What versions of .NET can does Cloud support?
+
+Umbraco Cloud currently runs all projects on .NET 4.5 by default and supports up to 4.5.2, v8 will run on 4.7.2.
+
 ---
 
 ## Upgrades
