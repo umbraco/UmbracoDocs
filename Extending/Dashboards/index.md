@@ -48,7 +48,7 @@ Additionally, you can create your own custom dashboards, for extending Umbraco w
 
 ## Package Dashboards
 
-There are lots of packages listed on <a href="/projects/?category=Backoffice%20extensions">our umbraco</a> that provide custom dashboard functionality.
+There are lots of packages listed on <a href="/projects/?category=Backoffice%20extensions">our Umbraco</a> that provide custom dashboard functionality.
 
 For example, the snappily titled <a href="/projects/backoffice-extensions/the-dashboard/">'The Dashboard'</a> provides great information for editorial teams on what has been edited recently and by whom.
 

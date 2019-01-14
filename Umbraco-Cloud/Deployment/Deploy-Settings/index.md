@@ -1,6 +1,6 @@
 # Configurations for Deployments
 
-The UmbracoDeploy.Settings.config file is by default empty, but there are some optional settins you can set in the file to ignore certain types of file, increase timeout limits, etc.
+The UmbracoDeploy.Settings.config file is by default empty, but there are some optional settings you can set in the file to ignore certain types of file, increase timeout limits, etc.
 
 ## ExcludedEntityTypes
 
@@ -19,7 +19,7 @@ This setting allows you to exclude a certain type of entity from being deployed.
 
 This setting allows you to manage how relations are deployed between environments. For this you need to specify an alias and a mode for each relationtype. The mode can be either:
 
-- `Exclude` - This causes the relation to be excluded and not transfered on deployments.
+- `Exclude` - This causes the relation to be excluded and not transferred on deployments.
 - `Weak` - This causes the relation to be deployed if both content items are found on the target environment.
 - `Strong` - This requires the content item that is related is set as a dependency, so if anything is added as a relation it would also add it as a dependency.
 
@@ -53,7 +53,7 @@ Here is how it can look:
 
 ## SessionTimeout, HttpClientTimeout, DatabaseCommandTimeout & SourceDeployTimeout
 
-These timeout settings default to 8 minutes, but if you are transfering a lot of data you may need to increase it. All of these times are in *seconds*:
+These timeout settings default to 8 minutes, but if you are transferring a lot of data you may need to increase it. All of these times are in *seconds*:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

@@ -215,7 +215,7 @@ The Services layer of Umbraco is for manipulating the business logic of Umbraco 
 None of these methods should be used within your views and can have a very large impact on performance and stability of 
 your application.
 
-Your views should rely only on the readonly data access of the `UmbracoHelper` and the properties/methods that it exposes. This ensures
+Your views should rely only on the read-only data access of the `UmbracoHelper` and the properties/methods that it exposes. This ensures
 that the data being queried is fast (comes from cache) and that you aren't inadvertently making database changes.
 
 __For example__, when retrieving a content item in your views:
