@@ -16,7 +16,7 @@ This cannot be configured as Courier always automatically lists all revisions fr
 ### Courier Webservice
 * **Type**:  `CourierWebserviceRepositoryProvider`
 * **Guid**:  e0472596-e73b-11df-9492-0800200c9a66
-* **Full name**:  `Umbraco.Courier.Providers.RepositoryProviders. CourierWebserviceRepositoryProvider`
+* **Full name**:  `Umbraco.Courier.Providers.RepositoryProviders.CourierWebserviceRepositoryProvider`
 
 The Courier webservice provider can connect any other website running Umbraco, with cCourier installed as a repository. It is possible to transfer items back and forth using the HTTP protocol. 
 
