@@ -68,7 +68,7 @@ Single option to choose whether allowed/child media types should be added as a d
 ## Media
 
 - Option to include parent nodes as a forced dependency 
-- option to automatically include all children (in case a folder is transferred).
+- Option to automatically include all children (in case a folder is transferred)
 
 ```xml
 <mediaItemProvider>
