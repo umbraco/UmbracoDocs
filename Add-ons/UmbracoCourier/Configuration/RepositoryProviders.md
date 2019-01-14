@@ -18,7 +18,7 @@ This cannot be configured as Courier always automatically lists all revisions fr
 * **Guid**:  e0472596-e73b-11df-9492-0800200c9a66
 * **Full name**:  `Umbraco.Courier.Providers.RepositoryProviders.CourierWebserviceRepositoryProvider`
 
-The Courier webservice provider can connect any other website running Umbraco, with cCourier installed as a repository. It is possible to transfer items back and forth using the HTTP protocol. 
+The Courier webservice provider can connect any other website running Umbraco, with Courier installed as a repository. It is possible to transfer items back and forth using the HTTP protocol. 
 
 To install, add the following to your `courier.config` under `<repositories>`:
 
