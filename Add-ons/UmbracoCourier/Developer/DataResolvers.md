@@ -156,7 +156,7 @@ Configuring which macro property types contains references to other nodes
 
 ### RTEstylesheets
 * **Full name:** `Umbraco.Courier.DataResolvers.RTEstylesheets`
-* **Triggers on:** The Rich text editor data type
+* **Triggers on:** The Rich Text Editor data type
 * If the RTE have any stylesheets associated, these will be added as dependencies to the data type
 
 ### Tags
