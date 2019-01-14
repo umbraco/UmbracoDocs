@@ -4,7 +4,7 @@ Courier comes with sensible defaults, but in special cases, you might need to ad
 
 Core settings are configuration options which covers the entire Courier application, no matter if it runs from Umbraco, or a desktop client, all core settings resides inside the `<settings>` xml node in the `/config/courier.config` file. With the below settings, simply copy the sample xml inside the `<settings>` node and Courier will register it.
 
-**For provider configuration:** look under the appropriate provider type in documentation
+**For provider configuration:** Look under the appropriate provider type in the documentation
 
 ## [Configure repository providers](RepositoryProviders.md)
 
