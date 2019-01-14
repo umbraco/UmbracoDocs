@@ -7,7 +7,7 @@ A repository is a simple file storage, which can return items in sets based on a
 ### Local
 * **Type**:  `Local`
 * **Guid**:  e0472598-e73b-11df-9492-0800200c9a67
-* **Full name**:  `Umbraco.Courier.Providers.RepositoryProviders. Local`
+* **Full name**:  `Umbraco.Courier.Providers.RepositoryProviders.Local`
 
 The underlying IO provider. This provider is used whenever Courier access revisions or files on the local machine. 
 
