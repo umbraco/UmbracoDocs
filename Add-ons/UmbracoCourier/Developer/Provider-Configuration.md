@@ -38,7 +38,7 @@ Single option to choose whether allowed/child media types should be added as a d
 
 - Option to include all allowed templates as a dependency
 - Option to include all allowed types as a dependency 
-- Option filter out certain data types.
+- Option to filter out certain data types
 
 ```xml
 <documentTypeItemProvider>
