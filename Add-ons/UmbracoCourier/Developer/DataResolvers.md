@@ -82,7 +82,7 @@ If you need to build your own data resolvers for Courier there are some great ex
 
 ### LocalLinks
 * **Full name:** `Umbraco.Courier.DataResolvers.LocalLinks`
-* **Triggers on:** Propertydata, which contains a the string {locallink: 
+* **Triggers on:** Propertydata, which contains the string {locallink: 
 * Resolves the ID to a GUID, and adds the linked document as a dependency
 
 **Configuration**
