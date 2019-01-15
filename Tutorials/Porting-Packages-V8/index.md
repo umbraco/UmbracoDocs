@@ -1,5 +1,5 @@
 # Porting Umbraco V7 packages to work with V8
-This is not a definitive guide for all scenarios and more of a working document and will evolve over time, especially whilst V8.0.0 is development and things in this guide may change.
+This is not a definitive guide for all scenarios and more of a working document and will evolve over time, especially whilst V8.0.0 is in development and things in this guide may change.
 
 So you have a useful Umbraco package built for V7 and you would like to see it, work for V8?
 Well then this guide, should give you a few pointers to get started with the process and is mostly geared towards solutions that use C#
