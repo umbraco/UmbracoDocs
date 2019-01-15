@@ -27,3 +27,7 @@ Learn how you can use your Google user to log into the Umbraco backoffice.
 ### [Starter kit](Starter-kit/index.md)
 
 Information about the basic Umbraco starter kit.
+
+### [Porting Packages from Version 7 to Version 8](Porting-Packages-V8/index.md)
+
+A working document, that gives tips & pointers on how to port an Umbraco V7 package to work with the upcomign Umbraco V8 release.
