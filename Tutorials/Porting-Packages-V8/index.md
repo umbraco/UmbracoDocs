@@ -12,19 +12,20 @@ As Umbraco V8 is still in development and not been published to the official Nug
 
 Add the following `nuget.config` file to the root of your project, for Visual Studio to discover it
 
-  <?xml version="1.0" encoding="utf-8"?>
-  <configuration>
-    <!--
-      this is Umbraco's NuGet configuration,
-      content of this file is merged with the system-wide configuration,
-      at %APPDATA%\NuGet\NuGet.config
-    -->
-    <packageSources>
-      <add key="UmbracoCoreMyGet" value="https://www.myget.org/F/umbracocore/api/v3/index.json" />
-      <add key="ExamineAppVeyor" value="https://ci.appveyor.com/nuget/examine-f73l6qv0oqfh/" />
-    </packageSources>
-  </configuration>
-
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+<!--
+    this is Umbraco's NuGet configuration,
+    content of this file is merged with the system-wide configuration,
+    at %APPDATA%\NuGet\NuGet.config
+-->
+<packageSources>
+    <add key="UmbracoCoreMyGet" value="https://www.myget.org/F/umbracocore/api/v3/index.json" />
+    <add key="ExamineAppVeyor" value="https://ci.appveyor.com/nuget/examine-f73l6qv0oqfh/" />
+</packageSources>
+</configuration>
+```
 
 ## Add references via Nuget
 You will need to add `UmbracoCms.Core` via Nuget from the `UmbracoCoreMyGet` feed with the pre-release flag enabled.
@@ -47,120 +48,123 @@ In Umbraco version 8 this has been removed and replaced with Composer & Componen
 
 ### Old ApplicationEventHandler way
 
-    using System.Linq;
-    using Umbraco.Core;
-    using Umbraco.Core.Events;
-    using Umbraco.Core.Models;
-    using Umbraco.Core.Services;
-    using Umbraco.Web.Routing;
+```csharp
+using System.Linq;
+using Umbraco.Core;
+using Umbraco.Core.Events;
+using Umbraco.Core.Models;
+using Umbraco.Core.Services;
+using Umbraco.Web.Routing;
 
-    namespace Umbraco.Web.UI
+namespace Umbraco.Web.UI
+{
+    public class RegisterEvents : ApplicationEventHandler
     {
-        public class RegisterEvents : ApplicationEventHandler
+        protected override void ApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
         {
-            protected override void ApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
-            {
-                base.ApplicationStarting(umbracoApplication, applicationContext);
-                ContentLastChanceFinderResolver.Current.SetFinder(new My404ContentFinder());
-            }
+            base.ApplicationStarting(umbracoApplication, applicationContext);
+            ContentLastChanceFinderResolver.Current.SetFinder(new My404ContentFinder());
+        }
 
-            protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
-            {
-                //Listen for when content is being saved
-                ContentService.Saving += ContentService_Saving;
-            }
+        protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+        {
+            //Listen for when content is being saved
+            ContentService.Saving += ContentService_Saving;
+        }
 
-            private void ContentService_Saving(IContentService sender, SaveEventArgs<IContent> e)
+        private void ContentService_Saving(IContentService sender, SaveEventArgs<IContent> e)
+        {
+            foreach (var content in e.SavedEntities
+                //Check if the content item type has a specific alias
+                .Where(c => c.ContentType.Alias.InvariantEquals("MyContentType"))
+                //Check if it is a new item
+                .Where(c => c.IsNewEntity()))
             {
-                foreach (var content in e.SavedEntities
-                    //Check if the content item type has a specific alias
-                    .Where(c => c.ContentType.Alias.InvariantEquals("MyContentType"))
-                    //Check if it is a new item
-                    .Where(c => c.IsNewEntity()))
+                //check if the item has a property called 'richText'
+                if (content.HasProperty("richText"))
                 {
-                    //check if the item has a property called 'richText'
-                    if (content.HasProperty("richText"))
-                    {
-                        //get the rich text value
-                        var val = c.GetValue("richText");
+                    //get the rich text value
+                    var val = c.GetValue("richText");
 
-                        //if there is a rich text value, set a default value in a
-                        // field called 'excerpt' that is the first
-                        // 200 characters of the rich text value
-                        c.SetValue("excerpt", val == null
-                            ? string.Empty
-                            : string.Join("", val.StripHtml().StripNewLines().Take(200)));
-                    }
+                    //if there is a rich text value, set a default value in a
+                    // field called 'excerpt' that is the first
+                    // 200 characters of the rich text value
+                    c.SetValue("excerpt", val == null
+                        ? string.Empty
+                        : string.Join("", val.StripHtml().StripNewLines().Take(200)));
                 }
             }
         }
     }
-
+}
+```
 
 
 ### New Composer & Component way
 
-    using System.Linq;
-    using Umbraco.Core;
-    using Umbraco.Core.Components;
-    using Umbraco.Core.Events;
-    using Umbraco.Core.Models;
-    using Umbraco.Core.Services;
-    using Umbraco.Core.Services.Implement;
+```csharp
+using System.Linq;
+using Umbraco.Core;
+using Umbraco.Core.Components;
+using Umbraco.Core.Events;
+using Umbraco.Core.Models;
+using Umbraco.Core.Services;
+using Umbraco.Core.Services.Implement;
 
-    namespace MyProject.Components
+namespace MyProject.Components
+{
+    [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
+    public class MyComposer : IUserComposer
     {
-        [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
-        public class MyComposer : IUserComposer
+        public void Compose(Composition composition)
         {
-            public void Compose(Composition composition)
-            {
-                composition.SetContentLastChanceFinder<My404ContentFinder>();
+            composition.SetContentLastChanceFinder<My404ContentFinder>();
 
-                composition.Components().Append<MyComponent>();
-            }
+            composition.Components().Append<MyComponent>();
+        }
+    }
+
+    public class MyComponent : IComponent
+    {
+        public void Initialize()
+        {
+            ContentService.Saving += this.ContentService_Saving;
         }
 
-        public class MyComponent : IComponent
+        public void Terminate()
         {
-            public void Initialize()
-            {
-                ContentService.Saving += this.ContentService_Saving;
-            }
+        }
 
-            public void Terminate()
+        /// <summary>
+        /// Listen for when content is being saved, check if it is a
+        /// new item and fill in some default data.
+        /// </summary>
+        private void ContentService_Saving(IContentService sender, SaveEventArgs<IContent> e)
+        {
+            foreach (var content in e.SavedEntities
+                //Check if the content item type has a specific alias
+                .Where(c => c.ContentType.Alias.InvariantEquals("MyContentType"))
+                //Check if it is a new item
+                .Where(c => c.HasIdentity == false))
             {
-            }
-
-            /// <summary>
-            /// Listen for when content is being saved, check if it is a
-            /// new item and fill in some default data.
-            /// </summary>
-            private void ContentService_Saving(IContentService sender, SaveEventArgs<IContent> e)
-            {
-                foreach (var content in e.SavedEntities
-                    //Check if the content item type has a specific alias
-                    .Where(c => c.ContentType.Alias.InvariantEquals("MyContentType"))
-                    //Check if it is a new item
-                    .Where(c => c.HasIdentity == false))
+                //check if the item has a property called 'richText'
+                if (content.HasProperty("richText"))
                 {
-                    //check if the item has a property called 'richText'
-                    if (content.HasProperty("richText"))
-                    {
-                        //get the rich text value
-                        var val = content.GetValue<string>("richText");
+                    //get the rich text value
+                    var val = content.GetValue<string>("richText");
 
-                        //if there is a rich text value, set a default value in a
-                        // field called 'excerpt' that is the first
-                        // 200 characters of the rich text value
-                        content.SetValue("excerpt", val == null
-                            ? string.Empty
-                            : string.Join(string.Empty, val.StripHtml().StripNewLines().Take(200)));
-                    }
+                    //if there is a rich text value, set a default value in a
+                    // field called 'excerpt' that is the first
+                    // 200 characters of the rich text value
+                    content.SetValue("excerpt", val == null
+                        ? string.Empty
+                        : string.Join(string.Empty, val.StripHtml().StripNewLines().Take(200)));
                 }
             }
         }
     }
+}
+```
 
 
 ## Update package.xml for Umbraco ZIP packages
