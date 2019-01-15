@@ -35,7 +35,7 @@ Optionally add reference to `UmbracoCms.Web` if your code uses anything such as 
 OK now the references have been updated, try and build the solution and then
 
 ## Fix up compile errors
-As long as your Umbraco package was not using ancient APIs and using the new APIs & Services in Umbraco V7 then most of this step will be trying to determine what the new V8 namespace equivelant is.
+As long as your Umbraco package was not using ancient APIs and using the new APIs & Services in Umbraco V7 then most of this step will be trying to determine what the new V8 namespace equivalent is.
 
 ### Handy tip
 Clone down the Umbraco CMS source code and checkout the `temp8` branch and use this as a way to try and find that same method that the compiler is complaining about, in it's new namespace.
