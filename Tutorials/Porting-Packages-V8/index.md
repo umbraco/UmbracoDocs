@@ -33,7 +33,7 @@ You will need to add `UmbracoCms.Core` via Nuget from the `UmbracoCoreMyGet` fee
 Optionally add reference to `UmbracoCms.Web` if your code uses anything such as `UmbracoApiController` `SurfaceController` then you will need to add the Nuget package reference of `UmbracoCms.Web` which in turn has a reference to `UmbracoCms.Core`
 
 ## Try & build the solution
-OK now the references have been updated, try and build the solution and then
+OK now the references have been updated, try and build the solution to see how many errors pop up.
 
 ## Fix up compile errors
 As long as your Umbraco package was not using ancient APIs and using the new APIs & Services in Umbraco V7 then most of this step will be trying to determine what the new V8 namespace equivalent is.
@@ -170,7 +170,22 @@ namespace MyProject.Components
 ## Update package.xml for Umbraco ZIP packages
 Currently the Umbraco packager in the backoffice is still undergoing changes (at the time of writing) and are unable to use the friendly packager UI in Umbraco.
 
-As version 7 and version 8 of Umbraco has breaking changes in its APIs and code, its recommended to ship a different version of your package to support V8 only. So update the package.xml in your Umbraco package zip to have
+As version 7 and version 8 of Umbraco has breaking changes in its APIs and code, its recommended to ship a different version of your package to support V8 only. So update the package.xml in your Umbraco package zip to use the 8.0.0 version like so.
+
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<umbPackage>
+  <info>
+    <package>
+      <name>My Umbraco Package</name>
+      ...
+      <requirements>
+        <major>8</major>
+        <minor>0</minor>
+        <patch>0</patch>
+      </requirements>
+      ...
+```
 
 ## Optional - Update .nupkg dependencies
 If you ship your package as a Nuget package, then you will need to add/update references to the `UmbracoCms.Core` or `UmbracoCms.Web` nupkg from the MyGet feed https://www.myget.org/F/umbracocore/api/v3/index.json
