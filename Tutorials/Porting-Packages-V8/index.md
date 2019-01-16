@@ -1,4 +1,12 @@
-# Porting Umbraco V7 packages to work with V8
+---
+versionFrom: "8.0"
+product: "CMS"
+complexity: "Intermediate"
+audience: "Package developers"
+meta.Title: "How to port packages from Umbraco v7 to Umbraco v8"
+meta.Description: "This guide will tell you how you can turn your Umbraco v7 package into an Umbraco v8 package"
+---
+# Porting packages to V8
 This is not a definitive guide for all scenarios and more of a working document and will evolve over time, especially whilst V8.0.0 is in development and things in this guide may change.
 
 So you have a useful Umbraco package built for V7 and you would like to see it, work for V8?
