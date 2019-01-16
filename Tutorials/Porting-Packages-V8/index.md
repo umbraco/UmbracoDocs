@@ -37,6 +37,7 @@ Add the following `nuget.config` file to the root of your project, for Visual St
 
 ## Add references via Nuget
 You will need to add `UmbracoCms.Core` via Nuget from the `UmbracoCoreMyGet` feed with the pre-release flag enabled using the UI in Visual Studio or the Nuget Command Line with the following command 
+
     Install-Package UmbracoCms.Core -pre -source https://www.myget.org/F/umbracocore/api/v3/index.json
 
 Optionally add reference to `UmbracoCms.Web` if your code uses anything such as `UmbracoApiController` `SurfaceController` then you will need to add the Nuget package reference of `UmbracoCms.Web` which in turn has a reference to `UmbracoCms.Core`
