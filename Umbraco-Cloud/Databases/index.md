@@ -58,8 +58,25 @@ If this is your first time connecting to a local database this way, you might ha
 Umbraco will create an mdf file (LocalDB) if you have SQL Server installed on your local machine, provided LocalDB is enabled and can be discovered by Deploy. If Deploy can't create an mdf file it will create a SQL CE (sdf) file instead. 
 
 ## Backups
-It's possible to create a backup of a Cloud database. It can be done by creating a PowerShell script.
+It's possible to create a backup of a Cloud database. There are at least two ways of accomplishing this:
+- Use SQL Server Management Studio
+- Use a PowerShell script
 
+### Backup with SQL Server Management Studio
+Follow these steps:
+- Log in to Umbraco Cloud, and visit your project page.
+- From the "Settings" drop down for the project, select "Connection Details".
+- If your IP address is not listed, click "Add now" next to "Your IP address is not on the list". It should then say "Your IP address is on the list".
+- Note the server name, login, password, and database listed on this screen for whichever environment you are backing up (e.g., development or live).
+- Open SQL Server Management Studio (SSMS).
+- Once the "Connect to Server" dialog appears, enter your server name, login, and password (you will also need to be sure the authentication drop down is set to "SQL Server Authentication" rather than "Windows Authentication").
+- Click the "Options >>" button.
+- In the "Connect to database" field, type the name of your database (this was listed in the Umbraco Cloud connection details page).
+- It is very important that you enter the database name. If you do not, the connection will fail.
+- Expand "Databases", right click your database (it should be the only one listed), select "Tasks", then select "Export Data-tier Application...".
+- Proceed through the dialog, setting the options appropriate to your situation, to save the "bacpac" file. This is your databse backup.
+
+### Backup with PowerShell Script
 Make sure to change the following:
 - Location of the Dac assembly (if needed)
 - Your connection string
