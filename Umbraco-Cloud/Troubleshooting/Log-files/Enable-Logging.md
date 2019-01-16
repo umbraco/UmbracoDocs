@@ -1,40 +1,5 @@
-# Enable logging on Umbraco Cloud projects
-
-:::warning
-If you do this on several environments you need to use unique names on each. Check out the [config transforms section](#config-transforms-of-log4netconfig)
-:::
-
-On all Umbraco Cloud projects, logging is currently disabled. We are working on getting it resolved as soon as possible.
-
-If you need logging on your site before we roll out the fix, here's a guide on how to do just that.
-
-1. Clone down your Cloud project to your local machine
-2. Open `Config/log4net.config`
-
-You need to change the name of the log files. This is how the default setting will look:
-
-```xml
-<appender name="rollingFile" type="log4net.Appender.RollingFileAppender">
-	  <file type="log4net.Util.PatternString" value="App_Data\Logs\UmbracoTraceLog.%property{log4net:HostName}.txt" />
-```
-
-In order to change the name of the log files, you need to replace `UmbracoTraceLog` with something unique.
-
-In the example below, I've changed the file name to `SwautoTraceLog`.
-
-```xml
-<appender name="rollingFile" type="log4net.Appender.RollingFileAppender">
-	  <file type="log4net.Util.PatternString" value="App_Data\Logs\SwautoTraceLog.%property{log4net:HostName}.txt" />
-```
-
-Push the change to the Cloud environment, and deploy the change all the way to the Live environment.
-
-:::warning
-This is a config change, which means that deploying this to your Cloud environments, will cause the environments to restart.
-:::
-
-With this setting in place, your log files will now look something like this: `SwautoTraceLog.PrWeSWEs2V3QD.txt`.
-
+# Enable custom logging on Umbraco Cloud projects
+To be able to use custom logging on Umbraco Cloud you need to ensure that the custom log files do not have the same name on several environments. To do this you can make a config transform of your log4net.config file.
 
 ## Config transforms of log4net.config
 
