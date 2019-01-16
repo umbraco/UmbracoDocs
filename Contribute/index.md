@@ -1,3 +1,7 @@
+---
+meta.Title: "Contribute to Umbraco CMS"
+meta.Description: "Explanation of how you can contribute to Umbraco, what the process is like and what things to keep in mind when contributing."
+---
 # Contribute to Umbraco Documentation
 
 ## What is a pull request
