@@ -1,3 +1,9 @@
+---
+versionFrom: "7.0"
+product: "CMS"
+meta.Title: "Tutorials for beginners and master alike"
+meta.Description: "Here you can find tutorials covering things like creating a site from scratch, setting up multilingual sites and many more"
+---
 # Tutorials
 
 ### [Creating a basic site with Umbraco](Creating-Basic-Site/index.md)
