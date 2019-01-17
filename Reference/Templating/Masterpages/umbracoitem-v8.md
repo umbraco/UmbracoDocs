@@ -1,5 +1,5 @@
 ---
-versionTo: 8.0.0
+versionFrom: 8.0.0
 ---
 
 # Umbraco:item
@@ -24,15 +24,15 @@ The `insertTextAfter` allows you to add text before your field is outputted, onl
 	<umbraco:item field="startDate" formatAsDate="true" runat="server" />
 
 ## formatAsDateWithTime
-This is just like formatAsDate but instead this will also output the time along with the date, if you use this attribute you will also need to use the `formatAsDateWithTimeSeperator` attribute.
+This is just like formatAsDate but instead this will also output the time along with the date, if you use this attribute you will also need to use the `formatAsDateWithTimeSeparator` attribute.
 
-	<umbraco:item field="startDate" formatAsDateWithTime="true" formatAsDateWithTimeSeperator=" " runat="server"/>
+	<umbraco:item field="startDate" formatAsDateWithTime="true" formatAsDateWithTimeSeparator=" " runat="server"/>
 
 
 ## formatAsDateWithTimeSeparator
 This is just like `formatAsDate` but instead this will also output the time along with the date, if you use this attribute you will also need to use the `formatAsDateWithTimeSeparator` attribute.
 
-	<umbraco:item field="startDate" formatAsDateWithTime="true" formatAsDateWithTimeSeperator=" " runat="server"/>
+	<umbraco:item field="startDate" formatAsDateWithTime="true" formatAsDateWithTimeSeparator=" " runat="server"/>
 
 ## useIfEmpty
 The useIfEmpty attribute allows you to define an alternative field if the main field is empty/blank.
