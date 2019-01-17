@@ -98,6 +98,21 @@ Example usage of the ContentService events:
                 <li>PublishedEntities: Gets the published collection of IContent objects.</li>
             </ol>
         </td>
+    </tr>  
+    <tr>
+        <td>UnPublishing</td>
+        <td>(IPublishingStrategy sender, PublishEventArgs&lt;Umbraco.Core.Models.IContent&gt; e)</td>
+        <td>
+        Raised when ContentService.UnPublishing is called in the API.<br />
+        "sender" will be the current IPublishingStrategy object.<br />
+        </td>
+    </tr>
+    <tr>
+        <td>UnPublished</td>
+        <td>(IPublishingStrategy sender, PublishEventArgs&lt;Umbraco.Core.Models.IContent&gt; e)</td>
+        <td>
+        Raised when ContentService.UnPublish is called in the API and after data has been published.<br />
+        </td>
     </tr>    
     <tr>
         <td>Copying</td>
