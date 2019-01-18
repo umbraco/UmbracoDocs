@@ -14,25 +14,33 @@ Holds the version number of the currently installed version of Umbraco. This ver
 
 A comma-separated list of files to be left alone by Umbraco. IIS will serve these files, and the Umbraco request pipeline will not be triggered.  
 
-    <add key="umbracoReservedUrls" value="~/config/splashes/booting.aspx,~/install/default.aspx,~/config/splashes/noNodes.aspx,~/VSEnterpriseHelper.axd" />
+```xml
+<add key="umbracoReservedUrls" value="~/config/splashes/booting.aspx,~/install/default.aspx,~/config/splashes/noNodes.aspx,~/VSEnterpriseHelper.axd" />
+```
 
 ### umbracoReservedPaths
 
 A comma-separated list of all the folders in your directory to be left alone by Umbraco. If you have folders with custom files, add them to this setting to make sure Umbraco leaves them alone.
 
-    <add key="umbracoReservedPaths" value="~/umbraco,~/install/" />
+```xml
+<add key="umbracoReservedPaths" value="~/umbraco,~/install/" />
+```
 
 ### umbracoPath
 
 The URL pointing to the Umbraco administration folder. If you rename the `umbraco` folder, you need to update this setting too.
 
-    <add key="umbracoPath" value="~/umbraco" />
+```xml
+<add key="umbracoPath" value="~/umbraco" />
+```
 
 ### umbracoHideTopLevelNodeFromPath
 
 If you are running multiple sites, you don't want the top level node in your URL. Possible options are `true` and `false`.
 
-    <add key="umbracoHideTopLevelNodeFromPath" value="true" />
+```xml
+<add key="umbracoHideTopLevelNodeFromPath" value="true" />
+```
 
 ### umbracoUseDirectoryUrls
 
@@ -43,7 +51,9 @@ This setting is only important to older IIS configurations where extension-less 
 
 Configures the number of minutes without any requests being made before the Umbraco user will be required to re-login. Any backoffice request will reset the clock. Default setting is 20 minutes.
 
-    <add key="umbracoTimeOutInMinutes" value="20" />
+```xml
+<add key="umbracoTimeOutInMinutes" value="20" />
+```
 
 ### umbracoDefaultUILanguage
 
@@ -69,15 +79,15 @@ By adding this to appSettings you can specify a new/different folder for storing
 
 By adding this settings to the web.config you will be able to send out emails from your Umbraco installation. This could be notifications emails if you are using content workflow, or you are using Umbraco Forms you also need to specify SMTP settings to be able use the email workflows. The forgot password function from the backoffice also needs a SMTP server to send the email with the reset link.
 
-
-      <system.net>
-        <mailSettings>
-            <smtp from="noreply@example.com">
-                <network host="127.0.0.1" userName="username" password="password" />
-            </smtp>
-        </mailSettings>
-      </system.net>
-
+```xml
+<system.net>
+    <mailSettings>
+        <smtp from="noreply@example.com">
+            <network host="127.0.0.1" userName="username" password="password" />
+        </smtp>
+    </mailSettings>
+</system.net>
+```
 
 ## Optional settings
 
