@@ -21,7 +21,9 @@ The basic configuration for an IndexSet involves specifying the following two at
 * **IndexParentId** - the Umbraco id of the item in the tree to begin indexing beneath, this defaults to -1 (the root of the site). You could use this to create separate IndexSets for different parts of your site.
 eg
 
-        <IndexSet SetName="ExampleIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/Example/" />
+```xml
+<IndexSet SetName="ExampleIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/Example/" />
+```
 
 would create an IndexSet in the app_data temp folder of your Umbraco site. Make sure your application has the necessary permissions to update files in this location.
 
@@ -40,17 +42,19 @@ In addition to the basic configuration of an IndexSet you can also specify the f
 If a filter isn't specified then the default behaviour is to index all, eg if IncludeNodeTypes isn't specified in the IndexSet all document types will be indexed.
 eg:
 
-    <ExamineLuceneIndexSets>
-      <IndexSet SetName="favouriteThingsIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/favouriteThings/">
-        <IndexUserFields>
-          <add Name="favouriteThingTitle" />
-          <add Name="favouriteThingDescription" />
-        </IndexUserFields>
-        <IncludeNodeTypes>
-          <add Name="favThings" />
-        </IncludeNodeTypes>
-      </IndexSet>
-    </ExamineLuceneIndexSets>
+```xml
+<ExamineLuceneIndexSets>
+  <IndexSet SetName="favouriteThingsIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/favouriteThings/">
+    <IndexUserFields>
+      <add Name="favouriteThingTitle" />
+      <add Name="favouriteThingDescription" />
+    </IndexUserFields>
+    <IncludeNodeTypes>
+      <add Name="favThings" />
+    </IncludeNodeTypes>
+  </IndexSet>
+</ExamineLuceneIndexSets>
+```
 
 In this example only document types based on the favThings doc type will be added to the index, and only the title and description properties will be indexed.
 
@@ -64,38 +68,40 @@ To specify the type of a field, add a Type attribute to its specification in the
 
 eg: 
 
-    <add Name="favouriteThingDateCreated" Type="DATETIME" />
+```xml
+<add Name="favouriteThingDateCreated" Type="DATETIME" />
+```
 
 and if you want to be able to sort search results by this field add EnableSorting="true" flag.
 
-    <add Name="favouriteThingDateCreated" Type="DATETIME" EnableSorting="true" />
+```xml
+<add Name="favouriteThingDateCreated" Type="DATETIME" EnableSorting="true" />
+```
 
 ## Example Default ExamineIndex.Config file
 
-    <ExamineLuceneIndexSets>
-      <!-- The internal index set used by Umbraco backoffice - DO NOT REMOVE -->
-      <IndexSet SetName="InternalIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/Internal/"/>
+```xml
+<ExamineLuceneIndexSets>
+    <!-- The internal index set used by Umbraco backoffice - DO NOT REMOVE -->
+    <IndexSet SetName="InternalIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/Internal/"/>
 
-      <!-- The internal index set used by Umbraco backoffice for indexing members - DO NOT REMOVE -->
-      <IndexSet SetName="InternalMemberIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/InternalMember/">
+    <!-- The internal index set used by Umbraco backoffice for indexing members - DO NOT REMOVE -->
+    <IndexSet SetName="InternalMemberIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/InternalMember/">
         <IndexAttributeFields>
-          <add Name="id" />
-          <add Name="nodeName"/>
-          <add Name="updateDate" />
-          <add Name="writerName" />
-          <add Name="loginName" />
-          <add Name="email" />
-          <add Name="nodeTypeAlias" />
+            <add Name="id" />
+            <add Name="nodeName"/>
+            <add Name="updateDate" />
+            <add Name="writerName" />
+            <add Name="loginName" />
+            <add Name="email" />
+            <add Name="nodeTypeAlias" />
         </IndexAttributeFields>
-      </IndexSet>
-    
-      <!-- Default Indexset for external searches, this indexes all fields on all types of nodes-->
-      <IndexSet SetName="ExternalIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/External/" />
-    </ExamineLuceneIndexSets>
+    </IndexSet>
 
-
-
- 
+    <!-- Default Indexset for external searches, this indexes all fields on all types of nodes-->
+    <IndexSet SetName="ExternalIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/External/" />
+</ExamineLuceneIndexSets>
+```
 
 ## Further information
 
