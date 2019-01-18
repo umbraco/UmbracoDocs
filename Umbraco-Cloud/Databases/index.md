@@ -74,7 +74,7 @@ Follow these steps:
 - In the "Connect to database" field, type the name of your database (this was listed in the Umbraco Cloud connection details page).
 - It is very important that you enter the database name. If you do not, the connection will fail.
 - Expand "Databases", right click your database (it should be the only one listed), select "Tasks", then select "Export Data-tier Application...".
-- Proceed through the dialog, setting the options appropriate to your situation, to save the "bacpac" file. This is your databse backup.
+- Proceed through the dialog, setting the options appropriate to your situation, to save the "bacpac" file. This is your database backup.
 
 ### Backup with PowerShell Script
 Make sure to change the following:
