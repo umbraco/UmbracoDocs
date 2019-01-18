@@ -6,12 +6,14 @@ _Configuration file for legacy *NotFoundHandlers*. These are used to register cu
 
 The Default Handlers are listed in this configuration file for 'backwards compatibility':
 
-    <NotFoundHandlers>
-      <notFound assembly="umbraco" type="SearchForAlias" />
-      <notFound assembly="umbraco" type="SearchForTemplate"/>
-      <notFound assembly="umbraco" type="SearchForProfile"/>
-      <notFound assembly="umbraco" type="handle404"/>
-    </NotFoundHandlers>
+```xml
+<NotFoundHandlers>
+  <notFound assembly="umbraco" type="SearchForAlias" />
+  <notFound assembly="umbraco" type="SearchForTemplate"/>
+  <notFound assembly="umbraco" type="SearchForProfile"/>
+  <notFound assembly="umbraco" type="handle404"/>
+</NotFoundHandlers>
+```
 
 ## Backwards compatibility
 
