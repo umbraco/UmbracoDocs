@@ -15,16 +15,17 @@ the *ever-so-slightly* clumsier `Model.GetPropertyValue("pageTitle")` syntax to 
 
 If you create a partial and change the first line to use the *interface name* for the model binding, you can use the nice Models Builder syntax when rendering the properties, like this:
 
-
-	@inherits Umbraco.Web.Mvc.UmbracoViewPage<ISeocomposition>
-	<title>@Model.PageTitle</title>
-	<meta name="description" content="@Model.PageDescription">
-
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<ISeocomposition>
+<title>@Model.PageTitle</title>
+<meta name="description" content="@Model.PageDescription">
+```
 
 You can then render the partial from your Master Template with something like this (assuming the partial is named "Metatags.cshtml"):
 
-
-	<head>
-		@Html.Partial("Metatags")
-	</head>
+```csharp
+<head>
+    @Html.Partial("Metatags")
+</head>
+```
 
