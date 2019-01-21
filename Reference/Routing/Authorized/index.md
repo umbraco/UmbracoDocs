@@ -14,8 +14,9 @@ In the case that an Umbraco Api Controller is a 'Plugin Controller', then the ro
 
 > `/umbraco/backoffice/{pluginname}/{controller}/{action}`
 
-_Note:_ the {area} specified by the [PluginController] attribute replaces the /api/ area for the route.
-
+:::note
+The {area} specified by the [PluginController] attribute replaces the /api/ area for the route.
+:::
 
 ## MVC controllers for the backoffice
 
