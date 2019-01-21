@@ -17,22 +17,22 @@ When an item has been packaged its data is serialized to an xml file and stored 
 
 So to take packaging step by step:
 
-- A courier client is started and given a manifest of items to package
-- The client connects to a given Source site and starts retrieving data
+- A Courier client is started and given a manifest of items to package
+- The client connects to a given source site and starts retrieving data
 - During packaging, the client will find dependencies and resources and add these to its queue
 - When each item is packaged, it's saved as a xml file at a given destination.
 
 To translate this into code, we need a couple of things defined: 
 
 - The client runs on "Machine A"
-- The Source repository is "devsite" 
-- The Destination repository is "qasite"
+- The source repository is "devsite" 
+- The destination repository is "qasite"
 
-So the code we are executing is not on either the devsite or qasite, but it could be. If no Source or Destination is set, Courier will try to use the local machine for storage. 
+So the code we are executing is not on either the devsite or qasite, but it could be. If no source or destination is set, Courier will try to use the local machine for storage. 
 
 
 ### Configuration 
-For this configuration the following two repositories have been set up in the courier.config file:
+For this configuration the following two repositories have been set up in the `courier.config` file:
 
 ```xml
 <repositories>
@@ -67,7 +67,7 @@ using Umbraco.Courier.Core.Collections.Manifests;
 ```
 
 #### Connecting to destination and source
-Use `RepositoryStorage` to retrieve repositories from the courier.config 
+Use `RepositoryStorage` to retrieve repositories from the `courier.config` 
 
 ```csharp
 var rs = new RepositoryStorage();
@@ -76,7 +76,7 @@ Repository source = rs.GetByAlias("devsite");
 ```
 
 #### Creating a new RevisionPackaging
-To create a new Packaging operation you need to (1) specify a name of the data you are working with (this defines where the files are stored) and (2) connect it with the two repositories.
+To create a new Packaging operation you need to specify a name of the data you are working with (this defines where the files are stored) and connect it with the two repositories.
 
 ```csharp
 var engine = new RevisionPackaging(Revision);
