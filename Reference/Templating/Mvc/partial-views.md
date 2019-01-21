@@ -53,15 +53,17 @@ The MVC template markup for the document:
 The partial view (located at: `~/Views/Partials/ChildItem.cshtml`)
 
 ```csharp
-    @model IPublishedContent
-    <strong>@Model.Name</strong>
+@model IPublishedContent
+<strong>@Model.Name</strong>
 ```
 
 ## Strongly typed Partial Views
 
 Normally you would create a partial view by simply using the `@model MyModel` syntax. However, inside of Umbraco you will probably want to have access to the handy properties available on your normal Umbraco views like the Umbraco helper: `@Umbraco` and the Umbraco context: `@UmbracoContext`. The good news is that this is completely possible. Instead of using the `@model MyModel` syntax, you just need to inherit from the correct view class, so do this instead:
 
-    @inherits Umbraco.Web.Mvc.UmbracoViewPage<MyModel>
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<MyModel>
+```
 
 By inheriting from this view, you'll have instant access to those handy properties and have your view created with a strongly typed custom model.
 
@@ -91,7 +93,7 @@ Both of these will achieve the same result.
 You don't normally need to cache the output of Partial views, just like you don't normally need to cache the output of User Controls, but there are times when this is necessary. Just like macro caching, we provide caching output of partial views. This is done simply by using an HtmlHelper extension method:
 
 ```csharp
-    @Html.CachedPartial("MyPartialName", new MyModel(), 3600)
+@Html.CachedPartial("MyPartialName", new MyModel(), 3600)
 ```
 
 The above will cache the output of your partial view for one hour (3600 seconds). Additionally, there are a few optional parameters you can specify to this method. Here is the full method signature:
