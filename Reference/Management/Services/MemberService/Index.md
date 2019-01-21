@@ -1,6 +1,8 @@
 # MemberService
 
-**Applies to Umbraco 7.1 and 6.2 and newer**
+:::note
+Applies to Umbraco 6.2 and 7.1 and newer
+:::
 
 The MemberService acts as a "gateway" to Umbraco data for operations which are related to Members.
 
@@ -14,19 +16,25 @@ All samples in this document will require references to the following dll:
 * Umbraco.Core.dll
 
 All samples in this document will require the following using statements:
-	
-	using Umbraco.Core;
-	using Umbraco.Core.Models;
-	using Umbraco.Core.Services;
+
+```csharp
+using Umbraco.Core;
+using Umbraco.Core.Models;
+using Umbraco.Core.Services;
+```
 
 ## Getting the service
 The MemberService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the MemberService is available through a local `Services` property.
 
-	Services.MemberService
+```csharp
+Services.MemberService
+```
 
 Getting the service through the `ApplicationContext`:
 
-	ApplicationContext.Current.Services.MemberService
+```csharp
+ApplicationContext.Current.Services.MemberService
+```
 
 ## Methods
 
