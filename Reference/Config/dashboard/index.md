@@ -8,21 +8,23 @@ By default, Umbraco shows a blank Dashboard when a new section loads and only sh
 
 Like the other .config files Dashboard.config is a simple XML file with a fairly straightforward layout as seen below.
 
-	<?xml version="1.0" encoding="utf-8" ?> 
-	<dashBoard> <!-- Root of the dashboard XML tree -->
-	   <section>  <!-- Defines a dashboard layout for a group of sections -->
-	        <areas> <!-- Declares which sections (i.e. content,media,users,[your own]-->
-                <area>[area name]</area> <!-- A section to apply this to -->
-                ...
-	        </areas>
-	
-	        <tab caption="[caption]"> <!-- Creates a tab in the Dashboard with the assigned caption -->
-                <control>[path]</control> <!-- What control(v6) / AngularJS View (v7) to load in that tab -->
-	        </tab>
-	        ...
-	   </section>
-	   ...
-	</dashBoard>
+```xml
+<?xml version="1.0" encoding="utf-8" ?> 
+<dashBoard> <!-- Root of the dashboard XML tree -->
+   <section>  <!-- Defines a dashboard layout for a group of sections -->
+        <areas> <!-- Declares which sections (i.e. content,media,users,[your own]-->
+            <area>[area name]</area> <!-- A section to apply this to -->
+            ...
+        </areas>
+
+        <tab caption="[caption]"> <!-- Creates a tab in the Dashboard with the assigned caption -->
+            <control>[path]</control> <!-- What control(v6) / AngularJS View (v7) to load in that tab -->
+        </tab>
+        ...
+   </section>
+   ...
+</dashBoard>
+```
 
 ## Section (different from a Umbraco UI Section)
 
@@ -32,7 +34,7 @@ Delimits dashboard information to apply to one or more sections. The Dashboard.c
 
 Defines to which sections of the Umbraco UI to apply the subset of dashboard information.
 
-`area` - Always lowercase!
+`<area>` - Always lowercase!
 
 The name of the Umbraco UI Section where you want your user control to be displayed (e.g. content, media, developer, settings, members or a custom section name). You can add your controls to more than one section by adding multiple <area> nodes.
 
@@ -65,14 +67,16 @@ No matter the settings, the root user (id:0) can see everything, so don't panic 
 
 Example on permissions:
 
-	<tab caption="Last Edits">
-		<access>
-			<grant>writer</grant>
-			<grant>editor</grant>
-			<grantBySection>content</grantBySection>
-		</access>
-		<control>/usercontrols/dashboard/latestEdits.ascx</control>
-	</tab>
+```xml
+<tab caption="Last Edits">
+    <access>
+        <grant>writer</grant>
+        <grant>editor</grant>
+        <grantBySection>content</grantBySection>
+    </access>
+    <control>/usercontrols/dashboard/latestEdits.ascx</control>
+</tab>
+```
 
 ## Customizing
 
@@ -91,17 +95,19 @@ Once you have created the AngularJs View that you want to have loaded when a sec
 **Sample**  
 Below is an example of a valid Dashboard.config:
 
-	<?xml version="1.0" encoding="utf-8" ?> 
-	<dashBoard>
-		<section>
-			<areas>
-				<area>content</area>
-			</areas>
-			<tab caption="Welcome">
-				<control>/app_plugins/mycustomdashboard/customwelcome.html</control>
-			</tab>
-		</section>
-	</dashBoard>
+```xml
+<?xml version="1.0" encoding="utf-8" ?> 
+<dashBoard>
+    <section>
+        <areas>
+            <area>content</area>
+        </areas>
+        <tab caption="Welcome">
+            <control>/app_plugins/mycustomdashboard/customwelcome.html</control>
+        </tab>
+    </section>
+</dashBoard>
+```
 
 [Check out our Creating a Custom Dashboard tutorial](../../../Tutorials/Creating-a-Custom-Dashboard/index.md)
 
@@ -118,27 +124,27 @@ Once you have created the UserControls that you want to have loaded when a secti
 **Sample**  
 Below is an example of a valid Dashboard.config:
 
-	<?xml version="1.0" encoding="utf-8" ?> 
-	<dashBoard>
-		<section>
-			<areas>
-				<area>content</area>
-			</areas>
-			<tab caption="Last Edits">
-				<access>
-					<deny>editor</deny>
-				</access>
-				<control>/usercontrols/dashboard/latestEdits.ascx</control>
-			</tab>
-			<tab caption="Latest Items">
-				<control>/usercontrols/dashboard/newestItems.ascx</control>
-			</tab>
-			<tab caption="Create blog post">
-				<control>/usercontrols/umbracoBlog/dashboardBlogPostCreate.ascx</control>
-			</tab>
-		</section>
-	</dashBoard>
+```xml
+<?xml version="1.0" encoding="utf-8" ?> 
+<dashBoard>
+    <section>
+        <areas>
+            <area>content</area>
+        </areas>
+        <tab caption="Last Edits">
+            <access>
+                <deny>editor</deny>
+            </access>
+            <control>/usercontrols/dashboard/latestEdits.ascx</control>
+        </tab>
+        <tab caption="Latest Items">
+            <control>/usercontrols/dashboard/newestItems.ascx</control>
+        </tab>
+        <tab caption="Create blog post">
+            <control>/usercontrols/umbracoBlog/dashboardBlogPostCreate.ascx</control>
+        </tab>
+    </section>
+</dashBoard>
+```
 
 What this does is every time a user clicks on the Content section of the Umbraco UI, it loads a page with three tabs called "Last Edits", "Latest Items" and "Create blog post". For each tab a UserControl is loaded to provide the functionality that the developer created for those tabs. The UI finds the UserControls via the paths provided.
-
-
