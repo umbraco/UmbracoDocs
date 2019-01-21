@@ -15,7 +15,7 @@ The following guide will use two example sites; *development.site* and *live.sit
 
 ![InstallingCourier](images/InstallCourier.gif)
 
-Go through these steps on all sites where you want to use Courier.
+Repeat these steps on **all sites where you want to use Courier**.
 
 Before you can start transferring between your sites, you need to **add a Courier API key** to the `courier.config` file on all the sites.
 
@@ -30,7 +30,7 @@ Before you can start transferring between your sites, you need to **add a Courie
 ```
 
 * Change `<method>` to **token**
-* Add a **randomly generated api key with at least 10 characters** - this could be anything, fx 1234567890
+* Add a **randomly generated api key with at least 10 characters** - use only letters and/or numbers, ex. `3ljh6k2l1e`
 * The <auth> section should look something like this:
 
 ```xml
