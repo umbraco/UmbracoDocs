@@ -56,8 +56,8 @@ For the Umbraco Courier license you do not need to purchase additional domains i
 
 You can purchase licenses for our products on our website:
 
-- [Umbraco Forms licenses](https://umbraco.com/apps/umbraco-forms/)
-- [Umbraco Courier licenses](https://umbraco.com/apps/umbraco-courier/)
+- [Umbraco Forms licenses](https://umbraco.com/products/umbraco-forms/)
+- [Umbraco Courier licenses](https://umbraco.com/products/umbraco-courier/)
 
 When you've bought a license you need to configure it with your domains.
 
