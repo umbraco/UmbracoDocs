@@ -4,7 +4,9 @@ The XSLT implementation of Examine requires a little bit of setup. The steps are
 
 1. Add the Examine xslt extensions to the xslt config in file ~/Config/XsltExtensions.config
 
-    `<ext assembly="UmbracoExamine" type="UmbracoExamine.XsltExtensions" alias="Examine" />`
+```xml
+<ext assembly="UmbracoExamine" type="UmbracoExamine.XsltExtensions" alias="Examine" />
+```
 
 2. In your Xslt for your macro ensure to add the namespace:
 	
@@ -16,16 +18,18 @@ The XSLT implementation of Examine requires a little bit of setup. The steps are
 
 Now we can use the Examine xslt extensions in our xslt. This will render the exact same results as the above 3 examples:
 
-  	<xsl:template match="/">
-	    <xsl:if test="umbraco.library:Request('query') != ''">
-	      <ul>
-	        <xsl:for-each select="Examine:Search(umbraco.library:Request('query'))//node">
-	          <li>
-	            <a href="{umbraco.library:NiceUrl(@id)}">
-	              <xsl:value-of select="./data[@alias='nodeName']"/>
-	            </a>
-	          </li>
-	        </xsl:for-each>
-	      </ul>
-	    </xsl:if>
-	  </xsl:template>
+```xml
+<xsl:template match="/">
+    <xsl:if test="umbraco.library:Request('query') != ''">
+      <ul>
+        <xsl:for-each select="Examine:Search(umbraco.library:Request('query'))//node">
+          <li>
+            <a href="{umbraco.library:NiceUrl(@id)}">
+              <xsl:value-of select="./data[@alias='nodeName']"/>
+            </a>
+          </li>
+        </xsl:for-each>
+      </ul>
+    </xsl:if>
+</xsl:template>
+```
