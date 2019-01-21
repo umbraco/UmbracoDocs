@@ -16,15 +16,6 @@ This is a work in progress.
 Want to help out making documentation for V8? Please check out our [Contribution guidelines](../Contribute).
 :::
 
-## What's new in Umbraco 8?
+## [What's new in Umbraco 8?](New-in-V8.md)
 
-...
-
-
-
-### [Content Apps](../Extending/Content-Apps)
-
-### [Infinite Editing]()
-
-### [Infinite Editing]()
-
+Learn more about the new features in Umbraco 8.
