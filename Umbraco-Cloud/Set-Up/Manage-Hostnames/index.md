@@ -39,7 +39,7 @@ You will also have to specify the hostname for each root node if you are using a
 
 Once you've assigned a hostname to your Umbraco Cloud environment, you may want to hide the default umbraco.io URL (e.g. *snoopy.s1.umbraco.io*). We've created a rewrite rule for this purpose - find it in the [Rewrites on Cloud](Rewrites-on-Cloud/#hiding-the-default-umbraco-io-url) article. 
 
-## [Umbraco Latch](Umbraco-Latch)
+## [Umbraco Latch](../Umbraco-Latch)
 
 All hostnames added to an Umbraco Cloud project will automatically be protected by **Umbraco Latch**: A TLS certificate will be assigned to your hostnames.
 
