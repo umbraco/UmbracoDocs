@@ -14,10 +14,11 @@ Below you can see the settings that affect the Umbraco backoffice (v7.8+)
 ### Tours
 
 The section is used for controlling the backoffice tours functionality.
-
-    <backOffice>
-        <tours enable="true"></tours>
-    </backOffice>
+```xml
+<backOffice>
+    <tours enable="true"></tours>
+</backOffice>
+```
 
 There is only one supported attribute on the tours element:
 
@@ -31,8 +32,9 @@ Below you can see settings that affects content in Umbraco.
 ### Obsolete data types
 
 This section is used for controlling whether or not the data types marked as obsolete should be visible in the dropdown when creating new data types.
-
-    <showDeprecatedPropertyEditors>false</showDeprecatedPropertyEditors>
+```xml
+<showDeprecatedPropertyEditors>false</showDeprecatedPropertyEditors>
+```
 
 **`enable`**
 By default this is set to false. To make the obsolete data types visible in the dropdown change the value to **true**.
@@ -110,15 +112,15 @@ Please note that best practice is to handle your script files externally and not
 :::
 
 ```xml
-        <scripteditor>
-            <!-- Path to script folder - no ending "/" -->
-            <scriptFolderPath>/scripts</scriptFolderPath>
-            <!-- what files can be opened/created in the script editor -->
-            <scriptFileTypes>js,xml</scriptFileTypes>
-            <!-- disable the codepress editor and use a simple textarea instead -->
-            <!-- note! codemirror editor always disabled in IE due to automatic hyperlinking "feature" in contenteditable areas -->
-            <scriptDisableEditor>false</scriptDisableEditor>
-        </scripteditor>
+<scripteditor>
+    <!-- Path to script folder - no ending "/" -->
+    <scriptFolderPath>/scripts</scriptFolderPath>
+    <!-- what files can be opened/created in the script editor -->
+    <scriptFileTypes>js,xml</scriptFileTypes>
+    <!-- disable the codepress editor and use a simple textarea instead -->
+    <!-- note! codemirror editor always disabled in IE due to automatic hyperlinking "feature" in contenteditable areas -->
+    <scriptDisableEditor>false</scriptDisableEditor>
+</scripteditor>
 ```
 
 Let's break it down.
@@ -139,9 +141,11 @@ If you change the value to "true" then you will see the code in a simple textare
 This setting let's you control if an upload control can create new folders for files uploaded, or if the file should be stored in the /media folder root with a unique ID prefixed to the filename.
 
 ```xml
-         <!-- should Umbraco store the uploaded files like /media/xxx/filename.ext or like /media/xxx-filename.ext
-              should be set to false if the application pool's user account hasn't got read rights of the drive root up to the /media directory -->
-        <UploadAllowDirectories>True</UploadAllowDirectories>
+<!-- 
+should Umbraco store the uploaded files like /media/xxx/filename.ext or like /media/xxx-filename.ext
+should be set to false if the application pool's user account hasn't got read rights of the drive root up to the /media directory
+-->
+<UploadAllowDirectories>True</UploadAllowDirectories>
 ```
 
 ### Errors
@@ -187,7 +191,9 @@ happens if you for some reason forget to define a hostname on a site.
 
 You may find that your custom error page doesn't show, and instead IIS handles the error. To resolve this add the following key to your web.config just before the closing tag of the system.webServer section.
 
-        <httpErrors existingResponse="PassThrough" />
+```xml
+<httpErrors existingResponse="PassThrough" />
+```
 
 Now IIS will ignore httpErrors and allow Umbraco to handle them.
 
@@ -223,52 +229,66 @@ By setting the value to "true" tidy will be Used to clean Richtext Editor conten
 
 The benefit of disabling tidy is that HTML5 elements and IFRAMEs can be inserted into the rich text editor without being removed.
 
-        <!-- clean editor content with use of tidy -->
-        <TidyEditorContent>False</TidyEditorContent>
+```xml
+<!-- clean editor content with use of tidy -->
+<TidyEditorContent>False</TidyEditorContent>
+```
 
 **`<TidyCharEncoding>`**
 
 Character encoding for Tidy.
 
-        <!-- the encoding type for tidy. Default is UTF8, options are ASCII, Raw, Latin1, UTF8, ISO2022, MacroMan-->
-        <TidyCharEncoding>UTF8</TidyCharEncoding>
+```xml
+<!-- the encoding type for tidy. Default is UTF8, options are ASCII, Raw, Latin1, UTF8, ISO2022, MacroMan-->
+<TidyCharEncoding>UTF8</TidyCharEncoding>
+```
 
 **`<ForceSafeAliases>`**
 
 This setting allows you to disable the safe aliases, when you're creating properties on your document types. As the comment below states you really
 should not turn this off. Please also note that this option is most likely removed in a future Umbraco release - see http://issues.umbraco.org/issue/U4-867
 
-        <!-- Whether to force safe aliases (no spaces, no special characters) at businesslogic level on contenttypes and propertytypes -->
-        <!-- HIGHLY recommend to keep this to true to ensure valid and beautiful XML Schemas -->
-        <ForceSafeAliases>true</ForceSafeAliases>
+```xml
+<!-- Whether to force safe aliases (no spaces, no special characters) at businesslogic level on contenttypes and propertytypes -->
+<!-- HIGHLY recommend to keep this to true to ensure valid and beautiful XML Schemas -->
+<ForceSafeAliases>true</ForceSafeAliases>
+```
 
 **`<XmlCacheEnabled>`**
 
 Turn XML caching of content on/off. Umbraco makes heavy use of caching content in memory to avoid database calls. This makes Umbraco faster and more efficient. You should not in any way turn this off unless you have a very good reason to do so. It will make your website very slow.
 
-        <!-- Enable / disable XML content cache -->
-        <XmlCacheEnabled>True</XmlCacheEnabled>
+```xml
+<!-- Enable / disable XML content cache -->
+<XmlCacheEnabled>True</XmlCacheEnabled>
+```
 
 **`<ContinouslyUpdateXmlDiskCache>`**
 
 Updates the XmlCache whenever content is published, default is set to true. If it's set to false then it will never write the xml to disc. This will have an affect on start up times as Umbraco will have to fetch the initial Xml from the database instead of from disc. This is a legacy setting for older load balanced setups. You are advised to leave this set to true on new builds.
 
-        <!-- Update disk cache every time content has changed -->
-        <ContinouslyUpdateXmlDiskCache>True</ContinouslyUpdateXmlDiskCache>
+```xml
+<!-- Update disk cache every time content has changed -->
+<ContinouslyUpdateXmlDiskCache>True</ContinouslyUpdateXmlDiskCache>
+```
 
 **`<XmlContentCheckForDiskChanges>`**
 
 Checks if the disk cache file has been updated and if so, clears the in-memory cache to force the file to be read. Added to trigger updates of the in-memory cache when the disk cache file is updated.
 
-        <!-- Update in-memory cache if XML file is changed -->
-        <XmlContentCheckForDiskChanges>False</XmlContentCheckForDiskChanges>
+```xml
+<!-- Update in-memory cache if XML file is changed -->
+<XmlContentCheckForDiskChanges>False</XmlContentCheckForDiskChanges>
+```
 
 **`<EnableSplashWhileLoading>`**
 
 In case Umbraco is taking a bit of time to prepare content to display you can display a "loading, please wait..." splash screen to your users. Simply change the value to "True".
 
-        <!-- Show the /config/splashes/booting.aspx page while initializing content -->
-        <EnableSplashWhileLoading>False</EnableSplashWhileLoading>
+```xml
+<!-- Show the /config/splashes/booting.aspx page while initializing content -->
+<EnableSplashWhileLoading>False</EnableSplashWhileLoading>
+```
 
 **`<PropertyContextHelpOption>`**
 
@@ -292,40 +312,48 @@ This allows you to customize the preview badge being shown when you're previewin
 
 As stated in the comment below this setting caches media and member data. This prevents the need for database queries when getting media and member data.
 
-        <!-- Cache cycle of Media and Member data fetched from the umbraco.library methods -->
-        <!-- In seconds. 0 will disable cache -->
-        <UmbracoLibraryCacheDuration>1800</UmbracoLibraryCacheDuration>
+```xml
+<!-- Cache cycle of Media and Member data fetched from the umbraco.library methods -->
+<!-- In seconds. 0 will disable cache -->
+<UmbracoLibraryCacheDuration>1800</UmbracoLibraryCacheDuration>
+```
 
 **`<ResolveUrlsFromTextString>`**
 
 This setting is used when you're running Umbraco in virtual directories.
 
-        <!-- Url Resolving ensures that all links works if you run Umbraco in virtual directories -->
-        <!-- Setting this to true can increase render time for pages with a large number of links -->
-        <!-- If running Umbraco in virtual directory this *must* be set to true! -->
-        <ResolveUrlsFromTextString>false</ResolveUrlsFromTextString>
+```xml
+<!-- Url Resolving ensures that all links works if you run Umbraco in virtual directories -->
+<!-- Setting this to true can increase render time for pages with a large number of links -->
+<!-- If running Umbraco in virtual directory this *must* be set to true! -->
+<ResolveUrlsFromTextString>false</ResolveUrlsFromTextString>
+```
 
 **`<DisallowedUploadFiles>`**
 
 This setting consists of a "black list" of file extensions that editors shouldn't be allowed to upload via the backoffice.
 
-        <!-- These file types will not be allowed to be uploaded via the upload control for media and content -->
-        <disallowedUploadFiles>ashx,aspx,ascx,config,cshtml,vbhtml,asmx,air,axd,swf,xml,xhtml,html,htm,svg,php,htaccess</disallowedUploadFiles>
+```xml
+<!-- These file types will not be allowed to be uploaded via the upload control for media and content -->
+<disallowedUploadFiles>ashx,aspx,ascx,config,cshtml,vbhtml,asmx,air,axd,swf,xml,xhtml,html,htm,svg,php,htaccess</disallowedUploadFiles>
+```
 
 **`<AllowedUploadFiles>`**
 
 If greater control is required than available from the above, this setting can be used to store a "white list" of file extensions.  If provided, only files with these extensions can be uploaded via the backoffice.
 
 ```xml
-        <!-- If completed, only the file extensions listed below will be allowed to be uploaded.  If empty, disallowedUploadFiles will apply to prevent upload of specific file extensions. -->
-        <allowedUploadFiles></allowedUploadFiles>
+<!-- If completed, only the file extensions listed below will be allowed to be uploaded.  If empty, disallowedUploadFiles will apply to prevent upload of specific file extensions. -->
+<allowedUploadFiles></allowedUploadFiles>
 ```
 
 **`<loginBackgroundImage>`**
 
 You can specify your own background image for the login screen here. The image will automatically get an overlay to match backoffice colors. This path is relative to the ~/umbraco path. The default location is: /umbraco/assets/img/installer.jpg
 
-    <loginBackgroundImage>../App_Plugins/Backgrounds/login.png</loginBackgroundImage>
+```xml
+<loginBackgroundImage>../App_Plugins/Backgrounds/login.png</loginBackgroundImage>
+```
 
 **`<EnablePropertyValueConverters>`**
 
@@ -334,7 +362,7 @@ Enables [value converters](../../../Extending/Property-Editors/value-converters.
 On new installs this set to true. When you are upgrading from a lower version than 7.6.0 it is recommended to set this setting to false. More information can be found in the explanation of the [breaking changes in 7.6.0](../../../Getting-Started/Setup/Upgrading/760-breaking-changes#property-value-converters-u4-7318)
 
 ```xml
-    <EnablePropertyValueConverters>true</EnablePropertyValueConverters>
+<EnablePropertyValueConverters>true</EnablePropertyValueConverters>
 ```
 
 ## Security
@@ -393,40 +421,42 @@ The authentication cookie which is set in the browser when a backoffice user log
 The options in the request handler let us do some quite useful things, like setting domain prefixes, deciding whether or not to use trailing slashes and setting URL replacement for special characters.
 Let's have a further look at each option below.
 
-    <requestHandler>
-        <!-- this will ensure that urls are unique when running with multiple root nodes -->
-        <useDomainPrefixes>false</useDomainPrefixes>
-        <!-- this will add a trailing slash (/) to urls when in directory url mode -->
-        <addTrailingSlash>true</addTrailingSlash>
-        <urlReplacing removeDoubleDashes="false" toAscii="false">
-            <char org=" ">-</char>
-            <char org="&quot;"></char>
-            <char org="'"></char>
-            <char org="%"></char>
-            <char org="."></char>
-            <char org=";"></char>
-            <char org="/"></char>
-            <char org="\"></char>
-            <char org=":"></char>
-            <char org="#"></char>
-            <char org="+">plus</char>
-            <char org="*">star</char>
-            <char org="&amp;"></char>
-            <char org="?"></char>
-            <char org="æ">ae</char>
-            <char org="ø">oe</char>
-            <char org="å">aa</char>
-            <char org="ä">ae</char>
-            <char org="ö">oe</char>
-            <char org="ü">ue</char>
-            <char org="ß">ss</char>
-            <char org="Ä">ae</char>
-            <char org="Ö">oe</char>
-            <char org="|">-</char>
-            <char org="&lt;"></char>
-            <char org="&gt;"></char>
-        </urlReplacing>
-    </requestHandler>
+```xml
+<requestHandler>
+    <!-- this will ensure that urls are unique when running with multiple root nodes -->
+    <useDomainPrefixes>false</useDomainPrefixes>
+    <!-- this will add a trailing slash (/) to urls when in directory url mode -->
+    <addTrailingSlash>true</addTrailingSlash>
+    <urlReplacing removeDoubleDashes="false" toAscii="false">
+        <char org=" ">-</char>
+        <char org="&quot;"></char>
+        <char org="'"></char>
+        <char org="%"></char>
+        <char org="."></char>
+        <char org=";"></char>
+        <char org="/"></char>
+        <char org="\"></char>
+        <char org=":"></char>
+        <char org="#"></char>
+        <char org="+">plus</char>
+        <char org="*">star</char>
+        <char org="&amp;"></char>
+        <char org="?"></char>
+        <char org="æ">ae</char>
+        <char org="ø">oe</char>
+        <char org="å">aa</char>
+        <char org="ä">ae</char>
+        <char org="ö">oe</char>
+        <char org="ü">ue</char>
+        <char org="ß">ss</char>
+        <char org="Ä">ae</char>
+        <char org="Ö">oe</char>
+        <char org="|">-</char>
+        <char org="&lt;"></char>
+        <char org="&gt;"></char>
+    </urlReplacing>
+</requestHandler>
+```
 
 **`<useDomainPrefixes>`**
 As mentioned in the comment above, this should be set to true when running with multiple root notes. This makes sure that you're not able to access content from
@@ -452,11 +482,13 @@ So, if **`<char org="ñ">n</char>`** is added above the **ñ** will be shown as 
 
 ## Templates
 
-    <templates>
-        <defaultRenderingEngine>Mvc</defaultRenderingEngine>
-        <useAspNetMasterPages>true</useAspNetMasterPages>
-        <enableSkinSupport>true</enableSkinSupport>
-    </templates>
+```xml
+<templates>
+    <defaultRenderingEngine>Mvc</defaultRenderingEngine>
+    <useAspNetMasterPages>true</useAspNetMasterPages>
+    <enableSkinSupport>true</enableSkinSupport>
+</templates>
+```
 
 **`<defaultRenderingEngine>`**
 Tells Umbraco whether to create MVC Views or Webforms Master Pages when creating a template. This does not limit you from using one technology or the other, it is just a flag to indicate to Umbraco what type of templates to create in the backoffice.
@@ -468,13 +500,15 @@ This setting only affects skinning when using Webforms Masterpages.
 
 The comment says it all :)
 
-    <!-- this is used by Umbraco to determine if there's valid classes in the /App_Code folder to be used for Rest/XSLT extensions -->
-    <developer>
-        <appCodeFileExtensions>
-            <ext>cs</ext>
-            <ext>vb</ext>
-        </appCodeFileExtensions>
-    </developer>
+```xml
+<!-- this is used by Umbraco to determine if there's valid classes in the /App_Code folder to be used for Rest/XSLT extensions -->
+<developer>
+    <appCodeFileExtensions>
+        <ext>cs</ext>
+        <ext>vb</ext>
+    </appCodeFileExtensions>
+</developer>
+```
 
 ## Scripting
 
@@ -484,8 +518,10 @@ The [`<scripting>` section](index-vpre6.0.0.md) is about legacy scripting and is
 
 The viewstate mover module is included by default. It enables you to move all ASP.NET viewstate information to the end of the page, thereby making it easier for search engines to index your content instead of going through viewstate JavaScript code. Please note that this does not work will all ASP.NET controls.
 
-    <!-- This moves the ASP.NET viewstate data to the end of the html document instead of having it in the beginning-->
-    <viewstateMoverModule enable="false" />
+```xml
+<!-- This moves the ASP.NET viewstate data to the end of the html document instead of having it in the beginning-->
+<viewstateMoverModule enable="false" />
+```
 
 ## Logging
 
@@ -621,11 +657,13 @@ This section configures...
 
 **umbracoApplicationUrl**: defines the Umbraco application url, i.e. how the server should reach itself. By default, Umbraco will guess that url from the first request made to the server. Use that setting if the guess is not correct (because you are behind a load-balancer, for example). Format is: "http://www.mysite.com/umbraco" i.e. it needs to contain the scheme (http/https), complete hostname, and Umbraco path.
 
-    <web.routing
-        trySkipIisCustomErrors="false"
-        internalRedirectPreservesTemplate="false"
-        disableAlternativeTemplates="false"
-        disableFindContentByIdPath="false"
-        disableRedirectUrlTracking="false"
-        umbracoApplicationUrl=""
-    />
+```xml
+<web.routing
+    trySkipIisCustomErrors="false"
+    internalRedirectPreservesTemplate="false"
+    disableAlternativeTemplates="false"
+    disableFindContentByIdPath="false"
+    disableRedirectUrlTracking="false"
+    umbracoApplicationUrl=""
+/>
+```
