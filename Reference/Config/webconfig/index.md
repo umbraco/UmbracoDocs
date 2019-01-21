@@ -89,6 +89,10 @@ By adding this settings to the web.config you will be able to send out emails fr
 </system.net>
 ```
 
+:::note
+Since version 7.13, if you keep the `from` attribute set to noreply@example.com, Umbraco won't be able to send user invitations, or password recovery emails.
+:::
+
 ## Optional settings
 
 _These are settings that have default values but can be overridden by creating the appSetting and setting its value in the web.config_
