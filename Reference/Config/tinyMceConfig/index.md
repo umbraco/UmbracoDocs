@@ -6,12 +6,14 @@ Here you will find documentation relating to the options you can add/modify in t
 
 Inside of the `<commands>` node you will find multiple `<command>` nodes. Each one of these nodes defines a icon/button that can appear on the formatting bar inside of Umbraco and the command that is triggered when it is clicked.
 
-    <command>
-      <umbracoAlias>code</umbracoAlias>
-      <icon>images/editor/code.gif</icon>
-      <tinyMceCommand value="" userInterface="false" frontendCommand="code">code</tinyMceCommand>
-      <priority>1</priority>
-    </command>
+```xml
+<command>
+  <umbracoAlias>code</umbracoAlias>
+  <icon>images/editor/code.gif</icon>
+  <tinyMceCommand value="" userInterface="false" frontendCommand="code">code</tinyMceCommand>
+  <priority>1</priority>
+</command>
+```
 
 `umbracoAlias` defines a unique alias within Umbraco for the command. This alias should not contain any spaces.
 
@@ -27,19 +29,20 @@ To further break this down, the `value` attribute is usually an empty value as m
 
 Inside of the `<plugins>` node you can find one or more `<plugin>` nodes. Each one of these nodes defines a plugin which extends the functionality of TinyMce. Below you will find the standard plugins configured in a clean install of Umbraco v6.x.
 
-    <plugins>
-    	<plugin loadOnFrontend="true">paste</plugin>
-    	<plugin loadOnFrontend="true">inlinepopups</plugin>
-    	<plugin loadOnFrontend="true">noneditable</plugin>
-    	<plugin loadOnFrontend="true">table</plugin>
-    	<plugin loadOnFrontend="false">umbracomacro</plugin>
-    	<plugin loadOnFrontend="false">umbracoimg</plugin>
-    	<plugin loadOnFrontend="false">advlink</plugin>
-    	<plugin loadOnFrontend="false">umbracocss</plugin>
-    	<plugin loadOnFrontend="false">umbracoembed</plugin>
-    	<plugin loadOnFrontend="false">spellchecker</plugin>
-    </plugins>
-
+```xml
+<plugins>
+    <plugin loadOnFrontend="true">paste</plugin>
+    <plugin loadOnFrontend="true">inlinepopups</plugin>
+    <plugin loadOnFrontend="true">noneditable</plugin>
+    <plugin loadOnFrontend="true">table</plugin>
+    <plugin loadOnFrontend="false">umbracomacro</plugin>
+    <plugin loadOnFrontend="false">umbracoimg</plugin>
+    <plugin loadOnFrontend="false">advlink</plugin>
+    <plugin loadOnFrontend="false">umbracocss</plugin>
+    <plugin loadOnFrontend="false">umbracoembed</plugin>
+    <plugin loadOnFrontend="false">spellchecker</plugin>
+</plugins>
+```
 
 ## validElements
 
@@ -49,20 +52,22 @@ This option contains a comma separated list of element conversion chunks. Each c
 
 Here is an example of the standard valid elements that come with a clean install of Umbraco v6.x.
 
-    <validElements>
-    	<![CDATA[+a[id|style|rel|rev|charset|hreflang|dir|lang|tabindex|accesskey|type|name|href|target|title|class|onfocus|onblur|onclick|
-    	ondblclick|onmousedown|onmouseup|onmouseover|onmousemove|onmouseout|onkeypress|onkeydown|onkeyup],-strong/-b[class|style],-em/-i[class|style],
-    	-strike[class|style],-u[class|style],#p[id|style|dir|class|align],-ol[class|reversed|start|style|type],-ul[class|style],-li[class|style],br[class],
-    	img[id|dir|lang|longdesc|usemap|style|class|src|onmouseover|onmouseout|border|alt=|title|hspace|vspace|width|height|align|umbracoorgwidth|umbracoorgheight|onresize|onresizestart|onresizeend|rel],
-    	-sub[style|class],-sup[style|class],-blockquote[dir|style|class],-table[border=0|cellspacing|cellpadding|width|height|class|align|summary|style|dir|id|lang|bgcolor|background|bordercolor],
-    	-tr[id|lang|dir|class|rowspan|width|height|align|valign|style|bgcolor|background|bordercolor],tbody[id|class],
-    	thead[id|class],tfoot[id|class],#td[id|lang|dir|class|colspan|rowspan|width|height|align|valign|style|bgcolor|background|bordercolor|scope],
-    	-th[id|lang|dir|class|colspan|rowspan|width|height|align|valign|style|scope],caption[id|lang|dir|class|style],-div[id|dir|class|align|style],
-    	-span[class|align|style],-pre[class|align|style],address[class|align|style],-h1[id|dir|class|align],-h2[id|dir|class|align],
-    	-h3[id|dir|class|align],-h4[id|dir|class|align],-h5[id|dir|class|align],-h6[id|style|dir|class|align],hr[class|style],
-    	dd[id|class|title|style|dir|lang],dl[id|class|title|style|dir|lang],dt[id|class|title|style|dir|lang],object[class|id|width|height|codebase|*],
-    	param[name|value|_value|class],embed[type|width|height|src|class|*],map[name|class],area[shape|coords|href|alt|target|class],bdo[class],button[class],iframe[*]]]>
-    </validElements>
+```xml
+<validElements>
+    <![CDATA[+a[id|style|rel|rev|charset|hreflang|dir|lang|tabindex|accesskey|type|name|href|target|title|class|onfocus|onblur|onclick|
+    ondblclick|onmousedown|onmouseup|onmouseover|onmousemove|onmouseout|onkeypress|onkeydown|onkeyup],-strong/-b[class|style],-em/-i[class|style],
+    -strike[class|style],-u[class|style],#p[id|style|dir|class|align],-ol[class|reversed|start|style|type],-ul[class|style],-li[class|style],br[class],
+    img[id|dir|lang|longdesc|usemap|style|class|src|onmouseover|onmouseout|border|alt=|title|hspace|vspace|width|height|align|umbracoorgwidth|umbracoorgheight|onresize|onresizestart|onresizeend|rel],
+    -sub[style|class],-sup[style|class],-blockquote[dir|style|class],-table[border=0|cellspacing|cellpadding|width|height|class|align|summary|style|dir|id|lang|bgcolor|background|bordercolor],
+    -tr[id|lang|dir|class|rowspan|width|height|align|valign|style|bgcolor|background|bordercolor],tbody[id|class],
+    thead[id|class],tfoot[id|class],#td[id|lang|dir|class|colspan|rowspan|width|height|align|valign|style|bgcolor|background|bordercolor|scope],
+    -th[id|lang|dir|class|colspan|rowspan|width|height|align|valign|style|scope],caption[id|lang|dir|class|style],-div[id|dir|class|align|style],
+    -span[class|align|style],-pre[class|align|style],address[class|align|style],-h1[id|dir|class|align],-h2[id|dir|class|align],
+    -h3[id|dir|class|align],-h4[id|dir|class|align],-h5[id|dir|class|align],-h6[id|style|dir|class|align],hr[class|style],
+    dd[id|class|title|style|dir|lang],dl[id|class|title|style|dir|lang],dt[id|class|title|style|dir|lang],object[class|id|width|height|codebase|*],
+    param[name|value|_value|class],embed[type|width|height|src|class|*],map[name|class],area[shape|coords|href|alt|target|class],bdo[class],button[class],iframe[*]]]>
+</validElements>
+```
 
 ### Control characters:
 
@@ -142,7 +147,9 @@ If applied in extended_valid_elements, it is only effective for the elements in 
 
 This option should contain a comma separated list of element names to exclude from the saved content. Elements in this list will be removed when your content is saved.
 
-    <invalidElements>font</invalidElements>
+```xml
+<invalidElements>font</invalidElements>
+```
 
 # extendedValidElements
 
@@ -152,8 +159,10 @@ Extended valid elements is a configuration option of TinyMCE that is normally us
 
 The `customConfig` node contains any custom configuration you would like applied to TinyMce when each instance is initialized. For examples of configuration options see the [official TinyMce Configuration options documentation](http://www.tinymce.com/wiki.php/Configuration3x "official TinyMce Configuration Options documentation").
 
-	<customConfig>
-		<!--    <config key="myKey">mySetting</config>-->
-		<config key="entity_encoding">raw</config>
-		<config key="spellchecker_rpc_url">GoogleSpellChecker.ashx</config>
-	</customConfig>
+```xml
+<customConfig>
+    <!--    <config key="myKey">mySetting</config>-->
+    <config key="entity_encoding">raw</config>
+    <config key="spellchecker_rpc_url">GoogleSpellChecker.ashx</config>
+</customConfig>
+```
