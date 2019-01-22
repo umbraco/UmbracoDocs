@@ -23,24 +23,24 @@ Here are the steps to specify your own logic for validating a username and passw
 For example, to always allow login when the user enters the password `test` you could do:
 
 ```C#
-    using System.Threading.Tasks;
-    using Umbraco.Core.Models.Identity;
-    using Umbraco.Core.Security;
+using System.Threading.Tasks;
+using Umbraco.Core.Models.Identity;
+using Umbraco.Core.Security;
 
-    namespace MyNamespace
+namespace MyNamespace
+{
+    public class MyPasswordChecker : IBackOfficeUserPasswordChecker
     {
-        public class MyPasswordChecker : IBackOfficeUserPasswordChecker
+        public Task<BackOfficeUserPasswordCheckerResult> CheckPasswordAsync(BackOfficeIdentityUser user, string password)
         {
-            public Task<BackOfficeUserPasswordCheckerResult> CheckPasswordAsync(BackOfficeIdentityUser user, string password)
-            {
-                var result = (password == "test")
-                    ? Task.FromResult(BackOfficeUserPasswordCheckerResult.ValidCredentials)
-                    : Task.FromResult(BackOfficeUserPasswordCheckerResult.InvalidCredentials);
+            var result = (password == "test")
+                ? Task.FromResult(BackOfficeUserPasswordCheckerResult.ValidCredentials)
+                : Task.FromResult(BackOfficeUserPasswordCheckerResult.InvalidCredentials);
 
-                return result;
-            }
+            return result;
         }
     }
+}
 ```
 
 1. Modify the `~/App_Start/UmbracoCustomOwinStartup.cs` class
@@ -48,24 +48,24 @@ For example, to always allow login when the user enters the password `test` you 
     * Replace the `app.ConfigureUserManagerForUmbracoBackOffice` call with a custom overload to specify your custom `IBackOfficeUserPasswordChecker`  
 
 ```C#
-            var applicationContext = ApplicationContext.Current;
-            app.ConfigureUserManagerForUmbracoBackOffice<BackOfficeUserManager, BackOfficeIdentityUser>(
-                applicationContext,
-                (options, context) =>
-                {
-                    var membershipProvider = Umbraco.Core.Security.MembershipProviderExtensions.GetUsersMembershipProvider().AsUmbracoMembershipProvider();
-            var settingContent = Umbraco.Core.Configuration.UmbracoConfig.For.UmbracoSettings().Content;
-                    var userManager = BackOfficeUserManager.Create(options,
-                        applicationContext.Services.UserService,
-                        applicationContext.Services.EntityService,
-                        applicationContext.Services.ExternalLoginService,
-                        membershipProvider,
-            settingContent);
+var applicationContext = ApplicationContext.Current;
+app.ConfigureUserManagerForUmbracoBackOffice<BackOfficeUserManager, BackOfficeIdentityUser>(
+    applicationContext,
+    (options, context) =>
+    {
+        var membershipProvider = Umbraco.Core.Security.MembershipProviderExtensions.GetUsersMembershipProvider().AsUmbracoMembershipProvider();
+var settingContent = Umbraco.Core.Configuration.UmbracoConfig.For.UmbracoSettings().Content;
+        var userManager = BackOfficeUserManager.Create(options,
+            applicationContext.Services.UserService,
+            applicationContext.Services.EntityService,
+            applicationContext.Services.ExternalLoginService,
+            membershipProvider,
+settingContent);
 
-                    // Set your own custom IBackOfficeUserPasswordChecker
-                    userManager.BackOfficeUserPasswordChecker = new MyPasswordChecker();
-                    return userManager;
-                });
+        // Set your own custom IBackOfficeUserPasswordChecker
+        userManager.BackOfficeUserPasswordChecker = new MyPasswordChecker();
+        return userManager;
+    });
 ```
 
 1. Make sure to switch the `owin:appStartup` appSetting in your `web.config` file to use `UmbracoCustomOwinStartup`: `<add key="owin:appStartup" value="UmbracoCustomOwinStartup"/>`
