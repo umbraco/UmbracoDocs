@@ -24,12 +24,19 @@ Giving the Umbraco Backoffice a new look, has given you a bigger workspace when 
 - Health Check, Examine Management and the ModelsBuilder user interfaces have been moved to the **Settings** section
 - Searching your backoffice has been made even easier: `CTRL + SPACE` opens a search field overlay, which gives you search results as you start typing
 
+## Packages in V8
+
+The entire flow of building and testing packages for Umbraco has been given an overhaul and it's been made more fluent and consistent. 
+
+[would like to be able to say something more about this .. ]
+
 ## General improvements
 
-Clean-up of codebase
-Improved performance
-Improved stability
-Improvements to packages
+Developing Umbraco 8 has allowed for a major clean-up in the core codebase. This means that a lot of old legacy code has been removed, which has opened up for the opporunity to add more up-to-date technology.
+
+For you as a developer a clean codebase means that it is easier to create and implement extensions, as well as work with the code in general.
+
+A cleaner codebase has also greatly contributed to improving the performance and stability of the CMS. You can expect less downtime, and your Umbraco 8 website will render faster and allow for more visitors and better scaling.
 
 ## Read more
 
