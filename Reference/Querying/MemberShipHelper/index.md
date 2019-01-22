@@ -8,12 +8,16 @@ Note: For a more detailed list, visit the [API documentation](https://our.umbrac
 ## How to reference MembershipHelper?
 When working in templating, this helper will automatically be there for you to use as `@Members` which means you conveniently in your templates easily can access member data:
 
-	@Members.IsLoggedIn();
-	@Members.GetCurrentMemberProfileModel();
+```csharp
+@Members.IsLoggedIn();
+@Members.GetCurrentMemberProfileModel();
+```
 
 If you need a `MembershipHelper` in a custom class, service, view, etc... you can easily create one using this syntax:
 
-	var memberShipHelper = new Umbraco.Web.Security.MembershipHelper(Umbraco.Web.UmbracoContext.Current);
+```csharp
+var memberShipHelper = new Umbraco.Web.Security.MembershipHelper(Umbraco.Web.UmbracoContext.Current);
+```
 
 ## ProfileModel and IPublishedContent 
 When looking up Members, member data is returned as `IPublishedContent`, which is the same format used for Content and Media, so referencing member properties should
@@ -65,4 +69,3 @@ Registers a new member
 
 ### .UpdateMemberProfile(ProfileModel model)
 Updates a current member profile
-
