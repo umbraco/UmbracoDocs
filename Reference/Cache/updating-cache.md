@@ -6,9 +6,11 @@ _This section describes how you should be getting/adding/updating/inserting item
 
 Putting data in and getting data out of the cache is easy; The easiest way is to use one of the many overloaded methods of: `GetCacheItem`. The `GetCacheItem` methods (all except one) are designed to "Get or Add" to the cache. For example, the following will retrieve an item from the cache and if it doesn't exist will ensure that the item is added to it:
 
-    MyObject cachedItem = ApplicationContext.ApplicationCache.RuntimeCache
-        .GetCacheItem<MyObject>("MyCacheKey",
-            () => new MyObject());
+```csharp
+MyObject cachedItem = ApplicationContext.ApplicationCache.RuntimeCache
+    .GetCacheItem<MyObject>("MyCacheKey",
+        () => new MyObject());
+```
 
 Notice 2 things:
 
@@ -27,8 +29,10 @@ One of the overloads of `GetCacheItem` doesn't specify a callback, this will all
 
 The usage is very simple:
 
-    MyObject cachedItem = ApplicationContext.ApplicationCache.RuntimeCache
-        .GetCacheItem<MyObject>("MyCacheKey");
+```csharp
+MyObject cachedItem = ApplicationContext.ApplicationCache.RuntimeCache
+    .GetCacheItem<MyObject>("MyCacheKey");
+```
 
 ### Inserting an item into the cache without retrieval
 
