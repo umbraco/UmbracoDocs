@@ -174,25 +174,27 @@ On Cloud it is easy to add an IP filter of your choosing, there are a few things
 
 The following rule can be added to your web.config (in `system.webServer/rewrite/rules/`):
 
-    <rule name="Backoffice IP Filter" enabled="true">
-        <match url="(^umbraco/backoffice/(.*)|^umbraco($|/$))"/>
-        <conditions logicalGrouping="MatchAll">
+```xml
+<rule name="Backoffice IP Filter" enabled="true">
+    <match url="(^umbraco/backoffice/(.*)|^umbraco($|/$))"/>
+    <conditions logicalGrouping="MatchAll">
 
-            <!-- Umbraco Cloud to Cloud connections should be allowed -->
-            <add input="{REMOTE_ADDR}" pattern="52.166.147.129" negate="true" />
-            <add input="{REMOTE_ADDR}" pattern="13.95.93.29" negate="true" />
-            <add input="{REMOTE_ADDR}" pattern="40.68.36.142" negate="true" />
-            <add input="{REMOTE_ADDR}" pattern="13.94.247.45" negate="true" />
-            
-            <!-- Don't apply rules on localhost so your local environment still works -->
-            <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
+        <!-- Umbraco Cloud to Cloud connections should be allowed -->
+        <add input="{REMOTE_ADDR}" pattern="52.166.147.129" negate="true" />
+        <add input="{REMOTE_ADDR}" pattern="13.95.93.29" negate="true" />
+        <add input="{REMOTE_ADDR}" pattern="40.68.36.142" negate="true" />
+        <add input="{REMOTE_ADDR}" pattern="13.94.247.45" negate="true" />
 
-            <!-- Add other client IPs that need access to the backoffice -->
-            <add input="{REMOTE_ADDR}" pattern="123.123.123.123" negate="true" />
+        <!-- Don't apply rules on localhost so your local environment still works -->
+        <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
 
-        </conditions>
-        <action type="CustomResponse" statusCode="403"/>
-    </rule> 
+        <!-- Add other client IPs that need access to the backoffice -->
+        <add input="{REMOTE_ADDR}" pattern="123.123.123.123" negate="true" />
+
+    </conditions>
+    <action type="CustomResponse" statusCode="403"/>
+</rule> 
+
 
 What we're doing here is blocking all the requests to `umbraco/backoffice/` and all of the routes that start with this. 
 
