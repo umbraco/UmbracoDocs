@@ -15,7 +15,9 @@ Another benefits of HTTPS is that you are able to use the [http2](https://en.wik
 
 Umbraco allows you to force HTTPS for all backoffice communications very easily but using the following appSettings configuration:
 
-    <add key="umbracoUseSSL" value="true" />
+```xml
+<add key="umbracoUseSSL" value="true" />
+```
 
 This options does several things when it is turned on:
 
@@ -31,14 +33,16 @@ Once you enable HTTPS for your site you should redirect all requests to your sit
 
 In your `web.config` find or add the `<system.webServer><rewrite><rules>` section and put the following rule in there. This rule will redirect all requests for the site http://mysite.com URL to the secure https://mysite.com URL and respond with a permanent redirect status.
 
-    <rule name="HTTP to HTTPS redirect" stopProcessing="true">
-        <match url="(.*)" />
-        <conditions>
-            <add input="{HTTPS}" pattern="off" ignoreCase="true" />
-            <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
-        </conditions>
-        <action type="Redirect" url="https://{HTTP_HOST}/{R:1}" redirectType="Permanent" />
-    </rule>
+```xml
+<rule name="HTTP to HTTPS redirect" stopProcessing="true">
+    <match url="(.*)" />
+    <conditions>
+        <add input="{HTTPS}" pattern="off" ignoreCase="true" />
+        <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
+    </conditions>
+    <action type="Redirect" url="https://{HTTP_HOST}/{R:1}" redirectType="Permanent" />
+</rule>
+```
 
 Note that the rule includes an ignore for `localhost`. If you run your local environment on a different URL than `localhost` you can add additional ignore rules. Additionally, if you have a staging environment that doesn't run on HTTPS, you can add that to the ignore rules too.
 
