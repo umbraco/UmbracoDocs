@@ -6,34 +6,36 @@ The ContentService class is the most commonly used type when extending Umbraco u
 
 Example usage of the ContentService events:
 
-    using Umbraco.Core;
-    using Umbraco.Core.Events;
-    using Umbraco.Core.Models;
-    using Umbraco.Core.Publishing;
-    using Umbraco.Core.Services;
-    
-    namespace My.Namespace
-    {
-        public class MyEventHandler : ApplicationEventHandler
-        {
+```csharp
+using Umbraco.Core;
+using Umbraco.Core.Events;
+using Umbraco.Core.Models;
+using Umbraco.Core.Publishing;
+using Umbraco.Core.Services;
 
-			protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+namespace My.Namespace
+{
+    public class MyEventHandler : ApplicationEventHandler
+    {
+
+        protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+        {
+            ContentService.Published += ContentServicePublished;     
+        }            
+
+        private void ContentServicePublished(IPublishingStrategy sender, PublishEventArgs<IContent> args)
+        {
+            foreach (var node in args.PublishedEntities)
             {
-				ContentService.Published += ContentServicePublished;     
-            }            
-    
-            private void ContentServicePublished(IPublishingStrategy sender, PublishEventArgs<IContent> args)
-            {
-                foreach (var node in args.PublishedEntities)
+                if (node.ContentType.Alias == "Comment")
                 {
-                    if (node.ContentType.Alias == "Comment")
-                    {
-                        SendMail(node);
-                    }
+                    SendMail(node);
                 }
             }
         }
     }
+}
+```
 
 ## Events
 
