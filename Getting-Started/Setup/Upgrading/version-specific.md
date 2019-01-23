@@ -31,24 +31,27 @@ Depending on if you tried to fix problem with those data types you will might ne
 
 Umbraco stores data for data types in different ways, for a lot of pickers it will store (for example) 1072 or 1083,1283. These numbers refer to the identifier of the item in Umbraco. In the past, when building your templates you would manually have to take that value and find the content item it belongs to and then get the data you wanted from there, for example:
 
-		@{
-			IPublishedContent contactPage;
-			var contactPageId = Model.Content.GetPropertyValue<int>("contactPagePicker");
-			if(contactPageId > 0) {
-				 contactPage = Umbraco.TypedContent(contactPageId);
-			}
-		}
+```csharp
+@{
+    IPublishedContent contactPage;
+    var contactPageId = Model.Content.GetPropertyValue<int>("contactPagePicker");
+    if(contactPageId > 0) {
+         contactPage = Umbraco.TypedContent(contactPageId);
+    }
+}
 
-		<p>
-		  <a href="@contactPage.Url">@contactPage.Name</a>
-		</p>
-
+<p>
+  <a href="@contactPage.Url">@contactPage.Name</a>
+</p>
+```
 
 Wouldn't it be nice if instead of that you could "just" do:
 
-		<p>
-			<a href="@Model.Content.ContactPagePicker.Url">@Model.ContactPagePicker.Name</a>
-		</p>
+```html
+<p>
+    <a href="@Model.Content.ContactPagePicker.Url">@Model.ContactPagePicker.Name</a>
+</p>
+```
 		
 This is possible since 7.6.0 using Models Builder and through the inclusion of [core property value converters](https://our.umbraco.com/projects/developer-tools/umbraco-core-property-value-converters/), a brilliant package by Jeavon.
 
@@ -91,15 +94,18 @@ Since you aren't using UrlRewriting you will have probably never edited the UrlR
 * `<urlrewritingnet configSource="config\UrlRewriting.config" />`
 * And the following http modules
 
+        ```xml
 	    <system.web>
 		<httpModules>
 		    <add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter"/>
 		    ...
 		</httpModules>
 	    <system.web>
+        ```
 
-	    ...
+	    and
 
+        ```xml
 	    <system.webServer>
 	       <modules>
 		   <remove name="UrlRewriteModule"/>
@@ -107,7 +113,7 @@ Since you aren't using UrlRewriting you will have probably never edited the UrlR
 		    ...
 	       </modules>
 	    </system.webServer>
-
+        ```
 
 
 #### Forms
@@ -161,7 +167,9 @@ Other considerations:
 ## Version 7.0.1 to 7.0.2
 
 * There was an update to the /umbraco/config/create/ui.xml which needs to be manually updated, the original element had this text:
-
+       
+       
+       ```xml
 		<nodeType alias="users">
 			<header>User</header>
 			<usercontrol>/create/simple.ascx</usercontrol>
@@ -170,6 +178,8 @@ Other considerations:
 			  <delete assembly="umbraco" type="userTasks" />
 			</tasks>
 		</nodeType>
+        ```
+
 
 	* The &lt;usercontrol&gt; value has changed to: **/create/user.ascx**, this is a required change otherwise creating a new user will not work.
 * There is a breaking change to be aware of, full details can be found [here](https://umbraco.com/blog/heads-up-breaking-change-coming-in-702-and-62/).
