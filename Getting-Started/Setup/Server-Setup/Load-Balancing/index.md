@@ -14,7 +14,9 @@ This document assumes that you have a fair amount of knowledge about:
 * Windows Server (2008/2012)
 * .NET Framework
 
-__It is highly recommended that you setup your staging environment to also be load balanced so that you can run all of your testing on a similar environment to your live environment.__
+:::note
+It is highly recommended that you setup your staging environment to also be load balanced so that you can run all of your testing on a similar environment to your live environment.
+:::
 
 ## Flexible load balancing
 
