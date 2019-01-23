@@ -35,7 +35,9 @@ You can switch to a list view by clicking the view toggle next to the search fie
 ### Using media items in content
 By adding a __Media Picker__ property to a Document Type the editor will have the ability to select media items in the __Content__ section.
 
-_TIP: The __Upload File__ property on the images use the Image Cropper Data Type. If crops are added to this you can adjust the individual crops on the media item and access them in templates. You can add crops by editing the Upload File property on the Image media type in the Settings section or in the Developer section under Data Types._
+:::tip
+The __Upload File__ property on the images use the Image Cropper Data Type. If crops are added to this you can adjust the individual crops on the media item and access them in templates. You can add crops by editing the Upload File property on the Image media type in the Settings section or in the Developer section under Data Types.
+:::
 
 ## Creating a Media Type
 You can create your own Media Types and add tabs, properties, and control the structure of the Media tree just as with Document Types. This means you can store information that is specific to the media on the media item itself.
