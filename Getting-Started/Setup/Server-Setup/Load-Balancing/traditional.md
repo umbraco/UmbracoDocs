@@ -2,10 +2,13 @@
 
 _Information on how to deploy Umbraco in a traditional Load Balanced scenario and other details to consider when setting up Umbraco for load balancing._
 
-Traditional load balancing must be used for Umbraco versions less than 7.3.0. 
-__If you are using Umbraco 7.3.0+ then it is highly recommended to use the new [Flexible Load Balancing](index.md)__
+Traditional load balancing must be used for Umbraco versions less than 7.3.0.
 
-__Be sure you read the [Overview](index.md) before you begin!__
+:::note
+If you are using Umbraco 7.3.0+ then it is highly recommended to use the new [Flexible Load Balancing](index.md)
+
+Be sure you read the [Overview](index.md) before you begin!
+:::
 
 ## Design
 These instructions make the following assumptions:
@@ -83,20 +86,24 @@ Configuring your servers to work using a centrally located file system that is s
 
 Configuring Umbraco to support load balanced clusters is probably the easiest part. In the /config/umbracoSettings.config file you need to updated the distributed call section to the following (as an example)
 
-	<distributedCall enable="true">
-	    <user>0</user>
-	    <servers>
-	       <server>server1.mywebsite.com</server>
-	        <server>server2.mywebsite.com</server>
-	        <server>server3.mywebsite.com</server>
-	    </servers>
-	</distributedCall>
+```xml
+<distributedCall enable="true">
+    <user>0</user>
+    <servers>
+       <server>server1.mywebsite.com</server>
+        <server>server2.mywebsite.com</server>
+        <server>server3.mywebsite.com</server>
+    </servers>
+</distributedCall>
+```
 
 As you can see in the above XML the distributed server names are the custom DNS names created for each IIS host name for each server.  Don't forget to enable the distributedCall.
 
 There are a couple optional elements for the configuration of each server that allow you to specify a specific protocol or port number:
 
-	<server forceProtocol="http|https" forcePortnumber="80|443">server3.mywebsite.com</server>
+```xml
+<server forceProtocol="http|https" forcePortnumber="80|443">server3.mywebsite.com</server>
+```
 
 If you only add https bindings to your site in IIS, then you will need to set umbracoUseSSL="true" in your web.config in order for publish to work.
 
@@ -110,17 +117,20 @@ As of Umbraco 6.2.1+ and 7.1.5+ there are another couple of options to take into
 **serverName** will be the most common attribute to use and will always work so long as you are not load balancing a single site on the same server. In this case you should add the serverName attribute to each server node listed so that each server knows if it is a master or slave and so that each server knows which internal URL it can use to ping itself. Take not that the serverName must match the machine name otherwise scheduled tasks will not work
 Example:
 
-
-		<server serverName="MyServer1">server1.mywebsite.com</server>
-	        <server serverName="MyServer2">server2.mywebsite.com</server>
-	        <server serverName="MyServer3">server3.mywebsite.com</server>
+```xml
+<server serverName="MyServer1">server1.mywebsite.com</server>
+<server serverName="MyServer2">server2.mywebsite.com</server>
+<server serverName="MyServer3">server3.mywebsite.com</server>
+```
 
 **appId** is a less common attribute to use but will need to be used in the case where you are load balancing a single site on the same server. The appId is determined by the result of: `HttpRuntime.AppDomainAppId`. This is generally the id of the IIS site hosting the web app (i.e. the value might look something like: /LM/W3SVC/69/ROOT ). You shouldn't specify both the serverName and appId together on the same xml server node, if you do the appId will take precedence.
 Example:
 
-		<server appId="/LM/W3SVC/987/ROOT">server1.mywebsite.com</server>
-	        <server appId="/LM/W3SVC/123/ROOT">server2.mywebsite.com</server>
-	        <server serverName="MyServer3">server3.mywebsite.com</server>
+```xml
+<server appId="/LM/W3SVC/987/ROOT">server1.mywebsite.com</server>
+<server appId="/LM/W3SVC/123/ROOT">server2.mywebsite.com</server>
+<server serverName="MyServer3">server3.mywebsite.com</server>
+```
 
 ## Testing
 
