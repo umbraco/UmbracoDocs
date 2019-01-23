@@ -194,7 +194,7 @@ The following rule can be added to your web.config (in `system.webServer/rewrite
     </conditions>
     <action type="CustomResponse" statusCode="403"/>
 </rule> 
-
+```
 
 What we're doing here is blocking all the requests to `umbraco/backoffice/` and all of the routes that start with this. 
 
