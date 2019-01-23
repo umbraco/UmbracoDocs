@@ -10,8 +10,10 @@ The `Umbraco.Core.CacheHelper` contains 3 types of cache: Runtime Cache, Request
 
 The various cache types can be referenced on properties of the `Umbraco.Core.CacheHelper`:
 
-      ApplicationContext.ApplicationCache.RuntimeCache
-      ApplicationContext.ApplicationCache.RequestCache
-      ApplicationContext.ApplicationCache.StaticCache
+```csharp
+ApplicationContext.ApplicationCache.RuntimeCache
+ApplicationContext.ApplicationCache.RequestCache
+ApplicationContext.ApplicationCache.StaticCache
+```
 
 It's easy to [access and update the cache items](updating-cache.md), using the provided methods.
