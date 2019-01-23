@@ -46,7 +46,7 @@ Rewrite rules are often something you only want to apply to your Live environmen
 
 Here is an example of how that config transform would look:
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
     <system.webServer>
