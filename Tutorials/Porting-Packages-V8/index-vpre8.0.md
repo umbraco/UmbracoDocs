@@ -1,5 +1,5 @@
 ---
-versionFrom: "7.0"
+versionFrom: 7.0.0
 product: "CMS"
 complexity: "Intermediate"
 audience: "Package developers"
