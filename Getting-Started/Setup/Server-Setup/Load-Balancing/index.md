@@ -41,6 +41,7 @@ _The below section is common for all load balancing configurations, ensure that 
 		* 	[http://www.developerfusion.com/tools/generatemachinekey/](https://www.developerfusion.com/tools/generatemachinekey/)
 	* 	Then you need to update your web.config accordingly, note that the validation/decryption types may be different for your environment depending on how you've generated your keys.
 
+            ```xml
 			<configuration>
 			  <system.web>
 			    <machineKey decryptionKey="Your decryption key here"
@@ -49,6 +50,8 @@ _The below section is common for all load balancing configurations, ensure that 
 							decryption="AES" />
 			  </system.web>
 			</configuration>
+            ```
+            
 * If you use SessionState in your application, or are using the default TempDataProvider in MVC (which uses SessionState) then you will need to configure your application to use the SqlSessionStateStore provider (see [https://msdn.microsoft.com/en-us/library/aa478952.aspx](https://msdn.microsoft.com/en-us/library/aa478952.aspx) for more details).
 
 ### Logging
