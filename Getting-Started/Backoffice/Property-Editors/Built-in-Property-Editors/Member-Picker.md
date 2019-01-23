@@ -16,21 +16,24 @@ The member picker opens a panel to pick a specific member from the member sectio
 
 ### Typed:
 
-	@{
-		if(Model.Content.HasValue("author")){
-			var member = Umbraco.TypedMember(Model.Content.GetPropertyValue<int>("author"));
-				@member.Name
-		}
-	}
+```csharp
+@{
+    if(Model.Content.HasValue("author")){
+        var member = Umbraco.TypedMember(Model.Content.GetPropertyValue<int>("author"));
+            @member.Name
+    }
+}
+```
 
 ### Dynamic (Obsolete):
 
 See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
 
-	@{
-		if(CurrentPage.HasValue("author")){
-			var member = Umbraco.TypedMember(CurrentPage.author);
-				@member.Name
-		}
-	}
-	
+```csharp
+@{
+    if(CurrentPage.HasValue("author")){
+        var member = Umbraco.TypedMember(CurrentPage.author);
+            @member.Name
+    }
+}
+```
