@@ -12,7 +12,7 @@ Often you just need to get either all content of a specific Document Type or get
 
 ##### Getting started
 When you query headless you can choose to either get all content that matches your query (`GetAll()`, `Query()` or `Search()` all of which can be typed) or getting the first item:
-```
+```csharp
 using Umbraco.Headless.Client.Net.Models;
 using Umbraco.Headless.Client.Net.QueryBuilder;
 
@@ -43,7 +43,8 @@ var allContentWithHeadlessTags =
 
 ##### Filter on Document Types with strongly typed classes 
 You can also filter on document types and get them back as strongly typed objects. Let's start with an example and then we'll explain below:
-```
+
+```csharp
 // Create a class that matches your Document Type and inherits from a ContentItem
 // which contains basic meta data and makes Headless understand your content model
 using System.Collections.Generic;
@@ -106,7 +107,8 @@ foreach(var wine in allWine) {
 
 #### Advanced queries with XPath and Lucene
 If you need more advanced queries, so you use XPath or Lucene instead of the fluent interface. This is useful for fast search in a big repository of content or for more advanced/grouped queries. Let's say we want all content from Headless that contains the tag "pinotnoir":
-```
+
+```csharp
 using Umbraco.Headless.Client.Net.Models;
 using Umbraco.Headless.Client.Net.QueryBuilder;
 using Our.Umbraco.Headless.Examples.Models;
