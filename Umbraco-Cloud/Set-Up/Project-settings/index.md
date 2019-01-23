@@ -40,11 +40,15 @@ The option will not be available when you are already on a Professional plan or 
 
 You might need to rename your Umbraco Cloud project - find the option to do that from the *Settings* menu. 
 
-**NOTE**: If you are working locally you need to update the origin of your local git repository to point to the new clone url. Alternatively to make a fresh local clone of the project, once you’ve changed your project name.
+:::note
+If you are working locally you need to update the origin of your local git repository to point to the new clone url. Alternatively to make a fresh local clone of the project, once you’ve changed your project name.
+:::
 
 If you want to delete your Umbraco Cloud project you can find the option to do this from the *Settings* menu as well. Deleting your Umbraco Cloud project is permanent - all data, media, databases, configuration, setup, and domain bindings are removed in the process.
 
-**Note**: Deleting your Umbraco Cloud project will also cancel any subscriptions you have set up for your project.
+:::note
+Deleting your Umbraco Cloud project will also cancel any subscriptions you have set up for your project.
+:::
 
 ## [Deployment Webhook](../../Deployment/Deployment-webhook)
 
