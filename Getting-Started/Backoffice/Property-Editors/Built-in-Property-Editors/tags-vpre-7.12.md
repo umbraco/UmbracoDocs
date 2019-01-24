@@ -45,11 +45,12 @@ Whenever a tag has been added it will be visible in the typeahead when you start
 
 ### Typed:
 
-    @if(Model.Content.Tags.Any()){
-        <ul>
-            @foreach(var tag in Model.Content.Tags){
-                <li>@tag</li>
-            }
-        </ul>
-    }
-
+```csharp
+@if(Model.Content.Tags.Any()){
+    <ul>
+        @foreach(var tag in Model.Content.Tags){
+            <li>@tag</li>
+        }
+    </ul>
+}
+```
