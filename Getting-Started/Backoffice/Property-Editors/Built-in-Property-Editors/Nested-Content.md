@@ -77,30 +77,34 @@ To render the stored value of your **Nested Content** property, a built in value
 
 Example:
 
-    @inherits Umbraco.Web.Mvc.UmbracoViewPage
-    @{
-        var items = Model.GetPropertyValue<IEnumerable<IPublishedContent>>("myPropertyAlias");
-    
-        foreach(var item in items)
-        {
-            // Render your content, e.g. item.GetPropertyValue<string>("heading")
-        }
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+    var items = Model.GetPropertyValue<IEnumerable<IPublishedContent>>("myPropertyAlias");
+
+    foreach(var item in items)
+    {
+        // Render your content, e.g. item.GetPropertyValue<string>("heading")
     }
+}
+```
 
 Each item is treated as a standard `IPublishedContent` entity, which means you can use all the property value converters you are used to using, as well as the built-in `@Umbraco.Field(...)` helper methods.
 
 Example:
 
-    @inherits Umbraco.Web.Mvc.UmbracoViewPage
-    @{
-        var items = Model.GetPropertyValue<IEnumerable<IPublishedContent>>("myPropertyAlias");
-    
-        foreach(var item in items)
-        {
-            <h3>@item.GetPropertyValue("heading")</h3>
-            @Umbraco.Field(item, "bodyText")
-        }
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+    var items = Model.GetPropertyValue<IEnumerable<IPublishedContent>>("myPropertyAlias");
+
+    foreach(var item in items)
+    {
+        <h3>@item.GetPropertyValue("heading")</h3>
+        @Umbraco.Field(item, "bodyText")
     }
+}
+```
 
 #### Single Item Mode
 
@@ -108,10 +112,11 @@ If your **Nested Content** property editor is configured in single item mode, th
 
 Example:
 
-    @inherits Umbraco.Web.Mvc.UmbracoViewPage
-    @{
-        var item = Model.GetPropertyValue<IPublishedContent>("myPropertyAlias");
-    }
-        <h3>@item.GetPropertyValue("heading")</h3>
-        @Umbraco.Field(item, "bodyText")
-
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+    var item = Model.GetPropertyValue<IPublishedContent>("myPropertyAlias");
+}
+<h3>@item.GetPropertyValue("heading")</h3>
+@Umbraco.Field(item, "bodyText")
+```
