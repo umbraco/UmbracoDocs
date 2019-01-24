@@ -36,19 +36,23 @@ This allows you to setup a maximum value. If you will always need a maximum valu
 ### Rendering the output casting to an int
 By casting the output as an int it's possible for you to do mathematical operations with the value.
 
-    @{
-        int students = Model.Content.HasValue("students") ? Model.Content.GetPropertyValue<int>("students") : 0;
-        int teachers = Model.Content.HasValue("teachers") ? Model.Content.GetPropertyValue<int>("teachers") : 0;
-        int totalTravellers = students + teachers;
+```csharp
+@{
+    int students = Model.Content.HasValue("students") ? Model.Content.GetPropertyValue<int>("students") : 0;
+    int teachers = Model.Content.HasValue("teachers") ? Model.Content.GetPropertyValue<int>("teachers") : 0;
+    int totalTravellers = students + teachers;
 
-        <p>@totalTravellers</p>
-    }
+    <p>@totalTravellers</p>
+}
+```
 
 ### Rendering the output casting to a string
 You can also render the output by casting it to a string, which means you will not be able to do mathematical operations
 
-    @{
-        if(Model.Content.HasValue("students")){
-            <p>@(Model.Content.GetPropertyValue<string>("students"))</p>
-        }
+```csharp
+@{
+    if(Model.Content.HasValue("students")){
+        <p>@(Model.Content.GetPropertyValue<string>("students"))</p>
     }
+}
+```
