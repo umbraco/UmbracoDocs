@@ -45,7 +45,7 @@ If/else statements performs one task if a condition is true, and another is the 
 
 @if(Model.NodeTypeAlias == "TextPage"){
     <p>this is a textpage</p>
-}else{
+} else{
     <p>this ia NOT a textpage</p>
 }
 ```
