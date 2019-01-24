@@ -72,88 +72,92 @@ Now we'll do the same with the footer content. Cut everything from the opening o
 
 Now we've done a lot of work - and what we should see if we refresh our localhost page is nothing has changed!  If you have a compilation error you've perhaps mistyped **_@RenderBody()_**. If you're missing any content (header or footer) check that what you have in the templates matches the following:
 
-	@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-	@{
-	    Layout = null;
-	}<!doctype html>
-	<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-	<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-	<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-	<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	
-		<title></title>
-		<meta name="description" content="">
-		<meta name="author" content="">
-	
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-	
-		<link rel="stylesheet" href="css/style.css">
-	
-		<script src="js/libs/modernizr-2.0.6.min.js"></script>
-	</head>
-	<body>
-	
-		<div id="header-container">
-			<header class="wrapper clearfix">
-				<h1 id="title">@Umbraco.Field("pageTitle")</h1>
-				<nav>
-					<ul>
-						<li><a href="#">nav ul li a</a></li>
-						<li><a href="#">nav ul li a</a></li>
-						<li><a href="#">nav ul li a</a></li>
-					</ul>
-				</nav>
-			</header>
-		</div>
-				
-		@RenderBody()
-				
-		<div id="footer-container">
-			<footer class="wrapper">
-				<h3>@Umbraco.Field("footerText")</h3>
-			</footer>
-		</div>
-	
-	</body>
-	</html>
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = null;
+}<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+<body>
+
+    <div id="header-container">
+        <header class="wrapper clearfix">
+            <h1 id="title">@Umbraco.Field("pageTitle")</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">nav ul li a</a></li>
+                    <li><a href="#">nav ul li a</a></li>
+                    <li><a href="#">nav ul li a</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    @RenderBody()
+
+    <div id="footer-container">
+        <footer class="wrapper">
+            <h3>@Umbraco.Field("footerText")</h3>
+        </footer>
+    </div>
+
+</body>
+</html>
+```
 
 *Figure 28 - Complete Master Template*
 
-	@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-	@{
-	    Layout = "Master.cshtml";
-	}
-	<div id="main-container">
-		<div id="main" class="wrapper clearfix">
-			
-			<article>
-				<header>
-					@Umbraco.Field("bodyText")
-				</header>
-				<section>
-					<h2>article section h2</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
-				</section>
-				<section>
-					<h2>article section h2</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
-				</section>
-				<footer>
-					<h3>article footer h3</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor.</p>
-				</footer>
-			</article>
-			
-			<aside>
-				<h3>aside</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
-			</aside>
-			
-		</div> <!-- #main -->
-	</div> <!-- #main-container -->
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+}
+<div id="main-container">
+    <div id="main" class="wrapper clearfix">
+
+        <article>
+            <header>
+                @Umbraco.Field("bodyText")
+            </header>
+            <section>
+                <h2>article section h2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
+            </section>
+            <section>
+                <h2>article section h2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
+            </section>
+            <footer>
+                <h3>article footer h3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor.</p>
+            </footer>
+        </article>
+
+        <aside>
+            <h3>aside</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
+        </aside>
+
+    </div> <!-- #main -->
+</div> <!-- #main-container -->
+```
 
 *Figure 29 - Complete Homepage Template*
 

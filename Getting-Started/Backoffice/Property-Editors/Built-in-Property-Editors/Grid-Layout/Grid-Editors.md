@@ -10,12 +10,14 @@ The view is what the editor sees, the controller handles how it acts and the csh
 ### Default Grid editors
 The default editors are specified in `/config/grid.editors.config.js`. They are written in the JSON format and each editor is an object like so:
 
-    {
-        "name": "Rich text editor",
-        "alias": "rte",
-        "view": "rte",
-        "icon": "icon-article"
-    }
+```json
+{
+    "name": "Rich text editor",
+    "alias": "rte",
+    "view": "rte",
+    "icon": "icon-article"
+}
+```
 
 ### Custom Grid editors
 You can easily customize the built-in editors to tailor the grid to your need.
@@ -23,17 +25,19 @@ You can easily customize the built-in editors to tailor the grid to your need.
 ##### package.manifest
 It is recommended that you define custom editors in a `package.manifest` file (not in the config file described above) like so:
 
-    {
-        "gridEditors": 
-        [
-            {
-                "name": "Rich text editor",
-                "alias": "rte",
-                "view": "rte",
-                "icon": "icon-article"
-            }
-        ]
-    }
+```json
+{
+    "gridEditors": 
+    [
+        {
+            "name": "Rich text editor",
+            "alias": "rte",
+            "view": "rte",
+            "icon": "icon-article"
+        }
+    ]
+}
+```
     
 While the root JSON element of `/config/grid.editors.config.js` is an array of grid editors, `package.manifest` files start with a JSON object with a number of different properties - one of them being `gridEditors`.
 
@@ -61,16 +65,18 @@ In most cases you will either use the textstring or media view, or built your ow
 
 ##### Sample textstring config
 
-    {
-        "name": "Headline",
-        "alias": "headline",
-        "view": "textstring",
-        "icon": "icon-coin",
-        "config": {
-            "style": "font-size: 36px; line-height: 45px; font-weight: bold",
-            "markup": "<h1>#value#</h1>"
-        }
+```json
+{
+    "name": "Headline",
+    "alias": "headline",
+    "view": "textstring",
+    "icon": "icon-coin",
+    "config": {
+        "style": "font-size: 36px; line-height: 45px; font-weight: bold",
+        "markup": "<h1>#value#</h1>"
     }
+}
+```
 
 In this sample, the `config.style` value is applied to the editor so users can see an accurate preview in the backoffice. This will be applied as as inline styling to the textarea in the backoffice. 
 
@@ -78,18 +84,20 @@ The `config.markup` is the string rendered server side in your template. `#value
 
 ##### Sample media config
 
-    {
-        "name": "Square Image",
-        "alias": "squareImage",
-        "view": "media",
-        "icon": "icon-picture",
-        "config": {
-            "size": {
-                "height": 200,
-                "width": 200
-            }
+```json
+{
+    "name": "Square Image",
+    "alias": "squareImage",
+    "view": "media",
+    "icon": "icon-picture",
+    "config": {
+        "size": {
+            "height": 200,
+            "width": 200
         }
     }
+}
+```
 
 In this sample `config.size` will resize the image according to `height` and `width`. The above example will result in a rendered image that is 200x200 pixels no matter the size of the uploaded image. If the ratio of the size differs from the uploaded image it is possible to set a focal point that determines how the image should be cropped.
 ![Resizing](images/grid-resizing.png)

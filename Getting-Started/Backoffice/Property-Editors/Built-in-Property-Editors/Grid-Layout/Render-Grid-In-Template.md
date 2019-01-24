@@ -4,7 +4,7 @@
 
 To render a property based on the grid inside a template you should use the HtmlHelper extension:
 
-```chsarp
+```csharp
 @Html.GetGridHtml(Model.Content, "propertyAlias")
 ```
 

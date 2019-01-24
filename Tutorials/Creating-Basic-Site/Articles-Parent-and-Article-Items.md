@@ -76,21 +76,22 @@ Now all we have to do is wire up the Articles main page to list our child articl
 Check what we have on our **_Articles_** page now - we're really getting somewhere!  Let's make it a bit more real world - I'll leave the understanding of this to Razor lessons / The Umbraco videos but it will finish our site off nicely - edit the Partial you just created - **_Developer > Partial View Macro Files > listArticles.cshtml_** and change the content to be:
 
 
+```csharp
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{ 
+    var selection = CurrentPage.Children.Where("Visible").OrderBy("CreateDate desc"); 
+    @* OrderBy() takes the property to sort by and optionally order desc/asc *@
+}
 
-    @inherits Umbraco.Web.Macros.PartialViewMacroPage
-    @{ 
-	    var selection = CurrentPage.Children.Where("Visible").OrderBy("CreateDate desc"); 
-	    @* OrderBy() takes the property to sort by and optionally order desc/asc *@
-    }
-
-    @foreach (var item in selection)
-    {
-	<div class="article">
-            <div class="articletitle"><a href="@item.Url">@item.Name</a></div>
-            <div class="articlepreview">@Umbraco.Truncate(@item.ArticleContents,100) <a href="@item.Url">Read More..</a></div>
-        </div>
-        <hr/>
-    }
+@foreach (var item in selection)
+{
+<div class="article">
+        <div class="articletitle"><a href="@item.Url">@item.Name</a></div>
+        <div class="articlepreview">@Umbraco.Truncate(@item.ArticleContents,100) <a href="@item.Url">Read More..</a></div>
+    </div>
+    <hr/>
+}
+```
 
 *Figure 42 - Improved Macro for listArticles*
 

@@ -26,14 +26,16 @@ Now click on the **_Settings > Templates (hover) > ..._** and then **_Reload Nod
 
 Click **_Save_** then load the **_Template tab_** you should see the portion of Razor code has updated to say `Layout ="Master.cshtml"` if it hasn't updated itself click on a different node and then back again to reload it. Now add the following HTML to the template and click **_Save_**. 
 
-	<div id="main-container">
-		<div id="main" class="wrapper clearfix">
-			<section>
-				<h2>Header goes here</h2>
-				<p>Content goes here</p>
-			</section>	
-		</div> <!-- #main -->
-	</div> <!-- #main-container -->
+```html
+<div id="main-container">
+    <div id="main" class="wrapper clearfix">
+        <section>
+            <h2>Header goes here</h2>
+            <p>Content goes here</p>
+        </section>	
+    </div> <!-- #main -->
+</div> <!-- #main-container -->
+```
 
 *Figure 30 - Simple Content Page Template HTML*
 
