@@ -9,10 +9,12 @@ The defaults will cover most though. Changing the defaults is just updating the 
 
 The settings are simply set on the deploy element in the file. All settings are in seconds:
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <settings xmlns="urn:umbracodeploy-settings">
-      <deploy sessionTimeout="1200" sourceDeployTimeout="1200" httpClientTimeout="1200"/>
-    </settings>
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+  <deploy sessionTimeout="1200" sourceDeployTimeout="1200" httpClientTimeout="1200"/>
+</settings>
+```
 
 ### Large media libraries
 If you are often hitting the timeouts on content transfer or restores it is likely because your media library is too large, it is recommended that you switch to Blob storage of media files if you have a media library larger than 1gb. See how [here!](../../../Set-Up/Media)
