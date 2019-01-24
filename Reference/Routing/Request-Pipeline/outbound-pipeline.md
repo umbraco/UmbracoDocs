@@ -22,26 +22,30 @@ If no UrlSegment provider is found, he will fall back to the *default Url segmen
 
 To create a new Url segment provider, implement the following interface:
 
-    public interface IUrlSegmentProvider
-    {
-      string GetUrlSegment(IContentBase content);
-    }
+```csharp
+public interface IUrlSegmentProvider
+{
+  string GetUrlSegment(IContentBase content);
+}
+```
 
 The returned string will be your URL segment for this node.  You are free to return whatever string you like, but it cannot contain url segment separators `/` characters as this would create additional "segments". So something like `5678/swibble` is not allowed.
 
 #### Example
 
-    public class MyProvider : IUrlSegmentProvider
-    {
-      readonly IUrlSegmentProvider _provider = new DefaultUrlSegmentProvider();
+```csharp
+public class MyProvider : IUrlSegmentProvider
+{
+  readonly IUrlSegmentProvider _provider = new DefaultUrlSegmentProvider();
 
-      public string GetUrlSegment(IContentBase content)
-      {
-        if (content.ContentTypeId != 1234) return null;
-        var segment = _provider.GetUrlSegment(content);
-        return string.Format("{0}-{1}", content.Id, segment);
-      }
-    }
+  public string GetUrlSegment(IContentBase content)
+  {
+    if (content.ContentTypeId != 1234) return null;
+    var segment = _provider.GetUrlSegment(content);
+    return string.Format("{0}-{1}", content.Id, segment);
+  }
+}
+```
 
 The returned string becomes the native Url segment.  You don't need any Url rewriting, ...
 
@@ -57,13 +61,15 @@ First it looks (in this order) for:
 
 Then uses Umbraco string extension `ToUrlSegment()` to produce a clean segment.  
 
-    // That one is initialized by default
-    public class DefaultUrlSegmentProvider : IUrlSegmentProvider
-    { … }
+```csharp
+// That one is initialized by default
+public class DefaultUrlSegmentProvider : IUrlSegmentProvider
+{ … }
 
-    // Initialized by
-    public class UrlSegmentProviderResolver
-    { … }
+// Initialized by
+public class UrlSegmentProviderResolver
+{ … }
+```
 
 ## 2. <a name="paths"></a>Create paths
 To create a path, the pipeline will use the segments to produce the path.
@@ -93,28 +99,34 @@ In our example the "swibble" node could have the following URL: "http://example.
 
 Generating this url is handled by the Url Provider.  The Url provider is every time whenever you write (e.g.):
 
-	@Content.Model.Url
-	@Umbraco.Url(1234)
-	@UmbracoContext.Current.UrlProvider.Geturl(1234)
+```csharp
+@Content.Model.Url
+@Umbraco.Url(1234)
+@UmbracoContext.Current.UrlProvider.Geturl(1234)
+```
 
 The `UrlProviderResolver` searches for all Url providers and will take the first one that does not return null.  If falls back to the default Urls provider if no Url provider has been found.
 
-    // That one is initialized by default
-    public class DefaultUrlProvider : IUrlProvider
-    { … }
-    
-    // But feel free to use your own
-    UrlProviderResolver.Current.InsertType<MyUrlProvider>();
+```csharp
+// That one is initialized by default
+public class DefaultUrlProvider : IUrlProvider
+{ … }
+
+// But feel free to use your own
+UrlProviderResolver.Current.InsertType<MyUrlProvider>();
+```
 
 To create your own Url provider, implement the `IUrlProvider` interface
 
-    public interface IUrlProvider
-    {
-        string GetUrl(UmbracoContext umbracoContext,
-            int id,
-            Uri current,
-            UrlProviderMode mode);
-    }
+```csharp
+public interface IUrlProvider
+{
+    string GetUrl(UmbracoContext umbracoContext,
+        int id,
+        Uri current,
+        UrlProviderMode mode);
+}
+```
 
 The returned string by GetUrl can return whatever pleases you.
 
@@ -126,17 +138,18 @@ It's tricky to implement your own provider, it is advised use override the defau
 
 When you inherit from the DefaultUrlProvider, you need to implement the constructor specifying the `IRequestHandlerSection`.  The easiest way to retrieve this object is adding a constructor: 
 
-    public class MyUrlProvider : DefaultUrlProvider {
-      public MyUrlProvider()
-        : base(UmbracoConfig.For.UmbracoSettings().RequestHandler)
-      { }
-      
-      public override string GetUrl(UmbracoContext umbracoContext, int id, Uri current, UrlProviderMode mode)
-      {
-      	 // your own implementation
-      }
-    }
+```csharp
+public class MyUrlProvider : DefaultUrlProvider {
+  public MyUrlProvider()
+    : base(UmbracoConfig.For.UmbracoSettings().RequestHandler)
+  { }
 
+  public override string GetUrl(UmbracoContext umbracoContext, int id, Uri current, UrlProviderMode mode)
+  {
+     // your own implementation
+  }
+}
+```
 
 **TODO: "Per-context UrlProvider".
 Stéphane mentions a "per context Url provider" on page 35 of his document.  We need to find out what this is!**
@@ -177,22 +190,26 @@ You can change the mode of the current provider
 
 These are the different modes:
 
-    public enum UrlProviderMode
-    {
-      // Produce relative Urls exclusively 
-      Relative,
-      // Produce absolute Urls exclusively
-      Absolute,
-      // Produce relative Urls when possible, else absolute when required
-      Auto,
-      // Produce relative Urls when possible, else absolute when required
-      // If useDomainPrefixes is true, then produce absolute Urls exclusively
-      AutoLegacy // this is the default mode in v6
-    }
+```csharp
+public enum UrlProviderMode
+{
+  // Produce relative Urls exclusively 
+  Relative,
+  // Produce absolute Urls exclusively
+  Absolute,
+  // Produce relative Urls when possible, else absolute when required
+  Auto,
+  // Produce relative Urls when possible, else absolute when required
+  // If useDomainPrefixes is true, then produce absolute Urls exclusively
+  AutoLegacy // this is the default mode in v6
+}
+```
 
 `Auto` is equivalent to `AutoLegacy` with useDomainPrefixes set to false
 
-*Note*: `UseDomainPrefixes` is ignored in every mode except AutoLegacy
+:::note
+`UseDomainPrefixes` is ignored in every mode except AutoLegacy
+:::
 
 Default mode can be configured in `/umbraco/web.routing/urlProviderMode`
 
@@ -201,48 +218,55 @@ The Url provider needs a `ISiteDomainHelper` object, this object is provided by 
 
 This object gets the current Uri and all eligible domains, and return only one domain which is used by the UrlProvider to create the Url.
 
-    // That one is initialized by default
-    public class SiteDomainHelper : ISiteDomainHelper
-    { … }
-    // But feel free to use your own
-    public class SiteDomainHelperResolver
-    { … }
+```csharp
+// That one is initialized by default
+public class SiteDomainHelper : ISiteDomainHelper
+{ … }
+// But feel free to use your own
+public class SiteDomainHelperResolver
+{ … }
+```
 
 To create your own Site Domain helper, implement the ISiteDomainHelper and add it to the resolver.
 
-    public interface ISiteDomainHelper
-    {
-      DomainAndUri MapDomain(Uri current, DomainAndUri[] domainAndUris);
-    }
+```csharp
+public interface ISiteDomainHelper
+{
+  DomainAndUri MapDomain(Uri current, DomainAndUri[] domainAndUris);
+}
+```
 
 You can use the default SiteDomainhelper to add extra domains:
 
-    public class MyApplication : ApplicationEventHandler
-    {
-      protected override void ApplicationStarting(…)
-      {
-        SiteDomainHelper.AddSite("www", "www.alpha.com", "www.bravo.com");
-        SiteDomainHelper.AddSite("staging", "staging.alpha.com", "staging.bravo.com");
-      }
-    } 
+```csharp
+public class MyApplication : ApplicationEventHandler
+{
+  protected override void ApplicationStarting(…)
+  {
+    SiteDomainHelper.AddSite("www", "www.alpha.com", "www.bravo.com");
+    SiteDomainHelper.AddSite("staging", "staging.alpha.com", "staging.bravo.com");
+  }
+}
+```
 
 Then it knows it should pick e.g. “www.bravo.com” when current is “www.alpha.com”.
 
 A more complicated example with the SiteDomainHelper:
 
-    public class MyApplication : ApplicationEventHandler
-    {
-      protected override void ApplicationStarting(…)
-      {
-        SiteDomainHelper.AddSite("www", "www.alpha.com", "www.bravo.com");
-        SiteDomainHelper.AddSite("mobile", "mobile.alpha.com", " mobile.bravo.com");
-        SiteDomainHelper.AddSite("staging", "staging.alpha.com", "staging.bravo.com");
-        SiteDomainHelper.BindSites("www", "mobile");
-      }
-    }
+```csharp
+public class MyApplication : ApplicationEventHandler
+{
+  protected override void ApplicationStarting(…)
+  {
+    SiteDomainHelper.AddSite("www", "www.alpha.com", "www.bravo.com");
+    SiteDomainHelper.AddSite("mobile", "mobile.alpha.com", " mobile.bravo.com");
+    SiteDomainHelper.AddSite("staging", "staging.alpha.com", "staging.bravo.com");
+    SiteDomainHelper.BindSites("www", "mobile");
+  }
+}
+```
 
 Back-end on www.alpha.com/umbraco
 then link is "www.bravo.com/bravo-2" ; alternate link is "mobile.bravo.com/bravo-2".  
 
 If you have good ideas on creating better implementations, please share them on the [Umbraco dev group](https://groups.google.com/forum/#!forum/umbraco-dev).
-
