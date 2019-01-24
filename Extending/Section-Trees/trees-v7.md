@@ -2,7 +2,9 @@
 
 This section describes how to work with and create trees with the v7 APIs.
 
-*NOTE: trees created with the v6 APIs will still work in v7 but will not have angular view support.*
+:::note
+Trees created with the v6 APIs will still work in v7 but will not have angular view support.
+:::
 
 ## Creating trees
 
