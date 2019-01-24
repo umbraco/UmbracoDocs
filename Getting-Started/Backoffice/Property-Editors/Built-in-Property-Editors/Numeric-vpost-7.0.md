@@ -25,8 +25,10 @@ Numeric is a simple HTML input control for entering numbers. Since it's a standa
 
 ## MVC View Example:
 
-    @{
-        if(Model.Content.HasValue("amount")){
-            <p>@(Model.Content.GetPropertyValue<string>("amount"))</p>
-        }
+```csharp
+@{
+    if(Model.Content.HasValue("amount")){
+        <p>@(Model.Content.GetPropertyValue<string>("amount"))</p>
     }
+}
+```
