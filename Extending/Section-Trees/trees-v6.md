@@ -2,10 +2,6 @@
 
 This section describes how to work with and create trees with the v6 (and v4 APIs).
 
-## Creating trees
-
-*coming soon*
-
 ## ApplicationTree API v6
 
 The application tree API in v6/v4 is found in the class `umbraco.BusinessLogic.ApplicationTree`. This API is used to control/query the storage for tree registrations in the ~/Config/trees.config file.
