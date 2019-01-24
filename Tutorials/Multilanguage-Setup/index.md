@@ -1,7 +1,10 @@
 # Multilanguage sites
 
 ## Multilingual frontend
-_Note: This will be shown on Umbraco 7.8.1, newer and older versions may differ. Also this assumes you already have a site with content in one language ready to work with._
+
+:::note
+This will be shown on Umbraco 7.8.1, newer and older versions may differ. Also this assumes you already have a site with content in one language ready to work with.
+:::
 
 ### Behaviour of '/'
 Note that if domains are not set on the top level site nodes, then navigating to '/' will take you to the first "language/territory" site in the content tree. This behaviour is by design.
