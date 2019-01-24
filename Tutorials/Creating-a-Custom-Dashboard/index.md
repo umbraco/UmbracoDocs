@@ -89,13 +89,9 @@ The above configuration is effectively saying:
 
 :::note
 The order in which the tab will appear in the Umbraco Backoffice depends on its position in the dashboard.config file, so to make our Custom Welcome message the first Tab the editors see in the content section, make sure the above configuration is the 'first' section configuration in the dashboard.config file.
-:::
 
-:::note
 You can specify multiple controls to appear on a particular tab, and multiple tabs in a particular section.
-:::
 
-:::note
 You can remove existing dashboards, and control who gets to see them by updating the other configuration sections in the Dashboard.config file.
 :::
 
@@ -366,9 +362,7 @@ and we should have a list of recently saved content and media:
 
 :::note
 The url /Umbraco/#/content/content/edit/1234 is the path to open up a particular entity (with id 1234) ready for editing.
-:::
 
-:::note
 The logResource has unfortunately undergone a few breaking changes, (including problems with SQLCE dbs), prior to 7.6.4 the resource will 404 - from 7.6.4 to 7.13 - you can use logResource.getUserLog("save", new Date()).then(function (response) - after 7.13 you can use getPagedUserLog detailed above, which should work on SQLCE too
 :::
 
