@@ -23,34 +23,42 @@ You can specify your own custom MVC routes to work within the Umbraco pipeline. 
 
 As an example:
 
-    protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
-    {
-        // Custom route to MyProductController which will use a node with a specific ID as the
-        // IPublishedContent for the current rendering page
-        RouteTable.Routes.MapUmbracoRoute(
-            "ProductCustomRoute",
-            "Products/{action}/{sku}",
-            new
-            {
-                controller = "MyProduct",
-                sku = UrlParameter.Optional
-            },
-            new ProductsRouteHandler(_productsNodeId));
-    }
+```csharp
+protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+{
+    // Custom route to MyProductController which will use a node with a specific ID as the
+    // IPublishedContent for the current rendering page
+    RouteTable.Routes.MapUmbracoRoute(
+        "ProductCustomRoute",
+        "Products/{action}/{sku}",
+        new
+        {
+            controller = "MyProduct",
+            sku = UrlParameter.Optional
+        },
+        new ProductsRouteHandler(_productsNodeId));
+}
+```
 
 This is using a extension method: `MapUmbracoRoute` which takes in the normal routing parameters (you can also include constraints, namespaces, etc….) but also takes in an instance of `UmbracoVirtualNodeRouteHandler`.
 
 The instance of `UmbracoVirtualNodeRouteHandler` is responsible for associating an `IPublishedContent` with this route. It has one abstract method which must be implemented:
 
-    IPublishedContent FindContent(RequestContext requestContext, UmbracoContext umbracoContext)
+```csharp
+IPublishedContent FindContent(RequestContext requestContext, UmbracoContext umbracoContext)
+```
 
 It has another virtual method that can be overridden which will allow you to manipulate the PublishedContentRequest however you’d like:
 
-    PreparePublishedContentRequest(PublishedContentRequest publishedContentRequest)
+```csharp
+PreparePublishedContentRequest(PublishedContentRequest publishedContentRequest)
+```
 
 So how do you find content to associate with the route? Well that’s up to you, one way (as seen above) would be to specify a node Id. In the example `ProductsRouteHandler` is inheriting from `UmbracoVirtualNodeByIdRouteHandler` which has an abstract method:
 
-    IPublishedContent FindContent(RequestContext requestContext, UmbracoContext umbracoContext, IPublishedContent baseContent);
+```csharp
+IPublishedContent FindContent(RequestContext requestContext, UmbracoContext umbracoContext, IPublishedContent baseContent);
+```
 
 So based on all this information provided in these methods, you can associate whatever IPublishedContent item you want to the request.
 
@@ -62,23 +70,25 @@ Whatever instance of `IPublishedContent` returned in the `FindContent` method wi
 ## Controllers
 Controllers are straight forward and work like any other routed controller except that the Action will have an instance of RenderModel mapped to it’s parameter.
 
-    public class MyProductController : RenderMvcController
+```csharp
+public class MyProductController : RenderMvcController
+{
+    public ActionResult Product(RenderModel model, string sku)
     {
-        public ActionResult Product(RenderModel model, string sku)
-        {
-            // in my case, the IPublishedContent attached to this
-            // model will be my products node in Umbraco which i
-            // can now use to traverse to display the product list
-            // or lookup the product by sku
+        // in my case, the IPublishedContent attached to this
+        // model will be my products node in Umbraco which i
+        // can now use to traverse to display the product list
+        // or lookup the product by sku
 
-            if (string.IsNullOrEmpty(sku))
-            {
-                // render the products list if no sku
-                return RenderProductsList(model);
-            }
-            else
-            {
-                return RenderProduct(model, sku);
-            }
+        if (string.IsNullOrEmpty(sku))
+        {
+            // render the products list if no sku
+            return RenderProductsList(model);
+        }
+        else
+        {
+            return RenderProduct(model, sku);
         }
     }
+}
+```
