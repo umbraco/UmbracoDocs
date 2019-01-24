@@ -16,22 +16,26 @@ This property editors returns a single item if the "Pick multiple items" data ty
 
 ## Typed Example (multiple enabled): ##
 
-    @{
-        var typedMultiMediaPicker = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("sliders");
-        foreach (var item in typedMultiMediaPicker)
-        {
-            <img src="@item.Url" style="width:200px"/>
-        }
+```csharp
+@{
+    var typedMultiMediaPicker = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("sliders");
+    foreach (var item in typedMultiMediaPicker)
+    {
+        <img src="@item.Url" style="width:200px"/>
     }
+}
+```
 
 
 ## Typed Example (multiple disabled): ##
 
-    @{
-        var typedMediaPickerSingle = Model.Content.GetPropertyValue<IPublishedContent>("featuredBanner");
-        if (typedMediaPickerSingle != null)
-        {
-            <p>@typedMediaPickerSingle.Url</p>
-            <img src="@typedMediaPickerSingle.Url" style="width:200px" alt="@typedMediaPickerSingle.GetPropertyValue("alt")" />
-        }
-    }      
+```csharp
+@{
+    var typedMediaPickerSingle = Model.Content.GetPropertyValue<IPublishedContent>("featuredBanner");
+    if (typedMediaPickerSingle != null)
+    {
+        <p>@typedMediaPickerSingle.Url</p>
+        <img src="@typedMediaPickerSingle.Url" style="width:200px" alt="@typedMediaPickerSingle.GetPropertyValue("alt")" />
+    }
+}
+```

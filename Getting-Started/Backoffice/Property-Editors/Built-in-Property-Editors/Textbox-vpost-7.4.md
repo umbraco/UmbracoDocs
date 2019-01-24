@@ -24,19 +24,23 @@ Textbox is a simple HTML input control for text.
 
 ## MVC View Example:
 
-	@{
-	   if (Model.Content.HasValue("pageTitle")){
-	       <p>@(Model.Content.GetPropertyValue<string>("pageTitle"))</p>
-	   }
-	}
+```csharp
+@{
+   if (Model.Content.HasValue("pageTitle")){
+       <p>@(Model.Content.GetPropertyValue<string>("pageTitle"))</p>
+   }
+}
+```
 
 
 ### Dynamic (Obsolete):
 
 See [Common pitfalls](../../../../../reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
 
-	@{
-	   if (CurrentPage.HasValue("pageTitle")){
-	       <p>@CurrentPage.pageTitle</p>
-	   }
-	}
+```csharp
+@{
+   if (CurrentPage.HasValue("pageTitle")){
+       <p>@CurrentPage.pageTitle</p>
+   }
+}
+```

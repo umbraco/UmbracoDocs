@@ -16,18 +16,22 @@ Pretty much like the name indicates this Data type enables editors to choose fro
 
 ### Typed:
 
-    @if (Model.Content.HasValue("miniFigure"))
-    {
-        var preValue = Umbraco.GetPreValueAsString(Model.Content.GetPropertyValue<int>("miniFigure"));
-        <p>@preValue</p>
-    }
+```csharp
+@if (Model.Content.HasValue("miniFigure"))
+{
+    var preValue = Umbraco.GetPreValueAsString(Model.Content.GetPropertyValue<int>("miniFigure"));
+    <p>@preValue</p>
+}
+```
 
 ### Dynamic (Obsolete):
 
 See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
 
-    @if (CurrentPage.HasValue("miniFigure"))
-    {
-        var preValue = Umbraco.GetPreValueAsString(CurrentPage.miniFigure);
-        <p>@preValue</p>
-    }   
+```csharp
+@if (CurrentPage.HasValue("miniFigure"))
+{
+    var preValue = Umbraco.GetPreValueAsString(CurrentPage.miniFigure);
+    <p>@preValue</p>
+}
+```

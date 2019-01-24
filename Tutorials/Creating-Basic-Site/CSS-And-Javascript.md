@@ -9,7 +9,7 @@ You could use the Umbraco UI to create your CSS file. **_Settings > Stylesheets_
 
 Next copy the **_scripts_** folder from the **js** directory of the Initializr template to the **_[your website root]\Scripts_** directory – we’ll have to update the template to look in **/Scripts** instead of **/js**. To do this go to **_Settings > Templates > Homepage_** and change line 21 to say “_scripts/..._” and click **_Save_**.  
 
-```
+```js
 <script src="scripts/libs/modernizr-2.0.6.min.js"></script>
 ```
 

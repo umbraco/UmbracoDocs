@@ -47,38 +47,44 @@ Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. 
 
 ### Typed:
 
-    @{
-        var typedMultiNodeTreePicker = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("banner");
-        foreach (var item in typedMultiNodeTreePicker)
-        {
-            <p>@item.Name</p>
-        }
+```csharp
+@{
+    var typedMultiNodeTreePicker = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("banner");
+    foreach (var item in typedMultiNodeTreePicker)
+    {
+        <p>@item.Name</p>
     }
+}
+```
 
 ## MVC View Example - [value converters disabled](../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
 
 ### Typed:
 
-	@{
-	    if (Model.Content.HasValue("banner"))
-	    {
-	        var bannerListValue = Model.Content.GetPropertyValue<string>("banner");
-	        var bannerList = bannerListValue.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
-	        var bannerCollection = Umbraco.TypedContent(bannerList).Where(x => x != null);
-	        foreach (var item in bannerCollection)
-	        {
-	            <p>@item.Name</p>
-	        }
-	    }
-	}
+```csharp
+@{
+    if (Model.Content.HasValue("banner"))
+    {
+        var bannerListValue = Model.Content.GetPropertyValue<string>("banner");
+        var bannerList = bannerListValue.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
+        var bannerCollection = Umbraco.TypedContent(bannerList).Where(x => x != null);
+        foreach (var item in bannerCollection)
+        {
+            <p>@item.Name</p>
+        }
+    }
+}
+```
 
 ### Dynamic:                              
 
-	@{
-	    var bannerList = CurrentPage.banner.ToString().Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-	    var bannerCollection = Umbraco.Content(bannerList);
-	    foreach (var item in bannerCollection)
-	    {
-	        <p>@item.Name</p>
-	    }
-	}
+```csharp
+@{
+    var bannerList = CurrentPage.banner.ToString().Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+    var bannerCollection = Umbraco.Content(bannerList);
+    foreach (var item in bannerCollection)
+    {
+        <p>@item.Name</p>
+    }
+}
+```
