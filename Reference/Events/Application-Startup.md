@@ -4,7 +4,9 @@ In order to bind to certain events in the Umbraco application you need to make t
 
 ## Use ApplicationEventHandler to register events
 
-> Applies to: Umbraco 6.1.0+
+:::note
+Applies to: Umbraco 6.1.0+
+:::
 
 The [ApplicationEventHandler](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Core.ApplicationEventHandler.html) is a plugin type that allows developers to execute code during the Umbraco bootup process.
 
@@ -99,7 +101,9 @@ For example, the [CacheRefresherEventHandler](../../apidocs/csharp/api/Umbraco.W
 
 Finally (very EXPERT), users can [register a filter](../../apidocs/csharp/api/Umbraco.Core.ObjectResolution.ApplicationEventsResolver.html#Umbraco_Core_ObjectResolution_ApplicationEventsResolver_FilterCollection) to process the list (after it has been ordered) and re-order it, or remove handlers.
 
-**BEWARE**! Handlers order is an important thing, and removing handlers or reordering handlers can have unexpected consequences.
+:::warning
+Handlers order is an important thing, and removing handlers or reordering handlers can have unexpected consequences.
+:::
 
 
 ## Related Links
