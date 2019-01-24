@@ -12,5 +12,7 @@ Creating an XSLT macro is very easy.
 
 Now that we have the XSLT created, we need to customize it to output our content the way we like.
 
-**Note: I have copied the original book from Casey Neehouse from the books section of umbraco.org**
+:::note
+This was copied the original book from Casey Neehouse from the books section of umbraco.org
+:::
 
