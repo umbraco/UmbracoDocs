@@ -94,26 +94,26 @@ Since you aren't using UrlRewriting you will have probably never edited the UrlR
 * `<urlrewritingnet configSource="config\UrlRewriting.config" />`
 * And the following http modules
 
-        ```xml
-	    <system.web>
-		<httpModules>
-		    <add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter"/>
-		    ...
-		</httpModules>
-	    <system.web>
-        ```
+```xml
+<system.web>
+<httpModules>
+    <add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter"/>
+    ...
+</httpModules>
+<system.web>
+```
 
-	    and
+and
 
-        ```xml
-	    <system.webServer>
-	       <modules>
-		   <remove name="UrlRewriteModule"/>
-		   <add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter"/>
-		    ...
-	       </modules>
-	    </system.webServer>
-        ```
+```xml
+<system.webServer>
+   <modules>
+   <remove name="UrlRewriteModule"/>
+   <add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter"/>
+    ...
+   </modules>
+</system.webServer>
+```
 
 
 #### Forms
@@ -169,16 +169,16 @@ Other considerations:
 * There was an update to the /umbraco/config/create/ui.xml which needs to be manually updated, the original element had this text:
        
        
-       ```xml
-		<nodeType alias="users">
-			<header>User</header>
-			<usercontrol>/create/simple.ascx</usercontrol>
-			<tasks>
-			  <create assembly="umbraco" type="userTasks" />
-			  <delete assembly="umbraco" type="userTasks" />
-			</tasks>
-		</nodeType>
-        ```
+```xml
+<nodeType alias="users">
+    <header>User</header>
+    <usercontrol>/create/simple.ascx</usercontrol>
+    <tasks>
+      <create assembly="umbraco" type="userTasks" />
+      <delete assembly="umbraco" type="userTasks" />
+    </tasks>
+</nodeType>
+```
 
 
 	* The &lt;usercontrol&gt; value has changed to: **/create/user.ascx**, this is a required change otherwise creating a new user will not work.
