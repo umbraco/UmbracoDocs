@@ -18,31 +18,41 @@ For **Umbraco v7.7.3+**
 
 The `umbracoLocalTempStorage` setting controls where the `umbraco.config` and the other Umbraco TEMP files are stored. This setting can be configured in the [Web.config](../../../../Reference/Config/webconfig/#umbracolocaltempstorage-umbraco-v773).
 
-	<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
+```xml
+<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
+```
 
 This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the environment temporary folder.
 
 **Or**
 
-	<add key="umbracoLocalTempStorage" value="AspNetTemp" />
+```xml
+<add key="umbracoLocalTempStorage" value="AspNetTemp" />
+```
 
 This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the ASP.NET temporary folder
 
 For **Umbraco v7.6+**
 
-	<add key="umbracoContentXMLStorage" value="EnvironmentTemp" />
+```xml
+<add key="umbracoContentXMLStorage" value="EnvironmentTemp" />
+```
 
 This will set Umbraco to store `umbraco.config` in the environment temporary folder
 
 **Or**
 
-	<add key="umbracoContentXMLStorage" value="AspNetTemp" />
+```xml
+<add key="umbracoContentXMLStorage" value="AspNetTemp" />
+```
 
 This will set Umbraco to store `umbraco.config` in the ASP.NET temporary folder
 
 For **Umbraco Pre v7.6**
 
-	<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
+```xml
+<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
+```
 
 This will set Umbraco to store `umbraco.config` in the ASP.NET temporary folder
 
@@ -55,7 +65,9 @@ You cannot share indexes between servers, therefore when using a shared file ser
 
 Examine v0.1.83 introduced a new `directoryFactory` named `TempEnvDirectoryFactory` which should be added to all indexers in the `~/Config/ExamineSettings.config` file
 
-    directoryFactory="Examine.LuceneEngine.Directories.TempEnvDirectoryFactory,Examine"
+```xml
+directoryFactory="Examine.LuceneEngine.Directories.TempEnvDirectoryFactory,Examine"
+```
 
 The `TempEnvDirectoryFactory` allows Examine to store indexes directly in the environment temporary storage directory.
 
