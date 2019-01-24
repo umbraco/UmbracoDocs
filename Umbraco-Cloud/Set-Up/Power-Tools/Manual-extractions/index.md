@@ -20,7 +20,9 @@ Run an extraction following these steps:
 
 ![Run manual extraction](images/manual-extraction.gif)
 
-**NOTE**: Sometimes you might encounter a deploy-marker called `deploy`. This usually means that an extraction cannot run, and you need to restart your environment for the extraction to be able to run.
+:::note
+Sometimes you might encounter a deploy-marker called `deploy`. This usually means that an extraction cannot run, and you need to restart your environment for the extraction to be able to run.
+:::
 
 Sometimes you might also need to run this extraction locally. This can be done by following the above steps using CMD (command prompt) on your local machine, and navigating to the `/data` folder in your local project folder.
 
