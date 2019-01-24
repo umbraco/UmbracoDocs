@@ -21,8 +21,11 @@ This configuration value expects a `True/False` value and can be used to toggle 
 This configuration value expects a `True/False` value and can be used to toggle if new forms that are created adds an email workflow to send the result of the form to the current user who created the form.
 
 ### AllowEditableFormSubmissions
-This configuration value expects a `True/False` value and can be used to toggle the functionality to allow a form submission to be editable and re-submitted. When the value is set to `True` it allows Form Submissions to be edited using the following querystring for the page containing the form on the site. `?recordId=GUID` Replace `GUID` with the GUID of the form submission.<br/>
-**BEWARE** Enable this feature ONLY if you do understand the security implications.
+This configuration value expects a `True/False` value and can be used to toggle the functionality to allow a form submission to be editable and re-submitted. When the value is set to `True` it allows Form Submissions to be edited using the following querystring for the page containing the form on the site. `?recordId=GUID` Replace `GUID` with the GUID of the form submission.
+
+:::warning
+Enable this feature ONLY if you do understand the security implications.
+:::
 
 ### RecaptchaPublicKey & RecaptchaPrivateKey
 Both of these configuration values are needed in order to use ReCaptcha V2 from Google. You can obtain both of these values after signing up to create a ReCaptcha key here - https://www.google.com/recaptcha/admin 
