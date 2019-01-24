@@ -13,7 +13,9 @@ This model contains an instance of `IPublishedContent` which you can use.
 When you are working in a View of type `UmbracoTemplatePage` (which is the default view type), the Model provided to that view
 will also be `RenderModel` which exposes `IPublishedContent`. For example, to render the current content model's name you could do:
 
-    @Model.Content.Name
+```csharp
+@Model.Content.Name
+```
 
 All Umbraco view page types inherit from `UmbracoViewPage<TModel>`. A neat trick is that if you want your view Model to simply be `IPublishedContent`
 you can change your view type to `UmbracoViewPage<IPublishedContent>` and the view will still render without issue even though the controller
@@ -28,7 +30,9 @@ IPublishedContent is the standard model used for all published content, media an
 There's also a dynamic representation of `IPublishedContent` called `DynamicPublishedContent`. This is available on `UmbracoTemplatePage` as the property `@CurrentPage`.
 Working with dynamics is simpler in some cases especially with regards to referencing property data. For example, to output your custom property 'markDown', you could just do:
 
-	@CurrentPage.markDown
+```csharp
+@CurrentPage.markDown
+```
 
 However, a dynamic object does not provide any intellisense and is compiled at runtime.
 
