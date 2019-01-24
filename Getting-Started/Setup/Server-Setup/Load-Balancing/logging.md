@@ -11,14 +11,16 @@ This describes how you can configure log4net to write log files that are named w
 
 Simply update your log4net configuration's appender's file value as below:
 
-	  <appender .... >
-	    <!--
-			THIS IS THAT VALUE THAT UMBRACO IS SHIPPED WITH THAT DOES NOT
-			INCLUDE THE MACHINE NAME IN THE FILE
-			<file value="App_Data\Logs\UmbracoTraceLog.txt" />
-		-->
+```xml
+<appender .... >
+<!--
+    THIS IS THAT VALUE THAT UMBRACO IS SHIPPED WITH THAT DOES NOT
+    INCLUDE THE MACHINE NAME IN THE FILE
+    <file value="App_Data\Logs\UmbracoTraceLog.txt" />
+-->
 
-		<!-- THIS IS THE NEW CHANGE TO HAVE A MACHINE NAME IN THE FILE NAME -->
-	    <file type="log4net.Util.PatternString" value="App_Data\Logs\UmbracoTraceLog.%property{log4net:HostName}.txt" />
-			    
-	  </appender>
+<!-- THIS IS THE NEW CHANGE TO HAVE A MACHINE NAME IN THE FILE NAME -->
+<file type="log4net.Util.PatternString" value="App_Data\Logs\UmbracoTraceLog.%property{log4net:HostName}.txt" />
+
+</appender>
+```
