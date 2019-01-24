@@ -13,53 +13,55 @@ for your front-end servers and your admin server... you can make this a configur
 The first thing to do is create a couple classes for your front-end servers and master server to use:
 
 ```csharp
-	public class MasterServerRegistrar : IServerRegistrar2
-	{
-		public IEnumerable<IServerAddress> Registrations
-		{
-			get { return Enumerable.Empty<IServerAddress>(); }
-		}
-		public ServerRole GetCurrentServerRole()
-		{
-			return ServerRole.Master;
-		}
-		public string GetCurrentServerUmbracoApplicationUrl()
-		{
-			// NOTE: If you want to explicitly define the URL that your application is running on,
-			// this will be used for the server to communicate with itself, you can return the 
-			// custom path here and it needs to be in this format:
-			// http://www.mysite.com/umbraco
+public class MasterServerRegistrar : IServerRegistrar2
+{
+    public IEnumerable<IServerAddress> Registrations
+    {
+        get { return Enumerable.Empty<IServerAddress>(); }
+    }
+    public ServerRole GetCurrentServerRole()
+    {
+        return ServerRole.Master;
+    }
+    public string GetCurrentServerUmbracoApplicationUrl()
+    {
+        // NOTE: If you want to explicitly define the URL that your application is running on,
+        // this will be used for the server to communicate with itself, you can return the 
+        // custom path here and it needs to be in this format:
+        // http://www.mysite.com/umbraco
 
-			return null;
-		}
-	}
+        return null;
+    }
+}
 
-	public class FrontEndReadOnlyServerRegistrar : IServerRegistrar2
-	{
-		public IEnumerable<IServerAddress> Registrations
-		{
-			get { return Enumerable.Empty<IServerAddress>(); }
-		}        
-		public ServerRole GetCurrentServerRole()
-		{
-			return ServerRole.Slave;
-		}        
-		public string GetCurrentServerUmbracoApplicationUrl()
-		{
-			return null;
-		}
-	}
+public class FrontEndReadOnlyServerRegistrar : IServerRegistrar2
+{
+    public IEnumerable<IServerAddress> Registrations
+    {
+        get { return Enumerable.Empty<IServerAddress>(); }
+    }        
+    public ServerRole GetCurrentServerRole()
+    {
+        return ServerRole.Slave;
+    }        
+    public string GetCurrentServerUmbracoApplicationUrl()
+    {
+        return null;
+    }
+}
 ```
 
 then you'll need to swap the default `DatabaseServerRegistrar` for the your custom registrars during application startup.
 You'll need to create an [ApplicationEventHandler](../../../../Reference/Events/Application-Startup.md) and override `ApplicationStarting`. 
 During this event you can swap the registrar objects:
 
-	// This should be executed on your master server
-	ServerRegistrarResolver.Current.SetServerRegistrar(new MasterServerRegistrar());
+```csharp
+// This should be executed on your master server
+ServerRegistrarResolver.Current.SetServerRegistrar(new MasterServerRegistrar());
 
-	// This should be executed on your slave servers
-	ServerRegistrarResolver.Current.SetServerRegistrar(new FrontEndReadOnlyServerRegistrar());
+// This should be executed on your slave servers
+ServerRegistrarResolver.Current.SetServerRegistrar(new FrontEndReadOnlyServerRegistrar());
+```
 
 Now that your front-end servers are using your custom `FrontEndReadOnlyServerRegistrar` class, they will always be deemed 'Slave' servers and will not 
 attempt any master election or task scheduling.
@@ -96,19 +98,19 @@ During start up the `DatabaseServerMessengerOptions` can be adjusted to control 
 e.g. This example should be added within a [`ApplicationStarting`](../../../../Reference/Events/Application-Startup.md#startup-methods) event
 
 ```csharp
-	ServerMessengerResolver.Current.SetServerMessenger(
-		new BatchedDatabaseServerMessenger(
-			applicationContext,
-			true,
-			new DatabaseServerMessengerOptions()
-			{
-				DaysToRetainInstructions = 2, // 2 days
-				ThrottleSeconds = 5, // 5 second
-				MaxProcessingInstructionCount = 1000,
-				PruneThrottleSeconds = 60 // 1 minute
-			}
-		)
-	);
+ServerMessengerResolver.Current.SetServerMessenger(
+    new BatchedDatabaseServerMessenger(
+        applicationContext,
+        true,
+        new DatabaseServerMessengerOptions()
+        {
+            DaysToRetainInstructions = 2, // 2 days
+            ThrottleSeconds = 5, // 5 second
+            MaxProcessingInstructionCount = 1000,
+            PruneThrottleSeconds = 60 // 1 minute
+        }
+    )
+);
 ```
 
 Parameters:
