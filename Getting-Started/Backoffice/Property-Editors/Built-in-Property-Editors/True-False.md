@@ -18,23 +18,27 @@ The True/False property has a setting which allows you to set the default value 
 
 ### Typed:
 
-	@{
-		foreach (IPublishedContent page in Model.Content.Children){
-            if (!page.GetPropertyValue<bool>("umbracoNaviHide"))
-            {
-				<p>@page.Name</p>
-			}
-		}	
-	}
+```csharp
+@{
+    foreach (IPublishedContent page in Model.Content.Children){
+        if (!page.GetPropertyValue<bool>("umbracoNaviHide"))
+        {
+            <p>@page.Name</p>
+        }
+    }	
+}
+```
 
 ### Dynamic (Obsolete):
 
 See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
 
-	@{
-		foreach (var page in CurrentPage.Children){
-			if (!page.umbracoNaviHide){
-				<p>@page.Name</p>
-			}
-		}	
-	}
+```csharp
+@{
+    foreach (var page in CurrentPage.Children){
+        if (!page.umbracoNaviHide){
+            <p>@page.Name</p>
+        }
+    }	
+}
+```
