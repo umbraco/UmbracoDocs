@@ -6,12 +6,16 @@ During the development of your Umbraco site you can debug, and profile the code 
 Tracing enables you to view diagnostic information about a single request for a page on your site at runtime. The trace will show the flow of page level events and display any errors in code along with diagnostic information, eg Server variables, Cookie, Form and Querystring Collections, Application State etc
 
 #### Enabling Trace
-NB Do not enable trace in your production environment, it reveals an awful lot about your production environment.
+
+:::warning
+Do not enable trace in your production environment, it reveals an awful lot about your production environment.
+:::
 
 By default trace is disabled, to enable: update the web.config; look for the trace element in the System.Web section and set the enabled attribute to true
 
-    <trace enabled="true" requestLimit="100" pageOutput="false"
-                  traceMode="SortByTime" localOnly="true"/>
+```xml
+<trace enabled="true" requestLimit="100" pageOutput="false" traceMode="SortByTime" localOnly="true"/>
+```
 
 #### Viewing Trace
 
@@ -53,13 +57,15 @@ and any underlying SQL Statements that are being executed for a part of the exec
 
 If within your implementation there are certain lines of code that you think may contain a bottleneck, the MiniProfiler gives you a method for timing just those specific lines of code:
 
-    var profiler = ApplicationContext.ProfilingLogger;
-    using(profiler.DebugDuration<Products>("Artificially Slow Example"))
-    {
-        // you would place the code you wanted to measure in here...
-        // just make this sleep for a second, for example purposes:
-        System.Threading.Thread.Sleep(1000);
-    }
+```csharp
+var profiler = ApplicationContext.ProfilingLogger;
+using(profiler.DebugDuration<Products>("Artificially Slow Example"))
+{
+    // you would place the code you wanted to measure in here...
+    // just make this sleep for a second, for example purposes:
+    System.Threading.Thread.Sleep(1000);
+}
+```
 
 and now in the profiler you can see
 
