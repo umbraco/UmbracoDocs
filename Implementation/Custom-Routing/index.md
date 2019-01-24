@@ -19,7 +19,9 @@ A 'Last Chance' `IContentFinder` is a special implementation of an `IContentFind
 
 To set your own 404 finder create an IContentFinder and set it as the ContentLastChanceFinder.  A ContentLastChanceFinder will always return a 404 status code. Example:
 
-    ContentLastChanceFinderResolver.Current.SetFinder(new My404ContentFinder());
+```csharp
+ContentLastChanceFinderResolver.Current.SetFinder(new My404ContentFinder());
+```
 
 ## Custom MVC routes
 
@@ -48,10 +50,10 @@ See: [Custom routing documentation](../../Reference/Routing/custom-routes)
 You can subscribe to an event to know when the `PublishedContentRequest` is ready to be processed.  It's up to you to change anything (content, template, ...):
 
 ```csharp
-    // public static event EventHandler<EventArgs> Prepared;
-    PublishedContentRequest.Prepared += (sender, args) =>
-    {
-      var request = sender as PublishedContentRequest;
-      // do something…
-    }
+// public static event EventHandler<EventArgs> Prepared;
+PublishedContentRequest.Prepared += (sender, args) =>
+{
+  var request = sender as PublishedContentRequest;
+  // do something…
+}
 ```
