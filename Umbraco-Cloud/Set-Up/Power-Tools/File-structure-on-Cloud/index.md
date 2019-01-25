@@ -14,6 +14,8 @@ I've highlighted the three folders you are going to use the most when visiting K
 * **repository**: This is your Git repository - you'll find a clone of your site's structure files (`/wwwroot`) - this is the folder changes are pushed to and pulled from when working locally
 * **wwwroot**: This folder contains your site's structure files - these are the files used to run the site on the environment
 
-**Note**: `/wwwroot/` contains the files used to show your website to the world. When you push changes from your local machine, they are pushed to the Git repository (`/repository/`), and when this finishes successfully the changes are copied into the live site.
+:::note
+`/wwwroot/` contains the files used to show your website to the world. When you push changes from your local machine, they are pushed to the Git repository (`/repository/`), and when this finishes successfully the changes are copied into the live site.
+:::
 
 Find general information about Kudu and how to access the tool in the [Power tools](../) article.
