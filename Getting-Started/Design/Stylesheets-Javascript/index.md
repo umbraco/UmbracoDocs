@@ -7,18 +7,20 @@ noting that Umbraco ships with the ClientDependency Framework which offers simpl
 
 You can bundle and minify as follows in a view template file.
 
-	@using ClientDependency.Core.Mvc
-	@using ClientDependency.Core
-	@{
-		Html.RequiresJs("~/scripts/Script1.js", 1);
-		Html.RequiresJs("~/scripts/Script2.js", 2);
+```csharp
+@using ClientDependency.Core.Mvc
+@using ClientDependency.Core
+@{
+    Html.RequiresJs("~/scripts/Script1.js", 1);
+    Html.RequiresJs("~/scripts/Script2.js", 2);
 
-		Html.RequiresCss("~/css/style.css");
-	}
-	<html>
-	<head>
-		@Html.RenderCssHere()
-		@Html.RenderJsHere()
-	</head>
+    Html.RequiresCss("~/css/style.css");
+}
+<html>
+<head>
+    @Html.RenderCssHere()
+    @Html.RenderJsHere()
+</head>
+```
 	
 Full details of the ClientDependency Framework can be found here: [https://github.com/Shandem/ClientDependency](https://github.com/Shandem/ClientDependency)	
