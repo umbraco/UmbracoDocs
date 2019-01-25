@@ -47,4 +47,3 @@ A cleaner codebase has also greatly contributed to improving the performance and
 
 - [Umbraco 7 to Umbraco 8 - a developer's perspective](https://umbraco.com/blog/umbraco-7-to-umbraco-8-a-developer-s-perspective/)
 - [Umbraco 8: Infinite Editing](https://umbraco.com/blog/umbraco-8-infinite-editing/)
-- Umbraco.com landing pages
