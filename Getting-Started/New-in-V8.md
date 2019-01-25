@@ -28,7 +28,7 @@ Giving the Umbraco Backoffice a new look, has given you a bigger workspace when 
 
 The entire flow of building and testing packages for Umbraco has been given an overhaul and it's been made more fluent and consistent. 
 
-[would like to be able to say something more about this .. ]
+You can already find a guide about [how to port V7 packages to V8](../Tutorials/Porting-Packages-V8).
 
 ## General improvements
 
