@@ -145,7 +145,9 @@ Return items from the collection after skipping the specified number of items.
 var nodes = Model.Content.Children.Skip(3);
 ```
 
-**HINT:** You can combine Skip and Take when using for paging operations
+:::note
+You can combine Skip and Take when using for paging operations
+:::
 
 ```csharp
 @* using skip and take together you can perform paging operations *@
