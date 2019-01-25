@@ -68,7 +68,7 @@ Learn more about the new features in Umbraco 8.
 				<h4 class="text-right">Code</h4>
 			</div>
 			<div class="col-sm-6">
-				<h5><a href="Code/Debugging/Logging/index-v8.md">Logging</a></h5>
+				<h5><a href="Code/Debugging/Logging/index-v8">Logging</a></h5>
 				<small>Understanding how logging works, and learn to setup custom logging.</small>
 			</div>
 		</div>
@@ -91,11 +91,11 @@ Learn more about the new features in Umbraco 8.
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
-				<h4 class="text-right"><a href="../Extending/index-v8.md">Extending</a></h4>
+				<h4 class="text-right"><a href="../Extending/index-v8">Extending</a></h4>
 				<small>Using the backoffice to create data</small>
 			</div>
 			<div class="col-sm-6">
-				<h5><a href="../Extending/Content-Apps/index-v8.md">Content Apps</a></h5>
+				<h5><a href="../Extending/Content-Apps/index-v8">Content Apps</a></h5>
 				<small>Learn how to develop content apps / tools for your editors.</small>
 			</div>
 		</div>
@@ -112,7 +112,6 @@ Learn more about the new features in Umbraco 8.
 		</span>
 		<span class="dot small">
 			<span class="line v-line"></span>
-			<span class="line h-line"></span>
 		</span>
 	</div>
 	<div class="col-xs-9">
