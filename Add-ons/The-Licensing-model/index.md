@@ -23,7 +23,9 @@ The license will cover the following domains:
 - devdomain2.com
 - www.devdomain2.com
 
-**Note** that you can have only 1 license per Umbraco installation. 
+:::note
+That you can have only 1 license per Umbraco installation.
+::
 
 ## What does a license cover?
 
@@ -41,7 +43,9 @@ In the case the you run multiple sites within one Umbraco installation, e.g. you
 
 Additional domains can be purchased from your account on [Umbraco.com](https://umbraco.com) for 109 €. Each additional domain includes 1 live domain and 2 development / testing domains.
 
-**Note** that this is an add-on domain for existing licenses. Refunds will not be given for this product.
+:::note
+That this is an add-on domain for existing licenses. Refunds will not be given for this product.
+:::
 
 ### Umbraco Courier
 
