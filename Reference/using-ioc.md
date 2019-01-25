@@ -104,7 +104,13 @@ public class MyApplication : IApplicationEventHandler
 }
 ```
 
-In this example, we will assume that we have a Document Type called 'Home'. Now we're going to create a custom controller to hijack a route for all content pages of type Home *(NOTE: we can target custom template names too - see the [Hijacking routes](routing/custom-controllers) documentation for full details).* Notice that the constructor accepts a parameter the custom class; this will be injected via IoC.
+In this example, we will assume that we have a Document Type called 'Home'. Now we're going to create a custom controller to hijack a route for all content pages of type Home.
+
+:::note
+we can target custom template names too - see the [Hijacking routes](routing/custom-controllers) documentation for full details)
+:::
+
+Notice that the constructor accepts a parameter the custom class; this will be injected via IoC.
 
 ```csharp
 public class HomeController : RenderMvcController
