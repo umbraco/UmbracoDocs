@@ -29,4 +29,7 @@ Which one you want to use depends on what you want to achieve. If you want to be
 
 ## Editor Model events
 See [EditorModelEventManager Events](EditorModel-Events.md) for a listing of the EditorModel events 
-<small>*(hint: useful for manipulating the model before it is sent to an editor in the backoffice - eg. perhaps to set a default value of a property on a new document)*</small>
+
+:::tip
+Useful for manipulating the model before it is sent to an editor in the backoffice - eg. perhaps to set a default value of a property on a new document
+:::
