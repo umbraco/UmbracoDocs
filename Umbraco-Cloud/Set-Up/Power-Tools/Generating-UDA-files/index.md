@@ -12,34 +12,36 @@ The UDA file contains metadata and detailed information about the type that was 
 
 Here's an example of what a UDA file looks like for Umbraco Deploy 2:
 
-    {
-        "DefaultTemplate": null,
-        "AllowedTemplates": [],
-        "Icon": "icon-document",
-        "Thumbnail": "folder.png",
-        "Description": null,
-        "AllowedAtRoot": false,
-        "IsContainer": false,
-        "Parent": null,
-        "AllowedChildContentTypes": [],
-        "CompositionContentTypes": [
-            "umb://document-type/4c04d968448747d791b5eae254afc7ec"
-        ],
-        "PropertyGroups": [],
-        "PropertyTypes": [],
-        "Udi": "umb://document-type/f76e64bec5e741cd801b290c54bb16de",
-        "Dependencies": [
-            {
-            "Udi": "umb://document-type/4c04d968448747d791b5eae254afc7ec",
-            "Ordering": true,
-            "Mode": 0
-            }
-        ],
-        "Name": "TextPage2",
-        "Alias": "textPage2",
-        "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
-        "__version": "2.0.3"
-    }
+```json
+{
+    "DefaultTemplate": null,
+    "AllowedTemplates": [],
+    "Icon": "icon-document",
+    "Thumbnail": "folder.png",
+    "Description": null,
+    "AllowedAtRoot": false,
+    "IsContainer": false,
+    "Parent": null,
+    "AllowedChildContentTypes": [],
+    "CompositionContentTypes": [
+        "umb://document-type/4c04d968448747d791b5eae254afc7ec"
+    ],
+    "PropertyGroups": [],
+    "PropertyTypes": [],
+    "Udi": "umb://document-type/f76e64bec5e741cd801b290c54bb16de",
+    "Dependencies": [
+        {
+        "Udi": "umb://document-type/4c04d968448747d791b5eae254afc7ec",
+        "Ordering": true,
+        "Mode": 0
+        }
+    ],
+    "Name": "TextPage2",
+    "Alias": "textPage2",
+    "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+    "__version": "2.0.3"
+}
+```
 
 This UDA file represents a Document Type with name **TextPage2**. All dependencies for the document type is listed in the file and also metadata like `AllowedAtRoot` and `Icon`.
 
