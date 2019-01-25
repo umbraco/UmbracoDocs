@@ -21,6 +21,9 @@ Learn more about the new features in Umbraco 8.
 
 ## Umbraco 8 Documentation
 
+<div class="row implementation">
+	<div class="col-sm-12"></div>
+</div>
 <div class="row">
 	<div class="col-xs-3">
 		<span class="dot big icon-Palette">
