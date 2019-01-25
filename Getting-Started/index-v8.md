@@ -111,7 +111,6 @@ Learn more about the new features in Umbraco 8.
 			<span class="line h-line"></span>
 		</span>
 		<span class="dot small">
-			<span class="line v-line"></span>
 		</span>
 	</div>
 	<div class="col-xs-9">
