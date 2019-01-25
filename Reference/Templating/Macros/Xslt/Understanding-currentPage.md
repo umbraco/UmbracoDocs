@@ -34,37 +34,39 @@ These are store as attributes of the document, which is called "node".  The prop
 
 This is structured similar to the following in the XML document.
 
-	<!DOCTYPE Umbraco [
-	<!ELEMENT nodes ANY>
-	<!ELEMENT node ANY>
-	<!ATTLIST node id ID #REQUIRED>
-	]>
-	<root id="-1">
-		<node
-			id="numeric-value"
-			version="guid-value"
-			parentID="numeric-value"
-			level="numeric-value"
-			writerID="numeric-value"
-			creatorID="numeric-value"
-			nodeType="numeric-value"
-			template="numeric-value"
-			sortOrder="numeric-value"
-			createDate="datetime-value"
-			updateDate="datetime-value"
-			nodeName="text-value"	
-			urlName="text-value"
-			writerName="text-value"
-			creatorName="text-value"
-			nodeTypeAlias="text-value"
-			path="csv-numeric-value">
-			<data
-				versionID="guid-value"
-				alias="text-value">
-				field-value or  <![CDATA[field-value]]>
-			</data>
-			<data ...>...</data>
-			<node ...>...</node>
-		</node>
-		<node ...>...</node>
-	</root>
+```xml
+<!DOCTYPE Umbraco [
+<!ELEMENT nodes ANY>
+<!ELEMENT node ANY>
+<!ATTLIST node id ID #REQUIRED>
+]>
+<root id="-1">
+    <node
+        id="numeric-value"
+        version="guid-value"
+        parentID="numeric-value"
+        level="numeric-value"
+        writerID="numeric-value"
+        creatorID="numeric-value"
+        nodeType="numeric-value"
+        template="numeric-value"
+        sortOrder="numeric-value"
+        createDate="datetime-value"
+        updateDate="datetime-value"
+        nodeName="text-value"	
+        urlName="text-value"
+        writerName="text-value"
+        creatorName="text-value"
+        nodeTypeAlias="text-value"
+        path="csv-numeric-value">
+        <data
+            versionID="guid-value"
+            alias="text-value">
+            field-value or  <![CDATA[field-value]]>
+        </data>
+        <data ...>...</data>
+        <node ...>...</node>
+    </node>
+    <node ...>...</node>
+</root>
+```
