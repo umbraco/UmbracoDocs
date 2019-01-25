@@ -8,8 +8,6 @@ meta.Description: "This section shows you some beginner tools and information to
 
 The newest major version of Umbraco comes with a lot of new big features, as well as a long list of general improvements to the CMS in general.
 
-In this article ...
-
 :::note
 This is a work in progress. 
 
