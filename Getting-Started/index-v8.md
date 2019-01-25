@@ -42,7 +42,7 @@ Learn more about the new features in Umbraco 8.
 				<small>Create templates and views with your own markup and use Razor to render content</small>
 			</div>
 			<div class="col-sm-6">
-				<h5><a href="Design/Rendering-Content/index-v8.md">Rendering content</a></h5>
+				<h5><a href="Design/Rendering-Content/index-v8">Rendering content</a></h5>
 				<small>Render the values of the current page or the result of a query against the content cache.</small>
 			</div>
 		</div>
