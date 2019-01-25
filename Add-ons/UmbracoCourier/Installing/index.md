@@ -45,7 +45,9 @@ Before you can start transferring between your sites, you need to **add a Courie
 
 You have now set up Courier on your sites, and you are ready to start transferring between them!
 
-**NOTE:** If you are testing Courier locally, you need to setup local hostnames to run your projects from. Follow the steps outlined below to get up and running.
+:::note
+If you are testing Courier locally, you need to setup local hostnames to run your projects from. Follow the steps outlined below to get up and running.
+:::
 
 ### Testing Courier locally
 
