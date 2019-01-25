@@ -1,3 +1,8 @@
+---
+meta.Title: "Learn what's new in Umbraco 8"
+meta.Description: "In this section you can read about all the new features and changes in Umbraco 8."
+---
+
 # What's new in Umbraco 8?
 
 In this article you can learn more about the biggest new features that comes out of the box with Umbraco 8.

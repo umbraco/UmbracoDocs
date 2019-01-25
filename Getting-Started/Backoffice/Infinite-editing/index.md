@@ -1,10 +1,13 @@
+---
+meta.Title: "Infinite Editing in Umbraco"
+meta.Description: "This section explains how the concept of infinite editing in the Umbraco backoffice works."
+---
+
 # Infinite Editing
 
 This feature enables you to work with your content without loosing the context of what you are doing. 
 
 Even though your content and your Document Types are in different sections of the Umbraco Backoffice, infinite editing enables you to make changes to your Document Types and properties directly in the context of the content you are editing.
-
-GIPHY !!!
 
 ## Customize
 

@@ -95,10 +95,6 @@ Learn more about the new features in Umbraco 8.
 				<h5><a href="../Extending/Content-Apps/index-v8.md">Content Apps</a></h5>
 				<small>Learn how to develop content apps / tools for your editors.</small>
 			</div>
-			<div class="col-sm-6">
-				<h5><a href="../Extending/Section-Trees/tree-actions-v8.md">Tree actions</a></h5>
-				<small>Add additional permission to your section trees.</small>
-			</div>
 		</div>
 	</div>
 </div>
