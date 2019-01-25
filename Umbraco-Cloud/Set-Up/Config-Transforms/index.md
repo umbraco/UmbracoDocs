@@ -2,6 +2,7 @@
 
 In this article you can learn how to use config transform files to apply environment specific configuration and settings to your Umbraco Cloud project.
 
+
 <iframe width="800" height="450" src="https://www.youtube.com/embed/YkF2FotjWDk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## What are Config Transforms?
@@ -26,7 +27,9 @@ When the file is deployed to the Live environment the transforms will be applied
 
 For each deploy, the Umbraco Cloud engine searches for all of the `.{environment}.xdt.config` files in your site and applies the transforms. This means you can transform any config file, for example `~/config/Dashboard.config` by creating a `~/config/Dashboard.live.xdt.config` file. Just make sure the transform file follows the naming convention and it exists in the same folder as the config file you want to transform.
 
-**Note**: Using config transforms to remove and/or add sections to config files is currently only possible for the `Web.config` file.
+:::note
+Using config transforms to remove and/or add sections to config files is currently only possible for the `Web.config` file.
+:::
 
 ## Syntax and testing
 
