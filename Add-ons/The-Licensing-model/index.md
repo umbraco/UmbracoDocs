@@ -25,7 +25,7 @@ The license will cover the following domains:
 
 :::note
 That you can have only 1 license per Umbraco installation.
-::
+:::
 
 ## What does a license cover?
 
