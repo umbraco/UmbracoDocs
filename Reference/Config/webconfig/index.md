@@ -47,6 +47,10 @@ If you are running multiple sites, you don't want the top level node in your URL
 Strips `.aspx` from URLs on the frontend when set to `true`.  
 This setting is only important to older IIS configurations where extension-less URLs weren't supported very well.
 
+```xml
+<add key="umbracoUseDirectoryUrls" value="true" />
+```
+
 ### umbracoTimeOutInMinutes
 
 Configures the number of minutes without any requests being made before the Umbraco user will be required to re-login. Any backoffice request will reset the clock. Default setting is 20 minutes.
@@ -59,21 +63,44 @@ Configures the number of minutes without any requests being made before the Umbr
 
 The default language to use in the backoffice if a user isn't explicitly assigned one. The default is English (en).
 
+```xml
+<add key="umbracoDefaultUILanguage" value="es" />
+```
+
 ### umbracoUseSSL
 
 Makes sure that all of the requests in the backoffice are called over HTTPS instead of HTTP when set to `true`.
 
+```xml
+<add key="umbracoUseSSL" value="true" />
+```
+
 ### umbracoCssDirectory 
 
 By adding this to appSettings you can specify a new/different folder for storing your css-files and still be able to edit them within Umbraco. Default folder is ~/css.
+For example if you wanted to store css in a folder in the website root folder "/assets/css", you could have this in appsetting:
+
+```xml
+<add key="umbracoCssDirectory" value="~/assets/css" />
+```
 
 ### umbracoMediaPath
 
 By adding this to appSettings you can specify a new/different folder for storing your media files. Default folder is ~/media.
+For example if you wanted to store in a folder in the website root folder called "umbracoMedia", you woul have this in appsetting:
+
+```xml
+<add key="umbracoMediaPath" value="~/umbracoMedia" />
+```
 
 ### umbracoScriptsPath 
 
 By adding this to appSettings you can specify a new/different folder for storing your JavaScript files and still be able to edit them within Umbraco. Default folder is ~/scripts.
+For example if you wanted to store javascript in a folder in the website root folder "/assets/js", you could have this in appsetting:
+
+```xml
+<add key="umbracoScriptsPath" value="~/assets/js" />
+```
 
 ### SMTP Settings
 
@@ -144,6 +171,10 @@ The options are:
 The default value is: `7`
 
 When this value is set above 0, the backoffice will check for a new version of Umbraco every 'x' number of days where 'x' is the value defined for this setting. Set this value to `0` to never check for a new version.
+
+```xml
+<add key="umbracoVersionCheckPeriod" value="0" />
+```
 
 ### umbracoDisableElectionForSingleServer (Umbraco v7.6+)
 
