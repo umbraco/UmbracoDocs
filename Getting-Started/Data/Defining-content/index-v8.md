@@ -1,6 +1,6 @@
 # Defining content
 
-*Here you'll find an explanation of how content is defined and quick guide for your first go at it (based on an empty installation).*
+*Here you'll find an explanation of how content is defined in v8.*
 
 Before a piece of content can be created it needs to be defined. That is why, when opening a blank installation of Umbraco, it is not possible to create content in the __Content__ section. All content needs a blueprint that holds information about what kind of data can be stored on the content node, which editors are used, how it is organized, where in the structure it is allowed and so forth. This blueprint or definition is called a Document Type.
 
@@ -12,7 +12,7 @@ Document Types can define entire pages or more limited content that can be reuse
 ### Properties
 Each field on a Document Type is called a property. A property is given a name, an alias (used to output the properties content in a template) and an editor. The editor determines what type of data the property will store and the input method. There are a wide range of editors available out of the box (textstring, Rich text, media picker and so forth) and you can customize and add additional editors.
 
-Some editors require configuration, a configured editor is saved as a Data Type and can be re-used for multiple properties and document types. These can be seen in the __Developer__ section under __Data Types__.
+Some editors require configuration, a configured editor is saved as a Data Type and can be re-used for multiple properties and document types. These can be seen in the __Settings__ section under __Data Types__.
 
 ## Creating a Document Type
 A Document Type is created in the settings section using the Document Type editor.
@@ -117,17 +117,3 @@ Go to the __Content__ section and click the menu icon (•••) next to the *H
 
 Document Types are very flexible and can be used in a myriad of ways from defining a piece of reusable content or an entire page, to acting as a container or repository.
 
-### More information
-- [Rendering Content](../../Design/Rendering-Content/)
-- [Customizing Data Types](../Data-Types/index.md)
-
-### Related Services
-- [ContentService](../../../Reference/Management/Services/ContentService.md)
-- [ContentTypeService](../../../Reference/Management/Services/ContentTypeService.md)
-
-### Tutorials
-- [Creating a basic website with Umbraco](../../../Tutorials/Creating-Basic-Site/)
-
-### [Umbraco TV](https://umbraco.tv)
-- [Chapter: Document Types](https://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/document-types/what-is-a-document-type/)
-- [Chapter: Creating content](https://umbraco.tv/videos/umbraco-v7/content-editor/basics/creating-content/)
