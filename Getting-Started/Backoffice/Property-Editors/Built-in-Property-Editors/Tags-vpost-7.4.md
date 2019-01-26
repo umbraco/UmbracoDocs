@@ -107,7 +107,7 @@ namespace Our.Documentation.Examples.Controllers
             string tagGroup = "default";
 
             // set the tags
-            content.SetTags(storageType, "keyWords", newTagsToSet, replaceTags, tagGroup);
+            content.SetTags(storageType, "aliasOfTagProperty", newTagsToSet, replaceTags, tagGroup);
 
 
             return View();
