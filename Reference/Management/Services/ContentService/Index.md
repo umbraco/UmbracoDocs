@@ -170,7 +170,7 @@ Gets a specific version of an `IContent` item.
 
 Gets a collection of `IContent` objects by Parent Id.
 
-### .IEnumerable<IContent> GetChildrenByName(int parentId, string name)
+### .GetChildrenByName(int parentId, string name)
     
 Gets a collection of `IContent` objects by its name or partial name.
 
