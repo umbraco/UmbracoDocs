@@ -1,15 +1,24 @@
+---
+keywords: base v6 version6
+versionFrom: 6.0.0
+---
+
+:::warning
+If you're using Umbraco 7 you should consider using Umbraco Web API instead of /Base since it's deprecated and only kept for backwards compatibility. Please see the documentation on Umbraco Web API here: https://our.umbraco.com/documentation/Reference/Routing/WebApi/
+:::
+
 # BaseRestExtension.config
 
 BaseRestExtension.config contains the data necessary for the /Base system when exposing the methods in your class library.
 
-	<?xml version="1.0" encoding="utf-8"?>
-	<BaseRestExtensions>
-	  
-	  <extension alias="aliasName" type="the.fully.qualified.name, assemblyName">
-	    <method name="Hello" returnXml="false" allowAll="true"></method>
-	  </extension>
-	  
-	</BaseRestExtensions>
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<BaseRestExtensions>
+    <extension alias="aliasName" type="the.fully.qualified.name, assemblyName">
+        <method name="Hello" returnXml="false" allowAll="true"></method>
+    </extension>
+</BaseRestExtensions>
+```
 
 It contains one extension tag for each class you want the /Base system to expose, and the method tags for each method you want the /Base system to expose.
 
@@ -33,24 +42,26 @@ The user calling the method, will be allowed if she has access through at least 
 
 _BaseRestExtensions.config_
 
-	<?xml version="1.0" encoding="utf-8"?>
-	<BaseRestExtensions>
-	  
-	  <extension alias="test" type="BaseTest.TestClass,basetest">
-	    <method name="Hello" returnXml="false" allowAll="true"></method>
-	  </extension>
-	  
-	</BaseRestExtensions>
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<BaseRestExtensions>
+  <extension alias="test" type="BaseTest.TestClass,basetest">
+    <method name="Hello" returnXml="false" allowAll="true"></method>
+  </extension>
+</BaseRestExtensions>
+```
 
 _BaseTest.cs_  
 
-	namespace BaseTest {
-	    public class TestClass {
-	        public static string Hello() {
-	            return "Hello World";
-	        }
-	    }
-	} 
+```csharp
+namespace BaseTest {
+    public class TestClass {
+        public static string Hello() {
+            return "Hello World";
+        }
+    }
+} 
+```
 
 Visit the /base url. For example: http://example.com/base/test/Hello/.
 
