@@ -8,13 +8,13 @@ versionTo: 6.2.6
 
 The XSLT implementation of Examine requires a little bit of setup. The steps are outlined below.
 
-1. Add the Examine xslt extensions to the xslt config in file ~/Config/XsltExtensions.config
+1. Add the Examine XSLT extensions to the XSLT config in file ~/Config/XsltExtensions.config
 
 ```xml
 <ext assembly="UmbracoExamine" type="UmbracoExamine.XsltExtensions" alias="Examine" />
 ```
 
-2. In your Xslt for your macro ensure to add the namespace:
+2. In your XSLT for your macro ensure to add the namespace:
 
 ```xml
 xmlns:Examine="urn:Examine"
@@ -26,7 +26,7 @@ xmlns:Examine="urn:Examine"
 exclude-result-prefixes="Examine umbraco.library Exslt.ExsltCommon Exslt.ExsltDatesAndTimes Exslt.ExsltMath Exslt.ExsltRegularExpressions Exslt.ExsltStrings Exslt.ExsltSets ">
 ```
 
-Now we can use the Examine xslt extensions in our xslt. This will render the exact same results as the above 3 examples:
+Now we can use the Examine XSLT extensions in our XSLT. This will render the exact same results as the above 3 examples:
 
 ```xml
 <xsl:template match="/">
