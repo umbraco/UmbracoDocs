@@ -7,7 +7,7 @@ meta.Description: "In this section you can read about all the new features and c
 
 In this article you can learn more about the biggest new features that comes out of the box with Umbraco 8.
 
-## Variants
+## [Variants](../Backoffice/Variants)
 
 Working with language variations is a built-in feature with Umbraco 8. Allowing variations on a Document Type, enables you to easily add and update content variations based on the languages you need.
 
