@@ -1,7 +1,7 @@
 <div class="docs-overview">
 <div class="row">
     <div class="col-xs-12">
-        <h1 class="text-center" style="font-size:3rem">Documentation for Umbraco 7</h1>
+        <h1 class="text-center" style="font-size:3rem">Documentation for Umbraco</h1>
     </div>
 </div>
 <div class="row">
