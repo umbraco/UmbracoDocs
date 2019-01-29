@@ -8,7 +8,7 @@ From version 8 we are now shipping a built in Log Viewer feature, to allow you t
 You can find the log viewer in the settings section.
 
 ## Benefits
-Have you ever wanted to find all log entries which contains the same request ID or find all items in the log where a property called duration is greater than 1000ms? 
+Have you ever wanted to find all log entries which contains the same request ID or find all items in the log where a property called duration is greater than 1000ms?
 With the power of structured logging and a query language we are able to search and find log items for very specific scenarios. When debugging the client site you should now have more power to see and find patterns in your log files and get rid of those pesky errors.
 
 ## Example queries
@@ -151,4 +151,4 @@ Now with the above two classes we have the plumbing in place to view logs from a
 <add key="serilog:write-to:AzureTableStorage.formatter" value="Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact" />
 ```
 
-For more in depth information about logging and how to configure it, please read the logging documentation
+For more in depth information about logging and how to configure it, please read the [logging documentation](../Code/Debugging/Logging/index-v8).
