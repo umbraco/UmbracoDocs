@@ -1,3 +1,6 @@
+---
+versionFrom: 8.0.0
+---
 # DateTime
 
 `Returns: DateTime`
@@ -16,20 +19,14 @@ The only setting that is available for manipulating the Date property is to set 
 
 ## MVC View Example - displays a datetime
 
-### Typed
+### With Modelsbuilder
 
 ```csharp
-@(Model.Content.GetPropertyValue<DateTime>("datePicker").ToString("dd MM yyyy"))
+@Model.DatePicker
 ```
 
-### Dynamic (Obsolete)
-
-:::warning
-See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
-:::
+### Without Modelsbuilder
 
 ```csharp
-@{
-    @CurrentPage.datePicker.ToString("dd-MM-yyyy")
-}
+@Model.Value("datePicker")
 ```
