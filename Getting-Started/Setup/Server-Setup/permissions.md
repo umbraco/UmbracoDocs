@@ -6,7 +6,7 @@ The main account that requires 'modify' file permissions to be set on the folder
 Generally when developing locally with Visual Studio or WebMatrix, permissions do not need to be strictly applied_
 
 :::note
-If you have any specific static files / media items / etc that you should add the appropriate permissions accordingly.
+If you have any specific static files / media items / etc then you should add the appropriate permissions accordingly.
 The permissions documentation as it is should allow you to run a plain Umbraco install successfully, the rest.. is up to you! 👍
 :::
 
