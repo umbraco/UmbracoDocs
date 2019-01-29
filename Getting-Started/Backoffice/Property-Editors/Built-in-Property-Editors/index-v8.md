@@ -1,5 +1,5 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.0
 ---
 # Built-in Umbraco Property Editors
 
@@ -25,7 +25,7 @@ The content picker allows the content editor to pick a specific node from the co
 
 Made obsolete with the release of Umbraco v7.6 the content picker allows the content editor to pick a specific node from the content structure.
 
-## [Date](Date)
+## [Date](Date/index-v8)
 `Alias: Umbraco.Date`
 
 Displays a calendar UI for selecting dates

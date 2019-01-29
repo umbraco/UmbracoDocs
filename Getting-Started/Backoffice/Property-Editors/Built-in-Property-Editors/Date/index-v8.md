@@ -23,11 +23,10 @@ The only setting that is available for manipulating the Date property is to set 
 
 ```csharp
 @Model.DatePicker
-@Model.Value("datePicker")
 ```
 
 ### Without Modelsbuilder
 
 ```csharp
-@Model.Value<DateTime>("datePicker")
+@Model.Value("datePicker")
 ```
