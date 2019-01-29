@@ -5,6 +5,7 @@ versionFrom: 8.0.0
 
 # Log Viewer
 From version 8 we are now shipping a built in Log Viewer feature, to allow you to filter and view log entries and perform much more complex search queries to help you find the log entries that you are interested in your Umbraco site.
+You can find the log viewer in the settings section.
 
 ## Benefits
 Wanted to find all log entries which contains the same reqest ID or find all items in the log where a property called duration is greater than 1000ms. With the power of structured logging and a query language we are able to search and find log items for very specific scenarios and when debugging the client site you should now have more power to see and find patterns in your log files and get rid of those pesky errors.
