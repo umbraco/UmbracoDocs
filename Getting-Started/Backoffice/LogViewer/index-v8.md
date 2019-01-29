@@ -151,4 +151,4 @@ Now with the above two classes we have the plumbing in place to view logs from a
 <add key="serilog:write-to:AzureTableStorage.formatter" value="Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact" />
 ```
 
-For more in depth information about logging and how to configure it, please read the [logging documentation](../Code/Debugging/Logging/index-v8).
+For more in depth information about logging and how to configure it, please read the [logging documentation](../../Code/Debugging/Logging/index-v8.md).
