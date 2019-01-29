@@ -17,7 +17,7 @@ Here are a handful example queries to get you started, however the saved searche
 **Find all logs that are from the namespace 'Umbraco.Core'**<br/>
 `StartsWith(SourceContext, 'Umbraco.Core')`<br/>
 
-**Find all logs that have the property 'Duration' and the duration is greater than 1000ms'**<br/>
+**Find all logs that have the property 'Duration' and the duration is greater than 1000ms**<br/>
 `Has(Duration) and Duration > 1000`<br/>
 
 **Find all logs where the message has localhost in it with SQL like**<br/>
