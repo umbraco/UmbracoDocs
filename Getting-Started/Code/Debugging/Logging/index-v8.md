@@ -254,6 +254,11 @@ You will then need to update the `global.asax` file on disk to use our FineTuneL
 <%@ Application Inherits="MyNamespace.FineTuneLogging" Language="C#" %>
 ```
 
+## The logviewer dashboard
+
+Learn more about the [logviewer dashboard](../../../Backoffice/LogViewer/index-v8.md) in the backoffice and how it can be extended.
+
+
 ## Serilog project/references shipped
 
 Umbraco v8.0+ ships with the following Serilog projects, where you can find further information & details with the GitHub readme files as needed.
