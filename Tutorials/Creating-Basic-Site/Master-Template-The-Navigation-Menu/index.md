@@ -1,3 +1,6 @@
+---
+versionFrom: 7.0.0
+---
 # Master Template - The Navigation Menu
 
 
