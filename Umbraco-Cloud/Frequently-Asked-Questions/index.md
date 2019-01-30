@@ -58,7 +58,7 @@ We do have some limitations:
 
 - If your Cloud site is using over 90% CPU for more than 10 minutes, the priority for your CPU usage will be throttled down for each time you consecutively use more than 90% CPU per 10 minutes
 - Memory usages is limited to 2048 MB per Cloud site and when that limit is reached, your website will be restarted automatically to make sure sites with memory leaks don't take up all of the available memory on the server
-- There's a limitation of 20 domain names that you can point to one Umbraco Cloud site - make sure to contact us if you need more than that
+- There's a limitation of 15 domain names that you can point to one Umbraco Cloud site - make sure to contact us if you need more than that
 
 In our experience there are only a few Cloud sites that have experienced these limitations and we're happy to work with people who have sites affected by these limitations.
 
