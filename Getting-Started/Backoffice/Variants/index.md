@@ -2,19 +2,19 @@
 versionFrom: 8.0.0
 ---
 
-# Variants
+# Language Variants
 
-Variants is a new feature included in Umbraco v8. It allows you to vary content by culture, so you can allow a content node to exist in several languages.
+Language Variants is a new feature included in Umbraco 8. It allows you to vary content by culture, so you can allow a content node to exist in several languages.
 
-## How to enable variants
+## How to enable Language Variants
 
-The first thing to ensure when you want to work with variants is that you have more than one language enabled, this can be done from the `Settings` section:
+The first thing to ensure when you want to work with Language Variants is that you have more than one language enabled, this can be done from the `Settings` section:
 
 ![Adding a language](images/languages.png)
 
 Note that you will always have one default language but each language can be set to mandatory if you want.
 
-## Enabling variants on doctypes
+## Enabling Language Variants on doctypes
 
 Now that there are two languages to vary the content with, it needs to be enabled on the document types you wish to use it with. To do so head to a document type in the Settings section. In the top right corner you can go to permissions and then check the "Allow varying by culture" toggle:
 
@@ -24,7 +24,7 @@ Now to allow a property on the doctype to be varied it will have to be enabled f
 
 ![Allowing variance on properties](images/varying-properties.png)
 
-## Working with variants on content
+## Working with Language Variants on content
 
 When you return to your content node you will notice two things. 
 
