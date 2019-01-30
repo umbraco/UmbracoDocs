@@ -145,6 +145,8 @@ public class PageController : DefaultUmbracoController
     {
         // get the content for the current route
         var content = UmbracoContext.GetContent();
+        // map the ContentItem to a custom model called Page (which would inherit from ContentItem)	
+        var model  = HeadlessService.MapTo<Page>(content);
         // return the view which will be located at /Views/Page/Index.cshtml
         return Task.FromResult((IActionResult)View(model));
     }
