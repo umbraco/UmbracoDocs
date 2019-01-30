@@ -73,6 +73,6 @@ Log into your Umbraco installation (e.g. go to http://localhost/umbraco in your 
 
 ---
 
-## Next - [Creating Your First Document Type](Document-Types.md)
+## Next - [Creating Your First Document Type](../Document-Types)
 How to create Document Types and what they do.
 

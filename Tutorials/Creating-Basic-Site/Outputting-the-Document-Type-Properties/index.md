@@ -54,6 +54,6 @@ Now go and reload your homepage... voilà! We have content! Now, we could go bac
 
 
 ---
-## Next - [Creating Master Template Part 1](Creating-Master-Template-Part-1.md)
+## Next - [Creating Master Template Part 1](Creating-Master-Template-Part-1)
 How to create a Master Template and use this to create more pages whilst minimising duplicate HTML code from your flat source files.
 

@@ -107,6 +107,6 @@ Now check this in the browser!
 
 
 ---
-## Next - [Conclusions and Where Next?](Conclusions-Where-Next.md)
+## Next - [Conclusions and Where Next?](Conclusions-Where-Next)
 By this point you'll have a basic working site - where next?  You've barely scratched the surface of the power of Umbraco!
 
