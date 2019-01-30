@@ -1,3 +1,6 @@
+---
+versionFrom: 7.0.0
+---
 # Creating More Pages Using the Master - Part 2
 
 ## Creating a Contact Us Page 
