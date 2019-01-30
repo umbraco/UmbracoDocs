@@ -89,5 +89,5 @@ You should now have a Document Type that looks like this:
 We’ve now created our first Document Type – Umbraco needs three things to create a webpage and this is the first and most important. It takes the data inside an instance of the Document Type and merges it with a template – we’ll create our template next.
 
 ---
-## Next - [Creating Your First Template and Content Node](../Creating-Your-First-Template-and-Content-Node)
+## Next - [Creating Your First Template and Content Node](../Creating-Your-First-Template-and-Content-Node/index-v8.md)
 How to create your first template and create a content node. 
