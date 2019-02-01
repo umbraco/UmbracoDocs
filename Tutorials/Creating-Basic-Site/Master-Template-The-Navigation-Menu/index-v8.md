@@ -20,5 +20,5 @@ We're going to hardcode this for now (it's a good idea as you start building a s
 **_Save_** your changes and let's test our menu. You'll find that clicking on the Article link throws an Umbraco error as we've not created this page yet. Let's do that now.
 
 ---
-## Next - [Articles Parent and Article Items](Articles-Parent-and-Article-Items/index-v8.md)
+## Next - [Articles Parent and Article Items](../Articles-Parent-and-Article-Items/index-v8.md)
 How to have a parent page that lists and links to the child nodes automatically (e.g. Articles home with infinite articles - useful for Blogs or News pages). 

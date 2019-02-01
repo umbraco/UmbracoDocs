@@ -63,5 +63,5 @@ Now click the green **_Publish_** button.  The menu will reload with our homepag
 ![An Unstyled Homepage](images/figure-16-unstyled-homepage-v8.png)
 
 ---
-## Next - [CSS & JavaScript](CSS-And-JavaScript/index-v8.md)
+## Next - [CSS & JavaScript](../CSS-And-JavaScript/index-v8.md)
 Adding the CSS and JavaScript for your site into Umbraco.

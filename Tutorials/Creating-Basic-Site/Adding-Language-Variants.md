@@ -43,5 +43,5 @@ You can now click publish at the bottom of the page and it will give you the opt
 Now if you head on over to your contact us page you will see it looks the same, but if you then access /kotakt-os or whatever you have called the new Language Varied node, then you will see the headline change to what you put in!
 
 
-## Next - [Conclusions and Where Next?](Conclusions-Where-Next
+## Next - [Conclusions and Where Next?](Conclusions-Where-Next)
 By this point you'll have a basic working site - where next?  You've barely scratched the surface of the power of Umbraco!

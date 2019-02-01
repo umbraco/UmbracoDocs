@@ -49,5 +49,5 @@ How to have a parent page that lists and links to child nodes automatically (e.g
 ## [Adding Language Variants](../Adding-Language-Variants.md)
 At this point we have a basic site, but wouldn't it be cool if we could make the same site in another language? Read on to see how easy it is with Language Variants!
 
-## [Conclusions and Where Next?](Conclusions-Where-Next/index-v8.md)
+## [Conclusions and Where Next?](Conclusions-Where-Next)
 By this point you'll have a basic working site - but where next?  You've barely scratched the surface of the power of Umbraco - a few links to send you on your way!

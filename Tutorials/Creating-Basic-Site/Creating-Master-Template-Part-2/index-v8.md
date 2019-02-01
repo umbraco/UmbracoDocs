@@ -121,5 +121,5 @@ This tells Umbraco that if the field doesn't exist at the node level for the pag
 Click **_Save_** and reload our Contact Us page. 
 
 ---
-## Next - [Master Template The Navigation Menu](Master-Template-The-Navigation-Menu/index-v8.md)
+## Next - [Master Template The Navigation Menu](../Master-Template-The-Navigation-Menu/index-v8.md)
 A simple solution for the template in the menu. 

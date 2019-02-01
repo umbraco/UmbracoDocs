@@ -28,6 +28,6 @@ Finally we do the footer – between the `<li></li>` tags in the footer (line 16
 Now go and reload your homepage... voilà! We have content! Now, we could go back and add additional fields in the document type, fill them out in the content node and then hook them up to the template to output the right data in the end. Feel free to do so if you want!
 
 ---
-## Next - [Creating Master Template Part 1](Creating-Master-Template-Part-1/index-v8.md)
+## Next - [Creating Master Template Part 1](../Creating-Master-Template-Part-1/index-v8.md)
 How to create a Master Template and use this to create more pages whilst minimising duplicate HTML code from your flat source files.
 

@@ -237,5 +237,5 @@ And that what you have in the Homepage template matches the following:
 >If you're new to these concepts then I don't think what we've just done is going to make much sense until we make our next page. 
 
 ---
-## Next - [Creating Master Template Part 2](Creating-Master-Template-Part-2/index-v8.md)
+## Next - [Creating Master Template Part 2](../Creating-Master-Template-Part-2/index-v8.md)
 Part 2 - using the Master template to create new page types. 
