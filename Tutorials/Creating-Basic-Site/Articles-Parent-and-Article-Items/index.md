@@ -110,6 +110,10 @@ Now check this in the browser!
 
 
 ---
+<<<<<<< HEAD:Tutorials/Creating-Basic-Site/Articles-Parent-and-Article-Items/index.md
 ## Next - [Conclusions and Where Next?](../Conclusions-Where-Next)
+=======
+## Next - [Conclusions and Where Next?](Conclusions-Where-Next)
+>>>>>>> 39005634458f1b6b20314115a90fe487121f1bad:Tutorials/Creating-Basic-Site/Articles-Parent-and-Article-Items/index.md
 By this point you'll have a basic working site - where next?  You've barely scratched the surface of the power of Umbraco!
 

@@ -48,7 +48,11 @@ If we now go and check our Articles Main page in the browser we should see our c
 
 Click on the **_Settings_** menu from the top menu and then hover over the **_Partial View Macros Files node_** to get the more menu **_..._** then click **_New partial view macro from snippet_**. Select the "_List Child Pages Ordered By Date_" and then name it "_listArticles_" and save.
 
+<<<<<<< HEAD
 ---------------This is currently not working in v8, will have to try again soon
+=======
+---------------The snippet is using old Model.Content syntax
+>>>>>>> 39005634458f1b6b20314115a90fe487121f1bad
 
 Now all we have to do is wire up the Articles main page to list our child articles. Edit the Articles Main template **_Settings > Templates node > Master node > Articles Main node_**.  Under the *articlesBodyText* tag enter a carriage return and then click the **_Insert Macro_** button, choose the ListArticles macro we just created and then click **_Save_**. 
 
@@ -93,6 +97,11 @@ Now check this in the browser!
 
 
 ---
+<<<<<<< HEAD
 ## Next - [Adding Language Variants](../Adding-Language-Variants.md)
 At this point we have a basic site, but wouldn't it be cool if we could make the same site in another language? Read on to see how easy it is with Language Variants!
+=======
+## Next - [Conclusions and Where Next?](Conclusions-Where-Next)
+By this point you'll have a basic working site - where next?  You've barely scratched the surface of the power of Umbraco!
+>>>>>>> 39005634458f1b6b20314115a90fe487121f1bad
 
