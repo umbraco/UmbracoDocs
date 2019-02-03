@@ -53,30 +53,28 @@ As we haven't created our own properties all we can see on the "Home" node is th
 
 Let's add some properties of our own.
 
-### Tabs and properties
+### Groups and properties
 Go to the __Settings section__, expand __Document Types__ by clicking the arrow to the left and select the __Home__ Document Type.
 
-#### Adding tabs
-Before we start adding properties to the Document Type we need to create a tab to hold the property.
+#### Adding groups
+Before we start adding properties to the Document Type we need to create a group to hold the property.
 
-Click __Add new tab__ and name the tab "Content".
+Click __Add group__ and name the tab "Content".
 
 ![Creating tabs](images/Document-Type-Create-Tab.jpg)
-_If you have multiple tabs and/or properties you can order them with drag and drop or by entering a numeric sort order value. This is done by clicking __Reorder__._
+_If you have multiple groups and/or properties you can order them with drag and drop or by entering a numeric sort order value. This is done by clicking __Reorder__._
 
 #### Adding properties
-Now that we have created a tab we can start adding properties. Let's add a Rich Text editor to the Content tab.
+Now that we have created a group we can start adding properties. Let's add a Rich Text editor to the Content tab.
 
-Click the __Add property__ link in the Content tab. This opens the property settings dialog. Here you can set the meta data for each property (name, alias, description), choose which data type/property editor to use and add validation if needed.
+Click the __Add property__ link in the Content group. This opens the property settings dialog. Here you can set the meta data for each property (name, alias, description), choose which data type/property editor to use and add validation if needed.
 
 Give the property a name, the name will be shown to the editor so make relevant and easy to understand. Notice the alias is automatically generated based on the name. We'll name this "Body Text".
 
 ![Adding a property](images/Document-Type-Adding-Properties.jpg)
 
 ##### Keyboard Shortcuts
-Keyboard shortcuts are available when you are working with the Document Type editor. To see which shortcuts are available simply click <kbd>ALT</kbd> + <kbd>SHIFT</kbd> + <kbd>K</kbd>:
-
-![Keyboard Shortcuts](images/Document-Type-Keyboard-Shortcuts.jpg?width=400)
+Keyboard shortcuts are available when you are working with the Document Type editor. To see which shortcuts are available simply click <kbd>ALT</kbd> + <kbd>SHIFT</kbd> + <kbd>K</kbd>.
 
 ##### Property editors
 Clicking __Add editor__ will open the Select editor dialog. Here you can choose between all the __Available editors__ (this will create a new configuration) or __Reuse__ already configured editors. To make it easier to find what you need use the search field to filter by typing "Rich". Filtering will display configured properties first (under Reuse) and all available editors under that.
