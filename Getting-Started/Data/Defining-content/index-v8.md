@@ -19,7 +19,7 @@ A Document Type is created in the settings section using the Document Type edito
 
 Go to the __Settings__ section in the backoffice. On the __Document Types__ node click the menu icon (•••) to bring up the context menu. Here choose __Document Type__. This will create a new Document Type with a template (can be found under __Templates__ in the __Settings__ sections) that will be assigned as the default template for the document type.
 
-![Creating a Document Type](images/v8Screenshots/createDoctype.png)
+![Creating a Document Type](images/v8Screenshots/createDoctype.PNG)
 _You can also choose to create a Document Type without a template and create folders to organize your Document Types._
 
 You can also use compositions to create a new document type. Compositions allows you to inherit properties from other groups. When using a mixed setup, you can take advantage of nesting and use compositions by visiting the Structure group. A checklist like this should appear:
