@@ -1,3 +1,7 @@
+---
+versionFrom: 8.0.0
+---
+
 # Defining content
 
 *Here you'll find an explanation of how content is defined in v8.*
