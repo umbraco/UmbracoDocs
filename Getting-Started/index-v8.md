@@ -49,6 +49,61 @@ Learn more about the new features in Umbraco 8.
 	</div>
 </div>
 
+<div class="row">
+	<div class="col-xs-3">
+		<span class="dot big  icon-untitled">
+			<span class="line v-line top"></span>
+			<span class="line v-line"></span>
+			<span class="line h-line"></span>
+		</span>
+		<span class="dot small">
+			<span class="line v-line"></span>
+			<span class="line h-line"></span>
+		</span>
+	</div>
+	<div class="col-xs-9">
+		<div class="row explain">
+			<div class="col-xs-12">
+				<h4 class="text-right">Backoffice overview</h4>
+				<small>Details of all the common terms and concepts that are used throughout the Umbraco backoffice</small>
+			</div>
+			<div class="col-sm-6">
+				<h5><a href="Backoffice/LogViewer/index-v8">Log viewer</a></h5>
+				<small>Learn more about how to use the Log viewer in the backoffice, to view log entries.</small>
+			</div>
+			<div class="col-sm-6">
+				<h5><a href="Backoffice/Variants">Language Variants</a></h5>
+				<small>Learn how to vary your content based on several languages.</small>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-3">
+		<span class="dot big  icon-untitled">
+			<span class="line v-line top"></span>
+			<span class="line v-line"></span>
+			<span class="line h-line"></span>
+		</span>
+		<span class="dot small">
+			<span class="line v-line"></span>
+			<span class="line h-line"></span>
+		</span>
+	</div>
+	<div class="col-xs-9">
+		<div class="row explain">
+			<div class="col-xs-12">
+				<h4 class="text-right">Data</h4>
+				<small>Using the backoffice to create data</small>
+			</div>
+			<div class="col-sm-6">
+				<h5><a href="Data/Defining-content/index-v8">Defining content</a></h5>
+				<small>Setting up content types, defining fields and creating your first content</small>
+			</div>
+      	</div>
+	</div>
+</div>
 
 <div class="row">
 	<div class="col-xs-3">

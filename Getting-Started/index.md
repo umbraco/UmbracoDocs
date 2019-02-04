@@ -96,7 +96,7 @@ versionFrom: 7.0.0
 			<div class="col-sm-6">
           <h5><a href="Data/Data-Types/">Customizing Data Types</a></h5>
           <small>Creating and editing Data Types</small>
-      </div>-->
+      		</div>-->
 		</div>
 	</div>
 </div>
