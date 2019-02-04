@@ -6,6 +6,10 @@ versionFrom: 8.0.0
 
 Language Variants is a new feature included in Umbraco 8. It allows you to vary content by culture, so you can allow a content node to exist in several languages.
 
+## Video tutorial
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/-vzxCdjq4FM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## How to enable Language Variants
 
 The first thing to ensure when you want to work with Language Variants is that you have more than one language enabled, this can be done from the `Settings` section:
@@ -36,3 +40,7 @@ When you return to your content node you will notice two things.
 Each property editor that does not allow variants will be greyed out and have the content of the default language.
 
 To read about how you render variant content in templates, check out the [rendering content section](../../Design/Rendering-Content/index-v8.md).
+
+## Read more
+
+- [Umbraco 8: Language Variants (official blog post from Umbraco HQ)](https://umbraco.com/blog/umbraco-8-language-variants/)
