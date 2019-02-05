@@ -33,7 +33,7 @@ Hover over the grey text **_CONTENT_**  and you'll see the three dots **_..._** 
 
 ![Create a Homepage](images/figure-15-create-a-homepage-v8.png)
 
-:::note
+:::tip
 If you can't see this then don't panic - check that **_Settings> Document Types > Homepage_**  > **_Structure tab_** > **_Allow at root_** is checked.
 :::
 
@@ -58,7 +58,9 @@ Click the Footer tab and enter:
 
 Now click the green **_Publish_** button.  The menu will reload with our homepage node under the **_CONTENT_** label. And here's the good bit... go and refresh your webpage in your browser http://localhost – the default Umbraco page will be gone and we'll see a very bare, unstyled page! We’re getting there!
 
->If you see a blank page then check you entered your template markup and remembered to save it.
+:::tip
+If you see a blank page then check you entered your template markup and remembered to save it.
+:::
 
 ![An Unstyled Homepage](images/figure-16-unstyled-homepage-v8.png)
 

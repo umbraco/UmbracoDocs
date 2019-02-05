@@ -16,7 +16,7 @@ To take you through a demo of installing a basic site in Umbraco you need the fo
 
 ## Installing an Empty Umbraco
 
-This guide doesn’t cover the installation of Umbraco – follow the instructions in https://our.umbraco.com/documentation/Installation.
+This guide doesn’t cover the installation of Umbraco – follow the instructions in the [Installation article](https://our.umbraco.com/documentation/Installation).
 
 ## Checking you have an Empty Umbraco Install
 

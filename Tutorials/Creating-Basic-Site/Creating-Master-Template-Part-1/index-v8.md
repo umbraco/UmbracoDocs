@@ -25,7 +25,7 @@ Now we're going to move the **_Homepage_** template under the **_Master_** templ
 
 Now we need to move the parts of our HTML template that are common across all pages into the **_Master_**. This is where as a developer you might need to use your brain as it will be slightly different for different websites - e.g. do all pages contain a `<div id="main">` section so can we put this in the master or does this belong to only certain pages? 
 
-For this site, we will cut everything from the closing curly brace to line 39, so you get the end of the `</nav>` - we're going to move the header and nav of the site to the master template. Cut this and click **_Save_**. 
+For this site, we will cut everything from the closing curly brace to line 39, so you get the end of the `</nav>` - we're going to move the `header` and `nav` of the site to the master template. Cut this and click **_Save_**. 
 
 ![Homepage Template After Cutting the Header](images/figure-24-homepage-after-cutting-the-header-v8.png)
 

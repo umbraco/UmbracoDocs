@@ -8,7 +8,7 @@ versionFrom: 8.0.0
 
 Step 1 of any site is to create a "**_Document Type_**" – after a few installations you’ll become familiar with this terminology but at the start it might be a little bit bewildering.  A **_Document Type_** is a data container in Umbraco where you can add data fields/attributes where the editor user can input data and Umbraco can use it to output it in the relevant part of a "**_template_**" (more on these later).  
 
-**_Document Types_** are infinitely extendable but usually you’ll add data fields something like the following:
+**_Document Types_** are infinitely extendable but usually you’ll add data fields - something like the following:
 
 *    Page title
 *    Sub Heading
@@ -27,9 +27,9 @@ Right, let’s get busy. Go to the **_Settings_** menu in Umbraco. This is the t
 
 ![Creating a Document Type](images/figure-7-creating-a-document-type-v8.png)
 
-Give our new **_Document Type_** the **_Name_** = "_HomePage"_ you'll see that an alias is created for us. 
+Give our new **_Document Type_** the **_Name_** = "_HomePage"_ - you'll see that an alias is automatically created for us. 
 
-Enter in the **_Description_** field "_This is our homepage template_".  This text is used to help the user select the correct document type later. 
+Enter in the **_Description_** field "_This is our homepage template_".  This text is used to help the users select the correct document type later. 
 
 Click **_Save_** to store our new DocumentType. 
 
@@ -43,24 +43,28 @@ Next, click the  **_Permissions_** icon and check **_Allow as root_**.  This wil
 
 ![Allow Homepage Document Type As Root](images/figure-9a-allow-document-type-as-root-v8.png)
 
-Next, we go back to the **_Design_** screen. Create a new group called "_Content_" remembering to click **_Save_** after).
+Next, we go back to the **_Design_** screen. Create a new group called "_Content_" (remembering to click **_Save_** after).
 
 ![Document Types - Adding Our First Content Tab](images/figure-10-document-types-adding-tabs-v8.png)
 
 Now click on the **_Add property_** link – this is where we can create each of the necessary data containers in which the editors can enter the necessary content for the homepage.  
-Enter the **_Name_** "_Page Title_". When you move to the next field you’ll see Umbraco helpfully gives you the alias "pageTitle".  Click the **_Add editor_** link and you'll see a long list of editors, select the "Textbox" (come back and explore this list of data types later - it's a hint to the power of Umbraco, we're just going to use the most simple data type for now).  
+Enter the **_Name_** "_Page Title_". When you move to the next field you’ll see Umbraco helpfully gives you the alias "pageTitle".  Click the **_Add editor_** link and you'll see a long list of editors, select the "Textbox".
+
+:::tip
+Remember to come back and explore this list of data types later - it's a hint to the power of Umbraco, we're just going to use the most simple data type for now
+:::  
 
 ![Selecting Textbox Data Type](images/figure-11a-selecting-textbox-data-type-v8.png)
 
 Umbraco will generate a long name for the Data type - ignore this for now and select **_Submit_**.
 
-Now you can enter a **_Description_**, again helps the editor provide relevant content so we'll fill this in "_The main title of the page (e.g. Welcome to Widgets Ltd)._ " 
+Now you can enter a **_Description_**, again helps the editor provide relevant content so we'll fill this in "_The main title of the page (e.g. Welcome to Widgets Ltd)_". 
 
 ![Creating our PageTitle Data Type](images/figure-11-creating-our-pagetitle-data-type-v8.png)
 
 Ignore the rest of the fields for now and click the green **_Submit_** button at the bottom right. 
 
-Repeat this step, clicking the **_Add property_** at the bottom of the **_Content_** group and create the following properties (use the **_Add group_** link to create a new group called Footer for the Footer Text):
+Repeat this step, clicking the **_Add property_** at the bottom of the **_Content_** group and create the following properties:
 
 <table border="0">
 <col width="130">
@@ -82,6 +86,9 @@ Repeat this step, clicking the **_Add property_** at the bottom of the **_Conten
 <tr><td>Description:</td><td>Copyright notice for the footer.</td></tr>
 </table>
 
+:::tip
+Use the **_Add group_** link to create a new group called Footer for the Footer Text.
+:::
 You should now have a Document Type that looks like this:
 
 ![Homepage Document Type with Properties](images/figure-12-homepage-document-type-with-properties-v8.png)
