@@ -9,7 +9,7 @@ In this article you can learn more about the biggest new features that comes out
 
 <iframe width="800" height="450" src="https://www.youtube.com/embed/g5qwzmxiWJU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-## [Variants](../Getting-Started/Backoffice/Variants)
+## [Language Variants](../Getting-Started/Backoffice/Variants)
 
 Working with language variations is a built-in feature with Umbraco 8. Allowing variations on a Document Type, enables you to easily add and update content variations based on the languages you need.
 
