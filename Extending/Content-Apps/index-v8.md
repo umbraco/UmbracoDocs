@@ -186,19 +186,16 @@ using Umbraco.Core.Models.Membership;
 
 namespace Umbraco.Web.UI
 {
-    public class CakeContentAppComponent : UmbracoComponentBase, IUmbracoUserComponent
+    public class CakeContentAppComposer : IUserComposer
     {
-        public override void Compose(Composition composition)
+        public void Compose(Composition composition)
         {
-            base.Compose(composition);
-
             // Add our cake content app into the composition aka into the DI
             composition.ContentApps().Append<CakeContentApp>();
-
         }
     }
 
-    public class CakeContentApp : IContentAppDefinition
+    public class CakeContentApp : IContentAppFactory
     {
         public ContentApp GetContentAppFor(object source, IEnumerable<IReadOnlyUserGroup> userGroups)
         {
@@ -206,29 +203,6 @@ namespace Umbraco.Web.UI
             // To show or hide CakeContentApp
             switch (source)
             {
-                // Some logic depending on the object type
-                // To show or hide CakeContentApp
-                switch (source)
-                {
-                    // Do not show Content App if doctype/content type is a container
-                    case IContent content when content.ContentType.IsContainer:
-                        return null;
-
-                    // Don't show for media items
-                    case IMedia media:
-                        return null;
-
-                    case IContent content:
-                        break;
-
-                    default:
-                        throw new NotSupportedException($"Object type {source.GetType()} is not supported here.");
-                }
-
-                // Can implement some logic with userGroups if needed
-                // Allowing us to display the Content App with some restrictions for certain groups
-                if (userGroups.Any(x=> x.Alias.ToLowerInvariant() == "admin") == false)
-
                 // Do not show content app if doctype/content type is a container
                 case IContent content when content.ContentType.IsContainer:
                     return null;
@@ -246,7 +220,7 @@ namespace Umbraco.Web.UI
 
             // Can implement some logic with userGroups if needed
             // Allowing us to display the content app with some restrictions for certain groups
-            if (userGroups.Any(x=> x.Alias.ToLowerInvariant() == "admin") == false)
+            if (userGroups.Any(x => x.Alias.ToLowerInvariant() == "admin") == false)
                 return null;
 
             var cakeApp = new ContentApp
@@ -257,7 +231,7 @@ namespace Umbraco.Web.UI
                 View = "/App_Plugins/CakeContentApp/cakecontentapp.html",
                 Weight = 0
             };
-        
+
             return cakeApp;
         }
     }
