@@ -157,7 +157,9 @@ You can set your Content App to only show for specific content types by updating
 ```
 
 :::tip
-When the 'show' directive is omitted then the app will be shown for all content types.
+When the 'show' directive is omitted then the app will be shown for all content types. 
+
+Also, when you want to exclude content types, make sure to include all the rest using `"+content/*"`.
 :::
 
 ### Limiting according to User Role
