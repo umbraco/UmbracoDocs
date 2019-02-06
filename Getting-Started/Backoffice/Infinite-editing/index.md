@@ -11,6 +11,8 @@ Even though your content and your Document Types are in different sections of th
 
 ![Infinite Editing](images/Infinite-editing.gif)
 
+In the example showcased above, prevalues are being added to a data type, without losing the context of the content that's being worked on. The example also shows how you can edit images, without being sent to the 'Media' section. 
+
 ## Customize
 
 Infinite editing is a feature that comes out of the box with Umbraco 8. The feature can be customized, which enables you as a developer to improve the workflow for your editors.
