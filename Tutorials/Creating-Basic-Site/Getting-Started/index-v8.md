@@ -9,14 +9,14 @@ The following sections of the "Creating a Basic Site" tutorial provide step by s
 
 To take you through a demo of installing a basic site in Umbraco you need the following:
 
-*    A clean, empty installation of Umbraco – e.g. no starter site installed, see the notes below what to do when running through the installation wizard. Use the latest main 8.X download. Follow the installation steps in the documentation [https://our.umbraco.com/documentation/Installation](https://our.umbraco.com/documentation/Installation)  
+*    A clean, empty installation of Umbraco – e.g. no starter site installed, see the notes below what to do when running through the installation wizard. Use the latest main 8.X download. [Follow the installation steps in the documentation](../../Getting-Started/Setup/Install)  
 *    The tutorial instructions uses a copy of Retrospect – a HTML5, responsive website template from Templated.co - [https://templated.co/retrospect](https://templated.co/retrospect) or, if you prefer, you can use your own flat HTML files.
 
 # **Getting Started**
 
 ## Installing an Empty Umbraco
 
-This guide doesn’t cover the installation of Umbraco – follow the instructions in the [Installation article](https://our.umbraco.com/documentation/Installation).
+This guide doesn’t cover the installation of Umbraco – follow the instructions in the [Installation article](../../Getting-Started/Setup/Install).
 
 ## Checking you have an Empty Umbraco Install
 
