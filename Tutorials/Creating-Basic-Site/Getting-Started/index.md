@@ -1,3 +1,6 @@
+---
+versionFrom: 7.0.0
+---
 # Introduction 
 
 The following sections of the "Creating a Basic Site" tutorial provide step by step instructions through an Umbraco website build starting from a set of flat HTML, CSS and JavaScript files. It will allow you to take any website "template" and install it into a fresh Umbraco and wire up the sections that need content managing in Umbraco.  
@@ -73,6 +76,6 @@ Log into your Umbraco installation (e.g. go to http://localhost/umbraco in your 
 
 ---
 
-## Next - [Creating Your First Document Type](Document-Types.md)
+## Next - [Creating Your First Document Type](../Document-Types)
 How to create Document Types and what they do.
 

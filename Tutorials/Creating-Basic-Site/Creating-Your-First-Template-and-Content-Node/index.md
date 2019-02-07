@@ -1,3 +1,6 @@
+---
+versionFrom: 7.0.0
+---
 # Creating (Editing) Your First Template
 
 
@@ -87,5 +90,5 @@ Now click the green **_Save and publish_** button.  The menu will reload with ou
 
 
 ---
-## Next - [CSS & JavaScript](CSS-And-JavaScript.md)
+## Next - [CSS & JavaScript](CSS-And-JavaScript)
 Adding the CSS and JavaScript for your site into Umbraco.

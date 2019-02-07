@@ -1,3 +1,6 @@
+---
+versionFrom: 7.0.0
+---
 # Articles Parent and Article Items - A Parent Page with Infinite Children
 
 Having an Articles Parent page, and a number of associated child articles which the editors can add to freely, provides a good example page of the power of Umbraco. We'll assume our fictional company, Widgets Ltd, write about ten articles a month and want the articles page to act like a blog (e.g. you could use this functionality for a blog or news and events pages).
@@ -107,6 +110,6 @@ Now check this in the browser!
 
 
 ---
-## Next - [Conclusions and Where Next?](Conclusions-Where-Next.md)
+## Next - [Conclusions and Where Next?](../Conclusions-Where-Next)
 By this point you'll have a basic working site - where next?  You've barely scratched the surface of the power of Umbraco!
 
