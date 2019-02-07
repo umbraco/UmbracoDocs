@@ -24,11 +24,27 @@ We will now edit the settings of our property editors, so click on the little ge
 
 ![Allow property editor Language Variants](images/allow-varying-property-editor.png)
 
-For now we will leave the **_Body Text_** property editor unchanged, so click save in the bottom right corner and head on over to **_Content > Contact Us_**. Now there will be a language dropdown next to the title at the top:
+For now we will leave the **_Body Text_** property editor unchanged, so click save in the bottom right corner and head on over to **_Content section_**. 
+
+You will now find a language dropdown above your content tree - if it's not there, you might need to refresh the page:
+
+![Language of Content Tree](images/language-content-tree.png)
+
+In the dropdown, you will find all the languages that you have installed on your site, and you can easily switch between them, to update the content variations for each language.
+
+Now, before we go ahead and start creating the Danish content variation, we need to add hostnames to each language on the *root node* (in our case, the "Home Page").
+
+Right-click the **Home Page** content node, and choose **Culture and Hostnames...**, and let's add a domain for each hostname, like it's done here:
+
+![Culture and Hostnames](images/culture-and-hostnames.png)
+
+Click **Save** and we are ready to start working on the Danish content variations.
+
+Go to the **Home Page** node and you will find a language dropdown next to the title at the top:
 
 ![Language Variant dropdown](images/language-dropdown.png)
 
-When you click the dropdown you will get a list of all the languages you have enabled. When you mouseover a language an `Open in Splitview` box will appear, click this to open it.
+When you click the dropdown you will get a list of all the languages you have enabled - much like we saw in the content tree. When you mouseover a language an `Open in Splitview` box will appear, click this to open it.
 
 ![Open Language in Splitview](images/open-in-splitview.png)
 
