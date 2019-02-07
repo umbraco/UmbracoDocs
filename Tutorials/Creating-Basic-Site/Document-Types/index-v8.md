@@ -23,7 +23,11 @@ Each **_Data Field_** has a type - e.g. a text string or a number or rich text b
 
 Right, let’s get busy. Go to the **_Settings_** menu in Umbraco. This is the third button on the top menu. Then you’ll see a long list of settings – don’t worry about these yet, we’ll introduce them as we need them. 
 
-**_Document Types_** is positioned as the first option in the list and is always the starting point for any Umbraco build.  Hover over the **_Document Types_** **_node_** and you’ll see three dots **_..._** , click this to see the menu. Then you'll get four options, click the **_Document Type_** option - we want a template automatically created for us. Using folders can help you organise your Document Types but we'll keep things simple for now.
+**_Document Types_** is positioned as the first option in the list and is always the starting point for any Umbraco build.  Hover over the **_Document Types_** **_node_** and you’ll see three dots **_..._** , click this to see the menu. Then you'll get four options, click the **_Document Type_** option - we want a template automatically created for us.
+
+:::tip
+Using folders can help you organise your Document Types.
+:::
 
 ![Creating a Document Type](images/figure-7-creating-a-document-type-v8.png)
 
