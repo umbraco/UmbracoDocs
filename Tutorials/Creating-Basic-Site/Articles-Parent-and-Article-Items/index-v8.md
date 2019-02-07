@@ -46,51 +46,52 @@ Take care when copying not to overwrite the first line `@inherits Umbraco.Web.Mv
 
 If we now go and check our Articles Main page in the browser we should see our content. We'd like to list the child article items under the intro content so that our visitors can see a list of our articles. Umbraco makes this easy for us but we need to use a bit of Razor.
 
-Click on the **_Settings_** menu from the top menu and then hover over the **_Partial View Macros Files node_** to get the more menu **_..._** then click **_New partial view macro from snippet_**. Select the "_List Child Pages Ordered By Date_" and then name it "_listArticles_" and save.
+Click on the **_Settings_** menu from the top menu, and navigate to the **_Articles Main_** template.
 
----------------This is currently not working in v8, will have to try again soon
+We are going to use Razor to query between all instances of **_Article Item_** under the **_Article Main_** content node. In order to do that, we are going to use the built-in **Query Builder**.
 
-Now all we have to do is wire up the Articles main page to list our child articles. Edit the Articles Main template **_Settings > Templates node > Master node > Articles Main node_**.  Under the *articlesBodyText* tag enter a carriage return and then click the **_Insert Macro_** button, choose the ListArticles macro we just created and then click **_Save_**. 
+![Query Builder](images/query-builder.png)
 
+There are a few parameters we need to consider, when creating a query like that.
 
-![Template for Articles Parent with the Macro Code](images/figure-41-articles-parent-with-macro-code.png)
+First of all, we need to tell the Query builder **what** we want from **where**. You will also be able to set some conditions to get specific items, and you can decide in which order you will like the items served. For the purpose of this guide, we'll use the following parameters:
 
+![Query parameters](images/query-parameters.png)
 
-*Figure 41 - Template for Articles Parent with the Macro Code*
+If you've set the correct parameters, you will get a preview of the items being selected with the query. When you're happy with the parameters, click **Submit**, and you will see a code snippet has been added to your template. 
 
-
-Check what we have on our **_Articles_** page now - we're really getting somewhere!  Let's make it a bit more real world - I'll leave the understanding of this to Razor lessons / The Umbraco videos but it will finish our site off nicely - edit the Partial you just created - **_Developer > Partial View Macro Files > listArticles.cshtml_** and change the content to be:
-
+It will look similar to this:
 
 ```csharp
-@inherits Umbraco.Web.Macros.PartialViewMacroPage
-@{ 
-    var selection = CurrentPage.Children.Where("Visible").OrderBy("CreateDate desc"); 
-    @* OrderBy() takes the property to sort by and optionally order desc/asc *@
+@{
+    var selection = Umbraco.Content(Guid.Parse("c4b9c457-7182-4cfb-a1af-f0211d67ea51"))
+    .Children("articlesItem")
+    .Where(x => x.IsVisible())
+    .OrderByDescending(x => x.CreateDate);
 }
-
-@foreach (var item in selection)
-{
-<div class="article">
-        <div class="articletitle"><a href="@item.Url">@item.Name</a></div>
-        <div class="articlepreview">@Umbraco.Truncate(@item.ArticleContents,100) <a href="@item.Url">Read More..</a></div>
-    </div>
-    <hr/>
-}
+<ul>
+    @foreach (var item in selection)
+    {
+        <li>
+            <a href="@item.Url">@item.Name</a>
+        </li>
+    }
+</ul>
 ```
 
-*Figure 42 - Improved Macro for listArticles*
+This code will output a list of all the **_Article Items_** as links using the name. We are going to modify this a little, to add a bit more information about the articles. Replace the `HTML` in the *foreach* loop with this snippet:
 
-
+```html
+<div class="article">
+    <div class="articletitle"><a href="@item.Url">@item.Name</a></div>
+    <div class="articlepreview">@Umbraco.Truncate(@item.Value("articleContent").ToString(),100) <a href="@item.Url">Read More..</a></div>
+</div>
+<hr/>
+```
 
 Now check this in the browser!
 
-
-![Finished Articles Page](images/figure-43-finished-articles-page.png)
-
-
-*Figure 43 - Finished Articles Page*
-
+![Finished Articles section](images/article-main-frontend.png)
 
 ---
 ## Next - [Adding Language Variants](../Adding-Language-Variants.md)
