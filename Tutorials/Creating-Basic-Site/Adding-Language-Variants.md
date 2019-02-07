@@ -56,7 +56,7 @@ You can now click publish at the bottom of the page and it will give you the opt
 
 ![Publishing Variant content](images/publishing-variant-content.png)
 
-Now if you head on over to your contact us page you will see it looks the same, but if you then access /kotakt-os or whatever you have called the new Language Varied node, then you will see the headline change to what you put in!
+Now if you head on over to your contact us page you will see it looks the same, but if you then access /kontakt-os or whatever you have called the new Language Varied node, then you will see the headline change to what you put in!
 
 
 ## Next - [Conclusions and Where Next?](Conclusions-Where-Next)
