@@ -20,7 +20,7 @@ eg, adding the following...
 
 ### Why can't I see my new Custom Section?
 
-You will also need to allow your current Umbraco User access to this new Custom Section via the backoffice! (you will need to logout and back in again to see the change)
+You will also need to allow your current Umbraco User group access to this new Custom Section via the backoffice! (you will need to logout and back in again to see the change)
 
 ![Add Section for User](images/add-custom-section.png)
 
