@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Adding Language Variants 
 
-Now that we have a basic site set up, let's explore one of the cool new features brought on in Umbraco v8; Language Variants. For this we will make a Danish version of the `Contact Us` page. At this point your page should look like this:
+Now that we have a basic site set up, let's make the site multilingual by making variations of our content in one more language. For this we will make a Danish version of the `Contact Us` page. At this point your page should look like this:
 
 ![Current version of the contact us page](images/current-page.png)
 
