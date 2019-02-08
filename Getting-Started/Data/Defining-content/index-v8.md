@@ -23,35 +23,35 @@ A Document Type is created in the settings section using the Document Type edito
 
 Go to the __Settings__ section in the backoffice. On the __Document Types__ node click the menu icon (•••) to bring up the context menu. Here choose __Document Type__. This will create a new Document Type with a template (can be found under __Templates__ in the __Settings__ sections) that will be assigned as the default template for the document type.
 
-![Creating a Document Type](images/v8Screenshots/createDoctype.PNG)
+![Creating a Document Type](images/v8Screenshots/createDoctype.png)
 _You can also choose to create a Document Type without a template and create folders to organize your Document Types._
 
 You can also use compositions to create a new document type. Compositions allows you to inherit properties from other groups. When using a mixed setup, you can take advantage of nesting and use compositions by visiting the Structure group. A checklist like this should appear:
 
-![Creating a Compositions](images/v8Screenshots/compositions.PNG)
+![Creating a Compositions](images/v8Screenshots/compositions.png)
 
 The grayed out Document Type Composition Master is a parent to the particular Document Type we are looking at. By default, this means that this Document Type will inherit the properties from the Master Document Type and unless we move it to another location, this is how it will stay. The other document type that is checked is the Banner type. This means that the Document will also inherit the properties from the Banner Type into this Document Type.
 
 ### Defining the root node
 First we're prompted to give the Document Type a name. This first Document Type will be the root node for our content, name it "Home".
 
-![Naming a Document Type](images/v8Screenshots/homePage.PNG)
+![Naming a Document Type](images/v8Screenshots/homePage.png)
 _Notice that the alias of the Document Type is automatically generated based on the name. If you want to change the alias simply click the "lock" icon._
 
 Having a root node makes it easy to query content as you know everything will be under the root node.
 
 To set an icon for the Document Type click the document icon in the top left corner. This will open the icon select dialog. Search for _Home_ and select the icon. This icon will be used in the content tree, choosing appropriate icons for your content nodes is a good way to give editors a better overview of the content tree.
 
-![Choosing an icon for the Document Type](images/v8Screenshots/docTypeIcon.PNG)
+![Choosing an icon for the Document Type](images/v8Screenshots/docTypeIcon.png)
 
 Go to the __Permissions__ tab and tick the __Yes - allow content of this type in the root__ checkbox and save the Document Type by clicking save in the bottom right corner.
 
-![Allow at root](images/v8Screenshots/docTypePermissions.PNG)
+![Allow at root](images/v8Screenshots/docTypePermissions.png)
 
 ### Creating the root node
 Now go to the __Content section__, click on the menu icon next to __Content__ and Select the Home Document Type. We'll name it "Home" and click the __Save and Publish__ button.
 
-![First content created](images/v8Screenshots/createHomepage.PNG)
+![First content created](images/v8Screenshots/createHomepage.png)
 
 As we haven't created our own properties all we can see on the "Home" node is the Properties tab which contains the default properties that are available on all content in Umbraco.
 
@@ -65,7 +65,7 @@ Before we start adding properties to the Document Type we need to create a group
 
 Click __Add group__ and name the group "Content".
 
-![Creating groups](images/v8Screenshots/createGroup.PNG)
+![Creating groups](images/v8Screenshots/createGroup.png)
 _If you have multiple groups and/or properties you can order them with drag and drop or by entering a numeric sort order value. This is done by clicking __Reorder__._
 
 #### Adding properties
@@ -75,7 +75,7 @@ Click the __Add property__ link in the Content group. This opens the property se
 
 Give the property a name, the name will be shown to the editor so make relevant and easy to understand. Notice the alias is automatically generated based on the name. We'll name this "Body Text".
 
-![Adding a property](images/v8Screenshots/addproperty.PNG)
+![Adding a property](images/v8Screenshots/addproperty.png)
 
 ##### Keyboard Shortcuts
 Keyboard shortcuts are available when you are working with the Document Type editor. To see which shortcuts are available simply click <kbd>ALT</kbd> + <kbd>SHIFT</kbd> + <kbd>K</kbd>.
@@ -85,7 +85,7 @@ Clicking __Add editor__ will open the Select editor dialog. Here you can choose 
 
 Select the __Rich Text editor__ under Available editors.
 
-![Choosing the Rich Text editor](images/v8Screenshots/selectEditor.PNG)
+![Choosing the Rich Text editor](images/v8Screenshots/selectEditor.png)
 
 This will let you configure the editor settings - the Rich Text editor for this property. Notice that the name of the Data Type (_Home - Body Text - Rich Text editor_) is based on the name of the Document Type, the name of the property and the property editor. Let's rename it to "Simple Rich Text editor" and only select the most necessary options.
 
@@ -111,11 +111,11 @@ and this time we'll add two properties. First make a property called summary usi
 ### Creating child nodes
 Before we can create a Text Page in the __Content__ section, we need to allow the Text Page Document Type to be created as a child node to the Home node. Select the Home Document Type and go to the __Permissions__ group. Click __Add child__ and select Text Page.
 
-![Allowing child nodes](images/v8Screenshots/setPagePermissions.PNG)
+![Allowing child nodes](images/v8Screenshots/setPagePermissions.png)
 
 Go to the __Content__ section and click the menu icon (•••) next to the *Home* node and select the Text page Document Type. We'll name the page "About us". We now have a very basic content structure.
 
-![Basic content structure](images/v8Screenshots/createAboutUs.PNG)
+![Basic content structure](images/v8Screenshots/createAboutUs.png)
 
 Document Types are very flexible and can be used in a myriad of ways from defining a piece of reusable content or an entire page, to acting as a container or repository.
 

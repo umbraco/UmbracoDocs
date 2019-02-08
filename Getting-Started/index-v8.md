@@ -177,6 +177,10 @@ Learn more about the new features in Umbraco 8.
 				<h5><a href="../Tutorials/Porting-Packages-V8">Porting packages to V8</a></h5>
 				<small>Learn how to convert your Umbraco 7 packages to Umbraco 8.</small>
 			</div>
+			<div class="col-sm-6">
+				<h5><a href="../Tutorials/Creating-Basic-Site/index-v8">Create a basic Umbraco site</a></h5>
+				<small>This tutorial will take you through the steps of building a basic website with Umbraco.</small>
+			</div>
 		</div>
 	</div>
 </div>
