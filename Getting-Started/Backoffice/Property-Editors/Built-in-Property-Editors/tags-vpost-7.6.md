@@ -5,6 +5,7 @@ versionTo: 7.11.2
 ---
 
 # Tags
+
 `Alias: Umbraco.Tags`
 
 `Returns: CSV` or `JSON`
@@ -43,7 +44,7 @@ Whenever a tag has been added it will be visible in the typeahead when you start
 
 ## MVC View Example - displays a list of tags
 
-### Typed:
+### Typed
 
 ```csharp
 @if(Model.Content.Tags.Any()){
@@ -54,7 +55,9 @@ Whenever a tag has been added it will be visible in the typeahead when you start
     </ul>
 }
 ```
-### Setting Tags Programatically:
+
+### Setting Tags Programatically
+
 You can use the ContentService to create and update Umbraco content from c# code, when setting tags there is an extension method (SetTags) on IContentBase that helps you set the value for a Tags properties. Remember to add the using statement for `Umbraco.Core.Models` to take advantage of it.
 
 ```csharp

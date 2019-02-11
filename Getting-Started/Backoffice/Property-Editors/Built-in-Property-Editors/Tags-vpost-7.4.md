@@ -5,6 +5,7 @@ versionTo: 7.5.14
 ---
 
 # Tags
+
 `Alias: Umbraco.Tags`
 
 `Returns: CSV` or `JSON`
@@ -41,7 +42,7 @@ Whenever a tag has been added it will be visible in the typeahead when you start
 
 ## MVC View Example - displays a list of tags
 
-### Typed - Using CSV:
+### Typed - Using CSV
 
 ```csharp
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Home>
@@ -60,7 +61,8 @@ Whenever a tag has been added it will be visible in the typeahead when you start
 }
 ```
 
-### Typed - Using JSON:
+### Typed - Using JSON
+
 Notice that Newtonsoft.Json is referenced in the below example. It's already a part of the Umbraco codebase and it's needed for doing the Deserializing of the JSON object so it's possible to loop over the tags later on.
 
 ```csharp
@@ -80,7 +82,9 @@ Notice that Newtonsoft.Json is referenced in the below example. It's already a p
     </ul>
 }
 ```
-### Setting Tags Programatically:
+
+### Setting Tags Programatically
+
 You can use the ContentService to create and update Umbraco content from c# code, when setting tags there is an extension method (SetTags) on IContentBase that helps you set the value for a Tags properties. Remember to add the using statement for `Umbraco.Core.Models` to take advantage of it.
 
 ```csharp
