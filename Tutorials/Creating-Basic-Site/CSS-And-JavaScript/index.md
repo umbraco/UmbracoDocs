@@ -24,5 +24,5 @@ Now using Chrome Developer Tools or Firebug whilst browsing http://localhost you
 
 ---
 
-## Next - [Outputting the Document Type Properties](Outputting-the-Document-Type-Properties)
+## Next - [Outputting the Document Type Properties](../Outputting-the-Document-Type-Properties)
 How to wire the Umbraco Document Type Properties into the templates to output the editor's data in the right place.
