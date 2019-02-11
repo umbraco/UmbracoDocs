@@ -131,5 +131,5 @@ Click **_Save_** and reload our Contact Us page.
 
 
 ---
-## Next - [Master Template The Navigation Menu](Master-Template-The-Navigation-Menu)
+## Next - [Master Template The Navigation Menu](../Master-Template-The-Navigation-Menu)
 A simple solution for the template in the menu. 
