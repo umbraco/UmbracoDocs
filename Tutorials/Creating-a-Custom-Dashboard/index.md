@@ -325,24 +325,33 @@ logResource.getPagedUserLog(userLogoptions)
     angular.forEach(response.items, function (item) {
         // if no entity exists -1 is returned for the nodeId (eg saving a macro would create a log entry without a nodeid)
         if (item.nodeId > 0) {
-           if (item.logType == "Save") {
-                if (item.entityType == "Media") {
-                    // log entry is a media item
-                    item.editUrl = "media/media/edit/" + item.nodeId;
+              //only interested here in 'saves'
+              if (item.logType == "Save") {
+                    // this is the only way to tell them apart - whether the comment includes the words Content or Media!!
+                    if (item.comment.match("(\\bContent\\b|\\bMedia\\b)")) {                            
+                            if (item.comment.indexOf("Media") > -1) {
+                                // log entry is a media item
+                                item.editUrl = "media/media/edit/" + item.nodeId;
+                                item.entityType = "Media";
+                            }
+                            if (item.comment.indexOf("Content") > -1) {
+                                // log entry is a media item
+                                item.editUrl = "content/content/edit/" + item.nodeId;
+                                item.entityType = "Document";
+                            }
+                        }
+                    if (typeof item.entityType !== 'undefined') {
+                            // use entityResource to retrieve details of the content/media item
+                            entityResource.getById(item.nodeId, item.entityType).then(function (ent) {
+                                console.log(ent);
+                                item.Content = ent;
+                            });
+
+                            filteredLogEntries.push(item);
+                    }
                 }
-                if (item.entityType == "Document") {
-                    // log entry is a media item
-                    item.editUrl = "content/content/edit/" + item.nodeId;
-                }
-                // use entityResource to retrieve details of the content/media item
-                entityResource.getById(item.nodeId, item.entityType).then(function (ent) {
-                    console.log(ent);
-                    item.Content = ent;
-                });
-                filteredLogEntries.push(item);
             }
-        }
-    });
+        });
     vm.UserLogHistory.items = filteredLogEntries;
 });
 ```
