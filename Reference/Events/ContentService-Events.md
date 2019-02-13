@@ -305,6 +305,57 @@ namespace My.Namespace
             </ol>
         </td>
     </tr>
+    <tr>
+        <td>EmptyingRecycleBin</td>
+        <td>(IContentService sender, RecycleBinEventArgs e)</td>
+        <td>
+        Raised when ContentService.EmptyingRecycleBin is called in the API.<br />
+        "sender" will be the current IContentService object.<br />
+        "e" will provide:
+            <ol>
+                <li>NodeObjectType: Gets the Id of the node object type of the items being deleted from the Recycle Bin.</li>
+                <li>AllPropertyData: Gets the list of all property data associated with a content id.</li>
+            </ol>
+        </td>
+    </tr>
+    <tr>
+        <td>EmptiedRecycleBin</td>
+        <td>(IContentService sender, RecycleBinEventArgs e)</td>
+        <td>
+        Raised when ContentService.EmptiedRecycleBin is called in the API. <br />
+        "sender" will be the current IContentService object.<br />
+        "e" will provide:
+            <ol>
+                <li>NodeObjectType: Gets the Id of the node object type of the items deleted from the Recycle Bin.</li>
+                <li>AllPropertyData: Gets the list of all property data associated with a content id.</li>
+                <li>EmptiedSuccessfully: Boolean indicating whether the Recycle Bin was emptied successfully.</li>
+            </ol>
+        </td>
+    </tr>
+    <tr>
+        <td>SavedBlueprint</td>
+        <td>(IContentService sender, SaveEventArgs&lt;IContent&gt; e)</td>
+        <td>
+        Raised when ContentService.SavedBlueprint is called in the API.<br />
+        "sender" will be the current IContentService object.<br />
+        "e" will provide:
+            <ol>
+                <li>Entity: Gets the saved blueprint IContent object.</li>
+            </ol>
+        </td>
+    </tr>
+    <tr>
+        <td>DeletedBlueprint</td>
+        <td>(IContentService sender, DeleteEventArgs&lt;IContent&gt; e)</td>
+        <td>
+        Raised when ContentService.DeletedBlueprint is called in the API. <br />
+        "sender" will be the current IContentService object.<br />
+        "e" will provide:
+            <ol>
+                <li>Entity: Gets the deleted blueprint IContent.</li>
+            </ol>
+        </td>
+    </tr>
 </table>
 
 ### What happened to Creating and Created events?
