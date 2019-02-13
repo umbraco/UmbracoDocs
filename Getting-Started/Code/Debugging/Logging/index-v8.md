@@ -7,9 +7,9 @@ versionFrom: 8.0.0
 
 In Umbraco v8.0+ we have changed the underlying logging framework from [Log4Net](https://logging.apache.org/log4net/) to [Serilog](https://serilog.net/).
 
-Out of the box for v8.0+ we will write two log files to disk, a .txt file in the same identical format as previously logged by Log4Net, so that you can continue to use any tools or regular expressions you may have used and secondly we will write a JSON file that contains a more rich logfile, that allows tools to perform searches & correlation on log patterns a lot easier.
+Out of the box for v8.0+ we will write a JSON log file that contains a more rich logfile, that allows tools to perform searches & correlation on log patterns a lot easier.
 
-The default location of these files are written to `App_Data/Logs` and contains the Machine name, along with the date too:
+The default location of this file is written to `App_Data/Logs` and contains the Machine name, along with the date too:
 * `/App_Data/Logs/UmbracoTraceLog.DELLBOOK.20181108.json`
 
 ## Structured logging
