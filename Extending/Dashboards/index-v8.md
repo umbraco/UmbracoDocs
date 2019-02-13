@@ -142,3 +142,23 @@ namespace My.Website
 }
 ```
 
+## Remove an Umbraco dashboard
+In previous versions of Umbraco if you wanted to modify the order of the default dashboards you would ammend the `config/dashboards.config` file on disk. With V8+ you need to create your own composer that is used to organise and customise your Umbraco application to your own needs.
+
+```csharp
+using Umbraco.Core;
+using Umbraco.Core.Components;
+using Umbraco.Web.Dashboards;
+
+namespace My.Website
+{
+    [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
+    public class RemoveDashboard : IUserComposer
+    {
+        public void Compose(Composition composition)
+        {
+            composition.Dashboards().Remove<ContentDashboard>();
+        }
+    }
+}
+```
