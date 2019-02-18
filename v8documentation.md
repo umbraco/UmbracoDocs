@@ -22,11 +22,20 @@ If you feel something is missing here or you want to help out documenting some o
 * [Logging](Getting-Started/Code/Debugging/Logging)
 * [Defining content](Getting-Started/Data/Defining-content)
 * [Rendering content](Getting-Started/Design/Rendering-Content)
-* [Masterpages: Umbraco:item](Reference/Templating/Masterpages/umbracoitem-v8)
 * [Tutorial: Creating a basic website](Tutorials/Creating-Basic-Site)
 * [Tutorial: Porting packages to V8](Tutorials/Porting-Packages-V8)
 * [Dashboards](Extending/Dashboards/index-v8)
 
 ## In progress:
 
+* Upgrading and setup [perhaps a bit too risky to add this one?]
+* Property Editors in V8
+* Verify Umbraco Forms documentation with V8
+
 ## Upcomming:
+
+* **Update existing** Examine documentation
+* **Update existing** MVC / WebAPI documentation
+* **Add new** Composer/Composition mechanism documentation
+* **Add new** Content Cache documentation
+* **Add new** Filesystems documentation
