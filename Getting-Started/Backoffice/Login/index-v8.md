@@ -1,7 +1,7 @@
 ---
 meta.Title: ""
 meta.Description: ""
-versionFrom: 7.0.0
+versionFrom: 8.0.0
 ---
 
 # Login screen
@@ -10,7 +10,7 @@ To access the backoffice, you will need to login. You can do this by adding `/um
 
 You will be presented with a login form simular to this:
 
-![Login screen](images/umbraco7-6_login.jpg "The login screen has a greeting, username/password field and optionally a 'Forgotten password' link.")
+![Login screen](images/backoffice-login.png "The login screen has a greeting, username/password field and optionally a 'Forgotten password' link.")
 *The login screen has a greeting, username/password field and optionally a 'Forgotten password' link*
 
 Below, you will find instructions on how to customise the login screen.
@@ -35,7 +35,17 @@ You can customize other text in the login screen as well, grab the default value
 
 ## Password reset
 
-The "Forgot password?" link allows your backoffice users to reset their password. For this feature to work properly you will need to configure an SMTP server in your web.config file and the "from" address needs to be specified. An example:
+The "Forgot password?" link allows your backoffice users to reset their password. To setup this feature you will need to add the following key to the `<security>` section in the `~Config/umbracoSettings.config`:
+
+```xml
+<allowPasswordReset>true</allowPasswordReset>
+```
+
+Set it to `true` to enable the password reset feature, and to `false` to disable the feature.
+
+You will also need to configure an SMTP server in your `web.config` file. When you get a succesful result on the SMTP configuration when running a health check in the backoffice, you are good to go! 
+
+An example:
 
 ```xml
 <system.net>
@@ -47,11 +57,9 @@ The "Forgot password?" link allows your backoffice users to reset their password
 </system.net>
 ```
 
-This feature can be turned off completely using the `allowPasswordReset` configuration, see: [UmbracoSettings - Security](../../../Reference/Config/umbracoSettings/#security)
-
 ## Background image
 
-You can customise the background image for the backoffice login screen. In [`~/Config/umbracoSettings.config`](../../../Reference/Config/umbracoSettings/) find the `loginBackgroundImage`and change the path to the image you want to use.
+It is possible to customize the background image for the backoffice login screen. In [`~/Config/umbracoSettings.config`](../../../Reference/Config/umbracoSettings/) find the `loginBackgroundImage` and change the path to the image you want to use.
 
 ```xml
 <settings>
