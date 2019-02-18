@@ -8,10 +8,12 @@ Each section of the Umbraco backoffice has its own set of default dashboards.
 
 The dashboard area of Umbraco is used to display an 'editor' for the selected item in the tree. If no item is selected, for example when the section 'first loads', then the default set of section dashboards are displayed in the dashboard area, arranged over multiple tabs.
 
-## Creating your own Dashboard
-There are two approaches on registering a dashboard in Umbraco which are explained in detail below.
+## Registering your own Dashboard
+There are two approaches to registering a custom dashboard to appear in the Umbraco Backoffice:
 
 ### Registering with package.manifest
+Add a file named 'package.manifest' to the app_plugins folder, containing the following json configuration pointing to your dashboard view:
+
 ```json
 {
     "dashboards":  [
@@ -26,7 +28,7 @@ There are two approaches on registering a dashboard in Umbraco which are explain
 ```
 
 ### Registering with C# Type
-By creating a C# class that implements `IDashboard` from `Umbraco.Core.Dashboards` then this will automatically get picked up by Umbraco when it boots up.
+By creating a C# class that implements `IDashboard` from `Umbraco.Core.Dashboards` then this will automatically be discovered by Umbraco at application startup time.
 
 ```csharp
 using System;
@@ -49,10 +51,10 @@ namespace My.Website
 }
 ```
 
-### Re-ordering
-Each dashboard be it registered with package.manifest or C# uses a weight property to assign the order that the dashboard should be displayed. With the lowest number being displayed first in a collection where one or more dashboards are visible in a section/application.
+### Re-ordering / weighting
+Each dashboard, regardless of how it is registered (package.manifest or C# or default core dashboard) uses a *weight* property to assign the order that the dashboard should be displayed. The dashboard with the lowest weighting number will be displayed first in a collection where one or more dashboards are visible for a section/application.
 
-For reference here is the values of the default Umbraco dashboards, so you are then able to assign your own custom dashboard with a higher or lower value to suit your own ordering needs.
+For reference, here is a list of the weighting values for the default Umbraco dashboards, so you can assign a weighting to your own custom dashboard with a higher or lower value to suit your custom ordering needs.
 
 **Content**
 <table class="table">
@@ -185,10 +187,9 @@ For reference here is the values of the default Umbraco dashboards, so you are t
 </table>
 
 ### Add Language Keys
-After creating your dashboard, you will see in the backoffice it will have it's dahsboard alias wrapped in square brackets. This is because it is missing a language key.
-You will need to add a language key like shown below.
+After registering your dashboard, it will appear in the backoffice - however it will have it's dashboard alias [mycustomdashboard] wrapped in square brackets. This is because it is missing a language key. The language key allows people to provide a translation of the dashboard name in multilingual environments. To remove the square brackets - add a language key:
 
-If your dashboard is unique to your Umbraco installation then you can modify the following: `config/lang/en-US.user.xml` or if it is intended to be used in an Umbraco pakcage and share with others to use in their own Umbraco installation then you will need to modify/add `App_Plugins/MyPackage/lang/en-US.xml`
+If your dashboard is unique to your Umbraco installation then you can modify the following application language file: `config/lang/en-US.user.xml` however if the dashboard is to be released as an Umbraco package and shared with others to use in their own Umbraco installation then you will need to create a *lang* folder in your custom dashboard folder and create a package specific language file:  `App_Plugins/Mycustomdashboard/lang/en-US.xml`
 
 [Read more about language files](../Language-Files/index.md)
 
@@ -202,7 +203,7 @@ If your dashboard is unique to your Umbraco installation then you can modify the
 ```
 
 ### Specifying permissions
-See the updated examples now includes access properties that specify what user groups aliases are granted or denied permission to see the dashboard.
+You can configure which applications/sections a dashboard will appear in, in the above examples (package.manifest or c#), you can see the alias of the section is used to control where the dashboard is allowed to appear. Further to this, within this section, you can control which Users can see a particular dashboard based upon the *User Groups* they belong to by setting the 'access' permissions based on the *User Group* alias, you choose to deny or grant a particular User Group's access to the dashboard.
 
 ```json
 {
@@ -253,7 +254,7 @@ namespace My.Website
 ```
 
 ## Remove an Umbraco dashboard
-In previous versions of Umbraco if you wanted to modify the order of the default dashboards you would ammend the `config/dashboards.config` file on disk. With V8+ you need to create your own composer that is used to organise and customise your Umbraco application to your own needs. If you want for example to remove the Content Dashboard you would do this:
+In previous versions of Umbraco if you wanted to remove or modify the order of a default dashboards you would ammend the `config/dashboards.config` file on disk. With V8+ the configuration file approach has been removed and you need to use code to create your own *composer* (a c# class that can be used to organise and customise your Umbraco application to your own needs) to remove a dashboard. For example - if you wanted to remove the 'Content Dashboard' you would create a RemoveDashboard composer like this:
 
 ```csharp
 using Umbraco.Core;
