@@ -1,6 +1,6 @@
 ---
-meta.title: ""
-meta-description: ""
+meta.title: "New, updated and upcoming Umbraco 8 documentation"
+metadescription: "In this article you can find a list of all new Umbraco 8 documentation, as well as see which documentation is currently being worked on."
 ---
 
 # Status of the v8 Documentation
