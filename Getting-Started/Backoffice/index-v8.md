@@ -1,7 +1,7 @@
 ---
 meta.Title: ""
 meta.Description: ""
-versionFrom: 7.0.0
+versionFrom: 8.0.0
 ---
 
 # Backoffice overview
