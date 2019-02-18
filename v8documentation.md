@@ -3,7 +3,7 @@ meta.Title: "New, updated and upcoming Umbraco 8 documentation"
 meta.Description: "In this article you can find a list of all new Umbraco 8 documentation, as well as see which documentation is currently being worked on."
 ---
 
-# Status of the v8 Documentation
+# Status of the Umbraco 8 Documentation
 
 Updating the entire documentation for a new release is no small task. Here you will be able to follow the progress of the documentation and get an idea of what is being worked on.
 
@@ -12,7 +12,7 @@ If you feel something is missing here or you want to help out documenting some o
 * [Create an issue on missing documentation](https://github.com/umbraco/UmbracoDocs/issues)
 * [Read about how you can help out!](Contribute)
 
-## Finished v8 Documentation:
+## Finished Umbraco 8 Documentation:
 
 * [Content Apps](Extending/Content-Apps/index-v8)
 * [Creating your own Dashboard](Extending/Dashboards/index-v8)
@@ -30,8 +30,8 @@ If you feel something is missing here or you want to help out documenting some o
 
 * Upgrading and setup
 * Backoffice documentation
-* Property Editors in V8
-* Verify Umbraco Forms documentation with V8
+* Property Editors in Umbraco 8
+* Verify Umbraco Forms documentation with Umbraco 8
 
 ## Upcomming:
 
