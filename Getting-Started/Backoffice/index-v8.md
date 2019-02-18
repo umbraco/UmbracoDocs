@@ -7,12 +7,12 @@ versionFrom: 8.0.0
 # Backoffice overview
 In this article you can learn more about the common terms and concepts that are used throughout the Umbraco backoffice.
 
-## [Login screen](Login/)
+## [Login screen](Login/index-v8.md)
 When you go to the backoffice for the first time, you're presented with the login screen.
 
 ![Login screen](images/backoffice-login.png "The login screen has a greeting, username/password field and optionally a 'Forgotten password' link.") 
 
-[Read more about the login screen](Login/).
+[Read more about the login screen](Login/index-v8.md).
 
 ## [Section](Sections/)
 A section in Umbraco is where you do specific tasks related to that section. For example Content, Settings and Users. You can navigate between the different sections of the backoffice by clicking the corresponding icon in the section menu. 
