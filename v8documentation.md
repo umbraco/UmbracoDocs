@@ -28,7 +28,7 @@ If you feel something is missing here or you want to help out documenting some o
 
 ## In progress:
 
-* Upgrading and setup [perhaps a bit too risky to add this one?]
+* Upgrading and setup
 * Property Editors in V8
 * Verify Umbraco Forms documentation with V8
 
