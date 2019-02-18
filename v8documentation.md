@@ -29,6 +29,7 @@ If you feel something is missing here or you want to help out documenting some o
 ## In progress:
 
 * Upgrading and setup
+* Backoffice documentation
 * Property Editors in V8
 * Verify Umbraco Forms documentation with V8
 
