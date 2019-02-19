@@ -83,7 +83,7 @@ After making sure that your existing site meets all the requirements for being m
 
 ### Upgrade to latest Umbraco version
 
-First order of business is to **upgrade your own Umbraco site to the latest Umbraco version**. Why? Because Umbraco Cloud always runs the latest version and you need to make sure your project runs the same Umbraco version as Umbraco Cloud.
+First order of business is to **upgrade your own Umbraco site to the latest minor version of Umbraco 7 or 8**. Why? Because Umbraco Cloud always runs the latest version and you need to make sure your project runs the same Umbraco version as Umbraco Cloud.
 
 You can download the latest version of Umbraco from [Our](https://our.umbraco.com/download/).
 
