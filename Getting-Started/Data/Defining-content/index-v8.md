@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Defining content
 
-*Here you'll find an explanation of how content is defined in v8.*
+*Here you'll find an explanation of how content is defined in Umbraco 8.*
 
 Before a piece of content can be created it needs to be defined. That is why, when opening a blank installation of Umbraco, it is not possible to create content in the __Content__ section. All content needs a blueprint that holds information about what kind of data can be stored on the content node, which editors are used, how it is organized, where in the structure it is allowed and so forth. This blueprint or definition is called a Document Type.
 
