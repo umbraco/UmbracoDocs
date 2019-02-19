@@ -25,12 +25,12 @@ The content picker allows the content editor to pick a specific node from the co
 
 Made obsolete with the release of Umbraco v7.6 the content picker allows the content editor to pick a specific node from the content structure.
 
-## [Date](Date)
+## [Date](Date.md)
 `Alias: Umbraco.Date`
 
 Displays a calendar UI for selecting dates
 
-## [Date/Time](Date-Time.md)
+## [Date/Time](Date-Time/)
 `Alias: Umbraco.DateTime`
 
 Displays a calendar UI for selecting dates and time

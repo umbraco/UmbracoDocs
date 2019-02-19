@@ -1,9 +1,10 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
 ---
-# DateTime
 
-`Returns: DateTime`
+# Date
+
+`Returns: Date`
 
 Displays a calendar UI for selecting dates which are saved as a DateTime value.
 
@@ -19,14 +20,20 @@ The only setting that is available for manipulating the Date property is to set 
 
 ## MVC View Example - displays a datetime
 
-### With Modelsbuilder
+### Typed
 
 ```csharp
-@Model.DatePicker
+@(Model.Content.GetPropertyValue<DateTime>("datePicker").ToString("dd MM yyyy"))
 ```
 
-### Without Modelsbuilder
+### Dynamic (Obsolete)
+
+:::warning
+See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
+:::
 
 ```csharp
-@Model.Value("datePicker")
+@{
+    @CurrentPage.datePicker.ToString("dd-MM-yyyy")
+}
 ```

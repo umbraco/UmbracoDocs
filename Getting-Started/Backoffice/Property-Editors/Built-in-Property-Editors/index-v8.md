@@ -5,6 +5,11 @@ versionFrom: 8.0.0
 
 This page contains a list of all the built-in Umbraco property editors and a short description of what they do:
 
+## [Checkbox (True/False)](True-False.md)
+`Alias: Umbraco.TrueFalse`
+
+A simple checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
+
 ## [Checkbox list](CheckBox-List.md)
 `Alias: Umbraco.CheckBoxList`
 
@@ -20,15 +25,10 @@ Adds a list of approved colours which can be selected by clicking.
 
 The content picker allows the content editor to pick a specific node from the content structure.
 
-## [Date](Date/index-v8)
-`Alias: Umbraco.Date`
-
-Displays a calendar UI for selecting dates
-
-## [Date/Time](Date-Time.md)
+## [Date/Time](Date-Time/index-v8.md)
 `Alias: Umbraco.DateTime`
 
-Displays a calendar UI for selecting dates and time
+Displays a calendar UI for selecting dates and time.
 
 ## Decimal
 `Alias: Umbraco.Decimal`
@@ -61,9 +61,9 @@ New to v7.2, gives editors a grid layout editor which allows them to insert diff
 Used to crop and resize images to predefined sizes. Available from V7.1
 
 ## Label
-`Alias: Umbraco.NoEdit`
+`Alias: Umbraco.Label`
 
-Label is a non-editable control, can only be used to display a pre-set text.
+Label is a non-editable control and can only be used to display a pre-set text.
 
 ## List View
 `Alias: Umbraco.ListView`
@@ -98,11 +98,6 @@ New in Umbraco v8, used to be a package called RJP Multi Url Picker. Replaced Re
 
 The multinode treepicker data type allows content editors to choose multiple nodes in the content or media trees.
 
-## [Multiple Textbox](Multiple-Textbox.md)
-`Alias: Umbraco.MultipleTextstring`
-
-The Multiple Textbox property editor enables a content editor to make a list of text items
-
 ## [Nested Content](Nested-Content.md)
 `Alias: Umbraco.NestedContent`
 
@@ -118,8 +113,13 @@ A configurable number control allowing only numbers.
 
 Pretty much like the name indicates this property editor enables editors to choose from list of radio buttons.
 
+## [Repeatable textstrings](Multiple-Textbox.md)
+`Alias: Umbraco.MultipleTextstring`
+
+The Repeatable textstrings property editor enables a content editor to make a list of text items
+
 ## Rich Text Editor
-`Alias: Umbraco.TinyMCEv3`
+`Alias: Umbraco.TinyMCE`
 
 A [tinymce](https://www.tinymce.com/) based rich text editor which is highly configurable.  Probably one of the most used controls in Umbraco projects.
 
@@ -139,14 +139,9 @@ A tag control which can be controlled by a certain group of tags.
 A simple textarea control to input text.
 
 ## [Textbox](Textbox.md)
-`Alias: Umbraco.Textbox`
+`Alias: Umbraco.TextBox`
 
 A normal html input text field.
-
-## [True/False](True-False.md)
-`Alias: Umbraco.TrueFalse`
-
-A simple checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
 
 ## User picker
 `Alias: Umbraco.UserPicker`
