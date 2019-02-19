@@ -1,5 +1,5 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.0
 ---
 # Creating More Pages
 
@@ -13,159 +13,226 @@ Umbraco provides us with an elegant solution for a consistent base template - th
 
 To start we're going to unpick a little bit of what we did in creating the homepage to sit the homepage template under a master. 
 
-
 # Create a Master Template 
-
 
 Go to the **_Settings > Templates_** and open up the tree.  At the moment we just have our **_Homepage_** template.  Hover over the **_Templates_** menu and click the menu **_..._** button. Create a new template called Master, click **_+ Create_** and then give it the name "_Master_" . Remember to click **_Save_**. 
 
+![Master Template](images/figure-22-master-template-v8.png)
 
-![Master Template](images/figure-22-master-template.png)
+Now we're going to move the **_Homepage_** template under the **_Master_** template. To do this select the **_Settings > Homepage template_** and at the top click where it says _No master_, and select the template called **Master**. This will update the Razor code section to change `Layout = null;` to `Layout = "Master.cshtml";` 
 
+![Homepage Template now sits under the Master](images/figure-23-homepage-has-master-template-v8.png)
 
-*Figure 22 - Master Template*
+Now we need to move the parts of our HTML template that are common across all pages into the **_Master_**. This is where as a developer you might need to use your brain as it will be slightly different for different websites - e.g. do all pages contain a `<div id="main">` section so can we put this in the master or does this belong to only certain pages? 
 
+For this site, we will cut everything from the closing curly brace to line 39, so you get the end of the `</nav>` - we're going to move the `header` and `nav` of the site to the master template. Cut this and click **_Save_**. 
 
-Now we're going to move the **_Homepage_** template under the **_Master_** template. To do this select the **_Settings > Homepage node_** and from the **_Properties tab > Master template dropdown_**, select _"Master"_ and then click **_Save_**.  This will update the Razor code section to change `Layout = null;` to `Layout = "Master.cshtml";` 
-
-:::note
-Due to a bug in older versions of Umbraco you may need to click off the **_Homepage node_** and back on to see this update. 
-:::
-
-![Homepage Template now sits under the Master](images/figure-23-homepage-has-master-template.png)
-
-
-*Figure 23 - Homepage Template now sits under the Master*
-
-
-Now we need to move the parts of our HTML template that are common across all pages into the **_Master_**. This is where as a developer you might need to use your brain as it will be slightly different for different websites - e.g. do all pages contain a `<div id="main">` section so can we put this in the master or does this belong to only certain pages? For this site, we'll assume this is part of the child page. In the template edit screen cut everything from the closing curly brace to line 37 `<div id="main-container">` - we're going to move the header and nav of the site to the master template. Cut this and click **_Save_**. 
-
-
-![Homepage Template After Cutting the Header](images/figure-24-homepage-after-cutting-the-header.png)
-
-
-*Figure 24 - Homepage Template After Cutting the Header*
-
+![Homepage Template After Cutting the Header](images/figure-24-homepage-after-cutting-the-header-v8.png)
 
 Now click on your **_Master_** template and paste this HTML markup after the closing curly brace and remember to click **_Save_**.
 
+![Master Template after Pasting the Header](images/figure-25-master-template-with-header-v8.png)
 
-![Master Template after Pasting the Header](images/figure-25-master-template-with-header.png)
+At the end of this markup we need to tell Umbraco to insert the child template's content - this is done by adding the code **_@RenderBody()_** at the end (around line 39). Click **_Save_**. 
 
-*Figure 25 - Master Template after Pasting the Header*
+![Adding RenderBody() to the Master Template](images/figure-26-adding-renderbody-v8.png)
 
+Now we'll do the same with the footer content. Cut everything from the `<!-- Footer -->` comment (approximately line 111) from the **_Settings > Templates > Homepage template_**, click **_Save_** and then paste this into the **_Master_** template under the **_@RenderBody_** field we've just added. Remember to click **_Save_**. 
 
-At the end of this markup we need to tell Umbraco to insert the child template's content - this is done by adding the code **_@RenderBody()_** at the end (around line 37). Click **_Save_**. 
+![Completed Master Template](images/figure-27-master-template-complete-v8.png)
 
-
-![Adding RenderBody() to the Master Template](images/figure-26-adding-renderbody.png)
-
-
-*Figure 26 - Adding RenderBody() to the Master Template*
-
-
-Now we'll do the same with the footer content. Cut everything from the opening of the **_footer-container _** div (approximately line 35) from the **_Settings > Templates > Homepage > template tab_**, click **_Save_** and then paste this into the **_Master_** template under the **_@RenderBody_** field we've just added. Remember to click **_Save_**. 
-
-
-![Completed Master Template](images/figure-27-master-template-complete.png)
-
-
-*Figure 27 - Completed Master Template*
-
-
-Now we've done a lot of work - and what we should see if we refresh our localhost page is nothing has changed!  If you have a compilation error you've perhaps mistyped **_@RenderBody()_**. If you're missing any content (header or footer) check that what you have in the templates matches the following:
+Now we've done a lot of work - and what we should see if we refresh our localhost page is nothing has changed!  If you have a compilation error you've perhaps mistyped **_@RenderBody()_**. If you're missing any content (header or footer) check that what you have in the Master template matches the following:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
-    Layout = null;
-}<!doctype html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	Layout = null;
+}
+<!DOCTYPE HTML>
+<!--
+	Retrospect by TEMPLATED
+	templated.co templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Retrospect by TEMPLATED</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body class="landing">
 
-    <title></title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+		<!-- Header -->
+			<header id="header" class="alt">
+				<h1><a href="index.html">Retrospect</a></h1>
+				<a href="#nav">Menu</a>
+			</header>
 
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="generic.html">Generic</a></li>
+					<li><a href="elements.html">Elements</a></li>
+				</ul>
+			</nav>
+			
+			@RenderBody()
+			
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-facebook">
+							<span class="label">Facebook</span>
+						</a></li>
+						<li><a href="#" class="icon fa-twitter">
+							<span class="label">Twitter</span>
+						</a></li>
+						<li><a href="#" class="icon fa-instagram">
+							<span class="label">Instagram</span>
+						</a></li>
+						<li><a href="#" class="icon fa-linkedin">
+							<span class="label">LinkedIn</span>
+						</a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; @Model.Value("footerText")</li>
+						<li>Images: <a href="http://unsplash.com">Unsplash</a>.</li>
+						<li>Design: <a href="http://templated.co">TEMPLATED</a>.</li>
+					</ul>
+				</div>
+			</footer>
 
-    <link rel="stylesheet" href="css/style.css">
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
 
-    <script src="js/libs/modernizr-2.0.6.min.js"></script>
-</head>
-<body>
-
-    <div id="header-container">
-        <header class="wrapper clearfix">
-            <h1 id="title">@Umbraco.Field("pageTitle")</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">nav ul li a</a></li>
-                    <li><a href="#">nav ul li a</a></li>
-                    <li><a href="#">nav ul li a</a></li>
-                </ul>
-            </nav>
-        </header>
-    </div>
-
-    @RenderBody()
-
-    <div id="footer-container">
-        <footer class="wrapper">
-            <h3>@Umbraco.Field("footerText")</h3>
-        </footer>
-    </div>
-
-</body>
+	</body>
 </html>
 ```
 
-*Figure 28 - Complete Master Template*
+And that what you have in the Homepage template matches the following:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Web.PublishedModels;
 @{
-    Layout = "Master.cshtml";
+	Layout = "Master.cshtml";
 }
-<div id="main-container">
-    <div id="main" class="wrapper clearfix">
+		<!-- Banner -->
+			<section id="banner">
+				<i class="icon fa-diamond"></i>
+				<h2>@Model.Value("pageTitle")</h2>
+				<p>@Model.Value("bodyText")</p>
+				<ul class="actions">
+					<li><a href="#" class="button big special">Learn More</a></li>
+				</ul>
+			</section>
 
-        <article>
-            <header>
-                @Umbraco.Field("bodyText")
-            </header>
-            <section>
-                <h2>article section h2</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
-            </section>
-            <section>
-                <h2>article section h2</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
-            </section>
-            <footer>
-                <h3>article footer h3</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor.</p>
-            </footer>
-        </article>
+		<!-- One -->
+			<section id="one" class="wrapper style1">
+				<div class="inner">
+					<article class="feature left">
+						<span class="image"><img src="images/pic01.jpg" alt="" /></span>
+						<div class="content">
+							<h2>Integer vitae libero acrisus egestas placerat  sollicitudin</h2>
+							<p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est.</p>
+							<ul class="actions">
+								<li>
+									<a href="#" class="button alt">More</a>
+								</li>
+							</ul>
+						</div>
+					</article>
+					<article class="feature right">
+						<span class="image"><img src="images/pic02.jpg" alt="" /></span>
+						<div class="content">
+							<h2>Integer vitae libero acrisus egestas placerat  sollicitudin</h2>
+							<p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est.</p>
+							<ul class="actions">
+								<li>
+									<a href="#" class="button alt">More</a>
+								</li>
+							</ul>
+						</div>
+					</article>
+				</div>
+			</section>
 
-        <aside>
-            <h3>aside</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
-        </aside>
+		<!-- Two -->
+			<section id="two" class="wrapper special">
+				<div class="inner">
+					<header class="major narrow">
+						<h2>Aliquam Blandit Mauris</h2>
+						<p>Ipsum dolor tempus commodo turpis adipiscing Tempor placerat sed amet accumsan</p>
+					</header>
+					<div class="image-grid">
+						<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+						<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
+						<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
+						<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
+						<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+						<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+						<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+						<a href="#" class="image"><img src="images/pic10.jpg" alt="" /></a>
+					</div>
+					<ul class="actions">
+						<li><a href="#" class="button big alt">Tempus Aliquam</a></li>
+					</ul>
+				</div>
+			</section>
 
-    </div> <!-- #main -->
-</div> <!-- #main-container -->
+		<!-- Three -->
+			<section id="three" class="wrapper style3 special">
+				<div class="inner">
+					<header class="major narrow	">
+						<h2>Magna sed consequat tempus</h2>
+						<p>Ipsum dolor tempus commodo turpis adipiscing Tempor placerat sed amet accumsan</p>
+					</header>
+					<ul class="actions">
+						<li><a href="#" class="button big alt">Magna feugiat</a></li>
+					</ul>
+				</div>
+			</section>
+
+		<!-- Four -->
+			<section id="four" class="wrapper style2 special">
+				<div class="inner">
+					<header class="major narrow">
+						<h2>Get in touch</h2>
+						<p>Ipsum dolor tempus commodo adipiscing</p>
+					</header>
+					<form action="#" method="POST">
+						<div class="container 75%">
+							<div class="row uniform 50%">
+								<div class="6u 12u$(xsmall)">
+									<input name="name" placeholder="Name" type="text" />
+								</div>
+								<div class="6u$ 12u$(xsmall)">
+									<input name="email" placeholder="Email" type="email" />
+								</div>
+								<div class="12u$">
+									<textarea name="message" placeholder="Message" rows="4"></textarea>
+								</div>
+							</div>
+						</div>
+						<ul class="actions">
+							<li><input type="submit" class="special" value="Submit" /></li>
+							<li><input type="reset" class="alt" value="Reset" /></li>
+						</ul>
+					</form>
+				</div>
+			</section>
+
 ```
-
-*Figure 29 - Complete Homepage Template*
-
-
->If you're new to these concepts then I don't think what we've just done is going to make much sense until we make our next page. 
 
 
 ---
