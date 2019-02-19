@@ -6,9 +6,9 @@ versionFrom: 8.0.0
 # Composing
 With Umbraco V8+ you are now able to customise how your Umbraco application runs and boots by composing different components of the system. You may wish to add your own customisations on how Umbraco works or alternatively disable or remove specific functions in Umbraco. You can achieve this with composers & components.
 
-## Bye bye ApplicationEventHandler, hello Composers & Components
+## What are composers & components?
 
-XXXXXXXXXXXXXX WRITE SOME INTRO XXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXX TODO WRITE SOME INTRO XXXXXXXXXXXXXXXXXXX
 
 
 ### Changing Umbraco
@@ -148,6 +148,32 @@ Ordering of composers is important, as the last one added in can override previo
 ## Collections
 
 XXXXXXXXXXXXXX WRITE SOME INTRO XXXXXXXXXXXXXXXXXXX
+
+
+Below is a list of collections that details their collection type and how items for this collection out of the box for Umbraco is registered.
+
+
+| Collection                | Type      | Registration                                                      |
+| ---                       | ---       | ---                                                               |
+| CacheRefreshers           | Lazy      | Type scanned for `ICacheRefresher`                                |
+| Components                | Ordered   | Explicit Registration                                             |
+| ContentApps               | Ordered   | Package.manifest & Explicit Registration                          |
+| ContentFinders            | Ordered   | Explicit Registration                                             |
+| Dashboards                | Weighted  | Package.manifest & Type scanned for `IDashboard`                  |
+| DataEditors               | Lazy      | Type scanned for `IDataEditor`                                    |
+| FilderedControllerFactory | Ordered   | Explicit Registration                                             |
+| HealthChecks              | Lazy      | Type scanned for `HealthCheck`                                    |
+| OEmbedProviders           | Ordered   | Explicit Registration                                             |
+| PackageActions            | Lazy      | Type scanned for `IPackageAction`                                 |
+| PropertyValueConvertors   | Ordered   | Type scanned for `IPropertyValueConverter`                        |
+| SearchableTrees           | Lazy      | Type scanned for `ISearchableTree`                                |
+| Sections                  | Ordered   | Package.manifest & Explicit Registration                          |
+| TourFilters               | Base      | Empty collection                                                  |
+| Trees                     | Base      | Type scanned. Must inherit `TreeControllerBase` & use `[Tree]`    |
+| UrlProviders              | Ordered   | Explicit Registration                                             |
+| UrlSegmentProviders       | Ordered   | Explicit Registration                                             |
+| Validators                | Lazy      | Explicit Registration                                             |
+
 
 
 
