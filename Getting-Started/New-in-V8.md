@@ -29,7 +29,7 @@ Giving the Umbraco Backoffice a new look, has given you a bigger workspace when 
 - The **Developer** section has been removed, and merged with the **Settings** sections
 - Templates, Document types, Data Types, Languages, etc. is now all in the same section: **Settings**
 - Health Check, Examine Management and the ModelsBuilder user interfaces have been moved to the **Settings** section
-- A brand new [Log Viewer interface in the backoffice](Backoffice/LogViewer/index-v8), that gives you easy access to browse through all your log entries
+- A brand new [Log Viewer interface in the backoffice](Backoffice/LogViewer), that gives you easy access to browse through all your log entries
 - Searching your backoffice has been made even easier: `CTRL + SPACE` opens a search field overlay, which gives you search results as you start typing
 
 ## Packages in V8
