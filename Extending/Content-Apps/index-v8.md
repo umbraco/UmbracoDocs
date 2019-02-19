@@ -92,7 +92,8 @@ angular.module("umbraco")
             var properties = node.variants[0].tabs[0].properties;
 
             vm.propertyWordCount = {};
-
+            
+            var index;
             for (index = 0; index < properties.length; ++index) {
                 var words = properties[index].value;
                 var wordCount = words.trim().split(/\s+/).length;
@@ -197,21 +198,21 @@ using Umbraco.Core.Models.Membership;
 namespace Umbraco.Web.UI
 {
 
-    public class YourContentAppComponent : IUserComposer
+    public class WordCounterAppComponent : IUserComposer
     {
         public void Compose(Composition composition)
         {
-            // Add our cake content app into the composition aka into the DI
-            composition.ContentApps().Append<CakeContentApp>();
+            // Add our word counter content app into the composition aka into the DI
+            composition.ContentApps().Append<WordCounterApp>();
         }
     }
 
-    public class CakeContentApp : IContentAppFactory
+    public class WordCounterApp : IContentAppFactory
     {
         public ContentApp GetContentAppFor(object source, IEnumerable<IReadOnlyUserGroup> userGroups)
         {
             // Some logic depending on the object type
-            // To show or hide YourContentApp
+            // To show or hide WordCounterApp
             switch (source)
             {
                 // Do not show content app if doctype/content type is a container
@@ -234,15 +235,15 @@ namespace Umbraco.Web.UI
             if (userGroups.Any(x => x.Alias.ToLowerInvariant() == "admin") == false)
                 return null;
 
-            var yourApp = new ContentApp
+            var wordCounterApp = new ContentApp
             {
-                Alias = "appContent",
-                Name = "YourApp",
-                Icon = "icon-cupcake",
-                View = "/App_Plugins/YourContentApp/yourcontentapp.html",
+                Alias = "wordCounter",
+                Name = "Word Counter",
+                Icon = "icon-calculator",
+                View = "/App_Plugins/WordCounter/wordcounter.html",
                 Weight = 0
             };
-            return yourApp;
+            return wordCounterApp;
         }
     }
 }
@@ -254,7 +255,7 @@ You will still need to add all of the files you added above but, because your `C
 {
     // array of files we want to inject into the application on app_start
     "javascript": [
-        "~/App_Plugins/MyContentApp/mycontentapp.controller.js"
+        "~/App_Plugins/WordCounter/wordcounter.controller.js"
     ]
 }
 ```
