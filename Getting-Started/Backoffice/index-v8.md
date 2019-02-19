@@ -14,13 +14,13 @@ When you go to the backoffice for the first time, you're presented with the logi
 
 [Read more about the login screen](Login/index-v8.md).
 
-## [Section](Sections/)
+## [Section](Sections/index-v8.md)
 A section in Umbraco is where you do specific tasks related to that section. For example Content, Settings and Users. You can navigate between the different sections of the backoffice by clicking the corresponding icon in the section menu. 
 
 ![Sections](images/highlight-sections.png "The Section menu is the horizontal menu located on the top of the backoffice.")
 *The __Section menu__ is the horizontal menu located on the top of the backoffice.*
 
-[Read more about the section menu](Sections/).
+[Read more about the section menu](Sections/index-v8.md).
 
 ## [Tree](../../Extending/Section-Trees/index.md)
 A tree is a hierarchical list of items related (and usually restricted) to a specific concept, like for example content or media. 
