@@ -49,7 +49,7 @@ An editor is what you use to edit different items within the backoffice. There a
 ## [Content](../Data/Defining-Content/index-v8.md)
 Content is what you find in the Content section. Each item in the tree is called a **content node**.  Each content node in the content tree consists of different fields, and each of them are defined by a Document Type.
 
-[Read more about Content](../Data/Defining-Content/index-v8.md)
+[Read more about Content](../Data/Defining-content/index-v8.md)
 
 ## Document Type
 Document Types define the types of content nodes that backoffice users can create in the content tree. Each Document Type contains different properties. Each property has a specific Data Type e.g. text or number.
