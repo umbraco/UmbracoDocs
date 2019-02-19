@@ -45,6 +45,10 @@ Umbraco now adds a **_Document Type_** to the tree under the node. Now we're goi
 
 Next, click the  **_Permissions_** icon and check **_Allow as root_**.  This will allow us to create a homepage at the root of the content tree (simple huh?). 
 
+:::note
+If none of your Document Types have the **_Allow as root_** checked, all of them will be allowed to be created at the root level.
+::: 
+
 ![Allow Homepage Document Type As Root](images/figure-9a-allow-document-type-as-root-v8.png)
 
 Next, we go back to the **_Design_** screen. Create a new group called "_Content_" (remembering to click **_Save_** after).
