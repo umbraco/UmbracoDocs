@@ -1,12 +1,12 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.0
 ---
 # Creating a Basic Website using Umbraco
 
 ## Introduction 
-This tutorial will take you step by step through an Umbraco website build. It will allow you to take any website "template" (e.g. flat HTML, CSS and JavaScript) and install it into a fresh Umbraco and wire up the sections that need content managing in Umbraco.  Umbraco is a seriously powerful CMS but many find the learning curve of installing a website from scratch a little too much – this tutorial aims to explain the mysteries!
+This tutorial will take you step by step through an Umbraco website build. It will allow you to take any website "template" (e.g. flat HTML, CSS and JavaScript) and install it into a fresh Umbraco site and wire up the sections that need content managing in Umbraco.  Umbraco is a powerful CMS but many find the learning curve of installing a website from scratch a little too much – this tutorial aims to explain the mysteries!
 
-We avoid using one of the starter kits as when it comes to building your own site as, though these are extremely useful, they won’t provide you with an understanding of the basics of Umbraco features like Document Types and Templates and how these work together to build pages. 
+We avoid using one of the starter kits when it comes to building your own site as, though these are extremely useful, they won’t provide you with an understanding of the basics of Umbraco. Features like Document Types and Templates and how these work together to build pages. 
 
 Each section in this tutorial builds on the last - it's recommended that you work through the subsections below in order. 
 
@@ -46,6 +46,8 @@ A simple solution for the template in the menu.
 ## [Articles Parent and Article Items](Articles-Parent-and-Article-Items)
 How to have a parent page that lists and links to child nodes automatically (e.g. an article list page containing an flexible/infinite number of articles - useful for Blogs or News pages). 
 
+## [Adding Language Variants](Adding-Language-Variants.md)
+At this point we have a basic site, but wouldn't it be cool if we could make the same site in another language? Read on to see how easy it is with Language Variants!
 
 ## [Conclusions and Where Next?](Conclusions-Where-Next)
 By this point you'll have a basic working site - but where next?  You've barely scratched the surface of the power of Umbraco - a few links to send you on your way!
