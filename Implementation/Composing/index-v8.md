@@ -192,7 +192,7 @@ namespace My.Website
 
 
 ## Attributes
-Umbraco has some useful C# attributes to decorate your composer classes to help with re-ordering and disabling other composers.
+Umbraco has some useful C# attributes to decorate your composer classes or Types used in collections.
 
 ### [ComposeBefore]` and `[ComposeAfter]`
 A finer-grain mechanism can then be used to refine the order of composition. Each composer can specify that it should compose before or after another composer, using the ComposeBefore and ComposeAfter attributes. For instance:
@@ -201,6 +201,9 @@ A finer-grain mechanism can then be used to refine the order of composition. Eac
 [ComposeBefore(typeof(ThatOtherComposer))]
 public class ThisComposer : IUserComposer
 {
+    public void Compose(Composition composition)
+    {
+    }
 }
 ```
 
