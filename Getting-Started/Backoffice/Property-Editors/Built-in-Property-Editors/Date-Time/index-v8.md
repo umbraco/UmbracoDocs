@@ -12,7 +12,12 @@ Displays a calendar UI for selecting dates which are saved as a DateTime value.
 
 ![Data Type Definition Example](images/date-time-v8.png)
 
-The only setting that is available for manipulating the Date property is to set a format. By default the format of the date in the Umbraco backoffice will be `YYYY-MM-DD HH:mm:ss`, but you can easily change this to something else. See [MomentJS.com](https://momentjs.com/) for the supported formats.
+There are two settings available for manipulating the DateTime property.
+
+
+One is to set a format. By default the format of the date in the Umbraco backoffice will be `YYYY-MM-DD HH:mm:ss`, but you can easily change this to something else. See [MomentJS.com](https://momentjs.com/) for the supported formats.
+
+The second setting is "Offset time". When enabling this setting the displayed time will be offset with the servers timerzone. This can be useful in cases where an editor is in a different timezone than the hosted server.
 
 ## Content Example
 
