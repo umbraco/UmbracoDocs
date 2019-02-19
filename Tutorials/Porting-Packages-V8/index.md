@@ -178,8 +178,6 @@ namespace MyProject.Components
 
 
 ## Update package.xml for Umbraco ZIP packages
-Currently the Umbraco packager in the backoffice is still undergoing changes (at the time of writing) and are unable to use the friendly packager UI in Umbraco.
-
 As version 7 and version 8 of Umbraco has breaking changes in its APIs and code, its recommended to ship a different version of your package to support V8 only. So update the package.xml in your Umbraco package zip to use the 8.0.0 version like so.
 
 ```xml
