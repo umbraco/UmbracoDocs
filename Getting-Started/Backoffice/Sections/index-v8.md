@@ -24,41 +24,49 @@ The Content section contains the content of the website. Content is displayed as
 In order to create content you must define it using Document Types.
 
 ## Media
-The Media section contains the media for the website. By default you can create folders and upload media files (images and PDFs). You can customize the existing media types or define your own in the Settings section.
+The Media section contains the media for the website. By default you can create folders and upload media files (images and PDFs). You can customize the existing media types or define your own from the Settings section.
 
 ## Settings
-The Settings section is where you can work with the website layout, language/localization and define media and content. The Settings tree consists of:  
+The Settings section is where you can work with the website layout files, languages, and define media and content types. In this section you can also find the Log Viewer to browse through your log files.
+
+The Settings tree consists of: 
 
 - Document Types
-- Templates (.cshtml files)
-- Partial views (.cshtml files)
-- Stylesheets (.css files)
-- Scripts (.js files)
-- Languages
-- Dictionary
 - Media Types
-
-## Developer
-In the developer section you work with packages, data types, macros, relations, XSLT and Razor files. The developer tree consists of:
-
-- Packages
+- Member Types
 - Data Types
 - Macros
 - Relation Types
-- XSLT files
-- Partial View Macro Files
+- Log Viewer
+- Languages
+- Content Tempaltes
+- Templates (`.cshtml` files)
+- Partial views (`.cshtml` files)
+- Partial View Macro Files (`.cshtml` files)
+- Stylesheets (`.css` files)
+- Scripts (`.js` files)
 
-## Members
-Manage, create and customize members, member types and member groups.
+## Packages
+In this section you can browse and install packages into your Umbraco solution. You can also get an overview of all installed packages as well as uninstall packages you do no longer need.
 
 ## Users
 Manage, create and customize backoffice users and user groups.
 
+## Members
+Manage, create and customize members and member groups.
+
 ## Forms
 You can install Umbraco Forms directly from the backoffice by clicking the install button. Once installed this section is where you create and manage your forms.
 
-## Help
-When the help section is opened you get a link to video tutorials about the section you're in.
+## Translation
+This is the section where you create and manage your dictionary items.
 
-## More information
+## Help sections
+In the top-right corner you'll find a search tool, which is also accesible by hitting `CTRL + Space` on your keyboard.
+
+Next to the search tool, there's a help sections, where you can find backoffice tours as well as links to Umbraco resources such as documentation and UmbracoTV.
+
+There's also a small user section with shortcuts to edit the user that's currently logged in, and view most recent activities.
+
+## Custom Sections
 As well as the default sections that come with Umbraco, you can create your own [Custom Sections](../../../Extending/Section-Trees/index.md)
