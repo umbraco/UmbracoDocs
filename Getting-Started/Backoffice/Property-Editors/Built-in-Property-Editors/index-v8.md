@@ -5,6 +5,11 @@ versionFrom: 8.0.0
 
 This page contains a list of all the built-in Umbraco property editors and a short description of what they do:
 
+## [Checkbox (True/False)](True-False.md)
+`Alias: Umbraco.TrueFalse`
+
+A simple checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
+
 ## [Checkbox list](CheckBox-List.md)
 `Alias: Umbraco.CheckBoxList`
 
@@ -20,12 +25,7 @@ Adds a list of approved colours which can be selected by clicking.
 
 The content picker allows the content editor to pick a specific node from the content structure.
 
-## [Date](Date/index-v8)
-`Alias: Umbraco.Date`
-
-Displays a calendar UI for selecting dates
-
-## [Date/Time](Date-Time.md)
+## [Date/Time](Date-Time/index-v8)
 `Alias: Umbraco.DateTime`
 
 Displays a calendar UI for selecting dates and time
@@ -142,11 +142,6 @@ A simple textarea control to input text.
 `Alias: Umbraco.Textbox`
 
 A normal html input text field.
-
-## [True/False](True-False.md)
-`Alias: Umbraco.TrueFalse`
-
-A simple checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
 
 ## User picker
 `Alias: Umbraco.UserPicker`
