@@ -46,7 +46,7 @@ A dashboard is the main view you are presented with when entering a section with
 ## Editor
 An editor is what you use to edit different items within the backoffice. There are editors specific to editing stylesheets, there are editors for editing Macros and so forth.
 
-## [Content](../Data/Defining-Content/index-v8.md)
+## [Content](../Data/Defining-content/index-v8.md)
 Content is what you find in the Content section. Each item in the tree is called a **content node**.  Each content node in the content tree consists of different fields, and each of them are defined by a Document Type.
 
 [Read more about Content](../Data/Defining-content/index-v8.md)
