@@ -7,7 +7,7 @@ versionFrom: 7.0.0
 `Alias: Umbraco.ColorPicker`
 
 `Returns: String (Hexadecimal)`
-`Returns: Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter+PickedColor (When using labels)`
+`Returns: Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor (When using labels)`
 
 The Color picker allows you to set some predetermined colors that the editor can choose between.
 
