@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # MediaService Events
 
 The MediaService class implements IMediaService. It provides easy access to operations involving IMedia.

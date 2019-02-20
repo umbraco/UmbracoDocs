@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Web.config
 
 _This section defines the appSetting parameters found in the web.config_

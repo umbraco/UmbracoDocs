@@ -1,10 +1,14 @@
+---
+versionFrom: 6.0.0
+---
+
 # Template
 
 **Applies to Umbraco 6.x and newer**
 
 Intro text here
 
- * **Namespace:** `Umbraco.Core.Models` 
+ * **Namespace:** `Umbraco.Core.Models`
  * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Understanding Umbraco the BootManager
 
 After IIS started the W3 process, Umbraco will begin launching.  There is a bootstrapper for the `Umbraco Application` which initializes all objects.

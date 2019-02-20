@@ -1,4 +1,9 @@
+---
+versionFrom: 7.0.0
+---
+
 # Examine Configuration
+
 _This shows all of the configuration options for Examine. None of these options are actually required and if not specified will just use the Examine default values._
 
 ```xml

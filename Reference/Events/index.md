@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Using events
 
 Umbraco uses .Net events to allow you to hook into the workflow processes for the backoffice. For example you might want to execute some code every time a page is published. Events allow you to do that.

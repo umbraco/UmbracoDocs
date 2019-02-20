@@ -1,3 +1,7 @@
+---
+versionFrom: 6.0.0
+---
+
 # MediaType
 
 :::note

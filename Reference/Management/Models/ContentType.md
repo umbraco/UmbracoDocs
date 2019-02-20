@@ -1,3 +1,7 @@
+---
+versionFrom: 6.0.0
+---
+
 # ContentType
 
 **Applies to Umbraco 6.x and newer**
