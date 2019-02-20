@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Embedded Media Providers
 
 The Rich Text Editor in Umbraco has an 'Embed' button, that when pressed, slides open a panel to enable editors to paste the Url of a third-party media resource to embed in content.

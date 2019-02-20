@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Trees
 
 Trees are also in a [config file located: `~/Config/trees.config`](../../Reference/Config/trees/index.md). Each config item defines a tree and for what section it belongs to. For example, this is the definition of the user tree:

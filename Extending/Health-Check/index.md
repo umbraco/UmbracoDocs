@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Health Check
 
 The developer section of the Umbraco backoffice holds a dashboard named "Health Check". It is a handy list of checks to see if your Umbraco installation is configured according to best practices. It's possible to add your custom built health checks.  
