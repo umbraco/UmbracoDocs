@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Populate Select box with years
 
 A colleague asked me or it was possible to populate a Dropdown with years, to help him i wrote a small snippet, which is maybe also useful for other people.

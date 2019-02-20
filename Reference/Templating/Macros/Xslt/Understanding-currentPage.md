@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Understanding "currentPage"
 As mentioned on the previous page, the currentPage parameter is important for us in Umbraco.  It is the complete XML document of the published site, and is how we reference the data stored in each document.  By default, the context of the XML document is set to the requested page.
 

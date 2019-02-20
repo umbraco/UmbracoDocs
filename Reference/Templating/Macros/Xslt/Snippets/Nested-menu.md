@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Nested menu
 I created this xslt to render a nested menu like this, the nice part is that it always starts with the parent at level 3 (even if you are at a deeper level).
 

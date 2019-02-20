@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Some XSLT Logic
 XSLT has some logic commands that are useful to processing criteria based output.  These commands are the "if" and "choose" commands.
 

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Caching XSLT macro result
 
 If you are using a user control or xslt, and have the macro set to

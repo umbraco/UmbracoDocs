@@ -1,9 +1,13 @@
+---
+versionFrom: 4.0.1
+---
+
 # Umbraco.library v4.0.1
 
 umbraco.library is a set of helpers you can use from XSLT, to interact with an Umbraco installation.
 
 [See UmbracoHelper for methods to use with MVC Razor Views](../../../../../Reference/Querying/UmbracoHelper/index.md).
- 
+
 ## Available Methods
 
 * AddJquery()

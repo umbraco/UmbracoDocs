@@ -1,3 +1,8 @@
+---
+versionFrom: 4.5.0
+verionRemoved: 8.0.0
+---
+
 # 4.5 XML Schema
 
 This sections covers the new XML Schema that is included in Umbraco version 4.5 and above. By default in version 4.5 of Umbraco it will use the

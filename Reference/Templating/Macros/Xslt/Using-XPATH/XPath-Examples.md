@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # XPath Examples
 
 Below are some simple examples that demonstrate the use of XPath. All examples are evaluated against the following XML:
