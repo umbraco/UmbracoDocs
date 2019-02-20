@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Adding configuration to a property editor
 
 ## Overview
