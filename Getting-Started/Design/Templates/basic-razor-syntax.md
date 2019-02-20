@@ -3,9 +3,11 @@ versionFrom: 7.0.0
 ---
 
 # Basic Razor Syntax
+
 _Shows how to perform common logical tasks in Razor like if/else, foreach loops, switch statements and using the @ character to separate code and markup._
 
 ## The @ symbol
+
 The @ symbol is used in Razor initiate code, and tell the compiler where to start interpreting code, instead of just return the contents of the file as text. Using a single character for this separation, results in cleaner, compact code which is easier to read.
 
 ```csharp

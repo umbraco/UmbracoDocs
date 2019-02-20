@@ -3,9 +3,11 @@ versionFrom: 7.0.0
 ---
 
 # Package Manifest
+
 The package.manifest JSON file format is used to describe one or more custom Umbraco property editors, grid editors or parameter editors. This page outlines the file format and properties found in the JSON.
 
 ## Sample Manifest
+
 This is a sample manifest, it is always stored in a folder in `/App_Plugins/{YourPackageName}`, with the name `package.manifest`
 
 ```json

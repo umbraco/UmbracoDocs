@@ -1,4 +1,3 @@
-versionFrom: 7.6.0
 # File and folder permissions
 
 _To ensure a stable and smoothly running Umbraco installation, these permissions need to be set correctly. These permissions should be setup before or during the installation of Umbraco. 
