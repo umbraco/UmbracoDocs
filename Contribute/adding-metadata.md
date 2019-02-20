@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Annotating a document with meta data
 
 The documentation markdown files are allowed to contain meta data.  This is done by adding [YAML](https://en.wikipedia.org/wiki/YAML) at the top of the document.
