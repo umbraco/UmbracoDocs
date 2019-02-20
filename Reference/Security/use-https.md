@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # HTTPS
 
 We highly encourage the use of HTTPS on Umbraco websites especially in production environments. By using HTTPS you greatly improve the security of your website.
