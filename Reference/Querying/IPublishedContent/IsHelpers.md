@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # IPublishedContent IsHelpers
 The IsHelper methods are a set of extension methods for IPublishedContent to help perform quick conditional queries against IPublishedContent nodes in a collection.
 
