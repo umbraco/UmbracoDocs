@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Using IoC with Umbraco
 
 _This section will show you how to setup Ioc/Dependency Injection with your Umbraco installation. The examples will use Autofac but you can use whatever you want_ 
