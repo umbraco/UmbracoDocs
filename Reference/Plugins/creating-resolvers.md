@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Creating Resolvers
 
 _A Resolver should be created for any plugin type.  Resolvers are the standard way to retrieve/create/register plugin types._ 

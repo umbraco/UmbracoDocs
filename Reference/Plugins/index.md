@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Plugins
 
 _The term 'Plugins' is referring to any types in Umbraco that are found in assemblies that are used to extend and/or enhance the Umbraco application. Plugins can also be added directly registered to their specific 'Resolver' if the plugin type is not public or if the Resolver type doesn't support finding types in assemblies._ 
