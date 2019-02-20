@@ -1,3 +1,7 @@
+---
+versionFrom: 6.2.0
+---
+
 # MemberGroupService
 
 :::note

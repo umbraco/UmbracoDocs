@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # UserService
 
 **Applies to Umbraco 6.x and newer**

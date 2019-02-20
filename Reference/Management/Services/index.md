@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Services Reference
 
 _The services layer of the Umbraco API is used to interact with persisted data, all services can be accessed via the ServiceContext_
