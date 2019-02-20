@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Using Umbraco's service APIs
 
 _Whenever you need to modify an entity that Umbraco stores in the database, there is a service API available to help you. This means that you can create, update and delete any of the core Umbraco entities directly from your custom code._

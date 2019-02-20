@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Color Picker
 
 `Alias: Umbraco.ColorPicker`

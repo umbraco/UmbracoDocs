@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Installation
 
 The easiest way to get the latest version of Umbraco up and running is with VS Code.

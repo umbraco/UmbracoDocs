@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Server setup
 *This section describes different ways of setting up servers for use with Umbraco*
 

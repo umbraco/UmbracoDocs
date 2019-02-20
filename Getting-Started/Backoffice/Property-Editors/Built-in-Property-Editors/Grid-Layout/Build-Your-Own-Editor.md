@@ -1,4 +1,9 @@
+---
+versionFrom: 7.0.0
+---
+
 # Build your own editor
+
 Create a file in `/app_plugins/yourpackage/editor.html` and add the following to the editor.html file: 
 
 ```html

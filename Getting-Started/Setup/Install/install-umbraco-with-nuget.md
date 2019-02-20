@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Install Umbraco with NuGet
 
 _Follow these steps to do a full install of Umbraco with NuGet._

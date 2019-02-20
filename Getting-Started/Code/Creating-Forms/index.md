@@ -1,4 +1,9 @@
+---
+versionFrom: 7.0.0
+---
+
 # Creating forms
+
 Creating forms requires that you know your way around .NET MVC. So if you are familiar with adding view models, views and controllers you are ready to make your first form.
 
 :::note
@@ -8,6 +13,7 @@ You can also use [Umbraco forms](https://umbraco.com/products/umbraco-forms/). I
 In this example we'll create a basic contact form contain name, email and message field.
 
 ### Creating the view model
+
 First we're going to create the model for the contact form by adding a new class to the `/Models` folder. Let's call it `ContactFormViewModel.cs`
 
 ```csharp

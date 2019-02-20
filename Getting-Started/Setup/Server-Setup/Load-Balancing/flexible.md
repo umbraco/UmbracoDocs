@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Flexible load balancing
 
 _Information on how to deploy Umbraco in a flexible Load Balanced scenario and other

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Setup
 *How to install and configure your Umbraco installation*
 

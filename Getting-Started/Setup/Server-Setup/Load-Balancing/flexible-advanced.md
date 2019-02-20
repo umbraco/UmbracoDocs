@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Advanced techniques with Flexible Load Balancing
 
 _This describes some more advanced techniques that you could achieve with flexible load balancing_

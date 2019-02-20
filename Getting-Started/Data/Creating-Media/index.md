@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Creating media
 Media in Umbraco is handled in much the same way as content. Instead of defining Document Types you define Media Types that act as the base for media items. Unlike with normal content there are a three default Media Types:
 
