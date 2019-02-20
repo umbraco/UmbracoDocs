@@ -1,7 +1,3 @@
----
-versionTo: 7
----
-
 # Themes
 As of version 6.0.0 and newer Umbraco Forms supports Themes, allowing forms to be customised in a much simpler manner than found in version 4.x.
 
@@ -56,13 +52,6 @@ Add a JavaScript file path to include on form render
 
 ```csharp
 @Html.AddFormThemeScriptFile(Model, "~/App_Plugins/UmbracoForms/Assets/Themes/Default/umbracoforms-dependencies.js")
-```
-
-### AddFormThemeScriptCommand
-Add a JavaScript command to execute when the form is rendering, used to properly initialize fields on form render
-
-```csharp
-@Html.AddFormThemeScriptCommand(Model, "alert('hello')")
 ```
 
 ### SetFormFieldClass
