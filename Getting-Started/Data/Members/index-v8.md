@@ -39,31 +39,29 @@ You will see that the __Membership__ group is added automatically to any Member 
 
 ![Configure property settings](images/member-type-property-settings.png)
 
+It is possible to add more groups and more properties to each of the Member Types you create, as well as the default Member Type.
+
 ## Creating Member Groups
 Member Groups define roles for your members that can be used for role-based protection. A member can be in multiple groups.
 
-![Creating a Member Group](images/Member-Groups-Create.jpg)
+![Creating a Member Group](images/Member-group.png)
 
 To create a new Member Group click the menu icon next to the __Member Groups__ node in the Members section. Choose __Create__, name the group, and save the group.
 
 ### Assigning a Member Group
-To assign a member to a specific group find the member you wish to assign and go to the __Properties__ tab. Under the Member Group property there are two columns:
+To assign a member to a specific group find the member you wish to assign and find the __Properties__ group. Here you can see which groups the member is already part of, as well as add the member to more groups or remove the member from already assigned groups:
 
-![Assigning a Member Group](images/Member-Groups-Assign.jpg)
-
-__NOT A MEMBER OF GROUP(S):__ Lists all the groups that the member is not a part of. To assign a group to the member simply click it and it will move to the other column.
-
-__MEMBER OF GROUP(S):__ Lists all the groups that the member is a part of. To remove the member from a group simply click it and it will move to the other column.
+![Assigning a Member Group](images/assign-member-group.png)
 
 # Sensitive data
-Umbraco 7.9.0 provides the ability to mark members as sensitive. A sensitive member's data will not be displayed to backoffice users unless they have appropriate permissions.
+You will have the option to mark member properties as sensitive. Sensitive properties on a members data will not be displayed to backoffice users unless they have appropriate permissions.
 
 More information can be found under [security](../../../Reference/Security/#sensitive-data).
 
 # Technical
 As a developer you are able to leverage your website easily when you build on the Members section of Umbraco.
 Although the Members section is by default in the Umbraco backoffice, you will be able to implement some work on the front end of your website.
-Members come from a custom ASP.NET membership provider, while Member Groups come from a custom Role provider. Both are defined in the web.config.
+Members come from a custom ASP.NET membership provider, while Member Groups come from a custom Role provider. Both are defined in the `web.config`.
 You can find out more about the services methods in the reference section of the documentation by following the links below.
 
 ### More information
