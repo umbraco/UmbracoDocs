@@ -8,7 +8,7 @@ A fundamental principle in Umbraco is that all content types have a definition (
 ## [Defining Content](Defining-content)
 Defining Documents Types, adding properties and creating content.
 
-## [Creating Media](Creating-Media/)
+## [Creating Media](Creating-Media)
 Defining Media Types and uploading files to the media section, using upload fields and image cropper.
 
 ## [Creating Members](Members/)
