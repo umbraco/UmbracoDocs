@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Umbraco.Web.UI.Client project structure
 
 _This is the AngularJS backoffice UI project_

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Solution and project structure
 
 _How the Visual Studio solution is structured and what is the functionality of each project. This also describes the end goal of how we'd like the solution structured._
