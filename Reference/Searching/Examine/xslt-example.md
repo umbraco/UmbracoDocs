@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Using Examine with XSLT
 
 The XSLT implementation of Examine requires a little bit of setup. The steps are outlined below.

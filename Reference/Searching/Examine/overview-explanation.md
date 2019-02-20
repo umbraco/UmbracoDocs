@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Overview & Explanation - "Examining Examine by Peter Gregory"
 
 <small>Originally published on the Umbraco blog - [Examining Examine: Friday, September 16, 2011 by Peter Gregory](https://umbraco.com/follow-us/blog-archive/2011/9/16/examining-examine.aspx)</small>
