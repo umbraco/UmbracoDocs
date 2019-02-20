@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # View/Razor Examples
 
 _Lots of examples of using various techniques to render data in a view_ 
