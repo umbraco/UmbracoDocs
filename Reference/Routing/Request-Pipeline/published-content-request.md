@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Published Content Request
 
 The `PublishedContentRequest` object represents the request which Umbraco must handle.  

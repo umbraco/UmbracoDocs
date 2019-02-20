@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Outbound request pipeline
 The **outbound pipeline** consists out of the following steps:
 

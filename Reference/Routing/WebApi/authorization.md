@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Umbraco Api - Authorization
 
 _This section will describe how to secure your Umbraco Api controllers based on a users membership_ 
@@ -12,7 +16,7 @@ The `UmbracoAuthorizedApiController` is automatically routed.  Check out the [ro
 
 ### Using UmbracoAuthorizeAttribute
 
-To secure your controller based on backoffice membership use the attribute: `Umbraco.Web.WebApi.UmbracoAuthorizeAttribute`. 
+To secure your controller based on backoffice membership use the attribute: `Umbraco.Web.WebApi.UmbracoAuthorizeAttribute`.
 
 *It's important to note the namespace since we have another class called UmbracoAuthorizeAttribute in a different namespace that is used for MVC.*
 

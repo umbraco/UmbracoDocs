@@ -1,7 +1,11 @@
+---
+versionFrom: 6.0.0
+---
+
 # IIS Rewrite Rules
 
 If you require static rewrites you should use IIS Rewrite rules. This is an IIS plugin that exists outside of Umbraco 
-but should be installed by the vast majority of hosting providers. [There is a significant amount of documentation](https://www.iis.net/learn/extensions/url-rewrite-module) 
+but should be installed by the vast majority of hosting providers. [There is a significant amount of documentation](https://www.iis.net/learn/extensions/url-rewrite-module)
 for doing static rewrites with IIS Rewrite rules. This documentation will list some basic examples with links to some reference sites.
 
 ## Enabling the rules

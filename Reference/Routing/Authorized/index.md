@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Routing requirements for backoffice authentication
 
 In order for Umbraco to authentication a request for the backoffice, the routing needs to be specific. Any URL that routes to :

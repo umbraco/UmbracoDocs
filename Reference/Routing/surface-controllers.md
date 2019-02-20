@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Surface Controllers
 
 _A SurfaceController is an MVC controller that interacts with the front-end rendering of an UmbracoPage. They can be used for rendering MVC Child Actions and for handling form data submissions. SurfaceControllers are auto-routed meaning that you don't have to add/create your own routes for these controllers to work._

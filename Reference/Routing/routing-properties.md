@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Special Property Type aliases for routing
 
 _There are a few special/reserved Umbraco Property Type aliases that can be used which can easily 
