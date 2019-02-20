@@ -78,7 +78,7 @@ versionFrom: 7.0.0
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
-				<h4 class="text-right"><a href="Backoffice/">Backoffice overview</a></h4>
+				<h4 class="text-right"><a href="Backoffice/index-v7.md">Backoffice overview</a></h4>
 				<small>Details of all the common terms and concepts that are used throughout the Umbraco backoffice</small>
 			</div>
 			<!--<div class="col-sm-6">
@@ -123,7 +123,7 @@ versionFrom: 7.0.0
 				<small>Using the backoffice to create data</small>
 			</div>
 			<div class="col-sm-6">
-				<h5><a href="Data/Defining-content/">Defining content</a></h5>
+				<h5><a href="Data/Defining-content/index-v7.md">Defining content</a></h5>
 				<small>Setting up content types, defining fields and creating your first content</small>
 			</div>
 			<div class="col-sm-6">
@@ -168,7 +168,7 @@ versionFrom: 7.0.0
 				<small>Creating and managing templates</small>
 			</div>
 			<div class="col-sm-6">
-				<h5><a href="Design/Rendering-Content/">Rendering content</a></h5>
+				<h5><a href="Design/Rendering-Content/index-v7.md">Rendering content</a></h5>
 				<small>How to query and render published content</small>
 			</div>
 			<div class="col-sm-6">

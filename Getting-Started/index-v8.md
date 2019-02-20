@@ -42,7 +42,7 @@ Learn more about the new features in Umbraco 8.
 				<small>Create templates and views with your own markup and use Razor to render content</small>
 			</div>
 			<div class="col-sm-6">
-				<h5><a href="Design/Rendering-Content/index-v8">Rendering content</a></h5>
+				<h5><a href="Design/Rendering-Content">Rendering content</a></h5>
 				<small>Render the values of the current page or the result of a query against the content cache.</small>
 			</div>
 		</div>
@@ -68,7 +68,7 @@ Learn more about the new features in Umbraco 8.
 				<small>Details of all the common terms and concepts that are used throughout the Umbraco backoffice</small>
 			</div>
 			<div class="col-sm-6">
-				<h5><a href="Backoffice/LogViewer/index-v8">Log viewer</a></h5>
+				<h5><a href="Backoffice/LogViewer">Log viewer</a></h5>
 				<small>Learn more about how to use the Log viewer in the backoffice, to view log entries.</small>
 			</div>
 			<div class="col-sm-6">
@@ -98,7 +98,7 @@ Learn more about the new features in Umbraco 8.
 				<small>Using the backoffice to create data</small>
 			</div>
 			<div class="col-sm-6">
-				<h5><a href="Data/Defining-content/index-v8">Defining content</a></h5>
+				<h5><a href="Data/Defining-content">Defining content</a></h5>
 				<small>Setting up content types, defining fields and creating your first content</small>
 			</div>
       	</div>
@@ -123,7 +123,7 @@ Learn more about the new features in Umbraco 8.
 				<h4 class="text-right">Code</h4>
 			</div>
 			<div class="col-sm-6">
-				<h5><a href="Code/Debugging/Logging/index-v8">Logging</a></h5>
+				<h5><a href="Code/Debugging/Logging">Logging</a></h5>
 				<small>Understanding how logging works, and learn to setup custom logging.</small>
 			</div>
 		</div>
@@ -178,7 +178,7 @@ Learn more about the new features in Umbraco 8.
 				<small>Learn how to convert your Umbraco 7 packages to Umbraco 8.</small>
 			</div>
 			<div class="col-sm-6">
-				<h5><a href="../Tutorials/Creating-Basic-Site/index-v8">Create a basic Umbraco site</a></h5>
+				<h5><a href="../Tutorials/Creating-Basic-Site">Create a basic Umbraco site</a></h5>
 				<small>This tutorial will take you through the steps of building a basic website with Umbraco.</small>
 			</div>
 		</div>
