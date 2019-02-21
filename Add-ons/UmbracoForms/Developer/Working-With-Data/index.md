@@ -1,5 +1,5 @@
 ---
-versionTo: 7
+versionTo: 7.0.0
 ---
 
 # Working with Record data
