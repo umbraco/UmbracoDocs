@@ -1,3 +1,7 @@
+---
+versionFrom: 8.0.0
+---
+
 # Installation and upgrading
 
 ## [Extending Umbraco with the Forms section](Install)
