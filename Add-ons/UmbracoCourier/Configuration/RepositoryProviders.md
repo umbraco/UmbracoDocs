@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+versionRemoved: 8.0.0
+---
+
 # Repository Providers
 
 A repository provider is a location to store the files Courier produces when data is serialized from objects to files. 

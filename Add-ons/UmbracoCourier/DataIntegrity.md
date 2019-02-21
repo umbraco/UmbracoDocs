@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+versionRemoved: 8.0.0
+---
+
 # Courier data integrity fix
 We recently discovered a bug introduced in Courier 2.51.0, which has now been fixed in 2.51.4 and all versions above 2.51.4.  
 This bug affects people who use inherited document types or compositions on their document types.

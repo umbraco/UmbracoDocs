@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+versionRemoved: 8.0.0
+---
+
 # Packaging, Extracting and transferring
 
 To understand how Courier works, and to use its API, you must know and understand 3 central concepts Courier uses:
