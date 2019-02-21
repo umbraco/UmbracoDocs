@@ -33,7 +33,7 @@ You can create your own Member Types and add properties and tabs just as with Do
 
 Go to the __Settings__ section, right-click __Member Types__ and select __Create__. You will now be taken to the Member Type editor that is used to define and edit the Member Type. Name the new Member Type and click __Save__.
 
-![Member Type Editor](images/member-type-editor.png)
+![Member Type Editor](images/Member-Type-Editor.png)
 
 You will see that the __Membership__ group is added automatically to any Member Types you create. This group includes all the default Member Type properties listed above. The properties are locked, which means you cannot remove them, but you can still configure the settings for each property:
 
