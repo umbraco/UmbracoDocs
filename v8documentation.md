@@ -14,6 +14,8 @@ If you feel something is missing here or you want to help out documenting some o
 
 ## Finished Umbraco 8 Documentation:
 
+* [Creating Media](Getting-Started/Data/Creating-Media/index-v8.md)
+* [Working with Members](Getting-Started/Data/Members/index-v8.md)
 * [Umbraco Backoffice](Getting-Started/Backoffice/index-v8)
     * [Sections](Getting-Started/Backoffice/Sections/index-v8)
     * [The login screen](Getting-Started/Backoffice/Login/index-v8)
