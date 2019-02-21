@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Keeping Umbraco Forms up to date
 Forms makes it easy to stay in sync with the latest releases, so you can take advantage of new features and bug fixes.
 

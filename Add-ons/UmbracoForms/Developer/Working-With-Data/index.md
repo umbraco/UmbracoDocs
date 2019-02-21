@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Working with Record data
 
 Umbraco Forms includes some helper methods that return dynamic objects, which makes it easy to output records in your templates using razor.
