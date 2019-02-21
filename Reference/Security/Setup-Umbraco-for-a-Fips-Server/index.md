@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Setup Umbraco for a FIPS Compliant Server
 
 _This tutorial walks through configuring Umbraco and Lucene to be FIPS compliant and serve up websites on a server with FIPS enabled._

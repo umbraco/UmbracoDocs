@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Coding standards and naming conventions
 
 _Coding standards and naming conventions for all languages used in the Umbraco core_

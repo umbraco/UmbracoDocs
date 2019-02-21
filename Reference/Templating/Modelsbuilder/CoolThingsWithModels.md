@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Cool things you can do with strongly-typed models...
 
 ## Declarative style in Razor

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Get Related Nodes
 Get nodes related to the current page
 

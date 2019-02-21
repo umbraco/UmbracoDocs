@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Customizing the "Links" box
 
 For a content item, Umbraco will show a **Links** box under the **Info** tab. By default, this box will show one or more links to content item.

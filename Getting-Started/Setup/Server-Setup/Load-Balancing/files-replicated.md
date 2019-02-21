@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # File Storage with File Replication
 
 _documentation about setting up load balanced environments using file replication_

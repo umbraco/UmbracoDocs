@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # jQuery coding guidelines
 
 _Ensure that you have read the [JavaScript Guidelines](js-guidelines.md) document before continuing. As specified in the [JavaScript Guidelines](js-guidelines.md) document, method names are named in "camelCase" and therefore jQuery plugins (since they are methods) are named as "camelCase"._

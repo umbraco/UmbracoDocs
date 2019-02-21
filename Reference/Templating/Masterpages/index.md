@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Masterpages
 
 _Umbraco (since version 4) uses [ASP.NET master pages](https://www.asp.net/web-forms/tutorials/master-pages), so if you are familiar with these you will find this a breeze._

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Get a reference to a user
 
 ### Getting a single user

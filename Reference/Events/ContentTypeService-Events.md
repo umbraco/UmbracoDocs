@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # ContentTypeService Events#
 
 The ContentTypeService class implements IContentTypeService. It provides easy access to operations involving IContentType and IMediaType.

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # JavaScript coding standards and guidelines
 
 _All JavaScript in the Umbraco core should adhere to these guidelines. The legacy JavaScript code in the core doesn't adhere to these guidelines but should be refactored so that it does._

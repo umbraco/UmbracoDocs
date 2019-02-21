@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Common Pitfalls & Anti-Patterns
 
 _This section is ultra important! It will describe many common pitfalls that developers fall in to. 

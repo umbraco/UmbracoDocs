@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Umbraco Api
 
 _This section will describe how to work with Web Api in Umbraco to easily create REST services_

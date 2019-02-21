@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Using XPath
 Now that we know what is stored in the XML, and know where the XML is in our XSLT, we can now try to retrieve the data, and format it to our needs.
 

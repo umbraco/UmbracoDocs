@@ -4,32 +4,38 @@ versionFrom: 8.0.0
 ---
 
 # Log Viewer
+
 From version 8 we are now shipping a built in Log Viewer feature, to allow you to filter and view log entries and perform much more complex search queries to help you find the log entries that you are interested in your Umbraco site.
 You can find the log viewer in the settings section.
 
 ## Benefits
+
 Have you ever wanted to find all log entries which contains the same request ID or find all items in the log where a property called duration is greater than 1000ms?
 With the power of structured logging and a query language we are able to search and find log items for very specific scenarios. When debugging the client site you should now have more power to see and find patterns in your log files and get rid of those pesky errors.
 
 ## Example queries
+
 Here are a handful example queries to get you started, however the saved searches contain some further examples. For more details on the syntax head over to the https://github.com/serilog/serilog-filters-expressions project.
 
-**Find all logs that are from the namespace 'Umbraco.Core'**<br/>
-`StartsWith(SourceContext, 'Umbraco.Core')`<br/>
+**Find all logs that are from the namespace 'Umbraco.Core'**
+`StartsWith(SourceContext, 'Umbraco.Core')`
 
-**Find all logs that have the property 'Duration' and the duration is greater than 1000ms**<br/>
-`Has(Duration) and Duration > 1000`<br/>
+**Find all logs that have the property 'Duration' and the duration is greater than 1000ms**
+`Has(Duration) and Duration > 1000`
 
-**Find all logs where the message has localhost in it with SQL like**<br/>
-`@Message like '%localhost%'`<br/>
+**Find all logs where the message has localhost in it with SQL like**
+`@Message like '%localhost%'`
 
 ## Saved Searches
+
 When writing a custom query that you wish to use often, it is possible to save this and use the dropdown to re-use your saved search. To add a new saved search, use the search box to type your query and click the star icon. In doing so you can give it a friendly name. The default location of the saved searches are persisted as JSON to the following file: `/config/logviewer.searches.config.js`
 
 ## Implementing your own Log Viewer
+
 With the flexibility of Umbraco, we give you the power to implement your own `ILogViewer` where you are able to fetch logs and the saved searched from a different location such as Azure table storage.
 
 ### Create your own implementation
+
 To easily do this we can implement a base class `LogViewerSourceBase` from `Umbraco.Core.Logging.Viewer` like so.
 *Note:* This uses the `WindowsAzure.Storage` nuget package
 

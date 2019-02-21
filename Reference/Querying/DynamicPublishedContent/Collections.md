@@ -1,13 +1,19 @@
+---
+versionFrom: 7.0.0
+---
+
 # IPublishedContent Collections
 
-NOTE: All methods available on IPublishedContent are also available on DynamicPublishedContent. 
-The documentation on this page consists only of the specialized methods available on DynamicPublishedContent, 
-to see all methods available for IPublishedContent, see [this documentation](../IPublishedContent/Collections.md). 
+NOTE: All methods available on IPublishedContent are also available on DynamicPublishedContent.
+The documentation on this page consists only of the specialized methods available on DynamicPublishedContent,
+to see all methods available for IPublishedContent, see [this documentation](../IPublishedContent/Collections.md).
 
 ## Collections
+
 All collections returned by Model are of type DynamicPublishedContentList, which itself has a collection of properties.
 
 ### .[DocumentTypeAlias]s (Pluralised Collections)
+
 Returns the children of the current page, matching the Document type alias
 
 **Get all children of type with alias: 'textPage'**
@@ -15,7 +21,7 @@ Returns the children of the current page, matching the Document type alias
 ```csharp
 @var collection = CurrentPage.TextPages
 ```
-	
+
 **Get the first child page of type with alias: 'homePage'**
 
 ```csharp

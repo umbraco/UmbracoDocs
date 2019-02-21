@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # File Storage on SAN/NAS/Clustered File Server/Network Share
 
 _documentation about setting up load balanced environments using shared file systems_

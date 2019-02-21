@@ -1,4 +1,8 @@
-# Working with the code
+---
+versionFrom: 7.0.0
+---
+
+ Working with the code
 
 _Guidelines for creating and updating code in the Umbraco core_
 

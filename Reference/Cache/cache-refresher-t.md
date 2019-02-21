@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # ICacheRefresher&lt;T&gt;
 
 Cache refreshers inherit from `CacheRefresherBase`. This base class contains methods which ensure the correct 'CacheUpdated' Cache Refresher Event is triggered by your Custom ICacheRefresher implementation and fired on each server configured in your load balancing environment.

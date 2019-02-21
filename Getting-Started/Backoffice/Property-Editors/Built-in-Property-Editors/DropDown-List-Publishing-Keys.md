@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # (Obsolete) Dropdown List, Publishing Keys
 
 `Returns: Int`

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Tag cloud
 
 If you use the Tag data type in Umbraco V4, you can easily make an tag-cloud in XSLT:

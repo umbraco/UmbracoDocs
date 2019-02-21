@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Upgrading existing installs
 
 _Covers the steps to upgrade your copy of Umbraco to a newer version._

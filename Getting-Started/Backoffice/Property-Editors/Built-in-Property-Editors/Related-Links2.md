@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Related Links
 
 `Returns: RelatedLinks`
@@ -8,7 +12,7 @@ Related Links allows an editor to easily add an array of links. These can either
 
 ![Related Links Data Type Definition](images/Related-Links2-DataType.png)
 
-## Content Example 
+## Content Example
 
 ![Media Picker Content](images/Related-Links2-Content.png)
 

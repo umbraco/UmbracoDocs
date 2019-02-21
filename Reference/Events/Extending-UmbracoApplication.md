@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 ## Binding to HttpApplication events
 
 It is not necessary to override and replace the [UmbracoApplication](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Web.UmbracoApplication.html).  If you consider changing the default `global.asax`, read on!

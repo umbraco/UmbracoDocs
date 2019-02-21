@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Checkbox List
 
 `Returns: Comma Separated String`

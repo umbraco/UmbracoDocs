@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Conclusions
 
 What we now have is a fully fledged working site! Hopefully this guide should have given you all of the basics to see how to create your own site in Umbraco. For the majority of sites you'll create they won't be much more complicated than this. We've not written any code nor have we needed to work much out of the Umbraco UI. 

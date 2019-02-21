@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Rendering media
 
 _Templates (Views) can access items in the [Media library](../../Data/Creating-Media/index.md) to assist in displaying rich content like galleries_

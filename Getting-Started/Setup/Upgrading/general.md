@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Upgrades in general
 
 _This is the guide for upgrading in general. Sometimes there are exceptions to these guidelines, which are listed in the **[version-specific guide](version-specific.md)**._

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Sections & Trees
 
 The Umbraco backoffice consists of sections (sometimes referred to as applications) which contain Trees. 

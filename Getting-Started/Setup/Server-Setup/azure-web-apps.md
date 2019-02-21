@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Running Umbraco on Azure Web Apps
 
 _This section describes best practices with running Umbraco on Azure Web Apps_

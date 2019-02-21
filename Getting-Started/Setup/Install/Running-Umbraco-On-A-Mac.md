@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Running Umbraco on a Mac
 *To run a local installation of Umbraco on a Mac you need to setup a Virtual Machine "vm" that runs Microsoft Windows*
 

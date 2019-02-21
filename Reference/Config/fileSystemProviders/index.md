@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # FileSystemProviders.config
 
 The `fileSystemProviders.config` file contains the configuration for the file system providers used by Umbraco to interact with file systems.

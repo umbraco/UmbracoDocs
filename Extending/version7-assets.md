@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Server variables & URLs
 
 _Describes how to deal with server variables and service URLs, along with how to work with custom JavaScript and CSS assets when creating custom sections, trees or property editors_

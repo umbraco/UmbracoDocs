@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Data
 *This section focuses on how to create data using the Umbraco backoffice.*
 

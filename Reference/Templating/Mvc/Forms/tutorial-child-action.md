@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Creating an MVC form using a Child Action
 
 **Applies to: Umbraco 4.10.0+**

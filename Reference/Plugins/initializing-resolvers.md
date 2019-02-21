@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Initializing Resolvers
 
 **Applies to: Umbraco 4.10.0+**

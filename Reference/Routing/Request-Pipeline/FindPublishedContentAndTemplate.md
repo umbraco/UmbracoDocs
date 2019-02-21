@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # FindPublishedContentAndTemplate()
 
 This method is called on the "PublishedContentRequest.PrepareRequest()" method.  

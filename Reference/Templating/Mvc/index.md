@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Working with MVC in Umbraco
 
 _How to work with MVC templates in Umbraco_

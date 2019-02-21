@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # DynamicPublishedContent
 
 DynamicPublishedContent is the dynamic version of [IPublishedContent](../IPublishedContent/index.md), it allows for simpler access to property data 

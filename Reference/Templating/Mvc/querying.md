@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Querying & Traversal
 
 _This section will describe how you can render content from other nodes besides the current page in your MVC Views_

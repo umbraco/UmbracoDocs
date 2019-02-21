@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Security
 
 _This section includes information on Umbraco security, its various security options and configuring how authentication & authorization works in Umbraco_

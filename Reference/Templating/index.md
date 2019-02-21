@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Templating
 
 _Templating in Umbraco consists of 2 larger concepts, namely Templates, and Macros. Templates are used for the HTML layout of your pages, whereas macros are reusable dynamic components used for embedding navigation, forms, lists, and so-on in your templates._

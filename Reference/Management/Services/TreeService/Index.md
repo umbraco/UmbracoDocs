@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # ApplicationTreeService
 
 **Applies to Umbraco 7.x and newer**

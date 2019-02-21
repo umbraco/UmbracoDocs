@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # (Obsolete) Dropdown list multiple, publish keys
 
 `Returns: Comma Separated String`

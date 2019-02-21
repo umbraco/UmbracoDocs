@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # (Obsolete) Media Picker
 
 `Alias: Umbraco.MultipleMediaPicker`
@@ -11,6 +15,7 @@ The media picker displays the current selected media and provides the option to 
 ## Settings
 
 ### Pick multiple items
+
 If checked, the picker will allow the user to select multiple media items using the mediaPicker dialog, a property using this editor will return a CSV string of media ids.
 
 ## Data Type Definition Example

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # tinyMceConfig
 
 Here you will find documentation relating to the options you can add/modify in the  tinyMceConfig.config file. The configuration you set here will be used by each TinyMce instance as it is initialized in Umbraco.
