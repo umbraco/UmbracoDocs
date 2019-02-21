@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+---
+
+
 # Manually upgrading forms
 We [made it easy to upgrade to the latest version of Umbraco Forms automatically](upgrade.md) but sometimes it's necessary to manually upgrade your install.
 
