@@ -1,7 +1,15 @@
-# Members
-*Members are used for registering and authenticating external users of an Umbraco installation (ie. forum members, intranet users and so forth). Unlike with Document Types and Media Types everything is done in the Members section both defining and creating, and editing members. This guide will explain how to define and create members in the backoffice. If you want to work with members using the service APIs, links can be found at the end of the document*
+---
+meta.Title: "Creating Members in Umbraco"
+meta.Description: "Members are used for registering and authentication external / frontend users of an Umbraco installation. This could be Forum members and Intranet members."
+versionFrom: 7.0.0
+---
 
-There is a default Member Type that can be used to create members. You can, of course, customize it to fit your needs or create your own from scratch.
+# Members
+Members are used for registering and authenticating external users of an Umbraco installation (ie. forum members, intranet users and so forth). 
+
+Unlike with Document Types and Media Types everything is done in the Members section both defining and creating, and editing members. This guide will explain how to define and create members in the backoffice. If you want to work with members using the service APIs, links can be found at the end of the document.
+
+There is a default Member Type that can be used to create members. You can, of course, customize it to fit your needs or create your own Member Type from scratch.
 
 ## Creating a Member
 Go to the __Members__ section, click the menu icon next to __Members__ in the member tree and select __Member__. Members have a number of mandatory properties. So aside from filling out the name, you will need to fill out  __Login__, __Email__ and __Password__ on the __Properties__ tab before the member can be saved.
