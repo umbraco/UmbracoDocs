@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Deploying deletions
 
 On Umbraco Cloud deletions are environment specific. This means that in order to delete something entirely from your project, you need to delete it on all environments.

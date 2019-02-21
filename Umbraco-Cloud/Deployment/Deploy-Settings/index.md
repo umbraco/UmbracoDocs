@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Configurations for Deployments
 
 The UmbracoDeploy.Settings.config file is by default empty, but there are some optional settings you can set in the file to ignore certain types of file, increase timeout limits, etc.

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Frequently asked questions
 
 Here you will find answers to the questions we most commonly hear from people that are wondering about if Umbraco Cloud is the right fit for their project. The answers you will find here are of a more technical nature and are directed at developers.
