@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Recaptcha
 
 ![Recaptcha2](images/recaptcha2.png)

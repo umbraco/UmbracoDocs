@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Overview of the default fieldtypes
 
 Umbraco Forms comes with a bunch of default fieldtypes (also known as **answer types**) you can choose from when adding new fields to your forms. Here is a detailed overview.

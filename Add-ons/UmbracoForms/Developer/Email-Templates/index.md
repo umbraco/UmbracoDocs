@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Email Templates
 
 From version 6+ we now include a new Workflow 'Send email with template (Razor)' that allows you to pick a Razor view file that will then be used to send out a *pretty HTML email* for form submissions. 

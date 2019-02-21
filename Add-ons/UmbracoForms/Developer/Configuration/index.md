@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Configuration
 With Umbraco Forms it's possible to customize the functionality with various configuration values.
 

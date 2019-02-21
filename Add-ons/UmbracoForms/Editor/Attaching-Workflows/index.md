@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Attaching workflows
 
 In this article you can learn how to add extra functionality to your form by attaching **workflows**.

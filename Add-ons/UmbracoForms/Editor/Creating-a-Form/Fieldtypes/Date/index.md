@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Date
 
 The date picker uses a front-end library called [PikaDay.js](https://github.com/dbushell/Pikaday) to display a UI to pick dates from.

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Extending Umbraco with the full Forms section
 
 Since Umbraco v7.2, Umbraco contains the Forms section by default. From there it's super easy to install and get started using Umbraco Forms.
