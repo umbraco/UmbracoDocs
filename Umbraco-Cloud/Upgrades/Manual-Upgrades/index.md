@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Upgrade your Umbraco Cloud projects manually
 
 In this article, you can read about how to manually upgrade your Umbraco Cloud project. It's very similar to how you would upgrade any other Umbraco project, just including a few extra and **very important** steps. 

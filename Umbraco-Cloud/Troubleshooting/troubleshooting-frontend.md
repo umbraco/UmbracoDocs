@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 ## The Frontend
 
 An error in the Frontend often looks like this:

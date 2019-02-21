@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Timeout issues
 Umbraco Deploy have a few built in timeouts, which on larger sites might needs to be modified. You will usually see these timeouts in the backoffice with an exception mentioning a timeout. It will be as part of a full restore or a full deploy of an entire site. In the normal workflow you should never hit these timeouts.
 

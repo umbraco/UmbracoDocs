@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Troubleshooting
 
 If an error occurs when you are using Umbraco Cloud there are several places that can take place and a lot of possible reasons for it. 
