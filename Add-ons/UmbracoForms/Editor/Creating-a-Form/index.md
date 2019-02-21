@@ -1,5 +1,5 @@
 ---
-versionTo: 7
+versionTo: 7.0.0
 ---
 
 # Creating a form
