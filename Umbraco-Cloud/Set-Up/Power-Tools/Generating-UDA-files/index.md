@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Generate UDA files
 
 Sometimes our guides requires you to generate UDA files for your projects metadata. Every time you create something in the backoffice on your Umbraco Cloud project a UDA files will be generated.

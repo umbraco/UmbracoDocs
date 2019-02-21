@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Visual Studio Setup
 
 This page describes how to setup your Visual Studio solution to work with an Umbraco Cloud Project.
