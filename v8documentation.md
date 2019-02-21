@@ -18,7 +18,7 @@ If you feel something is missing here or you want to help out documenting some o
     * [Themes](Add-ons/UmbracoForms/Developer/Themes/index-v8.md)
     * [Creating a Form](Add-ons/UmbracoForms/Editor/Creating-a-Form/index-v8.md)
     * [Prevalue source types](Add-ons/UmbracoForms/Editor/Defining-and-Attaching-Prevaluesources/Prevalue-source-types/index-v8.md)
-    * [Manual upgrade](Add-ons/UmbracoForms/Installation/ManualUpgrade/index-v8.md)
+    * [Manual upgrade](Add-ons/UmbracoForms/Installation/ManualUpgrade-v8.md)
 * [Creating Media](Getting-Started/Data/Creating-Media/index-v8.md)
 * [Working with Members](Getting-Started/Data/Members/index-v8.md)
 * [Umbraco Backoffice](Getting-Started/Backoffice/index-v8)
