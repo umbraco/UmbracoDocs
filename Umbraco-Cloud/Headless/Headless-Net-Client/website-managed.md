@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 ### ASP.NET Core MVC (Content Managed website)
 
 _This example is for creating a fully content managed website where URLs will be dynamic and be based on the same URLs generated in Umbraco. This also gives you the ability to Hijack routes for specific Document Types like in a normal Umbraco installation._

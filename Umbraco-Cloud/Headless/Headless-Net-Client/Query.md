@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 ### Query data with the .NET Headless Client
 
 _The .NET Headless Client provides great options for query content as well as working with strongly typed objects. 
