@@ -10,7 +10,7 @@ Extend Umbraco with the form builder section in a few steps
 ## [Configuring a license](../../The-Licensing-model)
 Getting Forms out of trial mode
 
-## [Manually upgrading Forms](ManualUpgrade.md)
+## [Manually upgrading Forms](ManualUpgrade-v8.md)
 Manual upgrade instructions
 
 ## [Upgrading - version specific](Version-Specific.md)
