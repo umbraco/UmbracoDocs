@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Application Insights on Umbraco cloud
 
 ## Installing application Insights 

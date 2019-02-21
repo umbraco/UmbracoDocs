@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Extending #
 
 ## [Provider model](Adding-a-Type.md) ##

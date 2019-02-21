@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Deploying from Local to Cloud
 
 When you are working with your Umbraco Cloud project locally all changes you make will automatically be identified and picked up by your local Git client. 

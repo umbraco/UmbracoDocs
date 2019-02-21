@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Path too long Exception
 
 When you have Media files on your Umbraco Cloud project with a file-name longer than 80 characters, you will not be able to transfer and / or restore between your Cloud environments.

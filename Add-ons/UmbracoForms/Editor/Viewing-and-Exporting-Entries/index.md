@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Viewing and exporting entries
 
 The entries viewer for each form can be found when expanding the form in the tree

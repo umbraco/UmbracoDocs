@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Editor documentation
 Documents how to use the different parts of the Forms interface.
 

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Field Types
 Umbraco Forms comes with a various number of Field Types to allow you to request certain data in the forms that you design & build.
 This documentation is to guide specific details about field types that we ship that require some detail in how they work.

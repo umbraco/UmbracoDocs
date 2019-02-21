@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+versionRemoved: 8.0.0
+---
+
 # Configuration
 
 Courier comes with sensible defaults, but in special cases, you might need to add or modify core settings.

@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+versionRemoved: 8.0.0
+---
+
 # Provider configuration
 
 _Courier comes with a number of built-in providers to package and extract data, some of these have different configuration settings, which can be found below_

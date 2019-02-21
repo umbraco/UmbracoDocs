@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Adding a type to the provider model
 
 To add a new type, no matter if it's a workflow, field, data source, etc, there is a number of tasks to perform to connect to the Forms provider model. This chapter walks through each step and describes how each part works. This chapter will reference the creation of a workflow type. It is, however, the same process for all types.

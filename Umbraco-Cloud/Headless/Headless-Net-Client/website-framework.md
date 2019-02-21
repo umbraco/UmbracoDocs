@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 ### ASP.NET Framework website
 
 _This example shows how to build a traditional ASP.NET Framework website on Windows and Visual Studio using the Umbraco Headless Client._

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Setup Your Site to use Azure Storage for Media and Image Processor Cache
 For Umbraco Cloud sites there are some scenarios when you may want, or need, to consider using Azure Blob Storage for your media.  Particularly if your site contains large amounts of media - about 1GB or more.  Having your site’s media in Azure Storage can also help your deployments complete more quickly and has the potential to positively affect site performance as the Image Processor cache is moved to Azure Storage.  It also allows you to easily serve your media from the Azure CDN.
 

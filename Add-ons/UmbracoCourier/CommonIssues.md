@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+versionRemoved: 8.0.0
+---
+
 # Common issues
 
 _Here you can find common issues with Courier and possible solutions_

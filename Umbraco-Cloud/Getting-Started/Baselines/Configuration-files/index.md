@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Handling configuration files
 
 When you are doing your normal development process, you'd just be updating the configuration files in your solution as usual. When you are working with a Baseline setup there are a few things to keep in mind.

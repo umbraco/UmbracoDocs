@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Transferring Content and Media
 After deploying changes to meta data, it's time to transfer your content and media. This is done from the Umbraco backoffice.
 

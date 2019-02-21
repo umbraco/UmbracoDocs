@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Pushing upgrades to a Child Project
 When a project has one or more Child Projects it will appear on the Project page, and the user can click to get an overview of all the Child Projects based on the current project.
 

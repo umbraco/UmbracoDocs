@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Config Transforms
 
 In this article you can learn how to use config transform files to apply environment specific configuration and settings to your Umbraco Cloud project.

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Extraction error: Data Type collisions
 
 When creating a new environment on your Umbraco Cloud project, you might encounter some issues regarding some of the default data types built into Umbraco.

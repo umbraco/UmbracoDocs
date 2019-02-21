@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Apply hotfix by manually moving files
 
 In this article, you'll find a step-by-step guide on how to apply a hotfix to a Live environment by manually moving the changed, updated and/or new files from one local clone to another.

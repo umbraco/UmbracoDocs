@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Troubleshooting deployments
 
 Issues with deployments on Umbraco Cloud often comes down to a misunderstanding on how to work with Umbraco Cloud. It is very important to always work left to right as mentioned [here](../../Deployment).

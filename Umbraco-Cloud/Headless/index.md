@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Umbraco Headless
 
 In this article, you can read all about Umbraco Headless and how to get started using it for your project!

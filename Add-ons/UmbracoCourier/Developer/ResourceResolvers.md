@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+versionRemoved: 8.0.0
+---
+
 # ResourceResolvers
 A resourceresolver is slightly different from dataresolvers, as they only trigger when a resource/file is packaged and extracted. This means it can only modify the file itself, but not call back to the item, which the resource belongs to.
 

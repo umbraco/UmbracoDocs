@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Troubleshooting structure errors
 
 On some occasions, it's possible that you'll encounter an "Error in Courier files containing site structure". This usually means that two Courier files are created for the same entity type.  

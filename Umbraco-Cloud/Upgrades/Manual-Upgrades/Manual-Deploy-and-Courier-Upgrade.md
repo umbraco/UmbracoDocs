@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Manual upgrade of the Umbraco Cloud engine
 
 This article will give you an overview of how you should upgrade Umbraco Deploy or Umbraco Courier.

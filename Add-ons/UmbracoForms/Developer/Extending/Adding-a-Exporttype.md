@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Adding a Export type to Umbraco Forms
 *This builds on the "[adding a type to the provider model](Adding-a-Type.md)" chapter and applies to Umbraco Forms version 4.4.1 and higher*
 

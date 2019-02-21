@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Restoring content
 
 When you have already created some content on your Cloud environment and you clone down your Umbraco Cloud project to your local machine, you will need to do an extra step, in order to see your content locally as well.
