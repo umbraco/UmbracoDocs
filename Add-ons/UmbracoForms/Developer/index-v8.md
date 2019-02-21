@@ -11,7 +11,7 @@ Before adding a form to your site we'll need to make sure you have the necessary
 ## [Rendering Forms scripts where you want](Rendering-Scripts/index.md)
 Control where you want Forms to render its JavaScript.
 
-## [Themes](Themes/index.md)
+## [Themes](Themes/index-v8.md)
 Easier & more control of rendering Form HTML markup and styling using Themes that replaces the previous methods in version 4.x
 
 ## [Custom markup](Custom-Markup/index.md)
