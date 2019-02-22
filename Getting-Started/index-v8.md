@@ -53,6 +53,7 @@ Learn more about the new features in Umbraco 8.
 <div class="row">
 	<div class="col-xs-3">
 		<span class="dot big icon-Palette">
+			<span class="line v-line top"></span>
 			<span class="line v-line"></span>
 			<span class="line h-line"></span>
 		</span>
