@@ -19,7 +19,7 @@ Multi Url Picker allows an editor to easily pick and sort multiple urls. This pr
 
 ![Media Picker Content](images/Multy-Url-Picker-Content-v8.png)
 
-## MVC View Example - [value converters enabled](../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
+## MVC View Example - [value converters enabled](../../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
 
 ### Typed:
 
