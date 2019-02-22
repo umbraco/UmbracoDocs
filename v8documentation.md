@@ -14,6 +14,7 @@ If you feel something is missing here or you want to help out documenting some o
 
 ## Finished Umbraco 8 Documentation:
 
+* [Umbraco 8 Requirements](Getting-Started/Setup/Requirements/index-v8.md)
 * Umbraco Forms - Updated
     * [Themes](Add-ons/UmbracoForms/Developer/Themes/index-v8.md)
     * [Creating a Form](Add-ons/UmbracoForms/Editor/Creating-a-Form/index-v8.md)
