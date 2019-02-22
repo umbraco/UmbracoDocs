@@ -14,7 +14,7 @@ If you feel something is missing here or you want to help out documenting some o
 
 ## Finished Umbraco 8 Documentation:
 
-* [Version specific upgrade notes: 7 to 8](Getting-Started/Setup/Upgrading/version-specific)
+* [Version specific upgrade notes: 7 to 8](Getting-Started/Setup/Upgrading/version-specific.md)
 * [Composer/Composition mechanism documentation](Implementation/Composing/)
 * [Umbraco 8 Requirements](Getting-Started/Setup/Requirements/index-v8.md)
 * Umbraco Forms - Updated
