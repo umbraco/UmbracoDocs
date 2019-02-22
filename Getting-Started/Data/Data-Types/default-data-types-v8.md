@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Default Data Types
 
-Here's a list of the default Data Types that come installed with Umbraco. There are plenty more that you can create based on the installed [Property Editors](../../Backoffice/Property-Editors/).
+Here's a list of the default Data Types that come installed with Umbraco. There are plenty more that you can create based on the installed [Property Editors](../../Backoffice/Property-Editors/index-v8.md).
 
 ![Umbraco 8 Data Type List](images/default-data-types-8.png)
 

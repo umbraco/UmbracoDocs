@@ -35,7 +35,7 @@ Aside from the Data Types that are available out of the box there are some addit
 
 ### More information
 * [List of available Data types](default-data-types.md)
-* [Property Editors](../../Backoffice/Property-Editors/)
+* [Property Editors](../../Backoffice/Property-Editors/index-v8.md)
 
 ### Related Services
 * [DataTypeService](../../../Reference/Management/Services/DataTypeService.md)
