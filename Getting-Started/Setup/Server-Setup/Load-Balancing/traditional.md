@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Traditional (Legacy/Deprecated) load balancing
 
 _Information on how to deploy Umbraco in a traditional Load Balanced scenario and other details to consider when setting up Umbraco for load balancing._

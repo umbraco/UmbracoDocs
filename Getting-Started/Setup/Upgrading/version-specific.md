@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Version specific upgrades
 
 *This document covers specific upgrade steps if a version requires them, most versions do not require specific upgrade steps and most of the time you will be able to upgrade directly from your current version to the latest version*

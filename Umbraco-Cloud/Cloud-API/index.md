@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Public Umbraco Cloud REST API
 
 Umbraco Cloud has a REST API that you can use to automatically create new projects. This can come in really handy if you are going to create a lot of projects within a short period of time or if you want to automate project creation or team management.

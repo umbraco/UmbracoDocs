@@ -1,4 +1,9 @@
+---
+versionFrom: 7.0.0
+---
+
 # Examine Management
+
 _Provides an overview of the available Examine functionality available directly within the Umbraco backoffice_
 
 ## Overview

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Custom routing in Umbraco
 
 _There are a couple of ways of controlling the routing behavior in Umbraco: customizing how the inbound request pipeline

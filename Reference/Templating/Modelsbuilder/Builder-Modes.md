@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Builder Modes
 
 Models Builder can be used in different modes:

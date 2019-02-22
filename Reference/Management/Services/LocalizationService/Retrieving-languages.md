@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Retrieving languages
 
 ### Getting a single language

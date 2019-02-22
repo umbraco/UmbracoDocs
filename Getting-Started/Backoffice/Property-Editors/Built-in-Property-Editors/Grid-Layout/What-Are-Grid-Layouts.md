@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # What are grid layouts?
 To understand how the grid layout editor works, we must first understand the structure of the grid layouts.
 

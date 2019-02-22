@@ -3,6 +3,7 @@ meta.Title: "All the basics of using Umbraco"
 meta.Description: "This section shows you some beginner tools and information to get your started with Umbraco. From making a local installation to extending the backoffice."
 versionFrom: 7.0.0
 ---
+
 # Getting Started
 *All the basics of using Umbraco v7. From making a local installation to extending the backend.*
 

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Control Models Generation
 
 Generation of models can be controlled through various C# attributes in the custom files (i.e. `*.cs` files that are not `*.generated.cs` files) in the models directory.

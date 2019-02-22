@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Recursive Menu
 Credits for this snippet go out to Lordtoro ([lordtoro.wordpress.com/.../](https://lordtoro.wordpress.com/2010/07/10/recursive-navigation-in-umbraco-4-5-0/))
 

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Subscribing to events
 Subscribing to events allows you to execute custom code on a  number of events both before and after the event occurs. All you need to follow this guide is an Umbraco installation with some content, e.g. the Fanoe starter kit.
 

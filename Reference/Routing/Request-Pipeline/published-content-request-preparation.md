@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Published Content Request Preparation
 
 Is called in `UmbracoModule`:

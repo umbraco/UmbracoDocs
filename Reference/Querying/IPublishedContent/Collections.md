@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # IPublishedContent Collections
 
 All collections of `IPublishedContent` are `IEnumerable<IPublishedContent>`. 

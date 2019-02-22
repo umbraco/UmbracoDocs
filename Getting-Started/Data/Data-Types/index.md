@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Data-Types
 *A Data Type defines the type of input for a property. So when adding a property (on Document Types, Media Types and Members) when selecting the Type you are selecting a Data Type. There are a number of preconfigured Data Types available in Umbraco and more can be added in the Developer section.*
 

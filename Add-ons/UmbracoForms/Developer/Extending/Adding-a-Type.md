@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Adding a type to the provider model
 
 To add a new type, no matter if it's a workflow, field, data source, etc, there is a number of tasks to perform to connect to the Forms provider model. This chapter walks through each step and describes how each part works. This chapter will reference the creation of a workflow type. It is, however, the same process for all types.
@@ -61,10 +65,10 @@ With the attribute in place, the property value is set every time the class is i
 [Umbraco.Forms.Core.Attributes.Setting("Document ID", 
 		description = "Node the log entry belongs to", 
 		view = "Pickers.Content")] 
-public string document { get; set; } 
+public string Document { get; set; } 
 
 public override Enums.WorkflowExecutionStatus Execute(Record record) { 
-	Log.Add(LogTypes.Debug, int.Parse(document), "record submitted from: " + record.IP); 
+	Log.Add(LogTypes.Debug, int.Parse(Document), "record submitted from: " + record.IP); 
 }
 ```
 	

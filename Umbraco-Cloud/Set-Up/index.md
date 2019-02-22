@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Set Up
 Now that you've created a project there are a few things you may want to do to make working with your project easier. As you get ready to launch your live site there are some other considerations to take into account as well.
 

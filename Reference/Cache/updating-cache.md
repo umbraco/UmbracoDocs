@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Getting/Adding/Updating/Inserting Into Cache
 
 _This section describes how you should be getting/adding/updating/inserting items in the cache._

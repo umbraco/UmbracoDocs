@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # API Documentation
 
 A library of API Reference documentation is auto-generated from the comments within the Umbraco Source Code.

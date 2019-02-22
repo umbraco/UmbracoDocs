@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Creating a form
 
 This will show the basic steps of creating a form and adding them to your Umbraco site.
@@ -6,7 +10,7 @@ This will show the basic steps of creating a form and adding them to your Umbrac
 
 Managing forms happens in the Forms section of the Umbraco backoffice. You need to have access to the section in order to see it. 
 
-![Forms Section](images/FormsSection.png)
+![Forms Section](images/FormsSection.png) 
 
 ## Click the forms tree
 

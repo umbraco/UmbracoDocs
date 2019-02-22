@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # The Licensing Model
 
 Umbraco Forms and Umbraco Courier are commercial products. When you install them from the backoffice of your installation you will have a 14-day free trial to try out the products.

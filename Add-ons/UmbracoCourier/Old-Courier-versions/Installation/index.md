@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+versionRemoved: 8.0.0
+---
+
 ## Installing Courier 2 using a package
 
 1. Open the embrace repository from the developer section in Umbraco

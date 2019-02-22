@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Render grid in template
 
 ## Using @Html.GetGridHtml

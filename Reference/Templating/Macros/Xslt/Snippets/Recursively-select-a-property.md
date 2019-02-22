@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Recursively select a property
 
 Sometimes in your XSLT you need to access the data not just on the $currentPage but possibly any parent nodes.

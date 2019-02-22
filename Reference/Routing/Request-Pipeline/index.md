@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Routing in Umbraco
 
 _This section describes what the Umbraco Request Pipeline is, how Umbraco matches a document to a given request and how it generates a URL for a document._

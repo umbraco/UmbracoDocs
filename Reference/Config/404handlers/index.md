@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # 404handlers.config
 
 **Obsolete.  The concept of *NotFoundHandlers* has been replaced by [Content Finders](../../routing/request-pipeline/IContentFinder)**

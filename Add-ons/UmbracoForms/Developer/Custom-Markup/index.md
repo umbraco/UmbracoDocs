@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Custom markup
 With Umbraco Forms it's possible to customize the outputted markup of a form, which means you have complete control over what Forms will output.
 

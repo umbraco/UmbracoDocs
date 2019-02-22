@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Searchable Trees (ISearchableTree)
 
 When you type a search term into the Umbraco backoffice search field, you'll see search results from all the Section Trees that your user account has permissions to access:

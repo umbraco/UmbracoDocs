@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Trees v7
 
 This section describes how to work with and create trees with the v7 APIs.

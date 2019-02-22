@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Install Umbraco with Visual Studio Code
 
 Follow these simple steps to be up and running with VS Code quickly and easily. The benefit of using VS Code is that it is super simple to get up and running.

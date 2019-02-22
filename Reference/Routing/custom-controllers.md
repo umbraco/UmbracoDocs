@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Custom controllers (Hijacking Umbraco Routes)
 
 _If you need complete control over how your pages are rendered then Hijacking Umbraco Routes is for you_

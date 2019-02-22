@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Headless .NET client
 
 :::warning

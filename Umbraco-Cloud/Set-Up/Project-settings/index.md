@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Project settings
 
 When working with an Umbraco Cloud project you can handle a lot of the project configuration directly in the Umbraco Cloud Portal.

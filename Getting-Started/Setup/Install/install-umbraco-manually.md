@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Install Umbraco manually
 
 _Follow these steps to do a full manual install of Umbraco._

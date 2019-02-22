@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Team members in the Portal and Umbraco Backoffice users
 You can add team members to your projects from the Umbraco Cloud Portal. These get automatically added as users in the backoffice of all environments for the project. The users will also be created in local clones of your development environment. The same username and password is used to login in all parts of Umbraco Cloud - Portal, backoffice and the KUDU console.
 

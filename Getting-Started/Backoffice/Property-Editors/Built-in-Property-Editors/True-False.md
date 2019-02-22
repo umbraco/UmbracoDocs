@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # True/False
 
 `Returns: Boolean`

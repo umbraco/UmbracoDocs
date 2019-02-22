@@ -1,3 +1,8 @@
+---
+versionFrom: 6.0.0
+versionRemoved: 7.0.0
+---
+
 # Trees v6 (and v4)
 
 This section describes how to work with and create trees with the v6 (and v4 APIs).

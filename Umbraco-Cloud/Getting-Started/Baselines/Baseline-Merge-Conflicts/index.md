@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Baseline Merge Conflicts
 Here we outline how to manually resolve a merge conflict after having updated the children for a Baseline project.
 

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Templates
 
 _Templating in Umbraco builds on the concept of Razor Views from ASP.NET MVC - if you already know this, then you are ready to create your first template - if not, this is a quick and handy guide._

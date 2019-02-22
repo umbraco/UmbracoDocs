@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Welcome to Umbraco Cloud
 
 In this article, you can read all about [Umbraco Cloud](https://umbraco.com/products/umbraco-cloud/) and how to get started!

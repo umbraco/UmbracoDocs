@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Themes
 As of version 6.0.0 and newer Umbraco Forms supports Themes, allowing forms to be customised in a much simpler manner than found in version 4.x.
 

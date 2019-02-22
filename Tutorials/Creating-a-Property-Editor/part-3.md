@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Integrating services with a property editor
 
 ## Overview

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Upgrading to version 7
 
 *This document should be used as a reference, not a step by step guide. Upgrading will largely depend on what version of Umbraco you are currently running, what packages you have installed and the many aspects of your own Umbraco installation.*

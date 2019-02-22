@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # IContentFinder
 
 If you want to create your own content finder implement the IContentFinder interface:

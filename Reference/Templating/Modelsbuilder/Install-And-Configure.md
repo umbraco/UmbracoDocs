@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Install and configure Umbraco Models Builder
 
 ## Install

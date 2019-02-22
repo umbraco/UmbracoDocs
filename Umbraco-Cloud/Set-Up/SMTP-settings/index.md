@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # SMTP settings on Umbraco Cloud
 
 In many cases you might want to be able to send emails from your Umbraco Cloud project. This could be for inviting users to the backoffice or as part of an Umbraco Forms workflow. Before this is possible, you will need to have an SMTP server and configure this in your `web.config` file.

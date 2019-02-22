@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Working with the backoffice UI AngularJs project 
 
 ## Overview
@@ -8,7 +12,6 @@ As a result, the Umbraco UI is not a Visual Studio project, but simply a collect
 This means that anyone with a text editor can open the UI source, make changes and run the project, without having Visual Studio installed - we will get into how to do that in a moment as well. 
 
 The bottom line is the UI project has zero dependencies on ASP.NET or Windows. However, you will need Node.js installed, but don't worry we will get into that in a second.
-
 
 ## Prerequisites
 Umbraco 7 needs a couple of things to run:

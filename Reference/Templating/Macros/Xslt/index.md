@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # XSLT
 This section is your resource for XSLT/XPath in relation to Umbraco. You'll find information, examples and best practices according to readability and performance in your XSLT/XPath snippets.
 

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 ## The Umbraco Backoffice
 
 An error in the Backoffice often looks like this:

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # High-level Overview
 
 The creation process involves a lot of different parts, which are outlined below. Keep in mind that we are creating a new and empty project, which consists of one or two environments, depending on the Plan your are on. Both environments will be a clone of the Live repository from the Baseline project.

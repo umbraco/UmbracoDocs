@@ -1,10 +1,14 @@
+---
+versionFrom: 6.0.0
+---
+
 # Media
 
 **Applies to Umbraco 6.x and newer**
 
 The `Media` class represents a single item in the media tree, its values are fetched directly from the database, not from the cache. **Notice** the Media class should strictly be used for simple CRUD operations, not complex queries, as it is not flexible nor fast enough for this.
 
- * **Namespace:** `Umbraco.Core.Models` 
+ * **Namespace:** `Umbraco.Core.Models`
  * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:

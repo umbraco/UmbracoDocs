@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Dashboards
 
 Each section of the Umbraco backoffice has its own set of default dashboards.

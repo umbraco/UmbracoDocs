@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Umbraco's request pipeline
 
 _The process of Umbraco accepting a request, how it matches a URL to a content item and executes the ASP.NET handler._

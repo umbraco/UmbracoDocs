@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Tag support for property editors
 
 ## What is tag support?

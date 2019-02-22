@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # The Basics
 The standard XSLT file consists of a few different parts. Understanding these parts will allow you to do much more with XSLT than you probably realize.
 

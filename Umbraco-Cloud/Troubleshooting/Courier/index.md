@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Troubleshooting with Courier
 
 Umbraco Courier is the deployment engine running Umbraco Cloud projects that have been created before May 2017 and have not yet been upgraded to Umbraco Deploy.

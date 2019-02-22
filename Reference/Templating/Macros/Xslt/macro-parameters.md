@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Macro parameters in XSLT
 
 ## Setting up the macro parameter

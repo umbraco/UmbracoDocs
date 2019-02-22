@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Grid layout best practices
 
 _The grid layout editor, introduced in Umbraco 7.2, offers non-technical editors a more visual editing environment to layout content pages and enter content of many different kinds._

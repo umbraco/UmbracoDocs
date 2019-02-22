@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Examine Terminology
 _Describes the different terms/names used throughout Examine_
 

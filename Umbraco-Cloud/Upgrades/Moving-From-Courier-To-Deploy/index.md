@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Moving from Courier to Deploy
 
 As of Umbraco 7.6, sites running on Umbraco Cloud will need to be running Umbraco Deploy, and not Umbraco Courier.

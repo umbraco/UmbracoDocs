@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Working with stylesheets and JavaScript
 
 ## Bundling & Minification for JavaScript and CSS
