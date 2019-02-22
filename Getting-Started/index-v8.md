@@ -25,6 +25,32 @@ Learn more about the new features in Umbraco 8.
 	<div class="col-sm-12"></div>
 </div>
 <div class="row">
+	<div class="col-xs-3 point">
+	</div>
+	<div class="col-xs-3">
+		<span class="dot big icon-Wrench">
+			<span class="line v-line"></span>
+			<span class="line h-line"></span>
+		</span>
+		<span class="dot small">
+			<span class="line v-line"></span>
+			<span class="line h-line"></span>
+		</span>
+	</div>
+	<div class="col-xs-9">
+		<div class="row explain">
+			<div class="col-xs-12">
+				<h4 class="text-right">Setup</h4>
+				<small>Covers how to install and configure your Umbraco installation</small>
+			</div>
+			<div class="col-sm-6">
+				<h5><a href="Setup/Requirements/index-v8.md">Requirements</a></h5>
+				<small>What is needed to run Umbraco?</small>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
 	<div class="col-xs-3">
 		<span class="dot big icon-Palette">
 			<span class="line v-line"></span>
