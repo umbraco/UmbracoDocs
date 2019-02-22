@@ -44,7 +44,7 @@ Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. 
 
 ## Content Example 
 
-![Multinode Treepicker](images/Multinode-Treepicker-Content-v8.jpg)
+![Multinode Treepicker](images/Multinode-Treepicker-Content-v8.png)
 
 ## MVC View Example
 
