@@ -14,6 +14,7 @@ If you feel something is missing here or you want to help out documenting some o
 
 ## Finished Umbraco 8 Documentation:
 
+* [Composer/Composition mechanism documentation](Implementation/Composing/index-v8.md)
 * [Umbraco 8 Requirements](Getting-Started/Setup/Requirements/index-v8.md)
 * Umbraco Forms - Updated
     * [Themes](Add-ons/UmbracoForms/Developer/Themes/index-v8.md)
@@ -42,7 +43,6 @@ If you feel something is missing here or you want to help out documenting some o
 * Upgrading and setup
 * Backoffice documentation
 * Property Editors in Umbraco 8
-* **Add new** Composer/Composition mechanism documentation
 
 ## Upcomming:
 
