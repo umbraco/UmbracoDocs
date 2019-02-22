@@ -26,7 +26,7 @@ Then, the following application settings (in the `appSettings` section of the `W
 
 * `Umbraco.ModelsBuilder.ModelsNamespace` (string, default is `Umbraco.Web.PublishedContentModels`) specifies the generated models' namespace.
 
-* `Umbraco.ModelsBuilder.LanguageVersion` (string, default is `CSharp5`) indicates the C# language version which is used when compiling the models in [`Live`]`Dll`. Can be set to `CSharp6` or `Experimental` to try the new C# features.
+* `Umbraco.ModelsBuilder.LanguageVersion` (string, default is `CSharp5`) indicates the C# language version which is used when compiling the models in [`Live`]`Dll`. Can be set to `CSharp6` to try the new C# features.
 
 * `Umbraco.ModelsBuilder.FlagOutOfDateModels` can be `true` (default) or `false` and indicates whether out-of-date models (i.e. after a content type or data type has been modified) should be flagged.
 
