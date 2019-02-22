@@ -6,10 +6,6 @@ versionFrom: 8.0.0
 # Composing
 With Umbraco V8+ you are now able to customise how your Umbraco application runs and boots by composing different components of the system. You may wish to add your own customisations on how Umbraco works or alternatively disable or remove specific functions in Umbraco. You can achieve this with composers & components.
 
-## What are composers & components?
-
-XXXXXXXXXXXXXX TODO WRITE SOME INTRO XXXXXXXXXXXXXXXXXXX
-
 
 ### Changing Umbraco
 Below is a simple sample of changing the Umbraco application to allow Spotify URLs to be used as OEmbed in the Grid and Rich Text Editors inside Umbraco. As the collection for OEmbedProviders is not typed scanned, then you will see that we need to explicitly add to the collection.
@@ -146,9 +142,8 @@ Ordering of composers is important, as the last one added in can override previo
 
 
 ## Collections
-
-XXXXXXXXXXXXXX WRITE SOME INTRO XXXXXXXXXXXXXXXXXXX
-
+>"Collections of elements", such as the content finders collection
+Collections are another concept that Umbraco uses to make things simpler, on top of DI. A collection builder builds a collection, allowing users to add and remove types before anything is actually registered into DI.
 
 Below is a list of collections that details their collection type and how items for this collection out of the box for Umbraco is registered.
 
@@ -173,8 +168,6 @@ Below is a list of collections that details their collection type and how items 
 | UrlProviders              | Ordered   | Explicit Registration                                             |
 | UrlSegmentProviders       | Ordered   | Explicit Registration                                             |
 | Validators                | Lazy      | Explicit Registration                                             |
-
-
 
 
 ### Types of Collections
@@ -233,6 +226,10 @@ public class ThisComposer : IUserComposer
 }
 ```
 
+:::warning
+If you create a circular dependancy then Umbraco will fail to boot and will report the conflicting/circular dependancy.
+:::
+
 ### [Weight]
 This attribute is used only for `WeightedCollectionBuilders` and specifies an integer for the item to be added/sorted in the weighted collection and is not to be applied to Composers themselves.
 
@@ -258,11 +255,35 @@ namespace Umbraco.Web.Dashboards
 ### [HideFromTypeFinder]
 This is used to hide a type from being auto scanned/added to a collection as in some cases certain items/types may need to be added to a collection manually.
 
-### [EnableComposer] & [Enable]
-XXXXXXXXXXXXXXXXXXXXX TODO XXXXXXXXXXXXXXXXXXXXX
-
 ### [DisableComposer] & [Disable]
-XXXXXXXXXXXXXXXXXXXXX TODO XXXXXXXXXXXXXXXXXXXXX
+Let's say Umbraco ships with two different ways of doing "something" (for instance, two front-end caches). Each way has its own composer, which registers all the relevant elements. Of course, if both composers are detected, there will be some sort of collision. Ideally, we want to disable one of them. That can be achieved with the Disable attribute:
+
+```csharp
+[Disable]
+public void Way2Composer : IComposer
+{ ... }
+```
+
+When used without arguments, these attributes apply to the composer they are marking. But, and this is where it becomes interesting, they can be used with an argument to act on another component. Therefore, should a user want to replace our "something" with hers, she would write the following code:
+
+```csharp
+[Disable(typeof(Way1Composer))]
+public void MyComposer : IComposer
+{
+    public void Compose(Composition composition)
+    { ... }
+}
+```
+
+But maybe she just wants to swap our two "something" implementations? In this case, assembly-level attributes can be used:
+```csharp
+[assembly:DisableComposer(typeof(Way1Composer))]
+[assembly:EnableComposer(typeof(Way2Composer))]
+```
+
+:::tip
+Note that Umbraco also has a `[Enable]` & `[EnableComposer]` attributes but all composers are enabled by default.
+:::
 
 ### [RuntimeLevel]
 The most common usecase for this is to set this attribute on your own composers and to set the minimum level to Run. Which will mean this composer will not be invoked until Umbraco is fully booted and is running. So if an upgrade or Umbraco is still booting your own custom composer code won't run until everything is all setup and good.
