@@ -104,7 +104,7 @@ public class HomeController : Umbraco.Web.Mvc.RenderMvcController
     public ActionResult MobileHomePage(RenderModel model)
     {
         // we will create a custom model
-        var myCustomModel = new MyCustomModel();
+        var myCustomModel = new MyCustomModel(model.Content);
 
         // TODO: assign some values to the custom model...
 
