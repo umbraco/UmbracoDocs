@@ -8,7 +8,7 @@ With Umbraco V8+ you are now able to customise how your Umbraco application runs
 
 
 ### Changing Umbraco
-Below is a simple sample of changing the Umbraco application to allow Spotify URLs to be used as OEmbed in the Grid and Rich Text Editors inside Umbraco. As the collection for OEmbedProviders is not typed scanned, then you will see that we need to explicitly add to the collection.
+Below is a sample of changing the Umbraco application to allow Spotify URLs to be used as OEmbed in the Grid and Rich Text Editors inside Umbraco. As the collection for OEmbedProviders is not typed scanned, then you will see that we need to explicitly add to the collection.
 
 ```csharp
 using System.Collections.Generic;
