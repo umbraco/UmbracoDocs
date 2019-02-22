@@ -4,6 +4,8 @@ versionFrom: 7.0.0
 
 # Checkbox List
 
+`Alias: Umbraco.CheckBoxList`
+
 `Returns: Comma Separated String`
 
 Displays a list of preset values as a list of checkbox controls. The text saved is a comma separated string of text values.

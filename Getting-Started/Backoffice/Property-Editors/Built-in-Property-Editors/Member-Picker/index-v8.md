@@ -4,6 +4,8 @@ versionFrom: 8.0.0
 
 # Member Picker
 
+`Alias: Umbraco.MemberPicker`
+
 `Returns: IPublishedContent`
 
 The member picker opens a panel to pick a specific member from the member section. The value saved is of type IPublishedContent.

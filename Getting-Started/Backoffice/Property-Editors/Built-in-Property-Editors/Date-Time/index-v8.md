@@ -4,6 +4,8 @@ versionFrom: 8.0.0
 
 # DateTime
 
+`Alias: Umbraco.DateTime`
+
 `Returns: DateTime`
 
 Displays a calendar UI for selecting dates which are saved as a DateTime value.
