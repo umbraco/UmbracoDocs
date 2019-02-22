@@ -8,6 +8,16 @@ versionFrom: 7.0.0
 
 Follow the steps in the [general upgrade guide](general.md), then these additional instructions for the specific versions. (Remember that new config files are not mentioned because they are already covered in the general upgrade guide.)
 
+## Version 7 to version 8
+
+There will not be a direct upgrade path, but it will be possible to migrate content from Umbraco 7 sites to Umbraco 8 sites. We are developing a content migration tool that will enable you to move your content (content/media/members) from an Umbraco 7 site to an Umbraco 8 site. We will inform you about it as soon as it is ready.   
+
+The reason why it is not possible to upgrade an Umbraco 7 site to Umbraco 8 is is that the codebase has been fundamentally updated in Umbraco 8. A lot of outdated code and technology has been removed and instead new, faster and more secure technology has been implemented throughout Umbraco 8. It simply wouldn’t be possible to take this giant leap while maintaining full compatibility with Umbraco 7.
+
+In Umbraco 8 we have added improvements and updated dependencies as well as done a thorough clean-up to make it simpler for you to work with and extend your Umbraco project. 
+
+In the near future, it will though be possible to do a manual upgrade of your Umbraco 7 project to Umbraco 8 which we, of course, will give you best practices documentation on as soon as it’s ready. We highly recommend you wait with the upgrade of your Umbraco 7 project until we have this documentation ready in order to ensure you get the best possible content migration experience. 
+
 ## Version 7.7.0
 
 Version 7.7.0 introduces User Groups and a better user management and security facilities. This means that anything to do with "User Types" no longer exist including several APIs that work with User Types. If your code or any package's code that you use makes reference to "User Type" APIs, you may need to make changes to your code. In many cases we've created backward compatibility shims for these scenarios and obsoleted APIs that should no longer be used but in some cases this was not possible.
