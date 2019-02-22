@@ -41,7 +41,6 @@ If you feel something is missing here or you want to help out documenting some o
 
 ## In progress:
 
-* Upgrading and setup
 * Backoffice documentation
 * Property Editors in Umbraco 8
 
@@ -51,3 +50,4 @@ If you feel something is missing here or you want to help out documenting some o
 * **Update existing** MVC / WebAPI documentation
 * **Add new** Content Cache documentation
 * **Add new** Filesystems documentation
+* **Add new** Upgrading documentation
