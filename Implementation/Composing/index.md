@@ -147,7 +147,7 @@ There should only ever been one IRuntimeComposer in an application and it belong
 After the IRuntimeComposer has 'composed' - all ICoreComposer instances also 'compose'. They compose all the default elements that Umbraco needs to run.
 
 `IUserComposer`<br/>
-Finally, all IUserComposer instances 'compose'. These types of composers are for developers/implementors to use to customise and extend Umbraco or use in Package development.
+Finally, all IUserComposer instances 'compose'. These types of composers are for developers/implementors to use to customise and extend Umbraco or use in package development.
 
 :::warning
 Ordering of composers is important, the last one added can override a previously added composer! - make sure when overriding that your composer that is overriding is composing after the composer that adds the element you want to override!
