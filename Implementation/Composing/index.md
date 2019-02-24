@@ -150,7 +150,7 @@ After the IRuntimeComposer has 'composed' - all ICoreComposer instances also 'co
 Finally, all IUserComposer instances 'compose'. These types of composers are for developers/implementors to use to customise and extend Umbraco or use in package development.
 
 :::warning
-Ordering of composers is important, the last one added can override a previously added composer! - make sure when overriding that your composer that is overriding is composing after the composer that adds the element you want to override!
+Ordering of composers is important, the last one added can override a previously added composer! Make sure, when overriding, that your composer that is doing the overriding, is 'composing', after the composer has 'composed' the element you wish to override!
 :::
 
 
