@@ -139,7 +139,7 @@ namespace My.Website
 
 
 ## Types of Composers
-Composers are responsible for drawing together the different components an Umbraco application is composed of. They implement the following Composer interfaces which controls the order in which they are run:<br/>
+Composers are responsible for drawing together the different components an Umbraco application is composed of. They implement the following Composer interfaces which group together the composers and control the order in which they are run:<br/>
 `IRuntimeComposer`<br/>
 There should only ever been one IRuntimeComposer in an application and it belongs to Umbraco, this Composer runs first before all other composers, do not mess with the IRuntimeComposer.
 
