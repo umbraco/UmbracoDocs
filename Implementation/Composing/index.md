@@ -155,8 +155,7 @@ Ordering of composers is important, the last one added can override a previously
 
 
 ## Collections
->"Collections of elements", for example the ContentFinders collection
-Collections are another concept that Umbraco uses to make things simpler, on top of DI. A collection builder builds a collection, allowing users to add and remove types before anything is actually registered into DI.
+>"Collections of elements", for example the ContentFinders collection. - Collections are another concept that Umbraco uses to make things simpler, on top of DI. A collection builder builds a collection, allowing users to add and remove types before anything is actually registered into DI.
 
 Below is a list of collections with their corresponding 'collection type' and how items for this collection 'out of the box' are registered.
 
