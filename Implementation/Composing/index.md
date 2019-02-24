@@ -269,7 +269,7 @@ namespace Umbraco.Web.Dashboards
 ```
 
 ### [HideFromTypeFinder]
-This is used to hide a type from being auto scanned/added to a collection as in some cases certain items/types may need to be added to a collection manually. For example a Search package may make it optional whether to replace the 'backoffice search' with an ISearchableTree implementation, type scanning would make this change automatically at start up if the custom implementation was detected via type scanning).
+This is used to hide a type from being auto scanned/added to a collection as in some cases certain items/types may need to be added to a collection manually. For example, a Search package may make it optional whether to replace the 'backoffice search' with an ISearchableTree implementation, type scanning would make this change automatically at start up if the custom implementation was detected via type scanning - this attribute could hide the class from the scanner.
 
 ### [DisableComposer] & [Disable]
 These attributes allows you to disable a particular implementation of a composer or class - Let's say Umbraco ships with two different ways of doing "something" (for instance, two front-end caches). Each way has its own composer, which registers all the relevant elements. Of course, if both composers are detected, there will be some sort of collision. Ideally, we want to disable one of them. That can be achieved with the Disable attribute:
