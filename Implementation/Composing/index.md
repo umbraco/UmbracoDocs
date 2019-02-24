@@ -184,7 +184,7 @@ Below is a list of collections with their corresponding 'collection type' and ho
 
 ### Types of Collections
 Ordered<br/>
-`OrderedCollectionBuilderBase` - The base class for collection builders that order their items explicitely.
+`OrderedCollectionBuilderBase` - The base class for collection builders that order their items explicitly.
 
 Weighted<br/>
 `WeightedCollectionBuilder` - The base class for collection builders that order their items by the `[Weight]` attribute.
