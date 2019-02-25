@@ -1,3 +1,11 @@
+:::note
+Have some questions about **Umbraco 8**?
+
+We've put together some answers to the most frequently asked questions - you can find it in the [Umbraco 8 - FAQ](Umbraco8FAQ.md) article.
+
+For a list of all the Umbraco 8 Documentation that's already live as well as get an overview of upcoming documentation head over to the [Umbraco 8 Documentation Statuspage](v8documentation.md).
+:::
+
 <div class="docs-overview">
 <div class="row">
     <div class="col-xs-12">
