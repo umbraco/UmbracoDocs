@@ -93,7 +93,7 @@ The media picker displays the current selected media and provides the option to 
 
 New in Umbraco v8, used to be a package called RJP Multi Url Picker. Replaced Related Links in v8.
 
-## [Multinode Treepicker](Multinode-Treepicker2.md)
+## [Multinode Treepicker](Multinode-Treepicker/index-v8.md)
 `Alias: Umbraco.MultiNodeTreePicker`
 
 The multinode treepicker data type allows content editors to choose multiple nodes in the content or media trees.
