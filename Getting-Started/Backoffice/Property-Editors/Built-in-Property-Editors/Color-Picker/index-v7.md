@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
 ---
 
 # Color Picker
@@ -13,18 +13,18 @@ The Color picker allows you to set some predetermined colors that the editor can
 
 ## Data Type Definition Example
 
-![Content Picker Data Type Definition](images/Color-Picker-DataType-v8.png)
+![Content Picker Data Type Definition](images/Color-Picker-DataType.png)
 
 ## Content Example
 
-![Content Picker Content](images/Color-Picker-Content-v8.png)
+![Content Picker Content](images/Color-Picker-Content.png)
 
 ## Example
 
 ```csharp
 @{
-    var hexColor = Model.Color;
-    String colorLabel = Model.Color.Label;
+    var hexColor = Model.Content.Color;
+    String colorLabel = Model.Content.Color.Label;
 
     if (hexColor != null)
     {

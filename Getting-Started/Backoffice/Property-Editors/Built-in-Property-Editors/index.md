@@ -11,12 +11,12 @@ This page contains a list of all the built-in Umbraco property editors and a sho
 
 A simple checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
 
-## [Checkbox list](CheckBox-List.md)
+## [Checkbox list](CheckBox-List)
 `Alias: Umbraco.CheckBoxList`
 
 Displays a list of preset values as a list of checkbox controls
 
-## [Color Picker](Color-Picker.md)
+## [Color Picker](Color-Picker)
 `Alias: Umbraco.ColorPicker`
 
 Adds a list of approved colours which can be selected by clicking.
@@ -78,7 +78,7 @@ This control gives the same functionality as the standard listview, but allows y
 
 The markdown editor will be interpreted by the Models Builder. Behind the scenes, Umbraco uses the [Markdown NuGet package](https://www.nuget.org/packages/Markdown/).
 
-## [Media Picker](Media-Picker2.md)
+## [Media Picker](Media-Picker)
 `Alias: Umbraco.MediaPicker`
 
 The media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files. There is a setting to enable multiple media items to be selected.
@@ -86,15 +86,15 @@ The media picker displays the current selected media and provides the option to 
 ## Member Group Picker
 `Alias: Umbraco.MemberGroupPicker`
 
-## Member Picker
+## [Member Picker](Member-Picker)
 `Alias: Umbraco.MemberPicker`
 
-## [Multi Url Picker](Related-Links2.md)
+## [Multi Url Picker](Multi-Url-Picker)
 `Alias: Umbraco.MultiUrlPicker`
 
 New in Umbraco v8, used to be a package called RJP Multi Url Picker. Replaced Related Links in v8.
 
-## [Multinode Treepicker](Multinode-Treepicker2.md)
+## [Multinode Treepicker](Multinode-Treepicker)
 `Alias: Umbraco.MultiNodeTreePicker`
 
 The multinode treepicker data type allows content editors to choose multiple nodes in the content or media trees.
