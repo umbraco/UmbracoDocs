@@ -132,7 +132,7 @@ Made obsolete with the release of Umbraco v7.6 the media picker displays the cur
 ## Member Group Picker
 `Alias: Umbraco.MemberGroupPicker`
 
-## [(Obsolete)Member Picker](Member-Picker/index-obsolete.md)
+## (Obsolete)Member Picker
 `Alias: Umbraco.MemberPicker`
 
 ## [Member Picker](Member-Picker/index.md)
