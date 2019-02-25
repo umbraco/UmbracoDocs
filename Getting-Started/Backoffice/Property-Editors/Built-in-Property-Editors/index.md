@@ -6,13 +6,18 @@ versionFrom: 8.0.0
 
 This page contains a list of all the built-in Umbraco property editors and a short description of what they do:
 
-## [Checkbox list](CheckBox-List/index.md)
+## [Checkbox (True/False)](True-False.md)
+`Alias: Umbraco.TrueFalse`
+
+A simple checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
+
+## [Checkbox list](CheckBox-List.md)
 `Alias: Umbraco.CheckBoxList`
 
 Displays a list of preset values as a list of checkbox controls
 
-## [Color Picker](Color-Picker/index.md)
-`Alias: Umbraco.ColorPickerAlias`
+## [Color Picker](Color-Picker.md)
+`Alias: Umbraco.ColorPicker`
 
 Adds a list of approved colours which can be selected by clicking.
 
@@ -21,17 +26,7 @@ Adds a list of approved colours which can be selected by clicking.
 
 The content picker allows the content editor to pick a specific node from the content structure.
 
-## [(Obsolete) Content Picker](Content-Picker.md)
-`Alias: Umbraco.ContentPickerAlias`
-
-Made obsolete with the release of Umbraco v7.6 the content picker allows the content editor to pick a specific node from the content structure.
-
-## [Date](Date.md)
-`Alias: Umbraco.Date`
-
-Displays a calendar UI for selecting dates
-
-## [Date/Time](Date-Time/index.md)
+## [Date/Time](Date-Time)
 `Alias: Umbraco.DateTime`
 
 Displays a calendar UI for selecting dates and time.
@@ -83,39 +78,26 @@ This control gives the same functionality as the standard listview, but allows y
 
 The markdown editor will be interpreted by the Models Builder. Behind the scenes, Umbraco uses the [Markdown NuGet package](https://www.nuget.org/packages/Markdown/).
 
-## [Media Picker](Media-Picker/index.md)
-`Alias: Umbraco.MediaPicker2`
+## [Media Picker](Media-Picker2.md)
+`Alias: Umbraco.MediaPicker`
 
 The media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files. There is a setting to enable multiple media items to be selected.
-
-## [(Obsolete) Media Picker](Media-Picker/index-obsolete.md)
-`Alias: Umbraco.MultipleMediaPicker`
-
-Made obsolete with the release of Umbraco v7.6 the media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files. There is a setting to enable multiple media items to be selected.
 
 ## Member Group Picker
 `Alias: Umbraco.MemberGroupPicker`
 
-## (Obsolete)Member Picker
+## Member Picker
 `Alias: Umbraco.MemberPicker`
 
-## [Member Picker](Member-Picker/index.md)
-`Alias: Umbraco.MemberPicker2`
+## [Multi Url Picker](Related-Links2.md)
+`Alias: Umbraco.MultiUrlPicker`
 
-## [Multinode Treepicker](Multinode-Treepicker/index.md)
-`Alias: Umbraco.MultiNodeTreePicker2`
+New in Umbraco v8, used to be a package called RJP Multi Url Picker. Replaced Related Links in v8.
 
-The multinode treepicker data type allows content editors to choose multiple nodes in the content or media trees.
-
-## [(Obsolete) Multinode Treepicker](Multinode-Treepicker/index-obsolete.md)
+## [Multinode Treepicker](Multinode-Treepicker2.md)
 `Alias: Umbraco.MultiNodeTreePicker`
 
-Made obsolete with the release of Umbraco v7.6 the multinode treepicker data type allows content editors to choose multiple nodes in the content or media trees.
-
-## [Multiple Textbox](Multiple-Textbox.md)
-`Alias: Umbraco.MultipleTextstring`
-
-The Multiple Textbox property editor enables a content editor to make a list of text items
+The multinode treepicker data type allows content editors to choose multiple nodes in the content or media trees.
 
 ## [Nested Content](Nested-Content.md)
 `Alias: Umbraco.NestedContent`
