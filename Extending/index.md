@@ -1,10 +1,14 @@
 ---
-versionFrom: 7.0.0
-meta.Title: "Learn about extending the functionality of Umbraco"
-meta.Description: "This section shows the different ways you can extend Umbraco. From Content Apps to Backoffice tours, and many more."
+versionFrom: 8.0.0
 ---
 
 # Extending Umbraco
+
+## [Content Apps](Content-Apps/index.md)
+
+Content Apps are a new concept in v8. Editors can switch from editing 'Content' to accessing contextual information related to the item they are editing.
+
+Content Apps encapsulate companion read-only information relating to the current content item in the Umbraco backoffice.
 
 ## [Backoffice tours](Backoffice-Tours/index.md)
 
@@ -56,3 +60,4 @@ Details on implementing virtual file systems for things like media which will al
 ## [Embedded Media Providers](Embedded-Media-Provider/index.md)
 
 Details on how to create a custom Embedded Media Provider to enable editors to embed third party media content into Umbraco via the embed button in the Rich Text Area.
+

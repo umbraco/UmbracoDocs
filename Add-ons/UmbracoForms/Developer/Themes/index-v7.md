@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
 ---
 
 # Themes
@@ -56,6 +56,13 @@ Add a JavaScript file path to include on form render
 
 ```csharp
 @Html.AddFormThemeScriptFile(Model, "~/App_Plugins/UmbracoForms/Assets/Themes/Default/umbracoforms-dependencies.js")
+```
+
+### AddFormThemeScriptCommand
+Add a JavaScript command to execute when the form is rendering, used to properly initialize fields on form render
+
+```csharp
+@Html.AddFormThemeScriptCommand(Model, "alert('hello')")
 ```
 
 ### SetFormFieldClass
