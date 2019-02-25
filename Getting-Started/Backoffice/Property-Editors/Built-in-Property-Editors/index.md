@@ -6,12 +6,12 @@ versionFrom: 7.0.0
 
 This page contains a list of all the built-in Umbraco property editors and a short description of what they do:
 
-## [Checkbox list](CheckBox-List.md)
+## [Checkbox list](CheckBox-List/index.md)
 `Alias: Umbraco.CheckBoxList`
 
 Displays a list of preset values as a list of checkbox controls
 
-## [Color Picker](Color-Picker.md)
+## [Color Picker](Color-Picker/index.md)
 `Alias: Umbraco.ColorPickerAlias`
 
 Adds a list of approved colours which can be selected by clicking.
@@ -31,7 +31,7 @@ Made obsolete with the release of Umbraco v7.6 the content picker allows the con
 
 Displays a calendar UI for selecting dates
 
-## [Date/Time](Date-Time/)
+## [Date/Time](Date-Time/index.md)
 `Alias: Umbraco.DateTime`
 
 Displays a calendar UI for selecting dates and time
@@ -119,12 +119,12 @@ Today there are other options to have repeated content like [Nested Content](Nes
 
 The markdown editor will be interpreted by the Models Builder. Behind the scenes, Umbraco uses the [Markdown NuGet package](https://www.nuget.org/packages/Markdown/).
 
-## [Media Picker](Media-Picker2.md)
+## [Media Picker](Media-Picker/index.md)
 `Alias: Umbraco.MediaPicker2`
 
 The media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files. There is a setting to enable multiple media items to be selected.
 
-## [(Obsolete) Media Picker](Media-Picker.md)
+## [(Obsolete) Media Picker](Media-Picker/index-obsolete.md)
 `Alias: Umbraco.MultipleMediaPicker`
 
 Made obsolete with the release of Umbraco v7.6 the media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files. There is a setting to enable multiple media items to be selected.
@@ -132,18 +132,18 @@ Made obsolete with the release of Umbraco v7.6 the media picker displays the cur
 ## Member Group Picker
 `Alias: Umbraco.MemberGroupPicker`
 
-## [(Obsolete)Member Picker](Member-Picker.md)
+## (Obsolete)Member Picker
 `Alias: Umbraco.MemberPicker`
 
-## Member Picker
+## [Member Picker](Member-Picker/index.md)
 `Alias: Umbraco.MemberPicker2`
 
-## [Multinode Treepicker](Multinode-Treepicker2.md)
+## [Multinode Treepicker](Multinode-Treepicker/index.md)
 `Alias: Umbraco.MultiNodeTreePicker2`
 
 The multinode treepicker data type allows content editors to choose multiple nodes in the content or media trees.
 
-## [(Obsolete) Multinode Treepicker](Multinode-Treepicker.md)
+## [(Obsolete) Multinode Treepicker](Multinode-Treepicker/index-obsolete.md)
 `Alias: Umbraco.MultiNodeTreePicker`
 
 Made obsolete with the release of Umbraco v7.6 the multinode treepicker data type allows content editors to choose multiple nodes in the content or media trees.
