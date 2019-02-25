@@ -9,7 +9,7 @@ Customising the behaviour of an Umbraco Application at 'start up'. eg adding, re
 ## Overview
 An Umbraco application is a `Composition` made of many different 'collections' of specific functionality/implementation logic/components (eg. UrlProviders, ContentFinders - see below for a full list). These collections are populated when the Umbraco Application starts up. 
 
-'Composing' is the term used to describe the process of deciding/curating which pieces of functionality/implementation should be included in a particular collection. The code that implements these choices at start up is called a `Composer`.
+'Composing' is the term used to describe the process of curating which pieces of functionality should be included in a particular collection. The code that implements these choices at start up is called a `Composer`.
 
 A `Component`, is a generic wrapper for writing custom code during composition, it has two methods: `Initialize()` and `Terminate()` and these are executed when the Umbraco Application starts up, and when it shuts down, respectively. Typically a `Component` may be used to wire up custom code to handle a particular event in Umbraco. (see content saving example below). 
 
