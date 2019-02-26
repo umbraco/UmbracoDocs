@@ -44,7 +44,7 @@ If you feel something is missing here or you want to help out documenting some o
 * Backoffice documentation
 * [Property Editors in Umbraco 8](https://github.com/umbraco/UmbracoDocs/issues/1528) 
 
-## Upcomming:
+## Upcoming:
 
 * **Update existing** Examine documentation
 * **Update existing** MVC / WebAPI documentation
