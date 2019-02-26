@@ -16,33 +16,33 @@ If you feel something is missing here or you want to help out documenting some o
 
 * [Version specific upgrade notes: 7 to 8](Getting-Started/Setup/Upgrading/version-specific.md)
 * [Composer/Composition mechanism documentation](Implementation/Composing/)
-* [Umbraco 8 Requirements](Getting-Started/Setup/Requirements/index-v8.md)
+* [Umbraco 8 Requirements](Getting-Started/Setup/Requirements)
 * Umbraco Forms - Updated
-    * [Themes](Add-ons/UmbracoForms/Developer/Themes/index-v8.md)
-    * [Creating a Form](Add-ons/UmbracoForms/Editor/Creating-a-Form/index-v8.md)
-    * [Prevalue source types](Add-ons/UmbracoForms/Editor/Defining-and-Attaching-Prevaluesources/Prevalue-source-types/index-v8.md)
-    * [Manual upgrade](Add-ons/UmbracoForms/Installation/ManualUpgrade-v8.md)
-* [Creating Media](Getting-Started/Data/Creating-Media/index-v8.md)
-* [Working with Members](Getting-Started/Data/Members/index-v8.md)
-* [Umbraco Backoffice](Getting-Started/Backoffice/index-v8)
-    * [Sections](Getting-Started/Backoffice/Sections/index-v8)
-    * [The login screen](Getting-Started/Backoffice/Login/index-v8)
-* [Content Apps](Extending/Content-Apps/index-v8)
-* [Creating your own Dashboard](Extending/Dashboards/index-v8)
-* [Backoffice Log Viewer](Getting-Started/Backoffice/LogViewer/index-v8)
-* [Property Editor: Date](Getting-Started/Backoffice/Property-Editors/Built-in-Property-Editors/Date/index-v8)
+    * [Themes](Add-ons/UmbracoForms/Developer/Themes)
+    * [Creating a Form](Add-ons/UmbracoForms/Editor/Creating-a-Form)
+    * [Prevalue source types](Add-ons/UmbracoForms/Editor/Defining-and-Attaching-Prevaluesources/Prevalue-source-types)
+    * [Manual upgrade](Add-ons/UmbracoForms/Installation/ManualUpgrade.md)
+* [Creating Media](Getting-Started/Data/Creating-Media)
+* [Working with Members](Getting-Started/Data/Members)
+* [Umbraco Backoffice](Getting-Started/Backoffice)
+    * [Sections](Getting-Started/Backoffice/Sections)
+    * [The login screen](Getting-Started/Backoffice/Login)
+* [Content Apps](Extending/Content-Apps)
+* [Creating your own Dashboard](Extending/Dashboards)
+* [Backoffice Log Viewer](Getting-Started/Backoffice/LogViewer)
+* [Property Editor: Date](Getting-Started/Backoffice/Property-Editors/Built-in-Property-Editors/Date)
 * [Language Variants](Getting-Started/Backoffice/Variants)
-* [Logging](Getting-Started/Code/Debugging/Logging/index-v8)
-* [Defining content](Getting-Started/Data/Defining-content/index-v8)
-* [Rendering content](Getting-Started/Design/Rendering-Content/index-v8)
-* [Tutorial: Creating a basic website](Tutorials/Creating-Basic-Site/index-v8)
+* [Logging](Getting-Started/Code/Debugging/Logging)
+* [Defining content](Getting-Started/Data/Defining-content)
+* [Rendering content](Getting-Started/Design/Rendering-Content)
+* [Tutorial: Creating a basic website](Tutorials/Creating-Basic-Site)
 * [Tutorial: Porting packages to V8](Tutorials/Porting-Packages-V8)
-* [Dashboards](Extending/Dashboards/index-v8)
+* [Dashboards](Extending/Dashboards)
 
 ## In progress:
 
 * Backoffice documentation
-* Property Editors in Umbraco 8
+* [Property Editors in Umbraco 8](https://github.com/umbraco/UmbracoDocs/issues/1528) 
 
 ## Upcomming:
 

@@ -39,7 +39,7 @@ When you return to your content node you will notice two things.
 
 Each property editor that does not allow variants will be greyed out and have the content of the default language.
 
-To read about how you render variant content in templates, check out the [rendering content section](../../Design/Rendering-Content/index-v8.md).
+To read about how you render variant content in templates, check out the [rendering content section](../../Design/Rendering-Content/).
 
 ## Read more
 

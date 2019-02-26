@@ -1,20 +1,20 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.0
 ---
 
 # Checkbox List
 
 `Alias: Umbraco.CheckBoxList`
 
-`Returns: Comma Separated String`
+`Returns: IEnumerable collection of strings`
 
-Displays a list of preset values as a list of checkbox controls. The text saved is a comma separated string of text values.
+Displays a list of preset values as a list of checkbox controls. The text saved is a IEnumerable collection of the text values.
 
 *NOTE: Unlike other property editors, the Prevalue IDs are not directly accessible in Razor*
 
 ## Data Type Definition Example
 
-![True/Checkbox List Definition](images/checkbox-list-setup.png)
+![True/Checkbox List Definition](images/checkbox-list-setup-v8.png)
 
 ## Content Example
 
@@ -26,29 +26,9 @@ Displays a list of preset values as a list of checkbox controls. The text saved 
 
 ```csharp
 @{
-    if (Model.Content.HasValue("superHeros")){
+    if (Model.HasValue("superHeros")){
         <ul>
-            @foreach(var item in Model.Content.GetPropertyValue<string>("superHeros").Split(',')) {
-                <li>@item</li>
-            }
-        </ul>
-    }
-}
-```
-
-### Dynamic (Obsolete)
-
-:::warning
-See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
-:::
-
-```csharp
-@{
-    if (CurrentPage.HasValue("superHeros"))
-    {
-        <ul>
-            @foreach (var item in CurrentPage.superHeros.Split(','))
-            {
+            @foreach(var item in Model.SuperHeros) {
                 <li>@item</li>
             }
         </ul>
