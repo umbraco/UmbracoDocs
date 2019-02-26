@@ -14,7 +14,7 @@ Yes, you can. Umbraco 7 will continue to be supported on Cloud and we will still
 
 And the last date Umbraco 7 sites are supported on Umbraco Cloud will be September 30th 2023.
 
-Following the launch of Umbraco 8, when creating a new project, you’ll get the option to create it in either Umbraco 7 or Umbraco 8. All free Umbraco Cloud trials will be on Umbraco 8 following the launch. 
+Following the launch of Umbraco 8, when creating a new paid project, you’ll get the option to create it in either Umbraco 7 or Umbraco 8. All free Umbraco Cloud trials will be on Umbraco 8 following the launch. 
 
 ## Will it be possible to upgrade automatically from Umbraco 7 to Umbraco 8?
 
