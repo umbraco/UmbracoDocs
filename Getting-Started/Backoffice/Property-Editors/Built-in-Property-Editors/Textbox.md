@@ -1,5 +1,6 @@
 ---
-versionFrom: 8.0.0
+keywords: textbox property editors v7.6 version7.6
+versionFrom: 7.6.0
 ---
 
 # Textbox
@@ -14,7 +15,11 @@ Textbox is a simple HTML input control for text. It can be configured to have a 
 
 ### Without a character limit
 
-![Textbox Data Type Definition](images/Textbox-Setup-v8.png)
+![Textbox Data Type Definition](images/7_6/textbox-setup.png)
+
+### With a character limit
+
+![Textbox Data Type Definition With a Character Limit](images/7_6/textbox-setup-limit.png)
 
 ## Settings
 
@@ -22,18 +27,31 @@ Textbox is a simple HTML input control for text. It can be configured to have a 
 
 ### Without a character limit
 
-![Textbox Content Example](images/Textbox-Content-v8.png)
+![Textbox Content Example](images/7_6/textbox-content.png)
 
 ### With a character limit
 
-![Textbox Content Example Without a Character Limit](images/Textbox-Content-Limit-v8.png)
+![Textbox Content Example Without a Character Limit](images/7_6/textbox-content-limit.png)
 
 ## MVC View Example:
 
 ```csharp
 @{
-   if (Model.HasValue("pageTitle")){
-       <p>@(Model.Value("pageTitle"))</p>
+   if (Model.Content.HasValue("pageTitle")){
+       <p>@(Model.Content.GetPropertyValue<string>("pageTitle"))</p>
    }
+}
+```
+
+
+### Dynamic (Obsolete):
+
+See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
+
+```csharp
+@{       	
+   if (CurrentPage.HasValue("pageTitle")){	
+       <p>@CurrentPage.pageTitle</p>	
+   } 	       	
 }
 ```
