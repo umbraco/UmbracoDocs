@@ -10,11 +10,11 @@ Pretty much like the name indicates this Data type enables editors to choose fro
 
 ## Data Type Definition Example
 
-![Radiobutton List Data Type Definition](images/wip.png)
+![Radiobutton List Data Type Definition](../images/wip.png)
 
 ## Content Example 
 
-![Radiobutton List Content](images/wip.png)
+![Radiobutton List Content](../images/wip.png)
 
 ## MVC View Example
 
