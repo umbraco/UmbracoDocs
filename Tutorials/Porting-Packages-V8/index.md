@@ -15,30 +15,10 @@ Well then this guide, should give you a few pointers to get started with the pro
 ## Upgrade .NET Framework
 Upgrade your Visual Studio C# project to use and compile against the .NET Framework 4.7.2. This is because the minimum to run version 8 of Umbraco requires this specific version of the .NET Framework
 
-## Add Nuget.config file to your solution
-As Umbraco V8 is still in development and not been published to the official Nuget.org feed, then to allow you to easily add references to the Umbraco DLLs in your project.
-
-Add the following `nuget.config` file to the root of your project, for Visual Studio to discover it
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-<!--
-    this is Umbraco's NuGet configuration,
-    content of this file is merged with the system-wide configuration,
-    at %APPDATA%\NuGet\NuGet.config
--->
-<packageSources>
-    <add key="UmbracoCoreMyGet" value="https://www.myget.org/F/umbracocore/api/v3/index.json" />
-    <add key="ExamineAppVeyor" value="https://ci.appveyor.com/nuget/examine-f73l6qv0oqfh/" />
-</packageSources>
-</configuration>
-```
-
 ## Add references via Nuget
-You will need to add `UmbracoCms.Core` via Nuget from the `UmbracoCoreMyGet` feed with the pre-release flag enabled using the UI in Visual Studio or the Nuget Command Line with the following command 
+You will need to add `UmbracoCms.Core` via Nuget from the `UmbracoCoreNuGet` feed using the UI in Visual Studio or the Nuget Command Line with the following command 
 
-    Install-Package UmbracoCms.Core -pre -source https://www.myget.org/F/umbracocore/api/v3/index.json
+    Install-Package UmbracoCms.Core 
 
 Optionally add reference to `UmbracoCms.Web` if your code uses anything such as `UmbracoApiController` `SurfaceController` then you will need to add the Nuget package reference of `UmbracoCms.Web` which in turn has a reference to `UmbracoCms.Core`
 
