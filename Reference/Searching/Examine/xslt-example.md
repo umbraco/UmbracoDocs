@@ -1,7 +1,7 @@
 ---
 keywords: examine indexing v7
-versionFrom: 7
-versionTo: 7
+versionFrom: 7.0.0
+versionRemoved: 8.0.0
 ---
 
 # Using Examine with XSLT
