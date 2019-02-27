@@ -14,7 +14,7 @@ The Tags property editor allows you to add multiple tags to a node.
 
 ## Data Type Definition Example
 
-![Data Type Definition Example](images/tags/configuration.png)
+![Data Type Definition Example](images/configuration.png)
 
 ### Tag group
 
@@ -22,23 +22,23 @@ The **Tag group** setting provides a way to categorize your tags in groups. So f
 
 ### Storage type
 
-Data can be saved in either CSV format or in JSON format. By default data is saved in CSV format. The difference between using CSV and JSON is that with JSON you can save a tag, which includes comma separated values and when saving using JSON you will need to either create a [property value converter](../../../../Extending/Property-Editors/value-converters.md "Read more about property value converters") or parse the JSON in the view. [The JSON code example](#typed-using-json) on the last part of this page will show how to parse the JSON in the view.
+Data can be saved in either CSV format or in JSON format. By default data is saved in CSV format. The difference between using CSV and JSON is that with JSON you can save a tag, which includes comma separated values and when saving using JSON you will need to either create a [property value converter](../../../../../Extending/Property-Editors/value-converters.md "Read more about property value converters") or parse the JSON in the view. [The JSON code example](index-vpost-7.4.md#typed---using-json) on the last part of this page will show how to parse the JSON in the view.
 
 ## Content Examples
 
 ### CSV tags
 
-![CSV tags example](images/tags/7_4/csv-example.png)
+![CSV tags example](images/7_4/csv-example.png)
 
 ### JSON tags
 
-![JSON tags example](images/tags/7_4/json-example.png)
+![JSON tags example](images/7_4/json-example.png)
 
 ### Tags typeahead
 
 Whenever a tag has been added it will be visible in the typeahead when you start typing on other pages.
 
-![Tags typeahead example](images/tags/7_4/typeahead.png)
+![Tags typeahead example](images/7_4/typeahead.png)
 
 ## MVC View Example - displays a list of tags
 
