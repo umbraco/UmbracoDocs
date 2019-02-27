@@ -14,7 +14,7 @@ The Umbraco UI should work in all modern browsers:
 
 ## Local Development
 * Microsoft Windows 7 SP1
-* [Visual Studio Code](https://code.visualstudio.com/) with the [IISExpress extension](https://marketplace.visualstudio.com/items?itemName=warren-buckley.iis-express) or [Microsoft Visual Studio](https://www.visualstudio.com/) 2017 **version 15.9.x+**
+* [Visual Studio Code](https://code.visualstudio.com/) with the [IISExpress extension](https://marketplace.visualstudio.com/items?itemName=warren-buckley.iis-express) or [Microsoft Visual Studio](https://www.visualstudio.com/) 2017 **version 15.9.7+**
 * ASP.NET 4.7.2
 
 ## Hosting
