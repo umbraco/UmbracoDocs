@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Cache & Distributed Cache
 
 _This section refers to how to implement caching features in the Umbraco application in a consistent way that will work in both single server environments and load balanced (multi-server) environments. The caching described in this section relates to application caching in the context of a web application only._ 

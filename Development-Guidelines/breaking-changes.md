@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Breaking changes
 
 _Defines what a breaking change is in regards to the Umbraco core codebase and describes how to deal with required breaking changes._

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Labels
 
 On GitHub our issues and pull requests are marked with labels.  The most common ones are explained below.

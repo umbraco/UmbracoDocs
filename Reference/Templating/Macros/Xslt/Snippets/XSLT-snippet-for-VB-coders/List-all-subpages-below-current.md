@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # List all subpages below current, vb in xslt.
 
 Here's yet another sample with vb in xslt. I believe many vb-coders feel xslt is a bit hard to get used to, I know I do. The flexibility of umbraco, xslt and .net let vb-coders still use their "mother tongue" even for ui-editable macros.

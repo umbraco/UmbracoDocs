@@ -1,8 +1,14 @@
+---
+versionFrom: 7.0.0
+---
+
 # Published Content Request Preparation
 
 Is called in `UmbracoModule`:
 
-    void ProcessRequest(…)
+```csharp
+void ProcessRequest(…)
+```
 
 What it does:
 
@@ -54,17 +60,19 @@ More information can be found [here](FindPublishedContentAndTemplate.md).
 
 UmbracoModule will pick up the redirect and redirect...  There is no need to write your own redirects:
 
-    PublishedContentRequest.Prepared += (sender, args) =>
-    {
-      var request = sender as PublishedContentRequest;  
-      if (!request.HasPublishedContent) return;
+```csharp
+PublishedContentRequest.Prepared += (sender, args) =>
+{
+  var request = sender as PublishedContentRequest;  
+  if (!request.HasPublishedContent) return;
 
-      var content = request.PublishedContent;
-      var redirect = content.GetPropertyValue<string>("myRedirect");
-      
-      if (!string.IsNullOrWhiteSpace(redirect))
-        request.SetRedirect(redirect);
-    }
+  var content = request.PublishedContent;
+  var redirect = content.GetPropertyValue<string>("myRedirect");
+
+  if (!string.IsNullOrWhiteSpace(redirect))
+    request.SetRedirect(redirect);
+}
+```
 
 ## Forward to either WebForms or Mvc
 
@@ -72,16 +80,19 @@ Concerning Webforms - that's the same as v4 (no change).  That means that MVC ha
 
 You can of course create your own Mvc RenderController: 
 
+```csharp
+// This is the default controller
+public class RenderMvcController : UmbracoController
+{ … }
 
-    // This is the default controller
-    public class RenderMvcController : UmbracoController
-    { … }
+// But feel free to use your own
+public class DefaultRenderMvcControllerResolver
+{ … }
+```
 
-    // But feel free to use your own
-    public class DefaultRenderMvcControllerResolver
-    { … }
-
-Note: a missing template goes to MVC
+:::note
+A missing template goes to MVC
+:::
 
 There's one by default but you can use your own, so still time to change the view...
 

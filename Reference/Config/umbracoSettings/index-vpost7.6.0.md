@@ -8,7 +8,9 @@ versionFrom: 7.6.0
 
 You can specify your own background image for the login screen here. The image will automatically get an overlay to match backoffice colors. This path is relative to the ~/umbraco path. The default location is: /umbraco/assets/img/installer.jpg
 
-    <loginBackgroundImage>../App_Plugins/Backgrounds/login.png</loginBackgroundImage>
+```xml
+<loginBackgroundImage>../App_Plugins/Backgrounds/login.png</loginBackgroundImage>
+```
 
 ## `<EnablePropertyValueConverters> `
 
@@ -16,4 +18,6 @@ Enables [value converters](../../../Extending/Property-Editors/value-converters.
 
 On new installs this set to true. When you are upgrading from a lower version than 7.6.0 it is recommended to set this setting to false. More information can be found in the explanation of the [breaking changes in 7.6.0](../../../Getting-Started/Setup/Upgrading/760-breaking-changes#property-value-converters-u4-7318)
 
-    <EnablePropertyValueConverters>true</EnablePropertyValueConverters>
+```xml
+<EnablePropertyValueConverters>true</EnablePropertyValueConverters>
+```

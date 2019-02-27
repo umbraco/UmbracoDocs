@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Finding types
 
 _Whenever types need to be found in assemblies in order to add them to resolvers, the PluginManager should be used. The TypeFinder should never be used directly in any code except for in PluginManager extension methods or in the PluginManager itself._ 
@@ -19,14 +23,18 @@ The `Umbraco.Core.PluginManager` class is responsible for finding and caching al
 
 It is definitely possible to simply use  the methods above to find types in your code but this is not recommended practice. It is recommended to create extension methods for the PluginManager named accordingly to find specific types. For example: 
 
-	PluginManager.Current.ResolveTrees();
+```csharp
+PluginManager.Current.ResolveTrees();
+```
 
 The code for this method is as follows:
 
-	internal static IEnumerable<Type> ResolveTrees(this PluginManager resolver)
-	{
-		return resolver.ResolveTypes<ITree>();
-	}
+```csharp
+internal static IEnumerable<Type> ResolveTrees(this PluginManager resolver)
+{
+    return resolver.ResolveTypes<ITree>();
+}
+```
 
 The code simply calls the PluginManager's ResolveTypes method but this method is human readable and easy to distinguish.
 

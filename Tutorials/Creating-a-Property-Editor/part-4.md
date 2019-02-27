@@ -1,4 +1,8 @@
-# Tutorial - Adding server-side data to a property editor
+---
+versionFrom: 7.0.0
+---
+
+# Adding server-side data to a property editor
 
 ## Overview
 In this tutorial, we will add a server-side API controller, which will query a custom table in the Umbraco database, and then return the data to a simple angular controller + view.
@@ -25,7 +29,6 @@ First thing we need is some data; below is a simple SQL Script for creating a `p
 	INSERT INTO people(name,town,country) VALUES('Erasmus Camacho','Sint-Pieters-Kapelle','Saint Vincent and The Grenadines');
 	INSERT INTO people(name,town,country) VALUES('Aimee Sampson','Hawera','Antigua and Barbuda');
 
-
 ## Setup ApiController routes
 Next we need to define an `ApiController` to expose a server-side route which our application will use to fetch the data.
 
@@ -33,23 +36,25 @@ For this, we will create a file at: `/App_Code/PersonApiController.cs`. It must 
 
 In the `PersonApiController.cs` file, add: 
 
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Web;
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
-	using Umbraco.Web.WebApi;
-	using Umbraco.Web.Editors;
-	using Umbraco.Core.Persistence;
+using Umbraco.Web.WebApi;
+using Umbraco.Web.Editors;
+using Umbraco.Core.Persistence;
 
-	namespace My.Controllers
+namespace My.Controllers
+{
+	[Umbraco.Web.Mvc.PluginController("My")]
+	public class PersonApiController : UmbracoAuthorizedJsonController
 	{
-	    [Umbraco.Web.Mvc.PluginController("My")]
-	    public class PersonApiController : UmbracoAuthorizedJsonController
-	    {
-	        // we will add a method here later
-	    }
+		// we will add a method here later
 	}
+}
+```
 
 This is a very basic API controller which inherits from `UmbracoAuthorizedJsonController` this specific class will only return JSON data and only to requests which are authorized to access the backoffice.
 
@@ -58,31 +63,37 @@ Now that we have a controller, we need to create a method, which can return a co
 
 So first of all, we add a `Person` class to the `My.Controllers` namespace:
 
-	public class Person
-	{
-	    public int Id { get; set; }
-	    public string Name { get; set; }
-	    public string Town { get; set; }
-	    public string Country { get; set; }
-	}
+```csharp
+public class Person
+{
+	public int Id { get; set; }
+	public string Name { get; set; }
+	public string Town { get; set; }
+	public string Country { get; set; }
+}
+```
 
 We will use this class to map our table data to a C# class, which we can return as JSON later. 
 
 Now we need the `GetAll()` method which returns a collection of people, insert this inside the `PersonApiController` class:
 
-	public IEnumerable<Person> GetAll()
-	{
-		
-	}
+```csharp
+public IEnumerable<Person> GetAll()
+{
+	
+}
+```
 
 Inside the `GetAll()` method, we now write a bit of code, that connects to the database, creates a query and returns the data, mapped to the `Person` class above: 
 
-	// get the database
-	var db = UmbracoContext.Application.DatabaseContext.Database;
-	// build a query to select everything the people table
-	var query = new Sql().Select("*").From("people");
-	// fetch data from DB with the query and map to Person object
-	return db.Fetch<Person>(query);
+```csharp
+// get the database
+var db = UmbracoContext.Application.DatabaseContext.Database;
+// build a query to select everything the people table
+var query = new Sql().Select("*").From("people");
+// fetch data from DB with the query and map to Person object
+return db.Fetch<Person>(query);
+```
 
 We are now done with the server-side of things, with the file saved in App_Code you can now open the URL: `/umbraco/backoffice/My/PersonApi/GetAll`.
 
@@ -93,20 +104,22 @@ Now that we have the server-side in place, and a URL to call, we will setup a se
 
 Create a new file as `person.resource.js` and add: 
 
-	// adds the resource to umbraco.resources module:
-	angular.module('umbraco.resources').factory('personResource', 
-		function($q, $http, umbRequestHelper) {
-		    // the factory object returned
-		    return {
-		        // this calls the ApiController we setup earlier
-		        getAll: function () {
-			    return umbRequestHelper.resourcePromise(
-			    	$http.get("backoffice/My/PersonApi/GetAll"),
-				"Failed to retrieve all Person data");
-		        }
-		    };
-		}
-	); 
+```javascript
+// adds the resource to umbraco.resources module:
+angular.module('umbraco.resources').factory('personResource', 
+	function($q, $http, umbRequestHelper) {
+		// the factory object returned
+		return {
+			// this calls the ApiController we setup earlier
+			getAll: function () {
+			return umbRequestHelper.resourcePromise(
+				$http.get("backoffice/My/PersonApi/GetAll"),
+			"Failed to retrieve all Person data");
+			}
+		};
+	}
+); 
+```
 
 This uses the standard angular factory pattern, so we can now inject this into any of our controllers under the name `personResource`.
 
@@ -115,24 +128,27 @@ The `getAll()` method returns a promise from an `$http.get` call, which handles 
 ## Create the view and controller
 We will now finally setup a new view and controller, which follows previous tutorials, so you can refer to those for more details: 
 
-#### the view:
+#### The view:
 
-	<div ng-controller="My.PersonPickerController">
-		<ul>
-			<li ng-repeat="person in people">
-				<a href ng-click="model.value = person.Name">{{person.Name}}</a>
-			</li>
-		</ul>
-	</div>
-
+```html
+<div ng-controller="My.PersonPickerController">
+	<ul>
+		<li ng-repeat="person in people">
+			<a href ng-click="model.value = person.Name">{{person.Name}}</a>
+		</li>
+	</ul>
+</div>
+```
 #### The controller:
-	
-	angular.module("umbraco")
-		.controller("My.PersonPickerController", function($scope, personResource){
-			personResource.getAll().then(function(response){
-				$scope.people = response.data;
-			});
+
+```javascript	
+angular.module("umbraco")
+	.controller("My.PersonPickerController", function($scope, personResource){
+		personResource.getAll().then(function(response){
+			$scope.people = response.data;
 		});
+	});
+```
 
 ## The flow
 So with all these bits in place, all you need to do is register the property editor in a package.manifest - have a look at the first tutorial in this series. You will need to tell the package to load both your `personpicker.controller.js` and the `person.resource.js` file on app start.

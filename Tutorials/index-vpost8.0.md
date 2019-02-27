@@ -1,5 +1,5 @@
 ---
-versionFrom: "8.0"
+versionFrom: 8.0.0
 product: "CMS"
 meta.Title: "Tutorials for beginners and master alike"
 meta.Description: "Here you can find tutorials covering things like creating a site from scratch, setting up multilingual sites and many more"

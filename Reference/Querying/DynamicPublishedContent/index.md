@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # DynamicPublishedContent
 
 DynamicPublishedContent is the dynamic version of [IPublishedContent](../IPublishedContent/index.md), it allows for simpler access to property data 
@@ -8,12 +12,14 @@ that are used for filtering, querying and collections.
 ## Get started
 To access the current page in your macros or templates, copy-paste the below Razor code.
 
-	@{
-		var pageName = CurrentPage.Name;
-		var childPages = CurrentPage.Children;
-	}
-	
-	<h1>@pageName</h1>
+```csharp
+@{
+    var pageName = CurrentPage.Name;
+    var childPages = CurrentPage.Children;
+}
+```
+
+<h1>@pageName</h1>
 
 ## [Properties](Properties.md)
 Listing and explanation of DynamicPublishedContent properties & standard helpers for Content and Media.

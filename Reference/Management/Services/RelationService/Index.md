@@ -1,6 +1,12 @@
+---
+versionFrom: 6.1.1
+---
+
 # RelationService
 
-**Applies to Umbraco 6.1.1 and newer**
+:::note
+Applies to Umbraco 6.1.1 and newer
+:::
 
 The RelationService acts as a "gateway" to Umbraco data for operations which are related to Relations.
 
@@ -14,19 +20,25 @@ All samples in this document will require references to the following dll:
 * Umbraco.Core.dll
 
 All samples in this document will require the following using statements:
-	
-	using Umbraco.Core;
-	using Umbraco.Core.Models;
-	using Umbraco.Core.Services;
+
+```csharp
+using Umbraco.Core;
+using Umbraco.Core.Models;
+using Umbraco.Core.Services;
+```
 
 ## Getting the service
 The RelationService is available through the `ApplicationContext`, or if you are using a `SurfaceController` or the `UmbracoUserControl` then the RelationService is available through a local `Services` property.
 
-	Services.RelationService
+```csharp
+Services.RelationService
+```
 
 Getting the service through the `ApplicationContext`:
 
-	ApplicationContext.Current.Services.RelationService
+```csharp
+ApplicationContext.Current.Services.RelationService
+```
 
 ## Methods
 
@@ -54,24 +66,26 @@ Gets an enumerable list of `RelationType` objects. If the optional array of inte
 ### .GetByParentId(int id)
 Gets an enumerable list of `Relation` objects that have the specified ParentId.
 
-	public IENumerable<IPublishedContent> GetFavorites(int memberId)
-	{
-	    var rs = ApplicationContext.Current.Services.RelationService;
-	    var relType = rs.GetRelationTypeByAlias("memberFavorites");
-	    var favorites = new List<IPublishedContent>();
-	 
-	    if (memberId > 0)
-	    {
-	        var relations = rs.GetByParentId(memberId).Where(r => r.RelationType.Alias == "memberFavorites");
-	 
-		foreach (var relation in relations)
-		{
-			favorites.Add(UmbracoContext.Current.ContentCache.GetById(relation.ChildId));
-		}
-	    }
-	 
-	    return favorites;
-	}
+```csharp
+public IENumerable<IPublishedContent> GetFavorites(int memberId)
+{
+    var rs = ApplicationContext.Current.Services.RelationService;
+    var relType = rs.GetRelationTypeByAlias("memberFavorites");
+    var favorites = new List<IPublishedContent>();
+
+    if (memberId > 0)
+    {
+        var relations = rs.GetByParentId(memberId).Where(r => r.RelationType.Alias == "memberFavorites");
+
+    foreach (var relation in relations)
+    {
+        favorites.Add(UmbracoContext.Current.ContentCache.GetById(relation.ChildId));
+    }
+    }
+
+    return favorites;
+}
+```
 
 ### .GetByChildId(int id)
 Gets an enumerable list of `Relation` objects that have the specified ChildId.
@@ -121,18 +135,20 @@ Returns `true` if any relations exist for the specified Id, otherwise returns `f
 ### .Save(IRelation relation)
 Saves a single `Relation` object.
 
-	public void SetFavorite(int memberId, int contentId) {
-		var rs = ApplicationContext.Current.Services.RelationService;
-		var areRelated = rs.AreRelated(memberId, contentId, "memberFavorites");
-	 
-		if (!areRelated)
-		{
-			// create relation
-			var relType = rs.GetRelationTypeByAlias("memberFavorites");
-			var r = new Relation(memberId, contentId, relType);
-			rs.Save(r);
-		}
-	}
+```csharp
+public void SetFavorite(int memberId, int contentId) {
+    var rs = ApplicationContext.Current.Services.RelationService;
+    var areRelated = rs.AreRelated(memberId, contentId, "memberFavorites");
+
+    if (!areRelated)
+    {
+        // create relation
+        var relType = rs.GetRelationTypeByAlias("memberFavorites");
+        var r = new Relation(memberId, contentId, relType);
+        rs.Save(r);
+    }
+}
+```
 
 ### .Save(IRelationType relationType)
 Saves a single IRelationType object.

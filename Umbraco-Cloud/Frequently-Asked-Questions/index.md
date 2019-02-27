@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Frequently asked questions
 
 Here you will find answers to the questions we most commonly hear from people that are wondering about if Umbraco Cloud is the right fit for their project. The answers you will find here are of a more technical nature and are directed at developers.
@@ -58,7 +62,7 @@ We do have some limitations:
 
 - If your Cloud site is using over 90% CPU for more than 10 minutes, the priority for your CPU usage will be throttled down for each time you consecutively use more than 90% CPU per 10 minutes
 - Memory usages is limited to 2048 MB per Cloud site and when that limit is reached, your website will be restarted automatically to make sure sites with memory leaks don't take up all of the available memory on the server
-- There's a limitation of 20 domain names that you can point to one Umbraco Cloud site - make sure to contact us if you need more than that
+- There's a limitation of 15 domain names that you can point to one Umbraco Cloud site - make sure to contact us if you need more than that
 
 In our experience there are only a few Cloud sites that have experienced these limitations and we're happy to work with people who have sites affected by these limitations.
 
@@ -174,25 +178,27 @@ On Cloud it is easy to add an IP filter of your choosing, there are a few things
 
 The following rule can be added to your web.config (in `system.webServer/rewrite/rules/`):
 
-    <rule name="Backoffice IP Filter" enabled="true">
-        <match url="(^umbraco/backoffice/(.*)|^umbraco($|/$))"/>
-        <conditions logicalGrouping="MatchAll">
+```xml
+<rule name="Backoffice IP Filter" enabled="true">
+    <match url="(^umbraco/backoffice/(.*)|^umbraco($|/$))"/>
+    <conditions logicalGrouping="MatchAll">
 
-            <!-- Umbraco Cloud to Cloud connections should be allowed -->
-            <add input="{REMOTE_ADDR}" pattern="52.166.147.129" negate="true" />
-            <add input="{REMOTE_ADDR}" pattern="13.95.93.29" negate="true" />
-            <add input="{REMOTE_ADDR}" pattern="40.68.36.142" negate="true" />
-            <add input="{REMOTE_ADDR}" pattern="13.94.247.45" negate="true" />
-            
-            <!-- Don't apply rules on localhost so your local environment still works -->
-            <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
+        <!-- Umbraco Cloud to Cloud connections should be allowed -->
+        <add input="{REMOTE_ADDR}" pattern="52.166.147.129" negate="true" />
+        <add input="{REMOTE_ADDR}" pattern="13.95.93.29" negate="true" />
+        <add input="{REMOTE_ADDR}" pattern="40.68.36.142" negate="true" />
+        <add input="{REMOTE_ADDR}" pattern="13.94.247.45" negate="true" />
 
-            <!-- Add other client IPs that need access to the backoffice -->
-            <add input="{REMOTE_ADDR}" pattern="123.123.123.123" negate="true" />
+        <!-- Don't apply rules on localhost so your local environment still works -->
+        <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
 
-        </conditions>
-        <action type="CustomResponse" statusCode="403"/>
-    </rule> 
+        <!-- Add other client IPs that need access to the backoffice -->
+        <add input="{REMOTE_ADDR}" pattern="123.123.123.123" negate="true" />
+
+    </conditions>
+    <action type="CustomResponse" statusCode="403"/>
+</rule> 
+```
 
 What we're doing here is blocking all the requests to `umbraco/backoffice/` and all of the routes that start with this. 
 

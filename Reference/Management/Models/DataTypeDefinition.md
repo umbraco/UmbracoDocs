@@ -1,3 +1,7 @@
+---
+versionFrom: 6.0.0
+---
+
 # DataTypeDefinition
 
 **Applies to Umbraco 6.x and newer**
@@ -12,8 +16,10 @@ All samples in this document will require references to the following dll:
 * Umbraco.Core.dll
 
 All samples in this document will require the following using statement:
-	
-	using Umbraco.Core.Models;
+
+```csharp
+using Umbraco.Core.Models;
+```
 
 ## Constructors
 

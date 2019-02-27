@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+versionRemoved: 8.0.0
+---
+
 # Using Courier
 
 _Outlines the common gotchas, and the recommended way to work with Courier, to perform as smooth deployments of an Umbraco site as possible_

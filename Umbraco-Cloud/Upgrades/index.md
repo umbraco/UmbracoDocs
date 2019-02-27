@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Umbraco Cloud Product Upgrades
 
 _This document describes when & what product updates are rolled out on Umbraco Cloud_

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Umbraco Security Settings
 
 ## Password settings
@@ -5,35 +9,35 @@
 The settings for Umbraco passwords are handled by default through the ASP.NET Membership Providers. There are two Membership Providers in the web.config file. One for Umbraco Members and one for Users.
 
 ```xml
-    <membership defaultProvider="UmbracoMembershipProvider" userIsOnlineTimeWindow="15">
-      <providers>
-        <clear />
+<membership defaultProvider="UmbracoMembershipProvider" userIsOnlineTimeWindow="15">
+  <providers>
+    <clear />
 
-        <!-- Used for members in the Member section of Umbraco -->
-        <add name="UmbracoMembershipProvider"
-             type="Umbraco.Web.Security.Providers.MembersMembershipProvider, Umbraco"
-             minRequiredNonalphanumericCharacters="0"
-             minRequiredPasswordLength="10"
-             useLegacyEncoding="false"
-             enablePasswordRetrieval="false"
-             enablePasswordReset="false"
-             requiresQuestionAndAnswer="false"
-             defaultMemberTypeAlias="Member"
-             passwordFormat="Hashed"
-             allowManuallyChangingPassword="false"
-             maxInvalidPasswordAttempts="50"/>
-          
-        <!-- Used for users who have permission to log into Umbraco's backoffice, listed in the Users section of Umbraco --> 
-        <add name="UsersMembershipProvider"
-             type="Umbraco.Web.Security.Providers.UsersMembershipProvider, Umbraco"
-             enablePasswordRetrieval="false"
-             enablePasswordReset="false"
-             requiresQuestionAndAnswer="false"
-             allowManuallyChangingPassword="false"
-             maxInvalidPasswordAttempts="100"/>
-          
-      </providers>
-    </membership>
+    <!-- Used for members in the Member section of Umbraco -->
+    <add name="UmbracoMembershipProvider"
+         type="Umbraco.Web.Security.Providers.MembersMembershipProvider, Umbraco"
+         minRequiredNonalphanumericCharacters="0"
+         minRequiredPasswordLength="10"
+         useLegacyEncoding="false"
+         enablePasswordRetrieval="false"
+         enablePasswordReset="false"
+         requiresQuestionAndAnswer="false"
+         defaultMemberTypeAlias="Member"
+         passwordFormat="Hashed"
+         allowManuallyChangingPassword="false"
+         maxInvalidPasswordAttempts="50"/>
+
+    <!-- Used for users who have permission to log into Umbraco's backoffice, listed in the Users section of Umbraco --> 
+    <add name="UsersMembershipProvider"
+         type="Umbraco.Web.Security.Providers.UsersMembershipProvider, Umbraco"
+         enablePasswordRetrieval="false"
+         enablePasswordReset="false"
+         requiresQuestionAndAnswer="false"
+         allowManuallyChangingPassword="false"
+         maxInvalidPasswordAttempts="100"/>
+
+  </providers>
+</membership>
 ```
 
 For both of these Membership Providers you can specify the following settings (if the attribute is not specified in the web.config the default value is used):

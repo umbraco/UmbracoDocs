@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Using Interfaces
 
 When using compositions, Models Builder generates an interface for the composed model, which enables

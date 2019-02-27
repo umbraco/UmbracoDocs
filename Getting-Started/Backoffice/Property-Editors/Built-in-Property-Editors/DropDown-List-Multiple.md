@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # (Obsolete) Dropdown list multiple
 
 `Returns: Comma Separated String`

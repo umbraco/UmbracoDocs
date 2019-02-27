@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Rendering Forms scripts where you want
 
 :::tip

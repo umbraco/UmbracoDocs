@@ -1,3 +1,7 @@
+---
+versionFrom: 6.0.0
+---
+
 # UmbracoHelper
 
 _UmbracoHelper is the unified way to work with published content/media on your website. Whether you are using MVC or WebForms you will be able to use UmbracoHelper to query/traverse Umbraco published data._
@@ -73,9 +77,11 @@ Content query helper, which contains many helpful ways to find content. (descrip
 
 Queries the XML Cache for Content matching a given XPath query, returns first match as a `dynamic` object.
 
-    @{
-        var newsArea = Umbraco.ContentSingleAtXPath("//newsArea");
-    }
+```csharp
+@{
+    var newsArea = Umbraco.ContentSingleAtXPath("//newsArea");
+}
+```
 
 ### .TypedContent(int id)
 
@@ -133,13 +139,15 @@ Queries the XML Cache for Content matching a given XPath query and returns the f
 
 Given a property alias, it returns the value of that field from the Current Page.
 
-    <h3>@Umbraco.Field("bodyText")</h3>
+```html
+<h3>@Umbraco.Field("bodyText")</h3>
+```
 
 ### .NiceUrl(int nodeId)
 
 Returns a nicely formatted URL, given a node ID. This is also available from `IPublishedContent.Url`
 
-```csharp
+```html
 <a href="@Umbraco.NiceUrl(1234)">My link</a>
 ```
 
@@ -147,7 +155,9 @@ Returns a nicely formatted URL, given a node ID. This is also available from `IP
 
 Returns a nicely formatted URL including its domain, given a node ID. This can be useful when linking between multiple sites with different domains on the same Umbraco installation.
 
-    <a href="@Umbraco.NiceUrlWithDomain(1234)">My link</a>
+```html
+<a href="@Umbraco.NiceUrlWithDomain(1234)">My link</a>
+```
 
 ## Working with Media
 
@@ -467,20 +477,24 @@ Umbraco.Join("; ", "Red", 112, CurrentPage.Name);
 
 Given a non-HTML string, it replaces all line-breaks with `<br/>`
 
-    @{
-        var multiLine = @"hello
-                            my
-                        name is
-                            ";
-    }
+```csharp
+@{
+    var multiLine = @"hello
+                        my
+                    name is
+                        ";
+}
 
-    @Umbraco.ReplaceLineBreaksForHtml(multiLine)
+@Umbraco.ReplaceLineBreaksForHtml(multiLine)
+```
 
 ### .StripHtml(string html)
 
 Strips all HTML tags from a given string; all contents of the tags will remain.
 
-    Umbraco.StripHtml("<blink>Stop the blinking</blink>");
+```csharp
+Umbraco.StripHtml("<blink>Stop the blinking</blink>");
+```
 
 ### .Truncate(string html, int length, bool addEllipsis)
 

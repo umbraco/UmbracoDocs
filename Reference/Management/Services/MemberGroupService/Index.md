@@ -1,6 +1,12 @@
+---
+versionFrom: 6.2.0
+---
+
 # MemberGroupService
 
-**Applies to Umbraco 7.1 and 6.2 and newer**
+:::note
+Applies to Umbraco 6.2 and 7.1 and newer
+:::
 
 The MemberGroupService acts as a "gateway" to Umbraco data for operations which are related to Member groups, which are also known as Member Roles.
 
@@ -14,19 +20,25 @@ All samples in this document will require references to the following dll:
 * Umbraco.Core.dll
 
 All samples in this document will require the following using statements:
-	
-	using Umbraco.Core;
-	using Umbraco.Core.Models;
-	using Umbraco.Core.Services;
+
+```csharp
+using Umbraco.Core;
+using Umbraco.Core.Models;
+using Umbraco.Core.Services;
+```
 
 ## Getting the service
 The MemberGroupService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the MemberGroupService is available through a local `Services` property.
 
-	Services.MemberGroupService
+```csharp
+Services.MemberGroupService
+```
 
 Getting the service through the `ApplicationContext`:
 
-	ApplicationContext.Current.Services.MemberGroupService
+```csharp
+ApplicationContext.Current.Services.MemberGroupService
+```
 
 ## Methods
 

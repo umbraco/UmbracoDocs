@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Defining and attaching prevalue sources
 
 Prevalue sources are a way to pre-define and/or retrieve a list of items from a certain source. They can be used in any fieldtypes that include some kind of list, like Dropdown and Multiple / Single Choice lists.

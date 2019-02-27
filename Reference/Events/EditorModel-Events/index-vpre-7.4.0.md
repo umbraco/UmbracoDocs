@@ -11,20 +11,22 @@ You would set default values after the content created event.
 
 Using e.g. an event handler class something like the following:
 
-    public class InitializeNewMyDocumentTypeContent : ApplicationEventHandler
+```csharp
+public class InitializeNewMyDocumentTypeContent : ApplicationEventHandler
+{
+    protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
     {
-        protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
-        {
-            ContentService.Created += ContentCreated;
-            base.ApplicationStarted(umbracoApplication, applicationContext);
-        }
+        ContentService.Created += ContentCreated;
+        base.ApplicationStarted(umbracoApplication, applicationContext);
+    }
 
-        private void ContentCreated(IContentService sender, NewEventArgs<IContent> e)
+    private void ContentCreated(IContentService sender, NewEventArgs<IContent> e)
+    {
+        if (e.Entity.ContentType.Alias == "MyDocumentType")
         {
-            if (e.Entity.ContentType.Alias == "MyDocumentType")
-            {
-                e.Entity.SetValue("pageTitle", "Untitled");
-                sender.Save(e.Entity);
-            }
+            e.Entity.SetValue("pageTitle", "Untitled");
+            sender.Save(e.Entity);
         }
     }
+}
+```

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Routing requirements for backoffice authentication
 
 In order for Umbraco to authentication a request for the backoffice, the routing needs to be specific. Any URL that routes to :
@@ -14,8 +18,9 @@ In the case that an Umbraco Api Controller is a 'Plugin Controller', then the ro
 
 > `/umbraco/backoffice/{pluginname}/{controller}/{action}`
 
-_Note:_ the {area} specified by the [PluginController] attribute replaces the /api/ area for the route.
-
+:::note
+The {area} specified by the [PluginController] attribute replaces the /api/ area for the route.
+:::
 
 ## MVC controllers for the backoffice
 
@@ -27,22 +32,25 @@ For more information on authenticated/authorized controllers & attributes see th
 When you create a controller that inherits from `Umbraco.Web.Mvc.UmbracoAuthorizedController` you need to explicitly define a route.  
 Defining a route is done with the standard ASP.NET MVC routing practices. In Umbraco, you will normally create custom routes in `Umbraco.Core.ApplicationEventHandler.ApplicationStarted` event similar to the following:
 
+```csharp
+protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext    
+applicationContext)
+{
+  RouteTable.Routes.MapRoute(
+  name: "cats",
+  url: GlobalSettings.UmbracoMvcArea + "/backoffice/cats/{action}/{id}",
+  defaults: new
+  {
+    controller = "Cats",
+    action = "Meow",
+    id = UrlParameter.Optional
+  });
+}
+```
 
-    protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext    
-    applicationContext)
-    {
-      RouteTable.Routes.MapRoute(
-      name: "cats",
-      url: GlobalSettings.UmbracoMvcArea + "/backoffice/cats/{action}/{id}",
-      defaults: new
-      {
-        controller = "Cats",
-        action = "Meow",
-        id = UrlParameter.Optional
-      });
-    }
-
-_NOTE the route must be prefixed with Umbraco path which is configurable and resolved with `GlobalSettings.UmbracoMvcArea` and then by "backoffice" in order for Umbraco to check user authentication._
+:::note
+the route must be prefixed with Umbraco path which is configurable and resolved with `GlobalSettings.UmbracoMvcArea` and then by "backoffice" in order for Umbraco to check user authentication.
+:::
 
 ### What about Surface Controllers?
 Surface Controllers should not be used in the backoffice.  Surface Controllers are not designed to work with the backoffice, they are not meant to be used there and will not be supported being used there.

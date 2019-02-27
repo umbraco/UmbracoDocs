@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Umbraco-Headless-Client-NodeJs
 
 JavaScript Client Library for working with the Umbraco Headless API.

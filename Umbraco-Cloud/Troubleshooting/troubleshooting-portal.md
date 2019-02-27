@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 ## The Umbraco Cloud Portal
 
 An error in the Cloud Portal often looks like this:

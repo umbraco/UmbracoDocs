@@ -1,4 +1,13 @@
+---
+versionFrom: 7.0.0
+---
+
 # Working with databases
+
+:::note
+The databases on your Umbraco Cloud environments are specific to their environment. This means that no matter what you have configured in the `connectionstring` in your `web.config` file, we overwrite the connectionstring to use the SQL Azure Server we provide.
+:::
+
 When working with Umbraco Cloud, the way you work with databases might differ from what you're used to. One important aspect of Umbraco Cloud is that you always work isolated to avoid interfering with colleagues or a running website. This includes the database as well.
 
 So when you clone a site locally, Umbraco Cloud automatically creates a local database and populates it with data from your website running on the Cloud. If you don't specify anything before starting up your site locally, it'll be a SQL CE database that lives in the `/App_Data` folder. If you wish to use a local SQL Server instead, you can update the connection string in the web.config, but it's important that you do so before your site start up the first time.
@@ -6,7 +15,7 @@ So when you clone a site locally, Umbraco Cloud automatically creates a local da
 ## LocalDB
 By default when Umbraco Cloud restores a local database it will be an Umbraco.sdf file in `/App_Data` folder. However if LocalDB is installed and configured, the restore will create an Umbraco.mdf file. To use LocalDB ensure `applicationHost.config` is configured with `loadUserProfile="true"` and `setProfileEnvironment="true"`: https://blogs.msdn.microsoft.com/sqlexpress/2011/12/08/using-localdb-with-full-iis-part-1-user-profile/
 
-```
+```xml
 <add name="ASP.NET v4.0" autoStart="true" managedRuntimeVersion="v4.0" managedPipelineMode="Integrated">
    <processModel identityType="ApplicationPoolIdentity" loadUserProfile="true" setProfileEnvironment="true" />
 </add>

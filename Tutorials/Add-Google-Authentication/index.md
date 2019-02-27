@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Tutorial - Add Google Authentication
 
 ## Overview
@@ -84,7 +88,8 @@ The first thing to do is locate the files we just installed from the packages. T
 ![Callback path](images/callbackPath.png)
 
 The second file we need to configure is the UmbracoStandardOwinStartup.cs file. Here we need to add the following code:
-```
+
+```csharp
 var clientId = ConfigurationManager.AppSettings["GoogleOAuthClientID"];
 var secret = ConfigurationManager.AppSettings["GoogleOAuthSecret"];
 app.ConfigureBackOfficeGoogleAuth(clientId, secret);
@@ -102,9 +107,10 @@ Finally open the web.config file in the root folder, here we will need to set th
 
 Then add the following in the appSettings as well: 
 
-`<add key="GoogleOAuthClientID" value="this is where you paste in the client id"/>`
-
-`<add key="GoogleOAuthSecret" value="this is where you paste in the client secret"/>`
+```xml
+<add key="GoogleOAuthClientID" value="this is where you paste in the client id"/>
+<add key="GoogleOAuthSecret" value="this is where you paste in the client secret"/>
+```
 
 And of course fill in the relevant information as the value fields - you can copy paste this from your Google API.
 

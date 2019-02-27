@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Handling configuration files
 
 When you are doing your normal development process, you'd just be updating the configuration files in your solution as usual. When you are working with a Baseline setup there are a few things to keep in mind.
@@ -22,7 +26,7 @@ When you need specific configuration on Child projects, you should always use co
 Just a few examples of what could be transformed in the child sites. 
 ## Adding, or updating app settings (i.e. child-appsettings.web.live.xdt.config)
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
 	<appSettings xdt:Transform="InsertIfMissing">
@@ -39,7 +43,7 @@ Just a few examples of what could be transformed in the child sites.
 
 ## Setting the smtp settings for the child project (i.e. child-smtpsettings.web.live.xdt.config)
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
 	<system.net xdt:Transform="InsertIfMissing">
@@ -54,7 +58,8 @@ Just a few examples of what could be transformed in the child sites.
 ```
 
 ## Setting custom rewrite rules for the child project (i.e. child-iisrewrite.web.live.xdt.config)
-```
+
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
     <system.webServer>

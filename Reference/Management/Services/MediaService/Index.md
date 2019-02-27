@@ -1,6 +1,12 @@
+---
+versionFrom: 6.0.0
+---
+
 # MediaService
 
-**Applies to Umbraco 6.x and newer**
+:::note
+Applies to Umbraco 6.0.0+
+:::
 
 The MediaService acts as a "gateway" to Umbraco data for operations which are related to Media.
 
@@ -14,19 +20,25 @@ All samples in this document will require references to the following dll:
 * Umbraco.Core.dll
 
 All samples in this document will require the following using statements:
-	
-	using Umbraco.Core;
-	using Umbraco.Core.Models;
-	using Umbraco.Core.Services;
+
+```csharp
+using Umbraco.Core;
+using Umbraco.Core.Models;
+using Umbraco.Core.Services;
+```
 
 ## Getting the service
 The MediaService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the MediaService is available through a local `Services` property.
 
-	Services.MediaService
+```csharp
+Services.MediaService
+```
 
 Getting the service through the `ApplicationContext`:
 
-	ApplicationContext.Current.Services.MediaService
+```csharp
+ApplicationContext.Current.Services.MediaService
+```
 
 ## Methods
 
@@ -34,15 +46,17 @@ Getting the service through the `ApplicationContext`:
 Creates an `Media` object using the alias of the `MediaType` that this Media is based on.
 
 Example for methods **CreateMedia** and **Save**, creating a new `Media` object (as a child of `Media` rootnode -1);
-	
-        if (ApplicationContext.Current != null)
-        {
-            var ms = ApplicationContext.Current.Services.MediaService;
-            //Use the MediaService to create a new Media object (-1 is Id of root Media object, "Folder" is the MediaType)
-            var mediaMap = ms.CreateMedia("Test", -1, "Folder");
-            //Use the MediaService to Save the new Media object
-            ms.Save(mediaMap);
-        }
+
+```csharp
+if (ApplicationContext.Current != null)
+{
+    var ms = ApplicationContext.Current.Services.MediaService;
+    //Use the MediaService to create a new Media object (-1 is Id of root Media object, "Folder" is the MediaType)
+    var mediaMap = ms.CreateMedia("Test", -1, "Folder");
+    //Use the MediaService to Save the new Media object
+    ms.Save(mediaMap);
+}
+```
 
 ### .CreateMedia(string name, Umbraco.Core.Models.IMedia parent, string mediaTypeAlias, [int userId = 0])
 Creates an `Media` object using the alias of the `MediaType` that this Media is based on.

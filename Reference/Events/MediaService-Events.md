@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # MediaService Events
 
 The MediaService class implements IMediaService. It provides easy access to operations involving IMedia.
@@ -5,30 +9,32 @@ The MediaService class implements IMediaService. It provides easy access to oper
 ## Usage
 Example usage of the MediaService events:
 
-    using Umbraco.Core;
-    using Umbraco.Core.Events;
-    using Umbraco.Core.Models;
-    using Umbraco.Core.Services;
-    
-    namespace My.Namespace
-    {
-        public class MyEventHandler : ApplicationEventHandler
-        {
+```csharp
+using Umbraco.Core;
+using Umbraco.Core.Events;
+using Umbraco.Core.Models;
+using Umbraco.Core.Services;
 
-			protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+namespace My.Namespace
+{
+    public class MyEventHandler : ApplicationEventHandler
+    {
+
+        protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+        {
+            MediaService.Saved += MediaServiceSaved;     
+        }   
+
+        void MediaServiceSaved(IMediaService sender, SaveEventArgs<IMedia> e)
+        {
+            foreach (var mediaItem in e.SavedEntities)
             {
-				MediaService.Saved += MediaServiceSaved;     
-            }   
-    
-            void MediaServiceSaved(IMediaService sender, SaveEventArgs<IMedia> e)
-            {
-                foreach (var mediaItem in e.SavedEntities)
-                {
-                    UploadToAzure(mediaItem);
-                }
+                UploadToAzure(mediaItem);
             }
         }
     }
+}
+```
 
 ## Events
 <table>

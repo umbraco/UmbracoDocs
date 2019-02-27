@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+versionRemoved: 8.0.0
+---
+
 # Data Resolvers
 
 Data resolvers are used by Courier to understand and transfer your data.

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Content Picker Value Converter Example using meta interface #
 
 ```csharp

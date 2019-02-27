@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Managing hostnames
 
 When you create an Umbraco Cloud project we create the project URLs based on the name you give your project. 

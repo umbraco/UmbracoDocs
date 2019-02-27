@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Technical Contact
 
 One of the biggest benefits of having an Umbraco Cloud project is that you do not need to worry about the hosting. This is something we handle for you.

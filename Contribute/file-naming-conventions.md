@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Multi version documentation conventions
 
 To support multi version documentation we work according to these conventions.

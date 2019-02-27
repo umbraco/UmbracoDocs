@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Using Umbraco's service APIs
 
 _Whenever you need to modify an entity that Umbraco stores in the database, there is a service API available to help you. This means that you can create, update and delete any of the core Umbraco entities directly from your custom code._
@@ -10,25 +14,29 @@ To use the service APIs you must first access them. This is done through what is
 ### Access via Controller
 If you are accessing Umbraco services inside your own controller class, you get access to all services through `Services` by inheriting from one of Umbraco's base controller classes:
 
-    public class EventController : Umbraco.Web.Mvc.SurfaceController
+```csharp
+public class EventController : Umbraco.Web.Mvc.SurfaceController
+{
+    public Action PerformAction()
     {
-        public Action PerformAction()
-        {
-           var content = Services.ContentService.GetById(1234);
-        }
+       var content = Services.ContentService.GetById(1234);
     }
+}
+```
 
 ### Access via ApplicationEventHandler
 If we for instance subscribe to the ApplicationStarted event we get access to the ApplicationContext, which then provides a `.Services` class through which all the available services can be used.
 
-    public class EventHandler : Umbraco.Core.ApplicationEventHandler
+```csharp
+public class EventHandler : Umbraco.Core.ApplicationEventHandler
+{
+    protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
     {
-        protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
-        {
-            var c = applicationContext.Services.ContentService.GetById(1234);
-            applicationContext.Services.ContentService.Delete(c);
-        }
+        var c = applicationContext.Services.ContentService.GetById(1234);
+        applicationContext.Services.ContentService.Delete(c);
     }
+}
+```
 
 ## Services available
 There is full API coverage of all Umbraco core entities:

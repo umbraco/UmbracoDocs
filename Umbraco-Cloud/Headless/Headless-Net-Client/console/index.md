@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 ### .NET Core Console Application
 
 The Headless client NuGet package is hosted on a custom MyGet feed, so you need to create a `NuGet.config` file for your project which can be done via the command line. If you don't do this then you would need to use the `--source` parameter and a few other tricks so it's just simpler to use a `Nuget.config` file. 
@@ -25,18 +29,18 @@ _This example is for creating a .NET Core Console (command line) application_
       * _NOTE: You use this same command to update to the latest version_
 * Update the `Program.cs` file to use the Headless client:
    * Add the required `using` to the file:
-   ```cs
+   ```csharp
     using Umbraco.Headless.Client.Net.Services;
    ```
    * Create an instance of the `PublishedContentService` and pass in the endpoint and credentials:
-   ```cs
+   ```csharp
    var publishedContentService = new PublishedContentService(
                     "https://YOUR-PROJECT-URL.s1.umbraco.io",
                     "YOUR@USERNAME.com",
                     "YOUR-PASSWORD");
    ```
    * Start using the `PublishedContentService`:
-   ```cs
+   ```csharp
     // get content by ContentType and list their names
     var content = publishedContentService.GetAll("contentTypeAlias").Result;
     foreach(var item in content) {
@@ -44,7 +48,7 @@ _This example is for creating a .NET Core Console (command line) application_
     }
    ```
 * At this point your Program.cs file  will look like this:
-    ```cs
+    ```csharp
     using System;
     using Umbraco.Headless.Client.Net.Services;
 
@@ -101,7 +105,7 @@ First of all, make sure you also set the configuration in an appsettings.json fi
 
 Now you can update the `Program.cs` file:
 
-```cs
+```csharp
 using System;
 using Umbraco.Headless.Client.Net.Services;
 using Microsoft.Extensions.Configuration;

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # IPublishedContent IsHelpers
 The IsHelper methods are a set of extension methods for IPublishedContent to help perform quick conditional queries against IPublishedContent nodes in a collection.
 
@@ -10,21 +14,25 @@ The general use IsHelper is to allow you to dynamically inject class names and s
 ## How to use
 To use an IsHelper you need to be iterating over a collection of IPublishedContent.
 
-	<ul>
-	@foreach(var item in CurrentPage.Children)
-	{
-		<li class="@item.IsFirst("first","not-first")">@item.Name</li>
-	}
-	</ul>
+```csharp
+<ul>
+@foreach(var item in CurrentPage.Children)
+{
+    <li class="@item.IsFirst("first","not-first")">@item.Name</li>
+}
+</ul>
+```
 	
 Is helpers work like ternary operators. The example above uses the `.IsFirst()` Ishelper method. The first parameter is the value we want it to return if the condition returns true, and the second, optional value, is the value we want to return if the condition evaluates to false.
 
 IsHelpers can also return simple boolean values.
 
-	@if(item.IsFirst())
-	{
-		<p>Extra info for this item</p>
-	}
+```csharp
+@if(item.IsFirst())
+{
+    <p>Extra info for this item</p>
+}
+```
 
 ---
 

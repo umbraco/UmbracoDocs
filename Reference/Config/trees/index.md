@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # trees.config
 
 The 'trees.config' file contains the configuration for [trees](../../../Extending/Section-Trees/trees.md) that are loaded within each [section](../../../Extending/Section-Trees/sections.md) of the Umbraco Backoffice.

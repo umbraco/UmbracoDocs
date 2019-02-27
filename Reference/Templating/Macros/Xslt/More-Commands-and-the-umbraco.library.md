@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # More Commands and the umbraco.library
 There are many additional commands in the XSLT arsenal, but some of the most powerful aspects are those provided by Umbraco itself.  Umbraco implements [a library of useful items](https://our.umbraco.com/wiki/reference/umbracolibrary) that can be called in XSLT.  There are many commands, which I will cover a few, and reference the rest.
 

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Troubleshooting structure deployment/restore errors
 
 ## Error in files containing site structure

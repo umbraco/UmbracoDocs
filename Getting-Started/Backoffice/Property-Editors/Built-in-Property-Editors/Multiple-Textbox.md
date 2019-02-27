@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Repeatable textstrings
 
 `Alias: Umbraco.MultipleTextstring`
@@ -17,31 +21,35 @@ The Repeatable textstrings property editor enables a content editor to make a li
 ## MVC View Example
 
 ### Typed:
-	
-    @{
-        if (Model.Content.GetPropertyValue<string[]>("keyFeatureList").Length > 0)
-        {
-            <ul>
-                @foreach (var item in Model.Content.GetPropertyValue<string[]>("keyFeatureList"))
-                {
-                    <li>@item</li>
-                }
-            </ul>
-        }
+
+```csharp
+@{
+    if (Model.Content.GetPropertyValue<string[]>("keyFeatureList").Length > 0)
+    {
+        <ul>
+            @foreach (var item in Model.Content.GetPropertyValue<string[]>("keyFeatureList"))
+            {
+                <li>@item</li>
+            }
+        </ul>
     }
+}
+```
 
 ### Dynamic (Obsolete):
 
 See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
 
-    @{
-        if (CurrentPage.keyFeatureList.Length > 0)
-        {
-            <ul>
-                @foreach (var item in CurrentPage.keyFeatureList)
-                {
-                    <li>@item</li>
-                }
-            </ul>
-        }
+```csharp
+@{
+    if (CurrentPage.keyFeatureList.Length > 0)
+    {
+        <ul>
+            @foreach (var item in CurrentPage.keyFeatureList)
+            {
+                <li>@item</li>
+            }
+        </ul>
     }
+}
+```

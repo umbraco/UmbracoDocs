@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # umbracoSettings
 
 Here you will be able to find documentation on all the options you can modify in the umbracoSettings.config file.

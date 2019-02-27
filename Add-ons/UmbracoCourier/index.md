@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+versionRemoved: 8.0.0
+---
+
 # Courier Documentation
 
 Umbraco Courier is a tool that lets you deploy your schema and content from one Umbraco site to another. 

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # URL Redirect Management
 
 ## User Overview
@@ -24,7 +28,9 @@ The 301 Redirect Management feature is enabled by default.
 
 It is possible to disable the feature entirely (both generating URLs in the database table, and running the content finder) by editing the `umbracoSettings.config` file:
 
-    <web.routing disableRedirectUrlTracking="true" />
+```xml
+<web.routing disableRedirectUrlTracking="true" />
+```
 
 See: [/Documentation/Reference/Config/umbracoSettings/#web-routing](/Documentation/Reference/Config/umbracoSettings/#web-routing)
 

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Magic strings
 
 Umbraco Forms has some magic strings that enable you to render values from various sources, such as session, cookies and Umbraco page fields. 

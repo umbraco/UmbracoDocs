@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+versionRemoved: 8.0.0
+---
+
 # Converting Masterpages to Views
 Covers how you convert common syntax in Umbraco Masterpages to Umbraco Views.
 

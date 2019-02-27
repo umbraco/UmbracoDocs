@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Form settings
 
 In this article you can read more about how you can customize your form.

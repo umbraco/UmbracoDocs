@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Umbraco Forms on Cloud
 
 In this article you can learn about how Umbraco Forms are handled on Umbraco Cloud and read about the workflow and best practices.

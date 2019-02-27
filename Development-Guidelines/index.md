@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Development Guidelines
 
 _All about working with the Umbraco codebase_

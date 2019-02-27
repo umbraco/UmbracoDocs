@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # The Umbraco Cloud Portal
 
 To make working with your Umbraco Cloud projects as simple as possible we've built the Umbraco Cloud Portal where you can view and manage all your projects.

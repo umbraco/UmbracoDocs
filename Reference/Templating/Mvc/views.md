@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Working with MVC Views in Umbraco
 
 _Working with MVC Views and Razor syntax in Umbraco_

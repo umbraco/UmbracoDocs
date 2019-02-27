@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Umbraco Api
 
 _This section will describe how to work with Web Api in Umbraco to easily create REST services_
@@ -20,12 +24,13 @@ The class to inherit from is: `Umbraco.Web.WebApi.UmbracoApiController`
 
 This will expose the following properties for you to use:
 
-	ApplicationContext ApplicationContext {get;}
-	ServiceContext Services {get;}
-	DatabaseContext DatabaseContext {get;}
-	UmbracoHelper Umbraco {get;}
-	UmbracoContext UmbracoContext {get;}
-
+```csharp
+ApplicationContext ApplicationContext {get;}
+ServiceContext Services {get;}
+DatabaseContext DatabaseContext {get;}
+UmbracoHelper Umbraco {get;}
+UmbracoContext UmbracoContext {get;}
+```
 
 ## Creating a Web Api controller
 
@@ -42,9 +47,11 @@ It is very important that you name your controllers according to these guideline
 
 All controller class names must be suffixed with "**Controller**" and inherit from **UmbracoApiController**. Some examples:
 
-	public class ProductsController : UmbracoApiController
-	public class CustomersController : UmbracoApiController
-	public class ScoresController : UmbracoApiController
+```csharp
+public class ProductsController : UmbracoApiController
+public class CustomersController : UmbracoApiController
+public class ScoresController : UmbracoApiController
+```
 
 ### Locally declared controller
 
@@ -52,13 +59,15 @@ This is the most common way to create an Umbraco Api controller, you simply inhe
 
 Example:
 
-	public class ProductsController : UmbracoApiController
-	{	    
-	    public IEnumerable<string> GetAllProducts()
-	    {
-	        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
-	    }
-	}
+```csharp
+public class ProductsController : UmbracoApiController
+{	    
+    public IEnumerable<string> GetAllProducts()
+    {
+        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+    }
+}
+```
 
 All locally declared Umbraco api controllers will be routed under the url path of:
 
@@ -72,14 +81,16 @@ If you are creating an Umbraco Api controller to be shipped in an Umbraco packag
 
 Example:
 
-	[PluginController("AwesomeProducts")]
-	public class ProductsController : UmbracoApiController
-	{	    
-	    public IEnumerable<string> GetAllProducts()
-	    {
-	        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
-	    }
-	}
+```csharp
+[PluginController("AwesomeProducts")]
+public class ProductsController : UmbracoApiController
+{	    
+    public IEnumerable<string> GetAllProducts()
+    {
+        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+    }
+}
+```
 
 Now this controller will be routed via the area called "AwesomeProducts". All plugin based Umbraco api controllers will be routed under the url path of:
 

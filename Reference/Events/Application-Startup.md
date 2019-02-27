@@ -1,10 +1,16 @@
+---
+versionFrom: 7.0.0
+---
+
 # Adding startup events & event registration
 
 In order to bind to certain events in the Umbraco application you need to make these registrations during application startup.
 
 ## Use ApplicationEventHandler to register events
 
-> Applies to: Umbraco 6.1.0+
+:::note
+Applies to: Umbraco 6.1.0+
+:::
 
 The [ApplicationEventHandler](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Core.ApplicationEventHandler.html) is a plugin type that allows developers to execute code during the Umbraco bootup process.
 
@@ -12,50 +18,52 @@ This is the preferred way to hook in to the Umbraco application startup process.
 
 This example will populate some default data for newly created content items:
 
-    using Umbraco.Core;
-    using Umbraco.Core.Events;
-    using Umbraco.Core.Logging;
-    using Umbraco.Core.Models;
-    using Umbraco.Core.Services;
+```csharp
+using Umbraco.Core;
+using Umbraco.Core.Events;
+using Umbraco.Core.Logging;
+using Umbraco.Core.Models;
+using Umbraco.Core.Services;
 
-    namespace MyProject.EventHandlers
+namespace MyProject.EventHandlers
+{
+    public class RegisterEvents : ApplicationEventHandler
     {
-        public class RegisterEvents : ApplicationEventHandler
+        protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
         {
-            protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
-            {
-                //Listen for when content is being saved
-                ContentService.Saving += ContentService_Saving;
-            }
+            //Listen for when content is being saved
+            ContentService.Saving += ContentService_Saving;
+        }
 
-            /// <summary>
-            /// Listen for when content is being saved, check if it is a new item and fill in some
-            /// default data.
-            /// </summary>
-            private void ContentService_Saving(IContentService sender, SaveEventArgs<IContent> e)
+        /// <summary>
+        /// Listen for when content is being saved, check if it is a new item and fill in some
+        /// default data.
+        /// </summary>
+        private void ContentService_Saving(IContentService sender, SaveEventArgs<IContent> e)
+        {
+            foreach (var content in e.SavedEntities
+                // Check if the content item type has a specific alias
+                .Where(c => c.Alias.InvariantEquals("MyContentType"))
+                // Check if it is a new item
+                .Where(c => c.IsNewEntity()))
             {
-                foreach (var content in e.SavedEntities
-                    // Check if the content item type has a specific alias
-                    .Where(c => c.Alias.InvariantEquals("MyContentType"))
-                    // Check if it is a new item
-                    .Where(c => c.IsNewEntity()))
+                // Check if the item has a property called 'richText'
+                if (content.HasProperty("richText"))
                 {
-                    // Check if the item has a property called 'richText'
-                    if (content.HasProperty("richText"))
-                    {
-                        // get the rich text value
-                        var val = c.GetValue<string>("richText");
-                        // if there is a rich text value, set a default value in a 
-                        // field called 'excerpt' that is the first
-                        // 200 characters of the rich text value
-                        c.SetValue("excerpt", val == null
-                            ? string.Empty
-                            : string.Join("", val.StripHtml().StripNewLines().Take(200)));
-                    }
+                    // get the rich text value
+                    var val = c.GetValue<string>("richText");
+                    // if there is a rich text value, set a default value in a 
+                    // field called 'excerpt' that is the first
+                    // 200 characters of the rich text value
+                    c.SetValue("excerpt", val == null
+                        ? string.Empty
+                        : string.Join("", val.StripHtml().StripNewLines().Take(200)));
                 }
             }
         }
     }
+}
+```
 
 ## Startup methods
 
@@ -97,7 +105,9 @@ For example, the [CacheRefresherEventHandler](../../apidocs/csharp/api/Umbraco.W
 
 Finally (very EXPERT), users can [register a filter](../../apidocs/csharp/api/Umbraco.Core.ObjectResolution.ApplicationEventsResolver.html#Umbraco_Core_ObjectResolution_ApplicationEventsResolver_FilterCollection) to process the list (after it has been ordered) and re-order it, or remove handlers.
 
-**BEWARE**! Handlers order is an important thing, and removing handlers or reordering handlers can have unexpected consequences.
+:::warning
+Handlers order is an important thing, and removing handlers or reordering handlers can have unexpected consequences.
+:::
 
 
 ## Related Links

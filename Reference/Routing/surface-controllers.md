@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Surface Controllers
 
 _A SurfaceController is an MVC controller that interacts with the front-end rendering of an UmbracoPage. They can be used for rendering MVC Child Actions and for handling form data submissions. SurfaceControllers are auto-routed meaning that you don't have to add/create your own routes for these controllers to work._
@@ -65,17 +69,17 @@ If you get a 404 error when trying to access your Surface Controller you may hav
 
 If you are shipping a SurfaceController in a package then you should definitely be creating a plugin based SurfaceController. The only difference between creating a plugin based controller and locally declared controller is that you need to add an attribute to your class which defines the MVC Area you'd like your controller routed through. Here's an example:
 
-```chsarp
+```csharp
 namespace name.Core.Controllers
 {
-	[PluginController("SuperAwesomeAnalytics")]
-	public class MyController : Umbraco.Web.Mvc.SurfaceController
-	{
-		public ActionResult Index() 
-		{
-			return Content("hello world");
-		}
-	}
+    [PluginController("SuperAwesomeAnalytics")]
+    public class MyController : Umbraco.Web.Mvc.SurfaceController
+    {
+        public ActionResult Index() 
+        {
+            return Content("hello world");
+        }
+    }
 }
 ```
 

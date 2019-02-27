@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 ### ASP.NET Core MVC (Content Managed website)
 
 _This example is for creating a fully content managed website where URLs will be dynamic and be based on the same URLs generated in Umbraco. This also gives you the ability to Hijack routes for specific Document Types like in a normal Umbraco installation._
@@ -46,7 +50,7 @@ Now to create a new .NET Core website and add references:
    * In `Configure` replace the `UseMvc` block with `app.UseUmbracoHeadlessWebEngine();` (or you can just put this line above the existing `UseMvc` block)
 * You will need to add a view to be rendered:
    * Add a view file for the path `/Views/DefaultUmbraco/Index.cshtml`
-    ```
+    ```csharp
         @using Umbraco.Headless.Client.Net.Models
         @model ContentItem
 
@@ -71,7 +75,7 @@ Now to create a new .NET Core website and add references:
 Now you can have the `Umbraco.Headless.Client.Net.Services.PublishedContentService` injected into any of your controllers, services, etc... The `Umbraco.Headless.Client.Net.Services.PublishedContentService` is the starting point for all headless operations.
 
 You can also inject the `PublishedContentService` or `IHeadlessConfig` into any view by using this syntax:
-```
+```csharp
 @using Umbraco.Headless.Client.Net.Web.Configuration
 @using Umbraco.Headless.Client.Net.Services
 
@@ -84,7 +88,7 @@ You can also inject the `PublishedContentService` or `IHeadlessConfig` into any 
 ##### Navigation
 
 * To make a dynamic navigation system, create a view at `/Views/Shared/HeaderNav.cshtml`
-    ```cs
+    ```csharp
     @using Umbraco.Headless.Client.Net.Services
     @model Umbraco.Headless.Client.Net.Models.ContentItem
     @inject PublishedContentService PublishedContentService
@@ -113,7 +117,7 @@ You can also inject the `PublishedContentService` or `IHeadlessConfig` into any 
     </nav>
     ```
 * In the `/Views/Shared/_Layout.cshtml` file, we will fetch the `Site` node for the current content item:
-    ```cs
+    ```csharp
     @using Umbraco.Headless.Client.Net.Models
     @using Umbraco.Headless.Client.Net.Services
     @model Umbraco.Headless.Client.Net.Models.ContentItem
@@ -124,7 +128,7 @@ You can also inject the `PublishedContentService` or `IHeadlessConfig` into any 
     }
     ```
 * Replace the navigation structure in the `/Views/Shared/_Layout.cshtml` file and render the navigation partial view created above. (_The nav structure element to replace is this one `<nav class="navbar navbar-inverse navbar-fixed-top">`_)
-```
+```csharp
 @Html.Partial("HeaderNav", site)
 ```
 * Start the site: `dotnet run` and navigate to [http://localhost:5000/]() and you'll see that your menu structure is dynamic based on your Umbraco content nodes. If you click on them, the engine will render the content item associated with that URL.
@@ -134,7 +138,7 @@ You can also inject the `PublishedContentService` or `IHeadlessConfig` into any 
 Just like in Umbraco, with this engine you can hijack routes! 
 
 * Create a new controller to hijack a route for a document type. For example, if your document type is called `Page`, then create a controller: `/Controllers/PageController.cs`
-```cs
+```csharp
 public class PageController : DefaultUmbracoController
 {
     public PageController(UmbracoContext umbracoContext, PublishedContentService publishedContentService) : base(umbracoContext, publishedContentService)
@@ -145,6 +149,8 @@ public class PageController : DefaultUmbracoController
     {
         // get the content for the current route
         var content = UmbracoContext.GetContent();
+        // map the ContentItem to a custom model called Page (which would inherit from ContentItem)	
+        var model  = HeadlessService.MapTo<Page>(content);
         // return the view which will be located at /Views/Page/Index.cshtml
         return Task.FromResult((IActionResult)View(model));
     }

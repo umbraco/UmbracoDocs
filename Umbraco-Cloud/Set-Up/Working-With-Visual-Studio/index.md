@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Visual Studio Setup
 
 This page describes how to setup your Visual Studio solution to work with an Umbraco Cloud Project.
@@ -32,6 +36,8 @@ Before running the UaaS.cmd tool you will need the git clone url for your Umbrac
 
 Running the UaaS.cmd tool will download the latest Visual Studio generator (waasp.exe) and then prompt you to enter the git clone url for your Project.
 Then enter the "Namespace", which will be the name of the Visual Studio solution and thus the namespace for the solution as well.
+
+If an error appears where the tool is saying: "Unable to connect to the remote server", but you are still able to add the clone Url, then you need to allow the UaaS.cmd through your firewall / antivirus.
 
 If you haven't cloned the repository before or don't have a [git credentials manager](https://github.com/Microsoft/Git-Credential-Manager-for-Windows) installed you will be asked to enter the username and password for the Umbraco Cloud Project (these are the same credentials as you use to access the Portal and the Umbraco backoffice).
 

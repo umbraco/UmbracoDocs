@@ -1,11 +1,20 @@
+---
+versionFrom: 7.0.0
+---
+
 # Upgrades in general
 
-_This is the guide for upgrading in general. Sometimes there are exceptions to these guidelines, which are listed in the **[version-specific guide](version-specific.md)**._
+_This is the guide for upgrading in general._
 
-## Warning
-First of all, things may go wrong for various reasons. Make sure to **ALWAYS** make a backup of both your site's files and the database so that you can return to a version that you know works. You will need the backed up files for merging later so this step is not optional.
+:::warning
+**Important**: If you are upgrading to a new major version, like from Umbraco 7 to Umbraco 8, make sure to check out the **[version-specific documentation.](version-specific.md)**
+
+Things may go wrong for various reasons. Make sure to **ALWAYS** make a backup of both your site's files and the database so that you can return to a version that you know works. You will need the backed up files for merging later so this step is not optional.
 
 Before upgrading to a new major version (like v6 to v7), check if the packages you're using are compatible with the version you're upgrading to. On the package's download page, in the **Project compatibility** area, click **View details** to check version-specific compatibility.
+:::
+
+Sometimes there are exceptions to these guidelines, which are listed in the **[version-specific guide](version-specific.md)**.
 
 ## Note
 It is necessary to run the upgrade installer on each environment of your Umbraco site. So if you want to update your staging and your live site then you need to repeat the steps below and make sure that you click through the install screens so that your upgrade is complete.

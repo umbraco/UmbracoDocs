@@ -1,3 +1,7 @@
+---
+versionFrom: 8.0.0
+---
+
 # Creating a form
 
 This will show the basic steps of creating a form and adding them to your Umbraco site.
@@ -6,7 +10,7 @@ This will show the basic steps of creating a form and adding them to your Umbrac
 
 Managing forms happens in the Forms section of the Umbraco backoffice. You need to have access to the section in order to see it. 
 
-![Forms Section](images/FormsSection.png)
+![Forms Section](images/FormsSectionV8.png) 
 
 ## Click the forms tree
 
@@ -27,7 +31,7 @@ In this walk-through we'll select **Empty form**.
 
 The next screen you will see is the form designer.
 
-![Forms designer](images/FormDesignerStart.png)
+![Forms designer](images/FormDesignerStartV8.png)
 
 There is already a page, a fieldset and a container available. The rest of the form has to be added using the UI.
 
@@ -40,13 +44,13 @@ See this blog post for more details: [Umbraco version 7.9 and Forms 7.0](https:/
 ### Setting the form name
 First we will need to give our new form a name.
 
-![Forms designer Set Name](images/FormDesignerFormName.png)
+![Forms designer Set Name](images/FormDesignerFormNameV8.png)
 
 ### Setting the page name (optional)
 
 Simply click the page name in order to change it.
 
-![Forms designer page caption](images/FormDesignerPageCaption.png)
+![Forms designer page caption](images/FormDesignerPageCaptionV8.png)
 
 To add more pages, simply click **Add new page** at the bottom of the page forms designer.
 
@@ -54,7 +58,7 @@ To add more pages, simply click **Add new page** at the bottom of the page forms
 
 As you can give each page a name, you can also name the groups.
 
-![Forms designer page captin](images/FormDesignerPageGroup.png)
+![Forms designer page caption](images/FormDesignerPageGroupV8.png)
 
 To add another group to your form, simply click **Add new group** which you can find at the bottom of each page in the form designer.
 
@@ -62,11 +66,11 @@ To add another group to your form, simply click **Add new group** which you can 
 
 To add a new field hit the Add Question button
 
-![Forms designer add field](images/FormDesignerAddField.png)
+![Forms designer add field](images/FormDesignerAddFieldV8.png)
 
 This will open the following dialog
 
-![Forms add field dialog](images/FormDesignerAddFieldDialog.png)
+![Forms add field dialog](images/FormDesignerAddFieldDialogV8.png)
 
 From this dialog you need to give the field a **name**. You can also add a **help text** to make it easier for your users to know how to fill in the field.
 
@@ -75,7 +79,7 @@ In the dialog you'll also need to choose which type of field or layout element y
 Once the type has been selected, there are a number of additional settings that can be applied to the field:
 
 * Mark whether the field stores **sensitive data**
-    * This will prevent the data from this field from being downloaded and viewed by users who does not have permission to do so
+    * This will prevent the data from this field from being downloaded and viewed by users who does not have permission to do so. Only members of the sensative data user group will see this option.  
 * You can give the field a **default value**
 * Add a **placeholder** to make it easier for the user to fill in the form
 * Mark whether the field is **mandatory**, and customize the message
@@ -87,7 +91,7 @@ Some of the additional settings is dependent on which answer type was chosen. Fo
 
 Once the type has been selected, and you have added the configuration you want, click **Submit** and you will see that the field has been added to the form designer.
 
-![Forms field added](images/FormDesignerFieldAdded.png)
+![Forms field added](images/FormDesignerFieldAddedV8.png)
 
 To edit a field that has already been added to the form, simply click the little *cog* icon next to the field to open the dialog. To delete a field or a group, click the *recycle bin* icon.
 
@@ -101,13 +105,13 @@ When reordering your form, you can simply drag and drop the fields to make it lo
 
 Once you are satisfied with the form you can save the design by hitting the save button in the toolbar
 
-![Form save form](images/FormDesignerSave.png)
+![Form save form](images/FormDesignerSaveV8.png)
 
 ## Adding the form to the Umbraco site
 
 ### Select page
 
-Navigate to the Content section of the Umbraco Backoffice and select the content page where you want to insert the form (this page should either have an RTE field or a Grid Editor)
+Navigate to the Content section of the Umbraco Backoffice and select the content page where you want to insert the form (this page should either have an RTE field, a Grid Editor, or a form picker)
 
 ![Content page](images/ContentExamples.png)
 

@@ -1,17 +1,22 @@
-# Property Editors #
+---
+meta.Title: "Property editors"
+meta.Description: "A Property editor is the editor that a Data Type references, and it's defined in a JSON manifest file and an associated javascript file."
+versionFrom: 8.0.0
+---
+
+# Property Editors
 
 A Property Editor is the editor that a Data Type references. A Data Type is defined by a user in the Umbraco backoffice and references a Property Editor. In Umbraco a Property Editor is defined in a JSON manifest file and associated JavaScript files.
 
-When creating a data type, you specify the property editor for the data type to use by selecting from the "property editor" list (as shown below)
+When creating a Data Type, you specify the property editor for the Data Type to use by selecting from the "Property editor" list (as shown below).
 
-![Data Type Definition](Built-in-Property-Editors/images/Media-Picker-DataType.jpg)
+![Data Type Definition](Built-in-Property-Editors/Media-Picker/images/Media-Picker-DataType.jpg)
 
-## [Built-in Property Editors in Umbraco](Built-in-Property-Editors/index.md)
-Umbraco comes pre-installed with many useful property editors...
+## [Built-in Property Editors in Umbraco](Built-in-Property-Editors)
+Umbraco comes pre-installed with many useful property editors.
 
 ## More information
 - [Customizing Data Types](../../Data/Data-Types/)
 
 ## Tutorials
-- [How to create a Property Editor](../../../Extending-Umbraco/Property-Editors/index.md)
-Creating property editors for Umbraco
+- [How to create a custom Property Editor](../../../Tutorials/Creating-a-Property-Editor/)

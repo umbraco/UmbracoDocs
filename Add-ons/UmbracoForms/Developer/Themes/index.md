@@ -1,3 +1,7 @@
+---
+versionFrom: 8.0.0
+---
+
 # Themes
 As of version 6.0.0 and newer Umbraco Forms supports Themes, allowing forms to be customised in a much simpler manner than found in version 4.x.
 
@@ -54,13 +58,6 @@ Add a JavaScript file path to include on form render
 @Html.AddFormThemeScriptFile(Model, "~/App_Plugins/UmbracoForms/Assets/Themes/Default/umbracoforms-dependencies.js")
 ```
 
-### AddFormThemeScriptCommand
-Add a JavaScript command to execute when the form is rendering, used to properly initialize fields on form render
-
-```csharp
-@Html.AddFormThemeScriptCommand(Model, "alert('hello')")
-```
-
 ### SetFormFieldClass
 Adds a class to the form field HTML element of a given type. If no type is given, it will add the class to all fields
 
@@ -95,5 +92,5 @@ Adds a class to the div element wrapping around form fields of a given type. If 
 Retrieves all wrapper classes for a given field type, used when rendering form fields. This class wraps both label, help-text and the field itself in the default view
 
 ```csharp
-class="@Html.GetFormFieldWrapperClass(f.FieldTypeName)
+class="@Html.GetFormFieldWrapperClass(f.FieldTypeName)" 
 ```

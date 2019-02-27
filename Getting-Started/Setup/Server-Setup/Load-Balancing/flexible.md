@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Flexible load balancing
 
 _Information on how to deploy Umbraco in a flexible Load Balanced scenario and other
@@ -91,7 +95,9 @@ Ensure you read the [overview](index.md) before you begin - you will need to ens
 
 Examine v0.1.80 introduced a new `directoryFactory` named `SyncTempEnvDirectoryFactory` which should be added to all indexers
 
-    directoryFactory="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory,Examine"
+```xml
+directoryFactory="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory,Examine"
+```
 
 The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory. This setting is need because Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Any time the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local environment temp files are cleared out that the index files can be restored from the centrally stored index files.  
 
@@ -109,7 +115,9 @@ remote file system. Lucene has issues when working from a remote file share so t
 
 Examine v0.1.83 introduced a new `directoryFactory` named `TempEnvDirectoryFactory` which should be added to all indexers in the `~/Config/ExamineSettings.config` file
 
-    directoryFactory="Examine.LuceneEngine.Directories.TempEnvDirectoryFactory,Examine"
+```xml
+directoryFactory="Examine.LuceneEngine.Directories.TempEnvDirectoryFactory,Examine"
+```
 
 The `TempEnvDirectoryFactory` allows Examine to store indexes directly in the environment temporary storage directory, and should be used instead of `SyncTempEnvDirectoryFactory` mentioned above. 
 
@@ -128,19 +136,25 @@ For a front-end Azure Web App instance, you'll need to ensure that the Umbraco X
 
 For **Umbraco v7.7.3+**
 
-	<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
+```xml
+<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
+```
 
 This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the environment temporary folder. More info on this setting is available [here](../../../../Reference/Config/webconfig/index.md#umbracolocaltempstorage-umbraco-v773)
 
 For **Umbraco v7.6+**
 
-	<add key="umbracoContentXMLStorage" value="EnvironmentTemp" />
+```xml
+<add key="umbracoContentXMLStorage" value="EnvironmentTemp" />
+```
 
 This will set Umbraco to store `umbraco.config` in the environment temporary folder
 
 For **Umbraco Pre v7.6**
 
-	<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
+```xml
+<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
+```
 
 This will set Umbraco to store `umbraco.config` in the ASP.NET temporary folder
 

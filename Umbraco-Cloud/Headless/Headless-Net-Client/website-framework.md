@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 ### ASP.NET Framework website
 
 _This example shows how to build a traditional ASP.NET Framework website on Windows and Visual Studio using the Umbraco Headless Client._
@@ -19,14 +23,14 @@ _This example shows how to build a traditional ASP.NET Framework website on Wind
 At this stage the client is installed and you have a working website. So now we can start using the `PublishedContentService`. There are several ways that you can use the `PublishedContentService` and in many cases you will be using IoC/Dependency Injection (_recommended_) however for this demo, we will manage our own singleton for brevity.
 
 * Create a Singleton class:
-    ```cs
+    ```csharp
     public class HeadlessClient
     {
         public static PublishedContentService Instance { get; } = new PublishedContentService(ConfigurationManager.AppSettings["umbracoHeadless:url"]);
     }
     ```
 * Modify the `HomeController`, add a new action:
-    ```cs
+    ```csharp
     public async Task<ActionResult> Headless()
     {
         // Get all content by ContentType
@@ -35,7 +39,7 @@ At this stage the client is installed and you have a working website. So now we 
     }
     ```
 * Create a view at `/Views/Home/Headless.cshtml`:
-    ```
+    ```charp
     @model IEnumerable<ContentItem>
     @using Umbraco.Headless.Client.Net.Models
 

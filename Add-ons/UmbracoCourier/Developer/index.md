@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+versionRemoved: 8.0.0
+---
+
 # Developer Documentation
 
 ## [Packaging, Extraction and transferring](PackagingAndExtraction.md)

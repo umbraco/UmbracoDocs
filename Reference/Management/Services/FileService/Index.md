@@ -1,6 +1,12 @@
+---
+versionFrom: 6.0.0
+---
+
 # FileService
 
-**Applies to Umbraco 6.x and newer**
+:::note
+Applies to Umbraco 6.0.0+
+:::
 
 The FileService acts as a "gateway" to Umbraco data for operations which are related to Scripts, Stylesheets and Templates.
 
@@ -14,19 +20,25 @@ All samples in this document will require references to the following dll:
 * Umbraco.Core.dll
 
 All samples in this document will require the following using statements:
-	
-	using Umbraco.Core;
-	using Umbraco.Core.Models;
-	using Umbraco.Core.Services;
+
+```csharp
+using Umbraco.Core;
+using Umbraco.Core.Models;
+using Umbraco.Core.Services;
+```
 
 ## Getting the service
 The FileService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the FileService is available through a local `Services` property.
 
-	Services.FileService
+```csharp
+Services.FileService
+```
 
 Getting the service through the `ApplicationContext`:
 
-	ApplicationContext.Current.Services.FileService
+```csharp
+ApplicationContext.Current.Services.FileService
+```
 
 ## Methods
 

@@ -1,8 +1,14 @@
+---
+versionFrom: 7.0.0
+---
+
 # Setup Umbraco for a FIPS Compliant Server
 
 _This tutorial walks through configuring Umbraco and Lucene to be FIPS compliant and serve up websites on a server with FIPS enabled._
 
-**_Disclaimer:_** FIPS should only be added for compliance. It is **NOT** a recommended approach for added security. For more information read [Why Microsoft is not recommending "FIPS Mode" anymore.](https://blogs.technet.microsoft.com/secguide/2014/04/07/why-were-not-recommending-fips-mode-anymore/)
+:::warning
+FIPS should only be added for compliance. It is **NOT** a recommended approach for added security. For more information read [Why Microsoft is not recommending "FIPS Mode" anymore.](https://blogs.technet.microsoft.com/secguide/2014/04/07/why-were-not-recommending-fips-mode-anymore/)
+:::
 
 ## What is FIPS?
 
@@ -36,22 +42,24 @@ To set Lucene.Net to be FIPS compliant you will create a new class in your proje
 
 Create the following class and place it in your Umbraco project in a location that is appropriate for your project setup:
 
-    using System.Security.Cryptography;
-    using System.Web;
-    using MyProject.Events;
+```csharp
+using System.Security.Cryptography;
+using System.Web;
+using MyProject.Events;
 
-    [assembly: PreApplicationStartMethod(typeof(LuceneFipsFlagOnAppStartup), "Initialize")]
+[assembly: PreApplicationStartMethod(typeof(LuceneFipsFlagOnAppStartup), "Initialize")]
 
-    namespace MyProject.Events
+namespace MyProject.Events
+{
+    public sealed class LuceneFipsFlagOnAppStartup
     {
-        public sealed class LuceneFipsFlagOnAppStartup
+        public static void Initialize()
         {
-            public static void Initialize()
-            {
-                SupportClass.Cryptography.FIPSCompliant = CryptoConfig.AllowOnlyFipsAlgorithms;
-            }
+            SupportClass.Cryptography.FIPSCompliant = CryptoConfig.AllowOnlyFipsAlgorithms;
         }
     }
+}
+```
 
 You will likely want to rename the Namespace to conform to your Namespacing structure.
 

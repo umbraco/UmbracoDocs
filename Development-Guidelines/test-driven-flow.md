@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Working with the backoffice UI AngularJS project 
 
 _This document tries to outline what is required to have a test-driven setup for

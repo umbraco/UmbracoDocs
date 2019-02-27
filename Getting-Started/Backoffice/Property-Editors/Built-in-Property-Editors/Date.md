@@ -1,6 +1,10 @@
-# DateTime
+---
+versionFrom: 7.0.0
+---
 
-`Returns: DateTime`
+# Date
+
+`Returns: Date`
 
 Displays a calendar UI for selecting dates which are saved as a DateTime value.
 

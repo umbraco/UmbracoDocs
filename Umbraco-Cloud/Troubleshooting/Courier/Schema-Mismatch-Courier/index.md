@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Troubleshooting Content/Media transfers 
 
 If the schema (this includes DocumentTypes, MediaTypes, DataTypes, Templates, Macros and Dictionary items) is different between the two environments you are deploying between, you will need to deploy the updates for these before you can complete the Content transfer (this can contain Media from the Media section as well). Environments need to be in-sync before a Content and/or Media transfer can succeed.

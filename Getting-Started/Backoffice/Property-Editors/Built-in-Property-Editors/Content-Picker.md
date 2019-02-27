@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # (Obsolete) Content Picker
 
 `Alias: Umbraco.ContentPicker`

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Overview of the default workflow types
 
 There are a couple of default workflow types that can be used to extend the functionality of your form. Here is an overview:

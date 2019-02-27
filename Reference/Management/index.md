@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Umbraco Persistence
 
 _Details of CRUD operations within Umbraco and how to interact with the data persisted in the database_

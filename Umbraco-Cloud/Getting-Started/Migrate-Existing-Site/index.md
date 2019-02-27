@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Migrating an Existing Site to Umbraco Cloud
 
 Sometimes you may already have an Umbraco site built that did not start with a clone of an Umbraco Cloud site. Or perhaps you have decided to move a site that's already live on Umbraco Cloud. In any case, migrating an existing site is not difficult, but it does require some specific steps, and an understanding of how Umbraco Cloud deployments work can be very helpful.
@@ -83,7 +87,7 @@ After making sure that your existing site meets all the requirements for being m
 
 ### Upgrade to latest Umbraco version
 
-First order of business is to **upgrade your own Umbraco site to the latest Umbraco version**. Why? Because Umbraco Cloud always runs the latest version and you need to make sure your project runs the same Umbraco version as Umbraco Cloud.
+First order of business is to **upgrade your own Umbraco site to the latest minor version of Umbraco 7 or 8**. Why? Because Umbraco Cloud always runs the latest version and you need to make sure your project runs the same Umbraco version as Umbraco Cloud.
 
 You can download the latest version of Umbraco from [Our](https://our.umbraco.com/download/).
 

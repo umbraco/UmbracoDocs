@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Troubleshooting slow startup
 
 Slow startup can occur if: 

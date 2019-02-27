@@ -1,19 +1,25 @@
+---
+versionFrom: 7.0.0
+---
+
 # IPublishedContent Property Access
 
 ## Umbraco Properties
 
 Built-in properties, which exists on all content objects by default
 
-	@* gets the current page Url *@
-	@Model.Content.Url
-	
-	@* gets the Creation date, and formats it to a short date *@
-	@Model.Content.CreateDate.ToString("D")
-	
-	@* Outputs the name of the parent if it exists *@
-	@if(Model.Content.Parent != null){
-		<h1>@Model.Content.Parent.Name</h1>
-	}
+```csharp
+@* gets the current page Url *@
+@Model.Content.Url
+
+@* gets the Creation date, and formats it to a short date *@
+@Model.Content.CreateDate.ToString("D")
+
+@* Outputs the name of the parent if it exists *@
+@if(Model.Content.Parent != null){
+    <h1>@Model.Content.Parent.Name</h1>
+}
+```
 
 ### .Parent
 Returns the parent content item
@@ -72,8 +78,10 @@ Custom property access is done with the various methods of: `GetPropertyValue`
 ### Model.Content.GetPropertyValue(string)
 Returns the property value for the specified property alias 
 
-	@*Get the property with alias: "siteName" from the current page  *@
-	@Model.Content.GetPropertyValue("siteName")
+```csharp
+@*Get the property with alias: "siteName" from the current page  *@
+@Model.Content.GetPropertyValue("siteName")
+```
 	
 The result Type of this property value is `object` which is fine in most cases since when using
 the above syntax, Razor will automatically execute a `ToString()` on the result value.
@@ -83,22 +91,30 @@ Returns the property value for the specified property alias converted to the spe
 
 For example, to return the `string` result of "siteName" you would do:
 
- 	@(Model.Content.GetPropertyValue<string>("siteName"))
+```csharp
+@(Model.Content.GetPropertyValue<string>("siteName"))
+```
 		 
- Some property value converters support multiple return value formats, for example if a property value
- normally returns a comma separated value list like: "5677,3456,8776", then the property value
- converter for the property editor might support converting directly to an enumerable list of integers, for example:
- 
- 	@(Model.Content.GetPropertyValue<IEnumerable<int>>("mediaIds"))
+Some property value converters support multiple return value formats, for example if a property value
+normally returns a comma separated value list like: "5677,3456,8776", then the property value
+converter for the property editor might support converting directly to an enumerable list of integers, for example:
+
+```csharp
+@(Model.Content.GetPropertyValue<IEnumerable<int>>("mediaIds"))
+```
 
 Another example might be if a property editor stores a JSON value, it might support converting to a custom 
 strongly typed model such as, or at the very least the JSON would be convertible to a `JObject` instance, for example:
 
- 	@(Model.Content.GetPropertyValue<NestedContentModel>("nestedContent"))
-		 
- or
- 
- 	@(Model.Content.GetPropertyValue<JObject>("nestedContent"))
+```csharp
+@(Model.Content.GetPropertyValue<NestedContentModel>("nestedContent"))
+```
+
+or
+
+```csharp
+@(Model.Content.GetPropertyValue<JObject>("nestedContent"))
+```
 
 ## Property Methods
 **There are a few helpful methods to help check if a property exists, has a value or is null.**

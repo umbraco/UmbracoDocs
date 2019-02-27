@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Public Umbraco Cloud REST API
 
 Umbraco Cloud has a REST API that you can use to automatically create new projects. This can come in really handy if you are going to create a lot of projects within a short period of time or if you want to automate project creation or team management.
@@ -49,14 +53,16 @@ If everything went as expected, the endpoint will return a `HTTP 200` status cod
 
 **Response**
 
-    {
-        "url": "https://www.s1.umbraco.io/project/alias-of-project,
-        "alias": "alias-of-project",
-        "projectId: "2af1dc0e-a454-4956-ba26-59036ac4bb99",
-        "projectIsReady": false,
-        "creationStatus": "Creating",
-        "creationStatusEndpoint": "https://www.s1.umbraco.io/api/public/project/creationstatus"
-    }
+```json
+{
+    "url": "https://www.s1.umbraco.io/project/alias-of-project,
+    "alias": "alias-of-project",
+    "projectId: "2af1dc0e-a454-4956-ba26-59036ac4bb99",
+    "projectIsReady": false,
+    "creationStatus": "Creating",
+    "creationStatusEndpoint": "https://www.s1.umbraco.io/api/public/project/creationstatus"
+}
+```
 
 Because the creation of a project happens asynchronously we are providing you with another endpoint for checking the status of the creation (the creationStatusEndpoint listed in the above object) if you need to know when it is done. Read more about this endpoint below.
 
@@ -81,12 +87,14 @@ In the example below the project creation is still under-way:
 
 **Response**
 
-    {
-        "projectIsReady": false,
-        "creationStatus": "Creating",
-        "creationStatusEndpoint": "https://www.s1.umbraco.io/api/public/project/creationstatus",
-        "backofficeUrl": ""
-    }
+```json
+{
+    "projectIsReady": false,
+    "creationStatus": "Creating",
+    "creationStatusEndpoint": "https://www.s1.umbraco.io/api/public/project/creationstatus",
+    "backofficeUrl": ""
+}
+```
 
 You should keep polling this until the `creationStatus` changes to "Created" (or `projectIsReady=true`). The `backofficeUrl` will also be filled with the correct url to the backoffice once the project has been created.
 
@@ -117,9 +125,11 @@ This will return an appropriate HTTP status code and a JSON object like this:
 
 **Response**
 
-    {
-        "message": "An invitation to collaborate on 'Project Name' has been sent to 'user-email@example.com'"
-    }
+```json
+{
+    "message": "An invitation to collaborate on 'Project Name' has been sent to 'user-email@example.com'"
+}
+```
 
 ## User endpoints
 
@@ -145,9 +155,11 @@ This will return an appropriate HTTP status code and a JSON object like this:
 
 **Response**
 
-    {
-        "message": "User created"
-    }
+```json
+{
+    "message": "User created"
+}
+```
 
 --- 
 
@@ -155,82 +167,84 @@ This will return an appropriate HTTP status code and a JSON object like this:
 
 This is a (very crude) example of how the API could be used from a C# Console application. It creates a project, checks the status of the creation and when it is ready, lets you invite a user to the project:
 
-        using System;
-        using System.Dynamic;
-        using System.Net.Http;
-        using System.Net.Http.Headers;
-        using System.Text;
-        using System.Threading;
-        using Newtonsoft.Json;
+```csharp
+using System;
+using System.Dynamic;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Threading;
+using Newtonsoft.Json;
 
-        namespace ConsoleApp1
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
         {
-            class Program
+            Console.WriteLine("Token:");
+            var token = Console.ReadLine();
+
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("token", token);
+
+            Console.WriteLine("Project Name:");
+            var projectName = Console.ReadLine();
+
+            Console.WriteLine("Plan:");
+            var plan = Console.ReadLine();
+
+            Console.WriteLine("BaselineAlias:");
+            var baselineAlias = Console.ReadLine();
+
+            var createdProject = MakeRequest(client, "https://www.s1.umbraco.io/api/public/project/create", null, new { projectName, plan, baselineAlias});
+            if (createdProject.creationStatus == "Creating")
             {
-                static void Main(string[] args)
+                Console.WriteLine("Project was initiated for creation. Start checking status.");
+                var status = string.Empty;
+                var finishedCreating = false;
+                do
                 {
-                    Console.WriteLine("Token:");
-                    var token = Console.ReadLine();
-
-                    var client = new HttpClient();
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("token", token);
-
-                    Console.WriteLine("Project Name:");
-                    var projectName = Console.ReadLine();
-
-                    Console.WriteLine("Plan:");
-                    var plan = Console.ReadLine();
-
-                    Console.WriteLine("BaselineAlias:");
-                    var baselineAlias = Console.ReadLine();
-
-                    var createdProject = MakeRequest(client, "https://www.s1.umbraco.io/api/public/project/create", null, new { projectName, plan, baselineAlias});
-                    if (createdProject.creationStatus == "Creating")
-                    {
-                        Console.WriteLine("Project was initiated for creation. Start checking status.");
-                        var status = string.Empty;
-                        var finishedCreating = false;
-                        do
-                        {
-                            Thread.Sleep(1000);
-                            var creationStatus = MakeRequest(client, createdProject.creationStatusEndpoint, createdProject.projectId);
-                            finishedCreating = creationStatus.projectIsReady;
-                            status = creationStatus.creationStatus.ToString();
-                            Console.WriteLine($"CreationStatus checked. ProjectIsReady: {finishedCreating}, CreationStatus: {status}.");
-                        } while (finishedCreating == false);
-                    }
-
-                    Console.WriteLine("Project creation via API done");
-                    Console.WriteLine("");
-                    Console.WriteLine("Invite user to the project");
-
-                    Console.WriteLine("Email:");
-                    var email = Console.ReadLine();
-
-                    Console.WriteLine("Name:");
-                    var name = Console.ReadLine();
-
-                    var inviteUserStatus = MakeRequest(client, "https://www.s1.umbraco.io/api/public/project/invite", createdProject.projectId, new { email, name});
-                    Console.WriteLine(inviteUserStatus.message.ToString());
-                    Console.ReadLine();
-                }
-
-                private static dynamic MakeRequest(HttpClient client, string endpoint, string projectId = null, object content = null)
-                {
-                    var message = new HttpRequestMessage(HttpMethod.Post, endpoint);
-                    if (projectId != null)
-                        message.Headers.Add("X-Project-Id", projectId);
-                    if (content != null)
-                        message.Content = new StringContent(
-                            JsonConvert.SerializeObject(content),
-                            Encoding.UTF8,
-                            "application/json"
-                        );
-                    var response = client.SendAsync(message).Result;
-                    if (response.IsSuccessStatusCode)
-                        return JsonConvert.DeserializeObject(response.Content.ReadAsStringAsync().Result);
-
-                    throw new Exception(response.Content.ReadAsStringAsync().Result);
-                }
+                    Thread.Sleep(1000);
+                    var creationStatus = MakeRequest(client, createdProject.creationStatusEndpoint, createdProject.projectId);
+                    finishedCreating = creationStatus.projectIsReady;
+                    status = creationStatus.creationStatus.ToString();
+                    Console.WriteLine($"CreationStatus checked. ProjectIsReady: {finishedCreating}, CreationStatus: {status}.");
+                } while (finishedCreating == false);
             }
+
+            Console.WriteLine("Project creation via API done");
+            Console.WriteLine("");
+            Console.WriteLine("Invite user to the project");
+
+            Console.WriteLine("Email:");
+            var email = Console.ReadLine();
+
+            Console.WriteLine("Name:");
+            var name = Console.ReadLine();
+
+            var inviteUserStatus = MakeRequest(client, "https://www.s1.umbraco.io/api/public/project/invite", createdProject.projectId, new { email, name});
+            Console.WriteLine(inviteUserStatus.message.ToString());
+            Console.ReadLine();
         }
+
+        private static dynamic MakeRequest(HttpClient client, string endpoint, string projectId = null, object content = null)
+        {
+            var message = new HttpRequestMessage(HttpMethod.Post, endpoint);
+            if (projectId != null)
+                message.Headers.Add("X-Project-Id", projectId);
+            if (content != null)
+                message.Content = new StringContent(
+                    JsonConvert.SerializeObject(content),
+                    Encoding.UTF8,
+                    "application/json"
+                );
+            var response = client.SendAsync(message).Result;
+            if (response.IsSuccessStatusCode)
+                return JsonConvert.DeserializeObject(response.Content.ReadAsStringAsync().Result);
+
+            throw new Exception(response.Content.ReadAsStringAsync().Result);
+        }
+    }
+}
+```

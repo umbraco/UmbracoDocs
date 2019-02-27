@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Controller & Action selection
 
 _Once the published content request has been created, and MVC is the selected rendering engine, it's time to execute an MVC Controller's Action._
@@ -12,13 +16,15 @@ The MVC Action that executes by default for every request is the `Index` action 
 It is possible to use a custom Controller and Action to be executed during the Umbraco request pipeline.
 A default Controller can be set during startup in the `ApplicationStarting` method, for example:
 
-    public class MyCustomStartupHandler : ApplicationEventHandler
+```csharp
+public class MyCustomStartupHandler : ApplicationEventHandler
+{
+    protected override void ApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
     {
-        protected override void ApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
-        {
-            DefaultRenderMvcControllerResolver.Current.SetDefaultControllerType(typeof(MyCustomRenderMvcController));
-        }
+        DefaultRenderMvcControllerResolver.Current.SetDefaultControllerType(typeof(MyCustomRenderMvcController));
     }
+}
+```
 
 It is a requirement that your custom controller inherit from `Umbraco.Web.MVC.RenderMvcController`.
 You can override the `Index` method to perform any customizations that you require.

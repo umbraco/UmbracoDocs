@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # applications.config
 
 The 'applications.config' file contains the configuration for the different [sections](../../../Extending/Section-Trees/sections.md) of the Umbraco Backoffice, sometimes referred to as applications. These sections are represented by icons in the navigation ribbon on the left hand side of the Umbraco Backoffice. 

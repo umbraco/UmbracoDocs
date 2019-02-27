@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # ExamineIndex.config
 
 The 'ExamineIndex.config' file contains the configuration for the Examine IndexSets used for storing indexed content in an Umbraco installation.

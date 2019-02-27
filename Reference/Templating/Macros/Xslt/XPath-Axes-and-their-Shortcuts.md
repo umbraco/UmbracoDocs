@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # XPath Axes and their Shortcuts
 
 We have now learned the basics of selecting content in reference to the current page, and know the very basics of how it is used.  Now we can cover a few additional commands, and explain how they work.

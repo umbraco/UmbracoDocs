@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Managing macros
 
 _Describes how to create/update a macro and its parameters_

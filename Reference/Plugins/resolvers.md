@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Resolvers
 
 **Applies to: Umbraco 4.10.0+**
