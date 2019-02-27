@@ -1,41 +1,44 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.0
 ---
 
 # Radiobutton List
 
-`Returns: Prevalue ID`
+`Alias: Umbraco.RadioButtonList`
 
-Pretty much like the name indicates this Data type enables editors to choose from list of radiobutton
+`Returns: string`
+
+Pretty much like the name indicates this Data type enables editors to choose from list of radio buttons and returns the value of the selected item as string.
 
 ## Data Type Definition Example
 
-![Radiobutton List Data Type Definition](images/wip.png)
+![Radiobutton List Data Type Definition](images/RadioButton-List-DataType-v8.png)
 
 ## Content Example 
 
-![Radiobutton List Content](images/wip.png)
+![Radiobutton List Content](images/RadioButton-List-Content-v8.png)
 
 ## MVC View Example
 
 ### Typed:
 
-```csharp
-@if (Model.Content.HasValue("miniFigure"))
+#### Without Modelsbuilder
+```csharp 
+@if (Model.HasValue("colorTheme"))
 {
-    var preValue = Umbraco.GetPreValueAsString(Model.Content.GetPropertyValue<int>("miniFigure"));
-    <p>@preValue</p>
+    var value = Model.Value("colorTheme"));
+    <p>@value</p>
 }
 ```
 
-### Dynamic (Obsolete):
-
-See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
-
-```csharp
-@if (CurrentPage.HasValue("miniFigure"))
+#### With Modelsbuilder
+```csharp 
+@if (Model.HasValue("colorTheme"))
 {
-    var preValue = Umbraco.GetPreValueAsString(CurrentPage.miniFigure);
-    <p>@preValue</p>
+    var value = Model.ColorTheme;
+    <p>@value</p>
 }
 ```
+
+
+
