@@ -6,9 +6,9 @@ versionFrom: 8.0.0
 
 `Alias: Umbraco.RadioButtonList`
 
-`Returns: string`
+`Returns: String`
 
-Pretty much like the name indicates this Data type enables editors to choose from list of radio buttons and returns the value of the selected item as string.
+Pretty much like the name indicates this Data type enables editors to choose from list of radio buttons and returns the value of the selected item as a "string".
 
 ## Data Type Definition Example
 
