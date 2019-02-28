@@ -8,14 +8,18 @@ _Follow these steps to do a full install of Umbraco with NuGet._
 
 ## Abbreviated version
 - You will get the best results if you install Umbraco in a **blank** C# web application Visual Studio project
-- You will need Visual Studio 2017 updated to version 15.9.6 at least
-- Go to File > New Project > `ASP.NET Web application (.NET Framework)` using **.NET Framework 4.7.2** (important)
+- You will need Visual Studio 2017 updated to version **15.9.6 at least**
+- Go to `File` > `New Project` > `ASP.NET Web application (.NET Framework)` using **.NET Framework 4.7.2** (important)
 - In the next screen choose an **Empty** project template and don't enable any of the checkboxes, leave them all unselected
 - Either use the NuGet Package explorer to install Umbraco 8 or the Package manager console (the command is: `Install-Package UmbracoCms`)
 - Use CTRL+F5 to run the project and start the Umbraco installer
 
 ## New solution
 To install Umbraco we first need a Visual Studio solution.
+
+**Note:** Check that your Visual Studio version is at least 15.9.6 (`Help` > `About Microsoft Visual Studio`), lower versions do not install the correct NuGet dependencies.
+
+![](images/NuGet/visual-studio-version-v8.png)
 
 ### Visual Studio 2017
 Go to **File > New Project** and pick an ASP.NET Web Application. 
