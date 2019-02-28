@@ -107,7 +107,7 @@ You should note that the Umbraco NuGet package adds a build step to always inclu
 You can see these folders in `packages/UmbracoCms x.y.z/build/UmbracoCms.targets`  
 Should you need to exclude any of these folders or content, you can add a target to your `.pubxml` files in the `properties/Publish` folder. For instance if you need to exclude json data a plugin generates during production.
 
-```
+```xml
   <Target Name="StopUmbracoFromPublishingAppPlugins" AfterTargets="AddUmbracoFilesToOutput">
     <ItemGroup>
       <FilesForPackagingFromProject Remove=".\App_Plugins\UmbracoForms\Data\**\*.*"/>

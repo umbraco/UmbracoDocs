@@ -22,7 +22,7 @@ Go to **File > New Project** and pick an ASP.NET Web Application.
 
 **Note:** Double check that in the "Framework" dropdown you've selected `.NET Framework 4.7.2`, Umbraco will not work with lower versions than 4.7.2.
 
-![](images/NuGet/new-project-vs2017-v8.png)
+![](images/NuGet/new-project-vs2017-1-v8.png)
 
 On the next step, select the **Empty** template. It's important to pick **empty** as other templates include incompatible versions of MVC and Json.NET. (Don't enable any of the checkboxes to add folders or core references. Umbraco will add them for you).  
 
@@ -62,7 +62,7 @@ You should note that the Umbraco NuGet package adds a build step to always inclu
 You can see these folders in `packages/UmbracoCms x.y.z/build/UmbracoCms.targets`  
 Should you need to exclude any of these folders or content, you can add a target to your `.pubxml` files in the `properties/Publish` folder. For instance if you need to exclude json data a plugin generates during production.
 
-```
+```xml
   <Target Name="StopUmbracoFromPublishingAppPlugins" AfterTargets="AddUmbracoFilesToOutput">
     <ItemGroup>
       <FilesForPackagingFromProject Remove=".\App_Plugins\UmbracoForms\Data\**\*.*"/>
