@@ -1,41 +1,57 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.0
 ---
 
 # Adding startup events & event registration
 
-In order to bind to certain events in the Umbraco application you need to make these registrations during application startup.
+In order to bind to certain events in the Umbraco application you need to make these registrations during application using a Component and a Composer.
 
-## Use ApplicationEventHandler to register events
+## Use a Component to register events
 
 :::note
-Applies to: Umbraco 6.1.0+
+Applies to: Umbraco 8.0.0+
 :::
 
-The [ApplicationEventHandler](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Core.ApplicationEventHandler.html) is a plugin type that allows developers to execute code during the Umbraco bootup process.
+A [Component](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Core.Composing.IComponent.html) is an implementation of IComponent that allows developers to execute code during the Umbraco start up and shut down process.
+A [Composer](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Core.Composing.IUserComposer.html is used to add your custom Component to Umbraco.
 
-This is the preferred way to hook in to the Umbraco application startup process. It is a base class so all you need to do is override the methods that you wish to handle. It is important to know the difference between each of the methods (information is below). Almost always, you just want to use the __ApplicationStarted__ method.
-
-This example will populate some default data for newly created content items:
+This example will populate an 'excerpt' property for newly created content items based on the main article text:
 
 ```csharp
+using System.Linq;
 using Umbraco.Core;
+using Umbraco.Core.Composing;
 using Umbraco.Core.Events;
-using Umbraco.Core.Logging;
-using Umbraco.Core.Models;
 using Umbraco.Core.Services;
+using Umbraco.Core.Services.Implement;
 
-namespace MyProject.EventHandlers
+namespace My.Website
 {
-    public class RegisterEvents : ApplicationEventHandler
+    [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
+    public class AddingExerptSetterComponentComposer : IUserComposer
     {
-        protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+        public void Compose(Composition composition)
         {
-            //Listen for when content is being saved
+            // Append our component to the collection of Components
+            // It will be the last one to be run
+            composition.Components().Append<ExerptSettingComponent>();
+        }
+    }
+
+    public class ExerptSettingComponent : IComponent
+    {
+        // initialize: runs once when Umbraco starts
+        public void Initialize()
+        {
             ContentService.Saving += ContentService_Saving;
         }
 
-        /// <summary>
+        // terminate: runs once when Umbraco stops
+        public void Terminate()
+        {
+        }
+
+ /// <summary>
         /// Listen for when content is being saved, check if it is a new item and fill in some
         /// default data.
         /// </summary>
@@ -63,55 +79,10 @@ namespace MyProject.EventHandlers
         }
     }
 }
+
 ```
-
-## Startup methods
-
-These methods only execute if the application is installed and the database is ready. This will prevent many errors from occurring especially if Umbraco is not installed yet.
-
-It's important to understand the difference between the methods that you can use! The methods that can be used/overridden are:
-
-* ApplicationInitialized (EXPERT)
-  * Executes after the `ApplicationContext` and plugin resolvers are created
-  * This could be used to create your own plugin resolvers, otherwise it should not be used
-  * Never execute any logic or access any Umbraco services in this method
-  * _Executes 1st_
-* ApplicationStarting (EXPERT)
-  * Executes before resolution is frozen so that you are able to modify any plugin resolvers
-  * This could be used to modify any plugin resolvers (to add/remove/filter them) - this is the generally the only reason to use this method
-  * Never execute any logic or access any Umbraco services in this method
-  * _Executes 2nd_
-* ApplicationStarted
-  * __This will be the most common method to put logic in__
-  * Executes when the Umbraco boot sequence is complete, after resolution is frozen so you can retrieve objects from the plugin resolvers. 
-  * You could access the Umbraco services in this method if you needed to
-  * This executes __before__ ASP.NET has booted, before the global.asax Init method has executed and before any HttpModules have been initialized
-  * _Executes 3rd_
-
-If you want more control over execution you can override these properties:
-
-* ExecuteWhenApplicationNotConfigured
-  * By default this is false but if you want these methods to fire even when the application is not configured you can override this property and return true
-* ExecuteWhenDatabaseNotConfigured
-	* By default this is false but if you want these methods to fire even if the database is not installed/ready then you can override this property and return true
-
-## Ordering (EXPERT)
-
-Handlers are ordered by (ascending) weight. By default, handlers from the Umbraco.* assemblies have a -100 weight whereas any other handler has a weight of +100. 
-
-A custom weight can be assigned to a handler by marking the class with the [WeightAttribute](../../apidocs/csharp/api/Umbraco.Core.ObjectResolution.WeightAttribute.html). Positive weights are considered "user-space" while negative weights are "core". 
-
-For example, the [CacheRefresherEventHandler](../../apidocs/csharp/api/Umbraco.Web.Cache.CacheRefresherEventHandler.html) is marked with `Weight(int.MinValue)` because its events need to run before anything else. 
-
-Finally (very EXPERT), users can [register a filter](../../apidocs/csharp/api/Umbraco.Core.ObjectResolution.ApplicationEventsResolver.html#Umbraco_Core_ObjectResolution_ApplicationEventsResolver_FilterCollection) to process the list (after it has been ordered) and re-order it, or remove handlers.
-
-:::warning
-Handlers order is an important thing, and removing handlers or reordering handlers can have unexpected consequences.
-:::
-
-
 ## Related Links
 
+* [Composing](../../Implementation/Composing/index.md)
 * [Troubleshooting Slow Startup](Troubleshooting-Slow-Startup.md)
-* [More information about BootManager](Understanding-BootManagers.md) (EXPERT)
-* [Overriding UmbracoApplication](Extending-UmbracoApplication.md) (EXPERT)
+
