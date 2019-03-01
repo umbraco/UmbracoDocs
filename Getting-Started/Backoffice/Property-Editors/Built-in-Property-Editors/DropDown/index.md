@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 `Alias: Umbraco.DropDown.Flexible`
 
-`Returns: String or IEnumerable<string>`
+`Returns: String` or `IEnumerable<string>`
 
 Displays a list of preset values. Either a single value or multiple values (formatted as a collection of strings) can be returned.
 
