@@ -14,13 +14,13 @@ Numeric is a simple HTML input control for entering numbers. Since it's a standa
 
 ## Data Type Definition Example
 
-![Numeric Data Type Definition](images/numeric/7/numeric-datatype.png)
+![Numeric Data Type Definition](images/7/numeric-datatype.png)
 
 ## Settings
 
 ## Content Example:
 
-![Numeric Content Definition](images/numeric/7/numeric-content.png)
+![Numeric Content Definition](images/7/numeric-content.png)
 
 
 ## MVC View Example:
