@@ -72,7 +72,10 @@ There are two options to choose from with regards to a database environment:
 
 1. SQL Compact Edition
 2. SQL Server 2008 (Express and higher)
-3. MySQL 5 (or higher)
+
+:::note 
+Umbraco V8+ no longer supports MySql as a database environment.
+:::
 
 ### SQL Compact Edition
 
