@@ -126,6 +126,8 @@ protected override TreeNode CreateRootNode(FormDataCollection queryStrings)
 
 ![Favourite Things Custom Tree](images/favourite-things-custom-tree-v8.png)
 
+
+
 ### Responding to Tree Actions
 
 The actions on items in an Umbraco Tree will trigger 'by convention' a request to load an AngularJS view, with a name corresponding to the name of the action, from a subfolder of the views folder matching the name of the 'customTreeAlias'.
@@ -182,7 +184,41 @@ Take a look at the [umbEditor directives in the backoffice API Documentation](ht
 
 [see Tree Actions for a list of tree *ActionMenuItems* and *IActions*](tree-actions.md)
 
- 
+### Single Node Trees
+
+It's possible to create 'trees' consisting of only a single node - perhaps just to provide an area to control some settings or a placeholder for a single page backoffice app. See the LogViewer in the settings section for a good example.
+
+To setup a Single Node Tree involves creating the controller in the same way but adding an additional attribute `IsSingleNodeTree`
+```csharp
+    [Tree("settings", "favouritistThingsAlias", IsSingleNodeTree = true, TreeTitle = "Favourite Thing", TreeGroup = "favoritesGroup", SortOrder = 5)]
+    [PluginController("favouriteThing")]
+    public class FavouritistThingsTreeController : TreeController
+```
+
+Overriding the CreateRootNode method allows you to set the 'RoutePath' to where your single page application lives:
+
+```csharp
+protected override TreeNode CreateRootNode(FormDataCollection queryStrings)
+        {
+            var root = base.CreateRootNode(queryStrings);
+
+            //optionally setting a routepath would allow you to load in a custom UI instead of the usual behaviour for a tree
+             root.RoutePath = string.Format("{0}/{1}/{2}", Constants.Applications.Settings, "favourite", "thing");
+            // set the icon
+            root.Icon = "icon-hearts";
+            // could be set to false for a custom tree with a single node.
+            root.HasChildren = false;
+            //url for menu
+            root.MenuUrl = null;
+
+            return root;
+        }
+```
+Accessing this single node would try to load an angular view in the following location:  /views/favourite/thing.html
+
+![Favourite Thing Custom Tree](images/favourite-things-custom-tree-v8.png)
+
+
 ## Tree events
 
 All tree events are defined on the class `Umbraco.Web.Trees.TreeControllerBase`
