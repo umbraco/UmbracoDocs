@@ -110,9 +110,7 @@ protected override MenuItemCollection GetMenuForNode(string id, FormDataCollecti
 protected override TreeNode CreateRootNode(FormDataCollection queryStrings)
         {
             var root = base.CreateRootNode(queryStrings);
-
-            //optionally setting a routepath would allow you to load in a custom UI instead of the usual behaviour for a tree
-            // root.RoutePath = string.Format("{0}/{1}/{2}", Constants.Applications.Settings, "favourites", "things");
+          
             // set the icon
             root.Icon = "icon-hearts";
             // could be set to false for a custom tree with a single node.
