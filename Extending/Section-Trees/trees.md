@@ -182,18 +182,20 @@ Take a look at the [umbEditor directives in the backoffice API Documentation](ht
 
 [see Tree Actions for a list of tree *ActionMenuItems* and *IActions*](tree-actions.md)
 
-### Single Node Trees
+### Single Node Trees / Customising the Root Node Action
 
-It's possible to create 'trees' consisting of only a single node - perhaps just to provide an area to control some settings or a placeholder for a single page backoffice app. See the LogViewer in the settings section for a good example.
+It is possible to create 'trees' consisting of only a single node - perhaps just to provide an area to control some settings or a placeholder for a single page backoffice app. See the LogViewer in the settings section for a good example.
+(or as in the case of the 'settings/content templates' tree, it's possible to have a custom view for the root node as an 'introduction' page to the tree).
 
-To setup a Single Node Tree involves creating the controller in the same way but adding an additional attribute `IsSingleNodeTree`
+In both scenarios you need to override the 'CreateRootNode' method for the custom tree.
+
 ```csharp
-    [Tree("settings", "favouritistThingsAlias", IsSingleNodeTree = true, TreeTitle = "Favourite Thing", TreeGroup = "favoritesGroup", SortOrder = 5)]
+    [Tree("settings", "favouritistThingsAlias", TreeTitle = "Favourite Thing", TreeGroup = "favoritesGroup", SortOrder = 5)]
     [PluginController("favouriteThing")]
     public class FavouritistThingsTreeController : TreeController
 ```
 
-Overriding the CreateRootNode method allows you to set the 'RoutePath' to where your single page application lives:
+Overriding the CreateRootNode method means it is possible to set the 'RoutePath' to where the single page application will live (or introduction page), setting HasChildren to false will result in a Single Node Tree:
 
 ```csharp
 protected override TreeNode CreateRootNode(FormDataCollection queryStrings)
@@ -204,7 +206,7 @@ protected override TreeNode CreateRootNode(FormDataCollection queryStrings)
              root.RoutePath = string.Format("{0}/{1}/{2}", Constants.Applications.Settings, "favourite", "thing");
             // set the icon
             root.Icon = "icon-hearts";
-            // could be set to false for a custom tree with a single node.
+            // set to false for a custom tree with a single node.
             root.HasChildren = false;
             //url for menu
             root.MenuUrl = null;
@@ -212,10 +214,20 @@ protected override TreeNode CreateRootNode(FormDataCollection queryStrings)
             return root;
         }
 ```
-Accessing this single node would try to load an angular view in the following location:  /views/favourite/thing.html
+The RoutePath should be in the format of: **section/treeAlias/method**. As our example controller uses the PluginController attribute, clicking the root node would now request /App_Plugins/favouriteThings/backoffice/favouriteThingsAlias/overview.html. If you are not using the PluginController attribute, then the request would be to /umbraco/views/favouriteThingsAlias/overview.html
 
 ![Favourite Thing Custom Tree](images/favourite-things-custom-tree-v8.png)
 
+#### Full Width App - IsSingleNodeTree
+
+It's possible to make your single node tree app stretch across the full screen of the backoffice (no navigation tree) - see Packages section for an example
+To achieve this add an additional attribute `IsSingleNodeTree`, in the Tree attribute for the custom controller.
+
+```csharp
+    [Tree("settings", "favouritistThingsAlias", IsSingleNodeTree = true, TreeTitle = "Favourite Thing", TreeGroup = "favoritesGroup", SortOrder = 5)]
+    [PluginController("favouriteThing")]
+    public class FavouritistThingsTreeController : TreeController
+```
 
 ## Tree events
 
