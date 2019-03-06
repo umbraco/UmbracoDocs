@@ -1,8 +1,5 @@
 ---
 versionFrom: 7.0.0
----
-
----
 meta.Title: "Contribute to Umbraco CMS"
 meta.Description: "Explanation of how you can contribute to Umbraco, what the process is like and what things to keep in mind when contributing."
 ---
