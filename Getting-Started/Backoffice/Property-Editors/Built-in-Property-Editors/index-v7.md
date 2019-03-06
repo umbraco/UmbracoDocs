@@ -40,7 +40,7 @@ Displays a calendar UI for selecting dates and time
 
 A configurable number control allowing only numbers including decimals.
 
-## [Dropdown](Dropdown/index-v7.md)
+## [Dropdown](DropDown/index-v7.md)
 `Alias: Umbraco.DropDown.Flexible`
 
 Introduced in Umbraco v 7.10. Displays a list of preset values. The content editor can select either a single or multiple values.
