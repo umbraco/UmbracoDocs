@@ -15,12 +15,12 @@ Displays a list of preset values as a list of checkbox controls
 
 Adds a list of approved colours which can be selected by clicking.
 
-## [Content Picker](Content-Picker2.md)
+## [Content Picker](Color-Picker/index-v7.md)
 `Alias: Umbraco.ContentPicker2`
 
 The content picker allows the content editor to pick a specific node from the content structure.
 
-## [(Obsolete) Content Picker](Content-Picker.md)
+## [(Obsolete) Content Picker](Content-Picker/old-content-picker.md)
 `Alias: Umbraco.ContentPickerAlias`
 
 Made obsolete with the release of Umbraco v7.6 the content picker allows the content editor to pick a specific node from the content structure.
@@ -40,27 +40,27 @@ Displays a calendar UI for selecting dates and time
 
 A configurable number control allowing only numbers including decimals.
 
-## [Dropdown](Dropdown.md)
+## [Dropdown](Dropdown/index-v7.md)
 `Alias: Umbraco.DropDown.Flexible`
 
 Introduced in Umbraco v 7.10. Displays a list of preset values. The content editor can select either a single or multiple values.
 
-## [(Obsolete) Dropdown list](DropDown-List.md)
+## [(Obsolete) Dropdown list](DropDown/old-dropdown-List.md)
 `Alias: Umbraco.DropDown`
 
 Made obsolete with the release of Umbraco v7.10. Displays a list of preset values. The value saved is a text value.
 
-## [(Obsolete) Dropdown list, publishing keys](DropDown-List-Publishing-Keys.md)
+## [(Obsolete) Dropdown list, publishing keys](DropDown/old-dropdown-List-Publishing-Keys.md)
 `Alias: Umbraco.DropdownlistPublishingKeys`
 
 Made obsolete with the release of Umbraco v7.10. Displays a list of preset values as a list. The value saved is a prevalue ID
 
-## [(Obsolete) Dropdown list multiple](DropDown-List-Multiple.md)
+## [(Obsolete) Dropdown list multiple](DropDown/old-dropdown-List-Multiple.md)
 `Alias: Umbraco.DropDownMultiple`
 
 Made obsolete with the release of Umbraco v7.10. Displays a list of preset values where multiple can be selected. The value saved is a CSV of the text values.
 
-## [(Obsolete) Dropdown list multiple, publish keys](DropDown-List-Multiple-Publish-Keys.md)
+## [(Obsolete) Dropdown list multiple, publish keys](DropDown/old-dropdown-List-Multiple-Publish-Keys.md)
 `Alias: Umbraco.DropdownlistMultiplePublishKeys`
 
 Made obsolete with the release of Umbraco v7.10. Displays a list of preset values where multiple can be selected. The value saved is a CSV of prevalue ids.
@@ -149,17 +149,17 @@ Made obsolete with the release of Umbraco v7.6 the multinode treepicker data typ
 
 The Multiple Textbox property editor enables a content editor to make a list of text items
 
-## [Nested Content](Nested-Content.md)
+## [Nested Content](Nested-Content/index-v7.md)
 `Alias: Umbraco.NestedContent`
 
 New to v7.7, the nested content property editor enables you to use Document Types as a schema for list items.
 
-## [Numeric](Numeric.md)
+## [Numeric](Numeric/index-v7.md)
 `Alias: Umbraco.Integer`
 
 A configurable number control allowing only numbers.
 
-## [Radio button list](RadioButton-List.md)
+## [Radio button list](RadioButton-List/index-v7.md)
 `Alias: Umbraco.RadioButtonList`
 
 Pretty much like the name indicates this property editor enables editors to choose from list of radio buttons.
@@ -184,17 +184,17 @@ A [tinymce](https://www.tinymce.com/) based rich text editor which is highly con
 
 A slider with a number in a certain range.
 
-## [Tags](Tags.md)
+## [Tags](Tags/index-v7.md)
 `Alias: Umbraco.Tags`
 
 A tag control which can be controlled by a certain group of tags.
 
-## [Textarea](Textarea.md)
+## [Textarea](Textarea/index-v7.md)
 `Alias: Umbraco.TextboxMultiple`
 
 A simple textarea control to input text.
 
-## [Textbox](Textbox.md)
+## [Textbox](Textbox/index-v7.md)
 `Alias: Umbraco.Textbox`
 
 A normal html input text field.
