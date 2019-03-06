@@ -15,7 +15,7 @@ Displays a list of preset values as a list of checkbox controls
 
 Adds a list of approved colours which can be selected by clicking.
 
-## [Content Picker](Color-Picker/index-v7.md)
+## [Content Picker](Content-Picker/index-v7.md)
 `Alias: Umbraco.ContentPicker2`
 
 The content picker allows the content editor to pick a specific node from the content structure.
