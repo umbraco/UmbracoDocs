@@ -82,7 +82,7 @@ Please note that if your template uses a layout that expects the model to be of 
 public class MyNewViewModel : ContentModel
 {
     // Standard Model Pass Through
-    public MyNewViewModel(ContentModel content) : base(content) { }
+    public MyNewViewModel(IPublishedContent content) : base(content) { }
 
     // Custom properties here...
     public string MyProperty1 { get; set; }
@@ -110,7 +110,7 @@ public class HomeController : Umbraco.Web.Mvc.RenderMvcController
     public ActionResult MobileHomePage(ContentModel model)
     {
         // we will create a custom model
-        var myCustomModel = new MyCustomModel(model);
+        var myCustomModel = new MyCustomModel(model.Content);
 
         // TODO: assign some values to the custom model...
 
@@ -140,21 +140,46 @@ public class HomeController : Umbraco.Web.Mvc.RenderMvcController
 }
 ```
 ## Controller Injection
-    
-    public class MyController : RenderMvcController
+Injecting services into your controller constructions is possible with Umbraco's underlying dependency injection implementation.
+Core services such as the built in ILogger service can just be injected into the constructor for the controller along with your own services:
+
+For example:
+    ```csharp
+    public class HomeController : RenderMvcController
     {
-    public MyController(MyService myService,
-    ...) : base(...)
+    private readonly IMySuperSiteService _siteService;
+    private readonly ILogger _logger;
+    public MyController(IMySuperSiteService siteService, ILogger logger)
     {
-    _myService = myService;
+        _siteService = siteService;
     }
-    private readonly MyService _myService;
+
     public override ActionResult Index(
     ContentModel model)
     {
-    _myService.DoStuff(model);
+    var siteSearchPage = _siteService.GetSearchPage(model.Path);
+    ... 
     }
+    ```
     
+    Wire up a concrete instance of IMySuperSiteService, use a composer:
+    
+    ```csharp
+    using Umbraco.Core;
+    using Umbraco.Core.Logging;
+    using Umbraco.Core.Composing;
+    namespace MyWebsite.Composers
+    {
+        public class RegisterSuperSiteServiceComposer : IUserComposer
+        {
+            public void Compose(Composition composition)
+            {
+            // Register your service with different Lifetime options: Singleton, Request, Transient, Scope
+            composition.Register<IMySuperSiteService, MySuperSiteService>(Lifetime.Singleton);
+            }
+        }
+    }
+    ```
 ## Change the default controller
 
 In some cases you might want to have your own custom controller execute for all MVC requests when you haven't hijacked a route. This is possible by assigning your own default controller during application startup using a composer.
@@ -164,11 +189,11 @@ public class SetDefaultRenderMvcControllerComposer : IUserComposer
 {
     public void Compose(Composition composition)
     {
-        composition.SetDefaultRenderMvcController(typeof(MyMvcController));
+        composition.SetDefaultRenderMvcController(typeof(MyRenderMvcController));
     }
 }
 
-public class MyMvcController : IRenderMvcController
+public class MyRenderMvcController : IRenderMvcController
 {
     public void Execute(RequestContext requestContext)
     {
