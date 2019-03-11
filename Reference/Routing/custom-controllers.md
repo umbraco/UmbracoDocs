@@ -144,7 +144,7 @@ Injecting services into your controller constructions is possible with Umbraco's
 Core services such as the built in ILogger service can just be injected into the constructor for the controller along with your own services:
 
 For example:
-    ```csharp
+```csharp
     public class HomeController : RenderMvcController
     {
     private readonly IMySuperSiteService _siteService;
@@ -160,11 +160,11 @@ For example:
     var siteSearchPage = _siteService.GetSearchPage(model.Path);
     ... 
     }
-    ```
+ ```
     
     Wire up a concrete instance of IMySuperSiteService, use a composer:
     
-    ```csharp
+```csharp
     using Umbraco.Core;
     using Umbraco.Core.Logging;
     using Umbraco.Core.Composing;
@@ -179,7 +179,7 @@ For example:
             }
         }
     }
-    ```
+```
 ## Change the default controller
 
 In some cases you might want to have your own custom controller execute for all MVC requests when you haven't hijacked a route. This is possible by assigning your own default controller during application startup using a composer.
