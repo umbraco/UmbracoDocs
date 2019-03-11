@@ -160,9 +160,9 @@ For example:
     var siteSearchPage = _siteService.GetSearchPage(model.Path);
     ... 
     }
- ```
+```
     
-    Wire up a concrete instance of IMySuperSiteService, use a composer:
+To wire up a concrete instance of IMySuperSiteService, use a composer:
     
 ```csharp
     using Umbraco.Core;
