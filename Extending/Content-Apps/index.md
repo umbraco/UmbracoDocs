@@ -190,7 +190,7 @@ This is an example of how to register a Content App with C# and perform your own
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Umbraco.Core.Components;
+using Umbraco.Core.Composing;
 using Umbraco.Core.Models;
 using Umbraco.Core.Models.ContentEditing;
 using Umbraco.Core.Models.Membership;
