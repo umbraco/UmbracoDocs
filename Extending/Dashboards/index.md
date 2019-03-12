@@ -132,7 +132,7 @@ For reference, here is a list of the weighting values for the default Umbraco da
       <td>Umbraco.Web.Dashboards.PublishedStatusDashboard</td>
     </tr>
     <tr>
-      <td>Examine Management</td>
+      <td>Models Builder</td>
       <td>40</td>
       <td>dashboardTabs/settingsModelsBuilder</td>
       <td>Registered in ModelsBuilder package.manifest</td>
