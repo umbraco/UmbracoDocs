@@ -65,7 +65,7 @@ namespace My.Website
             composition.ContentFinders().Remove<ContentFinderByUrl>();
             //you can use Append to add to the end of the collection 
             composition.ContentFinders().Append<AnotherContentFinderExample>();
-            or Insert for a specific position in the collection
+            //or Insert for a specific position in the collection
             composition.ContentFinders().Insert<AndAnotherContentFinder>(3);
         }
     }
@@ -75,32 +75,32 @@ namespace My.Website
 
 # NotFoundHandlers
 
-To set your own 404 finder create an IContentFinder and set it as the ContentLastChanceFinder. (perhaps you have a multilingual site and need to find the appropriate 404 page in the correct language)
+To set your own 404 finder create an IContentLastChanceFinder and set it as the ContentLastChanceFinder. (perhaps you have a multilingual site and need to find the appropriate 404 page in the correct language)
 
-A ContentLastChanceFinder will always return a 404 status code. This example creates a new implementation of the IContentFinder and checks whether the requested content could not be found by using the default `Is404` property presented in the `PublishedRequest` class.
+A ContentLastChanceFinder will always return a 404 status code. This example creates a new implementation of the IContentLastChanceFinder and checks whether the requested content could not be found by using the default `Is404` property presented in the `PublishedRequest` class.
 
 ```csharp
-public class My404ContentFinder : IContentFinder {
+public class My404ContentFinder : IContentLastChanceFinder {
     public bool TryFindContent(PublishedRequest contentRequest) {
         // logic to find your 404 page and set it to contentRequest.PublishedContent
-     CultureInfo culture = null;
+        CultureInfo culture = null;
         if (contentRequest.HasDomain) {
-            culture = CultureInfo.GetCultureInfo(contentRequest.UmbracoDomain.LanguageIsoCode);
+            culture = contentRequest.Domain.Culture;
         }
 
-    // get the root node with a culture setting matching the current culture of the request
-        IPublishedContent rootNode = contentRequest.UmbracoContext.ContentCache.GetAtRoot().FirstOrDefault(n => n.GetCulture().ThreeLetterWindowsLanguageName == culture.ThreeLetterWindowsLanguageName);
-    //assuming the 404 page is in the root of the language site with alias fourOhFourPageAlias
-        IPublishedContent notFoundNode = rootNode.Children().FirstOrDefault(f=>f.DocumentTypeAlias == "fourOhFourPageAlias"); 
+        // get the root node with a culture setting matching the current culture of the request
+        IPublishedContent rootNode = contentRequest.UmbracoContext.ContentCache.GetAtRoot().FirstOrDefault(n => n.GetCulture().Name == culture.Name);
+        //assuming the 404 page is in the root of the language site with alias fourOhFourPageAlias
+        IPublishedContent notFoundNode = rootNode.Children().FirstOrDefault(f => f.ContentType.Alias == "fourOhFourPageAlias"); 
 
         if (notFoundNode != null) {
             contentRequest.PublishedContent = notFoundNode;
         } else if (rootNode != null) {
             contentRequest.PublishedContent = rootNode;
         } else {
-            contentRequest.PublishedContent = contentRequest.RoutingContext.UmbracoContext.ContentCache.GetAtRoot().FirstOrDefault(n => n.GetTemplateAlias() != "");
+            contentRequest.PublishedContent = contentRequest.UmbracoContext.ContentCache.GetAtRoot().FirstOrDefault(n => n.GetTemplateAlias() != "");
         }
-
+        
         return contentRequest.PublishedContent != null;
     }
 }
@@ -121,7 +121,7 @@ namespace My.Website
         public void Compose(Composition composition)
         {
             //set the last chance content finder
-            composition.LastChanceContentFinder(typeof(My404ContentFinder));
+             composition.SetContentLastChanceFinder<My404ContentFinder>();
         }
     }
 }
