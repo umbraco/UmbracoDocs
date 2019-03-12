@@ -33,7 +33,7 @@ The SortOrder controls the order of the custom tree within the Tree Group.
 
 ### Tree Groups
 Tree Groups are a new concept in V8, to enable you to group trees in a section. You provide the alias of the Tree Group name, you wish to add your tree to - see Constants.Trees.Groups for a list of existing group alias. If you add your own alias, you'll need to add a translation key to config/lang/en-US.user.xml to avoid the alias appearing as the header in [square brackets] eg
-   ```
+```
 <language>
       <area alias="treeHeaders">
         <key alias="favouritesGroup">Favourites</key>
