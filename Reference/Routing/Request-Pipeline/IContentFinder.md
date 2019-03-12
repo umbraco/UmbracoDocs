@@ -80,28 +80,42 @@ To set your own 404 finder create an IContentLastChanceFinder and set it as the 
 A ContentLastChanceFinder will always return a 404 status code. This example creates a new implementation of the IContentLastChanceFinder and checks whether the requested content could not be found by using the default `Is404` property presented in the `PublishedRequest` class.
 
 ```csharp
-public class My404ContentFinder : IContentLastChanceFinder {
-    public bool TryFindContent(PublishedRequest contentRequest) {
-        // logic to find your 404 page and set it to contentRequest.PublishedContent
-        CultureInfo culture = null;
-        if (contentRequest.HasDomain) {
-            culture = contentRequest.Domain.Culture;
-        }
+using Umbraco.Core.Models.PublishedContent;
+using Umbraco.Core.Services;
+using Umbraco.Web;
+using Umbraco.Web.Routing;
 
-        // get the root node with a culture setting matching the current culture of the request
-        IPublishedContent rootNode = contentRequest.UmbracoContext.ContentCache.GetAtRoot().FirstOrDefault(n => n.GetCulture().Name == culture.Name);
-        //assuming the 404 page is in the root of the language site with alias fourOhFourPageAlias
-        IPublishedContent notFoundNode = rootNode.Children().FirstOrDefault(f => f.ContentType.Alias == "fourOhFourPageAlias"); 
-
-        if (notFoundNode != null) {
-            contentRequest.PublishedContent = notFoundNode;
-        } else if (rootNode != null) {
-            contentRequest.PublishedContent = rootNode;
-        } else {
-            contentRequest.PublishedContent = contentRequest.UmbracoContext.ContentCache.GetAtRoot().FirstOrDefault(n => n.GetTemplateAlias() != "");
+namespace My.Website.ContentFinders
+{
+    public class My404ContentFinder : IContentLastChanceFinder
+    {
+        private readonly IDomainService _domainService;
+        public My404ContentFinder(IDomainService domainService)
+        {
+            _domainService = domainService;
         }
-        
-        return contentRequest.PublishedContent != null;
+        public bool TryFindContent(PublishedRequest contentRequest)
+        {
+            //find the root node with a matching domain to the incoming request
+            var url = contentRequest.Uri.ToString();
+            var allDomains = _domainService.GetAll(true);
+            var domain = allDomains.Where(f => f.DomainName == contentRequest.Uri.Authority || f.DomainName == "https://" + contentRequest.Uri.Authority).FirstOrDefault();
+            var siteId = domain != null ? domain.RootContentId : allDomains.FirstOrDefault().RootContentId;
+            var siteRoot = contentRequest.UmbracoContext.ContentCache.GetById(false, siteId ?? -1);
+            if (siteRoot == null)
+            {
+                return false;
+            }
+            //assuming the 404 page is in the root of the language site with alias fourOhFourPageAlias
+            IPublishedContent notFoundNode = siteRoot.Children().FirstOrDefault(f => f.ContentType.Alias == "fourOhFourPageAlias");
+
+            if (notFoundNode != null)
+            {
+                contentRequest.PublishedContent = notFoundNode;
+            }
+           // return true or false depending on whether our custom 404 page was found
+            return contentRequest.PublishedContent != null;
+        }
     }
 }
 ```
