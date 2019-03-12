@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 `Alias: Umbraco.CheckBoxList`
 
-`Returns: IEnumerable collection of strings`
+`Returns: IEnumerable<string>`
 
 Displays a list of preset values as a list of checkbox controls. The text saved is a IEnumerable collection of the text values.
 

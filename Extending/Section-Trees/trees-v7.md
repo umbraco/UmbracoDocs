@@ -1,6 +1,23 @@
 ---
 versionFrom: 7.0.0
+versionRemoved: 8.0.0
 ---
+
+# Trees
+
+Trees are also in a [config file located: `~/Config/trees.config`](../../Reference/Config/trees/index.md). Each config item defines a tree and for what section it belongs to. For example, this is the definition of the user tree:
+
+```xml
+<add application="users" alias="users" title="Users" 
+        type="umbraco.loadUsers, umbraco" 
+        iconClosed="icon-folder" iconOpen="icon-folder" sortOrder="0" />
+```
+
+The tree type should reference the assembly qualified type of the tree, for example the above user tree is of type: `umbraco.loadUsers, umbraco`. 
+
+:::note
+You don't need to specify the assembly version, etc...
+:::
 
 # Trees v7
 

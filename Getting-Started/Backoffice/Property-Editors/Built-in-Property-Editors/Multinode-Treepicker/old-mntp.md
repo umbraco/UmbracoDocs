@@ -47,7 +47,7 @@ Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. 
 
 ![Multinode Treepicker](images/Multinode-Treepicker-Content.jpg)
 
-## MVC View Example - [value converters enabled](../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
+## MVC View Example - [value converters enabled](../../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
 
 ### Typed:
 
@@ -61,7 +61,7 @@ Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. 
 }
 ```
 
-## MVC View Example - [value converters disabled](../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
+## MVC View Example - [value converters disabled](../../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
 
 ### Typed:
 

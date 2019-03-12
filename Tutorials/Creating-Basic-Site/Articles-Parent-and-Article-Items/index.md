@@ -85,7 +85,7 @@ This code will output a list of all the **_Article Items_** as links using the n
 ```csharp
 <div class="article">
     <div class="articletitle"><a href="@item.Url">@item.Name</a></div>
-    <div class="articlepreview">@Umbraco.Truncate(@item.Value("articleContent").ToString(),100) <a href="@item.Url">Read More..</a></div>
+    <div class="articlepreview">@item.Value("articleContent").ToString().Truncate(100) <a href="@item.Url">Read More..</a></div>
 </div>
 <hr/>
 ```
