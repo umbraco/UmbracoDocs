@@ -98,6 +98,7 @@ namespace Umbraco.Web.UI
 ```csharp
 using System.Linq;
 using Umbraco.Core;
+using Umbraco.Web;
 using Umbraco.Core.Composing;
 using Umbraco.Core.Events;
 using Umbraco.Core.Models;
