@@ -22,21 +22,33 @@ This is where you go to find connection details to your Umbraco Cloud databases.
 
 You will need to whitelist your IP in order to connect to the databases with your local machine - this can also be done from this page.
 
-## [Manage domains](../Manage-Domains)
+## [Hostnames](../Manage-Hostnames)
 
-Binding hostnames and domains to your Umbraco Cloud project is easily done from the Umbraco Cloud Portal - the page is called **Manage Domains**.
+Binding hostnames to your Umbraco Cloud project is easily done from the Umbraco Cloud Portal - the page is called **Hostnames**.
 
-This is also the page you go to when you want to add security certificates to your project.
+## [Certificates](../Manage-Hostnames/Security-Certificates)
 
-## Manage IP Whitelist
+All hostnames added to your Umbraco Cloud environments will automatically be assigned a security certificate - we call this feature [Umbraco Latch](../Umbraco-Latch).
 
-This is where you go to whitelist IP's for the basic authentication that's enabled on Development and Staging environments. Simply add the IP's to the list under the environment you want to open access to, and we'll take care of the rest!
+Sometimes you might want to upload  and bind your own security certificate to your hostnames. This can easily be  done from the **Certificates** page.
 
-If you are on a Trial plan, you can also whitelist IP's for bypassing the basic authentication on the Live environment - on paid projects the basic authentication will be disabled by default on the Live environment.
+## Public access
 
-## Upgrade your project
+All Staging and Development environments on Umbraco Cloud projects are by default protected by *basic authentication* which require you to enter your Cloud credentials in order to view the frontend. You can disable / enable this authentication with one click on the **Public access** page.
 
-From the *Settings* menu you can easily upgrade your Umbraco Cloud Starter plan to a Professional plan.
+:::note
+On **Trial** projects the basic authentication is enabled on the Live environment. This cannot be removed before setting up a subscription for the Cloud project.
+:::
+
+On the **Public access** page you can also whitelist IPs which will allow for viewing the frontend of the Staging and/or Development environments when accessed from the whitelisted IPs.
+
+## [Webhooks](../../Deployment/Deployment-webhook)
+
+On Umbraco Cloud projects we've made it possible to configure a deployment webhook on your environments. This will be triggered upon successful deployments, you can configure where you would like information about the deployment to be posted.
+
+## Upgrade to Professional
+
+From the *Settings* menu you can easily upgrade your project to a Professional plan.
 
 The option will not be available when you are already on a Professional plan or if you are running in Trial mode.
 
@@ -45,15 +57,11 @@ The option will not be available when you are already on a Professional plan or 
 You might need to rename your Umbraco Cloud project - find the option to do that from the *Settings* menu. 
 
 :::note
-If you are working locally you need to update the origin of your local git repository to point to the new clone url. Alternatively to make a fresh local clone of the project, once you’ve changed your project name.
+If you are working locally you need to update the origin of your local git repository to point to the new clone url. Alternatively you can make a fresh local clone of the project, once you’ve changed your project name.
 :::
 
 If you want to delete your Umbraco Cloud project you can find the option to do this from the *Settings* menu as well. Deleting your Umbraco Cloud project is permanent - all data, media, databases, configuration, setup, and domain bindings are removed in the process.
 
 :::note
-Deleting your Umbraco Cloud project will also cancel any subscriptions you have set up for your project.
+Deleting your Umbraco Cloud project will also cancel any subscriptions you have set up for the project.
 :::
-
-## [Deployment Webhook](../../Deployment/Deployment-webhook)
-
-On Umbraco Cloud projects we've made it possible to configure a deployment webhook on your environments. This will be triggered upon successful deployments, you can configure where you would like information about the deployment to be posted.
