@@ -22,17 +22,15 @@ This is where you go to find connection details to your Umbraco Cloud databases.
 
 You will need to whitelist your IP in order to connect to the databases with your local machine - this can also be done from this page.
 
-## [Manage domains](../Manage-Domains)
+## [Hostnames](../Manage-Domains)
 
-Binding hostnames and domains to your Umbraco Cloud project is easily done from the Umbraco Cloud Portal - the page is called **Manage Domains**.
+Binding hostnames and domains to your Umbraco Cloud project is easily done from the Umbraco Cloud Portal - the page is called **Hostnames**.
 
-This is also the page you go to when you want to add security certificates to your project.
+## Public access
 
-## Manage IP Whitelist
-
-This is where you go to whitelist IP's for the basic authentication that's enabled on Development and Staging environments. Simply add the IP's to the list under the environment you want to open access to, and we'll take care of the rest!
-
-If you are on a Trial plan, you can also whitelist IP's for bypassing the basic authentication on the Live environment - on paid projects the basic authentication will be disabled by default on the Live environment.
+All non live environments on Umbraco Cloud will have basic authentication enabled, live environments will have it turned off.
+On the public access page, you'll be able to handle these settings, as well as adding whitelisted IP adresses that should be allowed to pass
+through the authentication. Simply add the IP's to the list under the environment you want to open access to, and we'll take care of the rest!
 
 ## Upgrade your project
 
