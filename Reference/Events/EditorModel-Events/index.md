@@ -1,6 +1,6 @@
 ---
-keywords: EditorModelEventManager
-versionFrom: 7.4.0
+keywords: EditorModelEventManager setting default values
+versionFrom: 8.0.0
 ---
 
 # EditorModel Events
@@ -11,22 +11,41 @@ The **EditorModelEventManager** class is used to emit events that enable you to 
 
 Example usage of the **EditorModelEventManager** '*SendingContentModel*' event - eg set the default PublishDate for a new NewsArticle to be today's date:
 ```csharp
+using System.Linq;
 using Umbraco.Core;
+using Umbraco.Core.Composing;
 using Umbraco.Core.Events;
-using Umbraco.Core.Models;
-using Umbraco.Web.Editors;
+using Umbraco.Core.Services;
+using Umbraco.Core.Services.Implement;
 using Umbraco.Web.Models.ContentEditing;
 
-namespace My.Namespace
+namespace My.Website
 {
-    public class MyEventHandler : ApplicationEventHandler
+    [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
+    public class SubscribeToEditorModelEventsComposer : IUserComposer
     {
-        protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+        public void Compose(Composition composition)
         {
-            EditorModelEventManager.SendingContentModel += EditorModelEventManager_SendingContentModel;
+            // Append our component to the collection of Components
+            // It will be the last one to be run
+            composition.Components().Append<MyComponent>();
+        }
+    }
+
+    public class SubscribeToEditorModelEvents : IComponent
+    {
+        // initialize: runs once when Umbraco starts
+        public void Initialize()
+        {
+           EditorModelEventManager.SendingContentModel += EditorModelEventManager_SendingContentModel;
         }
 
-        private void EditorModelEventManager_SendingContentModel(System.Web.Http.Filters.HttpActionExecutedContext sender, EditorModelEventArgs<Umbraco.Web.Models.ContentEditing.ContentItemDisplay> e)
+        // terminate: runs once when Umbraco stops
+        public void Terminate()
+        {
+        }
+
+      private void EditorModelEventManager_SendingContentModel(System.Web.Http.Filters.HttpActionExecutedContext sender, EditorModelEventArgs<Umbraco.Web.Models.ContentEditing.ContentItemDisplay> e)
         {
             // set a default value for NewsArticle PublishDate property, the editor can override this, but we will suggest it should be today's date
             if (e.Model.ContentTypeAlias == "newsArticle")
@@ -75,11 +94,17 @@ namespace My.Namespace
         </td>
     </tr>
     <tr>
-        <td>SendingUserModel (v7.7.10+)</td>
+        <td>SendingUserModel</td>
         <td>(HttpActionExecutedContext sender,  EditorModelEventArgs&ltUserDisplay&gt; e)</td>
         <td>
         Raised just before the editor model is sent for editing in the user section.<br />
         NOTE: 'e' contains a model property of *Umbraco.Web.Models.ContentEditing.UserDisplay* type which in turn contains the tabs and properties of the elements about to be loaded for editing
+        </td>
+             <td>SendingDashboardModel</td>
+        <td>(HttpActionExecutedContext sender, EditorModelEventArgs&ltIEnumerable&ltTab&ltIDashboardSlim&gt;&gt;&gt; e)</td>
+        <td>
+        Raised just before the a dashboard is retrieved in a section.<br />
+        NOTE: 'e' contains a model property that is an IEnumerable of *Umbraco.Web.Models.ContentEditing.Tab<Umbraco.Core.Dashboards.DashboardSlim>* each Tab object gives you access to Label, Alias, Properties and whether it IsActive, and the DashboardSlim gives you access to the alias and path to the angularJS view for the dashboard.
         </td>
     </tr>
    </table>
@@ -116,7 +141,7 @@ A model representing a member to be displayed in the backoffice
 * MembershipScenario
 * MemberProviderFieldMapping - This is used to indicate how to map the membership provider properties to the save model, this mapping will change if a developer has opted to have custom member property aliases specified in their membership provider config, or if we are editing a member that is not an Umbraco member (custom provider)
 * Tabs - Defines the tabs containing display properties
-* Properties - properties based on the properties in the tabs collection
+* Properties - properties based on the properties in the tabs collection    
 
 ## Samples
 
