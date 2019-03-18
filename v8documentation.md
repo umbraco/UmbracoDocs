@@ -44,6 +44,8 @@ If you feel something is missing here or you want to help out documenting some o
 
 ## In progress:
 
+* EditorModel Events
+* Custom MVC Routes
 * Backoffice documentation
 * [Property Editors in Umbraco 8](https://github.com/umbraco/UmbracoDocs/issues/1528) 
 
