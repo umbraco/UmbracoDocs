@@ -72,13 +72,22 @@ IPublishedContent FindContent(RequestContext requestContext, UmbracoContext umbr
 It has another virtual method that can be overridden which will allow you to manipulate the PublishedContentRequest however you’d like:
 
 ```csharp
-PreparePublishedContentRequest(PublishedContentRequest publishedContentRequest)
+PreparePublishedContentRequest(PublishedRequest request)
 ```
 
-So how do you find content to associate with the route? Well that’s up to you, one way (as seen above) would be to specify a node Id. In the example `ProductsRouteHandler` is inheriting from `UmbracoVirtualNodeByIdRouteHandler` which has an abstract method:
+So how do you find content to associate with the route? Well that’s up to you, one way (as seen above) would be to specify a node Id. In the example `ProductsRouteHandler` is inheriting from `UmbracoVirtualNodeByIdRouteHandler` which accepts an id of a content item to use as the IPublishedContent associated with the route:
 
 ```csharp
-IPublishedContent FindContent(RequestContext requestContext, UmbracoContext umbracoContext, IPublishedContent baseContent);
+namespace Umbraco.Web.Mvc
+{
+    public class UmbracoVirtualNodeByIdRouteHandler : UmbracoVirtualNodeRouteHandler
+    {
+        public UmbracoVirtualNodeByIdRouteHandler(int realNodeId);
+
+        protected sealed override IPublishedContent FindContent(RequestContext requestContext, UmbracoContext umbracoContext);
+        protected virtual IPublishedContent FindContent(RequestContext requestContext, UmbracoContext umbracoContext, IPublishedContent baseContent);
+    }
+}
 ```
 
 So based on all this information provided in these methods, you can associate whichever IPublishedContent item you want / feels most appropriate to a request.
