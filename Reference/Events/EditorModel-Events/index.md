@@ -5,31 +5,24 @@ versionFrom: 8.0.0
 
 # EditorModel Events
 
-The **EditorModelEventManager** class is used to emit events that enable you to manipulate the model used by the backoffice before it is loaded into an editor  (for example the SendingContentModel event fires just before a content item is loaded into the backoffice for editing). It is therefore the perfect event to use to set a default value for a particular property, or perhaps to hide a property/tab from a certain editor.
+The `EditorModelEventManager` class is used to emit events that enable you to manipulate the model used by the backoffice before it is loaded into an editor  (for example the SendingContentModel event fires just before a content item is loaded into the backoffice for editing). It is therefore the perfect event to use to set a default value for a particular property, or perhaps to hide a property/tab/Content App from a certain editor.
 
 ## Usage
 
-Example usage of the **EditorModelEventManager** '*SendingContentModel*' event - eg set the default PublishDate for a new NewsArticle to be today's date:
+Example usage of the `EditorModelEventManager` '*SendingContentModel*' event - eg set the default PublishDate for a new NewsArticle to be today's date:
 ```csharp
+using System;
 using System.Linq;
 using Umbraco.Core;
 using Umbraco.Core.Composing;
-using Umbraco.Core.Events;
-using Umbraco.Core.Services;
-using Umbraco.Core.Services.Implement;
-using Umbraco.Web.Models.ContentEditing;
+using Umbraco.Web.Editors;
 
 namespace My.Website
 {
     [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
-    public class SubscribeToEditorModelEventsComposer : IUserComposer
+    public class SubscribeToEditorModelEventsComposer : ComponentComposer<SubscribeToEditorModelEvents>
     {
-        public void Compose(Composition composition)
-        {
-            // Append our component to the collection of Components
-            // It will be the last one to be run
-            composition.Components().Append<MyComponent>();
-        }
+    //this automatically adds the component to the Components collection of the Umbraco composition
     }
 
     public class SubscribeToEditorModelEvents : IComponent
@@ -50,7 +43,9 @@ namespace My.Website
             // set a default value for NewsArticle PublishDate property, the editor can override this, but we will suggest it should be today's date
             if (e.Model.ContentTypeAlias == "newsArticle")
             {
-                var pubDateProperty = e.Model.Properties.FirstOrDefault(f => f.Alias == "publishDate");
+            //access the property you want to pre-populate
+            //note each content item can have 'variations' - each variation is represented by the `ContentVariantDisplay` class, which has an IEnumerable of Tabs, and each Tab is an IEnumerable of `ContentPropertyDisplay` properties for each property in the document type
+                var pubDateProperty = e.Model.Variants.FirstOrDefault().Tabs.FirstOrDefault(f=>f.Alias=="Content").Properties.FirstOrDefault(f => f.Alias == "publishDate");
                 if (pubDateProperty.Value == null || String.IsNullOrEmpty(pubDateProperty.Value.ToString()))
                 {
                     // set default value if the date property is null or empty
