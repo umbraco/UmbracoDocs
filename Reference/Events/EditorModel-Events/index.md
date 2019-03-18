@@ -95,6 +95,8 @@ namespace My.Website
         Raised just before the editor model is sent for editing in the user section.<br />
         NOTE: 'e' contains a model property of *Umbraco.Web.Models.ContentEditing.UserDisplay* type which in turn contains the tabs and properties of the elements about to be loaded for editing
         </td>
+            </tr>
+       <tr>
              <td>SendingDashboardModel</td>
         <td>(HttpActionExecutedContext sender, EditorModelEventArgs&ltIEnumerable&ltTab&ltIDashboardSlim&gt;&gt;&gt; e)</td>
         <td>
