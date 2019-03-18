@@ -14,6 +14,9 @@ If you feel something is missing here or you want to help out documenting some o
 
 ## Finished Umbraco 8 Documentation:
 
+* [Searchable Trees (ISearchableTree)](Extending/Section-Trees/Searchable-Trees/)
+* [IContentFinder](Reference/Routing/Request-Pipeline/IContentFinder)
+* [Custom controllers (hijacking Umbraco routes)](Reference/Routing/custom-controllers)
 * [Version specific upgrade notes: 7 to 8](Getting-Started/Setup/Upgrading/version-specific.md)
 * [Composer/Composition mechanism documentation](Implementation/Composing/)
 * [Umbraco 8 Requirements](Getting-Started/Setup/Requirements)
