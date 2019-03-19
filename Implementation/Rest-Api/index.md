@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # The Umbraco REST API project has been discontinued [in favor of Umbraco Headless](https://umbraco.com/products/umbraco-headless/)

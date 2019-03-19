@@ -1,5 +1,6 @@
 ---
 versionFrom: 4.0.1
+needsV8Update: "true"
 ---
 
 # Umbraco.library v4.0.1

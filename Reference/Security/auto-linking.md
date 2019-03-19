@@ -1,6 +1,7 @@
 ---
 versionFrom: 7.3.0
 keywords: oauth, security
+needsV8Update: "true"
 ---
 
 # Auto Linking accounts

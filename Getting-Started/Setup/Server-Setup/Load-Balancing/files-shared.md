@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # File Storage on SAN/NAS/Clustered File Server/Network Share

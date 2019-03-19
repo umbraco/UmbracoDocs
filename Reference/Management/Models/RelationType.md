@@ -1,6 +1,7 @@
 ---
 keywords: relation type RelationType relations related
 versionFrom: 6.0.0
+needsV8Update: "true"
 ---
 # RelationType
 

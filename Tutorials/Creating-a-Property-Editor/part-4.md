@@ -1,6 +1,8 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
+
 
 # Adding server-side data to a property editor
 
