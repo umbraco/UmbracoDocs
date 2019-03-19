@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.3.0
+needsV8Update: "true"
 ---
 
 # Replacing the basic username/password check

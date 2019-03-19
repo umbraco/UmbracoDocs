@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.5.0
+needsV8Update: "true"
 ---
 
 # Authenticating on the Umbraco backoffice with Active Directory credentials
