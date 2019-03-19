@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Add a Blog Post Publication Date
 
 In [Part Two](part-2.md) we displayed a nicely formatted publication date on the blog post page.
