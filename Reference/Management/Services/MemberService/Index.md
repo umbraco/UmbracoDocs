@@ -1,5 +1,6 @@
 ---
 versionFrom: 6.2.0
+needsV8Update: "true"
 ---
 
 # MemberService

@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.9.0
+needsV8Update: "true"
 ---
 
 # ConsentService

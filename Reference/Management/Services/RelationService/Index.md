@@ -1,5 +1,6 @@
 ---
 versionFrom: 6.1.1
+needsV8Update: "true"
 ---
 
 # RelationService
