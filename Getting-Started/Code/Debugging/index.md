@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Debugging
 During the development of your Umbraco site you can debug, and profile the code you have written to analyse and discover bugs, bottlenecks in your code, or just help uncover what on earth is going wrong.
 
