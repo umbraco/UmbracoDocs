@@ -278,5 +278,6 @@ If you are interested in learning more then the following resources will benefic
 * [Nicholas Blumhardt Blog, creator of Serilog](https://nblumhardt.com/)
 * [Serilog Pluralsight Course](https://www.pluralsight.com/courses/modern-structured-logging-serilog-seq)
 * [Seq](https://getseq.net/) This is FREE for a single machine such as your own local development computer
+* [Compact Log Viewer](https://www.microsoft.com/store/apps/9N8RV8LKTXRJ) This is a tool for viewing & querying JSON log files from disk in the same way as the built in logviewer dashboard
 
 
