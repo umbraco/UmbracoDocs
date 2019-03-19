@@ -1,5 +1,6 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 4.11.0
+versionRemoved: 8.0.0
 ---
 
 # Masterpages
