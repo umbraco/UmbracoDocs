@@ -1,5 +1,6 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
+versionRemoved: 8.0.0
 ---
 
 # ContentService Events
@@ -11,44 +12,31 @@ The ContentService class is the most commonly used type when extending Umbraco u
 Example usage of the ContentService events:
 
 ```csharp
-using System;
 using Umbraco.Core;
-using Umbraco.Core.Composing;
-using Umbraco.Core.Services.Implement;
+using Umbraco.Core.Events;
+using Umbraco.Core.Models;
+using Umbraco.Core.Publishing;
+using Umbraco.Core.Services;
 
-namespace Umbraco8.Components
+namespace My.Namespace
 {
-    [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
-    public class SubscribeToPublishEventComposer : ComponentComposer<SubscribeToPublishEventComponent>
+    public class MyEventHandler : ApplicationEventHandler
     {
-    }
-    public class SubscribeToPublishEventComponent : IComponent
-    {
-        public void Initialize()
-        {
-            ContentService.Publishing += ContentService_Publishing;        }
 
-        private void ContentService_Publishing(Umbraco.Core.Services.IContentService sender, Umbraco.Core.Events.ContentPublishingEventArgs e)
+        protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
         {
-            foreach (var node in e.PublishedEntities)
+            ContentService.Published += ContentServicePublished;     
+        }            
+
+        private void ContentServicePublished(IPublishingStrategy sender, PublishEventArgs<IContent> args)
+        {
+            foreach (var node in args.PublishedEntities)
             {
-                if (node.ContentType.Alias == "CorporateNewsAnnouncement")
+                if (node.ContentType.Alias == "Comment")
                 {
-                    var newsArticleTitle = node.GetValue<string>("newsTitle");
-                    if (newsArticleTitle.Equals(newsArticleTitle.ToUpper()))
-                    {
-                        //stop putting News Article Titles ALL in Upper Case!!!
-                        //cancel publish
-                        e.Cancel = true;
-                        //explain why publish cancelled.
-                        e.Messages.Add(new Umbraco.Core.Events.EventMessage("Corporate Style Guidelines Infringement", "Don't put news article titles in UpperCase, no need to shout!", Umbraco.Core.Events.EventMessageType.Error));
-                    }
+                    SendMail(node);
                 }
             }
-        }
-        public void Terminate()
-        {
-            throw new NotImplementedException();
         }
     }
 }
@@ -381,5 +369,5 @@ Both the ContentService.Creating and ContentService.Created events have been obs
 
 #### What do we use instead?
 
-The ContentService.Saving and ContentService.Saved events will always trigger before and after an entity has been persisted. You can determine if an entity is brand new in either of those events. In the Saving event - before the entity is persisted - you can check the entity's HasIdentity property which will be 'false' if it is brand new. In the Saved event you can [check to see if the entity 'remembers being dirty'](determining-new-entity.md)
+The ContentService.Saving and ContentService.Saved events will always trigger before and after an entity has been persisted. You can determine if an entity is brand new in either of those events. In the Saving event - before the entity is persisted - you can check the entity's HasIdentity property which will be 'false' if it is brand new. In the Saved event you can [use this extension method](determining-new-entity.md)
 
