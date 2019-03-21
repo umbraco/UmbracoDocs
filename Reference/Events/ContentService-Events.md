@@ -64,7 +64,7 @@ namespace Umbraco8.Components
     </tr>    
     <tr>
         <td>Saving</td>
-        <td>(IContentService sender, SaveEventArgs&lt;IContent&gt; e)</td>
+        <td>(IContentService sender, ContentSavingEventArgs e)</td>
         <td>
         Raised when ContentService.Save is called in the API.<br />
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default).<br />
@@ -78,7 +78,7 @@ namespace Umbraco8.Components
     </tr>
     <tr>
         <td>Saved</td>
-        <td>(IContentService sender, SaveEventArgs&lt;IContent&gt; e)</td>
+        <td>(IContentService sender, ContentSavedEventArgs e)</td>
         <td>
         Raised when ContentService.Save is called in the API and after data has been persisted.<br />
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default). <br />
@@ -92,7 +92,7 @@ namespace Umbraco8.Components
     </tr>
     <tr>
         <td>Publishing</td>
-        <td>(IPublishingStrategy sender, PublishEventArgs&lt;Umbraco.Core.Models.IContent&gt; e)</td>
+        <td>(IPublishingStrategy sender, ContentPublishingEventArgs> e)</td>
         <td>
         Raised when ContentService.Publishing is called in the API.<br />
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Publish method call (true by default).<br />
@@ -106,7 +106,7 @@ namespace Umbraco8.Components
     </tr>
     <tr>
         <td>Published</td>
-        <td>(IPublishingStrategy sender, PublishEventArgs&lt;Umbraco.Core.Models.IContent&gt; e)</td>
+        <td>(IPublishingStrategy sender, ContentPublishedEventArgs e)</td>
         <td>
         Raised when ContentService.Publish is called in the API and after data has been published.<br />
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Publish method call (true by default). <br />
