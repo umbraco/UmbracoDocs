@@ -2,7 +2,7 @@
 versionFrom: 8.0.0
 ---
 
-# ApplicationEventHandler
+# Application StartUp
 
 The ApplicationEventHandler approach for registering events has been removed in Umbraco V8, The new approach for registering custom code at 'ApplicationStarted' / 'ApplicationStarting' uses a combination of 'Components' and 'Composers', you can find examples on the [Composing](../../Implementation/Composing) page.
 
