@@ -64,7 +64,7 @@ The DataTypeService class implements IDataTypeService. It provides easy access t
 </table>
 
 ## Other Events
- * DeletedContainer, DeletingContainer
- * SavedContainer, SavingContainer
- * Moving, Moved
+ - DeletedContainer, DeletingContainer
+ - SavedContainer, SavingContainer
+ - Moving, Moved
 
