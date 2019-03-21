@@ -19,18 +19,34 @@ There are more than one way that you can contribute to the Umbraco Documentation
 * Submit a more extensive update / change by [forking the Documentation repository](Pull-Requests/#options-2-creating-a-pr-through-a-fork)
 * Raise a question, start a discussion or report an issue on the [Issue Tracker](Issues/)
 
-## Annotating a document
+## [Format, naming conventions and files](Markdown-Conventions)
 
-To add version information and extra keywords, [every document can be annotated using YAML](adding-metadata.md).
+The Umbraco Documentation is written using the MarkDown markup language. We've put together an article where you can learn more about MarkDown. You will also find an overview of the folder and file structure we use.
 
 ## Multi version documentation
 
-With the introduction of every new version of Umbraco, new features are introduced.  This means that not every document will work for your possibly older version.
+Whenever a new version of Umbraco is released new features might introduced and the "old way" of doing one thing, might have changed. This means that there will have to be several articles about the same thing, but with different information.
 
-Therefore we introduced 2 different mechanisms:
+Therefor we've introduced **versioned documentation**, which includes 2 different mechanisms:
 
 1. The [YAML meta data describing](adding-metadata.md) `versionFrom` and `versionTo`.
 2. The possibility [to add multiple files about the same topic](file-naming-conventions.md)
+
+## [Adding meta data](adding-metadata.md)
+
+You can add meta data to any article in the Umbraco Documentation. This includes `meta title` and `meta description` as well as information on the versioning of the article.
+
+## Labels
+
+On both Issues and Pull Requests we use labels to categories the various requests and submissions.  
+
+Here's a quick explanation of the labels groups (colors) we use:
+
+- **Category** (e.g. `category/missing-documentation`, `category/umbraco-cloud`, `category/pending-release`)
+- **Community** (e.g. `community/pr`, `help wanted`)
+- **State** (e.g. `state/hq-discussion`)
+- **Status** (e.g. `status/awaiting-feedback`, `status/idea`)
+- **Type** (e.g. `type/bug`) 
 
 ## Documentation Curators
 
