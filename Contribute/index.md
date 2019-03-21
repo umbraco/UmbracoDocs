@@ -17,21 +17,7 @@ There are more than one way that you can contribute to the Umbraco Documentation
 
 * Request a quick / minor change to an article by submitting a [Pull Request](Pull-Requests/#option-1-creating-a-pr-directly-on-github)
 * Submit a more extensive update / change by [forking the Documentation repository](Pull-Requests/#options-2-creating-a-pr-through-a-fork)
-* Raise a question, start a discussion or report an issue on the [Issue Tracker](#creating-an-issue)
-
-## Creating an issue
-
-The Umbraco Documentation uses [GitHub issues](https://github.com/umbraco/UmbracoDocs/issues) to manage issues with the documentation.
-You can make an issue for any of the following:
-
-- If you feel some documentation is wrong or missing and you do not have time or knowledge to do a PR.
-- If the issue will need more than one PR.
-- Open a discussion about possible improvements or ways to deal with something in the documentation.
-
-You can also find a button in the top right corner of every page in the documentation itself that looks like this:
-![Our issue button](images/report-issue.png)  
-
-We compiled a [list of labels](github-issues.md) which we use regularly to tag issues.
+* Raise a question, start a discussion or report an issue on the [Issue Tracker](Issues/)
 
 ## Annotating a document
 
