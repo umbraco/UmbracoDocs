@@ -17,6 +17,7 @@ In this section you can find all the information you need in order to install, c
 Thorough step-by-step documentation on how to install Courier and setup local test environments.
 
 ## [Upgrade Courier](Upgrade-Courier)
+Instructions on how to upgrade Umbraco Courier to the latest version.
 
 ## [Configuring a license](../The-Licensing-model)
 Configure the domains you need to be able to use Courier on.
