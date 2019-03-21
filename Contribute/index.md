@@ -48,6 +48,8 @@ Here's a quick explanation of the labels groups (colors) we use:
 - **Status** (e.g. `status/awaiting-feedback`, `status/idea`)
 - **Type** (e.g. `type/bug`) 
 
+Labels will be added to your Pull Request or Issue once it has been reviewed.
+
 ## Documentation Curators
 
 All the work of adding labels, going through issues and PR's and managing the Documentation repository is done by the Umbraco Documentation Curators team. If you wish to know more about who they are and how they work there is some information about them here: https://our.umbraco.com/community/the-documentation-curators/
