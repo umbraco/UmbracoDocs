@@ -1,18 +1,24 @@
 # What is an Issue?
 
+The [Issue Tracker](https://github.com/umbraco/UmbracoDocs/issues) is a way to keep track of ideas for new documentation, issues on wrong or outdated documentation and it's also a place where you can discuss the documentation with other contributors.
 
+Here are a few examples of what the Issue Tracker can be used for:
 
+- You were looking for a specific piece of information, but couldn't find it
+- You found a broken link on one of the articles
+- You found an article with wrong or outdated information and you do not have the time or knowledge to rewrite it
+- You want to discuss possible improvements or ways to deal with a specific thing in the documentation
 
-Creating an issue
+# Creating an Issue
 
-The Umbraco Documentation uses [GitHub issues](https://github.com/umbraco/UmbracoDocs/issues) to manage issues with the documentation.
-You can make an issue for any of the following:
+At the top of each article in the documentation on Our Umbraco has a link in the top, which provides you with the option to very easily open an issue or start a discussion.
 
-- If you feel some documentation is wrong or missing and you do not have time or knowledge to do a PR.
-- If the issue will need more than one PR.
-- Open a discussion about possible improvements or ways to deal with something in the documentation.
+![Our issue button](images/report-issue.png)
 
-You can also find a button in the top right corner of every page in the documentation itself that looks like this:
-![Our issue button](images/report-issue.png)  
+Using this feature will automatically add a link to the article, to the issue you're creating.
 
-We compiled a [list of labels](github-issues.md) which we use regularly to tag issues.
+You can also add an issue directly from the [Issue Tracker on GitHub](https://github.com/umbraco/UmbracoDocs/issues).
+
+![New issue on GitHub](images/new-issue.png)
+
+We've setup a template that we recommend using when creating an Issue on the tracker. The template gives you a few questions to answer, in order to give the best explanation of what you are reporting / want to discuss.
