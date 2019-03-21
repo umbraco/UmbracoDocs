@@ -9,17 +9,24 @@ The documentation markdown files are allowed to contain meta data.  This is done
 To add meta data, the metadata is between two lines, each with three dashes.  Every line contains a keyword followed by a '`:`' and then the value e.g.:
 
     ---
-    keywords: content razor v8 version8
     versionTo: 8.0.0
     versionFrom: 7.3.4
+    meta.Title: "Contribute to Umbraco CMS"
+    meta.Description: "Explanation of how you can contribute to Umbraco, what the process is like and what things to keep in mind when contributing."
     ---
 
-Currently there are three different meta data properties supported:
+Supported meta data properties:
 
-1. **keywords**:  with space separated properties, adding the possibility to supply other keywords which improve findability
-2. **versionFrom**: an optional property with semver notation to indicate from which version this page is valid (or the feature the page describes has been introduced).
-3. **versionTo**: an optional property with semver notation to indicate till which version this page is valid
+- **versionFrom**: A property with semver notation to indicate from which version this article is valid
+- **versionTo**: A property with semver notation to indicate till which version this article is valid
+- **versionRemoved**: A property with semver notation to indicate that the topic has been removed from a given version
+- **meta.Title**: Used for SEO - [Meta Title](https://moz.com/learn/seo/title-tag)
+- **meta.Description**: Used for SEO - [Meta Description](https://moz.com/learn/seo/title-tag)
 
-Related information:
+We have also added other properties, that you are welcome to use. They currently do not have any underlying functionality, as this is something we are still working on.
 
-* [Adding multi version files](file-naming-conventions.md)
+- **keywords**:  Space separated properties, adding the possibility to supply other keywords which improve findability
+- **Tags**: with space separated properties, adding the possibility to add tags which improve findability
+- **Product**: A property to provide information about which product(s) the article is relevant for
+- **Complexity**: Adds information about the level of complexity within the article
+- **Audience**: Adds information about the intended audience for the article
