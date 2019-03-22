@@ -11,7 +11,7 @@ Here are a few examples of what the Issue Tracker can be used for:
 
 # Creating an Issue
 
-At the top of each article in the documentation on Our Umbraco has a link in the top, which provides you with the option to very easily open an issue or start a discussion.
+At the top of each article in the documentation on Our Umbraco there is a link, which provides you with the option to very easily open an issue or start a discussion.
 
 ![Our issue button](images/report-issue.png)
 
