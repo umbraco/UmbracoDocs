@@ -16,7 +16,7 @@ When creating alternate versions of the article that apply in different Umbraco 
 
 ### Indicating ranges on file naming
 
-Documentation that only applies to a single Umbraco version would be `index-v.7.7.7.md`.
+Documentation that only applies to a single Umbraco version would be `index-v7.7.7.md`.
 
 For documentation that applies to a range of versions, we will use `vpost` and `vpre` in the filename to indicate this. E.g.:
 
