@@ -52,7 +52,7 @@ we will search for any documents in the index beginning with
 
 which will return
 
-    /Documentation/Getting-Started/Setup/Server-Setup/Load-Balancing/ContentService-Events-vpre-v7.3.md
+    /Documentation/Getting-Started/Setup/Server-Setup/Load-Balancing/ContentService-Events-vpre7.3.md
 
 We will use the YAML for these files to display the alternate versions options to the user.
 
