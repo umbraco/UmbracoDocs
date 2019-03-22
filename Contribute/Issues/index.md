@@ -15,7 +15,7 @@ At the top of each article in the documentation on Our Umbraco there is a link, 
 
 ![Our issue button](images/report-issue.png)
 
-Using this feature will automatically add a link to the article, to the issue you're creating.
+Using this feature will automatically add a link to the article, in the issue you're creating.
 
 You can also add an issue directly from the [Issue Tracker on GitHub](https://github.com/umbraco/UmbracoDocs/issues).
 
