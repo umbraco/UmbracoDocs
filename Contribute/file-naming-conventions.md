@@ -66,6 +66,6 @@ file name                             | versionFrom  | versionTo | renders out
 -------                               |:------------:|     -----:| ---        
 `index-v7.md`                         | 7.0.0        |           | 7.0.0 +
 `index-vpre-7.3.md`                   |              | 7.3.0     | pre 7.3.0
-`index-vpost-7.6.md`                  | 7.6.0        | 7.7.2     | 7.6.0 - 7.7.2
+`index-vpost7.6.md`                  | 7.6.0        | 7.7.2     | 7.6.0 - 7.7.2
 `index-v7.7.7.md`                     | 7.7.7        | 7.7.7     | 7.7.7 (only)
 `index.md`                            |              |           | current
