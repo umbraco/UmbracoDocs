@@ -19,7 +19,7 @@ GitHub has some great functionality that allows you to submit a PR directly from
 
 ![Our edit button](images/edit-this-page.png)
 
-This is very helpful to fix typing errors or adding small things, but if you are working on a larger update that includes pictures and editing several files in one pull request then it is not the best way to work. You'd be better creating a fork.
+This is very helpful to fix typing errors or adding small things, but if you are working on a larger update that includes pictures and editing several files in one pull request then it is not the best way to work. You'd be better off creating a fork.
 
 ## Options 2: Creating a PR through a fork
 
