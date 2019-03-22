@@ -28,5 +28,5 @@ We have also added other properties, that you are welcome to use. They currently
 - **keywords**:  Space separated properties, adding the possibility to supply other keywords which improve findability
 - **tags**: with space separated properties, adding the possibility to add tags which improve findability
 - **product**: A property to provide information about which product(s) the article is relevant for
-- **Complexity**: Adds information about the level of complexity within the article
+- **complexity**: Adds information about the level of complexity within the article
 - **Audience**: Adds information about the intended audience for the article
