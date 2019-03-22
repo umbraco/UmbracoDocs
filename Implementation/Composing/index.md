@@ -153,7 +153,14 @@ Finally, all IUserComposer instances 'compose'. These types of composers are for
 Ordering of composers is important, the last one added can override a previously added composer! Make sure, when overriding, that your composer that is doing the overriding, is 'composing', after the composer has 'composed' the element you wish to override!
 :::
 
-
+### ComponentComposer<T>
+    Is an implementation of IUserComposer, that just adds T to the collection of Components, it's just a convenience, the MyComposer for the MyComponent in the example above could therefore have been written more simply as:
+```csharp
+        [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
+        public class MyComposer : ComponentComposer<MyComponent>
+        {       
+        }
+```
 ## Collections
 >"Collections of elements", for example the ContentFinders collection. - Collections are another concept that Umbraco uses to make things simpler, on top of DI. A collection builder builds a collection, allowing users to add and remove types before anything is actually registered into DI.
 
