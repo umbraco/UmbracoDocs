@@ -26,7 +26,7 @@ Supported meta data properties:
 We have also added other properties, that you are welcome to use. They currently do not have any underlying functionality, as this is something we are still working on.
 
 - **keywords**:  Space separated properties, adding the possibility to supply other keywords which improve findability
-- **Tags**: with space separated properties, adding the possibility to add tags which improve findability
+- **tags**: with space separated properties, adding the possibility to add tags which improve findability
 - **Product**: A property to provide information about which product(s) the article is relevant for
 - **Complexity**: Adds information about the level of complexity within the article
 - **Audience**: Adds information about the intended audience for the article
