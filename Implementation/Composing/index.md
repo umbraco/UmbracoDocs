@@ -136,8 +136,6 @@ namespace My.Website
     }
 }
 ```
-
-
 ## Types of Composers
 Composers are responsible for drawing together the different components an Umbraco application is composed of. They implement the following Composer interfaces which group together the composers and control the order in which they are run:<br/>
 `IRuntimeComposer`<br/>
@@ -154,7 +152,8 @@ Ordering of composers is important, the last one added can override a previously
 :::
 
 ### ComponentComposer&lt;T&gt;
-    Is an implementation of IUserComposer, that provides a quicker way to add a custom Component to the Component's collection. Creating a c# class that inhertits from ComponentComposer&lt;YourComponentType&gt; will automatically add YourComponentType to the collection of Components. In the example above, the SubscribeToContentServiceSavingComposer for the SubscribeToContentServiceSavingComponent could have been written more conveniently as:
+Is an implementation of IUserComposer, that provides a quicker way to add a custom Component to the Component's collection. Creating a c# class that inhertits from ComponentComposer&lt;YourComponentType&gt; will automatically add YourComponentType to the collection of Components. In the example above, the SubscribeToContentServiceSavingComposer for the SubscribeToContentServiceSavingComponent could have been written more conveniently as:
+
 ```csharp
         [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
         public class SubscribeToContentServiceSavingComposer : ComponentComposer<SubscribeToContentServiceSavingComponent>
