@@ -18,7 +18,7 @@ How are the collections populated? - Either by scanning the codebase for c# clas
 Umbraco ships with a set of `ICoreComposer`'s  that pull together the default set of components and collections that deliver the core 'out of the box' Umbraco behaviour. These default collections and components can be removed, reordered, replaced, etc by implementing `IUserComposer`'s and `IComponent`s to customise and extend Umbraco's behaviour. 
 
 ### Example - Explicity Registering a new custom OEmbedProvider
-This example shows a custom 'Spotify' OEmbed Provider which will allow Spotify URLs to be used via the 'embed' button in the Grid and Rich Text Editors. As the collection for OEmbedProviders is not 'typed scanned', we need to explicitly register the provider in the collection of OEmbedProviders, to do this we need to create an c# class which implements `IUserComposer` and append our new Spotify OEmbedProvider:
+This example shows a custom 'Spotify' OEmbed Provider which will allow Spotify URLs to be used via the 'embed' button in the Grid and Rich Text Editors. As the collection for OEmbedProviders is not 'typed scanned', we need to explicitly register the provider in the collection of OEmbedProviders. We ceate a c# class which implements `IUserComposer` and append our new Spotify OEmbedProvider to the OEmbedProviders() collection:
 
 ```csharp
 using System.Collections.Generic;
