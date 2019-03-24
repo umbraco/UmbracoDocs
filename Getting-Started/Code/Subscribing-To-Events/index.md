@@ -6,9 +6,9 @@ versionFrom: 8.0.0
 Subscribing to events allows you to execute custom code on a  number of events both before and after the event occurs. All you need to follow this guide is an Umbraco installation with some content, e.g. the the Umbraco starter kit.
 
 ### Subscribing to an event
-Let's add a string of text to the log when a document is published. (The log is useful for debugging, different parts of the Umbraco codebase log key events, warnings and errors to The log)
+Let's add a string of text to the log when a document is published. (The log is useful for debugging, different parts of the Umbraco codebase 'log' key events, warnings and errors to the log)
 
-We subscribe to events in Umbraco inside a Component, let's create one, add a new c# class to our project - call it *LogWhenPublishedComponent*. and use ': `IComponent` to identify our code as a Component. We'll need to add `using Umbraco.Core.Composing;` to the top of the .cs file and because the events that you can subscribe to in Umbraco are found in the core services namespace we'll also need to add a using statement for that too: `using Umbraco.Core;` . 
+We subscribe to events in Umbraco inside a Component, let's create one, add a new c# class to our project - call it *LogWhenPublishedComponent*. and use `: IComponent` to identify our code as a Component. We'll need to add `using Umbraco.Core.Composing;` to the top of the .cs file and because the events that you can subscribe to in Umbraco are found in the core services namespace we'll also need to add a using statement for that too: `using Umbraco.Core;using Umbraco.Core.Services.Implement;` . 
 
 ```csharp
 using System;
@@ -17,10 +17,14 @@ using System.Linq;
 using System.Web;
 using Umbraco.Core;
 using Umbraco.Core.Composing;
+using Umbraco.Core.Services.Implement;
 
-public class LogWhenPublishedComponent : IComponent
+namespace MyProjectName.Web.Components
 {
-    /// Here we'll subscribe to an event
+        public class LogWhenPublishedComponent : IComponent
+    {
+        /// Here we'll subscribe to an event
+    }
 }
 ```
 When you create a Component in Umbraco you need to implement two methods, one to run when Umbraco application is initialized and one to run when the Umbraco application terminates:
@@ -32,9 +36,12 @@ using System.Linq;
 using System.Web;
 using Umbraco.Core;
 using Umbraco.Core.Composing;
+using Umbraco.Core.Services.Implement;
 
-public class LogWhenPublishedComponent : IComponent
-{
+namespace MyProjectName.Web.Components
+    {
+    public class LogWhenPublishedComponent : IComponent
+    {
      // initialize: runs once when Umbraco starts
         public void Initialize()
         {
@@ -47,6 +54,7 @@ public class LogWhenPublishedComponent : IComponent
         {
             // do something when Umbraco terminates
         }
+    }
 }
 ```
 
@@ -56,20 +64,20 @@ It's in this Intialize() method where we will subscribe to our Published event `
    public void Initialize()
         {
             //subscribe to content service published event
-            Umbraco.Core.Services.ContentService.Published += ContentService_Published;
+            ContentService.Published += ContentService_Published;
         }
 ```
 
-This will tell Umbraco that a method called 'ContentService_Published' will subscribe to the publish event - but we haven't created that yet! (if you are using Visual Studio there is a shortcut key to add a stub for this method, in the above example after you have typed Umbraco.Core.Services.ContentService.Published press '+=' and then immediately press the 'tab key' twice... by magic the stub for handling the event with the correct signature will be added to your c# class) :
+This will tell Umbraco that a method called 'ContentService_Published' will subscribe to the publish event - but we haven't created that yet! (if you are using Visual Studio there is a shortcut key to add a stub for this method, in the above example after you have typed ContentService.Published press '+=' and then immediately press the 'tab key' twice... by magic the stub for handling the event with the correct signature will be added to your c# class) :
 
 ```csharp
    public void Initialize()
         {
             //subscribe to content service published event
-            Umbraco.Core.Services.ContentService.Published += ContentService_Published;
+            ContentService.Published += ContentService_Published;
         }
 
-    void ContentService_Published(Umbraco.Core.Publishing.IPublishingStrategy sender, Umbraco.Core.Events.PublishEventArgs<Umbraco.Core.Models.IContent> e)
+    private void ContentService_Published(Umbraco.Core.Services.IContentService sender, Umbraco.Core.Events.ContentPublishedEventArgs e)
     {
         // the custom code to fire everytime content is published goes here!
     }
@@ -103,65 +111,85 @@ private readonly ILogger _logger;
 Now we can use the logger to send a message to the logs
 
 ```csharp
-_logger.Info(typeof(LogWhenPublished), "Something has been published");
+_logger.Info<LogWhenPublishedComponent>("Something has been published...");
 ```
 
-Finally we need to add our custom Component to the collection of Components that Umbraco is aware of, and we use another c# class to achieve that called a Composer, and there is a special base class called ComponentComposer that we can make use of:
+We could log the name of each item that is being published too:
+```csharp
+foreach (var publishedItem in e.PublishedEntities)
+    {
+        _logger.Info<LogWhenPublishedComponent>(publishedItem.Name + " was published");
+    }
+```
+
+Finally we need to add our custom Component to the collection of Components that Umbraco is aware of, and we use another c# class to achieve that called a Composer, and there is a special base composer class called ComponentComposer that we can make use of:
 
 ```csharp
 [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
-    public class LogWhenPublishedComposer : ComponentComposer<LogWhenPublishedComponent>
-    {
-    // nothing to do here!
-    }
+public class LogWhenPublishedComposer : ComponentComposer<LogWhenPublishedComponent>
+{
+    // nothing needed to be done here!
+}
 ```
 The entire class should look like this:
 
 ```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using Umbraco.Core;
 using Umbraco.Core.Composing;
+using Umbraco.Core.Services.Implement;
 using Umbraco.Core.Logging;
 
-[RuntimeLevel(MinLevel = RuntimeLevel.Run)]
+namespace MyProjectName.Web.Components
+{
+    //register our component with Umbraco using a Composer
+    [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
     public class LogWhenPublishedComposer : ComponentComposer<LogWhenPublishedComponent>
     {
-    // nothing to do here!
+        // nothing needed to be done here!
     }
+    public class LogWhenPublishedComponent : IComponent
+    {
+        //inject in the core Logger service
+        private readonly ILogger _logger;
+        public LogWhenPublishedComponent(ILogger logger)
+        {
+            _logger = logger;
+        }
 
-public class LogWhenPublishedComponent : IComponent
-{
-private readonly ILogger _logger;
-    public LogWhenPublishedComponent(ILogger logger){
-        _logger = logger;
-    }
-     // initialize: runs once when Umbraco starts
+        // initialize: runs once when Umbraco starts
         public void Initialize()
         {
             //subscribe to content service published event
-            Umbraco.Core.Services.ContentService.Published += ContentService_Published;
+            ContentService.Published += ContentService_Published;
         }
-        
-        void ContentService_Published(Umbraco.Core.Publishing.IPublishingStrategy sender, Umbraco.Core.Events.PublishEventArgs<Umbraco.Core.Models.IContent> e)
-    {
-        // the custom code to fire everytime content is published goes here!
-        _logger.Info(typeof(LogWhenPublished), "Something has been published");
-    }
+
+        private void ContentService_Published(Umbraco.Core.Services.IContentService sender, Umbraco.Core.Events.ContentPublishedEventArgs e)
+        {
+            // the custom code to fire everytime content is published goes here!
+            _logger.Info<LogWhenPublishedComponent>("Something has been published...");
+            foreach (var publishedItem in e.PublishedEntities)
+            {
+                _logger.Info<LogWhenPublishedComponent>(publishedItem.Name + " was published");
+            }
+
+        }
 
         // terminate: runs once when Umbraco stops
         public void Terminate()
         {
             // do something when Umbraco terminates
         }
+    }
 }
 ```
 
-Now go to the backoffice and publish a piece of content. switch to the Developer section and find the logviewer, if all is wired up correctly you should discover your custom publish log message entry.
+Now go to the Umbraco backoffice and publish a piece of content. switch to the Settings section and find the Log Viewer in the Settings tree:
 
-![Message in tracelog.txt](images/log-message.png) - *Update this!*
+![Log Viewer](images/log-viewer.png)
+
+Search 'All Logs', and if all is wired up correctly you should discover your custom publish log message entries:
+
+![Messages in Log](images/log-messages.png)
 
 ### Before and after
 As you can see our custom code has been executed when we published a piece of content. Actually it executed after the item was published because we used the `Published` event. If you want to run code before publishing, use `Publishing`. The same goes for most other events so `Saving` : `Saved`, `Copying` : `Copied` and so forth.
