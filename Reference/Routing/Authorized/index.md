@@ -62,7 +62,7 @@ the route must be prefixed with Umbraco path which is configurable and resolved 
 :::
 ### Registering the Component + Controller with Umbraco
 
-In order for the Component above to be considered by Umbraco it needs to be added to the Umbraco Compositions list of Components, and our custom CatsController needs to be registered with the underlying Umbraco DI Container:
+In order for the Component above to be considered by Umbraco it needs to be added to the Umbraco Composition's list of Components, and our custom CatsController needs to be registered with the underlying Umbraco DI Container:
 ```csharp
     public class RegisterCustomBackofficeMvcRouteComposer : IUserComposer
     {
