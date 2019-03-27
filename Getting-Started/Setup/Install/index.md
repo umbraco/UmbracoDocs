@@ -16,9 +16,6 @@ The easiest way to get the latest version of Umbraco up and running is with VS C
 If you have never used VS Code before you can check out a more detailed guide below that shows these steps more in depth to run a local instance of Umbraco.
 Below you'll find some in-depth tutorials on the different ways to install Umbraco.
 
-### [Manual installation](install-umbraco-manually.md)
-Goes through the steps to download either a stable release or a nightly version, unzipping, and getting it running on a local webserver.
-
 ### [VS Code installation](install-umbraco-with-vs-code.md)
 Visual Studio Code is a simple-to use-editor with an embedded webserver (through the IIS Express extension). An easy and fast way to get you up and running with Umbraco.
 
