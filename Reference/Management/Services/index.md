@@ -44,7 +44,7 @@ Service for doing CRUD type operations for `MemberGroup` objects / Member Roles.
 ## [RelationService](RelationService.md)
 Service for doing CRUD type operations for `Relation` and `RelationType` objects.
 
-##[SectionService](SectionService.md)
+## [SectionService](SectionService.md)
 Service for doing CRUD type operations for `Section` objects
 
 ## [UserService](UserService.md)
