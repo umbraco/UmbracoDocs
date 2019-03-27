@@ -67,78 +67,68 @@ Add the following html to the WelcomeDashboard.html
 
 ## Configuring the dashboard to appear
 
-Similar to a property editor you will now register the dashboard in a package.manifest file, so add a new file inside the ~/App_Plugins/CustomWelcomeDashboard folder called package.manifest:
+Open up your dashboard.config file from the /config folder of your site. [Explanation of the Dashboard Config settings are here...](../../Reference/Config/dashboard/index.md)
 
-```json
-{
-    "dashboards":  [
-        {
-            "alias": "WelcomeDashboard",
-            "view":  "/App_Plugins/CustomWelcomeDashboard/WelcomeDashboard.html",
-            "sections":  [ "content" ],
-            "weight": -10,
-            "access": [
-                { "deny": "translator" },
-                { "grant": "admin" }
-            ]
-        }
-    ]
-}
+Add the following section:
+
+```xml
+<section alias="Custom Welcome Dashboard">
+    <access>
+        <deny>translator</deny>
+    </access>
+    <areas>
+        <area>content</area>
+    </areas>
+    <tab caption="Welcome">
+        <control>
+            /app_plugins/CustomWelcomeDashboard/WelcomeDashboard.html
+        </control>
+    </tab>
+</section>
 ```
 
 The terminology here gets a bit muddled but we're creating a 'Section'. This is not the same 'Section' as the 'Content Section', which inside this config file is referred to as an 'Area'. This is specifically a 'Dashboard Section' that you can use to group your dashboard tabs and controls together.
 
 The above configuration is effectively saying:
 
-> "Add a tab called 'WelcomeDashboard' to the 'Content' section of the Umbraco site, use the WelcomeDashboard.html as the content (view) of the dashboard and don't allow 'translators', but do allow 'admins' to see it!"
+> "Add a tab called 'Welcome' to the 'Content' area/section of the Umbraco site, use the WelcomeDashboard.html as the content (view) of the dashboard and don't allow 'translators' to see it!"
 
 :::note
-The order in which the tab will appear in the Umbraco Backoffice depends on its weight. To make our Custom Welcome message the first Tab the editors see in the content section, make sure the weight is less than the default dashboards, [read more about the default weights](../../Extending/Dashboards).
+The order in which the tab will appear in the Umbraco Backoffice depends on its position in the dashboard.config file. To make our custom Welcome message the first Tab the editors see in the content section, make sure the above configuration is the 'first' section configuration in the dashboard.config file.
 
 You can specify multiple controls to appear on a particular tab, and multiple tabs in a particular section.
+
+You can remove existing dashboards, and control who gets to see them by updating the other configuration sections in the Dashboard.config file.
 :::
-
-### Add Language Keys
-After registering your dashboard, it will appear in the backoffice - however it will have it's dashboard alias [WelcomeDashboard] wrapped in square brackets. This is because it is missing a language key. The language key allows people to provide a translation of the dashboard name in multilingual environments. To remove the square brackets - add a language key:
-
-You will need to create a *lang* folder in your custom dashboard folder and create a package specific language file:  `~/App_Plugins/CustomWelcomeDashboard/lang/en-US.xml`
-
-```xml
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<language>
-  <area alias="dashboardTabs">
-    <key alias="WelcomeDashboard">Welcome</key>
-  </area>
-</language>
-```
-
-[Read more about language files](../../Extending/Language-Files/index.md)
 
 ### The Result
 
-![Custom Dashboard Welcome Message](images/welcomemessage-v8.png)
+![Custom Dashboard Welcome Message](images/welcomemessage.jpg)
 
 ## Adding a bit of style
 
-Congratulations! Job done - no, this is the starting point. The dashboard can be styled as you want it to be with CSS, but there are a couple of further steps to undertake be able to apply a custom stylesheet to the dashboard:
+The dashboard can be styled as you want it to be with CSS, but there are a couple of further steps to undertake be able to apply a custom stylesheet to the dashboard:
+
+We need to add something called a package.manifest file to our CustomWelcomeDashboard folder
+
+:::note
+This file allows Umbraco to load other resources to use with your HTML view, named by convention 'package.manifest' and will contain the configuration of the resources to load in JSON format.
+:::
+
+When Umbraco loads the dashboard it will look for this file in the same folder as your HTML view. Remember that the dashboard config points to the html view. Then Umbraco uses the manifest to load the additional resources, eg. CSS and JavaScript files.
+
+This manifest file is simpler to the one you would create for a [custom property editor](../../Extending/Property-Editors/package-manifest.md)
 
 Inside this package manifest we add a bit of JSON to describe the dashboard's required JavaScript and stylesheet resources:
 
 ```json
 {
-    "dashboards":  [
-        {
-            "alias": "WelcomeDashboard",
-            "view":  "/App_Plugins/CustomWelcomeDashboard/WelcomeDashboard.html",
-            "sections":  [ "content" ],
-            "weight": -10
-        }
-    ],
-    "javascript": [
+    "javascript":[
         /*javascript files listed here*/
     ],
     "css": [
-        "~/App_Plugins/CustomWelcomeDashboard/customwelcomedashboard.css"
+        /*list of stylesheets appear here:*/
+        "~/app_plugins/CustomWelcomeDashboard/customwelcomedashboard.css"
     ]
 }
 ```
@@ -154,7 +144,7 @@ Now create a stylesheet in our CustomWelcomeDashboard folder called 'customwelco
 
 This stylesheet will now be loaded and applied to your dashboard. Add images and html markup as required.
 
-![Custom Dashboard Welcome Message With styles...](images/welcomemessagewithstyles-v8.png)
+![Custom Dashboard Welcome Message With styles...](images/welcomemessagewithstyles.jpg)
 
 :::note
 One caveat is that the package.manifest file is loaded into memory when Umbraco starts up. If you are adding a new stylesheet or JavaScript file you will need to start and stop your application for it to be loaded.
