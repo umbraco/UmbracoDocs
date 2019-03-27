@@ -14,7 +14,7 @@ This guide takes you through the steps to setup a Custom Dashboard in Umbraco.
 
 A Dashboard is a tab on the right-hand side of a section eg. the Redirect Url Management dashboard in the Content section:
 
-![Redirect Url Management Dashboard](images/whatisadashboard.jpg)
+![Redirect Url Management Dashboard](images/whatisadashboard-v8.png)
 
 ### Why provide a Custom Dashboard for your editors?
 
