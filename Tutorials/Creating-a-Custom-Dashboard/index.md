@@ -227,9 +227,14 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
 and then we can use the userService's promise based **getCurrentUser()** method to get the details of the current logged in user:
 
 ```js
-var user = userService.getCurrentUser().then(function (user) {
-    console.log(user);
-    vm.UserName = user.name;
+angular.module("umbraco").controller("CustomWelcomeDashboardController", function ($scope, userService) {
+    var vm = this;
+
+    var user = userService.getCurrentUser().then(function(user) {
+        console.log(user);
+        vm.UserName = user.name;
+    });
+
 });
 ```
 
@@ -241,14 +246,14 @@ Finally we can now update our view to incorporate the current user's name in our
 <h1>Welcome {{vm.UserName}} ...to Umbraco</h1>
 ```
 
-![Custom Dashboard Welcome Message With Current User's Name](images/welcomemessagepersonalised.jpg)
+![Custom Dashboard Welcome Message With Current User's Name](images/welcomemessagepersonalised-v8.png)
 
 and for reference the full contents of /customwelcomedashboard.controller.js at this stage of the tutorial should look like this:
 
 ```js
 angular.module("umbraco").controller("CustomWelcomeDashboardController", function ($scope,userService) {
     var vm = this;
-    vm.UserName = 'guest';
+    vm.UserName = "guest";
 
     var user = userService.getCurrentUser().then(function (user) {
         console.log(user);
