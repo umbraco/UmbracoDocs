@@ -178,7 +178,7 @@ We register this AngularJS controller to the Umbraco Angular module:
 ```js
 angular.module("umbraco").controller("CustomWelcomeDashboardController", function ($scope) {
     var vm = this;
-    alert('hello world');
+    alert("hello world");
 });
 ```
 
@@ -196,14 +196,20 @@ Finally, we need to update the package.manifest file to load the additional cont
 
 ```json
 {
-    "javascript":[
-        /*any comma delimited list of JavaScript files appear here*/
-        "~/app_plugins/CustomWelcomeDashboard/customwelcomedashboard.controller.js"
+    "dashboards":  [
+        {
+            "alias": "WelcomeDashboard",
+            "view":  "/App_Plugins/CustomWelcomeDashboard/WelcomeDashboard.html",
+            "sections":  [ "content" ],
+            "weight": -10
+        }
     ],
-    "css": [
-        /*a comma delimited list of stylesheets appear here:*/
-        "~/app_plugins/CustomWelcomeDashboard/customwelcomedashboard.css"
-    ]
+	"javascript": [
+		"~/App_Plugins/CustomWelcomeDashboard/customwelcomedashboard.controller.js"
+	],
+	"css": [
+		"~/App_Plugins/CustomWelcomeDashboard/customwelcomedashboard.css"
+	]
 }
 ```
 
