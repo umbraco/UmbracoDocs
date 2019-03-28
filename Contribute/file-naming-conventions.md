@@ -21,7 +21,7 @@ Documentation that only applies to a single Umbraco version would be `index-v7.7
 For documentation that applies to a range of versions, we will use `vpost` and `vpre` in the filename to indicate this. E.g.:
 
 `index-vpost7.6.md` would contain documentation to be used after version 7.6 but before the next documentation version
-and `index-vpre-7.3.md` would contain the documentation for versions before version 7.3.
+and `index-vpre7.3.md` would contain the documentation for versions before version 7.3.
 
 The `vpost` and `vpre` notations are not used to render to the user.
 
