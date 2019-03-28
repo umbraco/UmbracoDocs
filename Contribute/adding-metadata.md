@@ -9,7 +9,6 @@ The documentation markdown files are allowed to contain meta data.  This is done
 To add meta data, the metadata is between two lines, each with three dashes.  Every line contains a keyword followed by a '`:`' and then the value e.g.:
 
     ---
-    versionTo: 8.0.0
     versionFrom: 7.3.4
     meta.Title: "Contribute to Umbraco CMS"
     meta.Description: "Explanation of how you can contribute to Umbraco, what the process is like and what things to keep in mind when contributing."

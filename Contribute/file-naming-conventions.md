@@ -34,9 +34,15 @@ The YAML will be added to an examine index, along with the filename and is used 
 
 For versioning we use 3 YAML attributes:
 
-1. `versionFrom` to indicate a start version
-2. `versionTo` to indicate which version the support ended
-3. `versionRemoved` to indicate which in which version the feature described in the article was removed
+1. `versionFrom` to indicate a start version, including the version you're setting here
+2. `versionTo` to indicate which version the support ended - including the version you're setting here
+3. `versionRemoved` to indicate in which version the feature described in the article was removed
+
+:::note
+If only a `versionFrom` is specified and not a `versionTo` the version will be open ended and apply to all newer versions.
+
+If none of the version tags are specified, the article will default to `versionFrom: 7.0.0` and be open ended.
+:::
 
 ## Discovering other pages
 
