@@ -104,9 +104,15 @@ However, if you are not using it, **you will get a YSOD after upgrading, here's 
 
 Since you aren't using UrlRewriting you will have probably never edited the UrlRewriting file and in which case NuGet will detect that and remove it. However you will need to manually remove these UrlRewriting references from your web.config:
 
-* `<section name="urlrewritingnet" restartOnExternalChanges="true" requirePermission="false" type="UrlRewritingNet.Configuration.UrlRewriteSection, UrlRewritingNet.UrlRewriter" />`
-* `<urlrewritingnet configSource="config\UrlRewriting.config" />`
-* And the following http modules
+```xml 
+<section name="urlrewritingnet" restartOnExternalChanges="true" requirePermission="false" type="UrlRewritingNet.Configuration.UrlRewriteSection, UrlRewritingNet.UrlRewriter" />
+```
+
+```xml
+<urlrewritingnet configSource="config\UrlRewriting.config" />
+```
+
+* and remove the following http modules from your web.config:
 
 ```xml
 <system.web>
@@ -116,7 +122,6 @@ Since you aren't using UrlRewriting you will have probably never edited the UrlR
 </httpModules>
 <system.web>
 ```
-
 and
 
 ```xml
