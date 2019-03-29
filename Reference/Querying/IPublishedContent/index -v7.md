@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
 needsV8Update: "true"
 ---
 
@@ -12,8 +12,8 @@ To access the current page in your macros or templates, copy-paste the below Raz
 
 ```csharp
 @{
-    var pageName = Model.Name;
-    var childPages = Model.Children;
+    var pageName = Model.Content.Name;
+    var childPages = Model.Content.Children;
 }
 
 <h1>@pageName</h1>
