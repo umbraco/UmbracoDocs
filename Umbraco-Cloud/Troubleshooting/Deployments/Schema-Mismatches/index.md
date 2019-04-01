@@ -22,7 +22,7 @@ In this error message, you are able to see exactly which schema mismatch(es) is 
 
 First step in resolving this error is to check for pending deployments on the source environments. If you are working locally, check for and push any uncommitted changes through Git. Are you transferring between two Umbraco Cloud environments, you can see and deploy pending changes through the Umbraco Cloud Portal.
 
-Are there no pending deployments in your source environment, there are two ways to go about resolving the schema mismatch:
+If there are no pending deployments in your source environment, there are two ways to go about resolving the schema mismatch:
 
 1. Make a minor change to the schema with mismatches on the source environment (in the example above it would be the **Homepage** document type). 
 2. Deploy the change to the next environment
