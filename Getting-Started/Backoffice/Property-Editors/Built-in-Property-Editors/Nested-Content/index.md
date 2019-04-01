@@ -108,7 +108,8 @@ Example:
         var image = item.GetProperty<IPublishedContent>("image");
     
         <h3>@item.GetProperty("heading").Value()</h3>
-        @if (!string.IsNullOrEmpty(description))
+        
+        if (!string.IsNullOrEmpty(description))
         {
             <p>@Html.Raw(Html.ReplaceLineBreaksForHtml(description)))</p>
         }
