@@ -42,19 +42,19 @@ public class EventHandler : Umbraco.Core.ApplicationEventHandler
 ## Services available
 There is full API coverage of all Umbraco core entities:
 
-- [ConsentService](../../../Reference/Management/Services/ConsentService.md)
-- [ContentService](../../../Reference/Management/Services/ContentService.md)
-- [ApplicationTreeService](../../../Reference/Management/Services/TreeService.md)
-- [DataTypeService](../../../Reference/Management/Services/DataTypeService.md)
+- [ConsentService](../../../Reference/Management/Services/ConsentService/index.md)
+- [ContentService](../../../Reference/Management/Services/ContentService/index.md)
+- [ApplicationTreeService](../../../Reference/Management/Services/TreeService/index.md)
+- [DataTypeService](../../../Reference/Management/Services/DataTypeService/index.md)
 - EntityService
-- [FileService](../../../Reference/Management/Services/FileService.md)
-- [LocalizationService](../../../Reference/Management/Services/LocalizationService.md)
+- [FileService](../../../Reference/Management/Services/FileService/index.md)
+- [LocalizationService](../../../Reference/Management/Services/LocalizationService/index.md)
 - MacroService
-- [MediaService](../../../Reference/Management/Services/MediaService.md)
-- [MemberService](../../../Reference/Management/Services/MemberService.md)
-- [MemberTypeService](../../../Reference/Management/Services/MemberTypeService.md)
-- [MemberGroupService](../../../Reference/Management/Services/MemberGroupService.md)
-- [ContentTypeService](../../../Reference/Management/Services/ContentTypeService.md)
+- [MediaService](../../../Reference/Management/Services/MediaService/index.md)
+- [MemberService](../../../Reference/Management/Services/MemberService/index.md)
+- [MemberTypeService](../../../Reference/Management/Services/MemberTypeService/index.md)
+- [MemberGroupService](../../../Reference/Management/Services/MemberGroupService/index.md)
+- [ContentTypeService](../../../Reference/Management/Services/ContentTypeService/index.md)
 
 
 ### More information

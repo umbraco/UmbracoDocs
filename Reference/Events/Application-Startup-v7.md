@@ -99,11 +99,11 @@ If you want more control over execution you can override these properties:
 
 Handlers are ordered by (ascending) weight. By default, handlers from the Umbraco.* assemblies have a -100 weight whereas any other handler has a weight of +100. 
 
-A custom weight can be assigned to a handler by marking the class with the [WeightAttribute](../../apidocs/csharp/api/Umbraco.Core.ObjectResolution.WeightAttribute.html). Positive weights are considered "user-space" while negative weights are "core". 
+A custom weight can be assigned to a handler by marking the class with the [WeightAttribute](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Core.ObjectResolution.WeightAttribute.html). Positive weights are considered "user-space" while negative weights are "core". 
 
-For example, the [CacheRefresherEventHandler](../../apidocs/csharp/api/Umbraco.Web.Cache.CacheRefresherEventHandler.html) is marked with `Weight(int.MinValue)` because its events need to run before anything else. 
+For example, the [CacheRefresherEventHandler](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Web.Cache.CacheRefresherEventHandler.html) is marked with `Weight(int.MinValue)` because its events need to run before anything else. 
 
-Finally (very EXPERT), users can [register a filter](../../apidocs/csharp/api/Umbraco.Core.ObjectResolution.ApplicationEventsResolver.html#Umbraco_Core_ObjectResolution_ApplicationEventsResolver_FilterCollection) to process the list (after it has been ordered) and re-order it, or remove handlers.
+Finally (very EXPERT), users can [register a filter](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Core.ObjectResolution.ApplicationEventsResolver.html#Umbraco_Core_ObjectResolution_ApplicationEventsResolver_FilterCollection) to process the list (after it has been ordered) and re-order it, or remove handlers.
 
 :::warning
 Handlers order is an important thing, and removing handlers or reordering handlers can have unexpected consequences.
@@ -113,5 +113,5 @@ Handlers order is an important thing, and removing handlers or reordering handle
 ## Related Links
 
 * [Troubleshooting Slow Startup](Troubleshooting-Slow-Startup.md)
-* [More information about BootManager](Understanding-BootManagers.md) (EXPERT)
+* [More information about BootManager](Understanding-Bootmanagers.md) (EXPERT)
 * [Overriding UmbracoApplication](Extending-UmbracoApplication.md) (EXPERT)
