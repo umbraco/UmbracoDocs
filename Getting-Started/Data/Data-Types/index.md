@@ -40,7 +40,7 @@ Aside from the Data Types that are available out of the box there are some addit
 * [Property Editors](../../Backoffice/Property-Editors/)
 
 ### Related Services
-* [DataTypeService](../../../Reference/Management/Services/DataTypeService.md)
+* [DataTypeService](../../../Reference/Management/Services/DataTypeService/index.md)
 
 ### Umbraco.tv
 * [Episode: Data Types](https://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/document-types/data-types/)

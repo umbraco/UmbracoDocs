@@ -16,12 +16,12 @@ Managing forms happens in the Forms section of the Umbraco backoffice. You need 
 
 Similar to most create actions in the Umbraco backoffice, you'll have to click the ellipses on the forms tree/folder and that will show you the create option.
 
-![Forms tree](FormsTree.png)
+![Forms tree](images/FormsTree.png)
 
 ## Select if you want to start from scratch
 You will see the following dialog
 
-![Forms create dialog](FormsCreateDialog.png)
+![Forms create dialog](images/FormsCreateDialog.png)
 
 You'll have the option to start from scratch or you can choose to start with a template that will already have some fields defined.
 

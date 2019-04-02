@@ -14,7 +14,7 @@ The things you can configure include hostnames / domains, SSL certificates, data
 
 From this page you can manage the team members on your project.
 
-This is also where you need to go, to add a [Technical contact](../Team-Members/Technical-contact.md) to your project.
+This is also where you need to go, to add a [Technical contact](../Team-Members/Technical-Contact.md) to your project.
 
 ## [Connection details](../../Databases)
 

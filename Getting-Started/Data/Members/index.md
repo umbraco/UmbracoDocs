@@ -68,9 +68,9 @@ You can find out more about the services methods in the reference section of the
 - [Customizing Data Types](../Data-Types/)
 
 ### Related Services
-- [MemberService](../../../Reference/Management/Services/MemberService.md)
-- [MemberType Service](../../../Reference/Management/Services/MemberTypeService.md)
-- [MemberGroup Service](../../../Reference/Management/Services/MemberGroupService.md)
+- [MemberService](../../../Reference/Management/Services/MemberService/index.md)
+- [MemberType Service](../../../Reference/Management/Services/MemberTypeService/index.md)
+- [MemberGroup Service](../../../Reference/Management/Services/MemberGroupService/index.md)
 
 ### [Umbraco.TV](https://umbraco.tv)
 - [Chapter: Members](https://umbraco.tv/videos/umbraco-v7/content-editor/administrative-content/members/what-is-a-member/)

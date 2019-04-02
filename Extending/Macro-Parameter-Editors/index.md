@@ -14,14 +14,14 @@ Every macro can contain parameters. There are some useful default types.  For ex
 * Single/Multiple Media Picker
 * Single/Multiple Content Picker
 
-... and some 'others'.  Consult the [Backoffice documentation](../../Using-Umbraco/Backoffice-Overview.md) for general information on Macros.
+... and some 'others'.  Consult the [Backoffice documentation](../../Getting-Started/Backoffice/index.md) for general information on Macros.
 
 You can create your own custom macro parameter types.
 
 ## Umbraco 7 - Creating your own macro parameter type ##
 
 ### isParameterEditor ###
-All you need to do to create a macro parameter type in Umbraco 7, is to create a custom 'Property Editor' (or copy someone else's), see [Property Editors documentation](../../Extending/Property-Editors.md)
+All you need to do to create a macro parameter type in Umbraco 7, is to create a custom 'Property Editor' (or copy someone else's), see [Property Editors documentation](../../Extending/Property-Editors/index.md)
 and in the [Package Manifest file](../../Extending/Property-Editors/package-manifest.md) for the editor, set the isParameterEditor property to be true.
 
 ```json

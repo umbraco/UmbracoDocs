@@ -29,10 +29,10 @@ Which one you want to use depends on what you want to achieve. If you want to be
 
 ## Tree events
 
-* See [Tree Events](../../Extending-Umbraco/Section-Trees/trees.md) for a listing of the tree events.  
+* See [Tree Events](../../Extending/Section-Trees/trees.md) for a listing of the tree events.  
 
 ## Editor Model events
-See [EditorModelEventManager Events](EditorModel-Events.md) for a listing of the EditorModel events 
+See [EditorModelEventManager Events](EditorModel-Events/index.md) for a listing of the EditorModel events 
 
 :::tip
 Useful for manipulating the model before it is sent to an editor in the backoffice - eg. perhaps to set a default value of a property on a new document
