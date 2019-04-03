@@ -63,7 +63,7 @@ Event model covering all major aspects of the system for triggering custom code 
 
 How to use [Web API](https://www.asp.net/web-api) with Umbraco to easily create REST services.
 
-## [Management APIs](Management-v6/index.md)
+## [Management APIs](Management/index.md)
 
 APIs that focus on creating, updating and deleting.
 

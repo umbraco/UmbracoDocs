@@ -11,7 +11,7 @@ meta.Description: "Here you can find tutorials covering things like creating a s
 
 Step by step guide of everything you need to get a basic site up and running in Umbraco.
 
-### [Creating a basic XML SiteMap with Razor](Creating-An-XML-Site-Map/index.md)
+### [Creating a basic XML SiteMap with Razor](Creating-an-XML-Site-Map/index.md)
 
 Working within a Razor view/template to create an XML Site Map for search engines.
 
