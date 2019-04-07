@@ -139,7 +139,7 @@ public class CustomNewsArticleService : ICustomNewsArticleService
         private readonly ILogger _logger;
         private readonly IUmbracoContextFactory _contextFactory;
 
-        public CustomNewsArticleService(ILogger logger, IUmbracoContextFactory contextFactory)
+        public CustomNewsArticleService(ILogger logger, IUmbracoContextFactory contextFactory,IMediaService mediaService)
         {
             _logger = logger;
             _contextFactory = contextFactory;
