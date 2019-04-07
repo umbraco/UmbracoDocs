@@ -42,7 +42,7 @@ Inside a Razor View template, that inherits UmbracoViewPage (or similar eg Parti
 }
 ```
 
-### Access in a custom class via dependency injection
+### Access in a Custom Class via dependency injection
 
 If for instance we wish to subscribe to an event on one of the services, we'd do so in a Component c# class, where there is no `ServiceContext` available, instead we would inject the service we need into the public constructor of the Component and Umbraco's underlying dependency injection framework will do the rest.
 
@@ -100,6 +100,63 @@ namespace Umbraco8.Components
         public void Terminate()
         {
             throw new NotImplementedException();
+        }
+    }
+}
+```
+#### Custom Class example
+It is the same approach if you are creating your own custom class, as long as your class is registered with the dependency injection framework (via a composer)
+```csharp
+using Umbraco.Core;
+using Umbraco.Core.Composing;
+using Umbraco8.Controllers;
+using Umbraco8.Services;
+
+namespace Umbraco8.Composers
+{
+    public class RegisterCustomNewsArticleServiceComposer : IUserComposer
+    {
+        public void Compose(Composition composition)
+        {
+
+            composition.Register<ICustomNewsArticleService, CustomNewsArticleService>(Lifetime.Request);
+         }
+    }
+}
+```
+then your custom class eg. CustomNewsArticleService can take advantage of the same injection to access services eg:
+
+```csharp
+using Umbraco.Core.Logging;
+using Umbraco.Core.Services;
+using Umbraco.Web;
+
+namespace Umbraco8.Services
+{
+public class CustomNewsArticleService : ICustomNewsArticleService
+    {
+        private readonly IMediaService _mediaService;
+        private readonly ILogger _logger;
+        private readonly IUmbracoContextFactory _contextFactory;
+
+        public CustomNewsArticleService(ILogger logger, IUmbracoContextFactory contextFactory)
+        {
+            _logger = logger;
+            _contextFactory = contextFactory;
+            _mediaService = mediaService;
+        }
+
+        public void DoSomethingWithNewsArticles(){
+               using (var contextReference = _contextFactory.EnsureUmbracoContext())
+                {
+                    IPublishedContentCache contentCache = contextReference.UmbracoContext.ContentCache;
+                    IPublishedContent newsSection = cache.GetAtRoot().FirstOrDefault().Children.FirstOrDefault(f => f.ContentType.Alias == "newsSection");
+                    if (newsSection== null)
+                    {
+                        _logger.Debug<CustomNewsArticleService>("News Section Not Found");
+                    }
+                }
+            //etc
         }
     }
 }
