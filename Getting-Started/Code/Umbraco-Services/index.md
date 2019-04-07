@@ -46,7 +46,7 @@ Inside a Razor View template, that inherits UmbracoViewPage (or similar eg Parti
 
 If for instance we wish to subscribe to an event on one of the services, we'd do so in a Component c# class, where there is no `ServiceContext` available, instead we would inject the service we need into the public constructor of the Component and Umbraco's underlying dependency injection framework will do the rest.
 
-In this example we will wire up to the ContentService 'Saved' event, and create a new folder in the Media section whenever a new LandingPage is created in the content section to store associated media.
+In this example we will wire up to the ContentService 'Saved' event, and create a new folder in the Media section whenever a new LandingPage is created in the content section to store associated media. Therefore we will need the MediaService available to create the new folder.
 
 ```csharp
 using System;
