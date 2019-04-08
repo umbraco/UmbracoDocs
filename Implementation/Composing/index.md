@@ -107,7 +107,7 @@ namespace My.Website
         {
             // Append our component to the collection of Components
             // It will be the last one to be run
-            composition.Components().Append<MyComponent>();
+            composition.Components().Append<SubscribeToContentServiceSavingComponent>();
         }
     }
 
