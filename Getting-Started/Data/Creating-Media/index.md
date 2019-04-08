@@ -129,4 +129,4 @@ If you select an image that has been uploaded to this folder you'll see the full
 - [Customizing Data Types](../Data-Types)
 
 ## Related Services
-- [MediaService](../../../Reference/Management/Services/MediaService.md)
+- [MediaService](../../../Reference/Management/Services/MediaService/index.md)

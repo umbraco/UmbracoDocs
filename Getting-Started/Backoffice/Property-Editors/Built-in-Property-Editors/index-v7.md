@@ -80,7 +80,7 @@ Adds an upload field, which allows documents or images to be uploaded to Umbraco
 
 Used mainly with container Media Types, the Folder Browser displays a list of thumbnail images.
 
-## [Grid Layout](Grid-Layout.md)
+## [Grid Layout](Grid-Layout/index.md)
 `Alias: Umbraco.Grid`
 
 New to v7.2, gives editors a grid layout editor which allows them to insert different types of content in a predefined layout.
@@ -109,7 +109,7 @@ This control gives the same functionality as the standard listview, but allows y
 `Alias: Umbraco.MacroContainer`
 
 The Macro container was in the early days the only built-in way to allow repeated content out of the box.  It allows a content editor to add multiple blocks.  Each block is one of the selected Macro's, wrapping an xslt, usercontrols or Macro Partial.
-Today there are other options to have repeated content like [Nested Content](Nested-Content.md), [Grid Layout](Grid-Layout.md) and many other controls in different packages.
+Today there are other options to have repeated content like [Nested Content](Nested-Content/index-v7.md), [Grid Layout](Grid-Layout/index.md) and many other controls in different packages.
 
 ## Markdown editor
 `Alias: Umbraco.MarkdownEditor`

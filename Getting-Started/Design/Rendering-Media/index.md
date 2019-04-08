@@ -77,6 +77,6 @@ If you want the original, uncropped image, you can ignore the GetCropUrl extensi
 ```
 
 ### More information
-- [Media Picker](../../Backoffice/Property-Editors/Built-in-Property-Editors/Media-Picker2.md)
+- [Media Picker](../../Backoffice/Property-Editors/Built-in-Property-Editors/Media-Picker/index.md)
 - [Image Cropper](../../Backoffice/Property-Editors/Built-in-Property-Editors/Image-Cropper.md)
 - [Creating a Media Type](../../Data/Creating-Media/index.md#creating-a-media-type)

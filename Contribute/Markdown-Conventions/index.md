@@ -4,7 +4,9 @@ versionFrom: 7.0.0
 
 # Markdown conventions
 
-The Umbraco Documentation uses Markdown for all of the documentation - but more precisely we use the CommonMark specification. Read more about the [difference between CommonMark and Markdown](https://commonmark.org/).
+The Umbraco Documentation uses Markdown for all the articles - but more precisely we use the CommonMark specification. Read more about the [difference between CommonMark and Markdown](https://commonmark.org/).
+
+In this article you can learn how to use Markdown, as well as how we structure the files.
 
 ## Structure
 

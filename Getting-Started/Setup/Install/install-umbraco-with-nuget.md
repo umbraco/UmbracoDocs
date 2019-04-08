@@ -24,7 +24,7 @@ To install Umbraco we first need a Visual Studio solution.
 ### Visual Studio 2017
 Go to **File > New Project** and pick an ASP.NET Web Application. 
 
-**Note:** Double check that in the "Framework" dropdown you've selected `.NET Framework 4.7.2`, Umbraco will not work with lower versions than 4.7.2.
+**Note:** Double check that in the "Framework" dropdown you've selected `.NET Framework 4.7.2`, Umbraco will not work with lower versions than 4.7.2. Similarly, refrain from naming your solution `Umbraco`, as this will cause a namespace conflict with the CMS itself.
 
 ![](images/NuGet/new-project-vs2017-1-v8.png)
 

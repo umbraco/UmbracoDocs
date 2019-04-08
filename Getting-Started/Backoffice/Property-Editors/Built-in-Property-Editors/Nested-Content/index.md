@@ -104,7 +104,20 @@ Example:
 
     foreach(var item in items)
     {
+        var description = item.GetProperty<string>("description");
+        var image = item.GetProperty<IPublishedContent>("image");
+    
         <h3>@item.GetProperty("heading").Value()</h3>
+        
+        if (!string.IsNullOrEmpty(description))
+        {
+            <p>@Html.Raw(Html.ReplaceLineBreaksForHtml(description)))</p>
+        }
+        
+        if (image != null)
+        {
+           <img src="@image.Url" alt="" />
+        }
     }
 }
 ```

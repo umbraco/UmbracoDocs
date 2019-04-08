@@ -126,8 +126,8 @@ Document Types are very flexible and can be used in a myriad of ways from defini
 - [Customizing Data Types](../Data-Types/index.md)
 
 ### Related Services
-- [ContentService](../../../Reference/Management/Services/ContentService.md)
-- [ContentTypeService](../../../Reference/Management/Services/ContentTypeService.md)
+- [ContentService](../../../Reference/Management/Services/ContentService/index.md)
+- [ContentTypeService](../../../Reference/Management/Services/ContentTypeService/index.md)
 
 ### Tutorials
 - [Creating a basic website with Umbraco](../../../Tutorials/Creating-Basic-Site/)
