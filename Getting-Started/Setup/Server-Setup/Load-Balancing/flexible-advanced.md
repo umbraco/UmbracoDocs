@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.1.0
+versionFrom: 8.0.2
 ---
 
 # Advanced techniques with Flexible Load Balancing
@@ -27,7 +27,7 @@ public class MasterServerRegistrar : IServerRegistrar
     public string GetCurrentServerUmbracoApplicationUrl()
     {
         // NOTE: If you want to explicitly define the URL that your application is running on,
-        // this will be used for the server to communicate with itself, you can return the 
+        // this will be used for the server to communicate with itself, you can return the
         // custom path here and it needs to be in this format:
         // http://www.mysite.com/umbraco
 
