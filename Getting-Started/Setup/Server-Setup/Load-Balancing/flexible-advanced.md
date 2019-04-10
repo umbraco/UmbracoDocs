@@ -8,7 +8,7 @@ _This describes some more advanced techniques that you could achieve with flexib
 
 ## Explicit Master Scheduling server
 
-It is recommended to configure an explicit master scheduling server since this reduces the amount 
+It is recommended to configure an explicit master scheduling server since this reduces the amount
 complexity that the [master election](flexible.md#scheduling-and-master-election) process performs.
 
 The first thing to do is create a couple classes for your front-end servers and master server to use:
@@ -75,16 +75,18 @@ By setting your master server to use your custom `MasterServerRegistrar` class, 
 
 ## Front-end servers - Read-only database access
 
-_This description pertains ONLY to Umbraco database tables_
+:::note
+This description pertains ONLY to Umbraco database tables
+:::
 
-In some cases infrastructure admins will not want their front-end servers to have write access to the database. 
+In some cases infrastructure admins will not want their front-end servers to have write access to the database.
 By default front-end servers will require write full access to the following tables:
 
 * umbracoServer
 * umbracoNode
 
 This is because by default each server will inform the database that they are active and more importantly it is
-used for task scheduling. Only a single server can execute task scheduling and these tables are used for servers 
+used for task scheduling. Only a single server can execute task scheduling and these tables are used for servers
 to use a master server election process without the need for any configuration. So in the case that a front-end
 server becomes the master task scheduler, **it will actually require write access to all of the Umbraco tables**.
 
@@ -106,7 +108,7 @@ public void Compose(Composition composition)
     {
         var options = DatabaseServerRegistrarAndMessengerComposer.GetDefaultOptions(factory);
         options.DaysToRetainInstructions = 10;
-		options.MaxProcessingInstructionCount = 1000;
+        options.MaxProcessingInstructionCount = 1000;
         options.ThrottleSeconds = 25;
         options.PruneThrottleSeconds = 60;
         return options;
@@ -115,7 +117,8 @@ public void Compose(Composition composition)
 ```
 
 Options:
-- DaysToRetainInstructions - The number of days to keep instructions in the database; records older than this number will be pruned.
-- MaxProcessingInstructionCount - The maximum number of instructions that can be processed at startup; otherwise the server cold-boots (rebuilds its caches)
-- ThrottleSeconds  - The number of seconds to wait between each sync operations
-- PruneThrottleSeconds - The number of seconds to wait between each prune operation
+
+* DaysToRetainInstructions - The number of days to keep instructions in the database; records older than this number will be pruned.
+* MaxProcessingInstructionCount - The maximum number of instructions that can be processed at startup; otherwise the server cold-boots (rebuilds its caches)
+* ThrottleSeconds - The number of seconds to wait between each sync operations
+* PruneThrottleSeconds - The number of seconds to wait between each prune operation
