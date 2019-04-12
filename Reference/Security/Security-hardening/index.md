@@ -17,30 +17,36 @@ If you’ve made sure that you’ve installed this on your server we can start l
 
 1. We are going to lock down /Umbraco/, but because API-controllers and Surface-controller will use the path /umbraco/api/ and /umbraco/surface/ these will also be locked down. Our first rule in the IISRewrite.config will be used to make sure that these are not locked by IP-address.
 
-	<rule name="Ignore" stopProcessing="true">
-		<match url="^(?:umbraco/api|umbraco/surface)/" />
-		<action type="None" />
-	</rule>
+```xml
+<rule name="Ignore" stopProcessing="true">
+    <match url="^(?:umbraco/api|umbraco/surface)/" />
+    <action type="None" />
+</rule>
+```
 
-    Some older versions of Umbraco also relied on /umbraco/webservices/ for loadbalancing purposes. If you're loadbalancing you should also add umbraco/webservices to the rule.
+Some older versions of Umbraco also relied on /umbraco/webservices/ for loadbalancing purposes. If you're loadbalancing you should also add umbraco/webservices to the rule.
 
-    <rule name="Ignore" stopProcessing="true">
-		<match url="^(?:umbraco/api|umbraco/surface|umbraco/webservices)/" />
-		<action type="None" />
-	</rule>
+```xml
+<rule name="Ignore" stopProcessing="true">
+    <match url="^(?:umbraco/api|umbraco/surface|umbraco/webservices)/" />
+    <action type="None" />
+</rule>
+```
 
 2. Get the IP-addresses of your client and write these down like a regular expression. If the IP-addresses are for example 213.3.10.8 and 88.4.43.108 the regular expression would be ‘213.3.10.8|88.4.43.108”.
 
 3. Lock down the folders App_Plugins, Config, Umbraco_Client and Umbraco (or the renamed version of this folder) by putting this rule into your IISRewrite-rules
 
-	<rule name="Allowed IPs" stopProcessing="true">
-		<match url="^(?:app_plugins|config|umbraco|umbraco_client)(?:/|$)" />
-		<conditions>
-			<add input="{REMOTE_ADDR}" negate="false" pattern="213.3.10.8|88.4.43.108”>
-		</conditions>
-		<action type=”AbortRequest” />
-	</rule>
-	
+```xml
+<rule name="Allowed IPs" stopProcessing="true">
+    <match url="^(?:app_plugins|config|umbraco|umbraco_client)(?:/|$)" />
+    <conditions>
+        <add input="{REMOTE_ADDR}" negate="false" pattern="213.3.10.8|88.4.43.108”>
+    </conditions>
+    <action type=”AbortRequest” />
+</rule>
+```
+
 If you now go to /umbraco/ for example from a different IP-address the login screen will not be rendered.
 
 ## Rename your Umbraco-folder
