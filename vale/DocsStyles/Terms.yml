@@ -1,0 +1,9 @@
+---
+extends: substitution
+message: Prefer %s over '%s.'
+level: warning
+ignorecase: true
+swap:
+  user testing: "'usability testing'"
+  back office: "'Backoffice'"
+  back-office: "'Backoffice'"
