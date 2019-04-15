@@ -31,7 +31,7 @@ OK now the references have been updated, try and build the solution to see how m
 As long as your Umbraco package was not using ancient APIs and using the new APIs & Services in Umbraco V7 then most of this step will be trying to determine what the new V8 namespace equivalent is.
 
 :::tip
-Clone down the Umbraco CMS source code and checkout the `dev-v8` branch. Use this as a way to try and find that same method that the compiler is complaining about, in its new namespace.
+Clone down the Umbraco CMS source code and checkout the `v8/dev` branch. Use this as a way to try and find that same method that the compiler is complaining about, in its new namespace.
 :::
 
 ## Bye bye ApplicationEventHandler, Hello Composer & Components
