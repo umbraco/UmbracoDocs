@@ -1,6 +1,8 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
+
 
 # Integrating services with a property editor
 

@@ -113,7 +113,7 @@ perhaps you want to replace Examine search in the backoffice with an external Se
 First create your replacement custom `ISearchableTree` implementation, using the same approach as above, but specifying the TreeAlias of the Tree you aim to replace, eg 'Member'
 
 ```csharp
-public string TreeAlias => "Member";
+public string TreeAlias => "member";
 ```
 
 To avoid your custom implementation clashing with the default `ISearchableTree` for a Tree, you need to remove it's `ISearchableTree` implementation by Type at 'ApplicationStarting' using the `SearchableTreeResolver`:

@@ -1,5 +1,5 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.0
 ---
 
 # Custom controllers (Hijacking Umbraco Routes)
@@ -19,7 +19,7 @@ In order for you to run some code in your controller you'll need to override the
 ```csharp
 public class HomeController : Umbraco.Web.Mvc.RenderMvcController
 {
-    public override ActionResult Index(RenderModel model)
+    public override ActionResult Index(ContentModel model)
     {
         // Do some stuff here, then return the base method
         return base.Index(model);
@@ -36,7 +36,7 @@ To further extend this, we've also allowed routing to different Actions based on
 ```csharp
 public class HomeController : Umbraco.Web.Mvc.RenderMvcController
 {
-    public ActionResult MobileHomePage(RenderModel model)
+    public ActionResult MobileHomePage(ContentModel model)
     {
         // Do some stuff here, the return the base Index method
         return base.Index(model);
@@ -55,25 +55,31 @@ If you want to return a custom model to a view then there are a few steps that n
 
 ### Changing the @inherits directive of your template
 
-First, the standard view that is created by Umbraco inherits from `Umbraco.Web.Mvc.UmbracoTemplatePage` which has a model defined of type `Umbraco.Web.Models.RenderModel`. You'll see the inherits directive at the top of the view as:
+First, the standard view that is created by Umbraco inherits from `Umbraco.Web.Mvc.UmbracoViewPage` which has a model defined of type `Umbraco.Web.Models.ContentModel`. You'll see the inherits directive at the top of the view as:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
 ```
+or if you are using modelsbuilder:
 
-If you are returning a custom model, then this directive will need to change because your custom model will not be an instance of `Umbraco.Web.Models.RenderModel`. Instead change your @inherits directive to inherit from `Umbraco.Web.Mvc.UmbracoViewPage<T>` where 'T' is the type of your custom model. So for example, if your custom model is of type 'MyCustomModel' then your @inherits directive will look like:
+```csharp
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<HomePage>
+```
+(A model is generated for each document type to give strongly typed access to properties in the template)
+
+If you are returning a custom model, then this directive will need to change because your custom model will not be an instance of `Umbraco.Web.Models.ContentModel`. Instead change your @inherits directive to inherit from `Umbraco.Web.Mvc.UmbracoViewPage<T>` where 'T' is the type of your custom model. So for example, if your custom model is of type 'MyCustomModel' then your @inherits directive will look like:
 
 ```csharp
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<MyCustomModel>
 ```
 
-Please note that if your template uses a layout that expects the model to be of type `Umbraco.Web.Models.RenderModel` then changing the template to inherit from `Umbraco.Web.Mvc.UmbracoViewPage<MyCustomModel>` will cause an exception. This is due to the way ASP.NET MVC works with strongly typed views: the requirement for a specific type applies all the way from the top-most layout down to the template. There are two ways to solve this problem:
+Please note that if your template uses a layout that expects the model to be of type `Umbraco.Web.Models.ContentModel` then changing the template to inherit from `Umbraco.Web.Mvc.UmbracoViewPage<MyCustomModel>` will cause an exception. This is due to the way ASP.NET MVC works with strongly typed views: the requirement for a specific type applies all the way from the top-most layout down to the template. There are two ways to solve this problem:
 
-1. Break the dependency on `Umbraco.Web.Models.RenderModel` in your layout by having it inherit from `Umbraco.Web.Mvc.UmbracoViewPage<dynamic>` (this means `@Model` will be of type `dynamic` in the layout).
-2. Make your custom model inherit from `Umbraco.Web.Models.RenderModel` and ensure you pass through the Umbraco model thus:-
+1. Break the dependency on `Umbraco.Web.Models.ContentModel` in your layout by having it inherit from `Umbraco.Web.Mvc.UmbracoViewPage<ISomeInterface>` (where IsomeInterface is implemented by all your models and contains the properties the master layout view uses).
+2. Make your custom model inherit from `Umbraco.Web.Models.ContentModel` and ensure you pass through the Umbraco model thus:-
 
 ```csharp
-public class MyNewViewModel : RenderModel
+public class MyNewViewModel : ContentModel
 {
     // Standard Model Pass Through
     public MyNewViewModel(IPublishedContent content) : base(content) { }
@@ -95,13 +101,13 @@ In an example above we reference that you can use the following syntax once you'
 return base.Index(model);
 ```
 
-This will work but the object (model) that you pass to the `Index` method must be an instance of `Umbraco.Web.Models.RenderModel` which might not be the case if you have a custom model.
+This will work but the object (model) that you pass to the `Index` method must be an instance of `Umbraco.Web.Models.ContentModel` which might not be the case if you have a custom model.
 So to return a custom model to the current Umbraco template, we need to use different syntax. Here's an example:
 
 ```csharp
 public class HomeController : Umbraco.Web.Mvc.RenderMvcController
 {
-    public ActionResult MobileHomePage(RenderModel model)
+    public ActionResult MobileHomePage(ContentModel model)
     {
         // we will create a custom model
         var myCustomModel = new MyCustomModel(model.Content);
@@ -124,7 +130,7 @@ This way, fields defined in the action's parameters will get automatically popul
 ```csharp
 public class HomeController : Umbraco.Web.Mvc.RenderMvcController
 {
-    public ActionResult MobileHomePage(RenderModel model, string myField1, string myField2)
+    public ActionResult MobileHomePage(ContentModel model, string myField1, string myField2)
     {
         //myField1 == "hello"
         //myField2 == "umbraco"
@@ -133,26 +139,70 @@ public class HomeController : Umbraco.Web.Mvc.RenderMvcController
     }
 }
 ```
+## Controller Injection
+Injecting services into your controller constructions is possible with Umbraco's underlying dependency injection implementation.
+Core services such as the built in ILogger service can just be injected into the constructor for the controller along with your own services:
 
+For example:
+```csharp
+    public class HomeController : RenderMvcController
+    {
+    private readonly IMySuperSiteService _siteService;
+    private readonly ILogger _logger;
+    public MyController(IMySuperSiteService siteService, ILogger logger)
+    {
+        _siteService = siteService;
+    }
+
+    public override ActionResult Index(
+    ContentModel model)
+    {
+    var siteSearchPage = _siteService.GetSearchPage(model.Path);
+    ... 
+    }
+```
+    
+To wire up a concrete instance of IMySuperSiteService, use a composer:
+    
+```csharp
+    using Umbraco.Core;
+    using Umbraco.Core.Logging;
+    using Umbraco.Core.Composing;
+    namespace MyWebsite.Composers
+    {
+        public class RegisterSuperSiteServiceComposer : IUserComposer
+        {
+            public void Compose(Composition composition)
+            {
+            // Register your service with different Lifetime options: Singleton, Request, Transient, Scope
+            composition.Register<IMySuperSiteService, MySuperSiteService>(Lifetime.Singleton);
+            }
+        }
+    }
+```
 ## Change the default controller
 
-In some cases you might want to have your own custom controller execute for all MVC requests when you haven't hijacked a route. This is possible by assigning your own default controller during application startup.
-
-An example to register a default controller of type 'MyCustomUmbracoController' is below :
+In some cases you might want to have your own custom controller execute for all MVC requests when you haven't hijacked a route. This is possible by assigning your own default controller during application startup using a composer.
 
 ```csharp
-DefaultRenderMvcControllerResolver.Current.SetDefaultControllerType(typeof(MyCustomUmbracoController));
-```
-
-You can execute this code during application startup before resolution is frozen. The most common way of doing this is using an `ApplicationEventHandler`.
-You can create an instance of `Umbraco.Core.ApplicationEventHandler` and override the method `ApplicationStarting`. Example:
-
-```csharp
-public class CustomApplicationEventHandler : ApplicationEventHandler
+public class SetDefaultRenderMvcControllerComposer : IUserComposer
 {
-    protected override void ApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+    public void Compose(Composition composition)
     {
-        DefaultRenderMvcControllerResolver.Current.SetDefaultControllerType(typeof(MyCustomUmbracoController));
+        composition.SetDefaultRenderMvcController(typeof(MyRenderMvcController));
+    }
+}
+
+public class MyRenderMvcController : IRenderMvcController
+{
+    public void Execute(RequestContext requestContext)
+    {
+        throw new NotImplementedException();
+    }
+
+    public ActionResult Index(ContentModel model)
+    {
+        throw new NotImplementedException();
     }
 }
 ```

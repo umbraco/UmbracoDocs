@@ -1,5 +1,5 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.0
 ---
 
 # Determining if an entity is new
@@ -21,12 +21,6 @@ To check if an entity is new in the ContentService.Saving event, use the followi
 
 ```csharp
 var isNew = dirty.HasIdentity;
-```
-
-In v6.2+ and 7.1+ you can use the extension method on any implementation of IEntity (which is nearly all models returned by the Umbraco Services):
-
-```csharp
-var isNew = entity.IsNewEntity(); 
 ```
 
 ## How it works

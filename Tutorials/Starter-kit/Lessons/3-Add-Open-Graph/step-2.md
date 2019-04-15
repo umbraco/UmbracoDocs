@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Add Open Graph - Step 2
 You are now going to add the tab and properties to the home page and blog post of the site. This is done by using compositions to add the functionality in multiple places.
 

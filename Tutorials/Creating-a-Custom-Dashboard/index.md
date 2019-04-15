@@ -1,3 +1,9 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
+
 # Tutorial - Creating a Custom Dashboard
 
 ## Overview
@@ -34,7 +40,7 @@ This tutorial uses AngularJS with Umbraco, so it does not cover AngularJS itself
 - [angularjs.org/tutorial](https://docs.angularjs.org/tutorial)
 - [Pluralsight](https://www.pluralsight.com/paths/angular-js)
 
-There are a lot of parallels with Creating a Property Editor, the tutorial '[Creating a Property Editor Tutorial](../../Tutorials/creating-a-property-editor/index.md)' is very much worth a read through too.
+There are a lot of parallels with Creating a Property Editor, the tutorial '[Creating a Property Editor Tutorial](../Creating-a-Property-Editor/index.md)' is very much worth a read through too.
 
 ### The end result
 
@@ -398,7 +404,7 @@ Where 1075, is the id of our blog section, and BlogPost is the alias of the type
 
 ## Custom External Data - creating your own angular resource
 
-You can create your own custom angular services/resources, to interact with your own serverside data (using UmbracoAuthorizedJsonController), The property editor tutorial has a step explaining how to do this [part 4 - Adding server-side data to a property editor](../../Tutorials/creating-a-property-editor/part-4.md).
+You can create your own custom angular services/resources, to interact with your own serverside data (using UmbracoAuthorizedJsonController), The property editor tutorial has a step explaining how to do this [part 4 - Adding server-side data to a property editor](../Creating-a-Property-Editor/part-4.md).
 
 ## What else? What are you waiting for?
 

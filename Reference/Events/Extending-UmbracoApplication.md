@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 ## Binding to HttpApplication events
@@ -52,5 +53,5 @@ namespace MyProject.EventHandlers
 
 ## Related Links
 * [Troubleshooting Slow Startup](Troubleshooting-Slow-Startup.md)
-* [More information about BootManager](Understanding-BootManagers.md) (EXPERT)
+* [More information about BootManager](Understanding-Bootmanagers.md) (EXPERT)
 * [Adding startup logic and plugin on c# events](Application-Startup.md) (EXPERT)

@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.3.1
+needsV8Update: "true"
 ---
 
 # Introduction of Custom OAuth providers

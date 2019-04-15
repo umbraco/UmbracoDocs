@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Add a Blog Post Publication Date
 
 In [Part One](./) we added a new property to the *Blogpost* Document Type.

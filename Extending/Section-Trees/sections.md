@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # Sections
@@ -61,7 +62,7 @@ You will need to recycle the application pool, to see changes to the language tr
 
 The section API in v7+ is found in the interface `Umbraco.Core.Services.ISectionService` which is exposed on the ApplicationContext singleton. This API is used to control/query the storage for tree registrations in the ~/Config/applications.config file.
 
-[See the section service API reference here](../../Reference/Management/Services/SectionService.md) 
+[See the section service API reference here](../../Reference/Management/Services/SectionService/index.md) 
 
 ## Section (Application) API v6
 

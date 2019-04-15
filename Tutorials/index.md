@@ -11,9 +11,9 @@ meta.Description: "Here you can find tutorials covering things like creating a s
 
 Step by step guide of everything you need to get a basic site up and running in Umbraco.
 
-### [Creating a basic XML SiteMap with Razor](Creating-An-XML-Site-Map/index.md)
+### [Creating a basic XML SiteMap with Razor](Creating-an-XML-Site-Map/index.md)
 
-Working within a Razor view/template to create an XML Site Map for search engines
+Working within a Razor view/template to create an XML Site Map for search engines.
 
 ### [Creating a Custom Dashboard](Creating-a-Custom-Dashboard)
 
@@ -34,3 +34,7 @@ Learn how you can use your Google user to log into the Umbraco backoffice.
 ### [Starter kit](Starter-kit/index.md)
 
 Information about the basic Umbraco starter kit.
+
+### [Porting Packages from Version 7 to Version 8](Porting-Packages-V8/index.md)
+
+A working document, that gives tips & pointers on how to port an Umbraco V7 package to work with the up coming Umbraco V8 release.

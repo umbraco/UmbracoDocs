@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.6.0
+needsV8Update: "true"
 ---
 
 # UDI Identifiers

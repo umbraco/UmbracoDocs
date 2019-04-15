@@ -1,6 +1,7 @@
 ---
 keywords: Backoffice tours
 versionFrom: 7.8.0
+needsV8Update: "true"
 ---
 
 # Backoffice tours

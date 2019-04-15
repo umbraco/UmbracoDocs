@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # umbracoSettings
@@ -154,11 +155,11 @@ should be set to false if the application pool's user account hasn't got read ri
 
 ### Errors
 
-In case of a 404 error (page not found) Umbraco can return a default page instead. this is set here. Notice you can also set a different error page, based on the current culture so a 404 page can be returned in the correct language
+In case of a 404 error (page not found) Umbraco can return a default page instead. This is set here. Notice you can also set a different error page, based on the current culture so a 404 page can be returned in the correct language.
 
 ```xml
 <errors>
-    <!-- the id of the page that should be shown if the page is not found -->
+    <!-- The id of the page that should be shown if the page is not found -->
     <!-- 
     <error404>
         <errorPage culture="default">1</errorPage>
@@ -169,8 +170,17 @@ In case of a 404 error (page not found) Umbraco can return a default page instea
 </errors>
 ```
 
-The above example shows what you need to do if you only have a single site, that needs to show a custom 404 page. Simply just enter the id of the node that should be
-shown a request for non-existing page is being made.
+The above example shows what you need to do if you only have a single site that needs to show a custom 404 page. You specify which node that should be shown when a request for a non-existing page is being made. You can specify the node in three ways:
+
+1. Enter the node's **id** (e.g. `<error404>1066</error404>`)
+2. Enter the node's **GUID** (e.g. `<error404>4f96ffdd-b969-46a8-949e-7935c41fabc0</error404>`)
+3. Enter an XPath to find the node (`<error404>/root/Home//TextPage[@urlName = 'error404']</error404>`)
+
+:::note
+- Ids are usually local to the specific solution (so won't point to the same node in two different environments if you're using Umbraco Cloud).
+- GUIDs are universal and will point to the same node on different environments, provided the content was created in one environment and deployed to the other(s).
+- When using XPath, there is no "context" (i.e. you can't find the node based on "currentPage") so needs to be a global absolute path.
+:::
 
 :::warning
 Remember to recycle the app pool to make sure changes to this section take effect.
@@ -180,7 +190,7 @@ If you have multiple sites, with different cultures, setup in your tree then you
 
 ```xml
 <errors>
-    <!-- the id of the page that should be shown if the page is not found -->
+    <!-- The id of the page that should be shown if the page is not found -->
     <error404>
         <errorPage culture="default">1</errorPage>
         <errorPage culture="en-US">200</errorPage>
@@ -361,7 +371,7 @@ You can specify your own background image for the login screen here. The image w
 
 **`<EnablePropertyValueConverters>`**
 
-Enables [value converters](../../../Extending/Property-Editors/value-converters.md) for all built in property editors so that they return strongly typed object, recommended for use with [Models Builder](../../templating/modelsbuilder/index.md)
+Enables [value converters](../../../Extending/Property-Editors/value-converters.md) for all built in property editors so that they return strongly typed object, recommended for use with [Models Builder](../../Templating/Modelsbuilder/index.md)
 
 On new installs this set to true. When you are upgrading from a lower version than 7.6.0 it is recommended to set this setting to false. More information can be found in the explanation of the [breaking changes in 7.6.0](../../../Getting-Started/Setup/Upgrading/760-breaking-changes#property-value-converters-u4-7318)
 
@@ -477,7 +487,7 @@ If you don't want to have a trailing slash when directory urls are in use simply
 The **removeDoubleDashes** attribute makes sure the double dashes will not appear in the url. Set it to **false** if you want to have double dashes. NOTE that this attribute has no effect anymore starting with Umbraco 6.1 / 7.0 where double dashes are systematically removed.
 
 The **toAscii** attributes tells Umbraco to convert all urls to ASCII using the built-in transliteration library. It is disabled by default, ie by default urls remain UTF8. Set it to **true** if you want to have ASCII urls.
-Introduced in Umbraco 7.6.4 the toAscii attribute can be set to **try**. This will make the engine try to convert the name to an ASCII implementation. If it fails, it will fallback to the name. Reason is that some languages doesn't have ASCII implementations, therefore the urls would end up being empty.
+Introduced in Umbraco 7.6.4 the toAscii attribute can be set to **try**. This will make the engine try to convert the name to an ASCII implementation. If it fails, it will fallback to the name. Reason is that some languages don't have ASCII implementations, therefore the urls would end up being empty.
 
 Within the **`<urlReplacing>`** section there are a lot of **`<char>`** elements with an **org** attribute. The attribute holds the character that should
 be replaced and within the **`<char>`** tags the value it should be replaced with is entered.

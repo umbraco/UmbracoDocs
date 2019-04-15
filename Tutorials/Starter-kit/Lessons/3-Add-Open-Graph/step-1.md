@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Add Open Graph - Step 1
 Adding support for Open Graph can be done in many ways. In this lesson we'll create a reusable set of properties we can add to specific page types. First we need to see what the expected outcome will be. Open Graph for web pages needs to contain at least the following:
 

@@ -57,6 +57,6 @@ You can specify:
 </PermissionGroups>
 ```
 
-## [Technical contact](Technical-contact.md)
+## [Technical contact](Technical-Contact.md)
 
 In order for us to reach the correct person when sending out information about server maintenance you need to add a technical contact to your Umbraco Cloud project.

@@ -1,5 +1,5 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.0
 ---
 
 # ContentService Events
@@ -11,31 +11,44 @@ The ContentService class is the most commonly used type when extending Umbraco u
 Example usage of the ContentService events:
 
 ```csharp
+using System;
 using Umbraco.Core;
-using Umbraco.Core.Events;
-using Umbraco.Core.Models;
-using Umbraco.Core.Publishing;
-using Umbraco.Core.Services;
+using Umbraco.Core.Composing;
+using Umbraco.Core.Services.Implement;
 
-namespace My.Namespace
+namespace Umbraco8.Components
 {
-    public class MyEventHandler : ApplicationEventHandler
+    [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
+    public class SubscribeToPublishEventComposer : ComponentComposer<SubscribeToPublishEventComponent>
     {
-
-        protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+    }
+    public class SubscribeToPublishEventComponent : IComponent
+    {
+        public void Initialize()
         {
-            ContentService.Published += ContentServicePublished;     
-        }            
+            ContentService.Publishing += ContentService_Publishing;        }
 
-        private void ContentServicePublished(IPublishingStrategy sender, PublishEventArgs<IContent> args)
+        private void ContentService_Publishing(Umbraco.Core.Services.IContentService sender, Umbraco.Core.Events.ContentPublishingEventArgs e)
         {
-            foreach (var node in args.PublishedEntities)
+            foreach (var node in e.PublishedEntities)
             {
-                if (node.ContentType.Alias == "Comment")
+                if (node.ContentType.Alias == "CorporateNewsAnnouncement")
                 {
-                    SendMail(node);
+                    var newsArticleTitle = node.GetValue<string>("newsTitle");
+                    if (newsArticleTitle.Equals(newsArticleTitle.ToUpper()))
+                    {
+                        //stop putting News Article Titles ALL in Upper Case!!!
+                        //cancel publish
+                        e.Cancel = true;
+                        //explain why publish cancelled.
+                        e.Messages.Add(new Umbraco.Core.Events.EventMessage("Corporate Style Guidelines Infringement", "Don't put news article titles in UpperCase, no need to shout!", Umbraco.Core.Events.EventMessageType.Error));
+                    }
                 }
             }
+        }
+        public void Terminate()
+        {
+            throw new NotImplementedException();
         }
     }
 }
@@ -51,7 +64,7 @@ namespace My.Namespace
     </tr>    
     <tr>
         <td>Saving</td>
-        <td>(IContentService sender, SaveEventArgs&lt;IContent&gt; e)</td>
+        <td>(IContentService sender, ContentSavingEventArgs e)</td>
         <td>
         Raised when ContentService.Save is called in the API.<br />
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default).<br />
@@ -65,7 +78,7 @@ namespace My.Namespace
     </tr>
     <tr>
         <td>Saved</td>
-        <td>(IContentService sender, SaveEventArgs&lt;IContent&gt; e)</td>
+        <td>(IContentService sender, ContentSavedEventArgs e)</td>
         <td>
         Raised when ContentService.Save is called in the API and after data has been persisted.<br />
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default). <br />
@@ -79,7 +92,7 @@ namespace My.Namespace
     </tr>
     <tr>
         <td>Publishing</td>
-        <td>(IPublishingStrategy sender, PublishEventArgs&lt;Umbraco.Core.Models.IContent&gt; e)</td>
+        <td>(IPublishingStrategy sender, ContentPublishingEventArgs> e)</td>
         <td>
         Raised when ContentService.Publishing is called in the API.<br />
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Publish method call (true by default).<br />
@@ -93,7 +106,7 @@ namespace My.Namespace
     </tr>
     <tr>
         <td>Published</td>
-        <td>(IPublishingStrategy sender, PublishEventArgs&lt;Umbraco.Core.Models.IContent&gt; e)</td>
+        <td>(IPublishingStrategy sender, ContentPublishedEventArgs e)</td>
         <td>
         Raised when ContentService.Publish is called in the API and after data has been published.<br />
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Publish method call (true by default). <br />
@@ -368,5 +381,5 @@ Both the ContentService.Creating and ContentService.Created events have been obs
 
 #### What do we use instead?
 
-The ContentService.Saving and ContentService.Saved events will always trigger before and after an entity has been persisted. You can determine if an entity is brand new in either of those events. In the Saving event - before the entity is persisted - you can check the entity's HasIdentity property which will be 'false' if it is brand new. In the Saved event you can [use this extension method](determining-new-entity.md)
+The ContentService.Saving and ContentService.Saved events will always trigger before and after an entity has been persisted. You can determine if an entity is brand new in either of those events. In the Saving event - before the entity is persisted - you can check the entity's HasIdentity property which will be 'false' if it is brand new. In the Saved event you can [check to see if the entity 'remembers being dirty'](determining-new-entity.md)
 

@@ -1,5 +1,5 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.0
 ---
 
 # MediaService Events
@@ -10,27 +10,41 @@ The MediaService class implements IMediaService. It provides easy access to oper
 Example usage of the MediaService events:
 
 ```csharp
+using System;
 using Umbraco.Core;
-using Umbraco.Core.Events;
-using Umbraco.Core.Models;
-using Umbraco.Core.Services;
+using Umbraco.Core.Composing;
+using Umbraco.Core.Models.Entities;
+using Umbraco.Core.Services.Implement;
 
-namespace My.Namespace
+namespace Umbraco8.Components
 {
-    public class MyEventHandler : ApplicationEventHandler
+    [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
+    public class SubscribeToMediaSavedEventComposer : ComponentComposer<SubscribeToMediaSavedEventComponent>
     {
+    }
 
-        protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+    public class SubscribeToMediaSavedEventComponent : IComponent
+    {
+        public void Initialize()
         {
-            MediaService.Saved += MediaServiceSaved;     
-        }   
+            MediaService.Saved += MediaService_Saved;
+        }
 
-        void MediaServiceSaved(IMediaService sender, SaveEventArgs<IMedia> e)
+        private void MediaService_Saved(Umbraco.Core.Services.IMediaService sender, Umbraco.Core.Events.SaveEventArgs<Umbraco.Core.Models.IMedia> e)
         {
             foreach (var mediaItem in e.SavedEntities)
             {
-                UploadToAzure(mediaItem);
+                if (mediaItem.ContentType.Alias == "Image")
+                {
+                    //perhaps send to Azure for AI analysis of image contents or something...
+                    SendToAzure(mediaItem);
+                }
             }
+        }
+
+        public void Terminate()
+        {
+            throw new NotImplementedException();
         }
     }
 }
@@ -189,4 +203,4 @@ Both the MediaService.Creating and MediaService.Created events have been obsolet
 
 #### What do we use instead?
 
-The MediaService.Saving and MediaService.Saved events will always trigger before and after an entity has been persisted. You can determine if an entity is brand new in either of those events. In the Saving event - before the entity is persisted - you can check the entity's HasIdentity property which will be 'false' if it is brand new. In the Saved event you can [use this extension method](determining-new-entity.md)
+The MediaService.Saving and MediaService.Saved events will always trigger before and after an entity has been persisted. You can determine if an entity is brand new in either of those events. In the Saving event - before the entity is persisted - you can check the entity's HasIdentity property which will be 'false' if it is brand new. In the Saved event you can [check to see if the entity 'remembers being dirty'](determining-new-entity.md)

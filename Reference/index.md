@@ -3,6 +3,7 @@ versionFrom: 7.0.0
 meta.Title: "Reference section for the Umbraco APIs"
 meta.Description: "Developers' Reference primarily consists of API references of the different core Umbraco APIs. In many cases, the references come with code snippets with simple examples. For a more in-depth study of the different APIs, consult the using-umbraco and extending-umbraco sections of the documentation."
 ---
+
 # Developers' Reference
 
 _Developers' Reference primarily consists of API references of the different core Umbraco APIs. In many cases, the references come with code snippets with simple examples. For a more in-depth study of the different APIs, consult the "using-umbraco" and "extending-umbraco" sections of the documentation._
@@ -62,7 +63,7 @@ Event model covering all major aspects of the system for triggering custom code 
 
 How to use [Web API](https://www.asp.net/web-api) with Umbraco to easily create REST services.
 
-## [Management APIs](Management-v6/index.md)
+## [Management APIs](Management/index.md)
 
 APIs that focus on creating, updating and deleting.
 

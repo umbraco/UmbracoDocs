@@ -4,9 +4,11 @@ versionFrom: 7.0.0
 
 # The Licensing Model
 
-Umbraco Forms and Umbraco Courier are commercial products. When you install them from the backoffice of your installation you will have a 14-day free trial to try out the products.
+Umbraco Forms and Umbraco Courier are commercial products. 
 
-After your trial expires, you'll need to have a **valid license** in order to keep using the products on your site.
+For Umbraco Forms you will have a 14-day free trial to try out the product. After your trial expires, you'll need to have a **valid license** in order to keep using the product on your site.
+
+Umbraco Courier doesn't come with a 14-day free trial, which means you will need a **valid license** in order to use the product. You will be able to test Umbraco Courier on a local setup without a license.
 
 ## How does it work?
 

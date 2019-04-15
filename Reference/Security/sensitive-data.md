@@ -1,6 +1,8 @@
 ---
 versionFrom: 7.9.0
+needsV8Update: "true"
 ---
+
 # Sensitive data
 
 Marking fields as sensitive will hide the data in those fields for backoffice users that have no business viewing personal data of members.

@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # Running Umbraco on Azure Web Apps
@@ -26,7 +27,7 @@ due to IO latency of the remote file share.
 ## Scaling
 
 If you require the scaling ("scale out") ability of Azure Web Apps then you need to consult 
-the [Load Balancing documentation](load-balancing.md) since there is a lot more that needs
+the [Load Balancing documentation](Load-Balancing/index.md) since there is a lot more that needs
 to be configured to support scaling/auto-scaling.
 
 ## Web worker migrations
@@ -46,7 +47,7 @@ You cannot rely on these variables remaining static for the lifetime of your web
 
 These best practices are for a single environment/non-scaled azure website. __If you require the scaling ("scale out") 
 ability of Azure Web Apps then you need to consult the 
-[Load Balancing documentation](load-balancing.md)__ since there is a lot more that needs
+[Load Balancing documentation](Load-Balancing/index.md)__ since there is a lot more that needs
 to be configured to support scaling/auto-scaling.
 
 * You should ensure that `fcnMode="Single"` in your web.config's `<httpRuntime>` section (this is the default that is shipped with Umbraco, see [here](https://shazwazza.com/post/all-about-aspnet-file-change-notification-fcn/) for more details)

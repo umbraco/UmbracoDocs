@@ -149,6 +149,17 @@ Before doing anything else, you need to delete the default **Media and Member ty
 
 ![Default media types](images/media-types.png)
 
+:::note
+### Data types
+Have you been using _older_ data types on your project, you will need to go through a few steps in order to avoid running into collision errors when deploying your migrated sites to Umbraco Cloud.
+
+The data types in question are: Content Picker, Media Picker, Member picker, Multiple Media Picker (using Media Picker) and Related Links.
+
+You can either
+1. Rename the old data types on your existing site or
+2. Follow the steps in the [Colliding Data types](../../Troubleshooting/Deployments/Colliding-Datatypes) article
+:::
+
 ## 5. Clone down the Cloud project
 
 With your Umbraco Cloud project ready for the migration, it is time to clone down the project to your local machine.
