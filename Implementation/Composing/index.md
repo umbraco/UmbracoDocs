@@ -174,7 +174,7 @@ Below is a list of collections with their corresponding 'collection type' and ho
 | ContentFinders            | Ordered   | Explicit Registration                                             |
 | Dashboards                | Weighted  | Package.manifest & Type scanned for `IDashboard`                  |
 | DataEditors               | Lazy      | Type scanned for `IDataEditor`                                    |
-| FilderedControllerFactory | Ordered   | Explicit Registration                                             |
+| FilteredControllerFactory | Ordered   | Explicit Registration                                             |
 | HealthChecks              | Lazy      | Type scanned for `HealthCheck`                                    |
 | OEmbedProviders           | Ordered   | Explicit Registration                                             |
 | PackageActions            | Lazy      | Type scanned for `IPackageAction`                                 |
