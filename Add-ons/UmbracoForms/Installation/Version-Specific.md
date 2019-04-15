@@ -12,11 +12,11 @@ The reasoning behind this is due to some underlying changes in Umbraco CMS core.
 ## Version 4 to Version 6
 Upgrading to Version 6 of Umbraco Forms, has a higher minimum dependency on Umbraco CMS core of `7.6.0` & higher. The reasoning behind this is due to some underlying changes to ensure Forms works with Umbraco Cloud & Deploy.
 
-With Umbraco you have many options to upgrade Umbraco Forms; you can install the Umbraco package via the community package search from our.umbraco.com or downloading directly from our.umbraco.com. Alternatively you can download a regular ZIP containing the updated files which you can unzip & apply over the top of your existing install. Both of these approaches should not cause any upgrade problems.
+With Umbraco you have many options to upgrade Umbraco Forms; you can install the Forms package via the community package search from within the Developer Tab in the CMS or downloading directly from [our.umbraco.com](https://our.umbraco.com/packages/developer-tools/umbraco-forms/). Alternatively you can download a regular ZIP file containing the updated files which you can unzip & apply over the top of your existing install. Both of these approaches should not cause any upgrade problems.
 
 ### Upgrading with NuGet
 Using NuGet to perform an Upgrade of Umbraco Forms to the next major version, you will run into a problem where the legacy MacroPartial view file will be removed from the site & thus cause any existing Umbraco Forms rendered on the site to stop functioning.
-Before running the site after the NuGet upgrade again; consider this may need to be done on each environment depending on your deployment process/setup. You will need to from your source control copy/restore the following file `Views/MacroPartials/InsertUmbracoForm.cshtml`
+Before running the site after the NuGet upgrade again; consider this may need to be done on each environment depending on your deployment process/setup. You will need to copy/restore the following file `Views/MacroPartials/InsertUmbracoForm.cshtml` from your source control solution.
 
 The file needs to be here before the site is restarted - due to the migration/upgrade tasks listed below.
 
