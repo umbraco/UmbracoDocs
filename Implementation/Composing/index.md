@@ -66,7 +66,7 @@ namespace My.Website
 ```
 
 ```csharp
-using Umbraco.Core.Components;
+using Umbraco.Core.Composing;
 using Umbraco.Web;
 
 namespace My.Website
