@@ -352,3 +352,99 @@ The runtime has detected an Umbraco install which needed to be upgraded, and is 
 The runtime has detected an up-to-date Umbraco install and is running.
 
 
+## Example of using Collections for extensability
+
+You may wish to create an Umbraco package that allows package consumers to extend and add additional functionality. In this example we show how you can use the `OrderedCollectionBuilderBase`
+
+```csharp
+using System.Collections.Generic;
+using Umbraco.Core.Composing;
+using Umbraco.Web.WebApi;
+
+namespace TestCollections.Code
+{
+    // Implement IDiscoverable (To help with typescanning speed/perf)
+    public interface IMyThing : IDiscoverable
+    {
+        string Name { get; }
+
+        string DoSomething(string message);
+    }
+
+    public class ExampleThing : IMyThing
+    {
+        public string Name => "Example";
+
+        public string DoSomething(string message)
+        {
+            return $"Hello {message}";
+        }
+    }
+
+    // OrderedCollection - use when order of items is important (You may want to excute them in order)
+    // Different types of collections - https://our.umbraco.com/Documentation/Implementation/Composing/#types-of-collections
+
+    // For more reference take a look at the various collection builders we have in Umbraco Core such as 'DashboardCollectionBuilder'
+    // That shows a weighted collection which merges types from assemblies along with stuff in package.manifest files
+    public class MyThingsCollectionBuilder : OrderedCollectionBuilderBase<MyThingsCollectionBuilder, MyThingsCollection, IMyThing>
+    {
+        protected override MyThingsCollectionBuilder This => this;
+    }
+
+    public class MyThingsCollection : BuilderCollectionBase<IMyThing>
+    {
+        public MyThingsCollection(IEnumerable<IMyThing> items)
+            : base(items)
+        { }
+    }
+
+    public static class WebCompositionExtensions
+    {
+        public static MyThingsCollectionBuilder MyThings(this Composition composition)
+            => composition.WithCollectionBuilder<MyThingsCollectionBuilder>();
+    }
+
+    public class MyThingComposer : IUserComposer
+    {
+        public void Compose(Composition composition)
+        {
+            //Explicitly add to the collection a Type in a specific order
+            composition.MyThings().Append<ExampleThing>();
+            composition.MyThings().Append<AnotherThing>();
+            composition.MyThings().Append<SomeOtherThing>();
+
+            // Add types from assemblies - be conscious of doing type scanning
+            // Adds to bootup time
+            // If you have to then ensure your Interface implements `IDiscoverable`
+            composition.MyThings().Append(composition.TypeLoader.GetTypes<IMyThing>());            
+        }
+    }
+
+    // An Umbraco Backoffice Web API Controller - Used in a dashboard or Property Editor perhaps?
+    public class SomeBackofficeApiController : UmbracoAuthorizedApiController
+    {
+        private MyThingsCollection _mythings;
+
+        public SomeBackofficeApiController()
+        {
+        }
+
+        public SomeBackofficeApiController(MyThingsCollection mythings)
+        {
+            _mythings = mythings;
+        }
+
+        public List<string> GetMessages(string message)
+        {
+            var items = new List<string>();
+
+            foreach(var thing in _mythings)
+            {
+                items.Add(thing.DoSomething(message));
+            }
+
+            return items;
+        }
+    }
+}
+```
