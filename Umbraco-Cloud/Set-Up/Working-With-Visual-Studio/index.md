@@ -7,6 +7,7 @@ versionFrom: 7.0.0
 This page describes how to setup your Visual Studio solution to work with an Umbraco Cloud Project.
 In this article you will find:
 
+ - [Prerequisites](#prerequisites)
  - [Generate a Visual Studio Solution](#generate-a-visual-studio-solution)
  - [The Git repositories](#the-git-repositories)
  - [What's next?](#whats-next)
