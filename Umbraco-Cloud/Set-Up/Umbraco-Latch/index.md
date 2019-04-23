@@ -31,6 +31,6 @@ Umbraco Latch can issue 5 certificates for a single domain per week. If this lim
 
 ## Read more
 
-* [Redirect from HTTP to HTTPS](Rewrites-on-Cloud#running-your-site-on-https-only)
+* [Redirect from HTTP to HTTPS](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Manage-Hostnames/Rewrites-on-Cloud/#running-your-site-on-https-only)
 * [Blog post: Introducing Umbraco Latch](https://umbraco.com/blog/introducing-umbraco-latch/)
 * [Umbraco Latch on Umbraco.com](https://umbraco.com/products/umbraco-latch/)
