@@ -40,7 +40,7 @@ What follows is **a recommendation and not the only way to work with Visual Stud
 Before running the UaaS.cmd tool you will need the **git clone url** for your Umbraco Cloud Project. 
 
 * Go to the Project in the Portal
-* Copy the url from "How to connect my machine".
+* Copy the url from "How to connect my machine"
 
 ![](images/connect-my-machine.png)
 
@@ -53,7 +53,11 @@ If you haven't cloned the repository before or don't have a [git credentials man
 
 ![](images/cmd-clone.png)
 
-Once its done running the tool will have created a Visual Studio solution file `*.sln` and two Projects. The one called `*.Web` contains the Umbraco site that was (git) cloned from your Project. The `*.Core` is a Class Library that you can use for your custom code, as mentioned above.
+Once its done running the tool will have created a Visual Studio solution file `*.sln` and two Projects. 
+
+* `*.Web` contains the Umbraco site that was (git) cloned from your Project
+* `*.Core` is a Class Library that you can use for your custom code, as mentioned above
+
 Both projects are configured with the NuGet packages for Umbraco using the version that corresponds to the site cloned from Umbraco Cloud.
 
 The result should look something like this within the folder where the UaaS.cmd tool ran:
@@ -63,24 +67,26 @@ The result should look something like this within the folder where the UaaS.cmd 
 You can now open the solution in Visual Studio and hit F5 to start the site directly from Visual Studio.
 
 ## The Git repositories
-One thing to notice about this setup is that you will get two git repositories just as you get two projects. The site cloned from your Umbraco Cloud Project will be contained within a git repository that is connected to your Project on Umbraco Cloud. Whenever you want to deploy changes to your (remote) Umbraco Cloud site you should commit everything within the `*.Web` folder, which is where the git repository for Umbraco Cloud is also located.
+One thing to notice about this setup is that you will get two git repositories just as you get two projects. 
 
-Going up one level to where the `*.sln` file is located you will notice a `.git` folder, which is the second git repository. You should use this repository for all the code you write as well as the solution and project files for Visual Studio.
+1. The site cloned from your Umbraco Cloud Project will be contained within a git repository that is connected to your Project on Umbraco Cloud. Whenever you want to deploy changes to your (remote) Umbraco Cloud site you should commit everything within the `*.Web` folder, which is where the git repository for Umbraco Cloud is also located.
 
-So think of everything within the `*.Web` folder as your deployment repository, and everything surrounding that folder as your source code repository. The Umbraco Cloud repository (within the `*.Web` folder) will not (and should not) be committed to the other git repository.
+2. Going up one level to where the `*.sln` file is located you will notice a `.git` folder. This is the second git repository. You should use this repository for all the code you write as well as the solution and project files for Visual Studio.
+
+Think of everything within the `*.Web` folder as your **deployment repository**, and everything surrounding that folder as your **source code repository**. The Umbraco Cloud repository (within the `*.Web` folder) will not (and should not) be committed to the other git repository.
 
 ## What's next?
-Now that you've added your own touch to your site, and thoroughly tested of course, you're ready to deploy to your Umbraco Cloud development site (the destination might vary depending on the plan you chose). 
+Now that you've added your own touch to your site, you're ready to deploy to your Umbraco Cloud development site (the destination might vary depending on the plan you chose). 
 The key thing to know is that your custom code from the `*.Core` project will be built into a .dll file in your `*.Web` project that you can then push up to the Cloud repository.
 
 Once you have everything your site will need committed you can follow the [deployment workflow](../../Deployment/) to complete the deployment.
 
 ## Working with Visual Studio
-As mentioned in the previous section, you will start with two Projects in Visual Studio - A project called `*.Web` with the Umbraco site (from Umbraco Cloud) configured as a Website project, and a project called `*.Core` configured as a class library for all of your code.
+As mentioned in the previous section, you will start with two projects in Visual Studio - A project called `*.Web` with the Umbraco site (from Umbraco Cloud) configured as a Website project, and a project called `*.Core` configured as a class library for all of your code.
 
 _So what goes where?_
 
-Anything that is used within Umbraco like plugins and configuration should by default be placed in the `*.Web` project. Here is a list of other elements that you want to place in the Website project:
+Anything that is used within Umbraco, like plugins and configuration, should by default be placed in the `*.Web` project. Here is a list of other elements that you want to place in the `*.Web` project:
 
 * Website assets like css, JavaScript and related images
 * Views, Partial Views and Partial View Macros
@@ -89,7 +95,7 @@ Anything that is used within Umbraco like plugins and configuration should by de
 * Plugins (typically located in App_Plugins)
 * Meta data (the files that Umbraco Deploy uses in the ~/Data/Revision/ folder)
 
-Media files will also be placed under the `*.Web` folder and you will be able to see these through Visual Studio, because a Website projects shows all files on disk by default. Media files from the /media/ folder should not be committed to the git repository, but more on that in the next section about 'What should be committed'.
+Media files will also be placed under the `*.Web` folder and you will be able to see these through Visual Studio, because a Website project shows all files on disk by default. Media files from the /Media/ folder should not be committed to the git repository, but more on that in the next section about 'What should be committed'.
 
 We recommend placing all your code in the `*.Core` project (instead of, for example, using App_Code for that). This includes, but is not limited to:
 
