@@ -12,7 +12,7 @@ You can find the options to do this click on the arrow next to the **Save and pu
 
 This will open a modal where you can specify dates and time.
 
-![Scheduled publishing](images/Scheduled-publishing-8.png)
+![Scheduled publishing](images/scheduled-publishing-8.png)
 
 ## Timezones
 
