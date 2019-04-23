@@ -4,18 +4,18 @@ versionFrom: 8.0.0
 ---
 
 # Composing
-Customising the behaviour of an Umbraco Application at 'start up'. eg adding, removing or replacing the core functionality of Umbraco or registering custom code to subscribe to events. 
+Customising the behaviour of an Umbraco Application at 'start up'. eg adding, removing or replacing the core functionality of Umbraco or registering custom code to subscribe to events.
 
 ## Overview
-An Umbraco application is a `Composition` made of many different 'collections' of specific functionality/implementation logic/components (eg. UrlProviders, ContentFinders - see below for a full list). These collections are populated when the Umbraco Application starts up. 
+An Umbraco application is a `Composition` made of many different 'collections' of specific functionality/implementation logic/components (eg. UrlProviders, ContentFinders - see below for a full list). These collections are populated when the Umbraco Application starts up.
 
 'Composing' is the term used to describe the process of curating which pieces of functionality should be included in a particular collection. The code that implements these choices at start up is called a `Composer`.
 
-A `Component`, is a generic wrapper for writing custom code during composition, it has two methods: `Initialize()` and `Terminate()` and these are executed when the Umbraco Application starts up, and when it shuts down, respectively. Typically a `Component` may be used to wire up custom code to handle a particular event in Umbraco. (see content saving example below). 
+A `Component`, is a generic wrapper for writing custom code during composition, it has two methods: `Initialize()` and `Terminate()` and these are executed when the Umbraco Application starts up, and when it shuts down, respectively. Typically a `Component` may be used to wire up custom code to handle a particular event in Umbraco. (see content saving example below).
 
 How are the collections populated? - Either by scanning the codebase for c# classes that inherit from a particular base class or implement a particular interface (typed scanned) or by being explictly registered via a `Composer`.
 
-Umbraco ships with a set of `ICoreComposer`'s  that pull together the default set of components and collections that deliver the core 'out of the box' Umbraco behaviour. These default collections and components can be removed, reordered, replaced, etc by implementing `IUserComposer`'s and `IComponent`s to customise and extend Umbraco's behaviour. 
+Umbraco ships with a set of `ICoreComposer`'s  that pull together the default set of components and collections that deliver the core 'out of the box' Umbraco behaviour. These default collections and components can be removed, reordered, replaced, etc by implementing `IUserComposer`'s and `IComponent`s to customise and extend Umbraco's behaviour.
 
 ### Example - Explicity Registering a new custom OEmbedProvider
 This example shows a custom 'Spotify' OEmbed Provider which will allow Spotify URLs to be used via the 'embed' button in the Grid and Rich Text Editors. As the collection for OEmbedProviders is not 'typed scanned', we need to explicitly register the provider in the collection of OEmbedProviders. We create a c# class which implements `IUserComposer` and append our new Spotify OEmbedProvider to the OEmbedProviders() collection:
@@ -157,7 +157,7 @@ Is an implementation of IUserComposer, that provides a quicker way to add a cust
 ```csharp
         [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
         public class SubscribeToContentServiceSavingComposer : ComponentComposer<SubscribeToContentServiceSavingComponent>
-        {       
+        {
         }
 ```
 ## Collections
@@ -363,8 +363,7 @@ using Umbraco.Web.WebApi;
 
 namespace TestCollections.Code
 {
-    // Implement IDiscoverable (To help with typescanning speed/perf)
-    public interface IMyThing : IDiscoverable
+    public interface IMyThing
     {
         string Name { get; }
 
@@ -383,9 +382,6 @@ namespace TestCollections.Code
 
     // OrderedCollection - use when order of items is important (You may want to excute them in order)
     // Different types of collections - https://our.umbraco.com/Documentation/Implementation/Composing/#types-of-collections
-
-    // For more reference take a look at the various collection builders we have in Umbraco Core such as 'DashboardCollectionBuilder'
-    // That shows a weighted collection which merges types from assemblies along with stuff in package.manifest files
     public class MyThingsCollectionBuilder : OrderedCollectionBuilderBase<MyThingsCollectionBuilder, MyThingsCollection, IMyThing>
     {
         protected override MyThingsCollectionBuilder This => this;
@@ -409,14 +405,9 @@ namespace TestCollections.Code
         public void Compose(Composition composition)
         {
             //Explicitly add to the collection a Type in a specific order
-            composition.MyThings().Append<ExampleThing>();
-            composition.MyThings().Append<AnotherThing>();
-            composition.MyThings().Append<SomeOtherThing>();
-
-            // Add types from assemblies - be conscious of doing type scanning
-            // Adds to bootup time
-            // If you have to then ensure your Interface implements `IDiscoverable`
-            composition.MyThings().Append(composition.TypeLoader.GetTypes<IMyThing>());            
+            composition.MyThings().Append<ExampleThing>()
+                .Append<AnotherThing>()
+                .Append<SomeOtherThing>();
         }
     }
 
@@ -438,7 +429,7 @@ namespace TestCollections.Code
         {
             var items = new List<string>();
 
-            foreach(var thing in _mythings)
+            foreach (var thing in _mythings)
             {
                 items.Add(thing.DoSomething(message));
             }
