@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 Each document in Umbraco can be scheduled for publishing and unpublishing on a pre-defined date and time. 
 
-You can find the options to do this click on the arrow next to the **Save and publish** button and pick **Schedule...*. 
+You can find the options to do this click on the arrow next to the **Save and publish** button and pick **Schedule...**. 
 
 ![Scheduled publishing](images/schedule.png)
 
