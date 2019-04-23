@@ -352,7 +352,7 @@ The runtime has detected an Umbraco install which needed to be upgraded, and is 
 The runtime has detected an up-to-date Umbraco install and is running.
 
 
-## Example of using Collections for extensability
+## Example of using Ordered Collections and adding types explicitly
 
 You may wish to create an Umbraco package that allows package consumers to extend and add additional functionality. In this example we show how you can use the `OrderedCollectionBuilderBase`
 
@@ -408,6 +408,97 @@ namespace TestCollections.Code
             composition.MyThings().Append<ExampleThing>()
                 .Append<AnotherThing>()
                 .Append<SomeOtherThing>();
+        }
+    }
+
+    // An Umbraco Backoffice Web API Controller - Used in a dashboard or Property Editor perhaps?
+    public class SomeBackofficeApiController : UmbracoAuthorizedApiController
+    {
+        private MyThingsCollection _mythings;
+
+        public SomeBackofficeApiController()
+        {
+        }
+
+        public SomeBackofficeApiController(MyThingsCollection mythings)
+        {
+            _mythings = mythings;
+        }
+
+        public List<string> GetMessages(string message)
+        {
+            var items = new List<string>();
+
+            foreach (var thing in _mythings)
+            {
+                items.Add(thing.DoSomething(message));
+            }
+
+            return items;
+        }
+    }
+}
+```
+
+## Example of using Lazy Collections with Type Scanning
+
+You may wish to create an Umbraco package that allows package consumers to extend and add additional functionality. In this example we show how you can use the `LazyCollectionBuilderBase` to scan assemblies that implement your interface by using the `TypeLoader`
+
+:::warning
+Add types from assemblies - be conscious of doing type scanning, as this adds time to bootup of Umbraco.
+If you still need to use type scanning, ensure your Interface implements `IDiscoverable`
+:::
+
+```csharp
+using System.Collections.Generic;
+using Umbraco.Core.Composing;
+using Umbraco.Web.WebApi;
+
+namespace TestCollections.Code
+{
+    // Implement IDiscoverable (To help with typescanning speed/perf)
+    public interface IMyThing : IDiscoverable
+    {
+        string Name { get; }
+        string DoSomething(string message);
+    }
+
+    public class ExampleThing : IMyThing
+    {
+        public string Name => "Example";
+
+        public string DoSomething(string message)
+        {
+            return $"Hello {message}";
+        }
+    }
+
+    public class MyThingsCollectionBuilder : LazyCollectionBuilderBase<MyThingsCollectionBuilder, MyThingsCollection, IMyThing>
+    {
+        protected override MyThingsCollectionBuilder This => this;
+    }
+
+    public class MyThingsCollection : BuilderCollectionBase<IMyThing>
+    {
+        public MyThingsCollection(IEnumerable<IMyThing> items)
+            : base(items)
+        { }
+    }
+
+    public static class WebCompositionExtensions
+    {
+        public static MyThingsCollectionBuilder MyThings(this Composition composition)
+            => composition.WithCollectionBuilder<MyThingsCollectionBuilder>();
+    }
+
+    public class MyThingComposer : IUserComposer
+    {
+        public void Compose(Composition composition)
+        {
+            // Add types from assemblies - be conscious of doing type scanning
+            // as this adds time to bootup of Umbraco
+            // If you still need to use type scanning, ensure your Interface implements `IDiscoverable`
+            composition.MyThings().Add(() => composition.TypeLoader.GetTypes<IMyThing>());
         }
     }
 
