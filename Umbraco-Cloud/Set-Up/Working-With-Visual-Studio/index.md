@@ -16,21 +16,31 @@ In this article you will find:
  - [Working with NuGet](#working-with-nuget)
 
 ## The Visual Studio Solution
-If you're writing a lot of custom code (or just like Intellisense), we recommend using a Visual Studio solution with a Website Project for the Umbraco site (coming from the cloned git repository from the Umbraco Cloud Project), and a Class Library Project for the code that will be created for the Umbraco site. This can be MVC Controllers, WebApi Controllers, Surface Controllers or data access plus whatever else you might need to write code for.
+If you're writing a lot of custom code (or just like Intellisense), we recommend using a Visual Studio solution with a Website Project for the Umbraco site (coming from the cloned git repository from the Umbraco Cloud Project), and a Class Library Project for the code that will be created for the Umbraco site - this can be MVC Controllers, WebApi Controllers, Surface Controllers or data access plus whatever else you might need to write code for.
 
-Below is a screenshot of our recommendation on how the Projects should be configured. Here we use the following naming conventions: `*.Web` for the Umbraco website and `*.Core` for the accompanying code.
+Below is a screenshot of our recommendation on how the projects should be configured. Here we use the following naming conventions: `*.Web` for the Umbraco website and `*.Core` for the accompanying code.
 
 ![Visual Studio Project setup](images/vs-project-setup.png)
 
 ## Generate a Visual Studio Solution
-Manually creating and configuring a Visual Studio solution with the right Projects can take a bit of time, so we have made a little command line tool that will set the solution up for you.
+Manually creating and configuring a Visual Studio solution with the right projects can take a bit of time, so we have made a little command line tool that will set the solution up for you.
+
 Download the UaaS.cmd tool from [umbra.co/uaas-cmd](https://umbra.co/uaas-cmd) and place it in the folder you want the solution in.
 
-**Note:** this is just a recommended setup. If you don't like the setup then you can play with it and make it your own. There's nothing magic about this setup, it is just adding a few files to your Umbraco Cloud website to give you a flying start to begin working with Visual Studio. What follows is a recommendation and not the only way to work with Visual Studio.
+:::note
+**Important**: To use the UaaS.cmd tool you will need to have Visual Studio 2017 version 15.9.6 or any later version installed.
+:::
+
+This is just a recommended setup. If you don't like the setup then you can play with it and make it your own. There's nothing magic about this setup, it is just adding a few files to your Umbraco Cloud website to give you a flying start to begin working with Visual Studio. 
+
+What follows is **a recommendation and not the only way to work with Visual Studio**.
 
 ![](images/cmd-in-empty-folder.png)
 
-Before running the UaaS.cmd tool you will need the git clone url for your Umbraco Cloud Project. So go to the Project in the Portal and copy the url from "Connect my machine".
+Before running the UaaS.cmd tool you will need the **git clone url** for your Umbraco Cloud Project. 
+
+* Go to the Project in the Portal
+* Copy the url from "How to connect my machine".
 
 ![](images/connect-my-machine.png)
 
