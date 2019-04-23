@@ -22,6 +22,11 @@ Below is a screenshot of our recommendation on how the projects should be config
 
 ![Visual Studio Project setup](images/vs-project-setup.png)
 
+## Prerequisites 
+
+* Visual Studio 2017 v15.9.6 or later
+* Git and/or Git Credential Manager for Windows
+
 ## Generate a Visual Studio Solution
 Manually creating and configuring a Visual Studio solution with the right projects can take a bit of time, so we have made a little command line tool that will set the solution up for you.
 
