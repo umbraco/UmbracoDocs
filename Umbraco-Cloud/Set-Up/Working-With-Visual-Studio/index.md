@@ -116,7 +116,9 @@ You can do this by simply right-clicking on **References** and selecting **Add R
 
 When working with this solution setup it's important to remember that you have one git repository for your source code, and one within the `*.Web` folder for committing and deploying your changes to Umbraco Cloud.
 
-The cloned git repository from Umbraco Cloud comes with its own `.gitignore` so files that should NOT be committed are already handled. As a rule of thumb all files that are required to run the Umbraco site should be committed to the git repository in the `*.Web` folder and deployed to Umbraco Cloud. This includes assemblies (`*.dll`). 
+The cloned git repository from Umbraco Cloud comes with its own `.gitignore` so files that should NOT be committed are already handled. 
+
+As a rule of thumb all files that are required to run the Umbraco site should be committed to the git repository in the `*.Web` folder and deployed to Umbraco Cloud. This includes assemblies (`*.dll`). 
 
 For the `*.Core` part of the solution as well as the solution file and default `.gitignore` file you commit that to the source code repository. You should ideally set a remote for this git repository to your own git host like GitHub, BitBucket or Visual Studio Team Services.
 
@@ -130,12 +132,12 @@ These are the files and folders you typically want to commit in your own source 
 ## Setup for new team members
 
 When you are working in a team you will have additional people that will use this same setup, but they will only clone your source code repository from your GitHub, Bitbucket or Visual Studio Team Services account. In doing so they will, by default, not get the `*.Web` folder and the Umbraco site, because that part is not contained within the source code repository. 
-So to make it easy to get up and running we added a `UaaSClone.cmd`, which can be run after cloning the source code repository.
-Running this command line tool will clone the Umbraco Cloud repository to the right folder, and set up Visual Studio for them.
+
+To make it easy to get up and running we added a `UaaSClone.cmd`, which can be run after cloning the source code repository. Running this command line tool will clone the Umbraco Cloud repository to the right folder, and set up Visual Studio for them.
 
 ## Working with NuGet
 
-Some Umbraco packages are available on NuGet and you can install NuGet packages into the `*.Web` project to add functionality to your site. Remember, this is just a normal Visual Studio solution so you can work with NuGet packages exactly like you're used to, install them in the project where you need them. You should always install any NuGet packages you need in the `*.Web` project in order for them to work in your website and deploy to your other environments.
+Some Umbraco packages are available on NuGet and you can install NuGet packages into the `*.Web` project to add functionality to your site. Remember, this is just a normal Visual Studio solution so you can work with NuGet packages exactly like you're used to. Install them in the project where you need them. You should always install any NuGet packages you need in the `*.Web` project in order for them to work in your website and deploy to your other environments.
 
 For example, if you need to program something in your `*.Core` project and you depend on a NuGet package for the code you're writing, you should install that NuGet package in both:
 
