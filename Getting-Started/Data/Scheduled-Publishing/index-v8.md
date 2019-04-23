@@ -1,17 +1,22 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # Scheduled Publishing
 
-Each document in Umbraco can be scheduled for publishing and unpublishing on a pre-defined date and time. In order to do this, go to the **Info** tab and find the **Scheduled Publishing** box in the right side. There you can select the exact date and time to publish and unpublish the current content item.
+Each document in Umbraco can be scheduled for publishing and unpublishing on a pre-defined date and time. 
 
-![Scheduled publishing](images/Scheduled-publishing.png)
+You can find the options to do this click on the arrow next to the **Save and publish** button and pick **Schedule...**. 
 
-## Timezones <a name="timezones"></a>
+![Scheduled publishing](images/schedule.png)
 
-Your server may be in a different timezone then where you are located. As of Umbraco version 7.5, you are able to select a date and time in your local timezone and Umbraco will make sure that the item gets published at the selected time. So if you select 12PM then the item will be published at 12PM in the timezone you are in. This may be 8PM on the server, which is indicated when you select the date and time.
+This will open a modal where you can specify dates and time.
+
+![Scheduled publishing](images/scheduled-publishing-8.png)
+
+## Timezones
+
+Your server may be in a different timezone then where you are located. You are able to select a date and time in your local timezone and Umbraco will make sure that the item gets published at the selected time. So, if you select 12PM then the item will be published at 12PM in the timezone you are in. This may be 8PM on the server, which is indicated when you select the date and time.
 
 ![Scheduled publishing](images/Publish-Timezone-Difference.jpg)
 
