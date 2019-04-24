@@ -7,7 +7,7 @@ versionFrom: 8.0.0
 Customising the behaviour of an Umbraco Application at 'start up'. eg adding, removing or replacing the core functionality of Umbraco or registering custom code to subscribe to events.
 
 ## Overview
-An Umbraco application is a `Composition` made of many different 'collections' of specific functionality/implementation logic/components (eg. UrlProviders, ContentFinders - see below for a full list). These collections are populated when the Umbraco Application starts up.
+An Umbraco application is a `Composition` made of many different 'collections' and single items of specific functionality/implementation logic/components (eg. UrlProviders, ContentFinders - see below for a full list). These collections are populated when the Umbraco Application starts up.
 
 'Composing' is the term used to describe the process of curating which pieces of functionality should be included in a particular collection. The code that implements these choices at start up is called a `Composer`.
 
