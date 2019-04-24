@@ -100,7 +100,6 @@ using Umbraco.Core.Services.Implement;
 
 namespace My.Website
 {
-    [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
     public class SubscribeToContentServiceSavingComposer : IUserComposer
     {
         public void Compose(Composition composition)
@@ -155,7 +154,6 @@ Ordering of composers is important, the last one added can override a previously
 Is an implementation of IUserComposer, that provides a quicker way to add a custom Component to the Component's collection. Creating a c# class that inhertits from ComponentComposer&lt;YourComponentType&gt; will automatically add YourComponentType to the collection of Components. In the example above, the SubscribeToContentServiceSavingComposer for the SubscribeToContentServiceSavingComponent could have been written more conveniently as:
 
 ```csharp
-        [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
         public class SubscribeToContentServiceSavingComposer : ComponentComposer<SubscribeToContentServiceSavingComponent>
         {
         }
@@ -212,7 +210,6 @@ using Umbraco.Web.HealthCheck.Checks.Security;
 
 namespace My.Website
 {
-    [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
     public class MyComposer : IUserComposer
     {
         public void Compose(Composition composition)
@@ -309,6 +306,8 @@ Note that Umbraco also has a `[Enable]` & `[EnableComposer]` attributes but all 
 
 ### [RuntimeLevel]
 The most common usecase for this is to set this attribute on your own composers and to set the minimum level to Run. Which will mean this composer will not be invoked until Umbraco is fully booted and is running. So if an upgrade or Umbraco is still booting your own custom composer code won't run until everything is all setup and good.
+
+By default any `IUserComposer` uses the Minimum Runtime Level of `Run` & thus do not need to explictly add the attribute as shown in the example below.
 
 ```csharp
 using Umbraco.Core;
