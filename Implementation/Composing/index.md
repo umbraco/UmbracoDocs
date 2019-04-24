@@ -445,7 +445,7 @@ You may wish to create an Umbraco package that allows package consumers to exten
 
 :::warning
 Add types from assemblies - be conscious of doing type scanning, as this adds time to bootup of Umbraco.
-If you still need to use type scanning, ensure your Interface implements `IDiscoverable`
+If you still need to use type scanning, ensure your Interface implements `IDiscoverable` as this is a type that is scanned once by Umbraco and the results are cached and then filtered. This saves time by re-scanning for types over and over again.
 :::
 
 ```csharp
