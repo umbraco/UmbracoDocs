@@ -2,17 +2,17 @@
 versionFrom: 7.0.0
 ---
 
-# Troubleshooting structure deployment/restore errors
-
-## Error in files containing site structure
+# How to resolve collision errors
 
 :::note
 If your project is using Umbraco Courier, please refer to this article instead: [Schema Mismatches with Courier](../../Courier/Structure-Errors-Courier)
 :::
 
-On some occasions, it's possible that you'll encounter collision errors on your Umbraco Cloud environments. This means that two `.uda` files are created for the same entity. The `.uda` files contain schema data for each of your entities (e.g Document Types, Templates, Macros, Dictionary Items, Data types).
+On some occasions, it is possible that you will encounter **collision errors** on your Umbraco Cloud environments. 
 
-Example:
+This means that two (or more) `.uda` files have been created for the same entity. The `.uda` files contain schema data for each of your entities e.g Document Types, Templates, Macros, Dictionary Items, Data types etc (for a full list of these entities see [What are UDA files?](../../Setup/Power-Tools/Generating-UDA-files/#what-are-uda-files)).
+
+Here's an example of a collision error:
 
     Some artifacts collide on unique identifiers.
     This means that they have different Udis, yet
@@ -25,17 +25,25 @@ Example:
         UdaFile: ~/data/revision/document-type__f848c577f02b4ee5aea84f87458072a4.uda
 
 
-In the example above there are two files in the `~/data/revision` folder which contain the same alias, for a Document Type. Each file has a different file name due to having a different unique key (UDI), but the Document Type they both contain is `home`. When Deploy tries to create the site structure from these files, it is inspecting each file to try to create a Document Type with the aliases specified.
+In this example there are two `.uda` files who share the same alias which leads to a conflict: it is impossible for Deploy to know which is the "correct" file, so it gives up and sends an error back.
 
-In the case above, there are two files (Document Type representations) who share the same alias which leads to a conflict: it's impossible for Deploy to know which is the "correct" file, so it gives up and sends an error back.
+The error message gives a lot of useful information which you can use to resolve the issue:
 
-### Cause
+* Which entities are involved?
+* The unique identifier (alias) for the involved entities
+* Location and names of the colliding files
+
+In the example above the entity involved is a Document Type with "home" as the alias. There are two colliding files both located in the `/data/revision` folder. The files are colliding because they share the same alias but have different GUIDs (also the name of the files).
+
+## Cause
 
 <iframe width="800" height="450" src="https://www.youtube.com/embed/pF5SUh30FKI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-The main cause of this problem is when a Document Type (or Media Type, Data Type, etc) is manually created in two environments using the same alias. Since each of the environments are isolated and do not know what the other one is doing until they are synchronized - creating a Document Type in each environment will actually create duplicate Document Types that are considered separate entities even though they look the same and share the same alias in the backoffice of both environments.
+The main cause of this problem is when an entity has been manually created in two or more environments, using the same alias. Since each of the environments are isolated and do not know what the other one is doing until they are synchronized, creating an entity with identical aliases in each environment will actually create duplicate entities that are considered separate entities even though they look the same and share the same alias in the backoffice of both environments.
 
-If you have two or more Cloud environments, we recommend that you never create or make schema changes directly on the Live or Staging environments. You should work with schema only in your Development environment or even better, your local clone of the project.
+:::tip
+When you have two or more Cloud environments, we recommend that you never create or make schema changes directly on the Live or Staging environments. You should work with schema only in your Development environment or even better, your local clone of the project.
+::
 
 ## Video tutorial
 
@@ -43,15 +51,13 @@ If you have two or more Cloud environments, we recommend that you never create o
 
 You can find a full playlist about Collision errors on our [YouTube Channel](https://www.youtube.com/playlist?list=PLG_nqaT-rbpzgBQkZtRrdzIpeFbRNvO0E).
 
-## Fixing
+## Choose the entity you want to use
 
-In order to fix this problem, you will have to decide which of the two colliding Document Types is the correct one. The error message will give you a lot of details you can use in your investigation:
+In order to fix this problem, you will have to decide which of the colliding entities is the correct one and the one you want to use on your Live environment.
 
-  * The affected entity type (Document Type, Data Type, Member type, etc.)
-  * The alias of the entity which has duplicated `.uda` files
-  * A list of the files containing the same alias
+Let's use the example from the beginning of this article, where two `.uda` files for the Document Type "home" are colliding.
 
-Let’s imagine that we have a project with two Umbraco Cloud environments (Development and Live) and a local environment. A Document Type has been created on Live and a Document Type with the same alias has also been created on Development. 
+You can run into an error like this on all of your Cloud environment. Somestimes you might also run into it, on a local clone of your project.
 
 ![Before extraction error](images/visualization1.png)
 
