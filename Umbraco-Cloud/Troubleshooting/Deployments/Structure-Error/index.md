@@ -57,11 +57,9 @@ In order to fix this problem, you will have to decide which of the colliding ent
 
 Let's use the example from the beginning of this article, where two `.uda` files for the Document Type "home" are colliding.
 
-You can run into an error like this on all of your Cloud environment. Somestimes you might also run into it, on a local clone of your project.
+You can run into an error like this on all of your Cloud environment. Somestimes you might also run into it, on a local clone of your project. 
 
-![Before extraction error](images/visualization1.png)
-
-Up until now, this project has been working fine, since no deployments have been made from Development to Live since the Document Type was created on Development.
+This guide will use an example, where two files are colliding on a Development and a Live environment. 
 
 ### Deploying your changes
 
