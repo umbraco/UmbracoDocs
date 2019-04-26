@@ -85,7 +85,7 @@ Let's use the example from the beginning of this article, where two `.uda` files
 
 For this example, it’s decided that the Document Type currently used on the Live environment is the one we want to use going forward.
 
-![Visual representation of the error message](images/visualizing.PNG) - *A visual representation of the error message*
+![Visual representation of the error message](images/visualizing.png) - *A visual representation of the error message*
 
 In order to figure out which of the two colliding `.uda` files is the one for the Document Type being used on the Live environment follow these steps:
 
@@ -96,7 +96,7 @@ In order to figure out which of the two colliding `.uda` files is the one for th
 5. This will regenerate a `.uda` file for the Document Type being used on the Live environment
 6. Run the command: `echo > deploy` in the same folder, to make sure everything is extracting correctly
 
-![Finding correct UDA file](images/visualizing-2.PNG)
+![Finding correct UDA file](images/visualizing-2.png)
 
 You now know which `.uda` file you want. In this case: `document-type__1.uda`.
 
@@ -111,20 +111,20 @@ We strongly recommend that you resolve this locally since this will ensure that 
     * When you run the project, you should see an error message in the browser once the site starts to build
 3. Remove the wrong `.uda` file (`document-type__2.uda`) from the `/data/revision` folder - you will not be able to see the Document Type in the backoffice because the failed extraction
 
-![Cleaning up local clone](images/visualizing-3.PNG)
+![Cleaning up local clone](images/visualizing-3.png)
 
 4. Open CMD prompt and navigate to your local `/data` folder
 5. Type the following command: `echo > deploy`
 6. You will now see a `deploy-complete` marker in your local `/data` folder
 7. **Important**: Before you commit and push the changes to the Development environment, you need to access the backoffice of the Development environment and remove the Document Type from there
 
-![Clean up Development](images/visualizing-4.PNG)
+![Clean up Development](images/visualizing-4.png)
 
 8. **Commit** and **push** the changes from your local clone to the Development environment, using your local Git client
 
 When the push from local to the Development environment has completed, refresh the Umbraco Cloud portal and you will see that the Development environment is now green, which means that the extraction error has been resolved.
 
-![Push to Cloud completed](images/visualizing-5.PNG)
+![Push to Cloud completed](images/visualizing-5.png)
 
 Does your Development still have the red indicator? 
 Sometimes you might need to run another extraction on your Cloud environment after deploying in order to get a `deploy-complete` marker in your `/data` folder and turn your environment *green*. To do this, follow these steps:
