@@ -42,7 +42,7 @@ If you feel something is missing here or you want to help out documenting some o
 * [Tutorial: Porting packages to V8](Tutorials/Porting-Packages-V8)
 * [Dashboards](Extending/Dashboards)
 
-## In progress:
+## In progress: 
 
 * EditorModel Events
 * Custom MVC Routes
