@@ -22,7 +22,7 @@ This guide is for solving collision errors on your Umbraco Cloud project. Use th
 
 The error means that two (or more) `.uda` files have been created for the same entity. The `.uda` files contain schema data for each of your entities e.g Document Types, Templates, Macros, Dictionary Items, Data types etc (for a full list of these entities see [What are UDA files?](../../Setup/Power-Tools/Generating-UDA-files/#what-are-uda-files)).
 
-In this example there are two `.uda` files who share the same alias which leads to a conflict: it is impossible for Deploy to know which is the "correct" file, so it gives up and sends an error back.
+In this example there are two `.uda` files who share the same alias which leads to a conflict: it is impossible for Deploy to know which of the files to use, so it gives up and sends an error back.
 
 :::note
 Does the collision error involve **Dictionary items**?
@@ -100,13 +100,11 @@ In order to figure out which of the two colliding `.uda` files is the one for th
 
 You now know which `.uda` file you want. In this case: `document-type__1.uda`.
 
-It’s time to get the rest of your environments in sync.
-
-## Getting your environments in sync
+## Removing the unused file
 
 We strongly recommend that you resolve this locally since this will ensure that the changes you make are added to your Git repositories.
 
-1. Clone down the Development environment
+1. Clone down the Development environment to your local machine
 2. Run the project locally and verify that you get the same extraction error as on your Cloud environments (*HINT: look for a `deploy-failed` marker in your local `/data ` folder*)
     * When you run the project, you should see an error message in the browser once the site starts to build
 3. Remove the wrong `.uda` file (`document-type__2.uda`) from the `/data/revision` folder - you will not be able to see the Document Type in the backoffice because the failed extraction
@@ -116,11 +114,14 @@ We strongly recommend that you resolve this locally since this will ensure that 
 4. Open CMD prompt and navigate to your local `/data` folder
 5. Type the following command: `echo > deploy`
 6. You will now see a `deploy-complete` marker in your local `/data` folder
-7. **Important**: Before you commit and push the changes to the Development environment, you need to access the backoffice of the Development environment and remove the Document Type from there
+
+## Getting your environments in sync
+
+Before pushing the changes to the Development environment, you need to access the backoffice of the Development environment and remove the Document Type from there.
 
 ![Clean up Development](images/visualizing-4.png)
 
-8. **Commit** and **push** the changes from your local clone to the Development environment, using your local Git client
+**Commit** and **push** the changes from your local clone to the Development environment, using your local Git client.
 
 When the push from local to the Development environment has completed, refresh the Umbraco Cloud portal and you will see that the Development environment is now green, which means that the extraction error has been resolved.
 
