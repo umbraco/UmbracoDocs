@@ -12,7 +12,7 @@ If you feel something is missing here or you want to help out documenting some o
 * [Create an issue on missing documentation](https://github.com/umbraco/UmbracoDocs/issues)
 * [Read about how you can help out!](Contribute)
 
-## Finished Umbraco 8 Documentation:
+## Finished Umbraco 8 Documentation: 
 
 * [Searchable Trees (ISearchableTree)](Extending/Section-Trees/Searchable-Trees/)
 * [IContentFinder](Reference/Routing/Request-Pipeline/IContentFinder)
