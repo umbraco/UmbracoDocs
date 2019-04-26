@@ -21,7 +21,7 @@ The first thing to check is what type of error it is, you can do so by clicking 
 ![Portal error](images/portal-error2.png)
 
 We have some guides on how to fix the most common errors below:
-* [Collision error](Deployments/Structure-Error)
+* ["Some articats collide on unique identifiers"](Deployments/Structure-Error)
 * [Duplicate dictionary](Deployments/Duplicate-Dictionary-Items)
 * [Baseline merge issues](../Getting-Started/Baselines/Baseline-Merge-Conflicts)
 * [Colliding Data Types](Deployments/Colliding-Datatypes)
