@@ -1,6 +1,5 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
 ---
 
 # Setup Your Site to use Azure Storage for Media and Image Processor Cache
