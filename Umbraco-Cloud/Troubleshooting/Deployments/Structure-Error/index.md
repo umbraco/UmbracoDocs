@@ -115,6 +115,11 @@ We strongly recommend that you resolve this locally since this will ensure that 
 5. Type the following command: `echo > deploy`
 6. You will now see a `deploy-complete` marker in your local `/data` folder
 
+:::note
+**Does the error mention Templates?**
+You might experience that `.uda` files for a template are colliding. When this is the case, we recommend that you copy the content of the `cshtml` file associated with the template you want to keep on your project - this way you'll have a backup of the code you want to use.
+:::
+
 ## Getting your environments in sync
 
 Before pushing the changes to the Development environment, you need to access the backoffice of the Development environment and remove the Document Type from there.
