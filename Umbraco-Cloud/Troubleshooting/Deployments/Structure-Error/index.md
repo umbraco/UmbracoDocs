@@ -102,7 +102,9 @@ You now know which `.uda` file you want. In this case: `document-type__1.uda`.
 
 ## Removing the unused file
 
-We strongly recommend that you resolve this locally since this will ensure that the changes you make are added to your Git repositories.
+:::warning
+We strongly recommend that you resolve this locally since this will ensure that the changes you make are added to your Git repositories. Otherwise you may end up having the same problem next time you deploy.
+:::
 
 1. Clone down the Development environment to your local machine
 2. Run the project locally and verify that you get the same extraction error as on your Cloud environments (*HINT: look for a `deploy-failed` marker in your local `/data ` folder*)
