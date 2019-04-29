@@ -16,7 +16,7 @@ Errors in the Cloud Portal are shown as a colored indicator on an environment. A
 When your environment has an error and you try to deploy again it will not be able to. The error will **always** need to be resolved before another deployment can be started.
 :::
 
-### My environment is red. What do you do?
+### My environment is red. What do I do?
 The first thing to check is what type of error it is, you can do so by clicking the __**More info**__ button on the state:
 ![Portal error](images/portal-error2.png)
 
