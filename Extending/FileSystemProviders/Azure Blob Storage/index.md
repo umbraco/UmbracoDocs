@@ -22,20 +22,23 @@ The package is also available on Our Umbraco [https://our.umbraco.com/projects/c
 The following six keys will have been added to the `<appSettings>` your `web.config` file.
 
 ```xml
-<add key="AzureBlobFileSystem.ContainerName:media" value="media" />
-<add key="AzureBlobFileSystem.RootUrl:media" value="https://[myAccountName].blob.core.windows.net/" />
-<add key="AzureBlobFileSystem.ConnectionString:media" 
-     value="DefaultEndpointsProtocol=https;AccountName=[myAccountName];AccountKey=[myAccountKey]" />
-<add key="AzureBlobFileSystem.MaxDays:media" value="365" />
-<add key="AzureBlobFileSystem.UseDefaultRoute:media" value="true" />
-<add key="AzureBlobFileSystem.UsePrivateContainer:media" value="false" />
+<?xml version="1.0"?>
+<appSettings>
+  <add key="AzureBlobFileSystem.ContainerName:media" value="media" />
+  <add key="AzureBlobFileSystem.RootUrl:media" value="https://[myAccountName].blob.core.windows.net/" />
+  <add key="AzureBlobFileSystem.ConnectionString:media" 
+      value="DefaultEndpointsProtocol=https;AccountName=[myAccountName];AccountKey=[myAccountKey]" />
+  <add key="AzureBlobFileSystem.MaxDays:media" value="365" />
+  <add key="AzureBlobFileSystem.UseDefaultRoute:media" value="true" />
+  <add key="AzureBlobFileSystem.UsePrivateContainer:media" value="false" />
+</appSettings>
 ```
 
 Make sure to udpate this configuration to match your own setup.
 
 When you're installing the package from the **Package** section of the Umbraco Backoffice, you'll be able to fill in the configuration directly from the backoffice:
 
-IMAGE HERE
+![Setup from backoffice](images/config-from-backoffice.png)
 
 If you are using IISExpress (as with Visual Studio) you’ll need to add a static file handler mapping to `~web.config` - this should be added automatically, but you should check that it's there!
 ```xml
