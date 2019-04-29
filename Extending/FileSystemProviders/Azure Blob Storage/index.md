@@ -11,16 +11,13 @@ Setup consists of adding several packages to your site and setting the correct c
 
 These packages are only available via NuGet, so ideally you’ll have your site setup to use Visual Studio. You can copy/paste the `PM>` commands into the Package Manager Console. If you don't see the Package Manager Console window, you can open it from the menu View -> Other Windows -> Package Manager Console.
 
-### File System Provider for Azure Blob Storage
+### Umbraco File System Provider
 
-You’ll replace the default FileSystemProvider with the `UmbracoFileSystemProviders.Azure` provider.  We recommend doing this first and verifying it behaves as expected before proceeding with the ImageProcessor setup.
+You'll need to install the `UmbracoFileSystemProviders.Azure` provider.  We recommend doing this first and verifying it behaves as expected before proceeding with the ImageProcessor setup.
 
-```PM> Install-Package UmbracoFileSystemProviders.Azure```
+Find instructions on how to install the package on the projects GitHub page: [UmbracoFileSystemProviders.Azure](https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure/tree/develop-umbraco-version-8). There are detailed instructions available on the project page, also summarized here.
 
-The package is also available on Our Umbraco [https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/](https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/)
-The project source can be found here [https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure](https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure)
-
-There are detailed instructions available on the project page, also summarized here.
+The package is also available on Our Umbraco [https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/](https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/) - make sure you download the correct version for Umbraco 8, which is also specified on the page.
 
 Update `~/Config/FileSystemProviders.config` replacing the default provider with the following:
 ```xml
@@ -50,6 +47,11 @@ Update `~/Config/FileSystemProviders.config` replacing the default provider with
   </Provider>
 </FileSystemProviders>
 ```
+
+When you're installing the package from the **Package** section of the Umbraco Backoffice, you'll be able to fill in the configuration above directly from the backoffice:
+
+IMAGE HERE
+
 If you are using IISExpress (as with Visual Studio) you’ll need to add a static file handler mapping to `~web.config` - this should be added automatically, but you should check that it's there!
 ```xml
 <?xml version="1.0"?>
