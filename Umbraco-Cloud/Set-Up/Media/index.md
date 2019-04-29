@@ -110,7 +110,8 @@ Once the packages have been installed you need to set your configuration as belo
 Update `~web.config`
 ```xml
 <configuration>
-  <sectionGroup name="imageProcessor">
+  <configSections>  
+    <sectionGroup name="imageProcessor">
       <section name="security" requirePermission="false" type="ImageProcessor.Web.Configuration.ImageSecuritySection, ImageProcessor.Web" />
       <section name="processing" requirePermission="false" type="ImageProcessor.Web.Configuration.ImageProcessingSection, ImageProcessor.Web" />
       <section name="caching" requirePermission="false" type="ImageProcessor.Web.Configuration.ImageCacheSection, ImageProcessor.Web" />
