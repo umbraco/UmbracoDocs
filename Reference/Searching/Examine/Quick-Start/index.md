@@ -9,14 +9,14 @@ _This guide will help you get setup quickly using Examine with minimal configura
 ## Performing a search
 
 :::note
-In the coming examples the Umbraco Starter Kit has been used, this is because it gives some content to be searched upon quickly. Some of the examples may require setting up templates, etc if you are following on your own site.
+In the coming examples the Umbraco Starter Kit has been used, as it gives some content to be searched upon quickly. Some of the examples may require setting up templates, etc if you are following on your own site.
 :::
 
-The starter kit comes with some templates and doc types and content nodes set up already, so let's just use some of those to set up a simple search system.
+The starter kit comes with some Templates, Document Types and content nodes set up already. We will use some of those to set up a simple search system.
 
-Let's make it possible to search on the /people page.
+We will make it possible to search on the _People_ page.
 
-We do this by adding a search bar on the template page, so in the people.cshtml template we can add this at the top, under the nav element:
+We will do this by adding a search bar on the template page. In the `people.cshtml` template, add this at the top, under the `<nav>` element:
 
 ```csharp
 ...
@@ -34,9 +34,11 @@ We do this by adding a search bar on the template page, so in the people.cshtml 
 ...
 ```
 
-This will make an input field at the top of the page and make it redirect to the same page when submitted. Now let's set up the search query using Examine.
+This will create an input field at the top of the page and make it redirect to the same page when submitted. 
 
-Below the form you can add this:
+Now let's set up the search query using Examine.
+
+Below the form, add this:
 
 ```csharp
 <div>
@@ -59,9 +61,9 @@ Below the form you can add this:
 </div>
 ```
 
-Here we are getting the request query from the form, and if the string is empty we ask them to submit a term, otherwise we will search.
+Here we are getting the request query from the form. If the string is empty we ask them to submit a term, otherwise we will search.
 
-To perform the search we will first need to get the index and the searcher, so within the else condition add this:
+To perform the search we will first need to get the index and the searcher. We will do that by adding the following to the `else` condition:
 
 ```csharp
 else
@@ -99,8 +101,8 @@ else
 }
 ```
 
-At this point we have chosen to use the External index and its searcher, the query is then built. I
-n this case we are searching all `content` with doc type `person` where the `nodeName` is equal to the searchterm that was typed in the input bar.
+At this point we have chosen to use the External index and its searcher. The query is then built. I
+n this case we are searching all `content` using the `person` Document Type, where the `nodeName` is equal to the search term that was typed in the input bar.
 
 The final template looks like this:
 
@@ -213,29 +215,29 @@ The final template looks like this:
 </section>
 ```
 
-### Different ways to query
+## Different ways to query
 
-Examine has a lot of different ways to query data, building upon the example from before, here are a few other searches that can be done to get different data:
+Examine has a lot of different ways to query data. Building upon the example from before, here are a few other searches that can be done to get different data:
 
-#### Search through all nodes
+### Search through all nodes
 
-Let's say you want to search through **all content nodes** by their **file names**, you could amend the query from before like this:
+Let's say you want to search through **all content nodes** by their **file names**. You could amend the query from before like this:
 
 ```csharp
 var results = searcher.CreateQuery("content").Field("nodeName", searchTerm).Execute();
 ```
 
-#### Search using Lucene queries
+### Search using Lucene queries
 
-Let's say you want to do the search above, but only use Lucene to query, you could amend the query from before like this:
+To do the search like above, but only use Lucene to query, amend the query from before like this:
 
 ```csharp
 var results = searcher.CreateQuery().NativeQuery("+__IndexType:content +nodeName:" + searchTerm).Execute();
 ```
 
-#### Search children of a specific node
+### Search children of a specific node
 
-Let's say you want to search through **all child nodes of a specific node** by their **bodyText property**, you could amend the query from before like this:
+To search through **all child nodes of a specific node** by their **bodyText property**, amend the query from before like this:
 
 ```csharp
 var results = searcher.CreateQuery("content").ParentId(1105).Field("bodyText", searchTerm).Execute();
