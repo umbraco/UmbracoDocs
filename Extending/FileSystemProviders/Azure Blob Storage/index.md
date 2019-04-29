@@ -41,18 +41,20 @@ When you're installing the package from the **Package** section of the Umbraco B
 ![Setup from backoffice](images/config-from-backoffice.png)
 
 If you are using IISExpress (as with Visual Studio) you’ll need to add a static file handler mapping to `~web.config` - this should be added automatically, but you should check that it's there!
+
 ```xml
 <?xml version="1.0"?>
-  <configuration>
-    <location path="Media">
-      <system.webServer>
-        <handlers>
-          <remove name="StaticFileHandler" />
-          <add name="StaticFileHandler" path="*" verb="*" preCondition="integratedMode" type="System.Web.StaticFileHandler" />
-        </handlers>
-      </system.webServer>
-    </location>
-  </configuration>
+<configuration>
+  <location path="Media">
+    <system.webServer>
+      <handlers>
+        <remove name="StaticFileHandler" />
+        <add name="StaticFileHandler" path="*" verb="*" 
+             preCondition="integratedMode" type="System.Web.StaticFileHandler" />
+      </handlers>
+    </system.webServer>
+  </location>
+</configuration>
 ```
 
 ### Image Processor
@@ -64,9 +66,9 @@ You’ll need to install the following ImageProcessor packages (latest versions 
 
 You can find more information about ImageProcessor and related packages here [https://imageprocessor.org/](https://imageprocessor.org/)
 
-Since Umbraco includes a version of ImageProcessor.Web by default, you will need to update that package first using NuGet:
+Install the following NuGet packages:
 
-```PM> Update-Package ImageProcessor.Web```
+```PM> Install-Package ImageProcessor.Web```
 
 ```PM> Install-Package ImageProcessor.Web.Config```
 
@@ -76,9 +78,10 @@ Then install the ImageProcessor package that places the cached files in the Azur
 
 
 ### Configuration
-Once the packages have been installed you need to set your configuration as below.  Some of these may have been set when you installed the ImageProcessor packages.
+Once the packages have been installed you need to set your configuration as below. Some of these may have been set when you installed the ImageProcessor packages.
 
-Update `~web.config`
+**Update `~web.config`**
+
 ```xml
 <configuration>
   <configSections>  
@@ -96,9 +99,10 @@ Update `~web.config`
 </configuration>
 ```
 
-Update `~/config/imageprocessor/security.config`
+**Update `~/config/imageprocessor/security.config`**
 
 You have to manually add `prefix="media/"` to the service element, otherwise ImageProcessor will not run and the original image will be served.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <security>
