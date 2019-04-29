@@ -46,6 +46,7 @@ If you feel something is missing here or you want to help out documenting some o
 * [Tutorial: Creating a basic website](Tutorials/Creating-Basic-Site)
 * [Tutorial: Porting packages to V8](Tutorials/Porting-Packages-V8)
 * [Dashboards](Extending/Dashboards)
+* [Quickstart with Examine](Reference/Searching/Examine/Quick-Start/index.md)
 
 ## In progress:
 
