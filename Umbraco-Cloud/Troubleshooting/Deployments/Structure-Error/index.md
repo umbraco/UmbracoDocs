@@ -93,7 +93,7 @@ In order to figure out which of the two colliding `.uda` files is the one for th
 2. Use the CMD console (found under the 'Debug console' menu) to navigate to your `site/wwwroot/data/revision` folder
 3. Remove the colliding `.uda` files mentioned in the error message
 4. Go back to the `/wwwroot/data` folder and run this command: `echo > deploy-export` in the console
-5. This will regenerate a `.uda` file for the Document Type being used on the Live environment
+5. This will regenerate all `.uda` files for the Live environment - this means only the currently used ones will be there afterwards
 6. Run the command: `echo > deploy` in the same folder, to make sure everything is extracting correctly
 
 ![Finding correct UDA file](images/visualizing-2.png)
