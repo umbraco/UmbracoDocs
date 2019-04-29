@@ -19,36 +19,21 @@ Find instructions on how to install the package on the projects GitHub page: [Um
 
 The package is also available on Our Umbraco [https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/](https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/) - make sure you download the correct version for Umbraco 8, which is also specified on the page.
 
-Update `~/Config/FileSystemProviders.config` replacing the default provider with the following:
+The following six keys will have been added to the `<appSettings>` your `web.config` file.
+
 ```xml
-<?xml version="1.0"?>
-<FileSystemProviders>
-  <!-- Media -->
-  <Provider alias="media" type="Our.Umbraco.FileSystemProviders.Azure.AzureBlobFileSystem, Our.Umbraco.FileSystemProviders.Azure">
-    <Parameters>
-      <add key="containerName" value="media"/>
-      <add key="rootUrl" value="http://[myAccountName].blob.core.windows.net/"/>
-      <add key="connectionString" value="DefaultEndpointsProtocol=https;AccountName=[myAccountName];AccountKey=[myAccountKey]"/>
-      <!--
-        Optional configuration value determining the maximum number of days to cache items in the browser.
-        Defaults to 365 days.
-      -->
-      <add key="maxDays" value="365"/>
-      <!--
-        When true this allows the VirtualPathProvider to use the deafult "media" route prefix regardless 
-        of the container name.
-      -->
-      <add key="useDefaultRoute" value="true"/>
-      <!--
-        When true blob containers will be private instead of public what means that you can't access the original blob file directly from its blob url.
-      -->
-      <add key="usePrivateContainer" value="false"/>
-    </Parameters>
-  </Provider>
-</FileSystemProviders>
+<add key="AzureBlobFileSystem.ContainerName:media" value="media" />
+<add key="AzureBlobFileSystem.RootUrl:media" value="https://[myAccountName].blob.core.windows.net/" />
+<add key="AzureBlobFileSystem.ConnectionString:media" 
+     value="DefaultEndpointsProtocol=https;AccountName=[myAccountName];AccountKey=[myAccountKey]" />
+<add key="AzureBlobFileSystem.MaxDays:media" value="365" />
+<add key="AzureBlobFileSystem.UseDefaultRoute:media" value="true" />
+<add key="AzureBlobFileSystem.UsePrivateContainer:media" value="false" />
 ```
 
-When you're installing the package from the **Package** section of the Umbraco Backoffice, you'll be able to fill in the configuration above directly from the backoffice:
+Make sure to udpate this configuration to match your own setup.
+
+When you're installing the package from the **Package** section of the Umbraco Backoffice, you'll be able to fill in the configuration directly from the backoffice:
 
 IMAGE HERE
 
