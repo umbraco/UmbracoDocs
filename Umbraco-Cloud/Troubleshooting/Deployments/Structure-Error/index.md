@@ -45,7 +45,7 @@ You can run into an error like this on all of your Cloud environment. Somestimes
 
 The main cause of this problem is when an entity has been manually created in two or more environments, using the same alias. 
 
-Each environment on Umbraco Cloud are isolated and do not know what the other one is doing until they are syncronised. When an entity is created with identical aliases on two or more environments, it will create duplicate entities that are considered separate entities even though they look that same and share the same alias on both/all environments.
+Each environment on Umbraco Cloud are isolated and do not know what the other one is doing until they are synchronized. When an entity is created with identical aliases on two or more environments, it will create duplicate entities that are considered separate entities even though they look that same and share the same alias on both/all environments.
 
 :::tip
 When you have two or more Cloud environments, we recommend that you never create or make schema changes directly on the Live or Staging environments. You should work with schema only in your Development environment or even better, your local clone of the project.
