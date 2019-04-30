@@ -63,26 +63,6 @@ If you are using IISExpress (as with Visual Studio) you’ll need to add a stati
 </configuration>
 ```
 
-### Image Processor
-You’ll need to install the following ImageProcessor packages (latest versions recommended):
-
-* ImageProcessor.Web
-* ImageProcessor.Web.Config
-* ImageProcessor.Web.Plugins.AzureBlobCache
-
-You can find more information about ImageProcessor and related packages here [https://imageprocessor.org/](https://imageprocessor.org/)
-
-Install the following NuGet packages:
-
-```PM> Install-Package ImageProcessor.Web```
-
-```PM> Install-Package ImageProcessor.Web.Config```
-
-Then install the ImageProcessor package that places the cached files in the Azure Blob storage:
-
-```PM> Install-Package ImageProcessor.Web.Plugins.AzureBlobCache```
-
-
 ### Configuration
 Once the packages have been installed you need to set your configuration as below. Some of these may have been set when you installed the ImageProcessor packages.
 
@@ -139,25 +119,4 @@ You have to manually add `prefix="media/"` to the service element, otherwise Ima
 </security>
 ```
 
-**Update `~/config/imageprocessor/cache.config` by removing the default “DiskCache” config entry**
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<caching currentCache="AzureBlobCache">
-  <caches>
-    <cache name="AzureBlobCache" type="ImageProcessor.Web.Plugins.AzureBlobCache.AzureBlobCache, ImageProcessor.Web.Plugins.AzureBlobCache" maxDays="365" memoryMaxMinutes="60" browserMaxDays="7">
-      <settings>
-        <setting key="CachedStorageAccount" value="DefaultEndpointsProtocol=https;AccountName=[myAccountName];AccountKey=[myAccountKey]" />
-        <setting key="CachedBlobContainer" value="cache" />
-        <setting key="UseCachedContainerInUrl" value="true" />
-        <setting key="CachedCDNRoot" value="[CdnRootUrl]" />
-        <setting key="CachedCDNTimeout" value="2000" />
-        <setting key="SourceStorageAccount" value="DefaultEndpointsProtocol=https;AccountName=[myAccountName];AccountKey=[myAccountKey]" />
-        <setting key="SourceBlobContainer" value="media" />
-        <setting key="StreamCachedImage" value="false" />
-      </settings>
-    </cache>
-  </caches>
-</caching>
-```
 The final note here is that setting this up will only make it so new media files are added to Blob Storage, if you already have some media files on your project you should copy the contents of the media folder and upload it all to the media blob you set up. Finally you can delete the media folder locally as it is no longer needed. 
