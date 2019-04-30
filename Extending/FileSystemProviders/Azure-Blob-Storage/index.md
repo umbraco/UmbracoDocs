@@ -19,6 +19,12 @@ Find instructions on how to install the package on the projects GitHub page: [Um
 
 The package is also available on Our Umbraco [https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/](https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/) - make sure you download the correct version for Umbraco 8, which is also specified on the page.
 
+:::warning
+You will currently **not** be able to install the UmbracoFileSystemProviders.Azure package directly from the backoffice of your Umbraco 8 installation.
+
+You should either download the package from [Our](https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/) and install the `.zip` file, or use NuGet.
+:::
+
 The following six keys will have been added to the `<appSettings>` your `web.config` file.
 
 ```xml
