@@ -2,8 +2,8 @@
 versionFrom: 8.0.0
 ---
 
-# Setup Your Site to use Azure Storage for Media and Image Processor Cache
-For Umbraco Cloud sites there are some scenarios when you may want, or need, to consider using Azure Blob Storage for your media.  Particularly if your site contains large amounts of media - about 1GB or more.  Having your site’s media in Azure Storage can also help your deployments complete more quickly and has the potential to positively affect site performance as the Image Processor cache is moved to Azure Storage.  It also allows you to easily serve your media from the Azure CDN.
+# Setup Your Site to use Azure Blob Storage for Media and Image Processor Cache
+For Umbraco sites there are some scenarios when you may want, or need, to consider using Azure Blob Storage for your media.  Particularly if your site contains large amounts of media.  Having your site’s media in Azure Blob Storage can also help your deployments complete more quickly and has the potential to positively affect site performance as the Image Processor cache is moved to Azure Blob Storage.  It also allows you to easily serve your media from the Azure CDN.
 
 Setup consists of adding several packages to your site and setting the correct configuration.  Of course, before you begin you’ll need to create an Azure Storage Account and a container for your media and your ImageProcessor cache as well.  In this example we assume your media container is “media” and your cache is “cache”.  You can, optionally, enable an Azure CDN for this storage container and use it in the cache.config below.	
 
@@ -17,7 +17,7 @@ You'll need to install the `UmbracoFileSystemProviders.Azure` provider.  We reco
 
 Find instructions on how to install the package on the projects GitHub page: [UmbracoFileSystemProviders.Azure](https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure/tree/develop-umbraco-version-8). There are detailed instructions available on the project page, also summarized here.
 
-The package is also available on Our Umbraco [https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/](https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/) - make sure you download the correct version for Umbraco 8, which is also specified on the page.
+The package is also available on [Our Umbraco](https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/) - make sure you download the correct version for Umbraco 8, which is also specified on the page.
 
 :::warning
 You will currently **not** be able to install the UmbracoFileSystemProviders.Azure package directly from the backoffice of your Umbraco 8 installation.
@@ -25,7 +25,7 @@ You will currently **not** be able to install the UmbracoFileSystemProviders.Azu
 You should either download the package from [Our](https://our.umbraco.com/projects/collaboration/umbracofilesystemprovidersazure/) and install the `.zip` file, or use NuGet.
 :::
 
-The following six keys will have been added to the `<appSettings>` your `web.config` file.
+The following six keys will have been added to the `<appSettings>` in your `web.config` file.
 
 ```xml
 <?xml version="1.0"?>
@@ -40,7 +40,7 @@ The following six keys will have been added to the `<appSettings>` your `web.con
 </appSettings>
 ```
 
-Make sure to udpate this configuration to match your own setup.
+Make sure to update this configuration to match your own setup.
 
 When you're installing the package from the **Package** section of the Umbraco Backoffice, you'll be able to fill in the configuration directly from the backoffice:
 
@@ -66,9 +66,9 @@ If you are using IISExpress (as with Visual Studio) you’ll need to add a stati
 ### Image Processor
 You’ll need to install the following ImageProcessor packages (latest versions recommended):
 
-* ImageProcessor.Web.4.9.3.25 or later
-* ImageProcessor.Web.Config.2.4.1.19 or later
-* ImageProcessor.Web.Plugins.AzureBlobCache.1.4.2.19 or later
+* ImageProcessor.Web
+* ImageProcessor.Web.Config
+* ImageProcessor.Web.Plugins.AzureBlobCache
 
 You can find more information about ImageProcessor and related packages here [https://imageprocessor.org/](https://imageprocessor.org/)
 
@@ -130,7 +130,7 @@ You have to manually add `prefix="media/"` to the service element, otherwise Ima
       <whitelist>
         <add url="https://[your Azure CDN].vo.msecnd.net/" />
         <add url="https://[your blob account].blob.core.windows.net/" />
-        <add url="https://[your Umbraco cloud site].s1.umbraco.io" />
+        <add url="https://[your Umbraco site]" />
         <add url="http://localhost" />
         <add url="http://127.0.0.1" />
       </whitelist>
