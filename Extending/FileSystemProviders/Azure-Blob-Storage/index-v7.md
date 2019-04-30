@@ -88,7 +88,8 @@ Then install the ImageProcessor package that places the cached files in the Azur
 ### Configuration
 Once the packages have been installed you need to set your configuration as below.  Some of these may have been set when you installed the ImageProcessor packages.
 
-Update `~web.config`
+** Update `~web.config`**
+
 ```xml
 <configuration>
   <configSections>  
@@ -106,9 +107,10 @@ Update `~web.config`
 </configuration>
 ```
 
-Update `~/config/imageprocessor/security.config`
+**Update `~/config/imageprocessor/security.config`**
 
 You have to manually add `prefix="media/"` to the service element, otherwise ImageProcessor will not run and the original image will be served.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <security>
@@ -139,7 +141,8 @@ You have to manually add `prefix="media/"` to the service element, otherwise Ima
 </security>
 ```
 
-Update `~/config/imageprocessor/cache.config` by removing the default “DiskCache” config entry.
+**Update `~/config/imageprocessor/cache.config` by removing the default “DiskCache” config entry**
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <caching currentCache="AzureBlobCache">

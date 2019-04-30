@@ -133,7 +133,8 @@ You have to manually add `prefix="media/"` to the service element, otherwise Ima
 </security>
 ```
 
-Update `~/config/imageprocessor/cache.config` by removing the default “DiskCache” config entry.
+**Update `~/config/imageprocessor/cache.config` by removing the default “DiskCache” config entry**
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <caching currentCache="AzureBlobCache">
