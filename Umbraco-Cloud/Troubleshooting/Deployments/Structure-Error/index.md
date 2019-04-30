@@ -49,7 +49,7 @@ Each environment on Umbraco Cloud are isolated and do not know what the other on
 
 :::tip
 When you have two or more Cloud environments, we recommend that you never create or make schema changes directly on the Live or Staging environments. You should work with schema only in your Development environment or even better, your local clone of the project.
-::
+:::
 
 ## Video tutorial
 
