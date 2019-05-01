@@ -12,7 +12,7 @@ In order to bind to certain events in the Umbraco application you need to make t
 Applies to: Umbraco 6.1.0+
 :::
 
-The [ApplicationEventHandler](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Core.ApplicationEventHandler.html) is a plugin type that allows developers to execute code during the Umbraco bootup process.
+The [ApplicationEventHandler](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.ApplicationEventHandler.html) is a plugin type that allows developers to execute code during the Umbraco bootup process.
 
 This is the preferred way to hook in to the Umbraco application startup process. It is a base class so all you need to do is override the methods that you wish to handle. It is important to know the difference between each of the methods (information is below). Almost always, you just want to use the __ApplicationStarted__ method.
 
@@ -99,11 +99,11 @@ If you want more control over execution you can override these properties:
 
 Handlers are ordered by (ascending) weight. By default, handlers from the Umbraco.* assemblies have a -100 weight whereas any other handler has a weight of +100. 
 
-A custom weight can be assigned to a handler by marking the class with the [WeightAttribute](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Core.ObjectResolution.WeightAttribute.html). Positive weights are considered "user-space" while negative weights are "core". 
+A custom weight can be assigned to a handler by marking the class with the [WeightAttribute](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.ObjectResolution.WeightAttribute.html). Positive weights are considered "user-space" while negative weights are "core". 
 
-For example, the [CacheRefresherEventHandler](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Web.Cache.CacheRefresherEventHandler.html) is marked with `Weight(int.MinValue)` because its events need to run before anything else. 
+For example, the [CacheRefresherEventHandler](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Web.Cache.CacheRefresherEventHandler.html) is marked with `Weight(int.MinValue)` because its events need to run before anything else. 
 
-Finally (very EXPERT), users can [register a filter](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Core.ObjectResolution.ApplicationEventsResolver.html#Umbraco_Core_ObjectResolution_ApplicationEventsResolver_FilterCollection) to process the list (after it has been ordered) and re-order it, or remove handlers.
+Finally (very EXPERT), users can [register a filter](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.ObjectResolution.ApplicationEventsResolver.html#Umbraco_Core_ObjectResolution_ApplicationEventsResolver_FilterCollection) to process the list (after it has been ordered) and re-order it, or remove handlers.
 
 :::warning
 Handlers order is an important thing, and removing handlers or reordering handlers can have unexpected consequences.
