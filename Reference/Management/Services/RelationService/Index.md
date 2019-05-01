@@ -11,7 +11,7 @@ Applies to Umbraco 6.1.1 and newer
 
 The RelationService acts as a "gateway" to Umbraco data for operations which are related to Relations.
 
-[Browse the API documentation for RelationService](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Core.Services.RelationService.html).
+[Browse the API documentation for RelationService](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Services.RelationService.html).
 
  * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
