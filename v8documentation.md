@@ -14,6 +14,10 @@ If you feel something is missing here or you want to help out documenting some o
 
 ## Finished Umbraco 8 Documentation:
 
+* [Azure Blob Storage guide](Extending/FileSystemProviders/Azure-Blob-Storage/)
+* [Umbraco 8 API Documentation: CSharp](https://our.umbraco.com/apidocs/v8/csharp/)
+* [Umbraco 8 API Documentation: Angular](https://our.umbraco.com/apidocs/v8/ui/)
+* [Quickstart with Examine](Reference/Searching/Examine/Quick-Start)
 * [Application Startup](Reference/Events/Application-Startup)
 * [Subscribing to events](Getting-Started/Code/Subscribing-To-Events/)
 * [Routing for Backoffice authentication](Reference/Routing/Authorized/)
