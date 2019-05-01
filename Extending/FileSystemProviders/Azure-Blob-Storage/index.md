@@ -129,6 +129,6 @@ Any new media files you upload to the site, will automatically be added to the B
 
 ## Using Azure Blob Cache
 
-In some cases you might also want to use the Azure Blob Cache to cache your media files. One scenario for this, could be a load balancing setup where you have a lot of media files. Using the Azure Blob Cache will make sure that your media files are still cached and can be used effectively as the generated images are stored to blobs instead of local disk. 
+In some cases, you might also want to use the Azure Blob Cache to cache your media files. One scenario for this could be a load balancing setup where you have a lot of media files. Using the Azure Blob Cache will make sure that your media files are still cached and can be used effectively as the generated images are stored to blobs and served via a CDN instead of local disk.
 
 More information on can be found on the ImageProcessor website: [Azure Blob Cache](https://imageprocessor.org/imageprocessor-web/plugins/azure-blob-cache/).
