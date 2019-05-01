@@ -68,8 +68,20 @@ If you are using IISExpress (as with Visual Studio) you’ll need to add a stati
   </configuration>
 ```
 
+### ImageProcessor
+
+The ImageProcessor is already a part of Umbraco. 
+
+Are you using a version of Umbraco older than v7.6, installing the FileSystemProvider will give you a warning and you will need to update ImageProcessor.Web and install ImageProcessor.Web.Config from NuGet.
+
+To update ImageProcessor.Web:
+```PM> Update-Package ImageProcessor.Web```
+
+To install ImageProcessor.Web.Config:
+```PM> Install-Package ImageProcessor.Web.Config```
+
 ### Configuration
-Once the packages have been installed you need to set your configuration as below.  Some of these may have been set when you installed the ImageProcessor packages.
+Once the package(s) have been installed you need to set your configuration as below.
 
 **Update `~web.config`**
 
