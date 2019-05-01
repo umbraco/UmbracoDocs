@@ -119,4 +119,16 @@ You have to manually add `prefix="media/"` to the service element, otherwise Ima
 </security>
 ```
 
-The final note here is that setting this up will only make it so new media files are added to Blob Storage, if you already have some media files on your project you should copy the contents of the media folder and upload it all to the media blob you set up. Finally you can delete the media folder locally as it is no longer needed. 
+You have now succesfully setup Azure Blob Storage with your Umbraco site.
+
+## Existing Media files
+
+Any media files you already have on your site will not automatically be added to the Blob Storage. You will need to copy the contents on the `/Media` folder and upload it to the `media` folder on your Blob account. Once you've done that you can safely delete the `/Media` folder locally, as it is no longer needed.
+
+Any new media files you upload to the site, will automatically be added to the Blob Storage.
+
+## Using Azure Blob Cache
+
+In some cases you might also want to use the Azure Blob Cache to cache your media files. One scenario for this, could be a load balancing setup where you have a lot of media files. Using the Azure Blob Cache will make sure that your media files are still cached and can be used effectively as the generated images are stored to blobs instead of local disk. 
+
+More information on can be found on the ImageProcessor website: [Azure Blob Cache](https://imageprocessor.org/imageprocessor-web/plugins/azure-blob-cache/).
