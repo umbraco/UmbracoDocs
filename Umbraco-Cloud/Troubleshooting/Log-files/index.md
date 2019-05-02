@@ -40,6 +40,6 @@ When you're in Kudu, you can go up to your `site` folder as described in the 5 s
 
 It is possible to enable IIS Logging on each of your Umbraco Cloud environments.
 
-You can enable the logging from the **Advanved** menu found under *Settings*. The logs will be accessible from KUDU in `C:\home\LogFiles\http`.
+You can enable the logging from the **Advanced** menu found under *Settings*. The logs will be accessible from KUDU in `C:\home\LogFiles\http`.
 
 Find more information about IIS Logging on [the Official Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).
