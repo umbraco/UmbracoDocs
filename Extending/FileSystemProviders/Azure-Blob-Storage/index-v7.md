@@ -23,6 +23,7 @@ The project source can be found here [https://github.com/JimBobSquarePants/Umbra
 There are detailed instructions available on the project page, also summarized here.
 
 Update `~/Config/FileSystemProviders.config` replacing the default provider with the following:
+
 ```xml
 <?xml version="1.0"?>
 <FileSystemProviders>
@@ -50,7 +51,9 @@ Update `~/Config/FileSystemProviders.config` replacing the default provider with
   </Provider>
 </FileSystemProviders>
 ```
-If you are using IISExpress (as with Visual Studio) you’ll need to add a static file handler mapping to `~web.config` - this should be added automatically, but you should check that it's there!
+
+If you are using IISExpress (as with Visual Studio) you’ll need to add a static file handler mapping to `~web.config` - this should be added automatically, but you should check that it's there.
+
 ```xml
 <?xml version="1.0"?>
   <configuration>
@@ -65,28 +68,20 @@ If you are using IISExpress (as with Visual Studio) you’ll need to add a stati
   </configuration>
 ```
 
-### Image Processor
-You’ll need to install the following ImageProcessor packages (latest versions recommended):
+### ImageProcessor
 
-* ImageProcessor.Web
-* ImageProcessor.Web.Config
-* ImageProcessor.Web.Plugins.AzureBlobCache
+The ImageProcessor is already a part of Umbraco. 
 
-You can find more information about ImageProcessor and related packages here [https://imageprocessor.org/](https://imageprocessor.org/)
+Are you using a version of Umbraco older than v7.6, installing the FileSystemProvider will give you a warning and you will need to update ImageProcessor.Web and install ImageProcessor.Web.Config from NuGet.
 
-Since Umbraco includes a version of ImageProcessor.Web by default, you will need to update that package first using NuGet:
-
+To update ImageProcessor.Web:
 ```PM> Update-Package ImageProcessor.Web```
 
+To install ImageProcessor.Web.Config:
 ```PM> Install-Package ImageProcessor.Web.Config```
 
-Then install the ImageProcessor package that places the cached files in the Azure Blob storage:
-
-```PM> Install-Package ImageProcessor.Web.Plugins.AzureBlobCache```
-
-
 ### Configuration
-Once the packages have been installed you need to set your configuration as below.  Some of these may have been set when you installed the ImageProcessor packages.
+Once the package(s) have been installed you need to set your configuration as below.
 
 **Update `~web.config`**
 
@@ -141,25 +136,16 @@ You have to manually add `prefix="media/"` to the service element, otherwise Ima
 </security>
 ```
 
-**Update `~/config/imageprocessor/cache.config` by removing the default “DiskCache” config entry**
+You have now succesfully setup Azure Blob Storage with your Umbraco site.
 
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<caching currentCache="AzureBlobCache">
-  <caches>
-    <cache name="AzureBlobCache" type="ImageProcessor.Web.Plugins.AzureBlobCache.AzureBlobCache, ImageProcessor.Web.Plugins.AzureBlobCache" maxDays="365" memoryMaxMinutes="60" browserMaxDays="7">
-      <settings>
-        <setting key="CachedStorageAccount" value="DefaultEndpointsProtocol=https;AccountName=[myAccountName];AccountKey=[myAccountKey]" />
-        <setting key="CachedBlobContainer" value="cache" />
-        <setting key="UseCachedContainerInUrl" value="true" />
-        <setting key="CachedCDNRoot" value="[CdnRootUrl]" />
-        <setting key="CachedCDNTimeout" value="2000" />
-        <setting key="SourceStorageAccount" value="DefaultEndpointsProtocol=https;AccountName=[myAccountName];AccountKey=[myAccountKey]" />
-        <setting key="SourceBlobContainer" value="media" />
-        <setting key="StreamCachedImage" value="false" />
-      </settings>
-    </cache>
-  </caches>
-</caching>
-```
-The final note here is that setting this up will only make it so new media files are added to Blob Storage, if you already have some media files on your project you should copy the contents of the media folder and upload it all to the media blob you set up. Finally you can delete the media folder locally as it is no longer needed. 
+## Existing Media files
+
+Any media files you already have on your site will not automatically be added to the Blob Storage. You will need to copy the contents on the `/Media` folder and upload it to the `media` folder on your Blob account. Once you've done that you can safely delete the `/Media` folder locally, as it is no longer needed.
+
+Any new media files you upload to the site, will automatically be added to the Blob Storage.
+
+## Using Azure Blob Cache
+
+In some cases, you might also want to use the Azure Blob Cache to cache your media files. One scenario for this could be a load balancing setup where you have a lot of media files. Using the Azure Blob Cache will make sure that your media files are still cached and can be used effectively as the generated images are stored to blobs and served via a CDN instead of local disk.
+
+More information on can be found on the ImageProcessor website: [Azure Blob Cache](https://imageprocessor.org/imageprocessor-web/plugins/azure-blob-cache/).
