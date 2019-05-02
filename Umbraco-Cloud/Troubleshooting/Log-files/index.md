@@ -35,3 +35,11 @@ When you're in Kudu, you can go up to your `site` folder as described in the 5 s
 - `manifest` is used to track which files are in the currently active deploy so that additions, renames and deletions can be detected easily for the next deploy (this is an internal file which you should not touch)
 
 - `log.log` shows you the same output you will have seen when pushing your changes using Git, it will show you what happened during the push and if any errors occurred. This file is especially useful when trying to find errors for deploys using the portal (so from dev > live or from dev > staging > live). Even though the last line may end with "Deployment successful" it is possible that there were errors or suspicious messages before that so make sure to give them a read.
+
+## IIS Logging
+
+It is possible to enable IIS Logging on each of your Umbraco Cloud environments.
+
+You can enable the logging from the **Advanced** menu found under *Settings*. The logs will be accessible from KUDU in `C:\home\LogFiles\http`.
+
+Find more information about IIS Logging on [the Official Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).
