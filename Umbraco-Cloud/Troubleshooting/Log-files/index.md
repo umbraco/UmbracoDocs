@@ -38,7 +38,7 @@ When you're in Kudu, you can go up to your `site` folder as described in the 5 s
 
 ## IIS Logging
 
-It is possible to enable IIS Logging on each of your Umbraco Cloud environments.
+It is possible to enable IIS Logging on each of your Umbraco Cloud environments. There is a rolling size limit on the log files of 100 MB. This means that once the limit is reached, the oldest log files will be overwritten by new ones.
 
 You can enable the logging from the **Advanced** menu found under *Settings*. The logs will be accessible from KUDU in `C:\home\LogFiles\http`.
 
