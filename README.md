@@ -7,7 +7,7 @@ This is the documentation project for Umbraco. The scope of this project is to p
 # What's in the documentation
 
 ## Getting started
-[Getting started (available here)](Getting-Started/) is an introduction to Umbraco containing explanations of basic concepts and short tutorials.
+[Getting started (available here)](Getting-Started/) is an introduction to Umbraco containing explanations of basic concepts and short tutorials..
 
 ## Implementation
 [Implementation (available here)](Implementation/) is an overview of Umbraco's structure and pipeline.
