@@ -1,7 +1,7 @@
 # Umbraco 8 - Frequently Asked Questions
 
 In this article you can find answers to some of the most frequently asked questions about Umbraco 8.
-
+.
 If you cannot find the answers you're looking for, reach out to contact@umbraco.com and our Support Warriors will help you out!
 
 ## Can I take a trial of Umbraco 8 on Umbraco Cloud?
