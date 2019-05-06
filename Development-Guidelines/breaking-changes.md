@@ -10,6 +10,18 @@ _Defines what a breaking change is in regards to the Umbraco core codebase and d
 
 This section describes what a breaking change is in regards to the Umbraco codebase. Generally breaking changes are only made on major releases, however, in minor releases there may be changes to the codebase that some developers may consider 'breaking' as well. The following points describe what changes to the core codebase are or are not considered breaking changes.
 
+## Security
+
+If a security issue arrises with part of the Umbraco codebase that requires changing the behavior or signatures of the code and no other option is available to mitigate the security issue, then this type of breaking change will be released during a minor version of Umbraco. If this scenario occurs, there will be a documentation available for how to update your site to the security fixed version.
+
+## Dependencies
+
+If a c# or JavaScript dependency is added or removed from the codebase, nuget package or exported release zip file, this is not considered a breaking change. We will mark this as "breaking" in the release notes to indicate the users that a dependency has changed. In the circumstance that a dependency is removed, it may be required that if you also require the removed dependency that you manually add it to your own project.
+
+## API Design
+
+As the product evolves and more features are added, there may be rare circumstances where a current API's design falls short of the new feature set and doesn't provide a very friendly developer experience. If this circumstance occurs, it may be required that existing API signatures must evolve during a minor release. In this scenario investigation will be done to see what alternatives might exist to avoid sharp breaking changes though in some cases it will simply not be possible. Generally changes like this would be done in major versions but will be done in a minor version if the pros of changing these API signatures outweigh the cons of both breaking the signatures and releasing a major version.
+
 ## General codebase
 
 ### Non-breaking
