@@ -98,3 +98,7 @@ namespace Our.Documentation.Examples.Controllers
     }
 }
 ```
+
+### More on working with Tags
+
+More on working with Tags (i.e. query all of them) can be found at the [UmbracoHelper reference page](https://our.umbraco.com/documentation/Reference/Querying/UmbracoHelper/#working-with-tags)
