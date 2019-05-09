@@ -1,6 +1,5 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # Examine
@@ -13,9 +12,9 @@ Examine allows you to index and search data quickly and easily. It is a library 
 
 Examine is provider based so is very extensible and allows you to configure as many indexes as you like and each may be configured individually. The backoffice search in Umbraco also uses this same search engine, so you can trust that you're in good hands.
 
-## [Quick start](quick-start.md)
+## [Quick start](quick-start/index.md)
 
-Get up and running with Examine straight away with this quick start guide
+Get up and running with Examine straight away with this quick start guide.
 
 ## [Terminology](terminology.md)
 
@@ -23,15 +22,11 @@ Describes the different terms and objects used in Examine such as Indexers, Sear
 
 ## [Examine Management in the backoffice](examine-management.md)
 
-Provides an overview of the available Examine functionality available directly within the Umbraco backoffice
+Provides an overview of the available Examine functionality available directly within the Umbraco backoffice.
 
-## [Overview & Explanation - "Examining Examine by Peter Gregory"](overview-explanation.md)
+## [TransformingIndexValues](transforming-index-values.md)
 
-A detailed overview from top to bottom of how to use Examine
-
-## [Full configuration markup example](../../Config/ExamineSettings/index.md)
-
-Shows all configuration options with an explanation for each
+Provides a way to create custom fields of all your data so you can search across many fields in one query.
 
 ## [API - Examine Manager](examine-manager.md)
 
