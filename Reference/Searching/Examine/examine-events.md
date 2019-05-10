@@ -2,11 +2,19 @@
 versionFrom: 8.0.0
 ---
 
-# TransformingIndexValues
+# Examine Events
+
+_Examine events are ways to modify the data being indexed._
+
+## TransformingIndexValues
+
+The TransformingIndexValues event allows you to manipulate the data that will be indexed during an index operation. With this event you can add, remove or modify the data that is going into the index which can be helpful in many scenarios.
+
+### Example
 
 In the [Quick Start](Quick-Start/index.md) documentation you can see how to perform a simple search with Examine. That is great if you want to search between node names or you know that you always want to search for a specific field - e.g. `bodyText`. 
 
-However, what if you want to search through several different node types and search across many different fields, you likely will not want to have a query that looks like this:
+However, what if you want to search through several different node types and search across many different fields, you will typically need to have a query that looks like this:
 
 ```cs
 var results = searcher.CreateQuery("content").Field("nodeName", searchTerm)
@@ -17,9 +25,7 @@ var results = searcher.CreateQuery("content").Field("nodeName", searchTerm)
                     .Execute();
 ```
 
-This quickly becomes unmanageable, would have to add each new field to the query as you make them. 
-
-Instead you can use **TransformingIndexValues** (used to be called GatheringNodeData in Umbraco 7). TransformingIndexValues is an Examine event where a new field is created in the index that contains the data from several other fields, you can then search on just that field. This is done via a [composer](../../../Implementation/Composing/index.md).
+This can be simplified, instead you can use TransformingIndexValues event (used to be called GatheringNodeData in Umbraco 7) to add a custom field to the indexed data to combine the data from several fields and then you can search on that one field. This is done via a [composer](../../../Implementation/Composing/index.md).
 
 ## Creating a TransformingIndexValues event
 
@@ -33,12 +39,10 @@ So to add a TransformingIndexValues event we will add a controller that inherits
 public class ExamineEvents : IComponent
 {
     private readonly IExamineManager _examineManager;
-    private readonly ILogger _logger;
 
-    public ExamineEvents(IExamineManager examineManager, ILogger logger)
+    public ExamineEvents(IExamineManager examineManager)
     {
         _examineManager = examineManager;
-        _logger = logger;
     }
 
     public void Initialize()
@@ -55,7 +59,7 @@ public class ExamineEvents : IComponent
 
     private void IndexProviderTransformingIndexValues(object sender, IndexingItemEventArgs e)
     {
-        //todo
+        //will be added in next step
     }
 
     public void Terminate()
@@ -64,31 +68,25 @@ public class ExamineEvents : IComponent
 }
 ```
 
-If this syntax is confusing you can read more about [Components](../../../Implementation/Composing/index.md). We can now add the logic to combine fields in the `IndexProviderTransformingIndexValues` method:
+You can read more about this [syntax and Components here](../../../Implementation/Composing/index.md). We can now add the logic to combine fields in the `IndexProviderTransformingIndexValues` method:
 
 ```cs
 if (e.ValueSet.Category == IndexTypes.Content)
 {
-    try
-    {
-        var combinedFields = new StringBuilder();
-        foreach (var fieldValues in e.ValueSet.Values)
-        {
-            foreach (var value in fieldValues.Value)
-            {
-                if (value != null)
-                {
-                    combinedFields.AppendLine(value.ToString());
-                }
-            }            
-        }
+    var combinedFields = new StringBuilder();
 
-        e.ValueSet.Add("combinedField", combinedFields.ToString());
-    }
-    catch (Exception ex)
+    foreach (var fieldValues in e.ValueSet.Values)
     {
-        _logger.Error<ExamineEvents>(ex, "Error combining fields for {ValueSetId}", e.ValueSet.Id);
+        foreach (var value in fieldValues.Value)
+        {
+            if (value != null)
+            {
+                combinedFields.AppendLine(value.ToString());
+            }
+        }        
     }
+
+    e.ValueSet.TryAdd("combinedField", combinedFields.ToString());
 }
 ```
 
@@ -97,15 +95,13 @@ So at this point we have done something along the lines of:
 - Get the valueset for the ExternalIndex
 - For each field, add the content to a new field called `combinedField`
 
-Before this works the component will have to be registered in a composer. If you already have a composer you can add it to that one, for this example we will make a new composer:
+Before this works the component will have to be registered in a composer. If you already have a composer you can add it to that one, but for this example we will make a new composer:
 
 ```cs
-public class CustomComposer : IUserComposer
-{
-    public void Compose(Composition composition)
-    {
-        composition.Components().Append<ExamineEvents>();
-    }
+//This is a composer which automatically appends the ExamineEvents component
+public class ExamineComposer : ComponentComposer<ExamineEvents>, IUserComposer 
+{ 
+   // you could override `Compose` if you wanted to do more things, but if it's just registering a component there's nothing else that needs to be done.
 }
 ```
 

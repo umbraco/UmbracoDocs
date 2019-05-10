@@ -8,9 +8,9 @@ _Examine uses Lucene as its search and index engine. Searching using Examine wit
 
 ## What is Examine?
 
-Examine allows you to index and search data quickly and easily. It is a library that sits on top of Lucene, a very high performance search engine library written in Java. Examine is built on top of a .NET-implementation of Lucene to provide very efficient APIs to make searching and indexing as straight forward as possible. Umbraco provides a further layer on top, UmbracoExamine, that opens up the Umbraco-specific APIs for indexing and searching content and media out of the box.
+Examine allows you to index and search data quickly and easily. Examine is a library that sits on top of [Lucene.Net](https://lucenenet.apache.org/), a high performance search engine library. Examine provides easy to use APIs to make searching and indexing as straight forward as possible. Umbraco provides a further layer on top, UmbracoExamine, that opens up the Umbraco-specific APIs for indexing and searching content and media out of the box.
 
-Examine is provider based so is very extensible and allows you to configure as many indexes as you like and each may be configured individually. The backoffice search in Umbraco also uses this same search engine, so you can trust that you're in good hands.
+Examine is provider based so it is extensible and allows you to configure your own custom indexes if required. The backoffice search in Umbraco also uses this same search engine, so you can trust that you're in good hands.
 
 ## [Quick start](quick-start/index.md)
 
@@ -24,9 +24,9 @@ Describes the different terms and objects used in Examine such as Indexers, Sear
 
 Provides an overview of the available Examine functionality available directly within the Umbraco backoffice.
 
-## [TransformingIndexValues](transforming-index-values.md)
+## [Examine events](examine-events.md)
 
-Provides a way to create custom fields of all your data so you can search across many fields in one query.
+Details about subscribing to Examine events which can provide a way to modify the data being indexed.
 
 ## [API - Examine Manager](examine-manager.md)
 
