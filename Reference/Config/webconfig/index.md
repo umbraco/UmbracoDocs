@@ -77,10 +77,14 @@ The default language to use in the backoffice if a user isn't explicitly assigne
 Makes sure that all of the requests in the backoffice are called over HTTPS instead of HTTP when set to `true`.
 
 ```xml
-<add key="umbracoUseSSL" value="true" />
+<add key="Umbraco.Core.UseHttps" value="true" />
 ```
 
-### umbracoCssDirectory 
+:::memo
+Check out the [security documentation](../../security/use-https.md).
+:::
+
+### umbracoCssDirectory
 
 By adding this to appSettings you can specify a new/different folder for storing your css-files and still be able to edit them within Umbraco. Default folder is ~/css.
 For example if you wanted to store css in a folder in the website root folder "/assets/css", you could have this in appsetting:
@@ -98,7 +102,7 @@ For example if you wanted to store in a folder in the website root folder called
 <add key="umbracoMediaPath" value="~/umbracoMedia" />
 ```
 
-### umbracoScriptsPath 
+### umbracoScriptsPath
 
 By adding this to appSettings you can specify a new/different folder for storing your JavaScript files and still be able to edit them within Umbraco. Default folder is ~/scripts.
 For example if you wanted to store javascript in a folder in the website root folder "/assets/js", you could have this in appsetting:
@@ -187,4 +191,4 @@ The default value is: `false`
 
 This is not a setting that commonly needs to be configured.
 
-This value is primarily used on Umbraco Cloud for a small startup performance optimization. When this is true, the website instance will automatically be configured to not support load balancing and the website instance will be configured to be the 'master' server for scheduling so no [master election](https://our.umbraco.com/documentation/Getting-Started/Setup/Server-Setup/load-balancing/flexible#scheduling-and-master-election) occurs. This will save 1 database call during startup. 
+This value is primarily used on Umbraco Cloud for a small startup performance optimization. When this is true, the website instance will automatically be configured to not support load balancing and the website instance will be configured to be the 'master' server for scheduling so no [master election](https://our.umbraco.com/documentation/Getting-Started/Setup/Server-Setup/load-balancing/flexible#scheduling-and-master-election) occurs. This will save 1 database call during startup.

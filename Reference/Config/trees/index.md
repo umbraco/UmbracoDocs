@@ -20,7 +20,7 @@ Each Tree element defined in trees.config requires the following attributes:
 * **iconClosed** - The icon to display when the tree element is closed.
 * **iconOpen** - The icon to display when the tree element has been expanded.
 * **application** - The alias of the section/application to load the tree in.
-* **sortOrder** - An integer used to determine the position of the tree in a section when multiple trees are defined. 
+* **sortOrder** - An integer used to determine the position of the tree in a section when multiple trees are defined.
 * **initialize** - Whether the tree should be initialized by default, eg when accessing the section in the backoffice
 * **type** - The type of the implementation of the tree in the format: *FullClassName, AssemblyName*
 
