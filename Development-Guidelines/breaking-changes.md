@@ -12,7 +12,7 @@ This section describes what a breaking change is in regards to the Umbraco codeb
 
 ## Security
 
-If a security issue arises with part of the Umbraco code base that requires changing the behavior or signatures of the code. If the only option is to mitigate the security issue, then this type of breaking change will be released during a minor version of Umbraco. If this scenario occurs, there will be documentation available for how to update your site to the secure fixed version.
+If a security issue arises with part of the Umbraco code base that requires changing the behavior or signatures of the code and no other option is available to mitigate the security issue, then this type of breaking change will be released during a minor version of Umbraco. If this scenario occurs, there will be documentation available for how to update your site to the fixed version.
 
 ## Dependencies
 
