@@ -16,7 +16,7 @@ If a security issue arrises with part of the Umbraco codebase that requires chan
 
 ## Dependencies
 
-If a c# or JavaScript dependency is added or removed from the codebase, nuget package or exported release zip file, this is not considered a breaking change. We will mark this as "breaking" in the release notes to indicate the users that a dependency has changed. In the circumstance that a dependency is removed, it may be required that if you also require the removed dependency that you manually add it to your own project.
+If a c# or JavaScript dependency is added or removed from the code base, a nuget package or the exported release zip file, it is not considered a breaking change. However, we will mark this as "breaking" in the release notes to indicate to the users that a dependency has changed. In the circumstance that a dependency is removed, you may have to manually add it to your own project if you depend on it.
 
 ## API Design
 
