@@ -4,7 +4,7 @@ In this article you can find answers to some of the most frequently asked questi
 
 If you cannot find the answers you're looking for, reach out to contact@umbraco.com and our Support Warriors will help you out!
 
-## Can I take a trial of Umbraco 8 on Umbraco Cloud?
+## Can I take a trial of Umbraco 8 on Umbraco Cloud?..
 
 Yes, you can! All free Umbraco Cloud trials will be on Umbraco 8 from the official release date.
 
