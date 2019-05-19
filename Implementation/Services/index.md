@@ -175,12 +175,6 @@ namespace Umbraco8.Components
 }
 ```
 
-#### Accesing ContentCache from a SurfaceController, RenderMvcController UmbracoApiController
-
-If your working inside a class/controller that inherits from one of the special base classes, you have access to the cache from the UmbracoHelper
-
-UmbracoHelper.
-
 #### Accesing ContentCache from a Content Finder / UrlProvider
 
 Inside a ContentFinder you have access to the content cache via the PublishedRequest
@@ -205,6 +199,7 @@ Let's create a custom service, that's responsible for finding key pages within a
 
 Create an interface to define the service:
 
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -242,16 +237,18 @@ namespace Umbraco8.Services
         }
     }
 }
+```
 
 Register the service with an IUserComposer
 
+```csharp
 using Umbraco.Core;
 using Umbraco.Core.Composing;
 using Umbraco8.Services;
 
 namespace Umbraco8.Composers
 {
-    public class RegisterSuperTestServiceComposer : IUserComposer
+    public class RegisterSiteServiceComposer : IUserComposer
     {
         public void Compose(Composition composition)
         {         
@@ -259,9 +256,11 @@ namespace Umbraco8.Composers
         }
     }
 }
+```
 
 Implementing the service, we can inject Umbraco's IPublishedContentQuery to find the pages we're after
 
+```csharp
 using System.Linq;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
@@ -271,7 +270,7 @@ namespace Umbraco8.Services
     public class SiteService : ISiteService
     {
         private readonly IPublishedContentQuery _contentQuery;
-        public AnotherSiteService(IPublishedContentQuery contentQuery)
+        public SiteService(IPublishedContentQuery contentQuery)
         {
             _contentQuery = contentQuery;
         }
@@ -289,11 +288,13 @@ namespace Umbraco8.Services
         }
     }
 }
+```
 
 (if we planned to use our SiteService outside of a request where UmbracoContext is not available we'd use the UmbracoContextFactory + EnsureUmbracoContext() methods described above to access the content cache)
 
 #### Using the SiteService inside a Controller
 
+```csharp
 using System.Web.Mvc;
 using Umbraco.Web.Models;
 using Umbraco8.Services;
@@ -325,27 +326,31 @@ namespace Umbraco8.Controllers
         }
     }
 }
+```
 
 #### Using the SiteService inside a View
 
 Sometimes you'll want to encapsulate some kind of View Logic into a service, or perhaps you prefer not to RouteHijack every request to build a custom ViewModel for a page.
 In these circumstances you 'could' instanstiate your service inside your view:
 
+```csharp
 @using Umbraco8.Services
 @inherits UmbracoViewPage
 @{
 
     Layout = "master.cshtml";
-    IAnotherSiteService siteService = new AnotherSiteService(Umbraco.ContentQuery);
+    ISiteService siteService = new SiteService(Umbraco.ContentQuery);
     IPublishedContent newsSection = siteService.GetNewsSection();
 }
 <section class="section">
     <div class="container">
         <article>
+```
 
 but this isn't making use of the DI container to control which concrete service implements IAnotherService
 so you could get the instance from the Umbraco.Web.Composing.Current DI container:
 
+```csharp
 @using Umbraco8.Services
 @using Current = Umbraco.Web.Composing.Current;
 @inherits UmbracoViewPage
@@ -358,9 +363,10 @@ so you could get the instance from the Umbraco.Web.Composing.Current DI containe
 <section class="section">
     <div class="container">
         <article>
-
+```
 or another strategy is to create your own 'CustomViewPage' to use as the basis for your views and to wire up any of your custom services
 
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -377,7 +383,7 @@ namespace Umbraco8.ViewPages
 {
     public abstract class CustomViewPage<T> : UmbracoViewPage<T>
     {
-        public readonly ISiteService _siteService;
+        public readonly ISiteService SiteService;
         public CustomViewPage() : this(
             Current.Factory.GetInstance<ISiteService>(), 
             Current.Factory.GetInstance<ServiceContext>(),
@@ -387,7 +393,7 @@ namespace Umbraco8.ViewPages
         }
         public CustomViewPage(ISiteService siteService, ServiceContext services, AppCaches appCaches)
         {
-            _siteService = siteService;
+            SiteService = siteService;
             Services = services;
             AppCaches = appCaches;
         }
@@ -420,20 +426,21 @@ namespace Umbraco8.ViewPages
         }
     }
 }
+```
 
 with this in place your view would look like this:
-
+```csharp
 @using Umbraco8.ViewPages
 @inherits CustomViewPage
 @{
 
     Layout = "master.cshtml";
-    IPublishedContent newsSection = _siteService.GetNewsSection();
+    IPublishedContent newsSection = SiteService.GetNewsSection();
 }
 <section class="section">
     <div class="container">
         <article>
-
+```
 
 
 
