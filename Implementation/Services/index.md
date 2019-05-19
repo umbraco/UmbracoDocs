@@ -308,7 +308,7 @@ namespace Umbraco8.Controllers
         private readonly ISiteService _siteService;
         private readonly ILogger _logger;
 
-        public AnotherBlogPostController(ILogger logger, ISuperTestService superTestService,ISiteService siteService, IExamineManager examineManager)
+        public BlogPostController(ILogger logger, ISuperTestService superTestService,ISiteService siteService, IExamineManager examineManager)
         {
             _logger = logger;
             _siteService = siteService; 
@@ -347,7 +347,7 @@ In these circumstances you 'could' instanstiate your service inside your view:
         <article>
 ```
 
-but this isn't making use of the DI container to control which concrete service implements IAnotherService
+but this isn't making use of the DI container to control which concrete service implements ISiteService
 so you could get the instance from the Umbraco.Web.Composing.Current DI container:
 
 ```csharp
