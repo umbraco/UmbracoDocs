@@ -13,15 +13,26 @@ Each section is identified by an icon in the left-hand side navigation ribbon of
 
 ## Create a Custom Section
 
-To create a new custom section in your Umbraco backoffice, add an entry in the `~/Config/applications.config` file.
+To create a new custom section in your Umbraco backoffice, the first thing you have to do is create a new folder inside `/App_Plugins`. We will call it `MyFavouriteThings`.
 
-eg, adding the following...
+Next we need to create a manifest where we'll include some basic configuration for our new section.
 
-```xml
-<add alias="favStuff" name="My Favourite Things" icon="icon-hearts" sortOrder="7" />
+Create a new file in the `/App_Plugins/MyFavouriteThings/` folder and name it package.manifest. In this new file, copy the code snippet below and save it.
+
+```json
+
+{
+    "sections" : [
+        {
+            "alias" : "myFavouriteThings",
+            "name" : "My Favourite Things"
+        }
+    ]
+}
+
 ```
 
-... would create a new Section in your Umbraco backoffice called 'My Favourite Things' and be represented by a heart in the section navigation.
+... would create a new Section in your Umbraco backoffice called 'My Favourite Things'.
 
 ### Why can't I see my new Custom Section?
 
