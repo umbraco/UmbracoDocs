@@ -20,11 +20,11 @@ In our example "Our Products" will become "our-products" and "Swibble" will beco
 The segments are created by the "Url Segment provider"
 
 ### Url Segment provider
-The 'Current Composition' of an Umbraco implementation contains a collection of `UrlSegmentProviders` this collection is populated during Umbraco boot up. Umbraco ships with a 'DefaultUrlSegmentProvider' - but you can add your own implementations to the collection.
+The 'Current Composition' of an Umbraco implementation contains a collection of `UrlSegmentProviders` this collection is populated during Umbraco boot up. Umbraco ships with a 'DefaultUrlSegmentProvider' - but custom implementations can be added to the collection.
 
 When the GetUrlSegment extension method is called for a content item + culture combination, each registered IUrlSegmentProvider in the collection is executed in 'collection order' until a particular UrlSegmentProvider returns a segment value for the content. (and no further UrlSegementProviders in the collection will be executed.)
 
-To create a new Url segment provider, implement the following interface:
+To create a new Url Segment Provider, implement the following interface:
 
 ```csharp
 public interface IUrlSegmentProvider
@@ -34,7 +34,7 @@ public interface IUrlSegmentProvider
 ```
 Note each 'culture' variation can have a different Url Segment!
 
-The returned string will be your Url Segment for this node.  You are free to return whatever string you like, but it cannot contain url segment separators `/` characters as this would create additional "segments". So something like `5678/swibble` is not allowed.
+The returned string will be the Url Segment for this node.  Any string value can be returned here but it cannot contain url segment separators `/` characters as this would create additional "segments". So something like `5678/swibble` is not allowed.
 
 #### Example
 
@@ -63,9 +63,9 @@ namespace Umbraco8.Routing
 }
 ```
 
-The returned string becomes the native Url segment.  You don't need any Url rewriting, ...
+The returned string becomes the native Url segment.  No need for any Url rewriting, ...
 
-For our "swibble" product in our example content tree the  `ProductPageUrlSegmentProvider`, would return a segment "swibble-123xyz" (where 123xyz is the unique product sku for ordering "swibbles". 
+For our "swibble" product in our example content tree the  `ProductPageUrlSegmentProvider`, would return a segment "swibble-123xyz" (where 123xyz is the unique product sku/reference for the swibble product). 
 
 Register the custom UrlSegmentProvider with Umbraco:
 
@@ -120,7 +120,7 @@ If we look at our example, the "swibble" node will receive the path: "/our-produ
 
 ### Multiple sites in a single Umbraco implementation
 
-But, what if you have multiple websites in a single Umbraco Implementation? if you have multi-site setup then an (internal) path to a node such as "/our-products/swibble-123xyz" could belong to any of the sites, or match multiple nodes in multiple sites. In this scenario additional sites will have their internal path prefixed by the node id of their root node.
+But, what if there are multiple websites in a single Umbraco Implementation? in this multi-site scenario then an (internal) path to a node such as "/our-products/swibble-123xyz" could belong to any of the sites, or match multiple nodes in multiple sites. In this scenario additional sites will have their internal path prefixed by the node id of their root node.
 Any content node with a hostname defines a “new root” for paths.  
 
 ![path example](images/path-example-v8.png)
@@ -150,7 +150,7 @@ Any content node with a hostname defines a “new root” for paths.
 
 Paths can be cached, what comes next cannot (http vs https, current request…).
 
-#### Some further considerations if you **work with hostnames**:
+#### Some further considerations when **working with hostnames**:
 
 -  **Domain without path** e.g. "www.site.com"
 will become "1234/path/to/page"
@@ -164,7 +164,7 @@ The Url of a node consists of a complete [URI](https://en.wikipedia.org/wiki/Uni
 
 In our example the "swibble" node could have the following URL: "http://example.com/our-products/swibble.aspx"
 
-Generating this url is handled by the Url Provider.  The Url Provider is called whenever you write .Url (e.g.):
+Generating this url is handled by the Url Provider.  The Url Provider is called whenever a request is made in code for a Url (e.g.):
 
 ```csharp
 @Model.Url
@@ -172,7 +172,7 @@ Generating this url is handled by the Url Provider.  The Url Provider is called 
 @UmbracoContext.UrlProvider.GetUrl(1234);
 ```
 
-The 'Current Composition' of an Umbraco implementation contains a collection of `UrlProviders` this collection is populated during Umbraco boot up. Umbraco ships with a 'DefaultUrlProvider' - but you can add your own implementations to the collection.
+The 'Current Composition' of an Umbraco implementation contains a collection of `UrlProviders` this collection is populated during Umbraco boot up. Umbraco ships with a 'DefaultUrlProvider' - but custom implementations can be added to the collection.
 When .Url is called each UrlProvider registered in the collection is executed in 'collection order' until a particular UrlProvider returns a value. (and no further UrlProviders in the collection will be executed.)
 ### DefaultUrlProvider
 Umbraco ships with a DefaultUrlProvider, which provides the implementation for the out of the box mapping of the structure of the content tree to the url.
@@ -207,8 +207,8 @@ If "addTrailingSlash" is true, then add a slash.
 Then add the virtual directory.
 
 If the URL provider encounters collisions when generating content URLs, it will always select the first available node and assign the URL to this one.
-The remaining nodes will be marked as colliding and will not have a URL generated. If you do try to fetch the URL of a node with a collision URL you will get an error string including the node ID (#err-1094) since this node does not currently have an active URL.
-This can happen if you use the umbracoUrlName property to override the generated URL of a node, or in some cases when having multiple root nodes without hostnames assigned.
+The remaining nodes will be marked as colliding and will not have a URL generated. Fetching the URL of a node with a collision URL will result in an error string including the node ID (#err-1094) since this node does not currently have an active URL.
+This can happen if an umbracoUrlName property is being used to override the generated URL of a node, or in some cases when having multiple root nodes without hostnames assigned.
 
 :::warning
 Keep in mind that this means publishing a unpublished node with a conflicting URL, might change the active node being rendered on that specific URL in cases where the published node should now take priority according to sort order in the tree!
@@ -216,7 +216,7 @@ Keep in mind that this means publishing a unpublished node with a conflicting UR
 
 ### Custom Url Provider
 
-You can create your own Url Provider by the implementing `IUrlProvider` interface
+Create a custom Url Provider by implementing `IUrlProvider` interface
 
 ```csharp
 public interface IUrlProvider
@@ -226,15 +226,16 @@ public interface IUrlProvider
       IEnumerable<UrlInfo> GetOtherUrls(UmbracoContext umbracoContext, int id, Uri current);
 }
 ```
-The returned 'UrlInfo' by GetUrl can return whatever pleases you.
+The url returned in the 'UrlInfo' object by GetUrl can be completely cusom.
 
 If implementing a custom Url Provider, consider following things:
 
 - cache things,
 - be sure to know how to handle schema's (http vs https) and hostnames 
 - inbound might require rewriting
-
-If you only have a small change to make to the default set of rules, then a smart way to create a custom Url Provider is to inherit from the DefaultUrlProvider and override the GetUrl() virtual method.
+:::tip
+If there is only a small change to the logic around Url generation, then a smart way to create a custom Url Provider is to inherit from the DefaultUrlProvider and override the GetUrl() virtual method.
+:::
 #### Example
  add /fish on the end of every url...
 
@@ -262,7 +263,7 @@ namespace UmbracoV8.Routing.UrlProviders
         }
         public override IEnumerable<UrlInfo> GetOtherUrls(UmbracoContext umbracoContext, int id, Uri current)
         {
-            //add custom logic to return 'additional urls' - in the umbraco backoffice you might have seen multiple urls listed for a content item, this method populates that list.
+            //add custom logic to return 'additional urls' - this method populates a list of additional urls for the node to display in the Umbraco backoffice
             return base.GetOtherUrls(umbracoContext, id, current);
         }
 
@@ -280,7 +281,7 @@ namespace UmbracoV8.Routing.UrlProviders
                 }
                else
                 {
-                    //manipulate the url somehow in your custom way or something:
+                    //manipulate the url somehow in a custom fashion:
                     var orginalUrl = defaultUrlInfo.Text;
                     var customUrl = originalUrl + "fish/";
                     return new UrlInfo(customUrl, true,defaultUrlInfo.Culture);
@@ -333,7 +334,7 @@ public enum UrlProviderMode
   Auto
 }
 ```
-Auto is the default. You can change this setting in /config/umbracoSettings.config web.routing section:
+Auto is the default. The setting can be changed in /config/umbracoSettings.config web.routing section:
 
 ```
   <web.routing
@@ -345,7 +346,7 @@ Auto is the default. You can change this setting in /config/umbracoSettings.conf
 ### Site Domain Helper
 The `ISiteDomainHelper` implementation is used in the IUrlProvider and filters a list of <c>DomainAndUri</c> to pick one that best matches the current request.
 
-You can create your own SiteDomainHelper by implementing ISiteDomainHelper
+Create a custom SiteDomainHelper by implementing ISiteDomainHelper
 
 ```csharp
 public interface ISiteDomainHelper
@@ -357,7 +358,7 @@ IEnumerable<DomainAndUri> MapDomains(IReadOnlyCollection<DomainAndUri> domainAnd
 
 Only a single SiteDomainHelper can be registered with Umbraco.
 
-You would set your custom SiteDomainHelper using the SetSiteDomainHelper extension method
+Register the custom SiteDomainHelper with Umbraco using the `SetSiteDomainHelper` extension method
 
 ```csharp
 using Umbraco.Core;
@@ -378,7 +379,7 @@ namespace Umbraco8.Composers
 
 The SiteDomainHelper's role is to get the current Uri and all eligible domains, and only return one domain which is then  used by the UrlProvider to create the Url.
 
-You can use the default SiteDomainHelper to add extra domains:
+Thehe default SiteDomainHelper can be used to add extra domains:
 
 ```csharp
 
