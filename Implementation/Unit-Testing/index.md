@@ -8,7 +8,7 @@ needsV8Update: "false"
 
 These examples requires [NUnit](https://nunit.org/) and [Moq](https://github.com/moq/moq4).
 
-## Setup
+## SetUp
 
 The ```Current.Factory``` needs to be mocked before each unit test that has an Umbraco dependency, or you'll get an ```InvalidOperationException``` saying that  **"No factory has been set"**.
 
@@ -105,7 +105,7 @@ public class MySurfaceController : SurfaceController
 {
     public ActionResult Index() 
     {
-        return Content("hello world");
+        return Content("Hello World");
     }
 }
 
@@ -140,7 +140,7 @@ public class MySurfaceControllerTests
     {
         var result = (ContentResult)this.controller.Index();
 
-        Assert.AreEqual("hello world", result.Content);
+        Assert.AreEqual("Hello World", result.Content);
     }
 }
 ```
@@ -163,13 +163,15 @@ public class MyCustomModelTests
     private Mock<IPublishedContent> content;
 
     [SetUp]
-    public void SetUp() {
+    public void SetUp() 
+    {
         Current.Factory = new Mock<IFactory>().Object;
         this.content = new Mock<IPublishedContent>();
     }
 
     [TearDown]
-    public void TearDown() {
+    public void TearDown() 
+    {
         Current.Reset();
     }
 
