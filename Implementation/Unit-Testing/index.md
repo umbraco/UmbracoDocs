@@ -203,7 +203,7 @@ public class MyCustomModelTests
 ## Dictionaries
 The ```ICultureDictionary``` is used to fetch Dictionary values from Umbraco. It's the equivalent of using ```UmbracoHelper.GetDictionaryValue(string key)```, but with less mocking required.
 
-See [Core documentation on the interface ICultureDictionary](<https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Dictionary.ICultureDictionary.html>).
+See [Core documentation on the interface ICultureDictionary](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Dictionary.ICultureDictionary.html).
 
 ```csharp
 // Only necessary if the ICultureDictionary is not already registered.
