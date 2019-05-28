@@ -211,7 +211,7 @@ public class CultureDictionaryComposer : IUserComposer
 {
     public void Compose(Composition composition)
     {
-        composition.Register<ICultureDictionary>(factory => factory.GetInstance<DefaultCultureDictionary>());
+        composition.Register<ICultureDictionary, DefaultCultureDictionary>(Lifetime.Scope);
     }
 }
 
