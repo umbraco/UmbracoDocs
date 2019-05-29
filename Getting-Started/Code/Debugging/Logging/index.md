@@ -221,15 +221,29 @@ If you like using Serilog but prefer to use C# to configure the logging pipeline
 
 ```csharp
 using Umbraco.Web;
+using Umbraco.Core;
+using Umbraco.Web.Runtime;
 using Umbraco.Core.Logging.Serilog;
+using ILogger = Umbraco.Core.Logging.ILogger;
+
 using Serilog;
 using Serilog.Events;
-using ILogger = Umbraco.Core.Logging.ILogger;
 
 namespace MyNamespace
 {
-    public class FineTuneLogging : UmbracoApplication
+    public class FineTuneLoggingApplication : UmbracoApplication
     {
+        protected override IRuntime GetRuntime()
+        {
+            return new FineTuneLoggingWebRuntime(this);
+        }
+    }
+
+    public class FineTuneLoggingWebRuntime : WebRuntime
+    {
+        public FineTuneLoggingWebRuntime(UmbracoApplicationBase umbracoApplication) : base(umbracoApplication)
+        {
+        }
         protected override ILogger GetLogger()
         {
             var loggerConfig = new LoggerConfiguration();
@@ -250,7 +264,7 @@ namespace MyNamespace
 You will then need to update the `global.asax` file on disk to use our FineTuneLogging class like so
 
 ```
-<%@ Application Inherits="MyNamespace.FineTuneLogging" Language="C#" %>
+<%@ Application Inherits="MyNamespace.FineTuneLoggingApplication" Language="C#" %>
 ```
 
 ## The logviewer dashboard
