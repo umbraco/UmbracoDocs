@@ -8,7 +8,7 @@ needsV8Update: "false"
 
 These examples requires [NUnit](https://nunit.org/) and [Moq](https://github.com/moq/moq4).
 
-## Setup
+## SetUp
 
 The ```Current.Factory``` needs to be mocked before each unit test that has an Umbraco dependency, or you'll get an ```InvalidOperationException``` saying that  **"No factory has been set"**.
 
@@ -105,7 +105,7 @@ public class MySurfaceController : SurfaceController
 {
     public ActionResult Index() 
     {
-        return Content("hello world");
+        return Content("Hello World");
     }
 }
 
@@ -140,7 +140,7 @@ public class MySurfaceControllerTests
     {
         var result = (ContentResult)this.controller.Index();
 
-        Assert.AreEqual("hello world", result.Content);
+        Assert.AreEqual("Hello World", result.Content);
     }
 }
 ```
@@ -163,13 +163,15 @@ public class MyCustomModelTests
     private Mock<IPublishedContent> content;
 
     [SetUp]
-    public void SetUp() {
+    public void SetUp() 
+    {
         Current.Factory = new Mock<IFactory>().Object;
         this.content = new Mock<IPublishedContent>();
     }
 
     [TearDown]
-    public void TearDown() {
+    public void TearDown() 
+    {
         Current.Reset();
     }
 
@@ -201,7 +203,7 @@ public class MyCustomModelTests
 ## Dictionaries
 The ```ICultureDictionary``` is used to fetch Dictionary values from Umbraco. It's the equivalent of using ```UmbracoHelper.GetDictionaryValue(string key)```, but with less mocking required.
 
-See [Core documentation on the interface ICultureDictionary](<https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Dictionary.ICultureDictionary.html>).
+See [Core documentation on the interface ICultureDictionary](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Dictionary.ICultureDictionary.html).
 
 ```csharp
 // Only necessary if the ICultureDictionary is not already registered.
@@ -209,7 +211,7 @@ public class CultureDictionaryComposer : IUserComposer
 {
     public void Compose(Composition composition)
     {
-        composition.Register<ICultureDictionary>(factory => factory.GetInstance<DefaultCultureDictionary>());
+        composition.Register<ICultureDictionary, DefaultCultureDictionary>(Lifetime.Scope);
     }
 }
 
