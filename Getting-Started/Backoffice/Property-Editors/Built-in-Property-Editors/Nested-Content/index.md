@@ -111,7 +111,7 @@ Example:
         
         if (!string.IsNullOrEmpty(description))
         {
-            <p>@Html.Raw(Html.ReplaceLineBreaksForHtml(description)))</p>
+            <p>@Html.Raw(Html.ReplaceLineBreaksForHtml(description))</p>
         }
         
         if (image != null)
