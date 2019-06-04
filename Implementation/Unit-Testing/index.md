@@ -272,3 +272,63 @@ public class MyDictionaryDependentControllerTests
     }
 }
 ```
+
+## Content
+The ```IPublishedContentQuery``` is used to fetch Content from Umbraco. It's the equivalent of using ```UmbracoHelper.Content(object id)```, but with less mocking required.
+
+See [Core documentation on the interface IPublishedContentQuery](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Web.IPublishedContentQuery.html).
+
+```csharp
+public class MyCustomController : RenderMvcController
+{
+    private readonly IPublishedContentQuery contentQuery;
+
+    public MyCustomController(IPublishedContentQuery contentQuery)
+    {
+        this.contentQuery = contentQuery;
+    }
+
+    public override ActionResult Index(ContentModel model)
+    {
+        var myCustomModel = new MyCustomModel(model.Content)
+        {
+            OtherContent = this.contentQuery.Content(1062)
+        };
+
+        return View(myCustomModel);
+    }
+}
+
+[TestFixture]
+public class MyCustomControllerTests
+{
+    private MyCustomController controller;
+    private Mock<IPublishedContentQuery> contentQuery;
+
+    [SetUp]
+    public void SetUp()
+    {
+        Current.Factory = new Mock<IFactory>().Object;
+        this.contentQuery = new Mock<IPublishedContentQuery>();
+        this.controller = new MyCustomController(this.contentQuery.Object);
+    }
+
+    [TearDown]
+    public virtual void TearDown()
+    {
+        Current.Reset();
+    }
+
+    [Test]
+    public void GivenContentQueryReturnsOtherContent_WhenIndex_ThenReturnViewModelWithOtherContent()
+    {
+        var currentContent = new ContentModel(new Mock<IPublishedContent>().Object);
+        var otherContent = Mock.Of<IPublishedContent>();
+        this.contentQuery.Setup(x => x.Content(1062)).Returns(otherContent);
+        
+        var result = (MyCustomModel)((ViewResult)this.controller.Index(currentContent)).Model;
+
+        Assert.AreEqual(otherContent, result.OtherContent);
+    }
+}
+```
