@@ -31,7 +31,6 @@ public void TearDown()
 }
 ```
 
-
 ## Render MVC Controller
 
 See [Reference documentation for Custom controllers (Hijacking Umbraco Routes)](https://our.umbraco.com/documentation/reference/routing/custom-controllers#creating-a-custom-controller). 
@@ -145,7 +144,53 @@ public class MySurfaceControllerTests
 }
 ```
 
+## UmbracoApiController
+
+See [Reference documentation on UmbracoApiControllers](https://our.umbraco.com/documentation/Reference/Routing/WebApi/#locally-declared-controller).
+
+```csharp
+
+public class ProductsController : UmbracoApiController
+{
+    public IEnumerable<string> GetAllProducts()
+    {
+        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+    }
+}
+
+[TestFixture]
+public class ProductsControllerTests
+{
+    private ProductsController controller;
+
+    [SetUp]
+    public void SetUp()
+    {
+        Current.Factory = new Mock<IFactory>().Object;
+        this.controller = new ProductsController();
+    }
+
+    [TearDown]
+    public virtual void TearDown()
+    {
+        Current.Reset();
+    }
+
+    [Test]
+    public void WhenGetAllProducts_ThenReturnViewModelWithExpectedProducts()
+    {
+        var expected = new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+
+        var result = this.controller.GetAllProducts();
+
+        Assert.AreEqual(expected, result);
+    }
+}
+
+```
+
 ## Content Model
+
 See [Reference documentation on Returning a view with a custom model](https://our.umbraco.com/documentation/Reference/Routing/custom-controllers#returning-a-view-with-a-custom-model).
 
 ```csharp
@@ -157,48 +202,7 @@ public class MyCustomViewModel : ContentModel
     public string Heading => this.Content.Value<string>(nameof(Heading));
 }
 
-[TestFixture]
-public class MyCustomModelTests 
-{
-    private Mock<IPublishedContent> content;
-
-    [SetUp]
-    public void SetUp() 
-    {
-        Current.Factory = new Mock<IFactory>().Object;
-        this.content = new Mock<IPublishedContent>();
-    }
-
-    [TearDown]
-    public void TearDown() 
-    {
-        Current.Reset();
-    }
-
-    [Test]
-    [TestCase("", "")]
-    [TestCase(null, null)]
-    [TestCase("My Heading", "My Heading")]
-    [TestCase("Another Heading", "Another Heading")]
-    public void GivenPublishedContent_WhenGetHeading_ThenReturnCustomViewModelWithHeadingValue(string value, string expected)
-    {
-        this.SetupPropertyValue(nameof(MyCustomViewModel.Heading), value);
-        var model = new MyCustomViewModel(this.content.Object);
-        Assert.AreEqual(expected, model.Heading);
-    }
-
-    private void SetupPropertyValue(string alias, object value, string culture = null, string segment = null)
-    {
-        var property = new Mock<IPublishedProperty>();
-        property.Setup(x => x.Alias).Returns(alias);
-        property.Setup(x => x.GetValue(culture, segment)).Returns(value);
-        property.Setup(x => x.HasValue(culture, segment)).Returns(value != null);
-        this.content.Setup(x => x.GetProperty(alias)).Returns(property.Object);
-    }
-}
-
 ```
-
 
 ## Dictionaries
 The ```ICultureDictionary``` is used to fetch Dictionary values from Umbraco. It's the equivalent of using ```UmbracoHelper.GetDictionaryValue(string key)```, but with less mocking required.
