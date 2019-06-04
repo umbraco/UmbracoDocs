@@ -194,7 +194,6 @@ public class ProductsControllerTests
 See [Reference documentation on Returning a view with a custom model](https://our.umbraco.com/documentation/Reference/Routing/custom-controllers#returning-a-view-with-a-custom-model).
 
 ```csharp
-
 public class MyCustomViewModel : ContentModel 
 {
     public MyCustomViewModel(IPublishedContent content) : base(content) { }
@@ -202,6 +201,45 @@ public class MyCustomViewModel : ContentModel
     public string Heading => this.Content.Value<string>(nameof(Heading));
 }
 
+[TestFixture]
+public class MyCustomModelTests 
+{
+    private Mock<IPublishedContent> content;
+
+    [SetUp]
+    public void SetUp() 
+    {
+        Current.Factory = new Mock<IFactory>().Object;
+        this.content = new Mock<IPublishedContent>();
+    }
+
+    [TearDown]
+    public void TearDown() 
+    {
+        Current.Reset();
+    }
+
+    [Test]
+    [TestCase("", "")]
+    [TestCase(null, null)]
+    [TestCase("My Heading", "My Heading")]
+    [TestCase("Another Heading", "Another Heading")]
+    public void GivenPublishedContent_WhenGetHeading_ThenReturnCustomViewModelWithHeadingValue(string value, string expected)
+    {
+        this.SetupPropertyValue(nameof(MyCustomViewModel.Heading), value);
+        var model = new MyCustomViewModel(this.content.Object);
+        Assert.AreEqual(expected, model.Heading);
+    }
+
+    private void SetupPropertyValue(string alias, object value, string culture = null, string segment = null)
+    {
+        var property = new Mock<IPublishedProperty>();
+        property.Setup(x => x.Alias).Returns(alias);
+        property.Setup(x => x.GetValue(culture, segment)).Returns(value);
+        property.Setup(x => x.HasValue(culture, segment)).Returns(value != null);
+        this.content.Setup(x => x.GetProperty(alias)).Returns(property.Object);
+    }
+}
 ```
 
 ## Dictionaries
@@ -273,7 +311,7 @@ public class MyDictionaryDependentControllerTests
 }
 ```
 
-## Content
+## Content Querying
 The ```IPublishedContentQuery``` is used to fetch Content from Umbraco. It's the equivalent of using ```UmbracoHelper.Content(object id)```, but with less mocking required.
 
 See [Core documentation on the interface IPublishedContentQuery](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Web.IPublishedContentQuery.html).
