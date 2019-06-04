@@ -144,7 +144,7 @@ public class MySurfaceControllerTests
 }
 ```
 
-## UmbracoApiController
+## Umbraco API Controller
 
 See [Reference documentation on UmbracoApiControllers](https://our.umbraco.com/documentation/Reference/Routing/WebApi/#locally-declared-controller).
 
