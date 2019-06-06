@@ -13,7 +13,7 @@ In this guide you can read more about the tool, it's limitations and how to use 
 
 ### Versions supported
 
-The content migration tool is a database migration, which is made for the database schema of Umbraco 7.14+. This means that in order to do the migration the first step in to ensure your Umbraco 7 site is running at least Umbraco 7.14.
+The content migration tool is a database migration, which is made for the database schema of Umbraco 7.14+. This means that in order to do the migration the first step is to ensure your Umbraco 7 site is running at least Umbraco 7.14.
 
 ### Database types supported
 
