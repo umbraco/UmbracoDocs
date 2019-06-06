@@ -65,3 +65,7 @@ When you start the site it will ask you to login and then show you this screen:
 That is all, now the automatic migration will take over, and after a little bit you can log in and see your content:
 
 ![Content is on 8.1](images/content-on-8.1.png)
+
+:::note
+Please be aware this is just a content migration, if you go to the frontend after doing this nothing will work, you will need to do all templates and implementation work again!
+:::
