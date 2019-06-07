@@ -22,7 +22,13 @@ The database types that are supported are SQL Server and SQL CE.
 
 ### Third party property editors
 
-The migration will transfer the data stored in third party editors as well, however it will simply be stored as it was in Umbraco 7. If the structure has changed for Umbraco 8 or the property editor doesn't exist you will still be able to find the data in the database, but you would not see it in the backoffice.
+The migration will transform the data stored in third party editors as well, however it will simply be stored as it was in Umbraco 7. If the structure has changed for Umbraco 8 or the property editor doesn't exist you will still be able to find the data in the database, but you would not see it in the backoffice.
+
+## What will happen?
+
+When the migrations are running, Umbraco will go through your entire Umbraco 7 database and update it to the format required for Umbraco 8. The schema will be remodelled and transformed into the correct format and your existing compatible data will also be transformed to fit with how Umbraco 8 is storing data.
+
+Please be aware that these migrations will be running directly on your database. They are transforming schema and data - not transferring. Therefore always ensure that you have a backup before attempting to do this. In case something goes wrong, you will be able to rollback and try again.
 
 ## How does it work?
 
@@ -69,5 +75,5 @@ That is all! Now the automatic migration will take over, and after a little bit 
 ![Content is on 8.1](images/content-on-8.1.png)
 
 :::note
-Please be aware this is just a content migration. If you go to the frontend after doing this nothing will work. You will need to do all templates and implementation work again!
+Please be aware this is just a content migration. If you go to the frontend after doing this nothing will work. You will need to create all templates and other implementation again!
 :::
