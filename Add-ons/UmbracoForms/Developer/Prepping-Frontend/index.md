@@ -3,6 +3,9 @@ versionFrom: 7.0.0
 ---
 
 # Preparing your frontend
+:::tip
+If you are using Umbraco Forms v 8.x, the below steps are not needed. The scripts are already added by Umbraco Forms.
+:::
 In order for Umbraco Forms to work correctly, Umbraco Forms needs three (3) client dependencies.
 
 - jQuery (JavaScript library)
