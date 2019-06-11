@@ -379,6 +379,7 @@ namespace Umbraco8.Composers
 }
 ```
 
+### Default SiteDomainHelper
 
 Umbraco ships with a default `SiteDomainHelper`. This has some useful functionality for grouping sets of domains together.
 With Umbraco Cloud, or another Umbraco development environment scenario, there maybe be multiple domains setup for a site 'live, 'staging', 'testing' or a seperate domain to access the backoffice. Each domain will be setup as a 'Culture and Hostname' inside Umbraco. By default editors will see the full list of possible Urls for each of their content items on each domain, which can be confusing. If the additional urls aren't present in Culture and Hostnames, then when testing the front-end of the site on a 'staging' url, will result in navigation links taking you to the registered domain!
@@ -419,11 +420,13 @@ Now if an editor visits the backoffice via the staging url they will only see do
 
 Now if an editor visits the backoffice via the backoffice url they will only see domains for the backoffice url and the production url:
 
-![Staging domain only](images/backoffice-see-prod.png)
+![Backoffice + production domains only](images/backoffice-see-prod.png)
 
 NB: it's not a 1-1 mapping, but a grouping: multiple Urls can be added to a group - think multilingual production and staging variations, and in the example above, if an editor logged in to the backoffice via the production url, eg umbraco-v8.localtest.me/umbraco - they would see the umbraco-v8-backoffice.localtest.me domain listed.
 
-Grouping the groupings - The SiteDomainHelper contains a 'BindSites' method that enables different site groupings to be bound together:
+#### Grouping the groupings - BindSites
+
+The SiteDomainHelper contains a 'BindSites' method that enables different site groupings to be bound together:
 
 ```csharp
    public void Compose(Composition composition)
