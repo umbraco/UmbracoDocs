@@ -67,3 +67,9 @@ If a project is a project that has had child projects created off it, the upgrad
 It is important that developers understand what is considered a breaking change in Umbraco products. In most cases an auto-upgrade will not have any breaking changes and we strive to ensure this is the case. However, in some rare cases developers may be using Umbraco’s internal code or Umbraco’s code that is not intended for public consumption and in some releases that code may change. It is important for developers to understand the risks of using Umbraco code that is not considered a breaking change when it is updated since this may directly affect a site that is auto-upgraded. 
 
 What is a breaking change is documented here: [https://our.umbraco.com/documentation/development-guidelines/breaking-changes](https://our.umbraco.com/documentation/development-guidelines/breaking-changes)
+
+## Can I opt out of product auto upgrades?
+
+No it´s not possible to opt out of product auto upgrades on Umbraco Cloud. 
+
+In order for us to be able to support a site on Umbraco Cloud we must ensure that all sites are running the latest versions of our products so that we know the site is running in it’s most stable state.
