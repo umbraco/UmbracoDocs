@@ -11,7 +11,7 @@ Welcome to the Umbraco Cloud documentation. Here you can read all about how to s
 Learn how to set up your very first Umbraco Cloud project and all about what Umbraco Cloud is and how you can use it to get your work done more efficiently - and have more fun.
 
 ## [Set up a Project](Set-Up/)
-How to manage your Umbraco Cloud project and how to set i up for development on your local machine. 
+How to manage your Umbraco Cloud project, how to set it up for development on your local machine and much more. 
 
 ## [Deployment](Deployment/)
 The deployment process explained with best practices and a little Git mixed in.
