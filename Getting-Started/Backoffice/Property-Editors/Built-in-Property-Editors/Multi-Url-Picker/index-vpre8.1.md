@@ -1,5 +1,6 @@
 ---
-versionFrom: 8.1.0
+versionFrom: 8.0.0
+versionTo: 8.1.0
 ---
 
 # Multi Url Picker
@@ -13,7 +14,7 @@ Multi Url Picker allows an editor to easily pick and sort multiple urls. This pr
 
 ## Data Type Definition Example
 
-![Related Links Data Type Definition](images/Multy-Url-Picker-DataType-8.1.png)
+![Related Links Data Type Definition](images/Multy-Url-Picker-DataType-v8.png)
 
 ## Content Example 
 
@@ -38,7 +39,6 @@ Multi Url Picker allows an editor to easily pick and sort multiple urls. This pr
     }
 }
 ```
-
 If `Max number of items` is configured to `1`
 ```csharp
 @using Umbraco.Web.Models
