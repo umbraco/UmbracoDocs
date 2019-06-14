@@ -1,5 +1,6 @@
 ---
-versionFrom: 7.15.0
+versionFrom: 7.0.0
+versionTo: 7.15.0
 ---
 
 # Content Picker
@@ -12,7 +13,7 @@ The content picker opens a panel to pick a specific page from the content struct
 
 ## Data Type Definition Example
 
-![Content Picker Data Type Definition](images/Content-Picker-DataType-7.15.png)
+![Content Picker Data Type Definition](images/Content-Picker2-DataType.png)
 
 ## Content Example
 
