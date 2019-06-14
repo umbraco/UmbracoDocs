@@ -1,5 +1,6 @@
 ---
-versionFrom: 7.15.0
+versionFrom: 7.0.0
+versionTo: 7.15.0
 ---
 
 # Media Picker #
@@ -12,7 +13,7 @@ This property editors returns a single item if the "Pick multiple items" data ty
 
 ## Data Type Definition Example
 
-![Media Picker Data Type Definition](images/Media-Picker-DataType-7.15.png)
+![Media Picker Data Type Definition](images/Media-Picker2-DataType.png)
 
 ## Content Example 
 
