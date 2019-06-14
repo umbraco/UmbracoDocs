@@ -164,7 +164,7 @@ A configurable number control allowing only numbers.
 
 Pretty much like the name indicates this property editor enables editors to choose from list of radio buttons.
 
-## [Related Links](Related-Links2.md)
+## [Related Links](Related-Links)
 `Alias: Umbraco.RelatedLinks2`
 
 Related Links allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.

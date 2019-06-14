@@ -1,6 +1,6 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 7.15.0
+versionRemoved: 8.0.0
 ---
 
 # Related Links
@@ -11,7 +11,7 @@ Related Links allows an editor to easily add an array of links. These can either
 
 ## Data Type Definition Example
 
-![Related Links Data Type Definition](images/Related-Links2-DataType.png)
+![Related Links Data Type Definition](images/Related-Links-DataType-7.15.png)
 
 ## Content Example
 
