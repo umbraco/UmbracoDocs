@@ -43,7 +43,7 @@ When your new custom section appears, you'll notice only the section 'Alias' is 
 
 Create a /lang folder in the folder where you are creating the implementation for your custom section(if not create one in the app*plugins folder eg */app_plugins/favouritethings/lang\*)
 
-inside this folder create a file called **en-us.xml** this is the 'default' fallback language translation file, and add the following definition:
+Inside this folder create a file called **en-us.xml**. This is the 'default' fallback language translation file. Add the following definition:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
