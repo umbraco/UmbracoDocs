@@ -41,7 +41,7 @@ You will also need to allow your current Umbraco User group access to this new C
 
 When your new custom section appears, you'll notice only the section 'Alias' is displayed inside square brackets. This is because Umbraco caters for Multiple Languages in the backoffice, and is looking for a translation file for the current backoffice culture, containing a translation key for your custom section alias.
 
-Create a /lang folder in the folder where you are creating the implementation for your custom section(if not create one in the app*plugins folder eg */app_plugins/favouritethings/lang\*)
+Create a /lang folder in the folder where you are creating the implementation for your custom section. If not create one in the App_Plugins folder eg. */App_Plugins/MyFavouriteThings/lang/*.
 
 Inside this folder create a file called **en-us.xml**. This is the 'default' fallback language translation file. Add the following definition:
 
