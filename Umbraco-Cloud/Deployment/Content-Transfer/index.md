@@ -36,16 +36,16 @@ You want to transfer the whole site so you start from the `Home` node and choose
 Media items are transferred the same way as content:
 
 1. In the Media section *Right-click* the items you want to transfer and choose **Queue for transfer** 
-  * or simply *right-click* the top of the Media section to transfer all you media at once.
-2. Go to the Deployment dashboard in the Content section to see the items you've queued for transfer and to transfer your items.
+  * or *right-click* the top of the Media section to transfer all you media at once.
+2. Go to the Deployment dashboard in the Content section to see the items you've queued for transfer and to transfer your items
 
 ### Umbraco Forms
 
 Media items are transferred the same way as content and media:
 
 1. In the Forms section *Right-click* the items you want to transfer and choose **Queue for transfer** 
-  * or simply *right-click* the top of the Forms section to transfer all your Forms at once.
-2. Go to the Deployment dashboard in the Content section to see the items you've queued for transfer and to transfer your items.
+  * or *right-click* the top of the Forms section to transfer all your Forms at once.
+2. Go to the Deployment dashboard in the Content section to see the items you've queued for transfer and to transfer your items
 
 ## Schema Mismatches
 
