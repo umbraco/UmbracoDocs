@@ -15,7 +15,7 @@ Read more about the product in the [Umbraco Forms section](../../../Add-ons/Umbr
 Umbraco Forms are handled as content and media. This means that you can transfer your Forms between environments using the same workflow you use for content and media.
 
 :::note
-**Did you create your Cloud project before June 17th 2019?**
+**Did you create your Cloud project before June 18th 2019?**
 
 Then you need to configure your project to handle Umbraco Forms data as content.
 This is done by adding the following to `UmbracoDeploy.settings.config`
