@@ -38,15 +38,29 @@ This means that your Forms will be deployed along with the rest of your metadata
 
 We strongly recommend that you work with the Forms on your local or Development environment, following the [left-to-right deployment model](../../Deployment).
 
-You can configure your project to handle Umbraco Forms data as content.
-This is done by adding the following to `UmbracoDeploy.settings.config`
+You can configure your project to handle Umbraco Forms data as content by following these steps:
 
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<settings xmlns="urn:umbracodeploy-settings">
-   <forms transferFormsAsContent="true" />
-</settings>
-```
+1. Make sure your Forms are in sync between all your Cloud environments
+2. Clone down the project to your local machine
+3. Find and open `~/Config/UmbracoDeploy.settings.config`
+4. Update the `transferFormsAsContent` value to `true`
+   ```xml
+   <?xml version="1.0" encoding="utf-8"?>
+   <settings xmlns="urn:umbracodeploy-settings">
+      <forms transferFormsAsContent="true" />
+   </settings>
+   ```
+5. Push the change back to the Cloud environment
+   * If you have more than 1 Cloud environment, make sure to deploy the change through to all of them
+6. You're Forms are now a part of content / media transfers!
+
+:::tip
+Do you want to test this new setting you've configured?
+
+Make a change to a form on your Live environment, and then use the **Restore** option in the Forms section on another environment.
+
+You will see that the changes you made on Live, is now reflected on your other environments.
+:::
 
 ## Upgrades
 
