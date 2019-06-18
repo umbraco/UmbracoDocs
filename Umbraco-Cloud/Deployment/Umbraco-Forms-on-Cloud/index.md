@@ -14,21 +14,6 @@ Read more about the product in the [Umbraco Forms section](../../../Add-ons/Umbr
 
 Umbraco Forms are handled as content and media. This means that you can transfer your Forms between environments using the same workflow you use for content and media.
 
-:::note
-**Did you create your Cloud project before June 18th 2019?**
-
-Then you need to configure your project to handle Umbraco Forms data as content.
-This is done by adding the following to `UmbracoDeploy.settings.config`
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<settings xmlns="urn:umbracodeploy-settings">
-   <forms transferFormsAsContent="true" />
-</settings>
-```
-
-:::
-
 Entries submitted are not transferred to the next environment, as they are *environment specific*. If you need to move entries from one environment to another, you need to run an export/import script on the databases.
 
 ## Recommended workflow
@@ -44,6 +29,24 @@ For more information on how to handle content transfer / restores on Umbraco Clo
 
 * [Transfer content, media and Forms](../Content-Transfer)
 * [Restoring content](../Restoring-content)
+
+### Did you create your Cloud project before June 18th 2019?
+
+Then your Forms data are handled as meta data. When you create a Form, a UDA file will be generated. This UDA file will contain all the metadata from your form, and be very similar to the `JSON` file that is also generated when you create a new form - this file can be found in `~/App_Data/UmbracoForms/Data/forms`.
+
+This means that your Forms will be deployed along with the rest of your metadata and structure files, e.g. Document Types, Templates and Stylesheets. 
+
+We strongly recommend that you work with the Forms on your local or Development environment, following the [left-to-right deployment model](../../Deployment).
+
+You can configure your project to handle Umbraco Forms data as content.
+This is done by adding the following to `UmbracoDeploy.settings.config`
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+   <forms transferFormsAsContent="true" />
+</settings>
+```
 
 ## Upgrades
 
