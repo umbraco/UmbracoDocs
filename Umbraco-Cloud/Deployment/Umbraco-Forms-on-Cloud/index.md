@@ -52,7 +52,7 @@ You can configure your project to handle Umbraco Forms data as content by follow
    ```
 5. Push the change back to the Cloud environment
    * If you have more than 1 Cloud environment, make sure to deploy the change through to all of them
-6. You're Forms are now a part of content / media transfers!
+6. Your Forms are now a part of content / media transfers!
 
 :::tip
 Do you want to test this new setting you've configured?
