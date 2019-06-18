@@ -41,7 +41,7 @@ Media items are transferred the same way as content:
 
 ### Umbraco Forms
 
-Media items are transferred the same way as content and media:
+Forms are transferred the same way as content and media:
 
 1. In the Forms section *Right-click* the items you want to transfer and choose **Queue for transfer** 
   * or *right-click* the top of the Forms section to transfer all your Forms at once.
