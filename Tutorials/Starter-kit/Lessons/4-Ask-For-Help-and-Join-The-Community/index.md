@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Ask For Help and Join the Community
 Who you gonna call? Our Umbraco!
 If you need some help, here's where to find it.

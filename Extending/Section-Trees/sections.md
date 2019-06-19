@@ -1,8 +1,13 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Sections
 
 The Umbraco backoffice consists of Sections, also referred to as Applications, which contain Trees. 
 
-Each section is identified by an icon in the left hand side navigation ribbon of the Umbraco Backoffice.
+Each section is identified by an icon in the left-hand side navigation ribbon of the Umbraco Backoffice.
 
 [Configuration for sections is defined in the `~/Config/applications.config` file.](../../Reference/Config/applications/index.md) 
 
@@ -12,13 +17,15 @@ To create a new custom section in your Umbraco backoffice, add an entry in the `
 
 eg, adding the following...
 
-      <add alias="favStuff" name="My Favourite Things" icon="icon-hearts" sortOrder="7" />
+```xml
+<add alias="favStuff" name="My Favourite Things" icon="icon-hearts" sortOrder="7" />
+```
 
 ... would create a new Section in your Umbraco backoffice called 'My Favourite Things' and be represented by a heart in the section navigation.
 
 ### Why can't I see my new Custom Section?
 
-You will also need to allow your current Umbraco User access to this new Custom Section via the backoffice! (you will need to logout and back in again to see the change)
+You will also need to allow your current Umbraco User group access to this new Custom Section via the backoffice! (you will need to logout and back in again to see the change)
 
 ![Add Section for User](images/add-custom-section.png)
 
@@ -32,12 +39,14 @@ Create a /lang folder in the folder where you are creating the implementation fo
 
 inside this folder create a file called **en-us.xml** this is the 'default' fallback language translation file, and add the following definition:
 
-    <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-    <language alias="en" intName="English (US)" localName="English (US)" lcid="" culture="en-US">
-     <area alias="sections">
-       <key alias="favStuff">My Favourite Things</key>
-     </area>
-    </language>
+```xml
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language alias="en" intName="English (US)" localName="English (US)" lcid="" culture="en-US">
+  <area alias="sections">
+    <key alias="favStuff">My Favourite Things</key>
+  </area>
+</language>
+```
 
 Recycle the application pool, and the square brackets will be gone, and your section will have the title 'My Favourite Things'
 
@@ -53,7 +62,7 @@ You will need to recycle the application pool, to see changes to the language tr
 
 The section API in v7+ is found in the interface `Umbraco.Core.Services.ISectionService` which is exposed on the ApplicationContext singleton. This API is used to control/query the storage for tree registrations in the ~/Config/applications.config file.
 
-[See the section service API reference here](../../Reference/Management/Services/SectionService.md) 
+[See the section service API reference here](../../Reference/Management/Services/SectionService/index.md) 
 
 ## Section (Application) API v6
 

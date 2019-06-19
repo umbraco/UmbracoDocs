@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Routing & Controllers
 
 _All about Umbraco's routing pipeline & the types of Controllers used in Umbraco, how they work and what they are used for_

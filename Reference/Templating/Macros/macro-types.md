@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Managing macros
 
 _Describes how to create/update a macro and its parameters_

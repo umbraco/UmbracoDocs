@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Source Control
 
 ## Umbraco Cloud
@@ -57,8 +62,9 @@ They include:
  - **umbraco.config** - This is an XML file containing all published content on your site - Umbraco will continually update this file, and a version held in memory when content is published and unpublished, so source controlling this file would play havoc with how Umbraco works!
  - **Umbraco.sdf** - If you are using SQLCE for the data store in your Umbraco site, then this file IS that datastore, it will be difficult to source control the constant changes to this file.
 
-**Note:**
+:::note
 There is a file /app_data/packages/installed/installedPackages.config that lists all packages installed via the Umbraco backoffice, depending on how you update or install packages to your site, it can be useful to track changes to this file in source control
+:::
 
 #### Umbraco Models Builder
 
@@ -84,15 +90,16 @@ Depending on how you installed the plugin - Nuget vs The Backoffice, how you dep
 - **Backoffice** - if your working with other developers, then it may be easier to add the plugin files to source control, or at least communicate to them that the particular package needs be installed via the backoffice
 - **Backoffice + Buildserver** - you'll need to include the plugin files in source control as the build server won't know to restore them - if the plugin/package doesn't come with a NuGet resource, consider setting up your own local NuGet repository for your build server to pull the files from.
 
-**Note**
+:::note
 Each plugin could be different depending on its implementation and functionality, it may contain files that it would be useful to track via Source control, and also files that should be ignored: check with the plugin's supporting website/developer for more information.
+:::
 
 ### What folders and files should I **include** in my source control repository?
 
 #### Front-end build
 
-A lot depends on how you maintain the front-end build of your website, eg are you using css preprocesors such as SCSS/LESS etc - gulp/grunt tasks to amalgamate and minify script resources.
-But generally you will need to source control all of your website's static assets: Javascript, Css, Fonts, Page Furniture Images etc.
+A lot depends on how you maintain the front-end build of your website, eg are you using css preprocessors such as SCSS/LESS etc - gulp/grunt tasks to amalgamate and minify script resources.
+But generally you will need to source control all of your website's static assets: JavaScript, Css, Fonts, Page Furniture Images etc.
 
 #### Views/Templates/Partials
 
@@ -144,15 +151,16 @@ If you are working with continuous integration, then
 
 - *[Chauffeur](https://github.com/aaronpowell/Chauffeur)*, is another package worth investigating, allowing the issuing of command line deliverables against an Umbraco install.
 
-**Note**
+:::note
 It's possible to use [Umbraco Courier](https://our.umbraco.com/packages/umbraco-pro/umbraco-courier/) (Umbraco Cloud uses Umbraco Deploy) to try to move these kinds of changes through your different Umbraco development/staging/production environments, and potentially [source control 'Courier Revision Sets' for team development](http://stream.umbraco.org/video/2198253/team-development-with-courier)
+:::
 
 ## Git
 
-If you are working with GIT, you can add a gitignore file to specify intentionally untracked files that Git should ignore.
+If you are working with Git, you can add a gitignore file to specify intentionally untracked files that Git should ignore.
 
 ### Example gitignore
 
-github has a repository of gitignore files which are a great starting point for working with Umbraco and source control.
+GitHub has a repository of gitignore files which are a great starting point for working with Umbraco and source control.
 
 Combining: [VisualStudio.gitignore](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore) & [Umbraco.gitignore](https://github.com/github/gitignore/blob/master/Umbraco.gitignore)

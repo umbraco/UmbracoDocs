@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Server setup
 *This section describes different ways of setting up servers for use with Umbraco*
 

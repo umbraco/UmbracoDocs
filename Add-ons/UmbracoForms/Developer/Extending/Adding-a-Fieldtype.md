@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Adding a field type to Umbraco Forms #
 
 *This builds on the "[adding a type to the provider model](Adding-a-Type.md)" chapter*
@@ -6,36 +10,38 @@
 
 Add a new class to the Visual Studio solution, make it inherit from Umbraco.Forms.Core.FieldType and fill in the constructor:
 
-    public class MyCustomField : Umbraco.Forms.Core.FieldType
+```csharp
+public class MyCustomField : Umbraco.Forms.Core.FieldType
+{
+    public MyCustomField()
     {
-        public MyCustomField()
-        {
-            this.Id = new Guid("08b8057f-06c9-4ca5-8a42-fd1fc2a46eff"); // Replace this!
-            this.Name = "My Custom Field";
-            this.Description = "Render a custom text field.";
-            this.Icon = "icon-autofill";
-            this.DataType = FieldDataType.String;
-            this.SortOrder = 10;
-            this.SupportsRegex = true;
-        }
-
-        // You can do custom validation in here which will occur when the form is submitted.
-        // Any strings returned will cause the submit to be invalid!
-        // Where as returning an empty ienumerable of strings will say that it's okay.
-        public override IEnumerable<string> ValidateField(Form form, Field field, IEnumerable<object> postedValues, HttpContextBase context)
-        {
-            var returnStrings = new List<string>();
-	    
-            if (!postedValues.Any(value => value.ToString().ToLower().Contains("custom"))) {
-                returnStrings.Add("You need to include 'custom' in the field!");
-            }
-            
-            // Also validate it against the original default method.
-            returnStrings.AddRange(base.ValidateField(form, field, postedValues, context));
-
-            return returnStrings;
-        }
+        this.Id = new Guid("08b8057f-06c9-4ca5-8a42-fd1fc2a46eff"); // Replace this!
+        this.Name = "My Custom Field";
+        this.Description = "Render a custom text field.";
+        this.Icon = "icon-autofill";
+        this.DataType = FieldDataType.String;
+        this.SortOrder = 10;
+        this.SupportsRegex = true;
     }
+
+    // You can do custom validation in here which will occur when the form is submitted.
+    // Any strings returned will cause the submit to be invalid!
+    // Where as returning an empty ienumerable of strings will say that it's okay.
+    public override IEnumerable<string> ValidateField(Form form, Field field, IEnumerable<object> postedValues, HttpContextBase context)
+    {
+        var returnStrings = new List<string>();
+    
+        if (!postedValues.Any(value => value.ToString().ToLower().Contains("custom"))) {
+            returnStrings.Add("You need to include 'custom' in the field!");
+        }
+        
+        // Also validate it against the original default method.
+        returnStrings.AddRange(base.ValidateField(form, field, postedValues, context));
+
+        return returnStrings;
+    }
+}
+```
 
 In the constructor, we specify the standard provider information (remember to set the ID to a unique ID).
 
@@ -45,12 +51,14 @@ And then we set the field type specific information. In this case a preview Icon
 
 Then we will start building the view at `Views\Partials\Forms\Fieldtypes\FieldType.MyCustomField.cshtml`:
 
-    @model Umbraco.Forms.Mvc.Models.FieldViewModel
-    <input type="text" name="@Model.Name" id="@Model.Id" class="text" value="@Model.Value" maxlength="500"
-           @{if (string.IsNullOrEmpty(Model.PlaceholderText) == false) { <text> placeholder="@Model.PlaceholderText" </text> }}
-           @{if (Model.Mandatory || Model.Validate) { <text> data-val="true" </text> }}
-           @{if (Model.Mandatory) { <text> data-val-required="@Model.RequiredErrorMessage" </text> }}
-           @{if (Model.Validate) { <text> data-val-regex="@Model.InvalidErrorMessage" data-regex="@Html.Raw(Model.Regex)" </text> }} />
+```csharp
+@model Umbraco.Forms.Mvc.Models.FieldViewModel
+<input type="text" name="@Model.Name" id="@Model.Id" class="text" value="@Model.Value" maxlength="500"
+        @{if (string.IsNullOrEmpty(Model.PlaceholderText) == false) { <text> placeholder="@Model.PlaceholderText" </text> }}
+        @{if (Model.Mandatory || Model.Validate) { <text> data-val="true" </text> }}
+        @{if (Model.Mandatory) { <text> data-val-required="@Model.RequiredErrorMessage" </text> }}
+        @{if (Model.Validate) { <text> data-val-regex="@Model.InvalidErrorMessage" data-regex="@Html.Raw(Model.Regex)" </text> }} />
+```
 
 The view simply takes care of generating the UI control and setting its value.
 
@@ -60,8 +68,10 @@ On the view, it is important to note that the id attribute is fetched from @Mode
 
 The final step involves building the HTML view which will be rendered in Umbraco as an example of how our end result will look. We will create a file at `App_Plugins\UmbracoForms\Backoffice\Common\FieldTypes\mycustomfield.html` which will contain the following:
 
-    <input 
-        type="text" tabindex="-1" 
-        class="input-block-level"
-        style="max-width: 100px" 
-    />
+```html
+<input 
+    type="text" tabindex="-1" 
+    class="input-block-level"
+    style="max-width: 100px" 
+/>
+```

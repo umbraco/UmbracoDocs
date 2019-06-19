@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # applications.config
 
 The 'applications.config' file contains the configuration for the different [sections](../../../Extending/Section-Trees/sections.md) of the Umbraco Backoffice, sometimes referred to as applications. These sections are represented by icons in the navigation ribbon on the left hand side of the Umbraco Backoffice. 
@@ -8,16 +13,18 @@ Content, Media, Settings, Developer, Users, Members, Forms and Translation.
 
 The default configuration file will be similar to below:
 
-    <applications>
-      <add alias="content" name="Content" icon="traycontent" sortOrder="0" />
-      <add alias="media" name="Media" icon="traymedia" sortOrder="1" />
-      <add alias="settings" name="Settings" icon="traysettings" sortOrder="2" />
-      <add alias="developer" name="Developer" icon="traydeveloper" sortOrder="3" />
-      <add alias="users" name="Users" icon="trayuser" sortOrder="4" />
-      <add alias="member" name="Members" icon="traymember" sortOrder="5" />
-      <add alias="forms" name="Forms" icon="icon-umb-contour" sortOrder="6" />
-      <add alias="translation" name="Translation" icon="traytranslation" sortOrder="7" />
-    </applications>
+```xml
+<applications>
+  <add alias="content" name="Content" icon="traycontent" sortOrder="0" />
+  <add alias="media" name="Media" icon="traymedia" sortOrder="1" />
+  <add alias="settings" name="Settings" icon="traysettings" sortOrder="2" />
+  <add alias="developer" name="Developer" icon="traydeveloper" sortOrder="3" />
+  <add alias="users" name="Users" icon="trayuser" sortOrder="4" />
+  <add alias="member" name="Members" icon="traymember" sortOrder="5" />
+  <add alias="forms" name="Forms" icon="icon-umb-contour" sortOrder="6" />
+  <add alias="translation" name="Translation" icon="traytranslation" sortOrder="7" />
+</applications>
+```
 
 The initial admin user will be able to see all of the sections configured in this file when Umbraco is first started, you can control which sections are available for other Umbraco Users, from within the User Management section. 
 

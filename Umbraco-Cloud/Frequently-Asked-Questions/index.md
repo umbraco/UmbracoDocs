@@ -1,4 +1,12 @@
+---
+versionFrom: 7.0.0
+---
+
 # Frequently asked questions
+
+Here you will find answers to the questions we most commonly hear from people that are wondering about if Umbraco Cloud is the right fit for their project. The answers you will find here are of a more technical nature and are directed at developers.
+
+If you are interested in more general and easy-to-understand information about the product, you should [visit the FAQ on our website](https://umbraco.com/products/umbraco-cloud/faq/).
 
 ## General
 
@@ -28,7 +36,7 @@ Of course. Umbraco Cloud uses the very same Umbraco version that you can downloa
 
 ### Can I move my existing site to Umbraco Cloud?
 
-Umbraco Cloud is best when used as the base for a new project. There is a specific way of working with Umbraco and Umbraco Cloud in order to take full-advantage of the service. That’s not to say you can’t migrate an existing site, only that some changes may be required in order for your site to fully work with Umbraco Cloud. For more information [read our guide to moving an existing site](https://our.umbraco.com/documentation/Umbraco-Cloud/Deployment/Migrate-Existing-Site/).
+Umbraco Cloud is best when used as the base for a new project. There is a specific way of working with Umbraco and Umbraco Cloud in order to take full advantage of the service. That’s not to say you can’t migrate an existing site, only that some changes may be required in order for your site to fully work with Umbraco Cloud. For more information [read our guide to moving an existing site](https://our.umbraco.com/documentation/Umbraco-Cloud/Deployment/Migrate-Existing-Site/).
 
 ---
 
@@ -54,13 +62,17 @@ We do have some limitations:
 
 - If your Cloud site is using over 90% CPU for more than 10 minutes, the priority for your CPU usage will be throttled down for each time you consecutively use more than 90% CPU per 10 minutes
 - Memory usages is limited to 2048 MB per Cloud site and when that limit is reached, your website will be restarted automatically to make sure sites with memory leaks don't take up all of the available memory on the server
-- There's a limitation of 20 domain names that you can point to one Umbraco Cloud site - make sure to contact us if you need more than that
+- There's a limitation of 15 domain names that you can point to one Umbraco Cloud site - make sure to contact us if you need more than that
 
 In our experience there are only a few Cloud sites that have experienced these limitations and we're happy to work with people who have sites affected by these limitations.
 
 ### Can I use Cloudflare in front of my Umbraco Cloud site
 
 Yes. Point the DNS for your domain(s) to Cloudflare and tell Cloudflare about the IP address of your Umbraco Cloud site to use Cloudflare's full feature set.
+
+### What versions of .NET does Cloud support?
+
+Umbraco Cloud currently runs all projects on .NET 4.5 by default and supports up to 4.5.2, v8 projects runs on 4.7.2.
 
 ---
 
@@ -134,7 +146,7 @@ Please contact us using the chat button at the bottom right corner of the [Umbra
 
 ### Does Umbraco Cloud support Let's Encrypt certificates?
 
-Yes, we have now launched [Umbraco Latch](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Manage-Domains/Umbraco-Latch) which automates the process of installing and renewing Let's Encyrpt certificates, all new sites are automatically setup with a Let's Encyrpt certificate and HTTPS enabled by default. 
+Yes, we have now launched [Umbraco Latch](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Manage-Domains/Umbraco-Latch) which automates the process of installing and renewing Let's Encrypt certificates, all new sites are automatically setup with a Let's Encyrpt certificate and HTTPS enabled by default. 
 
 ### Does Umbraco Cloud support http/2?
 
@@ -150,7 +162,7 @@ There is no vulnerable data in this cookie and manipulating or stealing this coo
 
 In the future, the cookie will be set to `HttpOnly` on Umbraco Cloud to conform to best practices. This does not mean that there's anything wrong with the current way it is set.
 
-For more information see [the related github issue](https://github.com/Azure/app-service-announcements/issues/12).
+For more information see [the related GitHub issue](https://github.com/Azure/app-service-announcements/issues/12).
 
 ### Can I use wildcard certificates on Umbraco Cloud? How about an EV, DV or OV certificate?
 
@@ -162,29 +174,31 @@ It seems that you didn't set up the bindings for the specific domain where this 
 
 ### How can I control who accesses my backoffice using IP filtering?
 
-On Cloud it is easy to add an IP filter of your choosing, there's a few things you need to pay attention to though: Umbraco Deploy will need to be able to talk to the different environments in your Cloud website (development, staging, live) and you should of course still be able to use the site locally.
+On Cloud it is easy to add an IP filter of your choosing, there are a few things you need to pay attention to though: Umbraco Deploy will need to be able to talk to the different environments in your Cloud website (development, staging, live) and you should of course still be able to use the site locally.
 
 The following rule can be added to your web.config (in `system.webServer/rewrite/rules/`):
 
-    <rule name="Backoffice IP Filter" enabled="true">
-        <match url="(^umbraco/backoffice/(.*)|^umbraco($|/$))"/>
-        <conditions logicalGrouping="MatchAll">
+```xml
+<rule name="Backoffice IP Filter" enabled="true">
+    <match url="(^umbraco/backoffice/(.*)|^umbraco($|/$))"/>
+    <conditions logicalGrouping="MatchAll">
 
-            <!-- Umbraco Cloud to Cloud connections should be allowed -->
-            <add input="{REMOTE_ADDR}" pattern="52.166.147.129" negate="true" />
-            <add input="{REMOTE_ADDR}" pattern="13.95.93.29" negate="true" />
-            <add input="{REMOTE_ADDR}" pattern="40.68.36.142" negate="true" />
-            <add input="{REMOTE_ADDR}" pattern="13.94.247.45" negate="true" />
-            
-            <!-- Don't apply rules on localhost so your local environment still works -->
-            <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
+        <!-- Umbraco Cloud to Cloud connections should be allowed -->
+        <add input="{REMOTE_ADDR}" pattern="52.166.147.129" negate="true" />
+        <add input="{REMOTE_ADDR}" pattern="13.95.93.29" negate="true" />
+        <add input="{REMOTE_ADDR}" pattern="40.68.36.142" negate="true" />
+        <add input="{REMOTE_ADDR}" pattern="13.94.247.45" negate="true" />
 
-            <!-- Add other client IPs that need access to the backoffice -->
-            <add input="{REMOTE_ADDR}" pattern="123.123.123.123" negate="true" />
+        <!-- Don't apply rules on localhost so your local environment still works -->
+        <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
 
-        </conditions>
-        <action type="CustomResponse" statusCode="403"/>
-    </rule> 
+        <!-- Add other client IPs that need access to the backoffice -->
+        <add input="{REMOTE_ADDR}" pattern="123.123.123.123" negate="true" />
+
+    </conditions>
+    <action type="CustomResponse" statusCode="403"/>
+</rule> 
+```
 
 What we're doing here is blocking all the requests to `umbraco/backoffice/` and all of the routes that start with this. 
 
@@ -223,7 +237,7 @@ If you have any experience with Azure Web Apps, Cloud works in the same way. So 
 
 ### Is it possible to add my own custom DLLs for extending the Umbraco Backoffice?
 
-Yes, an Umbraco Cloud project is basically a normal Umbraco website where we give you multiple environments and easy deployment of code and content between these environments. It's really easy to get the site running locally (via git) which is the best way to add your own code (templates, cs files, packages, DLLs and so forth).
+Yes, an Umbraco Cloud project is basically a normal Umbraco website where we give you multiple environments and easy deployment of code and content between these environments. It's really easy to get the site running locally (via Git) which is the best way to add your own code (templates, cs files, packages, DLLs and so forth).
 
 ### Is it possible to add custom tables in addition to the Umbraco Cloud database?
 
@@ -234,6 +248,16 @@ Note that custom database tables and data do not replicate automatically across 
 ### I would love to use Websockets on my site, is this possible?
 
 Yes it is! Websockets are enabled on all sites.
+
+### My deletions are not picked up when deployed to the next environment
+
+When you've deleted something (e.g. content, media or schema) on one environment, the deletions will not be picked up on the next environment when you deploy.
+
+This is intended behaviour.
+
+We will **only delete the files** and not the database entries, as this could potentially cause you to lose data on your Live / production environment.
+
+You can read much more about these deletions in the [Deploying Deletions](../Deployment/Deploying-Deletions) article.
 
 ---
 

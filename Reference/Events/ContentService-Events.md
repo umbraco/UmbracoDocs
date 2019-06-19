@@ -1,41 +1,60 @@
-# ContentService Events#
+---
+versionFrom: 8.0.0
+---
+
+# ContentService Events
 
 The ContentService class is the most commonly used type when extending Umbraco using events. ContentService implements IContentService. It provides easy access to operations involving IContent.
 
-## Usage ##
+## Usage
 
 Example usage of the ContentService events:
 
-    using Umbraco.Core;
-    using Umbraco.Core.Events;
-    using Umbraco.Core.Models;
-    using Umbraco.Core.Publishing;
-    using Umbraco.Core.Services;
-    
-    namespace My.Namespace
-    {
-        public class MyEventHandler : ApplicationEventHandler
-        {
+```csharp
+using System;
+using Umbraco.Core;
+using Umbraco.Core.Composing;
+using Umbraco.Core.Services.Implement;
 
-			protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+namespace Umbraco8.Components
+{
+    [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
+    public class SubscribeToPublishEventComposer : ComponentComposer<SubscribeToPublishEventComponent>
+    {
+    }
+    public class SubscribeToPublishEventComponent : IComponent
+    {
+        public void Initialize()
+        {
+            ContentService.Publishing += ContentService_Publishing;        }
+
+        private void ContentService_Publishing(Umbraco.Core.Services.IContentService sender, Umbraco.Core.Events.ContentPublishingEventArgs e)
+        {
+            foreach (var node in e.PublishedEntities)
             {
-				ContentService.Published += ContentServicePublished;     
-            }            
-    
-            private void ContentServicePublished(IPublishingStrategy sender, PublishEventArgs<IContent> args)
-            {
-                foreach (var node in args.PublishedEntities)
+                if (node.ContentType.Alias == "CorporateNewsAnnouncement")
                 {
-                    if (node.ContentType.Alias == "Comment")
+                    var newsArticleTitle = node.GetValue<string>("newsTitle");
+                    if (newsArticleTitle.Equals(newsArticleTitle.ToUpper()))
                     {
-                        SendMail(node);
+                        //stop putting News Article Titles ALL in Upper Case!!!
+                        //cancel publish
+                        e.Cancel = true;
+                        //explain why publish cancelled.
+                        e.Messages.Add(new Umbraco.Core.Events.EventMessage("Corporate Style Guidelines Infringement", "Don't put news article titles in UpperCase, no need to shout!", Umbraco.Core.Events.EventMessageType.Error));
                     }
                 }
             }
         }
+        public void Terminate()
+        {
+            throw new NotImplementedException();
+        }
     }
+}
+```
 
-## Events ##
+## Events
 
 <table>
     <tr>
@@ -45,7 +64,7 @@ Example usage of the ContentService events:
     </tr>    
     <tr>
         <td>Saving</td>
-        <td>(IContentService sender, SaveEventArgs&lt;IContent&gt; e)</td>
+        <td>(IContentService sender, ContentSavingEventArgs e)</td>
         <td>
         Raised when ContentService.Save is called in the API.<br />
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default).<br />
@@ -59,7 +78,7 @@ Example usage of the ContentService events:
     </tr>
     <tr>
         <td>Saved</td>
-        <td>(IContentService sender, SaveEventArgs&lt;IContent&gt; e)</td>
+        <td>(IContentService sender, ContentSavedEventArgs e)</td>
         <td>
         Raised when ContentService.Save is called in the API and after data has been persisted.<br />
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default). <br />
@@ -73,7 +92,7 @@ Example usage of the ContentService events:
     </tr>
     <tr>
         <td>Publishing</td>
-        <td>(IPublishingStrategy sender, PublishEventArgs&lt;Umbraco.Core.Models.IContent&gt; e)</td>
+        <td>(IPublishingStrategy sender, ContentPublishingEventArgs> e)</td>
         <td>
         Raised when ContentService.Publishing is called in the API.<br />
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Publish method call (true by default).<br />
@@ -87,7 +106,7 @@ Example usage of the ContentService events:
     </tr>
     <tr>
         <td>Published</td>
-        <td>(IPublishingStrategy sender, PublishEventArgs&lt;Umbraco.Core.Models.IContent&gt; e)</td>
+        <td>(IPublishingStrategy sender, ContentPublishedEventArgs e)</td>
         <td>
         Raised when ContentService.Publish is called in the API and after data has been published.<br />
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Publish method call (true by default). <br />
@@ -97,6 +116,21 @@ Example usage of the ContentService events:
             <ol>
                 <li>PublishedEntities: Gets the published collection of IContent objects.</li>
             </ol>
+        </td>
+    </tr>  
+    <tr>
+        <td>UnPublishing</td>
+        <td>(IPublishingStrategy sender, PublishEventArgs&lt;Umbraco.Core.Models.IContent&gt; e)</td>
+        <td>
+        Raised when ContentService.UnPublishing is called in the API.<br />
+        "sender" will be the current IPublishingStrategy object.<br />
+        </td>
+    </tr>
+    <tr>
+        <td>UnPublished</td>
+        <td>(IPublishingStrategy sender, PublishEventArgs&lt;Umbraco.Core.Models.IContent&gt; e)</td>
+        <td>
+        Raised when ContentService.UnPublish is called in the API and after data has been published.<br />
         </td>
     </tr>    
     <tr>
@@ -288,6 +322,57 @@ Example usage of the ContentService events:
             </ol>
         </td>
     </tr>
+    <tr>
+        <td>EmptyingRecycleBin</td>
+        <td>(IContentService sender, RecycleBinEventArgs e)</td>
+        <td>
+        Raised when ContentService.EmptyingRecycleBin is called in the API.<br />
+        "sender" will be the current IContentService object.<br />
+        "e" will provide:
+            <ol>
+                <li>NodeObjectType: Gets the Id of the node object type of the items being deleted from the Recycle Bin.</li>
+                <li>AllPropertyData: Gets the list of all property data associated with a content id.</li>
+            </ol>
+        </td>
+    </tr>
+    <tr>
+        <td>EmptiedRecycleBin</td>
+        <td>(IContentService sender, RecycleBinEventArgs e)</td>
+        <td>
+        Raised when ContentService.EmptiedRecycleBin is called in the API. <br />
+        "sender" will be the current IContentService object.<br />
+        "e" will provide:
+            <ol>
+                <li>NodeObjectType: Gets the Id of the node object type of the items deleted from the Recycle Bin.</li>
+                <li>AllPropertyData: Gets the list of all property data associated with a content id.</li>
+                <li>EmptiedSuccessfully: Boolean indicating whether the Recycle Bin was emptied successfully.</li>
+            </ol>
+        </td>
+    </tr>
+    <tr>
+        <td>SavedBlueprint</td>
+        <td>(IContentService sender, SaveEventArgs&lt;IContent&gt; e)</td>
+        <td>
+        Raised when ContentService.SavedBlueprint is called in the API.<br />
+        "sender" will be the current IContentService object.<br />
+        "e" will provide:
+            <ol>
+                <li>Entity: Gets the saved blueprint IContent object.</li>
+            </ol>
+        </td>
+    </tr>
+    <tr>
+        <td>DeletedBlueprint</td>
+        <td>(IContentService sender, DeleteEventArgs&lt;IContent&gt; e)</td>
+        <td>
+        Raised when ContentService.DeletedBlueprint is called in the API. <br />
+        "sender" will be the current IContentService object.<br />
+        "e" will provide:
+            <ol>
+                <li>Entity: Gets the deleted blueprint IContent.</li>
+            </ol>
+        </td>
+    </tr>
 </table>
 
 ### What happened to Creating and Created events?
@@ -296,5 +381,5 @@ Both the ContentService.Creating and ContentService.Created events have been obs
 
 #### What do we use instead?
 
-The ContentService.Saving and ContentService.Saved events will always trigger before and after an entity has been persisted. You can determine if an entity is brand new in either of those events. In the Saving event - before the entity is persisted - you can check the entity's HasIdentity property which will be 'false' if it is brand new. In the Saved event you can [use this extension method](determining-new-entity.md)
+The ContentService.Saving and ContentService.Saved events will always trigger before and after an entity has been persisted. You can determine if an entity is brand new in either of those events. In the Saving event - before the entity is persisted - you can check the entity's HasIdentity property which will be 'false' if it is brand new. In the Saved event you can [check to see if the entity 'remembers being dirty'](determining-new-entity.md)
 

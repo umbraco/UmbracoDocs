@@ -1,8 +1,13 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # EmbeddedMedia.config
 
 /config/EmbeddedMedia.config
 
-This configuration file lists the [Embedded Media Providers](../../../extending/Embedded-Media-Provider/) configured for use in your Umbraco site.
+This configuration file lists the [Embedded Media Providers](../../../Extending/Embedded-Media-Provider/index.md) configured for use in your Umbraco site.
 
 ## Providers
 
@@ -10,13 +15,15 @@ Each Embedded Media Provider is listed as a *provider* element. The *provider* c
 
 ### Anatomy of the configuration
 
-     <provider name="YourEmbedProvider" type="YourEmbedNamespace.YourOEmbedClass, YourDllName">
-        <urlShemeRegex><![CDATA[yourregextomatchyourproviderwebsite\.com/]]></urlShemeRegex>
-        <apiEndpoint><![CDATA[https://www.yourproidersoembedurl.com/oembed]]></apiEndpoint>
-        <requestParams type="Umbraco.Web.Media.EmbedProviders.Settings.Dictionary, umbraco">
-          <param name="format">xml</param>
-        </requestParams>
-      </provider>
+```xml
+<provider name="YourEmbedProvider" type="YourEmbedNamespace.YourOEmbedClass, YourDllName">
+    <urlShemeRegex><![CDATA[yourregextomatchyourproviderwebsite\.com/]]></urlShemeRegex>
+    <apiEndpoint><![CDATA[https://www.yourproidersoembedurl.com/oembed]]></apiEndpoint>
+    <requestParams type="Umbraco.Web.Media.EmbedProviders.Settings.Dictionary, umbraco">
+      <param name="format">xml</param>
+    </requestParams>
+</provider>
+```
 
 - **provider name** - each provider should have a unique name
 - **provider type** - the 'type' of the code that provides the implementation, eg.  "YourEmbedNamespace.YourOEmbedClass, YourDllName"
@@ -28,16 +35,18 @@ Each Embedded Media Provider is listed as a *provider* element. The *provider* c
 
 ### Example configuration
 
-     <!-- Youtube Settings -->
-      <provider name="Youtube" type="Umbraco.Web.Media.EmbedProviders.OEmbedVideo, umbraco">
-        <urlShemeRegex><![CDATA[youtu(?:\.be|be\.com)/(?:(.*)v(/|=)|(.*/)?)([a-zA-Z0-9-_]+)]]></urlShemeRegex>
-        <apiEndpoint><![CDATA[https://www.youtube.com/oembed]]></apiEndpoint>
-        <requestParams type="Umbraco.Web.Media.EmbedProviders.Settings.Dictionary, umbraco">
-          <param name="iframe">1</param>
-          <param name="format">xml</param>
-          <param name="scheme">https</param>
-        </requestParams>
-      </provider>
+```xml
+<!-- Youtube Settings -->
+<provider name="Youtube" type="Umbraco.Web.Media.EmbedProviders.OEmbedVideo, umbraco">
+    <urlShemeRegex><![CDATA[youtu(?:\.be|be\.com)/(?:(.*)v(/|=)|(.*/)?)([a-zA-Z0-9-_]+)]]></urlShemeRegex>
+    <apiEndpoint><![CDATA[https://www.youtube.com/oembed]]></apiEndpoint>
+    <requestParams type="Umbraco.Web.Media.EmbedProviders.Settings.Dictionary, umbraco">
+        <param name="iframe">1</param>
+        <param name="format">xml</param>
+        <param name="scheme">https</param>
+    </requestParams>
+</provider>
+```
 
 The provider for YouTube is using the generic OEmbedVideo provider, matches a variety of youtube.com urls, and passes several parameters to the request.
 
@@ -45,4 +54,4 @@ Check out the /config/embeddedmedia.config file for more examples.
 
 ### Custom Embedded Media Providers
 
-[More information about creating your own Custom Embedded Media Providers can be found here](../../../Extending/Embedded-Media-Provider.md)
+[More information about creating your own Custom Embedded Media Providers can be found here](../../../Extending/Embedded-Media-Provider/index.md)

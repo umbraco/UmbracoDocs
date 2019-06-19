@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Templating
 
 _Templating in Umbraco consists of 2 larger concepts, namely Templates, and Macros. Templates are used for the HTML layout of your pages, whereas macros are reusable dynamic components used for embedding navigation, forms, lists, and so-on in your templates._
@@ -23,10 +27,11 @@ Describes how to work with WebForms (masterpages) templating syntax and its vari
 
 If you prefer to work with Webforms, you can change the default template engine in the */Config/umbracoSettings.config* file, find this section and set the type you'd like to use (*Mvc* or *WebForms*):
 
-	<templates>
-		<defaultRenderingEngine>WebForms</defaultRenderingEngine>
-	</templates>
-
+```xml
+<templates>
+    <defaultRenderingEngine>WebForms</defaultRenderingEngine>
+</templates>
+```
 
 #### Hybrid templates
 

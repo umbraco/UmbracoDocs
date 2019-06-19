@@ -1,6 +1,12 @@
+---
+versionFrom: 7.0.0
+---
+
 # Markdown conventions
 
-The Umbraco Documentation uses Markdown for all of the documentation - but more precisely we use the CommonMark specification. Read more about the [difference between CommonMark and Markdown](https://commonmark.org/).
+The Umbraco Documentation uses Markdown for all the articles - but more precisely we use the CommonMark specification. Read more about the [difference between CommonMark and Markdown](https://commonmark.org/).
+
+In this article you can learn how to use Markdown, as well as how we structure the files.
 
 ## Structure
 
@@ -38,13 +44,13 @@ or
 
 ## Internal links
 
-If you need to link between pages, always link relatively, and include the .md extension.
+If you need to link between pages, always link relatively and optionally include the .md extension based on the scenario. For example if you need to provide hyperlink to an `index.md` file which is in the current folder then only the path including the folder name is required. If you want provide hyperlink to any file other than `index.md` in the current folder then only the path including the folder name along with the filename is required. The `.md` extension is not required in this case.
 
-    [Umbraco.Helpers](Umbraco.Helpers.md)
+    [Umbraco.Helpers](Umbraco.Helpers)
 
 or
 
-    [Umbraco.Helpers](../../Reference/Umbraco.Helpers.md)
+    [Umbraco.Helpers](../../Reference/Umbraco.Helpers)
 
 ## Formatting code
 
@@ -59,7 +65,7 @@ For optional parameters wrap in _ (underscore) - end result: `###_optionalParame
 
 The Markdown conversion library used in the documentation is called [Markdig](https://github.com/lunet-io/markdig). It has the possibility of adding classes to markdown that you can then target with CSS. There are a few custom Markdown classes that can be used:
 
-```
+```markdown
 :::note
 This is a note, it contains useful information and also a link: https://thisisalink.com/useful/resource, please make sure it looks nice on Our!
 :::
@@ -73,12 +79,13 @@ This is a tip, it contains useful information and also a link: https://thisisali
 :::
 
 :::checklist
-- Item 1
-- Item 2
-- Item 3
-- Item 4
-::: 
+* Item 1
+* Item 2
+* Item 3
+* Item 4
+:::
 ```
+
 Will render like this:
 
 :::note
@@ -94,8 +101,10 @@ This is a tip, it contains useful information and also a link: https://thisisali
 :::
 
 :::checklist
-- Item 1
-- Item 2
-- Item 3
-- Item 4
-::: 
+
+* Item 1
+* Item 2
+* Item 3
+* Item 4
+
+:::

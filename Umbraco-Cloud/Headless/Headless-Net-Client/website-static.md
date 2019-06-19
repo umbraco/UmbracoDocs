@@ -1,10 +1,30 @@
+---
+versionFrom: 7.0.0
+---
+
 ### ASP.NET Core MVC (Static route website)
 
 _This example is for creating a statically routed website which means that it's a normal MVC application that defines it's own routes, like a brochure website. URLs will not be dynamic._
 
 #### Setup, bootstrap & launch
 
-* Go to a new folder to create a new .NET Core website and add references:
+The Headless client NuGet package is hosted on a custom MyGet feed, so you need to create a `NuGet.config` file for your project which can be done via the command line. If you don't do this then you would need to use the `--source` parameter and a few other tricks so it's just simpler to use a `Nuget.config` file. 
+
+So __before__ you run any script for creating a project, you will need to do this in the new folder where you are creating your project:
+
+* `dotnet new nugetconfig`
+* Edit the `Nuget.config` file, remove the `<clear/>` and add our custom source, it should look like this:
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <configuration>
+        <packageSources>
+            <add key="umbracoMyGet" 
+                 value="https://www.myget.org/F/uaas/api/v3/index.json" 
+                 protocolVersion="3" />
+        </packageSources>
+    </configuration>
+    ```
+Now to create a new .NET Core website and add references:
    * _(Ensure you've created the `Nuget.config`, see above)_
    * `dotnet new mvc`
    * `dotnet add package UmbracoCms.Headless.Client -v 0.9.7-*`   
@@ -34,7 +54,7 @@ _This example is for creating a statically routed website which means that it's 
 Now you can have the `Umbraco.Headless.Client.Net.Services.PublishedContentService` injected into any of your controllers, services, etc. The `Umbraco.Headless.Client.Net.Services.PublishedContentService` is the starting point for all headless operations.
 
 You can also inject the `PublishedContentService` or `IHeadlessConfig` into any view by using this syntax:
-```
+```csharp
 @using Umbraco.Headless.Client.Net.Web.Configuration
 @using Umbraco.Headless.Client.Net.Services
 
@@ -45,8 +65,8 @@ You can also inject the `PublishedContentService` or `IHeadlessConfig` into any 
 #### Example usage
 
 * Add `using Umbraco.Headless.Client.Net.Services;` to the `HomeController`
-* Inject the `PublishedContentService` into the `HomeController` ctor and store a reference:
-   ```cs
+* Inject the `PublishedContentService` into the `HomeController` and store a reference:
+   ```csharp
     public HomeController(PublishedContentService PublishedContentService)
     {
         this._publishedContentService = PublishedContentService;
@@ -54,7 +74,7 @@ You can also inject the `PublishedContentService` or `IHeadlessConfig` into any 
     private readonly PublishedContentService _publishedContentService;
    ```
 * Create a new controller Action:
-    ```cs
+    ```cscharp
     public async Task<IActionResult> Headless()
     {
         // Get content by ContentType
@@ -63,7 +83,7 @@ You can also inject the `PublishedContentService` or `IHeadlessConfig` into any 
     }
     ```
 * Create a view at `/Views/Home/Headless.cshtml`:
-    ```
+    ```chsarp
     @model IEnumerable<ContentItem>
     @using Umbraco.Headless.Client.Net.Models
 

@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # File Storage on SAN/NAS/Clustered File Server/Network Share
 
 _documentation about setting up load balanced environments using shared file systems_
@@ -18,31 +23,41 @@ For **Umbraco v7.7.3+**
 
 The `umbracoLocalTempStorage` setting controls where the `umbraco.config` and the other Umbraco TEMP files are stored. This setting can be configured in the [Web.config](../../../../Reference/Config/webconfig/#umbracolocaltempstorage-umbraco-v773).
 
-	<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
+```xml
+<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
+```
 
 This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the environment temporary folder.
 
 **Or**
 
-	<add key="umbracoLocalTempStorage" value="AspNetTemp" />
+```xml
+<add key="umbracoLocalTempStorage" value="AspNetTemp" />
+```
 
 This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the ASP.NET temporary folder
 
 For **Umbraco v7.6+**
 
-	<add key="umbracoContentXMLStorage" value="EnvironmentTemp" />
+```xml
+<add key="umbracoContentXMLStorage" value="EnvironmentTemp" />
+```
 
 This will set Umbraco to store `umbraco.config` in the environment temporary folder
 
 **Or**
 
-	<add key="umbracoContentXMLStorage" value="AspNetTemp" />
+```xml
+<add key="umbracoContentXMLStorage" value="AspNetTemp" />
+```
 
 This will set Umbraco to store `umbraco.config` in the ASP.NET temporary folder
 
 For **Umbraco Pre v7.6**
 
-	<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
+```xml
+<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
+```
 
 This will set Umbraco to store `umbraco.config` in the ASP.NET temporary folder
 
@@ -55,7 +70,9 @@ You cannot share indexes between servers, therefore when using a shared file ser
 
 Examine v0.1.83 introduced a new `directoryFactory` named `TempEnvDirectoryFactory` which should be added to all indexers in the `~/Config/ExamineSettings.config` file
 
-    directoryFactory="Examine.LuceneEngine.Directories.TempEnvDirectoryFactory,Examine"
+```xml
+directoryFactory="Examine.LuceneEngine.Directories.TempEnvDirectoryFactory,Examine"
+```
 
 The `TempEnvDirectoryFactory` allows Examine to store indexes directly in the environment temporary storage directory.
 
@@ -63,7 +80,7 @@ The `TempEnvDirectoryFactory` allows Examine to store indexes directly in the en
 
 * In ExamineIndex.config, you can tokenize the path for each of your indexes to include the machine name, this will ensure that your indexes are stored in different locations for each machine. An example of a tokenized path is: `~/App_Data/TEMP/ExamineIndexes/{machinename}/Internal/`
 * In ExamineSettings.config, you can add this attribute to all of your indexers and searchers: `useTempStorage="Sync"`
-* The 'Sync' setting will store your indexes in ASP.Net's temporary file folder which is on the local file system. Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Anytime the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local temp files are cleared out that the index files can be restored from the centrally stored index files. If you see issues with this syncing process (in your logs), you can change this value to be 'LocalOnly' which will only persist the index files to the local file system in ASP.Net temp files.
+* The 'Sync' setting will store your indexes in ASP.NET's temporary file folder which is on the local file system. Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Anytime the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local temp files are cleared out that the index files can be restored from the centrally stored index files. If you see issues with this syncing process (in your logs), you can change this value to be 'LocalOnly' which will only persist the index files to the local file system in ASP.NET temp files.
 
 ## Windows Setup
 

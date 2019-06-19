@@ -1,14 +1,21 @@
+---
+versionFrom: 7.0.0
+---
+
 # Magic strings
-Umbraco Forms has some magic strings that enable you to render values from various sources, such as Session, Cookies, Umbraco Page fields. 
 
-## Where can I use these magic strings?
-These magic strings as we call them can be used in form fields (as a label, description or default value) and in workflows. They can be used in default values in hidden fields for examples, normally referral codes from a session, cookie or request item.
+Umbraco Forms has some magic strings that enable you to render values from various sources, such as session, cookies and Umbraco page fields. 
 
-These values can be usedalso in Workflows property/settings. So a name and email address field from the form can be used in an email workflow to send the customer a personalised thank you email.
+## Where can I use magic strings?
+
+Magic strings can be used in form fields as a label, description or default value. As an example they can be used in default values in hidden fields - normally in the form of referral codes from a session, cookie or request item.
+
+These values can also be used for properties and settings in workflows. This means you can use name and email fields from a form to create a personal 'Thank you' email.
 
 ## Request
 
 `[@SomeRequestItem]` this allows you to display an item from the current HTTPContext.Request with the key of SomeRequestItem.
+
 Some examples of variables that are normally available in HttpContext.Request:
 
 `[@Url]`: Insert the current url  
@@ -42,12 +49,14 @@ Some extra variables are:
 ## How can I parse these values elsewhere in my C# code or Razor Views?
 The `Umbraco.Forms.Data.StringHelpers` class contains helper methods for parsing magic strings:
 
-    // Does not parse Record-related magic strings - they are simply removed.
-    public static string ParsePlaceHolders(HttpContext context, string value) 
-    
-    // Uses the passed in Record to parse Record-related magic strings
-    public static string ParsePlaceHolders(Record record, string value)
-    
-    public static string ParsePlaceHolders(HttpContext context, Record record, string value)
+```csharp
+// Does not parse Record-related magic strings - they are simply removed.
+public static string ParsePlaceHolders(HttpContext context, string value) 
+
+// Uses the passed in Record to parse Record-related magic strings
+public static string ParsePlaceHolders(Record record, string value)
+
+public static string ParsePlaceHolders(HttpContext context, Record record, string value)
+```
 
 There is also a public extension method `ParsePlaceHolders()`extending the `string` object in the `Umbraco.Forms.Core.Extensions` namespace that can be used with anything that you wish to try and replace the above tokens in a string, but it doesn't currently work with Records.

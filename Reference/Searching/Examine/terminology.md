@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Examine Terminology
 _Describes the different terms/names used throughout Examine_
 

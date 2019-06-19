@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Troubleshooting
 
 If an error occurs when you are using Umbraco Cloud there are several places that can take place and a lot of possible reasons for it. 
@@ -13,3 +17,4 @@ To help you troubleshoot you should start by determining where this error is rep
 ## Is your issue related to something else?
 - [Minor upgrades issues](../Upgrades/Minor-Upgrades/)
 - [Baseline merge conflicts](../Getting-Started/Baselines/Baseline-Merge-Conflicts)
+- [How Umbraco Forms are handled on Cloud](../Deployment/Umbraco-Forms-on-Cloud)

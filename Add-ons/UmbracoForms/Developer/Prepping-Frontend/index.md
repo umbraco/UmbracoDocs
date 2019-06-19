@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Preparing your frontend
 In order for Umbraco Forms to work correctly, Umbraco Forms needs three (3) client dependencies.
 
@@ -12,21 +16,24 @@ Here's how to add the three (3) client dependencies below to your template withi
 
 **Example within `head` tags.**
 
-	<head>
-		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
-		<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
-		<script src="https://ajax.aspnetcdn.com/ajax/mvc/5.1/jquery.validate.unobtrusive.min.js"></script>
-	</head>
+```html
+<head>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.1/jquery.validate.unobtrusive.min.js"></script>
+</head>
+```
 
 **Example before closing `body` tag**
 
-When adding the script to the bottom of the page, you'll also need to perform an extra step — if you're using Themes (v6.0.0+) have a [look here](../Themes/#rendering-script-content-separately). Otherwise, have a look at [this page](../Rendering-Scripts/index.md) for instructions.
+When adding the script to the bottom of the page, you'll also need to perform an extra step — have a look at [this page](../Rendering-Scripts/index.md) for instructions.
 	
-    <body>
-        <!-- Page content here -->
-        
-        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
-        <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.1/jquery.validate.unobtrusive.min.js"></script>
-    </body>
-
+```html
+<body>
+    <!-- Page content here -->
+    
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.1/jquery.validate.unobtrusive.min.js"></script>
+</body>
+```

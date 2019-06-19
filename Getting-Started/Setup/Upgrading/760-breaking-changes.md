@@ -1,3 +1,8 @@
+---
+versionFrom: 7.6.0
+versionTo: 7.6.0
+---
+
 # Umbraco 7.6 Breaking Changes
 
 ## Dependencies

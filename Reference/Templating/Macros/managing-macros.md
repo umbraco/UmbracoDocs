@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Managing macros
 
 _Describes how to create/update a macro and its parameters_
@@ -16,7 +21,7 @@ Give it a name in the dialog screen, and then you'll be presented with the macro
 
 From here you'll need to choose the macro type you want to render (see here for full details: [Macro Types](macro-types.md))
 
-The 2nd option to create a macro is to create the macro type directly on its tree and select the checkbox "Create macro". For example, if you create a Partial View Macro File in the Developer section, the dialog will prompt you to also create a macro for this item. 
+The 2nd option to create a macro is to create the macro type directly on its tree and select the checkbox "Create macro". For example, if you create a Partial View Macro File in the Developer section, the dialog will prompt you to also create a macro for this item.
 
 ![Macro editor](images/create-macro-from-type.png)
 
@@ -67,7 +72,7 @@ This list defines the different types of macro parameters:
 - *mediaCurrent* - the xml of the selected media item
 - *number* - an integer
 - *propertyTypePicker* - the alias of the selected property type
-- *propertyTypePickerMultiple* - a comma separated list of selected property type aliases 
+- *propertyTypePickerMultiple* - a comma separated list of selected property type aliases
 - *tabPicker* - the caption of the selected tab
 - *tabPickerMultiple* - a comma separated list of selected tab captions
 - *text* - a text string

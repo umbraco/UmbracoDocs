@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Add Open Graph
 With a few steps we can add Open Graph to our pages.
 

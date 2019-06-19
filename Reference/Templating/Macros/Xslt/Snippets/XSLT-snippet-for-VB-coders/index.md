@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # XSLT-snippet for VB-coders
 
 There's a coveniant way to add VB-code directly in the Umbraco UI, as a XSLT-macro. Just add a new empty XSLT-file and paste this snippet.

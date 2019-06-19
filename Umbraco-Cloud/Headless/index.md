@@ -1,6 +1,14 @@
+---
+versionFrom: 7.0.0
+---
+
 # Umbraco Headless
 
 In this article, you can read all about Umbraco Headless and how to get started using it for your project!
+
+:::warning
+Umbraco Headless does not work on regular Cloud projects - only the projects that have been created through the beta signup below!
+:::
 
 ## What is Umbraco Headless?
 
@@ -8,7 +16,7 @@ Umbraco Headless is a new way of providing a data source for your project. Headl
 
 Headless provides you with an easy and comfortable way to manage your data using the backoffice tools you already know, while at the same time making it super easy to consume this data in any of your projects.
 
-While Umbraco normally outputs a rendered web page, Headless outputs pure JSON data for your project to consume directly through the API or via a API client.
+While Umbraco normally outputs a rendered web page, Headless outputs pure JSON data for your project to consume directly through the API or via an API client.
 
 [Learn more and sign up for Umbraco Headless](https://www.umbraco.com/headless)
 

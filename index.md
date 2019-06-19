@@ -1,7 +1,15 @@
+:::note
+Have some questions about **Umbraco 8**?
+
+We've put together some answers to the most frequently asked questions - you can find it in the [Umbraco 8 - FAQ](Umbraco8FAQ.md) article.
+
+For a list of all the Umbraco 8 Documentation that's already live as well as get an overview of upcoming documentation head over to the [Umbraco 8 Documentation Statuspage](v8documentation.md).
+:::
+
 <div class="docs-overview">
 <div class="row">
     <div class="col-xs-12">
-        <h1 class="text-center" style="font-size:3rem">Documentation for Umbraco 7</h1>
+        <h1 class="text-center" style="font-size:3rem">Documentation for Umbraco</h1>
     </div>
 </div>
 <div class="row">
@@ -59,6 +67,6 @@ How to use Umbraco Cloud: Get started, set up your Umbraco Cloud project, deploy
 ---
 
 ### Contributing
-*The documentation project is open source and hosted on Github. If you have any corrections or additions to the documentation clone the project and make a pull request. [Guidelines](https://github.com/umbraco/UmbracoDocs) on how to contribute to the documentation.*
+*The documentation project is open source and hosted on GitHub. If you have any corrections or additions to the documentation clone the project and make a pull request. [Guidelines](https://github.com/umbraco/UmbracoDocs) on how to contribute to the documentation.*
 
 ----------------

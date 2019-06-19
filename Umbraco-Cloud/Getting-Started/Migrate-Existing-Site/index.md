@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Migrating an Existing Site to Umbraco Cloud
 
 Sometimes you may already have an Umbraco site built that did not start with a clone of an Umbraco Cloud site. Or perhaps you have decided to move a site that's already live on Umbraco Cloud. In any case, migrating an existing site is not difficult, but it does require some specific steps, and an understanding of how Umbraco Cloud deployments work can be very helpful.
@@ -14,9 +18,11 @@ These are the steps you need to go through to complete the migration successfull
 
 ## Video tutorial
 
-On our Youtube channel you can find a playlist with 7 videos that will take your through this migration guide.
+On our Youtube channel you can find a playlist with 7 videos that will take you through the migration guide.
 
-You can find the playlist here: [Migrate an existing site to Umbraco Cloud](https://www.youtube.com/playlist?list=PLG_nqaT-rbpwIwsrS6i8o_4kV51Jz94fV)
+<iframe width="800" height="450" src="https://www.youtube.com/embed/xzua-5f2Nf4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+You can find the full playlist here: [Migrate an existing site to Umbraco Cloud](https://www.youtube.com/playlist?list=PLG_nqaT-rbpwIwsrS6i8o_4kV51Jz94fV)
 
 If you prefer following a written guide, continue to read below.
 
@@ -81,7 +87,7 @@ After making sure that your existing site meets all the requirements for being m
 
 ### Upgrade to latest Umbraco version
 
-First order of business is to **upgrade your own Umbraco site to the latest Umbraco version**. Why? Because Umbraco Cloud always runs the latest version and you need to make sure your project runs the same Umbraco version as Umbraco Cloud.
+First order of business is to **upgrade your own Umbraco site to the latest minor version of Umbraco 7 or 8**. Why? Because Umbraco Cloud always runs the latest version and you need to make sure your project runs the same Umbraco version as Umbraco Cloud.
 
 You can download the latest version of Umbraco from [Our](https://our.umbraco.com/download/).
 
@@ -142,6 +148,17 @@ Before doing anything else, you need to delete the default **Media and Member ty
 8. Repeat these steps on all the Cloud environments
 
 ![Default media types](images/media-types.png)
+
+:::note
+### Data types
+Have you been using _older_ data types on your project, you will need to go through a few steps in order to avoid running into collision errors when deploying your migrated sites to Umbraco Cloud.
+
+The data types in question are: Content Picker, Media Picker, Member picker, Multiple Media Picker (using Media Picker) and Related Links.
+
+You can either
+1. Rename the old data types on your existing site or
+2. Follow the steps in the [Colliding Data types](../../Troubleshooting/Deployments/Colliding-Datatypes) article
+:::
 
 ## 5. Clone down the Cloud project
 

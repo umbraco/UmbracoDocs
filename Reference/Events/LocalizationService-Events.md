@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # LocalizationService Events#
 
 The LocalizationService class implements ILocalizationService. It provides easy access to operations involving Language and DictionaryItem.

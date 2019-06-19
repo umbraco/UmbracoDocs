@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # SMTP settings on Umbraco Cloud
 
 In many cases you might want to be able to send emails from your Umbraco Cloud project. This could be for inviting users to the backoffice or as part of an Umbraco Forms workflow. Before this is possible, you will need to have an SMTP server and configure this in your `web.config` file.
@@ -36,13 +40,15 @@ As Umbraco Cloud doesn't provide SMTP servers, this is something you will need t
 
 Setting up the SMTP server is step one. Step two is to configure the service in your `web.config` file - in the `system.net/mailSettings` section.
 
-    <system.net>
-        <mailSettings>
-        <smtp from="noreply@example.com">
-            <network host="127.0.0.1" userName="username" password="password" />
-        </smtp>
-        </mailSettings>
-    </system.net>
+```xml
+<system.net>
+    <mailSettings>
+    <smtp from="noreply@example.com">
+        <network host="127.0.0.1" userName="username" password="password" />
+    </smtp>
+    </mailSettings>
+</system.net>
+```
 
 To configure your SMTP service you will need to following details:
 
@@ -52,4 +58,6 @@ To configure your SMTP service you will need to following details:
 
 When you've configured these settings for your SMTP service, you will be able to send emails from your Umbraco Cloud project.
 
-**NOTE**: You can test if you've configured your SMTP service correctly by running a [Health Check](https://our.umbraco.com/Documentation/Extending/Healthcheck/) from the Umbraco backoffice. 
+:::note
+You can test if you've configured your SMTP service correctly by running a [Health Check](https://our.umbraco.com/Documentation/Extending/Healthcheck/) from the Umbraco backoffice. 
+:::

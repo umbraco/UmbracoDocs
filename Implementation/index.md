@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+meta.Title: "Learn how to implement an Umbraco site"
+meta.Description: "Get to know the Umbraco codebase. Developing an application requires knowledge about the tool you're working with. This section will give you an introduction to the structure of Umbraco."
+---
 # Implementation
 
 *Get to know the Umbraco codebase. Developing an application requires knowledge about the tool you're working with. This section will give you an introduction to the structure of Umbraco.*
@@ -84,8 +89,8 @@
 	<div class="col-xs-9">
 		<div class="row explain">
 			<div class="col-xs-12">
-				<h4 class="text-right"><a href="Rest-Api/">REST APIs</a></h4>
-				<small>Information about using the REST API add-on for Umbraco</small>
+				<h4 class="text-right"><a href="https://github.com/umbraco/UmbracoRestApi">REST APIs</a></h4>
+				<small>(Discontinued) Information about using the REST API add-on for Umbraco</small>
 			</div>
 		</div>
 	</div>

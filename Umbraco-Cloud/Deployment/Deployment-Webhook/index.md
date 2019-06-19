@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Deployment Webhook
 You can now configure a deployment webhook to be triggered upon successful deployments to any of your Umbraco Cloud environments, e.g. when deploying from your local environment to your Cloud Development environment. Upon a successful deployment general information about the deployment will be posted in a JSON format to the specific url you have configured.
 
@@ -12,7 +16,7 @@ This can find uses in many 'audit' cases when you would like to let others know 
 
 ![Adding deployment webhook](images/DeployWebhook.gif)
 
-1. From the Umbraco Cloud Portal go to *Settings* -> *Manage Webhooks*
+1. From the Umbraco Cloud Portal go to *Settings* -> *Webhooks*
 2. Select the environment for which to register a webhook
 3. Fill in the url to which the data about a deployment should be posted to. Absolute URL with http/https schema is an acceptable input to the field - ex. `https://exampleURL.com`
 3. Add Webhook

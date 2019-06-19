@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Recursive Menu Umbraco 4.5
 
 Credits for this snippet go out to [Lordtoro](https://lordtoro.wordpress.com/2010/07/10/recursive-navigation-in-umbraco-4-5-0/).

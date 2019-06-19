@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Extending Umbraco with the full Forms section
 
 Since Umbraco v7.2, Umbraco contains the Forms section by default. From there it's super easy to install and get started using Umbraco Forms.
@@ -7,7 +11,7 @@ Since Umbraco v7.2, Umbraco contains the Forms section by default. From there it
 It only takes a few steps to install Umbraco Forms.
 
 1. Navigate to the Forms section in the Umbraco backoffice
-2. The Forms dashboard will consist of a preview video and an *Install* button
+2. The Forms dashboard will contain a *Install* button
 3. Hit the *Install* button
 4. Wait for the installation to complete
 5. Your browser will automagically refresh
@@ -17,13 +21,12 @@ It only takes a few steps to install Umbraco Forms.
 
 ## Start building forms
 
-Once the installation is successfull you will be able to start using Umbraco Forms. 
+Once the installation is successful you will be able to start using Umbraco Forms. 
 
-For details on how to proceed, check out the [editor documentation](../../Editor/index.md)
+For details on how to proceed, check out the [editor documentation](../../Editor)
 
 ![Create form](images/start-with-forms.png)
 
 
 
 
- 

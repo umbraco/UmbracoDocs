@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Date - Add 'th, st, rd, nd' extension
 Here's a really simple snippet which adds the correct extension to the date.
 

@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Creating an MVC form using a Child Action
 
 **Applies to: Umbraco 4.10.0+**
@@ -37,8 +42,8 @@ The Child Action will:
 The HttpPost Action will:
 
 *	Check if the model is valid - based on the validation attributes applied to the model above, we will not be performing any custom validation
-*	If the model **is not valid**, return the currently rendered Umbraco page (do not redirect). By not redirecting the ViewData is preserved including the ModelState which contains the validation information *(See 'Other Considerations' below for mor info)*
-*	If the model **is valid**, add a custom message to the TempData collection and then redirect to the currently rendered Umbraco page. A standard procedure for a web based for is to redirect if the POST is successful. This ensures that the POST cannot be accidentally re-submitted by accidentally pressing F5 (refresh) ... *unfortunately ASP.Net WebForms does not adhere to this rule by default but it 'should' be done in WebForms too.* 
+*	If the model **is not valid**, return the currently rendered Umbraco page (do not redirect). By not redirecting the ViewData is preserved including the ModelState which contains the validation information *(See 'Other Considerations' below for more info)*
+*	If the model **is valid**, add a custom message to the TempData collection and then redirect to the currently rendered Umbraco page. A standard procedure for a web based for is to redirect if the POST is successful. This ensures that the POST cannot be accidentally re-submitted by accidentally pressing F5 (refresh) ... *unfortunately ASP.NET WebForms does not adhere to this rule by default but it 'should' be done in WebForms too.* 
 
 <br/>
 

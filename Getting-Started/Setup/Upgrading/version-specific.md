@@ -1,8 +1,22 @@
+---
+versionFrom: 7.0.0
+---
+
 # Version specific upgrades
 
 *This document covers specific upgrade steps if a version requires them, most versions do not require specific upgrade steps and most of the time you will be able to upgrade directly from your current version to the latest version*
 
 Follow the steps in the [general upgrade guide](general.md), then these additional instructions for the specific versions. (Remember that new config files are not mentioned because they are already covered in the general upgrade guide.)
+
+## Version 7 to version 8
+
+There will not be a direct upgrade path, but it will be possible to migrate content from Umbraco 7 sites to Umbraco 8 sites. We are developing a content migration tool that will enable you to move your content (content/media/members) from an Umbraco 7 site to an Umbraco 8 site. We will inform you about it as soon as it is ready.   
+
+The reason why it is not possible to upgrade an Umbraco 7 site to Umbraco 8 is is that the codebase has been fundamentally updated in Umbraco 8. A lot of outdated code and technology has been removed and instead new, faster and more secure technology has been implemented throughout Umbraco 8. It simply wouldn’t be possible to take this giant leap while maintaining full compatibility with Umbraco 7.
+
+In Umbraco 8 we have added improvements and updated dependencies as well as done a thorough clean-up to make it simpler for you to work with and extend your Umbraco project. 
+
+In the near future, it will though be possible to do a manual upgrade of your Umbraco 7 project to Umbraco 8 which we, of course, will give you best practices documentation on as soon as it’s ready. We highly recommend you wait with the upgrade of your Umbraco 7 project until we have this documentation ready in order to ensure you get the best possible content migration experience. 
 
 ## Version 7.7.0
 
@@ -10,7 +24,7 @@ Version 7.7.0 introduces User Groups and a better user management and security f
 
 Also we're now by default using the e-mail address and not the username for the credentials. So when trying to login to the backoffice one will now need to use the e-mail address as opposed to the username, which was used in previous versions. If you do an upgrade from an older version and would like to keep using the username you will need to change the `<usernameIsEmail>true</usernameIsEmail>` setting to **false**.
 
-For a full list of breaking changes see: [the list on the issue tracker](http://issues.umbraco.org/issues/U4?q=Due+in+version%3A+7.7.0+Backwards+compatible%3F%3A+No+) 
+For a full list of breaking changes see: [the list on the issue tracker](https://issues.umbraco.org/issues/?q=&project=U4&tagValue=&release=7.7.0&issueType=&search=search) 
 
 Version 7.7.2 no longer ships with the `CookComputing.XmlRpcV2` assembly so if you reference this assembly or have a package that requires this assembly, you may need to copy it back into your website from the backup you've taken before you began the 7.7.2 upgrade.
 
@@ -31,24 +45,27 @@ Depending on if you tried to fix problem with those data types you will might ne
 
 Umbraco stores data for data types in different ways, for a lot of pickers it will store (for example) 1072 or 1083,1283. These numbers refer to the identifier of the item in Umbraco. In the past, when building your templates you would manually have to take that value and find the content item it belongs to and then get the data you wanted from there, for example:
 
-		@{
-			IPublishedContent contactPage;
-			var contactPageId = Model.Content.GetPropertyValue<int>("contactPagePicker");
-			if(contactPageId > 0) {
-				 contactPage = Umbraco.TypedContent(contactPageId);
-			}
-		}
+```csharp
+@{
+    IPublishedContent contactPage;
+    var contactPageId = Model.Content.GetPropertyValue<int>("contactPagePicker");
+    if(contactPageId > 0) {
+         contactPage = Umbraco.TypedContent(contactPageId);
+    }
+}
 
-		<p>
-		  <a href="@contactPage.Url">@contactPage.Name</a>
-		</p>
-
+<p>
+  <a href="@contactPage.Url">@contactPage.Name</a>
+</p>
+```
 
 Wouldn't it be nice if instead of that you could "just" do:
 
-		<p>
-			<a href="@Model.Content.ContactPagePicker.Url">@Model.ContactPagePicker.Name</a>
-		</p>
+```html
+<p>
+    <a href="@Model.Content.ContactPagePicker.Url">@Model.ContactPagePicker.Name</a>
+</p>
+```
 		
 This is possible since 7.6.0 using Models Builder and through the inclusion of [core property value converters](https://our.umbraco.com/projects/developer-tools/umbraco-core-property-value-converters/), a brilliant package by Jeavon.
 
@@ -87,27 +104,35 @@ However, if you are not using it, **you will get a YSOD after upgrading, here's 
 
 Since you aren't using UrlRewriting you will have probably never edited the UrlRewriting file and in which case NuGet will detect that and remove it. However you will need to manually remove these UrlRewriting references from your web.config:
 
-* `<section name="urlrewritingnet" restartOnExternalChanges="true" requirePermission="false" type="UrlRewritingNet.Configuration.UrlRewriteSection, UrlRewritingNet.UrlRewriter" />`
-* `<urlrewritingnet configSource="config\UrlRewriting.config" />`
-* And the following http modules
+```xml 
+<section name="urlrewritingnet" restartOnExternalChanges="true" requirePermission="false" type="UrlRewritingNet.Configuration.UrlRewriteSection, UrlRewritingNet.UrlRewriter" />
+```
 
-	    <system.web>
-		<httpModules>
-		    <add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter"/>
-		    ...
-		</httpModules>
-	    <system.web>
+```xml
+<urlrewritingnet configSource="config\UrlRewriting.config" />
+```
 
-	    ...
+* and remove the following http modules from your web.config:
 
-	    <system.webServer>
-	       <modules>
-		   <remove name="UrlRewriteModule"/>
-		   <add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter"/>
-		    ...
-	       </modules>
-	    </system.webServer>
+```xml
+<system.web>
+<httpModules>
+    <add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter"/>
+    ...
+</httpModules>
+<system.web>
+```
+and
 
+```xml
+<system.webServer>
+   <modules>
+   <remove name="UrlRewriteModule"/>
+   <add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter"/>
+    ...
+   </modules>
+</system.webServer>
+```
 
 
 #### Forms
@@ -148,7 +173,7 @@ Other considerations:
 * MVC has been updated to MVC5
   * You need to update your `web.config` file to have the correct MVC version references - this should be done by doing a compare/merge of your `~/web.config` file with the `~/web.config` file in the release
   * The upgrader will take care of updating all other web.config’s (in all other folders, for example, the `Views` and `App_Plugins` folders) to have the correct settings
-  * For general ASP.Net MVC 5 upgrade details see: [https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2](https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2) 
+  * For general ASP.NET MVC 5 upgrade details see: [https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2](https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2) 
 * It is not required that you merge the changes for the Examine index paths in the ExamineIndex.config file. However, if you do, your indexes will be rebuilt on startup because Examine will detect that they don’t exist at the new location.
 * It's highly recommended to clear browser cache - the ClientDependency version is automatically bumped during install which should force browser cache to refresh, however in some edge cases this might not be enough.
 
@@ -161,15 +186,19 @@ Other considerations:
 ## Version 7.0.1 to 7.0.2
 
 * There was an update to the /umbraco/config/create/ui.xml which needs to be manually updated, the original element had this text:
+       
+       
+```xml
+<nodeType alias="users">
+    <header>User</header>
+    <usercontrol>/create/simple.ascx</usercontrol>
+    <tasks>
+      <create assembly="umbraco" type="userTasks" />
+      <delete assembly="umbraco" type="userTasks" />
+    </tasks>
+</nodeType>
+```
 
-		<nodeType alias="users">
-			<header>User</header>
-			<usercontrol>/create/simple.ascx</usercontrol>
-			<tasks>
-			  <create assembly="umbraco" type="userTasks" />
-			  <delete assembly="umbraco" type="userTasks" />
-			</tasks>
-		</nodeType>
 
 	* The &lt;usercontrol&gt; value has changed to: **/create/user.ascx**, this is a required change otherwise creating a new user will not work.
 * There is a breaking change to be aware of, full details can be found [here](https://umbraco.com/blog/heads-up-breaking-change-coming-in-702-and-62/).

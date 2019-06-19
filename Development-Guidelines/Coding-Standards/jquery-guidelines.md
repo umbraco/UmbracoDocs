@@ -1,22 +1,28 @@
+---
+versionFrom: 7.0.0
+---
+
 # jQuery coding guidelines
 
 _Ensure that you have read the [JavaScript Guidelines](js-guidelines.md) document before continuing. As specified in the [JavaScript Guidelines](js-guidelines.md) document, method names are named in "camelCase" and therefore jQuery plugins (since they are methods) are named as "camelCase"._
 
-Just like other JavaScript in the Umbraco backoffice, you need to wrap your class in the jQuery self executing function if you want to use the dollar ($) operator.
+Just like other JavaScript in the Umbraco backoffice, you need to wrap your class in the jQuery self-executing function if you want to use the dollar ($) operator.
 
 ## Simple jQuery plugins
 Simple jQuery plugins don't require an internal class to perform the functionality and therefore do not expose or return an API. These could be as simple as vertically aligning something:
 
-	(function($) {
-	    $.fn.verticalAlign = function(opts) {
-	        // we are not using opts (options) for this plugin
-	        // but you could!
-	        return this.each(function() {
-	            var top = (($(this).parent().height() - $(this).height()) / 2);
-	            $(this).css('margin-top', top);
-	        });
-	    };
-	})(jQuery);
+```javascript
+(function($) {
+	$.fn.verticalAlign = function(opts) {
+		// we are not using opts (options) for this plugin
+		// but you could!
+		return this.each(function() {
+			var top = (($(this).parent().height() - $(this).height()) / 2);
+			$(this).css('margin-top', top);
+		});
+	};
+})(jQuery);
+```
 
 ## Standard jQuery plugins
 Most jQuery plugins will expose an API or a way in which a developer can interact with the plugin, not just instantiating it. To do this we need to create a class that does the work of the plugin and then expose that class via a different jQuery plugin.
@@ -31,6 +37,7 @@ So essentially, we'll be creating 2 plugins, one to instantiate it and one to re
 
 ### Creating the plugins
 
+```javascript
 // using the same vertical align concept but we'll expose an API for it
 // ( not that this is very useful :) )
  
@@ -63,7 +70,7 @@ Umbraco.Sys.registerNamespace("MyProject.MyNamespace");
 	        return $(this).data("api");
 	    }
 	 
-	    // create a js class to support the plugin
+	    // create a JavaScript class to support the plugin
 	 
 	    MyProject.MyNamespace.verticalAligner = function(elem) {
 	       // the jQuery selector
@@ -83,13 +90,16 @@ Umbraco.Sys.registerNamespace("MyProject.MyNamespace");
 	    }
 	 
 	})(jQuery);
+  ```
 
 ### Consuming the plugins
 
-To use the plugin and api is very easy:
+To use the plugin and API is very easy:
 
 NOTE: this is an example plugin, I realize this is not really that useful as a non-simple plugin!
 
-	$("#myId").verticalAlign();
-	// now to get the api and do the alignment
-	$("#myId").verticalAlignApi().align();
+```javascript
+$("#myId").verticalAlign();
+// now to get the api and do the alignment
+$("#myId").verticalAlignApi().align();
+```

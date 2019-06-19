@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Technical overview of an Umbraco Cloud environment
 
 When you have multiple environments in your Umbraco Cloud project the *Development* environment will be the *first* environment in the workflow. What this means, is that this is the environment you are going to work with when building the structure of your website. This is also the environment you clone down when you want to work with your project locally.

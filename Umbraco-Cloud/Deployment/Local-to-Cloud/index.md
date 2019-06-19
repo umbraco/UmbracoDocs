@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Deploying from Local to Cloud
 
 When you are working with your Umbraco Cloud project locally all changes you make will automatically be identified and picked up by your local Git client. 
@@ -19,7 +23,7 @@ Once you’ve deployed your local changes to your Cloud environment deploying to
 
 ## Deploying without using a Git client
 
-If you don't have a git client installed on your local machine, or prefer to work with git through command line, you can use eg. git bash and the following commands:
+If you don't have a Git client installed on your local machine, or prefer to work with Git through command line, you can use eg. Git Bash and the following commands:
 
     # Navigate to the repository folder
     cd mySite

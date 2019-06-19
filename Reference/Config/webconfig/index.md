@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Web.config
 
 _This section defines the appSetting parameters found in the web.config_
@@ -14,71 +19,115 @@ Holds the version number of the currently installed version of Umbraco. This ver
 
 A comma-separated list of files to be left alone by Umbraco. IIS will serve these files, and the Umbraco request pipeline will not be triggered.  
 
-    <add key="umbracoReservedUrls" value="~/config/splashes/booting.aspx,~/install/default.aspx,~/config/splashes/noNodes.aspx,~/VSEnterpriseHelper.axd" />
+```xml
+<add key="umbracoReservedUrls" value="~/config/splashes/booting.aspx,~/install/default.aspx,~/config/splashes/noNodes.aspx,~/VSEnterpriseHelper.axd" />
+```
 
 ### umbracoReservedPaths
 
 A comma-separated list of all the folders in your directory to be left alone by Umbraco. If you have folders with custom files, add them to this setting to make sure Umbraco leaves them alone.
 
-    <add key="umbracoReservedPaths" value="~/umbraco,~/install/" />
+```xml
+<add key="umbracoReservedPaths" value="~/umbraco,~/install/" />
+```
 
 ### umbracoPath
 
 The URL pointing to the Umbraco administration folder. If you rename the `umbraco` folder, you need to update this setting too.
 
-    <add key="umbracoPath" value="~/umbraco" />
+```xml
+<add key="umbracoPath" value="~/umbraco" />
+```
 
 ### umbracoHideTopLevelNodeFromPath
 
 If you are running multiple sites, you don't want the top level node in your URL. Possible options are `true` and `false`.
 
-    <add key="umbracoHideTopLevelNodeFromPath" value="true" />
+```xml
+<add key="umbracoHideTopLevelNodeFromPath" value="true" />
+```
 
 ### umbracoUseDirectoryUrls
 
 Strips `.aspx` from URLs on the frontend when set to `true`.  
 This setting is only important to older IIS configurations where extension-less URLs weren't supported very well.
 
+```xml
+<add key="umbracoUseDirectoryUrls" value="true" />
+```
+
 ### umbracoTimeOutInMinutes
 
 Configures the number of minutes without any requests being made before the Umbraco user will be required to re-login. Any backoffice request will reset the clock. Default setting is 20 minutes.
 
-    <add key="umbracoTimeOutInMinutes" value="20" />
+```xml
+<add key="umbracoTimeOutInMinutes" value="20" />
+```
 
 ### umbracoDefaultUILanguage
 
 The default language to use in the backoffice if a user isn't explicitly assigned one. The default is English (en).
 
+```xml
+<add key="umbracoDefaultUILanguage" value="es" />
+```
+
 ### umbracoUseSSL
 
 Makes sure that all of the requests in the backoffice are called over HTTPS instead of HTTP when set to `true`.
 
-### umbracoCssDirectory 
+```xml
+<add key="Umbraco.Core.UseHttps" value="true" />
+```
+
+:::memo
+Check out the [security documentation](../../security/use-https.md).
+:::
+
+### umbracoCssDirectory
 
 By adding this to appSettings you can specify a new/different folder for storing your css-files and still be able to edit them within Umbraco. Default folder is ~/css.
+For example if you wanted to store css in a folder in the website root folder "/assets/css", you could have this in appsetting:
+
+```xml
+<add key="umbracoCssDirectory" value="~/assets/css" />
+```
 
 ### umbracoMediaPath
 
 By adding this to appSettings you can specify a new/different folder for storing your media files. Default folder is ~/media.
+For example if you wanted to store in a folder in the website root folder called "umbracoMedia", you woul have this in appsetting:
 
-### umbracoScriptsPath 
+```xml
+<add key="umbracoMediaPath" value="~/umbracoMedia" />
+```
 
-By adding this to appSettings you can specify a new/different folder for storing your Javascript files and still be able to edit them within Umbraco. Default folder is ~/scripts.
+### umbracoScriptsPath
+
+By adding this to appSettings you can specify a new/different folder for storing your JavaScript files and still be able to edit them within Umbraco. Default folder is ~/scripts.
+For example if you wanted to store javascript in a folder in the website root folder "/assets/js", you could have this in appsetting:
+
+```xml
+<add key="umbracoScriptsPath" value="~/assets/js" />
+```
 
 ### SMTP Settings
 
-By adding this settings to the web.config you will be able to send out emails from your Umbraco installation. This could be notifications emails if you are using content workflow, or you are using Umbraco Forms you also need to specifiy SMTP settings to be able use the email workflows. The forgot password function from the backoffice also needs a SMTP server to send the email with the reset link.
+By adding this settings to the web.config you will be able to send out emails from your Umbraco installation. This could be notifications emails if you are using content workflow, or you are using Umbraco Forms you also need to specify SMTP settings to be able use the email workflows. The forgot password function from the backoffice also needs a SMTP server to send the email with the reset link.
 
-```
-  <system.net>
-        <mailSettings>
+```xml
+<system.net>
+    <mailSettings>
         <smtp from="noreply@example.com">
             <network host="127.0.0.1" userName="username" password="password" />
         </smtp>
-        </mailSettings>
-    </system.net>
- ```
+    </mailSettings>
+</system.net>
+```
 
+:::note
+Since version 7.13, if you keep the `from` attribute set to noreply@example.com, Umbraco won't be able to send user invitations, or password recovery emails.
+:::
 
 ## Optional settings
 
@@ -132,10 +181,14 @@ The default value is: `7`
 
 When this value is set above 0, the backoffice will check for a new version of Umbraco every 'x' number of days where 'x' is the value defined for this setting. Set this value to `0` to never check for a new version.
 
+```xml
+<add key="umbracoVersionCheckPeriod" value="0" />
+```
+
 ### umbracoDisableElectionForSingleServer (Umbraco v7.6+)
 
 The default value is: `false`
 
 This is not a setting that commonly needs to be configured.
 
-This value is primarily used on Umbraco Cloud for a small startup performance optimization. When this is true, the website instance will automatically be configured to not support load balancing and the website instance will be configured to be the 'master' server for scheduling so no [master election](https://our.umbraco.com/documentation/Getting-Started/Setup/Server-Setup/load-balancing/flexible#scheduling-and-master-election) occurs. This will save 1 database call during startup. 
+This value is primarily used on Umbraco Cloud for a small startup performance optimization. When this is true, the website instance will automatically be configured to not support load balancing and the website instance will be configured to be the 'master' server for scheduling so no [master election](https://our.umbraco.com/documentation/Getting-Started/Setup/Server-Setup/load-balancing/flexible#scheduling-and-master-election) occurs. This will save 1 database call during startup.

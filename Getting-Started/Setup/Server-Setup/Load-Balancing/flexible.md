@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Flexible load balancing
 
 _Information on how to deploy Umbraco in a flexible Load Balanced scenario and other
@@ -18,7 +23,7 @@ There are three design alternatives you can use to effectively load balance serv
 
 1. You use cloud based auto-scaling appliances like [Microsoft's Azure Web Apps](https://azure.microsoft.com/en-us/services/app-service/web/)
 2. Each server hosts copies of the load balanced website files and a file replication service is running to ensure that all files on all servers are up to date
-3. The load balanced website files are located on a centralized file share (SAN/NAS/Custered File Server/Network Share)
+3. The load balanced website files are located on a centralized file share (SAN/NAS/Clustered File Server/Network Share)
 
 For options #2 and #3 you will obviously need a load balancer to do your load balancing!
 
@@ -76,9 +81,9 @@ There are some Examine/Logging config file updates needed (see below and the [Ov
 
 ## Option #1 : Cloud based auto-scale appliances
 
-We have focused primarily on Azure Web Apps when developing flexible load balancing for cloud based appliances. The documentation here is for Azure Web Apps but a similar setup would be achievable on other services supporting ASP.Net.
+We have focused primarily on Azure Web Apps when developing flexible load balancing for cloud based appliances. The documentation here is for Azure Web Apps but a similar setup would be achievable on other services supporting ASP.NET.
 
-Ensure you read the [overview](index.md) before you begin - you will need to ensure that your asp.net & logging configurations are correct.
+Ensure you read the [overview](index.md) before you begin - you will need to ensure that your ASP.NET & logging configurations are correct.
 
 ### Azure Requirements
 
@@ -91,9 +96,11 @@ Ensure you read the [overview](index.md) before you begin - you will need to ens
 
 Examine v0.1.80 introduced a new `directoryFactory` named `SyncTempEnvDirectoryFactory` which should be added to all indexers
 
-    directoryFactory="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory,Examine"
+```xml
+directoryFactory="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory,Examine"
+```
 
-The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory. This setting is need because Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Any time the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local environment temp files are cleared out that the index files can be restored from the centrally stored index files.  
+The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory. This setting is needed because Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Any time the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local environment temp files are cleared out that the index files can be restored from the centrally stored index files.  
 
 #### Pre Examine v0.1.80 ####
 
@@ -109,7 +116,9 @@ remote file system. Lucene has issues when working from a remote file share so t
 
 Examine v0.1.83 introduced a new `directoryFactory` named `TempEnvDirectoryFactory` which should be added to all indexers in the `~/Config/ExamineSettings.config` file
 
-    directoryFactory="Examine.LuceneEngine.Directories.TempEnvDirectoryFactory,Examine"
+```xml
+directoryFactory="Examine.LuceneEngine.Directories.TempEnvDirectoryFactory,Examine"
+```
 
 The `TempEnvDirectoryFactory` allows Examine to store indexes directly in the environment temporary storage directory, and should be used instead of `SyncTempEnvDirectoryFactory` mentioned above. 
 
@@ -128,19 +137,25 @@ For a front-end Azure Web App instance, you'll need to ensure that the Umbraco X
 
 For **Umbraco v7.7.3+**
 
-	<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
+```xml
+<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
+```
 
 This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the environment temporary folder. More info on this setting is available [here](../../../../Reference/Config/webconfig/index.md#umbracolocaltempstorage-umbraco-v773)
 
 For **Umbraco v7.6+**
 
-	<add key="umbracoContentXMLStorage" value="EnvironmentTemp" />
+```xml
+<add key="umbracoContentXMLStorage" value="EnvironmentTemp" />
+```
 
 This will set Umbraco to store `umbraco.config` in the environment temporary folder
 
 For **Umbraco Pre v7.6**
 
-	<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
+```xml
+<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
+```
 
 This will set Umbraco to store `umbraco.config` in the ASP.NET temporary folder
 
@@ -167,7 +182,7 @@ Since you have 2 x web apps, when you deploy you will need to deploy to both pla
 
 If you are not using a cloud based setup then *this is the recommended setup*.
 
-Ensure you read the [overview](index.md) before you begin - you will need to ensure that your asp.net & logging configurations are correct.
+Ensure you read the [overview](index.md) before you begin - you will need to ensure that your ASP.NET & logging configurations are correct.
 
 [See here for specific details about using Option #2: File Storage with Replication](files-replicated.md)
 

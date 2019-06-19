@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Manually run extractions on your Cloud environments
 
 When you deploy from one environment to another on your Umbraco Cloud project, the files from the Git repository are merged into the files used on the site. The Deploy engine then runs an extraction. What this means is that the files on the disk will be deserialized into the database on the Cloud environment.
@@ -20,7 +24,9 @@ Run an extraction following these steps:
 
 ![Run manual extraction](images/manual-extraction.gif)
 
-**NOTE**: Sometimes you might encounter a deploy-marker called `deploy`. This usually means that an extraction cannot run, and you need to restart your environment for the extraction to be able to run.
+:::note
+Sometimes you might encounter a deploy-marker called `deploy`. This usually means that an extraction cannot run, and you need to restart your environment for the extraction to be able to run.
+:::
 
 Sometimes you might also need to run this extraction locally. This can be done by following the above steps using CMD (command prompt) on your local machine, and navigating to the `/data` folder in your local project folder.
 

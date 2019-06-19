@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Running Umbraco on Azure Web Apps
 
 _This section describes best practices with running Umbraco on Azure Web Apps_
@@ -22,7 +27,7 @@ due to IO latency of the remote file share.
 ## Scaling
 
 If you require the scaling ("scale out") ability of Azure Web Apps then you need to consult 
-the [Load Balancing documentation](load-balancing.md) since there is a lot more that needs
+the [Load Balancing documentation](Load-Balancing/index.md) since there is a lot more that needs
 to be configured to support scaling/auto-scaling.
 
 ## Web worker migrations
@@ -42,7 +47,7 @@ You cannot rely on these variables remaining static for the lifetime of your web
 
 These best practices are for a single environment/non-scaled azure website. __If you require the scaling ("scale out") 
 ability of Azure Web Apps then you need to consult the 
-[Load Balancing documentation](load-balancing.md)__ since there is a lot more that needs
+[Load Balancing documentation](Load-Balancing/index.md)__ since there is a lot more that needs
 to be configured to support scaling/auto-scaling.
 
 * You should ensure that `fcnMode="Single"` in your web.config's `<httpRuntime>` section (this is the default that is shipped with Umbraco, see [here](https://shazwazza.com/post/all-about-aspnet-file-change-notification-fcn/) for more details)
@@ -53,7 +58,9 @@ to be configured to support scaling/auto-scaling.
 
 Examine v0.1.80 introduced a new `directoryFactory` named `SyncTempEnvDirectoryFactory` which should be added to all indexers in the `~/Config/ExamineSettings.config` file
 
-    directoryFactory="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory,Examine"
+```xml
+directoryFactory="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory,Examine"
+```
 
 The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory. This setting is required due to the nature of Lucene files and IO latency on Azure Web Apps.
 
@@ -70,18 +77,24 @@ For **Umbraco v7.7.3+**
 
 For Umbraco installations that are hosted by Azure Web Apps it is recommend that Umbraco is upgraded to the latest version if the current version is pre v7.7.3. This is so that the umbracoLocalTempStorage setting can be utilised to avoid locking issues with TEMP files during automated server migrations or slot swapping. See [U4-10503](http://issues.umbraco.org/issue/U4-10503) for more information on this.
 
-	<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
+```xml
+<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
+```
 
 This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the environment temporary folder. More info on this setting is available [here](../../../Reference/Config/webconfig/index.md#umbracolocaltempstorage-umbraco-v773)
 
 For **Umbraco v7.6+**
 
-	<add key="umbracoContentXMLStorage" value="EnvironmentTemp" />
+```xml
+<add key="umbracoContentXMLStorage" value="EnvironmentTemp" />
+```
 
-This will set Umbraco to store `umbraco.config` in the environment temporary folder
+This will set Umbraco to store `umbraco.config` in the environment temporary folder.
 
 For **Umbraco Pre v7.6**
 
-	<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
+```xml
+<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
+```
 
-This will set Umbraco to store `umbraco.config` in the ASP.NET temporary folder
+This will set Umbraco to store `umbraco.config` in the ASP.NET temporary folder.

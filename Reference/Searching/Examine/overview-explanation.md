@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Overview & Explanation - "Examining Examine by Peter Gregory"
 
 <small>Originally published on the Umbraco blog - [Examining Examine: Friday, September 16, 2011 by Peter Gregory](https://umbraco.com/follow-us/blog-archive/2011/9/16/examining-examine.aspx)</small>
@@ -15,31 +20,35 @@ Out of the box Umbraco comes configured to index content and members in the back
 
 You configure an index set in the /config/examineIndex.config file. This file defines our indexes. As mentioned earlier, there are two internal default indexes configured in this file, and they are called "InternalIndexSet" and "InternalMemberIndexSet". Index sets are extremely easy to set up. The quickest way to get your index set up and running is with a single line of code.
 
-	<IndexSet SetName="WebsiteIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/WebsiteIndexSet/">
+```xml
+<IndexSet SetName="WebsiteIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/WebsiteIndexSet/">
+```
 
 Really, that is all you need.  You can actually leave out a majority of the configuration and Examine will revert to the default which is to index all your data and all your properties. But if you want a little more control you can use the full configuration options as shown below.
 
-	<IndexSet SetName="WebsiteIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/WebsiteIndexSet/">
-		<IndexAttributeFields>
-			<add Name="id" />
-			<add Name="nodeName" />
-			<add Name="updateDate" />
-			<add Name="writerName" />
-			<add Name="path" />
-			<add Name="nodeTypeAlias" />
-			<add Name="parentID" />
-		</IndexAttributeFields>
-		<IndexUserFields>
-			<add Name="bodyText"/>
-			<add Name="metaDescription"/>
-			<add Name="metaTitle"/>
-		</IndexUserFields>
-		<IncludeNodeTypes>
-			<add Name="TextPage"/>
-		</IncludeNodeTypes>
-		<ExcludeNodeTypes>
-		</ExcludeNodeTypes>
-	</IndexSet>
+```xml
+<IndexSet SetName="WebsiteIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/WebsiteIndexSet/">
+    <IndexAttributeFields>
+        <add Name="id" />
+        <add Name="nodeName" />
+        <add Name="updateDate" />
+        <add Name="writerName" />
+        <add Name="path" />
+        <add Name="nodeTypeAlias" />
+        <add Name="parentID" />
+    </IndexAttributeFields>
+    <IndexUserFields>
+        <add Name="bodyText"/>
+        <add Name="metaDescription"/>
+        <add Name="metaTitle"/>
+    </IndexUserFields>
+    <IncludeNodeTypes>
+        <add Name="TextPage"/>
+    </IncludeNodeTypes>
+    <ExcludeNodeTypes>
+    </ExcludeNodeTypes>
+</IndexSet>
+```
 
 Let's break it down.
 
@@ -62,19 +71,23 @@ So now we have defined our index, we actually now need to tell Examine what to d
 
 This file contains two main sections, `<ExamineIndexProviders>` and `<ExamineSearchProviders>`
 
-**Setting Up your IndexProvider**
+## Setting Up your IndexProvider
 We will start out by creating our ExamineIndexProvider. As the name suggests this tells Examine how to manage our Index.  Again, contrary to what you may have been told you can actually leave out most of the optional configuration and simply specify your indexer in a single line of code.
 
-	<add name="WebsiteIndexer" type="UmbracoExamine.UmbracoContentIndexer, UmbracoExamine"/>
+```xml
+<add name="WebsiteIndexer" type="UmbracoExamine.UmbracoContentIndexer, UmbracoExamine"/>
+```
 
 But if we want more control we can define our Provider by creating the configuration as follows:
 
-	<add name="WebsiteIndexer" type="UmbracoExamine.UmbracoContentIndexer, UmbracoExamine"
-		dataService="UmbracoExamine.DataServices.UmbracoDataService, UmbracoExamine"
-		supportUnpublished="false"
-		supportProtected="false"
-		analyzer="Lucene.Net.Analysis.Standard.StandardAnalyzer, Lucene.Net"
-		enableDefaultEventHandler="true"/>
+```xml
+<add name="WebsiteIndexer" type="UmbracoExamine.UmbracoContentIndexer, UmbracoExamine"
+    dataService="UmbracoExamine.DataServices.UmbracoDataService, UmbracoExamine"
+    supportUnpublished="false"
+    supportProtected="false"
+    analyzer="Lucene.Net.Analysis.Standard.StandardAnalyzer, Lucene.Net"
+    enableDefaultEventHandler="true"/>
+```
 
 Let's look at each of the options.
 
@@ -102,11 +115,13 @@ The easiest way to check that your config is correct is to first go and look in 
 Using Luke, you can open up your index and see its content. It should give you statistics on the elements, number of documents indexed etc. If however you don't see indexed items then it's likely you have either made a mistake in your indexSet configuration or it has not indexed yet. When you are finished with Luke it's important to close the index to get Luke to release its lock on the files.
 
 Luke can also be used to run raw Lucene searches against your index. This can be helpful during development or to debug your queries. Later on in this document you will start to learn how these raw queries fit together.
-Setting up your Search Provider
 
+## Setting up your Search Provider
 We have a provider for our indexing, now we need to set up our search provider.  We do this by adding a new provider in the `<ExamineSearchProviders>` section of the `ExamineSettings.config` file.  The simplest search provider element looks like this:
 
-	<add name="WebsiteSearcher" type="UmbracoExamine.UmbracoExamineSearcher, UmbracoExamine" 	analyzer="Lucene.Net.Analysis.Standard.StandardAnalyzer, Lucene.Net"/>
+```xml
+<add name="WebsiteSearcher" type="UmbracoExamine.UmbracoExamineSearcher, UmbracoExamine" analyzer="Lucene.Net.Analysis.Standard.StandardAnalyzer, Lucene.Net"/>
+```
 
 Let's break it down, again.
 
@@ -116,7 +131,7 @@ Let's break it down, again.
 
 **analyzer (optional)**: Just like the indexer our search provider also needs to know what type of analyzer to use when searching the index. Make sure that your search is using the same analyzer as your indexer. Think of it as the language the indexer writes, the searcher needs to be able to read, just like if you write in English don't expect to be able to read French.
 
-Awesome! Our configuration is now complete! Our site should now be indexing our content and has a way of accessing it via a search provider.  However, configuration is only part of the story... we now need to do some coding.
+Awesome! Our configuration is now complete! Our site should now be indexing our content and has a way of accessing it via a search provider.  However, configuration is only part of the story... now we need to do some coding.
 
 ## Querying with Examine
 So without further ado let's cut straight to the chase and focus on querying your indexes.  We are going to look first at the Fluent API which allows you to quickly create queries using an easy to learn chaining syntax, and then at building your own Raw Lucene queries for more complex scenarios.
@@ -125,20 +140,26 @@ So without further ado let's cut straight to the chase and focus on querying you
 Examine contains a powerful fluent API that enables you to create searches by chaining up query conditions and then pass that chain to Examine to return results.  Let's look at formulating a query.
 First we need to specify our search provider that we want to do the searching for us.
 
-	var Searcher = ExamineManager.Instance.SearchProviderCollection["WebsiteSearcher"];
+```csharp
+var Searcher = ExamineManager.Instance.SearchProviderCollection["WebsiteSearcher"];
+```
 
 The alias "WebsiteSearcher" comes from the searcher that we have configured `ExamineSettings.config` file.
 
 Next we want to create an instance of `ISearchCriteria` that we will use to build our search query.
 
-	var searchCriteria = Searcher.CreateSearchCriteria();
+```csharp
+var searchCriteria = Searcher.CreateSearchCriteria();
+```
 
-Next we are going to chain up query. Lets look at one of the most common tasks you would be using examine for, which is to search a set of nodes for a particular word. We have a number of operators available to us to do this.  These are `Or()`, `And()`, `Not()` and `Equals()`. Lets look at the `Or()` operator.
+Next we are going to chain up the query. Lets look at one of the most common tasks you would be using examine for, which is to search a set of nodes for a particular word. We have a number of operators available to us to do this.  These are `Or()`, `And()`, `Not()` and `Equals()`. Lets look at the `Or()` operator.
 
-	var query = searchCriteria.Field("nodeName","hello").Or().Field("metaTitle","hello").Compile();
-	var searchResults = Searcher.Search(query);
-	yourRepeater.DataSource = searchResults;
-	yourRepeater.DataBind();
+```csharp
+var query = searchCriteria.Field("nodeName","hello").Or().Field("metaTitle","hello").Compile();
+var searchResults = Searcher.Search(query);
+yourRepeater.DataSource = searchResults;
+yourRepeater.DataBind();
+```
 
 Now this is where things often go wrong for developers and why they often get a little frustrated. What they assume is that this query is going to return them results where either nodeName or metaTitle contain hello. But what actually happens with this query is that by default Examine reads this query as nodeName MUST contain hello or metaTitle SHOULD contain hello. So you will often get odd results or none at all.
 
@@ -150,17 +171,21 @@ The + specifies that it MUST meet this rule.
 
 Fortunately there is an easy way to fix this behaviour, by specifying the default operator for our search criteria to be BooleanOperation.Or.  The simplest way of explaining what this does is that without it the default operation that Examine uses in Lucene terms is MUST (or AND in Examine terms). Because of this default behaviour, it means that if you are unaware of it you will probably see some strange results. By passing in the default operator of OR (in Lucene terms SHOULD) you stop the default AND operation. To fix this change the creation of the instance of the ISearchCriteria to pass in a BooleanOperation.Or like this:
 
-	var searchCriteria = Searcher.CreateSearchCriteria(BooleanOperation.Or);
+```csharp
+var searchCriteria = Searcher.CreateSearchCriteria(BooleanOperation.Or);
+```
 
-Now when Examine passes the query to Lucene it will pass as this:
+Now when Examine passes the query to Lucene it will pass it as this:
 
 	nodeName:hello metaTitle:hello
 
 Which in simple terms means give me anything where nodeName or metaTitle contain hello.  Much better.
 
-So with this knowledge let's look at another example using the And() operator.
+So with this knowledge let's look at another example using the `And()` operator.
 
-	var query = searchCriteria.Fields("nodeName","hello").And().Field("metaTitle",hello").Compile();
+```csharp
+var query = searchCriteria.Fields("nodeName","hello").And().Field("metaTitle",hello").Compile();
+```
 
 without passing the BooleanOperation.Or into our ISearchCriteria we would get the following for our Lucene query
 
@@ -174,19 +199,23 @@ With the BooleanOperation.Or we would get this:
 
 Which means give me results where nodeName SHOULD contain hello AND metaTitle MUST contain hello.
 
-What if we want grouping?  Well with Examine you get GroupedAnd() and GroupedOr() which as you would expect mean we can group up fields to look in and pass in a query term. I'm going to assume that I am using the BooleanOperation.Or from now on so will only show the result that it gives using that default operator.
+What if we want grouping?  Well with Examine you get `GroupedAnd()` and `GroupedOr()` which as you would expect mean we can group up fields to look in and pass in a query term. I'm going to assume that I am using the BooleanOperation.Or from now on so will only show the result that it gives using that default operator.
 
-	var query = searchCriteria.GroupedOr(new string[] { "nodeName", "metaTitle"}, "hello").Compile();
+```csharp
+var query = searchCriteria.GroupedOr(new string[] { "nodeName", "metaTitle"}, "hello").Compile();
+```
 
 This would give a Lucene query that looks like this:
 
 	(nodeName:hello metaTitle:hello)
 
-You can also pass in a group of query value.
+You can also pass in a group of query values.
 
-	var query = searchCriteria.GroupedOr(new string[] { "nodeName", "metaTitle"}, new string[]{"hello", "goodbye"}).Compile();
+```csharp
+var query = searchCriteria.GroupedOr(new string[] { "nodeName", "metaTitle"}, new string[]{"hello", "goodbye"}).Compile();
+```
 
-this would end up being:
+this would end up becoming:
 
 	(nodeName:hello metaTitle:goodbye)
 
@@ -194,7 +223,9 @@ I think you get the gist.
 
 But wait, there's more! What if you want to start combining operators? You can! It's not called chaining for nothing...
 
-	var query = searchCriteria.Field("nodeName","hello").And().GroupedOr(new string[] { "metaTitle", "metaDescription"}, new string[]{"hello", "goodbye"}).Compile();
+```csharp
+var query = searchCriteria.Field("nodeName","hello").And().GroupedOr(new string[] { "metaTitle", "metaDescription"}, new string[]{"hello", "goodbye"}).Compile();
+```
 
 This would end up being:
 
@@ -203,14 +234,18 @@ This would end up being:
 ### Fuzzy
 Sometimes users will query your site looking for a term that they could have misspelled or is very close. Fuzzy gives you the ability to get Lucene to look for terms that look like your term.  Eg mound could actually be sound.
 
-	var query = searchCriteria.Fields("nodeName","hello".Fuzzy(0.8f)).Compile();
+```csharp
+var query = searchCriteria.Fields("nodeName","hello".Fuzzy(0.8f)).Compile();
+```
 
 The optional value you pass into Fuzzy between 0 and 1 specifies how Fuzzy or how close the match is to the original. For instance a match of 0.5 will not return when a threshold of 0.8 is specified.
 
 ### Boosting
-Sometime you want to give a field more relevance than others. Thankfully we can use the concept of Boosting. What this does is give a particular query a higher relevance. That means that you can for instance say that if the nodeName contains the query then Boost it because its more relevant than those that only contain the term in the body.
+Sometimes you want hits in particular fields to result in higher relevance (score). Thankfully we can use the concept of Boosting to achieve this. By using Boost we can for instance define that if a match is found in the "nodeName" or the "metaTitle" it is more relevant than a match in the body.
 
-	var query = searchCriteria.Fields("nodeName","hello".Boost(8)).Or().Field("metaTitle","hello".Boost(5)).Compile();
+```csharp
+var query = searchCriteria.Fields("nodeName","hello".Boost(8)).Or().Field("metaTitle","hello".Boost(5)).Compile();
+```
 
 If you're curious as to the Math of this, don't be. First rule of Lucene is never ask how the Math works.
 
@@ -219,7 +254,9 @@ Cool, we have learnt a lot. BUT the Fluent API can't do everything. Let's look a
 
 Let's say our query is for the following phrase: "paging in XSLT". Most times when you search with Examine you will unfortunately either get nothing back or get back only a few results that match exactly. To see why, let's look at how we might do this with Fluent and then look at the problem when it's converted:
 
-	var query = searchCriteria.Fields("nodeName","paging in XSLT").Compile();
+```csharp
+var query = searchCriteria.Fields("nodeName","paging in XSLT").Compile();
+```
 
 When this converts it looks like this:
 
@@ -233,15 +270,19 @@ What this basically means is that field nodeName needs to contain either paging,
 
 So to achieve this we need to build our custom Lucene query and then pass it to Examine as a Raw query.
 
-	var term = Request["q"];
-	var luceneString = "nodeName:" + term;
-	var query = searchCriteria.RawQuery(luceneString);
+```csharp
+var term = Request["q"];
+var luceneString = "nodeName:" + term;
+var query = searchCriteria.RawQuery(luceneString);
+```
 
 Cool, now our search is starting to perform more like how we want it to. Now what about making it boost matches containing all the terms higher? No worries.
 
-	var luceneString = "nodeName:";
-	luceneString += "(+" + term.Replace(" ", " +") + ")^5 ";
-	luceneString += "nodeName:" + term;
+```csharp
+var luceneString = "nodeName:";
+luceneString += "(+" + term.Replace(" ", " +") + ")^5 ";
+luceneString += "nodeName:" + term;
+```
 
 The resultant query would look like this:
 
@@ -253,20 +294,24 @@ So as you can see, it can get pretty complex but also pretty powerful.  For more
 
 We haven't gone into the output of results but quickly here is what you could end up with in your codebehind using the above Raw query:
 
-	var Searcher = ExamineManager.Instance.SearchProviderCollection["OurIndexSearcher"];
-	var searchCriteria = Searcher.CreateSearchCriteria(BooleanOperation.Or);
-	var term = Request["q"];
-	var luceneString = "nodeName:";
-	luceneString += "(+" + term.Replace(" ", " +") + ")^5 ";
-	luceneString += "nodeName:" + term;
-	var query = searchCriteria.RawQuery(luceneString);
-	var searchResults = Searcher.Search(query).OrderByDescending(x => x.Score);
-	yourRepeater.DataSource = searchResults;
-	yourRepeater.DataBind();
+```csharp
+var Searcher = ExamineManager.Instance.SearchProviderCollection["OurIndexSearcher"];
+var searchCriteria = Searcher.CreateSearchCriteria(BooleanOperation.Or);
+var term = Request["q"];
+var luceneString = "nodeName:";
+luceneString += "(+" + term.Replace(" ", " +") + ")^5 ";
+luceneString += "nodeName:" + term;
+var query = searchCriteria.RawQuery(luceneString);
+var searchResults = Searcher.Search(query).OrderByDescending(x => x.Score);
+yourRepeater.DataSource = searchResults;
+yourRepeater.DataBind();
+```
 
 And then in your code front the objects that you are iterating over are of type Examine.SearchResult. So to databind on those you would have syntax like the following:
 
-	<%# ((Examine.SearchResult)Container.DataItem).Fields["nodeName"] %>
+```csharp
+<%# ((Examine.SearchResult)Container.DataItem).Fields["nodeName"] %>
+```
 
 In conclusion Examine is awesome and with a little bit of information and a little patience to get to know it, you can be up and running with some very complex querying.
 

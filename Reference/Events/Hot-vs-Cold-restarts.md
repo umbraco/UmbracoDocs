@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Hot versus cold restarts in Umbraco
 
 When we talk about startup time there are several different things folks are referring to. Let us cover all startup scenarios with comments.

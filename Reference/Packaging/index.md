@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # What are package actions?
 
 Package actions are a simple way to perform common tasks while installing packages / nitros. It is XML based and could be compared to for example NAnt tasks. Actions perform small configuration related tasks, which could for example be allowing a document type on another type, moving a document to another location or adding a string to an existing template.
@@ -5,7 +10,7 @@ Currently we have 10 actions available. If you need to perform more advanced ins
 
 ## Adding actions to a package script
 
-With the build-in packager, it is possible to add the actions you need directly from the UI. Just add <Action> nodes to the textare.
+With the build-in packager, it is possible to add the actions you need directly from the UI. Just add <Action> nodes to the textarea.
 Alternatively the actions can be manually added to the package manifest by adding a <Actions> node containing the package actions xml.
 
 ## Standard fields on all actions

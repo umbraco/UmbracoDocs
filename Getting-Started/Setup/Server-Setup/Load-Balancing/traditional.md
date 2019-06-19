@@ -1,11 +1,19 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Traditional (Legacy/Deprecated) load balancing
 
 _Information on how to deploy Umbraco in a traditional Load Balanced scenario and other details to consider when setting up Umbraco for load balancing._
 
-Traditional load balancing must be used for Umbraco versions less than 7.3.0. 
-__If you are using Umbraco 7.3.0+ then it is highly recommended to use the new [Flexible Load Balancing](index.md)__
+Traditional load balancing must be used for Umbraco versions less than 7.3.0.
 
-__Be sure you read the [Overview](index.md) before you begin!__
+:::note
+If you are using Umbraco 7.3.0+ then it is highly recommended to use the new [Flexible Load Balancing](index.md)
+
+Be sure you read the [Overview](index.md) before you begin!
+:::
 
 ## Design
 These instructions make the following assumptions:
@@ -20,7 +28,7 @@ These instructions make the following assumptions:
 There are two design alternatives you can use to effectively load balance servers:
 
 1. Option #1 : Each server hosts copies of the load balanced website files and a file replication service is running to ensure that all files on all servers are up to date. __This is the recommended approach.__
-2. Option #2 : The load balanced website files are located on a centralized file share (SAN/NAS/Custered File Server/Network Share).
+2. Option #2 : The load balanced website files are located on a centralized file share (SAN/NAS/Clustered File Server/Network Share).
 
 And you'll obviously need a load balancer to do your load balancing!
 
@@ -63,7 +71,7 @@ A load balancer will balance the traffic between your servers. There are many lo
 Some important notes on NLB:
 
 * [Load balancing with VMWare & NLB](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/implmenting_ms_network_load_balancing.pdf)
-* Ensure that the internal IP Addresses for NLB have DNS registration disabled, are not configured to a a client for Microsoft Networks and have Netbios over TCPIP disabled
+* Ensure that the internal IP Addresses for NLB have DNS registration disabled, are not configured to a client for Microsoft Networks and have Netbios over TCP/IP disabled
 * Windows Server 2008 changed the way that TCP-IP works and have disabled forwarding. In order for NLB to work with 2 network cards (the recommended way), you have to enable forwarding for the private NIC:
 	* [Balancing Act: Dual-NIC Configuration with Windows Server 2008 NLB Clusters](https://blogs.technet.microsoft.com/networking/2008/11/20/balancing-act-dual-nic-configuration-with-windows-server-2008-nlb-clusters/)
 
@@ -83,20 +91,24 @@ Configuring your servers to work using a centrally located file system that is s
 
 Configuring Umbraco to support load balanced clusters is probably the easiest part. In the /config/umbracoSettings.config file you need to updated the distributed call section to the following (as an example)
 
-	<distributedCall enable="true">
-	    <user>0</user>
-	    <servers>
-	       <server>server1.mywebsite.com</server>
-	        <server>server2.mywebsite.com</server>
-	        <server>server3.mywebsite.com</server>
-	    </servers>
-	</distributedCall>
+```xml
+<distributedCall enable="true">
+    <user>0</user>
+    <servers>
+       <server>server1.mywebsite.com</server>
+        <server>server2.mywebsite.com</server>
+        <server>server3.mywebsite.com</server>
+    </servers>
+</distributedCall>
+```
 
 As you can see in the above XML the distributed server names are the custom DNS names created for each IIS host name for each server.  Don't forget to enable the distributedCall.
 
 There are a couple optional elements for the configuration of each server that allow you to specify a specific protocol or port number:
 
-	<server forceProtocol="http|https" forcePortnumber="80|443">server3.mywebsite.com</server>
+```xml
+<server forceProtocol="http|https" forcePortnumber="80|443">server3.mywebsite.com</server>
+```
 
 If you only add https bindings to your site in IIS, then you will need to set umbracoUseSSL="true" in your web.config in order for publish to work.
 
@@ -110,17 +122,20 @@ As of Umbraco 6.2.1+ and 7.1.5+ there are another couple of options to take into
 **serverName** will be the most common attribute to use and will always work so long as you are not load balancing a single site on the same server. In this case you should add the serverName attribute to each server node listed so that each server knows if it is a master or slave and so that each server knows which internal URL it can use to ping itself. Take not that the serverName must match the machine name otherwise scheduled tasks will not work
 Example:
 
-
-		<server serverName="MyServer1">server1.mywebsite.com</server>
-	        <server serverName="MyServer2">server2.mywebsite.com</server>
-	        <server serverName="MyServer3">server3.mywebsite.com</server>
+```xml
+<server serverName="MyServer1">server1.mywebsite.com</server>
+<server serverName="MyServer2">server2.mywebsite.com</server>
+<server serverName="MyServer3">server3.mywebsite.com</server>
+```
 
 **appId** is a less common attribute to use but will need to be used in the case where you are load balancing a single site on the same server. The appId is determined by the result of: `HttpRuntime.AppDomainAppId`. This is generally the id of the IIS site hosting the web app (i.e. the value might look something like: /LM/W3SVC/69/ROOT ). You shouldn't specify both the serverName and appId together on the same xml server node, if you do the appId will take precedence.
 Example:
 
-		<server appId="/LM/W3SVC/987/ROOT">server1.mywebsite.com</server>
-	        <server appId="/LM/W3SVC/123/ROOT">server2.mywebsite.com</server>
-	        <server serverName="MyServer3">server3.mywebsite.com</server>
+```xml
+<server appId="/LM/W3SVC/987/ROOT">server1.mywebsite.com</server>
+<server appId="/LM/W3SVC/123/ROOT">server2.mywebsite.com</server>
+<server serverName="MyServer3">server3.mywebsite.com</server>
+```
 
 ## Testing
 

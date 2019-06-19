@@ -1,3 +1,8 @@
+---
+versionFrom: 6.0.0
+needsV8Update: "true"
+---
+
 # DataTypeDefinition
 
 **Applies to Umbraco 6.x and newer**
@@ -12,8 +17,10 @@ All samples in this document will require references to the following dll:
 * Umbraco.Core.dll
 
 All samples in this document will require the following using statement:
-	
-	using Umbraco.Core.Models;
+
+```csharp
+using Umbraco.Core.Models;
+```
 
 ## Constructors
 
@@ -50,7 +57,7 @@ Gets or Sets the name of the content as a `String`.
 Gets or Sets the parent `Content` Id as an `Int`.
 
 ### .Path
-Gets or Sets the path of the content as a `String`. This string contains a comma separated list of the anscestors Ids including the current contents own id at the end of the string.
+Gets or Sets the path of the content as a `String`. This string contains a comma separated list of the ancestor Ids including the current contents own id at the end of the string.
 
 ### .SortOrder
 Returns the given `Content` index, compared to sibling content.

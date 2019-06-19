@@ -1,10 +1,14 @@
+---
+versionFrom: 8.0.0
+---
+
 # Using events
 
 Umbraco uses .Net events to allow you to hook into the workflow processes for the backoffice. For example you might want to execute some code every time a page is published. Events allow you to do that.
 
-## [Application Startup & event registration](Application-Startup.md)
+## [Composing](../../Implementation/Composing)
 
-Umbraco allows you to execute code during application startup. This is also the correct place to register for many other types of events including the ability to bind to HttpApplication events. 
+Umbraco uses Composition and Components to allows you to execute code during startup. This is also the correct place to register for many other types of events including the ability to bind to HttpApplication events. 
 
 ## Events
 
@@ -25,8 +29,11 @@ Which one you want to use depends on what you want to achieve. If you want to be
 
 ## Tree events
 
-* See [Tree Events](../../Extending-Umbraco/Section-Trees/trees.md) for a listing of the tree events.  
+* See [Tree Events](../../Extending/Section-Trees/trees.md) for a listing of the tree events.  
 
 ## Editor Model events
-See [EditorModelEventManager Events](EditorModel-Events.md) for a listing of the EditorModel events 
-<small>*(hint: useful for manipulating the model before it is sent to an editor in the backoffice - eg. perhaps to set a default value of a property on a new document)*</small>
+See [EditorModelEventManager Events](EditorModel-Events/index.md) for a listing of the EditorModel events 
+
+:::tip
+Useful for manipulating the model before it is sent to an editor in the backoffice - eg. perhaps to set a default value of a property on a new document
+:::

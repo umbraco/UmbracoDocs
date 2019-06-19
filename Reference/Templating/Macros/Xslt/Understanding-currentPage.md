@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Understanding "currentPage"
 As mentioned on the previous page, the currentPage parameter is important for us in Umbraco.  It is the complete XML document of the published site, and is how we reference the data stored in each document.  By default, the context of the XML document is set to the requested page.
 
@@ -34,37 +39,39 @@ These are store as attributes of the document, which is called "node".  The prop
 
 This is structured similar to the following in the XML document.
 
-	<!DOCTYPE umbraco [
-	<!ELEMENT nodes ANY>
-	<!ELEMENT node ANY>
-	<!ATTLIST node id ID #REQUIRED>
-	]>
-	<root id="-1">
-		<node
-			id="numeric-value"
-			version="guid-value"
-			parentID="numeric-value"
-			level="numeric-value"
-			writerID="numeric-value"
-			creatorID="numeric-value"
-			nodeType="numeric-value"
-			template="numeric-value"
-			sortOrder="numeric-value"
-			createDate="datetime-value"
-			updateDate="datetime-value"
-			nodeName="text-value"	
-			urlName="text-value"
-			writerName="text-value"
-			creatorName="text-value"
-			nodeTypeAlias="text-value"
-			path="csv-numeric-value">
-			<data
-				versionID="guid-value"
-				alias="text-value">
-				field-value or  <![CDATA[field-value]]>
-			</data>
-			<data ...>...</data>
-			<node ...>...</node>
-		</node>
-		<node ...>...</node>
-	</root>
+```xml
+<!DOCTYPE Umbraco [
+<!ELEMENT nodes ANY>
+<!ELEMENT node ANY>
+<!ATTLIST node id ID #REQUIRED>
+]>
+<root id="-1">
+    <node
+        id="numeric-value"
+        version="guid-value"
+        parentID="numeric-value"
+        level="numeric-value"
+        writerID="numeric-value"
+        creatorID="numeric-value"
+        nodeType="numeric-value"
+        template="numeric-value"
+        sortOrder="numeric-value"
+        createDate="datetime-value"
+        updateDate="datetime-value"
+        nodeName="text-value"	
+        urlName="text-value"
+        writerName="text-value"
+        creatorName="text-value"
+        nodeTypeAlias="text-value"
+        path="csv-numeric-value">
+        <data
+            versionID="guid-value"
+            alias="text-value">
+            field-value or  <![CDATA[field-value]]>
+        </data>
+        <data ...>...</data>
+        <node ...>...</node>
+    </node>
+    <node ...>...</node>
+</root>
+```

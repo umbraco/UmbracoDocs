@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # List all document types and generic properties
 
 I needed a list of all document types and their properties in an installation. The quick and dirty way I came up with was to create a VB-function and call it from within a xslt:

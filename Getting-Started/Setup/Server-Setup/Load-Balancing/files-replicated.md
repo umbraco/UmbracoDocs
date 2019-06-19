@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # File Storage with File Replication
 
 _documentation about setting up load balanced environments using file replication_
@@ -21,11 +26,17 @@ When deploying Umbraco in a load balanced scenario using file replication, it is
 * ~/App_Data/TEMP/*
 * ~/App_Data/umbraco.config 
 	* Alternatively you can change the web.config entry to store this file inside of the ~/App_Data/TEMP folder using this
-	
-			<add key="umbracoContentXML" value="~/App_Data/TEMP/umbraco.config" />
+	        
+    ```xml
+    <add key="umbracoContentXML" value="~/App_Data/TEMP/umbraco.config" />
+    ```
+            
 	* Another alternative is to store the umbraco.config file in the local server's 'temp' folder. Achieve this by changing this configuration setting to 'true' in the web.config. The downside is that if you need to view this configuration file you'll have to find it in the temp files. Locating the file this way isn't always clear.
 			
-			<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
+    ```xml
+    <add key="umbracoContentXMLUseLocalTemp" value="true" /> 
+    ```
+            
 * ~/App_Data/Logs/*
 	* This is **optional** and depends on how you want your logs configured (see below) 
 

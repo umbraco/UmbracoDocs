@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Settings and styling
 A grid layout can also expose custom settings - such as data-attributes or styling options - on each cell or row. This allows editors to use a friendly UI to add configuration values to grid elements. When custom settings and styles are applied, they will by default be included in the grid html as either html attributes or inline styles.
 
@@ -10,16 +14,18 @@ To add a setting, click the edit settings link. This will expand a dialog showin
 
 The settings data could look like this, with an object for each setting:
 
-    [
-      {
-        "label": "Class",
-        "description": "Set a css class",
-        "key": "class",
-        "view": "textstring",
-        "modifier": "col-sm-{0}",
-        "applyTo": "row|cell"
-      }
-    ]
+```json
+[
+  {
+    "label": "Class",
+    "description": "Set a css class",
+    "key": "class",
+    "view": "textstring",
+    "modifier": "col-sm-{0}",
+    "applyTo": "row|cell"
+  }
+]
+```
 
 The different values are:
 
@@ -35,7 +41,9 @@ The different values are:
 
 **key** defines the alias the configuration is stored under and by default the alias of the attribute will also be the attribute on the rendered html element. In the example above any value entered in this settings editor will be rendered in the grid html as:
 
-    <div **class**="VALUE-ENTERED"></div>
+```html
+<div **class**="VALUE-ENTERED"></div>
+```
 
 By changing the key of the setting you can modify the `<div>` element's attributes like `class`, `title`, `id` or custom `data-*` attributes.
 
@@ -56,28 +64,32 @@ By changing the key of the setting you can modify the `<div>` element's attribut
 Alternatively you can also pass in a path to a custom view like "/app_plugins/grid/editors/view.html"
 
 **prevalues** is for views that need predefined values, e.g. the radiobuttonlist view. Prevalues are defined as strings in an array:
-    
-    "prevalues":[
-        "value_1",
-        "value_2",
-        "value_3"
-    ]
+
+```json
+"prevalues":[
+    "value_1",
+    "value_2",
+    "value_3"
+]
+```
 
 and will translate in to three different options where each string will become a radiobutton. The strings represent the value of the options.
 
 **In Umbraco 7.5.4 & newer** prevalues can also be defined as an object of label/value allowing to have a displayed label instead of showing the actual underlying value. You can even mix and match these and use both label/value prevalues and simple string prevalues in the same configuration:
 
-    "prevalues":[
-        {
-            "label": "Value one",
-            "value": "value_1"
-        },
-        {
-            "label": "Value two",
-            "value": "value_2"
-        },
-        "value_3"
-    ]
+```json
+"prevalues":[
+    {
+        "label": "Value one",
+        "value": "value_1"
+    },
+    {
+        "label": "Value two",
+        "value": "value_2"
+    },
+    "value_3"
+]
+```
 
 **modifier** is a basic way to prepend, append or wrap the value from the editor in a simple string. This is especially useful when working with custom styles which often requires additional values to function. For instance if you want to set a background image you can get an image path from the image picker view. But in order for it to work with css it has to be wrapped in `url()`. In that case you set the **modifier** to `url('{0}')` which means that `{0}` is replaced with the editor value.
 
@@ -85,10 +97,12 @@ and will translate in to three different options where each string will become a
 
 **In Umbraco 7.5.4 & newer** a JSON object can also be used if you need a more specific configuration. A JSON configuration could look like this:
 
-    "applyTo": {
-        "row": "Headline,Article",
-        "cell": "4,8,6"
-    }
+```json
+"applyTo": {
+    "row": "Headline,Article",
+    "cell": "4,8,6"
+}
+```
 
 This would ensure the setting can only be used on rows named **Article** or **Headline**, or on cells sized: **4**, **8** or **6**. If it should only apply to cells you can remove the row property. If it should apply to all rows you can specify it by having the row property with null or an empty string as value.
 
@@ -97,64 +111,72 @@ There are many ways to combine these, here are some samples:
 
 **Set a background image style**
 
-    {
-        "label": "Background image",
-        "description": "Choose an image",
-        "key": "background-image",
-        "view": "imagepicker",
-        "modifier": "url('{0}')"
-    }
+```json
+{
+    "label": "Background image",
+    "description": "Choose an image",
+    "key": "background-image",
+    "view": "imagepicker",
+    "modifier": "url('{0}')"
+}
+```
 
 
 **Set a title setting**
 
-    {
-        "label": "Title",
-        "description": "Set a title on this element",
-        "key": "title",
-        "view": "textstring"
-    }
+```json
+{
+    "label": "Title",
+    "description": "Set a title on this element",
+    "key": "title",
+    "view": "textstring"
+}
+```
 
 
 **Set a data-custom setting**
 
-    {
-        "label": "Custom data",
-        "description": "Set the custom data on this element",
-        "key": "data-custom",
-        "view": "radiobuttonlist",
-        "prevalues": [
-            "value_1",
-            "value_2",
-            "value_3"
-        ]
-    }
+```json
+{
+    "label": "Custom data",
+    "description": "Set the custom data on this element",
+    "key": "data-custom",
+    "view": "radiobuttonlist",
+    "prevalues": [
+        "value_1",
+        "value_2",
+        "value_3"
+    ]
+}
+```
 
 ### Multiple settings and styles
 You can add multiple settings and styles configurations on a data type. This is done by creating a new setting or style object. Remember to separate the objects with a comma.
 
 **Adding multiple settings**
 
-    [
-        {
-            "label": "Class",
-            "description": "Set a class on this element",
-            "key": "class",
-            "view": "textstring"
-        },
-        {
-            "label": "Title",
-            "description": "Set a title on this element",
-            "key": "title",
-            "view": "textstring"
-        },
-        {
-            "label": "Custom data",
-            "description": "Set the custom data on this element",
-            "key": "data-custom",
-            "view": "textstring"
-        }
-    ]
+```json
+[
+    {
+        "label": "Class",
+        "description": "Set a class on this element",
+        "key": "class",
+        "view": "textstring"
+    },
+    {
+        "label": "Title",
+        "description": "Set a title on this element",
+        "key": "title",
+        "view": "textstring"
+    },
+    {
+        "label": "Custom data",
+        "description": "Set the custom data on this element",
+        "key": "data-custom",
+        "view": "textstring"
+    }
+]
+```
 
 
 ### Full-width settings and styles

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Configuring the Grid Layout data type
 A grid layout contains multiple configuration options to allow developers to tailor the grid to a very specific site design.
 Configuring the layout can be divided into 2 overall parts:

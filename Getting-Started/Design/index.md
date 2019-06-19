@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Design
 
 ### [Templates](Templates/)
@@ -9,5 +13,5 @@ How to query and render published content
 ## [Rendering media](Rendering-Media/)
 How to query and render media items
 
-## [Stylesheets and javascript](Stylesheets-Javascript/)
-Working with css and javascript in Umbraco's templates
+## [Stylesheets and JavaScript](Stylesheets-JavaScript/)
+Working with css and JavaScript in Umbraco's templates

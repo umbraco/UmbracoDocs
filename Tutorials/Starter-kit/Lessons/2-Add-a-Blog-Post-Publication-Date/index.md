@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Add a Blog Post Publication Date
 Learn how to add a new date property to blog posts.
 

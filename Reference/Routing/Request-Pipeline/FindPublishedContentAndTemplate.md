@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # FindPublishedContentAndTemplate()
 
 This method is called on the "PublishedContentRequest.PrepareRequest()" method.  

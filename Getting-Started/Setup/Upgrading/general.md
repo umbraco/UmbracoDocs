@@ -1,11 +1,20 @@
+---
+versionFrom: 7.0.0
+---
+
 # Upgrades in general
 
-_This is the guide for upgrading in general. Sometimes there are exceptions to these guidelines, which are listed in the **[version-specific guide](version-specific.md)**._
+_This is the guide for upgrading in general._
 
-## Warning
-First of all, things may go wrong for various reasons. Make sure to **ALWAYS** make a backup of both your site's files and the database so that you can return to a version that you know works. You will need the backed up files for merging later so this step is not optional.
+:::warning
+**Important**: If you are upgrading to a new major version, like from Umbraco 7 to Umbraco 8, make sure to check out the **[version-specific documentation.](version-specific.md)**
+
+Things may go wrong for various reasons. Make sure to **ALWAYS** make a backup of both your site's files and the database so that you can return to a version that you know works. You will need the backed up files for merging later so this step is not optional.
 
 Before upgrading to a new major version (like v6 to v7), check if the packages you're using are compatible with the version you're upgrading to. On the package's download page, in the **Project compatibility** area, click **View details** to check version-specific compatibility.
+:::
+
+Sometimes there are exceptions to these guidelines, which are listed in the **[version-specific guide](version-specific.md)**.
 
 ## Note
 It is necessary to run the upgrade installer on each environment of your Umbraco site. So if you want to update your staging and your live site then you need to repeat the steps below and make sure that you click through the install screens so that your upgrade is complete.
@@ -15,7 +24,7 @@ It is necessary to run the upgrade installer on each environment of your Umbraco
 You can simply open up the **Package Console** and type:
 `Update-Package UmbracoCms`
 
-You will be prompted to overwrite files, you should choose **"No to All"** by pressing the **"L"** . If there are any specific configuration changes required for the version you are upgrading to then they will be noted in the the **[version-specific guide](version-specific.md)**.
+You will be prompted to overwrite files, you should choose **"No to All"** by pressing the **"L"** . If there are any specific configuration changes required for the version you are upgrading to then they will be noted in the **[version-specific guide](version-specific.md)**.
 
 Or you can open the **NuGet Package Manager** and select the **Updates** pane to get a list of available updates. Choose the package called **UmbracoCms** and click update. This will run through all the files and make sure you have the latest changes while leaving files you have updated.
 
@@ -60,9 +69,9 @@ There's also the possibility that some files in the /Config folder are new or so
 Up until version 6.0.0 it was necessary to change the version number in ClientDependency.config. This was to clear the cached html/css/js files in the backoffice. Just change the current version number to one that's higher than that. Make sure not to skip this step as you might get strange behaviour in the backoffice otherwise.
 
 ## Merge UI.xml and language files
-Some packages (like Contour) add dialogs to the UI.xml. Make sure to merge those changes back in from your backup during the upgrade so that the packages continue to work. This file can be found in: /Umbraco/Config/Create/UI.xml.
+Some packages (like Contour and Umbraco Forms) add dialogs to the UI.xml. Make sure to merge those changes back in from your backup during the upgrade so that the packages continue to work. This file can be found in: /Umbraco/Config/Create/UI.xml.
 
-Packages like Contour and Courier also make changes to the language files located in: /Umbraco/Config/Lang/*.xml (typically en.xml).
+Packages like Contour, Umbraco Forms, and Courier also make changes to the language files located in: /Umbraco/Config/Lang/*.xml (typically en.xml).
 
 # Finalize
 After copying the files and making the config changes, you can open your site. You should see the installer which will guide you through the upgrade. 

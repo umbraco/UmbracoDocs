@@ -1,4 +1,10 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Property Editors
+
 This section describes how to work with and create Property Editors. A property editor is the editor used to insert content into Umbraco. [See here for definition.](../../Getting-Started/Backoffice/Property-Editors/)
 
 ## Tutorials - Creating a property editor
@@ -22,7 +28,7 @@ Property editors can be configured to support tag data. In v7 the tag system has
 
 ### More information
 - [Built in Property Editors](../../Getting-Started/Backoffice/Property-Editors/Built-in-Property-Editors/)
-- The full [Umbraco Backoffice UI API documentation](../../../apidocs/ui/) for all the angular services, directives and resources.
+- The full [Umbraco Backoffice UI API documentation](../../../apidocs/v8/ui/) for all the angular services, directives and resources.
 
 ### Umbraco TV
 - Chapter: [Property Editors](https://umbraco.tv/videos/umbraco-v7/developer/extending/property-editors/)

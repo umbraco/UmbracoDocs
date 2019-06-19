@@ -1,14 +1,14 @@
-# Troubleshooting structure deployment/restore errors
+---
+versionFrom: 7.0.0
+---
 
-## Error in files containing site structure
+# How to resolve collision errors
 
 :::note
 If your project is using Umbraco Courier, please refer to this article instead: [Schema Mismatches with Courier](../../Courier/Structure-Errors-Courier)
 :::
 
-On some occasions, it's possible that you'll encounter collision errors on your Umbraco Cloud environments. This means that two `.uda` files are created for the same entity. The `.uda` files contain schema data for each of your entities (e.g Document Types, Templates, Macros, Dictionary Items, Data types).
-
-Example:
+This guide is for solving collision errors on your Umbraco Cloud project. Use this guide when you encounter an error like this:
 
     Some artifacts collide on unique identifiers.
     This means that they have different Udis, yet
@@ -20,86 +20,126 @@ Example:
         UdaFile: ~/data/revision/document-type__4c04d968448747d791b5eae254afc7ec.uda
         UdaFile: ~/data/revision/document-type__f848c577f02b4ee5aea84f87458072a4.uda
 
+The error means that two (or more) `.uda` files have been created for the same entity. The `.uda` files contain schema data for each of your entities e.g Document Types, Templates, Macros, Dictionary Items, Data types etc (for a full list of these entities see [What are UDA files?](../../../Set-Up/Power-Tools/generating-uda-files/#what-are-uda-files)).
 
-In the example above there are two files in the `~/data/revision` folder which contain the same alias, for a Document Type. Each file has a different file name due to having a different unique key (UDI), but the Document Type they both contain is `home`. When Deploy tries to create the site structure from these files, it is inspecting each file to try to create a Document Type with the aliases specified.
+In this example there are two `.uda` files who share the same alias which leads to a conflict: it is impossible for Deploy to know which of the files to use, so it gives up and sends an error back.
 
-In the case above, there are two files (Document Type representations) who share the same alias which leads to a conflict: it's impossible for Deploy to know which is the "correct" file, so it gives up and sends an error back.
+:::note
+Does the collision error involve **Dictionary items**?
+Use this guide instead: [Troubleshooting duplicate dictionary items](../Duplicate-Dictionary-Items)
+:::
 
-### Cause
+You can run into an error like this on all of your Cloud environment. Somestimes you might also run into it, on a local clone of your project. This guide will use an example, where two files are colliding on a Development and a Live environment.
 
-The main cause of this problem is when a Document Type (or Media Type, Data Type, etc) is manually created in two environments using the same alias. Since each of the environments are isolated and do not know what the other one is doing until they are syncronized - creating a Document Type in each environment will actually create duplicate Document Types that are considered separate entities even though they look the same and share the same alias in the backoffice of both environments.
+## Table of content
 
-If you have two or more Cloud environments, we recommend that you never create or make schema changes directly on the Live or Staging environments. You should work with schema only in your Development environment or even better, your local clone of the project.
+* [Cause](#cause)
+* [Video tutorial](#video-tutorial)
+* [Using the error message](#using-the-error-message)
+* [Deciding which file you want to use](#deciding-which-file-you-want-to-use)
+* [Getting your environments in sync](#getting-your-environments-in-sync)
 
-## Fixing
+## Cause
 
-In order to fix this problem, you will have to decide which of the two colliding Document Types is the correct one. The error message will give you a lot of details you can use in your investigation:
+<iframe width="800" height="450" src="https://www.youtube.com/embed/pF5SUh30FKI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-  * The affected entity type (Document Type, Data Type, Member type, etc.)
-  * The alias of the entity which has duplicated `.uda` files
-  * A list of the files containing the same alias
+The main cause of this problem is when an entity has been manually created in two or more environments, using the same alias. 
 
-Let’s imagine that we have a project with two Umbraco Cloud environments (Development and Live) and a local environment. A Document Type has been created on Live and a Document Type with the same alias has also been created on Development. 
+Each environment on Umbraco Cloud are isolated and do not know what the other one is doing until they are synchronized. When an entity is created with identical aliases on two or more environments, it will create duplicate entities that are considered separate entities even though they look that same and share the same alias on both/all environments.
 
-![Before extraction error](images/visualization1.png)
+:::tip
+When you have two or more Cloud environments, we recommend that you never create or make schema changes directly on the Live or Staging environments. You should work with schema only in your Development environment or even better, your local clone of the project.
+:::
 
-Up until now, this project has been working fine, since no deployments have been made from Development to Live since the Document Type was created on Development.
+## Video tutorial
 
-### Deploying your changes
+<iframe width="800" height="450" src="https://www.youtube.com/embed/S8tOVxKkqw8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-It’s now time to deploy the newest changes to the Live environment. Since a Document Type with the same alias has been created in both the Development and the Live environment, the deployment will fail.
+You can find a full playlist about Collision errors on our [YouTube Channel](https://www.youtube.com/playlist?list=PLG_nqaT-rbpzgBQkZtRrdzIpeFbRNvO0E).
 
-![After extraction error](images/visualization2.png)
+## Using the error message
 
-On a deployment between Umbraco Cloud environments, all the `.uda` files in the `/data/revision` folder will get synced. For this project, this means that both the Development and the Live environments will have two different `.uda` files for the Document Type – the only thing that’s different between the two files are the GUID since they were created in different environments.
+The error message gives a lot of useful information which you can use to resolve the issue:
 
-**NOTE**: This is when you will see an extraction error like the one shown at the beginning of this article. It is simply not possible to add types with the same alias in the database.
+* Which entities are involved?
+* The unique identifier (alias) for the involved entities
+* Location and names of the colliding files
 
-### Choosing the correct UDA file
+In the example above the entity involved is a Document Type with "home" as the alias. There are two colliding files both located in the `/data/revision` folder. The files are colliding because they share the same alias but have different GUIDs (also the name of the files).
 
-The next step is to decide which of these Document Types is the correct one. For this project, it’s decided that the Document Type created in the Live environment (DocType 1 and document-type__1.uda) is the correct one.
+## Deciding which file you want to use
 
-In order to figure out which of the two colliding `.uda` files are the file for the Document Type created on the Live environment follow these steps:
+In order to fix this problem, you will have to decide which of the colliding entities is the correct one and the one you want to use on your Live environment.
 
-1.    Access **Kudu** for the Live environment / the environment where the correct Document Type is
-2. Use the CMD console (found under the 'Debug console' menu) to navigate to your `site/wwwroot/data/` folder
-3.    Remove both colliding `.uda` files from the `/data/revision` folder in the `/wwwroot` folder.
-4.    In `/wwwroot/data` run this command: `echo > deploy-export` 
-5.    This will generate a `.uda` file for the Document Type, and this will be the correct one
-6.    Run `echo > deploy` in the same folder, to make sure everything is extracting correctly
+Let's use the example from the beginning of this article, where two `.uda` files for the Document Type "home" are colliding.
 
-![Finding correct UDA file](images/visualization3.png)
+    Some artifacts collide on unique identifiers.
+    This means that they have different Udis, yet
+    they refer to the same unique Umbraco object
+    and therefore cannot be processed.
+    ---------------------------------------------
+    Collisions for entity type "document-type": 
+      Collisions for unique identifier "home":
+        UdaFile: ~/data/revision/document-type__4c04d968448747d791b5eae254afc7ec.uda
+        UdaFile: ~/data/revision/document-type__f848c577f02b4ee5aea84f87458072a4.uda
 
-You now know which `.uda` file you want, and it’s time to get the rest of your environments in sync.
+For this example, it’s decided that the Document Type currently used on the Live environment is the one we want to use going forward.
 
-### Getting your environment in sync
+![Visual representation of the error message](images/visualizing.png) - *A visual representation of the error message*
 
-We strongly recommend that you resolve this locally since this will ensure that the changes you make are added to your Git history.
+In order to figure out which of the two colliding `.uda` files is the one for the Document Type being used on the Live environment follow these steps:
 
-1.    Clone down the Development environment – or simply do a pull via Git if you already have a local clone
-2.    Run the project locally and verify that you get the same extraction error as on your Cloud environments (HINT: look for a `deploy-failed` marker in your local `/data ` folder)
-3.    Access the local backoffice
-4.    Delete the Document Type from the backoffice
-    * If you’ve pulled down a fresh clone of the Development environment, you will need to remove the wrong `.uda` file from the `/data/revision` folder, since you will not be able to see the Document Type in the backoffice because the extraction failed.
-5.    Open CMD prompt and navigate to your local `/data` folder
-6.    Type the following command: `echo > deploy`
-7.    You will now see a `deploy-complete` marker in your local `/data` folder
-8.    **Important**: Before you commit and push the changes to the Development environment, you need to access the backoffice of the Development environment and remove the Document Type from there
-9.    You are now ready to **commit** and **push** the changes from your local clone to the Development environment, using your local Git client.
+1. Access **Kudu** on the Live environment
+2. Use the CMD console (found under the 'Debug console' menu) to navigate to your `site/wwwroot/data/revision` folder
+3. Remove the colliding `.uda` files mentioned in the error message
+4. Go back to the `/wwwroot/data` folder and run this command: `echo > deploy-export` in the console
+5. This will regenerate all `.uda` files for the Live environment - this means only the currently used ones will be there afterwards
+6. Run the command: `echo > deploy` in the same folder, to make sure everything is extracting correctly
 
-![Removing wrong UDA file](images/visualization4.png)
+![Finding correct UDA file](images/visualizing-2.png)
+
+You now know which `.uda` file you want. In this case: `document-type__1.uda`.
+
+## Removing the unused file
+
+:::warning
+We strongly recommend that you resolve this locally since this will ensure that the changes you make are added to your Git repositories. Otherwise you may end up having the same problem next time you deploy.
+:::
+
+1. Clone down the Development environment to your local machine
+2. Run the project locally and verify that you get the same extraction error as on your Cloud environments (*HINT: look for a `deploy-failed` marker in your local `/data ` folder*)
+    * When you run the project, you should see an error message in the browser once the site starts to build
+3. Remove the wrong `.uda` file (`document-type__2.uda`) from the `/data/revision` folder - you will not be able to see the Document Type in the backoffice because the failed extraction
+
+![Cleaning up local clone](images/visualizing-3.png)
+
+4. Open CMD prompt and navigate to your local `/data` folder
+5. Type the following command: `echo > deploy`
+6. You will now see a `deploy-complete` marker in your local `/data` folder
+
+:::note
+**Does the error mention Templates?**
+You might experience that `.uda` files for a template are colliding. When this is the case, we recommend that you copy the content of the `cshtml` file associated with the template you want to keep on your project - this way you'll have a backup of the code you want to use.
+:::
+
+## Getting your environments in sync
+
+Before pushing the changes to the Development environment, you need to access the backoffice of the Development environment and remove the Document Type from there.
+
+![Clean up Development](images/visualizing-4.png)
+
+**Commit** and **push** the changes from your local clone to the Development environment, using your local Git client.
 
 When the push from local to the Development environment has completed, refresh the Umbraco Cloud portal and you will see that the Development environment is now green, which means that the extraction error has been resolved.
 
-![Deploying deletion](images/visualization5.png)
+![Push to Cloud completed](images/visualizing-5.png)
 
-The final step is to deploy the changes from Development to the rest of your environments, to ensure everything is completely in sync.
-
-### Additional notes
-
+Does your Development still have the red indicator? 
 Sometimes you might need to run another extraction on your Cloud environment after deploying in order to get a `deploy-complete` marker in your `/data` folder and turn your environment *green*. To do this, follow these steps:
 
 1. Access **Kudu** on the affected environment
-2. Use the CMD console (found under the 'Debug console' menu) to navigate to your `site/wwwroot/data/` folder
+2. Use the CMD console to navigate to your `site/wwwroot/data/` folder
 3. In the console, type the following command: `echo > deploy`
 4. When the extraction is done, you should see a `deploy-complete` marker, which means the extraction error was successful (and the environment indicator will be green on the project page)
+
+The final step is to deploy the pending changes from Development to your Live environment, to ensure everything is completely in sync.

@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Creating an MVC form using a Partial View
 
 **Applies to: Umbraco 4.10.0+**
@@ -29,7 +34,7 @@ For this tutorial, the Surface controller that we will create will contain one a
 
 *	Check if the model is valid - based on the validation attributes applied to the model above, we will not be performing any custom validation
 *	If the model **is not valid**, return the currently rendered Umbraco page (do not redirect). By not redirecting the ViewData is preserved including the ModelState which contains the validation information.
-*	If the model **is valid**, add a custom message to the TempData collection and then redirect to the currently rendered Umbraco page. A standard procedure for a web based for is to redirect if the POST is successful. This ensures that the POST cannot be accidentally re-submitted by accidentally pressing F5 (refresh) ... *unfortunately ASP.Net WebForms does not adhere to this rule by default but it 'should' be done in WebForms too.* 
+*	If the model **is valid**, add a custom message to the TempData collection and then redirect to the currently rendered Umbraco page. A standard procedure for a web based for is to redirect if the POST is successful. This ensures that the POST cannot be accidentally re-submitted by accidentally pressing F5 (refresh) ... *unfortunately ASP.NET WebForms does not adhere to this rule by default but it 'should' be done in WebForms too.* 
 
 <br/>
 
@@ -49,7 +54,7 @@ For this tutorial, the Surface controller that we will create will contain one a
 				    
 			// Add a message in TempData which will be available 
 			// in the View after the redirect 
-			TempData.Add("CustomMessage", "Your form was successfully submitted at " + DateTime.Now)
+			TempData.Add("CustomMessage", "Your form was successfully submitted at " + DateTime.Now);
 		
 		    // redirect to current page to clear the form
 		    return RedirectToCurrentUmbracoPage();		    

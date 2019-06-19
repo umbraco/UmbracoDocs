@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Custom routing in Umbraco
 
 _There are a couple of ways of controlling the routing behavior in Umbraco: customizing how the inbound request pipeline
@@ -19,7 +24,9 @@ A 'Last Chance' `IContentFinder` is a special implementation of an `IContentFind
 
 To set your own 404 finder create an IContentFinder and set it as the ContentLastChanceFinder.  A ContentLastChanceFinder will always return a 404 status code. Example:
 
-    ContentLastChanceFinderResolver.Current.SetFinder(new My404ContentFinder());
+```csharp
+ContentLastChanceFinderResolver.Current.SetFinder(new My404ContentFinder());
+```
 
 ## Custom MVC routes
 
@@ -27,18 +34,19 @@ You can specify your own custom MVC routes to work within the Umbraco pipeline. 
 
 As an example:
 
-    //custom route to MyProductController which will use a node with ID 1234 as the
-    // IPublishedContent for the current rendering page
-    routes.MapUmbracoRoute(
-        "test",
-        "Products/{action}/{sku}",
-        new
-        {
-            controller = "MyProduct",
-            sku = UrlParameter.Optional
-        },
-        new UmbracoVirtualNodeByIdRouteHandler(1234));
-
+```csharp
+//custom route to MyProductController which will use a node with ID 1234 as the
+// IPublishedContent for the current rendering page
+routes.MapUmbracoRoute(
+    "test",
+    "Products/{action}/{sku}",
+    new
+    {
+        controller = "MyProduct",
+        sku = UrlParameter.Optional
+    },
+    new UmbracoVirtualNodeByIdRouteHandler(1234));
+```
 
 See: [Custom routing documentation](../../Reference/Routing/custom-routes)
 
@@ -46,10 +54,11 @@ See: [Custom routing documentation](../../Reference/Routing/custom-routes)
 
 You can subscribe to an event to know when the `PublishedContentRequest` is ready to be processed.  It's up to you to change anything (content, template, ...):
 
-    // public static event EventHandler<EventArgs> Prepared;
-
-    PublishedContentRequest.Prepared += (sender, args) =>
-    {
-      var request = sender as PublishedContentRequest;
-      // do something…
-    }
+```csharp
+// public static event EventHandler<EventArgs> Prepared;
+PublishedContentRequest.Prepared += (sender, args) =>
+{
+  var request = sender as PublishedContentRequest;
+  // do something…
+}
+```

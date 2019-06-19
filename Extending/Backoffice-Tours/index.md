@@ -1,6 +1,7 @@
 ---
 keywords: Backoffice tours
 versionFrom: 7.8.0
+needsV8Update: "true"
 ---
 
 # Backoffice tours
@@ -21,20 +22,22 @@ The tour files that ship with Umbraco are stored in `/Config/BackofficeTours`. T
 
 ### Plugin tours
 
-If you want to include a tour with your custom plugin you can store the tour file in `/App_Plugins/<YourPlugin>/backoffice/tours`. It is recommend that you place the tour files in this location when you are creating a plugin.
+If you want to include a tour with your custom plugin you can store the tour file in `/App_Plugins/<YourPlugin>/backoffice/tours`. It is recommended that you place the tour files in this location when you are creating a plugin.
 
 ## The JSON format
 
 A tour file contains an array of tour configuration JSON objects. So it's possible to have multiple, (un)related tours in one file.
 
-	[
-		{
-			// tour configuration object
-		},
-		{
-			// tour configuration object
-		}
-	]
+```json
+[
+	{
+		// tour configuration object
+	},
+	{
+		// tour configuration object
+	}
+]
+```
 
 ## The tour configuration object
 
@@ -42,16 +45,18 @@ A tour configuration JSON object contains all the data related to a tour.
 
 Example tour configuration object :
 
-	{
-		"name": "My Awesome tour",
-		"alias": "myUniqueAlias",
-		"group": "Get things done!!!",
-		"groupOrder": 1,
-		"allowDisable": true,
-		"culture" : "en-US",
-		"requiredSections": ["content","media"],
-		"steps": []
-	}
+```json
+{
+	"name": "My Awesome tour",
+	"alias": "myUniqueAlias",
+	"group": "Get things done!!!",
+	"groupOrder": 1,
+	"allowDisable": true,
+	"culture" : "en-US",
+	"requiredSections": ["content","media"],
+	"steps": []
+}
+```
 
 Below is an explanation of each of the properties on the tour configuration object
 
@@ -99,18 +104,20 @@ A tour step JSON object contains all the data related to a tour step.
 
 Example tour step object:
 
-	{
-        "title": "A meaningful title",
-        "content": "<p>Some text explaining the step</p>",
-        "type": null,
-        "element": "#section-avatar",
-        "elementPreventClick": false,
-        "backdropOpacity": 0.6,
-        "event": "click",
-        "view": null,
-        "eventElement": "#section-avatar .umb-avatar",
-        "customProperties": null
-      },
+```json
+{
+	"title": "A meaningful title",
+	"content": "<p>Some text explaining the step</p>",
+	"type": null,
+	"element": "#section-avatar",
+	"elementPreventClick": false,
+	"backdropOpacity": 0.6,
+	"event": "click",
+	"view": null,
+	"eventElement": "#section-avatar .umb-avatar",
+	"customProperties": null
+},
+```
 
 Below is an explanation of each of the properties on the tour step object
 
@@ -123,13 +130,13 @@ This the title shown on the tour step.
 
 ### content
 
-This text will be shown on the tour step, it can contain html mark-up
+This text will be shown on the tour step, it can contain HTML markup
 
 ![Tour content highlighted](images/stepcontent.png)
 
 ### type
 
-The type of step. Currently only one type is supported : "intro". This will center the step and show a "Start tour" button
+The type of step. Currently, only one type is supported : "intro". This will center the step and show a "Start tour" button
 
 ### element
 
@@ -174,4 +181,4 @@ This is useful if you would like to validate input from the user during the tour
 
 ### customProperties
 
-A JSON object that is passed to the scope of a custom step view, so you can use this data in your view with $scope.model.currentStep.customPropertie
+A JSON object that is passed to the scope of a custom step view, so you can use this data in your view with $scope.model.currentStep.customProperties

@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Customise the Starter Kit
 Learn how to customise the starter kit.
 

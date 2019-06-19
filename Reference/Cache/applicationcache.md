@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Accessing the cache
 
 You should always be doing this consistently with the best practices listed below. You shouldn't be using HttpRuntime.Cache or HttpContext.Current.Cache directly, you should always be accessing it via the ApplicationContext.ApplicationCache object (`Umbraco.Core.CacheHelper`).
@@ -10,8 +15,10 @@ The `Umbraco.Core.CacheHelper` contains 3 types of cache: Runtime Cache, Request
 
 The various cache types can be referenced on properties of the `Umbraco.Core.CacheHelper`:
 
-      ApplicationContext.ApplicationCache.RuntimeCache
-      ApplicationContext.ApplicationCache.RequestCache
-      ApplicationContext.ApplicationCache.StaticCache
+```csharp
+ApplicationContext.ApplicationCache.RuntimeCache
+ApplicationContext.ApplicationCache.RequestCache
+ApplicationContext.ApplicationCache.StaticCache
+```
 
 It's easy to [access and update the cache items](updating-cache.md), using the provided methods.

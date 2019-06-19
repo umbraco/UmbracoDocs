@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Troubleshooting deployments
 
 Issues with deployments on Umbraco Cloud often comes down to a misunderstanding on how to work with Umbraco Cloud. It is very important to always work left to right as mentioned [here](../../Deployment).
@@ -13,6 +17,7 @@ The most common [Deployment](../../Deployment/Cloud-to-Cloud) issues are listed 
 * [Duplicate Dictionary Items](Duplicate-Dictionary-Items)
 * [Collision Errors](Structure-Error)
 * [Dependency Exception](Dependency-Exceptions)
+* [Colliding Data Types](Colliding-Datatypes)
 
 The most common Content [Transfer](../../Deployment/Content-Transfer) / [Restore](../../Deployment/Restoring-content) issues are listed below:
 * [Schema mismatch](Schema-Mismatches)

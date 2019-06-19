@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Configuration Files
 
 _This section will explain the many configuration options in Umbraco and what they do_

@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Querying & Models
 
 _Overview of various ways of querying, filtering and searching published content for use on your website._
@@ -7,7 +12,7 @@ _Overview of various ways of querying, filtering and searching published content
 
 ## [IPublishedContent](IPublishedContent/index.md)
 
-`IPublishedContent` is strongly typed model for content, media and members that is used to render content in your views for your website. 
+`IPublishedContent` is strongly typed model for content, media and members that is used to render content in your views for your website.
 
 ## [DynamicPublishedContent](DynamicPublishedContent/index.md)
 

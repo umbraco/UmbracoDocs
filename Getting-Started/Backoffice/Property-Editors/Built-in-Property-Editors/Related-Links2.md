@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Related Links
 
 `Returns: RelatedLinks`
@@ -8,7 +13,7 @@ Related Links allows an editor to easily add an array of links. These can either
 
 ![Related Links Data Type Definition](images/Related-Links2-DataType.png)
 
-## Content Example 
+## Content Example
 
 ![Media Picker Content](images/Related-Links2-Content.png)
 
@@ -16,18 +21,20 @@ Related Links allows an editor to easily add an array of links. These can either
 
 ### Typed:
 
-    @using Umbraco.Web.Models
-    @{
-        var typedRelatedLinksConverted = Model.Content.GetPropertyValue<RelatedLinks>("footerLinks");
+```csharp
+@using Umbraco.Web.Models
+@{
+    var typedRelatedLinksConverted = Model.Content.GetPropertyValue<RelatedLinks>("footerLinks");
 
-        if (typedRelatedLinksConverted.Any())
-        {
-            <ul>
-                @foreach (var item in typedRelatedLinksConverted)
-                {
-                    var linkTarget = (item.NewWindow) ? "_blank" : null;
-                    <li><a href="@item.Link" target="@linkTarget">@item.Caption</a></li>
-                }
-            </ul>
-        }
+    if (typedRelatedLinksConverted.Any())
+    {
+        <ul>
+            @foreach (var item in typedRelatedLinksConverted)
+            {
+                var linkTarget = (item.NewWindow) ? "_blank" : null;
+                <li><a href="@item.Link" target="@linkTarget">@item.Caption</a></li>
+            }
+        </ul>
     }
+}
+```

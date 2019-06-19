@@ -1,49 +1,72 @@
+---
+meta.Title: "Sections in the Umbraco Backoffice"
+meta.Description: "In this article you can learn more about the various sections you can find within the Umbraco Backoffice."
+versionFrom: 8.0.0
+---
+
 # Sections
-A section in Umbraco is where you do specific tasks related to that section. For example Content, Settings, Developer are all sections. You can navigate between the different sections by clicking the corresponding icon in the section menu which is on the left hand side of the backoffice.
-![Sections](images/umbraco7-6_sections.jpg "The Section menu is the vertical menu located on the left side of the backoffice.")
-*The __Section menu__ is the vertical menu located on the left side of the backoffice.*
+A section in Umbraco is where you do specific tasks related to that section. For example Content, Settings and Users are all sections. You can navigate between the different sections by clicking the corresponding icon in the section menu which is in the top of the Backoffice.
 
-There are eight default sections that come with Umbraco:
+![Sections](images/highlight-sections.png "The Section menu is the horizontal menu located in the top of the Backoffice.")
+*The __Section menu__ is the horizontal menu located in the top of the Backoffice.*
 
-### <img src="images/Content.png" style="width:60px;vertical-align:middle" /> Content
-The content section contains the content of the website. Content is displayed as nodes in the content tree. In order to create content you must define it using Document Types.
+There are seven default sections that come with Umbraco:
 
-### <img src="images/Media.png" style="width:60px;vertical-align:middle" /> Media
-The Media section contains the media for the website. By default you can create folders and upload media files (images and PDFs). You can customize the existing media types or define your own in the Settings section.
+## Content
+The Content section contains the content of the website. Content is displayed as nodes in the content tree. Nodes can also show content state:
 
-### <img src="images/Settings.png" style="width:60px;vertical-align:middle" /> Settings
-The Settings section is where you can work with the website layout, language/localization and define media and content. The Settings tree consists of:  
+* Grayed out nodes have not been published
+* <img src="images/has-unpublished-version.svg" width="12px" style="margin: 0;"> nodes have unpublished versions (but are currently published)
+* <img src="images/protected.svg" width="12px" style="margin: 0;"> nodes are protected from the public (require logging in)
+* <img src="images/locked.svg" width="12px" style="margin: 0;"> nodes are currently locked/non-deletable
+* <img src="images/is-container.svg" width="12px" style="margin: 0;"> nodes are containers (such as List Views)
+
+In order to create content you must define it using Document Types.
+
+## Media
+The Media section contains the media for the website. By default you can create folders and upload media files (images and PDFs). You can customize the existing media types or define your own from the Settings section.
+
+## Settings
+The Settings section is where you can work with the website layout files, languages, and define media and content types. In this section you can also find the Log Viewer to browse through your log files.
+
+The Settings tree consists of: 
 
 - Document Types
-- Templates (.cshtml files)
-- Partial views (.cshtml files)
-- Stylesheets (.css files)
-- Scripts (.js files)
-- Languages
-- Dictionary
 - Media Types
-
-### <img src="images/Developer.png" style="width:60px;vertical-align:middle" /> Developer
-In the developer section you work with packages, data types, macros, relations, XSLT and Razor files. The developer tree consists of:
-
-- Packages
+- Member Types
 - Data Types
 - Macros
 - Relation Types
-- XSLT files
-- Partial View Macro Files
+- Log Viewer
+- Languages
+- Content Templates
+- Templates (`.cshtml` files)
+- Partial views (`.cshtml` files)
+- Partial View Macro Files (`.cshtml` files)
+- Stylesheets (`.css` files)
+- Scripts (`.js` files)
 
-### <img src="images/Members.png" style="width:60px;vertical-align:middle" /> Members
-Manage, create and customize members, member types and member groups.
+## Packages
+In this section you can browse and install packages into your Umbraco solution. You can also get an overview of all installed packages as well as uninstall packages you no longer need.
 
-### <img src="images/Users.png" style="width:60px;vertical-align:middle" /> Users
-Manage, create and customize backoffice users and user groups.
+## Users
+Manage, create and customize Backoffice users and user groups.
 
-### <img src="images/Forms.png" style="width:60px;vertical-align:middle" /> Forms
-You can install Umbraco Forms directly from the backoffice by clicking the install button. Once installed this section is where you create and manage your forms.
+## Members
+Manage, create and customize members and member groups.
 
-### <img src="images/Help.png" style="width:60px;vertical-align:middle" /> Help
-When the help section is opened you get a link to video tutorials about the section you're in.
+## Forms
+You can install Umbraco Forms directly from the Backoffice by clicking the install button. Once installed this section is where you create and manage your forms.
 
-## More information
+## Translation
+This is the section where you create and manage your dictionary items.
+
+## Help sections
+In the top-right corner you'll find a search tool, which is also accessible by hitting `CTRL + Space` on your keyboard.
+
+Next to the search tool, there's a help sections, where you can find Backoffice tours as well as links to Umbraco resources such as documentation and UmbracoTV.
+
+There's also a small user section with shortcuts to edit the user that's currently logged in, and view most recent activities.
+
+## Custom Sections
 As well as the default sections that come with Umbraco, you can create your own [Custom Sections](../../../Extending/Section-Trees/index.md)

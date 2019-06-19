@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Tag support for property editors
 
 ## What is tag support?
@@ -16,18 +21,22 @@ This will explain both ways to enable tag support for property editors: both in 
 
 Like creating a normal C# property editor you start by declaring a class with the PropertyEditor attribute:
 
-	[PropertyEditor("tags", "Tags", "tags")]
-    public class TagsPropertyEditor : PropertyEditor
-    {
-    }
+```csharp
+[PropertyEditor("tags", "Tags", "tags")]
+public class TagsPropertyEditor : PropertyEditor
+{
+}
+```
 
 To add tag support, we simply add the SupportsTags attribute:
 
-    [SupportsTags]
-    [PropertyEditor(Constants.PropertyEditors.TagsAlias, "Tags", "readonlyvalue")]
-    public class TagsPropertyEditor : PropertyEditor
-    {
-    }
+```csharp
+[SupportsTags]
+[PropertyEditor(Constants.PropertyEditors.TagsAlias, "Tags", "readonlyvalue")]
+public class TagsPropertyEditor : PropertyEditor
+{
+}
+```
 
 There are a few options for the `SupportsTags` attribute but normally the default options will suffice. 
 The default options are:
