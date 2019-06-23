@@ -11,7 +11,7 @@ Applies to Umbraco 6.0.0+
 
 The MediaService acts as a "gateway" to Umbraco data for operations which are related to Media.
 
-[Browse the API documentation for MediaService](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Core.Services.MediaService.html).
+[Browse the API documentation for MediaService](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Services.MediaService.html).
 
  * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`

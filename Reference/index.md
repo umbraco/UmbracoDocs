@@ -1,5 +1,5 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.0
 meta.Title: "Reference section for the Umbraco APIs"
 meta.Description: "Developers' Reference primarily consists of API references of the different core Umbraco APIs. In many cases, the references come with code snippets with simple examples. For a more in-depth study of the different APIs, consult the using-umbraco and extending-umbraco sections of the documentation."
 ---
@@ -14,13 +14,13 @@ This section is ultra important! It describes many common pitfalls that develope
 
 ## API Documentation
 
-#### [C# API Documentation](https://our.umbraco.com/apidocs/csharp/)
+#### [C# API Documentation](https://our.umbraco.com/apidocs/v8/csharp/)
 
 __Note: opens a documentation browser that is different from the documentation section you're viewing now.__
 
 C# API references for the Umbraco Core and Web libraries.
 
-#### [Backoffice UI API documentation](https://our.umbraco.com/apidocs/ui/)
+#### [Backoffice UI API documentation](https://our.umbraco.com/apidocs/v8/ui/)
 
 __Note: opens a documentation browser that is different from the documentation section you're viewing now.__
 
@@ -63,7 +63,7 @@ Event model covering all major aspects of the system for triggering custom code 
 
 How to use [Web API](https://www.asp.net/web-api) with Umbraco to easily create REST services.
 
-## [Management APIs](Management-v6/index.md)
+## [Management APIs](Management/index.md)
 
 APIs that focus on creating, updating and deleting.
 

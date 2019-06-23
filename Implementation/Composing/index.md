@@ -4,18 +4,18 @@ versionFrom: 8.0.0
 ---
 
 # Composing
-Customising the behaviour of an Umbraco Application at 'start up'. eg adding, removing or replacing the core functionality of Umbraco or registering custom code to subscribe to events. 
+Customising the behaviour of an Umbraco Application at 'start up'. eg adding, removing or replacing the core functionality of Umbraco or registering custom code to subscribe to events.
 
 ## Overview
-An Umbraco application is a `Composition` made of many different 'collections' of specific functionality/implementation logic/components (eg. UrlProviders, ContentFinders - see below for a full list). These collections are populated when the Umbraco Application starts up. 
+An Umbraco application is a `Composition` made of many different 'collections' and single items of specific functionality/implementation logic/components (eg. UrlProviders, ContentFinders - see below for a full list). These collections are populated when the Umbraco Application starts up.
 
 'Composing' is the term used to describe the process of curating which pieces of functionality should be included in a particular collection. The code that implements these choices at start up is called a `Composer`.
 
-A `Component`, is a generic wrapper for writing custom code during composition, it has two methods: `Initialize()` and `Terminate()` and these are executed when the Umbraco Application starts up, and when it shuts down, respectively. Typically a `Component` may be used to wire up custom code to handle a particular event in Umbraco. (see content saving example below). 
+A `Component`, is a generic wrapper for writing custom code during composition, it has two methods: `Initialize()` and `Terminate()` and these are executed when the Umbraco Application starts up, and when it shuts down, respectively. Typically a `Component` may be used to wire up custom code to handle a particular event in Umbraco. (see content saving example below).
 
 How are the collections populated? - Either by scanning the codebase for c# classes that inherit from a particular base class or implement a particular interface (typed scanned) or by being explictly registered via a `Composer`.
 
-Umbraco ships with a set of `ICoreComposer`'s  that pull together the default set of components and collections that deliver the core 'out of the box' Umbraco behaviour. These default collections and components can be removed, reordered, replaced, etc by implementing `IUserComposer`'s and `IComponent`s to customise and extend Umbraco's behaviour. 
+Umbraco ships with a set of `ICoreComposer`'s  that pull together the default set of components and collections that deliver the core 'out of the box' Umbraco behaviour. These default collections and components can be removed, reordered, replaced, etc by implementing `IUserComposer`'s and `IComponent`s to customise and extend Umbraco's behaviour.
 
 ### Example - Explicity Registering a new custom OEmbedProvider
 This example shows a custom 'Spotify' OEmbed Provider which will allow Spotify URLs to be used via the 'embed' button in the Grid and Rich Text Editors. As the collection for OEmbedProviders is not 'typed scanned', we need to explicitly register the provider in the collection of OEmbedProviders. We create a c# class which implements `IUserComposer` and append our new Spotify OEmbedProvider to the OEmbedProviders() collection:
@@ -66,7 +66,7 @@ namespace My.Website
 ```
 
 ```csharp
-using Umbraco.Core.Components;
+using Umbraco.Core.Composing;
 using Umbraco.Web;
 
 namespace My.Website
@@ -100,14 +100,13 @@ using Umbraco.Core.Services.Implement;
 
 namespace My.Website
 {
-    [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
     public class SubscribeToContentServiceSavingComposer : IUserComposer
     {
         public void Compose(Composition composition)
         {
             // Append our component to the collection of Components
             // It will be the last one to be run
-            composition.Components().Append<MyComponent>();
+            composition.Components().Append<SubscribeToContentServiceSavingComponent>();
         }
     }
 
@@ -155,9 +154,8 @@ Ordering of composers is important, the last one added can override a previously
 Is an implementation of IUserComposer, that provides a quicker way to add a custom Component to the Component's collection. Creating a c# class that inhertits from ComponentComposer&lt;YourComponentType&gt; will automatically add YourComponentType to the collection of Components. In the example above, the SubscribeToContentServiceSavingComposer for the SubscribeToContentServiceSavingComponent could have been written more conveniently as:
 
 ```csharp
-        [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
         public class SubscribeToContentServiceSavingComposer : ComponentComposer<SubscribeToContentServiceSavingComponent>
-        {       
+        {
         }
 ```
 ## Collections
@@ -174,7 +172,7 @@ Below is a list of collections with their corresponding 'collection type' and ho
 | ContentFinders            | Ordered   | Explicit Registration                                             |
 | Dashboards                | Weighted  | Package.manifest & Type scanned for `IDashboard`                  |
 | DataEditors               | Lazy      | Type scanned for `IDataEditor`                                    |
-| FilderedControllerFactory | Ordered   | Explicit Registration                                             |
+| FilteredControllerFactory | Ordered   | Explicit Registration                                             |
 | HealthChecks              | Lazy      | Type scanned for `HealthCheck`                                    |
 | OEmbedProviders           | Ordered   | Explicit Registration                                             |
 | PackageActions            | Lazy      | Type scanned for `IPackageAction`                                 |
@@ -212,7 +210,6 @@ using Umbraco.Web.HealthCheck.Checks.Security;
 
 namespace My.Website
 {
-    [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
     public class MyComposer : IUserComposer
     {
         public void Compose(Composition composition)
@@ -310,6 +307,8 @@ Note that Umbraco also has a `[Enable]` & `[EnableComposer]` attributes but all 
 ### [RuntimeLevel]
 The most common usecase for this is to set this attribute on your own composers and to set the minimum level to Run. Which will mean this composer will not be invoked until Umbraco is fully booted and is running. So if an upgrade or Umbraco is still booting your own custom composer code won't run until everything is all setup and good.
 
+By default any `IUserComposer` uses the Minimum Runtime Level of `Run` & thus do not need to explictly add the attribute as shown in the example below.
+
 ```csharp
 using Umbraco.Core;
 using Umbraco.Core.Composing;
@@ -352,3 +351,181 @@ The runtime has detected an Umbraco install which needed to be upgraded, and is 
 The runtime has detected an up-to-date Umbraco install and is running.
 
 
+## Example of using Ordered Collections and adding types explicitly
+
+You may wish to create an Umbraco package that allows package consumers to extend and add additional functionality. In this example we show how you can use the `OrderedCollectionBuilderBase`
+
+```csharp
+using System.Collections.Generic;
+using Umbraco.Core.Composing;
+using Umbraco.Web.WebApi;
+
+namespace TestCollections.Code
+{
+    public interface IMyThing
+    {
+        string Name { get; }
+
+        string DoSomething(string message);
+    }
+
+    public class ExampleThing : IMyThing
+    {
+        public string Name => "Example";
+
+        public string DoSomething(string message)
+        {
+            return $"Hello {message}";
+        }
+    }
+
+    // OrderedCollection - use when order of items is important (You may want to excute them in order)
+    // Different types of collections - https://our.umbraco.com/Documentation/Implementation/Composing/#types-of-collections
+    public class MyThingsCollectionBuilder : OrderedCollectionBuilderBase<MyThingsCollectionBuilder, MyThingsCollection, IMyThing>
+    {
+        protected override MyThingsCollectionBuilder This => this;
+    }
+
+    public class MyThingsCollection : BuilderCollectionBase<IMyThing>
+    {
+        public MyThingsCollection(IEnumerable<IMyThing> items)
+            : base(items)
+        { }
+    }
+
+    public static class WebCompositionExtensions
+    {
+        public static MyThingsCollectionBuilder MyThings(this Composition composition)
+            => composition.WithCollectionBuilder<MyThingsCollectionBuilder>();
+    }
+
+    public class MyThingComposer : IUserComposer
+    {
+        public void Compose(Composition composition)
+        {
+            //Explicitly add to the collection a Type in a specific order
+            composition.MyThings().Append<ExampleThing>()
+                .Append<AnotherThing>()
+                .Append<SomeOtherThing>();
+        }
+    }
+
+    // An Umbraco Backoffice Web API Controller - Used in a dashboard or Property Editor perhaps?
+    public class SomeBackofficeApiController : UmbracoAuthorizedApiController
+    {
+        private MyThingsCollection _mythings;
+
+        public SomeBackofficeApiController()
+        {
+        }
+
+        public SomeBackofficeApiController(MyThingsCollection mythings)
+        {
+            _mythings = mythings;
+        }
+
+        public List<string> GetMessages(string message)
+        {
+            var items = new List<string>();
+
+            foreach (var thing in _mythings)
+            {
+                items.Add(thing.DoSomething(message));
+            }
+
+            return items;
+        }
+    }
+}
+```
+
+## Example of using Lazy Collections with Type Scanning
+
+You may wish to create an Umbraco package that allows package consumers to extend and add additional functionality. In this example we show how you can use the `LazyCollectionBuilderBase` to scan assemblies that implement your interface by using the `TypeLoader`
+
+:::warning
+Add types from assemblies - be conscious of doing type scanning, as this adds time to bootup of Umbraco.
+If you still need to use type scanning, ensure your Interface implements `IDiscoverable` as this is a type that is scanned once by Umbraco and the results are cached and then filtered. This saves time by re-scanning for types over and over again.
+:::
+
+```csharp
+using System.Collections.Generic;
+using Umbraco.Core.Composing;
+using Umbraco.Web.WebApi;
+
+namespace TestCollections.Code
+{
+    // Implement IDiscoverable (To help with typescanning speed/perf)
+    public interface IMyThing : IDiscoverable
+    {
+        string Name { get; }
+        string DoSomething(string message);
+    }
+
+    public class ExampleThing : IMyThing
+    {
+        public string Name => "Example";
+
+        public string DoSomething(string message)
+        {
+            return $"Hello {message}";
+        }
+    }
+
+    public class MyThingsCollectionBuilder : LazyCollectionBuilderBase<MyThingsCollectionBuilder, MyThingsCollection, IMyThing>
+    {
+        protected override MyThingsCollectionBuilder This => this;
+    }
+
+    public class MyThingsCollection : BuilderCollectionBase<IMyThing>
+    {
+        public MyThingsCollection(IEnumerable<IMyThing> items)
+            : base(items)
+        { }
+    }
+
+    public static class WebCompositionExtensions
+    {
+        public static MyThingsCollectionBuilder MyThings(this Composition composition)
+            => composition.WithCollectionBuilder<MyThingsCollectionBuilder>();
+    }
+
+    public class MyThingComposer : IUserComposer
+    {
+        public void Compose(Composition composition)
+        {
+            // Add types from assemblies - be conscious of doing type scanning
+            // as this adds time to bootup of Umbraco
+            // If you still need to use type scanning, ensure your Interface implements `IDiscoverable`
+            composition.MyThings().Add(() => composition.TypeLoader.GetTypes<IMyThing>());
+        }
+    }
+
+    // An Umbraco Backoffice Web API Controller - Used in a dashboard or Property Editor perhaps?
+    public class SomeBackofficeApiController : UmbracoAuthorizedApiController
+    {
+        private MyThingsCollection _mythings;
+
+        public SomeBackofficeApiController()
+        {
+        }
+
+        public SomeBackofficeApiController(MyThingsCollection mythings)
+        {
+            _mythings = mythings;
+        }
+
+        public List<string> GetMessages(string message)
+        {
+            var items = new List<string>();
+
+            foreach (var thing in _mythings)
+            {
+                items.Add(thing.DoSomething(message));
+            }
+
+            return items;
+        }
+    }
+}
+```

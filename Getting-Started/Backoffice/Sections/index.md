@@ -5,10 +5,10 @@ versionFrom: 8.0.0
 ---
 
 # Sections
-A section in Umbraco is where you do specific tasks related to that section. For example Content, Settings and Users are all sections. You can navigate between the different sections by clicking the corresponding icon in the section menu which is in the top of the backoffice.
+A section in Umbraco is where you do specific tasks related to that section. For example Content, Settings and Users are all sections. You can navigate between the different sections by clicking the corresponding icon in the section menu which is in the top of the Backoffice.
 
-![Sections](images/highlight-sections.png "The Section menu is the horizontal menu located in the top of the backoffice.")
-*The __Section menu__ is the horizontal menu located in the top of the backoffice.*
+![Sections](images/highlight-sections.png "The Section menu is the horizontal menu located in the top of the Backoffice.")
+*The __Section menu__ is the horizontal menu located in the top of the Backoffice.*
 
 There are seven default sections that come with Umbraco:
 
@@ -39,7 +39,7 @@ The Settings tree consists of:
 - Relation Types
 - Log Viewer
 - Languages
-- Content Tempaltes
+- Content Templates
 - Templates (`.cshtml` files)
 - Partial views (`.cshtml` files)
 - Partial View Macro Files (`.cshtml` files)
@@ -47,24 +47,24 @@ The Settings tree consists of:
 - Scripts (`.js` files)
 
 ## Packages
-In this section you can browse and install packages into your Umbraco solution. You can also get an overview of all installed packages as well as uninstall packages you do no longer need.
+In this section you can browse and install packages into your Umbraco solution. You can also get an overview of all installed packages as well as uninstall packages you no longer need.
 
 ## Users
-Manage, create and customize backoffice users and user groups.
+Manage, create and customize Backoffice users and user groups.
 
 ## Members
 Manage, create and customize members and member groups.
 
 ## Forms
-You can install Umbraco Forms directly from the backoffice by clicking the install button. Once installed this section is where you create and manage your forms.
+You can install Umbraco Forms directly from the Backoffice by clicking the install button. Once installed this section is where you create and manage your forms.
 
 ## Translation
 This is the section where you create and manage your dictionary items.
 
 ## Help sections
-In the top-right corner you'll find a search tool, which is also accesible by hitting `CTRL + Space` on your keyboard.
+In the top-right corner you'll find a search tool, which is also accessible by hitting `CTRL + Space` on your keyboard.
 
-Next to the search tool, there's a help sections, where you can find backoffice tours as well as links to Umbraco resources such as documentation and UmbracoTV.
+Next to the search tool, there's a help sections, where you can find Backoffice tours as well as links to Umbraco resources such as documentation and UmbracoTV.
 
 There's also a small user section with shortcuts to edit the user that's currently logged in, and view most recent activities.
 

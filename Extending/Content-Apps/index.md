@@ -112,24 +112,23 @@ angular.module("umbraco")
 And in the `.html` file:
 
 ```csharp
-<div class="umb-box" ng-controller="My.WordCounterApp as vm">
-    <div class="umb-box-header">
-        <div class="umb-box-header-title">
-            <h1>Amount of words for each property</h1>
-        </div>
-    </div>
-    <div class="umb-box-content">
-        <div ng-repeat="(key, value) in vm.propertyWordCount">
-            <p>Property: <span style="font-style:italic">{{key}}</span>, amount of words: <span style="font-style:italic">{{value}}</span> </p>
-        </div>
-        <hr />
+<div  ng-controller="My.WordCounterApp as vm">
+    <umb-box>
+        <umb-box-header
+            title="Amount of words for each property" />
+        <umb-box-content>
+            <div ng-repeat="(key, value) in vm.propertyWordCount">
+                <p>Property: <span style="font-style:italic">{{key}}</span>, amount of words: <span style="font-style:italic">{{value}}</span> </p>
+            </div>
+            <hr />
 
-        <ul>
-            <li>Current node id: <b>{{vm.CurrentNodeId}}</b></li>
-            <li>Current node alias: <b>{{vm.CurrentNodeAlias}}</b></li>
-            <li>Current user: <b>{{vm.UserName}}</b></li>
-        </ul>
-    </div>
+            <ul>
+                <li>Current node id: <b>{{vm.CurrentNodeId}}</b></li>
+                <li>Current node alias: <b>{{vm.CurrentNodeAlias}}</b></li>
+                <li>Current user: <b>{{vm.UserName}}</b></li>
+            </ul>
+        </umb-box-content>
+    </umb-box>
 </div>
 ```
 

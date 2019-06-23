@@ -51,6 +51,8 @@ It's important to pick only one of those as other templates cause errors beyond 
 ### Visual Studio 2013/2015/2017
 Go to **File > New Project** and pick an ASP.NET Web Application.    
 
+**Note:** Refrain from naming your solution `Umbraco`, as this will cause a namespace conflict with the CMS itself.
+
 ![](images/NuGet/new-project-vs2013-1.png)
 
 On the next step, select the **Empty** template. It's important to pick **empty** as other templates include incompatible versions of MVC and Json.NET. (Don't enable any of the checkboxes to add folders or core references. Umbraco will add them for you).  

@@ -10,6 +10,18 @@ _Defines what a breaking change is in regards to the Umbraco core codebase and d
 
 This section describes what a breaking change is in regards to the Umbraco codebase. Generally breaking changes are only made on major releases, however, in minor releases there may be changes to the codebase that some developers may consider 'breaking' as well. The following points describe what changes to the core codebase are or are not considered breaking changes.
 
+## Security
+
+If a security issue arises with part of the Umbraco code base that requires changing the behavior or signatures of the code and no other option is available to mitigate the security issue, then this type of breaking change will be released during a minor version of Umbraco. If this scenario occurs, there will be documentation available for how to update your site to the fixed version.
+
+## Dependencies
+
+If a c# or JavaScript dependency is added or removed from the code base, a nuget package or the exported release zip file, it is not considered a breaking change. However, we will mark this as "breaking" in the release notes to indicate to the users that a dependency has changed. In the circumstance that a dependency is removed, you may have to manually add it to your own project if you depend on it.
+
+## API Design
+
+As the product evolves and more features are added, there may be rare circumstances where a current API's design falls short of the new feature set and doesn't provide a very friendly developer experience. If this circumstance occurs, it may be required that existing API signatures must evolve during a minor release. In this scenario investigation will be done to see what alternatives might exist to avoid sharp breaking changes though in some cases it will simply not be possible. Generally changes like this would be done in major versions but will be done in a minor version if the pros of changing these API signatures outweigh the cons of both breaking the signatures and releasing a major version.
+
 ## General codebase
 
 ### Non-breaking

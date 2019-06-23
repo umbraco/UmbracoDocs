@@ -14,6 +14,15 @@ If you feel something is missing here or you want to help out documenting some o
 
 ## Finished Umbraco 8 Documentation:
 
+* [Azure Blob Storage guide](Extending/FileSystemProviders/Azure-Blob-Storage/)
+* [Umbraco 8 API Documentation: CSharp](https://our.umbraco.com/apidocs/v8/csharp/)
+* [Umbraco 8 API Documentation: Angular](https://our.umbraco.com/apidocs/v8/ui/)
+* [Quickstart with Examine](Reference/Searching/Examine/Quick-Start)
+* [Application Startup](Reference/Events/Application-Startup)
+* [Subscribing to events](Getting-Started/Code/Subscribing-To-Events/)
+* [Routing for Backoffice authentication](Reference/Routing/Authorized/)
+* [Controller and Action selection](Implementation/Default-Routing/Controller-Selection/)
+* [Using Umbraco's service APIs](Getting-Started/Code/Umbraco-Services/)
 * [Searchable Trees (ISearchableTree)](Extending/Section-Trees/Searchable-Trees/)
 * [IContentFinder](Reference/Routing/Request-Pipeline/IContentFinder)
 * [Custom controllers (hijacking Umbraco routes)](Reference/Routing/custom-controllers)
@@ -46,8 +55,6 @@ If you feel something is missing here or you want to help out documenting some o
 
 * EditorModel Events
 * Custom MVC Routes
-* Backoffice documentation
-* [Property Editors in Umbraco 8](https://github.com/umbraco/UmbracoDocs/issues/1528) 
 
 ## Upcoming:
 

@@ -51,7 +51,7 @@ A single line textbox only allowing valid email addresses.
 
 Adds an upload field, which allows documents or images to be uploaded to Umbraco
 
-## [Grid Layout](Grid-Layout.md)
+## [Grid Layout](Grid-Layout/index.md)
 `Alias: Umbraco.Grid`
 
 New to v7.2, gives editors a grid layout editor which allows them to insert different types of content in a predefined layout.

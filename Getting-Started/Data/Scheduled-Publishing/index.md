@@ -17,7 +17,9 @@ Your server may be in a different timezone then where you are located. As of Umb
 
 If you are in the same timezone as the server, this message will not appear under the date picker.
 
-**Note:** In Umbraco versions lower than 7.5, the time you select has to be the time on the server, these older versions of Umbraco do not detect your local timezone. 
+:::note
+In Umbraco versions lower than 7.5, the time you select has to be the time on the server, these older versions of Umbraco do not detect your local timezone. 
+:::
 
 ## Permissions
 

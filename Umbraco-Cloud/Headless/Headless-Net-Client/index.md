@@ -22,7 +22,7 @@ _This example is for creating a statically routed website which means that it's 
 
 _This example is for creating a fully content managed website where URLs will be dynamic and be based on the same URLs generated in Umbraco. This also gives you the ability to Hijack routes for specific Document Types like in a normal Umbraco installation._
 
-### [.NET Core Console Application](console.md)
+### [.NET Core Console Application](console)
 
 _This example is for creating a .NET Core Console (command line) application_
 

@@ -7,7 +7,7 @@ needsV8Update: "true"
 
 /config/EmbeddedMedia.config
 
-This configuration file lists the [Embedded Media Providers](../../../extending/Embedded-Media-Provider/) configured for use in your Umbraco site.
+This configuration file lists the [Embedded Media Providers](../../../Extending/Embedded-Media-Provider/index.md) configured for use in your Umbraco site.
 
 ## Providers
 
@@ -54,4 +54,4 @@ Check out the /config/embeddedmedia.config file for more examples.
 
 ### Custom Embedded Media Providers
 
-[More information about creating your own Custom Embedded Media Providers can be found here](../../../Extending/Embedded-Media-Provider.md)
+[More information about creating your own Custom Embedded Media Providers can be found here](../../../Extending/Embedded-Media-Provider/index.md)

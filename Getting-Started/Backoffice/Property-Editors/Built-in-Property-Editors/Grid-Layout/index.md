@@ -8,7 +8,7 @@ versionFrom: 7.0.0
 
 Gives editors a grid layout editor which allows them to insert different types of content in a predefined layout
 
-![Grid layouts](Images/editor.png)
+![Grid layouts](images/editor.png)
 
 ## [What are Grid Layouts](What-Are-Grid-Layouts.md)
 The basic concept of Grid Layouts
@@ -19,10 +19,10 @@ How to setup your Grid Layout data type
 ## [Settings and styling](Settings-and-styles.md)
 Add settings and styles
 
-## [Grid editors](grid-editors.md)
+## [Grid editors](Grid-Editors.md)
 Explanation of default Grid editors and how to customise them
 
-## [Build your own Grid editor](build-your-own-editor.md)
+## [Build your own Grid editor](Build-Your-Own-Editor.md)
 Build your own Grid editor from the ground up
 
 ## [Render Grid in template](Render-Grid-In-Template.md)

@@ -5,7 +5,7 @@ needsV8Update: "true"
 
 ## Binding to HttpApplication events
 
-It is not necessary to override and replace the [UmbracoApplication](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Web.UmbracoApplication.html).  If you consider changing the default `global.asax`, read on!
+It is not necessary to override and replace the [UmbracoApplication](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Web.UmbracoApplication.html).  If you consider changing the default `global.asax`, read on!
 
 Umbraco allows you to bind directly to HttpApplication events which is very handy since normally you would require an HttpModule to bind to these types of events. 
 
@@ -53,5 +53,5 @@ namespace MyProject.EventHandlers
 
 ## Related Links
 * [Troubleshooting Slow Startup](Troubleshooting-Slow-Startup.md)
-* [More information about BootManager](Understanding-BootManagers.md) (EXPERT)
+* [More information about BootManager](Understanding-Bootmanagers.md) (EXPERT)
 * [Adding startup logic and plugin on c# events](Application-Startup.md) (EXPERT)

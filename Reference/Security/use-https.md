@@ -20,8 +20,16 @@ Another benefits of HTTPS is that you are able to use the [http2](https://en.wik
 
 Umbraco allows you to force HTTPS for all backoffice communications very easily but using the following appSettings configuration:
 
+In Umbraco V7
+
 ```xml
 <add key="umbracoUseSSL" value="true" />
+```
+
+In Umbraco V8
+
+```xml
+<add key="Umbraco.Core.UseHttps" value="true" />
 ```
 
 This options does several things when it is turned on:

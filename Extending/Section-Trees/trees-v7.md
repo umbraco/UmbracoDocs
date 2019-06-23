@@ -173,7 +173,7 @@ Our Tree Action View would then be wired to the loaded controller using the ng-c
 </div>
 ```
 
-Take a look at the [umbEditor directives in the backoffice API Documentation](https://our.umbraco.com/apidocs/ui/#/api/umbraco.directives.directive:umbEditorHeader), for lots of common interaction directives that can be used to deliver a consistent backoffice editing experience for items in your custom tree.
+Take a look at the [umbEditor directives in the backoffice API Documentation](https://our.umbraco.com/apidocs/v7/ui/#/api/umbraco.directives.directive:umbEditorHeader), for lots of common interaction directives that can be used to deliver a consistent backoffice editing experience for items in your custom tree.
 
 [see Tree Actions for a list of tree *ActionMenuItems* and *IActions*](tree-actions.md)
 
@@ -183,7 +183,7 @@ Take a look at the [umbEditor directives in the backoffice API Documentation](ht
 The section API in v7+ is found in the interface `Umbraco.Core.Services.IApplicationTreeService` which is exposed on the ApplicationContext singleton. This API is used to control/query the storage for tree registrations in the ~/Config/trees.config file.
 
 
-[See the tree service API reference here](../../Reference/Management-v6/Services/TreeService.md)
+[See the tree service API reference here](../../Reference/Management/Services/TreeService/index.md)
  
 ## Tree events v7
 

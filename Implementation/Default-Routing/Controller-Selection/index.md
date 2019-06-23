@@ -1,6 +1,5 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # Controller & Action selection
@@ -15,20 +14,28 @@ The MVC Action that executes by default for every request is the `Index` action 
 ## Changing the default
 
 It is possible to use a custom Controller and Action to be executed during the Umbraco request pipeline.
-A default Controller can be set during startup in the `ApplicationStarting` method, for example:
+A default Controller can be set during composition by creating a c# class which implements `IUserComposer`, for example:
 
 ```csharp
-public class MyCustomStartupHandler : ApplicationEventHandler
+using Umbraco.Core;
+using Umbraco.Core.Composing;
+using Umbraco.Web;
+using Umbraco.Web.Mvc;
+
+namespace Umbraco8.Composers
 {
-    protected override void ApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+    public class SetDefaultRenderMvcControllerComposer : IUserComposer
     {
-        DefaultRenderMvcControllerResolver.Current.SetDefaultControllerType(typeof(MyCustomRenderMvcController));
+        public void Compose(Composition composition)
+        {
+            composition.SetDefaultRenderMvcController<CustomMvcController>();
+        }
     }
 }
 ```
 
 It is a requirement that your custom controller inherit from `Umbraco.Web.MVC.RenderMvcController`.
-You can override the `Index` method to perform any customizations that you require.
+You can override the `Index` method to perform any customisations that you require.
 
 ## Custom controller selection
 
