@@ -20,6 +20,8 @@ Entries submitted are not transferred to the next environment, as they are *envi
 
 You can work with Forms on the environment of your choice. 
 
+Testing.
+
 When you need to test or use your forms on another environment you can
 
 * transfer the forms to the next environment using **Queue for transfer** or
