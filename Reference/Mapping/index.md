@@ -12,9 +12,13 @@ This is not to be confused with the [package by Andy Butland](https://our.umbrac
 
 ## Accessing the UmbracoMapper
 
-The UmbracoMapper is registered with Dependency Imjection (DI). It can therefore be injected in constructors, wherever DI is used. Alternatively, it is also exposed via `Current.Mapper`.
+The UmbracoMapper is registered with Dependency Injection (DI). It can therefore be injected in constructors, wherever DI is used. Alternatively, it is also exposed via `Current.Mapper`.
 
 ## Mapping
+
+:::tip
+If you would like to see some more examples you can check out [this unit test from the CMS](https://github.com/umbraco/Umbraco-CMS/blob/v8/dev/src/Umbraco.Tests/Mapping/MappingTests.cs)
+:::
 
 Mapping with the UmbracoMapper works in ways very similar to AutoMapper:
 
