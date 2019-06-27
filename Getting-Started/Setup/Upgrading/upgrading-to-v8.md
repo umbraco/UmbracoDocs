@@ -52,15 +52,11 @@ Once it is upgraded and you have verified everything is working, move on to step
 
 ### Step 2: Migrating content to Umbraco 8
 
-:::note
-Before migrating the content it is adviseable to create a backup of the database, so if anything goes wrong you can start over with the original data.
-:::
-
 First thing to do is spin up a fresh new Umbraco 8.1+ site. Make sure it all works and that no content is there (_hint:_ choose not to install starter kit).
 
 ![Fresh 8.1 site](images/fresh-8.1-site.png)
 
-Now you should go to the **Umbraco 7.14 site**, grab the connectionstring and add that to the **Umbraco 8.1 site**. Do note that if you are running SQL CE, you will have to copy the database over to the new site as well.
+Now you should take a backup of your database from the **Umbraco 7.14 site**. You can then add the information for the backup database and add that to the connection string for the  **Umbraco 8.1 site**. Do note that if you are running SQL CE, you will have to copy the database over to the new site as well.
 
 Once the connection string is set, the final step is to change the Umbraco version number in the web.config on the **Umbraco 8.1 site**, to say 7.14.0. This will mean that it thinks there is an upgrade as the Umbraco dlls are 8.1 but the config says 7.14 it needs to run the upgrade.
 
@@ -77,3 +73,8 @@ That is all! Now the automatic migration will take over, and after a little bit 
 :::note
 Please be aware this is just a content migration. If you go to the frontend after doing this nothing will work. You will need to create all templates and other implementation again!
 :::
+
+## Migrating Umbraco Cloud sites
+
+If you wish to migrate an Umbraco 7 Cloud site to an Umbraco 8 Cloud site you should follow the steps above locally.
+Once you have the local Umbraco 8 site with the migrated database you can create a new Umbraco 8 Cloud site and follow the [migration guide](../../../Umbraco-Cloud/Getting-Started/Migrate-Existing-Site/index.md) to get it on Cloud.
