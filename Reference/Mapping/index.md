@@ -6,6 +6,8 @@ versionFrom: 8.1.0
 
 :::tip
 UmbracoMapper replaced AutoMapper which was an external dependency. AutoMapper builds the mapping code dynamically, based upon mapping profiles, which are defined as C# expressions. UmbracoMapper relies on static code, i.e. mappings need to be hand-written.
+
+This is not to be confused with the [package by Andy Butland](https://our.umbraco.com/packages/developer-tools/umbraco-mapper)
 :::
 
 ## Accessing the UmbracoMapper
