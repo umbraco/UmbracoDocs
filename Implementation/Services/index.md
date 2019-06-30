@@ -380,7 +380,7 @@ namespace Umbraco8.Controllers
 
         public override ActionResult Index(ContentModel model)
         {
-            var newsSection = _siteService.GetNewsSection();
+            var newsSection = _siteHelperService.GetNewsSection();
             var blogPostViewModel = new BlogPostViewModel(model);
             blogPostViewModel.NewsSection = newsSection;
             //etc          
@@ -405,7 +405,7 @@ You 'could' create an instance of your custom service inside the view
 
     Layout = "master.cshtml";
     ISiteHelperService siteHelperService = new SiteHelperService(Umbraco.ContentQuery);
-    IPublishedContent newsSection = siteService.GetNewsSection();
+    IPublishedContent newsSection = siteHelperService.GetNewsSection();
 }
 <section class="section">
     <div class="container">
@@ -423,7 +423,7 @@ to 'get around this' you could get the current concrete instance from the Umbrac
 
     Layout = "master.cshtml";
     ISiteHelperService siteHelperService = Current.Factory.GetInstance<ISiteHelperService>();
-    IPublishedContent newsSection = siteService.GetNewsSection();
+    IPublishedContent newsSection = siteHelperService.GetNewsSection();
 }
 <section class="section">
     <div class="container">
