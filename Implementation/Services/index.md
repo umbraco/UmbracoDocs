@@ -136,7 +136,7 @@ namespace Umbraco8.Components
 
         public void Terminate()
         {
-            throw new NotImplementedException();
+           
         }
     }
 }
@@ -168,7 +168,7 @@ namespace Umbraco8.Components
     {
         private readonly IUmbracoContextFactory _umbracoContextFactory;
 
-        public PublishEventsComponent(IUserService userService, IUmbracoContextFactory umbracoContextFactory)
+        public PublishEventsComponent(IUmbracoContextFactory umbracoContextFactory)
         {
             _umbracoContextFactory = umbracoContextFactory;
         }
@@ -194,7 +194,7 @@ namespace Umbraco8.Components
 
         public void Terminate()
         {
-            throw new NotImplementedException();
+         
         }
     }
 }
@@ -241,7 +241,7 @@ namespace Umbraco8.Extensions
 }
 ```
 
-anywhere there is reference to the UmbracoHelper, and a reference is added to the namespace the extension belongs to, it's possible to write `Umbraco.GetNewsSection()` - for a large site though, this can get a little bit out of control!
+anywhere there is reference to the UmbracoHelper, and a reference is added to the namespace the extension belongs to, it is possible to call the method by writing `Umbraco.GetNewsSection()`
 
 ### Custom Services and Helpers
 
@@ -266,9 +266,9 @@ namespace Umbraco8.Services
         IPublishedContent GetContactUsPage();
     }
 }
-
+```
 Create the concrete service class that implements the interface:
-
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
