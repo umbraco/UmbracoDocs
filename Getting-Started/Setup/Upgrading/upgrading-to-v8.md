@@ -30,6 +30,12 @@ When the migrations are running, Umbraco will go through your entire Umbraco 7 d
 
 Please be aware that these migrations will be running directly on your database. They are transforming schema and data - not transferring. Therefore always ensure that you have a backup before attempting to do this. In case something goes wrong, you will be able to rollback and try again.
 
+It is highly recommended to clean up your site before running this as it will be quicker.
+
+- Empty content recycle bin
+- Empty media recycle bin
+- Clean up database version history (can be done with a script or a package like [Unversion](https://our.umbraco.com/packages/website-utilities/unversion/))
+
 ## How does it work?
 
 In the following guide we will try to migrate the content of an Umbraco 7.13.1 site to Umbraco 8.1.0.
@@ -58,7 +64,7 @@ First thing to do is spin up a fresh new Umbraco 8.1+ site. Make sure it all wor
 
 Now you should take a backup of your database from the **Umbraco 7.14 site**. You can then add the information for the backup database and add that to the connection string for the  **Umbraco 8.1 site**. Do note that if you are running SQL CE, you will have to copy the database over to the new site as well.
 
-Once the connection string is set, the final step is to change the Umbraco version number in the web.config on the **Umbraco 8.1 site**, to say 7.14.0. This will mean that it thinks there is an upgrade as the Umbraco dlls are 8.1 but the config says 7.14 it needs to run the upgrade.
+Once the connection string is set, the final step is to change the Umbraco version number in the web.config on the **Umbraco 8.1 site**, to say 7.14.0. This will mean that it thinks there is an upgrade as the Umbraco dlls are 8.1 but the config says 7.14 it needs to run the migration.
 
 ![Set Umbraco version in the web.config](images/set-umbraco-version.png)
 
@@ -71,7 +77,11 @@ That is all! Now the automatic migration will take over, and after a little bit 
 ![Content is on 8.1](images/content-on-8.1.png)
 
 :::note
-Please be aware this is just a content migration. If you go to the frontend after doing this nothing will work. You will need to create all templates and other implementation again!
+Please be aware this is just a content migration. If you go to the frontend after doing this nothing will work!
+
+At this point you would have the content but nothing else, will have to recreate all templates and other custom implementation before the site works again.
+
+[Read more about rendering content in Umbraco 8](../../Design/Rendering-Content/index.md)
 :::
 
 ## Migrating Umbraco Cloud sites
