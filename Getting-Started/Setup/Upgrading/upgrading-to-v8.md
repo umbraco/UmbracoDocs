@@ -24,7 +24,9 @@ The database types that are supported are SQL Server and SQL CE.
 
 The migration will transform the data stored in third party editors as well, however it will simply be stored as it was in Umbraco 7. If the structure has changed for Umbraco 8 or the property editor doesn't exist you will still be able to find the data in the database, but you would not see it in the backoffice.
 
-## What will happen?
+There some options to convert the property editor configuration, read how [here](7-8-migration-dataTypes.md).
+
+## What will happen
 
 When the migrations are running, Umbraco will go through your entire Umbraco 7 database and update it to the format required for Umbraco 8. The schema will be remodelled and transformed into the correct format and your existing compatible data will also be transformed to fit with how Umbraco 8 is storing data.
 
@@ -36,7 +38,7 @@ It is highly recommended to clean up your site before running this as it will be
 - Empty media recycle bin
 - Clean up database version history (can be done with a script or a package like [Unversion](https://our.umbraco.com/packages/website-utilities/unversion/))
 
-## How does it work?
+## How it works
 
 In the following guide we will try to migrate the content of an Umbraco 7.13.1 site to Umbraco 8.1.0.
 
