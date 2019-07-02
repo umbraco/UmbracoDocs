@@ -41,7 +41,7 @@ First you need to remove all Courier related files and folders.
 * /config/splashes/noNodes.aspx
 * /umbraco/Plugins/Courier/Webservices/Repository.asmx
 
-Also, these 3rd party dlls has been part of Courier. If you are not using them in your custom code, you should ensure that they get deleted as well.
+Also, these 3rd party dlls have been part of Courier. If you are not using them in your custom code, you should ensure that they get deleted as well.
 
 * /bin/Antlr3.Runtime.dll
 * /bin/Castle.Core.dll
@@ -49,9 +49,11 @@ Also, these 3rd party dlls has been part of Courier. If you are not using them i
 * /bin/lesi.Collections.dll
 * /bin/NHibernate.dll
 
-If you have a NuGet reference to "Umbraco.Courier.Contrib", you should uninstall that and delete the 
+If you have a NuGet reference to "Umbraco.Courier.Contrib", you should uninstall that and delete the related .dll from `bin` as well.
 
-Finally all `.courier` files found in `/data/Revision` needs to be deleted as well, as they will no longer be used. **NOTE:** Do not remove the `/data/Revision` folder itself, only the folders inside the `/data/Revision` folder - you will need this folder for Deploy as well.
+Finally all `.courier` files found in `/data/Revision` needs to be deleted as well, as they will no longer be used. 
+
+**NOTE:** Do not remove the `/data/Revision` folder itself, only the folders inside the `/data/Revision` folder - you will need this folder for Deploy as well.
 
 ## 2 Adding Umbraco Deploy
 
