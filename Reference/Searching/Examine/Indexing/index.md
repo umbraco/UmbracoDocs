@@ -19,7 +19,7 @@ Take a look at our [Examine Quick Start](../quick-start/index.md) to see some ex
 In order to create this index we need three things:
 1. An IndexCreator to create the index(s)
 2. A component to register our index to Examine
-3. A composer to register our component
+3. A composer to register our component and index creator
 
 ### ProductIndexCreator
 
