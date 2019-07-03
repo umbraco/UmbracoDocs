@@ -59,7 +59,9 @@ Finally all `.courier` files found in `/data/Revision` needs to be deleted as we
 
 Adding Umbraco Deploy will be simple, all content from the ZIP received (except `/config/UmbracoDeploy.config`) needs to be copied into the webroot.
 
-**NOTE:** Do not overwrite the existing file `/config/UmbracoDeploy.config` with the empty one from the ZIP. It already has the correct settings for your site.
+:::note
+Do not overwrite the existing `/config/UmbracoDeploy.config` file with the empty one from the ZIP. It already has the correct settings for your site.
+:::
 
 Next you need to update the web.config to letting it know about Umbraco Deploy. 
 
