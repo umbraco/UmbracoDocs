@@ -68,6 +68,10 @@ Now you should take a backup of your database from the **Umbraco 7.14 site**. Yo
 
 Once the connection string is set, the final step is to change the Umbraco version number in the web.config on the **Umbraco 8.1 site**, to say 7.14.0. This will mean that it thinks there is an upgrade as the Umbraco dlls are 8.1 but the config says 7.14 it needs to run the migration.
 
+:::warning
+If you have customized your `UsersMembershipProvider` on your Umbraco 7 site you will need to copy that over to the 8.1 web.config as well. Additionally you will need to update the `type` attribute to be `type="Umbraco.Web.Security.Providers.UsersMembershipProvider, Umbraco.Web"`.
+:::
+
 ![Set Umbraco version in the web.config](images/set-umbraco-version.png)
 
 When you start the site it will ask you to login and then show you this screen:
