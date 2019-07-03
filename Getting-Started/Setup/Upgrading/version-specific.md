@@ -18,6 +18,8 @@ If you're using ModelsBuilder in dll mode you will need to delete the dlls befor
 
 If you've got your generated models in your solution you will need to update them after upgrade: `PublishedContentType` will need to be replaced with `IPublishedContentType` and `PropertyValueConverter` needs to be replaced with `IPublishedPropertyType`. Only after you do that will your solution build again.
 
+Additionally 8.1 replaces AutoMapper with [UmbracoMapper](../../../Reference/Mapping/index.md), this in itself will not break anything on your site, but if you have used AutoMapper in your own code you will have to either include the package yourself or switch your implementation to use UmbracoMapper.
+
 ## Version 7 to version 8
 
 There is no direct upgrade path, but it is possible to migrate content from Umbraco 7 sites to Umbraco 8 sites. We made a tool that will enable you to move your content (content/media/members) from an Umbraco 7 site to an Umbraco 8 site. You can read more about how it works in the [migrating content from Umbraco 7 to 8](upgrading-to-v8.md) article.
