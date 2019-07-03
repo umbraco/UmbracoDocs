@@ -8,15 +8,23 @@ versionFrom: 7.0.0
 
 Follow the steps in the [general upgrade guide](general.md), then these additional instructions for the specific versions. (Remember that new config files are not mentioned because they are already covered in the general upgrade guide.)
 
+## Version 8.1.0
+
+There are a few breaking changes from 8.0.x to 8.1.0. Make sure to check the [full list](https://github.com/umbraco/Umbraco-CMS/issues?q=is%3Aissue+label%3Arelease%2F8.1.0+is%3Aclosed+label%3Acategory%2Fbreaking).
+
+Due to the change in `IPublishedContent` there are few steps you will need to make to make sure that your models build.
+
+If you're using ModelsBuilder in dll mode you will need to delete the dlls before upgrading because they're going to be wrong and cause your whole site to YSOD.
+
+If you've got your generated models in your solution you will need to update them after upgrade: `PublishedContentType` will need to be replaced with `IPublishedContentType` and `PropertyValueConverter` needs to be replaced with `IPublishedPropertyType`. Only after you do that will your solution build again.
+
 ## Version 7 to version 8
 
-There will not be a direct upgrade path, but it will be possible to migrate content from Umbraco 7 sites to Umbraco 8 sites. We are developing a content migration tool that will enable you to move your content (content/media/members) from an Umbraco 7 site to an Umbraco 8 site. We will inform you about it as soon as it is ready.   
+There is no direct upgrade path, but it is possible to migrate content from Umbraco 7 sites to Umbraco 8 sites. We made a tool that will enable you to move your content (content/media/members) from an Umbraco 7 site to an Umbraco 8 site. You can read more about how it works in the [migrating content from Umbraco 7 to 8](upgrading-to-v8.md) article.
 
 The reason why it is not possible to upgrade an Umbraco 7 site to Umbraco 8 is is that the codebase has been fundamentally updated in Umbraco 8. A lot of outdated code and technology has been removed and instead new, faster and more secure technology has been implemented throughout Umbraco 8. It simply wouldn’t be possible to take this giant leap while maintaining full compatibility with Umbraco 7.
 
-In Umbraco 8 we have added improvements and updated dependencies as well as done a thorough clean-up to make it simpler for you to work with and extend your Umbraco project. 
-
-In the near future, it will though be possible to do a manual upgrade of your Umbraco 7 project to Umbraco 8 which we, of course, will give you best practices documentation on as soon as it’s ready. We highly recommend you wait with the upgrade of your Umbraco 7 project until we have this documentation ready in order to ensure you get the best possible content migration experience. 
+In Umbraco 8 we have added improvements and updated dependencies as well as done a thorough clean-up to make it simpler for you to work with and extend your Umbraco project.
 
 ## Version 7.7.0
 
@@ -80,9 +88,9 @@ So we have fixed this now in 7.6.3.
 
 This issue only affects:
 
- * Multi Node Tree Picker
- * Related Links
- * Member Picker
+* Multi Node Tree Picker
+* Related Links
+* Member Picker
 
 If you have already upgraded to 7.6.2 and fixed some of your queries for those three data types then you might have to fix them again in 7.6.3. We promise it's the last time you need to update them! We're sorry for the inconvenience.
 
@@ -96,7 +104,7 @@ The three most important things to note are:
  2. In umbracoSettings.config leave `EnablePropertyValueConverters` set to `false` - this will help your existing content queries to still work
  3. In tinyMceConfig.config make sure to remove `<plugin loadOnFrontend="true">umbracolink</plugin>` so that the rich text editor works as it should
 
-#### Upgrading via NuGet
+### Upgrading via NuGet
 
 This is an important one and there was unfortunately not a perfect solution to this. We have removed the UrlRewriting dependency and no longer ship with it, however if you are using it we didn't want to have NuGet delete all of your rewrites. So the good news is that if you are using it, the NuGet upgrade will not delete your rewrite file and everything should just continue to work (though you should really be using IIS rewrites!). 
 
