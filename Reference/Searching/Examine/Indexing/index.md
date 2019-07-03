@@ -105,6 +105,6 @@ public class ProductComposer : IUserComposer
 
 ### Result
 
-![Custom product index](../images/examine-management-product-index.png)
+![Custom product index](images/examine-management-product-index.png)
 
-![Product document](../images/examine-management-product-document.png)
+![Product document](images/examine-management-product-document.png)
