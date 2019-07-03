@@ -15,7 +15,7 @@ The first step is to acquire the latest Umbraco Deploy package from [http://nigh
 
 For a version 7.x website, choose the latest "UmbracoDeploy.v2.x.x.zip" file.
 
-Next, request a valid Deploy Key from the support heroes. Use the in-app chat in the Umbraco Cloud portal to get this.
+Next, request a valid Deploy Key from Umbraco Support. This can be done through the in-app chat in the Umbraco Cloud Portal or by reaching out to contact@umbraco.com.
 
 Prerequisites for using the guide is that you have a running site, that contains all metadata, like document types, data types and templates. 
 
