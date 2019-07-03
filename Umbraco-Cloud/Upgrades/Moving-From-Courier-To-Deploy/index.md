@@ -53,7 +53,9 @@ If you have a NuGet reference to "Umbraco.Courier.Contrib", you should uninstall
 
 Finally all `.courier` files found in `/data/Revision` needs to be deleted as well, as they will no longer be used. 
 
-**NOTE:** Do not remove the `/data/Revision` folder itself, only the folders inside the `/data/Revision` folder - you will need this folder for Deploy as well.
+:::note
+Do not remove the `/data/Revision` folder itself, only the folders inside the `/data/Revision` folder - you will need this folder for Deploy as well.
+:::
 
 ## 2 Adding Umbraco Deploy
 
