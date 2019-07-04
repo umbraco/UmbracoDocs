@@ -13,7 +13,7 @@ The general rule of thumb is that Management Services provide access to allow th
 Although there is a Management Service compelling called the `ContentService` - only use this to modify content - do not use the `ContentService` in a View/Template to pull back data to display, this will make database requests and be slow - here instead use the generically named `UmbracoHelper` to access the `PublishedContentQuery` methods that operate against a cache of published content items, and are significantly quicker.
 :::
 
-The Management Services and Helpers are all registered with Umbraco's underlying DI framework - this article aims to show examples of gaining access to utilise them in multiple different scenarios (there are subtle differences to be aware of depending on what part of Umbraco is being extended) - and also suggest how to follow a similar pattern to encapsulate custom 'site specific' logic, registered with the DI framework, to avoid repetition and promote consistency and readability in a solution.
+The Management Services and Helpers are all registered with Umbraco's underlying DI framework - this article aims to show examples of gaining access to utilise these resources in multiple different scenarios (there are subtle differences to be aware of depending on what part of Umbraco is being extended) - and also suggest how to follow a similar pattern to encapsulate custom 'site specific' implementation logic, in similar services and helpers, registered with the underlying DI contain, to avoid repetition and promote consistency and readability within an Umbraco site solution.
 
 ## Accessing Management Services and Helpers in a Template/View
 
@@ -394,7 +394,7 @@ namespace Umbraco8.Controllers
 
 #### Using the SiteHelperService inside a View
 
-If strictly following the paragdigm of MVC, calling custom Services from Views might feel like an anti-pattern. However there isn't one single best practice approach to working with Umbraco. Alot depends on circumstance and expertise. Allowing Umbraco to handle the flow of the requests to the particular template, and writing implementation logic in Views/Templates, is still a very common approach. There are circumstances too where the custom implementation logic shared is very 'View' specific - custom logic for constructing 'Alternative Text' for images or different crop urls for img srcsets can be neatly handled in a Service without having to 'route hijack' the request and build a complex ViewModel.
+If strictly following the paragdigm of MVC, calling custom Services from Views might feel like an anti-pattern. However there isn't necessarily one single 'best practice' approach to working with Umbraco. A lot depends on circumstance, expertise and pragmatism. Allowing Umbraco to handle the flow of incoming requests to a particular page + template, and writing implementation logic in Views/Templates, is still a very common approach. There are circumstances too, where the custom implementation logic shared is very 'View' specific - custom logic for constructing 'Alternative Text' for images or different crop urls for img srcsets can be neatly handled in a custom Helper/Service without having to create a hijacked MVC route for the request and build a complex ViewModel. Custom Services called from Views, can help separate the concerns, even if the 'plumbing' isn't pure MVC.
 
 You 'could' create an instance of your custom service inside the view
 
