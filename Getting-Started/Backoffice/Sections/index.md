@@ -61,6 +61,12 @@ You can install Umbraco Forms directly from the Backoffice by clicking the insta
 ## Translation
 This is the section where you create and manage your dictionary items.
 
+:::note
+This section is by default not accessible to any User Groups.
+
+Access to the section can be configured under User Groups in the User section.
+:::
+
 ## Help sections
 In the top-right corner you'll find a search tool, which is also accessible by hitting `CTRL + Space` on your keyboard.
 
