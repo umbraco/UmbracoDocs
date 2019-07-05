@@ -430,9 +430,13 @@ namespace Umbraco8.Controllers
 
         public override ActionResult Index(ContentModel model)
         {
-            var newsSection = _siteService.GetNewsSection();
+            var newsSection = _siteService.GetNewsSection();           
             var blogPostViewModel = new BlogPostViewModel(model);
-            blogPostViewModel.NewsSection = newsSection;
+            blogPostViewModel.HasNewsSection = false;
+            if (newsSection!=null){
+                blogPostViewModel.HasNewsSection = true;
+                blogPostViewModel.NewsSection = newsSection;
+            }
             //etc          
             // Do other stuff here!, then return the custom viewmodel to the template view.
             return CurrentTemplate(blogPostViewModel);
@@ -468,7 +472,11 @@ namespace Umbraco8.Controllers
         {
             var newsSection = _siteService.GetNewsSection();
             var blogPostViewModel = new BlogPostViewModel(model);
-            blogPostViewModel.NewsSection = newsSection;
+            blogPostViewModel.HasNewsSection = false;
+            if (newsSection!=null){
+                blogPostViewModel.HasNewsSection = true;
+                blogPostViewModel.NewsSection = newsSection;
+            }
             //etc          
             // Do other stuff here!, then return the custom viewmodel to the template view.
             return CurrentTemplate(blogPostViewModel);
@@ -483,28 +491,11 @@ You can easily generate this ctor in Visual Studio by using either ctrl + . or a
 ![generate di constructor parameters in visual studio](images/vs-di-constructor-generation-tip.gif)
 :::
 
-#### Using the SiteHelperService inside a View
+#### Using the SiteService inside a View
 
 If strictly following the paragdigm of MVC, calling custom Services from Views might feel like an anti-pattern. However there isn't necessarily one single 'best practice' approach to working with Umbraco. A lot depends on circumstance, expertise and pragmatism. Allowing Umbraco to handle the flow of incoming requests to a particular page + template, and writing implementation logic in Views/Templates, is still a very common approach. There are circumstances too, where the custom implementation logic shared is very 'View' specific - custom logic for constructing 'Alternative Text' for images or different crop urls for img srcsets can be neatly handled in a custom Helper/Service without having to create a hijacked MVC route for the request and build a complex ViewModel. Custom Services called from Views, can help separate the concerns, even if the 'plumbing' isn't pure MVC.
 
-You 'could' create an instance of your custom service inside the view
-
-```csharp
-@using Umbraco8.Services
-@inherits UmbracoViewPage
-@{
-
-    Layout = "master.cshtml";
-    ISiteHelperService siteHelperService = new SiteHelperService(Umbraco.ContentQuery);
-    IPublishedContent newsSection = siteHelperService.GetNewsSection();
-}
-<section class="section">
-    <div class="container">
-        <article>
-```
-
-but this isn't making use of the DI container to control which concrete service implements ISiteHelperService
-to 'get around this' you could get the current concrete instance from the Umbraco.Web.Composing.Current DI container:
+To access the service directly from the view you would need to use the Service Locatory pattern and the Current.Factory.GetInstance method to get a reference to the concrete implementation of the service registered with DI:
 
 ```csharp
 @using Umbraco8.Services
@@ -513,8 +504,8 @@ to 'get around this' you could get the current concrete instance from the Umbrac
 @{
 
     Layout = "master.cshtml";
-    ISiteHelperService siteHelperService = Current.Factory.GetInstance<ISiteHelperService>();
-    IPublishedContent newsSection = siteHelperService.GetNewsSection();
+    ISiteService SiteService = Current.Factory.GetInstance<ISiteService>();
+    IPublishedContent newsSection = SiteService.GetNewsSection();
 }
 <section class="section">
     <div class="container">
@@ -537,17 +528,17 @@ namespace Umbraco8.ViewPages
 {
     public abstract class CustomViewPage<T> : UmbracoViewPage<T>
     {
-        public readonly ISiteHelperService SiteHelperService;
+        public readonly ISiteService SiteService;
         public CustomViewPage() : this(
-            Current.Factory.GetInstance<ISiteHelperService>(), 
+            Current.Factory.GetInstance<ISiteService>(), 
             Current.Factory.GetInstance<ServiceContext>(),
             Current.Factory.GetInstance<AppCaches>()
             )
         {
         }
-        public CustomViewPage(ISiteHelperService siteHelperService, ServiceContext services, AppCaches appCaches)
+        public CustomViewPage(ISiteService SiteService, ServiceContext services, AppCaches appCaches)
         {
-            SiteHelperService = siteHelperService;
+            SiteService = SiteService;
             Services = services;
             AppCaches = appCaches;
         }
@@ -559,17 +550,17 @@ namespace Umbraco8.ViewPages
     }
     public abstract class CustomViewPage : UmbracoViewPage
     {
-        public readonly ISiteHelperService SiteHelperService;
+        public readonly ISiteService SiteService;
         public CustomViewPage() : this(
-            Current.Factory.GetInstance<ISiteHelperService>(),
+            Current.Factory.GetInstance<ISiteService>(),
             Current.Factory.GetInstance<ServiceContext>(),
             Current.Factory.GetInstance<AppCaches>()
             )
         { }
         
-            public CustomViewPage(ISiteHelperService siteHelperService, ServiceContext services, AppCaches appCaches)
+            public CustomViewPage(ISiteService SiteService, ServiceContext services, AppCaches appCaches)
         {
-            SiteHelperService = siteHelperService;
+            SiteService = SiteService;
             Services = services;
             AppCaches = appCaches;
         }
@@ -582,14 +573,14 @@ namespace Umbraco8.ViewPages
 }
 ```
 
-with this in place all views inheriting from CustomViewPage or CustomViewPage<T> would have access to the SiteHelperService:
+with this in place all views inheriting from CustomViewPage or CustomViewPage&lt;T&gt; would have access to the SiteService:
 ```csharp
 @using Umbraco8.ViewPages
 @inherits CustomViewPage<BlogPost>
 @{
 
     Layout = "master.cshtml";
-    IPublishedContent newsSection = SiteHelperService.GetNewsSection();
+    IPublishedContent newsSection = SiteService.GetNewsSection();
 }
 <section class="section">
     <div class="container">
