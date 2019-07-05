@@ -7,13 +7,13 @@ versionFrom: 8.0.0
 
 Umbraco has a range of 'Core' Services and Helpers that act as a 'gateway' to Umbraco data and functionality to use when extending or implementing an Umbraco site.
 
-The general rule of thumb is that Management Services provide access to allow the modification of Umbraco data, (and therefore aren't optimised for displaying data), whereas Helpers provide access to readonly data with performance of displaying data taken into consideration.
+The general rule of thumb is that management Services provide access to allow the modification of Umbraco data, (and therefore aren't optimised for displaying data), whereas Helpers provide access to readonly data with performance of displaying data taken into consideration.
 
 :::warning
-Although there is a Management Service compelling called the `ContentService` - only use this to modify content - do not use the `ContentService` in a View/Template to pull back data to display, this will make database requests and be slow - here instead use the generically named `UmbracoHelper` to access the `PublishedContentQuery` methods that operate against a cache of published content items, and are significantly quicker.
+Although there is a management Service compelling called the `ContentService` - only use this to modify content - do not use the `ContentService` in a View/Template to pull back data to display, this will make database requests and be slow - here instead use the generically named `UmbracoHelper` to access the `PublishedContentQuery` methods that operate against a cache of published content items, and are significantly quicker.
 :::
 
-The Management Services and Helpers are all registered with Umbraco's underlying DI framework - this article aims to show examples of gaining access to utilise these resources in multiple different scenarios (there are subtle differences to be aware of depending on what part of Umbraco is being extended) - and also suggest how to follow a similar pattern to encapsulate custom 'site specific' implementation logic, in similar services and helpers, registered with the underlying DI contain, to avoid repetition and promote consistency and readability within an Umbraco site solution.
+The management Services and Helpers are all registered with Umbraco's underlying DI framework - this article aims to show examples of gaining access to utilise these resources in multiple different scenarios (there are subtle differences to be aware of depending on what part of Umbraco is being extended) - and also suggest how to follow a similar pattern to encapsulate custom 'site specific' implementation logic, in similar services and helpers, registered with the underlying DI contain, to avoid repetition and promote consistency and readability within an Umbraco site solution.
 
 ## Accessing Management Services and Helpers in a Template/View
 
@@ -28,13 +28,13 @@ Inside a view/template or partial view that inherits from UmbracoViewPage, acces
     // retrieve an item from Umbraco's published cache with id 123
     IPublishedContent publishedContentItem = Umbraco.Content(123);
 
-    // it is 'unlikely' to need to use a Management Service in a view:
+    // it is 'unlikely' to need to use a management Service in a view:
     var relationService = Services.RelationService;
 }
 ```
 ## Accessing Management Services and Helpers in a Controller
 
-Inside a [custom controller](../../Reference/Routing/custom-controllers) you can inject any of the core Management Services or Helpers required to assist in controlling the custom flow of the particular request via the Controller's constructor:
+Inside a [custom controller](../../Reference/Routing/custom-controllers) you can inject any of the core management Services or Helpers required to assist in controlling the custom flow of the particular request via the Controller's constructor:
 
 ```csharp
 using System.Collections.Generic;
@@ -64,14 +64,14 @@ namespace Umbraco8.Controllers
             _logger.Info<BlogPostController>("Using core logger implementation");
             // retrieve an item from Umbraco's published cache with id 123
             IPublishedContent publishedContentItem = _umbracoHelper.Content(123);
-            // it is unlikely to use a Management service when rendering content from a custom controller
+            // it is unlikely to use a management service when rendering content from a custom controller
             //(when using relationService like this you would want to provide a layer of caching)
             var allRelatedUmbracoItems = _relationService.GetByParentId(model.Id);_
         }
 ```
 
 :::Note
-You still have access to Umbraco. and Services. as as away to access UmbracoHelper and any Management Services.
+You still have access to Umbraco. and Services. as as away to access UmbracoHelper and any management Services.
 So the above could be Umbraco.Content(123) and Services.RelationService.GetByParentId(model.Id)
 :::
 
@@ -85,7 +85,7 @@ If the UmbracoContext is not guaranteed to exist you cannot inject any helpers o
 
 ### Injecting Services into a Component
 
-It's possible to inject Management Services that do not rely on the `UmbracoContext` into the constructor of a component. This example shows injecting the MediaService in a Component to create a corresponding Media Folder for every 'landing page' that is saved in the Content Section, by subscribing to the 'Content Saved' event. 
+It's possible to inject management Services that do not rely on the `UmbracoContext` into the constructor of a component. This example shows injecting the MediaService in a Component to create a corresponding Media Folder for every 'landing page' that is saved in the Content Section, by subscribing to the 'Content Saved' event. 
 
 ```csharp
 using System;
@@ -142,7 +142,7 @@ namespace Umbraco8.Components
 }
 ```
 
-Management Services that are not transient (eg do not rely on UmbracoContext), eg `ContentService`, `MediaService` can be injected anywhere.
+management Services that are not transient (eg do not rely on UmbracoContext), eg `ContentService`, `MediaService` can be injected anywhere.
 
 ### Accessing Published Content Cache from a Component or C# Class
 
@@ -218,7 +218,7 @@ and insde a UrlProvider the GetUrl method has the current UmbracoContext injecte
 
 ## Custom Services and Helpers
 
-When implementing an Umbraco site, it is likely to have to execute similar code that accesses or operates on Umbraco data, in multiple places, perhaps using the Core Management Services or Umbraco Helpers.
+When implementing an Umbraco site, it is likely to have to execute similar code that accesses or operates on Umbraco data, in multiple places, perhaps using the Core management Services or Umbraco Helpers.
 For example; Getting a list of the latest News Articles, or building a link to the site's News Section or Contact Us page. It's easy to repeat this kind of logic in multiple places, Views, Partial Views / Controllers etc, which is fine, but it's generally considered good practice to consolodate this logic into a single place.
 
 ### Extension methods
@@ -245,7 +245,7 @@ anywhere there is reference to the UmbracoHelper, and a reference is added to th
 
 ### Custom Services and Helpers
 
-Another option, is to make use of the underlying DI framework, and create custom Services and Helpers, that in turn can have the 'core' Management Services and Umbraco Helpers injected into them - (the same rules about transient services apply!). This approach enables the grouping together of similar methods within a suitably named service, and promotes the possibility of testing this custom logic outside of controllers and views.
+Another option, is to make use of the underlying DI framework, and create custom Services and Helpers, that in turn can have the 'core' management Services and Umbraco Helpers injected into them - (the same rules about transient services apply!). This approach enables the grouping together of similar methods within a suitably named service, and promotes the possibility of testing this custom logic outside of controllers and views.
 
 In this example, we create a custom helper service, that's responsible for finding key pages within a site, eg the News Section or the Contact Us page - these methods will commonly be called in different places throughout the site, and it's great to encapsulate the logic to retrieve them in a single place - we'll call this helper service: SiteHelperService
 
