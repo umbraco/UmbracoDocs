@@ -90,6 +90,13 @@ At this point you would have the content but nothing else, will have to recreate
 [Read more about rendering content in Umbraco 8](../../Design/Rendering-Content/index.md)
 :::
 
+### Step 3: Post-migration checks
+
+As you are updating your Template files and custom implementetion to fit your new Umbraco 8 site, it will be a natural step to also check your configuration files and settings.
+
+You should also check your User Groups and make sure they have access to the appropriate sections. 
+This is especially important if you are using packages on your project, like Umbraco Forms.
+
 ## Migrating Umbraco Cloud sites
 
 If you wish to migrate an Umbraco 7 Cloud site to an Umbraco 8 Cloud site you should follow the steps above locally.
