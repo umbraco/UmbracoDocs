@@ -46,6 +46,10 @@ The Settings tree consists of:
 - Stylesheets (`.css` files)
 - Scripts (`.js` files)
 
+:::note
+**Dictionary items** have been moved from the Settings section to the Translation section.
+:::
+
 ## Packages
 In this section you can browse and install packages into your Umbraco solution. You can also get an overview of all installed packages as well as uninstall packages you no longer need.
 
