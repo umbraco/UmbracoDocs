@@ -425,7 +425,7 @@ namespace Umbraco8.Controllers
 
         public BlogPostController(ISiteService siteService)
         {
-            _siteService = siteService; 
+            _siteService = siteService ?? throw new ArgumentNullException(nameof(siteService)); 
         }
 
         public override ActionResult Index(ContentModel model)
@@ -461,7 +461,7 @@ namespace Umbraco8.Controllers
         public BlogPostController(IGlobalSettings globalSettings, IUmbracoContextAccessor umbracoContextAccessor, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, UmbracoHelper umbracoHelper, ISiteService siteService)
             : base(globalSettings, umbracoContextAccessor, services, appCaches, profilingLogger, umbracoHelper)
         {
-            _siteService = siteService; 
+             _siteService = siteService ?? throw new ArgumentNullException(nameof(siteService)); 
         }
 
         public override ActionResult Index(ContentModel model)
