@@ -10,7 +10,7 @@ Follow the steps in the [general upgrade guide](general.md), then these addition
 
 ## Version 7 to version 8
 
-There will not be a direct upgrade path, but it will be possible to migrate content from Umbraco 7 sites to Umbraco 8 sites. We are developing a content migration tool that will enable you to move your content (content/media/members) from an Umbraco 7 site to an Umbraco 8 site. We will inform you about it as soon as it is ready.   
+There is no direct upgrade path from Umbraco 7 to Umbraco 8, but it is be possible to migrate content from Umbraco 7 sites to Umbraco 8 sites. We have [added content migrations](#migrating-content-from-v7-to-v8) in Umbraco 8.1.0 that will enable you to move your content (content/media/members) from an Umbraco 7 site to an Umbraco 8 site.
 
 The reason why it is not possible to upgrade an Umbraco 7 site to Umbraco 8 is is that the codebase has been fundamentally updated in Umbraco 8. A lot of outdated code and technology has been removed and instead new, faster and more secure technology has been implemented throughout Umbraco 8. It simply wouldn’t be possible to take this giant leap while maintaining full compatibility with Umbraco 7.
 
