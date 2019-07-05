@@ -1,4 +1,4 @@
----
+﻿---
 keywords: implementing services injecting di custom services service pattern UmbracoHelper reusing dry
 versionFrom: 8.0.0
 ---
@@ -17,7 +17,7 @@ The management Services and Helpers are all registered with Umbraco's underlying
 
 ## Accessing Management Services and Helpers in a Template/View
 
-Inside a view/template or partial view that inherits from UmbracoViewPage, access is provided to Umbraco's services via the `Services` [service context](../../Reference/Management/Services/) and the `Umbraco` - [UmbracoHelper](../..//Reference/Querying/UmbracoHelper) - is a gateway to an array of useful functionlity.
+Inside a view/template or partial view that inherits from UmbracoViewPage, access is provided to Umbraco's Services via the `Services` property ([ServiceContext](../../Reference/Management/Services/)) and the `Umbraco` property ([UmbracoHelper](../../Reference/Querying/UmbracoHelper)). The `UmbracoHelper` object is a gateway to an array of useful functionlity.
 
 ```csharp
 @inherits UmbracoViewPage<Blogpost>
@@ -28,13 +28,13 @@ Inside a view/template or partial view that inherits from UmbracoViewPage, acces
     // retrieve an item from Umbraco's published cache with id 123
     IPublishedContent publishedContentItem = Umbraco.Content(123);
 
-    // it is 'unlikely' to need to use a management Service in a view:
-    var relationService = Services.RelationService;
+    // it is really 'unlikely' to need to use a management Service in a view:
+    // var relationService = Services.RelationService;
 }
 ```
-## Accessing Management Services and Helpers in a Controller
+## Accessing Core Services and Helpers in a Controller
 
-Inside a [custom controller](../../Reference/Routing/custom-controllers) you can inject any of the core management Services or Helpers required to assist in controlling the custom flow of the particular request via the Controller's constructor:
+Inside a [custom Controller](../../Reference/Routing/custom-controllers) access is provided to Services via the `Services` property ([ServiceContext](../../Reference/Management/Services/)) and the `UmbracoHelper` via the `Umbraco` property ([UmbracoHelper](../../Reference/Querying/UmbracoHelper))
 
 ```csharp
 using System.Collections.Generic;
@@ -47,40 +47,28 @@ using Umbraco.Core.Services;
 namespace Umbraco8.Controllers
 {
     public class BlogPostController : Umbraco.Web.Mvc.RenderMvcController
-    {        // GET: BlogPost   
-        private readonly ILogger _logger;
-        private readonly UmbracoHelper _umbracoHelper;
-        private readonly RelationService _relationService;
-
-        public BlogPostController(ILogger logger, UmbracoHelper umbracoHelper, RelationService relationService)
+    { 
+        public BlogPostController()
         {
-            _umbracoHelper = umbracoHelper;
-            _logger = logger;
-            _relationService = relationService;
         }
         public override ActionResult Index(ContentModel model)
-        {
+        {            
             // write helpful messages to the Umbraco Trace logs to aid with debugging
-            _logger.Info<BlogPostController>("Using core logger implementation");
+            Logger.Info<BlogPostController>("Using core logger implementation");
             // retrieve an item from Umbraco's published cache with id 123
-            IPublishedContent publishedContentItem = _umbracoHelper.Content(123);
+            IPublishedContent publishedContentItem = Umbraco.Content(123);
             // it is unlikely to use a management service when rendering content from a custom controller
             //(when using relationService like this you would want to provide a layer of caching)
-            var allRelatedUmbracoItems = _relationService.GetByParentId(model.Id);_
+            //var allRelatedUmbracoItems = Services.RelationService.GetByParentId(model.Id);_
         }
 ```
 
-:::Note
-You still have access to Umbraco. and Services. as as away to access UmbracoHelper and any management Services.
-So the above could be Umbraco.Content(123) and Services.RelationService.GetByParentId(model.Id)
-:::
-
-## Accessing Core Services and Helpers when there is no UmbracoContext eg in a Component or C# Class
+## Accessing core Services and Helpers when there is no 'UmbracoContext' eg in a Component or C# Class
 
 Controllers and Views have an UmbracoContext, however this is not always the case 'everywhere in Umbraco', for example common extension points: Components,ContentFinders or Custom C# Classes.
 
 :::Warning
-If the UmbracoContext is not guaranteed to exist you cannot inject any helpers or services that rely on the UmbracoContext, eg UmbracoHelper, PublishedContentQuery and if you try to inject these helpers into the constructors of these context less classes...  Umbraco will report a 'boot' error on startup.
+UmbracoContext, UmbracoHelper, PublishedContentQuery - are all based on an HttpRequest - their lifetime is controlled by an HttpRequest. So if you are not operating within an actual request, you cannot inject these parameters and if you try to ...  Umbraco will report a 'boot' error on startup.
 :::
 
 ### Injecting Services into a Component
@@ -136,17 +124,17 @@ namespace Umbraco8.Components
 
         public void Terminate()
         {
-           
+          //called when the Umbraco application shuts down.
         }
     }
 }
 ```
 
-management Services that are not transient (eg do not rely on UmbracoContext), eg `ContentService`, `MediaService` can be injected anywhere.
+See documentation on [Composing](../../Composing/) for further examples and information on Components and Composition.
 
-### Accessing Published Content Cache from a Component or C# Class
+### Accessing Published Content outside of a Http Request
 
-Injecting `UmbracoHelper` or `IPublishedContentQuery` into classes that aren't guaranteed to have an UmbracoContext will trigger a boot error, however there is a technique that allows the querying of the Umbraco Published Content Cache, using the `UmbracoContextFactory` and calling `EnsureUmbracoContext()`.
+Trying to inject types that are based on an Http Request such as `UmbracoHelper` or `IPublishedContentQuery` into classes that are not based on an Http Request will trigger a boot error. However, there is a technique that allows the querying of the Umbraco Published Content, using the `UmbracoContextFactory` and calling `EnsureUmbracoContext()`.
 
 ```csharp
 using System.Collections.Generic;
@@ -194,15 +182,15 @@ namespace Umbraco8.Components
 
         public void Terminate()
         {
-         
+         //called when the Umbraco application shuts down.
         }
     }
 }
 ```
 
-#### Accesing Published Content Cache from a Content Finder / UrlProvider
+#### Accessing the Published Content Cache from a Content Finder / UrlProvider
 
-Inside a ContentFinder access to the content cache is provided via the PublishedRequest object:
+Inside a ContentFinder access to the content cache is already provided via the PublishedRequest object:
 ```csharp
   public bool TryFindContent(PublishedRequest frequest)
         {
@@ -216,9 +204,13 @@ and insde a UrlProvider the GetUrl method has the current UmbracoContext injecte
         var someContent = umbracoContext.ContentCache.GetById(1234);
 ```
 
+:::Note
+It is still possible to inject services into IContentFinder's. IContentFinders are singletons, but no need to do so in order to access the Published Content Cache.
+:::
+
 ## Custom Services and Helpers
 
-When implementing an Umbraco site, it is likely to have to execute similar code that accesses or operates on Umbraco data, in multiple places, perhaps using the Core management Services or Umbraco Helpers.
+When implementing an Umbraco site, it is likely to have to execute similar code that accesses or operates on Umbraco data, in multiple places, perhaps using the core management Services or Umbraco Helpers.
 For example; Getting a list of the latest News Articles, or building a link to the site's News Section or Contact Us page. It's easy to repeat this kind of logic in multiple places, Views, Partial Views / Controllers etc, which is fine, but it's generally considered good practice to consolodate this logic into a single place.
 
 ### Extension methods
@@ -232,10 +224,11 @@ namespace Umbraco8.Extensions
 {
     public static class UmbracoHelperExtensions
     {
-            //NewsCategories //NewsSection
-            public static IPublishedContent GetNewsSection(this UmbracoHelper umbracoHelper)
+        public static IPublishedContent GetNewsSection(this UmbracoHelper umbracoHelper)
             {
-            return umbracoHelper.ContentSingleAtXPath("root/homePage/newsSection");
+                //assuming a single site with a single News Section at the top level
+                IPublishedContent siteRoot = umbracoHelper.ContentAtRoot().FirstOrDefault();
+                return siteRoot != null ? siteRoot.FirstChild(f => f.ContentType.Alias == "newsSection") : default(IPublishedContent);
             }
      }
 }
@@ -245,9 +238,15 @@ anywhere there is reference to the UmbracoHelper, and a reference is added to th
 
 ### Custom Services and Helpers
 
-Another option, is to make use of the underlying DI framework, and create custom Services and Helpers, that in turn can have the 'core' management Services and Umbraco Helpers injected into them - (the same rules about transient services apply!). This approach enables the grouping together of similar methods within a suitably named service, and promotes the possibility of testing this custom logic outside of controllers and views.
+Another option, is to make use of the underlying DI framework, and create custom Services and Helpers, that in turn can have the 'core' management Services and Umbraco Helpers injected into them.
 
-In this example, we create a custom helper service, that's responsible for finding key pages within a site, eg the News Section or the Contact Us page - these methods will commonly be called in different places throughout the site, and it's great to encapsulate the logic to retrieve them in a single place - we'll call this helper service: SiteHelperService
+This approach enables the grouping together of similar methods within a suitably named service, and promotes the possibility of testing this custom logic outside of Controllers and Views.
+
+:::warning
+Depending on where the custom service will be utilised will dictate the best practice approach to accessing the 'Published Content Cache' - if it is 100% guaranteed that the service will only be called from a place with an UmbracoContext, eg a controller or view, then it is safe to inject `IPublishedContentQuery` etc for simplicity - however if 'one day' the custom service is called in a location without UmbracoContext (eg an event handler) it will fail, and therefore the approach of accessing the Published Content Cache via injecting IUmbracoContextFactory and calling EnsureUmbracoContext() will provide consistency across any custom services no matter where they are utilised.
+:::
+
+In this example, we create a custom service, that's responsible for finding key pages within a site, eg the News Section or the Contact Us page - these methods will commonly be called in different places throughout the site, and it's great to encapsulate the logic to retrieve them in a single place - we'll call this service: SiteService
 
 Create an interface to define the service:
 
@@ -260,7 +259,7 @@ using Umbraco.Core.Models.PublishedContent;
 
 namespace Umbraco8.Services
 {
-        public interface ISiteHelperService
+    public interface ISiteService
     {
         IPublishedContent GetNewsSection();
         IPublishedContent GetContactUsPage();
@@ -277,7 +276,7 @@ using Umbraco.Core.Models.PublishedContent;
 
 namespace Umbraco8.Services
 {
-    public class SiteHelperService : ISiteHelperService
+    public class SiteService : ISiteService
     {
         public IPublishedContent GetNewsSection()
         {
@@ -302,19 +301,36 @@ using Umbraco8.Services;
 
 namespace Umbraco8.Composers
 {
-    public class RegisterSiteHelperServiceComposer : IUserComposer
+    public class RegisterSiteServiceComposer : IUserComposer
     {
         public void Compose(Composition composition)
-        {         
-            composition.Register<ISiteHelperService, SiteHelperService>(Lifetime.Request);          
+        {
+            // if your service makes use of the current UmbracoContext, eg AssignedContentItem - register the service in Request scope    
+            // composition.Register<ISiteService, SiteService>(Lifetime.Request);
+            // if not then it is better to register in 'Singleton' Scope
+            composition.Register<ISiteService, SiteService>(Lifetime.Singleton);         
         }
     }
 }
 ```
+#### Lifespans
 
-Note we register the service in 'Lifetime.Request' scope - as we'll be making use of the transient UmbracoContext
+**"Transient"** services can be injected into "Transient" and below ⤵. (i.e. "Transient" services can be injected anywhere)
+- "Transient" means that anytime this type is needed a brand new instance of this type will be created.
 
-Now, implementing the service, we can inject Umbraco's core helper IPublishedContentQuery (the same as you would use when writing Umbraco.Content(1234)) into our custom service, to use in order to locate the special site pages we are after:
+**"Singleton"** services can be injected into "Singletons" and below ⤵.
+- "Singleton" means that only a single instance of this type will ever be created for the lifetime of the application.
+
+**"Request"** services can be injected into "Request" based lifespans only
+- "Request" based lifetime means anytime this type is needed one new instance of this type will be created for the duration of the current HttpRequest. The object will be disposed of at the end of the current HttpRequest.
+
+#### Implementing the service
+
+##### 1 - The service will ONLY be used in a Controller or View
+
+Although you already have access to the UmbracoHelper IPublishedTypedQuery via the Umbraco property in these locations, you can avoid repeating common implementation logic in multiple controllers and views by consolidating these implementations into a custom service, if you are very familiar with IPublishedContentQuery injecting this into the custom service is simple, but the caveat is you can only use this service in a controller/view.
+
+For example, locating the 'special' pages in the site using the familar syntax of the IPublishedContentQuery
 
 ```csharp
 using System.Linq;
@@ -323,40 +339,76 @@ using Umbraco.Web;
 
 namespace Umbraco8.Services
 {
-    public class SiteHelperService : ISiteHelperService
+    public class SiteService : ISiteService
     {
         private readonly IPublishedContentQuery _contentQuery;
-        public SiteHelperService(IPublishedContentQuery contentQuery)
+        public SiteService(IPublishedContentQuery contentQuery)
         {
             _contentQuery = contentQuery;
         }
         public IPublishedContent GetNewsSection()
         {
             var siteRoot = _contentQuery.ContentAtRoot().FirstOrDefault();
-            var newsSection = siteRoot.Children(f => f.ContentType.Alias == "newsSection").FirstOrDefault();
+            var newsSection = siteRoot != null ? siteRoot.FirstChild(f => f.ContentType.Alias == "newsSection") : default(IPublishedContent);
             return newsSection;
         }
         public IPublishedContent GetContactUsPage()
         {
             var siteRoot = _contentQuery.ContentAtRoot().FirstOrDefault();
-            var contactUs = siteRoot.Children(f => f.ContentType.Alias == "contactUs").FirstOrDefault();
+            var contactUs = siteRoot != null ? siteRoot.FirstChild(f => f.ContentType.Alias == "contactUs")  : default(IPublishedContent);
             return contactUs;
         }
     }
 }
 ```
 
-:::Note
-If we planned to use our SiteHelperService outside of a request where UmbracoContext is not available we'd use the UmbracoContextFactory + EnsureUmbracoContext() methods described above to access the content cache.
-:::
+##### 2 - Recommended approach: the custom service can be used anywhere in Umbraco!
 
-:::Note
-Check if _contentQuery.SingleAtXPath("root/homePage/contactUs") is faster... (it would be in V7)
-:::
+```csharp
+using System.Linq;
+using Umbraco.Core.Models.PublishedContent;
+using Umbraco.Web;
 
-#### Using the custom SiteHelperService inside a Controller
+namespace Umbraco8.Services
+{
+    public class SiteService : ISiteService
+    {
+        private readonly IUmbracoContextFactory _umbracoContextFactory;
+        public SiteService(IUmbracoContextFactory umbracoContextFactory)
+        {
+              _umbracoContextFactory = umbracoContextFactory;
+        }
+       public IPublishedContent GetNewsSection()
+        {
+            IPublishedContent newsSection = default(IPublishedContent);
+            using (UmbracoContextReference umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext())
+            {
+                IPublishedContentCache contentCache = umbracoContextReference.UmbracoContext.ContentCache;
+                IPublishedContent siteRoot = contentCache.GetAtRoot().FirstOrDefault();
+                newsSection = siteRoot.FirstChild(f => f.ContentType.Alias == "newsSection");
+            }
+            return newsSection;
+        }
+        public IPublishedContent GetContactUsPage()
+        {
+            IPublishedContent contactUsPage = default(IPublishedContent);
+            using (UmbracoContextReference umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext())
+            {
+                IPublishedContentCache contentCache = umbracoContextReference.UmbracoContext.ContentCache;
+                IPublishedContent siteRoot = contentCache.GetAtRoot().FirstOrDefault();
+                contactUsPage = siteRoot.FirstChild(f => f.ContentType.Alias == "contactUs");
+            }
+            return contactUsPage;
+        }
+    }
+}
+```
 
-Because we've registered the SiteHelperService with Umbraco's underlying DI framework we can inject the service into our controller's constructor, in the same way as 'core' Services and Helpers:
+The second approach can seem 'different' or more complex at first glance, but it is just the syntax and method names that are slightly different... it enables the registering of the service in Singleton Scope, and it's use outside of controllers and views.
+
+#### Using the custom SiteService inside a Controller
+
+Because we've registered the SiteService with Umbraco's underlying DI framework we can inject the service into our controller's constructor, in the same way as 'core' Services and Helpers.
 
 ```csharp
 using System.Web.Mvc;
@@ -369,28 +421,67 @@ namespace Umbraco8.Controllers
 {
     public class BlogPostController : Umbraco.Web.Mvc.RenderMvcController
     {         
-        private readonly ISiteHelperService _siteHelperService;
-        private readonly ILogger _logger;
+        private readonly ISiteService _siteService;
 
-        public BlogPostController(ILogger logger, ISiteHelperService siteHelperService)
+        public BlogPostController(ISiteService siteService)
         {
-            _logger = logger;
-            _siteHelperService = siteHelperService; 
+            _siteService = siteService; 
         }
 
         public override ActionResult Index(ContentModel model)
         {
-            var newsSection = _siteHelperService.GetNewsSection();
+            var newsSection = _siteService.GetNewsSection();
             var blogPostViewModel = new BlogPostViewModel(model);
             blogPostViewModel.NewsSection = newsSection;
             //etc          
             // Do other stuff here!, then return the custom viewmodel to the template view.
             return CurrentTemplate(blogPostViewModel);
-
         }
     }
 }
 ```
+
+:::warning
+This isn't truly 'best practice' when using DI. This 'only works' in Umbraco because when a dependency for the base RenderMvcController isn't supplied via a constructor, Umbraco 'falls back' and uses the Service Locator pattern to inject the missing elements. This enables developers to choose to ignore DI, but if trying to following DI best practice, and to make the controller 'unit testable' - use the following example instead.
+:::
+
+```csharp
+using System.Web.Mvc;
+using Umbraco.Web.Models;
+using Umbraco8.Services;
+using Umbraco.Core.Logging;
+
+
+namespace Umbraco8.Controllers
+{
+    public class BlogPostController : Umbraco.Web.Mvc.RenderMvcController
+    {         
+        private readonly ISiteService _siteService;
+
+        public BlogPostController(IGlobalSettings globalSettings, IUmbracoContextAccessor umbracoContextAccessor, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, UmbracoHelper umbracoHelper, ISiteService siteService)
+            : base(globalSettings, umbracoContextAccessor, services, appCaches, profilingLogger, umbracoHelper)
+        {
+            _siteService = siteService; 
+        }
+
+        public override ActionResult Index(ContentModel model)
+        {
+            var newsSection = _siteService.GetNewsSection();
+            var blogPostViewModel = new BlogPostViewModel(model);
+            blogPostViewModel.NewsSection = newsSection;
+            //etc          
+            // Do other stuff here!, then return the custom viewmodel to the template view.
+            return CurrentTemplate(blogPostViewModel);
+        }
+    }
+}
+```
+
+:::tip
+You can easily generate this ctor in Visual Studio by using either ctrl + . or alt + enter when your cursor is on the base class:
+
+![generate di constructor parameters in visual studio](images/vs-di-constructor-generation-tip.gif)
+:::
 
 #### Using the SiteHelperService inside a View
 
