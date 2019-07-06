@@ -34,7 +34,7 @@ Inside a view/template or partial view that inherits from UmbracoViewPage, acces
 ```
 ## Accessing Core Services and Helpers in a Controller
 
-Inside a [custom Controller](../../Reference/Routing/custom-controllers) access is provided to Services via the `Services` property ([ServiceContext](../../Reference/Management/Services/)) and the `UmbracoHelper` via the `Umbraco` property ([UmbracoHelper](../../Reference/Querying/UmbracoHelper))
+Inside a [custom Controller](../../Reference/Routing/custom-controllers.md) access is provided to Services via the `Services` property ([ServiceContext](../../Reference/Management/Services/)) and the `UmbracoHelper` via the `Umbraco` property ([UmbracoHelper](../../Reference/Querying/UmbracoHelper))
 
 ```csharp
 using System.Collections.Generic;
@@ -130,14 +130,14 @@ namespace Umbraco8.Components
 }
 ```
 
-See documentation on [Composing](../../Composing/) for further examples and information on Components and Composition.
+See documentation on [Composing](../Composing/) for further examples and information on Components and Composition.
 
 ### Accessing Published Content outside of a Http Request
 
 Trying to inject types that are based on an Http Request such as `UmbracoHelper` or `IPublishedContentQuery` into classes that are not based on an Http Request will trigger a boot error. However, there is a technique that allows the querying of the Umbraco Published Content, using the `UmbracoContextFactory` and calling `EnsureUmbracoContext()`.
 
-In this example, when a page is unpublished, instead of a 404 occurring for the content when the url is requested in the future, we might want instead to serve a 410 'page gone' status code, we handle the unpublishing event, access the Published Content Cache (the item won't have been removed from the cache yet) determine it's 'published url' and then store for later use in the 'serving the 410' mechanism.
-(An [IContentFinder](../../reference/routing/request-pipeline/IContentFinder.md) (not shown here) could be placed in the ContentFinder queue just before a 404 is served to lookup the incoming Url against the stored location, and serve a 410 status code if the url of the page had been prevously published)
+In this example, when a page is unpublished, instead of a 404 occurring for the content when the url is requested in the future, we might want to serve a 410 'page gone' status code instead. We handle the Unpublishing Event of the ContentService, access the Published Content Cache (the item won't have been removed from the cache yet) determine it's 'published url' and then store for later use in any 'serving the 410' mechanism.
+(An [IContentFinder](../../Reference/Routing/Request-Pipeline/IContentFinder.md) (not shown here) could be placed in the ContentFinder ordered collection, just before a 404 is served, to lookup the incoming request against the stored location of 410 urls, and serve the 410 status request code if a match is found for the prevously published item.)
 
 ```csharp
 
