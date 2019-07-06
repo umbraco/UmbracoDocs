@@ -44,7 +44,7 @@ To set an icon for the Document Type click the document icon in the top left cor
 
 ![Choosing an icon for the Document Type](images/v8Screenshots/docTypeIcon.png)
 
-Go to the __Permissions__ tab and tick the __Yes - allow content of this type in the root__ checkbox and save the Document Type by clicking save in the bottom right corner.
+Go to the __Permissions__ tab and tick the __Allow as root__ toggle and save the Document Type by clicking save in the bottom right corner.
 
 ![Allow at root](images/v8Screenshots/docTypePermissions.png)
 
@@ -81,9 +81,9 @@ Give the property a name, the name will be shown to the editor so make relevant 
 Keyboard shortcuts are available when you are working with the Document Type editor. To see which shortcuts are available simply click <kbd>ALT</kbd> + <kbd>SHIFT</kbd> + <kbd>K</kbd>.
 
 ##### Property editors
-Clicking __Add editor__ will open the Select editor dialog. Here you can choose between all the __Available editors__ (this will create a new configuration) or __Reuse__ already configured editors. To make it easier to find what you need use the search field to filter by typing "Rich". Filtering will display configured properties first (under Reuse) and all available editors under that.
+Clicking __Add editor__ will open the Select editor dialog. Here you can choose between all the available editors on the __Create new__ tab (this will create a new configuration) or already configured editors in the __Use existing__ tab. To make it easier to find what you need use the search field to filter by typing "Rich". Filtering will display configured properties first (under __Use existing__) and all available editors under that.
 
-Select the __Rich Text editor__ under Available editors.
+Select the __Rich Text editor__ under __Create new__.
 
 ![Choosing the Rich Text editor](images/v8Screenshots/selectEditor.png)
 
@@ -98,7 +98,7 @@ This will let you configure the editor settings - the Rich Text editor for this 
 
 When you are happy with the settings click __Submit__.
 
-Checking the __Mandatory__ checkbox makes the property mandatory and the content cannot be saved if no value is entered (into the Richtext editor in this case). You have the option to add additional validation by adding a regular expression in the __Validation__ field.
+Ticking the __Mandatory__ toggle makes the property mandatory and the content cannot be saved if no value is entered (into the Richtext editor in this case). You have the option to add additional validation by selecting a predefined validation method under the __Custom validation__ dropdown (such as email, number or URL) or by selecting custom validation and adding a regular expression.
 
 Submit the property and save the Document Type. If you go to the __Content section__ and click on the Home node you will now see the Content group with the Body Text property.
 

@@ -65,3 +65,18 @@ These timeout settings default to 8 minutes, but if you are transferring a lot o
    <deploy sessionTimeout="1200" sourceDeployTimeout="1200" httpClientTimeout="1200" databaseCommandTimeout="1200" />
 </settings>
 ```
+
+## Transfer Forms data as content
+
+In order for your Cloud project to handle Forms data as content, you'll need to add the following setting to `UmbracoDeploy.settings.config`:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+   <forms transferFormsAsContent="true" />
+</settings>
+```
+
+:::note
+This only needs to be done, if your Cloud project was created **before** June 18th 2019.
+:::

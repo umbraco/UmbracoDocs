@@ -14,7 +14,7 @@ The first step is to get a reference to the `UserService`. This is useful, as we
     // Get a reference to the user service
     IUserService us = ApplicationContext.Services.UserService;
     
-If you're using something else than a Razor view, the approach for accessing the user service may be a little different. You can see the [parent page](./) for more examples.
+If you're using something else than a Razor view, the approach for accessing the user service may be a little different. You can see the [parent page](index.md) for more examples.
     
 ### Creating the user
 With the reference in place, we can now create the user:

@@ -2,7 +2,8 @@
 versionFrom: 7.0.0
 ---
 
-# Transferring Content and Media
+# Transferring Content, Media and Forms
+
 After deploying changes to meta data, it's time to transfer your content and media. This is done from the Umbraco backoffice.
 
 Content and media transfers are very flexible which means you have complete control over which content nodes and/or media items you want to transfer - all in one go, a few at a time or just a single node.
@@ -12,6 +13,7 @@ Transferring content will overwrite any existing nodes on the target environment
 **Important**: Content and Media transfers will only work if you've deployed all changes to your meta data before hand. Please refer to our documentation on how to deploy meta data from either [Local to Cloud](../Local-to-Cloud) or [Cloud to Cloud](../Cloud-to-Cloud).
 
 ## Step-by-step
+
 Let’s go through a content transfer step by step. Imagine you’ve finished working on new content for your project locally and you are ready to transfer the changes to the Cloud. 
 
 You want to transfer the whole site so you start from the `Home` node and choose to transfer everything under it:
@@ -34,8 +36,16 @@ You want to transfer the whole site so you start from the `Home` node and choose
 Media items are transferred the same way as content:
 
 1. In the Media section *Right-click* the items you want to transfer and choose **Queue for transfer** 
-  * or simply *right-click* the top of the Media section to transfer all you media at once.
-2. Go to the Deployment dashboard in the Content section to see the items you've queued for transfer and to transfer your items.
+  * or *right-click* the top of the Media section to transfer all you media at once.
+2. Go to the Deployment dashboard in the Content section to see the items you've queued for transfer and to transfer your items
+
+### Umbraco Forms
+
+Forms are transferred the same way as content and media:
+
+1. In the Forms section *Right-click* the items you want to transfer and choose **Queue for transfer** 
+  * or *right-click* the top of the Forms section to transfer all your Forms at once.
+2. Go to the Deployment dashboard in the Content section to see the items you've queued for transfer and to transfer your items
 
 ## Schema Mismatches
 

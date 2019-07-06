@@ -23,7 +23,7 @@ All new Live sites created on Cloud since version 7.12 will automagically have a
 
 You will not get an Umbraco Latch certificate if you are using a CDN service (e.g. CloudFlare) on your Umbraco Cloud project.
 
-In that case you can manually add a TLS certificate to your project instead. Read more about how to do that in the [Upload certificates manually](Security-certificates) article.
+In that case you can manually add a TLS certificate to your project instead. Read more about how to do that in the [Upload certificates manually](../Manage-Hostnames/Security-Certificates/) article.
 
 :::note
 Umbraco Latch can issue 5 certificates for a single domain per week. If this limit is exceeded, you will have to wait a week in order to regenerate the certificate for the domain.
