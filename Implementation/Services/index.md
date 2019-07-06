@@ -136,53 +136,69 @@ See documentation on [Composing](../../Composing/) for further examples and info
 
 Trying to inject types that are based on an Http Request such as `UmbracoHelper` or `IPublishedContentQuery` into classes that are not based on an Http Request will trigger a boot error. However, there is a technique that allows the querying of the Umbraco Published Content, using the `UmbracoContextFactory` and calling `EnsureUmbracoContext()`.
 
+In this example, when a page is unpublished, instead of a 404 occurring for the content when the url is requested in the future, we might want instead to serve a 410 'page gone' status code, we handle the unpublishing event, access the Published Content Cache (the item won't have been removed from the cache yet) determine it's 'published url' and then store for later use in the 'serving the 410' mechanism.
+(An [IContentFinder](../../reference/routing/request-pipeline/IContentFinder.md) (not shown here) could be placed in the ContentFinder queue just before a 404 is served to lookup the incoming Url against the stored location, and serve a 410 status code if the url of the page had been prevously published)
+
 ```csharp
-using System.Collections.Generic;
+
 using Umbraco.Core.Composing;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Core.Services;
 using Umbraco.Core.Services.Implement;
 using Umbraco.Web;
+using Umbraco.Web.PublishedCache;
 
 namespace Umbraco8.Components
 {
     //adds the component to Umbraco composition's list of components
-    public class PublishEventsComposer : ComponentComposer<PublishEventsComponent>
+    public class HandleUnPublishingEventComposer : ComponentComposer<HandleUnPublishingEventComponent>
     {
 
     }
-    //the component safely accessing the published content cache
-    public class PublishEventsComponent : IComponent
+    public class HandleUnPublishingEventComponent : Umbraco.Core.Composing.IComponent
     {
         private readonly IUmbracoContextFactory _umbracoContextFactory;
+        private readonly ICustomFourTenService _customFourTenService;
 
-        public PublishEventsComponent(IUmbracoContextFactory umbracoContextFactory)
+        public HandleUnPublishingEventComponent(IUmbracoContextFactory umbracoContextFactory, ICustomFourTenService customFourTenService)
         {
             _umbracoContextFactory = umbracoContextFactory;
+            _customFourTenService = customFourTenService;
         }
 
         public void Initialize()
         {
-            ContentService.Published += ContentService_Published;
+            ContentService.Unpublishing += ContentService_Unpublishing;
         }
 
-        private void ContentService_Published(IContentService sender, Umbraco.Core.Events.ContentPublishedEventArgs e)
+        private void ContentService_Unpublishing(Umbraco.Core.Services.IContentService sender, Umbraco.Core.Events.PublishEventArgs<Umbraco.Core.Models.IContent> e)
         {
-            //first call EnsureUmbracoContext
-            using (var umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext())
+            foreach (var item in e.PublishedEntities)
             {
-                //the UmbracoContextReference provides access to the ContentCache
-                var contentCache = umbracoContextReference.UmbracoContext.ContentCache;
-                //query the published content cache
-                IEnumerable<IPublishedContent> rootNodes = contentCache.GetAtRoot();
-                //retrieve a particular item with id 1234 from the published content cache
-                IPublishedContent particularItem = contentCache.GetById(1234);
+                if (item.ContentType.Alias == "blogpost")
+                {
+                    //for each unpublished item, we want to find the url that it was previously 'published under' and store in a database table or similar
+                    using (UmbracoContextReference umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext())
+                    {
+                        //the UmbracoContextReference provides access to the ContentCache
+                        IPublishedContentCache contentCache = umbracoContextReference.UmbracoContext.ContentCache;
+                        // item being unpublished will still be in the cache, as unpublishing event fires before the cache is updated.
+                        IPublishedContent soonToBeUnPublishedItem = contentCache.GetById(item.Id);
+                        if (soonToBeUnPublishedItem != null)
+                        {
+                            string previouslyPublishedUrl = soonToBeUnPublishedItem.Url;
+                            if (!String.IsNullOrEmpty(previouslyPublishedUrl) && previouslyPublishedUrl != "#")
+                            {
+                                _customFourTenService.InsertFourTenUrl(previouslyPublishedUrl, DateTime.UtcNow);
+                            }
+                        }
+                    }
+                }
             }
         }
-
         public void Terminate()
         {
-         //called when the Umbraco application shuts down.
+            //called when the Umbraco application shuts down.
         }
     }
 }
@@ -205,7 +221,7 @@ and insde a UrlProvider the GetUrl method has the current UmbracoContext injecte
 ```
 
 :::Note
-It is still possible to inject services into IContentFinder's. IContentFinders are singletons, but no need to do so in order to access the Published Content Cache.
+It is still possible to inject services into IContentFinder's. IContentFinders are singletons, but the example is showing you do not 'need to' in order to access the Published Content Cache!
 :::
 
 ## Custom Services and Helpers
