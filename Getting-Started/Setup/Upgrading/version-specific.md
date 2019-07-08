@@ -18,7 +18,7 @@ In Umbraco 8 we have added improvements and updated dependencies as well as done
 
 ### Migrating content from v7 to v8
 
-If you have an Umbraco 7 site you can migrate the content to an Umbraco 8.1+ site. Read how to do it in our [Content migration to v8 guide](upgrading-to-v8.md).
+If you have an Umbraco 7 site you can migrate the content to an Umbraco 8.1+ site. Read how to do it in our [Content migration to v8 guide](migrating-to-v8.md).
 
 ## Version 7.7.0
 
