@@ -13,7 +13,7 @@ Multi Url Picker allows an editor to easily pick and sort multiple urls. This pr
 
 ## Data Type Definition Example
 
-![Related Links Data Type Definition](images/Multy-Url-Picker-DataType-8.1.png)
+![Related Links Data Type Definition](images/Multy-Url-Picker-DataType-8_1.png)
 
 ## Content Example 
 
