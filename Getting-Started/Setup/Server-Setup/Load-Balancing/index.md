@@ -47,6 +47,7 @@ _The below section is common for all load balancing configurations, ensure that 
 		* 	[http://www.betterbuilt.com/machinekey/](http://www.betterbuilt.com/machinekey/)
 		* 	[http://www.developerfusion.com/tools/generatemachinekey/](https://www.developerfusion.com/tools/generatemachinekey/)
 	* 	Then you need to update your web.config accordingly, note that the validation/decryption types may be different for your environment depending on how you've generated your keys.
+    * Once the machine key has been changed, don't forget you will need to **reset your password** in order to log in to the backoffice.
 
 ```xml
 <configuration>
