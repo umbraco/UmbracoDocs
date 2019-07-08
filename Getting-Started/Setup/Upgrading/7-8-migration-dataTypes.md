@@ -5,11 +5,11 @@ versionFrom: 7.0.0
 # Migrating data types
 
 When migrating content from Umbraco 7 to Umbraco 8, the data type 'pre-value' structure has changed.
-In Umbraco 8, the term 'pre-values' no longer exist and instead its referred to as `property editor configuration`.
+In Umbraco 8, the term 'pre-values' no longer exist and instead it is referred to as `property editor configuration`.
 
 In Umbraco 8 property editor configuration is a strongly typed object. There are plenty of examples in the [Umbraco-CMS codebase](https://github.com/umbraco/Umbraco-CMS/blob/v8/dev/src/Umbraco.Web/PropertyEditors/ContentPickerConfiguration.cs).
 
-This configuration is stored differently in Umbraco 8 than it was in Umbraco 7. In Umbraco 7, each pre-value property was stored as a different row in a different database table. This was hugely inneficient and so in Umbraco 8 this is simplified and property editor configuration is stored as the JSON serialized version of the strongly typed configuration object.
+This configuration is stored differently in Umbraco 8 than it was in Umbraco 7. In Umbraco 7, each pre-value property was stored as a different row in a different database table. This was hugely inefficient and so in Umbraco 8 this is simplified and property editor configuration is stored as the JSON serialized version of the strongly typed configuration object.
 
 When upgrading from Umbraco 7 to Umbraco 8, Umbraco has no way of knowing how any custom property editors have intended to structure their configuration data. During the upgrade, Umbraco will just convert the key/value pairs from the old pre-value database table into a serialized JSON version of those values. There's a reasonable chance that the end result of this data conversion is not compatible with the custom property editor.
 
@@ -38,6 +38,7 @@ public class PreValueMigratorComposer : IUserComposer
     }
 }
 ```
+When running the migrations and encountering a custom configuration, Umbraco will now utilize the registered PreValueMigrator when attempting to convert the old pre-values into the new JSON format.
 
 ## #2 Update your Angular configuration (pre-value) and property editor
 
