@@ -14,6 +14,7 @@ If you feel something is missing here or you want to help out documenting some o
 
 ## Finished Umbraco 8 Documentation:
 
+* [Content migration from Umbraco 7 to Umbraco 8](Getting-Started/Setup/Upgrading/migrating-to-v8.md)
 * [Azure Blob Storage guide](Extending/FileSystemProviders/Azure-Blob-Storage/)
 * [Umbraco 8 API Documentation: CSharp](https://our.umbraco.com/apidocs/v8/csharp/)
 * [Umbraco 8 API Documentation: Angular](https://our.umbraco.com/apidocs/v8/ui/)
