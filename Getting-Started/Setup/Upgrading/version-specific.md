@@ -22,11 +22,13 @@ Additionally 8.1 replaces AutoMapper with [UmbracoMapper](../../../Reference/Map
 
 ## Version 7 to version 8
 
-There is no direct upgrade path, but it is possible to migrate content from Umbraco 7 sites to Umbraco 8 sites. We made a tool that will enable you to move your content (content/media/members) from an Umbraco 7 site to an Umbraco 8 site. You can read more about how it works in the [migrating content from Umbraco 7 to 8](migrating-to-v8.md) article.
+There is no direct upgrade path from Umbraco 7 to Umbraco 8, but it is be possible to migrate content from Umbraco 7 sites to Umbraco 8 sites. We have [added content migrations](#migrating-content-from-v7-to-v8) in Umbraco 8.1.0 that will enable you to move your content (content/media/members) from an Umbraco 7 site to an Umbraco 8 site.
 
 The reason why it is not possible to upgrade an Umbraco 7 site to Umbraco 8 is is that the codebase has been fundamentally updated in Umbraco 8. A lot of outdated code and technology has been removed and instead new, faster and more secure technology has been implemented throughout Umbraco 8. It simply wouldn’t be possible to take this giant leap while maintaining full compatibility with Umbraco 7.
 
 In Umbraco 8 we have added improvements and updated dependencies as well as done a thorough clean-up to make it simpler for you to work with and extend your Umbraco project.
+### Migrating content from v7 to v8
+If you have an Umbraco 7 site you can migrate the content to an Umbraco 8.1+ site. Read how to do it in our [Content migration to v8 guide](migrating-to-v8.md).
 
 ## Version 7.7.0
 

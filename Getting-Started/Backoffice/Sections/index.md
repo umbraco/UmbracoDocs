@@ -46,6 +46,10 @@ The Settings tree consists of:
 - Stylesheets (`.css` files)
 - Scripts (`.js` files)
 
+:::note
+**Dictionary items** have been moved from the Settings section to the Translation section.
+:::
+
 ## Packages
 In this section you can browse and install packages into your Umbraco solution. You can also get an overview of all installed packages as well as uninstall packages you no longer need.
 
@@ -60,6 +64,12 @@ You can install Umbraco Forms directly from the Backoffice by clicking the insta
 
 ## Translation
 This is the section where you create and manage your dictionary items.
+
+:::note
+This section is by default not accessible to any User Groups.
+
+Access to the section can be configured under User Groups in the User section.
+:::
 
 ## Help sections
 In the top-right corner you'll find a search tool, which is also accessible by hitting `CTRL + Space` on your keyboard.

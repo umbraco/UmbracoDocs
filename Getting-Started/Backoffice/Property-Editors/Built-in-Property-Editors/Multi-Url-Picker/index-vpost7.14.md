@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.1.0
+versionFrom: 7.14.0
 ---
 
 # Multi Url Picker
@@ -13,7 +13,7 @@ Multi Url Picker allows an editor to easily pick and sort multiple urls. This pr
 
 ## Data Type Definition Example
 
-![Related Links Data Type Definition](images/Multy-Url-Picker-DataType-8.1.png)
+![Related Links Data Type Definition](images/Multy-Url-Picker-DataType-v8.png)
 
 ## Content Example 
 
@@ -21,12 +21,12 @@ Multi Url Picker allows an editor to easily pick and sort multiple urls. This pr
 
 ## MVC View Example - [value converters enabled](../../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
 
-## Typed:
+### Typed:
 
 ```csharp
 @using Umbraco.Web.Models
 @{
-    var links = Model.Value<IEnumerable<Link>>("footerLinks");
+    var links = Model.Content.GetPropertyValue<IEnumerable<Link>>("footerLinks");
     if (links.Any())
     {
         <ul>
@@ -38,12 +38,11 @@ Multi Url Picker allows an editor to easily pick and sort multiple urls. This pr
     }
 }
 ```
-
 If `Max number of items` is configured to `1`
 ```csharp
 @using Umbraco.Web.Models
 @{
-    var link = Model.Value<Link>("link");
+    var link = Model.Content.GetPropertyValue<Link>("link");
     if (link != null)
     {
       <li><a href="@link.Url" target="@link.Target">@link.Name</a></li>

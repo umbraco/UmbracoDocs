@@ -1,5 +1,6 @@
 ---
-versionFrom: 8.1.0
+versionFrom: 8.0.0
+versionTo: 8.1.0
 ---
 
 # Media Picker #
@@ -12,7 +13,7 @@ This property editors returns a single item if the "Pick multiple items" data ty
 
 ## Data Type Definition Example
 
-![Media Picker Data Type Definition](images/Media-Picker-DataType-8.1.png)
+![Media Picker Data Type Definition](images/Media-Picker-DataType-v8.png)
 
 ## Content Example 
 
@@ -29,6 +30,7 @@ This property editors returns a single item if the "Pick multiple items" data ty
     }
 }
 ```
+
 
 ## Typed Example (multiple disabled):
 
