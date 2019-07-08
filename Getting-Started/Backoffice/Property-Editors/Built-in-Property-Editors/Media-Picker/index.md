@@ -12,7 +12,7 @@ This property editors returns a single item if the "Pick multiple items" data ty
 
 ## Data Type Definition Example
 
-![Media Picker Data Type Definition](images/Media-Picker-DataType-8.1.png)
+![Media Picker Data Type Definition](images/Media-Picker-DataType-8_1.png)
 
 ## Content Example 
 
