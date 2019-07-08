@@ -40,7 +40,7 @@ Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. 
 
 ## Data Type Definition Example
 
-![Multinode Treepicker Data Type Definition](images/Multinode-Treepicker-DataType-8.1.png)
+![Multinode Treepicker Data Type Definition](images/Multinode-Treepicker-DataType-8_1.png)
 
 ## Content Example 
 
