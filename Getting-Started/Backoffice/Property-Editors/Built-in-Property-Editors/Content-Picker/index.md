@@ -12,7 +12,7 @@ The content picker opens a panel to pick a specific page from the content struct
 
 ## Data Type Definition Example
 
-![Content Picker Data Type Definition](images/Content-Picker-DataType-8.1.png)
+![Content Picker Data Type Definition](images/Content-Picker-DataType-8_1.png)
 
 ## Content Example
 
