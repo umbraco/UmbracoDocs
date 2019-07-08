@@ -59,7 +59,7 @@ It is a fairly simple site, with a bit of content:
 
 Following the [general upgrade instructions](general.md) we will now upgrade via Nuget until we get to this point:
 
-![Upgrading to v7.14](images/upgrading-7.14.png)
+![Upgrading to v7.14](images/upgrading-7_14.png)
 
 Once it is upgraded and you have verified everything is working, move on to step 2.
 
@@ -67,7 +67,7 @@ Once it is upgraded and you have verified everything is working, move on to step
 
 First thing to do is spin up a fresh new Umbraco 8.1+ site. Make sure it all works and that no content is there (_hint:_ choose not to install starter kit).
 
-![Fresh 8.1 site](images/fresh-8.1-site.png)
+![Fresh 8.1 site](images/fresh-8_1-site.png)
 
 Now you should take a backup of your database from the **Umbraco 7.14 site**. You can then add the information for the backup database and add that to the connection string for the  **Umbraco 8.1 site**. Do note that if you are running SQL CE, you will have to copy the database over to the new site as well.
 
@@ -83,11 +83,11 @@ If you have customized your `UsersMembershipProvider` on your Umbraco 7 site you
 
 When you start the site it will ask you to login and then show you this screen:
 
-![Upgrade database to 8.1](images/upgrade-to-8.1.png)
+![Upgrade database to 8.1](images/upgrade-to-8_1.png)
 
 That is all! Now the automatic migration will take over, and after a little bit you can log in and see your content:
 
-![Content is on 8.1](images/content-on-8.1.png)
+![Content is on 8.1](images/content-on-8_1.png)
 
 :::note
 Please be aware this is just a content migration. If you go to the frontend after doing this nothing will work!
