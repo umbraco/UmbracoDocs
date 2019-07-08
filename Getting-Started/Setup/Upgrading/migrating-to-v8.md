@@ -20,6 +20,11 @@ The content migration tool is a database migration, which is made for the databa
 As Umbraco 8 doesn't support MySQL databases the migration will not work when moving from an Umbraco 7 site using MySQL to Umbraco 8 on SQL server for example.
 The database types that are supported are SQL Server and SQL CE.
 
+### Known issues
+
+Feedback from user testing has shown that some databases are harder to migrate than others.
+We are collecting [a list of these known issues on our GitHub Issue Tracker](https://github.com/umbraco/Umbraco-CMS/issues?utf8=%E2%9C%93&q=label%3Acategory%2Fcontent-migration+). We will work on these for the next upcoming releases.
+
 ### Third party property editors
 
 The migration will transform the data stored in third party editors as well, however it will simply be stored as it was in Umbraco 7. If the structure has changed for Umbraco 8 or the property editor doesn't exist you will still be able to find the data in the database, but you would not see it in the backoffice.
@@ -42,7 +47,7 @@ It is highly recommended to clean up your site before running this as it will be
 
 In the following guide we will try to migrate the content of an Umbraco 7.13.1 site to Umbraco 8.1.0.
 
-### Step 1: Upgrading to 7.14
+### Step 1: Upgrading to 7.14+
 
 Before the content migration can start the site has to be 7.14+. A good idea would be to **always take a database backup** before doing an upgrade, and then check the [version specific upgrade instructions](version-specific.md).
 
@@ -68,11 +73,13 @@ Now you should take a backup of your database from the **Umbraco 7.14 site**. Yo
 
 Once the connection string is set, the final step is to change the Umbraco version number in the web.config on the **Umbraco 8.1 site**, to say 7.14.0. This will mean that it thinks there is an upgrade as the Umbraco dlls are 8.1 but the config says 7.14 it needs to run the migration.
 
+![Set Umbraco version in the web.config](images/set-umbraco-version.png)
+
+As you can see in the screenshot, the version will be set to 8.1.0, and you will need to change it to the version you are currently migrating from.
+
 :::warning
 If you have customized your `UsersMembershipProvider` on your Umbraco 7 site you will need to copy that over to the 8.1 web.config as well. Additionally you will need to update the `type` attribute to be `type="Umbraco.Web.Security.Providers.UsersMembershipProvider, Umbraco.Web"`.
 :::
-
-![Set Umbraco version in the web.config](images/set-umbraco-version.png)
 
 When you start the site it will ask you to login and then show you this screen:
 
