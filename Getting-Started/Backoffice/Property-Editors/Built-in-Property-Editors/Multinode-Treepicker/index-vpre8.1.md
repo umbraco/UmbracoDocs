@@ -1,5 +1,6 @@
 ---
-versionFrom: 8.1.0
+versionFrom: 8.0.0
+versionTo: 8.1.0
 ---
 
 # Multinode Treepicker
@@ -40,7 +41,7 @@ Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. 
 
 ## Data Type Definition Example
 
-![Multinode Treepicker Data Type Definition](images/Multinode-Treepicker-DataType-8.1.png)
+![Multinode Treepicker Data Type Definition](images/Multinode-Treepicker-DataType-v8.png)
 
 ## Content Example 
 
