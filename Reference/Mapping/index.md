@@ -31,7 +31,7 @@ Mapping with the UmbracoMapper works in ways very similar to AutoMapper:
 var target = umbracoMapper.Map<ITarget>(source);
 
 // assuming both source and target already exists
-target = umbracoMapper.Map<source, target);
+target = umbracoMapper.Map(source, target);
 ```
 
 The UmbracoMapper class also defines explicit methods to map enumerables:
