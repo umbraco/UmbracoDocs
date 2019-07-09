@@ -18,6 +18,16 @@ Should something fail during the migration, the Development environment can alwa
 * Clone down the Umbraco 7 Cloud site
 * Run the project locally and **restore** Content and Media
 
+:::notes
+If Umbraco Forms is used on the project, there are a few additional steps to take:
+
+* Check `UmbracoDeploy.settings.config`
+* Make sure the value of `forms transferFormsAsContent` is `true`
+    * See [Umbraco Forms on Cloud](../../Deployment/Umbraco-Forms-on-Cloud) for reference
+* If the setting is `false`:
+    * Change to `true` and deploy the change to the Umbraco Cloud environments
+:::
+
 * Clone down the Umbraco 8 Cloud site
 
 * Copy `~/App_Data/Umbraco.sdf` / `~/App_Data/Umbraco.mdf` from the cloned Umbraco 7 Cloud site
@@ -45,6 +55,9 @@ The frontend will **not** work at this point, as none of the Templates have been
     * `~/Media`
     * Any files / folders related to Stylesheets and JavaScripts
     * Any custom files / folders the Umbraco 7 Cloud project uses, that isn't in the `~/Config` or `~/bin`
+* If Umbraco Forms is used on the Umbraco 7 Cloud project:
+    * Copy `~/App_Data/UmbracoForms` into the Umbraco 8 Cloud project
+
 * Config files needs to be carefully merged, to ensure any custom settings are migrating while none of the default configuration for Umbraco 8 is changed
 
 * Run the Umbraco 8 Cloud site locally
@@ -102,3 +115,4 @@ To track the process, keep an eye on the deploy markers in `site/wwwroot/data` u
 
 ## Step 5: Post-migration checks and going live
 
+* Setup rewrite
