@@ -64,4 +64,18 @@ The frontend will **not** work at this point, as none of the Templates have been
 
 ## Step 3: Setup Template files for Umbraco 8
 
-* 
+In Umbraco 8 we've changed how published content is rendered through Template files. Due to this, it will be necessary to update all Template files (`.cshtml`) to reflect these changes.
+
+Read more about these changes in the [IPublishedContent section of the Documentation](../../Reference/Querying/IPublishedContent/).
+
+* Go through the Template files one by one and make the necessary changes
+* Go through Partial View Macro files and make the necessary changes
+
+### Example of changes that needs to be made
+
+* Template files need to inherit from `Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.HomePage>` instead of `Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.HomePage>`
+* Template files need to use `ContentModels = Umbraco.Web.PublishedModels` instead of `ContentModels = Umbraco.Web.PublishedContentModels`
+
+* `@Model.Value("propertyAlias")` replaces `@Umbraco.Field("propertyAlias")`
+* `@Model.PropertyAlias` replaces `@Model.Content.PropertyAlias`
+
