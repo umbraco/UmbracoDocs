@@ -38,3 +38,30 @@ Should something fail during the migration, the Development environment can alwa
 The frontend will **not** work at this point, as none of the Templates have been updated to match Umbraco 8 yet.
 :::
 
+## Step 2: Files migration
+
+* The following files / folders needs to be copied into the Umbraco 8 Cloud project
+    * `~/Views` - do **not** overwrite the default Macro and Partial view macro files, unless changes have been made to these
+    * `~/Media`
+    * Any files / folders related to Stylesheets and JavaScripts
+    * Any custom files / folders the Umbraco 7 Cloud project uses, that isn't in the `~/Config` or `~/bin`
+* Config files needs to be carefully merged, to ensure any custom settings are migrating while none of the default configuration for Umbraco 8 is changed
+
+* Run the Umbraco 8 Cloud site locally
+    * It **will** give you a YSOD / error screen as none of the Template files have been updated yet
+
+* Open CMD in the `~/data` folder on the Umbraco 8 Cloud project
+* Generate UDA files by running the following command: `echo > deploy-export`
+* Once a `deploy-complete` marker is added to the `~/data` folder, it's complete
+* Check `~/data/revision` to ensure all the UDA files have been generated
+* Run `echo > deploy` to make sure everything checks out with the UDA files just generated
+* This check will result in either of the two:
+    * `deploy-failed`
+        * Something failed during the check
+        * Run `echo > deploy-clearsignatures` followed by `echo > deploy` to clear up the error
+    * `deploy-complete`
+        * Everything checks out: Move on to the next step
+
+## Step 3: Setup Template files for Umbraco 8
+
+* 
