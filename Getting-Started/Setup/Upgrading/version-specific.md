@@ -16,7 +16,7 @@ Due to the change in `IPublishedContent` there are few steps you will need to ma
 
 If you're using ModelsBuilder in dll mode you will need to delete the dlls before upgrading because they're going to be wrong and cause your whole site to YSOD.
 
-If you've got your generated models in your solution you will need to update them after upgrade: `PublishedContentType` will need to be replaced with `IPublishedContentType` and `PropertyValueConverter` needs to be replaced with `IPublishedPropertyType`. Only after you do that will your solution build again.
+If you've got your generated models in your solution you will need to update them after upgrade: `PublishedContentType` will need to be replaced with `IPublishedContentType`. If you have a implementintation of the `PropertyValueConverter` class, you need to replaced all references to `PublishedPropertyType` with `IPublishedPropertyType` within that class. Only after you do that will your solution build again.
 
 Additionally 8.1 replaces AutoMapper with [UmbracoMapper](../../../Reference/Mapping/index.md), this in itself will not break anything on your site, but if you have used AutoMapper in your own code you will have to either include the package yourself or switch your implementation to use UmbracoMapper.
 
