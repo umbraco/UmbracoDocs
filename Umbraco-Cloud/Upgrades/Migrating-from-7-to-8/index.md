@@ -115,4 +115,5 @@ To track the process, keep an eye on the deploy markers in `site/wwwroot/data` u
 
 ## Step 5: Post-migration checks and going live
 
-* Setup rewrite
+* Setup rewrites on the Umbraco 8 site
+* 
