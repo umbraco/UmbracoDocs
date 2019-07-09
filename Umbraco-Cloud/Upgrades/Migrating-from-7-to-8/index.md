@@ -79,3 +79,26 @@ Read more about these changes in the [IPublishedContent section of the Documenta
 * `@Model.Value("propertyAlias")` replaces `@Umbraco.Field("propertyAlias")`
 * `@Model.PropertyAlias` replaces `@Model.Content.PropertyAlias`
 
+## Step 4: Deploy and test on Umbraco Cloud
+
+* Push the migration and changes to the Umbraco Cloud Development environment
+
+:::note
+The deployment might take a bit longer than normal.
+
+To track the process, keep an eye on the deploy markers in `site/wwwroot/data` using KUDU.
+:::
+
+* The deployment will result in either of the two:
+    * `deploy-failed`
+        * Something failed during the check
+        * Run `echo > deploy-clearsignatures` followed by `echo > deploy` to clear up the error
+    * `deploy-complete`
+        * Everything checks out: The Development environment has been upgraded
+
+* Transfer Content and Media from the local clone to the Development environment
+* Test **everything** on the Development environment
+* Deploy to the Live environment
+
+## Step 5: Post-migration checks and going live
+
