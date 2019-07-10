@@ -8,6 +8,8 @@ In version Umbraco 8.1+ we have enabled a debugging feature from Microsoft & Vis
 ## Enabling SourceLink in Visual Studio 2019
 * Verify that VS Debugging option **SourceLink** checked & **Just My Code** option is unchecked
 
+![Visual Studio 2019 Debug Settings for SourceLink](Images/VS19-enable-sourcelink.png)
+
 ## What is SourceLink ?
 You can find details from Microsoft about SourceLink here:
 
