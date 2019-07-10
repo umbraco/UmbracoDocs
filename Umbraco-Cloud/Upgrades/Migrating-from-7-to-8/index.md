@@ -6,7 +6,7 @@ Read the [general article about Content migration](../../../Getting-Started/Setu
 
 ## Prerequisites
 
-* An Umbraco 7 Cloud project running **at least Umbraco 7.14.**
+* An Umbraco 7 Cloud project running **at least Umbraco 7.14**
 * Make sure Umbraco Forms data is set to be handled as content
     * See [Umbraco Forms on Cloud](../../Deployment/Umbraco-Forms-on-Cloud) for more details on how to check the setting
 * A clean Umbraco 8.1+ Cloud project with **at least 2 environments**
@@ -22,7 +22,7 @@ Should something fail during the migration, the Development environment can alwa
 * Clone down the Umbraco 7 Cloud project
 * Run the project locally and **restore** Content and Media
 
-* Clone down the Development environment on the Umbraco 8 Cloud project
+* Clone down the Development environment from the Umbraco 8 Cloud project
 
 * Copy `~/App_Data/Umbraco.sdf` or `~/App_Data/Umbraco.mdf` from the cloned Umbraco 7 project
 * Paste the file into `~/App_Data` on the clone of the Umbraco 8 project
@@ -44,24 +44,25 @@ The frontend **will not** work at this point, as none of the Templates have been
 
 ## Step 2: Files migration
 
-* The following files / folders needs to be copied into the Umbraco 8 Cloud project
-    * `~/Views` - do **not** overwrite the default Macro and Partial view macro files, unless changes have been made to these
+* The following files / folders needs to be copied into the Umbraco 8 project
+    * `~/Views` - do **not** overwrite the default Macro and Partial View Macro files, unless changes have been made to these
     * `~/Media`
     * Any files / folders related to Stylesheets and JavaScripts
-    * Any custom files / folders the Umbraco 7 Cloud project uses, that isn't in the `~/Config` or `~/bin`
-* If Umbraco Forms is used on the Umbraco 7 Cloud project:
-    * Copy `~/App_Data/UmbracoForms` into the Umbraco 8 Cloud project
+    * Any custom files / folders the Umbraco 7 project uses, that isn't in the `~/Config` or `~/bin`
+* If Umbraco Forms is used on the Umbraco 7 project:
+    * Copy `~/App_Data/UmbracoForms` into the Umbraco 8 project
 
 * Config files needs to be carefully merged, to ensure any custom settings are migrating while none of the default configuration for Umbraco 8 is changed
+* Copy over any `.dll` files that aren't default to an Umbraco Cloud project
 
-* Run the Umbraco 8 Cloud site locally
-    * It **will** give you a YSOD / error screen as none of the Template files have been updated yet
+* Run the Umbraco 8 project locally
+    * It **will** give you a YSOD / error screen on the frontend as none of the Template files have been updated yet
 
-* Open CMD in the `~/data` folder on the Umbraco 8 Cloud project
+* Open CMD in the `~/data` folder on the Umbraco 8 project
 * Generate UDA files by running the following command: `echo > deploy-export`
-* Once a `deploy-complete` marker is added to the `~/data` folder, it's complete
+* Once a `deploy-complete` marker is added to the `~/data` folder, it is done
 * Check `~/data/revision` to ensure all the UDA files have been generated
-* Run `echo > deploy` to make sure everything checks out with the UDA files just generated
+* Run `echo > deploy` in the `~/data` folder to make sure everything checks out with the UDA files just generated
 * This check will result in either of the two:
     * `deploy-failed`
         * Something failed during the check
@@ -69,22 +70,29 @@ The frontend **will not** work at this point, as none of the Templates have been
     * `deploy-complete`
         * Everything checks out: Move on to the next step
 
-## Step 3: Setup Template files for Umbraco 8
+## Step 3: Setup custom code for Umbraco 8
 
-In Umbraco 8 we've changed how published content is rendered through Template files. Due to this, it will be necessary to update all Template files (`.cshtml`) to reflect these changes.
+Umbraco 8 is different from Umbraco 7 in many ways. This means that in this step, all custom code, controllers and models needs to be reviewed and rewritten for Umbraco 8.
 
-Read more about these changes in the [IPublishedContent section of the Documentation](../../Reference/Querying/IPublishedContent/).
+:::note
+Many of the changes have been documented, and the articles are listed here: [Umbraco 8 Documentation Status](../../../v8documentation).
 
-* Go through the Template files one by one and make the necessary changes
-* Go through Partial View Macro files and make the necessary changes
+Found something that has not yet been documented? Please [report it on our issue tracker](https://github.com/umbraco/UmbracoDocs/issues).
+:::
 
 ### Example of changes that needs to be made
+
+One of the changes made, is how published content is rendered through Template files. Due to this, it will be necessary to update **all** Template files (`.cshtml`) to reflect these changes.
+
+Read more about these changes in the [IPublishedContent section of the Documentation](../../Reference/Querying/IPublishedContent/).
 
 * Template files need to inherit from `Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.HomePage>` instead of `Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.HomePage>`
 * Template files need to use `ContentModels = Umbraco.Web.PublishedModels` instead of `ContentModels = Umbraco.Web.PublishedContentModels`
 
 * `@Model.Value("propertyAlias")` replaces `@Umbraco.Field("propertyAlias")`
 * `@Model.PropertyAlias` replaces `@Model.Content.PropertyAlias`
+
+Depending on the size of the project that is being migrated, this step is going to require a lot of work.
 
 ## Step 4: Deploy and test on Umbraco Cloud
 
