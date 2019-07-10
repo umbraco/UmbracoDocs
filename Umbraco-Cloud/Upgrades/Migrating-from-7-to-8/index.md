@@ -2,9 +2,13 @@
 
 This article will provide detailed steps on how to migrate an Umbraco 7 Cloud project to Umbraco 8.
 
+Read the [general article about Content migration](../../../Getting-Started/Setup/Upgrading/migrating-to-v8#limitations) to learn more about limitations and other things that can come into play when migrating your Umbraco site from 7 to 8.
+
 ## Prerequisites
 
 * An Umbraco 7 Cloud project running **at least Umbraco 7.14.**
+* Make sure Umbraco Forms data is set to be handled as content
+    * See [Umbraco Forms on Cloud](../../Deployment/Umbraco-Forms-on-Cloud) for more details on how to check the setting
 * A clean Umbraco 8.1+ Cloud project with **at least 2 environments**
 
 :::note
@@ -15,28 +19,18 @@ Should something fail during the migration, the Development environment can alwa
 
 ## Step 1: Content migration
 
-* Clone down the Umbraco 7 Cloud site
+* Clone down the Umbraco 7 Cloud project
 * Run the project locally and **restore** Content and Media
 
-:::notes
-If Umbraco Forms is used on the project, there are a few additional steps to take:
+* Clone down the Development environment on the Umbraco 8 Cloud project
 
-* Check `UmbracoDeploy.settings.config`
-* Make sure the value of `forms transferFormsAsContent` is `true`
-    * See [Umbraco Forms on Cloud](../../Deployment/Umbraco-Forms-on-Cloud) for reference
-* If the setting is `false`:
-    * Change to `true` and deploy the change to the Umbraco Cloud environments
-:::
-
-* Clone down the Umbraco 8 Cloud site
-
-* Copy `~/App_Data/Umbraco.sdf` / `~/App_Data/Umbraco.mdf` from the cloned Umbraco 7 Cloud site
-* Paste the file into `~/App_Data` on the Umbraco 8 Cloud site
-* Open `web.config` from the Umbraco 8 Cloud site
+* Copy `~/App_Data/Umbraco.sdf` or `~/App_Data/Umbraco.mdf` from the cloned Umbraco 7 project
+* Paste the file into `~/App_Data` on the clone of the Umbraco 8 project
+* Open `web.config` from the Umbraco 8 project
 * Locate the `Umbraco.Core.ConfigurationStatus` key
-* Replace the value `8.1.x` with the version your Umbraco 7 Cloud site is running - eg. `7.15.0`
+* Replace the value `8.1.x` with the version your Umbraco 7 project is running - eg. `7.15.0`
 
-* Run the Umbraco 8 Cloud site locally
+* Run the Umbraco 8 project locally
 * The migration will need to be authorized - Cloud credentials is used for this
 
 ![Authorize upgrade](images/upgrade-to-8_1.png)
@@ -45,7 +39,7 @@ If Umbraco Forms is used on the project, there are a few additional steps to tak
 * When the migration is done, login to the backoffice and verify that everything is there
 
 :::note
-The frontend will **not** work at this point, as none of the Templates have been updated to match Umbraco 8 yet.
+The frontend **will not** work at this point, as none of the Templates have been updated to match Umbraco 8 yet.
 :::
 
 ## Step 2: Files migration
