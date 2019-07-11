@@ -96,6 +96,8 @@ Depending on the size of the project that is being migrated, this step is going 
 
 ## Step 4: Deploy and test on Umbraco Cloud
 
+Once the Umbraco 8 project runs without errors on the local setup, the next step is to deploy and test on the Cloud Development environment.
+
 * Push the migration and changes to the Umbraco Cloud Development environment
 
 :::note
@@ -115,7 +117,19 @@ To track the process, keep an eye on the deploy markers in `site/wwwroot/data` u
 * Test **everything** on the Development environment
 * Deploy to the Live environment
 
-## Step 5: Post-migration checks and going live
+## Step 5: Going live
+
+Once the migration is complete, and the Live environment is running without errors, the site is ready for launch.
 
 * Setup rewrites on the Umbraco 8 site
-* 
+* Assign hostnames to the project
+    * Note that hostnames are unique, and can only be added to one Cloud project at a time
+
+## Related information
+
+* [Content Migration for Umbraco CMS - 7 to 8](../../../Getting-Started/Setup/Upgrading/migrating-to-v8)
+* [Issue tracker for known issues with Content Migration](https://github.com/umbraco/UmbracoDocs/issues)
+* [Umbraco 8 Documentation status](../../../v8documentation)
+* [Forms on Umbraco Cloud](../../Deployment/Umbraco-Forms-on-Cloud)
+* [Working locally with Umbraco Cloud](../../Set-Up/Working-Locally/)
+* [KUDU on Umbraco Cloud](../../Set-Up/Power-Tools/)
