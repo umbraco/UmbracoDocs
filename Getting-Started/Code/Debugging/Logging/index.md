@@ -172,6 +172,7 @@ Add the following to the `/config/serilog.user.config` file, which will create a
 <add key="serilog:write-to:File.restrictedToMinimumLevel" value="Debug" />
 <add key="serilog:write-to:File.retainedFileCountLimit" value="32" /> <!-- Number of log files to keep (or remove value to keep all files) -->
 <add key="serilog:write-to:File.rollingInterval" value="Day" /> <!-- Create a new log file every Minute/Hour/Day/Month/Year/infinite -->
+<add key="serilog:write-to:File.outputTemplate" value="{Timestamp:yyyy-MM-dd HH:mm:ss,fff} [P{ProcessId}/D{AppDomainId}/T{ThreadId}] {Log4NetLevel}  {SourceContext} - {Message:lj}{NewLine}{Exception}" />
 ```
 
 ### Filtering user log file to include only log messages from your namespace
@@ -182,7 +183,7 @@ With the above example we are able to write to a separate JSON log file, but add
 <!-- Filters all sink's in the serilog.user.config to use this expression -->
 <!-- Common use case is to include SourceType starting with your own namespace -->
 <add key="serilog:using:FilterExpressions" value="Serilog.Filters.Expressions" />
-<add key="serilog:filter:ByIncluding.expression" value="StartsWith(SourceContext, 'MyNamespace')" />
+<add key="serilog:filter:ByIncludingOnly.expression" value="StartsWith(SourceContext, 'MyNamespace')" />
 ```
 
 ### Writing log events to different storage types
