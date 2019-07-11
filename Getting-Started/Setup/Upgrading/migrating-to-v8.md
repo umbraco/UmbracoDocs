@@ -107,5 +107,4 @@ Learn more about the Section changes in the [Sections article](../../Backoffice/
 
 ## Migrating Umbraco Cloud sites
 
-If you wish to migrate an Umbraco 7 Cloud site to an Umbraco 8 Cloud site you should follow the steps above locally.
-Once you have the local Umbraco 8 site with the migrated database you can create a new Umbraco 8 Cloud site and follow the [migration guide](../../../Umbraco-Cloud/Getting-Started/Migrate-Existing-Site/index.md) to get it on Cloud.
+If you wish to migrate an Umbraco 7 Cloud site to an Umbraco 8 Cloud site you should follow the [Migrate Cloud project from 7 to 8](../../../Umbraco-Cloud/Upgrades/Migrating-from-7-to-8) instead.
