@@ -5,7 +5,7 @@ versionFrom: 8.1.0
 # Debugging
 In version Umbraco 8.1+ we have enabled a debugging feature from Microsoft & Visual Studio called SourceLink which allows you to step into the native Umbraco CMS source code.
 
-## Enabling SourceLink in Visual Studio 2019
+## Enabling SourceLink in Visual Studio 2017 & 2019
 * Verify that VS Debugging option **SourceLink** checked & **Just My Code** option is unchecked
 
 ![Visual Studio 2019 Debug Settings for SourceLink](Images/VS19-enable-sourcelink.png)
