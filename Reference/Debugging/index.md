@@ -13,9 +13,9 @@ Microsoft & Visual Studio have introduced a new debugging technology called 'Sou
 ## What is SourceLink ?
 You can find details from Microsoft about SourceLink here:
 
-https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/sourcelink<br/>
-https://www.hanselman.com/blog/ExploringNETCoresSourceLinkSteppingIntoTheSourceCodeOfNuGetPackagesYouDontOwn.aspx<br/>
-https://github.com/dotnet/sourcelink
+* [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/sourcelink)
+* [Scott Hanselman blog post on Sourcelink](https://www.hanselman.com/blog/ExploringNETCoresSourceLinkSteppingIntoTheSourceCodeOfNuGetPackagesYouDontOwn.aspx)
+* [SourceLink on GitHub](https://github.com/dotnet/sourcelink)
 
 ## Working with SourceLink
 * Create new 4.7.2 .NET Framework blank/empty website
