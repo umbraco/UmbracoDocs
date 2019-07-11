@@ -24,6 +24,8 @@ You can find details from Microsoft about SourceLink here:
 * Prompt should appear & the original source code file is fetched directly from GitHub
 * How far can you `F11` aka `Step Into` & go down the rabbit hole of the Umbraco CMS source code?
 
+![Visual Studio 2019 SourceLink dialog](Images/VS19-sourcelink-prompt.png)
+
 ### Example Code Snippet to try with SourceLink
 
 ```csharp
