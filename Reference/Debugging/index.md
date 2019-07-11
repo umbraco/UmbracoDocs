@@ -22,7 +22,7 @@ https://github.com/dotnet/sourcelink
 * Install latest UmbracoCMS 8.1+ Nuget Packages from Nuget.org
 * Create an IUserComposer or similar code in your new site/SLN that you want to F11/Step Into
 * Prompt should appear & the original source code file is fetched directly from GitHub
-* How far can you `F11` aka `Step Into` & go down the rabbit hole of source code?
+* How far can you `F11` aka `Step Into` & go down the rabbit hole of the Umbraco CMS source code?
 
 ### Example Code Snippet to try with SourceLink
 
