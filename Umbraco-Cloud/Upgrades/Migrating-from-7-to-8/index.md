@@ -39,7 +39,9 @@ Should something fail during the migration, the Development environment can alwa
 * When the migration is done, login to the backoffice and verify that everything is there
 
 :::note
-The frontend **will not** work at this point, as none of the Templates have been updated to match Umbraco 8 yet.
+Please be aware that this is **only a content migration**.
+
+The database will be migrated. Upgrading view files and custom code and implementation is a manual process. In [Step 3](#Step-3-setup-custom-code-for-umbraco-8) of this guide, it will be explained in more details.
 :::
 
 ## Step 2: Files migration
@@ -53,7 +55,6 @@ The frontend **will not** work at this point, as none of the Templates have been
     * Copy `~/App_Data/UmbracoForms` into the Umbraco 8 project
 
 * Config files needs to be carefully merged, to ensure any custom settings are migrating while none of the default configuration for Umbraco 8 is changed
-* Copy over any `.dll` files that aren't default to an Umbraco Cloud project
 
 * Run the Umbraco 8 project locally
     * It **will** give you a YSOD / error screen on the frontend as none of the Template files have been updated yet
@@ -92,7 +93,7 @@ Read more about these changes in the [IPublishedContent section of the Documenta
 * `@Model.Value("propertyAlias")` replaces `@Umbraco.Field("propertyAlias")`
 * `@Model.PropertyAlias` replaces `@Model.Content.PropertyAlias`
 
-Depending on the size of the project that is being migrated, this step is going to require a lot of work.
+Depending on the size of the project that is being migrated and the amount of custom code and implementations, this step is going to require a lot of work.
 
 ## Step 4: Deploy and test on Umbraco Cloud
 
