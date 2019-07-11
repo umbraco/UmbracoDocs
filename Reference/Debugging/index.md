@@ -8,7 +8,7 @@ Microsoft & Visual Studio have introduced a new debugging technology called 'Sou
 ## Enabling SourceLink in Visual Studio 2017 & 2019
 * Verify that VS Debugging option **SourceLink** checked & **Just My Code** option is unchecked
 
-![Visual Studio 2019 Debug Settings for SourceLink](Images/VS19-enable-sourcelink.png)
+![Visual Studio 2019 Debug Settings for SourceLink](images/VS19-enable-sourcelink.png)
 
 ## What is SourceLink ?
 You can find details from Microsoft about SourceLink here:
@@ -24,7 +24,7 @@ You can find details from Microsoft about SourceLink here:
 * Prompt should appear & the original source code file is fetched directly from GitHub
 * How far can you `F11` aka `Step Into` & go down the rabbit hole of the Umbraco CMS source code?
 
-![Visual Studio 2019 SourceLink dialog](Images/VS19-sourcelink-prompt.png)
+![Visual Studio 2019 SourceLink dialog](images/VS19-sourcelink-prompt.png)
 
 ### Example Code Snippet to try with SourceLink
 
