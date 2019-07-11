@@ -17,7 +17,7 @@ https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/sourcelink<br/
 https://www.hanselman.com/blog/ExploringNETCoresSourceLinkSteppingIntoTheSourceCodeOfNuGetPackagesYouDontOwn.aspx<br/>
 https://github.com/dotnet/sourcelink
 
-## Verifying this works
+## Working with SourceLink
 * Create new 4.7.2 .NET Framework blank/empty website
 * Install latest UmbracoCMS 8.1+ Nuget Packages from Nuget.org
 * Create an IUserComposer or similar code in your new site/SLN that you want to F11/Step Into
