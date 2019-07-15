@@ -12,11 +12,17 @@ Follow the steps in the [general upgrade guide](general.md), then these addition
 
 There are a few breaking changes from 8.0.x to 8.1.0. Make sure to check the [full list](https://github.com/umbraco/Umbraco-CMS/issues?q=is%3Aissue+label%3Arelease%2F8.1.0+is%3Aclosed+label%3Acategory%2Fbreaking).
 
-Due to the change in `IPublishedContent` there are few steps you will need to make to make sure that your models build.
+#### IPublishedContent
+
+Due to the [change in `IPublishedContent`](https://github.com/umbraco/Umbraco-CMS/issues/5170) there are few steps you will need to make to make sure that your site works. 
+
+#### Models Builder
 
 If you're using ModelsBuilder in dll mode you will need to delete the dlls before upgrading because they're going to be wrong and cause your whole site to YSOD.
 
-If you've got your generated models in your solution you will need to update them after upgrade: `PublishedContentType` will need to be replaced with `IPublishedContentType`. If you have a implementintation of the `PropertyValueConverter` class, you need to replaced all references to `PublishedPropertyType` with `IPublishedPropertyType` within that class. Only after you do that will your solution build again.
+If you're using ModelsBuilder in AppData mode and you have your generated models in your solution you will need to update them after upgrade: `PublishedContentType` will need to be replaced with `IPublishedContentType`. If you have an implementation of the `PropertyValueConverter` class, you need to replaced all references to `PublishedPropertyType` with `IPublishedPropertyType` within that class. Only after you do that will your solution build again.
+
+#### AutoMapper
 
 Additionally 8.1 replaces AutoMapper with [UmbracoMapper](../../../Reference/Mapping/index.md), this in itself will not break anything on your site, but if you have used AutoMapper in your own code you will have to either include the package yourself or switch your implementation to use UmbracoMapper.
 
