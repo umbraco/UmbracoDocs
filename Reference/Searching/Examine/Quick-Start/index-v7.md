@@ -92,7 +92,7 @@ var searchResults = searcher.Search(searchQuery.Compile());
 if(searchResults.Any())
 {
     <ul>
-        @foreach (var result in searchResults)
+        @foreach (var result in Umbraco.TypedContent(searchResults.Select(x=>x.Id)))
         {
             <li>
                 <a href="@result.Url">@result.Name</a>
