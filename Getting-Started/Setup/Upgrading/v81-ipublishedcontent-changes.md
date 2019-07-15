@@ -4,7 +4,7 @@
 
 The `IPublishedContent` interface is very central in Umbraco, as it represents published content and media items at rendering layer level, for instance in controllers or views. In other words, it is the interface that is used everywhere when building sites.
 
-The introduction of multi-lingual support in version 8 required changes to the interface. For instance, a property value could be obtained in version 7 with `GetPropertyValue(alias)`. Version 8 required a new parameter for culture, and the call thus became `Value(alias, culture)`.
+The introduction of multilingual support in version 8 required changes to the interface. For instance, a property value could be obtained in version 7 with `GetPropertyValue(alias)`. Version 8 required a new parameter for culture, and the call thus became `Value(alias, culture)`.
 
 In the excitement of the version 8 release, we assumed that `IPublishedContent` was "done". By our tests, everything was looking good. However, feedback from early testers showed that the interface was in some places odd or inconsistent, or simply had issues.
 
@@ -17,8 +17,8 @@ At that point, we had decided to give `IPublishedContent` some love: fix the bug
 Breaking changes to such a central interface is not something we take lightly. Even though they do not impact the "concepts" nor require heavy refactoring, they may demand an amount of small fixes here and there.
 
 The general idea underlying these changes is that:
-* The proper way to retrieve "something" from an `IPublishedContent` instance is always through a method, for example: `Children()`. And, when that method can be multi-lingual, the method accepts a `culture` parameter, which can be left `null` to get the "current" culture value.
-* To reduce the amount of breaking changes, and to simplify things for non-multi-lingual sites, existing properties such as `document.Name` and `document.Children` (and others) still exist, and return the value for the current culture. In other words, these properties are now implemented as `document.Name => document.Name()` or `document.Children => document.Children()`.
+* The proper way to retrieve "something" from an `IPublishedContent` instance is always through a method, for example: `Children()`. And, when that method can be multilingual, the method accepts a `culture` parameter, which can be left `null` to get the "current" culture value.
+* To reduce the amount of breaking changes, and to simplify things for non-multilingual sites, existing properties such as `document.Name` and `document.Children` (and others) still exist, and return the value for the current culture. In other words, these properties are now implemented as `document.Name => document.Name()` or `document.Children => document.Children()`.
 
 The rest of this document presents each change in details. 
 
@@ -86,7 +86,7 @@ The `UmbracoContext` class gives access to the rendering layer, which is more th
 
 Version 7 had a `document.GetCulture()` method that was deriving a culture from domains configured in the tree. Somehow, that method was lost during version 8 development (issue [#5269](https://github.com/umbraco/Umbraco-CMS/issues/5269)).
 
-Because that method is useful, especially when building traditional, non-multi-lingual sites, it has been re-introduced in version 8.1 as `document.GetCultureFromDomains()`.
+Because that method is useful, especially when building traditional, non-multilingual sites, it has been re-introduced in version 8.1 as `document.GetCultureFromDomains()`.
 
 >**CHANGE**: None.
 
