@@ -14,7 +14,7 @@ There are a few breaking changes from 8.0.x to 8.1.0. Make sure to check the [fu
 
 #### IPublishedContent
 
-Due to the [change in `IPublishedContent`](https://github.com/umbraco/Umbraco-CMS/issues/5170) there are few steps you will need to make to make sure that your site works. 
+Due to the [change in `IPublishedContent`](https://github.com/umbraco/Umbraco-CMS/issues/5170) there are few steps you will need to make to make sure that your site works. See the [docs on IPublishedContent changes in 8.1.0](v81-ipublishedcontent-changes.md) and what steps you may need to take when you upgrade.
 
 #### Models Builder
 
