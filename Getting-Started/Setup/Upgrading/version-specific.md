@@ -14,13 +14,13 @@ There are a few breaking changes from 8.0.x to 8.1.0. Make sure to check the [fu
 
 #### IPublishedContent
 
-Due to the [change in `IPublishedContent`](https://github.com/umbraco/Umbraco-CMS/issues/5170) there are few steps you will need to make to make sure that your site works. See the [docs on IPublishedContent changes in 8.1.0](v81-ipublishedcontent-changes.md) and what steps you may need to take when you upgrade.
+Due to the [changes in `IPublishedContent`](https://github.com/umbraco/Umbraco-CMS/issues/5170) there are few steps you will need to take to make sure that your site works. See the [docs on IPublishedContent changes in 8.1.0](v81-ipublishedcontent-changes.md) and what steps you may need to take when you upgrade.
 
 #### Models Builder
 
 If you're using ModelsBuilder in dll mode you will need to delete the dlls before upgrading because they're going to be wrong and cause your whole site to YSOD.
 
-If you're using ModelsBuilder in AppData mode and you have your generated models in your solution you will need to update them after upgrade: `PublishedContentType` will need to be replaced with `IPublishedContentType`. If you have an implementation of the `PropertyValueConverter` class, you need to replaced all references to `PublishedPropertyType` with `IPublishedPropertyType` within that class. Only after you do that will your solution build again.
+If you're using ModelsBuilder in AppData mode and you have your generated models in your solution you will need to update them after upgrading: `PublishedContentType` will need to be replaced with `IPublishedContentType`. If you have an implementation of the `PropertyValueConverter` class, you need to replace all references to `PublishedPropertyType` with `IPublishedPropertyType` within that class. Only after you do that will your solution build again.
 
 #### AutoMapper
 
