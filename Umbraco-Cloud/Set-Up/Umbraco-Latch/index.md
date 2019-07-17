@@ -15,6 +15,20 @@ In order for Umbraco Latch to be applied to your hostname, you need to make sure
 
 Learn more about our recommendations for DNS records in the [Manage Hostnames](../Manage-Hostnames) article.
 
+## HTTPS by default
+
+All new Live sites created on Cloud since version 7.12 will automagically have a permanent redirect (301) from HTTP to HTTPS. This is achieved by a web.config transform called: `Latch.Web.live.xdt.config` - accessible in your git repository. If you'd like to remove the redirect rule (which we and [others](https://www.blog.google/products/chrome/milestone-chrome-security-marking-http-not-secure/) strongly discourage) you'll need to remove the file `Latch.Web.live.xdt.config` from projects repository and push the change to Cloud.
+
+## Latch and CDN
+
+You will not get an Umbraco Latch certificate if you are using a CDN service (e.g. CloudFlare) on your Umbraco Cloud project.
+
+In that case you can manually add a TLS certificate to your project instead. Read more about how to do that in the [Upload certificates manually](../Manage-Hostnames/Security-Certificates/) article.
+
+:::note
+Umbraco Latch can issue 5 certificates for a single domain per week. If this limit is exceeded, you will have to wait a week in order to regenerate the certificate for the domain.
+:::
+
 ## Status definitions
 
 When Umbraco Latch is issuing a certificate for one of your hostnames it goes through the following states:
@@ -54,21 +68,13 @@ Read more about best practices with rewrites on Umbraco Cloud in the [Rewrites o
 
 #### Special Characters
 
+There are some special characters that Umbraco Latch does not accept when issuing certificates. If you are seeing the **Special Characters** state next to your hostname, it means that you are using some special characters that are not allowed.
+
+Do you need to add the hostname, we recommend setting up CDN and [upload a manual certificate](../Manage-Hostnames/Security-Certificates/).
+
 #### Tried 5 times
 
-## HTTPS by default
 
-All new Live sites created on Cloud since version 7.12 will automagically have a permanent redirect (301) from HTTP to HTTPS. This is achieved by a web.config transform called: `Latch.Web.live.xdt.config` - accessible in your git repository. If you'd like to remove the redirect rule (which we and [others](https://www.blog.google/products/chrome/milestone-chrome-security-marking-http-not-secure/) strongly discourage) you'll need to remove the file `Latch.Web.live.xdt.config` from projects repository and push the change to Cloud.
-
-## Latch and CDN
-
-You will not get an Umbraco Latch certificate if you are using a CDN service (e.g. CloudFlare) on your Umbraco Cloud project.
-
-In that case you can manually add a TLS certificate to your project instead. Read more about how to do that in the [Upload certificates manually](../Manage-Hostnames/Security-Certificates/) article.
-
-:::note
-Umbraco Latch can issue 5 certificates for a single domain per week. If this limit is exceeded, you will have to wait a week in order to regenerate the certificate for the domain.
-:::
 
 ## Read more
 
