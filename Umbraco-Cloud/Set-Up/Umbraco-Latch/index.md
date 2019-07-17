@@ -74,7 +74,9 @@ Do you need to add the hostname, we recommend setting up CDN and [upload a manua
 
 #### Tried 5 times
 
+This is the state you will see next to your hostname if Umbraco Latch has tried issuing a certificate 5 times, which is the limit per week.
 
+If you see this state, you will need to wait a week, before Umbraco Latch can assign a certificate to your hostname.
 
 ## Read more
 
