@@ -36,7 +36,21 @@ If issuing a certificate to a hostname fails, it will end up in one of the follo
 
 #### Dns Misconfigured
 
+This means that there is an issue with how the DNS for the provided hostname has been configured. Umbraco Latch will not be able to issue a certificate before the DNS configuration is fixed.
+
+Learn more about how the setup hostnames for Umbraco Cloud in the [Manage Hostnames](../Manage-Hostnames) article.
+
 #### Rewrites Error
+
+If you see this state on your hostname, it means that there is an issue with some of your rewrites that needs to be resolved before a certificate can be issued.
+
+When redirecting all requests from HTTP to HTTPS, you will need to add the following condition to the rewrite rule:
+
+```
+<add input="{REQUEST_URI}" negate="true" pattern="^/.well-known/acme-challenge" />
+```
+
+Read more about best practices with rewrites on Umbraco Cloud in the [Rewrites on Umbraco Cloud](../Manage-Hostnames/Rewrites-on-Cloud) article.
 
 #### Special Characters
 
