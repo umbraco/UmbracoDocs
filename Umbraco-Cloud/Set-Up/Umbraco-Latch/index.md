@@ -15,6 +15,33 @@ In order for Umbraco Latch to be applied to your hostname, you need to make sure
 
 Learn more about our recommendations for DNS records in the [Manage Hostnames](../Manage-Hostnames) article.
 
+## Status definitions
+
+When Umbraco Latch is issuing a certificate for one of your hostnames it goes through the following states:
+* Initial
+* DnsApproved
+* NoRewrites
+* AcmeRequested
+* ChallengeFileWritten
+* AcmeVerified
+* PfxGenerated
+* CertificateInstalled
+* Protected by LATCH
+
+It can take up to 30minutes for the certificate to be issued. Once you see the **Protected by Latch** your site is secure.
+
+### Bad states
+
+If issuing a certificate to a hostname fails, it will end up in one of the following states:
+
+#### Dns Misconfigured
+
+#### Rewrites Error
+
+#### Special Characters
+
+#### Tried 5 times
+
 ## HTTPS by default
 
 All new Live sites created on Cloud since version 7.12 will automagically have a permanent redirect (301) from HTTP to HTTPS. This is achieved by a web.config transform called: `Latch.Web.live.xdt.config` - accessible in your git repository. If you'd like to remove the redirect rule (which we and [others](https://www.blog.google/products/chrome/milestone-chrome-security-marking-http-not-secure/) strongly discourage) you'll need to remove the file `Latch.Web.live.xdt.config` from projects repository and push the change to Cloud.
