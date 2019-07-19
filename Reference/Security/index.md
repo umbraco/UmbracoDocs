@@ -13,7 +13,7 @@ We have a dedicated security page on our main site which provides most of the de
 
 ## SSL/HTTPS
 
-We highly encourage the use of HTTPS on Umbraco websites especially in production environments. By using HTTPS you greatly improve the security of your website.
+We highly encourage the use of [SSL](https://hosting.review/web-hosting-glossary/#12)/HTTPS on Umbraco websites especially in production environments. By using HTTPS you greatly improve the security of your website.
 
 Don't forget to [configure your Umbraco when using HTTPS](use-https.md).
 
