@@ -60,8 +60,8 @@ If you see this state on your hostname, it means that there is an issue with som
 
 When redirecting all requests from HTTP to HTTPS, you will need to add the following condition to the rewrite rule:
 
-```
-<add input="{REQUEST_URI}" negate="true" pattern="^/.well-known/acme-challenge" />
+```xml
+<add input="{REQUEST_URI}" negate="true" pattern="^/\.well-known/acme-challenge" />
 ```
 
 Read more about best practices with rewrites on Umbraco Cloud in the [Rewrites on Umbraco Cloud](../Manage-Hostnames/Rewrites-on-Cloud) article.
