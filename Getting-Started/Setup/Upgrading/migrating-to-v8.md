@@ -29,7 +29,7 @@ We are collecting [a list of these known issues on our GitHub Issue Tracker](htt
 
 The migration will transform the data stored in third party editors as well, however it will simply be stored as it was in Umbraco 7. If the structure has changed for Umbraco 8 or the property editor doesn't exist you will still be able to find the data in the database, but you would not see it in the backoffice.
 
-There some options to convert the property editor configuration, read how [here](7-8-migration-dataTypes.md).
+There are some options to convert the property editor configuration, read how [here](7-8-migration-dataTypes.md).
 
 ## What will happen
 
