@@ -31,7 +31,6 @@ public void TearDown()
 }
 ```
 
-
 ## Render MVC Controller
 
 See [Reference documentation for Custom controllers (Hijacking Umbraco Routes)](https://our.umbraco.com/documentation/reference/routing/custom-controllers#creating-a-custom-controller). 
@@ -145,11 +144,56 @@ public class MySurfaceControllerTests
 }
 ```
 
-## Content Model
-See [Reference documentation on Returning a view with a custom model](https://our.umbraco.com/documentation/Reference/Routing/custom-controllers#returning-a-view-with-a-custom-model).
+## Umbraco API Controller
+
+See [Reference documentation on UmbracoApiControllers](https://our.umbraco.com/documentation/Reference/Routing/WebApi/#locally-declared-controller).
 
 ```csharp
 
+public class ProductsController : UmbracoApiController
+{
+    public IEnumerable<string> GetAllProducts()
+    {
+        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+    }
+}
+
+[TestFixture]
+public class ProductsControllerTests
+{
+    private ProductsController controller;
+
+    [SetUp]
+    public void SetUp()
+    {
+        Current.Factory = new Mock<IFactory>().Object;
+        this.controller = new ProductsController();
+    }
+
+    [TearDown]
+    public virtual void TearDown()
+    {
+        Current.Reset();
+    }
+
+    [Test]
+    public void WhenGetAllProducts_ThenReturnViewModelWithExpectedProducts()
+    {
+        var expected = new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+
+        var result = this.controller.GetAllProducts();
+
+        Assert.AreEqual(expected, result);
+    }
+}
+
+```
+
+## Content Model
+
+See [Reference documentation on Returning a view with a custom model](https://our.umbraco.com/documentation/Reference/Routing/custom-controllers#returning-a-view-with-a-custom-model).
+
+```csharp
 public class MyCustomViewModel : ContentModel 
 {
     public MyCustomViewModel(IPublishedContent content) : base(content) { }
@@ -196,9 +240,7 @@ public class MyCustomModelTests
         this.content.Setup(x => x.GetProperty(alias)).Returns(property.Object);
     }
 }
-
 ```
-
 
 ## Dictionaries
 The ```ICultureDictionary``` is used to fetch Dictionary values from Umbraco. It's the equivalent of using ```UmbracoHelper.GetDictionaryValue(string key)```, but with less mocking required.
@@ -265,6 +307,66 @@ public class MyDictionaryDependentControllerTests
         var result = (MyCustomModel)((ViewResult)this.controller.Index(model)).Model;
 
         Assert.AreEqual(expected, result.MyProperty1);
+    }
+}
+```
+
+## Content Querying
+The ```IPublishedContentQuery``` is used to fetch Content from Umbraco. It's the equivalent of using ```UmbracoHelper.Content(object id)```, but with less mocking required.
+
+See [Core documentation on the interface IPublishedContentQuery](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Web.IPublishedContentQuery.html).
+
+```csharp
+public class MyCustomController : RenderMvcController
+{
+    private readonly IPublishedContentQuery contentQuery;
+
+    public MyCustomController(IPublishedContentQuery contentQuery)
+    {
+        this.contentQuery = contentQuery;
+    }
+
+    public override ActionResult Index(ContentModel model)
+    {
+        var myCustomModel = new MyCustomModel(model.Content)
+        {
+            OtherContent = this.contentQuery.Content(1062)
+        };
+
+        return View(myCustomModel);
+    }
+}
+
+[TestFixture]
+public class MyCustomControllerTests
+{
+    private MyCustomController controller;
+    private Mock<IPublishedContentQuery> contentQuery;
+
+    [SetUp]
+    public void SetUp()
+    {
+        Current.Factory = new Mock<IFactory>().Object;
+        this.contentQuery = new Mock<IPublishedContentQuery>();
+        this.controller = new MyCustomController(this.contentQuery.Object);
+    }
+
+    [TearDown]
+    public virtual void TearDown()
+    {
+        Current.Reset();
+    }
+
+    [Test]
+    public void GivenContentQueryReturnsOtherContent_WhenIndex_ThenReturnViewModelWithOtherContent()
+    {
+        var currentContent = new ContentModel(new Mock<IPublishedContent>().Object);
+        var otherContent = Mock.Of<IPublishedContent>();
+        this.contentQuery.Setup(x => x.Content(1062)).Returns(otherContent);
+        
+        var result = (MyCustomModel)((ViewResult)this.controller.Index(currentContent)).Model;
+
+        Assert.AreEqual(otherContent, result.OtherContent);
     }
 }
 ```
