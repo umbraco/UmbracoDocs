@@ -87,18 +87,19 @@ var query = Request.QueryString["query"];
 var searcher = Examine.ExamineManager.Instance.SearchProviderCollection["ExternalSearcher"];
 
 var searchCriteria = searcher.CreateSearchCriteria(Examine.SearchCriteria.BooleanOperation.Or);
-var searchQuery = searchCriteria.Field("nodeName", query.Boost(5)).Or().Field("nodeName", query.Fuzzy()).And().OrderByDescending("createDate");
+var searchQuery = searchCriteria.Field("nodeName", query.Boost(5)).Or().Field("nodeName", query.Fuzzy()).And().Field("__IndexType", "content").And().OrderByDescending("createDate");
 var searchResults = searcher.Search(searchQuery.Compile());
 if(searchResults.Any())
 {
-    <ul>
-        @foreach (var result in Umbraco.TypedContent(searchResults.Select(x=>x.Id)))
-        {
-            <li>
-                <a href="@result.Url">@result.Name</a>
-            </li>
-        }
-    </ul>
+<ul>
+    @foreach (var result in searchResults)
+    {
+       var node = Umbraco.TypedContent(result.Id);
+       <li>
+          <a href="@node.Url">@node.Name</a>               
+       </li>
+    }
+</ul>
 }
 ```
 
