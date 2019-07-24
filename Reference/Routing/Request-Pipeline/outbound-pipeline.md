@@ -282,7 +282,7 @@ namespace UmbracoV8.Routing.UrlProviders
                else
                 {
                     //manipulate the url somehow in a custom fashion:
-                    var orginalUrl = defaultUrlInfo.Text;
+                    var originalUrl = defaultUrlInfo.Text;
                     var customUrl = originalUrl + "fish/";
                     return new UrlInfo(customUrl, true,defaultUrlInfo.Culture);
                   
