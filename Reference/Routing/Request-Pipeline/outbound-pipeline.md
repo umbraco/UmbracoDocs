@@ -267,7 +267,7 @@ namespace UmbracoV8.Routing.UrlProviders
             return base.GetOtherUrls(umbracoContext, id, current);
         }
 
-        public override UrlInfo GetUrl(UmbracoContext umbracoContext, IPublishedContent content, UrlProviderMode mode, string culture, Uri current)
+        public override UrlInfo GetUrl(UmbracoContext umbracoContext, IPublishedContent content, UrlMode mode, string culture, Uri current)
         {
            //only apply this to product pages
           if (content != null && content.ContentType.Alias == "productPage)
