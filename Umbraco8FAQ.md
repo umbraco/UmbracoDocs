@@ -10,7 +10,7 @@ Yes, you can! All free Umbraco Cloud trials will be on Umbraco 8 from the offici
 
 ## Can I still create Umbraco 7 projects on Umbraco Cloud and how long?
 
-Yes, you can. Umbraco 7 will continue to be supported on Cloud and we will still provide you with necessary updates in regard to bug and security fixes (as mentioned above). The last date you will be able to create new Umbraco 7 sites on Umbraco Cloud is August 31st 2019. 
+Yes, you can. Umbraco 7 will continue to be supported on Cloud and we will still provide you with necessary updates in regard to bug and security fixes (as mentioned above). You will be able to create new Umbraco 7 sites on Umbraco Cloud untill the end of 2019. 
 
 And the last date Umbraco 7 sites are supported on Umbraco Cloud will be September 30th 2023.
 
