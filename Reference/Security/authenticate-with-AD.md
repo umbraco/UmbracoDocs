@@ -46,6 +46,7 @@ namespace MyApp
 						Services.EntityService,
 						Services.ExternalLoginService,
 						membershipProvider,
+                        Mapper,
 						UmbracoSettings.Content,
 						GlobalSettings
 					);
