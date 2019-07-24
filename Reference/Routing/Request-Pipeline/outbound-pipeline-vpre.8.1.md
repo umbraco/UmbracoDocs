@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.1.0
+versionFrom: 8.0.0
 ---
 
 # Outbound request pipeline
@@ -267,7 +267,7 @@ namespace UmbracoV8.Routing.UrlProviders
             return base.GetOtherUrls(umbracoContext, id, current);
         }
 
-        public override UrlInfo GetUrl(UmbracoContext umbracoContext, IPublishedContent content, UrlMode mode, string culture, Uri current)
+        public override UrlInfo GetUrl(UmbracoContext umbracoContext, IPublishedContent content, UrlProviderMode mode, string culture, Uri current)
         {
            //only apply this to product pages
           if (content != null && content.ContentType.Alias == "productPage)
@@ -282,7 +282,7 @@ namespace UmbracoV8.Routing.UrlProviders
                else
                 {
                     //manipulate the url somehow in a custom fashion:
-                    var originalUrl = defaultUrlInfo.Text;
+                    var orginalUrl = defaultUrlInfo.Text;
                     var customUrl = originalUrl + "fish/";
                     return new UrlInfo(customUrl, true,defaultUrlInfo.Culture);
                   
