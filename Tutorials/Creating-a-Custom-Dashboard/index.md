@@ -322,7 +322,7 @@ The **entityResource** then has a **getById** method that accepts the Id of the 
 Putting this together:
 
 ```js
-logResource.getPagedUserLog(userLogoptions)
+logResource.getPagedUserLog(userLogOptions)
 .then(function (response) {
     console.log(response)
     vm.UserLogHistory = response;
@@ -341,7 +341,7 @@ logResource.getPagedUserLog(userLogoptions)
                                 item.entityType = "Media";
                             }
                             if (item.comment.indexOf("Content") > -1) {
-                                // log entry is a media item
+                                // log entry is a content item
                                 item.editUrl = "content/content/edit/" + item.nodeId;
                                 item.entityType = "Document";
                             }
