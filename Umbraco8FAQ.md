@@ -25,7 +25,7 @@ By doing all this, it simply wouldn’t be possible to take this giant leap whil
 
 With the initial launch of Umbraco 8.0 our main focus has been for you to be able to start using Umbraco 8 when creating a new project. Thus, start a great project from scratch using all the new Umbraco 8 features and functionalities.  
 
-**In the near future, it will though be possible to do a manual content migration** of your Umbraco 7 project to Umbraco 8 which we, of course, will give you best practices documentation on as soon as it’s ready. We highly recommend you wait with the content migration of your Umbraco 7 project until we have this documentation ready in order to ensure you get the best possible content migration experience. 
+**It is possible to do a manual content migration** of your Umbraco 7 project to Umbraco 8. For you to able to do so you will need to follow our documentation https://our.umbraco.com/Documentation/Getting-Started/Setup/Upgrading/migrating-to-v8
 
 ## What are the highlights of Umbraco 8? 
 
