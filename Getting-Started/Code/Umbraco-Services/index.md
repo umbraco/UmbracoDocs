@@ -149,7 +149,7 @@ public class CustomNewsArticleService : ICustomNewsArticleService
         public void DoSomethingWithNewsArticles(){
                using (var contextReference = _contextFactory.EnsureUmbracoContext())
                 {
-                    IPublishedContentCache contentCache = contextReference.UmbracoContext.ContentCache;
+                    IPublishedContentCache contentCache = contextReference.UmbracoContext.Content;
                     IPublishedContent newsSection = cache.GetAtRoot().FirstOrDefault().Children.FirstOrDefault(f => f.ContentType.Alias == "newsSection");
                     if (newsSection== null)
                     {

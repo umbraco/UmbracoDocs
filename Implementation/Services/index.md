@@ -184,7 +184,7 @@ namespace Umbraco8.Components
             using (var umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext())
             {
                 //the UmbracoContextReference provides access to the ContentCache
-                var contentCache = umbracoContextReference.UmbracoContext.ContentCache;
+                var contentCache = umbracoContextReference.UmbracoContext.Content;
                 //query the published content cache
                 IEnumerable<IPublishedContent> rootNodes = contentCache.GetAtRoot();
                 //retrieve a particular item with id 1234 from the published content cache
@@ -206,14 +206,14 @@ Inside a ContentFinder access to the content cache is provided via the Published
 ```csharp
   public bool TryFindContent(PublishedRequest frequest)
         {
-            var someContent = frequest.UmbracoContext.ContentCache.GetById(1234);
+            var someContent = frequest.UmbracoContext.Content.GetById(1234);
 ```
 
 and insde a UrlProvider the GetUrl method has the current UmbracoContext injected:
 ```csharp
    public override UrlInfo GetUrl(UmbracoContext umbracoContext, IPublishedContent content, UrlProviderMode mode, string culture, Uri current)
         {
-        var someContent = umbracoContext.ContentCache.GetById(1234);
+        var someContent = umbracoContext.Content.GetById(1234);
 ```
 
 ## Custom Services and Helpers
