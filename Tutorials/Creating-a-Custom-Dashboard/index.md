@@ -6,7 +6,6 @@ meta.Title: "Creating a Custom Dashboard"
 meta.Description: "A guide to creating a custom dashboard in Umbraco"
 ---
 
-
 # Tutorial - Creating a Custom Dashboard
 
 ## Overview
@@ -37,6 +36,7 @@ So all the steps we will go through:
 - You can do anything...
 
 ### Prerequisites
+
 This tutorial uses AngularJS with Umbraco, so it does not cover AngularJS itself, there are tons of resources on that already here:
 
 - [Egghead.io](https://egghead.io/courses/angularjs-fundamentals)
@@ -102,6 +102,7 @@ You can specify multiple controls to appear on a particular tab, and multiple ta
 :::
 
 ### Add Language Keys
+
 After registering your dashboard, it will appear in the backoffice - however it will have it's dashboard alias [WelcomeDashboard] wrapped in square brackets. This is because it is missing a language key. The language key allows people to provide a translation of the dashboard name in multilingual environments. To remove the square brackets - add a language key:
 
 You will need to create a *lang* folder in your custom dashboard folder and create a package specific language file:  `~/App_Plugins/CustomWelcomeDashboard/lang/en-US.xml`
@@ -288,7 +289,7 @@ Add to our WelcomeDashboard.html view some markup using angular's *ng-repeat* to
 ```html
 <h2>We know what you edited last week...</h2>
 <ul>
-    <li ng-repeat="logEntry in vm.UserLogHistory.items">{{logEntry.nodeId}} - {{logEntry.comment}} - {{logEntry.timestamp  | date:'medium'}}</li>
+    <li ng-repeat="logEntry in vm.UserLogHistory.items">{{logEntry.nodeId}} - {{logEntry.logType}} - {{logEntry.timestamp  | date:'medium'}}</li>
 </ul>
 ```
 
@@ -308,7 +309,7 @@ These options should retrieve the last ten activities for the current user in de
 ```js
 logResource.getPagedUserLog(userLogOptions)
     .then(function (response) {
-        console.log(response)
+        console.log(response);
         vm.UserLogHistory = response;
     });
 ```
@@ -316,17 +317,21 @@ logResource.getPagedUserLog(userLogOptions)
 Take a look at the output of console.log of the response in your browser to see the kind of information retrieved  from the log:
 
 ```js
-{pageNumber: 2, pageSize: 10, totalPages: 6, totalItems: 60, items: Array(10)}
-    items: Array(10)
-        0:
-            $$hashKey: "03L"
-            comment: "Save and Publish performed by user"
-            logType: "Publish"
-            nodeId: 1101
-            timestamp: "2018-11-25T13:40:11.137Z"
-            userAvatars: (5) ["https://www.gravatar.com/avatar/1da605eb2601035122149d0bc1edb5ea?d=404&s=30", "https://www.gravatar.com/avatar/1da605eb2601035122149d0bc1edb5ea?d=404&s=60", "https://www.gravatar.com/avatar/1da605eb2601035122149d0bc1edb5ea?d=404&s=90", "https://www.gravatar.com/avatar/1da605eb2601035122149d0bc1edb5ea?d=404&s=150", "https://www.gravatar.com/avatar/1da605eb2601035122149d0bc1edb5ea?d=404&s=300"]
-            userId: 0
-            userName: "marc"
+{pageNumber: 1, pageSize: 10, totalPages: 1, totalItems: 1, items: Array(1)}
+    comment: null
+    entityType: "Document"
+    logType: "Publish"
+    nodeId: 4
+    parameters: null
+    timestamp: "2019-07-25T13:19:40.197Z"
+    userAvatars: []
+    userId: 1
+    userName: "Jesper Christensen Mayntzhusen"
+    length: 1
+    pageNumber: 1
+    pageSize: 10
+    totalItems: 1
+    totalPages: 1
 ```
 
 It's nearly all we need but missing information about the item that was saved and published!
