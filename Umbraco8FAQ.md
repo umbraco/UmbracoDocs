@@ -10,25 +10,28 @@ Yes, you can! All free Umbraco Cloud trials will be on Umbraco 8 from the offici
 
 ## Can I still create Umbraco 7 projects on Umbraco Cloud and how long?
 
-Yes, you can. Umbraco 7 will continue to be supported on Cloud and we will still provide you with necessary updates in regard to bug and security fixes (as mentioned above). You will be able to create new Umbraco 7 sites on Umbraco Cloud untill the end of 2019. 
+Yes, you can. Umbraco 7 will continue to be supported on Cloud and we will still provide you with necessary updates in regard to bug and security fixes (as mentioned above). You will be able to create new Umbraco 7 sites on Umbraco Cloud untill the end of 2019.
 
 And the last date Umbraco 7 sites are supported on Umbraco Cloud will be September 30th 2023.
 
-Following the launch of Umbraco 8, when creating a new paid project, you’ll get the option to create it in either Umbraco 7 or Umbraco 8. All free Umbraco Cloud trials will be on Umbraco 8 following the launch. 
+Following the launch of Umbraco 8, when creating a new paid project, you’ll get the option to create it in either Umbraco 7 or Umbraco 8. All free Umbraco Cloud trials will be on Umbraco 8 following the launch.
 
 ## Will it be possible to upgrade automatically from Umbraco 7 to Umbraco 8?
 
-There will not be a direct upgrade path, but it will be possible to migrate content from Umbraco 7 sites to Umbraco 8 sites. We are developing a content migration tool that will enable you to move your content (content/media/members) from a Umbraco 7 site to an Umbraco 8 site. We will inform you about it as soon as it is ready.   
+There is no direct upgrade path from Umbraco 7 to Umbraco 8, but it is be possible to migrate content from Umbraco 7 sites to Umbraco 8 sites. We have added content migrations in Umbraco 8.1.0 that will enable you to move your content (content/media/members) from an Umbraco 7 site to an Umbraco 8 site.
 
-The reason why it is not possible to upgrade an Umbraco 7 site to Umbraco 8 is that the codebase has been fundamentally updated in Umbraco 8. We have removed a lot of outdated code and technology and instead implemented new, faster and more secure technology throughout Umbraco 8. We have added improvements and updated dependencies as well as done a thorough clean-up to make it simpler for you to work with and extend your Umbraco project. 
-By doing all this, it simply wouldn’t be possible to take this giant leap while maintaining full compatibility with Umbraco 7.
+The reason why it is not possible to upgrade an Umbraco 7 site to Umbraco 8 is is that the codebase has been fundamentally updated in Umbraco 8. A lot of outdated code and technology has been removed and instead new, faster and more secure technology has been implemented throughout Umbraco 8.
 
-With the initial launch of Umbraco 8.0 our main focus has been for you to be able to start using Umbraco 8 when creating a new project. Thus, start a great project from scratch using all the new Umbraco 8 features and functionalities.  
+### Migrating content from Umbraco 7 to Umbraco 8
 
-**It is possible to do a content migration** of your Umbraco 7 project to Umbraco 8. For you to be able to do so, follow our [Content Migration guide](https://our.umbraco.com/Documentation/Getting-Started/Setup/Upgrading/migrating-to-v8)
+If you have an Umbraco 7 site you can migrate the content to an Umbraco 8.1+ site. Read how to do it in our [Content Migration guide](Getting-Started/Setup/Upgrading/migrating-to-v8).
+
+:::tip
+If you are using Umbraco Cloud we have a [Cloud specific migration guide](Umbraco-Cloud/Upgrades/Migrating-from-7-to-8) that will take you through the Cloud specific considerations.
+:::
 
 ## What are the highlights of Umbraco 8? 
 
-The introduction of three new features: Infinite Editing, Content Apps and Language Variants. All features that have been added to make working with Umbraco even simpler, smoother and basically, more enjoyable. For everyone involved! 
+The introduction of three new features: Infinite Editing, Content Apps and Language Variants. All features that have been added to make working with Umbraco even simpler, smoother and basically, more enjoyable. For everyone involved!
 
 Also, if you are a developer and currently have projects on Umbraco 7 (or previous versions) you will notice a big difference in the codebase. In Umbraco 8 we have added improvements and updated dependencies as well as done a thorough clean-up to make it simpler for you to work with and extend your Umbraco project.
