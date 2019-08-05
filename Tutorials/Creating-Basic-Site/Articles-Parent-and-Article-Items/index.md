@@ -83,10 +83,10 @@ It will look similar to this:
 This code will output a list of all the **_Article Items_** as links using the name. We are going to modify this a little, to add a bit more information about the articles. Replace the `HTML` in the *foreach* loop with this snippet:
 
 ```csharp
-<div class="article">
+<article class="special">
     <div class="articletitle"><a href="@item.Url">@item.Name</a></div>
     <div class="articlepreview">@item.Value("articleContent").ToString().Truncate(100) <a href="@item.Url">Read More..</a></div>
-</div>
+</article>
 <hr/>
 ```
 
