@@ -423,6 +423,32 @@ namespace Umbraco8.Services
 
 The second approach can seem 'different' or more complex at first glance, but it is just the syntax and method names that are slightly different... it enables the registering of the service in Singleton Scope, and it's use outside of controllers and views.
 
+###### Aside: What is the IUmbracoContextAccessor then?
+
+The `IUmbracoContextFactory` will obtain an `UmbracoContext` by first checking to see if one exists on the current thread using the `IUmbracoContextAccessor` (a singleton that can be injected anywhere and whose function is to provide access to the current UmbracoContext) - On a 'non request' thread the IUmbracoContextAccessor's UmbracoContext property will be null and the IUmbracoContextFactory will create a new instance of the UmbracoContext.
+If you need to know whether the UmbracoContext has been obtained from an existing thread, or whether it has been freshly created you can 'inject' `IUmbracoContextAccessor` yourself and check if the UmbracoContext is null, indicating whether you are in a 'non request' thread or not, however you will still need to inject and use an IUmbracoContextFactory if you subsequently want to obtain an UmbracoContext in a non-request thread.
+```csharp
+using System.Linq;
+using Umbraco.Core.Models.PublishedContent;
+using Umbraco.Web;
+using Umbraco.Web.PublishedCache;
+
+namespace Umbraco8.Services
+{
+    public class SiteService : ISiteService
+    {
+        private readonly IUmbracoContextAccessor _umbracoContextAccessor;
+        private readonly IUmbracoContextFactory _umbracoContextFactory;
+
+        public SiteHelperService(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoContextFactory umbracoContextFactory)
+        {
+            _umbracoContextAccessor = umbracoContextAccessor;
+            _umbracoContextFactory = umbracoContextFactory;
+            bool hasUmbracoContext = _umbracoContextAccessor.UmbracoContext != null;
+        }
+```
+NB: With the `IUmbracoContextAccessor` and `IUmbracoContextFactory` you should NEVER have to inject the UmbracoContext itself directly into any of your constructors.
+
 #### Using the custom SiteService inside a Controller
 
 Because we've registered the SiteService with Umbraco's underlying DI framework we can inject the service into our controller's constructor, in the same way as 'core' Services and Helpers.
