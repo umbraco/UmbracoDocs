@@ -366,13 +366,13 @@ namespace Umbraco8.Services
         public IPublishedContent GetNewsSection()
         {
             var siteRoot = _contentQuery.ContentAtRoot().FirstOrDefault();
-            var newsSection = siteRoot != null ? siteRoot.FirstChild(f => f.ContentType.Alias == "newsSection") : default(IPublishedContent);
+            var newsSection = siteRoot?.FirstChild(f => f.ContentType.Alias == "newsSection") ?? null;
             return newsSection;
         }
         public IPublishedContent GetContactUsPage()
         {
             var siteRoot = _contentQuery.ContentAtRoot().FirstOrDefault();
-            var contactUs = siteRoot != null ? siteRoot.FirstChild(f => f.ContentType.Alias == "contactUs")  : default(IPublishedContent);
+            var contactUs = siteRoot?.FirstChild(f => f.ContentType.Alias == "contactUs") ?? null;
             return contactUs;
         }
     }
@@ -397,23 +397,23 @@ namespace Umbraco8.Services
         }
        public IPublishedContent GetNewsSection()
         {
-            IPublishedContent newsSection = default(IPublishedContent);
+            IPublishedContent newsSection = null;
             using (UmbracoContextReference umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext())
             {
                 IPublishedContentCache contentCache = umbracoContextReference.UmbracoContext.ContentCache;
                 IPublishedContent siteRoot = contentCache.GetAtRoot().FirstOrDefault();
-                newsSection = siteRoot.FirstChild(f => f.ContentType.Alias == "newsSection");
+                newsSection = siteRoot?.FirstChild(f => f.ContentType.Alias == "newsSection") ?? null;
             }
             return newsSection;
         }
         public IPublishedContent GetContactUsPage()
         {
-            IPublishedContent contactUsPage = default(IPublishedContent);
+            IPublishedContent contactUsPage = null;
             using (UmbracoContextReference umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext())
             {
                 IPublishedContentCache contentCache = umbracoContextReference.UmbracoContext.ContentCache;
                 IPublishedContent siteRoot = contentCache.GetAtRoot().FirstOrDefault();
-                contactUsPage = siteRoot.FirstChild(f => f.ContentType.Alias == "contactUs");
+                contactUsPage = siteRoot?.FirstChild(f => f.ContentType.Alias == "contactUs") ?? null;
             }
             return contactUsPage;
         }
