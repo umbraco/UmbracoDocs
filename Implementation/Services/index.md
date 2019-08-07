@@ -1,4 +1,4 @@
-﻿---
+---
 keywords: implementing services injecting di custom services service pattern UmbracoHelper reusing dry
 versionFrom: 8.0.0
 ---
@@ -343,7 +343,7 @@ namespace Umbraco8.Composers
 
 #### Implementing the service
 
-##### 1 - The service will ONLY be used in a Controller or View
+##### 1 - The service will ONLY be used during a request like in a Controller or View
 
 Although you already have access to the UmbracoHelper IPublishedTypedQuery via the Umbraco property in these locations, you can avoid repeating common implementation logic in multiple controllers and views by consolidating these implementations into a custom service, if you are very familiar with IPublishedContentQuery injecting this into the custom service is simple, but the caveat is you can only use this service in a controller/view.
 
@@ -379,7 +379,7 @@ namespace Umbraco8.Services
 }
 ```
 
-##### 2 - Recommended approach: the custom service can be used anywhere in Umbraco!
+##### 2 - The service can be used within or outside of a web request
 
 ```csharp
 using System.Linq;
