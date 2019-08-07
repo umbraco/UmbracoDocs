@@ -463,7 +463,7 @@ namespace Umbraco8.Controllers
 ```
 
 :::warning
-This isn't truly 'best practice' when using DI. This 'only works' in Umbraco because when a dependency for the base RenderMvcController isn't supplied via a constructor, Umbraco 'falls back' and uses the Service Locator pattern to inject the missing elements. This enables developers to choose to ignore DI, but if trying to following DI best practice, and to make the controller 'unit testable' - use the following example instead.
+This isn't truly 'best practice' when using DI. This 'only works' in Umbraco because when a dependency for the base RenderMvcController isn't supplied via a constructor, Umbraco 'falls back' and uses the Service Locator pattern to inject the missing elements. This enables developers to choose to ignore DI, but if trying to following DI best practice, and to make the controller 'unit testable' - use the following example instead which supplies all constructor parameters for the base class.
 :::
 
 ```csharp
