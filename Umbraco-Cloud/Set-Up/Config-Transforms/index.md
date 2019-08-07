@@ -43,7 +43,7 @@ When creating config transforms you need to follow these three rules:
 2. Place the transform file in the same folder as the file you want to transform
 3. Follow the correct [Config Transform syntax](https://msdn.microsoft.com/en-us/library/dd465326)
 
-Before applying the config transform files to your environments we recommend that you run a test using this tool: [Webconfig Transformation Tester](https://webconfigtransformationtester.apphb.com/)
+Before applying the config transform files to your environments we recommend that you run a test using this tool: [Webconfig Transformation Tester](https://elmah.io/tools/webconfig-transformation-tester/)
 
 Using the tool will let you test whether the transform file transforms your config files correctly. The tool can be used for all config files.
 

@@ -221,15 +221,29 @@ If you like using Serilog but prefer to use C# to configure the logging pipeline
 
 ```csharp
 using Umbraco.Web;
+using Umbraco.Core;
+using Umbraco.Web.Runtime;
 using Umbraco.Core.Logging.Serilog;
+using ILogger = Umbraco.Core.Logging.ILogger;
+
 using Serilog;
 using Serilog.Events;
-using ILogger = Umbraco.Core.Logging.ILogger;
 
 namespace MyNamespace
 {
-    public class FineTuneLogging : UmbracoApplication
+    public class FineTuneLoggingApplication : UmbracoApplication
     {
+        protected override IRuntime GetRuntime()
+        {
+            return new FineTuneLoggingWebRuntime(this);
+        }
+    }
+
+    public class FineTuneLoggingWebRuntime : WebRuntime
+    {
+        public FineTuneLoggingWebRuntime(UmbracoApplicationBase umbracoApplication) : base(umbracoApplication)
+        {
+        }
         protected override ILogger GetLogger()
         {
             var loggerConfig = new LoggerConfiguration();
@@ -250,12 +264,17 @@ namespace MyNamespace
 You will then need to update the `global.asax` file on disk to use our FineTuneLogging class like so
 
 ```
-<%@ Application Inherits="MyNamespace.FineTuneLogging" Language="C#" %>
+<%@ Application Inherits="MyNamespace.FineTuneLoggingApplication" Language="C#" %>
 ```
 
 ## The logviewer dashboard
 
 Learn more about the [logviewer dashboard](../../../Backoffice/LogViewer/) in the backoffice and how it can be extended.
+
+## The logviewer desktop app
+
+This is a tool for viewing & querying JSON log files from disk in the same way as the built in log viewer dashboard
+<a href='//www.microsoft.com/store/apps/9N8RV8LKTXRJ?cid=storebadge&ocid=badge'><img src='https://assets.windowsphone.com/85864462-9c82-451e-9355-a3d5f874397a/English_get-it-from-MS_InvariantCulture_Default.png' alt='English badge' style='height: 38px;' height="38" /></a> <a href="https://itunes.apple.com/gb/app/compact-log-viewer/id1456027499"><img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg" /></a>
 
 
 ## Serilog project/references shipped
@@ -278,6 +297,5 @@ If you are interested in learning more then the following resources will benefic
 * [Nicholas Blumhardt Blog, creator of Serilog](https://nblumhardt.com/)
 * [Serilog Pluralsight Course](https://www.pluralsight.com/courses/modern-structured-logging-serilog-seq)
 * [Seq](https://getseq.net/) This is FREE for a single machine such as your own local development computer
-* [Compact Log Viewer](https://www.microsoft.com/store/apps/9N8RV8LKTXRJ) This is a tool for viewing & querying JSON log files from disk in the same way as the built in logviewer dashboard
 
 

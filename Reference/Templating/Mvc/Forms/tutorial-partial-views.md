@@ -54,7 +54,7 @@ For this tutorial, the Surface controller that we will create will contain one a
 				    
 			// Add a message in TempData which will be available 
 			// in the View after the redirect 
-			TempData.Add("CustomMessage", "Your form was successfully submitted at " + DateTime.Now)
+			TempData.Add("CustomMessage", "Your form was successfully submitted at " + DateTime.Now);
 		
 		    // redirect to current page to clear the form
 		    return RedirectToCurrentUmbracoPage();		    

@@ -129,7 +129,6 @@ namespace Umbraco8.Components
     }
 }
 ```
-
 See documentation on [Composing](../Composing/) for further examples and information on Components and Composition.
 
 ### Accessing Published Content outside of a Http Request
@@ -140,7 +139,6 @@ In this example, when a page is unpublished, instead of a 404 occurring for the 
 (An [IContentFinder](../../Reference/Routing/Request-Pipeline/IContentFinder.md) (not shown here) could be placed in the ContentFinder ordered collection, just before a 404 is served, to lookup the incoming request against the stored location of 410 urls, and serve the 410 status request code if a match is found for the prevously published item.)
 
 ```csharp
-
 using Umbraco.Core.Composing;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Core.Services;
@@ -207,6 +205,7 @@ namespace Umbraco8.Components
 #### Accessing the Published Content Cache from a Content Finder / UrlProvider
 
 Inside a ContentFinder access to the content cache is already provided via the PublishedRequest object:
+
 ```csharp
   public bool TryFindContent(PublishedRequest frequest)
         {
@@ -227,6 +226,7 @@ It is still possible to inject services into IContentFinder's. IContentFinders a
 ## Custom Services and Helpers
 
 When implementing an Umbraco site, it is likely to have to execute similar code that accesses or operates on Umbraco data, in multiple places, perhaps using the core management Services or Umbraco Helpers.
+
 For example; Getting a list of the latest News Articles, or building a link to the site's News Section or Contact Us page. It's easy to repeat this kind of logic in multiple places, Views, Partial Views / Controllers etc, which is fine, but it's generally considered good practice to consolodate this logic into a single place.
 
 ### Extension methods
@@ -461,7 +461,6 @@ namespace Umbraco8.Controllers
     }
 }
 ```
-
 :::warning
 This isn't truly 'best practice' when using DI. This 'only works' in Umbraco because when a dependency for the base RenderMvcController isn't supplied via a constructor, Umbraco 'falls back' and uses the Service Locator pattern to inject the missing elements. This enables developers to choose to ignore DI, but if trying to following DI best practice, and to make the controller 'unit testable' - use the following example instead which supplies all constructor parameters for the base class.
 :::
@@ -575,7 +574,7 @@ namespace Umbraco8.ViewPages
             )
         { }
         
-            public CustomViewPage(ISiteService SiteService, ServiceContext services, AppCaches appCaches)
+        public CustomViewPage(ISiteService SiteService, ServiceContext services, AppCaches appCaches)
         {
             SiteService = SiteService;
             Services = services;
@@ -589,8 +588,8 @@ namespace Umbraco8.ViewPages
     }
 }
 ```
-
 with this in place all views inheriting from CustomViewPage or CustomViewPage&lt;T&gt; would have access to the SiteService:
+
 ```csharp
 @using Umbraco8.ViewPages
 @inherits CustomViewPage<BlogPost>
@@ -603,7 +602,3 @@ with this in place all views inheriting from CustomViewPage or CustomViewPage&lt
     <div class="container">
         <article>
 ```
-
-
-
-

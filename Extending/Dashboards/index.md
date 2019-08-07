@@ -258,7 +258,7 @@ In previous versions of Umbraco if you wanted to remove or modify the order of a
 
 ```csharp
 using Umbraco.Core;
-using Umbraco.Core.Components;
+using Umbraco.Core.Composing;
 using Umbraco.Web;
 using Umbraco.Web.Dashboards;
 
