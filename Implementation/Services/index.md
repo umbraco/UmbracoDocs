@@ -244,8 +244,9 @@ namespace Umbraco8.Extensions
             {
                 //assuming a single site with a single News Section at the top level
                 IPublishedContent siteRoot = umbracoHelper.ContentAtRoot().FirstOrDefault();
-                return siteRoot != null ? siteRoot.FirstChild(f => f.ContentType.Alias == "newsSection") : default(IPublishedContent);
-            }
+                //make sure siteRoot isn't null, then locate first child content item with alias 'newsSection'
+                return siteRoot?.FirstChild(f => f.ContentType.Alias == "newsSection") ?? null;
+}
      }
 }
 ```
