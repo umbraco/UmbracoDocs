@@ -221,6 +221,8 @@ In the `/config/serilog.user.config` file you can add the following lines, which
 If you like using Serilog but prefer to use C# to configure the logging pipeline then you can do so with the following example. This sets the minimum logging level from a web.config AppSetting, allowing you to set different minimum logging levels in different environments using web config transforms.
 
 ```csharp
+using System;
+using System.Configuration;
 using Umbraco.Web;
 using Umbraco.Core;
 using Umbraco.Web.Runtime;
@@ -228,6 +230,7 @@ using Umbraco.Core.Logging.Serilog;
 using ILogger = Umbraco.Core.Logging.ILogger;
 
 using Serilog;
+using Serilog.Core;
 using Serilog.Events;
 
 namespace MyNamespace
