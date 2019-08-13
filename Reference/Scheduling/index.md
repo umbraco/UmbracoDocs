@@ -88,3 +88,24 @@ namespace Umbraco.Web.UI
     }
 }
 ```
+
+:::warning
+Be aware you may or may not want this background task code to run on all servers, if you are using Load Balancing with multiple servers - https://our.umbraco.com/Documentation/Getting-Started/Setup/Server-Setup/Load-Balancing/
+:::
+
+### Using RuntimeState
+In the example above you could add the following switch case at the beginning to help determine the server role & thus if you want to run code on that type of server and exit out early.
+
+```csharp
+// Do not run the code on replicas nor unknown role servers
+// ONLY run for Master server or Single
+switch (_runtime.ServerRole)
+{
+    case ServerRole.Replica:
+        _logger.Debug<CleanRoom>("Does not run on replica servers.");
+        return true; // We return true to try again as the server role may change!
+    case ServerRole.Unknown:
+        _logger.Debug<CleanRoom>("Does not run on servers with unknown role.");
+        return true; // We return true to try again as the server role may change!
+}
+```
