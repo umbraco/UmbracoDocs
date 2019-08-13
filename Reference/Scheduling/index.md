@@ -24,12 +24,14 @@ namespace Umbraco.Web.UI
         private IProfilingLogger _logger;
         private IRuntimeState _runtime;
         private IContentService _contentService;
+        private BackgroundTaskRunner<IBackgroundTask> _cleanUpYourRoomRunner;
 
         public CleanUpYourRoomComponent(IProfilingLogger logger, IRuntimeState runtime, IContentService contentService)
         {
             _logger = logger;
             _runtime = runtime;
             _contentService = contentService;
+            _cleanUpYourRoomRunner = new BackgroundTaskRunner<IBackgroundTask>("CleanYourRoom", _logger);
         }
 
         public void Initialize()
@@ -37,11 +39,10 @@ namespace Umbraco.Web.UI
             int delayBeforeWeStart = 60000; // 60000ms = 1min
             int howOftenWeRepeat = 300000; //300000ms = 5mins
 
-            var cleanUpYourRoomRunner = new BackgroundTaskRunner<IBackgroundTask>("CleanYourRoom", _logger);
-            var task = new CleanRoom(cleanUpYourRoomRunner, delayBeforeWeStart, howOftenWeRepeat, _runtime, _logger, _contentService);
+            var task = new CleanRoom(_cleanUpYourRoomRunner, delayBeforeWeStart, howOftenWeRepeat, _runtime, _logger, _contentService);
 
             //As soon as we add our task to the runner it will start to run (after its delay period)
-            cleanUpYourRoomRunner.TryAdd(task);
+            _cleanUpYourRoomRunner.TryAdd(task);
         }
 
         public void Terminate()
@@ -87,6 +88,7 @@ namespace Umbraco.Web.UI
         public override bool IsAsync => false;
     }
 }
+
 ```
 
 :::warning
