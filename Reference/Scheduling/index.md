@@ -51,6 +51,7 @@ namespace Umbraco.Web.UI
         }
     }
 
+    // Now we get to define the recurring task
     public class CleanRoom : RecurringTaskBase
     {
         private IRuntimeState _runtime;
