@@ -15,6 +15,7 @@ using Umbraco.Web.Scheduling;
 
 namespace Umbraco.Web.UI
 {
+    // We start by setting up a composer and component so our task runner gets registered on application startup
     public class CleanUpYourRoomComposer : ComponentComposer<CleanUpYourRoomComponent>
     {
     }
