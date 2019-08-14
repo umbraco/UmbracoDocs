@@ -88,7 +88,7 @@ The constructor function is used to create an instance of the target class. The 
 The mapping action is used to map an instance of the source class, to an instance of the target class. The most basic implementation would be:
 
 ```cs
-(source, target, context) =>    
+(source, target, context) =>
 {
     target.MyProperty1 = source.MyProperty1;
     target.MyProperty2 = source.MyProperty2;
@@ -193,8 +193,8 @@ And the comment can be repeated if the list of excluded properties is long:
 
 The analyzer follows the standard analyzer development patterns, and simply building the code in Release mode produces the appropriate NuGet package.
 
-
 ## Full example
+
 Below you will find a full example showing you how to map a collection of type Product to a collection of type ProductDto.
 
 ```cs
@@ -289,6 +289,7 @@ public class ProductsController : UmbracoApiController
 ```
 
 Result from `/umbraco/api/products/getall`:
+
 ```json
 [
     {
@@ -301,6 +302,7 @@ Result from `/umbraco/api/products/getall`:
 ```
 
 Result from `/umbraco/api/products/getfirstproduct`:
+
 ```json
 {
     "name": "Umbraco Cloud"
