@@ -98,7 +98,7 @@ You have to manually add `prefix="media/"` to the service element, otherwise Ima
       <settings>
         <setting key="MaxBytes" value="8194304"/>
         <setting key="Timeout" value="30000"/>
-        <setting key="Host" value="https://[your blob account].blob.core.windows.net/media"/>
+        <setting key="Host" value="https://[your blob account].blob.core.windows.net/media/"/>
       </settings>
     </service>
     <service prefix="remote.axd" name="RemoteImageService" type="ImageProcessor.Web.Services.RemoteImageService, ImageProcessor.Web">
