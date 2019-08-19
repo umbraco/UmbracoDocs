@@ -110,7 +110,7 @@ namespace Umbraco.Web.UI
 }
 ```
 
-**Please Note** It is important to note that the `BlogCommentSchema` class is purely used as a database schema representation and should not be used as a DTO to access the table data. Equally, you shouldn't use your DTOs to define the schema used by your migration, instead you should create a duplicate snapshot as demostrated above specifically for the purpose of creating your database table.
+**Important!** It is important to note that the `BlogCommentSchema` class is purely used as a database schema representation and should not be used as a DTO to access the table data. Equally, you shouldn't use your DTOs to define the schema used by your migration, instead you should create a duplicate snapshot as demostrated above specifically for the purpose of creating your database table.
 
 Whilst this adds a level of duplication, it is important that migrations remain imutable and so if the DTO was to be used for both, it could cause unexpected behaviour should you later modify your DTO but you have previous migrations that expect the DTO to be in it's unmodified state.
 
