@@ -22,7 +22,7 @@ See: [IContentFinder documentation](../../Reference/Routing/Request-Pipeline/ICo
 
 A 'Last Chance' `IContentFinder` is a special implementation of an `IContentFinder` for use with handling 404's. You can implement one of these plugins to decide which Umbraco content page you would like to show when the URL hasn't matched an Umbraco content node.
 
-To set your own 404 finder create an IContentFinder and set it as the ContentLastChanceFinder.  A ContentLastChanceFinder will always return a 404 status code. Example:
+To set your own 404 finder create an IContentFinder and set it as the ContentLastChanceFinder. A ContentLastChanceFinder will always return a 404 status code. Example:
 
 ```csharp
 ContentLastChanceFinderResolver.Current.SetFinder(new My404ContentFinder());
