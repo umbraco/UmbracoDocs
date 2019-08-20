@@ -218,9 +218,11 @@ In the `/config/serilog.user.config` file you can add the following lines, which
 
 ### Full C# control over Serilog configuration
 
-If you like using Serilog but prefer to use C# to configure the logging pipeline then you can do so with the following example
+If you like using Serilog but prefer to use C# to configure the logging pipeline then you can do so with the following example. This sets the minimum logging level from a web.config AppSetting, allowing you to set different minimum logging levels in different environments using web config transforms.
 
 ```csharp
+using System;
+using System.Configuration;
 using Umbraco.Web;
 using Umbraco.Core;
 using Umbraco.Web.Runtime;
@@ -228,6 +230,7 @@ using Umbraco.Core.Logging.Serilog;
 using ILogger = Umbraco.Core.Logging.ILogger;
 
 using Serilog;
+using Serilog.Core;
 using Serilog.Events;
 
 namespace MyNamespace
@@ -247,14 +250,21 @@ namespace MyNamespace
         }
         protected override ILogger GetLogger()
         {
-            var loggerConfig = new LoggerConfiguration();
-            loggerConfig
-                .Enrich.WithProperty("MyProperty", "whatIWant")
+            var logLevelSetting = ConfigurationManager.AppSettings["YourMinimumLoggingLevel"]; //Warning, Debug, Information, etc
+
+            const bool ignoreCase = true; //this is to clarify the function of the boolean second parameter in the TryParse
+            if (!Enum.TryParse(logLevelSetting, ignoreCase, out LogEventLevel minimumLevel))
+            {
+                minimumLevel = LogEventLevel.Information;//set to this level if the config setting is missing or doesn't match a valid enumeration
+            }
+
+            var levelSwitch = new LoggingLevelSwitch { MinimumLevel = minimumLevel };
+
+            var loggerConfig = new LoggerConfiguration()
                 .MinimalConfiguration()
-                .OutputDefaultTextFile(LogEventLevel.Error)
-                .OutputDefaultJsonFile(LogEventLevel.Information)
                 .ReadFromConfigFile()
-                .ReadFromUserConfigFile();
+                .ReadFromUserConfigFile()
+                .MinimumLevel.ControlledBy(levelSwitch);
 
             return new SerilogLogger(loggerConfig);
         }
