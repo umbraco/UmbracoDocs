@@ -13,14 +13,14 @@ In this article you can learn how to use Markdown, as well as how we structure t
 For the documentation project, each individual topic is contained in its own folder.
 Each folder must have an `index.md` file which links to the individual sub-pages, if images are used, these must be in `images` folders next to the .md file referencing them relatively.
 
-* topic
-  * images
-    * images.jpg
-  * Subtopic
-    * images
-    * index.md
-  * index.md
-  * other-page.md
+* `topic`
+  * `images`
+    * `images.jpg`
+  * `Subtopic`
+    * `images`
+    * `index.md`
+  * `index.md`
+  * `other-page.md`
 
 ## Images
 

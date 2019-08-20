@@ -81,8 +81,8 @@ This description pertains ONLY to Umbraco database tables
 In some cases infrastructure admins will not want their front-end servers to have write access to the database.
 By default front-end servers will require write full access to the following tables:
 
-* umbracoServer
-* umbracoNode
+* `umbracoServer`
+* `umbracoNode`
 
 This is because by default each server will inform the database that they are active and more importantly it is
 used for task scheduling. Only a single server can execute task scheduling and these tables are used for servers

@@ -44,8 +44,8 @@ _The below section is common for all load balancing configurations, ensure that 
 
 * You will need to use a custom machine key so that all your machine key level encryption values are the same on all servers, without this you will end up with view state errors, validation errors and encryption/decryption errors since each server will have its own generated key.
 	* Here are a couple of tools that can be used to generate machine keys:
-		* 	[http://www.betterbuilt.com/machinekey/](http://www.betterbuilt.com/machinekey/)
-		* 	[http://www.developerfusion.com/tools/generatemachinekey/](https://www.developerfusion.com/tools/generatemachinekey/)
+		* 	[Tool 1: http://www.betterbuilt.com/machinekey/](http://www.betterbuilt.com/machinekey/)
+		* 	[Tool 2: http://www.developerfusion.com/tools/generatemachinekey/](https://www.developerfusion.com/tools/generatemachinekey/)
 	* 	Then you need to update your web.config accordingly, note that the validation/decryption types may be different for your environment depending on how you've generated your keys.
 
 ```xml

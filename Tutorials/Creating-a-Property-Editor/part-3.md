@@ -125,11 +125,11 @@ The above is correct markdown code, representing the image, and if preview is tu
 ## Wrap up
 So over the 3 previous steps, we've:
 
-- created a plugin
-- defined an editor
-- injected our own JavaScript libraries and 3rd party ones
-- made the editor configurable
-- connected the editor with native dialogs and services
-- looked at koala pictures
+- Created a plugin
+- Defined an editor
+- Injected our own JavaScript libraries and 3rd party ones
+- Made the editor configurable
+- Connected the editor with native dialogs and services
+- Looked at koala pictures
 
 [Next - Adding server-side data to a property editor](part-4.md)

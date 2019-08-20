@@ -16,9 +16,9 @@ It is a regular ASP.NET MVC controller that:
 
 Since any SurfaceController inherits from the `Umbraco.Web.Mvc.SurfaceController` class, the class instantly supports many of the helper methods and properties that are available on the base SurfaceController class including `UmbracoHelper` and `UmbracoContext`. Therefore, all Surface Controllers have native Umbraco support for:
 
-* interacting with Umbraco routes during HTTP POSTs (i.e. `return CurrentUmbracoPage();` )
-* rendering forms in Umbraco (i.e. `@Html.BeginUmbracoForm<MyController>(...)` )
-* rendering ASP.NET MVC ChildAction 
+* Interacting with Umbraco routes during HTTP POSTs (i.e. `return CurrentUmbracoPage();` )
+* Rendering forms in Umbraco (i.e. `@Html.BeginUmbracoForm<MyController>(...)` )
+* Rendering ASP.NET MVC ChildAction 
 
 ## Creating a SurfaceController
 

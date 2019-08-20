@@ -4,6 +4,7 @@ versionRemoved: 8.0.0
 ---
 
 # Outbound request pipeline
+
 The **outbound pipeline** consists out of the following steps:
 
 1. [Create segments](#segments)
@@ -14,13 +15,15 @@ To explain things we will use the following content tree:
 ![simple content tree](images/simple-content-tree.png)
 
 ## 1. <a name="segments"></a> Create segments
-When the URL is build up, Umbraco will convert every node into a segment.  Each published [Content](../../../Reference/Management/Models/Content) has a url segment. 
+
+When the URL is build up, Umbraco will convert every node into a segment.  Each published [Content](../../../Reference/Management/Models/Content) has a url segment.
 
 In our example "Our Products" will become "our-products" and "Swibble" will become "swibble".
 
 The segments are created by the "Url Segment provider"
 
 ### Url Segment provider
+
 On Umbraco startup the `UrlSegmentProviderResolver` will search for the first `IUrlSegmentProvider` and that does not return `null`.
 
 If no UrlSegment provider is found, he will fall back to the *default Url segment provider*.
@@ -61,8 +64,8 @@ If we would use `MyProvider`, the "swibble" node from our example content tree w
 Default Url builds its segments like this. 
 First it looks (in this order) for: 
 
-- the *umbracoUrlName* property. on the node  `content.GetPropertyValue<string>("umbracoUrlName")`
-- content.Name
+- The *umbracoUrlName* property. on the node  `content.GetPropertyValue<string>("umbracoUrlName")`
+- Content.Name
 
 Then uses Umbraco string extension `ToUrlSegment()` to produce a clean segment.  
 
@@ -137,9 +140,9 @@ The returned string by GetUrl can return whatever pleases you.
 
 It's tricky to implement your own provider, it is advised use override the default provider.  If implementing a custom Url Provider, consider following things:
 
-- cache things,
-- be sure to know how to handle schema's (http vs https) and hostnames 
-- inbound might require rewriting
+- Cache things,
+- Be sure to know how to handle schema's (http vs https) and hostnames 
+- Inbound might require rewriting
 
 When you inherit from the DefaultUrlProvider, you need to implement the constructor specifying the `IRequestHandlerSection`.  The easiest way to retrieve this object is adding a constructor: 
 

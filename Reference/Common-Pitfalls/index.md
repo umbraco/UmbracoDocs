@@ -28,7 +28,7 @@ __Example of using base class properties instead of Singleton accessors:__
 
 _This example shows how you can access all sorts of Umbraco services in a `SurfaceController` without
 relying on Singletons. These same properties exist on all of Umbraco's base classes that you commonly use
-including razor views._ 
+including razor views.
 
 ```csharp
 public class ContactFormSurfaceController: SurfaceController
@@ -69,8 +69,6 @@ public class ContactFormSurfaceController: SurfaceController
 So next time you are using `ApplicationContext.Current` or `UmbracoContext.Current`, think "Why am I doing this?", 
 "Is this already exposed as a property of the base class that I'm using?", "I'm using Dependency Injection, I should be injecting this instance into my class."
 
-
-
 ## Static references to web request instances (such as `UmbracoHelper`)
 
 __Example 1:__
@@ -93,7 +91,7 @@ accesses it. Static variables will always be application scope/lifespan.
 by the garbage collector. Request scoped object instances are not accessed by every other thread in the application - __unless you do something like the above!__
 
 An example of an application scoped instance is Umbraco's `ApplicationContext`, this single instance is shared by all threads and exists for the lifetime of
-the application. 
+the application.
 
 An example of a request scoped instance is the `HttpContext`, this object exists for a single request, it definitely cannot be shared between other threads and especially
 not other request threads because this is where the security information for a given user is stored! The `UmbracoContext` is also a request scoped object - in fact it 
@@ -116,7 +114,7 @@ private static _request = HttpContext.Current.Request;
 
 ## Querying with Descendants, DescendantsOrSelf
 
-It's not 100% bad that you use these queries, you just need to understand the implications. 
+It's not 100% bad that you use these queries, you just need to understand the implications.
 Here's a particularly bad scenario:
 
 You have 10,000 content items in your tree and your tree structure is something like this:
@@ -133,13 +131,12 @@ You create a menu on your Home page like:
 ```csharp
 <ul>
     <li><a href="@Model.Content.Site().Url">@Model.Content.Site().Name</a></li>
-    @foreach(var node in Model.Content.Site().DescendantsOrSelf().Where(x => x.Level == 2)) 
+    @foreach(var node in Model.Content.Site().DescendantsOrSelf().Where(x => x.Level == 2))
     {
         <li><a href="@node.Url">@node.Name</a></li>
     }
 </ul>
 ```
-
 
 Which just renders out: _Home, Blog, Office Locations, About Us, Contact Us_
 
@@ -173,7 +170,7 @@ using the current page's root node:
 ```csharp
 <ul>
     <li><a href="@Model.Content.Site().Url">@Model.Content.Site().Name</a></li>
-    @foreach(var node in Model.Content.Site().Children) 
+    @foreach(var node in Model.Content.Site().Children)
     {
         <li><a href="@node.Url">@node.Name</a></li>
     }
@@ -191,7 +188,7 @@ for the same value. Instead this can be rewritten as:
 }
 <ul>
     <li><a href="@site.Url">@site.Name</a></li>
-    @foreach(var node in site.Children) 
+    @foreach(var node in site.Children)
     {
         <li><a href="@node.Url">@node.Name</a></li>
     }
@@ -200,7 +197,7 @@ for the same value. Instead this can be rewritten as:
 
 ## Dynamics
 
-In Umbraco version 8+ dynamic support for access to IPublishedContent will be removed. 
+In Umbraco version 8+ dynamic support for access to IPublishedContent will be removed.
 There are a few reasons for this:
 
 * Dynamics are much slower than their strongly typed equivalent
@@ -216,23 +213,23 @@ How do you know if you are using Dynamics?
 * If you are using the UmbracoHelper query methods like `@Umbraco.Content` or `@Umbraco.Media` instead of the typed methods like `@Umbraco.TypedContent` and `@Umbraco.TypedMedia` then __you are__ using dynamics
 
 It is strongly advised that you use the strongly typed `@Model.Content` instead of `@CurrentPage` models in your views,  
-this will actually perform much better and you'll be forward compatible with Umbraco v8+ with regards to querying `IPublishedContent`. 
+this will actually perform much better and you'll be forward compatible with Umbraco v8+ with regards to querying `IPublishedContent`.
 
 A large problem with the performance of dynamics is having to parse string syntax such as:
-`@CurrentPage.Children.Where("DocumentTypeAlias == \"DatatypesFolder\" && Visible")` and turn that into something that is compilable when 
+`@CurrentPage.Children.Where("DocumentTypeAlias == \"DatatypesFolder\" && Visible")` and turn that into something that is compilable when
 instead it can just be written as something that compiles
 
 :::note
 About the Query Builder: We are aware that the Query Builder in the template editor of the backoffice currently 
 uses dynamics. We will eventually replace the query logic in this dialog with strongly typed model (Models Builder) syntax to follow
-these best practices. In the meantime if you are concerned about performance and have a large site then we'd recommend if you use the 
+these best practices. In the meantime if you are concerned about performance and have a large site then we'd recommend if you use the
 Query Builder to update its results with strongly typed syntax.
 :::
 
 ## Using the Services layer in your views
 
-The Services layer of Umbraco is for manipulating the business logic of Umbraco directly to/from the database. 
-None of these methods should be used within your views and can have a very large impact on performance and stability of 
+The Services layer of Umbraco is for manipulating the business logic of Umbraco directly to/from the database.
+None of these methods should be used within your views and can have a very large impact on performance and stability of
 your application.
 
 Your views should rely only on the read-only data access of the `UmbracoHelper` and the properties/methods that it exposes. This ensures
@@ -248,19 +245,19 @@ var dontDoThis = ApplicationContext.Services.ContentService.GetById(123);
 var doThis = Umbraco.TypedContent(123);
 ```
 
-If you are using `Application.Services...` in your views, you should figure out why this is being done and, in most cases, remove this logic.   
+If you are using `Application.Services...` in your views, you should figure out why this is being done and, in most cases, remove this logic.
 
 ## Using UmbracoContext to access ApplicationContext
 
-You should not access the `ApplicationContext` via the `UmbracoContext`. 
+You should not access the `ApplicationContext` via the `UmbracoContext`.
 
 For example: `UmbracoContext.Current.Application` _<-- this is now deprecated/obsolete_
 
 If you need access to both the `UmbracoContext` and the `ApplicationContext`, you should do one of the following:
 
 * Access these services via the properties exposed on the Umbraco base class you are using (i.e. Controllers, views, controls, http handler, etc...)
-* or inject these services into the services you are using 
-* or access each of these services from their own singleton constructs: `UmbracoContext.Current` and `ApplicationContext.Current`.
+* Or inject these services into the services you are using 
+* Or access each of these services from their own singleton constructs: `UmbracoContext.Current` and `ApplicationContext.Current`.
 
 The reason why this is bad practice is that it has caused confusion and problems in the past. In some cases developers would always
 access the `ApplicationContext` from the `UmbracoContext` but as we now know, this won't always work because the `UmbracoContext` is a request
