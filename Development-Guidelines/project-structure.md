@@ -46,15 +46,15 @@ Achieving this goal will take quite a lot of time by slowly migrating over old c
 
 _The code in the legacy projects will eventually be migrated and refactored with correct naming and code conventions into the new projects and namespaces_
 
-* SqlCE4Umbraco
-* umbraco.businesslogic
-* umbraco.cms
-* umbraco.controls
-* umbraco.datalayer
-* umbraco.editorControls
-* umbraco.interfaces
-* umbraco.MacroEngines
-* umbraco.MacroEngines.Iron
-* umbraco.macroRenderings
-* umbraco.providers
-* umbraco.webservices
+* `SqlCE4Umbraco`
+* `umbraco.businesslogic`
+* `umbraco.cms`
+* `umbraco.controls`
+* `umbraco.datalayer`
+* `umbraco.editorControls`
+* `umbraco.interfaces`
+* `umbraco.MacroEngines`
+* `umbraco.MacroEngines.Iron`
+* `umbraco.macroRenderings`
+* `umbraco.providers`
+* `umbraco.webservices`

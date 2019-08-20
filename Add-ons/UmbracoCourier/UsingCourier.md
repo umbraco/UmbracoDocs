@@ -16,8 +16,8 @@ The following topics will be covered:
 - How to handle the initial deployment
 - Working with Courier on a day to day basis
 
-
 ## What Courier does?
+
 From a high-level view, Courier is pretty simple. You tell it to deploy an item from one site to another, and Courier then figures out what is needed
 for that specific item to function on the site you want to transfer it to. 
 
@@ -49,8 +49,8 @@ Let's consider the number of dependencies that goes into moving a document
 - Dlls, files, settings, content referenced by data types, like the RTE, and the content picker
 - The template
 - Css, JavaScript and images referenced in the template
-- macros in the template
-- document ids passed as parameters to the macro, which leads to another document its data and so on.
+- Macros in the template
+- Document ids passed as parameters to the macro, which leads to another document its data and so on.
 
 We can sort these things into hard and soft dependencies: 
 
@@ -60,22 +60,26 @@ cannot exist in the database, due to ID references.
 
 The short version is, you do not want to miss those dependencies, because your site will not work, and you will have no idea why. 
 
-## What Courier can and cannot do.
+## What Courier can and cannot do
+
 The whole idea of Courier builds around the idea of dependencies and references, which Courier can understand to a certain degree.
 There are several areas, where Courier has no chance of understanding what is going on. 
 
 ### When a data type stores node IDs
+
 Common thing: Storing a node ID in a data type without telling Courier about it, will not work as Courier won't be able to add the node as a dependency. It will not be transferable as it cannot convert it into a GUID.
 
 You can add the data type to the `courier.config` to tell Courier to look for IDs and convert them.
 
 ### Data in external tables are referenced
+
 Courier doesn't know about the external tables and will not be able to deploy it. 
 
 You can write your own providers for it, but this provides you with overhead and it would
 be better if you structured your external data to be transferable (avoid IDENTITY and so on).
 
 ### You try to transfer really large files
+
 It can be hard to spot, but if a changeset contains large files, and you try to transfer these over a webservice connection it will die. 
 
 You can increase the request limit, but it will not ever be 100% solid to do. It's better to zip your

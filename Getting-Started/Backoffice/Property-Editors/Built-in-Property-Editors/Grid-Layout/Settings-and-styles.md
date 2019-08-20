@@ -29,13 +29,13 @@ The settings data could look like this, with an object for each setting:
 
 The different values are:
 
-- **label** : Field name displayed in the content editor UI
-- **description** : Descriptive text displayed in the content editor UI to guide the user
-- **key** : The key the entered setting value will be stored under.
-- **view** : The editor used to enter a setting value with.
-- **prevalues** : For views that need predefined values, e.g. the radiobuttonlist view.
-- **modifier (optional)** : A string formatter to modify the output of the editor to prepend or append extra values.
-- **applyTo (optional)** : States whether the setting can be used on a cell or a row. If either not present or empty, the setting will be shown both on Rows and Cells.
+- `label` : Field name displayed in the content editor UI
+- `description` : Descriptive text displayed in the content editor UI to guide the user
+- `key` : The key the entered setting value will be stored under.
+- `view` : The editor used to enter a setting value with.
+- `prevalues` : For views that need predefined values, e.g. the radiobuttonlist view.
+- `modifier (optional)` : A string formatter to modify the output of the editor to prepend or append extra values.
+- `applyTo (optional)` : States whether the setting can be used on a cell or a row. If either not present or empty, the setting will be shown both on Rows and Cells.
 
 **label** and **description** are straight-forward.
 
@@ -47,19 +47,18 @@ The different values are:
 
 By changing the key of the setting you can modify the `<div>` element's attributes like `class`, `title`, `id` or custom `data-*` attributes.
 
-
 **view** the view defines the editor used to enter a value. By default Umbraco comes with a collection of prevalue editors:
 
-- textstring
-- textarea
-- radiobuttonlist
-- mediapicker
-- imagepicker
-- boolean
-- treepicker
-- treesource
-- number
-- multivalues
+- `textstring`
+- `textarea`
+- `radiobuttonlist`
+- `mediapicker`
+- `imagepicker`
+- `boolean`
+- `treepicker`
+- `treesource`
+- `number`
+- `multivalues`
 
 Alternatively you can also pass in a path to a custom view like "/app_plugins/grid/editors/view.html"
 

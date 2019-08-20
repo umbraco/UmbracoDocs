@@ -9,8 +9,8 @@ Configuring the layout can be divided into 2 overall parts:
 ## Layouts
 A layout is the general grid "container", it contains one or more sections which content editors can use to insert preconfigured **rows**. There are 2 main usage scenarios of layouts:
 
-1. a single column layout which to the content editor will act like a full page canvas to insert elements on
-2. a multiple column layout with a main content body, and one or more sidebar columns to insert lists or other sidebar widgets on.
+1. A single column layout which to the content editor will act like a full page canvas to insert elements on
+2. A multiple column layout with a main content body, and one or more sidebar columns to insert lists or other sidebar widgets on.
 
 ![Grid layout scenarios](images/Grid-layout-scenarios.jpg)
 

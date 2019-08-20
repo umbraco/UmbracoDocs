@@ -39,20 +39,20 @@ An example of how to setup DNS and host headers between 3 load balanced servers:
 
 Server 1
 
-* domain DNS name: server1.mydomain.local
-* internal website DNS name: server1.mywebsite.com (use for IIS host header)
+* Domain DNS name: server1.mydomain.local
+* Internal website DNS name: server1.mywebsite.com (use for IIS host header)
 * IP Address: 192.168.1.10
 
 Server 2
 
-* domain DNS name: server2.mydomain.local
-* internal website DNS name: server2.mywebsite.com (use for IIS host header)
+* Domain DNS name: server2.mydomain.local
+* Internal website DNS name: server2.mywebsite.com (use for IIS host header)
 * IP Address: 192.168.1.11
 
 Server 3
 
-* domain DNS name: server3.mydomain.local
-* internal website DNS name: server3.mywebsite.com (use for IIS host header)
+* Domain DNS name: server3.mydomain.local
+* Internal website DNS name: server3.mywebsite.com (use for IIS host header)
 * IP Address: 192.168.1.12
 
 Of course you'll have your public website's DNS/address which you'll also need to add to the host header for each of your IIS server's websites. For instance, if the public website address is: http://www.mywebsite.com then you'll need to add www.mywebsite.com as a host header to IIS website on each server. This DNS entry will point to the public IP address of your load balancer.

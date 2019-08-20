@@ -33,7 +33,9 @@ There is no direct upgrade path from Umbraco 7 to Umbraco 8, but it is be possib
 The reason why it is not possible to upgrade an Umbraco 7 site to Umbraco 8 is is that the codebase has been fundamentally updated in Umbraco 8. A lot of outdated code and technology has been removed and instead new, faster and more secure technology has been implemented throughout Umbraco 8. It simply wouldn’t be possible to take this giant leap while maintaining full compatibility with Umbraco 7.
 
 In Umbraco 8 we have added improvements and updated dependencies as well as done a thorough clean-up to make it simpler for you to work with and extend your Umbraco project.
+
 ### Migrating content from v7 to v8
+
 If you have an Umbraco 7 site you can migrate the content to an Umbraco 8.1+ site. Read how to do it in our [Content migration to v8 guide](migrating-to-v8.md).
 
 ## Version 7.7.0
@@ -130,7 +132,7 @@ Since you aren't using UrlRewriting you will have probably never edited the UrlR
 <urlrewritingnet configSource="config\UrlRewriting.config" />
 ```
 
-* and remove the following http modules from your web.config:
+* And remove the following http modules from your web.config:
 
 ```xml
 <system.web>
@@ -196,16 +198,17 @@ Other considerations:
 * It's highly recommended to clear browser cache - the ClientDependency version is automatically bumped during install which should force browser cache to refresh, however in some edge cases this might not be enough.
 
 ## Version 7.2.0
+
 * Copy in the /Views/Partials/Grid (contains Grid rendering views)
 
 ## Version 7.1.0
+
 * Remove the /Install folder.
 
 ## Version 7.0.1 to 7.0.2
 
 * There was an update to the /umbraco/config/create/ui.xml which needs to be manually updated, the original element had this text:
-       
-       
+
 ```xml
 <nodeType alias="users">
     <header>User</header>
@@ -217,11 +220,11 @@ Other considerations:
 </nodeType>
 ```
 
-
 	* The &lt;usercontrol&gt; value has changed to: **/create/user.ascx**, this is a required change otherwise creating a new user will not work.
 * There is a breaking change to be aware of, full details can be found [here](https://umbraco.com/blog/heads-up-breaking-change-coming-in-702-and-62/).
 
 ## Version 7.0.0 to 7.0.1
+
 * Remove all uGoLive dlls from /bin
  * These are not compatible with V7
 * Move appSettings/connectionStrings back to web.config
@@ -232,33 +235,40 @@ Other considerations:
  * Related to issues with razor macros
 
 ## Version 6 to 7.0.0
+
 Read and follow [the full v7 upgrade guide](upgrading-to-v7.md)
 
 ## Version 4.10.x/4.11.x to 6.0.0
+
 * If your site was ever a version between 4.10.0 and 4.11.4 and you have just upgraded to 6.0.0 install the [fixup package](https://our.umbraco.com/projects/developer-tools/path-fixup) and run it after the upgrade process is finished.
 * The DocType Mixins package is **NOT** compatible with v6+ and will cause problems in your document types.
 
 ## Version 4.10.x to 4.11.x
+
 * If your site was ever a version between 4.10.0 and 4.11.4 install the [fixup package](https://our.umbraco.com/projects/developer-tools/path-fixup) and run it after the upgrade process is finished.
 
 ## Version 4.8.0 to 4.10.0
+
 * Delete the bin/umbraco.linq.core.dll file
 * Copy the new files and folders from the zip file into your site's folder
- * /App_Plugins
- * /Views
- * global.asax
+  * /App_Plugins
+  * /Views
+  * Global.asax
 * Remove the Config/formHandlers.config file
 
 ## Version 4.7.2 to 4.8.0
+
 * Delete the bin/App_Browsers.dll file
 * Delete the bin/App_global.asax.dll file
 * Delete the bin/Fizzler.Systems.HtmlAgilityPack.dll file
 * For people using uComponents 3.1.2 or below, 4.8.0 breaks support for it. Either upgrade to a newer version beforehand or follow the workaround [posted here](https://our.umbraco.com/projects/backoffice-extensions/ucomponents/questionssuggestions/33021-Upgrading-to-Umbraco-48-breaks-support-for-uComponents)
 
 ## Version 4.7.1.1 to 4.7.2
+
 * Delete the bin/umbraco.MacroEngines.Legacy.dll file
 
 ## Version 4.6.1 to 4.7.1.1
+
 * Delete bin/Iron*.dll (all dll files starting with "Iron")
 * Delete bin/RazorEngine*.dll (all dll files starting with "RazorEngine")
 * Delete bin/umbraco.MacroEngines.Legacy.dll

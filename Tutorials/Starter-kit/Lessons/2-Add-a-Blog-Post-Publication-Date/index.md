@@ -24,7 +24,7 @@ Learn how to:
 6. Click **Add editor** to specify what type of data is being stored.  We just need a standard date, so select the **Reuse** tab, then click on the **Date Picker** icon.
 7. In the validation section tick to say that the field is Mandatory.
 8. Click Submit to close the dialog.
-9. Click the **Reorder** link near the top right of the pane, then drag the new property to be after *Page Title*.  A logical order to your properties will make things easier for your editors.
-10. Click *Save*.  A confirmation message should appear confirming that the Document Type was saved.   
+9. Click the **Reorder** link near the top right of the pane, then drag the new property to be after *Page Title*. A logical order to your properties will make things easier for your editors.
+10. Click *Save*. A confirmation message should appear confirming that the Document Type was saved.
 
 [Proceed to Part Two](part-2.md)

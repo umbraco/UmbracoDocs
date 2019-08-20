@@ -150,7 +150,7 @@ Because, by default, the content object is passed to views, one can be tempted t
 
 * A `HomePage` property that would walk up the tree and return the "home page" content item
 * A `Menu` property that would list the content items to display in a top menu
-* etc.
+* Etc.
 
 Generally speaking, anything that is tied to the current request, or that depends on more than just the modeled content, is a bad idea. There are much cleaner solutions, such as using true _view model_ classes that would be populated by a true controller and look like:
 

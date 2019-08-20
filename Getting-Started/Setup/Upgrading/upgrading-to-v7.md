@@ -46,25 +46,25 @@ It is recommended that you use a Diff tool to compare the configuration file cha
 * /web.config updates
 	* Details are listed here: [https://issues.umbraco.org/issue/U4-2900](https://issues.umbraco.org/issue/U4-2900)
 	* You'll need to compare the new v7 web.config with your current web.config, here's a quick reference of what needs to change:
-		* remove &lt;section name="BaseRestExtensions"&gt; section
-		* remove &lt;section name="FileSystemProviders"&gt; section
-		* remove &lt;sectionGroup name="system.web.webPages.razor"&gt; section
-		* remove &lt;<FileSystemProviders &gt; element
-		* remove &lt;BaseRestExtensions &gt; element
-		* remove &lt;add key="umbracoUseMediumTrust" &gt; element
-		* remove &lt;system.web.extensions&gt; element
-		* removes &lt;xhtmlConformance &gt; element
-		* remove &lt;system.codedom&gt; element
-		* remove &lt;compilation&gt; <strong>&lt;assemblies *&gt;</strong> &lt;/compilation&gt;
-		* remove &lt;system.web.webPages.razor &gt; element
-		* new &lt;sectionGroup name="umbracoConfiguration"&gt; section
-		* new &lt;umbracoConfiguration&gt; element  
-		* ensure that the **targetFramework="4.5"** is added to the &lt;httpRuntime&gt; element
-		* add &lt;add key="ValidationSettings:UnobtrusiveValidationMode" value="None" /&gt; to the appSettings element
+		* Remove &lt;section name="BaseRestExtensions"&gt; section
+		* Remove &lt;section name="FileSystemProviders"&gt; section
+		* Remove &lt;sectionGroup name="system.web.webPages.razor"&gt; section
+		* Remove &lt;<FileSystemProviders &gt; element
+		* Remove &lt;BaseRestExtensions &gt; element
+		* Remove &lt;add key="umbracoUseMediumTrust" &gt; element
+		* Remove &lt;system.web.extensions&gt; element
+		* Removes &lt;xhtmlConformance &gt; element
+		* Remove &lt;system.codedom&gt; element
+		* Remove &lt;compilation&gt; <strong>&lt;assemblies *&gt;</strong> &lt;/compilation&gt;
+		* Remove &lt;system.web.webPages.razor &gt; element
+		* New &lt;sectionGroup name="umbracoConfiguration"&gt; section
+		* New &lt;umbracoConfiguration&gt; element  
+		* Ensure that the **targetFramework="4.5"** is added to the &lt;httpRuntime&gt; element
+		* Add &lt;add key="ValidationSettings:UnobtrusiveValidationMode" value="None" /&gt; to the appSettings element
 * /config/clientdependency.config changes
 	* remove &lt;add name="CanvasProvider" /&gt; element
 * /views/web.config updates
-* new /macroscripts/web.config
+* New /macroscripts/web.config
 * /config/umbracoSettings.config
 	* Umbraco is now shipped with minimal settings but the [full settings](https://our.umbraco.com/documentation/Using-Umbraco/Config-files/umbracoSettings/) are still available
 	* umbracoSettings is now a true ASP.NET configuration section [https://issues.umbraco.org/issue/U4-58](https://issues.umbraco.org/issue/U4-58)
@@ -139,8 +139,8 @@ All database changes will be taken care of during the upgrade installation proce
 
 For database change details see (including all child tasks):
 
-* [https://issues.umbraco.org/issue/U4-2886](https://issues.umbraco.org/issue/U4-2886)
-* [https://issues.umbraco.org/issue/U4-3015](https://issues.umbraco.org/issue/U4-3015)
+* [Issue U4-2886](https://issues.umbraco.org/issue/U4-2886)
+* [Issue U4-3015](https://issues.umbraco.org/issue/U4-3015)
 
 ## Tags
 

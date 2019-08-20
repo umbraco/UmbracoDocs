@@ -39,9 +39,9 @@ If you are in a load balanced environment special care must be given to ensure y
 If you are not load balancing, the way that Umbraco determines the base URL to send the scheduled HTTP(S) request to is as follows:
 
 * umbracoSettings:settings/web.routing/@umbracoApplicationUrl if it exists _(see [these docs](../../../Reference/Config/umbracoSettings/index.md#web-routing) for details)_
-* else umbracoSettings:settings/scheduledTasks/@baseUrl if it exits _(deprecated)_
-* else umbracoSettings:distributedCall/servers if we have the server in there _(deprecated, see load balance docs)_
-* else it's based on the first request that the website receives and uses the base url of this request _(default)_
+* Else umbracoSettings:settings/scheduledTasks/@baseUrl if it exits _(deprecated)_
+* Else umbracoSettings:distributedCall/servers if we have the server in there _(deprecated, see load balance docs)_
+* Else it's based on the first request that the website receives and uses the base url of this request _(default)_
 
 If the `umbracoApplicationUrl` is used, the value also specifies the scheme (either http or https), however if any of the other options are used, then if the appSetting `umbracoUseSSL` is set to `true`, then the request for scheduled publishing will always be sent to the HTTPS endpoint
 
@@ -49,7 +49,7 @@ If the `umbracoApplicationUrl` is used, the value also specifies the scheme (eit
 
 If your scheduled publishing/unpublishing is not working as you would expect it is most likely due to an issue that your server cannot communicate with the scheduled publishing endpoint. This can be caused by a number of reasons such as: 
 
-* url rewrites in place that prevent the endpoint from being reached
+* Url rewrites in place that prevent the endpoint from being reached
 * DNS misconfiguration not allowing the server to communicate to the base URL used in the first request that the website receives - which could be directly affected by a firewall/NAT/load balancer that your server sites behind
 * SSL and/or umbracoUseSSL misconfiguration not allowing the server to communicate to the scheduled publishing endpoint on the correct http/https scheme
 

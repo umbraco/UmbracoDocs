@@ -3,6 +3,7 @@ versionFrom: 8.0.0
 ---
 
 # Outbound request pipeline
+
 The **outbound pipeline** consists out of the following steps:
 
 1. [Create segments](#segments)
@@ -13,6 +14,7 @@ To explain things we will use the following content tree:
 ![simple content tree](images/simple-content-tree-v8.png)
 
 ## 1. <a name="segments"></a> Create segments
+
 When the URL is constructed, Umbraco will convert every node in the tree into a segment.  Each published [Content](../../../Reference/Management/Models/Content) item has a corresponding url segment. 
 
 In our example "Our Products" will become "our-products" and "Swibble" will become "swibble".
@@ -20,6 +22,7 @@ In our example "Our Products" will become "our-products" and "Swibble" will beco
 The segments are created by the "Url Segment provider"
 
 ### Url Segment provider
+
 The 'Current Composition' of an Umbraco implementation contains a collection of `UrlSegmentProviders` this collection is populated during Umbraco boot up. Umbraco ships with a 'DefaultUrlSegmentProvider' - but custom implementations can be added to the collection.
 
 When the GetUrlSegment extension method is called for a content item + culture combination, each registered IUrlSegmentProvider in the collection is executed in 'collection order' until a particular UrlSegmentProvider returns a segment value for the content. (and no further UrlSegementProviders in the collection will be executed.)
@@ -32,6 +35,7 @@ public interface IUrlSegmentProvider
   string GetUrlSegment(IContentBase content, string culture = null);
 }
 ```
+
 Note each 'culture' variation can have a different Url Segment!
 
 The returned string will be the Url Segment for this node.  Any string value can be returned here but it cannot contain url segment separators `/` characters as this would create additional "segments". So something like `5678/swibble` is not allowed.
@@ -39,6 +43,7 @@ The returned string will be the Url Segment for this node.  Any string value can
 #### Example
 
 For the segment of a 'product page' add its unique SKU / product ref to the existing url segment...
+
 ```csharp
 using Umbraco.Core.Models;
 using Umbraco.Core.Strings;
@@ -87,11 +92,11 @@ namespace Umbraco8.Composers
 ### The Default Url Segment Provider
 
 The Default Url Segment provider builds its segments like this:
- 
-First it looks (in this order) for: 
 
-- a property with alias *umbracoUrlName* on the node. (this is a convention led way of giving editors control of the segment name - with variants - this can vary by culture).
-- the 'name' of the content item eg content.Name
+First it looks (in this order) for:
+
+- A property with alias *umbracoUrlName* on the node. (this is a convention led way of giving editors control of the segment name - with variants - this can vary by culture).
+- The 'name' of the content item eg content.Name
 
 The Umbraco string extension `ToUrlSegment()` is used to produce a clean 'Url safe' segment.  
 
@@ -230,13 +235,16 @@ The url returned in the 'UrlInfo' object by GetUrl can be completely cusom.
 
 If implementing a custom Url Provider, consider following things:
 
-- cache things,
-- be sure to know how to handle schema's (http vs https) and hostnames 
-- inbound might require rewriting
+- Cache things,
+- Be sure to know how to handle schema's (http vs https) and hostnames 
+- Inbound might require rewriting
+
 :::tip
 If there is only a small change to the logic around Url generation, then a smart way to create a custom Url Provider is to inherit from the DefaultUrlProvider and override the GetUrl() virtual method.
 :::
+
 #### Example
+
  add /fish on the end of every url...
 
 ```csharp

@@ -16,17 +16,18 @@ Go to the __Members__ section, click the menu icon next to __Members__ in the me
 
 There is also a number of default properties on the __Membership__ tab:
 
-- umbracoMemberComments
-- umbracoMemberFailedPasswordAttempts
-- umbracoMemberApproved
-- umbracoMemberLockedOut
-- umbracoMemberLastLockoutDate
-- umbracoMemberLastLogin
-- umbracoMemberLastPasswordChangeDate
+- `umbracoMemberComments`
+- `umbracoMemberFailedPasswordAttempts`
+- `umbracoMemberApproved`
+- `umbracoMemberLockedOut`
+- `umbracoMemberLastLockoutDate`
+- `umbracoMemberLastLogin`
+- `umbracoMemberLastPasswordChangeDate`
 
 Once the Member is created and saved you can access it by expanding the Members tree and clicking __All Members__ to get a list view (with real-time search) or selecting the member type to filter by in the Members tree.
 
 ## Creating a Member Type
+
 You can create your own Member Types and add properties and tabs just as with Document Types.
 
 Go to the __Members__ section, click the menu icon next to __Member Types__ and select __Create__. Name the new Member Type and click the __Create__ button.
@@ -34,6 +35,7 @@ Go to the __Members__ section, click the menu icon next to __Member Types__ and 
 You will now be taken to the Member Type editor that is used to define and edit the Member Type. It consists of three tabs: __Info__, __Generic Properties__ and __Tabs__.
 
 ### Info
+
 ![Members Info tab](images/Members-Info.jpg)
 Shows basic information about the Member Type and settings for custom properties.
 
@@ -51,10 +53,12 @@ __Property settings:__ If properties are added to the Member Type you can contro
   - __Show on profile:__ The property will show on the profile of the member that is logged in.
 
 ### Generic Properties
+
 ![Generic properties tab](images/Members-Generic-Properties.jpg)
 Create, edit, and organize properties for the Member Type.
 
-##### Adding properties
+#### Adding properties
+
 To add a property to the Member Type select __Click here to add new property__.
 
 __Name:__ The name of the property.

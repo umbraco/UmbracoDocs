@@ -27,8 +27,8 @@ The media provider can be of many types, for example in case you want to store m
 
 The physical file system provider manages the interaction of Umbraco with the local file system. It can be configured for two different scenarios:
 
- - media files stored inside a virtual folder of the site
- - media files stored somewhere else outside of the site and accessed via a custom url
+ - Media files stored inside a virtual folder of the site
+ - Media files stored somewhere else outside of the site and accessed via a custom url
  
 ### Virtual Folder
 To configure the PhysicalFileSystem to work with a virtual folder there not much to do, just change the value of the `virtualRoot` parameter to the virtual folder you want to use. By default it is configured to store media files in  `~/media`.

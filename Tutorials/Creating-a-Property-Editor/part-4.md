@@ -157,13 +157,13 @@ So with all these bits in place, all you need to do is register the property edi
 
 With this, the entire flow is: 
 
-1. the view renders a list of people with a controller
-2. the controller asks the personResource for data
-3. the personResource returns a Promise and asks the my/PersonAPI ApiController
+1. The view renders a list of people with a controller
+2. The controller asks the personResource for data
+3. The personResource returns a Promise and asks the my/PersonAPI ApiController
 4. The ApiController queries the database, which returns the data as strongly typed Person objects
-5. the ApiController returns those `Person` objects as JSON to the resource
-6. the resource resolve the Promise
-7. the controller populates the view
+5. The ApiController returns those `Person` objects as JSON to the resource
+6. The resource resolve the Promise
+7. The controller populates the view
 
 Easy huh? - honestly though, there is a good amount of things to keep track of, but each component is tiny and flexible. 
 

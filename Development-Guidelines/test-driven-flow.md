@@ -71,11 +71,11 @@ Refers to a helper method in `umbraco.httpbackend.helper.js` which contains all 
 ### In short
 So to add a service, which requires data from the server we should:
 
-- add the .service.js as normal
-- add the .resource.js as normal
-- call $http as normal
-- define the response data in umbraco.httpbackend.helper.js
-- define the url in umbraco.httpbackend.js
+- Add the .service.js as normal
+- Add the .resource.js as normal
+- Call $http as normal
+- Define the response data in umbraco.httpbackend.helper.js
+- Define the url in umbraco.httpbackend.js
 
 ### ServerVariables
 There is a static servervariables file in /mocks which describes the urls used by the rest service, this is currently needed as we don't have this set as an angular service, and no real conventions for these urls yet. Longer-term it would be great to have a urlBuilder which could do
@@ -154,15 +154,17 @@ _backendData.tree.getApplication(app);
 Refers to a helper method in `umbraco.httpbackend.helper.js` which contains all the helper methods we use to return static json. 
 
 ### In short
+
 So to add a service, which requires data from the server we should:
 
-- add the .service.js as normal
-- add the .resource.js as normal
-- call $http as normal
-- define the response data in umbraco.httpbackend.helper.js
-- define the url in umbraco.httpbackend.js
+- Add the .service.js as normal
+- Add the .resource.js as normal
+- Call $http as normal
+- Define the response data in umbraco.httpbackend.helper.js
+- Define the url in umbraco.httpbackend.js
 
 ### ServerVariables
+
 There is a static server variables file in /mocks which describes the urls used by the rest service, this is currently needed as we don't have this set as an angular service, and no real conventions for these urls yet. Longer-term it would be great to have a urlBuilder which could do
 
 ```javascript
