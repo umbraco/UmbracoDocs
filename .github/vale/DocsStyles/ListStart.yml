@@ -1,7 +1,0 @@
-extends: existence
-message: "Start each option with a capital letter."
-level: error
-scope: list
-nonword: true
-tokens:
-  - '^[a-z].+'

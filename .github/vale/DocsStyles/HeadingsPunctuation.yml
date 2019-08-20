@@ -1,7 +1,0 @@
----
-extends: existence
-message: Do not use '%s' at the end of headings
-scope: heading
-level: warning
-raw:
-  - '(?:\:|\.)$'
