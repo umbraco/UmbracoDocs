@@ -32,6 +32,15 @@ If you have an Umbraco 7 site you can migrate the content to an Umbraco 8.1+ sit
 If you are using Umbraco Cloud we have a [Cloud specific migration guide](Umbraco-Cloud/Upgrades/Migrating-from-7-to-8) that will take you through the Cloud specific considerations.
 :::
 
+## For how long will Umbraco 7 be supported outside of Umbraco Cloud?
+As Umbraco 7 is open source, you'll be able to use it, well, forever. You should though be aware that Umbraco HQ is only committed to supporting this version up until a specific date. 
+
+We will continue to provide necessary updates in regard to bug and security fixes for Umbraco 7 up until the September 30th 2023.  
+
+New features will not be added to Umbraco 7 going forward, and the last planned minor release for Umbraco 7 was Umbraco 7.15.0 which was released on July 9th 2019. 
+
+If you are an Umbraco Gold Partner or have a support plan with Umbraco HQ, we will continue to provide technical support for Umbraco 7 projects until February 28th 2021. 
+
 ## What are the highlights of Umbraco 8? 
 
 The introduction of three new features: Infinite Editing, Content Apps and Language Variants. All features that have been added to make working with Umbraco even simpler, smoother and basically, more enjoyable. For everyone involved!
