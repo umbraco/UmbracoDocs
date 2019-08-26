@@ -2,9 +2,9 @@
 versionFrom: 8.0.0
 ---
 
-# Pdf indexes and multisearchers
+# PDF indexes and multisearchers
 
-If you want to index pdfs and search for them you will need to use the [UmbracoExamine.Pdf extension package](https://github.com/umbraco/UmbracoExamine.PDF).
+If you want to index PDF files and search for them you will need to use the [UmbracoExamine.Pdf extension package](https://github.com/umbraco/UmbracoExamine.PDF).
 
 ## Installation
 
