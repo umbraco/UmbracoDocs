@@ -88,7 +88,7 @@ The constructor function is used to create an instance of the target class. The 
 The mapping action is used to map an instance of the source class, to an instance of the target class. The most basic implementation would be:
 
 ```cs
-(source, target, context) =>    
+(source, target, context) =>
 {
     target.MyProperty1 = source.MyProperty1;
     target.MyProperty2 = source.MyProperty2;
@@ -192,3 +192,119 @@ And the comment can be repeated if the list of excluded properties is long:
 ```
 
 The analyzer follows the standard analyzer development patterns, and simply building the code in Release mode produces the appropriate NuGet package.
+
+## Full example
+
+Below you will find a full example showing you how to map a collection of type Product to a collection of type ProductDto.
+
+```cs
+#region Models
+
+public class Product
+{
+    public string Name { get; set; }
+    public string SuperSecretThingNotForPublicDisplay { get; set; }
+}
+
+[DataContract(Name = "product")]
+public class ProductDto
+{
+    [DataMember(Name = "name")]
+    public string Name { get; set; }
+}
+
+#endregion
+
+#region Mapping
+
+public class ProductMappingDefinition : IMapDefinition
+{
+    public void DefineMaps(UmbracoMapper mapper)
+    {
+        mapper.Define<Product, ProductDto>((source, context) => new ProductDto(), Map);
+    }
+
+    private void Map(Product source, ProductDto target, MapperContext context)
+    {
+        target.Name = source.Name;
+    }
+}
+
+#endregion
+
+#region Composing
+
+public class ProductComposer : IUserComposer
+{
+    public void Compose(Composition composition)
+    {
+        composition.WithCollectionBuilder<MapDefinitionCollectionBuilder>()
+            .Add<ProductMappingDefinition>();
+    }
+}
+
+#endregion
+
+public class ProductsController : UmbracoApiController
+{
+    private readonly UmbracoMapper _mapper;
+
+    public ProductsController(UmbracoMapper mapper) => _mapper = mapper;
+
+    [HttpGet]
+    public HttpResponseMessage GetAll()
+    {
+        var products = FakeServiceCall();
+        var mapped = _mapper.MapEnumerable<Product, ProductDto>(products);
+
+        return Request.CreateResponse(HttpStatusCode.OK, mapped);
+    }
+
+    [HttpGet]
+    public HttpResponseMessage GetFirstProduct()
+    {
+        var product = FakeServiceCall().First();
+        var mapped = _mapper.Map<ProductDto>(product);
+
+        return Request.CreateResponse(HttpStatusCode.OK, mapped);
+    }
+
+    private IEnumerable<Product> FakeServiceCall()
+    {
+        return new List<Product>()
+        {
+            new Product()
+            {
+                Name = "Umbraco Cloud",
+                SuperSecretThingNotForPublicDisplay = "Secret"
+            },
+            new Product()
+            {
+                Name = "Umbraco Forms",
+                SuperSecretThingNotForPublicDisplay = "Also secret"
+            }
+        };
+    }
+}
+```
+
+Result from `/umbraco/api/products/getall`:
+
+```json
+[
+    {
+        "name": "Umbraco Cloud"
+    },
+    {
+        "name": "Umbraco Forms"
+    }
+]
+```
+
+Result from `/umbraco/api/products/getfirstproduct`:
+
+```json
+{
+    "name": "Umbraco Cloud"
+}
+```

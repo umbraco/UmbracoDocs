@@ -14,28 +14,28 @@ The XML document, as mentioned before, contains all the content of the published
 
 Umbraco consists of several common pieces of data, and they are:
 
-- id
-- version
-- parentID
-- level
-- writerID
-- creatorID
-- nodeType
-- template
-- sortOrder
-- createDate
-- updateDate
-- nodeName
-- urlName
-- writerName
-- creatorName
-- nodeTypeAlias
-- path
+- `id`
+- `version`
+- `parentID`
+- `level`
+- `writerID`
+- `creatorID`
+- `nodeType`
+- `template`
+- `sortOrder`
+- `createDate`
+- `updateDate`
+- `nodeName`
+- `urlName`
+- `writerName`
+- `creatorName`
+- `nodeTypeAlias`
+- `path`
 
 These are store as attributes of the document, which is called "node".  The properties that are added to the document in Umbraco, and what the user edits are referenced as "data".  Data consists of a couple common pieces of data, which are attributes on the data elements.  These are:
 
-- alias
-- versionID
+- `alias`
+- `versionID`
 
 This is structured similar to the following in the XML document.
 

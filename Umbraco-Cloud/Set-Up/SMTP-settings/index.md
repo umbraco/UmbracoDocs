@@ -52,9 +52,9 @@ Setting up the SMTP server is step one. Step two is to configure the service in 
 
 To configure your SMTP service you will need to following details:
 
-* **host**: IP address or hostname for your SMTP service
-* **userName**: Your username for the SMTP service
-* **password**: The password you use to access your SMTP service
+* The **host**: IP address or hostname for your SMTP service
+* The **userName**: Your username for the SMTP service
+* The **password**: The password you use to access your SMTP service
 
 When you've configured these settings for your SMTP service, you will be able to send emails from your Umbraco Cloud project.
 

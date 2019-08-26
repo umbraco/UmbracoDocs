@@ -19,8 +19,8 @@ MyObject cachedItem = ApplicationContext.ApplicationCache.RuntimeCache
 
 Notice 2 things:
 
-* the `GetCacheItem` method is strongly typed and
-* we are supplying a callback method which is used to populate the cache if it doesn't exist.
+* The `GetCacheItem` method is strongly typed and
+* We are supplying a callback method which is used to populate the cache if it doesn't exist.
 
 The example above is very simple, it will retrieve a strongly typed object of `MyObject` from the cache with the key of "MyCacheKey", if the object doesn't exist in the cache a new instance of `MyObject` will be added to it with the same key.
 

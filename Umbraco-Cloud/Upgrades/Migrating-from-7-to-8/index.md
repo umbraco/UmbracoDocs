@@ -4,6 +4,10 @@ This article will provide detailed steps on how to migrate an Umbraco 7 Cloud pr
 
 Read the [general article about Content migration](../../../Getting-Started/Setup/Upgrading/migrating-to-v8#limitations) to learn more about limitations and other things that can come into play when migrating your Umbraco site from 7 to 8.
 
+## Video tutorial
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/videoseries?list=PLG_nqaT-rbpxrVkhlMedRKL9frAVIHlve" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## Prerequisites
 
 * An Umbraco 7 Cloud project running **at least Umbraco 7.14**

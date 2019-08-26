@@ -7,6 +7,7 @@ versionFrom: 7.0.0
 Sometimes you may already have an Umbraco site built that did not start with a clone of an Umbraco Cloud site. Or perhaps you have decided to move a site that's already live on Umbraco Cloud. In any case, migrating an existing site is not difficult, but it does require some specific steps, and an understanding of how Umbraco Cloud deployments work can be very helpful.
 
 These are the steps you need to go through to complete the migration successfully:
+
 1. [Requirements](#1-requirements)
 2. [Tools](#2-tools)
 3. [Prepare your site](#3-prepare-your-site)
@@ -60,7 +61,7 @@ To help smooth this process for you, there is a community project called [Umbrac
 * DocType Grid Editor
 * LeBlender
 * Multi Url Picker
-* nuPickers
+* NuPickers
 * Property List
 * Stacked Content
 * Tuple

@@ -18,11 +18,11 @@ Entries submitted are not transferred to the next environment, as they are *envi
 
 ## Recommended workflow
 
-You can work with Forms on the environment of your choice. 
+You can work with Forms on the environment of your choice.
 
 When you need to test or use your forms on another environment you can
 
-* transfer the forms to the next environment using **Queue for transfer** or
+* Transfer the forms to the next environment using **Queue for transfer** or
 * **Restore** the forms on an environment lower in the workflow
 
 For more information on how to handle content transfer / restores on Umbraco Cloud, checkout the following articles:

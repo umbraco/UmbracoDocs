@@ -50,15 +50,15 @@ You will also need to pass the "Context" to the @Umbraco.Field() method if you'r
 
 There are several optional parameters. Here is the list with their default values:
 
-* altFieldAlias = ""
-* altText = ""
-* insertBefore = ""
-* insertAfter = ""
-* recursive = false
-* convertLineBreaks = false
-* removeParagraphTags = false
-* casing = RenderFieldCaseType.Unchanged
-* encoding = RenderFieldEncodingType.Unchanged
+* `altFieldAlias = ""`
+* `altText = ""`
+* `insertBefore = ""`
+* `insertAfter = ""`
+* `recursive = false`
+* `convertLineBreaks = false`
+* `removeParagraphTags = false`
+* `casing = RenderFieldCaseType.Unchanged`
+* `encoding = RenderFieldEncodingType.Unchanged`
 
 The easiest way to use the Field method is to simply specify the optional parameters you'd like to set. For example, if we want to set the insertBefore and insertAfter parameters we'd do:
 
