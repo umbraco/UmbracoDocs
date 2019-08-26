@@ -179,7 +179,7 @@ namespace Umbraco8.Components
                     using (UmbracoContextReference umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext())
                     {
                         //the UmbracoContextReference provides access to the ContentCache
-                        IPublishedContentCache contentCache = umbracoContextReference.UmbracoContext.ContentCache;
+                        IPublishedContentCache contentCache = umbracoContextReference.UmbracoContext.Content;
                         // item being unpublished will still be in the cache, as unpublishing event fires before the cache is updated.
                         IPublishedContent soonToBeUnPublishedItem = contentCache.GetById(item.Id);
                         if (soonToBeUnPublishedItem != null)
@@ -209,14 +209,14 @@ Inside a ContentFinder access to the content cache is already provided via the P
 ```csharp
   public bool TryFindContent(PublishedRequest frequest)
         {
-            var someContent = frequest.UmbracoContext.ContentCache.GetById(1234);
+            var someContent = frequest.UmbracoContext.Content.GetById(1234);
 ```
 
 and insde a UrlProvider the GetUrl method has the current UmbracoContext injected:
 ```csharp
    public override UrlInfo GetUrl(UmbracoContext umbracoContext, IPublishedContent content, UrlProviderMode mode, string culture, Uri current)
         {
-        var someContent = umbracoContext.ContentCache.GetById(1234);
+        var someContent = umbracoContext.Content.GetById(1234);
 ```
 
 :::Note
