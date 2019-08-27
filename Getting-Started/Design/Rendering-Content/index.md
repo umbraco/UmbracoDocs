@@ -105,7 +105,7 @@ You can use the Query Builder in the template editor to build more advanced quer
 
 ### More information
 - [Razor examples](../../../Reference/Templating/Mvc/examples.md)
-- [Querying](../../..//Reference/Templating/Mvc/querying.md)
+- [Querying](../../../Reference/Templating/Mvc/querying.md)
 
 <!--
 ### Umbraco TV
