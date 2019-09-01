@@ -61,7 +61,7 @@ if (mediaItem!=null){
 ```
 
 :::note
-It's always worth having Null checks around your code when retreiving media, just in case the conversion fails or Media() returns null. This makes your code more robust.
+It's always worth having Null checks around your code when retrieving media, just in case the conversion fails or Media() returns null. This makes your code more robust.
 :::
 
 ### Other Media Items such as `File`
@@ -70,7 +70,7 @@ Accessing other media items can be performed in the same way, the techniques are
 ## Image Cropper
 Image Cropper can be used with `Image` media types and is the default option for the umbracoFile property on an `Image` media type.
 
-When working with the ImageCropper for an image the `GetCropUrl` extension method is used to retreive, cropped, resized versions of the uploaded image. Details of the Image Cropper property editor and other examples of using it can be found [here](../../Backoffice/Property-Editors/Built-in-Property-Editors/Image-Cropper.md). The following example is a quick example to help you get started.
+When working with the ImageCropper for an image the `GetCropUrl` extension method is used to retrieve, cropped, resized versions of the uploaded image. Details of the Image Cropper property editor and other examples of using it can be found [here](../../Backoffice/Property-Editors/Built-in-Property-Editors/Image-Cropper.md). The following example is a quick example to help you get started.
 
 ### Example of using Image Cropper with the Models Builder strongly typed `Image` model
 
