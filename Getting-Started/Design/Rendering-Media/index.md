@@ -1,71 +1,86 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # Rendering media
 
 _Templates (Views) can access items in the [Media library](../../Data/Creating-Media/index.md) to assist in displaying rich content like galleries_
 
-In the following examples we will be looking at rendering an `image`, however the same principles apply to all MediaType items however property aliases may differ.
+In the following examples we will be looking at rendering an `Image`, this is just one of the 'types' of Media in Umbraco - however the same principles apply to all MediaTypes (however the actual properties available to render will be different, for example a `File` won't have a Width property)
 
 ## Rendering a media item
-A media node is not just a file, but like content, it is a collection of fields, such width, height and the path to the stored file. The benefit of this is that accessing media is very similar to accessing a content node.
+A media item is not just a reference to a static file, but like content, it is a collection of fields, such as width, height and the path to the stored file. This means that accessing and rendering media in a template is very similar to rendering content.
 
-### Example 1: Accessing an image media item based on its ID
-A standard image in the media library is based on the Mediatype `image` which provides a number of standard values - if you want to add more, simply edit the media type under **settings**. In this example we are going to get a image node and render out an `img` tag using the URL of the media item and use the Name as the value of the `alt` attribute.
+### Example 1: Accessing a Media Image item based upon its Id
+An uploaded image in the media library is based on the MediaType `Image` which has defined a number of standard properties:
+- Name
+- Width & Height
+- Size
+- Type (based on file extension)
+- UmbracoFile (the path to the file or Json data containing crop information)
+These standard properties are pre-populated and set during the upload process, eg the width and height are calculated for you.
+
+If you want to add further custom properties, eg 'Photographer Credit' to use with your Media Item, edit the Image MediaType under **settings**. In this example we are going to retrieve an image from the Media section and render out an `img` tag using the URL of the media item and making use of the Name as the value for the `alt` attribute.
 
 _Assumption: We are going to assume that our media item has an ID of **1234**, and that we are **not using Models Builder**_
 
 ```csharp
 @{
-    // We are using the TypedMedia method off of the Umbraco helper to retrieve our media item based on its ID.
-    var mediaItem = Umbraco.TypedMedia(1234);        
-
-    // To get the url for your media item, you use the Url property on your media item.
-    var url = mediaItem.Url
+    // The Umbraco Helper has a Media method that will retrieve a Media Item by Id in the form of IPublishedContent, in this example the Media Item has a unique id of 1234:
+    
+    var mediaItem = Umbraco.Media(1234);  
 }
-
-<img src="@url" alt="@mediaItem.Name" />
+if (mediaItem!=null){
+    // To get the url for your media item, you use the Url property:
+    var url = mediaItem.Url;
+    // to read a property by alias
+    var imageHeight = mediaItem.Value<int>("umbracoHeight");
+    var imageWidth = mediaItem.Value<int>("umbracoWidth");
+    var orientationCssClass = imageWidth > imageHeight ? "img-landscape" : "img-portrait";
+    
+    <img src="@url" alt="@mediaItem.Name" class="@orientationCssClass"/>
+}
 ```
 
 But wait a second, if you are using Umbraco v7.4.0+ it now comes with [Models Builder](../../../Reference/Templating/Modelsbuilder/index.md). This means that you can use strongly typed models for your media items if Models Builder is enabled (which it is by default).
 
-### Example 2: Accessing a typed image media item based on its ID
+### Example 2: Accessing a Media Image item based upon its Id
 As with example one, we are accessing a MediaType `image` using the same ID assumption. 
 
 ```csharp
 @{
-    // We can use the OfType extension method to convert the IPublishedContent 
-    // returned by TypedMedia to the Models Builder implementation.
-    var mediaItem = Umbraco.TypedMedia(1234).OfType<Image>();
+    // We can use the OfType extension method to convert the IPublishedContent into the ModelsBuilder Umbraco.Web.PublishedModels.Image class
+    var mediaItem = Umbraco.Media(1234)?.OfType<Image>();
 }
+if (mediaItem!=null){
+    // you could add this as an extension method to the Umbraco.Web.PublishedModels.Image class
+    var orientationCssClass = mediaItem.UmbracoWidth > mediaItem.UmbracoHeight ? "img-landscape" : "img-portrait";
 
-<img src="@mediaItem.Url" height="@mediaItem.UmbracoHeight" />
+    <img src="@mediaItem.Url" alt="@mediaItem.Name" class="@orientationCssClass" />
+}
 ```
 
 :::note
-It can be worth doing additional Null checks around your code, just in case the conversion fails or TypedMedia returns null. This makes your code more robust and is generally recommended.
+It's always worth having Null checks around your code when retreiving media, just in case the conversion fails or Media() returns null. This makes your code more robust.
 :::
 
 ### Other Media Items such as `File`
 Accessing other media items can be performed in the same way, the techniques aren't limited to just the `Image` type, but it is one of the most common use cases.
 
 ## Image Cropper
-Image Cropper is generally used with `Image` media types so it is useful to consider this as Umbraco uses it as the default upload property on the `Image` media type.
+Image Cropper can be used with `Image` media types and is the default option for the umbracoFile property on an `Image` media type.
 
-If your media type is for images and it has Image Cropper as the upload field (umbracoFile) the `GetCropUrl` extension method is your friend. Details of the Image Cropper property editor and other examples of using it can be found [here](../../Backoffice/Property-Editors/Built-in-Property-Editors/Image-Cropper.md). The following example is a quick example to help you get started.
+When working with the ImageCropper for an image the `GetCropUrl` extension method is used to retreive, cropped, resized versions of the uploaded image. Details of the Image Cropper property editor and other examples of using it can be found [here](../../Backoffice/Property-Editors/Built-in-Property-Editors/Image-Cropper.md). The following example is a quick example to help you get started.
 
 ### Example of using Image Cropper with the Models Builder strongly typed `Image` model
 
 ```csharp
 @{
     // We can use the OfType extension method to convert the IPublishedContent 
-    // returned by TypedMedia to the Models Builder implementation.
-    var mediaItem = Umbraco.TypedMedia(1234).OfType<Image>();
+    var mediaItem = Umbraco.Media(1234).OfType<Image>();
 }
 
-<img src="@mediaItem.GetCropUrl("myCropAlias")" />
+<img src="@mediaItem.GetCropUrl("myCropAlias")" alt="@mediaItem.Name" />
 ```
 
 This example assumes that you have set up a crop called **myCropAlias** on your Image Cropper data type.        
