@@ -61,6 +61,10 @@ Following the [general upgrade instructions](general.md) we will now upgrade via
 
 ![Upgrading to v7.14](images/upgrading-7_14.png)
 
+:::warning
+If you are upgrading an old website, check if you are using obsolete properties in your Data Types and change them to their updated counterparts. The migration will otherwise fail if you are still using obsolete properties!
+:::
+
 Once it is upgraded and you have verified everything is working, move on to step 2.
 
 ### Step 2: Migrating content to Umbraco 8
