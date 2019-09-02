@@ -74,7 +74,7 @@ namespace Umbraco.Web.UI
             // Lots of methods available in the MigrationBase class - discover with this.
             if (TableExists("BlogComments") == false)
             {
-                Create.Table<BlogComment>().Do();
+                Create.Table<BlogCommentSchema>().Do();
             }
             else
             {
@@ -87,6 +87,7 @@ namespace Umbraco.Web.UI
         [ExplicitColumns]
         public class BlogCommentSchema
         {
+            [PrimaryKeyColumn(AutoIncrement = true, IdentitySeed = 1)]
             [Column("Id")]
             public int Id { get; set; }
 
