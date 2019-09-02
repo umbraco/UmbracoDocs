@@ -278,7 +278,7 @@ namespace UmbracoV8.Routing.UrlProviders
         public override UrlInfo GetUrl(UmbracoContext umbracoContext, IPublishedContent content, UrlProviderMode mode, string culture, Uri current)
         {
            //only apply this to product pages
-          if (content != null && content.ContentType.Alias == "productPage)
+          if (content != null && content.ContentType.Alias == "productPage")
             {
               // get the original base url that the DefaultUrlProvider would have returned, it's important to call this via the base, rather than .Url, or UrlProvider.GetUrl to avoid cyclically calling this same provider in an infinite loop!!)
                 UrlInfo defaultUrlInfo = base.GetUrl(umbracoContext, content, mode, culture,current);
@@ -290,7 +290,7 @@ namespace UmbracoV8.Routing.UrlProviders
                else
                 {
                     //manipulate the url somehow in a custom fashion:
-                    var orginalUrl = defaultUrlInfo.Text;
+                    var originalUrl = defaultUrlInfo.Text;
                     var customUrl = originalUrl + "fish/";
                     return new UrlInfo(customUrl, true,defaultUrlInfo.Culture);
                   
