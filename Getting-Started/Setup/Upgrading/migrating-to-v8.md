@@ -62,7 +62,18 @@ Following the [general upgrade instructions](general.md) we will now upgrade via
 ![Upgrading to v7.14](images/upgrading-7_14.png)
 
 :::warning
-If you are upgrading an old website, check if you are using obsolete properties in your Data Types and change them to their updated counterparts. The migration will otherwise fail if you are still using obsolete properties!
+If you are upgrading an old website, check if you are using obsolete properties in your Data Types and change them to their updated counterparts. The migration **will otherwise fail if you are still using obsolete properties!**
+
+The updated properties are:
+* Content Picker
+* Media Picker
+* Member Picker
+* Multinode Treepicker
+* Nested Content
+* Folder Browser
+* Related Links
+
+You can see if your site is using the obsolete properties by the `(Obsolete)` prefix in their name.
 :::
 
 Once it is upgraded and you have verified everything is working, move on to step 2.
