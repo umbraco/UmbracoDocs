@@ -72,4 +72,4 @@ What is a breaking change is documented here: [https://our.umbraco.com/documenta
 
 No it´s not possible to opt out of product auto upgrades on Umbraco Cloud. 
 
-In order for us to be able to support a site on Umbraco Cloud we must ensure that all sites are running the latest versions of our products so that we know the site is running in it’s most stable state.
+In order for us to be able to support a site on Umbraco Cloud we must ensure that all sites are running the latest versions of our products. That way, we know the sites are running in the most stable state.

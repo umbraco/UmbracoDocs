@@ -130,7 +130,7 @@ The `getAll()` method returns a promise from an `$http.get` call, which handles 
 ## Create the view and controller
 We will now finally setup a new view and controller, which follows previous tutorials, so you can refer to those for more details: 
 
-#### The view:
+#### The view
 
 ```html
 <div ng-controller="My.PersonPickerController">
@@ -141,7 +141,7 @@ We will now finally setup a new view and controller, which follows previous tuto
 	</ul>
 </div>
 ```
-#### The controller:
+#### The controller
 
 ```javascript	
 angular.module("umbraco")

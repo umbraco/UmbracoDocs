@@ -5,7 +5,7 @@ versionRemoved: 8.0.0
 
 # Troubleshooting Content/Media transfers 
 
-If the schema (this includes DocumentTypes, MediaTypes, DataTypes, Templates, Macros and Dictionary items) is different between the two environments you are deploying between, you will need to deploy the updates for these before you can complete the Content transfer (this can contain Media from the Media section as well). Environments need to be in-sync before a Content and/or Media transfer can succeed.
+If the schema is different between the two environments you are deploying between, you will need to deploy the updates for these before you can complete the Content transfer. Environments need to be in-sync before a Content and/or Media transfer can succeed.
 
 ![Schema Mismatch - Courier](images/schema-issues-courier.png)
 
@@ -22,14 +22,14 @@ If you continue to see conflicts between the schema parts that were deployed the
 
 ## Debugging for Courier
 
-If you continue to see conflicts between the schema parts (being DocumentTypes, DataTypes, Templates, etc.) that was just deployed you need to dive into the log files to debug exactly what the problem is.
+If you continue to see conflicts between the schema parts (being DocumentTypes, DataTypes, Templates, etc.) that was deployed you need to dive into the log files to debug exactly what the problem is.
 
 In order to find the log entries that deals with conflicts in the schema you should log for an entry like the following:
 
 
     2015-04-27 14:59:20,546 [10] INFO  Umbraco.Courier.Core.Packaging.RevisionPackaging - [Thread 45] Document types: Home hash-mismatch (local/remote) e5c6dc5f2eee6521b2d024f7777bbd9e / 2628e7c3e4bc7215fd398a2bbb13f423
 
-This error is not very descriptive and if you’re not sure what the differences are then you can investigate it a little bit deeper. If you add a key to your appSettings section in web.config you get to actually see what data we’ve tried to compare, unhashed.
+This error is not very descriptive and if you’re not sure what the differences are then you can investigate it a little bit deeper. If you add a key to your appSettings section in web.config you get to see what data we’ve tried to compare, unhashed.
 In web.config (on both ends, both source and target), you can add the following key (note: on both the source and target environment):
 
     <add key="DeployHashDebug" value="true" />
@@ -38,6 +38,6 @@ Now when you get the above error, you’ll get the same message with a little mo
 
 ![clone dialog](images/image07.png)
 
-Using a text compare tool like WinMerge we can pretty easily figure out that the property “Test” was added to the local document type but isn’t found on the remote instance.
+Using a text compare tool like WinMerge we can figure out that the property “Test” was added to the local document type but isn’t found on the remote instance.
 
 ![clone dialog](images/image00.png)

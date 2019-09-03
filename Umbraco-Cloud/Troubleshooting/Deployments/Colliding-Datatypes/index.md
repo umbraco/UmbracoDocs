@@ -13,7 +13,7 @@ The data types in question are:
 * Multiple Media Picker (using Media Picker)
 * Related Links
 
-Since these 5 data types are part of the Umbraco CMS, these will be created by default on each new environment on Umbraco Cloud. If metadata-files / structure files for these data types has been generated on your Live environment, you might run into extraction errors on your newly created Development or Staging environment - new environments will be exact clones of the Live environment, thus containing all structure and metadata files from that environment.
+Since these 5 data types are part of the Umbraco CMS, these will be created by default on each new environment on Umbraco Cloud. If metadata-files / structure files for these data types has been generated on your Live environment, you might run into extraction errors on your newly created Development or Staging environment. New environments will be exact clones of the Live environment, thus containing all structure and metadata files from that environment.
 
 ## How do I know I have this issue?
 

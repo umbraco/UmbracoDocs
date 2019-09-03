@@ -24,7 +24,7 @@ Symptoms, feedback given from the upgrade process: **Unable to run the Umbraco i
 
 The first step in the process, after having updated all the files, is to call the Umbraco install engine in order to get its  database updated to support the new version. As this step is the first time the site gets requested after the updated files is run, it may fail. The reason is often code that is incompatible with the upgraded files.
 
-It can be code that references APIs that has been deprecated, or simply code that has some strong references to specific versions.
+It can be code that references APIs that has been deprecated, or code that has some strong references to specific versions.
 If the error is clear, then it will be shown on the screen, as it will be a typical ASP.NET error message (YSOD). You should request the site, and check the error it shows.
 If the error isn't descriptive, then it is time to clone the repository to your local machine, and fix the issue. The usual suspects would be:
  - The code you have running is referencing an API that has been changed, that being modified, obsoleted or removed.
@@ -36,7 +36,7 @@ The upgrade process left off when it was needing three more steps. These three s
 
 1. Complete the installer
     
-    To complete the installer, you should simply visit the site on its url. it will be like `https://dev-mysite.s1.umbraco.io. This will show you the installer screen, where you should insert your backoffice credentials, and follow the process. It will run through a few steps, and afterwards, Umbraco will be updated to the latest version.
+    To complete the installer, you should visit the site on its url. it will be like `https://dev-mysite.s1.umbraco.io. This will show you the installer screen, where you should insert your backoffice credentials, and follow the process. It will run through a few steps, and afterwards, Umbraco will be updated to the latest version.
 2. Export the metadata files.
 
     The second thing you need to do, is to regenerate the metadata files used for transferring items like document types, data types and media types. This is done by accessing the Power tools(Kudu) on the project, open the cmd prompt and browse to the wwwroot/data folder. 

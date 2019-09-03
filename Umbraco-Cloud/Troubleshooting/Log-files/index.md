@@ -32,7 +32,7 @@ When you're in Kudu, you can go up to your `site` folder as described in the 5 s
 
 - `status.xml` shows you detailed information of which commit was deployed to the `wwwroot` folder
 
-- `manifest` is used to track which files are in the currently active deploy so that additions, renames and deletions can be detected easily for the next deploy (this is an internal file which you should not touch)
+- `manifest` is used to track which files are in the currently active deploy so that additions, renames and deletions can be detected for the next deploy (this is an internal file which you should not touch)
 
 - `log.log` shows you the same output you will have seen when pushing your changes using Git, it will show you what happened during the push and if any errors occurred. This file is especially useful when trying to find errors for deploys using the portal (so from dev > live or from dev > staging > live). Even though the last line may end with "Deployment successful" it is possible that there were errors or suspicious messages before that so make sure to give them a read.
 
