@@ -62,11 +62,11 @@ Test if the current node is not the last item in the collection
 
 ### .IsPosition(int index[,string valueIfTrue][,string valueIfFalse])
 
-Test if the current node is at the specified index in the collection
+Test if the current node is at the specified index (zero-based) in the collection
 
 ### .IsNotPosition(int index[,string valueIfTrue][,string valueIfFalse])
 
-Test if the current node is not at the specified index in the collection
+Test if the current node is not at the specified index (zero-based) in the collection
 
 ### .IsModZero(int modulus[,string valueIfTrue][,string valueIfFalse])
 
