@@ -65,11 +65,11 @@ Test if the current node is at the specified index in the collection
 
 Test if the current node is not at the specified index in the collection
 
-### .IsModZero([string valueIfTrue][,string valueIfFalse])
+### .IsModZero(int modulus[,string valueIfTrue][,string valueIfFalse])
 
 Test if the current node's position is evenly divisible by a given number
 
-### .IsNotModZero([string valueIfTrue][,string valueIfFalse])
+### .IsNotModZero(int modulus[,string valueIfTrue][,string valueIfFalse])
 
 Test if the current node's position is not evenly divisible by a given number
 
