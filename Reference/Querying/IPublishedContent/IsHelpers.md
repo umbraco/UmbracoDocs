@@ -26,7 +26,10 @@ To use an IsHelper you need to be iterating over a collection of IPublishedConte
 </ul>
 ```
 
-IsHelpers work like ternary operators. The example above uses the `.IsFirst()` IsHelper method. The first parameter is the value we want it to return if the condition returns `true`, and the second, optional value, is the value we want to return if the condition evaluates to `false`.
+IsHelpers work like ternary operators. The example above uses the `.IsFirst()` IsHelper method.
+The first parameter is the value we want it to return if the condition returns `true`, and the second,
+optional value, is the value we want to return if the condition evaluates to `false`. (If you omit the
+second string argument, the returned value will be an empty string if the condition evaluates to `false`).
 
 IsHelpers can also return simple boolean values:
 
