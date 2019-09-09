@@ -87,7 +87,7 @@ Sibling(string nodeTypeAlias)
 
 ## Complex querying (Where)
 
-With the `IPublishedContent` model we support strongly typed LINQ queries out of the box so you will have intellisense for that too. We also still support all of the dynamic query access that was supported for razor macros, however in some very minor cases the same syntax may not be supported. In some cases the dynamic queries may be less to type and in some cases the strongly typed way might be less to type so it will ultimately be your preference for what you use and you can most definitely inter-mingle the two.
+With the `IPublishedContent` model we support strongly typed LINQ queries out of the box so you will have intellisense for that too. We also still support all of the dynamic query access that was supported for razor macros, however in some very minor cases the same syntax may not be supported. In some cases the dynamic queries may be less to type and in some cases the strongly typed way might be less to type. It will ultimately be your preference for what you use and you can most definitely inter-mingle the two.
 
 ### Some examples
 
