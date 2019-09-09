@@ -6,11 +6,11 @@ versionFrom: 7.0.0
 
 As Umbraco Cloud deployments are done using a web connection, large media deployments can be slow and are subject to timeouts and other restrictions associated with large uploads over a web connection.
 
-If this sounds like you, you should evaluate the Azure Blob Storage provider. It is relatively simple to setup, has very few limitations and can result in better site performance as well as faster media loading times - especially if your media takes advantage of an Azure CDN.
+If this sounds like you, you should evaluate the Azure Blob Storage provider. It has very few limitations and can result in better site performance as well as faster media loading times - especially if your media takes advantage of an Azure CDN.
 
 ## [FileSystemProviders: Azure Blob Storage](../../../Extending/FileSystemProviders/Azure-Blob-Storage)
 
-Setting up Azure Blob Storage requires you to install a few packages and follow a few simple steps which we've outline in a thorough guide on how to set it up.
+Setting up Azure Blob Storage requires you to install a few packages and follow a few steps which we've outline in a thorough guide on how to set it up.
 
 In this article you will find more specific information about setting up Azure Blob Storage on your Umbraco Cloud environments.
 

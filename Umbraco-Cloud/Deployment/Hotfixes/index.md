@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # How to handle hotfixes on Umbraco Cloud projects
 
-When you have an Umbraco Cloud project with multiple environments, you might run into a situation where you need to push a hotfix to your Live environment, but have other pending changes on your Development environment that is not yet ready for the Live site.
+When you have an Umbraco Cloud project with multiple environments, you might run into a situation where you need to push a hotfix to your Live environment, but have pending changes elsewhere that is not ready for the Live site.
 
 Let's say you have 2 environments, a Live environment and a Development environment. You are currently working on building some changes on your local clone of the Development environment, but these changes won't be ready for the Live environment for another few weeks. Now you need to apply a minor change to your Live environment - a *hotfix*.
 
