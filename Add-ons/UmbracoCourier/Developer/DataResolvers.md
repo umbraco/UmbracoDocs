@@ -14,7 +14,7 @@ These concepts are targeted at developers who wish to add support for 3rd party 
 
 ## What is a Data Resolver
 
-In short, a data resolver is simply a .NET class, which inherits from a specific base class, which allows the developer to hook into different events during the data packaging and extraction.
+In short, a data resolver is a .NET class, which inherits from a specific base class, which allows the developer to hook into different events during the data packaging and extraction.
 
 Out of the box Courier can understand all standard data types in Umbraco. This means that Courier knows that a content picker contains an ID for a document, which then becomes a dependency, and the ID gets translated into a GUID which can safely be deployed to another location. It also knows that a template might contain references to JavaScript files or internal links, using the [locallink:] syntax. Or a lot of other cases where data have a special meaning. 
 

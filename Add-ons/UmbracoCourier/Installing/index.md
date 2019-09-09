@@ -11,7 +11,7 @@ The following guide will use two example sites; *development.site* and *live.sit
 
 * Go to the **Developer** section of the backoffice
 * Find **Packages** in the left navigation tree
-* The **Umbraco Courier** package is usually one of the top packages - otherwise you can simply search for it
+* The **Umbraco Courier** package is usually one of the top packages - otherwise you can search for it
 * Follow the installation directions
 * Once Courier has been installed, make sure to **refresh the page**
 * Next step is to **add a location** 

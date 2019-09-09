@@ -18,14 +18,13 @@ The following topics will be covered:
 
 ## What Courier does?
 
-From a high-level view, Courier is pretty simple. You tell it to deploy an item from one site to another, and Courier then figures out what is needed
-for that specific item to function on the site you want to transfer it to. 
+When you tell Courier to deploy an item from one site to another, it figures out what is needed for that specific item to function on the site you want to transfer it to. 
 
 When it has figured this out, it exports the selected item(s) and their dependencies to a folder, as xml files, along with any images, dlls, and so on. 
 
-Optionally it can compare the packaged items as it finds them, to figure out if they have actually changed since the last update, and will skip those that have. 
+Optionally it can compare the packaged items as it finds them, to figure out if they have changed since the last update, and will skip those that have. 
 
-Finally, it will build a graph of the deployment, based on the order of dependencies, this means that Courier knows that for a document to be installed, it needs to have its document type, template, data types and so on present on the target website. 
+Finally, it will build a graph of the deployment, based on the order of dependencies. This means that Courier knows that for a document to be installed, it needs to have its Document Type, Template and Data Types present on the target website. 
 
 So, in short, it:
 
@@ -87,19 +86,18 @@ revision files and xcopy them over, when you need to deploy really large things.
 
 
 ## How to handle the initial deployment
-A common scenario seen, is that people try to transfer their entire site in one go, to do the initial deploy. This is not recommended, and really just adds unneeded overhead to your deployment. Courier adds a lot of extra data and overhead, because it needs to convert to a format that be transferred and referenced between the 2 sites, it also needs to compare data with this other site and determine which items should transfer, and which should not, finally it all happens over http, which is another bottleneck.
+A common scenario seen, is that people try to transfer their entire site in one go, to do the initial deploy. This is not recommended, and adds unneeded overhead to your deployment. Courier adds extra data and overhead, because it needs to convert to a format that can be transferred and referenced between the 2 sites. It also needs to compare data with this other site and determine which items should transfer, and which should not. Finally it all happens over HTTP, which is another bottleneck.
 
-So in short, when you initially want to deploy your site and don't have 2 environments to sync, just deploy your files and database as normal, and let Courier handle the ongoing day-to-day changes which you subsequently will have to deploy. 
-
+When you initially want to deploy your site and don't have 2 environments to sync, deploy your files and database as normal, and let Courier handle the ongoing day-to-day changes which you subsequently will have to deploy. 
 
 ## Day to day work with Courier
-Due to Courier handling pretty much every object of your site, it can quickly create some rather large deployments. Even though your editors just want to deploy a single document, they can all of sudden have a deployment with a lot of documents and files in them, due to the whole dependency setup. There are not many ways around this currently. Courier will check for dependencies, and it will include those that have changed, as it is right now. 
+Due to Courier handling pretty much every object of your site, it can quickly create some rather large deployments. Even though your editors want to deploy a single document, they can all of sudden have a deployment with a lot of documents and files in them, due to the whole dependency setup. There are not many ways around this currently. Courier will check for dependencies, and it will include those that have changed, as it is right now. 
 
 But for day to day work, let your developers handle deployments of document types, templates and so on, and do these in small batches, as even minor changes do have a great effect on your Umbraco database. For example, if you add a property type to a document type, that will add an additional row for each document version on your site to the property data table, so even small things can mean big changes.
 
-When your infrastructure (document types, templates, etc) is in place, your editors should in most cases not be bothered with too many big deployments using the right-click menu. Courier will try to skip as many things as possible, and only suggest things that have actually changed, but as you have probably guessed by now, this is no simple task. 
+When your infrastructure (document types, templates, etc) is in place, your editors should in most cases not be bothered with too many big deployments using the right-click menu. Courier will try to skip as many things as possible, and only suggest things that have changed. 
 
 ## Ongoing fine tuning
-We fine tune this process all the time, to cater to all the different ways an Umbraco site can be built. Some scenarios we simply cannot support out of the box, and some we can add configuration options for so it can fit with as many sites as possible. 
+We fine tune this process all the time, to cater to all the different ways an Umbraco site can be built. Some scenarios we cannot support out of the box, and some we can add configuration options for so it can fit with as many sites as possible. 
 
 Let us know in the [Courier forum](https://our.umbraco.com/forum/umbraco-courier/) if certain scenarios or setups give unreasonable large deployments. Please provide as many details as possible, or even better, provide us with a database backup, so we can try it out on our local machines and adjust the many variables. 

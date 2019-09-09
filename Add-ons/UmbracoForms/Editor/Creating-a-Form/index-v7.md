@@ -48,11 +48,11 @@ First we will need to give our new form a name.
 
 ### Setting the page name (optional)
 
-Simply click the page name in order to change it.
+Click the page name in order to change it.
 
 ![Forms designer page caption](images/FormDesignerPageCaption.png)
 
-To add more pages, simply click **Add new page** at the bottom of the page forms designer.
+To add more pages, click **Add new page** at the bottom of the page forms designer.
 
 ### Setting the page group (optional)
 
@@ -60,7 +60,7 @@ As you can give each page a name, you can also name the groups.
 
 ![Forms designer page captin](images/FormDesignerPageGroup.png)
 
-To add another group to your form, simply click **Add new group** which you can find at the bottom of each page in the form designer.
+To add another group to your form, click **Add new group** which you can find at the bottom of each page in the form designer.
 
 ### Adding fields
 
@@ -93,13 +93,13 @@ Once the type has been selected, and you have added the configuration you want, 
 
 ![Forms field added](images/FormDesignerFieldAdded.png)
 
-To edit a field that has already been added to the form, simply click the little *cog* icon next to the field to open the dialog. To delete a field or a group, click the *recycle bin* icon.
+To edit a field that has already been added to the form, click the little *cog* icon next to the field to open the dialog. To delete a field or a group, click the *recycle bin* icon.
 
 ### Structure your form
 
 Once you've added a few fields to your form, you might want to change the order of questions. This can be done by clicking **Reorder** in the top-right corner of the form designer.
 
-When reordering your form, you can simply drag and drop the fields to make it look like you want. Click **I am done reordering** to get back to the form designer.
+When reordering your form, you can drag and drop the fields to make it look like you want. Click **I am done reordering** to get back to the form designer.
 
 ## Saving the form
 

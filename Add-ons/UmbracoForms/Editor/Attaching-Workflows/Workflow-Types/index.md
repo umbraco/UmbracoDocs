@@ -12,7 +12,7 @@ There are a couple of default workflow types that can be used to extend the func
 
 This workflow is used to automatically **approve** or **delete** a record once it is submitted.
 
-You simply configure some words that you want to check for, and select whether these words should trigger a deletion or an approval.
+Configure some words that you want to check for, and select whether these words should trigger a deletion or an approval.
 
 ## Post as XML
 

@@ -10,7 +10,7 @@ Umbraco Forms available in version 4.4.0 and newer allows you to use an IFileSys
 To summarise this allows the saving & getting of files to be abstracted away to a provider, where it can save & retrieve say from Azure Blob Cloud storage or some other place. You can [learn more about IFileSystems in the Umbraco core](../../../../Extending/Custom-File-Systems.md) 
 
 ## Storing the JSON files in a different location on the server
-This uses the Umbraco core IFileSystem provider `Umbraco.Core.IO.PhysicalFileSystem` which with its property we can then specify a different location than the default location that Umbraco Forms stores its files, which is `App_Plugins/UmbracoForms/Data`
+This uses the Umbraco core IFileSystem provider `Umbraco.Core.IO.PhysicalFileSystem`. With its property we can specify a different location than the default location than Umbraco Forms stores its files, which is `App_Plugins/UmbracoForms/Data`.
 Adding the following to your IFileSystem config file found at `Config/FileSystemProviders.config` will allow you to store the files elsewhere to suit your requirements
 
 ```xml
