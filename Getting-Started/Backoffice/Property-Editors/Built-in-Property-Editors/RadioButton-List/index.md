@@ -26,7 +26,7 @@ Pretty much like the name indicates this Data type enables editors to choose fro
 ```csharp 
 @if (Model.HasValue("colorTheme"))
 {
-    var value = Model.Value("colorTheme"));
+    var value = Model.Value("colorTheme");
     <p>@value</p>
 }
 ```
