@@ -9,7 +9,7 @@ In [Part Two](part-2.md) we displayed a nicely formatted publication date on the
 Finally in Part Three we shall change the blog listing.
 
 ## Steps - Part Three
-1. In the **Developer** section, expand **Partial View Macro Files**.  **Macros** are beyond the scope of this lesson, but you don't need to understand them right now.  You just need to know that the file used on both the home page and the blog is called *LatestBlogPosts.cshtml*.  So click on that.
+1. In the **Developer** section, expand **Partial View Macro Files**.  **Macros** are beyond the scope of this lesson, but you don't need to understand them right now. You need to know that the file used on both the home page and the blog is called *LatestBlogPosts.cshtml*.  So click on that.
 2. Scroll down to find the `blogpost-date` element and change it to use a nicely formatted Publication Date, i.e.:
 ```
 <small class="blogpost-date">@post.PublicationDate.ToLongDateString()</small>

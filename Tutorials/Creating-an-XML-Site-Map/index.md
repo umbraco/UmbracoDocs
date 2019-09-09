@@ -9,14 +9,16 @@ needsV8Update: "true"
 
 Adding an XML sitemap to your site makes it easier for search engine's such as Google to find and index your site pages. Your friendly SEO consultancy will recommend you have a google site map for 'better SEO'.
 
-There isn't an 'out of the box' XML sitemap generator with Umbraco, this tutorial will show you how to create one - but if you are in a hurry, there are some Umbraco Packages that will quickly do the job for you:
+There isn't an 'out of the box' XML sitemap generator with Umbraco. This tutorial will show you how to create one. 
+
+If you are in a hurry, there are some Umbraco Packages that will do the job for you:
 
 - [Cultiv Search Engine Sitemap](https://our.umbraco.com/packages/website-utilities/cultiv-search-engine-sitemap/)
 - [Marcel Digital Umbraco XML Sitemap](https://github.com/marceldigital/Umbraco-XML-Sitemap)
 
 ### What does an XML SiteMap look like?
 
-Essentially this is just a list of urls for the content on your site:
+Essentially this is a list of urls for the content on your site:
 
 See [Sitemaps XML format](https://www.sitemaps.org/protocol.html) for the XML schema the sitemap needs to conform to:
 
@@ -32,11 +34,13 @@ See [Sitemaps XML format](https://www.sitemaps.org/protocol.html) for the XML sc
 </urlset>
 ```
 
-The XML Sitemap is a guide for search engines to discover and index your content, it doesn't need to be exhaustive, each page on your site that you wish to feature will be represented by a `<url>` entry in the list.
+The XML Sitemap is a guide for search engines to discover and index your content. Each page on your site that you wish to feature will be represented by a `<url>` entry in the list.
 
 ### Approach
 
-There are many ways of approaching this task, the best approach will be determined by the size of your site, and your preference for implementing functionality in Umbraco, for simplicity sake we're going to write this code directly in a template using Razor and IPublishedContent, but you may want to use route hijacking to write the code in an MVC controller or XSLT is still a really good fit for this kind of task.
+There are many ways of approaching this task. The best approach will be determined by the size of your site, and your preference for implementing functionality in Umbraco.
+
+For simplicity sake we're going to write this code directly in a Template using Razor and IPublishedContent. You may want to use route hijacking to write the code in an MVC controller or XSLT which is still a really good fit for this kind of task.
 
 1. We'll create a new Document Type called 'XmlSiteMap' with corresponding 'XmlSiteMap' template (visiting this page will trigger the rendering of the XML Sitemap).
     - The XmlSiteMap document type will contain a 'Blacklisted Document Types' property to the XmlSiteMap Document Type to list types of content we wish to exclude from the Site Map (or you could probably take a 'whitelist' approach if it is easier to specify types that should be included rather than define those that will be excluded.)
@@ -60,7 +64,7 @@ and add the xmlSiteMap document type to your 'Blacklist'.
 
 ## 2. Create XmlSiteMapSettings Composition
 
-A site map entry will allow you to state the relative priority of any particular page in terms of its importance within your site, where a value of 1.0 is super very important, and 0.1 close to insignificant, you can also state 'how often' the content will change on a particular page, eg weekly, monthly etc, and this will help the search engine know when to return to reindex any regularly updated content.
+A site map entry will allow you to state the relative priority of any particular page in terms of its importance within your site. A value of 1.0 is very important, and 0.1 close to insignificant. You can also state 'how often' the content will change on a particular page, eg weekly, monthly etc. This will help the search engine know when to return to reindex any regularly updated content.
 
 Create the XmlSiteMapSettings composition (Document Type Without Template) with name: __XmlSiteMapSettings__
 
@@ -80,7 +84,7 @@ At this point your composition should look similar to this:
 Add this composition to all of the document types on your site!
 ![The XmlSiteMap composition](images/add-xmlsitemap-composition.png)
 
-Now editors have the ability to set these values for each page of the site, but again, rather than expect them to set them on every single page, when we check the values of these properties, if they are blank, we'll use the values from the parent or parent's parent nodes, using 'recursion' up the Umbraco Content Tree, enabling the values to be set in one place for a particular section, eg. setting once on a News Section, would then apply to all News Articles.
+Now editors have the ability to set these values for each page of the site. Rather than expect them to set them on every single page, we'll use the values from the parent or parent's parent nodes, using 'recursion' up the Umbraco Content Tree. This enables the values to be set in one place for a particular section, eg. setting once on a News Section, would then apply to all News Articles.
 
 ### 3. Building the XmlSiteMap.cshtml template
 
@@ -103,7 +107,7 @@ We're going to start at the site homepage, and since our XmlSiteMap page is crea
 
 We will retrieve each page in the site as **IPublishedContent**, and read in the SearchEngineChangeFrequency(recursively), SearchEngineRelativePriority, Url, when it was last modified etc...
 
-This is a great candidate for a [Razor Helper](https://weblogs.asp.net/scottgu/asp-net-mvc-3-and-the-helper-syntax-within-razor) - these helpers are a great way to organise your razor view implementation, to stop yourself repeating code and html in multiple places - here we'll have one place to write out the logic for our Url entry:
+This is a great candidate for a [Razor Helper](https://weblogs.asp.net/scottgu/asp-net-mvc-3-and-the-helper-syntax-within-razor). These helpers are a great way to organise your razor view implementation, to stop yourself repeating code and html in multiple places. Here we will have one place to write out the logic for our Url entry:
 
 ```csharp
 @helper RenderSiteMapUrlEntry(IPublishedContent node)
@@ -122,7 +126,7 @@ This is a great candidate for a [Razor Helper](https://weblogs.asp.net/scottgu/a
 ```
 
 :::note
-We're using __IPublishedContent__ in this example but if you prefer to use __ModelsBuilder__ you could take advantage of the fact that the Xml Sitemap Settings composition will create an interface called __IXmlSiteMapSettings__ - allowing you to adjust the helper to accept this 'type' eg _RenderSiteMapUrlEntry(IXmlSiteMapSettings node)_ and allowing you to read the properties without the __GetPropertyValue__ helper, eg _node.SearchEngineRelativePriority_ - however you would need to create an extension method on __IXmlSiteMapSettings__ to implement the recursive functionality we make use of on the __SearchEngineChangeFrequency__ property.
+We're using `IPublishedContent` in this example but if you prefer to use __ModelsBuilder__ you could take advantage of the fact that the XMl Sitemap Settings composition will create an interface called `IXmlSiteMapSettings`. This will allow you to adjust the helper to accept this 'type' eg `RenderSiteMapUrlEntry(IXmlSiteMapSettings node)` and allow you to read the properties without the `GetPropertyValue` helper, eg `node.SearchEngineRelativePriority`. You would still need to create an extension method on `IXmlSiteMapSettings` to implement the recursive functionality we make use of on the `SearchEngineChangeFrequency` property.
 :::
 
 #### EnsureUrlStartsWithDomain - Razor Function
@@ -194,7 +198,7 @@ So hopefully you can see the problem here, how deep do we go? How do we handle t
 
 #### Recursive Helper
 
-If we create a helper called perhaps 'RenderSiteMapUrlEntriesForChildren' that then accepts a 'Parent Page' parameter as the starting point, then we can find the children of this Parent Page, write out their Site Map Entry, and then... call this same method again... from itself - recursion!
+If we create a helper called `RenderSiteMapUrlEntriesForChildren` that accepts a 'Parent Page' parameter as the starting point. Then we can find the children of this Parent Page, write out their Site Map Entry, and then call this same method again from itself - recursion!
 
 ```csharp
 @helper RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
@@ -226,7 +230,7 @@ This is all very well, but what if some super secret pages shouldn't be on the s
 
 ##### HideFromSiteMap
 
-We added a hideFromXmlSitemap checkbox to all of our document types via our XmlSiteMapSettings composition, let's update the helper to only return children that haven't got the checkbox set, excluding these pages (and any beneath them) from the sitemap.
+We added a `hideFromXmlSitemap` checkbox to all of our document types via our `XmlSiteMapSettings` composition. Let's update the helper to only return children that haven't got the checkbox set, excluding these pages (and any beneath them) from the sitemap.
 
 ```csharp
 @helper RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
@@ -267,7 +271,7 @@ If we add to our XmlSiteMap document type a new property of numeric type called 
 }
 ```
 
-Set your MaxSiteMap depth to be 2 on your XmlSiteMap content item, and save and republish, your sitemap will now only contain entries for the top two levels, leaving the value blank, will mean no Maximum Depth restriction will be applied.
+Set your `MaxSiteMap` depth to be 2 on your XmlSiteMap content item, and save and republish. Your sitemap will now only contain entries for the top two levels. Leaving the value blank, will mean that no Maximum Depth restriction will be applied.
 
 ##### DocumentType Blacklist
 
@@ -366,7 +370,7 @@ Finally let search engines know the url for your sitemap by updating your robots
     Sitemap: https://www.yourlovelysite.com/xmlsitemap
     User-agent: *
 
-Once you introduce a Sitemap for the first time, you might suddenly find yourself being crawled by multiple different search engine bots, which is exactly what you want, however if your site or hosting is a little creaky, you might want to add a crawl rate to the robots.txt to instruct well behaved search engine bots to give a bit of breathing space to your site in between crawl requests:
+Once you introduce a Sitemap for the first time, you might suddenly find yourself being crawled by multiple different search engine bots. This is exactly what you want! However if your site or hosting is a little creaky, you might want to add a crawl rate to the robots.txt to instruct well behaved search engine bots to give a bit of space to your site between requests:
 
     Sitemap: https://www.yourlovelysite.com/xmlsitemap
     User-agent: *
@@ -378,4 +382,6 @@ Visit [Xml-Sitemaps.com](https://www.xml-sitemaps.com/validate-xml-sitemap.html)
 
 #### Summary
 
-This is just one way to add an XML Sitemap to your site, depending on your site it might not always be the 'best way' eg it will be much faster using XSLT! - particularly for large sites - however this tutorial aims to serve as an introduction to Razor, Helpers, Functions, IPublishedContent, and working with the Umbraco Content Tree, it is not trying to establish the 'only best practice' way to achieve an Xml SiteMap!
+This is one way to add an XML Sitemap to your site, depending on your site it might not always be the 'best way' eg it will be much faster using XSLT. Particularly for large sites. 
+
+This tutorial aims to serve as an introduction to Razor, Helpers, Functions, IPublishedContent, and working with the Umbraco Content Tree. It is not trying to establish the 'only best practice' way to achieve an Xml SiteMap.

@@ -16,7 +16,9 @@ To take you through a demo of installing a basic site in Umbraco you need the fo
 
 ## Installing an Empty Umbraco
 
-This guide doesn’t cover the installation of Umbraco – follow the instructions in https://our.umbraco.com/documentation/Installation. When you see the first splash screen click **_customize_** – either fill in your MS SQL blank DB credentials or use the CE option – then on the final screen use the “**_No thanks I do not want to use a starter website_**”. 
+This guide doesn’t cover the installation of Umbraco – follow the instructions in https://our.umbraco.com/documentation/Installation. 
+
+When you see the first screen click **_customize_**. Either fill in your MS SQL blank DB credentials or use the CE option. On the final screen use the “**_No thanks I do not want to use a starter website_**”. 
 
  
 ![Umbraco Installation Splash Screen](images/figure-1-installation-splash-screen.png)
@@ -52,7 +54,7 @@ If you can see the Umbraco Starter kit site you’ve missed the option to instal
 *Figure 4- You should NOT see this!*
 
 
-You need to reinstall Umbraco if you can see the starter kit – if you did a manual install you can delete all files in the directory where your local host is being served from, copy the Umbraco zip contents back in and then hit localhost in your browser.  
+You need to reinstall Umbraco if you can see the starter kit. If you did a manual install you can delete all files in the directory where your local host is being served from. Then, copy the Umbraco zip contents back in and then hit localhost in your browser.  
 
 
 ## Preparing the Initializr Template Site 
