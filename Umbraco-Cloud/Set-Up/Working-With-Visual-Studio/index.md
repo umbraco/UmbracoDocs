@@ -17,7 +17,11 @@ In this article you will find:
  - [Working with NuGet](#working-with-nuget)
 
 ## The Visual Studio Solution
-If you're writing a lot of custom code (or just like Intellisense), we recommend using a Visual Studio solution with a Website Project for the Umbraco site (coming from the cloned git repository from the Umbraco Cloud Project), and a Class Library Project for the code that will be created for the Umbraco site - this can be MVC Controllers, WebApi Controllers, Surface Controllers or data access plus whatever else you might need to write code for.
+If you're writing a lot of custom code (or like Intellisense), we recommend the following setup: 
+
+A Visual Studio solution with 
+* a Website Project for the Umbraco site (coming from the cloned git repository from the Umbraco Cloud Project), and 
+* a Class Library Project for the code that will be created for the Umbraco site - this can be MVC Controllers, WebApi Controllers, Surface Controllers or data access plus whatever else you might need to write code for.
 
 Below is a screenshot of our recommendation on how the projects should be configured. Here we use the following naming conventions: `*.Web` for the Umbraco website and `*.Core` for the accompanying code.
 
@@ -37,7 +41,7 @@ Download the UaaS.cmd tool from [umbra.co/uaas-cmd](https://umbra.co/uaas-cmd) a
 **Important**: To use the UaaS.cmd tool you will need to have Visual Studio 2017 version 15.9.6 or any later version installed.
 :::
 
-This is just a recommended setup. If you don't like the setup then you can play with it and make it your own. There's nothing magic about this setup, it is just adding a few files to your Umbraco Cloud website to give you a flying start to begin working with Visual Studio. 
+This is a recommended setup. If you don't like the setup then you can play with it and make it your own. There's nothing magic about this setup, it is adding a few files to your Umbraco Cloud website to give you a flying start to begin working with Visual Studio. 
 
 What follows is **a recommendation and not the only way to work with Visual Studio**.
 
@@ -55,7 +59,7 @@ Then enter the "Namespace", which will be the name of the Visual Studio solution
 
 If an error appears where the tool is saying: "Unable to connect to the remote server", but you are still able to add the clone Url, then you need to allow the UaaS.cmd through your firewall / antivirus.
 
-If you haven't cloned the repository before or don't have a [git credentials manager](https://github.com/Microsoft/Git-Credential-Manager-for-Windows) installed you will be asked to enter the username and password for the Umbraco Cloud Project (these are the same credentials as you use to access the Portal and the Umbraco backoffice).
+If you haven't cloned the repository before or don't have a [git credentials manager](https://github.com/Microsoft/Git-Credential-Manager-for-Windows) installed you will be asked to enter the username and password for the Umbraco Cloud Project. These are the same credentials as you use to access the Portal and the Umbraco backoffice.
 
 ![](images/cmd-clone.png)
 
@@ -73,7 +77,7 @@ The result should look something like this within the folder where the UaaS.cmd 
 You can now open the solution in Visual Studio and hit F5 to start the site directly from Visual Studio.
 
 ## The Git repositories
-One thing to notice about this setup is that you will get two git repositories just as you get two projects. 
+One thing to notice about this setup is that you will get two git repositories as well as two projects. 
 
 1. The site cloned from your Umbraco Cloud Project will be contained within a git repository that is connected to your Project on Umbraco Cloud. Whenever you want to deploy changes to your (remote) Umbraco Cloud site you should commit everything within the `*.Web` folder, which is where the git repository for Umbraco Cloud is also located.
 
@@ -88,7 +92,7 @@ The key thing to know is that your custom code from the `*.Core` project will be
 Once you have everything your site will need committed you can follow the [deployment workflow](../../Deployment/) to complete the deployment.
 
 ## Working with Visual Studio
-As mentioned in the previous section, you will start with two projects in Visual Studio - A project called `*.Web` with the Umbraco site (from Umbraco Cloud) configured as a Website project, and a project called `*.Core` configured as a class library for all of your code.
+As mentioned in the previous section, you will start with two projects in Visual Studio. A project called `*.Web` with the Umbraco site (from Umbraco Cloud) configured as a Website project, and a project called `*.Core` configured as a class library for all of your code.
 
 _So what goes where?_
 
@@ -114,7 +118,7 @@ We recommend placing all your code in the `*.Core` project (instead of, for exam
 ### Using Umbraco namespaces in your `*.Core` project
 In order to use Umbraco's features in your `*.Core` project, you have to add references to the DLLs in your `*.Web/bin`.
 
-You can do this by simply right-clicking on **References** and selecting **Add Reference**. Browse and select the DLLs you'd like to use and then hit **OK**. Don't forget to build.
+You can do this by right-clicking on **References** and selecting **Add Reference**. Browse and select the DLLs you'd like to use and then hit **OK**. Don't forget to build.
 
 ![](images/references.gif)
 
@@ -143,7 +147,7 @@ To make it easy to get up and running we added a `UaaSClone.cmd`, which can be r
 
 ## Working with NuGet
 
-Some Umbraco packages are available on NuGet and you can install NuGet packages into the `*.Web` project to add functionality to your site. Remember, this is just a normal Visual Studio solution so you can work with NuGet packages exactly like you're used to. Install them in the project where you need them. You should always install any NuGet packages you need in the `*.Web` project in order for them to work in your website and deploy to your other environments.
+Some Umbraco packages are available on NuGet and you can install NuGet packages into the `*.Web` project to add functionality to your site. Remember, this is a normal Visual Studio solution, so you can work with NuGet packages exactly like you're used to. Install them in the project where you need them. You should always install any NuGet packages you need in the `*.Web` project in order for them to work in your website and deploy to your other environments.
 
 For example, if you need to program something in your `*.Core` project and you depend on a NuGet package for the code you're writing, you should install that NuGet package in both:
 

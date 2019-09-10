@@ -18,7 +18,7 @@ Run the following in your CLI to install the module for global use:
 
 `npm install -g uaas-cli`
 
-Use Git to clone the Umbraco Cloud site. Once you have it locally, open your CLI and simply type the following inside the website's cloned directory:
+Use Git to clone the Umbraco Cloud site. Once you have it locally, open your CLI and type the following inside the website's cloned directory:
 
 `uaas watch`
 
@@ -30,7 +30,7 @@ Now it's time to open your favourite code editor. The idea is that you are now a
 
 ## Configuration
 
-If you'd like the module to watch other files/folders, simply change the `uaas.json` file located in `/App_Data`.
+If you'd like the module to watch other files/folders, you need to change the `uaas.json` file located in `/App_Data`.
 
 	{
 		"files": [
