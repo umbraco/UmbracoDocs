@@ -32,15 +32,15 @@ For more information on how to handle content transfer / restores on Umbraco Clo
 
 ### Did you create your Cloud project before June 18th 2019?
 
-Then your Forms data are handled as meta data. When you create a Form, a UDA file will be generated. This UDA file will contain all the metadata from your form, and be very similar to the `JSON` file that is also generated when you create a new form - this file can be found in `~/App_Data/UmbracoForms/Data/forms`.
+Then your Forms data is handled as metadata. When you create a form, a `UDA` file will be generated. This `UDA` file contains all the metadata from the form and is very similar to the `JSON` file that is also generated when you create a new form (found in `~/App_Data/UmbracoForms/Data/forms`).
 
-This means that your Forms will be deployed along with the rest of your metadata and structure files, e.g. Document Types, Templates and Stylesheets. 
+This means that your forms will be deployed along with the rest of your metadata and structure files, e.g. document types, templates and stylesheets. 
 
-We strongly recommend that you work with the Forms on your local or Development environment, following the [left-to-right deployment model](../../Deployment).
+We strongly recommend that you work with the forms on your local or development environment, following the [left-to-right deployment model](../../Deployment).
 
-You can configure your project to handle Umbraco Forms data as content by following these steps:
+You can configure your project to handle Forms data as content by following these steps:
 
-1. Make sure your Forms are in sync between all your Cloud environments
+1. Make sure your forms are in sync between all your Cloud environments
 2. Clone down the project to your local machine
 3. Find and open `~/Config/UmbracoDeploy.settings.config`
 4. Update the `transferFormsAsContent` value to `true`
@@ -50,9 +50,10 @@ You can configure your project to handle Umbraco Forms data as content by follow
       <forms transferFormsAsContent="true" />
    </settings>
    ```
-5. Push the change back to the Cloud environment
+5. Remove all existing `data\revision\forms-form__*.uda` files, so it's not possible to accidentally revert back to this state (removing `UDA` files won't remove the actual form on deploy)
+6. Push the change back to the Cloud environment
    * If you have more than 1 Cloud environment, make sure to deploy the change through to all of them
-6. Your Forms are now a part of content / media transfers!
+7. Your forms are now a part of content/media transfers!
 
 :::tip
 Do you want to test this new setting you've configured?
