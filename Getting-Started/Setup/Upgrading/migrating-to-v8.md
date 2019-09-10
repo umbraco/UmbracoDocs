@@ -3,7 +3,7 @@ versionFrom: 8.1.0
 ---
 # Migrating content to Umbraco 8
 
-Umbraco 8 contains a lot of breaking changes and a lot of code has been cleaned up compared to Umbraco 7. Due to this, it will not be possible to do a simple upgrade from Umbraco 7 to Umbraco 8. Instead you will need to **migrate your content** from your Umbraco 7 site into your Umbraco 8 site and then recreate the rest in the new version.
+Umbraco 8 contains a lot of breaking changes and a lot of code has been cleaned up compared to Umbraco 7. Due to this, it will not be possible to do a direct upgrade from Umbraco 7 to Umbraco 8. Instead you will need to **migrate your content** from your Umbraco 7 site into your Umbraco 8 site and then recreate the rest in the new version.
 
 A content migration tool has been implemented in Umbraco 8.1.0, to help you with the transition.
 
@@ -27,7 +27,7 @@ We are collecting [a list of these known issues on our GitHub Issue Tracker](htt
 
 ### Third party property editors
 
-The migration will transform the data stored in third party editors as well, however it will simply be stored as it was in Umbraco 7. If the structure has changed for Umbraco 8 or the property editor doesn't exist you will still be able to find the data in the database, but you would not see it in the backoffice.
+The migration will transform the data stored in third party editors as well, however it will be stored as it was in Umbraco 7. If the structure has changed for Umbraco 8 or the property editor doesn't exist you will still be able to find the data in the database, but you would not see it in the backoffice.
 
 There are some options to convert the property editor configuration, read how [here](7-8-migration-dataTypes.md).
 
@@ -53,7 +53,7 @@ Before the content migration can start the site has to be 7.14+. A good idea wou
 
 The site in this example is an Umbraco 7.13.1 site, and we will use Nuget to update it.
 
-It is a fairly simple site, with a bit of content:
+It is a basic site, with a bit of content:
 
 ![v7 site with content](images/v7-content.png)
 
@@ -105,7 +105,7 @@ That is all! Now the automatic migration will take over, and after a little bit 
 ![Content is on 8.1](images/content-on-8_1.png)
 
 :::note
-Please be aware this is just a content migration. If you go to the frontend after doing this nothing will work!
+Please be aware this is a **content migration**. If you go to the frontend after doing this nothing will work!
 
 At this point you would have the content but nothing else, will have to recreate all templates and other custom implementation before the site works again.
 

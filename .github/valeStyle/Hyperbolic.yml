@@ -1,0 +1,11 @@
+extends: existence
+message: Consider removing '%s'
+link: https://github.com/cockroachdb/docs/blob/master/STYLE.md#language-and-tone
+ignorecase: true
+level: warning
+tokens:
+  - simple
+  - just
+  - easily
+  - actually
+  - simply

@@ -26,7 +26,7 @@ There are a couple of different ways to do this.
 
 You can use the context menu as when creating a folder. Click the menu icon next to the folder and choose __Image__ or __File__, enter a name for your media item and click the __Upload field__ and choose a file to upload.
 
-An easier way to do it is to simply drag and drop the file to the upload field in the Media section. Umbraco will automatically detect if it is an image or a file and create a media item in the folder. You can even drop entire folders (with subfolders) and the folder and file structure will be recreated. Alternatively you can click on the upload field to get a standard OS file picker dialog.
+An easier way to do it is to drag and drop the file to the upload field in the Media section. Umbraco will automatically detect if it is an image or a file and create a media item in the folder. You can even drop entire folders (with subfolders) and the folder and file structure will be recreated. Alternatively you can click on the upload field to get a standard OS file picker dialog.
 
 The default __Image__ Media Type has 5 properties that will be populated once the image is uploaded. These are __Upload Image__, __Width__, __Height__, __Size__ and __Type__. They can be viewed in the __Media__ section and accessed in your templates.
 
@@ -36,7 +36,7 @@ The default view for the media section is a card view that let's you preview the
 
 ![Media Section - Cardview](images/Creating-Media-Cardview.jpg)
 
-You can select multiple media items and do bulk operations (delete/move) by clicking the image. To edit properties on a media item simply click the blue bar at the bottom of the item.
+You can select multiple media items and do bulk operations (delete/move) by clicking the image. To edit properties on a media item click the blue bar at the bottom of the item.
 
 ![Edit media item](images/Creating-Media-Edit.jpg?width=200px)
 
@@ -54,7 +54,7 @@ The __Upload File__ property on the images use the Image Cropper Data Type. If c
 
 ## Creating a Media Type
 
-You can create your own Media Types and add tabs, properties, and control the structure of the Media tree just as with Document Types. This means you can store information that is specific to the media on the media item itself.
+You can create your own Media Types and add tabs, properties, and control the structure of the Media tree as you would with Document Types. This means you can store information that is specific to the media on the media item itself.
 
 A Media Type is created in the __Settings__ section using the Media Type editor.
 
@@ -118,7 +118,7 @@ To start uploading images to the folder click the menu icon on the __Employee im
 
 ![Uploading Media](images/Creating-Media-Upload-740.jpg)
 
-*Remember you can uncheck the __Allow at root__ option on the __Employee images__ Media Type to prevent editors from creating multiple folders of this type. This will not affect created folders, just disable the creation of new ones*
+*Remember you can uncheck the __Allow at root__ option on the __Employee images__ Media Type to prevent editors from creating multiple folders of this type. This will not affect created folders, only disable the creation of new ones*
 
 ### Cropping the images
 ![Cropping images](images/Creating-Media-Cropping-740.jpg)

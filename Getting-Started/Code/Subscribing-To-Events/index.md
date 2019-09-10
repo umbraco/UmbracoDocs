@@ -68,7 +68,7 @@ It's in this Intialize() method where we will subscribe to our Published event `
         }
 ```
 
-This will tell Umbraco that a method called 'ContentService_Published' will subscribe to the publish event - but we haven't created that yet! (if you are using Visual Studio there is a shortcut key to add a stub for this method, in the above example after you have typed ContentService.Published press '+=' and then immediately press the 'tab key' twice... by magic the stub for handling the event with the correct signature will be added to your c# class) :
+This will tell Umbraco that a method called 'ContentService_Published' will subscribe to the publish event - but we haven't created that yet. If you are using Visual Studio there is a shortcut key to add a stub for this method. In the above example after you have typed ContentService.Published press `+=` and then immediately press the 'tab key' twice. The stub for handling the event with the correct signature will now be added to your C# class:
 
 ```csharp
    public void Initialize()
@@ -122,7 +122,7 @@ foreach (var publishedItem in e.PublishedEntities)
     }
 ```
 
-Finally we need to add our custom Component to the collection of Components that Umbraco is aware of, and we use another c# class to achieve that called a Composer, and there is a special base composer class called ComponentComposer that we can make use of:
+Finally we need to add our custom Component to the collection of Components that Umbraco is aware of. We use another C# class to achieve that called a Composer. There is a special base composer class called ComponentComposer that we can make use of:
 
 ```csharp
 [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
@@ -192,7 +192,7 @@ Search 'All Logs', and if all is wired up correctly you should discover your cus
 ![Messages in Log](images/log-messages.png)
 
 ### Before and after
-As you can see our custom code has been executed when we published a piece of content. Actually it executed after the item was published because we used the `Published` event. If you want to run code before publishing, use `Publishing`. The same goes for most other events so `Saving` : `Saved`, `Copying` : `Copied` and so forth.
+As you can see our custom code has been executed when we published a piece of content. It executed after the item was published because we used the `Published` event. If you want to run code before publishing, use `Publishing`. The same goes for most other events so `Saving` : `Saved`, `Copying` : `Copied` and so forth.
 
 ### More information
 - [Events Reference](../../../Reference/Events/)

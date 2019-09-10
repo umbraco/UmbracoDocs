@@ -19,7 +19,7 @@ There is a dialog (click ![Button](images/button.png)) on the backoffice templat
 ![Dialog](images/dialog.png)
 
 ## Rendering a field with Model
-The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however simply want to render value "as-is" you can use the `@Model.Content` property of the view. For example:
+The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however want to render value "as-is" you can use the `@Model.Content` property of the view. For example:
 
 ```csharp
 @Model.Content.GetPropertyValue("bodyContent")
@@ -32,7 +32,7 @@ You can also specify the output type that you want from the property. If the pro
 ```
 
 ## Query content
-In many cases, you want to do more then just display values from the current page, like creating a list of pages in a navigation - or generate a sitemap. You can do this by querying content in your templates:
+In many cases, you want to do more than display values from the current page, like creating a list of pages in a navigation - or generate a sitemap. You can do this by querying content in your templates:
 
 ```html
 <ul>

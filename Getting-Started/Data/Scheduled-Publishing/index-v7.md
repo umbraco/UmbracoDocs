@@ -1,22 +1,17 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # Scheduled Publishing
 
-Each document in Umbraco can be scheduled for publishing and unpublishing on a pre-defined date and time. 
+Each document in Umbraco can be scheduled for publishing and unpublishing on a pre-defined date and time. In order to do this, go to the **Info** tab and find the **Scheduled Publishing** box in the right side. There you can select the exact date and time to publish and unpublish the current content item.
 
-You can find the options to do this click on the arrow next to the **Save and publish** button and pick **Schedule...**. 
+![Scheduled publishing](images/Scheduled-publishing.png)
 
-![Scheduled publishing](images/schedule.png)
+## Timezones <a name="timezones"></a>
 
-This will open a modal where you can specify dates and time.
-
-![Scheduled publishing](images/scheduled-publishing-8.png)
-
-## Timezones
-
-Your server may be in a different timezone then where you are located. You are able to select a date and time in your local timezone and Umbraco will make sure that the item gets published at the selected time. So, if you select 12PM then the item will be published at 12PM in the timezone you are in. This may be 8PM on the server, which is indicated when you select the date and time.
+Your server may be in a different timezone then where you are located. As of Umbraco version 7.5, you are able to select a date and time in your local timezone and Umbraco will make sure that the item gets published at the selected time. So if you select 12PM then the item will be published at 12PM in the timezone you are in. This may be 8PM on the server, which is indicated when you select the date and time.
 
 ![Scheduled publishing](images/Publish-Timezone-Difference.jpg)
 
@@ -43,7 +38,7 @@ If you are not load balancing, the way that Umbraco determines the base URL to s
 * Else umbracoSettings:distributedCall/servers if we have the server in there _(deprecated, see load balance docs)_
 * Else it's based on the first request that the website receives and uses the base url of this request _(default)_
 
-If the `umbracoApplicationUrl` is used, the value also specifies the scheme (either http or https), however if any of the other options are used, then if the appSetting `umbracoUseSSL` is set to `true`, then the request for scheduled publishing will always be sent to the HTTPS endpoint
+If the `umbracoApplicationUrl` is used, the value also specifies the scheme (either http or https). However if any of the other options are used and the appSetting `umbracoUseSSL` is set to `true`, then the request for scheduled publishing will always be sent to the HTTPS endpoint.
 
 ## Troubleshooting
 

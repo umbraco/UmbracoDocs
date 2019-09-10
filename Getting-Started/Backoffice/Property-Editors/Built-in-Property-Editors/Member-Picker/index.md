@@ -20,7 +20,7 @@ The member picker opens a panel to pick a specific member from the member sectio
 
 ## MVC View Example
 
-### Typed:
+### Typed
 
 ```csharp
 @{

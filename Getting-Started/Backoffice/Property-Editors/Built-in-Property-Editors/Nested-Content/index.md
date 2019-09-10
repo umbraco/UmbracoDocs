@@ -31,12 +31,12 @@ The data-type editor allows you to configure the following properties:
 - **Show Icons** - Enabling this will display the item's doc type icon next to the name in the **Nested Content** list.
 - **Hide Label** - Enabling this will hide the property editor's label and expand the **Nested Content** property editor to the full width of the editor window.
 
-Once your data type has been configured, simply set-up a property on your page doc type using your new data type and you are set to start editing.
+Once your data type has been configured, set-up a property on your page doc type using your new data type and you are set to start editing.
 
 
 ## Editing Nested Content
 
-When viewing a **Nested Content** editor for the first time, you'll be presented with a simple icon and help text to get you started.
+When viewing a **Nested Content** editor for the first time, you'll be presented with an icon and help text to get you started.
 
 ![Nested Content - Add Content](images/NestedContent_AddContent.png)
 
@@ -46,7 +46,7 @@ If your **Nested Content** editor is configured with multiple document-types you
 
 ![Nested Content - Select Schema](images/NestedContent_SelectSchema-v8.png) 
 
-Simply click the icon of the document-type you wish to use and a new item will be created in the list using that document-type.
+Click the icon of the document-type you wish to use and a new item will be created in the list using that document-type.
 
 If you only have one document-type configured for your **Nested Content** editor, then clicking the plus icon will not display the dialog and instead will jump straight to inserting an entry in the editor for you ready to edit.
 
@@ -60,7 +60,7 @@ To close the editor for an item or open the editor for another item in the list,
 
 To reorder the list, click and drag the move icon up and down to place the items in the order you want.
 
-To delete an item simply click the delete icon. If the minimum number of items is reached, then the delete icon will appear greyed out to prevent going below the minimum allowed number of items.
+To delete an item click the delete icon. If the minimum number of items is reached, then the delete icon will appear greyed out to prevent going below the minimum allowed number of items.
 
 
 ### Single Item Mode
@@ -77,7 +77,7 @@ In this mode, **Nested Content** works more like a fieldset than a list editor.
 
 ## Rendering Nested Content
 
-To render the stored value of your **Nested Content** property, a built in value converter is provided for you. Just call the `Value<T>` method with a generic type of `IEnumerable<IPublishedElement>` and the stored value will be returned as a list of `IPublishedElement` entities.
+To render the stored value of your **Nested Content** property, a built in value converter is provided for you. Call the `Value<T>` method with a generic type of `IEnumerable<IPublishedElement>` and the stored value will be returned as a list of `IPublishedElement` entities.
 
 Example:
 
@@ -124,7 +124,7 @@ Example:
 
 #### Single Item Mode
 
-If your **Nested Content** property editor is configured in single item mode, then the value converter will automatically know this and return a single `IPublishedElement` entity rather than an `IEnumerable<IPublishedElement>` list. Therefore, when using **Nested Content** in single item mode, you can simply call `Value<T>` with a generic type of `IPublishedElement` and you can start accessing the entity's properties straight away, rather than having to then fetch it from a list first.
+If your **Nested Content** property editor is configured in single item mode, then the value converter will automatically know this and return a single `IPublishedElement` entity rather than an `IEnumerable<IPublishedElement>` list. Therefore, when using **Nested Content** in single item mode, you can call `Value<T>` with a generic type of `IPublishedElement` and you can start accessing the entity's properties straight away, rather than having to then fetch it from a list first.
 
 Example:
 

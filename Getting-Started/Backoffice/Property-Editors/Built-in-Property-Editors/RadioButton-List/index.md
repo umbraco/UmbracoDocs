@@ -20,7 +20,7 @@ Pretty much like the name indicates this Data type enables editors to choose fro
 
 ## MVC View Example
 
-### Typed:
+### Typed
 
 #### Without Modelsbuilder
 ```csharp 
