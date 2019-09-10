@@ -5,7 +5,7 @@ meta.Description: "Explanation of how you can contribute to Umbraco, what the pr
 ---
 # Contribute to the Umbraco Documentation
 
-The Umbraco Documentation is presented here on Our Umbraco, but is in fact also a GitHub repository and it is just as open source as the Umbraco CMS.
+The Umbraco Documentation is presented here on Our Umbraco, but is in fact also a GitHub repository and it is as open source as the Umbraco CMS.
 
 You can contribute to the documentation whenever you feel something is missing or out of date, and all you need to do it, is an account on GitHub.
 
@@ -61,4 +61,4 @@ If you make a pull request to any Umbraco repository that gets merged in you wil
 ![Contributor badge on our](images/c-trib-badge.png)
 
 The Documentation Curators will search for your profile when merging a PR in and add the badge. 
-If it is forgotten just make a comment on the closed PR and we will do it as soon as possible!
+If it is forgotten make a comment on the closed PR and we will do it as soon as possible!

@@ -9,7 +9,7 @@ _All JavaScript in the Umbraco core should adhere to these guidelines. The legac
 **All JavaScript in the backoffice needs to be in a namespace and defined in a class.**
 
 ## Namespaces
-To declare a namespace for your JavaScript class you simply use the following command (as an example to create a namespace called 'Umbraco.Controls'):
+To declare a namespace for your JavaScript class you can use the following command (as an example to create a namespace called 'Umbraco.Controls'):
 
 ```javascript
 Umbraco.Sys.registerNamespace("Umbraco.Controls");
@@ -31,7 +31,7 @@ To create jQuery plugins, see the [jQuery Plugin Guidelines](jquery-guidelines.m
 
 ## Creating classes
 
-There are actually quite a few different ways to create classes in JavaScript. For Umbraco we have opted to use the 3rd party, classical inheritance library, [Base2](https://code.google.com/archive/p/base2/) to make class declarations simple and extendable:
+There are quite a few different ways to create classes in JavaScript. For Umbraco we have opted to use the 3rd party, classical inheritance library, [Base2](https://code.google.com/archive/p/base2/) to make class declarations extendable:
 
 ```javascript
 Umbraco.Sys.registerNamespace("MyProject.MyNamespace");
@@ -171,7 +171,7 @@ MyProject.MyNamespace.Utility.showMsg("hello");
 
 Both singleton and static classes allow you to access methods directly without having to create an entity of your own. The main difference between the two, and what should govern when to use one over the other, is one of state.
 
-A singleton class can hold information which can be manipulated and retrieved via its public methods and will be stored between method calls, whereas static methods should only manipulate and return values which it can gather from its parameters and should not be persisted between individual method calls.
+A singleton class can hold information which can be manipulated and retrieved via its public methods. It will be stored between method calls, whereas static methods should only manipulate and return values which it can gather from its parameters and should not be persisted between individual method calls.
 
 A good example of a Singleton is the one highlighted above, "NamePrinterManager". Here printers can be registered using the registerPrinter method for storage, later retrieved using the getPrinter method. Here a singleton is used as you will only want one central repository of printers.
 

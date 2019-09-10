@@ -5,9 +5,9 @@ versionFrom: 7.0.0
 # Working with the backoffice UI AngularJs project 
 
 ## Overview
-Umbraco 7 has a slightly unorthodox project structure, compared to a normal ASP.NET project. This is by design, a choice from the beginning to embrace a much larger group than "just" the developers who know how to use Visual Studio. 
+Umbraco 7 has a slightly unorthodox project structure, compared to a normal ASP.NET project. This is by design, a choice from the beginning to embrace a much larger group than the developers who know how to use Visual Studio. 
 
-As a result, the Umbraco UI is not a Visual Studio project, but simply a collection of folders and files, following certain conventions, and a small configuration file called `gulpfile` - we will get to the gulp part in a moment. 
+As a result, the Umbraco UI is not a Visual Studio project, but a collection of folders and files, following certain conventions, and a small configuration file called `gulpfile` - we will get to the gulp part in a moment. 
 
 This means that anyone with a text editor can open the UI source, make changes and run the project, without having Visual Studio installed - we will get into how to do that in a moment as well. 
 
@@ -20,7 +20,7 @@ Umbraco 7 needs a couple of things to run:
 To compile and run the UI project you need [Node.js](https://nodejs.org) installed, it is needed for both Windows and OSX.
 
 ### gulp
-When you have Node.js installed, you need to install gulp. gulp is a simple JavaScript task runner, basically like NAnt, MSBuild or any traditional build system [more about gulp here](https://gulpjs.com).
+When you have Node.js installed, you need to install gulp. gulp is a JavaScript task runner, basically like NAnt, MSBuild or any traditional build system [more about gulp here](https://gulpjs.com).
 
 To install, open a terminal and run: 
 	
@@ -30,7 +30,7 @@ For OSX users, you will most likely need to do:
 
 	sudo npm install gulp-cli -g
 
-This installs a `gulp` command into your terminal so you can run gulp scripts with simple commands. That might sound scary, but really it isn't, while working with Umbraco 7, you will become really good friends with `gulp` and your terminal. 
+This installs a `gulp` command into your terminal so you can run gulp scripts. That might sound scary, but really it isn't, while working with Umbraco 7, you will become really good friends with `gulp` and your terminal. 
 
 ### Project dependencies
 Now its time to install all the dependencies that the project requires to compile, debug, test, minify and so on. Luckily this is all automatic and is done with the Node.js package manager (which you already have installed with node)
@@ -68,7 +68,7 @@ You can now login (no user/pass) and browse the UI with dummy data, this setup i
 
 **Note:** we will make this even easier so the steps with node and gulp will not be required for .net developers in Visual Studio, but for now the below is needed:
 
-To run from Visual Studio, simply open the solution and run the `Umbraco.Web.UI` project as a normal website project. But to get the latest Umbraco 7 files into this site you still need to open a terminal at `Umbraco.Web.Ui.Client` and run either:
+To run from Visual Studio, open the solution and run the `Umbraco.Web.UI` project as a normal website project. But to get the latest Umbraco 7 files into this site you still need to open a terminal at `Umbraco.Web.Ui.Client` and run either:
 
 	gulp dev
 
