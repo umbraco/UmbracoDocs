@@ -37,6 +37,6 @@ The first example is more verbose than the second, as the second uses the shortc
 
 To explain, the umbraco.library:NiceUrl method is receiving the id of the current node in the loop, and returns the URL, which is then rendered in the href of the a tag.
 
-Using other methods from the umbraco.library is just as simple.
+Using other methods from the umbraco.library is more or less the same.
 
 **Note: I have copied the original book from Casey Neehouse from the books section of umbraco.org**

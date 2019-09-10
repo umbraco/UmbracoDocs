@@ -38,7 +38,7 @@ Once the deployment is complete, you will notice the following:
 * The template is correctly updated
 * The Document Type you deleted on Development is still present in the backoffice on the Live environment
 
-You might wonder why the Document Type that you've just deleted, is still there. The reason is, that we only delete the associated UDA file, and not the database entry that references the Document Type. 
+You might wonder why the Document Type that you have deleted, is still there. The reason is, that we only delete the associated UDA file, and not the database entry that references the Document Type. 
 
 In order to completely delete the Document Type from your project, you need to delete it from the backoffice of the Live environment as well. This will delete the reference to the Document Type in the Live database, and you will be rid of it completely.
 

@@ -13,11 +13,11 @@ The boot managers initialize the [UmbracoApplication](https://our.umbraco.com/ap
 
 The bootmanager will initialize the ApplicationContext with: the database context, services context, profiling and logger. It will also register the Application Startup handlers which will execute later using the [ApplicationEventsResolver](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.ObjectResolution.ApplicationEventsResolver.html).
 
-For those wondering: **Examine actually doesn't do anything on startup - 'if the indexes are built'**
+For those wondering: **Examine doesn't do anything on startup - 'if the indexes are built'**
 
 ### IBootManager (EXPERT)
 
-In some (rare) cases you may be using a custom `IBootManager` which has the following methods: `Initialize`, `Startup`, `Complete`, this sequence of events and the logic that should be performed in these methods is exactly the same as the methods mentioned above in this order: 
+In some cases you may be using a custom `IBootManager` which has the following methods: `Initialize`, `Startup`, `Complete`. This sequence of events and the logic that should be performed in these methods is exactly the same as the methods mentioned above in this order: 
 * `Initialize` --> `ApplicationInitialized`
 * `Startup` --> `ApplicationStarting`
 * `Complete` --> `ApplicationStarted`

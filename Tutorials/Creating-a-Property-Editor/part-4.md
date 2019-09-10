@@ -7,12 +7,12 @@ needsV8Update: "true"
 # Adding server-side data to a property editor
 
 ## Overview
-In this tutorial, we will add a server-side API controller, which will query a custom table in the Umbraco database, and then return the data to a simple angular controller + view.
+In this tutorial, we will add a server-side API controller, which will query a custom table in the Umbraco database, and then return the data to an angular controller + view.
 
 The end result will be a person-list, populated from a custom table. When clicked it will store the ID of the selected person.
 
 ## Setup the database
-First thing we need is some data; below is a simple SQL Script for creating a `people` table with some random data in it. You could also use [https://generatedata.com](https://generatedata.com) for larger amounts of data:
+First thing we need is some data; below is an SQL Script for creating a `people` table with some random data in it. You could also use [https://generatedata.com](https://generatedata.com) for larger amounts of data:
 
 	CREATE TABLE people (
 	    id INTEGER NOT NULL IDENTITY(1, 1),
@@ -34,7 +34,7 @@ First thing we need is some data; below is a simple SQL Script for creating a `p
 ## Setup ApiController routes
 Next we need to define an `ApiController` to expose a server-side route which our application will use to fetch the data.
 
-For this, we will create a file at: `/App_Code/PersonApiController.cs`. It must be in `App_Code` since we want our app to compile it on start. Alternatively, you can just add it to a normal .NET project and compile it into a DLL as usual.
+For this, we will create a file at: `/App_Code/PersonApiController.cs`. It must be in `App_Code` since we want our app to compile it on start. Alternatively, you can add it to a normal .NET project and compile it into a DLL as usual.
 
 In the `PersonApiController.cs` file, add: 
 
@@ -130,7 +130,7 @@ The `getAll()` method returns a promise from an `$http.get` call, which handles 
 ## Create the view and controller
 We will now finally setup a new view and controller, which follows previous tutorials, so you can refer to those for more details: 
 
-#### The view:
+### The view
 
 ```html
 <div ng-controller="My.PersonPickerController">
@@ -141,7 +141,7 @@ We will now finally setup a new view and controller, which follows previous tuto
 	</ul>
 </div>
 ```
-#### The controller:
+#### The controller
 
 ```javascript	
 angular.module("umbraco")
@@ -157,17 +157,17 @@ So with all these bits in place, all you need to do is register the property edi
 
 With this, the entire flow is: 
 
-1. the view renders a list of people with a controller
-2. the controller asks the personResource for data
-3. the personResource returns a Promise and asks the my/PersonAPI ApiController
+1. The view renders a list of people with a controller
+2. The controller asks the personResource for data
+3. The personResource returns a Promise and asks the my/PersonAPI ApiController
 4. The ApiController queries the database, which returns the data as strongly typed Person objects
-5. the ApiController returns those `Person` objects as JSON to the resource
-6. the resource resolve the Promise
-7. the controller populates the view
+5. The ApiController returns those `Person` objects as JSON to the resource
+6. The resource resolve the Promise
+7. The controller populates the view
 
 Easy huh? - honestly though, there is a good amount of things to keep track of, but each component is tiny and flexible. 
 
 ## Wrap-up
 The important part of the above is the way you create an `ApiController` call to the database for your own data, and finally expose the data to angular as a service using `$http`.
 
-For simplicity, you could also have skipped the service part, and just called `$http` directly in your controller, but by having your data in a service, it becomes a reusable resource for your entire application.
+For simplicity, you could also have skipped the service part, and called `$http` directly in your controller, but by having your data in a service, it becomes a reusable resource for your entire application.

@@ -24,7 +24,7 @@ You can add, edit & delete the data prevalues rendered within the dropdown list.
 
 ## MVC View Example to output selected value
 
-### Simple typed example
+### Typed example
 
 ```csharp
 @if (Model.Content.HasValue("character"))
@@ -34,7 +34,7 @@ You can add, edit & delete the data prevalues rendered within the dropdown list.
 }
 ```
 
-### Simple dynamic example
+### Dynamic example
 
 :::warning
 See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.

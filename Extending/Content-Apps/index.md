@@ -10,9 +10,10 @@ Content Apps are **companions** to the editing experience when working with cont
 
 Content Apps are a new concept in v8. Editors can switch from editing 'Content' to accessing contextual information related to the item they are editing.
 
-![Content Apps in back office](images/content-app-1.png)
+![Content Apps in backoffice](images/content-app-1.png)
 
 ### Default Content Apps
+
 **'Info'** - The 'Info' Content App is a default Content App for all items, replacing the 'Info' tab in Umbraco V7 for displaying Links, History and Status of the current content item.
 
 ### Custom Content Apps
@@ -73,6 +74,7 @@ Create a new file in the `/App_Plugins/WordCounter/` folder and name it `package
 ### Creating the View and the Controller
 
 Add 2 additional files to the `/App_Plugins/WordCounter/` folder:
+
 - `wordcounter.html`
 - `wordcounter.controller.js`
 
@@ -177,6 +179,7 @@ In a similar way, you can limit your Content App according to user roles (groups
     ]
 }
 ```
+
 :::tip
 When a role restriction is given in the manifest, it overrides any other restrictions based on type.
 :::

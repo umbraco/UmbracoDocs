@@ -70,7 +70,7 @@ If the View that inherits from this view is not required to define a "footer" se
 @RenderSection("footer", false)
 ```
 
-If you want to render the main body area then you can simply do the following (only allowed once per View): 
+If you want to render the main body area then you can do the following (only allowed once per View): 
 
 ```csharp
 @RenderBody() 

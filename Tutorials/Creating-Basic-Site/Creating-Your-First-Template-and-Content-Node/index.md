@@ -26,7 +26,7 @@ We now have a template. That's two out of the three stages complete for our firs
 
 # **Creating Your First Content Node**
 
-Our third and final stage to creating our first page in Umbraco is to create a content node where an editor can add the content which Umbraco will use, along with the Document Type and Template, to serve up an HTML page to web visitors.
+Our third and final stage to creating our first page in Umbraco is to create a content node along with the Document Type and Template, to serve up an HTML page to web visitors.
 
 We're now ready to create our first page in Umbraco!   Click the **_Content_** button (first option in the top menu).  
 
@@ -38,7 +38,7 @@ Hover over the grey text **_CONTENT_**  and you'll see the three dots **_..._** 
 If you can't see this then don't panic - check that **_Settings> Document Types > Homepage_**  > **_Structure tab_** > **_Allow at root_** is checked.
 :::
 
-Let's create our homepage. Click the icon and you'll see what we've just been setting up - our document type is now going to drive our homepage content – it gives us and the editors the fields they need. 
+Let's create our homepage. Click the icon and you'll see what we've been setting up - our document type is now going to drive our homepage content – it gives us and the editors the fields they need. 
 
 In the field at the top of the page you'll see "_Enter a name..._" click this and enter the name for your new content node.  We're going to call this "_Homepage_". 
 

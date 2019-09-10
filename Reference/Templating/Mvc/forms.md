@@ -30,7 +30,7 @@ First off we need to define the data that will be submitted, this is done by cre
 	    public string Comment { get; set; }
 	}
 
-This class defines the data that will be submitted and also defines how the data will be validated upon submission and conveniently for us MVC automatically wires up these validation attributes with the front-end so JavaScript validation will automagically occur.
+This class defines the data that will be submitted and also defines how the data will be validated upon submission. MVC automatically wires up these validation attributes with the front-end so JavaScript validation will automagically occur.
 
 ## Creating the SurfaceController Action
 
@@ -78,7 +78,7 @@ Lastly we need to render the HTML form to ensure that it posts to the surface co
 		<input type="submit"/>
 	}
 
-The above code snippet is a PartialView to render the form. Because the Model for the view is the ViewModel we want to scaffold the form, we can just do an `@Html.EditorFor(x => Model)` to automatically create all of the input fields.
+The above code snippet is a PartialView to render the form. Because the Model for the view is the ViewModel we want to scaffold the form, we can do an `@Html.EditorFor(x => Model)` to automatically create all of the input fields.
 
 #### BeginUmbracoForm Overloads
 
@@ -140,7 +140,7 @@ There's been numerous cases of people attempting to return a PartialView directl
 	2. The call to `return CurrentUmbracoPage()` sends the request back through the Umbraco pipeline and maintains the current ModelState and ViewData
 	3. The process starts again at **2. Umbraco page rendered**
 
-So you can see that if you returned a Partial View from within your [HttpPost] action, the only thing that would happen is that you'd end up displaying only the markup for the partial view to the end-user because you are not sending the request back to Umbraco.
+You can see that if you returned a Partial View from within your [HttpPost] action, the only thing that would happen is that you'd end up displaying only the markup for the partial view to the end-user. This is because you are not sending the request back to Umbraco.
 
 ## Display success messages
 

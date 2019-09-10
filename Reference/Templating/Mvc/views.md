@@ -22,7 +22,7 @@ All Umbraco views inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage` which expos
 
 ## Rendering a field with UmbracoHelper
 
-This is probably the most used method which simply renders the contents of a field for the current content item.
+This is probably the most used method which renders the contents of a field for the current content item.
 
 ```csharp
 @Umbraco.Field("bodyContent")
@@ -50,17 +50,17 @@ You will also need to pass the "Context" to the @Umbraco.Field() method if you'r
 
 There are several optional parameters. Here is the list with their default values:
 
-* altFieldAlias = ""
-* altText = ""
-* insertBefore = ""
-* insertAfter = ""
-* recursive = false
-* convertLineBreaks = false
-* removeParagraphTags = false
-* casing = RenderFieldCaseType.Unchanged
-* encoding = RenderFieldEncodingType.Unchanged
+* `altFieldAlias = ""`
+* `altText = ""`
+* `insertBefore = ""`
+* `insertAfter = ""`
+* `recursive = false`
+* `convertLineBreaks = false`
+* `removeParagraphTags = false`
+* `casing = RenderFieldCaseType.Unchanged`
+* `encoding = RenderFieldEncodingType.Unchanged`
 
-The easiest way to use the Field method is to simply specify the optional parameters you'd like to set. For example, if we want to set the insertBefore and insertAfter parameters we'd do:
+The easiest way to use the Field method is to specify the optional parameters you'd like to set. For example, if we want to set the insertBefore and insertAfter parameters we'd do:
 
 ```csharp
 @Umbraco.Field("bodyContent", insertBefore : "<h2>", insertAfter : "</h2>")
@@ -68,7 +68,7 @@ The easiest way to use the Field method is to simply specify the optional parame
 
 ## Rendering a field with Model
 
-The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however simply want to render value "as-is" you can use the @Model.Content property of the view. For example:
+The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however want to render value "as-is" you can use the @Model.Content property of the view. For example:
 
 ```csharp
 @Model.Content.Properties["bodyContent"].Value
@@ -95,7 +95,7 @@ You can also specify the output type that you want from the property. If the pro
 Attention! This approach is considered obsolete - See [Common pitfalls](../../Common-Pitfalls/index.md#dynamics) for more information about why the dynamic approach is obsolete. for more information about why the dynamic approach is obsolete.
 :::
 
-The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however simply want to render value "as-is" you can use the @CurrentPage property of the view. The difference between @CurrentPage and @Model.Content is that @CurrentPage is the dynamic representation of the model which exposes many dynamic features for querying. For example, to render a field you simply use this syntax:
+The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however want to render value "as-is" you can use the @CurrentPage property of the view. The difference between @CurrentPage and @Model.Content is that @CurrentPage is the dynamic representation of the model which exposes many dynamic features for querying. For example, to render a field you use this syntax:
 
 ```csharp
 @CurrentPage.bodyContent
@@ -151,6 +151,6 @@ Properties created on your document types can be accessed with this syntax:
 @Model.BodyText
 ```
 
-When Models Builder resolve your properties it will also try to use value converters to convert the values of your data into more convenient models allowing you to access nested objects as strong types instead of having to rely on dynamics and risking having a lot of potential errors when working with these.
+When Models Builder resolve your properties it will also try to use value converters to convert the values of your data into more convenient models. This allows you to access nested objects as strong types instead of having to rely on dynamics and risking having a lot of potential errors when working with these.
 
 [Models Builder documentation](../Modelsbuilder/)

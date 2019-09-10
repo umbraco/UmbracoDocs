@@ -20,7 +20,7 @@ The member picker opens a panel to pick a specific member from the member sectio
 
 ## MVC View Example
 
-### Typed:
+### Typed
 
 ```csharp
 @{
@@ -31,7 +31,7 @@ The member picker opens a panel to pick a specific member from the member sectio
 }
 ```
 
-### Dynamic (Obsolete):
+### Dynamic (Obsolete)
 
 See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
 

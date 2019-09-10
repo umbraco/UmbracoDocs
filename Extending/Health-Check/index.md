@@ -15,7 +15,7 @@ For inspiration when building your own checks you can look at the checks we've [
 Umbraco comes with the following checks by default:
 
 * Category **Configuration**
-  * **Macro errors (id: `D0F7599E-9B2A-4D9E-9883-81C7EDC5616F`)** - checks that the errors are set to `inline` so that pages that error will still load (and just shows a small error message)
+  * **Macro errors (id: `D0F7599E-9B2A-4D9E-9883-81C7EDC5616F`)** - checks that the errors are set to `inline` so that pages that error will still load (and shows a small error message)
   * **Notification Email Settings (id: `3E2F7B14-4B41-452B-9A30-E67FBC8E1206`)** - checks that the from email address used for email notifications has been changed from its default value
   * **Try Skip IIS Custom Errors (id: `046A066C-4FB2-4937-B931-069964E16C66`)** - in IIS 7.5 and higher this should be set to `true` 
 * Category **Data Integrity**
@@ -30,14 +30,14 @@ Umbraco comes with the following checks by default:
   * **Click-Jacking Protection (id: `ED0D7E40-971E-4BE8-AB6D-8CC5D0A6A5B0`)** - checks to see if a header or meta-tag is in place to indicate whether the site can be hosted in an IFRAME.  Normally this is best set to deny permission for this to be done, to prevent what is known as [click-jacking](https://www.owasp.org/index.php/Clickjacking) attacks
   * **Excessive Headers (id: `92ABBAA2-0586-4089-8AE2-9A843439D577`)** - checks to ensure that various headers that can provide details about the technology used to build and host the website have been removed
   * **HTTPS check (id: `EB66BB3B-1BCD-4314-9531-9DA2C1D6D9A7`)** - to determine if the current site is running on a secure connection
-  * **umbracoUseSSL check** - when the site is running on HTTPS, `umbracoUseSSL` needs to be enabled to secure the backoffice
+  * **UmbracoUseSSL check** - when the site is running on HTTPS, `umbracoUseSSL` needs to be enabled to secure the backoffice
   * **HTTPS connectivity check** - when connecting to the site over HTTPS, does it return a valid response (i.e. the certificate has not expired)?
 * Category **Services**
   * **SMTP settings (id: `1B5D221B-CE99-4193-97CB-5F3261EC73DF`)** - checks that an SMTP server is configured and is accepting requests for sending emails
   
-Each check returns a message indicating whether or not the issue in question has been found on the website installation, and if so whether the concern is an error that should be fixed, or less importantly, a warning you should be aware of.
+Each check returns a message indicating whether or not the issue in question has been found on the website installation. This could be an error that should be fixed, or a warning you should be aware of.
 
-Some of them can also be rectified via the dashboard, simply by clicking the **Fix** button and in some cases providing some required information.  These changes usually involve writing to configuration files that will often trigger a restart of the website.  
+Some of them can also be rectified via the dashboard, by clicking the **Fix** button and in some cases providing some required information.  These changes usually involve writing to configuration files that will often trigger a restart of the website.  
 
 ## Configuring and scheduling checks
 
@@ -58,7 +58,7 @@ Each health check is a class that needs to have a `HealthCheck` attribute. This 
 
 ### Configuration checks
 
-These are fairly simple, small checks that take an XPath query and confirm that the value that's expected is there. If the value is not correct, clicking the "Rectify" button will set the recommended value.
+These are small checks that take an XPath query and confirm that the value that's expected is there. If the value is not correct, clicking the "Rectify" button will set the recommended value.
 
 * A configuration check needs to inherit from `Umbraco.Web.HealthCheck.Checks.Config.AbstractConfigCheck`
 * A configuration check needs the `HealthCheck` attribute as noted at the start of this document

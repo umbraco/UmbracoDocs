@@ -6,10 +6,10 @@ versionFrom: 7.0.0
 
 _Ensure that you have read the [JavaScript Guidelines](js-guidelines.md) document before continuing. As specified in the [JavaScript Guidelines](js-guidelines.md) document, method names are named in "camelCase" and therefore jQuery plugins (since they are methods) are named as "camelCase"._
 
-Just like other JavaScript in the Umbraco backoffice, you need to wrap your class in the jQuery self-executing function if you want to use the dollar ($) operator.
+Like with other JavaScript in the Umbraco backoffice, you need to wrap your class in the jQuery self-executing function if you want to use the dollar ($) operator.
 
-## Simple jQuery plugins
-Simple jQuery plugins don't require an internal class to perform the functionality and therefore do not expose or return an API. These could be as simple as vertically aligning something:
+## JQuery plugins
+JQuery plugins don't require an internal class to perform the functionality and therefore do not expose or return an API. These could be vertically aligning something:
 
 ```javascript
 (function($) {
@@ -25,13 +25,13 @@ Simple jQuery plugins don't require an internal class to perform the functionali
 ```
 
 ## Standard jQuery plugins
-Most jQuery plugins will expose an API or a way in which a developer can interact with the plugin, not just instantiating it. To do this we need to create a class that does the work of the plugin and then expose that class via a different jQuery plugin.
+Most jQuery plugins will expose an API or a way in which a developer can interact with the plugin, not instantiating it. To do this we need to create a class that does the work of the plugin and then expose that class via a different jQuery plugin.
 
 ### Naming Conventions
 There are many different ways to expose an API for a jQuery plugin, in Umbraco the standard will be:
 
-* `$("#myId").myFirstJQueryPlugin();` = to instantiate the plugin
-* `var pluginApi = $("#myId").myFirstJQueryPluginApi();` = to retrieve the plugin API for that selector
+* `$("#myId").myFirstJQueryPlugin();` - to instantiate the plugin
+* `var pluginApi = $("#myId").myFirstJQueryPluginApi();` - to retrieve the plugin API for that selector
 
 So essentially, we'll be creating 2 plugins, one to instantiate it and one to retrieve the API. The naming conventions are obvious, create your plugin name and then append the term *Api* to create your API plugin name.
 
@@ -95,8 +95,6 @@ Umbraco.Sys.registerNamespace("MyProject.MyNamespace");
 ### Consuming the plugins
 
 To use the plugin and API is very easy:
-
-NOTE: this is an example plugin, I realize this is not really that useful as a non-simple plugin!
 
 ```javascript
 $("#myId").verticalAlign();

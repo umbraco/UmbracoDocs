@@ -365,7 +365,9 @@ namespace My.Namespace
 
 ### What happened to Creating and Created events?
 
-Both the ContentService.Creating and ContentService.Created events have been obsoleted. Why? Because these events are not guaranteed to trigger and therefore should not be used. This is because these events *only* trigger when the ContentService.CreateContent method is used which is an entirely optional way to create content entities. It is also possible to simply construct a new content item - which is generally the preferred and consistent way - and therefore the Creating/Created events will not execute when constructing content that way. Further more, there's no reason to listen for the Creating/Created events because they are misleading since they don't actually trigger before and after the entity has been persisted, they simply trigger inside the CreateContent method which never actually persists the entity, it simply just constructs a new content object.
+Both the ContentService.Creating and ContentService.Created events have been obsoleted. Why? Because these events are not guaranteed to trigger and therefore should not be used. This is because these events *only* trigger when the ContentService.CreateContent method is used which is an entirely optional way to create content entities. It is also possible to construct a new content item - which is generally the preferred and consistent way - and therefore the Creating/Created events will not execute when constructing content that way. 
+
+Further more, there's no reason to listen for the Creating/Created events. They are misleading since they don't trigger before and after the entity has been persisted. They trigger inside the CreateContent method which never persists the entity, it constructs a new content object.
 
 #### What do we use instead?
 

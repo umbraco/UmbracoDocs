@@ -60,9 +60,9 @@ Then we will start building the view at `Views\Partials\Forms\Fieldtypes\FieldTy
         @{if (Model.Validate) { <text> data-val-regex="@Model.InvalidErrorMessage" data-regex="@Html.Raw(Model.Regex)" </text> }} />
 ```
 
-The view simply takes care of generating the UI control and setting its value.
+The view takes care of generating the UI control and setting its value.
 
-On the view, it is important to note that the id attribute is fetched from @Model.Id. You'll also see that we are using jQuery validate unobtrusive to perform client side validation so that's why we are adding the data* attributes.
+On the view, it is important to note that the ID attribute is fetched from `@Model.Id`. You'll also see that we are using jQuery validate unobtrusive to perform client side validation so that's why we are adding the data* attributes.
 
 ## Umbraco backoffice view
 

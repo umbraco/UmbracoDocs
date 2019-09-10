@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 ## Data first 
 ### nothing in = nothing out!
 
-Step 1 of any site is to create a "**_Document Type_**" – after a few installations you’ll become familiar with this terminology but at the start it might be a little bit bewildering.  A **_Document Type_** is a data container in Umbraco where you can add **_Properties_** (data fields/attributes) where an editor can input data. Umbraco will output this data to the relevant part of a "**_Template_**" (more on these later).  
+Step 1 of any site is to create a "**_Document Type_**" – after a few installations you’ll become familiar with this terminology but at the start it might be a little bit bewildering. A **_Document Type_** is a data container in Umbraco where you can add **_Properties_** (data fields/attributes) where an editor can input data. Umbraco will output this data to the relevant part of a "**_Template_**" (more on these later).  
 
 **_Document Types_** are infinitely extendable but usually you’ll add the following common properties:
 
@@ -60,7 +60,7 @@ Now click on the [Add property] link – this is where we can create each of the
 Enter the [Name] "_Page Title_". When you move to the next field you’ll see Umbraco helpfully gives you the alias "pageTitle".  Click the [Add editor] link and you'll see a long list of editors, select the "Textbox".
 
 :::tip
-Remember to come back and explore this list of data types later - it's a hint to the power of Umbraco, we're just going to use the most simple data type for now
+Remember to come back and explore this list of data types later - it's a hint to the power of Umbraco.
 :::  
 
 ![Selecting Textbox Data Type](images/figure-11a-selecting-textbox-data-type-v8.png)
@@ -81,7 +81,7 @@ Repeat this step, clicking the [Add property] at the bottom of the [Content] gro
 <col width="400">
 <tr><th>Name</th><th>Body Text</th></tr>
 <tr><td>Alias:</td><td>bodyText</td></tr>
-<tr><td>Type:</td><td>Richtext editor (use the search to help you find this, leave all the options as default and just click Submit)</td></tr>
+<tr><td>Type:</td><td>Richtext editor (use the search to help you find this, leave all the options as default and click Submit)</td></tr>
 <tr><td>Tab:</td><td>Content</td></tr>
 <tr><td>Description:</td><td>The main content of the page.</td></tr>
 </table>

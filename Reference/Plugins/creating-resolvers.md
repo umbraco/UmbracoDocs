@@ -57,7 +57,7 @@ ErrorLoggerResolver.Current.SetErrorLogger(new MyCustomErrorLogger("../my-file-p
 
 ## Creating a multiple object resolver
 
-Creating a multiple object resolver is just as simple. As an example we'll create a LanguageConvertersResolver.
+Creating a multiple object resolver is similar. As an example we'll create a LanguageConvertersResolver.
 
 :::note
 The naming convention for multiple objects resolvers are plural: We've named this LanguageConverter**s**Resolver with a pluralized 'Converters' to denote that this resolver returns multiple objects

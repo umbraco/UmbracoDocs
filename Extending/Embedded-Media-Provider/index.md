@@ -74,8 +74,7 @@ If the provider to add supports the *OEmbed* format for embedding a representati
 
 ### Adding a new OEmbed Provider Example
 
-Let's allow our editors to embed artwork from the popular DeviantArt website - the world's largest online social community for artists and art enthusiasts. We can see they have information on using OEmbed: https://www.deviantart.com/developers/oembed
-and the format of their OEmbed implementation returns a JSON format, from a url https://backend.deviantart.com/oembed?url=[urltoembed] , so we'll need to use the `EmbedProviderBase` and the `base.GetJsonResponse` method, we can see 'links' to media shared on deviantart are in the format: https://fav.me/[uniquemediaidentifier] so we'll need a regex to match any urls pasted into the embed panel that start with *fav.me*, achieved by setting the `UrlSchemeRegex` property.
+Let's allow our editors to embed artwork from the popular DeviantArt website - the world's largest online social community for artists and art enthusiasts. We can see they have information on using OEmbed: https://www.deviantart.com/developers/oembed. The format of their OEmbed implementation returns a JSON format, from a url `https://backend.deviantart.com/oembed?url=[urltoembed]`. We'll need to use the `EmbedProviderBase` and the `base.GetJsonResponse` method. We can see 'links' to media shared on deviantart are in the format: `https://fav.me/[uniquemediaidentifier]` so we'll need a regex to match any urls pasted into the embed panel that start with *fav.me*, achieved by setting the `UrlSchemeRegex` property.
 
 The Provider would look like this:
 
@@ -138,7 +137,7 @@ If your third-party media provider does not support OEmbed or there is some quir
 
 ### Custom Embed Provider Example
 
-Azure Media Services - https://azure.microsoft.com/en-gb/services/media-services/ - provide 'broadcast-quality' video streaming services, you can embed the Azure Media Player into your site to play a video using an IFrame: 
+Azure Media Services [(https://azure.microsoft.com/en-gb/services/media-services/)](https://azure.microsoft.com/en-gb/services/media-services/) provide 'broadcast-quality' video streaming services. You can embed the Azure Media Player into your site to play a video using an IFrame: 
 https://ampdemo.azureedge.net/azuremediaplayer.html
 
 This example creates a custom Embed Provider to do the job of taking the Url of the Media asset and writing out the markup required to embed the IFrame video player inside your content.

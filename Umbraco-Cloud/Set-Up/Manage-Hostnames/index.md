@@ -13,7 +13,7 @@ Let's say you have a project named `Snoopy`. These will be the default hostnames
 * Development environment: *dev-snoopy.s1.umbraco.io*
 * Staging environment: *stage-snoopy.s1.umbraco.io*
 
-To access the backoffice, simply add `/umbraco` to the end of the Live, Development or Staging hostname.
+To access the backoffice add `/umbraco` to the end of the Live, Development or Staging URL.
 
 ## Video tutorial
 

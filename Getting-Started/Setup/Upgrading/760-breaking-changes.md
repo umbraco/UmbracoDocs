@@ -69,7 +69,7 @@ New sites will have the obsolete pickers filtered out from the list of available
 
 ### RTE Images attributes ([U4-6228](https://issues.umbraco.org/issue/U4-6228), [U4-6595](http://issues.umbraco.org/issue/U4-6595))
 
-For a long time we had a "rel" attribute on an "img" tag when inserting into the RTE. This is invalid HTML markup. We worked around this by stripping this attribute using a Property Editor Value converter. Some developers relied on this attribute unfortunately so we didn't just change it to a "data-id" attribute which would have been valid. In 7.6 we are not storing INT ids in these attributes and instead storing UDI values so with this change we no longer use "rel" or "data-id" and instead there will be a "data-udi" attribute. This change should affect only a very small amount of people that were previously relying on the values from the "rel" attribute.
+For a long time we had a "rel" attribute on an "img" tag when inserting into the RTE. This is invalid HTML markup. We worked around this by stripping this attribute using a Property Editor Value converter. Some developers relied on this attribute unfortunately so we didn't change it to a "data-id" attribute which would have been valid. In 7.6 we are not storing INT ids in these attributes and instead storing UDI values so with this change we no longer use "rel" or "data-id" and instead there will be a "data-udi" attribute. This change should affect only a very small amount of people that were previously relying on the values from the "rel" attribute.
 
 ### Others
 

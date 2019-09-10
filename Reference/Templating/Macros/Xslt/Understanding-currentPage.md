@@ -10,32 +10,30 @@ In XSLT, to reference the parameter, and other variable types, we use the "$" an
 
 XML is referenced in XSLT through the use of XPath, a query syntax that resembles that of DOS file commands.  Since XML has the ability to contain various levels of information, XPath has means to traverse these levels, and retrieve data based upon the current context.  But again, before we can use XPath, we must know what is in the XML document.
 
-The XML document, as mentioned before, contains all the content of the published documents.  This data is stored in the XML document structured in the same manner as your tree is laid out in Umbraco.  So, documents are nested to create the hierarchy that we can easily use.Each document in
+The XML document, as mentioned before, contains all the content of the published documents.  This data is stored in the XML document structured in the same manner as your tree is laid out in Umbraco.  So, documents are nested to create the hierarchy that we can use. Each document in Umbraco consists of several common pieces of data, and they are:
 
-Umbraco consists of several common pieces of data, and they are:
-
-- id
-- version
-- parentID
-- level
-- writerID
-- creatorID
-- nodeType
-- template
-- sortOrder
-- createDate
-- updateDate
-- nodeName
-- urlName
-- writerName
-- creatorName
-- nodeTypeAlias
-- path
+- `id`
+- `version`
+- `parentID`
+- `level`
+- `writerID`
+- `creatorID`
+- `nodeType`
+- `template`
+- `sortOrder`
+- `createDate`
+- `updateDate`
+- `nodeName`
+- `urlName`
+- `writerName`
+- `creatorName`
+- `nodeTypeAlias`
+- `path`
 
 These are store as attributes of the document, which is called "node".  The properties that are added to the document in Umbraco, and what the user edits are referenced as "data".  Data consists of a couple common pieces of data, which are attributes on the data elements.  These are:
 
-- alias
-- versionID
+- `alias`
+- `versionID`
 
 This is structured similar to the following in the XML document.
 

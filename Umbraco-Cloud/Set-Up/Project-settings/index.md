@@ -24,13 +24,13 @@ You will need to whitelist your IP in order to connect to the databases with you
 
 ## [Hostnames](../Manage-Hostnames)
 
-Binding hostnames to your Umbraco Cloud project is easily done from the Umbraco Cloud Portal - the page is called **Hostnames**.
+Binding hostnames to your Umbraco Cloud project is done from the Umbraco Cloud Portal - the page is called **Hostnames**.
 
 ## [Certificates](../Manage-Hostnames/Security-Certificates)
 
 All hostnames added to your Umbraco Cloud environments will automatically be assigned a security certificate - we call this feature [Umbraco Latch](../Umbraco-Latch).
 
-Sometimes you might want to upload  and bind your own security certificate to your hostnames. This can easily be  done from the **Certificates** page.
+Sometimes you might want to upload and bind your own security certificate to your hostnames. This can be  done from the **Certificates** page.
 
 ## Public access
 
@@ -48,7 +48,7 @@ On Umbraco Cloud projects we've made it possible to configure a deployment webho
 
 ## Upgrade to Professional
 
-From the *Settings* menu you can easily upgrade your project to a Professional plan.
+From the *Settings* menu you can upgrade your project to a Professional plan.
 
 The option will not be available when you are already on a Professional plan or if you are running in Trial mode.
 

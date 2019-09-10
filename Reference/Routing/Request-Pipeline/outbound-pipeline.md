@@ -3,6 +3,7 @@ versionFrom: 8.1.0
 ---
 
 # Outbound request pipeline
+
 The **outbound pipeline** consists out of the following steps:
 
 1. [Create segments](#segments)
@@ -10,9 +11,10 @@ The **outbound pipeline** consists out of the following steps:
 3. [Create urls](#urls)
 
 To explain things we will use the following content tree:
-![simple content tree](images/simple-content-tree-v8.png)
+![content tree](images/simple-content-tree-v8.png)
 
 ## 1. <a name="segments"></a> Create segments
+
 When the URL is constructed, Umbraco will convert every node in the tree into a segment.  Each published [Content](../../../Reference/Management/Models/Content) item has a corresponding url segment. 
 
 In our example "Our Products" will become "our-products" and "Swibble" will become "swibble".
@@ -20,6 +22,7 @@ In our example "Our Products" will become "our-products" and "Swibble" will beco
 The segments are created by the "Url Segment provider"
 
 ### Url Segment provider
+
 The 'Current Composition' of an Umbraco implementation contains a collection of `UrlSegmentProviders` this collection is populated during Umbraco boot up. Umbraco ships with a 'DefaultUrlSegmentProvider' - but custom implementations can be added to the collection.
 
 When the GetUrlSegment extension method is called for a content item + culture combination, each registered IUrlSegmentProvider in the collection is executed in 'collection order' until a particular UrlSegmentProvider returns a segment value for the content. (and no further UrlSegementProviders in the collection will be executed.)
@@ -32,6 +35,7 @@ public interface IUrlSegmentProvider
   string GetUrlSegment(IContentBase content, string culture = null);
 }
 ```
+
 Note each 'culture' variation can have a different Url Segment!
 
 The returned string will be the Url Segment for this node.  Any string value can be returned here but it cannot contain url segment separators `/` characters as this would create additional "segments". So something like `5678/swibble` is not allowed.
@@ -87,11 +91,11 @@ namespace Umbraco8.Composers
 ### The Default Url Segment Provider
 
 The Default Url Segment provider builds its segments like this:
- 
+
 First it looks (in this order) for: 
 
-- a property with alias *umbracoUrlName* on the node. (this is a convention led way of giving editors control of the segment name - with variants - this can vary by culture).
-- the 'name' of the content item eg content.Name
+- A property with alias *umbracoUrlName* on the node. (this is a convention led way of giving editors control of the segment name - with variants - this can vary by culture).
+- The 'name' of the content item eg content.Name
 
 The Umbraco string extension `ToUrlSegment()` is used to produce a clean 'Url safe' segment.  
 
@@ -150,7 +154,7 @@ Any content node with a hostname defines a “new root” for paths.
 
 Paths can be cached, what comes next cannot (http vs https, current request…).
 
-#### Some further considerations when **working with hostnames**:
+#### Some further considerations when **working with hostnames**
 
 -  **Domain without path** e.g. "www.site.com"
 will become "1234/path/to/page"
@@ -211,7 +215,7 @@ The remaining nodes will be marked as colliding and will not have a URL generate
 This can happen if an umbracoUrlName property is being used to override the generated URL of a node, or in some cases when having multiple root nodes without hostnames assigned.
 
 :::warning
-Keep in mind that this means publishing a unpublished node with a conflicting URL, might change the active node being rendered on that specific URL in cases where the published node should now take priority according to sort order in the tree!
+This means publishing an unpublished node with a conflicting URL, might change the active node being rendered on that specific URL in cases where the published node should now take priority according to sort order in the tree!
 :::
 
 ### Custom Url Provider
@@ -226,17 +230,21 @@ public interface IUrlProvider
       IEnumerable<UrlInfo> GetOtherUrls(UmbracoContext umbracoContext, int id, Uri current);
 }
 ```
+
 The url returned in the 'UrlInfo' object by GetUrl can be completely cusom.
 
 If implementing a custom Url Provider, consider following things:
 
-- cache things,
-- be sure to know how to handle schema's (http vs https) and hostnames 
-- inbound might require rewriting
+- Cache things,
+- Be sure to know how to handle schema's (http vs https) and hostnames
+- Inbound might require rewriting
+
 :::tip
 If there is only a small change to the logic around Url generation, then a smart way to create a custom Url Provider is to inherit from the DefaultUrlProvider and override the GetUrl() virtual method.
 :::
+
 #### Example
+
  add /fish on the end of every url...
 
 ```csharp
@@ -316,7 +324,8 @@ namespace Umbraco8.Composers
 ### GetOtherUrls
 
 The GetOtherUrls method is only actioned in the Umbraco Backoffice to provide a list to editors of other Urls which also map to the node.
-For example, the convention led umbracoUrlAlias property that enables editors to specify a comma delimited list of alternative urls for the node has a corresponding AliasUrlProvider reggistered in the UrlProviderCollecton to display this list to the Editor in the backoffice Info Content app for a node.
+
+For example, let's consider a convention-led umbracoUrlAlias property that enables editors to specify a comma delimited list of alternative urls for the node. It has a corresponding AliasUrlProvider registered in the UrlProviderCollecton to display this list to the Editor in the backoffice Info Content app for a node.
 
 ### Url Provider Mode
 Specifies the type of urls that the url provider should produce, eg. absolute vs. relative Urls. Auto is the default
@@ -422,7 +431,7 @@ Now if an editor visits the backoffice via the backoffice url they will only see
 
 ![Backoffice + production domains only](images/backoffice-see-prod.png)
 
-NB: it's not a 1-1 mapping, but a grouping: multiple Urls can be added to a group - think multilingual production and staging variations, and in the example above, if an editor logged in to the backoffice via the production url, eg umbraco-v8.localtest.me/umbraco - they would see the umbraco-v8-backoffice.localtest.me domain listed.
+NB: it's not a 1-1 mapping, but a grouping. Multiple Urls can be added to a group. Think multilingual production and staging variations, and in the example above, if an editor logged in to the backoffice via the production url, eg umbraco-v8.localtest.me/umbraco - they would see the umbraco-v8-backoffice.localtest.me domain listed.
 
 #### Grouping the groupings - BindSites
 
@@ -437,7 +446,5 @@ The SiteDomainHelper contains a 'BindSites' method that enables different site g
            SiteDomainHelper.BindSites("backoffice", "staging");
         }
 ```
+
 Visiting the backoffice now via umbraco-v8-backoffice.localtest.me/umbraco would list all the 'backoffice' grouped domains AND all the 'staging' grouped domains.
-
-
-

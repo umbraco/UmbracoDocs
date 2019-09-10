@@ -20,9 +20,8 @@ You can create your own custom macro parameter types.
 
 ## Umbraco 7 - Creating your own macro parameter type ##
 
-### isParameterEditor ###
-All you need to do to create a macro parameter type in Umbraco 7, is to create a custom 'Property Editor' (or copy someone else's), see [Property Editors documentation](../../Extending/Property-Editors/index.md)
-and in the [Package Manifest file](../../Extending/Property-Editors/package-manifest.md) for the editor, set the isParameterEditor property to be true.
+### isParameterEditor
+All you need to do to create a macro parameter type in Umbraco 7, is to create a custom 'Property Editor' (or copy someone else's). See [Property Editors documentation](../../Extending/Property-Editors/index.md) and in the [Package Manifest file](../../Extending/Property-Editors/package-manifest.md) for the editor, set the isParameterEditor property to be true.
 
 ```json
 propertyEditors: [
@@ -37,7 +36,7 @@ propertyEditors: [
 ]
 ```
 
-### PreValues/Configuration/DefaultValues ###
+### PreValues/Configuration/DefaultValues
 However 'Parameter Editors' unlike 'Property Editors' cannot contain 'prevalues', since there is no UI to present configuration option in the Macro Parameter tab when a particular type is chosen. You can use the defaultConfig option to pass a one off default set of configuration for the parameter editor to use:
 
 ```json
@@ -50,9 +49,9 @@ defaultConfig: {
 
 This is only a problem if you have a macro parameter type, that needs to be used on lots of different macros, but with slightly different configuration in each instance.
 
-### Example ###
+### Example
 
-We'll create a simple 'Image Position' Macro Parameter type providing a Radio Button list of options for positioning an image that has been inserted via the Macro.
+We'll create an 'Image Position' Macro Parameter type providing a Radio Button list of options for positioning an image that has been inserted via the Macro.
 
 #### Package Manifest ####
 
@@ -74,7 +73,7 @@ We'll create a simple 'Image Position' Macro Parameter type providing a Radio Bu
 }
 ```
 
-#### View ####
+#### View
 
 ```csharp
 <div ng-controller="tooorangey.ImagePositionController">
@@ -86,7 +85,7 @@ We'll create a simple 'Image Position' Macro Parameter type providing a Radio Bu
 </div>
 ```
 
-#### Controller ####
+#### Controller
 
 ```javascript
 angular.module("umbraco").controller("tooorangey.ImagePositionController", function ($scope) {
@@ -112,7 +111,7 @@ angular.module("umbraco").controller("tooorangey.ImagePositionController", funct
 });
 ```
 
-#### Display ####
+#### Display
 
 The final custom parameter should look like this:
 
@@ -124,19 +123,19 @@ If you want to create a new macro parameter editor you will need some c# program
 
 First create a class deriving from a webcontrol and implement the IMacroGuiRendering interface. Afterwards, open your database editor.  Find the **cmsMacroPropertyType** table and add the a new property editor.
 
-### IMacroGuiRendering Interface ###
+### IMacroGuiRendering Interface
 You can find this interface in the umbraco.interfaces namespace contained in the interfaces dll.  You will need to reference this DLL if you are developing your control in a separate project.
 This interface implements 2 properties:  Value and ShowCaption.
 The value stores a string  and the ShowCaption property a bool.
 
-### Database update ###
+### Database update
 <table>
 <tr><th>
 id</th><th>macroPropertyTypeAlias</th><th>macroPropertyTypeRenderAssembly</th><th>macroPropertyTypeRenderType</th><th>macroPropertyTypeBaseType</th></tr>
 <tr><td>
 28</td><td>myNewPickerType</td><td>NameOfAssembly</td><td>FullName.OfType.IncludingNamespace</td><td>String</td></tr></table>
 
-### Example ###
+### Example
 A very basic example deriving from a DropDownList ASP.NET server control
 
 ```csharp
@@ -168,5 +167,5 @@ public class MyCustomPicker : DropDownList,  IMacroGuiRendering
 }
 ```
 
-### Further information ###
+### Further information
 * A nice blog post by Richard Soeteman: [Create A Custom Macro ParameterType](http://www.richardsoeteman.net/2010/01/04/CreateACustomMacroParameterType.aspx)

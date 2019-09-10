@@ -7,7 +7,7 @@ versionFrom: 7.0.0
 _This example is for creating a fully content managed website where URLs will be dynamic and be based on the same URLs generated in Umbraco. This also gives you the ability to Hijack routes for specific Document Types like in a normal Umbraco installation._
 
 #### Setup, bootstrap & launch
-The Headless client NuGet package is hosted on a custom MyGet feed, so you need to create a `NuGet.config` file for your project which can be done via the command line. If you don't do this then you would need to use the `--source` parameter and a few other tricks so it's just simpler to use a `Nuget.config` file. 
+The Headless client NuGet package is hosted on a custom MyGet feed, so you need to create a `NuGet.config` file for your project which can be done via the command line. If you don't do this then you would need to use the `--source` parameter and a few other tricks so it's simpler to use a `Nuget.config` file. 
 
 So __before__ you run any script for creating a project, you will need to do this in the new folder where you are creating your project:
 
@@ -47,7 +47,7 @@ Now to create a new .NET Core website and add references:
    * First of all add this using reference: `using Umbraco.Headless.Client.Net.Web;`
    * In `ConfigureServices` add the headless client services: `services.AddUmbracoHeadlessClient(Configuration);`
    * In `ConfigureServices` add the headless web routing engine: `services.AddUmbracoHeadlessWebEngine(Configuration);`
-   * In `Configure` replace the `UseMvc` block with `app.UseUmbracoHeadlessWebEngine();` (or you can just put this line above the existing `UseMvc` block)
+   * In `Configure` replace the `UseMvc` block with `app.UseUmbracoHeadlessWebEngine();` (or you can put this line above the existing `UseMvc` block)
 * You will need to add a view to be rendered:
    * Add a view file for the path `/Views/DefaultUmbraco/Index.cshtml`
     ```csharp
@@ -135,7 +135,7 @@ You can also inject the `PublishedContentService` or `IHeadlessConfig` into any 
 
 ##### Hijacking routes
 
-Just like in Umbraco, with this engine you can hijack routes! 
+Like in Umbraco, with this engine you can hijack routes! 
 
 * Create a new controller to hijack a route for a document type. For example, if your document type is called `Page`, then create a controller: `/Controllers/PageController.cs`
 ```csharp

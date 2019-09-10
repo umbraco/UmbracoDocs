@@ -11,9 +11,9 @@ _This section refers to how to implement caching features in the Umbraco applica
 
 Although caching is a pretty standard concept it is very important to make sure that caching is done correctly and consistently. It is always best to ensure performance is at its best before applying any cache and also beware of *over caching* as this can cause degraded performance in your application because of cache turnover.
 
-In normal environments caching seems to be a pretty standard and easy concept, however if you are a package developer or a developer who is going to be publishing a codebase to a load balanced environment then you need to be aware of how to invalidate your cache properly so that it works in load balanced environments. If it is not done correctly then your package and/or codebase will not work the way that you would expect in a load balanced scenario. 
+In normal environments caching seems to be a pretty standard and easy concept. If you are a package developer or developer who is going to publish a codebase to a loadbalanced environment then you need to be aware of how to invalidate your cache properly, so that it works in load balanced environments. If it is not done correctly then your package and/or codebase will not work the way that you would expect in a load balanced scenario. 
 
-**If you are caching business logic data that changes based on a user's action in the backoffice and you are not using an *ICacheRefresher* then you will need to review your code and update it based on the below documentation.**
+**If you are caching businesslogic data that changes based on a user's action in the backoffice and you are not using an *ICacheRefresher* then you will need to review your code and update it based on the below documentation.**
 
 ## Retrieving and Adding items in the cache
 
@@ -32,7 +32,7 @@ The interface consists of the following methods:
 * `void RefreshAll();` - this would invalidate or refresh all caches of the caching type that this `ICacheRefresher` is created for. For example, if you were caching `Employee` objects, this method would invalidate all `Employee` caches.
 * `void Refresh(int Id);` - this would invalidate or refresh a single cache for an object with the provided INT id.
 * `void Refresh(Guid Id);` - this would invalidate or refresh a single cache for an object with the provided GUID id.
-* `void Remove(int Id);` - this would invalidate a single cache for an object with the provided INT id. In many cases Remove and Refresh perform the same operation but in some cases `Refresh` doesn't just remove/invalidate a cache entry, it might update it. `Remove` is specifically used to remove/invalidate a cache entry.
+* `void Remove(int Id);` - this would invalidate a single cache for an object with the provided INT id. In many cases Remove and Refresh perform the same operation but in some cases `Refresh` doesn't remove/invalidate a cache entry, it might update it. `Remove` is specifically used to remove/invalidate a cache entry.
 
  _Some of these methods may not be relevant to the needs of your own cache invalidation so not all of them may need to perform logic._
 
@@ -64,7 +64,7 @@ This really comes down to what you are caching and when it needs to be invalidat
 
 ### What happens when an ICacheRefresher is executed?
 
-When an `ICacheRefresher` is executed via the `DistributedCache.Instance` a notification is sent out to all servers that are hosting your web application to execute the specified cache refresher. When not load balancing, this simply means that the single server hosting your web application executes the `ICacheRefresher` directly however when load balancing, this means that Umbraco will ensure that each server hosting your web application executes the `ICacheRefresher` so that each server's cache stays in sync.
+When an `ICacheRefresher` is executed via the `DistributedCache.Instance` a notification is sent out to all servers that are hosting your web application to execute the specified cache refresher. When not load balancing, this means that the single server hosting your web application executes the `ICacheRefresher` directly. However when load balancing, this means that Umbraco will ensure that each server hosting your web application executes the `ICacheRefresher` so that each server's cache stays in sync.
 
 ## Events handling to refresh cache
 

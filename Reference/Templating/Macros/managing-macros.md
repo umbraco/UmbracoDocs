@@ -63,17 +63,17 @@ Here you can add/modify/remove macro parameters.
 
 This list defines the different types of macro parameters:
 
-- *bool* - A true/false value
-- *contentPicker* - the ID of the selected node as a single integer
-- *contentRandom* - the xml from a random node
-- *contentTree* - the xml of the selected node and its child nodes
-- *contentType* - the alias of a selected content type as a string
-- *contentTypeMultiple* - a comma separated list of selected content type aliases
-- *mediaCurrent* - the xml of the selected media item
-- *number* - an integer
-- *propertyTypePicker* - the alias of the selected property type
-- *propertyTypePickerMultiple* - a comma separated list of selected property type aliases
-- *tabPicker* - the caption of the selected tab
-- *tabPickerMultiple* - a comma separated list of selected tab captions
-- *text* - a text string
-- *textMultiline* - a text string
+- `bool` - A true/false value
+- `contentPicker` - the ID of the selected node as a single integer
+- `contentRandom` - the xml from a random node
+- `contentTree` - the xml of the selected node and its child nodes
+- `contentType` - the alias of a selected content type as a string
+- `contentTypeMultiple` - a comma separated list of selected content type aliases
+- `mediaCurrent` - the xml of the selected media item
+- `number` - an integer
+- `propertyTypePicker` - the alias of the selected property type
+- `propertyTypePickerMultiple` - a comma separated list of selected property type aliases
+- `tabPicker` - the caption of the selected tab
+- `tabPickerMultiple` - a comma separated list of selected tab captions
+- `text` - a text string
+- `textMultiline` - a text string
