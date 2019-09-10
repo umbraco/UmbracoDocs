@@ -24,13 +24,13 @@ The `insertTextAfter` allows you to add text before your field is outputted, onl
 	<umbraco:item field="startDate" formatAsDate="true" runat="server" />
 
 ## formatAsDateWithTime
-This is just like formatAsDate but instead this will also output the time along with the date, if you use this attribute you will also need to use the `formatAsDateWithTimeSeperator` attribute.
+This is like formatAsDate but instead this will also output the time along with the date, if you use this attribute you will also need to use the `formatAsDateWithTimeSeperator` attribute.
 
 	<umbraco:item field="startDate" formatAsDateWithTime="true" formatAsDateWithTimeSeperator=" " runat="server"/>
 
 
 ## formatAsDateWithTimeSeparator
-This is just like `formatAsDate` but instead this will also output the time along with the date, if you use this attribute you will also need to use the `formatAsDateWithTimeSeparator` attribute.
+This is like `formatAsDate` but instead this will also output the time along with the date, if you use this attribute you will also need to use the `formatAsDateWithTimeSeparator` attribute.
 
 	<umbraco:item field="startDate" formatAsDateWithTime="true" formatAsDateWithTimeSeperator=" " runat="server"/>
 
@@ -45,7 +45,7 @@ The textIfEmpty attribute allows you to define an alternative textif the main fi
 	<umbraco:item field="bodyText" textIfEmpty="I am the alternative text" runat="server" />
 
 ## convertLineBreaks
-The convertLineBreaks attribute allows you to convert line breaks in a simple editor field (not a RichText editor) into <br/> tags.
+The convertLineBreaks attribute allows you to convert line breaks in an editor field (not a RichText editor) into <br/> tags.
 
 	<umbraco:item field="bodyText" convertLineBreaks="true" runat="server"/>
 
@@ -73,7 +73,7 @@ The htmlEncode attribute allows you to encode your field into an HTML encoded fo
 ## Xslt and XsltDisableEscaping
 The Xslt and XsltDisableEscaping attributes are particularly useful for manipulating complex content, such as that stored in a Content or Media Picker on a page.
 
-For example, retrieving the URL to an image requires calling `umbraco.library:GetMedia` from within a macro - Razor, XSLT or otherwise. However, if a single image is being handled in a relatively simple manner, the following code snippet may be useful:
+For example, retrieving the URL to an image requires calling `umbraco.library:GetMedia` from within a macro - Razor, XSLT or otherwise. However, if a single image is being handled, the following code snippet may be useful:
 
 	<umbraco:Item Field="myImage" runat="server"
 	              Xslt="umbraco.library:GetMedia({0},0)/umbracoFile"

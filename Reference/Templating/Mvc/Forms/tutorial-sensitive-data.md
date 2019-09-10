@@ -26,7 +26,7 @@ The view model that will be used in this tutorial will be as follows:
 	    public string Comment { get; set; }
 	}
 
-This class defines the data that will be submitted and also defines how the data will be validated upon submission and conveniently for us MVC automatically wires up these validation attributes with the front-end so JavaScript validation will automagically occur.
+This class defines the data that will be submitted and also defines how the data will be validated upon submission. MVC automatically wires up these validation attributes with the front-end so JavaScript validation will automagically occur.
 
 ## The Surface Controller
 
@@ -75,7 +75,7 @@ The best way to render a form in MVC is to have a Partial View render the form w
 
 ## Render the Partial View
 
-The last step is to render the partial view that we've just created in your Umbraco template's view:
+The last step is to render the partial view that we've created in your Umbraco template's view:
 
 	@Html.Partial("BlogCommentForm")
 

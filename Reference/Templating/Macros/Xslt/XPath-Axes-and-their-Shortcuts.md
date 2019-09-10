@@ -14,15 +14,15 @@ The following picture from Crane Softwrights demonstrates the axes graphically.
 ![Axes](Images/7x1B0.gif)
 
 ### Note: The following are v4.5+ XPaths
-The following XPath examples are using the "new" XML Schema introduced in Umbraco v. 4.5 - In Umbraco versions before 4.5, the XML node for a document was simply named <node>, so if you need to select nodes in and older installation, replace *[@isDoc] in the following with "node" and everything should just work.
+The following XPath examples are using the "new" XML Schema introduced in Umbraco v. 4.5. In Umbraco versions before 4.5, the XML node for a document was named <node>. This means that if you need to select nodes in and older installation, replace *[@isDoc] in the following with "node" and everything will work.
 
 ### Self Axis
-While it is rarely used, the self axis actually returns the node in reference.
+While it is rarely used, the self axis returns the node in reference.
 
 	$currentPage/self::*[@isDoc]
 
 ### Child Axis
-We mentioned the child axis earlier, and actually used its shortcut right off.  The child axis select the nodes immediately below the node in reference.  While the verbose method is rarely used, it is here for reference.
+We mentioned the child axis earlier, and used its shortcut right off.  The child axis select the nodes immediately below the node in reference.  While the verbose method is rarely used, it is here for reference.
 
 	$currentPage/child::*[@isDoc]  
   

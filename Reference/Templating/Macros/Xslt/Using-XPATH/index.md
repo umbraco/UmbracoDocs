@@ -26,7 +26,7 @@ To explain, the "$currentPage" is looking at the node in the XML document for th
 
 Placing the macro on a template would render the name of the current page when the template is displayed.
 
-Going a bit deeper, we may want to display user input content, such as a simple text field named "Website".  This is set up in the document type as a text field with the alias "Website".  Since this is not a default property, it is referenced using the data element, which there may be multiple of, depending on the number of custom properties on the document type.  Thus, referencing this property, our template would look like this:
+Going a bit deeper, we may want to display user input content, such as a text field named "Website".  This is set up in the document type as a text field with the alias "Website".  Since this is not a default property, it is referenced using the data element, which there may be multiple of, depending on the number of custom properties on the document type.  Thus, referencing this property, our template would look like this:
 
 	<xsl:template match="/">
 		<xsl:value-of select="$currentPage/data[@alias='Website']"/>

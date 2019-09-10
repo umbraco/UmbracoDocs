@@ -28,7 +28,7 @@ However if you are bundling up Partial View Macros as part of a package, they ca
 
 > ~/App_Plugins/[YourPackageName]/Views/MacroPartials
 
-Since Partial View Macros are just a normal MVC partial view, their file extension is **cshtml**. All Partial View Macro views inherit from the view class
+Since Partial View Macros are a normal MVC partial view, their file extension is **cshtml**. All Partial View Macro views inherit from the view class
 
 ```csharp
 Umbraco.Web.Macros.PartialViewMacroPage

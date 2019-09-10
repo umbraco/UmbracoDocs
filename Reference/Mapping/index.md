@@ -191,7 +191,7 @@ And the comment can be repeated if the list of excluded properties is long:
 // Umbraco.Code.MapAll -Property5 -Property6 -Property7
 ```
 
-The analyzer follows the standard analyzer development patterns, and simply building the code in Release mode produces the appropriate NuGet package.
+The analyzer follows the standard analyzer development patterns, and building the code in Release mode produces the appropriate NuGet package.
 
 ## Full example
 

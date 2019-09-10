@@ -70,11 +70,11 @@ Although it is possible to enable the API while still generating models into the
 When the API is enabled and the Visual Studio extension is installed:
 
 * Go to Visual Studio **Tools** | **Options** | **Umbraco** | **ModelsBuilder Options** and configure the URL to your website (e.g. http://www.example.com), and a login and password for an Umbraco user that has permission to access the _Developer_ section.
-* Create a folder in your solution -- pick your own name. Within that folder, create a C# file -- again, pick your own name. The file can contain code, or just be empty.
+* Create a folder in your solution -- pick your own name. Within that folder, create a C# file -- again, pick your own name. The file can contain code or be empty.
 * Edit the properties of the file and set the **Custom tool** value to **UmbracoModelsBuilder**.
 * Save the file, or right-click and _Run Custom Tool_. New files should appear underneath the file.
 
-These new files are the generated models. They are automatically added to the Visual Studio project and will be compiled alongside the rest of your project. Anytime you need to refresh the models, simply run the custom tool.
+These new files are the generated models. They are automatically added to the Visual Studio project and will be compiled alongside the rest of your project. Anytime you need to refresh the models you can run the custom tool.
 
 If there are some non-generated C# files (i.e. `*.cs` but not `*.generated.cs`) in the folder, Models Builder will parse them for instructions (see [documentation for configuring and extending models](Control-Generation.md)) and Visual Studio will compile them too.
 
