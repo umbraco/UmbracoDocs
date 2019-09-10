@@ -28,7 +28,7 @@ public class TagsPropertyEditor : PropertyEditor
 }
 ```
 
-To add tag support, we simply add the SupportsTags attribute:
+To add tag support, we can add the SupportsTags attribute:
 
 ```csharp
 [SupportsTags]

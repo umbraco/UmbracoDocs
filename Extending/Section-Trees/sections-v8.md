@@ -58,7 +58,7 @@ Recycle the application pool, and the square brackets will be gone, and your sec
 
 You can add custom language translation keys in this file for providing translated versions of text used throughout your custom section/tree implementation.
 
-To provide translations in other languages, duplicate the en-us.xml file in the /lang folder and rename to match the lang/culture combination of your newly supported language, update the contents of the language element attributes, and provide a translation for each 'language translation key'
+To provide translations in other languages, duplicate the en-us.xml file in the /lang folder and rename it to match the lang/culture combination of your newly supported language. Update the contents of the language element attributes, and provide a translation for each 'language translation key'.
 
 You will need to recycle the application pool, to see changes to the language translation files reflected in the backoffice.
 

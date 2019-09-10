@@ -16,7 +16,7 @@ Create a 'TreeController' class in C#. A new mvc controller which inherits from 
 and
 * GetMenuForNode (returns a *MenuItemCollection*) - Responsible for returning the menu structure to use for a particular node within a tree.
 
-Decorate your '*TreeController*' with the *Tree* Attribute, which is used to define the name of the section the Tree should be loaded in, which 'Tree Group' it should belong to and also define an alias and title for your custom tree.
+Decorate your '*TreeController*' with the *Tree* Attribute, which is used to define the name of the section. The Tree should be loaded in, which 'Tree Group' it should belong to and also define an alias and title for your custom tree.
 
 
 **For example**
@@ -43,7 +43,7 @@ Tree Groups are a new concept in V8, to enable you to group trees in a section. 
 
 ### Customising the Root Tree Node
 
-The first node in the tree is referred to as the **Root Node**, you might want to assign a custom icon to the Root Node or specify a custom url route path in the backoffice to use with your custom tree (perhaps if you had a single page app) - you customise the Root Tree Node by overriding the abstract CreateRootNode method.
+The first node in the tree is referred to as the **Root Node**. You might want to assign a custom icon to the Root Node or specify a custom url route path in the backoffice to use with your custom tree. Perhaps if you had a single page app you customise the Root Tree Node by overriding the abstract CreateRootNode method.
 
 
 :::note
@@ -128,12 +128,11 @@ protected override TreeNode CreateRootNode(FormDataCollection queryStrings)
 
 ### Responding to Tree Actions
 
-The actions on items in an Umbraco Tree will trigger 'by convention' a request to load an AngularJS view, with a name corresponding to the name of the action, from a subfolder of the views folder matching the name of the 'customTreeAlias'.
+The actions on items in an Umbraco Tree will trigger a request to load an AngularJS view, with a name corresponding to the name of the action, from a subfolder of the views folder matching the name of the 'customTreeAlias'.
 
-For example, 'Clicking on' one of the 'Favourite Things' in the custom tree example outlined above will 'by convention' trigger the loading of an 'edit.html' view from the folder: */views/favouriteThingsAlias/edit.html*
-and the 'Delete' menu item would load a view from: */views/favouriteThingsAlias/delete.html*
+For example 'Clicking on' one of the 'Favourite Things' in the custom tree example outlined above will 'by convention' trigger the loading of an 'edit.html' view from the folder: */views/favouriteThingsAlias/edit.html*. The 'Delete' menu item would also load a view from: */views/favouriteThingsAlias/delete.html*
 
-It's recommended, particularly if you're creating a custom tree as part of an Umbraco package/plugin, to change the location of this default folder to the app_plugins folder and you achieve this by decorating you mvc *TreeController* with the *PluginController* attribute.
+If you're creating a custom tree as part of an Umbraco package/plugin, it's recommended to change the location of the default folder to the app_plugins folder. You achieve this by decorating you mvc *TreeController* with the *PluginController* attribute.
 
 ```csharp
 [Tree("developer", "favouriteThingsAlias", "Favourite Things Name")]
@@ -184,7 +183,7 @@ Take a look at the [umbEditor directives in the backoffice API Documentation](ht
 
 ### Single Node Trees / Customising the Root Node Action
 
-It is possible to create 'trees' consisting of only a single node - perhaps just to provide an area to control some settings or a placeholder for a single page backoffice app. See the LogViewer in the settings section for a good example.
+It is possible to create 'trees' consisting of only a single node - perhaps to provide an area to control some settings or a placeholder for a single page backoffice app. See the LogViewer in the settings section for a good example.
 (or as in the case of the 'settings/content templates' tree, it's possible to have a custom view for the root node as an 'introduction' page to the tree).
 
 In both scenarios you need to override the 'CreateRootNode' method for the custom tree.
@@ -220,7 +219,7 @@ The RoutePath should be in the format of: **section/treeAlias/method**. As our e
 
 #### Full Width App - IsSingleNodeTree
 
-It's possible to make your single node tree app stretch across the full screen of the backoffice (no navigation tree) - see Packages section for an example
+It's possible to make your single node tree app stretch across the full screen of the backoffice (no navigation tree) - see Packages section for an example.
 To achieve this add an additional attribute `IsSingleNodeTree`, in the Tree attribute for the custom controller.
 
 ```csharp

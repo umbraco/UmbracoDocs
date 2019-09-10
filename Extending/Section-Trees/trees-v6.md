@@ -32,7 +32,7 @@ The application tree API in v6/v4 is found in the class `umbraco.BusinessLogic.A
 v6/v4 tree events are defined on the class: `umbraco.cms.presentation.Trees.BaseTree`
 
 :::note
-Even though the events are defined on this class, it is up to the tree implementor to ensure the events are actually raised (this issue has been addressed with the new v7 tree APIs)
+Even though the events are defined on this class, it is up to the tree implementor to ensure the events are raised (this issue has been addressed with the new v7 tree APIs)
 :::
 
 The events are: `BeforeNodeRender`, `AfterNodeRender`, `BeforeTreeRender`, `AfterTreeRender`, `NodeActionsCreated`
