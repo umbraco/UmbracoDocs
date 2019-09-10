@@ -88,7 +88,7 @@ See a list of collections below to determine which are 'type scanned' and which 
 
 This example shows how to create a component to listen and respond to  `ContentService.Saving` events, (perhaps to check for explicit for words, or some custom business logic that needs to run before the content item is saved in Umbraco).
 
-We create a new c# class which implements `IUserComposer` and use it to add our new `IComponent`  to the collection of Components - when Umbraco starts up the `Initialize()` method of the component will be called and the ContentService Saving event will be subscribed to.
+We create a new C# class which implements `IUserComposer` and use it to add our new `IComponent`  to the collection of Components. When Umbraco starts up the `Initialize()` method of the component will be called and the ContentService Saving event will be subscribed to.
 
 ```csharp
 using System.Linq;
@@ -159,7 +159,7 @@ Is an implementation of IUserComposer, that provides a quicker way to add a cust
         }
 ```
 ## Collections
->"Collections of elements", for example the ContentFinders collection. - Collections are another concept that Umbraco uses to make things simpler, on top of DI. A collection builder builds a collection, allowing users to add and remove types before anything is actually registered into DI.
+>"Collections of elements", for example the ContentFinders collection. - Collections are another concept that Umbraco uses to make things simpler, on top of DI. A collection builder builds a collection, allowing users to add and remove types before anything is registered into DI.
 
 Below is a list of collections with their corresponding 'collection type' and how items for this collection 'out of the box' are registered.
 
@@ -250,7 +250,7 @@ If you create a circular dependancy then Umbraco will fail to boot and will repo
 :::
 
 ### [Weight]
-This attribute is used only for `WeightedCollectionBuilders` (see list above) - and specifies an integer ordinal value for each item to be added to the weighted collection which controls their sort order - (note the weighting attribute is not applied to the Composers).
+This attribute is used only for `WeightedCollectionBuilders` (see list above). It specifies an integer ordinal value for each item to be added to the weighted collection which controls their sort order. The weighting attribute is not applied to the Composers.
 
 ```csharp
 using System;
@@ -272,7 +272,7 @@ namespace Umbraco.Web.Dashboards
 ```
 
 ### [HideFromTypeFinder]
-This is used to hide a type from being auto scanned/added to a collection as in some cases certain items/types may need to be added to a collection manually. For example, a Search package may make it optional whether to replace the 'backoffice search' with an ISearchableTree implementation, type scanning would make this change automatically at start up if the custom implementation was detected via type scanning - this attribute could hide the class from the scanner.
+This is used to hide a type from being auto scanned/added to a collection as in some cases certain items/types may need to be added to a collection manually. For example, a Search package may make it optional whether to replace the 'backoffice search' with an ISearchableTree implementation. Type scanning would make this change automatically at start up if the custom implementation was detected via type scanning. This attribute could hide the class from the scanner.
 
 ### [DisableComposer] & [Disable]
 These attributes allows you to disable a particular implementation of a composer or class - Let's say Umbraco ships with two different ways of doing "something" (for instance, two front-end caches). Each way has its own composer, which registers all the relevant elements. Of course, if both composers are detected, there will be some sort of collision. Ideally, we want to disable one of them. That can be achieved with the Disable attribute:
@@ -294,7 +294,7 @@ public void MyComposer : IComposer
 }
 ```
 
-But maybe she just wants to swap our two "something" implementations? In this case, assembly-level attributes can be used:
+But maybe she wants to swap our two "something" implementations? In this case, assembly-level attributes can be used:
 ```csharp
 [assembly:DisableComposer(typeof(Way1Composer))]
 [assembly:EnableComposer(typeof(Way2Composer))]

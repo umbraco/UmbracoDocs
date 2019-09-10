@@ -14,7 +14,7 @@ Below lists the ways in which you can customize the inbound request pipeline, th
 
 ### IContentFinder
 
-All Umbraco content is looked up based on the URL in the current request using an `IContentFinder`. IContentFinder's are quite easily to create and implement on your own which will allow you to map any URL to an Umbraco content item.
+All Umbraco content is looked up based on the URL in the current request using an `IContentFinder`. IContentFinder's you can create and implement on your own which will allow you to map any URL to an Umbraco content item.
 
 See: [IContentFinder documentation](../../Reference/Routing/Request-Pipeline/IContentFinder)  
 
