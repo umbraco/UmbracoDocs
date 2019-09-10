@@ -199,7 +199,9 @@ namespace Umbraco8.Components
 
 ### What happened to Creating and Created events?
 
-Both the MediaService.Creating and MediaService.Created events have been obsoleted. Why? Because these events are not guaranteed to trigger and therefore should not be used. This is because these events *only* trigger when the MediaService.CreateMedia method is used which is an entirely optional way to create media entities. It is also possible to simply construct a new media item - which is generally the preferred and consistent way - and therefore the Creating/Created events will not execute when constructing media that way. Further more, there's no reason to listen for the Creating/Created events because they are misleading since they don't actually trigger before and after the entity has been persisted, they simply trigger inside the CreateMedia method which never actually persists the entity, it simply just constructs a new media object.
+Both the MediaService.Creating and MediaService.Created events have been obsoleted. Why? Because these events are not guaranteed to trigger and therefore should not be used. This is because these events *only* trigger when the MediaService.CreateMedia method is used which is an entirely optional way to create media entities. It is also possible to construct a new media item - which is generally the preferred and consistent way - and therefore the Creating/Created events will not execute when constructing media that way. 
+
+Further more, there's no reason to listen for the Creating/Created events because they are misleading. They don't trigger before and after the entity has been persisted. Instead they trigger inside the CreateMedia method which never persists the entity. It constructs a new media object.
 
 #### What do we use instead?
 

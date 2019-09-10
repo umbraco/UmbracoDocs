@@ -141,7 +141,7 @@ public class HomeController : Umbraco.Web.Mvc.RenderMvcController
 ```
 ## Controller Injection
 Injecting services into your controller constructions is possible with Umbraco's underlying dependency injection implementation.
-Core services such as the built in ILogger service can just be injected into the constructor for the controller along with your own services:
+Core services such as the built in ILogger service can be injected into the constructor for the controller along with your own services:
 
 For example:
 ```csharp

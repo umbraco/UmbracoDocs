@@ -13,7 +13,7 @@ _All resolvers need to be initialized, this occurs in an IBootManager_
 
 An `IBootManager` is a bootstrapper that initializing all required objects during application startup, this includes initializing all resolvers.
 
-This is a ver easy process, for example to initialize the custom resolvers we've made in the previous steps we would just do the following:
+This is a ver easy process, for example to initialize the custom resolvers we've made in the previous steps we would do the following:
 
 ```csharp
 // initialize the singleton with a DefaultErrorLogger

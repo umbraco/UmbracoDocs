@@ -21,7 +21,7 @@ To secure your controller based on backoffice membership use the attribute: `Umb
 
 *It's important to note the namespace since we have another class called UmbracoAuthorizeAttribute in a different namespace that is used for MVC.*
 
-This attribute has no parameters it simply ensures that a valid backoffice user is logged in.
+This attribute has no parameters it ensures that a valid backoffice user is logged in.
 
 **Examples:**
 

@@ -11,7 +11,7 @@ This means that all C# LINQ statements can be used to filter and query the colle
 
 ### .Children
 
-Returns a collection of child items available in the current culture, just below the current content item.
+Returns a collection of child items available in the current culture, below the current content item.
 
 ```csharp
 <ul>
@@ -24,7 +24,7 @@ Returns a collection of child items available in the current culture, just below
 
 ### .ChildrenForAllCultures
 
-Returns a collection of child items for all cultures, just below the current content item.
+Returns a collection of child items for all cultures, below the current content item.
 
 ```csharp
 <ul>
@@ -37,7 +37,7 @@ Returns a collection of child items for all cultures, just below the current con
 
 ### .Children(string culture = null)
 
-Returns a collection of child items available in the specified culture with a default of the current one, just below the current content item.
+Returns a collection of child items available in the specified culture with a default of the current one, below the current content item.
 
 ```csharp
 <ul>
@@ -129,7 +129,7 @@ Filters a collection of content by content type alias
 
 ## Filtering, Ordering & Extensions
 
-Filtering and Ordering are done simply with LINQ.
+Filtering and Ordering are done with LINQ.
 
 Some examples:
 

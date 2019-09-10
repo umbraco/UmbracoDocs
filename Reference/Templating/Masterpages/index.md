@@ -7,7 +7,7 @@ versionRemoved: 8.0.0
 
 _Umbraco (since version 4) uses [ASP.NET master pages](https://www.asp.net/web-forms/tutorials/master-pages), so if you are familiar with these you will find this a breeze._
 
-_When creating a new template via the backoffice, Umbraco simply generates a masterpage file that inherits from
+_When creating a new template via the backoffice, Umbraco generates a masterpage file that inherits from
 "~/umbraco/masterpages/default.master", whilst storing the newly created template in
 "~/masterpages/[Template_Alias].master"._
 
@@ -37,7 +37,7 @@ There are several advanced options for using` umbraco:item`: for controlling fal
 [See the full umbraco:item reference](umbracoitem.md)
 
 ## [umbraco:image](umbracoimage.md)
-Introduced in **Umbraco 4.11.0**, the `umbraco:image` control enables you to easily add images from your content to your templates. The control is used as such:
+Introduced in **Umbraco 4.11.0**, the `umbraco:image` control enables you to add images from your content to your templates. The control is used as such:
 
 	<umbraco:image runat="server" field="bannerImage" />
 

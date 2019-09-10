@@ -5,16 +5,12 @@ needsV8Update: "true"
 
 # Common Pitfalls & Anti-Patterns
 
-_This section is ultra important! It will describe many common pitfalls that developers fall in to. 
-Some of the anti-patterns mentioned here can bring your site to a grinding halt, cause memory leaks, or just make your site unstable or perform poorly.
-Make sure you read this section - it might just save your site!_
+_This section is ultra important! It will describe many common pitfalls that developers fall in to. Some of the anti-patterns mentioned here can bring your site to a grinding halt, cause memory leaks, or make your site unstable or perform poorly. Make sure you read this section - it might save your site!_
 
 ## Usage of Singletons and Statics
 
 Generally speaking if you are writing software these days you should be using Dependency Injection principles. 
-If you do this, you probably aren't using Singletons or Statics (and for the most part you shouldn't be!), 
-however since Umbraco itself is not built with an IoC container to use out of the box you may find yourself 
-using Umbraco's built in Singleton accessors like: 
+If you do this, you probably aren't using Singletons or Statics (and for the most part you shouldn't be!). Since Umbraco itself is not built with an IoC container to use out of the box you may find yourself using Umbraco's built in Singleton accessors like: 
 `ApplicationContext.Current` or `UmbracoContext.Current`. In most cases you shouldn't be using these Singleton accessors, 
 it makes your code very difficult to test but more importantly using Singletons and Statics in your code make it very hard 
 to manage, APIs become leaky and ultimately you'll end up with more problems than when you started.
@@ -93,8 +89,7 @@ by the garbage collector. Request scoped object instances are not accessed by ev
 An example of an application scoped instance is Umbraco's `ApplicationContext`, this single instance is shared by all threads and exists for the lifetime of
 the application.
 
-An example of a request scoped instance is the `HttpContext`, this object exists for a single request, it definitely cannot be shared between other threads and especially
-not other request threads because this is where the security information for a given user is stored! The `UmbracoContext` is also a request scoped object - in fact it 
+An example of a request scoped instance is the `HttpContext`. This object exists for a single request and it definitely cannot be shared between other threads and especially not other request threads. This is because it is where the security information for a given user is stored! The `UmbracoContext` is also a request scoped object - in fact it 
 relies directly on an instance of `HttpContext`. The `UmbracoHelper` is a request scoped object - as you can see above, it requires an instance of an `UmbracoContext`.
 
 So... in the above example, the `UmbracoHelper` which relies on an `UmbracoContext` which relies on an `HttpContext` will now be statically assigned to a variable, which means
@@ -114,7 +109,7 @@ private static _request = HttpContext.Current.Request;
 
 ## Querying with Descendants, DescendantsOrSelf
 
-It's not 100% bad that you use these queries, you just need to understand the implications.
+It's not 100% bad that you use these queries, you need to understand the implications.
 Here's a particularly bad scenario:
 
 You have 10,000 content items in your tree and your tree structure is something like this:
@@ -138,12 +133,12 @@ You create a menu on your Home page like:
 </ul>
 ```
 
-Which just renders out: _Home, Blog, Office Locations, About Us, Contact Us_
+Which renders out: _Home, Blog, Office Locations, About Us, Contact Us_
 
 BUT! ...  this is going to perform most horribly. This is going to iterate over every single node in Umbraco, all 10,000 of them. Further more, 
-this means it is going to allocate 10,000 `IPublishedContent` instances in memory just in order to check its `Level` value. 
+this means it is going to allocate 10,000 `IPublishedContent` instances in memory in order to check its `Level` value. 
 
-This can easily be re-written as:
+This can be re-written as:
 
 ```csharp
 <ul>
@@ -155,8 +150,7 @@ This can easily be re-written as:
 </ul>
 ```
 
-In many cases you might know that there is only ever going to be a small number of Descendants and if so then go nuts and use Descendants or DescendantsOrSelf, 
-it's just important to be aware of the implications of what you are writing.  
+In many cases you might know that there is only ever going to be a small number of Descendants . If so then go nuts and use Descendants or DescendantsOrSelf. It's important to be aware of the implications of what you are writing.  
 
 ## Too much querying (Over querying)
 
@@ -177,7 +171,7 @@ using the current page's root node:
 </ul>
 ```
 
-The syntax `@Model.Content.Site()` is actually shorthand for doing this:
+The syntax `@Model.Content.Site()` is shorthand for doing this:
 `Model.Content.AncestorsOrSelf(1)` which means it is going to traverse up the tree until it reaches an ancestor node
 with a level of one. As mentioned above, traversing costs resources and in this example there is 3x traversals being done
 for the same value. Instead this can be rewritten as:
@@ -213,11 +207,11 @@ How do you know if you are using Dynamics?
 * If you are using the UmbracoHelper query methods like `@Umbraco.Content` or `@Umbraco.Media` instead of the typed methods like `@Umbraco.TypedContent` and `@Umbraco.TypedMedia` then __you are__ using dynamics
 
 It is strongly advised that you use the strongly typed `@Model.Content` instead of `@CurrentPage` models in your views,  
-this will actually perform much better and you'll be forward compatible with Umbraco v8+ with regards to querying `IPublishedContent`.
+this will perform much better and you'll be forward compatible with Umbraco v8+ with regards to querying `IPublishedContent`.
 
 A large problem with the performance of dynamics is having to parse string syntax such as:
 `@CurrentPage.Children.Where("DocumentTypeAlias == \"DatatypesFolder\" && Visible")` and turn that into something that is compilable when
-instead it can just be written as something that compiles
+instead it can be written as something that compiles
 
 :::note
 About the Query Builder: We are aware that the Query Builder in the template editor of the backoffice currently 
@@ -275,7 +269,7 @@ Some examples of what not to do are:
 
 * Hit counters to track the number of times your page has been viewed - use something like Google Analytics for this or a custom database table
 * Creating new nodes for form submissions - this should be stored in a custom database table
-* Importing lots of data into Umbraco content nodes that could easily just be stored in a custom database table (i.e. it's not going to be edited).
+* Importing lots of data into Umbraco content nodes that could be stored in a custom database table (i.e. it's not going to be edited).
 In some cases this might be ok but many times we've seen bulk imports occur on an hourly/daily schedule which is generally unnecessary.
 
 ## Processing during startup
@@ -393,7 +387,7 @@ You then run the following code to show to show the favorites
 </ul>
 ```
 
-__Ouch!__ So just to show the top 10 voted recipe's this will end up doing the following:
+__Ouch!__ To show the top 10 voted recipe's this will end up doing the following:
 
 * This will iterate over all Recipes, create and allocate 5000 instances of `IPublishedContent`
 * This will create and allocate 5000 instances of `RecipeModel`
@@ -402,7 +396,7 @@ __Ouch!__ So just to show the top 10 voted recipe's this will end up doing the f
 This means that there is now a minimum of __20,000__ new objects created and allocated in memory. The number of traversals/visits to each
 of these objects is now 5000 x 5000 = __25,000,000 (25 MILLION TIMES!)__
 
-_Side note: The other problem is the logic used to lookup related recipes is incredibly inefficient. Instead, each recipe should have a picker to choose its related recipe's and then each of those can just be looked up by their ID.
+_Side note: The other problem is the logic used to lookup related recipes is incredibly inefficient. Instead, each recipe should have a picker to choose its related recipe's and then each of those can be looked up by their ID.
 (There's probably a few other ways to achieve this too!)_
 
 Which leads us on to the next anti-pattern...
@@ -452,8 +446,8 @@ This is slightly better:
 This means that there is now a minimum of __15,000__ new objects created and allocated in memory. The number of traversals/visits to each
 of these objects is now __5000__.
 
-This is still not great though. There really isn't much reason to create a `RecipeModel` just to use it as a filter,
-this is allocating a lot of objects to memory for no real reason. This could just as easily be written like:
+This is still not great though. There really isn't much reason to create a `RecipeModel` to use it as a filter,
+this is allocating a lot of objects to memory for no real reason. This could be written like:
 
 ```csharp
 @var recipeNode = Umbraco.TypedContent(3251);
@@ -474,7 +468,7 @@ of these objects is now __5000__.
 
 ## Too much LINQ - XPath is still your friend 
 
-Based on the above 2 points, you can see that just iterating content with the traversal APIs will cause new
+Based on the above 2 points, you can see that iterating content with the traversal APIs will cause new
 instances of `IPublishedContent` to be created. When memory is used, Garbage Collection needs to occur and this 
 turnover can cause performance problems. The more objects created, the more items allocated in memory, the harder the job
 is for the Garbage Collector == more performance problems. Even worse is when you allocate tons of items in memory and/or really 

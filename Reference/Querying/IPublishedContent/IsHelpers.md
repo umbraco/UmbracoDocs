@@ -31,7 +31,7 @@ The first parameter is the value we want it to return if the condition returns `
 optional value, is the value we want to return if the condition evaluates to `false`. (If you omit the
 second string argument, the returned value will be an empty string if the condition evaluates to `false`).
 
-IsHelpers can also return simple boolean values:
+IsHelpers can also return boolean values:
 
 ```csharp
 @if(item.IsFirst())

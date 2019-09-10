@@ -11,7 +11,7 @@ In order for Models Builder to be used in a website, the [Umbraco.ModelsBuilder 
 
 ## Configure
 
-Then, the following application settings (in the `appSettings` section of the `Web.config` file) control what Models Builder actually does:
+Then, the following application settings (in the `appSettings` section of the `Web.config` file) control what the Models Builder does:
 
 * `Umbraco.ModelsBuilder.Enable` can be `true` or `false` (default) and acts as a giant kill-switch: When `false`, Models Builder behaves as if it were not installed at all, and all other settings are ignored.
 
