@@ -6,7 +6,7 @@ versionFrom: 7.0.0
 ## Creating a Contact Us Page 
 
 
-We're now going to make a simple page where we'll just put our contact details. For added functionality, you might want to look at replacing this with a fully fledged contact us form.
+We're now going to make a page where we'll put our contact details. For added functionality, you might want to look at replacing this with a fully fledged contact us form.
 
 
 Some potential solutions:
@@ -14,9 +14,9 @@ Some potential solutions:
 * Build your own contact form using Surface Controllers - [https://our.umbraco.com/documentation/Reference/Templating/Mvc/forms](https://our.umbraco.com/documentation/Reference/Templating/Mvc/forms) or [https://umbraco.tv/videos/umbraco-v7/developer/fundamentals/surface-controllers/](https://umbraco.tv/videos/umbraco-v7/developer/fundamentals/surface-controllers/)
 * If you're not a programmer you can use the Umbraco built-in package - Umbraco Forms. This has the added benefit editors can also create their own forms [https://umbraco.com/products-and-support/forms](https://umbraco.com/products-and-support/forms)
 
-### Creating a Simple Content Only Contact Us Page 
+### Creating a Content-only Contact Page
 
-For now, let's create a simple content-only contact us page - a page where the user can provide a title and some rich text. This is very similar to our homepage document type at the moment but we're assuming that you'll go and develop this into something very specific (e.g. adding the featured article and other article content blocks). 
+For now, let's create a content-only contact us page - a page where the user can provide a title and some rich text. This is very similar to our homepage document type at the moment but we're assuming that you'll go and develop this into something very specific (e.g. adding the featured article and other article content blocks). 
 
 
 Go to **_Settings > Document Types_** (hover) **_> ... > + Create_ > Document Type** .  Let's create one called "_Simple Content Page_". 
@@ -24,7 +24,7 @@ Go to **_Settings > Document Types_** (hover) **_> ... > + Create_ > Document Ty
 Firstly let's select an **_Icon_** - type the word "_Content_" into the filter and select the document icon. In description type "A simple content page".  Click **_Save_**.
 
 
-Now click on the **_Settings > Templates (hover) > ..._** and then **_Reload Nodes_** to show your new Simple Content Page template that was created automatically with the Document Type.  Click on your **_Simple Content Page node_** and then the **_Properties tab_**. Change the **_Master template_** drop down to select value "_Master_" - this will mean that we'll get the header and footer from the master just as we do in the Homepage template.  
+Now click on the **_Settings > Templates (hover) > ..._** and then **_Reload Nodes_** to show your new Simple Content Page template that was created automatically with the Document Type.  Click on your **_Simple Content Page node_** and then the **_Properties tab_**. Change the **_Master template_** drop down to select value "_Master_" - this will mean that we'll get the header and footer from the master as we do in the Homepage template.  
 
 
 Click **_Save_** then load the **_Template tab_** you should see the portion of Razor code has updated to say `Layout ="Master.cshtml"` if it hasn't updated itself click on a different node and then back again to reload it. Now add the following HTML to the template and click **_Save_**. 
@@ -61,8 +61,7 @@ Go to **_Settings > Document Types > Homepage_** on the **_Permissions_**  scree
 
 *Figure 32 - Homepage - Allowed Child Nodetypes*
 
-
-So there is the confusing bit - first we create the **_Simple Content Page_** Document Type but after we then have to allow it to be created under the homepage document type - e.g. we create our new **_Document Type_** but then have to update the **_Homepage_** settings to be able to use it. We'll do this again later when we create an Articles container and Article item - we'll need to allow the Article items under the container. Simple - perhaps not but you'll get used to it!
+First we create the **_Simple Content Page_** Document Type but after we have to allow it to be created under the homepage document type. Eg. we create our new **_Document Type_** but then have to update the **_Homepage_** settings to be able to use it. We'll do this again later when we create an Articles container and Article item - we'll need to allow the Article items under the container.
 
 
 Now go back **Content > Homepage (hover) > ... > Create** now we have the **Simple Content Page**! Select this and enter a name (text field at the top) - enter the name "Contact Us". You can see that we only have a **_Properties tab_** here - no data properties yet. This is different to the document type for the homepage as we've not yet added any tabs nor data properties (e.g. no bodyText or pageTitle fields to enter content!).  Click **_Save and Publish_**. 
@@ -74,7 +73,7 @@ Now go back **Content > Homepage (hover) > ... > Create** now we have the **Simp
 *Figure 33 - Creating Our Contact Us Page*
 
 
-Our **_Content tree_** will now reload and there will be a **_Contact Us_** page under the homepage.  This is the recommended structure for most sites - your primary level 1 pages will sit under the Homepage. Go look at this page - if you look at the **_Properties tab_** you can see a **_Link To document row_** - click this. You might find an unstyled page again. This is because the template designers have assumed that your site will be a flat structure - e.g. all pages sitting at the same level so the browser can't find the CSS or JavaScript at the page level below the homepage. You need to update the **_Master_** template to add a leading slash on the JavaScript and CSS source lines. 
+Our **_Content tree_** will now reload and there will be a **_Contact Us_** page under the homepage.  This is the recommended structure for most sites - your primary level 1 pages will sit under the Homepage. Go look at this page - if you look at the **_Properties tab_** you can see a **_Link To document row_** - click this. You might find an unstyled page again. This is because the template designers have assumed that your site will be a flat structure. Eg. all pages sitting at the same level so the browser can't find the CSS or JavaScript at the page level below the homepage. You need to update the **_Master_** template to add a leading slash on the JavaScript and CSS source lines. 
 
 e.g.  change the lines in the Master Template:
 
@@ -94,7 +93,7 @@ To: `<script src="/js/libs/modernizr-2.0.6.min.js"></script>`
 **_Save_** the template changes and reload your **_Contact Us page_**. We'll now have a pretty empty looking page. 
 
 
-Let's add two simple fields - **_pageTitle_** (type = Textstring) and **_bodyText_** (type Rich Text Editor).  Follow the instructions in creating the Homepage document type if you're not sure how to do this. Then wire these fields up - by editing the Template, again follow the Homepage section if this isn't yet second nature to you yet! You'll see in the screenshot we've removed the `<p>` tags - the rich text editor will add these for us (the textbox field needs the `<h2>` tags though).
+Let's add two fields - **_pageTitle_** (type = Textstring) and **_bodyText_** (type Rich Text Editor).  Follow the instructions in creating the Homepage document type if you're not sure how to do this. Then wire these fields up - by editing the Template, again follow the Homepage section if this isn't yet second nature to you yet! You'll see in the screenshot we've removed the `<p>` tags - the rich text editor will add these for us (the textbox field needs the `<h2>` tags though).
 
 
 ![Simple Content Page Generic Properties](images/figure-34-contact-us-generic-properties.png)
@@ -124,7 +123,13 @@ Now add some content under the **_Content > Homepage node > Contact Us node_**. 
 What you may notice is that the footer is now empty - we don't have our content from our Homepage node. We need to tell Umbraco to get the content from the parent **_Homepage_** tab. To do this we edit the template (the Master). 
 
 
-Highlight the Umbraco field in the footer `<h3>` tags and then click the **_Insert Umbraco page field_** button again ![Umbraco Page Field Button](images/umbraco-page-field.png)  here is where all of the options we ignored earlier come into play - choose footerText again from the **_Choose field dropdown_** but this time we'll check the **_Recursive_** checkbox. This tells Umbraco that if the field doesn't exist at the node level for the page we're requesting (e.g. Contact Us) it will look up the content tree (so in our example go to the **_Homepage_** for this content) - this means you could also create a **_footerText_** element at the Contact Us page if you wanted the editor to override the site-wide default but for fields like this it's not normally used.  Click **_Insert_** and you'll see a different bit of Razor is added : `@Umbraco.Field("footerText", recursive: true)` 
+Highlight the Umbraco field in the footer `<h3>` tags and then click the **_Insert Umbraco page field_** button again.
+
+![Umbraco Page Field Button](images/umbraco-page-field.png)
+
+Here is where all of the options we ignored earlier come into play - choose footerText again from the **_Choose field dropdown_** but this time we'll check the **_Recursive_** checkbox. 
+
+This tells Umbraco that if the field doesn't exist at the node level for the page we're requesting it will look up the content tree. So in our example go to the **_Homepage_** for this content). This means you could also create a **_footerText_** element at the Contact Us page if you wanted the editor to override the site-wide default but for fields like this it's not normally used.  Click **_Insert_** and you'll see a different bit of Razor is added : `@Umbraco.Field("footerText", recursive: true)` 
 
 
 Click **_Save_** and reload our Contact Us page. 
@@ -132,4 +137,4 @@ Click **_Save_** and reload our Contact Us page.
 
 ---
 ## Next - [Master Template The Navigation Menu](../Master-Template-The-Navigation-Menu/index-v7.md)
-A simple solution for the template in the menu. 
+A solution for the template in the menu. 

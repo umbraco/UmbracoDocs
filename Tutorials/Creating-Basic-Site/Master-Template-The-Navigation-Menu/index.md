@@ -8,7 +8,7 @@ Now let's fix the navigation menu - there are two ways of doing this:
 1. You could have Umbraco dynamically create a navigation menu from the pages it has in the Content Tree, so that when an editor creates a page it automatically appears or, 
 2. You can hardcode it. 
 
-We're going to hardcode this for now (it's a good idea as you start building a site to hard code this so you can move around testing before you replace this) and we'll leave it to you as an exercise to do this later. Edit your **_Master template_** - edit the `<li>` items under the `<nav>` tags to say:
+We're going to hardcode this for now. It's a good idea as you start building a site to hard code this so you can move around testing before you replace this. We'll leave it to you as an exercise to do this later. Edit your **_Master template_** - edit the `<li>` items under the `<nav>` tags to say:
 
 ```html
 <nav id="nav">

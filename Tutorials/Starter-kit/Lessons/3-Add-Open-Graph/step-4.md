@@ -22,7 +22,7 @@ The partial view comes with a standard view model `@inherits Umbraco.Web.Mvc.Umb
         
         <meta property="og:type" content="website" />
 
-11. Next up is adding the URL for Open Graph. For this you'll need the entire URL to the page, not just relative to this page. There is a handy method for getting this from a content item. Add:
+11. Next up is adding the URL for Open Graph. For this you'll need the entire URL to the page, not relative to this page. There is a handy method for getting this from a content item. Add:
     
         <meta property="og:url" content="@Model.UrlAbsolute()" />
 
