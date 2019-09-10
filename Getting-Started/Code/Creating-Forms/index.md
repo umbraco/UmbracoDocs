@@ -8,7 +8,7 @@ needsV8Update: "true"
 Creating forms requires that you know your way around .NET MVC. So if you are familiar with adding view models, views and controllers you are ready to make your first form.
 
 :::note
-You can also use [Umbraco forms](https://umbraco.com/products/umbraco-forms/). It lets you and/or your editors create and handle forms in the backoffice. This includes setting up validation, redirecting and storing and sending form data. Great UI, easily extendable and supported by Umbraco HQ.
+You can also use [Umbraco forms](https://umbraco.com/products/umbraco-forms/). It lets you and/or your editors create and handle forms in the backoffice. This includes setting up validation, redirecting and storing and sending form data. Great UI, extendable and supported by Umbraco HQ.
 :::
 
 In this example we'll create a basic contact form contain name, email and message field.
@@ -58,7 +58,7 @@ The view can be built with standard MVC helpers:
 ```
 
 ### Adding the controller
-Finally we're going to add the controller. Simply add a controller to the `/Controllers` folder, name it `ContactController` and make sure to use an __empty MVC controller__ as the template.
+Finally we're going to add the controller. Add a controller to the `/Controllers` folder, name it `ContactController` and make sure to use an __empty MVC controller__ as the template.
 
 ```csharp
 using MyFirstForm.Models;

@@ -24,13 +24,13 @@ If you're using ModelsBuilder in AppData mode and you have your generated models
 
 #### AutoMapper
 
-Additionally 8.1 replaces AutoMapper with [UmbracoMapper](../../../Reference/Mapping/index.md), this in itself will not break anything on your site, but if you have used AutoMapper in your own code you will have to either include the package yourself or switch your implementation to use UmbracoMapper.
+Umbraco 8.1 replaces AutoMapper with [UmbracoMapper](../../../Reference/Mapping/index.md). This in itself will not break anything on your site, but if you have used AutoMapper in your own code you will have to either include the package yourself or switch your implementation to use UmbracoMapper.
 
 ## Version 7 to version 8
 
 There is no direct upgrade path from Umbraco 7 to Umbraco 8, but it is be possible to migrate content from Umbraco 7 sites to Umbraco 8 sites. We have [added content migrations](#migrating-content-from-v7-to-v8) in Umbraco 8.1.0 that will enable you to move your content (content/media/members) from an Umbraco 7 site to an Umbraco 8 site.
 
-The reason why it is not possible to upgrade an Umbraco 7 site to Umbraco 8 is is that the codebase has been fundamentally updated in Umbraco 8. A lot of outdated code and technology has been removed and instead new, faster and more secure technology has been implemented throughout Umbraco 8. It simply wouldn’t be possible to take this giant leap while maintaining full compatibility with Umbraco 7.
+The reason why it is not possible to upgrade an Umbraco 7 site to Umbraco 8 is is that the codebase has been fundamentally updated in Umbraco 8. A lot of outdated code and technology has been removed and instead new, faster and more secure technology has been implemented throughout Umbraco 8. It wouldn’t be possible to take this giant leap while maintaining full compatibility with Umbraco 7.
 
 In Umbraco 8 we have added improvements and updated dependencies as well as done a thorough clean-up to make it simpler for you to work with and extend your Umbraco project.
 
@@ -46,7 +46,7 @@ Also we're now by default using the e-mail address and not the username for the 
 
 For a full list of breaking changes see: [the list on the issue tracker](https://issues.umbraco.org/issues/?q=&project=U4&tagValue=&release=7.7.0&issueType=&search=search) 
 
-Version 7.7.2 no longer ships with the `CookComputing.XmlRpcV2` assembly so if you reference this assembly or have a package that requires this assembly, you may need to copy it back into your website from the backup you've taken before you began the 7.7.2 upgrade.
+Version 7.7.2 no longer ships with the `CookComputing.XmlRpcV2` assembly. If you reference this assembly or have a package that requires this assembly, you may need to copy it back into your website from the backup you've taken before you began the 7.7.2 upgrade.
 
 This version also ships with far less client files (i.e. js, css, images) that were only relevant for very old versions of Umbraco (i.e. < 7.0.0). There might be some packages that were referencing these old client files so if you seen missing image references you may need to contact the vendor of the package in question to update their references.
 
@@ -79,7 +79,7 @@ Umbraco stores data for data types in different ways, for a lot of pickers it wi
 </p>
 ```
 
-Wouldn't it be nice if instead of that you could "just" do:
+Wouldn't it be nice if instead of that you could do:
 
 ```html
 <p>
@@ -95,7 +95,7 @@ Umbraco 7.6.0 also came with new pickers that store their data as a [UDI (Umbrac
 
 Unfortunately we noticed that some new pickers also got their PVCs disabled when the configuration setting was set to false (`<EnablePropertyValueConverters>false</EnablePropertyValueConverters>`) - yet the content picker ignored this setting.
 
-In order to make everything consistent, we made sure that the UDI pickers would always use PVCs in 7.6.2... or so we thought! By accident we actually reversed the behavior. So when PVCs were enabled, the property would NOT be converted and when PVCs were disabled, the property would be converted after all. This is the exact opposite behavior of 7.6.2. Oops!
+In order to make everything consistent, we made sure that the UDI pickers would always use PVCs in 7.6.2... or so we thought! By accident we reversed the behavior. So when PVCs were enabled, the property would NOT be converted and when PVCs were disabled, the property would be converted after all. This is the exact opposite behavior of 7.6.2. Oops!
 So we have fixed this now in 7.6.3.
 
 This issue only affects:
@@ -104,7 +104,9 @@ This issue only affects:
 * Related Links
 * Member Picker
 
-If you have already upgraded to 7.6.2 and fixed some of your queries for those three data types then you might have to fix them again in 7.6.3. We promise it's the last time you need to update them! We're sorry for the inconvenience.
+If you have already upgraded to 7.6.2 and fixed some of your queries for those three data types then you might have to fix them again in 7.6.3. 
+
+We promise it's the last time you need to update them. We're sorry for the inconvenience.
 
 ## Version 7.6.0
 
@@ -118,7 +120,7 @@ The three most important things to note are:
 
 ### Upgrading via NuGet
 
-This is an important one and there was unfortunately not a perfect solution to this. We have removed the UrlRewriting dependency and no longer ship with it, however if you are using it we didn't want to have NuGet delete all of your rewrites. So the good news is that if you are using it, the NuGet upgrade will not delete your rewrite file and everything should just continue to work (though you should really be using IIS rewrites!). 
+This is an important one and there was unfortunately not a perfect solution to this. We have removed the UrlRewriting dependency and no longer ship with it, however if you are using it we didn't want to have NuGet delete all of your rewrites. So the good news is that if you are using it, the NuGet upgrade will not delete your rewrite file and everything should continue to work (though you should really be using IIS rewrites!). 
 
 However, if you are not using it, **you will get a YSOD after upgrading, here's how to fix it**
 
@@ -230,7 +232,7 @@ Other considerations:
 * Move appSettings/connectionStrings back to web.config
  * If you are on 7.0.0 you should migrate these settings into the web.config instead of having them in separate files in /config/
  * The keys in config/AppSettings.config need to be moved back to the web.config <appSettings> section and similarly, the config/ConnectionStrings.config holds the Umbraco database connections in v7.0.0 and they should be moved back to the web.config <connectionStrings> section.
- * /config/AppSettings.config and /config/ConnectionString.config can be removed after the contents have been moved back to web.config. (Make backups just in case)
+ * /config/AppSettings.config and /config/ConnectionString.config can be removed after the contents have been moved back to web.config. (Make backups)
 * Delete all files in ~/App_Data/TEMP/Razor/*
  * Related to issues with razor macros
 
@@ -240,7 +242,7 @@ Read and follow [the full v7 upgrade guide](upgrading-to-v7.md)
 
 ## Version 4.10.x/4.11.x to 6.0.0
 
-* If your site was ever a version between 4.10.0 and 4.11.4 and you have just upgraded to 6.0.0 install the [fixup package](https://our.umbraco.com/projects/developer-tools/path-fixup) and run it after the upgrade process is finished.
+* If your site was ever a version between 4.10.0 and 4.11.4 and you have upgraded to 6.0.0 install the [fixup package](https://our.umbraco.com/projects/developer-tools/path-fixup) and run it after the upgrade process is finished.
 * The DocType Mixins package is **NOT** compatible with v6+ and will cause problems in your document types.
 
 ## Version 4.10.x to 4.11.x

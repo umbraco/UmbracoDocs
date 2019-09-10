@@ -49,4 +49,4 @@ If for some reason your file replication solution doesn't allow you to not repli
 
 ## IIS Setup
 
-IIS configuration is pretty straightforward with file replication. IIS is just reading files from its own file system like a normal IIS website.
+IIS configuration is pretty straightforward with file replication. IIS is only reading files from its own file system like a normal IIS website.

@@ -58,7 +58,7 @@ Document Types define the types of content nodes that backoffice users can creat
 Every Document Type has properties. These are the fields that the content editor is allowed to edit for the content node.
 
 ### [Data Type](../Data/Data-Types/)
-Each Document Type property has a Data Type which defines the type of input of that property. Data Types reference a Property Editor and are configured in the Umbraco backoffice in the Settings section. A Data Type can be something very simple (textstring, number, true/false) or more complex (multi-node tree picker, image cropper, etc).
+Each Document Type property has a Data Type which defines the type of input of that property. Data Types reference a Property Editor and are configured in the Umbraco backoffice in the Settings section. A Data Type can be something basic (textstring, number, true/false) or more complex (multi-node tree picker, image cropper, etc).
 
 [Read more about Data Types](../Data/Data-Types/)
 

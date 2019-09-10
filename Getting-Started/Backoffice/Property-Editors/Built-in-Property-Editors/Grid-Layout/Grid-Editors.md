@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # Grid Editors
 
-A grid editor is the component responsible for getting data into the grid - that could be a simple text field or a media picker. They're built in the same way as a property editor thus consists of 3 parts:
+A grid editor is the component responsible for getting data into the grid - that could be a text field or a media picker. They're built in the same way as a property editor thus consists of 3 parts:
 
 - .html view file
 - .js controller
@@ -27,7 +27,7 @@ The default editors are specified in `/config/grid.editors.config.js`. They are 
 
 ### Custom Grid editors
 
-You can easily customize the built-in editors to tailor the grid to your need.
+You can customize the built-in editors to tailor the grid to your need.
 
 ##### package.manifest
 

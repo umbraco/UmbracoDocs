@@ -83,14 +83,9 @@ __Question>__ _Why do I need to have a single web instance for Umbraco admin?_
 	
 _TL:DR_ You must not load balance the Umbraco backoffice, you will end up with data integrity or corruption issues.
 
-The reason you need a single server is because there is no way (currently) to 
-guarantee transactional safety between servers because we don't currently use database level locking, we only 
-use application (c#) level locks to guarantee transactional data integrity which is 
-only possible to work on one server. If you have multiple admins saving and publishing 
-at once between servers then the order in which this data is read and written to the 
-database absolutely must be consistent otherwise you will end up with data corruption. 
-Additionally the order in which cache instructions are written to the 
-cache instructions table is very important for LB, this order is guaranteed by having a single admin server.
+The reason you need a single server is because there is no way to guarantee transactional safety between servers. This is because we don't currently use database level locking, we only use application (c#) level locks to guarantee transactional data integrity which is only possible to work on one server. If you have multiple admins saving and publishing at once between servers then the order in which this data is read and written to the database absolutely must be consistent otherwise you will end up with data corruption. 
+
+Additionally the order in which cache instructions are written to the cache instructions table is very important for LB, this order is guaranteed by having a single admin server.
 
 __Question>__ _Can my Master admin server also serve front-end requests?_
 

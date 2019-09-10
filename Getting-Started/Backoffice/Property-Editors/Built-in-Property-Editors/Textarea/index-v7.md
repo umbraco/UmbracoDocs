@@ -9,7 +9,7 @@ versionFrom: 7.6.0
 
 `Returns: String`
 
-Textarea is a simple HTML textarea control for multiple lines of text. It can be configured to have a fixed character limit. By default, there is no character limit unless it's specifically set to a specific value like 200 for instance.
+Textarea is an HTML textarea control for multiple lines of text. It can be configured to have a fixed character limit. By default, there is no character limit unless it's specifically set to a specific value like 200 for instance.
 
 ## Data Type Definition Example
 
@@ -23,7 +23,7 @@ Textarea is a simple HTML textarea control for multiple lines of text. It can be
 
 ## Settings
 
-## Content Example:
+## Content Example
 
 ### Without a character limit
 
@@ -34,7 +34,7 @@ Textarea is a simple HTML textarea control for multiple lines of text. It can be
 ![Textbox Content Example Without a Character Limit](images/7_6/textarea-content-limit.png)
 
 
-## MVC View Example:
+## MVC View Example
 
 ```csharp
 @{

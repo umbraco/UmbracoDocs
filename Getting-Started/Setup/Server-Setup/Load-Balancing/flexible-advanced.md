@@ -88,12 +88,12 @@ By default front-end servers will require write full access to the following tab
 This is because by default each server will inform the database that they are active and more importantly it is
 used for task scheduling. Only a single server can execute task scheduling and these tables are used for servers
 to use a master server election process without the need for any configuration. So in the case that a front-end
-server becomes the master task scheduler, **it will actually require write access to all of the Umbraco tables**.
+server becomes the master task scheduler, **it will require write access to all of the Umbraco tables**.
 
 In order to have read-only database access configured for your front-end servers, you need to implement
 the [Explicit master scheduling server](#explicit-master-scheduling-server) configuration mentioned above.
 
-Now that your front-end servers are using your custom `FrontEndReadOnlyServerRegistrar` class, they will always be deemed 'Replica' servers and will not attempt any master election or task scheduling and because you are no longer using the default `DatabaseServerRegistrar` they will not try to ping the umbracoServer table.
+Now that your front-end servers are using your custom `FrontEndReadOnlyServerRegistrar` class, they will always be deemed 'Replica' servers and will not attempt any master election or task scheduling. Because you are no longer using the default `DatabaseServerRegistrar` they will not try to ping the umbracoServer table.
 
 ## Controlling how often the load balancing instructions from the database are processed and pruned
 

@@ -6,11 +6,11 @@ The `IPublishedContent` interface is very central in Umbraco, as it represents p
 
 The introduction of multilingual support in version 8 required changes to the interface. For instance, a property value could be obtained in version 7 with `GetPropertyValue(alias)`. Version 8 required a new parameter for culture, and the call thus became `Value(alias, culture)`.
 
-In the excitement of the version 8 release, we assumed that `IPublishedContent` was "done". By our tests, everything was looking good. However, feedback from early testers showed that the interface was in some places odd or inconsistent, or simply had issues.
+In the excitement of the version 8 release, we assumed that `IPublishedContent` was "done". By our tests, everything was looking good. However, feedback from early testers showed that the interface was in some places odd or inconsistent, or had issues.
 
 ## What
 
-Fixing the bugs is of course a requirement. Unfortunately, some of the required bug fixes could simply not be achieved without introducing some breaking changes. 
+Fixing the bugs is of course a requirement. Unfortunately, some of the required bug fixes could not be achieved without introducing some breaking changes. 
 
 At that point, we had decided to give `IPublishedContent` some love: fix the bugs, make it clean, friendly, discoverable and predictable, for the entire life of version 8.
 

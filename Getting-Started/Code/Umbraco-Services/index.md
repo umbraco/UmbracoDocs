@@ -12,7 +12,7 @@ The services live in the `Umbraco.Core.Services` namespace. To use the service A
 
 
 ### Access via a Controller 
-If you are accessing Umbraco services inside your own controller class and your controller inherits from one of the base Umbraco controller classes (eg RenderMvcController, SurfaceController etc) then you can access the `ServiceContext` and therefore all services, through a special `Services` property that is exposed on these base Umbraco controller classes:
+If you are accessing Umbraco services inside your own controller class and your controller inherits from one of the base Umbraco controller classes (eg RenderMvcController, SurfaceController etc) then you can access the `ServiceContext` and all services. This is done through a special `Services` property that is exposed on these base Umbraco controller classes:
 
 ```csharp
 public class EventController : Umbraco.Web.Mvc.SurfaceController
@@ -44,7 +44,7 @@ Inside a Razor View template, that inherits UmbracoViewPage (or similar eg Parti
 
 ### Access in a Custom Class via dependency injection
 
-If for instance we wish to subscribe to an event on one of the services, we'd do so in a Component c# class, where there is no `ServiceContext` available, instead we would inject the service we need into the public constructor of the Component and Umbraco's underlying dependency injection framework will do the rest.
+If for instance we wish to subscribe to an event on one of the services, we'd do so in a Component C# class, where there is no `ServiceContext` available. Instead we would inject the service we need into the public constructor of the Component and Umbraco's underlying dependency injection framework will do the rest.
 
 In this example we will wire up to the ContentService 'Saved' event, and create a new folder in the Media section whenever a new LandingPage is created in the content section to store associated media. Therefore we will need the MediaService available to create the new folder.
 
