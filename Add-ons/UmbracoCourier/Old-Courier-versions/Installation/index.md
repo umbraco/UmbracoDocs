@@ -44,7 +44,7 @@ Folders containing the application files for Courier 2
 Contains the single uninstall sql script, which will remove custom courier table as well as the any courier app entries, it will not remove any files
 
 ### Installing the files
-Simply unzip the /bin, /config and /umbraco folders to the root of your website, the archive follows the structure needed to place the files correctly. Notice: the archive assumes your Umbraco director is located at /umbraco. If not you will need to move those files manually to the right location.
+Unzip the /bin, /config and /umbraco folders to the root of your website, the archive follows the structure needed to place the files correctly. Notice: the archive assumes your Umbraco director is located at /umbraco. If not you will need to move those files manually to the right location.
 
 If you have purchased Umbraco Courier, you can download a license file on umbraco.com. This license file must be placed in the websites /bin directory to be registered.
 

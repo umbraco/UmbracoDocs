@@ -8,11 +8,11 @@ When you are working directly on your Development environment any changes you ma
 
 Changes made on your Cloud environments will show up in the Umbraco Cloud portal, where you will be able to see what files has been added / changed and by who the changes where made. 
 
-In order to deploy meta data changes from one Cloud environment to another you simply click the **'Deploy changes to ..'** button on the environment where the changes has been made. The deployment will kick in, and you can follow the process in the 'Activity Log' in your browser by clicking on 'View Details'.
+In order to deploy meta data changes from one Cloud environment to another click the **'Deploy changes to ..'** button on the environment where the changes has been made. The deployment will kick in, and you can follow the process in the 'Activity Log' in your browser by clicking on 'View Details'.
 
 ![Deployment in Portal](images/deploy-in-portal.gif)
 
-Once it's done the changes will have been applied to the Cloud environment next in line. If you have more Cloud environment, simply follow the same procedure to deploy the changes all the way up to your Live site.
+Once it's done the changes will have been applied to the Cloud environment next in line. If you have more Cloud environment, follow the same procedure to deploy the changes all the way up to your Live site.
 
 ## Important notes
 When you deploy from i.e. your Development environment to your Live environment, any changes made on the Live environment will be merged back into the Development environment. 

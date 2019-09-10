@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 ### .NET Core Console Application
 
-The Headless client NuGet package is hosted on a custom MyGet feed, so you need to create a `NuGet.config` file for your project which can be done via the command line. If you don't do this then you would need to use the `--source` parameter and a few other tricks so it's just simpler to use a `Nuget.config` file. 
+The Headless client NuGet package is hosted on a custom MyGet feed, so you need to create a `NuGet.config` file for your project which can be done via the command line. If you don't do this then you would need to use the `--source` parameter and a few other tricks so it's simpler to use a `Nuget.config` file. 
 
 So __before__ you run any script for creating a project, you will need to do this in the new folder where you are creating your project (`sln` file):
 
@@ -81,9 +81,9 @@ _This example is for creating a .NET Core Console (command line) application_
 
 ### Console app notes
 
-The Headless client APIs are async but because a console app is non-async by nature, the above example uses `.Result` to block the operation until complete. It is possible to have a proper async console app, you just have to create an async method to run your operations. [An example can be found here](https://stackoverflow.com/a/17630538/694494).
+The Headless client APIs are async but because a console app is non-async by nature, the above example uses `.Result` to block the operation until complete. It is possible to have a proper async console app, you have to create an async method to run your operations. [An example can be found here](https://stackoverflow.com/a/17630538/694494).
 
-The above example is in its simplest form, if you wish to use DI, logging, async, config files, etc... here is an example of how to do that:
+The above example is in its simplest form. If you wish to use DI, logging, async, config files, etc., here is an example of how to do that:
 :::note
 You will need to install some additional packages for this to work, for example the Headless WebClient:
 `dotnet add package UmbracoCms.Headless.Client.Web -v 0.9.7-*`

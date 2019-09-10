@@ -12,7 +12,7 @@ Create a new ASP.NET or class project in Visual Studio add references to the Umb
 
 ## Adding the type to Forms
 
-The Forms API contains a collection of classes that the provider model automatically registers. So to add a new type to Forms you simply inherit from the right class. In the sample below we use the class for the workflow type.
+The Forms API contains a collection of classes that the provider model automatically registers. So to add a new type to Forms you inherit from the right class. In the sample below we use the class for the workflow type.
 
 ```csharp
 public class Class1 : Umbraco.Forms.Core.WorkflowType 
@@ -48,7 +48,7 @@ All three are mandatory and the ID must be unique, otherwise the type might conf
 
 ## Adding settings to a type
 
-Now that we have a basic class setup, we would like to pass setting items to the type. So we can reuse the type on multiple items but with different settings. To add a setting to a type, we simply add a property to the class, and give it a specific attribute like this:
+Now that we have a basic class setup, we would like to pass setting items to the type. So we can reuse the type on multiple items but with different settings. To add a setting to a type, we add a property to the class, and give it a specific attribute like this:
 
 ```csharp
 [Umbraco.Forms.Core.Attributes.Setting("Log Header", 

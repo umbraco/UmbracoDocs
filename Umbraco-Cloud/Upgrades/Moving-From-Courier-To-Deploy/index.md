@@ -59,7 +59,7 @@ Do not remove the `/data/Revision` folder itself, only the folders inside the `/
 
 ## 2 Adding Umbraco Deploy
 
-Adding Umbraco Deploy will be simple, all content from the ZIP received (except `/config/UmbracoDeploy.config`) needs to be copied into the webroot.
+To add Umbraco Deploy copy all content from the ZIP received (except `/config/UmbracoDeploy.config`) into the webroot of the local project files.
 
 :::note
 Do not overwrite the existing `/config/UmbracoDeploy.config` file with the empty one from the ZIP. It already has the correct settings for your site.

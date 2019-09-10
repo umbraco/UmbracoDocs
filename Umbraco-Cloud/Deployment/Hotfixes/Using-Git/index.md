@@ -44,7 +44,7 @@ Here are the steps to follow in order to apply selected changes to the Live envi
 
 ### Push to Live
 
-Before you push the newly created branch to Umbraco Cloud we need to change the _remote destination_. If you simply hit _Push_ now, the branch would be pushed to the Development environment. You need to add the Live environment as a _new remote_.
+Before you push the newly created branch to Umbraco Cloud we need to change the _remote destination_. If you hit _Push_ now, the branch would be pushed to the Development environment. You need to add the Live environment as a _new remote_.
 
 8. Find the clone URL for the Live environment in the Umbraco Cloud Portal.
 
@@ -71,9 +71,9 @@ Before you push the newly created branch to Umbraco Cloud we need to change the 
 
 You have now applied a hotfix to the Live environment.
 
-Make sure that you merge and remove the branch you've created on the Development repository, before pushing to the Development environment on Cloud - you can always create a new branch, if you need to apply another hotfix to the Live environment.
+Make sure that you merge and remove the branch you've created on the Development repository, before pushing to the Development environment on Cloud. You can always create a new branch, if you need to apply another hotfix to the Live environment.
 
-When you are ready building on your Development environment, simply follow the [normal workflow of Cloud](../../) to deploy the changes to the Live environment.
+When you are ready building on your Development environment, follow the [normal workflow of Cloud](../../) to deploy the changes to the Live environment.
 
 ## Important notes
 * This guide can also be used for applying a hotfix to a _Staging_ environment.
