@@ -16,10 +16,11 @@ This rule will give a warning if you end headings with either of these punctuati
 
 This rule will give a warning if you use either of these words in your text:
 
-- simple
-- just
-- easily
-- actually
+- Simple
+- Simply
+- Just
+- Easily
+- Actually
 
 ### Start lists with capital letters
 
@@ -49,7 +50,7 @@ This rule will kick in if you spell it as number 2 or 3 and suggest you spell it
 
 ## Using Vale locally
 
-One of the big strengths of Vale is that it is possible as a contributor to simply run the tests locally before you create a PR, there is also a VS Code extension for it.
+One of the big strengths of Vale is that it is possible as a contributor to run the tests locally before you create a PR, there is also a VS Code extension for it.
 
 First step to running Vale locally is to install it following [their documentation](https://errata-ai.github.io/vale/#installation).
 
