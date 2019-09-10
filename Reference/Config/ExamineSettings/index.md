@@ -5,7 +5,7 @@ needsV8Update: "true"
 
 # Examine Configuration
 
-_This shows all of the configuration options for Examine. None of these options are actually required and if not specified will just use the Examine default values._
+_This shows all of the configuration options for Examine. None of these options are required and if not specified will use the Examine default values._
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>

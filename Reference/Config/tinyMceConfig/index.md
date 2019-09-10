@@ -74,7 +74,7 @@ Here is an example of the standard valid elements that come with a clean install
 </validElements>
 ```
 
-### Control characters:
+### Control characters
 
 The following table of control characters is taken from [the official TinyMce documentation](http://www.tinymce.com/wiki.php/configuration:valid_elements "the official TinyMce documentation") on the topic:
 
