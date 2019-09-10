@@ -4,6 +4,7 @@ ignorecase: true
 level: warning
 tokens:
   - simple
+  - simply
   - just
   - easily
   - actually
