@@ -59,7 +59,7 @@ Returns all records from the form with the ID = formId as a DynamicRecordList
 
 ## DynamicRecordsList and DynamicRecord
 
-All of these methods will return an object of type `DynamicRecordList` so you can easily iterate through the DynamicRecord objects.
+All of these methods will return an object of type `DynamicRecordList` so you can iterate through the DynamicRecord objects.
 
 The properties available on a DynamicRecord are:
 
@@ -75,7 +75,7 @@ int UmbracoPageId
 DateTime Updated
 ```
 
-In order to access custom form fields you can simply use the dot notation, using the field caption but removing all spaces and non alphanumeric characters.
+In order to access custom form fields you can use the dot notation, using the field caption but removing all spaces and non alphanumeric characters.
 
 ## Sample razor script 
 
