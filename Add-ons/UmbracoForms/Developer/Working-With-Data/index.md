@@ -1,18 +1,22 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.0
 ---
 
 # Working with Record data
 
-Umbraco Forms includes some helper methods that return dynamic objects, which makes it easy to output records in your templates using razor.
+From Umbraco Forms `v8.2` includes some helper methods that return records of a given form, which makes it easy to output records in your templates using razor.
 
 ## Available methods
-The static methods can be found in Umbraco.Forms.Mvc.DynamicObjects.Library
+The methods can be found by injecting the `Umbraco.Forms.Core.Services.IRecordReaderService` interface.
+
+```csharp
+IReadOnlyList<IRecord> GetApprovedRecordsFromPage(int pageId)
+```
 
 ### GetApprovedRecordsFromPage
 
 ```csharp
-DynamicRecordList GetApprovedRecordsFromPage(int pageId)
+IReadOnlyList<IRecord> GetApprovedRecordsFromPage(int pageId)
 ```
 
 Returns all records with the state set to approved from all forms on the Umbraco page with the id = `pageId` as a DynamicRecordList. 
@@ -20,7 +24,7 @@ Returns all records with the state set to approved from all forms on the Umbraco
 ### GetApprovedRecordsFromFormOnPage
 
 ```csharp
-DynamicRecordList GetApprovedRecordsFromFormOnPage(int pageId, string formId)
+IReadOnlyList<IRecord> GetApprovedRecordsFromFormOnPage(int pageId, string formId)
 ```
 
 Returns all records with the state set to approved from the form with the id = `formId` on the Umbraco page with the id = `pageId` as a DynamicRecordList.
@@ -28,7 +32,7 @@ Returns all records with the state set to approved from the form with the id = `
 ### GetApprovedRecordsFromForm
 
 ```csharp
-DynamicRecordList GetApprovedRecordsFromForm(string formId)
+IReadOnlyList<IRecord> GetApprovedRecordsFromForm(string formId)
 ```
 
 Returns all records with the state set to approved from the form with the ID = `formId` as a DynamicRecordList.
@@ -36,7 +40,7 @@ Returns all records with the state set to approved from the form with the ID = `
 ### GetRecordsFromPage
 
 ```csharp
-DynamicRecordList GetRecordsFromPage(int pageId)
+IReadOnlyList<IRecord> GetRecordsFromPage(int pageId)
 ```
 
 Returns all records from all forms on the Umbraco page with the id = `pageId` as a DynamicRecordList.
@@ -44,7 +48,7 @@ Returns all records from all forms on the Umbraco page with the id = `pageId` as
 ### GetRecordsFromFormOnPage
 
 ```csharp
-DynamicRecordList GetRecordsFromFormOnPage(int pageId, string formId)
+IReadOnlyList<IRecord> GetRecordsFromFormOnPage(int pageId, string formId)
 ```
 
 Returns all records from the form with the id = `formId` on the Umbraco page with the id = `pageId` as a DynamicRecordList.
@@ -52,55 +56,61 @@ Returns all records from the form with the id = `formId` on the Umbraco page wit
 ### GetRecordsFromForm
 
 ```csharp
-DynamicRecordList GetRecordsFromForm(string formId)
+IReadOnlyList<IRecord> GetRecordsFromForm(string formId)
 ```
 
 Returns all records from the form with the ID = formId as a DynamicRecordList
 
 ## DynamicRecordsList and DynamicRecord
 
-All of these methods will return an object of type `DynamicRecordList` so you can iterate through the DynamicRecord objects.
+All of these methods will return an object of type `IReadOnlyList<IRecord>` so you can iterate through the `IRecord` objects.
 
-The properties available on a DynamicRecord are:
+The properties available on a `IRecord` are:
 
 ```csharp
+int Id
+FormState State
 DateTime Created
-string Form
-string Id
-string IP
-object MemberKey
-Dictionary<Guid, RecordField> RecordFields
-FormState? State
-int UmbracoPageId
 DateTime Updated
+Guid Form
+string IP
+int UmbracoPageId
+string MemberKey
+Guid UniqueId
+Dictionary<Guid, RecordField> RecordFields
 ```
 
-In order to access custom form fields you can use the dot notation, using the field caption but removing all spaces and non alphanumeric characters.
+In order to access custom form fields, there exists an extension method named `ValueAsString` on  `IRecord` in `Umbraco.Forms.Core.Services`, such that you can get the value as string given the alias of the field.
+
+This extension method handle multi value fields by comma separating the values. E.g. "A, B, C"
 
 ## Sample razor script 
 
 Sample script that is outputting comments using a form created with the default comment form template.
 
 ```csharp
-@using Umbraco.Forms.Mvc.DynamicObjects
-
+@using Umbraco.Core;
+@using Umbraco.Core.Composing
+@using Umbraco.Forms.Core.Services
+@{
+   var recordReaderService = Current.Factory.GetInstance<IRecordReaderService>();
+}
 <ul id="comments">
-	@foreach (dynamic record in Library
-			.GetApprovedRecordsFromPage(@CurrentPage.Id))
-	{
-		<li>
-			@record.Created.ToString("dd MMMM yyy")
-			@if(string.IsNullOrEmpty(record.Website)){
-				<strong>@record.Name</strong>
-			}
-			else{
-				<strong>
-				<a href="@record.Website" target="_blank">@record.Name</a>
-				</strong>
-			}
-			<span>said</span>
-			<p>@record.Comment</p>
-		</li>
-	}
+   @foreach (dynamic record in recordReaderService.GetApprovedRecordsFromPage(Model.Id))
+   {
+      <li>
+         @record.Created.ToString("dd MMMM yyy")
+         @if(string.IsNullOrEmpty(record.ValueAsString("email")){
+            <strong>@record.ValueAsString("name")</strong>
+         }
+         else{
+            <strong>
+               <a href="mailto:@record.ValueAsString("email")" target="_blank">@record.ValueAsString("name")</a>
+            </strong>
+         }
+         <span>said</span>
+         <p>@record.ValueAsString("comment")</p>
+      </li>
+   }
 </ul>
 ```
