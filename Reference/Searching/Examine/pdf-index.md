@@ -81,5 +81,5 @@ It is certainly possible to replace the IPdfTextExtractor using your own compose
 
 `composition.RegisterUnique<IPdfTextExtractor, MyCustomSharpTextExtractor>();`
 
-The iTextSharp library deals with Unicode in a better way but is a paid for license. If you wish to use iTextSharp or another PDF library you can easily swap out the IPdfTextExtractor with your own implementation.
+The iTextSharp library deals with Unicode in a better way but is a paid for license. If you wish to use iTextSharp or another PDF library you can swap out the IPdfTextExtractor with your own implementation.
 :::
