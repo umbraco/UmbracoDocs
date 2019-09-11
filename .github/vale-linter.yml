@@ -17,7 +17,7 @@ Vale:
   Success: 
     Header: "All checks passed 🎉"
     Message: "All changes you made follow our style guide rules! #h5yr"
-    ShowImage: false
+    ShowImage: true
     ImageUrl: "https://media.giphy.com/media/6nuiJjOOQBBn2/giphy.gif"
     
   Warning: 
