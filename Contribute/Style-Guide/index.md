@@ -46,7 +46,7 @@ The term `backoffice` has been seen spelled in many different ways, most commonl
 1. `back office`
 1. `back-office`
 
-This rule will kick in if you spell it as number 2 or 3 and suggest you spell it as number 1. For a full list of terms please check the [style rule](https://github.com/umbraco/UmbracoDocs/tree/master/.github/vale/DocsStyles/Terms.yml).
+This rule will kick in if you spell it as number 2 or 3 and suggest you spell it as number 1. For a full list of terms please check the [style rule](https://github.com/umbraco/UmbracoDocs/blob/master/.github/valeStyle/Terms.yml).
 
 ## Using Vale locally
 
@@ -62,7 +62,7 @@ This tells Vale to test all markdown files (.md) in the current directory (.). T
 
 ![Vale Output](images/vale-output.png)
 
-So it tells you what file has issues, in this case `v8documentation.md`, it broke the [HeadingsPunctuation rule](#Punctuation-in-headings), and it did so the following places:
+So it tells you what file has issues, in this case `v8documentation.md`, it broke the [HeadingsPunctuation rule](#punctuation-in-headings), and it did so the following places:
 
 - Line 15, column 36
 - Line 59, column 15
