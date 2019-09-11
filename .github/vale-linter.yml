@@ -24,7 +24,7 @@ Vale:
     Header: "It passes but with warnings"
     Message: "Our style checker noticed a few potential issues. Please check the annotations for suggestions." 
     ShowImage: true
-    ImageUrl: "https://media.giphy.com/media/xUOxfh6ZM75efM3Bqo/giphy.gif"
+    ImageUrl: "https://umbraco.com/media/4884/cloud_b.png"
 
   Error: 
     Header: "Errors found"
