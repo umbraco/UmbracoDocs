@@ -17,14 +17,14 @@ Vale:
   Success: 
     Header: "All checks passed 🎉"
     Message: "All changes you made follow our style guide rules! #h5yr"
-    ShowImage: true
+    ShowImage: false
     ImageUrl: "https://media.giphy.com/media/6nuiJjOOQBBn2/giphy.gif"
     
   Warning: 
     Header: "It passes but with warnings"
     Message: "Our style checker noticed a few potential issues. Please check the annotations for suggestions." 
-    ShowImage: true
-    ImageUrl: "https://umbraco.com/media/4884/cloud_b.png"
+    ShowImage: false
+    ImageUrl: "https://media.giphy.com/media/xUOxfh6ZM75efM3Bqo/giphy.gif"
 
   Error: 
     Header: "Errors found"
