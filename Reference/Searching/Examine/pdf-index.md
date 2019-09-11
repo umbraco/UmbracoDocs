@@ -27,7 +27,7 @@ using(var multiSearcher = new MultiIndexSearcher("MultiSearcher", new IIndex[] {
 };
 ```
 
-Or you can register a multi-index searcher with the ExamineManager on startup like:
+Or you can register a multi index searcher with the ExamineManager on startup like:
 
 ```cs
 using Examine;
