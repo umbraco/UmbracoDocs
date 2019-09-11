@@ -3,7 +3,7 @@ It's possible to create a backup of a Cloud database. There are at least two way
 - Use SQL Server Management Studio
 - Use a PowerShell script
 
-### Backup with SQL Server Management Studio
+## Backup with SQL Server Management Studio
 Follow these steps:
 - Log in to Umbraco Cloud, and visit your project page.
 - From the "Settings" drop down for the project, select "Connection Details".
@@ -17,7 +17,7 @@ Follow these steps:
 - Expand "Databases", right click your database (it should be the only one listed), select "Tasks", then select "Export Data-tier Application...".
 - Proceed through the dialog, setting the options appropriate to your situation, to save the "bacpac" file. This is your database backup.
 
-### Backup with PowerShell Script
+## Backup with PowerShell Script
 Make sure to change the following:
 - Location of the Dac assembly (if needed)
 - Your connection string
