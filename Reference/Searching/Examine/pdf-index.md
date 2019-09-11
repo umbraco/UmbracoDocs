@@ -15,7 +15,7 @@ You will then have a new Examine index called "PDFIndex" available.
 
 ## Multi index searchers
 
-To use the MultiSearcher in Umbraco 8, you can instantiate it when needed like:
+To use the multisearcher in Umbraco 8, you can instantiate it when needed like:
 
 ```cs
 using(var multiSearcher = new MultiIndexSearcher("MultiSearcher", new IIndex[] {
@@ -55,7 +55,7 @@ public class MyComponent : IComponent
         if (_examineManager.TryGetIndex(Constants.UmbracoIndexes.ExternalIndexName, out var externalIndex)
             && _examineManager.TryGetIndex(PdfIndexConstants.PdfIndexName, out var pdfIndex))
         {
-            //register a multi searcher for both of them
+            //register a multisearcher for both of them
             var multiSearcher = new MultiIndexSearcher("MultiSearcher", new IIndex[] { externalIndex, pdfIndex });
             _examineManager.AddSearcher(multiSearcher);
         }
@@ -65,7 +65,7 @@ public class MyComponent : IComponent
 }
 ```
 
-With this approach, the multi searcher will show up in the Examine dashboard and it can be resolved from the ExamineManager like:
+With this approach, the multisearcher will show up in the Examine dashboard and it can be resolved from the ExamineManager like:
 
 ```cs
 if (_examineManager.TryGetSearcher("MultiSearcher", out var searcher))
