@@ -1,4 +1,4 @@
-## Backups
+# Database backups
 It's possible to create a backup of a Cloud database. There are at least two ways of accomplishing this:
 - Use SQL Server Management Studio
 - Use a PowerShell script
