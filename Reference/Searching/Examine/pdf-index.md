@@ -75,7 +75,7 @@ if (_examineManager.TryGetSearcher("MultiSearcher", out var searcher))
 ```
 
 :::warning
-The implementation of IPdfTextExtractor is PdfSharpTextExtractor in this library which uses PDFSharp to extract the bytes to convert to text but that implementation doesn't deal well with Unicode text which means when some PDF files are read, the result will be 'junk' strings.
+The implementation of IPdfTextExtractor is PdfSharpTextExtractor in this library, which uses PDFSharp to extract the bytes to convert to text. That implementation doesn't deal well with Unicode text which means when some PDF files are read, the result will be 'junk' strings.
 
 It is certainly possible to replace the IPdfTextExtractor using your own composer like
 
