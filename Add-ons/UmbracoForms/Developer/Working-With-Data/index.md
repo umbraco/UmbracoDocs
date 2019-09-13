@@ -7,16 +7,12 @@ versionFrom: 8.0.0
 From Umbraco Forms `v8.2` includes some helper methods that return records of a given form, which makes it easy to output records in your templates using razor.
 
 ## Available methods
-The methods can be found by injecting the `Umbraco.Forms.Core.Services.IRecordReaderService` interface.
-
-```csharp
-IReadOnlyList<IRecord> GetApprovedRecordsFromPage(int pageId)
-```
+The methods can be found by injecting the `Umbraco.Forms.Core.Services.IRecordReaderService` interface. For performance reasons, all these methods are paged.
 
 ### GetApprovedRecordsFromPage
 
 ```csharp
-IReadOnlyList<IRecord> GetApprovedRecordsFromPage(int pageId)
+PagedResult<IRecord> GetApprovedRecordsFromPage(int pageId, int pageNumber, int pageSize)
 ```
 
 Returns all records with the state set to approved from all forms on the Umbraco page with the id = `pageId` as a DynamicRecordList. 
@@ -24,7 +20,7 @@ Returns all records with the state set to approved from all forms on the Umbraco
 ### GetApprovedRecordsFromFormOnPage
 
 ```csharp
-IReadOnlyList<IRecord> GetApprovedRecordsFromFormOnPage(int pageId, string formId)
+PagedResult<IRecord> GetApprovedRecordsFromFormOnPage(int pageId, string formId, int pageNumber, int pageSize)
 ```
 
 Returns all records with the state set to approved from the form with the id = `formId` on the Umbraco page with the id = `pageId` as a DynamicRecordList.
@@ -32,7 +28,7 @@ Returns all records with the state set to approved from the form with the id = `
 ### GetApprovedRecordsFromForm
 
 ```csharp
-IReadOnlyList<IRecord> GetApprovedRecordsFromForm(string formId)
+PagedResult<IRecord> GetApprovedRecordsFromForm(string formId, int pageNumber, int pageSize)
 ```
 
 Returns all records with the state set to approved from the form with the ID = `formId` as a DynamicRecordList.
@@ -40,7 +36,7 @@ Returns all records with the state set to approved from the form with the ID = `
 ### GetRecordsFromPage
 
 ```csharp
-IReadOnlyList<IRecord> GetRecordsFromPage(int pageId)
+PagedResult<IRecord> GetRecordsFromPage(int pageId, int pageNumber, int pageSize)
 ```
 
 Returns all records from all forms on the Umbraco page with the id = `pageId` as a DynamicRecordList.
@@ -48,7 +44,7 @@ Returns all records from all forms on the Umbraco page with the id = `pageId` as
 ### GetRecordsFromFormOnPage
 
 ```csharp
-IReadOnlyList<IRecord> GetRecordsFromFormOnPage(int pageId, string formId)
+PagedResult<IRecord> GetRecordsFromFormOnPage(int pageId, string formId, int pageNumber, int pageSize)
 ```
 
 Returns all records from the form with the id = `formId` on the Umbraco page with the id = `pageId` as a DynamicRecordList.
@@ -56,14 +52,14 @@ Returns all records from the form with the id = `formId` on the Umbraco page wit
 ### GetRecordsFromForm
 
 ```csharp
-IReadOnlyList<IRecord> GetRecordsFromForm(string formId)
+PagedResult<IRecord> GetRecordsFromForm(string formId, int pageNumber, int pageSize)
 ```
 
 Returns all records from the form with the ID = formId as a DynamicRecordList
 
 ## DynamicRecordsList and DynamicRecord
 
-All of these methods will return an object of type `IReadOnlyList<IRecord>` so you can iterate through the `IRecord` objects.
+All of these methods will return an object of type `PagedResult<IRecord>` so you can iterate through the `IRecord` objects.
 
 The properties available on a `IRecord` are:
 
@@ -80,7 +76,8 @@ Guid UniqueId
 Dictionary<Guid, RecordField> RecordFields
 ```
 
-In order to access custom form fields, there exists an extension method named `ValueAsString` on  `IRecord` in `Umbraco.Forms.Core.Services`, such that you can get the value as string given the alias of the field.
+In order to access custom form fields, these are available in the `RecordFields` property. 
+Furthermore there exists an extension method named `ValueAsString` on  `IRecord` in `Umbraco.Forms.Core.Services`, such that you can get the value as string given the alias of the field.
 
 This extension method handle multi value fields by comma separating the values. E.g. "A, B, C"
 
@@ -96,7 +93,7 @@ Sample script that is outputting comments using a form created with the default 
    var recordReaderService = Current.Factory.GetInstance<IRecordReaderService>();
 }
 <ul id="comments">
-   @foreach (dynamic record in recordReaderService.GetApprovedRecordsFromPage(Model.Id))
+   @foreach (dynamic record in recordReaderService.GetApprovedRecordsFromPage(Model.Id, 0, 10))
    {
       <li>
          @record.Created.ToString("dd MMMM yyy")
