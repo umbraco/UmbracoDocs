@@ -9,6 +9,7 @@ _Templates (Views) can access items in the [Media library](../../Data/Creating-M
 In the following examples we will be looking at rendering an `Image`, this is just one of the 'types' of Media in Umbraco - however the same principles apply to all MediaTypes (however the actual properties available to render will be different, for example a `File` won't have a Width property)
 
 ## Rendering a media item
+
 A media item is not just a reference to a static file, but like content, it is a collection of fields, such as width, height and the path to the stored file. This means that accessing and rendering media in a template is very similar to rendering content.
 
 ### Example 1: Accessing a Media Image IPublishedContent item based upon its Id
@@ -67,7 +68,7 @@ It's always worth having Null checks around your code when retrieving media, jus
 :::
 
 ### Other Media Items such as `File`
-Accessing other media items can be performed in the same way, the techniques aren't limited to just the `Image` type, but it is one of the most common use cases.
+Accessing other media items can be performed in the same way, the techniques aren't limited to the `Image` type, but it is one of the most common use cases.
 
 ## Image Cropper
 Image Cropper can be used with `Image` media types and is the default option for the umbracoFile property on an `Image` media type.

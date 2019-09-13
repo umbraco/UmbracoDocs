@@ -18,7 +18,7 @@ The auto-linking should be enabled by a startup option and when activated, when 
 
 To do this there is an extension method on `Microsoft.Owin.Security.AuthenticationOptions` called `SetExternalSignInAutoLinkOptions` which you can pass in an instance of: `Umbraco.Web.Security.Identity.ExternalSignInAutoLinkOptions`
 
-This is done during the configuration of the OAuth provider, the options class allows you to dynamically return data for each of it's methods if required, alternatively you can specify what the methods will return based on it's ctor arguments. Generally there would be very little to configure and if you wanted to auto-link/create local accounts based on your external OAuth provider you can just do (for example):
+This is done during the configuration of the OAuth provider. The options class allows you to dynamically return data for each of it's methods if required. Alternatively you can specify what the methods will return based on it's ctor arguments. Generally there would be very little to configure and if you wanted to auto-link/create local accounts based on your external OAuth provider you can do (for example):
 
 ```C#
 googleOptions.SetExternalSignInAutoLinkOptions(

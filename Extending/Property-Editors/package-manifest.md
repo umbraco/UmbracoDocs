@@ -114,6 +114,7 @@ The basic values on any editor are `alias`, `name` and `editor`. These three **m
 ```
 
 Each field contains a number of configuration values:
+
 * `label` The label shown on the data type configuration screen
 * `description` Help text displayed underneath the label
 * `key` The key the prevalue is stored under (see below)
@@ -136,7 +137,7 @@ $scope.model.config.wolf
 
 `view` config value points the prevalue editor to an editor to use. This follows the same concept as any other editor in Umbraco, but with prevalue editors there are a couple of conventions.
 
-If you just specify a name like `boolean` then Umbraco will look at `/umbraco/views/prevalueeditors/boolean/boolean.html` for the editor view - if you wish to use your own, you specify the path like `~/App_Data/package/prevalue-editor.html`.
+If you specify a name like `boolean` then Umbraco will look at `/umbraco/views/prevalueeditors/boolean/boolean.html` for the editor view - if you wish to use your own, you specify the path like `~/App_Data/package/prevalue-editor.html`.
 
 ### Default Config
 The defaultConfig object provides a collection of default configuration values in case the property editor is not configured or is using a parameter editor, which doesn't allow configuration. The object is a key/value collection and must match the prevalue field keys.

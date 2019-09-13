@@ -6,11 +6,11 @@ meta.Description: "Developers' Reference primarily consists of API references of
 
 # Developers' Reference
 
-_Developers' Reference primarily consists of API references of the different core Umbraco APIs. In many cases, the references come with code snippets with simple examples. For a more in-depth study of the different APIs, consult the "using-umbraco" and "extending-umbraco" sections of the documentation._
+_Developers' Reference primarily consists of API references of the different core Umbraco APIs. In many cases, the references come with code snippets with examples. For a more in-depth study of the different APIs, consult the "using-umbraco" and "extending-umbraco" sections of the documentation._
 
 ## [Common Pitfalls & Anti-patterns](Common-Pitfalls/index.md)
 
-This section is ultra important! It describes many common pitfalls that developers fall in to. Make sure you read this section - it might just save your site!
+This section is ultra important! It describes many common pitfalls that developers fall in to. Make sure you read this section - it might save your site!
 
 ## API Documentation
 
@@ -61,7 +61,7 @@ Event model covering all major aspects of the system for triggering custom code 
 
 ## [Rest APIs](Routing/WebApi/index.md)
 
-How to use [Web API](https://www.asp.net/web-api) with Umbraco to easily create REST services.
+How to use [Web API](https://www.asp.net/web-api) with Umbraco to create REST services.
 
 ## [Management APIs](Management/index.md)
 
@@ -73,4 +73,4 @@ The term 'Plugins' refers to any types in Umbraco that are found in assemblies t
 
 ## [Caching](Cache/index.md)
 
-Describes how to work with caching custom data structures in Umbraco. If you are creating Umbraco packages that have custom data sources and you want to cache some of this data, it's important to understand how caching works in Umbraco and to understand how it affects Umbraco installations in load balanced environments.
+Describes how to work with caching custom data structures in Umbraco. When creating Umbraco packages that have custom data sources and you want to cache some of this data, it's important to understand how caching works in Umbraco and to understand how it affects Umbraco installations in load balanced environments.

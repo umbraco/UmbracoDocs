@@ -11,7 +11,7 @@ The **outbound pipeline** consists out of the following steps:
 3. [Create urls](#urls)
 
 To explain things we will use the following content tree:
-![simple content tree](images/simple-content-tree-v8.png)
+![content tree](images/simple-content-tree-v8.png)
 
 ## 1. <a name="segments"></a> Create segments
 
@@ -154,7 +154,7 @@ Any content node with a hostname defines a “new root” for paths.
 
 Paths can be cached, what comes next cannot (http vs https, current request…).
 
-#### Some further considerations when **working with hostnames**:
+#### Some further considerations when **working with hostnames**
 
 -  **Domain without path** e.g. "www.site.com"
 will become "1234/path/to/page"
@@ -215,7 +215,7 @@ The remaining nodes will be marked as colliding and will not have a URL generate
 This can happen if an umbracoUrlName property is being used to override the generated URL of a node, or in some cases when having multiple root nodes without hostnames assigned.
 
 :::warning
-Keep in mind that this means publishing a unpublished node with a conflicting URL, might change the active node being rendered on that specific URL in cases where the published node should now take priority according to sort order in the tree!
+This means publishing an unpublished node with a conflicting URL, might change the active node being rendered on that specific URL in cases where the published node should now take priority according to sort order in the tree!
 :::
 
 ### Custom Url Provider
@@ -324,7 +324,8 @@ namespace Umbraco8.Composers
 ### GetOtherUrls
 
 The GetOtherUrls method is only actioned in the Umbraco Backoffice to provide a list to editors of other Urls which also map to the node.
-For example, the convention led umbracoUrlAlias property that enables editors to specify a comma delimited list of alternative urls for the node has a corresponding AliasUrlProvider reggistered in the UrlProviderCollecton to display this list to the Editor in the backoffice Info Content app for a node.
+
+For example, let's consider a convention-led umbracoUrlAlias property that enables editors to specify a comma delimited list of alternative urls for the node. It has a corresponding AliasUrlProvider registered in the UrlProviderCollecton to display this list to the Editor in the backoffice Info Content app for a node.
 
 ### Url Provider Mode
 Specifies the type of urls that the url provider should produce, eg. absolute vs. relative Urls. Auto is the default
@@ -430,7 +431,7 @@ Now if an editor visits the backoffice via the backoffice url they will only see
 
 ![Backoffice + production domains only](images/backoffice-see-prod.png)
 
-NB: it's not a 1-1 mapping, but a grouping: multiple Urls can be added to a group - think multilingual production and staging variations, and in the example above, if an editor logged in to the backoffice via the production url, eg umbraco-v8.localtest.me/umbraco - they would see the umbraco-v8-backoffice.localtest.me domain listed.
+NB: it's not a 1-1 mapping, but a grouping. Multiple Urls can be added to a group. Think multilingual production and staging variations, and in the example above, if an editor logged in to the backoffice via the production url, eg umbraco-v8.localtest.me/umbraco - they would see the umbraco-v8-backoffice.localtest.me domain listed.
 
 #### Grouping the groupings - BindSites
 

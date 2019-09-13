@@ -14,7 +14,7 @@ So the first thing we should do is go to the **_Settings > Language_** and then 
 
 ![Adding the Danish language](images/adding-danish-language.png)
 
-As you can see there are several options, to add a fallback language, make it mandatory and so on, we will just leave it default for now but if you want to ensure all content has a language varied version then make them mandatory.
+As you can see there are several options, to add a fallback language, make it mandatory and so on. We will leave it default for now but if you want to ensure all content has a language varied version then make them mandatory.
 
 ## Enabling Language Variants on Document Types and Properties
 
@@ -30,7 +30,7 @@ You will now find a language dropdown above your content tree - if it's not ther
 
 ![Language of Content Tree](images/language-content-tree.png)
 
-In the dropdown, you will find all the languages that you have installed on your site, and you can easily switch between them, to update the content variations for each language.
+In the dropdown, you will find all the languages that you have installed on your site, and you can switch between them, to update the content variations for each language.
 
 Now, before we go ahead and start creating the Danish content variation, we need to add hostnames to each language on the *root node* (in our case, the "Home Page").
 
@@ -56,8 +56,7 @@ You can now click publish at the bottom of the page and it will give you the opt
 
 ![Publishing Variant content](images/publishing-variant-content.png)
 
-Now if you head on over to your contact us page you will see it looks the same, but if you then access /kontakt-os or whatever you have called the new Language Varied node, then you will see the headline change to what you put in!
-
+Now if you head on over to your contact page you will see it looks the same. If you then access /kontakt-os or whatever you have called the new Language Varied node, then you will see the headline change to what you put in.
 
 ## Next - [Conclusions and Where Next?](Conclusions-Where-Next)
 By this point you'll have a basic working site - where next?  You've barely scratched the surface of the power of Umbraco!

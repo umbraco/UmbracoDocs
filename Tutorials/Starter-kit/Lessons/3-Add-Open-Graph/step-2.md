@@ -11,7 +11,7 @@ You are now going to add the tab and properties to the home page and blog post o
 3. Choose the `Open Graph` composition.
 4. Save the document type
 
-This will add the tab and properties you just created to the Home document type. Follow the same steps for the `Blogpost` document type.
+This will add the tab and properties you created to the Home document type. Follow the same steps for the `Blogpost` document type.
 
 ### Reviewing the changes
 If you go to the content section and select Home you can now see your changes (the same of course goes for the blog posts).

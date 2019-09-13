@@ -40,7 +40,7 @@ Part 2 - using the Master template to create new page types.
 
 
 ## [Master Template - The Navigation Menu](Master-Template-The-Navigation-Menu)
-A simple solution for the template in the menu. 
+A solution for the template in the menu. 
 
 
 ## [Articles Parent and Article Items](Articles-Parent-and-Article-Items)

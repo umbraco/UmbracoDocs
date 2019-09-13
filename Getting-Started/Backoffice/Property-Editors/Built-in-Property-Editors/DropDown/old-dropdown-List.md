@@ -24,7 +24,7 @@ You can add, edit & delete the data prevalues rendered within the dropdown list.
 
 ## MVC View Example to output selected value
 
-### Simple typed example
+### Typed example
 
 ```csharp
 @if (Model.Content.HasValue("superHero"))
@@ -33,7 +33,7 @@ You can add, edit & delete the data prevalues rendered within the dropdown list.
 }
 ```
 
-### Simple dynamic example
+### Dynamic example
 
 ```csharp
 @if (CurrentPage.HasValue("superHero"))

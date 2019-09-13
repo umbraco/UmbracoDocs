@@ -10,7 +10,7 @@ The date picker uses a front-end library called [PikaDay.js](https://github.com/
 
 As of Umbraco Forms 4.4.0 we have added the support for the Pikaday date picker to be localised based on the page the form is rendered on.
 
-This displays the picked date in the correct locale, but using JavaScript we update a hidden field with a standard date format to send to the server for storing the record submission in a standard format, to avoid locale mixing up dates.
+This displays the picked date in the correct locale. Using JavaScript we update a hidden field with a standard date format to send to the server for storing the record submission in a standard format. This is to avoid locale mixing up dates.
 
 To achieve this, a Razor partial view is included - you can find it here: `/Views/Partials/Forms/DatePicker.cshtml`. 
 

@@ -7,7 +7,7 @@ needsV8Update: "true"
 
 `Returns: Boolean`
 
-True/False is a simple checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
+True/False is a checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
 
 ## Data Type Definition Example
 
@@ -21,7 +21,7 @@ The True/False property has a setting which allows you to set the default value 
 
 ## MVC View Example - displays a list of links to child pages that are not hidden
 
-### Typed:
+### Typed
 
 ```csharp
 @{
@@ -34,7 +34,7 @@ The True/False property has a setting which allows you to set the default value 
 }
 ```
 
-### Dynamic (Obsolete):
+### Dynamic (Obsolete)
 
 See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
 

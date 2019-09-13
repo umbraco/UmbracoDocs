@@ -14,6 +14,8 @@ Yes, until the end of 2019 you are still able to create Umbraco 7 Projects on Um
 
 When creating a new paid Umbraco Cloud project, you’ll get the option to create it in either Umbraco 7 or Umbraco 8.
 
+If you're running an Umbraco Cloud Baseline project on Umbraco 7 you are able to create new Umbraco 7 child projects up until February 28th 2021. 
+
 ## For how long will Umbraco 7 projects be supported on Umbraco Cloud?
 
 We will continue to support Umbraco 7 project on Umbraco Cloud until September 30th 2023. Support means providing you with necessary updates in regard to bug and security fixes. Following September 30th 2023, Umbraco 7 project will no longer work on Umbraco Cloud, thus, we recommend you make sure you migrate your projects to Umbraco 8 before this date.  

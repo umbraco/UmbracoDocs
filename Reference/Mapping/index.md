@@ -26,7 +26,7 @@ If you would like to see some more examples you can check out [this unit test fr
 
 Mapping with the UmbracoMapper works in ways very similar to AutoMapper:
 
-```cs
+```csharp
 // assuming source is ISource, create a new target instance
 var target = umbracoMapper.Map<ITarget>(source);
 
@@ -36,7 +36,7 @@ target = umbracoMapper.Map(source, target);
 
 The UmbracoMapper class also defines explicit methods to map enumerables:
 
-```cs
+```csharp
 // assuming sources is IEnumerable<ISource>, map to IEnumerable<ITarget>
 var targets = umbracoMapper.MapEnumerable<ISource, ITarget>(sources);
 ```
@@ -45,7 +45,7 @@ Explicit mapping of enumerables enumerates the source items, and map each item i
 
 It can also implicitly map enumerables. The following code is also valid:
 
-```cs
+```csharp
 // assuming sources is IEnumerable<ISource>, map to IEnumerable<ITarget>
 var targets = umbracoMapper.Map<IEnumerable<ITarget>>(sources);
 ```
@@ -56,20 +56,20 @@ If a mapping has been defined from `IEnumerable<ISource>` to `IEnumerable<ITarge
 
 Mappings are defined in `IMapDefinition` instances. This interface defines one method:
 
-```cs
+```csharp
 void DefineMaps(UmbracoMapper mapper);
 ```
 
 Mappings are registered (and must be registered) via a [collection builder](../../Implementation/Composing/index.md#Collections):
 
-```cs
+```csharp
 composition.WithCollectionBuilder<MapDefinitionCollectionBuilder>()
     .Add<MyMapDefinition>();
 ```
 
 A definition provides a constructor, and a map:
 
-```cs
+```csharp
 public void DefineMaps(UmbracoMapper mapper)
 {
     mapper.Define<ISource, ITarget>(
@@ -81,13 +81,13 @@ public void DefineMaps(UmbracoMapper mapper)
 
 The constructor function is used to create an instance of the target class. The most basic implementation would be:
 
-```cs
+```csharp
 (source, context) => new TargetClass(),
 ```
 
 The mapping action is used to map an instance of the source class, to an instance of the target class. The most basic implementation would be:
 
-```cs
+```csharp
 (source, target, context) =>
 {
     target.MyProperty1 = source.MyProperty1;
@@ -121,7 +121,7 @@ The context provides a `HasItem` property. To check whether the context has item
 
 The context is used, for instance, to carry the culture when mapping content items with variants. See the `MapperContextExtensions` class, which contains methods such as:
 
-```cs
+```csharp
 public static void SetCulture(this MapperContext context, string culture)
 {
     context.Items[CultureKey] = culture;
@@ -130,7 +130,7 @@ public static void SetCulture(this MapperContext context, string culture)
 
 And
 
-```cs
+```csharp
 public static string GetCulture(this MapperContext context)
 {
     return context.HasItems &&
@@ -143,7 +143,7 @@ public static string GetCulture(this MapperContext context)
 
 Every `Map` and `MapEnumerable` method exposed by the UmbracoMapper have overloads that can manipulate the context before executing the mapping. For instance,
 
-```cs
+```csharp
 var target = umbracoMapper.Map<ITarget>(source, context =>
     {
         context.SetCulture(cultureName);
@@ -158,7 +158,7 @@ The code lives in the [Umbraco.Code repository](https://github.com/umbraco/Umbra
 
 The analyzer examines every method mapping from a source to a target, and being marked with the `// Umbraco.Code.MapAll` comment block:
 
-```cs
+```csharp
 mapper.Define<ISource, ITarget>(
         (source, context) => new Target(),  // constructor
         Map                                 // map
@@ -180,24 +180,24 @@ Since, contrary to AutoMapper, mapping is not implicit nor automatic, this ensur
 
 It is possible to exclude some properties from the check:
 
-```cs
+```csharp
 // Umbraco.Code.MapAll -Property2
 ```
 
 And the comment can be repeated if the list of excluded properties is long:
 
-```cs
+```csharp
 // Umbraco.Code.MapAll -Property2 -Property3 -Property4
 // Umbraco.Code.MapAll -Property5 -Property6 -Property7
 ```
 
-The analyzer follows the standard analyzer development patterns, and simply building the code in Release mode produces the appropriate NuGet package.
+The analyzer follows the standard analyzer development patterns, and building the code in Release mode produces the appropriate NuGet package.
 
 ## Full example
 
 Below you will find a full example showing you how to map a collection of type Product to a collection of type ProductDto.
 
-```cs
+```csharp
 #region Models
 
 public class Product

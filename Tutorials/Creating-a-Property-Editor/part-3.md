@@ -9,7 +9,7 @@ needsV8Update: "true"
 ## Overview
 This is step 3 in the property editor tutorial. In this part, we will integrate one of the built-in Umbraco services. For this sample, we will use the *dialog service* to hook into the *media picker* and return image data to the markdown editor.
 
-## Injecting the service.
+## Injecting the service
 First up, we need to get access to the service, this is done in the constructor of the controller, where we add it as a parameter:
 
 ```javascript
@@ -22,7 +22,7 @@ angular.module("umbraco")
 this works the same way as with the *assetsService* we added in step 1.
 
 ## Hooking into pagedown
-The pagedown editor we are using, has a nice event system in place, so we can easily hook into the events triggered by the media chooser, by adding a hook, after the editor has started:
+The pagedown editor we are using, has a nice event system in place, so we can hook into the events triggered by the media chooser, by adding a hook, after the editor has started:
 
 ```javascript
 // Start the editor

@@ -5,7 +5,7 @@ needsV8Update: "true"
 
 # Using Variables and Parameters
 
-Variables and parameters are temporary storage devices in XSLT for holding simple values to complete node sets of data.
+Variables and parameters are temporary storage devices in XSLT for holding values to complete node sets of data.
 
 Variables are defined with a name, and can be filled two different ways.  The first method is to select the data into the variable as follows:
 

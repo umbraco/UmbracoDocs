@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 ---
 
 # Log Viewer
-From version 8 we are now shipping a built in Log Viewer feature, to allow you to filter and view log entries and perform much more complex search queries to help you find the log entries that you are interested in your Umbraco site.
+From version 8 we are shipping a built-in Log Viewer feature. This allows you to filter and view log entries and perform much more complex search queries to help you find the log entries that you are interested in your Umbraco site.
 You can find the log viewer in the settings section.
 
 ## Benefits
@@ -30,7 +30,7 @@ When writing a custom query that you wish to use often, it is possible to save t
 With the flexibility of Umbraco, we give you the power to implement your own `ILogViewer` where you are able to fetch logs and the saved searched from a different location such as Azure table storage.
 
 ### Create your own implementation
-To easily do this we can implement a base class `LogViewerSourceBase` from `Umbraco.Core.Logging.Viewer` like so.
+To do this we can implement a base class `LogViewerSourceBase` from `Umbraco.Core.Logging.Viewer` like so.
 *Note:* This uses the `WindowsAzure.Storage` nuget package
 
 ```csharp

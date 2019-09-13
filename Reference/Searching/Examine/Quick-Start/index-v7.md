@@ -48,10 +48,10 @@ Notice that the prefix is all the same, this is a requirement. The suffixes must
 
 ## Searching
 
-In all of these examples we assume that the page that is being loaded has a query string in the Url called 'query', for example the URL might be: https://mysite.com/search?query=Hello which means we are searching for the term *Hello*
+In all of these examples we assume that the page that is being loaded has a query string in the Url called 'query'. For example the URL might be: https://mysite.com/search?query=Hello which means we are searching for the term *Hello*.
 
 :::note
-Since this is a simple quick start tutorial, these examples will search against all published content in your Umbraco site. There are many different ways in which we can limit the search to only find content based on a certain criteria.
+Since this is a quick start tutorial, these examples will search against all published content in your Umbraco site. There are many different ways in which we can limit the search to only find content based on a certain criteria.
 :::
 
 ### MVC
@@ -78,7 +78,7 @@ To complete more complex searches, we can use the ExamineManager and our custom 
 
 ### Fluent API
 
-Examine offers a fluent search API which aims to make constructing complex searches simple. The underlying API is determined by the provider implementation, with Examine just exposing the appropriate methods. With the fluent API, we can introduce fuzzy-text search and boosting, which allows us to favour a search result if our search term is found in particular fields, including custom fields added to document types. 
+Examine offers a fluent search API which aims to make constructing complex searches straight-forward. The underlying API is determined by the provider implementation, with Examine exposing the appropriate methods. With the fluent API, we can introduce fuzzy-text search and boosting, which allows us to favour a search result if our search term is found in particular fields, including custom fields added to document types. 
 
 ```csharp
 using Examine.LuceneEngine.SearchCriteria;

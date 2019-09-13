@@ -12,7 +12,7 @@ _This guide will help you get setup quickly using Examine with minimal configura
 In the coming examples the Umbraco Starter Kit has been used, as it gives some content to be searched upon quickly. Some of the examples may require setting up templates, etc if you are following on your own site.
 :::
 
-The starter kit comes with some Templates, Document Types and content nodes set up already. We will use some of those to set up a simple search system.
+The starter kit comes with some Templates, Document Types and content nodes set up already. We will use some of those to set up a search system.
 
 We will make it possible to search on the _People_ page.
 

@@ -10,7 +10,7 @@ The [standard upgrade instructions](https://our.umbraco.com/documentation/Instal
 
 ## Backup
 
-Just like with any upgrade, it is critical that you back up your website and database before upgrading. There are several database changes made during install and you cannot revert an v7 database to a v6 database.
+Like with any upgrade, it is critical that you back up your website and database before upgrading. There are several database changes made during install and you cannot revert an v7 database to a v6 database.
 
 ## .Net 4.5
 
@@ -23,7 +23,7 @@ Umbraco 7 requires browsers with proper html 5 support, these include Chrome, Fi
 
 ## Breaking changes
 
-Before you upgrade you should read the list of breaking changes, in some cases you may need to change some of your codebase if code has been removed from the core or if one of these breaking changes directly affects your install.
+Before you upgrade you should read the list of breaking changes. In some cases you may need to change some of your codebase if code has been removed from the core or if one of these breaking changes directly affects your install.
 
 See: [List of breaking changes](https://our.umbraco.com/contribute/releases/700)
 
@@ -119,7 +119,7 @@ which have not been completed for v7.0:
 * Image cropper
 
 ### Related links property editor and xslt
-Since this is an advanced prop editor the data format has changed from xml to json this shouldn't have any effect when retrieving the data from razor but if you are outputting related links data with xslt you'll need to update your xslt snippet. Making use of the new library method umbraco.library:JsonToXml and taking into account that the xml structure has also slightly changed.
+Since this is an advanced property editor, the data format has changed from xml to json. This shouldn't have any effect when retrieving the data from razor, but if you are outputting related links data with xslt you'll need to update your xslt snippet. Making use of the new library method umbraco.library:JsonToXml and taking into account that the xml structure has also slightly changed.
 
 ### GUID -> Alias mapping
 
@@ -127,9 +127,9 @@ There are several database changes made in v7, one of which is the change of ref
 
 ## Parameter Editors
 
-Legacy parameter editors (pre v7) will not work with Umbraco v7. If Umbraco detects a legacy parameter editor alias that does not map to a real v7 parameter editor it will simply render a textbox in its place. You will need to update your macros to use a compatible v7 parameter editor for those that aren't supported.
+Legacy parameter editors (pre v7) will not work with Umbraco v7. If Umbraco detects a legacy parameter editor alias that does not map to a real v7 parameter editor it will render a textbox in its place. You will need to update your macros to use a compatible v7 parameter editor for those that aren't supported.
 
-Previously parameter editors were registered in an Umbraco database table: `cmsMacroPropertyType` which no longer exists. Parameter editors in v7 are plugins just like property editors. During the v7 upgrade installation process it will update the new `cmsMacroProperty.editorAlias` column with the previous parameter editor alias. During this process it will look into the `Umbraco.Core.PropertyEditors.LegacyParameterEditorAliasConverter` for a map between a legacy alias to a new v7 alias.
+Previously parameter editors were registered in an Umbraco database table: `cmsMacroPropertyType` which no longer exists. Parameter editors in v7 are plugins like property editors. During the v7 upgrade installation process it will update the new `cmsMacroProperty.editorAlias` column with the previous parameter editor alias. During this process it will look into the `Umbraco.Core.PropertyEditors.LegacyParameterEditorAliasConverter` for a map between a legacy alias to a new v7 alias.
 
 If you have custom legacy parameter editors and want to map them during install to new v7 parameter editor aliases you can modify this mapping during application startup using this method: `Umbraco.Core.PropertyEditors.LegacyParameterEditorAliasConverter.CreateMap`
 
@@ -146,9 +146,9 @@ For database change details see (including all child tasks):
 
 *(see above for the database updates made for better tag support)*
 
-* Tags can now be assigned to a node’s property not just a node
+* Tags can now be assigned to a node’s property and not only a node
 * Multiple tag controls can exist on one page with different data
-	* The legacy API does **not** support this, the legacy API will effectively just add/update/remove tags for the first property found for the document that is assigned a tag property editor.
+	* The legacy API does **not** support this, the legacy API will effectively, add/update/remove tags for the first property found for the document that is assigned a tag property editor.
 * There is a new ITagService which can be used to query tags
 	* Querying for tags in a view (front-end) can be done via the new TagQuery class which is exposed from the UmbracoHelper. For example: `@Umbraco.TagQuery.GetTagsForProperty`
 
@@ -168,7 +168,7 @@ The TypeFinder has been deprecated since 4.10 and is now found under Umbraco.Cor
 
 ### JavaScript in menu actions
 
-While you need to have JavaScript inside menu actions to trigger a response, it is highly recommended that you use the recommended UmbClientMgr methods, and not try to override parent.right.document and similar tricks to get to the right-hand frame.
+While you need to have JavaScript inside menu actions to trigger a response, it is highly recommended that you use the recommended UmbClientMgr methods. You should not try to override parent.right.document and similar tricks to get to the right-hand frame.
 
 ### Use the recommended Umbraco uicontrols
 

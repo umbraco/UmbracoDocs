@@ -20,8 +20,7 @@ This will by default use the view `/views/partials/grid/bootstrap3.cshtml` you c
 @Html.GetGridHtml(Model.Content, "propertyAlias", "bootstrap2")
 ```
 
-You can create your own custom grid rendering files (eg for your favourite or custom grid framework implementation - tip: copy one of the existing files as a starting point)
- by convention if you create your "mycustomrenderer.cshtml" file in `/views/partials/grid` you can render the grid property like so:
+You can create your own custom grid rendering files e.g for your favourite or custom grid framework implementation. Tip: copy one of the existing files as a starting point. By convention, if you create your "mycustomrenderer.cshtml" file in `/views/partials/grid` you can render the grid property like so:
 
 ```csharp
 @Html.GetGridHtml(Model.Content, "propertyAlias", "mycustomrenderer")
@@ -35,7 +34,7 @@ or alternatively you can provide the path to where the file resides:
 
 ## Using @CurrentPage.GetGridHtml() or @Model.Content.GetGridHtml() (Obsolete)
 
-Finally the **Html.GetGridHtml()** helpers are the recommended approach for rendering grid properties in templates, however you may see in grid examples or discover in your existing site 'legacy code' when using the 'dynamic' CurrentPage approach for working with Umbraco templates and grid properties:
+Finally the `Html.GetGridHtml()` helpers are the recommended approach for rendering grid properties in templates. You may see in grid examples or discover in your existing site 'legacy code' when using the 'dynamic' CurrentPage approach for working with Umbraco templates and grid properties:
 
 ```csharp
 @CurrentPage.GetGridHtml(Html, "propertyAlias")

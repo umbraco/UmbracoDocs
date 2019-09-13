@@ -9,7 +9,7 @@ _Shows how to perform common logical tasks in Razor like if/else, foreach loops,
 
 ## The @ symbol
 
-The @ symbol is used in Razor initiate code, and tell the compiler where to start interpreting code, instead of just return the contents of the file as text. Using a single character for this separation, results in cleaner, compact code which is easier to read.
+The @ symbol is used in Razor initiate code, and tell the compiler where to start interpreting code, instead of return the contents of the file as text. Using a single character for this separation, results in cleaner, compact code which is easier to read.
 
 ```csharp
 @*Writing a value inside a html element *@

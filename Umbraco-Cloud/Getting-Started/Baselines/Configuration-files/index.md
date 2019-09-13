@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # Handling configuration files
 
-When you are doing your normal development process, you'd just be updating the configuration files in your solution as usual. When you are working with a Baseline setup there are a few things to keep in mind.
+When you are doing your normal development process, you'd be updating the configuration files in your solution as usual. When you are working with a Baseline setup there are a few things to keep in mind.
 
 When you are deploying updates from the Baseline project to the Child projects, all solvable merge conflicts on configuration files will be solved by using the setting on the Child project. 
 
@@ -23,7 +23,7 @@ When you need specific configuration on Child projects, you should always use co
 :::
 
 # Examples
-Just a few examples of what could be transformed in the child sites. 
+Here is a few examples of what could be transformed in the child sites. 
 ## Adding, or updating app settings (i.e. child-appsettings.web.live.xdt.config)
 
 ```xml

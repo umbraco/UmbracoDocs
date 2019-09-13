@@ -4,7 +4,7 @@ versionRemoved: 8.0.0
 ---
 
 # Courier data integrity fix
-We recently discovered a bug introduced in Courier 2.51.0, which has now been fixed in 2.51.4 and all versions above 2.51.4.  
+We recently discovered a bug introduced in Courier `2.51.0`, which has now been fixed in `2.51.4` and all versions above `2.51.4`.  
 This bug affects people who use inherited document types or compositions on their document types.
 
 ## Symptoms
@@ -35,7 +35,7 @@ In order to figure out if you are affected by this problem you can run the follo
 
 If this query gives you any result then you are affected by this problem and you need to run the query to fix this.
 
-Just checking, you did back up your database, right?
+You did back up your database, right?
 
 Alright, now that you've got a backup of all of the databases that you're going to run the following delete query on, let's show you what to do:
 
@@ -58,6 +58,6 @@ The error you've seen in your backoffice should say something like `Source 0 / D
 ## Future
 Courier version 2.51.4 and higher will detect if your source or target environment were impacted by this problem and will show you a link to this document if the problem is detected.
 
-We opted not to automatically fix this for you because we want to make absolutely sure that we don't delete any data in an unrecoverable way, this is why we keep urging you to make sure to make backups before doing anything.
+We opted not to automatically fix this for you because we want to make absolutely sure that we don't delete any data in an unrecoverable way. This is why we keep urging you to make sure to make backups before doing anything.
 
 We'll await your feedback and based on that, we'll be able to include an automatic fix for this issue in a future version of Courier. 

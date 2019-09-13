@@ -22,7 +22,7 @@ Notice 2 things:
 * The `GetCacheItem` method is strongly typed and
 * We are supplying a callback method which is used to populate the cache if it doesn't exist.
 
-The example above is very simple, it will retrieve a strongly typed object of `MyObject` from the cache with the key of "MyCacheKey", if the object doesn't exist in the cache a new instance of `MyObject` will be added to it with the same key.
+The example above will retrieve a strongly typed object of `MyObject` from the cache with the key of "MyCacheKey", if the object doesn't exist in the cache a new instance of `MyObject` will be added to it with the same key.
 
 There are many overloads of `GetCacheItem` allowing you to customize how your object is cached from cache dependencies to expiration times.
 
@@ -30,9 +30,9 @@ To use this generic implementation, add the `Umbraco.Core.Cache` namespace to yo
 
 ### Retrieving an item from the cache without a callback
 
-One of the overloads of `GetCacheItem` doesn't specify a callback, this will allow  you to simply retrieve an item from the cache without populating it if it doesn't exist.
+One of the overloads of `GetCacheItem` doesn't specify a callback, this will allow  you to retrieve an item from the cache without populating it if it doesn't exist.
 
-The usage is very simple:
+An example of usage:
 
 ```csharp
 MyObject cachedItem = ApplicationContext.ApplicationCache.RuntimeCache
@@ -41,4 +41,4 @@ MyObject cachedItem = ApplicationContext.ApplicationCache.RuntimeCache
 
 ### Inserting an item into the cache without retrieval
 
-Sometimes you might want to just put something in the cache without actually retrieving it. In this case there is an `InsertCacheItem<T>` method with a few overloads. This method will add or update the cache item specified by the key so if the item already exists in the cache, it will be replaced.
+Sometimes you might want to put something in the cache without retrieving it. In this case there is an `InsertCacheItem<T>` method with a few overloads. This method will add or update the cache item specified by the key so if the item already exists in the cache, it will be replaced.

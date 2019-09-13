@@ -21,7 +21,7 @@ The Repeatable textstrings property editor enables a content editor to make a li
 
 ## MVC View Example
 
-### Typed:
+### Typed
 
 ```csharp
 @{
@@ -37,7 +37,7 @@ The Repeatable textstrings property editor enables a content editor to make a li
 }
 ```
 
-### Dynamic (Obsolete):
+### Dynamic (Obsolete)
 
 See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
 

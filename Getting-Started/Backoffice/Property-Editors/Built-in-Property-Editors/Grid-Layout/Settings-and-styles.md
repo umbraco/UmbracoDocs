@@ -74,7 +74,7 @@ Alternatively you can also pass in a path to a custom view like "/app_plugins/gr
 
 and will translate in to three different options where each string will become a radiobutton. The strings represent the value of the options.
 
-**In Umbraco 7.5.4 & newer** prevalues can also be defined as an object of label/value allowing to have a displayed label instead of showing the actual underlying value. You can even mix and match these and use both label/value prevalues and simple string prevalues in the same configuration:
+**In Umbraco 7.5.4 & newer** prevalues can also be defined as an object of label/value allowing to have a displayed label instead of showing the actual underlying value. You can even mix and match these and use both label/value prevalues and string prevalues in the same configuration:
 
 ```json
 "prevalues":[
@@ -90,7 +90,7 @@ and will translate in to three different options where each string will become a
 ]
 ```
 
-**modifier** is a basic way to prepend, append or wrap the value from the editor in a simple string. This is especially useful when working with custom styles which often requires additional values to function. For instance if you want to set a background image you can get an image path from the image picker view. But in order for it to work with css it has to be wrapped in `url()`. In that case you set the **modifier** to `url('{0}')` which means that `{0}` is replaced with the editor value.
+**modifier** is a basic way to prepend, append or wrap the value from the editor in a string. This is especially useful when working with custom styles which often requires additional values to function. For instance if you want to set a background image you can get an image path from the image picker view. But in order for it to work with css it has to be wrapped in `url()`. In that case you set the **modifier** to `url('{0}')` which means that `{0}` is replaced with the editor value.
 
 **applyTo** defines what this setting can be applied to. It should be either **row** or **cell** as a string.
 
@@ -179,4 +179,4 @@ You can add multiple settings and styles configurations on a data type. This is 
 
 
 ### Full-width settings and styles
-It is possible to use settings and styles to add full-width background-images, background-colors and so forth. Just make sure the surrounding *section* is full-width(12 columns by default) and the *rows* inside it will automatically become full-width.
+It is possible to use settings and styles to add full-width background-images, background-colors and so forth. Make sure the surrounding *section* is full-width(12 columns by default) and the *rows* inside it will automatically become full-width.

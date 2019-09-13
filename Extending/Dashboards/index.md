@@ -189,7 +189,7 @@ For reference, here is a list of the weighting values for the default Umbraco da
 ### Add Language Keys
 After registering your dashboard, it will appear in the backoffice - however it will have it's dashboard alias [mycustomdashboard] wrapped in square brackets. This is because it is missing a language key. The language key allows people to provide a translation of the dashboard name in multilingual environments. To remove the square brackets - add a language key:
 
-If your dashboard is unique to your Umbraco installation then you can modify the following application language file: `config/lang/en-US.user.xml` however if the dashboard is to be released as an Umbraco package and shared with others to use in their own Umbraco installation then you will need to create a *lang* folder in your custom dashboard folder and create a package specific language file:  `App_Plugins/Mycustomdashboard/lang/en-US.xml`
+If your dashboard is unique to your Umbraco installation then you can modify the following application language file: `config/lang/en-US.user.xml`. If the dashboard is to be released as an Umbraco package and shared with others to use in their own Umbraco installation, you will need to create a *lang* folder in your custom dashboard folder. You also need to create a package specific language file:  `App_Plugins/Mycustomdashboard/lang/en-US.xml`.
 
 [Read more about language files](../Language-Files/index.md)
 
@@ -203,7 +203,9 @@ If your dashboard is unique to your Umbraco installation then you can modify the
 ```
 
 ### Specifying permissions
-You can configure which applications/sections a dashboard will appear in, in the above examples (package.manifest or c#), you can see the alias of the section is used to control where the dashboard is allowed to appear. Further to this, within this section, you can control which Users can see a particular dashboard based upon the *User Groups* they belong to by setting the 'access' permissions based on the *User Group* alias, you choose to deny or grant a particular User Group's access to the dashboard.
+You can configure which applications/sections a dashboard will appear in, in the above examples (package.manifest or c#), you can see the alias of the section is used to control where the dashboard is allowed to appear. 
+
+Further to this, within this section, you can control which Users can see a particular dashboard based upon the *User Groups* they belong to. This is done by setting the 'access' permissions based on the *User Group* alias, you choose to deny or grant a particular User Group's access to the dashboard.
 
 ```json
 {
@@ -254,7 +256,9 @@ namespace My.Website
 ```
 
 ## Remove an Umbraco dashboard
-In previous versions of Umbraco if you wanted to remove or modify the order of a default dashboards you would ammend the `config/dashboards.config` file on disk. With V8+ the configuration file approach has been removed and you need to use code to create your own *composer* (a c# class that can be used to organise and customise your Umbraco application to your own needs) to remove a dashboard. For example - if you wanted to remove the 'Content Dashboard' you would create a RemoveDashboard composer like this:
+In previous versions of Umbraco if you wanted to remove or modify the order of a default dashboards you would ammend the `config/dashboards.config` file on disk. 
+
+In Umbraco 8+ the configuration file approach has been removed and you need to use code to create your own *composer* to remove a dashboard. It could be a c# class that can be used to organise and customise your Umbraco application to your own needs. For example - if you wanted to remove the 'Content Dashboard' you would create a RemoveDashboard composer like this:
 
 ```csharp
 using Umbraco.Core;

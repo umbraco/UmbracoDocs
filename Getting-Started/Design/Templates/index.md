@@ -96,7 +96,7 @@ For instance, if you want to be able to add HTML to your `<head>` tags write:
 </html>
 ```
 
-By default, when defining a section it is required. To make the section optional, simply add  `required:false`.
+By default, when defining a section it is required. To make the section optional add  `required:false`.
 
 ```csharp
 @RenderSection("Head", required: false)
@@ -133,7 +133,7 @@ the created partial can now be injected into any template by using the `@Html.Pa
 @Html.Partial("a-new-view")
 ```
 
-### Find More information:
+### Find More information
 
 - [Basic Razor syntax](basic-razor-syntax.md)
 - [Rendering content](../Rendering-Content/)

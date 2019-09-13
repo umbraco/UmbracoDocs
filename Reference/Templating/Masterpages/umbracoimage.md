@@ -7,7 +7,7 @@ versionTo: 8.0.0
 
 **Applies to: Umbraco 4.11.0+**
 
-The `umbraco:image` control enables you to easily add images from your content to your templates. The control is used as such:
+The `umbraco:image` control enables you to add images from your content to your templates. The control is used as such:
 
 	<umbraco:image runat="server" field="bannerImage" />
 
@@ -48,7 +48,7 @@ The `parameters` are provider specific. The default provider supports the upload
 	</tr>
 </table>
 
-### Example:
+### Example
 
 	<umbraco:Image runat="server" field="bannerImage" Parameters="crop=small" />
 

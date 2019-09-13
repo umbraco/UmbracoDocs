@@ -10,7 +10,7 @@ versionTo: 7.5.14
 
 `Returns: String`
 
-Textbox is a simple HTML input control for text.
+Textbox is an HTML input control for text.
 
 ## Data Type Definition Example
 
@@ -18,11 +18,11 @@ Textbox is a simple HTML input control for text.
 
 ## Settings
 
-## Content Example:
+## Content Example
 
 ![Textbox Content Example](images/7/Textbox-Content.png)
 
-## MVC View Example:
+## MVC View Example
 
 ```csharp
 @{
@@ -33,7 +33,7 @@ Textbox is a simple HTML input control for text.
 ```
 
 
-### Dynamic (Obsolete):
+### Dynamic (Obsolete)
 
 See [Common pitfalls](../../../../../Reference/Common-Pitfalls/index.md#dynamics) for more information about why the dynamic approach is obsolete.
 

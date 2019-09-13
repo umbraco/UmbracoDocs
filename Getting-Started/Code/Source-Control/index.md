@@ -11,13 +11,13 @@ If you are running your site on Umbraco Cloud - and why wouldn't you be? - then 
 
 ## Outside of Umbraco Cloud
 
-If you are hosting your Umbraco implementation outside of 'Umbraco Cloud', then it's generally considered 'good practice' to setup source/version control for your site implementation files, particularly if you are working with a team, to track changes and manage conflicts with other developer's work.
+If you are hosting your Umbraco implementation outside of 'Umbraco Cloud', it's generally considered 'good practice' to setup source/version control for your site implementation files. This is especially a good idea when you are working with a team as it can help you track changes and manage conflicts with other developer's work.
 
 So if you've made the decision to try to attempt to source/version control your Umbraco implementation work, perhaps setting up a ['Git Repository'](https://en.wikipedia.org/wiki/Git) - then a frequently asked question is:
 
 ### What folders and files should I **exclude** from my source control repository?
 
-There are lots of different possible variations within your working environment that will affect the best way to setup version control, much depends on whether you are:
+There are lots of different possible variations within your working environment that will affect the best way to setup version control. It depends on whether you are:
 
 - Working with a team of developers,
 - How you have installed Umbraco,
@@ -25,7 +25,7 @@ There are lots of different possible variations within your working environment 
 - Source control repository
 - And also how you intend to build and deploy your solution to your target production environment (build servers, Web Deploy or good old FTP etc)
 
-So this documentation can't be an exhaustive list of how to version control Umbraco in all possible scenarios, but hopefully will give you an insight into the anatomy of how an Umbraco website hangs together and therefore which parts to include in version control and which parts not to.
+This documentation can't be an exhaustive list of how to version control Umbraco in all possible scenarios. Hopefully it will give you an insight into the anatomy of how an Umbraco website hangs together and therefore which parts to include in version control and which parts not to.
 
 ![Typical set of Umbraco Project Folders](images/typical-umbraco-project-folders.png)
 
@@ -37,7 +37,7 @@ These should not need to be source controlled.
 
 Their contents change when you upgrade Umbraco, but no part of your implementation or third party packages installed should update these folders. Historically that has not always been the case, and in the past icons and plugins have been added within these folders, and they have needed to be added to source/version control.
 
-Generally if you are working with Visual Studio and a Build Server, it's Nuget's job to restore the correct versions of these folders for you and generally you wouldn't include these folders in your Visual Studio project, there is a build step, that ensures they are 'deployed' along with your solution when using Web Deploy.
+Generally if you are working with Visual Studio and a Build Server, it's Nuget's job to restore the correct versions of these folders for you. Generally you wouldn't include these folders in your Visual Studio project, as there is a build step, that ensures they are 'deployed' along with your solution when using Web Deploy.
 
 #### App_Data Folders
 
@@ -65,7 +65,7 @@ They include:
 - `Umbraco.sdf` - If you are using SQLCE for the data store in your Umbraco site, then this file IS that datastore, it will be difficult to source control the constant changes to this file.
 
 :::note
-There is a file /app_data/packages/installed/installedPackages.config that lists all packages installed via the Umbraco backoffice, depending on how you update or install packages to your site, it can be useful to track changes to this file in source control
+There is a file `/app_data/packages/installed/installedPackages.config` that lists all packages installed via the Umbraco backoffice, depending on how you update or install packages to your site, it can be useful to track changes to this file in source control
 :::
 
 #### Umbraco Models Builder
@@ -84,8 +84,9 @@ The Media section of Umbraco (unless configured otherwise) stores files in the /
 
 #### Packages and Plugins
 
-The **App_Plugins** folder is the home for all third party packages installed on your site
-Depending on how you installed the plugin - Nuget vs The Backoffice, how you deploy your site to your production environment, and whether the plugin requires site specific configuration... will affect how you choose to version control a particular third party plugin. 
+The **App_Plugins** folder is the home for all third party packages installed on your site.
+
+Depending on how you installed the plugin it will affect how you choose to version control a particular third party plugin:
 
 - **Nuget + Buildserver** - if the plugin is installed via NuGet then as long as the packages.config file in the root of your project is source controlled, then the installed files for individual plugins shouldn't need to be source controlled (and your deployment process should pull the packages implementation files from Nuget during the build and deployment process).
 - **Nuget + Manual deploy** - here you don't necessarily need to source control the files, but you do need to remember to deploy them.
@@ -93,7 +94,7 @@ Depending on how you installed the plugin - Nuget vs The Backoffice, how you dep
 - **Backoffice + Buildserver** - you'll need to include the plugin files in source control as the build server won't know to restore them - if the plugin/package doesn't come with a NuGet resource, consider setting up your own local NuGet repository for your build server to pull the files from.
 
 :::note
-Each plugin could be different depending on its implementation and functionality, it may contain files that it would be useful to track via Source control, and also files that should be ignored: check with the plugin's supporting website/developer for more information.
+Each plugin could be different depending on its implementation and functionality. It may contain files that it would be useful to track via Source control, and also files that should be ignored: check with the plugin's supporting website/developer for more information.
 :::
 
 ### What folders and files should I **include** in my source control repository?
@@ -105,7 +106,7 @@ But generally you will need to source control all of your website's static asset
 
 #### Views/Templates/Partials
 
-Umbraco site templates/views can be edited via the Umbraco Backoffice, but ultimately they reside in the **/views** folder on disk (or **/masterpages** on webforms implementations), because these views/template often include code, it can make an awful lot of sense to have their changes tracked under source/version control.
+Umbraco site templates/views can be edited via the Umbraco Backoffice. They also reside in the **/Views** folder on disk (or **/masterpages** on webforms implementations). As these views/template often include code, it can make a lot of sense to have their changes tracked under source/version control.
 
 However this can pose a problem if the templates are updated via the backoffice outside of source control on the production environment.
 
@@ -141,7 +142,7 @@ Your site's /config folder contains the set of configuration files for your Umbr
 
 #### DocumentType - Backoffice Structure Changes
 
-When you create and edit DocumentTypes, MediaTypes, DataTypes, Macros, DictionaryItems, Languages, MemberTypes & Templates('names' not the actual files) in the Umbraco Backoffice these values are stored in the Umbraco Database, making them very difficult to source control in a 'file based' version control system.
+When you create and edit eg. Document Types, Media Types and Data Types in the Umbraco Backoffice these values are stored in the Umbraco Database, making them very difficult to source control in a 'file based' version control system.
 
 There are several add-on packages that can help add source control to these structure changes:
 

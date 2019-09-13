@@ -198,7 +198,7 @@ As Umbraco Forms comes with an Umbraco Cloud project, there are a few things you
 * The existing site uses Umbraco Forms
     * No extra steps needed, as you will have upgraded Umbraco Forms to the latest version before starting the migration
 
-The final thing to do before moving on, is to make sure your Umbraco Cloud user will be added to the new database you've just merged into the project. First you need to check if any Umbraco user uses the same email address as your Umbraco Cloud account. If this is the case you need to change the email address of the existing user to something else otherwise your Cloud user will be stuck in a inactive state. If you have confirmed there is no user with the same email address you can add the cloud by following these steps.
+The final thing to do before moving on, is to make sure your Umbraco Cloud user will be added to the new database you've merged into the project. First you need to check if any Umbraco user uses the same email address as your Umbraco Cloud account. If this is the case you need to change the email address of the existing user to something else otherwise your Cloud user will be stuck in a inactive state. If you have confirmed there is no user with the same email address you can add the cloud by following these steps.
 
 * Go to the `data/backoffice/users` folder in your Umbraco Cloud project files
 * Rename your user file by removing the leading underscore
@@ -246,7 +246,7 @@ All project files have been merged and we've generated UDA files for all the met
 
 1. In your Git client you should see a lot of changes ready to be committed
 2. Stage and commit the changes
-3. Do a *pull* just to be sure everything is in sync
+3. Do a *pull* to ensure everything is in sync
 4. **Push** your migrated project to the Umbraco Cloud environment - check that the *'Deploy Complete'* message is displayed
     * If you have a very large commit to push, you may need to configure your Git client for this
     * Use: git config http.postBuffer 524288000

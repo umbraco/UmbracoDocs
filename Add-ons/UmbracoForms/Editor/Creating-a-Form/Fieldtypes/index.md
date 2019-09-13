@@ -7,7 +7,7 @@ versionFrom: 7.0.0
 Umbraco Forms comes with a bunch of default fieldtypes (also known as **answer types**) you can choose from when adding new fields to your forms. Here is a detailed overview.
 
 ## Short Answer
-Simple textbox allows up to 250 characters.
+A textbox allows up to 250 characters.
 
 ![Textfield](images/shortanswer.png)
 
@@ -63,7 +63,7 @@ Outputs a title and description that are set as prevalues.
 ![Radiobuttonlist](images/titleanddescription.png)
 
 ## [Recaptcha](Recaptcha)
-The field displays a simple checkbox for the user to check in order for the form to be validated
+The field displays a single checkbox for the user to check in order for the form to be validated
 
 ![Recaptcha2](images/recaptcha2.png)
 

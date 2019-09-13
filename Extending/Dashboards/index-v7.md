@@ -43,7 +43,7 @@ The different sections, dashboards and their configuration (sort order and users
 
 ## Custom Dashboards
 
-Additionally, you can create your own custom dashboards, for extending Umbraco with single page AngularJS applications, or to support your site implementation - it is considered 'good practice' to create a custom Welcome Dashboard for your Umbraco implementation to support the day-to-day activities of editors using the Umbraco backoffice with 'quick links' and 'site statistics/information'.
+Additionally, you can create your own custom dashboards, for extending Umbraco with single page AngularJS applications, or to support your site implementation. It is considered 'good practice' to create a custom Welcome Dashboard for your Umbraco implementation to support the day-to-day activities of editors using the Umbraco backoffice with 'quick links' and 'site statistics/information'.
 
 ![Example Custom Welcome Dashboard](images/welcome-example.png)
 

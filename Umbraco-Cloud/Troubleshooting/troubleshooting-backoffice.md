@@ -12,7 +12,8 @@ Errors in the backoffice can be presented in many different ways, the most commo
 * A blank page when visiting the backoffice
 * Missing sections / trees
 
-#### If the error is during a content transfer / restore:
+#### If the error is during a content transfer / restore
+
 Start by clicking "View more details", often it will give you a link to a specific article with a guide on how to fix it. We have some guides on how to fix the most common errors below:
 * [Schema mismatch](Deployments/Schema-Mismatches)
 * [Dependency Exception](Deployments/Dependency-Exceptions)
@@ -27,7 +28,8 @@ Another thing to check would be the log files, relevant information can often be
 
 If you have issues with new user emails / Umbraco Forms emails not being sent it is likely because of your SMTP settings not being set or configured correctly, read more [here!](../Set-Up/SMTP-settings)
 
-#### If the error is something not loading in the backoffice:
+#### If the error is something not loading in the backoffice
+
 This can have many different causes, and as such we don't have specific guides on this, but to narrow it down there are some things you should check:
 
 * Do you have any rewrite rules? Often rewrite rules that are not set up correctly will cause issues with the backoffice, make sure that the following are negated:

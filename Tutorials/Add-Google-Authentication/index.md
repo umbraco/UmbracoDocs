@@ -18,7 +18,7 @@ It means when you log in to the backoffice you normally have to put in your user
 
 ### Why?
 
-Why not? I'm sure a lot of content editors and implementors of your Umbraco sites would love to have one less password to remember. It is also quick and easy, just click a button and if you are already logged into Google it will just log you in!
+Why not? I'm sure a lot of content editors and implementors of your Umbraco sites would love to have one less password to remember. Click a button and if you are already logged into Google it will log you in!
 
 ### Who is this tutorial for?
 
@@ -34,7 +34,7 @@ Here is what you will need for this tutorial:
 
 The first thing to do is set up a Google API. To do this you need to go to https://console.developers.google.com/, then log in with your Google account. 
 
-The first thing to do is to add a new API, you may have some already if you are using Firebase or any other Google product, but just click the + at the top:
+The first thing to do is to add a new API, you may have some already if you are using Firebase or any other Google product, but click the + at the top:
 
 ![Add new API](images/addNewApi.png)
 
@@ -42,7 +42,7 @@ After you have given your new API a name and gone through the basic setup you ne
 
 ![Add Google Plus API](images/addGooglePlus.png)
 
-Once you have enabled your new API, you will need credentials. Simply click on the button and fill in the info as below:
+Once you have enabled your new API, you will need credentials. Click on the button and fill in the info as below:
 
 ![Create Credentials](images/createCredentials.png)
 ![Fill out credentials](images/fillOutCredentials.png)
@@ -51,7 +51,7 @@ Add in your credentials and the domains that it should cover. As you can see I a
 
 ![Fill out credentials](images/credentials.png)
 
-Now just fill in your email and leave the page open - you will need the Client ID and Client Secret in a little while!
+Now, fill in your email and leave the page open - you will need the Client ID and Client Secret in a little while!
 
 ## Installing Visual Studio packages
 
@@ -71,7 +71,7 @@ Depending on which version of Umbraco you are using, you might run into some dep
 
 This will update the package and dependencies, and clear out the issues. 
 
-Now we need to build the website again then try to run it. Hopefully you reach the Umbraco page just like I did:
+Now we need to build the website again then try to run it. Hopefully you reach the Umbraco page like I did:
 
 ![Umbraco homepage](images/umbracoHomepage.png)
 
@@ -79,13 +79,13 @@ Next, we will install the package we need for Google authentication, for that pa
 
 `Install-Package UmbracoCms.IdentityExtensions.Google`
 
-Just like before, wait for the package to install then build and run the website.
+Like before, wait for the package to install then build and run the website.
 
 Now you have installed both packages, and your site still works (hopefully)! Now we have to configure the files to allow Google Authentication as login.
 
 ## Configuring the solution to allow Google logins
 
-The first thing to do is locate the files we just installed from the packages. They are located in the App_Code/App_start folder. There are two files we need to edit, first one is the file called UmbracoGoogleAuthExtensions.cs. The only thing you need to touch here is the callback path, this is what we set on the API as the redirect URL. If you followed my example it should be set to /google-signin:
+The first thing to do is locate the files we installed from the packages. They are located in the App_Code/App_start folder. There are two files we need to edit, first one is the file called UmbracoGoogleAuthExtensions.cs. The only thing you need to touch here is the callback path, this is what we set on the API as the redirect URL. If you followed my example it should be set to /google-signin:
 
 ![Callback path](images/callbackPath.png)
 
@@ -120,4 +120,4 @@ Build and run the website one final time. Now when you have logged into your bac
 
 ![link Google](images/linkGoogle.png)
 
-If you do that, then in all future backoffice logins you will have a button just like at the top of this guide that you can simply click and you are logged in!
+If you do that, then in all future backoffice logins you will have a button like at the top of this guide that you can click and you are logged in!

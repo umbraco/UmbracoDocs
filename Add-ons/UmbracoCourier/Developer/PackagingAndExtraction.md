@@ -13,7 +13,7 @@ To understand how Courier works, and to use its API, you must know and understan
 
 These 3 concepts are what enables Courier to perform deployments in a way that can decouple the Courier client from the sites/destinations it's deploying to/from. 
 
-The descriptions below are from an API point of view and provide simple examples on how to use each concept. 
+The descriptions below are from an API point of view and provide examples on how to use each concept. 
 
 ## Packaging
 Packaging collects data and files from a given target repository that supports packaging. Out of the box, any Courier enabled website supports this, however, you cannot perform a packaging on a network share or subversion repository.

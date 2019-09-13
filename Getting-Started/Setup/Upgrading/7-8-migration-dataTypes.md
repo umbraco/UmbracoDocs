@@ -11,7 +11,7 @@ In Umbraco 8 property editor configuration is a strongly typed object. There are
 
 This configuration is stored differently in Umbraco 8 than it was in Umbraco 7. In Umbraco 7, each pre-value property was stored as a different row in a different database table. This was hugely inefficient and so in Umbraco 8 this is simplified and property editor configuration is stored as the JSON serialized version of the strongly typed configuration object.
 
-When upgrading from Umbraco 7 to Umbraco 8, Umbraco has no way of knowing how any custom property editors have intended to structure their configuration data. During the upgrade, Umbraco will just convert the key/value pairs from the old pre-value database table into a serialized JSON version of those values. There's a reasonable chance that the end result of this data conversion is not compatible with the custom property editor.
+When upgrading from Umbraco 7 to Umbraco 8, Umbraco has no way of knowing how any custom property editors have intended to structure their configuration data. During the upgrade, Umbraco will convert the key/value pairs from the old pre-value database table into a serialized JSON version of those values. There's a reasonable chance that the end result of this data conversion is not compatible with the custom property editor.
 
 There are 3 options that a developer can choose to do to work around this automatic data conversion:
 
@@ -19,7 +19,7 @@ There are 3 options that a developer can choose to do to work around this automa
 
 This option will require you to create a custom C# migrator for each of your custom property editors that store custom configuration data and will require that you implement these migrators before you run the Umbraco 8 content migration.
 
-To do this you will create an implementation of `IPreValueMigrator` or you can also just inherit from the base class [`DefaultPreValueMigrator`](https://github.com/umbraco/Umbraco-CMS/blob/v8/dev/src/Umbraco.Core/Migrations/Upgrade/V_8_0_0/DataTypes/DefaultPreValueMigrator.cs).
+To do this you will create an implementation of `IPreValueMigrator` or you can also inherit from the base class [`DefaultPreValueMigrator`](https://github.com/umbraco/Umbraco-CMS/blob/v8/dev/src/Umbraco.Core/Migrations/Upgrade/V_8_0_0/DataTypes/DefaultPreValueMigrator.cs).
 
 There are plenty of examples of this in the [Umbraco-CMS codebase](https://github.com/umbraco/Umbraco-CMS/tree/v8/dev/src/Umbraco.Core/Migrations/Upgrade/V_8_0_0/DataTypes).
 
@@ -42,7 +42,7 @@ When running the migrations and encountering a custom configuration, Umbraco wil
 
 ## #2 Update your Angular configuration (pre-value) and property editor
 
-This option means that you will choose to just use the automatically converted JSON data format. In this case, it will mean updating your pre-value and property editors to use the new JSON configuration data. The converted data won't be much different than the original/intended data format so this might not be too much work.
+This option means that you will choose to use the automatically converted JSON data format. In this case, it will mean updating your pre-value and property editors to use the new JSON configuration data. The converted data won't be much different than the original/intended data format so this might not be too much work.
 
 ## #3 Update the Angular configuration (pre-value) editor
 

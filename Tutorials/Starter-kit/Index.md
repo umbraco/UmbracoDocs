@@ -6,7 +6,7 @@ needsV8Update: "true"
 # The Starter Kit
 The *Starter kit* is the default starter kit for Umbraco 7.6.4+ and is the perfect way to familiarise yourself with Umbraco CMS. Developed and maintained by Umbraco HQ and the Umbraco community it aims to give you the basic knowledge you need in order to hit the ground running.
 
-Installing the starter kit will give you a simple site where you can:
+Installing the starter kit will give you a basic site where you can:
 
 * Show the content creation and editing capabilities in Umbraco from a content editor's point of view.
 * Learn how to set up Umbraco by exploring the starter kit.
@@ -39,5 +39,5 @@ ___
 There are a number of ways you can contribute to the Starter kit.
 
 * **Issues/bugs/feature requests:** Reporting issues and bugs is a great way to start contributing. The goal of the starter kit is to teach best practices. It is important that it works as expected and that the lessons are easy to follow. You can report issues/bugs for the starter kit and for the starter kit lessons on the [project page](https://our.umbraco.com/projects/starter-kits/the-starter-kit/feedback/).
-* **Lessons:** Do you have a good idea for a lesson? You can submit your idea so someone can write a lesson or, you can [contribute](../../Contribute/index.md) by writing your own and submitting it to the [documentation repository](https://github.com/umbraco/UmbracoDocs/issues). It's easy to do, simply follow [this guide](https://github.com/umbraco/Umbraco-CMS/blob/v7/dev/.github/CONTRIBUTING.md).
+* **Lessons:** Do you have a good idea for a lesson? You can submit your idea so someone can write a lesson or, you can [contribute](../../Contribute/index.md) by writing your own and submitting it to the [documentation repository](https://github.com/umbraco/UmbracoDocs/issues). It's easy to do, follow [this guide](https://github.com/umbraco/Umbraco-CMS/blob/v7/dev/.github/CONTRIBUTING.md).
 

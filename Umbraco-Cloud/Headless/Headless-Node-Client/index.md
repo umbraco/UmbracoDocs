@@ -84,7 +84,7 @@ node .
 ```
 
 ### Using VS Code?
-If you are using VSCode as your editor then you can easily set up the editor to debug and easily inspect the values returned from the Umbraco Headless site by configuring the `.vscode/launch.json` file like so
+If you are using VSCode as your editor then you can set up the editor to debug and inspect the values returned from the Umbraco Headless site by configuring the `.vscode/launch.json` file like so
 
 ```json5
 {

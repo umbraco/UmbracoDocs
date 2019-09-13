@@ -46,7 +46,7 @@ If you wish to use something entirely different you can give the editor a separa
 ```
 
 ### Grid editor controller
-If you are building something just slightly more complex then a text area, you will need to add a controller to the grid editor view. So first add a ng-controller attribute to the grid editor html - this works just like building a property editor: 
+If you are building something slightly more complex then a text area, you will need to add a controller to the grid editor view. So first add a ng-controller attribute to the grid editor html - this works like building a property editor: 
 
 ```html
 <div ng-controller="my.custom.grideditorcontroller">
@@ -62,7 +62,7 @@ angular.module("umbraco").controller("my.custom.grideditorcontroller", function(
 });
 ```
 
-Finally, we need to tell Umbraco load this JavaScript controller when the Umbraco application boots, this is also just like building a property editor, so add your JavaScript (and css dependencies) in the `package.manifest` file in the `/yourpackage` folder, and configure it to load your controller file. 
+Finally, we need to tell Umbraco to load this JavaScript controller when the Umbraco application boots. This is like building a property editor. Add your JavaScript (and css dependencies) in the `package.manifest` file in the `/yourpackage` folder, and configure it to load your controller file. 
 
 ```json
 {

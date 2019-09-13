@@ -29,13 +29,13 @@ Create the following **_Tabs_** and **_Data Properties_**:
 
 Now go to the **_Settings > Document Types >Articles Main node > Permissions screen_** and you will notice that **_Articles Item_** has already been added as an allowed child node, this is because we created it as a Document Collection. 
 
-This allows us to create items under the main (which acts as a parent container). We also need to allow the **_Articles Main node_** to be created under the **_Homepage node_** (do this in the **_Settings > Document Types > Homepage node > Permissions screen >  Allowed child node types_** - don't add the **_Articles Item_** - only the main should be allowed at this level). 
+This allows us to create items under the main (which acts as a parent container). We also need to allow the **_Articles Main node_** to be created under the **_Homepage node_**. Do this in the **_Settings > Document Types > Homepage node > Permissions screen >  Allowed child node types_**. Don't add the **_Articles Item_** only the main should be allowed at this level. 
 
 Now go to **_Content > Homepage node (hover)> ..._** and create a node called "_Articles_" of type **_Articles Main_** (if you don't have this option go back and check your allowed child nodes - did you forget to click **_Save_**)?  Give the Articles node some content and a title. 
 
-When you click save you will notice that it has been created as a list view, this means that child nodes are automatically in a list to make it easier to see them, you can create new nodes from this section too, go ahead and create a few.
+When you click save you will notice that it has been created as a list view. This means that child nodes are automatically in a list to make it easier to see them, you can create new nodes from this section too, go ahead and create a few.
 
-Now you should have a content tree that looks like the image below (obviously with your own page node names).  Let's go update our templates we just created (automatically when we created the Document Types). First, update them to use the Master as a parent **_Settings > Templates > Articles Main node > Master template_** = "Master" - do the same for the Articles Item remembering to click **_Save_**. 
+Now you should have a content tree that looks like the image below (obviously with your own page node names).  Let's go update our templates we created (automatically when we created the Document Types). First, update them to use the Master as a parent **_Settings > Templates > Articles Main node > Master template_** = "Master" - do the same for the Articles Item remembering to click **_Save_**. 
 
 ![Content Tree With Articles](images/figure-40-articles-created-v8.png)
 
