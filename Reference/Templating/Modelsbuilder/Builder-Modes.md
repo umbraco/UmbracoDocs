@@ -69,12 +69,54 @@ Although it is possible to enable the API while still generating models into the
 
 When the API is enabled and the Visual Studio extension is installed:
 
-* Go to Visual Studio **Tools** | **Options** | **Umbraco** | **ModelsBuilder Options** and configure the URL to your website (e.g. http://www.example.com), and a login and password for an Umbraco user that has permission to access the _Developer_ section.
-* Create a folder in your solution -- pick your own name. Within that folder, create a C# file -- again, pick your own name. The file can contain code or be empty.
-* Edit the properties of the file and set the **Custom tool** value to **UmbracoModelsBuilder**.
-* Save the file, or right-click and _Run Custom Tool_. New files should appear underneath the file.
+- **Enable API mode**  
+  The `<appSettings>` part of your root `Web.config` file should contain the following lines:
+  
+  ```xml
+  <add key="Umbraco.ModelsBuilder.Enable" value="true"/>
+  <add key="Umbraco.ModelsBuilder.ModelsMode" value="Nothing"/>
+  <add key="Umbraco.ModelsBuilder.EnableApi" value="true"/>
+  ```
 
-These new files are the generated models. They are automatically added to the Visual Studio project and will be compiled alongside the rest of your project. Anytime you need to refresh the models you can run the custom tool.
+  This will ensure that Models Builder will run in the **Nothing** as explained above, and the API will be activated for the Visual Studio extension to call.
+
+- **Enabling Debug mode**  
+  The API will only work when your Umbraco installation is running in debug mode. This is done by going to the root `Web.config`, and finding the `compilation` element. The `debug` attribute is `false` by default, so change it to `true`:
+
+  ```xml
+  <compilation defaultLanguage="c#" debug="true" batch="true" targetFramework="4.7.2" numRecompilesBeforeAppRestart="50" />
+  ```
+  
+  Your live environment shouldn't be running in debug mode, so it's recommended building the models locally.
+  
+- **Configuring the Visual Studio extension**  
+  In order for the Models Builder extension to access the API, you must enter a few options about your Umbraco installation. You can find the options in Visual Studio by going to **Tools** | **Options** | **Umbraco** | **ModelsBuilder Options**, and then fill out the following options:
+  
+    * **Site Url**  
+      The base url of the Umbraco website, eg `http://example.com`.
+
+    * **User Name**  
+      The name of the user to connect to Umbraco (must be dev).
+
+    * **User Password**  
+        The password of the user.
+    
+- **Create a container**  
+  Models Builder needs a container under which it will add the generated models. In a folder of your choice, create a file with the `.mb` file extension - eg. `UmbracoModels.mb`. The contents of the file is not important, so you can just leave it empty.
+  
+- **Build the models**  
+  With everything above in place, you can right click on your `UmbracoModels.mb` file, and click the **Build models** action. Models Builder will now pull the needed information from the API, and create your models under the container file.
+  
+  You'll be able to see the result in the **Output** tab in Visual Studio. If the models were build successfully, the **Output** tab should show something like:
+  
+  ```
+  UmbracoModelsBuilder: Starting v8.1.5 15/09/2019 12:50:18.
+  UmbracoModelsBuilder: Done.
+  ```
+  
+  However should generating the models fail, there's usually some clues in the **Output** tab about what when wrong.
+  
+The files you'll now find under the `UmbracoModels.mb` container file are the generated models. They are automatically added to the Visual Studio project and will be compiled alongside the rest of your project. Anytime you need to refresh the models you can run the **Build models** action again.
 
 If there are some non-generated C# files (i.e. `*.cs` but not `*.generated.cs`) in the folder, Models Builder will parse them for instructions (see [documentation for configuring and extending models](Control-Generation.md)) and Visual Studio will compile them too.
 
