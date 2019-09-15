@@ -67,7 +67,7 @@ In both cases **an additional NuGet package must be installed** into the site [U
 
 Although it is possible to enable the API while still generating models into the Umbraco website, this probably does not make much sense. Therefore, you will want to set the `Umbraco.ModelsBuilder.ModelsMode` to `Nothing` (or remove it entirely). Do _not_ disable Models Builder entirely, though, as that would also disable the models factory (i.e., models would be ignored).
 
-When the API is enabled and the Visual Studio extension is installed:
+When the Visual Studio extension is installed:
 
 - **Enable API mode**  
   The `<appSettings>` part of your root `Web.config` file should contain the following lines:
@@ -78,10 +78,10 @@ When the API is enabled and the Visual Studio extension is installed:
   <add key="Umbraco.ModelsBuilder.EnableApi" value="true"/>
   ```
 
-  This will ensure that Models Builder will run in the **Nothing** as explained above, and the API will be activated for the Visual Studio extension to call.
+  This will ensure that Models Builder will run in the **Nothing** mode as explained above, and the API will be activated for the Visual Studio extension to call.
 
 - **Enable debug mode**  
-  The API will only work when your Umbraco installation is running in debug mode. This is done by going to the root `Web.config`, and finding the `compilation` element. The `debug` attribute is `false` by default, so change it to `true`:
+  The API will only work when your Umbraco installation is running in debug mode. This is done by going to the root `Web.config`, and finding the `<compilation />` element. The `debug` attribute is `false` by default, so change it to `true`:
 
   ```xml
   <compilation defaultLanguage="c#" debug="true" batch="true" targetFramework="4.7.2" numRecompilesBeforeAppRestart="50" />
