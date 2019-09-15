@@ -1,6 +1,5 @@
 ---
 versionFrom: 8.0.0
-needsV8Update: "false"
 ---
 
 # Unit Testing Umbraco
