@@ -102,7 +102,7 @@ When the Visual Studio extension is installed:
         The password of the user.
     
 - **Create a container**  
-  Models Builder needs a container under which it will add the generated models. In a folder of your choice, create a file with the `.mb` file extension - eg. `UmbracoModels.mb`. The contents of the file is not important, so you can just leave it empty.
+  Models Builder needs a container under which it will add the generated models. In a folder of your choice, create a file with the `.mb` file extension - eg. `UmbracoModels.mb`. The contents of the file is not important, so you can leave it empty.
   
 - **Build the models**  
   With everything above in place, you can right click on your `UmbracoModels.mb` file, and click the **Build models** action. Models Builder will now pull the needed information from the API, and create your models under the container file.
