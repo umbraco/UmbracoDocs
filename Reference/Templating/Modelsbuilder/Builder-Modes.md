@@ -80,7 +80,7 @@ When the API is enabled and the Visual Studio extension is installed:
 
   This will ensure that Models Builder will run in the **Nothing** as explained above, and the API will be activated for the Visual Studio extension to call.
 
-- **Enabling Debug mode**  
+- **Enable debug mode**  
   The API will only work when your Umbraco installation is running in debug mode. This is done by going to the root `Web.config`, and finding the `compilation` element. The `debug` attribute is `false` by default, so change it to `true`:
 
   ```xml
@@ -89,7 +89,7 @@ When the API is enabled and the Visual Studio extension is installed:
   
   Your live environment shouldn't be running in debug mode, so it's recommended building the models locally.
   
-- **Configuring the Visual Studio extension**  
+- **Configure the Visual Studio extension**  
   In order for the Models Builder extension to access the API, you must enter a few options about your Umbraco installation. You can find the options in Visual Studio by going to **Tools** | **Options** | **Umbraco** | **ModelsBuilder Options**, and then fill out the following options:
   
     * **Site Url**  
