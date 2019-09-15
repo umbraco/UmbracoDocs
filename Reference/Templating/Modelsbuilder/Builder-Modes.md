@@ -61,7 +61,7 @@ Generation _can_ fail for various reasons, in which case no models are generated
 
 ## API models
 
-With **API** models, Models Builder does _not_ generate models into the Umbraco website, but exposes an API that allows external tools to retrieve models. The Models Builder source code contains a sample console tool that connects to the website and retrieves models. In addition, a [Visual Studio extension](https://marketplace.visualstudio.com/items?itemName=ZpqrtBnk.UmbracoModelsBuilderExtension) extension is available, which enables models generation straight from Visual Studio.
+With **API** models, Models Builder does _not_ generate models into the Umbraco website, but exposes an API that allows external tools to retrieve models. The Models Builder source code contains a sample console tool that connects to the website and retrieves models. In addition, a [Visual Studio extension](https://marketplace.visualstudio.com/items?itemName=ZpqrtBnk.UmbracoModelsBuilderExtension) is available, which enables models generation straight from Visual Studio.
 
 In both cases **an additional NuGet package must be installed** into the site [Umbraco.ModelsBuilder.Api](https://www.nuget.org/packages/Umbraco.ModelsBuilder.Api/), and the API must be enabled, see [Install And Configure](Install-And-Configure.md).
 
