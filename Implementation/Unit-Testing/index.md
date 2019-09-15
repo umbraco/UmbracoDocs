@@ -5,7 +5,6 @@ needsV8Update: "false"
 
 # Unit Testing Umbraco
 
-
 These examples requires [NUnit](https://nunit.org/) and [Moq](https://github.com/moq/moq4).
 
 ## SetUp
@@ -14,14 +13,15 @@ The ```Current.Factory``` needs to be mocked before each unit test that has an U
 
 ```csharp
 [SetUp]
-public void SetUp() 
+public void SetUp()
 {
      Current.Factory = new Mock<IFactory>().Object;
 }
 ```
 
 ## TearDown
-The ```Current.Factory``` needs to be reset after each test, or you'll get an ```InvalidOperationException``` in your second test saying that **"A factory has already been set"**. 
+
+The ```Current.Factory``` needs to be reset after each test, or you'll get an ```InvalidOperationException``` in your second test saying that **"A factory has already been set"**.
 
 ```csharp
 [TearDown]
