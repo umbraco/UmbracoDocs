@@ -189,7 +189,7 @@ You can combine Skip and Take when using for paging operations
 
 ```csharp
 @* using skip and take together you can perform paging operations *@
-var nodes = Model.Content.Skip(10).Take(10);
+var nodes = Model.Children.Skip(10).Take(10);
 ```
 
 ### .Count()

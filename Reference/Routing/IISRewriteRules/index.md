@@ -1,6 +1,5 @@
 ---
 versionFrom: 6.0.0
-needsV8Update: "true"
 ---
 
 # IIS Rewrite Rules

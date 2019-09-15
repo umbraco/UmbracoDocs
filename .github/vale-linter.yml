@@ -23,7 +23,7 @@ Vale:
   Warning: 
     Header: "It passes but with warnings"
     Message: "Our style checker noticed a few potential issues. Please check the annotations for suggestions." 
-    ShowImage: true
+    ShowImage: false
     ImageUrl: "https://media.giphy.com/media/xUOxfh6ZM75efM3Bqo/giphy.gif"
 
   Error: 

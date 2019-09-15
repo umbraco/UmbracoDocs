@@ -10,6 +10,7 @@ The `EditorModelEventManager` class is used to emit events that enable you to ma
 ## Usage
 
 Example usage of the `EditorModelEventManager` '*SendingContentModel*' event - eg set the default PublishDate for a new NewsArticle to be today's date:
+
 ```csharp
 using System;
 using System.Linq;
