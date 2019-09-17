@@ -15,7 +15,7 @@ The methods can be found by injecting the `Umbraco.Forms.Core.Services.IRecordRe
 PagedResult<IRecord> GetApprovedRecordsFromPage(int pageId, int pageNumber, int pageSize)
 ```
 
-Returns all records with the state set to approved from all forms on the Umbraco page with the id = `pageId` as a DynamicRecordList. 
+Returns all records with the state set to approved from all forms on the Umbraco page with the id = `pageId` . 
 
 ### GetApprovedRecordsFromFormOnPage
 
@@ -23,7 +23,7 @@ Returns all records with the state set to approved from all forms on the Umbraco
 PagedResult<IRecord> GetApprovedRecordsFromFormOnPage(int pageId, string formId, int pageNumber, int pageSize)
 ```
 
-Returns all records with the state set to approved from the form with the id = `formId` on the Umbraco page with the id = `pageId` as a DynamicRecordList.
+Returns all records with the state set to approved from the form with the id = `formId` on the Umbraco page with the id = `pageId` as a PagedResult<IRecord>.
 
 ### GetApprovedRecordsFromForm
 
@@ -31,7 +31,7 @@ Returns all records with the state set to approved from the form with the id = `
 PagedResult<IRecord> GetApprovedRecordsFromForm(string formId, int pageNumber, int pageSize)
 ```
 
-Returns all records with the state set to approved from the form with the ID = `formId` as a DynamicRecordList.
+Returns all records with the state set to approved from the form with the ID = `formId` as a PagedResult<IRecord>.
 
 ### GetRecordsFromPage
 
@@ -39,7 +39,7 @@ Returns all records with the state set to approved from the form with the ID = `
 PagedResult<IRecord> GetRecordsFromPage(int pageId, int pageNumber, int pageSize)
 ```
 
-Returns all records from all forms on the Umbraco page with the id = `pageId` as a DynamicRecordList.
+Returns all records from all forms on the Umbraco page with the id = `pageId` as a PagedResult<IRecord>.
 
 ### GetRecordsFromFormOnPage
 
@@ -47,7 +47,7 @@ Returns all records from all forms on the Umbraco page with the id = `pageId` as
 PagedResult<IRecord> GetRecordsFromFormOnPage(int pageId, string formId, int pageNumber, int pageSize)
 ```
 
-Returns all records from the form with the id = `formId` on the Umbraco page with the id = `pageId` as a DynamicRecordList.
+Returns all records from the form with the id = `formId` on the Umbraco page with the id = `pageId` as a PagedResult<IRecord>.
 
 ### GetRecordsFromForm
 
@@ -55,9 +55,9 @@ Returns all records from the form with the id = `formId` on the Umbraco page wit
 PagedResult<IRecord> GetRecordsFromForm(string formId, int pageNumber, int pageSize)
 ```
 
-Returns all records from the form with the ID = formId as a DynamicRecordList
+Returns all records from the form with the ID = formId as a PagedResult<IRecord>
 
-## DynamicRecordsList and DynamicRecord
+## The returned objects
 
 All of these methods will return an object of type `PagedResult<IRecord>` so you can iterate through the `IRecord` objects.
 
@@ -93,7 +93,7 @@ Sample script that is outputting comments using a form created with the default 
    var recordReaderService = Current.Factory.GetInstance<IRecordReaderService>();
 }
 <ul id="comments">
-   @foreach (dynamic record in recordReaderService.GetApprovedRecordsFromPage(Model.Id, 0, 10))
+   @foreach (var record in recordReaderService.GetApprovedRecordsFromPage(Model.Id, 0, 10))
    {
       <li>
          @record.Created.ToString("dd MMMM yyy")
