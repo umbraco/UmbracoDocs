@@ -93,7 +93,7 @@ Sample script that is outputting comments using a form created with the default 
    var recordReaderService = Current.Factory.GetInstance<IRecordReaderService>();
 }
 <ul id="comments">
-   @foreach (var record in recordReaderService.GetApprovedRecordsFromPage(Model.Id, 0, 10))
+   @foreach (var record in recordReaderService.GetApprovedRecordsFromPage(Model.Id, 0, 10).Items)
    {
       <li>
          @record.Created.ToString("dd MMMM yyy")
