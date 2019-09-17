@@ -188,6 +188,7 @@ The following rule can be added to your web.config (in `system.webServer/rewrite
         <add input="{REMOTE_ADDR}" pattern="13.95.93.29" negate="true" />
         <add input="{REMOTE_ADDR}" pattern="40.68.36.142" negate="true" />
         <add input="{REMOTE_ADDR}" pattern="13.94.247.45" negate="true" />
+        <add input="{REMOTE_ADDR}" pattern="52.157.96.229" negate="true" />
 
         <!-- Don't apply rules on localhost so your local environment still works -->
         <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
