@@ -33,7 +33,7 @@ public class MyContentFinder : IContentFinder
     return false; // not found
 
     // have we got a node with ID 1234?
-     var content = contentRequest.UmbracoContext.ContentCache.GetById(1234);
+     var content = contentRequest.UmbracoContext.Content.GetById(1234);
     if (content == null) return false; // not found let another IContentFinder in the collection try to find a document
 
     // render that node
@@ -101,7 +101,7 @@ namespace My.Website.ContentFinders
             var allDomains = _domainService.GetAll(true);
             var domain = allDomains.Where(f => f.DomainName == contentRequest.Uri.Authority || f.DomainName == "https://" + contentRequest.Uri.Authority).FirstOrDefault();
             var siteId = domain != null ? domain.RootContentId : allDomains.FirstOrDefault().RootContentId;
-            var siteRoot = contentRequest.UmbracoContext.ContentCache.GetById(false, siteId ?? -1);
+            var siteRoot = contentRequest.UmbracoContext.Content.GetById(false, siteId ?? -1);
             if (siteRoot == null)
             {
                 return false;

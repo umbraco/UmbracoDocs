@@ -16,10 +16,10 @@ There are seven default sections that come with Umbraco:
 The Content section contains the content of the website. Content is displayed as nodes in the content tree. Nodes can also show content state:
 
 * Grayed out nodes have not been published
-* <img src="images/has-unpublished-version.svg" width="12px" style="margin: 0;"> nodes have unpublished versions (but are currently published)
-* <img src="images/protected.svg" width="12px" style="margin: 0;"> nodes are protected from the public (require logging in)
-* <img src="images/locked.svg" width="12px" style="margin: 0;"> nodes are currently locked/non-deletable
-* <img src="images/is-container.svg" width="12px" style="margin: 0;"> nodes are containers (such as List Views)
+* <img src="images/has-unpublished-version.svg" width="12px" style="margin: 0;"> Nodes have unpublished versions (but are currently published)
+* <img src="images/protected.svg" width="12px" style="margin: 0;"> Nodes are protected from the public (require logging in)
+* <img src="images/locked.svg" width="12px" style="margin: 0;"> Nodes are currently locked/non-deletable
+* <img src="images/is-container.svg" width="12px" style="margin: 0;"> Nodes are containers (such as List Views)
 
 In order to create content you must define it using Document Types.
 
@@ -46,6 +46,10 @@ The Settings tree consists of:
 - Stylesheets (`.css` files)
 - Scripts (`.js` files)
 
+:::note
+**Dictionary items** have been moved from the Settings section to the Translation section.
+:::
+
 ## Packages
 In this section you can browse and install packages into your Umbraco solution. You can also get an overview of all installed packages as well as uninstall packages you no longer need.
 
@@ -60,6 +64,12 @@ You can install Umbraco Forms directly from the Backoffice by clicking the insta
 
 ## Translation
 This is the section where you create and manage your dictionary items.
+
+:::note
+This section is by default not accessible to any User Groups.
+
+Access to the section can be configured under User Groups in the User section.
+:::
 
 ## Help sections
 In the top-right corner you'll find a search tool, which is also accessible by hitting `CTRL + Space` on your keyboard.

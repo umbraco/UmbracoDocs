@@ -58,7 +58,7 @@ return contentType.AllowedAtRoot;
 ### .AllowedContentTypes
 Gets or Sets an `Enumerable` list of `ContentTypeSort` objects of the ContentTypes allowed under the current ContentType.
 
-The `ContentTypeSort` is a simple object with a lazy Id, int SortOrder and string Alias used to sort the MediaTypes within the list of AllowedContentTypes.
+The `ContentTypeSort` is an object with a lazy Id, int SortOrder and string Alias used to sort the MediaTypes within the list of AllowedContentTypes.
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return AllowedContentTypes
@@ -162,7 +162,7 @@ return contentType.Key;
 ```
 
 ### .Level
-Gets or Sets the given `ContentType` level in the site hierarchy as an `Int`. ContentTypes placed at the root of the tree, will return 1, content just underneath will return 2, and so on.
+Gets or Sets the given `ContentType` level in the site hierarchy as an `Int`. ContentTypes placed at the root of the tree, will return 1, content right underneath will return 2, and so on.
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return the Level

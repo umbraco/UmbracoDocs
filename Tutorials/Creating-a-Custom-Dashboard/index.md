@@ -8,7 +8,7 @@ needsV8Update: "true"
 
 ## Overview
 
-This guide takes you through the steps to setup a simple Custom Dashboard in Umbraco. 
+This guide takes you through the steps to setup a Custom Dashboard in Umbraco. 
 
 ### What is a Dashboard?
 
@@ -36,8 +36,8 @@ So all the steps we will go through:
 ### Prerequisites
 This tutorial uses AngularJS with Umbraco, so it does not cover AngularJS itself, there are tons of resources on that already here:
 
-- [egghead.io](https://egghead.io/courses/angularjs-fundamentals)
-- [angularjs.org/tutorial](https://docs.angularjs.org/tutorial)
+- [Egghead.io](https://egghead.io/courses/angularjs-fundamentals)
+- [Angularjs.org/tutorial](https://docs.angularjs.org/tutorial)
 - [Pluralsight](https://www.pluralsight.com/paths/angular-js)
 
 There are a lot of parallels with Creating a Property Editor, the tutorial '[Creating a Property Editor Tutorial](../Creating-a-Property-Editor/index.md)' is very much worth a read through too.
@@ -87,14 +87,14 @@ Add the following section:
 </section>
 ```
 
-So the terminology here gets a bit muddled but we're creating a 'Section' (but this is not the same 'Section' as the 'Content Section' - which inside this config file is referred to as an 'Area'), this is specifically a 'Dashboard Section' that you can use to group your dashboard tabs and controls together.
+The terminology here gets a bit muddled but we're creating a 'Section'. This is not the same 'Section' as the 'Content Section', which inside this config file is referred to as an 'Area'. This is specifically a 'Dashboard Section' that you can use to group your dashboard tabs and controls together.
 
 The above configuration is effectively saying:
 
 > "Add a tab called 'Welcome' to the 'Content' area/section of the Umbraco site, use the WelcomeDashboard.html as the content (view) of the dashboard and don't allow 'translators' to see it!"
-
+ 
 :::note
-The order in which the tab will appear in the Umbraco Backoffice depends on its position in the dashboard.config file, so to make our Custom Welcome message the first Tab the editors see in the content section, make sure the above configuration is the 'first' section configuration in the dashboard.config file.
+The order in which the tab will appear in the Umbraco Backoffice depends on its position in the dashboard.config file. To make our custom Welcome message the first Tab the editors see in the content section, make sure the above configuration is the 'first' section configuration in the dashboard.config file.
 
 You can specify multiple controls to appear on a particular tab, and multiple tabs in a particular section.
 
@@ -107,15 +107,15 @@ You can remove existing dashboards, and control who gets to see them by updating
 
 ## Adding a bit of style
 
-Congratulations! job done - no actually no, this is just the starting point. The dashboard can be styled as you want it to be with CSS, but there are a couple of further steps to undertake be able to apply a custom stylesheet to the dashboard:
+The dashboard can be styled as you want it to be with CSS, but there are a couple of further steps to undertake be able to apply a custom stylesheet to the dashboard:
 
 We need to add something called a package.manifest file to our CustomWelcomeDashboard folder
 
 :::note
-This file allows Umbraco to load other resources to use with your HTML view - it is just a file - named by convention 'package.manifest' and will contain the configuration of the resources to load in JSON format.
+This file allows Umbraco to load other resources to use with your HTML view, named by convention 'package.manifest' and will contain the configuration of the resources to load in JSON format.
 :::
 
-When Umbraco loads the dashboard it will look for this file in the same folder as your HTML view (remember the dashboard config points to the html view) and use the manifest to load the additional resources, eg CSS and JavaScript files.
+When Umbraco loads the dashboard it will look for this file in the same folder as your HTML view. Remember that the dashboard config points to the html view. Then Umbraco uses the manifest to load the additional resources, eg. CSS and JavaScript files.
 
 This manifest file is simpler to the one you would create for a [custom property editor](../../Extending/Property-Editors/package-manifest.md)
 
@@ -142,12 +142,12 @@ Now create a stylesheet in our CustomWelcomeDashboard folder called 'customwelco
 }
 ```
 
-This stylesheet will now be loaded and applied to your dashboard. Add images and html markup as required:
+This stylesheet will now be loaded and applied to your dashboard. Add images and html markup as required.
 
 ![Custom Dashboard Welcome Message With styles...](images/welcomemessagewithstyles.jpg)
 
 :::note
-One caveat is the package.manifest file is loaded into memory when Umbraco starts up, so if you are adding a new stylesheet or JavaScript file you will need to start and stop your application for it to be loaded.
+One caveat is that the package.manifest file is loaded into memory when Umbraco starts up. If you are adding a new stylesheet or JavaScript file you will need to start and stop your application for it to be loaded.
 :::
 
 If the title doesn't change colour, you may be running the site without debugging and therefore [ClientDependency Framework](https://github.com/Shazwazza/ClientDependency) (CDF) will be caching the CSS and JavaScript. To clear the CDF cache and get it to load in the new JavaScript and CSS, you need to increment the version number in the [ClientDependency.config file](https://github.com/Shazwazza/ClientDependency/wiki/Configuration#complete-config) and press save. Now you can reload the page and see the colourful title.
@@ -241,16 +241,16 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
 });
 ```
 
-## I know what you did last Tuesday...
+## I know what you did last Tuesday
 
-A returning editor may find it useful to see a list of the last few articles they have been editing, with a handy link to load and continue editing (instead of having to remember, and find the item again in the Umbraco Content Tree).
+A returning editor may find it useful to see a list of the last few articles they have been editing, with a handy link to load and continue editing. This could be instead of having to remember, and find the item again in the Umbraco Content Tree.
 
 We can make use of Umbraco's Angular resource for retrieving audit log information, the **logResource** using the **getPagedUserLog** method to return a list of activities the current user has performed recently.
 
 We inject the logResource into our controller:
 
 ```js
-angular.module("umbraco").controller("CustomWelcomeDashboardController", function ($scope, userService, logResource) {
+angular.Module("umbraco").controller("CustomWelcomeDashboardController", function ($scope, userService, logResource) {
 ```
 
 Add a property on our ViewModel to store the log information:
@@ -315,14 +315,14 @@ Inject this into our angular controller:
 angular.module("umbraco").controller("CustomWelcomeDashboardController", function ($scope, userService, logResource, entityResource) {
 ```
 
-We need to loop through the log items from the **logResource**, and since this includes everything, we need to filter out activities we're not interested in eg, Macro Saves, or DocType Saves, generally we need the entry in the log to have a nodeId, have a 'logType' of 'save' and have an entity type of Media or Content. 
+We need to loop through the log items from the **logResource**. Since this includes everything, we need to filter out activities we're not interested in eg, Macro Saves, or DocType Saves. Generally we need the entry in the log to have a `nodeId`, a 'logType' of 'save' and an entity type of Media or Content.
 
 The **entityResource** then has a **getById** method that accepts the Id of the item and the entity 'type' to retrieve useful information about the entity, ie its name and icon.
 
 Putting this together:
 
 ```js
-logResource.getPagedUserLog(userLogoptions)
+logResource.getPagedUserLog(userLogOptions)
 .then(function (response) {
     console.log(response)
     vm.UserLogHistory = response;
@@ -341,7 +341,7 @@ logResource.getPagedUserLog(userLogoptions)
                                 item.entityType = "Media";
                             }
                             if (item.comment.indexOf("Content") > -1) {
-                                // log entry is a media item
+                                // log entry is a content item
                                 item.editUrl = "content/content/edit/" + item.nodeId;
                                 item.entityType = "Document";
                             }
@@ -378,14 +378,18 @@ and we should have a list of recently saved content and media:
 :::note
 The url /Umbraco/#/content/content/edit/1234 is the path to open up a particular entity (with id 1234) ready for editing.
 
-The logResource has unfortunately undergone a few breaking changes, (including problems with SQLCE dbs), prior to 7.6.4 the resource will 404 - from 7.6.4 to 7.13 - you can use logResource.getUserLog("save", new Date()).then(function (response) - after 7.13 you can use getPagedUserLog detailed above, which should work on SQLCE too
+The `logResource` has undergone a few breaking changes, including problems with SQLCE databases. 
+
+* Prior to 7.6.4 the resource will 404
+* From 7.6.4 to 7.13 you can use `logResource.getUserLog("save", new Date()).then(function (response))`
+* After 7.13 you can use `getPagedUserLog` detailed above, which should work on SQLCE too
 :::
 
 ## I know what you want to do today
 
-One of the key user journeys an editor will make in the backoffice is to create a new thing of some sort, and if it is a person's job to create new blog entries in the same section two or three times a day, why not create them some handy shortcuts to achieve these common tasks:
+One of the key user journeys an editor will make in the backoffice is to create a new thing of some sort. If it is a person's job to create new blog entries in the same section two or three times a day, why not create them some handy shortcuts to achieve these common tasks:
 
-We can use the knowledge that by convention a link to 'edit a page' (as used above) when passed the additional querystring parameters doctype=alias and create=true, can be made to present the user with a brand new content item of the alias type to create within the section.
+We can use the knowledge that by convention a link to 'edit a page' can be made to present the user with a brand new content item of the alias type to create within the section. The additional querystring parameters doctype=alias and create=true also needs to be passed.
 
 Add the following to our view:
 

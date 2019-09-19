@@ -24,7 +24,7 @@ When you hit your local host address (http://localhost or whatever you’ve set 
  
 ![This is correct – we have a blank, empty Umbraco website](images/figure-3-empty-umbraco-install-v8.png)
 
-You need to reinstall Umbraco if you can see the starter kit – if you did a manual install you can delete all files in the directory where your local host is being served from, copy the Umbraco zip contents back in and then hit localhost in your browser.  
+You need to reinstall Umbraco if you can see the starter kit. If you did a manual install you can delete all files in the directory where your local host is being served from. Then, copy the Umbraco zip contents back in and then hit localhost in your browser.  
 
 ## Preparing the Retrospect Template Site 
 

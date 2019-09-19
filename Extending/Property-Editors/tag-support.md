@@ -28,7 +28,7 @@ public class TagsPropertyEditor : PropertyEditor
 }
 ```
 
-To add tag support, we simply add the SupportsTags attribute:
+To add tag support, we can add the SupportsTags attribute:
 
 ```csharp
 [SupportsTags]
@@ -52,7 +52,3 @@ There is one last option that can be set which is the `TagValueType` enum, the v
 * `FromDelimitedValue` - this is the default
 * `CustomTagList` - if this is used then it is expected that the property editor's value (returned from the method `ConvertEditorToDb`) is an `IEnumerable<string>`
 	* This setting might be handy if you need to dynamically (in C#) generate the tags list
-
-### Manifest
-
-*Coming soon!*

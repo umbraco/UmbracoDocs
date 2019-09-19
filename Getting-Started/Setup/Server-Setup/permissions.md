@@ -5,10 +5,13 @@ needsV8Update: "true"
 
 # File and folder permissions
 
-_To ensure a stable and smoothly running Umbraco installation, these permissions need to be set correctly. These permissions should be setup before or during the installation of Umbraco. 
-The main account that requires 'modify' file permissions to be set on the folders below, is the account used by the Application Pool Identity for the IIS website (usually IIS APPPOOL\appPoolName or a specific local account or in some circumstances Network Service - If in doubt, ask your server admin / hosting company). Additionally the IUSR account and IIS_IUSRS account only require 'read only' access to the site's folders. 
+:::note
+To ensure a stable and smoothly running Umbraco installation, these permissions need to be set correctly. These permissions should be setup before or during the installation of Umbraco. 
 
-Generally when developing locally with Visual Studio or WebMatrix, permissions do not need to be strictly applied_
+The main account that requires 'modify' file permissions to be set on the folders below, is the account used by the Application Pool Identity for the IIS website. Usually IIS APPPOOL\appPoolName or a specific local account or in some circumstances Network Service - If in doubt, ask your server admin / hosting company. Additionally the IUSR account and IIS_IUSRS account only require 'read only' access to the site's folders. 
+
+Generally when developing locally with Visual Studio or WebMatrix, permissions do not need to be strictly applied
+:::
 
 :::note
 If you have any specific static files / media items / etc then you should add the appropriate permissions accordingly.

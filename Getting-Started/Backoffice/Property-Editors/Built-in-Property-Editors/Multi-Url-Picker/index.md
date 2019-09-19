@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 8.1.0
 ---
 
 # Multi Url Picker
@@ -8,12 +8,12 @@ versionFrom: 8.0.0
 
 `Returns: IEnumerable<Link> or Link`
 
-Multi Url Picker allows an editor to easily pick and sort multiple urls. This property editor returns a single item if the "Maximum number of items" data type setting is set to 1 or a collection if it is 0. These can either be internal, external or media.
+Multi Url Picker allows an editor to pick and sort multiple urls. This property editor returns a single item if the "Maximum number of items" data type setting is set to 1 or a collection if it is 0. These can either be internal, external or media.
 
 
 ## Data Type Definition Example
 
-![Related Links Data Type Definition](images/Multy-Url-Picker-DataType-v8.png)
+![Related Links Data Type Definition](images/Multy-Url-Picker-DataType-8_1.png)
 
 ## Content Example 
 
@@ -21,7 +21,7 @@ Multi Url Picker allows an editor to easily pick and sort multiple urls. This pr
 
 ## MVC View Example - [value converters enabled](../../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
 
-### Typed:
+## Typed
 
 ```csharp
 @using Umbraco.Web.Models
@@ -38,6 +38,7 @@ Multi Url Picker allows an editor to easily pick and sort multiple urls. This pr
     }
 }
 ```
+
 If `Max number of items` is configured to `1`
 ```csharp
 @using Umbraco.Web.Models

@@ -8,7 +8,7 @@ versionFrom: 7.0.0
 
 ## Settings
 
-The Multinode Treepicker allows you to configure the type of tree to render, what part of the tree that should be rendered, and specifically for content, it allows you to select a dynamic root node based on the current document using the multinode tree picker. 
+The Multinode Treepicker allows you to configure the type of tree to render and what part of the tree that should be rendered. For content it allows you to select a dynamic root node based on the current document using the multinode tree picker. 
 
 **Node type:** set the type of node, root node of the tree, or query for the root node
 
@@ -49,7 +49,7 @@ Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. 
 
 ## MVC View Example - [value converters enabled](../../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
 
-### Typed:
+### Typed
 
 ```csharp
 @{
@@ -63,7 +63,7 @@ Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. 
 
 ## MVC View Example - [value converters disabled](../../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
 
-### Typed:
+### Typed
 
 ```csharp
 @{
@@ -80,7 +80,7 @@ Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. 
 }
 ```
 
-### Dynamic:                              
+### Dynamic                            
 
 ```csharp
 @{

@@ -18,7 +18,7 @@ This property editors returns a single item if the "Pick multiple items" data ty
 
 ![Media Picker Content](images/Media-Picker2-Content.png)
 
-## Typed Example (multiple enabled): ##
+## Typed Example (multiple enabled)
 
 ```csharp
 @{
@@ -31,7 +31,7 @@ This property editors returns a single item if the "Pick multiple items" data ty
 ```
 
 
-## Typed Example (multiple disabled): ##
+## Typed Example (multiple disabled)
 
 ```csharp
 @{

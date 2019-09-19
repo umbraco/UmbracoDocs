@@ -35,7 +35,7 @@ On the next step, select the **Empty** template. It's important to pick **empty*
 ## Finding and installing the Umbraco package
 The latest release of Umbraco is always available in the NuGet gallery. All you have to do is search for it and install.
 
-To install Umbraco from the Visual Studio interface, right-click on the new project you just made and choose **Manage NuGet Packages**.
+To install Umbraco from the Visual Studio interface, right-click on the new project you've made and choose **Manage NuGet Packages**.
 
 ![](images/NuGet/manage-nuget-packages-v8.png)
 
@@ -52,7 +52,7 @@ Enable the console by going to **Tools >  View > Other Windows >  Package Manage
 
 ![](images/NuGet/enable-package-manager-console-v8.png)
 
-Then simply type `Install-Package UmbracoCms` to start installing the latest version of Umbraco.
+Then type `Install-Package UmbracoCms` to start installing the latest version of Umbraco.
 
 ![](images/NuGet/package-manager-console.png)
 
@@ -62,8 +62,8 @@ You can now run the site like you would normally in Visual Studio (using **F5** 
 Follow the installation wizard and after a few easy steps and choices you should get a message saying the installation was a success.
 
 ## Post installation
-You should note that the Umbraco NuGet package adds a build step to always include the Umbraco folders when you deploy using Web One-Click Publish with Visual Studio.  
-You can see these folders in `packages/UmbracoCms x.y.z/build/UmbracoCms.targets`  
+Note that the Umbraco NuGet package adds a build step to always include the Umbraco folders when you deploy using Web One-Click Publish with Visual Studio. You can see these folders in `packages/UmbracoCms x.y.z/build/UmbracoCms.targets`.
+
 Should you need to exclude any of these folders or content, you can add a target to your `.pubxml` files in the `properties/Publish` folder. For instance if you need to exclude json data a plugin generates during production.
 
 ```xml

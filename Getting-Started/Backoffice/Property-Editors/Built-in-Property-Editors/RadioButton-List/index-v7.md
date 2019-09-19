@@ -18,7 +18,7 @@ Pretty much like the name indicates this Data type enables editors to choose fro
 
 ## MVC View Example
 
-### Typed:
+### Typed
 
 ```csharp
 @if (Model.Content.HasValue("miniFigure"))
@@ -28,7 +28,7 @@ Pretty much like the name indicates this Data type enables editors to choose fro
 }
 ```
 
-### Dynamic (Obsolete):
+### Dynamic (Obsolete)
 
 See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
 

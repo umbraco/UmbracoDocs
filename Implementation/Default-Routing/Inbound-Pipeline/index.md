@@ -31,18 +31,17 @@ This information is also used during the [MVC Controller/Action selection proces
 
 ## Determining rendering engine
 
- Umbraco supports both MVC and Webforms, though MVC is certainly the preferred and default engine that is used.
- Determining the rendering engine to use occurs once the published content request has been prepared and a template alias is known.
- The selection process is fairly simple:
+Umbraco supports both MVC and Webforms, though MVC is certainly the preferred and default engine that is used.
+Determining the rendering engine to use occurs once the published content request has been prepared and a template alias is known.
 
- * Check for a matching MVC template in the default MVC views location
- 	* Choose MVC
- * Else if there is an MVC Controller/Action that is being used to perform 'Route Hijacking'
- 	* Choose MVC
- * Else if there is a template assigned to the Published Content Request and a file matches the template alias in the default Webforms master pages folder
- 	* Choose Webforms
- * Else
- 	* Choose MVC
+* Check for a matching MVC template in the default MVC views location
+	* Choose MVC
+* Else if there is an MVC Controller/Action that is being used to perform 'Route Hijacking'
+	* Choose MVC
+* Else if there is a template assigned to the Published Content Request and a file matches the template alias in the default Webforms master pages folder
+	* Choose Webforms
+* Else
+	* Choose MVC
 
 ### More information
 - [Umbraco Request Pipeline](../../../Reference/Routing/Request-Pipeline/)

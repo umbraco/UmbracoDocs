@@ -12,7 +12,7 @@ In this article you can learn more about the biggest new features that comes out
 
 ## [Language Variants](../Getting-Started/Backoffice/Variants)
 
-Working with language variations is a built-in feature with Umbraco 8. Allowing variations on a Document Type, enables you to easily add and update content variations based on the languages you need.
+Working with language variations is a built-in feature with Umbraco 8. Allowing variations on a Document Type, enables you to add and update content variations based on the languages you need.
 
 ## [Content Apps](../Extending/Content-Apps)
 
@@ -30,6 +30,7 @@ Giving the Umbraco Backoffice a new look, has given you a bigger workspace when 
 - The **Developer** section has been removed, and merged with the **Settings** sections
 - Templates, Document types, Data Types, Languages, etc. is now all in the same section: **Settings**
 - Health Check, Examine Management and the ModelsBuilder user interfaces have been moved to the **Settings** section
+- **Dictionary items** have been moved from the **Settings** section to the **Translation** section
 - A brand new [Log Viewer interface in the backoffice](Backoffice/LogViewer), that gives you easy access to browse through all your log entries
 - Searching your backoffice has been made even easier: `CTRL + SPACE` opens a search field overlay, which gives you search results as you start typing
 

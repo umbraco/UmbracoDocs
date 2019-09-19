@@ -8,7 +8,7 @@ needsV8Update: "true"
 
 ## Overview
 
-This guide explains how to set up a simple property editor, how to hook it into Umbraco's data types, how to hook it into Angular's modules and its injector, and finally how you can test your property editor.
+This guide explains how to set up a property editor, how to hook it into Umbraco's data types, how to hook it into Angular's modules and its injector, and finally how you can test your property editor.
 
 So all the steps we will go through in part 1 are:
 
@@ -18,15 +18,16 @@ So all the steps we will go through in part 1 are:
 - [Add external dependencies](#add-external-dependencies)
 
 ## Prerequisites
+
 This is about how to use AngularJS with Umbraco, so it does not cover AngularJS itself, as there are tons of resources on that already here:
 
-- [egghead.io](https://egghead.io/courses/angularjs-fundamentals)
-- [angularjs.org/tutorial](https://docs.angularjs.org/tutorial)
+- [Egghead.io](https://egghead.io/courses/angularjs-fundamentals)
+- [Angularjs.org/tutorial](https://docs.angularjs.org/tutorial)
 - [Pluralsight](https://www.pluralsight.com/paths/angular-js)
 
 ## The end result
 
-By the end of this guide, we will have a simple markdown editor running inside of Umbraco
+By the end of this guide, we will have a markdown editor running inside of Umbraco
 registered as a data type in the backoffice, assigned to a document type, and the editor can
 create and modify data.
 
@@ -35,7 +36,7 @@ create and modify data.
 The first thing we must do is create a new folder inside `/App_Plugins` folder. We will call it
 `MarkDownEditor`
 
-Next, we will create a simple manifest file to describe what this plugin does. This manifest will tell Umbraco about our new property editor and allows us to inject any needed files into the application, so we create the file `/App_Plugins/MarkDownEditor/package.manifest`
+Next, we will create a manifest file to describe what this plugin does. This manifest will tell Umbraco about our new property editor and allows us to inject any needed files into the application, so we create the file `/App_Plugins/MarkDownEditor/package.manifest`
 [For full package.manifest JSON documentation see here](../../Extending/Property-Editors/package-manifest.md)
 
 Inside this package manifest we add a bit of JSON to describe the property editor. Have a look at the inline comments in the JSON below for details on each bit:

@@ -4,7 +4,7 @@ needsV8Update: "true"
 ---
 
 # Add Open Graph - Step 3
-Next step is to actually get the Open Graph code rendered on the website. This is done in the `head` section of the HTML, so you need to find the template for this. In the `Starter Kit` the head is placed in the Master template, which is responsible for wrapping all the other templates. Because you've added the Open Graph feature as a composition you can check if the composition is present on the current page and then render meta tags.
+Next step is to get the Open Graph code rendered on the website. This is done in the `head` section of the HTML, so you need to find the template for this. In the `Starter Kit` the head is placed in the Master template, which is responsible for wrapping all the other templates. Because you've added the Open Graph feature as a composition you can check if the composition is present on the current page and then render meta tags.
 
 1. Go to the Settings section and expand the Template tree.
 2. Select the *Master* template
@@ -15,7 +15,7 @@ Next step is to actually get the Open Graph code rendered on the website. This i
             @Html.Partial("openGraph")
         }
 
-This will render a partial view *if* the composition is present on the current page which will be the case for Home and blog posts on the site. `IOpenGraph` is an interface created by adding the composition, if you know how that works you can see how powerful this is. If not, just enjoy the handy helper to check for the composition.
+This will render a partial view *if* the composition is present on the current page which will be the case for Home and blog posts on the site. `IOpenGraph` is an interface created by adding the composition, if you know how that works you can see how powerful this is. If not, enjoy the handy helper to check for the composition.
 
 At the end, the head should look like this:
 

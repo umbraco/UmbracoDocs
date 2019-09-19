@@ -1,6 +1,5 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
 ---
 
 # Working with stylesheets and JavaScript
@@ -8,7 +7,7 @@ needsV8Update: "true"
 ## Bundling & Minification for JavaScript and CSS
 
 You can of course use whatever tools you are comfortable with for bundling & minification but it's worth 
-noting that Umbraco ships with the ClientDependency Framework which offers simple runtime bundling & minification.
+noting that Umbraco ships with the ClientDependency Framework which offers runtime bundling & minification.
 
 You can bundle and minify as follows in a view template file.
 

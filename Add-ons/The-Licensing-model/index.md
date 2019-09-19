@@ -20,14 +20,14 @@ let's say that you have a license configured for your domain, `mysite.com`, and 
 
 The license will cover the following domains:
 
-- localhost
-- *.mysite.com
-- www.mysite.com
-- mysite.com.local
-- devdomain.com
-- www.devdomain.com
-- devdomain2.com
-- www.devdomain2.com
+- `localhost`
+- `*.mysite.com`
+- `www.mysite.com`
+- `mysite.com.local`
+- `devdomain.com`
+- `www.devdomain.com`
+- `devdomain2.com`
+- `www.devdomain2.com`
 
 :::note
 That you can have only 1 license per Umbraco installation.

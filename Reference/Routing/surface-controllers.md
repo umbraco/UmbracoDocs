@@ -16,13 +16,13 @@ It is a regular ASP.NET MVC controller that:
 
 Since any SurfaceController inherits from the `Umbraco.Web.Mvc.SurfaceController` class, the class instantly supports many of the helper methods and properties that are available on the base SurfaceController class including `UmbracoHelper` and `UmbracoContext`. Therefore, all Surface Controllers have native Umbraco support for:
 
-* interacting with Umbraco routes during HTTP POSTs (i.e. `return CurrentUmbracoPage();` )
-* rendering forms in Umbraco (i.e. `@Html.BeginUmbracoForm<MyController>(...)` )
-* rendering ASP.NET MVC ChildAction 
+* Interacting with Umbraco routes during HTTP POSTs (i.e. `return CurrentUmbracoPage();` )
+* Rendering forms in Umbraco (i.e. `@Html.BeginUmbracoForm<MyController>(...)` )
+* Rendering ASP.NET MVC ChildAction 
 
 ## Creating a SurfaceController
 
-SurfaceControllers are plugins, meaning they are found when the Umbraco application boots. There are 2 types of SurfaceController: **locally declared** & **plugin based**. The main difference between the two is that a plugin based controller gets routed via an MVC Area, which is defined in the controller (see below). Because a plugin based controller is routed via an MVC Area, it means that the views can be stored in a custom folder specific to the package it is being shipped in without interfering with the local developer's MVC files.
+SurfaceControllers are plugins, meaning they are found when the Umbraco application boots. There are 2 types of SurfaceController: **locally declared** & **plugin based**. The main difference between the two is that a plugin based controller gets routed via an MVC Area, which is defined in the controller (see below). Because a plugin based controller is routed via an MVC Area, it means that the views can be stored in a custom folder specific to the package it is being shipped in. This can be done without interfering with the local developer's MVC files.
 
 ### Locally declared controllers
 

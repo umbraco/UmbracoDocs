@@ -12,7 +12,7 @@ This section describes what a breaking change is in regards to the Umbraco codeb
 
 ## Security
 
-If a security issue arises with part of the Umbraco code base that requires changing the behavior or signatures of the code and no other option is available to mitigate the security issue, then this type of breaking change will be released during a minor version of Umbraco. If this scenario occurs, there will be documentation available for how to update your site to the fixed version.
+If a security issue arises with part of the Umbraco code base that requires changing the behavior or signatures of the code and no other option is available to mitigate the security issue, a breaking change will be released. This will be a minor version of Umbraco. If this scenario occurs, there will be documentation available for how to update your site to the fixed version.
 
 ## Dependencies
 
@@ -20,7 +20,7 @@ If a c# or JavaScript dependency is added or removed from the code base, a nuget
 
 ## API Design
 
-As the product evolves and more features are added, there may be rare circumstances where a current API's design falls short of the new feature set and doesn't provide a very friendly developer experience. If this circumstance occurs, it may be required that existing API signatures must evolve during a minor release. In this scenario investigation will be done to see what alternatives might exist to avoid sharp breaking changes though in some cases it will simply not be possible. Generally changes like this would be done in major versions but will be done in a minor version if the pros of changing these API signatures outweigh the cons of both breaking the signatures and releasing a major version.
+As the product evolves and more features are added, there may be rare circumstances where a current API's design falls short of the new feature set and doesn't provide a very friendly developer experience. If this circumstance occurs, it may be required that existing API signatures must evolve during a minor release. In this scenario investigation will be done to see what alternatives might exist to avoid sharp breaking changes though in some cases it will not be possible. Generally changes like this would be done in major versions but will be done in a minor version if the pros of changing these API signatures outweigh the cons of both breaking the signatures and releasing a major version.
 
 ## General codebase
 

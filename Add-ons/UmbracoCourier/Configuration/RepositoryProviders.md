@@ -7,7 +7,7 @@ versionRemoved: 8.0.0
 
 A repository provider is a location to store the files Courier produces when data is serialized from objects to files. 
 
-A repository is a simple file storage, which can return items in sets based on a revision alias. It is possible to store sets of changes in a revision with a certain name, and simply let the repository store and handle where the files actually exists.
+A repository is a file storage, which can return items in sets based on a revision alias. It is possible to store sets of changes in a revision with a certain name, and let the repository store and handle where the files exists.
 
 ### Local
 * **Type**:  `Local`

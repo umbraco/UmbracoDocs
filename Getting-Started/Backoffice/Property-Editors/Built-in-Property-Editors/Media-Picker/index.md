@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 8.1.0
 ---
 
 # Media Picker #
@@ -12,13 +12,13 @@ This property editors returns a single item if the "Pick multiple items" data ty
 
 ## Data Type Definition Example
 
-![Media Picker Data Type Definition](images/Media-Picker-DataType-v8.png)
+![Media Picker Data Type Definition](images/Media-Picker-DataType-8_1.png)
 
 ## Content Example 
 
 ![Media Picker Content](images/Media-Picker-Content-v8.png)
 
-## Typed Example (multiple enabled): ##
+## Typed Example (multiple enabled)
 
 ```csharp
 @{
@@ -30,8 +30,7 @@ This property editors returns a single item if the "Pick multiple items" data ty
 }
 ```
 
-
-## Typed Example (multiple disabled): ##
+## Typed Example (multiple disabled)
 
 ```csharp
 @{

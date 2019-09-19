@@ -20,13 +20,13 @@ Pretty much like the name indicates this Data type enables editors to choose fro
 
 ## MVC View Example
 
-### Typed:
+### Typed
 
 #### Without Modelsbuilder
 ```csharp 
 @if (Model.HasValue("colorTheme"))
 {
-    var value = Model.Value("colorTheme"));
+    var value = Model.Value("colorTheme");
     <p>@value</p>
 }
 ```

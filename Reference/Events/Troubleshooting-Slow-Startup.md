@@ -6,12 +6,13 @@ needsV8Update: "true"
 # Troubleshooting slow startup
 
 Slow startup can occur if: 
-* no Examine indexes exist
-* models builder is used in [Pure Live mode](../Templating/Modelsbuilder/Builder-Modes.md#pure-live-models). Depending on the number of models, compilation (the first time) will take some time. You can use the other modes (DLL, AppData or API) to avoid this entirely.
-* the Umbraco cache file (/app_data/umbraco.config) doesn't exist
-* the `/App_Data/TEMP/PluginCache` is empty or if one of your DLLs has changed. This means a new scan of plugins will occur. Plugin scanning has also been heavily optimized since v7.5 (IIRC)
-* third party packages and plugins may also run code on startup, and may have configuration or settings to avoid this, or there may be workarounds or indeed 'different' plugins
-* Your application may also be executing code on startup, and other strategies could be used to prevent slow startup time, eg instead of 'loading' data into memory at startup, consider doing so when it is first requested
+
+* No Examine indexes exist.
+* Models builder is used in [Pure Live mode](../Templating/Modelsbuilder/Builder-Modes.md#pure-live-models). Depending on the number of models, compilation (the first time) will take some time. You can use the other modes (DLL, AppData or API) to avoid this entirely.
+* The Umbraco cache file (/app_data/umbraco.config) doesn't exist.
+* The `/App_Data/TEMP/PluginCache` is empty or if one of your DLLs has changed. This means a new scan of plugins will occur - Plugin scanning has also been heavily optimized since v7.5 (IIRC).
+* Third party packages and plugins may also run code on startup, and may have configuration or settings to avoid this, or there may be workarounds or indeed 'different' plugins.
+* Your application may also be executing code on startup, and other strategies could be used to prevent slow startup time, eg instead of 'loading' data into memory at startup, consider doing so when it is first requested.
 
 _Troubleshooting tip: You can change your log4net config to *output Debug* level logs, this will give you detailed timing information on almost all aspects of startup so you can diagnose what might be running slow._
 

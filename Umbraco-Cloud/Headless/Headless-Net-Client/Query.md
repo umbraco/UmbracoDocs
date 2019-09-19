@@ -2,7 +2,7 @@
 versionFrom: 7.0.0
 ---
 
-### Query data with the .NET Headless Client
+# Query data with the .NET Headless Client
 
 _The .NET Headless Client provides great options for query content as well as working with strongly typed objects. 
 This document will cover both basic queries where you filter on a document type and a single property but also more advanced ones where you can use either XPath or Lucene queries for maximum flexibility_
@@ -11,10 +11,10 @@ To get content from Headless, you'll use the Headless Service described in the o
 
 *The Headless Query API is async, so if your application doesn't work with async you'll need to call .Result in the end of the query.*
 
-#### Simple Queries
-Often you just need to get either all content of a specific Document Type or getting content that matches one or few properties. For this purpose you can use the fluent interface provided, where you get the convenience of using Intellisense. For queries more complex than this scenario - such as grouped queries - you'll get better results using XPath or Lucene queries which is explained below.
+## Queries
+Often you need to get either all content of a specific Document Type or getting content that matches one or few properties. For this purpose you can use the fluent interface provided, where you get the convenience of using Intellisense. For queries more complex than this scenario - such as grouped queries - you'll get better results using XPath or Lucene queries which is explained below.
 
-##### Getting started
+### Getting started
 When you query headless you can choose to either get all content that matches your query (`GetAll()`, `Query()` or `Search()` all of which can be typed) or getting the first item:
 ```csharp
 using Umbraco.Headless.Client.Net.Models;
@@ -45,7 +45,7 @@ var allContentWithHeadlessTags =
     await HeadlessClient.Instance.Query(query);
 ```
 
-##### Filter on Document Types with strongly typed classes 
+### Filter on Document Types with strongly typed classes 
 You can also filter on document types and get them back as strongly typed objects. Let's start with an example and then we'll explain below:
 
 ```csharp
@@ -109,7 +109,7 @@ foreach(var wine in allWine) {
 }
 ```
 
-#### Advanced queries with XPath and Lucene
+## Advanced queries with XPath and Lucene
 If you need more advanced queries, so you use XPath or Lucene instead of the fluent interface. This is useful for fast search in a big repository of content or for more advanced/grouped queries. Let's say we want all content from Headless that contains the tag "pinotnoir":
 
 ```csharp

@@ -28,7 +28,7 @@ Current languages that are included in the core are:
 - Portuguese
 - Russian
 - Swedish
-- Chinese (Simple)
+- Chinese
 - Chinese (Taiwan)
 - Czech
 - Turkish
@@ -93,13 +93,13 @@ localizationService.localize("dialog_myKey").then(function(value){
 
 ## Help keep the language files up to date
 
-As Umbraco is a continually evolving product it is inevitable that new text is added on a fairly regular basis to the English language version of these files and this may mean that some of the above languages are no longer up to date.
+As Umbraco is a continually evolving product it is inevitable that new text is added on a fairly regular basis to the English language version of these files. This may mean that some of the above languages are no longer up to date.
 
 If a translation is missing, the key "alias" used will be shown within the user interface, as an example:
 
 	[assignDomain]
 
-The language files are fairly simple XML files with a straight-forward layout as seen below.
+The language files are XML files with a straight-forward layout as seen below.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
@@ -117,7 +117,7 @@ The language files are fairly simple XML files with a straight-forward layout as
 </language>
 ```
 	
-In the above example of a missing translation for "assignDomain", locate this string in the en.xml file and then copy the whole "Key" element into the relevant language file and translate the text, as an example here is the Spanish version of the above snippet:
+In the above example of a missing translation for "assignDomain", locate this string in the en.xml file and then copy the whole "Key" element into the relevant language file. Then you can translate the text, as an example here is the Spanish version of the above snippet:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>

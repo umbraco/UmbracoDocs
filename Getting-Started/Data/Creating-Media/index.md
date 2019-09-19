@@ -5,6 +5,7 @@ versionFrom: 8.0.0
 ---
 
 # Creating media
+
 Media in Umbraco is handled in much the same way as content. Instead of defining Document Types you define Media Types that act as the base for media items. Unlike with normal content there are a three default Media Types:
 
 - Folder
@@ -14,27 +15,30 @@ Media in Umbraco is handled in much the same way as content. Instead of defining
 The __Folder__ Media Type is a container for organizing media items in the media tree. The __Image__ Media Type is used for uploading and storing images and the __File__ Media Type is used to upload and store other files in the Media section. This means you don't have to define your own Media Types to start using the section. You've already got the tools for organizing and uploading media.
 
 ## Creating a folder
+
 It is always a good idea to start by creating a folder for Media items. Make sure to name your folders in a way that makes it easy for editors to upload files and images in the right place.
 
 To create a media folder go to the __Media section__ and click the menu icon to the right of __Media__, alternatively you can right click the __Media__ node and choose create. This will bring up a dialogue. Pick the __Folder__, enter a name and press __save__.
 
 ## Uploading images and files
+
 There are a couple of different ways to do this. 
 
 You can use the context menu as when creating a folder. Click the menu icon next to the folder and choose __Image__ or __File__, enter a name for your media item and click the __Upload field__ and choose a file to upload.
 
-An easier way to do it is to simply drag and drop the file to the upload field in the Media section. Umbraco will automatically detect if it is an image or a file and create a media item in the folder. You can even drop entire folders (with subfolders) and the folder and file structure will be recreated. Alternatively you can click on the upload field to get a standard OS file picker dialog.
+An easier way to do it is to drag and drop the file to the upload field in the Media section. Umbraco will automatically detect if it is an image or a file and create a media item in the folder. You can even drop entire folders (with subfolders) and the folder and file structure will be recreated. Alternatively you can click on the upload field to get a standard OS file picker dialog.
 
 You can also click the __Create__ dropdown, and choose what kind of item you want to create. Choose Image or File here, will again give you the option to either click an Upload field or drag the image into the upload field to upload the item.
 
 The default __Image__ Media Type has 5 properties that will be populated once the image is uploaded. These are __Upload Image__, __Width__, __Height__, __Size__ and __Type__. They can be viewed in the __Media__ section and accessed in your templates.
 
 ## Organizing and editing media items
+
 The default view for the media section is a card view that let's you preview the images, files and folders.
 
 ![Media Section - Cardview](images/media-section.png)
 
-By clicking the items you can select multiple media items and do bulk operations like deleting or moving them. To edit properties on a media item simply click the name of the item, which you will see once hovering over the item.
+By clicking the items you can select multiple media items and do bulk operations like deleting or moving them. To edit properties on a media item click the name of the item, which you will see once hovering over the item.
 
 ![Edit media item](images/hover-over.png?width=200px)
 
@@ -43,6 +47,7 @@ You can switch to a list view by clicking the view toggle next to the search fie
 ![Media Section - List view](images/switch-view.png)
 
 ## Using media items in content
+
 By adding a __Media Picker__ property to a Document Type the editor will have the ability to select media items when creating content.
 
 :::tip
@@ -50,7 +55,8 @@ The __Upload File__ property on the images use the Image Cropper Data Type. If c
 :::
 
 ## Creating a Media Type
-You can create your own Media Types and add tabs, properties, and control the structure of the Media tree just as with Document Types. This means you can store information that is specific to the media on the item itself.
+
+You can create your own Media Types and add tabs, properties, and control the structure of the Media tree as you would with Document Types. This means you can store information that is specific to the media on the item itself.
 
 A Media Type is created in the __Settings__ section using the Media Type editor.
 
@@ -67,18 +73,20 @@ Choose __New Media Type__. This will open the Media Type editor. It is basically
 Name the Media Type "Employee Image". Choose an icon by clicking the icon to the left of the name.
 
 ### Adding tabs
+
 Before we start adding properties to the Media Type we need to create a group to put these in.
 
 Click on __Add group__ and call it "Image".
 
 ### Adding properties
+
 We need to add the same properties as on the default __Image__ Media Type. These are:
 
-- umbracoFile
-- umbracoWidth
-- umbracoHeight
-- umbracoBytes
-- umbracoExtension
+- `umbracoFile`
+- `umbracoWidth`
+- `umbracoHeight`
+- `umbracoBytes`
+- `umbracoExtension`
 
 On the Image group click __Add property__. Name it "Upload image" and change the alias to "umbracoFile".
 
@@ -116,7 +124,7 @@ There are four options to add a new media items to the folder, as you can see he
 ![Uploading Media](images/four-ways-of-uploading.png)
 
 :::tip
-Remember you can uncheck the __Allow at root__ option on the __Employee images__ Media Type to prevent editors from creating multiple folders of this type. This will not affect created folders, just disable the creation of new ones
+Remember you can uncheck the __Allow at root__ option on the __Employee images__ Media Type to prevent editors from creating multiple folders of this type. This will not affect created folders, only disable the creation of new ones
 :::
 
 ### Cropping the images

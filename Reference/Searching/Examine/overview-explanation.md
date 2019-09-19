@@ -7,13 +7,13 @@ needsV8Update: "true"
 
 <small>Originally published on the Umbraco blog - [Examining Examine: Friday, September 16, 2011 by Peter Gregory](https://umbraco.com/follow-us/blog-archive/2011/9/16/examining-examine.aspx)</small>
 
-When Umbraco Examine was released many developers including myself thought all my search woes were solved. I figured I would be able to just fire up Umbraco, configure examine and BAM! I would have a search engine that gave me exactly what I needed. But after giving it an initial go and trying it out, most developers left it alone and put it in the too hard basket as they did not understand what was going on under the surface or why their search results were not what they expected. What I want to try and achieve in this post is to demystify Umbraco Examine and provide a few tips I have picked up while working with it.
+When Umbraco Examine was released many developers including myself thought all my search woes were solved. I figured I would be able to fire up Umbraco, configure examine and BAM! I would have a search engine that gave me exactly what I needed. After trying it out, most developers left it alone and put it in the too hard basket as they did not understand what was going on under the surface or why their search results were not what they expected. What I want to try and achieve in this post is to demystify Umbraco Examine and provide a few tips I have picked up while working with it.
 
 ## What is Examine?
-First, for those that don't know what I am on about let's just start by telling you what Examine is.  Examine is a provider based Indexer/Searcher API and wraps the Lucene.Net indexing/searching engine. Examine makes it super easy to work with Lucene indexes and allows you to query or index almost any content with very little effort. Lucene is SUPER fast and when managed correctly can allow you to open up super fast searching on absurd amounts of data.
+First, for those that don't know what I am on about let's start by telling you what Examine is.  Examine is a provider based Indexer/Searcher API and wraps the Lucene.Net indexing/searching engine. Examine makes it super easy to work with Lucene indexes and allows you to query or index almost any content with very little effort. Lucene is SUPER fast and when managed correctly can allow you to open up super fast searching on absurd amounts of data.
 
 ## What is Umbraco Examine?
-Umbraco Examine is the Umbraco implementation of Examine. Examine is not exclusive to Umbraco and can actually be used as a completely stand alone component on any project that needs a fast Index. Umbraco Examine is a combination of Umbraco, Examine and Lucene.Net and uses Umbraco as the data source for its Lucene index. Lucene has been a part of Umbraco from the early days and powers the backoffice search.
+Umbraco Examine is the Umbraco implementation of Examine. Examine is not exclusive to Umbraco and can be used as a completely stand alone component on any project that needs a fast Index. Umbraco Examine is a combination of Umbraco, Examine and Lucene.Net and uses Umbraco as the data source for its Lucene index. Lucene has been a part of Umbraco from the early days and powers the backoffice search.
 
 ## The Basics of Examine
 Out of the box Umbraco comes configured to index content and members in the backoffice for the backoffice or internal search engine that appears in the header. As Examine is configuration driven you can quickly modify or set up indexes and searchers. The best place to start is with an index set.
@@ -24,7 +24,7 @@ You configure an index set in the /config/examineIndex.config file. This file de
 <IndexSet SetName="WebsiteIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/WebsiteIndexSet/">
 ```
 
-Really, that is all you need.  You can actually leave out a majority of the configuration and Examine will revert to the default which is to index all your data and all your properties. But if you want a little more control you can use the full configuration options as shown below.
+Really, that is all you need.  You can leave out a majority of the configuration and Examine will revert to the default which is to index all your data and all your properties. But if you want a little more control you can use the full configuration options as shown below.
 
 ```xml
 <IndexSet SetName="WebsiteIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/WebsiteIndexSet/">
@@ -65,14 +65,14 @@ These are the properties that we have defined against our DocumentTypes that we 
 **`<IncludeNodeTypes>` & `<ExcludeNodeTypes>`**
 I like to think of these as the white list and the black list. Basically figure out if you have to include more or exclude more nodeTypes. Generally which ever one requires less configuration is the one that you should use but that is completely up to you and how much you like typing.
 
-Just remember that creating errors in index configuration is easy if you make spelling mistakes.  You will know if you have made errors as your index will either not create or not include the features you expect.  We will look at how to check your index content later with Luke, a Java based tool that allows us to look into our index and run queries against the index directly.
+Remember that creating errors in index configuration is easy if you make spelling mistakes.  You will know if you have made errors as your index will either not create or not include the features you expect.  We will look at how to check your index content later with Luke, a Java based tool that allows us to look into our index and run queries against the index directly.
 
-So now we have defined our index, we actually now need to tell Examine what to do with this configuration.  In our next step we need to configure our Indexer and our Searcher.  This is done in the `/config/ExamineSettings.Config` file.
+So now we have defined our index, we now need to tell Examine what to do with this configuration.  In our next step we need to configure our Indexer and our Searcher.  This is done in the `/config/ExamineSettings.Config` file.
 
 This file contains two main sections, `<ExamineIndexProviders>` and `<ExamineSearchProviders>`
 
 ## Setting Up your IndexProvider
-We will start out by creating our ExamineIndexProvider. As the name suggests this tells Examine how to manage our Index.  Again, contrary to what you may have been told you can actually leave out most of the optional configuration and simply specify your indexer in a single line of code.
+We will start out by creating our ExamineIndexProvider. As the name suggests this tells Examine how to manage our Index.  Again, contrary to what you may have been told you can leave out most of the optional configuration and specify your indexer in a single line of code.
 
 ```xml
 <add name="WebsiteIndexer" type="UmbracoExamine.UmbracoContentIndexer, UmbracoExamine"/>
@@ -91,7 +91,7 @@ But if we want more control we can define our Provider by creating the configura
 
 Let's look at each of the options.
 
-**name**: This is the alias that we are going to give our indexer. You may notice above that we have given it the name WebsiteIndexer. If maintaining the naming conventions (Suffix of Indexer, Searcher, IndexSet) Examine will be able to wire up the parts easily and we can omit certain configuration elements. If however we decided that we wanted to call our indexer something else we would need to specify the indexSet attribute so that our indexer knows what it is wired up to.
+**name**: This is the alias that we are going to give our indexer. You may notice above that we have given it the name WebsiteIndexer. If maintaining the naming conventions (Suffix of Indexer, Searcher, IndexSet) Examine will be able to wire up the parts and we can omit certain configuration elements. If however we decided that we wanted to call our indexer something else we would need to specify the indexSet attribute so that our indexer knows what it is wired up to.
 
 **type**: Because we are indexing Umbraco Content we need to specify the type as being UmbracoExamine.UmbracoContentIndexer.
 
@@ -105,7 +105,7 @@ Let's look at each of the options.
 
 **analyzer (optional)**: The Lucene.Net analyzer to use when storing data. There are a number of different analyzers available and they all do slightly different things. If you want a good overview of the different analyzers check out <https://www.aaron-powell.com/posts/2010-05-27-lucene-analyzer/>
 
-**enableDefaultEventHandler (optional)**:Will automatically listen for Umbraco events and index when required. If you are relying on the standard Umbraco events, setting this False could be a simple way of disabling indexing if required.
+**enableDefaultEventHandler (optional)**:Will automatically listen for Umbraco events and index when required. If you are relying on the standard Umbraco events, setting this False could be a way of disabling indexing if required.
 
 Now that Examine knows how to index our site. It should be reading the config and slamming your content into an index.
 
@@ -129,7 +129,7 @@ Let's break it down, again.
 
 **type**: Because we are searching Umbraco content we specify the type as UmbracoExamine.UmbracoExamineSearcher as the type of search provider.
 
-**analyzer (optional)**: Just like the indexer our search provider also needs to know what type of analyzer to use when searching the index. Make sure that your search is using the same analyzer as your indexer. Think of it as the language the indexer writes, the searcher needs to be able to read, just like if you write in English don't expect to be able to read French.
+**analyzer (optional)**: Like the indexer our search provider also needs to know what type of analyzer to use when searching the index. Make sure that your search is using the same analyzer as your indexer. Think of it as the language the indexer writes, the searcher needs to be able to read, like if you write in English don't expect to be able to read French.
 
 Awesome! Our configuration is now complete! Our site should now be indexing our content and has a way of accessing it via a search provider.  However, configuration is only part of the story... now we need to do some coding.
 
@@ -161,7 +161,7 @@ yourRepeater.DataSource = searchResults;
 yourRepeater.DataBind();
 ```
 
-Now this is where things often go wrong for developers and why they often get a little frustrated. What they assume is that this query is going to return them results where either nodeName or metaTitle contain hello. But what actually happens with this query is that by default Examine reads this query as nodeName MUST contain hello or metaTitle SHOULD contain hello. So you will often get odd results or none at all.
+Now this is where things often go wrong for developers and why they often get a little frustrated. What they assume is that this query is going to return them results where either nodeName or metaTitle contain hello. But what happens with this query is that by default Examine reads this query as nodeName MUST contain hello or metaTitle SHOULD contain hello. So you will often get odd results or none at all.
 
 So Examine feeds the query to Lucene as follows.
 
@@ -179,7 +179,7 @@ Now when Examine passes the query to Lucene it will pass it as this:
 
 	nodeName:hello metaTitle:hello
 
-Which in simple terms means give me anything where nodeName or metaTitle contain hello.  Much better.
+Which means give me anything where nodeName or metaTitle contain hello.  Much better.
 
 So with this knowledge let's look at another example using the `And()` operator.
 
@@ -221,7 +221,7 @@ this would end up becoming:
 
 I think you get the gist.
 
-But wait, there's more! What if you want to start combining operators? You can! It's not called chaining for nothing...
+But wait, there's more! What if you want to start combining operators? You can! It's not called chaining for nothing.
 
 ```csharp
 var query = searchCriteria.Field("nodeName","hello").And().GroupedOr(new string[] { "metaTitle", "metaDescription"}, new string[]{"hello", "goodbye"}).Compile();
@@ -232,7 +232,7 @@ This would end up being:
 	nodeName:hello +(metaTitle:hello metaDescription:goodbye)
 
 ### Fuzzy
-Sometimes users will query your site looking for a term that they could have misspelled or is very close. Fuzzy gives you the ability to get Lucene to look for terms that look like your term.  Eg mound could actually be sound.
+Sometimes users will query your site looking for a term that they could have misspelled or is very close. Fuzzy gives you the ability to get Lucene to look for terms that look like your term.  Eg mound could be sound.
 
 ```csharp
 var query = searchCriteria.Fields("nodeName","hello".Fuzzy(0.8f)).Compile();
@@ -290,7 +290,9 @@ The resultant query would look like this:
 
 The ^5 is the equivalent of .Boost(5)
 
-So as you can see, it can get pretty complex but also pretty powerful.  For more information I really suggest that you take the time to look through the official Lucene query syntax guide https://lucene.apache.org/core/2_9_4/queryparsersyntax.html as it will show you what can be used to achieve very complicated queries.
+So as you can see, it can get pretty complex but also pretty powerful.
+
+For more information I suggest that you take the time to look through the official Lucene query syntax guide https://lucene.apache.org/core/2_9_4/queryparsersyntax.html. It will show you what can be used to achieve very complicated queries.
 
 We haven't gone into the output of results but quickly here is what you could end up with in your codebehind using the above Raw query:
 

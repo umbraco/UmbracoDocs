@@ -14,7 +14,7 @@ The default location of this file is written to `App_Data/Logs` and contains the
 
 ## Structured logging
 
-Serilog is a logging framework that allows us to do structured logging or write log messages using the message template format, allowing us to have a more detailed log message, rather than the traditional text message in a long txt file.
+Serilog is a logging framework that allows us to do structured logging or write log messages using the message template format. This basically allows us to have a more detailed log message, rather than the traditional text message in a long txt file.
 
 ```
 2018-11-12 08:34:50,419 [P27004/D2/T1] INFO   Umbraco.Core.Runtime.CoreRuntime - Booted. (4586ms) [Timing 9e76e5f]
@@ -48,7 +48,7 @@ To learn more about structured logging and message templates you can read more a
 
 Umbraco writes log messages, but you are also able to use the Umbraco logger to write the log file as needed, so you can get further insights and details about your implementation.
 
-Here is a simple example of using the logger to write an Information message to the log which will contain one property of **Name** which will output the name variable that is passed into the method
+Here is an example of using the logger to write an Information message to the log which will contain one property of **Name** which will output the name variable that is passed into the method
 
 ```csharp
 using Umbraco.Web.WebApi;
@@ -80,7 +80,7 @@ Logger.Info<MyApiController>($"We are saying hello to {name}");
 Logger.Info<MyApiController>("We are saying hello to " + name);
 ```
 
-The above examples  which use the bad approach will write to the log file, however we will not get a separate property logged with the message and we have no easy way to search for all log messages of this type.
+The above examples, which uses the bad approach will write to the log file. Using it we will not get a separate property logged with the message and we have no easy way to search for all log messages of this type.
 
 Where as the previous example we would be able to find all log messages that use the message template `We are saying hello to {Name}`
 
@@ -131,7 +131,10 @@ The default log levels we ship with in Umbraco v8.0+ are:
 
 ## Configuration
 
-Serilog can be configured and extended by using the two XML configuration files on disk found at `/config/serilog.config` which is used to modify the main Umbraco logging pipeline and a second configuration file that is at `/config/serilog.user.config` which is a sublogger and allows you to make modifications without affecting the main Umbraco logger.
+Serilog can be configured and extended by using the two XML configuration files on disk. 
+
+* `/config/serilog.config` is used to modify the main Umbraco logging pipeline
+* `/config/serilog.user.config` which is a sublogger and allows you to make modifications without affecting the main Umbraco logger
 
 ### Changing the log level
 
@@ -142,7 +145,7 @@ This can be done by adding the following into either `serilog.config` or the sub
 ```
 
 :::warning
-If you change the main Umbraco logger in serilog.config to log only **Warning** you would not be able to have the serilog.user.config sub logger to be set to **Debug** as only Warning messages and higher will flow down into the child sub logger
+If you change the main Umbraco logger in `serilog.config` to log only **Warning** you would not be able to have the `serilog.user.config` sub logger to be set to **Debug**. Having this setting only Warning messages and higher will flow down into the child sub logger.
 :::
 
 
@@ -172,6 +175,7 @@ Add the following to the `/config/serilog.user.config` file, which will create a
 <add key="serilog:write-to:File.restrictedToMinimumLevel" value="Debug" />
 <add key="serilog:write-to:File.retainedFileCountLimit" value="32" /> <!-- Number of log files to keep (or remove value to keep all files) -->
 <add key="serilog:write-to:File.rollingInterval" value="Day" /> <!-- Create a new log file every Minute/Hour/Day/Month/Year/infinite -->
+<add key="serilog:write-to:File.outputTemplate" value="{Timestamp:yyyy-MM-dd HH:mm:ss,fff} [P{ProcessId}/D{AppDomainId}/T{ThreadId}] {Log4NetLevel}  {SourceContext} - {Message:lj}{NewLine}{Exception}" />
 ```
 
 ### Filtering user log file to include only log messages from your namespace
@@ -182,7 +186,7 @@ With the above example we are able to write to a separate JSON log file, but add
 <!-- Filters all sink's in the serilog.user.config to use this expression -->
 <!-- Common use case is to include SourceType starting with your own namespace -->
 <add key="serilog:using:FilterExpressions" value="Serilog.Filters.Expressions" />
-<add key="serilog:filter:ByIncluding.expression" value="StartsWith(SourceContext, 'MyNamespace')" />
+<add key="serilog:filter:ByIncludingOnly.expression" value="StartsWith(SourceContext, 'MyNamespace')" />
 ```
 
 ### Writing log events to different storage types
@@ -204,7 +208,7 @@ For example you could install the Nuget package `PM> Install-Package Serilog.Sin
 
 You may wish to add a log property to all log messages. A good example could be a log property for the `environment` to determine if the log message came from `development` or `production`.
 
-This is useful when you could be writing logs from all environments or multiple customer projects into a single logging source, such as ElasticSearch, this would then easily allow you to search and filter for a specific project and its environment to see the log messages.
+This is useful when you could be writing logs from all environments or multiple customer projects into a single logging source, such as ElasticSearch. This would allow you to search and filter for a specific project and its environment to see the log messages.
 
 In the `/config/serilog.user.config` file you can add the following lines, which the values could be changed or transformed as needed.
 
@@ -217,9 +221,11 @@ In the `/config/serilog.user.config` file you can add the following lines, which
 
 ### Full C# control over Serilog configuration
 
-If you like using Serilog but prefer to use C# to configure the logging pipeline then you can do so with the following example
+If you like using Serilog but prefer to use C# to configure the logging pipeline then you can do so with the following example. This sets the minimum logging level from a web.config AppSetting, allowing you to set different minimum logging levels in different environments using web config transforms.
 
 ```csharp
+using System;
+using System.Configuration;
 using Umbraco.Web;
 using Umbraco.Core;
 using Umbraco.Web.Runtime;
@@ -227,6 +233,7 @@ using Umbraco.Core.Logging.Serilog;
 using ILogger = Umbraco.Core.Logging.ILogger;
 
 using Serilog;
+using Serilog.Core;
 using Serilog.Events;
 
 namespace MyNamespace
@@ -246,14 +253,21 @@ namespace MyNamespace
         }
         protected override ILogger GetLogger()
         {
-            var loggerConfig = new LoggerConfiguration();
-            loggerConfig
-                .Enrich.WithProperty("MyProperty", "whatIWant")
+            var logLevelSetting = ConfigurationManager.AppSettings["YourMinimumLoggingLevel"]; //Warning, Debug, Information, etc
+
+            const bool ignoreCase = true; //this is to clarify the function of the boolean second parameter in the TryParse
+            if (!Enum.TryParse(logLevelSetting, ignoreCase, out LogEventLevel minimumLevel))
+            {
+                minimumLevel = LogEventLevel.Information;//set to this level if the config setting is missing or doesn't match a valid enumeration
+            }
+
+            var levelSwitch = new LoggingLevelSwitch { MinimumLevel = minimumLevel };
+
+            var loggerConfig = new LoggerConfiguration()
                 .MinimalConfiguration()
-                .OutputDefaultTextFile(LogEventLevel.Error)
-                .OutputDefaultJsonFile(LogEventLevel.Information)
                 .ReadFromConfigFile()
-                .ReadFromUserConfigFile();
+                .ReadFromUserConfigFile()
+                .MinimumLevel.ControlledBy(levelSwitch);
 
             return new SerilogLogger(loggerConfig);
         }

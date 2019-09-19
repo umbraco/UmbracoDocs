@@ -5,7 +5,7 @@ needsV8Update: "true"
 
 # Umbraco Api
 
-_This section will describe how to work with Web Api in Umbraco to easily create REST services_
+_This section will describe how to work with Web Api in Umbraco to create REST services_
 
 Related links:
 
@@ -13,7 +13,7 @@ Related links:
 * [Umbraco api authorization](authorization.md)
 
 ## What is Web API?
-The Microsoft Web API reference can be found on the [official ASP.NET Web API website](https://www.asp.net/web-api) - *"ASP.NET Web API is a framework that makes it easy to build HTTP services that reach a broad range of clients, including browsers and mobile devices. ASP.NET Web API is an ideal platform for building RESTful applications on the .NET Framework."*
+The Microsoft Web API reference can be found on the [official ASP.NET Web API website](https://www.asp.net/web-api). *"ASP.NET Web API is a framework that makes it easy to build HTTP services that reach a broad range of clients, including browsers and mobile devices. ASP.NET Web API is an ideal platform for building RESTful applications on the .NET Framework."*
 
 Essentially it's a great platform for building REST services.
 
@@ -56,7 +56,7 @@ public class ScoresController : UmbracoApiController
 
 ### Locally declared controller
 
-This is the most common way to create an Umbraco Api controller, you simply inherit from the class `Umbraco.Web.WebApi.UmbracoApiController` and that is all. You will of course need to follow the guidelines specified by Microsoft for creating a Web Api controller, documentation can be found on the [official ASP.NET Web API website](https://www.asp.net/web-api).
+This is the most common way to create an Umbraco Api controller, you inherit from the class `Umbraco.Web.WebApi.UmbracoApiController` and that is all. You will of course need to follow the guidelines specified by Microsoft for creating a Web Api controller, documentation can be found on the [official ASP.NET Web API website](https://www.asp.net/web-api).
 
 Example:
 

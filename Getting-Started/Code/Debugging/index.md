@@ -4,7 +4,7 @@ needsV8Update: "true"
 ---
 
 # Debugging
-During the development of your Umbraco site you can debug, and profile the code you have written to analyse and discover bugs, bottlenecks in your code, or just help uncover what on earth is going wrong.
+During the development of your Umbraco site you can debug, and profile the code you have written to analyse and discover bugs, bottlenecks in your code, or to help uncover what on earth is going wrong.
 
 
 ### Tracing
@@ -60,7 +60,7 @@ and any underlying SQL Statements that are being executed for a part of the exec
 
 #### Writing to the MiniProfiler
 
-If within your implementation there are certain lines of code that you think may contain a bottleneck, the MiniProfiler gives you a method for timing just those specific lines of code:
+If within your implementation there are certain lines of code that you think may contain a bottleneck, the MiniProfiler gives you a method for timing those specific lines of code:
 
 ```csharp
 var profiler = ApplicationContext.ProfilingLogger;
@@ -80,7 +80,7 @@ and now in the profiler you can see
 
 If you are using the Google Chrome browser you can install this [Umbraco Productivity Tool Chrome Extension](https://chrome.google.com/webstore/detail/umbraco-productivity/kepkgaeokeknlghbiiipbhgclikjgkdp?hl=en)
 
-To enable you to easily access and switch between the Mini-profiler / Trace debugging modes.
+To enable you to access and switch between the Mini-profiler / Trace debugging modes.
 
 ![Umbraco Productivity Tool](images/umbraco-productivity-chrome-extension.png)
 

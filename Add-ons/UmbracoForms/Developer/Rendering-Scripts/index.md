@@ -8,11 +8,11 @@ versionFrom: 7.0.0
 If you are using Umbraco Forms v 4.x, you need to follow the guide found here: [When using Forms 4.x](#when-using-forms-4x)
 :::
 
-Forms will output some JavaScript, and by default this is rendered just below the markup. 
+Forms will output some JavaScript, and by default this is rendered right below the markup. 
 
 In many cases you might prefer rendering your scripts at the bottom of the page, e.g. before the closing `</body>` tag, as this generally improves site performance.
 
-In order to be able to render your scripts where you want, you need to add the following snippet to your template. Make sure you add it below your scripts, just before the closing `</body>` tag:
+In order to be able to render your scripts where you want, you need to add the following snippet to your template. Make sure you add it below your scripts, right before the closing `</body>` tag:
 
 ```csharp
 @if (TempData["UmbracoForms"] != null)

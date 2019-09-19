@@ -52,7 +52,7 @@ In the above output two files are listed and we want to pick the ones that comes
 
     git checkout --ours data/Revision/documents/77279e39-ed1f-428a-ad7e-258db5f9e6ee.courier
 
-_Note_: If you wanted to select the files from the Baseline project instead of the ones from the current project, you should simply write “--theirs” instead of “--ours” in the command from above. “Ours” corresponds to the current project (the development site) and “Theirs” corresponds to the Baseline project.
+_Note_: If you wanted to select the files from the Baseline project instead of the ones from the current project, you should write “--theirs” instead of “--ours” in the command from above. “Ours” corresponds to the current project (the development site) and “Theirs” corresponds to the Baseline project.
 
 Now you need to add the (modified) files to Git and finally commit the changes using the following commands:
 
@@ -60,7 +60,7 @@ Now you need to add the (modified) files to Git and finally commit the changes u
     git commit -m “Resolving merge conflicts”
 
 The merge conflict has now been resolved, and you can update your local repository with the latest changes by pulling from the development site.
-Please note that the changes from the commit haven’t been deployed to the website yet, as we have only applied the changes to the Git repository. In order to deploy the recent changes to the website you can push your local changes to the development site (please refer to this documentation for pushing changes from your local repository) or you can use the Kudu api to trigger a deployment.
+Please note that the changes from the commit haven’t been deployed to the website yet, as we have only applied the changes to the Git repository. In order to deploy the recent changes to the website you can push your local changes to the development site or you can use the Kudu api to trigger a deployment.
 You can use the following command from the Kudu Debug Console to deploy the latest changes:
 
     curl https://dev-my-website-alias.scm.s1.umbraco.io/api/deployments -X PUT -H "Content-Type: Application/json" --data "{ }" --user yourusername:password

@@ -67,7 +67,7 @@ The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the re
 #### Pre Examine v0.1.80 ####
 
 * If you have a {machinename} token in your `~/Config/ExamineIndex.config` file remove this part of the path. Example, if you have path that looks like: `~/App_Data/TEMP/ExamineIndexes/{machinename}/External/` it should be `~/App_Data/TEMP/ExamineIndexes/External/` 
-* Due to the nature of Lucene files and IO latency, you should update all of your Indexers and Searchers in the `~/Config/ExamineSettings.config` file to have these two properties (see [here](http://issues.umbraco.org/issue/U4-7614) for more details): `useTempStorage="Sync"`
+* Due to the nature of Lucene files and IO latency, you should update all of your Indexers and Searchers in the `~/Config/ExamineSettings.config` file to have these two properties (see [here](http://issues.umbraco.org/issue/U4-7614) for more details): `useTempStorage="Sync"` `tempStorageDirectory="UmbracoExamine.LocalStorage.AzureLocalStorageDirectory, UmbracoExamine"`
 
 ### Umbraco XML cache file and other TEMP files
 

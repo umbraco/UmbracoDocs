@@ -98,7 +98,7 @@ Label is a non-editable control, can only be used to display a pre-set text.
 ## Legacy Media Picker
 `Alias: Umbraco.MediaPicker`
 
-The legacy media picker opens a simple dialogue to pick a specific media item from the media tree. The value saved is the selected media ID.
+The legacy media picker opens a dialogue to pick a specific media item from the media tree. The value saved is the selected media ID.
 
 ## List View
 `Alias: Umbraco.ListView`
@@ -167,12 +167,12 @@ Pretty much like the name indicates this property editor enables editors to choo
 ## [Related Links](Related-Links2.md)
 `Alias: Umbraco.RelatedLinks2`
 
-Related Links allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
+Related Links allows an editor to add an array of links. These can either be internal Umbraco pages or external URLs.
 
 ## [(Obsolete) Related Links](Related-Links.md)
 `Alias: Umbraco.RelatedLinks`
 
-Made obsolete with the release of Umbraco v7.6. Related Links editor allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
+Made obsolete with the release of Umbraco v7.6. Related Links editor allows an editor to add an array of links. These can either be internal Umbraco pages or external URLs.
 
 ## Rich Text Editor
 `Alias: Umbraco.TinyMCEv3`
@@ -192,7 +192,7 @@ A tag control which can be controlled by a certain group of tags.
 ## [Textarea](Textarea/index-v7.md)
 `Alias: Umbraco.TextboxMultiple`
 
-A simple textarea control to input text.
+A textarea control to input text.
 
 ## [Textbox](Textbox/index-v7.md)
 `Alias: Umbraco.Textbox`
@@ -202,7 +202,7 @@ A normal html input text field.
 ## [True/False](True-False.md)
 `Alias: Umbraco.TrueFalse`
 
-A simple checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
+A checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
 
 ## User picker
 `Alias: Umbraco.UserPicker`
