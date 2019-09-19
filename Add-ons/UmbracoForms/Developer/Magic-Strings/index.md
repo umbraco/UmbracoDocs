@@ -73,4 +73,4 @@ public static string ParsePlaceHolders(Record record, string value)
 public static string ParsePlaceHolders(HttpContext context, Record record, string value)
 ```
 
-There is also a public extension method `ParsePlaceHolders()` extending the `string` object in the `Umbraco.Forms.Core.Extensions` namespace. This can be used with to replace the above tokens in a string, but it doesn't currently work with records/From field items.
+There is also a public extension method `ParsePlaceHolders()` extending the `string` object in the `Umbraco.Forms.Core.Extensions` namespace. This can be used to replace the above tokens in a string, but it doesn't currently work with records/From field items.
