@@ -35,11 +35,11 @@ Aside from the Data Types that are available out of the box there are some addit
 
 ### More information
 * [List of available Data types](default-data-types.md)
-* [Property Editors](../../Backoffice/Property-Editors/index-v8.md)
+* [Property Editors](../../Backoffice/Property-Editors/index.md)
 
 ### Related Services
 * [DataTypeService](../../../Reference/Management/Services/DataTypeService.md)
 
 ### Umbraco.tv
-* [Episode: Data Types](https://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/document-types/data-types/)
+* [Episode: Data Types](https://umbraco.tv/videos/umbraco-v8/implementor/fundamentals/document-types/data-types-and-property-editors)
 * [Episode: Creating and Reusing Editors](https://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/document-types/creating-and-reusing-editors/)
