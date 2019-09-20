@@ -215,3 +215,26 @@ public PropertyCacheLevel GetPropertyCacheLevel(PublishedPropertyType propertyTy
 [Content Picker to `IPublishedContent` using attribute meta data](value-converters-full-example-attributes.md)
 
 [Content Picker to `IPublishedContent` using `IPropertyValueConverterMeta` interface](value-converters-full-example-interface.md) (Umbraco v7.1.5+)
+
+## Overriding Existing PropertyValueConverters with your Custom Ones ##
+
+Any given PropertyEditor can only utilize a single PropertyValueConverter. If you have a new custom PropertyEditor, just creating the PropertyValueConverter will work, since there isn't already an exisiting Converter for that PropertyEditor. If you are attempting to override one of the standard PropertyValueConverters, however, you will need to take some additional steps to de-register the standard one.
+
+[I tried using this code... but it doesn't seem to actually work, so perhaps someone can verify it]
+
+```csharp
+using Umbraco.Core;
+using Umbraco.Core.Composing;
+using Umbraco.Core.Logging;
+using Umbraco.Web;
+
+public class Startup : IUserComposer
+{
+    public void Compose(Composition composition)
+    {         
+        //Swap ContentPicker Value Converter
+        composition.PropertyValueConverters().Remove<Umbraco.Web.PropertyEditors.ValueConverters.ContentPickerValueConverter>();
+        composition.PropertyValueConverters().Append<MyCustom.ContentValueConverter>();     
+    }
+}
+```
