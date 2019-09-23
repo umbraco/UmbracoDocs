@@ -24,7 +24,7 @@ Why work with tags? Because they're not cached by default.. which makes them coo
 
 ### TagService
 
-First we want to create our `TagService`. In this example it's just simple class with one method (`GetAll`), that wraps Umbraco's `TagQuery.GetAllTags()`.
+First we want to create our `TagService`. In this example it's a basic class with one method (`GetAll`) that wraps Umbraco's `TagQuery.GetAllTags()`.
 
 ```csharp
 using System;
@@ -133,7 +133,7 @@ namespace Doccers.Core.Controllers.Api
         public IEnumerable<TagModel> GetDefaultTags()
         {
             // As mentioned earlier we want tags from "default"
-            // group to be cached for just a single minute.
+            // group to be cached for a minute.
             return _tagService.GetAll("default", "defaultTags",
                 TimeSpan.FromMinutes(1));
         }
