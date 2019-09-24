@@ -14,13 +14,13 @@ For this example we're working with tags. On my site I have two tag properties:
 
 2) One on my blog posts using the tag group `blog`
 
-We're going to expose an endpoint that allows up to grap the tags from each group.
+We're going to expose an endpoint that allows us to get the tags from each group.
 
 The tags from the `default` should be cached for a minute and the `blog` tags will be cached until site restart or if you publish a blog post node in the Backoffice.
 
 ## Example
 
-Why work with tags? Because they're not cached by default.. which makes them cool for demo purposes :)
+Why work with tags? Because they're not cached by default.. which makes them ideal for demo purposes :)
 
 ### TagService
 
@@ -83,7 +83,7 @@ namespace Doccers.Core.Services
 }
 ```
 
-The interface was created to better register it, so we can use dependency injection. You can register your own classes like so:
+The interface was created to better register it so we can use dependency injection. You can register your own classes like so:
 
 ```csharp
 using Doccers.Core.Services;
@@ -158,7 +158,7 @@ namespace Doccers.Core.Controllers.Api
 
 ![Result](images/response-2.png)
 
-Everything should now work as expected when it comes to displaying tags. However, if I go to my Backoffice and add a new tag to the `blog` group, the changes aren't shown on the endpoint. Let's fix that.
+Everything should now work as expected when it comes to getting tags. However, if I go to my Backoffice and add a new tag to the `blog` group the changes aren't shown on the endpoint. Let's fix that.
 
 ### Clearing cache on publish
 
@@ -206,7 +206,7 @@ namespace Doccers.Core
 }
 ```
 
-Now that we have our component we also need to register it. Add `composition.Components().Append<Component>();` to the `Compose` method in the `Composer` class, so it becomes:
+Now that we have our component we also need to register it. Add `composition.Components().Append<Component>();` to the `Compose` method in the `Composer` class so it becomes:
 
 ```csharp
 public void Compose(Composition composition)
