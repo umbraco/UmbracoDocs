@@ -28,7 +28,7 @@ The Color picker allows you to set some predetermined colors that the editor can
 
     if (hexColor != null)
     {
-        <div style="background-color: @hexColor">@colorLabel</div>
+        <div style="background-color: #@hexColor">@colorLabel</div>
     }
 }
 ```
