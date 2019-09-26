@@ -2,7 +2,17 @@
 versionFrom: 7.0.0
 ---
 
-# Troubleshooting Automated minor upgrades
+# Minor version upgrades
+
+When minor version upgrades are available, your Umbraco site will not be auto-upgraded to this version. You will need to press the Upgrade button in the Umbraco Cloud portal to perform the upgrade. This will upgrade your Development environment so you can test how everything works on a Cloud environments before pushing the upgrade to your Live site.
+
+This workflow applies to all producs on Umbraco Cloud: Umbraco CMS, Umbraco Forms and Umbraco Deploy / Courier.
+
+For Starter plans, you will need to add a Development environment first before you can perform the semi-automatic upgrade. Find pricing details for Umbraco Cloud Starter plans on our [website](https://umbraco.com/pricing/).
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/BK9q4FHI2sU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+## Troubleshooting Automated minor upgrades
 
 Umbraco Cloud supports doing the minor upgrades of your projects in an automated manner. The feature is available when a new minor version of Umbraco is released (i.e. 7.5.0 or 7.6.0).
 
