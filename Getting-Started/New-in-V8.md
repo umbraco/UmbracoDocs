@@ -20,7 +20,7 @@ This brand new feature / concept give you as a developer the opportunity to crea
 
 ## [Infinite Editing](Backoffice/Infinite-editing)
 
-In Umbraco 8 you will be able to edit your content without having to jump between sections and without ever loosing the context of what you are doing.
+In Umbraco 8 you will be able to edit your content without having to jump between sections and without ever losing the context of what you are doing.
 
 ## Refreshed user interface
 
