@@ -75,7 +75,7 @@ If you are returning a custom model, then this directive will need to change bec
 
 Please note that if your template uses a layout that expects the model to be of type `Umbraco.Web.Models.ContentModel` then changing the template to inherit from `Umbraco.Web.Mvc.UmbracoViewPage<MyCustomModel>` will cause an exception. This is due to the way ASP.NET MVC works with strongly typed views: the requirement for a specific type applies all the way from the top-most layout down to the template. There are two ways to solve this problem:
 
-1. Break the dependency on `Umbraco.Web.Models.ContentModel` in your layout by having it inherit from `Umbraco.Web.Mvc.UmbracoViewPage<ISomeInterface>` (where IsomeInterface is implemented by all your models and contains the properties the master layout view uses).
+1. Break the dependency on `Umbraco.Web.Models.ContentModel` in your layout by having it inherit from `Umbraco.Web.Mvc.UmbracoViewPage<ISomeInterface>` (where ISomeInterface is implemented by all your models and contains the properties the master layout view uses).
 2. Make your custom model inherit from `Umbraco.Web.Models.ContentModel` and ensure you pass through the Umbraco model thus:-
 
 ```csharp
