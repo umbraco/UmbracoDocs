@@ -9,9 +9,11 @@ _This document describes when & what product updates are rolled out on Umbraco C
 ## What products are auto upgraded?
 
 * Umbraco CMS patch updates
-* Forms 
-* Deploy / Courier
+* Forms patch updates 
+* Deploy / Courier patch updates
 * Internal Umbraco Cloud services (generally these updates will not affect running websites but in some cases if they do we will notify Umbraco Cloud users via the status page)
+
+When minor upgrades are available, you will need a Development environment on your project in order to get the new version. Read the [Minor Upgrades](Minor-Upgrades) article for more details.
 
 ## When do upgrades happen?
 
@@ -24,6 +26,10 @@ _This document describes when & what product updates are rolled out on Umbraco C
   * A new version of Deploy / Courier is ready for release
   * A new version of Forms is ready for release
 * Umbraco Cloud reserves the right to rollout an emergency product fix to fix a critical issue at any time
+
+:::note
+Your project will not be auto-upgraded if your environments aren't running the same **minor version**. E.g. if you are in the middle of upgrading to a new minor version, and one environment is running 7.6.x while another environment on the same project is running 7.7.x.
+:::
 
 ## The auto upgrade roll out process
 
@@ -52,12 +58,6 @@ This describes how an Umbraco Cloud project is auto-upgraded:
 * If either of these tests fail we will be notified and Umbraco will take appropriate measures to rollback the site to it’s previous state
 * The failed upgrade is then tracked for reporting and the customer will be notified if necessary
 * When the Dev site is upgraded successfully, the upgrader will continue this same process for the next environment in the chain (i.e. Dev -> Staging -> Live) depending on the number of environments that exist for the project.
-
-## Minor version upgrades
-
-When Umbraco CMS minor version upgrades are available your site will not be auto upgraded to this version. You will need to press the Upgrade button in the Umbraco Cloud portal to perform the upgrade. This will upgrade your Development environment so you can test how everything works on a Cloud environments before pushing the upgrade to your Live site. For Starter plans, you will need to add a Development environment first before you can perform the semi-automatic upgrade. Find pricing details for Umbraco Cloud Starter plans on our [website](https://umbraco.com/pricing/).
-
-<iframe width="800" height="450" src="https://www.youtube.com/embed/BK9q4FHI2sU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## How do baseline updates work?
 
