@@ -24,7 +24,7 @@ Tracing enables you to view diagnostic information about a single request for a 
 Do not enable trace in your production environment! It reveals an awful lot of (sensitive) information about your production environment.
 :::
 
-Trace is disabled by default. To enable it simply look for `<trace` in `System.Web` and set `enabled="true"` in your `web.config` file:
+Trace is disabled by default. To enable it look for `<trace` in `System.Web` and set `enabled="true"` in your `web.config` file:
 
 ```xml
 <trace enabled="true" requestLimit="10" pageOutput="false" traceMode="SortByTime" localOnly="true"/>
@@ -99,10 +99,8 @@ namespace Doccers.Core.Controllers
 
             return CurrentTemplate(model);
         }
-
     }
 }
-
 ```
 
 and now in the profiler you can see
