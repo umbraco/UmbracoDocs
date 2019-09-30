@@ -17,11 +17,11 @@ If you have never used VS Code before you can check out a more detailed guide be
 Below you'll find some in-depth tutorials on the different ways to install Umbraco.
 
 ### [VS Code installation](install-umbraco-with-vs-code.md)
-Visual Studio Code is an editor with an embedded webserver (through the IIS Express extension). An easy and fast way to get you up and running with Umbraco.
+Visual Studio Code is an editor with an embedded webserver (through the IIS Express extension). An fast way to get you up and running with Umbraco.
 
 ### [NuGet installation](install-umbraco-with-nuget.md)
 NuGet is the package manager for the Microsoft development platform, including .NET. The NuGet client tools provide the ability to produce and consume packages. NuGet allows you to install Umbraco without ever having to leave Visual Studio.
  
 ### [Running Umbraco on a Mac](running-umbraco-on-a-mac.md)
-Umbraco does not run natively on Mac OS but it's really easy to get Windows up and running on your Mac.
+Umbraco does not run natively on Mac OS but it's possible to get Windows up and running on your Mac.
 Click on the link [tools and information on how to run Umbraco on a mac](running-umbraco-on-a-mac.md) to find out more about how to do this and the tools available to you.

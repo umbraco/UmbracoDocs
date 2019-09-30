@@ -46,4 +46,4 @@ Below is an example of a valid Dashboard.config:
 
 What this does is every time a user clicks on the Content section of the Umbraco UI, it loads a page with three tabs called "Last Edits", "Latest Items" and "Create blog post". For each tab a UserControl is loaded to provide the functionality that the developer created for those tabs. The UI finds the UserControls via the paths provided.
 
-The `showOnce` attribute made it easy to only show a particular user control once.
+The `showOnce` attribute made it possible to only show a particular user control once.

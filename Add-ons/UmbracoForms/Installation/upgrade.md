@@ -3,7 +3,7 @@ versionFrom: 7.0.0
 ---
 
 # Keeping Umbraco Forms up to date
-Forms makes it easy to stay in sync with the latest releases, so you can take advantage of new features and bug fixes.
+Forms allows you to stay in sync with the latest releases, so you can take advantage of new features and bug fixes.
 
 ## Checking for updates
 You won't have to check for updates manually. Umbraco Forms will inform you when a new update is available. Navigate to the Forms dashboard and if you see the following then a new version is already available.

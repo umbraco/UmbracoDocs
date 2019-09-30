@@ -94,7 +94,7 @@ Umbraco.Sys.registerNamespace("MyProject.MyNamespace");
 
 ### Consuming the plugins
 
-To use the plugin and API is very easy:
+To use the plugin and API requires a few lines of code, see example:
 
 ```javascript
 $("#myId").verticalAlign();

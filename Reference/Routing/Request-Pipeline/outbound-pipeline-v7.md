@@ -26,7 +26,7 @@ The segments are created by the "Url Segment provider"
 
 On Umbraco startup the `UrlSegmentProviderResolver` will search for the first `IUrlSegmentProvider` and that does not return `null`.
 
-If no UrlSegment provider is found, he will fall back to the *default Url segment provider*.
+If no UrlSegment provider is found, it will fall back to the *default Url segment provider*.
 
 To create a new Url segment provider, implement the following interface:
 

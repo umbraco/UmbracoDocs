@@ -34,8 +34,8 @@ The option to request password resets for backoffice users is disabled by defaul
 
 As Umbraco Cloud doesn't provide SMTP servers, this is something you will need to find hosting for elsewhere. There are multiple excellent services out there, here's a few we know work with Umbraco Cloud:
 
-* [Sparkpost](https://www.sparkpost.com/) - easy to setup and developer-friendly 
-* [SendGrid](https://sendgrid.com/) - very easy to setup
+* [Sparkpost](https://www.sparkpost.com/) - quick to setup and developer-friendly 
+* [SendGrid](https://sendgrid.com/) - quick to setup
 * [MailGun](https://www.mailgun.com/) - mainly for developers, as it is a bit more on the technical side
 
 <iframe width="800" height="450" src="https://www.youtube.com/embed/YcoFF-Ke55o?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

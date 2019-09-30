@@ -37,7 +37,7 @@ The method tag contains the following attributes:
 - `allowMember`: This attribute can contain the id of a single user allowed to call this method.
 - `returnXml`: if set to false, Umbraco will not wrap the result of the method in a <value> element.
 
-The user calling the method, will be allowed if she has access through at least one of the possible attribute values. If allowAll is set to true, the other attributes has no effect, everyone will be allowed. 
+The user calling the method, will be allowed if they has access through at least one of the possible attribute values. If allowAll is set to true, the other attributes has no effect, everyone will be allowed. 
 
 ### Example
 

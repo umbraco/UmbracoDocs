@@ -45,7 +45,7 @@ All you need to do is inherit from `Umbraco.Core.ObjectResolution.SingleObjectRe
 
 In the example above we have a constructor that accepts a default `IErrorLogger`. Normally in Umbraco this resolver will be constructed in a `IBootManager` with a default object. The we expose a method to allow developers to change to a custom `IErrorLogger` at runtime called `SetErrorLogger`. Then we create a property to expose the `IErrorLogger` called ErrorLogger.
 
-Its usage is then very easy:
+Example:
 
 ```csharp
 // get the error logger

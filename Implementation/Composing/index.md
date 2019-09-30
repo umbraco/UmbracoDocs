@@ -283,7 +283,7 @@ public void Way2Composer : IComposer
 { ... }
 ```
 
-When used without arguments, these attributes apply to the composer they are marking. But, and this is where it becomes interesting, they can be used with an argument to act on another component. Therefore, should a user want to replace our "something" with hers, she would write the following code:
+When used without arguments, these attributes apply to the composer they are marking. But, and this is where it becomes interesting, they can be used with an argument to act on another component. Therefore, should a user want to replace our "something" with their's, they would write the following code:
 
 ```csharp
 [Disable(typeof(Way1Composer))]
@@ -294,7 +294,7 @@ public void MyComposer : IComposer
 }
 ```
 
-But maybe she wants to swap our two "something" implementations? In this case, assembly-level attributes can be used:
+But maybe they want to swap our two "something" implementations? In this case, assembly-level attributes can be used:
 ```csharp
 [assembly:DisableComposer(typeof(Way1Composer))]
 [assembly:EnableComposer(typeof(Way2Composer))]

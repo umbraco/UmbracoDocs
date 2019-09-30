@@ -21,7 +21,7 @@ There are more than one way that you can contribute to the Umbraco Documentation
 
 ## [Style guide](Style-Guide/index.md)
 
-We have a few rules to follow when writing documentation, don't worry they are quite easy to follow and we have some tools you can use to make it even easier.
+We have a few rules to follow when writing documentation, don't worry they are quite easy to follow and we have some tools you can use to help.
 
 ## [Format, naming conventions and files](Markdown-Conventions)
 
