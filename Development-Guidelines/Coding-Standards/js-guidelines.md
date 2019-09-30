@@ -40,7 +40,7 @@ MyProject.MyNamespace.NamePrinter = base2.Base.extend({
 	
 	// in order to make private methods/variables accessible
 	// to derived types, everything actually has to be public
-	// so to identify private variables, just prefix with an underscore
+	// so to identify private variables, prefix with an underscore
 	
 	// private methods/variables
 	
@@ -105,7 +105,7 @@ MyProject.MyNamespace.NamePrinterManager = base2.Base.extend({
 	
 	// in order to make private methods/variables accessible
 	// to derived types, everything actually has to be public
-	// so to identify private variables, just prefix with an underscore
+	// so to identify private variables, prefix with an underscore
 	
 	// private methods/variables
 	
