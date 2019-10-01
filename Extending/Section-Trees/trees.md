@@ -12,8 +12,7 @@ To Create a Tree in a section of the Umbraco backoffice, you need to take severa
 
 Create a 'TreeController' class in C#. A new mvc controller which inherits from the abstract *Umbraco.Web.Trees.TreeController* class and provides an implementation for two abstract methods: 
 
-* GetTreeNodes (returns a *TreeNodeCollection*) - Responsible for rendering the content of the tree structure
-and
+* GetTreeNodes (returns a *TreeNodeCollection*) - Responsible for rendering the content of the tree structure.
 * GetMenuForNode (returns a *MenuItemCollection*) - Responsible for returning the menu structure to use for a particular node within a tree.
 
 Decorate your '*TreeController*' with the *Tree* Attribute, which is used to define the name of the section. The Tree should be loaded in, which 'Tree Group' it should belong to and also define an alias and title for your custom tree.
@@ -130,7 +129,7 @@ protected override TreeNode CreateRootNode(FormDataCollection queryStrings)
 
 The actions on items in an Umbraco Tree will trigger a request to load an AngularJS view, with a name corresponding to the name of the action, from a subfolder of the views folder matching the name of the 'customTreeAlias'.
 
-For example 'Clicking on' one of the 'Favourite Things' in the custom tree example outlined above will 'by convention' trigger the loading of an 'edit.html' view from the folder: */views/favouriteThingsAlias/edit.html*. The 'Delete' menu item would also load a view from: */views/favouriteThingsAlias/delete.html*
+For example clicking on one of the 'Favourite Things' in the custom tree example outlined above will trigger the loading of an 'edit.html' view from the folder: */views/favouriteThingsAlias/edit.html*. The 'Delete' menu item would also load a view from: */views/favouriteThingsAlias/delete.html*
 
 If you're creating a custom tree as part of an Umbraco package/plugin, it's recommended to change the location of the default folder to the app_plugins folder. You achieve this by decorating you mvc *TreeController* with the *PluginController* attribute.
 
