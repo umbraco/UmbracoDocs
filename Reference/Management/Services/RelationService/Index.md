@@ -98,49 +98,49 @@ Returns `void`.
 
 ### GetAllRelations(params int[] ids)
 
-Gets all relations.
+Gets a collection of `Umbraco.Core.Models.Relation` objects. Optional array of integer ids to return relations for.
 
 Returns `IEnumerable<IRelation>`.
 
 ### GetAllRelationsByRelationType(RelationType relationType)
 
-Gets all relations by relation type.
+Gets a collection of `Umbraco.Core.Models.Relation` objects by their relation type.
 
 Returns `IEnumerable<IRelation>`.
 
 ### GetAllRelationsByRelationType(int relationTypeId)
 
-Gets all relations by relation type.
+Gets a collection of `Umbraco.Core.Models.Relation` objects by their relation type id.
 
 Returns `IEnumerable<IRelation>`.
 
 ### GetAllRelationTypes(params int[] ids)
 
-Gets all relation types.
+Gets a collection of `Umbraco.Core.Models.Relation` objects. Optional array of integer ids to return relationtypes for.
 
 Returns `IEnumerable<IRelationType>`.
 
 ### GetByChild(IUmbracoEntity child)
 
-Gets all relations by their child entity.
+Gets a collection of `Umbraco.Core.Models.Relation` objects by their child entity.
 
 Returns `IEnumerable<IRelation>`.
 
 ### GetByChild(IUmbracoEntity child, string relationTypeAlias)
 
-Gets relations by their child entity and relation type.
+Gets a collection of `Umbraco.Core.Models.Relation` objects their child entity and relation type alias.
 
 Returns `IEnumerable<IRelation>`.
 
 ### GetByChildId(int id)
 
-Gets relations by their child id.
+Gets a collection of `Umbraco.Core.Models.Relation` objects by their child id.
 
 Returns `IEnumerable<IRelation>`.
 
 ### GetById(int id)
 
-Gets a relation by its id.
+Gets a `Umbraco.Core.Models.Relation` object by its id.
 
 Returns `IRelation`.
 
@@ -303,3 +303,158 @@ Returns `Void`.
 ## Examples
 
 Below you will examples using the `RelationService`.
+
+### Automatically relate to root node
+
+Odd example, I know.. but why not?
+
+To perform the said task we need a component in which we can register to the `ContentService.Published` event:
+
+```csharp
+using System.Linq;
+using Umbraco.Core.Composing;
+using Umbraco.Core.Events;
+using Umbraco.Core.Services;
+using Umbraco.Core.Services.Implement;
+
+namespace Doccers.Core.Components
+{
+    public class RelationComponent : IComponent
+    {
+        private readonly IRelationService _relationService;
+        private readonly IContentService _contentService;
+
+        public RelationComponent(IRelationService relationService,
+            IContentService contentService)
+        {
+            _relationService = relationService;
+            _contentService = contentService;
+        }
+
+        public void Initialize()
+        {
+            ContentService.Published += ContentService_Published;
+        }
+
+        private void ContentService_Published(IContentService sender,
+            ContentPublishedEventArgs e)
+        {
+            // Should never be null, actually.
+            var home = _contentService.GetRootContent()?.FirstOrDefault();
+            if (home == null) return;
+
+            // Get the relation type by alias
+            var relationType = _relationService.GetRelationTypeByAlias("homesick");
+            if (relationType == null) return;
+
+            foreach (var entity in e.PublishedEntities
+                .Where(x => x.Id != home.Id))
+            {
+                // Check if they are already related
+                if (!_relationService.AreRelated(home.Id, entity.Id))
+                {
+                    // If not then let us relate the currenty entity to home
+                    _relationService.Relate(home.Id, entity.Id, relationType);
+                }
+            }
+        }
+
+        public void Terminate() { }
+    }
+}
+```
+
+To have Umbraco recognize our component we need to register it in a composer:
+
+```csharp
+using Doccers.Core.Components;
+using Umbraco.Core;
+using Umbraco.Core.Composing;
+
+namespace Doccers.Core.Composers
+{
+    [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
+    public class RelationComposer : IUserComposer
+    {
+        public void Compose(Composition composition)
+        {
+            composition.Components().Append<RelationComponent>();
+        }
+    }
+}
+```
+
+If I know `Save and Publish` my `Products` node I get the following result:
+
+![Relations](relations.png)
+
+Cool! Now let us try and fetch the data from an API.
+
+```csharp
+using System;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+using Umbraco.Core.Services;
+using Umbraco.Web.WebApi;
+
+namespace Doccers.Core.Controllers.Http
+{
+    public class RelationsController : UmbracoApiController
+    {
+        private readonly IRelationService _relationService;
+
+        public RelationsController(IRelationService relationService)
+        {
+            // Alternatively you could also access
+            // the service via the service context:
+            // _relationService = Services.RelationService;
+            _relationService = relationService;
+        }
+
+        [HttpGet]
+        public HttpResponseMessage GetByRelationTypeAlias(string alias)
+        {
+            var relationType = _relationService.GetRelationTypeByAlias(alias);
+            if (relationType == null)
+                return Request.CreateResponse(HttpStatusCode.BadRequest,
+                    "Invalid relation type alias");
+
+            var relations = _relationService.GetAllRelationsByRelationType(relationType.Id);
+            var content = relations.Select(x => Umbraco.Content(x.ChildId))
+                .Select(x => new Relation()
+                {
+                    Name = x.Name,
+                    UpdateDate = x.UpdateDate
+                });
+
+            return Request.CreateResponse(HttpStatusCode.OK, content);
+        }
+    }
+}
+```
+
+Notice the `x => new Relation()`? We need to make sure what we are returning can actually be serialized. Therefore the `Relation` class is simply:
+
+```csharp
+[DataContract(Name = "relation")]
+public class Relation
+{
+    [DataMember(Name = "name")]
+    public string Name { get; set; }
+
+    [DataMember(Name = "updateDate")]
+    public DateTime UpdateDate { get; set; }
+}
+```
+
+Browsing `/umbraco/api/relations/getbyrelationtypealias?alias=homesick` now returns the following:
+
+![Relations](relations-api.png)
+
+::note
+If you want to do something similiar to this it is recommended that you wrap a caching layer around it, as the RelationService queries the database directly.
+
+[See an example of caching in V8](../../../cache/examples/tags.md)
+:::
