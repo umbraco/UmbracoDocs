@@ -453,7 +453,7 @@ Browsing `/umbraco/api/relations/getbyrelationtypealias?alias=homesick` now retu
 ![Relations](relations-api.png)
 
 ::note
-If you want to do something similiar to this it is recommended that you wrap a caching layer around it, as the RelationService queries the database directly.
+If you want to do something similar to this it is recommended that you wrap a caching layer around it, as the RelationService queries the database directly.
 
 [See an example of caching in V8](../../../cache/examples/tags.md)
 :::
