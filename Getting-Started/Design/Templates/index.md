@@ -24,7 +24,7 @@ To use a template on a document, you must first allow it on the content's type. 
 A template can inherit content from a master template by using the ASP.NET views Layout feature. Lets say we have a template called **masterview**, containing the following html:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
     Layout = null;
 }
@@ -44,7 +44,7 @@ We then create a new template called **textpage** and in the template editor, un
 This changes the `Layout`value in the template markup, so **textpage** looks like this:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
     Layout = "MasterView.cshtml";
 }
@@ -54,7 +54,7 @@ This changes the `Layout`value in the template markup, so **textpage** looks lik
 When a page using the textpage template renders, the final html will be merged together replacing the `@renderBody()` placeholder and produce the following:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
     Layout = null;
 }
@@ -79,7 +79,7 @@ You can do this by using named sections. Add named sections to your master templ
 For instance, if you want to be able to add HTML to your `<head>` tags write:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
     Layout = null;
 }
@@ -123,7 +123,7 @@ Like templates, create a partial, by clicking "partial views" and selecting crea
 the created partial can now be injected into any template by using the `@Html.Partial()` method like so:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
     Layout = "MasterView.cshtml";
 }
