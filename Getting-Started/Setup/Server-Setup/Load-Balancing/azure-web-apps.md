@@ -21,9 +21,9 @@ The multi instance front end Web App should be set to use [file-system-replicati
 
 Store the Umbraco temporary files in the local server's 'temp' folder. Achieve this by changing this configuration setting to 'true' in the web.config. The downside is that if you need to view this configuration file you'll have to find it in the temp files. Locating the file this way isn't always clear.
 			
-    ```xml
-    <add key="Umbraco.Core.LocalTempStorage" value="EnvironmentTemp" />
-    ```
+```xml
+<add key="Umbraco.Core.LocalTempStorage" value="EnvironmentTemp" />
+```
 
 ### Steps to set-up a environment
 
