@@ -29,7 +29,7 @@ There are other alternatives for file replication out there, some free and some 
 When deploying Umbraco in a load balanced scenario using file replication, it is important to ensure that not all files are replicated - otherwise you will experience file locking issues. Here are the folders and files that should not be replicated:
 
 * ~/App_Data/TEMP/*
-	* Alternatively store the Umbraco temporary files in the local server's 'temp' folder and set Examine to use a [Directory Factory](#examine-options). Achieve this by changing this configuration setting to 'true' in the web.config. The downside is that if you need to view this configuration file you'll have to find it in the temp files. Locating the file this way isn't always clear.
+	* Alternatively store the Umbraco temporary files in the local server's 'temp' folder and set Examine to use a [Directory Factory](#examine-directory-factory-options). Achieve this by changing this configuration setting to 'true' in the web.config. The downside is that if you need to view this configuration file you'll have to find it in the temp files. Locating the file this way isn't always clear.
 			
     ```xml
     <add key="Umbraco.Core.LocalTempStorage" value="EnvironmentTemp" />

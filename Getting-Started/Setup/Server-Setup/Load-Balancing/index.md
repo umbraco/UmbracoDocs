@@ -36,7 +36,7 @@ There are three design alternatives you can use to effectively load balance serv
 2. Each server hosts copies of the load balanced website files and a file replication service is running to ensure that all files on all servers are up to date
 3. The load balanced website files are located on a centralized file share (SAN/NAS/Clustered File Server/Network Share)
 
-For options #2 and #3 you will obviously need a load balancer to do your load balancing!
+You will obviously need a load balancer to do your load balancing!
 
 ## How Umbraco load balancing works
 
@@ -85,7 +85,7 @@ In many scenarios this is fine, but in case this is not adequate there's a few o
 
 ## Common load balancing setup information
 
-_The below section apply to all ASP.NET load balancing configurations
+_The below section applies to all ASP.NET load balancing configurations.
 
 ### Machine Key
 
