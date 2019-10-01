@@ -9,17 +9,17 @@ needsV8Update: "true"
 
 The localization service contains a number of methods for looking up languages. If you already know the ID of a specific language (eg. the default language has ID `1`), you can use the `GetLanguageById` method to get the reference to that language:
 
-    // Get a reference to the language by it's ID
+    // Get a reference to the language by its ID
     ILanguage language1 = ls.GetLanguageById(1);
 
-Alternative, you can look up a language by it's culture code via the `GetLanguageByCultureCode` method:
+Alternative, you can look up a language by its culture code via the `GetLanguageByCultureCode` method:
 
-    // Get a reference to the language by it's culture code
+    // Get a reference to the language by its culture code
     ILanguage language2 = ls.GetLanguageByCultureCode("English (United Kingdom)");
 
 or via the `GetLanguageByIsoCode` method:
 
-    // Get a reference to the language by it's ISO code
+    // Get a reference to the language by its ISO code
     ILanguage language3 = ls.GetLanguageByIsoCode("en-US");
     
 The culture code is the friendly name of the language in Umbraco, which for the default language is `en-US` (same as the ISO code), but for other languages is something like `English (United Kingdom)` or `Danish (Denmark)`. 
@@ -86,13 +86,13 @@ Below you can see a full example of the examples shown above - including the nec
         }
 
 
-        // Get a reference to the language by it's ID
+        // Get a reference to the language by its ID
         ILanguage language1 = ls.GetLanguageById(1);
 
-        // Get a reference to the language by it's culture code
+        // Get a reference to the language by its culture code
         ILanguage language2 = ls.GetLanguageByCultureCode("English (United Kingdom)");
 
-        // Get a reference to the language by it's ISO code
+        // Get a reference to the language by its ISO code
         ILanguage language3 = ls.GetLanguageByIsoCode("en-US");
 
         <pre>@language1</pre>

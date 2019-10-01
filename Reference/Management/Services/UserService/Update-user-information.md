@@ -13,7 +13,7 @@ With the user service, we can programatically update the information of a backof
 You can see the [**Get a reference to a user** page](Get-a-reference-to-a-user.md) for other ways of looking up a user.
     
 ### Updating user properties
-Once you have a reference to a user, we can start updating it's properties - eg. setting the name:
+Once you have a reference to a user, we can start updating its properties - e.g. setting the name:
 
     // Set the name of the user
     user.Name = "John Doe";

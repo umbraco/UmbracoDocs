@@ -21,7 +21,7 @@ There's an important thing to know about this scenario, ASP.NET has a built in C
 
 On first run ASP.NET will compile a lot and it's important to know that if you have debug='true' and/or have compiled in Debug, this compilation time and the amount of information included is exponentially larger. This means that it might take much longer.
 
-A normal Hot start in Umbraco will mean there is no assembly scanning taking place since Umbraco caches all assembly scans for it's plugins unless the /bin changes
+A normal Hot start in Umbraco will mean there is no assembly scanning taking place since Umbraco caches all assembly scans for its plugins unless the /bin changes
 
 ### Hot start /w assembly scan
 
