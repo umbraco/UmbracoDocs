@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 ---
 
 # Composing
-Customising the behaviour of an Umbraco Application at 'start up'. eg adding, removing or replacing the core functionality of Umbraco or registering custom code to subscribe to events.
+Customising the behaviour of an Umbraco Application at 'start up'. e.g. adding, removing or replacing the core functionality of Umbraco or registering custom code to subscribe to events.
 
 ## Overview
 An Umbraco application is a `Composition` made of many different 'collections' and single items of specific functionality/implementation logic/components (eg. UrlProviders, ContentFinders - see below for a full list). These collections are populated when the Umbraco Application starts up.
@@ -151,7 +151,7 @@ Ordering of composers is important, the last one added can override a previously
 :::
 
 ### ComponentComposer&lt;T&gt;
-Is an implementation of IUserComposer, that provides a quicker way to add a custom Component to the Component's collection. Creating a c# class that inhertits from ComponentComposer&lt;YourComponentType&gt; will automatically add YourComponentType to the collection of Components. In the example above, the SubscribeToContentServiceSavingComposer for the SubscribeToContentServiceSavingComponent could have been written more conveniently as:
+It's an implementation of IUserComposer, that provides a quicker way to add a custom Component to the Component's collection. Creating a c# class that inhertits from ComponentComposer&lt;YourComponentType&gt; will automatically add YourComponentType to the collection of Components. In the example above, the SubscribeToContentServiceSavingComposer for the SubscribeToContentServiceSavingComponent could have been written more conveniently as:
 
 ```csharp
         public class SubscribeToContentServiceSavingComposer : ComponentComposer<SubscribeToContentServiceSavingComponent>
@@ -243,7 +243,7 @@ public class ThisComposer : IUserComposer
 }
 ```
 
-ThisComposer will 'compose' before ThatOtherComposer.
+`ThisComposer` will 'compose' before `ThatOtherComposer`.
 
 :::warning
 If you create a circular dependancy then Umbraco will fail to boot and will report the conflicting/circular dependancy.
@@ -353,7 +353,7 @@ The runtime has detected an up-to-date Umbraco install and is running.
 
 ## Example of using Ordered Collections and adding types explicitly
 
-You may wish to create an Umbraco package that allows package consumers to extend and add additional functionality. In this example we show how you can use the `OrderedCollectionBuilderBase`
+You may wish to create an Umbraco package that allows package consumers to extend and add additional functionality. In this example, we show how you can use the `OrderedCollectionBuilderBase`
 
 ```csharp
 using System.Collections.Generic;
