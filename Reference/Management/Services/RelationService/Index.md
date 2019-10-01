@@ -71,17 +71,19 @@ Gets an enumerable list of `Relation` objects that have the specified ParentId.
 public IENumerable<IPublishedContent> GetFavorites(int memberId)
 {
     var rs = ApplicationContext.Current.Services.RelationService;
+    
     var relType = rs.GetRelationTypeByAlias("memberFavorites");
     var favorites = new List<IPublishedContent>();
 
     if (memberId > 0)
     {
-        var relations = rs.GetByParentId(memberId).Where(r => r.RelationType.Alias == "memberFavorites");
+        var relations = rs.GetByParentId(memberId)
+            .Where(r => r.RelationType.Alias == "memberFavorites");
 
-    foreach (var relation in relations)
-    {
-        favorites.Add(UmbracoContext.Current.ContentCache.GetById(relation.ChildId));
-    }
+        foreach (var relation in relations)
+        {
+            favorites.Add(UmbracoContext.Current.ContentCache.GetById(relation.ChildId));
+        }
     }
 
     return favorites;
@@ -137,10 +139,11 @@ Returns `true` if any relations exist for the specified Id, otherwise returns `f
 Saves a single `Relation` object.
 
 ```csharp
-public void SetFavorite(int memberId, int contentId) {
+public void SetFavorite(int memberId, int contentId) 
+{
     var rs = ApplicationContext.Current.Services.RelationService;
+    
     var areRelated = rs.AreRelated(memberId, contentId, "memberFavorites");
-
     if (!areRelated)
     {
         // create relation
