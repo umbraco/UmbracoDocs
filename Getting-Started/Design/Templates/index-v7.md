@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
 ---
 
 # Templates
@@ -11,13 +11,13 @@ By default all document types should have a template attached - but in case you 
 
 Open the settings section inside the Umbraco backoffice and right-click the **templates** folder. then choose **create**. Enter a template name and click the create button. You will now see the default template markup in the backoffice template editor
 
-![Created template](images/create-template-v8.png)
+![Created template](images/create-template.png)
 
 
 ## Allowing a template on a document type
-To use a template on a document, you must first allow it on the content's type. Open the document type you want to use the template and select the template under "allowed templates"
+To use a template on a document, you must first allow it on the content's type. Open the document type you want to use the template and check the template under "allowed templates"
 
-![Allowing template](images/allow-template-v8.png)
+![Allowing template](images/allow-template.png)
 
 
 ## Inheriting a master template
@@ -39,7 +39,7 @@ A template can inherit content from a master template by using the ASP.NET views
 
 We then create a new template called **textpage** and in the template editor, under the properties tab, sets its master template to the template called masterview:
 
-![Inherit template](images/inherit-template-v8.png)
+![Inherit template](images/inherit-template.png)
 
 This changes the `Layout`value in the template markup, so **textpage** looks like this:
 
@@ -118,7 +118,7 @@ Another way to reuse html is to use partials - which are small reusable views wh
 
 Like templates, create a partial, by clicking "partial views" and selecting create - you can then optionally use a pre-made template.
 
-![Create partial](images/create-partial-v8.png)
+![Create partial](images/create-partial.png)
 
 the created partial can now be injected into any template by using the `@Html.Partial()` method like so:
 
