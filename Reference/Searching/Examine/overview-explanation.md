@@ -18,7 +18,7 @@ Umbraco Examine is the Umbraco implementation of Examine. Examine is not exclusi
 ## The Basics of Examine
 Out of the box Umbraco comes configured to index content and members in the backoffice for the backoffice or internal search engine that appears in the header. As Examine is configuration driven you can quickly modify or set up indexes and searchers. The best place to start is with an index set.
 
-You configure an index set in the /config/examineIndex.config file. This file defines our indexes. As mentioned earlier, there are two internal default indexes configured in this file, and they are called "InternalIndexSet" and "InternalMemberIndexSet". Index sets are extremely easy to set up. The quickest way to get your index set up and running is with a single line of code.
+You configure an index set in the /config/examineIndex.config file. This file defines our indexes. As mentioned earlier, there are two internal default indexes configured in this file, and they are called "InternalIndexSet" and "InternalMemberIndexSet". The quickest way to get your index set up and running is with a single line of code.
 
 ```xml
 <IndexSet SetName="WebsiteIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/WebsiteIndexSet/">
@@ -169,7 +169,7 @@ So Examine feeds the query to Lucene as follows.
 
 The + specifies that it MUST meet this rule.
 
-Fortunately there is an easy way to fix this behaviour, by specifying the default operator for our search criteria to be BooleanOperation.Or.  The simplest way of explaining what this does is that without it the default operation that Examine uses in Lucene terms is MUST (or AND in Examine terms). Because of this default behaviour, it means that if you are unaware of it you will probably see some strange results. By passing in the default operator of OR (in Lucene terms SHOULD) you stop the default AND operation. To fix this change the creation of the instance of the ISearchCriteria to pass in a BooleanOperation.Or like this:
+Fortunately there is a way to fix this behaviour, by specifying the default operator for our search criteria to be BooleanOperation.Or.  The simplest way of explaining what this does is that without it the default operation that Examine uses in Lucene terms is MUST (or AND in Examine terms). Because of this default behaviour, it means that if you are unaware of it you will probably see some strange results. By passing in the default operator of OR (in Lucene terms SHOULD) you stop the default AND operation. To fix this change the creation of the instance of the ISearchCriteria to pass in a BooleanOperation.Or like this:
 
 ```csharp
 var searchCriteria = Searcher.CreateSearchCriteria(BooleanOperation.Or);

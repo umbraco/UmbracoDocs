@@ -81,4 +81,4 @@ The last step is to render the partial view that we've created in your Umbraco t
 
 You could also pass in a pre-populated model to pre-populate the fields on the form. For example:
 
-	@Html.Partial("BlogCommentForm", new CommentViewModel() { Name = "Some guy" })
+	@Html.Partial("BlogCommentForm", new CommentViewModel() { Name = "Example User" })

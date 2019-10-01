@@ -70,7 +70,7 @@ The built-in views you can use are:
 - `macro`
 - `media`
 
-In most cases you will either use the textstring or media view, or built your own from scratch. The textstring and media editors come with some additional configuration to make it easy and quick to customise these.
+In most cases you will either use the textstring or media view, or built your own from scratch. The textstring and media editors come with some additional configuration to make it quick to customise these.
 
 ##### Sample textstring config
 

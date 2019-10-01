@@ -17,6 +17,6 @@ Now in Part Two we're going to display that instead of the creation date.
 <small class="blogpost-date">@Model.Content.PublicationDate.ToLongDateString()</small>
 ```
 5. Click Save. A confirmation message should appear confirming that the Template was saved. 
-6. View the blog post page in the browser (remember... an easy way to do that is to find the page in the Content tree, then click Link to document on the Property tab).
+6. View the blog post page in the browser (remember... to do that is to find the page in the Content tree, then click Link to document on the Property tab).
 
 [Proceed to Part Three](part-3.md)

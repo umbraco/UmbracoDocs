@@ -41,7 +41,7 @@ public class TestWorkflow : WorkflowType
             // and we can then do something with the collection of values on each field
             List<object> vals = rf.Values;
 
-            // or just get it as a string
+            // or get it as a string
             rf.ValuesAsString();
         }
 
