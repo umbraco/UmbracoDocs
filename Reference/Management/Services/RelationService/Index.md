@@ -1,167 +1,459 @@
 ---
-versionFrom: 6.1.1
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # RelationService
 
-:::note
-Applies to Umbraco 6.1.1 and newer
-:::
+The `RelationService` is pretty awesome as it allows you to create relations between objects that would otherwise have no obvious connection.
 
-The RelationService acts as a "gateway" to Umbraco data for operations which are related to Relations.
+[Browse the API documentation for RelationService](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.IRelationService.html).
 
-[Browse the API documentation for RelationService](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Services.RelationService.html).
-
- * **Namespace:** `Umbraco.Core.Services` 
- * **Assembly:** `Umbraco.Core.dll`
-
-All samples in this document will require references to the following dll:
-
-* Umbraco.Core.dll
-
-All samples in this document will require the following using statements:
-
-```csharp
-using Umbraco.Core;
-using Umbraco.Core.Models;
-using Umbraco.Core.Services;
-```
+* **Namespace:** `Umbraco.Core.Services`
+* **Assembly:** `Umbraco.Core.dll`
 
 ## Getting the service
-The RelationService is available through the `ApplicationContext`, or if you are using a `SurfaceController` or the `UmbracoUserControl` then the RelationService is available through a local `Services` property.
+
+If you are using an Umbraco controller class (Such as `SurfaceController` or `RenderMvcController`) you have access to the `RelationService` through the `ServiceContext`:
 
 ```csharp
-Services.RelationService
+using System.Web.Mvc;
+using Umbraco.Web.Models;
+using Umbraco.Web.Mvc;
+
+namespace Doccers.Core.Controllers
+{
+    public class HomeController : RenderMvcController
+    {
+        public ActionResult Home(ContentModel model)
+        {
+            var rs = Services.RelationService;
+
+            return CurrentTemplate(model);
+        }
+    }
+}
 ```
 
-Getting the service through the `ApplicationContext`:
+You can also use the `RelationService` in any other class by injecting its interface:
 
 ```csharp
-ApplicationContext.Current.Services.RelationService
+using Umbraco.Core.Composing;
+using Umbraco.Core.Services;
+
+namespace Doccers.Core.Components
+{
+    public class RelationComponent : IComponent
+    {
+        private readonly IRelationService _relationService;
+
+        public RelationComponent(IRelationService relationService)
+        {
+            _relationService = relationService;
+        }
+
+        public void Initialize() { }
+
+        public void Terminate() { }
+    }
+}
 ```
 
 ## Methods
 
-### .GetById(int id)
-Gets a `Relation` object by its Id
+### AreRelated(int parentId, int childId, string relationTypeAlias)
 
-### .GetRelationTypeById(int id)
-Gets a `RelationType` object by its Id
+Checks if two items are related.
 
-### .GetRelationTypeByAlias(string alias)
-Gets a `RelationType` object by its Alias
+Returns `bool`.
 
-### .GetAllRelations(params int[] ids)
-Gets an enumerable list of `Relation` objects. If the optional array of integer ids is passed in then only the `Relation` objects with matching Id's will be returned. 
+### AreRelated(IUmbracoEntity parent, IUmbracoEntity child, string relationTypeAlias)
 
-### .GetAllRelationsByRelationType(RelationType relationType)
-Gets an enumerable list of `Relation` objects which have the specified `RelationType`.
+Checks if two items are related.
 
-### .GetAllRelationsByRelationType(int relationTypeId)
-Gets an enumerable list of `Relation` objects which have the specified `RelationType` Id.
+Returns `bool`.
 
-### .GetAllRelationTypes(params int[] ids)
-Gets an enumerable list of `RelationType` objects. If the optional array of integer ids is passed in then only the `RelationType` objects with a matching Id will be returned.
+### AreRelated(int parentId, int childId)
 
-### .GetByParentId(int id)
-Gets an enumerable list of `Relation` objects that have the specified ParentId.
+Checks if two items are related.
+
+Returns `bool`.
+
+### Delete(IRelation relation)
+
+Deletes a relation.
+
+Returns `void`.
+
+### Delete(IRelationType relationType)
+
+Deletes a relation type.
+
+Returns `void`.
+
+### DeleteRelationsOfType(IRelationType relationType)
+
+Deletes relation of the specified relation type.
+
+Returns `void`.
+
+### GetAllRelations(params int[] ids)
+
+Gets a collection of `Umbraco.Core.Models.Relation` objects. Optional array of integer ids to return relations for.
+
+Returns `IEnumerable<IRelation>`.
+
+### GetAllRelationsByRelationType(RelationType relationType)
+
+Gets a collection of `Umbraco.Core.Models.Relation` objects by their relation type.
+
+Returns `IEnumerable<IRelation>`.
+
+### GetAllRelationsByRelationType(int relationTypeId)
+
+Gets a collection of `Umbraco.Core.Models.Relation` objects by their relation type id.
+
+Returns `IEnumerable<IRelation>`.
+
+### GetAllRelationTypes(params int[] ids)
+
+Gets a collection of `Umbraco.Core.Models.Relation` objects. Optional array of integer ids to return relationtypes for.
+
+Returns `IEnumerable<IRelationType>`.
+
+### GetByChild(IUmbracoEntity child)
+
+Gets a collection of `Umbraco.Core.Models.Relation` objects by their child entity.
+
+Returns `IEnumerable<IRelation>`.
+
+### GetByChild(IUmbracoEntity child, string relationTypeAlias)
+
+Gets a collection of `Umbraco.Core.Models.Relation` objects their child entity and relation type alias.
+
+Returns `IEnumerable<IRelation>`.
+
+### GetByChildId(int id)
+
+Gets a collection of `Umbraco.Core.Models.Relation` objects by their child id.
+
+Returns `IEnumerable<IRelation>`.
+
+### GetById(int id)
+
+Gets a `Umbraco.Core.Models.Relation` object by its id.
+
+Returns `IRelation`.
+
+### GetByParent(IUmbracoEntity parent, string relationTypeAlias)
+
+Gets a collection of `Umbraco.Core.Models.Relation` objects by their parent entity and relation type alias.
+
+Returns `IEnumerable<IRelation>`.
+
+### GetByParent(IUmbracoEntity parent)
+
+Gets a collection of `Umbraco.Core.Models.Relation` objects by their parent entity.
+
+Returns `IEnumerable<IRelation>`.
+
+### GetByParentId(int id)
+
+Gets a collection of `Umbraco.Core.Models.Relation` objects by their parent id.
+
+Returns `IEnumerable<IRelation>`.
+
+### GetByParentOrChildId(int id, string relationTypeAlias)
+
+Gets a collection of `Umbraco.Core.Models.Relation` objects by their parent or child id and relation type alias.
+
+Returns `IEnumerable<IRelation>`.
+
+:::note
+Using this method will get you all relations regards of it being a child or parent relation.
+:::
+
+### GetByParentOrChildId(int id)
+
+Gets a collection of `Umbraco.Core.Models.Relation` objects by their parent or child id.
+
+Returns `IEnumerable<IRelation>`.
+
+:::note
+Using this method will get you all relations regards of it being a child or parent relation.
+:::
+
+### GetByRelationTypeAlias(string relationTypeAlias)
+
+Gets a collection of `Umbraco.Core.Models.Relation` objects by their relation type alias.
+
+Returns `IEnumerable<IRelation>`.
+
+### GetByRelationTypeId(int relationTypeId)
+
+Gets a collection of `Umbraco.Core.Models.Relation` objects by the id of their relation type.
+
+Returns `IEnumerable<IRelation>`.
+
+### GetByRelationTypeName(string relationTypeName)
+
+Gets a collection of `Umbraco.Core.Models.Relation` objects by the name of their relation type.
+
+Returns `IEnumerable<IRelation>`.
+
+### GetChildEntitiesFromRelations(IEnumerable<IRelation> relations)
+
+Gets the child objects from a collection of `IRelation` as a collection of `Umbraco.Core.Models.Entities.IUmbracoEntity`.
+
+Returns `IEnumerable<IUmbracoEntity>`.
+
+### GetChildEntityFromRelation(IRelation relation)
+
+Gets the child object from a relation as an `Umbraco.Core.Models.Entities.IUmbracoEntity` object.
+
+Returns `IUmbracoEntity`.
+
+### GetEntitiesFromRelation(IRelation relation)
+
+Gets the parent and child objects from a relation as a `System.Tuple` with `Umbraco.Core.Models.Entities.IUmbracoEntity`.
+
+Returns `Tuple<IUmbracoEntity, IUmbracoEntity>`.
+
+### GetEntitiesFromRelations(IEnumerable<IRelation> relations)
+
+Gets the parent and child objects from a collection of relations as a list of `Umbraco.Core.Models.Entities.IUmbracoEntity` objects.
+
+Returns `IEnumerable<Tuple<IUmbracoEntity, IUmbracoEntity>>`.
+
+### GetParentEntitiesFromRelations(IEnumerable<IRelation> relations)
+
+Gets the parent objects from a collection of relations as a collection of `Umbraco.Core.Models.Entities.IUmbracoEntity`.
+
+Returns `IEnumerable<IUmbracoEntity>`.
+
+### GetParentEntityFromRelation(IRelation relation)
+
+Gets the parent object from a relation as an `Umbraco.Core.Models.Entities.IUmbracoEntity` object.
+
+### GetRelationTypeByAlias(string alias)
+
+Gets an relation by its alias.
+
+Returns `IRelationType`.
+
+### GetRelationTypeById(Guid id)
+
+Gets a relation type by its Id
+
+Returns `IRelationType`.
+
+### GetRelationTypeById(int id)
+
+Gets a relation type by its id.
+
+Returns `IRelationType`.
+
+### HasRelations(IRelationType relationType)
+
+Checks if any relations exist for the specified relation type.
+
+Returns `bool`.
+
+### IsRelated(int id)
+
+Checks if any relations exist for the specified id.
+
+Returns `void`.
+
+### Relate(int parentId, int childId, IRelationType relationType)
+
+Relates two objects by their ids using the specified relation type.
+
+Returns `IRelation`.
+
+### Relate(IUmbracoEntity parent, IUmbracoEntity child, IRelationType relationType)
+
+Relates two `IUmbracoEntity` objects using the specified relation type.
+
+Returns `IRelation`.
+
+### Relate(IUmbracoEntity parent, IUmbracoEntity child, string relationTypeAlias)
+
+Relates two `IUmbracoEntity` objects using the specified relation type alias.
+
+Returns `IRelation`.
+
+### Relate(int parentId, int childId, string relationTypeAlias)
+
+Relates two `IUmbracoEntity` objects using the specified relation type alias.
+
+Returns `IRelation`.
+
+### Save(IRelation relation)
+
+Saves a relation.
+
+Returns `Void`.
+
+### Save(IRelationType relationType)
+
+Saves a relation type.
+
+Returns `Void`.
+
+## Examples
+
+Below you will examples using the `RelationService`.
+
+### Automatically relate to root node
+
+Odd example, I know.. but why not?
+
+To perform the said task we need a component in which we can register to the `ContentService.Published` event:
+
+([You can read more about composing Umbraco here](../../../../implementation/composing/index.md))
 
 ```csharp
-public IENumerable<IPublishedContent> GetFavorites(int memberId)
+using System.Linq;
+using Umbraco.Core.Composing;
+using Umbraco.Core.Events;
+using Umbraco.Core.Services;
+using Umbraco.Core.Services.Implement;
+
+namespace Doccers.Core.Components
 {
-    var rs = ApplicationContext.Current.Services.RelationService;
-    
-    var relType = rs.GetRelationTypeByAlias("memberFavorites");
-    var favorites = new List<IPublishedContent>();
-
-    if (memberId > 0)
+    public class RelationComponent : IComponent
     {
-        var relations = rs.GetByParentId(memberId)
-            .Where(r => r.RelationType.Alias == "memberFavorites");
+        private readonly IRelationService _relationService;
 
-        foreach (var relation in relations)
+        public RelationComponent(IRelationService relationService)
         {
-            favorites.Add(UmbracoContext.Current.ContentCache.GetById(relation.ChildId));
+            _relationService = relationService;
+        }
+
+        public void Initialize()
+        {
+            ContentService.Published += ContentService_Published;
+        }
+
+        private void ContentService_Published(IContentService sender,
+            ContentPublishedEventArgs e)
+        {
+            // Should never be null, to be honest.
+            var home = sender.GetRootContent()?.FirstOrDefault();
+            if (home == null) return;
+
+            // Get the relation type by alias
+            var relationType = _relationService.GetRelationTypeByAlias("homesick");
+            if (relationType == null) return;
+
+            foreach (var entity in e.PublishedEntities
+                .Where(x => x.Id != home.Id))
+            {
+                // Check if they are already related
+                if (!_relationService.AreRelated(home.Id, entity.Id))
+                {
+                    // If not then let us relate the currenty entity to home
+                    _relationService.Relate(home.Id, entity.Id, relationType);
+                }
+            }
+        }
+
+        public void Terminate() { }
+    }
+}
+```
+
+To have Umbraco recognize our component we need to register it in a composer:
+
+```csharp
+using Doccers.Core.Components;
+using Umbraco.Core;
+using Umbraco.Core.Composing;
+
+namespace Doccers.Core.Composers
+{
+    [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
+    public class RelationComposer : IUserComposer
+    {
+        public void Compose(Composition composition)
+        {
+            composition.Components().Append<RelationComponent>();
         }
     }
-
-    return favorites;
 }
 ```
 
-### .GetByChildId(int id)
-Gets an enumerable list of `Relation` objects that have the specified ChildId.
+If I know `Save and Publish` my `Products` node I get the following result:
 
-### .GetByParentOrChildId(int id)
-Gets an enumerable list of `Relation` objects that have the specified ParentId or ChildId.
+![Relations](relations.png)
 
-### .GetByRelationTypeName(string relationTypeName)
-Gets an enumerable list of `Relation` objects that have the specified `RelationType` Name.
-
-### .GetByRelationTypeAlias(string relationTypeAlias)
-Gets an enumerable list of `Relation` objects that have the specified `RelationType` Alias.
-
-### .GetByRelationTypeId(int relationTypeId)
-Gets an enumerable list of `Relation` objects that have the specified `RelationType` Id.
-
-### .GetChildEntityFromRelation(IRelation relation, bool loadBaseType = false)
-Gets the Child object from a `Relation` passed into the method. If the `loadBaseType` parameter is true the complete object graph will be loaded.
-
-### .GetParentEntityFromRelation(IRelation relation, bool loadBaseType = false)
-Gets the Parent object from a `Relation` passed into the method. If the `loadBaseType` parameter is true the complete object graph will be loaded.
-
-### .GetEntitiesFromRelation(IRelation relation, bool loadBaseType = false)
-Gets the Parent and Child objects from a `Relation` passed into the method. If the `loadBaseType` parameter is true the complete object graph will be loaded.
-
-### .GetChildEntitiesFromRelations(IEnumerable<IRelation> relations, bool loadBaseType = false)
-Gets the Child objects from a list of Relations passed into the method. If the `loadBaseType` parameter is true the complete object graph will be loaded.
-
-### .GetParentEntitiesFromRelations(IEnumerable<IRelation> relations,                                                                      bool loadBaseType = false)
-Gets the Parent objects from a list of Relations passed into the method. If the `loadBaseType` parameter is true the complete object graph will be loaded.
-
-### .GetEntitiesFromRelations(IEnumerable<IRelation> relations, bool loadBaseType = false)
-Gets the Parent and Child objects from a list of Relations passed into the method. If the `loadBaseType` parameter is true the complete object graph will be loaded.
-
-### .Relate(IUmbracoEntity parent, IUmbracoEntity child, IRelationType relationType)
-Relates two objects that implement the `IUmbracoEntity` interface using the `RelationType` matching the specified `RelationType` and returns the resulting `Relation` object.
-
-### .Relate(IUmbracoEntity parent, IUmbracoEntity child, string relationTypeAlias)
-Relates two objects that implement the `IUmbracoEntity` interface using the `RelationType` matching the specified relationTypeAlias and returns the resulting `Relation` object.
-
-### .HasRelations(IRelationType relationType)
-Returns `true` if there are any `Relation` objects with the specified `RelationType`, otherwise returns `false`.
-
-### .IsRelated(int id)
-Returns `true` if any relations exist for the specified Id, otherwise returns `false`.
-
-### .Save(IRelation relation)
-Saves a single `Relation` object.
+Cool! Now let us try and fetch the data from an API.
 
 ```csharp
-public void SetFavorite(int memberId, int contentId) 
+using System;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+using Umbraco.Core.Services;
+using Umbraco.Web.WebApi;
+
+namespace Doccers.Core.Controllers.Http
 {
-    var rs = ApplicationContext.Current.Services.RelationService;
-    
-    var areRelated = rs.AreRelated(memberId, contentId, "memberFavorites");
-    if (!areRelated)
+    public class RelationsController : UmbracoApiController
     {
-        // create relation
-        var relType = rs.GetRelationTypeByAlias("memberFavorites");
-        var r = new Relation(memberId, contentId, relType);
-        rs.Save(r);
+        private readonly IRelationService _relationService;
+
+        public RelationsController(IRelationService relationService)
+        {
+            // Alternatively you could also access
+            // the service via the service context:
+            // _relationService = Services.RelationService;
+            _relationService = relationService;
+        }
+
+        [HttpGet]
+        public HttpResponseMessage GetByRelationTypeAlias(string alias)
+        {
+            var relationType = _relationService.GetRelationTypeByAlias(alias);
+            if (relationType == null)
+                return Request.CreateResponse(HttpStatusCode.BadRequest,
+                    "Invalid relation type alias");
+
+            var relations = _relationService.GetAllRelationsByRelationType(relationType.Id);
+            var content = relations.Select(x => Umbraco.Content(x.ChildId))
+                .Select(x => new Relation()
+                {
+                    Name = x.Name,
+                    UpdateDate = x.UpdateDate
+                });
+
+            return Request.CreateResponse(HttpStatusCode.OK, content);
+        }
     }
 }
 ```
 
-### .Save(IRelationType relationType)
-Saves a single IRelationType object.
+Notice the `x => new Relation()`? We need to make sure what we are returning can be serialized. Therefore the `Relation` class is:
 
-### .Delete(IRelation relation)
-Permanently deletes a `Relation` object.
+```csharp
+[DataContract(Name = "relation")]
+public class Relation
+{
+    [DataMember(Name = "name")]
+    public string Name { get; set; }
 
-### .Delete(IRelationType relationType)
-Permanently deletes a `RelationType` object.
+    [DataMember(Name = "updateDate")]
+    public DateTime UpdateDate { get; set; }
+}
+```
 
-### .DeleteRelationsOfType(IRelationType relationType)
-Permanently deletes all relations that match the specified `RelationType`.
+Browsing `/umbraco/api/relations/getbyrelationtypealias?alias=homesick` now returns the following:
+
+![Relations](relations-api.png)
+
+::note
+If you want to do something similar to this it is recommended that you wrap a caching layer around it, as the RelationService queries the database directly.
+
+[See an example of caching in V8](../../../cache/examples/tags.md)
+:::
