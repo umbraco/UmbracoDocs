@@ -138,9 +138,9 @@ namespace Doccers.Core.Services.Implement
         public Site GetSiteByCulture(string culture)
         {
             return _umbraco
-            .ContentAtRoot()
-            .OfType<Site>()
-            .FirstOrDefault(x => x.GetCultureFromDomains() == culture);
+                .ContentAtRoot()
+                .OfType<Site>()
+                .FirstOrDefault(x => x.GetCultureFromDomains() == culture);
         }
     }
 }
