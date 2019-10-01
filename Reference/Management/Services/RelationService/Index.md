@@ -322,13 +322,10 @@ namespace Doccers.Core.Components
     public class RelationComponent : IComponent
     {
         private readonly IRelationService _relationService;
-        private readonly IContentService _contentService;
 
-        public RelationComponent(IRelationService relationService,
-            IContentService contentService)
+        public RelationComponent(IRelationService relationService)
         {
             _relationService = relationService;
-            _contentService = contentService;
         }
 
         public void Initialize()
@@ -340,7 +337,7 @@ namespace Doccers.Core.Components
             ContentPublishedEventArgs e)
         {
             // Should never be null, actually.
-            var home = _contentService.GetRootContent()?.FirstOrDefault();
+            var home = sender.GetRootContent()?.FirstOrDefault();
             if (home == null) return;
 
             // Get the relation type by alias
