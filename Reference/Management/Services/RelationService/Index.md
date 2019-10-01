@@ -310,6 +310,8 @@ Odd example, I know.. but why not?
 
 To perform the said task we need a component in which we can register to the `ContentService.Published` event:
 
+([You can read more about composing Umbraco here](../../../../implementation/composing/index.md))
+
 ```csharp
 using System.Linq;
 using Umbraco.Core.Composing;
