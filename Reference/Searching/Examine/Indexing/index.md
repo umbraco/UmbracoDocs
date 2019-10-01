@@ -30,7 +30,7 @@ public class ProductIndexCreator : LuceneIndexCreator, IUmbracoIndexesCreator
     private readonly ILocalizationService _localizationService;
     private readonly IPublicAccessService _publicAccessService;
 
-    // Since Umbraco 8 has dependency injection out of the box, we can easily inject
+    // Since Umbraco 8 has dependency injection out of the box, we can use it to inject
     // the different services that we need.
     public ProductIndexCreator(IProfilingLogger profilingLogger, 
         ILocalizationService localizationService, 

@@ -61,7 +61,7 @@ In Visual Studio, go to the Tools menu, then NuGet Package Manager - Package Man
 
 `Install-Package UmbracoCms.IdentityExtensions`
 
-This starts the download of a package that makes it very easy to set up OAuth logins through various platforms - it might take a few minutes to install it and all the dependencies.
+This starts the download of a package that makes it possible to set up OAuth logins through various platforms - it might take a few minutes to install it and all the dependencies.
 
 Once the package is done installing a nice readme file will pop up and give you some useful information - feel free to completely ignore it and continue following this excellent tutorial!
 

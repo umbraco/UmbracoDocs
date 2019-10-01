@@ -296,7 +296,7 @@ namespace UmbracoV8.Routing.UrlProviders
                   
                 }
             }
-          //otherise return the base GetUrl result:
+          //otherwise return the base GetUrl result:
                 return base.GetUrl(umbracoContext, content, mode, culture, current);
         }
     }

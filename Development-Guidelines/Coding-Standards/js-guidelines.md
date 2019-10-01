@@ -40,7 +40,7 @@ MyProject.MyNamespace.NamePrinter = base2.Base.extend({
 	
 	// in order to make private methods/variables accessible
 	// to derived types, everything actually has to be public
-	// so to identify private variables, just prefix with an underscore
+	// so to identify private variables, prefix with an underscore
 	
 	// private methods/variables
 	
@@ -79,7 +79,7 @@ MyProject.MyNamespace.NamePrinter = base2.Base.extend({
 })
 ```
 
-Using the class above is easy:
+You can then use the class, as shown in example:
 
 ```javascript
 var printer = new NamePrinter("Shannon");
@@ -105,7 +105,7 @@ MyProject.MyNamespace.NamePrinterManager = base2.Base.extend({
 	
 	// in order to make private methods/variables accessible
 	// to derived types, everything actually has to be public
-	// so to identify private variables, just prefix with an underscore
+	// so to identify private variables, prefix with an underscore
 	
 	// private methods/variables
 	
@@ -135,9 +135,8 @@ MyProject.MyNamespace.NamePrinterManager = base2.Base.extend({
 });
 ```
 
-Defining a singleton is the same as defining a regular class, except that we also define a static "getInstance" accessor for accessing the entity in a controlled manner. By providing the static accessor we can ensure only one instance of the class is created per request.
+Defining a singleton is the same as defining a regular class, except that we also define a static "getInstance" accessor for accessing the entity in a controlled manner. By providing the static accessor we can ensure only one instance of the class is created per request. See example:
 
-Using the singleton is very easy:
 
 ```javascript
 var printer = new NamePrinter("Shannon");
@@ -148,7 +147,7 @@ MyProject.MyNamespace.NamePrinterManager.getInstance().registerPrinter(printer);
 
 Sometimes its useful to have static classes that require no constructor. Before you make one of these, definitely make sure that you won't require different instances of one.
 
-Static classes are very easy:
+An example of static classes:
 
 ```javascript	
 Umbraco.Sys.registerNamespace("MyProject.MyNamespace");

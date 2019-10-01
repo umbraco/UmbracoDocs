@@ -9,7 +9,7 @@ versionFrom: 7.0.0
 `Returns: IEnumerable<IPublishedContent>` (or `IPublishedContent` depending on configuration)
 
 
-**Nested Content** is a new list editing property editor for Umbraco 7.7, using Document Types to define the list item schema. By using document-types, you have the benefit of an easy/reusable UI that you are familiar with and get to re-use all the standard data-types as field editors.
+**Nested Content** is a new list editing property editor for Umbraco 7.7, using Document Types to define the list item schema. By using document-types, you have the benefit of a reusable UI that you are familiar with and get to re-use all the standard data-types as field editors.
 
 ## Configuring Nested Content
 

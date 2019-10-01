@@ -12,7 +12,7 @@ In the following examples we will be looking at rendering an `image`, however th
 A media node is not just a file, but like content, it is a collection of fields, such width, height and the path to the stored file. The benefit of this is that accessing media is very similar to accessing a content node.
 
 ### Example 1: Accessing an image media item based on its ID
-A standard image in the media library is based on the Mediatype `image` which provides a number of standard values - if you want to add more, simply edit the media type under **settings**. In this example we are going to get a image node and render out an `img` tag using the URL of the media item and use the Name as the value of the `alt` attribute.
+A standard image in the media library is based on the Mediatype `image` which provides a number of standard values - if you want to add more, edit the media type under **settings**. In this example we are going to get a image node and render out an `img` tag using the URL of the media item and use the Name as the value of the `alt` attribute.
 
 _Assumption: We are going to assume that our media item has an ID of **1234**, and that we are **not using Models Builder**_
 

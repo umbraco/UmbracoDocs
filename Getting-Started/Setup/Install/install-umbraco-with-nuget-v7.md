@@ -102,7 +102,7 @@ During this process it will ask if it is allowed to overwrite your web.config fi
 ## Running the site
 You can now run the site like you would normally in Visual Studio (using **F5** or the **Debug** button).
 
-Follow the installation wizard and after a few easy steps and choices you should get a message saying the installation was a success.
+Follow the installation wizard and after a few steps and choices you should get a message saying the installation was a success.
 
 ## Post installation
 Note that the Umbraco NuGet package adds a build step to always include the Umbraco folders when you deploy using Web One-Click Publish with Visual Studio. You can see these folders in `packages/UmbracoCms x.y.z/build/UmbracoCms.targets`.
