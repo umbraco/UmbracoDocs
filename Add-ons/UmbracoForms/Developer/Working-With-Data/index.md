@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Working with Record data
 
-From Umbraco Forms `v8.2` includes some helper methods that return records of a given form, which makes it easy to output records in your templates using razor.
+From Umbraco Forms `v8.2` includes some helper methods that return records of a given form, which can be used to output records in your templates using razor.
 
 ## Available methods
 The methods can be found by injecting the `Umbraco.Forms.Core.Services.IRecordReaderService` interface. For performance reasons, all these methods are paged.

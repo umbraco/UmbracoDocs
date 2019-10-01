@@ -50,7 +50,7 @@ Test if the current node is the first item in the collection
 
 ### .IsNotFirst([string valueIfTrue][,string valueIfFalse])
 
-Test if the current node is not first item in the collection
+Test if the current node is not the first item in the collection
 
 ### .IsLast([string valueIfTrue][,string valueIfFalse])
 

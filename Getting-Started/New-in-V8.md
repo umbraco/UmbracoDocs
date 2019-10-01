@@ -20,7 +20,7 @@ This brand new feature / concept give you as a developer the opportunity to crea
 
 ## [Infinite Editing](Backoffice/Infinite-editing)
 
-In Umbraco 8 you will be able to edit your content without having to jump between sections and without ever loosing the context of what you are doing.
+In Umbraco 8 you will be able to edit your content without having to jump between sections and without ever losing the context of what you are doing.
 
 ## Refreshed user interface
 
@@ -31,7 +31,7 @@ Giving the Umbraco Backoffice a new look, has given you a bigger workspace when 
 - Templates, Document types, Data Types, Languages, etc. is now all in the same section: **Settings**
 - Health Check, Examine Management and the ModelsBuilder user interfaces have been moved to the **Settings** section
 - **Dictionary items** have been moved from the **Settings** section to the **Translation** section
-- A brand new [Log Viewer interface in the backoffice](Backoffice/LogViewer), that gives you easy access to browse through all your log entries
+- A brand new [Log Viewer interface in the backoffice](Backoffice/LogViewer), that gives you access to browse through all your log entries
 - Searching your backoffice has been made even easier: `CTRL + SPACE` opens a search field overlay, which gives you search results as you start typing
 
 ## Packages in V8

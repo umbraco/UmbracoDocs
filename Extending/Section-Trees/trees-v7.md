@@ -274,7 +274,7 @@ void TreeControllerBase_MenuRendering(TreeControllerBase sender, MenuRenderingEv
         // creates a menu action that will open /umbraco/currentSection/itemAlias.html
         var i = new Umbraco.Web.Models.Trees.MenuItem("itemAlias", "Item name");
         
-        // optional, if you want to load a legacy page, otherwise it will just follow convention
+        // optional, if you want to load a legacy page, otherwise it will follow convention
         i.AdditionalData.Add("actionUrl", "my/long/url/to/webformshorror.aspx");
         
         // optional, if you don't want to follow the naming conventions, but do want to use a angular view
