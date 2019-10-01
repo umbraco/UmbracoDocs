@@ -2,7 +2,7 @@
 versionFrom: 8.0.0
 ---
 
-## Non-synchronised file system
+## Non-synchronised/replicated file system
 
 If the file system on your servers isn't performing any file replication then no _Umbraco_ configuration file changes are necessary.
 
