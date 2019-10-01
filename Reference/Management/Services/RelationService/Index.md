@@ -434,7 +434,7 @@ namespace Doccers.Core.Controllers.Http
 }
 ```
 
-Notice the `x => new Relation()`? We need to make sure what we are returning can actually be serialized. Therefore the `Relation` class is quite simple:
+Notice the `x => new Relation()`? We need to make sure what we are returning can be serialized. Therefore the `Relation` class is:
 
 ```csharp
 [DataContract(Name = "relation")]
