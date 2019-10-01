@@ -1,6 +1,5 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
 ---
 
 # Templates
@@ -16,7 +15,7 @@ Open the settings section inside the Umbraco backoffice and right-click the **te
 
 
 ## Allowing a template on a document type
-To use a template on a document, you must first allow it on the content's type. Open the document type you want to use the template and check the template under "allowed templates"
+To use a template on a document, you must first allow it on the content's type. Open the document type you want to use the template and select the template under "allowed templates"
 
 ![Allowing template](images/allow-template.png)
 
