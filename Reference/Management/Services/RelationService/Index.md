@@ -338,7 +338,7 @@ namespace Doccers.Core.Components
         private void ContentService_Published(IContentService sender,
             ContentPublishedEventArgs e)
         {
-            // Should never be null, actually.
+            // Should never be null, to be honest.
             var home = sender.GetRootContent()?.FirstOrDefault();
             if (home == null) return;
 
@@ -434,7 +434,7 @@ namespace Doccers.Core.Controllers.Http
 }
 ```
 
-Notice the `x => new Relation()`? We need to make sure what we are returning can actually be serialized. Therefore the `Relation` class is simply:
+Notice the `x => new Relation()`? We need to make sure what we are returning can actually be serialized. Therefore the `Relation` class is quite simple:
 
 ```csharp
 [DataContract(Name = "relation")]
