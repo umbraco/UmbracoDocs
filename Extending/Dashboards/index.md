@@ -187,7 +187,7 @@ For reference, here is a list of the weighting values for the default Umbraco da
 </table>
 
 ### Add Language Keys
-After registering your dashboard, it will appear in the backoffice - however it will have it's dashboard alias [mycustomdashboard] wrapped in square brackets. This is because it is missing a language key. The language key allows people to provide a translation of the dashboard name in multilingual environments. To remove the square brackets - add a language key:
+After registering your dashboard, it will appear in the backoffice - however it will have its dashboard alias [mycustomdashboard] wrapped in square brackets. This is because it is missing a language key. The language key allows people to provide a translation of the dashboard name in multilingual environments. To remove the square brackets - add a language key:
 
 If your dashboard is unique to your Umbraco installation then you can modify the following application language file: `config/lang/en-US.user.xml`. If the dashboard is to be released as an Umbraco package and shared with others to use in their own Umbraco installation, you will need to create a *lang* folder in your custom dashboard folder. You also need to create a package specific language file:  `App_Plugins/Mycustomdashboard/lang/en-US.xml`.
 

@@ -21,7 +21,7 @@ In order to fix this conflict, you will have to decide which document type is "t
 
 ## Troubleshooting using SQL queries
 
-Sometimes it's hard to determine by eye which one of your document types is "correct" and you might want to have a look in your SQL database to see which one you want to keep. In that case, you can perform a SQL query to find the content type and it's properties so you can compare them.
+Sometimes it's hard to determine by eye which one of your document types is "correct" and you might want to have a look in your SQL database to see which one you want to keep. In that case, you can perform a SQL query to find the content type and its properties so you can compare them.
 
 The courier files in `~/data/Revision/` are usually named after the unique Id of the thing you're trying to find. In the case of content types you could use the file name (without the `.courier`) extension to find the corresponding type in the database. So if the filename is `efc3208b-efc6-44f8-928c-12c03ccf4700.courier` you might query the database like so:
 
@@ -31,8 +31,8 @@ The courier files in `~/data/Revision/` are usually named after the unique Id of
       (SELECT umbracoNode.id FROM umbracoNode WHERE uniqueID = 'efc3208b-efc6-44f8-928c-12c03ccf4700')
       ORDER BY Alias
 
-This will give you the properties available on this content type in this environment. You can then compare the properties to the ones in your log file to see if the environment you're performing the SQL query in is correcte.
+This will give you the properties available on this content type in this environment. You can then compare the properties to the ones in your log file to see if the environment you're performing the SQL query in is correct.
 
-Again, once you've decided which Courier file in `~/App_Data/Revision/` contains the best representation of your content type then you can remove the duplicate from disk and commit the removal to Git. This should unblock your future deploys from popping up this error.
+Again, once you've decided which Courier file in `~/App_Data/Revision/` contains the best representation of your content type, you can remove the duplicate from disk and commit the removal to Git. This should unblock your future deploys from popping up this error.
 
 It's important to note that only you can decide which document type you want to keep, Courier cannot guess which document type you think is the most complete.

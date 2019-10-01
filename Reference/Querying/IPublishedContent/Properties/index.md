@@ -231,7 +231,7 @@ or
 
 ## Fallbacks
 
-If the current content item doesn't have the requested value use an alternative 'fallback' value in it's place.
+If the current content item doesn't have the requested value, use an alternative 'fallback' value in its place.
 
 ### Fallback to Default Value
 

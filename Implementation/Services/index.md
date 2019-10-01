@@ -424,7 +424,7 @@ namespace Umbraco8.Services
 }
 ```
 
-The second approach can seem 'different' or more complex at first glance, but it is the syntax and method names that are slightly different... it enables the registering of the service in Singleton Scope, and it's use outside of controllers and views.
+The second approach can seem 'different' or more complex at first glance, but it is the syntax and method names that are slightly different... it enables the registering of the service in Singleton Scope, and its use outside of controllers and views.
 
 ###### Aside: What is the IUmbracoContextAccessor then?
 

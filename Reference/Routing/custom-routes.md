@@ -9,7 +9,7 @@ _Documentation about how to setup your own custom controllers and routes that ne
 
 ## Where to put your routing logic?
 
-In Umbraco the best place to put your routing logic is in the Initialize() method of an `Umbraco.Core.Composing.IComponent` implementation. There you can add any custom routing logic you like and Umbraco will add the routes during it's start up.
+In Umbraco the best place to put your routing logic is in the Initialize() method of an `Umbraco.Core.Composing.IComponent` implementation. There you can add any custom routing logic you like and Umbraco will add the routes during its start up.
 
 ## User defined routes
 

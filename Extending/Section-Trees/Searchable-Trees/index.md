@@ -8,7 +8,7 @@ When you type a search term into the Umbraco backoffice search field, you'll see
 
 ![Content Section Dashboards](images/backoffice-search-v8.png)
 
-The results are grouped by 'Section Tree' eg Content, Media, Document Types: essentially each 'Tree' has it's own associated search mechanism, that receives the search term and looks for matches in the tree that is responsible for searching.
+The results are grouped by 'Section Tree' e.g. Content, Media, Document Types: essentially, each 'Tree' has its own associated search mechanism that receives the search term and looks for matches in the tree that is responsible for searching.
 
 You can create your own search mechanisms for your own custom sections or replace the default search implementation for a particular section tree.
 
@@ -56,7 +56,7 @@ public class SearchResultEntiy : EntityBasic
 }
 ```
 
-A `SearchResultEntity` consists of a Score (a Float value) identifying it's relevance to the search term, and the set of `EntityBasic` properties that all Umbraco objects share: eg Name, Id, Udi, Icon, Trashed, Key, ParentId, Path, Alias, AdditionalData
+A `SearchResultEntity` consists of a Score (a Float value) identifying its relevance to the search term, and the set of `EntityBasic` properties that all Umbraco objects share: eg Name, Id, Udi, Icon, Trashed, Key, ParentId, Path, Alias, AdditionalData
 
 #### Example implementation of ISearchableTree
 
@@ -113,7 +113,7 @@ First create your replacement custom `ISearchableTree` implementation, using the
 ```csharp
 public string TreeAlias => "member";
 ```
-To avoid your custom implementation clashing with the default `ISearchableTree` for a Tree, you need to remove it's `ISearchableTree` implementation from the collection of SearchableTrees using an IUserComposer when Umbraco starts up:
+To avoid your custom implementation clashing with the default `ISearchableTree` for a Tree, you need to remove its `ISearchableTree` implementation from the collection of SearchableTrees using an IUserComposer when Umbraco starts up:
 
 ```csharp
 using Umbraco.Core.Components;
