@@ -57,7 +57,7 @@ is shown for a specific crop.
 The Image Cropper comes with an API to generate crop URLs. You can also access its raw data directly as a
 dynamic object.
 
-### MVC View Example to output a "banner" crop from an Image Cropper property with the alias "image"
+### Example to output a "banner" crop from an Image Cropper property with the alias "image"
 
 #### Using the current context
 
@@ -71,7 +71,7 @@ dynamic object.
 <img src="@Url.GetCropUrl(Model, "image", "thumbnail")" />
 ```
 
-### MVC View Example to output custom crops - in this case forcing a 300 x 400 px image
+### Example to output custom crops - in this case forcing a 300 x 400 px image
 
 #### Using the current context
 
@@ -88,3 +88,4 @@ dynamic object.
     <img src="@Url.GetCropUrl(Model, propertyAlias: "image", height: 300, width: 400)" />
 }
 ```
+
