@@ -14,7 +14,7 @@ In its most basic form a document type is a form containing fieldsets (or groups
 
 Document Types can define entire pages or more limited content that can be reused on other nodes ie. a SEO group. This means that you are in complete control of what type of content can be created where.
 
-Content types define what an end user see and can interact with when they are working in the Umbraco backoffice. So for a "Blog post" content type, if the end user needs to be able to create a thumbnail, or insert a name and an image of an author, then it needs to be defined in the content type. All blog posts using the "Blog post" content type, will then give the end user the choice to fill in a thumbnail, author name and an author image.
+Document Types define what an end user see and can interact with when they are working in the Umbraco backoffice. So for a "Blog post" Document Type, if the end user needs to be able to create a thumbnail, or insert a name and an image of an author, then it needs to be defined in the Document Type. All blog posts using the "Blog post" Document Type, will then give the end user the choice to fill in a thumbnail, author name and an author image.
 
 ### Properties
 
