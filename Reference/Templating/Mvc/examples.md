@@ -23,7 +23,7 @@ _Lots of examples of using various techniques to render data in a view_
 
 ```csharp
 @Model.Content.Properties["bodyContent"].Value
-```csharp
+```
 
 Or alternatively:
 
