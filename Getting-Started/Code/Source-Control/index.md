@@ -27,21 +27,21 @@ There are lots of different possible variations within your working environment 
 
 This documentation can't be an exhaustive list of how to version control Umbraco in all possible scenarios. Hopefully it will give you an insight into the anatomy of how an Umbraco website hangs together and therefore which parts to include in version control and which parts not to.
 
-![Typical set of Umbraco Project Folders](images/typical-umbraco-project-folders.png)
+![Typical set of Umbraco Project Folders](images/v8-files.png)
 
-#### The Umbraco Folders
+#### The Umbraco Folder
 
-These are the **/umbraco** and **/umbraco_client** folders inside your Umbraco project.
+There is an **/umbraco** folder inside your Umbraco project.
 
-These should not need to be source controlled.
+This should not need to be source controlled.
 
-Their contents change when you upgrade Umbraco, but no part of your implementation or third party packages installed should update these folders. Historically that has not always been the case, and in the past icons and plugins have been added within these folders, and they have needed to be added to source/version control.
+The contents change when you upgrade Umbraco, but no part of your implementation or third party packages installed should update these folders. Historically that has not always been the case, and in the past icons and plugins have been added within these folders, and they have needed to be added to source/version control.
 
 Generally if you are working with Visual Studio and a Build Server, it's Nuget's job to restore the correct versions of these folders for you. Generally you wouldn't include these folders in your Visual Studio project, as there is a build step, that ensures they are 'deployed' along with your solution when using Web Deploy.
 
 #### App_Data Folders
 
-![App_Data Folders](images/app-data-folders.png)
+![App_Data Folders](images/v8-app-data.png)
 
 When Umbraco is running it will generate and update some files on disk:
 
@@ -61,7 +61,6 @@ They include:
   - `ClientDependency`, Umbraco uses the *[Client Dependency Framework](https://github.com/Shazwazza/ClientDependency)*, to minimise and amalgamate css/js resources into single requests for use in the Umbraco backoffice - a cache of the processed resources are maintained in this folder.
   - `ExamineIndexes`, Umbraco uses *[Examine](../../../reference/searching/examine/)* (a provider based Indexer/Searcher API that wraps the Lucene.Net indexing/searching engine) to index content and members for the Umbraco backoffice search, unless configured otherwise the indexes will be generated in this folder. 
   - `PluginCache` - a hash and list of the plugins installed in your implementation, for detection of changes at startup.
-- `umbraco.config` - This is an XML file containing all published content on your site - Umbraco will continually update this file, and a version held in memory when content is published and unpublished, so source controlling this file would play havoc with how Umbraco works!
 - `Umbraco.sdf` - If you are using SQLCE for the data store in your Umbraco site, then this file IS that datastore, it will be difficult to source control the constant changes to this file.
 
 :::note
