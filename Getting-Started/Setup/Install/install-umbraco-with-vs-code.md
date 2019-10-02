@@ -30,11 +30,11 @@ This section continues from where we left off but covers the installation and co
 
 1. You will see the welcome screen. If you want a fast demo site fill in the information and click **Install!** If you want to decide the database type, or install without a starter site then click **Customize!**
 
-	![Web Installer - Lets Get Started](images/VsCode/3.png)
+	![Web Installer - Lets Get Started](images/VsCode/Installer-v8.png)
 
 1. When the installer is done you will automatically be logged into the backoffice.
 
-	![Web Installer - Install Complete](images/VsCode/4.png)
+	![Web Installer - Install Complete](images/VsCode/dashboard-v8.png)
 
 1. Celebrate - you're all done!
 
