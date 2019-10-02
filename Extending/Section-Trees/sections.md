@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 The Umbraco backoffice consists of Sections, also referred to as Applications, which contain Trees.
 
-Each section is identified by an icon in the left-hand side navigation ribbon of the Umbraco Backoffice.
+Each section is identified by an icon in the top navigation ribbon of the Umbraco Backoffice.
 
 ## Create a Custom Section
 
