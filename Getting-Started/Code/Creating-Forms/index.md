@@ -15,7 +15,7 @@ In this example we'll create a basic contact form contain name, email and messag
 
 ### Creating the view model
 
-First we're going to create the model for the contact form by adding a new class to the `/Models` folder. Let's call it `ContactFormViewModel.cs`
+First, we're going to create the model for the contact form by adding a new class to the `/Models` folder. Let's call it `ContactFormViewModel.cs`
 
 ```csharp
 using System;
@@ -36,7 +36,7 @@ namespace MyFirstForm.Models
 Build your solution after adding the model.
 
 ### Creating the view
-Next we add the view for the form to the `/View/Partials` folder. Because we've added the model and built the solution we can add it as a strongly typed view.
+Next, we add the view for the form to the `/View/Partials` folder. Because we've added the model and built the solution we can add it as a strongly typed view.
 
 The view can be built with standard MVC helpers:
 
@@ -58,7 +58,7 @@ The view can be built with standard MVC helpers:
 ```
 
 ### Adding the controller
-Finally we're going to add the controller. Add a controller to the `/Controllers` folder, name it `ContactController` and make sure to use an __empty MVC controller__ as the template.
+Finally, we're going to add the controller. Add a controller to the `/Controllers` folder, name it `ContactController` and make sure to use an __empty MVC controller__ as the template.
 
 ```csharp
 using MyFirstForm.Models;
@@ -87,7 +87,7 @@ namespace MyFirstForm.Controllers
 }
 ```
 
-If the model state is invalid `CurrentUmbracoPage()` will send the user back to the form. If valid you can work with the form data (e.g. sending an email to site admin) and them `RedirectToCurrentUmbracoPage();`
+If the model state is invalid, `CurrentUmbracoPage()` will send the user back to the form. If valid, you can work with the form data (e.g. sending an email to site admin) and then `RedirectToCurrentUmbracoPage();`
 
 ## Adding the form to a template
 You can add the form to a template by rendering the partial view:
@@ -121,7 +121,7 @@ In the partial view, we're going to render our contact form using the view model
 
 #### Adding the macro
 The last thing to do before we can add the form to a page is to **allow the Macro in a rich text editor**.
-Select the expand the __Macros__ node and select the __Contact Form__ Macro. Check the to boxes under __Editor Settings__.
+Select the expand the __Macros__ node and select the __Contact Form__ Macro. Check the boxes under __Editor Settings__.
 
 Now you can add the form to a page that has a rich text editor.
 
