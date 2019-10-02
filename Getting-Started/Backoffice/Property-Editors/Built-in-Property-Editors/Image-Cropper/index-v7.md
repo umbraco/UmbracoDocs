@@ -4,9 +4,11 @@ versionFrom: 7.0.0
 
 # Image Cropper
 
+`Alias: Umbraco.ImageCropper`
+
 `Returns: JSON`
 
-Returns a path to an image, along with information about focal point and available crops
+Returns a path to an image, along with information about focal point and available crops.
 
 ## Settings
 
