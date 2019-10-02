@@ -47,6 +47,7 @@ Example tour configuration object :
 ```json
 {
 	"name": "My Awesome tour",
+    "old": "22",
 	"alias": "myUniqueAlias",
 	"group": "Get things done!!!",
 	"groupOrder": 1,
@@ -64,6 +65,10 @@ Below is an explanation of each of the properties on the tour configuration obje
 This is the name that is displayed in the help drawer for the tour.
 
 ![Tour name highlighted](images/tourname.png)
+
+### old 
+
+This is the old that is displayed in the help drawer for the tour.
 
 ### alias 
 
