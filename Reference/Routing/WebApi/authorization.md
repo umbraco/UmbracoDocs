@@ -71,7 +71,7 @@ public class ProductsApiController : UmbracoApiController
     [Umbraco.Web.WebApi.MemberAuthorize(AllowType = "Retailers")]
     public IEnumerable<string> GetAllProducts()
     {
-        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+        return new[] { "Table", "Chair", "Desk", "Computer"};
     }
 }
 ```
@@ -84,7 +84,7 @@ public class ProductsApiController : UmbracoApiController
 {	    
     public IEnumerable<string> GetAllProducts()
     {
-        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+        return new[] { "Table", "Chair", "Desk", "Computer"};
     }
 }
 ```
