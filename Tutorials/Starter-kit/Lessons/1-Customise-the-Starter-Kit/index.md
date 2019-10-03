@@ -38,10 +38,18 @@ Learn how to:
     * You can now click the '+' to open a dialog where you can chose an image from the Media library or upload a new image.
     * Select the image you want and click Submit in the lower right corner.
 
-5. Find the *Site Name* property and change the name of the site. This is shown in the site navigation menu. If you want a logo instead of the Site Name you can upload and/or choose an image from the Media Library.
-6. When you're happy with the changes publish them to website by clicking the Save and Publish button. To see the changes you've made go to the properties tab and click the icon next to **Link to document**.
+5. Find the *Site Name* property and change the name of the site. 
+
+    * This is shown in the site navigation menu. 
+    * If you want a logo instead of the Site Name you can upload and/or choose an image from the Media Library.
+
+6. When you're happy with the changes publish them to website by clicking the Save and Publish button. 
+
+To see the changes you've made go to the Info tab and select the link.
+
+![Link to page](images/link-to-page.png)
 
 ## Summary
-Nice job! In this lesson you've learned to edit properties on a page and use the **Save**, **Preview** and **Save and Publish** actions.
+Nice job! In this lesson you've learned to navigate and edit properties on a page. You've also learned the difference between the **Save**, **Preview** and **Save and Publish** actions and how to use them.
 
 [Back to Lessons](../index.md)
