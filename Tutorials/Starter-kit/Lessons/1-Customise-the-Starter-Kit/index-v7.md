@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
 ---
 
 # Customise the Starter Kit
@@ -28,6 +28,7 @@ Learn how to:
 6. When you're happy with the changes publish them to website by clicking the Save and Publish button. To see the changes you've made go to the properties tab and click the icon next to **Link to document**.
 
 ## Summary
+
 Nice job! In this lesson you've learned to edit properties on a page and use the **Save**, **Preview** and **Save and Publish** actions.
 
 [Back to Lessons](../index.md)
