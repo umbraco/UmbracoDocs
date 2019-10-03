@@ -55,7 +55,7 @@ In Umbraco there can only be a single scheduling server which performs the follo
 Flexible Load Balancing will automatically elect a "Scheduling server" to perform the above services. This means
 that all of the servers will need to be able to resolve the URL of either: itself, the Master server, the internal load balancer or the public address.
 
-For example, In the following diagram the slave node **f02.mysite.local** is the elected "Scheduling server". In order for scheduling to work it needs to be able to send
+For example, In the following diagram the replica node **f02.mysite.local** is the elected "Scheduling server". In order for scheduling to work it needs to be able to send
 requests to itself, the Master server, the internal load balancer or the public address. The address used by the "Scheduling server" is called the "umbracoApplicationUrl". 
 
 ![Umbraco flexible load balancing diagram](images/flexible-load-balancing-scheduler.png)
@@ -68,7 +68,7 @@ by default would mean the "umbracoApplicationUrl" is "f02.mysite.local". In any 
 
 In many scenarios this is fine, but in case this is not adequate there's a few of options you can use:
 
-* __Recommended__: [set your front-end(s) (non-admin server) to be explicit slave servers](flexible-advanced.md#explicit-master-scheduling-server) which means they will never be used as the master scheduler
+* __Recommended__: [set your front-end(s) (non-admin server) to be explicit replica servers](flexible-advanced.md#explicit-master-scheduling-server) which means they will never be used as the master scheduler
 * set the `umbracoApplicationUrl` property in the [Web.Routing section of /Config/umbracoSettings.config](../../../../Reference/Config/umbracoSettings/index.md)
 * or in an [`ApplicationStarting` event of an application startup handler](../../../../Reference/Events/Application-Startup.md) you can specify a custom delegate to return the base url for a node by setting [`ApplicationUrlHelper.ApplicationUrlProvider`](https://github.com/umbraco/Umbraco-CMS/blob/75c2b07ad3a093b5b65b6ebd45697687c062f62a/src/Umbraco.Core/Sync/ApplicationUrlHelper.cs#L21)
 
