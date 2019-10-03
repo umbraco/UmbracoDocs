@@ -21,17 +21,17 @@ Finally in Part Three we shall change the blog listing.
     <small class="blogpost-date">@post.PublicationDate.ToLongDateString()</small>
     ```
 
-3. Scroll further back up the page to where we get the blog posts (as the **Children** of this page).  Change this to:
+3. Further up in the view, you also need to redefine the `blogposts` variable:
 
     ```csharp
-    var blogposts = startNode.Children.OrderByDescending(x => x<DateTime>("PublicationDate")).ToList();
+    var blogposts = startNode.Children.OrderByDescending(x => x.Value<DateTime>("PublicationDate")).ToList();
     ```
-    * Because we are sorting by a custom property we need to use the generic `GetPropertyValue` method.
+    * Because we are sorting by a custom property we need to use the generic `Value` method.
 
 4. *Save* the partial view - a confirmation message should appear confirming that the Partial view has saved.
-5. Now view both the home and the blog pages and in the browser to confirm that all is working as expected.
+5. Now view both the Blog overview and the blog posts themselves in the browser to confirm that all is working as expected.
 
 ## Summary
-Nice job! In this lesson you've learned what a **Document Type** is and how to add a new Property to a document type, and how to change templates and sort by custom Properties.
+Nice job! In this lesson you've learned what a **Document Type** is and how to add a new Property to it. You've also learned how to change Templates and sort by custom Properties.
 
 [Back to Lessons](../index.md)
