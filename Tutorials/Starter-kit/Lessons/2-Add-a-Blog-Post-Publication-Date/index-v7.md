@@ -39,4 +39,4 @@ Learn how to:
     * A logical order to your properties will make things easier for your editors.
 10. Click *Save*. A confirmation message should appear confirming that the Document Type was saved.
 
-[Proceed to Part Two](part-2.md)
+[Proceed to Part Two](part-2-v7.md)
