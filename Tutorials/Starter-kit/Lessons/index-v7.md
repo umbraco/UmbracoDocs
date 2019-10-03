@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # Lessons
 
-## [Customise the Starter Kit](1-Customise-the-Starter-kit/)
+## [Customise the Starter Kit](1-Customise-the-Starter-kit/index-v7.md)
 
 Learn how to edit and publish content and customise the theme of the site.
 
