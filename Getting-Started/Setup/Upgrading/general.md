@@ -48,8 +48,7 @@ Download the .zip file for the new version you are upgrading to from [https://ou
 Copy the following folders from inside the .zip file over the existing folders in your site:
 
 - /bin
-- /Umbraco 
-- /Umbraco_Client
+- /Umbraco
 :::note
 There are hosting providers (we know of one: RackSpace Cloud) that require proper casing of file and folder names. Normally on Windows this is not a problem. If your hosting provider however forces proper casing, you will need to verify that the folder and file names are in the same casing as in the newest version you're upgrading to.
 :::

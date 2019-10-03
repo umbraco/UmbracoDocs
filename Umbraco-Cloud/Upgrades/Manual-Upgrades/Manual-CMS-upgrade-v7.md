@@ -19,6 +19,7 @@ Make sure you can run your Cloud project locally and restore content and media. 
 * Copy the following folders from the unzipped folder to your Cloud project folder:
     * `/bin`
     * `/Umbraco`
+    * `/Umbraco_Client`
 
 ## Merge configuration files
 
