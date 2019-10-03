@@ -24,11 +24,11 @@ For example, you could create a Google Analytics integration within a Content Ap
 
 #### Controlling Appearance/Position
 
-You can associate an icon with your custom Content App, control the position (between 'Content' and 'Info') where your custom Content App should appear via a 'weighting' number
+You can associate an icon with your custom Content App, control the position (between 'Content' and 'Info') where your custom Content App should appear via a 'weighting' number.
 
 #### Permissions
 
-Content Apps can be configured to appear dependent on Section, Content Type and User Group Permissions. 
+Content Apps can be configured to appear dependent on Section, Content Type and User Group Permissions.
 
 #### Read-Only?
 
@@ -46,9 +46,9 @@ A basic understanding of how to use AngularJS with Umbraco is required.  If you 
 
 ### Setting up the Plugin
 
-The first thing we do is create a new folder inside `/App_Plugins` folder. We will call it `WordCounter`
+The first thing we do is create a new folder inside `/App_Plugins` folder. We will call it `WordCounter`.
 
-Next we need to create a manifest file to describe what this Content App does. This manifest will tell Umbraco about our new Content App and allows us to inject any needed files into the application.  
+Next we need to create a manifest file to describe what this Content App does. This manifest will tell Umbraco about our new Content App and allows us to inject any needed files into the application.
 
 Create a new file in the `/App_Plugins/WordCounter/` folder and name it `package.manifest`. In this new file, copy the code snippet below and save it. This code describes the Content App. To help you understand the JSON, read the inline comments for details on each bit:
 
@@ -94,7 +94,7 @@ angular.module("umbraco")
             var properties = node.variants[0].tabs[0].properties;
 
             vm.propertyWordCount = {};
-            
+
             var index;
             for (index = 0; index < properties.length; ++index) {
                 var words = properties[index].value;
@@ -148,7 +148,7 @@ You can set your Content App to only show for specific content types by updating
 {
     "contentApps": [
         {
-            "show": [ 
+            "show": [
                 "-content/homePage", // hide for content type 'homePage'
                 "+content/*", // show for all other content types
                 "+media/*" // show for all media types
@@ -159,7 +159,7 @@ You can set your Content App to only show for specific content types by updating
 ```
 
 :::tip
-When the 'show' directive is omitted then the app will be shown for all content types. 
+When the 'show' directive is omitted then the app will be shown for all content types.
 
 Also, when you want to exclude content types, make sure to include all the rest using `"+content/*"`.
 :::
@@ -172,7 +172,7 @@ In a similar way, you can limit your Content App according to user roles (groups
 {
     "contentApps": [
         {
-            "show": [ 
+            "show": [
                 "+role/admin"  // show for 'admin' user group
             ]
         }
@@ -250,7 +250,7 @@ namespace Umbraco.Web.UI
     }
 }
 ```
-    
+
 You will still need to add all of the files you added above but, because your `C#` code is adding the Content App, the `package.manifest` file can be simplified like this:
 
 ```json5

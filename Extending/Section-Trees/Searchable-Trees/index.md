@@ -44,7 +44,7 @@ public interface ISearchableTree
 Your implementation needs to return an IEnumerable of `SearchResultEntity` items:
 
 ```csharp
-public class SearchResultEntiy : EntityBasic
+public class SearchResultEntity : EntityBasic
 {
     public SearchResultEntity();
 
@@ -88,7 +88,7 @@ If we have a custom section Tree with alias 'favouriteThingsAlias' (see the [cus
             }
             // set number of search results found
             totalFound = matchingItems.Count();
-            // return your IEnumerable of SearchResultEntitys
+            // return your IEnumerable of SearchResultEntity
             return searchResults;
         }
     }
@@ -121,7 +121,7 @@ using Umbraco.Web;
 
 namespace My.Website
 {
-[RuntimeLevel(MinLevel = RuntimeLevel.Run)]
+    [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
     public class RemoveCoreMemberSearchableTreeComposer : IUserComposer
     {
         public void Compose(Composition composition)
@@ -130,6 +130,7 @@ namespace My.Website
             composition.SearchableTrees().Exclude<MemberTreeController>();
         }
     }
+}
 ```
 
 This would then allow your custom implementation of ISearchableTree with TreeAlias 'Member' to be used when searching the Member Section Tree.

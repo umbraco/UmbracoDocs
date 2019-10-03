@@ -64,34 +64,34 @@ A `SearchResultItem` consists of a Score (a Float value) identifying its relevan
 If we have a custom section Tree with alias 'favouriteThingsAlias' (see the [custom tree example](../trees-v7.md)) then we could implement searchability by creating the following c# class in our site:
 
 ```csharp
-  public class FavouriteThingsSearchableTree : ISearchableTree
+public class FavouriteThingsSearchableTree : ISearchableTree
+{
+    public string TreeAlias => "favouriteThingsAlias";
+
+    public IEnumerable<SearchResultItem> Search(string query, int pageSize, long pageIndex, out long totalFound, string searchFrom = null)
     {
-        public string TreeAlias => "favouriteThingsAlias";
+        // your custom search implementation starts here
+        Dictionary<int, string> favouriteThings = new Dictionary<int, string>();
+        favouriteThings.Add(1, "Raindrops on Roses");
+        favouriteThings.Add(2, "Whiskers on Kittens");
+        favouriteThings.Add(3, "Skys full of Stars");
+        favouriteThings.Add(4, "Warm Woolen Mittens");
+        favouriteThings.Add(5, "Cream coloured Unicorns");
+        favouriteThings.Add(6, "Schnitzel with Noodles");
 
-        public IEnumerable<SearchResultItem> Search(string query, int pageSize, long pageIndex, out long totalFound, string searchFrom = null)
+        var searchResults = new List<SearchResultItem>();
+
+        var matchingItems = favouriteThings.Where(f => f.Value.StartsWith(query, true, System.Globalization.CultureInfo.CurrentCulture));
+        foreach (var matchingItem in matchingItems)
         {
-            // your custom search implementation starts here
-            Dictionary<int, string> favouriteThings = new Dictionary<int, string>();
-            favouriteThings.Add(1, "Raindrops on Roses");
-            favouriteThings.Add(2, "Whiskers on Kittens");
-            favouriteThings.Add(3, "Skys full of Stars");
-            favouriteThings.Add(4, "Warm Woolen Mittens");
-            favouriteThings.Add(5, "Cream coloured Unicorns");
-            favouriteThings.Add(6, "Schnitzel with Noodles");
-
-            var searchResults = new List<SearchResultItem>();
-
-            var matchingItems = favouriteThings.Where(f => f.Value.StartsWith(query, true, System.Globalization.CultureInfo.CurrentCulture));
-            foreach (var matchingItem in matchingItems)
-            {
-                searchResults.Add(new SearchResultItem() { Id = 12345, Alias = "favouriteThingItem", Icon = "icon-favorite", Key = new Guid("325746a0-ec1e-44e8-8f7b-6e7c4aab36d1"), Name = matchingItem.Value, ParentId = -1, Path = "-1,123456", Score = 1.0F, Trashed = false });
-            }
-            // set number of search results found
-            totalFound = matchingItems.Count();
-            // return your IEnumerable of SearchResultItems
-            return searchResults;
+            searchResults.Add(new SearchResultItem() { Id = 12345, Alias = "favouriteThingItem", Icon = "icon-favorite", Key = new Guid("325746a0-ec1e-44e8-8f7b-6e7c4aab36d1"), Name = matchingItem.Value, ParentId = -1, Path = "-1,123456", Score = 1.0F, Trashed = false });
         }
+        // set number of search results found
+        totalFound = matchingItems.Count();
+        // return your IEnumerable of SearchResultItems
+        return searchResults;
     }
+}
 ```
 
 That's all we need, after an application pool recycle, if we now search in the backoffice we'll see matches from our custom 'Favourite Things' tree:
