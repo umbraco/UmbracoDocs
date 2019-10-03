@@ -72,7 +72,7 @@ The default language to use in the backoffice if a user isn't explicitly assigne
 <add key="umbracoDefaultUILanguage" value="es" />
 ```
 
-### umbracoUseSSL
+### Umbraco.Core.UseHttps
 
 Makes sure that all of the requests in the backoffice are called over HTTPS instead of HTTP when set to `true`.
 

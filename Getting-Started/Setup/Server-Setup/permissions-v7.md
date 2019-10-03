@@ -87,6 +87,14 @@ are used for css files</p>
 </td>
 </tr>
 <tr>
+<th>/Masterpages</th>
+<th>Modify / Full control</th>
+<td>
+<p>Should always have modify rights as the folder and its files
+are used for template files</p>
+</td>
+</tr>
+<tr>
 <th>/Media</th>
 <th>Modify / Full control</th>
 <td>
@@ -111,11 +119,34 @@ rights, but can be set to read-only afterwards</p>
 </td>
 </tr>
 <tr>
+<th>/Umbraco_client</th>
+<th>Modify / Full control</th>
+<td>
+<p>For upgrades and package installation, it should have modify
+rights, but can be set to read-only afterwards</p>
+</td>
+</tr>
+<tr>
+<th>/UserControls</th>
+<th>Modify / Full control</th>
+<td>
+<p>Modify rights are needed for installing packages</p>
+</td>
+</tr>
+<tr>
 <th>/Views</th>
 <th>Modify / Full control</th>
 <td>
 <p>Should always have modify rights as the folder and its files
 are used for template, partial view and macro files</p>
+</td>
+</tr>
+<tr>
+<th>/Xslt</th>
+<th>Modify / Full control</th>
+<td>
+<p>Should always have modify rights as the folder and its files
+are used for macro files</p>
 </td>
 </tr>
 </tbody>
