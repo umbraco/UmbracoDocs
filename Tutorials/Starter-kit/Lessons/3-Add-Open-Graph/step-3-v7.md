@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
 ---
 
 # Add Open Graph - Step 3
@@ -27,4 +27,4 @@ At the end, the head should look like this:
         }
     </head>
 
-[Previous](step-2.md) - [Next](step-4.md)
+[Previous](step-2-v7.md) - [Next](step-4-v7.md)
