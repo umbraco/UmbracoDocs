@@ -34,14 +34,14 @@ The Project Alias is an http friendly version of the Project Name under your Umb
 #### Via a Umb-Project-Alias header
 
 ```http
-GET /cdn/content
+GET https://cdn.umbraco.io/content
 Umb-Project-Alias: project-alias
 ```
 
 #### Via a Query String parameter
 
 ```http
-GET /cdn/content?Umb-Project-Alias=project-alias
+GET https://cdn.umbraco.io/content?Umb-Project-Alias=project-alias
 ```
 
 ### Versioning
@@ -53,20 +53,20 @@ All API requests should specify the API version they target. If no version is sp
 #### Via an api-version header
 
 ```http
-GET /cdn/content
+GET https://cdn.umbraco.io/content
 api-version: 2
 ```
 
 #### Via a Query String parameter
 
 ```http
-GET /cdn/content?api-version=2
+GET https://cdn.umbraco.io/content?api-version=2
 ```
 
 #### Via Content negotiation
 
 ```http
-GET /cdn/content
+GET https://cdn.umbraco.io/content
 Accept: application/json+hal;v=2
 ```
 
@@ -78,18 +78,61 @@ If no culture is specified its treated as invariant and the default lanuage will
 #### Via an Accept-Language header
 
 ```http
-GET /cdn/content
+GET https://cdn.umbraco.io/content
 Accept-Language: en-US
 ```
 
 #### Via a Query String parameter
 
 ```http
-GET /cdn/content?culture=en-US
+GET https://cdn.umbraco.io/content?culture=en-US
 ```
 
 ## Authentication and Authorization
 
+By default the Content Delivery API is not protected, it can be enabled through the backoffice. The Content Management API is always protected and requires either an API key or a bearer token.
+
+Since both API keys and bearer tokens are created for a specific user their permissions can be set on that user in the backoffice.
+
+### API Keys
+
+API keys can be managed for a user through the backoffice.
+
+#### Via the Authorization header
+
+When using the `Authorization` header the api key must be passed in as the username and the password must be left empty. The value must be base64 encoded e.g. `base64(api-key:)`
+
+```http
+GET https://api.umbraco.io/
+Authorization: Basic $base64-encoded-string
+```
+
+#### Via an Api-Key header
+
+```http
+GET https://api.umbraco.io/
+Api-Key: api-key
+```
+
+### Bearer token
+
+The endpoints implements OAuth 2.0
+
+A bearer token can be created by posting to `https://api.umbraco.io/oauth/token` and supplying a username and password for a backoffice user.
+
+```http
+POST https://api.umbraco.io/oauth/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&username=$username&password=$password
+```
+
+and it can be used by passing it to the `Authorization` header.
+
+```http
+GET https://api.umbraco.io/
+Authorization: Bearer $token
+```
 
 ## Content Delivery API
 
