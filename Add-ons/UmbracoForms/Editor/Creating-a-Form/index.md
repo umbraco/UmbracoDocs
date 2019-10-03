@@ -8,9 +8,9 @@ This will show the basic steps of creating a form and adding them to your Umbrac
 
 ## Navigate to the Forms section
 
-Managing forms happens in the Forms section of the Umbraco backoffice. You need to have access to the section in order to see it. 
+Managing forms happens in the Forms section of the Umbraco backoffice. You need to have access to the section in order to see it.
 
-![Forms Section](images/FormsSectionV8.png) 
+![Forms Section](images/FormsSectionV8.png)
 
 ## Click the forms tree
 
@@ -79,7 +79,7 @@ In the dialog you'll also need to choose which type of field or layout element y
 Once the type has been selected, there are a number of additional settings that can be applied to the field:
 
 * Mark whether the field stores **sensitive data**
-    * This will prevent the data from this field from being downloaded and viewed by users who does not have permission to do so. Only members of the sensative data user group will see this option.  
+    * This will prevent the data from this field from being downloaded and viewed by users who does not have permission to do so. Only members of the sensitive data user group will see this option.
 * You can give the field a **default value**
 * Add a **placeholder** to make it easier for the user to fill in the form
 * Mark whether the field is **mandatory**, and customize the message
