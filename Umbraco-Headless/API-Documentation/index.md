@@ -12,9 +12,11 @@ Content Management is where you can Create, Read, Update and Delete Content, Med
 
 ## REST API Standard
 
-The Umbraco Headless APIs are based on the HAL Standard, which are explained in greater detail here http://stateless.co/hal_specification.html 
-The properties _links and _embedded are both part of the HAL specification and are implemented in the Umbraco Headless API accordingl to the specification linked above.
-The rest of the properties in the Umbraco Headless API, which starts with an underscore are "system level properties" meaning that they are standard Umbraco properties, which cannot be changed via the API. So properties like _id, _url, _createDate, _updateDate, _creatorName, _writerName, _level andd _hasChildren. These are all defined by Umbraco when Content is created or updated.
+The Umbraco Headless APIs are based on the HAL Standard, which are explained in greater detail [here](http://stateless.co/hal_specification.html).
+
+The properties `_links` and `_embedded` are both part of the HAL specification and are implemented in the Umbraco Headless API according to the specification linked above.
+
+The rest of the properties in the Umbraco Headless API, which starts with an underscore are "system level properties" meaning that they are standard Umbraco properties, which cannot be changed via the API. So properties like `_id`, `_url`, `_createDate`, `_updateDate`, `_creatorName`, `_writerName`, `_level` and `_hasChildren`. These are all defined by Umbraco when Content is created or updated.
 
 ### API Browser
 
@@ -29,14 +31,17 @@ There are two main APIs, one for Content Delivery `https://cdn.umbraco.io` and o
 In order to access the data for your Umbraco Headless project you need to provide a project identifier (Project Alias) via a HTTP Header or a Querystring parameter.
 The Project Alias is an http friendly version of the Project Name under your Umbraco Cloud account.
 
-Via a Umb-Project-Alias header
+#### Via a Umb-Project-Alias header
+
 ```http
+GET /cdn/content
 Umb-Project-Alias: project-alias
 ```
 
-Via a Query string parameter
+#### Via a Query String parameter
+
 ```http
-?Umb-Project-Alias=project-alias
+GET /cdn/content?Umb-Project-Alias=project-alias
 ```
 
 ### Versioning
