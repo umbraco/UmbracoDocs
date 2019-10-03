@@ -79,7 +79,7 @@ namespace MyFirstForm.Controllers
             if (!ModelState.IsValid)
                 return CurrentUmbracoPage();
 
-            /// Work with form data here
+            // Work with form data here
 
             return RedirectToCurrentUmbracoPage();
         }

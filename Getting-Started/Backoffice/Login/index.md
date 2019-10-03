@@ -8,7 +8,7 @@ versionFrom: 8.0.0
 
 To access the backoffice, you will need to login. You can do this by adding `/umbraco` to the end of your website URL, e.g. http://mywebsite.com/umbraco.
 
-You will be presented with a login form simular to this:
+You will be presented with a login form similar to this:
 
 ![Login screen](images/backoffice-login.png "The login screen has a greeting, username/password field and optionally a 'Forgotten password' link.")
 *The login screen has a greeting, username/password field and optionally a 'Forgotten password' link*
@@ -43,7 +43,7 @@ The "Forgot password?" link allows your backoffice users to reset their password
 
 Set it to `true` to enable the password reset feature, and to `false` to disable the feature.
 
-You will also need to configure an SMTP server in your `web.config` file. When you get a succesful result on the SMTP configuration when running a health check in the backoffice, you are good to go! 
+You will also need to configure an SMTP server in your `web.config` file. When you get a successful result on the SMTP configuration when running a health check in the backoffice, you are good to go!
 
 An example:
 

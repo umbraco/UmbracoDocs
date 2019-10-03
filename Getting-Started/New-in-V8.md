@@ -36,13 +36,13 @@ Giving the Umbraco Backoffice a new look, has given you a bigger workspace when 
 
 ## Packages in V8
 
-The entire flow of building and testing packages for Umbraco has been given an overhaul and it's been made more fluent and consistent. 
+The entire flow of building and testing packages for Umbraco has been given an overhaul and it's been made more fluent and consistent.
 
 You can already find a guide about [how to port V7 packages to V8](../Tutorials/Porting-Packages-V8).
 
 ## General improvements
 
-Developing Umbraco 8 has allowed for a major clean-up in the core codebase. This means that a lot of old legacy code has been removed, which has opened up for the opporunity to add more up-to-date technology.
+Developing Umbraco 8 has allowed for a major clean-up in the core codebase. This means that a lot of old legacy code has been removed, which has opened up for the opportunity to add more up-to-date technology.
 
 For you as a developer a clean codebase means that it is easier to create and implement extensions, as well as work with the code in general.
 

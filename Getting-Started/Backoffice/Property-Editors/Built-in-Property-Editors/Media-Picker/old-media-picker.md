@@ -22,7 +22,7 @@ If checked, the picker will allow the user to select multiple media items using 
 
 ![Media Picker Data Type Definition](images/Media-Picker-DataType.jpg)
 
-## Content Example 
+## Content Example
 
 ![Media Picker Content](images/Media-Picker-Content.jpg)
 
@@ -64,13 +64,13 @@ If checked, the picker will allow the user to select multiple media items using 
     var caseStudyImagesCollection = Umbraco.TypedMedia(caseStudyImagesList).Where(x => x != null);
 
     foreach (var caseStudyImage in caseStudyImagesCollection)
-        {      
-            <img src="@caseStudyImage.Url" style="width:300px;height:300px" />      
-        }                                                               
+        {
+            <img src="@caseStudyImage.Url" style="width:300px;height:300px" />
+        }
 }
 ```
 
-### Dynamic (multiple enabled)                        
+### Dynamic (multiple enabled)
 
 ```csharp
 @if (CurrentPage.HasValue("caseStudyImages"))

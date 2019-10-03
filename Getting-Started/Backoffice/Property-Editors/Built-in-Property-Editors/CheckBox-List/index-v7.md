@@ -26,9 +26,11 @@ Displays a list of preset values as a list of checkbox controls.
 
 ```csharp
 @{
-    if (Model.Content.HasValue("superHeros")){
+    if (Model.Content.HasValue("superHeros"))
+    {
         <ul>
-            @foreach(var item in Model.Content.GetPropertyValue<IEnumerable<string>>("superHeros")) {
+            @foreach (var item in Model.Content.GetPropertyValue<IEnumerable<string>>("superHeros"))
+            {
                 <li>@item</li>
             }
         </ul>
