@@ -12,7 +12,7 @@ Learn how to edit and publish content and customise the theme of the site.
 
 If you don't want to use the creation date of blog posts, take this lesson to learn how to let content editors edit the publication date.
 
-## [Add Open Graph Support](3-Add-Open-Graph/)
+## [Add Open Graph Support](3-Add-Open-Graph/index-v7.md)
 
 With a few steps you can add support for Open Graph pages on the site.
 
