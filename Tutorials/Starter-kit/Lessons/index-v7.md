@@ -8,7 +8,7 @@ versionFrom: 7.0.0
 
 Learn how to edit and publish content and customise the theme of the site.
 
-## [Add a blog post publication date](2-Add-a-Blog-Post-Publication-Date/)
+## [Add a blog post publication date](2-Add-a-Blog-Post-Publication-Date/index-v7.md)
 
 If you don't want to use the creation date of blog posts, take this lesson to learn how to let content editors edit the publication date.
 
