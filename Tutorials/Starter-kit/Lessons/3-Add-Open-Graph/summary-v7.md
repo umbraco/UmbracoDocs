@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
 ---
 
 # Add Open Graph - Step 4
@@ -15,4 +15,4 @@ In this lesson you have learned:
 * Compositions create an interface you can check on and use as a page model (`IOpenGraph`)
 * How to get the full path (absolute URL) for both content and media items.
 
-[Previous](step-4.md) - [Back to lessons](../index.md)
+[Previous](step-4-v7.md) - [Back to lessons](../index-v7.md)
