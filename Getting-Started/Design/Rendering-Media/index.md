@@ -6,14 +6,18 @@ versionFrom: 8.0.0
 
 _Templates (Views) can access items in the [Media library](../../Data/Creating-Media/index.md) to assist in displaying rich content like galleries_
 
-In the following examples we will be looking at rendering an `Image`, this is just one of the 'types' of Media in Umbraco - however the same principles apply to all MediaTypes (however the actual properties available to render will be different, for example a `File` won't have a Width property)
+In the following examples we will be looking at rendering an `Image`. 
+
+Image is only one of the 'types' of Media in Umbraco. The same principles apply to all MediaTypes (however the actual properties available to render will be different, for example a `File` won't have a Width property).
 
 ## Rendering a media item
 
-A media item is not just a reference to a static file, but like content, it is a collection of fields, such as width, height and the path to the stored file. This means that accessing and rendering media in a template is very similar to rendering content.
+A media item is not only a reference to a static file, but like content, it is a collection of fields, such as width, height and the path to the stored file. This means that accessing and rendering media in a template is very similar to rendering content.
 
 ### Example 1: Accessing a Media Image IPublishedContent item based upon its Id
+
 An uploaded image in the media library is based on the MediaType `Image` which has defined a number of standard properties:
+
 - Name
 - Width & Height
 - Size
