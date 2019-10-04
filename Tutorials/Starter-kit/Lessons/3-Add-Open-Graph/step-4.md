@@ -37,15 +37,23 @@ The partial view comes with a standard view model `@inherits Umbraco.Web.Mvc.Umb
     * There is a handy method for getting this from a content item. Add:
     
     ```html
-    <meta property="og:url" content="@Model.UrlAbsolute()" />
+    <meta property="og:url" content="@Model.Url(mode: UrlMode.Absolute)" />
     ```
 
 12. The final thing we need to do is render the image selected on the Open Graph Image property. 
     * You'll still need to render the entire URL for the image. 
-    * It's a little different than for the content URL. Add: 
-    
+    * First, we'll create a variable to get the image:
+
+    ```csharp
+    @{
+    var ogImage = Model.Value<IPublishedContent>("openGraphImage");
+    }
+    ```
+
+    * Next, we add the `meta` property to get the path for the media item:
+
     ```html
-    <meta property="og:image" content="@Url.GetAbsoluteMediaUrl(Model.OpenGraphImage)" />
+    <meta property="og:image" content="@ogImage.Url(mode: UrlMode.Absolute)" />
     ```
 
 13. Your partial view is now complete and should only render on pages that are using the Open Graph composition. 
@@ -56,8 +64,13 @@ The final view should look like this:
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<IOpenGraph>
 <meta property="og:title" content="@Umbraco.Field("openGraphTitle", altFieldAlias:"sitename", recursive: true)" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="@Model.UrlAbsolute()" />
-<meta property="og:image" content="@Url.GetAbsoluteMediaUrl(Model.OpenGraphImage)" />
+<meta property="og:url" content="@Model.Url(mode: UrlMode.Absolute)" />
+
+@{
+var ogImage = Model.Value<IPublishedContent>("openGraphImage");
+}
+
+<meta property="og:image" content="@ogImage.Url(mode: UrlMode.Absolute)" />
 ```
 
 **Pro tip:** In order to keep the lesson short and to the point, we have left out `null`-checks from the code examples. So remember to fill in the Open Graph properties, in the content section, to avoid exceptions when viewing the page.
