@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 ### .NET Core Console Application
 
-The Headless client NuGet package is hosted on a custom MyGet feed, so you need to create a `NuGet.config` file for your project which can be done via the command line. If you don't do this then you would need to use the `--source` parameter and a few other tricks so it's simpler to use a `Nuget.config` file. 
+The Headless client NuGet package is hosted on a custom MyGet feed, so you need to create a `NuGet.config` file for your project which can be done via the command line. If you don't do this then you would need to use the `--source` parameter and a few other tricks so it's simpler to use a `Nuget.config` file.
 
 So __before__ you run any script for creating a project, you will need to do this in the new folder where you are creating your project (`sln` file):
 
@@ -14,39 +14,39 @@ So __before__ you run any script for creating a project, you will need to do thi
     <?xml version="1.0" encoding="utf-8"?>
     <configuration>
         <packageSources>
-            <add key="umbracoMyGet" 
-                 value="https://www.myget.org/F/uaas/api/v3/index.json" 
-                 protocolVersion="3" />
+            <add key="umbracoMyGet"
+                value="https://www.myget.org/F/uaas/api/v3/index.json"
+                protocolVersion="3" />
         </packageSources>
     </configuration>
     ```
 _This example is for creating a .NET Core Console (command line) application_
 
 * Creating a .NET Core website and adding references:
-   * _(Ensure you've created the `Nuget.config`, see above)_
-   * `dotnet new console`
-   * `dotnet add package UmbracoCms.Headless.Client -v 0.9.7-*`
-      * _NOTE: You use this same command to update to the latest version_
+    * _(Ensure you've created the `Nuget.config`, see above)_
+    * `dotnet new console`
+    * `dotnet add package UmbracoCms.Headless.Client -v 0.9.7-*`
+    * _NOTE: You use this same command to update to the latest version_
 * Update the `Program.cs` file to use the Headless client:
-   * Add the required `using` to the file:
-   ```csharp
+    * Add the required `using` to the file:
+    ```csharp
     using Umbraco.Headless.Client.Net.Services;
-   ```
-   * Create an instance of the `PublishedContentService` and pass in the endpoint and credentials:
-   ```csharp
-   var publishedContentService = new PublishedContentService(
+    ```
+    * Create an instance of the `PublishedContentService` and pass in the endpoint and credentials:
+    ```csharp
+    var publishedContentService = new PublishedContentService(
                     "https://YOUR-PROJECT-URL.s1.umbraco.io",
                     "YOUR@USERNAME.com",
                     "YOUR-PASSWORD");
-   ```
-   * Start using the `PublishedContentService`:
-   ```csharp
+    ```
+    * Start using the `PublishedContentService`:
+    ```csharp
     // get content by ContentType and list their names
     var content = publishedContentService.GetAll("contentTypeAlias").Result;
     foreach(var item in content) {
         Console.WriteLine($"{item.Id} - {item.Name}");
     }
-   ```
+    ```
 * At this point your Program.cs file  will look like this:
     ```csharp
     using System;
@@ -61,21 +61,21 @@ _This example is for creating a .NET Core Console (command line) application_
                 var publishedContentService = new PublishedContentService(
                     "https://YOUR-PROJECT-URL.s1.umbraco.io",
                     "YOUR@USERNAME.com",
-                    "YOUR-PASSWORD");            
-                
+                    "YOUR-PASSWORD");
+
                 // get content by ContentType and list their names
                 var content = publishedContentService.GetAll("contentTypeAlias").Result;
                 foreach(var item in content) {
                     Console.WriteLine($"{item.Id} - {item.Name}");
                 }
-            }  
+            }
         }
     }
 
     ```
 
 * Now run the project
-   * `dotnet run`
+    * `dotnet run`
 * You will get an output like this:
     ![Console output](images/Console-output.png)
 
@@ -129,7 +129,7 @@ namespace MyAwesomeHeadlessProject
             // setup a container
             var services = new ServiceCollection()
                 .AddLogging(config => config.AddConsole().SetMinimumLevel(LogLevel.Debug))
-                
+
                 // include the Umbraco headless services and pass in the config instance
                 .AddUmbracoHeadlessClient(configuration)
                 .BuildServiceProvider();
@@ -144,7 +144,7 @@ namespace MyAwesomeHeadlessProject
 
             (services as IDisposable)?.Dispose();
         }
-    
+
     }
 }
 

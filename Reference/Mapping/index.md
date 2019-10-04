@@ -134,8 +134,8 @@ And
 public static string GetCulture(this MapperContext context)
 {
     return context.HasItems &&
-           context.Items.TryGetValue(CultureKey, out var obj) &&
-           obj is string s
+            context.Items.TryGetValue(CultureKey, out var obj) &&
+            obj is string s
         ? s
         : null;
 }

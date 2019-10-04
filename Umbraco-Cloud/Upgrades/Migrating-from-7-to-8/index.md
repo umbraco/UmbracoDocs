@@ -45,7 +45,7 @@ Should something fail during the migration, the Development environment can alwa
 :::note
 Please be aware that this is **only a content migration**.
 
-The database will be migrated, but upgrading view files and custom code and implementation is a manual process. 
+The database will be migrated, but upgrading view files and custom code and implementation is a manual process.
 
 See [Step 3](#Step-3-setup-custom-code-for-umbraco-8) of this guide, for more detail on this.
 :::

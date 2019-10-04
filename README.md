@@ -1,6 +1,6 @@
 # Umbraco Documentation project
  [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
- 
+
 # Reading & using the docs
 This is the documentation project for Umbraco. The scope of this project is to provide overviews of concepts, tutorials, example code, and links to API reference.
 
@@ -26,7 +26,7 @@ The Umbraco Documentation uses Markdown for all of the documentation, please rea
 
 # Annotating a document
 
-To add version information and extra keywords, [every document can be annotated using YAML](Contribute/adding-metadata.md). 
+To add version information and extra keywords, [every document can be annotated using YAML](Contribute/adding-metadata.md).
 
 # Multi version documentation
 Every new version of Umbraco introduces new features. This means that every document might not work for your possibly older version.

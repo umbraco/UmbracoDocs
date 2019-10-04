@@ -43,28 +43,28 @@ Inside this package manifest we add a bit of JSON to describe the property edito
 
 ```javascript
 {
-	// you can define multiple editors
-	propertyEditors: [
-		{
-			/*this must be a unique alias*/
-			alias: "My.MarkdownEditor",
-			/*the name*/
-			name: "My markdown editor",
-			/*the icon*/
-			icon: "icon-code",
-			/*grouping for "Select editor" dialog*/
-			group: "Rich Content",
-			/*the HTML file we will load for the editor*/
-			editor: {
-				view: "~/App_Plugins/MarkDownEditor/markdowneditor.html"
-			}
-		}
-	]
-	,
-	// array of files we want to inject into the application on app_start
-	javascript: [
-		'~/App_Plugins/MarkDownEditor/markdowneditor.controller.js'
-	]
+    // you can define multiple editors
+    propertyEditors: [
+        {
+            /*this must be a unique alias*/
+            alias: "My.MarkdownEditor",
+            /*the name*/
+            name: "My markdown editor",
+            /*the icon*/
+            icon: "icon-code",
+            /*grouping for "Select editor" dialog*/
+            group: "Rich Content",
+            /*the HTML file we will load for the editor*/
+            editor: {
+                view: "~/App_Plugins/MarkDownEditor/markdowneditor.html"
+            }
+        }
+    ]
+    ,
+    // array of files we want to inject into the application on app_start
+    javascript: [
+        '~/App_Plugins/MarkDownEditor/markdowneditor.controller.js'
+    ]
 }
 ```
 
@@ -80,17 +80,17 @@ In the .js file I will add a basic AngularJS controller declaration
 
 ```javascript
 angular.module("umbraco")
-	.controller("My.MarkdownEditorController",
-	function () {
-		alert("The controller has landed");
-	});
+    .controller("My.MarkdownEditorController",
+    function () {
+        alert("The controller has landed");
+    });
 ```
 
 And in the .html file I'll add:
 
 ```html
 <div ng-controller="My.MarkdownEditorController">
-	<textarea ng-model="model.value"></textarea>
+    <textarea ng-model="model.value"></textarea>
 </div>
 ```
 
@@ -123,21 +123,21 @@ angular.module("umbraco")
 // inject umbracos assetsService
 function ($scope,assetsService) {
 
-	// tell the assetsService to load the markdown.editor libs from the markdown editors
-	// plugin folder
-	assetsService
-		.load([
-			"~/App_Plugins/MarkDownEditor/lib/markdown.converter.js",
-			"~/App_Plugins/MarkDownEditor/lib/markdown.sanitizer.js",
-			"~/App_Plugins/MarkDownEditor/lib/markdown.editor.js"
-		])
-		.then(function () {
-			// this function will execute when all dependencies have loaded
-			alert("editor dependencies loaded");
-		});
+    // tell the assetsService to load the markdown.editor libs from the markdown editors
+    // plugin folder
+    assetsService
+        .load([
+            "~/App_Plugins/MarkDownEditor/lib/markdown.converter.js",
+            "~/App_Plugins/MarkDownEditor/lib/markdown.sanitizer.js",
+            "~/App_Plugins/MarkDownEditor/lib/markdown.editor.js"
+        ])
+        .then(function () {
+            // this function will execute when all dependencies have loaded
+            alert("editor dependencies loaded");
+        });
 
-	// load the separate css for the editor to avoid it blocking our JavaScript loading
-	assetsService.loadCss("~/App_Plugins/MarkDownEditor/lib/markdown.editor.less");
+    // load the separate css for the editor to avoid it blocking our JavaScript loading
+    assetsService.loadCss("~/App_Plugins/MarkDownEditor/lib/markdown.editor.less");
 });
 ```
 
@@ -155,13 +155,13 @@ and add that id to the textarea in the HTML. For more info on the HTML structure
 
 ```html
 <div ng-controller="My.MarkdownEditorController" class="wmd-panel">
-	<div id="wmd-button-bar-{{model.alias}}"></div>
+    <div id="wmd-button-bar-{{model.alias}}"></div>
 
-		<textarea ng-model="model.value" class="wmd-input" id="wmd-input-{{model.alias}}">
-			your content
-		</textarea>
+        <textarea ng-model="model.value" class="wmd-input" id="wmd-input-{{model.alias}}">
+            your content
+        </textarea>
 
-	<div id="wmd-preview-{{model.alias}}" class="wmd-panel wmd-preview"></div>
+    <div id="wmd-preview-{{model.alias}}" class="wmd-panel wmd-preview"></div>
 </div>
 ```
 

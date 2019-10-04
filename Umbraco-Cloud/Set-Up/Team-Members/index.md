@@ -43,8 +43,8 @@ You can specify:
     <Language>da</Language>
     <DisableUmbracoAccess>true</DisableUmbracoAccess>
     <Apps>
-      <App>Content</App>
-      <App>Media</App>
+    <App>Content</App>
+    <App>Media</App>
     </Apps>
   </Group>
   <Group match="admin" matchEmail="@umbraco.">
@@ -54,7 +54,7 @@ You can specify:
     <Language>en</Language>
     <DisableUmbracoAccess>false</DisableUmbracoAccess>
     <Apps>
-      <App>*</App>
+    <App>*</App>
     </Apps>
   </Group>
 </PermissionGroups>

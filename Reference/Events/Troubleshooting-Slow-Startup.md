@@ -5,7 +5,7 @@ needsV8Update: "true"
 
 # Troubleshooting slow startup
 
-Slow startup can occur if: 
+Slow startup can occur if:
 
 * No Examine indexes exist.
 * Models builder is used in [Pure Live mode](../Templating/Modelsbuilder/Builder-Modes.md#pure-live-models). Depending on the number of models, compilation (the first time) will take some time. You can use the other modes (DLL, AppData or API) to avoid this entirely.

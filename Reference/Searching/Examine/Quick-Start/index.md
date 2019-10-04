@@ -27,19 +27,19 @@ We will do this by adding a search bar on the template page. In the `people.csht
         <input type="text" placeholder="Search" id="query" name="query" />
         <button>Search</button>
     </form>
-</div>  
+</div>
 <div class="employee-grid">
 ...
 ```
-This will create an input field at the top of the page and make it redirect to the same page when submitted. 
+This will create an input field at the top of the page and make it redirect to the same page when submitted.
 Now let's set up the search query using Examine.
 Below the form, add this:
 ```csharp
 <div>
     @{
         var searchTerm = string.Empty;
-        searchTerm = string.IsNullOrEmpty(Request["query"]) 
-            ? string.Empty 
+        searchTerm = string.IsNullOrEmpty(Request["query"])
+            ? string.Empty
             : Request["query"];
         if (searchTerm == string.Empty)
         {
@@ -106,7 +106,7 @@ The final template looks like this:
     {
         <a class="employee-grid__item__contact-item" href="http://@(service).com/@content">@service</a>
     }
-}       
+}
 @Html.Partial("~/Views/Partials/SectionHeader.cshtml")
 <section class="section">
     <div class="container">
@@ -125,15 +125,15 @@ The final template looks like this:
                 <input type="text" placeholder="Search" id="query" name="query" />
                 <button>Search</button>
             </form>
-        </div>  
-        
+        </div>
+
         <div>
             @{
                 var searchTerm = string.Empty;
-                searchTerm = string.IsNullOrEmpty(Request["query"]) 
-                    ? string.Empty 
+                searchTerm = string.IsNullOrEmpty(Request["query"])
+                    ? string.Empty
                     : Request["query"];
-  
+
                 if (searchTerm == string.Empty)
                 {
                     <p>Enter search term</p>

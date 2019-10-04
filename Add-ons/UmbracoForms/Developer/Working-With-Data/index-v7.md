@@ -85,24 +85,24 @@ Sample script that is outputting comments using a form created with the default 
 @using Umbraco.Forms.Mvc.DynamicObjects
 
 <ul id="comments">
-	@foreach (dynamic record in Library
-			.GetApprovedRecordsFromPage(@CurrentPage.Id))
-	{
-		<li>
-			@record.Created.ToString("dd MMMM yyy")
-			@if (string.IsNullOrEmpty(record.Website))
+    @foreach (dynamic record in Library
+            .GetApprovedRecordsFromPage(@CurrentPage.Id))
+    {
+        <li>
+            @record.Created.ToString("dd MMMM yyy")
+            @if (string.IsNullOrEmpty(record.Website))
             {
-				<strong>@record.Name</strong>
-			}
-			else
+                <strong>@record.Name</strong>
+            }
+            else
             {
-				<strong>
-				<a href="@record.Website" target="_blank">@record.Name</a>
-				</strong>
-			}
-			<span>said</span>
-			<p>@record.Comment</p>
-		</li>
-	}
+                <strong>
+                <a href="@record.Website" target="_blank">@record.Name</a>
+                </strong>
+            }
+            <span>said</span>
+            <p>@record.Comment</p>
+        </li>
+    }
 </ul>
 ```

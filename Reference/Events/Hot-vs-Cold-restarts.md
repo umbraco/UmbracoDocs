@@ -14,10 +14,10 @@ When we talk about startup time there are several different things folks are ref
 ## Startup scenarios
 
 ### Hot start
-a production website that gets restarted, possibly by a web.config 
+a production website that gets restarted, possibly by a web.config
 
 ### Change or a scheduled IIS recycle
-There's an important thing to know about this scenario, ASP.NET has a built in CodeGen folder which it compiles all things to including App_Code, Views, DLLs, Resources, and lots of other stuff. 
+There's an important thing to know about this scenario, ASP.NET has a built in CodeGen folder which it compiles all things to including App_Code, Views, DLLs, Resources, and lots of other stuff.
 
 On first run ASP.NET will compile a lot and it's important to know that if you have debug='true' and/or have compiled in Debug, this compilation time and the amount of information included is exponentially larger. This means that it might take much longer.
 
@@ -48,10 +48,10 @@ This occurs during local development with Visual Studio or even VS Code if you a
 
 You will generally have log4net Debug or Info level enabled which can cause micro startup time increase.
 
-This will always take a longer time than any of the above for the reasons mentioned before which has to do with how ASP.NET compiles things into it's CodeGen folder. 
+This will always take a longer time than any of the above for the reasons mentioned before which has to do with how ASP.NET compiles things into it's CodeGen folder.
 
-Things haven't changed much with regards to this apart from even more compilation taking place: [https://weblogs.asp.net/scottgu/442448](https://weblogs.asp.net/scottgu/442448). 
-Here's a more recent detailed version of that [Debug in ASP.NET applications](https://blogs.msdn.microsoft.com/prashant_upadhyay/2011/07/14/why-debugfalse-in-asp-net-applications-in-production-environment/). 
+Things haven't changed much with regards to this apart from even more compilation taking place: [https://weblogs.asp.net/scottgu/442448](https://weblogs.asp.net/scottgu/442448).
+Here's a more recent detailed version of that [Debug in ASP.NET applications](https://blogs.msdn.microsoft.com/prashant_upadhyay/2011/07/14/why-debugfalse-in-asp-net-applications-in-production-environment/).
 
 As for the Debug vs Release mode, there's a ton of info on this online. Depending on the type of project, it will vary on how much performance improvements Release mode is compared to Debug, but it's still a factor.
 

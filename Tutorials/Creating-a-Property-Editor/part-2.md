@@ -21,23 +21,23 @@ To add configuration options to our markdown editor, open the `package.manifest`
 ```javascript
 ...
 editor: {
-	view: "~/App_Plugins/MarkDownEditor/markdowneditor.html"
+    view: "~/App_Plugins/MarkDownEditor/markdowneditor.html"
 }, // Remeber a comma seperator here at the end of the editor block!
 prevalues: {
-	fields: [
-		{
-			label: "Preview",
-			description: "Display a live preview",
-			key: "preview",
-			view: "boolean"
-		},
-		{
-			label: "Default value",
-			description: "If value is blank, the editor will show this",
-			key: "defaultValue",
-			view: "textarea"
-		}
-	]
+    fields: [
+        {
+            label: "Preview",
+            description: "Display a live preview",
+            key: "preview",
+            view: "boolean"
+        },
+        {
+            label: "Default value",
+            description: "If value is blank, the editor will show this",
+            key: "defaultValue",
+            view: "textarea"
+        }
+    ]
 }
 ```
 
@@ -58,7 +58,7 @@ Let's first add the default value functionality. Basically, when the `$scope.mod
 
 ```javascript
 if($scope.model.value === null || $scope.model.value === ""){
-	$scope.model.value = $scope.model.config.defaultValue;
+    $scope.model.value = $scope.model.config.defaultValue;
 }
 ```
 

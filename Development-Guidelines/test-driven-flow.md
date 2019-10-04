@@ -13,14 +13,14 @@ Make sure to have all the node dependencies in order when you start, these are u
 
 Open a terminal / cmd in the Umbraco.Web.UI.Client folder and run:
 
-	npm install
+    npm install
 
 This should setup the entire gulp, Karma and jsint set up we use for tests and pruning.
 
 ## Automated testing
 To start working on the client files, and have them automatically built and merged into the client project, as well as the VS project, and run the command
 
-	gulp dev
+    gulp dev
 
 This will start a webserver on :8080 and tell Karma to run tests every time a .js or .less file is changed.
 After linting and tests have passed, all the client files are copied to umbraco.web.ui/umbraco folder, so it also keeps the server project up to date on any client changes. This should all happen in the background.
@@ -46,17 +46,17 @@ So in the case of getting tree items we define:
 
 ```javascript
 $httpBackend
-	.whenGET( urlRegex('/umbraco/UmbracoTrees/ApplicationTreeApi/GetApplicationTrees') )
-	.respond(returnApplicationTrees);
+    .whenGET( urlRegex('/umbraco/UmbracoTrees/ApplicationTreeApi/GetApplicationTrees') )
+    .respond(returnApplicationTrees);
 ```
 
 The `returnApplicationTrees` function then looks like this:
 
 ```javascript
 function returnApplicationTrees(status, data, headers) {
-	var app = getParameterByName(data, "application");
-	var tree = _backendData.tree.getApplication(app);
-	return [200, tree, null];
+    var app = getParameterByName(data, "application");
+    var tree = _backendData.tree.getApplication(app);
+    return [200, tree, null];
 }
 ```
 
@@ -100,14 +100,14 @@ Make sure to have all the node dependencies in order when you start, these are u
 
 Open a terminal / cmd in the Umbraco.Web.UI.Client folder and run:
 
-	npm install
+    npm install
 
 This should setup the entire gulp, Karma and jsint setup we use for tests and pruning.
 
 ## Automated testing
 To start working on the client files, and have them automatically built and merged into the client project, as well as the VS project, and run the command
 
-	gulp dev
+    gulp dev
 
 This will start a webserver on :8080 and tell Karma to run tests every time a .js or .less file is changed.
 After linting and tests have passed, all the client files are copied to umbraco.web.ui/umbraco folder, so it also keeps the server project up to date on any client changes. This should all happen in the background.
@@ -133,17 +133,17 @@ So in the case of getting tree items we define:
 
 ```javascript
 $httpBackend
-	.whenGET( urlRegex('/umbraco/UmbracoTrees/ApplicationTreeApi/GetApplicationTrees') )
-	.respond(returnApplicationTrees);
+    .whenGET( urlRegex('/umbraco/UmbracoTrees/ApplicationTreeApi/GetApplicationTrees') )
+    .respond(returnApplicationTrees);
 ```
 
 The `returnApplicationTrees` function then looks like this:
 
 ```javascript
 function returnApplicationTrees(status, data, headers) {
-	var app = getParameterByName(data, "application");
-	var tree = _backendData.tree.getApplication(app);
-	return [200, tree, null];
+    var app = getParameterByName(data, "application");
+    var tree = _backendData.tree.getApplication(app);
+    return [200, tree, null];
 }
 ```
 

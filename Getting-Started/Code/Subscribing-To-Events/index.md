@@ -42,7 +42,7 @@ namespace MyProjectName.Web.Components
     {
     public class LogWhenPublishedComponent : IComponent
     {
-     // initialize: runs once when Umbraco starts
+    // initialize: runs once when Umbraco starts
         public void Initialize()
         {
             // do something as Umbraco starts up
@@ -105,7 +105,7 @@ public class LogWhenPublishedComponent : IComponent
         _logger = logger;
     }
 
-     // initialize: runs once when Umbraco starts
+    // initialize: runs once when Umbraco starts
     public void Initialize()
     {
     // ...
@@ -201,4 +201,3 @@ As you can see our custom code has been executed when we published a piece of co
 ### More information
 - [Events Reference](../../../Reference/Events/)
 - [Components & Composing](../../../implementation/composing/)
-

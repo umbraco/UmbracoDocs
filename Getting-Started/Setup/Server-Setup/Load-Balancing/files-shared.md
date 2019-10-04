@@ -9,7 +9,7 @@ _documentation about setting up load balanced environments using shared file sys
 
 ## Overview
 
-Configuring your servers to work using a centrally located file system that is shared for all of your IIS instances can be tricky and can take a while to setup correctly. 
+Configuring your servers to work using a centrally located file system that is shared for all of your IIS instances can be tricky and can take a while to setup correctly.
 
 A note when using this method to store your files centrally, you **must** make sure that your file storage system is HA (Highly Available) which means that there's not single point of failure. If you're hosting your files on a File Server share, you need to make the file share clustered (using [MSCS](https://en.wikipedia.org/wiki/Microsoft_Cluster_Server) or similar). Windows Server 2008 supports connecting directly to a SAN via [iSCSI](https://en.wikipedia.org/wiki/ISCSI) if your SAN supports it. There are also many other ways to connect to a SAN to share folders. Otherwise you should be able to connect to a NAS via a UNC path but you must ensure that it is a windows/NTFS file system - IIS will not work properly using a linux shared file system.
 
@@ -56,7 +56,7 @@ This will set Umbraco to store `umbraco.config` in the ASP.NET temporary folder
 For **Umbraco Pre v7.6**
 
 ```xml
-<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
+<add key="umbracoContentXMLUseLocalTemp" value="true" />
 ```
 
 This will set Umbraco to store `umbraco.config` in the ASP.NET temporary folder
@@ -64,7 +64,7 @@ This will set Umbraco to store `umbraco.config` in the ASP.NET temporary folder
 
 ## Lucene/Examine configuration
 
-You cannot share indexes between servers, therefore when using a shared file server, Examine settings are a little bit tricky. 
+You cannot share indexes between servers, therefore when using a shared file server, Examine settings are a little bit tricky.
 
 #### Examine v0.1.83+ ####
 

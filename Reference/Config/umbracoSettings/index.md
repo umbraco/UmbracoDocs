@@ -146,7 +146,7 @@ If you change the value to "true" then you will see the code in a textarea inste
 This setting let's you control if an upload control can create new folders for files uploaded, or if the file should be stored in the /media folder root with a unique ID prefixed to the filename.
 
 ```xml
-<!-- 
+<!--
 should Umbraco store the uploaded files like /media/xxx/filename.ext or like /media/xxx-filename.ext
 should be set to false if the application pool's user account hasn't got read rights of the drive root up to the /media directory
 -->
@@ -160,7 +160,7 @@ In case of a 404 error (page not found) Umbraco can return a default page instea
 ```xml
 <errors>
     <!-- The id of the page that should be shown if the page is not found -->
-    <!-- 
+    <!--
     <error404>
         <errorPage culture="default">1</errorPage>
         <errorPage culture="en-US">200</errorPage>
@@ -385,15 +385,15 @@ In the security section you have the following options: **`<keepUserLoggedIn>`**
 
 ```xml
 <security>
-    <!-- set to true to auto update login interval 
+    <!-- set to true to auto update login interval
     (and there by disabling the lock screen -->
     <keepUserLoggedIn>true</keepUserLoggedIn>
 
-    <!-- by default this is true and if not specified in config will be true. 
+    <!-- by default this is true and if not specified in config will be true.
     Set to false to always show a separate username field in the backoffice user editor -->
     <usernameIsEmail>true</usernameIsEmail>
 
-    <!-- change in 4.8: Disabled users are now showed dimmed and last in the tree. 
+    <!-- change in 4.8: Disabled users are now showed dimmed and last in the tree.
     If you prefer not to display them set this to true -->
     <hideDisabledUsersInBackoffice>false</hideDisabledUsersInBackoffice>
 
@@ -401,11 +401,11 @@ In the security section you have the following options: **`<keepUserLoggedIn>`**
     <allowPasswordReset>true</allowPasswordReset>
 
     <!-- set to a different value if you require the authentication cookie for backoffice users to be renamed -->
-    <authCookieName>UMB_UCONTEXT</authCookieName>  
+    <authCookieName>UMB_UCONTEXT</authCookieName>
 
-    <!-- set to a different value if you require the authentication cookie 
+    <!-- set to a different value if you require the authentication cookie
     for backoffice users to be set against a different domain -->
-    <authCookieDomain></authCookieDomain>  
+    <authCookieDomain></authCookieDomain>
 
 </security>
 ```

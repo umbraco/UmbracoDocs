@@ -6,7 +6,7 @@ versionFrom: 7.0.0
 
 This article gives an overview of the dependencies between the products on Umbraco Cloud.
 
-The products are: 
+The products are:
 
 * Umbraco CMS
 * Umbraco Forms

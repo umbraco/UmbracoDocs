@@ -5,7 +5,7 @@ versionFrom: 7.0.0
 ---
 
 # Members
-Members are used for registering and authenticating external users of an Umbraco installation (ie. forum members, intranet users and so forth). 
+Members are used for registering and authenticating external users of an Umbraco installation (ie. forum members, intranet users and so forth).
 
 Unlike with Document Types and Media Types everything is done in the Members section both defining and creating, and editing members. This guide will explain how to define and create members in the backoffice. If you want to work with members using the service APIs, links can be found at the end of the document.
 

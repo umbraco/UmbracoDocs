@@ -33,7 +33,7 @@ The following six keys will have been added to the `<appSettings>` in your `web.
   <add key="AzureBlobFileSystem.ContainerName:media" value="media" />
   <add key="AzureBlobFileSystem.RootUrl:media" value="https://[myAccountName].blob.core.windows.net/" />
   <add key="AzureBlobFileSystem.ConnectionString:media"
-      value="DefaultEndpointsProtocol=https;AccountName=[myAccountName];AccountKey=[myAccountKey]" />
+    value="DefaultEndpointsProtocol=https;AccountName=[myAccountName];AccountKey=[myAccountKey]" />
   <add key="AzureBlobFileSystem.MaxDays:media" value="365" />
   <add key="AzureBlobFileSystem.UseDefaultRoute:media" value="true" />
   <add key="AzureBlobFileSystem.UsePrivateContainer:media" value="false" />
@@ -53,11 +53,11 @@ If you are using IISExpress (as with Visual Studio) you’ll need to add a stati
 <configuration>
   <location path="Media">
     <system.webServer>
-      <handlers>
+    <handlers>
         <remove name="StaticFileHandler" />
         <add name="StaticFileHandler" path="*" verb="*"
-             preCondition="integratedMode" type="System.Web.StaticFileHandler" />
-      </handlers>
+            preCondition="integratedMode" type="System.Web.StaticFileHandler" />
+    </handlers>
     </system.webServer>
   </location>
 </configuration>
@@ -72,15 +72,15 @@ Once the packages have been installed you need to set your configuration as belo
 <configuration>
   <configSections>
     <sectionGroup name="imageProcessor">
-      <section name="security" requirePermission="false" type="ImageProcessor.Web.Configuration.ImageSecuritySection, ImageProcessor.Web" />
-      <section name="processing" requirePermission="false" type="ImageProcessor.Web.Configuration.ImageProcessingSection, ImageProcessor.Web" />
-      <section name="caching" requirePermission="false" type="ImageProcessor.Web.Configuration.ImageCacheSection, ImageProcessor.Web" />
+    <section name="security" requirePermission="false" type="ImageProcessor.Web.Configuration.ImageSecuritySection, ImageProcessor.Web" />
+    <section name="processing" requirePermission="false" type="ImageProcessor.Web.Configuration.ImageProcessingSection, ImageProcessor.Web" />
+    <section name="caching" requirePermission="false" type="ImageProcessor.Web.Configuration.ImageCacheSection, ImageProcessor.Web" />
     </sectionGroup>
   </configSections>
   <imageProcessor>
-      <security configSource="config\imageprocessor\security.config" />
-      <caching configSource="config\imageprocessor\cache.config" />
-      <processing configSource="config\imageprocessor\processing.config" />
+    <security configSource="config\imageprocessor\security.config" />
+    <caching configSource="config\imageprocessor\cache.config" />
+    <processing configSource="config\imageprocessor\processing.config" />
     </imageProcessor>
 </configuration>
 ```
@@ -95,25 +95,25 @@ You have to manually add `prefix="media/"` to the service element, otherwise Ima
   <services>
     <!--<service name="LocalFileImageService" type="ImageProcessor.Web.Services.LocalFileImageService, ImageProcessor.Web" />-->
     <service prefix="media/" name="CloudImageService" type="ImageProcessor.Web.Services.CloudImageService, ImageProcessor.Web">
-      <settings>
+    <settings>
         <setting key="MaxBytes" value="8194304"/>
         <setting key="Timeout" value="30000"/>
         <setting key="Host" value="https://[your blob account].blob.core.windows.net/media"/>
-      </settings>
+    </settings>
     </service>
     <service prefix="remote.axd" name="RemoteImageService" type="ImageProcessor.Web.Services.RemoteImageService, ImageProcessor.Web">
-      <settings>
+    <settings>
         <setting key="MaxBytes" value="4194304" />
         <setting key="Timeout" value="3000" />
         <setting key="Protocol" value="http" />
-      </settings>
-      <whitelist>
+    </settings>
+    <whitelist>
         <add url="https://[your Azure CDN].vo.msecnd.net/" />
         <add url="https://[your blob account].blob.core.windows.net/" />
         <add url="https://[your Umbraco site]" />
         <add url="http://localhost" />
         <add url="http://127.0.0.1" />
-      </whitelist>
+    </whitelist>
     </service>
   </services>
 </security>

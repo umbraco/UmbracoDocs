@@ -16,10 +16,10 @@ Well then this guide, should give you a few pointers to get started with the pro
 Upgrade your Visual Studio C# project to use and compile against the .NET Framework 4.7.2. This is because the minimum to run version 8 of Umbraco requires this specific version of the .NET Framework
 
 ## Add references via Nuget
-You will need to add `UmbracoCms.Core` via Nuget using the UI in Visual Studio or the Nuget Command Line with the following command 
+You will need to add `UmbracoCms.Core` via Nuget using the UI in Visual Studio or the Nuget Command Line with the following command
 
 ```shell
-Install-Package UmbracoCms.Core 
+Install-Package UmbracoCms.Core
 ```
 
 Optionally add reference to `UmbracoCms.Web` if your code uses anything such as `UmbracoApiController` `SurfaceController` then you will need to add the Nuget package reference of `UmbracoCms.Web` which in turn has a reference to `UmbracoCms.Core`
@@ -169,14 +169,14 @@ As version 7 and version 8 of Umbraco has breaking changes in its APIs and code,
 <umbPackage>
   <info>
     <package>
-      <name>My Umbraco Package</name>
-      ...
-      <requirements>
+    <name>My Umbraco Package</name>
+    ...
+    <requirements>
         <major>8</major>
         <minor>0</minor>
         <patch>0</patch>
-      </requirements>
-      ...
+    </requirements>
+    ...
 ```
 
 ## Optional - Update .nupkg dependencies

@@ -20,7 +20,7 @@ public class EventController : Umbraco.Web.Mvc.SurfaceController
 {
     public Action PerformAction()
     {
-       var content = Services.ContentService.GetById(1234);
+        var content = Services.ContentService.GetById(1234);
     }
 }
 ```

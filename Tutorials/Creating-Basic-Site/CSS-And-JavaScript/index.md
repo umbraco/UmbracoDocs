@@ -9,7 +9,7 @@ Looking at our homepage, we’re obviously missing the CSS and JavaScript files 
 For organizational purposes, you would place the CSS and JavaScript files in separate folders (`CSS` and `JavaScript`) to make your project nice and tidy, but for now, we will go with the quick option.
 :::
 
-Now using Chrome/Firefox/Edge Developer Tools whilst browsing http://localhost you should find that the network tab doesn’t report any missing assets/files. If it does, have a look and fix any typos, and check if the files are in the right places. 
+Now using Chrome/Firefox/Edge Developer Tools whilst browsing http://localhost you should find that the network tab doesn’t report any missing assets/files. If it does, have a look and fix any typos, and check if the files are in the right places.
 
 ---
 

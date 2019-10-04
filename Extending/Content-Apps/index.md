@@ -56,13 +56,13 @@ Create a new file in the `/App_Plugins/WordCounter/` folder and name it `package
 {
     // define the content apps you want to create
     "contentApps": [
-      {
+    {
         "name": "Word Counter", // required - the name that appears under the icon
         "alias": "wordCounter", // required - unique alias for your app
         "weight": 0, // optional, default is 0, use values between -99 and +99 to appear between the existing Content (-100) and Info (100) apps
         "icon": "icon-calculator", // required - the icon to use
         "view": "~/App_Plugins/WordCounter/wordcounter.html", // required - the location of the view file
-      }
+    }
     ],
     // array of files we want to inject into the application on app_start
     "javascript": [

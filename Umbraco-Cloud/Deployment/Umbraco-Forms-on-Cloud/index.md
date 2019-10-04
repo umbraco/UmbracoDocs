@@ -34,7 +34,7 @@ For more information on how to handle content transfer / restores on Umbraco Clo
 
 Then your Forms data are handled as meta data. When you create a Form, a UDA file will be generated. This UDA file will contain all the metadata from your form, and be very similar to the `JSON` file that is also generated when you create a new form - this file can be found in `~/App_Data/UmbracoForms/Data/forms`.
 
-This means that your Forms will be deployed along with the rest of your metadata and structure files, e.g. Document Types, Templates and Stylesheets. 
+This means that your Forms will be deployed along with the rest of your metadata and structure files, e.g. Document Types, Templates and Stylesheets.
 
 We strongly recommend that you work with the Forms on your local or Development environment, following the [left-to-right deployment model](../../Deployment).
 
@@ -44,14 +44,14 @@ You can configure your project to handle Umbraco Forms data as content by follow
 2. Clone down the project to your local machine
 3. Find and open `~/Config/UmbracoDeploy.settings.config`
 4. Update the `transferFormsAsContent` value to `true`
-   ```xml
-   <?xml version="1.0" encoding="utf-8"?>
-   <settings xmlns="urn:umbracodeploy-settings">
-      <forms transferFormsAsContent="true" />
-   </settings>
-   ```
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <settings xmlns="urn:umbracodeploy-settings">
+    <forms transferFormsAsContent="true" />
+    </settings>
+    ```
 5. Push the change back to the Cloud environment
-   * If you have more than 1 Cloud environment, make sure to deploy the change through to all of them
+    * If you have more than 1 Cloud environment, make sure to deploy the change through to all of them
 6. Your Forms are now a part of content / media transfers!
 
 :::tip

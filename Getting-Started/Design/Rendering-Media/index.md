@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 _Templates (Views) can access items in the [Media library](../../Data/Creating-Media/index.md) to assist in displaying rich content like galleries_
 
-In the following examples we will be looking at rendering an `Image`. 
+In the following examples we will be looking at rendering an `Image`.
 
 Image is only one of the 'types' of Media in Umbraco. The same principles apply to all MediaTypes (however the actual properties available to render will be different, for example a `File` won't have a Width property).
 

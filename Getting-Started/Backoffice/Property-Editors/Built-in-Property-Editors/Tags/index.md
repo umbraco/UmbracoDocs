@@ -82,7 +82,7 @@ namespace Our.Documentation.Examples.Controllers
         // GET: Test
         public ActionResult Index()
         {
-             //get content item to update
+            //get content item to update
             IContent content = this.Services.ContentService.GetById(1234);
 
             // list of tags
