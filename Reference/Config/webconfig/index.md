@@ -84,13 +84,13 @@ Makes sure that all of the requests in the backoffice are called over HTTPS inst
 Check out the [security documentation](../../security/use-https.md).
 :::
 
-### umbracoCssDirectory
+### umbracoCssPath
 
 By adding this to appSettings you can specify a new/different folder for storing your css-files and still be able to edit them within Umbraco. Default folder is ~/css.
 For example if you wanted to store css in a folder in the website root folder "/assets/css", you could have this in appsetting:
 
 ```xml
-<add key="umbracoCssDirectory" value="~/assets/css" />
+<add key="umbracoCssPath" value="~/assets/css" />
 ```
 
 ### umbracoMediaPath
