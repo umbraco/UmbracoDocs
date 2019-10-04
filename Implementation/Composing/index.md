@@ -126,10 +126,10 @@ namespace My.Website
         private void ContentService_Saving(IContentService sender, ContentSavingEventArgs e)
         {
             foreach (var content in e.SavedEntities
-                //Check if the content item type has a specific alias
+                // Check if the content item type has a specific alias
                 .Where(c => c.ContentType.Alias.InvariantEquals("MyContentType")))
             {
-                //Do something if the content is using the MyContentType doctype
+                // Do something if the content is using the MyContentType doctype
             }
         }
     }
@@ -151,12 +151,12 @@ Ordering of composers is important, the last one added can override a previously
 :::
 
 ### ComponentComposer&lt;T&gt;
-It's an implementation of IUserComposer, that provides a quicker way to add a custom Component to the Component's collection. Creating a C# class that inhertits from ComponentComposer&lt;YourComponentType&gt; will automatically add YourComponentType to the collection of Components. In the example above, the SubscribeToContentServiceSavingComposer for the SubscribeToContentServiceSavingComponent could have been written more conveniently as:
+It's an implementation of IUserComposer, that provides a quicker way to add a custom Component to the Component's collection. Creating a C# class that inherits from ComponentComposer&lt;YourComponentType&gt; will automatically add YourComponentType to the collection of Components. In the example above, the SubscribeToContentServiceSavingComposer for the SubscribeToContentServiceSavingComponent could have been written more conveniently as:
 
 ```csharp
-        public class SubscribeToContentServiceSavingComposer : ComponentComposer<SubscribeToContentServiceSavingComponent>
-        {
-        }
+public class SubscribeToContentServiceSavingComposer : ComponentComposer<SubscribeToContentServiceSavingComponent>
+{
+}
 ```
 ## Collections
 >"Collections of elements", for example the ContentFinders collection. - Collections are another concept that Umbraco uses to make things simpler, on top of DI. A collection builder builds a collection, allowing users to add and remove types before anything is registered into DI.
@@ -214,10 +214,10 @@ namespace My.Website
     {
         public void Compose(Composition composition)
         {
-            //Remove all HealthChecks
+            // Remove all HealthChecks
             composition.HealthChecks().Clear();
 
-            //Explictly add back the ones we want to use
+            // Explicitly add back the ones we want to use
             composition.HealthChecks().Add<FolderAndFilePermissionsCheck>();
             composition.HealthChecks().Add<ExcessiveHeadersCheck>();
 
@@ -279,18 +279,22 @@ These attributes allows you to disable a particular implementation of a composer
 
 ```csharp
 [Disable]
-public void Way2Composer : IComposer
-{ ... }
+public class Way2Composer : IComposer
+{
+    //...
+}
 ```
 
-When used without arguments, these attributes apply to the composer they are marking. But, and this is where it becomes interesting, they can be used with an argument to act on another component. Therefore, should a user want to replace our "something" with their's, they would write the following code:
+When used without arguments, these attributes apply to the composer they are marking. But, and this is where it becomes interesting, they can be used with an argument to act on another component. Therefore, should a user want to replace our "something" with theirs, they would write the following code:
 
 ```csharp
 [Disable(typeof(Way1Composer))]
-public void MyComposer : IComposer
+public class MyComposer : IComposer
 {
     public void Compose(Composition composition)
-    { ... }
+    {
+        // ...
+    }
 }
 ```
 
@@ -305,9 +309,9 @@ Note that Umbraco also has a `[Enable]` & `[EnableComposer]` attributes but all 
 :::
 
 ### [RuntimeLevel]
-The most common usecase for this is to set this attribute on your own composers and to set the minimum level to Run. Which will mean this composer will not be invoked until Umbraco is fully booted and is running. So if an upgrade or Umbraco is still booting, your own custom composer code won't run until everything is all setup and good.
+The most common use case for this is to set this attribute on your own composers and to set the minimum level to Run. Which will mean this composer will not be invoked until Umbraco is fully booted and is running. So if an upgrade or Umbraco is still booting, your own custom composer code won't run until everything is all setup and good.
 
-By default any `IUserComposer` uses the Minimum Runtime Level of `Run` & thus do not need to explictly add the attribute as shown in the example below.
+By default any `IUserComposer` uses the Minimum Runtime Level of `Run` & thus do not need to explicitly add the attribute as shown in the example below.
 
 ```csharp
 using Umbraco.Core;
@@ -326,7 +330,7 @@ namespace My.Website
 ```
 
 :::tip
-If you wish to see the order of components when Umbraco boots, then you can see this information in the logs of Umbraco
+If you wish to see the order of components when Umbraco boots, then you can see this information in the logs of Umbraco.
 :::
 
 ## Runtime Levels
@@ -379,7 +383,7 @@ namespace TestCollections.Code
         }
     }
 
-    // OrderedCollection - use when order of items is important (You may want to excute them in order)
+    // OrderedCollection - use when order of items is important (You may want to execute them in order)
     // Different types of collections - https://our.umbraco.com/Documentation/Implementation/Composing/#types-of-collections
     public class MyThingsCollectionBuilder : OrderedCollectionBuilderBase<MyThingsCollectionBuilder, MyThingsCollection, IMyThing>
     {
@@ -403,7 +407,7 @@ namespace TestCollections.Code
     {
         public void Compose(Composition composition)
         {
-            //Explicitly add to the collection a Type in a specific order
+            // Explicitly add to the collection a Type in a specific order
             composition.MyThings().Append<ExampleThing>()
                 .Append<AnotherThing>()
                 .Append<SomeOtherThing>();
@@ -444,7 +448,7 @@ namespace TestCollections.Code
 You may wish to create an Umbraco package that allows package consumers to extend and add additional functionality. In this example we show how you can use the `LazyCollectionBuilderBase` to scan assemblies that implement your interface by using the `TypeLoader`
 
 :::warning
-Add types from assemblies - be conscious of doing type scanning, as this adds time to bootup of Umbraco.
+Add types from assemblies - be conscious of doing type scanning, as this adds time to boot up of Umbraco.
 If you still need to use type scanning, ensure your Interface implements `IDiscoverable` as this is a type that is scanned once by Umbraco and the results are cached and then filtered. This saves time by re-scanning for types over and over again.
 :::
 
@@ -455,7 +459,7 @@ using Umbraco.Web.WebApi;
 
 namespace TestCollections.Code
 {
-    // Implement IDiscoverable (To help with typescanning speed/perf)
+    // Implement `IDiscoverable` (To help with typescanning speed/perf)
     public interface IMyThing : IDiscoverable
     {
         string Name { get; }
@@ -495,7 +499,7 @@ namespace TestCollections.Code
         public void Compose(Composition composition)
         {
             // Add types from assemblies - be conscious of doing type scanning
-            // as this adds time to bootup of Umbraco
+            // as this adds time to boot up of Umbraco
             // If you still need to use type scanning, ensure your Interface implements `IDiscoverable`
             composition.MyThings().Add(() => composition.TypeLoader.GetTypes<IMyThing>());
         }
