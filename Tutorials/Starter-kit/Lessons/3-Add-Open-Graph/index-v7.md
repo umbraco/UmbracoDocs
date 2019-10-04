@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
 ---
 
 # Add Open Graph
@@ -8,7 +8,7 @@ With a few steps we can add Open Graph to our pages.
 
 ## Outcome
 
-Open Graph support will be added to the Homepage and Blog posts. It will be the minimum implementation of Open Graph containing the sitess `title`, `type`, `url` and `image`.
+Open Graph support will be added to the homepage and blog posts. It will be the minimum implementation of Open Graph containing the site's `title`, `type`, `url` and `image`.
 
 ## Takeaway
 
@@ -18,4 +18,4 @@ You will learn:
 * Add features based on where the composition is implemented
 * Get the URL for content items and media items
 
-[Next](step-1.md)
+[Next](step-1-v7.md)

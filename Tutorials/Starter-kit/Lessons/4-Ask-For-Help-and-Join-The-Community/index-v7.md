@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
 ---
 
 # Ask For Help and Join the Community
@@ -24,4 +24,4 @@ Maybe you have even signed up to attend a local meetup!
 
 Welcome, you are now a valued member of the Umbraco community!
 
-[Back to Lessons](../index.md)
+[Back to Lessons](../index-v7.md)
