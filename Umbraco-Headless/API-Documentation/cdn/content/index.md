@@ -62,7 +62,7 @@ Gets all published content at the root of the tree
     "content": [
       {
         "href": "https://cdn.umbraco.io/content/e8ad9b65-cff6-4952-ac5b-efe56a60db62"
-      },
+      }
     ]
   },
   "_embedded": {
@@ -192,9 +192,10 @@ Gets all published content at the root of the tree
             "photos": null,
             "features": []
           }
-        }
+        ]
       }
     ]
+  }
 }
 ```
 
@@ -366,6 +367,7 @@ Gets a single published content by its id
       "photos": null,
       "features": []
     }
+  ]
 }
 ```
 
@@ -789,7 +791,7 @@ Gets children of a single published content
 }
 ```
 
-## Get children
+## Get descendants
 
 Gets descdants of a single published content
 
