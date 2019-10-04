@@ -70,7 +70,7 @@ As with example one, we are accessing a MediaType `image` using the same ID assu
 ```
 
 :::note
-It's always worth having Null checks around your code when retrieving media, just in case the conversion fails or Media() returns null. This makes your code more robust.
+It's always worth having Null checks around your code when retrieving media, in case the conversion fails or Media() returns null. This makes your code more robust.
 :::
 
 ### Other Media Items such as `File`
