@@ -114,9 +114,9 @@ At this point you would have the content but nothing else, will have to recreate
 
 ### Step 3: Post-migration checks
 
-As you are updating your Template files and custom implementetion to fit your new Umbraco 8 site, it will be a natural step to also check your configuration files and settings.
+As you are updating your Template files and custom implementation to fit your new Umbraco 8 site, it will be a natural step to also check your configuration files and settings.
 
-Umbraco 8 contains a few changes regarding the Sections in the Umbraco Backoffice. Because of this, you should also check your User Groups and make sure they have access to the appropriate sections. 
+Umbraco 8 contains a few changes regarding the Sections in the Umbraco Backoffice. Because of this, you should also check your User Groups and make sure they have access to the appropriate sections.
 
 Learn more about the Section changes in the [Sections article](../../Backoffice/Sections)
 

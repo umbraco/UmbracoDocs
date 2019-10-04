@@ -5,7 +5,7 @@ versionFrom: 8.0.0
 # Setup Your Site to use Azure Blob Storage for Media and Image Processor Cache
 For Umbraco sites there are some scenarios when you may want, or need, to consider using Azure Blob Storage for your media.  Particularly if your site contains large amounts of media.  Having your site's media in Azure Blob Storage can also help your deployments complete more quickly and has the potential to positively affect site performance as the Image Processor cache is moved to Azure Blob Storage.  It also allows you to serve your media from the Azure CDN.
 
-Setup consists of adding several packages to your site and setting the correct configuration.  Of course, before you begin you’ll need to create an Azure Storage Account and a container for your media and your ImageProcessor cache as well.  In this example we assume your media container is "media" and your cache is "cache".  You can, optionally, enable an Azure CDN for this storage container and use it in the cache.config below.	
+Setup consists of adding several packages to your site and setting the correct configuration.  Of course, before you begin you’ll need to create an Azure Storage Account and a container for your media and your ImageProcessor cache as well.  In this example we assume your media container is "media" and your cache is "cache".  You can, optionally, enable an Azure CDN for this storage container and use it in the cache.config below.
 
 ## Packages
 
@@ -32,7 +32,7 @@ The following six keys will have been added to the `<appSettings>` in your `web.
 <appSettings>
   <add key="AzureBlobFileSystem.ContainerName:media" value="media" />
   <add key="AzureBlobFileSystem.RootUrl:media" value="https://[myAccountName].blob.core.windows.net/" />
-  <add key="AzureBlobFileSystem.ConnectionString:media" 
+  <add key="AzureBlobFileSystem.ConnectionString:media"
       value="DefaultEndpointsProtocol=https;AccountName=[myAccountName];AccountKey=[myAccountKey]" />
   <add key="AzureBlobFileSystem.MaxDays:media" value="365" />
   <add key="AzureBlobFileSystem.UseDefaultRoute:media" value="true" />
@@ -55,7 +55,7 @@ If you are using IISExpress (as with Visual Studio) you’ll need to add a stati
     <system.webServer>
       <handlers>
         <remove name="StaticFileHandler" />
-        <add name="StaticFileHandler" path="*" verb="*" 
+        <add name="StaticFileHandler" path="*" verb="*"
              preCondition="integratedMode" type="System.Web.StaticFileHandler" />
       </handlers>
     </system.webServer>
@@ -70,7 +70,7 @@ Once the packages have been installed you need to set your configuration as belo
 
 ```xml
 <configuration>
-  <configSections>  
+  <configSections>
     <sectionGroup name="imageProcessor">
       <section name="security" requirePermission="false" type="ImageProcessor.Web.Configuration.ImageSecuritySection, ImageProcessor.Web" />
       <section name="processing" requirePermission="false" type="ImageProcessor.Web.Configuration.ImageProcessingSection, ImageProcessor.Web" />
@@ -119,7 +119,7 @@ You have to manually add `prefix="media/"` to the service element, otherwise Ima
 </security>
 ```
 
-You have now succesfully setup Azure Blob Storage with your Umbraco site.
+You have now successfully setup Azure Blob Storage with your Umbraco site.
 
 ## Existing Media files
 

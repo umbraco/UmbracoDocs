@@ -33,21 +33,21 @@ As the product evolves and more features are added, there may be rare circumstan
 
 * Changes to class inheritance are not considered breaking if they do not break API usage
 	* Take the following for example, if in v6 a class exists called `MyClass` with the following structure:
-		
+
 		```csharp
-		public class MyClass 
+		public class MyClass
 		{
 			public int Id {get;set;}
 			public string Name {get;set;}
 		}
 		```
-		
+
 	* Then in v6.1 the class structure changes to this:
 
 		```csharp
 		public class MyClass : MySubClass
 		{
-			public string Name {get;set;}    			
+			public string Name {get;set;}
 		}
 
 		public class MySubClass
@@ -55,10 +55,10 @@ As the product evolves and more features are added, there may be rare circumstan
 			public int Id {get;set;}
 		}
 		```
-		
+
 	* With the above change, any API usage of MyClass will not break, however, if a developer is using reflection to target `MyClass` explicitly, in some cases this will break the reflection call. We **do not** consider these types of changes as breaking changes.
 * Changes made to any non-public or non-protected property, methods, interfaces or classes are not considered breaking
-	* Generally these types of changes will never break a developers usage unless they are using reflection to target non-public/non-protected objects. 
+	* Generally these types of changes will never break a developers usage unless they are using reflection to target non-public/non-protected objects.
 
 ### Breaking
 
@@ -84,7 +84,7 @@ As the product evolves and more features are added, there may be rare circumstan
 ### Breaking
 
 * Changing the file location of CSS or Images is a breaking change
- 
+
 _It is advised to use Umbraco's Angular directives if you wish to create backoffice components, this will mean that you are not referencing CSS or Html markup directly_
 
 ## JavaScript
@@ -100,7 +100,7 @@ _It is advised to use Umbraco's Angular directives if you wish to create backoff
 * Changes made to publicly accessible APIs that are documented
 * Changing the location of JavaScript library files
 * Changing the alias of AngularJS controller, service or directive
- 
+
 ## Database
 
 ### Non-breaking

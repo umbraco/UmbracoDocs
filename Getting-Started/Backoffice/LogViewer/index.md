@@ -46,12 +46,11 @@ namespace My.Website
 {
     public class AzureTableLogViewer : LogViewerSourceBase
     {
-
         public override bool CanHandleLargeLogs => true;
 
         public override bool CheckCanOpenLogs(DateTimeOffset startDate, DateTimeOffset endDate)
         {
-            //This method will not be called - as we have indicated that this 'CanHandleLargeLogs'
+            // This method will not be called - as we have indicated that this 'CanHandleLargeLogs'
             throw new NotImplementedException();
         }
 
@@ -72,8 +71,8 @@ namespace My.Website
             // Loop through the results, displaying information about the entity.
             foreach (var entity in results)
             {
-                //Reads the compact JSON format stored in the 'Data' column back to a LogEvent
-                //Same as the JSON txt files does
+                // Reads the compact JSON format stored in the 'Data' column back to a LogEvent
+                // Same as the JSON txt files does
                 var logItem = LogEventReader.ReadFromString(entity.Data);
 
                 if (count > skip + take)

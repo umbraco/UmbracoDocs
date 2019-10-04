@@ -11,14 +11,14 @@ An Umbraco application is a `Composition` made of many different 'collections' a
 
 'Composing' is the term used to describe the process of curating which pieces of functionality should be included in a particular collection. The code that implements these choices at start up is called a `Composer`.
 
-A `Component`, is a generic wrapper for writing custom code during composition, it has two methods: `Initialize()` and `Terminate()` and these are executed when the Umbraco Application starts up, and when it shuts down, respectively. Typically a `Component` may be used to wire up custom code to handle a particular event in Umbraco. (see content saving example below).
+A `Component` is a generic wrapper for writing custom code during composition, it has two methods: `Initialize()` and `Terminate()` and these are executed when the Umbraco Application starts up, and when it shuts down, respectively. Typically a `Component` may be used to wire up custom code to handle a particular event in Umbraco. (see content saving example below)
 
 How are the collections populated? - Either by scanning the codebase for c# classes that inherit from a particular base class or implement a particular interface (typed scanned) or by being explicitly registered via a `Composer`.
 
-Umbraco ships with a set of `ICoreComposer`'s  that pull together the default set of components and collections that deliver the core 'out of the box' Umbraco behaviour. These default collections and components can be removed, reordered, replaced, etc by implementing `IUserComposer`'s and `IComponent`s to customise and extend Umbraco's behaviour.
+Umbraco ships with a set of `ICoreComposer`'s  that pull together the default set of components and collections that deliver the core 'out of the box' Umbraco behaviour. These default collections and components can be removed, reordered, replaced, etc. by implementing `IUserComposer`'s and `IComponent`s to customise and extend Umbraco's behaviour.
 
 ### Example - Explicitly Registering a new custom OEmbedProvider
-This example shows a custom 'Spotify' OEmbed Provider which will allow Spotify URLs to be used via the 'embed' button in the Grid and Rich Text Editors. As the collection for OEmbedProviders is not 'typed scanned', we need to explicitly register the provider in the collection of OEmbedProviders. We create a c# class which implements `IUserComposer` and append our new Spotify OEmbedProvider to the OEmbedProviders() collection:
+This example shows a custom 'Spotify' OEmbed Provider which will allow Spotify URLs to be used via the 'embed' button in the Grid and Rich Text Editors. As the collection for OEmbedProviders is not 'typed scanned', we need to explicitly register the provider in the collection of OEmbedProviders. We create a C# class which implements `IUserComposer` and append our new Spotify OEmbedProvider to the OEmbedProviders() collection:
 
 ```csharp
 using System.Collections.Generic;
@@ -86,9 +86,9 @@ See a list of collections below to determine which are 'type scanned' and which 
 
 ### Example - Creating a Component to listen for ContentService.Saving events
 
-This example shows how to create a component to listen and respond to  `ContentService.Saving` events, (perhaps to check for explicit for words, or some custom business logic that needs to run before the content item is saved in Umbraco).
+This example shows how to create a component to listen and respond to  `ContentService.Saving` events, (perhaps to check for explicit words, or some custom business logic that needs to run before the content item is saved in Umbraco).
 
-We create a new C# class which implements `IUserComposer` and use it to add our new `IComponent`  to the collection of Components. When Umbraco starts up the `Initialize()` method of the component will be called and the ContentService Saving event will be subscribed to.
+We create a new C# class which implements `IUserComposer` and use it to add our new `IComponent` to the collection of Components. When Umbraco starts up, the `Initialize()` method of the component will be called and the ContentService Saving event will be subscribed to.
 
 ```csharp
 using System.Linq;
@@ -151,7 +151,7 @@ Ordering of composers is important, the last one added can override a previously
 :::
 
 ### ComponentComposer&lt;T&gt;
-It's an implementation of IUserComposer, that provides a quicker way to add a custom Component to the Component's collection. Creating a c# class that inherits from ComponentComposer&lt;YourComponentType&gt; will automatically add YourComponentType to the collection of Components. In the example above, the SubscribeToContentServiceSavingComposer for the SubscribeToContentServiceSavingComponent could have been written more conveniently as:
+It's an implementation of IUserComposer, that provides a quicker way to add a custom Component to the Component's collection. Creating a C# class that inherits from ComponentComposer&lt;YourComponentType&gt; will automatically add YourComponentType to the collection of Components. In the example above, the SubscribeToContentServiceSavingComposer for the SubscribeToContentServiceSavingComponent could have been written more conveniently as:
 
 ```csharp
 public class SubscribeToContentServiceSavingComposer : ComponentComposer<SubscribeToContentServiceSavingComponent>
@@ -199,7 +199,7 @@ Lazy<br/>
 
 ### Example - Modifying Collections
 
-This example shows how to control which Healthchecks are available to run in the Umbraco backoffice. Create a c# class which implements IUserComposer, the Compose method gives access to the HealthChecks collection of the Umbraco Composition - first we clear all HealthChecks from the collection, then add back in the ones we want to keep:
+This example shows how to control which Healthchecks are available to run in the Umbraco backoffice. Create a C# class which implements IUserComposer, the Compose method gives access to the HealthChecks collection of the Umbraco Composition - first we clear all HealthChecks from the collection, then add back in the ones we want to keep:
 
 ```csharp
 using Umbraco.Core;
@@ -309,7 +309,7 @@ Note that Umbraco also has a `[Enable]` & `[EnableComposer]` attributes but all 
 :::
 
 ### [RuntimeLevel]
-The most common use case for this is to set this attribute on your own composers and to set the minimum level to Run. Which will mean this composer will not be invoked until Umbraco is fully booted and is running. So if an upgrade or Umbraco is still booting your own custom composer code won't run until everything is all setup and good.
+The most common use case for this is to set this attribute on your own composers and to set the minimum level to Run. Which will mean this composer will not be invoked until Umbraco is fully booted and is running. So if an upgrade or Umbraco is still booting, your own custom composer code won't run until everything is all setup and good.
 
 By default any `IUserComposer` uses the Minimum Runtime Level of `Run` & thus do not need to explicitly add the attribute as shown in the example below.
 
@@ -346,7 +346,7 @@ The level is unknown.
 The runtime is booting.
 
 `Install`<br/>
-The runtime has detected that Umbraco is not installed at all, ie there is no database, and is currently installing Umbraco.
+The runtime has detected that Umbraco is not installed at all, ie. there is no database, and is currently installing Umbraco.
 
 `Upgrade`<br/>
 The runtime has detected an Umbraco install which needed to be upgraded, and is currently upgrading Umbraco.

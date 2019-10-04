@@ -22,12 +22,14 @@ Displays a list of preset values as a list where multiple values can be selected
 
 ```csharp
 @{
-    if (Model.Content.HasValue("superHeros")){
+    if (Model.Content.HasValue("superHeros"))
+    {
         <ul>
-        @foreach(var item in Model.Content.GetPropertyValue<string>("superHeros").Split(',')) {
-        <li>@item</li>
-        }
-    </ul>
+            @foreach (var item in Model.Content.GetPropertyValue<string>("superHeros").Split(","))
+            {
+                <li>@item</li>
+            }
+        </ul>
     }
 }
 ```
@@ -39,7 +41,7 @@ Displays a list of preset values as a list where multiple values can be selected
     if (CurrentPage.HasValue("superHeros"))
     {
         <ul>
-            @foreach (var item in CurrentPage.superHeros.Split(','))
+            @foreach (var item in CurrentPage.superHeros.Split(","))
             {
                 <li>@item</li>
             }

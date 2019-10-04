@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
 ---
 
 # Umbraco Api
@@ -25,13 +25,11 @@ The class to inherit from is: `Umbraco.Web.WebApi.UmbracoApiController`
 This will expose the following properties for you to use:
 
 ```csharp
+ApplicationContext ApplicationContext {get;}
 ServiceContext Services {get;}
-ISqlContext SqlContext {get;}
+DatabaseContext DatabaseContext {get;}
 UmbracoHelper Umbraco {get;}
 UmbracoContext UmbracoContext {get;}
-IGlobalSettings GlobalSettings {get;}
-IProfilingLogger Logger {get;}
-MembershipHelper Members {get;}
 ```
 
 ## Creating a Web Api controller
@@ -104,7 +102,7 @@ For more information about areas, Urls and routing see the [routing section](rou
 
 ## Backoffice controllers
 
-If you are creating a controller to work within the Umbraco backoffice then you will need to ensure that it is secured  properly by inheriting from: `UmbracoAuthorizedApiController` or `UmbracoAuthorizedJsonController`. This controller type will auto-route your controller like the above examples except that it will add another Uri path: 'backoffice'.
+If you are creating a controller to work within the Umbraco backoffice then you will need to ensure that it is secured  properly by inheriting from: `UmbracoAuthorizedApiController` or `UmbracoAuthorizedJsonController`. This controller type will auto-route your controller like the above examples except that it will add another Uri path: 'backoffice'. For example:
 
 
 *~/Umbraco/backoffice/Api/[YourControllerName]*
@@ -116,7 +114,6 @@ E.g
 *~/Umbraco/Api/Products/GetAllProducts* or
 
 *~/Umbraco/backoffice/AwesomeProducts/Products/GetAllProducts* for PluginController
-
 
 ### More Information
 

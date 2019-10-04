@@ -2,7 +2,7 @@
 versionFrom: 7.0.0
 ---
 
-# Working with the backoffice UI AngularJS project 
+# Working with the backoffice UI AngularJS project
 
 _This document tries to outline what is required to have a test-driven setup for
 angular development in Umbraco 7. It goes through the setup process as well as how
@@ -22,13 +22,13 @@ To start working on the client files, and have them automatically built and merg
 
 	gulp dev
 
-This will start a webserver on :8080 and tell Karma to run tests every time a .js or .less file is changed. 
+This will start a webserver on :8080 and tell Karma to run tests every time a .js or .less file is changed.
 After linting and tests have passed, all the client files are copied to umbraco.web.ui/umbraco folder, so it also keeps the server project up to date on any client changes. This should all happen in the background.
 
 ## Adding a new service
 The process for adding or modifying a service should always be based on passed tests. So if we need to change the footprint of the contentservice, and the way any controller calls this service, we need to make sure the tests pass with our mocked services.
 
-This ensures 3 things: 
+This ensures 3 things:
 - we test our controllers
 - we test our services
 - we always have mocked data available, if you want to run the client without IIS
@@ -40,7 +40,7 @@ We add a service for fetching macros from the database, the initial implementati
 The macro.resource.js calls `$http` as normal, but no server implementation should be needed at this point.
 
 Next, we describe how the rest service should return data, this is done in /common/mocks/umbraco.httpbackend.js, where we can define what data a certain url
-would return. 
+would return.
 
 So in the case of getting tree items we define:
 
@@ -50,10 +50,10 @@ $httpBackend
 	.respond(returnApplicationTrees);
 ```
 
-The `returnApplicationTrees` function then looks like this: 
+The `returnApplicationTrees` function then looks like this:
 
 ```javascript
-function returnApplicationTrees(status, data, headers){
+function returnApplicationTrees(status, data, headers) {
 	var app = getParameterByName(data, "application");
 	var tree = _backendData.tree.getApplication(app);
 	return [200, tree, null];
@@ -66,7 +66,7 @@ It returns an array of 3 items, the http status code, the expected data and fina
 _backendData.tree.getApplication(app);
 ```
 
-Refers to a helper method in `umbraco.httpbackend.helper.js` which contains all the helper methods we use to return static json. 
+Refers to a helper method in `umbraco.httpbackend.helper.js` which contains all the helper methods we use to return static json.
 
 ### In short
 So to add a service, which requires data from the server we should:
@@ -85,11 +85,11 @@ urlService.url("contentTypes", "GetAllowedChildren");
 // would return /<umbracodir>/<apibaseDir>/contentyTypes/getAllowedChildren
 ```
 
-But for now, they are set in the servervariables file.	
+But for now, they are set in the servervariables file.
 
 =======
 
-# Working with the backoffice UI AngularJS project 
+# Working with the backoffice UI AngularJS project
 
 _This document tries to outline what is required to have a test-driven setup for
 angular development in Umbraco 7. It goes through the setup process as well as how
@@ -109,13 +109,13 @@ To start working on the client files, and have them automatically built and merg
 
 	gulp dev
 
-This will start a webserver on :8080 and tell Karma to run tests every time a .js or .less file is changed. 
+This will start a webserver on :8080 and tell Karma to run tests every time a .js or .less file is changed.
 After linting and tests have passed, all the client files are copied to umbraco.web.ui/umbraco folder, so it also keeps the server project up to date on any client changes. This should all happen in the background.
 
 ## Adding a new service
 The process for adding or modifying a service should always be based on passed tests. So if we need to change the footprint of the `ContentService`, and the way any controller calls this service, we need to make sure the tests pass with our mocked services.
 
-This ensures 3 things: 
+This ensures 3 things:
 - we test our controllers
 - we test our services
 - we always have mocked data available, if you want to run the client without IIS
@@ -127,7 +127,7 @@ We add a service for fetching macros from the database, the initial implementati
 The macro.resource.js calls `$http` as normal, but no server implementation should be needed at this point.
 
 Next, we describe how the rest service should return data, this is done in /common/mocks/umbraco.httpbackend.js, where we can define what data a certain url
-would return. 
+would return.
 
 So in the case of getting tree items we define:
 
@@ -137,10 +137,10 @@ $httpBackend
 	.respond(returnApplicationTrees);
 ```
 
-The `returnApplicationTrees` function then looks like this: 
+The `returnApplicationTrees` function then looks like this:
 
 ```javascript
-function returnApplicationTrees(status, data, headers){
+function returnApplicationTrees(status, data, headers) {
 	var app = getParameterByName(data, "application");
 	var tree = _backendData.tree.getApplication(app);
 	return [200, tree, null];
@@ -153,7 +153,7 @@ It returns an array of 3 items, the http status code, the expected data and fina
 _backendData.tree.getApplication(app);
 ```
 
-Refers to a helper method in `umbraco.httpbackend.helper.js` which contains all the helper methods we use to return static json. 
+Refers to a helper method in `umbraco.httpbackend.helper.js` which contains all the helper methods we use to return static json.
 
 ### In short
 

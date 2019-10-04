@@ -5,7 +5,7 @@ needsV8Update: "true"
 
 # Macro Parameter Editors
 
-Every macro can contain parameters. There are some useful default types.  For example: 
+Every macro can contain parameters. There are some useful default types.  For example:
 
 * True/False
 * TextBox
@@ -57,7 +57,7 @@ We'll create an 'Image Position' Macro Parameter type providing a Radio Button l
 
 ```json
 {
-    "propertyEditors": [ 
+    "propertyEditors": [
         {
             "alias": "tooorangey.ImagePosition",
             "name": "Image Position",
@@ -90,10 +90,11 @@ We'll create an 'Image Position' Macro Parameter type providing a Radio Button l
 ```javascript
 angular.module("umbraco").controller("tooorangey.ImagePositionController", function ($scope) {
 
-        if ($scope.model.value == null) {
+    if ($scope.model.value == null) {
         $scope.model.value = 'FullWidth';
-        }
-        // could read positions from defaultConfig
+    }
+
+    // could read positions from defaultConfig
     $scope.positions = [
         {
             Name: 'FullWidth'
@@ -124,7 +125,7 @@ If you want to create a new macro parameter editor you will need some c# program
 First create a class deriving from a webcontrol and implement the IMacroGuiRendering interface. Afterwards, open your database editor.  Find the **cmsMacroPropertyType** table and add the a new property editor.
 
 ### IMacroGuiRendering Interface
-You can find this interface in the umbraco.interfaces namespace contained in the interfaces dll.  You will need to reference this DLL if you are developing your control in a separate project.
+You can find this interface in the `umbraco.interfaces` namespace contained in the interfaces dll.  You will need to reference this DLL if you are developing your control in a separate project.
 This interface implements 2 properties:  Value and ShowCaption.
 The value stores a string  and the ShowCaption property a bool.
 
@@ -136,21 +137,21 @@ id</th><th>macroPropertyTypeAlias</th><th>macroPropertyTypeRenderAssembly</th><t
 28</td><td>myNewPickerType</td><td>NameOfAssembly</td><td>FullName.OfType.IncludingNamespace</td><td>String</td></tr></table>
 
 ### Example
-A very basic example deriving from a DropDownList ASP.NET server control
+A very basic example deriving from a DropDownList ASP.NET server control.
 
 ```csharp
-public class MyCustomPicker : DropDownList,  IMacroGuiRendering 
+public class MyCustomPicker : DropDownList,  IMacroGuiRendering
 {
     protected override void OnLoad(EventArgs e)
     {
         base.OnLoad(e);
-        if(this.Items.Count == 0)
+        if (this.Items.Count == 0)
         {
             // set properties
-            this.SelectionMode = ListSelectionMode.Multiple;           
+            this.SelectionMode = ListSelectionMode.Multiple;
 
             // load data
-            ...
+            // ...
         }
     }
 

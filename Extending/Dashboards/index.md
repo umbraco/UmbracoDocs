@@ -203,7 +203,7 @@ If your dashboard is unique to your Umbraco installation then you can modify the
 ```
 
 ### Specifying permissions
-You can configure which applications/sections a dashboard will appear in, in the above examples (package.manifest or c#), you can see the alias of the section is used to control where the dashboard is allowed to appear. 
+You can configure which applications/sections a dashboard will appear in, in the above examples (package.manifest or c#), you can see the alias of the section is used to control where the dashboard is allowed to appear.
 
 Further to this, within this section, you can control which Users can see a particular dashboard based upon the *User Groups* they belong to. This is done by setting the 'access' permissions based on the *User Group* alias, you choose to deny or grant a particular User Group's access to the dashboard.
 
@@ -256,7 +256,7 @@ namespace My.Website
 ```
 
 ## Remove an Umbraco dashboard
-In previous versions of Umbraco if you wanted to remove or modify the order of a default dashboards you would ammend the `config/dashboards.config` file on disk. 
+In previous versions of Umbraco if you wanted to remove or modify the order of a default dashboards you would amend the `config/dashboards.config` file on disk.
 
 In Umbraco 8+ the configuration file approach has been removed and you need to use code to create your own *composer* to remove a dashboard. It could be a c# class that can be used to organise and customise your Umbraco application to your own needs. For example - if you wanted to remove the 'Content Dashboard' you would create a RemoveDashboard composer like this:
 

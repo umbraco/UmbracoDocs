@@ -65,7 +65,7 @@ Alternatively you can also pass in a path to a custom view like "/app_plugins/gr
 **prevalues** is for views that need predefined values, e.g. the radiobuttonlist view. Prevalues are defined as strings in an array:
 
 ```json
-"prevalues":[
+"prevalues": [
     "value_1",
     "value_2",
     "value_3"
@@ -77,7 +77,7 @@ and will translate in to three different options where each string will become a
 **In Umbraco 7.5.4 & newer** prevalues can also be defined as an object of label/value allowing to have a displayed label instead of showing the actual underlying value. You can even mix and match these and use both label/value prevalues and string prevalues in the same configuration:
 
 ```json
-"prevalues":[
+"prevalues": [
     {
         "label": "Value one",
         "value": "value_1"
@@ -179,4 +179,4 @@ You can add multiple settings and styles configurations on a data type. This is 
 
 
 ### Full-width settings and styles
-It is possible to use settings and styles to add full-width background-images, background-colors and so forth. Make sure the surrounding *section* is full-width(12 columns by default) and the *rows* inside it will automatically become full-width.
+It is possible to use settings and styles to add full-width background-images, background-colors and so forth. Make sure the surrounding *section* is full-width (12 columns by default) and the *rows* inside it will automatically become full-width.
