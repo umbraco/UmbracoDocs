@@ -42,13 +42,15 @@ Create the following **_Tabs_** and **_Data Properties_**:
 *Figure 39 - Article Item Document Type Data Properties*
 
 
-Now go to the **_Settings > Document Types >Articles Main node > Permissions screen > Allowed child nodetypes_** and add **_Articles Item_**. This allows us to create items under the main (which acts as a parent container). We also need to allow the **_Articles Main node_** to be created under the **_Homepage node_** (do this in the **_Settings > Document Types > Homepage node > Permissions screen >  Allowed child node types_** - don't add the **_Articles Item_** - only the main should be allowed at this level). 
+Now go to the **_Settings > Document Types >Articles Main node > Permissions screen > Allowed child nodetypes_** and add **_Articles Item_**. This allows us to create items under the main (which acts as a parent container). 
+
+We also need to allow the **_Articles Main node_** to be created under the **_Homepage node_**. Do this in the **_Settings > Document Types > Homepage node > Permissions screen >  Allowed child node types_**. Don't add the **_Articles Item_**, only the main should be allowed at this level. 
 
 
 Now go to **_Content > Homepage node (hover)> ..._** and create a node called "_Articles_" of type **_Articles Main_** (if you don't have this option go back and check your allowed child nodes - did you forget to click **_Save_**)?  Give the Articles node some content and a title and then create a couple of article item content nodes under this node (**_Content > Homepage node > Articles node (hover) >  ..._** 
 
 
-Now you should have a content tree that looks like the image below (obviously with your own page node names).  Let's go update our templates we just created (automatically when we created the Document Types). First, update them to use the Master as a parent **_Settings > Templates > Articles Main node > Properties tab > Master template dropdown_** = "Master" - do the same for the Articles Item remembering to click **_Save_**. 
+Now you should have a content tree that looks like the image below (obviously with your own page node names).  Let's go update our templates we created (automatically when we created the Document Types). First, update them to use the Master as a parent **_Settings > Templates > Articles Main node > Properties tab > Master template dropdown_** = "Master" - do the same for the Articles Item remembering to click **_Save_**. 
 
 
 ![Content Tree With Articles](images/figure-40-articles-created.png)
@@ -67,7 +69,7 @@ If we now go and check our Articles Main page in the browser we should see our c
 Click on the **_Developer_** menu from the left-hand side menu and then hover over the **_Partial View Macros Files node_** to get the more menu **_..._** then **_click + Create_**. Name this "_listArticles_" and select the "_List Child Pages Ordered By Date_" in the **_Choose a snippet_** field and click **_Create_**.
 
 
-Now all we have to do is wire up the Articles main page to list our child articles. Edit the Articles Main template **_Settings > Templates node > Master node > Articles Main node > Template tab_**.  Under the *articlesBodyText* tag enter a carriage return and then click the **_Insert Macro_** button, choose the ListArticles macro we just created and then click **_Save_**. 
+Now all we have to do is wire up the Articles main page to list our child articles. Edit the Articles Main template **_Settings > Templates node > Master node > Articles Main node > Template tab_**.  Under the *articlesBodyText* tag enter a carriage return and then click the **_Insert Macro_** button, choose the ListArticles macro we created and then click **_Save_**. 
 
 
 ![Template for Articles Parent with the Macro Code](images/figure-41-articles-parent-with-macro-code.png)
@@ -76,7 +78,7 @@ Now all we have to do is wire up the Articles main page to list our child articl
 *Figure 41 - Template for Articles Parent with the Macro Code*
 
 
-Check what we have on our **_Articles_** page now - we're really getting somewhere!  Let's make it a bit more real world - I'll leave the understanding of this to Razor lessons / The Umbraco videos but it will finish our site off nicely - edit the Partial you just created - **_Developer > Partial View Macro Files > listArticles.cshtml_** and change the content to be:
+Check what we have on our **_Articles_** page now - we're really getting somewhere!  Let's make it a bit more real world. I'll leave the understanding of this to Razor lessons / The Umbraco videos but it will finish our site off nicely. Edit the Partial you created, **_Developer > Partial View Macro Files > listArticles.cshtml_** and change the content to be:
 
 
 ```csharp
@@ -90,7 +92,7 @@ Check what we have on our **_Articles_** page now - we're really getting somewhe
 {
 <div class="article">
         <div class="articletitle"><a href="@item.Url">@item.Name</a></div>
-        <div class="articlepreview">@Umbraco.Truncate(@item.ArticleContents,100) <a href="@item.Url">Read More..</a></div>
+        <div class="articlepreview">@(Umbraco.Truncate(item.GetPropertyValue<string>("articleContent"), 100) <a href="@item.Url">Read More..</a></div>
     </div>
     <hr/>
 }

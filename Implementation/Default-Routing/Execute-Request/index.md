@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # Executing an Umbraco request
@@ -21,7 +22,7 @@ will also be `RenderModel` which exposes `IPublishedContent`. For example, to re
 @Model.Content.Name
 ```
 
-All Umbraco view page types inherit from `UmbracoViewPage<TModel>`. A neat trick is that if you want your view Model to simply be `IPublishedContent`
+All Umbraco view page types inherit from `UmbracoViewPage<TModel>`. A neat trick is that if you want your view Model to be `IPublishedContent`
 you can change your view type to `UmbracoViewPage<IPublishedContent>` and the view will still render without issue even though the controller
 is passing it a model of type RenderModel.
 
@@ -32,7 +33,7 @@ IPublishedContent is the standard model used for all published content, media an
 ## [DynamicPublishedContent](../../../Reference/Querying/DynamicPublishedContent/index.md)
 
 There's also a dynamic representation of `IPublishedContent` called `DynamicPublishedContent`. This is available on `UmbracoTemplatePage` as the property `@CurrentPage`.
-Working with dynamics is simpler in some cases especially with regards to referencing property data. For example, to output your custom property 'markDown', you could just do:
+Working with dynamics is simpler in some cases especially with regards to referencing property data. For example, to output your custom property 'markDown', you could do the following:
 
 ```csharp
 @CurrentPage.markDown

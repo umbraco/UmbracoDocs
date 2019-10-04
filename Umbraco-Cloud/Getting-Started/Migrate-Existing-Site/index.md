@@ -7,6 +7,7 @@ versionFrom: 7.0.0
 Sometimes you may already have an Umbraco site built that did not start with a clone of an Umbraco Cloud site. Or perhaps you have decided to move a site that's already live on Umbraco Cloud. In any case, migrating an existing site is not difficult, but it does require some specific steps, and an understanding of how Umbraco Cloud deployments work can be very helpful.
 
 These are the steps you need to go through to complete the migration successfully:
+
 1. [Requirements](#1-requirements)
 2. [Tools](#2-tools)
 3. [Prepare your site](#3-prepare-your-site)
@@ -60,7 +61,7 @@ To help smooth this process for you, there is a community project called [Umbrac
 * DocType Grid Editor
 * LeBlender
 * Multi Url Picker
-* nuPickers
+* NuPickers
 * Property List
 * Stacked Content
 * Tuple
@@ -149,6 +150,17 @@ Before doing anything else, you need to delete the default **Media and Member ty
 
 ![Default media types](images/media-types.png)
 
+:::note
+### Data types
+Have you been using _older_ data types on your project, you will need to go through a few steps in order to avoid running into collision errors when deploying your migrated sites to Umbraco Cloud.
+
+The data types in question are: Content Picker, Media Picker, Member picker, Multiple Media Picker (using Media Picker) and Related Links.
+
+You can either
+1. Rename the old data types on your existing site or
+2. Follow the steps in the [Colliding Data types](../../Troubleshooting/Deployments/Colliding-Datatypes) article
+:::
+
 ## 5. Clone down the Cloud project
 
 With your Umbraco Cloud project ready for the migration, it is time to clone down the project to your local machine.
@@ -186,7 +198,7 @@ As Umbraco Forms comes with an Umbraco Cloud project, there are a few things you
 * The existing site uses Umbraco Forms
     * No extra steps needed, as you will have upgraded Umbraco Forms to the latest version before starting the migration
 
-The final thing to do before moving on, is to make sure your Umbraco Cloud user will be added to the new database you've just merged into the project.
+The final thing to do before moving on, is to make sure your Umbraco Cloud user will be added to the new database you've merged into the project. First you need to check if any Umbraco user uses the same email address as your Umbraco Cloud account. If this is the case you need to change the email address of the existing user to something else otherwise your Cloud user will be stuck in a inactive state. If you have confirmed there is no user with the same email address you can add the cloud by following these steps.
 
 * Go to the `data/backoffice/users` folder in your Umbraco Cloud project files
 * Rename your user file by removing the leading underscore
@@ -234,7 +246,7 @@ All project files have been merged and we've generated UDA files for all the met
 
 1. In your Git client you should see a lot of changes ready to be committed
 2. Stage and commit the changes
-3. Do a *pull* just to be sure everything is in sync
+3. Do a *pull* to ensure everything is in sync
 4. **Push** your migrated project to the Umbraco Cloud environment - check that the *'Deploy Complete'* message is displayed
     * If you have a very large commit to push, you may need to configure your Git client for this
     * Use: git config http.postBuffer 524288000

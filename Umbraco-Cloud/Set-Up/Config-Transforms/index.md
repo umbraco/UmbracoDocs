@@ -29,7 +29,7 @@ This file needs to be created on a local clone of your project, as this will ens
 
 When the file is deployed to the Live environment the transforms will be applied to the `Web.config` file in the `wwwroot` folder. In the case that you also have a Development and/or Staging environment, the `Web.live.xdt.config` will **only** transform the `Web.config` on the Live environment.
 
-For each deploy, the Umbraco Cloud engine searches for all of the `.{environment}.xdt.config` files in your site and applies the transforms. This means you can transform any config file, for example `~/config/Dashboard.config` by creating a `~/config/Dashboard.live.xdt.config` file. Just make sure the transform file follows the naming convention and it exists in the same folder as the config file you want to transform.
+For each deploy, the Umbraco Cloud engine searches for all of the `.{environment}.xdt.config` files in your site and applies the transforms. This means you can transform any config file, for example `~/config/Dashboard.config` by creating a `~/config/Dashboard.live.xdt.config` file. Make sure the transform file follows the naming convention and it exists in the same folder as the config file you want to transform.
 
 :::note
 Using config transforms to remove and/or add sections to config files is currently only possible for the `Web.config` file.
@@ -43,7 +43,7 @@ When creating config transforms you need to follow these three rules:
 2. Place the transform file in the same folder as the file you want to transform
 3. Follow the correct [Config Transform syntax](https://msdn.microsoft.com/en-us/library/dd465326)
 
-Before applying the config transform files to your environments we recommend that you run a test using this tool: [Webconfig Transformation Tester](https://webconfigtransformationtester.apphb.com/)
+Before applying the config transform files to your environments we recommend that you run a test using this tool: [Webconfig Transformation Tester](https://elmah.io/tools/webconfig-transformation-tester/)
 
 Using the tool will let you test whether the transform file transforms your config files correctly. The tool can be used for all config files.
 
@@ -108,9 +108,9 @@ Note that for the `compilation debug` and the `customErrors mode` there is a tog
 It is possible to apply config transforms for specific child sites from a baseline. For more info see [Baseline Configuration Files documentation](https://our.umbraco.com/documentation/Umbraco-Cloud/Getting-Started/Baselines/Configuration-files/)
 
 ## Including transforms in Umbraco packages
-For package developers it can be useful to add a config transform that needs to happen on each environment. As an example, let's say we're making a package called **EnvironmentColor** where you want to set an AppSetting in Web.config to a different color in each environment, so you can have it be `red` on the Live environment, `orange` on Staging and `yellow` on Development.
+For package developers it can be useful to add a config transform that needs to happen on each environment. As an example, let's say we're making a package called **EnvironmentColor**. You want to set an AppSetting in `Web.config` to a different color in each environment. It could be be `red` for the Live environment, `orange` for Staging and `yellow` for Development.
 
-We need to create 3 transform files named after the package - a good convention is to use your company name and the package name to make sure that even if someone else creates a package with the same name, there won't be any clashes on the filenames. We'll use the name **AcmeEnvironmentColor**:
+We need to create 3 transform files named after the package. A good convention is to use your company name and the package name to make sure that there won't be any clashes on the filenames. We'll use the name **AcmeEnvironmentColor**:
 
 - `~/AcmeEnvironmentColor.Web.development.xdt.config`
 - `~/AcmeEnvironmentColor.Web.staging.xdt.config`

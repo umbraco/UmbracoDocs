@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # Creating an MVC form with custom html markup
@@ -25,7 +26,7 @@ The view model that will be used in this tutorial will be as follows:
 	    public string Comment { get; set; }
 	}
 
-This class defines the data that will be submitted and also defines how the data will be validated upon submission and conveniently for us MVC automatically wires up these validation attributes with the front-end so JavaScript validation will automagically occur.
+This class defines the data that will be submitted and also defines how the data will be validated upon submission. MVC automatically wires up these validation attributes with the front-end so JavaScript validation will automagically occur.
 
 ## The Surface Controller
 
@@ -99,10 +100,10 @@ There are numerous [HtmlHelper methods](https://msdn.microsoft.com/en-us/library
 
 ## Render the Partial View
 
-The last step is to render the partial view that we've just created in your Umbraco template's view:
+The last step is to render the partial view that we've created in your Umbraco template's view:
 
 	@Html.Partial("BlogCommentForm")
 
 You could also pass in a pre-populated model to pre-populate the fields on the form. For example:
 
-	@Html.Partial("BlogCommentForm", new CommentViewModel() { Name = "Some guy" })
+	@Html.Partial("BlogCommentForm", new CommentViewModel() { Name = "Example User" })

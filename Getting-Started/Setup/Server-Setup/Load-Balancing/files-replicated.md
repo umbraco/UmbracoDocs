@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # File Storage with File Replication
@@ -23,21 +24,21 @@ There are other alternatives for file replication out there, some free and some 
 When deploying Umbraco in a load balanced scenario using file replication, it is important to ensure that not all files are replicated - otherwise you will experience file locking issues. Here are the folders and files that should not be replicated:
 
 * ~/App_Data/TEMP/*
-* ~/App_Data/umbraco.config 
+* ~/App_Data/umbraco.config
 	* Alternatively you can change the web.config entry to store this file inside of the ~/App_Data/TEMP folder using this
-	        
+
     ```xml
     <add key="umbracoContentXML" value="~/App_Data/TEMP/umbraco.config" />
     ```
-            
+
 	* Another alternative is to store the umbraco.config file in the local server's 'temp' folder. Achieve this by changing this configuration setting to 'true' in the web.config. The downside is that if you need to view this configuration file you'll have to find it in the temp files. Locating the file this way isn't always clear.
-			
+
     ```xml
-    <add key="umbracoContentXMLUseLocalTemp" value="true" /> 
+    <add key="umbracoContentXMLUseLocalTemp" value="true" />
     ```
-            
+
 * ~/App_Data/Logs/*
-	* This is **optional** and depends on how you want your logs configured (see below) 
+	* This is **optional** and depends on how you want your logs configured (see below)
 
 If for some reason your file replication solution doesn't allow you to not replicate specific files folders (which it should!!) then you can use an alternative approach by using virtual directories. *This is not the recommended setup but it is a viable alternative:*
 
@@ -48,4 +49,4 @@ If for some reason your file replication solution doesn't allow you to not repli
 
 ## IIS Setup
 
-IIS configuration is pretty straightforward with file replication. IIS is just reading files from its own file system like a normal IIS website.
+IIS configuration is pretty straightforward with file replication. IIS is only reading files from its own file system like a normal IIS website.

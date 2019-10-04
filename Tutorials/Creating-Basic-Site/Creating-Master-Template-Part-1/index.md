@@ -5,9 +5,9 @@ versionFrom: 8.0.0
 
 ## Using a Maintainable Template Structure
 
-We've seen how to create a **_Document Type_**. If we wanted to create a simple three page site containing; Home, News and Contact Us pages we could easily just create a **_Document Type_** with a corresponding template for each and copy the same HTML code into each template and make the custom changes to each separate template for these pages.  
+We've seen how to create a **_Document Type_**. If we wanted to create a three-page site containing; Home, News and Contact Us pages. We could create a **_Document Type_** with a corresponding template for each and copy the same HTML code into each template. Afterwards we could make the custom changes to each separate template for these pages.
 
-Though this would work (and on a very simple site it actually has some merits) but once a site starts to grow this would lead to problems - for instance changing anything in the header or footer would need to be done on each template - it also means we'd need the user to enter the same content for the footer on each page for example. 
+Though this would work, but once a site starts to grow this would lead to problems. For instance changing anything in the header or footer would need to be done on each template. It also means we'd need the user to enter the same content for the footer on each page.
 
 Umbraco provides us with an elegant solution for a consistent base template - those familiar with MVC will recognise it. 
 
@@ -15,7 +15,7 @@ To start we're going to unpick a little bit of what we did in creating the homep
 
 # Create a Master Template 
 
-Go to the **_Settings > Templates_** and open up the tree.  At the moment we just have our **_Homepage_** template.  Hover over the **_Templates_** menu and click the menu **_..._** button. Create a new template called Master, click **_+ Create_** and then give it the name "_Master_" . Remember to click **_Save_**. 
+Go to the **_Settings > Templates_** and open up the tree.  At the moment we only have our **_Homepage_** template.  Hover over the **_Templates_** menu and click the menu **_..._** button. Create a new template called Master, click **_+ Create_** and then give it the name "_Master_" . Remember to click **_Save_**. 
 
 ![Master Template](images/figure-22-master-template-v8.png)
 
@@ -23,7 +23,7 @@ Now we're going to move the **_Homepage_** template under the **_Master_** templ
 
 ![Homepage Template now sits under the Master](images/figure-23-homepage-has-master-template-v8.png)
 
-Now we need to move the parts of our HTML template that are common across all pages into the **_Master_**. This is where as a developer you might need to use your brain as it will be slightly different for different websites - e.g. do all pages contain a `<div id="main">` section so can we put this in the master or does this belong to only certain pages? 
+Now we need to move the parts of our HTML template that are common across all pages into the **_Master_**. It might be slightly different for different websites and you'll need to consider if all pages contain a `<div id="main">` section so can you put this in the master or of it belong to only certain pages?
 
 For this site, we will cut everything from the closing curly brace to line 39, so you get the end of the `</nav>` - we're going to move the `header` and `nav` of the site to the master template. Cut this and click **_Save_**. 
 
@@ -37,7 +37,7 @@ At the end of this markup we need to tell Umbraco to insert the child template's
 
 ![Adding RenderBody() to the Master Template](images/figure-26-adding-renderbody-v8.png)
 
-Now we'll do the same with the footer content. Cut everything from the `<!-- Footer -->` comment (approximately line 111) from the **_Settings > Templates > Homepage template_**, click **_Save_** and then paste this into the **_Master_** template under the **_@RenderBody_** field we've just added. Remember to click **_Save_**. 
+Now we'll do the same with the footer content. Cut everything from the `<!-- Footer -->` comment (approximately line 111) from the **_Settings > Templates > Homepage template_**, click **_Save_** and then paste this into the **_Master_** template under the **_@RenderBody_** field we've added. Remember to click **_Save_**. 
 
 ![Completed Master Template](images/figure-27-master-template-complete-v8.png)
 

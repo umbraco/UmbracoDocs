@@ -1,5 +1,6 @@
 ---
 versionFrom: 6.0.0
+needsV8Update: "true"
 ---
 
 # MediaType
@@ -50,7 +51,7 @@ return mediaType.Alias;
 ### .AllowedContentTypes
 Gets or Sets an `Enumerable` list of `ContentTypeSort` objects of the MediaTypes allowed under the current MediaType.
 
-The `ContentTypeSort` is a simple object with a lazy Id, int SortOrder and string Alias used to sort the MediaTypes within the list of AllowedContentTypes.
+The `ContentTypeSort` is an object with a lazy Id, int SortOrder and string Alias used to sort the MediaTypes within the list of AllowedContentTypes.
 
 ```csharp
 // Given a `ContentTypeService` object get MediaType by its Id and return AllowedContentTypes
@@ -136,7 +137,7 @@ return mediaType.Key;
 ```
 
 ### .Level
-Gets or Sets the given `MediaType` level in the site hierarchy as an `Int`. MediaTypes placed at the root of the tree, will return 1, content just underneath will return 2, and so on.
+Gets or Sets the given `MediaType` level in the site hierarchy as an `Int`. MediaTypes placed at the root of the tree, will return 1, content right underneath will return 2, and so on.
 
 ```csharp
 // Given a `ContentTypeService` object get MediaType by its Id and return the Level

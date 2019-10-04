@@ -20,7 +20,7 @@ To secure your controller based on backoffice membership use the attribute: `Umb
 
 *It's important to note the namespace since we have another class called UmbracoAuthorizeAttribute in a different namespace that is used for MVC.*
 
-This attribute has no parameters it simply ensures that a valid backoffice user is logged in.
+This attribute has no parameters it ensures that a valid backoffice user is logged in.
 
 **Examples:**
 
@@ -32,7 +32,7 @@ public class ProductsApiController : UmbracoApiController
     [Umbraco.Web.WebApi.UmbracoAuthorize]
     public IEnumerable<string> GetAllProducts()
     {
-        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+        return new[] { "Table", "Chair", "Desk", "Computer" };
     }
 }
 ```
@@ -43,12 +43,9 @@ To secure your controller based on front-end membership use the attribute: `Umbr
 
 *It's important to note the namespace since we have another class called MemberAuthorizeAttribute in a different namespace that is used for MVC.*
 
-There are 4 parameters that can be supplied to control how the authorization works:
+There are 3 parameters that can be supplied to control how the authorization works:
 
 ```csharp
-// Flag for whether to allow all site visitors or just authenticated members
-// This is the same as applying the [AllowAnonymous] attribute
-bool AllowAll
 
 // Comma delimited list of allowed member types
 string AllowType
@@ -60,7 +57,9 @@ string AllowGroup
 string AllowMembers
 ```
 
-You can apply the attribute at the controller level or at the action level. 
+To allow all members, you can use the ```[AllowAnonymous]``` attribute.
+
+You can apply these attributes at the controller level or at the action level. 
 
 **Examples:**
 
@@ -72,7 +71,7 @@ public class ProductsApiController : UmbracoApiController
     [Umbraco.Web.WebApi.MemberAuthorize(AllowType = "Retailers")]
     public IEnumerable<string> GetAllProducts()
     {
-        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+        return new[] { "Table", "Chair", "Desk", "Computer"};
     }
 }
 ```
@@ -85,7 +84,7 @@ public class ProductsApiController : UmbracoApiController
 {	    
     public IEnumerable<string> GetAllProducts()
     {
-        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+        return new[] { "Table", "Chair", "Desk", "Computer"};
     }
 }
 ```

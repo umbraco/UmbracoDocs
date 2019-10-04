@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 ---
 
 # Log Viewer
-From version 8 we are now shipping a built in Log Viewer feature, to allow you to filter and view log entries and perform much more complex search queries to help you find the log entries that you are interested in your Umbraco site.
+From version 8 we are shipping a built-in Log Viewer feature. This allows you to filter and view log entries and perform much more complex search queries to help you find the log entries that you are interested in your Umbraco site.
 You can find the log viewer in the settings section.
 
 ## Benefits
@@ -30,7 +30,7 @@ When writing a custom query that you wish to use often, it is possible to save t
 With the flexibility of Umbraco, we give you the power to implement your own `ILogViewer` where you are able to fetch logs and the saved searched from a different location such as Azure table storage.
 
 ### Create your own implementation
-To easily do this we can implement a base class `LogViewerSourceBase` from `Umbraco.Core.Logging.Viewer` like so.
+To do this we can implement a base class `LogViewerSourceBase` from `Umbraco.Core.Logging.Viewer` like so.
 *Note:* This uses the `WindowsAzure.Storage` nuget package
 
 ```csharp
@@ -46,12 +46,11 @@ namespace My.Website
 {
     public class AzureTableLogViewer : LogViewerSourceBase
     {
-
         public override bool CanHandleLargeLogs => true;
 
         public override bool CheckCanOpenLogs(DateTimeOffset startDate, DateTimeOffset endDate)
         {
-            //This method will not be called - as we have indicated that this 'CanHandleLargeLogs'
+            // This method will not be called - as we have indicated that this 'CanHandleLargeLogs'
             throw new NotImplementedException();
         }
 
@@ -72,8 +71,8 @@ namespace My.Website
             // Loop through the results, displaying information about the entity.
             foreach (var entity in results)
             {
-                //Reads the compact JSON format stored in the 'Data' column back to a LogEvent
-                //Same as the JSON txt files does
+                // Reads the compact JSON format stored in the 'Data' column back to a LogEvent
+                // Same as the JSON txt files does
                 var logItem = LogEventReader.ReadFromString(entity.Data);
 
                 if (count > skip + take)
@@ -152,3 +151,9 @@ Now with the above two classes we have the plumbing in place to view logs from a
 ```
 
 For more in depth information about logging and how to configure it, please read the [logging documentation](../../Code/Debugging/Logging/).
+
+### Compact Log Viewer - Desktop App
+This is a desktop tool for viewing & querying JSON log files from disk in the same way as the built in logviewer dashboard of Umbraco
+
+<a href='//www.microsoft.com/store/apps/9N8RV8LKTXRJ?cid=storebadge&ocid=badge'><img src='https://assets.windowsphone.com/85864462-9c82-451e-9355-a3d5f874397a/English_get-it-from-MS_InvariantCulture_Default.png' alt='English badge' style='height: 38px;' height="38" /></a> <a href="https://itunes.apple.com/gb/app/compact-log-viewer/id1456027499"><img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg" /></a>
+

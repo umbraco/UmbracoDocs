@@ -16,7 +16,7 @@ In JavaScript, the server variables dictionary can be accessed by:
 Umbraco.Sys.ServerVariables
 ```
 
-This is not an angular service, it is simply a namespaced global variable. An example might be:
+This is not an angular service, it is a namespaced global variable. An example might be:
 
 ```javascript
 Umbraco.Sys.ServerVariables.isDebuggingEnabled
@@ -52,7 +52,7 @@ private void Parsing(object sender, Dictionary<string, object> dictionary)
 
 A good rule of thumb about service URLs is to not hard code them if possible. One of the reasons why we don't hard code URLs is in case the routing has to change for some reason (i.e. [the breaking change for 7.0.2](https://umbraco.com/blog/heads-up-breaking-change-coming-in-702-and-62/)).
 
-Another reason is if you want to keep compatibility with a legacy controller and introduce a new API version route (i.e. */umbraco/backoffice/api/myservice/v2/getstuff*). Generally a change like this would just mean changing a route in C# and if the JavaScript could automatically know the URL without being hard coded, it will 'just work'.
+Another reason is if you want to keep compatibility with a legacy controller and introduce a new API version route (i.e. */umbraco/backoffice/api/myservice/v2/getstuff*). Generally a change like this would mean changing a route in C# and if the JavaScript could automatically know the URL without being hard coded, it will work.
 
 Furthermore it is also possible to customize the path of the Umbraco backoffice of your site, which will cause any hardcoded value in a package or custom code to be incompatible with your site. Therefore we always recommend using Umbraco helper methods or variables for constructing routes and paths even though it seems to work when using a hardcoded value.
 
@@ -76,7 +76,7 @@ The way that we add service URLs to the server variables collection in the core 
 Url.GetUmbracoApiServiceBaseUrl<ContentController>(controller => controller.PostSave(null))
 ```
 
-For a full reference to our URL generation, you can see the source of the [BackOfficeController](https://github.com/umbraco/Umbraco-CMS/blob/dev-v7/src/Umbraco.Web/Editors/BackOfficeController.cs).
+For a full reference to our URL generation, you can see the source of the [BackOfficeController](https://github.com/umbraco/Umbraco-CMS/blob/v7/dev/src/Umbraco.Web/Editors/BackOfficeController.cs).
 
 ### UrlHelper
 

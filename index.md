@@ -17,7 +17,7 @@ For a list of all the Umbraco 8 Documentation that's already live as well as get
 		<a href="Getting-Started/" class="docs-section">
 			<img src="images/icon-getting-started.png" alt="">
 			<h2>Getting Started</h2>
-			<p>All the basics of using Umbraco v7. From your first local installation, to a fully functional customized CMS.</p>
+			<p>All the basics of using Umbraco. From your first local installation, to a fully functional customized CMS.</p>
 		</a>
 	</div>
 	<div class="col-sm-6">
@@ -59,7 +59,7 @@ Everything you need to know about Forms and Courier, the two premium packages de
 How to work with the Umbraco codebase.
 
 ### [Cheatsheets](Cheatsheets/index.md)
-Cheatsheets for easy overview of different areas like the Razor API and Views syntax.
+Cheatsheets for overview of different areas like the Razor API and Views syntax.
 
 ### [Umbraco Cloud](Umbraco-Cloud/)
 How to use Umbraco Cloud: Get started, set up your Umbraco Cloud project, deploy and troubleshoot issues.

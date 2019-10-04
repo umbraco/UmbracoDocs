@@ -1,9 +1,10 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # Date - Add 'th, st, rd, nd' extension
-Here's a really simple snippet which adds the correct extension to the date.
+Here's a snippet which adds the correct extension to the date.
 
 	<xsl:variable name="dte" select="data [@alias = 'contentDate']"/>
 	<xsl:variable name="endings" select="umbraco.library:Split('st,nd,rd,th,th,th,th,th,th,th,th,th,th,th,th,th,th,th,th,th,st,nd,rd,th,th,th,th,th,th,th,st',',')"/>

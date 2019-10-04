@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # Creating an MVC form using a Child Action
@@ -25,7 +26,7 @@ The view model that will be used in this tutorial will be as follows:
 	    public string Comment { get; set; }
 	}
 
-This class defines the data that will be submitted and also defines how the data will be validated upon submission and conveniently for us MVC automatically wires up these validation attributes with the front-end so JavaScript validation will automagically occur.
+This class defines the data that will be submitted. It also defines how the data will be validated upon submission and MVC automatically wires up these validation attributes with the front-end so JavaScript validation will automatically occur.
 
 ## The Surface Controller
 
@@ -99,13 +100,13 @@ The best way to render a form in MVC is to have a Partial View render the form w
 
 ## Render the Child Action
 
-The last step is to render the Child Action that we've just created in your Umbraco template's view:
+The last step is to render the Child Action that we've created in your Umbraco template's view:
 
 	@Html.Action("ShowCommentForm", "BlogPostSurface", new { memberId = 1234 })
 
 We pass in the action name and the controller name. Notice that we leave off the suffix "Controller" when calling this method so instead of referring to the class name BlogPostSurfaceController, we refer to its controller name which is the class name without the "Controller" suffix: *BlogPostSurface*. We'll pass in a member id parameter (value 1234 for brevity) which is done by sending the controller a custom route value which gets automatically bound to the action's parameter. 
 
-You could also pass in an object as a parameter if you wanted, for this example we could change it to just pass in the currently logged in member object:
+You could also pass in an object as a parameter if you wanted, for this example we could change it to pass in the currently logged in member object:
 
 	@Html.Action("ShowCommentForm", "BlogPostSurface", new { member = Membership.GetUser() })
 
@@ -141,7 +142,7 @@ When naming your actions you may be tempted to name them the same for rendering 
 
 However this may cause unwanted side effects. If you don't do a redirect during the  HttpPost and instead `return CurrentUmbracoPage();`  MVC will end up trying to render the [HttpPost] action when rendering your Child Action which will cause problems (and YSODs). Full information is available in this issue: [http://issues.umbraco.org/issue/U4-1819](http://issues.umbraco.org/issue/U4-1819). The problem is due to MVC routing to the wrong action because there's still an HttpPost verb in the request.
 
-If you really want to name your actions the same you can use a new attribute which will be available in Umbraco 4.11.6+, 6.0.3+ called [NotChildAction] which you'd have to use to attribute your HttpPost method as well, so you actions would look like:
+If you want to name your actions the same you can use a new attribute which will be available in Umbraco 4.11.6+, 6.0.3+ called [NotChildAction]. You'd have to use it to attribute your HttpPost method as well, so you actions would look like:
 
 	[ChildActionOnly]
 	public ActionResult CommentForm(int memberId) 
@@ -156,7 +157,7 @@ If you really want to name your actions the same you can use a new attribute whi
 	    ...
 	}
 
-Otherwise, just name your actions differently.
+Otherwise, name your actions differently.
 
 ## Accessing ViewData 
 
@@ -166,7 +167,7 @@ When you are adding any data to the ViewData collection in your [HttpPost] actio
 
 This is due to the fact that you are rendering a ChildAction. This is exactly the same as what would happen when you create a normal MVC application. Whenever you POST to a controller, anything you do in that controller is done on a 'root' context.
 
-In some cases you might actually be rendering a ChildAction from within a macro. In this case what is actually happening is that you are rendering a ChildAction within a ChildAction because macros that are rendered in MVC are rendered as ChildActions themselves. In this case you'd have to access your view data by:
+In some cases you might be rendering a ChildAction from within a macro. In this case what is happening is that you are rendering a ChildAction within a ChildAction because macros that are rendered in MVC are rendered as ChildActions themselves. In this case you'd have to access your view data by:
 
 	@ParentActionViewContext.ParentActionViewContext.ViewData
 

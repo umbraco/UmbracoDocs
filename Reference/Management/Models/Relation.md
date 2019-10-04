@@ -1,5 +1,6 @@
 ---
 versionFrom: 6.0.0
+needsV8Update: "true"
 ---
 
 # Relation
@@ -21,4 +22,4 @@ All samples in this document will require the following using statement:
 
 ## Code reference
 
-More information about this object can be found in the [Relation Model Core documentation](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Core.Models.Relation.html)
+More information about this object can be found in the [Relation Model Core documentation](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Models.Relation.html)

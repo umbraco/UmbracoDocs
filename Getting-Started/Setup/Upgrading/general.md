@@ -21,7 +21,7 @@ It is necessary to run the upgrade installer on each environment of your Umbraco
 
 ## Are you using NuGet?
 
-You can simply open up the **Package Console** and type:
+You can open up the **Package Console** and type:
 `Update-Package UmbracoCms`
 
 You will be prompted to overwrite files, you should choose **"No to All"** by pressing the **"L"** . If there are any specific configuration changes required for the version you are upgrading to then they will be noted in the **[version-specific guide](version-specific.md)**.
@@ -48,10 +48,10 @@ Download the .zip file for the new version you are upgrading to from [https://ou
 Copy the following folders from inside the .zip file over the existing folders in your site:
 
 - /bin
-- /Umbraco 
-- /Umbraco_Client
-
-**Note:** There are hosting providers (we know of one: RackSpace Cloud) that require proper casing of file and folder names. Normally on Windows this is not a problem but if your hosting provider forces proper casing then you will need to verify that the folder and file names are in the same casing as in the newest version you're upgrading to.
+- /Umbraco
+:::note
+There are hosting providers (we know of one: RackSpace Cloud) that require proper casing of file and folder names. Normally on Windows this is not a problem. If your hosting provider however forces proper casing, you will need to verify that the folder and file names are in the same casing as in the newest version you're upgrading to.
+:::
 
 ## Merge configuration files
 You can expect some changes to the following configuration files:
@@ -64,9 +64,9 @@ You can expect some changes to the following configuration files:
 
 Use a tool like [WinMerge](http://winmerge.org/ "WinMerge") to check changes between all of the config files. Depending on when you last did this there may have been updates to quite a few of them.
 
-There's also the possibility that some files in the /Config folder are new or some have been removed (we do make a note of this in the release notes). WinMerge (and other diff tools) is able to compare folders as well so you can more easily spot these differences.
+There's also the possibility that some files in the /Config folder are new or some have been removed (we do make a note of this in the release notes). WinMerge (and other diff tools) is able to compare folders as well so you can spot these differences.
 
-Up until version 6.0.0 it was necessary to change the version number in ClientDependency.config. This was to clear the cached html/css/js files in the backoffice. Just change the current version number to one that's higher than that. Make sure not to skip this step as you might get strange behaviour in the backoffice otherwise.
+Up until version 6.0.0 it was necessary to change the version number in ClientDependency.config. This was to clear the cached html/css/js files in the backoffice. Change the current version number to one that's higher than that. Make sure not to skip this step as you might get strange behaviour in the backoffice otherwise.
 
 ## Merge UI.xml and language files
 Some packages (like Contour and Umbraco Forms) add dialogs to the UI.xml. Make sure to merge those changes back in from your backup during the upgrade so that the packages continue to work. This file can be found in: /Umbraco/Config/Create/UI.xml.
@@ -81,7 +81,7 @@ The installer will do two things:
 * Update the version number in the Web.config 
 * Upgrade your database in case there are any changes
 
-We are aware that, currently, the installer is asking you for the database details of a **blank database** while upgrading. In the near future this will be pre-filled with your existing details and the wording will be updated. So no need to be scared. Just enter the details of your existing database and Umbraco will upgrade it to the latest version when necessary.
+We are aware that, currently, the installer is asking you for the database details of a **blank database** while upgrading. In the near future this will be pre-filled with your existing details and the wording will be updated. So no need to be scared. Enter the details of your existing database and Umbraco will upgrade it to the latest version when necessary.
 
 ## Post installation
 One important recommendation is to always remove the `install` folder immediately after upgrading Umbraco and never to upload it to a live server.
@@ -89,6 +89,6 @@ One important recommendation is to always remove the `install` folder immediatel
 ## Potential issues and gotchas
 
 ### Browser cache
-Google Chrome has notoriously aggressive caching, so if something doesn't seem to work well in the backoffice, make sure to clear cache and cookies thoroughly (for other browsers as well). Normally the browser cache problem is automatically handled in an Umbraco upgrade by modifying the config/ClientDependency.config version number, however if you wish to re-force this update you can increment this version number which will ensure that any server-side cache of JavaScript and stylesheets gets cleared as well.
+Google Chrome has notoriously aggressive caching, so if something doesn't seem to work well in the backoffice, make sure to clear cache and cookies thoroughly (for other browsers as well). Normally the browser cache problem is automatically handled in an Umbraco upgrade by modifying the config/ClientDependency.config version number. If you however wish to re-force this update you can increment this version number which will ensure that any server-side cache of JavaScript and stylesheets gets cleared as well.
 
 One way to nudge the cache in Chrome is to open the developer tools (F12) and go to the settings (the cog icon). There will be a checkbox that says "Disable cache (while DevTools is open)". Once this checkbox is on you can refresh the page and the cache should be invalidated. To force it even more, the "reload" button next to your address bar now has extra options when you right-click it. It should have "Normal reload", "Hard reload" and "Empty cache and hard reload" now. The last option is the most thorough and you might want to try that.

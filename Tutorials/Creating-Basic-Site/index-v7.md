@@ -6,7 +6,7 @@ versionFrom: 7.0.0
 ## Introduction 
 This tutorial will take you step by step through an Umbraco website build. It will allow you to take any website "template" (e.g. flat HTML, CSS and JavaScript) and install it into a fresh Umbraco and wire up the sections that need content managing in Umbraco.  Umbraco is a seriously powerful CMS but many find the learning curve of installing a website from scratch a little too much – this tutorial aims to explain the mysteries!
 
-We avoid using one of the starter kits as when it comes to building your own site as, though these are extremely useful, they won’t provide you with an understanding of the basics of Umbraco features like Document Types and Templates and how these work together to build pages. 
+We will not be using a Starter Kit, as they won’t provide you with an understanding of the basics of Umbraco features like Document Types and Templates and how these work together to build pages. 
 
 Each section in this tutorial builds on the last - it's recommended that you work through the subsections below in order. 
 
@@ -40,7 +40,7 @@ Part 2 - using the Master template to create new page types.
 
 
 ## [Master Template - The Navigation Menu](Master-Template-The-Navigation-Menu/index-v7.md)
-A simple solution for the template in the menu. 
+A solution for the template in the menu. 
 
 
 ## [Articles Parent and Article Items](Articles-Parent-and-Article-Items/index-v7.md)

@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # Locking of Users and password reset

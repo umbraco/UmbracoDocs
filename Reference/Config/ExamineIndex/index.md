@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # ExamineIndex.config
@@ -64,7 +65,7 @@ In this example only document types based on the favThings doc type will be adde
 
 ### Field Types and Sorting
 
-By default Examine will index all field values as strings.  What this means is that if you want to perform custom queries such as a Range query on numbers or dates, or to be able to sort search results by a certain field, then you need to tell Examine about the field 'type' in the IndexSet configuration to avoid unpredictable results. (eg 1,10,100,2,3,30,4 - if numbers are sorted alphabetically)
+By default Examine will index all field values as strings. If you want to perform custom queries such as a Range query on numbers, or be able to sort search results by a certain field, tell Examine about the field 'type' in the IndexSet configuration to avoid unpredictable results. (eg 1,10,100,2,3,30,4 - if numbers are sorted alphabetically)
 
 Available Types are: NUMBER, INT, FLOAT, DOUBLE, LONG, DATE, DATETIME, DATE.YEAR, DATE.MONTH, DATE.DAY, DATE.HOUR, DATE.MINUTE
 

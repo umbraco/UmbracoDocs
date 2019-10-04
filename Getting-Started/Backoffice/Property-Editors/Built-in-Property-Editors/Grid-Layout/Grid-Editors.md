@@ -3,7 +3,8 @@ versionFrom: 7.0.0
 ---
 
 # Grid Editors
-A grid editor is the component responsible for getting data into the grid - that could be a simple text field or a media picker. They're built in the same way as a property editor thus consists of 3 parts:
+
+A grid editor is the component responsible for getting data into the grid - that could be a text field or a media picker. They're built in the same way as a property editor thus consists of 3 parts:
 
 - .html view file
 - .js controller
@@ -12,6 +13,7 @@ A grid editor is the component responsible for getting data into the grid - that
 The view is what the editor sees, the controller handles how it acts and the cshtml determines how the entered data is rendered in the template.
 
 ### Default Grid editors
+
 The default editors are specified in `/config/grid.editors.config.js`. They are written in the JSON format and each editor is an object like so:
 
 ```json
@@ -24,9 +26,11 @@ The default editors are specified in `/config/grid.editors.config.js`. They are 
 ```
 
 ### Custom Grid editors
-You can easily customize the built-in editors to tailor the grid to your need.
+
+You can customize the built-in editors to tailor the grid to your need.
 
 ##### package.manifest
+
 It is recommended that you define custom editors in a `package.manifest` file (not in the config file described above) like so:
 
 ```json
@@ -52,20 +56,21 @@ You can read more about `package.manifest` files in general at the [Package Mani
 ##### Grid editor configuration
 
 For a grid editor, the required values are:
-- **name**: The name of the editor
-- **alias**: Unique alias of the editor
-- **icon**: Icon shown to the editor, uses same icon classes as the rest of 
-- **view** the view defines the editor used to enter a value. By default Umbraco will look in `/umbraco/views/propertyeditors/grid/editors` for a html view to use - but you can pass in your own path
+
+- `name`: The name of the editor
+- `alias`: Unique alias of the editor
+- `icon`: Icon shown to the editor, uses same icon classes as the rest of 
+- `view` the view defines the editor used to enter a value. By default Umbraco will look in `/umbraco/views/propertyeditors/grid/editors` for a html view to use - but you can pass in your own path
 
 The built-in views you can use are: 
 
-- textstring
-- rte
-- embed
-- macro
-- media
+- `textstring`
+- `rte`
+- `embed`
+- `macro`
+- `media`
 
-In most cases you will either use the textstring or media view, or built your own from scratch. The textstring and media editors come with some additional configuration to make it easy and quick to customise these.
+In most cases you will either use the textstring or media view, or built your own from scratch. The textstring and media editors come with some additional configuration to make it quick to customise these.
 
 ##### Sample textstring config
 

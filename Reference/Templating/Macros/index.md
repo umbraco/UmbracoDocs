@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # Macros
@@ -10,7 +11,7 @@ _Describes how to set up a macro, use macro parameters & configuring caching. De
 
 A macro is 'wrapper' for a reusable piece of functionality that you can utilise in different places throughout your site.
 
-You can use macros in your templates, like MVC Partial views - however they differ in that they can be configured to work with Parameters and Caching, that can be updated easily by editors via the Umbraco Backoffice.
+You can use macros in your templates, like MVC Partial views - however they differ in that they can be configured to work with Parameters and Caching, that can be updated by editors via the Umbraco Backoffice.
 So if you allow a macro to be added to a Rich Text Editor or Grid cell, the editor, at the point of inserting the macro can supply the parameter values.
 
 For example imagine adding an Image Gallery within a rich text editor, and at the point of insertion 'picking' the images to display.
@@ -66,7 +67,7 @@ For common Macro Parameter scenarios, for example taking the value from the quer
 @Umbraco.RenderMacro("myMacroAlias", new { name = "[#personName]", age = "[#personAge]", school="[$schoolName]", currentPage="[@page]"})
 ```
 
-Notice the dynamic parameters are passed as strings (even for age which would normally take an integer), this example means take the personName and personAge from the document of the current page, read the schoolName from any ancestor property in the content tree, and read the current page value from a querystring parameter called 'page'.
+Notice the dynamic parameters are passed as strings (even for age which would normally take an integer). This example means take the personName and personAge from the document of the current page, read the schoolName from any ancestor property in the content tree, and read the current page value from a querystring parameter called 'page'.
 
 #### Meaning of all the symbols
 
@@ -102,7 +103,7 @@ It's possible to set multiple dynamic sources for a Macro Parameter, and these w
 @Umbraco.RenderMacro("ListStatusUpdates", new {numberOfItems="[@limit],[#limit],[$globalLimit],4"})
 ```
 
-In this example the Macro will first look for a parameter on the querystring called limit to take its value, then if this is missing it will look for a document type property called 'limit' on the current page, then seek a property called 'globalLimit' all the way recursively up the Umbraco Content Tree, finally settling on 4, as the value to use if the previous three do not exist.
+In this example the Macro will first look for a parameter on the querystring called limit to take its value. Then if this is missing it will look for a document type property called 'limit' on the current page and then seek a property called 'globalLimit' all the way recursively up the Umbraco Content Tree. Finally settling on 4, as the value to use if the previous three do not exist.
 
 ### Caching Macro Output
 

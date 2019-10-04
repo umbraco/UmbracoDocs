@@ -37,6 +37,6 @@ We like to use Microsoft WebMatrix or Visual Studio Code when working locally, b
 
 ![clone dialog](images/restorecontent.jpg)
 
-That's it! Now you can work with your site locally just as with any other Umbraco site. You can create content, add media, even create your own custom code. When you're ready to deploy your changes make sure to have a look at the [deployments](../../Deployment/) documentation.
+That's it! Now you can work with your site locally as you would with any other Umbraco site. You can create content, add media, even create your own custom code. When you're ready to deploy your changes make sure to have a look at the [deployments](../../Deployment/) documentation.
 
 Note: If you have more than "a few" media items see our recommendations for working with [media in Umbraco Cloud](../Media/).

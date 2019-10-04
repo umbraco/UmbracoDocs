@@ -1,12 +1,13 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # Related Links
 
 `Returns: RelatedLinks`
 
-Related Links allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
+Related Links allows an editor to add an array of links. These can either be internal Umbraco pages or external URLs.
 
 ## Data Type Definition Example
 
@@ -18,7 +19,7 @@ Related Links allows an editor to easily add an array of links. These can either
 
 ## MVC View Example - [value converters enabled](../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
 
-### Typed:
+### Typed
 
 ```csharp
 @using Umbraco.Web.Models

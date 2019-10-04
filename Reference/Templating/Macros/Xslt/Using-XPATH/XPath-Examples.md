@@ -1,10 +1,11 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # XPath Examples
 
-Below are some simple examples that demonstrate the use of XPath. All examples are evaluated against the following XML:
+Below are some examples that demonstrate the use of XPath. All examples are evaluated against the following XML:
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<Catalog>
@@ -92,7 +93,7 @@ Below are some simple examples that demonstrate the use of XPath. All examples a
 
 In Umbraco, we usually apply these XPath expressions to a variable or parameter such as $currentPage, or a custom variable that contains an XML node set.
 
-### To list all nodes below the current page that match nodeTypeAlias="Article", we could do the following:
+### To list all nodes below the current page that match nodeTypeAlias="Article", we could do the following
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<!DOCTYPE xsl:stylesheet [ <!ENTITY nbsp "&#x00A0;"> ]>

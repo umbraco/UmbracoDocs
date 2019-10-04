@@ -19,13 +19,12 @@ Make sure you can run your Cloud project locally and restore content and media. 
 * Copy the following folders from the unzipped folder to your Cloud project folder:
     * `/bin`
     * `/Umbraco`
-    * `/Umbraco_Client`
 
 ## Merge configuration files
 
 In this step, you need to merge the configuration files containing changes. For this, we recommend using a tool like [WinMerge](http://winmerge.org/) or [DiffMerge](https://sourcegear.com/diffmerge/).
 
-The reason you shouldn't just overwrite these files is that this will also overwrite any **custom configuration** you might have as well as **Umbraco Cloud specific settings**. Read more about which Cloud specific details you should watch out for in the following sections.
+The reason you shouldn't overwrite these files is that this will also overwrite any **custom configuration** you might have as well as **Umbraco Cloud specific settings**. Read more about which Cloud specific details you should watch out for in the following sections.
 
 ### Web.config
 

@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # Using MVC Child Actions in Umbraco
@@ -8,7 +9,7 @@ _This section will demonstrate how to use MVC Child Actions when rendering a pag
 
 ## What is an MVC Child Action
 
-A Child Action in ASP.NET MVC is kind of similar to that of a User Control in ASP.NET web forms. It allows for a controller to execute for a portion of the rendered area of a view, just like in Web Forms where you can execute a UserControl for a portion of the rendered area of a page.
+A Child Action in ASP.NET MVC is kind of similar to that of a User Control in ASP.NET web forms. It allows for a controller to execute for a portion of the rendered area of a view, like in Web Forms where you can execute a UserControl for a portion of the rendered area of a page.
 
 There is quite a lot of documentation on MVC Child Actions on the net, for example: [https://stackoverflow.com/questions/8886433/asp-net-mvc-child-actions](https://stackoverflow.com/questions/8886433/asp-net-mvc-child-actions)
 
@@ -16,7 +17,7 @@ Child Actions can be very powerful especially when you want to have re-usable co
 
 ## Creating a Child Action
 
-This documentation is going to use [SurfaceControllers](surface-controllers.md) to create child actions but if you want to create child actions with your own custom controllers with your own custom routing that will work too. Once you've created a SurfaceController, you just need to create an action (Note the ChildActionOnly attribute, this will ensure that this action is not publicly routable via a URL):
+This documentation is going to use [SurfaceControllers](../../Routing/surface-controllers.md) to create child actions but if you want to create child actions with your own custom controllers with your own custom routing that will work too. Once you've created a SurfaceController, you need to create an action (Note the ChildActionOnly attribute, this will ensure that this action is not publicly routable via a URL):
 
 ```csharp
 public class MySearchController : SurfaceController
@@ -33,18 +34,19 @@ public class MySearchController : SurfaceController
     }
 }
 ```
-
-*NOTE: In this example we have used a SurfaceController to create the ChildAction and so long as you are using this Child Action in the context of rendering an Umbraco view, you will then have available all of the handy SurfaceController properties such as UmbracoHelper, UmbracoContext, etc...*
+:::note
+ In this example we have used a SurfaceController to create the ChildAction. As long as you are using this Child Action in the context of rendering an Umbraco view, you will then have available all of the handy SurfaceController properties such as UmbracoHelper, UmbracoContext, etc.
+:::
 
 ### Action name conflicts
 
-MVC allows you to have the same overloaded action names on your controllers, however in some cases when POST-ing data and rendering a child action in the response, this can cause issues when MVC is trying to determine which action to use. If you have named both an `[HttpPost]` action and a `[ChildActionOnly]` action with the same name you may also need to attribute your `[HttpPost]` action with the attribute `[NotChildAction]` so that MVC doesn't get confused.
+MVC allows you to have the same overloaded action names on your controllers. However, in some cases when POST-ing data and rendering a child action in the response, this can cause issues when MVC is trying to determine which action to use. If you have named both an `[HttpPost]` action and a `[ChildActionOnly]` action with the same name you may also need to attribute your `[HttpPost]` action with the attribute `[NotChildAction]` so that MVC doesn't get confused.
 
 ## View Locations
 
 The same view locations apply to Partial Views returned from Child Actions as the ones listed here: [Partial Views](partial-views.md)
 
-Also note that since this example is using a Surface Controller and if we were shipping this controller as part of a package, then the ~/App_Plugins view location will work too. See  [SurfaceControllers](surface-controllers.md) documentation under the heading *Plugin based controllers*.
+Also note that since this example is using a Surface Controller and if we were shipping this controller as part of a package, then the ~/App_Plugins view location will work too. See  [SurfaceControllers](../../Routing/surface-controllers.md) documentation under the heading *Plugin based controllers*.
 
 ## Rendering a Child Action
 

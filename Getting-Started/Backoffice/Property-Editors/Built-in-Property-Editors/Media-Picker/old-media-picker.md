@@ -22,13 +22,13 @@ If checked, the picker will allow the user to select multiple media items using 
 
 ![Media Picker Data Type Definition](images/Media-Picker-DataType.jpg)
 
-## Content Example 
+## Content Example
 
 ![Media Picker Content](images/Media-Picker-Content.jpg)
 
-## MVC View Example - [value converters enabled](../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
+## MVC View Example - [value converters enabled](../../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
 
-### Typed Example (multiple enabled): ##
+### Typed Example (multiple enabled)
 
 ```csharp
 @{
@@ -40,7 +40,7 @@ If checked, the picker will allow the user to select multiple media items using 
 }
 ```
 
-### Typed Example (multiple disabled): ##
+### Typed Example (multiple disabled)
 
 ```csharp
 @{
@@ -53,9 +53,9 @@ If checked, the picker will allow the user to select multiple media items using 
 }
 ```
 
-## MVC View Example - [value converters disabled](../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
+## MVC View Example - [value converters disabled](../../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
 
-### Typed (multiple enabled:
+### Typed (multiple enabled
 
 ```csharp
 @if (Model.Content.HasValue("caseStudyImages"))
@@ -64,13 +64,13 @@ If checked, the picker will allow the user to select multiple media items using 
     var caseStudyImagesCollection = Umbraco.TypedMedia(caseStudyImagesList).Where(x => x != null);
 
     foreach (var caseStudyImage in caseStudyImagesCollection)
-        {      
-            <img src="@caseStudyImage.Url" style="width:300px;height:300px" />      
-        }                                                               
+        {
+            <img src="@caseStudyImage.Url" style="width:300px;height:300px" />
+        }
 }
 ```
 
-### Dynamic (multiple enabled:                              
+### Dynamic (multiple enabled)
 
 ```csharp
 @if (CurrentPage.HasValue("caseStudyImages"))

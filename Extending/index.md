@@ -1,5 +1,7 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
+meta.Title: "Learn about extending the functionality of Umbraco"
+meta.Description: "This section shows the different ways you can extend Umbraco. From Content Apps to Backoffice tours, and many more."
 ---
 
 # Extending Umbraco
@@ -36,7 +38,7 @@ Information on extending Umbraco, details such as dealing with server variables,
 
 ## [Macro Parameter Editors](Macro-Parameter-Editors/index.md)
 
-A Parameter Editor is the editor used to insert values into a [Macro](../reference/templating/macros/index.md).
+A Parameter Editor is the editor used to insert values into a [Macro](../Reference/Templating/Macros/index.md).
 
 This section will describe how to work with and create Parameter Editors.
 
@@ -50,7 +52,7 @@ Developers can create their own Umbraco Health Checks and Health Check notificat
 
 ## Packaging
 
-Information on the packaging manifest format and how assets should be packaged as a zip file for easy distribution
+Information on the packaging manifest format and how assets should be packaged as a zip file for distribution
 **(coming soon)**
 
 ## [Custom file systems (IFileSystem)](Custom-File-Systems.md)

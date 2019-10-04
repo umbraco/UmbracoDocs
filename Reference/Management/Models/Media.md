@@ -1,12 +1,13 @@
 ---
 versionFrom: 6.0.0
+needsV8Update: "true"
 ---
 
 # Media
 
 **Applies to Umbraco 6.x and newer**
 
-The `Media` class represents a single item in the media tree, its values are fetched directly from the database, not from the cache. **Notice** the Media class should strictly be used for simple CRUD operations, not complex queries, as it is not flexible nor fast enough for this.
+The `Media` class represents a single item in the media tree, its values are fetched directly from the database, not from the cache. **Notice** the Media class should strictly be used for CRUD operations, not complex queries, as it is not flexible nor fast enough for this.
 
  * **Namespace:** `Umbraco.Core.Models`
  * **Assembly:** `Umbraco.Core.dll`
@@ -87,7 +88,7 @@ return media.Key;
 ```
 
 ### .Level
-Gets or Sets the given `Media` level in the site hierarchy as an `Int`. Media placed at the root of the tree, will return 1, Media just underneath will return 2, and so on.
+Gets or Sets the given `Media` level in the site hierarchy as an `Int`. Media placed at the root of the tree, will return 1, Media right underneath will return 2, and so on.
 
 ```csharp
 // Given a `MediaService` object get Media by its Id and return the Level

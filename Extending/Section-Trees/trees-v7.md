@@ -1,6 +1,23 @@
 ---
 versionFrom: 7.0.0
+versionRemoved: 8.0.0
 ---
+
+# Trees
+
+Trees are also in a [config file located: `~/Config/trees.config`](../../Reference/Config/trees/index.md). Each config item defines a tree and for what section it belongs to. For example, this is the definition of the user tree:
+
+```xml
+<add application="users" alias="users" title="Users" 
+        type="umbraco.loadUsers, umbraco" 
+        iconClosed="icon-folder" iconOpen="icon-folder" sortOrder="0" />
+```
+
+The tree type should reference the assembly qualified type of the tree, for example the above user tree is of type: `umbraco.loadUsers, umbraco`. 
+
+:::note
+You don't need to specify the assembly version, etc...
+:::
 
 # Trees v7
 
@@ -109,12 +126,11 @@ protected override MenuItemCollection GetMenuForNode(string id, FormDataCollecti
 
 ### Responding to Tree Actions
 
-The actions on items in an Umbraco Tree will trigger 'by convention' a request to load an AngularJS view, with a name corresponding to the name of the action, from a subfolder of the views folder matching the name of the 'customTreeAlias'.
+The actions on items in an Umbraco Tree will trigger a request to load an AngularJS view, with a name corresponding to the name of the action, from a subfolder of the views folder matching the name of the 'customTreeAlias'.
 
-For example, 'Clicking on' one of the 'Favourite Things' in the custom tree example outlined above will 'by convention' trigger the loading of an 'edit.html' view from the folder: */views/favouriteThings/edit.html*
-and the 'Delete' menu item would load a view from: */views/favouriteThings/delete.html*
+For example 'Clicking on' one of the 'Favourite Things' in the custom tree example outlined above will 'by convention' trigger the loading of an 'edit.html' view from the folder: */views/favouriteThingsAlias/edit.html*. The 'Delete' menu item would also load a view from: */views/favouriteThingsAlias/delete.html*
 
-It's recommended, particularly if you're creating a custom tree as part of an Umbraco package/plugin, to change the location of this default folder to the app_plugins folder and you achieve this by decorating you mvc *TreeController* with the *PluginController* attribute.
+If you're creating a custom tree as part of an Umbraco package/plugin, it's recommended to change the location of the default folder to the app_plugins folder. You achieve this by decorating you mvc *TreeController* with the *PluginController* attribute.
 
 ```csharp
 [Tree("developer", "favouriteThingsAlias", "Favourite Things Name")]
@@ -156,7 +172,7 @@ Our Tree Action View would then be wired to the loaded controller using the ng-c
 </div>
 ```
 
-Take a look at the [umbEditor directives in the backoffice API Documentation](https://our.umbraco.com/apidocs/ui/#/api/umbraco.directives.directive:umbEditorHeader), for lots of common interaction directives that can be used to deliver a consistent backoffice editing experience for items in your custom tree.
+Take a look at the [umbEditor directives in the backoffice API Documentation](https://our.umbraco.com/apidocs/v7/ui/#/api/umbraco.directives.directive:umbEditorHeader), for lots of common interaction directives that can be used to deliver a consistent backoffice editing experience for items in your custom tree.
 
 [see Tree Actions for a list of tree *ActionMenuItems* and *IActions*](tree-actions.md)
 
@@ -166,7 +182,7 @@ Take a look at the [umbEditor directives in the backoffice API Documentation](ht
 The section API in v7+ is found in the interface `Umbraco.Core.Services.IApplicationTreeService` which is exposed on the ApplicationContext singleton. This API is used to control/query the storage for tree registrations in the ~/Config/trees.config file.
 
 
-[See the tree service API reference here](../../Reference/Management-v6/Services/TreeService.md)
+[See the tree service API reference here](../../Reference/Management/Services/TreeService/index.md)
  
 ## Tree events v7
 
@@ -258,7 +274,7 @@ void TreeControllerBase_MenuRendering(TreeControllerBase sender, MenuRenderingEv
         // creates a menu action that will open /umbraco/currentSection/itemAlias.html
         var i = new Umbraco.Web.Models.Trees.MenuItem("itemAlias", "Item name");
         
-        // optional, if you want to load a legacy page, otherwise it will just follow convention
+        // optional, if you want to load a legacy page, otherwise it will follow convention
         i.AdditionalData.Add("actionUrl", "my/long/url/to/webformshorror.aspx");
         
         // optional, if you don't want to follow the naming conventions, but do want to use a angular view

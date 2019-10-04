@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # Property Editors
@@ -23,11 +24,11 @@ Convert the stored property data value to a useful object returned by the Publis
 
 ## [Tag support](tag-support.md)
 
-Property editors can be configured to support tag data. In v7 the tag system has been overhauled and updated for easier querying and seamless integration into any property editor, not just the tags property editor. This document covers how you can integrate tagging support within your property editor.
+Property editors can be configured to support tag data. In v7 the tag system has been overhauled and updated for easier querying and seamless integration into any property editor, not the tags property editor. This document covers how you can integrate tagging support within your property editor.
 
 ### More information
 - [Built in Property Editors](../../Getting-Started/Backoffice/Property-Editors/Built-in-Property-Editors/)
-- The full [Umbraco Backoffice UI API documentation](../../../apidocs/ui/) for all the angular services, directives and resources.
+- The full [Umbraco Backoffice UI API documentation](../../../apidocs/v8/ui/) for all the angular services, directives and resources.
 
 ### Umbraco TV
 - Chapter: [Property Editors](https://umbraco.tv/videos/umbraco-v7/developer/extending/property-editors/)

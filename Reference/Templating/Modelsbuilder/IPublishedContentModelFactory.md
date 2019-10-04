@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # IPublishedContentModelFactory
@@ -38,7 +39,7 @@ The returned object must only depend on the original content object. Content mod
 
 ## Enabling a factory
 
-As of 7.1.4, Umbraco ships with no factory enabled. There _is_ a default factory in Umbraco, but it is not mandatory to use it. Implementing a factory is fairly simple -- though there are constraints on models (see below).
+As of 7.1.4, Umbraco ships with no factory enabled. There _is_ a default factory in Umbraco, but it is not mandatory to use it. Below you can see how a factory can be implemented.
 
 As with everything in Umbraco, a factory is enabled via a resolver. This is how the default factory is enabled:
 
@@ -67,7 +68,7 @@ The default factory must be initialized with a list of types to be used as stron
 
 Implementing the `IPublishedContent` interface from scratch can be complex. Umbraco ships with various classes that can help:
 
-* `PublishedContentWrapped`: A very simple abstract class that just wraps an existing `IPublishedContent` without adding any extra functionality. Use the `Unwrap()` method to access the inner content. This is the base class for all classes that need to extend existing content.
+* `PublishedContentWrapped`: An abstract class that wraps an existing `IPublishedContent` without adding any extra functionality. Use the `Unwrap()` method to access the inner content. This is the base class for all classes that need to extend existing content.
 * `PublishedContentExtended`: Inherits from `PublishedContentWrapped` and provides functionality to "extend" a content, i.e.: 1) add some properties to it and 2) support content sets.
 * `PublishedContentModel`: Inherits from `PublishedContentExtended` without adding any functionality. Is used to distinguish models from other extended content.
 
@@ -77,7 +78,7 @@ Should you want to implement your own models classes, the easiest solution is to
 
 ## Content Factory & Content Cache
 
-As of Umbraco 7.1.4, anytime a content is retrieved from the cache, a new `IPublishedContent` object is created, passed through the factory, and returned. This is just how the current content cache works. Which means that that content is *local* to the *current request*.
+As of Umbraco 7.1.4, anytime a content is retrieved from the cache, a new `IPublishedContent` object is created, passed through the factory, and returned. This is how the current content cache works. Which means that that content is *local* to the *current request*.
 
 This is not best in terms of efficiently. It implies that a lot of objects are created, each time parsing the XML content in the cache. It means that each request runs the property value converters, etc. In fact, depending on how the cache is queried, *several copies* of the same object could be created.
 
@@ -97,6 +98,6 @@ Which prompts **rule number 2**: Content models must *not* keep references to ot
 * Cache the IDs in a field and re-get the content objects each time
 * Implement your own caching mechanism
 
-The idea is that such a cache would provide easy-to-use infrastructure for you to cache values either at the request's level, or "for as long as no other content is changed" -- the same that would be used internally for the cache to manage the converted values.
+The idea is that such a cache would provide easy-to-use infrastructure for you to cache values either at the request's level, or "for as long as no other content is changed". The same that would be used internally for the cache to manage the converted values.
 
 This is not an issue *today* but it will become an issue if/when a new cache comes. Better understand what's going on before creating models that would *not* work with a new cache.

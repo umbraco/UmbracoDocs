@@ -12,8 +12,25 @@ If you feel something is missing here or you want to help out documenting some o
 * [Create an issue on missing documentation](https://github.com/umbraco/UmbracoDocs/issues)
 * [Read about how you can help out!](Contribute)
 
-## Finished Umbraco 8 Documentation:
+## Finished Umbraco 8 Documentation
 
+* [Migrate Umbraco 7 Cloud project to Umbraco 8](Umbraco-Cloud/Upgrades/Migrating-from-7-to-8)
+* [Content migration from Umbraco 7 to Umbraco 8](Getting-Started/Setup/Upgrading/migrating-to-v8.md)
+* [Rendering Content](Getting-Started/Design/Rendering-Content)
+* [IPublishedContent](Reference/Querying/IPublishedContent)
+* [Examine: Custom Indexing](Reference/Searching/Examine/Indexing)
+* [Azure Blob Storage guide](Extending/FileSystemProviders/Azure-Blob-Storage/)
+* [Umbraco 8 API Documentation: CSharp](https://our.umbraco.com/apidocs/v8/csharp/)
+* [Umbraco 8 API Documentation: Angular](https://our.umbraco.com/apidocs/v8/ui/)
+* [Quickstart with Examine](Reference/Searching/Examine/Quick-Start)
+* [Application Startup](Reference/Events/Application-Startup)
+* [Subscribing to events](Getting-Started/Code/Subscribing-To-Events/)
+* [Routing for Backoffice authentication](Reference/Routing/Authorized/)
+* [Controller and Action selection](Implementation/Default-Routing/Controller-Selection/)
+* [Using Umbraco's service APIs](Getting-Started/Code/Umbraco-Services/)
+* [Searchable Trees (ISearchableTree)](Extending/Section-Trees/Searchable-Trees/)
+* [IContentFinder](Reference/Routing/Request-Pipeline/IContentFinder)
+* [Custom controllers (hijacking Umbraco routes)](Reference/Routing/custom-controllers)
 * [Version specific upgrade notes: 7 to 8](Getting-Started/Setup/Upgrading/version-specific.md)
 * [Composer/Composition mechanism documentation](Implementation/Composing/)
 * [Umbraco 8 Requirements](Getting-Started/Setup/Requirements)
@@ -39,15 +56,13 @@ If you feel something is missing here or you want to help out documenting some o
 * [Tutorial: Porting packages to V8](Tutorials/Porting-Packages-V8)
 * [Dashboards](Extending/Dashboards)
 
-## In progress:
+## In progress
 
-* Backoffice documentation
-* [Property Editors in Umbraco 8](https://github.com/umbraco/UmbracoDocs/issues/1528) 
+* EditorModel Events
+* Custom MVC Routes
 
-## Upcoming:
+## Upcoming
 
-* **Update existing** Examine documentation
 * **Update existing** MVC / WebAPI documentation
 * **Add new** Content Cache documentation
 * **Add new** Filesystems documentation
-* **Add new** Upgrading documentation

@@ -8,7 +8,7 @@ versionFrom: 7.0.0
 
 `Returns: Comma Separated String`
 
-Displays a list of preset values as a list of checkbox controls. The text saved is a comma separated string of text values.
+Displays a list of preset values as a list of checkbox controls.
 
 *NOTE: Unlike other property editors, the Prevalue IDs are not directly accessible in Razor*
 
@@ -26,9 +26,11 @@ Displays a list of preset values as a list of checkbox controls. The text saved 
 
 ```csharp
 @{
-    if (Model.Content.HasValue("superHeros")){
+    if (Model.Content.HasValue("superHeros"))
+    {
         <ul>
-            @foreach(var item in Model.Content.GetPropertyValue<string>("superHeros").Split(',')) {
+            @foreach (var item in Model.Content.GetPropertyValue<IEnumerable<string>>("superHeros"))
+            {
                 <li>@item</li>
             }
         </ul>

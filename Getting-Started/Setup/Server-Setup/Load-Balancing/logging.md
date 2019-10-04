@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # Logging with load balancing
@@ -13,7 +14,7 @@ Other options include changing your log4net setup to log to a centralized databa
 
 This describes how you can configure log4net to write log files that are named with the machine name.
 
-Simply update your log4net configuration's appender's file value as below:
+Update your log4net configuration's appender's file value as below:
 
 ```xml
 <appender .... >

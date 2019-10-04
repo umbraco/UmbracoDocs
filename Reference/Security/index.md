@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # Security
@@ -21,7 +22,7 @@ Don't forget to [configure your Umbraco when using HTTPS](use-https.md).
 Authentication for backoffice users in Umbraco uses [ASP.NET Identity](https://www.asp.net/identity) which is a very flexible and extensible framework for authentication.
 
 Out of the box Umbraco ships with a custom ASP.NET Identity implementation which uses Umbraco's database data. Normally this is fine for most Umbraco developers
-but in some cases the authentication process needs to be customized. ASP.NET Identity can be easily extended by using custom OAuth providers which is helpful if you want
+but in some cases the authentication process needs to be customized. ASP.NET Identity can be extended by using custom OAuth providers which is helpful if you want
 your users to authenticate with a custom OAuth provider like Azure Active Directory, or even Google accounts. ASP.NET identity is also flexible enough for you to override/replace
 any part of the process of authentication.
 
@@ -37,7 +38,7 @@ The installation of these packages will install snippets of code with readme fil
 
 #### Auto-linking accounts for custom OAuth providers
 
-Traditionally a backoffice user will need to exist first and then that user can link their user account to an OAuth account in the backoffice, however in many cases the identity server you choose will be the source of truth for all of your users.
+Traditionally a backoffice user will need to exist first and then that user can link their user account to an OAuth account in the backoffice. In many cases however, the identity server you choose will be the source of truth for all of your users.
 
 In this case you would want to be able to create user accounts in your identity server and then have that user given access to the backoffice without having to create the user in the backoffice first. This is done via auto-linking.
 

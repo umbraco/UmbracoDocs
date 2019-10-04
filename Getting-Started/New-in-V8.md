@@ -12,7 +12,7 @@ In this article you can learn more about the biggest new features that comes out
 
 ## [Language Variants](../Getting-Started/Backoffice/Variants)
 
-Working with language variations is a built-in feature with Umbraco 8. Allowing variations on a Document Type, enables you to easily add and update content variations based on the languages you need.
+Working with language variations is a built-in feature with Umbraco 8. Allowing variations on a Document Type, enables you to add and update content variations based on the languages you need.
 
 ## [Content Apps](../Extending/Content-Apps)
 
@@ -20,7 +20,7 @@ This brand new feature / concept give you as a developer the opportunity to crea
 
 ## [Infinite Editing](Backoffice/Infinite-editing)
 
-In Umbraco 8 you will be able to edit your content without having to jump between sections and without ever loosing the context of what you are doing.
+In Umbraco 8 you will be able to edit your content without having to jump between sections and without ever losing the context of what you are doing.
 
 ## Refreshed user interface
 
@@ -30,18 +30,19 @@ Giving the Umbraco Backoffice a new look, has given you a bigger workspace when 
 - The **Developer** section has been removed, and merged with the **Settings** sections
 - Templates, Document types, Data Types, Languages, etc. is now all in the same section: **Settings**
 - Health Check, Examine Management and the ModelsBuilder user interfaces have been moved to the **Settings** section
-- A brand new [Log Viewer interface in the backoffice](Backoffice/LogViewer), that gives you easy access to browse through all your log entries
+- **Dictionary items** have been moved from the **Settings** section to the **Translation** section
+- A brand new [Log Viewer interface in the backoffice](Backoffice/LogViewer), that gives you access to browse through all your log entries
 - Searching your backoffice has been made even easier: `CTRL + SPACE` opens a search field overlay, which gives you search results as you start typing
 
 ## Packages in V8
 
-The entire flow of building and testing packages for Umbraco has been given an overhaul and it's been made more fluent and consistent. 
+The entire flow of building and testing packages for Umbraco has been given an overhaul and it's been made more fluent and consistent.
 
 You can already find a guide about [how to port V7 packages to V8](../Tutorials/Porting-Packages-V8).
 
 ## General improvements
 
-Developing Umbraco 8 has allowed for a major clean-up in the core codebase. This means that a lot of old legacy code has been removed, which has opened up for the opporunity to add more up-to-date technology.
+Developing Umbraco 8 has allowed for a major clean-up in the core codebase. This means that a lot of old legacy code has been removed, which has opened up for the opportunity to add more up-to-date technology.
 
 For you as a developer a clean codebase means that it is easier to create and implement extensions, as well as work with the code in general.
 

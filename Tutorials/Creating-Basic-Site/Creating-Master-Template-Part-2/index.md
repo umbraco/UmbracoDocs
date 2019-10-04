@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 ## Creating a Contact Us Page 
 
 
-We're now going to make a simple page where we'll just put our contact details. For added functionality, you might want to look at replacing this with a fully fledged contact us form.
+We're now going to make a page where we'll put our contact details. For added functionality, you might want to look at replacing this with a fully fledged contact us form.
 
 
 Some potential solutions:
@@ -14,9 +14,9 @@ Some potential solutions:
 * If you're not a programmer you can use the Umbraco built-in package - Umbraco Forms. This has the added benefit that editors can also create their own forms. Find more info and purchase the product through [Umbraco Apps](https://umbraco.com/apps/umbraco-forms/)
 * Build your own contact form using [Surface Controllers](../../../Reference/Templating/Mvc/forms) or the [Surface Controller chapter on UmbracoTV](https://umbraco.tv/videos/umbraco-v7/developer/fundamentals/surface-controllers/the-surface-controller/)
 
-### Creating a Simple Content Only Contact Us Page 
+### Creating a Content-only Contact Page 
 
-For now, let's create a simple content-only contact us page - a page where the user can provide a title and some rich text. This is very similar to our homepage document type at the moment but we're assuming that you'll go and develop this into something very specific (e.g. adding the featured article and other article content blocks). 
+For now, let's create a content-only contact page - a page where the user can provide a title and some rich text. This is very similar to our homepage document type at the moment but we're assuming that you'll go and develop this into something very specific (e.g. adding the featured article and other article content blocks). 
 
 
 Go to **_Settings > Document Types_** (hover) **_> ... > + Create_ > Document Type** .  Let's create one called "_Simple Content Page_". 
@@ -24,7 +24,7 @@ Go to **_Settings > Document Types_** (hover) **_> ... > + Create_ > Document Ty
 Firstly let's select an **_Icon_** - type the word "_Content_" into the filter and select the document icon. In description type "A simple content page".  Click **_Save_**.
 
 
-Now click on the **_Settings > Templates (hover) > ..._** and then **_Reload_** to show your new Simple Content Page template that was created automatically with the Document Type.  Click on your **_Simple Content Page_** template and then change the **_Master template_** and select the value "_Master_" - this will mean that we'll get the header and footer from the master just as we do in the Homepage template.  
+Now click on the **_Settings > Templates (hover) > ..._** and then **_Reload_** to show your new Simple Content Page template that was created automatically with the Document Type.  Click on your **_Simple Content Page_** template and then change the **_Master template_** and select the value "_Master_" - this will mean that we'll get the header and footer from the master as we do in the Homepage template.  
 
 
 Click **_Save_** then load the **_Template tab_** you should see the portion of Razor code has updated to say `Layout ="Master.cshtml"` if it hasn't updated itself click on a different node and then back again to reload it. Now add the following HTML to the template and click **_Save_**. 
@@ -58,7 +58,7 @@ Go to **_Settings > Document Types > Homepage_** on the **_Permissions_**  scree
 
 ![Homepage - Allowed Child Nodetypes](images/figure-32-homepage-allowed-child-v8.png)
 
-So there is the confusing bit - first we create the **_Simple Content Page_** Document Type but after we then have to allow it to be created under the homepage document type - e.g. we create our new **_Document Type_** but then have to update the **_Homepage_** settings to be able to use it. 
+First we create the **_Simple Content Page_** Document Type but after we then have to allow it to be created under the Homepage document type. Eg. we create our new **_Document Type_** but then have to update the **_Homepage_** settings to be able to use it. 
 
 Now go back **Content > Homepage (hover) > ... > Create** now we have the **Simple Content Page**! Select this and enter a name (text field at the top) - enter the name "Contact Us". You can see that we only have a **_Properties tab_** here - no data properties yet. This is different to the document type for the homepage as we've not yet added any tabs nor data properties (e.g. no bodyText or pageTitle fields to enter content!).  Click **_Save and Publish_**. 
 
@@ -68,7 +68,7 @@ Our **_Content tree_** will now reload and there will be a **_Contact Us_** page
 
 ![Contact Us Page info tab](images/figure-33a-contact-us-info-v8.png)
 
-You might find an unstyled page again. This is because the template designers have assumed that your site will be a flat structure - e.g. all pages sitting at the same level so the browser can't find the CSS or JavaScript at the page level below the homepage. You need to update the **_Master_** template to add a leading slash on the JavaScript and CSS source lines. 
+You might find an unstyled page again. This is because the template designers have assumed that your site will be a flat structure. This means that the browser can't find the CSS or JavaScript at the page level below the Homepage. You need to update the **_Master_** template to add a leading slash on the JavaScript and CSS source lines. 
 
 e.g.  change the lines in the Master Template:
 
@@ -116,10 +116,10 @@ What you may notice is that the footer is now empty - we don't have our content 
 Highlight `@Model.Value("footerText")` in the footer and then click the **_Insert > Value.. _** button again.
 This is where all of the options we ignored earlier come into play - choose footerText again from the **_Choose field_** dropdown, but this time we'll check the **_Recursive_** checkbox. 
 
-This tells Umbraco that if the field doesn't exist at the node level for the page we're requesting (e.g. Contact Us) it will look up the content tree (so in our example go to the **_Homepage_** for this content) - this means you could also create a **_footerText_** element at the Contact Us page if you wanted the editor to override the site-wide default but for fields like this it's not normally used.  Click **_Insert_** and you'll see a different bit of Razor is added: `@Model.Value("footerText", fallback: Fallback.ToAncestors)`
+This tells Umbraco that if the field doesn't exist at the node level for the page we're requesting, it will look up the content tree. So in our example go to the **_Homepage_** for this content. This means you could also create a **_footerText_** element at the Contact Us page if you wanted the editor to override the site-wide default but for fields like this it's not normally used.  Click **_Insert_** and you'll see a different bit of Razor is added: `@Model.Value("footerText", fallback: Fallback.ToAncestors)`
 
 Click **_Save_** and reload our Contact Us page. 
 
 ---
 ## Next - [Master Template The Navigation Menu](../Master-Template-The-Navigation-Menu)
-A simple solution for the template in the menu. 
+A solution for the template in the menu. 

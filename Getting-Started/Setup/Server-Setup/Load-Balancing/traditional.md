@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # Traditional (Legacy/Deprecated) load balancing
@@ -38,20 +39,20 @@ An example of how to setup DNS and host headers between 3 load balanced servers:
 
 Server 1
 
-* domain DNS name: server1.mydomain.local
-* internal website DNS name: server1.mywebsite.com (use for IIS host header)
+* Domain DNS name: server1.mydomain.local
+* Internal website DNS name: server1.mywebsite.com (use for IIS host header)
 * IP Address: 192.168.1.10
 
 Server 2
 
-* domain DNS name: server2.mydomain.local
-* internal website DNS name: server2.mywebsite.com (use for IIS host header)
+* Domain DNS name: server2.mydomain.local
+* Internal website DNS name: server2.mywebsite.com (use for IIS host header)
 * IP Address: 192.168.1.11
 
 Server 3
 
-* domain DNS name: server3.mydomain.local
-* internal website DNS name: server3.mywebsite.com (use for IIS host header)
+* Domain DNS name: server3.mydomain.local
+* Internal website DNS name: server3.mywebsite.com (use for IIS host header)
 * IP Address: 192.168.1.12
 
 Of course you'll have your public website's DNS/address which you'll also need to add to the host header for each of your IIS server's websites. For instance, if the public website address is: http://www.mywebsite.com then you'll need to add www.mywebsite.com as a host header to IIS website on each server. This DNS entry will point to the public IP address of your load balancer.
@@ -118,7 +119,7 @@ As of Umbraco 6.2.1+ and 7.1.5+ there are another couple of options to take into
 * If you have your load balancing environment setup with a 'master' server, Umbraco will assume that the **first** server listed in the configuration is the 'master'
 * For scheduled publishing and scheduled tasks to work properly, each server listed needs to know if it is the 'master' server or not. In order to achieve this there are 2 optional attributes for a server configuration node: serverName or appId
 
-**serverName** will be the most common attribute to use and will always work so long as you are not load balancing a single site on the same server. In this case you should add the serverName attribute to each server node listed so that each server knows if it is a master or slave and so that each server knows which internal URL it can use to ping itself. Take not that the serverName must match the machine name otherwise scheduled tasks will not work
+**serverName** will be the most common attribute to use and will always work so long as you are not load balancing a single site on the same server. In this case you should add the serverName attribute to each server node listed.  They way each server knows if it is a master or replica and so that each server knows which internal URL it can use to ping itself. Take not that the serverName must match the machine name otherwise scheduled tasks will not work
 Example:
 
 ```xml

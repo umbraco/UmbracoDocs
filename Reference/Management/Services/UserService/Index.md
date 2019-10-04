@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # UserService
@@ -8,7 +9,7 @@ versionFrom: 7.0.0
 
 The UserService acts as a "gateway" to Umbraco data for operations which are related to Users.
 
-[Browse the API documentation for UserService](https://our.umbraco.org/apidocs/csharp/api/Umbraco.Core.Services.UserService.html).
+[Browse the API documentation for UserService](https://our.umbraco.org/apidocs/v7/csharp/api/Umbraco.Core.Services.UserService.html).
 
  * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`

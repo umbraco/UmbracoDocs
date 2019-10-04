@@ -1,6 +1,5 @@
 ---
 versionFrom: 7.0.0
-versionTo: 8.0.0
 ---
 
 # Tree Actions
@@ -11,7 +10,7 @@ You can set a User's permissions for each item in the Umbraco Content tree from 
 
 If you are developing a custom section, or a custom Dashboard, you might want to display some different options based on a User's permission set on a particular item.
 
-For example, on a custom dashboard you might add a quick 'Create a Blog Post' button for an editor, but only if that editor has permissions to create a blog post, and so you could create some sort of API endpoint, to call from your AngularJS controller, that in turn uses the UserService to return the current user's permissions, and see whether they have the required permission to 'create' within the site's blog section...
+For example, on a custom dashboard you might add a quick 'Create a Blog Post' button for an editor., but only if that editor has permissions to create a blog post. You could create some sort of API endpoint, to call from your AngularJS controller, that in turn uses the UserService to return the current user's permissions. Then you can see whether they have the required permission to 'create' within the site's blog section.
 
 ```csharp
 bool canCreateBlogs = false;
@@ -89,4 +88,4 @@ Here's a list of the current User Permission codes, their alias, whether they ca
 | ®      | create               | False                      | add                 | javascript:actionNewRelationType();                                                                                                     |
 | V      | ActionRestore        | False                      |                     | This action is invoked when the content item is to be restored from the recycle bin                                                     |
 | -      | Action Null          | False                      |                     | This is used internally to assign no permissions to a node for a user and shouldn't be used in code                                     |
-| ,      | ContextMenuSeperator | False                      |                     | Used simply to define context menu separator items. This should not be used directly in any code except for creating menus              |
+| ,      | ContextMenuSeperator | False                      |                     | Used to define context menu separator items. This should not be used directly in any code except for creating menus              |

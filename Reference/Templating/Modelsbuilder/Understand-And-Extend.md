@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # Understand and Extend
@@ -101,7 +102,7 @@ public partial class TextPage
 }
 ```
 
-In modes where models are built within the site (Dll, PureLive) any `*.cs` file in the `~/App_Data/Models` directory that is _not_ a `*.generated.cs` file, is preserved and compiled alongside the models. If models are built outside the site, e.g. in Visual Studio, just remember to include the files in the compilation.
+In modes where models are built within the site (Dll, PureLive) any `*.cs` file in the `~/App_Data/Models` directory that is _not_ a `*.generated.cs` file, is preserved and compiled alongside the models. If models are built outside the site, e.g. in Visual Studio,  remember to include the files in the compilation.
 
 If the custom partial class provides a **constructor** that has the same signature as the generated one, it will be detected and no constructor will be generated (as that would be redundant and would not compile).
 
@@ -149,9 +150,9 @@ Because, by default, the content object is passed to views, one can be tempted t
 
 * A `HomePage` property that would walk up the tree and return the "home page" content item
 * A `Menu` property that would list the content items to display in a top menu
-* etc.
+* Etc.
 
-Generally speaking, anything that is tied to the current request, or that depends on more than just the modeled content, is a bad idea. There are much cleaner solutions, such as using true _view model_ classes that would be populated by a true controller and look like:
+Generally speaking, anything that is tied to the current request, or that depends on more than the modeled content, is a bad idea. There are much cleaner solutions, such as using true _view model_ classes that would be populated by a true controller and look like:
 
 ```csharp
 public class TextPageViewModel

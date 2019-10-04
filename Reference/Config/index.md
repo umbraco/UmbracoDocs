@@ -1,5 +1,6 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.0
+needsV8Update: "true"
 ---
 
 # Configuration Files
@@ -73,11 +74,14 @@ The ClientDependency configuration options can be found on the [ClientDependency
 
 This file can be found at the following path: /config/ClientDependency.config
 
-## log4net.config
+## [SeriLog.config](Serilog/index.md)
 
-The log4net configuration options can be found on the [log4net website](https://logging.apache.org/log4net/release/manual/configuration.html).
+In v8 Serilog is used for logging, use these files to configure this:
 
-This file can be found at the following path: /config/log4net.config
+* `/config/serilog.config` is used to modify the main Umbraco logging pipeline
+* `/config/serilog.user.config` which is a sublogger and allows you to make 
+
+
 
 ## UrlRewriting.config
 

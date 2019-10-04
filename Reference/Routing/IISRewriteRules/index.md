@@ -25,7 +25,7 @@ https://our.umbraco.com/documentation/Reference/Routing/IISRewriteRules
 ```
 
 If you wish to use the rules, be sure that you have the [IIS Rewrite Module](https://www.iis.net/learn/extensions/url-rewrite-module/using-the-url-rewrite-module) 
-installed and uncomment the <rewrite> section. If you don't have the IIS Rewrite module installed, you will get a YSOD.
+installed and uncomment the <rewrite> section. If you don't have the IIS Rewrite module installed, you will get a Yellow Screen Of Death (YSOD).
 
 ## Storing rules in an external file
 

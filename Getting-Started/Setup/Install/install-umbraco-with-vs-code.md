@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # Install Umbraco with Visual Studio Code
 
-Follow these simple steps to be up and running with VS Code quickly and easily. The benefit of using VS Code is that it is super simple to get up and running.
+Follow these steps to be up and running with VS Code quickly. The benefit of using VS Code is that it is super quick to get up and running.
 
 ## Download and Launch VS Code
 
@@ -28,13 +28,13 @@ Follow these simple steps to be up and running with VS Code quickly and easily. 
 ## Umbraco Web Installer
 This section continues from where we left off but covers the installation and configuration of Umbraco inside your web browser when you run Umbraco for the first time.
 
-1. You will see the welcome screen. If you want a fast demo site just fill in the information and click **Install!** If you want to decide the database type, or install without a starter site then click **Customize!**
+1. You will see the welcome screen. If you want a fast demo site fill in the information and click **Install!** If you want to decide the database type, or install without a starter site then click **Customize!**
 
-	![Web Installer - Lets Get Started](images/VsCode/3.png)
+	![Web Installer - Lets Get Started](images/VsCode/Installer-v8.png)
 
 1. When the installer is done you will automatically be logged into the backoffice.
 
-	![Web Installer - Install Complete](images/VsCode/4.png)
+	![Web Installer - Install Complete](images/VsCode/dashboard-v8.png)
 
 1. Celebrate - you're all done!
 

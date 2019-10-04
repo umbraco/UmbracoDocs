@@ -1,5 +1,5 @@
 ---
-versionFrom: "8.0"
+versionFrom: 8.0.0
 product: "CMS"
 complexity: "Intermediate"
 audience: "Package developers"
@@ -15,30 +15,12 @@ Well then this guide, should give you a few pointers to get started with the pro
 ## Upgrade .NET Framework
 Upgrade your Visual Studio C# project to use and compile against the .NET Framework 4.7.2. This is because the minimum to run version 8 of Umbraco requires this specific version of the .NET Framework
 
-## Add Nuget.config file to your solution
-As Umbraco V8 is still in development and not been published to the official Nuget.org feed, then to allow you to easily add references to the Umbraco DLLs in your project.
-
-Add the following `nuget.config` file to the root of your project, for Visual Studio to discover it
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-<!--
-    this is Umbraco's NuGet configuration,
-    content of this file is merged with the system-wide configuration,
-    at %APPDATA%\NuGet\NuGet.config
--->
-<packageSources>
-    <add key="UmbracoCoreMyGet" value="https://www.myget.org/F/umbracocore/api/v3/index.json" />
-    <add key="ExamineAppVeyor" value="https://ci.appveyor.com/nuget/examine-f73l6qv0oqfh/" />
-</packageSources>
-</configuration>
-```
-
 ## Add references via Nuget
-You will need to add `UmbracoCms.Core` via Nuget from the `UmbracoCoreMyGet` feed with the pre-release flag enabled using the UI in Visual Studio or the Nuget Command Line with the following command 
+You will need to add `UmbracoCms.Core` via Nuget using the UI in Visual Studio or the Nuget Command Line with the following command 
 
-    Install-Package UmbracoCms.Core -pre -source https://www.myget.org/F/umbracocore/api/v3/index.json
+```shell
+Install-Package UmbracoCms.Core 
+```
 
 Optionally add reference to `UmbracoCms.Web` if your code uses anything such as `UmbracoApiController` `SurfaceController` then you will need to add the Nuget package reference of `UmbracoCms.Web` which in turn has a reference to `UmbracoCms.Core`
 
@@ -49,7 +31,7 @@ OK now the references have been updated, try and build the solution to see how m
 As long as your Umbraco package was not using ancient APIs and using the new APIs & Services in Umbraco V7 then most of this step will be trying to determine what the new V8 namespace equivalent is.
 
 :::tip
-Clone down the Umbraco CMS source code and checkout the `dev-v8` branch. Use this as a way to try and find that same method that the compiler is complaining about, in its new namespace.
+Clone down the Umbraco CMS source code and checkout the `v8/dev` branch. Use this as a way to try and find that same method that the compiler is complaining about, in its new namespace.
 :::
 
 ## Bye bye ApplicationEventHandler, Hello Composer & Components
@@ -116,7 +98,8 @@ namespace Umbraco.Web.UI
 ```csharp
 using System.Linq;
 using Umbraco.Core;
-using Umbraco.Core.Components;
+using Umbraco.Web;
+using Umbraco.Core.Composing;
 using Umbraco.Core.Events;
 using Umbraco.Core.Models;
 using Umbraco.Core.Services;
@@ -200,7 +183,7 @@ As version 7 and version 8 of Umbraco has breaking changes in its APIs and code,
 If you ship your package as a Nuget package, then you will need to add/update references to the `UmbracoCms.Core` or `UmbracoCms.Web` nupkg from the MyGet feed https://www.myget.org/F/umbracocore/api/v3/index.json
 
 ## Initial testing
-Now you have updated and re-created a new package, it's time to test out your package be it via installing a local Umbraco ZIP package or installing it into a Website project via Nuget. You may have some final tweaking in relation to the UI as some parts of the Umbraco angular directives & components have changed slighlty, so this may require you to tweak some of your Angular views & Javascript accordingly so that it feels more at home in the Umbraco V8 backoffice.
+Now you have updated and re-created a new package, it's time to test out your package be it via installing a local Umbraco ZIP package or installing it into a Website project via Nuget. You may have some final tweaking in relation to the UI as some parts of the Umbraco angular directives & components have changed slighlty. This may require you to tweak some of your Angular views & Javascript accordingly so that it feels more at home in the Umbraco V8 backoffice.
 
 ## Got other suggestions
 Then please edit this documentation on GitHub so the wider Umbraco Package Developer community can benefit from it :)

@@ -8,20 +8,20 @@ This will show the basic steps of creating a form and adding them to your Umbrac
 
 ## Navigate to the Forms section
 
-Managing forms happens in the Forms section of the Umbraco backoffice. You need to have access to the section in order to see it. 
+Managing forms happens in the Forms section of the Umbraco backoffice. You need to have access to the section in order to see it.
 
-![Forms Section](images/FormsSectionV8.png) 
+![Forms Section](images/FormsSectionV8.png)
 
 ## Click the forms tree
 
 Similar to most create actions in the Umbraco backoffice, you'll have to click the ellipses on the forms tree/folder and that will show you the create option.
 
-![Forms tree](FormsTree.png)
+![Forms tree](images/FormsTree.png)
 
 ## Select if you want to start from scratch
 You will see the following dialog
 
-![Forms create dialog](FormsCreateDialog.png)
+![Forms create dialog](images/FormsCreateDialog.png)
 
 You'll have the option to start from scratch or you can choose to start with a template that will already have some fields defined.
 
@@ -48,11 +48,11 @@ First we will need to give our new form a name.
 
 ### Setting the page name (optional)
 
-Simply click the page name in order to change it.
+Click the page name in order to change it.
 
 ![Forms designer page caption](images/FormDesignerPageCaptionV8.png)
 
-To add more pages, simply click **Add new page** at the bottom of the page forms designer.
+To add more pages by clicking **Add new page** at the bottom of the page forms designer.
 
 ### Setting the page group (optional)
 
@@ -60,7 +60,7 @@ As you can give each page a name, you can also name the groups.
 
 ![Forms designer page caption](images/FormDesignerPageGroupV8.png)
 
-To add another group to your form, simply click **Add new group** which you can find at the bottom of each page in the form designer.
+To add another group to your form, click **Add new group** which you can find at the bottom of each page in the form designer.
 
 ### Adding fields
 
@@ -79,7 +79,7 @@ In the dialog you'll also need to choose which type of field or layout element y
 Once the type has been selected, there are a number of additional settings that can be applied to the field:
 
 * Mark whether the field stores **sensitive data**
-    * This will prevent the data from this field from being downloaded and viewed by users who does not have permission to do so. Only members of the sensative data user group will see this option.  
+    * This will prevent the data from this field from being downloaded and viewed by users who does not have permission to do so. Only members of the sensitive data user group will see this option.
 * You can give the field a **default value**
 * Add a **placeholder** to make it easier for the user to fill in the form
 * Mark whether the field is **mandatory**, and customize the message
@@ -93,13 +93,13 @@ Once the type has been selected, and you have added the configuration you want, 
 
 ![Forms field added](images/FormDesignerFieldAddedV8.png)
 
-To edit a field that has already been added to the form, simply click the little *cog* icon next to the field to open the dialog. To delete a field or a group, click the *recycle bin* icon.
+To edit a field that has already been added to the form, click the little *cog* icon next to the field to open the dialog. To delete a field or a group, click the *recycle bin* icon.
 
 ### Structure your form
 
 Once you've added a few fields to your form, you might want to change the order of questions. This can be done by clicking **Reorder** in the top-right corner of the form designer.
 
-When reordering your form, you can simply drag and drop the fields to make it look like you want. Click **I am done reordering** to get back to the form designer.
+When reordering your form, you can drag and drop the fields to make it look like you want. Click **I am done reordering** to get back to the form designer.
 
 ## Saving the form
 

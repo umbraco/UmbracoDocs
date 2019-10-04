@@ -6,7 +6,7 @@ versionTo: 6.2.1
 
 ## Create one or more UserControls
 
-The Dashboard loads one or more UserControls and displays them on a series of tabs. So in order to customize the control, one needs to first create the UserControls that are to be displayed on the page. If these are for your own personal use you can just place the UserControls in a location on your site that can be accessed by Umbraco. It is recommended that you place them in the /usercontrol directory, preferably in your own subfolder. If you are creating a package for others to use, you should include the usercontrols in the package for install with the rest of the package contents.
+The Dashboard loads one or more UserControls and displays them on a series of tabs. So in order to customize the control, one needs to first create the UserControls that are to be displayed on the page. If these are for your own personal use you can place the UserControls in a location on your site that can be accessed by Umbraco. It is recommended that you place them in the /usercontrol directory, preferably in your own subfolder. If you are creating a package for others to use, you should include the usercontrols in the package for install with the rest of the package contents.
 
 ## Update the Dashboard.config
 
@@ -46,4 +46,4 @@ Below is an example of a valid Dashboard.config:
 
 What this does is every time a user clicks on the Content section of the Umbraco UI, it loads a page with three tabs called "Last Edits", "Latest Items" and "Create blog post". For each tab a UserControl is loaded to provide the functionality that the developer created for those tabs. The UI finds the UserControls via the paths provided.
 
-The `showOnce` attribute made it easy to only show a particular user control once.
+The `showOnce` attribute made it possible to only show a particular user control once.

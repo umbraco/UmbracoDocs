@@ -1,15 +1,17 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
+
 
 # Adding configuration to a property editor
 
 ## Overview
-This is step 2 in our guide to building a property editor. This step continues work on the markdown editor we built in [step 1](./), but goes further to show you how you can add configuration options to the editor.
+This is step 2 in our guide to building a property editor. This step continues work on the markdown editor we built in [step 1](index.md), but goes further to show you how you can add configuration options to the editor.
 
 
 ## Configuration?
-An important part of building good property editors is to build something relatively flexible, so you can reuse it many many times, for different things; Like the rich text editor in Umbraco, that allows you to choose which buttons and stylesheets you want to use on each instance of the editor.
+An important part of building good property editors is to build something relatively flexible, so you can reuse it many many times, for different things. Like the Rich Text Editor in Umbraco, that allows you to choose which buttons and stylesheets you want to use on each instance of the editor.
 
 So an editor can be used several times, with different configurations, and that is what we will be working on now.
 
@@ -39,9 +41,9 @@ prevalues: {
 }
 ```
 
-So what did we just add? We added a prevalue editor, with a `fields` collection. This collection contains information about the UI we will render on the data type configuration for this editor.
+So what did we add? We added a prevalue editor, with a `fields` collection. This collection contains information about the UI we will render on the data type configuration for this editor.
 
-So the first one gets the label "Preview" and uses the view "boolean", so this will allow us to turn preview on/off and will provide the user with a simple checkbox. The name "boolean" comes from the convention that all preview editors are stored in `/umbraco/views/prevalueeditors/` and then found via `<name>.html`
+So the first one gets the label "Preview" and uses the view "boolean", so this will allow us to turn preview on/off and will provide the user with a checkbox. The name "boolean" comes from the convention that all preview editors are stored in `/umbraco/views/prevalueeditors/` and then found via `<name>.html`
 
 Same with the next one, only that it will provide the user with a textarea to input a default value for the editor.
 

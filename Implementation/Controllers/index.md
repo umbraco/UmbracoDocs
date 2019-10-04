@@ -84,4 +84,4 @@ There are a few properties that exist for the attribute to give you more control
 
 ### Routing
 
-For details on the routes and route requirements regarding authentication see [Routing for authentication](../../Reference/Routing/Authorized/index.md)
+For details on the routes and route requirements regarding authentication see [Routing for authentication](../../Reference/Routing/Authorized/index.md) and for authorization in API controllers see [Umbraco API authorization](../../Reference/Routing/WebApi/authorization).

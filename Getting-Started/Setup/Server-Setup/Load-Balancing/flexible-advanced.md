@@ -1,5 +1,5 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.2
 ---
 
 # Advanced techniques with Flexible Load Balancing
@@ -8,16 +8,13 @@ _This describes some more advanced techniques that you could achieve with flexib
 
 ## Explicit Master Scheduling server
 
-It is recommended to configure an explicit master scheduling server since this reduces the amount 
+It is recommended to configure an explicit master scheduling server since this reduces the amount
 complexity that the [master election](flexible.md#scheduling-and-master-election) process performs.
-
-This is configurable and in order to do this you will need to have separate application startup handlers
-for your front-end servers and your admin server... you can make this a configuration option in your own code.
 
 The first thing to do is create a couple classes for your front-end servers and master server to use:
 
 ```csharp
-public class MasterServerRegistrar : IServerRegistrar2
+public class MasterServerRegistrar : IServerRegistrar
 {
     public IEnumerable<IServerAddress> Registrations
     {
@@ -30,7 +27,7 @@ public class MasterServerRegistrar : IServerRegistrar2
     public string GetCurrentServerUmbracoApplicationUrl()
     {
         // NOTE: If you want to explicitly define the URL that your application is running on,
-        // this will be used for the server to communicate with itself, you can return the 
+        // this will be used for the server to communicate with itself, you can return the
         // custom path here and it needs to be in this format:
         // http://www.mysite.com/umbraco
 
@@ -38,16 +35,16 @@ public class MasterServerRegistrar : IServerRegistrar2
     }
 }
 
-public class FrontEndReadOnlyServerRegistrar : IServerRegistrar2
+public class FrontEndReadOnlyServerRegistrar : IServerRegistrar
 {
     public IEnumerable<IServerAddress> Registrations
     {
         get { return Enumerable.Empty<IServerAddress>(); }
-    }        
+    }
     public ServerRole GetCurrentServerRole()
     {
-        return ServerRole.Slave;
-    }        
+        return ServerRole.Replica;
+    }
     public string GetCurrentServerUmbracoApplicationUrl()
     {
         return null;
@@ -55,70 +52,73 @@ public class FrontEndReadOnlyServerRegistrar : IServerRegistrar2
 }
 ```
 
-then you'll need to swap the default `DatabaseServerRegistrar` for the your custom registrars during application startup.
-You'll need to create an [ApplicationEventHandler](../../../../Reference/Events/Application-Startup.md) and override `ApplicationStarting`. 
-During this event you can swap the registrar objects:
+then you'll need to replace the default `DatabaseServerRegistrar` for the your custom registrars.
+You'll need to create an [Composer](../../../../Implementation/Composing/index.md) to set the server registrar
 
 ```csharp
 // This should be executed on your master server
-ServerRegistrarResolver.Current.SetServerRegistrar(new MasterServerRegistrar());
+public void Compose(Composition composition)
+{
+    composition.SetServerRegistrar(new MasterServerRegistrar());
+}
 
-// This should be executed on your slave servers
-ServerRegistrarResolver.Current.SetServerRegistrar(new FrontEndReadOnlyServerRegistrar());
+// This should be executed on your replica servers
+public void Compose(Composition composition)
+{
+    composition.SetServerRegistrar(new FrontEndReadOnlyServerRegistrar());
+}
 ```
 
-Now that your front-end servers are using your custom `FrontEndReadOnlyServerRegistrar` class, they will always be deemed 'Slave' servers and will not 
-attempt any master election or task scheduling.
+Now that your front-end servers are using your custom `FrontEndReadOnlyServerRegistrar` class, they will always be deemed 'Replica' servers and will not attempt any master election or task scheduling.
 
-By setting your master server to use your custom `MasterServerRegistrar` class, it will always be deemed the 'Master' and will always be the one that 
-executes all task scheduling.
+By setting your master server to use your custom `MasterServerRegistrar` class, it will always be deemed the 'Master' and will always be the one that executes all task scheduling.
 
 ## Front-end servers - Read-only database access
 
-_This description pertains ONLY to Umbraco database tables_
+:::note
+This description pertains ONLY to Umbraco database tables
+:::
 
-In some cases infrastructure admins will not want their front-end servers to have write access to the database. 
+In some cases infrastructure admins will not want their front-end servers to have write access to the database.
 By default front-end servers will require write full access to the following tables:
 
-* umbracoServer
-* umbracoNode
+* `umbracoServer`
+* `umbracoNode`
 
 This is because by default each server will inform the database that they are active and more importantly it is
-used for task scheduling. Only a single server can execute task scheduling and these tables are used for servers 
+used for task scheduling. Only a single server can execute task scheduling and these tables are used for servers
 to use a master server election process without the need for any configuration. So in the case that a front-end
-server becomes the master task scheduler, **it will actually require write access to all of the Umbraco tables**.
+server becomes the master task scheduler, **it will require write access to all of the Umbraco tables**.
 
 In order to have read-only database access configured for your front-end servers, you need to implement
 the [Explicit master scheduling server](#explicit-master-scheduling-server) configuration mentioned above.
 
-Now that your front-end servers are using your custom `FrontEndReadOnlyServerRegistrar` class, they will always be deemed 'Slave' servers and will not 
-attempt any master election or task scheduling and because you are no longer using the default `DatabaseServerRegistrar` they will not try to ping
-the umbracoServer table.
+Now that your front-end servers are using your custom `FrontEndReadOnlyServerRegistrar` class, they will always be deemed 'Replica' servers and will not attempt any master election or task scheduling. Because you are no longer using the default `DatabaseServerRegistrar` they will not try to ping the umbracoServer table.
 
 ## Controlling how often the load balancing instructions from the database are processed and pruned
 
 During start up the `DatabaseServerMessengerOptions` can be adjusted to control how often the load balancing instructions from the database are processed and pruned.
 
-e.g. This example should be added within a [`ApplicationStarting`](../../../../Reference/Events/Application-Startup.md#startup-methods) event
+You'll need to create an [Composer](../../../../Implementation/Composing/index.md) to set the messenger options
 
 ```csharp
-ServerMessengerResolver.Current.SetServerMessenger(
-    new BatchedDatabaseServerMessenger(
-        applicationContext,
-        true,
-        new DatabaseServerMessengerOptions()
-        {
-            DaysToRetainInstructions = 2, // 2 days
-            ThrottleSeconds = 5, // 5 second
-            MaxProcessingInstructionCount = 1000,
-            PruneThrottleSeconds = 60 // 1 minute
-        }
-    )
-);
+public void Compose(Composition composition)
+{
+    composition.SetDatabaseServerMessengerOptions(factory =>
+    {
+        var options = DatabaseServerRegistrarAndMessengerComposer.GetDefaultOptions(factory);
+        options.DaysToRetainInstructions = 10;
+        options.MaxProcessingInstructionCount = 1000;
+        options.ThrottleSeconds = 25;
+        options.PruneThrottleSeconds = 60;
+        return options;
+    });
+}
 ```
 
-Parameters:
-- DaysToRetainInstructions - The number of days to keep instructions in the database; records older than this number will be pruned.
-- MaxProcessingInstructionCount - The maximum number of instructions that can be processed at startup; otherwise the server cold-boots (rebuilds its caches)
-- ThrottleSeconds  - The number of seconds to wait between each sync operations
-- PruneThrottleSeconds - The number of seconds to wait between each prune operation
+Options:
+
+* DaysToRetainInstructions - The number of days to keep instructions in the database; records older than this number will be pruned.
+* MaxProcessingInstructionCount - The maximum number of instructions that can be processed at startup; otherwise the server cold-boots (rebuilds its caches)
+* ThrottleSeconds - The number of seconds to wait between each sync operations
+* PruneThrottleSeconds - The number of seconds to wait between each prune operation

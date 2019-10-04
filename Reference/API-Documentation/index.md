@@ -1,5 +1,5 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.0
 ---
 
 # API Documentation
@@ -10,8 +10,8 @@ A library of API Reference documentation is auto-generated from the comments wit
 
 C# API references for the Umbraco Core and Web libraries.
 
-### [Umbraco.Core](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Core.html)
-### [Umbraco.Web](https://our.umbraco.com/apidocs/csharp/api/Umbraco.Web.html)
+### [Umbraco.Core](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.html)
+### [Umbraco.Web](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Web.html)
 
 __Note: opens a documentation browser that is different from the documentation section you're viewing now.__
 
@@ -19,11 +19,11 @@ __Note: opens a documentation browser that is different from the documentation s
 
 Angular, JavaScript, CSS & Less UI API references for building Umbraco backoffice components.
 
-- umbraco.directives
-- umbraco.services
-- umbraco.resources
+- The umbraco.directives
+- The umbraco.services
+- The umbraco.resources
 
-### [Backoffice UI](https://our.umbraco.com/apidocs/ui/#/api/)
+### [Backoffice UI](https://our.umbraco.com/apidocs/v8/ui/#/api/)
 
 __Note: opens a documentation browser that is different from the documentation section you're viewing now.__
 

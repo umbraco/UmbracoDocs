@@ -11,7 +11,7 @@ Extend Umbraco with the form builder section in a few steps
 Getting Forms out of trial mode
 
 ## [Keeping Forms up to date](Upgrade.md)
-Simple upgrade instructions
+Upgrade Forms by clicking one button.
 
 ## [Manually upgrading Forms](ManualUpgrade-v7.md)
 Manual upgrade instructions

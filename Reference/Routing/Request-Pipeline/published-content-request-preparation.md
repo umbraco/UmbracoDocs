@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # Published Content Request Preparation
@@ -20,6 +21,7 @@ What it does:
 - Forwards to either WebForms or MVC
 
 ## PrepareRequest
+
 The ProcessRequest method calls the PublishedContentRequestEngine.PrepareRequest method. The prepare request takes care of:
 
 - FindDomain()
@@ -35,6 +37,7 @@ The ProcessRequest method calls the PublishedContentRequestEngine.PrepareRequest
 We will discuss a few of these steps below.
 
 ### FindDomain()
+
 The FindDomain method looks for a domain matching the request Uri
 
 - Using a greedy match: “domain.com/foo” takes over “domain.com”
@@ -47,6 +50,7 @@ The FindDomain method looks for a domain matching the request Uri
 (first language, else system)
 
 ### FindPublishedContentAndTemplate()
+
 1. FindPublishedContent ()
 2. Handles redirects
 3. HandlePublishedContent()
@@ -105,17 +109,19 @@ As a reminder, [Route hijacking](../../../Reference/routing/custom-controllers) 
 - Otherwise default (Index) action runs
 
 ## Missing template?
+
 In case the PrepareRequest can not find a template:
 
-* it will verify if this is route hijacking
-* otherwise handles these steps:
-  *  HandlePublishedContent()
-  * FindTemplate()
-  * Handle redirects, etc.
-  * Ugly 404 (w/ message)
-  * Transfer to WebForms or MVC…
+- It will verify if this is route hijacking
+- Otherwise handles these steps:
+  - HandlePublishedContent()
+  - FindTemplate()
+  - Handle redirects, etc.
+  - Ugly 404 (w/ message)
+  - Transfer to WebForms or MVC…
 
 ## Other things which got routed in the process
-* The /Base Rest service
-* WebApi
-* Mvc Routes
+
+- The /Base Rest service
+- WebApi
+- Mvc Routes

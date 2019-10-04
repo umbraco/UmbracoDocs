@@ -1,19 +1,20 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # Retrieving content types
 
 ## Getting a single content type container
 
-Content types can be added either at the root level, under another content type or under a content type container (or folders as they're called in the Umbraco backoffice). The approach for getting a single container is similar to getting a single content type, meaning that you can look up a container - either by it's numeric ID:
+Content types can be added either at the root level, under another content type or under a content type container (or folders as they're called in the Umbraco backoffice). The approach for getting a single container is similar to getting a single content type, meaning that you can look up a container - either by its numeric ID:
 
 ```C#
 // Get a container by its numeric ID
 EntityContainer container = contentTypeService.GetContentTypeContainer(1090);
 ```
 
-or it's GUID conterpart:
+or its GUID conterpart:
 
 ```C#
 // Declare the GUID ID

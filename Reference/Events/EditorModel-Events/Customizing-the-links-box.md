@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # Customizing the "Links" box
@@ -25,7 +26,7 @@ EditorModelEventManager.SendingContentModel += (sender, e) => {
 or remove the box entirely by providing an empty list of links:
 
 :::tip
-Versions prior to Umbraco 7.13 don't support hiding the **Links** box, and as a result, the example below will just lead to an empty box.
+Versions prior to Umbraco 7.13 don't support hiding the **Links** box, and as a result, the example below will lead to an empty box.
 :::
 
 ```C#

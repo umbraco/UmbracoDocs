@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # Partial View Macros
 
 _Partial view macros are the recommended macro type to use in Umbraco. They work in both MVC and Webforms and use the unified query syntax that is available via the `UmbracoHelper`_
@@ -23,7 +28,7 @@ However if you are bundling up Partial View Macros as part of a package, they ca
 
 > ~/App_Plugins/[YourPackageName]/Views/MacroPartials
 
-Since Partial View Macros are just a normal MVC partial view, their file extension is **cshtml**. All Partial View Macro views inherit from the view class
+Since Partial View Macros are a normal MVC partial view, their file extension is **cshtml**. All Partial View Macro views inherit from the view class
 
 ```csharp
 Umbraco.Web.Macros.PartialViewMacroPage
