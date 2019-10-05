@@ -7,13 +7,13 @@ meta.Title: "How to port packages from Umbraco v7 to Umbraco v8"
 meta.Description: "This guide will tell you how you can turn your Umbraco v7 package into an Umbraco v8 package"
 ---
 # Porting packages to V8
-This is not a definitive guide for all scenarios and more of a working document and will evolve over time, especially whilst V8.0.0 is in development and things in this guide may change.
+This is not a definitive guide for all scenarios but more of a working document which will evolve over time, especially as V8 matures. Due to this, please keep in mind that things in this guide may change.
 
-So you have a useful Umbraco package built for V7 and you would like to see it, work for V8?
-Well then this guide, should give you a few pointers to get started with the process and is mostly geared towards solutions that use C#
+You have a useful Umbraco package built for V7 and you would like to see it work for V8?
+This guide should give you a few pointers to get you started with the process and is mostly geared towards solutions that use C#.
 
 ## Upgrade .NET Framework
-Upgrade your Visual Studio C# project to use and compile against the .NET Framework 4.7.2. This is because the minimum to run version 8 of Umbraco requires this specific version of the .NET Framework
+Upgrade your Visual Studio C# project to use and compile against the .NET Framework 4.7.2. This is because the minimum .NET Framework to run version 8 of Umbraco requires this specific version.
 
 ## Add references via Nuget
 You will need to add `UmbracoCms.Core` via Nuget using the UI in Visual Studio or the Nuget Command Line with the following command 
@@ -22,20 +22,24 @@ You will need to add `UmbracoCms.Core` via Nuget using the UI in Visual Studio o
 Install-Package UmbracoCms.Core 
 ```
 
-Optionally add reference to `UmbracoCms.Web` if your code uses anything such as `UmbracoApiController` `SurfaceController` then you will need to add the Nuget package reference of `UmbracoCms.Web` which in turn has a reference to `UmbracoCms.Core`
+Optionally add a reference to `UmbracoCms.Web` if your code uses things like `UmbracoApiController` or `SurfaceController`. You will need to add the Nuget package reference of `UmbracoCms.Web` which in turn has a reference to `UmbracoCms.Core`
+
+```shell
+Install-Package UmbracoCMS.Web
+```
 
 ## Try & build the solution
-OK now the references have been updated, try and build the solution to see how many errors pop up.
+OK now the references have been updated, try and build the solution to see if any errors pop up.
 
 ## Fix up compile errors
-As long as your Umbraco package was not using ancient APIs and using the new APIs & Services in Umbraco V7 then most of this step will be trying to determine what the new V8 namespace equivalent is.
+As long as your Umbraco package was not using outdated APIs and is using the new APIs & Services in Umbraco V7 then most of this step will be trying to determine what the new V8 namespace equivalent is.
 
 :::tip
-Clone down the Umbraco CMS source code and checkout the `v8/dev` branch. Use this as a way to try and find that same method that the compiler is complaining about, in its new namespace.
+Clone down the Umbraco CMS source code and checkout the `v8/dev` branch. Use this as a way to try and find the same method that the compiler is complaining about in its new namespace.
 :::
 
 ## Bye bye ApplicationEventHandler, Hello Composer & Components
-The common thing that most package developers and Umbraco developers use in their projects is an `ApplicationEventHandler` to do some logic at the startup of Umbraco or to register event listeners based on Umbraco events such as ContentService.Saved etc.
+A common thing that most package developers and Umbraco developers use in their projects is an `ApplicationEventHandler` to do some logic at the startup of Umbraco or to register event listeners based on Umbraco events such as ContentService.Saved etc.
 
 In Umbraco version 8 this has been removed and replaced with Composer & Components.
 
@@ -162,7 +166,7 @@ namespace MyProject.Components
 
 
 ## Update package.xml for Umbraco ZIP packages
-As version 7 and version 8 of Umbraco has breaking changes in its APIs and code, its recommended to ship a different version of your package to support V8 only. So update the package.xml in your Umbraco package zip to use the 8.0.0 version like so.
+As version 7 and version 8 of Umbraco have breaking changes in their APIs and code, it's recommended to ship a different version of your package to support V8 only. You'll need to update the package.xml in your Umbraco package zip to use the 8.0.0 version like so.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -185,5 +189,3 @@ If you ship your package as a Nuget package, then you will need to add/update re
 ## Initial testing
 Now you have updated and re-created a new package, it's time to test out your package be it via installing a local Umbraco ZIP package or installing it into a Website project via Nuget. You may have some final tweaking in relation to the UI as some parts of the Umbraco angular directives & components have changed slighlty. This may require you to tweak some of your Angular views & Javascript accordingly so that it feels more at home in the Umbraco V8 backoffice.
 
-## Got other suggestions
-Then please edit this documentation on GitHub so the wider Umbraco Package Developer community can benefit from it :)
