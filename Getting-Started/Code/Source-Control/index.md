@@ -21,8 +21,8 @@ There are lots of different possible variations within your working environment 
 - Working with a team of developers,
 - How you have installed Umbraco,
 - How your development environment is setup,
-- Source control repository
-- And also how you intend to build and deploy your solution to your target production environment (build servers, Web Deploy or good old FTP etc)
+- Source control repository,
+- And also how you intend to build and deploy your solution to your target production environment (build servers, Web Deploy or good old FTP etc).
 
 This documentation can't be an exhaustive list of how to version control Umbraco in all possible scenarios. Hopefully it will give you an insight into the anatomy of how an Umbraco website hangs together and therefore which parts to include in version control and which parts not to.
 
@@ -62,7 +62,7 @@ They include:
 - `Umbraco.sdf` - If you are using SQLCE for the data store in your Umbraco site, then this file IS that datastore, it will be difficult to source control the constant changes to this file.
 
 :::note
-There is a file `/App_Data/packages/installed/installedPackages.config` that lists all packages installed via the Umbraco backoffice, depending on how you update or install packages to your site, it can be useful to track changes to this file in source control
+There is a file `/App_Data/packages/installed/installedPackages.config` that lists all packages installed via the Umbraco backoffice, depending on how you update or install packages to your site, it can be useful to track changes to this file in source control.
 :::
 
 #### Umbraco Models Builder
@@ -86,7 +86,7 @@ The **App_Plugins** folder is the home for all third party packages installed on
 Depending on how you installed the plugin it will affect how you choose to version control a particular third party plugin:
 
 - **NuGet** - if the plugin is installed via NuGet then as long as the packages.config file in the root of your project is source controlled, then the installed files for individual plugins shouldn't need to be source controlled (and your deployment process should pull the packages implementation files from NuGet during the build and deployment process).
-- **Backoffice** - if your working with other developers, then it may be easier to add the plugin files to source control, or at least communicate to them that the particular package needs be installed via the backoffice
+- **Backoffice** - if your working with other developers, then it may be easier to add the plugin files to source control, or at least communicate to them that the particular package needs be installed via the backoffice.
 - **Backoffice + Buildserver** - you'll need to include the plugin files in source control as the build server won't know to restore them - if the plugin/package doesn't come with a NuGet resource, consider setting up your own local NuGet repository for your build server to pull the files from.
 
 :::note

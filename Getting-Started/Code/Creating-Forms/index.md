@@ -87,7 +87,7 @@ namespace MyFirstForm.Controllers
 }
 ```
 
-If the model state is invalid, `CurrentUmbracoPage()` will send the user back to the form. If valid, you can work with the form data (e.g. sending an email to site admin) and then `RedirectToCurrentUmbracoPage();`
+If the model state is invalid, `CurrentUmbracoPage()` will send the user back to the form. If valid, you can work with the form data. (e.g. sending an email to site admin) and then `RedirectToCurrentUmbracoPage();`
 
 ## Adding the form to a template
 You can add the form to a template by rendering the partial view:

@@ -124,7 +124,7 @@ There are four options to add a new media items to the folder, as you can see he
 ![Uploading Media](images/four-ways-of-uploading.png)
 
 :::tip
-Remember you can uncheck the __Allow at root__ option on the __Employee images__ Media Type to prevent editors from creating multiple folders of this type. This will not affect created folders, only disable the creation of new ones
+Remember you can uncheck the __Allow at root__ option on the __Employee images__ Media Type to prevent editors from creating multiple folders of this type. This will not affect created folders, only disable the creation of new ones.
 :::
 
 ### Cropping the images

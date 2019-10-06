@@ -57,7 +57,7 @@ Example tour configuration object :
 }
 ```
 
-Below is an explanation of each of the properties on the tour configuration object
+Below is an explanation of each of the properties on the tour configuration object:
 
 ### name
 
@@ -128,13 +128,13 @@ This the title shown on the tour step.
 
 ### content
 
-This text will be shown on the tour step, it can contain HTML markup
+This text will be shown on the tour step, it can contain HTML markup.
 
 ![Tour content highlighted](images/stepcontent.png)
 
 ### type
 
-The type of step. Currently, only one type is supported : "intro". This will center the step and show a "Start tour" button
+The type of step. Currently, only one type is supported : "intro". This will center the step and show a "Start tour" button.
 
 ### element
 
