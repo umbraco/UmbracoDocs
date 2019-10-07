@@ -105,7 +105,7 @@ Notice how we're not adding any spaces or carriage returns before the `<urlset>`
 
 We're going to start at the site homepage, and since our XmlSiteMap page is created underneath this page, we can use the 'Site()' helper to find the starting point for the sitemap as IPublishedContent.
 
-`IPublishedContent siteHomePage = Model.Content.Site();`
+`IPublishedContent siteHomePage = Model.Root();`
 
 ### Rendering a site map entry
 
@@ -230,7 +230,7 @@ Let's update our template to call this recursive helper:
 @{
     Layout = null;
     Response.ContentType = "text/xml";
-    IPublishedContent siteHomePage = Model.Content.Site(); 
+    IPublishedContent siteHomePage = Model.Root();
     }
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">@RenderSiteMapUrlEntry(siteHomePage)@RenderSiteMapUrlEntriesForChildren(siteHomePage)</urlset>
 ```
@@ -269,7 +269,7 @@ What if we only want to restrict 'how deep' the sitemap should go?
 If we add to our XmlSiteMap document type a new property of numeric type called 'maxSiteMapDepth'... we can use that value to determine when to stop iterating:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
     Layout = null;
     Response.ContentType = "text/xml"; 
