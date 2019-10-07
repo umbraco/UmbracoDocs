@@ -1,6 +1,7 @@
 ---
 versionFrom: 7.0.0
 needsV8Update: "true"
+product: "CMS"
 meta.Title: "Creating a Custom Dashboard"
 meta.Description: "A guide to creating a custom dashboard in Umbraco"
 ---

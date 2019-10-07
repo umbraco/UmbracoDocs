@@ -1,6 +1,7 @@
 ---
 versionFrom: 7.0.0
 needsV8Update: "true"
+product: "CMS"
 ---
 
 # Custom routing in Umbraco
