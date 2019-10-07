@@ -1,11 +1,11 @@
+# Getting Started with Umbraco
+*All the basics of using Umbraco. From making a local installation to extending the backend.*
+
 ---
 meta.Title: "All the basics of using Umbraco"
 meta.Description: "This section shows you some beginner tools and information to get your started with Umbraco 8. From making a local installation to extending the backoffice."
 versionFrom: 7.0.0
 ---
-
-# Getting Started with Umbraco
-*All the basics of using Umbraco. From making a local installation to extending the backend.*
 
 The newest major version of Umbraco comes with a lot of new big features, as well as a long list of general improvements to the CMS in general.
 
