@@ -63,4 +63,4 @@ Note that the rule includes an ignore for `localhost`. If you run your local env
 
 *In HTTPS, the communication protocol is encrypted using Transport Layer Security (TLS), or, formerly, its predecessor, Secure Sockets Layer (SSL)* - [wikipedia](https://en.wikipedia.org/wiki/HTTPS)
 
-While the deprecated SSL (2.0 and 3.0) are not supported anymore by modern browsers, some of the Umbraco configuration still uses SSL. But rest assured, that is only the name. The Umbraco team takes security serious since ages, but no-one ever thought of changing name of the setting.
+While the deprecated SSL (2.0 and 3.0) are not supported anymore by modern browsers, some of the Umbraco configuration still uses SSL. But rest assured, that is **only** the name.
