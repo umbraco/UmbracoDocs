@@ -187,5 +187,5 @@ As version 7 and version 8 of Umbraco have breaking changes in their APIs and co
 If you ship your package as a Nuget package, then you will need to add/update references to the `UmbracoCms.Core` or `UmbracoCms.Web` nupkg from the MyGet feed https://www.myget.org/F/umbracocore/api/v3/index.json
 
 ## Initial testing
-Now you have updated and re-created a new package, it's time to test out your package be it via installing a local Umbraco ZIP package or installing it into a Website project via Nuget. You may have some final tweaking in relation to the UI as some parts of the Umbraco angular directives & components have changed slighlty. This may require you to tweak some of your Angular views & Javascript accordingly so that it feels more at home in the Umbraco V8 backoffice.
+Now you have updated and re-created a new package, it's time to test out your package be it via installing a local Umbraco ZIP package or installing it into a Website project via Nuget. You may have some final tweaking in relation to the UI as some parts of the Umbraco angular directives & components have changed slighlty. This may require you to tweak some of your Angular views & Javascript accordingly so that it feels more at home in the Umbraco 8 backoffice.
 
