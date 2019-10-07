@@ -1,5 +1,7 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "Development Guidelines"
+meta.Description: "A guide to developing in umbraco core codebase"
 ---
 
 # Development Guidelines
