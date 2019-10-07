@@ -144,7 +144,7 @@ The multinode treepicker data type allows content editors to choose multiple nod
 
 Made obsolete with the release of Umbraco v7.6 the multinode treepicker data type allows content editors to choose multiple nodes in the content or media trees.
 
-## [Multiple Textbox](Multiple-Textbox.md)
+## [Multiple Textbox](Multiple-Textbox/index-v7.md)
 `Alias: Umbraco.MultipleTextstring`
 
 The Multiple Textbox property editor enables a content editor to make a list of text items
