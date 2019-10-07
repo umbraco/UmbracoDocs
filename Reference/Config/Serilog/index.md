@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Serilog Config
 
-Serilog can be configured and extended by using the two XML configuration files on disk. 
+Serilog can be configured and extended by using the two XML configuration files on disk.
 
 * `/config/serilog.config` is used to modify the main Umbraco logging pipeline
 * `/config/serilog.user.config` which is a sublogger and allows you to make modifications without affecting the main Umbraco logger

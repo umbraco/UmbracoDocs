@@ -51,11 +51,11 @@ eg:
 <ExamineLuceneIndexSets>
   <IndexSet SetName="favouriteThingsIndexSet" IndexPath="~/App_Data/TEMP/ExamineIndexes/favouriteThings/">
     <IndexUserFields>
-      <add Name="favouriteThingTitle" />
-      <add Name="favouriteThingDescription" />
+    <add Name="favouriteThingTitle" />
+    <add Name="favouriteThingDescription" />
     </IndexUserFields>
     <IncludeNodeTypes>
-      <add Name="favThings" />
+    <add Name="favThings" />
     </IncludeNodeTypes>
   </IndexSet>
 </ExamineLuceneIndexSets>
@@ -71,7 +71,7 @@ Available Types are: NUMBER, INT, FLOAT, DOUBLE, LONG, DATE, DATETIME, DATE.YEAR
 
 To specify the type of a field, add a Type attribute to its specification in the IndexUserFields list
 
-eg: 
+eg:
 
 ```xml
 <add Name="favouriteThingDateCreated" Type="DATETIME" />

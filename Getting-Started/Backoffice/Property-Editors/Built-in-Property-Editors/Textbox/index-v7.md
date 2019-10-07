@@ -37,9 +37,9 @@ Textbox is an HTML input control for text. It can be configured to have a fixed 
 
 ```csharp
 @{
-   if (Model.Content.HasValue("pageTitle")){
-       <p>@(Model.Content.GetPropertyValue<string>("pageTitle"))</p>
-   }
+    if (Model.Content.HasValue("pageTitle")){
+        <p>@(Model.Content.GetPropertyValue<string>("pageTitle"))</p>
+    }
 }
 ```
 
@@ -49,9 +49,9 @@ Textbox is an HTML input control for text. It can be configured to have a fixed 
 See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
 
 ```csharp
-@{       	
-   if (CurrentPage.HasValue("pageTitle")){	
-       <p>@CurrentPage.pageTitle</p>	
-   } 	       	
+@{
+    if (CurrentPage.HasValue("pageTitle")){
+        <p>@CurrentPage.pageTitle</p>
+    }
 }
 ```

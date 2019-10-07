@@ -9,7 +9,7 @@ needsV8Update: "true"
 
 Adding an XML sitemap to your site makes it easier for search engine's such as Google to find and index your site pages. Your friendly SEO consultancy will recommend you have a google site map for 'better SEO'.
 
-There isn't an 'out of the box' XML sitemap generator with Umbraco. This tutorial will show you how to create one. 
+There isn't an 'out of the box' XML sitemap generator with Umbraco. This tutorial will show you how to create one.
 
 If you are in a hurry, there are some Umbraco Packages that will do the job for you:
 
@@ -70,7 +70,7 @@ Create the XmlSiteMapSettings composition (Document Type Without Template) with 
 
 - __Search Engine Relative Priority__ - Slider - MinValue: 0.1, MaxValue: 1, Step Increments 0.1, InitialValue 0.5
     (Relative priority of this page between 0.1 and 1.0, where 1.0 is the most important page on the site and 0.1 isn't)
-- __Search Engine Change Frequency__ - Dropdown - always, hourly, daily, weekly, monthly, yearly, never 
+- __Search Engine Change Frequency__ - Dropdown - always, hourly, daily, weekly, monthly, yearly, never
 (How often the content of this page changes, for google site map, if left blank will inherit the setting for the section)
 - __Hide From Xml Sitemap__ (hideFromXmlSitemap) - checkbox.
 
@@ -382,6 +382,6 @@ Visit [Xml-Sitemaps.com](https://www.xml-sitemaps.com/validate-xml-sitemap.html)
 
 #### Summary
 
-This is one way to add an XML Sitemap to your site, depending on your site it might not always be the 'best way' eg it will be much faster using XSLT. Particularly for large sites. 
+This is one way to add an XML Sitemap to your site, depending on your site it might not always be the 'best way' eg it will be much faster using XSLT. Particularly for large sites.
 
 This tutorial aims to serve as an introduction to Razor, Helpers, Functions, IPublishedContent, and working with the Umbraco Content Tree. It is not trying to establish the 'only best practice' way to achieve an Xml SiteMap.

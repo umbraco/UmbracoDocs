@@ -16,11 +16,11 @@ Follow these steps to be up and running with VS Code quickly. The benefit of usi
 
 1. Click the extensions menu at the bottom on the left side. Then search for **IIS Express**, install it then press reload.
 
-	![VS Code install extension](images/VsCode/1.png)
+    ![VS Code install extension](images/VsCode/1.png)
 
 1. Download a fresh Umbraco installation from  [https://our.umbraco.com/download/](https://our.umbraco.com/download/) then unzip and drag it into VS Code.
 
-	![Fresh Umbraco installation](images/VsCode/2.png)
+    ![Fresh Umbraco installation](images/VsCode/2.png)
 
 1. To launch the site press **CTRL+F5**, this will open a local version of Umbraco in your standard browser.
 
@@ -30,11 +30,11 @@ This section continues from where we left off but covers the installation and co
 
 1. You will see the welcome screen. If you want a fast demo site fill in the information and click **Install!** If you want to decide the database type, or install without a starter site then click **Customize!**
 
-	![Web Installer - Lets Get Started](images/VsCode/Installer-v8.png)
+    ![Web Installer - Lets Get Started](images/VsCode/Installer-v8.png)
 
 1. When the installer is done you will automatically be logged into the backoffice.
 
-	![Web Installer - Install Complete](images/VsCode/dashboard-v8.png)
+    ![Web Installer - Install Complete](images/VsCode/dashboard-v8.png)
 
 1. Celebrate - you're all done!
 

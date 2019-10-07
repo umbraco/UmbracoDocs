@@ -16,11 +16,11 @@ Probably not! In most cases including the custom files (and configuration) is en
 
 ## I press the “Deploy to Staging/Live” button, then nothing happens.  What’s going on?
 
-Umbraco Cloud uses web sockets to communicate between your browser session and the remote environment.  
+Umbraco Cloud uses web sockets to communicate between your browser session and the remote environment.
 
 For the following scenarios you may find that deployments (and other operations) do not complete succesfully. At this time there is not a workaround to this requirement.
 * If your connection to the internet doesn’t support web sockets
-* You are behind a proxy server or firewall that blocks web sockets, or 
+* You are behind a proxy server or firewall that blocks web sockets, or
 * If the web socket connection is in any other way not supported
 
 ## I have a package.json file in the root of my website and my deploys keep failing
@@ -31,7 +31,7 @@ With the package.json file in place, our service will take that to mean: "Look, 
     SCM_SCRIPT_GENERATOR_ARGS = --basic
     POST_DEPLOYMENT_ACTIONS_DIR = C:\KuduService\artifacts\
 
-So the addition here is the line that says `SCM_SCRIPT_GENERATOR_ARGS = --basic`.   
+So the addition here is the line that says `SCM_SCRIPT_GENERATOR_ARGS = --basic`.
 Rest assured: This problem is on our list to fix as soon as possible but for now you can use this workaround.
 
 ## User: username@domain.net could not be authenticated at xxx

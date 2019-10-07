@@ -14,15 +14,15 @@ For example, on a custom dashboard you might add a quick 'Create a Blog Post' bu
 
 ```csharp
 bool canCreateBlogs = false;
-var us = Services.UserService; 
+var us = Services.UserService;
 var user = us.GetByEmail(email);
 var userPermissionsForBlog = us.GetPermissions(user, blogId);
 foreach (var permission in userPermissionsForBlog)
 {
-	if (permission.AssignedPermissions.Contains("C"))
-	{
-		canCreateBlogs = true;
-	}
+    if (permission.AssignedPermissions.Contains("C"))
+    {
+        canCreateBlogs = true;
+    }
 }
 ```
 
@@ -33,16 +33,16 @@ Each tree action in Umbraco implements the IAction interface, and each Action ha
 ```csharp
 public interface IAction : IDiscoverable
 {
-	char Letter {get;}
-	bool ShowInNotifier {get;}
-	bool CanBePermissionAssigned {get;}
-	string Icon {get;}
-	string Alias {get;}
-	string JsFunctionName {get;}
-	/// <summary>
-	/// A path to a supporting JavaScript file for the IAction. A script tag will be rendered out with the reference to the  JavaScript file.
-	/// </summary>
-	string JsSource {get;}
+    char Letter {get;}
+    bool ShowInNotifier {get;}
+    bool CanBePermissionAssigned {get;}
+    string Icon {get;}
+    string Alias {get;}
+    string JsFunctionName {get;}
+    /// <summary>
+    /// A path to a supporting JavaScript file for the IAction. A script tag will be rendered out with the reference to the  JavaScript file.
+    /// </summary>
+    string JsSource {get;}
 }
 ```
 

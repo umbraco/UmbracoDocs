@@ -61,7 +61,7 @@ namespace Umbraco8.Components
         <th>Event</th>
         <th>Signature</th>
         <th>Description</th>
-    </tr>    
+    </tr>
     <tr>
         <td>Saving</td>
         <td>(IContentService sender, ContentSavingEventArgs e)</td>
@@ -70,7 +70,7 @@ namespace Umbraco8.Components
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default).<br />
         "sender" will be the current IContentService object.<br />
         "e" will provide:<br/>
-		<em>NOTE: If the entity is brand new then HasIdentity will equal false.</em>
+        <em>NOTE: If the entity is brand new then HasIdentity will equal false.</em>
             <ol>
                 <li>SavedEntities: Gets the collection of IContent objects being saved.</li>
             </ol>
@@ -84,7 +84,7 @@ namespace Umbraco8.Components
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default). <br />
         "sender" will be the current IContentService object.<br />
         "e" will provide:<br/>
-		<em>NOTE: <a href="determining-new-entity">See here on how to determine if the entity is brand new</a></em>
+        <em>NOTE: <a href="determining-new-entity">See here on how to determine if the entity is brand new</a></em>
             <ol>
                 <li>SavedEntities: Gets the saved collection of IContent objects.</li>
             </ol>
@@ -98,7 +98,7 @@ namespace Umbraco8.Components
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Publish method call (true by default).<br />
         "sender" will be the current IPublishingStrategy object.<br />
         "e" will provide:<br/>
-		<em>NOTE: If the entity is brand new then HasIdentity will equal false.</em>
+        <em>NOTE: If the entity is brand new then HasIdentity will equal false.</em>
             <ol>
                 <li>PublishedEntities: Gets the collection of IContent objects being published.</li>
             </ol>
@@ -112,12 +112,12 @@ namespace Umbraco8.Components
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Publish method call (true by default). <br />
         "sender" will be the current IPublishingStrategy object.<br />
         "e" will provide:<br/>
-		<em>NOTE: <a href="determining-new-entity">See here on how to determine if the entity is brand new</a></em>
+        <em>NOTE: <a href="determining-new-entity">See here on how to determine if the entity is brand new</a></em>
             <ol>
                 <li>PublishedEntities: Gets the published collection of IContent objects.</li>
             </ol>
         </td>
-    </tr>  
+    </tr>
     <tr>
         <td>UnPublishing</td>
         <td>(IPublishingStrategy sender, PublishEventArgs&lt;Umbraco.Core.Models.IContent&gt; e)</td>
@@ -132,7 +132,7 @@ namespace Umbraco8.Components
         <td>
         Raised when ContentService.UnPublish is called in the API and after data has been published.<br />
         </td>
-    </tr>    
+    </tr>
     <tr>
         <td>Copying</td>
         <td>(IContentService sender, CopyEventArgs&lt;IContent&gt; e)</td>
@@ -377,11 +377,10 @@ namespace Umbraco8.Components
 
 ### What happened to Creating and Created events?
 
-Both the ContentService.Creating and ContentService.Created events have been obsoleted. Why? Because these events are not guaranteed to trigger and therefore should not be used. This is because these events *only* trigger when the ContentService.CreateContent method is used which is an entirely optional way to create content entities. It is also possible to construct a new content item - which is generally the preferred and consistent way - and therefore the Creating/Created events will not execute when constructing content that way. 
+Both the ContentService.Creating and ContentService.Created events have been obsoleted. Why? Because these events are not guaranteed to trigger and therefore should not be used. This is because these events *only* trigger when the ContentService.CreateContent method is used which is an entirely optional way to create content entities. It is also possible to construct a new content item - which is generally the preferred and consistent way - and therefore the Creating/Created events will not execute when constructing content that way.
 
 Further more, there's no reason to listen for the Creating/Created events. They are misleading since they don't trigger before and after the entity has been persisted. They trigger inside the CreateContent method which never persists the entity, it constructs a new content object.
 
 #### What do we use instead?
 
 The ContentService.Saving and ContentService.Saved events will always trigger before and after an entity has been persisted. You can determine if an entity is brand new in either of those events. In the Saving event - before the entity is persisted - you can check the entity's HasIdentity property which will be 'false' if it is brand new. In the Saved event you can [check to see if the entity 'remembers being dirty'](determining-new-entity.md)
-

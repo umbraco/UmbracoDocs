@@ -15,7 +15,7 @@ You can set icon, thumbnail and description. It is also possible to add tabs and
 
 A Media Type differs from a Document Type in that it has no templates.
 
- * **Namespace:** `Umbraco.Core.Models` 
+ * **Namespace:** `Umbraco.Core.Models`
  * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
@@ -125,10 +125,10 @@ return mediaType.Icon;
 ```
 
 ### .Id
-Gets the unique `MediaType` Id as a `Int`, this ID is based on a Database identity field, and is therefore not safe to reference in code which are moved between different instances, use Key instead. 
+Gets the unique `MediaType` Id as a `Int`, this ID is based on a Database identity field, and is therefore not safe to reference in code which are moved between different instances, use Key instead.
 
 ### .Key
-Gets the `Guid` assigned to the MediaType during creation. This value is unique, and should never change, even if the content is moved between instances. 
+Gets the `Guid` assigned to the MediaType during creation. This value is unique, and should never change, even if the content is moved between instances.
 
 ```csharp
 // Given a `ContentTypeService` object get MediaType by its Id and return the Key
@@ -262,7 +262,7 @@ bool result = mediaType.ContentTypeCompositionExists("meta");
 Removes a `MediaType` with the supplied alias from the list of composite MediaTypes.
 
 ```csharp
-// Given a `ContentTypeService` object get a MediaType by its alias and 
+// Given a `ContentTypeService` object get a MediaType by its alias and
 // remove the 'Meta' MediaType from its composition.
 var mediaType = contentTypeService.GetMediaType("video");
 bool success = mediaType.RemoveContentType("meta");

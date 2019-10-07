@@ -13,7 +13,7 @@ The MediaService acts as a "gateway" to Umbraco data for operations which are re
 
 [Browse the API documentation for MediaService](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Services.MediaService.html).
 
- * **Namespace:** `Umbraco.Core.Services` 
+ * **Namespace:** `Umbraco.Core.Services`
  * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
@@ -29,7 +29,7 @@ using Umbraco.Core.Services;
 ```
 
 ## Getting the service
-The MediaService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the MediaService is available through a local `Services` property.
+The MediaService is available through the `ApplicationContext`, but if you are using a `SurfaceController` or the `UmbracoUserControl` then the MediaService is available through a local `Services` property.
 
 ```csharp
 Services.MediaService

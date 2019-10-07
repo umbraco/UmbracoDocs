@@ -53,7 +53,7 @@ The 'BaseRestExtension.config' contains the data necessary for the /Base system 
 This file can be found at the following path: /config/BaseRestExtensions.config
 
 ### [tinyMceConfig.config](tinyMceConfig/index.md)
-The 'tinyMceConfig.config' contains configuration options for the [TinyMce](https://www.tinymce.com/) editors in the Umbraco Backoffice. 
+The 'tinyMceConfig.config' contains configuration options for the [TinyMce](https://www.tinymce.com/) editors in the Umbraco Backoffice.
 
 This file can be found at the following path: /config/tinyMceConfig.config
 
@@ -79,7 +79,7 @@ This file can be found at the following path: /config/ClientDependency.config
 In v8 Serilog is used for logging, use these files to configure this:
 
 * `/config/serilog.config` is used to modify the main Umbraco logging pipeline
-* `/config/serilog.user.config` which is a sublogger and allows you to make 
+* `/config/serilog.user.config` which is a sublogger and allows you to make
 
 
 

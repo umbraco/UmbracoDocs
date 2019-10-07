@@ -16,7 +16,7 @@ Related Links allows an editor to add an array of links. These can either be int
 
 ![Related Links Data Type Definition](images/Related-Links-DataType.jpg)
 
-## Content Example 
+## Content Example
 
 ![Media Picker Content](images/Related-Links-Content.jpg)
 
@@ -48,7 +48,7 @@ Related Links allows an editor to add an array of links. These can either be int
 
 ```csharp
 @using Newtonsoft.Json.Linq
-@{      
+@{
     if (Model.Content.HasValue("relatedLinks") && Model.Content.GetPropertyValue<string>("relatedLinks").Length > 2)
     {
         <ul>

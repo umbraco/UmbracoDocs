@@ -35,7 +35,7 @@ It is recommended that you define custom editors in a `package.manifest` file (n
 
 ```json
 {
-    "gridEditors": 
+    "gridEditors":
     [
         {
             "name": "Rich text editor",
@@ -46,7 +46,7 @@ It is recommended that you define custom editors in a `package.manifest` file (n
     ]
 }
 ```
-    
+
 While the root JSON element of `/config/grid.editors.config.js` is an array of grid editors, `package.manifest` files start with a JSON object with a number of different properties - one of them being `gridEditors`.
 
 The package manifest should be placed in a folder inside the `/App_Plugins/` folder - for instance `/App_Plugins/{YourPackageName}/package.manifest`. You can define as many grid editors you want and it can be done over multiple manifests so you can use grid editors from packages etc. With the `package.manifest` file in place, Umbraco will automatically pick it up during startup.
@@ -59,10 +59,10 @@ For a grid editor, the required values are:
 
 - `name`: The name of the editor
 - `alias`: Unique alias of the editor
-- `icon`: Icon shown to the editor, uses same icon classes as the rest of 
+- `icon`: Icon shown to the editor, uses same icon classes as the rest of
 - `view` the view defines the editor used to enter a value. By default Umbraco will look in `/umbraco/views/propertyeditors/grid/editors` for a html view to use - but you can pass in your own path
 
-The built-in views you can use are: 
+The built-in views you can use are:
 
 - `textstring`
 - `rte`
@@ -87,9 +87,9 @@ In most cases you will either use the textstring or media view, or built your ow
 }
 ```
 
-In this sample, the `config.style` value is applied to the editor so users can see an accurate preview in the backoffice. This will be applied as as inline styling to the textarea in the backoffice. 
+In this sample, the `config.style` value is applied to the editor so users can see an accurate preview in the backoffice. This will be applied as as inline styling to the textarea in the backoffice.
 
-The `config.markup` is the string rendered server side in your template. `#value#`will be replaced with the actual value 
+The `config.markup` is the string rendered server side in your template. `#value#`will be replaced with the actual value
 
 ##### Sample media config
 

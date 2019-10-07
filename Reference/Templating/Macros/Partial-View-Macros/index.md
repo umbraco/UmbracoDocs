@@ -14,15 +14,15 @@ All partial view macro views inherit from `Umbraco.Web.Macros.PartialViewMacroPa
 ```csharp
 @inherits Umbraco.Web.Macros.PartialViewMacroPage
 ```
-	
+
 The model type for a partial view macro is `Umbraco.Web.Models.PartialViewMacroModel` which contains all of the properties you will need to
-render out content as well as some additional properties about the macro itself: `MacroName`, `MacroAlias`, `MacroId`, and `MacroParameters`. 
+render out content as well as some additional properties about the macro itself: `MacroName`, `MacroAlias`, `MacroId`, and `MacroParameters`.
 
 ## File information
 
-By default Partial View Macros are stored in this folder: 
+By default Partial View Macros are stored in this folder:
 
-> ~/Views/MacroPartials 
+> ~/Views/MacroPartials
 
 However if you are bundling up Partial View Macros as part of a package, they can also exist in this folder:
 

@@ -13,7 +13,7 @@ The MemberService acts as a "gateway" to Umbraco data for operations which are r
 
 [Browse the API documentation for MemberService](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Services.MemberService.html).
 
- * **Namespace:** `Umbraco.Core.Services` 
+ * **Namespace:** `Umbraco.Core.Services`
  * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
@@ -85,7 +85,7 @@ Returns true/false if a given member login exists
 ### .FindByEmail("gmail.com", int pageIndex, int pageSize, out int totalRecords, [`StringPropertyMatchType`]);
 Searches for all members with a given email, supports paging returned results.
 
-Search supports multiple match types: 
+Search supports multiple match types:
 
 - *Exact* email must be equal to term
 - *Contains* email must contain term
@@ -96,7 +96,7 @@ Search supports multiple match types:
 ### .FindByUsername(string username, int pageIndex, int pageSize, out int totalRecords, [`StringPropertyMatchType`]);
 Searches for all members with a given username, supports paging returned results.
 
-Search supports multiple match types: 
+Search supports multiple match types:
 
 - *Exact* username must be equal to term
 - *Contains* username must contain term
@@ -107,7 +107,7 @@ Search supports multiple match types:
 ### .FindMembersByDisplayName(string name, int pageIndex, int pageSize, out int totalRecords, [`StringPropertyMatchType`]);
 Searches for all members with a given display name, supports paging returned results.
 
-Search supports multiple match types: 
+Search supports multiple match types:
 
 - *Exact* display name must be equal to term
 - *Contains* display name must contain term
@@ -118,7 +118,7 @@ Search supports multiple match types:
 ### .FindMembersInRole(string role, string username, [`StringPropertyMatchType`]);
 Searches for all members with a given username with a given Role assigned.
 
-Search supports multiple match types: 
+Search supports multiple match types:
 
 - *Exact* username must be equal to term
 - *Contains* username must contain term

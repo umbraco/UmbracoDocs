@@ -63,7 +63,7 @@ namespace Umbraco.Web.Media.EmbedProviders
 If the provider to add supports the *OEmbed* format for embedding a representation of a Url in a website, then make use of the `EmbedProviderBase` base methods to implement the request:
 
 ```csharp
-   public override string GetMarkup(string url, int maxWidth = 0, int maxHeight = 0)
+    public override string GetMarkup(string url, int maxWidth = 0, int maxHeight = 0)
         {
             var requestUrl = base.GetEmbedProviderUrl(url, maxWidth, maxHeight);
             var oembed = base.GetJsonResponse<OEmbedResponse>(requestUrl);
@@ -192,4 +192,3 @@ namespace Umbraco8.Composing
 }
 ```
 Now editors can embed Azure Media video Urls in the format: `//amssamples.streaming.mediaservices.windows.net/3b970ae0-39d5-44bd-b3a3-3136143d6435/AzureMediaServicesPromo.ism/manifest`.
-

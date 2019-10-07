@@ -20,7 +20,7 @@ The second method is to fill the variable by having the content rendered into th
     <xsl:value-of select="$currentPage/@id"/>
 </xsl:variable>
 ```
-	
+
 The second method is useful when applying logic to filling the variable, in which case an if command or choose command would allow you to have the value selected logically.
 
 Parameters are handled the same way, except their command is "xsl:param".

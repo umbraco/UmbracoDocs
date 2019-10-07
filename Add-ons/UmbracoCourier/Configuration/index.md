@@ -18,7 +18,7 @@ Courier keeps an ongoing cache of items to speed up transfers, this can be turne
 
 ```xml
 <cache>
-	<enable>False</enable>
+    <enable>False</enable>
 </cache>
 ```
 
@@ -51,7 +51,7 @@ The root folder containing all Courier's data. This folder needs changed, if Cou
 
 ```xml
 <paths>
-	<root>~/path/to/courier</root>
+    <root>~/path/to/courier</root>
 </paths>
 ```
 
@@ -60,7 +60,7 @@ Specifies the folder within the root folder, which holds each individual revisio
 
 ```xml
 <paths>
-	<revisions>/folder</revisions>
+    <revisions>/folder</revisions>
 </paths>
 ```
 
@@ -69,7 +69,7 @@ The SQL connection to the SQL database Courier should use. Notice this is not ne
 
 ```xml
 <paths>
-	<masterPages>/folder</masterPages>
+    <masterPages>/folder</masterPages>
 </paths>
 ```
 
@@ -77,7 +77,7 @@ The SQL connection to the SQL database Courier should use. Notice this is not ne
 
 ```xml
 <databaseConnectionString>
-	DATABASE=yahahdasd;USER ID=etc
+    DATABASE=yahahdasd;USER ID=etc
 </databaseConnectionString>
 ```
 

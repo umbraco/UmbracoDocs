@@ -11,7 +11,7 @@ Here you find some tips and trick for hardening the security of your Umbraco ins
 
 By default there are some folders in your Umbraco installation that should be only used by authenticated users. It’s considered a good practice to lock down these folders to specific IP-addresses and/or IP-ranges to make sure not everyone can access these.
 The folders we want to lock down are App_Plugins, Config and Umbraco.
-The prerequisite of this to work is that you’re using [IISRewrite](../../Routing/IISRewriteRules/index.md) 
+The prerequisite of this to work is that you’re using [IISRewrite](../../Routing/IISRewriteRules/index.md)
 
 If you’ve made sure that you’ve installed this on your server we can start locking down our Umbraco-folders. This can be down by following these three steps.
 

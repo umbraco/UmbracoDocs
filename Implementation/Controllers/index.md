@@ -38,7 +38,7 @@ See [Reference documentation on Umbraco Api Controllers for full details](../../
 
 ## Umbraco Authorized Controllers and Attributes
 
-An Umbraco Authorized controller is used when the controller requires member or user authentication (authN) and/or authorization (authZ). If either the authN or authZ fail the controller will return a "401 - unauthorized response."  
+An Umbraco Authorized controller is used when the controller requires member or user authentication (authN) and/or authorization (authZ). If either the authN or authZ fail the controller will return a "401 - unauthorized response."
 
 ### Backoffice Authorization
 

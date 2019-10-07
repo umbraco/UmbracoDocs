@@ -9,7 +9,7 @@ _The process of Umbraco accepting a request, how it matches a URL to a content i
 
 ## Published Content Request Preparation
 
-The inbound process is triggered by the Umbraco (http) Module.  
+The inbound process is triggered by the Umbraco (http) Module.
 The published content request preparation process kicks in to create an `PublishedContentRequest` instance.
 
 It is called in `UmbracoModule.ProcessRequest(…)`
@@ -25,7 +25,7 @@ What it does:
 
 ## Published Content Request Instance
 
-Once the request is prepared, an instance of `PublishedContentRequest` is available which represents the request that Umbraco must handle.  
+Once the request is prepared, an instance of `PublishedContentRequest` is available which represents the request that Umbraco must handle.
 It contains everything that will be needed to render it including domain information, the content model to be rendered and the template to use.
 This information is also used during the [MVC Controller/Action selection process](../Controller-Selection/).
 
@@ -35,13 +35,13 @@ Umbraco supports both MVC and Webforms, though MVC is certainly the preferred an
 Determining the rendering engine to use occurs once the published content request has been prepared and a template alias is known.
 
 * Check for a matching MVC template in the default MVC views location
-	* Choose MVC
+    * Choose MVC
 * Else if there is an MVC Controller/Action that is being used to perform 'Route Hijacking'
-	* Choose MVC
+    * Choose MVC
 * Else if there is a template assigned to the Published Content Request and a file matches the template alias in the default Webforms master pages folder
-	* Choose Webforms
+    * Choose Webforms
 * Else
-	* Choose MVC
+    * Choose MVC
 
 ### More information
 - [Umbraco Request Pipeline](../../../Reference/Routing/Request-Pipeline/)

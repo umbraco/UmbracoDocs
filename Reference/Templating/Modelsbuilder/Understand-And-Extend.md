@@ -127,9 +127,9 @@ public partial class Post
   {
     get
     {
-      if (!string.IsNullOrEmpty(this.TextDate)) return this.TextDate;
-      if (this.ActualDate != DateTime.MinValue) return this.ActualDate.ToString();
-      return this.UpdateDate;
+    if (!string.IsNullOrEmpty(this.TextDate)) return this.TextDate;
+    if (this.ActualDate != DateTime.MinValue) return this.ActualDate.ToString();
+    return this.UpdateDate;
     }
   }
 }

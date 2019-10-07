@@ -10,7 +10,7 @@ There are two ways to deploy on Umbraco Cloud, a deployment which transfers cont
 1. A Content [Transfer](../../Deployment/Content-Transfer) / [Restore](../../Deployment/Restoring-content)
 1. A [Deployment](../../Deployment/Cloud-to-Cloud) that transfers structure files (doc types, data types, templates, dll's, etc.)
 
-There are some common errors associated with both of these, most of the time it is caused by conflicting [UDA files](../../Set-Up/Power-Tools/generating-uda-files/#what-are-uda-files) between the two environments you are deploying between. 
+There are some common errors associated with both of these, most of the time it is caused by conflicting [UDA files](../../Set-Up/Power-Tools/generating-uda-files/#what-are-uda-files) between the two environments you are deploying between.
 
 The most common [Deployment](../../Deployment/Cloud-to-Cloud) issues are listed below with guides on how to fix them:
 
@@ -28,7 +28,7 @@ The most common Content [Transfer](../../Deployment/Content-Transfer) / [Restore
 
 ### Issues when using third party packages
 
-If you experience problems when using third party packages on Umbraco Cloud there is a chance they are not compatible with Umbraco Cloud. Packages that add custom editors will need a Value Connector set up to work with Umbraco Deploy. Some of the most used packages out there have been included in the Community driven Umbraco Deploy Contrib project. You can include the Contrib dll in your project to help with a lot of them. 
+If you experience problems when using third party packages on Umbraco Cloud there is a chance they are not compatible with Umbraco Cloud. Packages that add custom editors will need a Value Connector set up to work with Umbraco Deploy. Some of the most used packages out there have been included in the Community driven Umbraco Deploy Contrib project. You can include the Contrib dll in your project to help with a lot of them.
 
-To see a list of packages covered look [here](https://github.com/umbraco/Umbraco.Deploy.Contrib). 
+To see a list of packages covered look [here](https://github.com/umbraco/Umbraco.Deploy.Contrib).
 To see examples of how Value Connectors are made look [here](https://github.com/umbraco/Umbraco.Deploy.ValueConnectors).
