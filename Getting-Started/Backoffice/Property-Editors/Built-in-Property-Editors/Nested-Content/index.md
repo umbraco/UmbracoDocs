@@ -104,8 +104,8 @@ Example:
 
     foreach(var item in items)
     {
-        var description = item.GetProperty<string>("description");
-        var image = item.GetProperty<IPublishedContent>("image");
+        var description = item.Value<string>("description");
+        var image = item.Value<IPublishedContent>("image");
 
         <h3>@item.GetProperty("heading").Value()</h3>
 
