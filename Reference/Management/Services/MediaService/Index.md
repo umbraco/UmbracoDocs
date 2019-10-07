@@ -29,7 +29,7 @@ using Umbraco.Core.Services;
 ```
 
 ## Getting the service
-The MediaService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the MediaService is available through a local `Services` property.
+The MediaService is available through the `ApplicationContext`, but if you are using a `SurfaceController` or the `UmbracoUserControl` then the MediaService is available through a local `Services` property.
 
 ```csharp
 Services.MediaService
