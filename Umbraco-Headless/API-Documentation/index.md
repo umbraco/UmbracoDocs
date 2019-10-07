@@ -70,24 +70,6 @@ GET https://cdn.umbraco.io/content
 Accept: application/json+hal;v=2
 ```
 
-### Cultures
-
-To request content in a specific language, a culture parameter can be specified.
-If no culture is specified its treated as invariant and the default lanuage will be returned.
-
-#### Via an Accept-Language header
-
-```http
-GET https://cdn.umbraco.io/content
-Accept-Language: en-US
-```
-
-#### Via a Query String parameter
-
-```http
-GET https://cdn.umbraco.io/content?culture=en-US
-```
-
 ## Authentication and Authorization
 
 By default the Content Delivery API is not protected, it can be enabled through the backoffice. The Content Management API is always protected and requires either an API key or a bearer token.
@@ -138,3 +120,22 @@ Authorization: Bearer $token
 
 This is the read-only API for delivering published content and media to any app, website, device or whatever you prefer.
 It’s worth noting that the json output for both Content and Media vary depending on how a given Content or Media is structured - meaning how the ContentType and MediaType is defined.
+
+### Cultures
+
+Specific to Content in the Content Delivery API.
+To request content in a specific language, a culture parameter can be specified.
+If no culture is specified its treated as invariant and the default lanuage will be returned.
+
+#### Via an Accept-Language header
+
+```http
+GET https://cdn.umbraco.io/content
+Accept-Language: en-US
+```
+
+#### Via a Query String parameter
+
+```http
+GET https://cdn.umbraco.io/content?culture=en-US
+```
