@@ -166,7 +166,7 @@ namespace MyProject.Components
 
 
 ## Update package.xml for Umbraco ZIP packages
-As version 7 and version 8 of Umbraco have breaking changes in their APIs and code, it's recommended to ship a different version of your package to support V8 only. You'll need to update the package.xml in your Umbraco package zip to use the 8.0.0 version like so.
+As version 7 and version 8 of Umbraco have breaking changes in their APIs and code, it's recommended to ship a different version of your package to support Umbraco 8 only. You'll need to update the package.xml in your Umbraco package zip to use the 8.0.0 version like so.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
