@@ -5,7 +5,7 @@ versionFrom: 7.0.0
 # Working with the backoffice UI AngularJs project
 
 ## Overview
-From Umbraco 7 has a slightly unorthodox project structure, compared to a normal ASP.NET project. This is by design, a choice from the beginning to embrace a much larger group than the developers who know how to use Visual Studio.
+Umbraco has a slightly unorthodox project structure, compared to a normal ASP.NET project. This is by design, a choice from the beginning to embrace a much larger group than the developers who know how to use Visual Studio.
 
 As a result, the Umbraco UI is not a Visual Studio project, but a collection of folders and files, following certain conventions, and a small configuration file called `gulpfile` - we will get to the gulp part in a moment.
 
