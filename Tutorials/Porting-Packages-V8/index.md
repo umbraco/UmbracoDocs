@@ -7,7 +7,7 @@ meta.Title: "How to port packages from Umbraco v7 to Umbraco v8"
 meta.Description: "This guide will tell you how you can turn your Umbraco v7 package into an Umbraco v8 package"
 ---
 # Porting packages to V8
-This is not a definitive guide for all scenarios but more of a working document which will evolve over time, especially as V8 matures. Due to this, please keep in mind that things in this guide may change.
+This is not a definitive guide for all scenarios but more of a working document which will evolve over time, especially as Umbraco 8 matures. Due to this, please keep in mind that things in this guide may change.
 
 You have a useful Umbraco package built for V7 and you would like to see it work for V8?
 This guide should give you a few pointers to get you started with the process and is mostly geared towards solutions that use C#.
