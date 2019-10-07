@@ -9,7 +9,7 @@ meta.Description: "This guide will tell you how you can turn your Umbraco v7 pac
 # Porting packages to V8
 This is not a definitive guide for all scenarios but more of a working document which will evolve over time, especially as Umbraco 8 matures. Due to this, please keep in mind that things in this guide may change.
 
-You have a useful Umbraco package built for V7 and you would like to see it work for V8?
+You have a useful Umbraco package built for Umbraco 7 and you would like to see it work for Umbraco 8?
 This guide should give you a few pointers to get you started with the process and is mostly geared towards solutions that use C#.
 
 ## Upgrade .NET Framework
