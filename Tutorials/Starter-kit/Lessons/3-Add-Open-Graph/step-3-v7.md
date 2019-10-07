@@ -23,7 +23,7 @@ At the end, the head should look like this:
 
     <head>
         ...
-        
+
         @if (Model.Content is IOpenGraph) {
             @Html.Partial("openGraph")
         }

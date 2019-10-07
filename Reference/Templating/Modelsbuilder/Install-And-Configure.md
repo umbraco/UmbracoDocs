@@ -56,4 +56,4 @@ In addition, in order for Models Builder to provide the API needed by the Visual
 * `Umbraco.ModelsBuilder.EnableApi` can be `true` or `false` (default) and controls whether Models Builder provides the API.
 
 **WARNING:** The API is provided when the website runs in debug mode, exclusively. Which means that the `debug` attribute of `Web.config`'s `<compilation>` element must be set to `true`.
-	
+

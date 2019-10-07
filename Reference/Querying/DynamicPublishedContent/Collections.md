@@ -95,21 +95,21 @@ Using the method without any parameters will return the top most node in tree th
 ```
 
 <table>
-	<tr>
-		<th>Overload Option</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>.AncestorOrSelf()</td>
-		<td>Returns the root item from the current tree</td>
-	</tr>
-	<tr>
-		<td>.AncestorOrSelf((int)level)</td>
-		<td>Returns the item from the Ancestors collection at the specified level</td>
-	</tr>
-	<tr>
-		<td>.AncestorOrSelf((string)nodeTypeAlias)</td>
-		<td>Returns the item from the Ancestors collection with the specified nodeTypeAlias</td>
-	</tr>
+    <tr>
+        <th>Overload Option</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>.AncestorOrSelf()</td>
+        <td>Returns the root item from the current tree</td>
+    </tr>
+    <tr>
+        <td>.AncestorOrSelf((int)level)</td>
+        <td>Returns the item from the Ancestors collection at the specified level</td>
+    </tr>
+    <tr>
+        <td>.AncestorOrSelf((string)nodeTypeAlias)</td>
+        <td>Returns the item from the Ancestors collection with the specified nodeTypeAlias</td>
+    </tr>
 </table>
 
 **Examples**
@@ -128,7 +128,7 @@ Using the method without any parameters will return the top most node in tree th
 -----
 
 ## Filtering, Ordering & Extensions
-	
+
 ### .Where("condition"[, valueIfTrue, valueIfFalse] )
 Returns all items matching the given condition.
 For more details on queries and conditions, see the section below
@@ -149,7 +149,7 @@ Orders a collection by a field name
 @* order by descending name *@
 @var nodes = CurrentPage.Children.OrderBy("Name desc");
 ```
-	
+
 ### .GroupBy("propertyAlias")
 Groups items in the collection based on a content property that is used as a key and returns a Collection of Anonymous objects that have two properties. `.Key` and `.Elements` that contains a collection of the content items for that grouping.
 
@@ -220,4 +220,4 @@ Returns the number of items in the collection
 ```csharp
 @int numberOfChildren =  CurrentPage.Children.Count();
 ```
-	
+

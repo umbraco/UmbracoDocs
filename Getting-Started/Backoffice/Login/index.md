@@ -51,7 +51,7 @@ An example:
 <system.net>
   <mailSettings>
     <smtp from="noreply@test.com">
-      <network host="127.0.0.1" userName="username" password="password" />
+    <network host="127.0.0.1" userName="username" password="password" />
     </smtp>
   </mailSettings>
 </system.net>

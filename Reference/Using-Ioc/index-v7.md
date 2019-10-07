@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # Using IoC with Umbraco
 
-_This section will show you how to setup Ioc/Dependency Injection with your Umbraco installation. The examples will use Autofac but you can use whatever you want_ 
+_This section will show you how to setup Ioc/Dependency Injection with your Umbraco installation. The examples will use Autofac but you can use whatever you want_
 
 ## Overview
 
@@ -189,7 +189,7 @@ class UnityEvents : IApplicationEventHandler
         var container = UnityConfig.GetConfiguredContainer();
 
         // Web API
-        GlobalConfiguration.Configuration.DependencyResolver 
+        GlobalConfiguration.Configuration.DependencyResolver
             = new Microsoft.Practices.Unity.WebApi.UnityDependencyResolver(container);
         // MVC
         DependencyResolver.SetResolver(new Microsoft.Practices.Unity.Mvc.UnityDependencyResolver(container));
@@ -206,10 +206,10 @@ class UnityEvents : IApplicationEventHandler
             WithName.Default
         );
 
-        // The UmbracoContext must be registered so that the Umbraco backoffice controllers 
+        // The UmbracoContext must be registered so that the Umbraco backoffice controllers
         // can be successfully resolved.
         container.RegisterType<UmbracoContext>(
-            new PerRequestLifetimeManager(), 
+            new PerRequestLifetimeManager(),
             new InjectionFactory(c => UmbracoContext.Current)
         );
 
@@ -238,9 +238,9 @@ public static class UnityActivator
     public static void Start()
     {
         // This is required if you intend to follow the example above and use the PerRequestLifetimeManager.
-        // If you are developing a library using umbracoCms.Core and Unity, 
+        // If you are developing a library using umbracoCms.Core and Unity,
         // you might want to reconsider depending on this module.
-        // If the library consumers also use Unity, they might also register the per request http module, 
+        // If the library consumers also use Unity, they might also register the per request http module,
         // bloating the request pipeline with multiple modules performing similar tasks.
         Microsoft.Web.Infrastructure.DynamicModuleHelper.DynamicModuleUtility.RegisterModule(typeof(UnityPerRequestHttpModule));
     }

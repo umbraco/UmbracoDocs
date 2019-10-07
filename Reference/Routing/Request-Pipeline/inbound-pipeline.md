@@ -7,7 +7,7 @@ needsV8Update: "true"
 
 The inbound process is triggered by the Umbraco (http) Module.  The **[published content request preparation](published-content-request-preparation.md)** process kicks in and creates a `PublishedContentRequest`.
 
-The `PublishedContentRequest` object represents the request which Umbraco must handle.  It contains everything that will be needed to render it.  All this happens when the Umbraco modules thinks it's a document to render. 
+The `PublishedContentRequest` object represents the request which Umbraco must handle.  It contains everything that will be needed to render it.  All this happens when the Umbraco modules thinks it's a document to render.
 
 ```csharp
 public class PublishedContentRequest
@@ -50,7 +50,7 @@ public bool TrySetTemplate(string alias);
 public void SetTemplate(ITemplate template);
 ```
 
-You can subscribe to the event to know when the `PublishedContentRequest` is ready to be processed.  It's up to you to change anything (content, template, ...): 
+You can subscribe to the event to know when the `PublishedContentRequest` is ready to be processed.  It's up to you to change anything (content, template, ...):
 
 ```csharp
 // public static event EventHandler<EventArgs> Prepared;

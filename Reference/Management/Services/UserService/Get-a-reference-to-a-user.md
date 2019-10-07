@@ -10,7 +10,7 @@ The user service contains a number of methods for looking up users. If you alrea
 
     // Get a reference to the user by an ID
     IUser user1 = us.GetUserById(0);
-    
+
 Alternative, you can look up a user by a username or email address instead:
 
     // Get a reference to the user by a username (which typically also will be the user's email address)
@@ -28,7 +28,7 @@ In addition to getting a single user, the user service also contains a `GetUsers
     foreach (IUser user in us.GetUsersById(0, 1, 2)) {
         <pre>@user.Email</pre>
     }
-    
+
 ## Full example
 
     @using Umbraco.Core.Models.Membership

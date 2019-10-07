@@ -30,23 +30,23 @@ Update `~/Config/FileSystemProviders.config` replacing the default provider with
   <!-- Media -->
   <Provider alias="media" type="Our.Umbraco.FileSystemProviders.Azure.AzureBlobFileSystem, Our.Umbraco.FileSystemProviders.Azure">
     <Parameters>
-      <add key="containerName" value="media"/>
-      <add key="rootUrl" value="http://[myAccountName].blob.core.windows.net/"/>
-      <add key="connectionString" value="DefaultEndpointsProtocol=https;AccountName=[myAccountName];AccountKey=[myAccountKey]"/>
-      <!--
+    <add key="containerName" value="media"/>
+    <add key="rootUrl" value="http://[myAccountName].blob.core.windows.net/"/>
+    <add key="connectionString" value="DefaultEndpointsProtocol=https;AccountName=[myAccountName];AccountKey=[myAccountKey]"/>
+    <!--
         Optional configuration value determining the maximum number of days to cache items in the browser.
         Defaults to 365 days.
-      -->
-      <add key="maxDays" value="365"/>
-      <!--
+    -->
+    <add key="maxDays" value="365"/>
+    <!--
         When true this allows the VirtualPathProvider to use the default "media" route prefix regardless
         of the container name.
-      -->
-      <add key="useDefaultRoute" value="true"/>
-      <!--
+    -->
+    <add key="useDefaultRoute" value="true"/>
+    <!--
         When true blob containers will be private instead of public what means that you can't access the original blob file directly from its blob url.
-      -->
-      <add key="usePrivateContainer" value="false"/>
+    -->
+    <add key="usePrivateContainer" value="false"/>
     </Parameters>
   </Provider>
 </FileSystemProviders>
@@ -58,12 +58,12 @@ If you are using IISExpress (as with Visual Studio) you’ll need to add a stati
 <?xml version="1.0"?>
   <configuration>
     <location path="Media">
-      <system.webServer>
+    <system.webServer>
         <handlers>
-          <remove name="StaticFileHandler" />
-          <add name="StaticFileHandler" path="*" verb="*" preCondition="integratedMode" type="System.Web.StaticFileHandler" />
+        <remove name="StaticFileHandler" />
+        <add name="StaticFileHandler" path="*" verb="*" preCondition="integratedMode" type="System.Web.StaticFileHandler" />
         </handlers>
-      </system.webServer>
+    </system.webServer>
     </location>
   </configuration>
 ```
@@ -89,15 +89,15 @@ Once the package(s) have been installed you need to set your configuration as be
 <configuration>
   <configSections>
     <sectionGroup name="imageProcessor">
-      <section name="security" requirePermission="false" type="ImageProcessor.Web.Configuration.ImageSecuritySection, ImageProcessor.Web" />
-      <section name="processing" requirePermission="false" type="ImageProcessor.Web.Configuration.ImageProcessingSection, ImageProcessor.Web" />
-      <section name="caching" requirePermission="false" type="ImageProcessor.Web.Configuration.ImageCacheSection, ImageProcessor.Web" />
+    <section name="security" requirePermission="false" type="ImageProcessor.Web.Configuration.ImageSecuritySection, ImageProcessor.Web" />
+    <section name="processing" requirePermission="false" type="ImageProcessor.Web.Configuration.ImageProcessingSection, ImageProcessor.Web" />
+    <section name="caching" requirePermission="false" type="ImageProcessor.Web.Configuration.ImageCacheSection, ImageProcessor.Web" />
     </sectionGroup>
   </configSections>
   <imageProcessor>
-      <security configSource="config\imageprocessor\security.config" />
-      <caching configSource="config\imageprocessor\cache.config" />
-      <processing configSource="config\imageprocessor\processing.config" />
+    <security configSource="config\imageprocessor\security.config" />
+    <caching configSource="config\imageprocessor\cache.config" />
+    <processing configSource="config\imageprocessor\processing.config" />
     </imageProcessor>
 </configuration>
 ```
@@ -112,25 +112,25 @@ You have to manually add `prefix="media/"` to the service element, otherwise Ima
   <services>
     <!--<service name="LocalFileImageService" type="ImageProcessor.Web.Services.LocalFileImageService, ImageProcessor.Web" />-->
     <service prefix="media/" name="CloudImageService" type="ImageProcessor.Web.Services.CloudImageService, ImageProcessor.Web">
-      <settings>
+    <settings>
         <setting key="MaxBytes" value="8194304"/>
         <setting key="Timeout" value="30000"/>
         <setting key="Host" value="https://[your blob account].blob.core.windows.net/media"/>
-      </settings>
+    </settings>
     </service>
     <service prefix="remote.axd" name="RemoteImageService" type="ImageProcessor.Web.Services.RemoteImageService, ImageProcessor.Web">
-      <settings>
+    <settings>
         <setting key="MaxBytes" value="4194304" />
         <setting key="Timeout" value="3000" />
         <setting key="Protocol" value="http" />
-      </settings>
-      <whitelist>
+    </settings>
+    <whitelist>
         <add url="https://[your Azure CDN].vo.msecnd.net/" />
         <add url="https://[your blob account].blob.core.windows.net/" />
         <add url="https://[your Umbraco site]" />
         <add url="http://localhost" />
         <add url="http://127.0.0.1" />
-      </whitelist>
+    </whitelist>
     </service>
   </services>
 </security>

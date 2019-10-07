@@ -52,7 +52,7 @@ The 'BaseRestExtension.config' contains the data necessary for the /Base system 
 This file can be found at the following path: /config/BaseRestExtensions.config
 
 ### [tinyMceConfig.config](tinyMceConfig/index.md)
-The 'tinyMceConfig.config' contains configuration options for the [TinyMce](https://www.tinymce.com/) editors in the Umbraco Backoffice. 
+The 'tinyMceConfig.config' contains configuration options for the [TinyMce](https://www.tinymce.com/) editors in the Umbraco Backoffice.
 
 This file can be found at the following path: /config/tinyMceConfig.config
 

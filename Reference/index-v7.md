@@ -43,7 +43,7 @@ Info about setting up IoC/Dependency Injection to work with Umbraco
 Working with Umbraco templates: views, partial views, child actions, razor syntax, macros and working with JavaScript/Css.
 
 ## [Querying & models](Querying/index.md)
- 
+
 Information about the data models used to display content in Umbraco and the various ways of querying it.
 
 ## [Routing & Controllers](Routing/index.md)
@@ -57,7 +57,7 @@ Details on how to implement search capabilities for your Umbraco website using E
 
 ## [Events](Events/index.md)
 
-Event model covering all major aspects of the system for triggering custom code or automation.  
+Event model covering all major aspects of the system for triggering custom code or automation.
 
 ## [Rest APIs](Routing/WebApi/index.md)
 

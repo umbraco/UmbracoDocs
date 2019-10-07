@@ -8,7 +8,7 @@ versionFrom: 7.0.0
 If you are using Umbraco Forms v 4.x, you need to follow the guide found here: [When using Forms 4.x](#when-using-forms-4x)
 :::
 
-Forms will output some JavaScript, and by default this is rendered right below the markup. 
+Forms will output some JavaScript, and by default this is rendered right below the markup.
 
 In many cases you might prefer rendering your scripts at the bottom of the page, e.g. before the closing `</body>` tag, as this generally improves site performance.
 
@@ -41,16 +41,16 @@ When **inserting forms directly in your template**:
 ### Change the Forms partial view macro
 First we'll need to tell the Forms partial macro (that is used to render forms) to only render the markup and not the scripts. Navigate to the Developer section and open the Partial View Macro File > Insert Umbraco Form
 
-It should have the following contents 
+It should have the following contents
 
 ```csharp
 @inherits Umbraco.Web.Macros.PartialViewMacroPage
-    
+
 @if (Model.MacroParameters["FormGuid"] != null)
 {
     var s = Model.MacroParameters["FormGuid"].ToString();
     var g = new Guid(s);
-    
+
     Html.RenderAction("Render", "UmbracoForms", new {formId = g});
 }
 ```
@@ -60,12 +60,12 @@ Here we'll make a small change: In the RenderAction call we'll provide an additi
 So change this:
 
 ```csharp
-Html.RenderAction("Render", "UmbracoForms", new {formId = g});	
+Html.RenderAction("Render", "UmbracoForms", new {formId = g});
 ```
 
 to this:
 
-```csharp	
+```csharp
 Html.RenderAction("Render", "UmbracoForms", new {formId = g, mode = "form"});
 ```
 

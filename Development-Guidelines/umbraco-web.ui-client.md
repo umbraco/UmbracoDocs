@@ -35,11 +35,11 @@ The source code of Umbraco 7 UI
 Test configuration and test files used by the Karma testrunner to unit-test the project.
 
 ## Source folders
-Inside the /src folder, the Umbraco 7 source code is divided into 3 groups of code: 
+Inside the /src folder, the Umbraco 7 source code is divided into 3 groups of code:
 
 - Less files
-- Common / shared JavaScript 
-- Views 
+- Common / shared JavaScript
+- Views
 
 ### Less files
 Everything is loaded into the belle.less which specifies what files to include, the variables.less contains global variables
@@ -57,7 +57,7 @@ The Common folder contains all the items that are shared between multiple parts 
 
 If you would like to access the navigationService look in `/src/common/services/navigation.service.js`
 
-For the Umbraco 7 application, we have also introduced the concept of a `Resource`, this term is used for a shared service which primarily is used to access data from the database and perform CRUD operations on this data. 
+For the Umbraco 7 application, we have also introduced the concept of a `Resource`, this term is used for a shared service which primarily is used to access data from the database and perform CRUD operations on this data.
 
 Example resources could be:
 
@@ -68,7 +68,7 @@ All resources return a promise when data is fetched, they use the same pattern f
 On our serverless setup, we use a mocked http backend to simulate data.
 
 ### Packages
-Folder containing various sample projects on how to use the external API, good for referencing how the package.manifest and property editors work. 
+Folder containing various sample projects on how to use the external API, good for referencing how the package.manifest and property editors work.
 
 ### app.js and app.dev.js
 The central application script handles which modules to inject, app.js is for production, app.dev.js is for testing
@@ -114,11 +114,11 @@ The source code of Umbraco 7 UI
 Test configuration and test files used by the Karma testrunner to unit-test the project.
 
 ## Source folders
-Inside the /src folder, the Umbraco 7 source code is divided into 3 groups of code: 
+Inside the /src folder, the Umbraco 7 source code is divided into 3 groups of code:
 
 - Less files
-- Common / shared JavaScript 
-- Views 
+- Common / shared JavaScript
+- Views
 
 ### Less files
 Everything is loaded into the belle.less which specifies what files to include, the variables.less contains global variables
@@ -136,7 +136,7 @@ The Common folder contains all the items that are shared between multiple parts 
 
 If you would like to access the navigationService look in `/src/common/services/navigation.service.js`
 
-For the Umbraco 7 application, we have also introduced the concept of a `Resource`, this term is used for a shared service which primarily is used to access data from the database and perform CRUD operations on this data. 
+For the Umbraco 7 application, we have also introduced the concept of a `Resource`, this term is used for a shared service which primarily is used to access data from the database and perform CRUD operations on this data.
 
 Example resources could be:
 
@@ -147,7 +147,7 @@ All resources return a promise when data is fetched, they use the same pattern f
 On our serverless setup, we use a mocked http backend to simulate data.
 
 ### Packages
-Folder containing various sample projects on how to use the external API, good for referencing how the package.manifest and property editors work. 
+Folder containing various sample projects on how to use the external API, good for referencing how the package.manifest and property editors work.
 
 ### app.js and app.dev.js
 The central application script handles which modules to inject, app.js is for production, app.dev.js is for testing

@@ -13,14 +13,14 @@ JQuery plugins don't require an internal class to perform the functionality and 
 
 ```javascript
 (function($) {
-	$.fn.verticalAlign = function(opts) {
-		// we are not using opts (options) for this plugin
-		// but you could!
-		return this.each(function() {
-			var top = (($(this).parent().height() - $(this).height()) / 2);
-			$(this).css('margin-top', top);
-		});
-	};
+    $.fn.verticalAlign = function(opts) {
+        // we are not using opts (options) for this plugin
+        // but you could!
+        return this.each(function() {
+            var top = (($(this).parent().height() - $(this).height()) / 2);
+            $(this).css('margin-top', top);
+        });
+    };
 })(jQuery);
 ```
 
@@ -40,56 +40,56 @@ So essentially, we'll be creating 2 plugins, one to instantiate it and one to re
 ```javascript
 // using the same vertical align concept but we'll expose an API for it
 // ( not that this is very useful :) )
- 
-Umbraco.Sys.registerNamespace("MyProject.MyNamespace");
- 
-	(function($) {
-	     
-	    // create the standard jQuery plugin
-	 
-	    $.fn.verticalAlign = function(opts) {
-	        // we are not using opts (options) for this plugin
-	        // but you could!
-	        return this.each(function() {
-	            // create the aligner for the current element
-	            var aligner = new MyProject.MyNamespace.VerticalAligner($(this));
-	        });
-	    };
-	     
-	    // create the Api retriever plugin
-	 
-	    $.fn.verticalAlignApi = function () {
-	        // ensure there is only one
-	        if ($(this).length != 1) {
-	            throw "Requesting the API can only match one element";
-	        }
-	        // ensure this has a vertical aligner applied to it
-	        if ($(this).data("api") == null) {
-	            throw "The matching element had not been bound to a VerticalAligner ";
-	        }
-	        return $(this).data("api");
-	    }
-	 
-	    // create a JavaScript class to support the plugin
-	 
-	    MyProject.MyNamespace.verticalAligner = function(elem) {
-	       // the jQuery selector
-	       var _e = elem;
-	       var api = {
-	          align: function() {
-	             var top = ((_e.parent().height() - _e.height()) / 2);
-	             _e.css('margin-top', top);
-	          }
-	       }
-	       // store the api object in the jQuery data object for 
-	       // the current selector
-	       _e.data("api", api);
 
-	       // return the api object
-	       return api;
-	    }
-	 
-	})(jQuery);
+Umbraco.Sys.registerNamespace("MyProject.MyNamespace");
+
+    (function($) {
+
+        // create the standard jQuery plugin
+
+        $.fn.verticalAlign = function(opts) {
+            // we are not using opts (options) for this plugin
+            // but you could!
+            return this.each(function() {
+                // create the aligner for the current element
+                var aligner = new MyProject.MyNamespace.VerticalAligner($(this));
+            });
+        };
+
+        // create the Api retriever plugin
+
+        $.fn.verticalAlignApi = function () {
+            // ensure there is only one
+            if ($(this).length != 1) {
+                throw "Requesting the API can only match one element";
+            }
+            // ensure this has a vertical aligner applied to it
+            if ($(this).data("api") == null) {
+                throw "The matching element had not been bound to a VerticalAligner ";
+            }
+            return $(this).data("api");
+        }
+
+        // create a JavaScript class to support the plugin
+
+        MyProject.MyNamespace.verticalAligner = function(elem) {
+            // the jQuery selector
+            var _e = elem;
+            var api = {
+            align: function() {
+                var top = ((_e.parent().height() - _e.height()) / 2);
+                _e.css('margin-top', top);
+            }
+            }
+            // store the api object in the jQuery data object for
+            // the current selector
+            _e.data("api", api);
+
+            // return the api object
+            return api;
+        }
+
+    })(jQuery);
   ```
 
 ### Consuming the plugins

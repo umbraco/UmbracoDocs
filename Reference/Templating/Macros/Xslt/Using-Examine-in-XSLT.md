@@ -48,9 +48,9 @@ references the "urn:umbraco.examine" namespace and that the
 leaves out the rest of the default namespaces):
 
 ```xml
-<xsl:stylesheet  
-  ...  
-  xmlns:umbraco.examine="urn:umbraco.examine"  
+<xsl:stylesheet
+  ...
+  xmlns:umbraco.examine="urn:umbraco.examine"
   exclude-result-prefixes="... ... umbraco.examine">
 ```
 

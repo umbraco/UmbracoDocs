@@ -5,7 +5,7 @@ versionFrom: 8.1.0
 # IPublishedContent Collections
 
 All collections of `IPublishedContent` are `IEnumerable<IPublishedContent>`.
-This means that all C# LINQ statements can be used to filter and query the collections.  
+This means that all C# LINQ statements can be used to filter and query the collections.
 
 ## Collections
 

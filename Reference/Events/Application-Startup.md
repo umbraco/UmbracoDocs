@@ -11,5 +11,3 @@ Core developer Stephan also has a series of blog posts about the changes:
 - [Composing Umbraco v8](https://www.zpqrtbnk.net/posts/composing-umbraco-v8/)
 - [Composing Umbraco v8 Collections](https://www.zpqrtbnk.net/posts/composing-umbraco-v8-collections/)
 - [Composing Umbraco v8 Components](https://www.zpqrtbnk.net/posts/composing-umbraco-v8-components/)
-
-

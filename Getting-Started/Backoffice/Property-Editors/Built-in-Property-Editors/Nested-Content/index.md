@@ -21,9 +21,9 @@ You should then be presented with the **Nested Content** property editors data-t
 
 The data-type editor allows you to configure the following properties:
 
-- **Doc Types** - Defines a list of document-types to use as data blueprints for this **Nested Content** instance. For each document-type you can provide the alias of the group you wish to render (the first group is used by default if not set) as well as a template for generating list item labels using the syntax `{{propertyAlias}}`. 
-    - If you would like to include the index position in the label, you can use `{{$index}}`. 
-    - If your property links to a content, media or member node, you can use the Angular filter `{{ pickerAlias | ncNodeName }}` to show the node name rather than the node ID. 
+- **Doc Types** - Defines a list of document-types to use as data blueprints for this **Nested Content** instance. For each document-type you can provide the alias of the group you wish to render (the first group is used by default if not set) as well as a template for generating list item labels using the syntax `{{propertyAlias}}`.
+    - If you would like to include the index position in the label, you can use `{{$index}}`.
+    - If your property links to a content, media or member node, you can use the Angular filter `{{ pickerAlias | ncNodeName }}` to show the node name rather than the node ID.
     - If your property is a rich text editor, you can use the Angular filter `{{ pickerAlias | ncRichText }}` to show the unformatted text.
 - **Min Items** - Sets the minimum number of items that should be allowed in the list. If greater than `0`, **Nested Content** will pre-populate your list with the minimum amount of allowed items and prevent deleting items below this level. Defaults to `0`.
 - **Max Items** - Sets the maximum number of items that should be allowed in the list. If greater than `0`, **Nested Content** will prevent new items being added to the list above this threshold. Defaults to `0`.
@@ -40,11 +40,11 @@ When viewing a **Nested Content** editor for the first time, you'll be presented
 
 ![Nested Content - Add Content](images/NestedContent_AddContent.png)
 
-Click the plus icon to start creating a new item in the list. 
+Click the plus icon to start creating a new item in the list.
 
 If your **Nested Content** editor is configured with multiple document-types you will be presented with a dialog window to select which document-type you would like to use.
 
-![Nested Content - Select Schema](images/NestedContent_SelectSchema-v8.png) 
+![Nested Content - Select Schema](images/NestedContent_SelectSchema-v8.png)
 
 Click the icon of the document-type you wish to use and a new item will be created in the list using that document-type.
 
@@ -106,17 +106,17 @@ Example:
     {
         var description = item.GetProperty<string>("description");
         var image = item.GetProperty<IPublishedContent>("image");
-    
+
         <h3>@item.GetProperty("heading").Value()</h3>
-        
+
         if (!string.IsNullOrEmpty(description))
         {
             <p>@Html.Raw(Html.ReplaceLineBreaksForHtml(description))</p>
         }
-        
+
         if (image != null)
         {
-           <img src="@image.Url" alt="" />
+            <img src="@image.Url" alt="" />
         }
     }
 }

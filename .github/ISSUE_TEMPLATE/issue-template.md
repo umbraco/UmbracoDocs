@@ -10,7 +10,7 @@ Missing documentation
 Wrong documentation
 Other (write it here)
 
-## What article/section is this about? 
+## What article/section is this about?
 (link here)
 
 ## Describe the issue

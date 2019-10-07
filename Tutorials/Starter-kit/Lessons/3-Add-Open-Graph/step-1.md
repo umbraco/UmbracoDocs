@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Add Open Graph - Step 1
 
-Adding support for Open Graph can be done in many ways. In this lesson we'll create a reusable set of properties we can add to specific page types. 
+Adding support for Open Graph can be done in many ways. In this lesson we'll create a reusable set of properties we can add to specific page types.
 
 First we need to see what the expected outcome will be. Open Graph for web pages needs to contain at least the following:
 
@@ -15,7 +15,7 @@ First we need to see what the expected outcome will be. Open Graph for web pages
 <meta property="og:image" content="{URL to the open graph image}" />
 ```
 
-Looking at the above we can pull a couple of things out automatically and then add ways to input the rest. 
+Looking at the above we can pull a couple of things out automatically and then add ways to input the rest.
 
 In this lesson we'll only add Open Graph Content of the type "website", so we don't need an input for that. We can also get the URL for the page we are currently on. This leaves us with two remaining properties to add: title and image.
 

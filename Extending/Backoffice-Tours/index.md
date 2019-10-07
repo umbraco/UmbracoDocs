@@ -29,12 +29,12 @@ A tour file contains an array of tour configuration JSON objects. So it's possib
 
 ```json
 [
-	{
-		// tour configuration object
-	},
-	{
-		// tour configuration object
-	}
+    {
+        // tour configuration object
+    },
+    {
+        // tour configuration object
+    }
 ]
 ```
 
@@ -46,14 +46,14 @@ Example tour configuration object :
 
 ```json
 {
-	"name": "My Awesome tour",
-	"alias": "myUniqueAlias",
-	"group": "Get things done!!!",
-	"groupOrder": 1,
-	"allowDisable": true,
-	"culture" : "en-US",
-	"requiredSections": ["content","media"],
-	"steps": []
+    "name": "My Awesome tour",
+    "alias": "myUniqueAlias",
+    "group": "Get things done!!!",
+    "groupOrder": 1,
+    "allowDisable": true,
+    "culture" : "en-US",
+    "requiredSections": ["content","media"],
+    "steps": []
 }
 ```
 
@@ -105,16 +105,16 @@ Example tour step object:
 
 ```json
 {
-	"title": "A meaningful title",
-	"content": "<p>Some text explaining the step</p>",
-	"type": null,
-	"element": "#section-avatar",
-	"elementPreventClick": false,
-	"backdropOpacity": 0.6,
-	"event": "click",
-	"view": null,
-	"eventElement": "#section-avatar .umb-avatar",
-	"customProperties": null
+    "title": "A meaningful title",
+    "content": "<p>Some text explaining the step</p>",
+    "type": null,
+    "element": "#section-avatar",
+    "elementPreventClick": false,
+    "backdropOpacity": 0.6,
+    "event": "click",
+    "view": null,
+    "eventElement": "#section-avatar .umb-avatar",
+    "customProperties": null
 },
 ```
 
@@ -142,7 +142,7 @@ A CSS selector for the element you wish to highlight. The tour step will positio
 
 A lot of elements in the Umbraco backoffice have a "data-element" attribute. It's recommended to use that, because "id" and "class" are subject to changes, e.g.:
 
-	[data-element='section-content']
+    [data-element='section-content']
 
 TIP: Use the developer tools from your browser to find the id, class and data-attribute.
 

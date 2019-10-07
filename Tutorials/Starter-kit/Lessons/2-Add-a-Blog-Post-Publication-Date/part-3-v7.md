@@ -22,7 +22,7 @@ Finally in Part Three we shall change the blog listing.
     ```
     * Because we are sorting by a custom property we need to use the generic GetPropertyValue method.
 
-4. Then click *Save*. A confirmation message should appear confirming that the Partial view has saved.  
+4. Then click *Save*. A confirmation message should appear confirming that the Partial view has saved.
 5. Now view both the home and the blog pages and in the browser to confirm that all is working as expected.
 
 ## Summary

@@ -2,7 +2,7 @@
 versionFrom: 7.0.0
 ---
 
-# Organizations 
+# Organizations
 On Umbraco Cloud it is possible to be part of an organization. And organization is a way for you to associate users to one organization.
 The benefits are currently limited, but we are working on improving the features available for organizations.
 Currently organizations are created by Umbraco HQ - so **reach out to support** to hear more about the feature, and whether they apply for your scenario.

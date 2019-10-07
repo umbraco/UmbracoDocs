@@ -39,11 +39,11 @@ Creates a new application, and adds it to the database.
 
 Alias: addApplication
 
-    <Action runat="install"   
-    [undo="false"]   
-    alias="addApplication"   
-    appName="Application Name"   
-    appAlias="myApplication"   
+    <Action runat="install"
+    [undo="false"]
+    alias="addApplication"
+    appName="Application Name"
+    appAlias="myApplication"
     appIcon="application.gif"/>
 
 ## Add application tree

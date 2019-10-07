@@ -18,24 +18,24 @@ The different sections, dashboards and their configuration (sort order and users
 ## Configuration Example
 
 ```xml
-<?xml version="1.0" encoding="utf-8" ?> 
+<?xml version="1.0" encoding="utf-8" ?>
 <dashBoard> <!-- Root of the dashboard XML tree -->
-	<section>  <!-- Defines a dashboard layout for a group of sections -->
-		<areas> <!-- Declares which sections (i.e. content,media,users,[your own]-->
-			<area>[area name]</area> <!-- A section to apply this to eg 'content' -->
-			...
-		</areas>
+    <section>  <!-- Defines a dashboard layout for a group of sections -->
+        <areas> <!-- Declares which sections (i.e. content,media,users,[your own]-->
+            <area>[area name]</area> <!-- A section to apply this to eg 'content' -->
+            ...
+        </areas>
 
-		<tab caption="[caption]"> <!-- Creates a tab in the Dashboard with the assigned caption -->
-			<access><!-- control which Umbraco roles can see the tab -->
-				<deny>translator</deny>
-				<grant>editor</grant>
-			</access>
-			<control>[path]</control> <!-- path AngularJS View (v7) to load into the tab -->
-		</tab>
-		...
-	</section>
-	...
+        <tab caption="[caption]"> <!-- Creates a tab in the Dashboard with the assigned caption -->
+            <access><!-- control which Umbraco roles can see the tab -->
+                <deny>translator</deny>
+                <grant>editor</grant>
+            </access>
+            <control>[path]</control> <!-- path AngularJS View (v7) to load into the tab -->
+        </tab>
+        ...
+    </section>
+    ...
 </dashBoard>
 ```
 
@@ -56,4 +56,3 @@ There are lots of packages listed on <a href="/projects/?category=Backoffice%20e
 For example, the snappily titled <a href="/projects/backoffice-extensions/the-dashboard/">'The Dashboard'</a> provides great information for editorial teams on what has been edited recently and by whom.
 
 !['The Dashboard' Dashboard Package](images/the-dashboard-package.png)
-

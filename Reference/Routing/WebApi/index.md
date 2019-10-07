@@ -63,7 +63,7 @@ Example:
 
 ```csharp
 public class ProductsController : UmbracoApiController
-{	    
+{
     public IEnumerable<string> GetAllProducts()
     {
         return new[] { "Table", "Chair", "Desk", "Computer"};
@@ -86,7 +86,7 @@ Example:
 ```csharp
 [PluginController("AwesomeProducts")]
 public class ProductsController : UmbracoApiController
-{	    
+{
     public IEnumerable<string> GetAllProducts()
     {
         return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
@@ -112,7 +112,7 @@ If you are creating a controller to work within the Umbraco backoffice then you 
 *~/Umbraco/backoffice/[YourAreaName]/[YourControllerName]*
 
 
-E.g 
+E.g
 *~/Umbraco/Api/Products/GetAllProducts* or
 
 *~/Umbraco/backoffice/AwesomeProducts/Products/GetAllProducts* for PluginController

@@ -12,8 +12,8 @@ To perform proper debugging on your site you need to set your application to hav
 <compilation defaultLanguage="c#" debug="true" batch="true" targetFramework="4.7.2" numRecompilesBeforeAppRestart="50" />
 ```
 
-:::warning 
-Debug should always be set to false in production. 
+:::warning
+Debug should always be set to false in production.
 :::
 
 ## Tracing

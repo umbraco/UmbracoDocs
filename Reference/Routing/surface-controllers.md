@@ -18,7 +18,7 @@ Since any SurfaceController inherits from the `Umbraco.Web.Mvc.SurfaceController
 
 * Interacting with Umbraco routes during HTTP POSTs (i.e. `return CurrentUmbracoPage();` )
 * Rendering forms in Umbraco (i.e. `@Html.BeginUmbracoForm<MyController>(...)` )
-* Rendering ASP.NET MVC ChildAction 
+* Rendering ASP.NET MVC ChildAction
 
 ## Creating a SurfaceController
 
@@ -28,7 +28,7 @@ SurfaceControllers are plugins, meaning they are found when the Umbraco applicat
 
 A locally declared SurfaceController is one that is not shipped within an Umbraco package. It is created by the developer of the website they are creating. If you are planning on shipping a SurfaceController in an Umbraco package then you will need to create a plugin based SurfaceController (see the next heading).
 
-To create a locally declared SurfaceController: 
+To create a locally declared SurfaceController:
 
 * Create a controller that inherits from `Umbraco.Web.Mvc.SurfaceController`
 * The controller must be a public class.
@@ -42,7 +42,7 @@ namespace name.Core.Controllers
 {
     public class MyController : Umbraco.Web.Mvc.SurfaceController
     {
-        public ActionResult Index() 
+        public ActionResult Index()
         {
             return Content("hello world");
         }
@@ -76,7 +76,7 @@ namespace name.Core.Controllers
     [PluginController("SuperAwesomeAnalytics")]
     public class MyController : Umbraco.Web.Mvc.SurfaceController
     {
-        public ActionResult Index() 
+        public ActionResult Index()
         {
             return Content("hello world");
         }

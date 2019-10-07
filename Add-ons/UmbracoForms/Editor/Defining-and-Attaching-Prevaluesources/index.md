@@ -28,11 +28,11 @@ In this walk-through we will choose `Get values from textfile`:
 
 We need to provide a file containing the list we want to use as prevalues. This could be a `.txt` file containing the following:
 
-	example value 1
-	example value 2
-	example value 3
-	example value 4
-	example value 5
+    example value 1
+    example value 2
+    example value 3
+    example value 4
+    example value 5
 
 Once the settings are populated, save the prevalue source by hitting the Save button. If the settings are successfully validated and they return results, you will be able to see an overview of the values.
 

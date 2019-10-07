@@ -8,7 +8,7 @@ needsV8Update: "true"
 
 ## Overview
 
-This guide takes you through the steps to setup a Custom Dashboard in Umbraco. 
+This guide takes you through the steps to setup a Custom Dashboard in Umbraco.
 
 ### What is a Dashboard?
 
@@ -92,7 +92,7 @@ The terminology here gets a bit muddled but we're creating a 'Section'. This is 
 The above configuration is effectively saying:
 
 > "Add a tab called 'Welcome' to the 'Content' area/section of the Umbraco site, use the WelcomeDashboard.html as the content (view) of the dashboard and don't allow 'translators' to see it!"
- 
+
 :::note
 The order in which the tab will appear in the Umbraco Backoffice depends on its position in the dashboard.config file. To make our custom Welcome message the first Tab the editors see in the content section, make sure the above configuration is the 'first' section configuration in the dashboard.config file.
 
@@ -160,7 +160,7 @@ We can add functionality to the dashboard by associating an AngularJS controller
 
 Let's add a new file to the CustomWelcomeDashboard folder called 'customwelcomedashboard.controller.js' where our controller code will live.
 
-We register this AngularJS controller to the Umbraco Angular module: 
+We register this AngularJS controller to the Umbraco Angular module:
 
 ```js
 angular.module("umbraco").controller("CustomWelcomeDashboardController", function ($scope) {
@@ -331,10 +331,10 @@ logResource.getPagedUserLog(userLogOptions)
     angular.forEach(response.items, function (item) {
         // if no entity exists -1 is returned for the nodeId (eg saving a macro would create a log entry without a nodeid)
         if (item.nodeId > 0) {
-              //only interested here in 'saves'
-              if (item.logType == "Save") {
+            //only interested here in 'saves'
+            if (item.logType == "Save") {
                     // this is the only way to tell them apart - whether the comment includes the words Content or Media!!
-                    if (item.comment.match("(\\bContent\\b|\\bMedia\\b)")) {                            
+                    if (item.comment.match("(\\bContent\\b|\\bMedia\\b)")) {
                             if (item.comment.indexOf("Media") > -1) {
                                 // log entry is a media item
                                 item.editUrl = "media/media/edit/" + item.nodeId;
@@ -361,7 +361,7 @@ logResource.getPagedUserLog(userLogOptions)
     vm.UserLogHistory.items = filteredLogEntries;
 });
 ```
- 
+
 Finally update our view to use the additional retrieved entity information:
 
 ```js
@@ -378,7 +378,7 @@ and we should have a list of recently saved content and media:
 :::note
 The url /Umbraco/#/content/content/edit/1234 is the path to open up a particular entity (with id 1234) ready for editing.
 
-The `logResource` has undergone a few breaking changes, including problems with SQLCE databases. 
+The `logResource` has undergone a few breaking changes, including problems with SQLCE databases.
 
 * Prior to 7.6.4 the resource will 404
 * From 7.6.4 to 7.13 you can use `logResource.getUserLog("save", new Date()).then(function (response))`

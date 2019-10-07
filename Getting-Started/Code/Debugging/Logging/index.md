@@ -131,7 +131,7 @@ The default log levels we ship with in Umbraco v8.0+ are:
 
 ## Configuration
 
-Serilog can be configured and extended by using the two XML configuration files on disk. 
+Serilog can be configured and extended by using the two XML configuration files on disk.
 
 * `/config/serilog.config` is used to modify the main Umbraco logging pipeline
 * `/config/serilog.user.config` which is a sublogger and allows you to make modifications without affecting the main Umbraco logger
@@ -232,5 +232,3 @@ If you are interested in learning more then the following resources will benefic
 * [Nicholas Blumhardt Blog, creator of Serilog](https://nblumhardt.com/)
 * [Serilog Pluralsight Course](https://www.pluralsight.com/courses/modern-structured-logging-serilog-seq)
 * [Seq](https://getseq.net/) This is FREE for a single machine such as your own local development computer
-
-

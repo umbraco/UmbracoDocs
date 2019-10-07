@@ -13,7 +13,7 @@ The following tools have been used to create this guide:
 
 ## The Scenario
 
-You have an Umbraco Cloud project with two environments, Development and Live. 
+You have an Umbraco Cloud project with two environments, Development and Live.
 
 You have been working on building the site on a local clone of the Development environment, and now you want to send some but not all changes to the Live environment.
 

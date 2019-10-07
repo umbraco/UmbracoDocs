@@ -17,7 +17,7 @@ Holds the version number of the currently installed version of Umbraco. This ver
 
 ### umbracoReservedUrls
 
-A comma-separated list of files to be left alone by Umbraco. IIS will serve these files, and the Umbraco request pipeline will not be triggered.  
+A comma-separated list of files to be left alone by Umbraco. IIS will serve these files, and the Umbraco request pipeline will not be triggered.
 
 ```xml
 <add key="umbracoReservedUrls" value="~/config/splashes/booting.aspx,~/install/default.aspx,~/config/splashes/noNodes.aspx,~/VSEnterpriseHelper.axd" />
@@ -49,7 +49,7 @@ If you are running multiple sites, you don't want the top level node in your URL
 
 ### umbracoUseDirectoryUrls
 
-Strips `.aspx` from URLs on the frontend when set to `true`.  
+Strips `.aspx` from URLs on the frontend when set to `true`.
 This setting is only important to older IIS configurations where extension-less URLs weren't supported very well.
 
 ```xml
@@ -143,7 +143,7 @@ The value must be set to a virtual path with a prefixed tilde (~)
 
 The default value is: `false`
 
-Generally set to `false` but when set to `true` the content XML file (normally stored in `~/App_Data/umbraco.config`) will be stored in the local servers' Temp (CodeGen) folder. This is handy for load balanced environments when the website is running from a central SAN based file system (non-replicated). 
+Generally set to `false` but when set to `true` the content XML file (normally stored in `~/App_Data/umbraco.config`) will be stored in the local servers' Temp (CodeGen) folder. This is handy for load balanced environments when the website is running from a central SAN based file system (non-replicated).
 
 If you are not running a load balanced environment on a central SAN based file system (or similar) ensure that this setting remains set to `false`.
 

@@ -43,7 +43,7 @@ You will also need to pass the "Context" to the @Umbraco.Field() method if you'r
 
 <ul>
     @foreach(var item in selection){
-         @Umbraco.Field(item, "eventLink")
+        @Umbraco.Field(item, "eventLink")
     }
 </ul>
 ```

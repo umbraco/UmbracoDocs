@@ -10,7 +10,7 @@ In the excitement of the version 8 release, we assumed that `IPublishedContent` 
 
 ## What
 
-Fixing the bugs is of course a requirement. Unfortunately, some of the required bug fixes could not be achieved without introducing some breaking changes. 
+Fixing the bugs is of course a requirement. Unfortunately, some of the required bug fixes could not be achieved without introducing some breaking changes.
 
 At that point, we had decided to give `IPublishedContent` some love: fix the bugs, make it clean, friendly, discoverable and predictable, for the entire life of version 8.
 
@@ -20,7 +20,7 @@ The general idea underlying these changes is that:
 * The proper way to retrieve "something" from an `IPublishedContent` instance is always through a method, for example: `Children()`. And, when that method can be multilingual, the method accepts a `culture` parameter, which can be left `null` to get the "current" culture value.
 * To reduce the amount of breaking changes, and to simplify things for non-multilingual sites, existing properties such as `document.Name` and `document.Children` (and others) still exist, and return the value for the current culture. In other words, these properties are now implemented as `document.Name => document.Name()` or `document.Children => document.Children()`.
 
-The rest of this document presents each change in details. 
+The rest of this document presents each change in details.
 
 ## When
 
@@ -34,7 +34,7 @@ The `IPublishedContent` interface was not easy to mock and test in version 7. It
 
 In version 8.1, these two classes are abstracted as `IPublishedContentType` and `IPublishedPropertyType`, thus making `IPublishedContent` easier to mock and test.
 
->**CHANGE**: This impacts every method accepting or returning a content type. For instance, the signature of most `IPropertyValueConverter` methods changes. References to `PublishedContentType` must be replaced with references to `IPublishedContentType`. 
+>**CHANGE**: This impacts every method accepting or returning a content type. For instance, the signature of most `IPropertyValueConverter` methods changes. References to `PublishedContentType` must be replaced with references to `IPublishedContentType`.
 
 ### IPublishedContent
 
@@ -92,6 +92,6 @@ Because that method is useful, especially when building traditional, non-multili
 
 ### DomainHelper
 
-`DomainHelper` has been replaced with a static `DomainUtilities` class. 
+`DomainHelper` has been replaced with a static `DomainUtilities` class.
 
->**CHANGE**: It is rare that `DomainHelper` is used in code since it only contains one public method but if developers are using this, it can no longer be injected since it's now a static class called `DomainUtilities`. 
+>**CHANGE**: It is rare that `DomainHelper` is used in code since it only contains one public method but if developers are using this, it can no longer be injected since it's now a static class called `DomainUtilities`.

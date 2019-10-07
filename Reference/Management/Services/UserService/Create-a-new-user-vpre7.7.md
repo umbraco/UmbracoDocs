@@ -5,7 +5,7 @@ meta.Description: "This will show you how to create a new user using the UserSer
 ---
 # Create a new user
 
-The document illustrates how you can create a new backoffice user from a Razor view. 
+The document illustrates how you can create a new backoffice user from a Razor view.
 
 
 ### Getting a reference to the UserService
@@ -13,15 +13,15 @@ The first step is to get a reference to the `UserService`. This is useful, as we
 
     // Get a reference to the user service
     IUserService us = ApplicationContext.Services.UserService;
-    
+
 If you're using something else than a Razor view, the approach for accessing the user service may be a little different. You can see the [parent page](index.md) for more examples.
-    
+
 ### Creating the user
 With the reference in place, we can now create the user:
 
     // Creates a new user
     IUser user = us.CreateUserWithIdentity("john-doe@xample.org", "john-doe@xample.org");
-    
+
 The `CreateUserWithIdentity` method takes two parameters - `username` and `email`. However in newer versions of Umbraco, it's considered best practice to also use the email address as the username. Calling `CreateUserWithIdentity` will create the user in the database, so it is not necessary to call the `Save` method for this (unless you further update the user as shown below).
 
 ### Setting a password
@@ -29,7 +29,7 @@ So far we have created the user, but we haven't yet set a password. We can do th
 
     // Set a new password for the user
     us.SavePassword(user, "HelloWorld1234");
-    
+
 However in new Umbraco installations, the default user provider configuration (the `allowManuallyChangingPassword` setting is `false` by default) prevents us from setting a new password throug code. If we try to set a password anyways, the method will throw an exception of the type `System.NotSupportedException`, and with the following message:
 
 > This provider does not support manually changing the password

@@ -8,7 +8,7 @@ If you need some help, here's where to find it.
 
 ## Outcome
 
-You're a registered user of the developer community website, known as "**Our**". 
+You're a registered user of the developer community website, known as "**Our**".
 
 Maybe you have even signed up to attend a local meetup!
 

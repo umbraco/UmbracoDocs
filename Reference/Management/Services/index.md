@@ -15,7 +15,7 @@ A service for handling lawful data processing requirements.
 Service for doing CRUD type operations, as well as publishing for `Content` objects.
 
 ## [ContentTypeService](ContentTypeService)
-Service for doing CRUD type operations against `ContentType` and `MediaType` objects. 
+Service for doing CRUD type operations against `ContentType` and `MediaType` objects.
 
 ## [DataTypeService](DataTypeService)
 Service for doing CRUD type operations for `DataTypeDefinition` and `DataType` objects.

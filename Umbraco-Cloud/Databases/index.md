@@ -17,7 +17,7 @@ By default when Umbraco Cloud restores a local database it will be an Umbraco.sd
 
 ```xml
 <add name="ASP.NET v4.0" autoStart="true" managedRuntimeVersion="v4.0" managedPipelineMode="Integrated">
-   <processModel identityType="ApplicationPoolIdentity" loadUserProfile="true" setProfileEnvironment="true" />
+    <processModel identityType="ApplicationPoolIdentity" loadUserProfile="true" setProfileEnvironment="true" />
 </add>
 ```
 
@@ -51,7 +51,7 @@ If you need to open for specific IP addresses, click the "Add New IP Address" bu
 ## Setting up SQL Management Studio
 Once the firewall is open, it's time to fire up SQL Management Studio and connect to the database. Be aware that a database exist for each environment you have on Umbraco Cloud and any changes you make to custom tables needs to be done for each of them.
 
-* Choose "Connect Database Engine" 
+* Choose "Connect Database Engine"
 * Copy the values from the Connection Details page on Umbraco Cloud where you'll find handy "copy" short-cut buttons to the right of each value
 * Choose "SQL Server Authentication" as the authentication type
 * Remember to click the "Options" button *before you connect* and paste the name of your database in the "Database" input field. If you do not do this, security settings on Umbraco Cloud will prevent you from connecting
@@ -67,7 +67,7 @@ In Visual Studio this is done through the Server Explorer. Add a new connection 
 
 If this is your first time connecting to a local database this way, you might have to choose a data source when clicking `Add Connection`. Select `Microsoft SQL Server Database File` and hit OK.
 
-Umbraco will create an mdf file (LocalDB) if you have SQL Server installed on your local machine, provided LocalDB is enabled and can be discovered by Deploy. If Deploy can't create an mdf file it will create a SQL CE (sdf) file instead. 
+Umbraco will create an mdf file (LocalDB) if you have SQL Server installed on your local machine, provided LocalDB is enabled and can be discovered by Deploy. If Deploy can't create an mdf file it will create a SQL CE (sdf) file instead.
 
 ## Backups
 It's possible to create a backup of a Cloud database. There are at least two ways of accomplishing this:

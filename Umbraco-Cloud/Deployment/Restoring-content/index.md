@@ -12,7 +12,7 @@ You will also need to use the restore option when setting up new Umbraco Cloud e
 
 <iframe width="800" height="450" src="https://www.youtube.com/embed/ha4KDpE81dg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-## Step-by-step 
+## Step-by-step
 
 ### Restore when starting up the project locally
 

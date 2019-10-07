@@ -13,7 +13,7 @@ This will be shown on Umbraco 7.8.1, newer and older versions may differ. Also t
 ### Behaviour of '/'
 Note that if domains are not set on the top level site nodes, then navigating to '/' will take you to the first "language/territory" site in the content tree. This behaviour is by design.
 
-### First step 
+### First step
 When setting up a multilingual site, the first step is to copy the content you have in the original language. To do this, chose the node you want to copy - in this example everything is copied at once by copying the Home node, left click Home and click copy in the menu.
 
 ![Copy content](images/1.png)

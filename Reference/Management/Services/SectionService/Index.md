@@ -13,7 +13,7 @@ The SectionService is used to control/query the storage for section registration
 
 [Browse the API documentation for ISectionService](https://our.umbraco.com//v7/csharp/api/Umbraco.Core.Services.ISectionService.html).
 
- * **Namespace:** `Umbraco.Core.Services` 
+ * **Namespace:** `Umbraco.Core.Services`
  * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:

@@ -15,8 +15,8 @@ This guide is for solving collision errors on your Umbraco Cloud project. Use th
     they refer to the same unique Umbraco object
     and therefore cannot be processed.
     ---------------------------------------------
-    Collisions for entity type "document-type": 
-      Collisions for unique identifier "home":
+    Collisions for entity type "document-type":
+    Collisions for unique identifier "home":
         UdaFile: ~/data/revision/document-type__4c04d968448747d791b5eae254afc7ec.uda
         UdaFile: ~/data/revision/document-type__f848c577f02b4ee5aea84f87458072a4.uda
 
@@ -43,7 +43,7 @@ You can run into an error like this on all of your Cloud environment. Somestimes
 
 <iframe width="800" height="450" src="https://www.youtube.com/embed/pF5SUh30FKI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-The main cause of this problem is when an entity has been manually created in two or more environments, using the same alias. 
+The main cause of this problem is when an entity has been manually created in two or more environments, using the same alias.
 
 Each environment on Umbraco Cloud are isolated and do not know what the other one is doing until they are synchronized. When an entity is created with identical aliases on two or more environments, it will create duplicate entities that are considered separate entities even though they look that same and share the same alias on both/all environments.
 
@@ -78,8 +78,8 @@ Let's use the example from the beginning of this article, where two `.uda` files
     they refer to the same unique Umbraco object
     and therefore cannot be processed.
     ---------------------------------------------
-    Collisions for entity type "document-type": 
-      Collisions for unique identifier "home":
+    Collisions for entity type "document-type":
+    Collisions for unique identifier "home":
         UdaFile: ~/data/revision/document-type__4c04d968448747d791b5eae254afc7ec.uda
         UdaFile: ~/data/revision/document-type__f848c577f02b4ee5aea84f87458072a4.uda
 
@@ -134,7 +134,7 @@ When the push from local to the Development environment has completed, refresh t
 
 ![Push to Cloud completed](images/visualizing-5.png)
 
-Does your Development still have the red indicator? 
+Does your Development still have the red indicator?
 Sometimes you might need to run another extraction on your Cloud environment after deploying in order to get a `deploy-complete` marker in your `/data` folder and turn your environment *green*. To do this, follow these steps:
 
 1. Access **Kudu** on the affected environment

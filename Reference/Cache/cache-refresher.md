@@ -5,7 +5,7 @@ needsV8Update: "true"
 
 # ICacheRefresher
 
-_This section describes what ICacheRefresher and ICacheRefresher&lt;T&gt; are and how to use them to invalidate your cache correctly including load balanced environments_ 
+_This section describes what ICacheRefresher and ICacheRefresher&lt;T&gt; are and how to use them to invalidate your cache correctly including load balanced environments_
 
 ## What is an ICacheRefresher
 

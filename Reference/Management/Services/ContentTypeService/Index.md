@@ -9,7 +9,7 @@ The content type service acts as a "gateway" to Umbraco data for operations whic
 
 [Browse the API documentation for ContentTypeService](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Services.ContentTypeService.html).
 
- * **Namespace:** `Umbraco.Core.Services` 
+ * **Namespace:** `Umbraco.Core.Services`
  * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
@@ -17,7 +17,7 @@ All samples in this document will require references to the following dll:
 * Umbraco.Core.dll
 
 All samples in this document will require the following using statements:
-	
+
 ```C#
 using Umbraco.Core;
 using Umbraco.Core.Models;

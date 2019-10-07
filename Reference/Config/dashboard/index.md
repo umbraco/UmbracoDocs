@@ -16,7 +16,7 @@ Like the other .config files Dashboard.config is an XML file with a fairly strai
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <dashBoard> <!-- Root of the dashboard XML tree -->
-   <section>  <!-- Defines a dashboard layout for a group of sections -->
+    <section>  <!-- Defines a dashboard layout for a group of sections -->
         <areas> <!-- Declares which sections (i.e. content,media,users,[your own]-->
             <area>[area name]</area> <!-- A section to apply this to -->
             ...
@@ -26,8 +26,8 @@ Like the other .config files Dashboard.config is an XML file with a fairly strai
             <control>[path]</control> <!-- What control(v6) / AngularJS View (v7) to load in that tab -->
         </tab>
         ...
-   </section>
-   ...
+    </section>
+    ...
 </dashBoard>
 ```
 
