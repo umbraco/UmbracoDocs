@@ -1,6 +1,5 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # Tutorial - Creating a Search Engine XML Site Map
