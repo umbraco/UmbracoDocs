@@ -1,4 +1,5 @@
-:::note
+## note
+
 Have some questions about **Umbraco 8**?
 
 We've put together some answers to the most frequently asked questions - you can find it in the [Umbraco 8 - FAQ](Umbraco8FAQ.md) article.
