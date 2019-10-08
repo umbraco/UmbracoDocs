@@ -16,8 +16,8 @@ Alternatively the actions can be manually added to the package manifest by addin
 ## Standard fields on all actions
 
 - **Undo**, optional, is true by default.
-- **Alias**, mandatory, The alias of the package action to be executed
-- **Runat**, mandatory, can either be install or uninstall
+- **Alias**, mandatory, The alias of the package action to be executed.
+- **Runat**, mandatory, can either be install or uninstall.
 
 ## Standard elements on all actions
 

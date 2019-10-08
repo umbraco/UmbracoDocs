@@ -111,7 +111,7 @@ public class LogWhenPublishedComponent : IComponent
     // ...
     }
 ```
-Now we can use the logger to send a message to the logs
+Now we can use the logger to send a message to the logs:
 
 ```csharp
 _logger.Info<LogWhenPublishedComponent>("Something has been published...");

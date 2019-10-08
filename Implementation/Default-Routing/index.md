@@ -47,11 +47,11 @@ Get an overview of how the Umbraco pipeline is structured. See what happens from
             </div>
             <div class="col-sm-6">
                 <h5><a href="Inbound-Pipeline/">Inbound request pipeline</a></h5>
-                <small>Matching a URL to a content item & determining the rendering engine (MVC or Webforms)</small>
+                <small>Matching a URL to a content item & determining the rendering engine (MVC or Webforms).</small>
             </div>
             <div class="col-sm-6">
                 <h5><a href="Controller-Selection/">Controller selection</a></h5>
-                <small>Match an MVC Controller and Action to handle the request</small>
+                <small>Match an MVC Controller and Action to handle the request.</small>
             </div>
         </div>
     </div>
@@ -81,19 +81,19 @@ Get an overview of how the Umbraco pipeline is structured. See what happens from
             </div>
             <div class="col-sm-6">
                 <h5><a href="../../Reference/Querying/IPublishedContent/">IPublishedContent</a></h5>
-                <small>IPublishedContent is the underlying model used in all Umbraco views</small>
+                <small>IPublishedContent is the underlying model used in all Umbraco views.</small>
             </div>
             <div class="col-sm-6">
                 <h5><a href="../../Reference/Querying/DynamicPublishedContent/">DynamicPublishedContent</a></h5>
-                <small>The dynamic version of IPublishedContent that can be used in all Umbraco views</small>
+                <small>The dynamic version of IPublishedContent that can be used in all Umbraco views.</small>
             </div>
             <div class="col-sm-6">
                 <h5><a href="../../Reference/Querying/UmbracoHelper/">UmbracoHelper</a></h5>
-                <small>Use UmbracoHelper to query published media and content</small>
+                <small>Use UmbracoHelper to query published media and content.</small>
             </div>
             <div class="col-sm-6">
                 <h5><a href="../../Reference/Querying/MembershipHelper/">Members</a></h5>
-                <small>This section covers the MembershipHelper</small>
+                <small>This section covers the MembershipHelper.</small>
             </div>
         </div>
     </div>

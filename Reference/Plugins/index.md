@@ -13,11 +13,11 @@ What is a Resolver and what kinds of Resolvers are there?
 
 ## [Creating a Resolver for a Plugin](creating-resolvers.md)
 
-Creating a single object and multiple object Resolver
+Creating a single object and multiple object Resolver.
 
 ## [Finding types](finding-types.md)
 
-Using the PluginManager to lookup types in assemblies to register in Resolvers
+Using the PluginManager to lookup types in assemblies to register in Resolvers.
 
 ## [Initializing a Resolver](initializing-resolvers.md)
 

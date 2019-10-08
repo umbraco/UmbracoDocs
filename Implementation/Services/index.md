@@ -36,7 +36,7 @@ Inside a view/template or partial view that inherits from UmbracoViewPage, acces
 ```
 ## Accessing Core Services and Helpers in a Controller
 
-Inside a [custom Controller](../../Reference/Routing/custom-controllers.md) access is provided to Services via the `Services` property ([ServiceContext](../../Reference/Management/Services/)) and the `UmbracoHelper` via the `Umbraco` property ([UmbracoHelper](../../Reference/Querying/UmbracoHelper))
+Inside a [custom Controller](../../Reference/Routing/custom-controllers.md) access is provided to Services via the `Services` property ([ServiceContext](../../Reference/Management/Services/)) and the `UmbracoHelper` via the `Umbraco` property ([UmbracoHelper](../../Reference/Querying/UmbracoHelper)).
 
 ```csharp
 using System.Collections.Generic;
@@ -264,7 +264,7 @@ namespace Umbraco8.Extensions
 }
 ```
 
-Anywhere there is reference to the UmbracoHelper, and a reference is added to the namespace the extension belongs to, it is possible to call the method by writing `Umbraco.GetNewsSection()`
+Anywhere there is reference to the UmbracoHelper, and a reference is added to the namespace the extension belongs to, it is possible to call the method by writing `Umbraco.GetNewsSection()`.
 
 ### Custom Services and Helpers
 

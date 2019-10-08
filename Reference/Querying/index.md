@@ -26,4 +26,4 @@ Whether you are using MVC or WebForms you will be able to use UmbracoHelper to q
 
 ## [MembershipHelper](MemberShipHelper/index.md)
 
-MembershipHelper is a helper class for accessing member data in the form of `IPublishedContent`
+MembershipHelper is a helper class for accessing member data in the form of `IPublishedContent`.
