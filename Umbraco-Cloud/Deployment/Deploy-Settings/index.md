@@ -62,7 +62,7 @@ These timeout settings default to 8 minutes, but if you are transferring a lot o
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <settings xmlns="urn:umbracodeploy-settings">
-   <deploy sessionTimeout="1200" sourceDeployTimeout="1200" httpClientTimeout="1200" databaseCommandTimeout="1200" />
+    <deploy sessionTimeout="1200" sourceDeployTimeout="1200" httpClientTimeout="1200" databaseCommandTimeout="1200" />
 </settings>
 ```
 
@@ -73,7 +73,7 @@ In order for your Cloud project to handle Forms data as content, you'll need to 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <settings xmlns="urn:umbracodeploy-settings">
-   <forms transferFormsAsContent="true" />
+    <forms transferFormsAsContent="true" />
 </settings>
 ```
 

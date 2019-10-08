@@ -7,7 +7,7 @@ needsV8Update: "true"
 
 `Returns: Boolean`
 
-True/False is a simple checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
+True/False is a checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
 
 ## Data Type Definition Example
 
@@ -15,13 +15,13 @@ True/False is a simple checkbox which saves either 0 or 1, depending on the chec
 
 The True/False property has a setting which allows you to set the default value of the checkbox, either checked (true) or unchecked (false). This property was added in Umbraco 7.4.2.
 
-## Content Example 
+## Content Example
 
 ![No Edit Content Example](images/True-False-Content.png)
 
 ## MVC View Example - displays a list of links to child pages that are not hidden
 
-### Typed:
+### Typed
 
 ```csharp
 @{
@@ -30,11 +30,11 @@ The True/False property has a setting which allows you to set the default value 
         {
             <p>@page.Name</p>
         }
-    }	
+    }
 }
 ```
 
-### Dynamic (Obsolete):
+### Dynamic (Obsolete)
 
 See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
 
@@ -44,6 +44,6 @@ See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pit
         if (!page.umbracoNaviHide){
             <p>@page.Name</p>
         }
-    }	
+    }
 }
 ```

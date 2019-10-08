@@ -13,7 +13,7 @@ Another useful command in XSLT is the "for-each" command.  This command takes an
 </xsl:for-each>
 ```
 
-So using this command, we can select multiple items and list them out with a very simple call.
+So using this command, we can select multiple items and list them out with a call.
 
 Lets say that our current page has 5 sub-pages, named one, two, three, four, and five.  We want to list those 5 pages names on the current page.  Thus, we need to loop through the child nodes of the current page.
 
@@ -32,7 +32,7 @@ Confused?  Don't be. The value-of inherits the context of the for-each command, 
     <xsl:value-of select="current()/@nodeName"/>
 </xsl:for-each>
 ```
-	
+
 or
 
 ```xml
@@ -41,7 +41,7 @@ or
 </xsl:for-each>
 ```
 
-Using "current()/" allows you to easily see that you are working against the current item in the loop, and the "./" notation is actually saying select myself.
+Using "current()/" allows you to see that you are working against the current item in the loop, and the "./" notation is saying select myself.
 
 The resultant output of this will be the five pages listed without any markup, which will be rather difficult to read.  So, lets add some unordered list markup for usage in our website.
 
@@ -52,7 +52,7 @@ The resultant output of this will be the five pages listed without any markup, w
     </xsl:for-each>
 </ul>
 ```
-	
+
 Now, we will get bulleted list of page names.
 
 :::note

@@ -10,15 +10,15 @@ One of the features built into Umbraco Cloud is the ability to work locally with
 * Node.js (minimum version: 2.15) + npm installed in a command line of choice
 * A code editor like Atom, Sublime or Visual Studio Code
 
-To use Node.js and npm you need to download the latest build either from [https://nodejs.org/en/download/](https://nodejs.org/en/download/) or your OS' repository. It is important to let the installer register itself to your PATH, so that the commands are available via your command line tool. 
+To use Node.js and npm you need to download the latest build either from [https://nodejs.org/en/download/](https://nodejs.org/en/download/) or your OS' repository. It is important to let the installer register itself to your PATH, so that the commands are available via your command line tool.
 
 The module you want to install is called **uaas-cli**, aka *Umbraco Cloud Command line interface.*
 
-Run the following in your CLI to install the module for global use: 
+Run the following in your CLI to install the module for global use:
 
 `npm install -g uaas-cli`
 
-Use Git to clone the Umbraco Cloud site. Once you have it locally, open your CLI and simply type the following inside the website's cloned directory:
+Use Git to clone the Umbraco Cloud site. Once you have it locally, open your CLI and type the following inside the website's cloned directory:
 
 `uaas watch`
 
@@ -30,21 +30,21 @@ Now it's time to open your favourite code editor. The idea is that you are now a
 
 ## Configuration
 
-If you'd like the module to watch other files/folders, simply change the `uaas.json` file located in `/App_Data`.
+If you'd like the module to watch other files/folders, you need to change the `uaas.json` file located in `/App_Data`.
 
-	{
-		"files": [
-			"css/**/*.css",
-			"scripts/**/*.js",
-			"Views/**/*.*",
-			"images/**/*.*"
-		],
-		"useHttps": false,
-		"username": "youremail@domain.com"
-	}
+    {
+        "files": [
+            "css/**/*.css",
+            "scripts/**/*.js",
+            "Views/**/*.*",
+            "images/**/*.*"
+        ],
+        "useHttps": false,
+        "username": "youremail@domain.com"
+    }
 
 ## Content Changes
 
-Changing content needs to be done through the development environment. Whenever you change some content on your development environment, your local instance will be notified and the changes will be synced. 
+Changing content needs to be done through the development environment. Whenever you change some content on your development environment, your local instance will be notified and the changes will be synced.
 
 This flow enables you to do rapid front-end changes and displaying them directly against the content on the Umbraco Cloud site.

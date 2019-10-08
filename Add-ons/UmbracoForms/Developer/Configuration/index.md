@@ -32,7 +32,7 @@ Enable this feature ONLY if you do understand the security implications.
 :::
 
 ### RecaptchaPublicKey & RecaptchaPrivateKey
-Both of these configuration values are needed in order to use ReCaptcha V2 from Google. You can obtain both of these values after signing up to create a ReCaptcha key here - https://www.google.com/recaptcha/admin 
+Both of these configuration values are needed in order to use ReCaptcha V2 from Google. You can obtain both of these values after signing up to create a ReCaptcha key here - https://www.google.com/recaptcha/admin
 
 Google has renamed these recently and the `Site Key` refers to `RecaptchaPublicKey` and `Secret Key` is to be used for `RecaptchaPrivateKey`
 
@@ -77,4 +77,3 @@ This setting needs to be a `True` or `False` value and will allow you to toggle 
 
 ### DefaultMessageOnSubmit
 This allows you to configure what text is displayed when a form is submitted and is not being redirected to a different content node.
-

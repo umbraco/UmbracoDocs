@@ -44,5 +44,5 @@ There are methods to add logging at different priority levels:
 
 * Debug - Used in development and testing, contains the most information, and likely information to help you diagnose a problem - avoid running a production site 'in debug'.
 * Information - Useful status information regarding the running and management of your site, eg xx started correctly.
-* Warn - For exceptions that are expected and handled in your code but useful to flog - eg missing configuration.
+* Warn - For exceptions that are expected and handled in your code but useful to log - eg missing configuration.
 * Error - For exceptions that are not handled in code.

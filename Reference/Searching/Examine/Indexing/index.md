@@ -11,7 +11,7 @@ Examine has changed quite a bit in Umbraco 8 (and by "a bit" we really mean a lo
 The following example will show how to create an index that will only include nodes based on the document type _product_.
 
 :::note
-We always recommend that you use the existing, built in ExternalIndex and query based on the NodeTypeAlias instead of creating a new, seperate index based on that particular node type. However, should the need arise, the example below will show you how to do it. 
+We always recommend that you use the existing, built in ExternalIndex and query based on the NodeTypeAlias instead of creating a new, separate index based on that particular node type. However, should the need arise, the example below will show you how to do it.
 
 Take a look at our [Examine Quick Start](../quick-start/index.md) to see some examples of how to search on your ExternalIndex.
 :::
@@ -30,10 +30,10 @@ public class ProductIndexCreator : LuceneIndexCreator, IUmbracoIndexesCreator
     private readonly ILocalizationService _localizationService;
     private readonly IPublicAccessService _publicAccessService;
 
-    // Since Umbraco 8 has dependency injection out of the box, we can easily inject
+    // Since Umbraco 8 has dependency injection out of the box, we can use it to inject
     // the different services that we need.
-    public ProductIndexCreator(IProfilingLogger profilingLogger, 
-        ILocalizationService localizationService, 
+    public ProductIndexCreator(IProfilingLogger profilingLogger,
+        ILocalizationService localizationService,
         IPublicAccessService publicAccessService
     )
     {
@@ -42,9 +42,9 @@ public class ProductIndexCreator : LuceneIndexCreator, IUmbracoIndexesCreator
         _publicAccessService = publicAccessService;
     }
 
-        // Noticed that we return a collection of indexes? Technically you 
-        // can create multiple indexes in an indexCreator :) You can have a look at 
-        // UmbracoIndexesCreator.cs in the CMS core and see how the CMS does that. 
+        // Noticed that we return a collection of indexes? Technically you
+        // can create multiple indexes in an indexCreator :) You can have a look at
+        // UmbracoIndexesCreator.cs in the CMS core and see how the CMS does that.
         public override IEnumerable<IIndex> Create()
         {
             var index = new UmbracoContentIndex("ProductIndex",

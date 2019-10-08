@@ -1,11 +1,10 @@
 ---
 versionFrom: 6.0.0
-needsV8Update: "true"
 ---
 
 # IIS Rewrite Rules
 
-If you require static rewrites you should use IIS Rewrite rules. This is an IIS plugin that exists outside of Umbraco 
+If you require static rewrites you should use IIS Rewrite rules. This is an IIS plugin that exists outside of Umbraco
 but should be installed by the vast majority of hosting providers. [There is a significant amount of documentation](https://www.iis.net/learn/extensions/url-rewrite-module)
 for doing static rewrites with IIS Rewrite rules. This documentation will list some basic examples with links to some reference sites.
 
@@ -15,7 +14,7 @@ By default the web.config with Umbraco (7.6+) will contain a commented out secti
 
 ```xml
 <!--
-If you wish to use IIS rewrite rules, see the documentation here: 
+If you wish to use IIS rewrite rules, see the documentation here:
 https://our.umbraco.com/documentation/Reference/Routing/IISRewriteRules
 -->
 <!--
@@ -25,7 +24,7 @@ https://our.umbraco.com/documentation/Reference/Routing/IISRewriteRules
 -->
 ```
 
-If you wish to use the rules, be sure that you have the [IIS Rewrite Module](https://www.iis.net/learn/extensions/url-rewrite-module/using-the-url-rewrite-module) 
+If you wish to use the rules, be sure that you have the [IIS Rewrite Module](https://www.iis.net/learn/extensions/url-rewrite-module/using-the-url-rewrite-module)
 installed and uncomment the <rewrite> section. If you don't have the IIS Rewrite module installed, you will get a Yellow Screen Of Death (YSOD).
 
 ## Storing rules in an external file
@@ -54,14 +53,14 @@ and creating a file at `~/Config/IISRewriteRules.config` with the content:
 For example, to always remove trailing slash from the URL:
 
 ```xml
-<rule name="Remove trailing slash" stopProcessing="true">  
-  <match url="(.*)/$" />  
-    <conditions>  
-      <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />  
-      <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />  
-    </conditions>  
-  <action type="Redirect" redirectType="Permanent" url="{R:1}" />  
-</rule>  
+<rule name="Remove trailing slash" stopProcessing="true">
+  <match url="(.*)/$" />
+    <conditions>
+    <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+    <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+    </conditions>
+  <action type="Redirect" redirectType="Permanent" url="{R:1}" />
+</rule>
 ```
 
 Another example would be to enforce HTTPS only on your site:
@@ -86,5 +85,5 @@ Another example would be to redirect from non-www to www:
     <add input="{HTTP_HOST}" pattern="^google\.com" />
   </conditions>
   <action type="Redirect" url="https://www.google.com/{R:1}" redirectType="Permanent" />
-</rule> 
+</rule>
 ```

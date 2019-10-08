@@ -23,8 +23,8 @@ namespace My.Namespace
 
         protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
         {
-            MediaService.Saved += MediaServiceSaved;     
-        }   
+            MediaService.Saved += MediaServiceSaved;
+        }
 
         void MediaServiceSaved(IMediaService sender, SaveEventArgs<IMedia> e)
         {
@@ -43,7 +43,7 @@ namespace My.Namespace
         <th>Event</th>
         <th>Signature</th>
         <th>Description</th>
-    </tr>    
+    </tr>
     <tr>
         <td>Saving</td>
         <td>(IMediaService sender, SaveEventArgs&lt;IMedia&gt; e)</td>
@@ -65,7 +65,7 @@ namespace My.Namespace
         NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default). <br />
         "sender" will be the current IMediaService object.<br />
         "e" will provide:
-		<br/>NOTE: <a href="determining-new-entity">See here on how to determine if the entity is brand new</a>
+        <br/>NOTE: <a href="determining-new-entity">See here on how to determine if the entity is brand new</a>
             <ol>
                 <li>SavedEntities: Gets the saved collection of IMedia objects.</li>
             </ol>
@@ -186,7 +186,9 @@ namespace My.Namespace
 
 ### What happened to Creating and Created events?
 
-Both the MediaService.Creating and MediaService.Created events have been obsoleted. Why? Because these events are not guaranteed to trigger and therefore should not be used. This is because these events *only* trigger when the MediaService.CreateMedia method is used which is an entirely optional way to create media entities. It is also possible to simply construct a new media item - which is generally the preferred and consistent way - and therefore the Creating/Created events will not execute when constructing media that way. Further more, there's no reason to listen for the Creating/Created events because they are misleading since they don't actually trigger before and after the entity has been persisted, they simply trigger inside the CreateMedia method which never actually persists the entity, it simply just constructs a new media object.
+Both the MediaService.Creating and MediaService.Created events have been obsoleted. Why? Because these events are not guaranteed to trigger and therefore should not be used. This is because these events *only* trigger when the MediaService.CreateMedia method is used which is an entirely optional way to create media entities. It is also possible to construct a new media item - which is generally the preferred and consistent way - and therefore the Creating/Created events will not execute when constructing media that way.
+
+Further more, there's no reason to listen for the Creating/Created events because they are misleading. They don't trigger before and after the entity has been persisted. Instead they trigger inside the CreateMedia method which never persists the entity. It constructs a new media object.
 
 #### What do we use instead?
 

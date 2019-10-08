@@ -16,16 +16,16 @@ Covers how you convert common syntax in Umbraco Masterpages to Umbraco Views.
 **Razor View**
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoTemplatePage    
-@{  
-	Layout= "~/Views/umbMaster.cshtml";
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout= "~/Views/umbMaster.cshtml";
 }
 ```
 
 ## Server side forms ##
 **Masterpage**
 
-```csharp	
+```csharp
 <form runat="server">
 ```
 
@@ -37,25 +37,25 @@ Remove, not required in views
 ## Content area ##
 **Masterpage**
 
-```csharp	
-<asp:content contentplaceholderid="footer"> 
-	<p>Hello</p> 
+```csharp
+<asp:content contentplaceholderid="footer">
+    <p>Hello</p>
 </asp:content>
 ```
 
 **Razor View**
 
 ```csharp
-@section footer { 
-	<p>Hello</p>
-} 
+@section footer {
+    <p>Hello</p>
+}
 ```
 
 ## Content placeholder ##
 **Masterpage**
 
-```csharp	
-<asp:contentplaceholder id="footer"> 
+```csharp
+<asp:contentplaceholder id="footer">
 ```
 
 **Razor View**
@@ -70,56 +70,56 @@ If the View that inherits from this view is not required to define a "footer" se
 @RenderSection("footer", false)
 ```
 
-If you want to render the main body area then you can simply do the following (only allowed once per View): 
+If you want to render the main body area then you can do the following (only allowed once per View):
 
 ```csharp
-@RenderBody() 
+@RenderBody()
 ```
 
 ## Umbraco item ##
 **Masterpage**
 
 ```csharp
-<umbraco:item field="bodyText" /> 
+<umbraco:item field="bodyText" />
 ```
 
 **Razor View**
 
 ```csharp
-@CurrentPage.bodyText 
+@CurrentPage.bodyText
 ```
 
 ## Umbraco item with parameters ##
 **Masterpage**
 
-```csharp	
-<umbraco:Item field="PostDate" useIfEmpty="createDate" formatAsDate="true" runat="server" /> 
+```csharp
+<umbraco:Item field="PostDate" useIfEmpty="createDate" formatAsDate="true" runat="server" />
 ```
 
 **Razor View**
 
 ```csharp
-@Umbraco.Field("PostDate", altFieldAlias: "CreateDate", formatAsDate: true)  
+@Umbraco.Field("PostDate", altFieldAlias: "CreateDate", formatAsDate: true)
 ```
 
 ## Umbraco Macro ##
 **Masterpage**
 
-```csharp	
-<umbraco:macro alias="topNavigation" /> 
+```csharp
+<umbraco:macro alias="topNavigation" />
 ```
 
 **Razor View**
 
 ```csharp
-@Umbraco.RenderMacro("topNavigation") 
+@Umbraco.RenderMacro("topNavigation")
 ```
 
 ## Umbraco Macro with parameters ##
 **Masterpage**
 
 ```csharp
-<umbraco:macro alias="topNavigation" nodeId="1082" name="John" /> 
+<umbraco:macro alias="topNavigation" nodeId="1082" name="John" />
 ```
 
 **Razor View**
@@ -131,7 +131,7 @@ If you want to render the main body area then you can simply do the following (o
 ## ASP.NET Textbox Control ##
 **Masterpage**
 
-```csharp	
+```csharp
 <asp:textbox id="tb_member" runat="server" />
 ```
 
@@ -144,13 +144,13 @@ If you want to render the main body area then you can simply do the following (o
 Or with some styling and a placeholder:
 
 ```csharp
-@Html.TextAreaFor(model => model.MemberId, 
-		htmlAttributes: new { @class="span9 tokeninput", placeholder="Who should be notified?" })
+@Html.TextAreaFor(model => model.MemberId,
+        htmlAttributes: new { @class="span9 tokeninput", placeholder="Who should be notified?" })
 ```
 
 Or even in mostly plain HTML:
 
 ```csharp
-<input type="text" name="MemberId" value="@Model.MemberId" 
-	class="span9 tokeninput" placeholder="Who should be notified?" />
+<input type="text" name="MemberId" value="@Model.MemberId"
+    class="span9 tokeninput" placeholder="Who should be notified?" />
 ```

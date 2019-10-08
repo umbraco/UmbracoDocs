@@ -21,7 +21,7 @@ The UmbracoMapper is registered with Dependency Injection (DI). It can therefore
 ## Mapping
 
 :::tip
-If you would like to see some more examples you can check out [this unit test from the CMS](https://github.com/umbraco/Umbraco-CMS/blob/v8/dev/src/Umbraco.Tests/Mapping/MappingTests.cs)
+If you would like to see some more examples you can check out [this unit test from the CMS](https://github.com/umbraco/Umbraco-CMS/blob/v8/dev/src/Umbraco.Tests/Mapping/MappingTests.cs).
 :::
 
 Mapping with the UmbracoMapper works in ways very similar to AutoMapper:
@@ -134,8 +134,8 @@ And
 public static string GetCulture(this MapperContext context)
 {
     return context.HasItems &&
-           context.Items.TryGetValue(CultureKey, out var obj) &&
-           obj is string s
+            context.Items.TryGetValue(CultureKey, out var obj) &&
+            obj is string s
         ? s
         : null;
 }
@@ -191,7 +191,7 @@ And the comment can be repeated if the list of excluded properties is long:
 // Umbraco.Code.MapAll -Property5 -Property6 -Property7
 ```
 
-The analyzer follows the standard analyzer development patterns, and simply building the code in Release mode produces the appropriate NuGet package.
+The analyzer follows the standard analyzer development patterns, and building the code in Release mode produces the appropriate NuGet package.
 
 ## Full example
 

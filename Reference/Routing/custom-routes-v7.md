@@ -3,7 +3,7 @@ keywords: customizing external source integration
 versionFrom: 7.3.0
 versionRemoved: 8.0.0
 ---
-    
+
 # Custom MVC Routes
 
 **This feature was introduced in Umbraco 7.3.0+**
@@ -64,7 +64,7 @@ IPublishedContent FindContent(RequestContext requestContext, UmbracoContext umbr
 So based on all this information provided in these methods, you can associate whatever IPublishedContent item you want to the request.
 
 ## Virtual Content
-This implementation expects **any** instance of `IPublishedContent`, so this means you can create your own virtual nodes with any custom properties you want. Generally speaking you’ll probably have a real Umbraco `IPublishedContent` instance as a reference point, so you could create your own virtual `IPublishedContent` item based on `PublishedContentWrapped`, pass in this real node and then just override whatever properties you want, like the page Name, etc..
+This implementation expects **any** instance of `IPublishedContent`, so this means you can create your own virtual nodes with any custom properties you want. Generally speaking you’ll probably have a real Umbraco `IPublishedContent` instance as a reference point, so you could create your own virtual `IPublishedContent` item based on `PublishedContentWrapped`, pass in this real node and then override whatever properties you want, like the page Name, etc..
 
 Whatever instance of `IPublishedContent` returned in the `FindContent` method will be converted to a `RenderModel` for use in your controllers.
 

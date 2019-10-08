@@ -10,7 +10,7 @@ _This example shows how to build a traditional ASP.NET Framework website on Wind
 * Ensure that the target .NET Framework is at least .NET 4.6.1
 * Choose "MVC" for the template
 * Install the package, using the "Package Manager Console" enter `Install-Package UmbracoCms.Headless.Client -Source https://www.myget.org/F/uaas/api/v3/index.json -Pre`
-   * If you need to update to the latest execute this command: `Update-Package UmbracoCms.Headless.Client -Source https://www.myget.org/F/uaas/api/v3/index.json -Pre`
+    * If you need to update to the latest execute this command: `Update-Package UmbracoCms.Headless.Client -Source https://www.myget.org/F/uaas/api/v3/index.json -Pre`
 * Add the following keys to the web.config in `appSettings`
     ```xml
     <add key="umbracoHeadless:url" value="https://YOUR-PROJECT-URL.s1.umbraco.io" />

@@ -24,8 +24,8 @@ Umbraco ships with configuration to embed media from the following third-party p
 * Flickr
 * SlideShare
 * Kickstarter
-* GettyImages
-* PollEverywhere
+* Getty Images
+* Poll Everywhere
 * PollDaddy
 * IFTTT
 * Instagram
@@ -33,7 +33,7 @@ Umbraco ships with configuration to embed media from the following third-party p
 * SoundCloud
 * YouTube
 * StreamUmbraco
-* DailyMotion
+* Dailymotion
 * Hulu
 * Vimeo
 * TedTalks
@@ -51,8 +51,7 @@ OEmbedJson, OEmbedPhoto, OEmbedRich, OEmbedVideo, OEmbedResponse
 
 ### Configuration Example
 
-Let's allow our editors to embed artwork from the popular DeviantArt website - the world's largest online social community for artists and art enthusiasts. We can see they have information on using OEmbed: https://www.deviantart.com/developers/oembed
-and the format of their OEmbed implementation returns a JSON format, from a url https://backend.deviantart.com/oembed?url=[urltoembed] , so we'll need to use the OEmbedJson provider, we can see 'links' to media shared on deviantart are in the format: https://fav.me/[uniquemediaidentifier] so we'll need a regex to match any urls pasted into the embed panel that start with *fav.me*
+Let's allow our editors to embed artwork from the popular DeviantArt website - the world's largest online social community for artists and art enthusiasts. We can see they have information on using OEmbed: https://www.deviantart.com/developers/oembed. The format of their OEmbed implementation returns a JSON format, from a url `https://backend.deviantart.com/oembed?url=[urltoembed]` . We'll need to use the OEmbedJson provider, we can see 'links' to media shared on deviantart are in the format: `https://fav.me/uniquemediaidentifier]`. This means we'll need a regex to match any urls pasted into the embed panel that start with *fav.me*.
 
 The configuration would look like this:
 
@@ -66,11 +65,11 @@ The configuration would look like this:
 
 Recycle the application pool, the new provider should be available for editors to use:
 
-![Embedding a Media Item from Deviant Art website](images/deviantart-embedded-media.png)
+![Embedding a Media Item from DeviantArt website](images/deviantart-embedded-media.png)
 
 ## Custom Embedded Media Providers
 
-If your third-party media provider does not support OEmbed or there is some quirk with the content being embedded that you cannot use the existing Umbraco generic OEmbed providers, then you can create your own custom implementation of an Embedded Media Provider!
+If your third-party media provider does not support OEmbed, then you can create your own custom implementation of an Embedded Media Provider.
 
 Umbraco provides an AbstractProvider class (or AbstractOEmbedProvider) to get your custom implementation started, and you need to implement only two methods:
 
@@ -79,7 +78,7 @@ Umbraco provides an AbstractProvider class (or AbstractOEmbedProvider) to get yo
 
 ### Custom Embedded Media Provider Example
 
-Azure Media Services - https://azure.microsoft.com/en-gb/services/media-services/ - provide 'broadcast-quality' video streaming services, you can embed the Azure Media Player into your site to play a video using an IFrame: 
+Azure Media Services [(https://azure.microsoft.com/en-gb/services/media-services/)](https://azure.microsoft.com/en-gb/services/media-services/) provide 'broadcast-quality' video streaming services. You can embed the Azure Media Player into your site to play a video using an IFrame:
 https://ampdemo.azureedge.net/azuremediaplayer.html
 
 We can create a custom Embedded Media Provider to do the job of taking the Url of the Media asset and writing out the markup required to embed the IFrame in your content.
@@ -98,7 +97,7 @@ namespace Our.Umbraco.Media.EmbedProviders
         {
             // format of markup
             string videoFormat = "<div class=\"iplayer-container\"><iframe src=\"//aka.ms/ampembed?url={0}\" name=\"azuremediaplayer\" scrolling=\"no\" frameborder=\"no\" align=\"center\" autoplay=\"false\" width=\"{1}\" height=\"{2}\" allowfullscreen></iframe></div>";
-            // pass in encoded Url, with and height, and turn off autoplay...                
+            // pass in encoded Url, with and height, and turn off autoplay...
             var videoPlayerMarkup = string.Format(videoFormat, HttpUtility.UrlEncode(url) + "&amp;autoplay=false", maxWidth, maxHeight);
             return videoPlayerMarkup;
         }

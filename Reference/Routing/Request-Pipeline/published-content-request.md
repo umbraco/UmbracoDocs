@@ -5,18 +5,18 @@ needsV8Update: "true"
 
 # Published Content Request
 
-The `PublishedContentRequest` object represents the request which Umbraco must handle.  
-It contains everything that will be needed to render it.  
-All this happens when the Umbraco modules thinks it's a document to render. 
+The `PublishedContentRequest` object represents the request which Umbraco must handle.
+It contains everything that will be needed to render it.
+All this happens when the Umbraco modules thinks it's a document to render.
 
     public class PublishedContentRequest
     {
-      public Uri Uri { get; }
-      …
+    public Uri Uri { get; }
+    …
     }
 
 There are 4 important properties, which contains all the information to find back a node:
-  
+
     public bool HasDomain { get; }
     public Domain Domain { get; }
     public Uri DomainUri { get; }

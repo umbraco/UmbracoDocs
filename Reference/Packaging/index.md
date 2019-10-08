@@ -5,19 +5,19 @@ needsV8Update: "true"
 
 # What are package actions?
 
-Package actions are a simple way to perform common tasks while installing packages / nitros. It is XML based and could be compared to for example NAnt tasks. Actions perform small configuration related tasks, which could for example be allowing a document type on another type, moving a document to another location or adding a string to an existing template.
+Package actions are a way to perform common tasks while installing packages / nitros. It is XML based and could be compared to for example NAnt tasks. Actions perform small configuration related tasks, which could for example be allowing a document type on another type, moving a document to another location or adding a string to an existing template.
 Currently we have 10 actions available. If you need to perform more advanced installation routines, you will have to build a custom installer (.ascx based) or write your own package action using the IPackageAction Interface, which will then automatically be picked up by umbraco.
 
 ## Adding actions to a package script
 
-With the build-in packager, it is possible to add the actions you need directly from the UI. Just add <Action> nodes to the textarea.
+With the build-in packager, it is possible to add the actions you need directly from the UI. Add <Action> nodes to the textarea.
 Alternatively the actions can be manually added to the package manifest by adding a <Actions> node containing the package actions xml.
 
 ## Standard fields on all actions
 
 - **Undo**, optional, is true by default.
-- **Alias**, mandatory, The alias of the package action to be executed
-- **Runat**, mandatory, can either be install or uninstall
+- **Alias**, mandatory, The alias of the package action to be executed.
+- **Runat**, mandatory, can either be install or uninstall.
 
 ## Standard elements on all actions
 
@@ -31,7 +31,7 @@ This led to a lot of confusion and also opened up the possibility that the actio
 
 So in this revised version, an undo attribute has been put on all actions. An action will always contain an undo action which is turned on by default, but can be turned off.
 
-At the same time, all actions which were only actually there to perform uninstall actions have been removed. Depending on community feedback, some of these might be included again.
+At the same time, all actions which were only there to perform uninstall actions have been removed. Depending on community feedback, some of these might be included again.
 
 ## Add application
 
@@ -39,11 +39,11 @@ Creates a new application, and adds it to the database.
 
 Alias: addApplication
 
-    <Action runat="install"   
-    [undo="false"]   
-    alias="addApplication"   
-    appName="Application Name"   
-    appAlias="myApplication"   
+    <Action runat="install"
+    [undo="false"]
+    alias="addApplication"
+    appName="Application Name"
+    appAlias="myApplication"
     appIcon="application.gif"/>
 
 ## Add application tree

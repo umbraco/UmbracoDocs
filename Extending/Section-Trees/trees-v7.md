@@ -8,12 +8,12 @@ versionRemoved: 8.0.0
 Trees are also in a [config file located: `~/Config/trees.config`](../../Reference/Config/trees/index.md). Each config item defines a tree and for what section it belongs to. For example, this is the definition of the user tree:
 
 ```xml
-<add application="users" alias="users" title="Users" 
-        type="umbraco.loadUsers, umbraco" 
+<add application="users" alias="users" title="Users"
+        type="umbraco.loadUsers, umbraco"
         iconClosed="icon-folder" iconOpen="icon-folder" sortOrder="0" />
 ```
 
-The tree type should reference the assembly qualified type of the tree, for example the above user tree is of type: `umbraco.loadUsers, umbraco`. 
+The tree type should reference the assembly qualified type of the tree, for example the above user tree is of type: `umbraco.loadUsers, umbraco`.
 
 :::note
 You don't need to specify the assembly version, etc...
@@ -31,7 +31,7 @@ Trees created with the v6 APIs will still work in v7 but will not have angular v
 
 To Create a Tree in a section of the Umbraco backoffice, you need to take several steps:
 
-Create a 'TreeController' class in C#. A new mvc controller which inherits from the abstract *Umbraco.Web.Trees.TreeController* class and provides an implementation for two abstract methods: 
+Create a 'TreeController' class in C#. A new mvc controller which inherits from the abstract *Umbraco.Web.Trees.TreeController* class and provides an implementation for two abstract methods:
 
 * GetTreeNodes (returns a *TreeNodeCollection*) - Responsible for rendering the content of the tree structure
 and
@@ -39,12 +39,12 @@ and
 
 Decorate your '*TreeController*' with the *Tree* Attribute, which is used to define the name of the section the Tree should be loaded in, and also define an alias and title for your custom tree.
 
-**For example**... 
+**For example**...
 
 ```csharp
 [Tree("developer", "favouriteThingsAlias", "Favourite Things Name")]
 public class FavouriteThingsTreeController : TreeController
-{  
+{
 ```
 
 ...would register a custom tree with a title 'Favourite Things Name' in the Developer section of Umbraco.
@@ -63,7 +63,7 @@ eg:
 <add initialize="true" sortOrder="0" alias="favouriteThingsAlias" application="developer" title="Favourite Things Name" iconClosed="icon-folder" iconOpen="icon-folder-open" type="Our.Umbraco.Controllers.FavouriteThingsTreeController, Our.Umbraco" />
 ```
 
-[See Also: How to create your own custom section](../../Extending/Section-Trees/sections.md) 
+[See Also: How to create your own custom section](../../Extending/Section-Trees/sections.md)
 
 ### Implementing the Tree
 
@@ -73,7 +73,7 @@ protected override TreeNodeCollection GetTreeNodes(string id, FormDataCollection
         // check if we're rendering the root node's children
         if (id == Constants.System.Root.ToInvariantString())
         {
-            // you can get your custom nodes from anywhere, and they can represent anything... 
+            // you can get your custom nodes from anywhere, and they can represent anything...
             Dictionary<int, string> favouriteThings = new Dictionary<int, string>();
             favouriteThings.Add(1, "Raindrops on Roses");
             favouriteThings.Add(2, "Whiskers on Kittens");
@@ -83,7 +83,7 @@ protected override TreeNodeCollection GetTreeNodes(string id, FormDataCollection
             favouriteThings.Add(6, "Schnitzel with Noodles");
             // create our node collection
             var nodes = new TreeNodeCollection();
-        
+
         // loop through our favourite things and create a tree item for each one
         foreach (var thing in favouriteThings)
         {
@@ -99,7 +99,7 @@ protected override TreeNodeCollection GetTreeNodes(string id, FormDataCollection
     // this tree doesn't support rendering more than 1 level
     throw new NotSupportedException();
 }
-    
+
 
 protected override MenuItemCollection GetMenuForNode(string id, FormDataCollection queryStrings)
 {
@@ -111,12 +111,12 @@ protected override MenuItemCollection GetMenuForNode(string id, FormDataCollecti
         // root actions, perhaps users can create new items in this tree, or perhaps it's not a content tree, it might be a read only tree, or each node item might represent something entirely different...
         // add your menu items here following the pattern of <Umbraco.Web.Models.Trees.ActionMenuItem,umbraco.interfaces.IAction>
         menu.Items.Add<CreateChildEntity, ActionNew>(ui.Text("actions", ActionNew.Instance.Alias));
-        // add refresh menu item            
+        // add refresh menu item
         menu.Items.Add<RefreshNode, ActionRefresh>(ui.Text("actions", ActionRefresh.Instance.Alias), true);
         return menu;
-    }                   
+    }
     // add a delete action to each individual item
-    menu.Items.Add<ActionDelete>(ui.Text("actions", ActionDelete.Instance.Alias));   
+    menu.Items.Add<ActionDelete>(ui.Text("actions", ActionDelete.Instance.Alias));
 
     return menu;
 }
@@ -126,12 +126,11 @@ protected override MenuItemCollection GetMenuForNode(string id, FormDataCollecti
 
 ### Responding to Tree Actions
 
-The actions on items in an Umbraco Tree will trigger 'by convention' a request to load an AngularJS view, with a name corresponding to the name of the action, from a subfolder of the views folder matching the name of the 'customTreeAlias'.
+The actions on items in an Umbraco Tree will trigger a request to load an AngularJS view, with a name corresponding to the name of the action, from a subfolder of the views folder matching the name of the 'customTreeAlias'.
 
-For example, 'Clicking on' one of the 'Favourite Things' in the custom tree example outlined above will 'by convention' trigger the loading of an 'edit.html' view from the folder: */views/favouriteThings/edit.html*
-and the 'Delete' menu item would load a view from: */views/favouriteThings/delete.html*
+For example 'Clicking on' one of the 'Favourite Things' in the custom tree example outlined above will 'by convention' trigger the loading of an 'edit.html' view from the folder: */views/favouriteThingsAlias/edit.html*. The 'Delete' menu item would also load a view from: */views/favouriteThingsAlias/delete.html*
 
-It's recommended, particularly if you're creating a custom tree as part of an Umbraco package/plugin, to change the location of this default folder to the app_plugins folder and you achieve this by decorating you mvc *TreeController* with the *PluginController* attribute.
+If you're creating a custom tree as part of an Umbraco package/plugin, it's recommended to change the location of the default folder to the app_plugins folder. You achieve this by decorating you mvc *TreeController* with the *PluginController* attribute.
 
 ```csharp
 [Tree("developer", "favouriteThingsAlias", "Favourite Things Name")]
@@ -143,7 +142,7 @@ The edit view in the example would now be loaded from the location: */app_plugin
 
 #### Providing functionality in your Tree Action Views
 
-You can instruct the Umbraco backoffice to load additional javascript resources (eg. angularJS controllers) to use in conjunction with your 'tree action views' by adding a package.manifest file in the same folder location as your views. 
+You can instruct the Umbraco backoffice to load additional javascript resources (eg. angularJS controllers) to use in conjunction with your 'tree action views' by adding a package.manifest file in the same folder location as your views.
 
 **For example**...
 
@@ -184,7 +183,7 @@ The section API in v7+ is found in the interface `Umbraco.Core.Services.IApplica
 
 
 [See the tree service API reference here](../../Reference/Management/Services/TreeService/index.md)
- 
+
 ## Tree events v7
 
 In v7 legacy trees will continue to work but the events for legacy trees may no longer work because we are replacing all core trees with the new format. The good news is that the new tree events will always fire for new and legacy trees.
@@ -210,13 +209,13 @@ TreeControllerBase.RootNodeRendering += TreeControllerBase_RootNodeRendering;
 // the event listener method:
 void TreeControllerBase_RootNodeRendering(TreeControllerBase sender, TreeNodeRenderingEventArgs e)
 {
-    // normally you will want to target a specific tree, this can be done by checking the 
+    // normally you will want to target a specific tree, this can be done by checking the
     // tree alias of by checking the tree type (casting 'sender')
     if (sender.TreeAlias == "content")
     {
         e.Node.Title = "My new title";
     }
-}	
+}
 ```
 
 ### TreeNodesRendering
@@ -274,15 +273,15 @@ void TreeControllerBase_MenuRendering(TreeControllerBase sender, MenuRenderingEv
     {
         // creates a menu action that will open /umbraco/currentSection/itemAlias.html
         var i = new Umbraco.Web.Models.Trees.MenuItem("itemAlias", "Item name");
-        
-        // optional, if you want to load a legacy page, otherwise it will just follow convention
+
+        // optional, if you want to load a legacy page, otherwise it will follow convention
         i.AdditionalData.Add("actionUrl", "my/long/url/to/webformshorror.aspx");
-        
+
         // optional, if you don't want to follow the naming conventions, but do want to use a angular view
         // you can also use a direct path "../App_Plugins/my/long/url/to/view.html"
         i.AdditionalData.Add("actionView", "my/long/url/to/view.html");
-        
-        // sets the icon to icon-wine-glass 
+
+        // sets the icon to icon-wine-glass
         i.Icon = "wine-glass"
 
         // insert at index 5
@@ -296,4 +295,4 @@ void TreeControllerBase_MenuRendering(TreeControllerBase sender, MenuRenderingEv
 [See a list of Tree Actions and User Permission Codes](tree-actions.md)
 
 
- 
+

@@ -20,7 +20,7 @@ There is also a number of other default properties on the __Users__ tab that can
 - Disable Umbraco Access (allows one to disable service access)
 - Disable User (suspends user account access)
 
-Once the user is created and saved you can access it by expanding the member tree and clicking __All Users__ to get a list view (with real time search) or selecting the user type to filter by in the Users tree.
+Once the user is created and saved you can access it by expanding the member tree and clicking __All Users__ to get a list view (with real time search). You can also select a user type to filter by in the Users tree.
 
 ## Default User Types
 By default, the user types available to new users are __Administrator__, __Writer__, __Editor__, and __Translator__. The main user types and their permissions are defined as such:
@@ -34,7 +34,7 @@ __Editor__: Allowed to create and publish content items or nodes on website with
 __Translator__: Allowed to browse and update nodes as well as grant dashboard access. Translations of site pages must be reviewed by others before publication (has permissions to "Browse Node" and "Update").
 
 ## Creating a User Type
-You can also create your own custom User Types and add properties and tabs just as with Document Types and Member Types.
+You can also create your own custom User Types and add properties and tabs as you would with Document Types and Member Types.
 
 Go to the __Users__ section, click the menu icon next to __User Types__ and select __Create__. Name the new User Type and click the __Create__ button.
 

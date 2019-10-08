@@ -208,9 +208,7 @@ For example, to return the `string` result of "siteName":
 @(Model.Value<string>("siteName"))
 ```
 
-Some property value converters support multiple return value formats, for example if a property value
-normally returns a comma separated value list like: "5677,3456,8776", then the property value
-converter for the property editor might support converting directly to an enumerable list of integers, for example:
+Some property value converters support multiple return value formats. For example if a property value normally returns a comma separated value list like: "5677,3456,8776", then the property value converter for the property editor might support converting directly to an enumerable list of integers, for example:
 
 ```csharp
 var mediaIds = Model.Value<IEnumerable<int>>("mediaIds");
@@ -233,7 +231,7 @@ or
 
 ## Fallbacks
 
-If the current content item doesn't have the requested value use an alternative 'fallback' value in it's place.
+If the current content item doesn't have the requested value, use an alternative 'fallback' value in its place.
 
 ### Fallback to Default Value
 
@@ -251,7 +249,7 @@ or to a specific value
 
 ### Fallback to Ancestors
 
-Look for a property value on the current page, if it doesn't exist look for the property value on the parent page.. and then the parent's parent page and so on... all the way up the content tree - this approach allows the specification of 'global property values' that can then be overridden in different sections or on individual pages.
+Look for a property value on the current page. If it doesn't exist look for the property value on the parent page. Then the parent's parent page and so on. All the way up the content tree - this approach allows the specification of 'global property values' that can then be overridden in different sections or on individual pages.
 
 ```csharp
 @Model.Value("propertyAlias", fallback: Fallback.ToAncestors)

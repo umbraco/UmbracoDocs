@@ -5,7 +5,7 @@ needsV8Update: "true"
 
 # Replacing the basic username/password check
 
-Having the ability to simply replace the logic to validate a username and password against a custom data store is important to some developers. Normally in ASP.Net Identity this
+Having the ability to replace the logic to validate a username and password against a custom data store is important to some developers. Normally in ASP.Net Identity this
 would require you to override the `UmbracoBackOfficeUserManager.CheckPasswordAsync` implementation and then replace the `UmbracoBackOfficeUserManager` with your own class during startup.
 Since this is a common task we've made this process a lot easier with an interface called `IBackOfficeUserPasswordChecker`.
 
@@ -46,7 +46,7 @@ namespace MyNamespace
 
 1. Modify the `~/App_Start/UmbracoCustomOwinStartup.cs` class
 
-    * Replace the `app.ConfigureUserManagerForUmbracoBackOffice` call with a custom overload to specify your custom `IBackOfficeUserPasswordChecker`  
+    * Replace the `app.ConfigureUserManagerForUmbracoBackOffice` call with a custom overload to specify your custom `IBackOfficeUserPasswordChecker`
 
 ```C#
 var applicationContext = ApplicationContext.Current;

@@ -8,15 +8,15 @@ versionRemoved: 8.0.0
 Data resolvers are used by Courier to understand and transfer your data.
 
 ## Intended audience
-Developers who understands .NET, C# and have a clear idea of how Umbraco works and what components in Umbraco do what. 
+Developers who understands .NET, C# and have a clear idea of how Umbraco works and what components in Umbraco do what.
 
 These concepts are targeted at developers who wish to add support for 3rd party components such as data types, or change or extend the way Courier handles current built-in components.
 
 ## What is a Data Resolver
 
-In short, a data resolver is simply a .NET class, which inherits from a specific base class, which allows the developer to hook into different events during the data packaging and extraction.
+In short, a data resolver is a .NET class, which inherits from a specific base class, which allows the developer to hook into different events during the data packaging and extraction.
 
-Out of the box Courier can understand all standard data types in Umbraco. This means that Courier knows that a content picker contains an ID for a document, which then becomes a dependency, and the ID gets translated into a GUID which can safely be deployed to another location. It also knows that a template might contain references to JavaScript files or internal links, using the [locallink:] syntax. Or a lot of other cases where data have a special meaning. 
+Out of the box Courier can understand all standard data types in Umbraco. This means that Courier knows that a content picker contains an ID for a document, which then becomes a dependency, and the ID gets translated into a GUID which can safely be deployed to another location. It also knows that a template might contain references to JavaScript files or internal links, using the [locallink:] syntax. Or a lot of other cases where data have a special meaning.
 
 A data resolver adds special meaning to specific data that matches certain criteria. For instance properties using a specific data type, templates containing a certain keyword and so on.
 
@@ -57,23 +57,23 @@ If you need to build your own data resolvers for Courier there are some great ex
 ### DampResolver
 * **Full name:** `Umbraco.Courier.DataResolvers.DampResolver`
 * **Triggers on:** Propertydata, which have a DAMP pick as data type
-* If value is set, and is an `int`, Courier will convert the value to the media GUID and add the media item as a dependency 
+* If value is set, and is an `int`, Courier will convert the value to the media GUID and add the media item as a dependency
 * On extraction the GUID will be converted back to the right ID.
 
 ### EmbeddedContent
 * **Full name:** `Umbraco.Courier.DataResolvers.EmbeddedContent`
-* **Triggers on:** Propertydata, which have a EmbeddedContent type as data type 
+* **Triggers on:** Propertydata, which have a EmbeddedContent type as data type
 * Replaces node IDs in the embedded content with corresponding GUIDs and converts them back again on extraction
 
 ### Images
 * **Full name:** `Umbraco.Courier.DataResolvers.Images`
-* **Triggers on:** Propertydata, which contains an RTE 
+* **Triggers on:** Propertydata, which contains an RTE
 * Finds linked images in the RTE HTML and sorts out IDs, paths and resources
 
 
 ### KeyValuePrevalueEditor
 * **Full name:** `Umbraco.Courier.DataResolvers.KeyValuePrevalueEditor`
-* **Triggers on:** Propertydata, which contains a keyvalue editor like dropdownlist, radiobutton list or checkboxlist 
+* **Triggers on:** Propertydata, which contains a keyvalue editor like dropdownlist, radiobutton list or checkboxlist
 * Resolves prevalues from IDs to actual value, and back again on extraction
 
 **Configuration**
@@ -87,7 +87,7 @@ If you need to build your own data resolvers for Courier there are some great ex
 
 ### LocalLinks
 * **Full name:** `Umbraco.Courier.DataResolvers.LocalLinks`
-* **Triggers on:** Propertydata, which contains the string {locallink: 
+* **Triggers on:** Propertydata, which contains the string {locallink:
 * Resolves the ID to a GUID, and adds the linked document as a dependency
 
 **Configuration**

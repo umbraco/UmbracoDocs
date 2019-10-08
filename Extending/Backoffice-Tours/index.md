@@ -1,12 +1,11 @@
 ---
 keywords: Backoffice tours
 versionFrom: 7.8.0
-needsV8Update: "true"
 ---
 
 # Backoffice tours
 
-:::note 
+:::note
 This feature has been introduced in Umbraco 7.8.0
 :::
 
@@ -30,12 +29,12 @@ A tour file contains an array of tour configuration JSON objects. So it's possib
 
 ```json
 [
-	{
-		// tour configuration object
-	},
-	{
-		// tour configuration object
-	}
+    {
+        // tour configuration object
+    },
+    {
+        // tour configuration object
+    }
 ]
 ```
 
@@ -47,40 +46,40 @@ Example tour configuration object :
 
 ```json
 {
-	"name": "My Awesome tour",
-	"alias": "myUniqueAlias",
-	"group": "Get things done!!!",
-	"groupOrder": 1,
-	"allowDisable": true,
-	"culture" : "en-US",
-	"requiredSections": ["content","media"],
-	"steps": []
+    "name": "My Awesome tour",
+    "alias": "myUniqueAlias",
+    "group": "Get things done!!!",
+    "groupOrder": 1,
+    "allowDisable": true,
+    "culture" : "en-US",
+    "requiredSections": ["content","media"],
+    "steps": []
 }
 ```
 
-Below is an explanation of each of the properties on the tour configuration object
+Below is an explanation of each of the properties on the tour configuration object:
 
-### name 
+### name
 
 This is the name that is displayed in the help drawer for the tour.
 
 ![Tour name highlighted](images/tourname.png)
 
-### alias 
+### alias
 
 The unique alias of your tour, this is used to track the progress a user has made while taking a tour. The progress information is stored in the TourData column of the UmbracoUsers table in the database.
 
-### group 
+### group
 
-The group property is used to group related tours in the help drawer under a common subject (e.g. Getting started). 
+The group property is used to group related tours in the help drawer under a common subject (e.g. Getting started).
 
 ![Tour group highlighted](images/tourgroup.png)
 
-### groupOrder 
+### groupOrder
 
 This is used to control the order of the groups in the help drawer. This must be an integer value.
 
-### allowDisable 
+### allowDisable
 
 A boolean value that indicates if the "Don't show this tour again" should be shown on the tour steps. If the user clicks this link the tour will no longer be shown in the help drawer.
 
@@ -106,45 +105,44 @@ Example tour step object:
 
 ```json
 {
-	"title": "A meaningful title",
-	"content": "<p>Some text explaining the step</p>",
-	"type": null,
-	"element": "#section-avatar",
-	"elementPreventClick": false,
-	"backdropOpacity": 0.6,
-	"event": "click",
-	"view": null,
-	"eventElement": "#section-avatar .umb-avatar",
-	"customProperties": null
+    "title": "A meaningful title",
+    "content": "<p>Some text explaining the step</p>",
+    "type": null,
+    "element": "#section-avatar",
+    "elementPreventClick": false,
+    "backdropOpacity": 0.6,
+    "event": "click",
+    "view": null,
+    "eventElement": "#section-avatar .umb-avatar",
+    "customProperties": null
 },
 ```
 
-Below is an explanation of each of the properties on the tour step object
+Below is an explanation of each of the properties on the tour step object.
 
 ### title
 
 This the title shown on the tour step.
 
-
 ![Tour step highlighted](images/steptitle.png)
 
 ### content
 
-This text will be shown on the tour step, it can contain HTML markup
+This text will be shown on the tour step, it can contain HTML markup.
 
 ![Tour content highlighted](images/stepcontent.png)
 
 ### type
 
-The type of step. Currently, only one type is supported : "intro". This will center the step and show a "Start tour" button
+The type of step. Currently, only one type is supported : "intro". This will center the step and show a "Start tour" button.
 
 ### element
 
 A CSS selector for the element you wish to highlight. The tour step will position itself near the element.
 
-A lot of elements in the Umbraco backoffice have a "data-element" attribute. It's recommended to use that, because "id" and "class" are subject to changes. e.g.
+A lot of elements in the Umbraco backoffice have a "data-element" attribute. It's recommended to use that, because "id" and "class" are subject to changes, e.g.:
 
-	[data-element='section-content']
+    [data-element='section-content']
 
 TIP: Use the developer tools from your browser to find the id, class and data-attribute.
 
@@ -158,7 +156,7 @@ As an example, it is very useful when you would like to highlight a button, but 
 
 ### event
 
-The JavaScript event that is bound to the highlighted element that should trigger the next tour step e.g. click, hover,...
+The JavaScript event that is bound to the highlighted element that should trigger the next tour step e.g. click, hover, etc.
 
 If not set or omitted a "Next" button will be added to the tour.
 
@@ -171,14 +169,14 @@ The image below shows the entire tree highlighted, but requires the user to clic
 
 ### backdropOpacity
 
-A decimal value between 0 and 1 to indicate the transparency of the background overlay. 
+A decimal value between 0 and 1 to indicate the transparency of the background overlay.
 
 ### view
 
-Here you can enter a path to your own custom angular view that will be used to display the tour step
+Here you can enter a path to your own custom angular view that will be used to display the tour step.
 
 This is useful if you would like to validate input from the user during the tour step.
 
 ### customProperties
 
-A JSON object that is passed to the scope of a custom step view, so you can use this data in your view with $scope.model.currentStep.customProperties
+A JSON object that is passed to the scope of a custom step view, so you can use this data in your view with $scope.model.currentStep.customProperties.

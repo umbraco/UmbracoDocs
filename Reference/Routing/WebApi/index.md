@@ -1,11 +1,10 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # Umbraco Api
 
-_This section will describe how to work with Web Api in Umbraco to easily create REST services_
+_This section will describe how to work with Web Api in Umbraco to create REST services_
 
 Related links:
 
@@ -13,7 +12,7 @@ Related links:
 * [Umbraco api authorization](authorization.md)
 
 ## What is Web API?
-The Microsoft Web API reference can be found on the [official ASP.NET Web API website](https://www.asp.net/web-api) - *"ASP.NET Web API is a framework that makes it easy to build HTTP services that reach a broad range of clients, including browsers and mobile devices. ASP.NET Web API is an ideal platform for building RESTful applications on the .NET Framework."*
+The Microsoft Web API reference can be found on the [official ASP.NET Web API website](https://www.asp.net/web-api). *"ASP.NET Web API is a framework that allows developers to build HTTP services that reach a broad range of clients, including browsers and mobile devices. ASP.NET Web API is an ideal platform for building RESTful applications on the .NET Framework."*
 
 Essentially it's a great platform for building REST services.
 
@@ -26,11 +25,13 @@ The class to inherit from is: `Umbraco.Web.WebApi.UmbracoApiController`
 This will expose the following properties for you to use:
 
 ```csharp
-ApplicationContext ApplicationContext {get;}
 ServiceContext Services {get;}
-DatabaseContext DatabaseContext {get;}
+ISqlContext SqlContext {get;}
 UmbracoHelper Umbraco {get;}
 UmbracoContext UmbracoContext {get;}
+IGlobalSettings GlobalSettings {get;}
+IProfilingLogger Logger {get;}
+MembershipHelper Members {get;}
 ```
 
 ## Creating a Web Api controller
@@ -56,16 +57,16 @@ public class ScoresController : UmbracoApiController
 
 ### Locally declared controller
 
-This is the most common way to create an Umbraco Api controller, you simply inherit from the class `Umbraco.Web.WebApi.UmbracoApiController` and that is all. You will of course need to follow the guidelines specified by Microsoft for creating a Web Api controller, documentation can be found on the [official ASP.NET Web API website](https://www.asp.net/web-api).
+This is the most common way to create an Umbraco Api controller, you inherit from the class `Umbraco.Web.WebApi.UmbracoApiController` and that is all. You will of course need to follow the guidelines specified by Microsoft for creating a Web Api controller, documentation can be found on the [official ASP.NET Web API website](https://www.asp.net/web-api).
 
 Example:
 
 ```csharp
 public class ProductsController : UmbracoApiController
-{	    
+{
     public IEnumerable<string> GetAllProducts()
     {
-        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+        return new[] { "Table", "Chair", "Desk", "Computer"};
     }
 }
 ```
@@ -85,7 +86,7 @@ Example:
 ```csharp
 [PluginController("AwesomeProducts")]
 public class ProductsController : UmbracoApiController
-{	    
+{
     public IEnumerable<string> GetAllProducts()
     {
         return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
@@ -97,14 +98,25 @@ Now this controller will be routed via the area called "AwesomeProducts". All pl
 
 *~/Umbraco/[YourAreaName]/[YourControllerName]*
 
+E.g *~/Umbraco/AwesomeProducts/Products/GetAllProducts*
+
 For more information about areas, Urls and routing see the [routing section](routing.md)
 
 ## Backoffice controllers
 
-If you are creating a controller to work within the Umbraco backoffice then you will need to ensure that it is secured  properly by inheriting from: `UmbracoAuthorizedApiController` or `UmbracoAuthorizedJsonController`. This controller type will auto-route your controller like the above examples except that it will add another Uri path: 'backoffice'. For example:
+If you are creating a controller to work within the Umbraco backoffice then you will need to ensure that it is secured  properly by inheriting from: `UmbracoAuthorizedApiController` or `UmbracoAuthorizedJsonController`. This controller type will auto-route your controller like the above examples except that it will add another Uri path: 'backoffice'.
+
 
 *~/Umbraco/backoffice/Api/[YourControllerName]*
+
 *~/Umbraco/backoffice/[YourAreaName]/[YourControllerName]*
+
+
+E.g
+*~/Umbraco/Api/Products/GetAllProducts* or
+
+*~/Umbraco/backoffice/AwesomeProducts/Products/GetAllProducts* for PluginController
+
 
 ### More Information
 

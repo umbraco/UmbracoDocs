@@ -9,7 +9,7 @@ This page contains a list of all the built-in Umbraco property editors and a sho
 ## [Checkbox (True/False)](True-False.md)
 `Alias: Umbraco.TrueFalse`
 
-A simple checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
+A checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
 
 ## [Checkbox list](CheckBox-List/index.md)
 `Alias: Umbraco.CheckBoxList`
@@ -137,7 +137,7 @@ A tag control which can be controlled by a certain group of tags.
 ## [Textarea](Textarea/index.md)
 `Alias: Umbraco.TextArea`
 
-A simple textarea control to input text.
+A textarea control to input text.
 
 ## [Textbox](Textbox/index.md)
 `Alias: Umbraco.TextBox`

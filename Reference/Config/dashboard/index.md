@@ -7,16 +7,16 @@ needsV8Update: "true"
 
 As with the other .config files in the `/config` directory the Dashboard.config file lets you customize a portion of the Umbraco experience. In this case the Dashboard.config file controls what shows up in the Dashboard section of the UI when a section of the site loads. The Dashboard is the area on the right side of the UI where most of the data entry and functional interaction takes place, [see examples](../../../Extending/Dashboards/index.md).
 
-By default, Umbraco shows a blank Dashboard when a new section loads and only shows a form when you take action within the section (i.e. when you click on a node in the Content section, the Dashboard shows the form to update that node's data). But what if you wanted to present your users with some options even before they click on a node?  Well, that is what the Dashboard.config allows you to do.
+By default, Umbraco shows a blank Dashboard when a new section loads. It only shows a form when you take action within the section (i.e. when you click on a node in the Content section, the Dashboard shows the form to update that node's data). But what if you wanted to present your users with some options even before they click on a node?  Well, that is what the Dashboard.config allows you to do.
 
 ## Layout
 
-Like the other .config files Dashboard.config is a simple XML file with a fairly straightforward layout as seen below.
+Like the other .config files Dashboard.config is an XML file with a fairly straightforward layout as seen below.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <dashBoard> <!-- Root of the dashboard XML tree -->
-   <section>  <!-- Defines a dashboard layout for a group of sections -->
+    <section>  <!-- Defines a dashboard layout for a group of sections -->
         <areas> <!-- Declares which sections (i.e. content,media,users,[your own]-->
             <area>[area name]</area> <!-- A section to apply this to -->
             ...
@@ -26,8 +26,8 @@ Like the other .config files Dashboard.config is a simple XML file with a fairly
             <control>[path]</control> <!-- What control(v6) / AngularJS View (v7) to load in that tab -->
         </tab>
         ...
-   </section>
-   ...
+    </section>
+    ...
 </dashBoard>
 ```
 

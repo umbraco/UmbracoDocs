@@ -8,7 +8,7 @@ needsV8Update: "true"
 
 ## Overview
 
-This guide explains how to set up a simple property editor, how to hook it into Umbraco's data types, how to hook it into Angular's modules and its injector, and finally how you can test your property editor.
+This guide explains how to set up a property editor, how to hook it into Umbraco's data types, how to hook it into Angular's modules and its injector, and finally how you can test your property editor.
 
 So all the steps we will go through in part 1 are:
 
@@ -27,7 +27,7 @@ This is about how to use AngularJS with Umbraco, so it does not cover AngularJS 
 
 ## The end result
 
-By the end of this guide, we will have a simple markdown editor running inside of Umbraco
+By the end of this guide, we will have a markdown editor running inside of Umbraco
 registered as a data type in the backoffice, assigned to a document type, and the editor can
 create and modify data.
 
@@ -36,35 +36,35 @@ create and modify data.
 The first thing we must do is create a new folder inside `/App_Plugins` folder. We will call it
 `MarkDownEditor`
 
-Next, we will create a simple manifest file to describe what this plugin does. This manifest will tell Umbraco about our new property editor and allows us to inject any needed files into the application, so we create the file `/App_Plugins/MarkDownEditor/package.manifest`
+Next, we will create a manifest file to describe what this plugin does. This manifest will tell Umbraco about our new property editor and allows us to inject any needed files into the application, so we create the file `/App_Plugins/MarkDownEditor/package.manifest`
 [For full package.manifest JSON documentation see here](../../Extending/Property-Editors/package-manifest.md)
 
 Inside this package manifest we add a bit of JSON to describe the property editor. Have a look at the inline comments in the JSON below for details on each bit:
 
 ```javascript
 {
-	// you can define multiple editors
-	propertyEditors: [
-		{
-			/*this must be a unique alias*/
-			alias: "My.MarkdownEditor",
-			/*the name*/
-			name: "My markdown editor",
-			/*the icon*/
-			icon: "icon-code",
-			/*grouping for "Select editor" dialog*/
-			group: "Rich Content",
-			/*the HTML file we will load for the editor*/
-			editor: {
-				view: "~/App_Plugins/MarkDownEditor/markdowneditor.html"
-			}
-		}
-	]
-	,
-	// array of files we want to inject into the application on app_start
-	javascript: [
-		'~/App_Plugins/MarkDownEditor/markdowneditor.controller.js'
-	]
+    // you can define multiple editors
+    propertyEditors: [
+        {
+            /*this must be a unique alias*/
+            alias: "My.MarkdownEditor",
+            /*the name*/
+            name: "My markdown editor",
+            /*the icon*/
+            icon: "icon-code",
+            /*grouping for "Select editor" dialog*/
+            group: "Rich Content",
+            /*the HTML file we will load for the editor*/
+            editor: {
+                view: "~/App_Plugins/MarkDownEditor/markdowneditor.html"
+            }
+        }
+    ]
+    ,
+    // array of files we want to inject into the application on app_start
+    javascript: [
+        '~/App_Plugins/MarkDownEditor/markdowneditor.controller.js'
+    ]
 }
 ```
 
@@ -80,17 +80,17 @@ In the .js file I will add a basic AngularJS controller declaration
 
 ```javascript
 angular.module("umbraco")
-	.controller("My.MarkdownEditorController",
-	function () {
-		alert("The controller has landed");
-	});
+    .controller("My.MarkdownEditorController",
+    function () {
+        alert("The controller has landed");
+    });
 ```
 
 And in the .html file I'll add:
 
 ```html
 <div ng-controller="My.MarkdownEditorController">
-	<textarea ng-model="model.value"></textarea>
+    <textarea ng-model="model.value"></textarea>
 </div>
 ```
 
@@ -123,21 +123,21 @@ angular.module("umbraco")
 // inject umbracos assetsService
 function ($scope,assetsService) {
 
-	// tell the assetsService to load the markdown.editor libs from the markdown editors
-	// plugin folder
-	assetsService
-		.load([
-			"~/App_Plugins/MarkDownEditor/lib/markdown.converter.js",
-			"~/App_Plugins/MarkDownEditor/lib/markdown.sanitizer.js",
-			"~/App_Plugins/MarkDownEditor/lib/markdown.editor.js"
-		])
-		.then(function () {
-			// this function will execute when all dependencies have loaded
-			alert("editor dependencies loaded");
-		});
+    // tell the assetsService to load the markdown.editor libs from the markdown editors
+    // plugin folder
+    assetsService
+        .load([
+            "~/App_Plugins/MarkDownEditor/lib/markdown.converter.js",
+            "~/App_Plugins/MarkDownEditor/lib/markdown.sanitizer.js",
+            "~/App_Plugins/MarkDownEditor/lib/markdown.editor.js"
+        ])
+        .then(function () {
+            // this function will execute when all dependencies have loaded
+            alert("editor dependencies loaded");
+        });
 
-	// load the separate css for the editor to avoid it blocking our JavaScript loading
-	assetsService.loadCss("~/App_Plugins/MarkDownEditor/lib/markdown.editor.less");
+    // load the separate css for the editor to avoid it blocking our JavaScript loading
+    assetsService.loadCss("~/App_Plugins/MarkDownEditor/lib/markdown.editor.less");
 });
 ```
 
@@ -155,13 +155,13 @@ and add that id to the textarea in the HTML. For more info on the HTML structure
 
 ```html
 <div ng-controller="My.MarkdownEditorController" class="wmd-panel">
-	<div id="wmd-button-bar-{{model.alias}}"></div>
+    <div id="wmd-button-bar-{{model.alias}}"></div>
 
-		<textarea ng-model="model.value" class="wmd-input" id="wmd-input-{{model.alias}}">
-			your content
-		</textarea>
+        <textarea ng-model="model.value" class="wmd-input" id="wmd-input-{{model.alias}}">
+            your content
+        </textarea>
 
-	<div id="wmd-preview-{{model.alias}}" class="wmd-panel wmd-preview"></div>
+    <div id="wmd-preview-{{model.alias}}" class="wmd-panel wmd-preview"></div>
 </div>
 ```
 

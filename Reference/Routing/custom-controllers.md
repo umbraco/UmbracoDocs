@@ -26,7 +26,7 @@ public class HomeController : Umbraco.Web.Mvc.RenderMvcController
     }
 }
 ```
-    
+
 Now you can run any code that you want inside of that Action!
 
 ## Routing via template
@@ -75,7 +75,7 @@ If you are returning a custom model, then this directive will need to change bec
 
 Please note that if your template uses a layout that expects the model to be of type `Umbraco.Web.Models.ContentModel` then changing the template to inherit from `Umbraco.Web.Mvc.UmbracoViewPage<MyCustomModel>` will cause an exception. This is due to the way ASP.NET MVC works with strongly typed views: the requirement for a specific type applies all the way from the top-most layout down to the template. There are two ways to solve this problem:
 
-1. Break the dependency on `Umbraco.Web.Models.ContentModel` in your layout by having it inherit from `Umbraco.Web.Mvc.UmbracoViewPage<ISomeInterface>` (where IsomeInterface is implemented by all your models and contains the properties the master layout view uses).
+1. Break the dependency on `Umbraco.Web.Models.ContentModel` in your layout by having it inherit from `Umbraco.Web.Mvc.UmbracoViewPage<ISomeInterface>` (where ISomeInterface is implemented by all your models and contains the properties the master layout view uses).
 2. Make your custom model inherit from `Umbraco.Web.Models.ContentModel` and ensure you pass through the Umbraco model thus:-
 
 ```csharp
@@ -123,7 +123,7 @@ public class HomeController : Umbraco.Web.Mvc.RenderMvcController
 
 You can also pass values directly to the controller action using a query string. All you have to do is to put those fields in action definition and attach values with correct fields names to your URL:
 
-	?myfield1=hello&myfield2=umbraco
+    ?myfield1=hello&myfield2=umbraco
 
 This way, fields defined in the action's parameters will get automatically populated:
 
@@ -141,7 +141,7 @@ public class HomeController : Umbraco.Web.Mvc.RenderMvcController
 ```
 ## Controller Injection
 Injecting services into your controller constructions is possible with Umbraco's underlying dependency injection implementation.
-Core services such as the built in ILogger service can just be injected into the constructor for the controller along with your own services:
+Core services such as the built in ILogger service can be injected into the constructor for the controller along with your own services:
 
 For example:
 ```csharp
@@ -158,12 +158,12 @@ For example:
     ContentModel model)
     {
     var siteSearchPage = _siteService.GetSearchPage(model.Path);
-    ... 
+    ...
     }
 ```
-    
+
 To wire up a concrete instance of IMySuperSiteService, use a composer:
-    
+
 ```csharp
     using Umbraco.Core;
     using Umbraco.Core.Logging;

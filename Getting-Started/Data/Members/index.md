@@ -5,7 +5,7 @@ versionFrom: 8.0.0
 ---
 
 # Members
-Members are used for registering and authenticating external users of an Umbraco installation (ie. forum members, intranet users and so forth). 
+Members are used for registering and authenticating external users of an Umbraco installation (ie. forum members, intranet users and so forth).
 
 This guide will explain how to define and create members in the backoffice. If you want to work with members using the service APIs, links can be found at the end of the document.
 
@@ -30,7 +30,7 @@ Once the Member is created and saved you can access it by expanding the Members 
 
 ## Creating a Member Type
 
-You can create your own Member Types and add properties and tabs just as with Document Types.
+You can create your own Member Types and add properties and tabs as you would with Document Types.
 
 Go to the __Settings__ section, right-click __Member Types__ and select __Create__. You will now be taken to the Member Type editor that is used to define and edit the Member Type. Name the new Member Type and click __Save__.
 
@@ -64,7 +64,7 @@ More information can be found under [security](../../../Reference/Security/#sens
 
 # Technical
 
-As a developer you are able to leverage your website easily when you build on the Members section of Umbraco.
+As a developer you are able to leverage your website when you build on the Members section of Umbraco.
 Although the Members section is by default in the Umbraco backoffice, you will be able to implement some work on the front end of your website.
 Members come from a custom ASP.NET membership provider, while Member Groups come from a custom Role provider. Both are defined in the `web.config`.
 You can find out more about the services methods in the reference section of the documentation by following the links below.

@@ -9,7 +9,7 @@ versionFrom: 7.0.0
 Bootcamp is native vm software for Mac OS. See how to install Windows with Bootcamp [here](https://support.apple.com/en-us/HT201468).
 
 ### Parallels
-Parallels is a third party vm solution that enables integration between Mac OS and Windows ie. running Windows Apps from the dock. Get it [here](https://www.parallels.com). 
+Parallels is a third party vm solution that enables integration between Mac OS and Windows ie. running Windows Apps from the dock. Get it [here](https://www.parallels.com).
 
 When your vm is running Windows, follow the instructions for [installing Umbraco](index.md).
 

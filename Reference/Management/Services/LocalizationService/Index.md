@@ -13,7 +13,7 @@ The LocalizationService acts as a "gateway" to Umbraco data for operations which
 
 [Browse the API documentation for LocalizationService](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Services.LocalizationService.html).
 
- * **Namespace:** `Umbraco.Core.Services` 
+ * **Namespace:** `Umbraco.Core.Services`
  * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
@@ -35,7 +35,7 @@ If you wish to use use the localization service in a class that inherits from on
 ```csharp
 ILocalizationService localizationService = Services.LocalizationService;
 ```
-	
+
 In Razor views, you can access the localization service through the `ApplicationContext` property:
 
 ```csharp

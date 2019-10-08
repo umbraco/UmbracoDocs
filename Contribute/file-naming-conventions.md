@@ -25,7 +25,7 @@ and `index-vpre7.3.md` would contain the documentation for versions before versi
 
 The `vpost` and `vpre` notations are not used to render to the user.
 
-For SEO reasons it is not necessary to change a file name when a feature becomes obsolete.  
+For SEO reasons it is not necessary to change a file name when a feature becomes obsolete.
 
 ## Adding meta data
 
@@ -54,7 +54,7 @@ If we are on the page
 
 we will search for any documents in the index beginning with
 
-     /Documentation/Getting-Started/Setup/Server-Setup/Load-Balancing/ContentService-Events
+    /Documentation/Getting-Started/Setup/Server-Setup/Load-Balancing/ContentService-Events
 
 which will return
 
@@ -69,7 +69,7 @@ When searching the documentation articles on Our, there is an app setting that i
 On every document the other versions will be linked to. These are some examples on how they will be referenced to:
 
 file name                             | versionFrom  | versionTo | renders out
--------                               |:------------:|     -----:| ---        
+-------                               |:------------:|     -----:| ---
 `index-v7.md`                         | 7.0.0        |           | 7.0.0 +
 `index-vpre7.3.md`                   |              | 7.3.0     | pre 7.3.0
 `index-vpost7.6.md`                  | 7.6.0        | 7.7.2     | 7.6.0 - 7.7.2

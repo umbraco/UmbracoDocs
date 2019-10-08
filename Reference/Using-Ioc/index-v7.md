@@ -1,15 +1,14 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
 ---
 
 # Using IoC with Umbraco
 
-_This section will show you how to setup Ioc/Dependency Injection with your Umbraco installation. The examples will use Autofac but you can use whatever you want_ 
+_This section will show you how to setup Ioc/Dependency Injection with your Umbraco installation. The examples will use Autofac but you can use whatever you want_
 
 ## Overview
 
-We don't use IoC in the Umbraco source code. This isn't because we don't like it or don't want to use it; it's because we want you as a developer to be able to use whatever IoC framework that you would like to use without jumping through any hoops. With that said, it means it is possible to implement whatever IoC engine that you'd like!
+We don't use IoC in the Umbraco source code. This isn't because we don't like it or don't want to use it. It's because we want you as a developer to be able to use whatever IoC framework that you would like to use without jumping through any hoops. With that said, it means it is possible to implement whatever IoC engine that you'd like!
 
 ## Implementation
 
@@ -137,7 +136,7 @@ public class HomeController : RenderMvcController
 }
 ```
 
-As another example, you can do the same with SurfaceControllers. Here we are creating a locally declared SurfaceController that has a Child Action, and again, just like the previous controller, it will have a new instance of the custom class injected:
+As another example, you can do the same with SurfaceControllers. Here we are creating a locally declared SurfaceController that has a Child Action, and again, like the previous controller, it will have a new instance of the custom class injected:
 
 ```csharp
 public class MyTestSurfaceController : SurfaceController
@@ -169,7 +168,7 @@ If you don't register assemblies that contain controllers, you may end up with Y
 
 ## Things to note
 
-We use a custom MVC controller builder in our code called `Umbraco.Web.Mvc.MasterControllerFactory`, which needs to always be the default controller factory; if you change this, Umbraco will probably not work anymore. The good news is that you can specify 'slave' factories so you can specify custom controller factories for different purposes. You would just need to create a new class that inherits from `Umbraco.Web.Mvc.IFilteredControllerFactory` and ensure that the class is public (so it can be found). If your IoC implementation affects the default controller factory, you may have to modify it in order to support this implementation. For the most part, most IoC frameworks will just target setting a custom DependencyResolver which is 100% ok.
+We use a custom MVC controller builder in our code called `Umbraco.Web.Mvc.MasterControllerFactory`, which needs to always be the default controller factory; if you change this, Umbraco will probably not work anymore. The good news is that you can specify 'slave' factories so you can specify custom controller factories for different purposes. You would need to create a new class that inherits from `Umbraco.Web.Mvc.IFilteredControllerFactory` and ensure that the class is public (so it can be found). If your IoC implementation affects the default controller factory, you may have to modify it in order to support this implementation. For the most part, most IoC frameworks will target setting a custom DependencyResolver which is 100% ok.
 
 ## Unity Example
 
@@ -190,7 +189,7 @@ class UnityEvents : IApplicationEventHandler
         var container = UnityConfig.GetConfiguredContainer();
 
         // Web API
-        GlobalConfiguration.Configuration.DependencyResolver 
+        GlobalConfiguration.Configuration.DependencyResolver
             = new Microsoft.Practices.Unity.WebApi.UnityDependencyResolver(container);
         // MVC
         DependencyResolver.SetResolver(new Microsoft.Practices.Unity.Mvc.UnityDependencyResolver(container));
@@ -207,10 +206,10 @@ class UnityEvents : IApplicationEventHandler
             WithName.Default
         );
 
-        // The UmbracoContext must be registered so that the Umbraco backoffice controllers 
+        // The UmbracoContext must be registered so that the Umbraco backoffice controllers
         // can be successfully resolved.
         container.RegisterType<UmbracoContext>(
-            new PerRequestLifetimeManager(), 
+            new PerRequestLifetimeManager(),
             new InjectionFactory(c => UmbracoContext.Current)
         );
 
@@ -239,9 +238,9 @@ public static class UnityActivator
     public static void Start()
     {
         // This is required if you intend to follow the example above and use the PerRequestLifetimeManager.
-        // If you are developing a library using umbracoCms.Core and Unity, 
+        // If you are developing a library using umbracoCms.Core and Unity,
         // you might want to reconsider depending on this module.
-        // If the library consumers also use Unity, they might also register the per request http module, 
+        // If the library consumers also use Unity, they might also register the per request http module,
         // bloating the request pipeline with multiple modules performing similar tasks.
         Microsoft.Web.Infrastructure.DynamicModuleHelper.DynamicModuleUtility.RegisterModule(typeof(UnityPerRequestHttpModule));
     }
