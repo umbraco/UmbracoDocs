@@ -36,16 +36,14 @@ namespace Umbraco8.Components
 {
 
     public class RegisterCustomRouteComposer : ComponentComposer<RegisterCustomRouteComponent>
-    {
-
-    }
+    { }
 
     public class RegisterCustomRouteComponent : IComponent
     {
         public void Initialize()
         {
-    // Custom route to MyProductController which will use a node with a specific ID as the
-    // IPublishedContent for the current rendering page
+            // Custom route to MyProductController which will use a node with a specific ID as the
+            // IPublishedContent for the current rendering page
             RouteTable.Routes.MapUmbracoRoute("ProductCustomRoute", "products/{action}/{id}", new
             {
                 controller = "MyProduct",
@@ -55,7 +53,7 @@ namespace Umbraco8.Components
 
         public void Terminate()
         {
-            throw new NotImplementedException();
+            // Nothing to terminate
         }
     }
 }
