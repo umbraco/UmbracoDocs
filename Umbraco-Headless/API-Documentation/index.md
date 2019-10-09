@@ -153,13 +153,13 @@ This is the management API for creating, updating and deleting content, media, l
 ### [Content endpoints](api/content/)
 API Documentation for each of the Content endpoints available under `https://api.umbraco.io`.
 
-### [Content endpoints](api/content/type/)
+### [Content Type endpoints](api/content/type/)
 API Documentation for each of the Content Type endpoints available under `https://api.umbraco.io`.
 
 ### [Media endpoints](api/media/)
 API Documentation for each of the Media endpoints available under `https://api.umbraco.io`.
 
-### [Media endpoints](api/media/type/)
+### [Media Type endpoints](api/media/type/)
 API Documentation for each of the Media Type endpoints available under `https://api.umbraco.io`.
 
 ### [Language endpoints](api/language/)
@@ -168,14 +168,14 @@ API Documentation for each of the Language endpoints available under `https://ap
 ### [Member endpoints](api/member/)
 API Documentation for each of the Member endpoints available under `https://api.umbraco.io`.
 
-### [Member endpoints](api/member/group/)
+### [Member Group endpoints](api/member/group/)
 API Documentation for each of the Member Group endpoints available under `https://api.umbraco.io`.
 
-### [Member endpoints](api/member/type/)
+### [Member Type endpoints](api/member/type/)
 API Documentation for each of the Member Type endpoints available under `https://api.umbraco.io`.
 
-### [Media endpoints](api/relation/)
+### [Relation endpoints](api/relation/)
 API Documentation for each of the Relation endpoints available under `https://api.umbraco.io`.
 
-### [Media endpoints](api/relation/type/)
+### [Relation Type endpoints](api/relation/type/)
 API Documentation for each of the Relation Type endpoints available under `https://api.umbraco.io`.
