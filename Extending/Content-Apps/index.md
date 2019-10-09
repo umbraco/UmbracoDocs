@@ -1,7 +1,7 @@
 ---
 versionFrom: 8.0.0
 meta.Title: "Content Apps"
-meta.Description: "A gudie to Umbraco Content Apps in backoffice"
+meta.Description: "A guide to Umbraco Content Apps in the backoffice"
 ---
 
 # Content Apps
