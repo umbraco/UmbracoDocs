@@ -69,7 +69,7 @@ After:
 2. Change the two keys in your web.config “Umbraco.Core.ReservedUrls” and “Umbraco.Core.Path” to your new path.
 
 ```xml
-<add key="Umbraco.Core.ReservedUrls" value="~/my-secret-loginpanel,~/install/" />
+<add key="Umbraco.Core.ReservedUrls" value="~/my-secret-loginpanel" />
 <add key="Umbraco.Core.Path" value="~/my-secret-loginpanel" />
 ```
 
