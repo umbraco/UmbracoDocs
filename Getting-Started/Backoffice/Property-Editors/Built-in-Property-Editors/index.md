@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 This page contains a list of all the built-in Umbraco property editors and a short description of what they do:
 
-## [Checkbox (True/False)](True-False.md)
+## [Checkbox (True/False)](True-False)
 `Alias: Umbraco.TrueFalse`
 
 A checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
