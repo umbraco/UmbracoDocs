@@ -10,39 +10,23 @@ True/False is a checkbox which saves either 0 or 1, depending on the checkbox be
 
 ## Data Type Definition Example
 
-![True/False Data Type Definition](images/True-False-DataType-742.jpg)
+![True/False Data Type Definition](images/Checkbox-Data-Type.png)
 
-The True/False property has a setting which allows you to set the default value of the checkbox, either checked (true) or unchecked (false). This property was added in Umbraco 7.4.2.
+The Checkbox property has a setting which allows you to set the default value of the checkbox, either checked (true) or unchecked (false).
+
+It is also possible to define a label, that will be displayed next to the checkbox on the content.
 
 ## Content Example
 
-![No Edit Content Example](images/True-False-Content.png)
+![No Edit Content Example](images/Checkbox-Content.png)
 
-## MVC View Example - displays a list of links to child pages that are not hidden
-
-### Typed
+## MVC View Example
 
 ```csharp
 @{
-    foreach (IPublishedContent page in Model.Content.Children){
-        if (!page.GetPropertyValue<bool>("umbracoNaviHide"))
-        {
-            <p>@page.Name</p>
-        }
-    }
-}
-```
-
-### Dynamic (Obsolete)
-
-See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
-
-```csharp
-@{
-    foreach (var page in CurrentPage.Children){
-        if (!page.umbracoNaviHide){
-            <p>@page.Name</p>
-        }
+    if (!Model.Value<bool>("myCheckBox"))
+    {
+        <p>The Checkbox is not checked!</p>
     }
 }
 ```
