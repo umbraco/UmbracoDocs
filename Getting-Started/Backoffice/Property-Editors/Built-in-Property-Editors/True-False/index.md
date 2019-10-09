@@ -1,9 +1,8 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
-# True/False
+# Checkbox
 
 `Returns: Boolean`
 

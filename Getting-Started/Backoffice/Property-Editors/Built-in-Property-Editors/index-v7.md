@@ -199,7 +199,7 @@ A textarea control to input text.
 
 A normal html input text field.
 
-## [True/False](True-False.md)
+## [True/False](True-False/index-v7.md)
 `Alias: Umbraco.TrueFalse`
 
 A checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
