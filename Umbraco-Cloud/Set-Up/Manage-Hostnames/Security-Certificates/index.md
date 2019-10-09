@@ -25,8 +25,6 @@ Your certificates need to be **`.pfx`** format and must be set to use a password
 
 You've now successfully added your certificate to the Cloud project!
 
-![Upload and bind certificate](images/upload-bind-cert.gif)
-
 ## Read more
 
 * [Automatic certificates with Umbraco Latch](../../Umbraco-Latch)
