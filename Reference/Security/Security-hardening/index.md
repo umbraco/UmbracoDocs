@@ -1,6 +1,5 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # Umbraco Security Hardening
@@ -67,14 +66,20 @@ After:
 
 ![Umbraco-folder on disk - after](images/foldersondisk-after.png)
 
-2. Change the two keys in your web.config “umbracoReservedPaths” and “umbracoPath” to your new path.
+2. Change the two keys in your web.config “umbracoReservedUrls” and “umbracoPath” to your new path.
 
 Before:
 
-![Web.config - before](images/webconfig-before.png)
+```xml
+<add key="umbracoReservedUrls" value="~/umbraco,~/install/" />
+<add key="umbracoPath" value="~/umbraco" />
+```
 
 After:
 
-![Web.config - after](images/webconfig-after.png)
+```xml
+<add key="umbracoReservedUrls" value="~/my-secret-loginpanel,~/install/" />
+<add key="umbracoPath" value="~/my-secret-loginpanel" />
+```
 
 From now on, you can only get access to the login screen by going to this path and no longer by going to /umbraco/.
