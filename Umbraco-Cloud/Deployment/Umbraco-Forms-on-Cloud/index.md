@@ -36,7 +36,7 @@ Then your forms data is handled as metadata. When you create a form, a `UDA` fil
 
 This means that your forms will be deployed along with the rest of your metadata and structure files, e.g. Document Types, Templates and stylesheets.
 
-We strongly recommend that you work with the forms on your local or development environment, following the [left-to-right deployment model](../../Deployment).
+We strongly recommend that you work with the forms on your local or Development environment, following the [left-to-right deployment model](../../Deployment).
 
 You can configure your project to handle forms data as content by following these steps:
 
@@ -53,7 +53,7 @@ You can configure your project to handle forms data as content by following thes
 5. Remove all existing `data\revision\forms-form__*.uda` files, so it's not possible to accidentally revert back to this state (removing `UDA` files won't remove the actual form on deploy)
 6. Push the change back to the Cloud environment
    * If you have more than 1 Cloud environment, make sure to deploy the change through to all of them
-7. You are now able to queue your forms for transfer between the Cloud environments, just like content and media
+7. You are now able to queue your forms for transfer between the Cloud environments, like content and media
 
 :::tip
 Do you want to test this new setting you've configured?
