@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 `Returns: Boolean`
 
-True/False is a checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
+Checkbox is a standard checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
 
 ## Data Type Definition Example
 
