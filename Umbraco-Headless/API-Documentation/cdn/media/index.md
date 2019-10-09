@@ -1,4 +1,4 @@
-# Published Media API
+# Content Delivery API for Media
 
 **BASE URL**: `https://cdn.umbraco.io`
 

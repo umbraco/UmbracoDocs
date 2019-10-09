@@ -1,4 +1,4 @@
-# Published Content API
+# Content Delivery API for Content
 
 **BASE URL**: `https://cdn.umbraco.io`
 
