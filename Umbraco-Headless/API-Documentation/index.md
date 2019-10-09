@@ -141,29 +141,31 @@ GET https://cdn.umbraco.io/content?culture=en-US
 ```
 
 ### [Content endpoints](cdn/content/)
-API Documentation for each of the Content endpoints available under `https://cdn.umbraco.io`.
+Content endpoints for retrieving specific content by id and url, as well as structured according to the content tree structure. This includes children, descendants and anscestors.
 
 ### [Media endpoints](cdn/media/)
-API Documentation for each of the Media endpoints available under `https://cdn.umbraco.io`.
+Media endpoints for retrieving specific media by id, as well as structured according to the media tree structure. This includes getting children of a media folder.
 
 ## Content Management API
 
 This is the management API for creating, updating and deleting content, media, languages, relations, members and member groups. It also allows you to retrieve content drafts as well as content types, media types and member types.
 
+Common for the Content Management API is that you must be authenticated and authorized when performing any action against the endpoints listed below. This means that you must supply a Bearer Token via an Authorization header or an API Key via an Authorization or Api-Key header.
+
 ### [Content endpoints](api/content/)
-API Documentation for each of the Content endpoints available under `https://api.umbraco.io`.
+Content endpoints for retrieving, creating, updating and deleting.
 
 ### [Content Type endpoints](api/content/type/)
-API Documentation for each of the Content Type endpoints available under `https://api.umbraco.io`.
+Content Type endpoints for retrieving all available and specific content types.
 
 ### [Media endpoints](api/media/)
-API Documentation for each of the Media endpoints available under `https://api.umbraco.io`.
+Media endpoints for retrieving, creating, updating and deleting.
 
 ### [Media Type endpoints](api/media/type/)
-API Documentation for each of the Media Type endpoints available under `https://api.umbraco.io`.
+Media Type endpoints for retrieving all available and specific media types.
 
 ### [Language endpoints](api/language/)
-API Documentation for each of the Language endpoints available under `https://api.umbraco.io`.
+Language endpoints for retrieving, creating, updating and deleting.
 
 ### [Member endpoints](api/member/)
 API Documentation for each of the Member endpoints available under `https://api.umbraco.io`.
