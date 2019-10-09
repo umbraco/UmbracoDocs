@@ -34,7 +34,7 @@ For more information on how to handle content transfer/restores on Umbraco Cloud
 
 Then your forms data is handled as metadata. When you create a form, a `UDA` file will be generated. This `UDA` file contains all the metadata from the form and is very similar to the `JSON` file that is also generated when you create a new form (found in `App_Data\UmbracoForms\Data\forms`).
 
-This means that your forms will be deployed along with the rest of your metadata and structure files, e.g. document types, templates and stylesheets.
+This means that your forms will be deployed along with the rest of your metadata and structure files, e.g. Document Types, Templates and stylesheets.
 
 We strongly recommend that you work with the forms on your local or development environment, following the [left-to-right deployment model](../../Deployment).
 
