@@ -93,7 +93,7 @@ Authorization: Basic $base64-encoded-string
 
 ```http
 GET https://api.umbraco.io/
-Api-Key: api-key
+Api-Key: $api-key
 ```
 
 ### Bearer token
@@ -139,3 +139,43 @@ Accept-Language: en-US
 ```http
 GET https://cdn.umbraco.io/content?culture=en-US
 ```
+
+### [Content endpoints](cdn/content/)
+API Documentation for each of the Content endpoints available under `https://cdn.umbraco.io`.
+
+### [Media endpoints](cdn/media/)
+API Documentation for each of the Media endpoints available under `https://cdn.umbraco.io`.
+
+## Content Management API
+
+This is the management API for creating, updating and deleting content, media, languages, relations, members and member groups. It also allows you to retrieve content drafts as well as content types, media types and member types.
+
+### [Content endpoints](api/content/)
+API Documentation for each of the Content endpoints available under `https://api.umbraco.io`.
+
+### [Content endpoints](api/content/type/)
+API Documentation for each of the Content Type endpoints available under `https://api.umbraco.io`.
+
+### [Media endpoints](api/media/)
+API Documentation for each of the Media endpoints available under `https://api.umbraco.io`.
+
+### [Media endpoints](api/media/type/)
+API Documentation for each of the Media Type endpoints available under `https://api.umbraco.io`.
+
+### [Language endpoints](api/language/)
+API Documentation for each of the Language endpoints available under `https://api.umbraco.io`.
+
+### [Member endpoints](api/member/)
+API Documentation for each of the Member endpoints available under `https://api.umbraco.io`.
+
+### [Member endpoints](api/member/group/)
+API Documentation for each of the Member Group endpoints available under `https://api.umbraco.io`.
+
+### [Member endpoints](api/member/type/)
+API Documentation for each of the Member Type endpoints available under `https://api.umbraco.io`.
+
+### [Media endpoints](api/relation/)
+API Documentation for each of the Relation endpoints available under `https://api.umbraco.io`.
+
+### [Media endpoints](api/relation/type/)
+API Documentation for each of the Relation Type endpoints available under `https://api.umbraco.io`.
