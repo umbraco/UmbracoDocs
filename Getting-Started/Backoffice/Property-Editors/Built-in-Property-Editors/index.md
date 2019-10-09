@@ -114,7 +114,7 @@ A configurable number control allowing only numbers.
 
 Pretty much like the name indicates this property editor enables editors to choose from list of radio buttons.
 
-## [Repeatable textstrings](Multiple-Textbox.md)
+## [Repeatable textstrings](Multiple-Textbox)
 `Alias: Umbraco.MultipleTextstring`
 
 The Repeatable textstrings property editor enables a content editor to make a list of text items
