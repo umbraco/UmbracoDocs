@@ -4,7 +4,15 @@ versionFrom: 7.0.0
 
 # Working with Umbraco Cloud and Node.js cli
 
-One of the features built into Umbraco Cloud is the ability to work locally with your Umbraco site - without having a Windows machine with a local web server installed on it. This enables e.g. people on OS X or a Linux based OS to be using their favorite editor to modify code in their Umbraco Cloud site. The functionality requires that your machine has the following three tools installed:
+One of the features built into Umbraco Cloud is the ability to work locally with your Umbraco site - without having a Windows machine with a local web server installed on it. This enables e.g. people on OS X or a Linux based OS to be using their favorite editor to modify code in their Umbraco Cloud site. 
+
+## Video tutorial
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/hfgy9Izsi_4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+## Step by step
+
+The functionality requires that your machine has the following three tools installed:
 
 * Git - In order to clone a site and push changes
 * Node.js (minimum version: 2.15) + npm installed in a command line of choice
