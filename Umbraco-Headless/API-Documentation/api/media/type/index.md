@@ -52,6 +52,163 @@ Get a list of all available media types.
 **Content Example**:
 
 ```json
+{
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/media/type"
+        },
+        "root": {
+            "href": "https://api.umbraco.io/media/type"
+        },
+        "mediatypes": [
+            {
+                "href": "https://api.umbraco.io/media/type/Folder"
+            },
+            {
+                "href": "https://api.umbraco.io/media/type/Image"
+            },
+            {
+                "href": "https://api.umbraco.io/media/type/File"
+            }
+        ]
+    },
+    "_embedded": {
+        "mediatypes": [
+            {
+                "alias": "Folder",
+                "compositions": [],
+                "groups": [],
+                "name": "Folder",
+                "_createDate": "2019-09-20T12:07:43.973Z",
+                "_id": "f38bd2d7-65d0-48e6-95dc-87ce06ec2d3d",
+                "_updateDate": "2019-09-20T12:07:43.973Z",
+                "_links": {
+                    "self": {
+                        "href": "https://api.umbraco.io/media/type/Folder"
+                    }
+                }
+            },
+            {
+                "alias": "Image",
+                "compositions": [],
+                "groups": [
+                    {
+                        "name": "Image",
+                        "sortOrder": 1,
+                        "properties": [
+                            {
+                                "alias": "umbracoFile",
+                                "label": "Upload image",
+                                "propertyEditorAlias": "Umbraco.ImageCropper",
+                                "sortOrder": 0,
+                                "validation": {
+                                    "required": true
+                                }
+                            },
+                            {
+                                "alias": "umbracoWidth",
+                                "description": "in pixels",
+                                "label": "Width",
+                                "propertyEditorAlias": "Umbraco.Label",
+                                "sortOrder": 1,
+                                "validation": {
+                                    "required": false
+                                }
+                            },
+                            {
+                                "alias": "umbracoHeight",
+                                "description": "in pixels",
+                                "label": "Height",
+                                "propertyEditorAlias": "Umbraco.Label",
+                                "sortOrder": 2,
+                                "validation": {
+                                    "required": false
+                                }
+                            },
+                            {
+                                "alias": "umbracoBytes",
+                                "description": "in bytes",
+                                "label": "Size",
+                                "propertyEditorAlias": "Umbraco.Label",
+                                "sortOrder": 3,
+                                "validation": {
+                                    "required": false
+                                }
+                            },
+                            {
+                                "alias": "umbracoExtension",
+                                "label": "Type",
+                                "propertyEditorAlias": "Umbraco.Label",
+                                "sortOrder": 4,
+                                "validation": {
+                                    "required": false
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "name": "Image",
+                "_createDate": "2019-09-20T12:07:43.973Z",
+                "_id": "cc07b313-0843-4aa8-bbda-871c8da728c8",
+                "_updateDate": "2019-09-20T12:07:43.973Z",
+                "_links": {
+                    "self": {
+                        "href": "https://api.umbraco.io/media/type/Image"
+                    }
+                }
+            },
+            {
+                "alias": "File",
+                "compositions": [],
+                "groups": [
+                    {
+                        "name": "File",
+                        "sortOrder": 1,
+                        "properties": [
+                            {
+                                "alias": "umbracoFile",
+                                "label": "Upload file",
+                                "propertyEditorAlias": "Umbraco.UploadField",
+                                "sortOrder": 0,
+                                "validation": {
+                                    "required": true
+                                }
+                            },
+                            {
+                                "alias": "umbracoExtension",
+                                "label": "Type",
+                                "propertyEditorAlias": "Umbraco.Label",
+                                "sortOrder": 1,
+                                "validation": {
+                                    "required": false
+                                }
+                            },
+                            {
+                                "alias": "umbracoBytes",
+                                "description": "in bytes",
+                                "label": "Size",
+                                "propertyEditorAlias": "Umbraco.Label",
+                                "sortOrder": 2,
+                                "validation": {
+                                    "required": false
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "name": "File",
+                "_createDate": "2019-09-20T12:07:43.973Z",
+                "_id": "4c52d8ab-54e6-40cd-999c-7a5f24903e4d",
+                "_updateDate": "2019-09-20T12:07:43.973Z",
+                "_links": {
+                    "self": {
+                        "href": "https://api.umbraco.io/media/type/File"
+                    }
+                }
+            }
+        ]
+    }
+}
 ```
 
 ## Get by alias
@@ -71,4 +228,73 @@ Get a specific media type by its alias.
 **Content Example**:
 
 ```json
+{
+    "alias": "Image",
+    "compositions": [],
+    "groups": [
+        {
+            "name": "Image",
+            "sortOrder": 1,
+            "properties": [
+                {
+                    "alias": "umbracoFile",
+                    "label": "Upload image",
+                    "propertyEditorAlias": "Umbraco.ImageCropper",
+                    "sortOrder": 0,
+                    "validation": {
+                        "required": true
+                    }
+                },
+                {
+                    "alias": "umbracoWidth",
+                    "description": "in pixels",
+                    "label": "Width",
+                    "propertyEditorAlias": "Umbraco.Label",
+                    "sortOrder": 1,
+                    "validation": {
+                        "required": false
+                    }
+                },
+                {
+                    "alias": "umbracoHeight",
+                    "description": "in pixels",
+                    "label": "Height",
+                    "propertyEditorAlias": "Umbraco.Label",
+                    "sortOrder": 2,
+                    "validation": {
+                        "required": false
+                    }
+                },
+                {
+                    "alias": "umbracoBytes",
+                    "description": "in bytes",
+                    "label": "Size",
+                    "propertyEditorAlias": "Umbraco.Label",
+                    "sortOrder": 3,
+                    "validation": {
+                        "required": false
+                    }
+                },
+                {
+                    "alias": "umbracoExtension",
+                    "label": "Type",
+                    "propertyEditorAlias": "Umbraco.Label",
+                    "sortOrder": 4,
+                    "validation": {
+                        "required": false
+                    }
+                }
+            ]
+        }
+    ],
+    "name": "Image",
+    "_createDate": "2019-09-20T12:07:43.973Z",
+    "_id": "cc07b313-0843-4aa8-bbda-871c8da728c8",
+    "_updateDate": "2019-09-20T12:07:43.973Z",
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/media/type/Image"
+        }
+    }
+}
 ```

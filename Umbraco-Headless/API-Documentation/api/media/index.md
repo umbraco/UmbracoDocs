@@ -54,6 +54,112 @@ Get all media at the root of the tree, which the authorized user has access to a
 **Content Example**:
 
 ```json
+{
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/media"
+        },
+        "media": [
+            {
+                "href": "https://api.umbraco.io/media/{id}",
+                "templated": true
+            },
+            {
+                "href": "https://api.umbraco.io/media/7bfa2332-cf7f-4c97-941d-50f43f085b06"
+            },
+            {
+                "href": "https://api.umbraco.io/media/bff96d2a-18a7-4d72-b788-72e2034a5514"
+            },
+            {
+                "href": "https://api.umbraco.io/media/9924b6e9-51fd-4686-ad9a-cb59dbe9b4b1"
+            }
+        ],
+        "children": {
+            "href": "https://api.umbraco.io/media/{id}/children{?page,pageSize}",
+            "templated": true
+        },
+        "mediatype": {
+            "href": "https://api.umbraco.io/media/type/{alias}",
+            "templated": true
+        }
+    },
+    "_embedded": {
+        "media": [
+            {
+                "_hasChildren": true,
+                "_level": 1,
+                "_createDate": "2019-10-04T11:46:06.653Z",
+                "_id": "7bfa2332-cf7f-4c97-941d-50f43f085b06",
+                "_updateDate": "2019-10-04T11:46:06.653Z",
+                "_links": {
+                    "self": {
+                        "href": "https://api.umbraco.io/media/7bfa2332-cf7f-4c97-941d-50f43f085b06"
+                    },
+                    "root": {
+                        "href": "https://api.umbraco.io/media"
+                    },
+                    "children": {
+                        "href": "https://api.umbraco.io/media/7bfa2332-cf7f-4c97-941d-50f43f085b06/children"
+                    },
+                    "mediatype": {
+                        "href": "https://api.umbraco.io/media/type/Folder"
+                    }
+                },
+                "mediaTypeAlias": "Folder",
+                "name": "Design",
+                "sortOrder": 1
+            },
+            {
+                "_hasChildren": true,
+                "_level": 1,
+                "_createDate": "2019-10-04T11:46:14.32Z",
+                "_id": "bff96d2a-18a7-4d72-b788-72e2034a5514",
+                "_updateDate": "2019-10-04T11:46:14.32Z",
+                "_links": {
+                    "self": {
+                        "href": "https://api.umbraco.io/media/bff96d2a-18a7-4d72-b788-72e2034a5514"
+                    },
+                    "root": {
+                        "href": "https://api.umbraco.io/media"
+                    },
+                    "children": {
+                        "href": "https://api.umbraco.io/media/bff96d2a-18a7-4d72-b788-72e2034a5514/children"
+                    },
+                    "mediatype": {
+                        "href": "https://api.umbraco.io/media/type/Folder"
+                    }
+                },
+                "mediaTypeAlias": "Folder",
+                "name": "People",
+                "sortOrder": 2
+            },
+            {
+                "_hasChildren": true,
+                "_level": 1,
+                "_createDate": "2019-10-04T11:46:21.433Z",
+                "_id": "9924b6e9-51fd-4686-ad9a-cb59dbe9b4b1",
+                "_updateDate": "2019-10-04T11:46:21.433Z",
+                "_links": {
+                    "self": {
+                        "href": "https://api.umbraco.io/media/9924b6e9-51fd-4686-ad9a-cb59dbe9b4b1"
+                    },
+                    "root": {
+                        "href": "https://api.umbraco.io/media"
+                    },
+                    "children": {
+                        "href": "https://api.umbraco.io/media/9924b6e9-51fd-4686-ad9a-cb59dbe9b4b1/children"
+                    },
+                    "mediatype": {
+                        "href": "https://api.umbraco.io/media/type/Folder"
+                    }
+                },
+                "mediaTypeAlias": "Folder",
+                "name": "Products",
+                "sortOrder": 3
+            }
+        ]
+    }
+}
 ```
 
 ## Get by id
@@ -73,6 +179,43 @@ Get specific media item by its guid id.
 **Content Example**:
 
 ```json
+{
+    "_hasChildren": false,
+    "_level": 2,
+    "_createDate": "2019-10-04T13:08:52.203Z",
+    "_id": "f2311d74-bc19-465b-8028-4af79f47f155",
+    "_updateDate": "2019-10-04T13:08:52.203Z",
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/media/f2311d74-bc19-465b-8028-4af79f47f155"
+        },
+        "root": {
+            "href": "https://api.umbraco.io/media"
+        },
+        "children": {
+            "href": "https://api.umbraco.io/media/f2311d74-bc19-465b-8028-4af79f47f155/children"
+        },
+        "mediatype": {
+            "href": "https://api.umbraco.io/media/type/Image"
+        }
+    },
+    "mediaTypeAlias": "Image",
+    "name": "Banjo",
+    "parentId": "9924b6e9-51fd-4686-ad9a-cb59dbe9b4b1",
+    "sortOrder": 4,
+    "umbracoFile": {
+        "src": "/media/oiodd2qz/7373036290_5e8420bf36_b.jpg",
+        "focalPoint": {
+            "left": 0.5,
+            "top": 0.5
+        },
+        "crops": null
+    },
+    "umbracoWidth": "1024",
+    "umbracoHeight": "683",
+    "umbracoBytes": "299546",
+    "umbracoExtension": "jpg"
+}
 ```
 
 ## Get children
@@ -99,6 +242,223 @@ Get a list of children (media items) by their parent guid id.
 **Content Example**:
 
 ```json
+{
+    "_totalItems": 5,
+    "_totalPages": 1,
+    "_page": 1,
+    "_pageSize": 10,
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/media/bff96d2a-18a7-4d72-b788-72e2034a5514/children?page=1"
+        },
+        "media": [
+            {
+                "href": "https://api.umbraco.io/media/b0d9704a-8c1a-498f-8892-d3a18acc6f01"
+            },
+            {
+                "href": "https://api.umbraco.io/media/3bc8bf5c-5f39-4a49-b8f3-a09c265aa739"
+            },
+            {
+                "href": "https://api.umbraco.io/media/9b4a8092-a157-4a0e-9626-1f320a7a5f79"
+            },
+            {
+                "href": "https://api.umbraco.io/media/9012c147-90dc-4c7e-8249-4b4092aff340"
+            },
+            {
+                "href": "https://api.umbraco.io/media/313bf02d-bfba-4d61-a12c-1fbdbe0fee1c"
+            }
+        ]
+    },
+    "_embedded": {
+        "media": [
+            {
+                "_hasChildren": false,
+                "_level": 2,
+                "_createDate": "2019-10-04T11:49:57.863Z",
+                "_id": "b0d9704a-8c1a-498f-8892-d3a18acc6f01",
+                "_updateDate": "2019-10-04T11:49:57.863Z",
+                "_links": {
+                    "self": {
+                        "href": "https://api.umbraco.io/media/b0d9704a-8c1a-498f-8892-d3a18acc6f01"
+                    },
+                    "root": {
+                        "href": "https://api.umbraco.io/media"
+                    },
+                    "children": {
+                        "href": "https://api.umbraco.io/media/b0d9704a-8c1a-498f-8892-d3a18acc6f01/children"
+                    },
+                    "mediatype": {
+                        "href": "https://api.umbraco.io/media/type/Image"
+                    }
+                },
+                "mediaTypeAlias": "Image",
+                "name": "Jan Skovgaard",
+                "parentId": "bff96d2a-18a7-4d72-b788-72e2034a5514",
+                "sortOrder": 0,
+                "umbracoFile": {
+                    "src": "/media/jryntma0/18720470241_ff77768544_h.jpg",
+                    "focalPoint": {
+                        "left": 0.5,
+                        "top": 0.5
+                    },
+                    "crops": null
+                },
+                "umbracoWidth": "1600",
+                "umbracoHeight": "1067",
+                "umbracoBytes": "240126",
+                "umbracoExtension": "jpg"
+            },
+            {
+                "_hasChildren": false,
+                "_level": 2,
+                "_createDate": "2019-10-04T11:50:12.933Z",
+                "_id": "3bc8bf5c-5f39-4a49-b8f3-a09c265aa739",
+                "_updateDate": "2019-10-04T11:50:12.933Z",
+                "_links": {
+                    "self": {
+                        "href": "https://api.umbraco.io/media/3bc8bf5c-5f39-4a49-b8f3-a09c265aa739"
+                    },
+                    "root": {
+                        "href": "https://api.umbraco.io/media"
+                    },
+                    "children": {
+                        "href": "https://api.umbraco.io/media/3bc8bf5c-5f39-4a49-b8f3-a09c265aa739/children"
+                    },
+                    "mediatype": {
+                        "href": "https://api.umbraco.io/media/type/Image"
+                    }
+                },
+                "mediaTypeAlias": "Image",
+                "name": "Matt Brailsford",
+                "parentId": "bff96d2a-18a7-4d72-b788-72e2034a5514",
+                "sortOrder": 1,
+                "umbracoFile": {
+                    "src": "/media/lk5nqozz/18531852339_981b067419_h.jpg",
+                    "focalPoint": {
+                        "left": 0.5,
+                        "top": 0.5
+                    },
+                    "crops": null
+                },
+                "umbracoWidth": "1600",
+                "umbracoHeight": "1067",
+                "umbracoBytes": "438249",
+                "umbracoExtension": "jpg"
+            },
+            {
+                "_hasChildren": false,
+                "_level": 2,
+                "_createDate": "2019-10-04T11:57:36.863Z",
+                "_id": "9b4a8092-a157-4a0e-9626-1f320a7a5f79",
+                "_updateDate": "2019-10-04T11:57:36.863Z",
+                "_links": {
+                    "self": {
+                        "href": "https://api.umbraco.io/media/9b4a8092-a157-4a0e-9626-1f320a7a5f79"
+                    },
+                    "root": {
+                        "href": "https://api.umbraco.io/media"
+                    },
+                    "children": {
+                        "href": "https://api.umbraco.io/media/9b4a8092-a157-4a0e-9626-1f320a7a5f79/children"
+                    },
+                    "mediatype": {
+                        "href": "https://api.umbraco.io/media/type/Image"
+                    }
+                },
+                "mediaTypeAlias": "Image",
+                "name": "Lee Kelleher",
+                "parentId": "bff96d2a-18a7-4d72-b788-72e2034a5514",
+                "sortOrder": 2,
+                "umbracoFile": {
+                    "src": "/media/ssaevg0x/18531854019_351c579559_h.jpg",
+                    "focalPoint": {
+                        "left": 0.5,
+                        "top": 0.5
+                    },
+                    "crops": null
+                },
+                "umbracoWidth": "1600",
+                "umbracoHeight": "1067",
+                "umbracoBytes": "324821",
+                "umbracoExtension": "jpg"
+            },
+            {
+                "_hasChildren": false,
+                "_level": 2,
+                "_createDate": "2019-10-04T11:57:56.267Z",
+                "_id": "9012c147-90dc-4c7e-8249-4b4092aff340",
+                "_updateDate": "2019-10-04T11:57:56.267Z",
+                "_links": {
+                    "self": {
+                        "href": "https://api.umbraco.io/media/9012c147-90dc-4c7e-8249-4b4092aff340"
+                    },
+                    "root": {
+                        "href": "https://api.umbraco.io/media"
+                    },
+                    "children": {
+                        "href": "https://api.umbraco.io/media/9012c147-90dc-4c7e-8249-4b4092aff340/children"
+                    },
+                    "mediatype": {
+                        "href": "https://api.umbraco.io/media/type/Image"
+                    }
+                },
+                "mediaTypeAlias": "Image",
+                "name": "Jeavon Leopold",
+                "parentId": "bff96d2a-18a7-4d72-b788-72e2034a5514",
+                "sortOrder": 3,
+                "umbracoFile": {
+                    "src": "/media/ihabfeg2/18095416144_44a566a5f4_h.jpg",
+                    "focalPoint": {
+                        "left": 0.5,
+                        "top": 0.5
+                    },
+                    "crops": null
+                },
+                "umbracoWidth": "1600",
+                "umbracoHeight": "1067",
+                "umbracoBytes": "348162",
+                "umbracoExtension": "jpg"
+            },
+            {
+                "_hasChildren": false,
+                "_level": 2,
+                "_createDate": "2019-10-04T11:58:15.54Z",
+                "_id": "313bf02d-bfba-4d61-a12c-1fbdbe0fee1c",
+                "_updateDate": "2019-10-04T11:58:15.54Z",
+                "_links": {
+                    "self": {
+                        "href": "https://api.umbraco.io/media/313bf02d-bfba-4d61-a12c-1fbdbe0fee1c"
+                    },
+                    "root": {
+                        "href": "https://api.umbraco.io/media"
+                    },
+                    "children": {
+                        "href": "https://api.umbraco.io/media/313bf02d-bfba-4d61-a12c-1fbdbe0fee1c/children"
+                    },
+                    "mediatype": {
+                        "href": "https://api.umbraco.io/media/type/Image"
+                    }
+                },
+                "mediaTypeAlias": "Image",
+                "name": "Jeroen Breuer",
+                "parentId": "bff96d2a-18a7-4d72-b788-72e2034a5514",
+                "sortOrder": 4,
+                "umbracoFile": {
+                    "src": "/media/fpydwmn0/18530280048_459b8b61b2_h.jpg",
+                    "focalPoint": {
+                        "left": 0.5,
+                        "top": 0.5
+                    },
+                    "crops": null
+                },
+                "umbracoWidth": "1600",
+                "umbracoHeight": "1067",
+                "umbracoBytes": "240519",
+                "umbracoExtension": "jpg"
+            }
+        ]
+    }
+}
 ```
 
 ## Create media
@@ -165,5 +525,45 @@ Delete a media item. This will also delete any file that is attached to the medi
 
 **Content Example**:
 
+`DELETE https://api.umbraco.io/media/b60a1257-4bef-4d5a-aeb6-4af17b6233b2`
+
 ```json
+{
+    "_hasChildren": false,
+    "_level": 2,
+    "_createDate": "2019-10-10T12:24:58.76Z",
+    "_id": "b60a1257-4bef-4d5a-aeb6-4af17b6233b2",
+    "_updateDate": "2019-10-10T12:24:58.76Z",
+    "_deleteDate": "2019-10-10T12:25:15.3860527Z",
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/media/b60a1257-4bef-4d5a-aeb6-4af17b6233b2"
+        },
+        "root": {
+            "href": "https://api.umbraco.io/media"
+        },
+        "children": {
+            "href": "https://api.umbraco.io/media/b60a1257-4bef-4d5a-aeb6-4af17b6233b2/children"
+        },
+        "mediatype": {
+            "href": "https://api.umbraco.io/media/type/Image"
+        }
+    },
+    "mediaTypeAlias": "Image",
+    "name": "Han Solo",
+    "parentId": "7bfa2332-cf7f-4c97-941d-50f43f085b06",
+    "sortOrder": 1,
+    "umbracoFile": {
+        "src": "/media/kejavnxp/han-solo.png",
+        "focalPoint": {
+            "left": 0.5,
+            "top": 0.5
+        },
+        "crops": null
+    },
+    "umbracoWidth": "672",
+    "umbracoHeight": "896",
+    "umbracoBytes": "489855",
+    "umbracoExtension": "png"
+}
 ```
