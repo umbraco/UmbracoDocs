@@ -54,6 +54,32 @@ Get a specific member by their username.
 **Content Example**:
 
 ```json
+{
+    "_failedPasswordAttempts": 0,
+    "_groups": [
+        "Club Blue Members"
+    ],
+    "_lastLoginDate": "2019-10-10T12:04:24Z",
+    "_lastPasswordChangeDate": "2019-10-10T12:04:24Z",
+    "_createDate": "2019-10-10T12:04:24.203Z",
+    "_id": "153c22ad-2940-4d1c-9253-f62a2a873915",
+    "_updateDate": "2019-10-10T12:04:24.487Z",
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/member/john%40example.com"
+        },
+        "membertype": {
+            "href": "https://api.umbraco.io/member/type/Member"
+        }
+    },
+    "comments": "First Club Blue Member",
+    "email": "john@example.com",
+    "isApproved": true,
+    "isLockedOut": false,
+    "memberTypeAlias": "Member",
+    "username": "john@example.com",
+    "name": "John Doe"
+}
 ```
 
 ## Create member
@@ -69,6 +95,15 @@ Create a new member.
 ### Request
 
 ```json
+{
+    "comments": "A Valued Club Blue Member",
+    "email": "jane@example.com",
+    "isApproved": true,
+    "isLockedOut": false,
+    "memberTypeAlias": "Member",
+    "username": "jane@example.com",
+    "name": "Jane Doe"
+}
 ```
 
 ### Success Response
@@ -78,6 +113,28 @@ Create a new member.
 **Content Example**:
 
 ```json
+{
+    "_failedPasswordAttempts": 0,
+    "_groups": [],
+    "_createDate": "2019-10-10T12:18:06.6087436Z",
+    "_id": "fbabbae4-738d-406a-a7b6-e6684a622882",
+    "_updateDate": "2019-10-10T12:18:06.6087436Z",
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/member/john%40example.com"
+        },
+        "membertype": {
+            "href": "https://api.umbraco.io/member/type/Member"
+        }
+    },
+    "comments": "A Valued Club Blue Member",
+    "email": "jane@example.com",
+    "isApproved": true,
+    "isLockedOut": false,
+    "memberTypeAlias": "Member",
+    "username": "jane@example.com",
+    "name": "Jane Doe"
+}
 ```
 
 ## Update member
@@ -93,6 +150,15 @@ Update an existing member.
 ### Request
 
 ```json
+{
+    "comments": "A Valued Club Blue Member",
+    "email": "jane@example.com",
+    "isApproved": true,
+    "isLockedOut": false,
+    "memberTypeAlias": "Member",
+    "username": "jane@example.com",
+    "name": "Jane A. Doe"
+}
 ```
 
 ### Success Response
@@ -102,6 +168,28 @@ Update an existing member.
 **Content Example**:
 
 ```json
+{
+    "_failedPasswordAttempts": 0,
+    "_groups": [],
+    "_createDate": "2019-10-10T12:19:57.053Z",
+    "_id": "59c97163-0ece-4b92-893a-d3da4af2c888",
+    "_updateDate": "2019-10-10T12:20:30.1886381Z",
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/member/jane%40example.com"
+        },
+        "membertype": {
+            "href": "https://api.umbraco.io/member/type/Member"
+        }
+    },
+    "comments": "A Valued Club Blue Member",
+    "email": "jane@example.com",
+    "isApproved": true,
+    "isLockedOut": false,
+    "memberTypeAlias": "Member",
+    "username": "jane@example.com",
+    "name": "Jane A. Doe"
+}
 ```
 
 ## Delete member
@@ -121,6 +209,31 @@ Delete an existing member by their username.
 **Content Example**:
 
 ```json
+{
+    "_failedPasswordAttempts": 0,
+    "_groups": [],
+    "_lastLoginDate": "2019-10-10T12:04:24Z",
+    "_lastPasswordChangeDate": "2019-10-10T12:04:24Z",
+    "_createDate": "2019-10-10T12:04:24.203Z",
+    "_id": "153c22ad-2940-4d1c-9253-f62a2a873915",
+    "_updateDate": "2019-10-10T12:04:24.487Z",
+    "_deleteDate": "2019-10-10T12:16:41.2371252Z",
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/member/john%40example.com"
+        },
+        "membertype": {
+            "href": "https://api.umbraco.io/member/type/Member"
+        }
+    },
+    "comments": "First Club Blue Member",
+    "email": "john@example.com",
+    "isApproved": true,
+    "isLockedOut": false,
+    "memberTypeAlias": "Member",
+    "username": "john@example.com",
+    "name": "John Doe"
+}
 ```
 
 ## Add member to member group
@@ -139,8 +252,7 @@ Add an existing member to an existing member group.
 
 **Content Example**:
 
-```json
-```
+`PUT https://api.umbraco.io/member/john@example.com/groups/Club%20Blue%20Members`
 
 ## Remove member from member group
 
@@ -158,5 +270,4 @@ Remove a specific member from a specific member group.
 
 **Content Example**:
 
-```json
-```
+`DELETE https://api.umbraco.io/member/john@example.com/groups/Club%20Blue%20Members`

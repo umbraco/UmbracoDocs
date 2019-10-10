@@ -54,6 +54,12 @@ Get a specific member group by its name.
 **Content Example**:
 
 ```json
+{
+    "name": "Club Blue Members",
+    "_createDate": "2019-10-10T12:02:50.83Z",
+    "_id": "15a1a854-596c-4b72-b462-769015a6b0eb",
+    "_updateDate": "0001-01-01T00:00:00Z"
+}
 ```
 
 ## Create member group
@@ -69,6 +75,9 @@ Create a new member group.
 ### Request
 
 ```json
+{
+    "name": "Elite Shoppers Group"
+}
 ```
 
 ### Success Response
@@ -78,6 +87,12 @@ Create a new member group.
 **Content Example**:
 
 ```json
+{
+    "name": "Elite Shoppers Group",
+    "_createDate": "2019-10-10T12:09:58.5982624Z",
+    "_id": "1ae62150-e54c-4fd7-aabe-9ad46d1b7109",
+    "_updateDate": "2019-10-10T12:09:58.5982624Z"
+}
 ```
 
 ## Delete member group
@@ -96,5 +111,14 @@ Delete an existing member group.
 
 **Content Example**:
 
+`DELETE https://api.umbraco.io/member/group/Elite%20Shoppers%20Group`
+
 ```json
+{
+    "name": "Elite Shoppers Group",
+    "_createDate": "2019-10-10T12:09:58.597Z",
+    "_id": "1ae62150-e54c-4fd7-aabe-9ad46d1b7109",
+    "_updateDate": "0001-01-01T00:00:00Z",
+    "_deleteDate": "2019-10-10T12:10:45.0657415Z"
+}
 ```
