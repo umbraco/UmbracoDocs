@@ -261,7 +261,7 @@ Delete a relation by its integer id.
 
 **Content Example**:
 
-`DELETE https://api.umbraco.io/api/relation/4`
+`DELETE https://api.umbraco.io/relation/4`
 
 ```json
 {

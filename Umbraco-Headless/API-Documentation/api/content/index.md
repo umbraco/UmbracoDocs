@@ -740,6 +740,8 @@ Delete a specific content item with all its language variations.
 
 **Content Example**:
 
+`DELETE https://api.umbraco.io/content/041067a0-74f5-4d03-92af-40c3c0aa13e7`
+
 ```json
 {
     "_currentVersionState": {
