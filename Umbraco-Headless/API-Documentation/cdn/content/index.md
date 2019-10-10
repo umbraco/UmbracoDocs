@@ -45,6 +45,7 @@ Gets all published content at the root of the tree
 
 ```none
 ?hyperlinks={boolean=true}
+?contentType={string=people}
 ```
 
 ### Success Response
@@ -418,6 +419,268 @@ Gets a single published content by its url
 }
 ```
 
+## Get by type
+
+Get content by its content type.
+Use the content type alias to filter all returned content to that specific type.
+Example: `GET /content/type?contentType=product` gets all content based on the `product` content type.
+
+**URL**: `/content/type`
+
+**Method**: `GET`
+
+**Query Strings**
+
+```none
+?hyperlinks={boolean=true}
+?contentType={string=product}
+?page={integer=1}
+?pageSize={integer=10}
+```
+
+### Success Response
+
+**Code**: 200
+
+**Content Example**:
+
+```json
+{
+  "_totalItems": 3,
+  "_totalPages": 1,
+  "_page": 1,
+  "_pageSize": 10,
+  "_links": {
+    "self": {
+      "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324/descendants?page=1"
+    },
+    "page": {
+      "href": "https://cdn.umbraco.io/content/{id}/descendants{?page,pageSize}",
+      "templated": true
+    },
+    "root": {
+      "href": "https://cdn.umbraco.io/content"
+    },
+    "content": [
+      {
+        "href": "https://cdn.umbraco.io/content/df1eb830-411b-4d41-a343-3917b76d533c"
+      },
+      {
+        "href": "https://cdn.umbraco.io/content/4e96411a-b8e1-435f-9322-2faee30ef5f2"
+      },
+      {
+        "href": "https://cdn.umbraco.io/content/d390a562-107d-4f02-8df7-57aa86bad752"
+      }
+    ]
+  },
+  "_embedded": {
+    "content": [
+      {
+        "_creatorName": "Rasmus",
+        "_url": "/products/tattoo/",
+        "_writerName": "Rasmus",
+        "_hasChildren": false,
+        "_level": 2,
+        "_createDate": "2019-06-17T13:46:24.14Z",
+        "_id": "df1eb830-411b-4d41-a343-3917b76d533c",
+        "_updateDate": "2019-06-26T22:11:05.727Z",
+        "_links": {
+          "self": {
+            "href": "https://cdn.umbraco.io/content/df1eb830-411b-4d41-a343-3917b76d533c"
+          },
+          "photos": {
+            "href": "https://cdn.umbraco.io/media/20e3a8ff-ad1b-4fe9-b48c-b8461c46d2d0",
+            "title": "Tattoo"
+          },
+          "root": {
+            "href": "https://cdn.umbraco.io/content"
+          },
+          "children": {
+            "href": "https://cdn.umbraco.io/content/df1eb830-411b-4d41-a343-3917b76d533c/children"
+          },
+          "ancestors": {
+            "href": "https://cdn.umbraco.io/content/df1eb830-411b-4d41-a343-3917b76d533c/ancestors"
+          },
+          "descendants": {
+            "href": "https://cdn.umbraco.io/content/df1eb830-411b-4d41-a343-3917b76d533c/descendants"
+          },
+          "parent": {
+            "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324"
+          }
+        },
+        "contentTypeAlias": "product",
+        "name": "Tattoo",
+        "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+        "sortOrder": 0,
+        "productName": "Tattoo",
+        "price": 499.0,
+        "description": "Cras ultricies ligula sed magna dictum porta.",
+        "sku": "UMB-TATTOO",
+        "photos": {
+          "_creatorName": "Rasmus",
+          "_url": "https://media.umbraco.io/my-headless-site/media/20e3a8ffad1b4fe9b48cb8461c46d2d0/00000006000000000000000000000000/7371127652_e01b6ab56f_b.jpg",
+          "_writerName": "Rasmus",
+          "_hasChildren": false,
+          "_level": 2,
+          "_createDate": "2019-06-17T13:46:42.503Z",
+          "_id": "20e3a8ff-ad1b-4fe9-b48c-b8461c46d2d0",
+          "_updateDate": "2019-06-17T13:46:42.503Z",
+          "_links": null,
+          "mediaTypeAlias": "Image",
+          "name": "Tattoo",
+          "parentId": "6d5bf746-cb82-45c5-bd15-dd3798209b87",
+          "sortOrder": 0,
+          "umbracoFile": {
+            "src": "/media/20e3a8ffad1b4fe9b48cb8461c46d2d0/00000006000000000000000000000000/7371127652_e01b6ab56f_b.jpg",
+            "focalPoint": null,
+            "crops": null
+          },
+          "umbracoWidth": 683,
+          "umbracoHeight": 1024,
+          "umbracoBytes": 258796,
+          "umbracoExtension": "jpg"
+        },
+        "features": []
+      },
+      {
+        "_creatorName": "Rasmus",
+        "_url": "/products/unicorn/",
+        "_writerName": "Rasmus",
+        "_hasChildren": false,
+        "_level": 2,
+        "_createDate": "2019-06-17T13:46:24.187Z",
+        "_id": "4e96411a-b8e1-435f-9322-2faee30ef5f2",
+        "_updateDate": "2019-06-26T22:11:05.803Z",
+        "_links": {
+          "self": {
+            "href": "https://cdn.umbraco.io/content/4e96411a-b8e1-435f-9322-2faee30ef5f2"
+          },
+          "photos": {
+            "href": "https://cdn.umbraco.io/media/1bc5280b-8658-4027-89d9-58e2576e469b",
+            "title": "Unicorn"
+          },
+          "root": {
+            "href": "https://cdn.umbraco.io/content"
+          },
+          "children": {
+            "href": "https://cdn.umbraco.io/content/4e96411a-b8e1-435f-9322-2faee30ef5f2/children"
+          },
+          "ancestors": {
+            "href": "https://cdn.umbraco.io/content/4e96411a-b8e1-435f-9322-2faee30ef5f2/ancestors"
+          },
+          "descendants": {
+            "href": "https://cdn.umbraco.io/content/4e96411a-b8e1-435f-9322-2faee30ef5f2/descendants"
+          },
+          "parent": {
+            "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324"
+          }
+        },
+        "contentTypeAlias": "product",
+        "name": "Unicorn",
+        "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+        "sortOrder": 1,
+        "productName": "Unicorn",
+        "price": 249.0,
+        "description": "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum porta.",
+        "sku": "UMB-UNICORN",
+        "photos": {
+          "_creatorName": "Rasmus",
+          "_url": "https://media.umbraco.io/my-headless-site/media/1bc5280b8658402789d958e2576e469b/00000006000000000000000000000000/14272036539_469ca21d5c_h.jpg",
+          "_writerName": "Rasmus",
+          "_hasChildren": false,
+          "_level": 2,
+          "_createDate": "2019-06-17T13:46:42.64Z",
+          "_id": "1bc5280b-8658-4027-89d9-58e2576e469b",
+          "_updateDate": "2019-06-17T13:46:42.64Z",
+          "_links": null,
+          "mediaTypeAlias": "Image",
+          "name": "Unicorn",
+          "parentId": "6d5bf746-cb82-45c5-bd15-dd3798209b87",
+          "sortOrder": 0,
+          "umbracoFile": {
+            "src": "/media/1bc5280b8658402789d958e2576e469b/00000006000000000000000000000000/14272036539_469ca21d5c_h.jpg",
+            "focalPoint": null,
+            "crops": null
+          },
+          "umbracoWidth": 1067,
+          "umbracoHeight": 1600,
+          "umbracoBytes": 367954,
+          "umbracoExtension": "jpg"
+        },
+        "features": []
+      },
+      {
+        "_creatorName": "Rasmus",
+        "_url": "/products/ping-pong-ball/",
+        "_writerName": "Rasmus",
+        "_hasChildren": false,
+        "_level": 2,
+        "_createDate": "2019-06-17T13:46:24.247Z",
+        "_id": "d390a562-107d-4f02-8df7-57aa86bad752",
+        "_updateDate": "2019-06-26T22:11:05.847Z",
+        "_links": {
+          "self": {
+            "href": "https://cdn.umbraco.io/content/d390a562-107d-4f02-8df7-57aa86bad752"
+          },
+          "photos": {
+            "href": "https://cdn.umbraco.io/media/c09ec77f-08e3-466a-ac58-c979befd3cd6",
+            "title": "Ping Pong Ball"
+          },
+          "root": {
+            "href": "https://cdn.umbraco.io/content"
+          },
+          "children": {
+            "href": "https://cdn.umbraco.io/content/d390a562-107d-4f02-8df7-57aa86bad752/children"
+          },
+          "ancestors": {
+            "href": "https://cdn.umbraco.io/content/d390a562-107d-4f02-8df7-57aa86bad752/ancestors"
+          },
+          "descendants": {
+            "href": "https://cdn.umbraco.io/content/d390a562-107d-4f02-8df7-57aa86bad752/descendants"
+          },
+          "parent": {
+            "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324"
+          }
+        },
+        "contentTypeAlias": "product",
+        "name": "Ping Pong Ball",
+        "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+        "sortOrder": 2,
+        "productName": "Ping Pong Ball",
+        "price": 2.0,
+        "description": "Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ultricies ligula sed magna dictum porta.",
+        "sku": "UMB-PINGPONG",
+        "photos": {
+          "_creatorName": "Rasmus",
+          "_url": "https://media.umbraco.io/my-headless-site/media/c09ec77f08e3466aac58c979befd3cd6/00000006000000000000000000000000/5852022211_9028df67c0_b.jpg",
+          "_writerName": "Rasmus",
+          "_hasChildren": false,
+          "_level": 2,
+          "_createDate": "2019-06-17T13:46:42.767Z",
+          "_id": "c09ec77f-08e3-466a-ac58-c979befd3cd6",
+          "_updateDate": "2019-06-17T13:46:42.767Z",
+          "_links": null,
+          "mediaTypeAlias": "Image",
+          "name": "Ping Pong Ball",
+          "parentId": "6d5bf746-cb82-45c5-bd15-dd3798209b87",
+          "sortOrder": 0,
+          "umbracoFile": {
+            "src": "/media/c09ec77f08e3466aac58c979befd3cd6/00000006000000000000000000000000/5852022211_9028df67c0_b.jpg",
+            "focalPoint": null,
+            "crops": null
+          },
+          "umbracoWidth": 1024,
+          "umbracoHeight": 683,
+          "umbracoBytes": 205417,
+          "umbracoExtension": "jpg"
+        },
+        "features": []
+      }
+    ]
+  }
+}
+```
+
 ## Get ancestors
 
 Gets ancestors of a single published content
@@ -430,6 +693,7 @@ Gets ancestors of a single published content
 
 ```none
 ?hyperlinks={boolean=true}
+?contentType={string=people}
 ```
 
 ### Success Response
@@ -544,6 +808,7 @@ Gets children of a single published content
 
 ```none
 ?hyperlinks={boolean=true}
+?contentType={string=product}
 ?page={integer=1}
 ?pageSize={integer=10}
 ```
@@ -793,7 +1058,7 @@ Gets children of a single published content
 
 ## Get descendants
 
-Gets descdants of a single published content
+Get descendants of a single published content
 
 **URL**: `/content/{id}/descendants`
 
@@ -803,6 +1068,7 @@ Gets descdants of a single published content
 
 ```none
 ?hyperlinks={boolean=true}
+?contentType={string=product}
 ?page={integer=1}
 ?pageSize={integer=10}
 ```
