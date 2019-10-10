@@ -23,7 +23,7 @@ The content picker allows the content editor to pick a specific node from the co
 ## [(Obsolete) Content Picker](Content-Picker/old-content-picker.md)
 `Alias: Umbraco.ContentPickerAlias`
 
-Made obsolete with the release of Umbraco v7.6 the content picker allows the content editor to pick a specific node from the content structure.
+Made obsolete with the release of Umbraco 7.6 the content picker allows the content editor to pick a specific node from the content structure.
 
 ## [Date](Date.md)
 `Alias: Umbraco.Date`
@@ -43,27 +43,27 @@ A configurable number control allowing only numbers including decimals.
 ## [Dropdown](DropDown/index-v7.md)
 `Alias: Umbraco.DropDown.Flexible`
 
-Introduced in Umbraco v 7.10. Displays a list of preset values. The content editor can select either a single or multiple values.
+Introduced in Umbraco 7.10. Displays a list of preset values. The content editor can select either a single or multiple values.
 
 ## [(Obsolete) Dropdown list](DropDown/old-dropdown-List.md)
 `Alias: Umbraco.DropDown`
 
-Made obsolete with the release of Umbraco v7.10. Displays a list of preset values. The value saved is a text value.
+Made obsolete with the release of Umbraco 7.10. Displays a list of preset values. The value saved is a text value.
 
 ## [(Obsolete) Dropdown list, publishing keys](DropDown/old-dropdown-List-Publishing-Keys.md)
 `Alias: Umbraco.DropdownlistPublishingKeys`
 
-Made obsolete with the release of Umbraco v7.10. Displays a list of preset values as a list. The value saved is a prevalue ID
+Made obsolete with the release of Umbraco 7.10. Displays a list of preset values as a list. The value saved is a prevalue ID
 
 ## [(Obsolete) Dropdown list multiple](DropDown/old-dropdown-List-Multiple.md)
 `Alias: Umbraco.DropDownMultiple`
 
-Made obsolete with the release of Umbraco v7.10. Displays a list of preset values where multiple can be selected. The value saved is a CSV of the text values.
+Made obsolete with the release of Umbraco 7.10. Displays a list of preset values where multiple can be selected. The value saved is a CSV of the text values.
 
 ## [(Obsolete) Dropdown list multiple, publish keys](DropDown/old-dropdown-List-Multiple-Publish-Keys.md)
 `Alias: Umbraco.DropdownlistMultiplePublishKeys`
 
-Made obsolete with the release of Umbraco v7.10. Displays a list of preset values where multiple can be selected. The value saved is a CSV of prevalue ids.
+Made obsolete with the release of Umbraco 7.10. Displays a list of preset values where multiple can be selected. The value saved is a CSV of prevalue ids.
 
 ## Email address
 `Alias: Umbraco.EmailAddress`
@@ -83,12 +83,12 @@ Used mainly with container Media Types, the Folder Browser displays a list of th
 ## [Grid Layout](Grid-Layout/index.md)
 `Alias: Umbraco.Grid`
 
-New to v7.2, gives editors a grid layout editor which allows them to insert different types of content in a predefined layout.
+New to Umbraco 7.2, gives editors a grid layout editor which allows them to insert different types of content in a predefined layout.
 
 ## [Image Cropper](Image-Cropper.md)
 `Alias: Umbraco.ImageCropper`
 
-Used to crop and resize images to predefined sizes. Available from V7.1
+Used to crop and resize images to predefined sizes. Available from Umbraco 7.1
 
 ## Label
 `Alias: Umbraco.NoEdit`
@@ -126,7 +126,7 @@ The media picker displays the current selected media and provides the option to 
 ## [(Obsolete) Media Picker](Media-Picker/old-media-picker.md)
 `Alias: Umbraco.MultipleMediaPicker`
 
-Made obsolete with the release of Umbraco v7.6 the media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files. There is a setting to enable multiple media items to be selected.
+Made obsolete with the release of Umbraco 7.6 the media picker displays the current selected media and provides the option to open the mediaPicker dialog to select existing or upload new media files. There is a setting to enable multiple media items to be selected.
 
 ## Member Group Picker
 `Alias: Umbraco.MemberGroupPicker`
@@ -142,7 +142,7 @@ The multinode treepicker data type allows content editors to choose multiple nod
 ## [(Obsolete) Multinode Treepicker](Multinode-Treepicker/old-mntp.md)
 `Alias: Umbraco.MultiNodeTreePicker`
 
-Made obsolete with the release of Umbraco v7.6 the multinode treepicker data type allows content editors to choose multiple nodes in the content or media trees.
+Made obsolete with the release of Umbraco 7.6 the multinode treepicker data type allows content editors to choose multiple nodes in the content or media trees.
 
 ## [Multiple Textbox](Multiple-Textbox/index-v7.md)
 `Alias: Umbraco.MultipleTextstring`
@@ -152,7 +152,7 @@ The Multiple Textbox property editor enables a content editor to make a list of 
 ## [Nested Content](Nested-Content/index-v7.md)
 `Alias: Umbraco.NestedContent`
 
-New to v7.7, the nested content property editor enables you to use Document Types as a schema for list items.
+New to Umbraco 7.7, the nested content property editor enables you to use Document Types as a schema for list items.
 
 ## [Numeric](Numeric/index-v7.md)
 `Alias: Umbraco.Integer`
@@ -172,7 +172,7 @@ Related Links allows an editor to add an array of links. These can either be int
 ## [(Obsolete) Related Links](Related-Links.md)
 `Alias: Umbraco.RelatedLinks`
 
-Made obsolete with the release of Umbraco v7.6. Related Links editor allows an editor to add an array of links. These can either be internal Umbraco pages or external URLs.
+Made obsolete with the release of Umbraco 7.6. Related Links editor allows an editor to add an array of links. These can either be internal Umbraco pages or external URLs.
 
 ## Rich Text Editor
 `Alias: Umbraco.TinyMCEv3`
