@@ -52,4 +52,14 @@ Get a specific relation type by its alias.
 **Content Example**:
 
 ```json
+{
+    "name": "Relate Document On Copy",
+    "alias": "relateDocumentOnCopy",
+    "isBidirectional": true,
+    "parentObjectType": "Unknown",
+    "childObjectType": "Unknown",
+    "_createDate": "0001-01-01T00:00:00Z",
+    "_id": "4cbeb612-e689-3563-b755-bf3ede295433",
+    "_updateDate": "0001-01-01T00:00:00Z"
+}
 ```

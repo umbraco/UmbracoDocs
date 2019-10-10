@@ -54,6 +54,18 @@ Get a specific relation by its integer id.
 **Content Example**:
 
 ```json
+{
+    "_id": 4,
+    "parentId": "af3e08fc-fb90-4c78-b11c-c1a0cf43bd31",
+    "childId": "e0c5f0e5-c1f0-4422-9ac0-6dbb536e8eb5",
+    "relationTypeAlias": "relateDocumentOnCopy",
+    "comment": "Testing relations for relateDocumentOnCopy",
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/relation/4"
+        }
+    }
+}
 ```
 
 ## Get by relation type alias
@@ -73,11 +85,37 @@ Get a list of relations by their relation type alias.
 **Content Example**:
 
 ```json
+{
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/relation/parent/"
+        },
+        "relations": {
+            "href": "https://api.umbraco.io/relation/4"
+        }
+    },
+    "_embedded": {
+        "relations": [
+            {
+                "_id": 4,
+                "parentId": "af3e08fc-fb90-4c78-b11c-c1a0cf43bd31",
+                "childId": "e0c5f0e5-c1f0-4422-9ac0-6dbb536e8eb5",
+                "relationTypeAlias": "relateDocumentOnCopy",
+                "comment": "Testing relations for relateDocumentOnCopy",
+                "_links": {
+                    "self": {
+                        "href": "https://api.umbraco.io/relation/4"
+                    }
+                }
+            }
+        ]
+    }
+}
 ```
 
 ## Get by parent id
 
-Get a list of relations by their parent's integer id.
+Get a list of relations by their parent's guid id.
 
 **URL**: `/relation/parent/{id}`
 
@@ -92,11 +130,37 @@ Get a list of relations by their parent's integer id.
 **Content Example**:
 
 ```json
+{
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/relation/parent/af3e08fc-fb90-4c78-b11c-c1a0cf43bd31"
+        },
+        "relations": {
+            "href": "https://api.umbraco.io/relation/4"
+        }
+    },
+    "_embedded": {
+        "relations": [
+            {
+                "_id": 4,
+                "parentId": "af3e08fc-fb90-4c78-b11c-c1a0cf43bd31",
+                "childId": "e0c5f0e5-c1f0-4422-9ac0-6dbb536e8eb5",
+                "relationTypeAlias": "relateDocumentOnCopy",
+                "comment": "Testing relations for relateDocumentOnCopy",
+                "_links": {
+                    "self": {
+                        "href": "https://api.umbraco.io/relation/4"
+                    }
+                }
+            }
+        ]
+    }
+}
 ```
 
 ## Get by child id
 
-Get a list of relations by their child's integer id.
+Get a list of relations by their child's guid id.
 
 **URL**: `/relation/child/{id}`
 
@@ -111,6 +175,32 @@ Get a list of relations by their child's integer id.
 **Content Example**:
 
 ```json
+{
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/relation/child/e0c5f0e5-c1f0-4422-9ac0-6dbb536e8eb5"
+        },
+        "relations": {
+            "href": "https://api.umbraco.io/relation/4"
+        }
+    },
+    "_embedded": {
+        "relations": [
+            {
+                "_id": 4,
+                "parentId": "af3e08fc-fb90-4c78-b11c-c1a0cf43bd31",
+                "childId": "e0c5f0e5-c1f0-4422-9ac0-6dbb536e8eb5",
+                "relationTypeAlias": "relateDocumentOnCopy",
+                "comment": "Testing relations for relateDocumentOnCopy",
+                "_links": {
+                    "self": {
+                        "href": "https://api.umbraco.io/relation/4"
+                    }
+                }
+            }
+        ]
+    }
+}
 ```
 
 ## Create relation
@@ -126,6 +216,12 @@ Create a new relation.
 ### Request
 
 ```json
+{
+    "parentId": "af3e08fc-fb90-4c78-b11c-c1a0cf43bd31",
+    "childId": "e0c5f0e5-c1f0-4422-9ac0-6dbb536e8eb5",
+    "relationTypeAlias": "relateDocumentOnCopy",
+    "comment": "Testing relations for relateDocumentOnCopy"
+}
 ```
 
 ### Success Response
@@ -135,6 +231,18 @@ Create a new relation.
 **Content Example**:
 
 ```json
+{
+    "_id": 4,
+    "parentId": "af3e08fc-fb90-4c78-b11c-c1a0cf43bd31",
+    "childId": "e0c5f0e5-c1f0-4422-9ac0-6dbb536e8eb5",
+    "relationTypeAlias": "relateDocumentOnCopy",
+    "comment": "Testing relations for relateDocumentOnCopy",
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/relation/4"
+        }
+    }
+}
 ```
 
 ## Delete relation
@@ -153,5 +261,19 @@ Delete a relation by its integer id.
 
 **Content Example**:
 
+`DELETE https://api.umbraco.io/api/relation/4`
+
 ```json
+{
+    "_id": 4,
+    "parentId": "af3e08fc-fb90-4c78-b11c-c1a0cf43bd31",
+    "childId": "e0c5f0e5-c1f0-4422-9ac0-6dbb536e8eb5",
+    "relationTypeAlias": "relateDocumentOnCopy",
+    "comment": "Testing relations for relateDocumentOnCopy",
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/relation/4"
+        }
+    }
+}
 ```
