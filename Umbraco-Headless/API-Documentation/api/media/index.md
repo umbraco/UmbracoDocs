@@ -83,6 +83,13 @@ Get a list of children (media items) by their parent guid id.
 
 **Method**: `GET`
 
+**Query Strings**
+
+```none
+?page={integer=1}
+?pageSize={integer=10}
+```
+
 **Permissions required** : Access to Media section of the Umbraco Backoffice
 
 ### Success Response
