@@ -1,4 +1,4 @@
-# Content Management API for Content
+# Content Management API for Content Types
 
 **BASE URL**: `https://api.umbraco.io`
 
@@ -22,7 +22,7 @@ If an error occours you will receive a HTTP status code along with an API error 
 | 400         | Bad Request          | Body cannot be empty.                                                    |
 | 401         | Unauthorized         | Authorization has been denied for this request.                          |
 | 403         | Forbidden            | You are not authorized to access the given resource.                     |
-| 404         | NotFound             | Content with id '{id}' could not be found.                               |
+| 404         | NotFound             | Content Type with alias '{alias}' could not be found.                    |
 
 **JSON example**:
 
@@ -38,4 +38,38 @@ If an error occours you will receive a HTTP status code along with an API error 
 
 ## Get all content types
 
+Get a list of all available content types.
+
+**URL**: `/content/type`
+
+**Method**: `GET`
+
+**Permissions required** : Access to Settings section of the Umbraco Backoffice
+
+### Success Response
+
+**Code**: 200
+
+**Content Example**:
+
+```json
+```
+
 ## Get by alias
+
+Get a specific content type by its alias.
+
+**URL**: `/content/type/{alias}`
+
+**Method**: `GET`
+
+**Permissions required** : Access to Settings section of the Umbraco Backoffice
+
+### Success Response
+
+**Code**: 200
+
+**Content Example**:
+
+```json
+```
