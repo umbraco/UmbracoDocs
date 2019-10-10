@@ -7,7 +7,7 @@ needsV8Update: "true"
 
 _This section will explain the many configuration options in Umbraco and what they do_
 
-### [web.config](webconfig/index.md)
+### [web.config](webconfig/)
 This file can be found at the following path: /web.config
 
 ### [404handlers.config](404handlers/index.md)
