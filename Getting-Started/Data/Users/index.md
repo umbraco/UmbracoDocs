@@ -32,11 +32,11 @@ There is a number of default properties on the every user that can be defined:
 
 By default, the User groups available to new users are **Administrators**, **Writers**, **Editors**, **Translators** and **Sensitive Data**.
 
-__Administrator__: Can do anything when editing nodes in the content section (has all permissions).
+**Administrator**: Can do anything when editing nodes in the content section (has all permissions).
 
-__Writer__: Allowed to browse nodes, create nodes, and request for publication of items. Not allowed to publish directly without someone else's approval like an Editor (has permissions to "Browse Node", "Create", "Send to Publish" and "Update").
+**Writer**: Allowed to browse nodes, create nodes, and request for publication of items. Not allowed to publish directly without someone else's approval like an Editor (has permissions to "Browse Node", "Create", "Send to Publish" and "Update").
 
-__Editor__: Allowed to create and publish content items or nodes on website without approval from others or restrictions (has permissions to "Audit Trail", "Browse Node", "Copy", "Delete", "Move", "Create", "Public Access", "Publish", "Rollback", "Send to Translation", "Sort" and "Update").
+**Editor**: Allowed to create and publish content items or nodes on website without approval from others or restrictions (has permissions to "Public Access", "Rollback", "Browse Node", "Create Content Template", "Delete", "Create", "Publish", "Unpublish", "Update", "Copy", "Move" and "Sort").
 
 __Translator__: Allowed to browse and update nodes as well as grant dashboard access. Translations of site pages must be reviewed by others before publication (has permissions to "Browse Node" and "Update").
 
