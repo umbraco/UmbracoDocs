@@ -11,14 +11,14 @@ To understand how Courier works, and to use its API, you must know and understan
 - Extraction
 - Transferring
 
-These 3 concepts are what enables Courier to perform deployments in a way that can decouple the Courier client from the sites/destinations it's deploying to/from. 
+These 3 concepts are what enables Courier to perform deployments in a way that can decouple the Courier client from the sites/destinations it's deploying to/from.
 
-The descriptions below are from an API point of view and provide simple examples on how to use each concept. 
+The descriptions below are from an API point of view and provide examples on how to use each concept.
 
 ## Packaging
 Packaging collects data and files from a given target repository that supports packaging. Out of the box, any Courier enabled website supports this, however, you cannot perform a packaging on a network share or subversion repository.
 
-When an item has been packaged its data is serialized to an xml file and stored at a given destination. For storage you can use the local storage on any repository the client is connected to. 
+When an item has been packaged its data is serialized to an xml file and stored at a given destination. For storage you can use the local storage on any repository the client is connected to.
 
 So to take packaging step by step:
 
@@ -27,16 +27,16 @@ So to take packaging step by step:
 - During packaging, the client will find dependencies and resources and add these to its queue
 - When each item is packaged, it's saved as a xml file at a given destination.
 
-To translate this into code, we need a couple of things defined: 
+To translate this into code, we need a couple of things defined:
 
 - The client runs on "Machine A"
-- The source repository is "devsite" 
+- The source repository is "devsite"
 - The destination repository is "qasite"
 
-So the code we are executing is not on either the devsite or qasite, but it could be. If no source or destination is set, Courier will try to use the local machine for storage. 
+So the code we are executing is not on either the devsite or qasite, but it could be. If no source or destination is set, Courier will try to use the local machine for storage.
 
 
-### Configuration 
+### Configuration
 For this configuration the following two repositories have been set up in the `courier.config` file:
 
 ```xml
@@ -72,7 +72,7 @@ using Umbraco.Courier.Core.Collections.Manifests;
 ```
 
 #### Connecting to destination and source
-Use `RepositoryStorage` to retrieve repositories from the `courier.config` 
+Use `RepositoryStorage` to retrieve repositories from the `courier.config`
 
 ```csharp
 var rs = new RepositoryStorage();
@@ -86,7 +86,7 @@ To create a new Packaging operation you need to specify a name of the data you a
 ```csharp
 var engine = new RevisionPackaging(Revision);
 engine.Source = source;
-engine.Destination = destination;        
+engine.Destination = destination;
 ```
 
 #### Instant Comparison

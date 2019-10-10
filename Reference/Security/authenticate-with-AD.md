@@ -20,40 +20,40 @@ using Umbraco.Web.Security;
 [assembly: OwinStartup("MyOwinStartup", typeof(MyOwinStartup))]
 namespace MyApp
 {
-	public class MyOwinStartup : UmbracoDefaultOwinStartup
-	{
-		public override void Configuration(IAppBuilder app)
-		{
-			//ensure the default options are configured
-			base.Configuration(app);
+    public class MyOwinStartup : UmbracoDefaultOwinStartup
+    {
+        public override void Configuration(IAppBuilder app)
+        {
+            //ensure the default options are configured
+            base.Configuration(app);
 
-			// active directory authentication
-			ConfigureBackofficeActiveDirectoryPasswords(app);
-		}
+            // active directory authentication
+            ConfigureBackofficeActiveDirectoryPasswords(app);
+        }
 
-		private void ConfigureBackofficeActiveDirectoryPasswords(IAppBuilder app)
-		{
-			app.ConfigureUserManagerForUmbracoBackOffice<BackOfficeUserManager, BackOfficeIdentityUser>(
-				RuntimeState,
-				GlobalSettings,
-				(options, context) =>
-				{			
-					var membershipProvider = MembershipProviderExtensions.GetUsersMembershipProvider().AsUmbracoMembershipProvider();
-					var userManager = BackOfficeUserManager.Create(
-						options,
-						Services.UserService,
-						Services.MemberTypeService,
-						Services.EntityService,
-						Services.ExternalLoginService,
-						membershipProvider,
-						UmbracoSettings.Content,
-						GlobalSettings
-					);
-					userManager.BackOfficeUserPasswordChecker = new ActiveDirectoryBackOfficeUserPasswordChecker();
-					return userManager;
-				});
-		}
-	}
+        private void ConfigureBackofficeActiveDirectoryPasswords(IAppBuilder app)
+        {
+            app.ConfigureUserManagerForUmbracoBackOffice<BackOfficeUserManager, BackOfficeIdentityUser>(
+                RuntimeState,
+                GlobalSettings,
+                (options, context) =>
+                {
+                    var membershipProvider = MembershipProviderExtensions.GetUsersMembershipProvider().AsUmbracoMembershipProvider();
+                    var userManager = BackOfficeUserManager.Create(
+                        options,
+                        Services.UserService,
+                        Services.MemberTypeService,
+                        Services.EntityService,
+                        Services.ExternalLoginService,
+                        membershipProvider,
+                        UmbracoSettings.Content,
+                        GlobalSettings
+                    );
+                    userManager.BackOfficeUserPasswordChecker = new ActiveDirectoryBackOfficeUserPasswordChecker();
+                    return userManager;
+                });
+        }
+    }
 }
 ```
 
@@ -73,7 +73,7 @@ Finally, to use your `UmbracoStandardOwinStartup` class during startup, update t
 </appSettings>
 ```
 
-If the active directory setup uses usernames instead of emails for authentication this will need configuring against the Umbraco user. This can be done in Umbraco back office under a specific user in user management by setting the name and Username to be the active directory username. Making Username visible for editing requires `usernameIsEmail` in umbracoSettings.config to be set to false:
+If the active directory setup uses usernames instead of emails for authentication this will need configuring against the Umbraco user. This can be done in Umbraco backoffice under a specific user in user management by setting the name and Username to be the active directory username. Making Username visible for editing requires `usernameIsEmail` in umbracoSettings.config to be set to false:
 
 ```xml
 <usernameIsEmail>false</usernameIsEmail>

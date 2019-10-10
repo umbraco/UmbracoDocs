@@ -18,7 +18,7 @@ Umbraco runs all content finders in the collection 'in order', until one of the 
 
 The ContentFinder can set the PublishedContent item for the request, or template or even execute a redirect…
 
-### Example 
+### Example
 
 This IContentFinders will find a document with id 1234, when the Url begins with /woot
 
@@ -33,7 +33,7 @@ public class MyContentFinder : IContentFinder
     return false; // not found
 
     // have we got a node with ID 1234?
-     var content = contentRequest.UmbracoContext.ContentCache.GetById(1234);
+    var content = contentRequest.UmbracoContext.Content.GetById(1234);
     if (content == null) return false; // not found let another IContentFinder in the collection try to find a document
 
     // render that node
@@ -63,7 +63,7 @@ namespace My.Website
             composition.ContentFinders().InsertBefore<ContentFinderByUrl, MyContentFinder>();
             //remove the core ContentFinderByUrl finder:
             composition.ContentFinders().Remove<ContentFinderByUrl>();
-            //you can use Append to add to the end of the collection 
+            //you can use Append to add to the end of the collection
             composition.ContentFinders().Append<AnotherContentFinderExample>();
             //or Insert for a specific position in the collection
             composition.ContentFinders().Insert<AndAnotherContentFinder>(3);
@@ -101,7 +101,7 @@ namespace My.Website.ContentFinders
             var allDomains = _domainService.GetAll(true);
             var domain = allDomains.Where(f => f.DomainName == contentRequest.Uri.Authority || f.DomainName == "https://" + contentRequest.Uri.Authority).FirstOrDefault();
             var siteId = domain != null ? domain.RootContentId : allDomains.FirstOrDefault().RootContentId;
-            var siteRoot = contentRequest.UmbracoContext.ContentCache.GetById(false, siteId ?? -1);
+            var siteRoot = contentRequest.UmbracoContext.Content.GetById(false, siteId ?? -1);
             if (siteRoot == null)
             {
                 return false;
@@ -113,13 +113,13 @@ namespace My.Website.ContentFinders
             {
                 contentRequest.PublishedContent = notFoundNode;
             }
-           // return true or false depending on whether our custom 404 page was found
+            // return true or false depending on whether our custom 404 page was found
             return contentRequest.PublishedContent != null;
         }
     }
 }
 ```
-    
+
 Example on how to register your own implementation:
 
 ```csharp
@@ -135,7 +135,7 @@ namespace My.Website
         public void Compose(Composition composition)
         {
             //set the last chance content finder
-             composition.SetContentLastChanceFinder<My404ContentFinder>();
+            composition.SetContentLastChanceFinder<My404ContentFinder>();
         }
     }
 }

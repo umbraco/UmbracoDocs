@@ -26,15 +26,15 @@ It is highly recommended that you setup your staging environment to also be load
 ## Flexible load balancing
 
 With Umbraco version 7.3.0, load balancing is easier than ever before.
-Setting up a load balanced environment is reasonably easy to achieve and can be done with only a few configuration file changes.
+Setting up a load balanced environment is achievable with a few configuration file changes.
 
-[Full documentation is available here](flexible.md)  
+[Full documentation is available here](flexible.md)
 
 ## Legacy load balancing
 
 Umbraco versions before 7.3.0 must use a legacy/deprecated load balancing technique.
 
-[Full documentation is available here](traditional.md)  
+[Full documentation is available here](traditional.md)
 
 ## Common load balancing setup information
 
@@ -59,7 +59,7 @@ _The below section is common for all load balancing configurations, ensure that 
   </system.web>
 </configuration>
 ```
-            
+
 * If you use SessionState in your application, or are using the default TempDataProvider in MVC (which uses SessionState) then you will need to configure your application to use the SqlSessionStateStore provider (see [https://msdn.microsoft.com/en-us/library/aa478952.aspx](https://msdn.microsoft.com/en-us/library/aa478952.aspx) for more details).
 
 ### Logging
@@ -81,17 +81,12 @@ Ensure to analyze logs from all servers and check for any warnings and errors.
 _Here's some common questions that are asked regarding Load Balancing with Umbraco:_
 
 __Question>__ _Why do I need to have a single web instance for Umbraco admin?_
-	
+
 _TL:DR_ You must not load balance the Umbraco backoffice, you will end up with data integrity or corruption issues.
 
-The reason you need a single server is because there is no way (currently) to 
-guarantee transactional safety between servers because we don't currently use database level locking, we only 
-use application (c#) level locks to guarantee transactional data integrity which is 
-only possible to work on one server. If you have multiple admins saving and publishing 
-at once between servers then the order in which this data is read and written to the 
-database absolutely must be consistent otherwise you will end up with data corruption. 
-Additionally the order in which cache instructions are written to the 
-cache instructions table is very important for LB, this order is guaranteed by having a single admin server.
+The reason you need a single server is because there is no way to guarantee transactional safety between servers. This is because we don't currently use database level locking, we only use application (c#) level locks to guarantee transactional data integrity which is only possible to work on one server. If you have multiple admins saving and publishing at once between servers then the order in which this data is read and written to the database absolutely must be consistent otherwise you will end up with data corruption.
+
+Additionally the order in which cache instructions are written to the cache instructions table is very important for LB, this order is guaranteed by having a single admin server.
 
 __Question>__ _Can my Master admin server also serve front-end requests?_
 

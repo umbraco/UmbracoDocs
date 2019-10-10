@@ -17,7 +17,7 @@ By default when Umbraco Cloud restores a local database it will be an Umbraco.sd
 
 ```xml
 <add name="ASP.NET v4.0" autoStart="true" managedRuntimeVersion="v4.0" managedPipelineMode="Integrated">
-   <processModel identityType="ApplicationPoolIdentity" loadUserProfile="true" setProfileEnvironment="true" />
+    <processModel identityType="ApplicationPoolIdentity" loadUserProfile="true" setProfileEnvironment="true" />
 </add>
 ```
 
@@ -34,9 +34,9 @@ If you're using Visual Studio 2015+ check this path:
 In Visual Studio 2015+ you can also configure which `applicationhost.config` file is used by altering the `<UseGlobalApplicationHostFile>true|false</UseGlobalApplicationHostFile>` setting in the project file (eg: MyProject.csproj). (source: MSDN forum)
 
 ## Using Custom Tables with Umbraco Cloud
-Umbraco Cloud will ensure that your Umbraco related data is always up to date, but it won't know anything about data in custom tables unless told. Nothing new here, it's basically just like any other host when it comes to non-Umbraco data.
+Umbraco Cloud will ensure that your Umbraco related data is always up to date, but it won't know anything about data in custom tables unless told. Nothing new here, it's like any other host when it comes to non-Umbraco data.
 
-The good news is that you have full access to the SQL Azure databases running on Umbraco Cloud and you can create custom tables just like you'd expect on any other hosting provider. The easiest way to do this is to connect using SQL Management Studio.
+The good news is that you have full access to the SQL Azure databases running on Umbraco Cloud and you can create custom tables like you'd expect on any other hosting provider. The easiest way to do this is to connect using SQL Management Studio.
 
 A recommended way of making sure your custom tables are present, is to use Migrations to ensure that the tables will be created or altered when starting your site. Migrations will ensure that if you are adding environments to your Umbraco Cloud site, then the tables in the newly created databases will automatically be created for you. Check [this blog post](https://cultiv.nl/blog/using-umbraco-migrations-to-deploy-changes/) for a full walkthrough of how to create and use Migrations.
 
@@ -51,7 +51,10 @@ If you need to open for specific IP addresses, click the "Add New IP Address" bu
 ## Setting up SQL Management Studio
 Once the firewall is open, it's time to fire up SQL Management Studio and connect to the database. Be aware that a database exist for each environment you have on Umbraco Cloud and any changes you make to custom tables needs to be done for each of them.
 
-To connect, choose "Connect Database Engine" and copy the values from the Connection Details page on Umbraco Cloud where you'll find handy "copy" short-cut buttons to the right of each value. In the "Connect to Server" dialog in SQL Management Studio, choose "SQL Server Authentication" as the authentication type and also remember to click the "Options" button *before you connect* and paste the name of your database in the "Database" input field (otherwise, security settings on Umbraco Cloud will prevent you from connecting). You can see it all in this short gif:
+* Choose "Connect Database Engine"
+* Copy the values from the Connection Details page on Umbraco Cloud where you'll find handy "copy" short-cut buttons to the right of each value
+* Choose "SQL Server Authentication" as the authentication type
+* Remember to click the "Options" button *before you connect* and paste the name of your database in the "Database" input field. If you do not do this, security settings on Umbraco Cloud will prevent you from connecting
 
 <iframe width="800" height="450" src="https://www.youtube.com/embed/f3YIEHGHZB4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
@@ -64,7 +67,7 @@ In Visual Studio this is done through the Server Explorer. Add a new connection 
 
 If this is your first time connecting to a local database this way, you might have to choose a data source when clicking `Add Connection`. Select `Microsoft SQL Server Database File` and hit OK.
 
-Umbraco will create an mdf file (LocalDB) if you have SQL Server installed on your local machine, provided LocalDB is enabled and can be discovered by Deploy. If Deploy can't create an mdf file it will create a SQL CE (sdf) file instead. 
+Umbraco will create an mdf file (LocalDB) if you have SQL Server installed on your local machine, provided LocalDB is enabled and can be discovered by Deploy. If Deploy can't create an mdf file it will create a SQL CE (sdf) file instead.
 
 ## Backups
 It's possible to create a backup of a Cloud database. There are at least two ways of accomplishing this:
@@ -130,4 +133,4 @@ Write-Host "Backup completed in" $watch.Elapsed.ToString()
 ```
 
 ## Moving on
-Now that you've connected you can work with the databases on Umbraco Cloud, like you could on any other host. Just remember to let Umbraco Cloud do the work when it comes to the Umbraco related tables (`Umbraco*` and `CMS*` tables).
+Now that you've connected you can work with the databases on Umbraco Cloud, like you could on any other host. Remember to let Umbraco Cloud do the work when it comes to the Umbraco related tables (`Umbraco*` and `CMS*` tables).

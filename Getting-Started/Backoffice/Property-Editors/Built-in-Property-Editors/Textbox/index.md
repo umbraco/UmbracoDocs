@@ -8,7 +8,7 @@ versionFrom: 8.0.0
 
 `Returns: String`
 
-Textbox is a simple HTML input control for text. It can be configured to have a fixed character limit. The default maximum amount of characters is 500 unless it's specifically changed to a lower amount.
+Textbox is an HTML input control for text. It can be configured to have a fixed character limit. The default maximum amount of characters is 500 unless it's specifically changed to a lower amount.
 
 ## Data Type Definition Example
 
@@ -18,7 +18,7 @@ Textbox is a simple HTML input control for text. It can be configured to have a 
 
 ## Settings
 
-## Content Example:
+## Content Example
 
 ### Without a character limit
 
@@ -28,12 +28,12 @@ Textbox is a simple HTML input control for text. It can be configured to have a 
 
 ![Textbox Content Example Without a Character Limit](images/Textbox-Content-Limit-v8.png)
 
-## MVC View Example:
+## MVC View Example
 
 ```csharp
 @{
-   if (Model.HasValue("pageTitle")){
-       <p>@(Model.Value("pageTitle"))</p>
-   }
+    if (Model.HasValue("pageTitle")){
+        <p>@(Model.Value("pageTitle"))</p>
+    }
 }
 ```

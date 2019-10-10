@@ -100,7 +100,7 @@ You should keep polling this until the `creationStatus` changes to "Created" (or
 
 ### Invite to project
 
-The following endpoint is used for inviting users to a project. 
+The following endpoint is used for inviting users to a project.
 
     POST https://www.s1.umbraco.io/api/public/project/invite
 
@@ -112,7 +112,7 @@ If the user is a new user we will create the user and send an activation email t
     Authorization: token dXNlci1lbWFpbEBleGFtcGxlLmNvbTo2YTViMGM2ODdiNzk3M2RiNGIyNTY4YTU5ZjJjNDQ2ZWUxZWU5ZjlmMDYzMjJmMWJkNjk4MzcxOGE0OGI1YTZj
     X-Project-Id: 2af1dc0e-a454-4956-ba26-59036ac4bb99
     Content-Type: application/json
-                            
+
     {
         "email": "user-email@example.com", // Required
         "name": "The users name", // Required
@@ -144,7 +144,7 @@ The following endpoint is used for creating a user on Umbraco.io, and not necess
     POST https://www.s1.umbraco.io/api/public/user/create
     Authorization: token dXNlci1lbWFpbEBleGFtcGxlLmNvbTo2YTViMGM2ODdiNzk3M2RiNGIyNTY4YTU5ZjJjNDQ2ZWUxZWU5ZjlmMDYzMjJmMWJkNjk4MzcxOGE0OGI1YTZj
     Content-Type: application/json
-                            
+
     {
         "email": "user-email@example.com", // Required
         "name": "The users name", // Required
@@ -161,7 +161,7 @@ This will return an appropriate HTTP status code and a JSON object like this:
 }
 ```
 
---- 
+---
 
 ## Console application example
 

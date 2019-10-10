@@ -7,7 +7,7 @@ needsV8Update: "true"
 Umbraco utilizes XSLT to dynamically render content such as navigational structures, lists, and nearly anything you can dream of.  This is accomplished through the use of Macros.
 
 ## Creating Your First XSLT Macro
-Creating an XSLT macro is very easy.
+Creating an XSLT macro is possible with these steps:
 
 1. Go to the developers section in the administration area.
 2. Right click on the XSLT folder, and select create.
@@ -20,4 +20,3 @@ Now that we have the XSLT created, we need to customize it to output our content
 :::note
 This was copied the original book from Casey Neehouse from the books section of umbraco.org
 :::
-

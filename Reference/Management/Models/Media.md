@@ -7,7 +7,7 @@ needsV8Update: "true"
 
 **Applies to Umbraco 6.x and newer**
 
-The `Media` class represents a single item in the media tree, its values are fetched directly from the database, not from the cache. **Notice** the Media class should strictly be used for simple CRUD operations, not complex queries, as it is not flexible nor fast enough for this.
+The `Media` class represents a single item in the media tree, its values are fetched directly from the database, not from the cache. **Notice** the Media class should strictly be used for CRUD operations, not complex queries, as it is not flexible nor fast enough for this.
 
  * **Namespace:** `Umbraco.Core.Models`
  * **Assembly:** `Umbraco.Core.dll`
@@ -76,10 +76,10 @@ return media.ContentTypeId;
 ```
 
 ### .Id
-Returns the unique `Media` Id as a `Int`, this ID is based on a Database identity field, and is therefore not safe to reference in code which are moved between different instances, use Key instead. 
+Returns the unique `Media` Id as a `Int`, this ID is based on a Database identity field, and is therefore not safe to reference in code which are moved between different instances, use Key instead.
 
 ### .Key
-Returns the `Guid` assigned to the Media during creation. This value is unique, and should never change, even if the Media is moved between instances. 
+Returns the `Guid` assigned to the Media during creation. This value is unique, and should never change, even if the Media is moved between instances.
 
 ```csharp
 // Given a `MediaService` object get Media by its Id and return the Key
@@ -88,7 +88,7 @@ return media.Key;
 ```
 
 ### .Level
-Gets or Sets the given `Media` level in the site hierarchy as an `Int`. Media placed at the root of the tree, will return 1, Media just underneath will return 2, and so on.
+Gets or Sets the given `Media` level in the site hierarchy as an `Int`. Media placed at the root of the tree, will return 1, Media right underneath will return 2, and so on.
 
 ```csharp
 // Given a `MediaService` object get Media by its Id and return the Level
@@ -133,7 +133,7 @@ foreach(var property in media.Properties){
     string alias = property.Alias;
     object value = property.Value;
     Guid version = property.Version;
-} 
+}
 ```
 
 ### .PropertyGroups
@@ -147,7 +147,7 @@ foreach(var propertyGroup in media.PropertyGroups){
     int? parentId = propertyGroup.ParentId;
     int sortOrder = propertyGroup.SortOrder;
     PropertyTypeCollection propertyTypes = propertyGroup.PropertyTypes; //PropertyTypes within this group
-} 
+}
 ```
 
 ### .PropertyTypes
@@ -165,7 +165,7 @@ foreach(var propertyType in media.PropertyTypes){
     bool mandatory = propertyType.Mandatory;
     string helpText = propertyType.HelpText;
     int sortOrder = propertyType.SortOrder;
-} 
+}
 ```
 
 ### .SortOrder
@@ -196,7 +196,7 @@ return media.UpdateDate;
 ```
 
 ### .Version
-Returns the current Version Id as a `Guid`, 
+Returns the current Version Id as a `Guid`,
 For each change made to a Media item, its values are stored under a new Version. This version is identified by a `Guid`.
 
 ```csharp

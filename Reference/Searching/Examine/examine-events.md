@@ -12,7 +12,7 @@ The TransformingIndexValues event allows you to manipulate the data that will be
 
 ### Example
 
-In the [Quick Start](Quick-Start/index.md) documentation you can see how to perform a simple search with Examine. That is great if you want to search between node names or you know that you always want to search for a specific field - e.g. `bodyText`. 
+In the [Quick Start](Quick-Start/index.md) documentation you can see how to perform a search with Examine. That is great if you want to search between node names or you know that you always want to search for a specific field - e.g. `bodyText`.
 
 However, what if you want to search through several different node types and search across many different fields, you will typically need to have a query that looks like this:
 
@@ -25,7 +25,7 @@ var results = searcher.CreateQuery("content").Field("nodeName", searchTerm)
                     .Execute();
 ```
 
-This can be simplified, instead you can use TransformingIndexValues event (used to be called GatheringNodeData in Umbraco 7) to add a custom field to the indexed data to combine the data from several fields and then you can search on that one field. This is done via a [composer](../../../Implementation/Composing/index.md).
+This can be simplified. Instead you can use TransformingIndexValues event (used to be called GatheringNodeData in Umbraco 7) to add a custom field to the indexed data to combine the data from several fields and then you can search on that one field. This is done via a [composer](../../../Implementation/Composing/index.md).
 
 ## Creating a TransformingIndexValues event
 
@@ -83,7 +83,7 @@ if (e.ValueSet.Category == IndexTypes.Content)
             {
                 combinedFields.AppendLine(value.ToString());
             }
-        }        
+        }
     }
 
     e.ValueSet.TryAdd("combinedField", combinedFields.ToString());
@@ -99,9 +99,9 @@ Before this works the component will have to be registered in a composer. If you
 
 ```cs
 //This is a composer which automatically appends the ExamineEvents component
-public class ExamineComposer : ComponentComposer<ExamineEvents>, IUserComposer 
-{ 
-   // you could override `Compose` if you wanted to do more things, but if it's just registering a component there's nothing else that needs to be done.
+public class ExamineComposer : ComponentComposer<ExamineEvents>, IUserComposer
+{
+    // you could override `Compose` if you wanted to do more things, but if it's just registering a component there's nothing else that needs to be done.
 }
 ```
 
@@ -109,7 +109,7 @@ We append it so it runs as the last one. Now if you start up your website and [r
 
 ![Example of adding a Transforming Index Values field](images/transforming-index-values.png)
 
-At this point you can create a query just for that field:
+At this point you can create a query for only that field:
 
 ```cs
 var results = searcher.CreateQuery("content").Field("combinedField", searchTerm).Execute();

@@ -27,11 +27,11 @@ The media provider can be of many types, for example in case you want to store m
 
 The physical file system provider manages the interaction of Umbraco with the local file system. It can be configured for two different scenarios:
 
- - media files stored inside a virtual folder of the site
- - media files stored somewhere else outside of the site and accessed via a custom url
- 
+ - Media files stored inside a virtual folder of the site
+ - Media files stored somewhere else outside of the site and accessed via a custom url
+
 ### Virtual Folder
-To configure the PhysicalFileSystem to work with a virtual folder there not much to do, just change the value of the `virtualRoot` parameter to the virtual folder you want to use. By default it is configured to store media files in  `~/media`.
+To configure the PhysicalFileSystem to work with a virtual folder there not much to do, change the value of the `virtualRoot` parameter to the virtual folder you want to use. By default it is configured to store media files in  `~/media`.
 
 ```xml
 <add key="virtualRoot" value="~/media/" />
@@ -41,8 +41,8 @@ To configure the PhysicalFileSystem to work with a virtual folder there not much
 If you want to store the media files in a separate folder, outside of the Umbraco website, maybe on a NAS/SAN you have to remove the `virtualRoot` property and add two new properties:
 
  - `rootPath` is the full filesystem path where you want media files to be stored. It has to be rooted, must use directory separators (`\`) and must not end with a separator. For example, `Z:` or `C:\path\to\folder` or `\\servername\path`.
- - `rootUrl` is the url where the files will be accessible from. It must use url separators (`/`) and must not end with a separator. It can either be just a folder, like `/UmbracoMedia`, in which case it will considered as subfolder of the main domain (`example.com/UmbracoMedia`) or can be a fully qualified url, with also domain name and protocol (for ex `http://media.example.com/media`).
- 
+ - `rootUrl` is the url where the files will be accessible from. It must use url separators (`/`) and must not end with a separator. It can either be a folder, like `/UmbracoMedia`, in which case it will considered as subfolder of the main domain (`example.com/UmbracoMedia`) or can be a fully qualified url, with also domain name and protocol (for ex `http://media.example.com/media`).
+
 ```xml
 <Provider alias="media" type="Umbraco.Core.IO.PhysicalFileSystem, Umbraco.Core">
     <Parameters>

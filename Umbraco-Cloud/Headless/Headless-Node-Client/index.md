@@ -51,10 +51,10 @@ async function run(){
     // var site = await headlessService.getSite(content);
     // console.log("site name: " + site.name);
     // until implemented - get the site using a query or a Id.
-	
+
     // get a specific item by id
     var site = await headlessService.getById(1000);
-	
+
     // the returned node contains all properties
     console.log("my custom property:", site.myPropertyAlias);
 
@@ -64,10 +64,10 @@ async function run(){
     // multiple results will be wrapped in a paged result
     var children = await headlessService.getChildren(site);
     console.log("total results: ", children.totalResults);
-    
+
     // results on the page can be iterated in the .results array
     console.log("first result of this paged result: ", children.results[0]);
-    
+
     // get a content item by url
     // NOTE: not implemented yet!
     // var contentByUrl = await headlessService.getByUrl("/my-content");
@@ -84,7 +84,7 @@ node .
 ```
 
 ### Using VS Code?
-If you are using VSCode as your editor then you can easily set up the editor to debug and easily inspect the values returned from the Umbraco Headless site by configuring the `.vscode/launch.json` file like so
+If you are using VSCode as your editor then you can set up the editor to debug and inspect the values returned from the Umbraco Headless site by configuring the `.vscode/launch.json` file like so
 
 ```json5
 {
@@ -92,7 +92,7 @@ If you are using VSCode as your editor then you can easily set up the editor to 
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": [        
+    "configurations": [
         {
             "type": "node",
             "request": "launch",

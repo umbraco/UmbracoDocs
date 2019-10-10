@@ -11,7 +11,7 @@ This is step 2 in our guide to building a property editor. This step continues w
 
 
 ## Configuration?
-An important part of building good property editors is to build something relatively flexible, so you can reuse it many many times, for different things; Like the rich text editor in Umbraco, that allows you to choose which buttons and stylesheets you want to use on each instance of the editor.
+An important part of building good property editors is to build something relatively flexible, so you can reuse it many many times, for different things. Like the Rich Text Editor in Umbraco, that allows you to choose which buttons and stylesheets you want to use on each instance of the editor.
 
 So an editor can be used several times, with different configurations, and that is what we will be working on now.
 
@@ -21,29 +21,29 @@ To add configuration options to our markdown editor, open the `package.manifest`
 ```javascript
 ...
 editor: {
-	view: "~/App_Plugins/MarkDownEditor/markdowneditor.html"
+    view: "~/App_Plugins/MarkDownEditor/markdowneditor.html"
 }, // Remeber a comma seperator here at the end of the editor block!
 prevalues: {
-	fields: [
-		{
-			label: "Preview",
-			description: "Display a live preview",
-			key: "preview",
-			view: "boolean"
-		},
-		{
-			label: "Default value",
-			description: "If value is blank, the editor will show this",
-			key: "defaultValue",
-			view: "textarea"
-		}
-	]
+    fields: [
+        {
+            label: "Preview",
+            description: "Display a live preview",
+            key: "preview",
+            view: "boolean"
+        },
+        {
+            label: "Default value",
+            description: "If value is blank, the editor will show this",
+            key: "defaultValue",
+            view: "textarea"
+        }
+    ]
 }
 ```
 
-So what did we just add? We added a prevalue editor, with a `fields` collection. This collection contains information about the UI we will render on the data type configuration for this editor.
+So what did we add? We added a prevalue editor, with a `fields` collection. This collection contains information about the UI we will render on the data type configuration for this editor.
 
-So the first one gets the label "Preview" and uses the view "boolean", so this will allow us to turn preview on/off and will provide the user with a simple checkbox. The name "boolean" comes from the convention that all preview editors are stored in `/umbraco/views/prevalueeditors/` and then found via `<name>.html`
+So the first one gets the label "Preview" and uses the view "boolean", so this will allow us to turn preview on/off and will provide the user with a checkbox. The name "boolean" comes from the convention that all preview editors are stored in `/umbraco/views/prevalueeditors/` and then found via `<name>.html`
 
 Same with the next one, only that it will provide the user with a textarea to input a default value for the editor.
 
@@ -58,7 +58,7 @@ Let's first add the default value functionality. Basically, when the `$scope.mod
 
 ```javascript
 if($scope.model.value === null || $scope.model.value === ""){
-	$scope.model.value = $scope.model.config.defaultValue;
+    $scope.model.value = $scope.model.config.defaultValue;
 }
 ```
 
