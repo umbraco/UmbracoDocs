@@ -22,7 +22,7 @@ If an error occours you will receive a HTTP status code along with an API error 
 | 400         | Bad Request          | Body cannot be empty.                                                    |
 | 401         | Unauthorized         | Authorization has been denied for this request.                          |
 | 403         | Forbidden            | You are not authorized to access the given resource.                     |
-| 404         | NotFound             | Member with username '{username}' could not be found.                    |
+| 404         | NotFound             | Member Type with alias '{alias}' could not be found.                     |
 
 **JSON example**:
 
@@ -37,4 +37,38 @@ If an error occours you will receive a HTTP status code along with an API error 
 
 ## Get all member types
 
+Get a list of all available member types.
+
+**URL**: `/member/type`
+
+**Method**: `GET`
+
+**Permissions required** : Access to Member section of the Umbraco Backoffice
+
+### Success Response
+
+**Code**: 200
+
+**Content Example**:
+
+```json
+```
+
 ## Get by alias
+
+Get a specific member type by its alias.
+
+**URL**: `/member/type/{alias}`
+
+**Method**: `GET`
+
+**Permissions required** : Access to Member section of the Umbraco Backoffice
+
+### Success Response
+
+**Code**: 200
+
+**Content Example**:
+
+```json
+```
