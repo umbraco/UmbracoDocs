@@ -13,7 +13,7 @@ Ensure you read the [overview](index.md) before you begin - you will need to ens
 
 ### Lucene/Examine configuration
 
-The single instance back office Web App should be set to use [SyncTempEnvDirectoryFactory](file-system-replication.md#examine-directory-factory-options).
+The single instance backoffice Web App should be set to use [SyncTempEnvDirectoryFactory](file-system-replication.md#examine-directory-factory-options).
 
 The multi instance front end Web App should be set to use [TempEnvDirectoryFactory](file-system-replication.md#examine-directory-factory-options).
 
