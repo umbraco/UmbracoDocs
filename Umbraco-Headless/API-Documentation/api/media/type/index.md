@@ -37,4 +37,38 @@ If an error occours you will receive a HTTP status code along with an API error 
 
 ## Get all media types
 
+Get a list of all available media types.
+
+**URL**: `/media/type`
+
+**Method**: `GET`
+
+**Permissions required** : Access to Settings section of the Umbraco Backoffice
+
+### Success Response
+
+**Code**: 200
+
+**Content Example**:
+
+```json
+```
+
 ## Get by alias
+
+Get a specific media type by its alias.
+
+**URL**: `/media/type/{alias}`
+
+**Method**: `GET`
+
+**Permissions required** : Access to Settings section of the Umbraco Backoffice
+
+### Success Response
+
+**Code**: 200
+
+**Content Example**:
+
+```json
+```
