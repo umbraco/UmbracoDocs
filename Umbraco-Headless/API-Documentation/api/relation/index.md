@@ -39,14 +39,119 @@ If an error occours you will receive a HTTP status code along with an API error 
 
 ## Get by id
 
-## Get by parent id
+Get a specific relation by its integer id.
 
-## Get by child id
+**URL**: `/relation/{id}`
+
+**Method**: `GET`
+
+**Permissions required** : Access to Settings section of the Umbraco Backoffice
+
+### Success Response
+
+**Code**: 200
+
+**Content Example**:
+
+```json
+```
 
 ## Get by relation type alias
 
+Get a list of relations by their relation type alias.
+
+**URL**: `/relation/{alias}`
+
+**Method**: `GET`
+
+**Permissions required** : Access to Settings section of the Umbraco Backoffice
+
+### Success Response
+
+**Code**: 200
+
+**Content Example**:
+
+```json
+```
+
+## Get by parent id
+
+Get a list of relations by their parent's integer id.
+
+**URL**: `/relation/parent/{id}`
+
+**Method**: `GET`
+
+**Permissions required** : Access to Settings section of the Umbraco Backoffice
+
+### Success Response
+
+**Code**: 200
+
+**Content Example**:
+
+```json
+```
+
+## Get by child id
+
+Get a list of relations by their child's integer id.
+
+**URL**: `/relation/child/{id}`
+
+**Method**: `GET`
+
+**Permissions required** : Access to Settings section of the Umbraco Backoffice
+
+### Success Response
+
+**Code**: 200
+
+**Content Example**:
+
+```json
+```
+
 ## Create relation
 
-## Update relation
+Create a new relation.
+
+**URL**: `/relation/`
+
+**Method**: `POST`
+
+**Permissions required** : Access to Settings section of the Umbraco Backoffice
+
+### Request
+
+```json
+```
+
+### Success Response
+
+**Code**: 201
+
+**Content Example**:
+
+```json
+```
 
 ## Delete relation
+
+Delete a relation
+
+**URL**: `/relation/{id}`
+
+**Method**: `DELETE`
+
+**Permissions required** : Access to Settings section of the Umbraco Backoffice
+
+### Success Response
+
+**Code**: 200
+
+**Content Example**:
+
+```json
+```
