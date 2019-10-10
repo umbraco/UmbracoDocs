@@ -1,7 +1,12 @@
+---
+versionFrom: 7.0.0
+---
+
 # Database backups
-It's possible to create a backup of a Cloud database. There are at least two ways of accomplishing this:
-- Use SQL Server Management Studio
-- Use a PowerShell script
+Sometimes you might need to have a backup of your Cloud database. This can be accomplished in at lest two ways. This article will go through two of those options.
+
+- [Backup with SQL Server Management Studio](#Backup-with-SQL-server-management-studio).
+- [Backup with PowerShell Script](#Backup-with-PowerShell-Script)
 
 ## Backup with SQL Server Management Studio
 Follow these steps:
