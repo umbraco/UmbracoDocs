@@ -29,9 +29,9 @@ In this article you will learn how to create your first Umbraco Headless Project
 
 ## [Getting Started with the APIs](Getting-Started-API/)
 
-Anything with access to the internet can use the REST APIs via HTTP to retrieve Content and Media through the Content Delivery API, as well as create, update and delete Content, Media, Languages, Members and Relations.
+Anything with access to the internet can use the REST APIs via HTTP to retrieve Content and Media through the Content Delivery API, as well as create, update and delete Content, Media, Languages, Members and Relations through the Content Management API.
 
-In this article you will learn how to use the two types of APIs through simple HTTP calls: 
+In this article you will learn how to use the two APIs through simple HTTP calls: 
 ["Getting Started with the APIs"](Getting-Started-API/)
 
 ## [Getting Started with the .NET Core Client Library](Getting-Started-DotNetCore/)
