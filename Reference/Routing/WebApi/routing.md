@@ -1,15 +1,14 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
 ---
 
 # Umbraco Api - Routing & Urls
 
-_This section will describe how Umbraco Api controllers are routed and how to retrieve their URLs_ 
+_This section will describe how Umbraco Api controllers are routed and how to retrieve their URLs_
 
 ## Routing
 
-Like Surface Controllers in Umbraco, when you inherit from the base class `Umbraco.Web.WebApi.UmbracoApiController` we will auto-route this controller so you don't have to worry about routing at all. 
+Like Surface Controllers in Umbraco, when you inherit from the base class `Umbraco.Web.WebApi.UmbracoApiController` we will auto-route this controller so you don't have to worry about routing at all.
 
 All locally declared Umbraco api controllers will be routed under the url path of:
 
@@ -18,6 +17,8 @@ All locally declared Umbraco api controllers will be routed under the url path o
 All plugin based Umbraco api controllers will be routed under the url path of:
 
 ~/Umbraco/[YourAreaName]/[YourControllerName]
+
+* See [here](index.md) for more information on implementing these controllers.
 
 ## Urls
 

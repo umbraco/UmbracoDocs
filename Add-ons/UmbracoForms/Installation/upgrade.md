@@ -21,4 +21,3 @@ Umbraco will now fetch and install the upgrade.
 ![Upgrade Progress](images/UpgradeProgress.png)
 
 Once it's completed the upgrade notification should be gone and you can continue using a newly updated Umbraco Forms.
-

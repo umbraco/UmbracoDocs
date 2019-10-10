@@ -1,11 +1,10 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
 ---
 
 # Umbraco Api - Authorization
 
-_This section will describe how to secure your Umbraco Api controllers based on a users membership_ 
+_This section will describe how to secure your Umbraco Api controllers based on a users membership_
 
 ## Authorizing for the backoffice
 
@@ -33,23 +32,20 @@ public class ProductsApiController : UmbracoApiController
     [Umbraco.Web.WebApi.UmbracoAuthorize]
     public IEnumerable<string> GetAllProducts()
     {
-        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+        return new[] { "Table", "Chair", "Desk", "Computer" };
     }
 }
 ```
 
 ## Using MemberAuthorizeAttribute
 
-To secure your controller based on front-end membership use the attribute: `Umbraco.Web.WebApi.MemberAuthorizeAttribute`. 
+To secure your controller based on front-end membership use the attribute: `Umbraco.Web.WebApi.MemberAuthorizeAttribute`.
 
 *It's important to note the namespace since we have another class called MemberAuthorizeAttribute in a different namespace that is used for MVC.*
 
-There are 4 parameters that can be supplied to control how the authorization works:
+There are 3 parameters that can be supplied to control how the authorization works:
 
 ```csharp
-// Flag for whether to allow all site visitors or just authenticated members
-// This is the same as applying the [AllowAnonymous] attribute
-bool AllowAll
 
 // Comma delimited list of allowed member types
 string AllowType
@@ -61,7 +57,9 @@ string AllowGroup
 string AllowMembers
 ```
 
-You can apply the attribute at the controller level or at the action level. 
+To allow all members, you can use the ```[AllowAnonymous]``` attribute.
+
+You can apply these attributes at the controller level or at the action level.
 
 **Examples:**
 
@@ -73,7 +71,7 @@ public class ProductsApiController : UmbracoApiController
     [Umbraco.Web.WebApi.MemberAuthorize(AllowType = "Retailers")]
     public IEnumerable<string> GetAllProducts()
     {
-        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+        return new[] { "Table", "Chair", "Desk", "Computer"};
     }
 }
 ```
@@ -83,10 +81,10 @@ This will only allow member's with Ids 1, 10 and 20 to access any actions on the
 ```csharp
 [Umbraco.Web.WebApi.MemberAuthorize(AllowMembers = "1,10,20")]
 public class ProductsApiController : UmbracoApiController
-{	    
+{
     public IEnumerable<string> GetAllProducts()
     {
-        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+        return new[] { "Table", "Chair", "Desk", "Computer"};
     }
 }
 ```

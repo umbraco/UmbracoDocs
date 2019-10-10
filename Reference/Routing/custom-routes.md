@@ -2,14 +2,14 @@
 keywords: customizing external source integration
 versionFrom: 8.0.0
 ---
-    
+
 # Custom MVC Routes
 
 _Documentation about how to setup your own custom controllers and routes that need to exist alongside the Umbraco pipeline_
 
 ## Where to put your routing logic?
 
-In Umbraco the best place to put your routing logic is in the Initialize() method of an `Umbraco.Core.Composing.IComponent` implementation. There you can add any custom routing logic you like and Umbraco will add the routes during it's start up.
+In Umbraco the best place to put your routing logic is in the Initialize() method of an `Umbraco.Core.Composing.IComponent` implementation. There you can add any custom routing logic you like and Umbraco will add the routes during its start up.
 
 ## User defined routes
 
@@ -36,16 +36,14 @@ namespace Umbraco8.Components
 {
 
     public class RegisterCustomRouteComposer : ComponentComposer<RegisterCustomRouteComponent>
-    {
-
-    }
+    { }
 
     public class RegisterCustomRouteComponent : IComponent
     {
         public void Initialize()
         {
-    // Custom route to MyProductController which will use a node with a specific ID as the
-    // IPublishedContent for the current rendering page
+            // Custom route to MyProductController which will use a node with a specific ID as the
+            // IPublishedContent for the current rendering page
             RouteTable.Routes.MapUmbracoRoute("ProductCustomRoute", "products/{action}/{id}", new
             {
                 controller = "MyProduct",
@@ -55,7 +53,7 @@ namespace Umbraco8.Components
 
         public void Terminate()
         {
-            throw new NotImplementedException();
+            // Nothing to terminate
         }
     }
 }

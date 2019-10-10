@@ -19,7 +19,6 @@ Make sure you can run your Cloud project locally and restore content and media. 
 * Copy the following folders from the unzipped folder to your Cloud project folder:
     * `/bin`
     * `/Umbraco`
-    * `/Umbraco_Client`
 
 ## Merge configuration files
 
@@ -34,8 +33,8 @@ When merging the `web.config` file make sure that you **do not overwrite/remove*
 **< configSettings >**
 
     <sectionGroup name="umbraco.deploy">
-      <section name="environments" type="Umbraco.Deploy.Configuration.DeployEnvironmentsSection, Umbraco.Deploy" requirePermission="false" />
-      <section name="settings" type="Umbraco.Deploy.Configuration.DeploySettingsSection, Umbraco.Deploy" requirePermission="false" />
+    <section name="environments" type="Umbraco.Deploy.Configuration.DeployEnvironmentsSection, Umbraco.Deploy" requirePermission="false" />
+    <section name="settings" type="Umbraco.Deploy.Configuration.DeploySettingsSection, Umbraco.Deploy" requirePermission="false" />
     </sectionGroup>
 
 **< appSettings >**
@@ -137,7 +136,7 @@ Make sure that everything works on the local clone and that you can **run the pr
 
 Before you deploy the upgraded project to the Cloud, it's important that you check if there are any [**dependencies**](../Product-Dependencies) on the new Umbraco version.
 
-Are there dependencies for Umbraco Forms or Umbraco Courier / Deploy you need to upgrade these locally, before moving on. 
+Are there dependencies for Umbraco Forms or Umbraco Courier / Deploy you need to upgrade these locally, before moving on.
 
 When you've upgraded everything locally, and made sure that everything runs without any errors, you are ready to deploy the upgrade to Umbraco Cloud.
 

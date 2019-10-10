@@ -32,7 +32,7 @@ public class PreValueMigratorComposer : IUserComposer
     public void Compose(Composition composition)
     {
         composition.WithCollectionBuilder<PreValueMigratorCollectionBuilder>()
-            //Append all of the migrators required
+            // Append all of the migrators required
             .Append<MyCustomPreValueMigrator>()
             .Append<AnotherPreValueMigrator>();
     }

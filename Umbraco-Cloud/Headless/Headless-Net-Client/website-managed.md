@@ -7,7 +7,7 @@ versionFrom: 7.0.0
 _This example is for creating a fully content managed website where URLs will be dynamic and be based on the same URLs generated in Umbraco. This also gives you the ability to Hijack routes for specific Document Types like in a normal Umbraco installation._
 
 #### Setup, bootstrap & launch
-The Headless client NuGet package is hosted on a custom MyGet feed, so you need to create a `NuGet.config` file for your project which can be done via the command line. If you don't do this then you would need to use the `--source` parameter and a few other tricks so it's simpler to use a `Nuget.config` file. 
+The Headless client NuGet package is hosted on a custom MyGet feed, so you need to create a `NuGet.config` file for your project which can be done via the command line. If you don't do this then you would need to use the `--source` parameter and a few other tricks so it's simpler to use a `Nuget.config` file.
 
 So __before__ you run any script for creating a project, you will need to do this in the new folder where you are creating your project:
 
@@ -17,18 +17,18 @@ So __before__ you run any script for creating a project, you will need to do thi
     <?xml version="1.0" encoding="utf-8"?>
     <configuration>
         <packageSources>
-            <add key="umbracoMyGet" 
-                 value="https://www.myget.org/F/uaas/api/v3/index.json" 
-                 protocolVersion="3" />
+            <add key="umbracoMyGet"
+                value="https://www.myget.org/F/uaas/api/v3/index.json"
+                protocolVersion="3" />
         </packageSources>
     </configuration>
     ```
 Now to create a new .NET Core website and add references:
-   * _(Ensure you've created the `Nuget.config`, see above)_
-   * `dotnet new mvc`
-   * `dotnet add package UmbracoCms.Headless.Client -v 0.9.7-*`   
-      * _NOTE: You use this same command to update to the latest version_
-   * `dotnet add package UmbracoCms.Headless.Client.Web -v 0.9.7-*`   
+    * _(Ensure you've created the `Nuget.config`, see above)_
+    * `dotnet new mvc`
+    * `dotnet add package UmbracoCms.Headless.Client -v 0.9.7-*`
+    * _NOTE: You use this same command to update to the latest version_
+    * `dotnet add package UmbracoCms.Headless.Client.Web -v 0.9.7-*`
 * Add a config file
     * use the standard .NET Core naming conventions: `appsettings.json`
     * this needs to contain the `umbracoHeadless` section:
@@ -44,12 +44,12 @@ Now to create a new .NET Core website and add references:
         }
         ```
 * You need to bootstrap the headless client which is done in your `Startup.cs` file:
-   * First of all add this using reference: `using Umbraco.Headless.Client.Net.Web;`
-   * In `ConfigureServices` add the headless client services: `services.AddUmbracoHeadlessClient(Configuration);`
-   * In `ConfigureServices` add the headless web routing engine: `services.AddUmbracoHeadlessWebEngine(Configuration);`
-   * In `Configure` replace the `UseMvc` block with `app.UseUmbracoHeadlessWebEngine();` (or you can put this line above the existing `UseMvc` block)
+    * First of all add this using reference: `using Umbraco.Headless.Client.Net.Web;`
+    * In `ConfigureServices` add the headless client services: `services.AddUmbracoHeadlessClient(Configuration);`
+    * In `ConfigureServices` add the headless web routing engine: `services.AddUmbracoHeadlessWebEngine(Configuration);`
+    * In `Configure` replace the `UseMvc` block with `app.UseUmbracoHeadlessWebEngine();` (or you can put this line above the existing `UseMvc` block)
 * You will need to add a view to be rendered:
-   * Add a view file for the path `/Views/DefaultUmbraco/Index.cshtml`
+    * Add a view file for the path `/Views/DefaultUmbraco/Index.cshtml`
     ```csharp
         @using Umbraco.Headless.Client.Net.Models
         @model ContentItem
@@ -69,8 +69,8 @@ Now to create a new .NET Core website and add references:
         </ul>
     ```
 * Now run the project - the view above will be rendered and show the page name and property values for the content item matching the URL
-   * `dotnet run`
-      * _If you want to launch in debug mode, set the environment variable in the current cmd window before running this command: `set ASPNETCORE_ENVIRONMENT=Development`_
+    * `dotnet run`
+    * _If you want to launch in debug mode, set the environment variable in the current cmd window before running this command: `set ASPNETCORE_ENVIRONMENT=Development`_
 
 Now you can have the `Umbraco.Headless.Client.Net.Services.PublishedContentService` injected into any of your controllers, services, etc... The `Umbraco.Headless.Client.Net.Services.PublishedContentService` is the starting point for all headless operations.
 
@@ -135,7 +135,7 @@ You can also inject the `PublishedContentService` or `IHeadlessConfig` into any 
 
 ##### Hijacking routes
 
-Like in Umbraco, with this engine you can hijack routes! 
+Like in Umbraco, with this engine you can hijack routes!
 
 * Create a new controller to hijack a route for a document type. For example, if your document type is called `Page`, then create a controller: `/Controllers/PageController.cs`
 ```csharp
@@ -149,7 +149,7 @@ public class PageController : DefaultUmbracoController
     {
         // get the content for the current route
         var content = UmbracoContext.GetContent();
-        // map the ContentItem to a custom model called Page (which would inherit from ContentItem)	
+        // map the ContentItem to a custom model called Page (which would inherit from ContentItem)
         var model  = HeadlessService.MapTo<Page>(content);
         // return the view which will be located at /Views/Page/Index.cshtml
         return Task.FromResult((IActionResult)View(model));

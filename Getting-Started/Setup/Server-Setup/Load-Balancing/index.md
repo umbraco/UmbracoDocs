@@ -90,9 +90,9 @@ _The below section applies to all ASP.NET load balancing configurations.
 ### Machine Key
 
 * You will need to use a custom machine key so that all your machine key level encryption values are the same on all servers, without this you will end up with view state errors, validation errors and encryption/decryption errors since each server will have its own generated key.
-	* Here are a couple of tools that can be used to generate machine keys:
-		* 	[Tool 1: http://www.betterbuilt.com/machinekey/](http://www.betterbuilt.com/machinekey/)
-		* 	[Tool 2: http://www.developerfusion.com/tools/generatemachinekey/](https://www.developerfusion.com/tools/generatemachinekey/)
+    * Here are a couple of tools that can be used to generate machine keys:
+        * 	[Tool 1: http://www.betterbuilt.com/machinekey/](http://www.betterbuilt.com/machinekey/)
+        * 	[Tool 2: http://www.developerfusion.com/tools/generatemachinekey/](https://www.developerfusion.com/tools/generatemachinekey/)
 * You need to update your web.config accordingly, note that the validation/decryption types may be different for your environment depending on how you've generated your keys.
 * 	Umbraco offers the opportunity to auto generate a machine key during the installation steps so this may already exist
 
@@ -137,10 +137,10 @@ There are various configuration options that need to be considered depending on 
 _Here's some common questions that are asked regarding Load Balancing with Umbraco:_
 
 __Question>__ _Why do I need to have a single web instance for Umbraco admin?_
-	
+
 _TL:DR_ You must not load balance the Umbraco backoffice, you will end up with data integrity or corruption issues.
 
-The reason you need a single server is because there is no way to guarantee transactional safety between servers. This is because we don't currently use database level locking, we only use application (c#) level locks to guarantee transactional data integrity which is only possible to work on one server. If you have multiple admins saving and publishing at once between servers then the order in which this data is read and written to the database absolutely must be consistent otherwise you will end up with data corruption. 
+The reason you need a single server is because there is no way to guarantee transactional safety between servers. This is because we don't currently use database level locking, we only use application (c#) level locks to guarantee transactional data integrity which is only possible to work on one server. If you have multiple admins saving and publishing at once between servers then the order in which this data is read and written to the database absolutely must be consistent otherwise you will end up with data corruption.
 
 Additionally the order in which cache instructions are written to the cache instructions table is very important for LB, this order is guaranteed by having a single admin server.
 

@@ -15,7 +15,7 @@ Umbraco Cloud takes care of installation, infrastructure and security. We also p
 
 When you’re ready to show your work to the world, Umbraco Cloud provides a safe deployment mechanism that makes it easy for you to publish to the web. When you have changes or updates to your site, Umbraco Cloud has got you covered: An easy to follow process for moving, testing and deploying your changes to your public site.
 
-With all the success you’ll have building your site with Umbraco Cloud you’ll want to add more, which is done using the same account and team members - all this is done from one single place: 
+With all the success you’ll have building your site with Umbraco Cloud you’ll want to add more, which is done using the same account and team members - all this is done from one single place:
 
 [Learn more and sign up for Umbraco Cloud](https://umbraco.com/campaigns/try-umbraco-today/)
 
@@ -35,7 +35,7 @@ To start working with and building your site, you can either work directly in th
 
 When you create a trial project for the first time, a unique project name will be generated for you - and a project color will be chosen for you at random.
 
-When you create a project from the Umbraco Cloud Portal you will get to choose your own name for the project. You will also be able to choose which color the project should have in your projects overview.  
+When you create a project from the Umbraco Cloud Portal you will get to choose your own name for the project. You will also be able to choose which color the project should have in your projects overview.
 
 You can at any time change the name of your project by using the [*Rename project*](../Set-up/project-settings/#renaming-and-deleting) option from the *Settings* menu.
 

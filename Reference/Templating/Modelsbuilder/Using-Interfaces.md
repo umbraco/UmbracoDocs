@@ -32,4 +32,3 @@ You can then render the partial from your Master Template with something like th
     @Html.Partial("Metatags")
 </head>
 ```
-

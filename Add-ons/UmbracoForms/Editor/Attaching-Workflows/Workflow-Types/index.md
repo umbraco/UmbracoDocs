@@ -37,7 +37,7 @@ In the configuration you can configure the following settings:
 
 * Path - where to save the XML file (required)
 * File extension (required)
-* XsltFile - used to transform the XML 
+* XsltFile - used to transform the XML
 
 ## Save as Umbraco Content Node
 
@@ -74,7 +74,7 @@ The following settings can be configured:
 
 ![Send email with template](images/send-email-razor.png)
 
-This workflow will use a template to send the results of the form to a specified email address. 
+This workflow will use a template to send the results of the form to a specified email address.
 
 You can create your own custom Razor templates to be used to send out emails upon forms submission. Read more about how to create these templates in the [Email Templates](../../../Developer/Email-Templates) article.
 

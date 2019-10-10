@@ -29,7 +29,7 @@ The Media section contains the media for the website. By default you can create 
 ## Settings
 The Settings section is where you can work with the website layout files, languages, and define media and content types. In this section you can also find the Log Viewer to browse through your log files.
 
-The Settings tree consists of: 
+The Settings tree consists of:
 
 - Document Types
 - Media Types

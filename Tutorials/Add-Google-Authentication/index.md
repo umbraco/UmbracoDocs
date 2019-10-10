@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
+needsV8Update: "false"
 ---
 
 
@@ -8,7 +8,7 @@ needsV8Update: "true"
 
 ## Overview
 
-This guide takes you through the steps to setup a Google login for the Umbraco backoffice. 
+This guide takes you through the steps to setup a Google login for the Umbraco backoffice.
 
 ### What is a Google login?
 
@@ -32,7 +32,7 @@ Here is what you will need for this tutorial:
 
 ## Setting up a Google OAuth API
 
-The first thing to do is set up a Google API. To do this you need to go to https://console.developers.google.com/, then log in with your Google account. 
+The first thing to do is set up a Google API. To do this you need to go to https://console.developers.google.com/, then log in with your Google account.
 
 The first thing to do is to add a new API, you may have some already if you are using Firebase or any other Google product, but click the + at the top:
 
@@ -55,7 +55,7 @@ Now, fill in your email and leave the page open - you will need the Client ID an
 
 ## Installing Visual Studio packages
 
-Now that you have the Google API all set up you have to go to your existing solution in Visual Studio. If you don't know how to clone down a Cloud site to use in Visual Studio then there is an excellent guide [here!](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Visual-Studio/) 
+Now that you have the Google API all set up you have to go to your existing solution in Visual Studio. If you don't know how to clone down a Cloud site to use in Visual Studio then there is an excellent guide [here!](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Visual-Studio/)
 
 In Visual Studio, go to the Tools menu, then NuGet Package Manager - Package Manager Console. This adds a package manager console at the bottom where you can install packages with commands. In this console write the following:
 
@@ -69,7 +69,7 @@ Depending on which version of Umbraco you are using, you might run into some dep
 
 `Update-Package Package.Name -Reinstall`
 
-This will update the package and dependencies, and clear out the issues. 
+This will update the package and dependencies, and clear out the issues.
 
 Now we need to build the website again then try to run it. Hopefully you reach the Umbraco page like I did:
 
@@ -103,11 +103,11 @@ Add this in the file as seen here:
 
 The ConfigurationManager is missing a dependency so add the following at the top: `using System.Configuration;`
 
-Finally open the web.config file in the root folder, here we will need to set the client id and secret from the google api. But first locate the code that says 
-`<add key="owin:appStartup" value="UmbracoDefaultOwinStartup" />` and change the value to 
+Finally open the web.config file in the root folder, here we will need to set the client id and secret from the google api. But first locate the code that says
+`<add key="owin:appStartup" value="UmbracoDefaultOwinStartup" />` and change the value to
 `<add key="owin:appStartup" value="UmbracoStandardOwinStartup" />`
 
-Then add the following in the appSettings as well: 
+Then add the following in the appSettings as well:
 
 ```xml
 <add key="GoogleOAuthClientID" value="this is where you paste in the client id"/>

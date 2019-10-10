@@ -52,7 +52,7 @@ namespace MyProject.EventHandlers
                 {
                     // get the rich text value
                     var val = c.GetValue<string>("richText");
-                    // if there is a rich text value, set a default value in a 
+                    // if there is a rich text value, set a default value in a
                     // field called 'excerpt' that is the first
                     // 200 characters of the rich text value
                     c.SetValue("excerpt", val == null
@@ -83,7 +83,7 @@ It's important to understand the difference between the methods that you can use
   * _Executes 2nd_
 * ApplicationStarted
   * __This will be the most common method to put logic in__
-  * Executes when the Umbraco boot sequence is complete, after resolution is frozen so you can retrieve objects from the plugin resolvers. 
+  * Executes when the Umbraco boot sequence is complete, after resolution is frozen so you can retrieve objects from the plugin resolvers.
   * You could access the Umbraco services in this method if you needed to
   * This executes __before__ ASP.NET has booted, before the global.asax Init method has executed and before any HttpModules have been initialized
   * _Executes 3rd_
@@ -93,15 +93,15 @@ If you want more control over execution you can override these properties:
 * ExecuteWhenApplicationNotConfigured
   * By default this is false but if you want these methods to fire even when the application is not configured you can override this property and return true
 * ExecuteWhenDatabaseNotConfigured
-	* By default this is false but if you want these methods to fire even if the database is not installed/ready then you can override this property and return true
+    * By default this is false but if you want these methods to fire even if the database is not installed/ready then you can override this property and return true
 
 ## Ordering (EXPERT)
 
-Handlers are ordered by (ascending) weight. By default, handlers from the Umbraco.* assemblies have a -100 weight whereas any other handler has a weight of +100. 
+Handlers are ordered by (ascending) weight. By default, handlers from the Umbraco.* assemblies have a -100 weight whereas any other handler has a weight of +100.
 
-A custom weight can be assigned to a handler by marking the class with the [WeightAttribute](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.ObjectResolution.WeightAttribute.html). Positive weights are considered "user-space" while negative weights are "core". 
+A custom weight can be assigned to a handler by marking the class with the [WeightAttribute](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.ObjectResolution.WeightAttribute.html). Positive weights are considered "user-space" while negative weights are "core".
 
-For example, the [CacheRefresherEventHandler](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Web.Cache.CacheRefresherEventHandler.html) is marked with `Weight(int.MinValue)` because its events need to run before anything else. 
+For example, the [CacheRefresherEventHandler](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Web.Cache.CacheRefresherEventHandler.html) is marked with `Weight(int.MinValue)` because its events need to run before anything else.
 
 Finally (very EXPERT), users can [register a filter](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.ObjectResolution.ApplicationEventsResolver.html#Umbraco_Core_ObjectResolution_ApplicationEventsResolver_FilterCollection) to process the list (after it has been ordered) and re-order it, or remove handlers.
 

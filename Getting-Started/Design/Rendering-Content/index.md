@@ -89,16 +89,16 @@ In many cases you want to do more than display values from the current page, lik
 
 You can do this by querying content relative to your current page in template views:
 
-```html
+```csharp
 <ul>
-    @foreach(var child in Model.Children())
+    @foreach (var child in Model.Children())
     {
         <li><a href="@child.Url">@child.Name</a></li>
     }
 </ul>
 ```
 
-You can use the Query Builder in the template editor to build more advanced queries
+You can use the Query Builder in the template editor to build more advanced queries.
 ![Query button](images/button-v8.png)
 
 ![Query helper](images/query-v8.png)

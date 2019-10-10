@@ -46,7 +46,7 @@ namespace MyNamespace
 
 1. Modify the `~/App_Start/UmbracoCustomOwinStartup.cs` class
 
-    * Replace the `app.ConfigureUserManagerForUmbracoBackOffice` call with a custom overload to specify your custom `IBackOfficeUserPasswordChecker`  
+    * Replace the `app.ConfigureUserManagerForUmbracoBackOffice` call with a custom overload to specify your custom `IBackOfficeUserPasswordChecker`
 
 ```C#
 var applicationContext = ApplicationContext.Current;

@@ -19,7 +19,7 @@ _Assumption: We are going to assume that our media item has an ID of **1234**, a
 ```csharp
 @{
     // We are using the TypedMedia method off of the Umbraco helper to retrieve our media item based on its ID.
-    var mediaItem = Umbraco.TypedMedia(1234);        
+    var mediaItem = Umbraco.TypedMedia(1234);
 
     // To get the url for your media item, you use the Url property on your media item.
     var url = mediaItem.Url
@@ -31,11 +31,11 @@ _Assumption: We are going to assume that our media item has an ID of **1234**, a
 But wait a second, if you are using Umbraco v7.4.0+ it now comes with [Models Builder](../../../Reference/Templating/Modelsbuilder/index.md). This means that you can use strongly typed models for your media items if Models Builder is enabled (which it is by default).
 
 ### Example 2: Accessing a typed image media item based on its ID
-As with example one, we are accessing a MediaType `image` using the same ID assumption. 
+As with example one, we are accessing a MediaType `image` using the same ID assumption.
 
 ```csharp
 @{
-    // We can use the OfType extension method to convert the IPublishedContent 
+    // We can use the OfType extension method to convert the IPublishedContent
     // returned by TypedMedia to the Models Builder implementation.
     var mediaItem = Umbraco.TypedMedia(1234).OfType<Image>();
 }
@@ -59,7 +59,7 @@ If your media type is for images and it has Image Cropper as the upload field (u
 
 ```csharp
 @{
-    // We can use the OfType extension method to convert the IPublishedContent 
+    // We can use the OfType extension method to convert the IPublishedContent
     // returned by TypedMedia to the Models Builder implementation.
     var mediaItem = Umbraco.TypedMedia(1234).OfType<Image>();
 }
@@ -67,7 +67,7 @@ If your media type is for images and it has Image Cropper as the upload field (u
 <img src="@mediaItem.GetCropUrl("myCropAlias")" />
 ```
 
-This example assumes that you have set up a crop called **myCropAlias** on your Image Cropper data type.        
+This example assumes that you have set up a crop called **myCropAlias** on your Image Cropper data type.
 
 If you want the original, uncropped image, you can ignore the GetCropUrl extension method and use one of the previously discussed approaches as shown below.
 

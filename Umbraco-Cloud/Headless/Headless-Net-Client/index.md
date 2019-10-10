@@ -5,7 +5,7 @@ versionFrom: 7.0.0
 # Headless .NET client
 
 :::warning
-Before you start, you'll need to create a Headless project on Cloud which can be done by following the instructions at __[umbraco.com/headless](https://www.umbraco.com/headless)__. 
+Before you start, you'll need to create a Headless project on Cloud which can be done by following the instructions at __[umbraco.com/headless](https://www.umbraco.com/headless)__.
 
 _Be aware that the Umbraco headless is still in beta._
 :::
@@ -16,7 +16,7 @@ _Below are examples for various types of projects_
 
 ### [ASP.NET Core MVC (Static route website)](website-static.md)
 
-_This example is for creating a statically routed website which means that it's a normal MVC application that defines it's own routes, like a brochure website. URLs will not be dynamic._
+_This example is for creating a statically routed website, which means that it's a normal MVC application that defines its own routes, like a brochure website. URLs will not be dynamic._
 
 ### [ASP.NET Core MVC (Content Managed website)](website-managed.md)
 
@@ -32,4 +32,4 @@ _This example shows how to build a traditional ASP.NET Framework website on Wind
 
 ### [Query data with the .NET Headless Client](Query.md)
 
-_This article will cover both basic queries where you filter on a document type and a single property but also more advanced ones where you can use either XPath or Lucene queries for maximum flexibility_
+_This article will cover both basic queries where you filter on a document type and a single property and more advanced ones where you can use either XPath or Lucene queries for maximum flexibility_

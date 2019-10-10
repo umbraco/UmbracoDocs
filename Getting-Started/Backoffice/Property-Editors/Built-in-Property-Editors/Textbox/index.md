@@ -32,8 +32,8 @@ Textbox is an HTML input control for text. It can be configured to have a fixed 
 
 ```csharp
 @{
-   if (Model.HasValue("pageTitle")){
-       <p>@(Model.Value("pageTitle"))</p>
-   }
+    if (Model.HasValue("pageTitle")){
+        <p>@(Model.Value("pageTitle"))</p>
+    }
 }
 ```
