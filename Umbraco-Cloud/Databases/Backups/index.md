@@ -5,8 +5,8 @@ versionFrom: 7.0.0
 # Database backups
 Sometimes you might need to have a backup of your Cloud database. This can be accomplished in at least two ways. This article will go through two of those options.
 
-- [Backup with SQL Server Management Studio](#Backup-with-SQL-server-management-studio).
-- [Backup with PowerShell Script](#Backup-with-PowerShell-Script)
+- [Backup with SQL Server Management Studio](#backup-with-sql-server-management-studio).
+- [Backup with PowerShell Script](#backup-with-powershell-script)
 
 ## Backup with SQL Server Management Studio
 Follow these steps:
