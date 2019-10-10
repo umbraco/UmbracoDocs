@@ -425,7 +425,7 @@ Get content by its content type.
 Use the content type alias to filter all returned content to that specific type.
 Example: `GET /content/type?contentType=product` gets all content based on the `product` content type.
 
-**URL**: `/content/type`
+**URL**: `/content/type?contentType={string=contentType}`
 
 **Method**: `GET`
 
@@ -433,7 +433,6 @@ Example: `GET /content/type?contentType=product` gets all content based on the `
 
 ```none
 ?hyperlinks={boolean=true}
-?contentType={string=product}
 ?page={integer=1}
 ?pageSize={integer=10}
 ```
