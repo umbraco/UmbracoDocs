@@ -441,6 +441,90 @@ Where 1075, is the id of our blog section, and BlogPost is the alias of the type
 
 ![Handy shortcut buttons](images/CreateNewBlogPost-v8.png)
 
+At this point we are done with the tutorial, your files should contain this:
+
+CustomWelcomeDashboardController:
+
+```js
+angular.module("umbraco").controller("CustomWelcomeDashboardController", function ($scope, userService, logResource, entityResource) {
+    var vm = this;
+    vm.UserName = "guest";
+    vm.UserLogHistory = [];
+
+    var user = userService.getCurrentUser().then(function (user) {
+        console.log(user);
+        vm.UserName = user.name;
+    });
+
+    var userLogOptions = {
+        pageSize: 10,
+        pageNumber: 1,
+        orderDirection: "Descending",
+        sinceDate: new Date(2018, 0, 1)
+    };
+
+    logResource.getPagedUserLog(userLogOptions)
+        .then(function (response) {
+            console.log(response);
+            vm.UserLogHistory = response;
+            var filteredLogEntries = [];
+            // Loop through the response, and flter out save log entries we are not interested in
+            angular.forEach(response.items, function (item) {
+                // if no entity exists -1 is returned for the nodeId (eg saving a macro would create a log entry without a nodeid)
+                if (item.nodeId > 0) {
+                    // check if we already grabbed this from the entityservice
+                    var nodesWeKnowAbout = [];
+                    if (nodesWeKnowAbout.indexOf(item.nodeId) !== -1)
+                        return;
+                    // find things the user saved
+                    if (item.logType === "Save" || item.logType === "SaveVariant") {
+                        // check if it is media or content
+                        if (item.entityType === "Document") {
+                            item.editUrl = "content/content/edit/" + item.nodeId;
+                        }
+                        if (item.entityType === "Media") {
+                            item.editUrl = "media/media/edit/" + item.nodeId;
+                        }
+
+                        if (typeof item.entityType !== 'undefined') {
+                            // use entityResource to retrieve details of the content/media item
+                            var ent = entityResource.getById(item.nodeId, item.entityType).then(function (ent) {
+                                console.log(ent);
+                                item.Content = ent;
+                            });
+
+                            nodesWeKnowAbout.push(ent.id);
+                            filteredLogEntries.push(item);
+                        }
+                    }
+                }
+            });
+            vm.UserLogHistory.items = filteredLogEntries;
+        });
+});
+```
+
+WelcomeDashboard.html:
+
+```html
+<div class="welcome-dashboard" ng-controller="CustomWelcomeDashboardController as vm">
+    <h1>Welcome {{vm.UserName}} to Umbraco</h1>
+    <p>We hope you find the experience of editing your content with Umbraco enjoyable and delightful. If you discover any problems with the site please report them to the support team at <a href="mailto:">support@popularumbracopartner.com</a></p>
+
+    <h2>We know what you edited last week...</h2>
+    <ul class="unstyled">
+        <li ng-repeat="logEntry in vm.UserLogHistory.items"><i class="{{logEntry.Content.icon}}"></i> <a href="/Umbraco/#/{{logEntry.editUrl}}">{{logEntry.Content.name}}</a> - <span class="text-muted">(Edited on: {{logEntry.timestamp  | date:'medium'}})</span></li>
+    </ul>
+
+    <div>
+        <a class="btn btn-primary btn-large" href="/umbraco/#/content/content/edit/1075?doctype=BlogPost&create=true">
+            <i class="icon-edit"></i>
+            Create New Blog Post
+        </a>
+    </div>
+</div>
+```
+
 ## Custom External Data - creating your own angular resource
 
 You can create your own custom angular services/resources, to interact with your own serverside data (using UmbracoAuthorizedJsonController), The property editor tutorial has a step explaining how to do this [part 4 - Adding server-side data to a property editor](../Creating-a-Property-Editor/part-4.md).
