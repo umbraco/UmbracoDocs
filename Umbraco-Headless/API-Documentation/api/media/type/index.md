@@ -22,7 +22,7 @@ If an error occours you will receive a HTTP status code along with an API error 
 | 400         | Bad Request          | Body cannot be empty.                                                    |
 | 401         | Unauthorized         | Authorization has been denied for this request.                          |
 | 403         | Forbidden            | You are not authorized to access the given resource.                     |
-| 404         | NotFound             | Media with id '{id}' could not be found.                                 |
+| 404         | NotFound             | Media Type with alias '{alias}' could not be found.                      |
 
 **JSON example**:
 
