@@ -16,9 +16,10 @@ TODO
 ## [API Documentation for the Umbraco Headless endpoints](API-Documentation/)
 
 Reference documentation for the two APIs available as well as details about common http headers, versioning, REST Standard and how to work with authentication and authorization.
-[Authentication and Authorization](API-Documentation/#authentication-and-authorization)
-[Content Delivery API](API-Documentation/#content-delivery-api)
-[Content Management API](API-Documentation/#content-management-api)
+
+- [Authentication and Authorization](API-Documentation/#authentication-and-authorization)
+- [Content Delivery API](API-Documentation/#content-delivery-api)
+- [Content Management API](API-Documentation/#content-management-api)
 
 ## Getting Started with Headless
 
