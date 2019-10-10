@@ -25,6 +25,19 @@ Store the Umbraco temporary files in the local server's 'temp' folder. Achieve t
 <add key="Umbraco.Core.LocalTempStorage" value="EnvironmentTemp" />
 ```
 
+### Umbraco PublishedCache
+
+When Azure Web Apps auto transition between hosts, you scale the instances or you utilise slot swapping you may experience issues with the Umbraco Published Cache becoming locked unless it is configured to ignore the local database. 
+
+A composer is required to configure this option
+
+```csharp
+composition.Register(factory => new PublishedSnapshotServiceOptions
+{
+    IgnoreLocalDb = true
+});
+```
+
 ### Steps to set-up a environment
 
 1. Create an Azure SQL database

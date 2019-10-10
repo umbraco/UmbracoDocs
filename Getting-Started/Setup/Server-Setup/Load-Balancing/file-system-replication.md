@@ -8,13 +8,15 @@ If the file system on your servers isn't performing any file replication then no
 
 Depending on the configuration and performance of the local storage you might need to consider Examine Directory Factory Options and the Umbraco temporary storage location. 
 
-## Synchronised/replicated file system
+## Synchronised/replicated or shared file system
 
 If the file system on your servers is performing file replication then the Umbraco temporary folder must be excluded from replication.
 
+If the file system on your servers is located on shared storage you will need to configure Umbraco to locate the Umbraco temporary folder outside of the shared storage.
+
 ### Replication techniques
 
-A common way to replicate files on Windows Server is to use [DFS](https://msdn.microsoft.com/en-us/library/windows/desktop/bb540031(v=vs.85).aspx), which is included with Windows Server.
+A common way to replicate files on Windows Server is to use [DFS](https://msdn.microsoft.com/en-us/library/windows/desktop/bb540031(v=vs.85), which is included with Windows Server.
 
 Additional DFS resources:
 
@@ -52,7 +54,7 @@ IIS configuration is pretty straightforward with file replication. IIS is only r
 
 In some scenarios you have a mixture of replicated and not replicated. An example of this is Azure Web Apps where the file system isn't replicated between back office and front servers but is synchronised between front end servers, in this configuration you should follow the steps for synchronised file systems.
 
-There is a specific guide for load balancing with [Azure Web Apps](azure-web-apps.md)
+There is a specific documentation for load balancing with [Azure Web Apps](azure-web-apps.md)
 
 ## Examine Directory Factory Options
  
