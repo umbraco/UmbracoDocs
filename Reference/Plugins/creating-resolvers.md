@@ -45,7 +45,7 @@ All you need to do is inherit from `Umbraco.Core.ObjectResolution.SingleObjectRe
 
 In the example above we have a constructor that accepts a default `IErrorLogger`. Normally in Umbraco this resolver will be constructed in a `IBootManager` with a default object. The we expose a method to allow developers to change to a custom `IErrorLogger` at runtime called `SetErrorLogger`. Then we create a property to expose the `IErrorLogger` called ErrorLogger.
 
-Its usage is then very easy:
+Example:
 
 ```csharp
 // get the error logger
@@ -57,7 +57,7 @@ ErrorLoggerResolver.Current.SetErrorLogger(new MyCustomErrorLogger("../my-file-p
 
 ## Creating a multiple object resolver
 
-Creating a multiple object resolver is just as simple. As an example we'll create a LanguageConvertersResolver.
+Creating a multiple object resolver is similar. As an example we'll create a LanguageConvertersResolver.
 
 :::note
 The naming convention for multiple objects resolvers are plural: We've named this LanguageConverter**s**Resolver with a pluralized 'Converters' to denote that this resolver returns multiple objects

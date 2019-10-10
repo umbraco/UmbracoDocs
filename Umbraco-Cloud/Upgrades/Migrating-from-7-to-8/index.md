@@ -45,7 +45,7 @@ Should something fail during the migration, the Development environment can alwa
 :::note
 Please be aware that this is **only a content migration**.
 
-The database will be migrated, but upgrading view files and custom code and implementation is a manual process. 
+The database will be migrated, but upgrading view files and custom code and implementation is a manual process.
 
 See [Step 3](#Step-3-setup-custom-code-for-umbraco-8) of this guide, for more detail on this.
 :::
@@ -69,7 +69,7 @@ See [Step 3](#Step-3-setup-custom-code-for-umbraco-8) of this guide, for more de
 * Generate UDA files by running the following command: `echo > deploy-export`
 * Once a `deploy-complete` marker is added to the `~/data` folder, it is done
 * Check `~/data/revision` to ensure all the UDA files have been generated
-* Run `echo > deploy` in the `~/data` folder to make sure everything checks out with the UDA files just generated
+* Run `echo > deploy` in the `~/data` folder to make sure everything checks out with the UDA files that was generated
 * This check will result in either of the two:
     * `deploy-failed`
         * Something failed during the check

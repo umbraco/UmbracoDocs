@@ -10,19 +10,19 @@ versionFrom: 7.0.0
 
 `Returns: JArray` if value converters are disabled
 
-Related Links allows an editor to easily add an array of links. These can either be internal Umbraco pages or external URLs.
+Related Links allows an editor to add an array of links. These can either be internal Umbraco pages or external URLs.
 
 ## Data Type Definition Example
 
 ![Related Links Data Type Definition](images/Related-Links-DataType.jpg)
 
-## Content Example 
+## Content Example
 
 ![Media Picker Content](images/Related-Links-Content.jpg)
 
 ## MVC View Example - [value converters enabled](../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
 
-### Typed:
+### Typed
 
 ```csharp
 @using Umbraco.Web.Models
@@ -44,11 +44,11 @@ Related Links allows an editor to easily add an array of links. These can either
 
 ## MVC View Example - [value converters disabled](../../../Setup/Upgrading/760-breaking-changes.md#property-value-converters-u4-7318)
 
-### Typed:
+### Typed
 
 ```csharp
 @using Newtonsoft.Json.Linq
-@{      
+@{
     if (Model.Content.HasValue("relatedLinks") && Model.Content.GetPropertyValue<string>("relatedLinks").Length > 2)
     {
         <ul>
@@ -63,7 +63,7 @@ Related Links allows an editor to easily add an array of links. These can either
 }
 ```
 
-### Dynamic:
+### Dynamic
 
 ```csharp
 @{

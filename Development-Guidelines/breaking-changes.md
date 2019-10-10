@@ -12,7 +12,7 @@ This section describes what a breaking change is in regards to the Umbraco codeb
 
 ## Security
 
-If a security issue arises with part of the Umbraco code base that requires changing the behavior or signatures of the code and no other option is available to mitigate the security issue, then this type of breaking change will be released during a minor version of Umbraco. If this scenario occurs, there will be documentation available for how to update your site to the fixed version.
+If a security issue arises with part of the Umbraco code base that requires changing the behavior or signatures of the code and no other option is available to mitigate the security issue, a breaking change will be released. This will be a minor version of Umbraco. If this scenario occurs, there will be documentation available for how to update your site to the fixed version.
 
 ## Dependencies
 
@@ -20,7 +20,7 @@ If a c# or JavaScript dependency is added or removed from the code base, a nuget
 
 ## API Design
 
-As the product evolves and more features are added, there may be rare circumstances where a current API's design falls short of the new feature set and doesn't provide a very friendly developer experience. If this circumstance occurs, it may be required that existing API signatures must evolve during a minor release. In this scenario investigation will be done to see what alternatives might exist to avoid sharp breaking changes though in some cases it will simply not be possible. Generally changes like this would be done in major versions but will be done in a minor version if the pros of changing these API signatures outweigh the cons of both breaking the signatures and releasing a major version.
+As the product evolves and more features are added, there may be rare circumstances where a current API's design falls short of the new feature set and doesn't provide a very friendly developer experience. If this circumstance occurs, it may be required that existing API signatures must evolve during a minor release. In this scenario investigation will be done to see what alternatives might exist to avoid sharp breaking changes though in some cases it will not be possible. Generally changes like this would be done in major versions but will be done in a minor version if the pros of changing these API signatures outweigh the cons of both breaking the signatures and releasing a major version.
 
 ## General codebase
 
@@ -29,36 +29,36 @@ As the product evolves and more features are added, there may be rare circumstan
 * Any changes to the installation objects, classes, interfaces, views, client files, etc... are not considered breaking changes
 
 * Any changes to the interfaces in the namespaces `Umbraco.Core.Services`, `Umbraco.Core.Models`, `Umbraco.Core.Models.Membership`,  are not considered breaking changes
-	* Even though changes to an interface are normally considered breaking, these interfaces should not be implemented except by the core code and therefore we do not consider changes to these interfaces as breaking changes.
+    * Even though changes to an interface are normally considered breaking, these interfaces should not be implemented except by the core code and therefore we do not consider changes to these interfaces as breaking changes.
 
 * Changes to class inheritance are not considered breaking if they do not break API usage
-	* Take the following for example, if in v6 a class exists called `MyClass` with the following structure:
-		
-		```csharp
-		public class MyClass 
-		{
-			public int Id {get;set;}
-			public string Name {get;set;}
-		}
-		```
-		
-	* Then in v6.1 the class structure changes to this:
+    * Take the following for example, if in v6 a class exists called `MyClass` with the following structure:
 
-		```csharp
-		public class MyClass : MySubClass
-		{
-			public string Name {get;set;}    			
-		}
+        ```csharp
+        public class MyClass
+        {
+            public int Id {get;set;}
+            public string Name {get;set;}
+        }
+        ```
 
-		public class MySubClass
-		{
-			public int Id {get;set;}
-		}
-		```
-		
-	* With the above change, any API usage of MyClass will not break, however, if a developer is using reflection to target `MyClass` explicitly, in some cases this will break the reflection call. We **do not** consider these types of changes as breaking changes.
+    * Then in v6.1 the class structure changes to this:
+
+        ```csharp
+        public class MyClass : MySubClass
+        {
+            public string Name {get;set;}
+        }
+
+        public class MySubClass
+        {
+            public int Id {get;set;}
+        }
+        ```
+
+    * With the above change, any API usage of MyClass will not break, however, if a developer is using reflection to target `MyClass` explicitly, in some cases this will break the reflection call. We **do not** consider these types of changes as breaking changes.
 * Changes made to any non-public or non-protected property, methods, interfaces or classes are not considered breaking
-	* Generally these types of changes will never break a developers usage unless they are using reflection to target non-public/non-protected objects. 
+    * Generally these types of changes will never break a developers usage unless they are using reflection to target non-public/non-protected objects.
 
 ### Breaking
 
@@ -84,7 +84,7 @@ As the product evolves and more features are added, there may be rare circumstan
 ### Breaking
 
 * Changing the file location of CSS or Images is a breaking change
- 
+
 _It is advised to use Umbraco's Angular directives if you wish to create backoffice components, this will mean that you are not referencing CSS or Html markup directly_
 
 ## JavaScript
@@ -100,7 +100,7 @@ _It is advised to use Umbraco's Angular directives if you wish to create backoff
 * Changes made to publicly accessible APIs that are documented
 * Changing the location of JavaScript library files
 * Changing the alias of AngularJS controller, service or directive
- 
+
 ## Database
 
 ### Non-breaking

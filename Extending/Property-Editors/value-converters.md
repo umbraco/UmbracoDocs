@@ -7,7 +7,7 @@ needsV8Update: "true"
 
 **Applies to Umbraco 7 and newer**
 
-A Property Value Converter converts a property editor's database-stored value to another type. The converted value can be accessed from MVC Razor or any other Published Content API. 
+A Property Value Converter converts a property editor's database-stored value to another type. The converted value can be accessed from MVC Razor or any other Published Content API.
 
 Starting with Umbraco v7, published property values have four "Values":
 
@@ -32,7 +32,7 @@ public class ContentPickerPropertyConverter : IPropertyValueConverter
 
 ### bool IsConverter(PublishedPropertyType propertyType) ###
 
-This method is called for each PublishedPropertyType (document type property) at application startup. By returning `True` your value converter will be registered for that property type and your conversion methods will be executed when ever that value is requested. 
+This method is called for each PublishedPropertyType (document type property) at application startup. By returning `True` your value converter will be registered for that property type and your conversion methods will be executed when ever that value is requested.
 
 Example: Checking if the PublishedPropertyType PropertyEditorAlias property is equal to the alias of the core content editor
 
@@ -62,9 +62,9 @@ public object ConvertDataToSource(PublishedPropertyType propertyType, object dat
 
 ### object ConvertSourceToObject(PublishedPropertyType propertyType, object source, bool preview) ###
 
-This method converts the Source to an Object, the returned value is used by the `GetPropertyValue<T>` method of `IPublishedContent`. 
+This method converts the Source to an Object, the returned value is used by the `GetPropertyValue<T>` method of `IPublishedContent`.
 
-The below example converts the nodeId (converted to Int by ConvertDataToSource) into an IPublishedContent object using the UmbracoHelper TypedContent method.  
+The below example converts the nodeId (converted to Int by ConvertDataToSource) into an IPublishedContent object using the UmbracoHelper TypedContent method.
 
 ```csharp
 public object ConvertSourceToObject(PublishedPropertyType propertyType, object source, bool preview)
@@ -154,7 +154,7 @@ public PropertyCacheLevel GetPropertyCacheLevel(PublishedPropertyType propertyTy
     switch (cacheValue)
     {
         case PropertyCacheValue.Object:
-            return PropertyCacheLevel.ContentCache; 
+            return PropertyCacheLevel.ContentCache;
 
         case PropertyCacheValue.Source:
             return PropertyCacheLevel.Content;

@@ -43,7 +43,7 @@ See [Writing out Umbraco Grid Properties](../../Backoffice/Property-Editors/Buil
 
 The `.Value()` method has a number of optional parameters that support scenarios where we want to "fall-back" to some other content, when the property value does not exist on the current content item.
 
-Most simply, we can display a static, default value when a property value is not populated on the current content item:
+We can display a static, default value when a property value is not populated on the current content item:
 
 ```csharp
 @Model.Value("pageTitle", fallback: Fallback.ToDefaultValue, defaultValue: "Default page title")
@@ -85,20 +85,20 @@ We can use similar overloads when working with ModelsBuilder, for example:
 ![Configuring fall-back languages](images/language-fallback.png)
 
 ## Query content
-In many cases you want to do more then just display values from the current page, like creating a list of pages in a navigation. You can access content relative to the current page using methods such as `Children()`, `Descendants()` & `Ancestors()`. Explore the [full list of methods](../../../Reference/Templating/Mvc/querying.md#traversing).
+In many cases you want to do more than display values from the current page, like creating a list of pages in a navigation. You can access content relative to the current page using methods such as `Children()`, `Descendants()` & `Ancestors()`. Explore the [full list of methods](../../../Reference/Templating/Mvc/querying.md#traversing).
 
 You can do this by querying content relative to your current page in template views:
 
-```html
+```csharp
 <ul>
-    @foreach(var child in Model.Children())
+    @foreach (var child in Model.Children())
     {
         <li><a href="@child.Url">@child.Name</a></li>
     }
 </ul>
 ```
 
-You can use the Query Builder in the template editor to build more advanced queries
+You can use the Query Builder in the template editor to build more advanced queries.
 ![Query button](images/button-v8.png)
 
 ![Query helper](images/query-v8.png)

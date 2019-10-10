@@ -8,7 +8,7 @@ versionFrom: 8.0.0
 
 `Returns: Integer`
 
-Numeric is a simple HTML input control for entering numbers. Since it's a standard HTML element the options and behaviour are all controlled by the browser and therefore is beyond the control of Umbraco.
+Numeric is an HTML input control for entering numbers. Since it's a standard HTML element the options and behaviour are all controlled by the browser and therefore is beyond the control of Umbraco.
 
 ## Data Type Definition Example
 
@@ -25,12 +25,12 @@ This allows you to set up a maximum value. If you will always need a maximum val
 
 ## Settings
 
-## Content Example:
+## Content Example
 
 ![Numeric Content Definition](images/numeric-content.png)
 
 
-## MVC View Examples:
+## MVC View Examples
 
 ### Rendering the output casting to an int
 By casting the output as an int it's possible for you to do mathematical operations with the value.

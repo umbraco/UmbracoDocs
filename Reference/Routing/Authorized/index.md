@@ -29,19 +29,21 @@ If you are using MVC in the backoffice then you would normally inherit from `Umb
 For more information on authenticated/authorized controllers & attributes see the [Controllers Documentation](../../../Implementation/Controllers/index.md).
 
 ## Defining a route
-When you create a controller that inherits from `Umbraco.Web.Mvc.UmbracoAuthorizedController` you need to explicitly define a route.  
+When you create a controller that inherits from `Umbraco.Web.Mvc.UmbracoAuthorizedController` you need to explicitly define a route.
 Defining a route is done with the standard ASP.NET MVC routing practices. In Umbraco, you will normally create custom routes in the initialize() method of a c# class implementing `Umbraco.Core.Composing.IComponent` similar to the following:
 
 ```csharp
     public class RegisterCustomBackofficeMvcRouteComponent : IComponent
     {
-       private readonly IGlobalSettings _globalSettings;
+        private readonly IGlobalSettings _globalSettings;
+
         public RegisterCustomBackofficeMvcRouteComponent(IGlobalSettings globalSettings)
         {
             _globalSettings = globalSettings;
         }
+
         public void Initialize()
-        {           
+        {
             RouteTable.Routes.MapRoute("cats", _globalSettings.GetUmbracoMvcArea() + "/backoffice/cats/{action}/{id}", new
             {
                 controller = "cats",
@@ -52,7 +54,7 @@ Defining a route is done with the standard ASP.NET MVC routing practices. In Umb
 
         public void Terminate()
         {
-            throw new NotImplementedException();
+            // Nothing to terminate
         }
     }
 ```

@@ -40,12 +40,12 @@ The process is as follows:
 * Administrators and editors create, update, delete data/content on the master server
 * These events are converted into data structures called "instructions" and are stored in the database in a queue
 * Each front-end server checks to see if there are any outstanding instructions it hasn't processed yet
-* When a front-end server detects that there are pending instructions, it downloads them and processes them and in turn updates it's cache, cache files and indexes on its own file system
+* When a front-end server detects that there are pending instructions, it downloads them and processes them and in turn updates its cache, cache files and indexes on its own file system
 * There can be up to a 5 second delay between content updates and a front-end server's refreshing, this is expected and normal behaviour.
 
 ## Scheduling and master election
 
-Although there is a Master server designated for administration, by default this is not explicitly set as the "Scheduling server". 
+Although there is a Master server designated for administration, by default this is not explicitly set as the "Scheduling server".
 In Umbraco there can only be a single scheduling server which performs the following 3 things:
 
 * Keep alive service - to ensure scheduled publishing occurs
@@ -55,27 +55,26 @@ In Umbraco there can only be a single scheduling server which performs the follo
 Flexible Load Balancing will automatically elect a "Scheduling server" to perform the above services. This means
 that all of the servers will need to be able to resolve the URL of either: itself, the Master server, the internal load balancer or the public address.
 
-For example, In the following diagram the slave node **f02.mysite.local** is the elected "Scheduling server". In order for scheduling to work it needs to be able to send
-requests to itself, the Master server, the internal load balancer or the public address. The address used by the "Scheduling server" is called the "umbracoApplicationUrl". 
+For example, In the following diagram the replica node **f02.mysite.local** is the elected "Scheduling server". In order for scheduling to work it needs to be able to send
+requests to itself, the Master server, the internal load balancer or the public address. The address used by the "Scheduling server" is called the "umbracoApplicationUrl".
 
 ![Umbraco flexible load balancing diagram](images/flexible-load-balancing-scheduler.png)
 
 By default, Umbraco will set the "umbracoApplicationUrl" to the address made by the first accepted request when the AppDomain starts.
 It is assumed that this address will be a DNS address that the server can resolve.
 
-For example, if a public request reached the load balancer on "www.mysite.com", the load balancer may send the request on to the servers with the original address: "www.mysite.com" 
-so by default the "umbracoApplicationUrl" will be "www.mysite.com". However, load balancers may route the request internally under a different DNS name such as "f02.mysite.local" which 
-by default would mean the "umbracoApplicationUrl" is "f02.mysite.local". In any case the elected "Scheduling server" must be able to resolve this address. 
+For example, if a public request reached the load balancer on `www.mysite.com`, the load balancer may send the request on to the servers with the original address: `www.mysite.com`. By default the "umbracoApplicationUrl" will be `www.mysite.com`. However, load balancers may route the request internally under a different DNS name such as "f02.mysite.local" which
+by default would mean the "umbracoApplicationUrl" is "f02.mysite.local". In any case the elected "Scheduling server" must be able to resolve this address.
 
 In many scenarios this is fine, but in case this is not adequate there's a few of options you can use:
 
-* __Recommended__: [set your front-end(s) (non-admin server) to be explicit slave servers](flexible-advanced.md#explicit-master-scheduling-server) which means they will never be used as the master scheduler
+* __Recommended__: [set your front-end(s) (non-admin server) to be explicit replica servers](flexible-advanced.md#explicit-master-scheduling-server) which means they will never be used as the master scheduler
 * set the `umbracoApplicationUrl` property in the [Web.Routing section of /Config/umbracoSettings.config](../../../../Reference/Config/umbracoSettings/index.md)
 * or in an [`ApplicationStarting` event of an application startup handler](../../../../Reference/Events/Application-Startup.md) you can specify a custom delegate to return the base url for a node by setting [`ApplicationUrlHelper.ApplicationUrlProvider`](https://github.com/umbraco/Umbraco-CMS/blob/75c2b07ad3a093b5b65b6ebd45697687c062f62a/src/Umbraco.Core/Sync/ApplicationUrlHelper.cs#L21)
 
 ## Umbraco Configuration files
 
-There isn't any _Umbraco_ configuration file changes necessary. **You must not enable the distributed calls flag in the umbracoSettings.config** file for Flexible Load Balancing to work, that is purely for Traditional load balancing. 
+There isn't any _Umbraco_ configuration file changes necessary. **You must not enable the distributed calls flag in the umbracoSettings.config** file for Flexible Load Balancing to work, that is purely for Traditional load balancing.
 
 There are some Examine/Logging config file updates needed (see below and the [Overview](index.md))
 
@@ -100,12 +99,12 @@ Examine v0.1.80 introduced a new `directoryFactory` named `SyncTempEnvDirectoryF
 directoryFactory="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory,Examine"
 ```
 
-The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory. This setting is needed because Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Any time the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local environment temp files are cleared out that the index files can be restored from the centrally stored index files.  
+The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory. This setting is needed because Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Any time the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local environment temp files are cleared out that the index files can be restored from the centrally stored index files.
 
 #### Pre Examine v0.1.80 ####
 
 * In ExamineSettings.config, you can add these properties to all of your indexers and searchers: `useTempStorage="Sync" tempStorageDirectory="UmbracoExamine.LocalStorage.AzureLocalStorageDirectory, UmbracoExamine"`
-* The 'Sync' setting will store your indexes in the local workers file system instead of Azure Web Apps' 
+* The 'Sync' setting will store your indexes in the local workers file system instead of Azure Web Apps'
 remote file system. Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Anytime the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local temp files are cleared out that the index files can be restored from the centrally stored index files. If you see issues with this syncing process (in your logs), you can also change this value to be 'LocalOnly' which will only persist the index files to the local file system but this does mean they will be rebuilt when the website is migrated between Azure workers.
 
 ### If you plan on using auto-scaling
@@ -120,7 +119,7 @@ Examine v0.1.83 introduced a new `directoryFactory` named `TempEnvDirectoryFacto
 directoryFactory="Examine.LuceneEngine.Directories.TempEnvDirectoryFactory,Examine"
 ```
 
-The `TempEnvDirectoryFactory` allows Examine to store indexes directly in the environment temporary storage directory, and should be used instead of `SyncTempEnvDirectoryFactory` mentioned above. 
+The `TempEnvDirectoryFactory` allows Examine to store indexes directly in the environment temporary storage directory, and should be used instead of `SyncTempEnvDirectoryFactory` mentioned above.
 
 #### Pre Examine v0.1.83 ####
 
@@ -129,7 +128,7 @@ In ExamineIndex.config, you need to tokenize the path for each of your indexes t
 * Azure web apps migrates your site between workers without warning which means the {machinename} will change and your index will be rebuilt when this occurs
 * When you scale out (increase the number of workers), the new worker will also rebuild its own index
 
-We are working towards being able to mitigate these issues by adding the ability to store a master index in blob storage so that when new workers come online they can sync the existing index locally (this is not yet in place)
+We are working towards being able to mitigate these issues by adding the ability to store a master index in blob storage. That way, when new workers come online they can sync the existing index locally (this is not yet in place).
 
 ### Umbraco XML cache file and other TEMP files
 
@@ -154,7 +153,7 @@ This will set Umbraco to store `umbraco.config` in the environment temporary fol
 For **Umbraco Pre v7.6**
 
 ```xml
-<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
+<add key="umbracoContentXMLUseLocalTemp" value="true" />
 ```
 
 This will set Umbraco to store `umbraco.config` in the ASP.NET temporary folder
@@ -174,7 +173,7 @@ Azure Web Apps can be manually or automatically scaled up or down and is support
 
 ### Deployment considerations
 
-Since you have 2 x web apps, when you deploy you will need to deploy to both places - There is probably various automation techniques you can use to make this simple (this is outside the scope of this document)
+Since you have 2 x web apps, when you deploy you will need to deploy to both places - There is probably various automation techniques you can use to make this more basic. That is outside the scope of this article.
 
 **Important note:** This also means that you should not be editing templates or views on a live server as master and front-end environments do not share the same file server. Changes should be made in a staging environment and then pushed to live environments.
 
@@ -188,8 +187,7 @@ Ensure you read the [overview](index.md) before you begin - you will need to ens
 
 ### Scaling
 
-Scaling will still be a slightly manual process because it would involve you adding servers/sites but with flexible load balancing you don't have to configure anything in Umbraco,
-you just need to point the site to the Umbraco database and update your load balancer to include the site.
+Scaling will be a slightly manual process because it would involve you adding servers/sites. With flexible load balancing you don't have to configure anything in Umbraco. You only need to point the site to the Umbraco database and update your load balancer to include the site.
 
 ## Option #3 : File Storage on SAN/NAS/Clustered File Server/Network Share
 
@@ -199,8 +197,7 @@ Configuring your servers to work using a centrally located file system that is s
 
 ### Scaling
 
-Scaling will still be a slightly manual process because it would involve you adding servers/sites but with flexible load balancing you don't have to configure anything in Umbraco,
-you just need to point the site to the Umbraco database and update your load balancer to include the site.
+Scaling will be a slightly manual process because it would involve you adding servers/sites. With flexible load balancing you don't have to configure anything in Umbraco. You only need to point the site to the Umbraco database and update your load balancer to include the site.
 
 ## Advanced techniques
 

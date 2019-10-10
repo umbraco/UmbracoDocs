@@ -132,21 +132,21 @@ Let's break it down.
 
 **`<scriptFolderpath>`**
 As the comment above says, this is where you can define the directory on the disk where script files should be read from. If you keep you scripts in
-another folder structure like /frontend/scripts then simply change the value to **`<scriptFolderPath>/frontend/scripts</scriptFolderPath>`**
+another folder structure like /frontend/scripts then change the value to **`<scriptFolderPath>/frontend/scripts</scriptFolderPath>`**
 
 **`<scriptFileTypes>`**
 As the comment above says, this is where you can define what files can be opened/created in the script editor in a comma-separated list.
 
 **`<scriptDisableEditor>`**
-As the comments above say, this is where you can decide whether you want to just edit the code in a simple textarea or you want to have a more advanced editor available.
-If you change the value to "true" then you will see the code in a simple textarea instead.
+As the comments above say, this is where you can decide whether you want to edit the code in a textarea or you want to have a more advanced editor available.
+If you change the value to "true" then you will see the code in a textarea instead.
 
 **`<UploadAllowDirectories>`**
 
 This setting let's you control if an upload control can create new folders for files uploaded, or if the file should be stored in the /media folder root with a unique ID prefixed to the filename.
 
 ```xml
-<!-- 
+<!--
 should Umbraco store the uploaded files like /media/xxx/filename.ext or like /media/xxx-filename.ext
 should be set to false if the application pool's user account hasn't got read rights of the drive root up to the /media directory
 -->
@@ -160,7 +160,7 @@ In case of a 404 error (page not found) Umbraco can return a default page instea
 ```xml
 <errors>
     <!-- The id of the page that should be shown if the page is not found -->
-    <!-- 
+    <!--
     <error404>
         <errorPage culture="default">1</errorPage>
         <errorPage culture="en-US">200</errorPage>
@@ -203,7 +203,7 @@ happens if you for some reason forget to define a hostname on a site.
 
 #### Errors and IIS7+
 
-You may find that your custom error page doesn't show, and instead IIS handles the error. To resolve this add the following key to your web.config just before the closing tag of the system.webServer section.
+You may find that your custom error page doesn't show, and instead IIS handles the error. To resolve this add the following key to your web.config right before the closing tag of the system.webServer section.
 
 ```xml
 <httpErrors existingResponse="PassThrough" />
@@ -297,7 +297,7 @@ Checks if the disk cache file has been updated and if so, clears the in-memory c
 
 **`<EnableSplashWhileLoading>`**
 
-In case Umbraco is taking a bit of time to prepare content to display you can display a "loading, please wait..." splash screen to your users. Simply change the value to "True".
+In case Umbraco is taking a bit of time to prepare content to display you can display a "loading, please wait..." splash screen to your users. Change the value to "True".
 
 ```xml
 <!-- Show the /config/splashes/booting.aspx page while initializing content -->
@@ -385,15 +385,15 @@ In the security section you have the following options: **`<keepUserLoggedIn>`**
 
 ```xml
 <security>
-    <!-- set to true to auto update login interval 
+    <!-- set to true to auto update login interval
     (and there by disabling the lock screen -->
     <keepUserLoggedIn>true</keepUserLoggedIn>
 
-    <!-- by default this is true and if not specified in config will be true. 
+    <!-- by default this is true and if not specified in config will be true.
     Set to false to always show a separate username field in the backoffice user editor -->
     <usernameIsEmail>true</usernameIsEmail>
 
-    <!-- change in 4.8: Disabled users are now showed dimmed and last in the tree. 
+    <!-- change in 4.8: Disabled users are now showed dimmed and last in the tree.
     If you prefer not to display them set this to true -->
     <hideDisabledUsersInBackoffice>false</hideDisabledUsersInBackoffice>
 
@@ -401,11 +401,11 @@ In the security section you have the following options: **`<keepUserLoggedIn>`**
     <allowPasswordReset>true</allowPasswordReset>
 
     <!-- set to a different value if you require the authentication cookie for backoffice users to be renamed -->
-    <authCookieName>UMB_UCONTEXT</authCookieName>  
+    <authCookieName>UMB_UCONTEXT</authCookieName>
 
-    <!-- set to a different value if you require the authentication cookie 
+    <!-- set to a different value if you require the authentication cookie
     for backoffice users to be set against a different domain -->
-    <authCookieDomain></authCookieDomain>  
+    <authCookieDomain></authCookieDomain>
 
 </security>
 ```
@@ -481,7 +481,7 @@ then setup the domain and culture for the sites.
 
 **`<addTrailingSlash>`**
 As mentioned in the comment above, this will add a trailing slash to the url when **`<umbracoUseDirectoryUrls>`** in the **web.config** file is set to "true".
-If you don't want to have a trailing slash when directory urls are in use simply just set the value to **false**.
+If you don't want to have a trailing slash when directory urls are in use, set the value to **false**.
 
 **`<urlReplacing>`**
 The **removeDoubleDashes** attribute makes sure the double dashes will not appear in the url. Set it to **false** if you want to have double dashes. NOTE that this attribute has no effect anymore starting with Umbraco 6.1 / 7.0 where double dashes are systematically removed.
@@ -505,7 +505,7 @@ So, if **`<char org="ñ">n</char>`** is added above the **ñ** will be shown as 
 ```
 
 **`<defaultRenderingEngine>`**
-Tells Umbraco whether to create MVC Views or Webforms Master Pages when creating a template. This does not limit you from using one technology or the other, it is just a flag to indicate to Umbraco what type of templates to create in the backoffice.
+Tells Umbraco whether to create MVC Views or Webforms Master Pages when creating a template. This does not limit you from using one technology or the other, it is a flag to indicate to Umbraco what type of templates to create in the backoffice.
 
 **`<enableSkinSupport>`**
 This setting only affects skinning when using Webforms Masterpages.
@@ -588,7 +588,7 @@ The scheduledTasks element consist of the following attributes:
 
 Note: this setting is **obsolete** as of 7.2.7, use umbracoApplicationUrl instead (see Web.Routing below).
 
-For each task you want to run you should simply just add a **`<task>`** element.
+For each task you want to run you should add a **`<task>`** element.
 
 The task elements consist of the following attributes:
 

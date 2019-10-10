@@ -11,21 +11,21 @@ _Whenever you need to modify an entity that Umbraco stores in the database, ther
 The services live in the `Umbraco.Core.Services` namespace. To use the service APIs you must first access them. This can be achieved via what is known as the `ServiceContext` or by injecting the specific service you require using Umbraco's underlying dependency injection framework.
 
 
-### Access via a Controller 
-If you are accessing Umbraco services inside your own controller class and your controller inherits from one of the base Umbraco controller classes (eg RenderMvcController, SurfaceController etc) then you can access the `ServiceContext` and therefore all services, through a special `Services` property that is exposed on these base Umbraco controller classes:
+### Access via a Controller
+If you are accessing Umbraco services inside your own controller class and your controller inherits from one of the base Umbraco controller classes (eg RenderMvcController, SurfaceController etc) then you can access the `ServiceContext` and all services. This is done through a special `Services` property that is exposed on these base Umbraco controller classes:
 
 ```csharp
 public class EventController : Umbraco.Web.Mvc.SurfaceController
 {
     public Action PerformAction()
     {
-       IContentService contentService = Services.ContentService;
-       var someContent = contentService.GetById(1234);
+        IContentService contentService = Services.ContentService;
+        var someContent = contentService.GetById(1234);
     }
 }
 ```
 
-### Access via a Razor View Template 
+### Access via a Razor View Template
 Inside a Razor View template, that inherits UmbracoViewPage (or similar eg PartialViewMacroPage), you can access the `ServiceContext` and therefore all services, through a special `Services` property that is exposed in the Umbraco base View models:
 
 ```csharp
@@ -44,7 +44,7 @@ Inside a Razor View template, that inherits UmbracoViewPage (or similar eg Parti
 
 ### Access in a Custom Class via dependency injection
 
-If for instance we wish to subscribe to an event on one of the services, we'd do so in a Component c# class, where there is no `ServiceContext` available, instead we would inject the service we need into the public constructor of the Component and Umbraco's underlying dependency injection framework will do the rest.
+If for instance we wish to subscribe to an event on one of the services, we'd do so in a Component C# class, where there is no `ServiceContext` available. Instead we would inject the service we need into the public constructor of the Component and Umbraco's underlying dependency injection framework will do the rest.
 
 In this example we will wire up to the ContentService 'Saved' event, and create a new folder in the Media section whenever a new LandingPage is created in the content section to store associated media. Therefore we will need the MediaService available to create the new folder.
 
@@ -82,30 +82,31 @@ namespace Umbraco8.Components
         {
             foreach (var contentItem in e.SavedEntities)
             {
-                //if this is a new landing page create a folder for associated media in the media section
+                // if this is a new landing page create a folder for associated media in the media section
                 if (contentItem.ContentType.Alias == "landingPage")
                 {
-                    // we have injected in the mediaService in the contstructor for the component see above.
-                   bool hasExistingFolder = _mediaService.GetByLevel(1).Any(f => f.Name == contentItem.Name);
-                   if (!hasExistingFolder)
+                    // we have injected in the mediaService in the constructor for the component see above.
+                    bool hasExistingFolder = _mediaService.GetByLevel(1).Any(f => f.Name == contentItem.Name);
+                    if (!hasExistingFolder)
                     {
-                        //let's create one (-1 indicates the root of the media section)
-                       IMedia newFolder = _mediaService.CreateMedia(contentItem.Name, -1, "Folder");
+                        // let's create one (-1 indicates the root of the media section)
+                        IMedia newFolder = _mediaService.CreateMedia(contentItem.Name, -1, "Folder");
                         _mediaService.Save(newFolder);
                     }
                 }
             }
-        }       
+        }
 
         public void Terminate()
         {
-            throw new NotImplementedException();
+            // Nothing to terminate
         }
     }
 }
 ```
 #### Custom Class example
-It is the same approach if you are creating your own custom class, as long as your class is registered with the dependency injection framework (via a composer)
+It is the same approach if you are creating your own custom class, as long as your class is registered with the dependency injection framework (via a composer).
+
 ```csharp
 using Umbraco.Core;
 using Umbraco.Core.Composing;
@@ -120,11 +121,12 @@ namespace Umbraco8.Composers
         {
 
             composition.Register<ICustomNewsArticleService, CustomNewsArticleService>(Lifetime.Request);
-         }
+        }
     }
 }
 ```
-then your custom class eg. CustomNewsArticleService can take advantage of the same injection to access services eg:
+
+Then your custom class eg. `CustomNewsArticleService` can take advantage of the same injection to access services eg:
 
 ```csharp
 using Umbraco.Core.Logging;
@@ -133,7 +135,7 @@ using Umbraco.Web;
 
 namespace Umbraco8.Services
 {
-public class CustomNewsArticleService : ICustomNewsArticleService
+    public class CustomNewsArticleService : ICustomNewsArticleService
     {
         private readonly IMediaService _mediaService;
         private readonly ILogger _logger;
@@ -146,17 +148,18 @@ public class CustomNewsArticleService : ICustomNewsArticleService
             _mediaService = mediaService;
         }
 
-        public void DoSomethingWithNewsArticles(){
-               using (var contextReference = _contextFactory.EnsureUmbracoContext())
+        public void DoSomethingWithNewsArticles()
+        {
+            using (var contextReference = _contextFactory.EnsureUmbracoContext())
+            {
+                IPublishedContentCache contentCache = contextReference.UmbracoContext.Content;
+                IPublishedContent newsSection = cache.GetAtRoot().FirstOrDefault().Children.FirstOrDefault(f => f.ContentType.Alias == "newsSection");
+                if (newsSection== null)
                 {
-                    IPublishedContentCache contentCache = contextReference.UmbracoContext.Content;
-                    IPublishedContent newsSection = cache.GetAtRoot().FirstOrDefault().Children.FirstOrDefault(f => f.ContentType.Alias == "newsSection");
-                    if (newsSection== null)
-                    {
-                        _logger.Debug<CustomNewsArticleService>("News Section Not Found");
-                    }
+                    _logger.Debug<CustomNewsArticleService>("News Section Not Found");
                 }
-            //etc
+            }
+            // etc
         }
     }
 }

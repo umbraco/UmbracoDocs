@@ -7,13 +7,13 @@ needsV8Update: "true"
 
 **Applies to: Umbraco 4.10.0+**
 
-_All resolvers need to be initialized, this occurs in an IBootManager_ 
+_All resolvers need to be initialized, this occurs in an IBootManager_
 
 ## Initializing the singleton
 
 An `IBootManager` is a bootstrapper that initializing all required objects during application startup, this includes initializing all resolvers.
 
-This is a ver easy process, for example to initialize the custom resolvers we've made in the previous steps we would just do the following:
+For example to initialize the custom resolvers we've made in the previous steps we would do the following:
 
 ```csharp
 // initialize the singleton with a DefaultErrorLogger

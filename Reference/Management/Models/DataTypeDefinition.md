@@ -9,7 +9,7 @@ needsV8Update: "true"
 
 A DataTypeDefinition is what you see in the backoffice in the Developer / DataTypes tree. The listed nodes are definitions of the DataTypes that are available to use on your PropertyTypes.
 
- * **Namespace:** `Umbraco.Core.Models` 
+ * **Namespace:** `Umbraco.Core.Models`
  * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
@@ -42,13 +42,13 @@ Gets or Sets the Id of the `User` who created the Content.
 Gets or Sets the DatabaseType as a `DataTypeDatabaseType` enum for which the DataType's value is saved as.
 
 ### .Id
-Returns the unique `Content` Id as a `Int`, this ID is based on a Database identity field, and is therefore not safe to reference in code which are moved between different instances, use Key instead. 
+Returns the unique `Content` Id as a `Int`, this ID is based on a Database identity field, and is therefore not safe to reference in code which are moved between different instances, use Key instead.
 
 ### .Key
-Returns the `Guid` assigned to the Content during creation. This value is unique, and should never change, even if the content is moved between instances. 
+Returns the `Guid` assigned to the Content during creation. This value is unique, and should never change, even if the content is moved between instances.
 
 ### .Level
-Gets or Sets the given `Content` level in the site hierarchy as an `Int`. Content placed at the root of the site, will return 1, content just underneath will return 2, and so on.
+Gets or Sets the given `Content` level in the site hierarchy as an `Int`. Content placed at the root of the site, will return 1, content right underneath will return 2, and so on.
 
 ### .Name
 Gets or Sets the name of the content as a `String`.

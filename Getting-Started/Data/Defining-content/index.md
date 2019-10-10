@@ -14,6 +14,8 @@ In its most basic form a document type is a form containing fieldsets (or groups
 
 Document Types can define entire pages or more limited content that can be reused on other nodes ie. a SEO group. This means that you are in complete control of what type of content can be created where.
 
+Document Types define what an end user see and can interact with when they are working in the Umbraco backoffice. So for a "Blog post" Document Type, if the end user needs to be able to create a thumbnail, or insert a name and an image of an author, then it needs to be defined in the Document Type. All blog posts using the "Blog post" Document Type, will then give the end user the choice to fill in a thumbnail, author name and an author image.
+
 ### Properties
 
 Each field on a Document Type is called a property. A property is given a name, an alias (used to output the properties content in a template) and an editor. The editor determines what type of data the property will store and the input method. There are a wide range of editors available out of the box (textstring, Rich text, media picker and so forth) and you can customize and add additional editors.
@@ -40,7 +42,7 @@ The grayed out Document Type Composition Master is a parent to the particular Do
 First we're prompted to give the Document Type a name. This first Document Type will be the root node for our content, name it "Home".
 
 ![Naming a Document Type](images/v8Screenshots/homePage.png)
-_Notice that the alias of the Document Type is automatically generated based on the name. If you want to change the alias simply click the "lock" icon._
+_Notice that the alias of the Document Type is automatically generated based on the name. If you want to change the alias click the "lock" icon._
 
 Having a root node makes it easy to query content as you know everything will be under the root node.
 
@@ -81,13 +83,13 @@ Now that we have created a group we can start adding properties. Let's add a Ric
 
 Click the __Add property__ link in the Content group. This opens the property settings dialog. Here you can set the meta data for each property (name, alias, description), choose which data type/property editor to use and add validation if needed.
 
-Give the property a name, the name will be shown to the editor so make relevant and easy to understand. Notice the alias is automatically generated based on the name. We'll name this "Body Text".
+Give the property a name, the name will be shown to the editor so make relevant and understandable. Notice the alias is automatically generated based on the name. We'll name this "Body Text".
 
 ![Adding a property](images/v8Screenshots/addproperty.png)
 
 ##### Keyboard Shortcuts
 
-Keyboard shortcuts are available when you are working with the Document Type editor. To see which shortcuts are available simply click <kbd>ALT</kbd> + <kbd>SHIFT</kbd> + <kbd>K</kbd>.
+Keyboard shortcuts are available when you are working with the Document Type editor. To see which shortcuts are available click <kbd>ALT</kbd> + <kbd>SHIFT</kbd> + <kbd>K</kbd>.
 
 ##### Property editors
 
@@ -97,7 +99,7 @@ Select the __Rich Text editor__ under __Create new__.
 
 ![Choosing the Rich Text editor](images/v8Screenshots/selectEditor.png)
 
-This will let you configure the editor settings - the Rich Text editor for this property. Notice that the name of the Data Type (_Home - Body Text - Rich Text editor_) is based on the name of the Document Type, the name of the property and the property editor. Let's rename it to "Simple Rich Text editor" and only select the most necessary options.
+This will let you configure the editor settings - the Rich Text editor for this property. Notice that the name of the Data Type (_Home - Body Text - Rich Text editor_) is based on the name of the Document Type, the name of the property and the property editor. Let's rename it to "Basic Rich Text editor" and only select the most necessary options.
 
 * `bold`
 * `italic`
@@ -114,10 +116,10 @@ Submit the property and save the Document Type. If you go to the __Content secti
 
 ### Defining child nodes
 
-Next up we'll create a simple text page Document Type that will be used for subpages on the site.
+Next up we'll create a text page Document Type that will be used for subpages on the site.
 
 Go back to the __Settings section__ and create a new Document Type and name it "Text Page". Add a group called "Content"
-and this time we'll add two properties. First make a property called summary using the __Textarea__ editor and secondly create a property called "Body Text" and reuse the __Simple Rich Text Editor__ Data Type.
+and this time we'll add two properties. First make a property called summary using the __Textarea__ editor and secondly create a property called "Body Text" and reuse the __Basic Rich Text Editor__ Data Type.
 
 ### Creating child nodes
 

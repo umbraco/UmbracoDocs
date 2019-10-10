@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # Extending Umbraco with the full Forms section
 
-Since Umbraco v7.2, Umbraco contains the Forms section by default. From there it's super easy to install and get started using Umbraco Forms.
+Since Umbraco v7.2, Umbraco contains the Forms section by default. From there it's a few steps to install and get started using Umbraco Forms.
 
 ## Installing Umbraco Forms
 
@@ -21,12 +21,8 @@ It only takes a few steps to install Umbraco Forms.
 
 ## Start building forms
 
-Once the installation is successful you will be able to start using Umbraco Forms. 
+Once the installation is successful you will be able to start using Umbraco Forms.
 
 For details on how to proceed, check out the [editor documentation](../../Editor)
 
 ![Create form](images/start-with-forms.png)
-
-
-
-

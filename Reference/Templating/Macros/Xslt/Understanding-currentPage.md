@@ -10,9 +10,7 @@ In XSLT, to reference the parameter, and other variable types, we use the "$" an
 
 XML is referenced in XSLT through the use of XPath, a query syntax that resembles that of DOS file commands.  Since XML has the ability to contain various levels of information, XPath has means to traverse these levels, and retrieve data based upon the current context.  But again, before we can use XPath, we must know what is in the XML document.
 
-The XML document, as mentioned before, contains all the content of the published documents.  This data is stored in the XML document structured in the same manner as your tree is laid out in Umbraco.  So, documents are nested to create the hierarchy that we can easily use.Each document in
-
-Umbraco consists of several common pieces of data, and they are:
+The XML document, as mentioned before, contains all the content of the published documents.  This data is stored in the XML document structured in the same manner as your tree is laid out in Umbraco.  So, documents are nested to create the hierarchy that we can use. Each document in Umbraco consists of several common pieces of data, and they are:
 
 - `id`
 - `version`
@@ -58,7 +56,7 @@ This is structured similar to the following in the XML document.
         sortOrder="numeric-value"
         createDate="datetime-value"
         updateDate="datetime-value"
-        nodeName="text-value"	
+        nodeName="text-value"
         urlName="text-value"
         writerName="text-value"
         creatorName="text-value"
