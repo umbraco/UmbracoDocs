@@ -90,6 +90,11 @@ This setting is required due to the nature of Lucene files and IO latency on Azu
 <add key="Umbraco.Examine.LuceneDirectoryFactory" value="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory, Examine" />
 ```
 
+:::note
+This setting used to be set in the `~/Config/ExamineSettings.config` file in Umbraco 7. `
+Read more in the [Azure Web Apps](../../../Getting-Started/Setup/Server-Setup/azure-web-apps#examine-v0180) article.
+:::
+
 ### umbracoCssPath
 
 By adding this to appSettings you can specify a new/different folder for storing your css-files and still be able to edit them within Umbraco. Default folder is ~/css.
