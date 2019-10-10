@@ -48,4 +48,4 @@ If you're using Visual Studio 2015+ check this path:
 
 In Visual Studio 2015+ you can also configure which `applicationhost.config` file is used by altering the `<UseGlobalApplicationHostFile>true|false</UseGlobalApplicationHostFile>` setting in the project file (eg: MyProject.csproj). (source: MSDN forum)
 
-Now that you are all set and ready you can continue to work with your [database locally](Local-Database).
+Now that you are all set and ready you can continue to work with your [database locally](../Local-Database).
