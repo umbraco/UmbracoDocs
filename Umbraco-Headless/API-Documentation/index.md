@@ -22,7 +22,7 @@ The rest of the properties in the Umbraco Headless API, which starts with an und
 
 From within the Umbraco Backoffice go to the Settings section and the Headless tree, here you can use the API Browser to interact with both the Content Delivery and Content Management APIs. It is recommended to use this browser to explore the json output for all the different endpoints documented under the Content Delivery and Content Management API sections below.
 
-## APIs
+## Common API Features
 
 There are two main APIs, one for Content Delivery `https://cdn.umbraco.io` and one for Content Management `https://api.umbraco.io`. Both of these APIs share common points of configuration for access, versioning, culture and authentication/authorization, which are highlighted below.
 
