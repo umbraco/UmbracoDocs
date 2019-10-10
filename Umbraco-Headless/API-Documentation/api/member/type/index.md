@@ -43,7 +43,7 @@ Get a list of all available member types.
 
 **Method**: `GET`
 
-**Permissions required** : Access to Member section of the Umbraco Backoffice
+**Permissions required** : Access to Settings section of the Umbraco Backoffice
 
 ### Success Response
 
@@ -62,7 +62,7 @@ Get a specific member type by its alias.
 
 **Method**: `GET`
 
-**Permissions required** : Access to Member section of the Umbraco Backoffice
+**Permissions required** : Access to Settings section of the Umbraco Backoffice
 
 ### Success Response
 
