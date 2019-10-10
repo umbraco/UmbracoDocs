@@ -25,14 +25,14 @@ Reference documentation for the two APIs available as well as details about comm
 
 In order to get started with Umbraco Headless you will need to create a new Project via the Umbraco Cloud Portal and familiarize yourself with the features available. This includes the Headless section in the backoffice and creating API Keys for authentication and authorization purposes.
 
-In this article you will learn how to create your first Umbraco Headless Project and go through the steps needed to get your first content published, so you can start using the APIs: [Getting Started with Headless](Getting-Started-Cloud/)
+In this article you will learn how to create your first Umbraco Headless Project and go through the steps needed to get your first content published, so you can start using the APIs: ["Getting Started with Headless"](Getting-Started-Cloud/)
 
 ## [Getting Started with the APIs](Getting-Started-API/)
 
 Anything with access to the internet can use the REST APIs via HTTP to retrieve Content and Media through the Content Delivery API, as well as create, update and delete Content, Media, Languages, Members and Relations.
 
 In this article you will learn how to use the two types of APIs through simple HTTP calls: 
-[Getting Started with the APIs](Getting-Started-API/)
+["Getting Started with the APIs"](Getting-Started-API/)
 
 ## [Getting Started with the .NET Core Client Library](Getting-Started-DotNetCore/)
 
