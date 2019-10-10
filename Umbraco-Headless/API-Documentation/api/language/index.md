@@ -54,8 +54,60 @@ Gets all languages available for content creation.
 **Content Example**:
 
 ```json
+{
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/language"
+        },
+        "languages": [
+            {
+                "href": "https://api.umbraco.io/language/en-US"
+            },
+            {
+                "href": "https://api.umbraco.io/language/da-DK"
+            }
+        ]
+    },
+    "_embedded": {
+        "languages": [
+            {
+                "isoCode": "en-US",
+                "cultureName": "English (United States)",
+                "isDefault": true,
+                "isMandatory": false,
+                "_createDate": "0001-01-01T00:00:00Z",
+                "_id": "2a8adac1-c405-4de8-997b-cacc68f75dd2",
+                "_updateDate": "0001-01-01T00:00:00Z",
+                "_links": {
+                    "self": {
+                        "href": "https://api.umbraco.io/language/en-US"
+                    },
+                    "root": {
+                        "href": "https://api.umbraco.io/language"
+                    }
+                }
+            },
+            {
+                "isoCode": "da-DK",
+                "cultureName": "Danish",
+                "isDefault": false,
+                "isMandatory": false,
+                "_createDate": "0001-01-01T00:00:00Z",
+                "_id": "afe0b0d0-7bb9-4b1b-b4f3-3c2b5d14c4cc",
+                "_updateDate": "0001-01-01T00:00:00Z",
+                "_links": {
+                    "self": {
+                        "href": "https://api.umbraco.io/language/da-DK"
+                    },
+                    "root": {
+                        "href": "https://api.umbraco.io/language"
+                    }
+                }
+            }
+        ]
+    }
+}
 ```
-
 
 ## Get by iso code
 
@@ -74,6 +126,23 @@ Get a specific langauge by its iso code.
 **Content Example**:
 
 ```json
+{
+    "isoCode": "en-US",
+    "cultureName": "English (United States)",
+    "isDefault": true,
+    "isMandatory": false,
+    "_createDate": "0001-01-01T00:00:00Z",
+    "_id": "d29bb164-7afb-471f-b49f-81c91200b56c",
+    "_updateDate": "0001-01-01T00:00:00Z",
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/language/en-US"
+        },
+        "root": {
+            "href": "https://api.umbraco.io/language"
+        }
+    }
+}
 ```
 
 ## Create langauge
@@ -90,6 +159,12 @@ Please note that the number of languages that can be created is defined by the p
 ### Request
 
 ```json
+{
+    "isoCode": "da-DK",
+    "cultureName": "Danish",
+    "isDefault": false,
+    "isMandatory": false
+}
 ```
 
 ### Success Response
@@ -99,6 +174,23 @@ Please note that the number of languages that can be created is defined by the p
 **Content Example**:
 
 ```json
+{
+    "isoCode": "da-DK",
+    "cultureName": "Danish",
+    "isDefault": false,
+    "isMandatory": false,
+    "_createDate": "2019-10-10T11:39:57.270409Z",
+    "_id": "4cb6b2c5-0de4-42c9-bcfc-a86f58eb8763",
+    "_updateDate": "2019-10-10T11:39:57.270409Z",
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/language/da-DK"
+        },
+        "root": {
+            "href": "https://api.umbraco.io/language"
+        }
+    }
+}
 ```
 
 ## Update language
@@ -114,6 +206,12 @@ Updates an existing language
 ### Request
 
 ```json
+{
+    "isoCode": "da-DK",
+    "cultureName": "Danish",
+    "isDefault": false,
+    "isMandatory": true
+}
 ```
 
 ### Success Response
@@ -123,6 +221,23 @@ Updates an existing language
 **Content Example**:
 
 ```json
+{
+    "isoCode": "da-DK",
+    "cultureName": "Danish",
+    "isDefault": false,
+    "isMandatory": true,
+    "_createDate": "2019-10-10T11:39:57.270409Z",
+    "_id": "4cb6b2c5-0de4-42c9-bcfc-a86f58eb8763",
+    "_updateDate": "2019-10-10T11:39:57.270409Z",
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/language/da-DK"
+        },
+        "root": {
+            "href": "https://api.umbraco.io/language"
+        }
+    }
+}
 ```
 
 ## Delete language
@@ -142,5 +257,25 @@ Please note that deleting a language, which is in use means that content based o
 
 **Content Example**:
 
+`DELETE https://api.umbraco.io/language/da-DK`
+
 ```json
+{
+    "isoCode": "da-DK",
+    "cultureName": "Danish",
+    "isDefault": false,
+    "isMandatory": false,
+    "_createDate": "0001-01-01T00:00:00Z",
+    "_id": "afe0b0d0-7bb9-4b1b-b4f3-3c2b5d14c4cc",
+    "_updateDate": "0001-01-01T00:00:00Z",
+    "_deleteDate": "2019-10-10T11:43:16.0824903Z",
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/language/da-DK"
+        },
+        "root": {
+            "href": "https://api.umbraco.io/language"
+        }
+    }
+}
 ```
