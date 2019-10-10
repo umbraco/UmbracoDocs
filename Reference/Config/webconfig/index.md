@@ -80,6 +80,16 @@ Makes sure that all of the requests in the backoffice are called over HTTPS inst
 Check out the [security documentation](../../security/use-https.md).
 :::
 
+### Umbraco.Examine.LuceneDirectoryFactory
+
+The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory. The indexes will be accessed from the temporary storage directory. 
+
+This setting is required due to the nature of Lucene files and IO latency on Azure Web Apps.
+
+```xml
+<add key="Umbraco.Examine.LuceneDirectoryFactory" value="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory, Examine" />
+```
+
 ### umbracoCssPath
 
 By adding this to appSettings you can specify a new/different folder for storing your css-files and still be able to edit them within Umbraco. Default folder is ~/css.
