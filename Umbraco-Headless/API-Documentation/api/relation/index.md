@@ -139,7 +139,7 @@ Create a new relation.
 
 ## Delete relation
 
-Delete a relation
+Delete a relation by its integer id.
 
 **URL**: `/relation/{id}`
 
