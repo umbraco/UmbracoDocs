@@ -92,7 +92,7 @@ This setting is required due to the nature of Lucene files and IO latency on Azu
 
 :::note
 This setting used to be set in the `~/Config/ExamineSettings.config` file in Umbraco 7. `
-Read more in the [Azure Web Apps](../../../Getting-Started/Setup/Server-Setup/azure-web-apps#examine-v0180) article.
+Read more in the [Azure Web Apps](../../../Getting-Started/Setup/Server-Setup/azure-web-apps.md#examine-v0180) article.
 :::
 
 ### umbracoCssPath
