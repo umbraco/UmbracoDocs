@@ -471,11 +471,28 @@ Media would typically contain an upload field (the `Image` and `File` media type
 
 **Method**: `POST`
 
+**Header**: `Content-Type: multipart/form-data; boundary=MultipartBoundry`
+
 **Permissions required** : Access to Media section of the Umbraco Backoffice
 
 ### Request
 
-```json
+```
+--MultipartBoundry
+Content-Disposition: form-data; name="_content"
+Content-Type: application/json
+{
+    "mediaTypeAlias": "Image",
+    "name": "Han Solo",
+    "parentId": "7bfa2332-cf7f-4c97-941d-50f43f085b06",
+    "umbracoFile": { "src": "an-solo.png" }
+}
+--MultipartBoundry
+Content-Disposition: form-data; name="umbracoFile"
+Content-Type: image/png
+
+BINARY DATA
+--MultipartBoundry--
 ```
 
 ### Success Response
@@ -485,6 +502,44 @@ Media would typically contain an upload field (the `Image` and `File` media type
 **Content Example**:
 
 ```json
+{
+    "_hasChildren": false,
+    "_level": 2,
+    "_createDate": "2019-10-10T12:24:58.76Z",
+    "_id": "b60a1257-4bef-4d5a-aeb6-4af17b6233b2",
+    "_updateDate": "2019-10-10T12:24:58.76Z",
+    "_deleteDate": "2019-10-10T12:25:15.3860527Z",
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/media/b60a1257-4bef-4d5a-aeb6-4af17b6233b2"
+        },
+        "root": {
+            "href": "https://api.umbraco.io/media"
+        },
+        "children": {
+            "href": "https://api.umbraco.io/media/b60a1257-4bef-4d5a-aeb6-4af17b6233b2/children"
+        },
+        "mediatype": {
+            "href": "https://api.umbraco.io/media/type/Image"
+        }
+    },
+    "mediaTypeAlias": "Image",
+    "name": "Han Solo",
+    "parentId": "7bfa2332-cf7f-4c97-941d-50f43f085b06",
+    "sortOrder": 1,
+    "umbracoFile": {
+        "src": "/media/kejavnxp/han-solo.png",
+        "focalPoint": {
+            "left": 0.5,
+            "top": 0.5
+        },
+        "crops": null
+    },
+    "umbracoWidth": "672",
+    "umbracoHeight": "896",
+    "umbracoBytes": "489855",
+    "umbracoExtension": "png"
+}
 ```
 
 ## Update media
@@ -497,11 +552,29 @@ Media would typically contain an upload field (the `Image` and `File` media type
 
 **Method**: `PUT`
 
+**Header**: `Content-Type: multipart/form-data; boundary=MultipartBoundry`
+
 **Permissions required** : Access to Media section of the Umbraco Backoffice
 
 ### Request
 
-```json
+```
+--MultipartBoundry
+Content-Disposition: form-data; name="_content"
+Content-Type: application/json
+{
+    "mediaTypeAlias": "Image",
+    "name": "Han Solo",
+    "parentId": "7bfa2332-cf7f-4c97-941d-50f43f085b06",
+    "sortOrder": 1,
+    "umbracoFile": { "src": "an-solo.png" }
+}
+--MultipartBoundry
+Content-Disposition: form-data; name="umbracoFile"
+Content-Type: image/png
+
+BINARY DATA
+--MultipartBoundry--
 ```
 
 ### Success Response
@@ -511,6 +584,44 @@ Media would typically contain an upload field (the `Image` and `File` media type
 **Content Example**:
 
 ```json
+{
+    "_hasChildren": false,
+    "_level": 2,
+    "_createDate": "2019-10-10T12:24:58.76Z",
+    "_id": "b60a1257-4bef-4d5a-aeb6-4af17b6233b2",
+    "_updateDate": "2019-10-10T12:24:58.76Z",
+    "_deleteDate": "2019-10-10T12:25:15.3860527Z",
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/media/b60a1257-4bef-4d5a-aeb6-4af17b6233b2"
+        },
+        "root": {
+            "href": "https://api.umbraco.io/media"
+        },
+        "children": {
+            "href": "https://api.umbraco.io/media/b60a1257-4bef-4d5a-aeb6-4af17b6233b2/children"
+        },
+        "mediatype": {
+            "href": "https://api.umbraco.io/media/type/Image"
+        }
+    },
+    "mediaTypeAlias": "Image",
+    "name": "Han Solo",
+    "parentId": "7bfa2332-cf7f-4c97-941d-50f43f085b06",
+    "sortOrder": 1,
+    "umbracoFile": {
+        "src": "/media/kejavnxp/han-solo.png",
+        "focalPoint": {
+            "left": 0.5,
+            "top": 0.5
+        },
+        "crops": null
+    },
+    "umbracoWidth": "672",
+    "umbracoHeight": "896",
+    "umbracoBytes": "489855",
+    "umbracoExtension": "png"
+}
 ```
 
 ## Delete media
