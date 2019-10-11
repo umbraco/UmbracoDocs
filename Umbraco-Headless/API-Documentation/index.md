@@ -12,7 +12,7 @@ Content Management is where you can Create, Read, Update and Delete Content, Med
 
 ## REST API Standard
 
-The Umbraco Headless APIs are based on the HAL Standard, which are explained in greater detail [here](http://stateless.co/hal_specification.html).
+The Umbraco Headless APIs are based on the HAL Standard, which are explained in greater detail [here](https://weierophinney.github.io/hal/hal/).
 
 The properties `_links` and `_embedded` are both part of the HAL specification and are implemented in the Umbraco Headless API according to the specification linked above.
 
