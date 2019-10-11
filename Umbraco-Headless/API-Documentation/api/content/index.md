@@ -504,17 +504,58 @@ Includes all language variations per content item.
 
 Create a new content item with one or more language variations.
 
-When content contains an upload field it is possible to send a file along with the request to create new content. This is done by sending a multi-part request with the json body and the file.
+When content contains an upload field it is possible to send a file along with the request to create new content. This is done by sending a multi-part request with the json body and the file. If the content item doesn't include files then you can send a standard reqeust with a json payload to create a new content item.
+
+Please refer to the documentation for creating media for multipart examples of uploading files.
+
+Please note that newly created content will be `DRAFT` by default, so if you want to publish it you will need to issue a publish request as well.
 
 **URL**: `/content`
 
 **Method**: `POST`
 
+**Header (Optional)**: Content-Type: multipart/form-data; boundary=MultipartBoundry
+
 **Permissions required** : Access to Content section of the Umbraco Backoffice
 
 ### Request
 
+In this example only one language exists, so the properties are marked with `$invariant` in the create requst. If multiple languages existed the culture for each of the languages would be defined for each of the properties - example: `"name": { "en-US": "Another one", "da-DK": "Endnu en" }`.
+
 ```json
+{
+    "name": {
+        "$invariant": "Another one"
+    },
+    "contentTypeAlias": "blogpost",
+    "parentId": "8007e923-e62a-4ac1-a33f-caf3052582f4",
+    "sortOrder": 0,
+    "seoMetaDescription": {
+        "$invariant": ""
+    },
+    "keywords": {
+        "$invariant": []
+    },
+    "umbNaviHide": {
+        "$invariant": "0"
+    },
+    "pageTitle": {
+        "$invariant": "Another one"
+    },
+    "categories": {
+        "$invariant": [
+            "cg16",
+            "codegarden",
+            "umbraco"
+        ]
+    },
+    "excerpt": {
+        "$invariant": "Donec sollicitudin molestie malesuada. Vivamus suscipit tortor eget felis porttitor volutpat. Sed porttitor lectus nibh."
+    },
+    "bodyText": {
+        "$invariant": "<p>Donec sollicitudin molestie malesuada. Proin eget tortor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla porttitor accumsan tincidunt. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>\n<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada. Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Sed porttitor lectus nibh.</p>\n<p>Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat.</p>"
+    }
+}
 ```
 
 ### Success Response
@@ -524,23 +565,123 @@ When content contains an upload field it is possible to send a file along with t
 **Content Example**:
 
 ```json
+{
+    "_currentVersionState": {
+        "$invariant": "DRAFT"
+    },
+    "name": {
+        "$invariant": "Another one"
+    },
+    "_updateDate": {
+        "$invariant": "2019-10-10T11:19:04.3988745+00:00"
+    },
+    "_hasChildren": false,
+    "_level": 3,
+    "_createDate": "2019-10-07T11:53:09.653Z",
+    "_id": "041067a0-74f5-4d03-92af-40c3c0aa13e7",
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/content/041067a0-74f5-4d03-92af-40c3c0aa13e7"
+        },
+        "root": {
+            "href": "https://api.umbraco.io/content"
+        },
+        "children": {
+            "href": "https://api.umbraco.io/content/041067a0-74f5-4d03-92af-40c3c0aa13e7/children"
+        },
+        "publish": {
+            "href": "https://api.umbraco.io/content/041067a0-74f5-4d03-92af-40c3c0aa13e7/publish"
+        },
+        "unpublish": {
+            "href": "https://api.umbraco.io/content/041067a0-74f5-4d03-92af-40c3c0aa13e7/unpublish"
+        },
+        "contenttype": {
+            "href": "https://api.umbraco.io/content/type/blogpost"
+        }
+    },
+    "contentTypeAlias": "blogpost",
+    "parentId": "8007e923-e62a-4ac1-a33f-caf3052582f4",
+    "sortOrder": 0,
+    "seoMetaDescription": {
+        "$invariant": ""
+    },
+    "keywords": {
+        "$invariant": []
+    },
+    "umbNaviHide": {
+        "$invariant": "0"
+    },
+    "pageTitle": {
+        "$invariant": "Another one"
+    },
+    "categories": {
+        "$invariant": [
+            "cg16",
+            "codegarden",
+            "umbraco"
+        ]
+    },
+    "excerpt": {
+        "$invariant": "Donec sollicitudin molestie malesuada. Vivamus suscipit tortor eget felis porttitor volutpat. Sed porttitor lectus nibh."
+    },
+    "bodyText": {
+        "$invariant": "<p>Donec sollicitudin molestie malesuada. Proin eget tortor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla porttitor accumsan tincidunt. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>\n<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada. Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Sed porttitor lectus nibh.</p>\n<p>Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat.</p>"
+    }
+}
 ```
 
 ## Update content
 
 Updates an existing content item with one or more language variations.
 
-When content contains an upload field it is possible to send a file along with the request to update content. This is done by sending a multi-part request with the json body and the file.
+When content contains an upload field it is possible to send a file along with the request to update content. This is done by sending a multi-part request with the json body and the file. If the content item doesn't include files then you can send a standard reqeust with a json payload to update the content item.
 
 **URL**: `/content/{id}`
 
 **Method**: `PUT`
 
+**Header (Optional)**: Content-Type: multipart/form-data; boundary=MultipartBoundry
+
 **Permissions required** : Access to Content section of the Umbraco Backoffice
 
 ### Request
 
+In this example only one language exists, so the properties are marked with `$invariant`. If multiple languages existed the culture for each of the languages would be defined for each of the properties. Ie.: `"name": { "en-US": "Another one", "da-DK": "Endnu en" }`.
+
 ```json
+{
+    "name": {
+        "$invariant": "Another one"
+    },
+    "contentTypeAlias": "blogpost",
+    "parentId": "8007e923-e62a-4ac1-a33f-caf3052582f4",
+    "sortOrder": 0,
+    "seoMetaDescription": {
+        "$invariant": ""
+    },
+    "keywords": {
+        "$invariant": []
+    },
+    "umbNaviHide": {
+        "$invariant": "0"
+    },
+    "pageTitle": {
+        "$invariant": "Another one"
+    },
+    "categories": {
+        "$invariant": [
+            "cg16",
+            "codegarden",
+            "umbraco"
+        ]
+    },
+    "excerpt": {
+        "$invariant": "Donec sollicitudin molestie malesuada. Vivamus suscipit tortor eget felis porttitor volutpat. Sed porttitor lectus nibh."
+    },
+    "bodyText": {
+        "$invariant": "<p>Lorem Ipsum</p>"
+    }
+}
 ```
 
 ### Success Response
@@ -550,6 +691,70 @@ When content contains an upload field it is possible to send a file along with t
 **Content Example**:
 
 ```json
+{
+    "_currentVersionState": {
+        "$invariant": "DRAFT"
+    },
+    "name": {
+        "$invariant": "Another one"
+    },
+    "_updateDate": {
+        "$invariant": "2019-10-07T11:53:09.653Z"
+    },
+    "_hasChildren": false,
+    "_level": 3,
+    "_createDate": "2019-10-07T11:53:09.653Z",
+    "_id": "041067a0-74f5-4d03-92af-40c3c0aa13e7",
+    "_deleteDate": "2019-10-10T11:19:53.6828938Z",
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/content/041067a0-74f5-4d03-92af-40c3c0aa13e7"
+        },
+        "root": {
+            "href": "https://api.umbraco.io/content"
+        },
+        "children": {
+            "href": "https://api.umbraco.io/content/041067a0-74f5-4d03-92af-40c3c0aa13e7/children"
+        },
+        "publish": {
+            "href": "https://api.umbraco.io/content/041067a0-74f5-4d03-92af-40c3c0aa13e7/publish"
+        },
+        "unpublish": {
+            "href": "https://api.umbraco.io/content/041067a0-74f5-4d03-92af-40c3c0aa13e7/unpublish"
+        },
+        "contenttype": {
+            "href": "https://api.umbraco.io/content/type/blogpost"
+        }
+    },
+    "contentTypeAlias": "blogpost",
+    "parentId": "8007e923-e62a-4ac1-a33f-caf3052582f4",
+    "sortOrder": 0,
+    "seoMetaDescription": {
+        "$invariant": ""
+    },
+    "keywords": {
+        "$invariant": []
+    },
+    "umbNaviHide": {
+        "$invariant": "0"
+    },
+    "pageTitle": {
+        "$invariant": "Another one"
+    },
+    "categories": {
+        "$invariant": [
+            "cg16",
+            "codegarden",
+            "umbraco"
+        ]
+    },
+    "excerpt": {
+        "$invariant": "Donec sollicitudin molestie malesuada. Vivamus suscipit tortor eget felis porttitor volutpat. Sed porttitor lectus nibh."
+    },
+    "bodyText": {
+        "$invariant": "<p>Lorem Ipsum</p>"
+    }
+}
 ```
 
 ## Publish content
