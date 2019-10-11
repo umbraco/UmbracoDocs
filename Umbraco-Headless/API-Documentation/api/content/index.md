@@ -504,6 +504,8 @@ Includes all language variations per content item.
 
 Create a new content item with one or more language variations.
 
+When content contains an upload field it is possible to send a file along with the request to create new content. This is done by sending a multi-part request with the json body and the file.
+
 **URL**: `/content`
 
 **Method**: `POST`
@@ -527,6 +529,8 @@ Create a new content item with one or more language variations.
 ## Update content
 
 Updates an existing content item with one or more language variations.
+
+When content contains an upload field it is possible to send a file along with the request to update content. This is done by sending a multi-part request with the json body and the file.
 
 **URL**: `/content/{id}`
 
