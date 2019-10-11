@@ -485,7 +485,7 @@ Content-Type: application/json
     "mediaTypeAlias": "Image",
     "name": "Han Solo",
     "parentId": "7bfa2332-cf7f-4c97-941d-50f43f085b06",
-    "umbracoFile": { "src": "an-solo.png" }
+    "umbracoFile": { "src": "han-solo.png" }
 }
 --MultipartBoundry
 Content-Disposition: form-data; name="umbracoFile"
@@ -567,7 +567,7 @@ Content-Type: application/json
     "name": "Han Solo",
     "parentId": "7bfa2332-cf7f-4c97-941d-50f43f085b06",
     "sortOrder": 1,
-    "umbracoFile": { "src": "an-solo.png" }
+    "umbracoFile": { "src": "han-solo.png" }
 }
 --MultipartBoundry
 Content-Disposition: form-data; name="umbracoFile"
