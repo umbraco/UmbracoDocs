@@ -42,3 +42,4 @@ Aside from the Data Types that are available out of the box there are some addit
 
 ### Umbraco.tv
 * [Episode: Data Types](https://umbraco.tv/videos/umbraco-v8/implementor/fundamentals/document-types/data-types-and-property-editors)
+* [Episode: Creating and Reusing Editors](https://umbraco.tv/videos/umbraco-v7/implementor/fundamentals/document-types/creating-and-reusing-editors/)
