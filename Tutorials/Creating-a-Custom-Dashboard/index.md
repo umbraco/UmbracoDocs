@@ -192,7 +192,7 @@ In our html view, we update the outer div to wire up the controller to the view:
 ```
 
 :::note
-The use of vm (short for view model) to enable communication between the view and the controller.
+The use of vm (short for view model) is to enable communication between the view and the controller.
 :::
 
 Finally, we need to update the package.manifest file to load the additional controller JavaScript file when the dashboard is displayed:
@@ -226,7 +226,7 @@ If all is setup fine we should now receive the 'Hello world' alert every time th
 
 Umbraco has a fine selection of angular directives, resources and services that you can use in your custom property editors and dashboards, the details are here: https://our.umbraco.com/apidocs/v8/ui/#/api
 
-For this example it would be nice to welcome the editor by name (Umbraco is a place where everybody knows your name...), to achieve this we can use the **userService** here to customise our dashboard welcome message and increase friendliness:
+For this example it would be nice to welcome the editor by name, to achieve this we can use the **userService** here to customise our dashboard welcome message and increase friendliness:
 
 We inject the **userService** into our AngularJS controller like so:
 
@@ -245,11 +245,12 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
         console.log(user);
         vm.UserName = user.name;
     });
-
 });
 ```
 
-*__Tip:__ Notice you can use console.log to write out to the browser console window what is being returned by the promise, it helps to debug, but also understand what properties are available to use.*
+:::tip
+Notice you can use console.log to write out to the browser console window what is being returned by the promise, it helps to debug, but also understand what properties are available to use.
+:::
 
 Finally we can now update our view to incorporate the current user's name in our Welcome Message:
 
@@ -258,20 +259,6 @@ Finally we can now update our view to incorporate the current user's name in our
 ```
 
 ![Custom Dashboard Welcome Message With Current User's Name](images/welcomemessagepersonalised-v8.png)
-
-and for reference the full contents of /customwelcomedashboard.controller.js at this stage of the tutorial should look like this:
-
-```js
-angular.module("umbraco").controller("CustomWelcomeDashboardController", function ($scope,userService) {
-    var vm = this;
-    vm.UserName = "guest";
-
-    var user = userService.getCurrentUser().then(function (user) {
-        console.log(user);
-        vm.UserName = user.name;
-    });
-});
-```
 
 ## I know what you did last Tuesday
 
