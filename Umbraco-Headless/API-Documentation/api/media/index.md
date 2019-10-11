@@ -465,6 +465,8 @@ Get a list of children (media items) by their parent guid id.
 
 Create a new media item and optionally upload a file to the created item.
 
+Media would typically contain an upload field (the `Image` and `File` media types has this by default), which means it is possible to send a file along with the request to create a new media item. This is done by sending a multi-part request with the json body and the file.
+
 **URL**: `/media`
 
 **Method**: `POST`
@@ -488,6 +490,8 @@ Create a new media item and optionally upload a file to the created item.
 ## Update media
 
 Updates an existing media item and optionally uploads a file to the updated item.
+
+Media would typically contain an upload field (the `Image` and `File` media types has this by default), which means it is possible to send a file along with the request to update an existing media item. This is done by sending a multi-part request with the json body and the file.
 
 **URL**: `/media/{id}`
 
