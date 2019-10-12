@@ -5,7 +5,7 @@ needsV8Update: "true"
 
 # Data Persistence (CRUD) in Umbraco
 
-_The Umbraco Services layer is used to query and manipulate Umbraco stored in the database_
+_The Umbraco Services layer is used to query and manipulate Umbraco stored in the database_.
 
 ## Service Context
 

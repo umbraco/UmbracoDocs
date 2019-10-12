@@ -357,7 +357,7 @@ The runtime has detected an up-to-date Umbraco install and is running.
 
 ## Example of using Ordered Collections and adding types explicitly
 
-You may wish to create an Umbraco package that allows package consumers to extend and add additional functionality. In this example, we show how you can use the `OrderedCollectionBuilderBase`
+You may wish to create an Umbraco package that allows package consumers to extend and add additional functionality. In this example, we show how you can use the `OrderedCollectionBuilderBase`.
 
 ```csharp
 using System.Collections.Generic;

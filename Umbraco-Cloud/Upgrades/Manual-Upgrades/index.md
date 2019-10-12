@@ -33,6 +33,12 @@ When you are manually upgrading your Umbraco Cloud project and you need to upgra
 
 [Learn more about the product dependencies on Umbraco Cloud](../Product-Dependencies)
 
+## Video Tutorial
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/yuHUxI_rplE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+You can find the full playlist here: [Manually upgrade your Umbraco Cloud project](https://www.youtube.com/playlist?list=PLG_nqaT-rbpx1lzrdSIqPyJrpRf_z4DS9)
+
 ## [How to upgrade Umbraco CMS manually](Manual-CMS-upgrade.md)
 
 Make sure to follow the steps carefully when upgrading your Umbraco Cloud project to the newest version of Umbraco CMS.

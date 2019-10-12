@@ -40,4 +40,4 @@ We :heart: valuable contributions from everyone who is willing to help. It does 
 Otherwise, [bug reports](https://github.com/umbraco/UmbracoDocs/issues/), [bug fixes](https://github.com/umbraco/UmbracoDocs/pulls) and any feedback on Umbraco is always appreciated.
 Look at the [Contributor Guidelines](CONTRIBUTING.md) to learn how you can get involved and help with the Umbraco Documentation.
 ## License [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)
-This library is released under the [MIT License](LICENSE.md)
+This library is released under the [MIT License](LICENSE.md).

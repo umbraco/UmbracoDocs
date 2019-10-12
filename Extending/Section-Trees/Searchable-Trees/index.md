@@ -14,7 +14,7 @@ You can create your own search mechanisms for your own custom sections or replac
 
 ## Custom Tree Search
 
-To create a search for your own custom tree you need to create a C# class that implements the interface `Umbraco.Web.Search.ISearchableTree`
+To create a search for your own custom tree you need to create a C# class that implements the interface `Umbraco.Web.Search.ISearchableTree`.
 
 ### ISearchableTree
 
@@ -56,7 +56,7 @@ public class SearchResultEntity : EntityBasic
 }
 ```
 
-A `SearchResultEntity` consists of a Score (a Float value) identifying its relevance to the search term, and the set of `EntityBasic` properties that all Umbraco objects share: eg Name, Id, Udi, Icon, Trashed, Key, ParentId, Path, Alias, AdditionalData
+A `SearchResultEntity` consists of a Score (a Float value) identifying its relevance to the search term, and the set of `EntityBasic` properties that all Umbraco objects share: eg Name, Id, Udi, Icon, Trashed, Key, ParentId, Path, Alias, AdditionalData.
 
 #### Example implementation of ISearchableTree
 

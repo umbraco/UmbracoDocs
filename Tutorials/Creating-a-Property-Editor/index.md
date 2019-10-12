@@ -41,7 +41,7 @@ The first thing we must do is create a new folder inside `/App_Plugins` folder. 
 Next, we will create a manifest file to describe what this plugin does. This manifest will tell Umbraco about our new property editor and allows us to inject any needed files into the application, so we create the file `/App_Plugins/MarkDownEditor/package.manifest`
 [For full package.manifest JSON documentation see here](../../Extending/Property-Editors/package-manifest.md)
 
-Inside this package manifest we add a bit of JSON to describe the property editor. Have a look at the inline comments in the JSON below for details on each bit:
+Inside this package manifest, we add a bit of JSON to describe the property editor. Have a look at the inline comments in the JSON below for details on each bit:
 
 ```javascript
 {
@@ -78,7 +78,7 @@ Then we add 2 files to the /app_plugins/markdowneditor/ folder:
 These will be our main files for the editor, with the .html file handling the view and the .js
 part handling the functionality.
 
-In the .js file I will add a basic AngularJS controller declaration
+In the .js file, I will add a basic AngularJS controller declaration
 
 ```javascript
 angular.module("umbraco")
@@ -96,14 +96,14 @@ And in the .html file I'll add:
 </div>
 ```
 
-Now our basic parts of the editor is done, namely:
+Now our basic parts of the editor are done, namely:
 
 - The package manifest, telling Umbraco what to load
 - The HTML view for the editor
 - The controller for wiring up the editor with angular.
 
 ## Register the data type in Umbraco
-After the above edits are done, restart your application. Go to the Developer section, click the 3 dots next to the data types folder and create a new data type called "markdown". In the editor you can now select a property editor, where your newly added "My markdown editor" will appear.
+After the above edits are done, restart your application. Go to the Developer section, click the 3 dots next to the data types folder and create a new data type called "markdown". In the editor, you can now select a property editor, where your newly added "My markdown editor" will appear.
 
 Save the data type, and add it to a document type of your choice. Open a document of that type, and you will be greeted with an alert message saying "The controller has landed", which means all is well. You can now edit the assigned property's value with your editor.
 

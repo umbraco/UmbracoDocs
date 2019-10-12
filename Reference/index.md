@@ -36,7 +36,7 @@ Information about all of Umbraco's configuration files and options.
 
 ## [IoC & Dependency Injection](using-ioc.md)
 
-Info about setting up IoC/Dependency Injection to work with Umbraco
+Info about setting up IoC/Dependency Injection to work with Umbraco.
 
 ## [Templates](Templating/index.md)
 

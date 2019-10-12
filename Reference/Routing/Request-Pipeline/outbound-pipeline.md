@@ -345,9 +345,8 @@ public enum UrlProviderMode
 ```
 Auto is the default. The setting can be changed in /config/umbracoSettings.config web.routing section:
 
-```
-  <web.routing
-    urlProviderMode="Relative">
+```xml
+  <web.routing urlProviderMode="Relative">
   </web.routing>
 ```
 

@@ -44,7 +44,7 @@ namespace Umbraco8.Components
 
         public void Terminate()
         {
-            throw new NotImplementedException();
+            // Nothing to terminate
         }
     }
 }

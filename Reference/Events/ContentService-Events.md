@@ -20,13 +20,14 @@ namespace Umbraco8.Components
 {
     [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
     public class SubscribeToPublishEventComposer : ComponentComposer<SubscribeToPublishEventComponent>
-    {
-    }
+    { }
+    
     public class SubscribeToPublishEventComponent : IComponent
     {
         public void Initialize()
         {
-            ContentService.Publishing += ContentService_Publishing;        }
+            ContentService.Publishing += ContentService_Publishing;
+        }
 
         private void ContentService_Publishing(Umbraco.Core.Services.IContentService sender, Umbraco.Core.Events.ContentPublishingEventArgs e)
         {
@@ -37,18 +38,18 @@ namespace Umbraco8.Components
                     var newsArticleTitle = node.GetValue<string>("newsTitle");
                     if (newsArticleTitle.Equals(newsArticleTitle.ToUpper()))
                     {
-                        //stop putting News Article Titles ALL in Upper Case!!!
-                        //cancel publish
+                        // Stop putting news article titles in upper case, so cancel publish
                         e.Cancel = true;
-                        //explain why publish cancelled.
-                        e.Messages.Add(new Umbraco.Core.Events.EventMessage("Corporate Style Guidelines Infringement", "Don't put news article titles in UpperCase, no need to shout!", Umbraco.Core.Events.EventMessageType.Error));
+                        
+                        // Explain why the publish event is cancelled
+                        e.Messages.Add(new Umbraco.Core.Events.EventMessage("Corporate style guideline infringement", "Don't put the news article title in upper case, no need to shout!", Umbraco.Core.Events.EventMessageType.Error));
                     }
                 }
             }
         }
         public void Terminate()
         {
-            throw new NotImplementedException();
+            // Nothing to terminate
         }
     }
 }
