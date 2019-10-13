@@ -30,7 +30,7 @@ So far we have created the user, but we haven't yet set a password. We can do th
     // Set a new password for the user
     us.SavePassword(user, "HelloWorld1234");
 
-However in new Umbraco installations, the default user provider configuration (the `allowManuallyChangingPassword` setting is `false` by default) prevents us from setting a new password throug code. If we try to set a password anyways, the method will throw an exception of the type `System.NotSupportedException`, and with the following message:
+However in new Umbraco installations, the default user provider configuration (the `allowManuallyChangingPassword` setting is `false` by default) prevents us from setting a new password through code. If we try to set a password anyways, the method will throw an exception of the type `System.NotSupportedException`, and with the following message:
 
 > This provider does not support manually changing the password
 

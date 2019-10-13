@@ -8,7 +8,7 @@ With a few steps we can add Open Graph to our pages.
 
 ## Outcome
 
-Open Graph support will be added to the Homepage and Blog posts. It will be the minimum implementation of Open Graph containing the sitess `title`, `type`, `url` and `image`.
+Open Graph support will be added to the Homepage and Blog posts. It will be the minimum implementation of Open Graph containing the sites' `title`, `type`, `url` and `image`.
 
 ## Takeaway
 
