@@ -49,7 +49,7 @@ Let's first add the default value functionality. Basically, when the ´$scope.mo
 	    $scope.model.value = $scope.model.config.defaultValue;
 	}
 
-You see what's new? - the `$scope.model.config` object is. And the other thing you will notice is that because of our configuration, we now have access to `$scope.model.config.defaultValue` which contains the configiration value for that key, it's that easy to setup and use configuration values from code.
+You see what's new? - the `$scope.model.config` object is. And the other thing you will notice is that because of our configuration, we now have access to `$scope.model.config.defaultValue` which contains the configuration value for that key, it's that easy to setup and use configuration values from code.
 
 However, you can also use these values without any JavaScript, so open the `markdowneditor.html` file instead.
 

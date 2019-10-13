@@ -19,4 +19,4 @@ If you upgrade from an older version of Umbraco then legacy *NotFoundHandlers* l
 
 ## Implementing 404 not found properly
 
-Custom 404's are now handled within a custom *IContentFinder* by setting the Is404 property to true for the *PublishedContentRequest* processed by the *IContentFinder* or by registerring the *IContentFinder* as a *ContentLastChanceFinder* - [Using an IContentFinder for Custom 404s](../../routing/request-pipeline/IContentFinder#notfoundhandlers)
+Custom 404's are now handled within a custom *IContentFinder* by setting the Is404 property to true for the *PublishedContentRequest* processed by the *IContentFinder* or by registering the *IContentFinder* as a *ContentLastChanceFinder* - [Using an IContentFinder for Custom 404s](../../routing/request-pipeline/IContentFinder#notfoundhandlers)

@@ -77,5 +77,5 @@ For example, retrieving the URL to an image requires calling `umbraco.library:Ge
 	              
 Common uses will probably include calling single XSLT functions for parsing values prior to render.
 
-Another useful attribute is XsltDisableEscaping, whereby the value returned by the transfrmation specified in the Xslt attribute requires escaping. This might be useful when parsing content or data that contains HTML, and therefore requires escaping to be successfully rendered to the page.
+Another useful attribute is XsltDisableEscaping, whereby the value returned by the transformation specified in the Xslt attribute requires escaping. This might be useful when parsing content or data that contains HTML, and therefore requires escaping to be successfully rendered to the page.
 

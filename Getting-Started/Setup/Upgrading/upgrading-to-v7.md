@@ -19,7 +19,7 @@ Umbraco 7 requires browsers with proper html 5 support, these include Chrome, Fi
 
 ## Breaking changes
 
-Before you upgrade you should read the list of breaking changes, in some cases you may need to change some of your codebase if code has been removed from the core or if one of these breaking changes direclty affects your install.
+Before you upgrade you should read the list of breaking changes, in some cases you may need to change some of your codebase if code has been removed from the core or if one of these breaking changes directly affects your install.
 
 See: [List of breaking changes](https://our.umbraco.com/contribute/releases/700)
 
@@ -127,7 +127,7 @@ Legacy parameter editors (pre v7) will not work with Umbraco v7. If Umbraco dete
 
 Previously parameter editors were registered in an Umbraco database table: `cmsMacroPropertyType` which no longer exists. Parameter editors in v7 are plugins just like property editors. During the v7 upgrade installation process it will update the new `cmsMacroProperty.editorAlias` column with the previous parameter editor alias. During this process it will look into the `Umbraco.Core.PropertyEditors.LegacyParameterEditorAliasConverter` for a map between a legacy alias to a new v7 alias.
 
-If you have custom legacy parameter editors and want to map them during install to new v7 parmater editor aliases you can modify this mapping during application startup using this method: `Umbraco.Core.PropertyEditors.LegacyParameterEditorAliasConverter.CreateMap`
+If you have custom legacy parameter editors and want to map them during install to new v7 parameter editor aliases you can modify this mapping during application startup using this method: `Umbraco.Core.PropertyEditors.LegacyParameterEditorAliasConverter.CreateMap`
 
 ## Database changes
 
