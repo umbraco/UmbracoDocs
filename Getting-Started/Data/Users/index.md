@@ -40,7 +40,7 @@ By default, the User groups available to new users are **Administrators**, **Wri
 
 **Translator**: Allowed to browse and update nodes as well as grant dashboard access. Translations of site pages must be reviewed by others before publication (has permissions to "Browse Node" and "Update").
 
-**Sensitive data**: Any users added to this User group will have access to view any data marked as sensitive. Learn more about this feature in the [Sensitive Data](../../../Reference/Security/Sensitive-Data) article.
+**Sensitive data**: Any users added to this User group will have access to view any data marked as sensitive. Learn more about this feature in the [Sensitive Data](../../../Reference/Security/Sensitive-data/) article.
 
 ## Creating a User Group
 
