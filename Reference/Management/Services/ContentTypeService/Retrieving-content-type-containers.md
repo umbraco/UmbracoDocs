@@ -14,7 +14,7 @@ Content types can be added either at the root level, under another content type 
 EntityContainer container = contentTypeService.GetContentTypeContainer(1090);
 ```
 
-or its GUID conterpart:
+or its GUID counterpart:
 
 ```C#
 // Declare the GUID ID

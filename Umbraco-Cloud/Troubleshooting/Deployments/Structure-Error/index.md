@@ -29,7 +29,7 @@ Does the collision error involve **Dictionary items**?
 Use this guide instead: [Troubleshooting duplicate dictionary items](../Duplicate-Dictionary-Items)
 :::
 
-You can run into an error like this on all of your Cloud environment. Somestimes you might also run into it, on a local clone of your project. This guide will use an example, where two files are colliding on a Development and a Live environment.
+You can run into an error like this on all of your Cloud environment. Sometimes you might also run into it, on a local clone of your project. This guide will use an example, where two files are colliding on a Development and a Live environment.
 
 ## Table of content
 
