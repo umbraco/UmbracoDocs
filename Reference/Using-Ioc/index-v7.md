@@ -12,7 +12,7 @@ We don't use IoC in the Umbraco source code. This isn't because we don't like it
 
 ## Implementation
 
-The easiest way to get up and running with IoC/Dependency Injection in Umbraco is to use the [Our.Umbraco.IoC](https://github.com/Shazwazza/Our.Umbraco.IoC) package which contains support for most popular dependency injection frameworks and has all of the boilerplate code and work done for you. The info below describes how you can configure your own framework manually without thsi package.
+The easiest way to get up and running with IoC/Dependency Injection in Umbraco is to use the [Our.Umbraco.IoC](https://github.com/Shazwazza/Our.Umbraco.IoC) package. It contains support for most popular dependency injection frameworks and has all of the boilerplate code and work done for you. The info below describes how you can configure your own framework manually without this package.
 
 In most IoC frameworks, you would setup your container in your global.asax class. To do that in Umbraco, you will need to inherit from our global.asax class called: `Umbraco.Web.UmbracoApplication`. You should then override the `OnApplicationStarted` method to build your container, and initialize any of the IoC stuff that you require.
 Alternatively, you can implement the `Umbraco.Web.IApplicationEventHandler` interface.
