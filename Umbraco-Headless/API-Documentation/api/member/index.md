@@ -142,6 +142,8 @@ Create a new member.
 
 Update an existing member.
 
+A member can be unlocked by setting `isLockedOut` to `false` in the request, **note** that a member cannot be locked by setting the value to `true`, it will be ignored if the user is not already locked out .
+
 **URL**: `/member/{username}`
 
 **Method**: `PUT`
