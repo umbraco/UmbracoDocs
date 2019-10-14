@@ -14,13 +14,13 @@ Umb-Project-Alias: {project-alias}
 
 If an error occours you will receive a HTTP status code along with an API error code and an error message in the response body.
 
-| Status Code | Error Code | Message |
-| ----------- | ---------- | ------- |
-| 400 | AmbiguousCulture | The following cultures were requested: {cultures}. At most, only a single culture may be specified. Please update the intended culture and retry the request. |
-| 400 | LanguageForCultureNotFound | Could not find a language for culture {culture}.|
-| 401 | Unauthorized | Authorization has been denied for this request. |
-| 404 | NotFound | Published content with id '{id}' and culture '{culture}' could not be found. |
-| 500 | InternalServerError | Internal server error. |
+| Status Code | Error Code                 | Message                                                                                                                                                       |
+| ----------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 400         | AmbiguousCulture           | The following cultures were requested: {cultures}. At most, only a single culture may be specified. Please update the intended culture and retry the request. |
+| 400         | LanguageForCultureNotFound | Could not find a language for culture {culture}.                                                                                                              |
+| 401         | Unauthorized               | Authorization has been denied for this request.                                                                                                               |
+| 404         | NotFound                   | Published content with id '{id}' and culture '{culture}' could not be found.                                                                                  |
+| 500         | InternalServerError        | Internal server error.                                                                                                                                        |
 
 **JSON example**:
 

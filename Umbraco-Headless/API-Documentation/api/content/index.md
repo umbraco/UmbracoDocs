@@ -19,11 +19,11 @@ If an error occours you will receive a HTTP status code along with an API error 
 
 | Status Code | Error Code           | Message                                                                  |
 | ----------- | -------------------- | ------------------------------------------------------------------------ |
-| 400         | Bad Request          | Body cannot be empty.                                                    |
+| 400         | BadRequest           | Body cannot be empty.                                                    |
 | 401         | Unauthorized         | Authorization has been denied for this request.                          |
 | 403         | Forbidden            | You are not authorized to access the given resource.                     |
 | 404         | NotFound             | Content with id '{id}' could not be found.                               |
-| 422         | Unprocessable Entity | Validation error occured when trying to save or update the content item. |
+| 422         | ValidationFailed     | Validation error occured when trying to save or update the content item. |
 | 500         | InternalServerError  | Internal server error.                                                   |
 
 **JSON example**:

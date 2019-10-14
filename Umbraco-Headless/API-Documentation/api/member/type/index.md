@@ -19,10 +19,10 @@ If an error occours you will receive a HTTP status code along with an API error 
 
 | Status Code | Error Code           | Message                                                                  |
 | ----------- | -------------------- | ------------------------------------------------------------------------ |
-| 400         | Bad Request          | Body cannot be empty.                                                    |
 | 401         | Unauthorized         | Authorization has been denied for this request.                          |
 | 403         | Forbidden            | You are not authorized to access the given resource.                     |
 | 404         | NotFound             | Member Type with alias '{alias}' could not be found.                     |
+| 500         | InternalServerError  | Internal server error.                                                   |
 
 **JSON example**:
 

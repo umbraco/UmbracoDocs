@@ -19,11 +19,12 @@ If an error occours you will receive a HTTP status code along with an API error 
 
 | Status Code | Error Code           | Message                                                                  |
 | ----------- | -------------------- | ------------------------------------------------------------------------ |
-| 400         | Bad Request          | Body cannot be empty.                                                    |
+| 400         | BadRequest           | Body cannot be empty.                                                    |
+| 400         | CouldNotUnlockUser   | Could not unlock the user.                                               |
 | 401         | Unauthorized         | Authorization has been denied for this request.                          |
 | 403         | Forbidden            | You are not authorized to access the given resource.                     |
 | 404         | NotFound             | Member with username '{username}' could not be found.                    |
-| 422         | Unprocessable Entity | Validation error occured when trying to save or update the member.       |
+| 422         | ValidationFailed     | Validation error occured when trying to save or update the member.       |
 | 500         | InternalServerError  | Internal server error.                                                   |
 
 **JSON example**:
@@ -250,10 +251,6 @@ Add an existing member to an existing member group.
 
 **Code**: 200
 
-**Content Example**:
-
-`PUT https://api.umbraco.io/member/john@example.com/groups/Club%20Blue%20Members`
-
 ## Remove member from member group
 
 Remove a specific member from a specific member group.
@@ -267,7 +264,3 @@ Remove a specific member from a specific member group.
 ### Success Response
 
 **Code**: 200
-
-**Content Example**:
-
-`DELETE https://api.umbraco.io/member/john@example.com/groups/Club%20Blue%20Members`
