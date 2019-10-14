@@ -18,7 +18,7 @@ If you're running an Umbraco Cloud Baseline project on Umbraco 7 you are able to
 
 ## For how long will Umbraco 7 projects be supported on Umbraco Cloud?
 
-We will continue to support Umbraco 7 project on Umbraco Cloud until September 30th 2023. Support means providing you with necessary updates in regard to bug and security fixes. Following September 30th 2023, Umbraco 7 project will no longer work on Umbraco Cloud, thus, we recommend you make sure you migrate your projects to Umbraco 8 before this date.
+We will continue to support Umbraco 7 project on Umbraco Cloud until September 30th 2023. Support means providing you with necessary updates in regard to bug and security fixes. Following September 30th 2023, Umbraco 7 project will no longer work on Umbraco Cloud, so we'll therefore recommend you make sure you migrate your projects to Umbraco 8 before this date.
 
 ## Will it be possible to upgrade automatically from Umbraco 7 to Umbraco 8?
 
