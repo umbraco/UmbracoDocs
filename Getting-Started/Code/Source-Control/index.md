@@ -62,7 +62,7 @@ They include:
 - `Umbraco.sdf` - If you are using SQLCE for the data store in your Umbraco site, then this file IS that datastore, it will be difficult to source control the constant changes to this file.
 
 :::note
-There is a file `/App_Data/packages/installed/installedPackages.config` that lists all packages installed via the Umbraco backoffice, depending on how you update or install packages to your site, it can be useful to track changes to this file in source control.
+There is a file `/App_Data/packages/installedPackages.config` that lists all packages installed via the Umbraco backoffice, depending on how you update or install packages to your site, it can be useful to track changes to this file in source control.
 :::
 
 #### Umbraco Models Builder
