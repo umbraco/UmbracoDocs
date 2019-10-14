@@ -3,7 +3,7 @@ versionFrom: 8.0.0
 ---
 
 # Application startup
-The `ApplicationEventHandler` approach for registering events has been removed in Umbraco 8. The new approach for registering custom code at the 'ApplicationStarting' and 'ApplicationStarted' events uses a combination of 'Composers' and 'Components', you can find a basic example below and more detailed ones on the [Composing](../../Implementation/Composing) page.
+The `ApplicationEventHandler` approach for registering events has been removed in Umbraco 8. The new approach for registering custom code at the `ApplicationStarting` and `ApplicationStarted` events uses a combination of 'Composers' and 'Components', you can find a basic example below and more detailed ones on the [Composing](../../Implementation/Composing) page.
 
 Core developer Stephan also has a series of blog posts about the changes:
 - [Composing Umbraco v8](https://www.zpqrtbnk.net/posts/composing-umbraco-v8/)
@@ -11,7 +11,7 @@ Core developer Stephan also has a series of blog posts about the changes:
 - [Composing Umbraco v8 Components](https://www.zpqrtbnk.net/posts/composing-umbraco-v8-components/)
 
 ## Example - Getting started
-The following code uses a `ComponentComposer<T>` to add the `ApplicationComponent`. You can optionally override the `Compose()` method if you want to compose more then only adding the component (make sure to keep the call to the base method, as the component isn't added otherwise).    
+The following code uses a `ComponentComposer<T>` to add the `ApplicationComponent`. You can optionally override the `Compose()` method if you want to compose more than only adding the component (make sure to keep the call to the base method, as the component isn't added otherwise).    
 
 ```csharp
 public class ApplicationComposer : ComponentComposer<ApplicationComponent>, IUserComposer
