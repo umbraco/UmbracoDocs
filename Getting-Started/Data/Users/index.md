@@ -52,11 +52,11 @@ Go to the Users section and select the **Groups** tab in the top-right corner.
 
 Select *Create group* and you will be taken to the User Group editor. Here you can define and edit the User Group through custom settings and properties.
 
-### User Type Parameters
+### User Group Parameters
 
-![User Type Info tab](images/create-user-group.png)
+![Create User Group](images/create-user-group.png)
 
-Shows basic information about the User Type and settings for custom properties.
+Shows basic information about the User Group and settings for custom properties.
 
 **Name**: The name of the User Group shown in the User Group tab.
 
@@ -64,7 +64,7 @@ Shows basic information about the User Type and settings for custom properties.
 
 **Assign access**: Define which sections the users in the group will have access to, and if the users should have access to only some content / media that is also defined here.
 
-**Default Permissions**: Selects the default permissions granted to users of the User Type.
+**Default Permissions**: Selects the default permissions granted to users of the User Group.
 
 **Granular permissions**: Define a specific node the users in the group should have access to.
 
