@@ -80,7 +80,7 @@ The available user permissions are defined under **Default Permissions** in the 
 
 ### Setting User Permissions
 
-When a new user is created, you can set different permissions for that user on different domains and subdomains. You can also set permissions on different user groups, even for the default types.
+When a new user is created, you can set specific permissions for that user on different domains and subdomains. You can also set permissions on different user groups, even for the default types.
 
 # Technical
 
