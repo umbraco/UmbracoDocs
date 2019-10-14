@@ -72,7 +72,7 @@ namespace My.Namespace
         <td>(HttpActionExecutedContext sender,  EditorModelEventArgs&ltMemberDisplay&gt; e)</td>
         <td>
         Raised right before the editor model is sent for editing in the member section.<br />
-        NOTE: 'e' contains a model property of *Umbraco.Web.Models.ContentEditing.MemberDisplay* type which in turn contains the tabs and properties of the elements about to be loaded for editing 
+        NOTE: 'e' contains a model property of *Umbraco.Web.Models.ContentEditing.MemberDisplay* type which in turn contains the tabs and properties of the elements about to be loaded for editing
         </td>
     </tr>
     <tr>
@@ -83,7 +83,7 @@ namespace My.Namespace
         NOTE: 'e' contains a model property of *Umbraco.Web.Models.ContentEditing.UserDisplay* type which in turn contains the tabs and properties of the elements about to be loaded for editing
         </td>
     </tr>
-   </table>
+    </table>
 
 ### EditorModelEventArgs
 

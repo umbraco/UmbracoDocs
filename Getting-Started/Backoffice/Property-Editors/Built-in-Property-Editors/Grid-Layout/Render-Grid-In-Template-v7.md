@@ -14,7 +14,7 @@ To render a property based on the grid inside a template you should use the Html
 
 This will render the grid item with alias "propertyAlias" from the current page models' content.
 
-This will by default use the view `/views/partials/grid/bootstrap3.cshtml` you can also use other provided grid template rendering files - for example the built-in bootstrap2.cshtml view by overloading this helper: 
+This will by default use the view `/views/partials/grid/bootstrap3.cshtml` you can also use other provided grid template rendering files - for example the built-in bootstrap2.cshtml view by overloading this helper:
 
 ```csharp
 @Html.GetGridHtml(Model.Content, "propertyAlias", "bootstrap2")
@@ -43,7 +43,7 @@ Finally the `Html.GetGridHtml()` helpers are the recommended approach for render
 @CurrentPage.GetGridHtml(Html, "propertyAlias", "/views/mycustomrenderer.cshtml")
 ```
 
-and similarly 
+and similarly
 
 ```csharp
 @Model.Content.GetGridHtml(Html, "propertyAlias")

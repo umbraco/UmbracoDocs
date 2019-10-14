@@ -43,8 +43,8 @@ The FindDomain method looks for a domain matching the request Uri
 - Using a greedy match: “domain.com/foo” takes over “domain.com”
 - Sets published content request’s domain
 - If a domain was found
-	- Sets published content request’s culture accordingly
-	- Computes domain Uri based upon the current request ("domain.com" for "http://domain.com" or "https://domain.com")
+    - Sets published content request’s culture accordingly
+    - Computes domain Uri based upon the current request ("domain.com" for "http://domain.com" or "https://domain.com")
 - Else
 - Sets published content request’s culture by default
 (first language, else system)
@@ -67,7 +67,7 @@ UmbracoModule will pick up the redirect and redirect...  There is no need to wri
 ```csharp
 PublishedContentRequest.Prepared += (sender, args) =>
 {
-  var request = sender as PublishedContentRequest;  
+  var request = sender as PublishedContentRequest;
   if (!request.HasPublishedContent) return;
 
   var content = request.PublishedContent;
@@ -82,7 +82,7 @@ PublishedContentRequest.Prepared += (sender, args) =>
 
 Concerning Webforms - that's the same as v4 (no change).  That means that MVC has been made possible by the pipeline.
 
-You can of course create your own Mvc RenderController: 
+You can of course create your own Mvc RenderController:
 
 ```csharp
 // This is the default controller
@@ -100,7 +100,7 @@ A missing template goes to MVC
 
 There's one by default but you can use your own, so still time to change the view...
 
-As a reminder, [Route hijacking](../../../Reference/routing/custom-controllers) works like this: 
+As a reminder, [Route hijacking](../../../Reference/routing/custom-controllers) works like this:
 
 - create a **MyContentType**Controller
   - Will run in place of the default controller

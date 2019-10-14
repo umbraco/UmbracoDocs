@@ -15,7 +15,7 @@ Multi Url Picker allows an editor to pick and sort multiple urls. This property 
 
 ![Related Links Data Type Definition](images/Multy-Url-Picker-DataType-v8.png)
 
-## Content Example 
+## Content Example
 
 ![Media Picker Content](images/Multy-Url-Picker-Content-v8.png)
 
@@ -45,7 +45,7 @@ If `Max number of items` is configured to `1`
     var link = Model.Content.GetPropertyValue<Link>("link");
     if (link != null)
     {
-      <li><a href="@link.Url" target="@link.Target">@link.Name</a></li>
+    <li><a href="@link.Url" target="@link.Target">@link.Name</a></li>
     }
 }
 ```

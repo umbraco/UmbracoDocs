@@ -38,8 +38,8 @@ Textarea is an HTML textarea control for multiple lines of text. It can be confi
 
 ```csharp
 @{
-   if (Model.Content.HasValue("description")){
-       <p>@(Model.Content.GetPropertyValue<string>("description"))</p>
-   }
+    if (Model.Content.HasValue("description")){
+        <p>@(Model.Content.GetPropertyValue<string>("description"))</p>
+    }
 }
 ```

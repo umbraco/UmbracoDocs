@@ -73,36 +73,36 @@ Returns the Level this content item is on
 -----
 
 ## Custom properties
-All content and media items also contains a reference to all the data defined by their document type. 
+All content and media items also contains a reference to all the data defined by their document type.
 Custom property access is done with the various methods of: `GetPropertyValue`
-	
+
 ### Model.Content.GetPropertyValue(string)
-Returns the property value for the specified property alias 
+Returns the property value for the specified property alias
 
 ```csharp
 @*Get the property with alias: "siteName" from the current page  *@
 @Model.Content.GetPropertyValue("siteName")
 ```
-	
+
 The result Type of this property value is `object` which is fine in most cases since when using
 the above syntax, Razor will automatically execute a `ToString()` on the result value.
-	
+
 ### Model.Content.GetPropertyValue&lt;T>(string)
-Returns the property value for the specified property alias converted to the specified output value. 
+Returns the property value for the specified property alias converted to the specified output value.
 
 For example, to return the `string` result of "siteName" you would do:
 
 ```csharp
 @(Model.Content.GetPropertyValue<string>("siteName"))
 ```
-		 
+
 Some property value converters support multiple return value formats. For example if a property value normally returns a comma separated value list like: "5677,3456,8776", then the property value converter for the property editor might support converting directly to an enumerable list of integers, for example:
 
 ```csharp
 @(Model.Content.GetPropertyValue<IEnumerable<int>>("mediaIds"))
 ```
 
-Another example might be if a property editor stores a JSON value, it might support converting to a custom 
+Another example might be if a property editor stores a JSON value, it might support converting to a custom
 strongly typed model such as, or at the very least the JSON would be convertible to a `JObject` instance, for example:
 
 ```csharp

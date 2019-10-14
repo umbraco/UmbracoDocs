@@ -44,52 +44,52 @@ and follow the prompts
 It is recommended that you use a Diff tool to compare the configuration file changes with your own current configuration files.
 
 * /web.config updates
-	* Details are listed here: [https://issues.umbraco.org/issue/U4-2900](https://issues.umbraco.org/issue/U4-2900)
-	* You'll need to compare the new v7 web.config with your current web.config, here's a quick reference of what needs to change:
-		* Remove &lt;section name="BaseRestExtensions"&gt; section
-		* Remove &lt;section name="FileSystemProviders"&gt; section
-		* Remove &lt;sectionGroup name="system.web.webPages.razor"&gt; section
-		* Remove &lt;<FileSystemProviders &gt; element
-		* Remove &lt;BaseRestExtensions &gt; element
-		* Remove &lt;add key="umbracoUseMediumTrust" &gt; element
-		* Remove &lt;system.web.extensions&gt; element
-		* Removes &lt;xhtmlConformance &gt; element
-		* Remove &lt;system.codedom&gt; element
-		* Remove &lt;compilation&gt; <strong>&lt;assemblies *&gt;</strong> &lt;/compilation&gt;
-		* Remove &lt;system.web.webPages.razor &gt; element
-		* New &lt;sectionGroup name="umbracoConfiguration"&gt; section
-		* New &lt;umbracoConfiguration&gt; element  
-		* Ensure that the **targetFramework="4.5"** is added to the &lt;httpRuntime&gt; element
-		* Add &lt;add key="ValidationSettings:UnobtrusiveValidationMode" value="None" /&gt; to the appSettings element
+    * Details are listed here: [https://issues.umbraco.org/issue/U4-2900](https://issues.umbraco.org/issue/U4-2900)
+    * You'll need to compare the new v7 web.config with your current web.config, here's a quick reference of what needs to change:
+        * Remove &lt;section name="BaseRestExtensions"&gt; section
+        * Remove &lt;section name="FileSystemProviders"&gt; section
+        * Remove &lt;sectionGroup name="system.web.webPages.razor"&gt; section
+        * Remove &lt;<FileSystemProviders &gt; element
+        * Remove &lt;BaseRestExtensions &gt; element
+        * Remove &lt;add key="umbracoUseMediumTrust" &gt; element
+        * Remove &lt;system.web.extensions&gt; element
+        * Removes &lt;xhtmlConformance &gt; element
+        * Remove &lt;system.codedom&gt; element
+        * Remove &lt;compilation&gt; <strong>&lt;assemblies *&gt;</strong> &lt;/compilation&gt;
+        * Remove &lt;system.web.webPages.razor &gt; element
+        * New &lt;sectionGroup name="umbracoConfiguration"&gt; section
+        * New &lt;umbracoConfiguration&gt; element
+        * Ensure that the **targetFramework="4.5"** is added to the &lt;httpRuntime&gt; element
+        * Add &lt;add key="ValidationSettings:UnobtrusiveValidationMode" value="None" /&gt; to the appSettings element
 * /config/clientdependency.config changes
-	* remove &lt;add name="CanvasProvider" /&gt; element
+    * remove &lt;add name="CanvasProvider" /&gt; element
 * /views/web.config updates
 * New /macroscripts/web.config
 * /config/umbracoSettings.config
-	* Umbraco is now shipped with minimal settings but the [full settings](https://our.umbraco.com/documentation/Using-Umbraco/Config-files/umbracoSettings/) are still available
-	* umbracoSettings is now a true ASP.NET configuration section [https://issues.umbraco.org/issue/U4-58](https://issues.umbraco.org/issue/U4-58)
-	* remove the &lt;EnableCanvasEditing&gt; element
-	* remove the &lt;webservices&gt; element
+    * Umbraco is now shipped with minimal settings but the [full settings](https://our.umbraco.com/documentation/Using-Umbraco/Config-files/umbracoSettings/) are still available
+    * umbracoSettings is now a true ASP.NET configuration section [https://issues.umbraco.org/issue/U4-58](https://issues.umbraco.org/issue/U4-58)
+    * remove the &lt;EnableCanvasEditing&gt; element
+    * remove the &lt;webservices&gt; element
 * Removed xsltExtensions.config
-	* [https://issues.umbraco.org/issue/U4-2742](https://issues.umbraco.org/issue/U4-2742)
+    * [https://issues.umbraco.org/issue/U4-2742](https://issues.umbraco.org/issue/U4-2742)
 * /config/applications.config and /config/trees.config have some icon paths and names updated, you will need to merge the new changes into your existing config files.
 * /config/tinyMceConfig.config
-	* The inlinepopups is compatible supported in v7, you will need to remove this element: &lt;plugin loadOnFrontend="true"&gt;inlinepopups&lt;/plugin&gt;
-	* The plugins element that is shipped with v7 looks like:
+    * The inlinepopups is compatible supported in v7, you will need to remove this element: &lt;plugin loadOnFrontend="true"&gt;inlinepopups&lt;/plugin&gt;
+    * The plugins element that is shipped with v7 looks like:
 
-		    <plugins>
-		        <plugin loadOnFrontend="true">code</plugin>  
-		        <plugin loadOnFrontend="true">paste</plugin>
-		        <plugin loadOnFrontend="true">umbracolink</plugin>
-		        <plugin loadOnFrontend="true">anchor</plugin>
-		        <plugin loadOnFrontend="true">charmap</plugin>
-		        <plugin loadOnFrontend="true">table</plugin>
-		        <plugin loadOnFrontend="true">lists</plugin>
-		    </plugins>
-	* You will need to merge the changes from the new tinyMceConfig file into yours, the 'command' elements that have changed are: JustifyCenter, JustifyLeft, JustifyRight, JustifyFull, umbracomacro, umbracoembed, mceImage, subscript, superscript, styleselect
-	* Remove the command: mceSpellCheck
+            <plugins>
+                <plugin loadOnFrontend="true">code</plugin>
+                <plugin loadOnFrontend="true">paste</plugin>
+                <plugin loadOnFrontend="true">umbracolink</plugin>
+                <plugin loadOnFrontend="true">anchor</plugin>
+                <plugin loadOnFrontend="true">charmap</plugin>
+                <plugin loadOnFrontend="true">table</plugin>
+                <plugin loadOnFrontend="true">lists</plugin>
+            </plugins>
+    * You will need to merge the changes from the new tinyMceConfig file into yours, the 'command' elements that have changed are: JustifyCenter, JustifyLeft, JustifyRight, JustifyFull, umbracomacro, umbracoembed, mceImage, subscript, superscript, styleselect
+    * Remove the command: mceSpellCheck
 * /config/dashboard.config
-	* You will need to merge the changes from the new dashboard.config into yours. Some of the original dashboard entries that were shipped with v6 have been replaced or removed.
+    * You will need to merge the changes from the new dashboard.config into yours. Some of the original dashboard entries that were shipped with v6 have been replaced or removed.
 
 ## Medium Trust
 
@@ -148,9 +148,9 @@ For database change details see (including all child tasks):
 
 * Tags can now be assigned to a node’s property and not only a node
 * Multiple tag controls can exist on one page with different data
-	* The legacy API does **not** support this, the legacy API will effectively, add/update/remove tags for the first property found for the document that is assigned a tag property editor.
+    * The legacy API does **not** support this, the legacy API will effectively, add/update/remove tags for the first property found for the document that is assigned a tag property editor.
 * There is a new ITagService which can be used to query tags
-	* Querying for tags in a view (front-end) can be done via the new TagQuery class which is exposed from the UmbracoHelper. For example: `@Umbraco.TagQuery.GetTagsForProperty`
+    * Querying for tags in a view (front-end) can be done via the new TagQuery class which is exposed from the UmbracoHelper. For example: `@Umbraco.TagQuery.GetTagsForProperty`
 
 ## Packages
 

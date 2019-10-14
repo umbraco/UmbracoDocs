@@ -5,7 +5,7 @@ needsV8Update: "true"
 
 # View/Razor Examples
 
-_Lots of examples of using various techniques to render data in a view_ 
+_Lots of examples of using various techniques to render data in a view_
 
 ## Rendering a field with UmbracoHelper
 

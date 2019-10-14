@@ -3,13 +3,13 @@ versionFrom: 7.0.0
 versionRemoved: 8.0.0
 ---
 
-# Troubleshooting Content/Media transfers 
+# Troubleshooting Content/Media transfers
 
 If the schema is different between the two environments you are deploying between, you will need to deploy the updates for these before you can complete the Content transfer. Environments need to be in-sync before a Content and/or Media transfer can succeed.
 
 ![Schema Mismatch - Courier](images/schema-issues-courier.png)
 
-In the image above the content transfer is not possible because a Document Type and a Data type is out of sync between the source and target environments. 
+In the image above the content transfer is not possible because a Document Type and a Data type is out of sync between the source and target environments.
 
 While Content and Media transfers are done using the Umbraco backoffice you use the Umbraco Cloud Portal in order to deploy the schema changes, which exists on disk and are deployed through the underlying Git repository. If you are working locally, you deploy the changes using your local Git client.
 

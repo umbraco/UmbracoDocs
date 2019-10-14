@@ -31,7 +31,7 @@ Or you can open the **NuGet Package Manager** and select the **Updates** pane to
 #### Upgrades to versions lower than 7.2.0
 If you're not upgrading to 7.2.0 or higher then you should follow these extra instructions, if you are upgrading to 7.2.0+ then you can skip this and go to [Merge UI.xml and language files](#MergeUIxmlandlanguagefiles)
 
-**The following only applies to upgrading to versions lower than 7.2.0**  
+**The following only applies to upgrading to versions lower than 7.2.0**
 You will be asked to overwrite your web.config file and the files in /config, make sure to answer **No** to those questions.
 
 For some inexplicable reason, the installation will fail if you click "No to All" (in the GUI) or answer "L" (in the package manager console) to the question: "File 'Web.config' already exists in project 'MySite'. Do you want to overwrite it?" So make sure to only answer "**No**" (in the GUI) or "**N**" (in the package manager console).
@@ -74,11 +74,11 @@ Some packages (like Contour and Umbraco Forms) add dialogs to the UI.xml. Make s
 Packages like Contour, Umbraco Forms, and Courier also make changes to the language files located in: /Umbraco/Config/Lang/*.xml (typically en.xml).
 
 # Finalize
-After copying the files and making the config changes, you can open your site. You should see the installer which will guide you through the upgrade. 
+After copying the files and making the config changes, you can open your site. You should see the installer which will guide you through the upgrade.
 
 The installer will do two things:
 
-* Update the version number in the Web.config 
+* Update the version number in the Web.config
 * Upgrade your database in case there are any changes
 
 We are aware that, currently, the installer is asking you for the database details of a **blank database** while upgrading. In the near future this will be pre-filled with your existing details and the wording will be updated. So no need to be scared. Enter the details of your existing database and Umbraco will upgrade it to the latest version when necessary.

@@ -25,14 +25,14 @@ This can find uses in many 'audit' cases when you would like to let others know 
 General information about the deployment (to the configured environment) will be posted in JSON format to the url (configured in the previous section).
 
 ### Headers
-The headers contains information about the payload 
+The headers contains information about the payload
 in JSON format as well as a version of the payload.
 
     X-Umb-Webhook-Version: 1
     Content-Type: application/json; charset=utf-8
 
 ### Contents
-Contents of the payload contain general information about the current deployment with links to the project in the Portal and the frontend of the environment. Last part of the contents is a collection/enumeration of commits that were deployed to the environment, mentioning the author, the commit message and changed files. 
+Contents of the payload contain general information about the current deployment with links to the project in the Portal and the frontend of the environment. Last part of the contents is a collection/enumeration of commits that were deployed to the environment, mentioning the author, the commit message and changed files.
 
 
     {
@@ -74,6 +74,3 @@ Contents of the payload contain general information about the current deployment
             }
         ]
     }
-
-
-

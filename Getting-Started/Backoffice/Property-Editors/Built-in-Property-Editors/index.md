@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 This page contains a list of all the built-in Umbraco property editors and a short description of what they do:
 
-## [Checkbox (True/False)](True-False.md)
+## [Checkbox (True/False)](True-False)
 `Alias: Umbraco.TrueFalse`
 
 A checkbox which saves either 0 or 1, depending on the checkbox being checked or not.
@@ -39,7 +39,7 @@ A configurable number control allowing only numbers including decimals.
 ## [Dropdown](DropDown/index.md)
 `Alias: Umbraco.DropDown.Flexible`
 
-Introduced in Umbraco v 7.10. Displays a list of preset values. The content editor can select either a single or multiple values.
+Displays a list of preset values. The content editor can select either a single or multiple values.
 
 ## Email address
 `Alias: Umbraco.EmailAddress`
@@ -54,12 +54,12 @@ Adds an upload field, which allows documents or images to be uploaded to Umbraco
 ## [Grid Layout](Grid-Layout/index.md)
 `Alias: Umbraco.Grid`
 
-New to v7.2, gives editors a grid layout editor which allows them to insert different types of content in a predefined layout.
+Gives editors a grid layout editor which allows them to insert different types of content in a predefined layout.
 
 ## [Image Cropper](Image-Cropper.md)
 `Alias: Umbraco.ImageCropper`
 
-Used to crop and resize images to predefined sizes. Available from V7.1
+Used to crop and resize images to predefined sizes.
 
 ## Label
 `Alias: Umbraco.Label`
@@ -92,7 +92,7 @@ The media picker displays the current selected media and provides the option to 
 ## [Multi Url Picker](Multi-Url-Picker/index.md)
 `Alias: Umbraco.MultiUrlPicker`
 
-New in Umbraco v8, used to be a package called RJP Multi Url Picker. Replaced Related Links in v8.
+New in Umbraco 8, used to be a package called RJP Multi Url Picker. Replaced Related Links.
 
 ## [Multinode Treepicker](Multinode-Treepicker/index.md)
 `Alias: Umbraco.MultiNodeTreePicker`
@@ -102,7 +102,7 @@ The multinode treepicker data type allows content editors to choose multiple nod
 ## [Nested Content](Nested-Content/index.md)
 `Alias: Umbraco.NestedContent`
 
-New to v7.7, the nested content property editor enables you to use Document Types as a schema for list items.
+The nested content property editor enables you to use Document Types as a schema for list items.
 
 ## [Numeric](Numeric/index.md)
 `Alias: Umbraco.Integer`
@@ -114,7 +114,7 @@ A configurable number control allowing only numbers.
 
 Pretty much like the name indicates this property editor enables editors to choose from list of radio buttons.
 
-## [Repeatable textstrings](Multiple-Textbox.md)
+## [Repeatable textstrings](Multiple-Textbox)
 `Alias: Umbraco.MultipleTextstring`
 
 The Repeatable textstrings property editor enables a content editor to make a list of text items

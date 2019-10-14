@@ -1,6 +1,8 @@
 ---
 keywords: Backoffice tours
 versionFrom: 7.8.0
+meta.Title: "Backoffice Tours"
+meta.Description: "A guide configuring backoffice tours in Umbraco"
 ---
 
 # Backoffice tours
@@ -29,12 +31,12 @@ A tour file contains an array of tour configuration JSON objects. So it's possib
 
 ```json
 [
-	{
-		// tour configuration object
-	},
-	{
-		// tour configuration object
-	}
+    {
+        // tour configuration object
+    },
+    {
+        // tour configuration object
+    }
 ]
 ```
 
@@ -46,18 +48,18 @@ Example tour configuration object :
 
 ```json
 {
-	"name": "My Awesome tour",
-	"alias": "myUniqueAlias",
-	"group": "Get things done!!!",
-	"groupOrder": 1,
-	"allowDisable": true,
-	"culture" : "en-US",
-	"requiredSections": ["content","media"],
-	"steps": []
+    "name": "My Awesome tour",
+    "alias": "myUniqueAlias",
+    "group": "Get things done!!!",
+    "groupOrder": 1,
+    "allowDisable": true,
+    "culture" : "en-US",
+    "requiredSections": ["content","media"],
+    "steps": []
 }
 ```
 
-Below is an explanation of each of the properties on the tour configuration object
+Below is an explanation of each of the properties on the tour configuration object:
 
 ### name
 
@@ -105,16 +107,16 @@ Example tour step object:
 
 ```json
 {
-	"title": "A meaningful title",
-	"content": "<p>Some text explaining the step</p>",
-	"type": null,
-	"element": "#section-avatar",
-	"elementPreventClick": false,
-	"backdropOpacity": 0.6,
-	"event": "click",
-	"view": null,
-	"eventElement": "#section-avatar .umb-avatar",
-	"customProperties": null
+    "title": "A meaningful title",
+    "content": "<p>Some text explaining the step</p>",
+    "type": null,
+    "element": "#section-avatar",
+    "elementPreventClick": false,
+    "backdropOpacity": 0.6,
+    "event": "click",
+    "view": null,
+    "eventElement": "#section-avatar .umb-avatar",
+    "customProperties": null
 },
 ```
 
@@ -128,13 +130,13 @@ This the title shown on the tour step.
 
 ### content
 
-This text will be shown on the tour step, it can contain HTML markup
+This text will be shown on the tour step, it can contain HTML markup.
 
 ![Tour content highlighted](images/stepcontent.png)
 
 ### type
 
-The type of step. Currently, only one type is supported : "intro". This will center the step and show a "Start tour" button
+The type of step. Currently, only one type is supported : "intro". This will center the step and show a "Start tour" button.
 
 ### element
 
@@ -142,7 +144,7 @@ A CSS selector for the element you wish to highlight. The tour step will positio
 
 A lot of elements in the Umbraco backoffice have a "data-element" attribute. It's recommended to use that, because "id" and "class" are subject to changes, e.g.:
 
-	[data-element='section-content']
+    [data-element='section-content']
 
 TIP: Use the developer tools from your browser to find the id, class and data-attribute.
 

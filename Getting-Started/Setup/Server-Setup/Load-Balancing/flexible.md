@@ -45,7 +45,7 @@ The process is as follows:
 
 ## Scheduling and master election
 
-Although there is a Master server designated for administration, by default this is not explicitly set as the "Scheduling server". 
+Although there is a Master server designated for administration, by default this is not explicitly set as the "Scheduling server".
 In Umbraco there can only be a single scheduling server which performs the following 3 things:
 
 * Keep alive service - to ensure scheduled publishing occurs
@@ -56,15 +56,15 @@ Flexible Load Balancing will automatically elect a "Scheduling server" to perfor
 that all of the servers will need to be able to resolve the URL of either: itself, the Master server, the internal load balancer or the public address.
 
 For example, In the following diagram the replica node **f02.mysite.local** is the elected "Scheduling server". In order for scheduling to work it needs to be able to send
-requests to itself, the Master server, the internal load balancer or the public address. The address used by the "Scheduling server" is called the "umbracoApplicationUrl". 
+requests to itself, the Master server, the internal load balancer or the public address. The address used by the "Scheduling server" is called the "umbracoApplicationUrl".
 
 ![Umbraco flexible load balancing diagram](images/flexible-load-balancing-scheduler.png)
 
 By default, Umbraco will set the "umbracoApplicationUrl" to the address made by the first accepted request when the AppDomain starts.
 It is assumed that this address will be a DNS address that the server can resolve.
 
-For example, if a public request reached the load balancer on `www.mysite.com`, the load balancer may send the request on to the servers with the original address: `www.mysite.com`. By default the "umbracoApplicationUrl" will be `www.mysite.com`. However, load balancers may route the request internally under a different DNS name such as "f02.mysite.local" which 
-by default would mean the "umbracoApplicationUrl" is "f02.mysite.local". In any case the elected "Scheduling server" must be able to resolve this address. 
+For example, if a public request reached the load balancer on `www.mysite.com`, the load balancer may send the request on to the servers with the original address: `www.mysite.com`. By default the "umbracoApplicationUrl" will be `www.mysite.com`. However, load balancers may route the request internally under a different DNS name such as "f02.mysite.local" which
+by default would mean the "umbracoApplicationUrl" is "f02.mysite.local". In any case the elected "Scheduling server" must be able to resolve this address.
 
 In many scenarios this is fine, but in case this is not adequate there's a few of options you can use:
 
@@ -74,7 +74,7 @@ In many scenarios this is fine, but in case this is not adequate there's a few o
 
 ## Umbraco Configuration files
 
-There isn't any _Umbraco_ configuration file changes necessary. **You must not enable the distributed calls flag in the umbracoSettings.config** file for Flexible Load Balancing to work, that is purely for Traditional load balancing. 
+There isn't any _Umbraco_ configuration file changes necessary. **You must not enable the distributed calls flag in the umbracoSettings.config** file for Flexible Load Balancing to work, that is purely for Traditional load balancing.
 
 There are some Examine/Logging config file updates needed (see below and the [Overview](index.md))
 
@@ -99,12 +99,12 @@ Examine v0.1.80 introduced a new `directoryFactory` named `SyncTempEnvDirectoryF
 directoryFactory="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory,Examine"
 ```
 
-The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory. This setting is needed because Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Any time the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local environment temp files are cleared out that the index files can be restored from the centrally stored index files.  
+The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory. This setting is needed because Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Any time the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local environment temp files are cleared out that the index files can be restored from the centrally stored index files.
 
 #### Pre Examine v0.1.80 ####
 
 * In ExamineSettings.config, you can add these properties to all of your indexers and searchers: `useTempStorage="Sync" tempStorageDirectory="UmbracoExamine.LocalStorage.AzureLocalStorageDirectory, UmbracoExamine"`
-* The 'Sync' setting will store your indexes in the local workers file system instead of Azure Web Apps' 
+* The 'Sync' setting will store your indexes in the local workers file system instead of Azure Web Apps'
 remote file system. Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Anytime the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local temp files are cleared out that the index files can be restored from the centrally stored index files. If you see issues with this syncing process (in your logs), you can also change this value to be 'LocalOnly' which will only persist the index files to the local file system but this does mean they will be rebuilt when the website is migrated between Azure workers.
 
 ### If you plan on using auto-scaling
@@ -119,7 +119,7 @@ Examine v0.1.83 introduced a new `directoryFactory` named `TempEnvDirectoryFacto
 directoryFactory="Examine.LuceneEngine.Directories.TempEnvDirectoryFactory,Examine"
 ```
 
-The `TempEnvDirectoryFactory` allows Examine to store indexes directly in the environment temporary storage directory, and should be used instead of `SyncTempEnvDirectoryFactory` mentioned above. 
+The `TempEnvDirectoryFactory` allows Examine to store indexes directly in the environment temporary storage directory, and should be used instead of `SyncTempEnvDirectoryFactory` mentioned above.
 
 #### Pre Examine v0.1.83 ####
 
@@ -153,7 +153,7 @@ This will set Umbraco to store `umbraco.config` in the environment temporary fol
 For **Umbraco Pre v7.6**
 
 ```xml
-<add key="umbracoContentXMLUseLocalTemp" value="true" /> 
+<add key="umbracoContentXMLUseLocalTemp" value="true" />
 ```
 
 This will set Umbraco to store `umbraco.config` in the ASP.NET temporary folder

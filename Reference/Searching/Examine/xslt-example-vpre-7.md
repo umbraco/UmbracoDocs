@@ -31,15 +31,15 @@ Now we can use the Examine XSLT extensions in our XSLT. This will render the exa
 ```xml
 <xsl:template match="/">
     <xsl:if test="umbraco.library:Request('query') != ''">
-      <ul>
+    <ul>
         <xsl:for-each select="Examine:Search(umbraco.library:Request('query'))//node">
-          <li>
+        <li>
             <a href="{umbraco.library:NiceUrl(@id)}">
-              <xsl:value-of select="./data[@alias='nodeName']"/>
+            <xsl:value-of select="./data[@alias='nodeName']"/>
             </a>
-          </li>
+        </li>
         </xsl:for-each>
-      </ul>
+    </ul>
     </xsl:if>
 </xsl:template>
 ```

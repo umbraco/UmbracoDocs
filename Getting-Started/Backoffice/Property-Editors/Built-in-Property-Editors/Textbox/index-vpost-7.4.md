@@ -26,9 +26,9 @@ Textbox is an HTML input control for text.
 
 ```csharp
 @{
-   if (Model.Content.HasValue("pageTitle")){
-       <p>@(Model.Content.GetPropertyValue<string>("pageTitle"))</p>
-   }
+    if (Model.Content.HasValue("pageTitle")){
+        <p>@(Model.Content.GetPropertyValue<string>("pageTitle"))</p>
+    }
 }
 ```
 
@@ -39,8 +39,8 @@ See [Common pitfalls](../../../../../Reference/Common-Pitfalls/index.md#dynamics
 
 ```csharp
 @{
-   if (CurrentPage.HasValue("pageTitle")){
-       <p>@CurrentPage.pageTitle</p>
-   }
+    if (CurrentPage.HasValue("pageTitle")){
+        <p>@CurrentPage.pageTitle</p>
+    }
 }
 ```

@@ -11,7 +11,7 @@ The ApplicationTreeService is used to control/query the storage for tree registr
 
 [Browse the API documentation for IApplicationTreeService](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Services.IApplicationTreeService.html).
 
- * **Namespace:** `Umbraco.Core.Services` 
+ * **Namespace:** `Umbraco.Core.Services`
  * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
@@ -19,19 +19,19 @@ All samples in this document will require references to the following dll:
 * Umbraco.Core.dll
 
 All samples in this document will require the following using statements:
-	
-	using Umbraco.Core;
-	using Umbraco.Core.Models;
-	using Umbraco.Core.Services;
+
+    using Umbraco.Core;
+    using Umbraco.Core.Models;
+    using Umbraco.Core.Services;
 
 ## Getting the service
 The ApplicationTreeService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the ApplicationTreeService is available through a local `Services` property.
 
-	Services.ApplicationTreeService
+    Services.ApplicationTreeService
 
 Getting the service through the `ApplicationContext`:
 
-	ApplicationContext.Current.Services.ApplicationTreeService
+    ApplicationContext.Current.Services.ApplicationTreeService
 
 ## Methods
 
@@ -42,7 +42,7 @@ Persists a new `Umbraco.Core.Models.ApplicationTree` object
 Saves a `Umbraco.Core.Models.ApplicationTree` object
 
 ### .DeleteTree(ApplicationTree tree)
-Deletes a `Umbraco.Core.Models.ApplicationTree` object 
+Deletes a `Umbraco.Core.Models.ApplicationTree` object
 
 ### .GetByAlias(string treeAlias)
 Gets a `Umbraco.Core.Models.ApplicationTree` object by alias

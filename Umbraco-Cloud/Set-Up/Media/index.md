@@ -14,6 +14,10 @@ Setting up Azure Blob Storage requires you to install a few packages and follow 
 
 In this article you will find more specific information about setting up Azure Blob Storage on your Umbraco Cloud environments.
 
+### Video tutorial: Setup Azure Blob Storage with Umbraco Cloud
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/es3ImN-8o8o?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## Environment and Deployment considerations
 By default this provider will use a single blob container for the media used by all sites in a project. So development and live will all use the same media files. If this works with your workflow it is the recommended configuration. If you cannot use the same media across all environments then you will need to set up a different blob storage container for each environments. Each container will have a unique address and access keys.
 

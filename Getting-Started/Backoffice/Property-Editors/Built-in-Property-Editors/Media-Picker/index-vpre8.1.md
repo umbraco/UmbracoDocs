@@ -15,7 +15,7 @@ This property editors returns a single item if the "Pick multiple items" data ty
 
 ![Media Picker Data Type Definition](images/Media-Picker-DataType-v8.png)
 
-## Content Example 
+## Content Example
 
 ![Media Picker Content](images/Media-Picker-Content-v8.png)
 
@@ -30,7 +30,6 @@ This property editors returns a single item if the "Pick multiple items" data ty
     }
 }
 ```
-
 
 ## Typed Example (multiple disabled)
 

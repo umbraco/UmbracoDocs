@@ -13,7 +13,7 @@ By default, Umbraco uses an instance of `PhysicalFileSystem` to handle the media
         <add key="virtualRoot" value="~/media/" />
     </Parameters>
 </Provider>
-```  
+```
 
 `PhysicalFileSystem` implements the `IFileSystem` interface, and it is possible to replace it with a custom class - eg. if you want your media files stored on Azure or something similar.
 
@@ -39,7 +39,7 @@ CustomFileSystem fs = FileSystemProviderManager.Current.GetUnderlyingFileSystemP
 if (fs != null) {
     // Do some stuff here
 }
-```   
+```
 
 Both `IFileSystem` and `FileSystemProviderManager` are located in the `Umbraco.Core.IO` namespace.
 

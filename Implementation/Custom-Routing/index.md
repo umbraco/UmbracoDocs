@@ -1,12 +1,13 @@
 ---
 versionFrom: 7.0.0
 needsV8Update: "true"
+product: "CMS"
 ---
 
 # Custom routing in Umbraco
 
 _There are a couple of ways of controlling the routing behavior in Umbraco: customizing how the inbound request pipeline
-finds content & creating custom MVC routes that integrate within the Umbraco pipeline_
+finds content & creating custom MVC routes that integrate within the Umbraco pipeline_.
 
 ## Customizing the inbound pipeline
 
@@ -16,13 +17,13 @@ Below lists the ways in which you can customize the inbound request pipeline, th
 
 All Umbraco content is looked up based on the URL in the current request using an `IContentFinder`. IContentFinder's you can create and implement on your own which will allow you to map any URL to an Umbraco content item.
 
-See: [IContentFinder documentation](../../Reference/Routing/Request-Pipeline/IContentFinder)  
+See: [IContentFinder documentation](../../Reference/Routing/Request-Pipeline/IContentFinder)
 
 ### Last Chance IContentFinder
 
 A 'Last Chance' `IContentFinder` is a special implementation of an `IContentFinder` for use with handling 404's. You can implement one of these plugins to decide which Umbraco content page you would like to show when the URL hasn't matched an Umbraco content node.
 
-To set your own 404 finder create an IContentFinder and set it as the ContentLastChanceFinder. A ContentLastChanceFinder will always return a 404 status code. Example:
+To set your own 404 finder create an `IContentFinder` and set it as the `ContentLastChanceFinder`. A `ContentLastChanceFinder` will always return a 404 status code. Example:
 
 ```csharp
 ContentLastChanceFinderResolver.Current.SetFinder(new My404ContentFinder());
@@ -35,7 +36,7 @@ You can specify your own custom MVC routes to work within the Umbraco pipeline. 
 As an example:
 
 ```csharp
-//custom route to MyProductController which will use a node with ID 1234 as the
+// Custom route to MyProductController which will use a node with ID 1234 as the
 // IPublishedContent for the current rendering page
 routes.MapUmbracoRoute(
     "test",

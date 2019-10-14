@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+product: "CMS"
 meta.Title: "Learn about extending the functionality of Umbraco"
 meta.Description: "This section shows the different ways you can extend Umbraco. From Content Apps to Backoffice tours, and many more."
 ---
@@ -14,7 +15,7 @@ Content Apps encapsulate companion read-only information relating to the current
 
 ## [Backoffice tours](Backoffice-Tours/index.md)
 
-Backoffice tours is the integrated and interactive help for the backoffice
+Backoffice tours is the integrated and interactive help for the backoffice.
 
 ## [Dashboards](Dashboards/index.md)
 
@@ -53,13 +54,12 @@ Developers can create their own Umbraco Health Checks and Health Check notificat
 ## Packaging
 
 Information on the packaging manifest format and how assets should be packaged as a zip file for distribution
-**(coming soon)**
+**(coming soon)**.
 
 ## [Custom file systems (IFileSystem)](Custom-File-Systems.md)
 
-Details on implementing virtual file systems for things like media which will allow you to store your files outside of the physical file system (i.e. Cloud based for example)
+Details on implementing virtual file systems for things like media which will allow you to store your files outside of the physical file system (i.e. Cloud based for example).
 
 ## [Embedded Media Providers](Embedded-Media-Provider/index.md)
 
 Details on how to create a custom Embedded Media Provider to enable editors to embed third party media content into Umbraco via the embed button in the Rich Text Area.
-

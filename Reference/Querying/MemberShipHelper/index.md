@@ -24,7 +24,7 @@ If you need a `MembershipHelper` in a custom class, service, view, etc. you can 
 var memberShipHelper = new Umbraco.Web.Security.MembershipHelper(Umbraco.Web.UmbracoContext.Current);
 ```
 
-## ProfileModel and IPublishedContent 
+## ProfileModel and IPublishedContent
 When looking up Members, member data is returned as `IPublishedContent`, which is the same format used for Content and Media, so referencing member properties should
 be the exact same api as with those.
 
@@ -39,7 +39,7 @@ Looks for a member with a given node ID, if found, returns a member profile as `
 
 ### .GetByProviderKey(object key)
 Looks for a member with a given provider key, if found, returns a member profile as `IPublishedContent`. Provider key is the key that
-the membership provider allocates for the member as its primary key. 
+the membership provider allocates for the member as its primary key.
 Umbraco's default membership provider assigns a guid, alternative providers such as active directive likely uses another format.
 
 ### .GetByUsername(string username)

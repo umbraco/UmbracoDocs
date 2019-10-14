@@ -32,7 +32,7 @@ Confused?  Don't be. The value-of inherits the context of the for-each command, 
     <xsl:value-of select="current()/@nodeName"/>
 </xsl:for-each>
 ```
-	
+
 or
 
 ```xml
@@ -52,7 +52,7 @@ The resultant output of this will be the five pages listed without any markup, w
     </xsl:for-each>
 </ul>
 ```
-	
+
 Now, we will get bulleted list of page names.
 
 :::note

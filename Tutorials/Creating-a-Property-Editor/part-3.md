@@ -14,9 +14,9 @@ First up, we need to get access to the service, this is done in the constructor 
 
 ```javascript
 angular.module("umbraco")
-	.controller("My.MarkdownEditorController",
-	// inject Umbraco's assetsService and dialog service
-	function ($scope, assetsService, dialogService) { ... }
+    .controller("My.MarkdownEditorController",
+    // inject Umbraco's assetsService and dialog service
+    function ($scope, assetsService, dialogService) { ... }
 ```
 
 this works the same way as with the *assetsService* we added in step 1.
@@ -32,10 +32,10 @@ editor2.run();
 
 // subscribe to the image dialog clicks
 editor2.hooks.set("insertImageDialog", function (callback) {
-		// here we can intercept our own dialog handling
+        // here we can intercept our own dialog handling
 
-		return true; // tell the editor that we'll take care of getting the image url
-	});
+        return true; // tell the editor that we'll take care of getting the image url
+    });
 });
 ```
 
@@ -46,11 +46,11 @@ So now that we have access to the editor events, we will trigger a media picker 
 ```javascript
 // the callback is called when the use selects images
 dialogService.mediaPicker({callback: function(data){
-						// data.selection contains an array of images
-						$(data.selection).each(function(i, item){
-								// try using $log.log(item) to see what this data contains
-						});
-					}});
+                        // data.selection contains an array of images
+                        $(data.selection).each(function(i, item){
+                                // try using $log.log(item) to see what this data contains
+                        });
+                    }});
 ```
 
 ## Getting to the image data
@@ -115,9 +115,9 @@ Now when we run the markdown editor and click the image button, we are presented
 
 Clicking an image and choosing select returns the image to the editor which then renders it as:
 
-	![Koala picture][1]
+    ![Koala picture][1]
 
-	  [1]: /media/1005/Koala.jpg
+    [1]: /media/1005/Koala.jpg
 
 The above is correct markdown code, representing the image, and if preview is turned on, you will see the image below the editor.
 

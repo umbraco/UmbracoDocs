@@ -1,6 +1,8 @@
 ---
 versionFrom: 7.0.0
 needsV8Update: "true"
+meta.Title: "Security in Umbraco"
+meta.Description: "This section includes information on Umbraco security, its various security options and configuring how authentication & authorization works in Umbraco"
 ---
 
 # Security

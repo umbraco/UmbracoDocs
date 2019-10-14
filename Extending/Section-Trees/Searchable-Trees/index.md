@@ -14,7 +14,7 @@ You can create your own search mechanisms for your own custom sections or replac
 
 ## Custom Tree Search
 
-To create a search for your own custom tree you need to create a C# class that implements the interface `Umbraco.Web.Search.ISearchableTree`
+To create a search for your own custom tree you need to create a C# class that implements the interface `Umbraco.Web.Search.ISearchableTree`.
 
 ### ISearchableTree
 
@@ -56,7 +56,7 @@ public class SearchResultEntity : EntityBasic
 }
 ```
 
-A `SearchResultEntity` consists of a Score (a Float value) identifying its relevance to the search term, and the set of `EntityBasic` properties that all Umbraco objects share: eg Name, Id, Udi, Icon, Trashed, Key, ParentId, Path, Alias, AdditionalData
+A `SearchResultEntity` consists of a Score (a Float value) identifying its relevance to the search term, and the set of `EntityBasic` properties that all Umbraco objects share: eg Name, Id, Udi, Icon, Trashed, Key, ParentId, Path, Alias, AdditionalData.
 
 #### Example implementation of ISearchableTree
 
@@ -98,17 +98,17 @@ That's all we need, after an application pool recycle, if we now search in the b
 
 ![Content Section Dashboards](images/favouritethings-search-v8.png)
 
-Umbraco automatically finds any implementation of ISearchableTree in your site, and automatically configures it to be used for the custom section mentioned in the TreeAlias property. Be careful not to accidentally have two ISearchableTree implementations trying to search the 'same' TreeAlias, its 'one ISearchableTree per TreeAlias'!
+Umbraco automatically finds any implementation of ISearchableTree in your site, and automatically configures it to be used for the custom section mentioned in the TreeAlias property. Be careful not to accidentally have two ISearchableTree implementations trying to search the 'same' TreeAlias, it's *one* ISearchableTree per TreeAlias!
 
 ## Replacing an existing Section Tree Search (SearchableTreeResolver)
 
 Perhaps you want to change the logic for searching an existing section of the site, (why? - well you might have a 'company name' property on a MemberType in the Member section, and you want searches for that company name to filter the members who work there, the default implementation will only search on Member Name)
 
-Or perhaps you want to replace Examine search in the backoffice with an external Search Service, eg Azure Search. In a cloud hosted implementation you don't need to build the Examine indexes on each new server as your cloud hosting scales out.
+Or perhaps you want to replace Examine search in the backoffice with an external Search Service, e.g. Azure Search. In a cloud hosted implementation you don't need to build the Examine indexes on each new server as your cloud hosting scales out.
 
 ### Example
 
-First create your replacement custom `ISearchableTree` implementation, using the same approach as above, but specifying the TreeAlias of the Tree you aim to replace, eg 'Member'
+First create your replacement custom `ISearchableTree` implementation, using the same approach as above, but specifying the TreeAlias of the Tree you aim to replace, e.g. 'Member'
 
 ```csharp
 public string TreeAlias => "member";

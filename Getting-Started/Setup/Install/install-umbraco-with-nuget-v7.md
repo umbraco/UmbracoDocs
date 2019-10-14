@@ -16,8 +16,8 @@ _Follow these steps to do a full install of Umbraco with NuGet._
 - ReSharper 8 (last released in 2014) might have problems, try suspending it or upgrading to ReSharper version 8.2.3
 
 ## Note for ReSharper users
-We're aware of an ongoing issue with ReSharper 8 which interferes with the NuGet installation and causes it to fail (you can help getting this resolved by voting for [this issue][1]).  
-The advise for now is when you're installing Umbraco: suspend ReSharper through Tools > Options > ReSharper > Suspend Now.   
+We're aware of an ongoing issue with ReSharper 8 which interferes with the NuGet installation and causes it to fail (you can help getting this resolved by voting for [this issue][1]).
+The advise for now is when you're installing Umbraco: suspend ReSharper through Tools > Options > ReSharper > Suspend Now.
 After you're done installing or updating you can re-enable ReSharper in the same way.
 
 ## NuGet version
@@ -43,19 +43,19 @@ Go to **File > New Project** and pick ASP.NET Web Application. Click **OK** and 
 * ASP.NET MVC 3 Web Application (will be upgraded to an MVC 4 application)
 * ASP.NET MVC 4 Web Application
 
-Some of these have a second step, pick the **Empty** template on that second step.  
+Some of these have a second step, pick the **Empty** template on that second step.
 It's important to pick only one of those as other templates cause errors beyond our control.
 
 ![](images/NuGet/new-project-vs2012.png)
 
 ### Visual Studio 2013/2015/2017
-Go to **File > New Project** and pick an ASP.NET Web Application.    
+Go to **File > New Project** and pick an ASP.NET Web Application.
 
 **Note:** Refrain from naming your solution `Umbraco`, as this will cause a namespace conflict with the CMS itself.
 
 ![](images/NuGet/new-project-vs2013-1.png)
 
-On the next step, select the **Empty** template. It's important to pick **empty** as other templates include incompatible versions of MVC and Json.NET. (Don't enable any of the checkboxes to add folders or core references. Umbraco will add them for you).  
+On the next step, select the **Empty** template. It's important to pick **empty** as other templates include incompatible versions of MVC and Json.NET. (Don't enable any of the checkboxes to add folders or core references. Umbraco will add them for you).
 
 ![](images/NuGet/new-project-vs2013-2.png)
 
@@ -112,7 +112,7 @@ Should you need to exclude any of these folders or content, you can add a target
 ```xml
   <Target Name="StopUmbracoFromPublishingAppPlugins" AfterTargets="AddUmbracoFilesToOutput">
     <ItemGroup>
-      <FilesForPackagingFromProject Remove=".\App_Plugins\UmbracoForms\Data\**\*.*"/>
+    <FilesForPackagingFromProject Remove=".\App_Plugins\UmbracoForms\Data\**\*.*"/>
     </ItemGroup>
   </Target>
 ```

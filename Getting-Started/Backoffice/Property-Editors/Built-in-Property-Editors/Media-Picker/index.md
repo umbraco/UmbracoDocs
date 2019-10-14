@@ -14,7 +14,7 @@ This property editors returns a single item if the "Pick multiple items" data ty
 
 ![Media Picker Data Type Definition](images/Media-Picker-DataType-8_1.png)
 
-## Content Example 
+## Content Example
 
 ![Media Picker Content](images/Media-Picker-Content-v8.png)
 

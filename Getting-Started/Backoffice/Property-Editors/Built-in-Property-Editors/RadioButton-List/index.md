@@ -14,7 +14,7 @@ Pretty much like the name indicates this Data type enables editors to choose fro
 
 ![Radiobutton List Data Type Definition](images/RadioButton-List-DataType-v8.png)
 
-## Content Example 
+## Content Example
 
 ![Radiobutton List Content](images/RadioButton-List-Content-v8.png)
 
@@ -23,7 +23,7 @@ Pretty much like the name indicates this Data type enables editors to choose fro
 ### Typed
 
 #### Without Modelsbuilder
-```csharp 
+```csharp
 @if (Model.HasValue("colorTheme"))
 {
     var value = Model.Value("colorTheme");
@@ -32,13 +32,10 @@ Pretty much like the name indicates this Data type enables editors to choose fro
 ```
 
 #### With Modelsbuilder
-```csharp 
+```csharp
 @if (Model.HasValue("colorTheme"))
 {
     var value = Model.ColorTheme;
     <p>@value</p>
 }
 ```
-
-
-
