@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+product: "CMS"
 ---
 
 # Multilanguage sites
