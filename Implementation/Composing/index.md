@@ -120,8 +120,7 @@ namespace My.Website
 
         // terminate: runs once when Umbraco stops
         public void Terminate()
-        {
-        }
+        { }
 
         private void ContentService_Saving(IContentService sender, ContentSavingEventArgs e)
         {
@@ -154,10 +153,10 @@ Ordering of composers is important, the last one added can override a previously
 It's an implementation of IUserComposer, that provides a quicker way to add a custom Component to the Component's collection. Creating a C# class that inherits from ComponentComposer&lt;YourComponentType&gt; will automatically add YourComponentType to the collection of Components. In the example above, the SubscribeToContentServiceSavingComposer for the SubscribeToContentServiceSavingComponent could have been written more conveniently as:
 
 ```csharp
-public class SubscribeToContentServiceSavingComposer : ComponentComposer<SubscribeToContentServiceSavingComponent>
-{
-}
+public class SubscribeToContentServiceSavingComposer : ComponentComposer<SubscribeToContentServiceSavingComponent>, IUserComposer
+{ }
 ```
+
 ## Collections
 >"Collections of elements", for example the ContentFinders collection. - Collections are another concept that Umbraco uses to make things simpler, on top of DI. A collection builder builds a collection, allowing users to add and remove types before anything is registered into DI.
 
