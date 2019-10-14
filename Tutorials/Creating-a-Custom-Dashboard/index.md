@@ -396,7 +396,9 @@ Finally update our view to use the additional retrieved entity information:
 ```js
 <h2>We know what you edited last week...</h2>
 <ul class="unstyled">
-    <li ng-repeat="logEntry in vm.UserLogHistory.items"><i class="{{logEntry.Content.icon}}"></i> <a href="/umbraco/#/{{logEntry.editUrl}}">{{logEntry.Content.name}}</a> - <span class="text-muted">(Edited on: {{logEntry.timestamp  | date:'medium'}})</span></li>
+    <li ng-repeat="logEntry in vm.UserLogHistory.items">
+        <i class="{{logEntry.Content.icon}}"></i> <a href="/Umbraco/#/{{logEntry.editUrl}}">{{logEntry.Content.name}} <span ng-if="logEntry.comment">- {{logEntry.comment}}</span></a> - <span class="text-muted">(Edited on: {{logEntry.timestamp  | date:'medium'}})</span>
+    </li>
 </ul>
 ```
 
@@ -501,10 +503,12 @@ WelcomeDashboard.html:
     <h1>Welcome {{vm.UserName}} to Umbraco</h1>
     <p>We hope you find the experience of editing your content with Umbraco enjoyable and delightful. If you discover any problems with the site please report them to the support team at <a href="mailto:">support@popularumbracopartner.com</a></p>
 
-    <h2>We know what you edited last week...</h2>
-    <ul class="unstyled">
-        <li ng-repeat="logEntry in vm.UserLogHistory.items"><i class="{{logEntry.Content.icon}}"></i> <a href="/Umbraco/#/{{logEntry.editUrl}}">{{logEntry.Content.name}}</a> - <span class="text-muted">(Edited on: {{logEntry.timestamp  | date:'medium'}})</span></li>
-    </ul>
+<h2>We know what you edited last week...</h2>
+<ul class="unstyled">
+    <li ng-repeat="logEntry in vm.UserLogHistory.items">
+        <i class="{{logEntry.Content.icon}}"></i> <a href="/Umbraco/#/{{logEntry.editUrl}}">{{logEntry.Content.name}} <span ng-if="logEntry.comment">- {{logEntry.comment}}</span></a> - <span class="text-muted">(Edited on: {{logEntry.timestamp  | date:'medium'}})</span>
+    </li>
+</ul>
 
     <div>
         <a class="btn btn-primary btn-large" href="/umbraco/#/content/content/edit/1075?doctype=BlogPost&create=true">
