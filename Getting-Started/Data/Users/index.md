@@ -42,17 +42,20 @@ By default, the User groups available to new users are **Administrators**, **Wri
 
 **Sensitive data**: Any users added to this User group will have access to view any data marked as sensitive. Learn more about this feature in the [Sensitive Data](../../../Reference/Security/Sensitive-Data) article.
 
-## Creating a User Type
+## Creating a User Group
 
-You can also create your own custom User Types and add properties and tabs as you would with Document Types and Member Types.
+You can also create your own custom User Groups and add properties and tabs as you would with Document Types and Member Types.
 
-Go to the __Users__ section, click the menu icon next to __User Types__ and select __Create__. Name the new User Type and click the __Create__ button.
+Go to the Users section and select the **Groups** tab in the top-right corner.
 
-You are now taken to the User Type editor that is used to define and edit the User Type through custom settings and properties.
+![User Groups Tab](images/user-groups.png)
+
+Select *Create group* and you will be taken to the User Group editor. Here you can define and edit the User Group through custom settings and properties.
 
 ### User Type Parameters
 
-![User Type Info tab](images/User-Type-Info.png)
+![User Type Info tab](images/create-user-group.png)
+
 Shows basic information about the User Type and settings for custom properties.
 
 __Name:__ The name of the User Type shown in the User Type tree when new users are created.
