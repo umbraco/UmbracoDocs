@@ -263,3 +263,20 @@ You will still need to add all of the files you added above but, because your `C
     ]
 }
 ```
+
+## Notification badges
+
+There are times when you want to draw the attention of editors to your content badge, so they know they need to take some action. That is where notification badges come in to play.
+
+When you set a badge, a circle with a chosen background and a number in it will be added to the content app icon.
+
+![Content App badge](images/content-app-badge.png)
+
+You can enable a badge by using this code in the angular controller of your content app.
+
+```javascript
+$scope.model.badge = {
+  count: 5, // the number for the badge - anything non-zero triggers the badge
+  type: "warning" // optional: determines the badge color - "warning" = dark yellow, "alert" = red, anything else = turquoise ("info"-ish)
+};
+```
