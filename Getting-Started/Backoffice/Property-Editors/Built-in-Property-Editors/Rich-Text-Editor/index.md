@@ -8,9 +8,15 @@ versionFrom: 8.0.0
 
 `Returns: HTML`
 
-The Rich Text Editor is based on [tinymce](https://www.tinymce.com/) and is highly configurable.
+The Rich Text Editor (RTE) is based on [tinymce](https://www.tinymce.com/) and is highly configurable.
 
-LINK TO CONFIGURATION AND TO RTE-STYLES
+## [Configuration options](Configuration)
+
+Customize everything from toolbar options to editor size to where pasted images are saved.
+
+## [RTE Styles](RTE-Styles)
+
+Use CSS to define specific editor styles and add them to the RTE.
 
 ## Data Type Definition Example
 
