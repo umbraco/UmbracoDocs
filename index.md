@@ -71,6 +71,9 @@ How to use Umbraco Cloud: Get started, set up your Umbraco Cloud project, deploy
 ---
 
 ### Contributing
-*The documentation project is open source and hosted on GitHub. If you have any corrections or additions to the documentation clone the project and make a pull request. [Guidelines](https://github.com/umbraco/UmbracoDocs/blob/master/CONTRIBUTING.md) on how to contribute to the documentation.*
+*The documentation project is open source and hosted on GitHub. If you have any corrections or additions to the documentation clone the project and make a pull request. 
+
+[Getting Started](https://github.com/umbraco/UmbracoDocs/blob/master/CONTRIBUTING.md) contributing to the documentation. 
+[Guidelines](https://our.umbraco.com/documentation/Contribute/) for Umbraco documentation*
 
 ----------------
