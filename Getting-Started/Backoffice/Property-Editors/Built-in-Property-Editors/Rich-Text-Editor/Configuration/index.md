@@ -14,9 +14,9 @@ In the examble above, all 34 options have been enabled. The options include copy
 
 ## Stylesheets
 
-It's possible to define specific styles that can be used when editing content using the Rich Text Editor.
+It is possible to define specific styles that can be used when editing content using the RTE. You can use as many of these styles with the RTE.
 
-These styles are defined in stylesheets which can be created in the **Settings** section. Read the [Rich Text Editor Stylesheets]() article to learn more about this feature.
+The RTE styles are defined in CSS files which can be created in the **Settings** section. Read the [RTE Styles](../RTE-Styles) article to learn more about this feature.
 
 ## Dimensions
 
