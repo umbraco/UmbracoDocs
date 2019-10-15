@@ -1,44 +1,108 @@
 ---
 versionFrom: 8.0.0
-needsV8Update: "false"
 ---
 
 # Unit Testing Umbraco
 
+These examples are for Umbraco 8+ and they rely on [NUnit](https://nunit.org/) and [Moq](https://github.com/moq/moq4).
 
-These examples requires [NUnit](https://nunit.org/) and [Moq](https://github.com/moq/moq4).
+# Mocking
 
-## SetUp
-
-The ```Current.Factory``` needs to be mocked before each unit test that has an Umbraco dependency, or you'll get an ```InvalidOperationException``` saying that  **"No factory has been set"**.
+When testing components in Umbraco, especially controllers, there are a few dependencies that needs to be mocked / faked in order to get your unit tests running. Every Umbraco controller has two constructors: one empty constructor without any parameters for anyone not interested in unit testing or dependency injections, and one with full constructor injection which contains all parameters needed for proper unit testing. A lot of these dependencies are interfaces, which are simply mocked using Mock.Of<>, but there are still a few explicit non-interface dependencies that needs to be faked. In this documentation all mocks and fakes have been placed in a base class to avoid having to repeat this setup in every test class.
 
 ```csharp
-[SetUp]
-public void SetUp() 
+public abstract class UmbracoBaseTest 
 {
-     Current.Factory = new Mock<IFactory>().Object;
+    public ServiceContext ServiceContext;
+    public MembershipHelper MembershipHelper;
+    public UmbracoHelper UmbracoHelper;
+
+    public Mock<ICultureDictionary> CultureDictionary;
+    public Mock<ICultureDictionaryFactory> CultureDictionaryFactory;
+    public Mock<IPublishedContent> PublishedContent;
+    public Mock<IPublishedContentQuery> PublichedContentQuery;
+
+    [SetUp]
+    public virtual void SetUp()
+    {
+        this.SetupCultureDictionaries();
+        this.SetupPublishedContentQuerying();
+
+        this.ServiceContext = ServiceContext.CreatePartial();
+        this.MembershipHelper = new MembershipHelper(Mock.Of<HttpContextBase>(), Mock.Of<IPublishedMemberCache>(), Mock.Of<MembershipProvider>(), 
+        Mock.Of<RoleProvider>(), Mock.Of<IMemberService>(), Mock.Of<IMemberTypeService>(), Mock.Of<IUserService>(), Mock.Of<IPublicAccessService>(), AppCaches.NoCache, Mock.Of<ILogger>());
+        this.UmbracoHelper = new UmbracoHelper(Mock.Of<IPublishedContent>(), Mock.Of<ITagQuery>(), this.CultureDictionaryFactory.Object, 
+        Mock.Of<IUmbracoComponentRenderer>(), this.PublichedContentQuery.Object, this.MembershipHelper);
+    }
+
+    public virtual void SetupCultureDictionaries()
+    {
+        this.CultureDictionary = new Mock<ICultureDictionary>();
+        this.CultureDictionaryFactory = new Mock<ICultureDictionaryFactory>();
+        this.CultureDictionaryFactory.Setup(x => x.CreateDictionary()).Returns(this.CultureDictionary.Object);
+    }
+
+    public virtual void SetupPublishedContentQuerying()
+    {
+        this.PublishedContent = new Mock<IPublishedContent>();
+        this.PublichedContentQuery = new Mock<IPublishedContentQuery>();
+    }
+
+    public void SetupPropertyValue(string alias, object value, string culture = null, string segment = null)
+    {
+        var property = new Mock<IPublishedProperty>();
+        property.Setup(x => x.Alias).Returns(alias);
+        property.Setup(x => x.GetValue(culture, segment)).Returns(value);
+        property.Setup(x => x.HasValue(culture, segment)).Returns(value != null);
+        this.PublishedContent.Setup(x => x.GetProperty(alias)).Returns(property.Object);
+    }
 }
 ```
 
-## TearDown
-The ```Current.Factory``` needs to be reset after each test, or you'll get an ```InvalidOperationException``` in your second test saying that **"A factory has already been set"**. 
+## Testing a ContentModel
+
+See [Reference documentation on Returning a view with a custom model](https://our.umbraco.com/documentation/Reference/Routing/custom-controllers#returning-a-view-with-a-custom-model).
 
 ```csharp
-[TearDown]
-public void TearDown() 
+public class MyCustomViewModel : ContentModel
 {
-     Current.Reset();
+    public MyCustomViewModel(IPublishedContent content) : base(content) { }
+
+    public string Heading => this.Content.Value<string>(nameof(Heading));
+}
+
+[TestFixture]
+public class MyCustomModelTests : UmbracoBaseTest
+{
+    [SetUp]
+    public override void SetUp()
+    {
+        base.SetUp();
+    }
+
+    [Test]
+    [TestCase("", "")]
+    [TestCase("My Heading", "My Heading")]
+    [TestCase("Another Heading", "Another Heading")]
+    public void GivenPublishedContent_WhenGetHeading_ThenReturnCustomViewModelWithHeadingValue(string value, string expected)
+    {
+        base.SetupPropertyValue(nameof(MyCustomViewModel.Heading), value);
+        var model = new MyCustomViewModel(base.PublishedContent.Object);
+        Assert.AreEqual(expected, model.Heading);
+    }
 }
 ```
 
-## Render MVC Controller
+## Testing a RenderMvcController
 
-See [Reference documentation for Custom controllers (Hijacking Umbraco Routes)](https://our.umbraco.com/documentation/reference/routing/custom-controllers#creating-a-custom-controller). 
+See [Reference documentation for Custom controllers (Hijacking Umbraco Routes)](https://our.umbraco.com/documentation/reference/routing/custom-controllers#creating-a-custom-controller).
 
 ```csharp
-public class HomeController : RenderMvcController 
+public class HomeController : RenderMvcController
 {
-    public override ActionResult Index(ContentModel model) 
+    public HomeController(IGlobalSettings globalSettings, IUmbracoContextAccessor umbracoContextAccessor, ServiceContext serviceContext, AppCaches appCaches, IProfilingLogger profilingLogger, UmbracoHelper umbracoHelper) : base(globalSettings, umbracoContextAccessor, serviceContext, appCaches, profilingLogger, umbracoHelper) { }
+
+    public override ActionResult Index(ContentModel model)
     {
         var myCustomModel = new MyCustomModel(model.Content);
 
@@ -56,25 +120,19 @@ public class MyCustomModel : ContentModel
 }
 
 [TestFixture]
-public class HomeControllerTests 
+public class HomeControllerTests : UmbracoBaseTest
 {
     private HomeController controller;
 
     [SetUp]
-    public void SetUp() 
+    public override void SetUp()
     {
-        Current.Factory = new Mock<IFactory>().Object;
-        this.controller = new HomeController();
+        base.SetUp();
+        this.controller = new HomeController(Mock.Of<IGlobalSettings>(), Mock.Of<IUmbracoContextAccessor>(), base.ServiceContext, AppCaches.NoCache, Mock.Of<IProfilingLogger>(), base.UmbracoHelper);
     }
 
-    [TearDown]
-    public virtual void TearDown() 
-    {
-        Current.Reset();
-    }
-    
     [Test]
-    public void WhenIndexAction_ThenResultIsIsAssignableFromContentResult() 
+    public void WhenIndexAction_ThenResultIsIsAssignableFromContentResult()
     {
         var model = new ContentModel(new Mock<IPublishedContent>().Object);
 
@@ -84,7 +142,7 @@ public class HomeControllerTests
     }
 
     [Test]
-    public void GivenContentModel_WhenIndex_ThenReturnViewModelWithMyProperty() 
+    public void GivenContentModel_WhenIndex_ThenReturnViewModelWithMyProperty()
     {
         var model = new ContentModel(new Mock<IPublishedContent>().Object);
 
@@ -95,39 +153,35 @@ public class HomeControllerTests
 }
 ```
 
-## Surface Controller
+## Testing a SurfaceController
 
 See [Reference documentation on SurfaceControllers](../../Reference/Routing/surface-controllers.md).
 
 ```csharp
-public class MySurfaceController : SurfaceController 
+public class MySurfaceController : SurfaceController
 {
-    public ActionResult Index() 
+    public MySurfaceController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory umbracoDatabaseFactory, ServiceContext serviceContext, AppCaches appCaches, ILogger logger, IProfilingLogger profilingLogger, UmbracoHelper umbracoHelper) : base(umbracoContextAccessor, umbracoDatabaseFactory, serviceContext, appCaches, logger, profilingLogger, umbracoHelper) { }
+
+    public ActionResult Index()
     {
         return Content("Hello World");
     }
 }
 
 [TestFixture]
-public class MySurfaceControllerTests
+public class MySurfaceControllerTests : UmbracoBaseTest
 {
     private MySurfaceController controller;
 
     [SetUp]
-    public void SetUp() 
+    public override void SetUp()
     {
-        Current.Factory = new Mock<IFactory>().Object;
-        this.controller = new MySurfaceController();
-    }
-
-    [TearDown]
-    public void TearDown() 
-    {
-        Current.Reset();
+        base.SetUp();
+        this.controller = new MySurfaceController(Mock.Of<IUmbracoContextAccessor>(), Mock.Of<IUmbracoDatabaseFactory>(), base.ServiceContext, AppCaches.NoCache, Mock.Of<ILogger>(), Mock.Of<IProfilingLogger>(), base.UmbracoHelper);
     }
 
     [Test]
-    public void WhenIndexAction_ThenResultIsIsAssignableFromContentResult() 
+    public void WhenIndexAction_ThenResultIsIsAssignableFromContentResult()
     {
         var result = this.controller.Index();
 
@@ -144,95 +198,19 @@ public class MySurfaceControllerTests
 }
 ```
 
-## Umbraco API Controller
-
-See [Reference documentation on UmbracoApiControllers](https://our.umbraco.com/documentation/Reference/Routing/WebApi/#locally-declared-controller).
-
-```csharp
-
-public class ProductsController : UmbracoApiController
-{
-    public IEnumerable<string> GetAllProducts()
-    {
-        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
-    }
-}
-
-[TestFixture]
-public class ProductsControllerTests
-{
-    private ProductsController controller;
-
-    [SetUp]
-    public void SetUp()
-    {
-        Current.Factory = new Mock<IFactory>().Object;
-        this.controller = new ProductsController();
-    }
-
-    [TearDown]
-    public virtual void TearDown()
-    {
-        Current.Reset();
-    }
-
-    [Test]
-    public void WhenGetAllProducts_ThenReturnViewModelWithExpectedProducts()
-    {
-        var expected = new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
-
-        var result = this.controller.GetAllProducts();
-
-        Assert.AreEqual(expected, result);
-    }
-}
-
-```
-
-## Content Model
-
-See [Reference documentation on Returning a view with a custom model](https://our.umbraco.com/documentation/Reference/Routing/custom-controllers#returning-a-view-with-a-custom-model).
-
-```csharp
-
-public class MyCustomViewModel : ContentModel 
-{
-    public MyCustomViewModel(IPublishedContent content) : base(content) { }
-
-    public string Heading => this.Content.Value<string>(nameof(Heading));
-}
-
-```
-
-## Dictionaries
-The ```ICultureDictionary``` is used to fetch Dictionary values from Umbraco. It's the equivalent of using ```UmbracoHelper.GetDictionaryValue(string key)```, but with less mocking required.
-
+## Testing ICultureDictionary using the UmbracoHelper
 See [Core documentation on the interface ICultureDictionary](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Dictionary.ICultureDictionary.html).
 
 ```csharp
-// Only necessary if the ICultureDictionary is not already registered.
-public class CultureDictionaryComposer : IUserComposer
+public class HomeController : RenderMvcController
 {
-    public void Compose(Composition composition)
-    {
-        composition.Register<ICultureDictionary, DefaultCultureDictionary>(Lifetime.Scope);
-    }
-}
-
-public class MyDictionaryDependentController : RenderMvcController
-{
-    private readonly ICultureDictionary cultureDictionary;
-
-    public MyDictionaryDependentController(ICultureDictionary cultureDictionary)
-    {
-        this.cultureDictionary = cultureDictionary;
-    }
+    public HomeController(IGlobalSettings globalSettings, IUmbracoContextAccessor umbracoContextAccessor, ServiceContext serviceContext, AppCaches appCaches, IProfilingLogger profilingLogger, UmbracoHelper umbracoHelper) : base(globalSettings, umbracoContextAccessor, serviceContext, appCaches, profilingLogger, umbracoHelper) { }
 
     public override ActionResult Index(ContentModel model)
     {
         var myCustomModel = new MyCustomModel(model.Content)
         {
-            MyProperty1 = this.cultureDictionary["myDictionaryKey"]
+            MyProperty1 = this.Umbraco.GetDictionaryValue("myDictionaryKey")
         };
 
         return View(myCustomModel);
@@ -240,23 +218,16 @@ public class MyDictionaryDependentController : RenderMvcController
 }
 
 [TestFixture]
-public class MyDictionaryDependentControllerTests
+public class HomeControllerTests : UmbracoBaseTest
 {
-    private MyDictionaryDependentController controller;
+    private HomeController controller;
     private Mock<ICultureDictionary> cultureDictionary;
 
     [SetUp]
-    public void SetUp()
+    public override void SetUp()
     {
-        Current.Factory = new Mock<IFactory>().Object;
-        this.cultureDictionary = new Mock<ICultureDictionary>();
-        this.controller = new MyDictionaryDependentController(this.cultureDictionary.Object);
-    }
-
-    [TearDown]
-    public virtual void TearDown()
-    {
-        Current.Reset();
+        base.SetUp();
+        this.controller = new HomeController(Mock.Of<IGlobalSettings>(), Mock.Of<IUmbracoContextAccessor>(), base.ServiceContext, AppCaches.NoCache, Mock.Of<IProfilingLogger>(), base.UmbracoHelper);
     }
 
     [Test]
@@ -264,7 +235,7 @@ public class MyDictionaryDependentControllerTests
     public void GivenMyDictionaryKey_WhenIndex_ThenReturnViewModelWithMyPropertyDictionaryValue(string key, string expected)
     {
         var model = new ContentModel(new Mock<IPublishedContent>().Object);
-        this.cultureDictionary.Setup(x => x[key]).Returns(expected);
+        base.CultureDictionary.Setup(x => x[key]).Returns(expected);
 
         var result = (MyCustomModel)((ViewResult)this.controller.Index(model)).Model;
 
@@ -273,50 +244,41 @@ public class MyDictionaryDependentControllerTests
 }
 ```
 
-## Content
-The ```IPublishedContentQuery``` is used to fetch Content from Umbraco. It's the equivalent of using ```UmbracoHelper.Content(object id)```, but with less mocking required.
-
+## Testing IPublishedContentQuery using the UmbracoHelper
 See [Core documentation on the interface IPublishedContentQuery](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Web.IPublishedContentQuery.html).
 
 ```csharp
 public class MyCustomController : RenderMvcController
 {
-    private readonly IPublishedContentQuery contentQuery;
-
-    public MyCustomController(IPublishedContentQuery contentQuery)
-    {
-        this.contentQuery = contentQuery;
-    }
+    public MyCustomController(IGlobalSettings globalSettings, IUmbracoContextAccessor umbracoContextAccessor, ServiceContext serviceContext, AppCaches appCaches, IProfilingLogger profilingLogger, UmbracoHelper umbracoHelper) : base(globalSettings, umbracoContextAccessor, serviceContext, appCaches, profilingLogger, umbracoHelper) { }
 
     public override ActionResult Index(ContentModel model)
     {
-        var myCustomModel = new MyCustomModel(model.Content)
+        var myCustomModel = new MyOtherCustomModel(model.Content)
         {
-            OtherContent = this.contentQuery.Content(1062)
+            OtherContent = this.Umbraco.Content(1062)
         };
 
         return View(myCustomModel);
     }
 }
 
+public class MyOtherCustomModel : ContentModel 
+{
+    public MyOtherCustomModel(IPublishedContent content) : base(content) { }
+    public IPublishedContent OtherContent { get; set; }
+}
+
 [TestFixture]
-public class MyCustomControllerTests
+public class MyCustomControllerTests : UmbracoBaseTest
 {
     private MyCustomController controller;
-    private Mock<IPublishedContentQuery> contentQuery;
 
     [SetUp]
-    public void SetUp()
+    public override void SetUp()
     {
-        Current.Factory = new Mock<IFactory>().Object;
-        this.contentQuery = new Mock<IPublishedContentQuery>();
-        this.controller = new MyCustomController(this.contentQuery.Object);
-    }
-
-    [TearDown]
-    public virtual void TearDown()
-    {
-        Current.Reset();
+        base.SetUp();
+        this.controller = new MyCustomController(Mock.Of<IGlobalSettings>(), Mock.Of<IUmbracoContextAccessor>(), base.ServiceContext, AppCaches.NoCache, Mock.Of<IProfilingLogger>(), base.UmbracoHelper);
     }
 
     [Test]
@@ -324,9 +286,9 @@ public class MyCustomControllerTests
     {
         var currentContent = new ContentModel(new Mock<IPublishedContent>().Object);
         var otherContent = Mock.Of<IPublishedContent>();
-        this.contentQuery.Setup(x => x.Content(1062)).Returns(otherContent);
-        
-        var result = (MyCustomModel)((ViewResult)this.controller.Index(currentContent)).Model;
+        base.PublichedContentQuery.Setup(x => x.Content(1062)).Returns(otherContent);
+
+        var result = (MyOtherCustomModel)((ViewResult)this.controller.Index(currentContent)).Model;
 
         Assert.AreEqual(otherContent, result.OtherContent);
     }
