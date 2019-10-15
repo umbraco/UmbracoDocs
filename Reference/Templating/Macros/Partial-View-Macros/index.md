@@ -1,4 +1,9 @@
-#Partial View Macros
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
+# Partial View Macros
 
 _Partial view macros are the recommended macro type to use in Umbraco. They work in both MVC and Webforms and use the unified query syntax that is available via the `UmbracoHelper`_
 
@@ -6,28 +11,34 @@ _Partial view macros are the recommended macro type to use in Umbraco. They work
 
 All partial view macro views inherit from `Umbraco.Web.Macros.PartialViewMacroPage` and as such, the header of each partial view macro file will have this syntax:
 
-	@inherits Umbraco.Web.Macros.PartialViewMacroPage
-	
+```csharp
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+```
+
 The model type for a partial view macro is `Umbraco.Web.Models.PartialViewMacroModel` which contains all of the properties you will need to
-render out content as well as some additional properties about the macro itself: `MacroName`, `MacroAlias`, `MacroId`, and `MacroParameters`. 
+render out content as well as some additional properties about the macro itself: `MacroName`, `MacroAlias`, `MacroId`, and `MacroParameters`.
 
-##File information
+## File information
 
-By default Partial View Macros are stored in this folder: 
+By default Partial View Macros are stored in this folder:
 
-> ~/Views/MacroPartials 
+> ~/Views/MacroPartials
 
 However if you are bundling up Partial View Macros as part of a package, they can also exist in this folder:
 
 > ~/App_Plugins/[YourPackageName]/Views/MacroPartials
 
-Since Partial View Macros are just a normal MVC partial view, their file extension is **cshtml**. All Partial View Macro views inherit from the view class
+Since Partial View Macros are a normal MVC partial view, their file extension is **cshtml**. All Partial View Macro views inherit from the view class
 
-	Umbraco.Web.Macros.PartialViewMacroPage
+```csharp
+Umbraco.Web.Macros.PartialViewMacroPage
+```
 
-Therefore all files will contain this header (which is done automatically for you if creating Partial View Macros via the Umbraco back office):
+Therefore all files will contain this header (which is done automatically for you if creating Partial View Macros via the Umbraco backoffice):
 
-	@inherits Umbraco.Web.Macros.PartialViewMacroPage
+```csharp
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+```
 
 ## Accessing content
 
@@ -39,4 +50,18 @@ You can use @CurrentPage, @Model.Content, @Umbraco, ...
 
 You can access the macro's parameters using the `MacroParameters` property on the model which is of type `IDictionary<string, object>`
 
-    var myParam = Model.MacroParameters["aliasOfTheMacroParameter"];
+```csharp
+var myParam = Model.MacroParameters["aliasOfTheMacroParameter"];
+```
+
+or via the typed GetParameterValue method in Umbraco.Web.Models namespace
+
+```csharp
+var myParam = Model.GetParameterValue<string>("aliasOfTheMacroParameter");
+```
+
+and with default value fallback
+
+```csharp
+var myParam = Model.GetParameterValue<string>("aliasOfTheMacroParameter", "default value if parameter value has not been set");
+```
