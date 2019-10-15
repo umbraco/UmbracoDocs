@@ -119,7 +119,7 @@ Pretty much like the name indicates this property editor enables editors to choo
 
 The Repeatable textstrings property editor enables a content editor to make a list of text items
 
-## Rich Text Editor
+## [Rich Text Editor](Rich-Text-Editor)
 `Alias: Umbraco.TinyMCE`
 
 A [tinymce](https://www.tinymce.com/) based rich text editor which is highly configurable.  Probably one of the most used controls in Umbraco projects.
