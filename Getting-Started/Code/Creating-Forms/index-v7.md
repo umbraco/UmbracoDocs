@@ -1,6 +1,5 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
 ---
 
 # Creating forms
@@ -36,7 +35,7 @@ namespace MyFirstForm.Models
 Build your solution after adding the model.
 
 ### Creating the view
-Next, we add the view for the form to the `/View/Partials` folder. Because we've added the model and built the solution we can add it as a strongly typed view.
+Next, we add the view for the form to the `/View/Partials` folder. Because we've added the model and built the solution we can add it as a strongly typed view. Name the view 'ContactForm'
 
 The view can be built with standard MVC helpers:
 
@@ -58,7 +57,7 @@ The view can be built with standard MVC helpers:
 ```
 
 ### Adding the controller
-Finally, we're going to add the controller. Add a controller to the `/Controllers` folder, name it `ContactController` and make sure to use an __empty MVC controller__ as the template.
+Finally, we're going to add the controller. Add a controller to the `/Controllers` folder, name it `ContactFormController` and make sure to use an __empty MVC controller__ as the template. Change the form to inherit from SurfaceController instead of Controller.
 
 ```csharp
 using MyFirstForm.Models;
@@ -86,6 +85,8 @@ namespace MyFirstForm.Controllers
     }
 }
 ```
+
+Build your solution after adding the controller.
 
 If the model state is invalid, `CurrentUmbracoPage()` will send the user back to the form. If valid, you can work with the form data, e.g. sending an email to site admin and then `RedirectToCurrentUmbracoPage();`.
 
