@@ -30,17 +30,23 @@ If inserted images are larger than the dimensions defined here, the images will 
 
 ## Mode
 
-The Rich Text Editor comes in two different modes.
+The Rich Text Editor comes in two different modes: Classic and Distraction Free.
 
-**Classic**
+### Classic
+
+The default mode, which displays the toolbar in the top.
+
 ![RTE Mode: Classic](images/rte-mode-classic.png)
-The toolbar is always visible.
 
-**Distraction Free**
+### Distraction Free
+
+In this mode the toolbar is hidden, and only shows up when content in the editor is highlighted.
+
 ![RTE Mode: Distraction Free](images/rte-mode-distractionfree.png)
-The toolbar is hidden, and only shows up when content in the editor is highlighted.
 
 ## Hide Label
+
+
 
 ## Ignore User Start Nodes
 
