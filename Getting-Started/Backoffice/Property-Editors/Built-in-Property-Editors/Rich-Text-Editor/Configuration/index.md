@@ -46,8 +46,14 @@ In this mode the toolbar is hidden, and only shows up when content in the editor
 
 ## Hide Label
 
-
+When this option is checked the label and description for the RTE property will be hidden.
 
 ## Ignore User Start Nodes
 
+Some of the backoffice users might be restricted to a specific part of the content tree. When the "Ignore User Start Nodes" is checked, the users can pick any piece of content from the content tree, when adding internal links through the RTE.
+
 ## Image Upload Folder
+
+Images added through the RTE is by default added to the root of the Media library.
+
+Sometimes you might want to add the images to a specific folder. This folder can be configured using the "Image Upload Folder" setting.
