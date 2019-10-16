@@ -13,6 +13,10 @@ Umb-Project-Alias: {project-alias}
 
 Auth is required for this API meaning that you must supply a Bearer Token via an Authorization header or an API Key via an Authorization or Api-Key header.
 
+## Permissions
+
+All reqests requires access to the Content Section of the Umbraco Backoffice and the content being accessed is beneath the users start node configured in Umbraco in addition to the specific permissions listed under each endpoint.
+
 ## Errors
 
 If an error occours you will receive a HTTP status code along with an API error code and an error message in the response body.
@@ -45,7 +49,7 @@ Get all content at the root of the tree, which the authorized user has access to
 
 **Method**: `GET`
 
-**Permissions required** : Access to Content section of the Umbraco Backoffice
+**Permissions required** : `Browse Node`
 
 ### Success Response
 
@@ -183,7 +187,7 @@ Includes all language variations.
 
 **Method**: `GET`
 
-**Permissions required** : Access to Content section of the Umbraco Backoffice
+**Permissions required** : `Browse Node`
 
 ### Success Response
 
@@ -274,7 +278,7 @@ Includes all language variations per content item.
 ?pageSize={integer=10}
 ```
 
-**Permissions required** : Access to Content section of the Umbraco Backoffice
+**Permissions required** : `Browse Node`
 
 ### Success Response
 
@@ -516,7 +520,7 @@ Please note that newly created content will be `DRAFT` by default, so if you wan
 
 **Header (Optional)**: Content-Type: multipart/form-data; boundary=MultipartBoundry
 
-**Permissions required** : Access to Content section of the Umbraco Backoffice
+**Permissions required** : `Create`
 
 ### Request
 
@@ -642,7 +646,7 @@ When content contains an upload field it is possible to send a file along with t
 
 **Header (Optional)**: Content-Type: multipart/form-data; boundary=MultipartBoundry
 
-**Permissions required** : Access to Content section of the Umbraco Backoffice
+**Permissions required** : `Update`
 
 ### Request
 
@@ -771,7 +775,7 @@ Publish specific content item with all language variations or for a specific lan
 ?culture={string=en-US}
 ```
 
-**Permissions required** : Access to Content section of the Umbraco Backoffice
+**Permissions required** : `Publish`
 
 ### Success Response
 
@@ -859,7 +863,7 @@ Unpublish specific content item with all language variations or for a specific l
 ?culture={string=en-US}
 ```
 
-**Permissions required** : Access to Content section of the Umbraco Backoffice
+**Permissions required** : `Unpublish`
 
 ### Success Response
 
@@ -941,7 +945,7 @@ Delete a specific content item with all its language variations.
 
 **Method**: `DELETE`
 
-**Permissions required** : Access to Content section of the Umbraco Backoffice
+**Permissions required** : `Delete`
 
 ### Success Response
 
