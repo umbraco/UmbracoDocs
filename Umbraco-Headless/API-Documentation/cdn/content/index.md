@@ -425,7 +425,7 @@ Get content by its content type.
 Use the content type alias to filter all returned content to that specific type.
 Example: `GET /content/type?contentType=product` gets all content based on the `product` content type.
 
-**URL**: `/content/type?contentType={string=contentType}`
+**URL**: `/content/type?contentType={string}`
 
 **Method**: `GET`
 
@@ -451,14 +451,15 @@ Example: `GET /content/type?contentType=product` gets all content based on the `
   "_pageSize": 10,
   "_links": {
     "self": {
-      "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324/descendants?page=1"
+      "href": "https://cdn.umbraco.io/content/type?contentType=product&page=1&pageSize=10"
     },
     "page": {
-      "href": "https://cdn.umbraco.io/content/{id}/descendants{?page,pageSize}",
+      "href": "https://cdn.umbraco.io/content/type{?contentType,page,pageSize}",
       "templated": true
     },
     "root": {
-      "href": "https://cdn.umbraco.io/content"
+      "href": "https://cdn.umbraco.io/content{?contentType}",
+      "templated": true
     },
     "content": [
       {
@@ -492,7 +493,8 @@ Example: `GET /content/type?contentType=product` gets all content based on the `
             "title": "Tattoo"
           },
           "root": {
-            "href": "https://cdn.umbraco.io/content"
+            "href": "https://cdn.umbraco.io/content{?contentType}",
+            "templated": true
           },
           "children": {
             "href": "https://cdn.umbraco.io/content/df1eb830-411b-4d41-a343-3917b76d533c/children"
@@ -559,7 +561,8 @@ Example: `GET /content/type?contentType=product` gets all content based on the `
             "title": "Unicorn"
           },
           "root": {
-            "href": "https://cdn.umbraco.io/content"
+            "href": "https://cdn.umbraco.io/content{?contentType}",
+            "templated": true
           },
           "children": {
             "href": "https://cdn.umbraco.io/content/4e96411a-b8e1-435f-9322-2faee30ef5f2/children"
@@ -626,7 +629,8 @@ Example: `GET /content/type?contentType=product` gets all content based on the `
             "title": "Ping Pong Ball"
           },
           "root": {
-            "href": "https://cdn.umbraco.io/content"
+            "href": "https://cdn.umbraco.io/content{?contentType}",
+            "templated": true
           },
           "children": {
             "href": "https://cdn.umbraco.io/content/d390a562-107d-4f02-8df7-57aa86bad752/children"
@@ -692,7 +696,7 @@ Gets ancestors of a single published content
 
 ```none
 ?hyperlinks={boolean=true}
-?contentType={string=people}
+?contentType={string}
 ```
 
 ### Success Response
@@ -807,7 +811,7 @@ Gets children of a single published content
 
 ```none
 ?hyperlinks={boolean=true}
-?contentType={string=product}
+?contentType={string}
 ?page={integer=1}
 ?pageSize={integer=10}
 ```
@@ -1067,7 +1071,7 @@ Get descendants of a single published content
 
 ```none
 ?hyperlinks={boolean=true}
-?contentType={string=product}
+?contentType={string}
 ?page={integer=1}
 ?pageSize={integer=10}
 ```
