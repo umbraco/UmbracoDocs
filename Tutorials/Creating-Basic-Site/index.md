@@ -44,7 +44,7 @@ A solution for the template in the menu.
 
 
 ## [Articles Parent and Article Items](Articles-Parent-and-Article-Items)
-How to have a parent page that lists and links to child nodes automatically (e.g. an article list page containing an flexible/infinite number of articles - useful for Blogs or News pages).
+How to have a parent page that lists and links to child nodes automatically (e.g. an article list page containing a flexible/infinite number of articles - useful for Blogs or News pages).
 
 ## [Adding Language Variants](Adding-Language-Variants.md)
 At this point we have a basic site, but wouldn't it be cool if we could make the same site in another language? Read on to see how easy it is with Language Variants!
