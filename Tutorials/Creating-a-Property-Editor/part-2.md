@@ -11,7 +11,7 @@ This is step 2 in our guide to building a property editor. This step continues w
 
 
 ## Configuration?
-An important part of building good property editors is to build something relatively flexible, so you can reuse it many many times, for different things. Like the Rich Text Editor in Umbraco, that allows you to choose which buttons and stylesheets you want to use on each instance of the editor.
+An important part of building good property editors is to build something relatively flexible, so you can reuse it many times, for different things. Like the Rich Text Editor in Umbraco, that allows you to choose which buttons and stylesheets you want to use on each instance of the editor.
 
 So an editor can be used several times, with different configurations, and that is what we will be working on now.
 
