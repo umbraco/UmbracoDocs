@@ -103,7 +103,7 @@ You can add the form to a template by rendering the partial view:
 To add the form to your site we'll make a macro. This also makes it possible to let editors add the form to a page using the rich text editor.
 
 #### Creating a macro
-Go to settings and click the menu icon on the __Partial Views Macro Files__ node and select __New partial view macro__. Name the macro *Contact Form*.
+Go to the Settings section and right-click the __Partial Views Macro Files__ node. Choose "Create" and select __New partial view macro__. Name the macro *Contact Form*.
 
 In the partial view, we're going to render our contact form using the view model we created earlier.
 
