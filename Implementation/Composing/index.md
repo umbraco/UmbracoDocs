@@ -150,7 +150,7 @@ Ordering of composers is important, the last one added can override a previously
 :::
 
 ### ComponentComposer&lt;T&gt;
-It's an implementation of IUserComposer, that provides a quicker way to add a custom Component to the Component's collection. Creating a C# class that inherits from ComponentComposer&lt;YourComponentType&gt; will automatically add YourComponentType to the collection of Components. In the example above, the SubscribeToContentServiceSavingComposer for the SubscribeToContentServiceSavingComponent could have been written more conveniently as:
+It's an implementation of `IComposer`, that provides a quicker way to add a custom component to the Component's collection. Creating a C# class that inherits from `ComponentComposer<YourComponentType>` will automatically add `YourComponentType` to the collection of Components. In the example above, the `SubscribeToContentServiceSavingComposer` for the `SubscribeToContentServiceSavingComponent` could have been written more conveniently as:
 
 ```csharp
 public class SubscribeToContentServiceSavingComposer : ComponentComposer<SubscribeToContentServiceSavingComponent>, IUserComposer
