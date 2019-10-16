@@ -1,6 +1,5 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # Creating forms
@@ -104,7 +103,7 @@ You can add the form to a template by rendering the partial view:
 To add the form to your site we'll make a macro. This also makes it possible to let editors add the form to a page using the rich text editor.
 
 #### Creating a macro
-Go to the developer section and right click the menu icon on the __Partial Views Macro Files__ node. Name the macro *Contact Form*, select an empty snippet and leave the __Create Macro__ checkbox checked.
+Go to the Settings section and right-click the __Partial Views Macro Files__ node. Choose "Create" and select __New partial view macro__. Name the macro *Contact Form*.
 
 In the partial view, we're going to render our contact form using the view model we created earlier.
 
@@ -120,8 +119,7 @@ In the partial view, we're going to render our contact form using the view model
 
 
 #### Adding the macro
-The last thing to do before we can add the form to a page is to **allow the Macro in a rich text editor**.
-Select the expand the __Macros__ node and select the __Contact Form__ Macro. Check the boxes under __Editor Settings__.
+The last thing to do before we can add the form to a page is to **allow the Macro in a rich text editor**. Right click __Macros__ and select __Reload__ then expand the __Macros__ node and select the __Contact Form__ Macro. Check the boxes under __Editor Settings__.
 
 Now you can add the form to a page that has a rich text editor.
 
@@ -129,6 +127,3 @@ Now you can add the form to a page that has a rich text editor.
 - [Surface Controllers](../../../Reference/Routing/surface-controllers.md)
 - [Custom controllers](../../../Reference/Routing/custom-controllers.md)
 - [Routing](../../../Reference/Routing/)
-
-### Umbraco TV
-- [Chapter: Surface Controllers](https://umbraco.tv/videos/umbraco-v7/developer/fundamentals/surface-controllers/)
