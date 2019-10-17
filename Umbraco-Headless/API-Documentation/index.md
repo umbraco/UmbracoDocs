@@ -29,7 +29,7 @@ There are two main APIs, one for Content Delivery `https://cdn.umbraco.io` and o
 ### API Access
 
 In order to access the data for your Umbraco Headless project you need to provide a project identifier (Project Alias) via a HTTP Header or a Querystring parameter.
-The Project Alias is an http friendly version of the Project Name under your Umbraco Cloud account.
+The Project Alias is a http friendly version of the Project Name under your Umbraco Cloud account.
 
 #### Via a Umb-Project-Alias header
 

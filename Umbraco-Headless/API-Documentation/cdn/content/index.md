@@ -45,7 +45,7 @@ Gets all published content at the root of the tree
 
 ```none
 ?hyperlinks={boolean=true}
-?contentType={string=people}
+?contentType={string}
 ```
 
 ### Success Response

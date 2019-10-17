@@ -646,7 +646,7 @@ Please note that newly created content will be `DRAFT` by default, so if you wan
 
 ### Request
 
-The request must contain a field named `content` that contains the content JSON,
+The request must contain a field named `content` that contains the content JSON.
 
 For the files being uploaded the field names must be it the format `propertyName.culture`, so if the content has an upload property with the name `fileUpload` and the file is being uploaded to the `en-US` lanugage, the field name should then be `fileUpload.en-US`.
 
@@ -654,10 +654,10 @@ The property must also be includud in the content JSON and the value shoud be th
 
 ```http
 Content-Type: multipart/form-data; boundary=MultipartBoundry
-Content-Type: application/json
 
 --MultipartBoundry
 Content-Disposition: form-data; name="content"
+Content-Type: application/json
 
 {
   "contentTypeAlias": "withUpload",
