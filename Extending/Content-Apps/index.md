@@ -8,7 +8,7 @@ meta.Description: "A guide to Umbraco Content Apps in the backoffice"
 
 ## What are Content Apps?
 
-Content Apps are **companions** to the editing experience when working with content in the Umbraco backoffice.
+Content Apps are **companions** to the editing experience when working with content or media in the Umbraco backoffice.
 
 Content Apps are a new concept in v8. Editors can switch from editing 'Content' to accessing contextual information related to the item they are editing.
 
