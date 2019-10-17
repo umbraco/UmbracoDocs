@@ -1318,3 +1318,136 @@ Get descendants of a single published content
   }
 }
 ```
+
+## Search
+
+Search for published content by keyword
+
+**URL**: `/content/search?term={string}`
+
+**Method**: `GET`
+
+**Query Strings**
+
+```none
+?hyperlinks={boolean=true}
+?page={integer=1}
+?pageSize={integer=10}
+```
+
+### Success Response
+
+**Code**: 200
+
+**Content Example**:
+
+```json
+{
+  "_totalItems": 1,
+  "_totalPages": 1,
+  "_page": 1,
+  "_pageSize": 10,
+  "_links": {
+    "self": {
+      "href": "https://cdn.umbraco.io/content/search?term=jacket&page=1&pageSize=10"
+    },
+    "page": {
+      "href": "https://cdn.umbraco.io/content/search{?term,page,pageSize}",
+      "templated": true
+    },
+    "root": {
+      "href": "https://cdn.umbraco.io/content"
+    },
+    "content": {
+      "href": "https://cdn.umbraco.io/content/262beb70-53a6-49b8-9e98-cfde2e85a78e"
+    }
+  },
+  "_embedded": {
+    "content": [
+      {
+        "_creatorName": "Rasmus",
+        "_url": "/products/biker-jacket/",
+        "_writerName": "Rasmus",
+        "_hasChildren": false,
+        "_level": 2,
+        "_createDate": "2019-06-17T13:46:24.497Z",
+        "_id": "262beb70-53a6-49b8-9e98-cfde2e85a78e",
+        "_updateDate": "2019-09-16T11:25:44.433Z",
+        "_links": {
+          "self": {
+            "href": "https://cdn.umbraco.io/content/262beb70-53a6-49b8-9e98-cfde2e85a78e"
+          },
+          "photos": {
+            "href": "https://cdn.umbraco.io/media/55514845-b8bd-487c-b370-9724852fd6bb",
+            "title": "Biker Jacket"
+          },
+          "root": {
+            "href": "https://cdn.umbraco.io/content"
+          },
+          "children": {
+            "href": "https://cdn.umbraco.io/content/262beb70-53a6-49b8-9e98-cfde2e85a78e/children"
+          },
+          "ancestors": {
+            "href": "https://cdn.umbraco.io/content/262beb70-53a6-49b8-9e98-cfde2e85a78e/ancestors"
+          },
+          "descendants": {
+            "href": "https://cdn.umbraco.io/content/262beb70-53a6-49b8-9e98-cfde2e85a78e/descendants"
+          },
+          "parent": {
+            "href": "https://cdn.umbraco.io/content/ec4aafcc-0c25-4f25-a8fe-705bfae1d324"
+          }
+        },
+        "contentTypeAlias": "product",
+        "name": "Biker Jacket",
+        "parentId": "ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+        "sortOrder": 7,
+        "productName": "Biker Jacket",
+        "price": 199.0,
+        "description": "Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor volutpat.",
+        "sku": "UMB-BIKER-JACKET",
+        "photos": {
+          "_creatorName": "Rasmus",
+          "_url": "https://media.umbraco.io/my-headless-site/media/55514845b8bd487cb3709724852fd6bb/00000006000000000000000000000000/4730684907_8a7f8759cb_b.jpg",
+          "_writerName": "Rasmus",
+          "_hasChildren": false,
+          "_level": 2,
+          "_createDate": "2019-06-17T13:46:42.377Z",
+          "_id": "55514845-b8bd-487c-b370-9724852fd6bb",
+          "_updateDate": "2019-06-17T13:46:42.377Z",
+          "_links": null,
+          "mediaTypeAlias": "Image",
+          "name": "Biker Jacket",
+          "parentId": "6d5bf746-cb82-45c5-bd15-dd3798209b87",
+          "sortOrder": 0,
+          "umbracoFile": {
+            "src": "/media/55514845b8bd487cb3709724852fd6bb/00000006000000000000000000000000/4730684907_8a7f8759cb_b.jpg",
+            "focalPoint": null,
+            "crops": null
+          },
+          "umbracoWidth": 680,
+          "umbracoHeight": 1024,
+          "umbracoBytes": 224349,
+          "umbracoExtension": "jpg"
+        },
+        "features": [
+          {
+            "contentTypeAlias": "feature",
+            "featureName": "Free shipping",
+            "featureDetails": "Isn't that awesome - you only pay for the product"
+          },
+          {
+            "contentTypeAlias": "feature",
+            "featureName": "1 Day return policy",
+            "featureDetails": "You'll need to make up your mind fast"
+          },
+          {
+            "contentTypeAlias": "feature",
+            "featureName": "100 Years warranty",
+            "featureDetails": "But if you're satisfied it'll last a lifetime"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
