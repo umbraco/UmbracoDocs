@@ -37,6 +37,8 @@ Build your solution after adding the model.
 ### Creating the view
 Next, we add the view for the form to the `/View/Partials` folder. Because we've added the model and built the solution we can add it as a strongly typed view.
 
+Name your view "ContactForm"
+
 The view can be built with standard MVC helpers:
 
 ```csharp
@@ -86,6 +88,8 @@ namespace MyFirstForm.Controllers
 }
 ```
 
+You should note that the controller inherits "SurfaceController" and not from "Controller" as initially added to the file by Visual Studio
+
 If the model state is invalid, `CurrentUmbracoPage()` will send the user back to the form. If valid, you can work with the form data, e.g. sending an email to site admin and then `RedirectToCurrentUmbracoPage();`.
 
 ## Adding the form to a template
@@ -119,7 +123,9 @@ In the partial view, we're going to render our contact form using the view model
 
 
 #### Adding the macro
-The last thing to do before we can add the form to a page is to **allow the Macro in a rich text editor**. Right click __Macros__ and select __Reload__ then expand the __Macros__ node and select the __Contact Form__ Macro. Check the boxes under __Editor Settings__.
+The last thing to do before we can add the form to a page is to **allow the Macro in a rich text editor**. Expand the __Macros__ node and select the __Contact Form__ Macro. Check the boxes under __Editor Settings__.
+
+Tip: If you don't see your new macro listed, right click __Macros__ and select __Reload__
 
 Now you can add the form to a page that has a rich text editor.
 
