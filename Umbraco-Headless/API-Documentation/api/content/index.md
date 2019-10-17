@@ -508,17 +508,11 @@ Includes all language variations per content item.
 
 Create a new content item with one or more language variations.
 
-When content contains an upload field it is possible to send a file along with the request to create new content. This is done by sending a multi-part request with the json body and the file. If the content item doesn't include files then you can send a standard reqeust with a json payload to create a new content item.
-
-Please refer to the documentation for creating media for multipart examples of uploading files.
-
 Please note that newly created content will be `DRAFT` by default, so if you want to publish it you will need to issue a publish request as well.
 
 **URL**: `/content`
 
 **Method**: `POST`
-
-**Header (Optional)**: Content-Type: multipart/form-data; boundary=MultipartBoundry
 
 **Permissions required** : `Create`
 
@@ -634,17 +628,110 @@ In this example only one language exists, so the properties are marked with `$in
 }
 ```
 
+## Create content with files
+
+Create a new content item with one or more language variations and files.
+
+When content contains an upload field it is possible to send a file along with the request to create new content. This is done by sending a multi-part request with the json body and the file. If the content item doesn't include files then you can send a standard reqeust with a json payload to create a new content item.
+
+Please note that newly created content will be `DRAFT` by default, so if you want to publish it you will need to issue a publish request as well.
+
+**URL**: `/content`
+
+**Method**: `POST`
+
+**Header**: `Content-Type: multipart/form-data; boundary=MultipartBoundry`
+
+**Permissions required** : `Create`
+
+### Request
+
+The request must contain a field named `content` that contains the content JSON,
+
+For the files being uploaded the field names must be it the format `propertyName.culture`, so if the content has an upload property with the name `fileUpload` and the file is being uploaded to the `en-US` lanugage, the field name should then be `fileUpload.en-US`.
+
+The property must also be includud in the content JSON and the value shoud be the filename.
+
+```http
+Content-Type: multipart/form-data; boundary=MultipartBoundry
+Content-Type: application/json
+
+--MultipartBoundry
+Content-Disposition: form-data; name="content"
+
+{
+  "contentTypeAlias": "withUpload",
+  "name": {
+    "en-US": "Upload Test"
+  },
+  "text": { "$invariant": "Here's some text" },
+  "fileUpload": { "en-US": "han-solo.png" }
+}
+--MultipartBoundry
+Content-Disposition: form-data; name="fileUpload.en-US"
+Content-Type: image/png
+
+BINARY DATA
+--MultipartBoundry--
+
+```
+
+### Success Response
+
+**Code**: 201
+
+**Content Example**:
+
+```json
+{
+  "contentTypeAlias": "withUpload",
+  "_createDate": "2019-08-08T10:07:50.2777311+02:00",
+  "_currentVersionState": {
+    "en-US": "DRAFT",
+    "da": "NOT_CREATED"
+  },
+  "name": {
+    "en-US": "Upload Test",
+    "da": null
+  },
+  "_updateDate": {
+    "en-US": "2019-08-08T10:07:50.2828014+02:00",
+    "da": null
+  },
+  "_hasChildren": false,
+  "_id": "511a0927-3c56-4ec0-b308-1dea07753795",
+  "_level": 1,
+  "sortOrder": 21,
+  "_links": {
+    "self": {
+      "href": "https://api.umbraco.io/content/511a0927-3c56-4ec0-b308-1dea07753795"
+    },
+    "root": {
+      "href": "https://api.umbraco.io/content"
+    },
+    "children": {
+      "href": "https://api.umbraco.io/content/511a0927-3c56-4ec0-b308-1dea07753795/children"
+    }
+  },
+  "fileUpload": {
+    "en-US": "/media/dg4gynhr/han-solo.png",
+    "da": ""
+  },
+  "text": {
+    "$invariant": "Here's some text"
+  }
+}
+```
+
 ## Update content
 
 Updates an existing content item with one or more language variations.
 
-When content contains an upload field it is possible to send a file along with the request to update content. This is done by sending a multi-part request with the json body and the file. If the content item doesn't include files then you can send a standard reqeust with a json payload to update the content item.
+When content contains an upload field it is possible to send a file along with the request to update content. This is done by sending a multi-part request with the json body and the file, see [Create content with files](#create-content-with-files) for an example. If the content item doesn't include files then you can send a standard reqeust with a json payload to update the content item.
 
 **URL**: `/content/{id}`
 
 **Method**: `PUT`
-
-**Header (Optional)**: Content-Type: multipart/form-data; boundary=MultipartBoundry
 
 **Permissions required** : `Update`
 

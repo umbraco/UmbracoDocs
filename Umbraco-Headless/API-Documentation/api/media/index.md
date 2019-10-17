@@ -560,6 +560,8 @@ Media would typically contain an upload field (the `Image` and `File` media type
 ### Request
 
 ```http
+Content-Type: multipart/form-data; boundary=MultipartBoundry
+
 --MultipartBoundry
 Content-Disposition: form-data; name="content"
 Content-Type: application/json
