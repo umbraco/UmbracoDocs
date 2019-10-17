@@ -26,7 +26,15 @@ Breaking it down:
 
 You can use UDIs in several of the Querying and Management/Service APIs. Read more about the [UDI API reference](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Udi.html).
 
-There are 2x types of UDIs:
+There are 2 types of UDIs:
 
-* [GUID UDI](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.GuidUdi.html)
-* [String UDI](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.StringUdi.html)
+## GUID UDI
+
+* [API Reference for v7](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.GuidUdi.html)
+* [API Reference for v8](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.GuidUdi.html)
+
+
+## String UDI
+
+* [API Reference for v7](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.StringUdi.html)
+* [API Reference for v8](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.StringUdi.html)
