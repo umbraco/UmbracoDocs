@@ -231,7 +231,7 @@ namespace Umbraco.Web.UI
                     break;
 
                 default:
-                    throw new NotSupportedException($"Object type {source.GetType()} is not supported here.");
+                   	return null;
             }
 
             // Can implement some logic with userGroups if needed
