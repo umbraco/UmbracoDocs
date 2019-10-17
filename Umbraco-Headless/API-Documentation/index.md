@@ -86,14 +86,14 @@ When using the `Authorization` header the api key must be passed in as the usern
 
 ```http
 GET https://api.umbraco.io/
-Authorization: Basic $base64-encoded-string
+Authorization: Basic {base64-encoded-string}
 ```
 
 #### Via an Api-Key header
 
 ```http
 GET https://api.umbraco.io/
-Api-Key: $api-key
+Api-Key: {api-key}
 ```
 
 ### Bearer token
@@ -106,14 +106,14 @@ A bearer token can be created by posting to `https://api.umbraco.io/oauth/token`
 POST https://api.umbraco.io/oauth/token
 Content-Type: application/x-www-form-urlencoded
 
-grant_type=password&username=$username&password=$password
+grant_type=password&username={username}&password={password}
 ```
 
 and it can be used by passing it to the `Authorization` header.
 
 ```http
 GET https://api.umbraco.io/
-Authorization: Bearer $token
+Authorization: Bearer {token}
 ```
 
 ## Content Delivery API
