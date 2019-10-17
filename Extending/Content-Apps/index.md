@@ -8,7 +8,7 @@ meta.Description: "A guide to Umbraco Content Apps in the backoffice"
 
 ## What are Content Apps?
 
-Content Apps are **companions** to the editing experience when working with content in the Umbraco backoffice.
+Content Apps are **companions** to the editing experience when working with content or media in the Umbraco backoffice.
 
 Content Apps are a new concept in v8. Editors can switch from editing 'Content' to accessing contextual information related to the item they are editing.
 
@@ -215,39 +215,27 @@ namespace Umbraco.Web.UI
     {
         public ContentApp GetContentAppFor(object source, IEnumerable<IReadOnlyUserGroup> userGroups)
         {
-            // Some logic depending on the object type
-            // To show or hide WordCounterApp
-            switch (source)
-            {
-                // Do not show content app if doctype/content type is a container
-                case IContent content when content.ContentType.IsContainer:
-                    return null;
-
-                // Don't show for media items
-                case IMedia media:
-                    return null;
-
-                case IContent content:
-                    break;
-
-                default:
-                    throw new NotSupportedException($"Object type {source.GetType()} is not supported here.");
-            }
-
-            // Can implement some logic with userGroups if needed
+			// Can implement some logic with userGroups if needed
             // Allowing us to display the content app with some restrictions for certain groups
             if (userGroups.Any(x => x.Alias.ToLowerInvariant() == "admin") == false)
                 return null;
+			
 
-            var wordCounterApp = new ContentApp
-            {
-                Alias = "wordCounter",
-                Name = "Word Counter",
-                Icon = "icon-calculator",
-                View = "/App_Plugins/WordCounter/wordcounter.html",
-                Weight = 0
-            };
-            return wordCounterApp;
+			// only show app on content items
+			if(content is IContent) 
+			{
+				var wordCounterApp = new ContentApp
+	            {
+	                Alias = "wordCounter",
+	                Name = "Word Counter",
+	                Icon = "icon-calculator",
+	                View = "/App_Plugins/WordCounter/wordcounter.html",
+	                Weight = 0
+	            };
+	            return wordCounterApp;
+			}
+
+            return null            
         }
     }
 }
