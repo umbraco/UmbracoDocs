@@ -14,7 +14,7 @@ In the examble above, all 34 options have been enabled. The options include copy
 
 ## Stylesheets
 
-It is possible to define specific styles that can be used when editing content using the RTE. You can use as many of these styles with the RTE.
+It is possible to define specific styles that can be used when editing content using the RTE. You can use as many of these styles with the RTE as you want.
 
 The RTE styles are defined in CSS files which can be created in the **Settings** section. Read the [RTE Styles](../RTE-Styles) article to learn more about this feature.
 
