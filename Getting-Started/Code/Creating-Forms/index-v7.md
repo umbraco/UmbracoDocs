@@ -88,7 +88,7 @@ namespace MyFirstForm.Controllers
 }
 ```
 
-You should note that the controller inherits "SurfaceController" and not from "Controller" as initially added to the file by Visual Studio
+You should note that the controller inherits "SurfaceController" and not from "Controller" as initially added to the file by Visual Studio.
 
 If the model state is invalid, `CurrentUmbracoPage()` will send the user back to the form. If valid, you can work with the form data, e.g. sending an email to site admin and then `RedirectToCurrentUmbracoPage();`.
 
