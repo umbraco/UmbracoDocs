@@ -43,6 +43,8 @@ When your new custom section appears, you'll notice only the section 'Alias' is 
 
 Create a /lang folder in the folder where you are creating the implementation for your custom section. If not create one in the App_Plugins folder eg. */App_Plugins/MyFavouriteThings/lang/*.
 
+It is worth knowing that the `/lang` folder does not have to be directly in the MyFavouriteThings folder, it can be nested deeper if you need it to be. The only requirement is that the folder is called lang. E.g. *~/App_Plugins/MyFavouriteThings/Some/Another/Lang/*.
+
 Inside this folder create a file called **en-us.xml**. This is the 'default' fallback language translation file. Add the following definition:
 
 ```xml
