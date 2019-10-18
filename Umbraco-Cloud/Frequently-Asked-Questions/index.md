@@ -188,6 +188,7 @@ The following rule can be added to your web.config (in `system.webServer/rewrite
         <add input="{REMOTE_ADDR}" pattern="13.95.93.29" negate="true" />
         <add input="{REMOTE_ADDR}" pattern="40.68.36.142" negate="true" />
         <add input="{REMOTE_ADDR}" pattern="13.94.247.45" negate="true" />
+        <add input="{REMOTE_ADDR}" pattern="52.157.96.229" negate="true" />
 
         <!-- Don't apply rules on localhost so your local environment still works -->
         <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
@@ -202,7 +203,7 @@ The following rule can be added to your web.config (in `system.webServer/rewrite
 
 What we're doing here is blocking all the requests to `umbraco/backoffice/` and all of the routes that start with this.
 
-All of the Umbraco APIs use this route as a prefix, including Umbraco Deploy. So what we need to do first is to allow Umbraco Cloud to still be allowed to access the Deploy endpoints. That is achieved with the first 4 IP addresses, they're specific to the servers we use on Cloud.
+All of the Umbraco APIs use this route as a prefix, including Umbraco Deploy. So what we need to do first is to allow Umbraco Cloud to still be allowed to access the Deploy endpoints. That is achieved with the first 5 IP addresses, they're specific to the servers we use on Cloud.
 
 You will notice that the regex `^umbraco/backoffice/(.*)|^umbraco` also stops people from going to `yoursite.com/umbraco`, so even the login screen will not show up. Even if you remove the `|^umbraco` part in the end, it should be no problem. You'll get a login screen but any login attempts will be blocked before they reach Umbraco (because the login posts to `umbraco/backoffice/UmbracoApi/Authentication/PostLogin`).
 
