@@ -24,7 +24,7 @@ Breaking it down:
 
 ## Usage
 
-You can use UDIs in several of the Querying and Management/Service APIs. Read more about the [UDI API reference](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Udi.html).
+You can use UDIs in several of the Querying and Management/Service APIs. Read more about it in our API Documentation for [v7](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Udi.html) and [v8](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Udi.html).
 
 There are 2 types of UDIs:
 
