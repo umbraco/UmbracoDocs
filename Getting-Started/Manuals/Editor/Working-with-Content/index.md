@@ -1,3 +1,7 @@
+---
+versionTo: 8.0.0
+---
+
 ####Working with Content
 1. Rich Text Editor
   1. Editor Buttons
