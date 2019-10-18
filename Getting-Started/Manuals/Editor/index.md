@@ -7,7 +7,7 @@ versionTo: 8.0.0
 # Editor's Manual
 *The editors manual is a detailed yet easy to read user guide aimed at Umbraco editors for step-by-step instructions on performing every day tasks with Umbraco 7*
 
-## [Introduction](Introductions/)
+## [Introduction](Introduction/)
 Introduction to the Editor's Manual.
 
 ## [Getting Started With Umbraco](Getting-Started-With-Umbraco/)
