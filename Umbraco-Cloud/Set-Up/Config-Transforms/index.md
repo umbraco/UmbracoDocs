@@ -57,7 +57,7 @@ Here is an example of how that config transform would look:
 <?xml version="1.0" encoding="utf-8"?>
 <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
     <system.webServer>
-        <rewrite>
+        <rewrite xdt:Transform="InsertIfMissing">
             <rules>
                 <rule xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" name="Redirects umbraco.io to actual domain" stopProcessing="true">
                     <match url=".*" />
