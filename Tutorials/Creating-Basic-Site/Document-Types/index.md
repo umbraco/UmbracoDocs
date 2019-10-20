@@ -65,7 +65,7 @@ Remember to come back and explore this list of data types later - it's a hint to
 
 ![Selecting Textbox Data Type](images/figure-11a-selecting-textbox-data-type-v8.png)
 
-Umbraco will generate a long name for the Data type - ignore this for now and select **_Submit_**.
+Umbraco will generate a long name for the Data type - ignore this for now and select [Submit].
 <!-- End of bad practice rework -->
 
 Now you can enter a [Description], again helps the editor provide relevant content so we'll fill this in "_The main title of the page (e.g. Welcome to Widgets Ltd)_".
@@ -107,4 +107,4 @@ We’ve now created our first **_Document Type_** – Umbraco needs three things
 
 ---
 ## Next - [Creating Your First Template and Content Node](../Creating-Your-First-Template-and-Content-Node)
-How to create your first template and create a content node.
+How to create your first **_template_** and create a **_Content Node_**.
