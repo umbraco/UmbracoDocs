@@ -1,12 +1,11 @@
 ---
 versionFrom: 6.0.0
-needsV8Update: "true"
 ---
 
 # MediaService
 
 :::note
-Applies to Umbraco 6.0.0+
+Applies to Umbraco 6 and 7.
 :::
 
 The MediaService acts as a "gateway" to Umbraco data for operations which are related to Media.
