@@ -4,9 +4,9 @@ versionFrom: 8.0.0
 
 # Rendering media
 
-_Templates (Views) can access items in the [Media library](../../Data/Creating-Media/index.md) to assist in displaying rich content like galleries_
+_Templates (Views) can access items in the [Media library](../../Data/Creating-Media/index.md) to assist in displaying rich content like galleries_.
 
-In the following examples we will be looking at rendering an `Image`. 
+In the following examples we will be looking at rendering an `Image`.
 
 Image is only one of the 'types' of Media in Umbraco. The same principles apply to all MediaTypes (however the actual properties available to render will be different, for example a `File` won't have a Width property).
 
@@ -27,7 +27,7 @@ These standard properties are pre-populated and set during the upload process, e
 
 If you want to add further custom properties, eg 'Photographer Credit' to use with your Media Item, edit the Image MediaType under **settings**. In this example we are going to retrieve an image from the Media section and render out an `img` tag using the URL of the media item and making use of the Name as the value for the `alt` attribute.
 
-_Assumption: We are going to assume that our media item has an ID of **1234**, and that we are **not using Models Builder**_
+_Assumption: We are going to assume that our media item has an ID of **1234**, and that we are **not using Models Builder**_.
 
 ```csharp
 @{

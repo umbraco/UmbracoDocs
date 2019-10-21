@@ -56,7 +56,7 @@ Whenever a tag has been added it will be visible in the typeahead when you start
 }
 ```
 
-### Setting Tags Programatically
+### Setting Tags Programmatically
 
 You can use the ContentService to create and update Umbraco content from c# code, when setting tags there is an extension method (SetTags) on IContentBase that helps you set the value for a Tags properties. Remember to add the using statement for `Umbraco.Core.Models` to take advantage of it.
 

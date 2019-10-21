@@ -9,7 +9,7 @@ _Describes how to create/update a macro and its parameters_
 
 ## Creating macros
 
-There are a couple of ways to create a macro. 
+There are a couple of ways to create a macro.
 
 The first way is to manually create a macro in the macro tree in the developer section:
 

@@ -19,8 +19,8 @@ public class EventController : Umbraco.Web.Mvc.SurfaceController
 {
     public Action PerformAction()
     {
-       IContentService contentService = Services.ContentService;
-       var someContent = contentService.GetById(1234);
+        IContentService contentService = Services.ContentService;
+        var someContent = contentService.GetById(1234);
     }
 }
 ```
@@ -86,11 +86,11 @@ namespace Umbraco8.Components
                 if (contentItem.ContentType.Alias == "landingPage")
                 {
                     // we have injected in the mediaService in the constructor for the component see above.
-                   bool hasExistingFolder = _mediaService.GetByLevel(1).Any(f => f.Name == contentItem.Name);
-                   if (!hasExistingFolder)
+                    bool hasExistingFolder = _mediaService.GetByLevel(1).Any(f => f.Name == contentItem.Name);
+                    if (!hasExistingFolder)
                     {
                         // let's create one (-1 indicates the root of the media section)
-                       IMedia newFolder = _mediaService.CreateMedia(contentItem.Name, -1, "Folder");
+                        IMedia newFolder = _mediaService.CreateMedia(contentItem.Name, -1, "Folder");
                         _mediaService.Save(newFolder);
                     }
                 }
@@ -99,7 +99,7 @@ namespace Umbraco8.Components
 
         public void Terminate()
         {
-            throw new NotImplementedException();
+            // Nothing to terminate
         }
     }
 }
@@ -121,7 +121,7 @@ namespace Umbraco8.Composers
         {
 
             composition.Register<ICustomNewsArticleService, CustomNewsArticleService>(Lifetime.Request);
-         }
+        }
     }
 }
 ```

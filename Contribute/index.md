@@ -42,7 +42,7 @@ You can add meta data to any article in the Umbraco Documentation. This includes
 
 ## Labels
 
-On both Issues and Pull Requests we use labels to categories the various requests and submissions.  
+On both Issues and Pull Requests we use labels to categories the various requests and submissions.
 
 Here's a quick explanation of the labels groups (colors) we use:
 
@@ -50,7 +50,7 @@ Here's a quick explanation of the labels groups (colors) we use:
 - **Community** (e.g. `community/pr`, `help wanted`)
 - **State** (e.g. `state/hq-discussion`)
 - **Status** (e.g. `status/awaiting-feedback`, `status/idea`)
-- **Type** (e.g. `type/bug`) 
+- **Type** (e.g. `type/bug`)
 
 Labels will be added to your Pull Request or Issue once it has been reviewed.
 
@@ -64,5 +64,5 @@ If you make a pull request to any Umbraco repository that gets merged, you will 
 
 ![Contributor badge on Our](images/c-trib-badge.png)
 
-The Documentation Curators will search for your profile when merging a PR and add the badge. 
+The Documentation Curators will search for your profile when merging a PR and add the badge.
 If it has been forgotten, make a comment on the closed/merged PR and we will do it as soon as possible!

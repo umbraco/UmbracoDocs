@@ -7,8 +7,8 @@ versionFrom: 7.0.0
 An error in the Backoffice often looks like this:
 ![Backoffice error](images/backoffice-error.png)
 
-Errors in the backoffice can be presented in many different ways, the most common ones are 
-* Errors when doing a content transfer / restore 
+Errors in the backoffice can be presented in many different ways, the most common ones are
+* Errors when doing a content transfer / restore
 * A blank page when visiting the backoffice
 * Missing sections / trees
 
@@ -22,7 +22,7 @@ Start by clicking "View more details", often it will give you a link to a specif
 
 If your issue is not covered above, here are some general guidelines on what you should do when you have content transfer / restore errors:
 
-The first thing to ensure is that any schema changes has been pushed through Git or deployed between environments so the environments are in sync. 
+The first thing to ensure is that any schema changes has been pushed through Git or deployed between environments so the environments are in sync.
 
 Another thing to check would be the log files, relevant information can often be found in the [umbracoTraceLogs](Log-Files/#umbraco-logs) for both the source and target environments, so make sure to check both.
 
@@ -33,10 +33,10 @@ If you have issues with new user emails / Umbraco Forms emails not being sent it
 This can have many different causes, and as such we don't have specific guides on this, but to narrow it down there are some things you should check:
 
 * Do you have any rewrite rules? Often rewrite rules that are not set up correctly will cause issues with the backoffice, make sure that the following are negated:
-    * ^/umbraco 
+    * ^/umbraco
     * ^/DependencyHandler.axd
     * ^/App_Plugins
     * You can see examples on how to set up rewrites correctly [here](../Set-Up/Manage-Domains/Rewrites-on-Cloud)
 * Do you get any errors in your browser console that may help you figure it out?
 * Do you get any errors in your umbracoTraceLog?
-* If something isn't loading after a package was installed it could be because the package overwrites something like the dashboard.config file - try to turn the package off and see if that helps. 
+* If something isn't loading after a package was installed it could be because the package overwrites something like the dashboard.config file - try to turn the package off and see if that helps.

@@ -14,7 +14,7 @@ The member picker opens a panel to pick a specific member from the member sectio
 
 ![Media Picker Data Type Definition](images/Member-Picker-DataType.png)
 
-## Content Example 
+## Content Example
 
 ![Member Picker Content](images/Member-Picker-Content.png)
 

@@ -94,7 +94,6 @@ These are accessible via properties on the current registered `IFileSystems` imp
 ```csharp
 IFileSystem macroPartialsFileSystem = Current.FileSystems.MacroPartialsFileSystem;
 ```
-
 or again via dependency injection
 
 ```csharp
@@ -157,3 +156,4 @@ Shadowing is the technology used for Umbraco Deploy to implement some sort of
 transaction-management on top of filesystems. The plumbing explained above,
 compared to creating your own physical filesystem, ensures that your filesystem
 would participate into such transactions.
+

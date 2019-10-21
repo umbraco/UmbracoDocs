@@ -3,7 +3,7 @@ versionFrom: 8.0.0
 ---
 
 # Subscribing to events
-Subscribing to events allows you to execute custom code on a  number of events both before and after the event occurs. All you need to follow this guide is an Umbraco installation with some content, e.g. the the Umbraco starter kit.
+Subscribing to events allows you to execute custom code on a  number of events both before and after the event occurs. All you need to follow this guide is an Umbraco installation with some content, e.g. the Umbraco starter kit.
 
 ### Subscribing to an event
 Let's add a string of text to the log when a document is published. (The log is useful for debugging, different parts of the Umbraco codebase 'log' key events, warnings and errors to the log)
@@ -42,7 +42,7 @@ namespace MyProjectName.Web.Components
     {
     public class LogWhenPublishedComponent : IComponent
     {
-     // initialize: runs once when Umbraco starts
+    // initialize: runs once when Umbraco starts
         public void Initialize()
         {
             // do something as Umbraco starts up
@@ -105,13 +105,13 @@ public class LogWhenPublishedComponent : IComponent
         _logger = logger;
     }
 
-     // initialize: runs once when Umbraco starts
+    // initialize: runs once when Umbraco starts
     public void Initialize()
     {
     // ...
     }
 ```
-Now we can use the logger to send a message to the logs
+Now we can use the logger to send a message to the logs:
 
 ```csharp
 _logger.Info<LogWhenPublishedComponent>("Something has been published...");
@@ -201,4 +201,3 @@ As you can see our custom code has been executed when we published a piece of co
 ### More information
 - [Events Reference](../../../Reference/Events/)
 - [Components & Composing](../../../implementation/composing/)
-

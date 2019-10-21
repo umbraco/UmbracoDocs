@@ -9,13 +9,13 @@ _Templating in Umbraco builds on the concept of Razor Views from ASP.NET MVC - i
 ## Creating your first template
 By default all document types should have a template attached - but in case you need an alternative template or a new one, you can create one:
 
-Open the settings section inside the Umbraco backoffice and right-click the **templates** folder. then choose **create**. Enter a template name and click the create button. You will now see the default template markup in the backoffice template editor
+Open the settings section inside the Umbraco backoffice and right-click the **templates** folder. then choose **create**. Enter a template name and click the create button. You will now see the default template markup in the backoffice template editor.
 
 ![Created template](images/create-template-v8.png)
 
 
 ## Allowing a template on a document type
-To use a template on a document, you must first allow it on the content's type. Open the document type you want to use the template and select the template under "allowed templates"
+To use a template on a document, you must first allow it on the content's type. Open the document type you want to use the template and select the template under "allowed templates".
 
 ![Allowing template](images/allow-template-v8.png)
 

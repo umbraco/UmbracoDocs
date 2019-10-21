@@ -1,12 +1,14 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Content Apps"
+meta.Description: "A guide to Umbraco Content Apps in the backoffice"
 ---
 
 # Content Apps
 
 ## What are Content Apps?
 
-Content Apps are **companions** to the editing experience when working with content in the Umbraco backoffice.
+Content Apps are **companions** to the editing experience when working with content or media in the Umbraco backoffice.
 
 Content Apps are a new concept in v8. Editors can switch from editing 'Content' to accessing contextual information related to the item they are editing.
 
@@ -56,13 +58,13 @@ Create a new file in the `/App_Plugins/WordCounter/` folder and name it `package
 {
     // define the content apps you want to create
     "contentApps": [
-      {
+    {
         "name": "Word Counter", // required - the name that appears under the icon
         "alias": "wordCounter", // required - unique alias for your app
         "weight": 0, // optional, default is 0, use values between -99 and +99 to appear between the existing Content (-100) and Info (100) apps
         "icon": "icon-calculator", // required - the icon to use
         "view": "~/App_Plugins/WordCounter/wordcounter.html", // required - the location of the view file
-      }
+    }
     ],
     // array of files we want to inject into the application on app_start
     "javascript": [
@@ -213,39 +215,27 @@ namespace Umbraco.Web.UI
     {
         public ContentApp GetContentAppFor(object source, IEnumerable<IReadOnlyUserGroup> userGroups)
         {
-            // Some logic depending on the object type
-            // To show or hide WordCounterApp
-            switch (source)
-            {
-                // Do not show content app if doctype/content type is a container
-                case IContent content when content.ContentType.IsContainer:
-                    return null;
-
-                // Don't show for media items
-                case IMedia media:
-                    return null;
-
-                case IContent content:
-                    break;
-
-                default:
-                    throw new NotSupportedException($"Object type {source.GetType()} is not supported here.");
-            }
-
-            // Can implement some logic with userGroups if needed
+			// Can implement some logic with userGroups if needed
             // Allowing us to display the content app with some restrictions for certain groups
             if (userGroups.Any(x => x.Alias.ToLowerInvariant() == "admin") == false)
                 return null;
+			
 
-            var wordCounterApp = new ContentApp
-            {
-                Alias = "wordCounter",
-                Name = "Word Counter",
-                Icon = "icon-calculator",
-                View = "/App_Plugins/WordCounter/wordcounter.html",
-                Weight = 0
-            };
-            return wordCounterApp;
+			// only show app on content items
+			if(content is IContent) 
+			{
+				var wordCounterApp = new ContentApp
+	            {
+	                Alias = "wordCounter",
+	                Name = "Word Counter",
+	                Icon = "icon-calculator",
+	                View = "/App_Plugins/WordCounter/wordcounter.html",
+	                Weight = 0
+	            };
+	            return wordCounterApp;
+			}
+
+            return null            
         }
     }
 }
@@ -260,4 +250,21 @@ You will still need to add all of the files you added above but, because your `C
         "~/App_Plugins/WordCounter/wordcounter.controller.js"
     ]
 }
+```
+
+## Notification badges
+
+There are times when you want to draw the attention of editors to your content badge, so they know they need to take some action. That is where notification badges come in to play.
+
+When you set a badge, a circle with a chosen background and a number in it will be added to the content app icon.
+
+![Content App badge](images/content-app-badge.png)
+
+You can enable a badge by using this code in the angular controller of your content app.
+
+```javascript
+$scope.model.badge = {
+  count: 5, // the number for the badge - anything non-zero triggers the badge
+  type: "warning" // optional: determines the badge color - "warning" = dark yellow, "alert" = red, anything else = turquoise ("info"-ish)
+};
 ```

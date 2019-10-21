@@ -16,8 +16,8 @@ The easiest way to get some content by Id is to use the following syntax (where 
 // to return the strongly typed (Umbraco.Core.Models.IPublishedContent) object
 @Umbraco.TypedContent(1234)
 
-// to return the dynamic representation:	
-@Umbraco.Content(1234) 	
+// to return the dynamic representation:
+@Umbraco.Content(1234)
 ```
 
 You can also query for multiple content items using multiple ids:
@@ -26,11 +26,11 @@ You can also query for multiple content items using multiple ids:
 // to return the strongly typed (IEnumerable<Umbraco.Core.Models.IPublishedContent>) collection
 @Umbraco.TypedContent(1234, 4321, 1111, 2222)
 
-// to return the dynamic representation:	
+// to return the dynamic representation:
 @Umbraco.Content(1234, 4321, 1111, 2222)
 ```
 
-This syntax will support an unlimited number of Ids passed to the method. 
+This syntax will support an unlimited number of Ids passed to the method.
 
 The same query structures apply to media:
 
@@ -38,7 +38,7 @@ The same query structures apply to media:
 @Umbraco.TypedMedia(9999)
 @Umbraco.TypedMedia(9999,8888,7777)
 @Umbraco.Media(9999)
-@Umbraco.Media(9999,8888,7777)	
+@Umbraco.Media(9999,8888,7777)
 ```
 
 ## Traversing
@@ -60,9 +60,9 @@ DescendantsOrSelf()
 DescendantsOrSelf(int level)
 DescendantsOrSelf(string nodeTypeAlias)
 ```
-	
 
-Additionally there are other methods that will return a single `IPublishedContent` (or dynamic if you are using @CurrentPage) 
+
+Additionally there are other methods that will return a single `IPublishedContent` (or dynamic if you are using @CurrentPage)
 
 ```csharp
 AncestorOrSelf()
@@ -129,11 +129,11 @@ var items = @Model.Content.Children.Where(x => x.IsVisible() && x.Level <= 4)
 Some complex queries cannot be written dynamically because the dynamic query parser may not understand precisely what you are coding. There are many edge cases where this occurs and for each one the parser will need to be updated to understand such an edge case. This is one reason why strongly typed querying is much better.
 
 ```csharp
-// This example gets the top level ancestor for the current node, and then gets 
-// the first node found that contains "1173" in the array of comma delimited 
+// This example gets the top level ancestor for the current node, and then gets
+// the first node found that contains "1173" in the array of comma delimited
 // values found in a property called 'selectedNodes'.
-// NOTE: This is one of the edge cases where this doesn't work with dynamic execution but the 
-// syntax has been listed here to show you that its much easier to use the strongly typed query 
+// NOTE: This is one of the edge cases where this doesn't work with dynamic execution but the
+// syntax has been listed here to show you that its much easier to use the strongly typed query
 // instead
 
 // dynamic access

@@ -67,7 +67,7 @@ namespace MyNamespace
 }
 ```
 
-The incorrect way to log the message would be use string interpolation or string concatanation such as
+The incorrect way to log the message would be use string interpolation or string concatenation such as
 
 ```csharp
 //GOOD - Do use :)
@@ -80,11 +80,9 @@ Logger.Info<MyApiController>($"We are saying hello to {name}");
 Logger.Info<MyApiController>("We are saying hello to " + name);
 ```
 
-The above examples, which uses the bad approach will write to the log file. Using it we will not get a separate property logged with the message and we have no easy way to search for all log messages of this type.
+The bad examples above will write to the log file, but we will not get a separate property logged with the message. This means we can't find them by searching for log messages that use the message template `We are saying hello to {Name}`
 
-Where as the previous example we would be able to find all log messages that use the message template `We are saying hello to {Name}`
-
-If you are writing custom code and are inheriting from one of these special Umbraco base classes:
+If you are writing classes that inherit from one of these special Umbraco base classes:
 
 * RenderMvcController
 * SurfaceController
@@ -131,7 +129,7 @@ The default log levels we ship with in Umbraco v8.0+ are:
 
 ## Configuration
 
-Serilog can be configured and extended by using the two XML configuration files on disk. 
+Serilog can be configured and extended by using the two XML configuration files on disk.
 
 * `/config/serilog.config` is used to modify the main Umbraco logging pipeline
 * `/config/serilog.user.config` which is a sublogger and allows you to make modifications without affecting the main Umbraco logger
@@ -232,5 +230,3 @@ If you are interested in learning more then the following resources will benefic
 * [Nicholas Blumhardt Blog, creator of Serilog](https://nblumhardt.com/)
 * [Serilog Pluralsight Course](https://www.pluralsight.com/courses/modern-structured-logging-serilog-seq)
 * [Seq](https://getseq.net/) This is FREE for a single machine such as your own local development computer
-
-

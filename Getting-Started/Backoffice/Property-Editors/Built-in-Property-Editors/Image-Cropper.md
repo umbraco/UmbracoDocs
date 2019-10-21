@@ -18,7 +18,7 @@ You can add, edit & delete crop presets the cropper UI can use.
 
 ![Image Cropper Data Type Definition](images/Image-Cropper/datatype.png)
 
-## Content Example 
+## Content Example
 
 Provides a UI to upload an image, set a focal point on the image, and optionally crop and scale the image to predefined crops.
 So by default, images in the cropper will be shown based on a set focal point, and only use specific crops if they are available.
@@ -36,7 +36,7 @@ The editor exposes a drop area for files. Click it to upload an image.
 ### Set focal point
 By default, the cropper allows the editor to set a focal point on the uploaded image.
 Below the image, all the preset crops are shown to give the editor a preview of what
-the image will look like to the end user. 
+the image will look like to the end user.
 
 ![Image Cropper Focal point](images/Image-Cropper/focalpoint.png)
 
@@ -50,7 +50,7 @@ is shown for a specific crop.
 ## Sample code
 
 Image Cropper comes with an API to generate crop urls, or you can access its raw data directly as a
-dynamic object. 
+dynamic object.
 
 In Umbraco v7.3.5 a UrlHelper Extension method was introduced to replace the IPublishedContent extension methods.
 
@@ -148,7 +148,7 @@ From Umbraco v7.3.5 there is an optional parameter "htmlEncode" which you and sp
 
 ### Data returned
 
-The cropper returns a dynamic object, based on a json structure like this: 
+The cropper returns a dynamic object, based on a json structure like this:
 
 ```json
 {
@@ -159,19 +159,19 @@ The cropper returns a dynamic object, based on a json structure like this:
   "src": "/media/SampleImages/1063/pic01.jpg",
   "crops": [
     {
-      "alias": "banner",
-      "width": 800,
-      "height": 90
+    "alias": "banner",
+    "width": 800,
+    "height": 90
     },
     {
-      "alias": "highrise",
-      "width": 80,
-      "height": 400
+    "alias": "highrise",
+    "width": 80,
+    "height": 400
     },
     {
-      "alias": "thumb",
-      "width": 90,
-      "height": 90
+    "alias": "thumb",
+    "width": 90,
+    "height": 90
     }
   ]
 }
@@ -187,7 +187,7 @@ Or iterate through them:
 
 ```csharp
 @foreach(var crop in CurrentPage.image.crops){
-    <img src="@CurrentPage.GetCropUrl("image", crop.alias)">    
+    <img src="@CurrentPage.GetCropUrl("image", crop.alias)">
 }
 ```
 
@@ -210,12 +210,12 @@ We bundle this library in Umbraco 7.1+ and you can therefore take full advantage
 <img src='@CurrentPage.GetCropUrl("image", "banner")&blur=11&sigma=1.5&threshold=10' />
 ```
 
-Using ImageProcessors built-in [gaussian blur](https://imageprocessor.org/imageprocessor-web/imageprocessingmodule/gaussianblur/)    
+Using ImageProcessors built-in [gaussian blur](https://imageprocessor.org/imageprocessor-web/imageprocessingmodule/gaussianblur/)
 
 ## Upload property replacement
 
-You can replace an upload property with a cropper, existing images will keep returning their current path and work unmodified with the cropper 
-applied. The old image will even be available in the cropper, so you can modify it if you ever need to. 
+You can replace an upload property with a cropper, existing images will keep returning their current path and work unmodified with the cropper
+applied. The old image will even be available in the cropper, so you can modify it if you ever need to.
 
-However, be aware that a cropper returns a dynamic object when saved, so if you perform any sort of string modifications on your upload property value, 
+However, be aware that a cropper returns a dynamic object when saved, so if you perform any sort of string modifications on your upload property value,
 you will most likely see some errors in your templates / macros.

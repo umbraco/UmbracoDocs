@@ -7,7 +7,7 @@ needsV8Update: "true"
 
 ## Umbraco Cloud
 
-If you are running your site on Umbraco Cloud - and why wouldn't you be? - then source control is very much part of the experience, have a look at the ['Technical overview of an Umbraco Cloud Environment'](https://our.umbraco.org/documentation/Umbraco-Cloud/Getting-Started/Environments/)  and the information on ['Working with your Umbraco Cloud project'](https://our.umbraco.org/documentation/Umbraco-Cloud/Set-Up/#working-with-your-umbraco-cloud-project) for a steer on Source/Version Control good practices.
+If you are running your site on Umbraco Cloud - and why wouldn't you be? - then source control is very much part of the experience, have a look at the ['Technical overview of an Umbraco Cloud Environment'](https://our.umbraco.com/documentation/Umbraco-Cloud/Getting-Started/Environments/)  and the information on ['Working with your Umbraco Cloud project'](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/#working-with-your-umbraco-cloud-project) for a steer on Source/Version Control good practices.
 
 ## Outside of Umbraco Cloud
 
@@ -46,20 +46,20 @@ Generally if you are working with Visual Studio and a Build Server, it's Nuget's
 When Umbraco is running it will generate and update some files on disk:
 
 - For image caching purposes,
-- Logging, 
-- Site search indexes, 
-- And the published cache file amongst others. 
+- Logging,
+- Site search indexes,
+- And the published cache file amongst others.
 
 Unless configured otherwise, these will generally be created in the App_Data folder of your application, and do not need to be source controlled.
 
 They include:
 
 - `cache` - *ImageProcessor* ships with Umbraco and when an image is requested via the processor, eg to be resized or cropped, a cached version of the transformed image will be stored in this folder. (The *ImageProcessor* Config /config/imageprocessor/cache.config allows you to determine where this cache is stored)
-- `Logs` - Umbraco currently uses *Log4Net*, and a file will be generated in this folder containing tracelogs of your application, one file for each day. 
-- `NuGetBackup` - If you've installed or upgraded Umbraco via NuGet, then a backup of files before they were replaced will be copied here. 
+- `Logs` - Umbraco currently uses *Log4Net*, and a file will be generated in this folder containing tracelogs of your application, one file for each day.
+- `NuGetBackup` - If you've installed or upgraded Umbraco via NuGet, then a backup of files before they were replaced will be copied here.
 - `Temp` - as the name suggests, temporary no need to source control.
   - `ClientDependency`, Umbraco uses the *[Client Dependency Framework](https://github.com/Shazwazza/ClientDependency)*, to minimise and amalgamate css/js resources into single requests for use in the Umbraco backoffice - a cache of the processed resources are maintained in this folder.
-  - `ExamineIndexes`, Umbraco uses *[Examine](../../../reference/searching/examine/)* (a provider based Indexer/Searcher API that wraps the Lucene.Net indexing/searching engine) to index content and members for the Umbraco backoffice search, unless configured otherwise the indexes will be generated in this folder. 
+  - `ExamineIndexes`, Umbraco uses *[Examine](../../../reference/searching/examine/)* (a provider based Indexer/Searcher API that wraps the Lucene.Net indexing/searching engine) to index content and members for the Umbraco backoffice search, unless configured otherwise the indexes will be generated in this folder.
   - `PluginCache` - a hash and list of the plugins installed in your implementation, for detection of changes at startup.
 - `umbraco.config` - This is an XML file containing all published content on your site - Umbraco will continually update this file, and a version held in memory when content is published and unpublished, so source controlling this file would play havoc with how Umbraco works!
 - `Umbraco.sdf` - If you are using SQLCE for the data store in your Umbraco site, then this file IS that datastore, it will be difficult to source control the constant changes to this file.
@@ -120,18 +120,18 @@ Macros can be implemented in four different ways - to source/version control cha
 - **Dynamic Razor** - stored in /macroScripts as .cshtml files (obsolete - use Partial View Macros)
 - **UserControls** - stored in /userControls folder as .ascx and ascx.cs files
 - **XSLT** - stored in /xslt folder as .xslt files
-- 
+-
 #### Controllers/Classes/Custom Code
 
 Any supporting custom code for your application should be in version control, eg any
 - C# implementation,
-  - Surface Controllers, 
-  - RenderMVCControllers,  
-  - ViewModels, 
-  - Helpers / Extension Methods, 
+  - Surface Controllers,
+  - RenderMVCControllers,
+  - ViewModels,
+  - Helpers / Extension Methods,
   - Services etc
-- Supporting class library projects, 
-- App_Code, 
+- Supporting class library projects,
+- App_Code,
 - Models generated by Modelsbuilder in API or App_Data mode
 
 ...all should be added to source/version control.
@@ -146,7 +146,7 @@ When you create and edit eg. Document Types, Media Types and Data Types in the U
 
 There are several add-on packages that can help add source control to these structure changes:
 
-- *[The uSync package](https://our.umbraco.org/projects/developer-tools/usync/)* - which can be configured to serialize these changes to files on disk, in a folder called /uSync - enabling you to source/version control these changes too and synchronise them to other environments.
+- *[The uSync package](https://our.umbraco.com/projects/developer-tools/usync/)* - which can be configured to serialize these changes to files on disk, in a folder called /uSync - enabling you to source/version control these changes too and synchronise them to other environments.
 
 - *[uSync Snapshots](https://our.umbraco.com/packages/developer-tools/usyncsnapshots/)* - an extension to uSync, for taking 'before' and 'after' snapshots of an Umbraco site, for managing a release of a 'set of changes' between environments.
 

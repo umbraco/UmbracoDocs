@@ -41,8 +41,8 @@ public class ExportToHtmlReport : ExportType
 }
 ```
 
-### Razor Partial View 
-   
+### Razor Partial View
+
 ```csharp
 @model Umbraco.Forms.Web.Models.Backoffice.EntrySearchResultCollection
 
@@ -131,7 +131,7 @@ public class ExportToTextFile : ExportType
         // Check that the directory where we will save the ZIP file temporarily exists
         // If not just create it
         if (Directory.Exists(tempFileDir) == false)
-        {   
+        {
             Directory.CreateDirectory(tempFileDir);
         }
 
@@ -140,7 +140,7 @@ public class ExportToTextFile : ExportType
         {
             File.Delete(pathToSaveZipFile);
         }
-        
+
 
         // Query the DB for submissions to export based on the filter
         var submissions = FormRecordSearcher.QueryDataBase(filter);

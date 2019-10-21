@@ -19,7 +19,7 @@ string of prevalue IDs.
 
 ### Content picker
 The content picker opens a modal to pick a specific page from the content structure.
-The value saved is the selected page's ID. 
+The value saved is the selected page's ID.
 
 ### Date picker
 Displays a calendar UI for selecting dates and time, the value saved is a standard dateTime value,
@@ -42,13 +42,13 @@ Is a non-editable control, can only be used to display a present text. It can al
 media section to load in values related to the node, such as width, height and file size.
 
 ### List View - Content
-This data type is used by Document Types that are set to display as list views. 
+This data type is used by Document Types that are set to display as list views.
 
 ### List View - Media
 This data type is used by Media Types that are set to display as list views.
 
 ### List View - Members
-This data type is used by Member Types that are set to display as list views. 
+This data type is used by Member Types that are set to display as list views.
 
 ### Media Picker
 The picker opens a modal to pick a specific media item from the media tree.
@@ -66,7 +66,7 @@ The value saved is the ID of the member
 A textbox to input a numeric value.
 
 ### Radiobox
-This Data type enables editors to choose from list of radiobuttons. 
+This Data type enables editors to choose from list of radiobuttons.
 
 ### Related Links
 This data type allows an editor to add an array of links. These can either be internal Umbraco pages or external URLs.

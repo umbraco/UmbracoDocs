@@ -36,7 +36,7 @@ Inside a view/template or partial view that inherits from UmbracoViewPage, acces
 ```
 ## Accessing Core Services and Helpers in a Controller
 
-Inside a [custom Controller](../../Reference/Routing/custom-controllers.md) access is provided to Services via the `Services` property ([ServiceContext](../../Reference/Management/Services/)) and the `UmbracoHelper` via the `Umbraco` property ([UmbracoHelper](../../Reference/Querying/UmbracoHelper))
+Inside a [custom Controller](../../Reference/Routing/custom-controllers.md) access is provided to Services via the `Services` property ([ServiceContext](../../Reference/Management/Services/)) and the `UmbracoHelper` via the `Umbraco` property ([UmbracoHelper](../../Reference/Querying/UmbracoHelper)).
 
 ```csharp
 using System.Collections.Generic;
@@ -115,11 +115,11 @@ namespace Umbraco8.Components
                 if (contentItem.ContentType.Alias == "landingPage")
                 {
                     // we have injected in the mediaService in the constructor for the component see above.
-                   bool hasExistingFolder = _mediaService.GetByLevel(1).Any(f => f.Name == contentItem.Name);
-                   if (!hasExistingFolder)
+                    bool hasExistingFolder = _mediaService.GetByLevel(1).Any(f => f.Name == contentItem.Name);
+                    if (!hasExistingFolder)
                     {
                         // let's create one (-1 indicates the root of the media section)
-                       IMedia newFolder = _mediaService.CreateMedia(contentItem.Name, -1, "Folder");
+                        IMedia newFolder = _mediaService.CreateMedia(contentItem.Name, -1, "Folder");
                         _mediaService.Save(newFolder);
                     }
                 }
@@ -128,7 +128,7 @@ namespace Umbraco8.Components
 
         public void Terminate()
         {
-          // called when the Umbraco application shuts down.
+        // called when the Umbraco application shuts down.
         }
     }
 }
@@ -260,11 +260,11 @@ namespace Umbraco8.Extensions
                 // make sure siteRoot isn't null, then locate first child content item with alias 'newsSection'
                 return siteRoot?.FirstChild(f => f.ContentType.Alias == "newsSection") ?? null;
 }
-     }
+    }
 }
 ```
 
-Anywhere there is reference to the UmbracoHelper, and a reference is added to the namespace the extension belongs to, it is possible to call the method by writing `Umbraco.GetNewsSection()`
+Anywhere there is reference to the UmbracoHelper, and a reference is added to the namespace the extension belongs to, it is possible to call the method by writing `Umbraco.GetNewsSection()`.
 
 ### Custom Services and Helpers
 
@@ -529,7 +529,7 @@ namespace Umbraco8.Controllers
         public BlogPostController(IGlobalSettings globalSettings, IUmbracoContextAccessor umbracoContextAccessor, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, UmbracoHelper umbracoHelper, ISiteService siteService)
             : base(globalSettings, umbracoContextAccessor, services, appCaches, profilingLogger, umbracoHelper)
         {
-             _siteService = siteService ?? throw new ArgumentNullException(nameof(siteService));
+            _siteService = siteService ?? throw new ArgumentNullException(nameof(siteService));
         }
 
         public override ActionResult Index(ContentModel model)

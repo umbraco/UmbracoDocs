@@ -71,7 +71,7 @@ Umbraco stores data for data types in different ways, for a lot of pickers it wi
     var contactPageId = Model.Content.GetPropertyValue<int>("contactPagePicker");
     if (contactPageId > 0)
     {
-         contactPage = Umbraco.TypedContent(contactPageId);
+        contactPage = Umbraco.TypedContent(contactPageId);
     }
 }
 
@@ -149,11 +149,11 @@ and
 
 ```xml
 <system.webServer>
-   <modules>
-   <remove name="UrlRewriteModule"/>
-   <add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter"/>
+    <modules>
+    <remove name="UrlRewriteModule"/>
+    <add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter"/>
     ...
-   </modules>
+    </modules>
 </system.webServer>
 ```
 
@@ -217,13 +217,13 @@ Other considerations:
     <header>User</header>
     <usercontrol>/create/simple.ascx</usercontrol>
     <tasks>
-      <create assembly="umbraco" type="userTasks" />
-      <delete assembly="umbraco" type="userTasks" />
+    <create assembly="umbraco" type="userTasks" />
+    <delete assembly="umbraco" type="userTasks" />
     </tasks>
 </nodeType>
 ```
 
-	* The &lt;usercontrol&gt; value has changed to: **/create/user.ascx**, this is a required change otherwise creating a new user will not work.
+    * The &lt;usercontrol&gt; value has changed to: **/create/user.ascx**, this is a required change otherwise creating a new user will not work.
 * There is a breaking change to be aware of, full details can be found [here](https://umbraco.com/blog/heads-up-breaking-change-coming-in-702-and-62/).
 
 ## Version 7.0.0 to 7.0.1

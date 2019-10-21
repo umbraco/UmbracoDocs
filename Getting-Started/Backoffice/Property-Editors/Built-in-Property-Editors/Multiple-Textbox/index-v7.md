@@ -1,6 +1,5 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
 ---
 
 # Repeatable textstrings
@@ -15,7 +14,7 @@ The Repeatable textstrings property editor enables a content editor to make a li
 
 ![Repeatable textstrings Data Type Definition](images/Repeatable-Textstrings-DataType.png)
 
-## Content Example 
+## Content Example
 
 ![Repeatable textstrings Content](images/Repeatable-Textstrings-Content.png)
 

@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Add Open Graph - Step 2
 
-We will now add the group and properties to the Home page and Blog post of the site. 
+We will now add the group and properties to the Home page and Blog post of the site.
 
 This is done by using compositions to add the functionality in multiple places.
 

@@ -13,7 +13,7 @@ The "if" command is useful for deciding to show content or not based on a single
     <!-- do this -->
 </xsl:if>
 ```
-	
+
 The "choose" command is a bit more powerful in that it allows for multiple choices to be selected from.
 
 ```xml
@@ -26,7 +26,7 @@ The "choose" command is a bit more powerful in that it allows for multiple choic
     </xsl:otherwise>
 </xsl:choose>
 ```
-	
+
 In this example, you can have as many when statements as you like, but must have the otherwise statement.
 
 :::note

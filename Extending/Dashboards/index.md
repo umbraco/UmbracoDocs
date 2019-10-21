@@ -60,24 +60,24 @@ For reference, here is a list of the weighting values for the default Umbraco da
 <table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Weight</th>
-      <th>Language Key</th>
-      <th>C# Type</th>
+    <th>Name</th>
+    <th>Weight</th>
+    <th>Language Key</th>
+    <th>C# Type</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Getting Started</td>
-      <td>10</td>
-      <td>dashboardTabs/contentIntro</td>
-      <td>Umbraco.Web.Dashboards.ContentDashboard</td>
+    <td>Getting Started</td>
+    <td>10</td>
+    <td>dashboardTabs/contentIntro</td>
+    <td>Umbraco.Web.Dashboards.ContentDashboard</td>
     </tr>
     <tr>
-      <td>Redirect URL Management</td>
-      <td>20</td>
-      <td>dashboardTabs/contentRedirectManager</td>
-      <td>Umbraco.Web.Dashboards.RedirectUrlDashboard</td>
+    <td>Redirect URL Management</td>
+    <td>20</td>
+    <td>dashboardTabs/contentRedirectManager</td>
+    <td>Umbraco.Web.Dashboards.RedirectUrlDashboard</td>
     </tr>
   </tbody>
 </table>
@@ -86,18 +86,18 @@ For reference, here is a list of the weighting values for the default Umbraco da
 <table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Weight</th>
-      <th>Language Key</th>
-      <th>C# Type</th>
+    <th>Name</th>
+    <th>Weight</th>
+    <th>Language Key</th>
+    <th>C# Type</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Content</td>
-      <td>10</td>
-      <td>dashboardTabs/mediaFolderBrowser</td>
-      <td>Umbraco.Web.Dashboards.MediaDashboard</td>
+    <td>Content</td>
+    <td>10</td>
+    <td>dashboardTabs/mediaFolderBrowser</td>
+    <td>Umbraco.Web.Dashboards.MediaDashboard</td>
     </tr>
   </tbody>
 </table>
@@ -106,42 +106,42 @@ For reference, here is a list of the weighting values for the default Umbraco da
 <table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Weight</th>
-      <th>Language Key</th>
-      <th>C# Type</th>
+    <th>Name</th>
+    <th>Weight</th>
+    <th>Language Key</th>
+    <th>C# Type</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Welcome</td>
-      <td>10</td>
-      <td>dashboardTabs/settingsWelcome</td>
-      <td>Umbraco.Web.Dashboards.SettingsDashboard</td>
+    <td>Welcome</td>
+    <td>10</td>
+    <td>dashboardTabs/settingsWelcome</td>
+    <td>Umbraco.Web.Dashboards.SettingsDashboard</td>
     </tr>
     <tr>
-      <td>Examine Management</td>
-      <td>20</td>
-      <td>dashboardTabs/settingsExamine</td>
-      <td>Umbraco.Web.Dashboards.ExamineDashboard</td>
+    <td>Examine Management</td>
+    <td>20</td>
+    <td>dashboardTabs/settingsExamine</td>
+    <td>Umbraco.Web.Dashboards.ExamineDashboard</td>
     </tr>
     <tr>
-      <td>Published Status</td>
-      <td>30</td>
-      <td>dashboardTabs/settingsPublishedStatus</td>
-      <td>Umbraco.Web.Dashboards.PublishedStatusDashboard</td>
+    <td>Published Status</td>
+    <td>30</td>
+    <td>dashboardTabs/settingsPublishedStatus</td>
+    <td>Umbraco.Web.Dashboards.PublishedStatusDashboard</td>
     </tr>
     <tr>
-      <td>Models Builder</td>
-      <td>40</td>
-      <td>dashboardTabs/settingsModelsBuilder</td>
-      <td>Registered in ModelsBuilder package.manifest</td>
+    <td>Models Builder</td>
+    <td>40</td>
+    <td>dashboardTabs/settingsModelsBuilder</td>
+    <td>Registered in ModelsBuilder package.manifest</td>
     </tr>
     <tr>
-      <td>Health Check</td>
-      <td>50</td>
-      <td>dashboardTabs/settingsHealthCheck</td>
-      <td>Umbraco.Web.Dashboards.HealthCheckDashboard</td>
+    <td>Health Check</td>
+    <td>50</td>
+    <td>dashboardTabs/settingsHealthCheck</td>
+    <td>Umbraco.Web.Dashboards.HealthCheckDashboard</td>
     </tr>
   </tbody>
 </table>
@@ -150,18 +150,18 @@ For reference, here is a list of the weighting values for the default Umbraco da
 <table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Weight</th>
-      <th>Language Key</th>
-      <th>C# Type</th>
+    <th>Name</th>
+    <th>Weight</th>
+    <th>Language Key</th>
+    <th>C# Type</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Getting Started</td>
-      <td>10</td>
-      <td>dashboardTabs/memberIntro</td>
-      <td>Umbraco.Web.Dashboards.MembersDashboard</td>
+    <td>Getting Started</td>
+    <td>10</td>
+    <td>dashboardTabs/memberIntro</td>
+    <td>Umbraco.Web.Dashboards.MembersDashboard</td>
     </tr>
   </tbody>
 </table>
@@ -170,18 +170,18 @@ For reference, here is a list of the weighting values for the default Umbraco da
 <table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Weight</th>
-      <th>Language Key</th>
-      <th>C# Type</th>
+    <th>Name</th>
+    <th>Weight</th>
+    <th>Language Key</th>
+    <th>C# Type</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Install Umbraco Forms</td>
-      <td>10</td>
-      <td>dashboardTabs/formsInstall</td>
-      <td>Umbraco.Web.Dashboards.FormsDashboard</td>
+    <td>Install Umbraco Forms</td>
+    <td>10</td>
+    <td>dashboardTabs/formsInstall</td>
+    <td>Umbraco.Web.Dashboards.FormsDashboard</td>
     </tr>
   </tbody>
 </table>

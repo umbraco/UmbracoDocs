@@ -23,7 +23,7 @@ The `{environment}` part needs to be replaced with the target environment, for w
 
 1. `development`
 2. `staging`
-3. `live` 
+3. `live`
 
 This file needs to be created on a local clone of your project, as this will ensure that the file is added to the project repository.
 
@@ -57,7 +57,7 @@ Here is an example of how that config transform would look:
 <?xml version="1.0" encoding="utf-8"?>
 <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
     <system.webServer>
-        <rewrite>
+        <rewrite xdt:Transform="InsertIfMissing">
             <rules>
                 <rule xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" name="Redirects umbraco.io to actual domain" stopProcessing="true">
                     <match url=".*" />
@@ -80,7 +80,7 @@ This config transform will add a new `<rule>` to `<configuration><system.webServ
 
 ## Forced transforms
 
-Whenever you deploy changes to any of your environments we force some config transforms to help make sure optimal settings are set for your website. 
+Whenever you deploy changes to any of your environments we force some config transforms to help make sure optimal settings are set for your website.
 
 ### Web.config forced transforms
 
@@ -88,15 +88,15 @@ These are the transforms we do on the root `Web.config` file regardless of the c
 
 On live environments only:
 
-- We set `debug="false"` on the `compilation` node in `system.web` 
+- We set `debug="false"` on the `compilation` node in `system.web`
 - We set `mode="RemoteOnly"` on the `customErrors` node in `system.web`
 
 On all other Cloud environments:
 
-- We set `debug="true"` on the `compilation` node in `system.web` 
+- We set `debug="true"` on the `compilation` node in `system.web`
 - We set `mode="Off"` on the `customErrors` node in `system.web`
-- We set `waitChangeNotification="3" maxWaitChangeNotification="10"` on the `httpRuntime` node in `system.web` 
-- We set `numRecompilesBeforeAppRestart="50"`  on the `compilation` node in `system.web` 
+- We set `waitChangeNotification="3" maxWaitChangeNotification="10"` on the `httpRuntime` node in `system.web`
+- We set `numRecompilesBeforeAppRestart="50"`  on the `compilation` node in `system.web`
 - We set the smtp `host=""` if the host was set to `127.0.0.1`
 
 

@@ -1,5 +1,8 @@
 ---
 versionFrom: 7.0.0
+propduct: "CMS"
+meta.Title: "Macro Parameter Editors"
+meta.Description: "A guide to creating macro property editors in Umbraco"
 ---
 
 # Macro Parameter Editors
@@ -119,7 +122,7 @@ The final custom parameter should look like this:
 
 #### Using defaultConfig
 
-In this example it doesn't really add anything to move the radio button options into configuration, however to illustrate the concept of providing defaultConfig, let's do just that:
+In this example it doesn't really add anything to move the radio button options into configuration, however to illustrate the concept of providing defaultConfig, let's do that:
 
 The package manifest becomes:
 

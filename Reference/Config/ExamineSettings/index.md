@@ -35,7 +35,7 @@ _This shows all of the configuration options for Examine. None of these options 
     <!-- Indexers... -->
 
     <ExamineIndexProviders>
-      <providers>
+    <providers>
 
         <!--
         Shows all of the configuration options available for the UmbracoContentIndexer.
@@ -57,13 +57,13 @@ _This shows all of the configuration options for Examine. None of these options 
         *   logLevel="Info" or "Verbose". (optional Info is the default) Verbose will show more detailed logs
         -->
         <add name="CWSIndexer"
-             type="UmbracoExamine.UmbracoContentIndexer, UmbracoExamine"
-             dataService="UmbracoExamine.DataServices.UmbracoDataService, UmbracoExamine"
-             indexSet="CWSIndexSet"
-             supportUnpublished="false"
-             supportProtected="false"
-             analyzer="Lucene.Net.Analysis.Standard.StandardAnalyzer, Lucene.Net"
-             enableDefaultEventHandler="true"/>
+            type="UmbracoExamine.UmbracoContentIndexer, UmbracoExamine"
+            dataService="UmbracoExamine.DataServices.UmbracoDataService, UmbracoExamine"
+            indexSet="CWSIndexSet"
+            supportUnpublished="false"
+            supportProtected="false"
+            analyzer="Lucene.Net.Analysis.Standard.StandardAnalyzer, Lucene.Net"
+            enableDefaultEventHandler="true"/>
 
         <!--
         Used to index PDF content in Umbraco's media section.
@@ -78,9 +78,9 @@ _This shows all of the configuration options for Examine. None of these options 
         *   umbracoFileProperty = the property of the media type that contains files
         -->
         <add name="PDFIndexer"
-             type="UmbracoExamine.PDF.PDFIndexer, UmbracoExamine.PDF"
-             extensions=".pdf"
-             umbracoFileProperty="umbracoFile"/>
+            type="UmbracoExamine.PDF.PDFIndexer, UmbracoExamine.PDF"
+            extensions=".pdf"
+            umbracoFileProperty="umbracoFile"/>
 
         <!--
         The SimpleDataIndexer provider allows you to index content from ANY data source
@@ -94,11 +94,11 @@ _This shows all of the configuration options for Examine. None of these options 
             to categorize your data to be searched against (i.e. content vs media)
         -->
         <add name="SimpleIndexer"
-             type="Examine.LuceneEngine.Providers.SimpleDataIndexer, Examine"
-             dataService="Examine.Test.DataServices.TestSimpleDataProvider, Examine.Test"
-             indexTypes="Documents,Pictures" />
+            type="Examine.LuceneEngine.Providers.SimpleDataIndexer, Examine"
+            dataService="Examine.Test.DataServices.TestSimpleDataProvider, Examine.Test"
+            indexTypes="Documents,Pictures" />
 
-      </providers>
+    </providers>
     </ExamineIndexProviders>
 
     <!--
@@ -109,7 +109,7 @@ _This shows all of the configuration options for Examine. None of these options 
     named provider: ExamineManager.Instance.Search(...)
     -->
     <ExamineSearchProviders defaultProvider="CWSSearcher">
-      <providers>
+    <providers>
 
         <!--
         This search provider is used to search the CWSIndexSet.
@@ -118,18 +118,18 @@ _This shows all of the configuration options for Examine. None of these options 
             based on naming conventions.
         -->
         <add name="CWSSearcher"
-             type="UmbracoExamine.UmbracoExamineSearcher, UmbracoExamine"
-             indexSet="CWSIndexSet"/>
+            type="UmbracoExamine.UmbracoExamineSearcher, UmbracoExamine"
+            indexSet="CWSIndexSet"/>
 
         <!-- This search provider is used to search the PDFIndexSet. -->
         <add name="PDFSearcher"
-             type="UmbracoExamine.UmbracoExamineSearcher, UmbracoExamine" />
+            type="UmbracoExamine.UmbracoExamineSearcher, UmbracoExamine" />
 
         <!-- This search provider is used to search the SimpleIndexSet. -->
         <add name="SimpleSearcher"
-             type="Examine.LuceneEngine.Providers.LuceneSearcher, Examine" />
+            type="Examine.LuceneEngine.Providers.LuceneSearcher, Examine" />
 
-      </providers>
+    </providers>
     </ExamineSearchProviders>
   </Examine>
 
@@ -152,33 +152,33 @@ _This shows all of the configuration options for Examine. None of these options 
     if none are specified, nothing will be indexed.
     -->
     <IndexSet SetName="SimpleIndexSet" IndexPath="~/App_Data/SimpleIndexSet">
-      <IndexUserFields>
+    <IndexUserFields>
         <add Name="Author" />
         <add Name="DateCreated" EnableSorting="true" />
         <add Name="Title" />
         <add Name="Photographer" />
-      </IndexUserFields>
+    </IndexUserFields>
     </IndexSet>
 
     <!--
     Shows most options except for exclude
 
     * EnableSorting is used if you want to have Examine/Lucene sort your
-      results based on this field.
+    results based on this field.
 
     * Type is the data type of the field. By default the data type is a string
-      Data types supported are:
+    Data types supported are:
 
         NUMBER, INT, FLOAT, DOUBLE, LONG, DATE, DATETIME, DATE.YEAR, DATE.MONTH,
         DATE.DAY, DATE.HOUR, DATE.MINUTE,
 
-      Data types are used for Range and mathematical queries
+    Data types are used for Range and mathematical queries
 
     -->
     <IndexSet SetName="CWSIndexSet"
-              IndexPath="~/App_Data/CWSIndexSetTest"
-              IndexParentId="-1">
-      <IndexAttributeFields>
+            IndexPath="~/App_Data/CWSIndexSetTest"
+            IndexParentId="-1">
+    <IndexAttributeFields>
         <add Name="id" EnableSorting="true" Type="Number" />
         <add Name="nodeName" EnableSorting="true" />
         <add Name="updateDate" EnableSorting="true" Type="DateTime" />
@@ -186,8 +186,8 @@ _This shows all of the configuration options for Examine. None of these options 
         <add Name="path" />
         <add Name="nodeTypeAlias" />
         <add Name="parentID" />
-      </IndexAttributeFields>
-      <IndexUserFields>
+    </IndexAttributeFields>
+    <IndexUserFields>
         <add Name="headerText" />
         <add Name="bodyText" />
         <add Name="metaDescription" />
@@ -195,8 +195,8 @@ _This shows all of the configuration options for Examine. None of these options 
         <add Name="bodyTextColOne" />
         <add Name="bodyTextColTwo" />
         <add Name="xmlStorageTest" />
-      </IndexUserFields>
-      <IncludeNodeTypes>
+    </IndexUserFields>
+    <IncludeNodeTypes>
         <add Name="CWS_Home" />
         <add Name="CWS_Textpage" />
         <add Name="CWS_TextpageTwoCol" />
@@ -205,8 +205,8 @@ _This shows all of the configuration options for Examine. None of these options 
         <add Name="CWS_Gallery" />
         <add Name="CWS_EventItem" />
         <add Name="Image" />
-      </IncludeNodeTypes>
-      <ExcludeNodeTypes />
+    </IncludeNodeTypes>
+    <ExcludeNodeTypes />
     </IndexSet>
 
     <!--

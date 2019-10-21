@@ -6,7 +6,7 @@ versionFrom: 7.0.0
 
 _This section will explain the many configuration options in Umbraco and what they do_
 
-### [web.config](webconfig/index.md)
+### [web.config](webconfig/index-v7.md)
 This file can be found at the following path: /web.config
 
 ### [404handlers.config](404handlers/index.md)
@@ -52,7 +52,7 @@ The 'BaseRestExtension.config' contains the data necessary for the /Base system 
 This file can be found at the following path: /config/BaseRestExtensions.config
 
 ### [tinyMceConfig.config](tinyMceConfig/index.md)
-The 'tinyMceConfig.config' contains configuration options for the [TinyMce](https://www.tinymce.com/) editors in the Umbraco Backoffice. 
+The 'tinyMceConfig.config' contains configuration options for the [TinyMce](https://www.tinymce.com/) editors in the Umbraco Backoffice.
 
 This file can be found at the following path: /config/tinyMceConfig.config
 

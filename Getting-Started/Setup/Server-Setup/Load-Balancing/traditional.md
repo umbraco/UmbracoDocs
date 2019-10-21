@@ -73,7 +73,7 @@ Some important notes on NLB:
 * [Load balancing with VMWare & NLB](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/implmenting_ms_network_load_balancing.pdf)
 * Ensure that the internal IP Addresses for NLB have DNS registration disabled, are not configured to a client for Microsoft Networks and have Netbios over TCP/IP disabled
 * Windows Server 2008 changed the way that TCP-IP works and have disabled forwarding. In order for NLB to work with 2 network cards (the recommended way), you have to enable forwarding for the private NIC:
-	* [Balancing Act: Dual-NIC Configuration with Windows Server 2008 NLB Clusters](https://blogs.technet.microsoft.com/networking/2008/11/20/balancing-act-dual-nic-configuration-with-windows-server-2008-nlb-clusters/)
+    * [Balancing Act: Dual-NIC Configuration with Windows Server 2008 NLB Clusters](https://blogs.technet.microsoft.com/networking/2008/11/20/balancing-act-dual-nic-configuration-with-windows-server-2008-nlb-clusters/)
 
 ## Option #1 : File Storage with File Replication
 
@@ -95,7 +95,7 @@ Configuring Umbraco to support load balanced clusters is probably the easiest pa
 <distributedCall enable="true">
     <user>0</user>
     <servers>
-       <server>server1.mywebsite.com</server>
+        <server>server1.mywebsite.com</server>
         <server>server2.mywebsite.com</server>
         <server>server3.mywebsite.com</server>
     </servers>
@@ -140,8 +140,8 @@ Example:
 ## Testing
 
 The normal testing practices should be done (See [Common load balancing setup information](index.md)) with a traditional load balancing setup but specific testing can be done to ensure
-that your distributed calls are being made correctly in a traditional setup. To test Umbraco distributed calls, create and publish some content on one server (i.e. http://server1.mywebsite.com/umbraco/umbraco.aspx), 
-then browse to the front end content on another server (i.e. http://server2.mywebsite.com/public/page1.aspx if page1 was the newly published content). 
+that your distributed calls are being made correctly in a traditional setup. To test Umbraco distributed calls, create and publish some content on one server (i.e. http://server1.mywebsite.com/umbraco/umbraco.aspx),
+then browse to the front end content on another server (i.e. http://server2.mywebsite.com/public/page1.aspx if page1 was the newly published content).
 If the page shows up on the 2nd server, though it was published from the 1st server, then distributed calls are working! You'll need to thoroughly test this though.
 
 ## Conclusion

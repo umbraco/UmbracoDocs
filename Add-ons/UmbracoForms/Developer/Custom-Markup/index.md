@@ -41,11 +41,11 @@ Contents of the `FieldType.Textfield.cshtml` view (from the default theme):
 @model Umbraco.Forms.Mvc.Models.FieldViewModel
 @using Umbraco.Forms.Mvc
 
-<input type="text" 
-    name="@Model.Name" 
-    id="@Model.Id" 
-    class="@Html.GetFormFieldClass(Model.FieldTypeName) text" 
-    value="@Model.ValueAsHtmlString" 
+<input type="text"
+    name="@Model.Name"
+    id="@Model.Id"
+    class="@Html.GetFormFieldClass(Model.FieldTypeName) text"
+    value="@Model.ValueAsHtmlString"
     maxlength="500"
     @{if(string.IsNullOrEmpty(Model.PlaceholderText) == false){<text>placeholder="@Model.PlaceholderText"</text>}}
     @{if(Model.Mandatory || Model.Validate){<text>data-val="true"</text>}}

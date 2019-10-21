@@ -22,23 +22,23 @@ Learn how to:
 
 1. Click on *Home* in the Content section.
 2. Select the *Design* tab.
-3. Choose a different font and color theme. 
+3. Choose a different font and color theme.
 
-    * Try different combinations and see what fits your site. 
-    * Save a draft of your changes by using `ctrl`/`cmd`+`s` or clicking the arrow next to the **Save and Publish** button. **Save** will not publish the changes to the website.  
+    * Try different combinations and see what fits your site.
+    * Save a draft of your changes by using `ctrl`/`cmd`+`s` or clicking the arrow next to the **Save and Publish** button. **Save** will not publish the changes to the website.
     * Click **Preview** to see how the page looks on various screen sizes.
 
-4. Try changing the background image of the Home page. 
+4. Try changing the background image of the Home page.
 
-    * Hover over the *Hero Background* thumbnail and click the edit icon to open the **Media Picker** dialog. Here you can either choose an existing image or upload your own. 
+    * Hover over the *Hero Background* thumbnail and click the edit icon to open the **Media Picker** dialog. Here you can either choose an existing image or upload your own.
     * Select the image you want in the dialog and click Submit in the lower right corner.
 
-5. Find the *Site Name* property and change the name of the site. 
+5. Find the *Site Name* property and change the name of the site.
 
-    * This is shown in the site navigation menu. 
+    * This is shown in the site navigation menu.
     * If you want a logo instead of the Site Name you can upload and/or choose an image from the Media Library.
-    
-6. When you're happy with the changes publish them to website by clicking the Save and Publish button. 
+
+6. When you're happy with the changes publish them to website by clicking the Save and Publish button.
 
 To see the changes you've made go to the properties tab and click the icon next to **Link to document**.
 
