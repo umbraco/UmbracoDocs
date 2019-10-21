@@ -16,4 +16,10 @@ These are the IPs you will need to whitelist:
 52.157.96.229
 ```
 
+These are the **out-going** IPs on the Umbraco Cloud servers. Whenever we change these IPs or remove / add new ones it will be updated here.
+
+:::note
+When these IPs are changed, we will also send the information directly to the [Technical Contacts](../Team-Members/Technical-Contact.md) on each Umbraco Cloud project. 
+:::
+
 If you are using an external service that is not behind a firewall, you do not need to whitelist the Cloud IPs.
