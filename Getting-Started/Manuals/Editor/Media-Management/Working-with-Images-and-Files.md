@@ -15,7 +15,7 @@ versionTo: 8.0.0
 
 ## Deleting an Image or File
 
-If you wish to tidy up the Media section of your site, you can easily delete existing media items. Once you have deleted an image, it is sent to the Recycle Bin. If you change your mind, you can restore the deleted image from the Recycle Bin.
+If you wish to tidy up the Media section of your site, you can delete existing media items. Once you have deleted an image, it is sent to the Recycle Bin. If you change your mind, you can restore the deleted image from the Recycle Bin.
 
 1. Select the image you want to delete.
 2. Right click the image, and click ***Delete*** from the context menu.
@@ -27,7 +27,7 @@ The Recycle Bin is a separate tree structure within the Media section and you ca
 
 ## Moving an Image or File
 
-You can easily move media between folders within the Media section using the Move function.
+You can move media between folders within the Media section using the Move function.
 
 1. Select the image you want to move.
 2. Right click the image and click ***Move*** from the context menu.

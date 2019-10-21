@@ -26,7 +26,7 @@ The ***Save*** option (found by clicking the arrow on the ***Save and publish***
 
 ### Save and Publish
 
-The ***Save and publish*** button is ideal for when you want to publish a previously saved page to the live website, or to just publish a page without previewing it. This will save and publish the page to your live website.
+The ***Save and publish*** button is ideal for when you want to publish a previously saved page to the live website, or to publish a page without previewing it. This will save and publish the page to your live website.
 
 ### Publish
 

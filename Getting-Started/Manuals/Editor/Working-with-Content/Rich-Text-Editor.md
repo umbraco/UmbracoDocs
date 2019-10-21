@@ -41,7 +41,7 @@ You do not normally need to spend much time formatting text because Umbraco take
 
 **Formatting Buttons**
 
-The most basic and probably the most familiar way to control formatting are via the formatting buttons. These work much the same as those found in most word processing applications such as Microsoft Word. With these you can apply simple formatting such as Bold, Italic and underline as well as altering text alignment and creating bulleted and numbered lists.
+The most basic and probably the most familiar way to control formatting are via the formatting buttons. These work much the same as those found in most word processing applications such as Microsoft Word. With these you can apply basic formatting such as Bold, Italic and underline as well as altering text alignment and creating bulleted and numbered lists.
 
 Regardless of the formatting being applied, the process for applying a format using the formatting buttons is always the same.
 
@@ -142,7 +142,7 @@ An anchor allows you to create internal page links that enable users to navigate
 4. Click ***OK*** to finish.
 5. You will see a small anchor icon where you previously had the editor cursor. 
 
-To delete the anchor, simply select it and then press your delete key.
+To delete the anchor, select it and then press your delete key.
  
 ![anchorDialogue.jpg](images/anchorDialogue.jpg)
 
@@ -165,7 +165,7 @@ You can make images into clickable links in Umbraco.
 
 ### Removing a link
 
-1. To remove a link you first need to select it in the editor. For text links simply click the cursor anywhere within the link text. For an image just click the image itself.
+1. To remove a link you first need to select it in the editor. For text links click the cursor anywhere within the link text. For an image just click the image itself.
 2. Click the **Remove Link** button which remove the hyperlink. If the remove link button is not in your richtext editor toolbar you will instead need to click the **Insert/Edit Link** button again and manually remove the link from the link to document text field.
 
 ![unlink.jpg](images/unlink.jpg)
@@ -200,7 +200,7 @@ You can upload images directly from the rich text editor on the page you are edi
 
 ### Deleting an Image from the Page
 
-If you want to delete an image from the page, simply select the image and press ***Delete*** button on your keyboard. The image disappears from the page, but is not deleted from the Umbraco media library.
+If you want to delete an image from the page, select the image and press ***Delete*** button on your keyboard. The image disappears from the page, but is not deleted from the Umbraco media library.
 
 ## Macros
 
@@ -231,7 +231,7 @@ You can edit values you have inputted into a macro after it has been added to th
 
 ### Removing macros
 
-To remove a macro you simply highlight the macro in the rich text editor and hit the ***delete*** or ***backspace*** button on your keyboard. 
+To remove a macro you highlight the macro in the rich text editor and hit the ***delete*** or ***backspace*** button on your keyboard. 
 
 ## Tables
 

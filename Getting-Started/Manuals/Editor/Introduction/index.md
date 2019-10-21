@@ -12,6 +12,6 @@ No special skills are required in order to create, publish and manage web pages 
 
 The Umbraco platform can be utilised for all types of websites – from public websites to intranets and extranets, whether password protected or not. It can even be used to manage multiple websites from a single Umbraco instance. Regardless of the type, authorisation to edit them can be given to anybody you choose and as editing is done via a web browser, it can be done at any time and in any place.
 
-Umbraco is designed to be intuitive and straight-forward so the aim of this manual is to explain each step in simple terms and get you editing your website with ease.
+Umbraco is designed to be intuitive and straight-forward so the aim of this manual is to explain each step with clear instructions and help get you editing your website with ease.
 
 Happy editing!
