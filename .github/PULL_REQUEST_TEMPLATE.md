@@ -1,6 +1,6 @@
 <!---
     Thank you for contributing to Umbraco.
-    Fields marked with (*) are required. Please don't remove the template.
+    Fields marked with (*) are required.
 -->
 
 ## Description (*)
@@ -19,7 +19,7 @@
 -->
 
 ## Contribution checklist (*)
- - [ ] I have read the Contributing Guidelines
+ - [ ] I have read the [Contributing Guidelines](https://our.umbraco.com/documentation/Contribute/)
  - [ ] Commits have been made with meaningful commit messages
  - [ ] All automated tests have passed successfully 
  
