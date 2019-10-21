@@ -26,7 +26,8 @@ namespace Umbraco8Examples.Composition
 ```
 The PhysicalFileSystem accepts the application path to the 'virtual Root' to location the Media folder the ~ is important!
 
-Alternatively you can combine:
+Alternatively you can combine these two:
+
 a **RootPath** - the rooted, filesystem path, using directory separator chars, NOT ending with a separator // eg "c:" or "c:\path\to\site" or "\\server\path"
 and **RootUrl** - the relative url, using url separator chars, NOT ending with a separator // eg "" or "/Views" or "/Media" or "/<vpath>/Media" in case of a virtual path
 
