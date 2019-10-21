@@ -1,8 +1,10 @@
 # Using external services with Umbraco Cloud
 
-In some cases you might be need your Cloud project to communicate with an external service that uses a firewall.
+In some cases Cloud might not be the only service you are working with. You might need to work with other services as well - this could be either internal or third party services. In either case, it will be services external to Umbraco Cloud.
 
-An example could be, that you're fetching information from an external service which is behind a firewall. In order to give Cloud access to the external service you need to whitelist the IPs used by the Umbraco Cloud servers.
+When you are working with an external service that is behind a firewall and that service needs to communicate with your Cloud project you need to whitelist the Umbraco Cloud Server IPs.
+
+An example could be, that you're fetching some information from an external service which is behind a firewall. In order to give Cloud access to the external service you need to whitelist the IPs used by the Umbraco Cloud servers.
 
 These are the IPs you will need to whitelist:
 
@@ -13,3 +15,5 @@ These are the IPs you will need to whitelist:
 13.94.247.45
 52.157.96.229
 ```
+
+If you are using an external service that is not behind a firewall, you do not need to whitelist the Cloud IPs.
