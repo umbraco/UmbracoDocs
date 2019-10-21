@@ -4,7 +4,7 @@ versionTo: 8.0.0
 
 # Introduction
 
-**Welcome to Umbraco!**
+## Welcome to Umbraco!
 
 Umbraco is an information platform that allows you to quickly and easily publish information onto a website without the need for any prior knowledge of web page editing. It is designed to be simple to use yet powerful and flexible enough to enable users full control of their website content.
 
