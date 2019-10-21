@@ -37,6 +37,8 @@ Build your solution after adding the model.
 ### Creating the view
 Next, we add the view for the form to the `/View/Partials` folder. Because we've added the model and built the solution we can add it as a strongly typed view.
 
+Name your view "ContactForm".
+
 The view can be built with standard MVC helpers:
 
 ```csharp
@@ -85,6 +87,8 @@ namespace MyFirstForm.Controllers
     }
 }
 ```
+
+You should note that the controller inherits "SurfaceController" and not from "Controller" as initially added to the file by Visual Studio.
 
 If the model state is invalid, `CurrentUmbracoPage()` will send the user back to the form. If valid, you can work with the form data, e.g. sending an email to site admin and then `RedirectToCurrentUmbracoPage();`.
 
