@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 In Umbraco V8 FileSystemProviders are no longer configured via the `fileSystemProviders.config` file.
 
-These configuration settings can be set in code during 'Composition' using an IUserComponent
+These configuration settings can be set in code during 'Composition' using an `IUserComponent`
 
 ```csharp
 using Umbraco.Core.Composing;
