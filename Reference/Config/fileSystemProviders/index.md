@@ -25,7 +25,7 @@ namespace Umbraco8Examples.Composition
 }
 ```
 
-By default Umbraco will save Media in an application folder called /media on the Physical file system.
+By default Umbraco will save Media in an application folder called `/media` on the Physical file system.
 
 The media provider can be of many types, for example in case you want to store media on Azure, Amazon or even DB. But the provider that comes by default with the installation of Umbraco is the `PhysicalFileSystem` provider.
 
