@@ -7,19 +7,19 @@ This is the documentation project for Umbraco. The scope of this project is to p
 # What's in the documentation
 
 ## Getting started
-[Getting started (available here)](Getting-Started/) is an introduction to Umbraco containing explanations of basic concepts and short tutorials.
+[Getting started](Getting-Started/) is an introduction to Umbraco containing explanations of basic concepts and short tutorials.
 
 ## Implementation
-[Implementation (available here)](Implementation/) is an overview of Umbraco's structure and pipeline.
+[Implementation](Implementation/) is an overview of Umbraco's structure and pipeline.
 
 ## Developers Reference
-[Reference (available here)](Reference/index.md) is a collection of API references specifically for developers working with and extending Umbraco.
+[Reference](Reference/index.md) is a collection of API references specifically for developers working with and extending Umbraco.
 
 ## Extending
-[Extending (available here)](Extending/) is documentation on customizing and extending the backoffice.
+[Extending](Extending/) is documentation on customizing and extending the backoffice.
 
 ## Tutorials
-[Tutorials (available here)](Tutorials/) is a collection of the more extensive tutorials used in the documentation.
+[Tutorials](Tutorials/) is a collection of the more extensive tutorials used in the documentation.
 
 # Markdown conventions
 The Umbraco Documentation uses Markdown for all of the documentation, please read about our [Markdown Conventions](Contribute/Markdown-Conventions/).
