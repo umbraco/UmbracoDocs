@@ -136,7 +136,7 @@ Register the underlying filesystem:
 ```csharp
   composition.RegisterUniqueFor<IFileSystem, MyFileSystem>(...);
 ```
-You can inject MyFileSystem wherever it's needed.
+You can inject `MyFileSystem` wherever it's needed.
 
 Furthermore it's possible to declare a filesystem interface:
 ```csharp
