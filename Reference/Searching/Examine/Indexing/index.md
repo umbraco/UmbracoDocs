@@ -11,9 +11,9 @@ Examine has changed quite a bit in Umbraco 8 (and by "a bit" we really mean a lo
 The following example will show how to create an index that will only include nodes based on the document type _product_.
 
 :::note
-We always recommend that you use the existing, built in ExternalIndex and query based on the NodeTypeAlias instead of creating a new, separate index based on that particular node type. However, should the need arise, the example below will show you how to do it.
+We always recommend that you use the existing built in ExternalIndex. You should then query based on the NodeTypeAlias instead of creating a new separate index based on that particular node type. However, should the need arise, the example below will show you how to do it.
 
-Take a look at our [Examine Quick Start](../quick-start/index.md) to see some examples of how to search on your ExternalIndex.
+Take a look at our [Examine Quick Start](../quick-start/index.md) to see some examples of how to search the ExternalIndex.
 :::
 
 In order to create this index we need three things:
