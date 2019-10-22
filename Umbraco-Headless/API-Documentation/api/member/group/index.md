@@ -37,6 +37,62 @@ If an error occours you will receive a HTTP status code along with an API error 
 }
 ```
 
+## Get all
+
+Get all member groups.
+
+**URL**: `/member/group`
+
+**Method**: `GET`
+
+**Permissions required** : Access to Member section of the Umbraco Backoffice
+
+### Success Response
+
+**Code**: 200
+
+**Content Example**:
+
+```json
+{
+  "_links": {
+    "self": {
+      "href": "/api/member/group"
+    },
+    "membergroups": {
+      "href": "/api/member/group/Club%20Blue%20Members",
+      "href": "/api/member/group/Elite%20Shoppers%20Group"
+    }
+  },
+  "_embedded": {
+    "membergroups": [
+      {
+        "name": "Club Blue Members",
+        "_createDate": "2019-10-10T12:02:50.83Z",
+        "_id": "15a1a854-596c-4b72-b462-769015a6b0eb",
+        "_updateDate": "0001-01-01T00:00:00Z",
+        "_links": {
+          "self": {
+            "href": "/api/member/group/Club%20Blue%20Members"
+          }
+        }
+      },
+      {
+        "name": "Elite Shoppers Group",
+        "_createDate": "2019-10-10T12:09:58.5982624Z",
+        "_id": "1ae62150-e54c-4fd7-aabe-9ad46d1b7109",
+        "_updateDate": "0001-01-01T00:00:00Z",
+        "_links": {
+          "self": {
+            "href": "/api/member/group/Elite%20Shoppers%20Group"
+          }
+        }
+      }
+    ]
+  }
+}
+```
+
 ## Get by name
 
 Get a specific member group by its name.
@@ -55,10 +111,15 @@ Get a specific member group by its name.
 
 ```json
 {
-    "name": "Club Blue Members",
-    "_createDate": "2019-10-10T12:02:50.83Z",
-    "_id": "15a1a854-596c-4b72-b462-769015a6b0eb",
-    "_updateDate": "0001-01-01T00:00:00Z"
+  "name": "Club Blue Members",
+  "_createDate": "2019-10-10T12:02:50.83Z",
+  "_id": "15a1a854-596c-4b72-b462-769015a6b0eb",
+  "_updateDate": "0001-01-01T00:00:00Z",
+  "_links": {
+    "self": {
+    "href": "/api/member/group/Club%20Blue%20Members"
+    }
+  }
 }
 ```
 
@@ -76,7 +137,7 @@ Create a new member group.
 
 ```json
 {
-    "name": "Elite Shoppers Group"
+  "name": "Elite Shoppers Group"
 }
 ```
 
@@ -88,10 +149,15 @@ Create a new member group.
 
 ```json
 {
-    "name": "Elite Shoppers Group",
-    "_createDate": "2019-10-10T12:09:58.5982624Z",
-    "_id": "1ae62150-e54c-4fd7-aabe-9ad46d1b7109",
-    "_updateDate": "2019-10-10T12:09:58.5982624Z"
+  "name": "Elite Shoppers Group",
+  "_createDate": "2019-10-10T12:09:58.5982624Z",
+  "_id": "1ae62150-e54c-4fd7-aabe-9ad46d1b7109",
+  "_updateDate": "2019-10-10T12:09:58.5982624Z",
+  "_links": {
+    "self": {
+    "href": "/api/member/group/Elite%20Shoppers%20Group"
+    }
+  }
 }
 ```
 
@@ -115,10 +181,15 @@ Delete an existing member group.
 
 ```json
 {
-    "name": "Elite Shoppers Group",
-    "_createDate": "2019-10-10T12:09:58.597Z",
-    "_id": "1ae62150-e54c-4fd7-aabe-9ad46d1b7109",
-    "_updateDate": "0001-01-01T00:00:00Z",
-    "_deleteDate": "2019-10-10T12:10:45.0657415Z"
+  "name": "Elite Shoppers Group",
+  "_createDate": "2019-10-10T12:09:58.597Z",
+  "_id": "1ae62150-e54c-4fd7-aabe-9ad46d1b7109",
+  "_updateDate": "0001-01-01T00:00:00Z",
+  "_deleteDate": "2019-10-10T12:10:45.0657415Z",
+  "_links": {
+    "self": {
+    "href": "/api/member/group/Elite%20Shoppers%20Group"
+    }
+  }
 }
 ```
