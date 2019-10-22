@@ -145,6 +145,8 @@ function ($scope,assetsService) {
 
 This loads in our external dependency, but only when it's needed by the editor.
 
+Note: Visit the [Property Editors page](https://our.umbraco.com/documentation/Extending/Property-Editors/) for more helpful information about extending this service.
+
 Now let's replace that `alert()` with some code that can instantiate the pagedown editor:
 
 ```javascript
@@ -172,5 +174,7 @@ Now, clear the cache, reload the document, and see the pagedown editor running:
 ![Example of the markdown editor running](images/markdown-editor-backoffice.png)
 
 When you save or publish, the value of the editor is automatically synced to the current content object and sent to the server, all through the power of angular and the `ng-model` attribute.
+
+Learn more about extending this service by visiting the [Property Editors page](https://our.umbraco.com/documentation/Extending/Property-Editors/).
 
 [Next - Adding configuration to a property editor](part-2.md)
