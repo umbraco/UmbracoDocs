@@ -4,6 +4,7 @@ versionFrom: 8.0.0
 
 # Custom file systems (IFileSystem)
 
+## MediaFileSystem
 By default, Umbraco uses an instance of `PhysicalFileSystem` to handle the storage location of the media archive (~/media).
 
 This can be configured during composition:
@@ -24,16 +25,21 @@ namespace Umbraco8Examples.Composition
     }
 }
 ```
-The PhysicalFileSystem accepts the application path to the 'virtual Root' to location the Media folder the ~ is important!
+The `PhysicalFileSystem` accepts the application path to the 'virtual Root' location of the Media folder. The ~ is therefore important!
 
 Alternatively you can combine these two:
 
 **RootPath** - the rooted, filesystem path, using directory separator chars, NOT ending with a separator // eg "c:" or "c:\path\to\site" or "\\server\path"
 and **RootUrl** - the relative url, using url separator chars, NOT ending with a separator // eg "" or "/Views" or "/Media" or "/<vpath>/Media" in case of a virtual path
 
+```csharp
+ composition.SetMediaFileSystem(() => new PhysicalFileSystem("Z:\Storage\UmbracoMedia","http://media.example.com/media" ));
+```
 :::note
 In Umbraco V7, this configuration was located a physical file: `/config/FileSystemProviders.config`.
 :::
+
+### IFileSystem
 
 `PhysicalFileSystem` implements the `IFileSystem` interface, and it is possible to replace it with a custom class - eg. if you want your media files stored on Azure or something similar.
 
@@ -56,8 +62,6 @@ or via dependency injection in the constructor for your custom class or controll
 ```
 
 This will be enough in most cases and is the way Umbraco will access the file system provider. The wrapper class implements the same interface `IFileSystem` as any custom providers should do, so you will be able to call the same methods.
-
-## Setting the PhysicalFileSystem to be outside of the application root
 
 ## MediaPath Scheme
 
@@ -151,10 +155,5 @@ register your filesystem, in a component:
 ```
 You can inject IMyFileSystem wherever it's needed.
 
-### What is Shadowing?
 
-Shadowing is the technology used for Umbraco Deploy to implement some sort of
-transaction-management on top of filesystems. The plumbing explained above,
-compared to creating your own physical filesystem, ensures that your filesystem
-would participate into such transactions.
 
