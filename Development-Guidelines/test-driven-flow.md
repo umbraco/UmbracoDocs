@@ -85,7 +85,7 @@ urlService.url("contentTypes", "GetAllowedChildren");
 // would return /<umbracodir>/<apibaseDir>/contentyTypes/getAllowedChildren
 ```
 
-But for now, they are set in the server variables file.
+But for now, they are set in the ServerVariables file.
 
 =======
 
@@ -174,4 +174,4 @@ urlService.url("contentTypes", "GetAllowedChildren");
 // would return /<umbracodir>/<apibaseDir>/contentTypes/getAllowedChildren
 ```
 
-But for now, they are set in the server variables file.
+But for now, they are set in the ServerVariables file.
