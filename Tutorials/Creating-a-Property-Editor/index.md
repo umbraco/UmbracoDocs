@@ -145,7 +145,7 @@ function ($scope,assetsService) {
 
 This loads in our external dependency, but only when it's needed by the editor.
 
-Note: Visit the [Property Editors page](https://our.umbraco.com/documentation/Extending/Property-Editors/) for more helpful information about extending this service.
+Note: Visit the [Property Editors page](https://our.umbraco.com/documentation/Extending/Property-Editors/) for more details about extending this service.
 
 Now let's replace that `alert()` with some code that can instantiate the pagedown editor:
 
