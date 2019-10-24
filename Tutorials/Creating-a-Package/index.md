@@ -137,7 +137,7 @@ The dashboard will show each user the most recent nodes they have saved.]]></rea
 </umbPackage>
 ```
 
-You will notice that each of the fields we just created is inside this XML file. And all files have an `orgPath` attached to it that it will try to move the file to when installing it - so don't worry if you organized your package in folders and they are not so in the zip.
+You will notice that each of the fields we created is inside this XML file. And all files have an `orgPath` attached to it that it will try to move the file to when installing it - so don't worry if you organized your package in folders and they are not so in the zip.
 
 ## Uploading the package to Our Umbraco
 
