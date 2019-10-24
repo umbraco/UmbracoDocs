@@ -11,11 +11,14 @@ Umb-Project-Alias: {project-alias}
 
 ## Authentication
 
-Auth is required for this API meaning that you must supply a Bearer Token via an Authorization header or an API Key via an Authorization or Api-Key header.
+Authentication is required for this API meaning that you must supply a Bearer Token via an Authorization header or an API Key via an Authorization or Api-Key header.
 
 ## Permissions
 
-All reqests requires access to the Content Section of the Umbraco Backoffice and the content being accessed is beneath the users start node configured in Umbraco in addition to the specific permissions listed under each endpoint.
+in addition to the specific permissions listed under each endpoint, all requests requires:
+
+* Access to the Content Section of the Umbraco Backoffice
+* That the content being accessed is beneath the users start node configured in Umbraco
 
 ## Errors
 
