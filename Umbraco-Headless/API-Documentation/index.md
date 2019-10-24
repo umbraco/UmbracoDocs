@@ -127,7 +127,7 @@ Authorization: Bearer {token}
 
 ## Content Delivery API
 
-This is the read-only API for delivering published content and media to any app, website, device or platform you are using.
+This is the read-only API for delivering published content and media to any app, website, device or platform.
 
 It’s worth noting that the JSON output for both Content and Media vary depending on how a given ContentType or MediaType is defined.
 
@@ -152,15 +152,15 @@ GET https://cdn.umbraco.io/content?culture=en-US
 
 ### [Content endpoints](cdn/content/)
 
-Content endpoints for retrieving specific content by ID or URL. It is also possible to retrieve children, descendants and anscestors structured according to the content tree structure.
+Content endpoints for retrieving specific content by ID or URL. It is also possible to retrieve children, descendants and anscestors structured according to the Content tree structure.
 
 ### [Media endpoints](cdn/media/)
 
-Media endpoints for retrieving specific media by id. It is also possible getting children of a media folder structured according to the media tree structure.
+Media endpoints for retrieving specific media by id. It is also possible getting children of a media folder structured according to the Media tree structure.
 
 ## Content Management API
 
-This is the management API for creating, updating and deleting content, media, languages, relations, members and member groups. It also allows you to retrieve content drafts as well as content types, media types and member types.
+This is the management API for creating, updating and deleting content, media, languages, relations, members and member groups. It also allows you to retrieve content drafts as well as Content Types, Media Types and Member Types.
 
 Common for the Content Management API is that you must be authenticated and authorized when performing any action against the endpoints listed below. This means that you must supply a Bearer Token via an Authorization header or an API Key via an Authorization or Api-Key header.
 
