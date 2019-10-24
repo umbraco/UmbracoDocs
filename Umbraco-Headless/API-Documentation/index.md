@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # API Documentation
 
-This page contains documentation for the Umbraco Headless API endpoints divided into two main areas: Content Delivery and Content Mangement
+This page contains documentation for the Umbraco Headless API endpoints divided into two main areas: Content Delivery and Content Mangement.
 
 The Content Delivery API is the read-only Content and Media that you would normally retrieve to show the published content in your apps, websites or other media. The API is available on `https://cdn.umbraco.io`
 
