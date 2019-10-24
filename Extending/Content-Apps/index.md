@@ -265,6 +265,6 @@ You can enable a badge by using this code in the angular controller of your cont
 ```javascript
 $scope.model.badge = {
   count: 5, // the number for the badge - anything non-zero triggers the badge
-  type: "warning" // optional: determines the badge color - "warning" = dark yellow, "alert" = red, anything else = turquoise ("info"-ish)
+  type: "warning" // optional: determines the badge color - "warning" = dark yellow, "alert" = red, anything else = blue (matching the top-menu background color)
 };
 ```
