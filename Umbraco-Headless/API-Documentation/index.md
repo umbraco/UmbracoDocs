@@ -6,9 +6,9 @@ versionFrom: 8.0.0
 
 This page contains documentation for the Umbraco Headless API endpoints divided into two main areas: Content Delivery and Content Mangement.
 
-The Content Delivery API is the read-only Content and Media that you would normally retrieve to show the published content in your apps, websites or other media. The API is available on `https://cdn.umbraco.io`
+The [Content Delivery API](#content-delivery-api) is the read-only Content and Media that you would normally retrieve to show the published content in your apps, websites or other platforms. The API is available on `https://cdn.umbraco.io`.
 
-Content Management is where you can Create, Read, Update and Delete Content, Media, Languages, Relations, Members and the associated types using Umbraco Backoffice user credentials or API Keys. The API is available on `https://api.umbraco.io`
+[The Content Management API](#content-management-api) can be used to Create, Read, Update and Delete Content, Media, Languages, Relations, Members and the associated types using Umbraco Backoffice user credentials or API Keys. The API is available on `https://api.umbraco.io`.
 
 ## REST API Standard
 
