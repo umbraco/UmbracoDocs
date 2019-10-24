@@ -30,7 +30,7 @@ Umbraco Latch can issue 5 certificates for a single domain per week. If this lim
 :::
 
 :::note
-An error might occur when your DNS provider has both an IPv4 and IPv6 IP address. 
+The generation process might freeze (e.g. Initial > DnsApproved > ChallengeFileWritten > Initial) when your DNS provider has both an IPv4 and IPv6 IP address. 
 Unfortunately, Latch doesn't support IPv6 but Lets Encrypt will take that over IPv4 when it's there.
 In order to resolve this, you will need to disable IPv6 for that domain.
 :::
