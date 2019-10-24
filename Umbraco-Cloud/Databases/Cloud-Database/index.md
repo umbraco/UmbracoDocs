@@ -8,7 +8,7 @@ In order for you to be able to work with your Cloud database there are a few ste
 ## Connecting to your Cloud database locally
 First, Umbraco Cloud automatically overrides whatever is in the 'umbracoDbDsn' connection string in the web.config when the site is running on Cloud. This means that any connection string in there named 'umbracoDbDsn' will only ever be used when you run the site locally (cloned). In rare cases you might need the database timeout increased on Cloud, for that you'll need to reach out to support for assistance.
 
-Second, for security, your database on Umbraco Cloud is running behind a firewall so in order to connect to the database, you'll need to open the firewall for the relevant IPs. This can be a single IP, a list of IPs or even an IP range. It's done from the Connection Details page on your project. Click the "Settings" menu in the upper right corner of your project and select "Connection Details". If you don't see the menu item, it's due to permissions and you'll need to contact the administrator of your project.
+Second, for security, your database on Umbraco Cloud is running behind a firewall. In order to connect to the database, you'll need to open the firewall for the relevant IPs. This can be a single IP, a list of IPs or even an IP range. It's done from the Connection Details page on your project. Click the "Settings" menu in the upper right corner of your project and select "Connection Details". If you don't see the menu item, it's due to permissions and you'll need to contact the administrator of your project.
 
 ![Connecting to Umbraco.mdf in Visual Studio](images/connection-details.png)
 
