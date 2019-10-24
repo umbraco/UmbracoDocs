@@ -12,11 +12,14 @@ The [Content Delivery API](#content-delivery-api) is the read-only Content and M
 
 ## REST API Standard
 
-The Umbraco Headless APIs are based on the HAL Standard, which are explained in greater detail [here](https://weierophinney.github.io/hal/hal/).
+The Umbraco Headless APIs are based on the [HAL Standard](https://weierophinney.github.io/hal/hal/).
 
-The properties `_links` and `_embedded` are both part of the HAL specification and are implemented in the Umbraco Headless API according to the specification linked above.
+### System level properties
+// Adding a heading for these two section.
 
-The rest of the properties in the Umbraco Headless API, which starts with an underscore are "system level properties" meaning that they are standard Umbraco properties, which cannot be changed via the API. So properties like `_id`, `_url`, `_createDate`, `_updateDate`, `_creatorName`, `_writerName`, `_level` and `_hasChildren`. These are all defined by Umbraco when Content is created or updated.
+The properties in the Umbraco Headless API, which starts with an underscore, are **system level properties**. That means that they are standard Umbraco properties, which cannot be changed via the API. This includes properties like `_id`, `_url`, `_createDate`, `_updateDate`, `_creatorName`, `_writerName`, `_level` and `_hasChildren`. These are all defined by Umbraco when Content is created or updated.
+
+The properties `_links` and `_embedded` are both part of the HAL specification and are implemented in the Umbraco Headless API accordingly.
 
 ### API Browser
 
