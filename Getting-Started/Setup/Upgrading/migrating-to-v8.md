@@ -62,7 +62,7 @@ Following the [general upgrade instructions](general.md) we will now upgrade via
 ![Upgrading to v7.14](images/upgrading-7_14.png)
 
 :::warning
-If you are upgrading an old website, check if you are using obsolete properties in your Data Types and change them to their updated counterparts. The migration **will otherwise fail if you are still using obsolete properties!**
+If you are upgrading an old website, check if you are using obsolete properties in your Data Types and change them to their updated counterparts. The migration **will fail if you are still using obsolete properties!**
 
 The updated properties are:
 * Content Picker
@@ -84,9 +84,9 @@ First thing to do is spin up a fresh new Umbraco 8.1+ site. Make sure it all wor
 
 ![Fresh 8.1 site](images/fresh-8_1-site.png)
 
-Now you should take a backup of your database from the **Umbraco 7.14 site**. You can then add the information for the backup database and add that to the connection string for the  **Umbraco 8.1 site**. Do note that if you are running SQL CE, you will have to copy the database over to the new site as well.
+Now you should take a backup of your database from the **Umbraco 7.14 site**. You can then add the information for the backup database and add that to the connection string for the **Umbraco 8.1 site**. Do note that if you are running SQL CE, you will have to copy the database over to the new site as well.
 
-Once the connection string is set, the final step is to change the Umbraco version number in the web.config on the **Umbraco 8.1 site**, to say 7.14.0. This will mean that it thinks there is an upgrade as the Umbraco dlls are 8.1 but the config says 7.14 it needs to run the migration.
+Once the connection string is set, the final step is to change the Umbraco version number in the web.config on the **Umbraco 8.1 site**, to say 7.14.0. This will indicate to the site that there is an upgrade pending as the Umbraco dlls are 8.1 but the config says 7.14.0, so it needs to run the migration.
 
 ![Set Umbraco version in the web.config](images/set-umbraco-version.png)
 
@@ -107,14 +107,14 @@ That is all! Now the automatic migration will take over, and after a little bit 
 :::note
 Please be aware this is a **content migration**. If you go to the frontend after doing this nothing will work!
 
-At this point you would have the content but nothing else, will have to recreate all templates and other custom implementation before the site works again.
+At this point you will have the content but nothing else. You will have to recreate all templates and other custom implementation before the site works again.
 
 [Read more about rendering content in Umbraco 8](../../Design/Rendering-Content/index.md)
 :::
 
 ### Step 3: Post-migration checks
 
-As you are updating your Template files and custom implementation to fit your new Umbraco 8 site, it will be a natural step to also check your configuration files and settings.
+As you are updating your template files and custom implementation to fit your new Umbraco 8 site, it will be a natural step to also check your configuration files and settings.
 
 Umbraco 8 contains a few changes regarding the Sections in the Umbraco Backoffice. Because of this, you should also check your User Groups and make sure they have access to the appropriate sections.
 
