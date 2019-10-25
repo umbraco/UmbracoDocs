@@ -8,12 +8,10 @@ _Templating in Umbraco consists of 3 larger concepts, namely Templates (Views), 
 
 ## Templating technology
 
-In Umbraco V8 there is now only one type of templating technology:
-
-* MVC (views)
+Umbraco V8 uses ASP.Net MVC Views for implementing templates.
 
 :::note
- The WebForms (masterpages) and dynamic razor approaches to templating are still available in Umbraco 7, but are now no longer supported in Umbraco 8.
+ The WebForms (masterpages) and Dynamic Razor approaches to templating are still available in Umbraco V7, but have been completely removed in Umbraco V8.
 :::
 
 
