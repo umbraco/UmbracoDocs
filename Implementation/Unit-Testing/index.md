@@ -19,7 +19,6 @@ public abstract class UmbracoBaseTest
 
     public Mock<ICultureDictionary> CultureDictionary;
     public Mock<ICultureDictionaryFactory> CultureDictionaryFactory;
-    public Mock<IPublishedContent> PublishedContent;
     public Mock<IPublishedContentQuery> PublichedContentQuery;
 
     [SetUp]
@@ -44,17 +43,16 @@ public abstract class UmbracoBaseTest
 
     public virtual void SetupPublishedContentQuerying()
     {
-        this.PublishedContent = new Mock<IPublishedContent>();
         this.PublichedContentQuery = new Mock<IPublishedContentQuery>();
     }
 
-    public void SetupPropertyValue(string alias, object value, string culture = null, string segment = null)
+    public void SetupPropertyValue(Mock<IPublishedContent> publishedContentMock, string alias, object value, string culture = null, string segment = null)
     {
         var property = new Mock<IPublishedProperty>();
         property.Setup(x => x.Alias).Returns(alias);
         property.Setup(x => x.GetValue(culture, segment)).Returns(value);
         property.Setup(x => x.HasValue(culture, segment)).Returns(value != null);
-        this.PublishedContent.Setup(x => x.GetProperty(alias)).Returns(property.Object);
+        publishedContentMock.Setup(x => x.GetProperty(alias)).Returns(property.Object);
     }
 }
 ```
@@ -88,8 +86,11 @@ public class MyCustomModelTests : UmbracoBaseTest
     [TestCase("Another Heading", "Another Heading")]
     public void GivenPublishedContent_WhenGetHeading_ThenReturnCustomViewModelWithHeadingValue(string value, string expected)
     {
-        base.SetupPropertyValue(nameof(MyCustomViewModel.Heading), value);
-        var model = new MyCustomViewModel(base.PublishedContent.Object);
+        var publishedContent = new Mock<IPublishedContent>();
+        base.SetupPropertyValue(publishedContent, nameof(MyCustomViewModel.Heading), value);
+        
+        var model = new MyCustomViewModel(publishedContent.Object);
+        
         Assert.AreEqual(expected, model.Heading);
     }
 }
