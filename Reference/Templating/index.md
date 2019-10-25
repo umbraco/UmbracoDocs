@@ -20,7 +20,7 @@ In Umbraco V8 there is now only one type of templating technology:
 
 #### [Working with MVC (views, razor, etc...)](Mvc/index.md)
 
-Describes how to work with MVC views, the razor syntax and APIs available as well details on how to create forms, step-by-step guides and other advanced techniques.
+Describes how to work with MVC views, the razor syntax and APIs available. It also describes how to create forms, has some step-by-step guides and other advanced techniques.
 
 ## [Macros](Macros/index.md)
 
