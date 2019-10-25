@@ -13,7 +13,7 @@ In Umbraco V8 there is now only one type of templating technology:
 * MVC (views)
 
 :::note
- The WebForms (masterpages) and dynamic razor approaches to templating are still available in Umbraco 7, but are now no longer supported in V8.
+ The WebForms (masterpages) and dynamic razor approaches to templating are still available in Umbraco 7, but are now no longer supported in Umbraco 8.
 :::
 
 
