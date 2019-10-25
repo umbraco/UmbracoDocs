@@ -41,3 +41,6 @@ A working document, that gives tips & pointers on how to port an Umbraco V7 pack
 
 ### [Creating a Content App](../Extending/Content-Apps/index.md#creating-a-custom-content-app)
 Learn how to create a content app (v8 only)
+
+### [Editor's Manual](Editor-Manual/)
+The editors manual is a detailed yet easy to read user guide aimed at Umbraco editors for step-by-step instructions on performing every day tasks with Umbraco 7
