@@ -1,29 +1,43 @@
-#Controller & Action selection
+---
+versionFrom: 8.0.0
+---
+
+# Controller & Action selection
 
 _Once the published content request has been created, and MVC is the selected rendering engine, it's time to execute an MVC Controller's Action._
 
-##Defaults
+## Defaults
 
-By default, Umbraco will execute every request via it's built in default controller: `Umbraco.Web.MVC.RenderMvcController`.
-The MVC Action that executes by default for every request is the `Index` action on the `RenderMvcController`.  
+By default, Umbraco will execute every request via its built in default controller: `Umbraco.Web.Mvc.RenderMvcController`.
+The MVC Action that executes by default for every request is the `Index` action on the `RenderMvcController`.
 
-##Changing the default
+## Changing the default
 
 It is possible to use a custom Controller and Action to be executed during the Umbraco request pipeline.
-A default Controller can be set during startup in the `ApplicationStarting` method, for example:
+A default Controller can be set during composition by creating a c# class which implements `IUserComposer`, for example:
 
-    public class MyCustomStartupHandler : ApplicationEventHandler
+```csharp
+using Umbraco.Core;
+using Umbraco.Core.Composing;
+using Umbraco.Web;
+using Umbraco.Web.Mvc;
+
+namespace Umbraco8.Composers
+{
+    public class SetDefaultRenderMvcControllerComposer : IUserComposer
     {
-        protected override void ApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+        public void Compose(Composition composition)
         {
-            DefaultRenderMvcControllerResolver.Current.SetDefaultControllerType(typeof(MyCustomRenderMvcController));
+            composition.SetDefaultRenderMvcController<CustomMvcController>();
         }
     }
+}
+```
 
 It is a requirement that your custom controller inherit from `Umbraco.Web.MVC.RenderMvcController`.
-You can override the `Index` method to perform any customizations that you require.
+You can override the `Index` method to perform any customisations that you require.
 
-##Custom controller selection
+## Custom controller selection
 
 Custom controllers can be created to execute for different Umbraco Document Types and Templates. This is termed 'Hijacking Umbraco Routes'.
-For full details on how this process works, see [Custom Controllers](../../../Reference/Routing/custom-controllers.md)
+For full details on how this process works, see [Custom Controllers](../../../Reference/Routing/custom-controllers.md).
