@@ -59,6 +59,8 @@ public abstract class UmbracoBaseTest
 }
 ```
 
+Note that ```ServiceContext.CreatePartial()``` has several optional parameters, and by naming them you only need to mock the dependencies that you actually need, for example: ```ServiceContext.CreatePartial(contentService: Mock.Of<IContentService>());```
+
 ## Testing a ContentModel
 
 See [Reference documentation on Returning a view with a custom model](https://our.umbraco.com/documentation/Reference/Routing/custom-controllers#returning-a-view-with-a-custom-model).
