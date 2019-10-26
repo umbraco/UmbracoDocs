@@ -20,7 +20,7 @@ All Umbraco views inherit from `Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Na
 
 ## Rendering a field in a strongly typed view
 
-This is probably the most used method which renders the contents of a field for the using the alias of the content item.
+This is probably the most used method which renders the contents of a field using the alias of the content item.
 
 ```csharp
 @Model.Value("bodyContent")
