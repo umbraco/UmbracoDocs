@@ -49,7 +49,7 @@ Lopping over a selection works in a similar way. If you have a property that con
     }
 </ul>
 ```
-If you want to convert a type and it's possible, you can do that by typing a variable and assigning the value from your property to it. This might could look like the example below.
+If you want to convert a type and it's possible, you can do that by typing a variable and assigning the value from your property to it. This could look like the example below.
 `
 @foreach (TeamMember person in Model.TeamMembers)
                         {
