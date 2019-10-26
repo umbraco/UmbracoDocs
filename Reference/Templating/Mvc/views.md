@@ -52,11 +52,11 @@ Looping over a selection works in a similar way. If you have a property that con
 If you want to convert a type and it's possible, you can do that by typing a variable and assigning the value from your property to it. This could look like the example below.
 ```csharp
 @foreach (TeamMember person in Model.TeamMembers)
-                        {
-                           <a href="@person.Url">                                                              
-                             <p>@person.Name</p>
-                           </a>
-                         }
+   {
+     <a href="@person.Url">                                                              
+        <p>@person.Name</p>
+     </a>
+   }
  ```
 
 In this example, we are looping through a list of items with the custom made type TeamMember assigned. This means we are able to access the strongly typed properties on the TeamMember item.
