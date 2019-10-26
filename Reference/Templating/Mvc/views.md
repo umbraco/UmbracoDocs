@@ -29,7 +29,7 @@ This is probably the most used method which renders the contents of a field usin
 If you're using the method from within a partial view then be aware that you will need to inherit the context so the method knows which type to get the desired value from. You'd do this at the top of partial view and so strongly typed properties can then be accessed in the partial view. For instance you can pass "HomePage" like this:
 
 ```csharp
-@inherits UmbracoViewPage<SiteSettings>
+@inherits UmbracoViewPage<HomePage>
 ...
 @Model.Value("title")
 ```
@@ -50,14 +50,14 @@ Lopping over a selection works in a similar way. If you have a property that con
 </ul>
 ```
 If you want to convert a type and it's possible, you can do that by typing a variable and assigning the value from your property to it. This could look like the example below.
-`
+```csharp
 @foreach (TeamMember person in Model.TeamMembers)
                         {
                            <a href="@person.Url">                                                              
                              <p>@person.Name</p>
                            </a>
                          }
- `
+ ```
 
 In this example, we are looping through a list of items with the custom made type TeamMember assigned. This means we are able to access the strongly typed properties on the TeamMember item.
 
