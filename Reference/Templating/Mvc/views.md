@@ -34,9 +34,9 @@ If you're using the method from within a partial view then be aware that you wil
 @Model.Value("title")
 ```
 
-You will also need to pass the "Context" to the @Umbraco.Field() method if you're looping over a selection like this where we pass the "item" variable.
+You will also need to pass the "Context" to the @Model.Value() method if you're looping over a selection like this where we pass the "item" variable.
 
-Lopping over a selection works in a similar way. If you have a property that contains, for instance, an IEnumberable collection, you can access the individual items using a foreach loop. Below illustrates how you might do that using "item" as a variable.
+Looping over a selection works in a similar way. If you have a property that contains, for instance, an IEnumberable collection, you can access the individual items using a foreach loop. Below illustrates how you might do that using "item" as a variable.
 
 ```csharp
 @{
