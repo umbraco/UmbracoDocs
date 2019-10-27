@@ -35,6 +35,101 @@ If an error occours you will receive a HTTP status code along with an API error 
 }
 ```
 
+## Get all relation types
+
+Get a list of all available relation types.
+
+**URL**: `/relation/type`
+
+**Method**: `GET`
+
+**Permissions required** : Access to Settings section of the Umbraco Backoffice
+
+### Success Response
+
+**Code**: 200
+
+**Content Example**:
+
+```json
+{
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/relation/type"
+        },
+        "relationtypes": [
+            {
+                "href": "https://api.umbraco.io/relation/type/relateDocumentOnCopy"
+            },
+            {
+                "href": "https://api.umbraco.io/relation/type/relateParentDocumentOnDelete"
+            },
+            {
+                "href": "https://api.umbraco.io/relation/type/relateParentMediaFolderOnDelete"
+            }
+        ]
+    },
+    "_embedded": {
+        "relationtypes": [
+            {
+                "name": "Relate Document On Copy",
+                "alias": "relateDocumentOnCopy",
+                "isBidirectional": true,
+                "parentObjectType": "DOCUMENT",
+                "childObjectType": "DOCUMENT",
+                "_createDate": "0001-01-01T00:00:00Z",
+                "_id": "4cbeb612-e689-3563-b755-bf3ede295433",
+                "_updateDate": "0001-01-01T00:00:00Z",
+                "_links": {
+                    "self": {
+                        "href": "https://api.umbraco.io/relation/type/relateDocumentOnCopy"
+                    },
+                    "root": {
+                        "href": "https://api.umbraco.io/relation/type"
+                    }
+                }
+            },
+            {
+                "name": "Relate Parent Document On Delete",
+                "alias": "relateParentDocumentOnDelete",
+                "isBidirectional": false,
+                "parentObjectType": "DOCUMENT",
+                "childObjectType": "DOCUMENT",
+                "_createDate": "0001-01-01T00:00:00Z",
+                "_id": "0cc3507c-66ab-3091-8913-3d998148e423",
+                "_updateDate": "0001-01-01T00:00:00Z",
+                "_links": {
+                    "self": {
+                        "href": "https://api.umbraco.io/relation/type/relateParentDocumentOnDelete"
+                    },
+                    "root": {
+                        "href": "https://api.umbraco.io/relation/type"
+                    }
+                }
+            },
+            {
+                "name": "Relate Parent Media Folder On Delete",
+                "alias": "relateParentMediaFolderOnDelete",
+                "isBidirectional": false,
+                "parentObjectType": "MEDIA",
+                "childObjectType": "MEDIA",
+                "_createDate": "0001-01-01T00:00:00Z",
+                "_id": "8307994f-faf2-3844-bab9-72d34514edf2",
+                "_updateDate": "0001-01-01T00:00:00Z",
+                "_links": {
+                    "self": {
+                        "href": "https://api.umbraco.io/relation/type/relateParentMediaFolderOnDelete"
+                    },
+                    "root": {
+                        "href": "https://api.umbraco.io/relation/type"
+                    }
+                }
+            }
+        ]
+    }
+}
+```
+
 ## Get by alias
 
 Get a specific relation type by its alias.
