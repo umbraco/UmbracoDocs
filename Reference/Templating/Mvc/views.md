@@ -61,22 +61,6 @@ If you want to convert a type and it's possible, you can do that by typing a var
 
 In this example, we are looping through a list of items with the custom made type TeamMember assigned. This means we are able to access the strongly typed properties on the TeamMember item.
 
-## Rendering a field using @CurrentPage (dynamically)
-
-**Attention! This approach is considered obsolete** - See [Common pitfalls]
-
-:::warning
-Attention! This approach is considered obsolete - See [Common pitfalls](../../Common-Pitfalls/index.md#dynamics) for more information about why the dynamic approach is obsolete. for more information about why the dynamic approach is obsolete.
-:::
-
-The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however want to render value "as-is" you can use the @CurrentPage property of the view. The difference between @CurrentPage and @Model.Content is that @CurrentPage is the dynamic representation of the model which exposes many dynamic features for querying. For example, to render a field you use this syntax:
-
-```csharp
-@CurrentPage.bodyContent
-```
-
-*NOTE: When accessing content dynamically you will not get intellisense if you are using Visual Studio to edit your templates.*
-
 ## <a name="renderingMacros"></a>Rendering Macros
 
 Rendering a macro is easy using UmbracoHelper. There are 3 overloads, we'll start with the most basic:
