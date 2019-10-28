@@ -10,23 +10,23 @@ meta.Description: "A guide to Umbraco Content Apps in the backoffice"
 
 Content Apps are **companions** to the editing experience when working with content or media in the Umbraco backoffice.
 
-Content Apps are a new concept in v8. Editors can switch from editing 'Content' to accessing contextual information related to the item they are editing.
+Content Apps are a new concept in Umbraco 8. Editors can switch from editing 'Content' to accessing contextual information related to the item they are editing.
 
 ![Content Apps in backoffice](images/content-app-1.png)
 
 ### Default Content Apps
 
-**'Info'** - The 'Info' Content App is a default Content App for all items, replacing the 'Info' tab in Umbraco V7 for displaying Links, History and Status of the current content item.
+**'Info'** - The 'Info' Content App is a default Content App for all items, replacing the 'Info' tab in Umbraco 7 for displaying Links, History and Status of the current content item.
 
 ### Custom Content Apps
 
 As an integrated part of Umbraco it is possible for you as a developer to create and provide your editors with helpful Content Apps.
 
-For example, you could create a Google Analytics integration within a Content App that displays to editors, the current 'page views' for the content item they are editing.
+For example, you could create a Google Analytics integration within a Content App that displays to editors the current 'page views' for the content item they are editing.
 
 #### Controlling Appearance/Position
 
-You can associate an icon with your custom Content App, control the position (between 'Content' and 'Info') where your custom Content App should appear via a 'weighting' number.
+You can associate an icon with your custom Content App and control the position of your custom Content App, for example between 'Content' and 'Info' via a 'weighting' number.
 
 #### Permissions
 
