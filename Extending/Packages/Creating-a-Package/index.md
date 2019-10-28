@@ -8,7 +8,7 @@ versionFrom: 8.0.0
 This tutorial is for Umbraco 8 - however a lot of the things covered here will be the same or similar in Umbraco 7.
 :::
 
-The goal of this tutorial will be to take something that extends Umbraco and create it as a package. Finally we will publish that package on the [Our Umbraco package repository](https://our.umbraco.com/packages). The tutorials starting point will be creating a package out of the dashboard from the [Creating a Custom Dashboard tutorial](../Creating-a-Custom-Dashboard/index.md), however, the process will be the same for most packages so feel free to follow along with something else!
+The goal of this tutorial will be to take something that extends Umbraco and create it as a package. The tutorials starting point will be creating a package out of the dashboard from the [Creating a Custom Dashboard tutorial](../Creating-a-Custom-Dashboard/index.md), however, the process will be the same for most packages so feel free to follow along with something else!
 
 ## Creating a package in the backoffice
 
@@ -30,9 +30,9 @@ This section contains mostly meta data about the package and the creator. We wil
 | Umbraco version | 8.2.0 | It will automatically select the version your Umbraco is currently on. This is then set as the compatible version for the package |
 | Author | Your name | Here you get to take credit for your awesome work! |
 | Author URL | Your website or maybe Twitter tag | Will link to this from the author name certain places in the backoffice |
-| Contributors | _Blank_ | Here you can add the names of other contributors if you want |
+| Contributors | _Blank_ | Here you can add the names of other contributors if you have any |
 | License | MIT License | Will be set to MIT by default. If you are planning on selling your package you can change the license here |
-| License URL | http://opensource.org/licenses/MIT | Will be set to the URL for the MIT license |
+| License URL | http://opensource.org/licenses/MIT | Will be set to the URL for the MIT license, can be changed as needed |
 | Package readme | This will add a dashboard to your content section. <br> <br>The dashboard will show each user the most recent nodes they have saved. | This will be shown when someone looks at the package in the package dashboard |
 
 ### The Package Content section
@@ -46,7 +46,7 @@ This section is used to determine which things the package should contain. We wi
 | Templates | _Empty_ | See `Document Types` above |
 | Stylesheets | _Empty_ | This will come from the ~/css folder. If you have stylesheets you want to include from other locations you can do so at a later step |
 | Macros | _Empty_ | See `Document Types` above |
-| Languages | _Empty_ | See `Document Types` above - we will assume the user hasn't deleted the default language (en-US) |
+| Languages | _Empty_ | See `Document Types` above - all text is hardcoded or within our own lang folder in this package, so this is not needed |
 | Dictionary | _Empty_ | See `Document Types` above |
 | Data Types | _Empty_ | See `Document Types` above |
 
@@ -139,6 +139,8 @@ The dashboard will show each user the most recent nodes they have saved.]]></rea
 
 You will notice that each of the fields we created is inside this XML file. And all files have an `orgPath` attached to it that it will try to move the file to when installing it - so don't worry if you organized your package in folders and they are not so in the zip.
 
-## Uploading the package to Our Umbraco
+:::warning
+It is very important to get the included files right, as all dependencies will be needed for something to work in your package.
+On the other hand everything included here will be deleted on uninstall, so you also have to make sure not to include unnessecary things!
+:::
 
-//todo
