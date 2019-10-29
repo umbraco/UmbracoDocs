@@ -68,7 +68,7 @@ We will leave the `Package options view` selector empty, but in case you were wo
 
 Here you can add package actions. There are a number of [default package actions](../../Reference/Packaging/index.md) and you can also create your own package action and reference it here, to do so you will need to implement the IPackageAction interface, as in the [Articulate Package](https://github.com/Shazwazza/Articulate/blob/master/src/Articulate/Packaging/ArticulateInstallPackageAction.cs).
 
-Finally after filling out all the info we can either `Save` or `Download` the package. We will download it, in order to take a closer look at what it contains in the generated zip file.
+Finally after filling out all the info we can select `Create` to create the package. We will download it, in order to take a closer look at what it contains in the generated zip file.
 
 ## Inspecting a package zip
 
