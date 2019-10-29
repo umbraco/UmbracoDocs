@@ -26,7 +26,7 @@ For example, you could create a Google Analytics integration within a Content Ap
 
 #### Controlling Appearance/Position
 
-You can associate an icon with your custom Content App and control the position of your custom Content App, for example between 'Content' and 'Info' via a 'weighting' number.
+You can associate an icon and control the position of your custom Content App. The position, for example between 'Content' and 'Info', is set via a 'weighting' number.
 
 #### Permissions
 
