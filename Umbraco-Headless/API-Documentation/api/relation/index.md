@@ -39,7 +39,7 @@ If an error occours you will receive a HTTP status code along with an API error 
 
 ## Get by id
 
-Get a specific relation by its integer id.
+Get a specific relation by its `integer` ID.
 
 **URL**: `/relation/{id}`
 
@@ -70,7 +70,7 @@ Get a specific relation by its integer id.
 
 ## Get by relation type alias
 
-Get a list of relations by their relation type alias.
+Get a list of relations by their Relation Type alias.
 
 **URL**: `/relation/{alias}`
 
@@ -115,7 +115,7 @@ Get a list of relations by their relation type alias.
 
 ## Get by parent id
 
-Get a list of relations by their parent's guid id.
+Get a list of relations by their parents GUID ID.
 
 **URL**: `/relation/parent/{id}`
 
@@ -160,7 +160,7 @@ Get a list of relations by their parent's guid id.
 
 ## Get by child id
 
-Get a list of relations by their child's guid id.
+Get a list of relations by their childs GUID ID.
 
 **URL**: `/relation/child/{id}`
 
@@ -247,7 +247,7 @@ Create a new relation.
 
 ## Delete relation
 
-Delete a relation by its integer id.
+Delete a relation by its `integer` ID.
 
 **URL**: `/relation/{id}`
 

@@ -37,7 +37,7 @@ If an error occours you will receive a HTTP status code along with an API error 
 
 ## Get by alias
 
-Get a specific relation type by its alias.
+Get a specific Relation Type by its alias.
 
 **URL**: `/relation/type/{alias}`
 
