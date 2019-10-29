@@ -39,7 +39,7 @@ If an error occours you will receive a HTTP status code along with an API error 
 
 ## Get all
 
-Get all member groups.
+Get all Member Groups.
 
 **URL**: `/member/group`
 
@@ -95,7 +95,7 @@ Get all member groups.
 
 ## Get by name
 
-Get a specific member group by its name.
+Get a specific Member Group by its name.
 
 **URL**: `/member/group/{name}`
 
@@ -125,7 +125,7 @@ Get a specific member group by its name.
 
 ## Create member group
 
-Create a new member group.
+Create a new Member Group.
 
 **URL**: `/member/group`
 
@@ -163,7 +163,7 @@ Create a new member group.
 
 ## Delete member group
 
-Delete an existing member group.
+Delete an existing Member Group.
 
 **URL**: `/member/group/{name}`
 
