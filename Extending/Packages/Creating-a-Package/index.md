@@ -8,11 +8,13 @@ versionFrom: 8.0.0
 This tutorial is for Umbraco 8 - however a lot of the things covered here will be the same or similar in Umbraco 7.
 :::
 
-The goal of this tutorial will be to take something that extends Umbraco and create it as a package. The tutorials starting point will be creating a package out of the dashboard from the [Creating a Custom Dashboard tutorial](../Creating-a-Custom-Dashboard/index.md), however, the process will be the same for most packages so feel free to follow along with something else!
+The goal of this tutorial will be to take something that extends Umbraco and create it as a package. The tutorials starting point will be creating a package out of the dashboard from the [Creating a Custom Dashboard tutorial](../Creating-a-Custom-Dashboard/index.md). The process will be the same for most packages so feel free to follow along with something else.
 
 ## Creating a package in the backoffice
 
-If you have something you want to make into a package, you can do so through the backoffice of Umbraco. First go to the `Packages` section and then click `Created` in the top right corner. Next you can click the `Create package` button.
+If you have something you want to make into a package, you can do so through the Umbraco backoffice. 
+
+First go to the `Packages` section and select `Created` in the top right corner. Next, choose the `Create package` button.
 
 ![Buttons to select for creating a package in the backoffice](images/creating-package-menu.png)
 
@@ -27,7 +29,7 @@ This section contains mostly meta data about the package and the creator. We wil
 | Url | https://umbraco.com | This url will be shown as the "packages url" when others install it. Will mostly be a Github repo or similar |
 | Version | 1.0.0 | This is automatically set to 1.0.0 but can be changed or increased manually if needed |
 | Icon Url | _Blank_ | Not a mandatory value, but will appear as the package icon different places in the backoffice if set |
-| Umbraco version | 8.2.0 | It will automatically select the version your Umbraco is currently on. This is then set as the compatible version for the package |
+| Umbraco version | 8.2.0 | It will automatically select the Umbraco version you are currently using. This is then set as the compatible version for the package |
 | Author | Your name | Here you get to take credit for your awesome work! |
 | Author URL | Your website or maybe Twitter tag | Will link to this from the author name certain places in the backoffice |
 | Contributors | _Blank_ | Here you can add the names of other contributors if you have any |
@@ -52,19 +54,21 @@ This section is used to determine which things the package should contain. We wi
 
 ### The Package Files section
 
-In this section you will be able to select all of your own custom files. Under the `Path to file` option. since everything in our Dashboard is from the same folder in App_Plugins, we can select the folder and it will include all items inside that folder:
+In this section you will be able to select all of your own custom files. We will start with the `Path to file` option.
+
+Since everything in our Dashboard is from the same folder in `App_Plugins`, we can select the folder and it will include all items inside that folder:
 
 ![Selecting the files you want in your package](images/select-files-for-package.png)
 
-We will leave the `Package options view` selector empty, but in case you were wondering you can select an html file here that will show up as package options. Here is an example from the package [Articulate](https://github.com/Shazwazza/Articulate/tree/master/src/Articulate.Web/App_Plugins/Articulate/BackOffice/PackageOptions):
+We will leave the `Package options view` selector empty, but in case you were wondering you can select an HTML file here that will show up as package options. Here is an example from the package [Articulate](https://github.com/Shazwazza/Articulate/tree/master/src/Articulate.Web/App_Plugins/Articulate/BackOffice/PackageOptions):
 
 ![Gif of Articulates use of Package options](images/package-options.gif)
 
 ### The Package Actions section
 
-Here you can add package actions. You can read more about the default package actions [here](../../Reference/Packaging/index.md). You can also create your own package action and reference it here, to do so you will need to implement the IPackageAction interface, you can see an example [here](https://github.com/Shazwazza/Articulate/blob/master/src/Articulate/Packaging/ArticulateInstallPackageAction.cs).
+Here you can add package actions. There are a number of [default package actions](../../Reference/Packaging/index.md) and you can also create your own package action and reference it here, to do so you will need to implement the IPackageAction interface, as in the [Articulate Package](https://github.com/Shazwazza/Articulate/blob/master/src/Articulate/Packaging/ArticulateInstallPackageAction.cs).
 
-Finally after filling out all the info we can either `Save` or `Download` the package. We will download it, in order to take a closer look at what it contains in the zip.
+Finally after filling out all the info we can either `Save` or `Download` the package. We will download it, in order to take a closer look at what it contains in the generated zip file.
 
 ## Inspecting a package zip
 
@@ -137,7 +141,7 @@ The dashboard will show each user the most recent nodes they have saved.]]></rea
 </umbPackage>
 ```
 
-You will notice that each of the fields we created is inside this XML file. And all files have an `orgPath` attached to it that it will try to move the file to when installing it - so don't worry if you organized your package in folders and they are not so in the zip.
+You will notice that each of the fields we created is inside this XML file. All files have an `orgPath` attached to it - this is where it will try to move the file to when installing it. So, don't worry if you organized your package in folders and they are not so in the zip.
 
 :::warning
 It is very important to get the included files right, as all dependencies will be needed for something to work in your package.

@@ -9,7 +9,7 @@ A package extends the functionality of Umbraco to provide additional functionali
 
 An Umbraco Package can be many things, but are generally characterized by:
 
-- Adding or extending functionality in Umbraco CMS
+- Adding or extending functionality in the Umbraco CMS
 - Empowering people to do more and/or do things more efficiently
 - Engaging community members in collaboration and sharing
 - Solving real life problems
