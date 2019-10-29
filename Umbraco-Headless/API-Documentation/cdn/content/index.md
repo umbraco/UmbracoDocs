@@ -35,7 +35,7 @@ If an error occours you will receive a HTTP status code along with an API error 
 
 ## Get root content
 
-Gets all published content at the root of the tree
+Gets all published content at the root of the tree.
 
 **URL**: `/content`
 
@@ -202,7 +202,7 @@ Gets all published content at the root of the tree
 
 ## Get by id
 
-Gets a single published content by its id
+Get a single published content by its ID.
 
 **URL**: `/content/{id}`
 
@@ -374,7 +374,7 @@ Gets a single published content by its id
 
 ## Get by url
 
-Gets a single published content by its url
+Get a single published content by its URL.
 
 **URL**: `/content/url?url={url}`
 
@@ -421,9 +421,11 @@ Gets a single published content by its url
 
 ## Get by type
 
-Get content by its content type.
-Use the content type alias to filter all returned content to that specific type.
-Example: `GET /content/type?contentType=product` gets all content based on the `product` content type.
+Get content by its Content Type.
+
+Use the Content Type alias to filter all returned content to that specific type.
+
+Example: `GET /content/type?contentType=product` gets all content based on the `product` Content Type.
 
 **URL**: `/content/type?contentType={string}`
 
@@ -686,7 +688,7 @@ Example: `GET /content/type?contentType=product` gets all content based on the `
 
 ## Get ancestors
 
-Gets ancestors of a single published content
+Get ancestors of a single published content.
 
 **URL**: `/content/{id}/ancestors`
 
@@ -801,7 +803,7 @@ Gets ancestors of a single published content
 
 ## Get children
 
-Gets children of a single published content
+Get children of a single published content.
 
 **URL**: `/content/{id}/children`
 
@@ -1061,7 +1063,7 @@ Gets children of a single published content
 
 ## Get descendants
 
-Get descendants of a single published content
+Get descendants of a single published content.
 
 **URL**: `/content/{id}/descendants`
 
@@ -1321,7 +1323,7 @@ Get descendants of a single published content
 
 ## Search
 
-Search for published content by keyword
+Search for published content by keyword.
 
 **URL**: `/content/search?term={string}`
 
