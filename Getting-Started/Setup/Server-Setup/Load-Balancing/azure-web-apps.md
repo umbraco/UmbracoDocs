@@ -18,8 +18,7 @@ The single instance backoffice Web App should be set to use [SyncTempEnvDirector
 The multi instance front end Web App should be set to use [TempEnvDirectoryFactory](file-system-replication.md#examine-directory-factory-options).
 
 ### Umbraco TEMP files
-
-Store the Umbraco temporary files in the local server's 'temp' folder. Achieve this by changing this configuration setting to 'true' in the web.config. The downside is that if you need to view this configuration file you'll have to find it in the temp files. Locating the file this way isn't always clear.
+When an instance of Umbraco starts up it generates some 'temporary' files on disk... in a normal IIS environment these would be created within the folders of the Web Application. In an Azure Web App we want these to be created in the local storage of the actual server that Azure happens to be using for the Web App and so we set this configuration setting to 'true' and the temporary files will be located in the enviroment temporary folder. This is great for 'speed' of access for Umbraco operation however, the downside is it's  difficult on Azure to manually browse to this temporary location if you are troubleshooting for any reason.
 			
 ```xml
 <add key="Umbraco.Core.LocalTempStorage" value="EnvironmentTemp" />
@@ -45,14 +44,17 @@ composition.Register(factory => new PublishedSnapshotServiceOptions
 3. Install Umbraco on your front-end environment and ensure to use your Azure SQL Database
 4. Test: Perform some content updates on the master/administration environment, ensure they work successfully on that environment, then verify that those changes appear on the front-end environment
 
+::note
+Ensure all Azure resources are located in the same region to avoid connection lag
+
 ### Scaling
 
 **Do not scale your master/administration environment** this is not supported and can cause issues.
 
-Azure Web Apps can be manually or automatically scaled up or down and is supported by Umbraco's load balancing.
+The Front end replica Azure Web Apps can be manually or automatically scaled up or down and is supported by Umbraco's load balancing.
 
 ### Deployment considerations
 
-Since you have 2 x web apps, when you deploy you will need to deploy to both places - There is probably various automation techniques you can use to make this more basic. That is outside the scope of this article.
+Since you have 2 x web apps, when you deploy you will need to deploy to both places - There are various automation techniques you can use to simplfy the process. That is outside the scope of this article.
 
-**Important note:** This also means that you should not be editing templates or views on a live server as master and front-end environments do not share the same file server. Changes should be made in a staging environment and then pushed to live environments.
+**Important note:** This also means that you should not be editing templates or views on a live server as master and front-end environments do not share the same file system. Changes should be made in a development environment and then pushed to live environments.

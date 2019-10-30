@@ -2,15 +2,19 @@
 versionFrom: 8.0.0
 ---
 
-## Non-synchronised/replicated file system
+## Standalone File System 
+:::note 
+(No file replication is configured, deployment handles updating files on the different servers)
 
-If the file system on your servers isn't performing any file replication then no _Umbraco_ configuration file changes are necessary.
+If the file system on your servers isn't performing any file replication then no _Umbraco_ configuration file changes are necessary. However Media will need to be configured to use a shared location such as Blob storage or S3.
 
-Depending on the configuration and performance of the local storage you might need to consider Examine Directory Factory Options and the Umbraco temporary storage location. 
+Depending on the configuration and performance of the environment's local storage you might need to consider [Examine Directory Factory Options](#examine-directory-factory-options) and the [Umbraco temporary storage location](../../../../Reference/Config/webconfig/index.md#umbracocorelocaltempstorage). 
 
-## Synchronised/replicated or shared file system
+## Synchronised File System 
+:::note 
+(the servers are performing file replication, updates to a file on one server, updates the corresponding file on any other servers)
 
-If the file system on your servers is performing file replication then the Umbraco temporary folder must be excluded from replication.
+If the file system on your servers is performing file replication then the Umbraco temporary folder (`App_Data/TEMP`) must be excluded from replication.
 
 If the file system on your servers is located on shared storage you will need to configure Umbraco to locate the Umbraco temporary folder outside of the shared storage.
 
@@ -31,11 +35,13 @@ There are other alternatives for file replication out there, some free and some 
 When deploying Umbraco in a load balanced scenario using file replication, it is important to ensure that not all files are replicated - otherwise you will experience file locking issues. Here are the folders and files that should not be replicated:
 
 * ~/App_Data/TEMP/*
-	* Alternatively store the Umbraco temporary files in the local server's 'temp' folder and set Examine to use a [Directory Factory](#examine-directory-factory-options). Achieve this by changing this configuration setting to 'true' in the web.config. The downside is that if you need to view this configuration file you'll have to find it in the temp files. Locating the file this way isn't always clear.
-			
-    ```xml
-    <add key="Umbraco.Core.LocalTempStorage" value="EnvironmentTemp" />
-    ```
+
+:::tip
+Alternatively store the Umbraco temporary files in the local server's 'temp' folder and set Examine to use a [Directory Factory](#examine-directory-factory-options). Achieve this by changing this configuration setting to 'true' in the web.config. The downside is that if you need to view temporary files you'll have to find it in the temp files. Locating the file this way isn't always clear.
+        
+```xml
+<add key="Umbraco.Core.LocalTempStorage" value="EnvironmentTemp" />
+```
             
 * ~/App_Data/Logs/*
 	* This is **optional** and depends on how you want your logs configured (see below) 

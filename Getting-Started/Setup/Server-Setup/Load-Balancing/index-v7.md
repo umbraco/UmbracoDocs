@@ -37,7 +37,7 @@ Umbraco versions before 7.3.0 must use a legacy/deprecated load balancing techni
 
 ## Common load balancing setup information
 
-_The below section is common for all load balancing configurations, ensure that the following is instructions are followed regardless of what load balancing setup you choose._
+_The below section is common for all load balancing configurations, ensure that the following  instructions are followed regardless of what load balancing setup you choose._
 
 ### ASP.NET Configuration
 
