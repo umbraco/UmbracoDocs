@@ -90,7 +90,7 @@ _The below section applies to all ASP.NET load balancing configurations.
 ### Machine Key
 
 * You will need to use a custom machine key so that all your machine key level encryption values are the same on all servers, without this you will end up with view state errors, validation errors and encryption/decryption errors since each server will have its own generated key.
-	* Here are a couple of tools that can be used to generate machine keys:
+    * Here are a couple of tools that can be used to generate machine keys:
 		* 	[Machine key generator on betterbuilt.com](http://www.betterbuilt.com/machinekey/)
 		* 	[Machine key generator on developerfusion.com](https://www.developerfusion.com/tools/generatemachinekey/)
 * You need to update your web.config accordingly, note that the validation/decryption types may be different for your environment depending on how you've generated your keys.

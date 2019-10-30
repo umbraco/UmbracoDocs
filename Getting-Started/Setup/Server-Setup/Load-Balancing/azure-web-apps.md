@@ -13,7 +13,7 @@ Ensure you read the [overview](index.md) before you begin - you will need to ens
 
 ### Lucene/Examine configuration
 
-The single instance back office Web App should be set to use [SyncTempEnvDirectoryFactory](file-system-replication.md#examine-directory-factory-options).
+The single instance backoffice Web App should be set to use [SyncTempEnvDirectoryFactory](file-system-replication.md#examine-directory-factory-options).
 
 The multi instance front end Web App should be set to use [TempEnvDirectoryFactory](file-system-replication.md#examine-directory-factory-options).
 
@@ -23,6 +23,19 @@ Store the Umbraco temporary files in the local server's 'temp' folder. Achieve t
 			
 ```xml
 <add key="Umbraco.Core.LocalTempStorage" value="EnvironmentTemp" />
+```
+
+### Umbraco PublishedCache
+
+When Azure Web Apps auto transition between hosts, you scale the instances or you utilise slot swapping you may experience issues with the Umbraco Published Cache becoming locked unless it is configured to ignore the local database. 
+
+A composer is required to configure this option
+
+```csharp
+composition.Register(factory => new PublishedSnapshotServiceOptions
+{
+    IgnoreLocalDb = true
+});
 ```
 
 ### Steps to set-up a environment
