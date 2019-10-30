@@ -268,3 +268,59 @@ $scope.model.badge = {
   type: "warning" // optional: determines the badge color - "warning" = dark yellow, "alert" = red, anything else = blue (matching the top-menu background color)
 };
 ```
+
+From version 8.3.0 and up it is also possible to set a notification badge form a IContentAppFactory. This is done by setting the badge property on the ContentApp model.
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Umbraco.Core.Composing;
+using Umbraco.Core.Models;
+using Umbraco.Core.Models.ContentEditing;
+using Umbraco.Core.Models.Membership;
+
+namespace Umbraco.Web.UI
+{
+
+    public class WordCounterAppComponent : IUserComposer
+    {
+        public void Compose(Composition composition)
+        {
+            // Add our word counter content app into the composition aka into the DI
+            composition.ContentApps().Append<WordCounterApp>();
+        }
+    }
+
+    public class WordCounterApp : IContentAppFactory
+    {
+        public ContentApp GetContentAppFor(object source, IEnumerable<IReadOnlyUserGroup> userGroups)
+        {
+			// Can implement some logic with userGroups if needed
+            // Allowing us to display the content app with some restrictions for certain groups
+            if (userGroups.Any(x => x.Alias.ToLowerInvariant() == "admin") == false)
+                return null;
+			
+
+			// only show app on content items
+			if(content is IContent) 
+			{
+				var wordCounterApp = new ContentApp
+	            {
+	                Alias = "wordCounter",
+	                Name = "Word Counter",
+	                Icon = "icon-calculator",
+	                View = "/App_Plugins/WordCounter/wordcounter.html",
+	                Weight = 0,
+					Badge = new ContentAppBadge { Count = 5 , Type = ContentAppBadgeType.Warning }
+	            };
+	            return wordCounterApp;
+			}
+
+            return null            
+        }
+    }
+}
+```
+
+Possible values for the type are Default, Alert and Warning
