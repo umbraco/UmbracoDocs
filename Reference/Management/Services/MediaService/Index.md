@@ -77,7 +77,7 @@ For the `CreateMedia` method, the first parameter is the name of the folder to b
 
 The second parameter is the ID of the parent media item. `Constants.System.Root` is a constant defined in Umbraco with the value of `-1`, which is used for indicating the root of the media archive. Instead of specifying the numeric ID of the parent, you may instead specify either a `Guid` ID or an `IMedia` instance representing the parent media.
 
-The third parameter is the alias of the media type. As Umbraco comes with a folder type by default, we can use the `Constants.Conventions.MediaTypes.Folder` constant to specify that the alias of the media type is `Folder`.
+The third parameter is the alias of the Media Type. As Umbraco comes with a Folder Type by default, we can use the `Constants.Conventions.MediaTypes.Folder` constant to specify that the alias of the Media Type is `Folder`.
 
 In addition to the three mandatory parameters as shown above, you may also specify a numeric ID for a user to which the creation of the media should be attributed. If not specified, the media will be attributed to the user with ID `-1`.
 
