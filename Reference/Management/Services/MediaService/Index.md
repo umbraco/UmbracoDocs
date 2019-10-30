@@ -111,7 +111,7 @@ The example below shows how to create a new file (in this case, an image) from a
         // Initialize a new image at the root of the media archive
         IMedia media = Services.MediaService.CreateMedia("Hello", Constants.System.Root, Constants.Conventions.MediaTypes.Image);
         
-        // Set the property value (Umbraco will handle the underlying magic)
+        // Set the property value (Umbraco will automatically update related properties)
         media.SetValue(Services.ContentTypeBaseServices, Constants.Conventions.Media.File, "hello.jpg", file);
         
         // Save the media
