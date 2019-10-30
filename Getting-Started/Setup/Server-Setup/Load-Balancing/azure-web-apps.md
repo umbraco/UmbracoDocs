@@ -43,7 +43,7 @@ composition.Register(factory => new PublishedSnapshotServiceOptions
 2. Install Umbraco on your backoffice environment and ensure to use your Azure SQL Database
 3. Install Umbraco on your front-end environment and ensure to use your Azure SQL Database
 4. Test: Perform some content updates on the backoffice environment, ensure they work successfully on that environment, then verify that those changes appear on the front-end environment
-5. Fix the backoffice environment to be the master scheduling server and the front-end environment to be replicas
+5. Fix the backoffice environment to be the master scheduling server and the front-end environment to be replicas - see [Explicit Master Scheduling](flexible-advanced.md#explicit-master-scheduling-server)
 
 ::note
 Ensure all Azure resources are located in the same region to avoid connection lag
