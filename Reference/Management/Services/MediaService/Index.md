@@ -84,7 +84,7 @@ In addition to the three mandatory parameters as shown above, you may also speci
 
 ### Creating a new media from an uploaded file
 
-The example below shows how to create a new file (on in this case, an image) from a HTTP upload. For illustrative purposes the example is a Razor view.
+The example below shows how to create a new file (in this case, an image) from a HTTP upload. For illustrative purposes the example is a Razor view.
 
 
 
