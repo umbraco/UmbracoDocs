@@ -152,4 +152,4 @@ using (Stream stream = File.OpenRead("C:/path/to/my-image.jpg"))
 }
 ```
 
-Again Umbraco will make sure the necessary properties are updated
+Again Umbraco will make sure the necessary properties are updated.
