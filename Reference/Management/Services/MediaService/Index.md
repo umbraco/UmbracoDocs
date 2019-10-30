@@ -63,7 +63,7 @@ IMediaService mediaService = Umbraco.Core.Composing.Current.Services.MediaServic
 
 ### Creating a new folder
 
-To create a new folder at the root of the media archive, your code could look as:
+To create a new folder at the root of the media archive, your code could like the following:
 
 ```csharp
 // Initialize a new media at the root of the media archive
