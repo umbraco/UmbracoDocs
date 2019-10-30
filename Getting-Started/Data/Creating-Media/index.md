@@ -22,7 +22,7 @@ To create a media folder go to the __Media section__ and click the menu icon to 
 
 ## Uploading images and files
 
-There are a couple of different ways to do this. 
+There are a couple of different ways to do this.
 
 You can use the context menu as when creating a folder. Click the menu icon next to the folder and choose __Image__ or __File__, enter a name for your media item and click the __Upload field__ and choose a file to upload.
 
@@ -66,7 +66,7 @@ Go to the __Settings__ section. On the __Media Types__ node click the menu icon 
 Having different folders for different media types makes it possible to restrict where media items can be created. Only allowing PDF uploads in a certain folder or employee images in another makes it easier for editors to keep the Media section organized.
 :::
 
-Choose __New Media Type__. This will open the Media Type editor. It is basically the same editor used for creating Document Types. The difference is that Media Types define items for the Media section and you do not have the ability to assign a template for the Media Type.  
+Choose __New Media Type__. This will open the Media Type editor. It is basically the same editor used for creating Document Types. The difference is that Media Types define items for the Media section and you do not have the ability to assign a template for the Media Type.
 
 ![Creating a Media Type](images/create-new-media-type.png)
 
@@ -124,7 +124,7 @@ There are four options to add a new media items to the folder, as you can see he
 ![Uploading Media](images/four-ways-of-uploading.png)
 
 :::tip
-Remember you can uncheck the __Allow at root__ option on the __Employee images__ Media Type to prevent editors from creating multiple folders of this type. This will not affect created folders, only disable the creation of new ones
+Remember you can uncheck the __Allow at root__ option on the __Employee images__ Media Type to prevent editors from creating multiple folders of this type. This will not affect created folders, only disable the creation of new ones.
 :::
 
 ### Cropping the images

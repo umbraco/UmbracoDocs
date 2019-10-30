@@ -12,7 +12,7 @@ Tools used:
 
 ## The scenario
 
-You have an Umbraco Cloud project with two environments, Development and Live. 
+You have an Umbraco Cloud project with two environments, Development and Live.
 
 You have been working on building the site on a local clone of the Development environment, and now you want to send some but not all changes to the Live environment.
 
@@ -30,7 +30,7 @@ Here are the steps to follow in order to apply selected changes to the Live envi
 2. Make sure that the changes you push directly to your Live environment are already pushed to the Development environment. This will ensure that your environments are kept in sync.
 3. Choose the commit where you want to create a new branch.
     * This branch should be created in an earlier commit that is corresponding to the state of the Live environment (before the changes you've made locally have been committed).
-    
+
     ![Creating new branch](images/create-branch.png)
 
 4. With the new _Hotfix_ branch checked out, it's now time to _cherry pick_ the commits you want to apply to the Live environment.
@@ -66,7 +66,7 @@ Before you push the newly created branch to Umbraco Cloud we need to change the 
     ![Choose remote](images/choose-remote.png)
 
 15. Hit **Submit** and the push will start.
-16. **Note** that when changes are pushing directly to a Live environment and you have more than one environment, the changes are not automatically extracted into the site.
+16. **Note** that when changes are pushed directly to a Live environment and you have more than one environment, the changes are not automatically extracted into the site.
 17. Find a guide on how to extract the files, in the [Manual Extraction](../../../Set-Up/Power-Tools/Manual-extractions) article.
 
 You have now applied a hotfix to the Live environment.

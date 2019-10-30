@@ -54,7 +54,7 @@ The option will not be available when you are already on a Professional plan or 
 
 ## Renaming and deleting
 
-You might need to rename your Umbraco Cloud project - find the option to do that from the *Settings* menu. 
+You might need to rename your Umbraco Cloud project - find the option to do that from the *Settings* menu.
 
 :::note
 If you are working locally you need to update the origin of your local git repository to point to the new clone url. Alternatively you can make a fresh local clone of the project, once you’ve changed your project name.

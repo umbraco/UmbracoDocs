@@ -9,7 +9,7 @@ When you type a search term into the Umbraco backoffice search field, you'll see
 
 ![Content Section Dashboards](images/backoffice-search.png)
 
-The results are grouped by 'Section Tree' eg Content, Media, Document Types: essentially each 'Tree' has it's own associated search mechanism, that receives the search term and looks for matches in the tree that is responsible for searching.
+The results are grouped by 'Section Tree' e.g. Content, Media, Document Types: essentially, each 'Tree' has its own associated search mechanism that receives the search term and looks for matches in the tree that is responsible for searching.
 
 You can create your own search mechanisms for your own custom sections or replace the default search implementation for a particular section tree.
 
@@ -57,41 +57,41 @@ public class SearchResultItem : EntityBasic
 }
 ```
 
-A `SearchResultItem` consists of a Score (a Float value) identifying it's relevance to the search term, and the set of `EntityBasic` properties that all Umbraco objects share: eg Name, Id, Udi, Icon, Trashed, Key, ParentId, Path, Alias, AdditionalData
+A `SearchResultItem` consists of a Score (a Float value) identifying its relevance to the search term, and the set of `EntityBasic` properties that all Umbraco objects share: eg Name, Id, Udi, Icon, Trashed, Key, ParentId, Path, Alias, AdditionalData
 
 #### Example implementation of ISearchableTree
 
 If we have a custom section Tree with alias 'favouriteThingsAlias' (see the [custom tree example](../trees-v7.md)) then we could implement searchability by creating the following c# class in our site:
 
 ```csharp
-  public class FavouriteThingsSearchableTree : ISearchableTree
+public class FavouriteThingsSearchableTree : ISearchableTree
+{
+    public string TreeAlias => "favouriteThingsAlias";
+
+    public IEnumerable<SearchResultItem> Search(string query, int pageSize, long pageIndex, out long totalFound, string searchFrom = null)
     {
-        public string TreeAlias => "favouriteThingsAlias";
+        // your custom search implementation starts here
+        Dictionary<int, string> favouriteThings = new Dictionary<int, string>();
+        favouriteThings.Add(1, "Raindrops on Roses");
+        favouriteThings.Add(2, "Whiskers on Kittens");
+        favouriteThings.Add(3, "Skys full of Stars");
+        favouriteThings.Add(4, "Warm Woolen Mittens");
+        favouriteThings.Add(5, "Cream coloured Unicorns");
+        favouriteThings.Add(6, "Schnitzel with Noodles");
 
-        public IEnumerable<SearchResultItem> Search(string query, int pageSize, long pageIndex, out long totalFound, string searchFrom = null)
+        var searchResults = new List<SearchResultItem>();
+
+        var matchingItems = favouriteThings.Where(f => f.Value.StartsWith(query, true, System.Globalization.CultureInfo.CurrentCulture));
+        foreach (var matchingItem in matchingItems)
         {
-            // your custom search implementation starts here
-            Dictionary<int, string> favouriteThings = new Dictionary<int, string>();
-            favouriteThings.Add(1, "Raindrops on Roses");
-            favouriteThings.Add(2, "Whiskers on Kittens");
-            favouriteThings.Add(3, "Skys full of Stars");
-            favouriteThings.Add(4, "Warm Woolen Mittens");
-            favouriteThings.Add(5, "Cream coloured Unicorns");
-            favouriteThings.Add(6, "Schnitzel with Noodles");
-
-            var searchResults = new List<SearchResultItem>();
-
-            var matchingItems = favouriteThings.Where(f => f.Value.StartsWith(query, true, System.Globalization.CultureInfo.CurrentCulture));
-            foreach (var matchingItem in matchingItems)
-            {
-                searchResults.Add(new SearchResultItem() { Id = 12345, Alias = "favouriteThingItem", Icon = "icon-favorite", Key = new Guid("325746a0-ec1e-44e8-8f7b-6e7c4aab36d1"), Name = matchingItem.Value, ParentId = -1, Path = "-1,123456", Score = 1.0F, Trashed = false });
-            }
-            // set number of search results found
-            totalFound = matchingItems.Count();
-            // return your IEnumerable of SearchResultItems
-            return searchResults;
+            searchResults.Add(new SearchResultItem() { Id = 12345, Alias = "favouriteThingItem", Icon = "icon-favorite", Key = new Guid("325746a0-ec1e-44e8-8f7b-6e7c4aab36d1"), Name = matchingItem.Value, ParentId = -1, Path = "-1,123456", Score = 1.0F, Trashed = false });
         }
+        // set number of search results found
+        totalFound = matchingItems.Count();
+        // return your IEnumerable of SearchResultItems
+        return searchResults;
     }
+}
 ```
 
 That's all we need, after an application pool recycle, if we now search in the backoffice we'll see matches from our custom 'Favourite Things' tree:
@@ -114,7 +114,7 @@ First create your replacement custom `ISearchableTree` implementation, using the
 public string TreeAlias => "member";
 ```
 
-To avoid your custom implementation clashing with the default `ISearchableTree` for a Tree, you need to remove it's `ISearchableTree` implementation by Type at 'ApplicationStarting' using the `SearchableTreeResolver`:
+To avoid your custom implementation clashing with the default `ISearchableTree` for a Tree, you need to remove its `ISearchableTree` implementation by Type at 'ApplicationStarting' using the `SearchableTreeResolver`:
 
 ```csharp
 public class ApplicationStartUp : ApplicationEventHandler

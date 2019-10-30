@@ -6,6 +6,8 @@ versionFrom: 7.0.0
 
 When working with an Umbraco Cloud project you can add and remove extra environments. If you are on a Pro plan you can add and remove environments whenever you like, for a Starter plan it costs extra for each environment.
 
+<iframe width="800" height="450" src="https://www.youtube.com/embed/9AwZNyaHbVk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## Adding or removing environments
 
 __Important:__ *Before* adding an environment you should consider if you have any changes locally that are not on Live yet. If you do you should make sure to push it as adding another environment will also push it into the deployment chain.

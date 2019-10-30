@@ -1,6 +1,7 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
+meta.Title: "Umbraco WebApi Routing"
+meta.Description: "A guide to implenting WebApi in Umbraco projects"
 ---
 
 # Umbraco Api
@@ -26,11 +27,13 @@ The class to inherit from is: `Umbraco.Web.WebApi.UmbracoApiController`
 This will expose the following properties for you to use:
 
 ```csharp
-ApplicationContext ApplicationContext {get;}
 ServiceContext Services {get;}
-DatabaseContext DatabaseContext {get;}
+ISqlContext SqlContext {get;}
 UmbracoHelper Umbraco {get;}
 UmbracoContext UmbracoContext {get;}
+IGlobalSettings GlobalSettings {get;}
+IProfilingLogger Logger {get;}
+MembershipHelper Members {get;}
 ```
 
 ## Creating a Web Api controller
@@ -62,10 +65,10 @@ Example:
 
 ```csharp
 public class ProductsController : UmbracoApiController
-{	    
+{
     public IEnumerable<string> GetAllProducts()
     {
-        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+        return new[] { "Table", "Chair", "Desk", "Computer"};
     }
 }
 ```
@@ -85,7 +88,7 @@ Example:
 ```csharp
 [PluginController("AwesomeProducts")]
 public class ProductsController : UmbracoApiController
-{	    
+{
     public IEnumerable<string> GetAllProducts()
     {
         return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
@@ -97,14 +100,25 @@ Now this controller will be routed via the area called "AwesomeProducts". All pl
 
 *~/Umbraco/[YourAreaName]/[YourControllerName]*
 
+E.g *~/Umbraco/AwesomeProducts/Products/GetAllProducts*
+
 For more information about areas, Urls and routing see the [routing section](routing.md)
 
 ## Backoffice controllers
 
-If you are creating a controller to work within the Umbraco backoffice then you will need to ensure that it is secured  properly by inheriting from: `UmbracoAuthorizedApiController` or `UmbracoAuthorizedJsonController`. This controller type will auto-route your controller like the above examples except that it will add another Uri path: 'backoffice'. For example:
+If you are creating a controller to work within the Umbraco backoffice then you will need to ensure that it is secured  properly by inheriting from: `UmbracoAuthorizedApiController` or `UmbracoAuthorizedJsonController`. This controller type will auto-route your controller like the above examples except that it will add another Uri path: 'backoffice'.
+
 
 *~/Umbraco/backoffice/Api/[YourControllerName]*
+
 *~/Umbraco/backoffice/[YourAreaName]/[YourControllerName]*
+
+
+E.g
+*~/Umbraco/Api/Products/GetAllProducts* or
+
+*~/Umbraco/backoffice/AwesomeProducts/Products/GetAllProducts* for PluginController
+
 
 ### More Information
 

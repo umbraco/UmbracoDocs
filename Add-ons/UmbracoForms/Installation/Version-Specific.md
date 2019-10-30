@@ -6,8 +6,10 @@ versionFrom: 7.0.0
 This page covers specific upgrade documentation for specific versions.
 
 ## Version 8
-Version 8 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `8.0.0` & higher. 
+Version 8 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `8.0.0` & higher.
 The reasoning behind this is due to some underlying changes in Umbraco CMS core.
+
+In order to upgrade from Umbraco Forms 7 to Umbraco Forms 8 make sure you read the [Manual Upgrade instructions](ManualUpgrade).
 
 ## Version 4 to Version 6
 Upgrading to Version 6 of Umbraco Forms, has a higher minimum dependency on Umbraco CMS core of `7.6.0` & higher. The reasoning behind this is due to some underlying changes to ensure Forms works with Umbraco Cloud & Deploy.
@@ -37,4 +39,4 @@ The following outlines for `version 6.0.0` what upgrade/migration tasks that are
 * Moves any Form PreValue sources that uses text files that were uploaded to the media section & now stores in the Umbraco Forms IFileSystem
 
 ### Recommendation
-We highly recommend you make the switch away from the legacy macro and swap over to the newer macro that supports the new 6.0.0 feature of themes. The legacy macro is there to ease the transisition over and to avoid entire sites forms to stop working.
+We highly recommend you make the switch away from the legacy macro and swap over to the newer macro that supports the new 6.0.0 feature of themes. The legacy macro is there to ease the transition over and to avoid entire sites forms to stop working.

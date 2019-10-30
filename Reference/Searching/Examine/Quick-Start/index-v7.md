@@ -59,7 +59,7 @@ Since this is a quick start tutorial, these examples will search against all pub
 In MVC we have a method called `TypedSearch` on the `UmbracoHelper` which will return a list of `IPublishedContent` objects.
 
 ```csharp
-@if (!string.IsNullOrEmpty(Request.QueryString["query"]))    
+@if (!string.IsNullOrEmpty(Request.QueryString["query"]))
 {
     <ul>
         @foreach (var result in Umbraco.TypedSearch(Request.QueryString["query"]))
@@ -78,7 +78,7 @@ To complete more complex searches, we can use the ExamineManager and our custom 
 
 ### Fluent API
 
-Examine offers a fluent search API which aims to make constructing complex searches straight-forward. The underlying API is determined by the provider implementation, with Examine exposing the appropriate methods. With the fluent API, we can introduce fuzzy-text search and boosting, which allows us to favour a search result if our search term is found in particular fields, including custom fields added to document types. 
+Examine offers a fluent search API which aims to make constructing complex searches straight-forward. The underlying API is determined by the provider implementation, with Examine exposing the appropriate methods. With the fluent API, we can introduce fuzzy-text search and boosting, which allows us to favour a search result if our search term is found in particular fields, including custom fields added to document types.
 
 ```csharp
 using Examine.LuceneEngine.SearchCriteria;
@@ -94,10 +94,10 @@ if(searchResults.Any())
 <ul>
     @foreach (var result in searchResults)
     {
-       var node = Umbraco.TypedContent(result.Id);
-       <li>
-          <a href="@node.Url">@node.Name</a>               
-       </li>
+        var node = Umbraco.TypedContent(result.Id);
+        <li>
+        <a href="@node.Url">@node.Name</a>
+        </li>
     }
 </ul>
 }

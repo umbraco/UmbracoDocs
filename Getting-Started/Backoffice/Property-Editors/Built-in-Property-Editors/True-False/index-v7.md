@@ -1,6 +1,5 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
 ---
 
 # True/False
@@ -15,7 +14,7 @@ True/False is a checkbox which saves either 0 or 1, depending on the checkbox be
 
 The True/False property has a setting which allows you to set the default value of the checkbox, either checked (true) or unchecked (false). This property was added in Umbraco 7.4.2.
 
-## Content Example 
+## Content Example
 
 ![No Edit Content Example](images/True-False-Content.png)
 
@@ -30,7 +29,7 @@ The True/False property has a setting which allows you to set the default value 
         {
             <p>@page.Name</p>
         }
-    }	
+    }
 }
 ```
 
@@ -44,6 +43,6 @@ See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pit
         if (!page.umbracoNaviHide){
             <p>@page.Name</p>
         }
-    }	
+    }
 }
 ```

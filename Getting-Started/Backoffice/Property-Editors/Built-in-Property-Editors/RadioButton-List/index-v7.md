@@ -12,7 +12,7 @@ Pretty much like the name indicates this Data type enables editors to choose fro
 
 ![Radiobutton List Data Type Definition](images/RadioButton-List-DataType-v7.png)
 
-## Content Example 
+## Content Example
 
 ![Radiobutton List Content](images/RadioButton-List-Content-v7.png)
 

@@ -57,17 +57,17 @@ public class MyProvider : IUrlSegmentProvider
 
 The returned string becomes the native Url segment.  You don't need any Url rewriting, ...
 
-If we would use `MyProvider`, the "swibble" node from our example content tree would have "5678-swibble" as segment. 
+If we would use `MyProvider`, the "swibble" node from our example content tree would have "5678-swibble" as segment.
 
 ### The Default Url Segment Provider
 
-Default Url builds its segments like this. 
-First it looks (in this order) for: 
+Default Url builds its segments like this.
+First it looks (in this order) for:
 
 - The *umbracoUrlName* property. on the node  `content.GetPropertyValue<string>("umbracoUrlName")`
 - Content.Name
 
-Then uses Umbraco string extension `ToUrlSegment()` to produce a clean segment.  
+Then uses Umbraco string extension `ToUrlSegment()` to produce a clean segment.
 
 ```csharp
 // That one is initialized by default
@@ -82,10 +82,10 @@ public class UrlSegmentProviderResolver
 ## 2. <a name="paths"></a>Create paths
 To create a path, the pipeline will use the segments to produce the path.
 
-If we look at our example, the "swibble" node will receive the path: "/our-products/swibble".  If we take the `MyProvider` from above, the path would become: "/our-products/5678-swibble".  
+If we look at our example, the "swibble" node will receive the path: "/our-products/swibble".  If we take the `MyProvider` from above, the path would become: "/our-products/5678-swibble".
 
 But, if you would add another site, the (internal) paths for the nodes of second site will be is prefixed by the NODE ID of the site.
-Any content node with a hostname defines a “new root” for paths.  
+Any content node with a hostname defines a “new root” for paths.
 
 ![path example](images/path-example.png)
 
@@ -101,7 +101,7 @@ will produce "1234/dk/path/to/page" as path
 - **Unless HideTopLevelNodeFromPath config is true**, then the path becomes "/to/page"
 
 ## 3. <a name="urls"></a> Create Urls
-The Url of a node consists out of a complete [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier): the schema, domainname, (port) and the path.  
+The Url of a node consists out of a complete [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier): the schema, domainname, (port) and the path.
 
 In our example the "swibble" node could have the following URL: "http://example.com/our-products/swibble.aspx"
 
@@ -141,10 +141,10 @@ The returned string by GetUrl can return whatever pleases you.
 It's tricky to implement your own provider, it is advised use override the default provider.  If implementing a custom Url Provider, consider following things:
 
 - Cache things,
-- Be sure to know how to handle schema's (http vs https) and hostnames 
+- Be sure to know how to handle schema's (http vs https) and hostnames
 - Inbound might require rewriting
 
-When you inherit from the DefaultUrlProvider, you need to implement the constructor specifying the `IRequestHandlerSection`.  The easiest way to retrieve this object is adding a constructor: 
+When you inherit from the DefaultUrlProvider, you need to implement the constructor specifying the `IRequestHandlerSection`.  The easiest way to retrieve this object is adding a constructor:
 
 ```csharp
 public class MyUrlProvider : DefaultUrlProvider {
@@ -154,7 +154,7 @@ public class MyUrlProvider : DefaultUrlProvider {
 
   public override string GetUrl(UmbracoContext umbracoContext, int id, Uri current, UrlProviderMode mode)
   {
-     // your own implementation
+    // your own implementation
   }
 }
 ```
@@ -188,7 +188,7 @@ This means publishing an unpublished node with a conflicting URL, might change t
 
 ### A few more things
 **TODO: CHECK WITH IF THIS IS INTERPRETED CORRECTLY.  Copied from page 42 of Stéphane's document.**
- 
+
 - The IUrlProvider also has a GetOtherUrls method (For the back-end)
 - Another implementation if the IUrlProvider is the `AliasUrlProvider`: this will show the umbracoUrlAlias url in the back-end
 
@@ -201,7 +201,7 @@ These are the different modes:
 ```csharp
 public enum UrlProviderMode
 {
-  // Produce relative Urls exclusively 
+  // Produce relative Urls exclusively
   Relative,
   // Produce absolute Urls exclusively
   Absolute,
@@ -275,6 +275,6 @@ public class MyApplication : ApplicationEventHandler
 ```
 
 Back-end on www.alpha.com/umbraco
-then link is "www.bravo.com/bravo-2" ; alternate link is "mobile.bravo.com/bravo-2".  
+then link is "www.bravo.com/bravo-2" ; alternate link is "mobile.bravo.com/bravo-2".
 
 If you have good ideas on creating better implementations, please share them on the [Umbraco dev group](https://groups.google.com/forum/#!forum/umbraco-dev).

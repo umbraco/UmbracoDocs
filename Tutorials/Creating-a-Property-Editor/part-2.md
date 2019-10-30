@@ -11,7 +11,7 @@ This is step 2 in our guide to building a property editor. This step continues w
 
 
 ## Configuration?
-An important part of building good property editors is to build something relatively flexible, so you can reuse it many many times, for different things. Like the Rich Text Editor in Umbraco, that allows you to choose which buttons and stylesheets you want to use on each instance of the editor.
+An important part of building good property editors is to build something relatively flexible, so you can reuse it many times, for different things. Like the Rich Text Editor in Umbraco, that allows you to choose which buttons and stylesheets you want to use on each instance of the editor.
 
 So an editor can be used several times, with different configurations, and that is what we will be working on now.
 
@@ -21,23 +21,23 @@ To add configuration options to our markdown editor, open the `package.manifest`
 ```javascript
 ...
 editor: {
-	view: "~/App_Plugins/MarkDownEditor/markdowneditor.html"
+    view: "~/App_Plugins/MarkDownEditor/markdowneditor.html"
 }, // Remeber a comma seperator here at the end of the editor block!
 prevalues: {
-	fields: [
-		{
-			label: "Preview",
-			description: "Display a live preview",
-			key: "preview",
-			view: "boolean"
-		},
-		{
-			label: "Default value",
-			description: "If value is blank, the editor will show this",
-			key: "defaultValue",
-			view: "textarea"
-		}
-	]
+    fields: [
+        {
+            label: "Preview",
+            description: "Display a live preview",
+            key: "preview",
+            view: "boolean"
+        },
+        {
+            label: "Default value",
+            description: "If value is blank, the editor will show this",
+            key: "defaultValue",
+            view: "textarea"
+        }
+    ]
 }
 ```
 
@@ -58,7 +58,7 @@ Let's first add the default value functionality. Basically, when the `$scope.mod
 
 ```javascript
 if($scope.model.value === null || $scope.model.value === ""){
-	$scope.model.value = $scope.model.config.defaultValue;
+    $scope.model.value = $scope.model.config.defaultValue;
 }
 ```
 

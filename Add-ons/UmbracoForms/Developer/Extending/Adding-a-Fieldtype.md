@@ -30,11 +30,11 @@ public class MyCustomField : Umbraco.Forms.Core.FieldType
     public override IEnumerable<string> ValidateField(Form form, Field field, IEnumerable<object> postedValues, HttpContextBase context)
     {
         var returnStrings = new List<string>();
-    
+
         if (!postedValues.Any(value => value.ToString().ToLower().Contains("custom"))) {
             returnStrings.Add("You need to include 'custom' in the field!");
         }
-        
+
         // Also validate it against the original default method.
         returnStrings.AddRange(base.ValidateField(form, field, postedValues, context));
 
@@ -69,9 +69,9 @@ On the view, it is important to note that the ID attribute is fetched from `@Mod
 The final step involves building the HTML view which will be rendered in Umbraco as an example of how our end result will look. We will create a file at `App_Plugins\UmbracoForms\Backoffice\Common\FieldTypes\mycustomfield.html` which will contain the following:
 
 ```html
-<input 
-    type="text" tabindex="-1" 
+<input
+    type="text" tabindex="-1"
     class="input-block-level"
-    style="max-width: 100px" 
+    style="max-width: 100px"
 />
 ```

@@ -5,7 +5,7 @@ needsV8Update: "true"
 
 # Executing an Umbraco request
 
-_During the Umbraco request execution, an MVC Action is called which executes a Razor view to render content to the end-user_
+_During the Umbraco request execution, an MVC Action is called which executes a Razor view to render content to the end-user_,
 
 ## Using the Model
 

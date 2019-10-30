@@ -14,6 +14,8 @@ In its most basic form a document type is a form containing fieldsets (or groups
 
 Document Types can define entire pages or more limited content that can be reused on other nodes ie. a SEO group. This means that you are in complete control of what type of content can be created where.
 
+Document Types define what an end user see and can interact with when they are working in the Umbraco backoffice. So for a "Blog post" Document Type, if the end user needs to be able to create a thumbnail, or insert a name and an image of an author, then it needs to be defined in the Document Type. All blog posts using the "Blog post" Document Type, will then give the end user the choice to fill in a thumbnail, author name and an author image.
+
 ### Properties
 
 Each field on a Document Type is called a property. A property is given a name, an alias (used to output the properties content in a template) and an editor. The editor determines what type of data the property will store and the input method. There are a wide range of editors available out of the box (textstring, Rich text, media picker and so forth) and you can customize and add additional editors.

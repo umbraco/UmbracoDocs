@@ -5,7 +5,7 @@ needsV8Update: "true"
 
 # FindPublishedContentAndTemplate()
 
-This method is called on the "PublishedContentRequest.PrepareRequest()" method.  
+This method is called on the "PublishedContentRequest.PrepareRequest()" method.
 We discuss shortly what this method is doing:
 
 1. FindPublishedContent ()

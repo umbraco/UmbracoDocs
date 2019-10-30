@@ -1,6 +1,5 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
 ---
 
 # Umbraco Security Settings
@@ -16,26 +15,26 @@ The settings for Umbraco passwords are handled by default through the ASP.NET Me
 
     <!-- Used for members in the Member section of Umbraco -->
     <add name="UmbracoMembershipProvider"
-         type="Umbraco.Web.Security.Providers.MembersMembershipProvider, Umbraco"
-         minRequiredNonalphanumericCharacters="0"
-         minRequiredPasswordLength="10"
-         useLegacyEncoding="false"
-         enablePasswordRetrieval="false"
-         enablePasswordReset="false"
-         requiresQuestionAndAnswer="false"
-         defaultMemberTypeAlias="Member"
-         passwordFormat="Hashed"
-         allowManuallyChangingPassword="false"
-         maxInvalidPasswordAttempts="50"/>
+        type="Umbraco.Web.Security.Providers.MembersMembershipProvider, Umbraco"
+        minRequiredNonalphanumericCharacters="0"
+        minRequiredPasswordLength="10"
+        useLegacyEncoding="false"
+        enablePasswordRetrieval="false"
+        enablePasswordReset="false"
+        requiresQuestionAndAnswer="false"
+        defaultMemberTypeAlias="Member"
+        passwordFormat="Hashed"
+        allowManuallyChangingPassword="false"
+        maxInvalidPasswordAttempts="50"/>
 
-    <!-- Used for users who have permission to log into Umbraco's backoffice, listed in the Users section of Umbraco --> 
+    <!-- Used for users who have permission to log into Umbraco's backoffice, listed in the Users section of Umbraco -->
     <add name="UsersMembershipProvider"
-         type="Umbraco.Web.Security.Providers.UsersMembershipProvider, Umbraco"
-         enablePasswordRetrieval="false"
-         enablePasswordReset="false"
-         requiresQuestionAndAnswer="false"
-         allowManuallyChangingPassword="false"
-         maxInvalidPasswordAttempts="100"/>
+        type="Umbraco.Web.Security.Providers.UsersMembershipProvider, Umbraco"
+        enablePasswordRetrieval="false"
+        enablePasswordReset="false"
+        requiresQuestionAndAnswer="false"
+        allowManuallyChangingPassword="false"
+        maxInvalidPasswordAttempts="100"/>
 
   </providers>
 </membership>

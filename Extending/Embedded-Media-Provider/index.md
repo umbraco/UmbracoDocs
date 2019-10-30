@@ -24,11 +24,11 @@ The list of available default Embed Providers in an Umbraco install are as follo
 * Instagram
 * Twitter
 * Vimeo
-* DailyMotion
+* Dailymotion
 * Flickr
-* Slideshare
+* SlideShare
 * Kickstarter
-* GettyImages
+* Getty Images
 * Ted
 * SoundCloud
 * Issuu
@@ -63,7 +63,7 @@ namespace Umbraco.Web.Media.EmbedProviders
 If the provider to add supports the *OEmbed* format for embedding a representation of a Url in a website, then make use of the `EmbedProviderBase` base methods to implement the request:
 
 ```csharp
-   public override string GetMarkup(string url, int maxWidth = 0, int maxHeight = 0)
+    public override string GetMarkup(string url, int maxWidth = 0, int maxHeight = 0)
         {
             var requestUrl = base.GetEmbedProviderUrl(url, maxWidth, maxHeight);
             var oembed = base.GetJsonResponse<OEmbedResponse>(requestUrl);
@@ -74,7 +74,7 @@ If the provider to add supports the *OEmbed* format for embedding a representati
 
 ### Adding a new OEmbed Provider Example
 
-Let's allow our editors to embed artwork from the popular DeviantArt website - the world's largest online social community for artists and art enthusiasts. We can see they have information on using OEmbed: https://www.deviantart.com/developers/oembed. The format of their OEmbed implementation returns a JSON format, from a url `https://backend.deviantart.com/oembed?url=[urltoembed]`. We'll need to use the `EmbedProviderBase` and the `base.GetJsonResponse` method. We can see 'links' to media shared on deviantart are in the format: `https://fav.me/[uniquemediaidentifier]` so we'll need a regex to match any urls pasted into the embed panel that start with *fav.me*, achieved by setting the `UrlSchemeRegex` property.
+Let's allow our editors to embed artwork from the popular DeviantArt website - the world's largest online social community for artists and art enthusiasts. We can see they have information on using OEmbed: https://www.deviantart.com/developers/oembed. The format of their OEmbed implementation returns a JSON format, from a url `https://backend.deviantart.com/oembed?url=[urltoembed]`. We'll need to use the `EmbedProviderBase` and the `base.GetJsonResponse` method. We can see 'links' to media shared on DeviantArt are in the format: `https://fav.me/[uniquemediaidentifier]` so we'll need a regex to match any urls pasted into the embed panel that start with *fav.me*, achieved by setting the `UrlSchemeRegex` property.
 
 The Provider would look like this:
 
@@ -108,7 +108,7 @@ namespace Umbraco8.EmbedProviders
 ```
 #### Register the provider with the OEmbedProvidersCollection
 
-Create a new C# class that implments IUserComposer and add append your new provider to the EmbedProvidersCollection:
+Create a new C# class that implements `IUserComposer` and add append your new provider to the EmbedProvidersCollection:
 
 ```csharp
 using Umbraco.Core.Composing;
@@ -127,7 +127,7 @@ namespace Umbraco8.Composing
 ```
 The new provider should be available for editors to use:
 
-![Embedding a Media Item from Deviant Art website](images/deviantart-embedded-media.png)
+![Embedding a Media Item from DeviantArt website](images/deviantart-embedded-media.png)
 
 Notice there isn't really any implementation written here - the regex maps the incoming url to the provider, and the base methods handle the complication of requesting from the third party api, and turning the response into html.
 
@@ -137,7 +137,7 @@ If your third-party media provider does not support OEmbed or there is some quir
 
 ### Custom Embed Provider Example
 
-Azure Media Services [(https://azure.microsoft.com/en-gb/services/media-services/)](https://azure.microsoft.com/en-gb/services/media-services/) provide 'broadcast-quality' video streaming services. You can embed the Azure Media Player into your site to play a video using an IFrame: 
+Azure Media Services [(https://azure.microsoft.com/en-gb/services/media-services/)](https://azure.microsoft.com/en-gb/services/media-services/) provide 'broadcast-quality' video streaming services. You can embed the Azure Media Player into your site to play a video using an IFrame:
 https://ampdemo.azureedge.net/azuremediaplayer.html
 
 This example creates a custom Embed Provider to do the job of taking the Url of the Media asset and writing out the markup required to embed the IFrame video player inside your content.
@@ -152,7 +152,7 @@ namespace Umbraco8.EmbedProviders
 {
     public class AzureVideoEmbedProvider : EmbedProviderBase
     {
-        //no ApiEndpoint!
+        // no ApiEndpoint!
         public override string ApiEndpoint => String.Empty;
         public override string[] UrlSchemeRegex => new string[]
         {
@@ -163,7 +163,7 @@ namespace Umbraco8.EmbedProviders
         {
             // format of markup
             string videoFormat = "<div class=\"iplayer-container\"><iframe src=\"//aka.ms/ampembed?url={0}\" name=\"azuremediaplayer\" scrolling=\"no\" frameborder=\"no\" align=\"center\" autoplay=\"false\" width=\"{1}\" height=\"{2}\" allowfullscreen></iframe></div>";
-            // pass in encoded Url, with and height, and turn off autoplay...                
+            // pass in encoded Url, with and height, and turn off autoplay...
             var videoPlayerMarkup = string.Format(videoFormat, HttpUtility.UrlEncode(url) + "&amp;autoplay=false", maxWidth, maxHeight);
             return videoPlayerMarkup;
         }
@@ -174,7 +174,7 @@ Here the markup to embed has been manually constructed based upon the iframe vid
 
 #### Register the provider with the OEmbedProvidersCollection
 
-Create a new C# class that implments IUserComposer and add append your new provider to the EmbedProvidersCollection:
+Create a new C# class that implements `IUserComposer` and add append your new provider to the EmbedProvidersCollection:
 
 ```csharp
 using Umbraco.Core.Composing;
@@ -191,5 +191,4 @@ namespace Umbraco8.Composing
     }
 }
 ```
-Now editors can embed Azure Media video Urls in the format: //amssamples.streaming.mediaservices.windows.net/3b970ae0-39d5-44bd-b3a3-3136143d6435/AzureMediaServicesPromo.ism/manifest
-
+Now editors can embed Azure Media video Urls in the format: `//amssamples.streaming.mediaservices.windows.net/3b970ae0-39d5-44bd-b3a3-3136143d6435/AzureMediaServicesPromo.ism/manifest`.

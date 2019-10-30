@@ -1,6 +1,5 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # Umbraco Security Hardening
@@ -10,8 +9,8 @@ Here you find some tips and trick for hardening the security of your Umbraco ins
 ## Lock down access to your Umbraco-folders
 
 By default there are some folders in your Umbraco installation that should be only used by authenticated users. It’s considered a good practice to lock down these folders to specific IP-addresses and/or IP-ranges to make sure not everyone can access these.
-The folders we want to lock down are App_Plugins, Config, Umbraco_Client and Umbraco.
-The prerequisite of this to work is that you’re using [IISRewrite](../../Routing/IISRewriteRules/index.md) 
+The folders we want to lock down are App_Plugins, Config and Umbraco.
+The prerequisite of this to work is that you’re using [IISRewrite](../../Routing/IISRewriteRules/index.md)
 
 If you’ve made sure that you’ve installed this on your server we can start locking down our Umbraco-folders. This can be down by following these three steps.
 
@@ -35,11 +34,11 @@ Some older versions of Umbraco also relied on /umbraco/webservices/ for loadbala
 
 2. Get the IP-addresses of your client and write these down like a regular expression. If the IP-addresses are for example 213.3.10.8 and 88.4.43.108 the regular expression would be ‘213.3.10.8|88.4.43.108”.
 
-3. Lock down the folders App_Plugins, Config, Umbraco_Client and Umbraco (or the renamed version of this folder) by putting this rule into your IISRewrite-rules
+3. Lock down the folders App_Plugins, Config and Umbraco (or the renamed version of this folder) by putting this rule into your IISRewrite-rules
 
 ```xml
 <rule name="Allowed IPs" stopProcessing="true">
-    <match url="^(?:app_plugins|config|umbraco|umbraco_client)(?:/|$)" />
+    <match url="^(?:app_plugins|config|umbraco)(?:/|$)" />
     <conditions>
         <add input="{REMOTE_ADDR}" negate="false" pattern="213.3.10.8|88.4.43.108”>
     </conditions>
@@ -67,14 +66,11 @@ After:
 
 ![Umbraco-folder on disk - after](images/foldersondisk-after.png)
 
-2. Change the two keys in your web.config “umbracoReservedPaths” and “umbracoPath” to your new path.
+2. Change the two keys in your web.config “Umbraco.Core.ReservedUrls” and “Umbraco.Core.Path” to your new path.
 
-Before:
-
-![Web.config - before](images/webconfig-before.png)
-
-After:
-
-![Web.config - after](images/webconfig-after.png)
+```xml
+<add key="Umbraco.Core.ReservedUrls" value="~/my-secret-loginpanel" />
+<add key="Umbraco.Core.Path" value="~/my-secret-loginpanel" />
+```
 
 From now on, you can only get access to the login screen by going to this path and no longer by going to /umbraco/.

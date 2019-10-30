@@ -4,8 +4,8 @@ versionFrom: 7.0.0
 
 # IPublishedContent Collections
 
-All collections of `IPublishedContent` are `IEnumerable<IPublishedContent>`. 
-This means that all c# LINQ statements can be used to filter and query the collections.  
+All collections of `IPublishedContent` are `IEnumerable<IPublishedContent>`.
+This means that all c# LINQ statements can be used to filter and query the collections.
 
 ## Collections
 
@@ -82,7 +82,7 @@ Returns all descendants of the current page (children, grandchildren etc), and t
 ```
 
 ### .OfTypes
-Filters a collection of content by content type alias 
+Filters a collection of content by content type alias
 
 ```csharp
 <ul>
@@ -101,7 +101,7 @@ Filters a collection of content by content type alias
 Filtering and Ordering are done with LINQ.
 
 Some examples:
-	
+
 ### .Where
 
 ```csharp
@@ -115,7 +115,7 @@ var nodes = Model.Content.Descendants().Where(x => x.TemplateId > 0 && x.Name.St
 @* Orders a collection by the property name "title" *@
 var nodes = Model.Content.Children.OrderBy(x => x.GetPropertyValue<string>("title"))
 ```
-	
+
 ### .GroupBy
 Groups collection by content type alias
 
@@ -171,7 +171,7 @@ Returns a boolean True/False value determined by whether there are any items in 
 ```csharp
 bool hasChildren =  Model.Content.Children.Any();
 ```
-	
+
 ## [Filtering Conventions](#filtering-conventions)
 Some filtering and routing behaviour is dependent upon a set of special naming conventions for certain properties. [See also: Routing Property Conventions](../../Routing/routing-properties.md)
 

@@ -92,5 +92,5 @@ Adds a class to the div element wrapping around form fields of a given type. If 
 Retrieves all wrapper classes for a given field type, used when rendering form fields. This class wraps both label, help-text and the field itself in the default view
 
 ```csharp
-class="@Html.GetFormFieldWrapperClass(f.FieldTypeName)" 
+class="@Html.GetFormFieldWrapperClass(f.FieldTypeName)"
 ```
