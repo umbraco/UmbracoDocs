@@ -29,7 +29,7 @@ public class ExportToHtmlReport : ExportType
     }
 
     /// <summary>
-    /// We simply implement this method from the interface
+    /// We implement this method from the interface
     /// As this method is called from ExportToFile & is expecting the file contents as a string to be written as a stream to a file
     /// </summary>
     public override string ExportRecords(RecordExportFilter filter)
