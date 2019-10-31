@@ -269,7 +269,7 @@ $scope.model.badge = {
 };
 ```
 
-From version 8.3.0 and up it is also possible to set a notification badge form a IContentAppFactory. This is done by setting the badge property on the ContentApp model.
+From version 8.3.0 and up it is also possible to set a notification badge from an `IContentAppFactory`. This is achieved by setting the badge property on the ContentApp model.
 
 ```csharp
 using System;
