@@ -22,4 +22,4 @@ ApplicationContext.ApplicationCache.RequestCache
 ApplicationContext.ApplicationCache.StaticCache
 ```
 
-It's easy to [access and update the cache items](updating-cache.md), using the provided methods.
+You can [access and update the cache items](updating-cache.md), using the provided methods.
