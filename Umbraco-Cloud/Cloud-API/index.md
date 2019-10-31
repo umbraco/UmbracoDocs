@@ -104,7 +104,7 @@ The following endpoint is used for inviting users to a project.
 
     POST https://www.s1.umbraco.io/api/public/project/invite
 
-If the user is a new user we will create the user and send an activation email to the provided email and then add the project to the users overview. If the user is an existing user he/she will get an email telling them that they have been invited to the project.
+If the user is a new user we will create the user and send an activation email to the provided email and then add the project to the users overview. If the user is an existing user they will get an email telling them that they have been invited to the project.
 
 **Request**
 
