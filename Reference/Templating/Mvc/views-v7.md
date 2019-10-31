@@ -66,7 +66,7 @@ The UmbracoHelper method provides many useful parameters to change how the value
 
 ## <a name="renderingMacros"></a>Rendering Macros
 
-Rendering a macro is easy using UmbracoHelper. There are 3 overloads, we'll start with the most basic:
+Rendering a macro is done using UmbracoHelper. There are 3 overloads, we'll start with the most basic:
 
 This renders a macro with the specified alias without any parameters:
 
