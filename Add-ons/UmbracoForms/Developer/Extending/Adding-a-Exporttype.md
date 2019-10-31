@@ -111,7 +111,7 @@ public class ExportToTextFile : ExportType
         string pathToSaveZipFile = filepath;
 
         // Check our path does not contain \\
-        // If not just simply may the filePath
+        // If not use the filePath
         if (filepath.Contains('\\') == false)
         {
             pathToSaveZipFile = IOHelper.MapPath(filepath);
