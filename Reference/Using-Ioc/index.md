@@ -213,4 +213,4 @@ namespace Doccers.Core
 
 ### Using DI in Services and Helpers
 
-[Services and Helpers] (../../Implementation/Services/index.md) - For more examples of using DI and gaining access to Services and Helpers, and creating your own custom Services and Helpers to inject.
+[Services and Helpers](../../Implementation/Services/index.md) - For more examples of using DI and gaining access to Services and Helpers, and creating your own custom Services and Helpers to inject.
