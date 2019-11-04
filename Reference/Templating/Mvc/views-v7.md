@@ -20,7 +20,7 @@ All Umbraco views inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage` which expos
 * @Members (of type `Umbraco.Web.Security.MemberShipHelper`) [See MemberShipHelper Documentation](../../Querying/MemberShipHelper/index.md)
 
 ## Rendering a field with UmbracoHelper
-This is probably the most used method which simply renders the contents of a field for the current content item.
+This is probably the most used method, it renders the contents of a field for the current content item.
 
 	@Umbraco.Field("bodyContent")
 
@@ -36,14 +36,14 @@ There are several optional parameters. Here is the list with their default value
 * casing = RenderFieldCaseType.Unchanged
 * encoding = RenderFieldEncodingType.Unchanged
 
-The easiest way to use the Field method is to simply specify the optional parameters you'd like to set. For example, if we want to set the insertBefore and insertAfter parameters we'd do:
+The easiest way to use the Field method is to specify the optional parameters you'd like to set. For example, if we want to set the insertBefore and insertAfter parameters we'd do:
 
 	@Umbraco.Field("bodyContent", insertBefore : "<h2>", insertAfter : "</h2>")
 
 
 ## Rendering a field with Model
 
-The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however simply want to render value "as-is" you can use the @Model.Content property of the view. For example:
+The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however want to render value "as-is" you can use the @Model.Content property of the view. For example:
 
 	@Model.Content.Properties["bodyContent"].Value
 
@@ -58,7 +58,7 @@ You can also specify the output type that you want from the property. If the pro
 
 ## Rendering a field using @CurrentPage (dynamically)
 
-The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however simply want to render value "as-is" you can use the @CurrentPage property of the view. The difference between @CurrentPage and @Model.Content is that @CurrentPage is the dynamic representation of the model which exposes many dynamic features for querying. For example, to render a field you simply use this syntax:
+The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however want to render value "as-is" you can use the @CurrentPage property of the view. The difference between @CurrentPage and @Model.Content is that @CurrentPage is the dynamic representation of the model which exposes many dynamic features for querying. For example, to render a field you can use this syntax:
 
 	@CurrentPage.bodyContent
 
@@ -66,7 +66,7 @@ The UmbracoHelper method provides many useful parameters to change how the value
 
 ## <a name="renderingMacros"></a>Rendering Macros
 
-Rendering a macro is easy using UmbracoHelper. There are 3 overloads, we'll start with the most basic:
+Rendering a macro is done using UmbracoHelper. There are 3 overloads, we'll start with the most basic:
 
 This renders a macro with the specified alias without any parameters:
 
