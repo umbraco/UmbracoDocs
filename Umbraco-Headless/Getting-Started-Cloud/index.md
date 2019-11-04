@@ -17,11 +17,16 @@ versionFrom: 8.0.0
 
 // Upgrades / Umbraco versions / API versions
 
-// CDN [BLOCKED] - we don't know enough
+// CDN - we don't know enough
 - If not included, what then?
 - How to use it, when it's included?
+- CloudFlare !!
 
 Idea for folder structure:
+
+## API Browser
+## Webhooks
+
 ## Cloud, but not Cloud
 ## Cloud Portal / Deployments
 ## Backoffice / features
