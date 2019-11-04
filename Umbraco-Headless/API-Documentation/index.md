@@ -59,7 +59,7 @@ API versioning is handled by [ASP.NET API Versioning](https://github.com/microso
 All API requests need to specify the API version they target. If no version is specified, the latest version of the API is used, which will break clients when a new version of the API is released.
 // Added stronger language, as it sounds like clients might be in risk of breaking, if version is not specified
 
-#### Access via Umb-Project-Alias header
+#### Access via an api-version header
 
 ```http
 GET https://cdn.umbraco.io/content
