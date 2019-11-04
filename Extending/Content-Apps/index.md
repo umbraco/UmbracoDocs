@@ -323,4 +323,4 @@ namespace Umbraco.Web.UI
 }
 ```
 
-Possible values for the ContentAppBadge Type  are Default, Alert and Warning
+Possible values for the `ContentAppBadge` Type are *Default*, *Alert* and *Warning*.
