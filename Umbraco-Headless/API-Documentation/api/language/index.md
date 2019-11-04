@@ -110,10 +110,9 @@ Gets all languages available for content creation.
 }
 ```
 
-## Get by iso code
-// Should iso not be capitalized?
+## Get by ISO code
 
-Get a specific langauge by its iso code.
+Get a specific langauge by its ISO code.
 
 **URL**: `/language/{id}`
 
