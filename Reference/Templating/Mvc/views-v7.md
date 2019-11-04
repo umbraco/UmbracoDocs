@@ -20,6 +20,7 @@ All Umbraco views inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage` which expos
 * @Members (of type `Umbraco.Web.Security.MemberShipHelper`) [See MemberShipHelper Documentation](../../Querying/MemberShipHelper/index.md)
 
 ## Rendering a field with UmbracoHelper
+
 This is probably the most used method which renders the contents of a field for the current content item.
 
 	@Umbraco.Field("bodyContent")
@@ -62,7 +63,7 @@ You can also specify the output type that you want from the property. If the pro
 
 ## Rendering a field using @CurrentPage (dynamically)
 
-The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however want to render value "as-is" you can use the @CurrentPage property of the view. The difference between @CurrentPage and @Model.Content is that @CurrentPage is the dynamic representation of the model which exposes many dynamic features for querying. For example, to render a field you use this syntax:
+The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however want to render value "as-is" you can use the @CurrentPage property of the view. The difference between @CurrentPage and @Model.Content is that @CurrentPage is the dynamic representation of the model which exposes many dynamic features for querying. For example, to render a field you can use this syntax:
 
 	@CurrentPage.bodyContent
 
@@ -70,7 +71,7 @@ The UmbracoHelper method provides many useful parameters to change how the value
 
 ## <a name="renderingMacros"></a>Rendering Macros
 
-Rendering a macro is easy using UmbracoHelper. There are 3 overloads, we'll start with the most basic:
+Rendering a macro is done using UmbracoHelper. There are 3 overloads, we'll start with the most basic:
 
 This renders a macro with the specified alias without any parameters:
 
