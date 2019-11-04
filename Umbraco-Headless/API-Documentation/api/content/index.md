@@ -732,7 +732,7 @@ BINARY DATA
 
 ## Update content
 
-Updates an existing content item with one or more language variations. 
+Updates an existing content item that has one or more language variations. 
 // sounds a little like it will update the content item with more languages? Is that the point?
 
 When content contains an upload field it is possible to send a file along with the request to update content. This is done by sending a multi-part request with the json body and the file, see [Create content with files](#create-content-with-files) for an example. If the content item doesn't include files then you can send a standard reqeust with a JSON payload to update the content item.
