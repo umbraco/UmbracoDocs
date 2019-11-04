@@ -32,7 +32,7 @@ If an error occours you will receive a HTTP status code along with an API error 
 
 ## Get root media
 
-Gets all media at the root of the tree
+Get all media at the root of the tree.
 
 **URL**: `/media`
 
@@ -125,7 +125,7 @@ Gets all media at the root of the tree
 
 ## Get by id
 
-Gets a single media by its id
+Get a single media by its ID.
 
 **URL**: `/media/{id}`
 
@@ -179,7 +179,7 @@ Gets a single media by its id
 
 ## Get children
 
-Gets children of a single media
+Get children of a single media.
 
 **URL**: `/media/{id}/children`
 

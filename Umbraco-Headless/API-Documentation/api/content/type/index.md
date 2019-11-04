@@ -35,9 +35,9 @@ If an error occours you will receive a HTTP status code along with an API error 
 }
 ```
 
-## Get all content types
+## Get all Content Types
 
-Get a list of all available content types.
+Get a list of all available Content Types.
 
 **URL**: `/content/type`
 
@@ -605,7 +605,7 @@ Get a list of all available content types.
 
 ## Get by alias
 
-Get a specific content type by its alias.
+Get a specific Content Type by its alias.
 
 **URL**: `/content/type/{alias}`
 

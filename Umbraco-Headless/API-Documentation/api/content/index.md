@@ -11,11 +11,14 @@ Umb-Project-Alias: {project-alias}
 
 ## Authentication
 
-Auth is required for this API meaning that you must supply a Bearer Token via an Authorization header or an API Key via an Authorization or Api-Key header.
+Authentication is required for this API meaning that you must supply a Bearer Token via an Authorization header or an API Key via an Authorization or Api-Key header.
 
 ## Permissions
 
-All reqests requires access to the Content Section of the Umbraco Backoffice and the content being accessed is beneath the users start node configured in Umbraco in addition to the specific permissions listed under each endpoint.
+In addition to the specific permissions listed under each endpoint, all requests requires:
+
+* Access to the Content Section of the Umbraco Backoffice and
+* That the content being accessed is beneath the users start node configured in Umbraco
 
 ## Errors
 
@@ -180,8 +183,7 @@ Get all content at the root of the tree, which the authorized user has access to
 
 ## Get by id
 
-Get specific content item by its guid id.
-Includes all language variations.
+Get specific content item by GUID ID. Includes all language variations.
 
 **URL**: `/content/{id}`
 
@@ -264,8 +266,7 @@ Includes all language variations.
 
 ## Get children
 
-Get a list of children (content items) by their parent guid id.
-Includes all language variations per content item.
+Get a list of children (content items) by parent GUID ID. Includes all language variations per content item.
 
 **URL**: `/content/{id}/children`
 
@@ -508,7 +509,9 @@ Includes all language variations per content item.
 
 Create a new content item with one or more language variations.
 
-Please note that newly created content will be `DRAFT` by default, so if you want to publish it you will need to issue a publish request as well.
+:::note
+All newly created content will be `DRAFT` by default. If you want to publish it you will need to issue a publish request as well.
+:::
 
 **URL**: `/content`
 
@@ -518,7 +521,7 @@ Please note that newly created content will be `DRAFT` by default, so if you wan
 
 ### Request
 
-In this example only one language exists, so the properties are marked with `$invariant` in the create requst. If multiple languages existed the culture for each of the languages would be defined for each of the properties - example: `"name": { "en-US": "Another one", "da-DK": "Endnu en" }`.
+In this example only one language exists, so the properties are marked with `$invariant` in the create requst. If multiple languages exists the culture for each of the languages would be defined for each of the properties - example: `"name": { "en-US": "Another one", "da-DK": "Endnu en" }`.
 
 ```json
 {
@@ -632,9 +635,13 @@ In this example only one language exists, so the properties are marked with `$in
 
 Create a new content item with one or more language variations and files.
 
-When content contains an upload field it is possible to send a file along with the request to create new content. This is done by sending a multi-part request with the json body and the file. If the content item doesn't include files then you can send a standard reqeust with a json payload to create a new content item.
+When content contains an upload field it is possible to send a file along with the request to create new content. This is done by sending a multi-part request with the JSON body and the file. 
 
-Please note that newly created content will be `DRAFT` by default, so if you want to publish it you will need to issue a publish request as well.
+If the content item doesn't include files then you can send a standard reqeust with a JSON payload to create a new content item.
+
+:::note
+All newly created content will be `DRAFT` by default. If you want to publish it you will need to issue a publish request as well.
+:::
 
 **URL**: `/content`
 
@@ -648,7 +655,7 @@ Please note that newly created content will be `DRAFT` by default, so if you wan
 
 The request must contain a field named `content` that contains the content JSON.
 
-For the files being uploaded the field names must be it the format `propertyName.culture`, so if the content has an upload property with the name `fileUpload` and the file is being uploaded to the `en-US` lanugage, the field name should then be `fileUpload.en-US`.
+For the files being uploaded the field names must be in the format `propertyName.culture`. An example could be when the content has an upload property with the name `fileUpload` and the file is being uploaded to the `en-US` lanugage. In that case the field name should be `fileUpload.en-US`.
 
 The property must also be includud in the content JSON and the value shoud be the filename.
 
@@ -725,9 +732,9 @@ BINARY DATA
 
 ## Update content
 
-Updates an existing content item with one or more language variations.
+Updates an existing content item that has one or more language variations. 
 
-When content contains an upload field it is possible to send a file along with the request to update content. This is done by sending a multi-part request with the json body and the file, see [Create content with files](#create-content-with-files) for an example. If the content item doesn't include files then you can send a standard reqeust with a json payload to update the content item.
+When content contains an upload field it is possible to send a file along with the request to update content. This is done by sending a multi-part request with the json body and the file, see [Create content with files](#create-content-with-files) for an example. If the content item doesn't include files then you can send a standard reqeust with a JSON payload to update the content item.
 
 **URL**: `/content/{id}`
 

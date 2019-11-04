@@ -132,7 +132,7 @@ Get a list of all available relation types.
 
 ## Get by alias
 
-Get a specific relation type by its alias.
+Get a specific Relation Type by its alias.
 
 **URL**: `/relation/type/{alias}`
 

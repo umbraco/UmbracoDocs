@@ -35,9 +35,9 @@ If an error occours you will receive a HTTP status code along with an API error 
 }
 ```
 
-## Get all media types
+## Get all Media Types
 
-Get a list of all available media types.
+Get a list of all available Media Types.
 
 **URL**: `/media/type`
 
@@ -213,7 +213,7 @@ Get a list of all available media types.
 
 ## Get by alias
 
-Get a specific media type by its alias.
+Get a specific Media Type by its alias.
 
 **URL**: `/media/type/{alias}`
 

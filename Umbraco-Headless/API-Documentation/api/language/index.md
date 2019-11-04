@@ -110,9 +110,9 @@ Gets all languages available for content creation.
 }
 ```
 
-## Get by iso code
+## Get by ISO code
 
-Get a specific langauge by its iso code.
+Get a specific langauge by its ISO code.
 
 **URL**: `/language/{id}`
 
@@ -149,7 +149,10 @@ Get a specific langauge by its iso code.
 ## Create langauge
 
 Create a new language for use on content.
-Please note that the number of languages that can be created is defined by the pricing tier.
+
+:::note
+Please note that the number of languages that can be created is defined by the [pricing tier](LINK TO pricing tiers!).
+:::
 
 **URL**: `/language`
 
@@ -196,7 +199,7 @@ Please note that the number of languages that can be created is defined by the p
 
 ## Update language
 
-Updates an existing language
+Updates an existing language.
 
 **URL**: `/language/{id}`
 
@@ -244,7 +247,10 @@ Updates an existing language
 ## Delete language
 
 Deletes an existing language.
-Please note that deleting a language, which is in use means that content based on this language will be set to invariant.
+
+:::note
+Please note that deleting a language, which is in use means that content based on this language will be set to `invariant`.
+:::
 
 **URL**: `/language/{id}`
 
