@@ -20,11 +20,14 @@ All Umbraco views inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage` which expos
 * @Members (of type `Umbraco.Web.Security.MemberShipHelper`) [See MemberShipHelper Documentation](../../Querying/MemberShipHelper/index.md)
 
 ## Rendering a field with UmbracoHelper
-This is probably the most used method, it renders the contents of a field for the current content item.
+
+This is probably the most used method which renders the contents of a field for the current content item.
 
 	@Umbraco.Field("bodyContent")
 
 There are several optional parameters. Here is the list with their default values:
+
+<!-- vale valeStyle.ListStart = NO -->
 
 * altFieldAlias = ""
 * altText = ""
@@ -35,6 +38,8 @@ There are several optional parameters. Here is the list with their default value
 * removeParagraphTags = false
 * casing = RenderFieldCaseType.Unchanged
 * encoding = RenderFieldEncodingType.Unchanged
+
+<!-- vale valeStyle.ListStart = YES -->
 
 The easiest way to use the Field method is to specify the optional parameters you'd like to set. For example, if we want to set the insertBefore and insertAfter parameters we'd do:
 
@@ -103,6 +108,6 @@ Properties created on your document types can be accessed with this syntax:
 
 	@Model.BodyText
 
-When ModelsBuilder resolve your properties it will also try to use value converters to convert the values of your data into more convenient models allowing you to access nested objects as strong types instead of having to rely on dynamics and risking having a lot of potential errors when working with these.
+When ModelsBuilder resolve your properties, it will also try to use value converters to convert the values of your data into more convenient models. This allows you to access nested objects as strong types instead of having to rely on dynamics and risking having a lot of potential errors when working with these.
 
 [ModelsBuilder documentation](../Modelsbuilder/)

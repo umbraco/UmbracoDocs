@@ -39,7 +39,11 @@ Now you should have a content tree that looks like the image below (obviously wi
 
 ![Content Tree With Articles](images/figure-40-articles-created-v8.png)
 
+<!-- vale valeStyle.Hyperbolic = NO -->
+
 Copy the template content from the **_Simple Content Page_**  template and paste this into both the Articles Item and Articles Main (you may need to refresh the nodes again to see these. Set the Master template to be "Master" and then replace the Page field tags with the relevant  properties e.g. **_articlesTitle_** and **_articlesBodyText_** for the **_Articles Main_** and the **_articleTitle_** and **_articleContent_** for **_Article Item_**.
+
+<!-- vale valeStyle.Hyperbolic = YES -->
 
 :::warn
 Take care when copying not to overwrite the first line `@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ArticlesMain>` - if you get an exception when loading the page about not being able to bind to source ensure the last part in < > brackets matches your Document Type Alias.

@@ -21,11 +21,15 @@ This rule will give a warning if you end headings with either of these punctuati
 
 This rule will give a warning if you use either of these words in your text:
 
+<!-- vale off -->
+
 - Simple
 - Simply
 - Just
 - Easily
 - Actually
+
+<!-- vale on -->
 
 ### Start lists with capital letters
 
