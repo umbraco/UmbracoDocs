@@ -12,7 +12,7 @@ From here you are able to log in with your credentials.
 
 ## Sections
 
-The backoffice is devided in specefic sections e.g. Content, Media and Settings. This will allow you to do work related to a specific sections of Umbraco.
+The backoffice is devided in specefic sections e.g. Content, Media and Settings. This will allow you to do work related to a specific section of your project.
 
 ![Sections of the backoffice](images/sections.png)
 
@@ -42,11 +42,29 @@ Should you have set URL redirects you can manage them via the Redirect URL Manag
 
 ## Content
 
-In this section you will find all the content you have on your page. Each item in the tree is called a content node. Every node is made up by different fields. Each field is defined by a document type.
+In this section you will find all the content you have on your page. Each item in the tree is called a Content Node. Every node is made up by different fields. Each field is defined by a property.
+
+The content tree holds all the content nodes you have created.
+
+![Overview of the content](images/content.png)
+
+The left holds the content tree that will automatically nest your content if you have created nodes with parent-child relationships.
+
+On the left you can see what properties the highlighted Content Node has. In the above example there is a group called Main which holds a few properties. By clicking on the Info tap you will be able to see some useful information for the specific Content Node.
+
+![Overview of the Content info](images/content-info.png)
+
+Here you can see the direct link to the front-end of the specific Content Node as well as a handy history overview that shows who has done what at what time. Lastly you can see some general information such as Status, Creation Date and a direct link to the Document Type so you can edit it without leaving the current view.
+
+Lastly you can either Save, Save and publish, Schedule a publication or unpublish the Content Node. You can change the action by clicking the small up arrow next in the green button in the lower right corner.
 
 ## Media
 
 Media items are used to store images and videos in the Media section. These items can be referenced from your content. You are also able to create folders in the Media section to keep all your Media Items sorted.
+
+![Overview of the Media section](images/media.png)
+
+A handy feature is that if you have a Media Picker in your Content Node and you upload an image it will automatically be added in the Media Section.
 
 ## Settings
 
@@ -76,8 +94,6 @@ In this section you are able to create two way relationships and query the paren
 
 The log viewer is a view where you can go through all your logs. You are able to filter on warnings, errors or critical Log Types to name a few.
 
-![Log Viewer overview](images/log-viewer.png)
-
 ### Languages
 
 Here you will be able to manage your language variants. Depending on what plan you have chosen you will be able to have more that one language.
@@ -87,8 +103,6 @@ Here you will be able to manage your language variants. Depending on what plan y
 The Headless node in the Settings tree is unique as it is only featured in Umbraco Headless. From here you will be able to manage the APIs as well as create and manage your Webhooks.
 
 -   API Browser: In the API Browser you are able to test your API end-points. You can read more in the [API Browser article]()
-
-![API Browser](images/api-browser.png)
 
 -   Webhooks: You are also able to create and manage your Webhooks in the settings. You can read more in our [Webhooks article]()
 
