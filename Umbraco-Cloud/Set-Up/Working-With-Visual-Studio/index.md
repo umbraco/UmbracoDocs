@@ -19,9 +19,10 @@ In this article you will find:
 ## The Visual Studio Solution
 If you're writing a lot of custom code (or like Intellisense), we recommend the following setup:
 
-A Visual Studio solution with
-* a Website Project for the Umbraco site (coming from the cloned git repository from the Umbraco Cloud Project), and
-* a Class Library Project for the code that will be created for the Umbraco site - this can be MVC Controllers, WebApi Controllers, Surface Controllers or data access plus whatever else you might need to write code for.
+A Visual Studio solution with a
+
+* Website Project for the Umbraco site (coming from the cloned git repository from the Umbraco Cloud Project), and
+* Class Library Project for the code that will be created for the Umbraco site - this can be MVC Controllers, WebApi Controllers, Surface Controllers or data access plus whatever else you might need to write code for.
 
 Below is a screenshot of our recommendation on how the projects should be configured. Here we use the following naming conventions: `*.Web` for the Umbraco website and `*.Core` for the accompanying code.
 

@@ -64,7 +64,7 @@ The current implementation doesn't use the field alias, but the caption. There's
 The `Umbraco.Forms.Data.StringHelpers` class contains helper methods for parsing magic strings:
 
 ```csharp
-// Does not parse Record-related magic strings - they are simply removed.
+// Does not parse Record-related magic strings - they are removed.
 public static string ParsePlaceHolders(HttpContext context, string value)
 
 // Uses the passed in Record to parse Record-related magic strings
