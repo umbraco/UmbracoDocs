@@ -17,6 +17,12 @@ TODO
 // This is supposed to be more of a general description of the project, right?
 // We should also in this section link to Umbraco.com landing pages on the product.
 
+## How to setup a Headless project
+
+- Where?
+- How?
+- Choose a plan?
+
 ## [API Documentation for the Umbraco Headless endpoints](API-Documentation/)
 
 Reference documentation for the two APIs available, as well as details about common HTTP headers, versioning, REST Standard and how to work with authentication and authorization.
