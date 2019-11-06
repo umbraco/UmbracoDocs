@@ -96,3 +96,20 @@ For **Umbraco Pre v7.6**
 ```
 
 This will set Umbraco to store `umbraco.config` in the ASP.NET temporary folder.
+
+For **Umbraco V8**
+
+You will need to set the local temporary storage value by adding this to your web.config, in the appSettings section.
+
+
+```xml
+<add key="Umbraco.Core.LocalTempStorage" value="EnvironmentTemp" />
+```
+
+In addition, you will need to set the Lucene Directory Factory value as well.
+
+```xml
+<add key="Umbraco.Examine.LuceneDirectoryFactory" value="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory, Examine" />
+```
+
+Depending on your requirements, you might need to set the above value to be Examine.LuceneEngine.Directories.TempEnvDirectoryFactory.
