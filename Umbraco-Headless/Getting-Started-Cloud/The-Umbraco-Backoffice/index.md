@@ -1,14 +1,14 @@
-# Tour of the Backoffice
+# Tour of the Umbraco Backoffice
 
-In this article you will get a brief introduction to the Umbraco Backoffice.
+In this article you will get an introduction to the different sections in the Umbraco Backoffice.
 
 ## Login screen
 
-When you log into the backoffice of your project you will be asked to log in.
+When you go to the backoffice of your Umbraco Headless project you will be asked to log in.
 
 ![Login Screen](images/login.png)
 
-From here you are able to log in with your credentials.
+From here you are able to log in with the credentials used when the project was created.
 
 ## Sections
 
@@ -16,7 +16,7 @@ The backoffice is devided in specefic sections e.g. Content, Media and Settings.
 
 ![Sections of the backoffice](images/sections.png)
 
-The sections menu is located in the top left corner of the screen.
+The sections menu is located in the top-left corner of the screen.
 
 ## Section Tree
 
@@ -24,13 +24,15 @@ Every section has a section tree that gives you an overview of the content you h
 
 ![Section tree](images/section-tree.png)
 
-Folders and nested content can be expanded by clicking the down arrow next to the node. This can also be done by double-clicking on the node.
+Folders and nested content can be expanded by clicking the arrow next to the node. This can also be done by double-clicking on the node.
 
 ### Nodes
 
-Every item you have is considered a node. Weather it is a page, a media item or content in the content section.
+Every item you have is considered a node. It could be a media item or content in the content section.
 
 ## Dashboard
+
+Every section in the Umbraco backoffice has a default dashboard associated with them. The first thing you will see when accessing the backoffice on your Umbraco Headless project is the "Welcome" dashboard, where you can find links to news and resources useful to your project. 
 
 The Dashboard is where you can see what environment you are currently working on and you will also be able to navigate to the front-end of your headless project as well as navigate to the project on Umbraco.io.
 

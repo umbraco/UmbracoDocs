@@ -6,12 +6,6 @@ versionFrom: 8.0.0
 
 [INTRO TEXT]
 
-## How to setup a Headless project
-
-- Where?
-- How?
-- Choose a plan?
-
 ## [Create a basic Headless project](Creating-a-Headless-project)
 
 A step-by-step guide on how to setup and build a small and basic Umbraco Headless project. This is a great place to start if you are new to Umbraco, as it will explain some of the default concepts and you will learn how to create content from scratch.
