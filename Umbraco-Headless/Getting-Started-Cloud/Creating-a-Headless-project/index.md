@@ -34,7 +34,8 @@ Document Types are managed from the **Settings** section in the Umbraco backoffi
 
 In order to get started with our first Document Type, follow these steps:
 
-1. Right-click on the Document Types folder, or select the three elipses on the right, when hovering the folder.
+1. Right-click on the Document Types folder and choose **+ Create...**.
+    * Or select the three elipses on the right, when hovering the folder.
 2. Choose the first option: **Document Type**.
 3. Give the new Document Type a name like *Home Page*.
 4. Save the Document Type by selecting the green **Save** button in the bottom-right corner.
@@ -88,11 +89,71 @@ Following the same steps, let's add a few more properties to the *Content* group
 | Intro Text | *Textarea* Data Type     |
 | PromoImage | *Media Picker* Data Type |
 
+:::tip
+**Media Picker**
+
+This editor let's you upload or select an existing media item from the Media section, and add it to your content.
+:::
+
 With these properties added our Document Type now looks something like this:
 
 ![More properties added to Document Type](images/DocType-More-Properties.png)
+
+Remember to save the Document Type by selecting the green **Save** button in the bottom-right.
 
 This is a very simplified version of a Document Type, and you are welcome to add more groups and properties.
 
 ## Creating a Document Type Collection
 
+So far, we've created a single Document Type with some text fields and a media picker. Before we start creating the actual content, we are going to add a few more Document Types, to allow for more variation in our Content section.
+
+We will now expand on our site by adding a **Document Type Collection**.
+
+1. Right-click on the Document Types folder and choose **+ Create...**.
+    * Or select the three elipses on the right, when hovering the folder.
+2. Choose the second option: **Document Type Collection...**.
+
+:::tip
+**Document Type Collections**
+
+When working with content you might want to be able to relate certain types of nodes to each other. This could be articles you would like to nest under a News section, or it could be a Blog where it should be possible to create blog posts.
+
+The Document Type Collection allows you to create 2 Document Types in one go, and at the same time, they will be given a parent/child relationship.
+
+Example:
+**Parent Document Type**: News Area
+**Item Document Type**: News Article
+
+In the Content section, you will with this setup be able to create a News Area content node, and then create your News Articles under that node. 
+:::
+
+For our Headless project, we will want it to be possible to create blog posts under a blog area.
+
+3. Name the Parent Document Type *Blog Area*.
+4. Name the Child Document Type *Blog Post*.
+5. Select **Create** to setup the two Document Types.
+
+![Document Type Collection](images/Create-DocType-Collection.png)
+
+Once the Document Types have been created you will be redirected to the Item Document Type - in our case the *Blog Post*.
+
+Following the steps outlined earlier in this tutorial, add a *Content* group and a few properties to both the *Blog Post* and the *Blog Area* Document Types.
+
+**Blog Post**
+
+| Name        | Property Settings           |
+| ----------- | --------------------------- |
+| SubTitle    | *Textstring* Data Type      |
+| MainContent | *Richtext Editor* Data Type |
+
+**Blog Area**
+
+| Name            | Property Settings        |
+| --------------- | ------------------------ |
+| BlogDescription | *Textarea* Data Type     |
+
+## Setting permissions on Document Types
+
+
+
+## Creating content

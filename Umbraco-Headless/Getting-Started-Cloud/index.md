@@ -14,6 +14,10 @@ A step-by-step guide on how to setup and build a small and basic Umbraco Headles
 
 In this article you can learn more about the Umbraco backoffice which is the interface you will be using for creating and managing the content for your Umbraco Headless project. The backoffice contains multiple sections as well as a handful of Headless specific features.
 
+### [Umbraco Users and API Keys]()
+
+// We need an article explaining these things!
+
 ## [The Umbraco Headless Portal](The-Headless-Portal)
 
 Managing the Headless project it self is done from the Headless Portal. Here you will have an overview of the projects environments and team members, the pricing tier you are running and it is also from the Portal that deployments between environments is handled.
