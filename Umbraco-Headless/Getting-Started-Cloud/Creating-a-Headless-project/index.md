@@ -247,6 +247,8 @@ Now you have some content on your Umbraco Headless project that you can start us
 
 You can use the Umbraco Headless API endpoints to fetch this content to where you need it. 
 
+// Need link to guides on how to use the samples here, I think.
+
 ## Testing your content against the Umbraco Headless API endpoints
 
 In order to test how the content you've created will be formatted, when fetched through the Umbraco Headless API endpoints, you can use the [API Browser](../API-Browser) in the Settings section of the backoffice. 
