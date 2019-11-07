@@ -176,7 +176,75 @@ However, once you've checked this permission setting on one Document Type, it wi
     * Doing this, will allow us to create content of the Blog Area type under our Home Page.
 5. **Save** the Document Type.
 
-Now we're ready to start creating our content.
+With the permissions set, we are now ready to start working on the content for the Headless project.
 
 ## Creating content
 
+In this next step of the tutorial, we will start creating content. The content we're going to create will be defined by the Document Types we've created, and you will see how the choices we've made impacts the editing experience one we start working with the content.
+
+1. Go to the **Content** section.
+2. Right-click on the Content tree and choose **+ Create...**.
+    * Or select the three elipses on the right, when hoverin*g the tree.
+
+![Creating our first content node](images/Create-First-Content.png)
+
+We now have the option to create a content item based on our Home Page Document Type.
+
+3. Select the **Home Page**.
+4. Give the content item a name: *Welcome to Umbraco Headless*.
+5. Add some text to both the *Heading* and the *Intro text* properties.
+6. To choose an image for the *PromoImage* property, select the plus-sign.
+7. In the dialog you can do either of the following the choose an image:
+    * Select the **Upload** button to choose an image from your file explorer or
+    * Drag an image directly into the dialog.
+8. Once you've chosen an image, select it in the dialog and click the green **Select** button in the bottom of the dialog.
+
+:::tip
+**Media items and images**
+
+When you add media and images to your content using the default Media Picker Data Type, the items will automatically be added to the media library you can find in the **Media** section of the backoffice.
+
+Select the **Media** section in the top navigation bar, and you can browse all the media items that has been uploaded on the project.
+:::
+
+9. When you're happy with the content in the properties, select the **Save and publish** button in the bottom right.
+
+So far, our Content section looks like this:
+
+![Welcome to Headless Content node](images/Welcome-to-Headless-Content.png)
+
+10. Right-click the root node, *Welcome to Umbraco Headless*, and choose **Create...**
+    * Or select the three elipses next to the node when hovering.
+11. Select to create a **Blog Area**.
+12. Give it a name: *Blog*.
+13. (Optional) Add some text to the *BlogDescription* property.
+14. To start adding blog posts to our Blog, right-click the *Blog* node in the Content tree.
+15. Choose to **Create...** a new item based on the *Blog Post* Document Type.
+16. Give the blog post a name and add some text to the *Subtitle* and *MainContent* properties.
+
+:::tip
+**Rich Text Editor**
+
+The editor we chose for the *MainContent* property is a **Rich Text Editor**.
+
+![the Rich Text Editor](images/Rich-Text-Editor.png)
+
+It gives us a lot of flexibility when writing text, as there are multiple formatting options.
+:::
+
+17. Once you're happy with how your blog post looks, select **Save and publish**.
+18. To go back to the Blog Area, select the **arrow** next to the title of the blog post
+
+![Blog area - Grid view](images/Blog-grid.png)
+
+You will now get an overview of the blog posts you've created. So far we've only created one, and creating more is done by selecting the **Create Blog Post** in the top-left corner.
+
+We have now covered the very basics of how to create content in the Umbraco backoffice.
+
+You can now use the Umbraco Headless API endpoints to fetch this content to where you need it. 
+
+## Testing your content against the Umbraco Headless API endpoints
+
+In order to test how the content you've created will be formatted, when fetched through the Umbraco Headless API endpoints, you can use the [API Browser]() in the **Settings** section of the backoffice. 
+
+![API Browser - Content](images/API-Browser-Content.png)
