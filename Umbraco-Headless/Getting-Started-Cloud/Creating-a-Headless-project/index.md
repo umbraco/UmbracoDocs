@@ -241,10 +241,14 @@ You will now get an overview of the blog posts you've created. So far we've only
 
 We have now covered the very basics of how to create content in the Umbraco backoffice.
 
-You can now use the Umbraco Headless API endpoints to fetch this content to where you need it. 
+## What now?
+
+Now you have some content on your Umbraco Headless project that you can start using.
+
+You can use the Umbraco Headless API endpoints to fetch this content to where you need it. 
 
 ## Testing your content against the Umbraco Headless API endpoints
 
-In order to test how the content you've created will be formatted, when fetched through the Umbraco Headless API endpoints, you can use the [API Browser]() in the **Settings** section of the backoffice. 
+In order to test how the content you've created will be formatted, when fetched through the Umbraco Headless API endpoints, you can use the [API Browser](../API-Browser) in the Settings section of the backoffice. 
 
 ![API Browser - Content](images/API-Browser-Content.png)
