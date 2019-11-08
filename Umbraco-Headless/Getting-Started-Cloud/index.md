@@ -2,7 +2,7 @@
 versionFrom: 8.0.0
 ---
 
-# Getting Started with Headless (Cloud)
+# Getting Started with Headless
 
 ## [Create a basic Headless project](Creating-a-Headless-project)
 

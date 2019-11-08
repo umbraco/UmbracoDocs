@@ -16,7 +16,15 @@ Content in Umbraco is based on **Document Types** which will define what type of
 
 As we go through this tutorial and start builing the content for our Headless project, you will learn more about each of these concepts and how they all work together.
 
-## Chapters / Sections
+:::note
+**New to Umbraco?**
+
+If you are completely new to Umbraco, we recommend that you take the **Backoffice Tour** we've created! You can find it by selecting the question mark in the top-right corner.
+
+![Take the Backoffice Tour](images/Backoffice-tour.png)
+:::
+
+## Overview of tutorial
 
 In this tutorial we will cover the following topic:
 
@@ -251,6 +259,6 @@ You can use the Umbraco Headless API endpoints to fetch this content to where yo
 
 ## Testing your content against the Umbraco Headless API endpoints
 
-In order to test how the content you've created will be formatted, when fetched through the Umbraco Headless API endpoints, you can use the [API Browser](../API-Browser) in the Settings section of the backoffice. 
+In order to test how the content you've created will be formatted, when fetched through the Umbraco Headless API endpoints, you can use the API Browser in the Settings section of the backoffice. 
 
 ![API Browser - Content](images/API-Browser-Content.png)
