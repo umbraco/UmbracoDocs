@@ -12,7 +12,7 @@ Please note that Umbraco Headless is a specific type of project only available v
 
 ## What is Umbraco Headless?
 
-Umbraco Headless is a SaaS offered by Umbraco. The service enables you to connect the Umbraco backoffice with any - and multiple - platforms, devices, channels etc. in order to distribute your content. 
+Umbraco Headless is a SaaS (Software as a Service) offered by Umbraco. The service enables you to connect the Umbraco backoffice with any - and multiple - platforms, devices, channels etc. in order to distribute your content. 
 
 The product comes with a set of API endpoints that enables you to provide content through Umbraco to websites, apps, smartwatches or any other platform you can think of. The idea is that you create, manage and work with content in the Umbraco backoffice and then you use the API endpoints to distribute the content wherever you want.
 
