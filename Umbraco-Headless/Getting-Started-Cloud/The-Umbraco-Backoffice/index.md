@@ -108,9 +108,9 @@ Here you will be able to manage your language variants. Depending on what plan y
 
 The Headless node in the Settings tree is unique as it is only featured in Umbraco Headless. From here you will be able to manage the APIs as well as create and manage your Webhooks.
 
--   API Browser: In the API Browser you are able to test your API end-points. You can read more in the [API Browser article]()
+-   API Browser: In the API Browser you are able to test your API endpoints.
 
--   Webhooks: You are also able to create and manage your Webhooks in the settings. You can read more in our [Webhooks article]()
+-   Webhooks: You are also able to create and manage your Webhooks in the settings.
 
 ## Users
 
