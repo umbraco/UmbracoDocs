@@ -53,7 +53,7 @@ git rebase upstream/master
 If you do this locally and then push it to your fork you will have a synced up fork to start working with! Once you have made some changes and you are happy with the result, you can create a pull request. You may have to rebase again and resolve merged conflicts if a lot of things have been merged in since your last sync.
 ![Creating a pull request](images/pull-request.png)
 
-And that is all you need to do to create a fork, sync it and make a pull request to the main repository! 
+And that is all you need to do to create a fork, sync it and make a pull request to the main repository!
 
 ### Step 4: Wait for an action
 

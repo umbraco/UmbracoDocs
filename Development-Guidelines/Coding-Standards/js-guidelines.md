@@ -22,8 +22,8 @@ If you are going to use jQuery and its dollar ($) operator, you will need to wra
 
 ```javascript
 (function($) {
-	// your code goes here
-	alert($);
+    // your code goes here
+    alert($);
 })(jQuery);
 ```
 
@@ -35,47 +35,47 @@ There are quite a few different ways to create classes in JavaScript. For Umbrac
 
 ```javascript
 Umbraco.Sys.registerNamespace("MyProject.MyNamespace");
-	
+
 MyProject.MyNamespace.NamePrinter = base2.Base.extend({
-	
-	// in order to make private methods/variables accessible
-	// to derived types, everything actually has to be public
-	// so to identify private variables, prefix with an underscore
-	
-	// private methods/variables
-	
-	_isDebug: true,
-	_timer: 100,
-	_currIndex: 0,
-	
-	_log: function (p) {
-		// this is a private method that can only be  
-		// accessed inside of this class
-		if (this._isDebug) {
-			console.dir(p);
-		}
-	}
-	
-	// public methods/variables
-	
-	name: ctorParams,
-	start: function() {
-		this._log("start method called");
-	
-		// need to create a closure so we have a reference to our
-		// current this object in the interval function
-		var _this = this;
-	
-		// this will write the name out to the console one letter
-		// at a time every _timer interval
-		setInterval(function() {           
-			if (_this._currIndex < _this.name.length) {
-			console.info(_this.name[_this._currIndex]);
-			_this._currIndex++;
-			}
-		}, _this._timer);
-	}
-	
+
+    // in order to make private methods/variables accessible
+    // to derived types, everything actually has to be public
+    // so to identify private variables, prefix with an underscore
+
+    // private methods/variables
+
+    _isDebug: true,
+    _timer: 100,
+    _currIndex: 0,
+
+    _log: function (p) {
+        // this is a private method that can only be
+        // accessed inside of this class
+        if (this._isDebug) {
+            console.dir(p);
+        }
+    }
+
+    // public methods/variables
+
+    name: ctorParams,
+    start: function() {
+        this._log("start method called");
+
+        // need to create a closure so we have a reference to our
+        // current this object in the interval function
+        var _this = this;
+
+        // this will write the name out to the console one letter
+        // at a time every _timer interval
+        setInterval(function() {
+            if (_this._currIndex < _this.name.length) {
+            console.info(_this.name[_this._currIndex]);
+            _this._currIndex++;
+            }
+        }, _this._timer);
+    }
+
 })
 ```
 
@@ -84,8 +84,8 @@ You can then use the class, as shown in example:
 ```javascript
 var printer = new NamePrinter("Shannon");
 printer.start();
-	
-// or since we exposed the name property publicly, 
+
+// or since we exposed the name property publicly,
 // we can set it after the constructor
 var printer2 = new NamePrinter();
 printer2.name = "Shannon";
@@ -100,38 +100,38 @@ Define a singleton class:
 
 ```javascript
 Umbraco.Sys.registerNamespace("MyProject.MyNamespace");
-	
+
 MyProject.MyNamespace.NamePrinterManager = base2.Base.extend({
-	
-	// in order to make private methods/variables accessible
-	// to derived types, everything actually has to be public
-	// so to identify private variables, prefix with an underscore
-	
-	// private methods/variables
-	
-	_registeredPrinters: [],
-	
-	// public methods/variables
-	
-	registerPrinter: function(printer) {
-		this._registeredPrinters[printer.name] = printer;
-	},
-	getPrinter: function(name) {
-		return this._registeredPrinters[printer.name];
-	}
-	
+
+    // in order to make private methods/variables accessible
+    // to derived types, everything actually has to be public
+    // so to identify private variables, prefix with an underscore
+
+    // private methods/variables
+
+    _registeredPrinters: [],
+
+    // public methods/variables
+
+    registerPrinter: function(printer) {
+        this._registeredPrinters[printer.name] = printer;
+    },
+    getPrinter: function(name) {
+        return this._registeredPrinters[printer.name];
+    }
+
 }, { // Static members
-	
-	// private methods/variables
-	_instance: null,
-			
-	// Singleton accessor
-	getInstance: function () {
-		if(this._instance == null)
-			this._instance = new MyProject.MyNamespace.NamePrinterManager();
-		return this._instance;
-	}
-	
+
+    // private methods/variables
+    _instance: null,
+
+    // Singleton accessor
+    getInstance: function () {
+        if(this._instance == null)
+            this._instance = new MyProject.MyNamespace.NamePrinterManager();
+        return this._instance;
+    }
+
 });
 ```
 
@@ -145,18 +145,18 @@ MyProject.MyNamespace.NamePrinterManager.getInstance().registerPrinter(printer);
 
 ## Static classes
 
-Sometimes its useful to have static classes that require no constructor. Before you make one of these, definitely make sure that you won't require different instances of one.
+Sometimes it's useful to have static classes that require no constructor. Before you make one of these, definitely make sure that you won't require different instances of one.
 
 An example of static classes:
 
-```javascript	
+```javascript
 Umbraco.Sys.registerNamespace("MyProject.MyNamespace");
-	
+
 MyProject.MyNamespace.Utility = base2.Base.extend(null, {
-	
-	showMsg: function(msg) {
-		alert(msg);
-	}	 
+
+    showMsg: function(msg) {
+        alert(msg);
+    }
 })
 ```
 

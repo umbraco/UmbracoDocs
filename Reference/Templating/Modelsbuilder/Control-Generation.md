@@ -53,7 +53,7 @@ Indicates that a property implements a property type with a given alias. The att
 
 ```csharp
 public partial class Employee
-{ 
+{
   [ImplementPropertyType("employeeAge")]
   public int Age { get { return this.GetPropertyValue<int>("employeeAge"); } }
 }

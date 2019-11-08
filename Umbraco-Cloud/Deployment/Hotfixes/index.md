@@ -12,7 +12,7 @@ Normally you would do this, by making the hotfix locally, push it to the Develop
 
 Following the workflow of Umbraco Cloud, you should never make changes directly on your Live environment. You should only make changes on the Live environment if that's the only environment you have. Read the [Project overview](../../Getting-Started/Project-overview/) article to learn more about environments on Umbraco Cloud.
 
-With that said, it **is** possible to apply selected changes to your Live environment without breaking the workflow of Umbraco Cloud. 
+With that said, it **is** possible to apply selected changes to your Live environment without breaking the workflow of Umbraco Cloud.
 
 There are two approaches you can use:
 
@@ -31,6 +31,3 @@ Another way to apply a hotfix to a Live environment would be to clone down both 
 ![Manual move](images/hotfix-manual-move.gif)
 
 Read the guide here: [Move files manually](Move-files-manually/)
-
-
-

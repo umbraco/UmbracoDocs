@@ -64,7 +64,7 @@ If within your implementation there are certain lines of code that you think may
 
 ```csharp
 var profiler = ApplicationContext.ProfilingLogger;
-using(profiler.DebugDuration<Products>("Artificially Slow Example"))
+using (profiler.DebugDuration<Products>("Artificially Slow Example"))
 {
     // you would place the code you wanted to measure in here...
     // just make this sleep for a second, for example purposes:

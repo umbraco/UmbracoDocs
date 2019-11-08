@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # Build your own editor
 
-Create a file in `/app_plugins/yourpackage/editor.html` and add the following to the editor.html file: 
+Create a file in `/app_plugins/yourpackage/editor.html` and add the following to the editor.html file:
 
 ```html
 <textarea rows="1" umb-auto-resize ng-model="control.value" ng-style="control.editor.config"></textarea>
@@ -29,12 +29,12 @@ Save the file and add an editor to the `/app_plugins/yourpackage/package.manifes
 }
 ```
 
-Add a new file: `/app_plugins/yourpackage/editor.cshtml` - this file will handle rendering the entered data  - this path is done by convention so: 
+Add a new file: `/app_plugins/yourpackage/editor.cshtml` - this file will handle rendering the entered data  - this path is done by convention so:
 
 - view: 'editor' => `views/partials/grid/editors/editor.cshtml`
 - view: '/app_plugins/path.html' => `/app_plugins/path.cshtml`
 
-If you wish to use something entirely different you can give the editor a separate `render` value which follow the same conventions
+If you wish to use something entirely different you can give the editor a separate `render` value which follow the same conventions.
 
 ```json
 {
@@ -46,7 +46,7 @@ If you wish to use something entirely different you can give the editor a separa
 ```
 
 ### Grid editor controller
-If you are building something slightly more complex then a text area, you will need to add a controller to the grid editor view. So first add a ng-controller attribute to the grid editor html - this works like building a property editor: 
+If you are building something slightly more complex then a text area, you will need to add a controller to the grid editor view. So first add a ng-controller attribute to the grid editor html - this works like building a property editor:
 
 ```html
 <div ng-controller="my.custom.grideditorcontroller">
@@ -54,15 +54,15 @@ If you are building something slightly more complex then a text area, you will n
 </div>
 ```
 
-To wire up a controller to this view, create the file `/app_plugins/yourpackage/editor.controller.js` and add a standard angular controller declaration: 
+To wire up a controller to this view, create the file `/app_plugins/yourpackage/editor.controller.js` and add a standard angular controller declaration:
 
 ```js
-angular.module("umbraco").controller("my.custom.grideditorcontroller", function($scope){
+angular.module("umbraco").controller("my.custom.grideditorcontroller", function ($scope) {
     $scope.control.value = "my new value";
 });
 ```
 
-Finally, we need to tell Umbraco to load this JavaScript controller when the Umbraco application boots. This is like building a property editor. Add your JavaScript (and css dependencies) in the `package.manifest` file in the `/yourpackage` folder, and configure it to load your controller file. 
+Finally, we need to tell Umbraco to load this JavaScript controller when the Umbraco application boots. This is like building a property editor. Add your JavaScript (and css dependencies) in the `package.manifest` file in the `/yourpackage` folder, and configure it to load your controller file.
 
 ```json
 {
@@ -84,7 +84,7 @@ Finally, we need to tell Umbraco to load this JavaScript controller when the Umb
 }
 ```
 
-So to summarize, to create a custom grid editor from scratch, you will need to: 
+So to summarize, to create a custom grid editor from scratch, you will need to:
 
 - Create a grid editor view `.html` file
 - Create a grid render `.cshtml` file
@@ -94,8 +94,8 @@ So to summarize, to create a custom grid editor from scratch, you will need to:
 This process tries to be as close to building property editors as currently possible.
 
 
-### Rendering grid editor content 
-Next add this c# to the .cshtml file: 
+### Rendering grid editor content
+Next add this c# to the .cshtml file:
 
 ```csharp
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>

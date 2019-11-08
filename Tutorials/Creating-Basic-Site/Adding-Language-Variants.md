@@ -2,7 +2,7 @@
 versionFrom: 8.0.0
 ---
 
-# Adding Language Variants 
+# Adding Language Variants
 
 Now that we have a basic site set up, let's make the site multilingual by making variations of our content in one more language. For this we will make a Danish version of the `Contact Us` page. At this point your page should look like this:
 
@@ -18,13 +18,17 @@ As you can see there are several options, to add a fallback language, make it ma
 
 ## Enabling Language Variants on Document Types and Properties
 
-Now head on over to **_Document Types > Simple Content Page > Permissions_** and check the `Allow varying by culture` checkbox, now click save and go to the **_Design_** tab. 
+<!-- vale valeStyle.Hyperbolic = NO -->
+
+Now head on over to **_Document Types > Simple Content Page > Permissions_** and check the `Allow varying by culture` checkbox, now click save and go to the **_Design_** tab.
+
+<!-- vale valeStyle.Hyperbolic = YES -->
 
 We will now edit the settings of our property editors, so click on the little gear icon ⚙ for the **_Page Title_** editor and again check the `Allow varying by culture` checkbox.
 
 ![Allow property editor Language Variants](images/allow-varying-property-editor.png)
 
-For now we will leave the **_Body Text_** property editor unchanged, so click save in the bottom right corner and head on over to **_Content section_**. 
+For now we will leave the **_Body Text_** property editor unchanged, so click save in the bottom right corner and head on over to **_Content section_**.
 
 You will now find a language dropdown above your content tree - if it's not there, you might need to refresh the page:
 

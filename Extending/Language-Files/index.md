@@ -1,6 +1,8 @@
 ---
 versionFrom: 7.0.0
 needsV8Update: "true"
+meta.Title: "Language Files & Localization"
+meta.Description: "Language files are used to translate the Umbraco backoffice user interface so that end users can use Umbraco in their native language."
 ---
 
 # Language Files & Localization
@@ -38,20 +40,20 @@ Current languages that are included in the core are:
 ### Core language files
 The core Umbraco language files are found at the following location within the Umbraco source:
 
-	Umbraco-CMS/src/Umbraco.Web.UI/Umbraco/Config/Lang/
-	
-These language files are the ones shipped with Umbraco and should not be modified. 
+    Umbraco-CMS/src/Umbraco.Web.UI/Umbraco/Config/Lang/
+
+These language files are the ones shipped with Umbraco and should not be modified.
 
 ### Package language files
 If you are a package developer, [see here for docs on how to include translations for your own package](Language-Files-For-Packages/index.md), package language files are located in:
 
-	~/app_plugins/mypackage/lang/{language}.xml
+    ~/app_plugins/mypackage/lang/{language}.xml
 
 ### User language files
 If you want to override Umbraco core translations or translations shipped with packages, you can do that too, these files are located here:
 
-	~/config/lang/{language}.user.xml
-	
+    ~/config/lang/{language}.user.xml
+
 By default, these files are empty but you can add any new keys you want or override existing ones with your own translations. The nice part about the user files is that they will not get overwritten by the installer when you upgrade your Umbraco versions.
 
 ## Using the language keys
@@ -71,15 +73,15 @@ In the Umbraco backoffice UI, labels can be localized with the `localize` direct
 
 ```xml
 <button>
-	<localize key="dialog_myKey">Default value</localize>
+    <localize key="dialog_myKey">Default value</localize>
 </button>
 ```
-  
+
 The localize directive can also be used as an attribute like below where the value of the title attribute is then populated with the dictionary key "title_name" from the language file using "@title_name".
 
 ```xml
 <button localize="title" title="@title_name">
-	<localize key="dialog_myKey">Default value</localize>
+    <localize key="dialog_myKey">Default value</localize>
 </button>
 ```
 
@@ -87,7 +89,7 @@ Or from a controller by using the `LocalizationService` which returns an async t
 
 ```javascript
 localizationService.localize("dialog_myKey").then(function(value){
-				element.html(value);
+                element.html(value);
 });
 ```
 
@@ -97,41 +99,41 @@ As Umbraco is a continually evolving product it is inevitable that new text is a
 
 If a translation is missing, the key "alias" used will be shown within the user interface, as an example:
 
-	[assignDomain]
+    [assignDomain]
 
 The language files are XML files with a straight-forward layout as seen below.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <language alias="en" intName="English (UK)" localName="English (UK)" lcid="" culture="en-GB">
-	<creator>
-		<name>The Umbraco community</name>
-		<link>https://our.umbraco.com</link>
-	</creator>
-	<area alias="actions">
-		<key alias="assignDomain">Culture and Hostnames</key>
-		<key alias="auditTrail">Audit Trail</key>
-		...
-	</area>
-	...
+    <creator>
+        <name>The Umbraco community</name>
+        <link>https://our.umbraco.com</link>
+    </creator>
+    <area alias="actions">
+        <key alias="assignDomain">Culture and Hostnames</key>
+        <key alias="auditTrail">Audit Trail</key>
+        ...
+    </area>
+    ...
 </language>
 ```
-	
+
 In the above example of a missing translation for "assignDomain", locate this string in the en.xml file and then copy the whole "Key" element into the relevant language file. Then you can translate the text, as an example here is the Spanish version of the above snippet:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <language alias="es" intName="Spanish" localName="español" lcid="10" culture="es-ES">
-	<creator>
-		<name>The Umbraco community</name>
-		<link>https://our.umbraco.com</link>
-	</creator>
-	<area alias="actions">
-		<key alias="assignDomain">Administrar hostnames</key>
-		<key alias="auditTrail">Auditoría</key>
-		...
-	</area>
-	...
+    <creator>
+        <name>The Umbraco community</name>
+        <link>https://our.umbraco.com</link>
+    </creator>
+    <area alias="actions">
+        <key alias="assignDomain">Administrar hostnames</key>
+        <key alias="auditTrail">Auditoría</key>
+        ...
+    </area>
+    ...
 </language>
 ```
 

@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # Email Templates
 
-From version 6+ we now include a new Workflow 'Send email with template (Razor)' that allows you to pick a Razor view file that will then be used to send out a *pretty HTML email* for form submissions. 
+From version 6+ we now include a new Workflow 'Send email with template (Razor)' that allows you to pick a Razor view file that will then be used to send out a *pretty HTML email* for form submissions.
 
 We include an example email template for you to look at and understand how it works found at `~/Views/Partials/Forms/Emails/`.
 
@@ -42,7 +42,7 @@ Below is an example of an email template:
 
 <h2>Favourite Colors</h2>
 <ul>
-    @foreach(var color in Model.GetValues("favColors")){
+    @foreach (var color in Model.GetValues("favColors")) {
         <li>@color</li>
     }
 </ul>
@@ -64,7 +64,7 @@ Below is an example of an email template:
             @(Convert.ToDateTime(field.GetValue()).ToString("f"))
             break;
 
-        case "FieldType.CheckboxList.cshtml":            
+        case "FieldType.CheckboxList.cshtml":
             foreach (var color in field.GetValues())
             {
                 @color<br/>

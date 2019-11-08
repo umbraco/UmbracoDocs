@@ -22,7 +22,7 @@ Umbraco logs on Cloud works almost the same as on a [normal installation](../../
 
 ## Deploy logs
 
-It is possible that a deployment failed so that it is not the active deployment at the moment, there could be valuable information in the logs of this deployment. You can find out what the last attempted deploy was by going to your Kudu URL and adding `/api/deployments` to the URL (so for example: `https://stage-mysite.scm.s1.umbraco.io/api/deployments`. This will give you some JSON data and the first entry in here is the newest attempted deploy. 
+It is possible that a deployment failed so that it is not the active deployment at the moment, there could be valuable information in the logs of this deployment. You can find out what the last attempted deploy was by going to your Kudu URL and adding `/api/deployments` to the URL (so for example: `https://stage-mysite.scm.s1.umbraco.io/api/deployments`. This will give you some JSON data and the first entry in here is the newest attempted deploy.
 You can also find some information in __~/site/wwwroot/data/deploy.log__ if there are for example extraction errors.
 
 ## Environment logs
@@ -40,8 +40,8 @@ When you're in Kudu, you can go up to your `site` folder as described in the 5 s
 
 It is possible to enable IIS Logging on each of your Umbraco Cloud environments. There is a rolling size limit on the log files of 100 MB. This means that once the limit is reached, the oldest log files will be overwritten by new ones.
 
-You can enable the logging from the **Advanced** menu found under *Settings* in the project overiew for the project. The logs will be accessible from KUDU in `C:\home\LogFiles\http`.
+You can enable the logging from the **Advanced** menu found under *Settings* in the project overview for the project. The logs will be accessible from KUDU in `C:\home\LogFiles\http`.
 
-Please be aware when you are enabling IIS logging for the environment the site will have to restart. 
+Please be aware when you are enabling IIS logging for the environment the site will have to restart.
 
 Find more information about IIS Logging on [the Official Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).

@@ -60,24 +60,24 @@ For reference, here is a list of the weighting values for the default Umbraco da
 <table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Weight</th>
-      <th>Language Key</th>
-      <th>C# Type</th>
+    <th>Name</th>
+    <th>Weight</th>
+    <th>Language Key</th>
+    <th>C# Type</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Getting Started</td>
-      <td>10</td>
-      <td>dashboardTabs/contentIntro</td>
-      <td>Umbraco.Web.Dashboards.ContentDashboard</td>
+    <td>Getting Started</td>
+    <td>10</td>
+    <td>dashboardTabs/contentIntro</td>
+    <td>Umbraco.Web.Dashboards.ContentDashboard</td>
     </tr>
     <tr>
-      <td>Redirect URL Management</td>
-      <td>20</td>
-      <td>dashboardTabs/contentRedirectManager</td>
-      <td>Umbraco.Web.Dashboards.RedirectUrlDashboard</td>
+    <td>Redirect URL Management</td>
+    <td>20</td>
+    <td>dashboardTabs/contentRedirectManager</td>
+    <td>Umbraco.Web.Dashboards.RedirectUrlDashboard</td>
     </tr>
   </tbody>
 </table>
@@ -86,18 +86,18 @@ For reference, here is a list of the weighting values for the default Umbraco da
 <table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Weight</th>
-      <th>Language Key</th>
-      <th>C# Type</th>
+    <th>Name</th>
+    <th>Weight</th>
+    <th>Language Key</th>
+    <th>C# Type</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Content</td>
-      <td>10</td>
-      <td>dashboardTabs/mediaFolderBrowser</td>
-      <td>Umbraco.Web.Dashboards.MediaDashboard</td>
+    <td>Content</td>
+    <td>10</td>
+    <td>dashboardTabs/mediaFolderBrowser</td>
+    <td>Umbraco.Web.Dashboards.MediaDashboard</td>
     </tr>
   </tbody>
 </table>
@@ -106,42 +106,42 @@ For reference, here is a list of the weighting values for the default Umbraco da
 <table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Weight</th>
-      <th>Language Key</th>
-      <th>C# Type</th>
+    <th>Name</th>
+    <th>Weight</th>
+    <th>Language Key</th>
+    <th>C# Type</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Welcome</td>
-      <td>10</td>
-      <td>dashboardTabs/settingsWelcome</td>
-      <td>Umbraco.Web.Dashboards.SettingsDashboard</td>
+    <td>Welcome</td>
+    <td>10</td>
+    <td>dashboardTabs/settingsWelcome</td>
+    <td>Umbraco.Web.Dashboards.SettingsDashboard</td>
     </tr>
     <tr>
-      <td>Examine Management</td>
-      <td>20</td>
-      <td>dashboardTabs/settingsExamine</td>
-      <td>Umbraco.Web.Dashboards.ExamineDashboard</td>
+    <td>Examine Management</td>
+    <td>20</td>
+    <td>dashboardTabs/settingsExamine</td>
+    <td>Umbraco.Web.Dashboards.ExamineDashboard</td>
     </tr>
     <tr>
-      <td>Published Status</td>
-      <td>30</td>
-      <td>dashboardTabs/settingsPublishedStatus</td>
-      <td>Umbraco.Web.Dashboards.PublishedStatusDashboard</td>
+    <td>Published Status</td>
+    <td>30</td>
+    <td>dashboardTabs/settingsPublishedStatus</td>
+    <td>Umbraco.Web.Dashboards.PublishedStatusDashboard</td>
     </tr>
     <tr>
-      <td>Models Builder</td>
-      <td>40</td>
-      <td>dashboardTabs/settingsModelsBuilder</td>
-      <td>Registered in ModelsBuilder package.manifest</td>
+    <td>Models Builder</td>
+    <td>40</td>
+    <td>dashboardTabs/settingsModelsBuilder</td>
+    <td>Registered in ModelsBuilder package.manifest</td>
     </tr>
     <tr>
-      <td>Health Check</td>
-      <td>50</td>
-      <td>dashboardTabs/settingsHealthCheck</td>
-      <td>Umbraco.Web.Dashboards.HealthCheckDashboard</td>
+    <td>Health Check</td>
+    <td>50</td>
+    <td>dashboardTabs/settingsHealthCheck</td>
+    <td>Umbraco.Web.Dashboards.HealthCheckDashboard</td>
     </tr>
   </tbody>
 </table>
@@ -150,18 +150,18 @@ For reference, here is a list of the weighting values for the default Umbraco da
 <table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Weight</th>
-      <th>Language Key</th>
-      <th>C# Type</th>
+    <th>Name</th>
+    <th>Weight</th>
+    <th>Language Key</th>
+    <th>C# Type</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Getting Started</td>
-      <td>10</td>
-      <td>dashboardTabs/memberIntro</td>
-      <td>Umbraco.Web.Dashboards.MembersDashboard</td>
+    <td>Getting Started</td>
+    <td>10</td>
+    <td>dashboardTabs/memberIntro</td>
+    <td>Umbraco.Web.Dashboards.MembersDashboard</td>
     </tr>
   </tbody>
 </table>
@@ -170,18 +170,18 @@ For reference, here is a list of the weighting values for the default Umbraco da
 <table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Weight</th>
-      <th>Language Key</th>
-      <th>C# Type</th>
+    <th>Name</th>
+    <th>Weight</th>
+    <th>Language Key</th>
+    <th>C# Type</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Install Umbraco Forms</td>
-      <td>10</td>
-      <td>dashboardTabs/formsInstall</td>
-      <td>Umbraco.Web.Dashboards.FormsDashboard</td>
+    <td>Install Umbraco Forms</td>
+    <td>10</td>
+    <td>dashboardTabs/formsInstall</td>
+    <td>Umbraco.Web.Dashboards.FormsDashboard</td>
     </tr>
   </tbody>
 </table>
@@ -203,7 +203,7 @@ If your dashboard is unique to your Umbraco installation then you can modify the
 ```
 
 ### Specifying permissions
-You can configure which applications/sections a dashboard will appear in, in the above examples (package.manifest or c#), you can see the alias of the section is used to control where the dashboard is allowed to appear. 
+You can configure which applications/sections a dashboard will appear in, in the above examples (package.manifest or c#), you can see the alias of the section is used to control where the dashboard is allowed to appear.
 
 Further to this, within this section, you can control which Users can see a particular dashboard based upon the *User Groups* they belong to. This is done by setting the 'access' permissions based on the *User Group* alias, you choose to deny or grant a particular User Group's access to the dashboard.
 
@@ -256,7 +256,7 @@ namespace My.Website
 ```
 
 ## Remove an Umbraco dashboard
-In previous versions of Umbraco if you wanted to remove or modify the order of a default dashboards you would ammend the `config/dashboards.config` file on disk. 
+In previous versions of Umbraco if you wanted to remove or modify the order of a default dashboards you would amend the `config/dashboards.config` file on disk.
 
 In Umbraco 8+ the configuration file approach has been removed and you need to use code to create your own *composer* to remove a dashboard. It could be a c# class that can be used to organise and customise your Umbraco application to your own needs. For example - if you wanted to remove the 'Content Dashboard' you would create a RemoveDashboard composer like this:
 

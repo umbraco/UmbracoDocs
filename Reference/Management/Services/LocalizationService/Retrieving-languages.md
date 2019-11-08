@@ -21,12 +21,12 @@ or via the `GetLanguageByIsoCode` method:
 
     // Get a reference to the language by its ISO code
     ILanguage language3 = ls.GetLanguageByIsoCode("en-US");
-    
-The culture code is the friendly name of the language in Umbraco, which for the default language is `en-US` (same as the ISO code), but for other languages is something like `English (United Kingdom)` or `Danish (Denmark)`. 
+
+The culture code is the friendly name of the language in Umbraco, which for the default language is `en-US` (same as the ISO code), but for other languages is something like `English (United Kingdom)` or `Danish (Denmark)`.
 
 The ISO code is a combination of the two-letter ISO 639-1 language code (lowercase) and two-letter ISO-3166 country code (uppercase). Eg. `en-US` for English in the United States, `en-GB` for English in the United Kingdom and `da-DK` for Danish in Denmark.
 
-All three methods will return an instance of the [ILanguage](https://our.umbraco.org/apidocs/v7/csharp/api/Umbraco.Core.Models.ILanguage.html) interface, which has traditional properties like `Id` and `Key`, but also properties specific to the language like `CultureName`, `CultureInfo` and `IsoCode`. You can see the API reference for further information on the properties of the interface.
+All three methods will return an instance of the [ILanguage](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Models.ILanguage.html) interface, which has traditional properties like `Id` and `Key`, but also properties specific to the language like `CultureName`, `CultureInfo` and `IsoCode`. You can see the API reference for further information on the properties of the interface.
 
 ### Getting all languages
 
@@ -34,7 +34,7 @@ If you need instead need a list of all installed languages, you can use the `Get
 
     // Get a collection of all languages
     IEnumerable<ILanguage> languages = ls.GetAllLanguages();
-    
+
     // Iterate over the collection
     foreach (ILanguage language in languages)
     {
@@ -50,7 +50,7 @@ If you need instead need a list of all installed languages, you can use the `Get
         <hr />
 
     }
-    
+
 As shown in the example above, you can get the `System.Globalization.CultureInfo` instance of each language, which determines how numbers, dates and similar should be either parsed or formatted in .NET.
 
 ## Full example

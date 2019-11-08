@@ -165,7 +165,7 @@ Now this is where things often go wrong for developers and why they often get a 
 
 So Examine feeds the query to Lucene as follows.
 
-	+nodeName:hello metaTitle:hello
+    +nodeName:hello metaTitle:hello
 
 The + specifies that it MUST meet this rule.
 
@@ -177,7 +177,7 @@ var searchCriteria = Searcher.CreateSearchCriteria(BooleanOperation.Or);
 
 Now when Examine passes the query to Lucene it will pass it as this:
 
-	nodeName:hello metaTitle:hello
+    nodeName:hello metaTitle:hello
 
 Which means give me anything where nodeName or metaTitle contain hello.  Much better.
 
@@ -189,13 +189,13 @@ var query = searchCriteria.Fields("nodeName","hello").And().Field("metaTitle",he
 
 without passing the BooleanOperation.Or into our ISearchCriteria we would get the following for our Lucene query
 
-	+nodeName:hello +metaTitle:hello
+    +nodeName:hello +metaTitle:hello
 
 Which means give me results where nodeName MUST contain hello AND metaTitle MUST contain hello.
 
 With the BooleanOperation.Or we would get this:
 
-	nodeName:hello +metaTitle:hello
+    nodeName:hello +metaTitle:hello
 
 Which means give me results where nodeName SHOULD contain hello AND metaTitle MUST contain hello.
 
@@ -207,7 +207,7 @@ var query = searchCriteria.GroupedOr(new string[] { "nodeName", "metaTitle"}, "h
 
 This would give a Lucene query that looks like this:
 
-	(nodeName:hello metaTitle:hello)
+    (nodeName:hello metaTitle:hello)
 
 You can also pass in a group of query values.
 
@@ -217,7 +217,7 @@ var query = searchCriteria.GroupedOr(new string[] { "nodeName", "metaTitle"}, ne
 
 this would end up becoming:
 
-	(nodeName:hello metaTitle:goodbye)
+    (nodeName:hello metaTitle:goodbye)
 
 I think you get the gist.
 
@@ -229,7 +229,7 @@ var query = searchCriteria.Field("nodeName","hello").And().GroupedOr(new string[
 
 This would end up being:
 
-	nodeName:hello +(metaTitle:hello metaDescription:goodbye)
+    nodeName:hello +(metaTitle:hello metaDescription:goodbye)
 
 ### Fuzzy
 Sometimes users will query your site looking for a term that they could have misspelled or is very close. Fuzzy gives you the ability to get Lucene to look for terms that look like your term.  Eg mound could be sound.
@@ -260,11 +260,11 @@ var query = searchCriteria.Fields("nodeName","paging in XSLT").Compile();
 
 When this converts it looks like this:
 
-	nodeName:"paging in XSLT"
+    nodeName:"paging in XSLT"
 
 The problem becomes apparent straight away as you can see it quotes the phrase which basically means the term is the whole phrase. What we want from Lucene is the following:
 
-	nodeName:paging in XSLT
+    nodeName:paging in XSLT
 
 What this basically means is that field nodeName needs to contain either paging, in, or XLST.
 
@@ -286,7 +286,7 @@ luceneString += "nodeName:" + term;
 
 The resultant query would look like this:
 
-	nodeName:(+paging +in +XSLT)^5 nodeName:paging in XSLT
+    nodeName:(+paging +in +XSLT)^5 nodeName:paging in XSLT
 
 The ^5 is the equivalent of .Boost(5)
 

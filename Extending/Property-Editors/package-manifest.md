@@ -79,7 +79,7 @@ The basic values on any editor are `alias`, `name` and `editor`. These three **m
     "hideLabel": true,
     "valueType": "TEXT",
     "validation": {},
-    "isReadOnly": false 
+    "isReadOnly": false
 }
 ```
 
@@ -107,7 +107,7 @@ The basic values on any editor are `alias`, `name` and `editor`. These three **m
             "description": "This is a description",
             "key": "enableStuff",
             "view": "boolean"
-        }            
+        }
     ]
 }
 ```
@@ -161,7 +161,7 @@ Similar to how the `propertyEditors` array defines one or more property editors,
         "icon": "icon-article"
     }
 ]
-```   
+```
 
 However the default grid editors are already configured in `/config/grid.editors.config.js`. You can use the file for inspiration, or see the [Grid Editors](../../Getting-Started/Backoffice/Property-Editors/Built-in-Property-Editors/Grid-Layout/Grid-Editors.md) page for more information on grid editors.
 
@@ -224,14 +224,14 @@ To associate the hosted JSON schema file to all package.manifest files you will 
 }
 ```
 
-### adding inline schema
+### Adding inline schema
 
-Editors like visual studio can use the `$schema` notation in your file.  
+Editors like visual studio can use the `$schema` notation in your file.
 
 ```json
 {
     "$schema" : "http://json.schemastore.org/package.manifest",
     "javascript": [],
-    "other properties": ""    
+    "other properties": ""
 }
 ```

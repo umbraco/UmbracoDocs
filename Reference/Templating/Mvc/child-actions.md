@@ -5,7 +5,7 @@ needsV8Update: "true"
 
 # Using MVC Child Actions in Umbraco
 
-_This section will demonstrate how to use MVC Child Actions when rendering a page in Umbraco_ 
+_This section will demonstrate how to use MVC Child Actions when rendering a page in Umbraco_
 
 ## What is an MVC Child Action
 
@@ -50,7 +50,7 @@ Also note that since this example is using a Surface Controller and if we were s
 
 ## Rendering a Child Action
 
-To render a child action in your view is really easy, call the Html.Action method, pass in the Action name and your controller's name and the route values including your model. In this case we are passing in a new instance of a custom QueryParameters class and using a current 'search' query string from the Http request:
+To render a child action in your view, call the Html.Action method, pass in the Action name and your controller's name and the route values including your model. In this case we are passing in a new instance of a custom QueryParameters class and using a current 'search' query string from the Http request:
 
 ```csharp
     @Html.Action("SearchResults", "MySearch",

@@ -13,7 +13,7 @@ The following tools have been used to create this guide:
 
 ## The Scenario
 
-You have an Umbraco Cloud project with two environments, Development and Live. 
+You have an Umbraco Cloud project with two environments, Development and Live.
 
 You have been working on building the site on a local clone of the Development environment, and now you want to send some but not all changes to the Live environment.
 
@@ -62,7 +62,7 @@ Once you've checked that everything works locally, you are ready to push to the 
 ### Push to Live
 
 9. Push the committed changes to the Live environment using Git
-10. **Note** that when changes are pushing directly to a Live environment and you have more than one environment, the changes are not automatically extracted to the site
+10. **Note** that when changes are pushed directly to a Live environment and you have more than one environment, the changes are not automatically extracted to the site
 11. Find a guide on how to extract the files, in the [Manual Extraction](../../../Set-Up/Power-Tools/Manual-extractions) article
 
 You have now applied a hotfix to the Live environment.

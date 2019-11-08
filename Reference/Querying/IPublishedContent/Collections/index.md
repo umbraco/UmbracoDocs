@@ -5,7 +5,7 @@ versionFrom: 8.1.0
 # IPublishedContent Collections
 
 All collections of `IPublishedContent` are `IEnumerable<IPublishedContent>`.
-This means that all C# LINQ statements can be used to filter and query the collections.  
+This means that all C# LINQ statements can be used to filter and query the collections.
 
 ## Collections
 
@@ -90,7 +90,7 @@ Returns all descendants of the current page (children, grandchildren etc)
 ```csharp
 <ul>
     @* Filter collection by content that has a template assigned *@
-    @foreach(var item in Model.Descendants().Where(x = x.TemplateId > 0))
+    @foreach(var item in Model.Descendants().Where(x => x.TemplateId > 0))
     {
         <li><a href="@item.Url">@item.Name</a></li>
     }
@@ -104,7 +104,7 @@ Returns all descendants of the current page (children, grandchildren etc), and t
 ```csharp
 <ul>
     @* Filter collection by content that has a template assigned *@
-    @foreach(var item in Model.DescendantsOrSelf().Where(x = x.TemplateId > 0))
+    @foreach(var item in Model.DescendantsOrSelf().Where(x => x.TemplateId > 0))
     {
         <li><a href="@item.Url">@item.Name</a></li>
     }
