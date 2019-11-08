@@ -32,12 +32,6 @@ In order to get started with Umbraco Headless you will need to create a new proj
 
 In this article you will learn how to create your first Umbraco Headless Project and go through the steps needed to get your first content published in order to start using the APIs.
 
-## [Getting Started with the APIs](Getting-Started-API/)
-
-Anything with access to the internet can use the REST APIs via HTTP to retrieve Content and Media through the Content Delivery API. Using the same approach it is also possible to create, update and delete Content, Media, Languages, Members and Relations through the Content Management API.
-
-In this article you will learn how to use the two APIs through basic HTTP calls.
-
 ## [Client libraries](Client-Libraries)
 
 In order to test your Umbraco Headless project against the API endpoints, you can use one of the samples we provide with our SDKs (Software Development Kits) for .NET Core and Node JS.
