@@ -38,6 +38,6 @@ Anything with access to the internet can use the REST APIs via HTTP to retrieve 
 
 In this article you will learn how to use the two APIs through basic HTTP calls.
 
-## [Client libraries](Client-libraries)
+## [Client libraries](Client-Libraries)
 
 In order to test your Umbraco Headless project against the API endpoints, you can use one of the samples we provide with our SDKs (Software Development Kits) for .NET Core and Node JS.
