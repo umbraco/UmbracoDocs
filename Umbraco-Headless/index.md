@@ -16,6 +16,8 @@ Umbraco Headless is a SaaS offered by Umbraco. The service enables you to connec
 
 The product comes with a set of API endpoints that enables you to provide content through Umbraco to websites, apps, smartwatches or any other platform you can think of. The idea is that you create, manage and work with content in the Umbraco backoffice and then you use the API endpoints to distribute the content wherever you want.
 
+You can sign up to be first in line for more details on the product on [Umbraco.com/Headless](https://umbraco.com/headless/).
+
 ## [API Documentation for the Umbraco Headless endpoints](API-Documentation/)
 
 Reference documentation for the two APIs available, as well as details about common HTTP headers, versioning, REST Standard and how to work with authentication and authorization.
