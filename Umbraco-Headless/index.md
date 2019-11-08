@@ -23,8 +23,8 @@ You can sign up to be first in line for more details on the product on [Umbraco.
 Reference documentation for the two APIs available, as well as details about common HTTP headers, versioning, REST Standard and how to work with authentication and authorization.
 
 - [Authentication and Authorization](API-Documentation/#authentication-and-authorization)
-- [Content Delivery API](API-Documentation/#content-delivery-api)
-- [Content Management API](API-Documentation/#content-management-api)
+- [Content Delivery API](API-Documentation/Content-Delivery)
+- [Content Management API](API-Documentation/Content-Management)
 
 ## [Getting Started with Headless](Getting-Started-Cloud/)
 
