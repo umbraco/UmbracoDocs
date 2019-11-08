@@ -28,8 +28,6 @@ It is recommended to use this browser to explore the JSON output for all the dif
 
 ## Common API Features
 
-// Removed the URLs, as it is already mentioned at the top of the article.
-
 Both the Content Delivery and the Content Management APIs share common points of configuration for access, versioning, culture and authentication/authorization, which are highlighted below.
 
 ### API Access

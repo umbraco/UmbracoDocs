@@ -1,1 +1,0 @@
-# Umbaco Headless FAQ
