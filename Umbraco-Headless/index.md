@@ -38,10 +38,6 @@ Anything with access to the internet can use the REST APIs via HTTP to retrieve 
 
 In this article you will learn how to use the two APIs through basic HTTP calls.
 
-## [Getting Started with the .NET Core Client Library](Getting-Started-DotNetCore/)
+## [Client libraries](Client-libraries)
 
-The .NET Core Client Library is an easy and convenient way of working with the Umbraco Headless APIs when you are building apps, websites, Xamarin apps or other .NET based code. This library is based on NET Standard 2.0 meaning that it can be used for almost anything .NET based.
-
-The .NET Core Client Library covers both the Content Delivery and Content Management APIs. Specifically for the Content Delivery API you can choose to build strongly typed models for your content and media. That way it becomes even more intuitive to work with.
-
-The library is available via nuget and can be installed through Visual Studio.
+In order to test your Umbraco Headless project against the API endpoints, you can use one of the samples we provide with our SDKs (Software Development Kits) for .NET Core and Node JS.
