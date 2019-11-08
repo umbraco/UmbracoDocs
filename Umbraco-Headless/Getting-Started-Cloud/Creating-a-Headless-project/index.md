@@ -1,3 +1,7 @@
+---
+versionFrom: 8.0.0
+---
+
 # Creating / Building a Headless project from scratch
 
 In this article you can learn how to get started with your Umbraco Headless project.

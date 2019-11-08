@@ -1,3 +1,7 @@
+---
+versionFrom: 8.0.0
+---
+
 # Client Libraries
 
 In order for you to get the best start with Umbraco Headless and get an overview of the potential of the product, there are some SDK's (Software Development Kits) that you can try out. 
