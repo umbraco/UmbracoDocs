@@ -29,11 +29,11 @@ To add an action you need to add it between the `<actions>` elements. Could look
 
 ## Standard elements on all actions
 
-All actions are a <Action> node element (notice the uppercase A)
+All actions are a `<Action>` node element (notice the uppercase A).
 
-### Allow document type
+### Allow Document Type
 
-Allows a document type to be created below another document type. Ex: Allow `TextPage` to be allowed under `HomePage`.
+Allows a Document Type to be created below another Document Type. Ex: Allow `TextPage` to be allowed under `HomePage`.
 
 Alias: `allowDocumentType`
 
