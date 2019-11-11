@@ -47,8 +47,8 @@ public class ExamineEvents : IComponent
 
     public void Initialize()
     {
-        if (!_examineManager.TryGetIndex("ExternalIndex", out IIndex index))
-            throw new InvalidOperationException("No index found by name ExternalIndex");
+        if (!_examineManager.TryGetIndex(Constants.UmbracoIndexes.ExternalIndexName, out IIndex index))
+           throw new InvalidOperationException($"No index found by name {Constants.UmbracoIndexes.ExternalIndexName}");
 
         //we need to cast because BaseIndexProvider contains the TransformingIndexValues event
         if (!(index is BaseIndexProvider indexProvider))
