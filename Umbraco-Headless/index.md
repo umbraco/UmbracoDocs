@@ -2,15 +2,15 @@
 versionFrom: 8.0.0
 ---
 
-# Umbraco Headless
+# Umbraco Heartcore
 
-In this section you will find documentation on how to work with Umbraco Headless.
+In this section you will find documentation on how to work with Umbraco Heartcore.
 
 It includes API documentation, the basics on how to get started and how to work with the available Client Libraries.
 
-Please note that Umbraco Headless is a specific type of project only available via Umbraco Cloud.
+Please note that Umbraco Heartcore is a specific type of project only available via Umbraco Cloud.
 
-## What is Umbraco Headless?
+## What is Umbraco Heartcore?
 
 Umbraco Headless is a SaaS (Software as a Service) offered by Umbraco. The service enables you to create and manage content and media in the Umbraco backoffice and make it available to any - and multiple - platforms, devices, channels etc. in order to distribute your content. 
 
@@ -18,7 +18,7 @@ The product comes with a set of API endpoints that enables you to provide conten
 
 You can sign up to be first in line for more details on the product on [Umbraco.com/Headless](https://umbraco.com/headless/).
 
-## [API Documentation for the Umbraco Headless endpoints](API-Documentation/)
+## [API Documentation for the Umbraco Heartcore endpoints](API-Documentation/)
 
 Reference documentation for the two APIs available, as well as details about common HTTP headers, versioning, REST Standard and how to work with authentication and authorization.
 
@@ -26,9 +26,9 @@ Reference documentation for the two APIs available, as well as details about com
 - [Content Delivery API](API-Documentation/Content-Delivery)
 - [Content Management API](API-Documentation/Content-Management)
 
-## [Getting Started with Headless](Getting-Started-Cloud/)
+## [Getting Started with Heartcore](Getting-Started-Cloud/)
 
-In order to get started with Umbraco Headless you will need to create a new project via the Umbraco Cloud Portal and familiarize yourself with the features available. This includes the Headless section in the backoffice and creating API Keys for authentication and authorization purposes.
+In order to get started with Umbraco Heartcore you will need to create a new project via the Umbraco Cloud Portal and familiarize yourself with the features available. This includes the Headless section in the backoffice and creating API Keys for authentication and authorization purposes.
 
 In this article you will learn how to create your first Umbraco Headless Project and go through the steps needed to get your first content published in order to start using the APIs.
 
