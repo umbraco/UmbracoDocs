@@ -42,7 +42,7 @@ Package zip files can add items to Umbraco and you can change Umbraco config and
 
 ## NuGet Packages
 
-A NuGet package is a standard way of delivering Compiled Code and configuration to a .net project. NuGet packages contain dlls, and files required for the solution. for more information on NuGet packages see Microsoft's [An introduction to NuGet](https://docs.microsoft.com/en-us/nuget/what-is-nuget) documentation.
+A NuGet package is a standard way of delivering Compiled Code and configuration to a .NET project. NuGet packages contain dlls, and files required for the solution. For more information on NuGet packages see Microsoft's [An introduction to NuGet](https://docs.microsoft.com/en-us/nuget/what-is-nuget) documentation.
 
 NuGet packages can be installed using NuGet.exe via the a command line or through the [Package Manager Console](https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-powershell) within Visual Studio using a command similar to the one below: 
 
