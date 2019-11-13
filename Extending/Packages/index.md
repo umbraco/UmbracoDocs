@@ -22,3 +22,7 @@ This short tutorial will teach you how to create a package in the Umbraco backof
 ## [Package Actions](package-actions.md)
 
 Package actions are actions you want to trigger when your package gets installed. 
+
+## [Types of Package](package-types.md)
+
+There are two common types of package for Umbraco; Package zip files and NuGet Packages.
