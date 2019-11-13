@@ -26,7 +26,7 @@ An explanation of the Umbraco Cloud product upgrade process.
 Tips on finding, identifying and resolving issues.
 
 ## [Headless](../Umbraco-Headless/)
-Documentation on Umbraco Headless.
+Documentation on Umbraco Hearcore.
 
 ## [Frequently Asked Questions](Frequently-Asked-Questions/)
 Anything else not covered above.
