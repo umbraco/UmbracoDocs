@@ -10,7 +10,7 @@ When developing a package you should attempt to provide both a zip file package 
 
 ## Package zip
 
-A package zip file can be installed through the Umbraco backoffice 
+A package zip file can be installed through the Umbraco backoffice.
 
 ![Zip packages can be installed via the Umbraco backoffice package section](images/backoffice-package-section.png)
 
