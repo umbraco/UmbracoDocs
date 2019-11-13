@@ -50,7 +50,7 @@ NuGet packages can be installed using NuGet.exe via the command line or through 
 PM> Install-Package MyPackage -version 1.2
 ```
 
-NuGet packages can include any solutions files, and can be configured to run powershell scripts after installation, 
+NuGet packages can include any solutions files, and can be configured to run powershell scripts after installation. 
 
 As NuGet packages are installed outside of the Umbraco website they cannot directly manipulate any of the Umbraco settings or content during their installation. 
 
