@@ -97,7 +97,7 @@ Here you can see we added an attribute called `rootNodeName` and then retrieved 
 
 ## Examples of custom Package Actions
 
-Even though you can do whatever you want within a package action, most packages use package actions for either installing content / media or adding configuration. To help you get started here are some examples of popular packages using these package actions:
+Even though you can do whatever you want within a package action, most packages use package actions for either installing content / media or adding configuration. To help you get started you can find some examples below, of popular packages using these package actions.
 
 ### Installing content / media
 
