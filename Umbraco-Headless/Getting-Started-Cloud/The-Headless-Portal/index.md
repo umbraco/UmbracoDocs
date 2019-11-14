@@ -18,7 +18,7 @@ From here you are able to create multiple environment so you might have a Develo
 
 If you want to add an environment all you have to do is click the big green button. Umbraco will create the environment for you.
 
-When you are done you can go a head and click on the Done, take me back link in the top-right corner to get back to the project overview.
+When you are done you can go ahead and click on 'Done, take me back' in the top-right corner to get back to the project overview.
 
 ## Invite member
 
