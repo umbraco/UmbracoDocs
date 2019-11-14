@@ -12,7 +12,7 @@ Clicking on a project will take you to the project where you will get an overvie
 
 ## Manage Environments
 
-From here you are able to create multiple environment so you might have a Development environment as well. Depending on what plan you have chosen, you will have acces to one or more environment on your project.
+From here you are able to create multiple environments so you might have a Development environment as well. Depending on what plan you have chosen, you will have acces to one or more environment on your project.
 
 ![Manage the environments](images/manageEnvironments.png)
 
