@@ -10,4 +10,4 @@ A step-by-step guide on how to setup and build a small and basic Umbraco Heartco
 
 ## [The Umbraco Backoffice](The-Umbraco-Backoffice)
 
-In this article you can learn more about the Umbraco backoffice which is the interface you will be using for creating and managing the content for your Umbraco Heartcore project. The backoffice contains multiple sections as well as a handful of Heartcore specific features.
+In this article you can learn more about the Umbraco backoffice which is the interface you will be using for creating and managing the content for your Umbraco Heartcore project. The backoffice contains multiple sections as well as a handful of features specific to the Umbraco Heartcore project.

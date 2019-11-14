@@ -104,9 +104,9 @@ The log viewer is a view where you can go through all your logs. You are able to
 
 Here you will be able to manage your language variants. Depending on what plan you have chosen you will be able to have more that one language.
 
-### Headless
+### Heartcore
 
-The Headless node in the Settings tree is unique as it is only featured in Umbraco Heartcore. From here you will be able to manage the APIs as well as create and manage your Webhooks.
+The Heartcore tree in the Settings section is unique as it is only featured in Umbraco Heartcore. From here you will be able to manage the APIs as well as create and manage your Webhooks.
 
 -   API Browser: In the API Browser you are able to test your API endpoints.
 

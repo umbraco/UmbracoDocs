@@ -2,23 +2,23 @@
 versionFrom: 8.0.0
 ---
 
-# Creating / Building a Headless project from scratch
+# Building an Umbraco Heartcore project from scratch
 
-In this article you can learn how to get started with your Umbraco Headless project.
+In this article you can learn how to get started with your Umbraco Heartcore project.
 
 It will cover everything you need to know, in order to create your first piece of content in the Umbraco backoffice.
 
 :::note
-This guide will assume that you have already [setup an Umbraco Headless project](../../../Umbraco-Headless) without any content.
+This guide will assume that you have already [setup an Umbraco Heartcore project](../../../Umbraco-Headless) without any content.
 :::
 
 ## Introduction
 
-When you log in to the Umbraco Backoffice, the first thing you will see if the Content section. This is where you will be creating content for your Umbraco Headless project. However, it will not be possible to create any content yet, as we will first need to define the content we are going to be creating.
+When you log in to the Umbraco Backoffice, the first thing you will see if the Content section. This is where you will be creating content for your Umbraco Heartcore project. However, it will not be possible to create any content yet, as we will first need to define the content we are going to be creating.
 
 Content in Umbraco is based on **Document Types** which will define what type of data we can put into our content. A Document Type consists of a set of **Properties** - also called fields. A Property is made up of a **Data Type** which is a custom configuration of a **Property Editor**. Umbraco comes with a set of Property Editors, including a *Text Area*, a *Date Picker*, a picker for media items and many more.
 
-As we go through this tutorial and start builing the content for our Headless project, you will learn more about each of these concepts and how they all work together.
+As we go through this tutorial and start builing the content for our Heartcore project, you will learn more about each of these concepts and how they all work together.
 
 :::note
 **New to Umbraco?**
@@ -188,7 +188,7 @@ However, once you've checked this permission setting on one Document Type, it wi
     * Doing this, will allow us to create content of the Blog Area type under our Home Page.
 5. **Save** the Document Type.
 
-With the permissions set, we are now ready to start working on the content for the Headless project.
+With the permissions set, we are now ready to start working on the content for the Heartcore project.
 
 ## Creating content
 
@@ -203,7 +203,7 @@ In this next step of the tutorial, we will start creating content. The content w
 We now have the option to create a content item based on our Home Page Document Type.
 
 3. Select the **Home Page**.
-4. Give the content item a name: *Welcome to Umbraco Headless*.
+4. Give the content item a name: *Welcome to Umbraco Heartcore*.
 5. Add some text to both the *Heading* and the *Intro text* properties.
 6. To choose an image for the *PromoImage* property, select the plus-sign.
 7. In the dialog you can do either of the following the choose an image:
@@ -223,9 +223,9 @@ Select the **Media** section in the top navigation bar, and you can browse all t
 
 So far, our Content section looks like this:
 
-![Welcome to Headless Content node](images/Welcome-to-Headless-Content.png)
+![Welcome to Heartcore Content node](images/Welcome-to-Headless-Content.png)
 
-10. Right-click the root node, *Welcome to Umbraco Headless*, and choose **Create...**
+10. Right-click the root node, *Welcome to Umbraco Heartcore*, and choose **Create...**
     * Or select the three elipses next to the node when hovering.
 11. Select to create a **Blog Area**.
 12. Give it a name: *Blog*.
@@ -255,9 +255,9 @@ We have now covered the very basics of how to create content in the Umbraco back
 
 ## What now?
 
-Now you have some content on your Umbraco Headless project that you can start using.
+Now you have some content on your Umbraco Heartcore project that you can start using.
 
-You can use the Umbraco Headless API endpoints to fetch this content to where you need it. 
+You can use the Umbraco Heartcore REST API endpoints to fetch this content to where you need it. 
 
 ### Test with the provided samples
 
@@ -265,6 +265,6 @@ We've built a few SDKs (Software Development kits) with samples that you can use
 
 ### Testing with the API Browser
 
-In order to test how the content you've created will be formatted, when fetched through the Umbraco Headless API endpoints, you can use the API Browser in the Settings section of the backoffice. 
+In order to test how the content you've created will be formatted, when fetched through the Umbraco Heartcore REST API endpoints, you can use the API Browser in the Settings section of the backoffice. 
 
 ![API Browser - Content](images/API-Browser-Content.png)
