@@ -54,7 +54,7 @@ Here you will be able to upgrade your trial to a plan that fits your needs.
 
 ### Rename project
 
-Here you are able to rename your project. All default umbraco.io hostnames will be updated to match the new name. When renaming a project you will also need to update the `Umb-Project-Alias` header when you are sending requests to the API.
+Here you are able to rename your project. All default umbraco.io hostnames will be updated to match the new name. When renaming a project you will also need to update the `Umb-Project-Alias` header when you are sending requests to the API, as changing the name of the project will also change the project alias.
 
 ![Rename Project Page](images/renameProject.png)
 
