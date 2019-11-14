@@ -17,7 +17,7 @@ So if you have something you know should only run on install or uninstall then p
 :::note
 If you want your package to be available on a multi-environment solution then you need to consider this:
 
-If the package files are deployed between environments then the package action will only run on the environment the package is installed on initially. This is not a problem if you are manipulating files in your action as those files will likely be in source-control. However schema and content generated in a package action will only be Deployable if the user uses a tool that handles those, otherwise using [migrations](../../Database/index.md) may be better!
+If the package files are deployed between environments then the package action will only run on the environment the package is installed on initially. This is not a problem if you are manipulating files in your action as those files will likely be in source-control. However schema and content generated in a package action will only be deployable if the user uses a tool that handles those, otherwise using [migrations](../../Database/index.md) may be better!
 :::
 
 ## Basic package action implementation
