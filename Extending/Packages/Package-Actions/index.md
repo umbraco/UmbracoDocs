@@ -5,7 +5,7 @@ versionFrom: 8.0.0
 # What are package actions?
 
 Package actions are a way to perform common tasks while installing / uninstalling packages. 
-Currently we have 2 actions available. If you need to perform more advanced installation routines, you will have to write your own package action using the `IPackageAction` Interface, which will then automatically be picked up by Umbraco.
+Currently we have 2 actions available. If you need to perform more advanced installation routines, you will have to write your own package action using the `IPackageAction` interface, which will then automatically be picked up by Umbraco.
 
 ## Adding actions to a package
 
@@ -29,7 +29,7 @@ To add an action you need to add it between the `<actions>` elements. Could look
 
 ## Standard elements on all actions
 
-All actions are a `<Action>` node element (notice the uppercase A).
+All actions are an `<Action>` node element (notice the uppercase A).
 
 ### Allow Document Type
 
@@ -40,7 +40,7 @@ Alias: `allowDocumentType`
 ```xml
 <Action 
 runat="install"
-alias="allowDocumenttype"
+alias="allowDocumentType"
 documentTypeAlias="TextPage"
 parentDocumentTypeAlias="HomePage"/>
 ```
