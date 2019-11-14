@@ -62,7 +62,7 @@ From this page you can delete your project. When deleting the project your subsc
 
 ## Go to backoffice
 
-Clicking on the Go to backoffice link will open up a new tab with the login screen for the Backoffice. If you would like to learn more, you can read our documentation for the [Heartcore Backoffice](../The-Headless-Portal).
+Clicking on the 'Go to backoffice' link will open up a new tab with the login screen for the Backoffice. If you would like to learn more, you can read our documentation for the [Heartcore Backoffice](../The-Headless-Portal).
 
 ## Environment history
 
