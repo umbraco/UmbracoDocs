@@ -118,7 +118,7 @@ IN this section you can manage all the users that are currently working on the p
 
 You are also able to segment your user into different User Groups. You can add Users to existing Groups or create your own custom Member Groups.
 
-As a special section for the Headless Backoffice is the ability to create, manage and revoke API Keys for the Users working on the project.
+As a special section for the Umbraco Heartcore backoffice is the ability to create, manage and revoke API Keys for the Users working on the project.
 
 ## Members
 

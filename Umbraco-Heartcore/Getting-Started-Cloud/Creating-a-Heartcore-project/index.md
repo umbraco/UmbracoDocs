@@ -9,7 +9,7 @@ In this article you can learn how to get started with your Umbraco Heartcore pro
 It will cover everything you need to know, in order to create your first piece of content in the Umbraco backoffice.
 
 :::note
-This guide will assume that you have already [setup an Umbraco Heartcore project](../../../Umbraco-Headless) without any content.
+This guide will assume that you have already [setup an Umbraco Heartcore project](../../../Umbraco-Heartcore) without any content.
 :::
 
 ## Introduction
@@ -139,7 +139,7 @@ Example:
 In the Content section, you will with this setup be able to create a News Area content node, and then create your News Articles under that node. 
 :::
 
-For our Headless project, we will want it to be possible to create blog posts under a blog area.
+For our Heartcore project, we will want it to be possible to create blog posts under a blog area.
 
 3. Name the Parent Document Type *Blog Area*.
 4. Name the Child Document Type *Blog Post*.
@@ -223,7 +223,7 @@ Select the **Media** section in the top navigation bar, and you can browse all t
 
 So far, our Content section looks like this:
 
-![Welcome to Heartcore Content node](images/Welcome-to-Headless-Content.png)
+![Welcome to Heartcore Content node](images/Welcome-to-Heartcore-Content.png)
 
 10. Right-click the root node, *Welcome to Umbraco Heartcore*, and choose **Create...**
     * Or select the three elipses next to the node when hovering.

@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Getting Started with Umbraco Heartcore
 
-## [Create a basic Heartcore project](Creating-a-Headless-project)
+## [Create a basic Heartcore project](Creating-a-Heartcore-project)
 
 A step-by-step guide on how to setup and build a small and basic Umbraco Heartcore project. This is a great place to start if you are new to Umbraco, as it will explain some of the default concepts and you will learn how to create content from scratch.
 

@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 In order for you to get the best start with Umbraco Heartcore and get an overview of the potential of the product, there are some SDK's (Software Development Kits) that you can try out. 
 
-## [Umbraco.Headless.Client.Net](https://github.com/umbraco/Umbraco.Headless.Client.Net)
+## [Umbraco.Heartcore.Client.Net](https://github.com/umbraco/Umbraco.Headless.Client.Net)
 
 .NET Core client library for the Umbraco Heartcore APIs. The library is based on Netstandard2.0 to support application development including Xamarin/UWP applications.
 
