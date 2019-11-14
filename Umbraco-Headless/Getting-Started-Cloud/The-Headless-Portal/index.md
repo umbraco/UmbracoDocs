@@ -1,6 +1,8 @@
 # The Umbraco Heartcore Portal
 
-After you have logged into the Cloud Portal you are presented with the project overview.
+In this article you will learn more about the Umbraco Heartcore Portal and what options that are available to you.
+
+After you have logged into the [Heartcore Portal](https://www.umbraco.io) you are presented with the project overview.
 
 ![Portal Project Overview](images/portalOverview.png)
 
@@ -32,9 +34,9 @@ Right next to the invite member option. you will find the **Settings** dropdown 
 
 ### Edit Team
 
-As with the **invite member** option you are able to add new team members to your project. You will also be able to remove team members from this page as well as see any pending invitations you might have sent.
+As with the **invite member** option you are able to add new team members to your project. It is also possible to change the role for the team member here. You will also be able to remove team members from this page as well as see any pending invitations you might have sent.
 
-It is also here you are able to add the Technical Contact information such as Name, Email and a telephone number.
+It is also here you are able to add or edit the Technical Contact information such as Name, Email and a telephone number.
 
 ![Edit Team Members page](images/editTeam.png)
 
@@ -42,7 +44,9 @@ It is also here you are able to add the Technical Contact information such as Na
 
 Here you are able to set up a webhook that will gather all the information related to deployments. This information is very useful if you har set up something like Slack integration so every time a deployment has been made a message will be posted.
 
-The webhooks that can be added here is not the same as the webhooks that can be created from the Backoffice.
+:::note
+The webhooks that can be added here is **not the same** as the webhooks that can be created from the Backoffice.
+:::
 
 ### Upgrade plan
 
@@ -50,7 +54,7 @@ Here you will be able to upgrade your trial to a plan that fits your needs.
 
 ### Rename project
 
-Here you are able to rename your project. All default umbraco.io hostnames will be updated to match the new name. Also note that all clone urls will be updated to match the new projectname. If you have local git repositories remember to update the urls.
+Here you are able to rename your project. All default umbraco.io hostnames will be updated to match the new name.
 
 ![Rename Project Page](images/renameProject.png)
 
