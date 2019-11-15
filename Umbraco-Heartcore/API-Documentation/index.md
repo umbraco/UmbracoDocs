@@ -22,7 +22,7 @@ The properties `_links` and `_embedded` are both part of the HAL specification a
 
 ### API Browser
 
-In the Settings section in the Umbraco Backoffice, there is a Heartcore specific tree. From there you can use the API Browser to interact with both the Content Delivery and Content Management APIs. 
+In the Settings section in the Umbraco Backoffice, there is a Headless tree. From there you can use the API Browser to interact with both the Content Delivery and Content Management APIs. 
 
 It is recommended to use this browser to explore the JSON output for all the different endpoints documented under the Content Delivery and Content Management API sections.
 
