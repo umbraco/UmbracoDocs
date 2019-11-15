@@ -139,7 +139,7 @@ Example:
 In the Content section, you will with this setup be able to create a News Area content node, and then create your News Articles under that node. 
 :::
 
-For our Heartcore project, we will want it to be possible to create blog posts under a blog area.
+For our Umbraco Heartcore project, we will want it to be possible to create blog posts under a blog area.
 
 3. Name the Parent Document Type *Blog Area*.
 4. Name the Child Document Type *Blog Post*.
