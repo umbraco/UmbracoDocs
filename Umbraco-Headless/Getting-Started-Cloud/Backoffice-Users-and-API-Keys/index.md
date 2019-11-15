@@ -9,7 +9,7 @@ A Backoffice user can be added in two ways.
 -   Added from the portal from the Team Management section, or
 -   From the Users Section in the Backoffice
 
-A feature that is unique for Heartcore is the option to create an API Key for specific users. The API Key can be created from the API Key section of the User page. This page can be found under the Users Section in the top-left navigation of the backoffice.
+A feature that is unique for Umbraco Heartcore is the option to create an API Key for specific users. The API Key can be created from the API Key section of the User page. This page can be found under the Users Section in the top-left navigation of the backoffice.
 
 ![User Page in the Backoffice](images/userAPI.png)
 
