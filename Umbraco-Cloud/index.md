@@ -26,7 +26,7 @@ An explanation of the Umbraco Cloud product upgrade process.
 Tips on finding, identifying and resolving issues.
 
 ## [Umbraco Heartcore](../Umbraco-Heartcore/)
-Documentation on Umbraco Hearcore.
+Documentation on Umbraco Heartcore.
 
 ## [Frequently Asked Questions](Frequently-Asked-Questions/)
 Anything else not covered above.
