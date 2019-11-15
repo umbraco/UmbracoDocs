@@ -28,7 +28,7 @@ Reference documentation for the two APIs available, as well as details about com
 
 ## [Getting Started with Umbraco Heartcore](Getting-Started-Cloud/)
 
-In order to get started with Umbraco Heartcore you will need to create a new project via the Umbraco Cloud Portal and familiarize yourself with the features available. This includes the Heartcore section in the backoffice and creating API Keys for authentication and authorization purposes.
+In order to get started with Umbraco Heartcore you will need to create a new project via the Umbraco Cloud Portal and familiarize yourself with the features available. This includes the Headless section in the backoffice and creating API Keys for authentication and authorization purposes.
 
 In this article you will learn how to create your first Umbraco Heartcore project and go through the steps needed to get your first content published in order to start using the APIs.
 
