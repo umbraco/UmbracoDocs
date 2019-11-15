@@ -188,7 +188,7 @@ However, once you've checked this permission setting on one Document Type, it wi
     * Doing this, will allow us to create content of the Blog Area type under our Home Page.
 5. **Save** the Document Type.
 
-With the permissions set, we are now ready to start working on the content for the Heartcore project.
+With the permissions set, we are now ready to start working on the content for the Umbraco Heartcore project.
 
 ## Creating content
 
@@ -223,7 +223,7 @@ Select the **Media** section in the top navigation bar, and you can browse all t
 
 So far, our Content section looks like this:
 
-![Welcome to Heartcore Content node](images/Welcome-to-Heartcore-Content.png)
+![Welcome to Umbraco Heartcore Content node](images/Welcome-to-Heartcore-Content.png)
 
 10. Right-click the root node, *Welcome to Umbraco Heartcore*, and choose **Create...**
     * Or select the three elipses next to the node when hovering.
