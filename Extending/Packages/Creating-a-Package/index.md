@@ -8,7 +8,7 @@ versionFrom: 8.0.0
 This tutorial is for Umbraco 8 - however a lot of the things covered here will be the same or similar in Umbraco 7.
 :::
 
-The goal of this tutorial will be to take something that extends Umbraco and create it as a package. The tutorials starting point will be creating a package out of the dashboard from the [Creating a Custom Dashboard tutorial](../Creating-a-Custom-Dashboard/index.md). The process will be the same for most packages so feel free to follow along with something else.
+The goal of this tutorial will be to take something that extends Umbraco and create it as a package. The tutorials starting point will be creating a package out of the dashboard from the [Creating a Custom Dashboard tutorial](../../../Tutorials/Creating-a-Custom-Dashboard/index.md). The process will be the same for most packages so feel free to follow along with something else.
 
 ## Creating a package in the backoffice
 
@@ -18,7 +18,7 @@ First go to the `Packages` section and select `Created` in the top right corner.
 
 ![Buttons to select for creating a package in the backoffice](images/creating-package-menu.png)
 
-On the `Create package` page there are 4 sections with different info to fill out. Some of the info is mandatory, most of it is not. First of all you should give the package a name at the top - we will call our dashboard the same as in the [tutorial](../Creating-a-Custom-Dashboard/index.md): `Custom Welcome Dashboard`.
+On the `Create package` page there are 4 sections with different info to fill out. Some of the info is mandatory, most of it is not. First of all you should give the package a name at the top - we will call our dashboard the same as in the [tutorial](../../../Tutorials/Creating-a-Custom-Dashboard/index.md): `Custom Welcome Dashboard`.
 
 ### The Package Properties section
 
@@ -66,7 +66,7 @@ We will leave the `Package options view` selector empty, but in case you were wo
 
 ### The Package Actions section
 
-Here you can add package actions. There are a number of [default package actions](../../Reference/Packaging/index.md) and you can also create your own package action and reference it here, to do so you will need to implement the IPackageAction interface, as in the [Articulate Package](https://github.com/Shazwazza/Articulate/blob/master/src/Articulate/Packaging/ArticulateInstallPackageAction.cs).
+Here you can add package actions. There are a number of [default package actions](../Package-Actions/index.md) and you can also create your own [custom package actions](../Package-Actions/custom-package-actions.md)
 
 Finally after filling out all the info we can select `Create` to create the package. We will download it, in order to take a closer look at what it contains in the generated zip file.
 
@@ -76,7 +76,7 @@ When you download and then open the zip package you will find that it looks like
 
 ![Content of a zip package](images/zip-package.png)
 
-The 5 highlighted files were the ones the package contained that we created in the [Creating a Custom Dashboard tutorial](../Creating-a-Custom-Dashboard/index.md), however there is another file here called `package.xml` - so let's take a look at that - it looks like this:
+The 5 highlighted files were the ones the package contained that we created in the [Creating a Custom Dashboard tutorial](../../../Tutorials/Creating-a-Custom-Dashboard/index.md), however there is another file here called `package.xml` - so let's take a look at that - it looks like this:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
