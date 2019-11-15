@@ -1,8 +1,8 @@
-# The Umbraco Heartcore Portal
+# The Umbraco Cloud Portal
 
-In this article you will learn more about the Umbraco Heartcore Portal and what options that are available to you.
+In this article you will learn more about the Umbraco Cloud Portal and what options that are available to you.
 
-After you have logged into the [Heartcore Portal](https://www.umbraco.io) you are presented with the project overview.
+After you have logged into the [Umbraco Cloud Portal](https://www.umbraco.io) you are presented with the project overview.
 
 ![Portal Project Overview](images/portalOverview.png)
 
