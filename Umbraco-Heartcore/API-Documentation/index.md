@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # API Documentation
 
-This page contains documentation for the Umbraco Headless API endpoints divided into two main areas: Content Delivery and Content Mangement.
+This page contains documentation for the REST API endpoints for Umbraco Heartcore. It is divided into two main areas: Content Delivery and Content Mangement.
 
 The [Content Delivery API](Content-Delivery) is the read-only Content and Media that you would normally retrieve to show the published content in your apps, websites or other platforms. The API is available on `https://cdn.umbraco.io`.
 
@@ -12,13 +12,13 @@ The [Content Delivery API](Content-Delivery) is the read-only Content and Media 
 
 ## REST API Standard
 
-The Umbraco Headless APIs are based on the [HAL Standard](https://weierophinney.github.io/hal/hal/).
+The REST APIs are based on the [HAL Standard](https://weierophinney.github.io/hal/hal/).
 
 ### System level properties
 
-The properties in the Umbraco Headless API, which starts with an underscore, are **system level properties**. That means that they are standard Umbraco properties, which cannot be changed via the API. This includes properties like `_id`, `_url`, `_createDate`, `_updateDate`, `_creatorName`, `_writerName`, `_level` and `_hasChildren`. These are all defined by Umbraco when Content is created or updated.
+The properties in the REST API, which starts with an underscore, are **system level properties**. That means that they are standard Umbraco properties, which cannot be changed via the API. This includes properties like `_id`, `_url`, `_createDate`, `_updateDate`, `_creatorName`, `_writerName`, `_level` and `_hasChildren`. These are all defined by Umbraco when Content is created or updated.
 
-The properties `_links` and `_embedded` are both part of the HAL specification and are implemented in the Umbraco Headless API accordingly.
+The properties `_links` and `_embedded` are both part of the HAL specification and are implemented in the REST API accordingly.
 
 ### API Browser
 
@@ -32,7 +32,7 @@ Both the Content Delivery and the Content Management APIs share common points of
 
 ### API Access
 
-In order to access the data for your Umbraco Headless project you need to provide a project identifier (Project Alias) via a HTTP Header or a Querystring parameter.
+In order to access the data for your Umbraco Heartcore project you need to provide a project identifier (Project Alias) via a HTTP Header or a Querystring parameter.
 
 The Project Alias is a HTTP friendly version of the Project Name under your Umbraco Cloud account.
 
