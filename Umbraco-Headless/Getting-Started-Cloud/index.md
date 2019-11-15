@@ -14,7 +14,7 @@ In this article you can learn more about the Umbraco backoffice which is the int
 
 ## [The Umbraco Heartcore Portal](The-Headless-Portal)
 
-In this article you can read all about the features that is available from the Heartless Portal. This article will go through the Settings menu and how to get to the backoffice.
+In this article you can read all about the features that is available from the Umbraco Heartcore Portal. This article will go through the Settings menu and how to get to the backoffice.
 
 ## [APIs And The Backoffice User](Backoffice-Users-and-API-Keys)
 
