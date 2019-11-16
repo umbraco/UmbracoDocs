@@ -2,6 +2,12 @@
 
 **BASE URL**: `https://cdn.umbraco.io`
 
+* [Common Headers](#common-headers)
+* [Errors](#errors)
+* [Get Root Media](#get-root-media)
+* [Get By Id](#get-by-id)
+* [Get Children](#get-children)
+
 ## Common Headers
 
 ```http
