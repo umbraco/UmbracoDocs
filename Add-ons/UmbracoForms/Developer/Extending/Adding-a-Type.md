@@ -15,7 +15,7 @@ Create a new ASP.NET or class project in Visual Studio add references to the Umb
 The Forms API contains a collection of classes that the provider model automatically registers. So to add a new type to Forms you inherit from the right class. In the sample below we use the class for the workflow type.
 
 ```csharp
-public class Class1 : Umbraco.Forms.Core.WorkflowType
+public class LogWorkflow : Umbraco.Forms.Core.WorkflowType
 {
     public override WorkflowExecutionStatus Execute(Umbraco.Forms.Core.Persistence.Dtos.Record record, RecordEventArgs e)
     {
@@ -37,7 +37,7 @@ Even though we have the class inheritance in place, we still need to add a bit o
 Even though we have the class inheritance in place, we still need to add a bit of default information. This information is added in the class's empty constructor like this:
 
 ```csharp
-public Class1() {
+public LogWorkflow() {
     this.Name = "The logging workflow";
     this.Id = new Guid("D6A2C406-CF89-11DE-B075-55B055D89593");
     this.Description = "This will save an entry to the log";
@@ -67,7 +67,7 @@ With the attribute in place, the property value is set every time the class is i
         View = "Pickers.Content")]
 public string Document { get; set; }
 
-public override WorkflowExecutionStatus Execute(Record record, RecordEventArgs e) {
+public override WorkflowExecutionStatus Execute(Umbraco.Forms.Core.Persistence.Dtos.Record record, RecordEventArgs e) {
      Umbraco.Core.Composing.Current.Logger.Info<WorkflowType>("{Document} record submitted from: {IP}", int.Parse(Document), record.IP);
             return WorkflowExecutionStatus.Completed;
 }
