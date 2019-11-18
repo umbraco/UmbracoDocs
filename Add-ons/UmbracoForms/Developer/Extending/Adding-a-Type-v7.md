@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
 ---
 
 # Adding a type to the provider model
@@ -17,7 +17,7 @@ The Forms API contains a collection of classes that the provider model automatic
 ```csharp
 public class LogWorkflow : Umbraco.Forms.Core.WorkflowType
 {
-    public override WorkflowExecutionStatus Execute(Umbraco.Forms.Core.Persistence.Dtos.Record record, RecordEventArgs e)
+    public override WorkflowExecutionStatus Execute(Umbraco.Forms.Core.Record record)
     {
         throw new NotImplementedException();
     }
@@ -52,8 +52,8 @@ Now that we have a basic class setup, we would like to pass setting items to the
 
 ```csharp
 [Umbraco.Forms.Core.Attributes.Setting("Log Header",
-        Description = "Log item header",
-        View = "TextField")]
+        description = "Log item header",
+        view = "TextField")]
 public string LogHeader { get; set; }
 ```
 
@@ -63,13 +63,12 @@ With the attribute in place, the property value is set every time the class is i
 
 ```csharp
 [Umbraco.Forms.Core.Attributes.Setting("Document ID",
-        Description = "Node the log entry belongs to",
-        View = "Pickers.Content")]
+        description = "Node the log entry belongs to",
+        view = "Pickers.Content")]
 public string Document { get; set; }
 
-public override WorkflowExecutionStatus Execute(Umbraco.Forms.Core.Persistence.Dtos.Record record, RecordEventArgs e) {
-     Umbraco.Core.Composing.Current.Logger.Info<WorkflowType>("{Document} record submitted from: {IP}", int.Parse(Document), record.IP);
-            return WorkflowExecutionStatus.Completed;
+public override Enums.WorkflowExecutionStatus Execute(Umbraco.Forms.Core.Record record) {
+    Log.Add(LogTypes.Debug, int.Parse(Document), "record submitted from: " + record.IP);
 }
 ```
 
@@ -83,7 +82,7 @@ The ValidateSettings() method which can be found on all types supporting dynamic
 public override List<Exception> ValidateSettings() {
     List<Exception> exceptions = new List<Exception>();
     int docId = 0;
-    if (!int.TryParse(Document, out docId))
+    if (!int.TryParse(document, out docId))
         exceptions.Add(new Exception("Document is not a valid integer"));
     return exceptions;
 }
@@ -98,15 +97,15 @@ needed. Also look in the reference chapter for complete class implementations of
 
 This is a new feature in **Forms 6.0.3+** that makes it possible to override & inherit the original provider, be it a Field Type or Workflow etc. The only requirement when inheriting a fieldtype that you wish to override is to ensure you do not override/change the Id set for the provider.
 
-Here is an example of overriding the Textarea field aka Long Answer that is taken from Per's CodeGarden 17 talk, which has been updated for Forms 8.
+Here is an example of overriding the Textarea field aka Long Answer that is taken from Per's CodeGarden 17 talk
 
 ```csharp
 public class TextareaWithCount : Umbraco.Forms.Core.Providers.FieldTypes.Textarea
 {
     // Added a new setting when we add our field to the form
     [Umbraco.Forms.Core.Attributes.Setting("Max length",
-    Description = "Max length",
-    View = "TextField")]
+    description = "Max length",
+    view = "TextField")]
     public string MaxNumberOfChars { get; set; }
 
     public TextareaWithCount()
@@ -118,9 +117,9 @@ public class TextareaWithCount : Umbraco.Forms.Core.Providers.FieldTypes.Textare
         this.Name = "Long Answer with Limit";
     }
 
-    public override IEnumerable<string> ValidateField(Form form, Field field, IEnumerable<object> postedValues, HttpContextBase context, IFormStorage formStorage)
+    public override IEnumerable<string> ValidateField(Form form, Field field, IEnumerable<object> postedValues, HttpContextBase context)
     {
-        var baseValidation = base.ValidateField(form, field, postedValues, context, formStorage);
+        var baseValidation = base.ValidateField(form, field, postedValues, context);
         var value = postedValues.FirstOrDefault();
 
         if (value != null && value.ToString().Length < int.Parse(MaxNumberOfChars))
