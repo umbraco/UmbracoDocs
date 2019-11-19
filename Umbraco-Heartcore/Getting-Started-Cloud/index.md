@@ -12,7 +12,7 @@ A step-by-step guide on how to setup and build a small and basic Umbraco Heartco
 In this article you can read all about the features that is available on your Umbraco Heartcore project from the Umbraco Cloud Portal. The article will go through the Settings menu and how to get to the backoffice.
 
 ## [APIs And The Backoffice User](Backoffice-Users-and-API-Keys)
-Want to know more about the APIs and how to add them to your users in Umbraco Heartcore Backoffice? Look no further. In this article you can read about it.
+Want to know more about the API keys and how to add them to your users in Umbraco Heartcore backoffice? Look no further. In this article you can read about it.
 
 ## [The Umbraco Backoffice](The-Umbraco-Backoffice)
 
