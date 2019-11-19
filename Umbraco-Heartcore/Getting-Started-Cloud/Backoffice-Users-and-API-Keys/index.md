@@ -21,7 +21,7 @@ A modal will pop up where you enter the name of the key and set a date for when 
 
 ![Creating the API Key](images/createAPI.png)
 
-Once the API Key has been created you will see the actual key and two examples on how to use the Key with the Authorization header and an API-Key header.
+Once the API Key has been created you will see the actual key and two examples on how to use the key with the Authorization header and an API-Key header.
 
 ![The created API Key](images/generatedAPI.png)
 
