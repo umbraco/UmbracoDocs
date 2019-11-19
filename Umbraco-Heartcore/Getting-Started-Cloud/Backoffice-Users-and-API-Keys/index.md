@@ -17,7 +17,7 @@ A feature that is unique for Umbraco Heartcore is the option to create an API Ke
 
 In order to connect to the two APIs your user will need to have an API Key assinged. When you have navigated to the section mentioned above you can create the API Key by clicking the "Create API Key" button.
 
-A modal will pop up where you enter the Name of the Key and set a date for when it should expire. If there is no expire data, the API Key will be valid until you delete it manually.
+A modal will pop up where you enter the name of the key and set a date for when it should expire. If there is no expire data, the API Key will be valid until you delete it manually.
 
 ![Creating the API Key](images/createAPI.png)
 
