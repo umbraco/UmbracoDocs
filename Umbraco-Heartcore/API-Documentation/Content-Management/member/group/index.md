@@ -7,7 +7,7 @@
 * [Authentication](#authentication)
 * [Errors](#errors)
 * [Get All](#get-all)
-* [Get By Name](#get- by-name)
+* [Get By Name](#get-by-name)
 * [Create member group](#create-member-group)
 * [Delete member group](#delete-member-group)
 
