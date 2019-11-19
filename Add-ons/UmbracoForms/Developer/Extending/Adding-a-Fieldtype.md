@@ -36,7 +36,7 @@ public class MyCustomField : Umbraco.Forms.Core.FieldType
         }
 
         // Also validate it against the original default method.
-        returnStrings.AddRange(base.ValidateField(form, field, postedValues, context));
+        returnStrings.AddRange(base.ValidateField(form, field, postedValues, context, formStorage));
 
         return returnStrings;
     }
