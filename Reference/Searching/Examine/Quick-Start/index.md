@@ -115,7 +115,8 @@ The `searcher` has a CreateQuery method, where you can choose to search content,
 ```csharp
 searcher.CreateQuery("content")
 ```
-and from here you can see how we can chain together the logic to perform the search, in the example we are searching all `content` using the `person` Document Type, where the `nodeName` is equal to the search term that was typed in the input bar.
+
+From here you can see how we can chain together the logic to perform the search. In the example we are searching all `content` using the `person` Document Type, where the `nodeName` is equal to the search term that was typed in the input bar.
 
 ```csharp
 searcher.CreateQuery("content").NodeTypeAlias("person").And().Field("nodeName", searchTerm)
