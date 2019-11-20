@@ -123,7 +123,9 @@ searcher.CreateQuery("content").NodeTypeAlias("person").And().Field("nodeName", 
 ```
 ### Execute the Search
 
-Finally calling .Execute() at the end of the query logic will trigger the search and return a set of matching search results that we can loop through - The final template looks like this:
+Finally calling `.Execute()` at the end of the query logic will trigger the search and return a set of matching search results that we can loop through.
+
+The final template looks like this:
 ```csharp
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.People>
 @using Umbraco.Examine
