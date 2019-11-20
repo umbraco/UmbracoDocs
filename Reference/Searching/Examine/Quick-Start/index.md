@@ -9,7 +9,7 @@ _This guide will help you get setup quickly using Examine with minimal configura
 ## Performing a search
 
 :::note
-In the coming examples the Umbraco Starter Kit has been used, as it provides some example content that can be easily searched. Some of the examples below therefore may require 'the setting up of templates, etc' if you are following the guide on your own existing site.
+In the coming examples the Umbraco Starter Kit has been used, as it provides some example content that can be searched. Some of the examples below therefore may require 'the setting up of templates, etc' if you are following the guide on your own existing site.
 :::
 
 The starter kit comes with some Templates, Document Types and content nodes created already. We will use some of these to set up a simple search system, much more complex searches are possible with Examine, but this is just the 'Quick Start'.
