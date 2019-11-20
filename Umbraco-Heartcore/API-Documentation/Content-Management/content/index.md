@@ -2,6 +2,22 @@
 
 **BASE URL**: `https://api.umbraco.io`
 
+## Table of Contents
+* [Common Headers](#common-headers)
+* [Authentication](#authentication)
+* [Permissions](#permissions)
+* [Errors](#errors)
+* [Get Root Content](#get-root-content))
+* [Get By Id](#get-by-id)
+* [Get Children](#get-by-children)
+* [Get Content](#get-content)
+* [Get Content with Files](#get-content-with-files)
+* [Update Content](#update-content)
+* [Publish Content](#pubish-content)
+* [Unpublish Content](#unpubish-content)
+* [Delete Content](#delete-content)
+
+
 ## Common Headers
 
 ```http

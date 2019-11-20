@@ -2,6 +2,18 @@
 
 **BASE URL**: `https://cdn.umbraco.io`
 
+
+## Table of Contents
+* [Common Headers](#common-headers)
+* [Errors](#errors)
+* [Get Root Content](#get-root-content)
+* [Get By Id](#get-by-id)
+* [Get By Url](#get-by-url)
+* [Get By Type](#get-by-type)
+* [Get Ancestors](#get-ancestors)
+* [Get Descendants](#get-descendants)
+* [Search](#search)
+
 ## Common Headers
 
 ```http

@@ -2,6 +2,17 @@
 
 **BASE URL**: `https://api.umbraco.io`
 
+
+## Table of Contents
+* [Common Headers](#common-headers)
+* [Authentication](#authentication)
+* [Errors](#errors)
+* [Get languages](#get-languages)
+* [Get by ISO code](#get-by-iso-code)
+* [Create langauge](#create-langauge)
+* [Update langauge](#update-langauge)
+* [Delete langauge](#delete-langauge)
+
 ## Common Headers
 
 ```http

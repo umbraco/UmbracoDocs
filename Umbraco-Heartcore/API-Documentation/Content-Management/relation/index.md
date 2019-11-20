@@ -2,6 +2,18 @@
 
 **BASE URL**: `https://api.umbraco.io`
 
+
+## Table of Contents
+* [Common Headers](#common-headers)
+* [Authentication](#authentication)
+* [Errors](#errors)
+* [Get By Id](#get-by-id)
+* [Get by relation type alias](#get-by-relation-type-alias)
+* [Get by parent id](#get-by-parent-id)
+* [Get by child id](#get-by-child-id)
+* [Create relation](#create-relation)
+* [Delete relation](#delete-relation)
+
 ## Common Headers
 
 ```http

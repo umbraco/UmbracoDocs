@@ -2,6 +2,17 @@
 
 **BASE URL**: `https://api.umbraco.io`
 
+## Table of Contents
+* [Common Headers](#common-headers)
+* [Authentication](#authentication)
+* [Errors](#errors)
+* [Get by username](#get-by-username)
+* [Create Member](#create-member)
+* [Update Member](#update-member)
+* [Delete Member](#delete-member)
+* [Add member to member group](#add-member-to-member-group)
+* [Remove member from member group](#remove-member-from-member-group)
+
 ## Common Headers
 
 ```http

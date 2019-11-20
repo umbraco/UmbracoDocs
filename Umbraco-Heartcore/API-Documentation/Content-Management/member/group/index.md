@@ -2,6 +2,16 @@
 
 **BASE URL**: `https://api.umbraco.io`
 
+## Table of Contents
+* [Common Headers](#common-headers)
+* [Authentication](#authentication)
+* [Errors](#errors)
+* [Get All](#get-all)
+* [Get By Name](#get-by-name)
+* [Create member group](#create-member-group)
+* [Delete member group](#delete-member-group)
+
+
 ## Common Headers
 
 ```http
