@@ -32,7 +32,7 @@ We will make it possible to 'search' on the _People_ page, by adding a search ba
 This will create a basic input field at the top of the page and make it post to the same people page when submitted along with the search term.
 ### Retrieving the Search Term
 
-Just below the form, add the following:
+Right below the form, add the following:
 ```csharp
 <div>
     @{
