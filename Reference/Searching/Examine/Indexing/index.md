@@ -129,7 +129,7 @@ public class CustomUmbracoIndexesCreator : UmbracoIndexesCreator
     {
     }
 
-    // note - in umbraco 8.4 this method is obsoleted and it's advised to replace the
+    // note - in Umbraco 8.4 this method is obsoleted and it's advised to replace the
     // IUmbracoIndexConfig as in the above example.
     public override IValueSetValidator GetMemberValueSetValidator()
     {
