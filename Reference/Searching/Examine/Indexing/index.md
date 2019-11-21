@@ -57,7 +57,7 @@ public class CustomizeIndexComponent : IComponent
 
 ## Changing IValueSetValidator
 
-An `IValueSetValidator` is responsible for validating a `ValueSet` to see if it should be included in the index and/or filtering the data in the `ValueSet`. For example, by default the validation process for the ExternalIndex checks if a `ValueSet` has a category type of either "media" or "content" (not member), if a `ValueSet` was passed to the ExternalIndex that did not pass this requirement it would just be ignored.
+An `IValueSetValidator` is responsible for validating a `ValueSet` to see if it should be included in the index and/or filtering the data in the `ValueSet`. For example, by default the validation process for the ExternalIndex checks if a `ValueSet` has a category type of either "media" or "content" (not member). If a `ValueSet` was passed to the ExternalIndex and it did not pass this requirement it would be ignored.
 
 Starting in Umbraco 8.4.0 it is easy to change the `IValueSetValidator` implementation for the built in indexes, for example:
 
