@@ -99,7 +99,15 @@ If you are using a version of Umbraco before 8.4.0 then to do this you will need
 
 ### Overriding index creation
 
-You can completely take control of the whole Umbraco index creation logic by replacing the default implementation of `IUmbracoIndexesCreator`. You might want to do this to customize the default analyzer used in the built in indexes, change the `IValueSetValidator`, modify field definitions, change the location of where the indexes are stored, or potentially completely replace the indexes with your own entirely custom implementation.
+You can completely take control of the whole Umbraco index creation logic by replacing the default implementation of `IUmbracoIndexesCreator`. 
+
+A few examples of why you might want to override the index creation:
+
+* To customize the default analyzer used in the built in indexes
+* Change the `IValueSetValidator`
+* Modify field definitions
+* Change the location of where the indexes are stored, or 
+* Completely replace the indexes with your own entirely custom implementation
 
 As an example, to change the `IValueSetValidator` for the MemberIndex in the above example:
 
