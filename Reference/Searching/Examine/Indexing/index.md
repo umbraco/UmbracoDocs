@@ -95,7 +95,7 @@ public class CustomIndexConfig : UmbracoIndexConfig, IUmbracoIndexConfig
 }
 ```
 
-If you are using a version of umbraco before 8.4.0 then to do this you will need to modify the index creation (see below).
+If you are using a version of Umbraco before 8.4.0 then to do this you will need to modify the index creation (see below).
 
 ### Overriding index creation
 
