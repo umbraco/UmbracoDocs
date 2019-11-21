@@ -17,7 +17,7 @@ You can modify the built in indexes in several ways:
 
 ### Changing field value types
 
-By default Examine will store values into the Lucene index as "Full Text", meaning it will be indexed and analyzed for a textual search but if a value that you are storing in a field is numerical or a date/time or another specific value type then you might want to change how this is stored in the index to take advantage of some features such as numerical range or date features, etc...
+By default Examine will store values into the Lucene index as "Full Text", meaning it will be indexed and analyzed for a textual search. However, if a value that you are storing in a field is numerical, a date/time or another specific value type then you might want to change how this is stored in the index. This way you will be able to take advantage of some features such as numerical range or date features, etc...
 
 There is some documentation about this in the [Examine documentation](https://shazwazza.github.io/Examine/configuration).
 
