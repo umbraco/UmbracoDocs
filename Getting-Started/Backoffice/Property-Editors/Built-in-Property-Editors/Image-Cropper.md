@@ -18,7 +18,7 @@ You can add, edit & delete crop presets the cropper UI can use.
 
 ![Image Cropper Data Type Definition](images/Image-Cropper/datatype.png)
 
-## Content Example 
+## Content Example
 
 Provides a UI to upload an image, set a focal point on the image, and optionally crop and scale the image to predefined crops.
 So by default, images in the cropper will be shown based on a set focal point, and only use specific crops if they are available.
@@ -30,13 +30,13 @@ The cropper comes in 3 modes:
 - Cropping the image to predefined crops
 
 ### Uploading images
-The editor exposes a simple drop area for files. Click it to upload an image.
+The editor exposes a drop area for files. Click it to upload an image.
 ![Image Cropper Upload](images/Image-Cropper/upload.png)
 
 ### Set focal point
 By default, the cropper allows the editor to set a focal point on the uploaded image.
 Below the image, all the preset crops are shown to give the editor a preview of what
-the image will look like to the end user. 
+the image will look like to the end user.
 
 ![Image Cropper Focal point](images/Image-Cropper/focalpoint.png)
 
@@ -49,26 +49,26 @@ is shown for a specific crop.
 
 ## Sample code
 
-Image Cropper comes with a simple to use API to generate crop urls, or you can access its raw data directly as a
-dynamic object. 
+Image Cropper comes with an API to generate crop urls, or you can access its raw data directly as a
+dynamic object.
 
 In Umbraco v7.3.5 a UrlHelper Extension method was introduced to replace the IPublishedContent extension methods.
 
 ### MVC View Example to output a "banner" crop from a cropper property with the alias "image"
 
-#### Typed (Umbraco v7.3.5+):
+#### Typed (Umbraco v7.3.5+)
 
 ```html
 <img src="@Url.GetCropUrl(Model.Content, "image", "banner")" />
 ```
 
-#### Typed (pre Umbraco v7.3.5):
+#### Typed (pre Umbraco v7.3.5)
 
 ```html
 <img src="@Model.Content.GetCropUrl("image", "banner")" />
 ```
 
-#### Dynamic (Obsolete):
+#### Dynamic (Obsolete)
 
 ```csharp
 // show the crop preset "banner"
@@ -80,7 +80,7 @@ In Umbraco v7.3.5 a UrlHelper Extension method was introduced to replace the IPu
 
 ### MVC View Example to output create custom crops - in this case forcing a 300 x 400 px image
 
-#### Typed (Umbraco v7.3.5+):
+#### Typed (Umbraco v7.3.5+)
 
 ```csharp
 @if (Model.Content.HasValue("image"))
@@ -89,7 +89,7 @@ In Umbraco v7.3.5 a UrlHelper Extension method was introduced to replace the IPu
 }
 ```
 
-#### Typed (pre Umbraco v7.3.5):
+#### Typed (pre Umbraco v7.3.5)
 
 ```csharp
 @if (Model.Content.HasValue("image"))
@@ -102,7 +102,7 @@ In Umbraco v7.3.5 a UrlHelper Extension method was introduced to replace the IPu
 
 The cropped URL can also be found for media in a similar way:
 
-#### Typed (Umbraco v7.3.5+):
+#### Typed (Umbraco v7.3.5+)
 
 ```csharp
 @{
@@ -114,13 +114,13 @@ The cropped URL can also be found for media in a similar way:
 }
 ```
 
-#### Typed (pre Umbraco v7.3.5):
+#### Typed (pre Umbraco v7.3.5)
 
 ```csharp
 @Umbraco.TypedMedia(1234).GetCropUrl("banner")
 ```
 
-#### Dynamic (Obsolete):
+#### Dynamic (Obsolete)
 
 ```csharp
 @Umbraco.Media(1234).GetCropUrl("banner")
@@ -130,7 +130,7 @@ The cropped URL can also be found for media in a similar way:
 
 From Umbraco v7.3.5 there is an optional parameter "htmlEncode" which you and specify as false so that the Url is not Html encoded
 
-#### Typed (Umbraco v7.3.5+):
+#### Typed (Umbraco v7.3.5+)
 
 ```csharp
 @{
@@ -148,7 +148,7 @@ From Umbraco v7.3.5 there is an optional parameter "htmlEncode" which you and sp
 
 ### Data returned
 
-The cropper returns a dynamic object, based on a json structure like this: 
+The cropper returns a dynamic object, based on a json structure like this:
 
 ```json
 {
@@ -159,19 +159,19 @@ The cropper returns a dynamic object, based on a json structure like this:
   "src": "/media/SampleImages/1063/pic01.jpg",
   "crops": [
     {
-      "alias": "banner",
-      "width": 800,
-      "height": 90
+    "alias": "banner",
+    "width": 800,
+    "height": 90
     },
     {
-      "alias": "highrise",
-      "width": 80,
-      "height": 400
+    "alias": "highrise",
+    "width": 80,
+    "height": 400
     },
     {
-      "alias": "thumb",
-      "width": 90,
-      "height": 90
+    "alias": "thumb",
+    "width": 90,
+    "height": 90
     }
   ]
 }
@@ -187,35 +187,35 @@ Or iterate through them:
 
 ```csharp
 @foreach(var crop in CurrentPage.image.crops){
-    <img src="@CurrentPage.GetCropUrl("image", crop.alias)">    
+    <img src="@CurrentPage.GetCropUrl("image", crop.alias)">
 }
 ```
 
 ## Powered by ImageProcessor
-[ImageProcessor](https://imageprocessor.org/) is an amazing project for modifying and processing images in a simple an efficient manner.
+[ImageProcessor](https://imageprocessor.org/) is an amazing project for modifying and processing images in an efficient manner.
 
 We bundle this library in Umbraco 7.1+ and you can therefore take full advantage of all its features out-of-the-box, like sharping, blurring, cropping, rotating and so.
 
 ### MVC View Example on how to blur a crop
 
-#### Typed (Umbraco v7.3.5+):
+#### Typed (Umbraco v7.3.5+)
 
 ```html
 <img src="@Url.GetCropUrl(Model.Content, propertyAlias: "image", cropAlias: "banner", useCropDimensions:true, furtherOptions: "&blur=11&sigma=1.5&threshold=10")" />
 ```
 
-#### Dynamic (Obsolete):
+#### Dynamic (Obsolete)
 
 ```html
 <img src='@CurrentPage.GetCropUrl("image", "banner")&blur=11&sigma=1.5&threshold=10' />
 ```
 
-Using ImageProcessors built-in [gaussian blur](https://imageprocessor.org/imageprocessor-web/imageprocessingmodule/gaussianblur/)    
+Using ImageProcessors built-in [gaussian blur](https://imageprocessor.org/imageprocessor-web/imageprocessingmodule/gaussianblur/)
 
 ## Upload property replacement
 
-You can replace an upload property with a cropper, existing images will keep returning their current path and work unmodified with the cropper 
-applied. The old image will even be available in the cropper, so you can modify it if you ever need to. 
+You can replace an upload property with a cropper, existing images will keep returning their current path and work unmodified with the cropper
+applied. The old image will even be available in the cropper, so you can modify it if you ever need to.
 
-However, be aware that a cropper returns a dynamic object when saved, so if you perform any sort of string modifications on your upload property value, 
+However, be aware that a cropper returns a dynamic object when saved, so if you perform any sort of string modifications on your upload property value,
 you will most likely see some errors in your templates / macros.

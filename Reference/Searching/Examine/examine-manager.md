@@ -6,7 +6,7 @@ needsV8Update: "true"
 # Examine Manager
 _The Examine.ExamineManager is a singleton object which exposes all of the index and search providers which are registered in the configuration of the application. As with all singletons in Umbraco, we recommend reviewing the [Common Pitfalls & Anti-Patterns](../../Common-Pitfalls/index.md) page to ensure the correct usage._
 
-Accessing the singleton can be done easily like:
+Accessing the singleton can be done like:
 
 ```csharp
 ExamineManager.Instance
@@ -17,7 +17,7 @@ This returns an active instance of the ExamineManager which exposes operations s
 * Default index & search providers
 * Full collection of index & search providers
 * All indexing and searching methods
-	
+
 ## Searching
 
 Important to note that the `Search` methods on the ExamineManager will call the Search methods of the **default** search provider specified in config. If you want to search using a specified provider, you can retrieve it from the `SearchProviderCollection` (see example below).
@@ -28,7 +28,7 @@ You can access any of the searchers by their name, for example:
 var externalSearcher = ExamineManager.Instance.SearchProviderCollection["ExternalSearcher"];
 ```
 
-For simple searching the method to use is:
+For searching the method to use is:
 
 ```chsarp
 ISearchResults Search(string searchText, bool useWildcards);

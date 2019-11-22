@@ -8,7 +8,7 @@ On Umbraco Cloud deletions are environment specific. This means that in order to
 
 In this article you can read about the correct way of deleting files, schema and content from your Umbraco Cloud project.
 
-When you have an Umbraco Cloud project, you might have several environments - including a local clone of the project. These environments each have their own database. The databases will contain references to all of your content and media, as well as to all of your schema files (e.g. Document Types, Templates etc). 
+When you have an Umbraco Cloud project, you might have several environments - including a local clone of the project. These environments each have their own database. The databases will contain references to all of your content and media, as well as to all of your schema files (e.g. Document Types, Templates etc).
 
 The databases are environment specific. When you deploy from one environment to another, the engine behind Umbraco Cloud will compare incoming schema files with references to these in the databases using both *alias* and *GUID*. If something doesn't add up - e.g. there is a mismatch between the database references and the files deployed - you will see an error. Learn more about this in the [Troubleshooting section](../../Troubleshooting/Deployments).
 
@@ -38,7 +38,7 @@ Once the deployment is complete, you will notice the following:
 * The template is correctly updated
 * The Document Type you deleted on Development is still present in the backoffice on the Live environment
 
-You might wonder why the Document Type that you've just deleted, is still there. The reason is, that we only delete the associated UDA file, and not the database entry that references the Document Type. 
+You might wonder why the Document Type that you have deleted, is still there. The reason is, that we only delete the associated UDA file, and not the database entry that references the Document Type.
 
 In order to completely delete the Document Type from your project, you need to delete it from the backoffice of the Live environment as well. This will delete the reference to the Document Type in the Live database, and you will be rid of it completely.
 
@@ -74,6 +74,3 @@ As these are **only** files, everything will be deleted on the next environment 
 ### Deleting content and / or media
 
 Content and media deletions will not be picked up by deployments and will have to be deleted on each environment you wish to delete the content or media on.
-
-
-

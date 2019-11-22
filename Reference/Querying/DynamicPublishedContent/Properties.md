@@ -1,13 +1,13 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
+versionRemoved: 8.0.0
 ---
 
 # DynamicPublishedContent
 
 ## Properties
 Built-in properties, which exists on all dynamic content objects by default. These are referenced in Razor as a standard property
-`object.Property` using standard C# syntax. 
+`object.Property` using standard C# syntax.
 
 ```csharp
 @* gets the current page Url *@
@@ -27,24 +27,24 @@ All [standard properties](../IPublishedContent/Properties.md) that are available
 -----
 
 ## Custom properties
-All content and media items also contains a reference to all the data defined by their document type, 
-property access for custom properties is the same for built in properties using the standard 
-`object.Property` C# syntax. 
-	
+All content and media items also contains a reference to all the data defined by their document type,
+property access for custom properties is the same for built in properties using the standard
+`object.Property` C# syntax.
+
 ### CurrentPage.PropertyAlias
-Returns the property matching the PropertyAlias (replace with alias of property) 
+Returns the property matching the PropertyAlias (replace with alias of property)
 
 ```csharp
 @*Get the property with alias: "siteName" from the current page  *@
 @CurrentPage.siteName
 ```
-	
+
 ### CurrentPage._propertyAlias (recursive access)
-Returns the property matching the propertyAlias (replace with alias of property) 
+Returns the property matching the propertyAlias (replace with alias of property)
 by prefixing with '_' razor will first look on the current page. If no value is defined, it will then search ancestor pages for a property matching the alias, and return a value, if a property is found.
 
 ```csharp
-@* Get the "siteName" property recursively (if not present on current page, traverse through page ancestors, 
+@* Get the "siteName" property recursively (if not present on current page, traverse through page ancestors,
 Notice this matches alias casing, but prefixes a _ char *@
 @CurrentPage._siteName
 ```
@@ -80,7 +80,7 @@ For example:
 ```csharp
 @foreach(var item in CurrentPage.Children.Where("bodyText.Contains(\"cat\")"))
 {
-    @item.Name 
+    @item.Name
 }
 ```
 
@@ -97,6 +97,6 @@ For example:
     keywords.Add("dog");
     keywords.Add("fish");
     values.Add("keywords",keywords);
-    var items = @CurrentPage.Children.Where("Name.ContainsAny(keywords)", values); 
+    var items = @CurrentPage.Children.Where("Name.ContainsAny(keywords)", values);
 }
 ```

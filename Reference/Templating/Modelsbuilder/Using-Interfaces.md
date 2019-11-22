@@ -10,9 +10,8 @@ us to not have to switch back to using `GetPropertyValue()` for the composed pro
 
 A common use-case for this is if you have a separate composition for the "SEO properties" `Page Title` and `Page Description`.
 
-You would usually use this composition on both your `Home` and `Textpage` document types, but you won't
-be able to use the simpler Models Builder syntax (e.g. `Model.PageTitle`) to render them on neither the **Home** template nor
-the **Textpage** template, because they would be bound to their respective models. And you won't be able to use it on any Master Template they'd be children of, because that would need to be bound to the generic `IPublishedContent`.
+You would usually use this composition on both your `Home` and `Textpage` document types. You won't be able to use the simpler Models Builder syntax (e.g. `Model.PageTitle`) to render them on neither the **Home** template nor
+the **Textpage** template. This is because they would be bound to their respective models. And you won't be able to use it on any Master Template they'd be children of, because that would need to be bound to the generic `IPublishedContent`.
 So you'd have to resort to
 the *ever-so-slightly* clumsier `Model.GetPropertyValue("pageTitle")` syntax to render these properties.
 
@@ -33,4 +32,3 @@ You can then render the partial from your Master Template with something like th
     @Html.Partial("Metatags")
 </head>
 ```
-

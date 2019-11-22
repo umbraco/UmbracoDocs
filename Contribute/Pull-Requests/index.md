@@ -15,11 +15,11 @@ There are two ways to create a pull request:
 
 ## Option 1: Creating a PR directly on GitHub
 
-GitHub has some great functionality that allows you to submit a PR directly from our [repository](https://github.com/umbraco/UmbracoDocs/), and there is also a button on every single documentation article at the top that links you directly to GitHub in order to edit that specific file:
+GitHub has some great functionality that allows you to submit a PR directly from our [repository](https://github.com/umbraco/UmbracoDocs/). There is also a button on every single documentation article at the top that links you directly to GitHub in order to edit that specific file:
 
 ![Our edit button](images/edit-this-page.png)
 
-This is very helpful to fix typing errors or adding small things, but if you are working on a larger update that includes pictures and editing several files in one pull request then it is not the best way to work. You'd be better off creating a fork.
+This is very helpful to fix typing errors or adding small things. If you however are working on a larger update that includes pictures and editing several files in one pull request then it is not the best way to work. You'd be better off creating a fork.
 
 ## Options 2: Creating a PR through a fork
 
@@ -50,12 +50,12 @@ git rebase upstream/master
 
 ### Step 3: Creating a pull request
 
-If you do this locally and then push it to your fork you will have a synced up fork to start working with! Once you have made some changes and you are happy with the result, you can create a pull request (you may have to rebase again and resolve merged conflicts if a lot of things have been merged in since your last sync).
+If you do this locally and then push it to your fork you will have a synced up fork to start working with! Once you have made some changes and you are happy with the result, you can create a pull request. You may have to rebase again and resolve merged conflicts if a lot of things have been merged in since your last sync.
 ![Creating a pull request](images/pull-request.png)
 
-And that is all you need to do to create a fork, sync it and make a pull request to the main repository! 
+And that is all you need to do to create a fork, sync it and make a pull request to the main repository!
 
 ### Step 4: Wait for an action
 
 Hopefully your work will be merged immediately.  It might happen that your pull request receives a comment and a *request for changes*. We hope you are able to work with us to update your PR so we can merge it in!
-Sometimes a label is added to a PR.  We have described a [list of different labels we often use](../github-issues.md).
+Sometimes a label is added to a PR.  We have described a [list of different labels we often use](../index.md#labels).

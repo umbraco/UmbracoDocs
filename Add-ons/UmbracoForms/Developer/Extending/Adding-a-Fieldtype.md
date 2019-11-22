@@ -27,16 +27,16 @@ public class MyCustomField : Umbraco.Forms.Core.FieldType
     // You can do custom validation in here which will occur when the form is submitted.
     // Any strings returned will cause the submit to be invalid!
     // Where as returning an empty ienumerable of strings will say that it's okay.
-    public override IEnumerable<string> ValidateField(Form form, Field field, IEnumerable<object> postedValues, HttpContextBase context)
+    public override IEnumerable<string> ValidateField(Form form, Field field, IEnumerable<object> postedValues, HttpContextBase context, IFormStorage formStorage)
     {
         var returnStrings = new List<string>();
-    
+
         if (!postedValues.Any(value => value.ToString().ToLower().Contains("custom"))) {
             returnStrings.Add("You need to include 'custom' in the field!");
         }
-        
+
         // Also validate it against the original default method.
-        returnStrings.AddRange(base.ValidateField(form, field, postedValues, context));
+        returnStrings.AddRange(base.ValidateField(form, field, postedValues, context, formStorage));
 
         return returnStrings;
     }
@@ -60,18 +60,18 @@ Then we will start building the view at `Views\Partials\Forms\Fieldtypes\FieldTy
         @{if (Model.Validate) { <text> data-val-regex="@Model.InvalidErrorMessage" data-regex="@Html.Raw(Model.Regex)" </text> }} />
 ```
 
-The view simply takes care of generating the UI control and setting its value.
+The view takes care of generating the UI control and setting its value.
 
-On the view, it is important to note that the id attribute is fetched from @Model.Id. You'll also see that we are using jQuery validate unobtrusive to perform client side validation so that's why we are adding the data* attributes.
+On the view, it is important to note that the ID attribute is fetched from `@Model.Id`. You'll also see that we are using jQuery validate unobtrusive to perform client side validation so that's why we are adding the data* attributes.
 
 ## Umbraco backoffice view
 
 The final step involves building the HTML view which will be rendered in Umbraco as an example of how our end result will look. We will create a file at `App_Plugins\UmbracoForms\Backoffice\Common\FieldTypes\mycustomfield.html` which will contain the following:
 
 ```html
-<input 
-    type="text" tabindex="-1" 
+<input
+    type="text" tabindex="-1"
     class="input-block-level"
-    style="max-width: 100px" 
+    style="max-width: 100px"
 />
 ```

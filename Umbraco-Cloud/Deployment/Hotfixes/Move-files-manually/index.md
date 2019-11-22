@@ -13,7 +13,7 @@ The following tools have been used to create this guide:
 
 ## The Scenario
 
-You have an Umbraco Cloud project with two environments, Development and Live. 
+You have an Umbraco Cloud project with two environments, Development and Live.
 
 You have been working on building the site on a local clone of the Development environment, and now you want to send some but not all changes to the Live environment.
 
@@ -42,7 +42,7 @@ For the sake of simplicity here's an explanation of the names I'll be using in t
 
         ![Files changes or added](images/commit-files-changed.png)
 
-    * The _new files_ can simply be moved from the Development repository to the Live repository
+    * The _new files_ can be moved from the Development repository to the Live repository
     * The same goes for _changed files_. You can also edit the files, and only move the code snippets you need on the Live environment
 
 3. Copy and paste the new and/or updated files from your Development repository to your Live repository
@@ -62,15 +62,15 @@ Once you've checked that everything works locally, you are ready to push to the 
 ### Push to Live
 
 9. Push the committed changes to the Live environment using Git
-10. **Note** that when changes are pushing directly to a Live environment and you have more than one environment, the changes are not automatically extracted to the site
+10. **Note** that when changes are pushed directly to a Live environment and you have more than one environment, the changes are not automatically extracted to the site
 11. Find a guide on how to extract the files, in the [Manual Extraction](../../../Set-Up/Power-Tools/Manual-extractions) article
 
 You have now applied a hotfix to the Live environment.
 
-When you are done with development on your Development environment, simply follow the [normal workflow of Cloud](../../../Deployment/Cloud-to-Cloud/) to deploy the changes to the Live environment. The hotfix, which now exists in both environments, should automatically be merged upon deployment.
+When you are done with development on your Development environment, follow the [normal workflow of Cloud](../../../Deployment/Cloud-to-Cloud/) to deploy the changes to the Live environment. The hotfix, which now exists in both environments, should automatically be merged upon deployment.
 
 ## Important notes
 
-* Once you've applied the hotfix, we recommend that you delete the local clone of the Live environment. If you need to apply another hotfix at some point, simply clone the environment down again.
+* Once you've applied the hotfix, we recommend that you delete the local clone of the Live environment. If you need to apply another hotfix at some point, clone the environment down again.
 * Make sure that the changes you push directly to your Live environment are also pushed to the Development environment. This will ensure that your environments are kept in sync.
 * This guide can also be used for applying a hotfix to a _Staging_ environment.

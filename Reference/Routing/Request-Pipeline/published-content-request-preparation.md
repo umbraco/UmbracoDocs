@@ -21,6 +21,7 @@ What it does:
 - Forwards to either WebForms or MVC
 
 ## PrepareRequest
+
 The ProcessRequest method calls the PublishedContentRequestEngine.PrepareRequest method. The prepare request takes care of:
 
 - FindDomain()
@@ -36,18 +37,20 @@ The ProcessRequest method calls the PublishedContentRequestEngine.PrepareRequest
 We will discuss a few of these steps below.
 
 ### FindDomain()
+
 The FindDomain method looks for a domain matching the request Uri
 
 - Using a greedy match: “domain.com/foo” takes over “domain.com”
 - Sets published content request’s domain
 - If a domain was found
-	- Sets published content request’s culture accordingly
-	- Computes domain Uri based upon the current request ("domain.com" for "http://domain.com" or "https://domain.com")
+    - Sets published content request’s culture accordingly
+    - Computes domain Uri based upon the current request ("domain.com" for "http://domain.com" or "https://domain.com")
 - Else
 - Sets published content request’s culture by default
 (first language, else system)
 
 ### FindPublishedContentAndTemplate()
+
 1. FindPublishedContent ()
 2. Handles redirects
 3. HandlePublishedContent()
@@ -64,7 +67,7 @@ UmbracoModule will pick up the redirect and redirect...  There is no need to wri
 ```csharp
 PublishedContentRequest.Prepared += (sender, args) =>
 {
-  var request = sender as PublishedContentRequest;  
+  var request = sender as PublishedContentRequest;
   if (!request.HasPublishedContent) return;
 
   var content = request.PublishedContent;
@@ -79,7 +82,7 @@ PublishedContentRequest.Prepared += (sender, args) =>
 
 Concerning Webforms - that's the same as v4 (no change).  That means that MVC has been made possible by the pipeline.
 
-You can of course create your own Mvc RenderController: 
+You can of course create your own Mvc RenderController:
 
 ```csharp
 // This is the default controller
@@ -97,7 +100,7 @@ A missing template goes to MVC
 
 There's one by default but you can use your own, so still time to change the view...
 
-As a reminder, [Route hijacking](../../../Reference/routing/custom-controllers) works like this: 
+As a reminder, [Route hijacking](../../../Reference/routing/custom-controllers) works like this:
 
 - create a **MyContentType**Controller
   - Will run in place of the default controller
@@ -106,17 +109,19 @@ As a reminder, [Route hijacking](../../../Reference/routing/custom-controllers) 
 - Otherwise default (Index) action runs
 
 ## Missing template?
+
 In case the PrepareRequest can not find a template:
 
-* it will verify if this is route hijacking
-* otherwise handles these steps:
-  *  HandlePublishedContent()
-  * FindTemplate()
-  * Handle redirects, etc.
-  * Ugly 404 (w/ message)
-  * Transfer to WebForms or MVC…
+- It will verify if this is route hijacking
+- Otherwise handles these steps:
+  - HandlePublishedContent()
+  - FindTemplate()
+  - Handle redirects, etc.
+  - Ugly 404 (w/ message)
+  - Transfer to WebForms or MVC…
 
 ## Other things which got routed in the process
-* The /Base Rest service
-* WebApi
-* Mvc Routes
+
+- The /Base Rest service
+- WebApi
+- Mvc Routes

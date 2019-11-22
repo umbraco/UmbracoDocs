@@ -14,7 +14,7 @@ The default location of this file is written to `App_Data/Logs` and contains the
 
 ## Structured logging
 
-Serilog is a logging framework that allows us to do structured logging or write log messages using the message template format, allowing us to have a more detailed log message, rather than the traditional text message in a long txt file.
+Serilog is a logging framework that allows us to do structured logging or write log messages using the message template format. This basically allows us to have a more detailed log message, rather than the traditional text message in a long txt file.
 
 ```
 2018-11-12 08:34:50,419 [P27004/D2/T1] INFO   Umbraco.Core.Runtime.CoreRuntime - Booted. (4586ms) [Timing 9e76e5f]
@@ -48,7 +48,7 @@ To learn more about structured logging and message templates you can read more a
 
 Umbraco writes log messages, but you are also able to use the Umbraco logger to write the log file as needed, so you can get further insights and details about your implementation.
 
-Here is a simple example of using the logger to write an Information message to the log which will contain one property of **Name** which will output the name variable that is passed into the method
+Here is an example of using the logger to write an Information message to the log which will contain one property of **Name** which will output the name variable that is passed into the method
 
 ```csharp
 using Umbraco.Web.WebApi;
@@ -67,7 +67,7 @@ namespace MyNamespace
 }
 ```
 
-The incorrect way to log the message would be use string interpolation or string concatanation such as
+The incorrect way to log the message would be use string interpolation or string concatenation such as
 
 ```csharp
 //GOOD - Do use :)
@@ -80,11 +80,9 @@ Logger.Info<MyApiController>($"We are saying hello to {name}");
 Logger.Info<MyApiController>("We are saying hello to " + name);
 ```
 
-The above examples  which use the bad approach will write to the log file, however we will not get a separate property logged with the message and we have no easy way to search for all log messages of this type.
+The bad examples above will write to the log file, but we will not get a separate property logged with the message. This means we can't find them by searching for log messages that use the message template `We are saying hello to {Name}`
 
-Where as the previous example we would be able to find all log messages that use the message template `We are saying hello to {Name}`
-
-If you are writing custom code and are inheriting from one of these special Umbraco base classes:
+If you are writing classes that inherit from one of these special Umbraco base classes:
 
 * RenderMvcController
 * SurfaceController
@@ -131,96 +129,22 @@ The default log levels we ship with in Umbraco v8.0+ are:
 
 ## Configuration
 
-Serilog can be configured and extended by using the two XML configuration files on disk found at `/config/serilog.config` which is used to modify the main Umbraco logging pipeline and a second configuration file that is at `/config/serilog.user.config` which is a sublogger and allows you to make modifications without affecting the main Umbraco logger.
+Serilog can be configured and extended by using the two XML configuration files on disk.
 
-### Changing the log level
+* `/config/serilog.config` is used to modify the main Umbraco logging pipeline
+* `/config/serilog.user.config` which is a sublogger and allows you to make modifications without affecting the main Umbraco logger
 
-This can be done by adding the following into either `serilog.config` or the sub logger configuration file `serilog.user.config`
-
-```xml
-<add key="serilog:minimum-level" value="Verbose" />
-```
-
-:::warning
-If you change the main Umbraco logger in serilog.config to log only **Warning** you would not be able to have the serilog.user.config sub logger to be set to **Debug** as only Warning messages and higher will flow down into the child sub logger
-:::
-
-
-### Changing the log level for specific namespaces
-
-This can be done by adding the following into either `serilog.config` or the sub logger configuration file `serilog.user.config`
-
-```xml
-<add key="serilog:minimum-level:override:Microsoft" value="Warning" />
-<add key="serilog:minimum-level:override:Microsoft.AspNet.Mvc" value="Error" />
-<add key="serilog:minimum-level:override:MyNamespace" value="Information" />
-```
-
-:::warning
-If you change the **serilog:minimum-level** to be **Error** then the following example above would only log Error messages from *Microsoft.AspNet.Mvc* and not any warning, info or debug messages from the *Microsoft* namespace
-:::
-
-### Writing your own log messages to a custom file
-
-Add the following to the `/config/serilog.user.config` file, which will create a new JSON log file
-
-```xml
-<!-- Write to a user log file -->
-<add key="serilog:using:File" value="Serilog.Sinks.File" />
-<add key="serilog:write-to:File.path" value="%BASEDIR%\my-logs\my-custom-logfile.txt" />
-<add key="serilog:write-to:File.shared" value="true" />
-<add key="serilog:write-to:File.restrictedToMinimumLevel" value="Debug" />
-<add key="serilog:write-to:File.retainedFileCountLimit" value="32" /> <!-- Number of log files to keep (or remove value to keep all files) -->
-<add key="serilog:write-to:File.rollingInterval" value="Day" /> <!-- Create a new log file every Minute/Hour/Day/Month/Year/infinite -->
-<add key="serilog:write-to:File.outputTemplate" value="{Timestamp:yyyy-MM-dd HH:mm:ss,fff} [P{ProcessId}/D{AppDomainId}/T{ThreadId}] {Log4NetLevel}  {SourceContext} - {Message:lj}{NewLine}{Exception}" />
-```
-
-### Filtering user log file to include only log messages from your namespace
-
-With the above example we are able to write to a separate JSON log file, but adding these additional lines to `serilog.user.config` will allow you to filter and include log messages. For further details on specific expressions you can write, refer to the readme of the [Serilog Filters Expression project](https://github.com/serilog/serilog-filters-expressions)
-
-```xml
-<!-- Filters all sink's in the serilog.user.config to use this expression -->
-<!-- Common use case is to include SourceType starting with your own namespace -->
-<add key="serilog:using:FilterExpressions" value="Serilog.Filters.Expressions" />
-<add key="serilog:filter:ByIncludingOnly.expression" value="StartsWith(SourceContext, 'MyNamespace')" />
-```
-
-### Writing log events to different storage types
-
-Serilog has a similar concept to Log4Net with its appenders, which are referred to as Serilog Sinks.
-A Serilog Sink, allows you to persist the structured log message to a data store of your choice. In v8.0+ we use the *Serilog.Sinks.File* to allow us to write a .txt or .json file to disk. But the Serilog project and the wider Serilog community allows you to store these logs in various locations.
-
-[An extensive list of examples can be found here](https://github.com/serilog/serilog/wiki/Provided-Sinks)
-
-For example you could install the Nuget package `PM> Install-Package Serilog.Sinks.Seq` and update the `serilog.user.config` file with the following XML snippet and if you already have the file example above it will write to that location as well as Seq.
-
-```xml
-<add key="serilog:using:Seq" value="Serilog.Sinks.Seq" />
-<add key="serilog:write-to:Seq.serverUrl" value="http://localhost:5341" />
-<add key="serilog:write-to:Seq.apiKey" value="[optional API key here]" />
-```
-
-### Adding a custom log property to all log items
-
-You may wish to add a log property to all log messages. A good example could be a log property for the `environment` to determine if the log message came from `development` or `production`.
-
-This is useful when you could be writing logs from all environments or multiple customer projects into a single logging source, such as ElasticSearch, this would then easily allow you to search and filter for a specific project and its environment to see the log messages.
-
-In the `/config/serilog.user.config` file you can add the following lines, which the values could be changed or transformed as needed.
-
-```xml
-<add key="serilog:enrich:with-property:customer" value="Super Customer" />
-<add key="serilog:enrich:with-property:environment" value="Production" />
-```
+Info on the Serilog config [here](../../../../Reference/Config/Serilog/index.md).
 
 ## Advanced
 
 ### Full C# control over Serilog configuration
 
-If you like using Serilog but prefer to use C# to configure the logging pipeline then you can do so with the following example
+If you like using Serilog but prefer to use C# to configure the logging pipeline then you can do so with the following example. This sets the minimum logging level from a web.config AppSetting, allowing you to set different minimum logging levels in different environments using web config transforms.
 
 ```csharp
+using System;
+using System.Configuration;
 using Umbraco.Web;
 using Umbraco.Core;
 using Umbraco.Web.Runtime;
@@ -228,6 +152,7 @@ using Umbraco.Core.Logging.Serilog;
 using ILogger = Umbraco.Core.Logging.ILogger;
 
 using Serilog;
+using Serilog.Core;
 using Serilog.Events;
 
 namespace MyNamespace
@@ -247,14 +172,21 @@ namespace MyNamespace
         }
         protected override ILogger GetLogger()
         {
-            var loggerConfig = new LoggerConfiguration();
-            loggerConfig
-                .Enrich.WithProperty("MyProperty", "whatIWant")
+            var logLevelSetting = ConfigurationManager.AppSettings["YourMinimumLoggingLevel"]; //Warning, Debug, Information, etc
+
+            const bool ignoreCase = true; //this is to clarify the function of the boolean second parameter in the TryParse
+            if (!Enum.TryParse(logLevelSetting, ignoreCase, out LogEventLevel minimumLevel))
+            {
+                minimumLevel = LogEventLevel.Information;//set to this level if the config setting is missing or doesn't match a valid enumeration
+            }
+
+            var levelSwitch = new LoggingLevelSwitch { MinimumLevel = minimumLevel };
+
+            var loggerConfig = new LoggerConfiguration()
                 .MinimalConfiguration()
-                .OutputDefaultTextFile(LogEventLevel.Error)
-                .OutputDefaultJsonFile(LogEventLevel.Information)
                 .ReadFromConfigFile()
-                .ReadFromUserConfigFile();
+                .ReadFromUserConfigFile()
+                .MinimumLevel.ControlledBy(levelSwitch);
 
             return new SerilogLogger(loggerConfig);
         }
@@ -274,7 +206,8 @@ Learn more about the [logviewer dashboard](../../../Backoffice/LogViewer/) in th
 
 ## The logviewer desktop app
 
-This is a tool for viewing & querying JSON log files from disk in the same way as the built in log viewer dashboard
+This is a tool for viewing & querying JSON log files from disk in the same way as the built in log viewer dashboard.
+
 <a href='//www.microsoft.com/store/apps/9N8RV8LKTXRJ?cid=storebadge&ocid=badge'><img src='https://assets.windowsphone.com/85864462-9c82-451e-9355-a3d5f874397a/English_get-it-from-MS_InvariantCulture_Default.png' alt='English badge' style='height: 38px;' height="38" /></a> <a href="https://itunes.apple.com/gb/app/compact-log-viewer/id1456027499"><img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg" /></a>
 
 
@@ -298,5 +231,3 @@ If you are interested in learning more then the following resources will benefic
 * [Nicholas Blumhardt Blog, creator of Serilog](https://nblumhardt.com/)
 * [Serilog Pluralsight Course](https://www.pluralsight.com/courses/modern-structured-logging-serilog-seq)
 * [Seq](https://getseq.net/) This is FREE for a single machine such as your own local development computer
-
-

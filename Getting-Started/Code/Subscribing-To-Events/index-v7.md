@@ -33,7 +33,7 @@ protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplica
 }
 ```
 
-To execute your custom code add the following (if you are using Visual Studio you can easily add the next bit of code by hitting tab twice after `+=` in the previous code block) :
+To execute your custom code add the following (if you are using Visual Studio you can add the next bit of code by hitting tab twice after `+=` in the previous code block) :
 
 ```csharp
 void ContentService_Published(Umbraco.Core.Publishing.IPublishingStrategy sender,                  Umbraco.Core.Events.PublishEventArgs<Umbraco.Core.Models.IContent> e)
@@ -78,7 +78,7 @@ Go to the backoffice and publish a piece of content. Now open tracelog.txt locat
 ![Message in tracelog.txt](images/log-message.png)
 
 ### Before and after
-As you can see our custom code has been executed when we published a piece of content. Actually it executed after the item was published because we used the `Published` event. If you want to run code before publishing, use `Publishing`. The same goes for most other events so `Saving` : `Saved`, `Copying` : `Copied` and so forth.
+As you can see our custom code has been executed when we published a piece of content. It executed after the item was published because we used the `Published` event. If you want to run code before publishing, use `Publishing`. The same goes for most other events so `Saving` : `Saved`, `Copying` : `Copied` and so forth.
 
 ### More information
 - [Events Reference](../../../Reference/Events/)

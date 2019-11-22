@@ -68,7 +68,7 @@ The project should now be up and running, but both Staging and Live will be empt
 
 * When that is done we create a “deploy” marker file in the wwwroot, which tells Umbraco Deploy to run when the application starts.
 
-* Finally we make a request to the website, which just had its changes deployed.
+* Finally we make a request to the website, which had its changes deployed.
 
 Between the steps listed above, when handling a queued message, we post updates back to the Portal. Some of these updates will also be posted to the stream of the project that is being updated.
 

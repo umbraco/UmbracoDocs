@@ -8,7 +8,7 @@ versionFrom: 7.0.0
 Add a new class to your project and have it inherit from `Umbraco.Forms.Core.ExportType` and you have two options when implementing the class.
 
 ## Basic Example
-When implementing the method `public override string ExportRecords(RecordExportFilter filter)` in your export provider class. You simply need to return the final string you wish to write to a file. Such as .txt file or .csv and you can perform your logic to build up say a simple comma separated string for a CSV file in the `ExportRecords` method.
+When implementing the method `public override string ExportRecords(RecordExportFilter filter)` in your export provider class. You need to return the final string you wish to write to a file. Such as .txt file or .csv and you can perform your logic to build up a comma separated string for a CSV file in the `ExportRecords` method.
 
 In the constructor of your provider, note that you will need a further two properties, `FileExtension` and `Icon`. The FileExtension property is the file extension such as `zip`, `txt` or `csv` of the file you will be generating & serving from the file system as the export file.
 
@@ -29,7 +29,7 @@ public class ExportToHtmlReport : ExportType
     }
 
     /// <summary>
-    /// We simply implement this method from the interface
+    /// We implement this method from the interface
     /// As this method is called from ExportToFile & is expecting the file contents as a string to be written as a stream to a file
     /// </summary>
     public override string ExportRecords(RecordExportFilter filter)
@@ -41,8 +41,8 @@ public class ExportToHtmlReport : ExportType
 }
 ```
 
-### Razor Partial View 
-   
+### Razor Partial View
+
 ```csharp
 @model Umbraco.Forms.Web.Models.Backoffice.EntrySearchResultCollection
 
@@ -67,7 +67,7 @@ public class ExportToHtmlReport : ExportType
 ```
 
 ## Advanced Example
-This approach gives us more flexibility in creating the file we wish to serve as the exported file. We do this for the export to excel file export provider we ship in Umbraco Forms, with this we can use a library to create the excel file and store it in a temporary location before we send back the filepath for the browser to stream down the export file.
+This approach gives us more flexibility in creating the file we wish to serve as the exported file. We do this for the export to excel file export provider we ship in Umbraco Forms. With this we can use a library to create the excel file and store it in a temporary location before we send back the filepath for the browser to stream down the export file.
 
 In this example we will create a collection of text files, one for each submission which is then zipped up into a single file and served as the export file.
 
@@ -111,7 +111,7 @@ public class ExportToTextFile : ExportType
         string pathToSaveZipFile = filepath;
 
         // Check our path does not contain \\
-        // If not just simply may the filePath
+        // If not, use the filePath
         if (filepath.Contains('\\') == false)
         {
             pathToSaveZipFile = IOHelper.MapPath(filepath);
@@ -131,7 +131,7 @@ public class ExportToTextFile : ExportType
         // Check that the directory where we will save the ZIP file temporarily exists
         // If not just create it
         if (Directory.Exists(tempFileDir) == false)
-        {   
+        {
             Directory.CreateDirectory(tempFileDir);
         }
 
@@ -140,7 +140,7 @@ public class ExportToTextFile : ExportType
         {
             File.Delete(pathToSaveZipFile);
         }
-        
+
 
         // Query the DB for submissions to export based on the filter
         var submissions = FormRecordSearcher.QueryDataBase(filter);

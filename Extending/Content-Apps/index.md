@@ -1,33 +1,36 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Content Apps"
+meta.Description: "A guide to Umbraco Content Apps in the backoffice"
 ---
 
 # Content Apps
 
 ## What are Content Apps?
 
-Content Apps are **companions** to the editing experience when working with content in the Umbraco backoffice.
+Content Apps are **companions** to the editing experience when working with content or media in the Umbraco backoffice.
 
-Content Apps are a new concept in v8. Editors can switch from editing 'Content' to accessing contextual information related to the item they are editing.
+Content Apps are a new concept in Umbraco 8. Editors can switch from editing 'Content' to accessing contextual information related to the item they are editing.
 
-![Content Apps in back office](images/content-app-1.png)
+![Content Apps in backoffice](images/content-app-1.png)
 
 ### Default Content Apps
-**'Info'** - The 'Info' Content App is a default Content App for all items, replacing the 'Info' tab in Umbraco V7 for displaying Links, History and Status of the current content item.
+
+**'Info'** - The 'Info' Content App is a default Content App for all items, replacing the 'Info' tab in Umbraco 7 for displaying Links, History and Status of the current content item.
 
 ### Custom Content Apps
 
 As an integrated part of Umbraco it is possible for you as a developer to create and provide your editors with helpful Content Apps.
 
-For example, you could create a Google Analytics integration within a Content App that displays to editors, the current 'page views' for the content item they are editing.
+For example, you could create a Google Analytics integration within a Content App that displays to editors the current 'page views' for the content item they are editing.
 
 #### Controlling Appearance/Position
 
-You can associate an icon with your custom Content App, control the position (between 'Content' and 'Info') where your custom Content App should appear via a 'weighting' number
+You can associate an icon and control the position of your custom Content App. The position, for example between 'Content' and 'Info', is set via a 'weighting' number.
 
 #### Permissions
 
-Content Apps can be configured to appear dependent on Section, Content Type and User Group Permissions. 
+Content Apps can be configured to appear dependent on Section, Content Type and User Group Permissions.
 
 #### Read-Only?
 
@@ -45,9 +48,9 @@ A basic understanding of how to use AngularJS with Umbraco is required.  If you 
 
 ### Setting up the Plugin
 
-The first thing we do is create a new folder inside `/App_Plugins` folder. We will call it `WordCounter`
+The first thing we do is create a new folder inside `/App_Plugins` folder. We will call it `WordCounter`.
 
-Next we need to create a manifest file to describe what this Content App does. This manifest will tell Umbraco about our new Content App and allows us to inject any needed files into the application.  
+Next we need to create a manifest file to describe what this Content App does. This manifest will tell Umbraco about our new Content App and allows us to inject any needed files into the application.
 
 Create a new file in the `/App_Plugins/WordCounter/` folder and name it `package.manifest`. In this new file, copy the code snippet below and save it. This code describes the Content App. To help you understand the JSON, read the inline comments for details on each bit:
 
@@ -55,13 +58,13 @@ Create a new file in the `/App_Plugins/WordCounter/` folder and name it `package
 {
     // define the content apps you want to create
     "contentApps": [
-      {
+    {
         "name": "Word Counter", // required - the name that appears under the icon
         "alias": "wordCounter", // required - unique alias for your app
         "weight": 0, // optional, default is 0, use values between -99 and +99 to appear between the existing Content (-100) and Info (100) apps
         "icon": "icon-calculator", // required - the icon to use
         "view": "~/App_Plugins/WordCounter/wordcounter.html", // required - the location of the view file
-      }
+    }
     ],
     // array of files we want to inject into the application on app_start
     "javascript": [
@@ -73,6 +76,7 @@ Create a new file in the `/App_Plugins/WordCounter/` folder and name it `package
 ### Creating the View and the Controller
 
 Add 2 additional files to the `/App_Plugins/WordCounter/` folder:
+
 - `wordcounter.html`
 - `wordcounter.controller.js`
 
@@ -92,7 +96,7 @@ angular.module("umbraco")
             var properties = node.variants[0].tabs[0].properties;
 
             vm.propertyWordCount = {};
-            
+
             var index;
             for (index = 0; index < properties.length; ++index) {
                 var words = properties[index].value;
@@ -146,7 +150,7 @@ You can set your Content App to only show for specific content types by updating
 {
     "contentApps": [
         {
-            "show": [ 
+            "show": [
                 "-content/homePage", // hide for content type 'homePage'
                 "+content/*", // show for all other content types
                 "+media/*" // show for all media types
@@ -157,7 +161,7 @@ You can set your Content App to only show for specific content types by updating
 ```
 
 :::tip
-When the 'show' directive is omitted then the app will be shown for all content types. 
+When the 'show' directive is omitted then the app will be shown for all content types.
 
 Also, when you want to exclude content types, make sure to include all the rest using `"+content/*"`.
 :::
@@ -170,13 +174,14 @@ In a similar way, you can limit your Content App according to user roles (groups
 {
     "contentApps": [
         {
-            "show": [ 
+            "show": [
                 "+role/admin"  // show for 'admin' user group
             ]
         }
     ]
 }
 ```
+
 :::tip
 When a role restriction is given in the manifest, it overrides any other restrictions based on type.
 :::
@@ -210,44 +215,32 @@ namespace Umbraco.Web.UI
     {
         public ContentApp GetContentAppFor(object source, IEnumerable<IReadOnlyUserGroup> userGroups)
         {
-            // Some logic depending on the object type
-            // To show or hide WordCounterApp
-            switch (source)
-            {
-                // Do not show content app if doctype/content type is a container
-                case IContent content when content.ContentType.IsContainer:
-                    return null;
-
-                // Don't show for media items
-                case IMedia media:
-                    return null;
-
-                case IContent content:
-                    break;
-
-                default:
-                    throw new NotSupportedException($"Object type {source.GetType()} is not supported here.");
-            }
-
-            // Can implement some logic with userGroups if needed
+			// Can implement some logic with userGroups if needed
             // Allowing us to display the content app with some restrictions for certain groups
             if (userGroups.Any(x => x.Alias.ToLowerInvariant() == "admin") == false)
                 return null;
+			
 
-            var wordCounterApp = new ContentApp
-            {
-                Alias = "wordCounter",
-                Name = "Word Counter",
-                Icon = "icon-calculator",
-                View = "/App_Plugins/WordCounter/wordcounter.html",
-                Weight = 0
-            };
-            return wordCounterApp;
+			// only show app on content items
+			if(content is IContent) 
+			{
+				var wordCounterApp = new ContentApp
+	            {
+	                Alias = "wordCounter",
+	                Name = "Word Counter",
+	                Icon = "icon-calculator",
+	                View = "/App_Plugins/WordCounter/wordcounter.html",
+	                Weight = 0
+	            };
+	            return wordCounterApp;
+			}
+
+            return null            
         }
     }
 }
 ```
-    
+
 You will still need to add all of the files you added above but, because your `C#` code is adding the Content App, the `package.manifest` file can be simplified like this:
 
 ```json5
@@ -257,4 +250,21 @@ You will still need to add all of the files you added above but, because your `C
         "~/App_Plugins/WordCounter/wordcounter.controller.js"
     ]
 }
+```
+
+## Notification badges
+
+There are times when you want to draw the attention of editors to your content badge, so they know they need to take some action. That is where notification badges come in to play.
+
+When you set a badge, a circle with a chosen background and a number in it will be added to the content app icon.
+
+![Content App badge](images/content-app-badge.png)
+
+You can enable a badge by using this code in the angular controller of your content app.
+
+```javascript
+$scope.model.badge = {
+  count: 5, // the number for the badge - anything non-zero triggers the badge
+  type: "warning" // optional: determines the badge color - "warning" = dark yellow, "alert" = red, anything else = blue (matching the top-menu background color)
+};
 ```

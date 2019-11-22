@@ -5,11 +5,12 @@ versionFrom: 8.0.0
 
 # EditorModel Events
 
-The `EditorModelEventManager` class is used to emit events that enable you to manipulate the model used by the backoffice before it is loaded into an editor  (for example the SendingContentModel event fires just before a content item is loaded into the backoffice for editing). It is therefore the perfect event to use to set a default value for a particular property, or perhaps to hide a property/tab/Content App from a certain editor.
+The `EditorModelEventManager` class is used to emit events that enable you to manipulate the model used by the backoffice before it is loaded into an editor. For example the SendingContentModel event fires right before a content item is loaded into the backoffice for editing. It is therefore the perfect event to use to set a default value for a particular property, or perhaps to hide a property/tab/Content App from a certain editor.
 
 ## Usage
 
 Example usage of the `EditorModelEventManager` '*SendingContentModel*' event - eg set the default PublishDate for a new NewsArticle to be today's date:
+
 ```csharp
 using System;
 using System.Linq;
@@ -30,7 +31,7 @@ namespace My.Website
         // initialize: runs once when Umbraco starts
         public void Initialize()
         {
-           EditorModelEventManager.SendingContentModel += EditorModelEventManager_SendingContentModel;
+            EditorModelEventManager.SendingContentModel += EditorModelEventManager_SendingContentModel;
         }
 
         // terminate: runs once when Umbraco stops
@@ -38,7 +39,7 @@ namespace My.Website
         {
         }
 
-      private void EditorModelEventManager_SendingContentModel(System.Web.Http.Filters.HttpActionExecutedContext sender, EditorModelEventArgs<Umbraco.Web.Models.ContentEditing.ContentItemDisplay> e)
+    private void EditorModelEventManager_SendingContentModel(System.Web.Http.Filters.HttpActionExecutedContext sender, EditorModelEventArgs<Umbraco.Web.Models.ContentEditing.ContentItemDisplay> e)
         {
             // set a default value for NewsArticle PublishDate property, the editor can override this, but we will suggest it should be today's date
             if (e.Model.ContentTypeAlias == "newsArticle")
@@ -68,7 +69,7 @@ namespace My.Website
         <td>SendingContentModel</td>
         <td>(HttpActionExecutedContext sender,  EditorModelEventArgs&ltContentItemDisplay&gt; e)</td>
         <td>
-        Raised just before the editor model is sent for editing in the content section <br />
+        Raised right before the editor model is sent for editing in the content section <br />
         NOTE: 'e' contains a model property of *Umbraco.Web.Models.ContentEditing.ContentItemDisplay* type which in turn contains the tabs and properties of the elements about to be loaded for editing
         </td>
     </tr>
@@ -76,7 +77,7 @@ namespace My.Website
         <td>SendingMediaModel</td>
         <td>(HttpActionExecutedContext sender,  EditorModelEventArgs&ltMediaItemDisplay&gt; e)</td>
         <td>
-        Raised just before the editor model is sent for editing in the media section <br />
+        Raised right before the editor model is sent for editing in the media section <br />
         NOTE: 'e' contains a model property of *Umbraco.Web.Models.ContentEditing.MediaItemDisplay* type which in turn contains the tabs and properties of the elements about to be loaded for editing
         </td>
     </tr>
@@ -84,27 +85,27 @@ namespace My.Website
         <td>SendingMemberModel</td>
         <td>(HttpActionExecutedContext sender,  EditorModelEventArgs&ltMemberDisplay&gt; e)</td>
         <td>
-        Raised just before the editor model is sent for editing in the member section.<br />
-        NOTE: 'e' contains a model property of *Umbraco.Web.Models.ContentEditing.MemberDisplay* type which in turn contains the tabs and properties of the elements about to be loaded for editing 
+        Raised right before the editor model is sent for editing in the member section.<br />
+        NOTE: 'e' contains a model property of *Umbraco.Web.Models.ContentEditing.MemberDisplay* type which in turn contains the tabs and properties of the elements about to be loaded for editing
         </td>
     </tr>
     <tr>
         <td>SendingUserModel</td>
         <td>(HttpActionExecutedContext sender,  EditorModelEventArgs&ltUserDisplay&gt; e)</td>
         <td>
-        Raised just before the editor model is sent for editing in the user section.<br />
+        Raised right before the editor model is sent for editing in the user section.<br />
         NOTE: 'e' contains a model property of *Umbraco.Web.Models.ContentEditing.UserDisplay* type which in turn contains the tabs and properties of the elements about to be loaded for editing
         </td>
             </tr>
-       <tr>
-             <td>SendingDashboardModel</td>
+        <tr>
+            <td>SendingDashboardModel</td>
         <td>(HttpActionExecutedContext sender, EditorModelEventArgs&ltIEnumerable&ltTab&ltIDashboardSlim&gt;&gt;&gt; e)</td>
         <td>
-        Raised just before the a dashboard is retrieved in a section.<br />
+        Raised right before the a dashboard is retrieved in a section.<br />
         NOTE: 'e' contains a model property that is an IEnumerable of *Umbraco.Web.Models.ContentEditing.Tab<Umbraco.Core.Dashboards.DashboardSlim>* each Tab object gives you access to Label, Alias, Properties and whether it IsActive, and the DashboardSlim gives you access to the alias and path to the angularJS view for the dashboard.
         </td>
     </tr>
-   </table>
+    </table>
 
 ### EditorModelEventArgs
 
@@ -138,7 +139,7 @@ A model representing a member to be displayed in the backoffice
 * MembershipScenario
 * MemberProviderFieldMapping - This is used to indicate how to map the membership provider properties to the save model, this mapping will change if a developer has opted to have custom member property aliases specified in their membership provider config, or if we are editing a member that is not an Umbraco member (custom provider)
 * Tabs - Defines the tabs containing display properties
-* Properties - properties based on the properties in the tabs collection    
+* Properties - properties based on the properties in the tabs collection
 
 ## Samples
 

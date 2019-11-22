@@ -9,20 +9,20 @@ needsV8Update: "true"
 ## Overview
 This is step 3 in the property editor tutorial. In this part, we will integrate one of the built-in Umbraco services. For this sample, we will use the *dialog service* to hook into the *media picker* and return image data to the markdown editor.
 
-## Injecting the service.
+## Injecting the service
 First up, we need to get access to the service, this is done in the constructor of the controller, where we add it as a parameter:
 
 ```javascript
 angular.module("umbraco")
-	.controller("My.MarkdownEditorController",
-	// inject Umbraco's assetsService and dialog service
-	function ($scope, assetsService, dialogService) { ... }
+    .controller("My.MarkdownEditorController",
+    // inject Umbraco's assetsService and dialog service
+    function ($scope, assetsService, dialogService) { ... }
 ```
 
 this works the same way as with the *assetsService* we added in step 1.
 
 ## Hooking into pagedown
-The pagedown editor we are using, has a nice event system in place, so we can easily hook into the events triggered by the media chooser, by adding a hook, after the editor has started:
+The pagedown editor we are using, has a nice event system in place, so we can hook into the events triggered by the media chooser, by adding a hook, after the editor has started:
 
 ```javascript
 // Start the editor
@@ -32,10 +32,10 @@ editor2.run();
 
 // subscribe to the image dialog clicks
 editor2.hooks.set("insertImageDialog", function (callback) {
-		// here we can intercept our own dialog handling
+        // here we can intercept our own dialog handling
 
-		return true; // tell the editor that we'll take care of getting the image url
-	});
+        return true; // tell the editor that we'll take care of getting the image url
+    });
 });
 ```
 
@@ -46,11 +46,11 @@ So now that we have access to the editor events, we will trigger a media picker 
 ```javascript
 // the callback is called when the use selects images
 dialogService.mediaPicker({callback: function(data){
-						// data.selection contains an array of images
-						$(data.selection).each(function(i, item){
-								// try using $log.log(item) to see what this data contains
-						});
-					}});
+                        // data.selection contains an array of images
+                        $(data.selection).each(function(i, item){
+                                // try using $log.log(item) to see what this data contains
+                        });
+                    }});
 ```
 
 ## Getting to the image data
@@ -115,9 +115,9 @@ Now when we run the markdown editor and click the image button, we are presented
 
 Clicking an image and choosing select returns the image to the editor which then renders it as:
 
-	![Koala picture][1]
+    ![Koala picture][1]
 
-	  [1]: /media/1005/Koala.jpg
+    [1]: /media/1005/Koala.jpg
 
 The above is correct markdown code, representing the image, and if preview is turned on, you will see the image below the editor.
 
@@ -125,11 +125,11 @@ The above is correct markdown code, representing the image, and if preview is tu
 ## Wrap up
 So over the 3 previous steps, we've:
 
-- created a plugin
-- defined an editor
-- injected our own JavaScript libraries and 3rd party ones
-- made the editor configurable
-- connected the editor with native dialogs and services
-- looked at koala pictures
+- Created a plugin
+- Defined an editor
+- Injected our own JavaScript libraries and 3rd party ones
+- Made the editor configurable
+- Connected the editor with native dialogs and services
+- Looked at koala pictures
 
 [Next - Adding server-side data to a property editor](part-4.md)

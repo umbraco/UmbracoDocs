@@ -15,14 +15,14 @@ The 'trees.config' file contains the configuration for [trees](../../../Extendin
 
 Each Tree element defined in trees.config requires the following attributes:
 
-* **alias** - The alias of the tree. to refer to the tree programmatically and the key to use in Language Translation files.
-* **title** - The title of the tree.
-* **iconClosed** - The icon to display when the tree element is closed.
-* **iconOpen** - The icon to display when the tree element has been expanded.
-* **application** - The alias of the section/application to load the tree in.
-* **sortOrder** - An integer used to determine the position of the tree in a section when multiple trees are defined.
-* **initialize** - Whether the tree should be initialized by default, eg when accessing the section in the backoffice
-* **type** - The type of the implementation of the tree in the format: *FullClassName, AssemblyName*
+* `alias` - The alias of the tree. to refer to the tree programmatically and the key to use in Language Translation files.
+* `title` - The title of the tree.
+* `iconClosed` - The icon to display when the tree element is closed.
+* `iconOpen` - The icon to display when the tree element has been expanded.
+* `application` - The alias of the section/application to load the tree in.
+* `sortOrder` - An integer used to determine the position of the tree in a section when multiple trees are defined.
+* `initialize` - Whether the tree should be initialized by default, eg when accessing the section in the backoffice
+* `type` - The type of the implementation of the tree in the format: *FullClassName, AssemblyName*
 
 
 ## Example trees.config file

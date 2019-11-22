@@ -10,11 +10,9 @@ _This section will show you how to use MVC Partial Views in Umbraco. Please note
 
 ## Overview
 
-Using Partial Views in Umbraco is exactly the same as using Partial Views in a normal MVC project. There is detailed documentation on the Internet about creating and using MVC partial views, for example:
+Using Partial Views in Umbraco is exactly the same as using Partial Views in a normal MVC project. There is detailed documentation on the Internet about [creating and using MVC partial views](https://www.asp.net/mvc/videos/mvc-2/how-do-i/how-do-i-work-with-data-in-aspnet-mvc-partial-views)
 
-* [https://www.asp.net/mvc/videos/mvc-2/how-do-i/how-do-i-work-with-data-in-aspnet-mvc-partial-views](https://www.asp.net/mvc/videos/mvc-2/how-do-i/how-do-i-work-with-data-in-aspnet-mvc-partial-views)
-
-Partial views allow you to easily re-use components between your views (templates).
+Partial views allow you to re-use components between your views (templates).
 
 ## View Locations
 
@@ -65,7 +63,7 @@ The partial view (located at: `~/Views/Partials/ChildItem.cshtml`)
 
 ## Strongly typed Partial Views
 
-Normally you would create a partial view by simply using the `@model MyModel` syntax. However, inside of Umbraco you will probably want to have access to the handy properties available on your normal Umbraco views like the Umbraco helper: `@Umbraco` and the Umbraco context: `@UmbracoContext`. The good news is that this is completely possible. Instead of using the `@model MyModel` syntax, you just need to inherit from the correct view class, so do this instead:
+Normally you would create a partial view by using the `@model MyModel` syntax. However, inside of Umbraco you will probably want to have access to the handy properties available on your normal Umbraco views like the Umbraco helper: `@Umbraco` and the Umbraco context: `@UmbracoContext`. The good news is that this is completely possible. Instead of using the `@model MyModel` syntax, you need to inherit from the correct view class, so do this instead:
 
 ```csharp
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<MyModel>
@@ -73,7 +71,7 @@ Normally you would create a partial view by simply using the `@model MyModel` sy
 
 By inheriting from this view, you'll have instant access to those handy properties and have your view created with a strongly typed custom model.
 
-Another case you might have is that you want your Partial View to be strongly typed with the same model type (`RenderModel`) as a normal template if you are passing around instances of IPublishedContent. To do this, just have your partial view inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage` (just like your normal templates).  When you render your partial, a neat trick is that you can just pass it an instance of `IPublishedContent` instead of a new instance of `RenderModel`. For example:
+Another case you might have is that you want your Partial View to be strongly typed with the same model type (`RenderModel`) as a normal template if you are passing around instances of IPublishedContent. To do this, have your partial view inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage` (like your normal templates).  When you render your partial, a neat trick is that you can pass it an instance of `IPublishedContent` instead of a new instance of `RenderModel`. For example:
 
 ```csharp
 @foreach(var child in Model.Content.Children())
@@ -82,7 +80,7 @@ Another case you might have is that you want your Partial View to be strongly ty
 }
 ```
 
-The partial view can still inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage`, which has a model of `RenderModel`, but you can still just pass it an instance of `IPublishedContent` and a new `RenderModel` will be created and applied automagically for you. Of course you can always create your own `RenderModel` too:
+The partial view can still inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage`, which has a model of `RenderModel`, but you can still pass it an instance of `IPublishedContent` and a new `RenderModel` will be created and applied automagically for you. Of course you can always create your own `RenderModel` too:
 
 ```csharp
 @foreach(var child in Model.Content.Children())
@@ -96,7 +94,7 @@ Both of these will achieve the same result.
 
 ## Caching
 
-You don't normally need to cache the output of Partial views, just like you don't normally need to cache the output of User Controls, but there are times when this is necessary. Just like macro caching, we provide caching output of partial views. This is done simply by using an HtmlHelper extension method:
+You don't normally need to cache the output of Partial views, like you don't normally need to cache the output of User Controls, but there are times when this is necessary. Like macro caching, we provide caching output of partial views. This is done by using an HtmlHelper extension method:
 
 ```csharp
 @Html.CachedPartial("MyPartialName", new MyModel(), 3600)
@@ -133,7 +131,7 @@ public static Func<object, ViewDataDictionary, string> CacheBy(this HtmlHelper h
 @Html.CachedPartial("MediaGallery", Model, 3600, true, false, new ViewDataDictionary { { "year", Request.QueryString["year"] } }, Html.CacheBy("yer", "Parameter2") )
 ```
 
-Or even based off the Model, though is Model is just the current page then cacheByPage should be used instead:
+Or even based off the Model, though Model is the current page then cacheByPage should be used instead:
 
 ```csharp
 @Html.CachedPartial("MediaGallery", Model, 3600, true, false, new ViewDataDictionary { }, (model, viewData) => model.myField )

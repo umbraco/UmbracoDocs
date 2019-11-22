@@ -6,7 +6,7 @@ versionRemoved: 8.0.0
 
 # EditorModel Events
 
-The **EditorModelEventManager** class is used to emit events that enable you to manipulate the model used by the backoffice before it is loaded into an editor  (for example the SendingContentModel event fires just before a content item is loaded into the backoffice for editing). It is therefore the perfect event to use to set a default value for a particular property, or perhaps to hide a property/tab from a certain editor.
+The `EditorModelEventManager` class is used to emit events that enable you to manipulate the model used by the backoffice before it is loaded into an editor. For example the SendingContentModel event fires right before a content item is loaded into the backoffice for editing. It is therefore the perfect event to use to set a default value for a particular property, or perhaps to hide a property/tab/Content App from a certain editor.
 
 ## Usage
 
@@ -55,7 +55,7 @@ namespace My.Namespace
         <td>SendingContentModel</td>
         <td>(HttpActionExecutedContext sender,  EditorModelEventArgs&ltContentItemDisplay&gt; e)</td>
         <td>
-        Raised just before the editor model is sent for editing in the content section <br />
+        Raised right before the editor model is sent for editing in the content section <br />
         NOTE: 'e' contains a model property of *Umbraco.Web.Models.ContentEditing.ContentItemDisplay* type which in turn contains the tabs and properties of the elements about to be loaded for editing
         </td>
     </tr>
@@ -63,7 +63,7 @@ namespace My.Namespace
         <td>SendingMediaModel</td>
         <td>(HttpActionExecutedContext sender,  EditorModelEventArgs&ltMediaItemDisplay&gt; e)</td>
         <td>
-        Raised just before the editor model is sent for editing in the media section <br />
+        Raised right before the editor model is sent for editing in the media section <br />
         NOTE: 'e' contains a model property of *Umbraco.Web.Models.ContentEditing.MediaItemDisplay* type which in turn contains the tabs and properties of the elements about to be loaded for editing
         </td>
     </tr>
@@ -71,19 +71,19 @@ namespace My.Namespace
         <td>SendingMemberModel</td>
         <td>(HttpActionExecutedContext sender,  EditorModelEventArgs&ltMemberDisplay&gt; e)</td>
         <td>
-        Raised just before the editor model is sent for editing in the member section.<br />
-        NOTE: 'e' contains a model property of *Umbraco.Web.Models.ContentEditing.MemberDisplay* type which in turn contains the tabs and properties of the elements about to be loaded for editing 
+        Raised right before the editor model is sent for editing in the member section.<br />
+        NOTE: 'e' contains a model property of *Umbraco.Web.Models.ContentEditing.MemberDisplay* type which in turn contains the tabs and properties of the elements about to be loaded for editing
         </td>
     </tr>
     <tr>
         <td>SendingUserModel (v7.7.10+)</td>
         <td>(HttpActionExecutedContext sender,  EditorModelEventArgs&ltUserDisplay&gt; e)</td>
         <td>
-        Raised just before the editor model is sent for editing in the user section.<br />
+        Raised right before the editor model is sent for editing in the user section.<br />
         NOTE: 'e' contains a model property of *Umbraco.Web.Models.ContentEditing.UserDisplay* type which in turn contains the tabs and properties of the elements about to be loaded for editing
         </td>
     </tr>
-   </table>
+    </table>
 
 ### EditorModelEventArgs
 
