@@ -48,7 +48,7 @@ If you have a site that does not meet the above requirements, feel free to conta
 
 ### Understanding what you have
 
-Prior to undertaking a migration you'll want to make sure you know the packages, add-ons, and custom code your site is using. 
+Prior to undertaking a migration you'll want to make sure you know the packages, add-ons, and custom code your site is using.
 
 This is especially important if you are using custom property editors that will require connectors in order to work properly with the Umbraco Cloud deployment engine. Connectors are used by Umbraco Deploy to aid with the deployment of content/property-data between environments on Umbraco Cloud.
 
@@ -96,7 +96,7 @@ If you need help upgrading your project, we have some excellent [Upgrade instruc
 
 If you have been using Umbraco Forms on your own project, you will also need to upgrade this to the latest version. You can find and download the latest version of Umbraco Forms under [Projects on Our](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). As with Umbraco CMS we also have documentation on how to [Upgrade Umbraco Forms](https://our.umbraco.com/documentation/Add-ons/UmbracoForms/Installation/ManualUpgrade).
 
-After upgrading your project make sure it runs without any errors. *Hint: Check the umbracoTraceLog.txt log file.*  
+After upgrading your project make sure it runs without any errors. *Hint: Check the umbracoTraceLog.txt log file.*
 
 Ideally your site will run locally using the SQL CE database as this will make content migration easier. Don't worry - if that's not possible you will still be able to complete the migration.
 
@@ -198,7 +198,7 @@ As Umbraco Forms comes with an Umbraco Cloud project, there are a few things you
 * The existing site uses Umbraco Forms
     * No extra steps needed, as you will have upgraded Umbraco Forms to the latest version before starting the migration
 
-The final thing to do before moving on, is to make sure your Umbraco Cloud user will be added to the new database you've just merged into the project. First you need to check if any Umbraco user uses the same email address as your Umbraco Cloud account. If this is the case you need to change the email address of the existing user to something else otherwise your Cloud user will be stuck in a inactive state. If you have confirmed there is no user with the same email address you can add the cloud by following these steps.
+The final thing to do before moving on, is to make sure your Umbraco Cloud user will be added to the new database you've merged into the project. First you need to check if any Umbraco user uses the same email address as your Umbraco Cloud account. If this is the case you need to change the email address of the existing user to something else otherwise your Cloud user will be stuck in a inactive state. If you have confirmed there is no user with the same email address you can add the cloud by following these steps.
 
 * Go to the `data/backoffice/users` folder in your Umbraco Cloud project files
 * Rename your user file by removing the leading underscore
@@ -217,7 +217,7 @@ With that confirmed, it's time to prepare to migrate the project to Umbraco Clou
 
 ## 7. Generate meta data
 
-You have now moved and merged the files from your existing site into the Umbraco Cloud project files. So far, so good! 
+You have now moved and merged the files from your existing site into the Umbraco Cloud project files. So far, so good!
 
 In this next part, it is time to generate the so called UDA-files for all your projects meta data.
 
@@ -246,12 +246,12 @@ All project files have been merged and we've generated UDA files for all the met
 
 1. In your Git client you should see a lot of changes ready to be committed
 2. Stage and commit the changes
-3. Do a *pull* just to be sure everything is in sync
+3. Do a *pull* to ensure everything is in sync
 4. **Push** your migrated project to the Umbraco Cloud environment - check that the *'Deploy Complete'* message is displayed
     * If you have a very large commit to push, you may need to configure your Git client for this
     * Use: git config http.postBuffer 524288000
 
-When the push is complete go check out the Umbraco Cloud Portal to verify the indicator on the Development environment is still *green*. 
+When the push is complete go check out the Umbraco Cloud Portal to verify the indicator on the Development environment is still *green*.
 
 Go to the backoffice of your Development environment and make sure all your metadata is there. You won't see any content or media on the environment yet - this you will move in the next few steps.
 

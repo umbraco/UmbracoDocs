@@ -5,13 +5,13 @@ versionFrom: 8.1.0
 # IPublishedContent Collections
 
 All collections of `IPublishedContent` are `IEnumerable<IPublishedContent>`.
-This means that all C# LINQ statements can be used to filter and query the collections.  
+This means that all C# LINQ statements can be used to filter and query the collections.
 
 ## Collections
 
 ### .Children
 
-Returns a collection of child items available in the current culture, just below the current content item.
+Returns a collection of child items available in the current culture, below the current content item.
 
 ```csharp
 <ul>
@@ -24,7 +24,7 @@ Returns a collection of child items available in the current culture, just below
 
 ### .ChildrenForAllCultures
 
-Returns a collection of child items for all cultures, just below the current content item.
+Returns a collection of child items for all cultures, below the current content item.
 
 ```csharp
 <ul>
@@ -37,7 +37,7 @@ Returns a collection of child items for all cultures, just below the current con
 
 ### .Children(string culture = null)
 
-Returns a collection of child items available in the specified culture with a default of the current one, just below the current content item.
+Returns a collection of child items available in the specified culture with a default of the current one, below the current content item.
 
 ```csharp
 <ul>
@@ -90,7 +90,7 @@ Returns all descendants of the current page (children, grandchildren etc)
 ```csharp
 <ul>
     @* Filter collection by content that has a template assigned *@
-    @foreach(var item in Model.Descendants().Where(x = x.TemplateId > 0))
+    @foreach(var item in Model.Descendants().Where(x => x.TemplateId > 0))
     {
         <li><a href="@item.Url">@item.Name</a></li>
     }
@@ -104,7 +104,7 @@ Returns all descendants of the current page (children, grandchildren etc), and t
 ```csharp
 <ul>
     @* Filter collection by content that has a template assigned *@
-    @foreach(var item in Model.DescendantsOrSelf().Where(x = x.TemplateId > 0))
+    @foreach(var item in Model.DescendantsOrSelf().Where(x => x.TemplateId > 0))
     {
         <li><a href="@item.Url">@item.Name</a></li>
     }
@@ -129,7 +129,7 @@ Filters a collection of content by content type alias
 
 ## Filtering, Ordering & Extensions
 
-Filtering and Ordering are done simply with LINQ.
+Filtering and Ordering are done with LINQ.
 
 Some examples:
 
@@ -189,7 +189,7 @@ You can combine Skip and Take when using for paging operations
 
 ```csharp
 @* using skip and take together you can perform paging operations *@
-var nodes = Model.Content.Skip(10).Take(10);
+var nodes = Model.Children.Skip(10).Take(10);
 ```
 
 ### .Count()

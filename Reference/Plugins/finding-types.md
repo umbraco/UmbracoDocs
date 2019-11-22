@@ -22,7 +22,7 @@ The `Umbraco.Core.PluginManager` class is responsible for finding and caching al
 
 ## Retrieving instances
 
-It is definitely possible to simply use the methods above to find types in your code but this is not recommended practice. It is recommended to create extension methods for the PluginManager named accordingly to find specific types. For example:
+It is definitely possible to use the methods above to find types in your code but this is not recommended practice. It is recommended to create extension methods for the PluginManager named accordingly to find specific types. For example:
 
 ```csharp
 PluginManager.Current.ResolveTrees();
@@ -37,4 +37,4 @@ internal static IEnumerable<Type> ResolveTrees(this PluginManager resolver)
 }
 ```
 
-The code simply calls the PluginManager's ResolveTypes method but this method is human readable and easy to distinguish.
+The code calls the PluginManager's ResolveTypes method but this method is human readable and easy to distinguish.

@@ -10,7 +10,7 @@ versionTo: 7.5.14
 
 `Returns: String`
 
-Textarea is a simple HTML textarea control for multiple lines of text.
+Textarea is an HTML textarea control for multiple lines of text.
 
 ## Data Type Definition Example
 
@@ -19,17 +19,17 @@ Textarea is a simple HTML textarea control for multiple lines of text.
 
 ## Settings
 
-## Content Example:
+## Content Example
 
 ![Textarea Content Example](images/7/textarea-content.png)
 
 
-## MVC View Example:
+## MVC View Example
 
 ```csharp
 @{
-   if (Model.Content.HasValue("description")){
-       <p>@(Model.Content.GetPropertyValue<string>("description"))</p>
-   }
+    if (Model.Content.HasValue("description")){
+        <p>@(Model.Content.GetPropertyValue<string>("description"))</p>
+    }
 }
 ```

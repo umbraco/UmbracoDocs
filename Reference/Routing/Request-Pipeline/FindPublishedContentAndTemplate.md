@@ -5,7 +5,7 @@ needsV8Update: "true"
 
 # FindPublishedContentAndTemplate()
 
-This method is called on the "PublishedContentRequest.PrepareRequest()" method.  
+This method is called on the "PublishedContentRequest.PrepareRequest()" method.
 We discuss shortly what this method is doing:
 
 1. FindPublishedContent ()
@@ -68,4 +68,4 @@ We discuss shortly what this method is doing:
  - Request’s published content
 - If found, updates the request’s culture accordingly
 
-This actually implements separation between hostnames and cultures
+This implements separation between hostnames and cultures

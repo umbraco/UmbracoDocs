@@ -25,8 +25,8 @@ It is possible to setup configurable attributes(class, rel, href) and inline sty
 
 ![Grid layouts](images/rows.png)
 
-You can add as many cells as you like. If they overflow the total width of the row, they will simply be arranged after each other horizontally as you'd expect in a grid system.
+You can add as many cells as you like. If they overflow the total width of the row, they will be arranged after each other horizontally as you'd expect in a grid system.
 
 ![Grid layouts](images/cells.png)
 
-Each cell can by default contain any type of editor such as simple textstring editors, imagespicker, embedded media or Umbraco macros. To override this behavior, uncheck the **allow all editors** option and you can specify which editors will be available for the row. 
+Each cell can by default contain any type of editor such as textstring editors, imagespicker, embedded media or Umbraco macros. To override this behavior, uncheck the **allow all editors** option and you can specify which editors will be available for the row.

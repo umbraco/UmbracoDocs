@@ -22,20 +22,20 @@ To install Umbraco we first need a Visual Studio solution.
 ![](images/NuGet/visual-studio-version-v8.png)
 
 ### Visual Studio 2017
-Go to **File > New Project** and pick an ASP.NET Web Application. 
+Go to **File > New Project** and pick an ASP.NET Web Application.
 
 **Note:** Double check that in the "Framework" dropdown you've selected `.NET Framework 4.7.2`, Umbraco will not work with lower versions than 4.7.2. Similarly, refrain from naming your solution `Umbraco`, as this will cause a namespace conflict with the CMS itself.
 
 ![](images/NuGet/new-project-vs2017-1-v8.png)
 
-On the next step, select the **Empty** template. It's important to pick **empty** as other templates include incompatible versions of MVC and Json.NET. (Don't enable any of the checkboxes to add folders or core references. Umbraco will add them for you).  
+On the next step, select the **Empty** template. It's important to pick **empty** as other templates include incompatible versions of MVC and Json.NET. (Don't enable any of the checkboxes to add folders or core references. Umbraco will add them for you).
 
 ![](images/NuGet/new-project-vs2017-2-v8.png)
 
 ## Finding and installing the Umbraco package
 The latest release of Umbraco is always available in the NuGet gallery. All you have to do is search for it and install.
 
-To install Umbraco from the Visual Studio interface, right-click on the new project you just made and choose **Manage NuGet Packages**.
+To install Umbraco from the Visual Studio interface, right-click on the new project you've made and choose **Manage NuGet Packages**.
 
 ![](images/NuGet/manage-nuget-packages-v8.png)
 
@@ -52,24 +52,24 @@ Enable the console by going to **Tools >  View > Other Windows >  Package Manage
 
 ![](images/NuGet/enable-package-manager-console-v8.png)
 
-Then simply type `Install-Package UmbracoCms` to start installing the latest version of Umbraco.
+Then type `Install-Package UmbracoCms` to start installing the latest version of Umbraco.
 
 ![](images/NuGet/package-manager-console.png)
 
 ## Running the site
 You can now run the site like you would normally in Visual Studio (using **F5** or the **Debug** button).
 
-Follow the installation wizard and after a few easy steps and choices you should get a message saying the installation was a success.
+Follow the installation wizard and after a few steps and choices you should get a message saying the installation was a success.
 
 ## Post installation
-You should note that the Umbraco NuGet package adds a build step to always include the Umbraco folders when you deploy using Web One-Click Publish with Visual Studio.  
-You can see these folders in `packages/UmbracoCms x.y.z/build/UmbracoCms.targets`  
+Note that the Umbraco NuGet package adds a build step to always include the Umbraco folders when you deploy using Web One-Click Publish with Visual Studio. You can see these folders in `packages/UmbracoCms x.y.z/build/UmbracoCms.targets`.
+
 Should you need to exclude any of these folders or content, you can add a target to your `.pubxml` files in the `properties/Publish` folder. For instance if you need to exclude json data a plugin generates during production.
 
 ```xml
   <Target Name="StopUmbracoFromPublishingAppPlugins" AfterTargets="AddUmbracoFilesToOutput">
     <ItemGroup>
-      <FilesForPackagingFromProject Remove=".\App_Plugins\UmbracoForms\Data\**\*.*"/>
+    <FilesForPackagingFromProject Remove=".\App_Plugins\UmbracoForms\Data\**\*.*"/>
     </ItemGroup>
   </Target>
 ```

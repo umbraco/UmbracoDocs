@@ -22,7 +22,7 @@ The Default Handlers are listed in this configuration file for 'backwards compat
 
 ## Backwards compatibility
 
-If you upgrade from an older version of Umbraco then legacy *NotFoundHandlers* listed here 'should' still work - The request pipeline contains a *ContentFinderByNotFoundHandlers* IContentFinder that will attempt to execute the functionality of any legacy *NotFoundHandlers*, but it's recommended to move your custom request handling logic to IContentFinders.
+If you upgrade from an older version of Umbraco then legacy *NotFoundHandlers* listed here 'should' still work. The request pipeline contains a *ContentFinderByNotFoundHandlers* IContentFinder that will attempt to execute the functionality of any legacy *NotFoundHandlers*, but it's recommended to move your custom request handling logic to IContentFinders.
 
 ## Implementing 404 not found properly
 

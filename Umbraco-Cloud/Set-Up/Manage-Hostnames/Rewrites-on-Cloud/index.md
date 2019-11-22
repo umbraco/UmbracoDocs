@@ -10,7 +10,7 @@ The rewrite rules should be added to the `<system.webServer><rewrite>` module in
 
 ```xml
 <!--
-If you wish to use IIS rewrite rules, see the documentation here: 
+If you wish to use IIS rewrite rules, see the documentation here:
 https://our.umbraco.com/documentation/Reference/Routing/IISRewriteRules
 -->
 
@@ -30,9 +30,9 @@ When you are doing rewrite rules on Umbraco Cloud there are a few important thin
 
 ## Hiding the Default umbraco.io Url
 
-Once you've assigned a hostname to your Live environment you may want to "hide" the projects default URL (e.g. mysite.s1.umbraco.io) for various reasons. Perhaps for SEO or just making it clear to your users that the site can be accessed using just one hostname.
+Once you've assigned a hostname to your Live environment you may want to "hide" the projects default URL (e.g. mysite.s1.umbraco.io) for various reasons. Perhaps for SEO or to make it clear to your users that the site can be accessed using only one hostname.
 
-One approach for this is to add a new rewrite rule to the `<system.webServer><rewrite><rules>` section in the `web.config` file. For example, the following rule will redirect all requests for the projects mysite.s1.umbraco.io URL to the mysite.com URL and respond with a permanent redirect status.        
+One approach for this is to add a new rewrite rule to the `<system.webServer><rewrite><rules>` section in the `web.config` file. For example, the following rule will redirect all requests for the projects mysite.s1.umbraco.io URL to the mysite.com URL and respond with a permanent redirect status.
 
 ```xml
 <rule name="Redirects umbraco.io to actual domain" stopProcessing="true">
@@ -44,8 +44,8 @@ One approach for this is to add a new rewrite rule to the `<system.webServer><re
     <add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins" />
     <add input="{REQUEST_URI}" negate="true" pattern="localhost" />
   </conditions>
-  <action type="Redirect" url="http://<your actual domain here>.com/{R:0}" 
-          appendQueryString="true" redirectType="Permanent" />
+  <action type="Redirect" url="http://<your actual domain here>.com/{R:0}"
+        appendQueryString="true" redirectType="Permanent" />
 </rule>
 ```
 
@@ -57,9 +57,9 @@ This will not rewrite anything under the `/umbraco` path so that you can still d
 
 Once you've applied a certificate to your site you can make sure that anybody visiting your site will always end up on HTTPS instead of the insecure HTTP.
 
-To accomplish this, add a rewrite rule to the live environment's `web.config` in the `<system.webServer><rewrite><rules>` section. 
+To accomplish this, add a rewrite rule to the live environment's `web.config` in the `<system.webServer><rewrite><rules>` section.
 
-For example, the following rule will redirect all requests for the site http://mysite.com URL to the secure https://mysite.com URL and respond with a permanent redirect status. 
+For example, the following rule will redirect all requests for the site http://mysite.com URL to the secure https://mysite.com URL and respond with a permanent redirect status.
 
 ```xml
 <rule name="HTTP to HTTPS redirect" stopProcessing="true">
@@ -67,7 +67,7 @@ For example, the following rule will redirect all requests for the site http://m
   <conditions>
     <add input="{HTTPS}" pattern="off" ignoreCase="true" />
     <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
-    <add input="{REQUEST_URI}" negate="true" pattern="^/.well-known/acme-challenge" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/\.well-known/acme-challenge" />
   </conditions>
   <action type="Redirect" url="https://{HTTP_HOST}/{R:1}" redirectType="Permanent" />
 </rule>

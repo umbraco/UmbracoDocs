@@ -3,7 +3,7 @@ versionFrom: 8.0.0
 ---
 
 # Scheduling with BackgroundTaskRunner
-In Umbraco 8+ it is possible to run reccuring code using the `BackgroundTaskRunner`.
+In Umbraco 8+ it is possible to run recurring code using the `BackgroundTaskRunner`.
 Below is a complete example showing how to register a Task Runner with a [component](../../Implementation/Composing/index.md) that will regularly empty out the recycle bin every five minutes.
 
 ```csharp

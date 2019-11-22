@@ -12,7 +12,7 @@ If you feel something is missing here or you want to help out documenting some o
 * [Create an issue on missing documentation](https://github.com/umbraco/UmbracoDocs/issues)
 * [Read about how you can help out!](Contribute)
 
-## Finished Umbraco 8 Documentation:
+## Finished Umbraco 8 Documentation
 
 * [Migrate Umbraco 7 Cloud project to Umbraco 8](Umbraco-Cloud/Upgrades/Migrating-from-7-to-8)
 * [Content migration from Umbraco 7 to Umbraco 8](Getting-Started/Setup/Upgrading/migrating-to-v8.md)
@@ -56,12 +56,12 @@ If you feel something is missing here or you want to help out documenting some o
 * [Tutorial: Porting packages to V8](Tutorials/Porting-Packages-V8)
 * [Dashboards](Extending/Dashboards)
 
-## In progress:
+## In progress
 
 * EditorModel Events
 * Custom MVC Routes
 
-## Upcoming:
+## Upcoming
 
 * **Update existing** MVC / WebAPI documentation
 * **Add new** Content Cache documentation

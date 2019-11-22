@@ -21,7 +21,7 @@ Custom dashboards are a great way to help editors maintain a site by providing u
 
 ### [Creating a Property Editor](Creating-a-Property-Editor/)
 
-This guide explains how to setup a simple property editor for the backoffice.
+This guide explains how to setup a property editor for the backoffice.
 
 ### [Multilanguage Setup](Multilanguage-Setup/index.md)
 

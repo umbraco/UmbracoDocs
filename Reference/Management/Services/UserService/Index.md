@@ -9,9 +9,9 @@ needsV8Update: "true"
 
 The UserService acts as a "gateway" to Umbraco data for operations which are related to Users.
 
-[Browse the API documentation for UserService](https://our.umbraco.org/apidocs/v7/csharp/api/Umbraco.Core.Services.UserService.html).
+[Browse the API documentation for UserService](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Services.UserService.html).
 
- * **Namespace:** `Umbraco.Core.Services` 
+ * **Namespace:** `Umbraco.Core.Services`
  * **Assembly:** `Umbraco.Core.dll`
 
 All samples listed in this document will require references to the following dll:
@@ -19,23 +19,23 @@ All samples listed in this document will require references to the following dll
 * Umbraco.Core.dll
 
 All samples listed in this document will require the following usings:
-	
-	using Umbraco.Core.Models.Membership;
-	using Umbraco.Core.Services;
+
+    using Umbraco.Core.Models.Membership;
+    using Umbraco.Core.Services;
 
 ## Getting the service
 
 If you wish to use use the user service in a class that inherits from one of the Umbraco base classes - eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController` - you can access the user service through a local `Services` property:
 
-	IUserService us = Services.UserService;
-	
+    IUserService us = Services.UserService;
+
 In Razor views, you can access the UserService through the `ApplicationContext` property:
 
-	IUserService us = ApplicationContext.Services.UserService
+    IUserService us = ApplicationContext.Services.UserService
 
 If neither a `Services` property or a `ApplicationContext` is available, you can also reference the `ApplicationContext` class directly:
 
-	IUserService us = ApplicationContext.Current.Services.UserService
+    IUserService us = ApplicationContext.Current.Services.UserService
 
 ## Samples
 

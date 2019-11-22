@@ -1,0 +1,33 @@
+# Configuration of the Vale Linter ProBot tool
+# github.com/warrenbuckley/vale-linter
+
+Vale:
+
+  # If this feature is enabled or disabled
+  Enabled: true
+
+  Paths:
+    # Path to the vale configuration file
+    Configuration: "_vale.ini"
+
+    # Path to the folder of Vale docstyles to use/copy
+    # NOTE: If you update the styles path in _vale.ini remember to update this path too
+    Styles: ".github/valeStyle/"
+
+  Success: 
+    Header: "All checks passed 🎉"
+    Message: "All changes you made follow our style guide rules! #h5yr"
+    ShowImage: true
+    ImageUrl: "https://media.giphy.com/media/6nuiJjOOQBBn2/giphy.gif"
+    
+  Warning: 
+    Header: "It passes but with warnings"
+    Message: "Our style checker noticed a few potential issues. Please check the annotations for suggestions." 
+    ShowImage: false
+    ImageUrl: "https://media.giphy.com/media/xUOxfh6ZM75efM3Bqo/giphy.gif"
+
+  Error: 
+    Header: "Errors found"
+    Message: "Our style checker found a few errors. Please check the annotations for suggestions."
+    ShowImage: false
+    ImageUrl: "https://media.giphy.com/media/r00LEeXVOt0xG/giphy.gif"

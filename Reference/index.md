@@ -6,11 +6,11 @@ meta.Description: "Developers' Reference primarily consists of API references of
 
 # Developers' Reference
 
-_Developers' Reference primarily consists of API references of the different core Umbraco APIs. In many cases, the references come with code snippets with simple examples. For a more in-depth study of the different APIs, consult the "using-umbraco" and "extending-umbraco" sections of the documentation._
+_Developers' Reference primarily consists of API references of the different core Umbraco APIs. In many cases, the references come with code snippets with examples. For a more in-depth study of the different APIs, consult the "using-umbraco" and "extending-umbraco" sections of the documentation._
 
 ## [Common Pitfalls & Anti-patterns](Common-Pitfalls/index.md)
 
-This section is ultra important! It describes many common pitfalls that developers fall in to. Make sure you read this section - it might just save your site!
+This section is ultra important! It describes many common pitfalls that developers fall in to. Make sure you read this section - it might save your site!
 
 ## API Documentation
 
@@ -36,14 +36,14 @@ Information about all of Umbraco's configuration files and options.
 
 ## [IoC & Dependency Injection](using-ioc.md)
 
-Info about setting up IoC/Dependency Injection to work with Umbraco
+Info about setting up IoC/Dependency Injection to work with Umbraco.
 
 ## [Templates](Templating/index.md)
 
 Working with Umbraco templates: views, partial views, child actions, razor syntax, macros and working with JavaScript/Css.
 
 ## [Querying & models](Querying/index.md)
- 
+
 Information about the data models used to display content in Umbraco and the various ways of querying it.
 
 ## [Routing & Controllers](Routing/index.md)
@@ -57,11 +57,11 @@ Details on how to implement search capabilities for your Umbraco website using E
 
 ## [Events](Events/index.md)
 
-Event model covering all major aspects of the system for triggering custom code or automation.  
+Event model covering all major aspects of the system for triggering custom code or automation.
 
 ## [Rest APIs](Routing/WebApi/index.md)
 
-How to use [Web API](https://www.asp.net/web-api) with Umbraco to easily create REST services.
+How to use [Web API](https://www.asp.net/web-api) with Umbraco to create REST services.
 
 ## [Management APIs](Management/index.md)
 
@@ -73,4 +73,4 @@ The term 'Plugins' refers to any types in Umbraco that are found in assemblies t
 
 ## [Caching](Cache/index.md)
 
-Describes how to work with caching custom data structures in Umbraco. If you are creating Umbraco packages that have custom data sources and you want to cache some of this data, it's important to understand how caching works in Umbraco and to understand how it affects Umbraco installations in load balanced environments.
+Describes how to work with caching custom data structures in Umbraco. When creating Umbraco packages that have custom data sources and you want to cache some of this data, it's important to understand how caching works in Umbraco and to understand how it affects Umbraco installations in load balanced environments.
