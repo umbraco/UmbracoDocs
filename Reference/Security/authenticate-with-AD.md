@@ -31,30 +31,30 @@ namespace MyApp
             ConfigureBackofficeActiveDirectoryPasswords(app);
         }
 
-		private void ConfigureBackofficeActiveDirectoryPasswords(IAppBuilder app)
-		{
-			app.ConfigureUserManagerForUmbracoBackOffice<BackOfficeUserManager, BackOfficeIdentityUser>(
-				RuntimeState,
-				GlobalSettings,
-				(options, context) =>
-				{			
-					var membershipProvider = MembershipProviderExtensions.GetUsersMembershipProvider().AsUmbracoMembershipProvider();
-					var userManager = BackOfficeUserManager.Create(
-						options,
-						Services.UserService,
-						Services.MemberTypeService,
-						Services.EntityService,
-						Services.ExternalLoginService,
-						membershipProvider,
-            Mapper,
-						UmbracoSettings.Content,
-						GlobalSettings
-					);
-					userManager.BackOfficeUserPasswordChecker = new ActiveDirectoryBackOfficeUserPasswordChecker();
-					return userManager;
-				});
-		}
-	}
+        private void ConfigureBackofficeActiveDirectoryPasswords(IAppBuilder app)
+        {
+            app.ConfigureUserManagerForUmbracoBackOffice<BackOfficeUserManager, BackOfficeIdentityUser>(
+                RuntimeState,
+                GlobalSettings,
+                (options, context) =>
+                {
+                    var membershipProvider = MembershipProviderExtensions.GetUsersMembershipProvider().AsUmbracoMembershipProvider();
+                    var userManager = BackOfficeUserManager.Create(
+                        options,
+                        Services.UserService,
+                        Services.MemberTypeService,
+                        Services.EntityService,
+                        Services.ExternalLoginService,
+                        membershipProvider,
+                        Mapper,
+                        UmbracoSettings.Content,
+                        GlobalSettings
+                    );
+                    userManager.BackOfficeUserPasswordChecker = new ActiveDirectoryBackOfficeUserPasswordChecker();
+                    return userManager;
+                });
+        }
+    }
 
 }
 ```
