@@ -26,13 +26,13 @@ The environment in the image below is using Courier version 3.1.6
 
 On rare occasions you may find that a deployment fails and there is no useful information in the error message.  In most cases you should try the deployment a second time, but if that also fails you will need to dig a little deeper.
 
-### It’s time to get your Git on!  
+### It’s time to get your Git on!
 
 The first step is to find out what state the site’s Git repository is in (for the source site, usually dev but could also be stage). In order to do this we’ll use the Kudu console that is available for every site in Umbraco Cloud.  Here are the steps to find out what state your repository is in:
 
 1. Copy the URL from your site’s HTTPS Clone URL in the portal
 
-2. Using the URL without the actual repository name, the GUID part, open a new browser tab and login. Just the URL like `https://dev-mysite.scm.s1.umbraco.io/`
+2. Using the URL without the actual repository name, the GUID part, open a new browser tab and login. A URL like `https://dev-mysite.scm.s1.umbraco.io/`
 
 3. You’ll see the Kudu site, which includes your site’s Git repository
 
@@ -67,7 +67,7 @@ The first step is to find out what state the site’s Git repository is in (for 
 
     `PS> git status`
 
-13. Whew! Just imagine having to do this without Git!
+13. Whew! Imagine having to do this without Git!
 
 14. Now you can return to the Umbraco Cloud portal and deploy your site again
 

@@ -110,4 +110,3 @@ The LocalizationService class implements ILocalizationService. It provides easy 
         </td>
     </tr>
 </table>
-

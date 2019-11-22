@@ -15,10 +15,10 @@ There are eight default sections that come with Umbraco:
 The content section contains the content of the website. Content is displayed as nodes in the content tree. Nodes can also show content state:
 
 * Grayed out nodes have not been published
-* <img src="images/has-unpublished-version.svg" width="12px" style="margin: 0;"> nodes have unpublished versions (but are currently published)
-* <img src="images/protected.svg" width="12px" style="margin: 0;"> nodes are protected from the public (require logging in)
-* <img src="images/locked.svg" width="12px" style="margin: 0;"> nodes are currently locked/non-deletable
-* <img src="images/is-container.svg" width="12px" style="margin: 0;"> nodes are containers (such as List Views)
+* <img src="images/has-unpublished-version.svg" width="12px" style="margin: 0;"> Nodes have unpublished versions (but are currently published)
+* <img src="images/protected.svg" width="12px" style="margin: 0;"> Nodes are protected from the public (require logging in)
+* <img src="images/locked.svg" width="12px" style="margin: 0;"> Nodes are currently locked/non-deletable
+* <img src="images/is-container.svg" width="12px" style="margin: 0;"> Nodes are containers (such as List Views)
 
 In order to create content you must define it using Document Types.
 
@@ -26,7 +26,7 @@ In order to create content you must define it using Document Types.
 The Media section contains the media for the website. By default you can create folders and upload media files (images and PDFs). You can customize the existing media types or define your own in the Settings section.
 
 ### <img src="images/Settings.png" style="width:60px;vertical-align:middle" /> Settings
-The Settings section is where you can work with the website layout, language/localization and define media and content. The Settings tree consists of:  
+The Settings section is where you can work with the website layout, language/localization and define media and content. The Settings tree consists of:
 
 - Document Types
 - Templates (.cshtml files)

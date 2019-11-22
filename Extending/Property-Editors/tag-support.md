@@ -7,7 +7,7 @@ needsV8Update: "true"
 
 ## What is tag support?
 
-This document will explain how to add tagging support to property editors and what tagging support means. 
+This document will explain how to add tagging support to property editors and what tagging support means.
 
 When a property editor with tag support enabled is published (or saved in the case of media / members) its tags will be saved into the tag table in the database and associated with the corresponding document property. This then allows you to query or render content based on tags on the front-end.
 
@@ -28,7 +28,7 @@ public class TagsPropertyEditor : PropertyEditor
 }
 ```
 
-To add tag support, we simply add the SupportsTags attribute:
+To add tag support, we can add the SupportsTags attribute:
 
 ```csharp
 [SupportsTags]
@@ -38,7 +38,7 @@ public class TagsPropertyEditor : PropertyEditor
 }
 ```
 
-There are a few options for the `SupportsTags` attribute but normally the default options will suffice. 
+There are a few options for the `SupportsTags` attribute but normally the default options will suffice.
 The default options are:
 
 * Requires that the property editor value is a comma delimited string value
@@ -51,8 +51,4 @@ There is one last option that can be set which is the `TagValueType` enum, the v
 
 * `FromDelimitedValue` - this is the default
 * `CustomTagList` - if this is used then it is expected that the property editor's value (returned from the method `ConvertEditorToDb`) is an `IEnumerable<string>`
-	* This setting might be handy if you need to dynamically (in C#) generate the tags list
-
-### Manifest
-
-*Coming soon!*
+    * This setting might be handy if you need to dynamically (in C#) generate the tags list

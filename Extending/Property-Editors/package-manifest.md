@@ -1,6 +1,5 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
 ---
 
 # Package Manifest
@@ -80,7 +79,7 @@ The basic values on any editor are `alias`, `name` and `editor`. These three **m
     "hideLabel": true,
     "valueType": "TEXT",
     "validation": {},
-    "isReadOnly": false 
+    "isReadOnly": false
 }
 ```
 
@@ -108,12 +107,13 @@ The basic values on any editor are `alias`, `name` and `editor`. These three **m
             "description": "This is a description",
             "key": "enableStuff",
             "view": "boolean"
-        }            
+        }
     ]
 }
 ```
 
 Each field contains a number of configuration values:
+
 * `label` The label shown on the data type configuration screen
 * `description` Help text displayed underneath the label
 * `key` The key the prevalue is stored under (see below)
@@ -136,7 +136,7 @@ $scope.model.config.wolf
 
 `view` config value points the prevalue editor to an editor to use. This follows the same concept as any other editor in Umbraco, but with prevalue editors there are a couple of conventions.
 
-If you just specify a name like `boolean` then Umbraco will look at `/umbraco/views/prevalueeditors/boolean/boolean.html` for the editor view - if you wish to use your own, you specify the path like `~/App_Data/package/prevalue-editor.html`.
+If you specify a name like `boolean` then Umbraco will look at `/umbraco/views/prevalueeditors/boolean/boolean.html` for the editor view - if you wish to use your own, you specify the path like `~/App_Data/package/prevalue-editor.html`.
 
 ### Default Config
 The defaultConfig object provides a collection of default configuration values in case the property editor is not configured or is using a parameter editor, which doesn't allow configuration. The object is a key/value collection and must match the prevalue field keys.
@@ -161,7 +161,7 @@ Similar to how the `propertyEditors` array defines one or more property editors,
         "icon": "icon-article"
     }
 ]
-```   
+```
 
 However the default grid editors are already configured in `/config/grid.editors.config.js`. You can use the file for inspiration, or see the [Grid Editors](../../Getting-Started/Backoffice/Property-Editors/Built-in-Property-Editors/Grid-Layout/Grid-Editors.md) page for more information on grid editors.
 
@@ -224,14 +224,14 @@ To associate the hosted JSON schema file to all package.manifest files you will 
 }
 ```
 
-### adding inline schema
+### Adding inline schema
 
-Editors like visual studio can use the `$schema` notation in your file.  
+Editors like visual studio can use the `$schema` notation in your file.
 
 ```json
 {
     "$schema" : "http://json.schemastore.org/package.manifest",
     "javascript": [],
-    "other properties": ""    
+    "other properties": ""
 }
 ```

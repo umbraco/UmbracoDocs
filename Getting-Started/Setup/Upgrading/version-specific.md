@@ -24,16 +24,18 @@ If you're using ModelsBuilder in AppData mode and you have your generated models
 
 #### AutoMapper
 
-Additionally 8.1 replaces AutoMapper with [UmbracoMapper](../../../Reference/Mapping/index.md), this in itself will not break anything on your site, but if you have used AutoMapper in your own code you will have to either include the package yourself or switch your implementation to use UmbracoMapper.
+Umbraco 8.1 replaces AutoMapper with [UmbracoMapper](../../../Reference/Mapping/index.md). This in itself will not break anything on your site, but if you have used AutoMapper in your own code you will have to either include the package yourself or switch your implementation to use UmbracoMapper.
 
 ## Version 7 to version 8
 
 There is no direct upgrade path from Umbraco 7 to Umbraco 8, but it is be possible to migrate content from Umbraco 7 sites to Umbraco 8 sites. We have [added content migrations](#migrating-content-from-v7-to-v8) in Umbraco 8.1.0 that will enable you to move your content (content/media/members) from an Umbraco 7 site to an Umbraco 8 site.
 
-The reason why it is not possible to upgrade an Umbraco 7 site to Umbraco 8 is is that the codebase has been fundamentally updated in Umbraco 8. A lot of outdated code and technology has been removed and instead new, faster and more secure technology has been implemented throughout Umbraco 8. It simply wouldn’t be possible to take this giant leap while maintaining full compatibility with Umbraco 7.
+The reason why it is not possible to upgrade an Umbraco 7 site to Umbraco 8 is is that the codebase has been fundamentally updated in Umbraco 8. A lot of outdated code and technology has been removed and instead new, faster and more secure technology has been implemented throughout Umbraco 8. It wouldn’t be possible to take this giant leap while maintaining full compatibility with Umbraco 7.
 
 In Umbraco 8 we have added improvements and updated dependencies as well as done a thorough clean-up to make it simpler for you to work with and extend your Umbraco project.
+
 ### Migrating content from v7 to v8
+
 If you have an Umbraco 7 site you can migrate the content to an Umbraco 8.1+ site. Read how to do it in our [Content migration to v8 guide](migrating-to-v8.md).
 
 ## Version 7.7.0
@@ -42,9 +44,9 @@ Version 7.7.0 introduces User Groups and a better user management and security f
 
 Also we're now by default using the e-mail address and not the username for the credentials. So when trying to login to the backoffice one will now need to use the e-mail address as opposed to the username, which was used in previous versions. If you do an upgrade from an older version and would like to keep using the username you will need to change the `<usernameIsEmail>true</usernameIsEmail>` setting to **false**.
 
-For a full list of breaking changes see: [the list on the issue tracker](https://issues.umbraco.org/issues/?q=&project=U4&tagValue=&release=7.7.0&issueType=&search=search) 
+For a full list of breaking changes see: [the list on the issue tracker](https://issues.umbraco.org/issues/?q=&project=U4&tagValue=&release=7.7.0&issueType=&search=search)
 
-Version 7.7.2 no longer ships with the `CookComputing.XmlRpcV2` assembly so if you reference this assembly or have a package that requires this assembly, you may need to copy it back into your website from the backup you've taken before you began the 7.7.2 upgrade.
+Version 7.7.2 no longer ships with the `CookComputing.XmlRpcV2` assembly. If you reference this assembly or have a package that requires this assembly, you may need to copy it back into your website from the backup you've taken before you began the 7.7.2 upgrade.
 
 This version also ships with far less client files (i.e. js, css, images) that were only relevant for very old versions of Umbraco (i.e. < 7.0.0). There might be some packages that were referencing these old client files so if you seen missing image references you may need to contact the vendor of the package in question to update their references.
 
@@ -67,8 +69,9 @@ Umbraco stores data for data types in different ways, for a lot of pickers it wi
 @{
     IPublishedContent contactPage;
     var contactPageId = Model.Content.GetPropertyValue<int>("contactPagePicker");
-    if(contactPageId > 0) {
-         contactPage = Umbraco.TypedContent(contactPageId);
+    if (contactPageId > 0)
+    {
+        contactPage = Umbraco.TypedContent(contactPageId);
     }
 }
 
@@ -77,23 +80,23 @@ Umbraco stores data for data types in different ways, for a lot of pickers it wi
 </p>
 ```
 
-Wouldn't it be nice if instead of that you could "just" do:
+Wouldn't it be nice if instead of that you could do:
 
 ```html
 <p>
     <a href="@Model.Content.ContactPagePicker.Url">@Model.ContactPagePicker.Name</a>
 </p>
 ```
-		
+
 This is possible since 7.6.0 using Models Builder and through the inclusion of [core property value converters](https://our.umbraco.com/projects/developer-tools/umbraco-core-property-value-converters/), a brilliant package by Jeavon.
 
-In order to not break everybody's sites (the results of queries are different when PVCs are enabled) we disabled these PVCs by default. 
+In order to not break everybody's sites (the results of queries are different when PVCs are enabled) we disabled these PVCs by default.
 
 Umbraco 7.6.0 also came with new pickers that store their data as a [UDI (Umbraco Identifier)](https://our.umbraco.com/Documentation/Reference/Querying/Udi). We wanted to make it easy to use these new pickers so by default we wanted PVCs to always be enabled for those pickers.
 
 Unfortunately we noticed that some new pickers also got their PVCs disabled when the configuration setting was set to false (`<EnablePropertyValueConverters>false</EnablePropertyValueConverters>`) - yet the content picker ignored this setting.
 
-In order to make everything consistent, we made sure that the UDI pickers would always use PVCs in 7.6.2... or so we thought! By accident we actually reversed the behavior. So when PVCs were enabled, the property would NOT be converted and when PVCs were disabled, the property would be converted after all. This is the exact opposite behavior of 7.6.2. Oops!
+In order to make everything consistent, we made sure that the UDI pickers would always use PVCs in 7.6.2... or so we thought! By accident we reversed the behavior. So when PVCs were enabled, the property would NOT be converted and when PVCs were disabled, the property would be converted after all. This is the exact opposite behavior of 7.6.2. Oops!
 So we have fixed this now in 7.6.3.
 
 This issue only affects:
@@ -102,7 +105,9 @@ This issue only affects:
 * Related Links
 * Member Picker
 
-If you have already upgraded to 7.6.2 and fixed some of your queries for those three data types then you might have to fix them again in 7.6.3. We promise it's the last time you need to update them! We're sorry for the inconvenience.
+If you have already upgraded to 7.6.2 and fixed some of your queries for those three data types then you might have to fix them again in 7.6.3.
+
+We promise it's the last time you need to update them. We're sorry for the inconvenience.
 
 ## Version 7.6.0
 
@@ -116,13 +121,13 @@ The three most important things to note are:
 
 ### Upgrading via NuGet
 
-This is an important one and there was unfortunately not a perfect solution to this. We have removed the UrlRewriting dependency and no longer ship with it, however if you are using it we didn't want to have NuGet delete all of your rewrites. So the good news is that if you are using it, the NuGet upgrade will not delete your rewrite file and everything should just continue to work (though you should really be using IIS rewrites!). 
+This is an important one and there was unfortunately not a perfect solution to this. We have removed the UrlRewriting dependency and no longer ship with it, however if you are using it we didn't want to have NuGet delete all of your rewrites. So the good news is that if you are using it, the NuGet upgrade will not delete your rewrite file and everything should continue to work (though you should really be using IIS rewrites!).
 
 However, if you are not using it, **you will get a YSOD after upgrading, here's how to fix it**
 
 Since you aren't using UrlRewriting you will have probably never edited the UrlRewriting file and in which case NuGet will detect that and remove it. However you will need to manually remove these UrlRewriting references from your web.config:
 
-```xml 
+```xml
 <section name="urlrewritingnet" restartOnExternalChanges="true" requirePermission="false" type="UrlRewritingNet.Configuration.UrlRewriteSection, UrlRewritingNet.UrlRewriter" />
 ```
 
@@ -130,7 +135,7 @@ Since you aren't using UrlRewriting you will have probably never edited the UrlR
 <urlrewritingnet configSource="config\UrlRewriting.config" />
 ```
 
-* and remove the following http modules from your web.config:
+* And remove the following http modules from your web.config:
 
 ```xml
 <system.web>
@@ -144,11 +149,11 @@ and
 
 ```xml
 <system.webServer>
-   <modules>
-   <remove name="UrlRewriteModule"/>
-   <add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter"/>
+    <modules>
+    <remove name="UrlRewriteModule"/>
+    <add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter"/>
     ...
-   </modules>
+    </modules>
 </system.webServer>
 ```
 
@@ -164,7 +169,7 @@ There is **[important Forms upgrade documentation that you will need to read the
 Umbraco Courier 3.1.0 has been released to be compatible with Umbraco 7.6. If you are using Courier, you will need to update it to version 3.1.0
 
 ## Version 7.4.0
-For manual upgrades: 
+For manual upgrades:
 
 * Copy the new folder `~/App_Plugins/ModelsBuilder` into the site
 * Do not forget to merge `~/Config/trees.config` and `~/Config/Dashboard.config` - they contain new and updated entries that are required to be there
@@ -186,79 +191,87 @@ NuGet will do the following for you but if you're upgrading manually:
 Other considerations:
 
 * WebApi has been updated, normally you don’t have to do anything unless you have custom webapi configuration:
-  * See this article if you are using `WebApiConfig.Register`: [https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2](https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2) 
+  * See this article if you are using `WebApiConfig.Register`: [https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2](https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2)
   * You need to update your `web.config` file to have the correct WebApi version references - this should be done by doing a compare/merge of your `~/web.config` file with the `~/web.config` file in the release
 * MVC has been updated to MVC5
   * You need to update your `web.config` file to have the correct MVC version references - this should be done by doing a compare/merge of your `~/web.config` file with the `~/web.config` file in the release
   * The upgrader will take care of updating all other web.config’s (in all other folders, for example, the `Views` and `App_Plugins` folders) to have the correct settings
-  * For general ASP.NET MVC 5 upgrade details see: [https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2](https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2) 
+  * For general ASP.NET MVC 5 upgrade details see: [https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2](https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2)
 * It is not required that you merge the changes for the Examine index paths in the ExamineIndex.config file. However, if you do, your indexes will be rebuilt on startup because Examine will detect that they don’t exist at the new location.
 * It's highly recommended to clear browser cache - the ClientDependency version is automatically bumped during install which should force browser cache to refresh, however in some edge cases this might not be enough.
 
 ## Version 7.2.0
+
 * Copy in the /Views/Partials/Grid (contains Grid rendering views)
 
 ## Version 7.1.0
+
 * Remove the /Install folder.
 
 ## Version 7.0.1 to 7.0.2
 
 * There was an update to the /umbraco/config/create/ui.xml which needs to be manually updated, the original element had this text:
-       
-       
+
 ```xml
 <nodeType alias="users">
     <header>User</header>
     <usercontrol>/create/simple.ascx</usercontrol>
     <tasks>
-      <create assembly="umbraco" type="userTasks" />
-      <delete assembly="umbraco" type="userTasks" />
+    <create assembly="umbraco" type="userTasks" />
+    <delete assembly="umbraco" type="userTasks" />
     </tasks>
 </nodeType>
 ```
 
-
-	* The &lt;usercontrol&gt; value has changed to: **/create/user.ascx**, this is a required change otherwise creating a new user will not work.
+    * The &lt;usercontrol&gt; value has changed to: **/create/user.ascx**, this is a required change otherwise creating a new user will not work.
 * There is a breaking change to be aware of, full details can be found [here](https://umbraco.com/blog/heads-up-breaking-change-coming-in-702-and-62/).
 
 ## Version 7.0.0 to 7.0.1
+
 * Remove all uGoLive dlls from /bin
  * These are not compatible with V7
 * Move appSettings/connectionStrings back to web.config
  * If you are on 7.0.0 you should migrate these settings into the web.config instead of having them in separate files in /config/
  * The keys in config/AppSettings.config need to be moved back to the web.config <appSettings> section and similarly, the config/ConnectionStrings.config holds the Umbraco database connections in v7.0.0 and they should be moved back to the web.config <connectionStrings> section.
- * /config/AppSettings.config and /config/ConnectionString.config can be removed after the contents have been moved back to web.config. (Make backups just in case)
+ * /config/AppSettings.config and /config/ConnectionString.config can be removed after the contents have been moved back to web.config. (Make backups)
 * Delete all files in ~/App_Data/TEMP/Razor/*
  * Related to issues with razor macros
 
 ## Version 6 to 7.0.0
+
 Read and follow [the full v7 upgrade guide](upgrading-to-v7.md)
 
 ## Version 4.10.x/4.11.x to 6.0.0
-* If your site was ever a version between 4.10.0 and 4.11.4 and you have just upgraded to 6.0.0 install the [fixup package](https://our.umbraco.com/projects/developer-tools/path-fixup) and run it after the upgrade process is finished.
+
+* If your site was ever a version between 4.10.0 and 4.11.4 and you have upgraded to 6.0.0 install the [fixup package](https://our.umbraco.com/projects/developer-tools/path-fixup) and run it after the upgrade process is finished.
 * The DocType Mixins package is **NOT** compatible with v6+ and will cause problems in your document types.
 
 ## Version 4.10.x to 4.11.x
+
 * If your site was ever a version between 4.10.0 and 4.11.4 install the [fixup package](https://our.umbraco.com/projects/developer-tools/path-fixup) and run it after the upgrade process is finished.
 
 ## Version 4.8.0 to 4.10.0
+
 * Delete the bin/umbraco.linq.core.dll file
 * Copy the new files and folders from the zip file into your site's folder
- * /App_Plugins
- * /Views
- * global.asax
+  * /App_Plugins
+  * /Views
+  * Global.asax
 * Remove the Config/formHandlers.config file
 
 ## Version 4.7.2 to 4.8.0
+
 * Delete the bin/App_Browsers.dll file
 * Delete the bin/App_global.asax.dll file
 * Delete the bin/Fizzler.Systems.HtmlAgilityPack.dll file
 * For people using uComponents 3.1.2 or below, 4.8.0 breaks support for it. Either upgrade to a newer version beforehand or follow the workaround [posted here](https://our.umbraco.com/projects/backoffice-extensions/ucomponents/questionssuggestions/33021-Upgrading-to-Umbraco-48-breaks-support-for-uComponents)
 
 ## Version 4.7.1.1 to 4.7.2
+
 * Delete the bin/umbraco.MacroEngines.Legacy.dll file
 
 ## Version 4.6.1 to 4.7.1.1
+
 * Delete bin/Iron*.dll (all dll files starting with "Iron")
 * Delete bin/RazorEngine*.dll (all dll files starting with "RazorEngine")
 * Delete bin/umbraco.MacroEngines.Legacy.dll

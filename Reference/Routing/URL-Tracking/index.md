@@ -34,5 +34,3 @@ It is possible to disable the feature entirely (both generating URLs in the data
 ```
 
 See: [/Documentation/Reference/Config/umbracoSettings/#web-routing](/Documentation/Reference/Config/umbracoSettings/#web-routing)
-
-

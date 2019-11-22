@@ -8,13 +8,13 @@ When you type a search term into the Umbraco backoffice search field, you'll see
 
 ![Content Section Dashboards](images/backoffice-search-v8.png)
 
-The results are grouped by 'Section Tree' eg Content, Media, Document Types: essentially each 'Tree' has it's own associated search mechanism, that receives the search term and looks for matches in the tree that is responsible for searching.
+The results are grouped by 'Section Tree' e.g. Content, Media, Document Types: essentially, each 'Tree' has its own associated search mechanism that receives the search term and looks for matches in the tree that is responsible for searching.
 
 You can create your own search mechanisms for your own custom sections or replace the default search implementation for a particular section tree.
 
 ## Custom Tree Search
 
-To create a search for your own custom tree you need to create a C# class that implements the interface `Umbraco.Web.Search.ISearchableTree`
+To create a search for your own custom tree you need to create a C# class that implements the interface `Umbraco.Web.Search.ISearchableTree`.
 
 ### ISearchableTree
 
@@ -44,7 +44,7 @@ public interface ISearchableTree
 Your implementation needs to return an IEnumerable of `SearchResultEntity` items:
 
 ```csharp
-public class SearchResultEntiy : EntityBasic
+public class SearchResultEntity : EntityBasic
 {
     public SearchResultEntity();
 
@@ -56,7 +56,7 @@ public class SearchResultEntiy : EntityBasic
 }
 ```
 
-A `SearchResultEntity` consists of a Score (a Float value) identifying it's relevance to the search term, and the set of `EntityBasic` properties that all Umbraco objects share: eg Name, Id, Udi, Icon, Trashed, Key, ParentId, Path, Alias, AdditionalData
+A `SearchResultEntity` consists of a Score (a Float value) identifying its relevance to the search term, and the set of `EntityBasic` properties that all Umbraco objects share: eg Name, Id, Udi, Icon, Trashed, Key, ParentId, Path, Alias, AdditionalData.
 
 #### Example implementation of ISearchableTree
 
@@ -88,7 +88,7 @@ If we have a custom section Tree with alias 'favouriteThingsAlias' (see the [cus
             }
             // set number of search results found
             totalFound = matchingItems.Count();
-            // return your IEnumerable of SearchResultEntitys
+            // return your IEnumerable of SearchResultEntity
             return searchResults;
         }
     }
@@ -98,24 +98,22 @@ That's all we need, after an application pool recycle, if we now search in the b
 
 ![Content Section Dashboards](images/favouritethings-search-v8.png)
 
-Umbraco is automatically finding any implementation of ISearchableTree in your site, and automatically configuring it to be used for the custom section mentioned in the TreeAlias property - so be careful not to accidentally have two ISearchableTree implementations trying to search the 'same' TreeAlias, its 'one ISearchableTree per TreeAlias'!
+Umbraco automatically finds any implementation of ISearchableTree in your site, and automatically configures it to be used for the custom section mentioned in the TreeAlias property. Be careful not to accidentally have two ISearchableTree implementations trying to search the 'same' TreeAlias, it's *one* ISearchableTree per TreeAlias!
 
 ## Replacing an existing Section Tree Search (SearchableTreeResolver)
 
 Perhaps you want to change the logic for searching an existing section of the site, (why? - well you might have a 'company name' property on a MemberType in the Member section, and you want searches for that company name to filter the members who work there, the default implementation will only search on Member Name)
 
-or
-
-perhaps you want to replace Examine search in the backoffice with an external Search Service, eg Azure Search, so in a cloud hosted implementation you don't need to build the Examine indexes on each new server as your cloud hosting scales out.
+Or perhaps you want to replace Examine search in the backoffice with an external Search Service, e.g. Azure Search. In a cloud hosted implementation you don't need to build the Examine indexes on each new server as your cloud hosting scales out.
 
 ### Example
 
-First create your replacement custom `ISearchableTree` implementation, using the same approach as above, but specifying the TreeAlias of the Tree you aim to replace, eg 'Member'
+First create your replacement custom `ISearchableTree` implementation, using the same approach as above, but specifying the TreeAlias of the Tree you aim to replace, e.g. 'Member'
 
 ```csharp
 public string TreeAlias => "member";
 ```
-To avoid your custom implementation clashing with the default `ISearchableTree` for a Tree, you need to remove it's `ISearchableTree` implementation from the collection of SearchableTrees using an IUserComposer when Umbraco starts up:
+To avoid your custom implementation clashing with the default `ISearchableTree` for a Tree, you need to remove its `ISearchableTree` implementation from the collection of SearchableTrees using an IUserComposer when Umbraco starts up:
 
 ```csharp
 using Umbraco.Core.Components;
@@ -123,7 +121,7 @@ using Umbraco.Web;
 
 namespace My.Website
 {
-[RuntimeLevel(MinLevel = RuntimeLevel.Run)]
+    [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
     public class RemoveCoreMemberSearchableTreeComposer : IUserComposer
     {
         public void Compose(Composition composition)
@@ -132,6 +130,7 @@ namespace My.Website
             composition.SearchableTrees().Exclude<MemberTreeController>();
         }
     }
+}
 ```
 
 This would then allow your custom implementation of ISearchableTree with TreeAlias 'Member' to be used when searching the Member Section Tree.

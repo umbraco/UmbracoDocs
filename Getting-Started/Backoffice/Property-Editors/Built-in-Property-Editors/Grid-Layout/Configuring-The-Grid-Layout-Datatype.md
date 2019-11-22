@@ -9,8 +9,8 @@ Configuring the layout can be divided into 2 overall parts:
 ## Layouts
 A layout is the general grid "container", it contains one or more sections which content editors can use to insert preconfigured **rows**. There are 2 main usage scenarios of layouts:
 
-1. a single column layout which to the content editor will act like a full page canvas to insert elements on
-2. a multiple column layout with a main content body, and one or more sidebar columns to insert lists or other sidebar widgets on.
+1. A single column layout which to the content editor will act like a full page canvas to insert elements on
+2. A multiple column layout with a main content body, and one or more sidebar columns to insert lists or other sidebar widgets on.
 
 ![Grid layout scenarios](images/Grid-layout-scenarios.jpg)
 
@@ -25,8 +25,8 @@ It is possible to setup configurable attributes(class, rel, href) and inline sty
 
 ![Grid layouts](images/rows.png)
 
-You can add as many cells as you like. If they overflow the total width of the row, they will simply be arranged after each other horizontally as you'd expect in a grid system.
+You can add as many cells as you like. If they overflow the total width of the row, they will be arranged after each other horizontally as you'd expect in a grid system.
 
 ![Grid layouts](images/cells.png)
 
-Each cell can by default contain any type of editor such as simple textstring editors, imagespicker, embedded media or Umbraco macros. To override this behavior, uncheck the **allow all editors** option and you can specify which editors will be available for the row. 
+Each cell can by default contain any type of editor such as textstring editors, imagespicker, embedded media or Umbraco macros. To override this behavior, uncheck the **allow all editors** option and you can specify which editors will be available for the row.

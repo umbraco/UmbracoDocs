@@ -10,12 +10,12 @@ In this article you can learn more about the common terms and concepts that are 
 ## [Login screen](Login)
 When you go to the backoffice for the first time, you're presented with the login screen.
 
-![Login screen](images/backoffice-login.png "The login screen has a greeting, username/password field and optionally a 'Forgotten password' link.") 
+![Login screen](images/backoffice-login.png "The login screen has a greeting, username/password field and optionally a 'Forgotten password' link.")
 
 [Read more about the login screen](Login).
 
 ## [Section](Sections)
-A section in Umbraco is where you do specific tasks related to that section. For example Content, Settings and Users. You can navigate between the different sections of the backoffice by clicking the corresponding icon in the section menu. 
+A section in Umbraco is where you do specific tasks related to that section. For example Content, Settings and Users. You can navigate between the different sections of the backoffice by clicking the corresponding icon in the section menu.
 
 ![Sections](images/highlight-sections.png "The Section menu is the horizontal menu located on the top of the backoffice.")
 *The __Section menu__ is the horizontal menu located on the top of the backoffice.*
@@ -23,7 +23,7 @@ A section in Umbraco is where you do specific tasks related to that section. For
 [Read more about the section menu](Sections).
 
 ## [Tree](../../Extending/Section-Trees)
-A tree is a hierarchical list of items related (and usually restricted) to a specific concept, like for example content or media. 
+A tree is a hierarchical list of items related (and usually restricted) to a specific concept, like for example content or media.
 
 You can expand trees by clicking the down arrow <img src="images/expand-node.png" style="margin:0;width:15px" title="Expand a node in a tree" /> to the left of the node or by double-clicking the node.
 
@@ -58,7 +58,7 @@ Document Types define the types of content nodes that backoffice users can creat
 Every Document Type has properties. These are the fields that the content editor is allowed to edit for the content node.
 
 ### [Data Type](../Data/Data-Types/)
-Each Document Type property has a Data Type which defines the type of input of that property. Data Types reference a Property Editor and are configured in the Umbraco backoffice in the Settings section.  A Data Type can be something very simple (textstring, number, true/false) or more complex (multi-node tree picker, image cropper, etc).
+Each Document Type property has a Data Type which defines the type of input of that property. Data Types reference a Property Editor and are configured in the Umbraco backoffice in the Settings section. A Data Type can be something basic (textstring, number, true/false) or more complex (multi-node tree picker, image cropper, etc).
 
 [Read more about Data Types](../Data/Data-Types/)
 
@@ -73,12 +73,12 @@ Media items are used to store assets like images and video within the Media sect
 [Read more about Media](../Data/Creating-Media/)
 
 ### Media Types
-Media Types are very similar to Document Types in Umbraco, except they are specifically for media items in the Media section. 
+Media Types are very similar to Document Types in Umbraco, except they are specifically for media items in the Media section.
 
 Umbraco comes with 3 default Media Types: **File**, **Folder** and **Image**.
 
 ## [Members](../Data/Members/)
-A member is someone who has access to signup, register and login into your **public website** and is not to be confused with Users. 
+A member is someone who has access to signup, register and login into your **public website** and is not to be confused with Users.
 
 [Read more about Members](../Data/Members/)
 

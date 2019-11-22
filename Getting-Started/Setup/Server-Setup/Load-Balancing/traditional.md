@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
+versionRemoved: 8.0.0
 ---
 
 # Traditional (Legacy/Deprecated) load balancing
@@ -39,20 +39,20 @@ An example of how to setup DNS and host headers between 3 load balanced servers:
 
 Server 1
 
-* domain DNS name: server1.mydomain.local
-* internal website DNS name: server1.mywebsite.com (use for IIS host header)
+* Domain DNS name: server1.mydomain.local
+* Internal website DNS name: server1.mywebsite.com (use for IIS host header)
 * IP Address: 192.168.1.10
 
 Server 2
 
-* domain DNS name: server2.mydomain.local
-* internal website DNS name: server2.mywebsite.com (use for IIS host header)
+* Domain DNS name: server2.mydomain.local
+* Internal website DNS name: server2.mywebsite.com (use for IIS host header)
 * IP Address: 192.168.1.11
 
 Server 3
 
-* domain DNS name: server3.mydomain.local
-* internal website DNS name: server3.mywebsite.com (use for IIS host header)
+* Domain DNS name: server3.mydomain.local
+* Internal website DNS name: server3.mywebsite.com (use for IIS host header)
 * IP Address: 192.168.1.12
 
 Of course you'll have your public website's DNS/address which you'll also need to add to the host header for each of your IIS server's websites. For instance, if the public website address is: http://www.mywebsite.com then you'll need to add www.mywebsite.com as a host header to IIS website on each server. This DNS entry will point to the public IP address of your load balancer.
@@ -73,7 +73,7 @@ Some important notes on NLB:
 * [Load balancing with VMWare & NLB](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/implmenting_ms_network_load_balancing.pdf)
 * Ensure that the internal IP Addresses for NLB have DNS registration disabled, are not configured to a client for Microsoft Networks and have Netbios over TCP/IP disabled
 * Windows Server 2008 changed the way that TCP-IP works and have disabled forwarding. In order for NLB to work with 2 network cards (the recommended way), you have to enable forwarding for the private NIC:
-	* [Balancing Act: Dual-NIC Configuration with Windows Server 2008 NLB Clusters](https://blogs.technet.microsoft.com/networking/2008/11/20/balancing-act-dual-nic-configuration-with-windows-server-2008-nlb-clusters/)
+    * [Balancing Act: Dual-NIC Configuration with Windows Server 2008 NLB Clusters](https://blogs.technet.microsoft.com/networking/2008/11/20/balancing-act-dual-nic-configuration-with-windows-server-2008-nlb-clusters/)
 
 ## Option #1 : File Storage with File Replication
 
@@ -95,7 +95,7 @@ Configuring Umbraco to support load balanced clusters is probably the easiest pa
 <distributedCall enable="true">
     <user>0</user>
     <servers>
-       <server>server1.mywebsite.com</server>
+        <server>server1.mywebsite.com</server>
         <server>server2.mywebsite.com</server>
         <server>server3.mywebsite.com</server>
     </servers>
@@ -119,7 +119,7 @@ As of Umbraco 6.2.1+ and 7.1.5+ there are another couple of options to take into
 * If you have your load balancing environment setup with a 'master' server, Umbraco will assume that the **first** server listed in the configuration is the 'master'
 * For scheduled publishing and scheduled tasks to work properly, each server listed needs to know if it is the 'master' server or not. In order to achieve this there are 2 optional attributes for a server configuration node: serverName or appId
 
-**serverName** will be the most common attribute to use and will always work so long as you are not load balancing a single site on the same server. In this case you should add the serverName attribute to each server node listed so that each server knows if it is a master or slave and so that each server knows which internal URL it can use to ping itself. Take not that the serverName must match the machine name otherwise scheduled tasks will not work
+**serverName** will be the most common attribute to use and will always work so long as you are not load balancing a single site on the same server. In this case you should add the serverName attribute to each server node listed.  They way each server knows if it is a master or replica and so that each server knows which internal URL it can use to ping itself. Take not that the serverName must match the machine name otherwise scheduled tasks will not work
 Example:
 
 ```xml
@@ -140,8 +140,8 @@ Example:
 ## Testing
 
 The normal testing practices should be done (See [Common load balancing setup information](index.md)) with a traditional load balancing setup but specific testing can be done to ensure
-that your distributed calls are being made correctly in a traditional setup. To test Umbraco distributed calls, create and publish some content on one server (i.e. http://server1.mywebsite.com/umbraco/umbraco.aspx), 
-then browse to the front end content on another server (i.e. http://server2.mywebsite.com/public/page1.aspx if page1 was the newly published content). 
+that your distributed calls are being made correctly in a traditional setup. To test Umbraco distributed calls, create and publish some content on one server (i.e. http://server1.mywebsite.com/umbraco/umbraco.aspx). 
+Then browse to the front end content on another server (i.e. http://server2.mywebsite.com/public/page1.aspx if page1 was the newly published content).
 If the page shows up on the 2nd server, though it was published from the 1st server, then distributed calls are working! You'll need to thoroughly test this though.
 
 ## Conclusion

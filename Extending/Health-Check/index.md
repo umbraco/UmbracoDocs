@@ -5,7 +5,7 @@ needsV8Update: "true"
 
 # Health Check
 
-The developer section of the Umbraco backoffice holds a dashboard named "Health Check". It is a handy list of checks to see if your Umbraco installation is configured according to best practices. It's possible to add your custom built health checks.  
+The developer section of the Umbraco backoffice holds a dashboard named "Health Check". It is a handy list of checks to see if your Umbraco installation is configured according to best practices. It's possible to add your custom built health checks.
 This feature has been available since Umbraco version 7.5.
 
 For inspiration when building your own checks you can look at the checks we've [built into Umbraco](https://github.com/umbraco/Umbraco-CMS/tree/v7/dev/src/Umbraco.Web/HealthCheck/Checks). Some examples will follow in this document.
@@ -15,29 +15,29 @@ For inspiration when building your own checks you can look at the checks we've [
 Umbraco comes with the following checks by default:
 
 * Category **Configuration**
-  * **Macro errors (id: `D0F7599E-9B2A-4D9E-9883-81C7EDC5616F`)** - checks that the errors are set to `inline` so that pages that error will still load (and just shows a small error message)
+  * **Macro errors (id: `D0F7599E-9B2A-4D9E-9883-81C7EDC5616F`)** - checks that the errors are set to `inline` so that pages that error will still load (and shows a small error message)
   * **Notification Email Settings (id: `3E2F7B14-4B41-452B-9A30-E67FBC8E1206`)** - checks that the from email address used for email notifications has been changed from its default value
-  * **Try Skip IIS Custom Errors (id: `046A066C-4FB2-4937-B931-069964E16C66`)** - in IIS 7.5 and higher this should be set to `true` 
+  * **Try Skip IIS Custom Errors (id: `046A066C-4FB2-4937-B931-069964E16C66`)** - in IIS 7.5 and higher this should be set to `true`
 * Category **Data Integrity**
   * **Data integrity (id: `D999EB2B-64C2-400F-B50C-334D41F8589A`)** - validates the XML structures for content, media and members that are stored in the `cmsContentXml` table
-* Category **Live environment** 
+* Category **Live environment**
   * **Custom errors (id: `4090C0A1-2C52-4124-92DD-F028FD066A64`)** - should be set to `RemoteOnly` or `On` on your live site
   * **Trace mode (id: `9BED6EF4-A7F3-457A-8935-B64E9AA8BAB3`)** - should be set to `enabled="false"` on your live site
-  * **Compilation debug mode (id: `61214FF3-FC57-4B31-B5CF-1D095C977D6D`)** - should be set to `debug="false"` on your live site 
+  * **Compilation debug mode (id: `61214FF3-FC57-4B31-B5CF-1D095C977D6D`)** - should be set to `debug="false"` on your live site
 * Category **Permissions**
   * **File & folder permissions (id: `53DBA282-4A79-4B67-B958-B29EC40FCC23`)** - checks that folders and files that are either required or recommended to set with write permissions can be accessed
 * Category **Security**
   * **Click-Jacking Protection (id: `ED0D7E40-971E-4BE8-AB6D-8CC5D0A6A5B0`)** - checks to see if a header or meta-tag is in place to indicate whether the site can be hosted in an IFRAME.  Normally this is best set to deny permission for this to be done, to prevent what is known as [click-jacking](https://www.owasp.org/index.php/Clickjacking) attacks
   * **Excessive Headers (id: `92ABBAA2-0586-4089-8AE2-9A843439D577`)** - checks to ensure that various headers that can provide details about the technology used to build and host the website have been removed
   * **HTTPS check (id: `EB66BB3B-1BCD-4314-9531-9DA2C1D6D9A7`)** - to determine if the current site is running on a secure connection
-  * **umbracoUseSSL check** - when the site is running on HTTPS, `umbracoUseSSL` needs to be enabled to secure the backoffice
+  * **UmbracoUseSSL check** - when the site is running on HTTPS, `umbracoUseSSL` needs to be enabled to secure the backoffice
   * **HTTPS connectivity check** - when connecting to the site over HTTPS, does it return a valid response (i.e. the certificate has not expired)?
 * Category **Services**
   * **SMTP settings (id: `1B5D221B-CE99-4193-97CB-5F3261EC73DF`)** - checks that an SMTP server is configured and is accepting requests for sending emails
-  
-Each check returns a message indicating whether or not the issue in question has been found on the website installation, and if so whether the concern is an error that should be fixed, or less importantly, a warning you should be aware of.
 
-Some of them can also be rectified via the dashboard, simply by clicking the **Fix** button and in some cases providing some required information.  These changes usually involve writing to configuration files that will often trigger a restart of the website.  
+Each check returns a message indicating whether or not the issue in question has been found on the website installation. This could be an error that should be fixed, or a warning you should be aware of.
+
+Some of them can also be rectified via the dashboard, by clicking the **Fix** button and in some cases providing some required information.  These changes usually involve writing to configuration files that will often trigger a restart of the website.
 
 ## Configuring and scheduling checks
 
@@ -58,14 +58,14 @@ Each health check is a class that needs to have a `HealthCheck` attribute. This 
 
 ### Configuration checks
 
-These are fairly simple, small checks that take an XPath query and confirm that the value that's expected is there. If the value is not correct, clicking the "Rectify" button will set the recommended value.
+These are small checks that take an XPath query and confirm that the value that's expected is there. If the value is not correct, clicking the "Rectify" button will set the recommended value.
 
 * A configuration check needs to inherit from `Umbraco.Web.HealthCheck.Checks.Config.AbstractConfigCheck`
 * A configuration check needs the `HealthCheck` attribute as noted at the start of this document
 * `FilePath` is the relative path to which config file you want to check
 * `XPath` is the query you want to execute to find the configuration value you want to verify
 * `ValueComparisonType` can either be `ValueComparisonType.ShouldEqual` or `ValueComparisonType.ShouldNotEqual`
-* `Values` is a list of values that are available for this configuration item - in this example it can be `RemoteOnly` or `On`, they're both acceptable for a live site. 
+* `Values` is a list of values that are available for this configuration item - in this example it can be `RemoteOnly` or `On`, they're both acceptable for a live site.
   * For checks using the `ShouldEqual` comparison method, make sure to set one of these values to `IsRecommended = true` - when the "Fix" button is pressed, the recommended value will be stored
   * Where `ShouldNotEqual` is used the fix will require the user to provide the correct setting
 * `CheckSuccessMessage`, `CheckErrorMessage` and `RectifySuccessMessage` are the messages returned to the user
@@ -129,7 +129,7 @@ namespace Umbraco.Web.HealthCheck.Checks.Config
                 return values;
             }
         }
-        
+
         public override string CheckSuccessMessage
         {
             get
@@ -182,7 +182,7 @@ This can be anything you can think of, the results and the rectify action are co
 
 An example check:
 
-```
+```csharp
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -204,7 +204,7 @@ namespace Umbraco.Web.HealthCheck.Checks.SEO
         {
             _textService = healthCheckContext.ApplicationContext.Services.TextService;
         }
-        
+
         public override IEnumerable<HealthCheckStatus> GetStatus()
         {
             return new[] { CheckForRobotsTxtFile() };
@@ -224,8 +224,8 @@ namespace Umbraco.Web.HealthCheck.Checks.SEO
         private HealthCheckStatus CheckForRobotsTxtFile()
         {
             var success = File.Exists(HttpContext.Current.Server.MapPath("~/robots.txt"));
-            var message = success 
-                ? _textService.Localize("healthcheck/seoRobotsCheckSuccess") 
+            var message = success
+                ? _textService.Localize("healthcheck/seoRobotsCheckSuccess")
                 : _textService.Localize("healthcheck/seoRobotsCheckFailed");
 
             var actions = new List<HealthCheckAction>();
@@ -276,7 +276,7 @@ Disallow: /umbraco/";
 
 Health check notifications can be scheduled to run periodically and notify you of the results. Included with Umbraco is a notification method to deliver the results via email. In a similar manner to how it's possible to create your own health checks, you can also create custom notification methods to send the message summarising the status of the health checks via other means.  Again, for further details on implementing this on this please refer the [existing notification methods within the core code base](https://github.com/umbraco/Umbraco-CMS/tree/v7/dev/src/Umbraco.Web/HealthCheck/NotificationMethods).
 
-Each notification method needs to implement the core interface `IHealthCheckNotificatationMethod` and, for ease of creation, can inherit from the base class `NotificationMethodBase`. The class must also be decorated with an instance of the `HealthCheckNotificationMethod` attribute. There's one method to implement - `SendAsync(HealthCheckResults results)` - which is responsible for taking the results of the health checks and sending them via the mechanism of your choice.
+Each notification method needs to implement the core interface `IHealthCheckNotificationMethod` and, for ease of creation, can inherit from the base class `NotificationMethodBase`. The class must also be decorated with an instance of the `HealthCheckNotificationMethod` attribute. There's one method to implement - `SendAsync(HealthCheckResults results)` - which is responsible for taking the results of the health checks and sending them via the mechanism of your choice.
 
 The following example shows how the core method for sending notification via email is implemented:
 
@@ -292,7 +292,7 @@ using Umbraco.Core.Services;
 namespace Umbraco.Web.HealthCheck.NotificationMethods
 {
     [HealthCheckNotificationMethod("email")]
-    public class EmailNotificationMethod : NotificationMethodBase, IHealthCheckNotificatationMethod
+    public class EmailNotificationMethod : NotificationMethodBase, IHealthCheckNotificationMethod
     {
         private readonly ILocalizedTextService _textService;
 
@@ -351,7 +351,7 @@ namespace Umbraco.Web.HealthCheck.NotificationMethods
     }
 }
 ```
-    
+
 If custom configuration is required for a custom notification method, this can be placed in `HealthChecks.config`, with the `alias` XML attribute for the `notificationMethod` element matching that used on the class level attribute. Again, the following extract shows how the email notification method is configured:
 
 ```xml
@@ -365,5 +365,5 @@ If custom configuration is required for a custom notification method, this can b
         </notificationMethod>
     </notificationMethods>
     </notificationSettings>
-</HealthChecks> 
+</HealthChecks>
 ```

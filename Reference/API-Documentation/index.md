@@ -19,11 +19,10 @@ __Note: opens a documentation browser that is different from the documentation s
 
 Angular, JavaScript, CSS & Less UI API references for building Umbraco backoffice components.
 
-- umbraco.directives
-- umbraco.services
-- umbraco.resources
+- The umbraco.directives
+- The umbraco.services
+- The umbraco.resources
 
 ### [Backoffice UI](https://our.umbraco.com/apidocs/v8/ui/#/api/)
 
 __Note: opens a documentation browser that is different from the documentation section you're viewing now.__
-

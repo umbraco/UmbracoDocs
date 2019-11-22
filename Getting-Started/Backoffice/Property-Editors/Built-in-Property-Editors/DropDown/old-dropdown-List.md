@@ -20,11 +20,11 @@ You can add, edit & delete the data prevalues rendered within the dropdown list.
 
 ## Content Example
 
-![Downdown List Content](images/Dropdown-List-Content.png)
+![Dropdown List Content](images/Dropdown-List-Content.png)
 
 ## MVC View Example to output selected value
 
-### Simple typed example
+### Typed example
 
 ```csharp
 @if (Model.Content.HasValue("superHero"))
@@ -33,7 +33,7 @@ You can add, edit & delete the data prevalues rendered within the dropdown list.
 }
 ```
 
-### Simple dynamic example
+### Dynamic example
 
 ```csharp
 @if (CurrentPage.HasValue("superHero"))
@@ -60,7 +60,7 @@ You can add, edit & delete the data prevalues rendered within the dropdown list.
             <ul>
                 @foreach (var page in articles)
                 {
-                    <li><a href="@page.Url"> @page.Name</a></li>
+                    <li><a href="@page.Url">@page.Name</a></li>
                 }
             </ul>
         }
@@ -84,7 +84,7 @@ You can add, edit & delete the data prevalues rendered within the dropdown list.
             <ul>
                 @foreach (var page in articles)
                 {
-                    <li><a href="@page.Url"> @page.Name</a></li>
+                    <li><a href="@page.Url">@page.Name</a></li>
                 }
             </ul>
         }

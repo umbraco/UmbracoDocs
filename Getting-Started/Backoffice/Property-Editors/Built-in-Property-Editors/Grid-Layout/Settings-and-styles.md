@@ -29,13 +29,13 @@ The settings data could look like this, with an object for each setting:
 
 The different values are:
 
-- **label** : Field name displayed in the content editor UI
-- **description** : Descriptive text displayed in the content editor UI to guide the user
-- **key** : The key the entered setting value will be stored under.
-- **view** : The editor used to enter a setting value with.
-- **prevalues** : For views that need predefined values, e.g. the radiobuttonlist view.
-- **modifier (optional)** : A string formatter to modify the output of the editor to prepend or append extra values.
-- **applyTo (optional)** : States whether the setting can be used on a cell or a row. If either not present or empty, the setting will be shown both on Rows and Cells.
+- `label` : Field name displayed in the content editor UI
+- `description` : Descriptive text displayed in the content editor UI to guide the user
+- `key` : The key the entered setting value will be stored under.
+- `view` : The editor used to enter a setting value with.
+- `prevalues` : For views that need predefined values, e.g. the radiobuttonlist view.
+- `modifier (optional)` : A string formatter to modify the output of the editor to prepend or append extra values.
+- `applyTo (optional)` : States whether the setting can be used on a cell or a row. If either not present or empty, the setting will be shown both on Rows and Cells.
 
 **label** and **description** are straight-forward.
 
@@ -47,26 +47,25 @@ The different values are:
 
 By changing the key of the setting you can modify the `<div>` element's attributes like `class`, `title`, `id` or custom `data-*` attributes.
 
-
 **view** the view defines the editor used to enter a value. By default Umbraco comes with a collection of prevalue editors:
 
-- textstring
-- textarea
-- radiobuttonlist
-- mediapicker
-- imagepicker
-- boolean
-- treepicker
-- treesource
-- number
-- multivalues
+- `textstring`
+- `textarea`
+- `radiobuttonlist`
+- `mediapicker`
+- `imagepicker`
+- `boolean`
+- `treepicker`
+- `treesource`
+- `number`
+- `multivalues`
 
 Alternatively you can also pass in a path to a custom view like "/app_plugins/grid/editors/view.html"
 
 **prevalues** is for views that need predefined values, e.g. the radiobuttonlist view. Prevalues are defined as strings in an array:
 
 ```json
-"prevalues":[
+"prevalues": [
     "value_1",
     "value_2",
     "value_3"
@@ -75,10 +74,10 @@ Alternatively you can also pass in a path to a custom view like "/app_plugins/gr
 
 and will translate in to three different options where each string will become a radiobutton. The strings represent the value of the options.
 
-**In Umbraco 7.5.4 & newer** prevalues can also be defined as an object of label/value allowing to have a displayed label instead of showing the actual underlying value. You can even mix and match these and use both label/value prevalues and simple string prevalues in the same configuration:
+**In Umbraco 7.5.4 & newer** prevalues can also be defined as an object of label/value allowing to have a displayed label instead of showing the actual underlying value. You can even mix and match these and use both label/value prevalues and string prevalues in the same configuration:
 
 ```json
-"prevalues":[
+"prevalues": [
     {
         "label": "Value one",
         "value": "value_1"
@@ -91,7 +90,7 @@ and will translate in to three different options where each string will become a
 ]
 ```
 
-**modifier** is a basic way to prepend, append or wrap the value from the editor in a simple string. This is especially useful when working with custom styles which often requires additional values to function. For instance if you want to set a background image you can get an image path from the image picker view. But in order for it to work with css it has to be wrapped in `url()`. In that case you set the **modifier** to `url('{0}')` which means that `{0}` is replaced with the editor value.
+**modifier** is a basic way to prepend, append or wrap the value from the editor in a string. This is especially useful when working with custom styles which often requires additional values to function. For instance if you want to set a background image you can get an image path from the image picker view. But in order for it to work with css it has to be wrapped in `url()`. In that case you set the **modifier** to `url('{0}')` which means that `{0}` is replaced with the editor value.
 
 **applyTo** defines what this setting can be applied to. It should be either **row** or **cell** as a string.
 
@@ -180,4 +179,4 @@ You can add multiple settings and styles configurations on a data type. This is 
 
 
 ### Full-width settings and styles
-It is possible to use settings and styles to add full-width background-images, background-colors and so forth. Just make sure the surrounding *section* is full-width(12 columns by default) and the *rows* inside it will automatically become full-width.
+It is possible to use settings and styles to add full-width background-images, background-colors and so forth. Make sure the surrounding *section* is full-width (12 columns by default) and the *rows* inside it will automatically become full-width.

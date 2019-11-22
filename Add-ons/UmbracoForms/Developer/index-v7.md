@@ -20,7 +20,7 @@ Write your forms your way. You have full control over your form's HTML markup an
 ## [Creating custom HTML emails](Email-Templates/index.md)
 **Version 6.0.0+** - Send custom HTML email templates using the new workflow 'Send email with template (Razor)'.
 
-## [Working with Record data](Working-With-Data/index.md)
+## [Working with Record data](Working-With-Data/index-v7.md)
 See how you can fetch and display record data from your Razor macros.
 
 ## [Extending](Extending/index.md)

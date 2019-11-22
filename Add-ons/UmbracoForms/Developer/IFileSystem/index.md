@@ -7,10 +7,10 @@ needsV8Update: "true"
 Umbraco Forms available in version 4.4.0 and newer allows you to use an IFileSystem to abstract how and where the physical JSON files such as Forms, Workflows and PreValues.
 
 ## What on earth is an IFileSystem
-To summarise this allows the saving & getting of files to be abstracted away to a provider, where it can save & retrieve say from Azure Blob Cloud storage or some other place. You can [learn more about IFileSystems in the Umbraco core](../../../../Extending/Custom-File-Systems.md) 
+To summarise this allows the saving & getting of files to be abstracted away to a provider, where it can save & retrieve say from Azure Blob Cloud storage or some other place. You can [learn more about IFileSystems in the Umbraco core](../../../../Extending/Custom-File-Systems.md)
 
 ## Storing the JSON files in a different location on the server
-This uses the Umbraco core IFileSystem provider `Umbraco.Core.IO.PhysicalFileSystem` which with its property we can then specify a different location than the default location that Umbraco Forms stores its files, which is `App_Plugins/UmbracoForms/Data`
+This uses the Umbraco core IFileSystem provider `Umbraco.Core.IO.PhysicalFileSystem`. With its property we can specify a different location than the default location than Umbraco Forms stores its files, which is `App_Plugins/UmbracoForms/Data`.
 Adding the following to your IFileSystem config file found at `Config/FileSystemProviders.config` will allow you to store the files elsewhere to suit your requirements
 
 ```xml
@@ -37,7 +37,7 @@ Note you may or may not have a similar looking configuration if using this provi
         -->
         <add key="maxDays" value="365"/>
         <!--
-            When true this allows the VirtualPathProvider to use the default "media" route prefix regardless 
+            When true this allows the VirtualPathProvider to use the default "media" route prefix regardless
             of the container name.
         -->
         <add key="useDefaultRoute" value="true"/>
@@ -56,4 +56,4 @@ With your provider written to retrieve folders, files you will need to update th
 For inspiration on creating a C# FileSystemProvider please take a look at the source code for [the Azure provider](https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure)
 
 ## Forms containing upload fields
-Any form containing an upload field will use the same IFileSystem provider with the `alias="media"` to upload the submitted files in any form submission. 
+Any form containing an upload field will use the same IFileSystem provider with the `alias="media"` to upload the submitted files in any form submission.

@@ -18,9 +18,9 @@ new XML Schema.
     <data alias="siteName">My Site</data>
     <data alias="headerText"><![CDATA[<p><strong>Sam Grady designed this for Warren Buckley.</strong> "This" idea was first created by the incredible Robert Brownjohn and has been copied many times since.</p>]]></data>
     <node id="1081" version="67a016f9-3eda-4c59-afc7-e5cab7fbfc35" parentID="1080" level="2" writerID="0" creatorID="0" nodeType="1070" template="1058" sortOrder="1" createDate="2009-02-26T18:47:46" updateDate="2009-04-27T16:43:41" nodeName="About" urlName="about" writerName="Administrator" creatorName="Administrator" nodeTypeAlias="CWS_Textpage" path="-1,1080,1081">
-      <data alias="umbracoNaviHide">0</data>
-      <data alias="headerText"><![CDATA[<p>This is a good place to put a service message or something to help define your site or company.</p>]]></data>
-      <data alias="bodyText"><![CDATA[<p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper condimentum lorem. Curabitur placerat nunc ut leo. Integer eros ligula, vestibulum at, eleifend id, dignissim vel, est.</strong></p>]]></data>
+    <data alias="umbracoNaviHide">0</data>
+    <data alias="headerText"><![CDATA[<p>This is a good place to put a service message or something to help define your site or company.</p>]]></data>
+    <data alias="bodyText"><![CDATA[<p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper condimentum lorem. Curabitur placerat nunc ut leo. Integer eros ligula, vestibulum at, eleifend id, dignissim vel, est.</strong></p>]]></data>
     </node>
   </node>
 </root>
@@ -43,9 +43,9 @@ new XML Schema.
     <siteName>My Site</siteName>
     <headerText><![CDATA[<p><strong>Sam Grady designed this for Warren Buckley.</strong> "This" idea was first created by the incredible Robert Brownjohn and has been copied many times since.</p>]]></headerText>
     <Textpage id="1081" parentID="1080" level="2" writerID="0" creatorID="0" nodeType="1070" template="1058" sortOrder="1" createDate="2010-05-30T16:23:31" updateDate="2010-05-30T16:24:03" nodeName="About" urlName="about" writerName="Administrator" creatorName="Administrator" path="-1,1080,1081" isDoc="">
-      <umbracoNaviHide>0</umbracoNaviHide>
-      <headerText><![CDATA[<p>This is a good place to put a service message or something to<br />help define your site or company.</p>]]></headerText>
-      <bodyText><![CDATA[<p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper condimentum lorem. Curabitur placerat nunc ut leo. Integer eros ligula, vestibulum at, eleifend id, dignissim vel, est.</strong></p>]]></bodyText>
+    <umbracoNaviHide>0</umbracoNaviHide>
+    <headerText><![CDATA[<p>This is a good place to put a service message or something to<br />help define your site or company.</p>]]></headerText>
+    <bodyText><![CDATA[<p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper condimentum lorem. Curabitur placerat nunc ut leo. Integer eros ligula, vestibulum at, eleifend id, dignissim vel, est.</strong></p>]]></bodyText>
     </Textpage>
   </Home>
 </root>

@@ -15,7 +15,7 @@ All samples in this document will require references to the following dll:
 * Umbraco.Core.dll
 
 All samples in this document will require the following using statement:
-	
+
 ```csharp
 using Umbraco.Core.Models;
 using Umbraco.Core.Services;
@@ -66,7 +66,7 @@ Gets or sets the Parents object type key as `Guid`
 var relationType = relationService.GetRelationTypeById(1234);
 return relationType.ParentObjectType;
 ```
-    
+
 ### .ChildObjectType
 Gets or sets the Childs object type key as `Guid`
 

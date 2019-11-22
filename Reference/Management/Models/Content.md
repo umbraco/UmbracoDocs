@@ -5,7 +5,7 @@ needsV8Update: "true"
 ---
 # Content
 
-The `Content` class represents a single item in the content tree, its values are fetched directly from the database, not from the cache. **Notice** the Content class should strictly be used for simple CRUD operations, not complex queries, as it is not flexible nor fast enough for this.
+The `Content` class represents a single item in the content tree, its values are fetched directly from the database, not from the cache. **Notice** the Content class should strictly be used for CRUD operations, not complex queries, as it is not flexible nor fast enough for this.
 
 All content is versioned, so on each individual change, a new version is stored. Past versions can only be retrieved from the `Content` api, not from the cache.
 
@@ -113,7 +113,7 @@ Gets or Sets the Language of the Content as a `string`. **Please note** that thi
 
 ### .Level
 
-Gets or Sets the given `Content` level in the site hierarchy as an `Int`. Content placed at the root of the site, will return 1, content just underneath will return 2, and so on.
+Gets or Sets the given `Content` level in the site hierarchy as an `Int`. Content placed at the root of the site, will return 1, content right underneath will return 2, and so on.
 
 ```csharp
 // Given a `ContentService` object get Content by its Id and return the Level

@@ -9,7 +9,7 @@ versionFrom: 7.6.0
 
 `Returns: String`
 
-Textbox is a simple HTML input control for text. It can be configured to have a fixed character limit. The default maximum amount of characters is 500 unless it's specifically changed to a lower amount.
+Textbox is an HTML input control for text. It can be configured to have a fixed character limit. The default maximum amount of characters is 500 unless it's specifically changed to a lower amount.
 
 ## Data Type Definition Example
 
@@ -23,7 +23,7 @@ Textbox is a simple HTML input control for text. It can be configured to have a 
 
 ## Settings
 
-## Content Example:
+## Content Example
 
 ### Without a character limit
 
@@ -33,25 +33,25 @@ Textbox is a simple HTML input control for text. It can be configured to have a 
 
 ![Textbox Content Example Without a Character Limit](images/7_6/textbox-content-limit.png)
 
-## MVC View Example:
+## MVC View Example
 
 ```csharp
 @{
-   if (Model.Content.HasValue("pageTitle")){
-       <p>@(Model.Content.GetPropertyValue<string>("pageTitle"))</p>
-   }
+    if (Model.Content.HasValue("pageTitle")){
+        <p>@(Model.Content.GetPropertyValue<string>("pageTitle"))</p>
+    }
 }
 ```
 
 
-### Dynamic (Obsolete):
+### Dynamic (Obsolete)
 
 See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pitfalls/#dynamics) for more information about why the dynamic approach is obsolete.
 
 ```csharp
-@{       	
-   if (CurrentPage.HasValue("pageTitle")){	
-       <p>@CurrentPage.pageTitle</p>	
-   } 	       	
+@{
+    if (CurrentPage.HasValue("pageTitle")){
+        <p>@CurrentPage.pageTitle</p>
+    }
 }
 ```

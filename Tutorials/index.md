@@ -21,7 +21,7 @@ Custom dashboards are a great way to help editors maintain a site by providing u
 
 ### [Creating a Property Editor](Creating-a-Property-Editor/)
 
-This guide explains how to setup a simple property editor for the backoffice.
+This guide explains how to setup a property editor for the backoffice.
 
 ### [Multilanguage Setup](Multilanguage-Setup/index.md)
 
@@ -38,3 +38,6 @@ Information about the basic Umbraco starter kit.
 ### [Porting Packages from Version 7 to Version 8](Porting-Packages-V8/index.md)
 
 A working document, that gives tips & pointers on how to port an Umbraco V7 package to work with the up coming Umbraco V8 release.
+
+### [Creating a Content App](../Extending/Content-Apps/index.md#creating-a-custom-content-app)
+Learn how to create a content app (v8 only)

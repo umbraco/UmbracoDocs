@@ -13,7 +13,7 @@ A Document Type is composed by Properties, which are grouped by Tabs (or Propert
 
 It is also possible to link one or more Templates to a Document Type to choose how you want your model / data rendered to the user.
 
- * **Namespace:** `Umbraco.Core.Models` 
+ * **Namespace:** `Umbraco.Core.Models`
  * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
@@ -58,7 +58,7 @@ return contentType.AllowedAtRoot;
 ### .AllowedContentTypes
 Gets or Sets an `Enumerable` list of `ContentTypeSort` objects of the ContentTypes allowed under the current ContentType.
 
-The `ContentTypeSort` is a simple object with a lazy Id, int SortOrder and string Alias used to sort the MediaTypes within the list of AllowedContentTypes.
+The `ContentTypeSort` is an object with a lazy Id, int SortOrder and string Alias used to sort the MediaTypes within the list of AllowedContentTypes.
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return AllowedContentTypes
@@ -150,10 +150,10 @@ return contentType.Icon;
 ```
 
 ### .Id
-Gets the unique `ContentType` Id as a `Int`, this ID is based on a Database identity field, and is therefore not safe to reference in code which are moved between different instances, use Key instead. 
+Gets the unique `ContentType` Id as a `Int`, this ID is based on a Database identity field, and is therefore not safe to reference in code which are moved between different instances, use Key instead.
 
 ### .Key
-Gets the `Guid` assigned to the ContentType during creation. This value is unique, and should never change, even if the content is moved between instances. 
+Gets the `Guid` assigned to the ContentType during creation. This value is unique, and should never change, even if the content is moved between instances.
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return the Key
@@ -162,7 +162,7 @@ return contentType.Key;
 ```
 
 ### .Level
-Gets or Sets the given `ContentType` level in the site hierarchy as an `Int`. ContentTypes placed at the root of the tree, will return 1, content just underneath will return 2, and so on.
+Gets or Sets the given `ContentType` level in the site hierarchy as an `Int`. ContentTypes placed at the root of the tree, will return 1, content right underneath will return 2, and so on.
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return the Level
@@ -299,7 +299,7 @@ contentTypeService.Save(contentType);
 Removes a `ContentType` with the supplied alias from the list of composite ContentTypes.
 
 ```csharp
-// Given a `ContentTypeService` object get a ContentType by its alias and 
+// Given a `ContentTypeService` object get a ContentType by its alias and
 // remove the 'Meta' ContentType from its composition.
 var contentType = contentTypeService.GetContentType("textPage");
 bool success = contentType.RemoveContentType("meta");
