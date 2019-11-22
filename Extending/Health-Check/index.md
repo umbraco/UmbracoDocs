@@ -182,7 +182,7 @@ This can be anything you can think of, the results and the rectify action are co
 
 An example check:
 
-```
+```csharp
 using System;
 using System.Collections.Generic;
 using System.IO;
