@@ -4,7 +4,6 @@ versionFrom: 7.0.0
 
 # Tips & Tricks
 
-
 ## [Tips when Working with Folders](Tips-when-Working-with-Folders.md)
 
 ## [Audit Trail](Audit-Trail.md)

@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+versionRemoved: 8.0.0
 product: "CMS"
 ---
 
@@ -12,9 +13,11 @@ This will be shown on Umbraco 7.8.1, newer and older versions may differ. Also t
 :::
 
 ### Behaviour of '/'
+
 Note that if domains are not set on the top level site nodes, then navigating to '/' will take you to the first "language/territory" site in the content tree. This behaviour is by design.
 
 ### First step
+
 When setting up a multilingual site, the first step is to copy the content you have in the original language. To do this, chose the node you want to copy - in this example everything is copied at once by copying the Home node, left click Home and click copy in the menu.
 
 ![Copy content](images/1.png)
@@ -28,6 +31,7 @@ This will give you a full copy of all content pages as seen below:
 Now you can go to all the copied content nodes and update your text to whatever language you want.
 
 ### Second step
+
 The second step is to create the new language in the settings. To do this, go to the settings menu and under languages, click add new and chose your language.
 ![Choosing a language](images/4.png)
 
@@ -35,6 +39,7 @@ Now we go to our content nodes and assign a language to them. You do this by rig
 ![Setting language](images/5.png)
 
 ### Third step
+
 Depending on how your site is set up, not all content is edited through the content section. Some of it may be written in the template and dictionary items are useful for that. Here is an example of some button text that will be added to the dictionary (templates are found under the menu point Settings).
 ![Adding button text to dictionary](images/6.png)
 
@@ -45,6 +50,7 @@ Go back to your template and replace the text with @Umbraco.GetDictionaryValue("
 ![Replacing button text with dictionary item](images/8.png)
 
 ### Fourth step
+
 To add languages to the url of your site, you first need to enable the full url. You do this by going to the Web.config file and changing the umbracoHideTopLevelNodeFromPath value from 'true' to 'false'.
 ![Show top level in url](images/9.png)
 
@@ -53,6 +59,7 @@ Next you can go and change the name of the homepages to their language name, if 
 ![language url dk](images/11.png)
 
 ### Fifth and final step
+
 To make a language menu to switch between the languages you can go into your menu template file and add something like this:
 
 ![adding language menu](images/12.png)
@@ -64,8 +71,8 @@ Final result:
 
 There is of course a lot more you can do to customize this, but here are the fundamentals.
 
-
 ## Multilanguage backoffice
+
 To be able to translate the labels of tabs, names and descriptions on your document types you can use the dictionary in Umbraco. You can also translate the name of your documents.
 
 Consider the following text on a document type:
@@ -88,5 +95,6 @@ Likewise, the name of the document type can be referenced with #Document.
 So it's the "hashtag" (#) symbol + the alias of dictionary item which will make Umbraco look in the Dictionary for the actual text content.
 
 ### Important
+
 At the time of writing the default language of Umbraco is set to "en-us" and the default language of the administrator account is set to "en-uk". This can create some confusion if you try to do the above since it will display as [#Header] on the name label for instance. Therefore you should change the language of the administrator account to "en-us".
-This is currently necessary for all version including and below Umbraco 6.1.1.
+This is necessary for all version including and below Umbraco 6.1.1.

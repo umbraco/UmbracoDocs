@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 All media within your site first needs to be loaded into the Media section. The Media section is basically a media library for the site. Within the Media section you can create folders and files in a similar manner to that of your desktop computer.
