@@ -22,6 +22,10 @@ Get up and running with Examine straight away with this quick start guide.
 
 Learn how to customize the built in Umbraco indexes and how to create your own Lucene indexes using Examine in Umbraco 8.
 
+## [PDF indexing and multisearchers](pdf-index.md)
+
+Learn how to index PDF files in Examine and how to create a multisearcher that searches through both the External Index and the Pdf Index.
+
 ## [Terminology](terminology.md)
 
 Describes the different terms and objects used in Examine such as Indexers, Searchers, Index Set, etc...
