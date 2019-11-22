@@ -49,7 +49,9 @@ To use this endpoint, make a request like this:
         "baselineAlias": "an-alias-of-a-baseline" // Optional. If the project needs to be a child, then you can provide the alias of the baseline
     }
     
-**NOTE** you'll notice the "plan" parameter takes either "Single" or "Studio" as valid options. The terminology used for these plans has since changed. "Single" will create a "Starter" plan whereas "Studio" a "Professional".
+:::note
+you'll notice the "plan" parameter takes either "Single" or "Studio" as valid options. The terminology used for these plans has since changed. "Single" will create a "Starter" plan whereas "Studio" a "Professional".
+:::
 
 If everything went as expected, the endpoint will return a `HTTP 200` status code and a JSON object that looks like this:
 
