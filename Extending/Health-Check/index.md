@@ -276,7 +276,7 @@ Disallow: /umbraco/";
 
 Health check notifications can be scheduled to run periodically and notify you of the results. Included with Umbraco is a notification method to deliver the results via email. In a similar manner to how it's possible to create your own health checks, you can also create custom notification methods to send the message summarising the status of the health checks via other means.  Again, for further details on implementing this on this please refer the [existing notification methods within the core code base](https://github.com/umbraco/Umbraco-CMS/tree/v7/dev/src/Umbraco.Web/HealthCheck/NotificationMethods).
 
-Each notification method needs to implement the core interface `IHealthCheckNotificatationMethod` and, for ease of creation, can inherit from the base class `NotificationMethodBase`. The class must also be decorated with an instance of the `HealthCheckNotificationMethod` attribute. There's one method to implement - `SendAsync(HealthCheckResults results)` - which is responsible for taking the results of the health checks and sending them via the mechanism of your choice.
+Each notification method needs to implement the core interface `IHealthCheckNotificationMethod` and, for ease of creation, can inherit from the base class `NotificationMethodBase`. The class must also be decorated with an instance of the `HealthCheckNotificationMethod` attribute. There's one method to implement - `SendAsync(HealthCheckResults results)` - which is responsible for taking the results of the health checks and sending them via the mechanism of your choice.
 
 The following example shows how the core method for sending notification via email is implemented:
 
@@ -292,7 +292,7 @@ using Umbraco.Core.Services;
 namespace Umbraco.Web.HealthCheck.NotificationMethods
 {
     [HealthCheckNotificationMethod("email")]
-    public class EmailNotificationMethod : NotificationMethodBase, IHealthCheckNotificatationMethod
+    public class EmailNotificationMethod : NotificationMethodBase, IHealthCheckNotificationMethod
     {
         private readonly ILocalizedTextService _textService;
 
