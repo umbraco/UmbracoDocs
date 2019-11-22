@@ -50,7 +50,7 @@ To use this endpoint, make a request like this:
     }
     
 :::note
-you'll notice the "plan" parameter takes either "Single" or "Studio" as valid options. The terminology used for these plans has since changed. "Single" will create a "Starter" plan whereas "Studio" a "Professional".
+You'll notice the "plan" parameter takes either "Single" or "Studio" as valid options. The terminology used for these plans has since changed. "Single" will create a "Starter" plan whereas "Studio" a "Professional".
 :::
 
 If everything went as expected, the endpoint will return a `HTTP 200` status code and a JSON object that looks like this:
