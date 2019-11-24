@@ -5,9 +5,9 @@ versionRemoved: 8.0.0
 
 # Lessons
 
-## [Customise the Starter Kit](1-Customise-the-Starter-kit/index-v7.md)
+## [Customize the Starter Kit](1-Customise-the-Starter-kit/index-v7.md)
 
-Learn how to edit and publish content and customise the theme of the site.
+Learn how to edit and publish content and customize the theme of the site.
 
 ## [Add a blog post publication date](2-Add-a-Blog-Post-Publication-Date/index-v7.md)
 

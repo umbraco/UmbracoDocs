@@ -3,11 +3,11 @@ versionFrom: 7.0.0
 needsV8Update: "true"
 ---
 
-All media within your site first needs to be loaded into the Media section. The Media section is basically a media library for the site. Within the Media section you can create folders and files in a similar manner to that of your desktop computer.
-
 # Working with Folders
 
-Folders can be used to help organise the Media section and to keep similar items in a logical structure. It is highly recommended to ensure you use folders to organise your media. When your media library starts to grow folders they become essential in locating media quickly and easily.
+All media within your site first needs to be loaded into the Media section. The Media section is basically a media library for the site. Within the Media section you can create folders and files in a similar manner to that of your desktop computer.
+
+Folders can be used to help organize the Media section and to keep similar items in a logical structure. It is highly recommended to ensure you use folders to organize your media. When your media library starts to grow folders they become essential in locating media quickly and easily.
 
 ## Creating a Folder
 
@@ -15,7 +15,7 @@ Folders can be used to help organise the Media section and to keep similar items
 2. Click on the options icon ***(•••)*** and click choose the folder from the context menu.
 3. Enter a name for your folder and click ***Save*** to create the folder.
 
-Foldersare purely for sortingwithin the mediasection. They will not be part of the image URL nor will they create a folder on the server with the given name.
+Folders are purely for sorting within the media section. They will not be part of the image URL nor will they create a folder on the server with the given name.
 
 ![createMedia.jpg](images/createMedia.jpg)
 
@@ -35,7 +35,7 @@ If you wish to tidy up the Media section of your site, you can delete existing f
 2. Right click the folder, and click ***Delete*** from the context menu.
 3. Click ***OK*** to confirm deletion of the page, or click ***Cancel*** to cancel deletion.
 
-Note that the contents of the folder are also moved to the Recycle Bin. You can restore items from the Recycle Bin in the same way as you can in the Content section. 
+Note that the contents of the folder are also moved to the Recycle Bin. You can restore items from the Recycle Bin in the same way as you can in the Content section.
 
 ## Restoring a Folder from the Recycle Bin
 
@@ -60,5 +60,5 @@ the item that has been created most recently to be placed at the bottom of the t
 
 1. Select the folder to sort.
 2. Right click the folder, and click ***Sort*** from the context menu.
-3. 	Drag the folders, images and files into the required order. Alternatively, click on the Name or Creation Date column header to sort the items automatically by Name or Creation Date. Clicking on a column header again reverses the sort order.
+3. Drag the folders, images and files into the required order. Alternatively, click on the Name or Creation Date column header to sort the items automatically by Name or Creation Date. Clicking on a column header again reverses the sort order.
 4. Click ***Save.***

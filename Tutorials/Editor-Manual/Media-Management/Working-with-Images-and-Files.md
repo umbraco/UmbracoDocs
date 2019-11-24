@@ -20,11 +20,11 @@ If you wish to tidy up the Media section of your site, you can delete existing m
 
 1. Select the image you want to delete.
 2. Right click the image, and click ***Delete*** from the context menu.
-3. Click ***OK*** to confirm deletion of the image, or click ***Cancel*** to cancel deletion. 
+3. Click ***OK*** to confirm deletion of the image, or click ***Cancel*** to cancel deletion.
 
 ## Restoring an Image or File from the Recycle Bin
 
-The Recycle Bin is a separate tree structure within the Media section and you can recognise it by the recycling symbol to the left. If you click the triangle in front of the Recycle Bin you will see its contents. To restore an image or file, move the item to the part of the tree where you want the item.
+The Recycle Bin is a separate tree structure within the Media section and you can recognize it by the recycling symbol to the left. If you click the triangle in front of the Recycle Bin you will see its contents. To restore an image or file, move the item to the part of the tree where you want the item.
 
 ## Moving an Image or File
 

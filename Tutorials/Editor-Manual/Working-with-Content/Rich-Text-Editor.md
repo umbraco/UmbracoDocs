@@ -12,12 +12,12 @@ The functionality varies depending on how the editor is set up. Here we describe
 ## Editor Buttons
 
 Below are all the default editor buttons available. Your system administrator is able to determine which buttons are displayed in different templates. You could therefore have access to more or fewer buttons than those shown here.
- 
+
 ![editorBar.jpg](images/editorBar.jpg)
 
 ## Paragraph Break/Line Break
 
-The editor is like any other word processing program. You write the text, and the text wraps around when the line reaches the end. When you press ENTER in the editor, you get a paragraph break, which means there is space between the paragraphs. If you do not want a space, you have to make a line break instead. You do this by pressing SHIFT+ENTER. 
+The editor is like any other word processing program. You write the text, and the text wraps around when the line reaches the end. When you press ENTER in the editor, you get a paragraph break, which means there is space between the paragraphs. If you do not want a space, you have to make a line break instead. You do this by pressing SHIFT+ENTER.
 
 ## Shortcut Keys
 
@@ -29,18 +29,17 @@ Ctrl + A | Select all
 Ctrl + B | Bold
 Ctrl + C | Copy
 Ctrl + I | Italic
-Ctrl + U | Underline 
+Ctrl + U | Underline
 Ctrl + V | Paste
 Ctrl + X | Cut
 Ctrl + Y | Redo
 Ctrl + Z | Undo
 
-
 ## Text Formatting
 
 You do not normally need to spend much time formatting text because Umbraco takes care of a lot of the formatting for you. When the default formatting is not enough however, there are a number of options for controlling the formatting of text.
 
-**Formatting Buttons**
+### Formatting Buttons
 
 The most basic and probably the most familiar way to control formatting are via the formatting buttons. These work much the same as those found in most word processing applications such as Microsoft Word. With these you can apply basic formatting such as Bold, Italic and underline as well as altering text alignment and creating bulleted and numbered lists.
 
@@ -48,38 +47,37 @@ Regardless of the formatting being applied, the process for applying a format us
 
 1. Select the text you want to apply the formatting to.
 2. Click the appropriate format button to apply the formatting you wish to add.
- 
+
 ![formats.jpg](images/formats.jpg)
 
-**Formats**
+### Formats
 
 Another way of applying formatting is via the Formats drop-down list. The Formats drop-down list provides a set of predefined styles that can be applied to text whilst maintaining a consistent look and feel through the site. These styles often incorporate more advanced formatting functionality which can be applied to provide a different look for certain elements such as links, headings and sub heading. For example you can use a format style to change a link into a call to action button. Whilst the styles available on your site may differ, the process for applying styles is always the same.
 
 1. Select the text you want to apply the style to.
-2. Select the style to apply from the Format drop-down list. 
+2. Select the style to apply from the Format drop-down list.
 
-**Copying Content from Other Programs**
+### Copying Content from Other Programs
 
 It is important to note that when you pre-write content to later be copied into a rich text editor you may encounter style issues on your website. When pasting content, the original text styles will be preserved which can lead to different font faces, sizes and colours from what is expected when the website is viewed. To prevent this from happening it is advisable that you paste the content into a markdown editor first such as notepad, then copy and paste it from there into your rich text editor.
 
-**Remove Formatting**
+### Remove Formatting
 
 If you have formatted a paragraph or selection using the formatting buttons, you can remove a formatting rule by selecting the text, and clicking the relevant formatting button to remove that formatting rule. You may also have a remove format button in your toolbar. If you do not have this button please speak to your system administrator.
 
 ![removeFormat.jpg](images/removeFormat.jpg) *Remove Format button*
 
 ## Show/Hide HTML Code
- 
+
 ![code.jpg](images/code.jpg)
 
 If you are proficient in the use of HTML you can switch to HTML mode and create your page by writing HTML code. You can also check the code and make minor adjustments here to get the page exactly as you want it. Certain elements such as scripts will not be allowed and will be filtered out of code pasted into the rich text editor.
 
 ## Links
- 
+
 ![linkButton.jpg](images/linkButton.jpg)
 
-The ***Insert Link*** button is used to create links to internal and external pages and media files email links and anchors. The process for inserting a hyperlink differs depending on the type of hyperlink you wish to create. 
-
+The ***Insert Link*** button is used to create links to internal and external pages and media files email links and anchors. The process for inserting a hyperlink differs depending on the type of hyperlink you wish to create.
 
 ### Link to a Page on Another Website
 
@@ -103,7 +101,7 @@ The ***Insert Link*** button is used to create links to internal and external pa
 4. In the Page Title field, enter the text that will be shown as a pointer to the link. This is important information for everyone reading the website with different accessibility aids, (by default the name of the selected page will automatically be entered for your convenience).
 5. In the ***Target*** field, select the target window/frame the link should be opened in.
 6. Click ***Select***.
- 
+
 ![internalLink.jpg](images/internalLink.jpg)
 
 ### Link to a Media File in Umbraco
@@ -134,17 +132,17 @@ The ***Insert Link*** button is used to create links to internal and external pa
 An anchor allows you to create internal page links that enable users to navigate within a page. There are two parts to setting up an anchor; the anchor itself and the link to the anchor.
 
 ### Creating an anchor
- 
+
 1.Focus the editor cursor where you wish to create the anchor.
-2. Click the 
+2. Click the
 ![anchorButton.jpg](images/anchorButton.jpg)
- which will then launch the Anchor creation dialog. 
+ which will then launch the Anchor creation dialog.
 3. In the name field enter your anchor name. You should avoid special characters and do not use spaces.
 4. Click ***OK*** to finish.
-5. You will see a small anchor icon where you previously had the editor cursor. 
+5. You will see a small anchor icon where you previously had the editor cursor.
 
 To delete the anchor, select it and then press your delete key.
- 
+
 ![anchorDialogue.jpg](images/anchorDialogue.jpg)
 
 ### Linking to an anchor
@@ -162,7 +160,7 @@ You can make images into clickable links in Umbraco.
 
 1. Insert an image into the editor (see Working with Images for more details).
 2. Select the image that will form the hyperlink.
-3. From here, follow the same instructions as for inserting a normal hyperlink, starting at step 2. 
+3. From here, follow the same instructions as for inserting a normal hyperlink, starting at step 2.
 
 ### Removing a link
 
@@ -182,7 +180,7 @@ To display images on a page they must be uploaded to your Umbraco media library.
 3. Select the folder which the image is in.
 4. Click the thumbnail of your chosen image to open the image properties menu.
 5. In the Title field, enter a name/description for the image (by default the name of the file will be automatically entered for your convenience). It is important to add descriptive titles to images as these as used to assist visually impaired users.
-6. Click ***Insert*** to add the image. 
+6. Click ***Insert*** to add the image.
 
 ![mediaPicker.jpg](images/mediaPicker.jpg)
 
@@ -232,7 +230,7 @@ You can edit values you have inputted into a macro after it has been added to th
 
 ### Removing macros
 
-To remove a macro you highlight the macro in the rich text editor and hit the ***delete*** or ***backspace*** button on your keyboard. 
+To remove a macro you highlight the macro in the rich text editor and hit the ***delete*** or ***backspace*** button on your keyboard.
 
 ## Tables
 
@@ -245,6 +243,5 @@ Tables are used to format information in a grid based structure. When you insert
 To edit the table after you have already created it, you need to click on it so you have a small square box in each of the four corners. Then you need to click on the ***Table*** button in the rich text editor in order to reveal the options.
 
 Clicking ***Table Properties*** gives you several options for modifying the table’s appearance, however the developer of the website may have already created table styles for you so you may not need to adjust these settings. There are various other options available for modifying cells, rows and columns such as height, alignment, merge, insert and delete.
-
 
 ![tableProperties.jpg](images/tableProperties.jpg)

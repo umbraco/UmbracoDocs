@@ -31,7 +31,7 @@ The ***Save and publish*** button is ideal for when you want to publish a previo
 
 ### Publish
 
-Clicking the actions menu in the top right of the page or right clicking on the name of the page you wish to publish from the context menu will reveal the slide out menu. On this menu you will see an option to ***Publish***. You can now choose to ***Publish*** all sub-pages excluding any with unpublished changes. You can also select to include all unpublished sub-pages pages too. This is especially useful if you have many pages you wish to publish at the same time. 
+Clicking the actions menu in the top right of the page or right clicking on the name of the page you wish to publish from the context menu will reveal the slide out menu. On this menu you will see an option to ***Publish***. You can now choose to ***Publish*** all sub-pages excluding any with unpublished changes. You can also select to include all unpublished sub-pages pages too. This is especially useful if you have many pages you wish to publish at the same time.
 
 ### Scheduled Publishing
 

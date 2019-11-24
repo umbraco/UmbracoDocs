@@ -28,8 +28,6 @@ The Recycle Bin is a separate tree list which can be found at the bottom of the 
 
 If you are confident you no longer require any content within the Recycle Bin you can permanently delete it. You can delete pages one by one or as a whole. Please note that after deleting pages from the Recycle Bin you will not be able to retrieve any data associated with that page.
 
-### Emptying the Recycle Bin
-
 1. Click on the ***(•••)*** icon for the Recycle Bin in the website tree structure to reveal the Actions menu.
 2. Click ***Empty Recycle Bin.***
 3. Click ***OK*** to confirm you wish to empty the Recycle Bin or click ***Cancel*** if you do not.
