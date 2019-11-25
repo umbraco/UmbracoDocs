@@ -26,7 +26,7 @@ Note: If you are unsure which log file corresponds to the time, you can get a li
 
 This will sort the files by last edit time, and only show you the top 5 results.
 
-## Common issues
+## [Common issues](https://our.umbraco.com/documentation/Reference/Common-Pitfalls/)
 
 
 ## In addition to that, here are some things we see often
