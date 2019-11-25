@@ -1,11 +1,13 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
 ---
 
 # Site Performance checklist
 
 CPU issues can be many different things. Below I will give some advice on narrowing down the issue and trying to find out what is causing the problems.
-The very first thing to do, is try to find out when the trouble started. The friendly Umbraco SWAT will supply you with a graph of your CPU usage for the past 24 hours. Here you will likely notice a spot where it starts going up.
+The very first thing to do, is try to find out when the trouble started. The friendly Umbraco Support will supply you with a graph of your CPU usage for the past 24 hours. Here you will likely notice a spot where it starts going up.
+
+You can get in touch with the friendly support by either sending an email to contact@umbraco.com or by using the chat in either the Backoffice or from umbraco.com.
 
 ## Resources that can help you
 
@@ -20,11 +22,13 @@ If you have a lot more visitors than normally, then maybe your site is back to n
 If you know when your site started having issues, then you should compare that time to your Umbraco log. Often you will find errors that help you narrow it down, or other things that could be the cause.
 If for example the CPU performance issues started when you are building your search indexes then there is a good chance that the two are related.
 Be aware that some errors may appear due to maxing out your resources, they may not be related to the cause!
-Note: If you are unsure which log file corresponds to the time, you can get a list of the latest log files in Kudu by going to the logs folder `~/wwwroot/App_Data/logs` and then typing in:
+
+:::note If you are unsure which log file corresponds to the time, you can get a list of the latest log files in Kudu by going to the logs folder `~/wwwroot/App_Data/logs` and then typing in:
 
 `ls -t | head -5`
 
 This will sort the files by last edit time, and only show you the top 5 results.
+:::
 
 ## [Common issues](https://our.umbraco.com/documentation/Reference/Common-Pitfalls/)
 
