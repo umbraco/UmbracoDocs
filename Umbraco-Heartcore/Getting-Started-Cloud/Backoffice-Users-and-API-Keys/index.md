@@ -15,7 +15,12 @@ A feature that is unique for Umbraco Heartcore is the option to create an API Ke
 
 ## API Keys
 
-In order to connect to the two APIs your user will need to have an API Key assinged. When you have navigated to the section mentioned above you can create the API Key by clicking the "Create API Key" button.
+By default, the Content Delivery API isn't restricted, if you would like to protect it you can do so in the "Settings" section and "Headless" tree. 
+
+![Protect API](images/heartcoreAPIprotect.png)
+
+
+If your content deliver API is protected or you want to use Content Management APIs, your user will need to have an API Key assinged. When you have navigated to the section mentioned above you can create the API Key by clicking the "Create API Key" button.
 
 A modal will pop up where you enter the name of the key and set a date for when it should expire. If there is no expire data, the API Key will be valid until you delete it manually.
 
