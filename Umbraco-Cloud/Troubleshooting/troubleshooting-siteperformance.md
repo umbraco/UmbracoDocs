@@ -28,7 +28,6 @@ This will sort the files by last edit time, and only show you the top 5 results.
 
 ## Common issues
 
-You can find a list of general performance anti-patterns in Umbraco here: https://our.umbraco.com/documentation/Reference/Common-Pitfalls/ 
 
 ## In addition to that, here are some things we see often
 
