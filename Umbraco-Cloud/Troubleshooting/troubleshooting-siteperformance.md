@@ -20,7 +20,7 @@ If you have a lot more visitors than normally, then maybe your site is back to n
 If you know when your site started having issues, then you should compare that time to your Umbraco log. Often you will find errors that help you narrow it down, or other things that could be the cause.
 If for example the CPU performance issues started when you are building your search indexes then there is a good chance that the two are related.
 Be aware that some errors may appear due to maxing out your resources, they may not be related to the cause!
-Note: If you are unsure which log file corresponds to the time, you can get a list of the latest log files in Kudu by going to the logs folder `~/wwwroot/App_Data/logs and then typing in`:
+Note: If you are unsure which log file corresponds to the time, you can get a list of the latest log files in Kudu by going to the logs folder `~/wwwroot/App_Data/logs` and then typing in:
 
 `ls -t | head -5`
 
