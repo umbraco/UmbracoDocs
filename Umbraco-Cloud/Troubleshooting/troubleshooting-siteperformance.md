@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Site Performance checklist
 
-CPU issues can be many different things! Below I will give some advice on narrowing down the issue and trying to find out what is causing the problems.
+CPU issues can be many different things. Below I will give some advice on narrowing down the issue and trying to find out what is causing the problems.
 The very first thing to do, is try to find out when the trouble started. The friendly Umbraco SWAT will supply you with a graph of your CPU usage for the past 24 hours. Here you will likely notice a spot where it starts going up.
 
 ## Resources that can help you
