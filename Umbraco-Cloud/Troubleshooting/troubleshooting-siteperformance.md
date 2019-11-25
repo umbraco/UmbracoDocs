@@ -7,7 +7,7 @@ versionFrom: 8.0.0
 CPU issues can be many different things! Below I will give some advice on narrowing down the issue and trying to find out what is causing the problems.
 The very first thing to do, is try to find out when the trouble started. The friendly Umbraco SWAT will supply you with a graph of your CPU usage for the past 24 hours. Here you will likely notice a spot where it starts going up.
 
-## Resources that can help you:
+## Resources that can help you
 
 ### Google Analytics
 
@@ -51,4 +51,3 @@ Scheduled jobs can be very nice, but you have to think about how often they shou
 ### Other resources
 To debug your site further it is recommended to perform load tests to try to discover if certain pages have issues with many users.
 Additionally you can also use tools for profiling your page like dotTrace for example.
-
