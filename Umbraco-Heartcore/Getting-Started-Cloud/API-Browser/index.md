@@ -6,4 +6,4 @@ With the built-in API browser, you are able to test your output and the formatti
 
 Within the Settings section, you can expand the "Headless" tree to see the "API Browser". Using the browser you can see responses for your content in both the [Content Management](../API-Documentation/Content-Management) and [Content Delivery](../API-Documentation/Content-Delivery) APIs.
 
-![API Browser](images/heartcoreAPIBrowser.PNG)
+![API Browser](images/heartcoreAPIBrowser.png)
