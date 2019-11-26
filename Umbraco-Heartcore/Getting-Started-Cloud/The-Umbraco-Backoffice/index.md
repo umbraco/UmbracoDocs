@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Umbraco Heartcore Backoffice"
+meta.Description: "Tour of Umbraco Heartcore backoffice"
 ---
 
 # Tour of the Umbraco Backoffice
