@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Umbraco Heartcore API Documentation"
+meta.Description: "Documentation for Umbraco Heartcore REST APIs"
 ---
 
 # API Documentation
