@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Umbraco Heartcore Content Delivery"
+meta.Description: "Documentation for Heartcore Content Delivery APIs"
 ---
 
 # Content Delivery API

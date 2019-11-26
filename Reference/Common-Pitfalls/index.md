@@ -23,7 +23,7 @@ __Example of using base class properties instead of Singleton accessors:__
 
 _This example shows how you can access all sorts of Umbraco services in a `SurfaceController` without
 relying on Singletons. These same properties exist on all of Umbraco's base classes that you commonly use
-including razor views.
+including razor views._
 
 ```csharp
 public class ContactFormSurfaceController: SurfaceController

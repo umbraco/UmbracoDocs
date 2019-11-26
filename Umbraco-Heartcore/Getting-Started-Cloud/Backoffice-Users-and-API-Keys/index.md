@@ -1,3 +1,9 @@
+---
+versionFrom: 8.0.0
+meta.Title: "Backoffice users and API keys"
+meta.Description: "Managing Umbraco Heartcore Users and API keys"
+---
+
 # Backoffice Users and API Keys
 
 In this article you will learn how to add Users to the backoffice and how to manage the API Keys.
