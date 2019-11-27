@@ -16,7 +16,7 @@ NuGet is the standard package manager for .NET projects. More information about 
 
 NuGet packages are zip files that follow a specified structure and contain a few predefined files, that tell the consuming application how to extract and install the package. 
 
-You don't need to know the internal of a NuGet package to create one. You can use the NuGet Command Line Interface (CLI): [nuget.exe](https://www.nuget.org/downloads) to create your package.
+You don't need to know the internal structure of a NuGet package to create one. You can use the NuGet Command Line Interface (CLI): [nuget.exe](https://www.nuget.org/downloads) to create your package.
 
 You can also create NuGet packages manually using the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer), although this method is harder to automate then using the command line tools. 
 
