@@ -1,6 +1,11 @@
-#FindPublishedContentAndTemplate()
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
 
-This method is called on the "PublishedContentRequest.PrepareRequest()" method.  
+# FindPublishedContentAndTemplate()
+
+This method is called on the "PublishedContentRequest.PrepareRequest()" method.
 We discuss shortly what this method is doing:
 
 1. FindPublishedContent ()
@@ -11,6 +16,7 @@ We discuss shortly what this method is doing:
 6. HandleWildcardDomains()
 
 #### HandlePublishedContent
+
 - No content?
  - Run the LastChanceFinder
  - Is an IContentFinder, resolved by ContentLastChanceFinderResolver
@@ -23,6 +29,7 @@ We discuss shortly what this method is doing:
  - Take care of infinite loops
 
 #### FindTemplate
+
 - Use altTemplate if
  - Initial content
  - Internal redirect content, and InternalRedirectPreservesTemplate is true
@@ -47,7 +54,8 @@ We discuss shortly what this method is doing:
 - Yes, these rules are arbitrary… feedback?  Get to the [Dev Group](https://groups.google.com/forum/#!forum/umbraco-dev)!
 
 #### FollowExternalRedirect()
-- content.GetPropertyValue<string>("umbracoRedirect")
+
+- Content.GetPropertyValue<string>("umbracoRedirect")
 - If it’s there, sets the published content request to redirect to the content
 - Will trigger an external (browser) redirect
 
@@ -56,8 +64,8 @@ We discuss shortly what this method is doing:
 ![](images/culture-and-hostnames.png)
 
 - Finds the deepest wildcard domain between
- - domain root (or top)
- - request’s published content
+ - Domain root (or top)
+ - Request’s published content
 - If found, updates the request’s culture accordingly
 
-This actually implements separation between hostnames and cultures
+This implements separation between hostnames and cultures

@@ -1,62 +1,77 @@
-#Overview of the default fieldtypes
-Umbraco Forms comes with a bunch of default fieldtypes (also known as answer types) you can choose from when adding new fields to your forms. Here is a detailed overview.
+---
+versionFrom: 7.0.0
+---
 
-##Short Answer
-Simple textbox allows up to 250 characters
+# Overview of the default fieldtypes
 
-![Textfield](shortanswer.png)
+Umbraco Forms comes with a bunch of default fieldtypes (also known as **answer types**) you can choose from when adding new fields to your forms. Here is a detailed overview.
 
-##Long Answer
-Bigger textfield that allows multiline text and more than 250 characters
+## Short Answer
+A textbox allows up to 250 characters.
 
-![Textarea](longanswer.png)
+![Textfield](images/shortanswer.png)
 
-##Date
-Will display a picker that allows to user to select a date
+## Long Answer
+Bigger textfield that allows multiline text and more than 250 characters.
 
-![Datepicker](date.png)
+![Textarea](images/longanswer.png)
 
-##Checkbox
-Displays a single checkbox that can be checked or not
+## [Date](Date)
+Will display a picker that allows to user to select a date.
 
-![Checkbox](checkbox.png)
+![Datepicker](images/date.png)
 
-##File upload
-Allows user to select and upload a local file
+## Checkbox
+Displays a single checkbox that can be checked or not.
 
-![File upload](fileupload.png)
+![Checkbox](images/checkbox.png)
 
-##Password
-Password field (input isn't visible when typing)
+## File upload
+Allows user to select and upload a local file.
 
-![Password field](password.png)
+![File upload](images/fileupload.png)
 
-##Multiple Choice
-Will display a list of items (a checkbox for each item) where the user can select multiple options
+## Password
+Password field (input isn't visible when typing).
 
-![Checkboxlist](multiplechoice.png)
+![Password field](images/password.png)
 
-##Dropdown
-Will display a list of items (in a drop down box) where the user can select a single option
+## Multiple Choice
+Will display a list of items (a checkbox for each item) where the user can select multiple options.
 
-![Dropdownlist](dropdown.png)
+![Checkboxlist](images/multiplechoice.png)
 
-##Single Choice
-Displays a list of items (a radio button for each item), where the user can select a single option
+## Data Consent
 
-![singlechoice](singlechoice.png)
+A field for the purpose of asking for data consent. **Note**: This field is automatically added to all new forms created with Forms 6+.
 
-##Title and Description
+![Data Consent](images/dataconsent.png)
+
+## Dropdown
+Will display a list of items (in a drop down box) where the user can select a single option.
+
+![Dropdownlist](images/dropdown.png)
+
+## Single Choice
+Displays a list of items (a radio button for each item), where the user can select a single option.
+
+![singlechoice](images/singlechoice.png)
+
+## Title and Description
 Outputs a title and description that are set as prevalues.
 
-![Radiobuttonlist](titleanddescription.png)
+![Radiobuttonlist](images/titleanddescription.png)
 
-##Recaptcha
-Displays a recaptcha field (words seen in distorted text images), where the user must input the right word in order for the form to be validated. Don't forget to make the field mandatory.
+## [reCAPTCHA](Recaptcha)
+The field displays a single checkbox for the user to check in order for the form to be validated
 
-![Recaptcha](recaptcha.png)
+![reCAPTCHA v2](images/recaptcha2.png)
 
-##Hidden
-Hidden field, won't be visible to the user
+:::tip
+As reCAPTCHA v1 is shut down, we **strongly** recommend that you use the reCAPTCHA v2 field type.
+:::
 
-![Hidden](hidden.png)
+## Hidden
+Hidden field, won't be visible to the user.
+
+![Hidden](images/hidden.png)

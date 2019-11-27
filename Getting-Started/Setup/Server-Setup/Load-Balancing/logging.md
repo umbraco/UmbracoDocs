@@ -1,24 +1,14 @@
-#Logging with load balancing
+---
+versionFrom: 8.0.0
+---
 
-Since Umbraco is using log4net for logging there are various configurations that you can use to ensure logging is done the way that you'd like. 
-If you are using file based logs you'll want to ensure that your logs are named with file names that include the machine name, otherwise you'll get file locks. *(See below for details on how to do this)*
+# Logging with load balancing
 
-Other options include changing your log4net setup to log to a centralized database - of course if your database cannot be accessed then no logging will occur so be aware of this.
+Umbraco v8+ uses Serilog for logging. When load balancing Umbraco consideration should be given as to how the log files from each server will be accessed. 
 
-##Log4net file logging with machine name
+There are many Serilog Sinks available and one of these may be appropriate to store logs for all servers in a central repository such as Azure Application Insights or Elmah.io.
 
-This describes how you can configure log4net to write log files that are named with the machine name.
 
-Simply update your log4net configuration's appender's file value as below:
+See [SeriLog Provided Sinks](https://github.com/serilog/serilog/wiki/Provided-Sinks) for more info 
 
-	  <appender .... >
-	    <!--
-			THIS IS THAT VALUE THAT UMBRACO IS SHIPPED WITH THAT DOES NOT
-			INCLUDE THE MACHINE NAME IN THE FILE
-			<file value="App_Data\Logs\UmbracoTraceLog.txt" />
-		-->
 
-		<!-- THIS IS THE NEW CHANGE TO HAVE A MACHINE NAME IN THE FILE NAME -->
-	    <file type="log4net.Util.PatternString" value="App_Data\Logs\UmbracoTraceLog.%property{log4net:HostName}.txt" />
-			    
-	  </appender>

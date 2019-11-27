@@ -1,31 +1,36 @@
-#List all document types and generic properties
+---
+versionFrom: 7.0.0
+versionRemoved: 8.0.0
+---
+
+# List all document types and generic properties
 
 I needed a list of all document types and their properties in an installation. The quick and dirty way I came up with was to create a VB-function and call it from within a xslt:
 
-	<?xml version="1.0" encoding="UTF-8"?>
-	<!DOCTYPE xsl:stylesheet [ <!ENTITY nbsp "&#x00A0;"> ]>
-	<xsl:stylesheet 
-		version="1.0" 
-		xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-		xmlns:msxml="urn:schemas-microsoft-com:xslt"
-		xmlns:msxsl="urn:schemas-microsoft-com:xslt"
-		xmlns:vb="urn:mycompany.com:xslt"
-		xmlns:umbraco.library="urn:umbraco.library" xmlns:Exslt.ExsltCommon="urn:Exslt.ExsltCommon" xmlns:Exslt.ExsltDatesAndTimes="urn:Exslt.ExsltDatesAndTimes" xmlns:Exslt.ExsltMath="urn:Exslt.ExsltMath" xmlns:Exslt.ExsltRegularExpressions="urn:Exslt.ExsltRegularExpressions" xmlns:Exslt.ExsltStrings="urn:Exslt.ExsltStrings" xmlns:Exslt.ExsltSets="urn:Exslt.ExsltSets" 
-		exclude-result-prefixes="msxml umbraco.library Exslt.ExsltCommon Exslt.ExsltDatesAndTimes Exslt.ExsltMath Exslt.ExsltRegularExpressions Exslt.ExsltStrings Exslt.ExsltSets vb">
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE xsl:stylesheet [ <!ENTITY nbsp "&#x00A0;"> ]>
+    <xsl:stylesheet
+        version="1.0"
+        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+        xmlns:msxml="urn:schemas-microsoft-com:xslt"
+        xmlns:msxsl="urn:schemas-microsoft-com:xslt"
+        xmlns:vb="urn:mycompany.com:xslt"
+        xmlns:umbraco.library="urn:umbraco.library" xmlns:Exslt.ExsltCommon="urn:Exslt.ExsltCommon" xmlns:Exslt.ExsltDatesAndTimes="urn:Exslt.ExsltDatesAndTimes" xmlns:Exslt.ExsltMath="urn:Exslt.ExsltMath" xmlns:Exslt.ExsltRegularExpressions="urn:Exslt.ExsltRegularExpressions" xmlns:Exslt.ExsltStrings="urn:Exslt.ExsltStrings" xmlns:Exslt.ExsltSets="urn:Exslt.ExsltSets"
+        exclude-result-prefixes="msxml umbraco.library Exslt.ExsltCommon Exslt.ExsltDatesAndTimes Exslt.ExsltMath Exslt.ExsltRegularExpressions Exslt.ExsltStrings Exslt.ExsltSets vb">
 
-		<xsl:output method="xml" omit-xml-declaration="yes"/>
+        <xsl:output method="xml" omit-xml-declaration="yes"/>
 
-		<xsl:param name="currentPage"/>
-		
-		<!-- ========= The template with only a call to a VB-function ==================== -->
+        <xsl:param name="currentPage"/>
 
-		<xsl:template match="/">
-			<xsl:value-of select="vb:listDocumentTypes()" disable-output-escaping="yes" />
-		</xsl:template>
-		
-		<!-- =================== Script definition and VB code section ========================== -->
-		
-		<msxsl:script language="VB" implements-prefix="vb">
+        <!-- ========= The template with only a call to a VB-function ==================== -->
+
+        <xsl:template match="/">
+            <xsl:value-of select="vb:listDocumentTypes()" disable-output-escaping="yes" />
+        </xsl:template>
+
+        <!-- =================== Script definition and VB code section ========================== -->
+
+        <msxsl:script language="VB" implements-prefix="vb">
         <msxml:assembly name="BusinessLogic"/>
         <msxml:assembly name="cms"/>
         <msxml:assembly name="umbraco"/>
@@ -35,7 +40,7 @@ I needed a list of all document types and their properties in an installation. T
         <msxml:using namespace="umbraco.presentation.nodeFactory"/>
         <msxml:using namespace="System.Collections.Generic"/>
         <msxml:using namespace="umbraco.cms.businesslogic.propertytype"/>
-        
+
         <![CDATA[
 
         ' =============================================================================
@@ -82,7 +87,7 @@ I needed a list of all document types and their properties in an installation. T
                 t.append("</ul>")
 
                 Return t.tostring()
-                
+
         End Function
 
         ' End of good ol' VB
@@ -91,5 +96,5 @@ I needed a list of all document types and their properties in an installation. T
 
         ]]>
         </msxsl:script>
-		
-	</xsl:stylesheet>
+
+    </xsl:stylesheet>
