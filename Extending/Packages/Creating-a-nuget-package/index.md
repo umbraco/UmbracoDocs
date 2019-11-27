@@ -54,7 +54,7 @@ Below is an example `.nuspec` file that might be used to create a package for th
 ```
 
 :::note 
-unlike an Umbraco Package, a NuGet package can Reference other packages your code might be dependent on, as a rule you don't need to include packages that are part of the main Umbraco installation.
+Unlike an Umbraco Package, a NuGet package can reference other packages your code might be dependent on, as a rule you don't need to include packages that are part of the main Umbraco installation.
 :::
 
 ## Creating the package 
