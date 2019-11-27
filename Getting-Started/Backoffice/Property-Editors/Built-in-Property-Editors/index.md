@@ -43,7 +43,7 @@ New to v7.2, gives editors a grid layout editor which allows them to insert diff
 ##[Image Cropper](Image-Cropper.md)
 Used to crop and resize images to predefined sizes. Available from V7.1
 
-##Label
+##[Label](Label.md)
 Label is a non-editable control, can only be used to display a pre-set text.
 
 ##Legacy Media Picker
