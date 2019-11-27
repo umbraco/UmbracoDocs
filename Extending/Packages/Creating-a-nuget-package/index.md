@@ -65,7 +65,7 @@ An example command to create your package may look like this:
 nuget pack myCustomWelcome.nuspec -version 1.0.0 
 ```
 
-There are multiple arguments you can pass on the command line to the nuget command [more information in the nuget documentation](https://docs.microsoft.com/en-us/nuget/reference/nuget-exe-cli-reference). 
+There are multiple arguments you can pass on the command line to the NuGet command [more information in the NuGet documentation](https://docs.microsoft.com/en-us/nuget/reference/nuget-exe-cli-reference). 
 
 The `-version` parameter allows you to replace the version number in the nuspec file with the one specified, this means you can build new versions of your package without having to change the .nuspec file each time.
 
