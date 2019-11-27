@@ -35,7 +35,7 @@ To install and configure a custom OAuth provider you should use the Identity Ext
 
 The installation of these packages will install snippets of code with readme files on how to get up and running. Depending on the provider you've configured and its caption/color, the end result will look similar to:
 
-![OAuth login screen](images/google-oauth.png)
+![OAuth login screen](images/google-oauth-v8.png)
 
 #### Auto-linking accounts for custom OAuth providers
 
