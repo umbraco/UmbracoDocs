@@ -94,6 +94,81 @@ This can be done in two ways: Define a view file using the Document Type alias o
 }
 ```
 
+When you build the solution and start it up, this view file will now be used as the frontend.
+
+**Build a controller**
+
+1. Right-click the `Controllers` folder in Visual Studio and select *Add > Controller...*
+2. Select *MVC Controller - Empty*
+3. Use the alias of the Document Type used on the root content node for the name of the controller, e.g. `HomePageController`
+4. Set the controller to use `UmbracoController` 
+5. Set the `Index()` action to return `UmbracoContext.Content`
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Headless.Client.Samples.Web.Mvc;
+
+namespace Umbraco.Headless.Client.Samples.Web.Controllers
+{
+    public class HomePageController : UmbracoController
+    {
+        public HomePageController(UmbracoContext umbracoContext) : base(umbracoContext)
+        {
+        }
+
+        public IActionResult Index()
+        {
+            return View(UmbracoContext.Content);
+        }
+    }
+}
+```
+
+Now, all we need to an index view file in `Views/HomePage` in order to render the frontpage of the Umbraco Heartcore project.
+
+### Building view files
+
+In order to render out the properties on our content we need to use the `@Model.Value("")` approach, where the value will be the alias of the property you want to display data from. 
+
+An example could be a textstring property with the alias `heading`. To render the data from this propery on the frontend, we will need to use `@Model.Value("heading")`.
+
+Below is 
+
+```html
+@using Umbraco.Headless.Client.Net.Delivery.Models;
+@model Umbraco.Headless.Client.Net.Delivery.Models.Content
+@{
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>@Model.Name</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+</head>
+
+<body>
+
+    <h1>@Model.Value("heading")</h1>
+
+    <div>
+
+        <p>@Html.Raw(Model.Value("bodyText"))</p>
+
+        <img src="@(Model.Value<Image>("promoImage")?.Url)?width=300" />
+
+    </div>
+
+</body>
+</html>
+```
 
 
 By default the application will try to route the URLs to through Umbraco Heartcore by calling `https://cdn.umbraco.io/content/url?url={url}`. Is the response a `200 OK` the `UmbracoContext.Content` is set to the response.
