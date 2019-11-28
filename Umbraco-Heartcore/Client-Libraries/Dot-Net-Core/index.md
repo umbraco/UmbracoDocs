@@ -83,7 +83,18 @@ This can be done in two ways: Define a view file using the Document Type alias o
 
 **Define a view file**
 
-1. Create a new 
+1. Create a `homePage.cshtml` file in `Views/DefaultUmbraco` - the name of the file should be the alias of the Document Type the root content node is using
+2. Set `Umbraco.Headless.Client.Net.Delivery.Models.Content` as the model
+3. Set layout to `null`
+
+```
+@model Umbraco.Headless.Client.Net.Delivery.Models.Content
+@{
+    Layout = null;
+}
+```
+
+
 
 By default the application will try to route the URLs to through Umbraco Heartcore by calling `https://cdn.umbraco.io/content/url?url={url}`. Is the response a `200 OK` the `UmbracoContext.Content` is set to the response.
 
@@ -92,3 +103,4 @@ The router wiill then check if there is a controller for the specific content ty
 
 
 ## Console Sample
+
