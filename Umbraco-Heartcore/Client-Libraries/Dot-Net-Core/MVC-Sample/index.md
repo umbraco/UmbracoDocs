@@ -45,11 +45,13 @@ Run the application in Visual Studio or Visual Studio Code by hitting `F5`.
 
 ## Show your content
 
-For the following section, as Heartcore project with the following content structure will be used:
+For the following section, a Heartcore project with the following content structure will be used:
 
 ![Content structure](images/content-structure.png)
 
-When you've connected the MVC sample to your own Umbraco Heartcore project you will be presented with a page showing the properties and the data from the content node at the root of your website. This is because we need to define which view or controller should be used for the content on our project.
+To connect to your own Umbraco Heartcore project, you need to change the `ProjectAlias` value in the `application.json` file in the root of the solution.
+
+When you've connected to the project you will be presented with a page showing the properties and the data from the content node at the root of your website. This is because we need to define which view or controller should be used for the content on our project.
 
 This can be done in two ways: Define a view file using the Document Type alias or build a controller using the already defined UmbracoController.
 
