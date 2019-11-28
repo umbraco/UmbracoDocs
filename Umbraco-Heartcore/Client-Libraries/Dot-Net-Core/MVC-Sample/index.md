@@ -1,14 +1,14 @@
-## MVC Sample
+# MVC Sample
 
 In `/samples/Umbraco.Headless.Client.Samples.Web/` you will find a .NET Core 2.2 based MVC website implementation. It presents one possible approach to creating a website using Umbraco Heartcore for Content Delivery.
 
 The sample is built up around a sample Heartcore project with the alias `demo-headless`. You can choose to test the sample with the sample project or connect the sample to your own Heartcore project.
 
-### Prerequisites
+## Prerequisites
 
 - [.NET Core SDK 2.2](https://dotnet.microsoft.com/download/dotnet-core/2.2)
 
-### Run the sample on your local machine
+## Run the sample on your local machine
 
 Before running the sample you will need to define which Umbraco Heartcore project you want to fetch content from.
 
@@ -24,11 +24,11 @@ Before running the sample you will need to define which Umbraco Heartcore projec
 }
 ```
 
-The `ApiKey` can be left blank when using the `demo-headless` sample project. If your testing with your own Heartcore project and have chosen to protect the content exposed via the Content Delivery API then you will need an API-Key. It is an option that has to be actively turned on via the Umbraco Backoffice in the Headless tree in the Settings section. Read more about that in the [Backoffice users and API Keys article](../../Getting-Started-Cloud/Backoffice-Users-and-API-Keys).
+The `ApiKey` can be left blank when using the `demo-headless` sample project. If your testing with your own Heartcore project and have chosen to protect the content exposed via the Content Delivery API then you will need an API-Key. It is an option that has to be actively turned on via the Umbraco Backoffice in the Headless tree in the Settings section. Read more about that in the [Backoffice users and API Keys article](../../../Getting-Started-Cloud/Backoffice-Users-and-API-Keys).
 
 The MVC sample can be run in one of two ways:
 
-**1. Use the command line**
+### 1. Use the command line
 
 This is done by running the following two commands in the `Umbraco.Headless.Client.Samples.Web` folder:
 
@@ -39,11 +39,11 @@ This is done by running the following two commands in the `Umbraco.Headless.Clie
 
 The first command will restore the packages and the second will run the site.
 
-**2. Using an IDE**
+### 2. Using an IDE
 
 Run the application in Visual Studio or Visual Studio Code by hitting `F5`.
 
-### Show your content
+## Show your content
 
 For the following section, as Heartcore project with the following content structure will be used:
 
@@ -53,7 +53,7 @@ When you've connected the MVC sample to your own Umbraco Heartcore project you w
 
 This can be done in two ways: Define a view file using the Document Type alias or build a controller using the already defined UmbracoController.
 
-**Define a view file**
+### Define a view file
 
 1. Create a `homePage.cshtml` file in `Views/DefaultUmbraco` - the name of the file should be the alias of the Document Type the root content node is using
 2. Set `Umbraco.Headless.Client.Net.Delivery.Models.Content` as the model
@@ -68,7 +68,7 @@ This can be done in two ways: Define a view file using the Document Type alias o
 
 When you build the solution and start it up, this view file will now be used as the frontend.
 
-**Build a controller**
+### Build a controller
 
 1. Right-click the `Controllers` folder in Visual Studio and select *Add > Controller...*
 2. Select *MVC Controller - Empty*
@@ -102,7 +102,7 @@ namespace Umbraco.Headless.Client.Samples.Web.Controllers
 
 Now, all we need to an index view file in `Views/HomePage` in order to render the frontpage of the Umbraco Heartcore project.
 
-### Building view files
+## Building view files
 
 In order to render out the properties on our content we need to use the `@Model.Value("")` approach, where the value will be the alias of the property you want to display data from. 
 
@@ -146,4 +146,6 @@ HTML is used to build the general structure of the article, while we use Razor t
 
 ## References
 
-The .NET Core
+- MVC docs
+- [API Documentation for Umbraco Heartcore](../../../API-Documentation)
+- [Create an Umbraco Heartcore project](../../../Getting-Started-Cloud/Creating-a-Heartcore-project)
