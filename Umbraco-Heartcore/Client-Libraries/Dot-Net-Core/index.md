@@ -26,7 +26,9 @@ You will get a Visual Studio solution file which references the client library i
 
 Along with the client library you will also find two samples using the library. We have built an MVC sample and a console sample. Below you will find instructions on how to clone these down and set them up for testing with your own Heartcore project.
 
+## [MVC Sample](MVC-Sample)
 
+Test your Umbraco Heartcore project against a small MVC site. You can choose to use our sample project and content, or connect to your own project and build new views and controllers. 
 
 ## Console Sample
 
