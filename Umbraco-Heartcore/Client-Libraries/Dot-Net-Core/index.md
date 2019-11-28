@@ -52,6 +52,43 @@ Before running the sample you will need to define which Umbraco Heartcore projec
 }
 ```
 
-In order to use and test with the sample you will need an Umbraco Heartcore project with content, media and Document Types that correspond to those setup in the Views and Models of the sample website. You can use demo-headless as the project alias to get started with the sample. The Project behind this alias has been used as the source of the sample, so its a good place to start.
+The `ApiKey` can be left blank when using the `demo-headless` sample project. If your testing with your own Heartcore project and have chosen to protect the content exposed via the Content Delivery API then you will need an API-Key. It is an option that has to be actively turned on via the Umbraco Backoffice in the Headless tree in the Settings section. Read more about that in the [Backoffice users and API Keys article](../../Getting-Started-Cloud/Backoffice-Users-and-API-Keys).
+
+The MVC sample can be run in one of two ways:
+
+**1. Use the command line**
+
+This is done by running the following two commands in the `Umbraco.Headless.Client.Samples.Web` folder:
+
+```
+> dotnet restore
+> dotnet run
+```
+
+The first command will restore the packages and the second will run the site.
+
+**2. Using an IDE**
+
+Run the application in Visual Studio or Visual Studio Code by hitting `F5`.
+
+### Show your content
+
+For the following section, as Heartcore project with the following content structure will be used:
+
+![Content structure](images/content-structure.png)
+
+When you've connected the MVC sample to your own Umbraco Heartcore project you will be presented with a page showing the properties and the data from the content node at the root of your website. This is because we need to define which view or controller should be used for the content on our project.
+
+This can be done in two ways: Define a view file using the Document Type alias or build a controller using the already defined UmbracoController.
+
+**Define a view file**
+
+1. Create a new 
+
+By default the application will try to route the URLs to through Umbraco Heartcore by calling `https://cdn.umbraco.io/content/url?url={url}`. Is the response a `200 OK` the `UmbracoContext.Content` is set to the response.
+
+The router wiill then check if there is a controller for the specific content type (Document Type) e.g. if the content type alias is `textPage` it will look for a controller named `TextPageController` and uses the UmbracoController. If that is found, the `Index` action is called. Otherwise the `DefaultUmbracoController` is called and will then render a view named `Views/DefaultUmbraco/{contentTypeAlias}.cshtml` with Umbraco.Headless.Client.Net.Delivery.Models.Content as the model.
+
+
 
 ## Console Sample
