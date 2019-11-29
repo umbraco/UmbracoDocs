@@ -27,7 +27,7 @@ A .NET Core client library based on Netstandard2.0 to support application develo
 This client library includes two samples:
 
 * An [ASP.NET Core MVC sample](Dot-Net-Core/MVC-Sample) site, with custom routing and controller hijacking.
-* A [console application](Dot-Net-Core/#console-sample), with options using the Content Delivery and the Content Management API.
+* A [console application](https://github.com/umbraco/Umbraco.Headless.Client.Net/tree/master/samples/Umbraco.Headless.Client.Samples.Console), with options using the Content Delivery and the Content Management API.
 
 ## [Node.js](Node-JS)
 
