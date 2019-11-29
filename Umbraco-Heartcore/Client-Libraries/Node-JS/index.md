@@ -85,5 +85,5 @@ In the examples above, the first methods shows how the Content Management API is
 ## References
 
 - [The official Node.js documentation](https://nodejs.org/en/docs/)
-- [API Documentation for Umbraco Heartcore](../../../API-Documentation)
-- [Create an Umbraco Heartcore project](../../../Getting-Started-Cloud/Creating-a-Heartcore-project)
+- [API Documentation for Umbraco Heartcore](../../API-Documentation)
+- [Create an Umbraco Heartcore project](../../Getting-Started-Cloud/Creating-a-Heartcore-project)
