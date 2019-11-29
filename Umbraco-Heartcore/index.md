@@ -8,9 +8,7 @@ meta.Description: "An introduction to Umbraco Heartcore"
 
 In this section you will find documentation on how to work with Umbraco Heartcore.
 
-It includes API documentation, the basics on how to get started and how to work with the available Client Libraries.
-
-Please note that Umbraco Heartcore is a specific type of project only available via Umbraco Cloud.
+It includes REST API documentation, the basics on how to get started and how to work with the available Client Libraries. Please note that Umbraco Heartcore is a specific type of project only available via Umbraco Cloud.
 
 ## What is Umbraco Heartcore?
 
@@ -19,6 +17,11 @@ Umbraco Heartcore is a SaaS (Software as a Service) offered by Umbraco. The serv
 The product comes with a set of API endpoints that enables you to provide content through Umbraco to websites, apps, smartwatches or any other platform you can think of. The idea is that you create, manage and work with content in the Umbraco backoffice and then you use the API endpoints to distribute the content wherever you want.
 
 You can sign up to be first in line for more details on the product on [Umbraco.com/Headless](https://umbraco.com/headless/).
+
+There are 2 ways to get your hands on an Umbraco Heartcore project:
+
+- [From Umbraco.com](https://umrbaco.com)
+- [From the Umbraco Cloud Portal](https://umbraco.io) - requires that you already have an account
 
 ## [API Documentation for the Umbraco Heartcore REST API endpoints](API-Documentation/)
 
