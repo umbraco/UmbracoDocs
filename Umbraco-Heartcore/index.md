@@ -12,9 +12,11 @@ It includes REST API documentation, the basics on how to get started and how to 
 
 ## What is Umbraco Heartcore?
 
-Umbraco Heartcore is a SaaS (Software as a Service) offered by Umbraco. The service enables you to create and manage content and media in the Umbraco backoffice and make it available to any - and multiple - platforms, devices, channels etc. in order to distribute your content. 
+Umbraco Heartcore is a headless SaaS (Software as a Service) offered by Umbraco. The service enables you to create and manage content and media in the Umbraco backoffice and make it available to any - and multiple - platforms, devices, channels etc. in order to distribute your content. 
 
 The product comes with a set of API endpoints that enables you to provide content through Umbraco to websites, apps, smartwatches or any other platform you can think of. The idea is that you create, manage and work with content in the Umbraco backoffice and then you use the API endpoints to distribute the content wherever you want.
+
+All Umbraco Heartcore projects includes a Content Delivery Network (CDN) provided by CloudFlare. This CDN is being used for caching content and media fetched through the Content Delivery API. Additionally the media CDN (media.umbraco.io) ensures rezising and cropping options, which improves both performance and stabilize.
 
 You can sign up to be first in line for more details on the product on [Umbraco.com/Headless](https://umbraco.com/headless/).
 
