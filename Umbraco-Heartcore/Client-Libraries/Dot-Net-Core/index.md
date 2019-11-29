@@ -24,7 +24,7 @@ Please be aware that the minimum NuGet client version requirement has been updat
 
 You will get a Visual Studio solution file which references the client library itself (Umbraco.Headless.Client.Net) as well as a test project (Umbraco.Headless.Client.Net.Tests) which uses xUnit for unit and integration tests.
 
-Along with the client library you will also find two samples based on the library. We have built an MVC sample and a console sample. Below you will find instructions on how to clone these down and set them up for testing with your own Heartcore project.
+Along with the client library you will also find two samples based on the library. We have built an MVC sample and a console sample.
 
 ## [MVC sample](MVC-Sample)
 
