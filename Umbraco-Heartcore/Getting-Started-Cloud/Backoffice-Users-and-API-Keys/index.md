@@ -15,7 +15,7 @@ A feature that is unique for Umbraco Heartcore is the option to create an API Ke
 
 ## API Keys
 
-By default, the Content Delivery API isn't restricted, if you would like to protect it you can do so in the "Settings" section and "Headless" tree. 
+By default, the Content Delivery API is public, if you would like to protect it you can do so in the "Settings" section and "Headless" tree. 
 
 ![Protect API](images/heartcoreAPIprotect.png)
 
