@@ -4,17 +4,31 @@ versionFrom: 8.0.0
 
 # Client Libraries
 
-In order for you to get the best start with Umbraco Heartcore and get an overview of the potential of the product, there are some SDK's (Software Development Kits) that you can try out. 
+In order for you to get started with Umbraco Heartcore we have created a set of client libraries for you to use for testing and for getting a seamless start with the product. 
 
-## [Umbraco.Headless.Client.Net](https://github.com/umbraco/Umbraco.Headless.Client.Net)
+The client libraries provide you with a starting point where you do not need to worry about implementing the use of each API endpoint, as these have already been setup. All you need to do is connect the client library to your Umbraco Heartcore project. How this connection is made depends on the client library, but usually requires configuring a couple of parameters.
 
-.NET Core client library for the Umbraco Heartcore APIs. The library is based on Netstandard2.0 to support application development including Xamarin/UWP applications.
+We recommend testing with these libraries if you are looking to explore the potential of Umbraco Heartcore.
 
-This SDK includes 2 samples:
+Both the .NET Core and the Node.js client libraries include samples that you can connect to you Heartcore project and start testing in no time.
 
-* An [ASP.NET Core MVC sample](https://github.com/umbraco/Umbraco.Headless.Client.Net/tree/master/samples/Umbraco.Headless.Client.Samples.Web) site, with custom routing and controller hijacking.
-* A [console application](https://github.com/umbraco/Umbraco.Headless.Client.Net/tree/master/samples/Umbraco.Headless.Client.Samples.Console), with options using the Content Delivery and the Content Management API.
+:::tip
+Our client libraries are open source and free to use.
 
-## [Umbraco.Headless.Client.NodeJs](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs)
+Found a bug? Please let us know by using the Issue Tracker on the GitHub repositories:
+- [.NET Core client library](https://github.com/umbraco/Umbraco.Headless.Client.Net/issues)
+- [Node.js client library](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs/issues)
+:::
 
-Node.js client library for the Umbraco Heartcore REST APIs. This SDK includes a Koa sample that you can hook up to your Umbraco Heartcore project for testing.
+## [.NET Core](Dot-Net-Core)
+
+A .NET Core client library based on Netstandard2.0 to support application development including Xamarin/UWP applications.
+
+This client library includes two samples:
+
+* An [ASP.NET Core MVC sample](Dot-Net-Core/MVC-Sample) site, with custom routing and controller hijacking.
+* A [console application](Dot-Net-Core/#console-sample), with options using the Content Delivery and the Content Management API.
+
+## [Node.js](Node-JS)
+
+A Node.js client library including a Koa sample that you can hook up to your Umbraco Heartcore project for testing.
