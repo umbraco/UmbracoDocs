@@ -40,7 +40,7 @@ Every item you have is considered a node. It could be a media item or content in
 
 Every section in the Umbraco backoffice has a default dashboard associated with them. The first thing you will see when accessing the backoffice on your Umbraco Heartcore project is the "Welcome" dashboard, where you can find links to news and resources useful to your project. 
 
-The Dashboard is where you can see what environment you are currently working on and you will also be able to navigate to the front-end of your Umbraco Heartcore project as well as navigate to the project on Umbraco.io.
+The first dashboard you will meet is the "Workspace" in the Content section. Here you can see what environment you are currently working on and you can find links to various different resources.
 
 ![Dashboard section](images/dashboard.png)
 
