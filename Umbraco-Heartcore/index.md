@@ -20,10 +20,11 @@ All Umbraco Heartcore projects includes a Content Delivery Network (CDN) provide
 
 You can sign up to be first in line for more details on the product on [Umbraco.com/Headless](https://umbraco.com/headless/).
 
-There are 2 ways to get your hands on an Umbraco Heartcore project:
+There are 3 ways to get your hands on an Umbraco Heartcore project:
 
-- [From Umbraco.com](https://umrbaco.com)
-- [From the Umbraco Cloud Portal](https://umbraco.io) - requires that you already have an account
+- [Take a 14 day free trial](https://umbraco.com/try-umbraco-heartcore)
+- [Purchase a Heartcore from Umbraco.com](https://umbraco.com/umbraco-heartcore-pricing)
+- [Setup a project directly from the Umbraco Cloud Portal](https://umbraco.io) - requires that you already have an account
 
 ## [API Documentation for the Umbraco Heartcore REST API endpoints](API-Documentation/)
 
