@@ -29,6 +29,3 @@ Along with the client library you will also find two samples based on the librar
 ## [MVC sample](MVC-Sample)
 
 Test your Umbraco Heartcore project against a small MVC site. You can choose to use our sample project and content, or connect to your own project and build your own views and controllers.
-
-## Console sample
-
