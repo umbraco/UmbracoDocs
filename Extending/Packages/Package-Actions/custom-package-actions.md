@@ -94,9 +94,7 @@ namespace CustomPackageAction.PackageActions
                     break;
                 }
             }
-            return true;
-        
-            
+            return true;            
         }
 
         public bool Undo(string packageName, XElement xmlData)
