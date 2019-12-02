@@ -58,7 +58,7 @@ Unlike an Umbraco Package, a NuGet package can reference other packages your cod
 :::
 
 ## Creating the package 
-Once you have a .nuspec file you can use the NuGet CLI to create the NuGet package. 
+Once you have a `.nuspec` file you can use the NuGet CLI to create the NuGet package. 
 
 An example command to create your package may look like this:
 ```
