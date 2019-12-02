@@ -71,7 +71,7 @@ public sealed class LanguageConvertersResolver : ManyObjectsResolverBase<Languag
     /// </summary>
     /// <param name="converters"></param>
     internal LanguageConvertersResolver(IEnumerable<Type> converters)
-        : base(providers)
+        : base(converters)
     {
     }
 
