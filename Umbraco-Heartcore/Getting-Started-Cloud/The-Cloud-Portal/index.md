@@ -44,10 +44,6 @@ It is also here you are able to add or edit the Technical Contact information su
 
 Here you are able to set up a webhook that will gather all the information related to deployments. This information is very useful if you har set up something like Slack integration so every time a deployment has been made a message will be posted.
 
-:::note
-The webhooks that can be added here is **not the same** as the webhooks that can be created from the Backoffice.
-:::
-
 ### Upgrade plan
 
 Here you will be able to upgrade your trial to a plan that fits your needs.
