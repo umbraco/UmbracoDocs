@@ -74,6 +74,6 @@ Once you have successfully ran the nuget pack command you will have a file in th
 :::
 
 ## Publishing the package 
-To allow other people to use your package you will need to publish it to a public NuGet repository. The most common repository is at https://nuget.org
+To allow other people to use your package you will need to publish it to a public NuGet repository. The most common repository is at https://nuget.org.
 
 There is comprehensive documentation on [How to publish a NuGet package](https://docs.microsoft.com/en-us/nuget/nuget-org/publish-a-package) in the official NuGet Documentation.
