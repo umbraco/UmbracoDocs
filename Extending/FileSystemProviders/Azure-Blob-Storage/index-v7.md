@@ -111,7 +111,7 @@ You have to manually add `prefix="media/"` to the service element, otherwise Ima
 <security>
   <services>
     <!--<service name="LocalFileImageService" type="ImageProcessor.Web.Services.LocalFileImageService, ImageProcessor.Web" />-->
-    <service prefix="media/" name="CloudImageService" type="ImageProcessor.Web.Services.CloudImageService, ImageProcessor.Web">
+    <service prefix="/media" name="CloudImageService" type="ImageProcessor.Web.Services.CloudImageService, ImageProcessor.Web">
     <settings>
         <setting key="Container" value="[container name]"/>
         <setting key="MaxBytes" value="8194304"/>
