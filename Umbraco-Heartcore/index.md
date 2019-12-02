@@ -42,4 +42,4 @@ In this article you will learn how to create your first Umbraco Heartcore projec
 
 ## [Client libraries](Client-Libraries)
 
-In order to test your Umbraco Heartcore project against the REST API endpoints, you can use one of the samples we provide with our SDKs (Software Development Kits) for .NET Core and Node JS.
+In order to test your Umbraco Heartcore project against the REST API endpoints, you can use one of the samples we provide with the client libraries for .NET Core and Node JS.

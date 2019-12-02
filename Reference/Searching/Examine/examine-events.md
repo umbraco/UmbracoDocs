@@ -17,11 +17,9 @@ In the [Quick Start](Quick-Start/index.md) documentation you can see how to perf
 However, what if you want to search through several different node types and search across many different fields, you will typically need to have a query that looks like this:
 
 ```c#
-var results = searcher.CreateQuery("content").Field("nodeName", searchTerm)
-                    Or().Field("bodyText", searchTerm)
-                    Or().Field("description", searchTerm)
-                    Or().Field("about", searchTerm)
-                    Or().Field("otherText", searchTerm)
+var textFields = new[] { "title", "description",  "content", .... };
+var results = searcher.CreateQuery("content")
+                    .GroupedOr(textFields, searchTerm)
                     .Execute();
 ```
 
