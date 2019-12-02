@@ -38,15 +38,7 @@ Every item you have is considered a node. It could be a media item or content in
 
 ## Dashboard
 
-Every section in the Umbraco backoffice has a default dashboard associated with them. The first thing you will see when accessing the backoffice on your Umbraco Heartcore project is the "Welcome" dashboard, where you can find links to news and resources useful to your project. 
-
-The first dashboard you will meet is the "Workspace" in the Content section. Here you can see what environment you are currently working on and you can find links to various different resources.
-
-![Dashboard section](images/dashboard.png)
-
-Should you have set URL redirects you can manage them via the Redirect URL Management tap.
-
-![URL Dashboard](images/dashboard-url.png)
+Every section in the Umbraco backoffice has one or more dashboard associated with them. The first thing you will see when accessing the backoffice on your Umbraco Heartcore project is the "Getting Started" dashboard, where you can find links to news and resources useful to your project. 
 
 ## Content
 
@@ -80,7 +72,7 @@ In the settings section you find the before mentioned Document Types, Data Types
 
 ### Document type
 
-Document types helps define the content nodes in the content tree that the user can create. A document type has different properties that in turn is made up by a specific Data Type like text or a number. A property is the fields that holds the content in a content node that can be edited by the content editor.
+Document Types defines the content nodes the editors can create in the Content section. A Document Type has a set of properties that is made up of specific Data Types like text or a numbers. A property is the fields that holds the content in a content node that can be edited by the content editor.
 
 ### Media Types
 
@@ -88,44 +80,50 @@ What differs from Document Types is that Media Types are specifically made for m
 
 ### Member Types
 
-When you have a website with a login you can create member types. Umbraco comes with a standard Member Type but you can also create your own type for a more personalized member.
+When you have a website with a login you might want to create Member Types. Umbraco comes with a standard Member Type. You can extend of this, but you can also create your own type for more costumized members.
 
 ### Data Type
 
-Each Document Type property consists of a Data Type which defines what kind of input the property holds. Each Data Type references a Property Editor which is configured in the Settings section of the Backoffice. A Property Editor can be anything from a basic number to something more complex like an image-cropper. It is possible to have multiple Data Types with different settings that still uses the same Textarea Property Editor.
+Each Document Type property consists of a Data Type which defines what kind of input the property holds. Each Data Type references a Property Editor and can be configured in the Settings section of the Backoffice. A Property Editor can be anything from a basic number to something more complex like an image-cropper. It is possible to have multiple Data Types with different settings that still uses the same Property Editor.
 
 ### Relation Types
 
-In this section you are able to create two way relationships and query the parent for the children and the children for the parent.
+In this section you are able to create two way relationships in order to be able to query the parent for the children and the children for the parent.
 
 ### Log Viewer
 
-The log viewer is a view where you can go through all your logs. You are able to filter on warnings, errors or critical Log Types to name a few.
+The log viewer is a view where you can browse all log entries for your project. You can filter on warnings, errors or critical Log Types to name a few.
 
 ### Languages
 
-Here you will be able to manage your language variants. Depending on what plan you have chosen you will be able to have more that one language.
+In the Languages section you can manage your language variants. Depending on what plan you have chosen you will be able to setup multiple languages on your Heartcore project.
 
 ### Headless
 
-The Headless tree in the Settings section is unique as it is only featured in Umbraco Heartcore. From here you will be able to manage the APIs as well as create and manage your Webhooks.
+From the Headless tree you can browse and explore the REST API endpoints as well as create and manage your Webhooks.
 
--   API Browser: In the API Browser you are able to test your API endpoints. You can read more in the [API Browser article](../Webhooks).
+-   API Browser: In the API Browser you can test your API endpoints. Learn more about this in the [API Browser article](../Webhooks).
 
--   Webhooks: You are also able to create and manage your Webhooks in the settings. You can read more in the [Webhooks article](../API-Browser).
+-   Webhooks: You can create and manage Webhooks for various content actions. Learn more about how this is setup in the [Webhooks article](../API-Browser).
 
 ## Users
 
-IN this section you can manage all the users that are currently working on the project. Users are not to be confused with Members as members are people who has a login to your websites front-end whereas Users can be developers, content creators etc that is working on your project from the backoffice.
+In this section you can manage all the users that are currently working on the project. Users are not to be confused with Members as members are people who has a login to your websites frontend whereas Users can be developers, content creators etc that has access to the backoffice.
 
-You are also able to segment your user into different User Groups. You can add Users to existing Groups or create your own custom Member Groups.
+You can segment your users into different User Groups. You can add Users to existing Groups or create your own custom User Groups. How many of these groups you can create depends on the plan your project is on.
 
-As a special section for the Umbraco Heartcore backoffice is the ability to create, manage and revoke API Keys for the Users working on the project.
+For each user on your project you can generate a unique API key. This key will be used to access the Content Management API, and can be revoked at any time. Learn more about the API Keys in the [Backoffice users and API keys article](../Backoffice-Users-and-API-Keys).
 
 ## Members
 
-The Members section is where you manage your members who are able to log into your projects front-end. You can create Member Groups for easy management if you have multiply types of memberships etc.
+The Members section is where you manage your members who are able to log into your projects frontend. You can create Member Groups for easy management if you have multiple types of memberships.
 
 ## Forms
 
-In this section you are able to create and manage your Umbraco Forms. You are able to extract the data that has been stored in the Forms as well. You will have to buy a licnese for Umbraco Forms to be able to work with it on Cloud. You are able to install Umbraco Forms locally to test it out as well.
+:::note
+While you can create and manage forms in the backoffice, there is currently no API endpoints enabling you to use the forms on your frontend.
+
+These will be added at a later point. [Keep an eye on our Roadmap for more details](https://umbraco.com/products/roadmap/).
+:::
+
+In this section you can create and manage your Umbraco Forms.
