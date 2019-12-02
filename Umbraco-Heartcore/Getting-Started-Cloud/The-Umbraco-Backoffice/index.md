@@ -40,6 +40,8 @@ Every item you have is considered a node. It could be a media item or content in
 
 Every section in the Umbraco backoffice has one or more dashboard associated with them. The first thing you will see when accessing the backoffice on your Umbraco Heartcore project is the "Getting Started" dashboard, where you can find links to news and resources useful to your project. 
 
+![Getting Started](images/dashboard.png)
+
 ## Content
 
 In this section you will find all the content you have on your page. Each item in the tree is called a Content Node. Every node is made up by different fields. Each field is defined by a property.
