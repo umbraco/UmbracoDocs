@@ -1,6 +1,5 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "false"
 ---
 
 # Working with MVC Views in Umbraco
