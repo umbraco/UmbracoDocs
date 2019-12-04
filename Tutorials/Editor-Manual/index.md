@@ -2,6 +2,7 @@
 meta.Title: "v7 Editors Manual"
 meta.Description: "v7 Editors Manual"
 versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # Editor's Manual
