@@ -11,13 +11,18 @@ In this section you can find articles around managing your Umbraco Heartcore pro
 A step-by-step guide on how to setup and build a small and basic Umbraco Heartcore project. This is a great place to start if you are new to Umbraco, as it will explain some of the default concepts and you will learn how to create content from scratch.
 
 ## [The Umbraco Cloud Portal](The-Cloud-Portal)
+
 In this article you can read all about the features that is available on your Umbraco Heartcore project from the Umbraco Cloud Portal. The article will go through the Settings menu and how to get to the backoffice.
 
-## [Environments](Working-with-environments)
+## [Environments](Environments)
 
 Depending on the plan your Heartcore project is on, you might be able to setup and work with multiple environments. You can have up to three environments: Development, Staging and Live.
 
 Having multiple environments can be a great help when you want to test your content structure before your content editors get to work.
+
+### [Deployment workflow](Environments/Deployment-workflow)
+
+When you have multiple environments on your Heartcore project you need to make sure that you follow the correct deployment workflow. In this section you will find more details about the workflow along with a thorough description of how it works.
 
 ## [The Umbraco Backoffice](The-Umbraco-Backoffice)
 
