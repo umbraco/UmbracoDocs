@@ -1,6 +1,5 @@
 ---
 versionFrom: 7.3.0
-needsV8Update: "true"
 ---
 
 # Language file for packages

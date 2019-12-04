@@ -34,19 +34,21 @@ Right next to the invite member option. you will find the **Settings** dropdown 
 
 ### Edit Team
 
-As with the **invite member** option you are able to add new team members to your project. It is also possible to change the role for the team member here. You will also be able to remove team members from this page as well as see any pending invitations you might have sent.
+As with the **invite member** option you are able to add new team members to your project. It is also possible to change the role for the team member here. You can remove team members from this page as well as see any pending invitations you might have sent.
 
 It is also here you are able to add or edit the Technical Contact information such as Name, Email and a telephone number.
 
 ![Edit Team Members page](images/editTeam.png)
 
+:::note
+When you invite a Team Member to your Heartcore project, they will automatically get access to the backoffice of the project as well.
+
+You can add as many members to your proejct as you wont.
+:::
+
 ### Webhooks
 
 Here you are able to set up a webhook that will gather all the information related to deployments. This information is very useful if you har set up something like Slack integration so every time a deployment has been made a message will be posted.
-
-:::note
-The webhooks that can be added here is **not the same** as the webhooks that can be created from the Backoffice.
-:::
 
 ### Upgrade plan
 

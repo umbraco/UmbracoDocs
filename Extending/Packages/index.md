@@ -24,6 +24,10 @@ There are two common types of package for Umbraco; Package zip files and NuGet P
 
 This short tutorial will teach you how to create a package in the Umbraco backoffice. It will also give a quick overview of what a generated package will contain.
 
+## [Creating a NuGet Package](Creating-a-nuget-package/index.md)
+
+This short tutorial will teach you how to create a NuGet package for your Umbraco code.
+
 ## [Package Actions](Package-Actions/index.md)
 
 Package actions are actions you want to trigger when your package gets installed. 
