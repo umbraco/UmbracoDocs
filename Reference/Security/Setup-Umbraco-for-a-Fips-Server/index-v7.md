@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
 ---
 
 # Setup Umbraco for a FIPS Compliant Server
@@ -22,46 +22,41 @@ FIPS can be enabled through your Local Group Policy, Registry Setting, or Networ
 
 ## What version of Umbraco is FIPS compliant?
 
-Umbraco 7.6.4+ has implemented checks for when FIPS mode is enabled on the server that it is installed on.  When FIPS mode is detected, the cryptographic algorithms for hashing are changed to a FIPS compliant algorithm. When FIPS mode is disabled, then Umbraco uses backwards compatible algorithms (MD5) so as not to affect existing installs. As of Umbraco version 7.6.4, the FIPS compliant cryptographic algorithm used is SHA1.
+Umbraco 7.6.4 has implemented checks for when FIPS mode is enabled on the server that it is installed on.  When FIPS mode is detected, the cryptographic algorithms for hashing are changed to a FIPS compliant algorithm. When FIPS mode is disabled, then Umbraco uses backwards compatible algorithms (MD5) so as not to affect existing installs. As of Umbraco version 7.6.4, the FIPS compliant cryptographic algorithm used is SHA1.
 
 ## Steps to making Umbraco FIPS compliant
 
-While Umbraco 8.0.0 is FIPS compliant, one of its key dependencies, Lucene.Net, requires a flag to be set in order for FIPS compliant hashing algorithms to be used. This can be done in your Umbraco project and is detailed below.
+While Umbraco 7.6.4+ is FIPS compliant, one of its key dependencies, Lucene.Net, requires a flag to be set in order for FIPS compliant hashing algorithms to be used. This can be done in your Umbraco project and is detailed below.
 
-Below are the steps to get an Umbraco v8 project able to work with FIPS mode enabled:
+Below are the steps to get an Umbraco project able to work with FIPS mode enabled:
 
-### 1. Set Lucene to use a FIPS compliant hashing algorithm
+### 1. Upgrade to Umbraco 7.6.4+
 
-Lucene.Net doesn't have automatic detection of FIPS mode, but it does have a flag that can be set to enable FIPS compliant cryptographic algorithms to be used.  Umbraco/Examine currently has a dependency on Lucene.Net version 3.0.3 as of Umbraco 8.0.0.
+This is the lowest version that contains the detection of FIPS mode and switches the hashing to use a FIPS compliant hash. See the general instructions for [Upgrading Existing Installs][3] in the documentation for more information and help.
 
-To set Lucene.Net to be FIPS compliant you will create a new class in your project that will run before Umbraco Application Startup. This class will set the `Cryptography.FIPSCompliant` to detect the current machine state and set it to True if FIPS is required.
+### 2. Set Lucene to use a FIPS compliant hashing algorithm
+
+Lucene.Net doesn't have automatic detection of FIPS mode, but it does have a flag that can be set to enable FIPS compliant cryptographic algorithms to be used.  Umbraco/Examine currently has a dependency on Lucene.Net version 2.9.4 as of Umbraco 7.6.4+.
+
+To set Lucene.Net to be FIPS compliant you will create a new class in your project that will run before Umbraco Application Startup. This class will set the `SupportClass.Cryptography.FIPSCompliant` to detect the current machine state and set it to True if FIPS is required.
 
 Create the following class and place it in your Umbraco project in a location that is appropriate for your project setup:
 
 ```csharp
 using System.Security.Cryptography;
 using System.Web;
-using Lucene.Net.Support;
-using Umbraco.Core.Composing;
 using MyProject.Events;
 
 [assembly: PreApplicationStartMethod(typeof(LuceneFipsFlagOnAppStartup), "Initialize")]
 
 namespace MyProject.Events
 {
-    public class ApplicationComposer : ComponentComposer<LuceneFipsFlagOnAppStartup>
+    public sealed class LuceneFipsFlagOnAppStartup
     {
-    }
-
-    public class LuceneFipsFlagOnAppStartup : IComponent
-    {
-        public void Initialize()
+        public static void Initialize()
         {
-            Cryptography.FIPSCompliant = CryptoConfig.AllowOnlyFipsAlgorithms;
+            SupportClass.Cryptography.FIPSCompliant = CryptoConfig.AllowOnlyFipsAlgorithms;
         }
-
-        public void Terminate()
-        { }
     }
 }
 ```
@@ -71,13 +66,13 @@ You will likely want to rename the Namespace to conform to your Namespacing stru
 Once you build the project, you will be ready to test.
 
 
-### 2. Test with FIPS enabled
+### 3. Test with FIPS enabled
 
 Setup a VM, VPS, or extra Windows box and enable FIPS using one of the methods described in the "[How-to Enable FIPS on Windows][2]" article referenced above.
 
 If any third-party dependencies or packages do not support FIPS, then you will likely see an IIS error page (YSOD).  Make sure you have debug and &lt;customErrors mode="On"&gt; in the web.config to help identify the source of the problem.
 
-### 3. Fix any issues with packages or third-party tools
+### 4. Fix any issues with packages or third-party tools
 
 It's possible that you may need to contact a package developer or company to resolve any error you find.  If the package/library is open source, then search for the hashing cryptographic modules/algorithms used and verify they are all FIPS compliant.
 
