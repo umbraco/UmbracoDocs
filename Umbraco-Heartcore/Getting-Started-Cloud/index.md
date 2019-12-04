@@ -13,7 +13,7 @@ A step-by-step guide on how to setup and build a small and basic Umbraco Heartco
 ## [The Umbraco Cloud Portal](The-Cloud-Portal)
 In this article you can read all about the features that is available on your Umbraco Heartcore project from the Umbraco Cloud Portal. The article will go through the Settings menu and how to get to the backoffice.
 
-## Working with multiple environments
+## [Environments](Working-with-environments)
 
 Depending on the plan your Heartcore project is on, you might be able to setup and work with multiple environments. You can have up to three environments: Development, Staging and Live.
 
