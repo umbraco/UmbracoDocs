@@ -1,6 +1,6 @@
 ---
-meta.Title: "v7 Editors Manual"
-meta.Description: "v7 Editors Manual"
+meta.Title: "Editors Manual for Umbraco 7"
+meta.Description: "How-tos and best practices for working with the Umbraco backoffice as a content editor."
 versionFrom: 7.0.0
 needsV8Update: "true"
 ---
