@@ -35,6 +35,6 @@ Providing a few tips and tricks on how to work with Content using Umbraco.
 
 ## Credits
 
-This section is based on [The Umbraco 7 Editor Manual](https://our.umbraco.com/packages/website-utilities/umbraco-7-editors-manual/) made by [Matt Wootton](https://our.umbraco.com/member/75690) - originally made for Umbraco 4 by [Matt Brailsford](https://our.umbraco.com/member/5518): [Editors manual](https://our.umbraco.com/packages/website-utilities/editors-manual/).
+This section is based on [The Umbraco 7 Editors Manual](https://our.umbraco.com/packages/website-utilities/umbraco-7-editors-manual/) made by [Matt Wootton](https://our.umbraco.com/member/75690) - originally made for Umbraco 4 by [Matt Brailsford](https://our.umbraco.com/member/5518): [Editors manual](https://our.umbraco.com/packages/website-utilities/editors-manual/).
 
 Other contributors: [Gerty Engrie](https://our.umbraco.com/member/1833), [David Conlisk](https://our.umbraco.com/member/1908), [Morten Christensen](https://our.umbraco.com/member/2368), [Sebastiaan Janssen](https://our.umbraco.com/member/4576), [Anders Stentebjerg](https://our.umbraco.com/member/4786), [Janne Mårtensgård](https://our.umbraco.com/member/6078), [Michael Latouche](https://our.umbraco.com/member/6353), [Julio Moreno](https://our.umbraco.com/member/10655), [Becky Amiss](https://our.umbraco.com/member/70297), [Roos](https://our.umbraco.com/member/97144), [Richard Eyres](https://our.umbraco.com/member/10416), [Mike Burgess](https://our.umbraco.com/member/130732), [Matt Ballington](https://our.umbraco.com/member/130734)
