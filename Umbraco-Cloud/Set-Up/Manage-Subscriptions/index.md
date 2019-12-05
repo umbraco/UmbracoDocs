@@ -33,7 +33,7 @@ If you have to change your credit card information you can do that under [Manage
 
 ## How to change ownership of subscriptions and projects
 
-You might find yourself if a situation where you will need to change the ownerships of subscriptions or projects. That can be done in the following ways.
+You might find yourself in a situation where you will need to change the ownerships of subscriptions or projects. That can be done in the following ways.
 
 ### Subscriptions
 
