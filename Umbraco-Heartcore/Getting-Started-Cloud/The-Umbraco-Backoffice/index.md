@@ -102,6 +102,17 @@ In the Languages section you can manage your language variants. Depending on wha
 
 ### Headless
 
+The headless dashboard has some information about your Heartcore project. Depending on what plan you are on, you will have access to more languages and user groups.
+
+The dashboard shows you:
+- What plan you are on
+- How many available languages you have
+- How many user groups you have
+
+![Headless Dashboard](images/headless-dashboard.png)
+
+In addition you are able to set the Content Delivery API to either Public or Private. If the API is set to private you will have to have an [API key assigned](../Backoffice-Users-and-API-Keys) to your user which you will need when fetching content from the APIs.
+
 From the Headless tree you can browse and explore the REST API endpoints as well as create and manage your Webhooks.
 
 -   API Browser: In the API Browser you can test your API endpoints. Learn more about this in the [API Browser article](../Webhooks).
