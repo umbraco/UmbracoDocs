@@ -39,6 +39,8 @@ You might find yourself in a situation where you will need to change the ownersh
 
 Changing subscription ownerships is not something you can do by yourself. You will need to reach out to our __Support Team__ and they will do it for you.
 
+Whomever is taking over a subscription will need to have an existing account on umbraco.com. If they do not have an account they can [register here](https://shop.umbraco.com/profile/register).
+
 :::note
 Do note that it will have to be the owner of the subscription who reaches out when changing the owner.
 :::
@@ -48,5 +50,7 @@ Do note that it will have to be the owner of the subscription who reaches out wh
 Handing over a project to someone else can be done by [adding them to the project as a Team Member](../Team-Members) from the portal. Make sure that you grant them admin rights when adding them so they have full control over the project. When they have been added they can remove you from the project.
 
 :::note
-If your client would like to be listed as the creator __they__ will need to create the project. It cannot be changed afterwards.
+Remember to change the [technical contact details](../Team-Members/Technical-Contact) on the project to the new owner, as Umbraco will send updates such as automated upgrade notifications to whomever is listed under technical contact.
+
+You can change the technical contact details under the Edit team section in the Backoffice.
 :::
