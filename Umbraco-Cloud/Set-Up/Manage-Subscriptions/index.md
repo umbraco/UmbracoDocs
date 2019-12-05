@@ -45,7 +45,7 @@ Do note that it will have to be the owner of the subscription who reaches out wh
 
 ### Projects
 
-Handing over a project to someone else can be done by adding them to the project as a Team Member from the portal. Make sure that you grant them admin rights when adding them so they have full control over the project. When they have been added they can remove you from the project.
+Handing over a project to someone else can be done by [adding them to the project as a Team Member](../Team-Members) from the portal. Make sure that you grant them admin rights when adding them so they have full control over the project. When they have been added they can remove you from the project.
 
 :::note
 If your client would like to be listed as the creator __they__ will need to create the project. It cannot be changed afterwards.
