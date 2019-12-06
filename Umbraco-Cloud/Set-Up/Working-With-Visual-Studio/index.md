@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # Visual Studio Setup
 
-This page describes how to setup your Visual Studio solution to work with an Umbraco Cloud Project.
+This page describes how to set up your Visual Studio solution to work with an Umbraco Cloud Project.
 In this article you will find:
 
  - [Prerequisites](#prerequisites)
@@ -68,7 +68,7 @@ If you haven't cloned the repository before or don't have a [git credentials man
 
 ![](images/cmd-clone.png)
 
-Once its done running the tool will have created a Visual Studio solution file `*.sln` and two Projects.
+Once it's done running the tool will have created a Visual Studio solution file `*.sln` and two Projects.
 
 * `*.Web` contains the Umbraco site that was (git) cloned from your Project
 * `*.Core` is a Class Library that you can use for your custom code, as mentioned above
