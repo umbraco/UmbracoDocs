@@ -8,8 +8,6 @@ The IsHelper methods are a set of extension methods for IPublishedContent to hel
 
 IsHelper methods are basically ternary operators, but work a little nicer in that they're easy to embed in properties and quicker to write as you don't need so many brackets to make Razor understand them.
 
-The general use IsHelper is to allow you to dynamically inject class names and style attributes onto your HTML elements, based on their position within the collection you are iterating. You can use this for a variety of things such as alternating row colours or fixing the margin/padding on the first/last item etc.
-
 ---
 
 ## How to use
