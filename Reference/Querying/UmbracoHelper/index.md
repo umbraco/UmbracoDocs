@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # UmbracoHelper
 
-_UmbracoHelper is the unified way to work with published content/media on your website. Whether you are using MVC or WebForms you will be able to use UmbracoHelper to query/traverse Umbraco published data._
+UmbracoHelper is the unified way to work with published content/media on your website. Whether you are using MVC or WebForms you will be able to use UmbracoHelper to query/traverse Umbraco published data.
 
 UmbracoHelper also has a variety of helper methods that are useful when working in your views, controllers and webforms classes.
 
@@ -272,15 +272,21 @@ Returns a `Boolean` on whether a page with a given [Umbraco path](../IPublishedC
 
 ### .GetDictionaryValue(string key)
 
-Returns a `string`
+Returns a dictionary value(`string`) for the key specified.
 
 ```html
 <p>@Umbraco.GetDictionaryValue("createdOn"): @CurrentPage.CreateDate</p>
 ```
 
+Alternatively, you can also specify a `altText` which will be returned if the dictionary value is empty.
+
+```html
+<p>@Umbraco.GetDictionaryValue("createdOn", "Date Created"): @CurrentPage.CreateDate</p>
+```
+
 ### .GetPreValueAsString(int prevalueId)
 
-Returns a `string`
+Returns a speific prevalue(`string`) based on its id.
 
 ```html
 <p>@Umbraco.GetPreValueAsString(CurrentPage.DropDownProperty)</p>
@@ -318,86 +324,23 @@ Alternatively, you can use Examine's `SearchCriteria` builder:
 
 Like .Search() but returns a collection of `IPublishedContent` objects, see sample above.
 
+You can also specify the number of records to skip, the number of records to take.
+
+```csharp
+ @{
+        var query = ExamineManager.Instance.CreateSearchCriteria()
+            .NodeName("news")
+            .Or()
+            .Field("bodyText", "horse")
+            .Compile();
+        int totalCount = 0;
+    }
+    @foreach(var result in Umbraco.TypedSearch(5,10,out totalCount,query)){
+        <a href="@result.Url">@result.BodyText</a>
+    }
+```
+
 ## Templating Helpers
-
-### .Coalesce(params object[])
-
-will take the first non-null value in the collection and return the value of it.
-
-```csharp
-Umbraco.Coalesce(CurrentPage.Summary, CurrentPage.MaybeThere, CurrentPage.Name);
-```
-
-### .Concatenate(params object[])
-
-Joins any number of int/string/objects into one string
-
-```csharp
-Umbraco.Concatenate("Hi my name is ", CurrentPage.Name, " how are you?");
-```
-
-### .CreateMd5Hash(string text)
-
-Returns an MD5 hash of a given string
-
-```csharp
-Umbraco.CreateMd5Hash("my@email.com");
-```
-
-### .If(bool test, string valueIfTrue, string valueIfFalse)
-
-If the test is true, the string `valueIfTrue` will be returned, otherwise the `valueIfFalse` will be returned.
-
-```csharp
-<h1 class="@Umbraco.If(CurrentPage.Name == "News", "this-is-news", "textpage")>@CurrentPage.Name</h1>
-```
-
-### .Join(string separator, params object[] args)
-
-Joins any number of int/string/objects into one string and separates them with the string separator parameter.
-
-```csharp
-Umbraco.Join("; ", "Red", 112, CurrentPage.Name);
-```
-
-### .ReplaceLineBreaksForHtml(string text)
-
-Given a non-HTML string, it replaces all line-breaks with `<br/>`
-
-```csharp
-@{
-    var multiLine = @"hello
-                        my
-                    name is
-                        ";
-}
-
-@Umbraco.ReplaceLineBreaksForHtml(multiLine)
-```
-
-### .StripHtml(string html)
-
-Strips all HTML tags from a given string; all contents of the tags will remain.
-
-```csharp
-Umbraco.StripHtml("<blink>Stop the blinking</blink>");
-```
-
-### .Truncate(string html, int length, bool addEllipsis)
-
-Truncates a string to a given length, can add an ellipsis at the end (…). The method checks for open HTML tags, and makes sure to close them.
-
-```csharp
-Umbraco.Truncate("I wish I was a tweet, at least then I get 140 chars", 10, true)
-```
-
-### .TruncateByWords(string html, int words, bool addEllipsis)
-
-Truncates a string to a given amount of words, can add a ellipsis at the end (…). Method checks for open HTML tags, and makes sure to close them.
-
-```csharp
-Umbraco.TruncateByWords("I wish I was a tweet, at least then I get 140 chars", 10, true)
-```
 
 ### .RenderMacro(string alias, object parameters)
 
