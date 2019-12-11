@@ -23,7 +23,7 @@ Before you continue with the rest of this article we recommend that you have at 
 
 ### Retrieving a Form using the REST API
 
-The API for Forms lives under the Content Management API, so a Bearer token and an API-Key is required to call all the Forms related endpoints.
+The API for Forms lives under the Content Management API, so a Bearer token or an API-Key is required to call all the Forms related endpoints.
 For this example we will call `https://api.umbraco.io/forms` which lists all available forms. From here you can find a specific form to retrieve in order to get the definition for that form - this is useful when you want to expose a specific form in a specific part of your presentation layer.
 
 Getting a specific form is done by issuing a GET request to 
