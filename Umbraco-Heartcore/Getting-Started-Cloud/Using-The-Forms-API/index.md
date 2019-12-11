@@ -6,6 +6,8 @@ versionFrom: 8.0.0
 
 In this article you can learn more about how to use the Forms API for retrieving form definitions and submitting form entries.
 
+We recommend that you have a look at the Forms API reference docs along side this article if you haven't already seen it. The API reference has useful content around field types and possible errors.
+
 :::note
 The availability of Umbraco Forms depends on the plan, see the [Pricing & Features](https://umbraco.com/umbraco-heartcore-pricing/) for an overview of which plans includes Forms.
 :::
@@ -115,6 +117,28 @@ Notice that the layout of properties correspond to the Forms builder in the back
 
 ### Retrieving a Form using the .NET Core Client Library
 
+If you are a C# developer and work with .NET you can use the .NET Core Client Library in your own codebase to retrieve form definitions.
+
+First step is to install it through NuGet:
+
+```
+> Install-Package Umbraco.Headless.Client.Net
+```
+
+When using the library you need the Content Management part in order to work with Forms. New up the `ContentManagementService` and pass in the name of your Umbraco Heartcore project and either Username + Password of a backoffice user or an API-Key. In the example below we use an API-Key when retriving all available form definitions:
+
+```csharp
+var managementService = new ContentManagementService("project-alias", "api-key-value");
+var forms = await managementService.FormService.GetAll();
+```
+
+If you want to retrieve a specific form you can use the GetById method along with a guid id as shown below:
+
+```csharp
+var managementService = new ContentManagementService("project-alias", "api-key-value");
+var contactForm = await managementService.FormService.GetById(new Guid("0134604b-f583-4ebc-a3b6-c26ce0f1a11b"));
+```
+
 ### Retrieving a Form using the NodeJS Client Library
 
 ## Posting a Form entry
@@ -143,5 +167,22 @@ Please keep in mind that the `dataConsent` property is required to have the valu
 If you added validation on the email field to ensure that the entered value is in fact a valid email address, then this validation will also be enforced through the API. Try to send the payload above with a value that is not a valid email address to see the validation response you get back.
 
 ### Posting a Form entry using the .NET Core Client Library
+
+Continuing on the previous .NET Core example we can also post entries to a form using the library.
+Given that the form contains a Name, Email and Data Content field we can save a form entry as follows:
+
+```csharp
+var entry = new Dictionary<string, object>
+             {
+                 {"name", "John Smith"},
+                 {"email", "johnsmith@example.org"},
+                 {"dataConsent", true}
+             };
+
+var managementService = new ContentManagementService("project-alias", "api-key-value");
+await managementService.FormService.SubmitEntry(new Guid("0134604b-f583-4ebc-a3b6-c26ce0f1a11b"), entry);
+```
+
+Please note that if validation fails an exception is thrown. The validation configured for each of the fields is validated by Umbraco Forms on the server side.
 
 ### Posting a Form entry using the NodeJS Client Library
