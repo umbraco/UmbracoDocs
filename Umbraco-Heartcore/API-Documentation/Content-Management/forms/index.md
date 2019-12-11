@@ -2,10 +2,10 @@
 
 **BASE URL**: `https://api.umbraco.io`
 
-**API version** 2.1
+**API version**: 2.1
 
 :::note
-Umbraco Forms is not available in all plans, see the [Pricing & Features](https://umbraco.com/umbraco-heartcore-pricing/) for an overview of which plans it's included in.
+The availability of Umbraco Forms depend on the plan, see the [Pricing & Features](https://umbraco.com/umbraco-heartcore-pricing/) for an overview of which plans includes Forms.
 :::
 
 ## Table of Contents
@@ -281,6 +281,8 @@ Get a specific form by its ID.
 ```
 
 ## Submit entry
+
+Submit form entries for a specific Form - this is what you would use when a form is submitted from your presentation layer.
 
 **URL**: `/forms/{id}/entries`
 
