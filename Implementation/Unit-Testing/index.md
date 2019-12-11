@@ -16,6 +16,7 @@ public abstract class UmbracoBaseTest
     public ServiceContext ServiceContext;
     public MembershipHelper MembershipHelper;
     public UmbracoHelper UmbracoHelper;
+    public UmbracoMapper UmbracoMapper;
 
     public Mock<ICultureDictionary> CultureDictionary;
     public Mock<ICultureDictionaryFactory> CultureDictionaryFactory;
@@ -32,6 +33,7 @@ public abstract class UmbracoBaseTest
         Mock.Of<RoleProvider>(), Mock.Of<IMemberService>(), Mock.Of<IMemberTypeService>(), Mock.Of<IUserService>(), Mock.Of<IPublicAccessService>(), AppCaches.NoCache, Mock.Of<ILogger>());
         this.UmbracoHelper = new UmbracoHelper(Mock.Of<IPublishedContent>(), Mock.Of<ITagQuery>(), this.CultureDictionaryFactory.Object, 
         Mock.Of<IUmbracoComponentRenderer>(), this.PublichedContentQuery.Object, this.MembershipHelper);
+        this.UmbracoMapper = new UmbracoMapper(new MapDefinitionCollection(new List<IMapDefinition>()));
     }
 
     public virtual void SetupCultureDictionaries()
@@ -199,6 +201,47 @@ public class MySurfaceControllerTests : UmbracoBaseTest
         Assert.AreEqual("Hello World", result.Content);
     }
 }
+```
+
+## Testing an UmbracoApiController
+
+See [Reference documentation on UmbracoApiControllers](https://our.umbraco.com/documentation/Reference/Routing/WebApi/#locally-declared-controller).
+
+```csharp
+
+public class ProductsController : UmbracoApiController
+{
+    public ProductsController(IGlobalSettings globalSettings, IUmbracoContextAccessor umbracoContextAccessor, ISqlContext sqlContext, ServiceContext serviceContext, AppCaches appCaches, IProfilingLogger profilingLogger, IRuntimeState runtimeState, UmbracoHelper umbracoHelper, UmbracoMapper umbracoMapper) : base(globalSettings, umbracoContextAccessor, sqlContext, serviceContext, appCaches, profilingLogger, runtimeState, umbracoHelper, umbracoMapper) { }
+
+    public IEnumerable<string> GetAllProducts()
+    {
+        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+    }
+}
+
+[TestFixture]
+public class ProductsControllerTests : UmbracoBaseTest
+{
+    private ProductsController controller;
+
+    [SetUp]
+    public override void SetUp()
+    {
+        base.SetUp();
+        this.controller = new ProductsController(Mock.Of<IGlobalSettings>(), Mock.Of<IUmbracoContextAccessor>(), Mock.Of<ISqlContext>(), this.ServiceContext, AppCaches.NoCache, Mock.Of<IProfilingLogger>(), Mock.Of<IRuntimeState>(), base.UmbracoHelper, base.UmbracoMapper);
+    }
+
+    [Test]
+    public void WhenGetAllProducts_ThenReturnViewModelWithExpectedProducts()
+    {
+        var expected = new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+
+        var result = this.controller.GetAllProducts();
+
+        Assert.AreEqual(expected, result);
+    }
+}
+
 ```
 
 ## Testing ICultureDictionary using the UmbracoHelper
