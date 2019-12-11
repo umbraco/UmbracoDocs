@@ -136,7 +136,7 @@ If you want to retrieve a specific form you can use the GetById method along wit
 
 ```csharp
 var managementService = new ContentManagementService("project-alias", "api-key-value");
-var contactForm = await managementService.FormService.GetById(new Guid("0134604b-f583-4ebc-a3b6-c26ce0f1a11b"));
+var contactForm = await managementService.Forms.GetById(new Guid("0134604b-f583-4ebc-a3b6-c26ce0f1a11b"));
 ```
 
 ### Retrieving a Form using the NodeJS Client Library
