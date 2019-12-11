@@ -129,7 +129,7 @@ When using the library you need the Content Management part in order to work wit
 
 ```csharp
 var managementService = new ContentManagementService("project-alias", "api-key-value");
-var forms = await managementService.FormService.GetAll();
+var forms = await managementService.Forms.GetAll();
 ```
 
 If you want to retrieve a specific form you can use the GetById method along with a guid id as shown below:
