@@ -29,7 +29,7 @@ Before you continue with the rest of this article we recommend that you have at 
 The API for Forms lives under the Content Management API, so a Bearer token or an API-Key is required to call all the Forms related endpoints.
 For this example we will call `https://api.umbraco.io/forms` which lists all available forms. From here you can find a specific form to retrieve in order to get the definition for that form - this is useful when you want to expose a specific form in a specific part of your presentation layer.
 
-Getting a specific form is done by issuing a GET request to 
+Getting a specific form is done by issuing a GET request to
 `https://api.umbraco.io/forms/{id:guid}`
 
 Required headers include `umb-project-alias` and `Api-Key` or a Bearer Token via an Authorization header.
@@ -144,6 +144,39 @@ var contactForm = await managementService.Forms.GetById(new Guid("0134604b-f583-
 
 ### Retrieving a Form using the NodeJS Client Library
 
+If you are a javascript developer and work with NodeJS you can use the NodeJS Client Library in your own codebase to retrieve form definitions.
+
+First step is to install it through npm:
+
+```bash
+> npm install --save @umbraco/headless-client
+```
+
+First we need to import and create a new instance of the `Client`, to use the forms api you need to pass in the project alias and set an API-Key.
+
+```typescript
+import { Client } from '@umbraco/headless-client'
+
+const client = new Client({
+  projectAlias: 'project-alias'
+})
+
+client.setAPIKey('api-key-value')
+```
+
+To retrieve all forms we need to use the forms service on the management API as shown below
+
+```typescript
+const forms = await client.management.forms.all()
+```
+
+To retrieve a single form by id you can use the `byId` method with the form id
+
+```typescript
+const form = await client.management.forms.byId('0134604b-f583-4ebc-a3b6-c26ce0f1a11b')
+```
+
+
 ## Posting a Form entry
 
 ### Posting a Form entry using the REST API
@@ -172,7 +205,7 @@ If you added validation on the email field to ensure that the entered value is i
 ### Posting a Form entry using the .NET Core Client Library
 
 Continuing on the previous .NET Core example we can also post entries to a form using the library.
-Given that the form contains a Name, Email and Data Content field we can save a form entry as follows:
+Given that the form contains a Name, Email and Data Content field we can submit a form entry as follows:
 
 ```csharp
 var entry = new Dictionary<string, object>
@@ -189,3 +222,19 @@ await managementService.Forms.SubmitEntry(new Guid("0134604b-f583-4ebc-a3b6-c26c
 Please note that if validation fails an exception is thrown. The validation configured for each of the fields is validated by Umbraco Forms on the server side.
 
 ### Posting a Form entry using the NodeJS Client Library
+
+Continuing on the previous NodeJS example we can also post entries to a form using the library.
+Given that the form contains a Name, Email and Data Content field we can submit a form entry as follows:
+
+```typescript
+const entry = {
+  "name": "Jonh Smith",
+  "email": "johnsmith@example.org",
+  "dataConsent": "on"
+}
+
+await client.management.forms.submitEntry('0134604b-f583-4ebc-a3b6-c26ce0f1a11b', entry)
+```
+
+Please note that if validation fails an error is thrown. The validation configured for each of the fields is validated by Umbraco Forms on the server side.
+
