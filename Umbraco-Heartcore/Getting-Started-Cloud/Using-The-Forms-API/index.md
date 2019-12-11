@@ -180,7 +180,7 @@ var entry = new Dictionary<string, object>
              };
 
 var managementService = new ContentManagementService("project-alias", "api-key-value");
-await managementService.FormService.SubmitEntry(new Guid("0134604b-f583-4ebc-a3b6-c26ce0f1a11b"), entry);
+await managementService.Forms.SubmitEntry(new Guid("0134604b-f583-4ebc-a3b6-c26ce0f1a11b"), entry);
 ```
 
 Please note that if validation fails an exception is thrown. The validation configured for each of the fields is validated by Umbraco Forms on the server side.
