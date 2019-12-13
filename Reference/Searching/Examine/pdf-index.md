@@ -17,7 +17,7 @@ You will then have a new Examine index called "PDFIndex" available.
 
 To use the multisearcher in Umbraco 8, you can instantiate it when needed like:
 
-```cs
+```csharp
 using(var multiSearcher = new MultiIndexSearcher("MultiSearcher", new IIndex[] {
     externalIndex,
     pdfIndex
@@ -29,7 +29,7 @@ using(var multiSearcher = new MultiIndexSearcher("MultiSearcher", new IIndex[] {
 
 Or you can register a multi index searcher with the ExamineManager on startup like:
 
-```cs
+```csharp
 using Examine;
 using Examine.LuceneEngine.Providers;
 using Umbraco.Core.Composing;
@@ -67,7 +67,7 @@ public class MyComponent : IComponent
 
 With this approach, the multisearcher will show up in the Examine dashboard and it can be resolved from the ExamineManager like:
 
-```cs
+```csharp
 if (_examineManager.TryGetSearcher("MultiSearcher", out var searcher))
 {
     //TODO: use the `searcher` to search

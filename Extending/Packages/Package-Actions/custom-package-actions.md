@@ -24,7 +24,7 @@ If the package files are deployed between environments then the package action w
 
 To create a custom package action you need to create a new class and implement the `IPackageAction` interface. The empty package action would then look like this:
 
-```cs
+```csharp
 using System.Xml.Linq;
 using Umbraco.Core.PackageActions;
 
@@ -69,7 +69,7 @@ However if you want it to be more configurable you can add extra parameters to i
 </actions>
 ```
 
-```cs
+```csharp
 using System.Xml.Linq;
 using Umbraco.Core.PackageActions;
 using Umbraco.Core.Composing;
