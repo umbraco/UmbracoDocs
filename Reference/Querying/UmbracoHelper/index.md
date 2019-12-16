@@ -278,7 +278,7 @@ Returns a dictionary value(`string`) for the key specified.
 <p>@Umbraco.GetDictionaryValue("createdOn"): @CurrentPage.CreateDate</p>
 ```
 
-Alternatively, you can also specify a `altText` which will be returned if the dictionary value is empty.
+Alternatively, you can also specify an `altText` which will be returned if the dictionary value is empty.
 
 ```html
 <p>@Umbraco.GetDictionaryValue("createdOn", "Date Created"): @CurrentPage.CreateDate</p>
