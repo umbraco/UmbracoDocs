@@ -168,18 +168,17 @@ const client = new Client({
 client.setAPIKey('api-key-value')
 ```
 
-To retrieve all forms we need to use the forms service on the management API as shown below
+To retrieve all forms we need to use the forms service on the management API as shown below.
 
 ```typescript
 const forms = await client.management.forms.all()
 ```
 
-To retrieve a single form by id you can use the `byId` method with the form id
+To retrieve a single form by ID you can use the `byId` method with the form ID.
 
 ```typescript
 const form = await client.management.forms.byId('0134604b-f583-4ebc-a3b6-c26ce0f1a11b')
 ```
-
 
 ## Posting a Form entry
 
