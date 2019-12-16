@@ -286,7 +286,7 @@ Alternatively, you can also specify a `altText` which will be returned if the di
 
 ### .GetPreValueAsString(int prevalueId)
 
-Returns a speific prevalue(`string`) based on its id.
+Returns a specific prevalue (`string`) based on its ID.
 
 ```html
 <p>@Umbraco.GetPreValueAsString(CurrentPage.DropDownProperty)</p>
