@@ -70,7 +70,7 @@ Queries the cache for content matching a given XPath query and returns the first
 ```csharp
 @{
     var newsArticle = Umbraco.ContentSingleAtXPath("//newsArticle");
-    var bodyText = newsArticle.GetPropertyValue("bodyText");
+    var bodyText = newsArticle.Value("bodyText");
 }
 ```
 
