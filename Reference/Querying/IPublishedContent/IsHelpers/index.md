@@ -37,7 +37,7 @@ Test whether the specified `templateId` is an allowed template for the current n
 
 ### IsAllowedTemplate(string templateAlias)
 
-Test whether the specified templateAlias is an allowed template for the current node 
+Test whether the specified `templateAlias` is an allowed template for the current node 
 
 ### .IsEqual(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 
