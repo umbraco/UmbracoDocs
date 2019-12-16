@@ -33,7 +33,7 @@ Given a node ID, returns a `IPublishedContent`
     var page = @Umbraco.Content(Guid.Parse("ca4249ed-2b23-4337-b522-63cabe5587d1"));
 }
 
-<h3>@page.Value<string>("propertyAlias") 
+<h3>@(page.Value<string>("propertyAlias"))
 </h3>
 
 @foreach (var child in page.Children) {
