@@ -45,61 +45,61 @@ IsHelpers can also return boolean values:
 
 ### .IsFirst([string valueIfTrue][,string valueIfFalse])
 
-Test if the current node is the first item in the collection
+Test if the current node is the first item in the collection.
 
 ### .IsNotFirst([string valueIfTrue][,string valueIfFalse])
 
-Test if the current node is not the first item in the collection
+Test if the current node is not the first item in the collection.
 
 ### .IsLast([string valueIfTrue][,string valueIfFalse])
 
-Test if the current node is the last item in the collection
+Test if the current node is the last item in the collection.
 
 ### .IsNotLast([string valueIfTrue][,string valueIfFalse])
 
-Test if the current node is not the last item in the collection
+Test if the current node is not the last item in the collection.
 
 ### .IsPosition(int index[,string valueIfTrue][,string valueIfFalse])
 
-Test if the current node is at the specified index (zero-based) in the collection
+Test if the current node is at the specified index (zero-based) in the collection.
 
 ### .IsNotPosition(int index[,string valueIfTrue][,string valueIfFalse])
 
-Test if the current node is not at the specified index (zero-based) in the collection
+Test if the current node is not at the specified index (zero-based) in the collection.
 
 ### .IsModZero(int modulus[,string valueIfTrue][,string valueIfFalse])
 
-Test if the current node's position is evenly divisible by a given number
+Test if the current node's position is evenly divisible by a given number.
 
 ### .IsNotModZero(int modulus[,string valueIfTrue][,string valueIfFalse])
 
-Test if the current node's position is not evenly divisible by a given number
+Test if the current node's position is not evenly divisible by a given number.
 
 
 ### .IsEven([string valueIfTrue][,string valueIfFalse])
 
-Test if the current node's position is even
+Test if the current node's position is even.
 
 ### .IsOdd([string valueIfTrue][,string valueIfFalse])
 
-Test if the current node's position is odd
+Test if the current node's position is odd.
 
 ### .IsEqual(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 
-Test if the current node is equal (by Id) to another node
+Test if the current node is equal (by Id) to another node.
 
 ### .IsDescendant(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 
-Test if the current node is a descendant of another node
+Test if the current node is a descendant of another node.
 
 ### .IsDescendantOrSelf(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 
-Test if the current node is the same as or a descendant of another node
+Test if the current node is the same as or a descendant of another node.
 
 ### .IsAncestor(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 
-Test if the current node is an ancestor of another node
+Test if the current node is an ancestor of another node.
 
 ### .IsAncestorOrSelf(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 
-Test if the current node is the same as or an ancestor of another node
+Test if the current node is the same as or an ancestor of another node.

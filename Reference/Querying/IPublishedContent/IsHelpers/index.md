@@ -29,36 +29,36 @@ if(item.IsVisible())
 
 ### IsComposedOf(string alias)
 
-Test whether the content is of a content type composed of the given alias
+Test whether the content is of a content type composed of the given alias.
 
 ### IsAllowedTemplate(int templateId)
 
-Test whether the specified `templateId` is an allowed template for the current node 
+Test whether the specified `templateId` is an allowed template for the current node.
 
 ### IsAllowedTemplate(string templateAlias)
 
-Test whether the specified `templateAlias` is an allowed template for the current node 
+Test whether the specified `templateAlias` is an allowed template for the current node.
 
 ### .IsEqual(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 
-Test if the current node is equal (by Id) to another node
+Test if the current node is equal (by Id) to another node.
 
 ### .IsNotEqual(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 
-Test if the current node is not equal (by Id) to another node
+Test if the current node is not equal (by Id) to another node.
 
 ### .IsDescendant(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 
-Test if the current node is a descendant of another node
+Test if the current node is a descendant of another node.
 
 ### .IsDescendantOrSelf(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 
-Test if the current node is the same as or a descendant of another node
+Test if the current node is the same as or a descendant of another node.
 
 ### .IsAncestor(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 
-Test if the current node is an ancestor of another node
+Test if the current node is an ancestor of another node.
 
 ### .IsAncestorOrSelf(IPublishedContent otherNode[,string valueIfTrue][,string valueIfFalse])
 
-Test if the current node is the same as or an ancestor of another node
+Test if the current node is the same as or an ancestor of another node.
