@@ -26,7 +26,7 @@ The samples below demonstrate using `UmbracoHelper` in Razor. Aside from the `@`
 
 ### .Content(Guid id)
 
-Given a node ID , returns a `IPublishedContent`
+Given a node ID, returns a `IPublishedContent`
 
 ```csharp
 @{
