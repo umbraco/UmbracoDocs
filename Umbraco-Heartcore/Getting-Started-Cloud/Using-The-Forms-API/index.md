@@ -186,10 +186,10 @@ const form = await client.management.forms.byId('0134604b-f583-4ebc-a3b6-c26ce0f
 
 When a form is filled out we need to post the entered values to the `entries` endpoint of the Forms API.
 
-In order to submit the entered values you send a POST request to `https://api.umbraco.io/forms/{id:guid}/entries` where the id represents the specific form to post the entry to.
+In order to submit the entered values you send a POST request to `https://api.umbraco.io/forms/{id:guid}/entries` where the ID represents the specific form to post the entry to.
 
 Required headers include `umb-project-alias` and `Api-Key` or a Bearer Token via an Authorization header.
-The payload is a simple key value object with the alias of the fields and the values entered in the form.
+The payload is a key value object with the alias of the fields and the values entered in the form.
 
 Below is an example of the payload body when sending an entry back to the form retrieved in the previous section.
 
@@ -208,6 +208,7 @@ If you added validation on the email field to ensure that the entered value is i
 ### Posting a Form entry using the .NET Core Client Library
 
 Continuing on the previous .NET Core example we can also post entries to a form using the library.
+
 Given that the form contains a Name, Email and Data Content field we can submit a form entry as follows:
 
 ```csharp
@@ -227,6 +228,7 @@ Please note that if validation fails an exception is thrown. The validation conf
 ### Posting a Form entry using the NodeJS Client Library
 
 Continuing on the previous NodeJS example we can also post entries to a form using the library.
+
 Given that the form contains a Name, Email and Data Content field we can submit a form entry as follows:
 
 ```typescript
