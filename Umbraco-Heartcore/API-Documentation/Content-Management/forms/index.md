@@ -5,7 +5,7 @@
 **API version**: 2.1
 
 :::note
-The availability of Umbraco Forms depend on the plan, see the [Pricing & Features](https://umbraco.com/umbraco-heartcore-pricing/) for an overview of which plans includes Forms.
+The availability of Umbraco Forms depend on the plan. See the [Pricing & Features](https://umbraco.com/umbraco-heartcore-pricing/) for an overview of which plans includes Forms.
 :::
 
 ## Table of Contents

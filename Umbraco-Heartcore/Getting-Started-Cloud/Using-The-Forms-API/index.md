@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 In this article you can learn more about how to use the Forms API for retrieving form definitions and submitting form entries.
 
-We recommend that you have a look at the Forms API reference docs along side this article if you haven't already seen it. The API reference has useful content around field types and possible errors.
+We recommend that you have a look at the [Forms API reference documentation](../../API-Documentation/Content-Management/forms) along side this article if you haven't already seen it. The API reference has useful content around field types and possible errors.
 
 Using the Forms API requires the use of a Bearer Token or an API-Key. A bearer token makes sense when working server side or in some kind of middleware whereas on the client side an API-Key might be a better fit.
 When using an API-Key on the client side we recommend that you create a "Forms-only" usergroup, so you don't expose any Content Management capabilities on the client side where not intentional.
