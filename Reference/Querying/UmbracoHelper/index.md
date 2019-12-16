@@ -281,7 +281,7 @@ Returns a dictionary value(`string`) for the key specified.
 Alternatively, you can also specify an `altText` which will be returned if the dictionary value is empty.
 
 ```html
-<p>@Umbraco.GetDictionaryValue("createdOn", "Date Created"): @CurrentPage.CreateDate</p>
+<p>@Umbraco.GetDictionaryValue("createdOn", "Date Created"): @Model.CreateDate</p>
 ```
 
 ### .GetPreValueAsString(int prevalueId)
