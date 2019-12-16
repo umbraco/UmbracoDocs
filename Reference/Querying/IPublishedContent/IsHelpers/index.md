@@ -33,7 +33,7 @@ Test whether the content is of a content type composed of the given alias
 
 ### IsAllowedTemplate(int templateId)
 
-Test whether the specified templateId is an allowed template for the current node 
+Test whether the specified `templateId` is an allowed template for the current node 
 
 ### IsAllowedTemplate(string templateAlias)
 
