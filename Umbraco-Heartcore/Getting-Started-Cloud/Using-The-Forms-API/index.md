@@ -30,14 +30,15 @@ Before you continue with the rest of this article we recommend that you have at 
 ### Retrieving a Form using the REST API
 
 The API for Forms lives under the Content Management API, so a Bearer token or an API-Key is required to call all the Forms related endpoints.
-For this example we will call `https://api.umbraco.io/forms` which lists all available forms. From here you can find a specific form to retrieve in order to get the definition for that form - this is useful when you want to expose a specific form in a specific part of your presentation layer.
+
+For this example we will call `https://api.umbraco.io/forms` which lists all available forms. From here you can find a specific form to retrieve in order to get the definition for that form. This is useful when you want to expose a specific form in a specific part of your presentation layer.
 
 Getting a specific form is done by issuing a GET request to
 `https://api.umbraco.io/forms/{id:guid}`
 
 Required headers include `umb-project-alias` and `Api-Key` or a Bearer Token via an Authorization header.
 
-The Json output for one specific form would look something like this:
+The JSON output for one specific form would look something like this:
 
 ```json
 {
@@ -119,7 +120,7 @@ The Json output for one specific form would look something like this:
 }
 ```
 
-Notice that the layout of properties correspond to the Forms builder in the backoffice. The various properties avaiable for the form itself and for each of the fields is something you can use to build up the look and feel of the form in your presentation layer.
+Notice that the layout of properties correspond to the Forms builder in the backoffice. The various properties available for the form itself and for each of the fields is something you can use to build up the look and feel of the form in your presentation layer.
 
 ### Retrieving a Form using the .NET Core Client Library
 
@@ -131,7 +132,7 @@ First step is to install it through NuGet:
 > Install-Package Umbraco.Headless.Client.Net
 ```
 
-When using the library you need the Content Management part in order to work with Forms. New up the `ContentManagementService` and pass in the name of your Umbraco Heartcore project and either Username + Password of a backoffice user or an API-Key. In the example below we use an API-Key when retriving all available form definitions:
+When using the library you need the Content Management part in order to work with Forms. New up the `ContentManagementService` and pass in the name of your Umbraco Heartcore project and either username + password of a backoffice user or an API-Key. In the example below we use an API-Key when retriving all available form definitions:
 
 ```csharp
 var managementService = new ContentManagementService("project-alias", "api-key-value");
