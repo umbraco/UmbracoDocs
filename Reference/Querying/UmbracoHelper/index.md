@@ -275,7 +275,7 @@ Returns a `Boolean` on whether a page with a given [Umbraco path](../IPublishedC
 Returns a dictionary value(`string`) for the key specified.
 
 ```html
-<p>@Umbraco.GetDictionaryValue("createdOn"): @CurrentPage.CreateDate</p>
+<p>@Umbraco.GetDictionaryValue("createdOn"): @Model.CreateDate</p>
 ```
 
 Alternatively, you can also specify an `altText` which will be returned if the dictionary value is empty.
