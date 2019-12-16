@@ -124,7 +124,7 @@ Notice that the layout of properties correspond to the Forms builder in the back
 
 ### Retrieving a Form using the .NET Core Client Library
 
-If you are a C# developer and work with .NET you can use the .NET Core Client Library in your own codebase to retrieve form definitions.
+If you are a C# developer and work with .NET you can use the [.NET Core Client Library](../../Client-libraries/Dot-Net-Core) in your own codebase to retrieve form definitions.
 
 First step is to install it through NuGet:
 
@@ -148,7 +148,7 @@ var contactForm = await managementService.Forms.GetById(new Guid("0134604b-f583-
 
 ### Retrieving a Form using the NodeJS Client Library
 
-If you are a javascript developer and work with NodeJS you can use the NodeJS Client Library in your own codebase to retrieve form definitions.
+If you are a javascript developer and work with NodeJS you can use the [NodeJS Client Library](../../Client-Libraries/Node-JS) in your own codebase to retrieve form definitions.
 
 First step is to install it through npm:
 
