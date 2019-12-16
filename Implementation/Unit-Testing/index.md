@@ -19,7 +19,7 @@ public abstract class UmbracoBaseTest
 
     public Mock<ICultureDictionary> CultureDictionary;
     public Mock<ICultureDictionaryFactory> CultureDictionaryFactory;
-    public Mock<IPublishedContentQuery> PublichedContentQuery;
+    public Mock<IPublishedContentQuery> PublishedContentQuery;
 
     [SetUp]
     public virtual void SetUp()
@@ -31,7 +31,7 @@ public abstract class UmbracoBaseTest
         this.MembershipHelper = new MembershipHelper(Mock.Of<HttpContextBase>(), Mock.Of<IPublishedMemberCache>(), Mock.Of<MembershipProvider>(), 
         Mock.Of<RoleProvider>(), Mock.Of<IMemberService>(), Mock.Of<IMemberTypeService>(), Mock.Of<IUserService>(), Mock.Of<IPublicAccessService>(), AppCaches.NoCache, Mock.Of<ILogger>());
         this.UmbracoHelper = new UmbracoHelper(Mock.Of<IPublishedContent>(), Mock.Of<ITagQuery>(), this.CultureDictionaryFactory.Object, 
-        Mock.Of<IUmbracoComponentRenderer>(), this.PublichedContentQuery.Object, this.MembershipHelper);
+        Mock.Of<IUmbracoComponentRenderer>(), this.PublishedContentQuery.Object, this.MembershipHelper);
     }
 
     public virtual void SetupCultureDictionaries()
@@ -43,7 +43,7 @@ public abstract class UmbracoBaseTest
 
     public virtual void SetupPublishedContentQuerying()
     {
-        this.PublichedContentQuery = new Mock<IPublishedContentQuery>();
+        this.PublishedContentQuery = new Mock<IPublishedContentQuery>();
     }
 
     public void SetupPropertyValue(Mock<IPublishedContent> publishedContentMock, string alias, object value, string culture = null, string segment = null)
@@ -289,7 +289,7 @@ public class MyCustomControllerTests : UmbracoBaseTest
     {
         var currentContent = new ContentModel(new Mock<IPublishedContent>().Object);
         var otherContent = Mock.Of<IPublishedContent>();
-        base.PublichedContentQuery.Setup(x => x.Content(1062)).Returns(otherContent);
+        base.PublishedContentQuery.Setup(x => x.Content(1062)).Returns(otherContent);
 
         var result = (MyOtherCustomModel)((ViewResult)this.controller.Index(currentContent)).Model;
 
