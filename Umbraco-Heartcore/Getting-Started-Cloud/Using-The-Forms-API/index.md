@@ -9,18 +9,21 @@ In this article you can learn more about how to use the Forms API for retrieving
 We recommend that you have a look at the [Forms API reference documentation](../../API-Documentation/Content-Management/forms) along side this article if you haven't already seen it. The API reference has useful content around field types and possible errors.
 
 Using the Forms API requires the use of a Bearer Token or an API-Key. A bearer token makes sense when working server side or in some kind of middleware whereas on the client side an API-Key might be a better fit.
-When using an API-Key on the client side we recommend that you create a "Forms-only" usergroup, so you don't expose any Content Management capabilities on the client side where not intentional.
+When using an API-Key on the client side we recommend that you create a "Forms-only" usergroup, so you do not expose any Content Management capabilities on the client side where not intentional.
 
 :::note
-The availability of Umbraco Forms depends on the plan, see the [Pricing & Features](https://umbraco.com/umbraco-heartcore-pricing/) for an overview of which plans includes Forms.
+The availability of Umbraco Forms depends on the plan. See the [Pricing & Features](https://umbraco.com/umbraco-heartcore-pricing/) for an overview of which plans includes Forms.
 :::
 
 ## Usage
 
-In the Forms section of the Umbraco backoffice is where you will find the Forms Builder, which allows you to create forms by adding Fields, Placeholder texts, Validation and Conditions.
-The purpose of this article is not to describe the Forms functionality itself, but to show how to use the APIs which are available for Umbraco Heartcore projects. If you want to learn the basics of 'Creating a form' before going further we recommend that you start with the [Umbraco Forms documentation section](https://our.umbraco.com/documentation/Add-ons/UmbracoForms/Editor/Creating-a-Form/).
+In the Forms section of the Umbraco backoffice you will find the Forms Builder, which allows you to create forms by adding Fields, Placeholder texts, Validation and Conditions.
 
-Before you continue with the rest of this article we recommend that you have at least one Form available that can be used for examples below. Here we will use a Forms with a Name field, an Email field and of course the Data Consent field, which is standard for all new Forms.
+The purpose of this article is not to describe the Forms functionality itself, but to show how to use the APIs which are available for Umbraco Heartcore projects. 
+
+If you want to learn the basics of 'Creating a form' before going further we recommend that you start with the [Umbraco Forms documentation section](/Add-ons/UmbracoForms/Editor/Creating-a-Form/).
+
+Before you continue with the rest of this article we recommend that you have at least one Form available that can be used for examples below. Here we will use a form with a Name field, an Email field and the Data Consent field, which is standard for all new Forms.
 
 ## Retrieving a Form
 
