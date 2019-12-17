@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
 ---
 
 # Understand and Extend
@@ -101,13 +101,15 @@ public partial class TextPage
 }
 ```
 
-In PureLive mode where models are built within the site any `*.cs` file in the `~/App_Data/Models` directory that is _not_ a `*.generated.cs` file, is preserved and compiled alongside the models. If models are built outside the site, e.g. in Visual Studio,  remember to include the files in the compilation.
+In modes where models are built within the site (Dll, PureLive) any `*.cs` file in the `~/App_Data/Models` directory that is _not_ a `*.generated.cs` file, is preserved and compiled alongside the models. If models are built outside the site, e.g. in Visual Studio,  remember to include the files in the compilation.
 
 If the custom partial class provides a **constructor** that has the same signature as the generated one, it will be detected and no constructor will be generated (as that would be redundant and would not compile).
 
 If the custom partial class **inherits** from a base class, it will be detected and the generated model will _not_ inherit from anything (as that would be redundant and would not compile). The base class _must_ inherit (directly or indirectly) from `PublishedContentModel` in order for the model to be valid, though.
 
 If the custom partial class **implements** a generated property, it will _not_ be detected and will cause a compilation error. Models Builder needs to be explicitly notified about the situation: See [Control Models Generation](Control-Generation.md).
+
+If the custom partial class **implements** a static mixin getter (see above), it will be detected and the generated model will _not_ implement the getter (as that would be redundant and would not compile).
 
 ### Best Practices
 
@@ -168,7 +170,7 @@ One can also extend Umbraco's views to provide a special view helper that would 
 
 #### Ugly
 
-The scope and life-cycle of a model is _not specified_. In other words, you don't know whether the model exists only for you and for the context of the current request, or if it is cached by Umbraco and shared by all requests.
+The scope and life-cycle of a model is _not specified_. In other words, you don't know whether the model exists only for you and for the context of the current request, or if it is cached by Umbraco and shared by all requests. Even though _as of version 7.4_ Umbraco creates distinct models for each request, this will not always be true.
 
 As a consequence, the following code has a major issue: the `TextPage` model "caches" an instance of the `HomePageDocument` model that will never be updated if the home page is re-published.
 
