@@ -12,7 +12,7 @@ The Models builder is a tool that can generate a complete set of strongly-typed 
 * [Understand And Extend Models](Understand-And-Extend-v7.md)
 * [Control Models Generation](Control-Generation-v7.md)
 * [IPublishedContentModelFactory](IPublishedContentModelFactory-v7.md)
-* [Using Interfaces](Using-Interfaces.md)
+* [Using Interfaces](Using-Interfaces-v7.md)
 * [Cool things to do with models](CoolThingsWithModels.md)
 
 :::tip
