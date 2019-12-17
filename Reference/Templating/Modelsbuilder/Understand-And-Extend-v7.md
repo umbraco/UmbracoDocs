@@ -107,7 +107,7 @@ If the custom partial class provides a **constructor** that has the same signatu
 
 If the custom partial class **inherits** from a base class, it will be detected and the generated model will _not_ inherit from anything (as that would be redundant and would not compile). The base class _must_ inherit (directly or indirectly) from `PublishedContentModel` in order for the model to be valid, though.
 
-If the custom partial class **implements** a generated property, it will _not_ be detected and will cause a compilation error. Models Builder needs to be explicitly notified about the situation: See [Control Models Generation](Control-Generation.md).
+If the custom partial class **implements** a generated property, it will _not_ be detected and will cause a compilation error. Models Builder needs to be explicitly notified about the situation: See [Control Models Generation](Control-Generation-v7.md).
 
 If the custom partial class **implements** a static mixin getter (see above), it will be detected and the generated model will _not_ implement the getter (as that would be redundant and would not compile).
 
