@@ -12,7 +12,7 @@
 * [Get By Type](#get-by-type)
 * [Get Ancestors](#get-ancestors)
 * [Get Descendants](#get-descendants)
-* [Content Filter](#filter)
+* [Content Filter](#content-filter)
 * [Search](#search)
 
 ## Common Headers
@@ -1379,7 +1379,7 @@ Please note that filtering is done on individual content items meaning that cont
 ?pageSize={integer=10}
 ```
 
-## Headers
+### Headers
 
 This endpoint is available from **API-Version: 2.1**. Specify the header as shown below when using the REST API.
 
