@@ -111,4 +111,4 @@ Properties created on your document types can be accessed with this syntax:
 
 When Models Builder resolve your properties it will also try to use value converters to convert the values of your data into more convenient models. This allows you to access nested objects as strong types instead of having to rely on dynamics and risking having a lot of potential errors when working with these.
 
-[Models Builder documentation](../ModelsbuilderV8/)
+[Models Builder documentation](../Modelsbuilder/)
