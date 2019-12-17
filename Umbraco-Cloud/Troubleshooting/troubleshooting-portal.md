@@ -30,7 +30,7 @@ If your issue is not covered above here are some general guidelines on what you 
 
 The reason an environment is in an error state is that the Umbraco Deploy engine sets markers on the environment, the green one sets a `deploy` marker, the yellow one a `deploy-progress` marker and the red one a `deploy-failed` marker.
 
-Sometimes a deployment will fail due to another deployment in progress. This means that you'll need to wait bit before you can kick in another deployment. Doing this, the deployment will go from failed to complete without needing to do anything extra - read more about [manual data extractions](../Set-Up/Power-Tools/Manual-extractions).
+Sometimes a deployment will fail due to another deployment in progress. This means that you'll need to wait a bit before you can kick in another deployment. Doing this, the deployment will go from failed to complete without needing to do anything extra - read more about [manual data extractions](../Set-Up/Power-Tools/Manual-extractions).
 
 Often the deployment fails because of an error that won't be fixed by re-deploying. In these cases you will need to have a look at the log files.
 

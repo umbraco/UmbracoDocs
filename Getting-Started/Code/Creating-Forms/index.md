@@ -24,7 +24,8 @@ using System.Web;
 
 namespace MyFirstForm.Models
 {
-    public class ContactFormViewModel {
+    public class ContactFormViewModel 
+    {
         public string Name { get; set; }
         public string Email { get; set; }
         public string Message { get; set; }
@@ -44,7 +45,8 @@ The view can be built with standard MVC helpers:
 ```csharp
 @model MyFirstForm.Models.ContactFormViewModel
 
-@using(Html.BeginUmbracoForm("Submit", "ContactForm")) {
+@using(Html.BeginUmbracoForm("Submit", "ContactForm")) 
+{
     <div>
         @Html.TextBoxFor(m=>m.Name)
     </div>

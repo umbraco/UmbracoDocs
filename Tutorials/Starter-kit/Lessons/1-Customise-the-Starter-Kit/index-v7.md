@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+versionRemoved: 8.0.0
 ---
 
 # Customise the Starter Kit
@@ -13,6 +14,7 @@ A customised version of the site with your own Home page image, site name, color
 ## Takeaway
 
 Learn how to:
+
 * Navigate the editing area in the Content section.
 * Interact with content properties.
 * Upload images and use them with content items.

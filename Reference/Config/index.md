@@ -36,7 +36,7 @@ The 'ExamineIndex.config' file contains the configuration for the Examine IndexS
 
 This file can be found at the following path: /config/ExamineIndex.config
 
-### [ExamineSettings.config](ExamineIndex/index.md)
+### [ExamineSettings.config](ExamineSettings)
 The 'ExamineIndex.config' file contains the configuration for the Examine IndexSets used for storing indexed content in an Umbraco installation.
 
 This file can be found at the following path: /config/ExamineSettings.config

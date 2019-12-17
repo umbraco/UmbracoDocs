@@ -18,7 +18,7 @@ Some potential solutions:
 
 For now, let's create a content-only contact page - a page where the user can provide a title and some rich text. This is very similar to our homepage document type at the moment but we're assuming that you'll go and develop this into something very specific (e.g. adding the featured article and other article content blocks).
 
-
+<!-- vale valeStyle.Hyperbolic = NO -->
 Go to **_Settings > Document Types_** (hover) **_> ... > + Create_ > Document Type** .  Let's create one called "_Simple Content Page_".
 
 Firstly let's select an **_Icon_** - type the word "_Content_" into the filter and select the document icon. In description type "A simple content page".  Click **_Save_**.
