@@ -1381,6 +1381,8 @@ Please note that filtering is done on individual content items meaning that cont
 
 ## Headers
 
+This endpoint is available from **API-Version: 2.1**. Specify the header as shown below when using the REST API.
+
 ```http
 Api-Version: 2.1
 Umb-Project-Alias: {project-alias}
