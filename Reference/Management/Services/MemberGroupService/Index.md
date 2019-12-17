@@ -40,20 +40,3 @@ Getting the service through the `ApplicationContext`:
 ```csharp
 ApplicationContext.Current.Services.MemberGroupService
 ```
-
-## Methods
-
-### .Delete(IMemberGroup)
-Deletes a given `MemberGroup`
-
-### .GetAll();
-Returns a `MemberGroup` collection
-
-### .GetById(int id);
-Returns a `MemberGroup` with a given Id
-
-### .GetByName(string name);
-Returns a `MemberGroup` with a given name
-
-### .Save(IMemberGroup group)
-Saves a `MemberGroup`
