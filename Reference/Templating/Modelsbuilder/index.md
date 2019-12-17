@@ -11,7 +11,7 @@ Since version 8.4, Umbraco has shipped with an embedded slimmed down version of 
 :::
 
 * [Introduction](introduction.md)
-* [Configuration](Configuration.md)
+* [Configuration](configuration.md)
 * [Builder Modes](Builder-Modes.md)
 * [Understand And Extend Models](Understand-And-Extend.md)
 * [Using Interfaces](Using-Interfaces.md)
