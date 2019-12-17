@@ -1,20 +1,22 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.0
 ---
 
 # Umbraco Models Builder
 
-A tool that can generate a complete set of strongly-typed published content models for Umbraco. Models are available in controllers, views, anywhere. Runs either from the Umbraco UI, from the command line, or from Visual Studio.
+The Models builder is a tool that can generate a complete set of strongly-typed published content models for Umbraco. Models are available in both controllers and views.
+
+:::note
+Since version 8.4, Umbraco has shipped with an embedded slimmed down version of the ModelsBuilder. The embedded version can be replaced with the full version by adding the full version using NuGet.
+:::
 
 * [Introduction](Introduction.md)
-* [Install And Configure](Install-And-Configure.md)
+* [Configuration](Configuration.md)
 * [Builder Modes](Builder-Modes.md)
 * [Understand And Extend Models](Understand-And-Extend.md)
-* [Control Models Generation](Control-Generation.md)
-* [IPublishedContentModelFactory](IPublishedContentModelFactory.md)
 * [Using Interfaces](Using-Interfaces.md)
 * [Cool things to do with models](CoolThingsWithModels.md)
 
-:::note
-Umbraco Models Builder is an open-source project that can be forked on GitHub and gladly accepts pull requests. Don't hesitate to contribute [here](https://github.com/zpqrtbnk/Zbu.ModelsBuilder)!
+:::tip
+The full version of Umbraco Models Builder is an open-source project that can be forked on GitHub and gladly accepts pull requests. Don't hesitate to contribute through the [ModelsBuilder GitHub repository](https://github.com/zpqrtbnk/Zbu.ModelsBuilder).
 :::
