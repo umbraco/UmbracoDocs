@@ -10,7 +10,7 @@ The Models builder is a tool that can generate a complete set of strongly-typed 
 Since version 8.4, Umbraco has shipped with an embedded slimmed down version of the ModelsBuilder. The embedded version can be replaced with the full version by adding the full version using NuGet.
 :::
 
-* [Introduction](Introduction.md)
+* [Introduction](introduction.md)
 * [Configuration](Configuration.md)
 * [Builder Modes](Builder-Modes.md)
 * [Understand And Extend Models](Understand-And-Extend.md)
