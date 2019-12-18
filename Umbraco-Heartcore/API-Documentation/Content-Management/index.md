@@ -48,4 +48,8 @@ Relation endpoints for retrieving, creating and deleting.
 
 ## [Relation Type endpoints](relation/type/)
 
-Relation Type endpoint for retrieving specific relation types.
+Relation Type endpoints for retrieving specific relation types.
+
+## [Umbraco Forms endpoints](forms/)
+
+Umbraco Forms endpoints for retrieving and submitting forms.

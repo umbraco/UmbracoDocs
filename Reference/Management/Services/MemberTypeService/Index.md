@@ -40,17 +40,3 @@ Getting the service through the `ApplicationContext`:
 ```csharp
 ApplicationContext.Current.Services.MemberTypeService
 ```
-
-## Methods
-
-### .Delete(IMemberType memberType);
-Deletes a `MemberType`
-
-### .Get(string alias)
-Returns a `MemberType` with a given alias
-
-### .GetAll(int[] ids);
-Returns a collection of `MemberType` with the given ids
-
-### .Save(IMemberType memberType)
-Saves a `MemberType`

@@ -118,8 +118,8 @@ This is a great candidate for a [Razor Helper](https://weblogs.asp.net/scottgu/a
 ```csharp
 @helper RenderSiteMapUrlEntry(IPublishedContent node)
 {
-    var changeFreq = node.HasValue("searchEngineChangeFrequency", "true") ? node.Value("searchEngineChangeFrequency") : "monthly";
-    // with the relative priority, this is a per page setting only, so we're not using recursion, so we won't pass 'true' here and we'll default to 0.5 if no value is set
+    var changeFreq = node.HasValue("searchEngineChangeFrequency", fallback: Fallback.ToAncestors) ? node.Value("searchEngineChangeFrequency", fallback: Fallback.ToAncestors) : "monthly";
+    // with the relative priority, this is a per page setting only, so we're not using recursion, so we won't set Fallback.ToAncestors here and we'll default to 0.5 if no value is set
     var priority = node.HasValue("searchEngineRelativePriority") ? node.Value<string>("searchEngineRelativePriority") : "0.5";
     
     <url>
@@ -304,7 +304,7 @@ Our Xml Sitemap includes an entry for itself on the XML Sitemap, I thought we ha
 
 ```csharp
 string blacklistedDocumentTypeList = Model.Value<string>("blacklistedDocumentTypes");
-string[] blackListedDocumentTypes = (!String.IsNullOrEmpty(blacklistedDocumentTypeList)) ? blacklistedDocumentTypeList.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries) : new string[] { };
+string[] blackListedDocumentTypes = (!String.IsNullOrEmpty(blacklistedDocumentTypeList)) ? blacklistedDocumentTypeList.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(p => p.Trim()).ToArray() : new string[] { };
 ```
 
 now we can pass this value into our helper
@@ -330,18 +330,17 @@ now we can pass this value into our helper
 @{
 Layout = null; 
 Response.ContentType = "text/xml"; 
-IPublishedContent siteHomePage = Model.Root();
+var siteHomePage = Model.Root();
 var maxSiteMapDepth = Model.HasValue("maxSiteMapDepth") ? Model.Value<int>("maxSiteMapDepth") : int.MaxValue; 
-IEnumerable<IPublishedContent> sitePages = siteHomePage.Children();
-string blacklistedDocumentTypeList = Model.Value<string>("blacklistedDocumentTypes");
-string[] blackListedDocumentTypes = (!String.IsNullOrEmpty(blacklistedDocumentTypeList)) ? blacklistedDocumentTypeList.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries) : new string[] { };
+var blacklistedDocumentTypeList = Model.Value<string>("blacklistedDocumentTypes");
+var blackListedDocumentTypes = (!String.IsNullOrEmpty(blacklistedDocumentTypeList)) ? blacklistedDocumentTypeList.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(p => p.Trim()).ToArray() : new string[] { };
 }
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">@RenderSiteMapUrlEntry(siteHomePage)@RenderSiteMapUrlEntriesForChildren(siteHomePage, maxSiteMapDepth,blackListedDocumentTypes)</urlset>
 
 @helper RenderSiteMapUrlEntry(IPublishedContent node)
 {
-    var changeFreq = node.HasValue("searchEngineChangeFrequency", "true") ? node.Value("searchEngineChangeFrequency") : "monthly";
-    // with the relative priority, this is a per page setting only, so we're not using recursion, so we won't pass 'true' here and we'll default to 0.5 if no value is set
+    var changeFreq = node.HasValue("searchEngineChangeFrequency", fallback: Fallback.ToAncestors) ? node.Value("searchEngineChangeFrequency", fallback: Fallback.ToAncestors) : "monthly";
+    // with the relative priority, this is a per page setting only, so we're not using recursion, so we won't fallback to ancestors here and we'll default to 0.5 if no value is set
     var priority = node.HasValue("searchEngineRelativePriority") ? node.Value<string>("searchEngineRelativePriority") : "0.5";
     
     <url>
