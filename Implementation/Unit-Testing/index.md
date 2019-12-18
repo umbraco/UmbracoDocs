@@ -207,6 +207,10 @@ public class MySurfaceControllerTests : UmbracoBaseTest
 
 See [Reference documentation on UmbracoApiControllers](https://our.umbraco.com/documentation/Reference/Routing/WebApi/#locally-declared-controller).
 
+:::warning
+This requires **Umbraco version 8.4 or higher**, due to a resolved [issue](https://github.com/umbraco/Umbraco-CMS/pull/6764).
+:::
+
 ```csharp
 
 public class ProductsController : UmbracoApiController
@@ -243,9 +247,6 @@ public class ProductsControllerTests : UmbracoBaseTest
 }
 
 ```
-:::warning
-The above UmbracoApiController test requires **Umbraco version 8.4 or higher**, due to a resolved [issue](https://github.com/umbraco/Umbraco-CMS/pull/6764).
-:::
 
 ## Testing ICultureDictionary using the UmbracoHelper
 See [Core documentation on the interface ICultureDictionary](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Dictionary.ICultureDictionary.html).
