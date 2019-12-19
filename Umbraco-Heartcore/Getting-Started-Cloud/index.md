@@ -20,9 +20,9 @@ Depending on the plan your Heartcore project is on, you might be able to setup a
 
 Having multiple environments can be a great help when you want to test your content structure before your content editors get to work.
 
-### [Deployment workflow](Environments/Deployment-workflow)
+## [Deployment workflow](Deployment-workflow)
 
-When you have multiple environments on your Heartcore project you need to make sure that you follow the correct deployment workflow. In this section you will find more details about the workflow along with a thorough description of how it works.
+When you have multiple environments on your Heartcore project you need to make sure that you follow the correct deployment workflow. In this section you will find more details about the workflow along with descriptions of the two steps: [Structure deployments](Deployment-workflow/Structure-deployment) and [Content and media transfers](Deployment-workflow/Content-transfer).
 
 ## [The Umbraco Backoffice](The-Umbraco-Backoffice)
 
@@ -37,3 +37,5 @@ In the backoffice of your Umbraco Heartcore project you will find an API Browser
 Want to know more about the API keys and how to add them to your users in Umbraco Heartcore backoffice? Look no further. In this article you can read about it.
 
 ## [Webhooks](Webhooks)
+
+Learn more about how to setup webhooks for various actions in the Umbraco backoffice.

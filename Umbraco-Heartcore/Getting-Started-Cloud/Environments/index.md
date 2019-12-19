@@ -38,6 +38,4 @@ Below is an screenshot of how that overlay looks on the Professional plan when o
 
 ![Manage environments overlay](images/manage-environments.png)
 
-## [Deployment workflow](Deployment-workflow)
-
-## Common issues
+## [Deployment workflow](../Deployment-workflow)
