@@ -25,7 +25,7 @@ An action is defined by the following properties:
 }
 ```
 
-We use `labelKey` and `labelTokens` to retrieve a localized string that's begin displayed as the Actions label. [See localization for more info.](../../Extending/Language-Files/)
+We use `labelKey` and `labelTokens` to retrieve a localized string that is displayed as the Actions label. [See localization for more info.](../../Extending/Language-Files/)
 `isDisabled` is used to disable an Action, which change the visual appearance and prevents interaction. Use this option when an action gives no impact. In the example above, it does not make sense to remove all entries if there are no entries.
 
 ## Getting ready for Property Actions
