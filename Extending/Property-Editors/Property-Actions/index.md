@@ -48,7 +48,7 @@ angular.module('umbraco').component('myPropertyEditor', {
 ## Implementing a Property Action
 The implementation of Property Actions consists of two parts. First a definition of the actions and secondly parsing the lists of actions to `umbProperty.setPropertyActions`.
 
-```json
+```js
 var myAction = {
     labelKey: 'general_labelForMyAction',
     labelTokens: [],
