@@ -24,7 +24,7 @@ Reference for the package.manifest JSON file format to register one or more prop
 
 Convert the stored property data value to a useful object returned by the Published Content APIs.
 
-## [Property Actions](Property-actions)
+## [Property Actions](Property-Actions/)
 
 **Requires Umbraco 8.4+**. Use Property Actions to add additional functionaility to your custom property editors.
 
