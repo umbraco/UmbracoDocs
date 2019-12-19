@@ -30,7 +30,7 @@ We use `labelKey` and `labelTokens` to retrieve a localized string that is displ
 
 ## Getting ready for Property Actions
 A Property Editor needs to be implemented as a Component for it to perform the call to expose its Property Actions.
-The Component must be configured to retrieve an optional reference to `umbProperty`, the requirement must be optional cause property-editors are implemented in scenarios where it's not presented.
+The Component must be configured to retrieve an optional reference to `umbProperty`. The requirement must be optional because property-editors are implemented in scenarios where it's not presented.
 
 See the following example:
 
@@ -41,12 +41,12 @@ angular.module('umbraco').component('myPropertyEditor', {
     require: {
         umbProperty: '?^umbProperty'
     }
-    ...
+    …
 });
 ```
 
 ## Implementing a Property Action
-The implementation of a Property Actions requires two parts, first a definition of the action, secondly parsing the lists of actions to `umbProperty`.
+The implementation of Property Actions consists of two parts. First a definition of the actions and secondly parsing the lists of actions to `umbProperty.setPropertyActions`.
 
 ```
 var myAction = {
@@ -68,4 +68,4 @@ this.$onInit = function () {
 };
 ```
 
-In this example the action is defined as a variable on its own, in this way you can easily refer to it, for switching the `isDisabled` state.
+In this example the action is defined as a variable on its own. In this way you can refer to it, for switching the `isDisabled` state.
