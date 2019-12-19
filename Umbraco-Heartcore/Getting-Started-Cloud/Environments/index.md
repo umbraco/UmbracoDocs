@@ -18,7 +18,7 @@ Learn more about the deployment model in the [Deployment workflow article](Deplo
 
 ## Manage environments
 
-How many environments you can work with depends on the plan your Umbraco Heartcore project is running.
+How many environments you can work with depends on [the plan your Umbraco Heartcore project is running](https://umbraco.com/umbraco-heartcore-pricing/).
 
 * Mini: 1 environment (Live)
 * Starter: 2 environments (Development and Live)
@@ -37,5 +37,3 @@ This will open an overlay, where you can manage the environments on your Heartco
 Below is an screenshot of how that overlay looks on the Professional plan when only the Development environment is added. There's an option to delete the current Development environment and an option to create a Staging environment. How this overlay looks is dependant on the plan your project is on.
 
 ![Manage environments overlay](images/manage-environments.png)
-
-## [Deployment workflow](../Deployment-workflow)
