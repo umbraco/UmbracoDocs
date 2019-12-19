@@ -12,7 +12,7 @@ Appearing as a small button next to the label of the property, that expands to s
 ![Example of Property Action on Nested Content Property Editor](example-of-property-actions.jpg)
 
 ## Data Structure of Property Actions
-Property Editors are a array of objects defining each action. 
+Property Editors are an array of objects defining each action. 
 An action is defined by the following properties:
 
 ```
