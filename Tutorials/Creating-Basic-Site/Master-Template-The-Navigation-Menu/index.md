@@ -29,15 +29,17 @@ As you start building a site you might want to hard code the navigation so you c
 If your navigation links are to be created from published content nodes you can loop through the child nodes.
 As an example, this has come from the default starter kit.  
 
-```html
+```csharp
 @inherits Umbraco.Web.Mvc.UmbracoViewPage
 @using Umbraco.Web;
 @{ 
     var site = Model.Root();
     var selection = site.Children.Where(x => x.IsVisible()); <!-- see below for explanation of IsVisible helper method -->
 }
+
 <!-- uncomment this line if you don't want the site name to appear in the top navigation -->
-<!--<a class="nav-link @Html.Raw(Model.Id == site.Id ? "navi-link--active" : "")" href="@site.Url">@site.Name</a>-->
+<!-- <a class="nav-link @Html.Raw(Model.Id == site.Id ? "navi-link--active" : "")" href="@site.Url">@site.Name</a> -->
+
 @foreach (var item in selection)
 {
     <a class="nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url">@item.Name</a>
