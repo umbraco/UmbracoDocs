@@ -8,13 +8,13 @@ During the development of your Umbraco site you can debug and profile the code y
 
 To perform proper debugging on your site you need to set your application to have debug enabled. This can be done by setting `debug="true"` (found in `System.Web`) in your `web.config` file:
 
-```xml
-<compilation defaultLanguage="c#" debug="true" batch="true" targetFramework="4.7.2" numRecompilesBeforeAppRestart="50" />
-```
-
 :::warning
 Debug should always be set to false in production.
 :::
+
+```xml
+<compilation defaultLanguage="c#" debug="true" batch="true" targetFramework="4.7.2" numRecompilesBeforeAppRestart="50" />
+```
 
 ## Tracing
 

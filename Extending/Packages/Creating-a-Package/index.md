@@ -145,6 +145,6 @@ You will notice that each of the fields we created is inside this XML file. All 
 
 :::warning
 It is very important to get the included files right, as all dependencies will be needed for something to work in your package.
-On the other hand everything included here will be deleted on uninstall, so you also have to make sure not to include unnessecary things!
+On the other hand everything included here will be deleted on uninstall, so you also have to make sure not to include unnecessary things!
 :::
 
