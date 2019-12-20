@@ -8,7 +8,7 @@ These examples are for Umbraco 8+ and they rely on [NUnit](https://nunit.org/) a
 
 # Mocking
 
-When testing components in Umbraco, especially controllers, there are a few dependencies that needs to be mocked / faked in order to get your unit tests running. Every Umbraco controller has two constructors: one empty constructor without any parameters for anyone not interested in unit testing or dependency injections, and one with full constructor injection which contains all parameters needed for proper unit testing. A lot of these dependencies are interfaces, which are simply mocked using Mock.Of<>, but there are still a few explicit non-interface dependencies that needs to be faked. In this documentation all mocks and fakes have been placed in a base class to avoid having to repeat this setup in every test class.
+When testing components in Umbraco, especially controllers, there are a few dependencies that needs to be mocked / faked in order to get your unit tests running. Every Umbraco controller has two constructors: one empty constructor without any parameters for anyone not interested in unit testing or dependency injections, and one with full constructor injection which contains all parameters needed for proper unit testing. A lot of these dependencies are interfaces, which are mocked using Mock.Of<>, but there are still a few explicit non-interface dependencies that needs to be faked. In this documentation all mocks and fakes have been placed in a base class to avoid having to repeat this setup in every test class.
 
 ```csharp
 public abstract class UmbracoBaseTest 
