@@ -29,8 +29,6 @@ As you start building a site you might want to hard code the navigation so you c
 If your navigation links are to be created from published content nodes you can loop through the child nodes.
 As an example, this has come from the default starter kit.  
 
-
-
 ```html
 @inherits Umbraco.Web.Mvc.UmbracoViewPage
 @using Umbraco.Web;
@@ -46,11 +44,11 @@ As an example, this has come from the default starter kit.
 }
 ```
 
+:::tip
 **The IsVisible() helper method**
 
-If you add a checkbox property to a document type with an alias of *umbracoNaviHide* the IsVisible() helper method can be used to exclude these from being shown in any collection.
-
-
+If you add a checkbox property to a document type with an alias of `umbracoNaviHide` the `IsVisible()` helper method can be used to exclude these from being shown in any collection.
+:::
 
 ---
 ## Next - [Articles Parent and Article Items](../Articles-Parent-and-Article-Items)
