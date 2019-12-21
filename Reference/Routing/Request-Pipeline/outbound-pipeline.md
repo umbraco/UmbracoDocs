@@ -266,11 +266,7 @@ namespace UmbracoV8.Routing.UrlProviders
 
     public class ProductPageUrlProvider : DefaultUrlProvider
     {
-        private readonly ISiteDomainHelper _siteDomainHelper;
-        public ProductPageUrlProvider(IRequestHandlerSection requestSettings, ILogger logger, IGlobalSettings globalSettings, ISiteDomainHelper siteDomainHelper) : base(requestSettings,logger,globalSettings,siteDomainHelper)
-        {
-            _siteDomainHelper = siteDomainHelper;
-        }
+        public ProductPageUrlProvider(IRequestHandlerSection requestSettings, ILogger logger, IGlobalSettings globalSettings, ISiteDomainHelper siteDomainHelper) : base(requestSettings,logger,globalSettings,siteDomainHelper) { }
         public override IEnumerable<UrlInfo> GetOtherUrls(UmbracoContext umbracoContext, int id, Uri current)
         {
             //add custom logic to return 'additional urls' - this method populates a list of additional urls for the node to display in the Umbraco backoffice
