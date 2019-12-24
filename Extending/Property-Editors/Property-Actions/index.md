@@ -30,44 +30,40 @@ We use `labelKey` and `labelTokens` to retrieve a localized string that is displ
 
 `isDisabled` is used to disable an Action, which change the visual appearance and prevents interaction. Use this option when an action wouldn't provide any change. In the example above, the action `remove all entries` would not have any impact if there is no entries.
 
-## Getting ready for Property Actions
-A Property Editor needs to be implemented as a Component for it to perform the call to expose its Property Actions.
-The Component must be configured to retrieve an optional reference to `umbProperty`. The requirement must be optional because property-editors are implemented in scenarios where it's not presented.
-
-See the following example:
-
-```js
-angular.module('umbraco').component('myPropertyEditor', {
-    controller: MyController,
-    controllerAs: 'vm',
-    require: {
-        umbProperty: '?^umbProperty'
-    }
-    …
-});
-```
-
 ## Implementing a Property Action
-The implementation of Property Actions consists of two parts. First a definition of the actions and secondly parsing the lists of actions to `umbProperty.setPropertyActions`.
+The implementation of Property Actions consists of two parts. First a definition of the actions and secondly parsing the lists of actions to `$scope.umbProperty.setPropertyActions().
+
+Note the check if `umbProperty` exists and is not null or undefined
+This example builds upon the example of building a property editor.
 
 ```js
-var myAction = {
-    labelKey: 'general_labelForMyAction',
-    labelTokens: [],
-    icon: 'action',
-    method: myActionExecutionMethod,
-    isDisabled: false
-}
+angular.module("umbraco").controller("My.MarkdownEditorController", function ($scope) {
 
-var propertyActions = [
-    myAction
-];
+    function myActionExecutionMethod() {
+        alert('My Custom Property Action Clicked');
 
-this.$onInit = function () {
-    if (this.umbProperty) {
-        this.umbProperty.setPropertyActions(propertyActions);
+        // Disable the action so it can not be re-run
+        // You may have custom logic to enable or disable the action
+        // Based on number of items selected etc...
+        myAction.isDisabled = true;
+    };
+
+    var myAction = {
+        labelKey: 'general_labelForMyAction',
+        labelTokens: [],
+        icon: 'action',
+        method: myActionExecutionMethod,
+        isDisabled: false
     }
-};
+
+    var propertyActions = [
+        myAction
+    ];
+
+    if ($scope.umbProperty) {
+        $scope.umbProperty.setPropertyActions(propertyActions);
+    }
+});
 ```
 
 In this example the action is defined as a variable on its own. In this way you can refer to it, for switching the `isDisabled` state.
