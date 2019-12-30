@@ -29,7 +29,7 @@ The form will save each page as you go and the package won't become live until y
 | Title | My Package | The name of your package |
 | Current version | | The version of your package. This will display on the front end in the button (regardless of file name) |
 | Package Category | | The category this package should be put into. |
-| Package Description | | What your package does. Be clear and to the point about what your package does. Provide simple examples of how to use your package. |
+| Package Description | | What your package does. Be clear and to the point about what your package does. |
 | License name | MIT License | As input in Umbraco |
 | License URL | http://opensource.org/licenses/MIT | As input in Umbraco |
 
@@ -75,7 +75,7 @@ This is where you upload your package zip along with any other files you'd like 
 	
 ### Images
 
-Images really show off your package and let people see what it can do at a glance. Simply select the image to upload. Marking an image as the current image will make it the icon for the package and display on the list as well as on the details page.
+Images really show off your package and let people see what it can do at a glance. Select the image to upload. Marking an image as the current image will make it the icon for the package and display on the list as well as on the details page.
 
 ### Creation Complete
 
