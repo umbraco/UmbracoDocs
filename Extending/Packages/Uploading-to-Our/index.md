@@ -24,7 +24,11 @@ To get started head over to your [profile page](https://our.umbraco.com/member/p
 
 You may notice if you followed the [Creating a Package](../Creating-a-Package/) document that a lot of this information has already been entered. This isn't automatically pulled from the package file and will need to be entered again.
 
-The form will save each page as you go and the package won't become live until you finish the process and mark it live on the final page. Don't forget, you can save progress and come back later.
+The form will save each page as you go and the package won't become live until you finish the process and mark it live on the final page.
+
+:::warning
+There is currently a bug that will stop you from seeing the saved packages in the list. Check out this [PR](https://github.com/umbraco/OurUmbraco/pull/526) for progress.
+:::
 	
 ## Package Details
 
@@ -80,6 +84,10 @@ This is where you upload your package zip along with any other files you'd like 
 ### Images
 
 Images really show off your package and let people see what it can do at a glance. Select the image to upload. Marking an image as the current image will make it the icon for the package and display on the list as well as on the details page.
+
+:::warning
+Setting an image to current will overwrite the setting that was made in Umbraco when creating the package zip.
+:::
 
 ### Creation Complete
 
