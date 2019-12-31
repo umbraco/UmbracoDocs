@@ -14,7 +14,7 @@ Our uses a karma system where you get positive karma for answering forum posts, 
 
 ### Creating your package
 
-Before you can upload your package, you first have to create your package. Read over the [Creating a Package](../Creating-a-Package/).
+Before you can upload your package, you first have to create your package. Read over the [Creating a Package](../Creating-a-Package/) article.
 
 ### Uploading the package to Our
 
