@@ -18,7 +18,11 @@ Before you can upload your package, you first have to create your package. Read 
 
 ### Uploading the package to Our
 
-To get started head over to your [profile page](https://our.umbraco.com/member/profile/). It will tell you on this page if you have enough karma to upload your package, if you do then click `Add Package`. You may notice if you followed the [Creating a Package](../Creating-a-Package/) document that a lot of this information has already been entered. This isn't automatically pulled from the package file and will need to be entered again.
+To get started head over to your [profile page](https://our.umbraco.com/member/profile/). It will tell you on this page if you have enough karma to upload your package, if you do then click `Add Package`.
+
+![Your packages profile page](images/PackagesPage.png)
+
+You may notice if you followed the [Creating a Package](../Creating-a-Package/) document that a lot of this information has already been entered. This isn't automatically pulled from the package file and will need to be entered again.
 
 The form will save each page as you go and the package won't become live until you finish the process and mark it live on the final page. Don't forget, you can save progress and come back later.
 	
