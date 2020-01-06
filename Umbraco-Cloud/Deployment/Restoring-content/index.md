@@ -24,24 +24,24 @@ The first time you run your project locally you will have the option to restore 
 This will restore **all** content nodes, and any media dependencies.
 :::
 
-1. When your site is done spinning up, click the green **Restore** button - this will restore all content and media!
+1. When your site is done spinning up, click the green *Restore* button - this will restore all content and media!
 2. Wait till the process completes - this might take a while, depending on the amount of content and media you have on your project
-3. When it's complete select **Open Umbraco** to go to the backoffice
+3. When it's complete select *Open Umbraco* to go to the backoffice
 4. You will now see all your content and media in the Umbraco backoffice
 
-![Restore from start-up](images/restore-initial-startup.gif)
+![Restore from start-up](images/Normal-Restore.gif)
 
 ### Restore everything through the Umbraco backoffice
 
 The second option for restoring your content and media is found in the Umbraco backoffice - use this option when setting up new Cloud environments.
 
 1. Go to the Umbraco backoffice on the environment you want to restore content and media to
-2. *Right-click* the top of the Content section
-3. Choose **Restore**
+2. Click the three dots an select *Do something else*, or *Right-click* the Content Tree
+3. Choose *Restore* from the menu
 4. You will now have the option to restore content from any Cloud environment that's *to the right of* the current environment in the deployment workflow
   * To ensure the restore will succeed, [make sure that your environments have the same meta data and structure files](../Cloud-to-Cloud)
-5. Click **Restore from ..** and wait till the process completes - this might take a while, depending on the amount of content and media you have on your project
-6. When it's done, *right-click* the Content tree again and choose **Reload** to see your content in the tree
+5. Click *Restore from ..* and wait till the process completes - this might take a while, depending on the amount of content and media you have on your project
+6. When it's done, *right-click* the Content tree again and choose *Reload* to see your content in the tree
 
 :::note
 If any of your content nodes depends on media items, these will also be restored in the process.
@@ -49,7 +49,7 @@ If any of your content nodes depends on media items, these will also be restored
 To see the media, go to the Media section and *reload* the tree.
 :::
 
-![Restore from backoffice](images/restore-backoffice.gif)
+![Restore from backoffice](images/Restore-from-Backoffice.gif)
 
 ### [Partial Restore](Partial-Restore)
 
