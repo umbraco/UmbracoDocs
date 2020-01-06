@@ -16,7 +16,7 @@ In this scenario you've cloned down your Cloud environment to your local machine
 :::note
 Be aware that this feature will also restore all dependencies on the selected content.
 
-E.g. when you restore a content node which references a media item as well as 2 other content nodes, these will all be restored as well, including any parent nodes that these nodes depends on.
+E.g. when you restore a content node which references media items as well as other content nodes, these will all be restored as well, including any parent nodes that these nodes depends on.
 :::
 
 Follow these steps to perform a partial restore to get only the parts you need:
