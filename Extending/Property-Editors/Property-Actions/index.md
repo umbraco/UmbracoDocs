@@ -15,7 +15,7 @@ Appearing as a small button next to the label of the property, that expands to s
 Property Editors are an array of objects defining each action. 
 An action is defined by the following properties:
 
-```json
+```js
 {
     labelKey: 'clipboard_labelForRemoveAllEntries',
     labelTokens: [],
@@ -39,7 +39,7 @@ If your Property Editor is implemented with a Controller, you can use the follow
 
 See the following example for implementation of Property Actions in a Controller.
 
-```
+```js
 angular.module("umbraco").controller("My.MarkdownEditorController", function ($scope) {
 
 	function myActionExecutionMethod() {
@@ -79,7 +79,7 @@ The Component must be configured to retrieve an optional reference to `umbProper
 
 See the following example:
 
-```
+```js
 angular.module('umbraco').component('myPropertyEditor', {
     controller: MyController,
     controllerAs: 'vm',
@@ -92,7 +92,7 @@ angular.module('umbraco').component('myPropertyEditor', {
 
 See the following example for implementation of Property Actions in a Controller, parsing actions to `this.umbProperty.setPropertyActions`.
 
-```
+```js
 var myAction = {
     labelKey: 'general_labelForMyAction',
     labelTokens: [],
