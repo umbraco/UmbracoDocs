@@ -27,7 +27,7 @@ Follow these steps to perform a partial restore to get only the parts you need:
 4. Select the environment that you would like to restore content from
 5. Click "*Select content to restore*" - this will open a dialog with a *preview of the content tree* from the environment you selected
 6. Select the content node you would like to restore
-7. Decide whether you want to also restore any child nodes under the selected node
+7. Decide whether you also want to restore any child nodes under the selected node
 8. Start the restore by clicking *Restore*
 9. To see the restored content, *reload* the content tree - *right-click* the Content tree to find this option
 
@@ -45,7 +45,7 @@ Imagine that you are working with your Umbraco Cloud project locally. One of you
 2. *Right-click* the content node which you know contains updates
 3. Choose *Partial Restore*
 4. Select the environment that you would like to restore content from
-5. Decide whether you want to also restore any child nodes under the selected node
+5. Decide whether you also want restore any child nodes under the selected node
 6. Start the restore by clicking *Restore*
 7. When the restore is done, reload the content tree to see the changes
 
