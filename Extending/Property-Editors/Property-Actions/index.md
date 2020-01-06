@@ -30,13 +30,56 @@ We use `labelKey` and `labelTokens` to retrieve a localized string that is displ
 
 `isDisabled` is used to disable an Action, which change the visual appearance and prevents interaction. Use this option when an action wouldn't provide any change. In the example above, the action `remove all entries` would not have any impact if there is no entries.
 
-## Getting ready for Property Actions
-A Property Editor needs to be implemented as a Component for it to perform the call to expose its Property Actions.
+## Implement Property Actions
+The implementation of Property Actions vary depending on wether your Property Editor is impemented with a Controller or as a Component.
+
+### Controller Implementation
+
+If your Property Editor is implemented with a Controller, you can use the following approach.
+
+See the following example for implementation of Property Actions in a Controller.
+
+```
+angular.module("umbraco").controller("My.MarkdownEditorController", function ($scope) {
+
+	function myActionExecutionMethod() {
+        alert('My Custom Property Action Clicked');
+        // Disable the action so it can not be re-run
+        // You may have custom logic to enable or disable the action
+        // Based on number of items selected etc...
+        myAction.isDisabled = true;
+    };
+    
+	var myAction = {
+	    labelKey: 'general_labelForMyAction',
+	    labelTokens: [],
+	    icon: 'action',
+	    method: myActionExecutionMethod,
+	    isDisabled: false
+	}
+	
+	var propertyActions = [
+	    myAction
+	];
+	
+	this.$onInit = function () {
+	    if ($scope.umbProperty) {
+	        $scope.umbProperty.setPropertyActions(propertyActions);
+	    }
+	};
+	
+	
+});
+```
+
+### Component Implementation
+
+Follow this guide if your Property Editor is implemented as a Component.
 The Component must be configured to retrieve an optional reference to `umbProperty`. The requirement must be optional because property-editors are implemented in scenarios where it's not presented.
 
 See the following example:
 
-```js
+```
 angular.module('umbraco').component('myPropertyEditor', {
     controller: MyController,
     controllerAs: 'vm',
@@ -47,10 +90,9 @@ angular.module('umbraco').component('myPropertyEditor', {
 });
 ```
 
-## Implementing a Property Action
-The implementation of Property Actions consists of two parts. First a definition of the actions and secondly parsing the lists of actions to `umbProperty.setPropertyActions`.
+See the following example for implementation of Property Actions in a Controller, parsing actions to `this.umbProperty.setPropertyActions`.
 
-```js
+```
 var myAction = {
     labelKey: 'general_labelForMyAction',
     labelTokens: [],
@@ -69,5 +111,3 @@ this.$onInit = function () {
     }
 };
 ```
-
-In this example the action is defined as a variable on its own. In this way you can refer to it, for switching the `isDisabled` state.
