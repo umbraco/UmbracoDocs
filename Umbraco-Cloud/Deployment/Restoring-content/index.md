@@ -14,7 +14,7 @@ There is a total of three ways to restore content.
 
 1. [Restore when starting up the project locally](#restore-when-starting-up-the-project-locally)
 2. [Restore everything through the Umbraco backoffice](#restore-everything-through-the-umbraco-backoffice)
-3. [Partial Restores]()
+3. [Partial Restores](Partial-Restore)
 
 ### Restore when starting up the project locally
 
@@ -50,6 +50,10 @@ To see the media, go to the Media section and *reload* the tree.
 :::
 
 ![Restore from backoffice](images/restore-backoffice.gif)
+
+### [Partial Restore](Partial-Restore)
+
+By using the Partial Restore option, you can make sure that you only restore the part of the content that you need to work with.
 
 ## Video Tutorial
 
