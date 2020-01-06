@@ -22,7 +22,7 @@ E.g. when you restore a content node which references media items as well as oth
 Follow these steps to perform a partial restore to get only the parts you need:
 
 1. Go to the Content section of the Umbraco backoffice on your new environments (local or Cloud)
-2. *Right-click* the Content Tree
+2. *Right-click* the Content Tree, or click the three dots an select *Do something else*
 3. Choose *Partial Restore*
 4. Select the environment that you would like to restore content from
 5. Click "*Select content to restore*" - this will open a dialog with a *preview of the content tree* from the environment you selected
