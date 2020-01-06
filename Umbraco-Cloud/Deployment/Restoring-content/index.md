@@ -8,15 +8,21 @@ When you have content on your Cloud environment and you clone down your Umbraco 
 
 The restore option also comes in really handy when you have content editors creating content on the Live or Staging environments. You will be able to restore and work with that content on your Development and local environments.
 
-## Video Tutorial
-
-<iframe width="800" height="450" src="https://www.youtube.com/embed/ha4KDpE81dg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
 ## Step-by-step
+
+There is a total of three ways to restore content.
+
+1. [Restore when starting up the project locally](#restore-when-starting-up-the-project-locally)
+2. [Restore everything through the Umbraco backoffice](#restore-everything-through-the-umbraco-backoffice)
+3. [Partial Restores]()
 
 ### Restore when starting up the project locally
 
 The first time you run your project locally you will have the option to restore your content and media before going to the Umbraco backoffice.
+
+:::note
+This will restore **all** content nodes, and any media dependencies.
+:::
 
 1. When your site is done spinning up, click the green **Restore** button - this will restore all content and media!
 2. Wait till the process completes - this might take a while, depending on the amount of content and media you have on your project
@@ -25,7 +31,7 @@ The first time you run your project locally you will have the option to restore 
 
 ![Restore from start-up](images/restore-initial-startup.gif)
 
-### Restore from the Umbraco backoffice
+### Restore everything through the Umbraco backoffice
 
 The second option for restoring your content and media is found in the Umbraco backoffice - use this option when setting up new Cloud environments.
 
@@ -45,22 +51,6 @@ To see the media, go to the Media section and *reload* the tree.
 
 ![Restore from backoffice](images/restore-backoffice.gif)
 
-### Partial restores
+## Video Tutorial
 
-
-If your project has a lot of content nodes and/or media items you might not want to restore everything every time a minor change has been made to the content.
-
-Imagine that you are working with your Umbraco Cloud project locally. One of your content editors updates a section in the content tree on the Live environment. You would like to see how this updated content looks with the new code you are working on. Follow these steps to do a partial restore of the updated content node:
-
-1. Go to the Content section of your local Umbraco backoffice
-2. *Right-click* the content node which you know has been updated on the Live environment
-3. Choose **Partial restore**
-4. From the *dropdown* you will be able to choose which environment you want to restore the content node
-5. After choosing environment, click **Restore from ..**
-6. When the restore is done, reload the content tree to see the changes
-
-![Partial restore](images/partial-restore.gif)
-
-:::note
-Partial restores are only available when you have content on your environment. This means that you cannot do partial restores on a fresh Local clone or a newly created Cloud environment where to content tree is empty.
-:::
+<iframe width="800" height="450" src="https://www.youtube.com/embed/ha4KDpE81dg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
