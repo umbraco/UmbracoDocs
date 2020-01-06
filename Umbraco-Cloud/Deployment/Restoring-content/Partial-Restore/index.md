@@ -35,7 +35,7 @@ Follow these steps to perform a partial restore to get only the parts you need:
 
 ![Partial restore on empty environment](images/partialRestore-onEmpty.gif)
 
-Partial Restores on empty environments are especially helpful when you have a large amount of content and media and do not necessarily need it all for the task you need to do. Instead of having to restore everything which could potentially take a long time, doing a partial restore can be used to shorten the waiting time by only restoring the parts you need, and ensure that you can quickly get on your way with the task at hand.
+Partial Restores on empty environments are especially helpful when you have a large amount of content and media and do not necessarily need it all for the task you need to do. Instead of having to restore everything which could potentially take a long time, doing a partial restore can be used to shorten the waiting time by only restoring the parts you need. This will ensure that you can quickly get on your way with the task at hand.
 
 ## Environment with existing content or media
 
