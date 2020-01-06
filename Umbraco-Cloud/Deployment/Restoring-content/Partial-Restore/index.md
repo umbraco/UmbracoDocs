@@ -2,7 +2,7 @@
 
 In some cases you might not want to download the entire content tree, but only the parts that you need. **Partial restores** is a feature that allows for restoring specific parts of the content section instead of restoring everything.
 
-You can use partial restores on
+You can use Partial Restore on
 
 - [Environments with content and media](#environment-with-content-and-media), and on
 - [Empty environments](#empty-environment) - Requires Umbraco Deploy 3.4+.
@@ -33,13 +33,13 @@ Follow these steps to perform a partial restore to get only the parts you need:
 
 ![Partial restore on empty environment](images/partialRestore-onEmpty.gif)
 
-Partial Restores on empty environments is especially helpful when you have a large amount of content and media. Instead of having to restore everything which could potentially take a long time, the partial restores can be used to shorten the waiting time, and ensure that you can quickly get on your way with the task at hand.
+Partial Restores on empty environments is especially helpful when you have a large amount of content and media. Instead of having to restore everything which could potentially take a long time, doing a partial restore can be used to shorten the waiting time, and ensure that you can quickly get on your way with the task at hand.
 
 ## Environment with content and media
 
-It is also possible to use the partial restore feature on environments where you already have content in the Content tree.
+It is also possible to use the Partial Restore feature on environments where you already have content in the Content tree.
 
-Imagine that you are working with your Umbraco Cloud project locally. One of your content editors updates a section in the content tree on the Live environment. You would like to see how this updated content looks with the new code you are working on. Follow these steps to do a partial restore of the updated content node:
+Imagine that you are working with your Umbraco Cloud project locally. One of your content editors updates a section in the content tree on the Live environment. You would like to see how this updated content looks with the new code you are working on. Follow these steps to do a Partial Restore of the updated content node:
 
 1. Go to the Content section of your local Umbraco backoffice
 2. *Right-click* the content node which you know contains updates
