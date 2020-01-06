@@ -4,16 +4,7 @@ versionFrom: 8.0.0
 
 # Packages on Umbraco Cloud
 
-If you want to use or develop packages for Umbraco Cloud there are a few things to consider and be aware of.
-
-- Ensuring configuration is committed
-- Package action dependenices
-- Custom database tables and migrations
-- Valueconnectors
-
-![Cloud deployment flow](images/cloud-flow.png)
-
-
+If you want to use or develop packages for Umbraco Cloud there are a few things to consider and be aware of. One such thing is that custom property editors may need a ValueConnector to transform their content between environments.
 
 # ValueConnectors
 
