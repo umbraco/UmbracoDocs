@@ -5,11 +5,11 @@ In some cases you might not want to restore the entire content tree, but only th
 You can use Partial Restore on
 
 - [Environments with existing content or media](#environment-with-existing-content-or-media), and on
-- [Empty environments](#empty-environment) - Requires Umbraco Deploy 3.4+.
+- [Empty environments](#empty-environment) - Requires Umbraco Deploy 3.3+.
 
 ## Empty environment
 
-**This is a feature only available with Umbraco Deploy 3.4+**
+**This is a feature only available with Umbraco Deploy 3.3+**
 
 In this scenario you've cloned down your Cloud environment to your local machine or setup a new Cloud environment. In both cases the new environment will have an empty Content section as well as an empty Media section. 
 
