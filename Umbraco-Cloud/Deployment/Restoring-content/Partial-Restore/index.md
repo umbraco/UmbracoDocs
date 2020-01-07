@@ -31,7 +31,7 @@ Follow these steps to perform a partial restore to get only the parts you need:
 8. Start the restore by clicking *Restore*
 9. To see the restored content, *reload* the content tree - *right-click* the Content tree to find this option
 
-*Keep in mind if you select a content node deeper down the tree, all the parents above it, required for the node to exist, will be restored as well.*
+Keep in mind if you select a content node deeper down the tree, all the parents above it, required for the node to exist, will be restored as well.
 
 ![Partial restore on empty environment](images/partialRestore-onEmpty.gif)
 
