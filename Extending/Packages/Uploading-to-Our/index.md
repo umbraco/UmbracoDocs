@@ -35,9 +35,9 @@ There is currently a bug that will stop you from seeing the saved packages in th
 | Property | Value | Note |
 | -------- | ----- | ---- |
 | Title | My Package | The name of your package |
-| Current version | | The version of your package. This will display on the front end in the button (regardless of file name) |
-| Package Category | | The category this package should be put into. |
-| Package Description | | What your package does. Be clear and to the point about what your package does. |
+| Current version | x.x.x | The version of your package. This will display on the front end in the button (regardless of file name) |
+| Package Category | E.g. Backoffice Extension | The category this package should be put into. |
+| Package Description | This package will extend the backoffice. | What your package does. Be clear and to the point about what your package does. |
 | License name | MIT License | As input in Umbraco |
 | License URL | http://opensource.org/licenses/MIT | As input in Umbraco |
 
@@ -61,7 +61,7 @@ There is currently a bug that will stop you from seeing the saved packages in th
 
 | Property | Value | Note |
 | -------- | ----- | ---- |
-| This package is open for collaboration | | This currently sets an internal flag for the package and doesn't show any different on the front end |
+| This package is open for collaboration | True/false | This currently sets an internal flag for the package and doesn't show any different on the front end |
 
 ### Package status
 
@@ -76,7 +76,7 @@ This is where you upload your package zip along with any other files you'd like 
 
 | Property | Value | Note |
 | -------- | ----- | ---- |
-| File Upload | | Select the file from your local computer |
+| File Upload | *File upload* | Select the file from your local computer |
 | Type | Package | This determines where the file gets displayed within your package details page. |
 | Umbraco Version | _Multiple checks_ | It's important to only mark the versions that the file is applicable to. |
 | .NET Framework Version | 4.7.2 | Typically the framework you developed against. If your package doesn't have any code files then select the earliest framework. |

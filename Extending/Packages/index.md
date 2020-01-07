@@ -34,4 +34,4 @@ Package actions are actions you want to trigger when your package gets installed
 
 ## [Uploading a package to Our](Uploading-to-Our/index.md)
 
-Once you've created a package share it on Our to share it with the community.
+Once you've created a package upload it on Our to share it with the community.
