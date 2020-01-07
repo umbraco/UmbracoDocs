@@ -7,7 +7,7 @@ needsV8Update: "true"
 
 The release of V8 has moved many of the previous configuration options from XML configuration files in the usual /config folder to be configurable through code. 
 
-## The following Configuration Files remain in Umbraco 8:
+## The following Configuration Files remain in Umbraco 8
 
 ### [web.config](webconfig/)
 This file can be found at the following path: /web.config
@@ -76,7 +76,7 @@ The 'sections.config' file contains the configuration for custom sections loaded
 ### [trees.config](trees/index.md)
 The 'trees.config' file contains the configuration for trees that are loaded within each section of the Umbraco Backoffice.
 
-## UrlRewriting.config
+### UrlRewriting.config
 
 This is now obsolete and there are better ways to do UrlRewriting, such as within [IIS](https://docs.microsoft.com/en-us/iis/extensions/url-rewrite-module/creating-rewrite-rules-for-the-url-rewrite-module). However, the UrlRewriting documentation can be [downloaded in PDF format](https://github.com/aspnetde/UrlRewritingNet/blob/master/docs/UrlRewritingNet20_English.pdf) for legacy projects.
 
