@@ -131,6 +131,7 @@ Site1 content transfer initated -> Hit the `ToArtifact` method on the environmen
 So in our case, what we want to do is to ensure the id is changed in a transfer. We do this by converting the id to a GUID in the `ToArtifact` method, then it gets transfered to site2. On site 2 we will convert it back to an id in the `FromArtifact` method. This way the user will still see an id on the content node, the id they see will be updated to the correct one though.
 
 :::warning
+
 In this example there would be no way for Deploy to know to also transfer the image, so we assume that you would transfer all content and images to ensure it is on the target environment under a different id.
 
 That is not a good assumption, and you may have noticed that there is a parameter on the ToArtifact method that you could update by finding the image and adding it to `ICollection<ArtifactDependency> dependencies`. 
@@ -168,9 +169,13 @@ public string ToArtifact(object value, PropertyType propertyType, ICollection<Ar
 
 You can find references on the methods used here in our API documentation:
 
+<!-- vale off -->
+
 - [EntityService.GetKey](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.Implement.EntityService.html#Umbraco_Core_Services_Implement_EntityService_GetKey_System_Int32_Umbraco_Core_Models_UmbracoObjectTypes_)
 - [new GuidUdi](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.GuidUdi.html#Umbraco_Core_GuidUdi__ctor_System_String_System_Guid_)
 - [new ArtifactDependency](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Deploy.ArtifactDependency.html#Umbraco_Core_Deploy_ArtifactDependency__ctor_Umbraco_Core_Udi_System_Boolean_Umbraco_Core_Deploy_ArtifactDependencyMode_)
+
+<!-- vale on -->
 
 When stepping through the code we can see that everything seems to work fine:
 
