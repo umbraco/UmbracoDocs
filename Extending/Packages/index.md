@@ -16,7 +16,7 @@ An Umbraco Package can be many things, but are generally characterized by:
 - Solving real life problems
 - Inspiring people on what Umbraco can be made capable of
 
-## [Types of Package](package-types.md)
+## [Types of Packages](package-types.md)
 
 There are two common types of package for Umbraco; Package zip files and NuGet Packages.
 
