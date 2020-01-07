@@ -4,15 +4,15 @@ versionFrom: 8.0.0
 
 # Packages on Umbraco Cloud
 
-If you want to use or develop packages for Umbraco Cloud there are a few things to consider and be aware of. One such thing is that custom property editors may need a ValueConnector to transform their content between environments.
+If you want to use or develop packages for Umbraco Cloud there are a few things to consider and be aware of. One such thing is that custom property editors may need a **ValueConnector** to transform their content between environments.
 
 # ValueConnectors
 
-A ValueConnector is an extension to Deploy that allows you to transform data when you deploy content of any kind between environments. This is mostly used to transfer id based content between environments.
+A ValueConnector is an extension to Deploy that allows you to transform data when you deploy content of any kind between environments. It is mostly used to transfer ID based content between environments.
 
-An example of creating one in your package would be if you for example had a custom property editor that allowed you to write in the id of a media node. Not a very usable property editor but it will work for this example.
+An example of creating one for your package would be if you had a custom property editor that allowed you to write in the ID of a media node. Not a very usable property editor but it will work for this example.
 
-So you have a property editor with a textarea input, that saves an id as a string, looks like this:
+So you have a property editor with a textarea input, that saves an ID as a string. It could look like this:
 
 ![Property editor](images/property-editor.png)
 
@@ -26,9 +26,9 @@ Renders the image perfectly!
 
 However now you do a content transfer to your Cloud environment, and one of three things will happen:
 
-1. You got super lucky and the ID you had on local happened to be the same as what your media item was assigned on your Cloud environment.
-1. Your page will now show a different image as the id you had corresponds to something else on this environment.
-1. You will get a YSOD as it can't find any media items with that id.
+1. You got lucky and the ID you had on local happened to be the same as what the media node was assigned on your Cloud environment.
+1. Your page will now show a different image as the ID you had corresponds to something else on this environment.
+1. You will get an error on the frontend as it can't find any media nodes with that ID.
 
 To prevent this from happening we will need to use a ValueConnector.
 
@@ -66,26 +66,28 @@ namespace valueconnector.Core.Controllers
 }
 ```
 
-In this case I had a Cloud site that I cloned down using the [uaas.cmd](https://umbra.co/uaas-cmd) tool. Meaning I have a class library I add the valueconnector to, that automatically have some references included and that will automatically build a dll - projectalias.core.dll and put it in the websites bin folder when building. 
+In this case I cloned the Cloud project down using the [uaas.cmd](https://umbra.co/uaas-cmd) tool, which means that I have a class library that I can add the ValueConnector to. This will automatically have some references included and will build a DLL, eg. `projectalias.core.dll`, and put it in the websites bin folder when building. 
 
 This has no impact on the way you work, but it may help you understand why some things are named the way they are.
 
-So at this point I have my one local site, however to test this I will push this all to the Cloud site and then clone it down again.
+At this point I have one clone of the site locally. However, to test this I will push the changes to the Cloud site and then clone it down again. The second clone doesn't need to be cloned with the `uaas.cmd` tool as we aren't developing on it, just need to run it locally.
 
-At this point I have two local sites, one cloned down with the uaas.cmd tool. Meaning it has a visual studio solution and a class library, and the other is a regular clone I will spin up in VS Code.
+At this point I have two local sites:
 
-Site 1:
+**Site 1**:
 Full Visual Studio solution
 Running on http://localhost:6240/ (Randomly generated)
 Has the ValueConnector in a class library that is built to a dll and copied to the websites bin on build
 
-Site 2: 
+**Site 2**: 
 A website served through VS Code (Could be IIS or anything else, doesn't matter)
 Running on http://localhost:17025/ (Randomly generated)
 Has the ValueConenctor dll in the bin from the clone
 
-Now we will set up these two identical sites to transfer content to eachother, to do so go to `site1/Config/UmbracoDeploy.config` and edit the live environment url to be Site2's url (http://localhost:17025/ in my case).
-Then do the same for site2 but put in site1's domain as the "live" one.
+Now we will set up these two identical sites to transfer content between eachother. 
+
+To do so go to `site1/Config/UmbracoDeploy.config` and edit the live environment url to be Site 2's url (http://localhost:17025/ in my case).
+Then do the same for Site 2 but put in the domain for Site 1 as the "live" one.
 
 At this point you should be able to go to the backoffice of either environment and do a Content transfer to live, and it should end up on the other (Assuming no errors from your custom connector).
 
@@ -93,13 +95,20 @@ At this point you should be able to go to the backoffice of either environment a
 
 At this point we haven't done anything to the ValueConverter yet, other than return the original value. Now we will attach Visual Studio to the IIS processes and try a transfer to see what it sends along.
 
-Go to Visual Studio, hit "Attach to Process" (default ALT + CTRL + P), and choose your two IIS processes. Add breakpoints in the `ToArtifact` and `FromArtifact` methods and go to site2, then try to do a content transfer to live (site2).
+* Go to Visual Studio
+* Hit "Attach to Process" (default ALT + CTRL + P)
+* Choose your two IIS processes
+* Add breakpoints in the `ToArtifact` and `FromArtifact` methods
+* Go to the backoffice in Site 1
+* Try to do a content transfer to live (Site 2).
 
-It will hit your breakpoint, and if you continue you will then get an error. On the breakpoint you can see why though, it should look like this:
+It will hit your breakpoint, and if you continue you will then get an error. On the breakpoint you can see why the error occurs. It should look like this:
 
 ![Hitting the breakpoint](images/hitting-breakpoints.png)
 
-Here you can see that value is null, so if you try to return `value.ToString()` you will get a null exception. So we will change the `ToArtifact` method a little:
+Here you can see that value is null, and if you try to return `value.ToString()` you will get a null exception. 
+
+We will change the `ToArtifact` method a little:
 
 ```csharp
 public string ToArtifact(object value, PropertyType propertyType, ICollection<ArtifactDependency> dependencies)
@@ -112,11 +121,11 @@ public string ToArtifact(object value, PropertyType propertyType, ICollection<Ar
 }
 ```
 
-But at this point you can't reattach the process as the code has changed. So we build, go to site1/bin and copy projectalias.Core.dll and projectalias.Core.pdb into site2/bin and then attach to process and try another transfer.
+At this point you can't reattach the process as the code has changed. So, build the project, go to `site1/bin` and copy `projectalias.Core.dll` and `projectalias.Core.pdb`. Paste these files into `site2/bin`, attach to the two IIS processes and try another transfer.
 
 The workflow here is not optimal, but a lot quicker than trying to deploy to Cloud everytime, and with this you can attach the debugger as well to help you out.
 
-Let's sync up, attach the debugger and attempt another transfer. Now you will see that `value` is null a few times, then your hardcoded id a few times, but nothing breaks here. Suddenly you will hit the `FromArtifact` method instead:
+After copying the dll and pdb files over we are synced up, now attach the debugger and attempt another transfer. Now you will see that `value` is null a few times, then your hardcoded ID a few times, but nothing breaks here. Eventually you will hit the `FromArtifact` method instead:
 
 ![Hitting FromArtifact](images/fromArtifact.png)
 
@@ -124,20 +133,20 @@ Here you will notice that the value is what you had returned in `ToArtifact`.
 
 ## Creating our ValueConnector
 
-Well enough about testing. You may have realised at this point that the flow is something like this:
+You may have realised at this point that the flow is something like this:
 
-Site1 content transfer initated -> Hit the `ToArtifact` method on the environment -> Send to site2 -> Hit the `FromArtifact` method on site 2 -> Property data on site2
+Site 1 content transfer initated -> Hit the `ToArtifact` method on the environment -> Send to Site 2 -> Hit the `FromArtifact` method on Site 2 -> Property data on Site 2
 
-So in our case, what we want to do is to ensure the id is changed in a transfer. We do this by converting the id to a GUID in the `ToArtifact` method, then it gets transfered to site2. On site 2 we will convert it back to an id in the `FromArtifact` method. This way the user will still see an id on the content node, the id they see will be updated to the correct one though.
+So in our case, what we want to do is to ensure the ID is changed in a transfer. We do this by converting the ID to a GUID in the `ToArtifact` method on Site 1, which will then get transfered to Site 2. On site 2 we will convert it back to an ID in the `FromArtifact` method. This way the user will still see an ID on the content node, but the ID they see will be updated to the correct one.
 
 :::warning
 
-In this example there would be no way for Deploy to know to also transfer the image, so we assume that you would transfer all content and images to ensure it is on the target environment under a different id.
+In this example there would be no way for Deploy to know to also transfer the image. We assume that you would transfer all content and images to ensure it is on the target environment under a different ID.
 
-That is not a good assumption, and you may have noticed that there is a parameter on the ToArtifact method that you could update by finding the image and adding it to `ICollection<ArtifactDependency> dependencies`. 
+That is not a good assumption, and you may have noticed that there is a parameter on the `ToArtifact` method that you could update by finding the image and adding it to `ICollection<ArtifactDependency> dependencies`. 
 :::
 
-So in order to convert to a GUID in the `ToArtifact` method, we will update the code:
+In order to convert to a GUID in the `ToArtifact` method, we will update the code:
 
 ```csharp
 public string ToArtifact(object value, PropertyType propertyType, ICollection<ArtifactDependency> dependencies)
@@ -181,9 +190,11 @@ When stepping through the code we can see that everything seems to work fine:
 
 ![Stepped through code](images/steppingThroughCode.png)
 
-Note: Showing the variable values is a feature of [ReSharper](https://www.jetbrains.com/resharper/) 
+:::note
+Note: Showing the variable values is a feature of [ReSharper](https://www.jetbrains.com/resharper/) .
+:::
 
-By the time we hit `FromArtifact` value of `"umb://media/00c9eff861654f52be7a33367c3561a4"` all that is left to do is convert back to an int.
+By the time we hit `FromArtifact` value of `"umb://media/00c9eff861654f52be7a33367c3561a4"` all that is left to do is convert back to an `int`.
 
 ```csharp
 public object FromArtifact(string value, PropertyType propertyType, object currentValue)
@@ -202,11 +213,11 @@ public object FromArtifact(string value, PropertyType propertyType, object curre
 }
 ```
 
-Here is a gif showing the valueconnectoer in action in the end, but uploading a new image, updating the id on the node, transfering then seeing the image on the new environment and the id updated:
+Here is a gif showing the ValueConnector in action. A new image is uploaded, the ID on the node is updated and transferred. Finally the image is on the new environment and the ID is updated:
 
 ![Full workflow gif](images/valueconnector.gif)
 
-The final ValueConnector code is this:
+The final ValueConnector code will look like this:
 
 ```csharp
 using System;
