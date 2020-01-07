@@ -70,7 +70,7 @@ In this case I cloned the Cloud project down using the [uaas.cmd](https://umbra.
 
 This has no impact on the way you work, but it may help you understand why some things are named the way they are.
 
-At this point I have one clone of the site locally. However, to test this I will push the changes to the Cloud site and then clone it down again. The second clone doesn't need to be cloned with the `uaas.cmd` tool as we aren't developing on it, just need to run it locally.
+At this point I have one clone of the site locally. However, to test this I will push the changes to the Cloud site and then clone it down again. The second clone doesn't need to be cloned with the `uaas.cmd` tool as we aren't developing on it, all we need is to run it locally.
 
 At this point I have two local sites:
 
