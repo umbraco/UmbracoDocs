@@ -39,7 +39,7 @@ The second option for restoring your content and media is found in the Umbraco b
 2. Click the three dots an select *Do something else*, or *Right-click* the Content Tree
 3. Choose *Restore* from the menu
 4. You will now have the option to restore content from any Cloud environment that's *to the right of* the current environment in the deployment workflow
-  * To ensure the restore will succeed, [make sure that your environments have the same meta data and structure files](../Cloud-to-Cloud)
+        * To ensure the restore will succeed, [make sure that your environments have the same meta data and structure files](../Cloud-to-Cloud)
 5. Click *Restore from ..* and wait till the process completes - this might take a while, depending on the amount of content and media you have on your project
 6. When it's done, *right-click* the Content tree again and choose *Reload* to see your content in the tree
 
