@@ -9,7 +9,7 @@ This document shows you how to upload your package to Our and share it with the 
 To get started you first need to have an account on Our. Don't have an account? Head on over to the site and [register](https://our.umbraco.com/member/Signup).
 
 :::note
-Our uses a karma system where you get positive karma for answering forum posts, etc. To limit spam you will need to earn a little bit of karma before you can upload a package. Otherwise you can reach out to the [Umbraco support team](https://umbraco.com/contact-us/).
+Our uses a karma system where you get positive karma for answering forum posts, etc. To limit spam you will need to earn a little bit of karma before you can upload a package. Otherwise you can reach out to the [Umbraco support team](https://umbraco.com/contact-us/), who can help you out.
 :::
 
 ### Creating your package
