@@ -87,7 +87,7 @@ angular.module('umbraco').component('myPropertyEditor', {
 });
 ```
 
-See the following example for implementation of Property Actions in a Component, parsing actions to `this.umbProperty.setPropertyActions`.
+See the following example for implementation of Property Actions in a Component, notice the difference is that we are parsing actions to `this.umbProperty.setPropertyActions(...)`.
 
 ```js
 var myAction = {
