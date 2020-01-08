@@ -14,7 +14,7 @@ An environment on a Heartcore project can be defined as a *workspace* and is at 
 
 Umbraco Heartcore uses a deployment model that relies on Git and other core technology, which gives you to option to move both content and structure files from one environment to another. 
 
-Learn more about the deployment model in the [Deployment workflow article](Deployment-workflow).
+Learn more about the deployment model in the [Deployment workflow article](../Deployment-workflow).
 
 ## Manage environments
 
