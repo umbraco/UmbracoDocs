@@ -27,17 +27,14 @@ An action is defined by the following properties:
 
 We use `labelKey` and `labelTokens` to retrieve a localized string that is displayed as the Actions label. [See localization for more info.](../../Extending/Language-Files/)
 
-
 `isDisabled` is used to disable an Action, which change the visual appearance and prevents interaction. Use this option when an action wouldn't provide any change. In the example above, the action `remove all entries` would not have any impact if there is no entries.
 
-## Implement Property Actions
+## Implementation
 The implementation of Property Actions vary depending on wether your Property Editor is impemented with a Controller or as a Component.
 
 ### Controller Implementation
 
-If your Property Editor is implemented with a Controller, you can use the following approach.
-
-See the following example for implementation of Property Actions in a Controller.
+When your Property Editor is implemented with a Controller, use the following approach for the Property Action:
 
 ```js
 angular.module("umbraco").controller("My.MarkdownEditorController", function ($scope) {
@@ -90,7 +87,7 @@ angular.module('umbraco').component('myPropertyEditor', {
 });
 ```
 
-See the following example for implementation of Property Actions in a Controller, parsing actions to `this.umbProperty.setPropertyActions`.
+See the following example for implementation of Property Actions in a Component, parsing actions to `this.umbProperty.setPropertyActions`.
 
 ```js
 var myAction = {
