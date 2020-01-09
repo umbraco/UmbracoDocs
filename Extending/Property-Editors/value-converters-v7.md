@@ -15,11 +15,11 @@ Starting with Umbraco v7, published property values have four "Values":
 - **Object** - The object to be used when accessing the property using a Published Content API, e.g. UmbracoHelper's `GetPropertyValue<T>` method
 - **XPath** - The object to be used when the property is accessed by XPath; This should generally be a `String` or an `XPathNodeIterator`
 
-**Note**: XPath is not currently used in Umbraco v7.1.x but it will be in a future version
+**Note**: This method is not requested in Umbraco v7.1.x.
 
 For example the standard Umbraco Core "Content Picker" stores a nodeId as `String` type. However if you implement a converter it could return an `IPublishedContent` object.
 
-## Implementing the Interface ##
+## Implementing the Interface
 
 Implement `IPropertyValueConverter` from the `Umbraco.Core` namespace on your class
 
@@ -27,13 +27,13 @@ Implement `IPropertyValueConverter` from the `Umbraco.Core` namespace on your cl
 public class ContentPickerPropertyConverter : IPropertyValueConverter
 ```
 
-## Methods ##
+## Methods
 
-### bool IsConverter(PublishedPropertyType propertyType) ###
+### bool IsConverter(PublishedPropertyType propertyType)
 
-This method is called for each PublishedPropertyType (document type property) at application startup. By returning `True` your value converter will be registered for that property type and your conversion methods will be executed when ever that value is requested. 
+This method is called for each PublishedPropertyType (Document Type Property) at application startup. By returning `True` your value converter will be registered for that property type and your conversion methods will be executed when ever that value is requested. 
 
-Example: Checking if the PublishedPropertyType PropertyEditorAlias property is equal to the alias of the core content editor
+Example: Checking if the `PublishedPropertyType` `PropertyEditorAlias` property is equal to the alias of the core content editor.
 
 ```csharp
 public bool IsConverter(PublishedPropertyType propertyType)
@@ -42,7 +42,7 @@ public bool IsConverter(PublishedPropertyType propertyType)
 }
 ```
 
-### object ConvertDataToSource(PublishedPropertyType propertyType, object data, bool preview) ###
+### object ConvertDataToSource(PublishedPropertyType propertyType, object data, bool preview)
 
 This method should convert the raw data value into an appropriate type, for example, a nodeId stored as a `String` should be converted to an `Int`. This method returns the "Source".  Include a `using Umbraco.Core` to be able to use the `TryConvertTo` extension method.
 
@@ -59,9 +59,9 @@ public object ConvertDataToSource(PublishedPropertyType propertyType, object dat
 }
 ```
 
-### object ConvertSourceToObject(PublishedPropertyType propertyType, object source, bool preview) ###
+### object ConvertSourceToObject(PublishedPropertyType propertyType, object source, bool preview)
 
-This method converts the Source to an Object, the returned value is used by the `GetPropertyValue<T>` method of `IPublishedContent`. 
+This method converts the Source to an Object. The returned value is used by the `GetPropertyValue<T>` method of `IPublishedContent`. 
 
 The below example converts the nodeId (converted to Int by ConvertDataToSource) into an IPublishedContent object using the UmbracoHelper TypedContent method.  
 
@@ -78,11 +78,11 @@ public object ConvertSourceToObject(PublishedPropertyType propertyType, object s
 }
 ```
 
-### object ConvertSourceToXPath(PublishedPropertyType propertyType, object source, bool preview) ###
+### object ConvertSourceToXPath(PublishedPropertyType propertyType, object source, bool preview)
 
-This method converts the Source to XPath, the return value should generally be of type `String` or `XPathNodeIterator`.
+This method converts the Source to XPath. The return value should generally be of type `String` or `XPathNodeIterator`.
 
-In the example below, we convert the nodeId (converted by ConvertDataToSource) back into a `String`
+In the example below, we convert the nodeId (converted by ConvertDataToSource) back into a `String`.
 
 ```csharp
 public object ConvertSourceToXPath(PublishedPropertyType propertyType, object source, bool preview)
@@ -91,26 +91,26 @@ public object ConvertSourceToXPath(PublishedPropertyType propertyType, object so
 }
 ```
 
-**Note**: This method is not currently requested in Umbraco v7.1.x but it will be in a future version
+## Meta Data
 
-## Meta Data ##
+There are two options for implementing the meta data for a value converter. The first method is to use class attributes and the second is to implement the `IPropertyValueConverterMeta` interface. 
 
-There are two options for implementing the meta data for a value converter, the first method is to use class attributes and the second is to implement the `IPropertyValueConverterMeta` interface, this is only available in Umbraco **v7.1.5+**
+This is available in Umbraco **v7.1.5+**.
 
-### Property Value Type ###
+### Property Value Type
 
 This meta property is used by the `IPublishedContentModelFactory` to report the CLR type of the `PublishedPropertyType` returned by the `ConvertSourceToObject` method.
 
 In the example below the Content Picker is being converted to `IPublishedContent`
 
-#### Class Attribute ####
+#### Class Attribute
 
 ```csharp
 [PropertyValueType(typeof(IPublishedContent))]
 public class ContentPickerPropertyConverter : IPropertyValueConverter
 ```
 
-#### Interface ####
+#### Interface
 
 ```csharp
 public Type GetPropertyValueType(PublishedPropertyType propertyType)
@@ -119,18 +119,18 @@ public Type GetPropertyValueType(PublishedPropertyType propertyType)
 }
 ```
 
-### Property Value Cache Level ###
+### Property Value Cache Level
 
-**Note**: This data is not currently used in Umbraco v7.1.x but it will be by the future "object cache layer" to determine at which level each value returned by the `ConvertDataToSource`, `ConvertSourceToObject` & `ConvertSourceToXPath` methods should be cached.
+**Note**: This data is not in Umbraco v7.1.x. All later versions have this "object cache layer" to determine at which level each value returned by the `ConvertDataToSource`, `ConvertSourceToObject` & `ConvertSourceToXPath` methods should be cached.
 
-#### Properties ####
+#### Properties
 
 Level - Content (this Published Content), ContentCache (any Published Content), Request, None<br/>
 Value - All, Source, Object, XPath
 
 In the example below the Content Picker is being converted to `IPublishedContent` so both the Source and XPath values can be cached at the content level but the Object value can only be cached at the ContentCache level. This is because the picked node may change when it's published and we don't want the converted value to become stale; therefore we should clear it.
 
-#### Class Attribute ####
+#### Class Attribute
 
 ```csharp
 [PropertyValueCache(PropertyCacheValue.Source, PropertyCacheLevel.Content)]
@@ -145,7 +145,7 @@ If all values should use the same level you can use the shortcut below
 [PropertyValueCache(PropertyCacheValue.All, PropertyCacheLevel.ContentCache)]
 ```
 
-#### Interface ####
+#### Interface
 
 ```csharp
 public PropertyCacheLevel GetPropertyCacheLevel(PublishedPropertyType propertyType, PropertyCacheValue cacheValue)
@@ -166,7 +166,7 @@ public PropertyCacheLevel GetPropertyCacheLevel(PublishedPropertyType propertyTy
 }
 ```
 
-## Samples ##
+## Samples
 
 [Content Picker to `IPublishedContent` using attribute meta data](value-converters-full-example-attributes.md)
 
