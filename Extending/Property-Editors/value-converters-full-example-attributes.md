@@ -2,7 +2,9 @@
 versionFrom: 7.0.0
 ---
 
-# Content Picker Value Converter Example using meta attributes #
+# Content Picker Value Converter Example using meta attributes
+
+**Applies to Umbraco 7**
 
 ```csharp
 using Umbraco.Core;
