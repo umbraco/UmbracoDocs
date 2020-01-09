@@ -10,18 +10,20 @@ A Property Value Converter converts a property editor's database-stored value to
 
 For example the standard Umbraco Core "Content Picker" stores a nodeId as `String` type. However if you implement a converter it could return an `IPublishedContent` object.
 
-> Starting with Umbraco v8, published property values have four "Values":
-> 
-> - **Source** - The raw data stored in the database, this is generally a `String`
-> - **Intermediate** - An object of a type that is appropriate to the property, e.g. a nodeId should be an `Int` or a collection of nodeIds would be an integer array, `Int[]`
-> - **Object** - The object to be used when accessing the property using a Published Content API, e.g. UmbracoHelper's `GetPropertyValue<T>` method
-> - **XPath** - The object to be used when the property is accessed by XPath; This should generally be a `String` or an `XPathNodeIterator`
-> 
-> **Note**: XPath is not currently used in Umbraco v7.1.x but it will be in a future version
+Published property values have four "Values":
 
-## Registering PropertyValueConverters ##
+- **Source** - The raw data stored in the database, this is generally a `String`
+- **Intermediate** - An object of a type that is appropriate to the property, e.g. a nodeId should be an `Int` or a collection of nodeIds would be an integer array, `Int[]`
+- **Object** - The object to be used when accessing the property using a Published Content API, e.g. UmbracoHelper's `GetPropertyValue<T>` method
+- **XPath** - The object to be used when the property is accessed by XPath; This should generally be a `String` or an `XPathNodeIterator`
 
- PropertyValueConverters are automatically registered when implementing the interface. Any given PropertyEditor can only utilize a single PropertyValueConverter. If you are implementing a PropertyValueConverter for a PropertyEditor that doesn't already have one, just creating the PropertyValueConverter will automatically enable it and no further actions are needed. If you are attempting to override an existing PropertyValueConverter (this could be one included with Umbraco or in a package), you will however need to take some additional steps to deregister the existing one to avoid conflicts:
+## Registering PropertyValueConverters
+
+PropertyValueConverters are automatically registered when implementing the interface. Any given PropertyEditor can only utilize a single PropertyValueConverter. 
+ 
+If you are implementing a PropertyValueConverter for a PropertyEditor that doesn't already have one, creating the PropertyValueConverter will automatically enable it and no further actions are needed. 
+ 
+If you are attempting to override an existing PropertyValueConverter (this could be one included with Umbraco or in a package), you will however need to take some additional steps to deregister the existing one to avoid conflicts:
 
 ```csharp
 using Umbraco.Core;
@@ -48,7 +50,7 @@ public class Startup : IUserComposer
 
 The built-in PropertyValueConverters included with Umbraco, are currently marked as internal. This means you will not be able to remove them by type since the type isn't accessible outside of the namespace. In order to remove such PropertyValueConnectors, you will need to look up the instance by name and then deregister it by the instance. This could be the case for other PropertyValueConnectors included by packages as well, depending on the implementation details.
 
-## Implementing the Interface ##
+## Implementing the Interface
 
 Implement `IPropertyValueConverter` from the `Umbraco.Core` namespace on your class
 
@@ -56,11 +58,11 @@ Implement `IPropertyValueConverter` from the `Umbraco.Core` namespace on your cl
 public class ContentPickerValueConverter : IPropertyValueConverter
 ```
 
-## Methods - Information ##
+## Methods - Information
 
-### IsConverter(IPublishedPropertyType propertyType) ###
+### IsConverter(IPublishedPropertyType propertyType)
 
-This method is called for each PublishedPropertyType (document type property) at application startup. By returning `True` your value converter will be registered for that property type and your conversion methods will be executed whenever that value is requested.
+This method is called for each PublishedPropertyType (Document Type Property) at application startup. By returning `True` your value converter will be registered for that property type and your conversion methods will be executed whenever that value is requested.
 
 Example: Checking if the IPublishedPropertyType EditorAlias property is equal to the alias of the core content editor.
 This check is a string comparison but we recommend creating a constant for it to avoid spelling errors:
@@ -72,15 +74,15 @@ public bool IsConverter(IPublishedPropertyType propertyType)
 }
 ```
 
-### IsValue(object value, PropertyValueLevel level) ###
+### IsValue(object value, PropertyValueLevel level)
 
-This method is called to determine if the passed in value is actually a value, and is of the level specified. There's a basic implementation of this in `PropertyValueConverterBase`.
+This method is called to determine if the passed-in value is a value, and is of the level specified. There's a basic implementation of this in `PropertyValueConverterBase`.
 
-### GetPropertyValueType(IPublishedPropertyType propertyType) ###
+### GetPropertyValueType(IPublishedPropertyType propertyType)
 
 This is where you can specify the type returned by this Converter. This type will be used by ModelsBuilder to return data from properties using this Converter in the proper type.
 
-Example: Content Picker data is being converted to `IPublishedContent`
+Example: Content Picker data is being converted to `IPublishedContent`.
 
 ```csharp
 public Type GetPropertyValueType(IPublishedPropertyType propertyType)
@@ -89,16 +91,17 @@ public Type GetPropertyValueType(IPublishedPropertyType propertyType)
 }
 ```
 
-###PropertyCacheLevel GetPropertyCacheLevel(IPublishedPropertyType propertyType)###
+### PropertyCacheLevel GetPropertyCacheLevel(IPublishedPropertyType propertyType)
 
 Here you specify which level the property value is cached at.
-> A property value can be cached at the following levels:
-> 
-> - **Unknown** - Default value.
-> - **Element** - It will be cached until the element itself is modified.
-> - **Elements** - It will be cached until any element is modified.
-> - **Snapshot** - It will be cached for the current snapshot - which in most cases is tied to a request, meaning it is for the lifetime of a request.
-> - **None** - It will never be cached and will need conversion every time.
+
+A property value can be cached at the following levels:
+
+- **Unknown** - Default value.
+- **Element** - It will be cached until the element itself is modified.
+- **Elements** - It will be cached until any element is modified.
+- **Snapshot** - It will be cached for the current snapshot - which in most cases is tied to a request, meaning it is for the lifetime of a request.
+- **None** - It will never be cached and will need conversion every time.
 
 ```csharp
 public PropertyCacheLevel GetPropertyCacheLevel(IPublishedPropertyType propertyType)
@@ -107,13 +110,15 @@ public PropertyCacheLevel GetPropertyCacheLevel(IPublishedPropertyType propertyT
 }
 ```
 
-## Methods - Conversion ##
+## Methods - Conversion
 
 There are a few different levels of conversion which can occur.
 
-### ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object source, bool preview)###
+### ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object source, bool preview)
 
-This method should convert the raw data value into an appropriate type, for example, a node identifier stored as a `String` should be converted to an `Int` or `Udi`.  Include a `using Umbraco.Core` to be able to use the `TryConvertTo` extension method.
+This method should convert the raw data value into an appropriate type. For example, a node identifier stored as a `String` should be converted to an `Int` or `Udi`. 
+
+Include a `using Umbraco.Core` to be able to use the `TryConvertTo` extension method.
 
 ```csharp
 public object ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object source, bool preview)
@@ -132,9 +137,9 @@ public object ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPro
 }
 ```
 
-### ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)###
+### ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
 
-This method converts the Intermediate to an Object, the returned value is used by the `GetPropertyValue<T>` method of `IPublishedContent`. 
+This method converts the Intermediate to an Object. Tthe returned value is used by the `GetPropertyValue<T>` method of `IPublishedContent`. 
 
 The below example converts the nodeId (converted to Int or Udi by ConvertSourceToIntermediate) into an IPublishedContent object.  
 
@@ -168,9 +173,9 @@ public object ConvertIntermediateToObject(IPublishedElement owner, IPublishedPro
 }
 ```
 
-### ConvertIntermediateToXPath(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview) ###
+### ConvertIntermediateToXPath(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
 
-This method converts the Intermediate to XPath, the return value should generally be of type `String` or `XPathNodeIterator`.
+This method converts the Intermediate to XPath. The return value should generally be of type `String` or `XPathNodeIterator`.
 
 In the example below, we convert the nodeId (converted by ConvertSourceToIntermediate) back into a `String`.
 
@@ -182,6 +187,6 @@ public object ConvertIntermediateToXPath(IPublishedElement owner, IPublishedProp
 }
 ```
 
-## Sample ##
+## Sample
 
 [Content Picker to `IPublishedContent` using `IPropertyValueConverter` interface](value-converters-full-example.md)
