@@ -16,6 +16,10 @@ Umbraco Heartcore uses a deployment model that relies on Git and other core tech
 
 Learn more about the deployment model in the [Deployment workflow article](../Deployment-workflow).
 
+## Video tutorial
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/x4UlI7J0u_4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## Manage environments
 
 How many environments you can work with depends on [the plan your Umbraco Heartcore project is running](https://umbraco.com/umbraco-heartcore-pricing/).
