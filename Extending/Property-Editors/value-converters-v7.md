@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # Property Value Converters
 
-**Applies to Umbraco 7 and newer**
+**Applies to Umbraco 7**
 
 A Property Value Converter converts a property editor's database-stored value to another type. The converted value can be accessed from MVC Razor or any other Published Content API. 
 

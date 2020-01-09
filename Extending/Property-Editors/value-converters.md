@@ -4,64 +4,84 @@ versionFrom: 8.0.0
 
 # Property Value Converters
 
-**Applies to Umbraco 7 and newer**
+**Applies to Umbraco 8 and newer**
 
 A Property Value Converter converts a property editor's database-stored value to another type. The converted value can be accessed from MVC Razor or any other Published Content API.
 
 For example the standard Umbraco Core "Content Picker" stores a nodeId as `String` type. However if you implement a converter it could return an `IPublishedContent` object.
 
-[From v7 Docs - still valid for v8?]
-
-> Starting with Umbraco v7, published property values have four "Values":
+> Starting with Umbraco v8, published property values have four "Values":
 > 
-> - **Data** - The raw data stored in the database, this is generally a `String`
-> - **Source** - An object of a type that is appropriate to the property, e.g. a nodeId should be an `Int` or a collection of nodeIds would be an integer array, `Int[]`
+> - **Source** - The raw data stored in the database, this is generally a `String`
+> - **Intermediate** - An object of a type that is appropriate to the property, e.g. a nodeId should be an `Int` or a collection of nodeIds would be an integer array, `Int[]`
 > - **Object** - The object to be used when accessing the property using a Published Content API, e.g. UmbracoHelper's `GetPropertyValue<T>` method
 > - **XPath** - The object to be used when the property is accessed by XPath; This should generally be a `String` or an `XPathNodeIterator`
 > 
 > **Note**: XPath is not currently used in Umbraco v7.1.x but it will be in a future version
 
+## Registering PropertyValueConverters ##
+
+ PropertyValueConverters are automatically registered when implementing the interface. Any given PropertyEditor can only utilize a single PropertyValueConverter. If you are implementing a PropertyValueConverter for a PropertyEditor that doesn't already have one, just creating the PropertyValueConverter will automatically enable it and no further actions are needed. If you are attempting to override an existing PropertyValueConverter (this could be one included with Umbraco or in a package), you will however need to take some additional steps to deregister the existing one to avoid conflicts:
+
+```csharp
+using Umbraco.Core;
+using Umbraco.Core.Composing;
+using Umbraco.Core.Logging;
+using Umbraco.Web;
+
+public class Startup : IUserComposer
+{
+    public void Compose(Composition composition)
+    {
+        //If the type is accessible (not internal) you can deregister it by the type:
+        composition.PropertyValueConverters().Remove<MyCustom.StandardValueConnector>();
+
+        //If the type is not accessible you will need to locate the instance and then remove it:
+        var contentPickerValueConverter = composition.PropertyValueConverters().GetTypes().FirstOrDefault(x => x.Name == "ContentPickerValueConverter");
+        if (contentPickerValueConnector != null)
+        {
+            composition.PropertyValueConverters().Remove(contentPickerValueConverter);
+        }
+    }
+}
+```
+
+The built-in PropertyValueConverters included with Umbraco, are currently marked as internal. This means you will not be able to remove them by type since the type isn't accessible outside of the namespace. In order to remove such PropertyValueConnectors, you will need to look up the instance by name and then deregister it by the instance. This could be the case for other PropertyValueConnectors included by packages as well, depending on the implementation details.
 
 ## Implementing the Interface ##
 
 Implement `IPropertyValueConverter` from the `Umbraco.Core` namespace on your class
 
 ```csharp
-public class ContentPickerPropertyConverter : IPropertyValueConverter
+public class ContentPickerValueConverter : IPropertyValueConverter
 ```
 
 ## Methods - Information ##
 
-### IsConverter(PublishedPropertyType propertyType) ###
+### IsConverter(IPublishedPropertyType propertyType) ###
 
-This method is called for each PublishedPropertyType (document type property) at application startup. By returning `True` your value converter will be registered for that property type and your conversion methods will be executed when ever that value is requested.
+This method is called for each PublishedPropertyType (document type property) at application startup. By returning `True` your value converter will be registered for that property type and your conversion methods will be executed whenever that value is requested.
 
-Example: Checking if the PublishedPropertyType PropertyEditorAlias property is equal to the alias of the core content editor:
+Example: Checking if the IPublishedPropertyType EditorAlias property is equal to the alias of the core content editor.
+This check is a string comparison but we recommend creating a constant for it to avoid spelling errors:
 
 ```csharp
-public bool IsConverter(PublishedPropertyType propertyType)
+public bool IsConverter(IPublishedPropertyType propertyType)
 {
-    return propertyType.PropertyEditorAlias.Equals("Umbraco.ContentPickerAlias");
+    return propertyType.EditorAlias.Equals(Constants.PropertyEditors.Aliases.ContentPicker);
 }
 ```
 
 ### IsValue(object value, PropertyValueLevel level) ###
-[Need info about this...]
 
-```csharp
-public bool? IsValue(object value, PropertyValueLevel level)
-{
-    return null;
-}
-```
+This method is called to determine if the passed in value is actually a value, and is of the level specified. There's a basic implementation of this in `PropertyValueConverterBase`.
+
 ### GetPropertyValueType(IPublishedPropertyType propertyType) ###
 
 This is where you can specify the type returned by this Converter. This type will be used by ModelsBuilder to return data from properties using this Converter in the proper type.
 
-This method converts the Source to an Object, the returned value is used by the `GetPropertyValue<T>` method of `IPublishedContent`. 
-This method converts the Source to an Object, the returned value is used by the `GetPropertyValue<T>` method of `IPublishedContent`.
+Example: Content Picker data is being converted to `IPublishedContent`
 
-The below example converts the nodeId (converted to Int by ConvertDataToSource) into an IPublishedContent object using the UmbracoHelper TypedContent method.  
 ```csharp
 public Type GetPropertyValueType(IPublishedPropertyType propertyType)
 {
@@ -70,23 +90,30 @@ public Type GetPropertyValueType(IPublishedPropertyType propertyType)
 ```
 
 ###PropertyCacheLevel GetPropertyCacheLevel(IPublishedPropertyType propertyType)###
-[Need info about this... There is a code sample for v7 here: https://our.umbraco.com/Documentation/Extending/Property-Editors/value-converters-full-example-interface]
+
+Here you specify which level the property value is cached at.
+> A property value can be cached at the following levels:
+> 
+> - **Unknown** - Default value.
+> - **Element** - It will be cached until the element itself is modified.
+> - **Elements** - It will be cached until any element is modified.
+> - **Snapshot** - It will be cached for the current snapshot - which in most cases is tied to a request, meaning it is for the lifetime of a request.
+> - **None** - It will never be cached and will need conversion every time.
+
 ```csharp
 public PropertyCacheLevel GetPropertyCacheLevel(IPublishedPropertyType propertyType)
 {
-    return PropertyCacheLevel.Unknown;
+    return PropertyCacheLevel.Elements;
 }
 ```
 
 ## Methods - Conversion ##
 
 There are a few different levels of conversion which can occur.
-[Need information about when these are used, etc.]
 
-### ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object source,            bool preview)###
+### ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object source, bool preview)###
 
-This method should convert the raw data value into an appropriate type, for example, a nodeId stored as a `String` should be converted to an `Int` or `Udi`.  Include a `using Umbraco.Core` to be able to use the `TryConvertTo` extension method.
-
+This method should convert the raw data value into an appropriate type, for example, a node identifier stored as a `String` should be converted to an `Int` or `Udi`.  Include a `using Umbraco.Core` to be able to use the `TryConvertTo` extension method.
 
 ```csharp
 public object ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object source, bool preview)
@@ -107,7 +134,6 @@ public object ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPro
 
 ### ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)###
 
-[This might all be wrong for v8...]
 This method converts the Intermediate to an Object, the returned value is used by the `GetPropertyValue<T>` method of `IPublishedContent`. 
 
 The below example converts the nodeId (converted to Int or Udi by ConvertSourceToIntermediate) into an IPublishedContent object.  
@@ -141,12 +167,12 @@ public object ConvertIntermediateToObject(IPublishedElement owner, IPublishedPro
     return inter;
 }
 ```
-### ConvertIntermediateToXPath(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview) ###
 
+### ConvertIntermediateToXPath(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview) ###
 
 This method converts the Intermediate to XPath, the return value should generally be of type `String` or `XPathNodeIterator`.
 
-In the example below, we convert the nodeId (converted by ConvertSourceToIntermediate) back into a `String`
+In the example below, we convert the nodeId (converted by ConvertSourceToIntermediate) back into a `String`.
 
 ```csharp
 public object ConvertIntermediateToXPath(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
@@ -156,87 +182,6 @@ public object ConvertIntermediateToXPath(IPublishedElement owner, IPublishedProp
 }
 ```
 
-[Is this true?]
+## Sample ##
 
-**Note**: This method is not currently requested in Umbraco v7.1.x but it will be in a future version
-
-
-
-### Property Value Cache Level ###
-
-[This whole Cache section needs to be updated...]
-
-**Note**: This data is not currently used in Umbraco v7.1.x but it will be by the future "object cache layer" to determine at which level each value returned by the `ConvertDataToSource`, `ConvertSourceToObject` & `ConvertSourceToXPath` methods should be cached.
-
-#### Properties ####
-
-Level - Content (this Published Content), ContentCache (any Published Content), Request, None<br/>
-Value - All, Source, Object, XPath
-
-In the example below the Content Picker is being converted to `IPublishedContent` so both the Source and XPath values can be cached at the content level but the Object value can only be cached at the ContentCache level. This is because the picked node may change when it's published and we don't want the converted value to become stale; therefore we should clear it.
-
-#### Class Attribute ####
-
-```csharp
-[PropertyValueCache(PropertyCacheValue.Source, PropertyCacheLevel.Content)]
-[PropertyValueCache(PropertyCacheValue.Object, PropertyCacheLevel.ContentCache)]
-[PropertyValueCache(PropertyCacheValue.XPath, PropertyCacheLevel.Content)]
-public class ContentPickerPropertyConverter : IPropertyValueConverter
-```
-
-If all values should use the same level you can use the shortcut below
-
-```csharp
-[PropertyValueCache(PropertyCacheValue.All, PropertyCacheLevel.ContentCache)]
-```
-
-#### Interface ####
-
-```csharp
-public PropertyCacheLevel GetPropertyCacheLevel(PublishedPropertyType propertyType, PropertyCacheValue cacheValue)
-{
-    switch (cacheValue)
-    {
-        case PropertyCacheValue.Object:
-            return PropertyCacheLevel.ContentCache;
-
-        case PropertyCacheValue.Source:
-            return PropertyCacheLevel.Content;
-
-        case PropertyCacheValue.XPath:
-            return PropertyCacheLevel.Content;
-    }
-
-    return PropertyCacheLevel.None;
-}
-```
-
-## Samples ##
-[Need updated Samples]
-
-[Content Picker to `IPublishedContent` using attribute meta data](value-converters-full-example-attributes.md)
-
-[Content Picker to `IPublishedContent` using `IPropertyValueConverterMeta` interface](value-converters-full-example-interface.md) (Umbraco v7.1.5+)
-
-## Overriding Existing PropertyValueConverters with your Custom Ones ##
-
-Any given PropertyEditor can only utilize a single PropertyValueConverter. If you have a new custom PropertyEditor, just creating the PropertyValueConverter will work, since there isn't already an exisiting Converter for that PropertyEditor. If you are attempting to override one of the standard PropertyValueConverters, however, you will need to take some additional steps to de-register the standard one.
-
-[I tried using this code... but it doesn't seem to actually work, so perhaps someone can verify it]
-
-```csharp
-using Umbraco.Core;
-using Umbraco.Core.Composing;
-using Umbraco.Core.Logging;
-using Umbraco.Web;
-
-public class Startup : IUserComposer
-{
-    public void Compose(Composition composition)
-    {         
-        //Swap ContentPicker Value Converter
-        composition.PropertyValueConverters().Remove<Umbraco.Web.PropertyEditors.ValueConverters.ContentPickerValueConverter>();
-        composition.PropertyValueConverters().Append<MyCustom.ContentValueConverter>();     
-    }
-}
-```
+[Content Picker to `IPublishedContent` using `IPropertyValueConverter` interface](value-converters-full-example.md)

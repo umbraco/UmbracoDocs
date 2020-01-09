@@ -1,21 +1,19 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
 ---
 
 # Content Picker Value Converter Example using meta interface #
 
 ```csharp
+using System;
+using Umbraco.Core;
+using Umbraco.Core.Models;
+using Umbraco.Core.Models.PublishedContent;
+using Umbraco.Core.PropertyEditors;
+using Umbraco.Web;
+
 namespace MyConverters
 {
-    using System;
-
-    using Umbraco.Core;
-    using Umbraco.Core.Models;
-    using Umbraco.Core.Models.PublishedContent;
-    using Umbraco.Core.PropertyEditors;
-    using Umbraco.Web;
-
     public class ContentPickerPropertyConverter : IPropertyValueConverterMeta
     {
         public bool IsConverter(PublishedPropertyType propertyType)
