@@ -187,7 +187,7 @@ Umbraco ships with a DefaultUrlProvider, which provides the implementation for t
 // That one is initialized by default
 public class DefaultUrlProvider : IUrlProvider
 {
-    public virtual UrlInfo GetUrl(UmbracoContext umbracoContext, IPublishedContent content, UrlProviderMode mode, string culture, Uri current)
+    public virtual UrlInfo GetUrl(UmbracoContext umbracoContext, IPublishedContent content, UrlMode mode, string culture, Uri current)
     {…}
 
     public virtual IEnumerable<UrlInfo> GetOtherUrls(UmbracoContext umbracoContext, int id, Uri current)
@@ -227,7 +227,7 @@ Create a custom Url Provider by implementing `IUrlProvider` interface
 ```csharp
 public interface IUrlProvider
 {
-    UrlInfo GetUrl(UmbracoContext umbracoContext, IPublishedContent content, UrlProviderMode mode, string culture, Uri current);
+    UrlInfo GetUrl(UmbracoContext umbracoContext, IPublishedContent content, UrlMode mode, string culture, Uri current);
 
     IEnumerable<UrlInfo> GetOtherUrls(UmbracoContext umbracoContext, int id, Uri current);
 }
@@ -335,17 +335,30 @@ Specifies the type of urls that the url provider should produce, eg. absolute vs
 These are the different modes:
 
 ```csharp
-public enum UrlProviderMode
+public enum UrlMode
 {
-  // Produce relative Urls exclusively
+  /// <summary>
+  /// Indicates that the url provider should do what it has been configured to do.
+  /// </summary>
+  Default = 0,
+
+  /// <summary>
+  /// Indicates that the url provider should produce relative urls exclusively.
+  /// </summary>
   Relative,
-  // Produce absolute Urls exclusively
+
+  /// <summary>
+  /// Indicates that the url provider should produce absolute urls exclusively.
+  /// </summary>
   Absolute,
-  // Produce relative Urls when possible, else absolute when required
+
+  /// <summary>
+  /// Indicates that the url provider should determine automatically whether to return relative or absolute urls.
+  /// </summary>
   Auto
 }
 ```
-Auto is the default. The setting can be changed in /config/umbracoSettings.config web.routing section:
+Default setting can be changed in /config/umbracoSettings.config web.routing section:
 
 ```xml
   <web.routing urlProviderMode="Relative">
