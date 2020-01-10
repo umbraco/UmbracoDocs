@@ -37,7 +37,7 @@ As an example, this has come from the default starter kit.
     var selection = site.Children.Where(x => x.IsVisible()); <!-- see below for explanation of IsVisible helper method -->
 }
 
-<!-- uncomment this line if you don't want the site name to appear in the top navigation -->
+<!-- uncomment this line if you want the site name to appear in the top navigation -->
 <!-- <a class="nav-link @Html.Raw(Model.Id == site.Id ? "navi-link--active" : "")" href="@site.Url">@site.Name</a> -->
 
 @foreach (var item in selection)
