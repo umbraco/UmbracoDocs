@@ -8,7 +8,7 @@ These examples are for Umbraco 8+ and they rely on [NUnit](https://nunit.org/) a
 
 # Mocking
 
-When testing components in Umbraco, especially controllers, there are a few dependencies that needs to be mocked / faked in order to get your unit tests running. Every Umbraco controller has two constructors: one empty constructor without any parameters for anyone not interested in unit testing or dependency injections, and one with full constructor injection which contains all parameters needed for proper unit testing. A lot of these dependencies are interfaces, which are simply mocked using Mock.Of<>, but there are still a few explicit non-interface dependencies that needs to be faked. In this documentation all mocks and fakes have been placed in a base class to avoid having to repeat this setup in every test class.
+When testing components in Umbraco, especially controllers, there are a few dependencies that needs to be mocked / faked in order to get your unit tests running. Every Umbraco controller has two constructors: one empty constructor without any parameters for anyone not interested in unit testing or dependency injections, and one with full constructor injection which contains all parameters needed for proper unit testing. A lot of these dependencies are interfaces, which are mocked using Mock.Of<>, but there are still a few explicit non-interface dependencies that needs to be faked. In this documentation all mocks and fakes have been placed in a base class to avoid having to repeat this setup in every test class.
 
 ```csharp
 public abstract class UmbracoBaseTest 
@@ -16,6 +16,7 @@ public abstract class UmbracoBaseTest
     public ServiceContext ServiceContext;
     public MembershipHelper MembershipHelper;
     public UmbracoHelper UmbracoHelper;
+    public UmbracoMapper UmbracoMapper;
 
     public Mock<ICultureDictionary> CultureDictionary;
     public Mock<ICultureDictionaryFactory> CultureDictionaryFactory;
@@ -32,6 +33,7 @@ public abstract class UmbracoBaseTest
         Mock.Of<RoleProvider>(), Mock.Of<IMemberService>(), Mock.Of<IMemberTypeService>(), Mock.Of<IUserService>(), Mock.Of<IPublicAccessService>(), AppCaches.NoCache, Mock.Of<ILogger>());
         this.UmbracoHelper = new UmbracoHelper(Mock.Of<IPublishedContent>(), Mock.Of<ITagQuery>(), this.CultureDictionaryFactory.Object, 
         Mock.Of<IUmbracoComponentRenderer>(), this.PublishedContentQuery.Object, this.MembershipHelper);
+        this.UmbracoMapper = new UmbracoMapper(new MapDefinitionCollection(new List<IMapDefinition>()));
     }
 
     public virtual void SetupCultureDictionaries()
@@ -57,7 +59,9 @@ public abstract class UmbracoBaseTest
 }
 ```
 
-Note that ```ServiceContext.CreatePartial()``` has several optional parameters, and by naming them you only need to mock the dependencies that you actually need, for example: ```ServiceContext.CreatePartial(contentService: Mock.Of<IContentService>());```
+:::tip
+```ServiceContext.CreatePartial()``` has several optional parameters, and by naming them you only need to mock the dependencies that you actually need, for example: ```ServiceContext.CreatePartial(contentService: Mock.Of<IContentService>());```
+:::
 
 ## Testing a ContentModel
 
@@ -199,6 +203,51 @@ public class MySurfaceControllerTests : UmbracoBaseTest
         Assert.AreEqual("Hello World", result.Content);
     }
 }
+```
+
+## Testing an UmbracoApiController
+
+See [Reference documentation on UmbracoApiControllers](https://our.umbraco.com/documentation/Reference/Routing/WebApi/#locally-declared-controller).
+
+:::warning
+This requires **Umbraco version 8.4 or higher**, due to a resolved [issue](https://github.com/umbraco/Umbraco-CMS/pull/6764).
+:::
+
+```csharp
+
+public class ProductsController : UmbracoApiController
+{
+    public ProductsController(IGlobalSettings globalSettings, IUmbracoContextAccessor umbracoContextAccessor, ISqlContext sqlContext, ServiceContext serviceContext, AppCaches appCaches, IProfilingLogger profilingLogger, IRuntimeState runtimeState, UmbracoHelper umbracoHelper, UmbracoMapper umbracoMapper) : base(globalSettings, umbracoContextAccessor, sqlContext, serviceContext, appCaches, profilingLogger, runtimeState, umbracoHelper, umbracoMapper) { }
+
+    public IEnumerable<string> GetAllProducts()
+    {
+        return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+    }
+}
+
+[TestFixture]
+public class ProductsControllerTests : UmbracoBaseTest
+{
+    private ProductsController controller;
+
+    [SetUp]
+    public override void SetUp()
+    {
+        base.SetUp();
+        this.controller = new ProductsController(Mock.Of<IGlobalSettings>(), Mock.Of<IUmbracoContextAccessor>(), Mock.Of<ISqlContext>(), this.ServiceContext, AppCaches.NoCache, Mock.Of<IProfilingLogger>(), Mock.Of<IRuntimeState>(), base.UmbracoHelper, base.UmbracoMapper);
+    }
+
+    [Test]
+    public void WhenGetAllProducts_ThenReturnViewModelWithExpectedProducts()
+    {
+        var expected = new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
+
+        var result = this.controller.GetAllProducts();
+
+        Assert.AreEqual(expected, result);
+    }
+}
+
 ```
 
 ## Testing ICultureDictionary using the UmbracoHelper

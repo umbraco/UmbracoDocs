@@ -24,10 +24,11 @@ Found a bug? Please let us know by using the Issue Tracker on the GitHub reposit
 
 A .NET Core client library based on Netstandard2.0 to support application development including Xamarin/UWP applications.
 
-This client library includes two samples:
+This client library includes three samples:
 
 * An [ASP.NET Core MVC sample](Dot-Net-Core/MVC-Sample) site, with custom routing and controller hijacking.
 * A [console application](https://github.com/umbraco/Umbraco.Headless.Client.Net/tree/master/samples/Umbraco.Headless.Client.Samples.Console), with options using the Content Delivery and the Content Management API.
+* A [Blazor Server sample](https://github.com/umbraco/Umbraco.Headless.Client.Net/tree/master/samples/Umbraco.Headless.Client.Samples.BlazorServer) showing how to use the .Net library to present your Umbraco Heartcore content in a Blazor application.
 
 ## [Node.js](Node-JS)
 

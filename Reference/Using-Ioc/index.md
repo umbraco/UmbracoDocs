@@ -2,11 +2,11 @@
 versionFrom: 8.0.0
 ---
 
-# IoC/Dependency injection
+# Inversion of Control / Dependency injection
 
 Umbraco 8.0 now supports dependency injection out of the box. This means that you no longer have to install an external package such as Autofac in order to register your dependencies.
 
-Umbraco `Composition` represents only a minimalist DI abstraction defined by the [IRegister](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Composing.IRegister.html) interface. Out of the box Umbraco implements the IRegister interface using [LightInject](https://www.lightinject.net/) - an ultra lightweight IoC container.
+Umbraco `Composition` represents only a minimalist DI abstraction defined by the [IRegister](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Composing.IRegister.html) interface. Out of the box Umbraco implements the IRegister interface using [LightInject](https://www.lightinject.net/) - an ultra lightweight Inversion of Control (IoC) container.
 
 ## Registering dependencies
 

@@ -1,19 +1,20 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
 ---
 
-# Content Picker Value Converter Example using meta attributes #
+# Content Picker Value Converter Example using meta attributes
+
+**Applies to Umbraco 7**
 
 ```csharp
+using Umbraco.Core;
+using Umbraco.Core.Models;
+using Umbraco.Core.Models.PublishedContent;
+using Umbraco.Core.PropertyEditors;
+using Umbraco.Web;
+
 namespace MyConverters
 {
-    using Umbraco.Core;
-    using Umbraco.Core.Models;
-    using Umbraco.Core.Models.PublishedContent;
-    using Umbraco.Core.PropertyEditors;
-    using Umbraco.Web;
-
     [PropertyValueType(typeof(IPublishedContent))]
     [PropertyValueCache(PropertyCacheValue.Source, PropertyCacheLevel.Content)]
     [PropertyValueCache(PropertyCacheValue.Object, PropertyCacheLevel.ContentCache)]
