@@ -18,7 +18,7 @@ The Models builder is a tool that can generate a complete set of strongly-typed 
 * [Control Models Generation](Control-Generation-vpre8.5.md)
 * [IPublishedContentModelFactory](IPublishedContentModelFactory-vpre8.5.md)
 * [Using Interfaces](Using-Interfaces-vpre8.5.md)
-* [Cool things to do with models](CoolThingsWithModels- vpre8.5.md)
+* [Cool things to do with models](CoolThingsWithModels-vpre8.5.md)
 
 :::tip
 Umbraco Models Builder is an open-source project that can be forked on GitHub and gladly accepts pull requests. Don't hesitate to contribute through the [ModelsBuilder GitHub repository](https://github.com/zpqrtbnk/Zbu.ModelsBuilder).
