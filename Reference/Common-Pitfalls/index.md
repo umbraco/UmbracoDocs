@@ -11,8 +11,7 @@ _This section is ultra important! It will describe many common pitfalls that dev
 
 Generally speaking if you are writing software these days you should be using Dependency Injection principles.
 If you do this, you probably aren't using Singletons or Statics (and for the most part you shouldn't be!). Since Umbraco itself is not built with an IoC container to use out of the box you may find yourself using Umbraco's built in Singleton accessors like:
-`ApplicationContext.Current` or `UmbracoContext.Current`. In most cases you shouldn't be using these Singleton accessors,
-it makes your code very difficult to test but more importantly using Singletons and Statics in your code make it very hard
+`ApplicationContext.Current` or `UmbracoContext.Current`. In most cases you shouldn't be using these Singleton accessors. It makes your code very difficult to test but more importantly using Singletons and Statics in your code make it very hard
 to manage, APIs become leaky and ultimately you'll end up with more problems than when you started.
 
 In all Umbraco base classes that you'll normally use, these objects are already exposed as properties, so please use these instead!
@@ -24,7 +23,7 @@ __Example of using base class properties instead of Singleton accessors:__
 
 _This example shows how you can access all sorts of Umbraco services in a `SurfaceController` without
 relying on Singletons. These same properties exist on all of Umbraco's base classes that you commonly use
-including razor views.
+including razor views._
 
 ```csharp
 public class ContactFormSurfaceController: SurfaceController
@@ -291,7 +290,7 @@ This can be achieved in various ways such as:
 
 Even more important is that you ensure that the initialization logic only executes one time for the lifetime of the
 application even when your app domain is restarted. If your initialization logic creates a database table or something
-similar to that where it should only be executed one time only, then you should set a persistent flag (such as a file) to
+similar to that, where it should only be executed one time only. Then you should set a persistent flag (such as a file) to
 indicate to your own logic that the initialization code has already executed and doesn't need to be done again.
 
 ## Rebuilding indexes
@@ -472,8 +471,8 @@ Based on the above 2 points, you can see that iterating content with the travers
 instances of `IPublishedContent` to be created. When memory is used, Garbage Collection needs to occur and this
 turnover can cause performance problems. The more objects created, the more items allocated in memory, the harder the job
 is for the Garbage Collector == more performance problems. Even worse is when you allocate tons of items in memory and/or really
-large items in memory, they will remain in memory for a long time because they'll end up in something called "Generation 3" which the
-GC tries to ignore for as long as possible because it knows it's going to take a lot of resources to cleanup!
+large items in memory. They will remain in memory for a long time because they'll end up in something called "Generation 3" which the
+GC tries to ignore for as long as possible. It does so because it knows it's going to take a lot of resources to cleanup!
 
 So, if you have a huge site and are running LINQ queries over tons of content, how do you avoid allocating all of these `IPublishedContent` instances?
 

@@ -41,7 +41,7 @@ If you don't have a Git client installed on your local machine, or prefer to wor
     # Try to push again if there were no conflicts
     git push origin master
 
-If you had to pull down new commits, it is a good idea to see if any of these commits contained changes to the schema (anything in `/Data/Revision/`). In order to ensure that your local site is up-to-date, and your changes work with the with the updated schema, you can to navigate to the `/data/` folder and create a deploy marker if one doesn't already exist. From a command line type the following command:
+If you had to pull down new commits, it is a good idea to see if any of these commits contained changes to the schema (anything in `/Data/Revision/`). In order to ensure that your local site is up-to-date, and your changes work with the updated schema, you can navigate to the `/data/` folder and create a deploy marker if one doesn't already exist. From a command line type the following command:
 
 `/…mysite/data> echo > deploy`
 

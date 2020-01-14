@@ -5,6 +5,7 @@ versionFrom: 8.0.0
 ## Standalone File System 
 :::note 
 (No file replication is configured, deployment handles updating files on the different servers)
+:::
 
 If the file system on your servers isn't performing any file replication then no _Umbraco_ configuration file changes are necessary. However Media will need to be configured to use a shared location such as Blob storage or S3.
 
@@ -13,6 +14,7 @@ Depending on the configuration and performance of the environment's local storag
 ## Synchronised File System 
 :::note 
 (the servers are performing file replication, updates to a file on one server, updates the corresponding file on any other servers)
+:::
 
 If the file system on your servers is performing file replication then the Umbraco temporary folder (`App_Data/TEMP`) must be excluded from replication.
 
@@ -42,7 +44,7 @@ Alternatively store the Umbraco temporary files in the local server's 'temp' fol
 ```xml
 <add key="Umbraco.Core.LocalTempStorage" value="EnvironmentTemp" />
 ```
-            
+:::            
 * ~/App_Data/Logs/*
 	* This is **optional** and depends on how you want your logs configured (see below) 
 

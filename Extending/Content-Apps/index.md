@@ -10,23 +10,23 @@ meta.Description: "A guide to Umbraco Content Apps in the backoffice"
 
 Content Apps are **companions** to the editing experience when working with content or media in the Umbraco backoffice.
 
-Content Apps are a new concept in v8. Editors can switch from editing 'Content' to accessing contextual information related to the item they are editing.
+Content Apps are a new concept in Umbraco 8. Editors can switch from editing 'Content' to accessing contextual information related to the item they are editing.
 
 ![Content Apps in backoffice](images/content-app-1.png)
 
 ### Default Content Apps
 
-**'Info'** - The 'Info' Content App is a default Content App for all items, replacing the 'Info' tab in Umbraco V7 for displaying Links, History and Status of the current content item.
+**'Info'** - The 'Info' Content App is a default Content App for all items, replacing the 'Info' tab in Umbraco 7 for displaying Links, History and Status of the current content item.
 
 ### Custom Content Apps
 
 As an integrated part of Umbraco it is possible for you as a developer to create and provide your editors with helpful Content Apps.
 
-For example, you could create a Google Analytics integration within a Content App that displays to editors, the current 'page views' for the content item they are editing.
+For example, you could create a Google Analytics integration within a Content App that displays to editors the current 'page views' for the content item they are editing.
 
 #### Controlling Appearance/Position
 
-You can associate an icon with your custom Content App, control the position (between 'Content' and 'Info') where your custom Content App should appear via a 'weighting' number.
+You can associate an icon and control the position of your custom Content App. The position, for example between 'Content' and 'Info', is set via a 'weighting' number.
 
 #### Permissions
 
@@ -268,3 +268,59 @@ $scope.model.badge = {
   type: "warning" // optional: determines the badge color - "warning" = dark yellow, "alert" = red, anything else = blue (matching the top-menu background color)
 };
 ```
+
+From version 8.4.0 and up it is also possible to set a notification badge from an `IContentAppFactory`. This is achieved by setting the badge property on the ContentApp model.
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Umbraco.Core.Composing;
+using Umbraco.Core.Models;
+using Umbraco.Core.Models.ContentEditing;
+using Umbraco.Core.Models.Membership;
+
+namespace Umbraco.Web.UI
+{
+
+    public class WordCounterAppComponent : IUserComposer
+    {
+        public void Compose(Composition composition)
+        {
+            // Add our word counter content app into the composition aka into the DI
+            composition.ContentApps().Append<WordCounterApp>();
+        }
+    }
+
+    public class WordCounterApp : IContentAppFactory
+    {
+        public ContentApp GetContentAppFor(object source, IEnumerable<IReadOnlyUserGroup> userGroups)
+        {
+			// Can implement some logic with userGroups if needed
+            // Allowing us to display the content app with some restrictions for certain groups
+            if (userGroups.Any(x => x.Alias.ToLowerInvariant() == "admin") == false)
+                return null;
+			
+
+			// only show app on content items
+			if(content is IContent) 
+			{
+				var wordCounterApp = new ContentApp
+	            {
+	                Alias = "wordCounter",
+	                Name = "Word Counter",
+	                Icon = "icon-calculator",
+	                View = "/App_Plugins/WordCounter/wordcounter.html",
+	                Weight = 0,
+					Badge = new ContentAppBadge { Count = 5 , Type = ContentAppBadgeType.Warning }
+	            };
+	            return wordCounterApp;
+			}
+
+            return null            
+        }
+    }
+}
+```
+
+Possible values for the `ContentAppBadge` Type are *Default*, *Alert* and *Warning*.

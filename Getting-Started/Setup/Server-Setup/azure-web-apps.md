@@ -17,6 +17,16 @@ This has been called a few names in the past, many people still know Azure Web A
 
 Umbraco will run on Azure Web Apps but there are some configuration options and some specific Azure Web Apps environment limitations you need to be aware of.
 
+## Recommended configuration
+
+* You need to [disable overlapping recycling](https://github.com/projectkudu/kudu/wiki/Configurable-settings#disable-overlapped-recycling) by adding the `WEBSITE_DISABLE_OVERLAPPED_RECYCLING` setting to appSettings with a value of `1`. If you don't do this, you will most likely get some file locking issues with Umbraco caches files and Lucene files.
+* The minimum recommended Azure SQL Tier is "S2", however noticeable performance improvements are seen in higher Tiers
+* You should set your log4net minimum log priority to "WARN" in /Config/log4net.config if you are running a live site (of course if you are debugging this is irrelevant)
+
+__If you require the scaling ("scale out") ability of Azure Web Apps then you need to consult the
+[Load Balancing documentation](Load-Balancing/index.md)__ since there is a lot more that needs
+to be configured to support scaling/auto-scaling.
+
 ## Storage
 
 The first important thing to know about Azure Web Apps is that it uses a remote file share.
@@ -41,18 +51,6 @@ if any of your code or libraries use the following variables:
 
 When your site is migrated to another worker, these variables will change.
 You cannot rely on these variables remaining static for the lifetime of your website.
-
-
-## Best practices
-
-These best practices are for a single environment/non-scaled azure website. __If you require the scaling ("scale out")
-ability of Azure Web Apps then you need to consult the
-[Load Balancing documentation](Load-Balancing/index.md)__ since there is a lot more that needs
-to be configured to support scaling/auto-scaling.
-
-* You should ensure that `fcnMode="Single"` in your web.config's `<httpRuntime>` section (this is the default that is shipped with Umbraco, see [here](https://shazwazza.com/post/all-about-aspnet-file-change-notification-fcn/) for more details)
-* You should set your log4net minimum log priority to "WARN" in /Config/log4net.config if you are running a live site (of course if you are debugging this is irrelevant)
-* The minimum recommended Azure SQL Tier is "S2", however noticeable performance improvements are seen in higher Tiers
 
 #### Examine v0.1.80+ ####
 
@@ -82,6 +80,24 @@ For Umbraco installations that are hosted by Azure Web Apps it is recommend that
 ```
 
 This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the environment temporary folder. More info on this setting is available [here](../../../Reference/Config/webconfig/index.md#umbracolocaltempstorage-umbraco-v773)
+
+
+For **Umbraco V8**
+
+You will need to set the local temporary storage value by adding this to your web.config, in the appSettings section.
+
+
+```xml
+<add key="Umbraco.Core.LocalTempStorage" value="EnvironmentTemp" />
+```
+
+In addition, you will need to set the Lucene Directory Factory value as well.
+
+```xml
+<add key="Umbraco.Examine.LuceneDirectoryFactory" value="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory, Examine" />
+```
+
+Depending on your requirements, you might need to set the above value to be Examine.LuceneEngine.Directories.TempEnvDirectoryFactory.
 
 For **Umbraco v7.6 - v7.7.2**
 

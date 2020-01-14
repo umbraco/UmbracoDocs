@@ -40,23 +40,3 @@ Getting the service through the `ApplicationContext`:
 ```csharp
 ApplicationContext.Current.Services.SectionService
 ```
-
-## Methods
-
-### .GetSections()
-Gets all `Umbraco.Core.Models.Section` objects
-
-### .GetAllowedSections(int userId)
-Gets all `Umbraco.Core.Models.Section` objects that the user with the specified ID is allowed to access
-
-### .GetByAlias(string appAlias)
-Gets the `Umbraco.Core.Models.Section` object by its alias
-
-### .MakeNew(string name, string alias, string icon)
-Persists a new `Umbraco.Core.Models.Section` object
-
-### .MakeNew(string name, string alias, string icon, int sortOrder)
-Persists a new `Umbraco.Core.Models.Section` object
-
-### .DeleteSection(Section section)
-Deletes the specified `Umbraco.Core.Models.Section` object

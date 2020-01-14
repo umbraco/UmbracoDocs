@@ -79,9 +79,8 @@ by default would mean the "umbracoApplicationUrl" is "f02.mysite.local". In any 
 
 In many scenarios this is fine, but in case this is not adequate there's a few of options you can use:
 
-* __Recommended__: [set your front-end(s) (non-admin server) to be explicit replica servers](TBC.md) which means they will never be used as the master scheduler
-* set the `umbracoApplicationUrl` property in the [Web.Routing section of /Config/umbracoSettings.config](../../../../Reference/Config/umbracoSettings/index.md)
-* or implement a custom [IServerRegistrar](TBC.md)
+* __Recommended__: [set your front-end(s) (non-admin server) to be explicit replica servers](flexible-advanced.md#explicit-master-scheduling-server) by creating a custom `IServerRegistrar`, this means the front end servers will never be used as the master scheduler
+* Set the `umbracoApplicationUrl` property in the [Web.Routing section of /Config/umbracoSettings.config](../../../../Reference/Config/umbracoSettings/index.md)
 
 ## Common load balancing setup information
 

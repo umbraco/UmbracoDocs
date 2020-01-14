@@ -30,7 +30,7 @@ LanguageConvertersResolver.Current = new LanguageConvertersResolver(
 
 ## Initialization with type finding
 
-Instead of initializing multiple object resolvers with an array of known types, we can initialize them with types found in the current application pool if this is the desired behavior. This is quite easy to do once we've created an extension method for the PluginManager to find the specified type. This example initializes the ActionsResolver:
+Instead of initializing multiple object resolvers with an array of known types, we can initialize them with types found in the current application pool if this is the desired behavior. This is possible to do once we've created an extension method for the PluginManager to find the specified type. This example initializes the ActionsResolver:
 
 ```csharp
 ActionsResolver.Current = new ActionsResolver(

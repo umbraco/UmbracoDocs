@@ -2,13 +2,15 @@
 versionFrom: 8.0.0
 ---
 
-# IoC/Dependency injection
+# Inversion of Control / Dependency injection
 
-Since Umbraco 8.0 we now support dependency injection out of the box. This means that you no longer have to install an external package such as Autofac in order to register your dependencies - sweet!
+Umbraco 8.0 now supports dependency injection out of the box. This means that you no longer have to install an external package such as Autofac in order to register your dependencies.
+
+Umbraco `Composition` represents only a minimalist DI abstraction defined by the [IRegister](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Composing.IRegister.html) interface. Out of the box Umbraco implements the IRegister interface using [LightInject](https://www.lightinject.net/) - an ultra lightweight Inversion of Control (IoC) container.
 
 ## Registering dependencies
 
-Umbraco 8 is using LightInject. To register your own dependencies to the container you need to do so in a composer ([Read more about composers and components](../../implementation/composing/index.md)). It looks like this:
+To register your own dependencies to the container you need to do so in a composer ([Read more about composers and components](../../implementation/composing/index.md)). It looks like this:
 
 ```csharp
 using Doccers.Core.Services;
@@ -145,7 +147,9 @@ namespace Doccers.Core.Services.Implement
     }
 }
 ```
-
+:::note
+The use of the UmbracoHelper is only possible when there's an instance of the UmbracoContext. [You can read more here](../../Implementation/Services/index.md).
+:::
 ### ExamineManager
 
 [Read more about examine](../Searching/Examine/index.md).
@@ -210,3 +214,17 @@ namespace Doccers.Core
     }
 }
 ```
+
+### Accessing LightInject container
+
+Should you need to carry out more complicated registrations beyond the minimalist Umbraco DI implementation, you can access the underlying DI container via the `Concrete` property of the `composition`.
+
+```csharp
+var container = composition.Concrete as LightInject.ServiceContainer;
+container.RegisterAssembly(typeof(IFoo).Assembly);
+```
+[Visit the LightInject site to see what is possible](https://www.lightinject.net/)
+
+## Using DI in Services and Helpers
+
+[Services and Helpers](../../Implementation/Services/index.md) - For more examples of using DI and gaining access to Services and Helpers, and creating your own custom Services and Helpers to inject.

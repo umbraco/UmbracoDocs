@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
+versionRemoved: 8.0.0
 ---
 
 # Traditional (Legacy/Deprecated) load balancing
@@ -140,8 +140,8 @@ Example:
 ## Testing
 
 The normal testing practices should be done (See [Common load balancing setup information](index.md)) with a traditional load balancing setup but specific testing can be done to ensure
-that your distributed calls are being made correctly in a traditional setup. To test Umbraco distributed calls, create and publish some content on one server (i.e. http://server1.mywebsite.com/umbraco/umbraco.aspx),
-then browse to the front end content on another server (i.e. http://server2.mywebsite.com/public/page1.aspx if page1 was the newly published content).
+that your distributed calls are being made correctly in a traditional setup. To test Umbraco distributed calls, create and publish some content on one server (i.e. http://server1.mywebsite.com/umbraco/umbraco.aspx). 
+Then browse to the front end content on another server (i.e. http://server2.mywebsite.com/public/page1.aspx if page1 was the newly published content).
 If the page shows up on the 2nd server, though it was published from the 1st server, then distributed calls are working! You'll need to thoroughly test this though.
 
 ## Conclusion

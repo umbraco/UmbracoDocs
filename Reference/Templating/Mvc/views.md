@@ -1,6 +1,5 @@
 ---
 versionFrom: 8.0.0
-needsV8Update: "false"
 ---
 
 
@@ -63,7 +62,7 @@ In this example, we are looping through a list of items with the custom made typ
 
 ## <a name="renderingMacros"></a>Rendering Macros
 
-Rendering a macro is easy using UmbracoHelper. There are 3 overloads, we'll start with the most basic:
+Rendering a macro is done using UmbracoHelper. There are 3 overloads, we'll start with the most basic:
 
 This renders a macro with the specified alias without any parameters:
 

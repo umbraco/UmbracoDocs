@@ -61,10 +61,10 @@ Gives editors a grid layout editor which allows them to insert different types o
 
 Used to crop and resize images to predefined sizes.
 
-## Label
+## [Label](Label.md)
 `Alias: Umbraco.Label`
 
-Label is a non-editable control and can only be used to display a pre-set text.
+Label is a non-editable control and can only be used to display a pre-set value.
 
 ## List View
 `Alias: Umbraco.ListView`
