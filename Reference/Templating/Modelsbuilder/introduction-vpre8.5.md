@@ -1,5 +1,6 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.0
+versionTo: 8.4.0
 ---
 
 # Umbraco Models Builder Introduction
