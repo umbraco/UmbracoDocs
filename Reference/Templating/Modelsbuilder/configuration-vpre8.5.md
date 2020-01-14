@@ -1,6 +1,6 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
+versionTo: 8.4.0
 ---
 
 # Install and configure Umbraco Models Builder
@@ -13,7 +13,7 @@ In order for Models Builder to be used in a website, the [Umbraco.ModelsBuilder 
 
 Then, the following application settings (in the `appSettings` section of the `Web.config` file) control what the Models Builder does:
 
-* `Umbraco.ModelsBuilder.Enable` can be `true` or `false` (default) and acts as a giant kill-switch: When `false`, Models Builder behaves as if it were not installed at all, and all other settings are ignored.
+* `Umbraco.ModelsBuilder.Enable` (bool, default is `false`) acts as a giant kill-switch: When `false`, Models Builder behaves as if it were not installed at all, and all other settings are ignored.
 
 * `Umbraco.ModelsBuilder.ModelsMode` determines how Models Builder generates models. Valid values are:
     * `Nothing` (default): Do not generate models
@@ -23,15 +23,15 @@ Then, the following application settings (in the `appSettings` section of the `W
     * `AppData`: Generate models in `~/App_Data/Models` (but do not compile them) whenever the user clicks the "generate models" button in the Developer section
     * `LiveAppData`: Generate models in `~/App_Data/Models` (but do not compile them) anytime a content type changes
 
-* `Umbraco.ModelsBuilder.EnableFactory` can be `true` (default) or `false` and determines whether Models Builder registers the built-in `IPublishedContentFactory`. When `false`, models could be generated, but would *not* be used by Umbraco.
+* `Umbraco.ModelsBuilder.EnableFactory` (bool, default is `true`) determines whether Models Builder registers the built-in `IPublishedContentFactory`. When `false`, models could be generated, but would *not* be used by Umbraco.
 
 * `Umbraco.ModelsBuilder.ModelsNamespace` (string, default is `Umbraco.Web.PublishedContentModels`) specifies the generated models' namespace.
 
 * `Umbraco.ModelsBuilder.LanguageVersion` (string, default is `CSharp5`) indicates the C# language version which is used when compiling the models in [`Live`]`Dll`. Can be set to `CSharp6` to try the new C# features.
 
-* `Umbraco.ModelsBuilder.FlagOutOfDateModels` can be `true` (default) or `false` and indicates whether out-of-date models (i.e. after a content type or data type has been modified) should be flagged.
+* `Umbraco.ModelsBuilder.FlagOutOfDateModels` (bool, default is `true`) indicates whether out-of-date models (i.e. after a content type or data type has been modified) should be flagged.
 
-* `Umbraco.ModelsBuilder.StaticMixinGetters` can be `true` (default) or `false` and indicates whether static mixin getters should be generated.
+* `Umbraco.ModelsBuilder.StaticMixinGetters` (bool, default is `true`) indicates whether static mixin getters should be generated.
 
 * `Umbraco.ModelsBuilder.StaticMixinGetterPattern` (string, default is `Get{0}`) indicates the format of the static mixin getters.
 
@@ -55,5 +55,7 @@ In addition, in order for Models Builder to provide the API needed by the Visual
 
 * `Umbraco.ModelsBuilder.EnableApi` can be `true` or `false` (default) and controls whether Models Builder provides the API.
 
-**WARNING:** The API is provided when the website runs in debug mode, exclusively. Which means that the `debug` attribute of `Web.config`'s `<compilation>` element must be set to `true`.
+:::warning
+The API is provided when the website runs in debug mode, exclusively. Which means that the `debug` attribute of `Web.config`'s `<compilation>` element must be set to `true`.
+:::
 
