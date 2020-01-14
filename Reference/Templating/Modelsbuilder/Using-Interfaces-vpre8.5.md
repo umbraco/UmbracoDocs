@@ -1,10 +1,11 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.0
+versionTo: 8.4.0
 ---
 
 # Using Interfaces
 
-When using compositions, Models Builder generates an interface for the composed model, which enables us to not have to switch back to using `GetPropertyValue()` for the composed properties.
+When using compositions, Models Builder generates an interface for the composed model, which enables us to not have to switch back to using `Value()` for the composed properties.
 
 A common use-case for this is if you have a separate composition for the "SEO properties" `Page Title` and `Page Description`.
 

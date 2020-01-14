@@ -1,6 +1,6 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
+versionTo: 8.4.0
 ---
 
 # Control Models Generation
@@ -57,7 +57,7 @@ Indicates that a property implements a property type with a given alias. The att
 public partial class Employee
 {
   [ImplementPropertyType("employeeAge")]
-  public int Age { get { return this.GetPropertyValue<int>("employeeAge"); } }
+  public int Age { get { return this.Value<int>("employeeAge"); } }
 }
 ```
 

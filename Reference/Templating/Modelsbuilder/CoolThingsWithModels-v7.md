@@ -28,7 +28,3 @@ Turns out it is possible to do something similar in Razor. Assuming `content` is
 ```
 
 By casting the strongly-typed to a dynamic when calling the **RenderContent** method, you tell C# to do late runtime binding and pick the proper **RenderContent** implementation depending on the actual CLR type of the **content** object. Using dynamic here is OK and will not pollute the rest of the code.
-
-### Navigation
-
-TODO - document how navigation can be made easier by using things such as `.Children<NewsItem>()` or `.FirstChild<ProductList>()`.

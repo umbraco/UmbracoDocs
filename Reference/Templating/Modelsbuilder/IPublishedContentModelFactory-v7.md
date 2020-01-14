@@ -35,7 +35,7 @@ The returned object must implement the `IPublishedContent` interface, which can 
 The returned object must only depend on the original content object. Content models are _not_ view models and must be stateless, with regards to the current activity (current request, current culture...). In other words, the factory should not use information about the current request, current culture, whatever, to alter the returned object. Another way to say it: It should be possible for the factory to generate the model when Umbraco boots, and the model could be kept in memory for as long as the underlying content is not edited.
 
 :::WARNING
-**Factories should *not* cache models, i.e. a factory should create a *new* object each time it is asked for one.** *Reason: At the moment we want models to inherit from `PublishedContentModel` so they implement `IPublishedContentExtended` and we need a new one each time we create a model. Currently looking into whether we can drop that constraint for future versions of Umbraco.*
+**Factories should *not* cache models, i.e. a factory should create a *new* object each time it is asked for one.** Reason: At the moment we want models to inherit from `PublishedContentModel` so they implement `IPublishedContentExtended` and we need a new one each time we create a model. Currently looking into whether we can drop that constraint for future versions of Umbraco.
 :::
 
 ## Enabling a factory
