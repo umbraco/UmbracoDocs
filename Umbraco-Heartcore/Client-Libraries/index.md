@@ -10,25 +10,25 @@ The client libraries provide you with a starting point where you do not need to 
 
 We recommend testing with these libraries if you are looking to explore the potential of Umbraco Heartcore.
 
-Both the .NET Core and the Node.js client libraries include samples that you can connect to you Heartcore project and start testing in no time.
+Both client libraries include samples that you can connect to you Heartcore project and start testing in no time.
 
 :::tip
 Our client libraries are open source and free to use.
 
 Found a bug? Please let us know by using the Issue Tracker on the GitHub repositories:
-- [.NET Core client library](https://github.com/umbraco/Umbraco.Headless.Client.Net/issues)
+- [.NETStandard client library](https://github.com/umbraco/Umbraco.Headless.Client.Net/issues)
 - [Node.js client library](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs/issues)
 :::
 
-## [.NET Core](Dot-Net-Core)
+## [.NET Standard](Dot-Net-Core)
 
-A .NET Core client library based on Netstandard2.0 to support application development including Xamarin/UWP applications.
+A .NET client library based on .NET Standard 2.0 to support application development including Xamarin/UWP applications.
 
 This client library includes three samples:
 
 * An [ASP.NET Core MVC sample](Dot-Net-Core/MVC-Sample) site, with custom routing and controller hijacking.
 * A [console application](https://github.com/umbraco/Umbraco.Headless.Client.Net/tree/master/samples/Umbraco.Headless.Client.Samples.Console), with options using the Content Delivery and the Content Management API.
-* A [Blazor Server sample](https://github.com/umbraco/Umbraco.Headless.Client.Net/tree/master/samples/Umbraco.Headless.Client.Samples.BlazorServer) showing how to use the .Net library to present your Umbraco Heartcore content in a Blazor application.
+* A [Blazor Server sample](https://github.com/umbraco/Umbraco.Headless.Client.Net/tree/master/samples/Umbraco.Headless.Client.Samples.BlazorServer) showing how to use the .NET library to present your Umbraco Heartcore content in a Blazor application.
 
 ## [Node.js](Node-JS)
 
