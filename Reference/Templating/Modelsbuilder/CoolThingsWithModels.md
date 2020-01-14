@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 8.5.0
 ---
 
 # Cool things you can do with strongly-typed models
