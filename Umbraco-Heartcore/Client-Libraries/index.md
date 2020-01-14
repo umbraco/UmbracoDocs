@@ -16,7 +16,7 @@ Both client libraries include samples that you can connect to you Heartcore proj
 Our client libraries are open source and free to use.
 
 Found a bug? Please let us know by using the Issue Tracker on the GitHub repositories:
-- [.NETStandard client library](https://github.com/umbraco/Umbraco.Headless.Client.Net/issues)
+- [.NET Standard client library](https://github.com/umbraco/Umbraco.Headless.Client.Net/issues)
 - [Node.js client library](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs/issues)
 :::
 
