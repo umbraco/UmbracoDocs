@@ -2,15 +2,15 @@
 versionFrom: 8.0.0
 ---
 
-# .NET Core Client library
+# .NET Client library
 
-In this article you can learn more about the .NET Core client library that you can clone and use with your Umbraco Heartcore projects.
+In this article you can learn more about the .NET client library that you can clone and use with your Umbraco Heartcore projects.
 
-It is a library for .NET Core and is based on NetStandard 2.0. This means that it can be used on the most .Net frameworks, e.g. UWP, Xamarin.Android, Xamarin.Mac and Desktop .Net 4.6.1.
+It is a library for .NET Core and is based on .NET Standard 2.0. This means that it can be used on the most .NET frameworks, e.g. UWP, Xamarin.Android, Xamarin.Mac and Desktop .NET 4.6.1.
 
 ## Download and install
 
-The .NET Core library can be found on GitHub: [.NET Core client library for Umbraco Heartcore](https://github.com/umbraco/Umbraco.Headless.Client.Net). 
+The .NET library can be found on GitHub: [.NET client library for Umbraco Heartcore](https://github.com/umbraco/Umbraco.Headless.Client.Net). 
 
 You can also install it through NuGet:
 
