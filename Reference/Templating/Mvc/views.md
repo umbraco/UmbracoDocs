@@ -95,7 +95,7 @@ This renders a macro with some parameters using a dictionary
     var umbracomember = Members.GetByUsername(profile.UserName);
 
     <h1>@umbracomember.Name</h1>
-    <p>@umbracomember.GetPropertyValue<string>("bio")</p>
+    <p>@umbracomember.Value<string>("bio")</p>
 }
 ```
 
