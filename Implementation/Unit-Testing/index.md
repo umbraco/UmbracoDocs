@@ -302,7 +302,7 @@ public class HomeControllerTests : UmbracoBaseTest
 
     [Test]
     [TestCase("myDictionaryKey", "myDictionaryValue")]
-    public void GivenMyDictionaryKey_WhenIndex_ThenReturnViewModelWithMyPropertyDictionaryValue(string key, string expected)
+    public void GivenMyDictionaryKey_WhenIndexAction_ThenReturnViewModelWithMyPropertyDictionaryValue(string key, string expected)
     {
         var model = new ContentModel(new Mock<IPublishedContent>().Object);
         base.CultureDictionary.Setup(x => x[key]).Returns(expected);
@@ -352,7 +352,7 @@ public class MyCustomControllerTests : UmbracoBaseTest
     }
 
     [Test]
-    public void GivenContentQueryReturnsOtherContent_WhenIndex_ThenReturnViewModelWithOtherContent()
+    public void GivenContentQueryReturnsOtherContent_WhenIndexAction_ThenReturnViewModelWithOtherContent()
     {
         var currentContent = new ContentModel(new Mock<IPublishedContent>().Object);
         var otherContent = Mock.Of<IPublishedContent>();
@@ -405,7 +405,7 @@ public class MemberControllerTests : UmbracoBaseTest
     [Test]
     [TestCase("member1")]
     [TestCase("member2")]
-    public void GivenMemberIsAuthenticated_WhenIndexAction_ThenReturnViewModelWithCurrentMember(string username)
+    public void GivenExistingMemberIsAuthenticated_WhenIndexAction_ThenReturnViewModelWithCurrentMember(string username)
     {
         var member = new Mock<IMember>();
         member.Setup(x => x.Username).Returns(username);
@@ -427,6 +427,21 @@ public class MemberControllerTests : UmbracoBaseTest
         var actual = (MemberProfile)((ViewResult)this.controller.Index(new ContentModel(Mock.Of<IPublishedContent>()))).Model;
 
         Assert.AreEqual(expected, actual.Member);
+    }
+
+    [Test]
+    [TestCase("member1")]
+    [TestCase("member2")]
+    public void GivenExistingMemberIsNotAuthenticated_WhenIndexAction_ThenReturnViewModelWithNullMember(string username)
+    {
+        var member = new Mock<IMember>();
+        member.Setup(x => x.Username).Returns(username);
+        base.memberService.Setup(x => x.GetByUsername(username)).Returns(member.Object);
+        base.memberCache.Setup(x => x.GetByMember(member.Object)).Returns(Mock.Of<IPublishedContent>());
+        
+        var actual = (MemberProfile)((ViewResult)this.controller.Index(new Umbraco.Web.Models.ContentModel(Mock.Of<IPublishedContent>()))).Model;
+
+        Assert.Null(actual.Member);
     }
 }
 ```
