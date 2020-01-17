@@ -365,9 +365,9 @@ public class MyCustomControllerTests : UmbracoBaseTest
 }
 ```
 
-## Testing GetCurrentMember using the UmbracoHelper
+## Testing GetCurrentMember using the MembershipHelper
 In this example we have a controller which renders a profile page, by using ```Umbraco.MembershipHelper.GetCurrentMember()```.
-This involves a lot of different dependencies working together behind the scenes such as the ```MembershipHelper```, ```IMemberService```, ```IPublishedMemberCache``` and the ```HttpContext``` which needs to be mocked in order for our tests to run smoothly.
+This involves a lot of different dependencies working together behind the scenes such as the ```MembershipHelper```, ```IMemberService```, ```IPublishedMemberCache``` and the ```HttpContext``` which needs to be mocked for our tests to run smoothly.
 
 ```csharp
 public class MemberController : RenderMvcController
