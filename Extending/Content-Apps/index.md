@@ -222,7 +222,7 @@ namespace Umbraco.Web.UI
 			
 
 			// only show app on content items
-			if(content is IContent) 
+			if(source is IContent) 
 			{
 				var wordCounterApp = new ContentApp
 	            {
