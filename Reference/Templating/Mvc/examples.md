@@ -9,12 +9,6 @@ _Lots of examples of using various techniques to render data in a view_
 ## Rendering the raw value of a field from IPublishedContent
 
 ```csharp
-@Model.Properties["bodyContent"].Value
-```
-
-Or alternatively:
-
-```csharp
 @Model.Value("bodyContent")
 ```
 
