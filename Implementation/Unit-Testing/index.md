@@ -370,9 +370,9 @@ In this example we have a controller which renders a profile page, by using ```U
 This involves a lot of different dependencies working together behind the scenes such as the ```MembershipHelper```, ```IMemberService```, ```IPublishedMemberCache``` and the ```HttpContext``` which needs to be mocked for our tests to run smoothly.
 
 ```csharp
-public class MemberController : RenderMvcController
+public class MemberProfileController : RenderMvcController
 {
-    public MemberController(IGlobalSettings globalSettings, IUmbracoContextAccessor umbracoContextAccessor, ServiceContext serviceContext, AppCaches appCaches, IProfilingLogger profilingLogger, UmbracoHelper umbracoHelper) : base(globalSettings, umbracoContextAccessor, serviceContext, appCaches, profilingLogger, umbracoHelper) { }
+    public MemberProfileController(IGlobalSettings globalSettings, IUmbracoContextAccessor umbracoContextAccessor, ServiceContext serviceContext, AppCaches appCaches, IProfilingLogger profilingLogger, UmbracoHelper umbracoHelper) : base(globalSettings, umbracoContextAccessor, serviceContext, appCaches, profilingLogger, umbracoHelper) { }
 
     public override ActionResult Index(ContentModel model)
     {
@@ -391,15 +391,15 @@ public class MemberProfile : ContentModel
 }
 
 [TestFixture]
-public class MemberControllerTests : UmbracoBaseTest 
+public class MemberProfileControllerTests : UmbracoBaseTest 
 {
-    private MemberController controller;
+    private MemberProfileController controller;
     
     [SetUp]
     public override void SetUp()
     {
         base.SetUp();
-        this.controller = new MemberController(Mock.Of<IGlobalSettings>(), Mock.Of<IUmbracoContextAccessor>(), base.ServiceContext, AppCaches.NoCache, Mock.Of<IProfilingLogger>(), base.UmbracoHelper);
+        this.controller = new MemberProfileController(Mock.Of<IGlobalSettings>(), Mock.Of<IUmbracoContextAccessor>(), base.ServiceContext, AppCaches.NoCache, Mock.Of<IProfilingLogger>(), base.UmbracoHelper);
     }
 
     [Test]
