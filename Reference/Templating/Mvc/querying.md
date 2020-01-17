@@ -91,19 +91,19 @@ With the `IPublishedContent` model we support strongly typed LINQ queries out of
 #### Where children are visible
 
 ```csharp
-@Model.Content.Children.Where(x => x.IsVisible())
+@Model.Children.Where(x => x.IsVisible())
 ```
 
 #### Traverse for sitemap
 
 ```csharp
-var items = @Model.Content.Children.Where(x => x.IsVisible() && x.Level <= 4)
+var items = @Model.Children.Where(x => x.IsVisible() && x.Level <= 4)
 ```
 
 #### Content sub menu
 
 ```csharp
-@Model.Content.AncestorOrSelf(1).Children.Where(x => x.DocumentTypeAlias == "DatatypesFolder").First().Children
+@Model.AncestorOrSelf(1).Children.Where(x => x.DocumentTypeAlias == "DatatypesFolder").First().Children
 ```
 
 #### Complex query
@@ -115,7 +115,7 @@ With the strongly typed `IPublishedContent` you can do complex queries.
 // the first node found that contains "1173" in the array of comma delimited
 // values found in a property called 'selectedNodes'.
 
-var result = @Model.Content.Ancestors().OrderBy(x => x.Level)
+var result = @Model.Ancestors().OrderBy(x => x.Level)
     .Single()
     .Descendants()
     .FirstOrDefault(x => x.GetPropertyValue("selectedNodes", "").Split(',').Contains("1173"));
