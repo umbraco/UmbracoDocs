@@ -603,16 +603,11 @@ namespace Umbraco8.ViewPages
             )
         {
         }
-        public CustomViewPage(ISiteService SiteService, ServiceContext services, AppCaches appCaches)
+        public CustomViewPage(ISiteService siteService, ServiceContext services, AppCaches appCaches)
         {
-            SiteService = SiteService;
+            SiteService = siteService;
             Services = services;
             AppCaches = appCaches;
-        }
-
-        protected override void InitializePage()
-        {
-            base.InitializePage();
         }
     }
     public abstract class CustomViewPage : UmbracoViewPage
@@ -625,16 +620,11 @@ namespace Umbraco8.ViewPages
             )
         { }
 
-        public CustomViewPage(ISiteService SiteService, ServiceContext services, AppCaches appCaches)
+        public CustomViewPage(ISiteService siteService, ServiceContext services, AppCaches appCaches)
         {
-            SiteService = SiteService;
+            SiteService = siteService;
             Services = services;
             AppCaches = appCaches;
-        }
-
-        protected override void InitializePage()
-        {
-            base.InitializePage();
         }
     }
 }
