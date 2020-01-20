@@ -229,8 +229,7 @@ namespace Umbraco.Web.UI
                     Name = "Word Counter",
                     Icon = "icon-calculator",
                     View = "/App_Plugins/WordCounter/wordcounter.html",
-                    Weight = 0,
-                    Badge = new ContentAppBadge { Count = 5 , Type = ContentAppBadgeType.Warning }                
+                    Weight = 0                
                 };
                 
                 return wordCounterApp;
