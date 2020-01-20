@@ -98,7 +98,7 @@ Since they get routed via an MVC area, your views should be placed in the follow
 
 #### Protecting surface controller routes
 
-If you only want a surface controller action to be available when it's used within an Umbraco form and not from the auto-routed URL, you can add the `[ValidateUmbracoFormRouteString]` attribute to the action method. This can be especially useful for plugin based controllers, as this makes sure the actions can only be activated whenever it's actually used within the website.
+If you only want a surface controller action to be available when it's used within an Umbraco form and not from the auto-routed URL, you can add the `[ValidateUmbracoFormRouteString]` attribute to the action method. This can be especially useful for plugin based controllers, as this makes sure the actions can only be activated whenever it's used within the website.
 
 ```csharp
 namespace TestWebsite.Core.Controllers
