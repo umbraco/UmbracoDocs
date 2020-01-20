@@ -20,7 +20,7 @@ The user picker opens a panel to pick a specific user from the Users section. Th
 
 ## MVC View Example
 
-Please note that getting the Value of the property will simply return a user ID - properties of the User can be accessed by referencing UserService.
+Please note that getting the Value of the property will return the user ID - properties of the User can be accessed by referencing UserService.
 
 ### Typed
 
