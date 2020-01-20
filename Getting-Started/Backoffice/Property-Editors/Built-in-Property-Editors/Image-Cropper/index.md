@@ -15,12 +15,12 @@ You can add, edit & delete crop presets the cropper UI can use.
 
 ## Data Type Definition Example
 
-![Image Cropper Data Type Definition](images/Image-Cropper/datatype.png)
+![Image Cropper Data Type Definition](images/imageCropper-v8.png)
 
 ## Content Example
 
 Provides a UI to upload an image, set a focal point on the image, and optionally crop and scale the image to predefined crops.
-So by default, images in the cropper will be shown based on a set focal point, and only use specific crops if they are available.
+By default, images in the cropper will be shown based on a set focal point, and only use specific crops if they are available.
 
 The cropper comes in 3 modes:
 
@@ -30,20 +30,20 @@ The cropper comes in 3 modes:
 
 ### Uploading images
 The editor exposes a drop area for files. Click it to upload an image.
-![Image Cropper Upload](images/Image-Cropper/upload.png)
+![Image Cropper Upload](images/imageCropper-upload-v8.png)
 
 ### Set focal point
 By default, the cropper allows the editor to set a focal point on the uploaded image.
-Below the image, all the preset crops are shown to give the editor a preview of what
+Next to the image, all the preset crops are shown to give the editor a preview of what
 the image will look like to the end user.
 
-![Image Cropper Focal point](images/Image-Cropper/focalpoint.png)
+![Image Cropper Focal point](images/imageCropper-focalpoint-v8.png)
 
 ### Crop and resize
 If needed, the editor can crop the image to specific crop presets, to ensure the right part and size of the image
 is shown for a specific crop.
 
-![Image Cropper Crop](images/Image-Cropper/crop.png)
+![Image Cropper Crop](images/imageCropper-crop-v8.png)
 
 
 ## Sample code
