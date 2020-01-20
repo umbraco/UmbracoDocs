@@ -144,7 +144,7 @@ A textarea control to input text.
 
 A normal html input text field.
 
-## User picker
+## [ User picker ](User-Picker/index.md)
 `Alias: Umbraco.UserPicker`
 
 The easiest way to pick a person from user backend users.  See Members for front-end users.
