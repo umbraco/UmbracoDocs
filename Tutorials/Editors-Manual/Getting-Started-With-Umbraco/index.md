@@ -6,8 +6,6 @@ versionFrom: 7.0.0
 
 ## [Logging In and Out](Logging-In-and-Out)
 
-Test
-
 ## [Umbraco Interface](Umbraco-Interface)
 
 ### [Initial View](Umbraco-Interface#initial-view)
