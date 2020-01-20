@@ -26,10 +26,10 @@ Please note that getting the Value of the property will return the user ID - pro
 
 ```csharp
 @{
-var us = Services.UserService;
-var username = us.GetUserById(Model.Value<int>("userPicker")).Name;
+    var us = Services.UserService;
+    var username = us.GetUserById(Model.Value<int>("userPicker")).Name;
 }
-<p>This is the chosen person: @username</p>
-<p>This returns the id value of chosen person: @Model.Value("userPicker")</p>
+    <p>This is the chosen person: @username</p>
+    <p>This returns the id value of chosen person: @Model.Value("userPicker")</p>
 }
 ```
