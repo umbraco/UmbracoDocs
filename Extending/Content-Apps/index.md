@@ -215,9 +215,9 @@ namespace Umbraco.Web.UI
     {
         public ContentApp GetContentAppFor(object source, IEnumerable<IReadOnlyUserGroup> userGroups)
         {
-			// Can implement some logic with userGroups if needed
+            // Can implement some logic with userGroups if needed
             // Allowing us to display the content app with some restrictions for certain groups
-            if (userGroups.Any(x => x.Alias.ToLowerInvariant() == "admin") == false)
+            if (userGroups.All(x => x.Alias.ToLowerInvariant() != Umbraco.Core.Constants.Security.AdminGroupAlias))
                 return null;
 			
             // only show app on content items
@@ -296,9 +296,9 @@ namespace Umbraco.Web.UI
     {
         public ContentApp GetContentAppFor(object source, IEnumerable<IReadOnlyUserGroup> userGroups)
         {
-			// Can implement some logic with userGroups if needed
+            // Can implement some logic with userGroups if needed
             // Allowing us to display the content app with some restrictions for certain groups
-            if (userGroups.Any(x => x.Alias.ToLowerInvariant() == "admin") == false)
+            if (userGroups.All(x => x.Alias.ToLowerInvariant() != Umbraco.Core.Constants.Security.AdminGroupAlias))
                 return null;
             
             // only show app on content items
