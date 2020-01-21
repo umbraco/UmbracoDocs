@@ -48,10 +48,18 @@ is shown for a specific crop.
 
 ## Sample code
 
-Image Cropper comes with an API to generate crop urls, or you can access its raw data directly as a
+Image Cropper comes with an API to generate crop URLs, or you can access its raw data directly as a
 dynamic object.
 
-In Umbraco v7.3.5 a UrlHelper Extension method was introduced to replace the IPublishedContent extension methods.
+The Url Helper method can be used to replace the IPublishedContent extension methods. It has  a set of extensions for working with URLs. 
+
+For rendering a cropped media item, the `.GetCropUrl` is used:
+
+```csharp
+@Url.​GetCropUrl​(mediaItem: Model.Image, cropAlias: ​"Grid"​, htmlEncode: true); 
+```
+
+`HtmlEncode` is by default set to true, which means you only need to define the parameter if you wan't to disable HTML encoding.
 
 ### MVC View Example to output a "banner" crop from a cropper property with the alias "image"
 
@@ -67,137 +75,31 @@ Or, alternatively:
 
 ### MVC View Example to output create custom crops - in this case forcing a 300 x 400 px image
 
-#### Typed (Umbraco v7.3.5+)
-
 ```csharp
-@if (Model.Content.HasValue("image"))
+@if (Model.HasValue("image"))
 {
-    <img src="@Url.GetCropUrl(Model.Content, propertyAlias: "image", height: 300, width: 400)" />
+    <img src="@Model.Image.GetCropUrl(height: 300, width: 400)" />
 }
 ```
 
-#### Typed (pre Umbraco v7.3.5)
+### CSS background example to output a "banner" crop from a cropper property with alias "image"
 
-```csharp
-@if (Model.Content.HasValue("image"))
-{
-    <img src="@Model.Content.GetCropUrl(propertyAlias: "image", height: 300, width: 400)" />
-}
-```
-
-### Media example to output a "banner" crop from a cropper property with alias "umbracoFile"
-
-The cropped URL can also be found for media in a similar way:
-
-#### Typed (Umbraco v7.3.5+)
+Set the `htmlEncode` to false so that the URL is not HTML encoded
 
 ```csharp
 @{
-    var mediaItem = Umbraco.TypedMedia(1234);
-    if (mediaItem != null)
+    
+    if (Model.Image != null)
     {
-        <img src="@Url.GetCropUrl(mediaItem, "banner")" />
-    }
-}
-```
-
-#### Typed (pre Umbraco v7.3.5)
-
-```csharp
-@Umbraco.TypedMedia(1234).GetCropUrl("banner")
-```
-
-#### Dynamic (Obsolete)
-
-```csharp
-@Umbraco.Media(1234).GetCropUrl("banner")
-```
-
-### CSS background example to output a "banner" crop from a cropper property with alias "umbracoFile"
-
-From Umbraco v7.3.5 there is an optional parameter "htmlEncode" which you and specify as false so that the Url is not Html encoded
-
-#### Typed (Umbraco v7.3.5+)
-
-```csharp
-@{
-    var mediaItem = Umbraco.TypedMedia(1234);
-    if (mediaItem != null)
-    {
+        var cropUrl = Url.GetCropUrl(Model.Image, "banner", false);
         <style>
             .myCssClass {
-                background-image: url("@Url.GetCropUrl(mediaItem, "banner", false)");
+                background-image: url("@cropUrl");
             }
         </style>
     }
 }
 ```
-
-### Data returned
-
-The cropper returns a dynamic object, based on a json structure like this:
-
-```json
-{
-  "focalPoint": {
-    "left": 0.23049645390070922,
-    "top": 0.27215189873417722
-  },
-  "src": "/media/SampleImages/1063/pic01.jpg",
-  "crops": [
-    {
-    "alias": "banner",
-    "width": 800,
-    "height": 90
-    },
-    {
-    "alias": "highrise",
-    "width": 80,
-    "height": 400
-    },
-    {
-    "alias": "thumb",
-    "width": 90,
-    "height": 90
-    }
-  ]
-}
-```
-
-So you can access each property directly using dynamics:
-
-```html
-<img src='@CurrentPage.image.src'/>
-```
-
-Or iterate through them:
-
-```csharp
-@foreach(var crop in CurrentPage.image.crops){
-    <img src="@CurrentPage.GetCropUrl("image", crop.alias)">
-}
-```
-
-## Powered by ImageProcessor
-[ImageProcessor](https://imageprocessor.org/) is an amazing project for modifying and processing images in an efficient manner.
-
-We bundle this library in Umbraco 7.1+ and you can therefore take full advantage of all its features out-of-the-box, like sharping, blurring, cropping, rotating and so.
-
-### MVC View Example on how to blur a crop
-
-#### Typed (Umbraco v7.3.5+)
-
-```html
-<img src="@Url.GetCropUrl(Model.Content, propertyAlias: "image", cropAlias: "banner", useCropDimensions:true, furtherOptions: "&blur=11&sigma=1.5&threshold=10")" />
-```
-
-#### Dynamic (Obsolete)
-
-```html
-<img src='@CurrentPage.GetCropUrl("image", "banner")&blur=11&sigma=1.5&threshold=10' />
-```
-
-Using ImageProcessors built-in [gaussian blur](https://imageprocessor.org/imageprocessor-web/imageprocessingmodule/gaussianblur/)
 
 ## Upload property replacement
 
