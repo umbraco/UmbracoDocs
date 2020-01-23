@@ -12,7 +12,7 @@ If you are interested in more general and easy-to-understand information about t
 
 ### Can I try before I pay?
 
-Yes, you can [take a free trial of Umbraco Cloud](https://umbraco.com/campaigns/try-umbraco-today/) and test it for 14 days with no obligation to buy.
+Yes, you can [take a free trial of Umbraco Cloud](https://umbraco.com/try-umbraco-cms/) and test it for 14 days with no obligation to buy.
 
 ### Is it a special version of Umbraco that’s used?
 

@@ -2,6 +2,12 @@
 
 In this article you will learn more about the Umbraco Cloud Portal and what options that are available to you.
 
+## Video tour of the Portal
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/-wARG4wyk2c?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+## Written tour of the Portal
+
 After you have logged into the [Umbraco Cloud Portal](https://www.umbraco.io) you are presented with the project overview.
 
 ![Portal Project Overview](images/portalOverview.png)

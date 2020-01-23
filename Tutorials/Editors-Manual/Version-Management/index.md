@@ -4,6 +4,6 @@ versionFrom: 7.0.0
 
 # Version Management
 
-## [Comparing Versions](Comparing-Versions.md)
+## [Comparing Versions](Comparing-Versions)
 
-## [Rollback to a Previous Versions](Rollback-to-a-Previous-Versions.md)
+## [Rollback to a Previous Versions](Rollback-to-a-Previous-Versions)

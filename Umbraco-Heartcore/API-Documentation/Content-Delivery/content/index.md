@@ -1422,14 +1422,14 @@ At least one object with `alias`, `value` and `match` in the `properties` array 
   "_pageSize": 10,
   "_links": {
     "self": {
-      "href": "https://cdn.umbraco.io/content/search?term=jacket&page=1&pageSize=10"
+      "href": "https://cdn.umbraco.io/content/filter?page=1&pageSize=10"
     },
     "page": {
-      "href": "https://cdn.umbraco.io/content/search{?term,page,pageSize}",
+      "href": "https://cdn.umbraco.io/content/filter{?page,pageSize}",
       "templated": true
     },
     "root": {
-      "href": "https://cdn.umbraco.io/content"
+      "href": "https://cdn.umbraco.io/content{?contentType}"
     },
     "content": {
       "href": "https://cdn.umbraco.io/content/262beb70-53a6-49b8-9e98-cfde2e85a78e"
