@@ -4,40 +4,40 @@ versionFrom: 7.0.0
 
 # Getting started with Umbraco
 
-## [Logging In and Out](Logging-In-and-Out.md)
+## [Logging In and Out](Logging-In-and-Out)
 
-## [Umbraco Interface](Umbraco-Interface.md)
+## [Umbraco Interface](Umbraco-Interface)
 
-### [Initial View](Umbraco-Interface.md#initial-view)
+### [Initial View](Umbraco-Interface#initial-view)
 
-### [Various Screen Sizes](Umbraco-Interface.md#various-screen-sizes)
+### [Various Screen Sizes](Umbraco-Interface#various-screen-sizes)
 
-## [Creating, Saving and Publishing Content](Creating-Saving-and-Publishing-Content.md)
+## [Creating, Saving and Publishing Content](Creating-Saving-and-Publishing-Content)
 
-### [Creating a New Page](Creating-Saving-and-Publishing-Content.md#creating-a-new-page)
+### [Creating a New Page](Creating-Saving-and-Publishing-Content#creating-a-new-page)
 
-### [Various Saving and Publishing Options](Creating-Saving-and-Publishing-Content.md#various-saving-and-publishing-options)
+### [Various Saving and Publishing Options](Creating-Saving-and-Publishing-Content#various-saving-and-publishing-options)
 
-### [Unpublishing](Creating-Saving-and-Publishing-Content.md#unpublishing)
+### [Unpublishing](Creating-Saving-and-Publishing-Content#unpublishing)
 
-## [Finding Content](Finding-Content.md)
+## [Finding Content](Finding-Content)
 
-## [Editing Existing Content](Editing-Existing-Content.md)
+## [Editing Existing Content](Editing-Existing-Content)
 
-### [Content Within the Tree View](Editing-Existing-Content.md#content-within-the-tree-view)
+### [Content Within the Tree View](Editing-Existing-Content#content-within-the-tree-view)
 
-### [List View Pages](Editing-Existing-Content.md#list-view-pages)
+### [List View Pages](Editing-Existing-Content#list-view-pages)
 
-## [Ordering Pages](Ordering-Pages.md)
+## [Ordering Pages](Ordering-Pages)
 
-## [Moving a Page](Moving-a-Page.md)
+## [Moving a Page](Moving-a-Page)
 
-## [Copying a Page](Copying-a-Page.md)
+## [Copying a Page](Copying-a-Page)
 
-## [Deleting and Restoring Pages](Deleting-and-Restoring-Pages.md)
+## [Deleting and Restoring Pages](Deleting-and-Restoring-Pages)
 
-### [Deleting a Page](Deleting-and-Restoring-Pages.md#deleting-a-page)
+### [Deleting a Page](Deleting-and-Restoring-Pages#deleting-a-page)
 
-### [Restoring a Deleted Page from the Recycle Bin](Deleting-and-Restoring-Pages.md#restoring-a-deleted-page-from-the-recycle-bin)
+### [Restoring a Deleted Page from the Recycle Bin](Deleting-and-Restoring-Pages#restoring-a-deleted-page-from-the-recycle-bin)
 
-### [Emptying the Recycle Bin](Deleting-and-Restoring-Pages.md#emptying-the-recycle-bin)
+### [Emptying the Recycle Bin](Deleting-and-Restoring-Pages#emptying-the-recycle-bin)

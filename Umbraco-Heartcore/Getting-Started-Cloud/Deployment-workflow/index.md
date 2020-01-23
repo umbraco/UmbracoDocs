@@ -21,6 +21,6 @@ The deployment approach is divided into two steps:
 
 Each step is defined in more details in the following articles.
 
-## [Structure deployment](../Structure-deployment)
+## [Structure deployment](Structure-deployment)
 
-## [Content transfer/restore](../Content-transfer)
+## [Content transfer/restore](Content-transfer)

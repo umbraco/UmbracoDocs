@@ -26,6 +26,10 @@ There are 3 ways to get your hands on an Umbraco Heartcore project:
 - [Purchase a Heartcore from Umbraco.com](https://umbraco.com/umbraco-heartcore-pricing)
 - [Setup a project directly from the Umbraco Cloud Portal](https://umbraco.io) - requires that you already have an account
 
+### Setup a Trial project
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/VL87NCz5Dwg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## [API Documentation for the Umbraco Heartcore REST API endpoints](API-Documentation/)
 
 Reference documentation for the two APIs available, as well as details about common HTTP headers, versioning, REST Standard and how to work with authentication and authorization.
