@@ -8,7 +8,7 @@ If you want to use or develop packages for Umbraco Cloud there are a few things 
 
 # ValueConnectors
 
-A ValueConnector is an extension to Deploy that allows you to transform data when you deploy content of any kind between environments. It is mostly used to transfer ID based content between environments.
+A ValueConnector is an extension to Deploy that allows you to transform data when you deploy content of any kind between environments. It is mostly used to transfer ID based content between environments. Other than transforming values they also manage dependencies for property data. That means that if you save for example an id of an image in your property editor, then you can make sure that not only the id but the actual image is transferred as well!
 
 An example of creating one for your package would be if you had a custom property editor that allowed you to write in the ID of a media node. Not a very usable property editor but it will work for this example.
 
@@ -82,7 +82,7 @@ Has the ValueConnector in a class library that is built to a dll and copied to t
 **Site 2**: 
 A website served through VS Code (Could be IIS or anything else, doesn't matter)
 Running on http://localhost:17025/ (Randomly generated)
-Has the ValueConenctor dll in the bin from the clone
+Has the ValueConnector dll in the bin from the clone
 
 Now we will set up these two identical sites to transfer content between eachother. 
 
@@ -117,7 +117,7 @@ public string ToArtifact(object value, PropertyType propertyType, ICollection<Ar
     if (string.IsNullOrWhiteSpace(svalue))
         return null;
 
-    return value.ToString();
+    return svalue;
 }
 ```
 
@@ -135,9 +135,14 @@ Here you will notice that the value is what you had returned in `ToArtifact`.
 
 You may have realised at this point that the flow is something like this:
 
-Site 1 content transfer initated -> Hit the `ToArtifact` method on the environment -> Send to Site 2 -> Hit the `FromArtifact` method on Site 2 -> Property data on Site 2
+1. Site 1 content transfer initated
+1. Property data is fetched on Site 1
+1. Hit the `ToArtifact` method on Site 1
+1. Send to Site 2 
+1. Hit the `FromArtifact` method on Site 2 
+1. Property data is saved on Site 2
 
-So in our case, what we want to do is to ensure the ID is changed in a transfer. We do this by converting the ID to a GUID in the `ToArtifact` method on Site 1, which will then get transfered to Site 2. On site 2 we will convert it back to an ID in the `FromArtifact` method. This way the user will still see an ID on the content node, but the ID they see will be updated to the correct one.
+So in our case, what we want to do is to ensure the ID from Site 1 is changed during the transfer to match what the new ID in Site 2 is. We do this by converting the ID to a GUID in the `ToArtifact` method on Site 1, which will then get transfered to Site 2. On site 2 we will convert it back to an ID in the `FromArtifact` method. This way the user will still see an ID on the content node, but the ID they see will be updated to the correct one.
 
 :::warning
 
@@ -146,7 +151,7 @@ In this example there would be no way for Deploy to know to also transfer the im
 That is not a good assumption, and you may have noticed that there is a parameter on the `ToArtifact` method that you could update by finding the image and adding it to `ICollection<ArtifactDependency> dependencies`. 
 :::
 
-In order to convert to a GUID in the `ToArtifact` method, we will update the code:
+In order to add the image as a dependency for the item being transferred, we will update the code in the `ToArtifact` method:
 
 ```csharp
 public string ToArtifact(object value, PropertyType propertyType, ICollection<ArtifactDependency> dependencies)
@@ -163,6 +168,8 @@ public string ToArtifact(object value, PropertyType propertyType, ICollection<Ar
     if (getKeyAttempt.Success)
     {
         var udi = new GuidUdi(Constants.UdiEntityType.Media, getKeyAttempt.Result);
+        // ArtifactDependencyMode can either be "Exist" or "Match"
+        // Match is an exact match where exist just checks if it is there
         dependencies.Add(new ArtifactDependency(udi, false, ArtifactDependencyMode.Exist));
 
         return udi.ToString();
@@ -183,6 +190,7 @@ You can find references on the methods used here in our API documentation:
 - [EntityService.GetKey](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.Implement.EntityService.html#Umbraco_Core_Services_Implement_EntityService_GetKey_System_Int32_Umbraco_Core_Models_UmbracoObjectTypes_)
 - [new GuidUdi](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.GuidUdi.html#Umbraco_Core_GuidUdi__ctor_System_String_System_Guid_)
 - [new ArtifactDependency](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Deploy.ArtifactDependency.html#Umbraco_Core_Deploy_ArtifactDependency__ctor_Umbraco_Core_Udi_System_Boolean_Umbraco_Core_Deploy_ArtifactDependencyMode_)
+- [ArtifactDependencyMode](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Deploy.ArtifactDependencyMode.html)
 
 <!-- vale on -->
 
@@ -203,11 +211,11 @@ public object FromArtifact(string value, PropertyType propertyType, object curre
         return value;
 
     if (!GuidUdi.TryParse(value, out var udi) || udi.Guid == Guid.Empty)
-        return value;
+        return null;
 
     var getIdAttempt = _entityService.GetId(udi.Guid, UmbracoObjectTypes.Media);
 
-    if (!getIdAttempt.Success) return value;
+    if (!getIdAttempt.Success) return null;
 
     return getIdAttempt.Result.ToString();
 }
@@ -273,11 +281,11 @@ namespace valueconnector.Core.Controllers
                 return value;
 
             if (!GuidUdi.TryParse(value, out var udi) || udi.Guid == Guid.Empty)
-                return value;
+                return null;
 
             var getIdAttempt = _entityService.GetId(udi.Guid, UmbracoObjectTypes.Media);
 
-            if (!getIdAttempt.Success) return value;
+            if (!getIdAttempt.Success) return null;
 
             return getIdAttempt.Result.ToString();
         }
