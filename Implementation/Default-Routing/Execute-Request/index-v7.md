@@ -1,6 +1,5 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "false"
 ---
 
 # Executing an Umbraco request
@@ -26,7 +25,7 @@ All Umbraco view page types inherit from `UmbracoViewPage<TModel>`. A neat trick
 you can change your view type to `UmbracoViewPage<IPublishedContent>` and the view will still render without issue even though the controller
 is passing it a model of type RenderModel.
 
-## [IPublishedContent](../../../Reference/Querying/IPublishedContent/index.md)
+## [IPublishedContent](../../../Reference/Querying/IPublishedContent/index-v7.md)
 
 IPublishedContent is the standard model used for all published content, media and members in Umbraco. It is a strongly typed model and is very flexible.
 
@@ -41,7 +40,7 @@ Working with dynamics is simpler in some cases especially with regards to refere
 
 However, a dynamic object does not provide any intellisense and is compiled at runtime.
 
-## [UmbracoHelper](../../../Reference/Querying/UmbracoHelper/index.md)
+## [UmbracoHelper](../../../Reference/Querying/UmbracoHelper/index-v7.md)
 
 UmbracoHelper is the unified way to work with published content/media on your website. Whether you are using MVC or WebForms you will be able to use UmbracoHelper to query/traverse Umbraco published data.
 
