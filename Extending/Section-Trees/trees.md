@@ -31,7 +31,7 @@ public class FavouriteThingsTreeController : TreeController
 The SortOrder controls the order of the custom tree within the Tree Group.
 
 ### Tree Groups
-Tree Groups are a new concept in V8, to enable you to group trees in a section. You provide the alias of the Tree Group name, you wish to add your tree to - see [Constants.Trees.Groups](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Constants.Trees.Groups.html) for a list of existing group alias. An example of tree groups in the back office would be the *Settings* tree group and the *Templating* tree group in the *Settings* section.
+Tree Groups are a new concept in V8, to enable you to group trees in a section. You provide the alias of the Tree Group name, you wish to add your tree to - see [Constants.Trees.Groups](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Constants.Trees.Groups.html) for a list of existing group alias. An example of tree groups in the backoffice would be the *Settings* tree group and the *Templating* tree group in the *Settings* section.
 
 If you add your own alias, you'll need to add a translation key to `config/lang/en-US.user.xml` to avoid the alias appearing as the header in [square brackets] eg
 ```xml
