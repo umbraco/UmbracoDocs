@@ -179,7 +179,7 @@ public string ToArtifact(object value, PropertyType propertyType, ICollection<Ar
         _logger.Debug<BadMediaValueConnector>($"Couldn't convert integer value #{intvalue} to UDI");
     }
 
-    return string.Empty;
+    return null;
 }
 ```
 
@@ -208,7 +208,7 @@ By the time we hit `FromArtifact` value of `"umb://media/00c9eff861654f52be7a333
 public object FromArtifact(string value, PropertyType propertyType, object currentValue)
 {
     if (string.IsNullOrWhiteSpace(value))
-        return value;
+        return null;
 
     if (!GuidUdi.TryParse(value, out var udi) || udi.Guid == Guid.Empty)
         return null;
@@ -272,13 +272,13 @@ namespace valueconnector.Core.Controllers
                 _logger.Debug<BadMediaValueConnector>($"Couldn't convert integer value #{intvalue} to UDI");
             }
 
-            return string.Empty;
+            return null;
         }
 
         public object FromArtifact(string value, PropertyType propertyType, object currentValue)
         {
             if (string.IsNullOrWhiteSpace(value))
-                return value;
+                return null;
 
             if (!GuidUdi.TryParse(value, out var udi) || udi.Guid == Guid.Empty)
                 return null;
