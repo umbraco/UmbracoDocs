@@ -609,6 +609,11 @@ namespace Umbraco8.ViewPages
             Services = services;
             AppCaches = appCaches;
         }
+
+        protected override void InitializePage()
+        {
+            base.InitializePage();
+        }
     }
     public abstract class CustomViewPage : UmbracoViewPage
     {
@@ -625,6 +630,11 @@ namespace Umbraco8.ViewPages
             SiteService = siteService;
             Services = services;
             AppCaches = appCaches;
+        }
+
+        protected override void InitializePage()
+        {
+            base.InitializePage();
         }
     }
 }
