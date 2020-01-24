@@ -239,12 +239,12 @@ namespace My.Website
     {
         public string Alias => "myCustomDashboard";
 		
-		public string[] Sections => new[]
+        public string[] Sections => new[]
         {
             Umbraco.Core.Constants.Applications.Content,
             Umbraco.Core.Constants.Applications.Settings
         };
-		
+				
         public string View => "/App_Plugins/myCustom/dashboard.html";
 
         public IAccessRule[] AccessRules
