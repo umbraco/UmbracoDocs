@@ -9,9 +9,9 @@ Introduced in Umbraco 8, Language Variation allows you to have several different
 - [Getting started with Language Variants](../../Getting-Started/Backoffice/Variants/index.md)
 - [Rendering variant values](../../Getting-Started/Design/Rendering-Content/index.md)
 
-[`IPublishedContent`](../Querying/IPublishedContent/index.md) contains all language variations of a node, and when rendering it out it will then use the Culture you are currently on. This can then be overridden on an individual property level if you want like this:
+[`IPublishedContent`](../Querying/IPublishedContent/index.md) contains all language variations of a node, and when rendering it out it will then use the Culture you are currently on. This can then be overridden on an individual property level if you want, like this:
 
-``csharp
+```csharp
 @Model.Value("pageTitle", "fr", fallback: Fallback.ToLanguage)
 ```
 

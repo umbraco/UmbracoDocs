@@ -31,10 +31,10 @@ There are 2 types of UDIs:
 ## GUID UDI
 
 * [API Reference for v7](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.GuidUdi.html)
-* [API Reference for v8](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.GuidUdi.html)
+* [API Reference for v8](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.GuidUdi.html)
 
 
 ## String UDI
 
 * [API Reference for v7](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.StringUdi.html)
-* [API Reference for v8](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.StringUdi.html)
+* [API Reference for v8](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.StringUdi.html)
