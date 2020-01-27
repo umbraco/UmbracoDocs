@@ -1,12 +1,12 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
 ---
 
 
 # Integrating services with a property editor
 
 ## Overview
-This is step 3 in the property editor tutorial. In this part, we will integrate one of the built-in Umbraco services. For this sample, we will use the *editor service* to hook into the *media picker* and return image data to the markdown editor.
+This is step 3 in the property editor tutorial. In this part, we will integrate one of the built-in Umbraco services. For this sample, we will use the *dialog service* to hook into the *media picker* and return image data to the markdown editor.
 
 ## Injecting the service
 First up, we need to get access to the service, this is done in the constructor of the controller, where we add it as a parameter:
@@ -14,8 +14,8 @@ First up, we need to get access to the service, this is done in the constructor 
 ```javascript
 angular.module("umbraco")
     .controller("My.MarkdownEditorController",
-    // inject Umbraco's assetsService and editor service
-    function ($scope, assetsService, editorService) { ... }
+    // inject Umbraco's assetsService and dialog service
+    function ($scope, assetsService, dialogService) { ... }
 ```
 
 this works the same way as with the *assetsService* we added in step 1.
@@ -40,11 +40,11 @@ editor2.hooks.set("insertImageDialog", function (callback) {
 
 Notice the callback, this callback is used to return whatever data we want to the editor.
 
-So now that we have access to the editor events, we will trigger a media picker dialog, by using the `editorService`. We can inject whatever HTML we want with this service, but it also has a number of shorthands for things like a media picker:
+So now that we have access to the editor events, we will trigger a media picker dialog, by using the `dialogService`. You can inject whatever HTML you want with this service, but it also has a number of shorthands for things like a media picker:
 
 ```javascript
-// the callback is called when the user selects images
-editorService.mediaPicker({callback: function(data){
+// the callback is called when the use selects images
+dialogService.mediaPicker({callback: function(data){
                         // data.selection contains an array of images
                         $(data.selection).each(function(i, item){
                                 // try using $log.log(item) to see what this data contains
@@ -53,9 +53,9 @@ editorService.mediaPicker({callback: function(data){
 ```
 
 ## Getting to the image data
-Because of Umbraco's generic nature, we don't always know where our image is, as a media object's data is basically an array of properties, so how do we pick the right one? - we can't always be sure the property is called `umbracoFile` for instance.
+Because of Umbraco's generic nature, you don't always know where your image is, as a media object's data is basically an array of properties, so how do you pick the right one? - you cannot always be sure the property is called `umbracoFile` for instance.
 
-For cases like this, a helper service is available: `imageHelper`. This utility has useful methods for getting to images embedded in property data, as well as associated thumbnails. **Remember to** inject this imageHelper in the controller constructor as well (same place as editorService and assetsService).
+For cases like this, a helper service is available: `imageHelper`. This utility has useful methods for getting to images embedded in property data, as well as associated thumbnails. **Remember to** inject this imageHelper in the controller constructor as well (same place as dialogService and assetsService).
 
 So we get the image page from the selected media item, and return it through the callback:
 
@@ -69,7 +69,7 @@ At this point your controller should look like this:
 angular.module("umbraco")
     .controller("My.MarkdownEditorController",
         // inject umbracos assetsService
-        function ($scope, assetsService, editorService, imageHelper) {
+        function ($scope, assetsService, dialogService) {
             if ($scope.model.value === null || $scope.model.value === "") {
                 $scope.model.value = $scope.model.config.defaultValue;
             }
@@ -93,7 +93,7 @@ angular.module("umbraco")
                         // here we can intercept our own dialog handling
 
                         // the callback is called when the use selects images
-                        editorService.mediaPicker({
+                        dialogService.mediaPicker({
                             callback: function (data) {
                                 // data.selection contains an array of images
                                 $(data.selection).each(function (item) {
