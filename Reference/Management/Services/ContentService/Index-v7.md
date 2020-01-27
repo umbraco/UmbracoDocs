@@ -1,6 +1,6 @@
 ---
 keywords: services content service
-versionFrom: 8.0.0
+versionFrom: 7.0.0
 ---
 
 # ContentService
@@ -11,7 +11,7 @@ Applies to Umbraco 6.0.0+
 
 The ContentService acts as a "gateway" to Umbraco data for operations which are related to Content.
 
-[Browse the v8 API documentation for ContentService](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.IContentService.html).
+[Browse the v7 API documentation for ContentService](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Services.ContentService.html).
 
  * **Namespace:** `Umbraco.Core.Services`
  * **Assembly:** `Umbraco.Core.dll`
