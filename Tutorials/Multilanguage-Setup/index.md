@@ -6,4 +6,4 @@ product: "CMS"
 
 # Language Variants
 
-In Umbraco 8 you can use **language variants** to setup a multilanguage site. You can read about how to set up and work with language variants [here](../../Getting-Started/Backoffice/Variants).
+In Umbraco 8 you can use **language variants** to setup a multilanguage site. You can read about how to set it up and work with a multilingual site in the [language variants article](../../Getting-Started/Backoffice/Variants).
