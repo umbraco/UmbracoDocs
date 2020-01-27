@@ -94,7 +94,7 @@ angular.module("umbraco")
 
                         // the callback is called when the use selects images
                         editorService.mediaPicker({
-                            callback: function (data) {
+                            submit: function (data) {
                                 // data.selection contains an array of images
                                 $(data.selection).each(function (item) {
                                     var imagePropVal = imageHelper.getImagePropertyValue({ imageModel: item, scope: $scope });
@@ -102,6 +102,8 @@ angular.module("umbraco")
                                 });
                             }
                         });
+
+                        return true; // tell the editor that we'll take care of getting the image url
                     });
                 });
 
