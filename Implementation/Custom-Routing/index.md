@@ -74,13 +74,17 @@ namespace Umbraco8.Components
     {
         public void Initialize()
         {
-            // Custom route to MyProductController which will use a node with a specific ID as the
+            // Custom route to MyProductController which will use a node with ID 1234 as the
             // IPublishedContent for the current rendering page
-            RouteTable.Routes.MapUmbracoRoute("ProductCustomRoute", "products/{action}/{id}", new
+            RouteTable.Routes.MapUmbracoRoute(
+			"test", 
+			"Products/{action}/{sku}",
+			new
             {
                 controller = "MyProduct",
-                id = UrlParameter.Optional
-            }, new ProductsRouteHandler(1105));
+                sku = UrlParameter.Optional
+            },
+			new UmbracoVirtualNodeByIdRouteHandler(1234));
         }
 
         public void Terminate()
