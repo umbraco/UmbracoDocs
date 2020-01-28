@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
 product: "CMS"
 ---
 
@@ -16,7 +16,7 @@ Below lists the ways in which you can customize the inbound request pipeline, th
 
 All Umbraco content is looked up based on the URL in the current request using an `IContentFinder`. IContentFinder's you can create and implement on your own which will allow you to map any URL to an Umbraco content item.
 
-See: [IContentFinder documentation](../../Reference/Routing/Request-Pipeline/IContentFinder)
+See: [IContentFinder documentation](../../Reference/Routing/Request-Pipeline/IContentFinder-v7.md)
 
 ### Last Chance IContentFinder
 
@@ -48,7 +48,7 @@ routes.MapUmbracoRoute(
     new UmbracoVirtualNodeByIdRouteHandler(1234));
 ```
 
-See: [Custom routing documentation](../../Reference/Routing/custom-routes)
+See: [Custom routing documentation](../../Reference/Routing/custom-routes-v7.md)
 
 ### PublishedContentRequest.Prepared event
 
