@@ -163,9 +163,9 @@ and add that id to the textarea in the HTML. For more info on the HTML structure
 <div ng-controller="My.MarkdownEditorController" class="wmd-panel">
     <div id="wmd-button-bar-{{model.alias}}"></div>
 
-        <textarea ng-model="model.value" class="wmd-input" id="wmd-input-{{model.alias}}">
-            <!-- our content will be loaded here -->
-        </textarea>
+    <textarea ng-model="model.value" class="wmd-input" id="wmd-input-{{model.alias}}">
+        <!-- our content will be loaded here -->
+    </textarea>
 
     <div id="wmd-preview-{{model.alias}}" class="wmd-panel wmd-preview"></div>
 </div>

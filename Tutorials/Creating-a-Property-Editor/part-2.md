@@ -66,10 +66,10 @@ See what's new? - the `$scope.model.config` object is. Also, because of this con
 
 However, we may also use these values without using JavaScript, by opening the `markdowneditor.html` file instead.
 
-Here we can use the configuration directly in our HTML instead, where we use it to toggle the preview `<div>`, using the `ng-hide` attribute:
+Here we can use the configuration directly in our HTML instead, where we use it to toggle the preview `<div>`, using the `ng-show` attribute:
 
 ```html
-<div ng-show="model.config.preview" class="wmd-panel wmd-preview"></div>
+<div id="wmd-preview-{{model.alias}}" ng-show="{{model.config.preview}}" class="wmd-panel wmd-preview"></div>
 ```
 
 [Next - Integrating services with a property editor](part-3.md)
