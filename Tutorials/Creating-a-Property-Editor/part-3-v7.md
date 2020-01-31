@@ -131,4 +131,4 @@ So over the 3 previous steps, we've:
 - Connected the editor with native dialogs and services
 - Looked at koala pictures
 
-[Next - Adding server-side data to a property editor](part-4.md)
+[Next - Adding server-side data to a property editor](part-4-v7.md)
