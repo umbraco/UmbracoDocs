@@ -1,28 +1,58 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # Umbraco Interface
 
 ## Initial View
 
-Once you have logged in you will enter the Content section of Umbraco. There are several sections within Umbraco that allow you to manage different aspects of your site. The Content section allows you to manage the web pages of your site. Sections may vary from user to user based upon their role. As an editor or writer for instance you may only have access to the Content and Media sections. You can navigate between sections using the black section bar on the left-hand side of the screen. As you rollover one of the sections the name of the section will be revealed. Click a section to navigate to it.
+After logging in to an Umbraco V8 project you will be presented with a screen with a lot of different buttons in this guide you will gain a quick overview of what each button does.
 
-To the right of the section bar is the tree view which shows the structure of your website. To navigate the tree you can click on the black arrows to the left of tree items which will reveal any sub-pages. Clicking on the
-page name will load that page’s content into the large content area on the right of the tree view.
+![Environment.png](images/Environment.png)
 
-![section tree content.jpg](images/section tree content.jpg)
+### 1. The three circles
+These circles represent the environments, the first one in the row is **local** environment, the next one on the right from local is to **add new** environments and the last one in the line is your **live** environment.
+clicking these circles will present you with a box below that gives you different options.
 
-![landingPage.jpg](images/landingPage.jpg)
+![Environment.png](images/Utility-links.png)
 
-## Behaviour at Smaller Screen Sizes
+### 2. The three buttons slightly to the right
+The first button in this row opens the overview of the environments on the project, the second button takes you to the [Umbraco Cloud documentation](https://our.umbraco.com/Documentation/Umbraco-Cloud/).
+The last button has three dots, this gives you the following options: 
+- Getting Started
+- Set up a Project
+- Deployment
+- Troubleshooting
 
-By default, on a desktop with a large screen size, the tree view is always visible giving you quick access
-to select and navigate website content. On smaller devices such as laptops and tablets, the tree view will be closed and only opens after you click on one of the navigation icons in the section bar on the left of the screen.
+![Environment.png](images/Search-and-help.png)
 
-After selecting an item within the tree view on a smaller device, it will automatically close to save screen space. If you wish to close the tree view without selecting a page, you can move your mouse out of the tree view, or alternatively on a touch device you can swipe left over the tree view. Below are examples of how the interface will look on a tablet.
 
-![smallScreenDashboard.jpg](images/smallScreenDashboard.jpg)
+### 3. The three buttons in the top right
+ The first button is a search field here you can search for the content that you are looking for.
+The second button is the help button if you click this you will get options for **help**.
+The third button is your **profile**, this will give you the option to edit your profile and password.
 
-![dashboardSlideOut.jpg](images/dashboardSlideout.jpg)
+![Environment.png](images/Two-tabs-left.png)
+
+### 4. The two buttons slightly towards top left
+The first button is **Your Workspace** that takes you to the tab with the circles on it.
+The second button is **Redirect URL Management** this is for redirects on you project.
+
+![Environment.png](images/The-top-bar-right.png)
+
+### 5. The eight buttons in the far top left
+These buttons are the tabs that you will be working under during you work with you project. 
+The first button is **Content** this is where you manage your content.
+The next button is **Media**, under this tab you can manage images and other media files.
+The third button is **Settings**, in this tab you handle your meta data such as document types.
+Button number four is **Packages**, this tab lets you manage and install packages.
+The fifth button is **Users**, this tab lets you manage the users on the project.
+Button six is the **Members** tab, and here you can handle the members of the project.
+The seventh button in the row is **Forms** tab, here you can create and manage your forms.
+The final and eight button is **Translation**, this tab is for managing languages.  
+
+![Environment.png](images/Colone-left.png)
+
+### 6. The two buttons on the far left
+The first one is **Content** this allows you to create content nodes, and manage your content tree, if you hover over it then it will highlight with a darker color indicating that you are hovering over it, and a button with three dots will show up, clicking this will present you with additional options, there will be other option if you right click the field.
+The second button is the **Recycle bin**, this is where your deleted content ends up.
