@@ -109,7 +109,7 @@ We can now edit the assigned property's value with our new property editor.
 
 
 ## Add external dependencies
-Let's go a bit further, and load in a markdown editor JavaScript library, In this example we're using [pagedown][PagedownBootstrap], but this is of course optional.
+Let's go a bit further, and load in a markdown editor JavaScript library. In this example we're using [pagedown][PagedownBootstrap], but this is of course optional.
 
 First of, we'll add some external files to our package folder, in /app_plugins/markdowneditor/lib folder. These files come from the pagedown editor project found here:
 
