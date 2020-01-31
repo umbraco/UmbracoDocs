@@ -9,7 +9,7 @@ versionFrom: 8.0.0
 This is step 3 in the property editor tutorial. In this part, we will integrate one of the built-in Umbraco services. For this sample, we will use the `editorService` to hook into a Media picker and return image data to the markdown editor.
 
 ## Injecting the service
-First up, we need to get access to the service, this is done in the constructor of the controller, where we add it as a parameter:
+First up, we need to get access to the service. This is done in the constructor of the controller, where we add it as a parameter:
 
 ```javascript
 angular.module("umbraco")
