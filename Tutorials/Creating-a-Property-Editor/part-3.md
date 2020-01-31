@@ -18,7 +18,7 @@ angular.module("umbraco")
     function ($scope, assetsService, $timeout, editorService) { ... }
 ```
 
-this works the same way as with the *assetsService* we added in step 1.
+This works the same way as with the `assetsService` we added in step 1.
 
 ## Hooking into pagedown
 The markdown editor we are using has a nice event system in place, so we can hook into the events triggered by the media chooser, by adding a hook, after the editor has started:
