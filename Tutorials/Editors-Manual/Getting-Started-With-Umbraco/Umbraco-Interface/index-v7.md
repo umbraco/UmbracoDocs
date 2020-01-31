@@ -11,7 +11,6 @@ Once you have logged in you will enter the Content section of Umbraco. There are
 To the right of the section bar is the tree view which shows the structure of your website. To navigate the tree you can click on the black arrows to the left of tree items which will reveal any sub-pages. Clicking on the
 page name will load that page’s content into the large content area on the right of the tree view.
 
-![section tree content.jpg](images/section tree content.jpg)
 
 ![landingPage.jpg](images/landingPage.jpg)
 
