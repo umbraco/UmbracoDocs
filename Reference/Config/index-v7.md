@@ -56,7 +56,7 @@ The 'tinyMceConfig.config' contains configuration options for the [TinyMce](http
 
 This file can be found at the following path: /config/tinyMceConfig.config
 
-### [trees.config](trees/index.md)
+### [trees.config](trees/index-v7.md)
 The 'trees.config' file contains the configuration for trees that are loaded within each section of the Umbraco Backoffice.
 
 This file can be found at the following path: /config/trees.config
