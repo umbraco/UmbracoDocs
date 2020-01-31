@@ -19,7 +19,7 @@ For example imagine adding an Image Gallery within a rich text editor, and at th
 
 Define the parameters
 
-![Define the parameters](images/image-carousel-macro-parameter-v8.png)
+![Define the parameters](images/macro-parameter-editor-v8.png)
 
 Using in a Rich Text Area
 
