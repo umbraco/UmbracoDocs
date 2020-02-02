@@ -1,6 +1,5 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 product: "CMS"
 ---
 
@@ -21,13 +20,32 @@ See: [IContentFinder documentation](../../Reference/Routing/Request-Pipeline/ICo
 
 ### Last Chance IContentFinder
 
-A 'Last Chance' `IContentFinder` is a special implementation of an `IContentFinder` for use with handling 404's. You can implement one of these plugins to decide which Umbraco content page you would like to show when the URL hasn't matched an Umbraco content node.
+A `IContentLastChanceFinder` is a special implementation of an `IContentFinder` for use with handling 404's. You can implement one of these plugins to decide which Umbraco content page you would like to show when the URL hasn't matched an Umbraco content node.
 
-To set your own 404 finder create an `IContentFinder` and set it as the `ContentLastChanceFinder`. A `ContentLastChanceFinder` will always return a 404 status code. Example:
+To set your own 404 finder create a `IContentLastChanceFinder` and set it as the `ContentLastChanceFinder`. A `ContentLastChanceFinder` will always return a 404 status code. Example:
+
 
 ```csharp
-ContentLastChanceFinderResolver.Current.SetFinder(new My404ContentFinder());
+using Umbraco.Core;
+using Umbraco.Core.Composing;
+using Umbraco.Web;
+
+namespace My.Website
+{
+    [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
+    public class SetLastChanceContentFindersComposer : IUserComposer
+    {
+        public void Compose(Composition composition)
+        {
+            //set the last chance content finder
+            composition.SetContentLastChanceFinder<My404ContentFinder>();
+        }
+    }
+}
+
 ```
+
+For more detailed information see: [IContentFinder documentation](../../Reference/Routing/Request-Pipeline/IContentFinder#notfoundhandlers)
 
 ## Custom MVC routes
 
@@ -36,17 +54,45 @@ You can specify your own custom MVC routes to work within the Umbraco pipeline. 
 As an example:
 
 ```csharp
-// Custom route to MyProductController which will use a node with ID 1234 as the
-// IPublishedContent for the current rendering page
-routes.MapUmbracoRoute(
-    "test",
-    "Products/{action}/{sku}",
-    new
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using System.Web.Routing;
+using Umbraco.Core.Composing;
+using Umbraco.Web;
+using Umbraco.Web.Mvc;
+
+namespace Umbraco8.Components
+{
+
+    public class RegisterCustomRouteComposer : ComponentComposer<RegisterCustomRouteComponent>
+    { }
+
+    public class RegisterCustomRouteComponent : IComponent
     {
-        controller = "MyProduct",
-        sku = UrlParameter.Optional
-    },
-    new UmbracoVirtualNodeByIdRouteHandler(1234));
+        public void Initialize()
+        {
+            // Custom route to MyProductController which will use a node with ID 1234 as the
+            // IPublishedContent for the current rendering page
+            RouteTable.Routes.MapUmbracoRoute(
+			"test", 
+			"Products/{action}/{sku}",
+			new
+            {
+                controller = "MyProduct",
+                sku = UrlParameter.Optional
+            },
+			new UmbracoVirtualNodeByIdRouteHandler(1234));
+        }
+
+        public void Terminate()
+        {
+            // Nothing to terminate
+        }
+    }
+}
 ```
 
 See: [Custom routing documentation](../../Reference/Routing/custom-routes)
@@ -56,10 +102,23 @@ See: [Custom routing documentation](../../Reference/Routing/custom-routes)
 You can subscribe to an event to know when the `PublishedContentRequest` is ready to be processed.  It's up to you to change anything (content, template, ...):
 
 ```csharp
-// public static event EventHandler<EventArgs> Prepared;
-PublishedContentRequest.Prepared += (sender, args) =>
+using Umbraco.Core.Composing;
+using Umbraco.Web.Routing;
+
+namespace Umbraco8.Components
 {
-  var request = sender as PublishedContentRequest;
-  // do something…
+    public class PublishedRequestComponent : IComponent
+    {
+        public void Initialize()
+        {
+            PublishedRequest.Prepared += (sender, args) =>
+            {
+                var request = sender as PublishedRequest;
+                // do something…
+            };
+        }
+
+        public void Terminate() {}
+    }
 }
 ```
