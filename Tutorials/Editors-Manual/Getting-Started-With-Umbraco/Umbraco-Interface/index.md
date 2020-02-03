@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 ## Initial View
 
-After logging in to an Umbraco 8 project you will be presented with a screen with a lot of different buttons. In this guide you will gain a quick overview of what each button does.
+After logging in to an Umbraco 8 project you will be presented with a dashboard containing a wide array of buttons and features. In this guide you will gain a quick overview of what each button does.
 
 ### 1. The Environment overview
 These circles represent the environments avalible on the project. the first one in the row is **Local** environment, the next one on the right from local is the option to **add new** environments and the last one in the line is your **Live** environment.
@@ -26,7 +26,7 @@ The last button has three dots, and gives you the following links:
 ![This shows an image that points to the utility links above the environments](images/The-Utility-Links.png)
 
 ### 3. Search and help
- The first button is a search field here you can search for the content that you are looking for.
+The first button is a search field where you can search for the content that you are looking for.
 The second button is the help button if you click this you will get options for **help**.
 The third button is your **profile**, this will give you the option to edit your profile and password.
 
