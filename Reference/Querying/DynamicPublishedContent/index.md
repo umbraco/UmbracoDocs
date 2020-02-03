@@ -18,10 +18,9 @@ To access the current page in your macros or templates, copy-paste the below Raz
     var pageName = CurrentPage.Name;
     var childPages = CurrentPage.Children;
 }
-```
 
 <h1>@pageName</h1>
-
+```
 ## [Properties](Properties.md)
 Listing and explanation of DynamicPublishedContent properties & standard helpers for Content and Media.
 
