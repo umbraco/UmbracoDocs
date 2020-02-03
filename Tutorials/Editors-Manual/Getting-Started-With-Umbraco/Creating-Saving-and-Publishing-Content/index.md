@@ -12,9 +12,9 @@ Firstly you will need to select the parent page for your new page. This could be
 2. Click on the type of page you wish to create which will then load the new page into the content area on the right-hand side.
 3. Enter a name for the page in the text field at the top of the content area. 
 
-![This shows an arrow pointing at the home node in the section tree.](images/Step-one-parent-page.png)
+![This shows an arrow pointing at the home node in the section tree.](images/Parent-page.png)
 
-![This shows an arrow pointing at Enter a name...](images/Enter-the-page-name-here.png)
+![This shows an arrow pointing at Enter a name...](images/Enter-name.png)
 
 ## Various Saving and Publishing Options
 
@@ -24,13 +24,13 @@ There are four different options you have for saving and publishing pages. Each 
 
 The ***Save*** option (Located next to the ***Save and publish*** button) is used for saving the page without publishing the changes to the live site. This is especially useful if you are working on changes over a period of time as you can save frequently to prevent losing any data or if you wish to save the current state and return to edit the page at a later date. Using the ***Preview*** button will show you how the page will look once published.
 
-![This shows an arrow pointing at The save button.](images/The-save-button.png)
+![This shows an arrow pointing at The save button.](images/Save-button1.png)
 
 ### Save and Publish
 
 The ***Save and publish*** button is ideal for when you want to publish a previously saved page to the live website, or to publish a page without previewing it. This will save and publish the page to your live website.
 
-![This shows an arrow pointing at Save and publish.](images/Save-and-publish.png)
+![This shows an arrow pointing at Save and publish.](images/Save-and-publish2.png)
 
 ### Publish with descendants
 
@@ -38,16 +38,16 @@ Clicking the arrow next to the ***Save and publish*** button will present you wi
 Here you can pick ***Publish with descendants***, This will allow you to publish the current page and all content that is linkrd to this page.
 You will get the option to include drafts, this means that you also include all unpublished content items for thsi page and all linked pages.
 
-![This shows an arrow pointing at Publish with descendants.](images/Publish-with-descendants.png)
+![This shows an arrow pointing at Publish with descendants.](images/Publish-with-descendants2.png)
 
 ### Scheduled Publishing and Unpublishing
 
 Scheduled publishing is ideal when you need a page to go live at a specific date and time when it is not convenient to do so manually. To schedule publishing/unpublishing you need to navigate to the arrow next to the ***Save and publish*** button and select the ***Schedule*** button then a box will pop up, that ask for a date for the schedualed publishing or unpublishing. Select the date and then click the ***Clock*** at the bottom of the calendar to select the time you wish for the page to be published/unpublished. After you have done this, click anywhere outside of the date and time picker pop-up to close it. Now all you need to do is save your changes by clicking The ***Schedule*** button.
 Umbraco will automatically publish/unpublish the page at the date the time you chose.
 
-![This shows an arrow pointing at Schedule Publishing.](images/Schedual-button.png)
+![This shows an arrow pointing at Schedule Publishing.](images/Schedual-button2.png)
 
-![This shows the box that allows you to pick the date and time for the schedualed publishing or unpublishing.](images/Schedualing-box.png)
+![This shows the box that allows you to pick the date and time for the schedualed publishing or unpublishing.](images/Schedualing-box2.png)
 
 ## Unpublishing
 
@@ -60,4 +60,4 @@ Along with the various options for saving and publishing, you also have the abil
 2. Click the arrow on the ***Save and publish*** button which is found within the content area.
 3. Select ***Unpublish***.
 
-![This shows an arrow pointing at Unpublishing.](images/Unpublishing.png)
+![This shows an arrow pointing at Unpublishing.](images/Manually-unpublishing.png)
