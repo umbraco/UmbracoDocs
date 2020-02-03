@@ -62,7 +62,8 @@ For a grid editor, the required values are:
 - `icon`: Icon shown to the editor, uses same icon classes as the rest of
 - `view` the view defines the editor used to enter a value. By default Umbraco will look in `/umbraco/views/propertyeditors/grid/editors` for a html view to use - but you can pass in your own path
 
-You can also add a name template for generating grid item labels using the syntax `{{ value.propertyAlias }}`.
+:::tip
+In **Umbraco 8.4** you can also add a name template for generating grid item labels using the syntax `{{ value.propertyAlias }}`.
 
 - If you would like to include the index position in the label, you can use `{{$index}}`.
 - If your editor links to a content, media or member node, you can use the Angular filter `{{ value.udi | ncNodeName }}` to show the node name rather than the node ID.
