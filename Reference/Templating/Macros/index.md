@@ -19,7 +19,7 @@ For example imagine adding an Image Gallery within a rich text editor, and at th
 
 Define the parameters
 
-![Define the parameters](images/image-carousel-macro-parameter-v8.png)
+![Define the parameters](images/macro-parameter-editor-v8.png)
 
 Using in a Rich Text Area
 
@@ -39,7 +39,7 @@ The same implementation logic can be used in lots of different places on your si
 
 ## Implementing a Macro
 
-Macros can be implemented using an MVC Partial View - [Partial View Macros](Partial-View-Macros/index.md). It uses the exact same syntax and objects as [MVC views](Mvc/index.md).
+Macros can be implemented using an MVC Partial View - [Partial View Macros](Partial-View-Macros/index.md). It uses the exact same syntax and objects as [MVC views](../Mvc/index.md).
 
 ## Rendering Macros
 

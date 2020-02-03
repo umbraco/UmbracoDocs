@@ -6,11 +6,11 @@ versionFrom: 7.0.0
 
 ## [Logging In and Out](Logging-In-and-Out)
 
-## [Umbraco Interface](Umbraco-Interface)
+## [Umbraco Interface](Umbraco-Interface/index-v7.md)
 
-### [Initial View](Umbraco-Interface#initial-view)
+### [Initial View](Umbraco-Interface/index-v7.md/#initial-view)
 
-### [Various Screen Sizes](Umbraco-Interface#various-screen-sizes)
+### [Various Screen Sizes](Umbraco-Interface/index-v7.md/#various-screen-sizes)
 
 ## [Creating, Saving and Publishing Content](Creating-Saving-and-Publishing-Content)
 

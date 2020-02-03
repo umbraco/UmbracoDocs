@@ -1,28 +1,64 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # Umbraco Interface
 
 ## Initial View
 
-Once you have logged in you will enter the Content section of Umbraco. There are several sections within Umbraco that allow you to manage different aspects of your site. The Content section allows you to manage the web pages of your site. Sections may vary from user to user based upon their role. As an editor or writer for instance you may only have access to the Content and Media sections. You can navigate between sections using the black section bar on the left-hand side of the screen. As you rollover one of the sections the name of the section will be revealed. Click a section to navigate to it.
+After logging in to an Umbraco 8 project you will be presented with a screen with a lot of different buttons. In this guide you will gain a quick overview of what each button does.
 
-To the right of the section bar is the tree view which shows the structure of your website. To navigate the tree you can click on the black arrows to the left of tree items which will reveal any sub-pages. Clicking on the
-page name will load that page’s content into the large content area on the right of the tree view.
+### 1. The Environment overview
+These circles represent the environments avalible on the project. the first one in the row is **Local** environment, the next one on the right from local is the option to **add new** environments and the last one in the line is your **Live** environment.
+clicking these circles will present you with a box below that gives you different options.
 
-![section tree content.jpg](images/section tree content.jpg)
+![This is an image that points to the three circles that symbolises the environments](images/The-Environment-overview.png)
 
-![landingPage.jpg](images/landingPage.jpg)
 
-## Behaviour at Smaller Screen Sizes
+### 2. The Utility links
+The first button in this row opens the overview of the environments on the project in the Umbraco Cloud portal. The second button takes you to the [Umbraco Cloud documentation](https://our.umbraco.com/Documentation/Umbraco-Cloud/).
+The last button has three dots, and gives you the following links: 
+- Getting Started
+- Set up a Project
+- Deployment
+- Troubleshooting
 
-By default, on a desktop with a large screen size, the tree view is always visible giving you quick access
-to select and navigate website content. On smaller devices such as laptops and tablets, the tree view will be closed and only opens after you click on one of the navigation icons in the section bar on the left of the screen.
+![This shows an image that points to the utility links above the environments](images/The-Utility-Links.png)
 
-After selecting an item within the tree view on a smaller device, it will automatically close to save screen space. If you wish to close the tree view without selecting a page, you can move your mouse out of the tree view, or alternatively on a touch device you can swipe left over the tree view. Below are examples of how the interface will look on a tablet.
+### 3. Search and help
+ The first button is a search field here you can search for the content that you are looking for.
+The second button is the help button if you click this you will get options for **help**.
+The third button is your **profile**, this will give you the option to edit your profile and password.
 
-![smallScreenDashboard.jpg](images/smallScreenDashboard.jpg)
+![This image shows an arrow that points to the three buttons in the top right corner that is search, help and your profile.](images/Search-and-help.png)
 
-![dashboardSlideOut.jpg](images/dashboardSlideout.jpg)
+### 4. The Dashboards
+The first tab is **Your Workspace** which takes you to the dashboard with the environments overview.
+The second tab is **Redirect URL Management** which is for redirects on your project.
+
+
+![This image shows an arrow that points to the two tabs Your Workspace and Redirect URL Management](images/The-Dashboards.png)
+
+### 5. The Sections menu
+The menu at the top, contains links to each section in the backoffice. 
+- The first button is **Content** this is where you manage your content.
+- The next button is **Media**, under this tab you can manage images and other media files.
+- The third button is **Settings**, in this tab you handle your meta data such as document types.
+- Button number four is **Packages**, this tab lets you manage and install packages.
+- The fifth button is **Users**, this tab lets you manage the users on the project.
+- Button six is the **Members** tab, and here you can handle the members of the project.
+- The seventh button in the row is **Forms** tab, here you can create and manage your forms.
+- The final and eight button is **Translation**, this tab is for managing languages.  
+
+This menu list will differ depending on your rights for the project, meaning that if you are an editor for example. Then you will only have access to Content, Media and forms per default settings.
+
+![This image is an arrow that point to the top bar in the left side with the eight tabs.](images/The-Section-Menu.png)
+
+### 6. The Section tree
+The section tree will be different depending on what section you are on.
+The section will allow you an overview of the nodes that is contained in the tree.
+In the this case you are looking at the content section.
+The first field is **Content** this allows you to create content nodes, and manage your content tree. When you hover over the sections, it will highlight with a darker color indicating that you are hovering over it. A button with three dots will show up, clicking this will present you with additional options. There will be other option if you right click the field.
+The **Recycle bin**, this is where your deleted content ends up. This will be on the Content section and the media section only.
+
+![This is an arrow that points to the section tree on the left.](images/The-Section-Tree.png)
