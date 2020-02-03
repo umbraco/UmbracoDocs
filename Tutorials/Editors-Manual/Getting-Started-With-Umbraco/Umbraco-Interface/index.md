@@ -51,8 +51,13 @@ The menu at the top, contains links to each section in the backoffice.
 - The seventh button in the row is **Forms** tab, here you can create and manage your forms.
 - The final and eight button is **Translation**, this tab is for managing languages.  
 
+This menu list will differ depending on your rights for the project, meaning that if you are an editor for example. Then you will only have access to Content, Media and forms per default settings.
+
 ![This is an arrow that points to the section tree on the left.](images/The-Section-Tree.png)
 
 ### 6. The Section tree
-The first one is **Content** this allows you to create content nodes, and manage your content tree, if you hover over it then it will highlight with a darker color indicating that you are hovering over it, and a button with three dots will show up, clicking this will present you with additional options, there will be other option if you right click the field.
-The second button is the **Recycle bin**, this is where your deleted content ends up.
+The section tree will be different depending on what section you are on.
+The section will allow you an overview of the nodes that is contained in the tree.
+In the this case you are looking at the content section.
+The first field is **Content** this allows you to create content nodes, and manage your content tree. When you hover over the sections, it will highlight with a darker color indicating that you are hovering over it. A button with three dots will show up, clicking this will present you with additional options. There will be other option if you right click the field.
+The **Recycle bin**, this is where your deleted content ends up. This will be on the Content section and the media section only.
