@@ -6,36 +6,41 @@ meta.Description: "This section includes information on Umbraco security, its va
 
 # Security
 
-_This section includes information on Umbraco security, its various security options and configuring how authentication & authorization works in Umbraco_
+This section includes information on security within Umbraco, including its various security options and how authentication & authorization works.
 
 ## Umbraco Security overview
 
-We have a dedicated security page on our main site which provides most of the details you may need to know about security within the Umbraco CMS including how to report a vulnerability: [https://umbraco.com/products/umbraco-cms/security/](https://umbraco.com/products/umbraco-cms/security/)
+We have a dedicated security section on our main website which provides all the details you need to know about security within the Umbraco CMS. This includes how to report a vulnerability.
+
+Find all this in [The Umbraco Trust Center](https://umbraco.com/about-us/trust-center/).
 
 ## SSL/HTTPS
 
 We highly encourage the use of HTTPS on Umbraco websites especially in production environments. By using HTTPS you greatly improve the security of your website.
 
-Don't forget to [configure your Umbraco when using HTTPS](use-https.md).
+Learn more about HTTPS and how configure it in the [Use HTTPS](use-https.md) article.
 
 ## Backoffice users
 
-Authentication for backoffice users in Umbraco uses [ASP.NET Identity](https://www.asp.net/identity) which is a very flexible and extensible framework for authentication.
+Authentication for backoffice users in Umbraco uses [ASP.NET Identity](https://www.asp.net/identity) which is a very flexible and extendable framework for authentication.
 
-Out of the box Umbraco ships with a custom ASP.NET Identity implementation which uses Umbraco's database data. Normally this is fine for most Umbraco developers
-but in some cases the authentication process needs to be customized. ASP.NET Identity can be extended by using custom OAuth providers which is helpful if you want
-your users to authenticate with a custom OAuth provider like Azure Active Directory, or even Google accounts. ASP.NET identity is also flexible enough for you to override/replace
-any part of the process of authentication.
+Out of the box Umbraco ships with a custom ASP.NET Identity implementation which uses Umbraco's database data. Normally this is fine for most Umbraco developers, but in some cases the authentication process needs to be customized. 
+
+ASP.NET Identity can be extended and it is also possible to override/replace any part of the process of authentication.
 
 ### Custom OAuth providers
 
-The Umbraco backoffice supports custom OAuth providers for performing authentication of your users. For example: Any OpenIDConnect provider such as Azure Active Directory or Identity Server, Google, Facebook, etc...
+The Umbraco backoffice supports custom OAuth providers for performing authentication of your users. This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook.
 
-To install and configure a custom OAuth provider you should use the Identity Extensions package: [https://github.com/umbraco/UmbracoIdentityExtensions](https://github.com/umbraco/UmbracoIdentityExtensions)
+To install and configure a custom OAuth provider, use the [Identity Extensions package](https://github.com/umbraco/UmbracoIdentityExtensions).
 
-The installation of these packages will install snippets of code with readme files on how to get up and running. Depending on the provider you've configured and its caption/color, the end result will look similar to:
+The installation of these packages will install snippets of code with "readme" files on how to get up and running. Depending on the provider you've configured and its caption/color, the end result will look similar to this:
 
 ![OAuth login screen](images/google-oauth-v8.png)
+
+#### Authenticating with Active Directory credentials
+
+We have setup a guide on how to [connect the backoffice to Active Directory](authenticate-with-AD.md). It should be pretty straight forward with the `ActiveDirectoryBackOfficeUserPasswordChecker`.
 
 #### Auto-linking accounts for custom OAuth providers
 
@@ -48,10 +53,6 @@ Read more about [auto linking](auto-linking.md)
 ### Custom password check
 
 You are able [check the username and password against your own credentials store](custom-password-checker.md) by implementing a new  `IBackOfficeUserPasswordChecker`.
-
-### Authenticating with Active Directory credentials
-
-You want to [connect the backoffice to Active Directory](authenticate-with-AD.md)? Should be pretty straight forward with the `ActiveDirectoryBackOfficeUserPasswordChecker`.
 
 ### Sensitive data on members
 
