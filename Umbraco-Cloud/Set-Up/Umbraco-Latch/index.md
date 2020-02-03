@@ -19,6 +19,12 @@ Learn more about our recommendations for DNS records in the [Manage Hostnames](.
 
 All new Live sites created on Cloud since version 7.12 will automagically have a permanent redirect (301) from HTTP to HTTPS. This is achieved by a web.config transform called: `Latch.Web.live.xdt.config` - accessible in your git repository. If you'd like to remove the redirect rule (which we and [others](https://www.blog.google/products/chrome/milestone-chrome-security-marking-http-not-secure/) strongly discourage) you'll need to remove the file `Latch.Web.live.xdt.config` from projects repository and push the change to Cloud.
 
+## Default TLS Certificates
+
+*.umbraco.io domains will serve a default wildcard certificate with a common name *.umbraco.io.
+Custom domains will be automatically secured by a Let's Encrypt certificate.
+You can always upload a custom certificate to overwrite the default certificates provided for the domains.
+
 ## Latch and CDN
 
 You will not get an Umbraco Latch certificate if you are using a CDN service (e.g. CloudFlare) on your Umbraco Cloud project.
