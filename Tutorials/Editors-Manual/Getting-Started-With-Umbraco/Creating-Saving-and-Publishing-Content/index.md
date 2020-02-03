@@ -36,7 +36,7 @@ The ***Save and publish*** button is ideal for when you want to publish a previo
 
 Clicking the arrow next to the ***Save and publish*** button will present you with two options(three if you have published before).
 Here you can pick ***Publish with descendants***, which will allow you to publish the current page and all content that is linked to this page.
-You will get the option to include drafts, this means that you also include all unpublished content items for thsi page and all linked pages.
+You will get the option to include drafts. This means that you also include all unpublished content items for this page and all linked pages.
 
 ![This shows an arrow pointing at Publish with descendants.](images/Publish-with-descendants2.png)
 
