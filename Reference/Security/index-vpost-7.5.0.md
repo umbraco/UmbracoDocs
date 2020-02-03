@@ -1,6 +1,5 @@
 ---
 versionFrom: 7.5.0
-needsV8Update: "true"
 ---
 
 # Authenticating with Active Directory credentials
