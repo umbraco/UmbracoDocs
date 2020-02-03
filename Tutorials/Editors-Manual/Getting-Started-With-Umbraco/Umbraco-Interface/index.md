@@ -24,7 +24,7 @@ The last button has three dots, and gives you the following links:
 - Deployment
 - Troubleshooting
 
-![This image shows an arrow that points to the three buttons in the top right corner that is search, help and your profile. ](images/Search-And-Help.png)
+![This image shows an arrow that points to the three buttons in the top right corner that is search, help and your profile.](images/Search-And-Help.png)
 
 
 ### 3. Search and help
@@ -32,11 +32,11 @@ The last button has three dots, and gives you the following links:
 The second button is the help button if you click this you will get options for **help**.
 The third button is your **profile**, this will give you the option to edit your profile and password.
 
-![This image shows an arrow that points to the two tabs Your Workspace and Redirect URL Management.  ](images/The-Dashboards.png)
+![This image shows an arrow that points to the two tabs Your Workspace and Redirect URL Management](images/The-Dashboards.png)
 
 ### 4. The Dashboards
 The first tab is **Your Workspace** which takes you to the dashboard with the environments overview.
-The second button is **Redirect URL Management** this is for redirects on your project.
+The second tab is **Redirect URL Management** which is for redirects on your project.
 
 ![This image is an arrow that point to the top bar in the left side with the eight tabs.](images/The-Section-Menu.png)
 
