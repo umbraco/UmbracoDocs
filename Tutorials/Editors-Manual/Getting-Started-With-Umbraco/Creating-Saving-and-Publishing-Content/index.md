@@ -22,7 +22,7 @@ There are four different options you have for saving and publishing pages. Each 
 
 ### Save
 
-The ***Save*** option (Located next to the ***Save and publish*** button) is used for saving the page without publishing the changes to the live site. This is especially useful if you are working on changes over a period of time as you can save frequently to prevent losing any data or if you wish to save the current state and return to edit the page at a later date. Using the ***Preview*** button will show you how the page will look once published.
+The ***Save*** option (Located next to the ***Save and publish*** button) is used for saving the page without publishing the changes to the live site. This is especially useful if you are working on changes over a period of time as you can save frequently to prevent losing any data. Saving the content page will also enable you to use the ***Preview*** feature, which will show you how the page will look once published. The Preview feature is accessed next to the Save button.
 
 ![This shows an arrow pointing at The save button.](images/Save-button1.png)
 
