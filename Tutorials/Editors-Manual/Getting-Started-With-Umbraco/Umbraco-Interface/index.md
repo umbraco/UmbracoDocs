@@ -45,8 +45,8 @@ The menu at the top, contains links to each section in the backoffice.
 - The next button is **Media**, under this tab you can manage images and other media files.
 - The third button is **Settings**, in this tab you handle your meta data such as document types.
 - Button number four is **Packages**, this tab lets you manage and install packages.
-- The fifth button is **Users**, this tab lets you manage the users on the project. [If you want to learn more about users you can find more information here](../../../../Getting-Started/Data/Users/)
-- Button six is the **Members** tab, and here you can handle the members of the project.[If you want to learn more about Members you can find more information here](../../../../Getting-Started/Data/Members/)
+- The fifth button is **Users**, this tab lets you manage the users on the project. If you want to learn more about users you can find more information[here](../../../../Getting-Started/Data/Users/)
+- Button six is the **Members** tab, and here you can handle the members of the project. If you want to learn more about Members you can find more information [here](../../../../Getting-Started/Data/Members/)
 - The seventh button in the row is **Forms** tab, here you can create and manage your forms.
 - The final and eight button is **Translation**, this tab is for managing languages.  
 
