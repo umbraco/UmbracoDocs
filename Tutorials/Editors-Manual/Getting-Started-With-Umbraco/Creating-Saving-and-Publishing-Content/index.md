@@ -40,7 +40,19 @@ You will get the option to include drafts. This means that you also include all 
 
 ![This shows an arrow pointing at Publish with descendants.](images/Publish-with-descendants2.png)
 
-### Scheduled Publishing and Unpublishing
+## Unpublishing
+
+Along with the various options for saving and publishing, you also have the ability to unpublish a page. This is useful if you no longer wish for the page to be publicly visible but do not want to delete it.
+
+### Manually Unpublish
+
+1. Find the page you wish to unpublish and click on the name to select it.
+2. Click the arrow on the ***Save and publish*** button which is found within the content area.
+3. Select ***Unpublish***.
+
+![This shows an arrow pointing at Unpublishing.](images/Manually-unpublishing.png)
+
+## Scheduled Publishing and Unpublishing
 
 Scheduled publishing is ideal when you need a page to go live at a specific date and time when it is not convenient to do so manually. 
 - To schedule publishing/unpublishing you need to navigate to the arrow next to the ***Save and publish*** button and select the ***Schedule*** button then a box will pop up, that ask for a date for the schedualed publishing or unpublishing. 
@@ -53,15 +65,3 @@ Umbraco will automatically publish/unpublish the page at the date the time you c
 
 ![This shows the box that allows you to pick the date and time for the schedualed publishing or unpublishing.](images/Schedualing-box2.png)
 
-## Unpublishing
-
-Along with the various options for saving and publishing, you also have the ability to unpublish a page. This is useful if you no longer wish for the page to be publicly visible but do not want to delete it.
-
-
-### Manually Unpublish
-
-1. Find the page you wish to unpublish and click on the name to select it.
-2. Click the arrow on the ***Save and publish*** button which is found within the content area.
-3. Select ***Unpublish***.
-
-![This shows an arrow pointing at Unpublishing.](images/Manually-unpublishing.png)
