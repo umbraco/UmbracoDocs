@@ -67,6 +67,7 @@ You can also add a name template for generating grid item labels using the synta
 - If you would like to include the index position in the label, you can use `{{$index}}`.
 - If your editor links to a content, media or member node, you can use the Angular filter `{{ value.udi | ncNodeName }}` to show the node name rather than the node ID.
 - If your editor is a rich text editor, you can use the Angular filter `{{ value | ncRichText }}` to show the unformatted text.
+:::
 
 
 The built-in views you can use are:
