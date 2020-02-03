@@ -10,11 +10,11 @@ Firstly you will need to select the parent page for your new page. This could be
 
 1. Hover over the name of the parent page and then click on the options icon (•••) to reveal the types of pages you can create.
 2. Click on the type of page you wish to create which will then load the new page into the content area on the right-hand side.
-3. Enter a name for the page in the text field at the top of the content area. See sections 2.3.2 and 2.5 for more information on saving and editing the new page.
+3. Enter a name for the page in the text field at the top of the content area. 
 
-![pageCreationSlidout.jpg](images/pageCreationSlidout.jpg)
+![This shows an arrow pointing at the home node in the section tree.](images/Step-one-parent-page.png)
 
-![blankPage.jpg](images/blankPage.jpg)
+![This shows an arrow pointing at Enter a name...](images/Enter-the-page-name-here.png)
 
 ## Various Saving and Publishing Options
 
@@ -22,26 +22,37 @@ There are four different options you have for saving and publishing pages. Each 
 
 ### Save
 
-The ***Save*** option (found by clicking the arrow on the ***Save and publish*** button) is used for saving the page without publishing the changes to the live site. This is especially useful if you are working on changes over a period of time as you can save frequently to prevent losing any data or if you wish to save the current state and return to edit the page at a later date. Using the ***Preview*** button will show you how the page will look once published.
+The ***Save*** option (Located next to the ***Save and publish*** button) is used for saving the page without publishing the changes to the live site. This is especially useful if you are working on changes over a period of time as you can save frequently to prevent losing any data or if you wish to save the current state and return to edit the page at a later date. Using the ***Preview*** button will show you how the page will look once published.
+
+![This shows an arrow pointing at The save button.](images/The-save-button.png)
 
 ### Save and Publish
 
 The ***Save and publish*** button is ideal for when you want to publish a previously saved page to the live website, or to publish a page without previewing it. This will save and publish the page to your live website.
 
-### Publish
+![This shows an arrow pointing at Save and publish.](images/Save-and-publish.png)
 
-Clicking the actions menu in the top right of the page or right clicking on the name of the page you wish to publish from the context menu will reveal the slide out menu. On this menu you will see an option to ***Publish***. You can now choose to ***Publish*** all sub-pages excluding any with unpublished changes. You can also select to include all unpublished sub-pages pages too. This is especially useful if you have many pages you wish to publish at the same time.
+### Publish with descendants
 
-### Scheduled Publishing
+Clicking the arrow next to the ***Save and publish*** button will present you with two options(three if you have published before).
+Here you can pick ***Publish with descendants***, This will allow you to publish the current page and all content that is linkrd to this page.
+You will get the option to include drafts, this means that you also include all unpublished content items for thsi page and all linked pages.
 
-Scheduled publishing is ideal when you need a page to go live at a specific date and time when it is not convenient to do so manually. To schedule publishing you need to navigate to the ***Properties*** tab and click on the Calendar icon within the Publish at field which will then open up a ***Calendar***. Select the date and then click the ***Clock*** icon at the bottom of the calendar to select the time you wish for the page to be published. After you have done this, click anywhere outside of the date and time picker pop-up to close it. Now all you need to do is save your changes by clicking the arrow on the ***Save and publish*** button and click ***Save***.
-Umbraco will automatically publish the page at the date the time you chose.
+![This shows an arrow pointing at Publish with descendants.](images/Publish-with-descendants.png)
 
-![scheduledPublish.jpg](images/scheduledPublish.jpg)
+### Scheduled Publishing and Unpublishing
+
+Scheduled publishing is ideal when you need a page to go live at a specific date and time when it is not convenient to do so manually. To schedule publishing/unpublishing you need to navigate to the arrow next to the ***Save and publish*** button and select the ***Schedule*** button then a box will pop up, that ask for a date for the schedualed publishing or unpublishing. Select the date and then click the ***Clock*** at the bottom of the calendar to select the time you wish for the page to be published/unpublished. After you have done this, click anywhere outside of the date and time picker pop-up to close it. Now all you need to do is save your changes by clicking The ***Schedule*** button.
+Umbraco will automatically publish/unpublish the page at the date the time you chose.
+
+![This shows an arrow pointing at Schedule Publishing.](images/Schedual-button.png)
+
+![This shows the box that allows you to pick the date and time for the schedualed publishing or unpublishing.](images/Schedualing-box.png)
 
 ## Unpublishing
 
 Along with the various options for saving and publishing, you also have the ability to unpublish a page. This is useful if you no longer wish for the page to be publicly visible but do not want to delete it.
+
 
 ### Manually Unpublish
 
@@ -49,6 +60,4 @@ Along with the various options for saving and publishing, you also have the abil
 2. Click the arrow on the ***Save and publish*** button which is found within the content area.
 3. Select ***Unpublish***.
 
-### Scheduled Unpublishing
-
-Scheduled unpublish is ideal when you require a page to be removed from the website at a specific date and time, but are unable to do so manually, for example at the end of a promotion. To schedule the unpublishing of a page you need to navigate to the ***Properties*** tab for the desired page and click on the ***Calendar*** icon within the ***Unpublish*** at field which will then open up a calendar. Select the date and then click the Clock icon at the bottom of the calendar to select the time you wish for the page to be unpublished. After you have done this, click anywhere outside of the date and time picker pop-up to close it. Now all you need to do is save your changes by clicking the ***Save and publish*** button.
+![This shows an arrow pointing at Unpublishing.](images/Unpublishing.png)

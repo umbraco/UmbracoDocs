@@ -10,7 +10,7 @@ Firstly you will need to select the parent page for your new page. This could be
 
 1. Hover over the name of the parent page and then click on the options icon (•••) to reveal the types of pages you can create.
 2. Click on the type of page you wish to create which will then load the new page into the content area on the right-hand side.
-3. Enter a name for the page in the text field at the top of the content area. See sections 2.3.2 and 2.5 for more information on saving and editing the new page.
+3. Enter a name for the page in the text field at the top of the content area. 
 
 ![pageCreationSlidout.jpg](images/pageCreationSlidout.jpg)
 
