@@ -6,19 +6,29 @@ meta.Description: "This section includes information on Umbraco security, its va
 
 # Security
 
-This section includes information on security within Umbraco, including its various security options and how authentication & authorization works.
+In this article you will find everything you need regarding security within Umbraco.
 
-## Umbraco Security overview
+## [The Umbraco Trust Center](https://umbraco.com/about-us/trust-center/)
 
-We have a dedicated security section on our main website which provides all the details you need to know about security within the Umbraco CMS. This includes how to report a vulnerability.
+On our main website we have a dedicated security section which provides all the details you need to know about security within the Umbraco CMS. This includes how to report a vulnerability.
 
-Find all this in [The Umbraco Trust Center](https://umbraco.com/about-us/trust-center/).
-
-## SSL/HTTPS
+## [SSL/HTTPS](use-https.md)
 
 We highly encourage the use of HTTPS on Umbraco websites especially in production environments. By using HTTPS you greatly improve the security of your website.
 
-Learn more about HTTPS and how configure it in the [Use HTTPS](use-https.md) article.
+In the "Use HTTPS" article you can learn more about how to use HTTPS and how to set it up.
+
+## [Security settings](Security-settings)
+
+Learn which security settings that can be configured in Umbraco.
+
+## [Security Hardening](Security-hardening)
+
+Learm about how to can harden the security on your Umbraco website to secure it even further.
+
+## [Security on Umbraco Cloud](../../Umbraco-Cloud/Frequently-Asked-Questions/#security-and-encryption)
+
+When your project is hosted on Umbraco Cloud, you might be interested in more details about the security of the hosting. This information can be found in the Umbraco Cloud section of the documentation.
 
 ## Backoffice users
 
@@ -56,12 +66,16 @@ You are able [check the username and password against your own credentials store
 
 ### Sensitive data on members
 
-Marking fields as [sensitive](sensitive-data.md) will hide the data in those fields for backoffice users that have no business viewing personal data of members.
+Marking fields as **sensitive** will hide the data in those fields for backoffice users that do not have permission to view personal data of members.
 
-### [Setup Umbraco for a FIPS Compliant Server](Setup-Umbraco-for-a-Fips-Server/index.md)
+Learn more about this in the [Sensitive Data](sensitive-data.md) article.
+
+## [Setup Umbraco for a FIPS Compliant Server](Setup-Umbraco-for-a-Fips-Server/index.md)
 
 How to configure Umbraco to run on a FIPS compliant server.
 
-### [Security settings](Security-settings/index.md)
+## Other articles related to security
 
-Some security settings that can be used in Umbraco.
+* [Routing requirements for backoffice authentication](../Routing/Authorized/)
+* [Health Checks](../../Extending/Health-Check/)
+* [Consent Service](../Management/Services/ConsentService/)
