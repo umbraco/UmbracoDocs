@@ -42,7 +42,11 @@ You will get the option to include drafts. This means that you also include all 
 
 ### Scheduled Publishing and Unpublishing
 
-Scheduled publishing is ideal when you need a page to go live at a specific date and time when it is not convenient to do so manually. To schedule publishing/unpublishing you need to navigate to the arrow next to the ***Save and publish*** button and select the ***Schedule*** button then a box will pop up, that ask for a date for the schedualed publishing or unpublishing. Select the date and then click the ***Clock*** at the bottom of the calendar to select the time you wish for the page to be published/unpublished. After you have done this, click anywhere outside of the date and time picker pop-up to close it. Now all you need to do is save your changes by clicking The ***Schedule*** button.
+Scheduled publishing is ideal when you need a page to go live at a specific date and time when it is not convenient to do so manually. 
+- To schedule publishing/unpublishing you need to navigate to the arrow next to the ***Save and publish*** button and select the ***Schedule*** button then a box will pop up, that ask for a date for the schedualed publishing or unpublishing. 
+- Select the date and then click the ***Clock*** at the bottom of the calendar to select the time you wish for the page to be published/unpublished. 
+- After you have done this, click anywhere outside of the date and time picker pop-up to close it. 
+- Now all you need to do is save your changes by clicking The ***Schedule*** button.
 Umbraco will automatically publish/unpublish the page at the date the time you chose.
 
 ![This shows an arrow pointing at Schedule Publishing.](images/Schedual-button2.png)
