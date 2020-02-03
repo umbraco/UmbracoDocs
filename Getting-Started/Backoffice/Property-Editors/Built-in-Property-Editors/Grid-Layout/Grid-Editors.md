@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.4.0
+versionFrom: 7.2.0
 ---
 
 # Grid Editors
