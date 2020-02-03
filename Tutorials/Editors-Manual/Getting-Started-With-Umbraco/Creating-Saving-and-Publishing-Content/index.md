@@ -8,7 +8,7 @@ In this section you will get an overview of how you can create a new page, save 
 
 ## Creating a New Page
 
-Firstly you will need to select the parent page for your new page. This could be the home page or any of the sub-pages of the site. If the parent page allows sub-pages underneath it, the following process can be followed:
+Firstly you will need to select the parent page to create you new page. This could be the home page or any of the sub-pages of the site. If the parent page allows sub-pages underneath it, the following process can be followed:
 
 1. Hover over the name of the parent page and then click on the options icon (•••) to reveal the types of pages you can create.
 2. Click on the type of page you wish to create which will then load the new page into the content area on the right-hand side.
