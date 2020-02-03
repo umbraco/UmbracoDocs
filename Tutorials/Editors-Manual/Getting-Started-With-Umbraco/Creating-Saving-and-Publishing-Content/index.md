@@ -4,6 +4,8 @@ versionFrom: 8.0.0
 
 # Creating, Saving and Publishing Content
 
+In this section you will get an overview of how you can create a new page, save your content and what options you have when it comes to publishing and unpublishing content.
+
 ## Creating a New Page
 
 Firstly you will need to select the parent page for your new page. This could be the home page or any of the sub-pages of the site. If the parent page allows sub-pages underneath it, the following process can be followed:
