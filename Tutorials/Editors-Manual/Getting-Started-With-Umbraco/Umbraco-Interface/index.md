@@ -16,7 +16,7 @@ clicking these circles will present you with a box below that gives you differen
 
 
 ### 2. The Utility links
-The first button in this row opens the overview of the environments on the project in the Umbraco Cloud portal. The second button takes you to the [Umbraco Cloud documentation](https://our.umbraco.com/Documentation/Umbraco-Cloud/).
+The first button in this row opens the overview of the environments on the project in the Umbraco Cloud portal. The second button takes you to the [Umbraco Cloud documentation](../../../Umbraco-Cloud/).
 The last button has three dots, and gives you the following links: 
 - Getting Started
 - Set up a Project
@@ -26,7 +26,7 @@ The last button has three dots, and gives you the following links:
 ![This shows an image that points to the utility links above the environments](images/The-Utility-Links.png)
 
 ### 3. Search and help
-The first button is a search field where you can search for the content that you are looking for.
+The first button is a search field where you can search for the content, that you are looking for.
 The second button is the help button if you click this you will get options for **help**.
 The third button is your **profile**, this will give you the option to edit your profile and password.
 
@@ -45,7 +45,7 @@ The menu at the top, contains links to each section in the backoffice.
 - The next button is **Media**, under this tab you can manage images and other media files.
 - The third button is **Settings**, in this tab you handle your meta data such as document types.
 - Button number four is **Packages**, this tab lets you manage and install packages.
-- The fifth button is **Users**, this tab lets you manage the users on the project.
+- The fifth button is **Users**, this tab lets you manage the users on the project. If you want to learn more about users you can find more information here[a link directly to the user docs](../../../Users/)
 - Button six is the **Members** tab, and here you can handle the members of the project.
 - The seventh button in the row is **Forms** tab, here you can create and manage your forms.
 - The final and eight button is **Translation**, this tab is for managing languages.  
@@ -62,3 +62,4 @@ The first field is **Content** this allows you to create content nodes, and mana
 The **Recycle bin**, this is where your deleted content ends up. This will be on the Content section and the media section only.
 
 ![This is an arrow that points to the section tree on the left.](images/The-Section-Tree.png)
+
