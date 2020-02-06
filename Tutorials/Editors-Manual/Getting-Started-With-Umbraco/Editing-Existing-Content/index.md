@@ -53,7 +53,7 @@ When a page uses listview, there will be no standard tree for that page, insted 
 
 ![Shows the regular listview.](images/List-view.png)
 
-If you want another type of list view, there are another option if you click the button shown in the screenshot below.
+If you want another type of list view, there is another option if you click the button shown in the screenshot below.
 
 ![Shows the options for listview.](images/Options-for-listview.png)
 
