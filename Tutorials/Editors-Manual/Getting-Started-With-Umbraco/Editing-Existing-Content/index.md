@@ -34,6 +34,7 @@ These are just three of many kinds of content types.
 5.	Finally, after you have done the preview and confirmed that the changes are how you like it.
 You can click ***save and publish***, to publish the changes you did.
 
+You can learn more about that in the [Save and publish](../Creating-Saving-and-Publishing-Content) article.
 
 ![This shows the save and publish button.](images/Save-publish.png)
 
