@@ -15,7 +15,7 @@ This documentation is intended as a guide that will be helping you gain an overv
 2.	When you have located the page, you want to ***edit*** and clicked onto it.
 
 You will be presented with the content of the page (if there is any). 
-This content will be in the middle of the page (see image) the content is everything inside the red box, in this case there is three kinds of content.
+This content will be in the middle of the page (see image). The content is everything inside the red box. On this page there are three kinds of fields for content.
 - A text box for the title.
 - A media picker for the image.
 - A rich text editor.
