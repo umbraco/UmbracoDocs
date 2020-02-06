@@ -32,10 +32,9 @@ Which fields you see in this area and what type of content you will be able to f
 
 ![This shows the preview button next to the save button.](images/Preview.png)
 
-5.	Finally, after you have done the preview and confirmed that the changes are how you like it.
-You can click ***save and publish***, to publish the changes you did.
+5.	Finally, after you have done the preview and confirmed that the changes are how you like it then you can click ***save and publish***, to publish the changes you did.
 
-You can learn more about that in the [Save and publish](../Creating-Saving-and-Publishing-Content) article.
+    You can learn more about that in the [Save and publish](../Creating-Saving-and-Publishing-Content) article.
 
 ![This shows the save and publish button.](images/Save-publish.png)
 
