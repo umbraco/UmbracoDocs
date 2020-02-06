@@ -16,7 +16,7 @@ The following configuration option can be set in the application settings (in th
 
 * `Umbraco.ModelsBuilder.EnableFactory` (bool, default is `true`) determines whether Models Builder registers the built-in `IPublishedContentFactory`. When `false`, models can be generated, but will *not* be used by Umbraco.
 
-* `Umbraco.ModelsBuilder.ModelsNamespace` (string, default is `Umbraco.Web.PublishedContentModels`) specifies the generated models' namespace.
+* `Umbraco.ModelsBuilder.ModelsNamespace` (string, default is `Umbraco.Web.PublishedModels`) specifies the generated models' namespace.
 
 * `Umbraco.ModelsBuilder.FlagOutOfDateModels` (bool, default is `true`) indicates whether out-of-date models (i.e. after a content type or data type has been modified) should be flagged.
 
