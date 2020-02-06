@@ -57,7 +57,7 @@ If you want another type of list view, there are another option if you click the
 
 ![Shows the options for listview.](images/Options-for-listview.png)
 
-Selectiong this option will present you with boxes rather then a tabel.
+Selectiong this option will present you with boxes rather then a table.
 This can be a good way to keep track of your pages if you need a quick overview.
 
 ![Shows the other option for listview.](images/Other-version-of-listview.png)
