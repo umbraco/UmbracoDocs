@@ -49,7 +49,7 @@ The first screenshot below shows three child items below the **The news** page i
 ![Shows the standard tree view.](images/Non-listview.png)
 
 The screenshot below shows what a page with a listview could look like.
-When a page uses listview, there will be no standard tree for that page, insted there will be a table list when you click into the page.
+When a page uses listview, there will be no standard tree for that page, instead there will be a table list when you click into the page.
 
 ![Shows the regular listview.](images/List-view.png)
 
