@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 ## Content Within the Tree View
 
-This documentation is intended as a guide that will be helping you gain an overview of how you edit in excisting content.
+This documentation is intended as a guide that will be helping you gain an overview of how you edit existing content.
 
 1.	When you are looking to edit content, the first thing you should do is locate the ***page*** you want to edit content on. This can be done in the section tree on the left side of the screen.
 
@@ -63,4 +63,3 @@ This can be a good way to keep track of your pages if you need a quick overlook.
 
 
 The table will show a maximum of ten child pages at any one time. Pagination controls allow you to navigate to additional pages should you have more than ten. In the top right of the table there is a search facility which enables you search for specific pages. This enables you to quickly and easily locate pages without having to use the pagination. You can click the column titles to sort the list items. For example clicking the name column title will sort the list items alphbetically.
-
