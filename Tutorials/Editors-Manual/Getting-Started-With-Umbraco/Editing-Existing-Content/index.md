@@ -20,7 +20,7 @@ This content will be in the middle of the page (see image). The content is every
 - A media picker for the image.
 - A rich text editor.
 
-These are just three of many kinds of content types.
+Which fields you see in this area and what type of content you will be able to fill in, is dependent on how the developers has built the site.
 
 ![This shows the content on the middle of the page.](images/Edit-content.png)
 
