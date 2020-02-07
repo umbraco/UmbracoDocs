@@ -312,10 +312,10 @@ now we can pass this value into our helper
 ```csharp
 @helper RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage, int maxSiteMapDepth, string[] excludedDocumentTypes)
 {
-    foreach (var page in parentPage.Children.Where(f => !excludedDocumentTypes.Contains(f.Alias) && !f.Value<bool>("hideFromXmlSiteMap")))
+    foreach (var page in parentPage.Children.Where(f => !excludedDocumentTypes.Contains(f.ContentType.Alias) && !f.Value<bool>("hideFromXmlSiteMap")))
     {
         @RenderSiteMapUrlEntry(page)
-        if (page.Level < maxSiteMapDepth && page.Children.Any(f => !excludedDocumentTypes.Contains(f.Alias) && !f.Value<bool>("hideFromXmlSiteMap")))
+        if (page.Level < maxSiteMapDepth && page.Children.Any(f => !excludedDocumentTypes.Contains(f.ContentType.Alias) && !f.Value<bool>("hideFromXmlSiteMap")))
         {
             @RenderSiteMapUrlEntriesForChildren(page, maxSiteMapDepth, excludedDocumentTypes)
         }
