@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.1.1
+versionFrom: 7.3.0
 keywords: oauth, security
 ---
 
@@ -35,7 +35,7 @@ Here's an example of specifying auto link options for your OAuth provider:
 // any auto-linking, the autoLinkExternalAccount parameter must be true
 var autoLinkOptions = new ExternalSignInAutoLinkOptions(
     autoLinkExternalAccount:true,
-    defaultUserGroups: new[] { "editor" },
+    defaultUserType: "editor",
     defaultCulture: "en-US");
 
 // an optional callback you can specify to give you more control over how the
