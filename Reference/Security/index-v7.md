@@ -51,7 +51,7 @@ You are able [check the username and password against your own credentials store
 
 ### Authenticating with Active Directory credentials
 
-You want to [connect the backoffice to Active Directory](authenticate-with-AD.md)? Should be pretty straight forward with the `ActiveDirectoryBackOfficeUserPasswordChecker`.
+You want to [connect the backoffice to Active Directory](Authenticate-With-AD-vpre8.md)? Should be pretty straight forward with the `ActiveDirectoryBackOfficeUserPasswordChecker`.
 
 ### Sensitive data on members
 
