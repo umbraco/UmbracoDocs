@@ -29,7 +29,7 @@ This information is also used during the [MVC Controller/Action selection proces
 
 ## Rendering engine
 
-Umbraco v8 only supports MVC. 
+Umbraco 8 only supports MVC. 
 	
 ### More information
 - [Umbraco Request Pipeline](../../../Reference/Routing/Request-Pipeline/)
