@@ -10,7 +10,11 @@ If you want to re-use a page or structure you have created previously you can co
 
 1. You can either select the page you want to copy and click the ***Actions*** button in the top right. Alternatively, you can right-click the page title in the menu which will slide out the context menu.
 2. Select ***Copy*** from either the Actions menu or the menu presented by right-clicking the node in the tree.
+![movePage.jpg](images/Copy-locations.png)
+
 3. Select the parent page which you want to copy the page to.
+![movePage.jpg](images/versions-of-copy.png)
+
 4. Select whether to **Relate to original** page.
 5. Select whether to **Include descendants** (sub-pages)
 6. Click ***Move***.
@@ -20,4 +24,4 @@ If you want to re-use a page or structure you have created previously you can co
 When you select ‘Relate copied items to the original page’ every change you make to the copied page will also be made to the original. So if you want the original and duplicated pages to be separate then do not select the ‘Relate copied items to the original page’ tick box.
 :::
 
-![movePage.jpg](images/movePage.jpg)
+
