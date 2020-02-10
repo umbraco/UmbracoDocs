@@ -16,7 +16,7 @@ If you want to re-use a page or structure you have created previously you can co
 6. Click ***Move***.
 
 
-:::Warning
+:::warning
 When you select ‘Relate copied items to the original page’ every change you make to the copied page will also be made to the original. So if you want the original and duplicated pages to be separate then do not select the ‘Relate copied items to the original page’ tick box.
 :::
 
