@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Copying a Page
 
-If you want to re-use a page or structure you have created previously you can copy the page and its sub-pages to a different place within the site structure. When you copy a page all of its sub-pages will also be copied as the default setting. You can choose to not have the sub-pages copied.
+If you want to re-use a page or structure you have created previously you can copy the page and its child pages to a different place within the site structure. When you copy a page all of its child pages will also be copied as the default setting. You can choose to not have the child pages copied.
  You can define whether links should be automatically updated, or keep the linkage with the original pages.
 
 
@@ -16,7 +16,7 @@ If you want to re-use a page or structure you have created previously you can co
 ![movePage.jpg](images/versions-of-copy.png)
 
 4. Select whether to **Relate to original** page.
-5. Select whether to **Include descendants** (sub-pages)
+5. Select whether to **Include descendants** (child pages)
 6. Click ***Move***.
 
 
