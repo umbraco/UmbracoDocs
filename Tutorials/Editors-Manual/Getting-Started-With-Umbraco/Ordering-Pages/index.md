@@ -16,8 +16,8 @@ In the following guide, you will be presented with two different ways to sort yo
 
 2. There are two ways to do this step.
 * The first way is to right-click the parent node. 
-* The second way is to Navigate to the ***top right corner*** After clicking the parent in the section tree, here you will find the Actions button, click this.
-Both of these options will present you with a drop-down menu
+* The second way is to Navigate to the ***top right corner*** After clicking the parent in the section tree. Here you will find the Actions button, click this.
+Both of these options will present you with a drop-down menu.
 ![This should show an image of an arrow pointing to the Action button in the top right corner.](images/Actions-button.png)
 
 3. Press the option that says ***sort***.
@@ -26,7 +26,7 @@ Both of these options will present you with a drop-down menu
 4. After pressing ***sort*** a window will appear on the side of the section tree.
 ![This Shows the sortmenu](images/Sortmenu.png)
 
-5. In this window you can arrange the ***Child nodes*** of the parent in the order you want by dragging them up or down Alternatively, click on the Name or Creation Date column header to ***sort*** the items automatically by Name or Creation Date. Clicking on a column header again reverses the ***sort*** order.
+5. In this window you can arrange the ***Child nodes*** of the parent in the order you want by dragging them up or down Alternatively. Click on the Name or Creation Date column header to ***sort*** the items automatically by Name or Creation Date. Clicking on a column header again reverses the ***sort*** order.
 ![Shows the name and date button in the sort menu.](images/name-date.png)
 
 6. Click ***Save***.
