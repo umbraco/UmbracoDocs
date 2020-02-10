@@ -5,7 +5,7 @@ versionFrom: 8.0.0
 # Ordering Pages
 This is intended as an instructional guide for how you can sort your items in the tree section.
 
-The pages in Umbraco are sorted in the tree structure according to a predefined sort order. It is most common for the page that has been created most recently to be placed at the bottom of the tree structure, you can change the ***sort*** order of the pages in a section of the website by using the sort function.
+The pages in Umbraco are sorted in the tree structure according to a predefined sort order. It is most common for the page that has been created most recently to be placed at the bottom of the tree structure. You can change the ***sort*** order of the pages in a section of the website by using the sort function.
 
 
 In the following guide, you will be presented with two different ways to sort your content.
