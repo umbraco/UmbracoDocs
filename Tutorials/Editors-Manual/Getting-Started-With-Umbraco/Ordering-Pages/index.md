@@ -12,7 +12,7 @@ In the following guide, you will be presented with two different ways to sort yo
 
 ## Ordering through the section tree:
 1. Navigate to the ***parent node*** whose content you want to sort.
-![This should show an image of an arrow pointing to the parent node in the section tree.](images/parent-node.png)
+![This should show an image of an arrow pointing to the parent node in the section tree.](images/Parent-Node.png)
 
 2. There are two ways to do this step.
 * The first way is to right-click the parent node. 
