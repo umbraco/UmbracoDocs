@@ -10,7 +10,7 @@ The pages in Umbraco are sorted in the tree structure according to a predefined 
 
 In the following guide, you will be presented with two different ways to sort your content.
 
-## Ordering Your content.
+## Ordering your content
 1. Navigate to the ***parent node*** whose content you want to sort.
 ![This should show an image of an arrow pointing to the parent node in the section tree.](images/Parent-Node.png)
 
@@ -20,10 +20,10 @@ In the following guide, you will be presented with two different ways to sort yo
 Both of these options will present you with a drop-down menu.
 ![This should show an image of an arrow pointing to the Action button in the top right corner.](images/Actions-button.png)
 
-3. Press the option that says ***sort***.
+3. Press the option that says ***Sort***.
 ![This shows the location of the sort button in the sort tree](images/The-Sort-button.png)
 
-4. After pressing ***sort*** a window will appear on the side of the section tree.
+4. After pressing ***Sort*** a window will appear on the side of the section tree.
 ![This Shows the sortmenu](images/Sortmenu.png)
 
 5. In this window you can arrange the ***Child nodes*** of the parent in the order you want by dragging them up or down Alternatively. Click on the Name or Creation Date column header to ***sort*** the items automatically by Name or Creation Date. Clicking on a column header again reverses the ***sort*** order.
