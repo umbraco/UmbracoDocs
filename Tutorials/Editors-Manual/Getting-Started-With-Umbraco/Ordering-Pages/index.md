@@ -26,7 +26,7 @@ Both of these options will present you with a drop-down menu.
 4. After pressing ***Sort*** a window will appear on the side of the section tree.
 ![This Shows the sortmenu](images/Sortmenu.png)
 
-5. In this window you can arrange the ***Child nodes*** of the parent in the order you want by dragging them up and down, or alternatively, click on the Name or Creation Date column header to ***sort*** the items automatically by Name or Creation Date. Clicking on a column header again reverses the ***sort*** order.
+5. In this window you can arrange the ***Child nodes*** of the parent in the order you want by dragging them up and down. Alternatively you can click on the Name or Creation Date column header to ***sort*** the items automatically by Name or Creation Date. Clicking on a column header again reverses the ***sort*** order.
 ![Shows the name and date button in the sort menu.](images/name-date.png)
 
 6. Click ***Save***.
