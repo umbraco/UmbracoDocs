@@ -12,27 +12,27 @@ versionFrom: 7.0.0
 
 ### [Various Screen Sizes](Umbraco-Interface/index-v7.md/#various-screen-sizes)
 
-## [Creating, Saving and Publishing Content](Creating-Saving-and-Publishing-Content)
+## [Creating, Saving and Publishing Content](Creating-Saving-and-Publishing-Content/index-v7.md)
 
-### [Creating a New Page](Creating-Saving-and-Publishing-Content#creating-a-new-page)
+### [Creating a New Page](Creating-Saving-and-Publishing-Content/index-v7.md/#creating-a-new-page)
 
-### [Various Saving and Publishing Options](Creating-Saving-and-Publishing-Content#various-saving-and-publishing-options)
+### [Various Saving and Publishing Options](Creating-Saving-and-Publishing-Content/index-v7.md/#various-saving-and-publishing-options)
 
-### [Unpublishing](Creating-Saving-and-Publishing-Content#unpublishing)
+### [Unpublishing](Creating-Saving-and-Publishing-Content/index-v7.md/#unpublishing)
 
-## [Finding Content](Finding-Content)
+## [Finding Content](Finding-Content/index-v7.md)
 
-## [Editing Existing Content](Editing-Existing-Content)
+## [Editing Existing Content](Editing-Existing-Content/index-v7.md)
 
-### [Content Within the Tree View](Editing-Existing-Content#content-within-the-tree-view)
+### [Content Within the Tree View](Editing-Existing-Content/index-v7.md/#content-within-the-tree-view)
 
-### [List View Pages](Editing-Existing-Content#list-view-pages)
+### [List View Pages](Editing-Existing-Content/index-v7.md/#list-view-pages)
 
-## [Ordering Pages](Ordering-Pages)
+## [Ordering Pages](Ordering-Pages/index-v7.md)
 
 ## [Moving a Page](Moving-a-Page)
 
-## [Copying a Page](Copying-a-Page)
+## [Copying a Page](Copying-a-Page/index-v7.md)
 
 ## [Deleting and Restoring Pages](Deleting-and-Restoring-Pages)
 
