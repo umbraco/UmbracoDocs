@@ -3,7 +3,8 @@ versionFrom: 8.0.0
 ---
 
 # Deleting and Restoring Pages
-In this guide you will get an overview of how to delete pages from the section and how you can restore them if you end up changing your mind.
+In this guide you will get a quick overview of how to delete pages from the section tree.
+Further more will also be shown how you can restore them if you end up changing your mind.
 
 
 
