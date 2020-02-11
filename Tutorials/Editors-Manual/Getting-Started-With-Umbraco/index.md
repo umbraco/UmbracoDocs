@@ -34,10 +34,10 @@ versionFrom: 7.0.0
 
 ## [Copying a Page](Copying-a-Page/index-v7.md)
 
-## [Deleting and Restoring Pages](Deleting-and-Restoring-Pages)
+## [Deleting and Restoring Pages](Deleting-and-Restoring-Pages/index-v7.md)
 
-### [Deleting a Page](Deleting-and-Restoring-Pages#deleting-a-page)
+### [Deleting a Page](Deleting-and-Restoring-Pages/index-v7.md/#deleting-a-page)
 
-### [Restoring a Deleted Page from the Recycle Bin](Deleting-and-Restoring-Pages#restoring-a-deleted-page-from-the-recycle-bin)
+### [Restoring a Deleted Page from the Recycle Bin](Deleting-and-Restoring-Pages/index-v7.md/#restoring-a-deleted-page-from-the-recycle-bin)
 
-### [Emptying the Recycle Bin](Deleting-and-Restoring-Pages#emptying-the-recycle-bin)
+### [Emptying the Recycle Bin](Deleting-and-Restoring-Pages/index-v7.md/#emptying-the-recycle-bin)
