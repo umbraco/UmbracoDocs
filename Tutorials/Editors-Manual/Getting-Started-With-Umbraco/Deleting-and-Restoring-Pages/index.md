@@ -10,7 +10,7 @@ Further more will also be shown how you can restore them if you end up changing 
 
 ## Deleting a Page
 
-If you have pages that you no longer want on the website you are able to delete them. Upon deletion, the page is moved to the Recycle Bin as a safety net just in case you change your mind and wish to restore the page.
+If you have pages that you no longer want on the website you are able to delete them. Upon deletion, the page is moved to the Recycle Bin as a safety net in case you wish to restore the page.
 
 1. Find the page you wish to delete in the section tree view.
 2. Right click on the page name in the tree view or click the actions button in the top right when on the selected page.
