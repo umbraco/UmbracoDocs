@@ -24,7 +24,7 @@ The ***Recycle Bin*** is a separate tree list which can be found at the bottom o
 1. Click on the ***(•••)*** icon for the page you wish to restore from the Recycle Bin to reveal the Actions menu.
 2. Click on ***Move*** and select the page you wish to nest the page under.
 
-    You can also choose to ***Restore***, this will restore the page to where it was before you deleted it.
+    You can also choose to ***Restore***, which will then restore the page to where it was before you deleted it.
 3. Click on the ***Move*** button to confirm the move and then you will see a confirmation message.
 
     If you chose to ***Restore*** then you click the ***Restore*** button to confirm the restoration of the page.
