@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Getting started with Umbraco
 
-## [Logging In and Out](Logging-In-and-Out)
+## [Logging In and Out](Logging-In-and-Out/index.md)
 
 ## [Umbraco Interface](Umbraco-Interface/index.md)
 
