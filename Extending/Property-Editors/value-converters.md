@@ -139,9 +139,9 @@ public object ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPro
 
 ### ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
 
-This method converts the Intermediate to an Object. Tthe returned value is used by the `GetPropertyValue<T>` method of `IPublishedContent`. 
+This method converts the Intermediate to an Object. The returned value is used by the `GetPropertyValue<T>` method of `IPublishedContent`. 
 
-The below example converts the nodeId (converted to Int or Udi by ConvertSourceToIntermediate) into an IPublishedContent object.  
+The below example converts the nodeId (converted to `Int` or `Udi` by *ConvertSourceToIntermediate*) into an 'IPublishedContent' object.  
 
 ```csharp
 public object ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
