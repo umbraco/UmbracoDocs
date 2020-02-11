@@ -10,7 +10,6 @@ versionFrom: 8.0.0
 
 ### [Initial View](Umbraco-Interface/index.md/#initial-view)
 
-### [Various Screen Sizes](Umbraco-Interface/index.md/#various-screen-sizes)
 
 ## [Creating, Saving and Publishing Content](Creating-Saving-and-Publishing-Content/index.md)
 
