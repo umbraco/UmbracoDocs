@@ -29,7 +29,7 @@ versionFrom: 8.0.0
 
 ## [Ordering Pages](Ordering-Pages/index.md)
 
-## [Moving a Page](Moving-a-Page)
+## [Moving a Page](Moving-a-Page/index.md)
 
 ## [Copying a Page](Copying-a-Page/index.md)
 
