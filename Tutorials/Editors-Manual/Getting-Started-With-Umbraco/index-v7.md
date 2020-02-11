@@ -10,7 +10,7 @@ versionFrom: 7.0.0
 
 ### [Initial View](Umbraco-Interface/index-v7.md/#initial-view)
 
-### [Various Screen Sizes](Umbraco-Interface/index-v7.md/#Behaviour-at-Smaller-Screen-Sizes)
+### [Behaviour at Smaller Screen Sizes](Umbraco-Interface/index-v7.md/#Behaviour-at-Smaller-Screen-Sizes)
 
 ## [Creating, Saving and Publishing Content](Creating-Saving-and-Publishing-Content/index-v7.md)
 
