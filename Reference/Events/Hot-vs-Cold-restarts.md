@@ -54,7 +54,7 @@ As for the Debug vs Release mode, there's a ton of info on this online. Dependin
 
 If you want to improve VS cold start times and you don't plan on debugging, change your `web.config` to `debug="false"` and try it out. Be aware that you will not get any detailed error information or be able to set breakpoints.
 
-#### External resources:
+#### External resources
 
-* [https://weblogs.asp.net/scottgu/442448](https://weblogs.asp.net/scottgu/442448)
+* [Https://weblogs.asp.net/scottgu/442448](https://weblogs.asp.net/scottgu/442448)
 * [Debug in ASP.NET applications](https://blogs.msdn.microsoft.com/prashant_upadhyay/2011/07/14/why-debugfalse-in-asp-net-applications-in-production-environment/)
