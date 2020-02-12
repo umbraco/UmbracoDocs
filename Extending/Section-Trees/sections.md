@@ -42,13 +42,13 @@ using Umbraco.Core.Models.Sections;
 
 namespace My.Website.Sections
 {
-    public class MyCustomSection : ISection
+    public class MyFavouriteThingsSection : ISection
     {
         /// <inheritdoc />
-        public string Alias => "myCustomSection";
+        public string Alias => "myFavouriteThings";
 
         /// <inheritdoc />
-        public string Name => "My Custom Section";
+        public string Name => "My Favourite Things";
     }
 }
 ```
@@ -67,13 +67,13 @@ namespace My.Website.Composers
         /// <summary>Compose.</summary>
         public void Compose(Composition composition)
         {
-            composition.Sections().Append<MyCustomSection>();
+            composition.Sections().Append<MyFavouriteThingsSection>();
         }
     }
 }
 ```
 
-This would create a new section called 'My Custom Section` in your Umbraco Backoffice.
+This would also create a new section called 'My Favourite Things` in your Umbraco Backoffice.
 
 ### Why can't I see my new Custom Section?
 
