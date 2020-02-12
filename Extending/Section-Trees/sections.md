@@ -73,7 +73,7 @@ namespace My.Website.Composers
 }
 ```
 
-This would also create a new section called 'My Favourite Things` in your Umbraco Backoffice.
+This would also create a new section called 'My Favourite Things' in your Umbraco Backoffice.
 
 ### Why can't I see my new Custom Section?
 
