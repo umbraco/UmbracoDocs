@@ -1,12 +1,12 @@
 ---
 versionFrom: 8.4.0
 meta.Title: "Umbraco Property Editors - Property Actions"
-meta.Description: "Guide on how to impelement Property Actions for Property Editors in Umbraco"
+meta.Description: "Guide on how to implement Property Actions for Property Editors in Umbraco"
 ---
 
 # Property Actions
 
-Property Actions is a build-in feature that provides a generic place for secondary functionality for property editors.
+Property Actions is a built-in feature that provides a generic place for secondary functionality for property editors.
 Appearing as a small button next to the label of the property, that expands to show the available actions. Those actions are defined and implemented in the Property Editor, making it very open what a Property Action is.
 
 ![Example of Property Action on Nested Content Property Editor](example-of-property-actions.jpg)
@@ -32,7 +32,7 @@ We use `labelKey` and `labelTokens` to retrieve a localized string that is displ
 
 ## Getting ready for Property Actions
 A Property Editor needs to be implemented as a Component for it to perform the call to expose its Property Actions.
-The Component must be configured to retrieve an optional reference to `umbProperty`. The requirement must be optional because property-editors are implemented in scenarios where it's not presented.
+The Component must be configured to retrieve an optional reference to `umbProperty`. The requirement must be optional because property editors are implemented in scenarios where it's not presented.
 
 See the following example:
 
