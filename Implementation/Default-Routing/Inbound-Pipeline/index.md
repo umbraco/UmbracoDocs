@@ -9,7 +9,7 @@ _The process of Umbraco accepting a request, how it matches a URL to a content i
 ## Published Request Preparation
 
 The inbound process is triggered by the Umbraco (http) Module.
-The published request preparation process kicks in to create an `PublishedRequest` instance.
+The published request preparation process kicks in to create a `PublishedRequest` instance.
 
 It is called in `UmbracoInjectedModule.ProcessRequest(…)`
 
