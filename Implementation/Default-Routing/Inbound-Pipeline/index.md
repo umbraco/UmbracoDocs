@@ -29,7 +29,8 @@ This information is also used during the [MVC Controller/Action selection proces
 
 ## Rendering engine
 
-Umbraco 8 only supports MVC. 
+Umbraco 8 only supports MVC.
+Umbraco 7 was the last major version of Umbraco to support both Webforms and MVC
 	
 ### More information
 - [Umbraco Request Pipeline](../../../Reference/Routing/Request-Pipeline/)
