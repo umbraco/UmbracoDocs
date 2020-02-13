@@ -48,7 +48,7 @@ The first node in the tree is referred to as the **Root Node**. You might want t
 
 
 :::note
-In V8 the /config/trees.config file has been removed.
+In V8 the `/config/trees.config` file has been removed.
 :::
 
 [See Also: How to create your own custom section](../../Extending/Section-Trees/sections.md)
@@ -140,7 +140,7 @@ If you're creating a custom tree as part of an Umbraco package/plugin, it's reco
 public class FavouriteThingsTreeController : TreeController
 ```
 
-The edit view in the example would now be loaded from the location: */app_plugins/favouriteThings/backoffice/favouriteThingsAlias/edit.html*
+The edit view in the example would now be loaded from the location: */App_Plugins/favouriteThings/backoffice/favouriteThingsAlias/edit.html*
 
 #### Providing functionality in your Tree Action Views
 
