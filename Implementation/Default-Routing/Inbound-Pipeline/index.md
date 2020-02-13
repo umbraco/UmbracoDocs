@@ -23,7 +23,7 @@ What it does:
 
 ## Published Content Request Instance
 
-Once the request is prepared, an instance of `PublishedRequest` is available which represents the request that Umbraco must handle.
+Once the request is prepared, an instance of [`PublishedRequest`](/apidocs/v8/csharp/api/Umbraco.Web.Routing.PublishedRequest.html) is available which represents the request that Umbraco must handle.
 It contains everything that will be needed to render it including domain information, the content model to be rendered and the template to use.
 This information is also used during the [MVC Controller/Action selection process](../Controller-Selection/).
 
