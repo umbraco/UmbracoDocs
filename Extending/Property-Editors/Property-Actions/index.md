@@ -6,8 +6,9 @@ meta.Description: "Guide on how to implement Property Actions for Property Edito
 
 # Property Actions
 
-Property Actions is a built-in feature that provides a generic place for secondary functionality for property editors.
-Appearing as a small button next to the label of the property, that expands to show the available actions. Those actions are defined and implemented in the Property Editor, making it very open what a Property Action is.
+Property Actions are a built-in feature that provide a generic place for secondary functionality for property editor.
+
+Property Actions appear as a small button next to the label of the property, which expands to show the available actions. They are defined and implemented in the Property Editor, making it very open as to what a Property Action is.
 
 ![Example of Property Action on Nested Content Property Editor](example-of-property-actions.jpg)
 
