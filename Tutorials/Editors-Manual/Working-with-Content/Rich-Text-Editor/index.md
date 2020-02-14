@@ -196,7 +196,7 @@ You can upload images directly from the rich text editor on the page you are edi
 3. Click the ***Upload*** button which is located in the top right-hand corner of the menu.
 4. Select the chosen image from the pop-up window.
 5. In the Title field, enter a name/description for the image. (By default the name of the file will be automatically entered for your convenience).
-6. Click ***Insert** to add the image.
+6. Click ***Select*** to add the image.
 
 ![mediaUpload.jpg](images/Upload-media.png)
 
