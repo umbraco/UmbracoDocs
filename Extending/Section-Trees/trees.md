@@ -48,7 +48,7 @@ The first node in the tree is referred to as the **Root Node**. You might want t
 
 
 :::note
-In V8 the `/config/trees.config` file has been removed.
+In Umbraco 8 the `/config/trees.config` file has been removed.
 :::
 
 [See Also: How to create your own custom section](../../Extending/Section-Trees/sections.md)
