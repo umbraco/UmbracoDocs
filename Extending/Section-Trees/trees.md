@@ -140,7 +140,7 @@ If you're creating a custom tree as part of an Umbraco package/plugin, it's reco
 public class FavouriteThingsTreeController : TreeController
 ```
 
-The edit view in the example would now be loaded from the location: */App_Plugins/favouriteThings/backoffice/favouriteThingsAlias/edit.html*
+The edit view in the example would now be loaded from the location: `/App_Plugins/favouriteThings/backoffice/favouriteThingsAlias/edit.html`
 
 #### Providing functionality in your Tree Action Views
 
