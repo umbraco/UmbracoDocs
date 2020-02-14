@@ -119,7 +119,7 @@ Below is an example of a valid Dashboard.config:
             <area>content</area>
         </areas>
         <tab caption="Welcome">
-            <control>/App_Plugins/mycustomdashboard/customwelcome.html</control>
+            <control>/app_plugins/mycustomdashboard/customwelcome.html</control>
         </tab>
     </section>
 </dashBoard>
