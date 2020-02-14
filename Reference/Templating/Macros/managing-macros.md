@@ -43,13 +43,9 @@ Associate the macro with a partial view. This will already have been configured 
 
 ### Editor settings
 
-> Use in editor
+> Use in rich text editor and the grid
 
-If selected will allow an editor to insert this macro in to a rich text field
-
-> Render content in editor
-
-If selected, when an editor inserts this macro in to a rich text editor, the actual contents of the macro will be displayed in the editor based on the current page context. If a macro is processor intensive then it is recommended to not check this option and instead a default message will be displayed in the editor indicating that it's a macro element.
+If selected will allow an editor to insert this macro in to a Rich Text Editor and/or into a Grid editor.
 
 ## Caching options
 
@@ -59,11 +55,11 @@ Defines how many seconds the macro output will be cached for once it is rendered
 
 > Cache by page
 
-If selected, then this result of this macro will be cached based on the current page it is rendered on. This is useful if your macro has content that is dynamic to the current page it is being rendered on. If your macro's output is static (the same) no matter what page it is rendered on then it is better to not check this box.
+If selected, then the macro will be cached based on the current page it is rendered on. This is useful if your macro has content that is dynamic to the current page it is being rendered on. If your macro's output is static (the same) no matter what page it is rendered on then it is better to not check this box.
 
 > Cache personalized
 
-Similar to the 'cache by page', this will cache the output of a macro based on a member that is logged in. If you macro is static (the same) no matter what member is logged in, or if your website does not have membership then it is better to not check this box.
+Similar to the 'Cache by page', this will cache the output of a macro based on a member that is logged in. If your macro is static (the same) no matter what member is logged in, or if your website does not have membership then it is better to not check this box.
 
 ## Macro parameters
 
