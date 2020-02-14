@@ -1,10 +1,11 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
+needsV8Update: "true"
 ---
 
 # Managing macros
 
-In this article you can learn how to create and update a Macro, as well as how to configure its parameters.
+_Describes how to create/update a macro and its parameters_
 
 ## Creating macros
 
