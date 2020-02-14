@@ -88,7 +88,7 @@ The ***Insert Link*** button is used to create links to internal and external pa
     1. Open link in a new tab in the same browser window.
     2. Open link in a new separate browser window.
     3. Open the link in the same browser tab as the user would be viewing your site.
-6. Click ***Select.*** Your text will now contain the link as requested.
+6. Click ***Submit.*** Your text will now contain the link as requested.
 
 ![externalLink.jpg](images/Create-link.png)
 
@@ -99,7 +99,7 @@ The ***Insert Link*** button is used to create links to internal and external pa
 3. Select a page from the ***Content*** tab to link to. This will then populate the **link to document** automatically.
 4. In the Page Title field, enter the text that will be shown as a pointer to the link. This is important information for everyone reading the website with different accessibility aids, (by default the name of the selected page will automatically be entered for your convenience).
 5. In the ***Target*** field, select the target window/frame the link should be opened in.
-6. Click ***Select***.
+6. Click ***Submit***.
 
 ![internalLink.jpg](images/Internal-linksv8.png)
 
@@ -150,7 +150,7 @@ To delete the anchor, select it and then press your delete key.
 1. Highlight the content which you wish to add the anchor link to.
 2. Click the ***Insert link*** button which will reveal the link properties slide out menu.
 3. Add a hash symbol followed by the name of your anchor into the **link to document*** field.
-4. Click ***Select.***
+4. Click ***Submit.***
 
 ![linkAnchor.jpg](images/Linking-anchor.png)
 
@@ -216,7 +216,7 @@ The macros available to you differ from system to system so please see your syst
 2. Click the ***Insert Macro*** button from the toolbar to open the macro properties dialog box.
 3. Select a macro to insert from the Choose a macro drop-down list.
 4. Configure the macro as required.
-5. Click ***Select*** to insert the macro.
+5. Click ***Submit*** to insert the macro.
 6. The macro is displayed in the editor with a yellow dotted border.
 
 ![macroPicker.jpg](images/Macro-picker-button.png)
