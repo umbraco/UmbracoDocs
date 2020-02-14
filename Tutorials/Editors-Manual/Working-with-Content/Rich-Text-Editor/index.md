@@ -180,7 +180,7 @@ To display images on a page they must be uploaded to your Umbraco media library.
 3. Select the folder which the image is in.
 4. Click the thumbnail of your chosen image to open the image properties menu.
 5. In the Title field, enter a name/description for the image (by default the name of the file will be automatically entered for your convenience). It is important to add descriptive titles to images as these as used to assist visually impaired users.
-6. Click ***Insert*** to add the image.
+6. Click ***Select*** to add the image.
 
 ![mediaPicker.jpg](images/Media-v8.png) 
 *Media picker button*
@@ -250,4 +250,3 @@ To edit the table after you have already created it, you need to click on it so 
 Clicking ***Table Properties*** gives you several options for modifying the table’s appearance, however the developer of the website may have already created table styles for you so you may not need to adjust these settings. There are various other options available for modifying cells, rows and columns such as height, alignment, merge, insert and delete.
 
 ![tableProperties.jpg](images/Table-properties-v8.png)
-
