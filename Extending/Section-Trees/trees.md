@@ -213,7 +213,7 @@ protected override TreeNode CreateRootNode(FormDataCollection queryStrings)
     return root;
 }
 ```
-The RoutePath should be in the format of: **section/treeAlias/method**. As our example controller uses the `PluginController` attribute, clicking the root node would now request **/App_Plugins/favouriteThing/backoffice/favouritistThingsAlias/overview.html**. If you are not using the `PluginController` attribute, then the request would be to **/umbraco/views/favouritistThingsAlias/overview.html**
+The RoutePath should be in the format of: **section/treeAlias/method**. As our example controller uses the `PluginController` attribute, clicking the root node would now request `/App_Plugins/favouriteThing/backoffice/favouritistThingsAlias/overview.html`. If you are not using the `PluginController` attribute, then the request would be to `/umbraco/views/favouritistThingsAlias/overview.html`.
 
 ![Favourite Thing Custom Tree](images/favourite-things-custom-tree-v8.png)
 
