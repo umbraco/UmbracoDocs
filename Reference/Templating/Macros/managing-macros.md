@@ -10,21 +10,38 @@ In this article you can learn how to create and update a Macro, as well as how t
 
 There are a couple of ways to create a macro.
 
-The first way is to manually create a macro in the macro tree in the developer section:
+### Manually
 
-![Create macro](images/create-macro-tree.png)
+The first way is to manually create a macro, by right-clicking the Macro folder in the Settings section:
 
-Give it a name in the dialog screen, and then you'll be presented with the macro editor:
+![Create macro](images/create-macro-tree-8.png)
 
-![Macro editor](images/macro-editor.png)
+Give it a name in the dialog screen, and you'll be presented with the macro editor.
 
-From here you'll need to choose the macro type you want to render.
+### Partial View Macro files
 
-The 2nd option to create a macro is to create the macro type directly on its tree and select the checkbox "Create macro". For example, if you create a Partial View Macro File in the Developer section, the dialog will prompt you to also create a macro for this item.
+The second option is to create the macro through **Partial View Macro Files**.
 
-![Macro editor](images/create-macro-from-type.png)
+![Partial View Macro files dialog](images/partial-view-macro-files-8.png)
 
-## Rich text options
+The dialog provides the following options:
+
+* New partial view macro: Will give you an empty macro with an associated empty partial view file
+* New partial view macro (without macro): Will give you a partial view, without an associated macro
+* New partial view macro from snippet...: Will give you the option to choose between a pre-defined set, including a macro and a partial view with a code snippet
+* Folder...: Will give you the option to create a folder below "Partial View Macro Files"
+
+## Macro Editor
+
+The macro editor view comes with a set of configuration options.
+
+![Macro editor](images/macro-editor-8.png)
+
+### Macro partial view
+
+Associate the macro with a partial view. This will already have been configured if you created the macro through the second option described above, where a Partial view was created along with the macro.
+
+### Editor settings
 
 > Use in editor
 
