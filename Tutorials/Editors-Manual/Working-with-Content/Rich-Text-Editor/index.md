@@ -241,7 +241,7 @@ To remove a macro you highlight the macro in the rich text editor and hit the **
 
 Tables are used to format information in a grid based structure. When you insert a table, you select how many rows and columns the table should comprise of, as well as fill in a number of additional optional formatting properties. These values can be altered later, so it is not important to know exactly what your table will look like when you create it.
 
-![tables.jpg](images/table-v8.png)
+![tables.jpg](images/Table-v8.png)
 
 ### Editing an Existing Table
 
