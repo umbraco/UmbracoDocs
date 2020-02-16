@@ -46,7 +46,7 @@ Get an overview of how the Umbraco pipeline is structured. See what happens from
                 <h4 class="text-right">Request Pipeline</h4>
             </div>
             <div class="col-sm-6">
-                <h5><a href="Inbound-Pipeline/">Inbound request pipeline</a></h5>
+                <h5><a href="Inbound-Pipeline/index-v7">Inbound request pipeline</a></h5>
                 <small>Matching a URL to a content item & determining the rendering engine (MVC or Webforms).</small>
             </div>
             <div class="col-sm-6">
