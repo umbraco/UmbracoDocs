@@ -12,7 +12,7 @@ The dashboard area of Umbraco is used to display an 'editor' for the selected it
 There are two approaches to registering a custom dashboard to appear in the Umbraco Backoffice:
 
 ### Registering with package.manifest
-Add a file named 'package.manifest' to the app_plugins folder, containing the following json configuration pointing to your dashboard view:
+Add a file named 'package.manifest' to the 'App_Plugins' folder, containing the following json configuration pointing to your dashboard view:
 
 ```json
 {

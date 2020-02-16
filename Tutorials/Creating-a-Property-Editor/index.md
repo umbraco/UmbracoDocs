@@ -70,7 +70,7 @@ Inside this package manifest, we add a bit of JSON to describe the property edit
 ```
 
 ## Writing some basic HTML and JavaScript
-Then we add 2 files to the /app_plugins/markdowneditor/ folder:
+Then we add 2 files to the /App_Plugins/markdowneditor/ folder:
 - `markdowneditor.html`
 - `markdowneditor.controller.js`
 
@@ -110,7 +110,7 @@ We can now edit the assigned property's value with our new property editor.
 ## Add external dependencies
 Let's go a bit further, and load in a markdown editor JavaScript library. In this example we're using [pagedown][PagedownBootstrap], but this is of course optional.
 
-First of, we'll add some external files to our package folder, in `/app_plugins/markdowneditor/lib`. These files come from the pagedown editor project found here:
+First of, we'll add some external files to our package folder, in `/App_Plugins/markdowneditor/lib`. These files come from the pagedown editor project found here:
 
 [Pagedown-bootstrap on github.com][PagedownBootstrap]
 
