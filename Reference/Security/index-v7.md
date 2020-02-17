@@ -43,15 +43,15 @@ Traditionally a backoffice user will need to exist first and then that user can 
 
 In this case you would want to be able to create user accounts in your identity server and then have that user given access to the backoffice without having to create the user in the backoffice first. This is done via auto-linking.
 
-Read more about [auto linking](auto-linking.md)
+Read more about [auto linking](auto-linking-v7.3.0.md)
 
 ### Custom password check
 
-You are able [check the username and password against your own credentials store](custom-password-checker.md) by implementing a new  `IBackOfficeUserPasswordChecker`.
+You are able [check the username and password against your own credentials store](custom-password-checker-v7.3.0.md) by implementing a new  `IBackOfficeUserPasswordChecker`.
 
 ### Authenticating with Active Directory credentials
 
-You want to [connect the backoffice to Active Directory](authenticate-with-AD.md)? Should be pretty straight forward with the `ActiveDirectoryBackOfficeUserPasswordChecker`.
+You want to [connect the backoffice to Active Directory](Authenticate-With-AD-vpre8.md)? Should be pretty straight forward with the `ActiveDirectoryBackOfficeUserPasswordChecker`.
 
 ### Sensitive data on members
 

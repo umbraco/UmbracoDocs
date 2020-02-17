@@ -87,7 +87,7 @@ This is now obsolete and there are better ways to do UrlRewriting, such as withi
 In v8 Serilog is used for logging, use these files to configure this:
 
 * `/config/serilog.config` is used to modify the main Umbraco logging pipeline
-* `/config/serilog.user.config` which is a sublogger and allows you to make
+* `/config/serilog.user.config` which is a sublogger and allows you to make modifications without affecting the main Umbraco logger
 
 
 

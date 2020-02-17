@@ -18,7 +18,7 @@ namespace MyConverters
         private readonly IPublishedSnapshotAccessor _publishedSnapshotAccessor;
 
         //Injecting the PublishedSnapshotAccessor for fetching content
-        public CpValueConverter(IPublishedSnapshotAccessor publishedSnapshotAccessor)
+        public ContentPickerPropertyConverter(IPublishedSnapshotAccessor publishedSnapshotAccessor)
         {
             _publishedSnapshotAccessor = publishedSnapshotAccessor;
         }
