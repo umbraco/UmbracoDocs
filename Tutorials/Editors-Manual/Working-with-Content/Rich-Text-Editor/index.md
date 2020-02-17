@@ -223,7 +223,9 @@ The macros available to you differ from system to system so please see your syst
 
 ![macroPicker.jpg](images/Select-a-macro.png)
 
-*note that if there is no macros to chose from it will not look like this- this is from the starter kit package*
+:::note
+If there is no macros to choose from it will not look like this. What you see above, is how it looks when the Starter Kit package is installed.
+:::
 
 ![macroEditor.jpg](images/Editing-macros-v8.png)
 
