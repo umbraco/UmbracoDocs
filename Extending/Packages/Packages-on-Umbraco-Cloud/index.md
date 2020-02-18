@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 If you want to use or develop packages for Umbraco Cloud there are a few things to consider and be aware of. One such thing is that custom property editors may need a **ValueConnector** to transform their content between environments.
 
-# ValueConnectors
+## ValueConnectors
 
 A ValueConnector is an extension to Deploy that allows you to transform data when you deploy content of any kind between environments. It is mostly used to transfer ID based content between environments. Other than transforming values they also manage dependencies for property data. That means that if you save for example an id of an image in your property editor, then you can make sure that not only the id but the actual image is transferred as well!
 
@@ -32,7 +32,7 @@ However now you do a content transfer to your Cloud environment, and one of thre
 
 To prevent this from happening we will need to use a ValueConnector.
 
-## Testing a ValueConnector
+### Testing a ValueConnector
 
 Before we start working on making a ValueConnector a few notes on how to test and work with them. You probably will need to test the values that are being converted, but you probably also doesn't want to build, git push, content transfer to see that the value may not have changed.
 
@@ -91,7 +91,7 @@ Then do the same for Site 2 but put in the domain for Site 1 as the "live" one.
 
 At this point you should be able to go to the backoffice of either environment and do a Content transfer to live, and it should end up on the other (Assuming no errors from your custom connector).
 
-## Debugging a transfer
+### Debugging a transfer
 
 At this point we haven't done anything to the ValueConverter yet, other than return the original value. Now we will attach Visual Studio to the IIS processes and try a transfer to see what it sends along.
 
@@ -131,7 +131,7 @@ After copying the dll and pdb files over we are synced up, now attach the debugg
 
 Here you will notice that the value is what you had returned in `ToArtifact`.
 
-## Creating our ValueConnector
+### Creating our ValueConnector
 
 You may have realised at this point that the flow is something like this:
 
