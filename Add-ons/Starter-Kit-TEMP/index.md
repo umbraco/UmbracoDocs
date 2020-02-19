@@ -21,6 +21,22 @@ Contents:
     * Including how to make language varied content
 
 
+**Sample structure**
+
+Umbraco Starter kit
+- Settings
+    - General 
+    - Theme
+- Creating Content
+    - Content Types
+    - Widgets
+    - Global Content
+- Media library
+- Multilingual site (perhaps with another name)
+- Going Live (link to Cloud section)
+- The Cloud Portal (link to Cloud section)
+
+
 # Index page
 
 In this section you will find all you need to know in order to install, configure and work with the *Umbraco Starter Kit*. 
