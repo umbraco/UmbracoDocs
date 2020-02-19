@@ -6,6 +6,7 @@ Contents:
 
 * "How to get started" (how to install the Starter Kit, how to get the Starter kit..)
     * A quick introduction to the "starter content" (the content there when installing?)
+    * Should be part of the index page for the Starter kit 
 * Going Live (we need an article like this in the Cloud section as well)
     * Hostnames, SMTP settings
     * A check list for publishing a website!
