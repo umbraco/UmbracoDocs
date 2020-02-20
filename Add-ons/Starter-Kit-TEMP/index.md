@@ -23,7 +23,7 @@ Contents:
 
 **Sample structure**
 
-Umbraco Starter kit
+Umbraco Starter kit landing page (including installation guide + sample content overview)
 - Settings
     - General 
     - Theme
