@@ -1,6 +1,5 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # Retrieving content types
@@ -11,7 +10,7 @@ A given content type has a few different unique identifier that we can use to lo
 
 ```C#
 // Get a reference to the content type by its numeric ID
-IContentType contentType = contentTypeService.GetContentType(1234);
+IContentType contentType = contentTypeService.Get(1234); 
 ```
 
 As Umbraco is shifting to use GUIDs instead of numeric IDs, you can also lookup a content type if you already know its GUID ID:
@@ -21,50 +20,41 @@ As Umbraco is shifting to use GUIDs instead of numeric IDs, you can also lookup 
 Guid guid = new Guid("796a8d5c-b7bb-46d9-bc57-ab834d0d1248");
 
 // Get a reference to the content type by its GUID ID
-IContentType contentType = contentTypeService.GetContentType(guid);
+IContentType contentType = contentTypeService.Get(guid);
 ```
 
 Finally, you can also look up a content type by its alias:
 
 ```C#
 // Get a reference to the content type by its alias
-IContentType contentType = contentTypeService.GetContentType("home");
+IContentType contentType = contentTypeService.Get("home");
 ```
 
 ## Getting a list of content types
 
-As content types are stored in a hierarchical list with folders (containers), there is also multiple ways to can get content types. If you are looking for a flat list of all content types, you can use the `GetAllContentTypes` method:
+As content types are stored in a hierarchical list with folders (containers), there is also multiple ways to can get content types. If you are looking for a flat list of all content types, you can use the `GetAll` method:
 
 ```C#
 // Get a collection of all content types
-IEnumerable<IContentType> contentTypes = contentTypeService.GetAllContentTypes();
+IEnumerable<IContentType> contentTypes = contentTypeService.GetAll();
 ```
 
-In the example above, the method was called without any parameters. The method also has two overloads, which lets you look up a collection fo content types by either specifying their numeric or GUID IDs:
+In the example above, the method was called without any parameters. The method also accept params, which lets you look up a collection of content types by either specifying their numeric IDs:
 
 ```C#
 // Get a collection of two specific content types by their numeric IDs
-IEnumerable<IContentType> contentTypes = contentTypeService.GetAllContentTypes(1234, 1235);
+IEnumerable<IContentType> contentTypes = contentTypeService.GetAll(1234, 1235);
 ```
 
-```C#
-// Get a collection of two specific content types by their GUIDs IDs
-IEnumerable<IContentType> contentTypes = contentTypeService.GetAllContentTypes(new[] {
-    new Guid("2b54088e-d355-4b9e-aa4b-5aec4b3f87eb"),
-    new Guid("859c5916-19d8-4a72-9bd0-5641ad503aa9")
-});
-```
-
-To get a list of all content types of a another content type (or container), you can instead use the `GetContentTypeChildren` method - either by specyfing the numeric ID of the folder:
+To get a list of all content types of another content type, you can instead use the `GetChildren` method - either by specyfing the numeric ID of the folder:
 
 ```C#
 // Get a collection of content types of a specific content type
-IEnumerable<IContentType> contentTypes = contentTypeService.GetContentTypeChildren(1232);
+IEnumerable<IContentType> contentTypes = contentTypeService.GetChildren(1232);
 ```
 
-or by the GUID ID of the folder:
-
+To get list of all content types of a conatainer, you can use the `GetContainer` method:
 ```C#
-// Get a collection of content types of a specific content type
-IEnumerable<IContentType> contentTypes = contentTypeService.GetContentTypeChildren(new Guid("d3b9cc9a-d471-4465-a89a-112c6bc1e5b4"));
+// Get a content type container
+EntityContainer container = contentTypeService.GetContainer(1234);
 ```
