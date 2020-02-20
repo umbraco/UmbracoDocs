@@ -53,8 +53,3 @@ To get a list of all content types of another content type, you can instead use 
 IEnumerable<IContentType> contentTypes = contentTypeService.GetChildren(1232);
 ```
 
-To get list of all content types of a conatainer, you can use the `GetContainer` method:
-```C#
-// Get a content type container
-EntityContainer container = contentTypeService.GetContainer(1234);
-```
