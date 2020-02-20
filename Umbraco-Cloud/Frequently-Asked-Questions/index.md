@@ -297,4 +297,4 @@ If you need help with this, don't hesitate to reach out to us and we'll be happy
 
 Database backups are not available as downloads by default, but a copy can be downloaded using a Powershell script (Umbraco Cloud support can provide you with instructions). By default 14 days point in time restore is available. Restore is dependent on your needs, requirements and database size and will be handled on a case by case basis. Contact Umbraco Cloud support through the portal to discuss your requirements.
 
-Umbraco Cloud keeps 30 days of of snapshots of Filesystem for disaster recovery purposes.
+Umbraco Cloud keeps 30 days of snapshots of filesystem for disaster recovery purposes.
