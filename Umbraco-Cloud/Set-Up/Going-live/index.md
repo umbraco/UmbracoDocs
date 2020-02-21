@@ -17,7 +17,7 @@ When you are going live with your website you might want to have your visitors v
 ## [Deploy to Live](../../Deployment/Cloud-to-Cloud)
 The last step before your website is live and accessable to the public. Deploying from a Cloud environment to the Live environment.
 
-:::Tip
+:::tip
 If you would like to keep track of what goes on with your website after it has gone live you can set up a deployment webhook. You can read more about Webhooks in [this article](../../Deployment/Deployment-Webhook).
 :::
 
