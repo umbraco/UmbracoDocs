@@ -21,6 +21,6 @@ The last step before your website is live and accessable to the public. Deployin
 If you would like to keep track of what goes on with your website after it has gone live you can set up a deployment webhook. You can read more about Webhooks in [this article](../../Deployment/Deployment-Webhook).
 :::
 
-:::Note
+:::note
 In Trial mode, Public Access is enabled on all environments as a default and cannot be disabled. As soon as a subscription has been purchased, Public Access is disabled on Live with the option to enable it again.
 :::
