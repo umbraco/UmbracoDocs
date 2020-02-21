@@ -6,7 +6,7 @@ versionFrom: 7.0.0
 
 When you are about to go live with your website on Umbraco Cloud there is a few things you might want to consider beforehand.
 
-Below is a few article that will help you set up your project for going live.
+Below is a few articles that will help you set up your project for going live.
 
 ## [SMTP Settings](../SMTP-settings)
 In order for you to be able to send emails from your Cloud Project you will need to set up your SMTP settings. You might want to send emails through Umbraco Forms or invite Backoffice users.
