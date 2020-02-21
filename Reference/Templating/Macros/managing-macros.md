@@ -67,7 +67,7 @@ Macro parameters can be used to change the output of a macro at runtime. Macro p
 
 The macro parameter dialog looks like this:
 
-![Macro editor](images/macro-parameter-editor.png)
+![Macro editor](images/macro-parameters-v8.png)
 
 Here you can add/modify/remove macro parameters.
 
@@ -75,17 +75,21 @@ Here you can add/modify/remove macro parameters.
 
 This list defines the different types of macro parameters:
 
-- `bool` - A true/false value
-- `contentPicker` - the ID of the selected node as a single integer
-- `contentRandom` - the xml from a random node
-- `contentTree` - the xml of the selected node and its child nodes
-- `contentType` - the alias of a selected content type as a string
-- `contentTypeMultiple` - a comma separated list of selected content type aliases
-- `mediaCurrent` - the xml of the selected media item
-- `number` - an integer
-- `propertyTypePicker` - the alias of the selected property type
-- `propertyTypePickerMultiple` - a comma separated list of selected property type aliases
-- `tabPicker` - the caption of the selected tab
-- `tabPickerMultiple` - a comma separated list of selected tab captions
-- `text` - a text string
-- `textMultiline` - a text string
+- Checkbox(`Umbraco.TrueFalse`) - A true/false value
+- Content Type picker (`contentType`) - Choose a type from existing Document Types
+- Decimal (`Umbraco.Decimal`) - accepts only numbers
+- Email address (`Umbraco.EmailAddress`) - validates to valid email adresses
+- Multiple Content Picker (`Umbraco.MultiNodeTreePicker`) - pick 1 or more nodes from the Content tree
+- Multiple Content Type Picker (`contentTypeMultiple`) - pick 1 or more types from existing Document Types
+- Multiple Media Picker (`Umbraco.MultipleMediaPicker`) - pick 1 or more media items
+- Multiple Property Type Picker (`propertyTypePickerMultiple`) - pick 1 or more from existing property types
+- Multiple Tab Picker (`tabPickerMultiple`) - pick 1 or more from existing tabs
+- Numeric (`Umbraco.Integer`) - accepts only numbers
+- Property Type Picker (`propertyTypePicker`) - choose property from existing property types
+- Tab picker (`tabPicker`) - select 1 from list of existing tabs
+- Textarea (`Umbraco.TextArea`) - multiple lines of text
+- Textbox (`Umbraco.TextBox`) - single line of text
+- Media picker (`Umbraco.MediaPicker`) - select a single media item
+- Content Picker (`Umbraco.ContentPicker`) - select a single content node from the Content tree
+- Form Picker (`UmbracoForms.FormsPicker`) - choose from exising Umbraco Forms
+- Forms Theme Picker (`UmbracoForms.ThemePicker`) - choose from existing Forms Themes
