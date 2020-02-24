@@ -269,6 +269,66 @@ Alternatively, you can also specify an `altText` which will be returned if the d
 <p>@Umbraco.GetDictionaryValue("createdOn", "Date Created"): @Model.CreateDate</p>
 ```
 
+### .Search(string term)
+
+Given a search term, it by default searches the Umbraco search index for content matching the term. 
+
+```csharp
+@{
+    <ul>
+        @foreach (var result in Umbraco.ContentQuery.Search("ipsum"))
+        {
+            <li><a href="@result.Content.Url">@result.Content.Name</a></li>
+        }
+    </ul>
+}
+```
+
+### .Search(string term, int skip, int take, out long totalRecords)
+
+You can also specify the number of records to skip, the number of records to take.
+
+```csharp
+@{
+    var search = Umbraco.ContentQuery.Search("ipsum", 5, 10, out long totalRecords);
+    <ul>
+        <li>
+            Total results: @totalRecords
+            <ul>
+                @foreach (var result in search)
+                {
+                    <li><a href="@result.Content.Url">@result.Content.Name</a></li>
+                }
+            </ul>
+        </li>
+    </ul>
+}
+```
+
+### .Search(IQueryExecutor queryExecutor)
+
+For more complex searching you can construct Examine QueryExecutor
+
+```csharp
+@{
+    if (!ExamineManager.Instance.TryGetIndex(Constants.UmbracoIndexes.ExternalIndexName, out IIndex index))
+    {
+        throw new InvalidOperationException($"No index found by name{ Constants.UmbracoIndexes.ExternalIndexName }");
+    }
+
+    var term = "yellow";
+    var query = index.GetSearcher().CreateQuery(IndexTypes.Content);
+    var queryExecutor = query.ManagedQuery(term);
+
+    foreach (var result in Umbraco.ContentQuery.Search(queryExecutor))
+    {
+        {
+            <li><a href="@result.Content.Url">@result.Content.Name</a></li>
+        }
+    }
+}
+```
+
 ## Templating Helpers
 
 ### .RenderMacro(string alias, object parameters)
