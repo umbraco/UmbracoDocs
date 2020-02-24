@@ -286,7 +286,7 @@ Given a search term, it by default searches the Umbraco search index for content
 
 ### .Search(string term, int skip, int take, out long totalRecords)
 
-You can also specify the number of records to skip, the number of records to take.
+You can also specify the number of records to skip, the number of records to take. This is more performant when have a lot of search results and need to implement paging.
 
 ```csharp
 @{
@@ -307,7 +307,7 @@ You can also specify the number of records to skip, the number of records to tak
 
 ### .Search(IQueryExecutor queryExecutor)
 
-For more complex searching you can construct an Examine QueryExecutor
+For more complex searching you can construct an Examine QueryExecutor. In the  example the search will execute against content of type "blogPost" only.
 
 ```csharp
 @{
@@ -316,14 +316,14 @@ For more complex searching you can construct an Examine QueryExecutor
         throw new InvalidOperationException($"No index found by name{ Constants.UmbracoIndexes.ExternalIndexName }");
     }
 
-    var term = "yellow";
+    var term = "consectetur";
     var query = index.GetSearcher().CreateQuery(IndexTypes.Content);
-    var queryExecutor = query.ManagedQuery(term);
+    var queryExecutor = query.NodeTypeAlias("blogPost").And().ManagedQuery(term);
 
     foreach (var result in Umbraco.ContentQuery.Search(queryExecutor))
     {
         {
-            <li><a href="@result.Content.Url">@result.Content.Name</a></li>
+            <li>asas<a href="@result.Content.Url">@result.Content.Name</a></li>
         }
     }
 }
@@ -339,9 +339,9 @@ Renders a macro in the current page content, given the macro's alias, and parame
 @Umbraco.RenderMacro("navigation", new {root="1083", header="Hello"})
 ```
 
-### .RenderTemplate(int pageId, int? altTemplateId)
+### .RenderTemplate(int contentId, int? altTemplateId)
 
-Renders a template, as if a page with the given pageID was requested, optionally with an alternative template ID passed in.
+Renders a template, as if a page with the given contentId was requested, optionally with an alternative template ID passed in.
 
 ```csharp
 @Umbraco.RenderTemplate(1234)
