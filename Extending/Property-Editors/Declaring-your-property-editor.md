@@ -8,7 +8,7 @@ A property editor consists of a number of mandatory properties, and some optiona
 | ---- | ---- | ---- | ---- |
 | `alias` | string | Yes | A unique alias that identifies the property editor. |
 | `name` | string | Yes | The friendly name of the property editor, shown in the Umbraco backoffice. |
-| `editor` | object | Yes |  |
+| `editor` | object | Yes | This describes details about the editor. See the table below for further information. |
 | `icon` | string | No | A CSS class for the icon to be used in the **Select Editor** dialog - eg: `icon-autofill`. |
 | `group` | string | No | The group to place this editor in within the **Select Editor** dialog. Use a new group name or alternatively use an existing one such as **Pickers**. |
 | `isParameterEditor` | boolean | No | Enables the property editor as a macro parameter editor. Can be either `true` or `false` (default). |
