@@ -12,7 +12,7 @@ The sample is built up around a sample project with the alias `demo-headless`. Y
 
 Before running the sample you will need to define which Umbraco Heartcore project you want to fetch content from.
 
-- Open the `application.json` found in `samples/Umbraco.Headless.Client.Samples.Web/Umbraco.Headless.Client.Samples.Web/`
+- Open the `appsettings.json` found in `samples/Umbraco.Headless.Client.Samples.Web/Umbraco.Headless.Client.Samples.Web/`
 - Add your project alias or use the alias of the sample project, `demo-headless`
 
 ```json
