@@ -307,7 +307,8 @@ You can also specify the number of records to skip, the number of records to tak
 
 ### .Search(IQueryExecutor queryExecutor)
 
-For more complex searching you can construct an Examine QueryExecutor. In the  example the search will execute against content of type "blogPost" only.
+For more complex searching you can construct an Examine QueryExecutor. In the example the search will execute against content of type "blogPost" only.
+[Further information on using Examine](../../Searching/Examine/Quick-Start/index.md#different-ways-to-query)
 
 ```csharp
 @{
