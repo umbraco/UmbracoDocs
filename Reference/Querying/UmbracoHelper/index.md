@@ -271,7 +271,7 @@ Alternatively, you can also specify an `altText` which will be returned if the d
 
 ### .Search(string term)
 
-Given a search term, it by default searches the Umbraco search index for content matching the term. 
+By default, Umbraco searches it's 'External' search index for any published content matching the provided search term. 
 
 ```csharp
 @{
