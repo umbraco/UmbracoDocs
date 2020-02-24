@@ -291,7 +291,7 @@ Like mentioned before, the `ddd` class doesn't really do much in this example wi
 
 This method is used when the strongly typed configuration value is converted to the model used by the Angular logic in the backoffice. So with the implementation of the [MultiNodePickerConfigurationEditor]( https://github.com/umbraco/Umbraco-CMS/blob/ade9bb73246caf25a7073f2b9e5262641a201863/src/Umbraco.Web/PropertyEditors/MultiNodePickerConfigurationEditor.cs) class, some additional configuration fields are sent along - for instance that it's a multi picker and that the ID type should be URI's. These are configuration values that the user should not be able to edit, but the property editor may still rely on them.
 
-```
+```csharp
 using System.Collections.Generic;
 using Umbraco.Core.PropertyEditors;
 
