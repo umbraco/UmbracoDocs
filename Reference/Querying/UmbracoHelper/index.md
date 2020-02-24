@@ -317,7 +317,7 @@ For more complex searching you can construct an Examine QueryExecutor. In the ex
         throw new InvalidOperationException($"No index found by name{ Constants.UmbracoIndexes.ExternalIndexName }");
     }
 
-    var term = "consectetur";
+    var term = "ipsum";
     var query = index.GetSearcher().CreateQuery(IndexTypes.Content);
     var queryExecutor = query.NodeTypeAlias("blogPost").And().ManagedQuery(term);
 
