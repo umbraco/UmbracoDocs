@@ -45,6 +45,8 @@ and in one of these folders for IIS Express:
 
 `C:\Users\<user>\Documents\IISExpress\config\`
 
+If you don´t see the lines in the `applicationHost.config` then you need to add them in the section of `<applicationPools></applicationPools>`
+
 If you're using Visual Studio 2015+ check this path:
 `$(solutionDir)\.vs\config\applicationhost.config`
 
