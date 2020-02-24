@@ -324,7 +324,7 @@ For more complex searching you can construct an Examine QueryExecutor. In the ex
     foreach (var result in Umbraco.ContentQuery.Search(queryExecutor))
     {
         {
-            <li>asas<a href="@result.Content.Url">@result.Content.Name</a></li>
+            <li><a href="@result.Content.Url">@result.Content.Name</a></li>
         }
     }
 }
