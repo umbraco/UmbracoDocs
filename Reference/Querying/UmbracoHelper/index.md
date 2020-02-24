@@ -307,7 +307,7 @@ You can also specify the number of records to skip, the number of records to tak
 
 ### .Search(IQueryExecutor queryExecutor)
 
-For more complex searching you can construct Examine QueryExecutor
+For more complex searching you can construct an Examine QueryExecutor
 
 ```csharp
 @{
