@@ -180,7 +180,7 @@ Optionally one may also specify a third parameter, which is the priority of the 
 
 ### DataEditor class
 
-In the example above, the `SirTrevorEditor ` class doesn't really much. For simple property editors, the C# approach may require a bit more work compared to that of `package.manifest` files. But as property editors grow in complexity, using C# becomes a bit more useful - and also lets you do things not possible with `package.manifest` files.
+In the example above, the `SirTrevorEditor ` class doesn't really do much. For more basic property editors, the C# approach may require a bit more work compared to that of `package.manifest` files. But as property editors grow in complexity, using C# becomes a bit more useful - and also lets you do things not possible with `package.manifest` files.
 
 The [DataEditor](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.PropertyEditors.DataEditor.html) class defines a virtual `CreateConfigurationEditor` method. It returns a model which is used for the Angular view when editing the prevalues of a data type.
 
