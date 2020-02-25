@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 The content type service acts as a "gateway" to Umbraco data for operations which are related to both content types and media types.
 
-[Browse the API documentation for ContentTypeService](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Services.ContentTypeService.html).
+[Browse the API documentation for IContentTypeService](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.IContentTypeService.html).
 
  * **Namespace:** `Umbraco.Core.Services`
  * **Assembly:** `Umbraco.Core.dll`
