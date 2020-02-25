@@ -97,9 +97,9 @@ namespace Umbraco8.Components
 
 See: [Custom routing documentation](../../Reference/Routing/custom-routes)
 
-### PublishedContentRequest.Prepared event
+### PublishedRequest.Prepared event
 
-You can subscribe to an event to know when the `PublishedContentRequest` is ready to be processed.  It's up to you to change anything (content, template, ...):
+You can subscribe to the 'Prepared' event which is triggered right after the point when the `PublishedRequest` is prepared - (but before it is ready to be processed). Here modify anything in the request before it is processed, eg. content, template, etc: 
 
 ```csharp
 using Umbraco.Core.Composing;

@@ -51,10 +51,9 @@ The Umbraco backoffice can be configured so that the user interface runs in the 
 
 Developers can create their own Umbraco Health Checks and Health Check notification methods.
 
-## Packaging
+## [Packaging](Packages)
 
 Information on the packaging manifest format and how assets should be packaged as a zip file for distribution
-**(coming soon)**.
 
 ## [Custom file systems (IFileSystem)](Custom-File-Systems.md)
 

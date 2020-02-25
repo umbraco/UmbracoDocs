@@ -46,7 +46,7 @@ public bool TrySetTemplate(string alias);
 public void SetTemplate(ITemplate template);
 ```
 
-You can subscribe to the 'Prepared' event which is triggered just after the point when the`PublishedRequest` is prepared - (but before it is ready to be processed).  Here modify anything in the request before it is processed!  eg. content, template, etc:
+You can subscribe to the 'Prepared' event which is triggered right after the point when the`PublishedRequest` is prepared - (but before it is ready to be processed).  Here modify anything in the request before it is processed!  eg. content, template, etc:
 
 ```csharp
 using Umbraco.Core.Composing;

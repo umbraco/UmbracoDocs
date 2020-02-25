@@ -6,3 +6,4 @@ ignorecase: true
 swap:
   back office: "'backoffice'"
   back-office: "'backoffice'" 
+  app_plugins: "'App_Plugins'"

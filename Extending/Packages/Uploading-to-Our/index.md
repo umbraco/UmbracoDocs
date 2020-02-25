@@ -24,11 +24,7 @@ To get started head over to your [profile page](https://our.umbraco.com/member/p
 
 You may notice if you followed the [Creating a Package](../Creating-a-Package/) document that a lot of this information has already been entered. This isn't automatically pulled from the package file and will need to be entered again.
 
-The form will save each page as you go and the package won't become live until you finish the process and mark it live on the final page.
-
-:::warning
-There is currently a bug that will stop you from seeing the saved packages in the list. Check out this [PR](https://github.com/umbraco/OurUmbraco/pull/526) for progress.
-:::
+The form will save each page as you go and the package won't become live until you finish the process and mark it live on the final page. This means you can come back and finish your package submission at any time.
 	
 ## Package Details
 

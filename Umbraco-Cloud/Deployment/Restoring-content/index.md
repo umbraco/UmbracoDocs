@@ -49,12 +49,8 @@ If any of your content nodes depends on media items, these will also be restored
 To see the media, go to the Media section and *reload* the tree.
 :::
 
-![Restore from backoffice](images/Restore-from-Backoffice.gif)
+<iframe width="800" height="450" src="https://www.youtube.com/embed/WGTU8DF8PEk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ### [Partial Restore](Partial-Restore)
 
 By using the Partial Restore option, you can make sure that you only restore the part of the content that you need to work with.
-
-## Video Tutorial
-
-<iframe width="800" height="450" src="https://www.youtube.com/embed/ha4KDpE81dg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

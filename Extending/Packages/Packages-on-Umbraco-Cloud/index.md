@@ -4,9 +4,42 @@ versionFrom: 8.0.0
 
 # Packages on Umbraco Cloud
 
-If you want to use or develop packages for Umbraco Cloud there are a few things to consider and be aware of. One such thing is that custom property editors may need a **ValueConnector** to transform their content between environments.
+If you want to use or develop packages for Umbraco Cloud there are a few things to consider and be aware of.
+The two most important things to know about are
+- [How you should store data on Cloud](#storing-data)
+- [Using custom property editors with Deploy](#valueconnectors)
 
-# ValueConnectors
+## Storing data
+
+When developing a package you will sometimes store data, this can be data in many forms - Umbraco schema / content, package settings, etc.
+
+When you develop a package for Umbraco Cloud there are a few things to be aware of when storing data, mainly whether you want that data to be specific to 1 environment or more.
+
+Let's take a look at the most common ways of storing data in packages - and what to watch out for on Cloud.
+
+### Package actions
+
+A [package action](../Package-Actions/custom-package-actions.md) is used to run some commands on package install and uninstall. One thing to watch out for with regards to package actions is that whatever code you run will only be executed on the environment you install the package on. So if you for example set up a database table in a package action that table will not be generated in each environment.
+If you need a database table in each environment you will probably need to look at migrations below instead.
+
+### Migrations
+
+A [migration](../../Database/index.md) is some code that you run as part of a migration plan. That migration plan has an ID that is stored in the database (in the KeyValue table). This means that when you add new migrations Umbraco will only execute the ones that came after the one with the stored ID. The most important difference between a migration and a package action is when they are initialized. A package action runs on package install and uninstall, whereas a migration will run whenever you want it to run, see below for common examples.
+
+As migration runs are stored in the database of the site it also means that they will run on each environment you trigger them on. The most common way to trigger a migration is to include them in a [composer](../../../Implementation/Composing/index.md), which will ensure they run on site startup. This means any commands you have in your migration will automatically run when the site starts up. When your package code is pushed to a new environment it will run them from the beginning on that environment as no ID is saved in the database.
+
+This is normally a good thing. However if you generate any Umbraco schema then Umbraco Deploy will automatically create [UDA files](../../../Umbraco-Cloud/Set-Up/Power-Tools/Generating-UDA-files/index.md#what-are-uda-files) based on that schema, and commit them to source control. This means that when you deploy all your files to the next environment the migration will run again, create duplicates and generate duplicate UDA files, which could end up causing a lot of issues.
+
+You could consider creating Umbraco schema only during a package action, and then running things like creating database tables in migrations. Another good workaround could be to not run the migrations in a composer, but rather create a dashboard for the package where the user can choose which migrations to run themselves. The [Articulate package](https://github.com/Shazwazza/Articulate/blob/master/build/packageManifest.xml#L613) has an example of this.
+
+### Creating files
+
+You may sometimes choose to save data in a file. Could be a seperate config file for your package or a [config transform file](../../..//Umbraco-Cloud/Set-Up/Config-Transforms/index.md) to add an app setting to the web.config.
+If you do this be aware of two things:
+1.  If these files are generated on a Cloud environment they will not be stored in source control, and will be overwritten on next deployment. They need to be installed locally, committed to source control and then pushed up to the Cloud environments. We have an [existing feature request](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/33) on allowing package creators to commit their files directly on Cloud, and it is possible to do so currently but not in a supported way, and it may change suddenly.
+1. If you need the content of the files to be different on the different environments you will need to use environment specific [config transforms](../../..//Umbraco-Cloud/Set-Up/Config-Transforms/index.md).
+
+## ValueConnectors
 
 A ValueConnector is an extension to Deploy that allows you to transform data when you deploy content of any kind between environments. It is mostly used to transfer ID based content between environments. Other than transforming values they also manage dependencies for property data. That means that if you save for example an id of an image in your property editor, then you can make sure that not only the id but the actual image is transferred as well!
 
@@ -32,7 +65,7 @@ However now you do a content transfer to your Cloud environment, and one of thre
 
 To prevent this from happening we will need to use a ValueConnector.
 
-## Testing a ValueConnector
+### Testing a ValueConnector
 
 Before we start working on making a ValueConnector a few notes on how to test and work with them. You probably will need to test the values that are being converted, but you probably also doesn't want to build, git push, content transfer to see that the value may not have changed.
 
@@ -91,7 +124,7 @@ Then do the same for Site 2 but put in the domain for Site 1 as the "live" one.
 
 At this point you should be able to go to the backoffice of either environment and do a Content transfer to live, and it should end up on the other (Assuming no errors from your custom connector).
 
-## Debugging a transfer
+### Debugging a transfer
 
 At this point we haven't done anything to the ValueConverter yet, other than return the original value. Now we will attach Visual Studio to the IIS processes and try a transfer to see what it sends along.
 
@@ -131,7 +164,7 @@ After copying the dll and pdb files over we are synced up, now attach the debugg
 
 Here you will notice that the value is what you had returned in `ToArtifact`.
 
-## Creating our ValueConnector
+### Creating our ValueConnector
 
 You may have realised at this point that the flow is something like this:
 

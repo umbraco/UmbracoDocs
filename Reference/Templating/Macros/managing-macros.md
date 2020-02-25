@@ -1,39 +1,51 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # Managing macros
 
-_Describes how to create/update a macro and its parameters_
+In this article you can learn how to create and update a Macro, as well as how to configure its parameters.
 
 ## Creating macros
 
 There are a couple of ways to create a macro.
 
-The first way is to manually create a macro in the macro tree in the developer section:
+### Manually
 
-![Create macro](images/create-macro-tree.png)
+The first way is to manually create a macro, by right-clicking the Macro folder in the Settings section:
 
-Give it a name in the dialog screen, and then you'll be presented with the macro editor:
+![Create macro](images/create-macro-tree-8.png)
 
-![Macro editor](images/macro-editor.png)
+Give it a name in the dialog screen, and you'll be presented with the macro editor.
 
-From here you'll need to choose the macro type you want to render (see here for full details: [Macro Types](macro-types.md))
+### Partial View Macro files
 
-The 2nd option to create a macro is to create the macro type directly on its tree and select the checkbox "Create macro". For example, if you create a Partial View Macro File in the Developer section, the dialog will prompt you to also create a macro for this item.
+The second option is to create the macro through **Partial View Macro Files**.
 
-![Macro editor](images/create-macro-from-type.png)
+![Partial View Macro files dialog](images/partial-view-macro-files-8.png)
 
-## Rich text options
+The dialog provides the following options:
 
-> Use in editor
+* New partial view macro: Will give you an empty macro with an associated empty partial view file
+* New partial view macro (without macro): Will give you a partial view, without an associated macro
+* New partial view macro from snippet...: Will give you the option to choose between a pre-defined set, including a macro and a partial view with a code snippet
+* Folder...: Will give you the option to create a folder below "Partial View Macro Files"
 
-If selected will allow an editor to insert this macro in to a rich text field
+## Macro Editor
 
-> Render content in editor
+The macro editor view comes with a set of configuration options.
 
-If selected, when an editor inserts this macro in to a rich text editor, the actual contents of the macro will be displayed in the editor based on the current page context. If a macro is processor intensive then it is recommended to not check this option and instead a default message will be displayed in the editor indicating that it's a macro element.
+![Macro editor](images/macro-editor-8.png)
+
+### Macro partial view
+
+Associate the macro with a partial view. This will already have been configured if you created the macro through the second option described above, where a Partial view was created along with the macro.
+
+### Editor settings
+
+> Use in rich text editor and the grid
+
+If selected will allow an editor to insert this macro in to a Rich Text Editor and/or into a Grid editor.
 
 ## Caching options
 
@@ -43,11 +55,11 @@ Defines how many seconds the macro output will be cached for once it is rendered
 
 > Cache by page
 
-If selected, then this result of this macro will be cached based on the current page it is rendered on. This is useful if your macro has content that is dynamic to the current page it is being rendered on. If your macro's output is static (the same) no matter what page it is rendered on then it is better to not check this box.
+If selected, then the macro will be cached based on the current page it is rendered on. This is useful if your macro has content that is dynamic to the current page it is being rendered on. If your macro's output is static (the same) no matter what page it is rendered on then it is better to not check this box.
 
 > Cache personalized
 
-Similar to the 'cache by page', this will cache the output of a macro based on a member that is logged in. If you macro is static (the same) no matter what member is logged in, or if your website does not have membership then it is better to not check this box.
+Similar to the 'Cache by page', this will cache the output of a macro based on a member that is logged in. If your macro is static (the same) no matter what member is logged in, or if your website does not have membership then it is better to not check this box.
 
 ## Macro parameters
 
@@ -55,7 +67,7 @@ Macro parameters can be used to change the output of a macro at runtime. Macro p
 
 The macro parameter dialog looks like this:
 
-![Macro editor](images/macro-parameter-editor.png)
+![Macro editor](images/macro-parameters-v8.png)
 
 Here you can add/modify/remove macro parameters.
 
@@ -63,17 +75,21 @@ Here you can add/modify/remove macro parameters.
 
 This list defines the different types of macro parameters:
 
-- `bool` - A true/false value
-- `contentPicker` - the ID of the selected node as a single integer
-- `contentRandom` - the xml from a random node
-- `contentTree` - the xml of the selected node and its child nodes
-- `contentType` - the alias of a selected content type as a string
-- `contentTypeMultiple` - a comma separated list of selected content type aliases
-- `mediaCurrent` - the xml of the selected media item
-- `number` - an integer
-- `propertyTypePicker` - the alias of the selected property type
-- `propertyTypePickerMultiple` - a comma separated list of selected property type aliases
-- `tabPicker` - the caption of the selected tab
-- `tabPickerMultiple` - a comma separated list of selected tab captions
-- `text` - a text string
-- `textMultiline` - a text string
+- Checkbox(`Umbraco.TrueFalse`) - A true/false value
+- Content Type picker (`contentType`) - Choose a type from existing Document Types
+- Decimal (`Umbraco.Decimal`) - accepts only numbers
+- Email address (`Umbraco.EmailAddress`) - validates to valid email adresses
+- Multiple Content Picker (`Umbraco.MultiNodeTreePicker`) - pick 1 or more nodes from the Content tree
+- Multiple Content Type Picker (`contentTypeMultiple`) - pick 1 or more types from existing Document Types
+- Multiple Media Picker (`Umbraco.MultipleMediaPicker`) - pick 1 or more media items
+- Multiple Property Type Picker (`propertyTypePickerMultiple`) - pick 1 or more from existing property types
+- Multiple Tab Picker (`tabPickerMultiple`) - pick 1 or more from existing tabs
+- Numeric (`Umbraco.Integer`) - accepts only numbers
+- Property Type Picker (`propertyTypePicker`) - choose property from existing property types
+- Tab picker (`tabPicker`) - select 1 from list of existing tabs
+- Textarea (`Umbraco.TextArea`) - multiple lines of text
+- Textbox (`Umbraco.TextBox`) - single line of text
+- Media picker (`Umbraco.MediaPicker`) - select a single media item
+- Content Picker (`Umbraco.ContentPicker`) - select a single content node from the Content tree
+- Form Picker (`UmbracoForms.FormsPicker`) - choose from exising Umbraco Forms
+- Forms Theme Picker (`UmbracoForms.ThemePicker`) - choose from existing Forms Themes
