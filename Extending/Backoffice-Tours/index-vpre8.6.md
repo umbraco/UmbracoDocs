@@ -1,11 +1,16 @@
 ---
 keywords: Backoffice tours
-versionFrom: 8.6.0
+versionFrom: 7.8.0
+versionTo: 8.5.0
 meta.Title: "Backoffice Tours"
 meta.Description: "A guide configuring backoffice tours in Umbraco"
 ---
 
 # Backoffice tours
+
+:::note
+This feature has been introduced in Umbraco 7.8.0
+:::
 
 Backoffice tours are managed in a JSON format and stored in files on disk. The filenames should end with the `.json` extension.
 
