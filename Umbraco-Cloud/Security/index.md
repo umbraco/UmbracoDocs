@@ -10,7 +10,7 @@ Custom certificates can be used with all custom domains. Please refer to [Managi
 
 ### TLS support
 
-As of April 2020, we've deprecated support for TLS1.0 & TLS 1.1. TLS1.2 is the only supported TLS protocol going forward.
+As of April 2020, we've deprecated support for TLS1.0 & TLS 1.1. TLS1.2 is now the default supported TLS protocol going forward.
 
 ### TLS Ciphers support
 
