@@ -14,7 +14,7 @@ There is **three primary areas** you need to know about, when setting up and con
 2. Theme settings
 3. Compositions
 
-## [General settings](General-settings)
+## [General settings](General-settings/)
 
 These are usually settings that has an effect on the entire site, and include things like connecting your SMTP service, setting up tracking for Google and managing the cookie consent.
 
