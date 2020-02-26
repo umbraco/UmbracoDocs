@@ -12,6 +12,8 @@ Custom certificates can be used with all custom domains. Please refer to [Managi
 
 As of April 2020, we've deprecated support for TLS1.0 & TLS 1.1. TLS1.2 is now the default supported TLS protocol going forward.
 
+Umbraco v8 sites are using TLS 1.2 as a prefert TLS protocol by default. Umbraco v7 sites, due to running on an older .NET framework 4.5.2, have been updated to default to TLS 1.2.
+
 ### TLS Ciphers support
 
 Umbraco Cloud Websites support the following TLS ciphers in this order:
