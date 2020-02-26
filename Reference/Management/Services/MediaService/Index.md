@@ -63,7 +63,7 @@ IMediaService mediaService = Umbraco.Core.Composing.Current.Services.MediaServic
 
 ### Creating a new folder
 
-To create a new folder at the root of the media archive, your code could like the following:
+To create a new folder at the root of the media archive, your code could look like the following:
 
 ```csharp
 // Initialize a new media at the root of the media archive
@@ -125,7 +125,7 @@ The example below shows how to create a new file (in this case, an image) from a
 :::note
 When creating a new media from a file (eg. of the types **Image** or **File**), you must specify an instance of `IContentTypeBaseServiceProvider` (here accessed via `Services.ContentTypeBaseServices`) when setting the property value with the file reference.
 
-Umbraco uses this instance to determine the type of the media you're creating, as well as handling a few things "under the hood" so you don't have to. For instance Umbraco will automatically set other properties relatd to the file - such as file size and image dimensions.
+Umbraco uses this instance to determine the type of the media you're creating, as well as handling a few things "under the hood" so you don't have to. For instance Umbraco will automatically set other properties related to the file - such as file size and image dimensions.
 :::
 
 
