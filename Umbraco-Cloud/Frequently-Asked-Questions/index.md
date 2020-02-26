@@ -144,6 +144,8 @@ Please contact us using the chat button at the bottom right corner of the [Umbra
 
 ## Security and encryption
 
+Haven't found an answer to your question? Many security related questions are answered in the [Security section](/Umbraco-Cloud/Security/index.md) of the documentation. 
+
 ### Does Umbraco Cloud support Let's Encrypt certificates?
 
 Yes, we have now launched [Umbraco Latch](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Manage-Domains/Umbraco-Latch) which automates the process of installing and renewing Let's Encrypt certificates, all new sites are automatically setup with a Let's Encyrpt certificate and HTTPS enabled by default.
