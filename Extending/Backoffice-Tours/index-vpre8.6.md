@@ -1,6 +1,6 @@
 ---
 keywords: Backoffice tours
-versionFrom: 7.8.0
+versionFrom: 7.11.0
 versionTo: 8.5.0
 meta.Title: "Backoffice Tours"
 meta.Description: "A guide configuring backoffice tours in Umbraco"
@@ -88,7 +88,7 @@ A boolean value that indicates if the "Don't show this tour again" should be sho
 
 ![Tour allow disable link highlighted](images/tourallowdisable.png)
 
-### culture (introduced in v7.11)
+### culture
 
 You can set a culture (e.g. nl-NL) and this tour will only be shown to users that have set this culture in their profile. If omitted or left empty the tour will be shown to all users.
 
