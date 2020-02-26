@@ -53,7 +53,7 @@ To connect to your own project, you need to change the `ProjectAlias` value in t
 
 When you've connected to your project and run it on your local machine, you will be presented with a page showing the properties and the data from the content node at the root of your website. This is because no view or controller has been defined for our content structure yet.
 
-We will need to define and build a view and / or an MVC controller for the content types (Document Types) on our project, in order for us to start rendering out our content.
+We will need to define and build a view and/or an MVC controller for the content types (Document Types) on our project, in order for us to start rendering out our content.
 
 There are two ways to do this: 
 
