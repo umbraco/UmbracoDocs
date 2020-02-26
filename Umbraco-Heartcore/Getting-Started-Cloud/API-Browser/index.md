@@ -38,4 +38,4 @@ In the right side, you'll find the inspector section. While exploring the API, y
 
 The first box, the Response Header, will show you the status of the API endpoint you are currently browsing and tell you which headers is included in the response. 
 
-In the Response Body box the raw JSON data will be outputtet based on the API endpoint you're calling. 
+In the Response Body box the raw JSON data will be output based on the API endpoint you're calling. 
