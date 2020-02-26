@@ -29,7 +29,7 @@ Umbraco Cloud Websites support the following TLS ciphers in this order:
 
 ### TLS 1.2 by default in external services
 
-In order to integrate older external applications accessing Umbraco Cloud Websites you might have to modify the TLS support in the .Net application.
+In order to integrate older external applications to access Umbraco Cloud Websites you might have to modify the TLS support in the .Net application.
 
 For ASP.NET applications, inspect the `<system.web><httpRuntime targetFramework>` element of web.config to find the version of the .NET Framework your application is using. .NET applications on .NET 4.7+ are using the OS specified TLS protocols. In Windows 8 & 10, Windows Server 2012 & 2016 TLS 1.2+ is used by default, therefore no actions necessary. .NET applications lower then 4.7 require updates to ensure they can communicate using TLS 1.2 by default.
 
