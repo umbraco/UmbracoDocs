@@ -9,9 +9,9 @@
 * [Errors](#errors)
 * [Get languages](#get-languages)
 * [Get by ISO code](#get-by-iso-code)
-* [Create langauge](#create-langauge)
-* [Update langauge](#update-langauge)
-* [Delete langauge](#delete-langauge)
+* [Create language](#create-language)
+* [Update language](#update-language)
+* [Delete language](#delete-language)
 
 ## Common Headers
 
@@ -157,7 +157,7 @@ Get a specific langauge by its ISO code.
 }
 ```
 
-## Create langauge
+## Create language
 
 Create a new language for use on content.
 
