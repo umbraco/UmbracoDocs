@@ -4,6 +4,8 @@ versionFrom: 7.0.0
 
 # Security on Umbraco Cloud
 
+In this article you can find information about security on Umbraco Cloud. 
+
 ## HTTPS & Certificates
 
 All Umbraco Cloud websites use HTTPS by default. Both the default {projectName}.s1.umbraco.io and custom domains are protected by periodically renewed certificates from Let's Encrypt. This service is offered as part of Umbraco Cloud by [Umbraco LATCH](../Set-Up/Umbraco-Latch).
