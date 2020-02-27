@@ -2,11 +2,11 @@
 
 ## HTTPS & Certificates
 
-All Umbraco Cloud websites use HTTPS by default. Both the default {projectName}.s1.umbraco.io and custom domains are protected by periodically renewed certificates from Let's Encrypt. This service is offered as part of Umbraco Cloud by [Umbraco LATCH](/Umbraco-Cloud/Set-Up/Umbraco-Latch).
+All Umbraco Cloud websites use HTTPS by default. Both the default {projectName}.s1.umbraco.io and custom domains are protected by periodically renewed certificates from Let's Encrypt. This service is offered as part of Umbraco Cloud by [Umbraco LATCH](../Umbraco-Latch).
 
 ### Custom Certificates
 
-Custom certificates can be used with all custom domains. Please refer to our [Managing Custom Certificates documentation](Umbraco-Cloud/Set-Up/Manage-Hostnames/Security-Certificates)
+Custom certificates can be used with all custom domains. Please refer to our [Managing Custom Certificates documentation](../Manage-Hostnames/Security-Certificates)
 
 ### TLS support
 
