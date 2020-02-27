@@ -148,7 +148,7 @@ Haven't found an answer to your question? Many security related questions are an
 
 ### Does Umbraco Cloud support Let's Encrypt certificates?
 
-Yes, we have now launched [Umbraco Latch](../Set-Up/Manage-Domains/Umbraco-Latch) which automates the process of installing and renewing Let's Encrypt certificates, all new sites are automatically setup with a Let's Encyrpt certificate and HTTPS enabled by default.
+Yes. And our own service [Umbraco Latch](../Set-Up/Manage-Domains/Umbraco-Latch) automates the process of installing and renewing Let's Encrypt certificates. All new sites are automatically setup with a Let's Encyrpt certificate and HTTPS enabled by default.
 
 ### Does Umbraco Cloud support http/2?
 
@@ -160,11 +160,7 @@ As a workaround, you could consider setting up a product like CloudFlare, which 
 
 No this is not a security risk. This cookie is set by the load balancer (LB) and only used by the LB to track which server your site is on. It is set by the software we use (Azure Pack) and only useful when your website is being scaled to multiple servers. In Umbraco Cloud we cannot scale your site to multiple servers so the cookie is effectively unused.
 
-There is no vulnerable data in this cookie and manipulating or stealing this cookie can not lead to any security issues.
-
-In the future, the cookie will be set to `HttpOnly` on Umbraco Cloud to conform to best practices. This does not mean that there's anything wrong with the current way it is set.
-
-For more information see [the related GitHub issue](https://github.com/Azure/app-service-announcements/issues/12).
+You can learn much more about this in our [Security section](../Security/#cookies-and-security).
 
 ### Can I use wildcard certificates on Umbraco Cloud? How about an EV, DV or OV certificate?
 
@@ -211,7 +207,9 @@ You will notice that the regex `^umbraco/backoffice/(.*)|^umbraco` also stops pe
 
 Then the last IP address is an example, you can add the addresses that your organization uses as new items to this list.
 
-*Note*: It is possible to change the `umbraco/` route so if you've done that then you need to use the correct prefix. Doing this on Cloud is untested and at the moment not supported.
+:::note
+It is possible to change the `umbraco/` route so if you've done that then you need to use the correct prefix. Doing this on Cloud is untested and at the moment not supported.
+:::
 
 ### Does Umbraco Cloud use Transparent Data Encryption (TDE) for databases?
 

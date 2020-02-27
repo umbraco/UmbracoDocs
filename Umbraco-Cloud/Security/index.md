@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Security on Umbraco Cloud
 
 ## HTTPS & Certificates
@@ -6,13 +10,13 @@ All Umbraco Cloud websites use HTTPS by default. Both the default {projectName}.
 
 ### Custom Certificates
 
-Custom certificates can be used with all custom domains. Please refer to our [Managing Custom Certificates documentation](../Set-Up/Manage-Hostnames/Security-Certificates)
+Custom certificates can be used with all custom domains. Please refer to our [Managing Custom Certificates documentation](../Set-Up/Manage-Hostnames/Security-Certificates).
 
 ### TLS support
 
 As of April 2020, we've deprecated support for TLS1.0 & TLS 1.1. TLS1.2 is now the default supported TLS protocol going forward.
 
-Umbraco v8 sites are using TLS 1.2 as a prefert TLS protocol by default. Umbraco v7 sites, due to running on an older .NET framework 4.5.2, have been updated to default to TLS 1.2.
+Umbraco 8 sites are using TLS 1.2 as a prefert TLS protocol by default. Umbraco 7 sites, due to running on an older .NET framework 4.5.2, have been updated to default to TLS 1.2.
 
 ### TLS Ciphers support
 
@@ -45,3 +49,15 @@ Umbraco Cloud offers a multitude of features allowing you to block access to dif
 - Basic Authentication allowing access to Backoffice & Frontend of Umbraco Cloud Websites only for authenticated users.
 - IP based whitelist allowing access to Frontend & Backoffice
 - IP based whitelist allowing access to website database
+
+## Cookies and security
+
+On all Umbraco Cloud sites, you will find an ARRAffinity cookie. This is not sent over HTTPS, and might to some, look like a security risk.
+
+It is **not** a security risk. This cookie is set by the load balancer (LB) and only used by the LB to track which server your site is on. It is set by the software we use (Azure Pack) and only useful when your website is being scaled to multiple servers. In Umbraco Cloud we cannot scale your site to multiple servers so the cookie is effectively unused.
+
+There is no vulnerable data in this cookie and manipulating or stealing this cookie can not lead to any security issues.
+
+In the future, the cookie will be set to `HttpOnly` on Umbraco Cloud to conform to best practices. This does not mean that there's anything wrong with the current way it is set.
+
+For more information see [the related GitHub issue](https://github.com/Azure/app-service-announcements/issues/12).
