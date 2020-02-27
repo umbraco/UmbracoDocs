@@ -22,6 +22,8 @@ How Umbraco Cloud manages databases between the different environments.
 ## [Upgrades](Upgrades/)
 An explanation of the Umbraco Cloud product upgrade process.
 
+## [Security](Security/)
+
 ## [Troubleshooting](Troubleshooting/)
 Tips on finding, identifying and resolving issues.
 
