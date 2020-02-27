@@ -96,3 +96,24 @@ When this is checked, the cookie consent dialog will be shown on you website for
 **Text**
 
 What the cookie consent dialog says is entirely up to you. We recommmend mentioned all cookies you've setup yourself, including the once that ships with Umbraco Cloud.
+
+**Learn More Link**
+
+Adds a link to the cookie consent dialog, which the customer can follow to learn more about your cookies policies. You can choose to add an external/internal URL or simply choose an existing page from your website.
+
+**Dismiss Button Text**
+
+Define what the text on the *dismiss button* should say.
+
+**Theme**
+
+The cookie consent dialog comes with the pre-defined themes: One with black background, and one with white background.
+
+**Position**
+
+You can choose between three different layouts for the cookie consent dialog:
+
+* A box that floats in the bottom-left of your website (`float-left`)
+* A box that floats in the bottom-right of your website (`float-right`)
+* A full-width banner at the bottom of your website (`banner-bottom`)
+
