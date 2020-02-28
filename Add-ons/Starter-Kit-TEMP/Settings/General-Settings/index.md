@@ -117,3 +117,18 @@ You can choose between three different layouts for the cookie consent dialog:
 * A box that floats in the bottom-right of your website (`float-right`)
 * A full-width banner at the bottom of your website (`banner-bottom`)
 
+![Cookie Consent Dialog](images/cookie-consent-dialog.png)
+
+### Search
+
+The Search group has only a single configuration option where you can decide to show search results in a grid. With this view, the search results will include the SEO image set on the pages found.
+
+The default search view is a traditional list view.
+
+### Tracking and Access
+
+As the final group on the General settings node, you can connect your Google tools with the website. The tools you can connect through here is **Google Analytics**, **Google Tag Manager** and **Google Maps**.
+
+None of these are required, but we do recommend adding a Google Maps API Key, as they will enable you to use the *Map* widget.
+
+You can also enable comments by adding your **Disqus** shortname. Learn more about this works on [the official Disqus documentation](https://help.disqus.com/en/articles/1717111-what-s-a-shortname).
