@@ -176,6 +176,14 @@ Now, clear the cache, reload the document, and see the pagedown editor running:
 
 When we save or publish, the value of the editor is automatically synced to the current content object and sent to the server, all through the power of angular and the `ng-model` attribute.
 
+To render the markdown in your views, you need to first transform the markdown value to html.
+This can be done like this:
+```csharp
+var markdown = new Markdown();
+var value = markdown.Transform(Model.MyPropertyAlias);
+@Html.Raw(value)
+```
+
 Learn more about extending this service by visiting the [Property Editors page](https://our.umbraco.com/documentation/Extending/Property-Editors/).
 
 [Next - Adding configuration to a property editor](part-2.md)
