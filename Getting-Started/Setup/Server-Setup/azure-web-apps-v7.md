@@ -80,24 +80,6 @@ For Umbraco installations that are hosted by Azure Web Apps it is recommend that
 
 This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the environment temporary folder. More info on this setting is available [here](../../../Reference/Config/webconfig/index.md#umbracolocaltempstorage-umbraco-v773)
 
-
-For **Umbraco V8**
-
-You will need to set the local temporary storage value by adding this to your web.config, in the appSettings section.
-
-
-```xml
-<add key="Umbraco.Core.LocalTempStorage" value="EnvironmentTemp" />
-```
-
-In addition, you will need to set the Lucene Directory Factory value as well.
-
-```xml
-<add key="Umbraco.Examine.LuceneDirectoryFactory" value="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory, Examine" />
-```
-
-Depending on your requirements, you might need to set the above value to be Examine.LuceneEngine.Directories.TempEnvDirectoryFactory.
-
 For **Umbraco v7.6 - v7.7.2**
 
 ```xml
