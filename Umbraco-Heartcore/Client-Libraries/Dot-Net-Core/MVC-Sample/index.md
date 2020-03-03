@@ -24,7 +24,7 @@ Before running the sample you will need to define which Umbraco Heartcore projec
 }
 ```
 
-The `ApiKey` can be left blank when using the `demo-headless` sample project. If your testing with your own project and have chosen to protect the content exposed via the Content Delivery API you will need an API-Key. It is an option that has to be actively turned on via the Umbraco Backoffice in the Headless tree in the Settings section. Read more about this feature in the [Backoffice users and API Keys article](../../../Getting-Started-Cloud/Backoffice-Users-and-API-Keys).
+The `ApiKey` can be left blank when using the `demo-headless` sample project. If you are testing with your own project and have chosen to protect the content exposed via the Content Delivery API you will need an API-Key. It is an option that has to be actively turned on via the Umbraco Backoffice in the Headless tree in the Settings section. Read more about this feature in the [Backoffice users and API Keys article](../../../Getting-Started-Cloud/Backoffice-Users-and-API-Keys).
 
 The MVC sample can be run in one of two ways:
 
@@ -53,7 +53,7 @@ To connect to your own project, you need to change the `ProjectAlias` value in t
 
 When you've connected to your project and run it on your local machine, you will be presented with a page showing the properties and the data from the content node at the root of your website. This is because no view or controller has been defined for our content structure yet.
 
-We will need to define and build a view and / or an MVC controller for the content types (Document Types) on our project, in order for us to start rendering out our content.
+We will need to define and build a view and/or an MVC controller for the content types (Document Types) on our project, in order for us to start rendering out our content.
 
 There are two ways to do this: 
 

@@ -7,14 +7,14 @@
 * [Authentication](#authentication)
 * [Permissions](#permissions)
 * [Errors](#errors)
-* [Get Root Content](#get-root-content))
+* [Get Root Content](#get-root-content)
 * [Get By Id](#get-by-id)
-* [Get Children](#get-by-children)
-* [Get Content](#get-content)
-* [Get Content with Files](#get-content-with-files)
+* [Get Children](#get-children)
+* [Create Content](#create-content)
+* [Create Content with Files](#create-content-with-files)
 * [Update Content](#update-content)
-* [Publish Content](#pubish-content)
-* [Unpublish Content](#unpubish-content)
+* [Publish Content](#publish-content)
+* [Unpublish Content](#unpublish-content)
 * [Delete Content](#delete-content)
 
 
@@ -537,7 +537,7 @@ All newly created content will be `DRAFT` by default. If you want to publish it 
 
 ### Request
 
-In this example only one language exists, so the properties are marked with `$invariant` in the create requst. If multiple languages exists the culture for each of the languages would be defined for each of the properties - example: `"name": { "en-US": "Another one", "da-DK": "Endnu en" }`.
+In this example only one language exists, so the properties are marked with `$invariant` in the create request. If multiple languages exists the culture for each of the languages would be defined for each of the properties - example: `"name": { "en-US": "Another one", "da-DK": "Endnu en" }`.
 
 ```json
 {

@@ -16,7 +16,7 @@ Child Actions can be very powerful especially when you want to have re-usable co
 
 ## Creating a Child Action
 
-This documentation is going to use [SurfaceControllers](../../Routing/surface-controllers.md) to create child actions but if you want to create child actions with your own custom controllers with your own custom routing that will work too. Once you've created a SurfaceController, you need to create an action (Note the ChildActionOnly attribute, this will ensure that this action is not publicly routable via a URL):
+This documentation is going to use [SurfaceControllers](../../Routing/surface-controllers.md) to create child actions but if you want to create child actions with your own custom controllers with your own custom routing that will work too. Once you've created a SurfaceController, you need to create an action (Note the `ChildActionOnly` attribute, this will ensure that this action is not publicly routable via a URL):
 
 ```csharp
 public class MySearchController : SurfaceController
@@ -87,6 +87,6 @@ Now the syntax to render a Child Action becomes:
 })
 ```
 
-the only thing that is changed is that we've told it to route to the 'area' called "MyCustomSearchPackage". If this syntax seems strange to you please note that this routing logic and syntax is standard and very common practice in ASP.NET MVC.
+the only thing that is changed is that we've told it to route to the 'area' called *MyCustomSearchPackage*. If this syntax seems strange to you please note that this routing logic and syntax is standard and very common practice in ASP.NET MVC.
 
 More documentation regarding Child Actions and how to render them can be found on the net, a nice write up can also be found here: [https://haacked.com/archive/2009/11/18/aspnetmvc2-render-action.aspx](https://haacked.com/archive/2009/11/18/aspnetmvc2-render-action.aspx)
