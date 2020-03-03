@@ -64,6 +64,21 @@ The view takes care of generating the UI control and setting its value.
 
 On the view, it is important to note that the ID attribute is fetched from `@Model.Id`. You'll also see that we are using jQuery validate unobtrusive to perform client side validation so that's why we are adding the data* attributes.
 
+## Partial view for theme
+
+We will also add a file for the default theme of the form at `Views\Partials\Forms\Themes\default\FieldTypes\FieldType.MyCustomField.cshtml` 
+
+```csharp
+@model Umbraco.Forms.Mvc.Models.FieldViewModel
+<input type="text" name="@Model.Name" id="@Model.Id" class="text" value="@Model.Value" maxlength="500"
+        @{if (string.IsNullOrEmpty(Model.PlaceholderText) == false) { <text> placeholder="@Model.PlaceholderText" </text> }}
+        @{if (Model.Mandatory || Model.Validate) { <text> data-val="true" </text> }}
+        @{if (Model.Mandatory) { <text> data-val-required="@Model.RequiredErrorMessage" </text> }}
+        @{if (Model.Validate) { <text> data-val-regex="@Model.InvalidErrorMessage" data-regex="@Html.Raw(Model.Regex)" </text> }} />
+```
+
+This will be rendered when the default theme is used. For example purposes, it can be identical to the previous partial view.
+
 ## Umbraco backoffice view
 
 The final step involves building the HTML view which will be rendered in Umbraco as an example of how our end result will look. We will create a file at `App_Plugins\UmbracoForms\Backoffice\Common\FieldTypes\mycustomfield.html` which will contain the following:
