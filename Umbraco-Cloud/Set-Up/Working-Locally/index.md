@@ -11,6 +11,10 @@ To work with a local copy of your site you'll need to use Windows and have a loc
 
 ## Step-by-step
 
+:::note
+In GitKraken version 6.5.3 released February 20th, 2020, it is not possible to open private repositories with the free version. This affects all Umbraco Cloud repositories.
+:::
+
 From the Umbraco Cloud portal copy your development environments git repository endpoint using the *How to connect my machine* option and then clone the site using your favorite Git client. We like [GitKraken](https://www.gitkraken.com/), [SourceTree](https://www.sourcetreeapp.com/) or [Git Extensions](https://gitextensions.github.io).
 Here are the steps to clone your site (**We'll use GitKraken in this example.**):
 

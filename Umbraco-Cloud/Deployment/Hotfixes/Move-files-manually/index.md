@@ -4,6 +4,10 @@ versionFrom: 7.0.0
 
 # Apply hotfix by manually moving files
 
+:::note
+In GitKraken version 6.5.3 released February 20th, 2020, it is not possible to open private repositories with the free version. This affects all Umbraco Cloud repositories.
+:::
+
 In this article, you'll find a step-by-step guide on how to apply a hotfix to a Live environment by manually moving the changed, updated and/or new files from one local clone to another.
 
 The following tools have been used to create this guide:

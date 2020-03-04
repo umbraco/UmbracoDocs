@@ -76,6 +76,10 @@ There are a few tools we recommend using to make the migration process as smooth
 * Visual Studio OR Visual Studio Code + IIS Express
 * Merging tool - like [WinMerge](http://winmerge.org/) or [DiffMerge](https://sourcegear.com/diffmerge/)
 
+:::note
+In GitKraken version 6.5.3 released February 20th, 2020, it is not possible to open private repositories with the free version. This affects all Umbraco Cloud repositories.
+:::
+
 Aside from these tools you'll also need:
 
 * A local copy of your existing site
