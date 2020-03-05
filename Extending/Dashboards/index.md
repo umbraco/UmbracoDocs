@@ -286,3 +286,40 @@ namespace My.Website
     }
 }
 ```
+
+## Override an Umbraco Dashboard
+In Umbraco 8+, to modify the order of a default dashboard or change its permissions, you must first remove the default dashboard (see above), then add an overridden instance of the default dashboard.  The overridden dashboard can then include your modifications.  For example, if you wanted to deny the Writers group access to the default Redirect URL Management dashboard, you would create an override of RedirectUrlDashboard to add after removing the default dashboard.
+
+```csharp
+using Umbraco.Core;
+using Umbraco.Core.Composing;
+using Umbraco.Core.Dashboards;
+using Umbraco.Web;
+using Umbraco.Web.Dashboards;
+
+namespace MyDashboardCustomization
+    {
+    public class MyComposer : IComposer
+    {
+        public void Compose(Composition composition)
+        {
+            composition.Dashboards()
+                // Remove the default
+                .Remove<RedirectUrlDashboard>()
+                // Add the overridden one
+                .Add<MyRedirectUrlDashboard>();
+        }
+    }
+
+    // overridden redirect dashboard with custom rules
+    public class MyRedirectUrlDashboard : RedirectUrlDashboard, IDashboard
+    {
+        // override explicit implementation
+        IAccessRule[] IDashboard.AccessRules { get; } = new IAccessRule[]
+        {
+            new AccessRule {Type = AccessRuleType.Deny, Value = "writer"},
+            new AccessRule {Type = AccessRuleType.Grant, Value = Umbraco.Core.Constants.Security.AdminGroupAlias}
+        };
+    }
+}
+```
