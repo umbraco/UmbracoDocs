@@ -31,7 +31,7 @@ namespace DefaultNamespace
 }
 ```
 
-If you want to disable indexing entirely you can implement this and get rid of the base:
+If you want to disable indexing entirely you can get rid of the base and implement this:
 
 ```csharp
 using Umbraco.Courier.Core;
