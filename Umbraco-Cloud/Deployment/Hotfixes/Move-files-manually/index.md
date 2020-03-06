@@ -11,6 +11,10 @@ The following tools have been used to create this guide:
 * Visual Studio Code
 * GitKraken
 
+:::note
+In GitKraken version 6.5.3, it is no longer possible to open private repositories with the free version - This affects all Umbraco Cloud repositories as well. 
+:::
+
 ## The Scenario
 
 You have an Umbraco Cloud project with two environments, Development and Live.

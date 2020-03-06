@@ -32,10 +32,14 @@ This short tutorial will teach you how to create a NuGet package for your Umbrac
 
 Package actions are actions you want to trigger when your package gets installed. 
 
-## [Uploading a package to Our](Uploading-to-Our/index.md)
+## [Uploading a Package to Our](Uploading-to-Our/index.md)
 
 Once you've created a package upload it on Our to share it with the community.
 
 ## [Packages on Umbraco Cloud](Packages-on-Umbraco-Cloud/index.md)
 
 Things you should know if you are developing for Umbraco Cloud.
+
+## [Maintaining Packages](Maintaining-Packages/index.md)
+
+Some guidance on how to maintain your package after release.

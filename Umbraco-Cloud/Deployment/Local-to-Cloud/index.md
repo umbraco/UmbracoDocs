@@ -17,7 +17,7 @@ Here's a quick step-by-step on how you deploy these changes to your Cloud enviro
 
 ![Deploy from Local to Remote](images/stage-commit-deploy.gif)
 
-In the above example, GitKraken is used to stage, commit and deploy changes made to a Document type plus a newly added data type from a local environment to a Cloud Development environment.
+In the above example, GitKraken is used to stage, commit and deploy changes made to a Document type plus a newly added data type from a local environment to a Cloud Development environment. You are of course welcome to use any Git client or cli of your choice.
 
 Once you’ve deployed your local changes to your Cloud environment deploying to your remaining Cloud environments (e.g. Staging and/or Live) is done using the **'Deploy changes to ..'** button in the Umbraco Cloud portal. Learn more about how this is done in our section about [deploying between two Cloud environments](../Cloud-to-Cloud).
 
