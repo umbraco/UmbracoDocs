@@ -10,6 +10,12 @@ Tools used:
 
 * GitKraken
 
+:::note
+You can use whichever Git client or cli you prefer. 
+
+If you've never worked with cherry picking before, we recommend that you use a Git client with a UI that gives you a visual overview of your commits.
+:::
+
 ## The scenario
 
 You have an Umbraco Cloud project with two environments, Development and Live.
