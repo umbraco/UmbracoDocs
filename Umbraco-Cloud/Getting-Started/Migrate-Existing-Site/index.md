@@ -72,13 +72,9 @@ To help smooth this process for you, there is a community project called [Umbrac
 There are a few tools we recommend using to make the migration process as smooth as possible. We've made a checklist for you here:
 
 * Git needs to be installed on your computer
-    * Optional: Git client, like [GitKraken](https://www.gitkraken.com/)
+    * Optional: Git client, like [Fork](https://git-fork.com/), [SourceTree](https://www.sourcetreeapp.com/), or [GitKraken](https://www.gitkraken.com/)
 * Visual Studio OR Visual Studio Code + IIS Express
 * Merging tool - like [WinMerge](http://winmerge.org/) or [DiffMerge](https://sourcegear.com/diffmerge/)
-
-:::note
-In GitKraken version 6.5.3 released February 20th, 2020, it is not possible to open private repositories with the free version. This affects all Umbraco Cloud repositories.
-:::
 
 Aside from these tools you'll also need:
 
