@@ -33,8 +33,7 @@ Before you start migrating your Umbraco site to Umbraco Cloud there are a few th
 
 Your Umbraco site has to fulfill these requirements:
 
-* Has no more content items than your plan covers (Starter plan: 1000 - Pro Plan: 25000)
-    * Content items includes content nodes and media items
+* Has no more content nodes than your plan covers (Starter plan: 500 - Standard plan: 2500 - Pro Plan: 7500)
     * Read more about the Umbraco Cloud Plans on [Umbraco.com](https://umbraco.com/pricing/)
 * Contains no member data
     * If you do have member data, these will need to be imported manually after the migration
