@@ -72,7 +72,7 @@ To help smooth this process for you, there is a community project called [Umbrac
 There are a few tools we recommend using to make the migration process as smooth as possible. We've made a checklist for you here:
 
 * Git needs to be installed on your computer
-    * Optional: Git client, like [GitKraken](https://www.gitkraken.com/)
+    * Optional: Git client, like [Fork](https://git-fork.com/), [SourceTree](https://www.sourcetreeapp.com/), or [GitKraken](https://www.gitkraken.com/)
 * Visual Studio OR Visual Studio Code + IIS Express
 * Merging tool - like [WinMerge](http://winmerge.org/) or [DiffMerge](https://sourcegear.com/diffmerge/)
 
