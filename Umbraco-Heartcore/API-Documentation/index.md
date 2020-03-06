@@ -24,7 +24,7 @@ The properties `_links` and `_embedded` are both part of the HAL specification a
 
 ### API Browser
 
-In the Settings section in the Umbraco Backoffice, there is a Headless tree. From there you can use the API Browser to interact with both the Content Delivery and Content Management APIs. 
+In the Settings section in the Umbraco Backoffice, there is a Headless tree. From there you can use the API Browser to interact with both the Content Delivery and Content Management APIs.
 
 It is recommended to use this browser to explore the JSON output for all the different endpoints documented under the Content Delivery and Content Management API sections.
 
@@ -120,5 +120,31 @@ It can be used by passing it to the `Authorization` header.
 
 ```http
 GET https://api.umbraco.io/
+Authorization: Bearer {token}
+```
+
+## Member authentication
+
+A member login can be used to access the Content Delivery API if it's protected. Members will only have access to CDN endpoint and cannot be used to access the Content Management API.
+
+Content can be restricted futher by using the Public Access feature in Umbraco to only allow access for specific Members or Member Groups.
+
+### Member Bearer token
+
+The endpoints implements OAuth 2.0.
+
+A bearer token can be created by posting to `https://cdn.umbraco.io/member/oauth/token` and supplying a username and password for a member.
+
+```http
+POST https://cdn.umbraco.io/member/oauth/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&username={username}&password={password}
+```
+
+It can be used by passing it to the `Authorization` header.
+
+```http
+GET https://cdn.umbraco.io/
 Authorization: Bearer {token}
 ```
