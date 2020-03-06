@@ -12,7 +12,7 @@ Courier has several different events you can hook into and override. They are al
 By default Lucene/Examine indexes will be rebuilt on Courier deployments - it is possible to override, or stop the indexes from being rebuilt automatically.
 
 
-If you implement a class that extends the event you want your IDE should suggest the class you want to override. Here is the base generated class:
+When you implement a class that extends the event you want, your IDE should suggest the class you want to override. Here is the base generated class:
 
 ```csharp
 using Umbraco.Courier.Core;
