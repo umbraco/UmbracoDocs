@@ -27,3 +27,5 @@ namespace DefaultNamespace
     }
 }
 ```
+
+The code snippet above will disable automatic re-indexing on deployments, which can be useful in certain situations.
