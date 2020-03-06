@@ -5,6 +5,8 @@ versionRemoved: 8.0.0
 
 # Events
 
+Courier has several different events you can hook into and override. They are all placed in the `Umbraco.Courier.DataResolvers.Events` namespace. 
+
 ## RebuildLuceneIndexes
 By default Lucene/Examine indexes will be rebuilt on Courier deployments - if you wish to override, or stop the indexes from being rebuilt automatically, add a C#/.cs file in App_Code directory on both source and target environments (e.g. overrideScript.cs)
 
