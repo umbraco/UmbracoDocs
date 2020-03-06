@@ -216,16 +216,6 @@ namespace Example.Core
 }
 ```
 
-### Accessing LightInject container
-
-Should you need to carry out more complicated registrations beyond the minimalist Umbraco DI implementation, you can access the underlying DI container via the `Concrete` property of the `composition`.
-
-```csharp
-var container = composition.Concrete as LightInject.ServiceContainer;
-container.RegisterAssembly(typeof(IFoo).Assembly);
-```
-[Visit the LightInject site to see what is possible](https://www.lightinject.net/)
-
 ## Using DI in Services and Helpers
 
 [Services and Helpers](../../Implementation/Services/index.md) - For more examples of using DI and gaining access to Services and Helpers, and creating your own custom Services and Helpers to inject.
