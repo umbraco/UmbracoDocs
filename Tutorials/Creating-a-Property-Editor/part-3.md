@@ -104,6 +104,7 @@ The above is correct markdown code, representing the image, and if preview is tu
 If you wish to render your markdown in a view, you first need to convert you markdown to html format:
 
 ```csharp
+@using HeyRed.MarkdownSharp
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
 @{
     var value = Model.Value<string>("myMarkdownPropertyAlias");
