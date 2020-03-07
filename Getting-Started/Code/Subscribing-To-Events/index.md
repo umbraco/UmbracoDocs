@@ -1,4 +1,6 @@
 ---
+meta.title: "Subscribing to events"
+meta.description: "Subscribing to events allows you to execute custom code on a  number of events both before and after the event occurs"
 versionFrom: 8.0.0
 ---
 
