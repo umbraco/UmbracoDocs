@@ -17,7 +17,7 @@ How the Visual Studio solution is put together, the functionality of each projec
 ## [Working with the code](working-with-code.md)
 Describes the process of creating new classes and where they should be stored in regards to namespaces and projects. Also describes how to deal with updating legacy code and how it should be updated.
 
-## [Unit testing](test-driven-flow.md)
+## Unit testing
 
 There are plenty of unit tests in the core of Umbraco both for C# found in Umbraco.Tests project and for JavaScript found in the Umbraco.Web.UI.Client project.
 
