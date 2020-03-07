@@ -32,7 +32,7 @@ Below is an example `.nuspec` file that might be used to create a package for th
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
-    <id>Custom Welcome dashboard</id>
+    <id>CustomWelcomeDashboard</id>
     <version>1.0.0</version>
     <authors>Umbraco User</authors>
     <owners>Umbraco user</owners>
