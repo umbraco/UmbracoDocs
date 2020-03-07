@@ -1,4 +1,6 @@
 ---
+meta.title:"Umbraco Data"
+meta.description: "This section focuses on how to create data using the Umbraco backoffice"
 versionFrom: 7.0.0
 ---
 
