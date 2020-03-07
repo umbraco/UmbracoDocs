@@ -1,5 +1,5 @@
 ---
-meta.title: Source Control with Umbraco
+meta.title: "Source Control with Umbraco"
 versionFrom: 8.0.0
 ---
 
