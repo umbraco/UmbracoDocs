@@ -91,10 +91,9 @@ If you are writing classes that inherit from one of these special Umbraco base c
 
 Then you can access the logging functionality via a special 'Logger' property included in those base classes and use the friendlier syntax of `Logger.Info<T>` to pass the type, if you add a reference to `Umbraco.Core.Logging` as a Using statement.
 
-Outside of these places, eg a ContentFinder or your own custom code, you can get a reference to the logger from the `Umbraco.Core.Composing` namespace, using the `Current.Logger` instance.
+Outside of these places, eg a ContentFinder or your own custom code, you can get a reference to the logger via Dependency Injection.
 
 ```csharp
-using Umbraco.Core.Composing;
 using Umbraco.Core.Logging;
 using Umbraco.Web.Routing;
 
@@ -102,9 +101,18 @@ namespace MyNamespace
 {
     public class MyContentFinder : IContentFinder
     {
+    
+        private readonly ILogger _logger;
+
+        public MyContentFinder(ILogger logger)
+        {
+            _logger = logger;
+        }
+    
+    
         public bool TryFindContent(PublishedRequest frequest)
         {
-            Current.Logger.Info<MyContentFinder>("Trying to find content for url {RequestUrl}", frequest.Uri);
+            _logger.Info<MyContentFinder>("Trying to find content for url {RequestUrl}", frequest.Uri);
 
             //Do Content Finder Logic...
         }
@@ -112,6 +120,7 @@ namespace MyNamespace
 }
 ```
 
+You will, of course, need to register your ContentFinder [using a Composer](/documentation/Implementation/Composing/index.md)
 ## Log Levels
 
 Serilog uses levels as the primary means for assigning importance to log events. The levels in increasing order of importance are:
