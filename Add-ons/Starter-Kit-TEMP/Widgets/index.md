@@ -51,8 +51,11 @@ This is like the ***Text Widget*** good if you want a an image out side of any o
 ![movePage.jpg](images/The-Text-And-Images-Widget1.png)
 
 This Widget Gives you the ***Text Widget*** and the ***Image Widget*** together in one widget, with a few extra features, such as a Rich text editor.
-You can have ***six*** images in total, You can add a ***Pre Heading*** and a ***Heading*** to it
+You can have ***six*** images in total, You can add a ***Pre Heading*** and a ***Heading*** to it.
 
+The example below uses, a ***Pre Heading***, a ***Heading***, a ***Text*** and three ***Images***.
+
+![movePage.jpg](images/Example-of-text-And-Images.png)
 
 
 
