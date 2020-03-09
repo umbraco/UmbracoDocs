@@ -197,9 +197,10 @@ Should you need to carry out more complicated registrations beyond the minimalis
 var container = composition.Concrete as LightInject.ServiceContainer;
 container.Register<IFoo, Foo>();
 
-// It's not currently possible to do the following without some workarounds
+// It's not currently possible to assembly scan without workarounds
 // see https://github.com/umbraco/Umbraco-CMS/issues/7502 for details
-container.RegisterAssembly(typeof(IFoo).Assembly);
+// The following will not work:
+// container.RegisterAssembly(/* Any method signature */);
 ```
 
 [Visit the LightInject site to see what is possible](https://www.lightinject.net/)
