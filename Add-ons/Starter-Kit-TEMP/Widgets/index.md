@@ -79,7 +79,7 @@ This also contians the feature to click on images to zoom in on the images(this 
 
 ![movePage.jpg](images/The-Slider-Widget.png)
 
-The Slider Widget allows you to pick multiple images and then make them into a slideshow, you will have the ability to choose how fast the transition between images is.
+The Slider Widget allows you to pick multiple images and then make them into a slideshow, you will have the ability to choose how fast the transition between images is.Hej
 
 
 
