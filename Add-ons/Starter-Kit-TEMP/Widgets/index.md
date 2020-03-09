@@ -70,7 +70,7 @@ The example below uses, a ***Pre Heading***, a ***Heading***, a ***Text*** and t
 ![movePage.jpg](images/The-Gallery-Widget.png)
 
 The Gallery Widget allowes you to display multiple images in a gallery view, meaning that the images will be alligned in rows. 
-This also contians the feature to click on images to zoom in on the images(this feature can also be disabled).
+This also contians the feature to click on images to zoom in on the images(this feature can also be disabled).hej
 
 
 
