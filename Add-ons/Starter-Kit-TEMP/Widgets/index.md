@@ -28,7 +28,7 @@ Below you can see an example of how a ***Hero Widget*** might look, this contain
 
 ![movePage.jpg](images/The-Text-Widget1.png)
 
-The Text Widget lets you create a text field on the page, containing a Rich text editor and a sidebar widget(can be more than one) these sidebar widgets are as follows: a text area, links, button.
+The Text Widget lets you create a text field on the page, containing a Rich text editor and the option for a sidebar widget(can be more than one) these sidebar widgets can be the following: a text area, links, a button.
 
 This is useful if you only need a text box outside of the widgets, most of the other widgets come with the ***Text widget*** included
 
@@ -39,7 +39,9 @@ This is useful if you only need a text box outside of the widgets, most of the o
 
 ![movePage.jpg](images/The-Image-Widget.png)
 
-This Widget allows you to add an image on the site, select the size of it, Caption it an select the background and text color.
+This Widget allows you to add an image to your site, select the size of the image, Caption The image and select the background and text color.
+
+This is like the ***Text Widget*** good if you want a an image out side of any of the other widgets that contain the ability to add images.
 
 
 
@@ -48,7 +50,9 @@ This Widget allows you to add an image on the site, select the size of it, Capti
 
 ![movePage.jpg](images/The-Text-And-Images-Widget1.png)
 
-This Widget Gives you the same features as the ***Images widget*** with a few extra features, such as a Rich text editor.
+This Widget Gives you the ***Text Widget*** and the ***Image Widget*** together in one widget, with a few extra features, such as a Rich text editor.
+
+
 
 
 
