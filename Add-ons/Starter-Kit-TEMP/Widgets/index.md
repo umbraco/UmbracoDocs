@@ -55,7 +55,7 @@ You can have ***six*** images in total, You can add a ***Pre Heading*** and a **
 
 The example below uses, a ***Pre Heading***, a ***Heading***, a ***Text*** and three ***Images***.
 
-![movePage.jpg](images/Example-of-text-And-Images.png)
+![movePage.jpg](images/Example-of-text-And-images.png)
 
 
 
