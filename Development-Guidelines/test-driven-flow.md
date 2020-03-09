@@ -2,11 +2,11 @@
 versionFrom: 7.0.0
 ---
 
-# Working with the backoffice UI AngularJS project
+# Test-driven approach to working with the backoffice UI AngularJS project
 
 _This document tries to outline what is required to have a test-driven setup for
 Angular development in Umbraco 7. It goes through the setup process as well as how
-to add new services that require mocking as well as how to use gulp to run tests automatically_
+to add new services that require mocking as well as how to use gulp to run tests automatically._
 
 ## Setup
 Make sure to have all the node dependencies in order when you start, these are updated regularly in case we need to go to a new version of a dependency, or new dependencies are added.
