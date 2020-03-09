@@ -2,7 +2,7 @@
 versionFrom: 7.0.0
 ---
 
-# Test-driven approach to working with the backoffice UI AngularJS project
+# Working with the backoffice UI AngularJS project
 
 _This document tries to outline what is required to have a test-driven setup for
 Angular development in Umbraco 7. It goes through the setup process as well as how
