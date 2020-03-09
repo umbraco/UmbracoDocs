@@ -42,7 +42,7 @@ This Widget allows you to add an image on the site, select the size of it, Capti
 
 ### The Text and Images Widget
 
-![movePage.jpg](images/The-Text-And-Images-Widget.png)
+![movePage.jpg](images/The-Text-And-Images-Widget1.png)
 
 This Widget Gives you the same features as the ***Images widget*** with a few extra features, such as a Rich text editor.
 
