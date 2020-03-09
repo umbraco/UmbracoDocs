@@ -189,6 +189,22 @@ namespace Example.Core.Components
 }
 ```
 
+### Accessing LightInject container
+
+Should you need to carry out more complicated registrations beyond the minimalist Umbraco DI implementation, you can access the underlying DI container via the `Concrete` property of the `composition`.
+
+```csharp
+var container = composition.Concrete as LightInject.ServiceContainer;
+container.Register<IFoo, Foo>();
+
+// It's not currently possible to assembly scan without workarounds
+// see https://github.com/umbraco/Umbraco-CMS/issues/7502 for details
+// The following will not work:
+// container.RegisterAssembly(/* Any method signature */);
+```
+
+[Visit the LightInject site to see what is possible](https://www.lightinject.net/)
+
 ### ILogger
 
 [Read more about logging](../../Getting-Started/Code/Debugging/Logging/index.md)
