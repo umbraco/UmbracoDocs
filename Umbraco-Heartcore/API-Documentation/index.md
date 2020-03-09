@@ -127,7 +127,7 @@ Authorization: Bearer {token}
 
 A member login can be used to access the Content Delivery API if it's protected. Members will only have access to CDN endpoint and cannot be used to access the Content Management API.
 
-Content can be restricted futher by using the Public Access feature in Umbraco to only allow access for specific Members or Member Groups.
+Content can be restricted further by using the Public Access feature in Umbraco to only allow access for specific Members or Member Groups.
 
 ### Member Bearer token
 
