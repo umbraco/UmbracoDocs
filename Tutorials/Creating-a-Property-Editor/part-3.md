@@ -101,7 +101,21 @@ Clicking an image and choosing select returns the image to the editor which then
     [1]: /media/1005/Koala.jpg
 
 The above is correct markdown code, representing the image, and if preview is turned on, you will see the image below the editor.
+If you wish to render your markdown in a view, you first need to convert you markdown to html format:
 
+```csharp
+@using HeyRed.MarkdownSharp
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
+@{
+    var value = Model.Value<string>("myMarkdownPropertyAlias");
+    var html = new Markdown().Transform(value);
+}
+@Html.Raw(html)
+```
+
+:::note
+Umbraco's built-in [Markdown editor](https://our.umbraco.com/Documentation/Getting-Started/Backoffice/Property-Editors/Built-in-Property-Editors/#markdown-editor) will be interpreted by Models Builder, in which case you won't need to do the convertion mentioned above.
+:::
 
 ## Wrap up
 So over the 3 previous steps, we've:
@@ -112,5 +126,6 @@ So over the 3 previous steps, we've:
 - Made the editor configurable
 - Connected the editor with native dialogs and services
 - Looked at koala pictures
+- Converted and rendered our markdown as html format
 
 [Next - Adding server-side data to a property editor](part-4.md)
