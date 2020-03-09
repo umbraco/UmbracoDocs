@@ -32,6 +32,10 @@ The Text Widget lets you create a text field on the page, containing a Rich text
 
 This is useful if you only need a text box outside of the widgets, most of the other widgets come with the ***Text widget*** included
 
+:::Note
+The Text widget is the standerd width per default, this cannot be changed.
+To compare the width see for example ***Image Widget*** and set this to standard width.
+:::
 
 
 
@@ -50,7 +54,7 @@ This is like the ***Text Widget*** good if you want a an image out side of any o
 
 ![movePage.jpg](images/The-Text-And-Images-Widget1.png)
 
-This Widget Gives you the ***Text Widget*** and the ***Image Widget*** together in one widget, with a few extra features, such as a Rich text editor.
+This Widget Allows you to create a collage of images and text.
 You can have ***six*** images in total, You can add a ***Pre Heading*** and a ***Heading*** to it.
 
 The example below uses, a ***Pre Heading***, a ***Heading***, a ***Text*** and three ***Images***.
