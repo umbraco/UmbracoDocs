@@ -11,7 +11,7 @@ In the following the article there will be an explanation to each of these widge
 
 ### The Hero Widget 
 
-![movePage.jpg](images/The-Hero-Widget.png)
+![movePage.jpg](images/The-Hero-Widget1.png)
 
 The Hero Widget allow you to create a hero element on you page, this includes features such as a heading, a rich text editor, a background image and option to add buttons.
 You will also have the settings for your ***Hero Widget*** here, letting you have a nice overview of how you can customize the widget to your liking.
@@ -80,4 +80,4 @@ This allows you to create multiple widgets within one widget this means you coul
 ### The Latest Form Feed Widget
 
 
-![movePage.jpg](images/The-Latest-Form-Feed-Widget.png)
+![movePage.jpg](images/The-Latest-Form-Feed-Widget1.png)
