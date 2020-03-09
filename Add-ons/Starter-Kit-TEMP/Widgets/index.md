@@ -24,7 +24,7 @@ This widget is ideal for content on the start page.
 
 ### The Text Widget
 
-![movePage.jpg](images/The-Text-Widget.png)
+![movePage.jpg](images/The-Text-Widget1.png)
 
 The Text Widget lets you create a text field on the page, containing a Rich text editor and a sidebar widget(can be more than one) these sidebar widgets are as follows: a text area, links, button.
 
