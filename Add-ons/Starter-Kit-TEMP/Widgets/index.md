@@ -19,7 +19,9 @@ You will also have the settings for your ***Hero Widget*** here, letting you hav
 Everything that you create in ***Hero Widget*** will appear in a banner element on the top part of your page. 
 This widget is ideal for content on the start page.
 
+Below you can see an example of how a ***Hero Widget*** might look, this contains the ***Pre Header***, ***Heading***, ***Text*** and three different types of ***Buttons***
 
+![movePage.jpg](images/Scrren-shot-of-hero-widget.png)
  
 
 ### The Text Widget
@@ -27,6 +29,8 @@ This widget is ideal for content on the start page.
 ![movePage.jpg](images/The-Text-Widget1.png)
 
 The Text Widget lets you create a text field on the page, containing a Rich text editor and a sidebar widget(can be more than one) these sidebar widgets are as follows: a text area, links, button.
+
+This is useful if you only need a text box outside of the widgets, most of the other widgets come with the ***Text widget*** included
 
 
 
