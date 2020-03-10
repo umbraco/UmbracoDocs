@@ -96,7 +96,8 @@ It has a black ***Background Color*** picked in the ***Image Widget***.
 ![movePage.jpg](images/Slider-example.png)
 
 ::: Note 
-For the best experience with an image slider add multiple ***Image Widgets*** containing one image each.:::
+For the best experience with the Slider Widget, we recommend adding multiple ***Image Widgets*** containing one image each.
+:::
 
 
 
