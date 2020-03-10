@@ -127,7 +127,7 @@ Keep in mind that you will need an article or a gallery to link to in order for 
 The widget allows you to set up a few things as mentioned below:
 
 - Pre Header - text above the Heading.
-- Heading, this is the headline.
+- Heading
 - Intro box, lets you give the reader a short Intro text to what the article  is    about.
 - Feed Page, here you pick what page you want the linked.
 - Number Of Posts, in this option you can select the amount of posts the Widget     needs to contain.
