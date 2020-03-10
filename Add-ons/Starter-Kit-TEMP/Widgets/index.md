@@ -79,9 +79,11 @@ This also contians the feature to click on images to zoom in on the images(this 
 
 ![movePage.jpg](images/The-Slider-Widget.png)
 
-The Slider Widget allows you to pick multiple images and then make them into a slideshow, you will have the ability to choose how fast the transition between images is.Hej
+The Slider Widget allows you to pick multiple images and then make them into a slideshow, you will have the ability to choose how fast the transition between images is here it is important to know that the value 1000 is 1 second.
 
+You will have the option to customize the slider to your liking by deciding if you want the slider to have arrows on the edges to take you through the slider or if you want dots i the button to show what slide you are currently on. You can make the slider pause when you hover over it, you can even add another widget to the slider. 
 
+ You can choose to have the slider to ***Wrap Around*** to make it loop around indefinately, and to make the transition between slides more seamless you can add the ***Fade Animation***
 
 
 ### The Tabs Widget
