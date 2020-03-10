@@ -119,7 +119,7 @@ You can even add multiple widgets within one tab which means you could have for 
 
 Where the ***Text Widget*** and the ***Image Widget*** is tab 1 and ***Forms Widget*** is tab2. 
 
-Below you can se the aboved mentioned example, please note the tab 1 and tab 2 is diffrently colored this was done on purpose to showcase how it could look if you choose two different theme collors.
+Below is two examples of how tabs can be set up.
 
 ![movePage.jpg](images/tab1.png)
 ![movePage.jpg](images/tab2.png)
