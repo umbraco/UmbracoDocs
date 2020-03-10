@@ -13,7 +13,6 @@ The Hero Widget allows you to create a hero element on your page, this includes 
 
 You will also have the settings for your ***Hero Widget*** here, letting you have a nice overview of how you can customize the Widget to your liking.
 
-Everything that you create in the ***Hero Widget*** will appear in a banner element on the top part of your page. 
 This widget is ideal for content on the start page.
 
 Below you can see an example of how a ***Hero Widget*** might look, this contains the ***Pre Header***, ***Heading***, ***Text*** and three different types of ***Buttons***
