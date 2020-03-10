@@ -117,7 +117,7 @@ For the best experience with the Slider Widget, we recommend adding multiple ***
 The Tabs Widget allows you to create tabs like the ones you find in your browser, these tabs can contain any Widget you desire.
 This allows you to create multiple Widgets within one Widget this means you could have for example: a ***Text Widget***, an ***Image Widget*** and a ***Forms Widget*** all collected in one.
 
-Where the ***Text Widget*** and the ***Image Widget*** is tab 1 and ***Forms Widget** is tab2. 
+Where the ***Text Widget*** and the ***Image Widget*** is tab 1 and ***Forms Widget*** is tab2. 
 
 Below you can se the aboved mentioned example, please note the tab 1 and tab 2 is diffrently colored this was done on purpose to showcase how it could look if you choose two different theme collors.
 
