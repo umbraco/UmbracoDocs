@@ -124,20 +124,4 @@ Below is two examples of how tabs can be set up.
 ![movePage.jpg](images/tab1.png)
 ![movePage.jpg](images/tab2.png)
 
-### The Latest Form Feed Widget
 
-The Latest Form Feed Widget, is a tool that allows you to bring a thumbnail of a newsfeed to the page of your desire.
-Keep in mind that you will need an article or a gallery to link to in order for this Widget to work as intended.
-
-The Widget Allows you to set up a few things as mentioned below:
-
-- Pre Header, this is the text above the Heading.
-- Heading, this is the headline.
-- Intro box, lets you give the reader a short Intro text to what the article  is    about.
-- Feed Page, here you pick what page you want the linked.
-- Number Of Posts, in this option you can select the amount of posts the Widget     needs to contain.
-- Background Color
-- Text Color
-- Buttons
-
-![movePage.jpg](images/The-Latest-Form-Feed-Widget1.png)
