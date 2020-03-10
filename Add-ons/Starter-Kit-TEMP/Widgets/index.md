@@ -1,28 +1,22 @@
 # Widgets
 
 ## What is Widgets 
-Widgets Allows you to have easy access to a lot of different features, by selecting them from a menu.
-there is a total of nine-teen Widgets in the menu.
-This is designed in such a way that there is a ticket for all your needs.
 
-In the following the article there will be an explanation to each of these widgets.
+Widgets allows you to have easy access to a lot of different features, by selecting them from a menu. There is a total of nine-teen widgets in the menu. This is designed in such a way that there is a widget for all your needs.
 
-
+In the following article there will be an explanation to each of these widgets.
 
 ### The Hero Widget 
 
 ![movePage.jpg](images/The-Hero-Widget1.png)
 
 The Hero Widget allows you to create a hero element on your page, this includes features such as a heading, a rich text editor, a background image and the option to add buttons.
-You will also have the settings for your ***Hero Widget*** here, letting you have a nice overview of how you can customize the Widget to your liking.
 
-Everything that you create in ***Hero Widget*** will appear in a banner element on the top part of your page. 
-This Widget is ideal for content on the start page.
+You will have a lot of settings for your ***Hero Widget***, letting you customize the widget to your liking. This widget is ideal for content on the start page.
 
-Below you can see an example of how a ***Hero Widget*** might look, this contains the ***Pre Header***, ***Heading***, ***Text*** and three different types of ***Buttons***
+Below you can see an example of how a ***Hero Widget*** might look. This contains the ***Pre Header***, ***Heading***, ***Text*** and different types of ***Buttons***
 
 ![movePage.jpg](images/Scrren-shot-of-hero-widget.png)
- 
 
 ### The Text Widget
 
@@ -68,8 +62,20 @@ The example below uses, a ***Pre Heading***, a ***Heading***, a ***Text*** and t
 
 ![movePage.jpg](images/The-Gallery-Widget.png)
 
-The Gallery Widget allowes you to display multiple images in a gallery view, meaning that the images will be alligned in rows. 
-This also contians the feature to click on images to zoom in on the images(this feature can also be disabled).
+The Gallery Widget allows you to display multiple images in a gallery view, meaning that the images will be aligned in rows. 
+
+This also contains the feature to click on images to zoom in on the images. This feature can be disabled.
+
+
+You will be able to change the setup of your gallery. This could be the size of the images or the background color of the whole container. 
+Below you can see how the gallery would look with image width at 20%, and a blue background color.
+
+
+![movePage.jpg](images/The-Gallery.png)
+
+You can click the image to zoom in, where you can browse through the images in the gallery by using the arrows next to the images or use the arrow keys on the keyboard.
+
+
 
 
 
