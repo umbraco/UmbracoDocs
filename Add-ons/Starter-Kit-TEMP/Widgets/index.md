@@ -115,9 +115,9 @@ For the best experience with the Slider Widget, we recommend adding multiple ***
 ![movePage.jpg](images/The-Tabs-Widget.png)
 
 The Tabs Widget allows you to create tabs like the ones you find in your browser, these tabs can contain any Widget you desire.
-This allows you to create multiple Widgets within one Widget this means you could have for example: a ***Text Widget***, an ***Image Widget*** and a ***Forms Widget*** all collected in one.
+This allows you to create multiple Widgets within one ***Tabs Widget*** this means you could have for example: a ***Text Widget***, an ***Image Widget*** and a ***Forms Widget*** all collected in one ***Tabs Widget***.
 
-Where the ***Text Widget*** and the ***Image Widget*** is tab 1 and ***Forms Widget*** is tab2. 
+Where the ***Text Widget*** and the ***Image Widget*** is tab 1 and ***Forms Widget*** is tab2 , Multiple tabs in one ***Tabs widget***. 
 
 Below you can se the aboved mentioned example, please note the tab 1 and tab 2 is diffrently colored this was done on purpose to showcase how it could look if you choose two different theme collors.
 
@@ -126,5 +126,18 @@ Below you can se the aboved mentioned example, please note the tab 1 and tab 2 i
 
 ### The Latest Form Feed Widget
 
+The Latest Form Feed Widget, is a tool that allows you to bring a thumbnail of a newsfeed to the page of your desire.
+Keep in mind that you will need an article or a gallery to link to in order for this Widget to work as intended.
+
+The Widget Allows you to set up a few things as mentioned below:
+
+- Pre Header, this is the text above the Heading.
+- Heading, this is the headline.
+- Intro box, lets you give the reader a short Intro text to what the article  is    about.
+- Feed Page, here you pick what page you want the linked.
+- Number Of Posts, in this option you can select the amount of posts the Widget     needs to contain.
+- Background Color
+- Text Color
+- Buttons
 
 ![movePage.jpg](images/The-Latest-Form-Feed-Widget1.png)
