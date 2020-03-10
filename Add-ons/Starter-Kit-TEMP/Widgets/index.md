@@ -2,7 +2,7 @@
 
 ## What is Widgets 
 Widgets Allows you to have easy access to a lot of different features, by selecting them from a menu.
-there is a total of nine-teen widgets in the menu.
+there is a total of nine-teen Widgets in the menu.
 This is designed in such a way that there is a ticket for all your needs.
 
 In the following the article there will be an explanation to each of these widgets.
@@ -14,10 +14,10 @@ In the following the article there will be an explanation to each of these widge
 ![movePage.jpg](images/The-Hero-Widget1.png)
 
 The Hero Widget allows you to create a hero element on your page, this includes features such as a heading, a rich text editor, a background image and the option to add buttons.
-You will also have the settings for your ***Hero Widget*** here, letting you have a nice overview of how you can customize the widget to your liking.
+You will also have the settings for your ***Hero Widget*** here, letting you have a nice overview of how you can customize the Widget to your liking.
 
 Everything that you create in ***Hero Widget*** will appear in a banner element on the top part of your page. 
-This widget is ideal for content on the start page.
+This Widget is ideal for content on the start page.
 
 Below you can see an example of how a ***Hero Widget*** might look, this contains the ***Pre Header***, ***Heading***, ***Text*** and three different types of ***Buttons***
 
@@ -28,12 +28,12 @@ Below you can see an example of how a ***Hero Widget*** might look, this contain
 
 ![movePage.jpg](images/The-Text-Widget1.png)
 
-The Text Widget lets you create a text field on the page, containing a Rich text editor and the option for a sidebar widget(can be more than one) these sidebar widgets can be the following: a text area, links, a button.
+The Text Widget lets you create a text field on the page, containing a Rich text editor and the option for a sidebar Widget(can be more than one) these sidebar Widgets can be the following: a text area, links, a button.
 
-This is useful if you only need a text box outside of the widgets, most of the other widgets come with the ***Text widget*** included
+This is useful if you only need a text box outside of the Widgets, most of the other Widgets come with the ***Text Widget*** included
 
 ::: Note
-The Text widget is the standard width per default, this cannot be changed.
+The Text Widget is the standard width per default, this cannot be changed.
 To compare the width see for example ***Image Widget*** and set this to standard width.
 :::
 
@@ -45,7 +45,7 @@ To compare the width see for example ***Image Widget*** and set this to standard
 
 This Widget allows you to add an image to your site, select the size of the image, Caption The image and select the background and text color.
 
-This is like the ***Text Widget*** good if you want an image outside of any of the other widgets that contain the ability to add images.
+This is like the ***Text Widget*** good if you want an image outside of any of the other Widgets that contain the ability to add images.
 
 
 
