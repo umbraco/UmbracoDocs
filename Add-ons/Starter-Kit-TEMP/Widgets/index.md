@@ -15,7 +15,7 @@ You will also have the settings for your ***Hero Widget*** here, letting you hav
 
 This widget is ideal for content on the start page.
 
-Below you can see an example of how a ***Hero Widget*** might look, this contains the ***Pre Header***, ***Heading***, ***Text*** and three different types of ***Buttons***
+Below you can see an example of how a ***Hero Widget*** might look. This contains the ***Pre Header***, ***Heading***, ***Text*** and different types of ***Buttons***
 
 ![movePage.jpg](images/Scrren-shot-of-hero-widget.png)
  
