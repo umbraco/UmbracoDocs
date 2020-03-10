@@ -128,7 +128,7 @@ The widget allows you to set up a few things as mentioned below:
 
 - Pre Header - text above the Heading.
 - Heading
-- Intro box, lets you give the reader a short Intro text to what the article  is    about.
+- Intro box, lets you give the reader a short intro text to what the articles in the feed is about.
 - Feed Page, here you pick what page you want the linked.
 - Number Of Posts, in this option you can select the amount of posts the Widget     needs to contain.
 - Background Color
