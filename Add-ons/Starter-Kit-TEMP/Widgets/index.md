@@ -122,3 +122,19 @@ Below is two examples of how tabs can be set up.
 ![movePage.jpg](images/tab1.png)
 ![movePage.jpg](images/tab2.png)
 
+### The Latest From Feed Widget
+
+The Latest From Feed Widget, is used to show posts from a ***Feed*** that you already have on your website. ***Feed*** here referring to the ***Feed*** content type. 
+
+The widget allows you to set up a few things as mentioned below:
+
+- Pre Header - text above the Heading.
+- Heading
+- Intro box, lets you give the reader a short intro text to what the articles in the feed is about.
+- Feed Page, where you pick which feed you want displayed
+- Number Of Posts, gives you the option to select the amount of posts the widget will show
+- Background Color
+- Text Color
+- Buttons
+
+![movePage.jpg](images/The-Latest-Form-Feed-Widget1.png)
