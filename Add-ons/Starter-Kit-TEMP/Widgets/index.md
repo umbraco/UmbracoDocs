@@ -13,7 +13,7 @@ In the following the article there will be an explanation to each of these widge
 
 ![movePage.jpg](images/The-Hero-Widget1.png)
 
-The Hero Widget allow you to create a hero element on you page, this includes features such as a heading, a rich text editor, a background image and option to add buttons.
+The Hero Widget allows you to create a hero element on your page, this includes features such as a heading, a rich text editor, a background image and the option to add buttons.
 You will also have the settings for your ***Hero Widget*** here, letting you have a nice overview of how you can customize the widget to your liking.
 
 Everything that you create in ***Hero Widget*** will appear in a banner element on the top part of your page. 
@@ -32,8 +32,8 @@ The Text Widget lets you create a text field on the page, containing a Rich text
 
 This is useful if you only need a text box outside of the widgets, most of the other widgets come with the ***Text widget*** included
 
-:::Note
-The Text widget is the standerd width per default, this cannot be changed.
+::: Note
+The Text widget is the standard width per default, this cannot be changed.
 To compare the width see for example ***Image Widget*** and set this to standard width.
 :::
 
@@ -45,7 +45,7 @@ To compare the width see for example ***Image Widget*** and set this to standard
 
 This Widget allows you to add an image to your site, select the size of the image, Caption The image and select the background and text color.
 
-This is like the ***Text Widget*** good if you want a an image out side of any of the other widgets that contain the ability to add images.
+This is like the ***Text Widget*** good if you want an image outside of any of the other widgets that contain the ability to add images.
 
 
 
@@ -54,7 +54,7 @@ This is like the ***Text Widget*** good if you want a an image out side of any o
 
 ![movePage.jpg](images/The-Text-And-Images-Widget1.png)
 
-This Widget Allows you to create a collage of images and text.
+This Widget allows you to create a collage of images and text.
 You can have ***six*** images in total, You can add a ***Pre Heading*** and a ***Heading*** to it.
 
 The example below uses, a ***Pre Heading***, a ***Heading***, a ***Text*** and three ***Images***.
