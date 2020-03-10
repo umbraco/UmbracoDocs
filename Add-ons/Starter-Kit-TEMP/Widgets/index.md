@@ -122,7 +122,7 @@ This allows you to create multiple widgets within one widget this means you coul
 ### The Latest Form Feed Widget
 
 The Latest Form Feed Widget, is a tool that allows you to bring a thumbnail of a newsfeed to the page of your desire.
-Keep in mind that you will need an article or a gallery to link to in order for this Widget to work as intended.
+Keep in mind that you will need an article or a gallery to link to in order for this widget to work as intended.
 
 The Widget Allows you to set up a few things as mentioned below:
 
