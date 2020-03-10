@@ -115,9 +115,7 @@ For the best experience with the Slider Widget, we recommend adding multiple ***
 ![movePage.jpg](images/The-Tabs-Widget.png)
 
 The Tabs Widget allows you to create tabs like the ones you find in your browser. Each tab can contain any widgets you desire.
-You can even add multiple widgets within one tab which means you could have for example a ***Text Widget***, an ***Image Widget*** and a ***Forms Widget*** all collected in one ***Tabs Widget***.
-
-Where the ***Text Widget*** and the ***Image Widget*** is tab 1 and ***Forms Widget*** is tab2 , Multiple tabs in one ***Tabs widget***. 
+You can even add multiple widgets within one ***Tabs Widget*** which means you could have the ***Text Widget*** and the ***Image Widget*** on tab 1 and ***Forms Widget*** is tab2, because you can have Multiple tabs in one ***Tabs widget***. 
 
 Below is two examples of how tabs can be set up.
 
