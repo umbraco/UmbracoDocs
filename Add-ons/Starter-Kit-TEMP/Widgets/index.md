@@ -71,7 +71,7 @@ This also contains the feature to click on images to zoom in on the images. This
 
 
 You will be able to change the setup of your gallery. This could be the size of the images or the background color of the whole container. 
-Below you can see how the gally would look with image width 20%, and a blue background color.
+Below you can see how the gallery would look with image width at 20%, and a blue background color.
 
 
 ![movePage.jpg](images/The-Gallery.png)
