@@ -130,7 +130,7 @@ The widget allows you to set up a few things as mentioned below:
 - Heading
 - Intro box, lets you give the reader a short intro text to what the articles in the feed is about.
 - Feed Page, where you pick which feed you want displayed
-- Number Of Posts, in this option you can select the amount of posts the Widget     needs to contain.
+- Number Of Posts, gives you the option to select the amount of posts the widget will show
 - Background Color
 - Text Color
 - Buttons
