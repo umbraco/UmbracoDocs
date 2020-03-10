@@ -86,11 +86,21 @@ You can click the image to zoom in, where you can browse through the images in t
 
 The Slider Widget allows you to pick 1 or more widgets to display in a slideshow. 
 
-You will have the ability to choose how fast the transition between widgets is here. It is important to know that 1000 is equal to 1 second.
+- You will have the ability to choose how fast the transition between widgets is    here. It is important to know that 1000 is equal to 1 second.
 
-You will have the option to customize the slider to your liking, by deciding if you want the slider to have arrows on the edges which takes you through the slides. If you want dots in the button to show what slide you are currently on. You can make the slider pause when you hover over it. You will have to pick what the slider displays by picking the Widgets. You can pick multiple Widgets. 
+- You will have the option to customize the slider to your liking, by deciding if   you want the slider to have arrows on the edges which takes you through the        slides. 
 
-You can choose to have the slider ***Wrap Around*** to make it loop between the widgets indefinitely.  You can also make the transition between slides more seamless by using ***Fade Animation***.
+- You can have dots in the buttom to show what slide you are currently on. 
+
+- You can make the slider pause when you hover over it. 
+
+- You will have to pick what the slider displays by picking the Widgets. 
+
+- You can pick multiple Widgets. 
+
+- You can choose to have the slider ***Wrap Around*** to make it loop between the   widgets indefinitely.  
+
+- You can also make the transition between slides more seamless by using ***Fade Animation***.
 
 Below is an example of how a slider could look. It contains an ***Image Widget***, uses ***Show Next/prev arrows*** and ***Show Page Dots***.
 It has a black ***Background Color*** picked in the ***Image Widget***.   
