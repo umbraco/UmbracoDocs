@@ -71,15 +71,16 @@ The example below uses, a ***Pre Heading***, a ***Heading***, a ***Text*** and t
 
 The Gallery widget allows you to display multiple images in a gallery view, meaning that the images will be alligned in rows. 
 This also contains the feature to click on images to zoom in on the images. This feature can be disabled.
+
+
 You will be able to change the setup of your gallery. This could be the size of the images or the background color of the whole container. 
 Below you can see how the gally would look with image width 20%, and a blue background color.
 
 ![movePage.jpg](images/The-Gallery.png)
 
-Here you can see what it looks like after you click an image to zoom it, notice the arrows on the sides, clicking them will take you through the various images in the gallery.
-In the top left corner you will se at what image number you are out of the total amount of images. 
+You Can click the image to zoom in, when you are zoomed in you can either click the arrows with the mouse or use the arrow keys on the keyboard to circle through the images while zoomed in.
 
-![movePage.jpg](images/Zoomed-into-gallery.png)
+
 
 
 
