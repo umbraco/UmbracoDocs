@@ -24,7 +24,7 @@ All new Live sites created on Cloud since version 7.12 will automagically have a
 All `*.umbraco.io` domains will serve a default wildcard certificate with a common name `*.umbraco.io`.
 Custom domains will automatically be secured by a Let's Encrypt certificate.
 
-You can always [upload a custom certificate](../../Manage-Hostnames/Security-Certificates/) to overwrite the default certificates provided for the domains.
+You can always [upload a custom certificate](../Manage-Hostnames/Security-Certificates/) to overwrite the default certificates provided for the domains.
 
 ## Latch and CDN
 
