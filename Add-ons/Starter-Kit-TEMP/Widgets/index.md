@@ -88,7 +88,7 @@ The Slider Widget allows you to pick multiple images and then make them into a s
 
 ![movePage.jpg](images/The-Tabs-Widget.png)
 
-This allows you to create multiple widgets within one widget this means you could have for example: a ***Text Widget***, an ***Image Widget*** and a ***Forms Widget*** all collected in one.
+This allows you to create multiple widgets within one widget this means you could have for example: a ***Text Widget***, an ***Image Widget*** and a ***Forms Widget*** all collected in one.,
 
 
 
