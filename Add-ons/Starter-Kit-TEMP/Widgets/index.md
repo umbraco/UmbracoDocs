@@ -84,7 +84,9 @@ You can click the image to zoom in, where you can browse through the images in t
 
 ![movePage.jpg](images/The-Slider-Widget.png)
 
-The Slider Widget allows you to pick multiple images and then make them into a slideshow, you will have the ability to choose how fast the transition between images is here. It is important to know that the value 1000 is 1 second.
+The Slider Widget allows you to pick 1 or more widgets to display in a slideshow. 
+
+You will have the ability to choose how fast the transition between widgets is here. It is important to know that 1000 is equal to 1 second.
 
 You will have the option to customize the slider to your liking, by deciding if you want the slider to have arrows on the edges which takes you through the slides. If you want dots in the button to show what slide you are currently on. You can make the slider pause when you hover over it. You will have to pick what the slider displays by picking the Widgets. You can pick multiple Widgets. 
 
