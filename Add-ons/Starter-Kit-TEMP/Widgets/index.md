@@ -1,23 +1,20 @@
 # Widgets
 
 ## What is Widgets 
-Widgets Allows you to have easy access to a lot of different features, by selecting them from a menu.
-there is a total of nine-teen Widgets in the menu.
-This is designed in such a way that there is a ticket for all your needs.
+Widgets allows you to have easy access to a lot of different features, by selecting them from a menu. There is a total of nine-teen widgets in the menu. This is designed in such a way that there is a widget for all your needs.
 
-In the following the article there will be an explanation to each of these widgets.
-
-
+In the following article there will be an explanation to each of these widgets.
 
 ### The Hero Widget 
 
 ![movePage.jpg](images/The-Hero-Widget1.png)
 
 The Hero Widget allows you to create a hero element on your page, this includes features such as a heading, a rich text editor, a background image and the option to add buttons.
+
 You will also have the settings for your ***Hero Widget*** here, letting you have a nice overview of how you can customize the Widget to your liking.
 
-Everything that you create in ***Hero Widget*** will appear in a banner element on the top part of your page. 
-This Widget is ideal for content on the start page.
+Everything that you create in the ***Hero Widget*** will appear in a banner element on the top part of your page. 
+This widget is ideal for content on the start page.
 
 Below you can see an example of how a ***Hero Widget*** might look, this contains the ***Pre Header***, ***Heading***, ***Text*** and three different types of ***Buttons***
 
