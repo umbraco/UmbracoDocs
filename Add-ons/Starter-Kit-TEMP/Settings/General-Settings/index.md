@@ -99,7 +99,7 @@ What the cookie consent dialog says is entirely up to you. We recommmend mention
 
 **Learn More Link**
 
-Adds a link to the cookie consent dialog, which the customer can follow to learn more about your cookies policies. You can choose to add an external/internal URL or simply choose an existing page from your website.
+Adds a link to the cookie consent dialog, which the customer can follow to learn more about your cookies policies. You can choose to add an external/internal URL or choose an existing page from your website.
 
 **Dismiss Button Text**
 
