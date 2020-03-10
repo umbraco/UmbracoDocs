@@ -76,7 +76,7 @@ Below you can see how the gallery would look with image width at 20%, and a blue
 
 ![movePage.jpg](images/The-Gallery.png)
 
-You Can click the image to zoom in when you are zoomed in you can either click the arrows with the mouse or use the arrow keys on the keyboard to circle through the images while zoomed in.
+You can click the image to zoom in, where you can browse through the images in the gallery by using the arrows next to the images or use the arrow keys on the keyboard.
 
 
 
