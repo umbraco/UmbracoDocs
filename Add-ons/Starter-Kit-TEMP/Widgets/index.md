@@ -121,7 +121,7 @@ This allows you to create multiple widgets within one widget this means you coul
 
 ### The Latest From Feed Widget
 
-The Latest From Feed Widget, is used to show posts from a ***Feed*** that you already have on your website. ***Feed*** here refering to the ***Feed*** content type. 
+The Latest From Feed Widget, is used to show posts from a ***Feed*** that you already have on your website. ***Feed*** here referring to the ***Feed*** content type. 
 
 The widget allows you to set up a few things as mentioned below:
 
