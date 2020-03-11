@@ -1,4 +1,6 @@
 ---
+meta.Title: "Debugging"
+meta.Description: "Debugging in Umbraco"
 versionFrom: 8.0.0
 ---
 
@@ -79,7 +81,7 @@ using Umbraco.Core.Logging;
 using Umbraco.Web.Models;
 using Umbraco.Web.Mvc;
 
-namespace Doccers.Core.Controllers
+namespace OurUmbraco.Core.Controllers
 {
     public class ProductsController : RenderMvcController
     {
@@ -91,7 +93,7 @@ namespace Doccers.Core.Controllers
             _profiler = profiler;
         }
 
-        public ActionResult Products(ContentModel model)
+        public ActionResult Products(IPublishedContent model)
         {
             // Perform a step
             using (_profiler.Step("Sleep"))

@@ -1,13 +1,14 @@
 ---
 versionFrom: 8.4.0
 meta.Title: "Umbraco Property Editors - Property Actions"
-meta.Description: "Guide on how to impelement Property Actions for Property Editors in Umbraco"
+meta.Description: "Guide on how to implement Property Actions for Property Editors in Umbraco"
 ---
 
 # Property Actions
 
-Property Actions is a build-in feature that provides a generic place for secondary functionality for property editors.
-Appearing as a small button next to the label of the property, that expands to show the available actions. Those actions are defined and implemented in the Property Editor, making it very open what a Property Action is.
+Property Actions are a built-in feature that provide a generic place for secondary functionality for property editors.
+
+Property Actions appear as a small button next to the label of the property, which expands to show the available actions. They are defined and implemented in the Property Editor, making it very open as to what a Property Action is.
 
 ![Example of Property Action on Nested Content Property Editor](example-of-property-actions.jpg)
 
@@ -25,7 +26,7 @@ An action is defined by the following properties:
 }
 ```
 
-We use `labelKey` and `labelTokens` to retrieve a localized string that is displayed as the Actions label. [See localization for more info.](../../Extending/Language-Files/)
+We use `labelKey` and `labelTokens` to retrieve a localized string that is displayed as the Actions label. [See localization for more info.](../../Language-Files/)
 
 `isDisabled` is used to disable an Action, which change the visual appearance and prevents interaction. Use this option when an action wouldn't provide any change. In the example above, the action `remove all entries` would not have any impact if there is no entries.
 

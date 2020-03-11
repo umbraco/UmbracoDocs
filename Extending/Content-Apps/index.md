@@ -215,28 +215,28 @@ namespace Umbraco.Web.UI
     {
         public ContentApp GetContentAppFor(object source, IEnumerable<IReadOnlyUserGroup> userGroups)
         {
-			// Can implement some logic with userGroups if needed
+            // Can implement some logic with userGroups if needed
             // Allowing us to display the content app with some restrictions for certain groups
-            if (userGroups.Any(x => x.Alias.ToLowerInvariant() == "admin") == false)
+            if (userGroups.All(x => x.Alias.ToLowerInvariant() != Umbraco.Core.Constants.Security.AdminGroupAlias))
                 return null;
 			
-
-			// only show app on content items
-			if(content is IContent) 
-			{
-				var wordCounterApp = new ContentApp
-	            {
-	                Alias = "wordCounter",
-	                Name = "Word Counter",
-	                Icon = "icon-calculator",
-	                View = "/App_Plugins/WordCounter/wordcounter.html",
-	                Weight = 0
-	            };
-	            return wordCounterApp;
-			}
-
-            return null            
-        }
+            // only show app on content items
+            if(source is IContent)
+            {
+                var wordCounterApp = new ContentApp
+                {
+                    Alias = "wordCounter",
+                    Name = "Word Counter",
+                    Icon = "icon-calculator",
+                    View = "/App_Plugins/WordCounter/wordcounter.html",
+                    Weight = 0                
+                };
+                
+                return wordCounterApp;
+            }
+            
+            return null;
+        }        
     }
 }
 ```
@@ -296,29 +296,30 @@ namespace Umbraco.Web.UI
     {
         public ContentApp GetContentAppFor(object source, IEnumerable<IReadOnlyUserGroup> userGroups)
         {
-			// Can implement some logic with userGroups if needed
+            // Can implement some logic with userGroups if needed
             // Allowing us to display the content app with some restrictions for certain groups
-            if (userGroups.Any(x => x.Alias.ToLowerInvariant() == "admin") == false)
+            if (userGroups.All(x => x.Alias.ToLowerInvariant() != Umbraco.Core.Constants.Security.AdminGroupAlias))
                 return null;
-			
-
-			// only show app on content items
-			if(content is IContent) 
-			{
-				var wordCounterApp = new ContentApp
-	            {
-	                Alias = "wordCounter",
-	                Name = "Word Counter",
-	                Icon = "icon-calculator",
-	                View = "/App_Plugins/WordCounter/wordcounter.html",
-	                Weight = 0,
-					Badge = new ContentAppBadge { Count = 5 , Type = ContentAppBadgeType.Warning }
-	            };
-	            return wordCounterApp;
-			}
-
-            return null            
-        }
+            
+            // only show app on content items
+            if(source is IContent)
+            {
+                var wordCounterApp = new ContentApp
+                {
+                    Alias = "wordCounter",
+                    Name = "Word Counter",
+                    Icon = "icon-calculator",
+                    View = "/App_Plugins/WordCounter/wordcounter.html",
+                    Weight = 0,
+                    Badge = new ContentAppBadge { Count = 5 , Type = ContentAppBadgeType.Warning }                
+                };
+                
+                return wordCounterApp;               
+            
+            }
+            
+            return null;
+        }  
     }
 }
 ```

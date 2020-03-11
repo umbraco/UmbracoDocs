@@ -1,4 +1,6 @@
 ---
+meta.Title: "Umbraco in Load Balanced Environments"
+meta.Description: "Information on how to deploy Umbraco in a Load Balanced scenario and other details to consider when setting up Umbraco for load balancing"
 versionFrom: 8.0.0
 ---
 
@@ -62,11 +64,11 @@ In Umbraco there can only be a single scheduling server which performs the follo
 * Keep alive service - to ensure scheduled publishing occurs
 * Scheduled tasks - to initiate any configured scheduled tasks
 * Scheduled publishing - to initiate any scheduled publishing for documents
-* 
+
 Umbraco will automatically elect a "Scheduling server" to perform the above services. This means
 that all of the servers will need to be able to resolve the URL of either: itself, the Master server, the internal load balancer or the public address.
 
-For example, In the following diagram the slave node **f02.mysite.local** is the elected "Scheduling server". In order for scheduling to work it needs to be able to send
+For example, In the following diagram the replica node **f02.mysite.local** is the elected "Scheduling server". In order for scheduling to work it needs to be able to send
 requests to itself, the Master server, the internal load balancer or the public address. The address used by the "Scheduling server" is called the "umbracoApplicationUrl". 
 
 ![Umbraco flexible load balancing diagram](images/flexible-load-balancing-scheduler.png)

@@ -1,13 +1,12 @@
 ---
-versionFrom: 6.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # ContentTypeService
 
 The content type service acts as a "gateway" to Umbraco data for operations which are related to both content types and media types.
 
-[Browse the API documentation for ContentTypeService](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Services.ContentTypeService.html).
+[Browse the API documentation for IContentTypeService](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.IContentTypeService.html).
 
  * **Namespace:** `Umbraco.Core.Services`
  * **Assembly:** `Umbraco.Core.dll`
@@ -26,22 +25,37 @@ using Umbraco.Core.Services;
 
 ## Getting the service
 
+### Services property
 If you wish to use use the content type service in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController`), you can access the content type service through a local `Services` property:
 
 ```C#
 IContentTypeService contentTypeService = Services.ContentTypeService;
 ```
 
-In Razor views, you can access the content type service through the `ApplicationContext` property:
+### Dependency Injection
 
-```C#
-IContentTypeService contentTypeService = ApplicationContext.Services.ContentTypeService;
+In other cases, you may be able to use Dependency Injection. For instance if you have registered your own class in Umbraco's dependency injection, you can specify the `IContentTypeService` interface in your constructor:
+
+```csharp
+public class MyClass
+{
+
+    private IContentTypeService _contentTypeService;
+    
+    public MyClass(IContentTypeService contentTypeService)
+    {
+        _contentTypeService = contentTypeService;
+    }
+
+}
 ```
 
-If neither a `Services` property or a `ApplicationContext` property is available, you can also reference the `ApplicationContext` class directly and using the static `Current` property:
+### Static accessor
 
-```C#
-IContentTypeService contentTypeService = ApplicationContext.Current.Services.ContentTypeService;
+If neither a `Services` property or Dependency Injection is available, you can also reference the static `Current` class directly:
+
+```csharp
+IContentTypeService contentTypeService = Umbraco.Core.Composing.Current.Services.ContentTypeService;
 ```
 
 ## Samples

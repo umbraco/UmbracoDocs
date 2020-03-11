@@ -4,13 +4,13 @@ versionFrom: 7.0.0
 
 # Build your own editor
 
-Create a file in `/app_plugins/yourpackage/editor.html` and add the following to the editor.html file:
+Create a file in `/App_Plugins/yourpackage/editor.html` and add the following to the editor.html file:
 
 ```html
 <textarea rows="1" umb-auto-resize ng-model="control.value" ng-style="control.editor.config"></textarea>
 ```
 
-Save the file and add an editor to the `/app_plugins/yourpackage/package.manifest` file:
+Save the file and add an editor to the `/App_Plugins/yourpackage/package.manifest` file:
 
 ```json
 {
@@ -18,7 +18,7 @@ Save the file and add an editor to the `/app_plugins/yourpackage/package.manifes
         {
             "name": "Code",
             "alias": "code",
-            "view": "/app_plugins/yourpackage/editor.html",
+            "view": "/App_Plugins/yourpackage/editor.html",
             "icon": "icon-code",
             "config": {
                 "color": "red",
@@ -29,10 +29,10 @@ Save the file and add an editor to the `/app_plugins/yourpackage/package.manifes
 }
 ```
 
-Add a new file: `/app_plugins/yourpackage/editor.cshtml` - this file will handle rendering the entered data  - this path is done by convention so:
+Add a new file: `/App_Plugins/yourpackage/editor.cshtml` - this file will handle rendering the entered data  - this path is done by convention so:
 
 - view: 'editor' => `views/partials/grid/editors/editor.cshtml`
-- view: '/app_plugins/path.html' => `/app_plugins/path.cshtml`
+- view: '/App_Plugins/path.html' => `/App_Plugins/path.cshtml`
 
 If you wish to use something entirely different you can give the editor a separate `render` value which follow the same conventions.
 
@@ -40,8 +40,8 @@ If you wish to use something entirely different you can give the editor a separa
 {
     "name": "Code",
     "alias": "code",
-    "view": "/app_plugins/yourpackage/editor.html",
-    "render": "/app_plugins/yourpackage/custom-render.cshtml"
+    "view": "/App_Plugins/yourpackage/editor.html",
+    "render": "/App_Plugins/yourpackage/custom-render.cshtml"
 }
 ```
 
@@ -54,7 +54,7 @@ If you are building something slightly more complex then a text area, you will n
 </div>
 ```
 
-To wire up a controller to this view, create the file `/app_plugins/yourpackage/editor.controller.js` and add a standard angular controller declaration:
+To wire up a controller to this view, create the file `/App_Plugins/yourpackage/editor.controller.js` and add a standard angular controller declaration:
 
 ```js
 angular.module("umbraco").controller("my.custom.grideditorcontroller", function ($scope) {
@@ -70,7 +70,7 @@ Finally, we need to tell Umbraco to load this JavaScript controller when the Umb
         {
             "name": "Code",
             "alias": "code",
-            "view": "/app_plugins/yourpackage/editor.html",
+            "view": "/App_Plugins/yourpackage/editor.html",
             "icon": "icon-code",
             "config": {
                 "color": "red",
@@ -79,7 +79,7 @@ Finally, we need to tell Umbraco to load this JavaScript controller when the Umb
         }
     ],
     javascript:[
-        "/app_plugins/yourpackage/editor.controller.js"
+        "/App_Plugins/yourpackage/editor.controller.js"
     ]
 }
 ```
@@ -110,7 +110,7 @@ When rendering the .cshtml file will receive a dynamic model with the raw data o
     "editor": {
         "name": "Code",
         "alias": "code",
-        "view": "/app_plugins/yourpackage/editor.html",
+        "view": "/App_Plugins/yourpackage/editor.html",
         "icon": "icon-code",
         "config": {
                 "color": "red",

@@ -45,7 +45,7 @@ There are many ways of approaching this task. The best approach will be determin
 For simplicity sake we're going to write this code directly in a Template using Razor and IPublishedContent. You may want to use route hijacking to write the code in an MVC controller or XSLT which is still a really good fit for this kind of task.
 
 1. We'll create a new Document Type called 'XmlSiteMap' with corresponding 'XmlSiteMap' template (visiting this page will trigger the rendering of the XML Sitemap).
-    - The XmlSiteMap document type will contain a 'Blacklisted Document Types' property to the XmlSiteMap Document Type to list types of content we wish to exclude from the Site Map (or you could probably take a 'whitelist' approach if it is easier to specify types that should be included rather than define those that will be excluded.)
+    - The XmlSiteMap document type will contain an 'Excluded Document Types' property to the XmlSiteMap Document Type to list types of content we wish to exclude from the Site Map (or you could alternatively create an 'Included Document Types' list if it is easier to specify types that should be included rather than define those that will be excluded.)
 2. We'll create a 'SiteMap' Composition, containing a consistent set of 'Site Map related properties, and we'll add this to all of the different document types of the site.
     - The 'SiteMap' Composition will contain a 'hide from Xml Site Map' checkbox, to give editors the ability to hide a certain page from the XML Sitemap.
 3. The implementation will start at the homepage of the site and loop through all the children, iterating in turn through the children of the children, etc, checking at each level whether to continue further based on the properties of the page.
@@ -62,7 +62,7 @@ Create your XmlSiteMap page in your content tree.
 
 ![The XmlSiteMap doc type](images/v8/create-sitemap-page.png)
 
-and add the xmlSiteMap document type to your 'Blacklist'.
+and add the xmlSiteMap document type to your 'Excluded Document Type' list.
 
 ## 2. Create XmlSiteMapSettings Composition
 
@@ -243,7 +243,7 @@ and we should have a full XML sitemap rendered for the site!
 
 #### Checking if a page should be on the sitemap
 
-This is all very well, but what if some super secret pages shouldn't be on the sitemap? and what about the document type blacklist we mentioned earlier? and what if we only want to go 3 levels deep?
+This is all very well, but what if some super secret pages shouldn't be on the sitemap? and what about the document type excluded list we mentioned earlier? and what if we only want to go 3 levels deep?
 
 ##### HideFromSiteMap
 
@@ -296,28 +296,28 @@ If we add to our XmlSiteMap document type a new property of numeric type called 
 
 Set your `MaxSiteMap` depth to be 2 on your XmlSiteMap content item, and save and republish. Your sitemap will now only contain entries for the top two levels. Leaving the value blank, will mean that no Maximum Depth restriction will be applied.
 
-##### DocumentType Blacklist
+##### Excluded DocumentType list
 
-Our Xml Sitemap includes an entry for itself on the XML Sitemap, I thought we had excluded that document type, when we created the documentTypeBlacklist property...
+Our Xml Sitemap includes an entry for itself on the XML Sitemap, I thought we had excluded that document type, when we created the excludedDocumentType property...
 
 ... we did but we haven't checked this value in the helper yet.
 
 ```csharp
-string blacklistedDocumentTypeList = Model.Value<string>("blacklistedDocumentTypes");
-string[] blackListedDocumentTypes = (!String.IsNullOrEmpty(blacklistedDocumentTypeList)) ? blacklistedDocumentTypeList.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(p => p.Trim()).ToArray() : new string[] { };
+string excludedDocumentTypeList = Model.Value<string>("excludedDocumentTypes");
+string[] excludedDocumentTypes = (!String.IsNullOrEmpty(excludedDocumentTypeList)) ? excludedDocumentTypeList.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(p => p.Trim()).ToArray() : new string[] { };
 ```
 
 now we can pass this value into our helper
 
 ```csharp
-@helper RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage, int maxSiteMapDepth, string[] documentTypeBlacklist)
+@helper RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage, int maxSiteMapDepth, string[] excludedDocumentTypes)
 {
-    foreach (var page in parentPage.Children.Where(f => !documentTypeBlacklist.Contains(f.Alias) && !f.Value<bool>("hideFromXmlSiteMap")))
+    foreach (var page in parentPage.Children.Where(f => !excludedDocumentTypes.Contains(f.ContentType.Alias) && !f.Value<bool>("hideFromXmlSiteMap")))
     {
         @RenderSiteMapUrlEntry(page)
-        if (page.Level < maxSiteMapDepth && page.Children.Any(f => !documentTypeBlacklist.Contains(f.Alias) && !f.Value<bool>("hideFromXmlSiteMap")))
+        if (page.Level < maxSiteMapDepth && page.Children.Any(f => !excludedDocumentTypes.Contains(f.ContentType.Alias) && !f.Value<bool>("hideFromXmlSiteMap")))
         {
-            @RenderSiteMapUrlEntriesForChildren(page, maxSiteMapDepth, documentTypeBlacklist)
+            @RenderSiteMapUrlEntriesForChildren(page, maxSiteMapDepth, excludedDocumentTypes)
         }
     }
 }
@@ -332,10 +332,10 @@ Layout = null;
 Response.ContentType = "text/xml"; 
 var siteHomePage = Model.Root();
 var maxSiteMapDepth = Model.HasValue("maxSiteMapDepth") ? Model.Value<int>("maxSiteMapDepth") : int.MaxValue; 
-var blacklistedDocumentTypeList = Model.Value<string>("blacklistedDocumentTypes");
-var blackListedDocumentTypes = (!String.IsNullOrEmpty(blacklistedDocumentTypeList)) ? blacklistedDocumentTypeList.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(p => p.Trim()).ToArray() : new string[] { };
+string excludedDocumentTypeList = Model.Value<string>("excludedDocumentTypes");
+string[] excludedDocumentTypes = (!String.IsNullOrEmpty(excludedDocumentTypeList)) ? excludedDocumentTypeList.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(p => p.Trim()).ToArray() : new string[] { };
 }
-  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">@RenderSiteMapUrlEntry(siteHomePage)@RenderSiteMapUrlEntriesForChildren(siteHomePage, maxSiteMapDepth,blackListedDocumentTypes)</urlset>
+  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">@RenderSiteMapUrlEntry(siteHomePage)@RenderSiteMapUrlEntriesForChildren(siteHomePage, maxSiteMapDepth,excludedDocumentTypes)</urlset>
 
 @helper RenderSiteMapUrlEntry(IPublishedContent node)
 {
@@ -364,14 +364,14 @@ var blackListedDocumentTypes = (!String.IsNullOrEmpty(blacklistedDocumentTypeLis
     }
 }
 
-@helper RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage, int maxSiteMapDepth, string[] documentTypeBlacklist)
+@helper RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage, int maxSiteMapDepth, string[] excludedDocumentTypes)
 {
-    foreach (var page in parentPage.Children.Where(f => !documentTypeBlacklist.Contains(f.ContentType.Alias) && !f.Value<bool>("hideFromXmlSiteMap")))
+    foreach (var page in parentPage.Children.Where(f => !excludedDocumentTypes.Contains(f.ContentType.Alias) && !f.Value<bool>("hideFromXmlSiteMap")))
     {
         @RenderSiteMapUrlEntry(page)
-        if (page.Level < maxSiteMapDepth && page.Children.Any(f => !documentTypeBlacklist.Contains(f.ContentType.Alias) && !f.Value<bool>("hideFromXmlSiteMap")))
+        if (page.Level < maxSiteMapDepth && page.Children.Any(f => !excludedDocumentTypes.Contains(f.ContentType.Alias) && !f.Value<bool>("hideFromXmlSiteMap")))
         {
-            @RenderSiteMapUrlEntriesForChildren(page, maxSiteMapDepth, documentTypeBlacklist)
+            @RenderSiteMapUrlEntriesForChildren(page, maxSiteMapDepth, excludedDocumentTypes)
         }
     }
 }

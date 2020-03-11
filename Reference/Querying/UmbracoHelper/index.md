@@ -30,7 +30,7 @@ Given a node ID, returns a `IPublishedContent`
 
 ```csharp
 @{
-    var page = @Umbraco.Content(Guid.Parse("ca4249ed-2b23-4337-b522-63cabe5587d1"));
+    var page = Umbraco.Content(Guid.Parse("ca4249ed-2b23-4337-b522-63cabe5587d1"));
 }
 
 <h3>@(page.Value<string>("propertyAlias"))
@@ -208,28 +208,12 @@ Get a collection of tags assigned to a property of an entity (queries content, m
 
 ### .Member(1234)
 
-Given a node ID, returns a `dynamic` object, representing a single `IPublishedContent` Member profile
+Given a node ID, returns a single `IPublishedContent` Member 
 
 ```csharp
 @{
-    var member = Umbraco.TypedMember(1234);
-    var email = member.Email;
-    var custom = member.MyCustomPropertyAlias;
-}
-```
-
-### .TypedMember(1234)
-
-Given a node ID, returns an `IPublishedContent` Member profile
-
-```csharp
-@{
-    var member = Umbraco.TypedMember(1234);
-}
-
-<h1>@member.Name profile</h1>
-@foreach (var property in member.Properties) {
-    <label>@property.PropertyTypeAlias:</label> @property.GetValue<string>()
+    var member = Umbraco.MembershipHelper.GetById(Guid.Parse("1f46e266-9acb-4f5b-afdb-5e26c23c56e3"));
+    var email = member.Value<string>("email");
 }
 ```
 
@@ -250,7 +234,8 @@ Returns a `Boolean` on whether there is currently a member profile
 Returns a `Boolean` on whether the currently logged in member has access to the page given its [Umbraco path](../IPublishedContent/Properties.md#path).
 
 ```csharp
-@if(Umbraco.MemberHasAccess(CurrentPage.Path)) {
+@if (Umbraco.MemberHasAccess(Model.Path))
+{
     <h1>Welcome!</h1>
 }
 ```
@@ -260,11 +245,11 @@ Returns a `Boolean` on whether the currently logged in member has access to the 
 Returns a `Boolean` on whether a page with a given [Umbraco path](../IPublishedContent/Properties.md#path) has public access restrictions set.
 
 ```csharp
-@foreach (var child in CurrentPage.Children) {
+@foreach (var child in Model.Children) {
     <h2>@child.Name</h2>
-        @if(Umbraco.IsProtected(child.Path)){
-            <blink>Members only</blink>
-        }
+    if(Umbraco.MembershipHelper.IsProtected(child.Path)){
+        <blink>Members only</blink>
+    }
 }
 ```
 
@@ -284,60 +269,65 @@ Alternatively, you can also specify an `altText` which will be returned if the d
 <p>@Umbraco.GetDictionaryValue("createdOn", "Date Created"): @Model.CreateDate</p>
 ```
 
-### .GetPreValueAsString(int prevalueId)
+### .Search(string term)
 
-Returns a specific prevalue (`string`) based on its ID.
-
-```html
-<p>@Umbraco.GetPreValueAsString(CurrentPage.DropDownProperty)</p>
-```
-
-### .Search(string term, bool useWildCards, string searchProvider)
-
-Given a search term, it by default searches the Umbraco search index for content matching the term. Wildcards are enabled by default, and searchProvider can optionally be set to a different one.
-
-Returns a collection of `dynamic` objects representing an `IPublishedContent` Entity.
-
-```csharp
-@foreach(var result in Umbraco.Search("news",useWildCards:true)){
-    <a href="@result.Url">@result.BodyText</a>
-}
-```
-
-Alternatively, you can use Examine's `SearchCriteria` builder:
+By default, Umbraco searches it's 'External' search index for any published content matching the provided search term. 
 
 ```csharp
 @{
-    var query = ExamineManager.Instance.CreateSearchCriteria()
-                    .NodeName("news")
-                    .Or()
-                    .Field("bodyText", "horse")
-                    .Compile();
-}
-
-@foreach(var result in Umbraco.Search(query)){
-    <a href="@result.Url">@result.BodyText</a>
+    <ul>
+        @foreach (var result in Umbraco.ContentQuery.Search("ipsum"))
+        {
+            <li><a href="@result.Content.Url">@result.Content.Name</a></li>
+        }
+    </ul>
 }
 ```
 
-### .TypedSearch(string term, bool useWildCards, string searchProvider)
+### .Search(string term, int skip, int take, out long totalRecords)
 
-Like .Search() but returns a collection of `IPublishedContent` objects, see sample above.
-
-You can also specify the number of records to skip, the number of records to take.
+Specifying the number of records 'to skip', and the number of records 'to take' is more performant when there are lots of matching search results and there is a requirement to implement paging.
 
 ```csharp
- @{
-        var query = ExamineManager.Instance.CreateSearchCriteria()
-            .NodeName("news")
-            .Or()
-            .Field("bodyText", "horse")
-            .Compile();
-        int totalCount = 0;
+@{
+    var search = Umbraco.ContentQuery.Search("ipsum", 5, 10, out long totalRecords);
+    <ul>
+        <li>
+            Total results: @totalRecords
+            <ul>
+                @foreach (var result in search)
+                {
+                    <li><a href="@result.Content.Url">@result.Content.Name</a></li>
+                }
+            </ul>
+        </li>
+    </ul>
+}
+```
+
+### .Search(IQueryExecutor queryExecutor)
+
+For more complex searching you can construct an Examine QueryExecutor. In the example the search will execute against content of type "blogPost" only.
+[Further information on using Examine](../../Searching/Examine/Quick-Start/index.md#different-ways-to-query)
+
+```csharp
+@{
+    if (!ExamineManager.Instance.TryGetIndex(Constants.UmbracoIndexes.ExternalIndexName, out IIndex index))
+    {
+        throw new InvalidOperationException($"No index found by name{ Constants.UmbracoIndexes.ExternalIndexName }");
     }
-    @foreach(var result in Umbraco.TypedSearch(5,10,out totalCount,query)){
-        <a href="@result.Url">@result.BodyText</a>
+
+    var term = "ipsum";
+    var query = index.GetSearcher().CreateQuery(IndexTypes.Content);
+    var queryExecutor = query.NodeTypeAlias("blogPost").And().ManagedQuery(term);
+
+    foreach (var result in Umbraco.ContentQuery.Search(queryExecutor))
+    {
+        {
+            <li><a href="@result.Content.Url">@result.Content.Name</a></li>
+        }
     }
+}
 ```
 
 ## Templating Helpers
@@ -350,9 +340,9 @@ Renders a macro in the current page content, given the macro's alias, and parame
 @Umbraco.RenderMacro("navigation", new {root="1083", header="Hello"})
 ```
 
-### .RenderTemplate(int pageId, int? altTemplateId)
+### .RenderTemplate(int contentId, int? altTemplateId)
 
-Renders a template, as if a page with the given pageID was requested, optionally with an alternative template ID passed in.
+Renders a template, as if a page with the given contentId was requested, optionally with an alternative template ID passed in.
 
 ```csharp
 @Umbraco.RenderTemplate(1234)

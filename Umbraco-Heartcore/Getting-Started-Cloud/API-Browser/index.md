@@ -1,6 +1,6 @@
 # API Browser
 
-With the built-in API browser that ships with all Umbraco Heartcore projects, you are able to test how your data is outputted and formatted before connecting to your website or application. You can test the API endpoints and see which JSON is outputtet with each call.
+With the built-in API browser that ships with all Umbraco Heartcore projects, you are able to test how your data is outputted and formatted before connecting to your website or application. You can test the API endpoints and see which JSON is outputted with each call.
 
 This article will cover how to use the API Browser in order to reap all the benefits of the feature. The API Browser can be used for both the Content Delivery API and the Content Management API.
 
@@ -38,4 +38,4 @@ In the right side, you'll find the inspector section. While exploring the API, y
 
 The first box, the Response Header, will show you the status of the API endpoint you are currently browsing and tell you which headers is included in the response. 
 
-In the Response Body box the raw JSON data will be outputtet based on the API endpoint you're calling. 
+In the Response Body box the raw JSON data will be output based on the API endpoint you're calling. 

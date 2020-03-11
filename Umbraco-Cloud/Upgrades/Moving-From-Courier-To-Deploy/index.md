@@ -94,7 +94,7 @@ When using Umbraco Courier the entry in the `/Config/Dashboard.config` should co
         <area>content</area>
     </areas>
     <tab caption="Your workspace">
-        <control>/app_plugins/deploy/views/deploy.html</control>
+        <control>/App_Plugins/deploy/views/deploy.html</control>
     </tab>
     </section>
 

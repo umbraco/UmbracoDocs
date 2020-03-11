@@ -115,9 +115,9 @@ In addition you are able to set the Content Delivery API to either Public or Pri
 
 From the Headless tree you can browse and explore the REST API endpoints as well as create and manage your Webhooks.
 
--   API Browser: In the API Browser you can test your API endpoints. Learn more about this in the [API Browser article](../Webhooks).
+-   API Browser: In the API Browser you can test your API endpoints. Learn more about this in the [API Browser article](../API-Browser).
 
--   Webhooks: You can create and manage Webhooks for various content actions. Learn more about how this is setup in the [Webhooks article](../API-Browser).
+-   Webhooks: You can create and manage Webhooks for various content actions. Learn more about how this is setup in the [Webhooks article](../Webhooks).
 
 ## Users
 

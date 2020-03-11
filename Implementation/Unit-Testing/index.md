@@ -22,18 +22,26 @@ public abstract class UmbracoBaseTest
     public Mock<ICultureDictionaryFactory> CultureDictionaryFactory;
     public Mock<IPublishedContentQuery> PublishedContentQuery;
 
+    public Mock<HttpContextBase> HttpContext;
+    public Mock<IMemberService> memberService;
+    public Mock<IPublishedMemberCache> memberCache;
+
     [SetUp]
     public virtual void SetUp()
     {
+        this.SetupHttpContext();
         this.SetupCultureDictionaries();
         this.SetupPublishedContentQuerying();
+        this.SetupMembership();
 
         this.ServiceContext = ServiceContext.CreatePartial();
-        this.MembershipHelper = new MembershipHelper(Mock.Of<HttpContextBase>(), Mock.Of<IPublishedMemberCache>(), Mock.Of<MembershipProvider>(), 
-        Mock.Of<RoleProvider>(), Mock.Of<IMemberService>(), Mock.Of<IMemberTypeService>(), Mock.Of<IUserService>(), Mock.Of<IPublicAccessService>(), AppCaches.NoCache, Mock.Of<ILogger>());
-        this.UmbracoHelper = new UmbracoHelper(Mock.Of<IPublishedContent>(), Mock.Of<ITagQuery>(), this.CultureDictionaryFactory.Object, 
-        Mock.Of<IUmbracoComponentRenderer>(), this.PublishedContentQuery.Object, this.MembershipHelper);
+        this.UmbracoHelper = new UmbracoHelper(Mock.Of<IPublishedContent>(), Mock.Of<ITagQuery>(), this.CultureDictionaryFactory.Object, Mock.Of<IUmbracoComponentRenderer>(), this.PublishedContentQuery.Object, this.MembershipHelper);
         this.UmbracoMapper = new UmbracoMapper(new MapDefinitionCollection(new List<IMapDefinition>()));
+    }
+
+    public virtual void SetupHttpContext()
+    {
+        this.HttpContext = new Mock<HttpContextBase>();
     }
 
     public virtual void SetupCultureDictionaries()
@@ -46,6 +54,16 @@ public abstract class UmbracoBaseTest
     public virtual void SetupPublishedContentQuerying()
     {
         this.PublishedContentQuery = new Mock<IPublishedContentQuery>();
+    }
+
+    public virtual void SetupMembership()
+    {
+        this.memberService = new Mock<IMemberService>();
+        var memberTypeService = Mock.Of<IMemberTypeService>();
+        var membershipProvider = new MembersMembershipProvider(memberService.Object, memberTypeService);
+
+        this.memberCache = new Mock<IPublishedMemberCache>();
+        this.MembershipHelper = new MembershipHelper(this.HttpContext.Object, this.memberCache.Object, membershipProvider, Mock.Of<RoleProvider>(), memberService.Object, memberTypeService, Mock.Of<IUserService>(), Mock.Of<IPublicAccessService>(), AppCaches.NoCache, Mock.Of<ILogger>());
     }
 
     public void SetupPropertyValue(Mock<IPublishedContent> publishedContentMock, string alias, object value, string culture = null, string segment = null)
@@ -284,7 +302,7 @@ public class HomeControllerTests : UmbracoBaseTest
 
     [Test]
     [TestCase("myDictionaryKey", "myDictionaryValue")]
-    public void GivenMyDictionaryKey_WhenIndex_ThenReturnViewModelWithMyPropertyDictionaryValue(string key, string expected)
+    public void GivenMyDictionaryKey_WhenIndexAction_ThenReturnViewModelWithMyPropertyDictionaryValue(string key, string expected)
     {
         var model = new ContentModel(new Mock<IPublishedContent>().Object);
         base.CultureDictionary.Setup(x => x[key]).Returns(expected);
@@ -334,7 +352,7 @@ public class MyCustomControllerTests : UmbracoBaseTest
     }
 
     [Test]
-    public void GivenContentQueryReturnsOtherContent_WhenIndex_ThenReturnViewModelWithOtherContent()
+    public void GivenContentQueryReturnsOtherContent_WhenIndexAction_ThenReturnViewModelWithOtherContent()
     {
         var currentContent = new ContentModel(new Mock<IPublishedContent>().Object);
         var otherContent = Mock.Of<IPublishedContent>();
@@ -343,6 +361,87 @@ public class MyCustomControllerTests : UmbracoBaseTest
         var result = (MyOtherCustomModel)((ViewResult)this.controller.Index(currentContent)).Model;
 
         Assert.AreEqual(otherContent, result.OtherContent);
+    }
+}
+```
+
+## Testing GetCurrentMember using the MembershipHelper
+In this example we have a controller which renders a profile page, by using ```Umbraco.MembershipHelper.GetCurrentMember()```.
+This involves a lot of different dependencies working together behind the scenes such as the ```MembershipHelper```, ```IMemberService```, ```IPublishedMemberCache``` and the ```HttpContext``` which needs to be mocked for our tests to run smoothly.
+
+```csharp
+public class MemberProfileController : RenderMvcController
+{
+    public MemberProfileController(IGlobalSettings globalSettings, IUmbracoContextAccessor umbracoContextAccessor, ServiceContext serviceContext, AppCaches appCaches, IProfilingLogger profilingLogger, UmbracoHelper umbracoHelper) : base(globalSettings, umbracoContextAccessor, serviceContext, appCaches, profilingLogger, umbracoHelper) { }
+
+    public override ActionResult Index(ContentModel model)
+    {
+        var viewModel = new MemberProfile(model.Content)
+        {
+            Member = this.Umbraco.MembershipHelper.GetCurrentMember()
+        };
+        return View(viewModel);
+    }
+}
+
+public class MemberProfile : ContentModel
+{
+    public MemberProfile(IPublishedContent content) : base(content) { }
+    public IPublishedContent Member { get; set; }
+}
+
+[TestFixture]
+public class MemberProfileControllerTests : UmbracoBaseTest 
+{
+    private MemberProfileController controller;
+    
+    [SetUp]
+    public override void SetUp()
+    {
+        base.SetUp();
+        this.controller = new MemberProfileController(Mock.Of<IGlobalSettings>(), Mock.Of<IUmbracoContextAccessor>(), base.ServiceContext, AppCaches.NoCache, Mock.Of<IProfilingLogger>(), base.UmbracoHelper);
+    }
+
+    [Test]
+    [TestCase("member1")]
+    [TestCase("member2")]
+    public void GivenExistingMemberIsAuthenticated_WhenIndexAction_ThenReturnViewModelWithCurrentMember(string username)
+    {
+        var member = new Mock<IMember>();
+        member.Setup(x => x.Username).Returns(username);
+        base.memberService.Setup(x => x.GetByUsername(username)).Returns(member.Object);
+
+        var expected = Mock.Of<IPublishedContent>();
+        base.memberCache.Setup(x => x.GetByMember(member.Object)).Returns(expected);
+
+        var identity = new Mock<IIdentity>();
+        identity.Setup(user => user.IsAuthenticated).Returns(true);
+        identity.Setup(user => user.Name).Returns(username);
+
+        var principal = new Mock<IPrincipal>();
+        principal.Setup(user => user.Identity).Returns(identity.Object);
+
+        this.HttpContext.Setup(ctx => ctx.User).Returns(principal.Object);
+        Thread.CurrentPrincipal = principal.Object;
+
+        var actual = (MemberProfile)((ViewResult)this.controller.Index(new ContentModel(Mock.Of<IPublishedContent>()))).Model;
+
+        Assert.AreEqual(expected, actual.Member);
+    }
+
+    [Test]
+    [TestCase("member1")]
+    [TestCase("member2")]
+    public void GivenExistingMemberIsNotAuthenticated_WhenIndexAction_ThenReturnViewModelWithNullMember(string username)
+    {
+        var member = new Mock<IMember>();
+        member.Setup(x => x.Username).Returns(username);
+        base.memberService.Setup(x => x.GetByUsername(username)).Returns(member.Object);
+        base.memberCache.Setup(x => x.GetByMember(member.Object)).Returns(Mock.Of<IPublishedContent>());
+        
+        var actual = (MemberProfile)((ViewResult)this.controller.Index(new Umbraco.Web.Models.ContentModel(Mock.Of<IPublishedContent>()))).Model;
+
+        Assert.Null(actual.Member);
     }
 }
 ```

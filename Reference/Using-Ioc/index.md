@@ -10,11 +10,9 @@ Umbraco `Composition` represents only a minimalist DI abstraction defined by the
 
 ## Registering dependencies
 
-To register your own dependencies to the container you need to do so in a composer ([Read more about composers and components](../../implementation/composing/index.md)). It looks like this:
+To register your own dependencies to the container you need to do so in a composer ([Read more about composers and components](../../implementation/composing/index.md)) using the `Register` extension method from `Umbraco.Core`:
 
 ```csharp
-using Doccers.Core.Services;
-using Doccers.Core.Services.Implement;
 using Umbraco.Core;
 using Umbraco.Core.Composing;
 
@@ -30,7 +28,7 @@ namespace Doccers.Core
 }
 ```
 
-It is not required to have an interface for your dependency. You can also do this:
+It is not required to have an interface for your dependency:
 
 ```csharp
 public void Compose(Composition composition)
@@ -70,12 +68,12 @@ public enum Lifetime
 Once you have registered your services, factories, helpers or whatever you need for you application, you can go ahead and inject them in a class constructor:
 
 ```csharp
-using Doccers.Core.Services;
+using Example.Core.Services;
 using System.Web.Mvc;
 using Umbraco.Web.Models;
 using Umbraco.Web.Mvc;
 
-namespace Doccers.Core.Controllers
+namespace Example.Core.Controllers
 {
     public class HomeController : RenderMvcController
     {
@@ -101,7 +99,7 @@ namespace Doccers.Core.Controllers
 If I place a breakpoint on `var bar = _foobar.Foo()` and inspect the variable in my `Locals` windows of Visual Studio I see that the value is `Bar`, which is what I expect, since all the `Foobar.Foo()` method does is to return `Bar` as a string:
 
 ```csharp
-namespace Doccers.Core
+namespace Example.Core
 {
     public class Foobar
     {
@@ -109,8 +107,11 @@ namespace Doccers.Core
     }
 }
 ```
+:::tip
+Remember to add `Umbraco.Core` and `Umbraco.Core.Composing` as 'using' statements in your Composer to gain access to all the 'Register' extension methods
+:::
 
-Cool! Know you know how to register your own dependencies in your application. :)
+Cool! now you know how to register your own dependencies in your application. :)
 
 ## Other things you can inject
 
@@ -126,7 +127,7 @@ using System.Linq;
 using Umbraco.Web;
 using Umbraco.Web.PublishedModels;
 
-namespace Doccers.Core.Services.Implement
+namespace Example.Core.Services.Implement
 {
     public class SiteService : ISiteService
     {
@@ -160,7 +161,7 @@ using Examine.Providers;
 using System;
 using Umbraco.Core.Composing;
 
-namespace Doccers.Core.Components
+namespace Example.Core.Components
 {
 
     public class ExamineComponent : IComponent
@@ -188,6 +189,22 @@ namespace Doccers.Core.Components
 }
 ```
 
+### Accessing LightInject container
+
+Should you need to carry out more complicated registrations beyond the minimalist Umbraco DI implementation, you can access the underlying DI container via the `Concrete` property of the `composition`.
+
+```csharp
+var container = composition.Concrete as LightInject.ServiceContainer;
+container.Register<IFoo, Foo>();
+
+// It's not currently possible to assembly scan without workarounds
+// see https://github.com/umbraco/Umbraco-CMS/issues/7502 for details
+// The following will not work:
+// container.RegisterAssembly(/* Any method signature */);
+```
+
+[Visit the LightInject site to see what is possible](https://www.lightinject.net/)
+
 ### ILogger
 
 [Read more about logging](../../Getting-Started/Code/Debugging/Logging/index.md)
@@ -196,7 +213,7 @@ namespace Doccers.Core.Components
 using System;
 using Umbraco.Core.Logging;
 
-namespace Doccers.Core
+namespace Example.Core
 {
     public class Foobar
     {
@@ -214,16 +231,6 @@ namespace Doccers.Core
     }
 }
 ```
-
-### Accessing LightInject container
-
-Should you need to carry out more complicated registrations beyond the minimalist Umbraco DI implementation, you can access the underlying DI container via the `Concrete` property of the `composition`.
-
-```csharp
-var container = composition.Concrete as LightInject.ServiceContainer;
-container.RegisterAssembly(typeof(IFoo).Assembly);
-```
-[Visit the LightInject site to see what is possible](https://www.lightinject.net/)
 
 ## Using DI in Services and Helpers
 

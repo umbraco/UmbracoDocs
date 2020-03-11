@@ -224,7 +224,7 @@ public bool TryFindContent(PublishedRequest frequest)
 And inside a UrlProvider the GetUrl method has the current UmbracoContext injected:
 
 ```csharp
-public override UrlInfo GetUrl(UmbracoContext umbracoContext, IPublishedContent content, UrlProviderMode mode, string culture, Uri current)
+public override UrlInfo GetUrl(UmbracoContext umbracoContext, IPublishedContent content, UrlMode mode, string culture, Uri current)
 {
     var someContent = umbracoContext.Content.GetById(1234);
 
@@ -234,6 +234,7 @@ public override UrlInfo GetUrl(UmbracoContext umbracoContext, IPublishedContent 
 
 :::Note
 It is still possible to inject services into IContentFinder's. IContentFinders are singletons, but the example is showing you do not 'need to' in order to access the Published Content Cache!
+Also note that UrlMode was renamed from UrlProviderMode in Umbraco v8.1.
 :::
 
 ## Custom Services and Helpers
@@ -602,9 +603,9 @@ namespace Umbraco8.ViewPages
             )
         {
         }
-        public CustomViewPage(ISiteService SiteService, ServiceContext services, AppCaches appCaches)
+        public CustomViewPage(ISiteService siteService, ServiceContext services, AppCaches appCaches)
         {
-            SiteService = SiteService;
+            SiteService = siteService;
             Services = services;
             AppCaches = appCaches;
         }
@@ -624,9 +625,9 @@ namespace Umbraco8.ViewPages
             )
         { }
 
-        public CustomViewPage(ISiteService SiteService, ServiceContext services, AppCaches appCaches)
+        public CustomViewPage(ISiteService siteService, ServiceContext services, AppCaches appCaches)
         {
-            SiteService = SiteService;
+            SiteService = siteService;
             Services = services;
             AppCaches = appCaches;
         }

@@ -10,10 +10,10 @@ While the Umbraco Core ships with its own set of language files, package authors
 
 ## Including new language keys
 
-For each language your package supports, you include an .xml file in the same format as the core language files, named with its language code. The language files must be located in a `lang` folder inside your package folder in `app_plugins`. If your package assets are in `/app_plugins/mypackage` all language files must be placed in the following locations:
+For each language your package supports, you include an .xml file in the same format as the core language files, named with its language code. The language files must be located in a `lang` folder inside your package folder in `App_Plugins`. If your package assets are in `/App_Plugins/mypackage` all language files must be placed in the following locations:
 
-- English keys: `/app_plugins/mypackage/lang/en-US.xml`
-- Danish keys: `/app_plugins/mypackage/lang/da-DK.xml`
+- English keys: `/App_Plugins/mypackage/lang/en-US.xml`
+- Danish keys: `/App_Plugins/mypackage/lang/da-DK.xml`
 
 ## Language file format
 
