@@ -8,8 +8,6 @@ As a child node under *Settings* you'll find the *General* node. Here you will f
 
 In this article you can learn more about the various options as well as get an idea of what the settings will affect.
 
-## Groups
-
 The general settings node is divided into 7 different groups:
 
 * [General](#general)
@@ -20,96 +18,97 @@ The general settings node is divided into 7 different groups:
 * [Search](#search)
 * [Tracking and Access](#tracking-and-access)
 
-### General
+## General
 
 A set of different configuration options.
 
-**Title Signature** 
+### Title Signature
 
 Optional text that will be added to title on all pages on your website. E.g. if the pagename is *Start* and your Title Signature is " - by Umbraco", the full title of the page will be "*Start - by Umbraco*".
 
-**Twitter Username**
+### Twitter Username
 
 Fill in your Twitter handle, which will be used ...
 
-**Contact Form Email** and **Contact Form Subject** 
+### Contact Form Email and Contact Form Subject
 
-When using the *Content Form* widget, you can use these to define the email that should receive the forms submissions and the subject of the mails sent to that receiver. 
+When using the *Content Form* widget, you can use these to define the email that should receive the forms submissions and the subject of the mails sent to that receiver.
 
-### SEO
+## SEO
 
 The SEO (Search Engine Optimization) group on the General settings node lets you manage all the general SEO settings on your website.
 
-**Company Name**
+### Company Name
 
 Will be added as the `alt` value on the company logo, whenever it's displayed on the website.
 
-**Company Logo**
+### Company Logo
 
 These will be used main in the right side of the top navigation of the website.
 
-**Site Name**, **Phone Number**, **Email**, **Latitude** and **Longitude**
+### Site Name, Phone Number, Email, Latitude and Longitude
 
 These are all used in Open Graph meta tags in the website `<head>` tag, which will help improve SEO on your website.
 
-### Newsletter
+## Newsletter
 
 When you have a Newsletter service setup using either MailChimp or Campaign Monitor, make sure to configure it here. It will enable you to use the *Newsletter* widget.
 
-**Email Marketing Provider**
+### Email Marketing Provider
 
 Choose your provider from a dropdown list.
 
 Currently we support [MailChimp](https://mailchimp.com/) and [Campaign Monitor](https://www.campaignmonitor.com/).
 
-**API Key**
+### API Key
 
 In order for your website to connect with the external, you will need to add in your API key.
 
 NEED SHORT INSTRUCTIONS ON HOW TO DO THAT!
 
-**Default Subscriber List ID**
+### Default Subscriber List ID
 
-### Instagram [Instagram API deprecated after March 31st 2020???]
+## Instagram [Instagram API deprecated after March 31st 2020???]
 
 In order to use the *Instagram Feed* widget, you will need to configure the following settings:
 
-**Username**
+### Username
 
 Your Instagram username, without `@`.
 
-**User ID**
+### User ID
 
 Your Instragram User ID which you can find by using this tool: [Find your User ID](https://codeofaninja.com/tools/find-instagram-user-id)
 
-**Access Token**
+### Access Token
+
 [not able to get this]
 
-### Cookie Consent
+## Cookie Consent
 
 Your website already has a built-in cookie consent template set up. In this group of properties, you can manage the contents and decide whether you want to enable it on your website.
 
-**Enable Cookie Consent Dialog**
+### Enable Cookie Consent Dialog
 
 When this is checked, the cookie consent dialog will be shown on you website for all new visitors.
 
-**Text**
+### Text
 
 What the cookie consent dialog says is entirely up to you. We recommmend mentioned all cookies you've setup yourself, including the once that ships with Umbraco Cloud.
 
-**Learn More Link**
+### Learn More Link
 
 Adds a link to the cookie consent dialog, which the customer can follow to learn more about your cookies policies. You can choose to add an external/internal URL or choose an existing page from your website.
 
-**Dismiss Button Text**
+### Dismiss Button Text
 
 Define what the text on the *dismiss button* should say.
 
-**Theme**
+### Theme
 
 The cookie consent dialog comes with the pre-defined themes: One with black background, and one with white background.
 
-**Position**
+### Position
 
 You can choose between three different layouts for the cookie consent dialog:
 
@@ -119,13 +118,13 @@ You can choose between three different layouts for the cookie consent dialog:
 
 ![Cookie Consent Dialog](images/cookie-consent-dialog.png)
 
-### Search
+## Search
 
 The Search group has only a single configuration option where you can decide to show search results in a grid. With this view, the search results will include the SEO image set on the pages found.
 
 The default search view is a traditional list view.
 
-### Tracking and Access
+## Tracking and Access
 
 As the final group on the General settings node, you can connect your Google tools with the website. The tools you can connect through here is **Google Analytics**, **Google Tag Manager** and **Google Maps**.
 
