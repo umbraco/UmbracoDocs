@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Content Type specific settings
 
-some text .. 
+some text ..
 
 ## Groups
 
