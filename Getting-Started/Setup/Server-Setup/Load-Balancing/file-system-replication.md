@@ -40,7 +40,8 @@ When deploying Umbraco in a load balanced scenario using file replication, it is
 
 :::tip
 Alternatively store the Umbraco temporary files in the local server's 'temp' folder and set Examine to use a [Directory Factory](#examine-directory-factory-options). Achieve this by changing this configuration setting to 'true' in the web.config. The downside is that if you need to view temporary files you'll have to find it in the temp files. Locating the file this way isn't always clear.
-        
+
+Add or update the 'Umbraco.Core.LocalTempStorage' appSetting in your web.config as below:
 ```xml
 <add key="Umbraco.Core.LocalTempStorage" value="EnvironmentTemp" />
 ```
@@ -66,11 +67,15 @@ There is a specific documentation for load balancing with [Azure Web Apps](azure
 
 ## Examine Directory Factory Options
  
-- The `TempEnvDirectoryFactory` allows Examine to store indexes directly in the environment temporary storage directory, and should be used instead of `SyncTempEnvDirectoryFactory` mentioned above.
+- The `TempEnvDirectoryFactory` allows Examine to store indexes directly in the environment temporary storage directory, and should be used instead of `SyncTempEnvDirectoryFactory` mentioned below. The `TempEnvDirectoryFactory` should be used on front-end read-only servers.
+
+Add or update the 'Umbraco.Examine.LuceneDirectoryFactory' appSetting in your web.config as below:
 ```xml
 <add key="Umbraco.Examine.LuceneDirectoryFactory" value="Examine.LuceneEngine.Directories.TempEnvDirectoryFactory, Examine" />
 ``` 
-- The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory. This setting is needed because Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Any time the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local environment temp files are cleared out that the index files can be restored from the centrally stored index files.
+- The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory, the indexes will be accessed from the temporary storage directory. This setting is needed because Lucene has issues when working from a remote file share so the files need to be read/accessed locally. Any time the index is updated, this setting will ensure that both the locally created indexes and the normal indexes are written to. This will ensure that when the app is restarted or the local environment temp files are cleared out that the index files can be restored from the centrally stored index files. This is only required on the server serving the backoffice and not on front-end read-only servers.
+
+Add or update the 'Umbraco.Examine.LuceneDirectoryFactory' appSetting in your web.config as below:
 ```xml
 <add key="Umbraco.Examine.LuceneDirectoryFactory" value="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory, Examine" />
 ``` 
