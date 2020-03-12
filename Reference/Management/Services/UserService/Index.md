@@ -27,7 +27,7 @@ using Umbraco.Core.Services;
 
 ### Services property
 
-If you wish to use use the user service in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController`), you can access the user service through a local `Services` property:
+If you wish to use the UserService in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController`), you can access the service through a local `Services` property:
 
 ```csharp
 IUserService userService = Services.UserService;
