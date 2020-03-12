@@ -24,13 +24,16 @@ Contents:
 **Sample structure**
 
 Umbraco Starter kit landing page (including installation guide + sample content overview).
+- Getting Started
 - Settings
     - General 
     - Theme
-- Creating Content
-    - Content Types
-    - Widgets
+    - Specific Settings (Content Type specific settings)
+- Content Types
+    - Site
+    - Feed
     - Global Content
+- Widgets
 - Media library
 - Multilingual site (perhaps with another name)
 - Going Live (link to Cloud section)
