@@ -10,6 +10,9 @@
 * [Create Member](#create-member)
 * [Update Member](#update-member)
 * [Delete Member](#delete-member)
+* [Change Member Password](#change-member-password)
+* [Get a reset member password token](#get-a-reset-member-password-token)
+* [Reset member password](#reset-member-password)
 * [Add member to member group](#add-member-to-member-group)
 * [Remove member from member group](#remove-member-from-member-group)
 
