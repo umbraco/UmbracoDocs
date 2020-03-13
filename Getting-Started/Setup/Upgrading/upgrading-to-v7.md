@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Upgrading to version 7
 
 *This document should be used as a reference, not a step by step guide. Upgrading will largely depend on what version of Umbraco you are currently running, what packages you have installed and the many aspects of your own Umbraco installation.*
@@ -6,7 +10,7 @@ The [standard upgrade instructions](https://our.umbraco.com/documentation/Instal
 
 ## Backup
 
-Just like with any upgrade, it is critical that you back up your website and database before upgrading. There are several database changes made during install and you cannot revert an v7 database to a v6 databse.
+Like with any upgrade, it is critical that you back up your website and database before upgrading. There are several database changes made during install and you cannot revert an v7 database to a v6 database.
 
 ## .Net 4.5
 
@@ -19,7 +23,7 @@ Umbraco 7 requires browsers with proper html 5 support, these include Chrome, Fi
 
 ## Breaking changes
 
-Before you upgrade you should read the list of breaking changes, in some cases you may need to change some of your codebase if code has been removed from the core or if one of these breaking changes direclty affects your install.
+Before you upgrade you should read the list of breaking changes. In some cases you may need to change some of your codebase if code has been removed from the core or if one of these breaking changes directly affects your install.
 
 See: [List of breaking changes](https://our.umbraco.com/contribute/releases/700)
 
@@ -40,52 +44,52 @@ and follow the prompts
 It is recommended that you use a Diff tool to compare the configuration file changes with your own current configuration files.
 
 * /web.config updates
-	* Details are listed here: [http://issues.umbraco.org/issue/U4-2900](http://issues.umbraco.org/issue/U4-2900)
-	* You'll need to compare the new v7 web.config with your current web.config, here's a quick reference of what needs to change:
-		* remove &lt;section name="BaseRestExtensions"&gt; section
-		* remove &lt;section name="FileSystemProviders"&gt; section
-		* remove &lt;sectionGroup name="system.web.webPages.razor"&gt; section
-		* remove &lt;<FileSystemProviders &gt; element
-		* remove &lt;BaseRestExtensions &gt; element
-		* remove &lt;add key="umbracoUseMediumTrust" &gt; element
-		* remove &lt;system.web.extensions&gt; element
-		* removes &lt;xhtmlConformance &gt; element
-		* remove &lt;system.codedom&gt; element
-		* remove &lt;compilation&gt; <strong>&lt;assemblies *&gt;</strong> &lt;/compilation&gt;
-		* remove &lt;system.web.webPages.razor &gt; element
-		* new &lt;sectionGroup name="umbracoConfiguration"&gt; section
-		* new &lt;umbracoConfiguration&gt; element  
-		* ensure that the **targetFramework="4.5"** is added to the &lt;httpRuntime&gt; element
-		* add &lt;add key="ValidationSettings:UnobtrusiveValidationMode" value="None" /&gt; to the appSettings element
+    * Details are listed here: [https://issues.umbraco.org/issue/U4-2900](https://issues.umbraco.org/issue/U4-2900)
+    * You'll need to compare the new v7 web.config with your current web.config, here's a quick reference of what needs to change:
+        * Remove &lt;section name="BaseRestExtensions"&gt; section
+        * Remove &lt;section name="FileSystemProviders"&gt; section
+        * Remove &lt;sectionGroup name="system.web.webPages.razor"&gt; section
+        * Remove &lt;<FileSystemProviders &gt; element
+        * Remove &lt;BaseRestExtensions &gt; element
+        * Remove &lt;add key="umbracoUseMediumTrust" &gt; element
+        * Remove &lt;system.web.extensions&gt; element
+        * Removes &lt;xhtmlConformance &gt; element
+        * Remove &lt;system.codedom&gt; element
+        * Remove &lt;compilation&gt; <strong>&lt;assemblies *&gt;</strong> &lt;/compilation&gt;
+        * Remove &lt;system.web.webPages.razor &gt; element
+        * New &lt;sectionGroup name="umbracoConfiguration"&gt; section
+        * New &lt;umbracoConfiguration&gt; element
+        * Ensure that the **targetFramework="4.5"** is added to the &lt;httpRuntime&gt; element
+        * Add &lt;add key="ValidationSettings:UnobtrusiveValidationMode" value="None" /&gt; to the appSettings element
 * /config/clientdependency.config changes
-	* remove &lt;add name="CanvasProvider" /&gt; element
+    * remove &lt;add name="CanvasProvider" /&gt; element
 * /views/web.config updates
-* new /macroscripts/web.config
+* New /macroscripts/web.config
 * /config/umbracoSettings.config
-	* Umbraco is now shipped with minimal settings but the [full settings](https://our.umbraco.com/documentation/Using-Umbraco/Config-files/umbracoSettings/) are still available
-	* umbracoSettings is now a true ASP.Net configuration section [http://issues.umbraco.org/issue/U4-58](http://issues.umbraco.org/issue/U4-58)
-	* remove the &lt;EnableCanvasEditing&gt; element
-	* remove the &lt;webservices&gt; element
+    * Umbraco is now shipped with minimal settings but the [full settings](https://our.umbraco.com/documentation/Using-Umbraco/Config-files/umbracoSettings/) are still available
+    * umbracoSettings is now a true ASP.NET configuration section [https://issues.umbraco.org/issue/U4-58](https://issues.umbraco.org/issue/U4-58)
+    * remove the &lt;EnableCanvasEditing&gt; element
+    * remove the &lt;webservices&gt; element
 * Removed xsltExtensions.config
-	* [http://issues.umbraco.org/issue/U4-2742](http://issues.umbraco.org/issue/U4-2742)
+    * [https://issues.umbraco.org/issue/U4-2742](https://issues.umbraco.org/issue/U4-2742)
 * /config/applications.config and /config/trees.config have some icon paths and names updated, you will need to merge the new changes into your existing config files.
 * /config/tinyMceConfig.config
-	* The inlinepopups is compatible supported in v7, you will need to remove this element: &lt;plugin loadOnFrontend="true"&gt;inlinepopups&lt;/plugin&gt;
-	* The plugins element that is shipped with v7 looks like:
+    * The inlinepopups is compatible supported in v7, you will need to remove this element: &lt;plugin loadOnFrontend="true"&gt;inlinepopups&lt;/plugin&gt;
+    * The plugins element that is shipped with v7 looks like:
 
-		    <plugins>
-		        <plugin loadOnFrontend="true">code</plugin>  
-		        <plugin loadOnFrontend="true">paste</plugin>
-		        <plugin loadOnFrontend="true">umbracolink</plugin>
-		        <plugin loadOnFrontend="true">anchor</plugin>
-		        <plugin loadOnFrontend="true">charmap</plugin>
-		        <plugin loadOnFrontend="true">table</plugin>
-		        <plugin loadOnFrontend="true">lists</plugin>
-		    </plugins>
-	* You will need to merge the changes from the new tinyMceConfig file into yours, the 'command' elements that have changed are: JustifyCenter, JustifyLeft, JustifyRight, JustifyFull, umbracomacro, umbracoembed, mceImage, subscript, superscript, styleselect
-	* Remove the command: mceSpellCheck
+            <plugins>
+                <plugin loadOnFrontend="true">code</plugin>
+                <plugin loadOnFrontend="true">paste</plugin>
+                <plugin loadOnFrontend="true">umbracolink</plugin>
+                <plugin loadOnFrontend="true">anchor</plugin>
+                <plugin loadOnFrontend="true">charmap</plugin>
+                <plugin loadOnFrontend="true">table</plugin>
+                <plugin loadOnFrontend="true">lists</plugin>
+            </plugins>
+    * You will need to merge the changes from the new tinyMceConfig file into yours, the 'command' elements that have changed are: JustifyCenter, JustifyLeft, JustifyRight, JustifyFull, umbracomacro, umbracoembed, mceImage, subscript, superscript, styleselect
+    * Remove the command: mceSpellCheck
 * /config/dashboard.config
-	* You will need to merge the changes from the new dashboard.config into yours. Some of the original dashboard entries that were shipped with v6 have been replaced or removed.
+    * You will need to merge the changes from the new dashboard.config into yours. Some of the original dashboard entries that were shipped with v6 have been replaced or removed.
 
 ## Medium Trust
 
@@ -103,7 +107,7 @@ Content, media, members and data type trees will no longer raise the legacy tree
 
 ### Legacy business logic events
 
-The content, media, member and data type editors have been re-created and are solely using the new Umbraco Services data layer. This means that operations performed in the backoffice will no longer raise the legacy business logic events (for example, events based on `umbraco.cms.businesslogic.web.Document`). It is recommended to change your event handlers to subsribe to the new Services data layer events. These are static events and are found in the various services, for example:  `Umbraco.Core.Services.ContentService.Saved`
+The content, media, member and data type editors have been re-created and are solely using the new Umbraco Services data layer. This means that operations performed in the backoffice will no longer raise the legacy business logic events (for example, events based on `umbraco.cms.businesslogic.web.Document`). It is recommended to change your event handlers to subscribe to the new Services data layer events. These are static events and are found in the various services, for example:  `Umbraco.Core.Services.ContentService.Saved`
 
 ## Property Editors
 
@@ -115,7 +119,7 @@ which have not been completed for v7.0:
 * Image cropper
 
 ### Related links property editor and xslt
-Since this is an advanced prop editor the data format has changed from xml to json this shouldn't have any effect when retrieving the data from razor but if you are outputting related links data with xslt you'll need to update your xslt snippet. Making use of the new library method umbraco.library:JsonToXml and taking into account that the xml structure has also slightly changed.
+Since this is an advanced property editor, the data format has changed from xml to json. This shouldn't have any effect when retrieving the data from razor, but if you are outputting related links data with xslt you'll need to update your xslt snippet. Making use of the new library method umbraco.library:JsonToXml and taking into account that the xml structure has also slightly changed.
 
 ### GUID -> Alias mapping
 
@@ -123,11 +127,11 @@ There are several database changes made in v7, one of which is the change of ref
 
 ## Parameter Editors
 
-Legacy parameter editors (pre v7) will not work with Umbraco v7. If Umbraco detects a legacy parameter editor alias that does not map to a real v7 parameter editor it will simply render a textbox in its place. You will need to update your macros to use a compatible v7 parameter editor for those that aren't supported.
+Legacy parameter editors (pre v7) will not work with Umbraco v7. If Umbraco detects a legacy parameter editor alias that does not map to a real v7 parameter editor it will render a textbox in its place. You will need to update your macros to use a compatible v7 parameter editor for those that aren't supported.
 
-Previously parameter editors were registered in an Umbraco database table: `cmsMacroPropertyType` which no longer exists. Parameter editors in v7 are plugins just like property editors. During the v7 upgrade installation process it will update the new `cmsMacroProperty.editorAlias` column with the previous parameter editor alias. During this process it will look into the `Umbraco.Core.PropertyEditors.LegacyParameterEditorAliasConverter` for a map between a legacy alias to a new v7 alias.
+Previously parameter editors were registered in an Umbraco database table: `cmsMacroPropertyType` which no longer exists. Parameter editors in v7 are plugins like property editors. During the v7 upgrade installation process it will update the new `cmsMacroProperty.editorAlias` column with the previous parameter editor alias. During this process it will look into the `Umbraco.Core.PropertyEditors.LegacyParameterEditorAliasConverter` for a map between a legacy alias to a new v7 alias.
 
-If you have custom legacy parameter editors and want to map them during install to new v7 parmater editor aliases you can modify this mapping during application startup using this method: `Umbraco.Core.PropertyEditors.LegacyParameterEditorAliasConverter.CreateMap`
+If you have custom legacy parameter editors and want to map them during install to new v7 parameter editor aliases you can modify this mapping during application startup using this method: `Umbraco.Core.PropertyEditors.LegacyParameterEditorAliasConverter.CreateMap`
 
 ## Database changes
 
@@ -135,18 +139,18 @@ All database changes will be taken care of during the upgrade installation proce
 
 For database change details see (including all child tasks):
 
-* [http://issues.umbraco.org/issue/U4-2886](http://issues.umbraco.org/issue/U4-2886)
-* [http://issues.umbraco.org/issue/U4-3015](http://issues.umbraco.org/issue/U4-3015)
+* [Issue U4-2886](https://issues.umbraco.org/issue/U4-2886)
+* [Issue U4-3015](https://issues.umbraco.org/issue/U4-3015)
 
 ## Tags
 
 *(see above for the database updates made for better tag support)*
 
-* Tags can now be assigned to a node’s property not just a node
+* Tags can now be assigned to a node’s property and not only a node
 * Multiple tag controls can exist on one page with different data
-	* The legacy API does **not** support this, the legacy API will effectively just add/update/remove tags for the first property found for the document that is assigned a tag property editor.
+    * The legacy API does **not** support this, the legacy API will effectively, add/update/remove tags for the first property found for the document that is assigned a tag property editor.
 * There is a new ITagService which can be used to query tags
-	* Querying for tags in a view (front-end) can be done via the new TagQuery class which is exposed from the UmbracoHelper. For example: `@Umbraco.TagQuery.GetTagsForProperty`
+    * Querying for tags in a view (front-end) can be done via the new TagQuery class which is exposed from the UmbracoHelper. For example: `@Umbraco.TagQuery.GetTagsForProperty`
 
 ## Packages
 
@@ -162,10 +166,10 @@ Could not load type 'umbraco.BusinessLogic.Utils.TypeFinder' from assembly 'busi
 
 The TypeFinder has been deprecated since 4.10 and is now found under Umbraco.Core.TypeFinder
 
-### Javascript in menu actions
+### JavaScript in menu actions
 
-While you need to have JavaScript  inside menu actions to trigger a response, it is highly recommended that you use the recommended UmbClientMgr methods, and not try to override parent.right.document and similar tricks to get to the right-hand frame.
+While you need to have JavaScript inside menu actions to trigger a response, it is highly recommended that you use the recommended UmbClientMgr methods. You should not try to override parent.right.document and similar tricks to get to the right-hand frame.
 
 ### Use the recommended Umbraco uicontrols
 
-If you have a webforms page in the backoffice, it is recommended that you use the built-in asp.net controls to render panels, panes, tabviews, properties and so on. If you use the raw html, or try to style it to match the backoffice, you will get out of sync, therefore, follow the guidelines set by Umbraco's internal editors and use the asp.net custom controls for UI.
+If you have a webforms page in the backoffice, it is recommended that you use the built-in ASP.NET controls to render panels, panes, tabviews, properties and so on. If you use the raw html, or try to style it to match the backoffice, you will get out of sync, therefore, follow the guidelines set by Umbraco's internal editors and use the ASP.NET custom controls for UI.

@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Technical Contact
 
 One of the biggest benefits of having an Umbraco Cloud project is that you do not need to worry about the hosting. This is something we handle for you.
@@ -6,7 +10,7 @@ When we do maintenance on our Umbraco Cloud servers we send out information to a
 
 If you have more than one project on Umbraco Cloud you will need to add a technical contact to each of the projects manually.
 
-When you create a **new project** the user used to create the project will automatically be added as the technical contact. You can update the information at any time, and if needed, it's possible to add more than one technical contact. 
+When you create a **new project** the user used to create the project will automatically be added as the technical contact. You can update the information at any time, and if needed, it's possible to add more than one technical contact.
 
 ## How to add a technical contact
 

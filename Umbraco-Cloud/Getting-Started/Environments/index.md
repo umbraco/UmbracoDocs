@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Technical overview of an Umbraco Cloud environment
 
 When you have multiple environments in your Umbraco Cloud project the *Development* environment will be the *first* environment in the workflow. What this means, is that this is the environment you are going to work with when building the structure of your website. This is also the environment you clone down when you want to work with your project locally.
@@ -28,7 +32,7 @@ Read more about this and team member roles in the [Team Members article](../../S
 
 ## SQL Database
 
-Each of your Umbraco Cloud environments has its own SQL Azure database. You have full access to the databases, and you can create custom tables just like you'd expect from any other hosting provider.
+Each of your Umbraco Cloud environments has its own SQL Azure database. You have full access to the databases, and you can create custom tables like you'd expect from any other hosting provider.
 
 Learn more about how to connect to your Umbraco Cloud databases in the [Database](../../Databases) article.
 

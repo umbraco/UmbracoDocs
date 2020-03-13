@@ -1,6 +1,10 @@
-# Troubleshooting duplicate dictionary items 
+---
+versionFrom: 7.0.0
+---
 
-If your Umbraco Cloud project has been using Courier in the past and you have dictionary items that have been deployed between your environments, you may see errors and/or duplicated dictionary items when your site is upgraded to using Umbraco Deploy.
+# Troubleshooting duplicate dictionary items
+
+Has your Umbraco Cloud project been using Courier in the past and have you been deploying dictionary items between your environments? Then you may see errors and/or duplicated dictionary items when your site is upgraded to Umbraco Deploy.
 
 ## Cause
 
@@ -8,7 +12,7 @@ Due to how Umbraco Courier has been handling dictionary items in the past, old s
 
 Courier handled dictionary items only using their `ItemKey` (alias) and did not take into account that dictionary items also carried a unique identifier. Since this unique identifier was not known or handled by Courier - it would not be carried over to other environments when these dictionary items were deployed. As Courier never cared about or used this unique identifier - everything seemed to be in order most of the time.
 
-Upgrading to Deploy, one of the major improvements is that Deploy handles everything by its unique identifier making it much more stable. However when dictionary items are in a state of not having consistent unique identifiers across each individual environment - they will simply not work with Deploy unless they are synchronized.
+Upgrading to Deploy, one of the major improvements is that Deploy handles everything by its unique identifier making it much more stable. However when dictionary items are in a state of not having consistent unique identifiers across each individual environment - they will not work with Deploy unless they are synchronized.
 
 ## Identify the issue
 
@@ -23,7 +27,7 @@ There are two types of duplicate dictionary item errors. The first scenario (*Sc
     they refer to the same unique Umbraco object
     and therefore cannot be processed.
     ---------------------------------------------
-    Collisions for entity type "dictionary-item": 
+    Collisions for entity type "dictionary-item":
         Collisions for unique identifier "Welcome":
             UdaFile: ~/data/revision/dictionary-item__0cff5cd8fca24b9a80d29390dfb917af.uda
             UdaFile: ~/data/revision/dictionary-item__1f1d9fe32e094e6c9b3c8871e123e34c.uda
@@ -35,7 +39,7 @@ The second scenario (*Scenario 2*) is when you do not have duplicate files for y
     they refer to the same unique Umbraco object
     and therefore cannot be processed.
     ---------------------------------------------
-    Collisions for entity type "dictionary-item": 
+    Collisions for entity type "dictionary-item":
         Collisions for unique identifier "Welcome":
             Artifact: umb://dictionary-item/01aaeeed662645c8b348b2aa5ff83d6d
             {DictionaryItem umb://dictionary-item/fe1cae45094b43fba0545bdc45d121ed}
@@ -70,6 +74,6 @@ Deploy will now again delete any existing duplicate entries and update the ID's 
 
 ## Important Notes
 
-What Deploy will **not** help you with, is duplicated items that do not have a corresponding UDA file. Since we do not know what to do with a dictionary item that we don't have a matching UDA file for - if we find duplicates with no UDA files, we will simply remove one of them to ensure there are no duplicate errors. For this item to be deployed, you will need to recreate a UDA file for it - this can be done simply by saving the item through the backoffice.
+What Deploy will **not** help you with, is duplicated items that do not have a corresponding UDA file. Deploy does not know what to do with a dictionary item that doesn't have a matching UDA file. If Deploy finds duplicates with no UDA files, one of them will be removed to ensure there are no duplicate errors. For this item to be deployed, you will need to recreate a UDA file for it - this can be done by saving the item through the backoffice.
 
 Once you've cleaned up the dictionary items on your Umbraco Cloud environments, it is important that you clone down a fresh clone of your project locally to ensure you have all the correct / updated files on your local machine.

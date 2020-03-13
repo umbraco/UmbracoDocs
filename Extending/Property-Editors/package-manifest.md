@@ -1,52 +1,64 @@
+---
+versionFrom: 7.0.0
+---
+
 # Package Manifest
+
 The package.manifest JSON file format is used to describe one or more custom Umbraco property editors, grid editors or parameter editors. This page outlines the file format and properties found in the JSON.
 
 ## Sample Manifest
+
 This is a sample manifest, it is always stored in a folder in `/App_Plugins/{YourPackageName}`, with the name `package.manifest`
 
-    {
-        "propertyEditors": [
-            {
-                "alias": "Sir.Trevor",
-                "name": "Sir Trevor",
-                "editor": {
-                    "view": "~/App_Plugins/SirTrevor/SirTrevor.html",
-                    "hideLabel": true,
-                    "valueType": "JSON"
-                }
+```json
+{
+    "propertyEditors": [
+        {
+            "alias": "Sir.Trevor",
+            "name": "Sir Trevor",
+            "editor": {
+                "view": "~/App_Plugins/SirTrevor/SirTrevor.html",
+                "hideLabel": true,
+                "valueType": "JSON"
             }
-        ],
-        "javascript": [
-            "~/App_Plugins/SirTrevor/SirTrevor.controller.js"
-        ]
-    }
+        }
+    ],
+    "javascript": [
+        "~/App_Plugins/SirTrevor/SirTrevor.controller.js"
+    ]
+}
+```
 
 ## Root elements
 The manifest can contain five root collections, none of them are mandatory:
 
-    {
-        "propertyEditors": [],
-        "gridEditors": [],
-        "parameterEditors": [],
-        "javascript": [],
-        "css": []
-    }
+```json
+{
+    "propertyEditors": [],
+    "gridEditors": [],
+    "parameterEditors": [],
+    "javascript": [],
+    "css": []
+}
+```
 
 ## Property Editors
 `propertyEditors` returns an array of property editor definitions, each object specifies an editor to make available to data types as an editor component. These editors are primarily property editors for content, media and members. They can also be made available as a macro parameter editor.
 
 The basic values on any editor are `alias`, `name` and `editor`. These three **must** be set. Furthermore the editor value is an object with additional configuration options, it must contain a view value.
 
-    {
-        "alias": "my.editor.alias",
-        "name": "My friendly editor name",
-        "editor": {
-            view: "~/App_Plugins/SirTrevor/view.html"
-        },
-        "prevalues": {
-            fields: []
-        }
+```json
+{
+    "alias": "my.editor.alias",
+    "name": "My friendly editor name",
+    "editor": {
+        view: "~/App_Plugins/SirTrevor/view.html"
+    },
+    "prevalues": {
+        fields: []
     }
+}
+```
 
 * `alias` The alias of the editor, this must be unique, its recommended to prefix with your own "namespace"
 * `name` The name visible to the user in the UI, should also be unique.
@@ -61,13 +73,15 @@ The basic values on any editor are `alias`, `name` and `editor`. These three **m
 ### Editor
 `editor` Besides setting a view, the editor can also contain additional information.
 
-    "editor": {
-        "view": "~/App_Plugins/SirTrevor/view.html",
-        "hideLabel": true,
-        "valueType": "TEXT",
-        "validation": {},
-        "isReadOnly": false 
-    }
+```json
+"editor": {
+    "view": "~/App_Plugins/SirTrevor/view.html",
+    "hideLabel": true,
+    "valueType": "TEXT",
+    "validation": {},
+    "isReadOnly": false
+}
+```
 
 * `view` Path to the HTML file to use for rendering the editor
 * `hideLabel` Turn the label on/off
@@ -85,18 +99,21 @@ The basic values on any editor are `alias`, `name` and `editor`. These three **m
 ### Pre Values
 `preValues` is a collection of prevalue editors, used for configuring the property editor, the prevalues object must return an array of editors, called `fields`.
 
-    "prevalues": {
-        "fields": [
-            {
-                "label": "Enable something",
-                "description": "This is a description",
-                "key": "enableStuff",
-                "view": "boolean"
-            }            
-        ]
-    }
+```json
+"prevalues": {
+    "fields": [
+        {
+            "label": "Enable something",
+            "description": "This is a description",
+            "key": "enableStuff",
+            "view": "boolean"
+        }
+    ]
+}
+```
 
 Each field contains a number of configuration values:
+
 * `label` The label shown on the data type configuration screen
 * `description` Help text displayed underneath the label
 * `key` The key the prevalue is stored under (see below)
@@ -106,40 +123,46 @@ Each field contains a number of configuration values:
 
 It also means when this property editor is used on a property the prevalue will be exposed on the models configuration object as shown below, inside the property editors controller:
 
-    // this is the property value
-    $scope.model.value = "hello";
+```javascript
+// this is the property value
+$scope.model.value = "hello";
 
-    // this is the configuration on the property editor
-    $scope.model.config
+// this is the configuration on the property editor
+$scope.model.config
 
-    // this is our specific prevalue with the alias wolf
-    $scope.model.config.wolf
+// this is our specific prevalue with the alias wolf
+$scope.model.config.wolf
+```
 
 `view` config value points the prevalue editor to an editor to use. This follows the same concept as any other editor in Umbraco, but with prevalue editors there are a couple of conventions.
 
-If you just specify a name like `boolean` then Umbraco will look at `/umbraco/views/prevalueeditors/boolean/boolean.html` for the editor view - if you wish to use your own, you specify the path like `~/App_Data/package/prevalue-editor.html`.
+If you specify a name like `boolean` then Umbraco will look at `/umbraco/views/prevalueeditors/boolean/boolean.html` for the editor view - if you wish to use your own, you specify the path like `~/App_Data/package/prevalue-editor.html`.
 
 ### Default Config
 The defaultConfig object provides a collection of default configuration values in case the property editor is not configured or is using a parameter editor, which doesn't allow configuration. The object is a key/value collection and must match the prevalue field keys.
 
-    "defaultConfig": {
-        "wolf": "nope",
-        "editor": "hello",
-        "random": 1234
-    }
+```json
+"defaultConfig": {
+    "wolf": "nope",
+    "editor": "hello",
+    "random": 1234
+}
+```
 
 ## Grid Editors
 Similar to how the `propertyEditors` array defines one or more property editors, `gridEditors` can be used to define editors specific to the grid. Setting up the default richtext editor in the Umbraco grid could look like:
 
-    "gridEditors": [
-        {
-            "name": "Rich text editor",
-            "alias": "rte",
-            "view": "rte",
-            "icon": "icon-article"
-        }
-    ]
-    
+```json
+"gridEditors": [
+    {
+        "name": "Rich text editor",
+        "alias": "rte",
+        "view": "rte",
+        "icon": "icon-article"
+    }
+]
+```
+
 However the default grid editors are already configured in `/config/grid.editors.config.js`. You can use the file for inspiration, or see the [Grid Editors](../../Getting-Started/Backoffice/Property-Editors/Built-in-Property-Editors/Grid-Layout/Grid-Editors.md) page for more information on grid editors.
 
 ## Parameter Editors
@@ -148,21 +171,24 @@ However the default grid editors are already configured in `/config/grid.editors
 The parameter editors array follows the same format as the property editors described above, however it cannot contain prevalues since there are no configuration options for macro parameter editors.
 
 ## JavaScript
-`javascript` returns a string[] of javascript files to load on application start
+`javascript` returns a string[] of JavaScript files to load on application start
 
-    "javascript": [
-            "~/App_Plugins/SirTrevor/SirTrevor.controller.js",
-            "~/App_Plugins/SirTrevor/service.js"
-    ]
+```json
+"javascript": [
+    "~/App_Plugins/SirTrevor/SirTrevor.controller.js",
+    "~/App_Plugins/SirTrevor/service.js"
+]
+```
 
 ## CSS
 `css` returns a string[] of css files to load on application start
 
-    "css": [
-            "~/App_Plugins/SirTrevor/SirTrevor.css",
-            "~/App_Plugins/SirTrevor/hibba.css"
-    ]
-
+```json
+"css": [
+    "~/App_Plugins/SirTrevor/SirTrevor.css",
+    "~/App_Plugins/SirTrevor/hibba.css"
+]
+```
 
 ## JSON Schema
 The package.manifest JSON file has a hosted online JSON schema file that allows editors such as Visual Studio and Visual Studio Code to have autocomplete/intellisense support when creating and editing package.manifest files. This helps to avoid mistakes or errors when creating your package.manifest files.
@@ -175,8 +201,7 @@ To associate the hosted JSON schema file to all package.manifest files you will 
 * Browse down to Text Editor -> File Extension
 * Add `manifest` into the Extension box
 * Select `JSON Editor` from the dropdown and add the mapping
-* Open a `package.manifest` file and ensure in the top left hand corner you see the schema with the URL set to http://json.schemastore.org/package.manifest
-
+* Open a `package.manifest` file and ensure in the top left hand corner you see the schema with the URL set to http://json.schemastore.org/package.manifest. You can also add the schema inline in the json file (see below).
 
 ### Setting up Visual Studio Code
 
@@ -186,13 +211,27 @@ To associate the hosted JSON schema file to all package.manifest files you will 
 * This will open two editors side by side with the default settings on the left and custom overrides on the right
 * In the right hand file add the following
 
-    {
-        "json.schemas": [
-            {
-                "fileMatch": [
-                    "manifest.json"
-                ],
-                "url": "http://json.schemastore.org/package.manifest"
-            }
-        ]
-    }
+```json
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "manifest.json"
+            ],
+            "url": "http://json.schemastore.org/package.manifest"
+        }
+    ]
+}
+```
+
+### Adding inline schema
+
+Editors like visual studio can use the `$schema` notation in your file.
+
+```json
+{
+    "$schema" : "http://json.schemastore.org/package.manifest",
+    "javascript": [],
+    "other properties": ""
+}
+```

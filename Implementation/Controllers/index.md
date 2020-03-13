@@ -1,6 +1,15 @@
+---
+versionFrom: 7.0.0
+product: "UmbracoCms"
+complexity: "Intermediate"
+audience: "Developers"
+meta.Title: "Controllers in Umbraco"
+meta.Description: "An Umbraco API Controller is an ASP.NET WebApi controller that is used for creating REST services."
+---
+
 # Controllers in Umbraco
 
-_There are a few types of controllers in Umbraco that perform different tasks_
+_There are a few types of controllers in Umbraco that perform different tasks_.
 
 ## Render MVC Controllers
 
@@ -21,7 +30,7 @@ See [Reference documentation on SurfaceControllers for full details](../../Refer
 
 ## Umbraco Api Controllers
 
-An Umbraco API Controller is an ASP.Net WebApi controller that is used for creating REST services. These controllers are auto-routed meaning that you don't have to add/create your own routes for these controllers to work.
+An Umbraco API Controller is an ASP.NET WebApi controller that is used for creating REST services. These controllers are auto-routed meaning that you don't have to add/create your own routes for these controllers to work.
 
 All implementations of Umbraco Api Controllers inherit from the base class `Umbraco.Web.WebApi.UmbracoApiController`.
 
@@ -29,7 +38,7 @@ See [Reference documentation on Umbraco Api Controllers for full details](../../
 
 ## Umbraco Authorized Controllers and Attributes
 
-An Umbraco Authorized controller is used when the controller requires member or user authentication (authN) and/or authorization (authZ). If either the authN or authZ fail the controller will return a "401 - unauthorized response."  
+An Umbraco Authorized controller is used when the controller requires member or user authentication (authN) and/or authorization (authZ). If either the authN or authZ fail the controller will return a "401 - unauthorized response."
 
 ### Backoffice Authorization
 
@@ -56,17 +65,17 @@ Authorizing a controller for a front-end member is achieved with attributes:
 
 You can attribute your controller or action with this attribute which will ensure that a member must be logged in to access the resource. An example:
 
-
-    [MemberAuthorize]
-    public class AccountController : SurfaceController
+```csharp
+[MemberAuthorize]
+public class AccountController : SurfaceController
+{
+    [HttpPost]
+    public ActionResult UpdateAccountInfo(AccountInfo accountInfo)
     {
-      [HttpPost]
-      public ActionResult UpdateAccountInfo(AccountInfo accountInfo)
-      {
-          // TODO: Update the account info for the current member
-      }
+        // TODO: Update the account info for the current member
     }
-
+}
+```
 
 There are a few properties that exist for the attribute to give you more control over the authorization process for which members can access the resource:
 
@@ -75,4 +84,4 @@ There are a few properties that exist for the attribute to give you more control
 
 ### Routing
 
-For details on the routes and route requirements regarding authentication see [Routing for authentication](../../Reference/Routing/Authorized/index.md)
+For details on the routes and route requirements regarding authentication see [Routing for authentication](../../Reference/Routing/Authorized/index.md) and for authorization in API controllers see [Umbraco API authorization](../../Reference/Routing/WebApi/authorization).

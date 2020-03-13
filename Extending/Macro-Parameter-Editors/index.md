@@ -1,6 +1,13 @@
+---
+versionFrom: 7.0.0
+propduct: "CMS"
+meta.Title: "Macro Parameter Editors"
+meta.Description: "A guide to creating macro property editors in Umbraco"
+---
+
 # Macro Parameter Editors
 
-Every macro can contain parameters. There are some useful default types.  For example: 
+Every macro can contain parameters. Options for the Editor to set when they insert the Macro to customise the output. There are some useful default types.  For example:
 
 * True/False
 * TextBox
@@ -9,147 +16,172 @@ Every macro can contain parameters. There are some useful default types.  For ex
 * Single/Multiple Media Picker
 * Single/Multiple Content Picker
 
-... and some 'others'.  Consult the [Backoffice documentation](../../Using-Umbraco/Backoffice-Overview.md) for general information on Macros.
+... and some 'others'.  Consult the [Backoffice documentation](../../Getting-Started/Backoffice/index.md) for general information on Macros.
 
-You can create your own custom macro parameter types.
+It is possible to create custom macro parameter types.
 
-## Umbraco 7 - Creating your own macro parameter type ##
+## Creating a custom Macro Parameter Type ##
 
-### isParameterEditor ###
-All you need to do to create a macro parameter type in Umbraco 7, is to create a custom 'Property Editor' (or copy someone else's), see [Property Editors documentation](../../Extending/Property-Editors.md)
-and in the [Package Manifest file](../../Extending/Property-Editors/package-manifest.md) for the editor, set the isParameterEditor property to be true.
+### isParameterEditor
+To create a custom Macro Parameter Type, first create a custom 'Property Editor' (or copy one from the core). See [Property Editors documentation](../../Extending/Property-Editors/index.md) and in the corresponding [Package Manifest file](../../Extending/Property-Editors/package-manifest.md) for the editor, set the `isParameterEditor` property to be true.
 
-    propertyEditors: [
-        {
-            alias: "My.ParameterEditorAlias",
-            name: "Parameter Editor Name",
-            isParameterEditor: true,
-            editor: {
-                view: "~/App_Plugins/My.ParameterEditor/ParameterEditorView.html"
-            }
+```json
+propertyEditors: [
+    {
+        alias: "My.ParameterEditorAlias",
+        name: "Parameter Editor Name",
+        isParameterEditor: true,
+        editor: {
+            view: "~/App_Plugins/My.ParameterEditor/ParameterEditorView.html"
         }
-    ]
-### PreValues/Configuration/DefaultValues ###
-However 'Parameter Editors' unlike 'Property Editors' cannot contain 'prevalues', since there is no UI to present configuration option in the Macro Parameter tab when a particular type is chosen. You can use the defaultConfig option to pass a one off default set of configuration for the parameter editor to use:
-
-    defaultConfig: {
-        wolf: "nope",
-        editor: "hello",
-        random: 1234
     }
+]
+```
 
-This is only a problem if you have a macro parameter type, that needs to be used on lots of different macros, but with slightly different configuration in each instance.
+### PreValues/Configuration/DefaultValues
+However 'Parameter Editors' unlike 'Property Editors' cannot contain 'prevalues', since there is no UI to present configuration options in the Macro Parameter tab when a particular type is chosen. However using the `defaultConfig` option enables the passing of 'one off' default set of configuration for the parameter editor to use:
 
-### Example ###
+```json
+defaultConfig: {
+    startNode: "1234",
+    minItems: 0,
+    maxItems: 6
+}
+```
 
-We'll create a simple 'Image Position' Macro Parameter type providing a Radio Button list of options for positioning an image that has been inserted via the Macro.
+This is only a problem if you have a macro parameter type, that needs to be used on lots of different macros, but with slightly different configurations in each instance.
+
+### Example
+
+We'll create an 'Image Position' Macro Parameter type providing a Radio Button list of options for positioning an image that has been inserted via an 'Insert Image' Macro into a Rich Text Editor.
 
 #### Package Manifest ####
 
-    {
-     "propertyEditors": [ 
-     {
-        "alias": "tooorangey.ImagePosition",
-        "name": "Image Position",
-        "isParameterEditor": true,
-        "editor": {
-            "view": "~/App_Plugins/tooorangey.ImagePosition/ImagePosition.html",
-            "valueType": "STRING"
-        }
+```json
+{
+    "propertyEditors": [
+        {
+            "alias": "Our.Umbraco.ImagePosition",
+            "name": "Image Position",
+            "isParameterEditor": true,
+            "editor": {
+                "view": "~/App_Plugins/Our.Umbraco.ImagePosition/ImagePosition.html",
+                "valueType": "STRING"
+            }
     }],
-     "javascript": [
-        "~/App_Plugins/tooorangey.ImagePosition/ImagePosition.controller.js"
-     ]
+    "javascript": [
+        "~/App_Plugins/Our.Umbraco.ImagePosition/ImagePosition.controller.js"
+    ]
+}
+```
+
+#### View
+
+```csharp
+<div ng-controller="Our.Umbraco.ImagePositionController">
+    <div class="radio" ng-repeat="position in positions" id="selectstatus-{{position.Name}}">
+        <label>
+            <input type="radio" name="position" ng-model="model.value" value="{{position.Name}}">{{position.Name}}
+        </label>
+    </div>
+</div>
+```
+
+#### Controller
+
+```javascript
+angular.module("umbraco").controller("Our.Umbraco.ImagePositionController", function ($scope) {
+
+    if ($scope.model.value == null) {
+        $scope.model.value = 'FullWidth';
     }
 
-#### View ####
+    // could read positions from defaultConfig
+    $scope.positions = [
+        {
+            Name: 'FullWidth'
+        },
+        {
+            Name: 'Left'
+        },
+        {
+            Name: 'Right'
+        },
+        {
+            Name: 'Center'
+        }
+    ];
+});
+```
 
-    <div ng-controller="tooorangey.ImagePositionController">
-        <div class="radio" ng-repeat="position in positions" id="selectstatus-{{position.Name}}">
-            <label>
-                <input type="radio" name="position" ng-model="model.value" value="{{position.Name}}">{{position.Name}}
-            </label>
-        </div>
-    </div>
-
-#### Controller ####
-
-    angular.module("umbraco").controller("tooorangey.ImagePositionController", function ($scope) {
-
-         if ($scope.model.value == null) {
-            $scope.model.value = 'FullWidth';
-         }
-         // could read positions from defaultConfig
-        $scope.positions = [
-            {
-                Name: 'FullWidth'
-            },
-            {
-                Name: 'Left'
-            },
-            {
-                Name: 'Right'
-            },
-            {
-                Name: 'Center'
-            }
-        ];
-    });
-
-#### Display ####
+#### Display
 
 The final custom parameter should look like this:
 
-![Image Position Radio Button Options](images/image-position.png)
+![Image Position Radio Button Options](images/image-position-v8.png)
 
-## Umbraco 6 - Creating your own macro parameter type ##
+#### Using defaultConfig
 
-If you want to create a new macro parameter editor you will need some c# programming and database knowledge.
+In this example it doesn't really add anything to move the radio button options into configuration, however to illustrate the concept of providing defaultConfig, let's do that:
 
-First create a class deriving from a webcontrol and implement the IMacroGuiRendering interface. Afterwards, open your database editor.  Find the **cmsMacroPropertyType** table and add the a new property editor.
+The package manifest becomes:
 
-### IMacroGuiRendering Interface ###
-You can find this interface in the umbraco.interfaces namespace contained in the interfaces dll.  You will need to reference this DLL if you are developing your control in a separate project.
-This interface implements 2 properties:  Value and ShowCaption.
-The value stores a string  and the ShowCaption property a bool.
-
-### Database update ###
-<table>
-<tr><th>
-id</th><th>macroPropertyTypeAlias</th><th>macroPropertyTypeRenderAssembly</th><th>macroPropertyTypeRenderType</th><th>macroPropertyTypeBaseType</th></tr>
-<tr><td>
-28</td><td>myNewPickerType</td><td>NameOfAssembly</td><td>FullName.OfType.IncludingNamespace</td><td>String</td></tr></table>
-
-### Example ###
-A very basic example deriving from a DropDownList ASP.NET server control
-
-    public class MyCustomPicker : DropDownList,  IMacroGuiRendering 
-    {
-		protected override void OnLoad(EventArgs e)
+```json
+{
+    "propertyEditors": [
         {
-            base.OnLoad(e);
-            if(this.Items.Count == 0)
-            {
-                // set properties
-                this.SelectionMode = ListSelectionMode.Multiple;           
+            "alias": "Our.Umbraco.ImagePosition",
+            "name": "Image Position",
+            "isParameterEditor": true,
+            "editor": {
+                "view": "~/App_Plugins/Our.Umbraco.ImagePosition/ImagePosition.html",
+                "valueType": "STRING"
+            },
+"prevalues": {
+        "fields": [
+          {
+            "label": "Options",
+            "description": "Radio Button Options",
+            "key": "options",
+            "view": "textarea"
+          }
+        ]
+      },
+      "defaultConfig": {
+        "options": [
+          {
+            "Name": "FullWidth"
+          },
+          {
+            "Name": "Lefty"
+          },
+          {
+            "Name": "Righty"
+          },
+          {
+            "Name": "Centerish"
+          }
+        ]
+      }
+    }],
+    "javascript": [
+        "~/App_Plugins/Our.Umbraco.ImagePosition/ImagePosition.controller.js"
+    ]
+}
+```
 
-                // load data
-                ...
-            }
-        }
+and in the ImagePosition.controller.js we can now read the 'options' values from the defaultConfig in the package.manifest configuration:
+```javascript
+ $scope.positions = $scope.model.config.options;
+```
+### Reading the parameter value in the Macro Partial View
 
-        public bool ShowCaption
-        {
-            get { return true; }
-        }
-
-        public string Value
-        {
-            get { return this.SelectedValue; }
-            set { this.SelectedValue = value; }
-        }
-    }
-
-
-### Further information ###
-* A nice blog post by Richard Soeteman: [Create A Custom Macro ParameterType](http://www.richardsoeteman.net/2010/01/04/CreateACustomMacroParameterType.aspx)
+```csharp
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using Umbraco.Web.Models
+@{
+var imagePosition = Model.MacroParameters["imagePosition"];
+//or if for convenience if you are using Umbraco.Web.Models namespace there is a GetParameterValue extension method, which allows a default value to be specified if the parameter is not provided:
+var imagePosition = Model.GetParameterValue<string>("imagePosition","full-width");
+}
+```

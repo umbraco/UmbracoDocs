@@ -1,8 +1,13 @@
+---
+versionFrom: 7.0.0
+---
+
 # Migrating an Existing Site to Umbraco Cloud
 
 Sometimes you may already have an Umbraco site built that did not start with a clone of an Umbraco Cloud site. Or perhaps you have decided to move a site that's already live on Umbraco Cloud. In any case, migrating an existing site is not difficult, but it does require some specific steps, and an understanding of how Umbraco Cloud deployments work can be very helpful.
 
 These are the steps you need to go through to complete the migration successfully:
+
 1. [Requirements](#1-requirements)
 2. [Tools](#2-tools)
 3. [Prepare your site](#3-prepare-your-site)
@@ -14,9 +19,11 @@ These are the steps you need to go through to complete the migration successfull
 
 ## Video tutorial
 
-On our Youtube channel you can find a playlist with 7 videos that will take your through this migration guide.
+On our Youtube channel you can find a playlist with 7 videos that will take you through the migration guide.
 
-You can find the playlist here: [Migrate an existing site to Umbraco Cloud](https://www.youtube.com/playlist?list=PLG_nqaT-rbpwIwsrS6i8o_4kV51Jz94fV)
+<iframe width="800" height="450" src="https://www.youtube.com/embed/xzua-5f2Nf4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+You can find the full playlist here: [Migrate an existing site to Umbraco Cloud](https://www.youtube.com/playlist?list=PLG_nqaT-rbpwIwsrS6i8o_4kV51Jz94fV)
 
 If you prefer following a written guide, continue to read below.
 
@@ -26,9 +33,8 @@ Before you start migrating your Umbraco site to Umbraco Cloud there are a few th
 
 Your Umbraco site has to fulfill these requirements:
 
-* Has no more content items than your plan covers (Starter plan: 1000 - Pro Plan: 25000)
-    * Content items includes content nodes and media items
-    * Read more about the Umbraco Cloud Plans on [Umbraco.com](https://umbraco.com/pricing/)
+* Has no more content nodes than your plan covers (Starter plan: 500 - Standard plan: 2500 - Pro Plan: 7500)
+    * Read more about the Umbraco Cloud Plans on [Umbraco.com](https://umbraco.com/umbraco-cloud-pricing/)
 * Contains no member data
     * If you do have member data, these will need to be imported manually after the migration
 * No obsolete/old packages
@@ -41,7 +47,7 @@ If you have a site that does not meet the above requirements, feel free to conta
 
 ### Understanding what you have
 
-Prior to undertaking a migration you'll want to make sure you know the packages, add-ons, and custom code your site is using. 
+Prior to undertaking a migration you'll want to make sure you know the packages, add-ons, and custom code your site is using.
 
 This is especially important if you are using custom property editors that will require connectors in order to work properly with the Umbraco Cloud deployment engine. Connectors are used by Umbraco Deploy to aid with the deployment of content/property-data between environments on Umbraco Cloud.
 
@@ -54,7 +60,7 @@ To help smooth this process for you, there is a community project called [Umbrac
 * DocType Grid Editor
 * LeBlender
 * Multi Url Picker
-* nuPickers
+* NuPickers
 * Property List
 * Stacked Content
 * Tuple
@@ -65,7 +71,7 @@ To help smooth this process for you, there is a community project called [Umbrac
 There are a few tools we recommend using to make the migration process as smooth as possible. We've made a checklist for you here:
 
 * Git needs to be installed on your computer
-    * Optional: Git client, like [GitKraken](https://www.gitkraken.com/)
+    * Optional: Git client, like [Fork](https://git-fork.com/), [SourceTree](https://www.sourcetreeapp.com/), or [GitKraken](https://www.gitkraken.com/)
 * Visual Studio OR Visual Studio Code + IIS Express
 * Merging tool - like [WinMerge](http://winmerge.org/) or [DiffMerge](https://sourcegear.com/diffmerge/)
 
@@ -81,7 +87,7 @@ After making sure that your existing site meets all the requirements for being m
 
 ### Upgrade to latest Umbraco version
 
-First order of business is to **upgrade your own Umbraco site to the latest Umbraco version**. Why? Because Umbraco Cloud always runs the latest version and you need to make sure your project runs the same Umbraco version as Umbraco Cloud.
+First order of business is to **upgrade your own Umbraco site to the latest minor version of Umbraco 7 or 8**. Why? Because Umbraco Cloud always runs the latest version and you need to make sure your project runs the same Umbraco version as Umbraco Cloud.
 
 You can download the latest version of Umbraco from [Our](https://our.umbraco.com/download/).
 
@@ -89,7 +95,7 @@ If you need help upgrading your project, we have some excellent [Upgrade instruc
 
 If you have been using Umbraco Forms on your own project, you will also need to upgrade this to the latest version. You can find and download the latest version of Umbraco Forms under [Projects on Our](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). As with Umbraco CMS we also have documentation on how to [Upgrade Umbraco Forms](https://our.umbraco.com/documentation/Add-ons/UmbracoForms/Installation/ManualUpgrade).
 
-After upgrading your project make sure it runs without any errors. *Hint: Check the umbracoTraceLog.txt log file.*  
+After upgrading your project make sure it runs without any errors. *Hint: Check the umbracoTraceLog.txt log file.*
 
 Ideally your site will run locally using the SQL CE database as this will make content migration easier. Don't worry - if that's not possible you will still be able to complete the migration.
 
@@ -143,6 +149,17 @@ Before doing anything else, you need to delete the default **Media and Member ty
 
 ![Default media types](images/media-types.png)
 
+:::note
+### Data types
+Have you been using _older_ data types on your project, you will need to go through a few steps in order to avoid running into collision errors when deploying your migrated sites to Umbraco Cloud.
+
+The data types in question are: Content Picker, Media Picker, Member picker, Multiple Media Picker (using Media Picker) and Related Links.
+
+You can either
+1. Rename the old data types on your existing site or
+2. Follow the steps in the [Colliding Data types](../../Troubleshooting/Deployments/Colliding-Datatypes) article
+:::
+
 ## 5. Clone down the Cloud project
 
 With your Umbraco Cloud project ready for the migration, it is time to clone down the project to your local machine.
@@ -180,7 +197,7 @@ As Umbraco Forms comes with an Umbraco Cloud project, there are a few things you
 * The existing site uses Umbraco Forms
     * No extra steps needed, as you will have upgraded Umbraco Forms to the latest version before starting the migration
 
-The final thing to do before moving on, is to make sure your Umbraco Cloud user will be added to the new database you've just merged into the project.
+The final thing to do before moving on, is to make sure your Umbraco Cloud user will be added to the new database you've merged into the project. First you need to check if any Umbraco user uses the same email address as your Umbraco Cloud account. If this is the case you need to change the email address of the existing user to something else otherwise your Cloud user will be stuck in a inactive state. If you have confirmed there is no user with the same email address you can add the cloud by following these steps.
 
 * Go to the `data/backoffice/users` folder in your Umbraco Cloud project files
 * Rename your user file by removing the leading underscore
@@ -199,7 +216,7 @@ With that confirmed, it's time to prepare to migrate the project to Umbraco Clou
 
 ## 7. Generate meta data
 
-You have now moved and merged the files from your existing site into the Umbraco Cloud project files. So far, so good! 
+You have now moved and merged the files from your existing site into the Umbraco Cloud project files. So far, so good!
 
 In this next part, it is time to generate the so called UDA-files for all your projects meta data.
 
@@ -228,12 +245,12 @@ All project files have been merged and we've generated UDA files for all the met
 
 1. In your Git client you should see a lot of changes ready to be committed
 2. Stage and commit the changes
-3. Do a *pull* just to be sure everything is in sync
+3. Do a *pull* to ensure everything is in sync
 4. **Push** your migrated project to the Umbraco Cloud environment - check that the *'Deploy Complete'* message is displayed
     * If you have a very large commit to push, you may need to configure your Git client for this
     * Use: git config http.postBuffer 524288000
 
-When the push is complete go check out the Umbraco Cloud Portal to verify the indicator on the Development environment is still *green*. 
+When the push is complete go check out the Umbraco Cloud Portal to verify the indicator on the Development environment is still *green*.
 
 Go to the backoffice of your Development environment and make sure all your metadata is there. You won't see any content or media on the environment yet - this you will move in the next few steps.
 

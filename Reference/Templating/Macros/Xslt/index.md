@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+versionRemoved: 8.0.0
+---
+
 # XSLT
 This section is your resource for XSLT/XPath in relation to Umbraco. You'll find information, examples and best practices according to readability and performance in your XSLT/XPath snippets.
 
@@ -22,7 +27,7 @@ Working with the different macro parameter types and the values passed from them
 Searching with examine from XSLT
 
 ## [Using Variables and Parameters](Using-Variables-and-Parameters.md)
-Variables and parameters are temporary storage devices in XSLT for holding simple values to complete node sets of data.
+Variables and parameters are temporary storage devices in XSLT for holding values to complete node sets of data.
 
 ## [XPath Axes and their Shortcuts](XPath-Axes-and-their-Shortcuts.md)
 XPath works on the premise of Axes, which is how the data relates to the current node.
@@ -38,6 +43,6 @@ XSLT, or eXtensible Stylesheet Language Transformations, is a document that is a
 
 In Umbraco, XSLT is utilized through the use of macros, which are the dynamic building block of front-end content. These templates can be used for various tasks, including the building of navigation structures, display of content nodes in a customizable format.
 
-Umbraco also exposes a series of functions to XSLT documents for the manipulation of the data beyond the standard capabilities of XSLT functions. These XSLT Extensions are easily referenced within the mark-up of the XSLT, allowing for easy manipulation of the data for even the most novice developers.
+Umbraco also exposes a series of functions to XSLT documents for the manipulation of the data beyond the standard capabilities of XSLT functions. These XSLT Extensions are referenced within the mark-up of the XSLT, allowing for easy manipulation of the data for even the most novice developers.
 
 "Occasional XSLT for Experienced Software Developers" [http://www.devx.com/xml/Article/28610/1954](http://www.devx.com/xml/Article/28610/1954) - this article explains common pitfalls when treating XSLT like a "traditional" programming language.

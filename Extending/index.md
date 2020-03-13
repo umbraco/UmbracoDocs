@@ -1,8 +1,21 @@
+---
+versionFrom: 7.0.0
+product: "CMS"
+meta.Title: "Learn about extending the functionality of Umbraco"
+meta.Description: "This section shows the different ways you can extend Umbraco. From Content Apps to Backoffice tours, and many more."
+---
+
 # Extending Umbraco
+
+## [Content Apps](Content-Apps/index.md)
+
+Content Apps are a new concept in v8. Editors can switch from editing 'Content' to accessing contextual information related to the item they are editing.
+
+Content Apps encapsulate companion read-only information relating to the current content item in the Umbraco backoffice.
 
 ## [Backoffice tours](Backoffice-Tours/index.md)
 
-Backoffice tours is the integrated and interactive help for the backoffice
+Backoffice tours is the integrated and interactive help for the backoffice.
 
 ## [Dashboards](Dashboards/index.md)
 
@@ -26,7 +39,7 @@ Information on extending Umbraco, details such as dealing with server variables,
 
 ## [Macro Parameter Editors](Macro-Parameter-Editors/index.md)
 
-A Parameter Editor is the editor used to insert values into a [Macro](../reference/templating/macros/index.md).
+A Parameter Editor is the editor used to insert values into a [Macro](../Reference/Templating/Macros/index.md).
 
 This section will describe how to work with and create Parameter Editors.
 
@@ -34,18 +47,17 @@ This section will describe how to work with and create Parameter Editors.
 
 The Umbraco backoffice can be configured so that the user interface runs in the user's native language. This is made possible with community generated language files, if your language is not currently supported, why not help to add support?
 
-## [Health Checks](Healthcheck/index.md)
+## [Health Checks](Health-Check)
 
 Developers can create their own Umbraco Health Checks and Health Check notification methods.
 
-## Packaging
+## [Packaging](Packages)
 
-Information on the packaging manifest format and how assets should be packaged as a zip file for easy distribution
-**(coming soon)**
+Information on the packaging manifest format and how assets should be packaged as a zip file for distribution
 
 ## [Custom file systems (IFileSystem)](Custom-File-Systems.md)
 
-Details on implementing virtual file systems for things like media which will allow you to store your files outside of the physical file system (i.e. Cloud based for example)
+Details on implementing virtual file systems for things like media which will allow you to store your files outside of the physical file system (i.e. Cloud based for example).
 
 ## [Embedded Media Providers](Embedded-Media-Provider/index.md)
 

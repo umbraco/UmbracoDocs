@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # High-level Overview
 
 The creation process involves a lot of different parts, which are outlined below. Keep in mind that we are creating a new and empty project, which consists of one or two environments, depending on the Plan your are on. Both environments will be a clone of the Live repository from the Baseline project.
@@ -22,7 +26,7 @@ The process of creating a Child Project is rather involved. While you don't have
 
 * Once the three environments are created the project is updated (in the portal) with the name and endpoint of the repository for each of the new sites.
 
-* The git config file is updated in the Development repository.
+* The Git config file is updated in the Development repository.
 
 * The Development repository is then configured with an Upstream (remote tracking branch) for the Live repository from the Baseline project.
 
@@ -52,7 +56,7 @@ The process of creating a Child Project is rather involved. While you don't have
 
 Between most of these steps we send updates to the Project page in the Portal, so the progress bar, progress updates and the Activity Stream are updated.
 
-The project should now be up and running, but both Staging and Live will be empty so the owner will have to deploy from Development to Staging and then from Staging to Live. This will push (and deploy of course) the content of the git repository to the other environments and everything will be up to date, and the Child project is ready for business.
+The project should now be up and running, but both Staging and Live will be empty so the owner will have to deploy from Development to Staging and then from Staging to Live. This will push (and deploy of course) the content of the Git repository to the other environments and everything will be up to date, and the Child project is ready for business.
 
 ### Upgrading Child projects
 
@@ -60,11 +64,11 @@ The project should now be up and running, but both Staging and Live will be empt
 
 * If the merge results in a merge conflict we reset the repository, so its not in a “merging state”.
 
-* If the merge was successful we continue to deploy the updated repository. Using Kudu’s Rest endpoints we trigger a deployment of the current state of the git repository (the HEAD).
+* If the merge was successful we continue to deploy the updated repository. Using Kudu’s Rest endpoints we trigger a deployment of the current state of the Git repository (the HEAD).
 
 * When that is done we create a “deploy” marker file in the wwwroot, which tells Umbraco Deploy to run when the application starts.
 
-* Finally we make a request to the website, which just had its changes deployed.
+* Finally we make a request to the website, which had its changes deployed.
 
 Between the steps listed above, when handling a queued message, we post updates back to the Portal. Some of these updates will also be posted to the stream of the project that is being updated.
 

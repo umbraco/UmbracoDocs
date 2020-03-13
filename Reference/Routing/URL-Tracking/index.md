@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+needsV8Update: "true"
+---
+
 # URL Redirect Management
 
 ## User Overview
@@ -24,17 +29,8 @@ The 301 Redirect Management feature is enabled by default.
 
 It is possible to disable the feature entirely (both generating URLs in the database table, and running the content finder) by editing the `umbracoSettings.config` file:
 
-    <web.routing disableRedirectUrlTracking="true" />
+```xml
+<web.routing disableRedirectUrlTracking="true" />
+```
 
 See: [/Documentation/Reference/Config/umbracoSettings/#web-routing](/Documentation/Reference/Config/umbracoSettings/#web-routing)
-
-In addition, Umbraco will automatically disable the feature if it detects any DLL whose name would contain any of the following strings: 
-
-      "InfoCaster.Umbraco.UrlTracker"
-      "SEOChecker"
-      "Simple301"
-      "Terabyte.Umbraco.Modules.PermanentRedirect"
-      "CMUmbracoTools"
-      "PWUrlRedirect"
-
-These products already implement redirect management and we do not want to interfere.

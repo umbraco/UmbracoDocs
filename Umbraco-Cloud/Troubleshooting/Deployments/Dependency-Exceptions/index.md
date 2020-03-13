@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Dependency Exception
 
 Sometimes you will get an error that looks like this:

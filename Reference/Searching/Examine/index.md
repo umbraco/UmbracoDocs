@@ -1,16 +1,30 @@
+---
+versionFrom: 8.0.0
+---
+
 # Examine
 
-_Examine uses Lucene as its search and index engine. Searching using Examine with Lucene can be very powerful and fast and it can also be really simple to setup and use._
+_Examine uses Lucene as its search and index engine. Searching using Examine with Lucene can be very powerful and fast._
 
 ## What is Examine?
 
-Examine allows you to index and search data quickly and easily. It is a library that sits on top of Lucene, a very high performance search engine library written in Java. Examine is built on top of a .NET-implementation of Lucene to provide very efficient APIs to make searching and indexing as straight forward as possible. Umbraco provides a further layer on top, UmbracoExamine, that opens up the Umbraco-specific APIs for indexing and searching content and media out of the box.
+The Examine documentation is found here [https://shazwazza.github.io/Examine/](https://shazwazza.github.io/Examine/) and the source code repository for Examine is here [https://github.com/Shazwazza/Examine](https://github.com/Shazwazza/Examine).
 
-Examine is provider based so is very extensible and allows you to configure as many indexes as you like and each may be configured individually. The backoffice search in Umbraco also uses this same search engine, so you can trust that you're in good hands.
+Examine allows you to index and search data quickly. Examine is a library that sits on top of [Lucene.Net](https://lucenenet.apache.org/), a high performance search engine library. Examine provides APIs to make searching and indexing as straight forward as possible. Umbraco provides a further layer on top, UmbracoExamine, that opens up the Umbraco-specific APIs for indexing and searching content and media out of the box.
 
-## [Quick start](quick-start.md)
+Examine is provider based so it is extensible and allows you to configure your own custom indexes if required. The backoffice search in Umbraco also uses this same search engine, so you can trust that you're in good hands.
 
-Get up and running with Examine straight away with this quick start guide
+## [Quick start](quick-start/index.md)
+
+Get up and running with Examine straight away with this quick start guide.
+
+## [Customizing indexes](indexing/index.md)
+
+Learn how to customize the built in Umbraco indexes and how to create your own Lucene indexes using Examine in Umbraco 8.
+
+## [PDF indexing and multisearchers](pdf-index.md)
+
+Learn how to index PDF files in Examine and how to create a multisearcher that searches through both the External Index and the Pdf Index.
 
 ## [Terminology](terminology.md)
 
@@ -18,15 +32,11 @@ Describes the different terms and objects used in Examine such as Indexers, Sear
 
 ## [Examine Management in the backoffice](examine-management.md)
 
-Provides an overview of the available Examine functionality available directly within the Umbraco backoffice
+Provides an overview of the available Examine functionality available directly within the Umbraco backoffice.
 
-## [Overview & Explanation - "Examining Examine by Peter Gregory"](overview-explanation.md)
+## [Examine events](examine-events.md)
 
-A detailed overview from top to bottom of how to use Examine
-
-## [Full configuration markup example](../../Config/ExamineSettings/index.md)
-
-Shows all configuration options with an explanation for each
+Details about subscribing to Examine events which can provide a way to modify the data being indexed.
 
 ## [API - Examine Manager](examine-manager.md)
 

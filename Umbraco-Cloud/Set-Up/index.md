@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Set Up
 Now that you've created a project there are a few things you may want to do to make working with your project easier. As you get ready to launch your live site there are some other considerations to take into account as well.
 
@@ -7,11 +11,13 @@ Most of the set up can be accomplished by using the options from your project's 
 
 Articles about configuring various settings on your project, as well as managing members, domains and certificates.
 
+ - [Going Live](Going-live/)
  - [Project settings](Project-settings/)
  - [Adding team members](Team-Members/)
  - [SMTP Settings](SMTP-settings/)
  - [Manage domains and certificates](Manage-domains/)
  - [Manage environments](Manage-Environments/)
+ - [Apply SSL with Umbraco Latch](Umbraco-Latch/)
 
 ## Working with your Umbraco Cloud project
 

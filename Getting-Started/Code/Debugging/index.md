@@ -1,113 +1,124 @@
+---
+meta.Title: "Debugging"
+meta.Description: "Debugging in Umbraco"
+versionFrom: 8.0.0
+---
+
 # Debugging
-During the development of your Umbraco site you can debug, and profile the code you have written to analyse and discover bugs, bottlenecks in your code, or just help uncover what on earth is going wrong.
 
+During the development of your Umbraco site you can debug and profile the code you have written to analyse and discover bugs/bottlenecks in your code or to help uncover what on earth is going wrong.
 
-### Tracing
-Tracing enables you to view diagnostic information about a single request for a page on your site at runtime. The trace will show the flow of page level events and display any errors in code along with diagnostic information, eg Server variables, Cookie, Form and Querystring Collections, Application State etc
+To perform proper debugging on your site you need to set your application to have debug enabled. This can be done by setting `debug="true"` (found in `System.Web`) in your `web.config` file:
 
-#### Enabling Trace
-NB Do not enable trace in your production environment, it reveals an awful lot about your production environment.
+:::warning
+Debug should always be set to false in production.
+:::
 
-By default trace is disabled, to enable: update the web.config; look for the trace element in the System.Web section and set the enabled attribute to true
+```xml
+<compilation defaultLanguage="c#" debug="true" batch="true" targetFramework="4.7.2" numRecompilesBeforeAppRestart="50" />
+```
 
-    <trace enabled="true" requestLimit="100" pageOutput="false"   
-                  traceMode="SortByTime" localOnly="true"/>
+## Tracing
 
-#### Viewing Trace
+Tracing enables you to view diagnostic information about a single request for a page on your site at runtime. The trace will show the flow of page level events and display any errors in code along with diagnostic information, such as server variables, cookies, form and querystring collections and application state.
 
-With trace enabled visit the url **/trace.axd**
+### Enabling Trace
 
-The current application trace of requests to your application will be displayed:
+:::warning
+Do not enable trace in your production environment! It reveals an awful lot of (sensitive) information about your production environment.
+:::
 
-![Application Trace](images/application-trace.png)
+Trace is disabled by default. To enable it look for `<trace` in `System.Web` and set `enabled="true"` in your `web.config` file:
 
-Click 'Clear current trace' and then in a different tab visit the url of the page you would like to trace.
+```xml
+<trace enabled="true" requestLimit="10" pageOutput="false" traceMode="SortByTime" localOnly="true"/>
+```
 
-The trace requests for this page will appear if you refresh your trace.axd tab.
+### Viewing Trace
+
+With trace enabled visit the url `/trace.axd`.
+
+Here you'll be able to see the requests to your application:
+
+![Application Trace](images/v8-trace.png)
+
+You can clear the trace by clicking on `clear current trace`.
 
 Click on 'View Details' for a particular request in the list to see the specific trace information for the page.
 
-![Trace Request Details](images/trace-request-details.png)
+![Trace Request Details](images/v8-trace-details.png)
 
-### MiniProfiler
+## MiniProfiler
 
-Umbraco includes the Mini Profiler project in its core (see [https://miniprofiler.com](https://miniprofiler.com) for more details). 
-The MiniProfiler profiles your code method calls, giving you a greater insight into code duration, and query time for underlying SQL queries. It's great for tracking down performance issues in your site's implementation.
+Umbraco includes the Mini Profiler project in its core (see [https://miniprofiler.com](https://miniprofiler.com) for more details).
+The MiniProfiler profiles your code method calls, giving you a greater insight into code duration and query time for (for example) underlying SQL queries. It's great for tracking down performance issues in your site's implementation.
 
-#### Displaying the MiniProfiler
+### Displaying the MiniProfiler
 
-To display the profiler ensure that the debug attribute of the compilation element is set to true in your web.config and then add ?umbDebug=true to the querystring of any request.
-NB: debug mode should be disabled for your site in a production environment.
+To display the profiler ensure that the debug attribute of the compilation element is set to true in your web.config and then add `?umbDebug=true` to the querystring of any request.
 
-![?umbDebug=true](images/umb-debug-equals-true.png)
+![?umbDebug=true](images/v8-miniprofiler-view.png)
 
 If you click 'Show Trivial' you can seen the kind of detail the MiniProfiler makes available to you about the execution path of your page:
 
-![Show Trivial](images/show-trivial.png)
+![Show Trivial](images/v8-miniprofiler-trivial.png)
 
-and any underlying SQL Statements that are being executed for a a part of the execution
+and any underlying SQL Statements that are being executed for a part of the execution:
 
-![Underlying SQL queries](images/underlying-sql-queries.png)
+![Underlying SQL queries](images/v8-miniprofiler-sql-trigger.png)
 
-#### Writing to the MiniProfiler
+![Underlying SQL query details](images/v8-miniprofiler-sql-details.png)
 
-If within your implementation there are certain lines of code that you think may contain a bottleneck, the MiniProfiler gives you a method for timing just those specific lines of code:
+### Writing to the MiniProfiler
 
-    var profiler = ApplicationContext.ProfilingLogger;
-    using(profiler.DebugDuration<Products>("Artificially Slow Example"))
+If you feel like a part of your application is slow you can use the MiniProfiler in your own code to test the speed of it.
+
+All you have to do is inject the IProfiler interface and add a step around your logic:
+
+```csharp
+using System.Web.Mvc;
+using Umbraco.Core.Logging;
+using Umbraco.Web.Models;
+using Umbraco.Web.Mvc;
+
+namespace OurUmbraco.Core.Controllers
+{
+    public class ProductsController : RenderMvcController
     {
-        // you would place the code you wanted to measure in here...
-        // just make this sleep for a second, for example purposes:
-        System.Threading.Thread.Sleep(1000);
+        private readonly IProfiler _profiler;
+
+        // Inject IProfiler
+        public ProductsController(IProfiler profiler)
+        {
+            _profiler = profiler;
+        }
+
+        public ActionResult Products(IPublishedContent model)
+        {
+            // Perform a step
+            using (_profiler.Step("Sleep"))
+            {
+                System.Threading.Thread.Sleep(1000);
+            }
+
+            return CurrentTemplate(model);
+        }
     }
+}
+```
 
-and now in the profiler you can see 
+and now in the profiler you can see:
 
-![Show Trivial](images/writing-to-miniprofiler.png)
+![Show Trivial](images/v8-miniprofiler-write.png)
 
-#### Umbraco Productivity Tool- Chrome Extension
+## Umbraco Productivity Tool - Chrome Extension
 
-If you are using the Google Chrome browser you can install this [Umbraco Productivity Tool Chrome Extension](https://chrome.google.com/webstore/detail/umbraco-productivity/kepkgaeokeknlghbiiipbhgclikjgkdp?hl=en)
+If you are using the Google Chrome browser you can install this [Umbraco Productivity Tool Chrome Extension](https://chrome.google.com/webstore/detail/umbraco-productivity/kepkgaeokeknlghbiiipbhgclikjgkdp?hl=en).
 
-To enable you to easily access and switch between the Mini-profiler / Trace debugging modes.
+This will allow you to quickly switch between debugging with the MiniProfiler, Trace viewer and normal mode.
 
-![Umbraco Productivity Tool](images/umbraco-productivity-chrome-extension.png)
+![Umbraco Productivity Tool](images/chrome-tool.png)
 
-### Logging
+## [Logging](Logging/)
 
-Umbraco uses the Apache Log4Net library to output log statements to a set of Trace logs, to help you investigate problems with your Umbraco Installation. You can write to these log files from your custom code.
- 
-![Trace Logs](images/trace-logs.png)
-
-The configuration for log4net is found in your Umbraco site here: /config/log4net.config you can set the priority of the level of the logs information to be stored here:
-
-    <priority value="Info"/>
-
-Full details of Log4Net configuration options can be found here: https://logging.apache.org/log4net/release/manual/configuration.html
-
-The default location for trace logs in your application will be /app_data/logs/ with a file created for each day of logging information.
-There is a useful Umbraco Package called Diplo Trace Log Viewer that will enable you to see this log file information from the developer section of the Umbraco Backoffice: https://our.umbraco.com/projects/developer-tools/diplo-trace-log-viewer/
-
-##### Writing to the logs
-
-Umbraco provides a helper to enable you to log information from within your custom code.
-
-You will need to add a reference to Umbraco.Core.Logging in your class / view:
-
-    using Umbraco.Core.Logging;
-
-and then from within your code you can use the helper to log information
-
-    LogHelper.Info(typeof(NameOfClassYouAreLoggingFrom), "Your logging message");
-
-or more generically if you are not sure of the class...
-
-    LogHelper.Info(this.GetType(),"Your logging message");
-
-There are methods to add logging at different priority levels:
-
-* Debug - Used in development and testing, contains the most information, and likely information to help you diagnose a problem - avoid running a production site 'in debug'.
-* Information - Useful status information regarding the running and management of your site, eg xx started correctly.
-* Warn - For exceptions that are expected and handled in your code but useful to flog - eg missing configuration.
-* Error - For exceptions that are not handled in code.
-
+Learn how Umbraco writes log files and how you can write to them.

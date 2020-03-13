@@ -1,14 +1,22 @@
+---
+versionFrom: 8.0.0
+---
+
 # Add Open Graph - Step 2
-You are now going to add the tab and properties to the home page and blog post of the site. This is done by using compositions to add the functionality in multiple places.
 
-1. In the Settings section, expand the Document Type tree.
-2. Find the `Home` document type, select it and click **Compositions**
-3. Choose the `Open Graph` composition.
-4. Save the document type
+We will now add the group and properties to the Home page and Blog post of the site.
 
-This will add the tab and properties you just created to the Home document type. Follow the same steps for the `Blogpost` document type.
+This is done by using compositions to add the functionality in multiple places.
 
-### Reviewing the changes
+1. In the **Settings** section, expand the Document Type tree.
+2. Open the `Home` Document Type and select **Compositions...** in the top-right.
+3. Choose the `Open Graph` Document Type we created and *Submit*.
+4. **Save** the Document Type.
+
+This will add the group and properties from the Open Graph Document Type to the Home Document Type. Follow the same steps for the `Blogpost` Document Type.
+
+## Reviewing the changes
+
 If you go to the content section and select Home you can now see your changes (the same of course goes for the blog posts).
 
 [Previous](step-1.md) - [Next](step-3.md)

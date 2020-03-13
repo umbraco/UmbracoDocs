@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # Manual upgrade of Umbraco CMS on Cloud
 
 This article will give you a step-by-step on how to manually upgrade your Umbraco Cloud project to run the latest version of Umbraco CMS.
@@ -15,13 +19,12 @@ Make sure you can run your Cloud project locally and restore content and media. 
 * Copy the following folders from the unzipped folder to your Cloud project folder:
     * `/bin`
     * `/Umbraco`
-    * `/Umbraco_Client`
 
 ## Merge configuration files
 
 In this step, you need to merge the configuration files containing changes. For this, we recommend using a tool like [WinMerge](http://winmerge.org/) or [DiffMerge](https://sourcegear.com/diffmerge/).
 
-The reason you shouldn't just overwrite these files is that this will also overwrite any **custom configuration** you might have as well as **Umbraco Cloud specific settings**. Read more about which Cloud specific details you should watch out for in the following sections.
+The reason you shouldn't overwrite these files is that this will also overwrite any **custom configuration** you might have as well as **Umbraco Cloud specific settings**. Read more about which Cloud specific details you should watch out for in the following sections.
 
 ### Web.config
 
@@ -30,8 +33,8 @@ When merging the `web.config` file make sure that you **do not overwrite/remove*
 **< configSettings >**
 
     <sectionGroup name="umbraco.deploy">
-      <section name="environments" type="Umbraco.Deploy.Configuration.DeployEnvironmentsSection, Umbraco.Deploy" requirePermission="false" />
-      <section name="settings" type="Umbraco.Deploy.Configuration.DeploySettingsSection, Umbraco.Deploy" requirePermission="false" />
+    <section name="environments" type="Umbraco.Deploy.Configuration.DeployEnvironmentsSection, Umbraco.Deploy" requirePermission="false" />
+    <section name="settings" type="Umbraco.Deploy.Configuration.DeploySettingsSection, Umbraco.Deploy" requirePermission="false" />
     </sectionGroup>
 
 **< appSettings >**
@@ -80,9 +83,9 @@ When merging the `Dashboard.config` file make sure that you **do not overwrite /
         <area>forms</area>
         </areas>
         <tab caption="Dashboard">
-        <control>/app_plugins/umbracoforms/backoffice/dashboards/licensing.html</control>
-        <control>/app_plugins/umbracoforms/backoffice/dashboards/yourforms.html</control>
-        <control>/app_plugins/umbracoforms/backoffice/dashboards/activity.html</control>
+        <control>/App_Plugins/umbracoforms/backoffice/dashboards/licensing.html</control>
+        <control>/App_Plugins/umbracoforms/backoffice/dashboards/yourforms.html</control>
+        <control>/App_Plugins/umbracoforms/backoffice/dashboards/activity.html</control>
         </tab>
     </section>
 
@@ -133,7 +136,7 @@ Make sure that everything works on the local clone and that you can **run the pr
 
 Before you deploy the upgraded project to the Cloud, it's important that you check if there are any [**dependencies**](../Product-Dependencies) on the new Umbraco version.
 
-Are there dependencies for Umbraco Forms or Umbraco Courier / Deploy you need to upgrade these locally, before moving on. 
+Are there dependencies for Umbraco Forms or Umbraco Courier / Deploy you need to upgrade these locally, before moving on.
 
 When you've upgraded everything locally, and made sure that everything runs without any errors, you are ready to deploy the upgrade to Umbraco Cloud.
 
