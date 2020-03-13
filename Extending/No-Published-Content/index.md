@@ -1,6 +1,6 @@
 # No Published Content Page
 
-When Umbraco is first installed, if no starter kit is chosen, there will be no content created in the back-office, and no published content to display.
+When Umbraco is first installed, if no starter kit is chosen, there will be no content created in the backoffice, and no published content to display.
 
 Content can also be created, but be unpublished.
 
