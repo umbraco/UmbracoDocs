@@ -1,3 +1,9 @@
+---
+keywords: nonodes
+versionFrom: 7.0.0
+meta.Title: "No Published Content Page"
+meta.Description: "Details the standard page served by Umbraco when no published content is available."
+---
 # No Published Content Page
 
 When Umbraco is first installed, if no starter kit is chosen, there will be no content created in the backoffice, and no published content to display.
