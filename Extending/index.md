@@ -50,3 +50,9 @@ Details on implementing virtual file systems for things like media which will al
 ## [Embedded Media Providers](Embedded-Media-Provider/index.md)
 
 Details on how to create a custom Embedded Media Provider to enable editors to embed third party media content into Umbraco via the embed button in the Rich Text Area.
+
+## [No Published Content Page](No-Nodes.md)
+
+Details the standard page served by Umbraco when no published content is available.
+
+
