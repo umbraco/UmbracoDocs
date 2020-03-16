@@ -186,3 +186,23 @@ You will have some settings to personalize how your form is presented through th
 - Text Color
 - Form (this is where you add the form that you have already created)
 - Container Width
+
+### The Contact Form Widget
+
+![movePage.jpg](images/Contact-Form.png)
+
+The Contact Form Widget will let you add a contact form to your project, however, to make it work you will need to set up a contact email.
+You set up the contact email by going to the settings tab, then you proceed to the general tab, from here you fill out the ***Contact Form Email***.
+
+![movePage.jpg](images/settings-contact-form.png)
+
+The form has the following settings available:
+
+- Pre Heading
+- Heading
+- Text
+- Background Image
+- Background Color
+- Message Sent Text
+- Container Width
+
