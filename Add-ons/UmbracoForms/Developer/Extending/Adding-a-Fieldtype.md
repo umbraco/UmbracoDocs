@@ -64,7 +64,7 @@ The view takes care of generating the UI control and setting its value.
 
 On the view, it is important to note that the ID attribute is fetched from `@Model.Id`. You'll also see that we are using jQuery validate unobtrusive to perform client side validation so that's why we are adding the data* attributes.
 
-## Partial view for theme
+### Partial view for themes
 
 We will also add a file for the default theme of the form at `Views\Partials\Forms\Themes\default\FieldTypes\FieldType.MyCustomField.cshtml` 
 
