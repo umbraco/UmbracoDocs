@@ -62,7 +62,7 @@ Once you have entered the alias of the project, you are presented with the follo
 
 Option A - E uses the [Content Delivery API](../API-Documentation/Content-Delivery/index.md) and can be used for any Headless Project, which has public content.
 
-Option F uses the [Content Management API](../API-Documentation/Content-Management/index.md), so an [API Key](../Getting-Started-Cloud/Backoffice-Users-and-API-Keys/index.md) is required to run this part of the sample, as it will create a new folder in the Media Library and upload an image to a new Media item.
+Option F uses the [Content Management API](../API-Documentation/Content-Management/index.md). This means that an [API Key](../Getting-Started-Cloud/Backoffice-Users-and-API-Keys/index.md) is required to run this part of the sample, as it will create a new folder in the Media Library and upload an image to a new Media item.
 
 ### Examples of the fetched data
 
