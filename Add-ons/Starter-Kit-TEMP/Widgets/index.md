@@ -167,3 +167,5 @@ You will have some settings to set the Map widget up as you want it:
 Below you can see an example of a Map widget with the ***Show Content Next To Map*** Enabled:
 
 ![movePage.jpg](images/Map.png)
+
+When ***Show Content Next To Map*** is disabled the blue section on the left will not appear and the map will take up all the space.
