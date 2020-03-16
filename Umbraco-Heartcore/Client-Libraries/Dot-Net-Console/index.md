@@ -16,11 +16,11 @@ In order to use this console application, you will need to have the .NET Core SD
 
 Once you have cloned down the [Umbraco Headless Client](https://github.com/umbraco/Umbraco.Headless.Client.Net), there are two ways of running the application.
 
-### Using Visual Studio
+### 1. Using Visual Studio
 
 Open up the `.csproj` file located at `~\Umbraco.Headless.Client.Net\samples\Umbraco.Headless.Client.Samples.Console\Umbraco.Headless.Client.Samples.Console` and press F5. This will launch the Console application.
 
-### Using the Command Line
+### 2. Using the Command Line
 
 By using the command line, you will need to run the following commands from the `Umbraco.Headless.Client.Samples.Console` folder in order to run the application.
 
@@ -88,15 +88,10 @@ d
 
 Fetching and showing root Media
 
-'Gungirl' can be seen on: https://media.umbraco.io/dev-docs/8d7c736482a65b4/gungirl.jpg
-'Itachi' can be seen on: https://media.umbraco.io/dev-docs/8d7c73648f72d6a/itachi.jpg
-'Kaiju' can be seen on: https://media.umbraco.io/dev-docs/8d7c7364978df6c/kaiju.jpg
-'Kurama' can be seen on: https://media.umbraco.io/dev-docs/8d7c7364a0b846c/kurama.jpg
-'Naruto' can be seen on: https://media.umbraco.io/dev-docs/8d7c7364a8d5cde/naruto.jpg
-'Shhh' can be seen on: https://media.umbraco.io/dev-docs/8d7c7364b222333/shhh.jpg
-'Teentitans' can be seen on: https://media.umbraco.io/dev-docs/8d7c7364bcac0d0/teentitans.jpg
-'Yuno' can be seen on: https://media.umbraco.io/dev-docs/8d7c7364c56d5c6/yuno.jpg
-'Beats' can be seen on: https://media.umbraco.io/dev-docs/8d7c7364cc28d4d/beats.jpg
+'Company Logo' can be seen on: https://media.umbraco.io/dev-docs/8d7c736482a65b4/company_logo.jpg
+'Company Logo Small' can be seen on: https://media.umbraco.io/dev-docs/8d7c73648f72d6a/company_logo_small.jpg
+'Product01' can be seen on: https://media.umbraco.io/dev-docs/8d7c7364978df6c/Product01.jpg
+'Product02' can be seen on: https://media.umbraco.io/dev-docs/8d7c7364a0b846c/Product02.jpg
 ```
 
 It is showing the name of the Media items and a direct link to each of the Media items.
