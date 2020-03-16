@@ -22,7 +22,7 @@ Open up the `.csproj` file located at `~\Umbraco.Headless.Client.Net\samples\Umb
 
 ### Using the Command Line
 
-By using the command line, you will need to tun run the following commands from the `Umbraco.Headless.Client.Samples.Console` folder in order to run the application.
+By using the command line, you will need to run the following commands from the `Umbraco.Headless.Client.Samples.Console` folder in order to run the application.
 
 ```
 > dotnet restore
