@@ -146,7 +146,7 @@ The widget allows you to set up a few things as mentioned below:
 The Umbraco Form widget gives you the ability to add a custom form to your site. It is important to note that a custom form needs to have been made using Umbraco Forms before this widget can be used.
 You can create a form by selecting the Forms section in the top menu in your backoffice. 
 
-You will have some settings to personalize your form they are as follows:
+You will have some settings to personalize how your form is presented through the widget. The settings are as follows:
 
 - Pre Heading
 - Heading
