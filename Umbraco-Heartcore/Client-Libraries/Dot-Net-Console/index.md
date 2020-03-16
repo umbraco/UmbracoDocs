@@ -92,6 +92,7 @@ Fetching and showing root Media
 'Company Logo Small' can be seen on: https://media.umbraco.io/dev-docs/8d7c73648f72d6a/company_logo_small.jpg
 'Product01' can be seen on: https://media.umbraco.io/dev-docs/8d7c7364978df6c/Product01.jpg
 'Product02' can be seen on: https://media.umbraco.io/dev-docs/8d7c7364a0b846c/Product02.jpg
+'Product03' can be seen on: https://media.umbraco.io/dev-docs/8d7c7364a0b846c/Product03.jpg
 ```
 
 It is showing the name of the Media items and a direct link to each of the Media items.
