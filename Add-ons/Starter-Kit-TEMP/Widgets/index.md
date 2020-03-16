@@ -144,9 +144,9 @@ The widget allows you to set up a few things as mentioned below:
 
 ![movePage.jpg](images/The-Map-Widget1.png)
 
-The Map Widget is a feature that lets you use google maps to show a location of your choise, this could be if you need to show where your company is located.
+The Map Widget is a feature that lets you use google maps to show the location of your choice, this could be if you need to show where your company is located.
 
-The way it works is that you type in the ***Latitude*** and ***Longitude*** and you selecte how zoomed in you want to be on a scale from 0 - 20 with 7 being default.
+The way it works is that you type in the ***Latitude*** and ***Longitude*** and you select how zoomed in you want to be on a scale from 0 - 20 with 7 being default.
 
 You will have some settings to set the Map widget up as you want it:
 
@@ -160,7 +160,7 @@ You will have some settings to set the Map widget up as you want it:
 - Phone Number
 - Email
 - Opening Hours
-- Bckground Color
+- Background Color
 - Text Color
 - Buttons
 
