@@ -138,3 +138,8 @@ The widget allows you to set up a few things as mentioned below:
 - Buttons
 
 ![movePage.jpg](images/The-Latest-Form-Feed-Widget1.png)
+
+
+### The Map Widget
+
+
