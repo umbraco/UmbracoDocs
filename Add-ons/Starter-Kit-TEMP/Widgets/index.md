@@ -206,3 +206,6 @@ The form has the following settings available:
 - Message Sent Text
 - Container Width
 
+Below you can see how a ***Contact Form*** will look per default:
+
+![movePage.jpg](images/contact-form-example.png)
