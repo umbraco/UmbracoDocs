@@ -114,7 +114,7 @@ For the best experience with the Slider Widget, we recommend adding multiple ***
 
 ![movePage.jpg](images/The-Tabs-Widget.png)
 
-The Tabs Widget allows you to create tabs like the ones you find in your browser. Each tab can contain any widgets you desire.
+The Tabs Widget allows you to create tabs like the ones you find in your browser. Each tab can contain anmy widgets you desire.
 You can even add multiple widgets within one ***Tabs Widget***. This means you could have the ***Text Widget*** and the ***Image Widget*** on one tab and a ***Forms Widget*** on another tab.
 
 Below is two examples of how tabs can be set up.
@@ -142,4 +142,28 @@ The widget allows you to set up a few things as mentioned below:
 
 ### The Map Widget
 
+![movePage.jpg](images/The-Map-Widget1.png)
 
+The Map Widget is a feature that lets you use google maps to show a location of your choise, this could be if you need to show where your company is located.
+
+The way it works is that you type in the ***Latitude*** and ***Longitude*** and you selecte how zoomed in you want to be on a scale from 0 - 20 with 7 being default.
+
+You will have some settings to set the Map widget up as you want it:
+
+- Height
+- Custom Map Pin Icon
+- Show Content Next To Map
+- Pre Heading
+- Heading
+- Text
+- Address 
+- Phone Number
+- Email
+- Opening Hours
+- Bckground Color
+- Text Color
+- Buttons
+
+Below you can see an example of a Map widget with the ***Show Content Next To Map*** Enabled:
+
+![movePage.jpg](images/Map.png)
