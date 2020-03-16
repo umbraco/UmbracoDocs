@@ -32,7 +32,7 @@ This could be used for a sign-up form that you would like to show on various pag
 
 ## Search
 
-The Search page will be part of the starter content / default content, and is used for displayed search results when the search functionality on the frontend is used. 
+The Search page will be part of the starter content / default content, and is used for displayed search results when the search functionality on the frontend is used.
 
 It is possible to add widgets to the Search page. These will be displayed under the search results.
 
