@@ -154,5 +154,5 @@ You will have some settings to personalize how your form is presented through th
 - Background Image
 - Background Color
 - Text Color
-- Form ( this is where you add the form that you have already collected)
+- Form (this is where you add the form that you have already created)
 - Container Width
