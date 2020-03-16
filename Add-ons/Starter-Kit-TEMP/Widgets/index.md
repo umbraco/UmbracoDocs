@@ -144,7 +144,7 @@ The widget allows you to set up a few things as mentioned below:
 ![movePage.jpg](images/The-Umbraco-Form-Widget.png)
 
 The Umbraco Form widget gives you the ability to add a form to your site, it is important to note that this form needs to have been made before this.
-You can create a form by selecting the forms link in the top menu in your back office. 
+You can create a form by selecting the forms link in the top menu in your backoffice. 
 
 You will have some settings to personalize your form they are as follows:
 
