@@ -40,7 +40,7 @@ Enter the Project Alias of your Headless Project
 
 ```
 
-In order to use this application to its fullest, you will need a Heartcore Project on Umbraco Cloud. If you do not have a project yet, you can [create a trial](https://umbraco.com/try-umbraco-heartcore/?gclid=Cj0KCQjwpLfzBRCRARIsAHuj6qXbS_nfMnUhggqPQ59ixHg61_TaRBcooqbUrbfJJ7yQOq8w7nzJphMaAmkTEALw_wcB). It is recommended that you have a project with both content and media items.
+In order to use this application to its fullest, you will need a Heartcore Project on Umbraco Cloud. If you do not have a project yet, you can [create a trial](https://umbraco.com/try-umbraco-heartcore/). It is recommended that you have a project with both content and media items.
 
 If you do not have a project or trial you can also connect to `demo-headless`.
 
@@ -100,4 +100,3 @@ Fetching and showing root Media
 ```
 
 It is showing the name of the Media items and a direct link to each of the Media items.
-
