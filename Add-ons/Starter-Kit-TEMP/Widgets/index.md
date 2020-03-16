@@ -191,8 +191,8 @@ You will have some settings to personalize how your form is presented through th
 
 ![movePage.jpg](images/Contact-Form.png)
 
-The Contact Form Widget will let you add a contact form to your project, however, to make it work you will need to set up a contact email.
-You set up the contact email by going to the settings tab, then you proceed to the general tab, from here you fill out the ***Contact Form Email***.
+The Contact Form Widget will let you add a basic contact form to your project. To make it work you will need to set up a contact email.
+You set up the contact email by going to the General Settings node, and fill out the ***Contact Form Email*** field.
 You will need to set up [SMTP](../Documentation/Umbraco-Cloud/Set-Up/SMTP-settings/) for this to work aswell.
 
 
