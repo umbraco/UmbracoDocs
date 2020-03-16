@@ -195,7 +195,7 @@ The Contact Form Widget will let you add a basic contact form to your project. T
 You set up the contact email by going to the General Settings node, and fill out the ***Contact Form Email*** field.
 You will need to set up [SMTP](../../../Umbraco-Cloud/Set-Up/SMTP-settings/) for this to work aswell.
 
-You can follow this link to see how you set up the contact email in the [General Settings](../Starter-Kit-TEMP/Settings/General-Settings/).
+You can follow this link to see how you set up the contact email in the [General Settings](../../Starter-Kit-TEMP/Settings/General-Settings/).
 
 The form has the following settings available:
 
