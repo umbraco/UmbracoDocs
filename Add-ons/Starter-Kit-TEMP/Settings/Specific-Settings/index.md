@@ -12,9 +12,9 @@ The groups:
 
 * [SEO](#seo)
 * [Settings](#settings)
-* [Navigation]
-* [Footer]
-* [Meta]
+* [Navigation](../../Content-Types/Site-Start/#navigation)
+* [Footer](../../Content-Types/Site-Start/#footer)
+* [Meta](../../Content-Types/Feed/#meta)
 
 ## SEO
 
