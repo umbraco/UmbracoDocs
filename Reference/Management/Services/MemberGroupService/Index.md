@@ -48,7 +48,7 @@ public class MyClass
     }
 
 }
-
+```
 ### Static accessor
 
 If neither a `Services` property or Dependency Injection is available, you can also reference the static `Current` class directly:
