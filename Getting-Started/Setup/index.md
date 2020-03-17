@@ -1,4 +1,6 @@
 ---
+meta.Title: "How to install and configure your Umbraco installation"
+meta.Description: "Information on the requirements to setup, install & upgrade Umbraco"
 versionFrom: 7.0.0
 ---
 

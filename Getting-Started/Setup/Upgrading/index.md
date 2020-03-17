@@ -1,4 +1,6 @@
 ---
+meta.Title: "Upgrading existing installs"
+meta.Description: "Info on the steps to upgrade your copy of Umbraco to a newer version"
 versionFrom: 7.0.0
 ---
 

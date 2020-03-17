@@ -10,6 +10,9 @@
 * [Create Member](#create-member)
 * [Update Member](#update-member)
 * [Delete Member](#delete-member)
+* [Change Member Password](#change-member-password)
+* [Get a reset member password token](#get-a-reset-member-password-token)
+* [Reset member password](#reset-member-password)
 * [Add member to member group](#add-member-to-member-group)
 * [Remove member from member group](#remove-member-from-member-group)
 
@@ -97,6 +100,9 @@ Get a specific member by their username.
 ## Create member
 
 Create a new member.
+
+To set a password when creating a member a `password` field must be included in the posted data.
+If the password field is omitted no password will be set.
 
 **URL**: `/member/`
 
@@ -250,6 +256,159 @@ Delete an existing member by their username.
 }
 ```
 
+## Change member password
+
+Change a members password.
+
+**URL**: `/member/{username}/password`
+
+**Method**: `POST`
+
+**Permissions required** : Access to Member section of the Umbraco Backoffice
+
+### Request
+
+```json
+{
+    "currentPassword": "<current password>",
+    "newPassword": "<new password>"
+}
+```
+
+### Success Response
+
+**Code**: 200
+
+**Content Example**:
+
+```json
+{
+    "_failedPasswordAttempts": 0,
+    "_groups": [],
+    "_createDate": "2019-10-10T12:19:57.053Z",
+    "_id": "59c97163-0ece-4b92-893a-d3da4af2c888",
+    "_updateDate": "2019-10-10T12:20:30.1886381Z",
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/member/jane%40example.com"
+        },
+        "membertype": {
+            "href": "https://api.umbraco.io/member/type/Member"
+        }
+    },
+    "comments": "A Valued Club Blue Member",
+    "email": "jane@example.com",
+    "isApproved": true,
+    "isLockedOut": false,
+    "memberTypeAlias": "Member",
+    "username": "jane@example.com",
+    "name": "Jane A. Doe"
+}
+```
+
+## Get a reset member password token
+
+Get a reset password token.
+
+**URL**: `/member/{username}/password/reset-token`
+
+**Method**: `GET`
+
+**Permissions required** : Access to Member section of the Umbraco Backoffice
+
+### Success Response
+
+**Code**: 200
+
+**Content Example**:
+
+```json
+{
+    "token": "ydAcKSmv+zAdPqFeYPuBAGojmFvJeiI2B6K79x0eOGX5EMevdu/vs16eq5sZ85crk2V+/7JmxN6s/5MJFvNg2K9Iex3cFmNlI8uTmvw2HuQzCr3Zo9KyKh19Gy4iTfzx+Q3Q0z1TCuSdBxjpiI6nuQ==",
+    "expires_in": 86399,
+    "_links": {
+        "self": {
+            "href": "/api/member/jane%40example.com/password/reset-token"
+        },
+        "member": {
+            "href": "/api/member/jane%40example.com"
+        }
+    },
+    "_embedded": {
+        "member": {
+            "_failedPasswordAttempts": 0,
+            "_groups": [],
+        "_createDate": "2019-10-10T12:19:57.053Z",
+        "_id": "59c97163-0ece-4b92-893a-d3da4af2c888",
+        "_updateDate": "2019-10-10T12:20:30.1886381Z",
+        "_links": {
+            "self": {
+                "href": "https://api.umbraco.io/member/jane%40example.com"
+            },
+            "membertype": {
+                "href": "https://api.umbraco.io/member/type/Member"
+            }
+        },
+        "comments": "A Valued Club Blue Member",
+        "email": "jane@example.com",
+        "isApproved": true,
+        "isLockedOut": false,
+        "memberTypeAlias": "Member",
+        "username": "jane@example.com",
+        "name": "Jane A. Doe"
+    }
+}
+```
+
+## Reset member password
+
+Reset a members password.
+
+**URL**: `/member/{username}/password/reset`
+
+**Method**: `POST`
+
+**Permissions required** : Access to Member section of the Umbraco Backoffice
+
+### Request
+
+```json
+{
+    "token": "ydAcKSmv+zAdPqFeYPuBAGojmFvJeiI2B6K79x0eOGX5EMevdu/vs16eq5sZ85crk2V+/7JmxN6s/5MJFvNg2K9Iex3cFmNlI8uTmvw2HuQzCr3Zo9KyKh19Gy4iTfzx+Q3Q0z1TCuSdBxjpiI6nuQ==",
+    "newPassword": "<new password>"
+}
+```
+
+### Success Response
+
+**Code**: 200
+
+**Content Example**:
+
+```json
+{
+    "_failedPasswordAttempts": 0,
+    "_groups": [],
+    "_createDate": "2019-10-10T12:18:06.6087436Z",
+    "_id": "fbabbae4-738d-406a-a7b6-e6684a622882",
+    "_updateDate": "2019-10-10T12:18:06.6087436Z",
+    "_links": {
+        "self": {
+            "href": "https://api.umbraco.io/member/john%40example.com"
+        },
+        "membertype": {
+            "href": "https://api.umbraco.io/member/type/Member"
+        }
+    },
+    "comments": "A Valued Club Blue Member",
+    "email": "jane@example.com",
+    "isApproved": true,
+    "isLockedOut": false,
+    "memberTypeAlias": "Member",
+    "username": "jane@example.com",
+    "name": "Jane Doe"
+}
+```
 ## Add member to member group
 
 Add an existing member to an existing member group.
