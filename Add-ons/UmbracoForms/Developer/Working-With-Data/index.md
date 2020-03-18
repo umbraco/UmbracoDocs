@@ -28,7 +28,7 @@ Returns all records with the state set to approved from the form with the id = `
 ### GetApprovedRecordsFromForm
 
 ```csharp
-PagedResult<IRecord> GetApprovedRecordsFromForm(string formId, int pageNumber, int pageSize)
+PagedResult<IRecord> GetApprovedRecordsFromForm(Guid formId, int pageNumber, int pageSize)
 ```
 
 Returns all records with the state set to approved from the form with the ID = `formId` as a PagedResult<IRecord>.
@@ -44,7 +44,7 @@ Returns all records from all forms on the Umbraco page with the id = `pageId` as
 ### GetRecordsFromFormOnPage
 
 ```csharp
-PagedResult<IRecord> GetRecordsFromFormOnPage(int pageId, string formId, int pageNumber, int pageSize)
+PagedResult<IRecord> GetRecordsFromFormOnPage(int pageId, Guid formId, int pageNumber, int pageSize)
 ```
 
 Returns all records from the form with the id = `formId` on the Umbraco page with the id = `pageId` as a PagedResult<IRecord>.
@@ -52,7 +52,7 @@ Returns all records from the form with the id = `formId` on the Umbraco page wit
 ### GetRecordsFromForm
 
 ```csharp
-PagedResult<IRecord> GetRecordsFromForm(string formId, int pageNumber, int pageSize)
+PagedResult<IRecord> GetRecordsFromForm(Guid formId, int pageNumber, int pageSize)
 ```
 
 Returns all records from the form with the ID = formId as a PagedResult<IRecord>
