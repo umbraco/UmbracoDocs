@@ -20,7 +20,7 @@ Returns all records with the state set to approved from all forms on the Umbraco
 ### GetApprovedRecordsFromFormOnPage
 
 ```csharp
-PagedResult<IRecord> GetApprovedRecordsFromFormOnPage(int pageId, string formId, int pageNumber, int pageSize)
+PagedResult<IRecord> GetApprovedRecordsFromFormOnPage(int pageId, Guid formId, int pageNumber, int pageSize)
 ```
 
 Returns all records with the state set to approved from the form with the id = `formId` on the Umbraco page with the id = `pageId` as a PagedResult<IRecord>.
