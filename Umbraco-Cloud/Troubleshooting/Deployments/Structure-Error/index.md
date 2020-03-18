@@ -110,6 +110,6 @@ Before pushing the changes to the Development environment, you need to access th
 When the push from local to the Development environment has completed, refresh the Umbraco Cloud portal and you will see that the Development environment is now green, which means that the extraction error has been resolved.
 
 Does your Development still have the red indicator?
-Sometimes you might need to run another extraction on your Cloud environment after deploying in order to get a `deploy-complete` marker in your `/data` folder and turn your environment *green*. To do this, follow the steps described in the [manuel extractions guide](../Set-Up/Power-Tools/Manual-extractions).
+Sometimes you might need to run another extraction on your Cloud environment after deploying in order to get a `deploy-complete` marker in your `/data` folder and turn your environment *green*. To do this, follow the steps described in the [manual extractions guide](../Set-Up/Power-Tools/Manual-extractions).
 
 The final step is to deploy the pending changes from Development to your Live environment, to ensure everything is completely in sync.
