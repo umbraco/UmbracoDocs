@@ -1,3 +1,7 @@
+---
+versionFrom: 7.0.0
+---
+
 # How to resolve collision errors
 
 :::note
