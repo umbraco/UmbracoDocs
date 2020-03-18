@@ -33,9 +33,8 @@ Before you start migrating your Umbraco site to Umbraco Cloud there are a few th
 
 Your Umbraco site has to fulfill these requirements:
 
-* Has no more content items than your plan covers (Starter plan: 1000 - Pro Plan: 25000)
-    * Content items includes content nodes and media items
-    * Read more about the Umbraco Cloud Plans on [Umbraco.com](https://umbraco.com/pricing/)
+* Has no more content nodes than your plan covers (Starter plan: 500 - Standard plan: 2500 - Pro Plan: 7500)
+    * Read more about the Umbraco Cloud Plans on [Umbraco.com](https://umbraco.com/umbraco-cloud-pricing/)
 * Contains no member data
     * If you do have member data, these will need to be imported manually after the migration
 * No obsolete/old packages
@@ -48,7 +47,7 @@ If you have a site that does not meet the above requirements, feel free to conta
 
 ### Understanding what you have
 
-Prior to undertaking a migration you'll want to make sure you know the packages, add-ons, and custom code your site is using. 
+Prior to undertaking a migration you'll want to make sure you know the packages, add-ons, and custom code your site is using.
 
 This is especially important if you are using custom property editors that will require connectors in order to work properly with the Umbraco Cloud deployment engine. Connectors are used by Umbraco Deploy to aid with the deployment of content/property-data between environments on Umbraco Cloud.
 
@@ -72,7 +71,7 @@ To help smooth this process for you, there is a community project called [Umbrac
 There are a few tools we recommend using to make the migration process as smooth as possible. We've made a checklist for you here:
 
 * Git needs to be installed on your computer
-    * Optional: Git client, like [GitKraken](https://www.gitkraken.com/)
+    * Optional: Git client, like [Fork](https://git-fork.com/), [SourceTree](https://www.sourcetreeapp.com/), or [GitKraken](https://www.gitkraken.com/)
 * Visual Studio OR Visual Studio Code + IIS Express
 * Merging tool - like [WinMerge](http://winmerge.org/) or [DiffMerge](https://sourcegear.com/diffmerge/)
 
@@ -96,7 +95,7 @@ If you need help upgrading your project, we have some excellent [Upgrade instruc
 
 If you have been using Umbraco Forms on your own project, you will also need to upgrade this to the latest version. You can find and download the latest version of Umbraco Forms under [Projects on Our](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). As with Umbraco CMS we also have documentation on how to [Upgrade Umbraco Forms](https://our.umbraco.com/documentation/Add-ons/UmbracoForms/Installation/ManualUpgrade).
 
-After upgrading your project make sure it runs without any errors. *Hint: Check the umbracoTraceLog.txt log file.*  
+After upgrading your project make sure it runs without any errors. *Hint: Check the umbracoTraceLog.txt log file.*
 
 Ideally your site will run locally using the SQL CE database as this will make content migration easier. Don't worry - if that's not possible you will still be able to complete the migration.
 
@@ -217,7 +216,7 @@ With that confirmed, it's time to prepare to migrate the project to Umbraco Clou
 
 ## 7. Generate meta data
 
-You have now moved and merged the files from your existing site into the Umbraco Cloud project files. So far, so good! 
+You have now moved and merged the files from your existing site into the Umbraco Cloud project files. So far, so good!
 
 In this next part, it is time to generate the so called UDA-files for all your projects meta data.
 
@@ -251,7 +250,7 @@ All project files have been merged and we've generated UDA files for all the met
     * If you have a very large commit to push, you may need to configure your Git client for this
     * Use: git config http.postBuffer 524288000
 
-When the push is complete go check out the Umbraco Cloud Portal to verify the indicator on the Development environment is still *green*. 
+When the push is complete go check out the Umbraco Cloud Portal to verify the indicator on the Development environment is still *green*.
 
 Go to the backoffice of your Development environment and make sure all your metadata is there. You won't see any content or media on the environment yet - this you will move in the next few steps.
 

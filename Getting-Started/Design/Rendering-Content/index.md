@@ -76,8 +76,13 @@ In this further example, we are looking for content firstly on the current node 
 We can use similar overloads when working with ModelsBuilder, for example:
 
 ```csharp
+// For projects created before Jannuary 2020
 @model.Value(x => x.PageTitle, "fr", fallback: Fallback.ToLanguage)
 @model.Value(x => x.PageTitle, fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue), defaultValue: "Default page title")
+
+// For projects created after January 2020
+@model.ValueFor(x => x.PageTitle, "fr", fallback: Fallback.ToLanguage)
+@model.ValueFor(x => x.PageTitle, fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue), defaultValue: "Default page title")
 ```
 
 * Fall-back languages can be configured via the Languages tree within the Settings section.  Each language can optionally be provided with a fall-back language, that will be used when content is not populated for the language requested and the appropriate overload parameters are provided.  It's possible to chain these language fall-backs, so requesting content for Portuguese, could fall-back to Spanish and then on to English.
@@ -89,16 +94,16 @@ In many cases you want to do more than display values from the current page, lik
 
 You can do this by querying content relative to your current page in template views:
 
-```html
+```csharp
 <ul>
-    @foreach(var child in Model.Children())
+    @foreach (var child in Model.Children())
     {
         <li><a href="@child.Url">@child.Name</a></li>
     }
 </ul>
 ```
 
-You can use the Query Builder in the template editor to build more advanced queries
+You can use the Query Builder in the template editor to build more advanced queries.
 ![Query button](images/button-v8.png)
 
 ![Query helper](images/query-v8.png)

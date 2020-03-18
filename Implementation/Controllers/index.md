@@ -1,6 +1,5 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
 product: "UmbracoCms"
 complexity: "Intermediate"
 audience: "Developers"
@@ -10,7 +9,7 @@ meta.Description: "An Umbraco API Controller is an ASP.NET WebApi controller tha
 
 # Controllers in Umbraco
 
-_There are a few types of controllers in Umbraco that perform different tasks_
+_There are a few types of controllers in Umbraco that perform different tasks_.
 
 ## Render MVC Controllers
 
@@ -39,7 +38,7 @@ See [Reference documentation on Umbraco Api Controllers for full details](../../
 
 ## Umbraco Authorized Controllers and Attributes
 
-An Umbraco Authorized controller is used when the controller requires member or user authentication (authN) and/or authorization (authZ). If either the authN or authZ fail the controller will return a "401 - unauthorized response."  
+An Umbraco Authorized controller is used when the controller requires member or user authentication (authN) and/or authorization (authZ). If either the authN or authZ fail the controller will return a "401 - unauthorized response."
 
 ### Backoffice Authorization
 
@@ -85,4 +84,4 @@ There are a few properties that exist for the attribute to give you more control
 
 ### Routing
 
-For details on the routes and route requirements regarding authentication see [Routing for authentication](../../Reference/Routing/Authorized/index.md)
+For details on the routes and route requirements regarding authentication see [Routing for authentication](../../Reference/Routing/Authorized/index.md) and for authorization in API controllers see [Umbraco API authorization](../../Reference/Routing/WebApi/authorization).

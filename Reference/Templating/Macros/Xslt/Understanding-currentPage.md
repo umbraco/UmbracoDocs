@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
+versionRemoved: 8.0.0
 ---
 
 # Understanding "currentPage"
@@ -56,7 +56,7 @@ This is structured similar to the following in the XML document.
         sortOrder="numeric-value"
         createDate="datetime-value"
         updateDate="datetime-value"
-        nodeName="text-value"	
+        nodeName="text-value"
         urlName="text-value"
         writerName="text-value"
         creatorName="text-value"

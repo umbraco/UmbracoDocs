@@ -11,7 +11,7 @@ Welcome to the Umbraco Cloud documentation. Here you can read all about how to s
 Learn how to set up your very first Umbraco Cloud project and all about what Umbraco Cloud is and how you can use it to get your work done more efficiently - and have more fun.
 
 ## [Set up a Project](Set-Up/)
-How to manage your Umbraco Cloud project, how to set it up for development on your local machine and much more. 
+How to manage your Umbraco Cloud project, how to set it up for development on your local machine and much more.
 
 ## [Deployment](Deployment/)
 The deployment process explained with best practices and a little Git mixed in.
@@ -22,11 +22,14 @@ How Umbraco Cloud manages databases between the different environments.
 ## [Upgrades](Upgrades/)
 An explanation of the Umbraco Cloud product upgrade process.
 
+## [Security](Security/)
+Everything you need to know about the security on Umbraco Cloud.
+
 ## [Troubleshooting](Troubleshooting/)
 Tips on finding, identifying and resolving issues.
 
-## [Headless](Headless)
-Documentation on Umbraco Headless.
+## [Umbraco Heartcore](../Umbraco-Heartcore/)
+Documentation on Umbraco Heartcore.
 
 ## [Frequently Asked Questions](Frequently-Asked-Questions/)
 Anything else not covered above.

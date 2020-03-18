@@ -1,4 +1,6 @@
 ---
+meta.Title: "Language Variants in Umbraco"
+meta.Description: "Language Variants allow you to vary content by culture, so you can allow a content node to exist in several languages."
 versionFrom: 8.0.0
 ---
 
@@ -30,9 +32,9 @@ Now to allow a property on the doctype to be varied it will have to be enabled f
 
 ## Working with Language Variants on content
 
-When you return to your content node you will notice two things. 
+When you return to your content node you will notice two things.
 
-1. At the top of the content tree there will now be a dropdown so you can show the content tree in the language of your choice. 
+1. At the top of the content tree there will now be a dropdown so you can show the content tree in the language of your choice.
 2. To the right of the content name there is now a dropdown where you can select a language. You can also open a split view so you can see two languages at once.
 
 ![Allowing variance on properties](images/varying-content.png)

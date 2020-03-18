@@ -39,12 +39,12 @@ A handler for this method could look like:
 ```csharp
 private void Parsing(object sender, Dictionary<string, object> dictionary)
 {
-	// add stuff to the dictionary, preferably under your own custom section such as:
-	dictionary.Add("myPackage", new Dictionary<string, object>
-		{
-			{"mySetting1", "blah"},
-			{"mySetting2", "another value"}
-		});
+    // add stuff to the dictionary, preferably under your own custom section such as:
+    dictionary.Add("myPackage", new Dictionary<string, object>
+        {
+            {"mySetting1", "blah"},
+            {"mySetting2", "another value"}
+        });
 }
 ```
 
@@ -61,7 +61,7 @@ Furthermore it is also possible to customize the path of the Umbraco backoffice 
 In the core we add a new server variable for every api controller's base URL. This allows us to version some API routes and not others if required. The other reason we do this is because of the `umbRequestHelper` angular service that we've built which generates our URLs for us based on the server variables, for example this returns our service url for the ContentController's PostSort action:
 
 ```csharp
-umbRequestHelper.getApiUrl("contentApiBaseUrl", "PostSort")  
+umbRequestHelper.getApiUrl("contentApiBaseUrl", "PostSort")
 ```
 
 This method looks in the "umbracoUrls" key for URLs in the server variables collection, for example:

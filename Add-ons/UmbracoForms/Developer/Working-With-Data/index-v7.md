@@ -7,7 +7,7 @@ versionFrom: 7.0.0
 Umbraco Forms includes some helper methods that return dynamic objects, which can be used to output records in your templates using razor.
 
 ## Available methods
-The static methods can be found in Umbraco.Forms.Mvc.DynamicObjects.Library
+The static methods can be found in `Umbraco.Forms.Mvc.DynamicObjects.Library`.
 
 ### GetApprovedRecordsFromPage
 
@@ -15,7 +15,7 @@ The static methods can be found in Umbraco.Forms.Mvc.DynamicObjects.Library
 DynamicRecordList GetApprovedRecordsFromPage(int pageId)
 ```
 
-Returns all records with the state set to approved from all forms on the Umbraco page with the id = `pageId` as a DynamicRecordList. 
+Returns all records with the state set to approved from all forms on the Umbraco page with the id = `pageId` as a DynamicRecordList.
 
 ### GetApprovedRecordsFromFormOnPage
 
@@ -77,7 +77,7 @@ DateTime Updated
 
 In order to access custom form fields you can use the dot notation, using the field caption but removing all spaces and non alphanumeric characters.
 
-## Sample razor script 
+## Sample razor script
 
 Sample script that is outputting comments using a form created with the default comment form template.
 
@@ -85,22 +85,24 @@ Sample script that is outputting comments using a form created with the default 
 @using Umbraco.Forms.Mvc.DynamicObjects
 
 <ul id="comments">
-	@foreach (dynamic record in Library
-			.GetApprovedRecordsFromPage(@CurrentPage.Id))
-	{
-		<li>
-			@record.Created.ToString("dd MMMM yyy")
-			@if(string.IsNullOrEmpty(record.Website)){
-				<strong>@record.Name</strong>
-			}
-			else{
-				<strong>
-				<a href="@record.Website" target="_blank">@record.Name</a>
-				</strong>
-			}
-			<span>said</span>
-			<p>@record.Comment</p>
-		</li>
-	}
+    @foreach (dynamic record in Library
+            .GetApprovedRecordsFromPage(@CurrentPage.Id))
+    {
+        <li>
+            @record.Created.ToString("dd MMMM yyy")
+            @if (string.IsNullOrEmpty(record.Website))
+            {
+                <strong>@record.Name</strong>
+            }
+            else
+            {
+                <strong>
+                <a href="@record.Website" target="_blank">@record.Name</a>
+                </strong>
+            }
+            <span>said</span>
+            <p>@record.Comment</p>
+        </li>
+    }
 </ul>
 ```

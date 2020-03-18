@@ -22,7 +22,7 @@ public class ContentFinderResolver
 Umbraco runs all content finders, stops at the first one that returns true.
 Finder can set content, template, redirect…
 
-### Example 
+### Example
 
 ```csharp
 public class MyContentFinder : IContentFinder
@@ -53,10 +53,10 @@ public class ContentFinderByNiceUrl : IContentFinder
   public virtual bool TryFindContent(PublishedContentRequest contentRequest)
   {
     string path = contentRequest.HasDomain
-      // eg. 5678/path/to/node
-      ? contentRequest.Domain.RootNodeId.ToString() + …
-      // eg. /path/to/node
-      : contentRequest.Uri.GetAbsolutePathDecoded();
+    // eg. 5678/path/to/node
+    ? contentRequest.Domain.RootNodeId.ToString() + …
+    // eg. /path/to/node
+    : contentRequest.Uri.GetAbsolutePathDecoded();
 
     var node = FindContent(contentRequest, path);
     return node != null;
@@ -74,11 +74,11 @@ this example shows how to add custom content finder to (and how to remove Conten
 ```csharp
 public class MyApplication : ApplicationEventHandler
 {
-  protected override void ApplicationStarting(…) 
+  protected override void ApplicationStarting(…)
   {
     // Insert my finder before ContentFinderByNiceUrl
     ContentFinderResolver.Current
-      .InsertTypeBefore<ContentFinderByNiceUrl, MyContentFinder>();
+    .InsertTypeBefore<ContentFinderByNiceUrl, MyContentFinder>();
 
     // Remove ContentFinderByNiceUrl
     ContentFinderResolver.Current.RemoveType<ContentFinderByNiceUrl>();
@@ -95,7 +95,7 @@ A ContentLastChanceFinder will always return a 404 status code. This example cre
 public class My404ContentFinder : IContentFinder {
     public bool TryFindContent(PublishedContentRequest contentRequest) {
         // logic to find your 404 page and set it to contentRequest.PublishedContent
-     CultureInfo culture = null;
+    CultureInfo culture = null;
         if (contentRequest.HasDomain) {
             culture = CultureInfo.GetCultureInfo(contentRequest.UmbracoDomain.LanguageIsoCode);
         }
@@ -117,7 +117,7 @@ public class My404ContentFinder : IContentFinder {
     }
 }
 ```
-    
+
 Example on how to register your own implementation:
 
 ```csharp

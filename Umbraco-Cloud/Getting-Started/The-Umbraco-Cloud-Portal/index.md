@@ -8,7 +8,7 @@ To help you manage your Umbraco Cloud project we've built the Umbraco Cloud Port
 
 ## Manage your projects
 
-When you login to the Umbraco Cloud Portal you will be presented with a view of all the Umbraco Cloud projects you've created or has been added to as a team member. 
+When you login to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/home/login/) you will be presented with a view of all the Umbraco Cloud projects you've created or has been added to as a team member.
 
 ![View all projects](images/view-projects.png)
 
@@ -16,11 +16,11 @@ By default the projects are ordered by latest updates - projects you've worked o
 
 For quick access you can *favorite* the projects you are currently working, to make them appear as the first projects in the view. You can also browse through the projects by using the search field.
 
-In the top-right corner of the projects view you'll find an option to create more projects. Choose the plan you want and a project will be ready for you within a few minutes. 
+In the top-right corner of the projects view you'll find an option to create more projects. Choose the plan you want and a project will be ready for you within a few minutes.
 
 ## Project Management
 
-Managing your individual projects has been made even simpler with Umbraco Cloud. 
+Managing your individual projects has been made even simpler with Umbraco Cloud.
 
 In the project view, you will have a quick overview of the environments in your project.
 

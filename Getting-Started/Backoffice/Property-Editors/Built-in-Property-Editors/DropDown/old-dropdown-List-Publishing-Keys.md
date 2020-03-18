@@ -66,7 +66,7 @@ See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pit
             <ul>
                 @foreach (var page in articles)
                 {
-                    <li><a href="@page.Url"> @page.Name</a></li>
+                    <li><a href="@page.Url">@page.Name</a></li>
                 }
             </ul>
         }
@@ -94,7 +94,7 @@ See [Common pitfalls](https://our.umbraco.com/documentation/reference/Common-Pit
             <ul>
                 @foreach (var page in articles)
                 {
-                    <li><a href="@page.Url"> @page.Name</a></li>
+                    <li><a href="@page.Url">@page.Name</a></li>
                 }
             </ul>
         }

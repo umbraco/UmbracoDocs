@@ -19,7 +19,7 @@ Configuration can expose certain folders and files in the item picker in the Cou
 ```
 
 ## Folders
-Same as above, but only with folders
+Same as above, but only with folders.
 
 ```xml
 <folderItemProvider>
@@ -31,7 +31,7 @@ Same as above, but only with folders
 
 ## Mediatypes
 
-Single option to choose whether allowed/child media types should be added as a dependency or not
+Single option to choose whether allowed/child media types should be added as a dependency or not.
 
 ```xml
 <mediaTypeItemProvider>
@@ -42,7 +42,7 @@ Single option to choose whether allowed/child media types should be added as a d
 ## DocumentTypes
 
 - Option to include all allowed templates as a dependency
-- Option to include all allowed types as a dependency 
+- Option to include all allowed types as a dependency
 - Option to filter out certain data types
 
 ```xml
@@ -50,7 +50,7 @@ Single option to choose whether allowed/child media types should be added as a d
     <!-- Include all available templates as dependencies, if false, only the current standard template is included -->
     <includeAllTemplates>false</includeAllTemplates>
     <includeChildDocumentTypes>true</includeChildDocumentTypes>
-    
+
     <!-- By default we won't add the built-in data types as dependencies, if needed, they can be removed from the list below -->
     <!-- Only data types which are installed as standard, and does not have any settings are ignored -->
     <!-- to add, find the data type in the umbracoNode table and copy its uniqueId value to a node below-->
@@ -69,10 +69,10 @@ Single option to choose whether allowed/child media types should be added as a d
     </ignoredDataTypes>
 </documentTypeItemProvider>
 ```
-    
+
 ## Media
 
-- Option to include parent nodes as a forced dependency 
+- Option to include parent nodes as a forced dependency
 - Option to automatically include all children (in case a folder is transferred)
 
 ```xml
@@ -91,11 +91,11 @@ Single option to choose whether allowed/child media types should be added as a d
     <includeParents>true</includeParents>
 </documentItemProvider>
 ```
-  
+
 ## Templates
 
-- Option to collect macros found in templates as a dependency 
-- Toggle whether Courier should look for files linked in the template(js,css,image files)
+- Option to collect macros found in templates as a dependency
+- Toggle whether Courier should look for files linked in the template (JS/CSS/image files)
 - Collect locallink references and add the documents as dependencies
 - Parse macros and add any NodeIDs passed to the macro as a dependency
 

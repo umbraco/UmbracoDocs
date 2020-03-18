@@ -27,7 +27,7 @@ public class HomeController : Umbraco.Web.Mvc.RenderMvcController
     }
 }
 ```
-    
+
 Now you can run any code that you want inside of that Action!
 
 ## Routing via template
@@ -118,7 +118,7 @@ public class HomeController : Umbraco.Web.Mvc.RenderMvcController
 
 You can also pass values directly to the controller action using a query string. All you have to do is to put those fields in action definition and attach values with correct fields names to your URL:
 
-	?myfield1=hello&myfield2=umbraco
+    ?myfield1=hello&myfield2=umbraco
 
 This way, fields defined in the action's parameters will get automatically populated:
 

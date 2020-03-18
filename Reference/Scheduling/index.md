@@ -3,8 +3,12 @@ versionFrom: 8.0.0
 ---
 
 # Scheduling with BackgroundTaskRunner
-In Umbraco 8+ it is possible to run reccuring code using the `BackgroundTaskRunner`.
+In Umbraco 8+ it is possible to run recurring code using the `BackgroundTaskRunner`.
 Below is a complete example showing how to register a Task Runner with a [component](../../Implementation/Composing/index.md) that will regularly empty out the recycle bin every five minutes.
+
+:::warning
+Be aware you may or may not want this background task code to run on all servers, if you are using Load Balancing with multiple servers - https://our.umbraco.com/Documentation/Getting-Started/Setup/Server-Setup/Load-Balancing/
+:::
 
 ```csharp
 using Umbraco.Core;
@@ -92,10 +96,6 @@ namespace Umbraco.Web.UI
 }
 
 ```
-
-:::warning
-Be aware you may or may not want this background task code to run on all servers, if you are using Load Balancing with multiple servers - https://our.umbraco.com/Documentation/Getting-Started/Setup/Server-Setup/Load-Balancing/
-:::
 
 ### Using RuntimeState
 In the example above you could add the following switch case at the beginning to help determine the server role & thus if you want to run code on that type of server and exit out early.

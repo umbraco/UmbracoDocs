@@ -16,13 +16,13 @@ The __Folder__ Media Type is a container for organizing media items in the media
 
 ## Creating a folder
 
-It is always a good idea to start by creating a folder for Media items. Make sure to name your folders in a way that makes it easy for editors to upload files and images in the right place.
+It is always a good idea to start by creating a folder for Media items. Make sure to name your folders in a way that makes it possible for editors to upload files and images in the right place.
 
 To create a media folder go to the __Media section__ and click the menu icon to the right of __Media__, alternatively you can right click the __Media__ node and choose create. This will bring up a dialogue. Pick the __Folder__, enter a name and press __save__.
 
 ## Uploading images and files
 
-There are a couple of different ways to do this. 
+There are a couple of different ways to do this.
 
 You can use the context menu as when creating a folder. Click the menu icon next to the folder and choose __Image__ or __File__, enter a name for your media item and click the __Upload field__ and choose a file to upload.
 
@@ -64,7 +64,7 @@ Go to the __Settings__ section. On the __Media Types__ node click the menu icon 
 Having different folders for different media types makes it possible to restrict where media items can be created. Only allowing PDF uploads in a certain folder or employee images in another makes it easier for editors to keep the Media section organized.
 :::
 
-Choose __New Media Type__. This will open the Media Type editor. It is basically the same editor used for creating Document Types, the difference is that Media Types define items for Media section and you do not have the ability to assign a template for the Media Type.  
+Choose __New Media Type__. This will open the Media Type editor. It is basically the same editor used for creating Document Types, the difference is that Media Types define items for Media section and you do not have the ability to assign a template for the Media Type.
 
 ![Creating a Media Type](images/Creating-Media-Create-740.jpg)
 Name the Media Type "Employee Image". Choose an icon (user) by clicking the icon to the left of the name.

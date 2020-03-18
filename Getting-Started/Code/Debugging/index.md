@@ -1,4 +1,6 @@
 ---
+meta.Title: "Debugging"
+meta.Description: "Debugging in Umbraco"
 versionFrom: 8.0.0
 ---
 
@@ -8,13 +10,13 @@ During the development of your Umbraco site you can debug and profile the code y
 
 To perform proper debugging on your site you need to set your application to have debug enabled. This can be done by setting `debug="true"` (found in `System.Web`) in your `web.config` file:
 
+:::warning
+Debug should always be set to false in production.
+:::
+
 ```xml
 <compilation defaultLanguage="c#" debug="true" batch="true" targetFramework="4.7.2" numRecompilesBeforeAppRestart="50" />
 ```
-
-:::warning 
-Debug should always be set to false in production. 
-:::
 
 ## Tracing
 
@@ -61,7 +63,7 @@ If you click 'Show Trivial' you can seen the kind of detail the MiniProfiler mak
 
 ![Show Trivial](images/v8-miniprofiler-trivial.png)
 
-and any underlying SQL Statements that are being executed for a part of the execution
+and any underlying SQL Statements that are being executed for a part of the execution:
 
 ![Underlying SQL queries](images/v8-miniprofiler-sql-trigger.png)
 
@@ -79,7 +81,7 @@ using Umbraco.Core.Logging;
 using Umbraco.Web.Models;
 using Umbraco.Web.Mvc;
 
-namespace Doccers.Core.Controllers
+namespace OurUmbraco.Core.Controllers
 {
     public class ProductsController : RenderMvcController
     {
@@ -91,7 +93,7 @@ namespace Doccers.Core.Controllers
             _profiler = profiler;
         }
 
-        public ActionResult Products(ContentModel model)
+        public ActionResult Products(IPublishedContent model)
         {
             // Perform a step
             using (_profiler.Step("Sleep"))
@@ -105,13 +107,13 @@ namespace Doccers.Core.Controllers
 }
 ```
 
-and now in the profiler you can see
+and now in the profiler you can see:
 
 ![Show Trivial](images/v8-miniprofiler-write.png)
 
 ## Umbraco Productivity Tool - Chrome Extension
 
-If you are using the Google Chrome browser you can install this [Umbraco Productivity Tool Chrome Extension](https://chrome.google.com/webstore/detail/umbraco-productivity/kepkgaeokeknlghbiiipbhgclikjgkdp?hl=en)
+If you are using the Google Chrome browser you can install this [Umbraco Productivity Tool Chrome Extension](https://chrome.google.com/webstore/detail/umbraco-productivity/kepkgaeokeknlghbiiipbhgclikjgkdp?hl=en).
 
 This will allow you to quickly switch between debugging with the MiniProfiler, Trace viewer and normal mode.
 

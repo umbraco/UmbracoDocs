@@ -19,18 +19,18 @@ To access the current page in your macros or templates, copy-paste the below Raz
 <h1>@pageName</h1>
 ```
 
-## [Properties](Properties.md)
+## [Properties](Properties)
 
 Listing and explanation of IPublishedContent properties and standard helpers for Content and Media.
 
-## [Collections & Filtering](Collections.md)
+## [Collections & Filtering](Collections)
 
 Methods for IPublishedContent collections and filtering.
 
-## [IsHelpers](IsHelpers.md)
+## [IsHelpers](IsHelpers)
 
 A library of extension methods to simplify working with IPublishedContent in collections to modify your HTML output. Examples of using `IsHelpers` could be injecting CSS classes for alternating rows or to modify margins.
 
-## [Extension Methods](ExtensionMethods.md)
+## [Extension Methods](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Web.PublishedContentExtensions.html)
 
 Extension methods available for IPublishedContent.

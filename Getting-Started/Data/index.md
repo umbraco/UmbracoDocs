@@ -1,4 +1,6 @@
 ---
+meta.Title: "Umbraco Data"
+meta.Description: "This section focuses on how to create data using the Umbraco backoffice"
 versionFrom: 7.0.0
 ---
 
@@ -16,7 +18,7 @@ Defining Documents Types, adding properties and creating content.
 Defining Media Types and uploading files to the media section, using upload fields and image cropper.
 
 ## [Creating Members](Members/)
-Defining Member Types and creating members for authentication and user profiles
+Defining Member Types and creating members for authentication and user profiles.
 
 ## [Customizing Data Types](Data-Types/)
 Creating and editing Data Types.

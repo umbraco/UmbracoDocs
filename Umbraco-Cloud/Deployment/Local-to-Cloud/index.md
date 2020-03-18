@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # Deploying from Local to Cloud
 
-When you are working with your Umbraco Cloud project locally all changes you make will automatically be identified and picked up by your local Git client. 
+When you are working with your Umbraco Cloud project locally all changes you make will automatically be identified and picked up by your local Git client.
 
 Here's a quick step-by-step on how you deploy these changes to your Cloud environment:
 
@@ -17,7 +17,7 @@ Here's a quick step-by-step on how you deploy these changes to your Cloud enviro
 
 ![Deploy from Local to Remote](images/stage-commit-deploy.gif)
 
-In the above example, GitKraken is used to stage, commit and deploy changes made to a Document type plus a newly added data type from a local environment to a Cloud Development environment.
+In the above example, GitKraken is used to stage, commit and deploy changes made to a Document type plus a newly added data type from a local environment to a Cloud Development environment. You are of course welcome to use any Git client or cli of your choice.
 
 Once you’ve deployed your local changes to your Cloud environment deploying to your remaining Cloud environments (e.g. Staging and/or Live) is done using the **'Deploy changes to ..'** button in the Umbraco Cloud portal. Learn more about how this is done in our section about [deploying between two Cloud environments](../Cloud-to-Cloud).
 
@@ -35,15 +35,15 @@ If you don't have a Git client installed on your local machine, or prefer to wor
     git commit -m "Adding updated schema changed"
     # Push to the remote Development environment
     git push origin master
-    
+
     # If the push is rejected you will need to pull first
     git pull origin master
     # Try to push again if there were no conflicts
     git push origin master
 
-If you had to pull down new commits, it is a good idea to see if any of these commits contained changes to the schema (anything in `/Data/Revision/`). In order to ensure that your local site is up-to-date, and your changes work with the with the updated schema, you can to navigate to the `/data/` folder and create a deploy marker if one doesn't already exist. From a command line type the following command:
+If you had to pull down new commits, it is a good idea to see if any of these commits contained changes to the schema (anything in `/Data/Revision/`). In order to ensure that your local site is up-to-date, and your changes work with the updated schema, you can navigate to the `/data/` folder and create a deploy marker if one doesn't already exist. From a command line type the following command:
 
-`/…mysite/data> echo > deploy` 
+`/…mysite/data> echo > deploy`
 
 The local site should be running when you do this. The deploy marker will change to `deploy-progress` while updating the site and `deploy-complete` when done. If there are any conflicts/errors you will see a `deploy-failed` marker instead, which contains an error message with a description of what went wrong.
 

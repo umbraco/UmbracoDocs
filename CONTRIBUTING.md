@@ -13,7 +13,7 @@ All active work done on the documentation is currently being done on the `master
 ### Keeping your UmbracoDocs fork in sync with the main repository
 If you decide to clone the UmbracoDocs repository on your local machine for making larger changes that can't be done directly on GitHub then we recommend you sync with our repository before you submit your pull request. That way, you can fix any potential merge conflicts and make our lives a little bit easier.
 
-To sync your fork with this original one, you'll have to add the upstream url, you only have to do this once:
+To sync your fork with this original one, you'll have to add the upstream URL, you only have to do this once:
 
 ```
 git remote add upstream https://github.com/umbraco/UmbracoDocs.git
@@ -39,4 +39,4 @@ First fork and clone the repository so that you have your own working copy. Then
 Everything in the main repository will make it onto the [our.umbraco.com/documentation](https://our.umbraco.com/documentation) site, which is why we have chosen a pull request workflow to keep everything straightforward.
 
 ## Planning & discussions
-If you want to report an issue, or you planning a big change, use [GitHub issues](https://github.com/umbraco/UmbracoDocs/issues) for opening a discussion. If you want to do a small change, don't hesitate to do a pull request, we don't need you to create an issue first.
+If you want to report an issue, or you're planning a big change, use [GitHub issues](https://github.com/umbraco/UmbracoDocs/issues) for opening a discussion. If you want to do a small change, don't hesitate to do a pull request, we don't need you to create an issue first.

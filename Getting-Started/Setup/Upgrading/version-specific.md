@@ -44,7 +44,7 @@ Version 7.7.0 introduces User Groups and a better user management and security f
 
 Also we're now by default using the e-mail address and not the username for the credentials. So when trying to login to the backoffice one will now need to use the e-mail address as opposed to the username, which was used in previous versions. If you do an upgrade from an older version and would like to keep using the username you will need to change the `<usernameIsEmail>true</usernameIsEmail>` setting to **false**.
 
-For a full list of breaking changes see: [the list on the issue tracker](https://issues.umbraco.org/issues/?q=&project=U4&tagValue=&release=7.7.0&issueType=&search=search) 
+For a full list of breaking changes see: [the list on the issue tracker](https://issues.umbraco.org/issues/?q=&project=U4&tagValue=&release=7.7.0&issueType=&search=search)
 
 Version 7.7.2 no longer ships with the `CookComputing.XmlRpcV2` assembly. If you reference this assembly or have a package that requires this assembly, you may need to copy it back into your website from the backup you've taken before you began the 7.7.2 upgrade.
 
@@ -69,8 +69,9 @@ Umbraco stores data for data types in different ways, for a lot of pickers it wi
 @{
     IPublishedContent contactPage;
     var contactPageId = Model.Content.GetPropertyValue<int>("contactPagePicker");
-    if(contactPageId > 0) {
-         contactPage = Umbraco.TypedContent(contactPageId);
+    if (contactPageId > 0)
+    {
+        contactPage = Umbraco.TypedContent(contactPageId);
     }
 }
 
@@ -86,10 +87,10 @@ Wouldn't it be nice if instead of that you could do:
     <a href="@Model.Content.ContactPagePicker.Url">@Model.ContactPagePicker.Name</a>
 </p>
 ```
-		
+
 This is possible since 7.6.0 using Models Builder and through the inclusion of [core property value converters](https://our.umbraco.com/projects/developer-tools/umbraco-core-property-value-converters/), a brilliant package by Jeavon.
 
-In order to not break everybody's sites (the results of queries are different when PVCs are enabled) we disabled these PVCs by default. 
+In order to not break everybody's sites (the results of queries are different when PVCs are enabled) we disabled these PVCs by default.
 
 Umbraco 7.6.0 also came with new pickers that store their data as a [UDI (Umbraco Identifier)](https://our.umbraco.com/Documentation/Reference/Querying/Udi). We wanted to make it easy to use these new pickers so by default we wanted PVCs to always be enabled for those pickers.
 
@@ -104,7 +105,7 @@ This issue only affects:
 * Related Links
 * Member Picker
 
-If you have already upgraded to 7.6.2 and fixed some of your queries for those three data types then you might have to fix them again in 7.6.3. 
+If you have already upgraded to 7.6.2 and fixed some of your queries for those three data types then you might have to fix them again in 7.6.3.
 
 We promise it's the last time you need to update them. We're sorry for the inconvenience.
 
@@ -120,13 +121,13 @@ The three most important things to note are:
 
 ### Upgrading via NuGet
 
-This is an important one and there was unfortunately not a perfect solution to this. We have removed the UrlRewriting dependency and no longer ship with it, however if you are using it we didn't want to have NuGet delete all of your rewrites. So the good news is that if you are using it, the NuGet upgrade will not delete your rewrite file and everything should continue to work (though you should really be using IIS rewrites!). 
+This is an important one and there was unfortunately not a perfect solution to this. We have removed the UrlRewriting dependency and no longer ship with it, however if you are using it we didn't want to have NuGet delete all of your rewrites. So the good news is that if you are using it, the NuGet upgrade will not delete your rewrite file and everything should continue to work (though you should really be using IIS rewrites!).
 
 However, if you are not using it, **you will get a YSOD after upgrading, here's how to fix it**
 
 Since you aren't using UrlRewriting you will have probably never edited the UrlRewriting file and in which case NuGet will detect that and remove it. However you will need to manually remove these UrlRewriting references from your web.config:
 
-```xml 
+```xml
 <section name="urlrewritingnet" restartOnExternalChanges="true" requirePermission="false" type="UrlRewritingNet.Configuration.UrlRewriteSection, UrlRewritingNet.UrlRewriter" />
 ```
 
@@ -148,11 +149,11 @@ and
 
 ```xml
 <system.webServer>
-   <modules>
-   <remove name="UrlRewriteModule"/>
-   <add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter"/>
+    <modules>
+    <remove name="UrlRewriteModule"/>
+    <add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter"/>
     ...
-   </modules>
+    </modules>
 </system.webServer>
 ```
 
@@ -168,7 +169,7 @@ There is **[important Forms upgrade documentation that you will need to read the
 Umbraco Courier 3.1.0 has been released to be compatible with Umbraco 7.6. If you are using Courier, you will need to update it to version 3.1.0
 
 ## Version 7.4.0
-For manual upgrades: 
+For manual upgrades:
 
 * Copy the new folder `~/App_Plugins/ModelsBuilder` into the site
 * Do not forget to merge `~/Config/trees.config` and `~/Config/Dashboard.config` - they contain new and updated entries that are required to be there
@@ -190,12 +191,12 @@ NuGet will do the following for you but if you're upgrading manually:
 Other considerations:
 
 * WebApi has been updated, normally you don’t have to do anything unless you have custom webapi configuration:
-  * See this article if you are using `WebApiConfig.Register`: [https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2](https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2) 
+  * See this article if you are using `WebApiConfig.Register`: [https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2](https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2)
   * You need to update your `web.config` file to have the correct WebApi version references - this should be done by doing a compare/merge of your `~/web.config` file with the `~/web.config` file in the release
 * MVC has been updated to MVC5
   * You need to update your `web.config` file to have the correct MVC version references - this should be done by doing a compare/merge of your `~/web.config` file with the `~/web.config` file in the release
   * The upgrader will take care of updating all other web.config’s (in all other folders, for example, the `Views` and `App_Plugins` folders) to have the correct settings
-  * For general ASP.NET MVC 5 upgrade details see: [https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2](https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2) 
+  * For general ASP.NET MVC 5 upgrade details see: [https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2](https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2)
 * It is not required that you merge the changes for the Examine index paths in the ExamineIndex.config file. However, if you do, your indexes will be rebuilt on startup because Examine will detect that they don’t exist at the new location.
 * It's highly recommended to clear browser cache - the ClientDependency version is automatically bumped during install which should force browser cache to refresh, however in some edge cases this might not be enough.
 
@@ -216,13 +217,13 @@ Other considerations:
     <header>User</header>
     <usercontrol>/create/simple.ascx</usercontrol>
     <tasks>
-      <create assembly="umbraco" type="userTasks" />
-      <delete assembly="umbraco" type="userTasks" />
+    <create assembly="umbraco" type="userTasks" />
+    <delete assembly="umbraco" type="userTasks" />
     </tasks>
 </nodeType>
 ```
 
-	* The &lt;usercontrol&gt; value has changed to: **/create/user.ascx**, this is a required change otherwise creating a new user will not work.
+    * The &lt;usercontrol&gt; value has changed to: **/create/user.ascx**, this is a required change otherwise creating a new user will not work.
 * There is a breaking change to be aware of, full details can be found [here](https://umbraco.com/blog/heads-up-breaking-change-coming-in-702-and-62/).
 
 ## Version 7.0.0 to 7.0.1

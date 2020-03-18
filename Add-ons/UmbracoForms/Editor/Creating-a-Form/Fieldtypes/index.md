@@ -62,13 +62,13 @@ Outputs a title and description that are set as prevalues.
 
 ![Radiobuttonlist](images/titleanddescription.png)
 
-## [Recaptcha](Recaptcha)
+## [reCAPTCHA](Recaptcha)
 The field displays a single checkbox for the user to check in order for the form to be validated
 
-![Recaptcha2](images/recaptcha2.png)
+![reCAPTCHA v2](images/recaptcha2.png)
 
 :::tip
-As ReCaptcha v1 is shut down, we **strongly** recommend that you use the ReCaptcha2 field type.
+As reCAPTCHA v1 is shut down, we **strongly** recommend that you use the reCAPTCHA v2 field type.
 :::
 
 ## Hidden

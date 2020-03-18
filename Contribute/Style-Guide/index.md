@@ -1,6 +1,11 @@
+---
+meta.Title: "Style Guide"
+meta.Description: "A style guide for Umbraco documentation repo."
+---
+
 # Style Guide
 
-To ensure that the documentation is readable and has a similar style througout we have a few rules to follow. These rules are set up with an automatic style linter called [Vale](https://errata-ai.github.io/vale/). Additionally we have a Github bot that will check PRs for broken rules and advise you what to change.
+To ensure that the documentation is readable and has a similar style throughout we have a few rules to follow. These rules are set up with an automatic style linter called [Vale](https://errata-ai.github.io/vale/). Additionally we have a GitHub bot that will check PRs for broken rules and advise you what to change.
 
 ## Current style rules
 
@@ -16,11 +21,15 @@ This rule will give a warning if you end headings with either of these punctuati
 
 This rule will give a warning if you use either of these words in your text:
 
+<!-- vale off -->
+
 - Simple
 - Simply
 - Just
 - Easily
 - Actually
+
+<!-- vale on -->
 
 ### Start lists with capital letters
 

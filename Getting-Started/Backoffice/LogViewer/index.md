@@ -1,4 +1,6 @@
 ---
+meta.Title: "Log Viewer"
+meta.Description: "Information on using the Umbraco log viewer in version 8"
 keywords: logging logviewer logs serilog messagetemplates logs v8 version8
 versionFrom: 8.0.0
 ---
@@ -46,12 +48,11 @@ namespace My.Website
 {
     public class AzureTableLogViewer : LogViewerSourceBase
     {
-
         public override bool CanHandleLargeLogs => true;
 
         public override bool CheckCanOpenLogs(DateTimeOffset startDate, DateTimeOffset endDate)
         {
-            //This method will not be called - as we have indicated that this 'CanHandleLargeLogs'
+            // This method will not be called - as we have indicated that this 'CanHandleLargeLogs'
             throw new NotImplementedException();
         }
 
@@ -72,8 +73,8 @@ namespace My.Website
             // Loop through the results, displaying information about the entity.
             foreach (var entity in results)
             {
-                //Reads the compact JSON format stored in the 'Data' column back to a LogEvent
-                //Same as the JSON txt files does
+                // Reads the compact JSON format stored in the 'Data' column back to a LogEvent
+                // Same as the JSON txt files does
                 var logItem = LogEventReader.ReadFromString(entity.Data);
 
                 if (count > skip + take)
@@ -154,7 +155,6 @@ Now with the above two classes we have the plumbing in place to view logs from a
 For more in depth information about logging and how to configure it, please read the [logging documentation](../../Code/Debugging/Logging/).
 
 ### Compact Log Viewer - Desktop App
-This is a desktop tool for viewing & querying JSON log files from disk in the same way as the built in logviewer dashboard of Umbraco
+This is a desktop tool for viewing & querying JSON log files from disk in the same way as the built in logviewer dashboard of Umbraco.
 
 <a href='//www.microsoft.com/store/apps/9N8RV8LKTXRJ?cid=storebadge&ocid=badge'><img src='https://assets.windowsphone.com/85864462-9c82-451e-9355-a3d5f874397a/English_get-it-from-MS_InvariantCulture_Default.png' alt='English badge' style='height: 38px;' height="38" /></a> <a href="https://itunes.apple.com/gb/app/compact-log-viewer/id1456027499"><img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg" /></a>
-

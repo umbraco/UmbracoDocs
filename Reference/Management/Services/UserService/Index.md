@@ -1,41 +1,64 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # UserService
 
-**Applies to Umbraco 6.x and newer**
-
 The UserService acts as a "gateway" to Umbraco data for operations which are related to Users.
 
-[Browse the API documentation for UserService](https://our.umbraco.org/apidocs/v7/csharp/api/Umbraco.Core.Services.UserService.html).
+[Browse the API documentation for IUserService](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.IUserService.html).
 
- * **Namespace:** `Umbraco.Core.Services` 
+ * **Namespace:** `Umbraco.Core.Services`
  * **Assembly:** `Umbraco.Core.dll`
 
 All samples listed in this document will require references to the following dll:
 
 * Umbraco.Core.dll
 
-All samples listed in this document will require the following usings:
-	
-	using Umbraco.Core.Models.Membership;
-	using Umbraco.Core.Services;
+All samples in this document will require the following using statements:
+
+```csharp
+using Umbraco.Core;
+using Umbraco.Core.Models;
+using Umbraco.Core.Services;
+```
 
 ## Getting the service
 
-If you wish to use use the user service in a class that inherits from one of the Umbraco base classes - eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController` - you can access the user service through a local `Services` property:
+### Services property
 
-	IUserService us = Services.UserService;
-	
-In Razor views, you can access the UserService through the `ApplicationContext` property:
+If you wish to use the UserService in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController`), you can access the service through a local `Services` property:
 
-	IUserService us = ApplicationContext.Services.UserService
+```csharp
+IUserService userService = Services.UserService;
+```
 
-If neither a `Services` property or a `ApplicationContext` is available, you can also reference the `ApplicationContext` class directly:
+### Dependency Injection
 
-	IUserService us = ApplicationContext.Current.Services.UserService
+In other cases, you may be able to use Dependency Injection. For instance if you have registered your own class in Umbraco's dependency injection, you can specify the `IUserService` interface in your constructor:
+
+```csharp
+public class MyClass
+{
+
+    private IUserService _userService;
+    
+    public MyClass(IUserService userService)
+    {
+        _userService = userService;
+    }
+
+}
+```
+
+### Static accessor
+
+If neither a `Services` property or Dependency Injection is available, you can also reference the static `Current` class directly:
+
+```csharp
+IUserService userService = Umbraco.Core.Composing.Current.Services.UserService;
+```
+
 
 ## Samples
 

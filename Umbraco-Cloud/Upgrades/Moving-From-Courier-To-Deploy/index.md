@@ -7,17 +7,17 @@ versionFrom: 7.0.0
 As of Umbraco 7.6, sites running on Umbraco Cloud will need to be running Umbraco Deploy, and not Umbraco Courier.
 Courier has been replaced by Deploy, and Deploy is highly specialized to be working on Umbraco Cloud.
 
-In normal circumstances, the move from Courier to Deploy will happen automatically when you click the button in the portal for upgrading to Umbraco 7.6. 
+In normal circumstances, the move from Courier to Deploy will happen automatically when you click the button in the portal for upgrading to Umbraco 7.6.
 If for some reason your Umbraco project was upgraded, but not switched to Deploy. i.e. if you did the upgrade manually.
 
-This is a guide for moving from Courier to Deploy. 
+This is a guide for moving from Courier to Deploy.
 The first step is to acquire the latest Umbraco Deploy package from [http://nightly.umbraco.org/?container=umbraco-deploy-release](http://nightly.umbraco.org/?container=umbraco-deploy-release)
 
 For a version 7.x website, choose the latest "UmbracoDeploy.v2.x.x.zip" file.
 
 Next, request a valid Deploy Key from Umbraco Support. This can be done through the in-app chat in the Umbraco Cloud Portal or by reaching out to contact@umbraco.com.
 
-Prerequisites for using the guide is that you have a running site, that contains all metadata, like document types, data types and templates. 
+Prerequisites for using the guide is that you have a running site, that contains all metadata, like document types, data types and templates.
 
 ## 1 Removing Umbraco Courier
 First you need to remove all Courier related files and folders.
@@ -51,7 +51,7 @@ Also, these 3rd party dlls have been part of Courier. If you are not using them 
 
 If you have a NuGet reference to "Umbraco.Courier.Contrib", you should uninstall that and delete the related .dll from `bin` as well.
 
-Finally all `.courier` files found in `/data/Revision` needs to be deleted as well, as they will no longer be used. 
+Finally all `.courier` files found in `/data/Revision` needs to be deleted as well, as they will no longer be used.
 
 :::note
 Do not remove the `/data/Revision` folder itself, only the folders inside the `/data/Revision` folder - you will need this folder for Deploy as well.
@@ -65,13 +65,13 @@ To add Umbraco Deploy copy all content from the ZIP received (except `/config/Um
 Do not overwrite the existing `/config/UmbracoDeploy.config` file with the empty one from the ZIP. It already has the correct settings for your site.
 :::
 
-Next you need to update the web.config to letting it know about Umbraco Deploy. 
+Next you need to update the web.config to letting it know about Umbraco Deploy.
 
 First add the following section to the `configuration/configSections` part
 
     <sectionGroup name="umbraco.deploy">
-      <section name="environments" type="Umbraco.Deploy.Configuration.DeployEnvironmentsSection, Umbraco.Deploy" requirePermission="false"/>
-      <section name="settings" type="Umbraco.Deploy.Configuration.DeploySettingsSection, Umbraco.Deploy" requirePermission="false"/>
+    <section name="environments" type="Umbraco.Deploy.Configuration.DeployEnvironmentsSection, Umbraco.Deploy" requirePermission="false"/>
+    <section name="settings" type="Umbraco.Deploy.Configuration.DeploySettingsSection, Umbraco.Deploy" requirePermission="false"/>
     </sectionGroup>
 
 Secondly add the `umbraco.deploy` element to the web.config in `configuration`
@@ -90,23 +90,23 @@ To generate the files, start the site in IIS, and open a command prompt in the `
 When using Umbraco Courier the entry in the `/Config/Dashboard.config` should contain the following:
 
     <section alias="UmbracoDeploy">
-      <areas>
+    <areas>
         <area>content</area>
-      </areas>
-      <tab caption="Your workspace">
-        <control>/app_plugins/deploy/views/deploy.html</control>
-      </tab>
+    </areas>
+    <tab caption="Your workspace">
+        <control>/App_Plugins/deploy/views/deploy.html</control>
+    </tab>
     </section>
-  
+
  When switching to Umbraco Deploy this needs to be modified as the location to the deploy dashboard has changed. Make sure the entry looks like this:
- 
-     <section alias="Deploy">
-       <areas>
-         <area>content</area>
-       </areas>
-       <tab caption="Your workspace">
-         <control>/App_Plugins/Deploy/views/dashboards/dashboard.html</control>
-       </tab>
+
+    <section alias="Deploy">
+        <areas>
+        <area>content</area>
+        </areas>
+        <tab caption="Your workspace">
+        <control>/App_Plugins/Deploy/views/dashboards/dashboard.html</control>
+        </tab>
     </section>
 
 ### Setup Deploy Api Key

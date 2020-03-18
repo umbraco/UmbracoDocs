@@ -7,7 +7,7 @@ needsV8Update: "true"
 
 It is not necessary to override and replace the [UmbracoApplication](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Web.UmbracoApplication.html).  If you consider changing the default `global.asax`, read on!
 
-Umbraco allows you to bind directly to HttpApplication events which is very handy since normally you would require an HttpModule to bind to these types of events. 
+Umbraco allows you to bind directly to HttpApplication events which is very handy since normally you would require an HttpModule to bind to these types of events.
 
 The HttpApplication events are listed here: [https://msdn.microsoft.com/en-us/library/system.web.httpapplication_events.aspx](https://msdn.microsoft.com/en-us/library/system.web.httpapplication_events.aspx)
 
@@ -28,7 +28,7 @@ namespace MyProject.EventHandlers
         {
             //Listen for the ApplicationInit event which then allows us to bind to the
             //HttpApplication events.
-            UmbracoApplicationBase.ApplicationInit += UmbracoApplicationBase_ApplicationInit;     
+            UmbracoApplicationBase.ApplicationInit += UmbracoApplicationBase_ApplicationInit;
         }
 
         /// <summary>
@@ -41,8 +41,8 @@ namespace MyProject.EventHandlers
         }
 
         /// <summary>
-        /// At the end of a handled request do something... 
-        /// </summary>            
+        /// At the end of a handled request do something...
+        /// </summary>
         void UmbracoApplication_PostRequestHandlerExecute(object sender, EventArgs e)
         {
             //Do something...

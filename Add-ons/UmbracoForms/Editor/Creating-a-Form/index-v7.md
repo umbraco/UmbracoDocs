@@ -8,9 +8,9 @@ This will show the basic steps of creating a form and adding them to your Umbrac
 
 ## Navigate to the Forms section
 
-Managing forms happens in the Forms section of the Umbraco backoffice. You need to have access to the section in order to see it. 
+Managing forms happens in the Forms section of the Umbraco backoffice. You need to have access to the section in order to see it.
 
-![Forms Section](images/FormsSection.png) 
+![Forms Section](images/FormsSection.png)
 
 ## Click the forms tree
 
@@ -58,7 +58,7 @@ To add more pages, click **Add new page** at the bottom of the page forms design
 
 As you can give each page a name, you can also name the groups.
 
-![Forms designer page captin](images/FormDesignerPageGroup.png)
+![Forms designer page caption](images/FormDesignerPageGroup.png)
 
 To add another group to your form, click **Add new group** which you can find at the bottom of each page in the form designer.
 

@@ -14,7 +14,7 @@ The following guide will use two example sites; *development.site* and *live.sit
 * The **Umbraco Courier** package is usually one of the top packages - otherwise you can search for it
 * Follow the installation directions
 * Once Courier has been installed, make sure to **refresh the page**
-* Next step is to **add a location** 
+* Next step is to **add a location**
     * In the gif below Courier is installed on development.site, and live.site is added as the location
 * The location you add, will be set in the `config/courier.config` file as a *repository*. Learn more about this in the [Repository Providers](../Configuration/RepositoryProviders.md) article.
 
@@ -64,7 +64,7 @@ When you are testing Courier on two Umbraco sites locally, it’s recommended th
 * Add the **path to the project directory**
 * Finally, set the hostname - *example: development.site*
 * When you click ‘*OK*’ the website will start
-* In the navigation to the left, click **Browse _yourdomain_** 
+* In the navigation to the left, click **Browse _yourdomain_**
 
 ![Setup Local hostnames](images/setupLocalIIShostnames.gif)
 

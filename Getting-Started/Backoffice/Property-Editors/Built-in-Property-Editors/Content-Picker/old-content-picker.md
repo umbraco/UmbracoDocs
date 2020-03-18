@@ -38,7 +38,8 @@ The content picker opens a panel to pick a specific page from the content struct
 
 ```csharp
 @{
-    if (Model.Content.HasValue("contentPicker")){
+    if (Model.Content.HasValue("contentPicker"))
+    {
         var node = Umbraco.TypedContent(Model.Content.GetPropertyValue<int>("contentPicker"));
         <a href="@node.Url">@node.Name</a>
     }
@@ -49,7 +50,8 @@ The content picker opens a panel to pick a specific page from the content struct
 
 ```csharp
 @{
-    if (CurrentPage.HasValue("contentPicker")){
+    if (CurrentPage.HasValue("contentPicker"))
+    {
         var node = Umbraco.Content(CurrentPage.contentPicker);
         <a href="@node.Url">@node.Name</a>
     }

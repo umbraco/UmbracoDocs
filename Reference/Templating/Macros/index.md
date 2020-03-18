@@ -1,6 +1,5 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # Macros
@@ -16,26 +15,31 @@ So if you allow a macro to be added to a Rich Text Editor or Grid cell, the edit
 
 For example imagine adding an Image Gallery within a rich text editor, and at the point of insertion 'picking' the images to display.
 
-![Insert Image Carousel](images/image-carousel-macro.png)
+![Insert Image Carousel](images/image-carousel-macro-v8.png)
 
 Define the parameters
 
-![Define the parameters](images/image-carousel-macro-parameter.png)
+![Define the parameters](images/macro-parameter-editor-v8.png)
 
-Inserting into a Rich Text Area
+Using in a Rich Text Area
 
-![Define the parameters](images/pick-images-for-macro-example.png)
+A Rich Text Editor should be enabled with macros in the toolbar to allow inserting macros.
+
+![Enable macro toolbar in Rich Text Area](images/rte-macro.png)
+
+Rich Text Area with macro toolbar option
+
+![Macro toolbar option in Rich Text Area](images/rte-macro-toolbar.png)
+
+Insert the macro into a Rich Text Area
+
+![Insert the macro into a Rich Text Area](images/pick-images-for-macro-example-v8.png)
 
 The same implementation logic can be used in lots of different places on your site, and the editor can customise the output by choosing different parameters.
 
-## Macro types
+## Implementing a Macro
 
-All macro types will work in either MVC or WebForms templating engines, it is possible, (for mainly historical reasons) to be able to implement a Macro in four different ways:
-
-* MVC Partial View - (aka Partial View Macros), [Details of implementing a Partial View Macro](Partial-View-Macros/index.md)  **This is the recommended macro type to use**, it uses the exact same syntax and objects as MVC views.
-* XSLT - [Xslt macros Information](Xslt/index.md), examples and best practices according to readability and performance in your XSLT/XPath snippets.
-* User Control - ASP.NET User Control
-* Razor script - (aka known as Dynamic Node Razor), before it was possible to use true MVC Partial Views in Umbraco, there was a way to implement Macros using 'Razor-like' syntax.
+Macros can be implemented using an MVC Partial View - [Partial View Macros](Partial-View-Macros/index.md). It uses the exact same syntax and objects as [MVC views](../Mvc/index.md).
 
 ## Rendering Macros
 
@@ -58,16 +62,6 @@ This renders a macro with some parameters using a dictionary
 ```csharp
 @Umbraco.RenderMacro("myMacroAlias", new Dictionary<string, object> {{ "name", "Ned"}, { "age", 27}})
 ```
-
-### Rendering Macros with Dynamic Parameters
-
-For common Macro Parameter scenarios, for example taking the value from the querystring, or reading a value from the underlying content item of the page the Macro is on, Umbraco has the concept of *Dynamic Macro Parameters*
-
-```csharp
-@Umbraco.RenderMacro("myMacroAlias", new { name = "[#personName]", age = "[#personAge]", school="[$schoolName]", currentPage="[@page]"})
-```
-
-Notice the dynamic parameters are passed as strings (even for age which would normally take an integer). This example means take the personName and personAge from the document of the current page, read the schoolName from any ancestor property in the content tree, and read the current page value from a querystring parameter called 'page'.
 
 #### Meaning of all the symbols
 
@@ -94,16 +88,6 @@ Umbraco resolves recursive parameters by looking at the current page for a value
 Retrieve values from the session collection or cookies by prefixing with a "%" symbol.
 
 To retrieve a value with the key "memberId" from the session collection we would specify our Macro parameter value as **[%memberId]**
-
-#### Chaining Dynamic Macro Parameters
-
-It's possible to set multiple dynamic sources for a Macro Parameter, and these will be parsed in turn, until a value is found for the Macro.
-
-```csharp
-@Umbraco.RenderMacro("ListStatusUpdates", new {numberOfItems="[@limit],[#limit],[$globalLimit],4"})
-```
-
-In this example the Macro will first look for a parameter on the querystring called limit to take its value. Then if this is missing it will look for a document type property called 'limit' on the current page and then seek a property called 'globalLimit' all the way recursively up the Umbraco Content Tree. Finally settling on 4, as the value to use if the previous three do not exist.
 
 ### Caching Macro Output
 

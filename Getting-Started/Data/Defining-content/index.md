@@ -1,4 +1,6 @@
 ---
+meta.Title: "Defining content"
+meta.Description: "Here you'll find an explanation of how content is defined in Umbraco 8"
 versionFrom: 8.0.0
 ---
 
@@ -13,6 +15,8 @@ Before a piece of content can be created it needs to be defined. That is why, wh
 In its most basic form a document type is a form containing fieldsets (or groups) where you can apply rules about where the content can be created, which template(s) are allowed, backoffice icon and so forth.
 
 Document Types can define entire pages or more limited content that can be reused on other nodes ie. a SEO group. This means that you are in complete control of what type of content can be created where.
+
+Document Types define what an end user see and can interact with when they are working in the Umbraco backoffice. So for a "Blog post" Document Type, if the end user needs to be able to create a thumbnail, or insert a name and an image of an author, then it needs to be defined in the Document Type. All blog posts using the "Blog post" Document Type, will then give the end user the choice to fill in a thumbnail, author name and an author image.
 
 ### Properties
 

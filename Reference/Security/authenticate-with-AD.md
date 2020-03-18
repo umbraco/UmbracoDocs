@@ -1,10 +1,8 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 8.1.0
 ---
 
 # Authenticating on the Umbraco backoffice with Active Directory credentials
-
-Umbraco 8.0.0 incorporated the previous [Umbraco Identity Extensibility](https://github.com/umbraco/UmbracoIdentityExtensions) package in to the core.
 
 You'll need to create a new file to override the existing owin configuration (e.g. `~/App_Start/MyOwinStartup.cs`) like so:
 
@@ -20,40 +18,42 @@ using Umbraco.Web.Security;
 [assembly: OwinStartup("MyOwinStartup", typeof(MyOwinStartup))]
 namespace MyApp
 {
-	public class MyOwinStartup : UmbracoDefaultOwinStartup
-	{
-		public override void Configuration(IAppBuilder app)
-		{
-			//ensure the default options are configured
-			base.Configuration(app);
+    public class MyOwinStartup : UmbracoDefaultOwinStartup
+    {
+        public override void Configuration(IAppBuilder app)
+        {
+            //ensure the default options are configured
+            base.Configuration(app);
 
-			// active directory authentication
-			ConfigureBackofficeActiveDirectoryPasswords(app);
-		}
+            // active directory authentication
+            ConfigureBackofficeActiveDirectoryPasswords(app);
+        }
 
-		private void ConfigureBackofficeActiveDirectoryPasswords(IAppBuilder app)
-		{
-			app.ConfigureUserManagerForUmbracoBackOffice<BackOfficeUserManager, BackOfficeIdentityUser>(
-				RuntimeState,
-				GlobalSettings,
-				(options, context) =>
-				{			
-					var membershipProvider = MembershipProviderExtensions.GetUsersMembershipProvider().AsUmbracoMembershipProvider();
-					var userManager = BackOfficeUserManager.Create(
-						options,
-						Services.UserService,
-						Services.MemberTypeService,
-						Services.EntityService,
-						Services.ExternalLoginService,
-						membershipProvider,
-						UmbracoSettings.Content,
-						GlobalSettings
-					);
-					userManager.BackOfficeUserPasswordChecker = new ActiveDirectoryBackOfficeUserPasswordChecker();
-					return userManager;
-				});
-		}
-	}
+        private void ConfigureBackofficeActiveDirectoryPasswords(IAppBuilder app)
+        {
+            app.ConfigureUserManagerForUmbracoBackOffice<BackOfficeUserManager, BackOfficeIdentityUser>(
+                RuntimeState,
+                GlobalSettings,
+                (options, context) =>
+                {
+                    var membershipProvider = MembershipProviderExtensions.GetUsersMembershipProvider().AsUmbracoMembershipProvider();
+                    var userManager = BackOfficeUserManager.Create(
+                        options,
+                        Services.UserService,
+                        Services.MemberTypeService,
+                        Services.EntityService,
+                        Services.ExternalLoginService,
+                        membershipProvider,
+                        Mapper,
+                        UmbracoSettings.Content,
+                        GlobalSettings
+                    );
+                    userManager.BackOfficeUserPasswordChecker = new ActiveDirectoryBackOfficeUserPasswordChecker();
+                    return userManager;
+                });
+        }
+    }
+
 }
 ```
 

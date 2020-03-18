@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
+versionRemoved: 8.0.0
 ---
 
 # How Umbraco uses XSLT
@@ -20,4 +20,3 @@ Now that we have the XSLT created, we need to customize it to output our content
 :::note
 This was copied the original book from Casey Neehouse from the books section of umbraco.org
 :::
-

@@ -26,7 +26,7 @@ In order to create content you must define it using Document Types.
 The Media section contains the media for the website. By default you can create folders and upload media files (images and PDFs). You can customize the existing media types or define your own in the Settings section.
 
 ### <img src="images/Settings.png" style="width:60px;vertical-align:middle" /> Settings
-The Settings section is where you can work with the website layout, language/localization and define media and content. The Settings tree consists of:  
+The Settings section is where you can work with the website layout, language/localization and define media and content. The Settings tree consists of:
 
 - Document Types
 - Templates (.cshtml files)
