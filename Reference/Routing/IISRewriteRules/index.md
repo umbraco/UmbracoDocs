@@ -53,14 +53,15 @@ and creating a file at `~/Config/IISRewriteRules.config` with the content:
 For example, to always remove trailing slash from the URL:
 
 ```xml
-<rule name="Remove trailing slash" stopProcessing="true">  
-  <match url="(.*)/$" />  
-    <conditions>  
-      <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />  
-      <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />  
-    </conditions>  
-  <action type="Redirect" redirectType="Permanent" url="{R:1}" />  
-</rule>  
+​<rule name="Remove trailing slash" stopProcessing="true">
+  <match url="(.*)/$" />
+    <conditions>      
+      <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
+      <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+      <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+    </conditions>
+  <action type="Redirect" redirectType="Permanent" url="{R:1}" />
+</rule>
 ```
 
 Another example would be to enforce HTTPS only on your site:
