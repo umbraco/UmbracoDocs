@@ -74,12 +74,12 @@ In order to figure out which of the two colliding `.uda` files are the one for t
 
 1. Access **Kudu** on the Live environment
 2. Use the CMD console (found under the 'Debug console' menu) to navigate to your `site/wwwroot/data/revision` folder
-3. Remove the colliding `.uda` files mentioned in the error message
+3. Remove the colliding `.uda` files mentioned in the error message from the Cloud portal
 4. Go back to the `/wwwroot/data` folder and run this command: `echo > deploy-export` in the console
 5. This will regenerate all `.uda` files for the Live environment - this means only the currently used ones will be there afterward
 6. Run the command: `echo > deploy` in the same folder, to make sure everything is extracting correctly
 
-You now know which `.uda` file you want. In this case: `document-type__1.uda`.
+You now know which `.uda` file you want.
 
 ## Removing the unused file
 
@@ -90,8 +90,7 @@ We strongly recommend that you resolve this locally since this will ensure that 
 1. Clone down the Development environment to your local machine
 2. Run the project locally and verify that you get the same extraction error as on your Cloud environments (*HINT: look for a `deploy-failed` marker in your local `/data ` folder*)
     * When you run the project, you should see an error message in the browser once the site starts to build
-3. Remove the wrong `.uda` file (`document-type__2.uda`) from the `/data/revision` folder - you will not be able to see the Document Type in the backoffice because of the failed extraction
-
+3. Remove the wrong `.uda` file from the `/data/revision` folder - you will not be able to see the Document Type in the backoffice because of the failed extraction.
 4. Open CMD prompt and navigate to your local `/data` folder
 5. Type the following command: `echo > deploy`
 6. You will now see a `deploy-complete` marker in your local `/data` folder
@@ -109,7 +108,13 @@ Before pushing the changes to the Development environment, you need to access th
 
 When the push from local to the Development environment has completed, refresh the Umbraco Cloud portal and you will see that the Development environment is now green, which means that the extraction error has been resolved.
 
+<<<<<<< Updated upstream
 Does your Development still have the red indicator?
 Sometimes you might need to run another extraction on your Cloud environment after deploying in order to get a `deploy-complete` marker in your `/data` folder and turn your environment *green*. To do this, follow the steps described in the [manual extractions guide](../../../Set-Up/Power-Tools/Manual-extractions).
+=======
+### Does your Development still have the red indicator?
+
+Sometimes you might need to run another extraction on your Cloud environment after deploying in order to get a `deploy-complete` marker in your `/data` folder and turn your environment *green*. To do this, follow the steps described in the [manuel extractions guide](../Set-Up/Power-Tools/Manual-extractions).
+>>>>>>> Stashed changes
 
 The final step is to deploy the pending changes from Development to your Live environment, to ensure everything is completely in sync.
