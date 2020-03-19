@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.6.0
+versionFrom: 8.0.0
 ---
 
 # Running Umbraco on Azure Web Apps
@@ -31,6 +31,10 @@ You need to these `appSettings`:
     key="Umbraco.Examine.LuceneDirectoryFactory"
     value="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory, Examine" />
 ```
+
+:::note
+The `Umbraco.Core.MainDom.Lock` setting is for Umbraco 8.6+. Having this setting for versions between 8.0-8.5 will not have any affect. It is recommended to use 8.6+ when running Umbraco on Azure Web Apps since this setting will prevent file locking issues.
+:::
 
 __The minimum recommended Azure SQL Tier is "S2"__, however noticeable performance improvements are seen in higher Tiers
 
