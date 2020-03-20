@@ -190,7 +190,7 @@ Get a collection of tags by entity id (queries content, media and members), and 
 
 ```csharp
 @{
-    var taggedContent = Umbraco.TagQuery.GetMediaByTagGroup("BlogTags");
+    var taggedContent = Umbraco.TagQuery.GetTagsForEntity(1234);
 }
 ```
 
@@ -200,7 +200,7 @@ Get a collection of tags assigned to a property of an entity (queries content, m
 
 ```csharp
 @{
-    var taggedContent = Umbraco.TagQuery.GetMediaByTagGroup("BlogTags");
+    var taggedContent = Umbraco.TagQuery.GetTagsForProperty(1234,"propertyTypeAlias");
 }
 ```
 
