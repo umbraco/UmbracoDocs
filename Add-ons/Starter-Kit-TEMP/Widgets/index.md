@@ -216,7 +216,7 @@ You can choose what images you will use for logos and what pages they need to li
 
 This widget is divided into two parts. Part one is for the heading and other general settings for the container. Part two is for adding logo images and settings for these.
 
-You will have these settings in the first section:
+The first part is for the heading and the container:
 - Pre Heading
 - Heading
 - Text
@@ -233,4 +233,3 @@ You will have these settings in the second section:
 - Image
 - Link
 - width
-
