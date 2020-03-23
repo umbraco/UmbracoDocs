@@ -208,3 +208,21 @@ The form has the following settings available:
 Below you can see how a ***Contact Form*** will look per default:
 
 ![movePage.jpg](images/Contact-form-example.png)
+
+### The Newsletter Widget
+
+The Newsletter widget, lets you create a sign up form for your newsletter, this will require some setting up, you can find the set up for settings [Here](../Settings/General-Settings/index.md#newsletter).
+
+This widget contains these customization options:
+- Heading
+- Text
+- Placeholder Text
+- Button Color
+- Small Text
+- List ID
+- Background Image
+- Background Color
+- Text Color
+- Animate
+
+![movePage.jpg](images/news-letter-signup.png)
