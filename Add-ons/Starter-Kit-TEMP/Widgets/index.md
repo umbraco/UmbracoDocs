@@ -212,7 +212,7 @@ Below you can see how a ***Contact Form*** will look per default:
 ### The Logos Widget
 
 The Logos Widget does what the name implies and lets you add a set of logos to your website.
-You can choose what images you will use for logos and what pages they need to link to And/or you can add text to it.
+You can choose what images you will use for logos and what pages they need to link to and/or you can add text to it.
 
 This widget is divided into two parts. Part one is for the heading and other general settings for the container. Part two is for adding logo images and settings for these.
 
@@ -233,5 +233,4 @@ You will have these settings in the second section:
 - Image
 - Link
 - width
-
 
