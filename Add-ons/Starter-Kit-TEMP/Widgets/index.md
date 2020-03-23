@@ -208,3 +208,25 @@ The form has the following settings available:
 Below you can see how a ***Contact Form*** will look per default:
 
 ![movePage.jpg](images/Contact-form-example.png)
+
+### The Newsletter Widget
+
+The Newsletter Widget, lets you create a sign-up form for your newsletter. This will require some setting up. 
+The way this widget works is that you set it up with your Mailchimp or Campaign monitor, then you add your API key and set the ID for the list that user will be subscriped to.
+You can setup all this in the [General Settings](../Settings/General-Settings/index.md#newsletter) page.
+
+
+This widget contains these customization options:
+- Heading
+- Text
+- Placeholder Text
+- Button Color
+- Small Text
+- List ID
+- Background Image
+- Background Color
+- Text Color
+- Animate
+
+This is to show how a Newsletter Widget could look:
+![movePage.jpg](images/news-letter-signup.png)
