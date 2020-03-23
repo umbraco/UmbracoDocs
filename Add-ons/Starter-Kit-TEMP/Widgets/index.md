@@ -233,5 +233,5 @@ The first part is for the heading and the container:
 Part two is for adding logo and settings for these. For each logo you want to add, you have the following options:
 - Alias (the name of the logos)
 - Image
-- Link(links the logo to another page on your site or a different site)
+- Link (links the logo to another page on your site or a different site)
 - width
