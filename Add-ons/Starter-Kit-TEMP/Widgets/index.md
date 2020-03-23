@@ -211,6 +211,8 @@ Below you can see how a ***Contact Form*** will look per default:
 
 ### The Logos Widget
 
+![movePage.jpg](images/The-Logos-Widget.png)
+
 The Logos Widget does what the name implies and lets you set up logos, the settings for your logos images.
 You can choose what images you will use for logos and what pages they need to link to And/or you can add text to it.
 
@@ -221,17 +223,17 @@ You will have these settings in the first section:
 - Heading
 - Text
 - Container Width
-- Compact
-- Black & White
+- Compact (Removes the extra padding over and under this widget)
+- Black & White (Images will be shown in black & white)
 - Add content ( you need to do this to get the second section)
 - Background Color
 - Text Color
 
 
 You will have these settings in the second section:
-- Alias 
+- Alias (the name of the logo)
 - Image
-- Link
+- Link(links the logo to another page on your site or a different site)
 - width
 
 
