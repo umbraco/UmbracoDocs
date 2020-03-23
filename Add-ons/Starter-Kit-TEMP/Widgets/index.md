@@ -228,7 +228,7 @@ The first part is for the heading and the container:
 - Text Color
 
 
-You will have these settings in the second section:
+Part two is for adding logo and settings for these. For each logo you want to add, you have the following options:
 - Alias 
 - Image
 - Link
