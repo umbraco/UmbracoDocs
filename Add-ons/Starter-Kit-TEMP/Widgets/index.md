@@ -211,7 +211,7 @@ Below you can see how a ***Contact Form*** will look per default:
 
 ### The Logos Widget
 
-The Logos Widget does what the name implies and lets you set up logos, however, this also lets you make some predefined settings for your logos.
+The Logos Widget does what the name implies and lets you set up logos, however, this also lets you make some settings for your logos images.
 You can choose what images you will use for logos and what pages they need to link to And/or you can add text to it.
 
 This widget is divided into two parts. Part one is for the heading and other general settings for the container. Part two is for adding logo images and settings for these.
