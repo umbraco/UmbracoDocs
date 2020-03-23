@@ -213,12 +213,12 @@ Below you can see how a ***Contact Form*** will look per default:
 
 ![movePage.jpg](images/The-Logos-Widget.png)
 
-The Logos Widget does what the name implies and lets you set up logos, the settings for your logos images.
-You can choose what images you will use for logos and what pages they need to link to And/or you can add text to it.
+The Logos Widget does what the name implies and lets you add a set of logos to your website.
+You can choose what images you will use for logos and what pages they need to link to and/or you can add text to it.
 
-This widget is divided into two parts. Part one is for the heading and other general settings for the container. Part two is for adding logo images and settings for these.
+The configuration for this widget is divided into two parts:
 
-You will have these settings in the first section:
+The first part is for the heading and the container:
 - Pre Heading
 - Heading
 - Text
@@ -230,11 +230,8 @@ You will have these settings in the first section:
 - Text Color
 
 
-You will have these settings in the second section:
-- Alias (the name of the logo)
+Part two is for adding logo and settings for these. For each logo you want to add, you have the following options:
+- Alias (the name of the logos)
 - Image
 - Link(links the logo to another page on your site or a different site)
 - width
-
-
-
