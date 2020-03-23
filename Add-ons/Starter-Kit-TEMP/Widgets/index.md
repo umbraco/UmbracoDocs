@@ -210,3 +210,6 @@ Below you can see how a ***Contact Form*** will look per default:
 ![movePage.jpg](images/Contact-form-example.png)
 
 ### The Logos Widget
+
+The Logos Widget, does what the name implies and let you set up a logo, however this also lets you make some predefined sittings for your logo.
+You can set up how you logo looks on difrent backgrounds, if it needs to link to something or you can add text to it.
