@@ -213,7 +213,7 @@ Below you can see how a ***Contact Form*** will look per default:
 
 The Newsletter Widget, lets you create a sign-up form for your newsletter. This will require some setting up. 
 The way this widget works is that you set it up with your Mailchimp or Campaign monitor, then you add your API key and set the ID for the list that user will be subscriped to.
-You can set-up all of these requred settings in [general-settings](../Settings/General-Settings/index.md#newsletter).
+You can setup all this in the [General Settings](../Settings/General-Settings/index.md#newsletter) page.
 
 
 This widget contains these customization options:
