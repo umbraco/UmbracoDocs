@@ -211,5 +211,26 @@ Below you can see how a ***Contact Form*** will look per default:
 
 ### The Logos Widget
 
-The Logos Widget, does what the name implies and let you set up a logo, however this also lets you make some predefined sittings for your logo.
-You can set up how you logo looks on difrent backgrounds, if it needs to link to something or you can add text to it.
+The Logos Widget does what the name implies and lets you set up a logo, however, this also lets you make some predefined settings for your logo.
+You can set up how your logo looks on different backgrounds if it needs to link to something or you can add text to it.
+
+This widget is divided into two parts one for the heading and general settings for the container, the other part is for adding images and settings for these.
+
+You will have these settings in the first section:
+- Pre Heading
+- Heading
+- Text
+- Container Width
+- Compact
+- Black & White
+- Add content ( you need to do this to get the second section)
+- Background Color
+- Text Color
+
+
+You will have these settings in the second section:
+- Alias 
+- Image
+- Link
+- width
+
