@@ -58,7 +58,7 @@ In the *Settings* menu you have the option to enable advanced settings for your 
 
 You can enable IIS logging for each of your environments through here.
 
-The log files can be accessed through kudu in *C:\home\LogFiles\http
+The log files can be accessed through kudu in `C:\home\LogFiles\http`
 
 There is a rolling size limit on the log files of 100 MB. This means that once the limit is reached, the oldest log files will be overwritten by new ones.
 
