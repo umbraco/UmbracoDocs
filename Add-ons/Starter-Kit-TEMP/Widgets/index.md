@@ -235,3 +235,6 @@ Part two is for adding logo and settings for these. For each logo you want to ad
 - Image
 - Link (links the logo to another page on your site or a different site)
 - width
+
+Below you can see an example that uses the back and white feature, and has two logos.
+![movePage.jpg](images/Logos.png)
