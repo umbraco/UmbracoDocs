@@ -149,3 +149,7 @@ namespace My.Website
 }
 
 ```
+
+:::note
+To make sure your custom 404 page is served remove the `<error404>1</error404>` from `umbracoSettings.config` as this will override any custom node.
+:::
