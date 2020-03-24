@@ -71,17 +71,6 @@ The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the re
 
 For a single Azure Web App instance you need to ensure that the Umbraco XML config file is stored on the local server (since Azure uses a shared file system). To do this you need to add a new app setting to web.config:
 
-For **Umbraco v7.7.3+**
-
-For Umbraco installations that are hosted by Azure Web Apps it is recommend that Umbraco is upgraded to the latest version if the current version is pre v7.7.3. This is so that the `umbracoLocalTempStorage` setting can be utilised to avoid locking issues with TEMP files during automated server migrations or slot swapping. See [U4-10503](http://issues.umbraco.org/issue/U4-10503) for more information on this.
-
-```xml
-<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
-```
-
-This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the environment temporary folder. More info on this setting is available [here](../../../Reference/Config/webconfig/index.md#umbracolocaltempstorage-umbraco-v773)
-
-
 For **Umbraco V8**
 
 You will need to set the local temporary storage value by adding this to your web.config, in the appSettings section.
@@ -97,7 +86,17 @@ In addition, you will need to set the Lucene Directory Factory value as well.
 <add key="Umbraco.Examine.LuceneDirectoryFactory" value="Examine.LuceneEngine.Directories.SyncTempEnvDirectoryFactory, Examine" />
 ```
 
-Depending on your requirements, you might need to set the above value to be Examine.LuceneEngine.Directories.TempEnvDirectoryFactory.
+Depending on your requirements, you might need to set the above value to be `Examine.LuceneEngine.Directories.TempEnvDirectoryFactory`.
+
+For **Umbraco v7.7.3+**
+
+For Umbraco installations that are hosted by Azure Web Apps it is recommend that Umbraco is upgraded to the latest version if the current version is pre v7.7.3. This is so that the `umbracoLocalTempStorage` setting can be utilised to avoid locking issues with TEMP files during automated server migrations or slot swapping. See [U4-10503](http://issues.umbraco.org/issue/U4-10503) for more information on this.
+
+```xml
+<add key="umbracoLocalTempStorage" value="EnvironmentTemp" />
+```
+
+This will set Umbraco to store `umbraco.config` and the other Umbraco TEMP files in the environment temporary folder. More info on this setting is available [here](../../../Reference/Config/webconfig/index.md#umbracolocaltempstorage-umbraco-v773)
 
 For **Umbraco v7.6 - v7.7.2**
 
