@@ -64,7 +64,7 @@ There is a rolling size limit on the log files of 100 MB. This means that once t
 
 Be aware when enabeling IIS logging the site will have to restart.
 
-for more information about IIS logging look at the [Official Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).
+For more information about IIS logging look at the [Official Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).
 
 ## Renaming and deleting
 
