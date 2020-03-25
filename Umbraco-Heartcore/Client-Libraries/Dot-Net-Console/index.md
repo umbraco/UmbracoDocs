@@ -18,7 +18,7 @@ Once you have cloned down the [Umbraco Headless Client](https://github.com/umbra
 
 ### 1. Using Visual Studio
 
-Open up the `.csproj` file located at `~\Umbraco.Headless.Client.Net\samples\Umbraco.Headless.Client.Samples.Console\Umbraco.Headless.Client.Samples.Console` and press F5. This will launch the Console application.
+Open up the `Umbraco.Headless.Client.Samples.Console.sln` file located at `Umbraco.Headless.Client.Net\samples\Umbraco.Headless.Client.Samples.Console` and press F5. This will launch the Console application.
 
 ### 2. Using the Command Line
 
