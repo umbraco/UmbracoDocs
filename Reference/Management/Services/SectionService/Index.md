@@ -1,42 +1,9 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # SectionService
+The Umbraco backoffice consists of Sections, also referred to as Applications.
 
-:::note
-Applies to Umbraco 7.x and newer
-:::
+In previous versions the SectionService was used to control/query the storage for section registrations in the ~/Config/applications.config file. This config file no longer exists in the current version and therefore the SectionService has become unnecessary. 
 
-The SectionService is used to control/query the storage for section registrations in the ~/Config/applications.config file.
-
-[Browse the API documentation for ISectionService](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Services.ISectionService.html).
-
- * **Namespace:** `Umbraco.Core.Services`
- * **Assembly:** `Umbraco.Core.dll`
-
-All samples in this document will require references to the following dll:
-
-* Umbraco.Core.dll
-
-All samples in this document will require the following using statements:
-
-```csharp
-using Umbraco.Core;
-using Umbraco.Core.Models;
-using Umbraco.Core.Services;
-```
-
-## Getting the service
-The SectionService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the SectionService is available through a local `Services` property.
-
-```csharp
-Services.SectionService
-```
-
-Getting the service through the `ApplicationContext`:
-
-```csharp
-ApplicationContext.Current.Services.SectionService
-```

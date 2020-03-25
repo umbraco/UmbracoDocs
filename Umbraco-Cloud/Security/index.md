@@ -33,6 +33,25 @@ Umbraco Cloud Websites support the following TLS ciphers in this order:
 - TLS_DHE_RSA_WITH_AES_256_CBC_SHA
 - TLS_DHE_RSA_WITH_AES_128_CBC_SHA
 
+### HSTS - HTTP Strict Transport Security
+
+It's possible to enforce HTTP Strict Transport Security by adding the [HSTS](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) headers to your website. This grants Umbraco Cloud Websites an A+ security rating on sslabs (March 2020). You can add the header by modifying system.webServer/rewrite/outboundRules section in your web.config:
+
+```xml
+ <outboundRules>
+  <rule name="Add Strict-Transport-Security when HTTPS" enabled="true">
+  <match serverVariable="RESPONSE_Strict_Transport_Security" pattern=".*" />
+  <conditions>
+   <add input="{HTTPS}" pattern="on" ignoreCase="true" />
+   <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
+  </conditions>
+  <action type="Rewrite" value="max-age=63072000; includeSubDomains; preload" />
+  </rule>
+ </outboundRules>
+```
+
+This adds the "Strict-Transport-Security" header that tells browsers: for the next 63072000 seconds (which is two years) the browser should not make any HTTP requests to this domain.
+
 ### TLS 1.2 by default in external services
 
 In order to integrate older external applications to access Umbraco Cloud Websites you might have to modify the TLS support in the .Net application.
