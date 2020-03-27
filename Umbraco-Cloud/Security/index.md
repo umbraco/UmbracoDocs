@@ -103,10 +103,14 @@ The following rule can be added to your web.config file in the `system.webServer
 
         <!-- Don't apply rules on localhost so your local environment still works -->
         <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
+        
+        <!-- Allow the  Umbraco Cloud Autoupgrade to access the site -->
+         <add input="{REMOTE_ADDR}" pattern="52.232.105.169" negate="true" />
+         <add input="{REMOTE_ADDR}" pattern="52.174.66.30" negate="true" />
 
         <!-- Add other client IPs that need access to the backoffice -->
         <add input="{REMOTE_ADDR}" pattern="123.123.123.123" negate="true" />
-
+       
     </conditions>
     <action type="CustomResponse" statusCode="403"/>
 </rule>
@@ -117,6 +121,8 @@ What we're doing here is blocking all the requests to `umbraco/backoffice/` and 
 All of the Umbraco APIs use this route as a prefix, including Umbraco Deploy. So what we need to do first is to allow Umbraco Cloud to still be allowed to access the Deploy endpoints. That is achieved with the first 5 IP addresses, which are all specific to the servers we use for Umbraco Cloud.
 
 You will notice that the regex `^umbraco/backoffice/(.*)|^umbraco` also stops people from going to `yoursite.com/umbraco`, so even the login screen will not show up. Even if you remove the `|^umbraco` part in the end, it should be no problem. You'll get a login screen but any login attempts will be blocked before they reach Umbraco. This is because the login posts to `umbraco/backoffice/UmbracoApi/Authentication/PostLogin`, e.g. it's using the backoffice URL.
+
+The Autoupgrader on Umbraco Cloud needs to have access to the site to succesfully run the upgrade process and apply new patches, by adding these two IP's it ensures that the site is accessible and the autoupgrader can apply the newly released patches.
 
 The last IP address is an example. You can add the addresses that your organization uses as new items to this list.
 
