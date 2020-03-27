@@ -208,3 +208,55 @@ The form has the following settings available:
 Below you can see how a ***Contact Form*** will look per default:
 
 ![movePage.jpg](images/Contact-form-example.png)
+
+### The Newsletter Widget
+
+The Newsletter Widget, lets you create a sign-up form for your newsletter. This will require some setting up. 
+The way this widget works is that you set it up with your Mailchimp or Campaign monitor, then you add your API key and set the ID for the list that user will be subscriped to.
+You can setup all this in the [General Settings](../Settings/General-Settings/index.md#newsletter) page.
+
+
+This widget contains these customization options:
+- Heading
+- Text
+- Placeholder Text
+- Button Color
+- Small Text
+- List ID
+- Background Image
+- Background Color
+- Text Color
+- Animate
+
+This is to show how a Newsletter Widget could look:
+![movePage.jpg](images/news-letter-signup.png)
+
+### The Logos Widget
+
+![movePage.jpg](images/The-Logos-Widget.png)
+
+The Logos Widget does what the name implies and lets you add a set of logos to your website.
+You can choose what images you will use for logos and what pages they need to link to and/or you can add text to it.
+
+The configuration for this widget is divided into two parts:
+
+The first part is for the heading and the container:
+- Pre Heading
+- Heading
+- Text
+- Container Width
+- Compact (removes the extra padding over and under this widget)
+- Black & White (images will be shown in black & white)
+- Add content (you need to do this to get the second section)
+- Background Color
+- Text Color
+
+
+Part two is for adding logo and settings for these. For each logo you want to add, you have the following options:
+- Alias (the name of the logos)
+- Image
+- Link (links the logo to another page on your site or a different site)
+- width
+
+Below you can see an example that uses the back and white feature, and has two logos.
+![movePage.jpg](images/Logos.png)
