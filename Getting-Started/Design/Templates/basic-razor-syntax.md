@@ -1,4 +1,6 @@
 ---
+meta.Title: "Razor Syntax with Umbraco"
+meta.Description: "How to perform common logical tasks in Razor like if/else, foreach loops, switch statements and using the @ character to separate code and markup"
 versionFrom: 8.0.0
 ---
 

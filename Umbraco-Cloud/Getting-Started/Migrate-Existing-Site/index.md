@@ -33,9 +33,8 @@ Before you start migrating your Umbraco site to Umbraco Cloud there are a few th
 
 Your Umbraco site has to fulfill these requirements:
 
-* Has no more content items than your plan covers (Starter plan: 1000 - Pro Plan: 25000)
-    * Content items includes content nodes and media items
-    * Read more about the Umbraco Cloud Plans on [Umbraco.com](https://umbraco.com/pricing/)
+* Has no more content nodes than your plan covers (Starter plan: 500 - Standard plan: 2500 - Pro Plan: 7500)
+    * Read more about the Umbraco Cloud Plans on [Umbraco.com](https://umbraco.com/umbraco-cloud-pricing/)
 * Contains no member data
     * If you do have member data, these will need to be imported manually after the migration
 * No obsolete/old packages
@@ -72,7 +71,7 @@ To help smooth this process for you, there is a community project called [Umbrac
 There are a few tools we recommend using to make the migration process as smooth as possible. We've made a checklist for you here:
 
 * Git needs to be installed on your computer
-    * Optional: Git client, like [GitKraken](https://www.gitkraken.com/)
+    * Optional: Git client, like [Fork](https://git-fork.com/), [SourceTree](https://www.sourcetreeapp.com/), or [GitKraken](https://www.gitkraken.com/)
 * Visual Studio OR Visual Studio Code + IIS Express
 * Merging tool - like [WinMerge](http://winmerge.org/) or [DiffMerge](https://sourcegear.com/diffmerge/)
 

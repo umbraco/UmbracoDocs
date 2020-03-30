@@ -23,6 +23,13 @@ Api-Version: 2
 Umb-Project-Alias: {project-alias}
 ```
 
+## Depth
+
+The `depth` querystring parameter controls how many levels of referenced Content or Media items that is included in the result.
+
+Lets say a Content item have a `Multi Node Tree Picker` and one of the Content items that can be picked have a `Media Picker`. In this case, if the level is set to `1` the returned data will contain the referenced Content items, but their Media property will be null.
+To include the Media property (which is at level 2) the `depth` parameter should be `2` or higher.
+
 ## Errors
 
 If an error occours you will receive a HTTP status code along with an API error code and an error message in the response body.
@@ -84,6 +91,9 @@ Gets all published content at the root of the tree.
       {
         "_creatorName": "Rasmus",
         "_url": "/people/",
+        "_urls": {
+            "en-us": "/people/"
+        },
         "_writerName": "Rasmus",
         "_hasChildren": true,
         "_level": 1,
@@ -107,6 +117,9 @@ Gets all published content at the root of the tree.
       {
         "_creatorName": "Rasmus",
         "_url": "/products/",
+        "_urls": {
+            "en-us": "/products/"
+        },
         "_writerName": "Rasmus",
         "_hasChildren": true,
         "_level": 1,
@@ -167,6 +180,9 @@ Gets all published content at the root of the tree.
           {
             "_creatorName": "Rasmus",
             "_url": "/products/tattoo/",
+            "_urls": {
+                "en-us": "/products/tattoo/"
+            },
             "_writerName": "Rasmus",
             "_hasChildren": false,
             "_level": 2,
@@ -188,6 +204,9 @@ Gets all published content at the root of the tree.
           {
             "_creatorName": "Rasmus",
             "_url": "/products/unicorn/",
+            "_urls": {
+                "en-us": "/products/unicorn/"
+            },
             "_writerName": "Rasmus",
             "_hasChildren": false,
             "_level": 2,
@@ -238,6 +257,9 @@ Get a single published content by its ID.
 {
   "_creatorName": "Rasmus",
   "_url": "/products/",
+  "_urls": {
+    "en-us": "/products/"
+  },
   "_writerName": "Rasmus",
   "_hasChildren": true,
   "_level": 1,
@@ -289,7 +311,10 @@ Get a single published content by its ID.
   "featuredProducts": [
     {
       "_creatorName": "Rasmus",
-      "_url": "/biker-jacket/",
+      "_url": "/products/biker-jacket/",
+      "_urls": {
+        "en-us": "/products/biker-jacket/"
+      },
       "_writerName": "Rasmus",
       "_hasChildren": false,
       "_level": 2,
@@ -331,7 +356,10 @@ Get a single published content by its ID.
     },
     {
       "_creatorName": "Rasmus",
-      "_url": "/tattoo/",
+      "_url": "/products/tattoo/",
+      "_urls": {
+        "en-us": "/products/tattoo/"
+      },
       "_writerName": "Rasmus",
       "_hasChildren": false,
       "_level": 2,
@@ -357,7 +385,10 @@ Get a single published content by its ID.
     },
     {
       "_creatorName": "Rasmus",
-      "_url": "/unicorn/",
+      "_url": "/products/unicorn/",
+      "_urls": {
+        "en-us": "/products/unicorn/"
+      },
       "_writerName": "Rasmus",
       "_hasChildren": false,
       "_level": 2,
@@ -410,6 +441,9 @@ Get a single published content by its URL.
 {
   "_creatorName": "Rasmus",
   "_url": "/people/",
+  "_urls": {
+    "en-us": "/people/"
+  },
   "_writerName": "Rasmus",
   "_hasChildren": true,
   "_level": 1,
@@ -493,6 +527,9 @@ Example: `GET /content/type?contentType=product` gets all content based on the `
       {
         "_creatorName": "Rasmus",
         "_url": "/products/tattoo/",
+        "_urls": {
+          "en-us": "/products/tattoo/"
+        },
         "_writerName": "Rasmus",
         "_hasChildren": false,
         "_level": 2,
@@ -561,6 +598,9 @@ Example: `GET /content/type?contentType=product` gets all content based on the `
       {
         "_creatorName": "Rasmus",
         "_url": "/products/unicorn/",
+        "_urls": {
+          "en-us": "/products/unicorn/"
+        },
         "_writerName": "Rasmus",
         "_hasChildren": false,
         "_level": 2,
@@ -629,6 +669,9 @@ Example: `GET /content/type?contentType=product` gets all content based on the `
       {
         "_creatorName": "Rasmus",
         "_url": "/products/ping-pong-ball/",
+        "_urls": {
+          "en-us": "/products/ping-pong-ball/"
+        },
         "_writerName": "Rasmus",
         "_hasChildren": false,
         "_level": 2,
@@ -740,6 +783,9 @@ Get ancestors of a single published content.
       {
         "_creatorName": "Rasmus",
         "_url": "/home/people/",
+        "_urls": {
+          "en-us": "/home/people/"
+        },
         "_writerName": "Rasmus",
         "_hasChildren": true,
         "_level": 2,
@@ -779,6 +825,9 @@ Get ancestors of a single published content.
       {
         "_creatorName": "Rasmus",
         "_url": "/home/",
+        "_urls": {
+          "en-us": "/home/"
+        },
         "_writerName": "Rasmus",
         "_hasChildren": true,
         "_level": 1,
@@ -871,6 +920,9 @@ Get children of a single published content.
       {
         "_creatorName": "Rasmus",
         "_url": "/products/tattoo/",
+        "_urls": {
+          "en-us": "/products/tattoo/"
+        },
         "_writerName": "Rasmus",
         "_hasChildren": false,
         "_level": 2,
@@ -938,6 +990,9 @@ Get children of a single published content.
       {
         "_creatorName": "Rasmus",
         "_url": "/products/unicorn/",
+        "_urls": {
+          "en-us": "/products/unicorn/"
+        },
         "_writerName": "Rasmus",
         "_hasChildren": false,
         "_level": 2,
@@ -1005,6 +1060,9 @@ Get children of a single published content.
       {
         "_creatorName": "Rasmus",
         "_url": "/products/ping-pong-ball/",
+        "_urls": {
+          "en-us": "/products/ping-pong-ball/"
+        },
         "_writerName": "Rasmus",
         "_hasChildren": false,
         "_level": 2,
@@ -1131,6 +1189,9 @@ Get descendants of a single published content.
       {
         "_creatorName": "Rasmus",
         "_url": "/products/tattoo/",
+        "_urls": {
+          "en-us": "/products/tattoo/"
+        },
         "_writerName": "Rasmus",
         "_hasChildren": false,
         "_level": 2,
@@ -1198,6 +1259,9 @@ Get descendants of a single published content.
       {
         "_creatorName": "Rasmus",
         "_url": "/products/unicorn/",
+        "_urls": {
+          "en-us": "/products/unicorn/"
+        },
         "_writerName": "Rasmus",
         "_hasChildren": false,
         "_level": 2,
@@ -1265,6 +1329,9 @@ Get descendants of a single published content.
       {
         "_creatorName": "Rasmus",
         "_url": "/products/ping-pong-ball/",
+        "_urls": {
+          "en-us": "/products/ping-pong-ball/"
+        },
         "_writerName": "Rasmus",
         "_hasChildren": false,
         "_level": 2,
@@ -1440,6 +1507,9 @@ At least one object with `alias`, `value` and `match` in the `properties` array 
       {
         "_creatorName": "Rasmus",
         "_url": "/products/biker-jacket/",
+        "_urls": {
+          "en-us": "/products/biker-jacket/"
+        },
         "_writerName": "Rasmus",
         "_hasChildren": false,
         "_level": 2,
@@ -1573,6 +1643,9 @@ Search for published content by keyword.
       {
         "_creatorName": "Rasmus",
         "_url": "/products/biker-jacket/",
+        "_urls": {
+          "en-us": "/products/biker-jacket/"
+        },
         "_writerName": "Rasmus",
         "_hasChildren": false,
         "_level": 2,

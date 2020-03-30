@@ -32,6 +32,10 @@ By the end of this guide, we will have a markdown editor running inside of Umbra
 registered as a Data Type in the backoffice, assigned to a Document Type, and the editor can
 create and modify data.
 
+:::note
+This tutorial is a good example of how to create your own property editor from start to finish, however you should know that Umbraco now has a built-in [Markdown editor](https://our.umbraco.com/Documentation/Getting-Started/Backoffice/Property-Editors/Built-in-Property-Editors/#markdown-editor) which is the recommended option for markdown syntax editing.
+:::
+
 ## Setting up a plugin
 
 The first thing we must do is create a new folder inside `/App_Plugins` folder. We will call it

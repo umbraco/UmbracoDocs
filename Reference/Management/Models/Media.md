@@ -7,7 +7,7 @@ needsV8Update: "true"
 
 **Applies to Umbraco 6.x and newer**
 
-The `Media` class represents a single item in the media tree, its values are fetched directly from the database, not from the cache. **Notice** the Media class should strictly be used for CRUD operations, not complex queries, as it is not flexible nor fast enough for this.
+The `Media` class represents a single item in the media tree, its values are fetched directly from the database, not from the cache. **Notice** the Media class should strictly be used for CRUD operations. Media is already stored in cache, so for querying Media you'd want to use the [UmbracoHelper](https://our.umbraco.com/Documentation/Reference/Querying/UmbracoHelper/#working-with-media) to get the media. Then one would use [LINQ to query and filter the collection](https://our.umbraco.com/documentation/Reference/Querying/IPublishedContent/Collections/). 
 
  * **Namespace:** `Umbraco.Core.Models`
  * **Assembly:** `Umbraco.Core.dll`

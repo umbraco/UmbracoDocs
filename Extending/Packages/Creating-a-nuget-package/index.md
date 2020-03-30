@@ -26,13 +26,16 @@ A `.nuspec` file is an xml file that tells NuGet how to create a NuGet package. 
 
 The [full specification of a nuspec file](https://docs.microsoft.com/en-us/nuget/reference/nuspec) can be found within the NuGet documentation. 
 
+To create a `.nuspec` file for your package, create an empty `.txt` file and change the extension to `.nuspec`. This file should be saved at the root of your package folder structure.
+e.g. `myCustomWelcome.txt` renamed to `myCustomWelcome.nuspec`
+
 Below is an example `.nuspec` file that might be used to create a package for the [Creating a Custom Dashboard tutorial](../../../Tutorials/Creating-a-Custom-Dashboard/index.md). 
 
 ```xml
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
-    <id>Custom Welcome dashboard</id>
+    <id>CustomWelcomeDashboard</id>
     <version>1.0.0</version>
     <authors>Umbraco User</authors>
     <owners>Umbraco user</owners>

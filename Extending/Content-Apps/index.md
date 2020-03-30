@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 8.6.0
 meta.Title: "Content Apps"
 meta.Description: "A guide to Umbraco Content Apps in the backoffice"
 ---
@@ -142,9 +142,13 @@ After the above edits are done, restart your application. Go to any content node
 
 ![Content App in action: Word Counter](images/content-app-2.png)
 
-### Limiting according to Content Type
+### Limiting according to type
 
-You can set your Content App to only show for specific content types by updating your `package.manifest` file and adding a 'show' directive to the Content App definition. For example:
+You can set your Content App to only show for specific types by updating your `package.manifest` file and adding a 'show' directive to the Content App definition.
+
+This can be done for both **Content/Media Types** and for **Member types**.
+
+ For example:
 
 ```json5
 {
@@ -153,7 +157,9 @@ You can set your Content App to only show for specific content types by updating
             "show": [
                 "-content/homePage", // hide for content type 'homePage'
                 "+content/*", // show for all other content types
-                "+media/*" // show for all media types
+                "+media/*", // show for all media types
+                "-member/premiumMembers", // hide for Member type 'premiumMembers'
+                "+member/*" // show for all other Member types
             ]
         }
     ]
@@ -161,9 +167,9 @@ You can set your Content App to only show for specific content types by updating
 ```
 
 :::tip
-When the 'show' directive is omitted then the app will be shown for all content types.
+When the 'show' directive is omitted then the app will be shown for all types.
 
-Also, when you want to exclude content types, make sure to include all the rest using `"+content/*"`.
+Also, when you want to exclude any type, make sure to include all the rest of that type, using `"+content/*"`, `"+media/*"` or `"+member/*"`.
 :::
 
 ### Limiting according to User Role
