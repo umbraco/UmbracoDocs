@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 8.6.0
 ---
 
 ## Load Balancing Azure Web Apps
@@ -26,7 +26,7 @@ When an instance of Umbraco starts up it generates some 'temporary' files on dis
 
 ### Umbraco PublishedCache
 
-When Azure Web Apps auto transitions between hosts, you scale the instances or you utilise slot swapping you may experience issues with the Umbraco Published Cache becoming locked unless Umbraco is configured to SQL for MainDom Lock. 
+When Azure Web Apps auto transitions between hosts, you scale the instances or you utilise slot swapping you may experience issues with the Umbraco Published Cache becoming locked unless Umbraco is configured to use SQL for MainDom locking. 
 
 ```xml
 <add key="Umbraco.Core.MainDom.Lock" value="SqlMainDomLock" />
