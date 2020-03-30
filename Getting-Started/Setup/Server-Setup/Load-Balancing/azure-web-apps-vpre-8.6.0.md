@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+versionTo: 8.5.5
 ---
 
 ## Load Balancing Azure Web Apps
@@ -26,16 +27,9 @@ When an instance of Umbraco starts up it generates some 'temporary' files on dis
 
 ### Umbraco PublishedCache
 
-When Azure Web Apps auto transitions between hosts, you scale the instances or you utilise slot swapping you may experience issues with the Umbraco Published Cache becoming locked unless Umbraco is configured to SQL for MainDom Lock. 
+When Azure Web Apps auto transition between hosts, you scale the instances or you utilise slot swapping you may experience issues with the Umbraco Published Cache becoming locked unless your web app is configured to disable overlapped recycling. 
 
-```xml
-<add key="Umbraco.Core.MainDom.Lock" value="SqlMainDomLock" />
-```
-
-:::note
-The `Umbraco.Core.MainDom.Lock` setting is for Umbraco v8.6+. Having this setting for versions between v8.0-v8.5 will not have any affect. It is recommended to use 8.6+ when running Umbraco on Azure Web Apps since this setting will prevent file locking issues.
-:::
-
+[Disable overlapping recycling](https://github.com/projectkudu/kudu/wiki/Configurable-settings#disable-overlapped-recycling) by adding the `WEBSITE_DISABLE_OVERLAPPED_RECYCLING` setting to appSettings with a value of `1`. 
 
 ### Steps to set-up a environment
 
