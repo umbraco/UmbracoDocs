@@ -29,7 +29,7 @@ When an instance of Umbraco starts up it generates some 'temporary' files on dis
 
 When Azure Web Apps auto transition between hosts, you scale the instances or you utilise slot swapping you may experience issues with the Umbraco Published Cache becoming locked unless your web app is configured to disable overlapped recycling. 
 
-[Disable overlapping recycling](https://github.com/projectkudu/kudu/wiki/Configurable-settings#disable-overlapped-recycling) by adding the `WEBSITE_DISABLE_OVERLAPPED_RECYCLING` setting to appSettings with a value of `1`. 
+[Disable overlapping recycling](https://github.com/projectkudu/kudu/wiki/Configurable-settings#disable-overlapped-recycling) by adding the `WEBSITE_DISABLE_OVERLAPPED_RECYCLING` setting to appSettings with a value of `1`. This setting must be set in the Application Settings part in your Azure portal. Setting it in your web.config file makes no effect.
 
 ### Steps to set-up a environment
 
