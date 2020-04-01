@@ -47,6 +47,7 @@ The `Umbraco.Core.MainDom.Lock` setting is for Umbraco v8.6+. Having this settin
 
 ::note
 Ensure all Azure resources are located in the same region to avoid connection lag
+:::
 
 ### Scaling
 

@@ -41,6 +41,7 @@ When Azure Web Apps auto transition between hosts, you scale the instances or yo
 
 ::note
 Ensure all Azure resources are located in the same region to avoid connection lag
+:::
 
 ### Scaling
 
