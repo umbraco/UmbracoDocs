@@ -39,7 +39,7 @@ When Azure Web Apps auto transition between hosts, you scale the instances or yo
 4. Test: Perform some content updates on the backoffice environment, ensure they work successfully on that environment, then verify that those changes appear on the front-end environment
 5. Fix the backoffice environment to be the master scheduling server and the front-end environment to be replicas - see [Explicit Master Scheduling](flexible-advanced.md#explicit-master-scheduling-server)
 
-::note
+:::note
 Ensure all Azure resources are located in the same region to avoid connection lag
 :::
 
