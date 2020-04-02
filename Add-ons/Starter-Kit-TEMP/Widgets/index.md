@@ -231,6 +231,7 @@ This widget contains these customization options:
 This is to show how a Newsletter Widget could look:
 ![movePage.jpg](images/news-letter-signup.png)
 
+
 ### The Logos Widget
 
 ![movePage.jpg](images/The-Logos-Widget.png)
@@ -260,3 +261,22 @@ Part two is for adding logo and settings for these. For each logo you want to ad
 
 Below you can see an example that uses the back and white feature, and has two logos.
 ![movePage.jpg](images/Logos.png)
+
+### The Login Widget
+
+![movePage.jpg](images/The-Login-Widget.png)
+
+
+The login widget allows the user that was created, using the register widget to login to their account.
+
+The setup options for the login widget are as follows:
+
+- Heading
+- Text
+- Image
+- Background Color
+- Text Color
+- redirect URL (This is where you decide where the users are redirected to after they log in)
+
+Below you can see what the login widget could look like at the front end.
+![movePage.jpg](images/login-prompt.png)
