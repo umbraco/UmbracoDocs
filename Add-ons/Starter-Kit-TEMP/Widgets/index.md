@@ -260,3 +260,22 @@ Part two is for adding logo and settings for these. For each logo you want to ad
 
 Below you can see an example that uses the back and white feature, and has two logos.
 ![movePage.jpg](images/Logos.png)
+
+
+### The Register Widget
+
+![movePage.jpg](images/The-Register-Widget.png)
+
+This Widget lets you create a register element on your page, where people can register for an account on your page.
+
+The setup options for this widget is as follows:
+- Header
+- Text
+- Image
+- Background Color
+- Text Color
+- Success Message Heading (This is the heading of the message that displays after a user has successfully created a user)
+- Success Message Text (This is the message that displays after a user has successfully created a user)
+
+Here you see an example of how a register widget could look on the front-end.
+![movePage.jpg](images/Regiseter-element.png)
