@@ -121,7 +121,7 @@ This attribute is only available since Umbraco 7.15.1 and 8.1.1.
 
 Whenever you render an Umbraco form within your view using `Html.BeginUmbracoForm<MyController>(...)`, the forms action will be the URL of the current page (not the auto-routed URL of the surface controller). Umbraco will therefore add a hidden `ufprt` field to the form with an encrypted value containing the controller, action and optional area (known as the 'Umbraco form route string'). On form submission, this value is decrypted and Umbraco will activate the specified action of the surface controller.
 
-```razor
+```html
 @using (Html.BeginUmbracoForm<MyController>("HandleSubmit"))
 {
     <input type="submit" />

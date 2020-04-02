@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
 ---
 
 # Get a reference to a user
@@ -44,7 +44,7 @@ foreach (IUser user in us.GetUsersById(0, 1, 2)) {
 @{
 
 	// Get a reference to the user service
-	IUserService us = Services.UserService;
+	IUserService us = ApplicationContext.Services.UserService;
 
 	// Get a reference to the user by an ID
 	IUser user1 = us.GetUserById(0);
