@@ -267,6 +267,7 @@ Below you can see an example that uses the back and white feature, and has two l
 ![movePage.jpg](images/The-Register-Widget.png)
 
 This Widget lets you create a register element on your page, where people can register for an account on your page.
+They will register by filling out the fields, which are Name, Email, and Password, and finalizing by pressing the register button, after doing that they will get a success message that their sign up was successful.
 
 The setup options for this widget is as follows:
 - Header
@@ -274,8 +275,8 @@ The setup options for this widget is as follows:
 - Image
 - Background Color
 - Text Color
-- Success Message Heading (This is the heading of the message that displays after a user has successfully created a user)
-- Success Message Text (This is the message that displays after a user has successfully created a user)
+- Success Message Heading (This is the heading of the message that displays after a user has successfully been created)
+- Success Message Text (This is the message that displays after a user has successfully been created)
 
 Here you see an example of how a register widget could look on the front-end.
 ![movePage.jpg](images/Regiseter-element.png)
