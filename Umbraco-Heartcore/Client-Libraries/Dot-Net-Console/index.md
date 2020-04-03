@@ -33,6 +33,10 @@ By using the command line, you will need to run the following commands from the 
 
 Once the application is running, you will need to enter the Project Alias of your Heartcore Project.
 
+:::note
+If you are connecting to a Heartcore Project with multiple environments you will have to use the alias for the __Development environment__.
+:::
+
 ```
 Booting Umbraco Headless console
 
@@ -43,10 +47,6 @@ Enter the Project Alias of your Headless Project
 In order to use this application to its fullest, you will need a Heartcore Project on Umbraco Cloud. If you do not have a project yet, you can [create a trial](https://umbraco.com/try-umbraco-heartcore/). It is recommended that you have a project with both content and media items.
 
 If you do not have a project or trial you can also connect to `demo-headless`.
-
-:::note
-If you are connecting to a Heartcore Project with multiple environments you will have to use the alias for the __Development environment__.
-:::
 
 Once you have entered the alias of the project, you are presented with the following options
 
