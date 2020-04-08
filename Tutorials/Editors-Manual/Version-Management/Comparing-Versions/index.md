@@ -15,6 +15,6 @@ To compare a page on the site with its previous versions:
 3. In the Rollback dialogue box, select a version from the Rollback To drop-down list.
 4. When you select a version from the drop-down list, you are presented with a comparison of the current page with the version you selected. Red, struck-out text is text that will not appear in the selected version and green means text that will be added, should you choose to rollback to that version of the page.
 
-![rollback-v8.JPG](images/rollback-v8.JPG)
+![rollback-8.jpg](images/rollback-8.jpg)
  
-![cancelRollback-v8.JPG](images/cancelRollback-v8.JPG)
+![cancelRollback-8.jpg](images/cancelRollback-8.jpg)
