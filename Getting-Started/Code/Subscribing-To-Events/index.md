@@ -136,6 +136,9 @@ public class LogWhenPublishedComposer : ComponentComposer<LogWhenPublishedCompon
     // nothing needed to be done here!
 }
 ```
+
+You can read more about Composers [here](../../../Implementation/Composing/index.md). You can learn about the different options for RunTimeLevel [here](../../../Implementation/Composing/index.md#runtimelevel).
+
 The entire class should look like this:
 
 ```csharp
@@ -202,4 +205,4 @@ As you can see our custom code has been executed when we published a piece of co
 
 ### More information
 - [Events Reference](../../../Reference/Events/)
-- [Components & Composing](../../../implementation/composing/)
+- [Components & Composing](../../../Implementation/Composing/)
