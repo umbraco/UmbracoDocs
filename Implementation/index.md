@@ -30,23 +30,6 @@ meta.Description: "Get to know the Umbraco codebase. Developing an application r
 </div>
 <div class="row">
     <div class="col-xs-3">
-        <span class="dot big icon-Circuits">
-            <span class="line v-line top"></span>
-            <span class="line v-line"></span>
-            <span class="line h-line"></span>
-        </span>
-    </div>
-    <div class="col-xs-9">
-        <div class="row explain">
-            <div class="col-xs-12">
-                <h4 class="text-right"><a href="Controllers/">Controllers</a></h4>
-                <small>The different type of controllers and what they can do</small>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-3">
         <span class="dot big icon-Directions-alt">
             <span class="line v-line top"></span>
             <span class="line v-line"></span>
@@ -62,6 +45,24 @@ meta.Description: "Get to know the Umbraco codebase. Developing an application r
         </div>
     </div>
 </div>
+<div class="row">
+    <div class="col-xs-3">
+        <span class="dot big icon-Circuits">
+            <span class="line v-line top"></span>
+            <span class="line v-line"></span>
+            <span class="line h-line"></span>
+        </span>
+    </div>
+    <div class="col-xs-9">
+        <div class="row explain">
+            <div class="col-xs-12">
+                <h4 class="text-right"><a href="Controllers/">Controllers</a></h4>
+                <small>The different type of controllers and what they can do</small>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="row">
     <div class="col-xs-3">
         <span class="dot big icon-Server-alt">
@@ -94,4 +95,52 @@ meta.Description: "Get to know the Umbraco codebase. Developing an application r
             </div>
         </div>
     </div>
+    <div class="row">
+    <div class="col-xs-3">
+        <span class="dot big">
+            <span class="line v-line top"></span>
+            <span class="line h-line"></span>
+        </span>
+    </div>
+    <div class="col-xs-9">
+        <div class="row explain">
+            <div class="col-xs-12">
+                <h4 class="text-right"><a href="Composing/">Composing</a></h4>
+                <small>Customising the behaviour of an Umbraco Application at 'start up'. e.g. adding, removing or replacing the core functionality of Umbraco or registering custom code to subscribe to events.</small>
+            </div>
+        </div>
+    </div>
+        <div class="row">
+    <div class="col-xs-3">
+        <span class="dot big">
+            <span class="line v-line top"></span>
+            <span class="line h-line"></span>
+        </span>
+    </div>
+    <div class="col-xs-9">
+        <div class="row explain">
+            <div class="col-xs-12">
+                <h4 class="text-right"><a href="Services/">Services</a></h4>
+                <small>Umbraco has a range of 'Core' Services and Helpers that act as a 'gateway' to Umbraco data and functionality to use when extending or implementing an Umbraco site.</small>
+            </div>
+        </div>
+    </div>
+            <div class="row">
+    <div class="col-xs-3">
+        <span class="dot big">
+            <span class="line v-line top"></span>
+            <span class="line h-line"></span>
+        </span>
+    </div>
+    <div class="col-xs-9">
+        <div class="row explain">
+            <div class="col-xs-12">
+                <h4 class="text-right"><a href="Unit-Testing/">Unit Testing</a></h4>
+                <small>Examples of how to setup Unit Tests with Umbraco 8</small>
+            </div>
+        </div>
+    </div>
+            
+            
+    
 </div>
