@@ -1,12 +1,13 @@
 ---
 versionFrom: 8.0.0
 product: "CMS"
+meta.Title: "Custom routing in Umbraco"
+meta.Description: "There are a couple of ways of controlling the routing behavior in Umbraco: customizing how the inbound request pipeline finds content & creating custom MVC routes that integrate within the Umbraco pipeline"
 ---
 
 # Custom routing in Umbraco
 
-_There are a couple of ways of controlling the routing behavior in Umbraco: customizing how the inbound request pipeline
-finds content & creating custom MVC routes that integrate within the Umbraco pipeline_.
+_There are a couple of ways of controlling the routing behavior in Umbraco: customizing how the inbound request pipeline finds content & creating custom MVC routes that integrate within the Umbraco pipeline_.
 
 ## Customizing the inbound pipeline
 
