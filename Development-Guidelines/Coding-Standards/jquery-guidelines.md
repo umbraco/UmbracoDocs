@@ -1,5 +1,7 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "jQuery coding guidelines"
+meta.Description: "A guide to coding in jQuery in Umbraco."
 ---
 
 # jQuery coding guidelines
