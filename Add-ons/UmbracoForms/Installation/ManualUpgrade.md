@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-meta.Title: "Manually Upgrading Umbacro Forms"
+meta.Title: "Manually Upgrading Umbraco Forms"
 meta.Description: "Documentation on how to upgrade Umbraco Forms"
 ---
 

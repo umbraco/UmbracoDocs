@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-meta.Title: "Umbacro Forms"
+meta.Title: "Umbraco Forms"
 meta.Description: "Documentation on how to work with Umbraco Forms for both editors and developers"
 ---
 
