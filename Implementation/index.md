@@ -83,6 +83,7 @@ meta.Description: "Get to know the Umbraco codebase. Developing an application r
     <div class="col-xs-3">
         <span class="dot big icon-Globe">
             <span class="line v-line top"></span>
+            <span class="line v-line"></span>
             <span class="line h-line"></span>
         </span>
     </div>
