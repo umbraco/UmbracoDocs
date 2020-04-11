@@ -10,6 +10,7 @@ meta.Description: "Get to know the Umbraco codebase. Developing an application r
 <div class="row implementation">
     <div class="col-sm-12"></div>
 </div>
+
 <div class="row">
     <div class="col-xs-3 point">
     </div>
@@ -28,6 +29,7 @@ meta.Description: "Get to know the Umbraco codebase. Developing an application r
         </div>
     </div>
 </div>
+
 <div class="row">
     <div class="col-xs-3">
         <span class="dot big icon-Directions-alt">
@@ -45,6 +47,7 @@ meta.Description: "Get to know the Umbraco codebase. Developing an application r
         </div>
     </div>
 </div>
+
 <div class="row">
     <div class="col-xs-3">
         <span class="dot big icon-Circuits">
@@ -80,6 +83,7 @@ meta.Description: "Get to know the Umbraco codebase. Developing an application r
         </div>
     </div>
 </div>
+
 <div class="row">
     <div class="col-xs-3">
         <span class="dot big icon-Globe">
@@ -98,7 +102,9 @@ meta.Description: "Get to know the Umbraco codebase. Developing an application r
             </div>
         </div>
     </div>
-    <div class="row">
+ </div>
+
+ <div class="row">
     <div class="col-xs-3">
         <span class="dot big">
             <span class="line v-line top"></span>
@@ -114,7 +120,9 @@ meta.Description: "Get to know the Umbraco codebase. Developing an application r
             </div>
         </div>
     </div>
-        <div class="row">
+</div>
+
+<div class="row">
     <div class="col-xs-3">
         <span class="dot big">
             <span class="line v-line top"></span>
@@ -130,7 +138,9 @@ meta.Description: "Get to know the Umbraco codebase. Developing an application r
             </div>
         </div>
     </div>
-            <div class="row">
+</div>
+
+<div class="row">
     <div class="col-xs-3">
         <span class="dot big">
             <span class="line v-line top"></span>
@@ -145,7 +155,7 @@ meta.Description: "Get to know the Umbraco codebase. Developing an application r
             </div>
         </div>
     </div>
+</div>
             
             
     
-</div>
