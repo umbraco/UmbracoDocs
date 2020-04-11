@@ -1,5 +1,8 @@
 ---
 versionFrom: 7.0.0
+
+meta.Title: "Installing Umbacro Forms"
+meta.Description: "Installing Umbraco Forms"
 ---
 
 # Extending Umbraco with the full Forms section
