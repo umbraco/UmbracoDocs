@@ -56,7 +56,7 @@ Labels will be added to your Pull Request or Issue once it has been reviewed.
 
 ## Documentation Curators
 
-All the work of adding labels, going through issues and PRs and managing the Documentation repository is done by the Umbraco Documentation Curators team. If you wish to know more about who they are and how they work there is some information about them here: https://our.umbraco.com/community/the-documentation-curators/
+All the work of adding labels, going through issues and PRs and managing the Documentation repository is done by the Umbraco Documentation Curators team. If you wish to know more about who they are and how they work there is some information about them here: https://our.umbraco.com/get-involved/the-documentation-curators/
 
 ## Contribution badge
 

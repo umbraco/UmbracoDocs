@@ -5,8 +5,8 @@ versionFrom: 7.0.0
 # Working with the backoffice UI AngularJS project
 
 _This document tries to outline what is required to have a test-driven setup for
-angular development in Umbraco 7. It goes through the setup process as well as how
-to add new services that require mocking as well as how to use gulp to run tests automatically_
+Angular development in Umbraco 7. It goes through the setup process as well as how
+to add new services that require mocking as well as how to use gulp to run tests automatically._
 
 ## Setup
 Make sure to have all the node dependencies in order when you start, these are updated regularly in case we need to go to a new version of a dependency, or new dependencies are added.
@@ -18,7 +18,7 @@ Open a terminal / cmd in the Umbraco.Web.UI.Client folder and run:
 This should setup the entire gulp, Karma and jsint set up we use for tests and pruning.
 
 ## Automated testing
-To start working on the client files, and have them automatically built and merged into the client project, as well as the VS project, and run the command
+To start working on the client files, and have them automatically built and merged into the client project, as well as the VS project, run the command
 
     gulp dev
 
@@ -26,7 +26,7 @@ This will start a webserver on :8080 and tell Karma to run tests every time a .j
 After linting and tests have passed, all the client files are copied to umbraco.web.ui/umbraco folder, so it also keeps the server project up to date on any client changes. This should all happen in the background.
 
 ## Adding a new service
-The process for adding or modifying a service should always be based on passed tests. So if we need to change the footprint of the contentservice, and the way any controller calls this service, we need to make sure the tests pass with our mocked services.
+The process for adding or modifying a service should always be based on passed tests. So if we need to change the footprint of the ContentService, and the way any controller calls this service, we need to make sure the tests pass with our mocked services.
 
 This ensures 3 things:
 - we test our controllers
@@ -66,7 +66,7 @@ It returns an array of 3 items, the http status code, the expected data and fina
 _backendData.tree.getApplication(app);
 ```
 
-Refers to a helper method in `umbraco.httpbackend.helper.js` which contains all the helper methods we use to return static json.
+Refers to a helper method in `umbraco.httpbackend.helper.js` which contains all the helper methods we use to return static JSON.
 
 ### In short
 So to add a service, which requires data from the server we should:
@@ -78,21 +78,21 @@ So to add a service, which requires data from the server we should:
 - Define the url in umbraco.httpbackend.js
 
 ### ServerVariables
-There is a static servervariables file in /mocks which describes the urls used by the rest service, this is currently needed as we don't have this set as an angular service, and no real conventions for these urls yet. Longer-term it would be great to have a urlBuilder which could do
+There is a static servervariables file in /mocks which describes the urls used by the rest service, this is currently needed as we don't have this set as an Angular service, and no real conventions for these urls yet. Longer-term it would be great to have a urlBuilder which could do
 
 ```javascript
 urlService.url("contentTypes", "GetAllowedChildren");
 // would return /<umbracodir>/<apibaseDir>/contentyTypes/getAllowedChildren
 ```
 
-But for now, they are set in the servervariables file.
+But for now, they are set in the ServerVariables file.
 
 =======
 
 # Working with the backoffice UI AngularJS project
 
 _This document tries to outline what is required to have a test-driven setup for
-angular development in Umbraco 7. It goes through the setup process as well as how
+Angular development in Umbraco 7. It goes through the setup process as well as how
 to add new services that require mocking as well as how to use gulp to run tests automatically_
 
 ## Setup
@@ -153,7 +153,7 @@ It returns an array of 3 items, the http status code, the expected data and fina
 _backendData.tree.getApplication(app);
 ```
 
-Refers to a helper method in `umbraco.httpbackend.helper.js` which contains all the helper methods we use to return static json.
+Refers to a helper method in `umbraco.httpbackend.helper.js` which contains all the helper methods we use to return static JSON.
 
 ### In short
 
@@ -167,11 +167,11 @@ So to add a service, which requires data from the server we should:
 
 ### ServerVariables
 
-There is a static server variables file in /mocks which describes the urls used by the rest service. This is currently needed as we don't have this set as an angular service, and no real conventions for these urls yet. Longer-term it would be great to have a urlBuilder which could do
+There is a static server variables file in /mocks which describes the urls used by the rest service. This is currently needed as we don't have this set as an Angular service, and no real conventions for these urls yet. Longer-term it would be great to have a urlBuilder which could do
 
 ```javascript
 urlService.url("contentTypes", "GetAllowedChildren");
 // would return /<umbracodir>/<apibaseDir>/contentTypes/getAllowedChildren
 ```
 
-But for now, they are set in the server variables file.
+But for now, they are set in the ServerVariables file.

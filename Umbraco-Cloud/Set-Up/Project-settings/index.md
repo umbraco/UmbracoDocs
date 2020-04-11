@@ -22,7 +22,7 @@ This is where you go to find connection details to your Umbraco Cloud databases.
 
 You will need to whitelist your IP in order to connect to the databases with your local machine - this can also be done from this page.
 
-## [Hostnames](../Manage-Hostnames)
+## [Hostnames](../Manage-Hostnames) 
 
 Binding hostnames to your Umbraco Cloud project is done from the Umbraco Cloud Portal - the page is called **Hostnames**.
 
@@ -46,11 +46,25 @@ On the **Public access** page you can also whitelist IPs which will allow for vi
 
 On Umbraco Cloud projects we've made it possible to configure a deployment webhook on your environments. This will be triggered upon successful deployments, you can configure where you would like information about the deployment to be posted.
 
-## Upgrade to Professional
+## Upgrade to a standard or professional plan
 
-From the *Settings* menu you can upgrade your project to a Professional plan.
+From the *Settings* menu you can upgrade your project to a standard or a Professional plan, depending on your needs.
 
-The option will not be available when you are already on a Professional plan or if you are running in Trial mode.
+The option will not be available if you are already on the specific plan or if you are running in Trial mode.
+
+## Advanced settings
+
+In the *Settings* menu you have the option to enable advanced settings for your project.
+
+You can enable IIS logging for each of your environments through here.
+
+The log files can be accessed through kudu in `C:\home\LogFiles\http`
+
+There is a rolling size limit on the log files of 100 MB. This means that once the limit is reached, the oldest log files will be overwritten by new ones.
+
+Be aware when enabeling IIS logging the site will have to restart.
+
+For more information about IIS logging look at the [Official Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).
 
 ## Renaming and deleting
 

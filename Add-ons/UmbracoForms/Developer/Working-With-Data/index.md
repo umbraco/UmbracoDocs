@@ -20,7 +20,7 @@ Returns all records with the state set to approved from all forms on the Umbraco
 ### GetApprovedRecordsFromFormOnPage
 
 ```csharp
-PagedResult<IRecord> GetApprovedRecordsFromFormOnPage(int pageId, string formId, int pageNumber, int pageSize)
+PagedResult<IRecord> GetApprovedRecordsFromFormOnPage(int pageId, Guid formId, int pageNumber, int pageSize)
 ```
 
 Returns all records with the state set to approved from the form with the id = `formId` on the Umbraco page with the id = `pageId` as a PagedResult<IRecord>.
@@ -28,7 +28,7 @@ Returns all records with the state set to approved from the form with the id = `
 ### GetApprovedRecordsFromForm
 
 ```csharp
-PagedResult<IRecord> GetApprovedRecordsFromForm(string formId, int pageNumber, int pageSize)
+PagedResult<IRecord> GetApprovedRecordsFromForm(Guid formId, int pageNumber, int pageSize)
 ```
 
 Returns all records with the state set to approved from the form with the ID = `formId` as a PagedResult<IRecord>.
@@ -44,7 +44,7 @@ Returns all records from all forms on the Umbraco page with the id = `pageId` as
 ### GetRecordsFromFormOnPage
 
 ```csharp
-PagedResult<IRecord> GetRecordsFromFormOnPage(int pageId, string formId, int pageNumber, int pageSize)
+PagedResult<IRecord> GetRecordsFromFormOnPage(int pageId, Guid formId, int pageNumber, int pageSize)
 ```
 
 Returns all records from the form with the id = `formId` on the Umbraco page with the id = `pageId` as a PagedResult<IRecord>.
@@ -52,7 +52,7 @@ Returns all records from the form with the id = `formId` on the Umbraco page wit
 ### GetRecordsFromForm
 
 ```csharp
-PagedResult<IRecord> GetRecordsFromForm(string formId, int pageNumber, int pageSize)
+PagedResult<IRecord> GetRecordsFromForm(Guid formId, int pageNumber, int pageSize)
 ```
 
 Returns all records from the form with the ID = formId as a PagedResult<IRecord>
@@ -93,7 +93,7 @@ Sample script that is outputting comments using a form created with the default 
     var recordReaderService = Current.Factory.GetInstance<IRecordReaderService>();
 }
 <ul id="comments">
-    @foreach (var record in recordReaderService.GetApprovedRecordsFromPage(Model.Id, 0, 10).Items)
+    @foreach (var record in recordReaderService.GetApprovedRecordsFromPage(Model.Id, 1, 10).Items)
     {
     <li>
         @record.Created.ToString("dd MMMM yyy")

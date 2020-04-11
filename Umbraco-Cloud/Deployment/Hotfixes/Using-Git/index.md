@@ -10,6 +10,12 @@ Tools used:
 
 * GitKraken
 
+:::note
+You can use whichever Git client or cli you prefer. 
+
+If you've never worked with cherry picking before, we recommend that you use a Git client with a UI that gives you a visual overview of your commits.
+:::
+
 ## The scenario
 
 You have an Umbraco Cloud project with two environments, Development and Live.
@@ -66,7 +72,7 @@ Before you push the newly created branch to Umbraco Cloud we need to change the 
     ![Choose remote](images/choose-remote.png)
 
 15. Hit **Submit** and the push will start.
-16. **Note** that when changes are pushing directly to a Live environment and you have more than one environment, the changes are not automatically extracted into the site.
+16. **Note** that when changes are pushed directly to a Live environment and you have more than one environment, the changes are not automatically extracted into the site.
 17. Find a guide on how to extract the files, in the [Manual Extraction](../../../Set-Up/Power-Tools/Manual-extractions) article.
 
 You have now applied a hotfix to the Live environment.

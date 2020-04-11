@@ -7,22 +7,22 @@ This is the documentation project for Umbraco. The scope of this project is to p
 # What's in the documentation
 
 ## Getting started
-[Getting started (available here)](Getting-Started/) is an introduction to Umbraco containing explanations of basic concepts and short tutorials.
+[Getting started](Getting-Started/) is an introduction to Umbraco, containing explanations of basic concepts and short tutorials.
 
 ## Implementation
-[Implementation (available here)](Implementation/) is an overview of Umbraco's structure and pipeline.
+[Implementation](Implementation/) is an overview of Umbraco's structure and pipeline.
 
 ## Developers Reference
-[Reference (available here)](Reference/index.md) is a collection of API references specifically for developers working with and extending Umbraco.
+[Reference](Reference/index.md) is a collection of API references specifically for developers working with and extending Umbraco.
 
 ## Extending
-[Extending (available here)](Extending/) is documentation on customizing and extending the backoffice.
+[Extending](Extending/) is documentation on customizing and extending the backoffice.
 
 ## Tutorials
-[Tutorials (available here)](Tutorials/) is a collection of the more extensive tutorials used in the documentation.
+[Tutorials](Tutorials/) is a collection of the more extensive tutorials used in the documentation.
 
 # Markdown conventions
-The Umbraco Documentation uses Markdown for all of the documentation, please read about our [Markdown Conventions](Contribute/Markdown-Conventions/).
+The Umbraco Documentation uses Markdown for all of the documentation; please read about our [Markdown Conventions](Contribute/Markdown-Conventions/).
 
 # Annotating a document
 
@@ -36,8 +36,8 @@ Therefore we introduced 2 different mechanisms:
 2. The possibility [to add multiple files about the same topic](Contribute/file-naming-conventions.md).
 
 # Contributing [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/umbraco/UmbracoDocs/issues) [![GitHub contributors](https://img.shields.io/github/contributors/umbraco/UmbracoDocs.svg)](https://GitHub.com/umbraco/UmbracoDocsgraphs/contributors/)
-We :heart: valuable contributions from everyone who is willing to help. It does not matter to us, if it's something trivial like, correcting spelling mistakes or raising an issue or writing a tutorial! Every little help counts and it helps make Umbraco easier to use for everyone.
-Otherwise, [bug reports](https://github.com/umbraco/UmbracoDocs/issues/), [bug fixes](https://github.com/umbraco/UmbracoDocs/pulls) and any feedback on Umbraco is always appreciated.
+We :heart: valuable contributions from everyone who is willing to help. It does not matter to us if it's something trivial like correcting spelling mistakes, raising an issue or writing a tutorial! Every little bit of help counts and it all helps make Umbraco easier to use, for everyone.
+Otherwise, [bug reports](https://github.com/umbraco/UmbracoDocs/issues/), [bug fixes](https://github.com/umbraco/UmbracoDocs/pulls) and any feedback on Umbraco are always appreciated.
 Look at the [Contributor Guidelines](CONTRIBUTING.md) to learn how you can get involved and help with the Umbraco Documentation.
 ## License [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)
 This library is released under the [MIT License](LICENSE.md).

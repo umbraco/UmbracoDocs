@@ -35,7 +35,7 @@ Enter "_HomePage_" as the [Name] of our new **_Document Type_** - you'll see tha
 
 Enter in the [Description] field "_This is our homepage template_".  This text is used to help the editors choose the correct **_Document Type_** when creating new **_Content Nodes_**.
 
-Click [Save] to store our new DocumentType.
+Click [Save] to store our new **_Document Type_**.
 
 ![Name your Document Type](images/figure-8-name-your-document-type-v8.png)
 
@@ -51,60 +51,60 @@ If none of your **_Document Types_** have the [Allow as root] checked, all of th
 
 ![Allow Homepage Document Type As Root](images/figure-9a-allow-document-type-as-root-v8.png)
 
-Next, we go back to the **_Design_** screen. Create a new group called "_Content_" (remembering to click [Save] after).
+Next, we go back to the **_Design_** screen. Create a new group called "_Content_".
 
-![Document Types - Adding Our First Content Tab](images/figure-10-document-types-adding-tabs-v8.png)
+![Document Types - Adding Our First Content Group](images/figure-10-document-types-adding-groups-v8.png)
 
-<!-- This needs to be reworked to use the reuse tab, creating a new data type for each property is bad practice! -->
-Now click on the [Add property] link – this is where we can create each of the necessary data containers in which the editors can enter the necessary content for the homepage.
-Enter the [Name] "_Page Title_". When you move to the next field you’ll see Umbraco helpfully gives you the alias "pageTitle".  Click the [Add editor] link and you'll see a long list of editors, select the "Textbox".
+Now click on the [Add property] link – this is where we can create the data containers in which the editors can enter the content for the homepage.
+Enter the [Name] "_Page Title_". When you move to the next field you’ll see Umbraco has automatically generated the **_Alias_** "pageTitle". 
+You should also enter a [Description]. This helps the editor to provide relevant content, so we'll fill this in "_The main title of the page (e.g. Welcome to Widgets Ltd)_".
 
-:::tip
-Remember to come back and explore this list of data types later - it's a hint to the power of Umbraco.
-:::
+![Creating our PageTitle Property](images/figure-11-creating-our-pagetitle-property-v8.png)
 
-![Selecting Textbox Data Type](images/figure-11a-selecting-textbox-data-type-v8.png)
+Now click the [Add editor] link, type "_text_" in the search box and select the existing editor for the "Textstring" **_Data Type_**.
 
-Umbraco will generate a long name for the Data type - ignore this for now and select **_Submit_**.
-<!-- End of bad practice rework -->
-
-Now you can enter a [Description], again helps the editor provide relevant content so we'll fill this in "_The main title of the page (e.g. Welcome to Widgets Ltd)_".
-
-![Creating our PageTitle Data Type](images/figure-11-creating-our-pagetitle-data-type-v8.png)
+![Selecting Textstring data type](images/figure-11a-selecting-textstring-data-type-v8.png)
 
 Ignore the rest of the fields for now and click the green [Submit] button at the bottom right.
 
-Repeat this step, clicking the [Add property] at the bottom of the [Content] group and create the following properties:
+:::tip
+Remember to come back and explore the list of **_Data Types_** later - it's a hint to the power of Umbraco.
+:::
+
+Repeat this step to add two more properties:
 
 <table border="0">
 <col width="130">
 <col width="400">
 <tr><th>Name</th><th>Body Text</th></tr>
+<tr><td>Group:</td><td>Content</td></tr>
 <tr><td>Alias:</td><td>bodyText</td></tr>
-<tr><td>Type:</td><td>Richtext editor (use the search to help you find this, leave all the options as default and click Submit)</td></tr>
-<tr><td>Tab:</td><td>Content</td></tr>
 <tr><td>Description:</td><td>The main content of the page.</td></tr>
+<tr><td>Data Type:</td><td>Richtext editor (use the search to find this existing editor)</td></tr>
 </table>
 
 <table border="0">
 <col width="130">
 <col width="400">
 <tr><th>Name</th><th>Footer Text</th></tr>
+<tr><td>Group:</td><td>Footer (you'll have to add this group first!)</td></tr>
 <tr><td>Alias:</td><td>footerText</td></tr>
-<tr><td>Type:</td><td>Textbox</td></tr>
-<tr><td>Tab:</td><td>Footer (remember to add this!)</td></tr>
 <tr><td>Description:</td><td>Copyright notice for the footer.</td></tr>
+<tr><td>Data Type:</td><td>Textstring</td></tr>
 </table>
 
 :::tip
 Use the [Add group] link to create a new group called Footer for the Footer Text.
 :::
+
 You should now have a **_Document Type_** that looks like this:
 
 ![Homepage Document Type with Properties](images/figure-12-homepage-document-type-with-properties-v8.png)
+
+Remember to click [Save].
 
 We’ve now created our first **_Document Type_** – Umbraco needs three things to create a webpage and this is the first and most important. It takes the data inside an instance of the **_Document Type_** (aka a **_Content Node_**) and merges it with a **_Template_** – we’ll create our template next.
 
 ---
 ## Next - [Creating Your First Template and Content Node](../Creating-Your-First-Template-and-Content-Node)
-How to create your first template and create a content node.
+How to create your first **_template_** and create a **_Content Node_**.

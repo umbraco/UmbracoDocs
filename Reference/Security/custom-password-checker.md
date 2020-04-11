@@ -1,6 +1,5 @@
 ---
-versionFrom: 7.3.0
-needsV8Update: "true"
+versionFrom: 8.1.1
 ---
 
 # Replacing the basic username/password check
@@ -49,19 +48,21 @@ namespace MyNamespace
     * Replace the `app.ConfigureUserManagerForUmbracoBackOffice` call with a custom overload to specify your custom `IBackOfficeUserPasswordChecker`
 
 ```C#
-var applicationContext = ApplicationContext.Current;
 app.ConfigureUserManagerForUmbracoBackOffice<BackOfficeUserManager, BackOfficeIdentityUser>(
-    applicationContext,
+    RuntimeState,
+    GlobalSettings,
     (options, context) =>
     {
         var membershipProvider = Umbraco.Core.Security.MembershipProviderExtensions.GetUsersMembershipProvider().AsUmbracoMembershipProvider();
-var settingContent = Umbraco.Core.Configuration.UmbracoConfig.For.UmbracoSettings().Content;
         var userManager = BackOfficeUserManager.Create(options,
-            applicationContext.Services.UserService,
-            applicationContext.Services.EntityService,
-            applicationContext.Services.ExternalLoginService,
+            Services.UserService,
+            Services.MemberTypeService,
+            Services.EntityService,
+            Services.ExternalLoginService,
             membershipProvider,
-settingContent);
+            Mapper,
+            UmbracoSettings.Content,
+            GlobalSettings);
 
         // Set your own custom IBackOfficeUserPasswordChecker
         userManager.BackOfficeUserPasswordChecker = new MyPasswordChecker();

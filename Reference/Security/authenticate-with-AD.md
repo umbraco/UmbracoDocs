@@ -1,10 +1,8 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 8.1.0
 ---
 
 # Authenticating on the Umbraco backoffice with Active Directory credentials
-
-Umbraco 8.0.0 incorporated the previous [Umbraco Identity Extensibility](https://github.com/umbraco/UmbracoIdentityExtensions) package in to the core.
 
 You'll need to create a new file to override the existing owin configuration (e.g. `~/App_Start/MyOwinStartup.cs`) like so:
 
@@ -46,6 +44,7 @@ namespace MyApp
                         Services.EntityService,
                         Services.ExternalLoginService,
                         membershipProvider,
+                        Mapper,
                         UmbracoSettings.Content,
                         GlobalSettings
                     );
@@ -54,6 +53,7 @@ namespace MyApp
                 });
         }
     }
+
 }
 ```
 

@@ -1,4 +1,5 @@
 ---
+meta.title: "Source Control with Umbraco"
 versionFrom: 8.0.0
 ---
 
@@ -143,7 +144,7 @@ When you create and edit eg. Document Types, Media Types and Data Types in the U
 
 There are several add-on packages that can help add source control to these structure changes:
 
-- *[The uSync package (free)](https://our.umbraco.org/projects/developer-tools/usync/)* - which can be configured to serialize these changes to files on disk, in a folder called /uSync - enabling you to source/version control these changes and synchronise them to other environments.
+- *[The uSync package (free)](https://our.umbraco.com/projects/developer-tools/usync/)* - which can be configured to serialize these changes to files on disk, in a folder called /uSync - enabling you to source/version control these changes and synchronise them to other environments.
 
 - *[uSync Snapshots (licensed)](https://our.umbraco.com/packages/developer-tools/usyncsnapshots/)* - an extension to uSync, for taking 'before' and 'after' snapshots of an Umbraco site, for managing a release of a 'set of changes' between environments.
 

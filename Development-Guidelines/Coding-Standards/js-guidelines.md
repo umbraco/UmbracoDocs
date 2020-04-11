@@ -145,7 +145,7 @@ MyProject.MyNamespace.NamePrinterManager.getInstance().registerPrinter(printer);
 
 ## Static classes
 
-Sometimes its useful to have static classes that require no constructor. Before you make one of these, definitely make sure that you won't require different instances of one.
+Sometimes it's useful to have static classes that require no constructor. Before you make one of these, definitely make sure that you won't require different instances of one.
 
 An example of static classes:
 

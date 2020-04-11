@@ -72,6 +72,13 @@ namespace My.Website
 }
 
 ```
+:::note
+In Umbraco7 there existed an IContentFinder that would find content and display it with an 'alternative template' via a convention. This could be to avoid the ugly `?alttemplate=blogfullstory` appearing on the querystring of the url when using the alternative template mechanism. Instead the Url could follow the convention of `/urltocontent/altemplatealias`. 
+
+Eg: `/blog/my-blog-post/blogfullstory` would 'find' the `/blog/my-blog-post` page and display using the `blogfullstory` template. 
+
+In Umbraco 8 this convention has been removed from the default configuration of Umbraco. You can reintroduce this behaviour by adding the `ContentFinderByUrlAndTemplate` ContentFinder back into the ContentFinderCollection, using an `IUserComposer` (see above example).
+:::
 
 # NotFoundHandlers
 
@@ -99,15 +106,16 @@ namespace My.Website.ContentFinders
             //find the root node with a matching domain to the incoming request
             var url = contentRequest.Uri.ToString();
             var allDomains = _domainService.GetAll(true);
-            var domain = allDomains.Where(f => f.DomainName == contentRequest.Uri.Authority || f.DomainName == "https://" + contentRequest.Uri.Authority).FirstOrDefault();
-            var siteId = domain != null ? domain.RootContentId : allDomains.FirstOrDefault().RootContentId;
+            var domain = allDomains?.Where(f => f.DomainName == contentRequest.Uri.Authority || f.DomainName == "https://" + contentRequest.Uri.Authority).FirstOrDefault();
+            var siteId = domain != null ? domain.RootContentId : (allDomains.Any() ? allDomains.FirstOrDefault().RootContentId : null);
             var siteRoot = contentRequest.UmbracoContext.Content.GetById(false, siteId ?? -1);
+            if (siteRoot == null) { siteRoot = contentRequest.UmbracoContext.Content.GetAtRoot().FirstOrDefault(); }
             if (siteRoot == null)
             {
                 return false;
             }
             //assuming the 404 page is in the root of the language site with alias fourOhFourPageAlias
-            IPublishedContent notFoundNode = siteRoot.Children().FirstOrDefault(f => f.ContentType.Alias == "fourOhFourPageAlias");
+            IPublishedContent notFoundNode = siteRoot.Children.FirstOrDefault(f => f.ContentType.Alias == "fourOhFourPageAlias");
 
             if (notFoundNode != null)
             {
@@ -141,3 +149,7 @@ namespace My.Website
 }
 
 ```
+
+:::note
+To make sure your custom 404 page is served set the `error404` in `umbracoSettings.config` to 0.  
+:::

@@ -14,7 +14,7 @@ exposed as a property on all Umbraco base classes such as `SurfaceController`s, 
 So for the majority of cases you can access the services by using this code (for example):
 
 ```csharp
-Services.ContentService.Get(123);
+Services.ContentService.GetById(123);
 ```
 
 If you are not working with an Umbraco base class and the ServiceContext is not exposed, you can access the ServiceContext via the
@@ -22,7 +22,7 @@ If you are not working with an Umbraco base class and the ServiceContext is not 
 that you are not using an Umbraco base class, you can access the ApplicationContext via a singleton. For example:
 
 ```csharp
-ApplicationContext.Current.Services.ContentService.Get(123);
+ApplicationContext.Current.Services.ContentService.GetById(123);
 ```
 
 ## Services

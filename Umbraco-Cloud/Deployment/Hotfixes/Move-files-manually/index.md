@@ -11,6 +11,10 @@ The following tools have been used to create this guide:
 * Visual Studio Code
 * GitKraken
 
+:::note
+In GitKraken version 6.5.3, it is no longer possible to open private repositories with the free version - This affects all Umbraco Cloud repositories as well. 
+:::
+
 ## The Scenario
 
 You have an Umbraco Cloud project with two environments, Development and Live.
@@ -62,7 +66,7 @@ Once you've checked that everything works locally, you are ready to push to the 
 ### Push to Live
 
 9. Push the committed changes to the Live environment using Git
-10. **Note** that when changes are pushing directly to a Live environment and you have more than one environment, the changes are not automatically extracted to the site
+10. **Note** that when changes are pushed directly to a Live environment and you have more than one environment, the changes are not automatically extracted to the site
 11. Find a guide on how to extract the files, in the [Manual Extraction](../../../Set-Up/Power-Tools/Manual-extractions) article
 
 You have now applied a hotfix to the Live environment.
