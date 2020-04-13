@@ -7,7 +7,7 @@ meta.Description: "A guide to customization of Backoffice Search"
 
 # Backoffice Search
 
-Backoffice search is usefull tool, which support you in finding your content. Umbraco by default will allow you to search using only few fields: 
+The search facility of the Umbraco Backoffice allows the searching 'across sections' of different types of Umbraco entities, eg Content, Media, Members. However 'by default' only a small subset of standard fields are searched:
 
 | Node Type    | Propagated Fields    |
 | ------------ | -------------------- |
