@@ -82,5 +82,4 @@ public class CustomInternalSearchConstants : InternalSearchConstants,     II
 
 ## More advanced extensions
 
-To make more customization on back-office search check [ISearchableTree](https://our.umbraco.com/Documentation/Extending/Section-Trees/Searchable-Trees/ "https://our.umbraco.com/Documentation/Extending/Section-Trees/Searchable-Trees/")
-
+For further extensibility of the Umbraco Backoffice search implementation check [ISearchableTree](https://our.umbraco.com/Documentation/Extending/Section-Trees/Searchable-Trees/ "https://our.umbraco.com/Documentation/Extending/Section-Trees/Searchable-Trees/")
