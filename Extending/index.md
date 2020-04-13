@@ -43,7 +43,7 @@ A library of API Reference documentation.
 
 ## [Backoffice Search](Backoffice-Search/)
 
-Backoffice search is integrated search service which allow find nodes.
+Extending the Umbraco Backoffice search, customising the fields searched - replacing the searching mechanism.
 
 ## [Content Apps](Content-Apps/index.md)
 
