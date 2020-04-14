@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "Adding a field type to Umbraco Forms"
 ---
 
 # Adding a field type to Umbraco Forms #

@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Adding a type to the provider model"
 ---
 
 # Adding a type to the provider model
