@@ -1,6 +1,8 @@
 ### The Global Content
 
-This Feature is Located in the Content Tree on the left-hand side,
+This is a test.
+
+This Feature is located in the Content Tree on the left-hand side,
 
 ![movePage.jpg](images/Globale-Widget.png) 
 
@@ -24,4 +26,3 @@ Once you have selected the widget(s) you want to use, you set them up like you w
 Now for your second option in the Section tree, This is the Global Content Holder, Which gives you the option to create a folder for storing your global content within. You can even choose to make another folder within your folder.
 
 Here you can see how you work with the  [Global Content Widget](../../Widgets/index.md#newsletterTheGlobalContentWidget)
-
