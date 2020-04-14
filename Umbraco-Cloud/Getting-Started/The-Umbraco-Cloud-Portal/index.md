@@ -21,7 +21,7 @@ In the top-right corner of the projects view you'll find an option to create mor
 Choose the plan you want and a project will be ready for you within a few minutes.
 
 You can also see notifications for your different projects in the top-right corner,
-e.g if your project have been automaticly updated or if the upgrade failed.
+e.g if your project have been automatically updated or if an upgrade has failed.
 
 ## Project Management
 
