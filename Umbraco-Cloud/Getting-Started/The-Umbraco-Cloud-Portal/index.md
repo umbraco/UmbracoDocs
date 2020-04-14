@@ -67,7 +67,7 @@ The name that will be displayed on Umbraco Cloud
 
 This email address is used for logging in to Umbraco Cloud and will receive email notifications from the Umbraco Cloud Portal.
 
-Note that it is not possible to change email at a later point.
+Note that it is not possible to change this email at a later point.
 
 ### Change password
 
