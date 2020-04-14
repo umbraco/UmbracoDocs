@@ -47,7 +47,7 @@ From [Settings](../../Set-up/project-settings) - in the top-right corner - you'l
 
 In the bottom-right corner of the Umbraco Cloud Portal, you'll find a chat-bubble. This is where you will be able to reach out to the Umbraco HQ Support Warriors should you have any questions regarding your Umbraco Cloud projects.
 
-If you are on a professional plan you are entitled to support through the chat regarding implementation and issues with the CMS.
+If you are on a Professional plan you are entitled to support through the chat regarding implementation and issues with the CMS.
 
 With the Starter and standard plan you are only entitled to support regarding specific issues on Cloud. 
 
