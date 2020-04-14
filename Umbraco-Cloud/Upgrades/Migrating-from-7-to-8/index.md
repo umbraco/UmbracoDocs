@@ -45,7 +45,8 @@ If your login doesn't seem to be working, try the following approach:
 
 Below is an example of how the attribute can look.
 
-       <add name="UsersMembershipProvider" type="Umbraco.Web.Security.Providers.UsersMembershipProvider, Umbraco" minRequiredNonalphanumericCharacters="0" minRequiredPasswordLength="8" useLegacyEncoding="true" enablePasswordRetrieval="false" enablePasswordReset="true" requiresQuestionAndAnswer="false" passwordFormat="Hashed" />
+```xml
+<add name="UsersMembershipProvider" type="Umbraco.Web.Security.Providers.UsersMembershipProvider, Umbraco" minRequiredNonalphanumericCharacters="0" minRequiredPasswordLength="8" useLegacyEncoding="true" enablePasswordRetrieval="false" enablePasswordReset="true" requiresQuestionAndAnswer="false" passwordFormat="Hashed" />
 
 
 ![Authorize upgrade](images/upgrade-to-8_1.png)
