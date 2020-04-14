@@ -4,7 +4,15 @@ versionFrom: 7.0.0
 
 # Manage environments
 
-When working with an Umbraco Cloud project you can add and remove extra environments. If you are on a Pro plan you can add and remove environments whenever you like, for a Starter plan it costs extra for each environment.
+When working with an Umbraco Cloud project you can add and remove extra environments. 
+
+For the Starter plan you can add a Development environment for an additional price per month.
+
+For the Standard plan you get the Development environment for free and can add a Staging environment for an additional price per month.
+
+ [Learn more about the additional prices on Umbraco Cloud](https://umbraco.com/cloud-pricing/)
+
+If you are on a Professional plan you can add and remove environments whenever you like without any additional cost.
 
 <iframe width="800" height="450" src="https://www.youtube.com/embed/9AwZNyaHbVk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
