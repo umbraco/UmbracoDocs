@@ -7,7 +7,7 @@ versionFrom: 7.0.0
 In this article, you can read all about [Umbraco Cloud](https://umbraco.com/products/umbraco-cloud/) and how to get started!
 
 ## What is Umbraco Cloud?
-Umbraco Cloud is a great way to work with your favorite CMS! It includes 15 years of experience and best-practices in an intuitive and robust approach. No matter if you’re working in a team or if you’re single-handedly building a website, Umbraco Cloud removed the barriers that slow down projects and get in the way of beautiful, functional sites.
+Umbraco Cloud is a great way to work with your favorite CMS! It includes more than 15 years of experience and best-practices in an intuitive and robust approach. No matter if you’re working in a team or if you’re single-handedly building a website, Umbraco Cloud removed the barriers that slow down projects and get in the way of beautiful, functional sites.
 
 Umbraco Cloud is Umbraco - plus a whole lot more! Built on the Microsoft Azure Cloud and encompassing web standard approaches, Umbraco Cloud is familiar to Umbraco users new and old. We’ve made it with Umbraco Cloud, there are no limits to what you can accomplish - literally anything you can do with Umbraco and web technology you can do with Umbraco Cloud.
 
