@@ -15,7 +15,7 @@ The Staging environment is available for the Standard and Professional plans.
 Both the Development and the Staging environments are protected with **basic authentication**. This means that you have to log in to see the frontend of these environments. Alternatively, you can [whitelist IP's](../../Set-up/project-settings/#manage-ip-whitelist) to allow access to the environments.
 
 :::note
-Note when on a starter plan you do not have the option to whitelist IP's to allow access to the development environment.
+Note when on a Starter plan you do not have the option to whitelist IP's to allow access to the Development environment.
 :::
 
 The final environment is the *Live* environment. This is your live site - the site that's visible to the public. When you are in trial mode the Live environment will be protected by basic authentication - this will, of course, be removed, as soon as you set up a subscription for the project.
