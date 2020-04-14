@@ -10,7 +10,7 @@ The Development environment is available for all the plans on Umbraco Cloud.
 
 The environment next in line in the workflow is the *Staging* environment. Having this environment enables you to give your team members different workspaces - the developers can work with code in the Development environment while the content editors can work with content in the Staging environment. All of this without affecting the actual public site.
 
-The staging environment is available for standard and Professional plans.
+The Staging environment is available for the Standard and Professional plans.
 
 Both the Development and the Staging environments are protected with **basic authentication**. This means that you have to log in to see the frontend of these environments. Alternatively, you can [whitelist IP's](../../Set-up/project-settings/#manage-ip-whitelist) to allow access to the environments.
 
