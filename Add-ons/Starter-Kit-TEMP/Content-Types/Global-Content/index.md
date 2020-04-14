@@ -1,7 +1,5 @@
 ### The Global Content
 
-This is a test.
-
 This Feature is located in the Content Tree on the left-hand side,
 
 ![movePage.jpg](images/Globale-Widget.png) 
