@@ -10,7 +10,7 @@ For the Starter plan you can add a Development environment for an additional pri
 
 For the Standard plan you get the Development environment for free and can add a Staging environment for an additional price per month.
 
- [You can find information about the prices for the environments here](https://umbraco.com/cloud-pricing/)
+ [Learn more about the additional prices on Umbraco Cloud](https://umbraco.com/cloud-pricing/)
 
 If you are on a Professional plan you can add and remove environments whenever you like without any additional cost.
 
