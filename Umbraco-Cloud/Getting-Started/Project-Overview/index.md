@@ -12,7 +12,7 @@ Umbraco Cloud projects are made of three major components: environments, team me
 
 The number of environments in your project is dependent on which plan you are on:
 
-* With the **Starter plan**, you get a single _Live_ environment and have the option to add  a _Development_ 
+* With the **Starter plan**, you get a single _Live_ environment and have the option to add a _Development_ environment.
 
 * With the **Standard plan**, you will get a _Development_ AND a _Live_ environment and have the option to add  a _staging_ environment
 
