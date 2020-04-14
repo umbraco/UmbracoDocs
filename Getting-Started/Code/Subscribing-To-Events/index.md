@@ -137,7 +137,7 @@ public class LogWhenPublishedComposer : ComponentComposer<LogWhenPublishedCompon
 }
 ```
 
-You can read more about Composers [here](../../../Implementation/Composing/index.md). You can learn about the different options for RunTimeLevel [here](../../../Implementation/Composing/index.md#runtimelevel).
+You can read more about Composers [in the **Composing** article](../../../Implementation/Composing/index.md). There you can also learn about [the different options for RunTimeLevel](../../../Implementation/Composing/index.md#runtimelevel).
 
 The entire class should look like this:
 
