@@ -16,7 +16,7 @@ The number of environments in your project is dependent on which plan you are on
 
 * With the **Standard plan**, you will get a _Development_ and a _Live_ environment and have the option to add a _Staging_ environment
 
-* With the **Professional plan**, you will get a _Development_, a _Live_  and a _staging_ environment- as with the standard Plan you can add/remove environments as needed
+* With the **Professional plan**, you will get a _Development_, a _Live_  and a _Staging_ environment - as with the Standard Plan you can add/remove environments as needed
 
 For more information on how to add or remove environments, read the [Manage Environments](../../Set-Up/Manage-Environments) article
 
