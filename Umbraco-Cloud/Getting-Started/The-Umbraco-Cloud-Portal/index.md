@@ -49,7 +49,7 @@ In the bottom-right corner of the Umbraco Cloud Portal, you'll find a chat-bubbl
 
 If you are on a Professional plan you are entitled to support through the chat regarding implementation and issues with the CMS.
 
-With the Starter and standard plan you are only entitled to support regarding specific issues on Cloud. 
+With the Starter and Standard plan you are only entitled to support regarding specific issues regarding the Cloud platform. 
 
 Read about the [Umbraco Cloud plans](https://umbraco.com/pricing/) to learn more about this.
 
