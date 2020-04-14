@@ -6,7 +6,7 @@ versionFrom: 7.0.0
 
 When you have multiple environments in your Umbraco Cloud project the *Development* environment will be the *first* environment in the workflow. What this means, is that this is the environment you are going to work with when building the structure of your website. This is also the environment you clone down when you want to work with your project locally.
 
-The development environment is available for all the plans on Umbraco Cloud.
+The Development environment is available for all the plans on Umbraco Cloud.
 
 The environment next in line in the workflow is the *Staging* environment. Having this environment enables you to give your team members different workspaces - the developers can work with code in the Development environment while the content editors can work with content in the Staging environment. All of this without affecting the actual public site.
 
