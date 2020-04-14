@@ -14,7 +14,9 @@ _Follow these steps to do a full install of Umbraco with NuGet._
 - Either use the NuGet Package explorer to install Umbraco 8 or the Package manager console (the command is: `Install-Package UmbracoCms`)
 - Use CTRL+F5 to run the project and start the Umbraco installer
 
-**Note:** The screenshots below are for Visual Studio 2017, but you should follow a similar journey for 2019.
+:::note
+The screenshots below are for Visual Studio 2017, but you should follow a similar journey for 2019.
+:::
 
 ## New solution
 To install Umbraco we first need a Visual Studio solution.
