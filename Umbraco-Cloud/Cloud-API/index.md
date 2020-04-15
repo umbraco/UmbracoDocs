@@ -1,5 +1,7 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "Public Umbraco Cloud REST API"
+meta.Description: "A guide to using the public Umbraco Cloud REST API"
 ---
 
 # Public Umbraco Cloud REST API
