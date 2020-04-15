@@ -54,8 +54,6 @@ This is a recommended setup. If you don't like the setup then you can play with 
 
 What follows is **a recommendation and not the only way to work with Visual Studio**.
 
-![](images/cmd-in-empty-folder.png)
-
 Before running the UaaS.cmd tool you will need the **git clone url** for your Umbraco Cloud Project.
 
 * Go to the Project in the Portal
