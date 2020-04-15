@@ -78,5 +78,5 @@ You can find out more about the services methods in the reference section of the
 - [MemberGroup Service](../../../Reference/Management/Services/MemberGroupService/index.md)
 
 ### [Umbraco.TV](https://umbraco.tv)
-- [Chapter: Members](https://umbraco.tv/videos/umbraco-v7/content-editor/administrative-content/members/what-is-a-member/)
+- [Chapter: Members](https://umbraco.tv/videos/umbraco-v8/content-editor/administrative-content/members/what-is-a-member/)
 - Member API chapter *(Coming soon)*
