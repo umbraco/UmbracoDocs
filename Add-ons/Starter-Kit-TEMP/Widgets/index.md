@@ -22,7 +22,7 @@ Below you can see an example of how a ***Hero Widget*** might look. This contain
 
 ![movePage.jpg](images/The-Text-Widget1.png)
 
-The Text Widget lets you create a text field on the page, containing a Rich text editor, and the option for a sidebar Widget(can be more than one),these sidebar Widgets can be the following: a text area, links, a button.
+The Text Widget lets you create a text field on the page. Containing a Rich text editor, and the option for a sidebar Widget(can be more than one). The sidebar Widgets can be the following: a text area, links, a button.
 
 This is useful if you only need a text box outside of the Widgets, most of the other Widgets come with the ***Text Widget*** included
 
