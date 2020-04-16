@@ -266,7 +266,7 @@ Below you can see an example that uses the back and white feature, and has two l
 
 ![movePage.jpg](images/The-Register-Widget.png)
 
-This Widget lets you create a register element on your page, where people can register for an account on your page.
+This widget lets you create an element on your page, where people can register for an account on your website.
 They will register by filling out the fields, which are Name, Email, and Password, and finalizing by pressing the register button, after doing that they will get a success message that their sign up was successful.
 
 The setup options for this widget is as follows:
