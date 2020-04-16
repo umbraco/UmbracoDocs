@@ -269,7 +269,7 @@ Below you can see an example that uses the back and white feature, and has two l
 
 The Login Widget allows the user that was created, using the register widget to login to their account.
 
-The setup options for the login widget are as follows:
+The setup options for this widget are as follows:
 
 - Heading
 - Text
