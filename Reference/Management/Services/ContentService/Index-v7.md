@@ -1,5 +1,4 @@
 ---
-keywords: services content service
 versionFrom: 7.0.0
 versionRemoved: 8.0.0
 ---
