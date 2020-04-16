@@ -278,5 +278,5 @@ The setup options for this widget are as follows:
 - Text Color
 - Redirect URL (This is where you decide where the users are redirected to after they log in)
 
-Below you can see what the login widget could look like at the front end.
+Below you can see what the widget could look like at the front end.
 ![movePage.jpg](images/login-prompt.png)
