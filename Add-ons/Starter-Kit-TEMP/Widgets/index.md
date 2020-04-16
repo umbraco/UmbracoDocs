@@ -173,7 +173,7 @@ When ***Show Content Next To Map*** is disabled the blue section on the left wil
 
 ![movePage.jpg](images/The-Umbraco-Form-Widget.png)
 
-The Umbraco Form widget gives you the ability to add a custom form to your site. It is important to note that a custom form needs to have been made using Umbraco Forms before this widget can be used.
+The Umbraco Form widget, gives you the ability to add a custom form to your site. It is important to note that a custom form needs to have been made using Umbraco Forms before this widget can be used.
 You can create a form by selecting the Forms section in the top menu in your backoffice. 
 
 You will have some settings to personalize how your form is presented through the widget. The settings are as follows:
@@ -191,7 +191,7 @@ You will have some settings to personalize how your form is presented through th
 
 ![movePage.jpg](images/Contact-Form.png)
 
-The Contact Form Widget will let you add a basic contact form to your project. To make it work you will need to set up a contact email.
+The Contact Form Widget, will let you add a basic contact form to your project. To make it work you will need to set up a contact email.
 You set up the contact email by going to the  [General Settings](../Settings/General-Settings/) node, and fill out the ***Contact Form Email*** field.
 You will need to set up [SMTP](../../../Umbraco-Cloud/Set-Up/SMTP-settings/) for this to work aswell.
 
@@ -212,7 +212,7 @@ Below you can see how a ***Contact Form*** will look per default:
 ### The Newsletter Widget
 
 The Newsletter Widget, lets you create a sign-up form for your newsletter. This will require some setting up. 
-The way this widget works is that you set it up with your Mailchimp or Campaign monitor, then you add your API key and set the ID for the list that user will be subscriped to.
+The way this widget works is that you set it up, with your Mailchimp or Campaign monitor, then you add your API key and set the ID, for the list that user will be subscriped to.
 You can setup all this in the [General Settings](../Settings/General-Settings/index.md#newsletter) page.
 
 
@@ -236,8 +236,8 @@ This is to show how a Newsletter Widget could look:
 
 ![movePage.jpg](images/The-Logos-Widget.png)
 
-The Logos Widget does what the name implies and lets you add a set of logos to your website.
-You can choose what images you will use for logos and what pages they need to link to and/or you can add text to it.
+The Logos Widget does what the name implies, and lets you add a set of logos to your website.
+You can choose what images you will use for logos, and what pages they need to link to and/or you can add text to it.
 
 The configuration for this widget is divided into two parts:
 
