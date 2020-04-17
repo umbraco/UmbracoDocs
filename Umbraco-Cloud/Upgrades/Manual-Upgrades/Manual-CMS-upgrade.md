@@ -62,7 +62,7 @@ When merging the `web.config` file make sure that you **do not overwrite/remove*
     </umbraco.deploy>
 
 :::note
-The following section with the Dashboard.config only applies to Umbraco 7 projects.
+The following section with the `Dashboard.config` only applies to Umbraco 7 projects.
 :::
 
 ### Dashboard.config
