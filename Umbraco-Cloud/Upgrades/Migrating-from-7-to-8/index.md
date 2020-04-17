@@ -18,7 +18,7 @@ Read the [general article about Content migration](../../../Getting-Started/Setu
 * A clean Cloud project running the latest version of Umbraco 8 with **at least 2 environments**
 
 :::note
-We strongly recommend having at least 2 environments on the Umbraco Cloud project.
+We strongly recommend having at least 2 environments on the Umbraco 8 project.
 
 Should something fail during the migration, the Development environment can always be removed and re-added in order to start over on a clean slate.
 :::
