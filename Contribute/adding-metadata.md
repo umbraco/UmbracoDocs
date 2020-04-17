@@ -1,5 +1,4 @@
 ---
-versionFrom: 7.0.0
 meta.Title: "Annotating a document with meta data"
 meta.Description: "The documentation markdown files are allowed to contain meta data.  This is done by adding YAML at the top of the document."
 ---
