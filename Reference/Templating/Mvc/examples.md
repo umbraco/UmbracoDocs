@@ -1,47 +1,22 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # View/Razor Examples
 
 _Lots of examples of using various techniques to render data in a view_
 
-## Rendering a field with UmbracoHelper
-
-```csharp
-@Umbraco.Field("bodyContent")
-```
-
-## Rendering a field with UmbracoHelper with optional parameters
-
-```csharp
-@Umbraco.Field("bodyContent", insertBefore : "<h2>", insertAfter : "</h2>")
-```
-
 ## Rendering the raw value of a field from IPublishedContent
 
 ```csharp
-@Model.Content.Properties["bodyContent"].Value
-```
-
-Or alternatively:
-
-```csharp
-@Model.Content.GetPropertyValue("bodyContent")
+@Model.Value("bodyContent")
 ```
 
 ## Rendering the converted value of a field from IPublishedContent
 
 ```csharp
-@Model.Content.GetPropertyValue<double>("amount")
-@Model.Content.GetPropertyValue<RawXElement>("xmlContents")
-```
-
-## Rendering a field using @CurrentPage (dynamically)
-
-```csharp
-@CurrentPage.bodyContent
+@Model.Value<double>("amount")
+@Model.Value<IHtmlString>("bodyContent")
 ```
 
 ## Rendering a macro
@@ -70,6 +45,6 @@ Or alternatively:
     var umbracomember = Members.GetByUsername(profile.UserName);
 
     <h1>@umbracomember.Name</h1>
-    <p>@umbracomember.GetPropertyValue<string>("bio")</p>
+    <p>@umbracomember.Value<string>("bio")</p>
 }
 ```

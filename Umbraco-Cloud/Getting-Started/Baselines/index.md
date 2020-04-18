@@ -21,7 +21,7 @@ For some more in-depth information have a look at the [High-level Overview](High
 
 ### Creating a Child project
 
-* Choose the “Create new Project” option from the Umbraco Cloud Portal - choose either the Starter or the Professional plan for your new project
+* Choose the “Create new Project” option from the Umbraco Cloud Portal - choose either the Starter, the standard or the Professional plan for your new project
 * Choose a name for your new project
 * From the *Choose baseline (Optional)* dropdown, choose which of your other Cloud project the new project should be based on
     - Note that any Umbraco Cloud project can be used as a Baseline project

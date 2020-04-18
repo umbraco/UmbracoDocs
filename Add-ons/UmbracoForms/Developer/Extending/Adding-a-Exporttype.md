@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "Adding a Export type to Umbraco Forms"
 ---
 
 # Adding a Export type to Umbraco Forms
@@ -29,7 +30,7 @@ public class ExportToHtmlReport : ExportType
     }
 
     /// <summary>
-    /// We simply implement this method from the interface
+    /// We implement this method from the interface
     /// As this method is called from ExportToFile & is expecting the file contents as a string to be written as a stream to a file
     /// </summary>
     public override string ExportRecords(RecordExportFilter filter)
@@ -111,7 +112,7 @@ public class ExportToTextFile : ExportType
         string pathToSaveZipFile = filepath;
 
         // Check our path does not contain \\
-        // If not just simply may the filePath
+        // If not, use the filePath
         if (filepath.Contains('\\') == false)
         {
             pathToSaveZipFile = IOHelper.MapPath(filepath);

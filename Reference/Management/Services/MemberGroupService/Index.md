@@ -1,17 +1,11 @@
 ---
-versionFrom: 6.2.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # MemberGroupService
-
-:::note
-Applies to Umbraco 6.2 and 7.1 and newer
-:::
-
 The MemberGroupService acts as a "gateway" to Umbraco data for operations which are related to Member groups, which are also known as Member Roles.
 
-[Browse the API documentation for MemberGroupService](https://our.umbraco.com/apidocs/v7/csharp/api/Umbraco.Core.Services.MemberGroupService.html).
+[Browse the API documentation for IMemberGroupService](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.IMemberGroupService.html).
 
  * **Namespace:** `Umbraco.Core.Services`
  * **Assembly:** `Umbraco.Core.dll`
@@ -29,31 +23,36 @@ using Umbraco.Core.Services;
 ```
 
 ## Getting the service
-The MemberGroupService is available through the `ApplicationContext`, but the if you are using a `SurfaceController` or the `UmbracoUserControl` then the MemberGroupService is available through a local `Services` property.
+
+### Services property
+
+If you wish to use use the member group service in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController`), you can access the member group service through a local `Services` property:
 
 ```csharp
-Services.MemberGroupService
+IMemberGroupService memberGroupService = Services.MemberGroupService;
 ```
 
-Getting the service through the `ApplicationContext`:
+### Dependency Injection
+
+In other cases, you may be able to use Dependency Injection. For instance if you have registered your own class in Umbraco's dependency injection, you can specify the `IMemberGroupService` interface in your constructor:
 
 ```csharp
-ApplicationContext.Current.Services.MemberGroupService
+public class MyClass
+{
+
+    private IMemberGroupService _memberGroupService;
+    
+    public MyClass(IMemberService memberGroupService)
+    {
+        _memberGroupService = memberGroupService;
+    }
+
+}
 ```
+### Static accessor
 
-## Methods
+If neither a `Services` property or Dependency Injection is available, you can also reference the static `Current` class directly:
 
-### .Delete(IMemberGroup)
-Deletes a given `MemberGroup`
-
-### .GetAll();
-Returns a `MemberGroup` collection
-
-### .GetById(int id);
-Returns a `MemberGroup` with a given Id
-
-### .GetByName(string name);
-Returns a `MemberGroup` with a given name
-
-### .Save(IMemberGroup group)
-Saves a `MemberGroup`
+```csharp
+IMemberGroupService memberGroupService = Umbraco.Core.Composing.Current.Services.MemberGroupService;
+```

@@ -1,5 +1,7 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "Public Umbraco Cloud REST API"
+meta.Description: "A guide to using the public Umbraco Cloud REST API"
 ---
 
 # Public Umbraco Cloud REST API
@@ -48,6 +50,10 @@ To use this endpoint, make a request like this:
         "ownerId": "c5821a98-ce88-4796-be90-e29f0a05fa39", // Optional. Can be a GUID of an organization or an email. If nothing is provided the owner becomes the user the token is associated with
         "baselineAlias": "an-alias-of-a-baseline" // Optional. If the project needs to be a child, then you can provide the alias of the baseline
     }
+    
+:::note
+You'll notice the "plan" parameter takes either "Single" or "Studio" as valid options. The terminology used for these plans has since changed. "Single" will create a "Starter" plan whereas "Studio" a "Professional".
+:::
 
 If everything went as expected, the endpoint will return a `HTTP 200` status code and a JSON object that looks like this:
 
@@ -104,7 +110,7 @@ The following endpoint is used for inviting users to a project.
 
     POST https://www.s1.umbraco.io/api/public/project/invite
 
-If the user is a new user we will create the user and send an activation email to the provided email and then add the project to the users overview. If the user is an existing user he/she will get an email telling them that they have been invited to the project.
+If the user is a new user we will create the user and send an activation email to the provided email and then add the project to the users overview. If the user is an existing user they will get an email telling them that they have been invited to the project.
 
 **Request**
 

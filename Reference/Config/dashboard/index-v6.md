@@ -12,7 +12,7 @@ The Dashboard loads one or more UserControls and displays them on a series of ta
 
 Once you have created the UserControls that you want to have loaded when a section loads, you must then update the Dashboard.config to tell Umbraco to load your UserControls when a user enters a new section. Again, if you are doing this for yourself all you need to do is edit the Dashboard.config on your site to add the controls. However, if you are adding a section to go with a package, you will want to include a Package Action to update the Dashboard.config during install.
 
-See [Package Actions.](../../../Reference/Packaging/index.md) for more information.
+See [Package Actions.](../../../Extending/Packages/package-actions.md) for more information.
 
 ## Sample
 

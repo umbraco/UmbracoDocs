@@ -79,7 +79,7 @@ Add the following section:
     </areas>
     <tab caption="Welcome">
         <control>
-            /app_plugins/CustomWelcomeDashboard/WelcomeDashboard.html
+            /App_Plugins/CustomWelcomeDashboard/WelcomeDashboard.html
         </control>
     </tab>
 </section>
@@ -126,7 +126,7 @@ Inside this package manifest we add a bit of JSON to describe the dashboard's re
     ],
     "css": [
         /*list of stylesheets appear here:*/
-        "~/app_plugins/CustomWelcomeDashboard/customwelcomedashboard.css"
+        "~/App_Plugins/CustomWelcomeDashboard/customwelcomedashboard.css"
     ]
 }
 ```
@@ -183,11 +183,11 @@ Finally, we need to update the package.manifest file to load the additional cont
 {
     "javascript":[
         /*any comma delimited list of JavaScript files appear here*/
-        "~/app_plugins/CustomWelcomeDashboard/customwelcomedashboard.controller.js"
+        "~/App_Plugins/CustomWelcomeDashboard/customwelcomedashboard.controller.js"
     ],
     "css": [
         /*a comma delimited list of stylesheets appear here:*/
-        "~/app_plugins/CustomWelcomeDashboard/customwelcomedashboard.css"
+        "~/App_Plugins/CustomWelcomeDashboard/customwelcomedashboard.css"
     ]
 }
 ```

@@ -1,4 +1,6 @@
 ---
+meta.title: "Subscribing to events"
+meta.description: "Subscribing to events allows you to execute custom code on a number of events both before and after the event occurs"
 versionFrom: 8.0.0
 ---
 
@@ -134,6 +136,9 @@ public class LogWhenPublishedComposer : ComponentComposer<LogWhenPublishedCompon
     // nothing needed to be done here!
 }
 ```
+
+You can read more about Composers [in the **Composing** article](../../../Implementation/Composing/index.md). There you can also learn about [the different options for RunTimeLevel](../../../Implementation/Composing/index.md#runtimelevel).
+
 The entire class should look like this:
 
 ```csharp
@@ -200,4 +205,4 @@ As you can see our custom code has been executed when we published a piece of co
 
 ### More information
 - [Events Reference](../../../Reference/Events/)
-- [Components & Composing](../../../implementation/composing/)
+- [Components & Composing](../../../Implementation/Composing/)

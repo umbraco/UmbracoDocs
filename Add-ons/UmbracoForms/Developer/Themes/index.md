@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Theming Umbraco Forms"
+meta.Description: "Documentation on how to apply custom themes to Umbraco Forms"
 ---
 
 # Themes

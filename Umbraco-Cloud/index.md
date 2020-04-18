@@ -22,11 +22,14 @@ How Umbraco Cloud manages databases between the different environments.
 ## [Upgrades](Upgrades/)
 An explanation of the Umbraco Cloud product upgrade process.
 
+## [Security](Security/)
+Everything you need to know about the security on Umbraco Cloud.
+
 ## [Troubleshooting](Troubleshooting/)
 Tips on finding, identifying and resolving issues.
 
-## [Headless](Headless)
-Documentation on Umbraco Headless.
+## [Umbraco Heartcore](../Umbraco-Heartcore/)
+Documentation on Umbraco Heartcore.
 
 ## [Frequently Asked Questions](Frequently-Asked-Questions/)
 Anything else not covered above.

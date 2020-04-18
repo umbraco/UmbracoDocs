@@ -1,5 +1,6 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.0
+meta.Title: "Adding a type to the provider model"
 ---
 
 # Adding a type to the provider model
@@ -15,9 +16,9 @@ Create a new ASP.NET or class project in Visual Studio add references to the Umb
 The Forms API contains a collection of classes that the provider model automatically registers. So to add a new type to Forms you inherit from the right class. In the sample below we use the class for the workflow type.
 
 ```csharp
-public class Class1 : Umbraco.Forms.Core.WorkflowType
+public class LogWorkflow : Umbraco.Forms.Core.WorkflowType
 {
-    public override WorkflowExecutionStatus Execute(Umbraco.Forms.Core.Record record)
+    public override WorkflowExecutionStatus Execute(Umbraco.Forms.Core.Persistence.Dtos.Record record, RecordEventArgs e)
     {
         throw new NotImplementedException();
     }
@@ -37,7 +38,7 @@ Even though we have the class inheritance in place, we still need to add a bit o
 Even though we have the class inheritance in place, we still need to add a bit of default information. This information is added in the class's empty constructor like this:
 
 ```csharp
-public Class1() {
+public LogWorkflow() {
     this.Name = "The logging workflow";
     this.Id = new Guid("D6A2C406-CF89-11DE-B075-55B055D89593");
     this.Description = "This will save an entry to the log";
@@ -52,8 +53,8 @@ Now that we have a basic class setup, we would like to pass setting items to the
 
 ```csharp
 [Umbraco.Forms.Core.Attributes.Setting("Log Header",
-        description = "Log item header",
-        view = "TextField")]
+        Description = "Log item header",
+        View = "TextField")]
 public string LogHeader { get; set; }
 ```
 
@@ -63,12 +64,13 @@ With the attribute in place, the property value is set every time the class is i
 
 ```csharp
 [Umbraco.Forms.Core.Attributes.Setting("Document ID",
-        description = "Node the log entry belongs to",
-        view = "Pickers.Content")]
+        Description = "Node the log entry belongs to",
+        View = "Pickers.Content")]
 public string Document { get; set; }
 
-public override Enums.WorkflowExecutionStatus Execute(Record record) {
-    Log.Add(LogTypes.Debug, int.Parse(Document), "record submitted from: " + record.IP);
+public override WorkflowExecutionStatus Execute(Umbraco.Forms.Core.Persistence.Dtos.Record record, RecordEventArgs e) {
+     Umbraco.Core.Composing.Current.Logger.Info<WorkflowType>("{Document} record submitted from: {IP}", int.Parse(Document), record.IP);
+            return WorkflowExecutionStatus.Completed;
 }
 ```
 
@@ -82,7 +84,7 @@ The ValidateSettings() method which can be found on all types supporting dynamic
 public override List<Exception> ValidateSettings() {
     List<Exception> exceptions = new List<Exception>();
     int docId = 0;
-    if (!int.TryParse(document, out docId))
+    if (!int.TryParse(Document, out docId))
         exceptions.Add(new Exception("Document is not a valid integer"));
     return exceptions;
 }
@@ -95,17 +97,17 @@ needed. Also look in the reference chapter for complete class implementations of
 
 ## Overriding default providers in Umbraco Forms
 
-This is a new feature in **Forms 6.0.3+** that makes it possible to override & inherit the original provider, be it a Field Type or Workflow etc. The only requirement when inheriting a fieldtype that you wish to override is to ensure you do not override/change the Id set for the provider.
+This is a new feature in **Forms 6.0.3+** that makes it possible to override & inherit the original provider, be it a Field Type or Workflow etc. The only requirement when inheriting a fieldtype that you wish to override is to ensure you do not override/change the Id set for the provider, and make sure your class is public.
 
-Here is an example of overriding the Textarea field aka Long Answer that is taken from Per's CodeGarden 17 talk
+Here is an example of overriding the Textarea field aka Long Answer that is taken from Per's CodeGarden 17 talk, which has been updated for Forms 8.
 
 ```csharp
 public class TextareaWithCount : Umbraco.Forms.Core.Providers.FieldTypes.Textarea
 {
     // Added a new setting when we add our field to the form
     [Umbraco.Forms.Core.Attributes.Setting("Max length",
-    description = "Max length",
-    view = "TextField")]
+    Description = "Max length",
+    View = "TextField")]
     public string MaxNumberOfChars { get; set; }
 
     public TextareaWithCount()
@@ -117,9 +119,9 @@ public class TextareaWithCount : Umbraco.Forms.Core.Providers.FieldTypes.Textare
         this.Name = "Long Answer with Limit";
     }
 
-    public override IEnumerable<string> ValidateField(Form form, Field field, IEnumerable<object> postedValues, HttpContextBase context)
+    public override IEnumerable<string> ValidateField(Form form, Field field, IEnumerable<object> postedValues, HttpContextBase context, IFormStorage formStorage)
     {
-        var baseValidation = base.ValidateField(form, field, postedValues, context);
+        var baseValidation = base.ValidateField(form, field, postedValues, context, formStorage);
         var value = postedValues.FirstOrDefault();
 
         if (value != null && value.ToString().Length < int.Parse(MaxNumberOfChars))

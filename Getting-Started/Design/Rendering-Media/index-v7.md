@@ -9,7 +9,12 @@ _Templates (Views) can access items in the [Media library](../../Data/Creating-M
 In the following examples we will be looking at rendering an `image`, however the same principles apply to all MediaType items however property aliases may differ.
 
 ## Rendering a media item
+
+<!-- vale valeStyle.Hyperbolic = NO -->
+
 A media node is not just a file, but like content, it is a collection of fields, such width, height and the path to the stored file. The benefit of this is that accessing media is very similar to accessing a content node.
+
+<!-- vale valeStyle.Hyperbolic = YES -->
 
 ### Example 1: Accessing an image media item based on its ID
 A standard image in the media library is based on the Mediatype `image` which provides a number of standard values - if you want to add more, edit the media type under **settings**. In this example we are going to get a image node and render out an `img` tag using the URL of the media item and use the Name as the value of the `alt` attribute.
@@ -44,11 +49,11 @@ As with example one, we are accessing a MediaType `image` using the same ID assu
 ```
 
 :::note
-It can be worth doing additional Null checks around your code, just in case the conversion fails or TypedMedia returns null. This makes your code more robust and is generally recommended.
+It can be worth doing additional Null checks around your code, in case the conversion fails or TypedMedia returns null. This makes your code more robust and is generally recommended.
 :::
 
 ### Other Media Items such as `File`
-Accessing other media items can be performed in the same way, the techniques aren't limited to just the `Image` type, but it is one of the most common use cases.
+Accessing other media items can be performed in the same way, the techniques aren't limited to the `Image` type, but it is one of the most common use cases.
 
 ## Image Cropper
 Image Cropper is generally used with `Image` media types so it is useful to consider this as Umbraco uses it as the default upload property on the `Image` media type.
