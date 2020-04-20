@@ -7,7 +7,9 @@ versionFrom: 8.0.0
 This Node lets you create the widgets, that you will then later be able to, use in The Global Content Widget. The way this works is that you navigate to the tree on the left, here you select Global Content.
 In there you can choose to create a folder or a widget.
 When you have created a widget here it will work as a template in the future, so that you will only have to set it up once, saving you a lot of time in the future. 
-Setting you widgets up with this feature, ensures that every time you make a new page, you can get the same design on each page, because you made this template, all you will need to do is add it in the Global Content Widget.
+
+Setting your widgets up with this feature, ensures that every time you make a new page, you can get the same design on each page.
+This because you made this template, all you will need to do is add it in the Global Content Widget, making it super straight forward to keep the same design on all of your pages.
 
 ## Setting up Globale Widgets
 ![movePage.jpg](images/Globale-Widget.png) 
