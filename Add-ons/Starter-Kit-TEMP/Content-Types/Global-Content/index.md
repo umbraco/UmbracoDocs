@@ -17,7 +17,7 @@ All you will need to do is add them in the Global Content Widget, making it supe
 ![movePage.jpg](images/Globale-Widget.png) 
 		
 
-- From The Content tree on the left, hover over content 
+- From the Content tree on the left, hover over Content 
 		
 
 - Then click the ... select Global Content Holder
