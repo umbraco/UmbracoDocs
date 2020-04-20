@@ -271,7 +271,7 @@ They will register by filling out the fields, which are Name, Email, and Passwor
 
 In the backoffice you will be able, to see your registerd members by clicking, onto the members tab, here you can edit members or view, how many members that you have.
 
-The setup options for this widget is as follows:
+The setup options, for this widget is as follows:
 - Header
 - Text
 - Image
