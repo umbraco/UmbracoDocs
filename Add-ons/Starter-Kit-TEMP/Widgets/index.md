@@ -280,6 +280,6 @@ Keep in mind that in order for there to be anything to select, you will have to 
 
 This is a very useful tool if you have a widget that you use a lot and want to look the same on multiple pages.
 
-See below an example, of what it might look like. In this example, there is a hero widget which should appear on multiple pages therefore by selecting it with The Global Content Widget this can be the case:
+See below an example, of what it might look like. In this example, there is a Hero Widget which have been created as Global Content and can therefore by selected with The Global Content Widget.
 
 ![movePage.jpg](images/hero-standard.png)
