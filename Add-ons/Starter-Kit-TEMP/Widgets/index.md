@@ -275,7 +275,7 @@ The setup options for this widget is as follows:
 - Image
 - Background Color
 - Text Color
-- Success Message Heading (This is the heading of the message that displays after a user has successfully been created)
+- Success Message Heading (This is the heading of the message that displays after a member has successfully been created)
 - Success Message Text (This is the message that displays after a member has successfully been created)
 
 Here you see an example of how a register widget could look on the front-end.
