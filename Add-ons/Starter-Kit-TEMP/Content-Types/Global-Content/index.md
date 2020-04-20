@@ -20,7 +20,7 @@ All you will need to do is add them in the Global Content Widget, making it supe
 - From the Content tree on the left, hover over Content 
 		
 
-- Then click the ... select Global Content Holder
+- Then click the `...` and select Global Content Holder - this will serve as a folder for your Global Content
 		
 
 - Name this folder what you would like your global content folder to be called
