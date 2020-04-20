@@ -1,6 +1,7 @@
-### The Global Content
+# The Global Content
 
-This Feature is located in the Content Tree on the left-hand side,
+This Node lets you use your pre set up widgets. The way this works is that you navigate to the tree on the left, here you select Global Content.
+In there you can choose to create a folder or a widget. When you have created a widget here it will work as a template in the future, so that you will only have to set it up once.
 
 ![movePage.jpg](images/Globale-Widget.png) 
 
