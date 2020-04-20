@@ -54,7 +54,7 @@ Learn more about how to use the Global Content on your pages in the section abou
 ### Global Content Holder
 		
 
-Now for your second option in the Section tree
+Now for your second option regarding Global Content, which is the Global Content Holder. This gives you the option to create another folder, if you want to structure your Global Content further.
 this is the Global Content Holder, Which gives you the option to create a folder, this is for storing your global content.
 		
 
