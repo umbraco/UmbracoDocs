@@ -5,7 +5,7 @@ In there you can choose to create a folder or a widget. When you have created a 
 
 ![movePage.jpg](images/Globale-Widget.png) 
 
-from here you select the node called Globale Widgets, you press the ... after doing that you will be prompted to choose from one of two options.
+From here you select the node called Globale Widgets, you press the ... after doing that you will be prompted to choose from one of two options.
 
 ![movePage.jpg](images/Globale-options.png)
 
