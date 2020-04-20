@@ -22,7 +22,7 @@ Below you can see an example of how a ***Hero Widget*** might look. This contain
 
 ![movePage.jpg](images/The-Text-Widget1.png)
 
-The Text Widget lets you create a text field on the page containing a Rich text editor and the option for adding sitebar widgets. The sidebar widgets can be the following: a text area, links or a button.
+The Text Widget lets you create a text field on the page containing a Rich text editor and the option for adding sidebar widgets. The sidebar widgets can be the following: a text area, links or a button.
 
 This is useful if you only need a text box outside of the Widgets, most of the other Widgets come with the ***Text Widget*** included
 
@@ -262,10 +262,31 @@ Part two is for adding logo and settings for these. For each logo you want to ad
 Below you can see an example that uses the back and white feature, and has two logos.
 ![movePage.jpg](images/Logos.png)
 
+### The Register Widget
+
+![movePage.jpg](images/The-Register-Widget.png)
+
+This widget lets you create an element on your page, where people can register for an account on your website.
+They will register by filling out the fields, which are Name, Email, and Password, and finalizing by pressing the Register button. After doing that they will get a message saying that their sign up was successful.
+
+In the backoffice you will be able to see your registerd members by clicking onto the Members tab. Here you can edit members and view how many members you have.
+
+The setup options for this widget are as follows:
+
+- Header
+- Text
+- Image
+- Background Color
+- Text Color
+- Success Message Heading (This is the heading of the message that displays after a member has successfully been created)
+- Success Message Text (This is the message that displays after a member has successfully been created)
+
+Here you see an example of how a Register Widget could look on the front-end.
+![movePage.jpg](images/Regiseter-element.png)
+
 ### The Login Widget
 
 ![movePage.jpg](images/The-Login-Widget.png)
-
 
 The Login Widget allows the member that was created, using The Register Widget to login to their account.
 
