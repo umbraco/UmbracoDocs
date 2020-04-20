@@ -266,7 +266,7 @@ Below you can see an example that uses the back and white feature, and has two l
 ![movePage.jpg](images/The-Global-Content-Widget.png)
 
 What The Global Content Widget does for you, is that it allows you to pick those templates you created, and use them on your pages.
-- This can be done by Clicking the add content button on your page
+- This can be done by clicking the add content button on your page
 - From here select Global Content
 - Then once that has been added, you have to navigate to where it says add and click this
 - Then a list pop's up on the right-hand side of the screen
