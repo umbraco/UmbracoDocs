@@ -5,7 +5,7 @@ versionFrom: 8.0.0
 # The Global Content
 		
 
-This Node lets you create the widgets, that you will then later be able to, use in The Global Content Widget.
+This node lets you create the widgets that you will then later be able to use in The Global Content Widget.
 When you have created a widget here it will work as a template in the future, so that you will only have to set it up once, saving you a lot of time in the future. 
 		
 
