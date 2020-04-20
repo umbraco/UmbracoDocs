@@ -269,7 +269,7 @@ Below you can see an example that uses the back and white feature, and has two l
 
 The Login Widget allows the member that was created, using the register widget to login to their account.
 
-It is worth to note that the ***Login Widget*** also works for members that were created by the admins in the back office.
+It is worth to note that the ***Login Widget*** also works for members that were created by the admins in the backoffice.
 
 The setup options for this widget are as follows:
 
