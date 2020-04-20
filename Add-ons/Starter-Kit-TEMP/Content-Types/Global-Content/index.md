@@ -40,7 +40,8 @@ All you will need to do is add them in the Global Content Widget, making it supe
 
 ### Global Content
 
-- If you Selected Global Content	
+If you Selected Global Content, follow these steps to create widgets:
+
 
 - When you press Add Content a window will pop up where you can select what widget you want to work with (you can select multiple widgets)
 
