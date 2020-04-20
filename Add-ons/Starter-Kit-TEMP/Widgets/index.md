@@ -265,10 +265,8 @@ Below you can see an example that uses the back and white feature, and has two l
 ### The Global Content Widget
 ![movePage.jpg](images/The-Global-Content-Widget.png)
 
-This widget lets you use your pre set up widgets. The way this works is that you navigate to the tree on the left, here you select Global Content.
-In there you can choose to create a folder or a widget. When you have created a widget here it will work as a template in the future, so that you will only have to set it up once.
-
-What the ***Global Content Widget*** does for you is to allow you to pick those templates you created and use them on your pages.
+What the ***Global Content Widget*** does for you is to allow you to pick those templates you created and use them on your pages, This can be done by Clicking the add conent btton on your page, and from here selecting ***Global Content***,
+Then once that has been added, you have to navigate to where it says add, you click this and list, pop's up on the right hand side of the screen, from here you select global widgets (click the arrow next to it), and then you will get to select which of your pre made widget templates you want to use, keep in mind that in order for there, to be anything, you will have to have set something up, in the global content node, in the section tree.
 
 This is a very useful tool if you have a widget that you use a lot and want to look the same on multiple pages.
 
