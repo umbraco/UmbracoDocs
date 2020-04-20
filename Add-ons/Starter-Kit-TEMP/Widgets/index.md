@@ -22,7 +22,7 @@ Below you can see an example of how a ***Hero Widget*** might look. This contain
 
 ![movePage.jpg](images/The-Text-Widget1.png)
 
-The Text Widget lets you create a text field on the page, containing a Rich text editor and the option for a sidebar Widget(can be more than one) these sidebar Widgets can be the following: a text area, links, a button.
+The Text Widget lets you create a text field on the page containing a Rich text editor and the option for adding sidebar widgets. The sidebar widgets can be the following: a text area, links or a button.
 
 This is useful if you only need a text box outside of the Widgets, most of the other Widgets come with the ***Text Widget*** included
 
@@ -173,7 +173,7 @@ When ***Show Content Next To Map*** is disabled the blue section on the left wil
 
 ![movePage.jpg](images/The-Umbraco-Form-Widget.png)
 
-The Umbraco Form widget gives you the ability to add a custom form to your site. It is important to note that a custom form needs to have been made using Umbraco Forms before this widget can be used.
+The Umbraco Form widget, gives you the ability to add a custom form to your site. It is important to note that a custom form needs to have been made using Umbraco Forms before this widget can be used.
 You can create a form by selecting the Forms section in the top menu in your backoffice. 
 
 You will have some settings to personalize how your form is presented through the widget. The settings are as follows:
@@ -231,12 +231,13 @@ This widget contains these customization options:
 This is to show how a Newsletter Widget could look:
 ![movePage.jpg](images/news-letter-signup.png)
 
+
 ### The Logos Widget
 
 ![movePage.jpg](images/The-Logos-Widget.png)
 
-The Logos Widget does what the name implies and lets you add a set of logos to your website.
-You can choose what images you will use for logos and what pages they need to link to and/or you can add text to it.
+The Logos Widget does what the name implies, and lets you add a set of logos to your website.
+You can choose what images you will use for logos, and what pages they need to link to and/or you can add text to it.
 
 The configuration for this widget is divided into two parts:
 
@@ -261,6 +262,47 @@ Part two is for adding logo and settings for these. For each logo you want to ad
 Below you can see an example that uses the back and white feature, and has two logos.
 ![movePage.jpg](images/Logos.png)
 
+### The Register Widget
+
+![movePage.jpg](images/The-Register-Widget.png)
+
+This widget lets you create an element on your page, where people can register for an account on your website.
+They will register by filling out the fields, which are Name, Email, and Password, and finalizing by pressing the Register button. After doing that they will get a message saying that their sign up was successful.
+
+In the backoffice you will be able to see your registerd members by clicking onto the Members tab. Here you can edit members and view how many members you have.
+
+The setup options for this widget are as follows:
+
+- Header
+- Text
+- Image
+- Background Color
+- Text Color
+- Success Message Heading (This is the heading of the message that displays after a member has successfully been created)
+- Success Message Text (This is the message that displays after a member has successfully been created)
+
+Here you see an example of how a Register Widget could look on the front-end.
+![movePage.jpg](images/Regiseter-element.png)
+
+### The Login Widget
+
+![movePage.jpg](images/The-Login-Widget.png)
+
+The Login Widget allows the member that was created, using The Register Widget to login to their account.
+
+It is worth to note that The Login Widget, also works for members that were created by the admins in the backoffice.
+
+The setup options for this widget are as follows:
+
+- Heading
+- Text
+- Image
+- Background Color
+- Text Color
+- Redirect URL (This is where you decide where the members are redirected to after they log in)
+
+Below you can see what the widget could look like at the front-end.
+![movePage.jpg](images/login-prompt.png)
 
 ### The Global Content Widget
 ![movePage.jpg](images/The-Global-Content-Widget.png)
@@ -276,7 +318,6 @@ Once you've added the Global Content Widget to your page, follow these steps to 
 - Finally, select which of your pre-made widgets you want to add to your page
 
 Keep in mind that in order for there to be anything to select, you will have to have set-up some widgets using the [Global Content](../Content-Types/Global-Content/index.md) feature.
-
 
 This is a very useful tool if you have a widget that you use a lot and want to look the same on multiple pages.
 
