@@ -265,7 +265,9 @@ Below you can see an example that uses the back and white feature, and has two l
 ### The Global Content Widget
 ![movePage.jpg](images/The-Global-Content-Widget.png)
 
-What The Global Content Widget does for you, is that it allows you to pick those templates you created, and use them on your pages.
+What this widget does for you, is that it allows you to pick pre-made widgets, also called Global Content.
+
+To learn more about how to create Global Content, you can read the [Global Content](../Content-Types/Global-Content/index.md) article.
 
 - This can be done by clicking the add content button on your page
 - From here select Global Content
@@ -283,4 +285,3 @@ This is a very useful tool if you have a widget that you use a lot and want to l
 See below an example, of what it might look like. In this example, there is a hero widget which should appear on multiple pages therefore by selecting it with The Global Content Widget this can be the case:
 
 ![movePage.jpg](images/hero-standard.png)
-
