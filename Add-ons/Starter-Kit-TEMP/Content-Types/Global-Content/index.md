@@ -45,7 +45,7 @@ If you Selected Global Content, follow these steps to create widgets:
 
 - When you press Add Content a window will pop up where you can select what widget you want to work with (you can select multiple widgets)
 
-- Once you have selected the widget(s) you want to use
+- Select and configure the widget(s) you want to use
 - You set them up like you would do normally, the only difference here is that they will be marked as Global Content
 - Doing so makes it so that you can use these pre-setup widgets, on multiple pages of your site where they will have the settings that you set up here.
 		
