@@ -277,7 +277,6 @@ Once you've added the Global Content Widget to your page, follow these steps to 
 
 Keep in mind that in order for there to be anything to select, you will have to have set-up some widgets using the [Global Content](../Content-Types/Global-Content/index.md) feature.
 
-Here you can learn how to [Create Global Content](../Content-Types/Global-Content/index.md).
 
 This is a very useful tool if you have a widget that you use a lot and want to look the same on multiple pages.
 
