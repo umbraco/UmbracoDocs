@@ -272,9 +272,9 @@ What The Global Content Widget does for you, is that it allows you to pick those
 - Then once that has been added, you have to navigate to where it says add and click this
 - Then a list pop's up on the right-hand side of the screen
 - From here you select global widgets (click the arrow next to it)
-- Then you will get to select which of your pre-made widget templates you want to use
+- Then you will get to select, which of your pre-made widget templates you want to use
 
-keep in mind that in order for there, to be anything to select, you will have to have set some global content up, in the global content node, which can be found in the section tree.
+keep in mind that in order for there, to be anything to select, you will have to have set-up some global content, in the global content node, which can be found in the section tree.
 
 Here you can learn how to [Create Global Content](../Content-Types/Global-Content/index.md).
 
