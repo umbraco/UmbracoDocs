@@ -269,6 +269,8 @@ Below you can see an example that uses the back and white feature, and has two l
 This widget lets you create an element on your page, where people can register for an account on your website.
 They will register by filling out the fields, which are Name, Email, and Password, and finalizing by pressing the Register button. After doing that they will get a message saying that their sign up was successful.
 
+In the backoffice you will be able, to see your registerd members by clicking, onto the members tab, here you can edit members or view, how many members that you have.
+
 The setup options for this widget is as follows:
 - Header
 - Text
