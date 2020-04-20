@@ -265,14 +265,21 @@ Below you can see an example that uses the back and white feature, and has two l
 ### The Global Content Widget
 ![movePage.jpg](images/The-Global-Content-Widget.png)
 
-What the ***Global Content Widget*** does for you is to allow you to pick those templates you created and use them on your pages, This can be done by Clicking the add content button on your page, and from here selecting ***Global Content***,
-Then once that has been added, you have to navigate to where it says add, you click this and list, pop's up on the right-hand side of the screen, from here you select global widgets (click the arrow next to it), and then you will get to select which of your pre-made widget templates you want to use, keep in mind that in order for there, to be anything, you will have to have set something up, in the global content node, in the section tree.
+What The Global Content Widget does for you, is that it allows you to pick those templates you created, and use them on your pages.
+- This can be done by Clicking the add content button on your page
+- From here select Global Content
+- Then once that has been added, you have to navigate to where it says add and click this
+- Then a list pop's up on the right-hand side of the screen
+- From here you select global widgets (click the arrow next to it)
+- Then you will get to select which of your pre-made widget templates you want to use
+
+keep in mind that in order for there, to be anything, you will have to have set some global content up, in the global content node, which can be found in the section tree.
 
 Here you can learn how to [Create Global Content](../Content-Types/Global-Content/index.md).
 
 This is a very useful tool if you have a widget that you use a lot and want to look the same on multiple pages.
 
-See below an example, of what it might look like. In this example, there is a hero widget which should appear on multiple pages therefore by selecting it with The Global Content widget this can be the case:
+See below an example, of what it might look like. In this example, there is a hero widget which should appear on multiple pages therefore by selecting it with The Global Content Widget this can be the case:
 
 ![movePage.jpg](images/hero-standard.png)
 
