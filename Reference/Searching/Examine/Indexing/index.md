@@ -204,9 +204,11 @@ Take a look at our [Examine Quick Start](../quick-start/index.md) to see some ex
 :::
 
 In order to create this index we need three things:
-1. An IndexCreator to create the index(s)
-2. A component to register our index to Examine
-3. A composer to register our component and index creator
+1. An IndexCreator to create a definition for the configuration of the index(s)
+2. A Component to register the created index(s) with Examine
+3. A Composer to append this Component to the list of Components Umbraco initializes during start up and to register our IndexCreator service with the underlying dependency injection framework, so it can be injected into our Component constructor.
+
+(Read more about [using Composition and Components to modify Umbraco's default behaviour](../../../Implementation/Composing/) and [Registering dependencies with Umbraco's underlying IoC framework](../../../Reference/Using-Ioc/)) 
 
 ### ProductIndexCreator
 
