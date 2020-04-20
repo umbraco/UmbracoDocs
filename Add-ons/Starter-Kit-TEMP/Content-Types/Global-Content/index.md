@@ -26,7 +26,7 @@ All you will need to do is add them in the Global Content Widget, making it supe
 - Name the folder anything that makes sense to your setup
 		
 
-- Then hover the folder you created in the content tree
+- Then hover the folder, and click the `...`
 		
 
 - Click the ... here you will get two options, the first one is Global Content, The second one is Global Content Holder
