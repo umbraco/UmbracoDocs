@@ -13,7 +13,7 @@ Setting your widgets up with this feature ensures that every time you make a new
 All you will need to do is add them in the Global Content Widget, making it super straight forward to keep the same design on all of your pages.
 		
 
-## Setting up Globale Widgets
+## Setting up Global Content
 ![movePage.jpg](images/Globale-Widget.png) 
 		
 
