@@ -33,25 +33,16 @@ This is because you made this template, all you will need to do is add it in the
 		
 
 - Pick the one you want
-		
+
+![movePage.jpg](images/Globale-options.png)
 
 		
 
 ### Global Content
-![movePage.jpg](images/Globale-options.png)
-		
 
-- If you Selected Global Content you will be presented with a screen looking like this:
-		
-
-![movePage.jpg](images/Globale-Contents.png)
-		
+- If you Selected Global Content	
 
 - When you press Add Content a window will pop up where you can select what widget you want to work with (you can select multiple widgets)
-		
-
-![movePage.jpg](images/pick-one.png)
-		
 
 - Once you have selected the widget(s) you want to use
 - You set them up like you would do normally, the only difference here is that they will be marked as Global Content
