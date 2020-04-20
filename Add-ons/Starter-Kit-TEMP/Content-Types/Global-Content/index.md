@@ -60,5 +60,3 @@ this is the Global Content Holder, Which gives you the option to create a folder
 
 You can even choose to make another folder within your folder.
 		
-
-Here you can see how you work with the [Global Content Widget](../../Widgets/index.md#newsletterTheGlobalContentWidget)
