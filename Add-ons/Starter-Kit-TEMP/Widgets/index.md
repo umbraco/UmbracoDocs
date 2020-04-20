@@ -265,8 +265,8 @@ Below you can see an example that uses the back and white feature, and has two l
 ### The Global Content Widget
 ![movePage.jpg](images/The-Global-Content-Widget.png)
 
-What the ***Global Content Widget*** does for you is to allow you to pick those templates you created and use them on your pages, This can be done by Clicking the add conent btton on your page, and from here selecting ***Global Content***,
-Then once that has been added, you have to navigate to where it says add, you click this and list, pop's up on the right hand side of the screen, from here you select global widgets (click the arrow next to it), and then you will get to select which of your pre made widget templates you want to use, keep in mind that in order for there, to be anything, you will have to have set something up, in the global content node, in the section tree.
+What the ***Global Content Widget*** does for you is to allow you to pick those templates you created and use them on your pages, This can be done by Clicking the add content button on your page, and from here selecting ***Global Content***,
+Then once that has been added, you have to navigate to where it says add, you click this and list, pop's up on the right-hand side of the screen, from here you select global widgets (click the arrow next to it), and then you will get to select which of your pre-made widget templates you want to use, keep in mind that in order for there, to be anything, you will have to have set something up, in the global content node, in the section tree.
 
 Here you can learn how to [Create Global Content](../Content-Types/Global-Content/index.md).
 
