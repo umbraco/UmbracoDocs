@@ -10,7 +10,7 @@ When you have created a widget here it will work as a template in the future, so
 		
 
 Setting your widgets up with this feature ensures that every time you make a new page, you can get the same design on each page.
-This is because you made this template, all you will need to do is add it in the Global Content Widget, making it super straight forward to keep the same design on all of your pages.
+All you will need to do is add them in the Global Content Widget, making it super straight forward to keep the same design on all of your pages.
 		
 
 ## Setting up Globale Widgets
