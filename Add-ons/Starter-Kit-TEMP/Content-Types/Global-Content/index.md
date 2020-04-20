@@ -29,7 +29,7 @@ All you will need to do is add them in the Global Content Widget, making it supe
 - Then hover the folder, and click the `...`
 		
 
-- Click the ... here you will get two options, the first one is Global Content, The second one is Global Content Holder
+- Here you will have two options: the first one is Global Content, the second one is the Global Content Holder
 		
 
 - Pick the one you want
