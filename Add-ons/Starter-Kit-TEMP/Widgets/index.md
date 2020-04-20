@@ -267,7 +267,7 @@ Below you can see an example that uses the back and white feature, and has two l
 ![movePage.jpg](images/The-Login-Widget.png)
 
 
-The Login Widget allows the user that was created, using the register widget to login to their account.
+The Login Widget allows the member that was created, using the register widget to login to their account.
 
 The setup options for this widget are as follows:
 
@@ -276,7 +276,7 @@ The setup options for this widget are as follows:
 - Image
 - Background Color
 - Text Color
-- Redirect URL (This is where you decide where the users are redirected to after they log in)
+- Redirect URL (This is where you decide where the members are redirected to after they log in)
 
 Below you can see what the widget could look like at the front end.
 ![movePage.jpg](images/login-prompt.png)
