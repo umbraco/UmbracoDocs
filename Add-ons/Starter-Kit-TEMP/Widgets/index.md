@@ -275,7 +275,7 @@ Once you've added the Global Content Widget to your page, follow these steps to 
 - From the dialog in the right-hand side, expand the folder containing your Global Content (click the arrow next to it)
 - Finally, select which of your pre-made widgets you want to add to your page
 
-keep in mind that in order for there, to be anything to select, you will have to have set-up some global content, in the global content node, which can be found in the section tree.
+Keep in mind that in order for there to be anything to select, you will have to have set-up some widgets using the [Global Content](../Content-Types/Global-Content/index.md) feature.
 
 Here you can learn how to [Create Global Content](../Content-Types/Global-Content/index.md).
 
