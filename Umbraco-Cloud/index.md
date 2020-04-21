@@ -31,6 +31,8 @@ Anything else not covered above.
 ## [Security](Security/)
 Everything you need to know about the security on Umbraco Cloud.
 
+---
+
 ## [Cloud API](Cloud-API/)
 Learn how to use the Umbraco Cloud REST API to automate project creation and team management.
 
