@@ -24,9 +24,9 @@ The Feed Content Type provides you with an option to setup a feed on your websit
 
 ## [Global Content](Global-Content)
 
-The Global Content feature provides you with an option to create smaller parts / blocks of content that can be used on multiple pages.
+The Global Content feature provides you with an option to create smaller parts of content that can be used on multiple pages.
 
-This could be used for a sign-up form that you would like to show on various pages on your website. Instead of creating it again and again, you can create it as *Global Content*, and then use the *Global Content* widget to pull it in where you need it.
+This could be used for a sign-up form that you would like to show on various pages on your website. Instead of creating it again and again, you can create it as *Global Content*, and then use the *Global Content Widget* to pull it in where you need it.
 
 [Learn more about the possibilites with Global Content.](Global-Content)
 

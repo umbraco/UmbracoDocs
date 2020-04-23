@@ -52,10 +52,6 @@ Available on the following Content Types: `Site`, `Page`, `Feed`, `Post` and `Se
 
 The Settings group provides a set of different configuration options for the current page.
 
-### Page Alias
-
-Use this to give the page an alternative name that will be used in the navigation on your website.
-
 ### Transparent Header
 
 This setting gives you the option to customize the Header of the website to a specific page. When enabled the background of the Header will on be transparent only on the current page and only until the visitor scrolls down.

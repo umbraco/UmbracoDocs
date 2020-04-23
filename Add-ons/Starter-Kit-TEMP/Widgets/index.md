@@ -1,12 +1,12 @@
 # Widgets
 
-## What is Widgets 
+## What are widgets
 
 Widgets allows you to have easy access to a lot of different features, by selecting them from a menu. There is a total of nine-teen widgets in the menu. This is designed in such a way that there is a widget for all your needs.
 
 In the following article there will be an explanation to each of these widgets.
 
-### The Hero Widget 
+### The Hero Widget
 
 ![movePage.jpg](images/The-Hero-Widget1.png)
 
@@ -31,8 +31,6 @@ The Text Widget is the standard width per default, this cannot be changed.
 To compare the width see for example ***Image Widget*** and set this to standard width.
 :::
 
-
-
 ### The Image Widget
 
 ![movePage.jpg](images/The-Image-Widget.png)
@@ -40,9 +38,6 @@ To compare the width see for example ***Image Widget*** and set this to standard
 This Widget allows you to add an image to your site, select the size of the image, Caption The image and select the background and text color.
 
 This is like the ***Text Widget*** good if you want an image outside of any of the other Widgets that contain the ability to add images.
-
-
-
 
 ### The Text and Images Widget
 
@@ -55,60 +50,43 @@ The example below uses, a ***Pre Heading***, a ***Heading***, a ***Text*** and t
 
 ![movePage.jpg](images/Example-text-images.png)
 
-
-
-
 ### The Gallery Widget
 
 ![movePage.jpg](images/The-Gallery-Widget.png)
 
-The Gallery Widget allows you to display multiple images in a gallery view, meaning that the images will be aligned in rows. 
+The Gallery Widget allows you to display multiple images in a gallery view, meaning that the images will be aligned in rows.
 
 This also contains the feature to click on images to zoom in on the images. This feature can be disabled.
 
-
-You will be able to change the setup of your gallery. This could be the size of the images or the background color of the whole container. 
+You will be able to change the setup of your gallery. This could be the size of the images or the background color of the whole container.
 Below you can see how the gallery would look with image width at 20%, and a blue background color.
-
 
 ![movePage.jpg](images/The-Gallery.png)
 
 You can click the image to zoom in, where you can browse through the images in the gallery by using the arrows next to the images or use the arrow keys on the keyboard.
 
-
-
-
-
-
 ### The Slider Widget
 
 ![movePage.jpg](images/The-Slider-Widget.png)
 
-The Slider Widget allows you to pick 1 or more widgets to display in a slideshow. 
+The Slider Widget allows you to pick 1 or more widgets to display in a slideshow.
 
 You will have a set of different configuration option in order to customize the slider to fit your needs:
 
 - Choose how fast the transition between widgets is. Note that 1000 is equal to 1 second.
-
-- Decide whether you want the slider to have arrows on the edges which takes you through the slides. 
-
-- Enable dots in the buttom to show what slide you are currently on. 
-
-- Make the slider pause when you hover over it. 
-
+- Decide whether you want the slider to have arrows on the edges which takes you through the slides.
+- Enable dots in the buttom to show what slide you are currently on.
+- Make the slider pause when you hover over it.
 - Choose to have the slider ***Wrap Around*** to make it loop between the widgets indefinitely.  
-
 - Make the transition between slides more seamless by using ***Fade Animation***.
 
-Below is an example of how a slider could look. It contains an ***Image Widget***, uses ***Show Next/prev arrows*** and ***Show Page Dots***. It has a black ***Background Color*** picked in the ***Image Widget***.   
+Below is an example of how a slider could look. It contains an ***Image Widget***, uses ***Show Next/prev arrows*** and ***Show Page Dots***. It has a black ***Background Color*** picked in the ***Image Widget***.
 
 ![movePage.jpg](images/Slider-example.png)
 
-::: Note 
+::: Note
 For the best experience with the Slider Widget, we recommend adding multiple ***Image Widgets*** containing one image each.
 :::
-
-
 
 ### The Tabs Widget
 
@@ -124,7 +102,7 @@ Below is two examples of how tabs can be set up.
 
 ### The Latest From Feed Widget
 
-The Latest From Feed Widget, is used to show posts from a ***Feed*** that you already have on your website. ***Feed*** here referring to the ***Feed*** content type. 
+The Latest From Feed Widget, is used to show posts from a ***Feed*** that you already have on your website. ***Feed*** here referring to the ***Feed*** content type.
 
 The widget allows you to set up a few things as mentioned below:
 
@@ -155,7 +133,7 @@ You will have some settings to set the Map widget up as you want it:
 - Pre Heading
 - Heading
 - Text
-- Address 
+- Address
 - Phone Number
 - Email
 - Opening Hours
@@ -174,7 +152,7 @@ When ***Show Content Next To Map*** is disabled the blue section on the left wil
 ![movePage.jpg](images/The-Umbraco-Form-Widget.png)
 
 The Umbraco Form widget, gives you the ability to add a custom form to your site. It is important to note that a custom form needs to have been made using Umbraco Forms before this widget can be used.
-You can create a form by selecting the Forms section in the top menu in your backoffice. 
+You can create a form by selecting the Forms section in the top menu in your backoffice.
 
 You will have some settings to personalize how your form is presented through the widget. The settings are as follows:
 
@@ -211,12 +189,12 @@ Below you can see how a ***Contact Form*** will look per default:
 
 ### The Newsletter Widget
 
-The Newsletter Widget, lets you create a sign-up form for your newsletter. This will require some setting up. 
+The Newsletter Widget, lets you create a sign-up form for your newsletter. This will require some setting up.
 The way this widget works is that you set it up with your Mailchimp or Campaign monitor, then you add your API key and set the ID for the list that user will be subscriped to.
 You can setup all this in the [General Settings](../Settings/General-Settings/index.md#newsletter) page.
 
-
 This widget contains these customization options:
+
 - Heading
 - Text
 - Placeholder Text
@@ -231,7 +209,6 @@ This widget contains these customization options:
 This is to show how a Newsletter Widget could look:
 ![movePage.jpg](images/news-letter-signup.png)
 
-
 ### The Logos Widget
 
 ![movePage.jpg](images/The-Logos-Widget.png)
@@ -242,6 +219,7 @@ You can choose what images you will use for logos, and what pages they need to l
 The configuration for this widget is divided into two parts:
 
 The first part is for the heading and the container:
+
 - Pre Heading
 - Heading
 - Text
@@ -252,14 +230,15 @@ The first part is for the heading and the container:
 - Background Color
 - Text Color
 
-
 Part two is for adding logo and settings for these. For each logo you want to add, you have the following options:
+
 - Alias (the name of the logos)
 - Image
 - Link (links the logo to another page on your site or a different site)
-- width
+- Width
 
 Below you can see an example that uses the back and white feature, and has two logos.
+
 ![movePage.jpg](images/Logos.png)
 
 ### The Register Widget
@@ -305,6 +284,7 @@ Below you can see what the widget could look like at the front-end.
 ![movePage.jpg](images/login-prompt.png)
 
 ### The Global Content Widget
+
 ![movePage.jpg](images/The-Global-Content-Widget.png)
 
 What this widget does for you, is that it allows you to pick pre-made widgets, also called Global Content.
