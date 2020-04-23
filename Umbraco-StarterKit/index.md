@@ -1,55 +1,78 @@
-# Starter Kit TEMP
+---
+versionFrom: 8.0.0
+---
 
+# Umbraco StarterKit
+
+Needs a proper introduction.
+
+In this section you will find all you need to know in order to setup, configure and work with **Umbraco Starterkit**.
+
+## Getting Started
+
+Learn more about how to get your hands on an Umbraco Starterkit project and how to configure it.
+
+## Publishing your site
+
+In this section you can find all the information you need, in order publish your website.
+
+## Settings
+
+An Umbraco Starterkit project can be configured in many different way. In this section you can learn more about the various caonfiguration options that are available to you.
+
+## Content Types
+
+A set of content types will be available to you. This section will give you more information about each of these types.
+
+## Widgets
+
+Widgets are the *building blocks* of Umbraco Starterkit. In this section you can learn more about each of the widgets, to learn how they can be used.
+
+## Media library
+
+## Multilingual sites
+
+----------------------
 THIS SECTION AND THIS DOCUMENT SERVCES AS A PLACEHOLDER FOR THE UPCOMING STARTER KIT DOCUMENTATION.
 
 Contents:
 
-* "How to get started" (how to install the Starter Kit, how to get the Starter kit..)
-    * A quick introduction to the "starter content" (the content there when installing?)
-    * Should be part of the index page for the Starter kit 
+* Getting Started
+  * How to get an Umbraco Starterkit project
+  * How to take a trial
+  * How to get the "sample site"
+  * A quick introduction to the "starter content" (the content there when installing?)
+  * Should be part of the index page for the Starter kit
 * Going Live (we need an article like this in the Cloud section as well)
-    * Hostnames, SMTP settings
-    * A check list for publishing a website!
+  * Hostnames, SMTP settings
+  * A check list for publishing a website!
 * "Settings" (General and Theme settings)
-    * This will be based on the config options on the default settings nodes
+  * This will be based on the config options on the default settings nodes
 * An overview of the available widgets
-    * Some of the more advanced widgets should have their own article (like the Grid)
+  * Some of the more advanced widgets should have their own article (like the Grid)
 * An overview of the available content types
-    * Global Content should have its own section / article
+  * Global Content should have its own section / article
 * Media content
 * Creating content
-    * Including how to make language varied content
+  * Including how to make language varied content
 
-
-**Sample structure**
+Sample structure:
 
 Umbraco Starter kit landing page (including installation guide + sample content overview).
-- Getting Started
-- Settings
-    - General 
-    - Theme
-    - Specific Settings (Content Type specific settings)
-- Content Types
-    - Site
-    - Feed
-    - Global Content
-- Widgets
-- Media library
-- Multilingual site (perhaps with another name)
-- Going Live (link to Cloud section)
-- The Cloud Portal (link to Cloud section)
 
+* Getting Started
+* Settings
+  * General
+  * Theme
+  * Specific Settings (Content Type specific settings)
+* Content Types
+  * Site
+  * Feed
+  * Global Content
+* Widgets
+* Media library
+* Multilingual site (perhaps with another name)
+* Going Live (link to Cloud section)
+* The Cloud Portal (link to Cloud section)
 
-# Index page
-
-In this section you will find all you need to know in order to install, configure and work with the *Umbraco Starter Kit*. 
-
-## Get the *Umbraco Starter Kit*
-
-There are mutliple ways to get your hands on the *Umbraco Starter Kit*, depending on the platform you're using.
-
-### Umbraco Cloud
-
-When you take a 14 day free trial on Umbraco Cloud you will have the option to start the trial with the *Umbraco STarter Kit* already installed. This is a great way to start learning Umbraco, as you will get some "dummy content" to showcase the multiple features and options available in the *Umbraco Starter Kit*.
-
-The starter kit is also available on standard Umbraco Cloud project
+----------------------
