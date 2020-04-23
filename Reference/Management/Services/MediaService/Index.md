@@ -67,7 +67,7 @@ To create a new folder at the root of the media archive, your code could look li
 
 ```csharp
 // Initialize a new media at the root of the media archive
-IMedia folder = Services.MediaService.CreateMedia("My Folder", Constants.System.Root, Constants.Conventions.MediaTypes.Image);
+IMedia folder = Services.MediaService.CreateMedia("My Folder", Constants.System.Root, Constants.Conventions.MediaTypes.Folder);
 
 // Save the folder
 Services.MediaService.Save(folder);
