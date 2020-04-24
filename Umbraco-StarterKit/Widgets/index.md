@@ -14,7 +14,7 @@ In this section you can find more details about each widget.
 
 ## Content widgets
 
-There is a wide arrangement of content widgets that you use on your pages. Whether you're looking for a simple text field or you want to create a grid with everything from price tables to image galleries.
+There is a wide arrangement of content widgets that you use on your pages. Whether you're looking for a standard text field or you want to create a grid with everything from price tables to image galleries.
 
 More widgets can be created within the Tab and the Grid widgets, and the Grid also contains a long list of additional widgets and options to custimize the page further.
 
