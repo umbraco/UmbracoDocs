@@ -30,7 +30,11 @@ Widgets are the *building blocks* of Umbraco Starterkit. In this section you can
 
 ## Media library
 
+In the Media library you can store the images and other media files you will be using on your website. Learn more how to use the library in this section.
+
 ## Multilingual sites
+
+In this section you can learn how setup your Umbraco Starterkit website with multiple languages.
 
 ----------------------
 THIS SECTION AND THIS DOCUMENT SERVCES AS A PLACEHOLDER FOR THE UPCOMING STARTER KIT DOCUMENTATION.
