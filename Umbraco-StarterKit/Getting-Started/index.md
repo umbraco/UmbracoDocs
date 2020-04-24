@@ -2,4 +2,4 @@
 versionFrom: 8.0.0
 ---
 
-# Getting Starter
+# Getting Started

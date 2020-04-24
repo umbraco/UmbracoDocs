@@ -1,0 +1,15 @@
+---
+versionFrom: 8.0.0
+---
+
+# Hero widget
+
+![The Hero Widget](images/The-Hero-Widget1.png)
+
+The Hero Widget allows you to create a hero element on your page, this includes features such as a heading, a rich text editor, a background image and the option to add buttons.
+
+You will have a lot of settings for your ***Hero Widget***, letting you customize the widget to your liking. This widget is ideal for content on the start page.
+
+Below you can see an example of how a ***Hero Widget*** might look. This contains the ***Pre Header***, ***Heading***, ***Text*** and different types of ***Buttons***
+
+![Using the Hero widget](images/Scrren-shot-of-hero-widget.png)
