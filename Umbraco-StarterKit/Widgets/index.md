@@ -8,34 +8,31 @@ Widgets allows you to have easy access to a lot of different features, by select
 
 In this section you can find more details about each widget.
 
-### [Hero widget](Hero)
+## Content
 
-### [Text widget](Text)
+* [Text widget](Text)
+* [Tabs](Tabs)
+* [Latest from feed](Latest-from-feed)
+* [Global Content](Global-Content)
 
-### [Grid](Grid)
+## Media
 
-### [Image (single)](Image)
+* [Image (single)](Image)
+* [Text and Images](Text-and-Images)
+* [Gallery (Media)](Gallery)
 
-### [Text and Images](Text-and-Images)
+## Presentation widgets
 
-### [Gallery (Media)](Gallery)
+* [Hero widget](Hero)
+* [Slider](Slider)
+* [Logos](Logos)
+* [Map (Google)](Map)
 
-### [Slider](Slider)
+## Forms
 
-### [Tabs](Tabs)
+* [Umbraco Form](Umbraco-Form)
+* [Contact form](Contact-Form)
+* [Newsletter form](Newsletter)
+* [Login and Register forms](Login-and-Register)
 
-### [Latest from feed](Latest-from-feed)
-
-### [Map (Google)](Map)
-
-### [Umbraco Form](Umbraco-Form)
-
-### [Contact form](Contact-Form)
-
-### [Newsletter form](Newsletter)
-
-### [Logos](Logos)
-
-### [Global Content](Global-Content)
-
-### [Login and Register forms](Login-and-Register)
+## [Grid](Grid)
