@@ -61,8 +61,8 @@ The following widgets represent different ways to add forms to the website. It c
 
 Some of the widgets listed above gives the option to add buttons, sidebar widgets or other minor functionality. Find details on each of these widgets in the list below.
 
-* Buttons
-* Sidebar widgets
-* Opening hours
-* Social links (footer widget)
-* Contact (footer widget)
+* [Buttons](Buttons)
+* [Sidebar widgets](Sidebar-widgets)
+* [Opening hours](Opening-hours)
+* [Social links (footer widget)](Social-links)
+* [Contact (footer widget)](Contact)
