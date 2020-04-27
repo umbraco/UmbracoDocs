@@ -30,4 +30,4 @@ A day or interval of days and a timeslot can be specific for each *opening hours
   * Day (single or interval)
   * Time
 
-![Opening hours configuration options](images/openinghours-config.png)
+![Opening hours configuration options](images/openinghours-config2.png)
