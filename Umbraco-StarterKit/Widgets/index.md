@@ -1,16 +1,18 @@
+---
+versionFrom: 8.0.0
+---
+
 # Widgets
 
 Umbraco Starterkit provides a lot of flexibility in terms of customizing the types of content as well as the content itself.
 
-This is made possible by a large array of different **widgets**, which acts like building blocks for creating webstes.
+This is made possible by a large array of different **widgets**, which acts like building blocks for creating, structuring and customizing webstes.
 
-In this article an overview of available widgets are presented along with resources on how to use and work with widgets.
+This article gives an overview of the available widgets, along with resources on how to work with and configure each of them.
 
 ## What are widgets
 
-Widgets allows you to have easy access to a lot of different features, by selecting them from a menu.
-
-This is designed in such a way that there is a widget for all your needs.
+Widgets are the building blocks of Umbraco Starterkit and provide a long list of different features that can be used to create websites for any scenario. This is designed in such a way that there is a widget for every need.
 
 ## [Working with widgets](Working-with-widgets)
 
@@ -20,7 +22,7 @@ The rest of this article, provides an overview of available widgets divided into
 
 ## Content widgets
 
-There is a wide arrangement of content widgets that you use on your pages. Whether you're looking for a standard text field or you want to create a grid with everything from price tables to image galleries.
+There is a wide arrangement of content widgets that can be used on the various pages. This category contains everything from standard text fields to elaborate grids with price tables and image galleries.
 
 More widgets can be created within the Tab and the Grid widgets, and the Grid also contains a long list of additional widgets and options to custimize the page further.
 
@@ -30,7 +32,7 @@ More widgets can be created within the Tab and the Grid widgets, and the Grid al
 
 ### Dynamic content
 
-The following widgets lets you pull in content from other sections of your website. It could be a list of the latest news article from a Feed page or it could be a set of widgets made using the Global Content feature.
+The following widgets provides the option to pull in content from other sections of the website. It could be a list of the latest news article from a Feed page or it could be a set of widgets made using the Global Content feature.
 
 * [Latest from feed](Latest-from-feed)
 * [Global Content](Global-Content)
@@ -45,7 +47,7 @@ The following list of widgets provides options to add images and other media ite
 
 ## Presentation widgets
 
-The widgets listed below can all be used to present content and media items in different ways. Use the Slider to create a slidehow with various news, use the Logo widget to showcase your business partners or use the Map to give a visual presentation of the area your company is located in.
+The widgets listed below can all be used to present content and media items in different ways. Use the Slider to create a slidehow with various news, use the Logo widget to showcase business partners or use the Map to give a visual presentation of the area the company is located in.
 
 More widgets can be added within the Slider widget.
 
