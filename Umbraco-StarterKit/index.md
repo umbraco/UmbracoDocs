@@ -8,7 +8,7 @@ Needs a proper introduction.
 
 In this section you will find all you need to know in order to setup, configure and work with **Umbraco Starterkit**.
 
-## Getting Started
+## [Getting Started](Getting-Started)
 
 Learn more about how to get your hands on an Umbraco Starterkit project and how to configure it.
 
@@ -16,15 +16,15 @@ Learn more about how to get your hands on an Umbraco Starterkit project and how 
 
 In this section you can find all the information you need, in order publish your website.
 
-## Settings
+## [Settings](Settings)
 
 An Umbraco Starterkit project can be configured in many different way. In this section you can learn more about the various caonfiguration options that are available to you.
 
-## Content Types
+## [Content Types](Content-Types)
 
 A set of content types will be available to you. This section will give you more information about each of these types.
 
-## Widgets
+## [Widgets](Widgets)
 
 Widgets are the *building blocks* of Umbraco Starterkit. In this section you can learn more about each of the widgets, to learn how they can be used.
 

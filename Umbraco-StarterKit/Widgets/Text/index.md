@@ -4,13 +4,17 @@ versionFrom: 8.0.0
 
 # Text widget
 
-![movePage.jpg](images/The-Text-Widget1.png)
+![Text widget icon](images/The-Text-Widget1.png)
 
-The Text Widget lets you create a text field on the page containing a Rich text editor and the option for adding sidebar widgets. The sidebar widgets can be the following: a text area, links or a button.
+The Text Widget lets you create a text field on the page. The widget contains a Rich text editor and the option for adding sidebar widgets, which can be text areas, links and/or buttons. These are explained in more detail in the [Sidebar widgets](../Sidebar-widgets) article.
 
-This is useful if you only need a text box outside of the Widgets, most of the other Widgets come with the ***Text Widget*** included
+This widget is useful if you only need to add a text box. Most of the other widgets come with an option to add text as well.
+
+## Configuration options
+
+* Content (Rich Text Editor)
+* Sidebar widgets
 
 ::: Note
-The Text Widget is the standard width per default, this cannot be changed.
-To compare the width see for example ***Image Widget*** and set this to standard width.
+The Text widget is the *standard* width per default. This cannot be changed.
 :::
