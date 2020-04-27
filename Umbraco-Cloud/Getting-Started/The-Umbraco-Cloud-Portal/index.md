@@ -21,7 +21,7 @@ In the top-right corner of the projects view you'll find an option to create mor
 Choose the plan you want and a project will be ready for you within a few minutes.
 
 You can also see notifications for your different projects in the top-right corner,
-e.g if your project have been automaticly updated or if the upgrade failed.
+e.g if your project have been automatically updated or if an upgrade has failed.
 
 ## Project Management
 
@@ -47,9 +47,9 @@ From [Settings](../../Set-up/project-settings) - in the top-right corner - you'l
 
 In the bottom-right corner of the Umbraco Cloud Portal, you'll find a chat-bubble. This is where you will be able to reach out to the Umbraco HQ Support Warriors should you have any questions regarding your Umbraco Cloud projects.
 
-If you are on a professional plan you are entitled to support through the chat regarding implementation and issues with the CMS.
+If you are on a Professional plan you are entitled to support through the chat regarding implementation and issues with the CMS.
 
-With the Starter and standard plan you are only entitled to support regarding specific issues on Cloud. 
+With the Starter and Standard plan you are only entitled to support regarding specific issues regarding the Cloud platform. 
 
 Read about the [Umbraco Cloud plans](https://umbraco.com/pricing/) to learn more about this.
 
@@ -67,7 +67,7 @@ The name that will be displayed on Umbraco Cloud
 
 This email address is used for logging in to Umbraco Cloud and will receive email notifications from the Umbraco Cloud Portal.
 
-Note that it is not possible to change email at a later point.
+Note that it is not possible to change this email at a later point.
 
 ### Change password
 
