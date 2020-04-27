@@ -74,8 +74,8 @@ The footer section of the websites is setup much like the [Grid widget](../../Wi
 * [Contact](../../Widgets/Contact)
 * Navigation
 * [Text](../../Widgets/Text)
-* [Opening Hours](../../Widgets/Opening-Hours)
-* [Social Links](../../Widgets/Social-Links)
+* [Opening Hours](../../Widgets/Opening-hours)
+* [Social Links](../../Widgets/Social-links)
 * [Logos](../../Widgets/Logos)
 * Line break
 
