@@ -10,7 +10,7 @@ In this section you will find all you need to know in order to setup, configure 
 
 ## [Getting Started](Getting-Started)
 
-Learn more about how to get your hands on an Umbraco Starterkit project and how to configure it.
+Learn more about how to get your hands on an Umbraco Starterkit project, how to configure it and learn the basics of working with content.
 
 ## Publishing your site
 
@@ -41,12 +41,15 @@ THIS SECTION AND THIS DOCUMENT SERVCES AS A PLACEHOLDER FOR THE UPCOMING STARTER
 
 Contents:
 
-* Getting Started
+* Landing page (index)
   * How to get an Umbraco Starterkit project
   * How to take a trial
+* Getting Started
   * How to get the "sample site"
   * A quick introduction to the "starter content" (the content there when installing?)
   * Should be part of the index page for the Starter kit
+  * How to create content
+  * Selecting a theme
 * Going Live (we need an article like this in the Cloud section as well)
   * Hostnames, SMTP settings
   * A check list for publishing a website!

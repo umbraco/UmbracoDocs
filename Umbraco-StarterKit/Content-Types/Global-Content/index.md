@@ -8,7 +8,7 @@ This node lets you create the widgets that you will then later be able to use in
 When you have created a widget here it will work as a template in the future, so that you will only have to set it up once, saving you a lot of time in the future.
 
 Setting your widgets up with this feature ensures that every time you make a new page, you can get the same design on each page.
-All you will need to do is add them in the Global Content Widget, making it super straight forward to keep the same design on all of your pages.
+All you will need to do is add them in the Global Content Widget, making it straight forward to keep the same design on all of your pages.
 
 ## Setting up Global Content
 

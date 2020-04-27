@@ -40,7 +40,7 @@ It's possible to [configure SEO](../Settings/Specific-Settings/#seo) for the Sea
 
 ## Sitemap
 
-I need more info in order to explain with the sitemap does.
+Short explanation of the what the sitemap does.
 
 ## Settings
 
