@@ -4,13 +4,19 @@ Umbraco Starterkit provides a lot of flexibility in terms of customizing the typ
 
 This is made possible by a large array of different **widgets**, which acts like building blocks for creating webstes.
 
+In this article an overview of available widgets are presented along with resources on how to use and work with widgets.
+
 ## What are widgets
 
 Widgets allows you to have easy access to a lot of different features, by selecting them from a menu.
 
 This is designed in such a way that there is a widget for all your needs.
 
-In this section you can find more details about each widget.
+## [Working with widgets](Working-with-widgets)
+
+Learn how and when to add widgets to pages, how to sort and arrange them as well as how to get a copy of already configured widgets.
+
+The rest of this article, provides an overview of available widgets divided into categories based on their usage.
 
 ## Content widgets
 
