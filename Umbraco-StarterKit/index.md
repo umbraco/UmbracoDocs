@@ -45,7 +45,7 @@ Contents:
   * How to get an Umbraco Starterkit project
   * How to take a trial
 * Getting Started
-  * How to get the "sample site"
+  * How to get the "sample site/content"
   * A quick introduction to the "starter content" (the content there when installing?)
   * Should be part of the index page for the Starter kit
   * How to create content
