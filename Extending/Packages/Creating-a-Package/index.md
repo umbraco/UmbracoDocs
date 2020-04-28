@@ -35,7 +35,7 @@ This section contains mostly meta data about the package and the creator. We wil
 | Author | Your name | Here you get to take credit for your awesome work! |
 | Author URL | Your website or maybe Twitter tag | Will link to this from the author name certain places in the backoffice |
 | Contributors | _Blank_ | Here you can add the names of other contributors if you have any |
-| License | MIT License | Will be set to MIT by default. If you are planning on selling your package you can change the license here |
+| License | MIT License | Will be set to MIT by default. Please consider how you want your package used (if at all), if in doubt when deciding an open source license there are [good resources available](https://choosealicense.com/licenses/) |
 | License URL | http://opensource.org/licenses/MIT | Will be set to the URL for the MIT license, can be changed as needed |
 | Package readme | This will add a dashboard to your content section. <br> <br>The dashboard will show each user the most recent nodes they have saved. | This will be shown when someone looks at the package in the package dashboard |
 
