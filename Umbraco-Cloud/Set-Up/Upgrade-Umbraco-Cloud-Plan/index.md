@@ -17,7 +17,7 @@ Before you decide to upgrade your Umbraco Cloud plan, you need to consider a few
 
 - With the Standard plan you will get a Development environment for no additional cost and it is possible to add a Staging environment for €50.
 
-- The Professional plan costs €500 per month and you get both a development and a staging environment for free.
+- The Professional plan costs €500 per month and you get both a Development and a Staging environment for free.
 
 
 
