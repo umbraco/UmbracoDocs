@@ -17,7 +17,7 @@ An Umbraco Package can be many things, but are generally characterized by:
 
 ### Categories of packages
 
-Packages provide a wide variety of functionality, and often they can span multiple categories. In general, though, the functionality they provide fall into these main groups:
+Packages provide a wide variety of functionality, and can often span multiple categories. In general, though, the functionality they provide fall into these main groups:
 
  - [Schema Extensions](#schema-extensions): e.g. Data Types, Doc Types,
  - Management Extensions: e.g. Dashboards, Admin tools
