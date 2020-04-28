@@ -1,5 +1,8 @@
 ---
 versionFrom: 7.0.0
+keywords: packages 
+meta.Title: "Umbraco Packages"
+meta.Description: "A package extends the functionality of Umbraco to provide additional functionality to editors, developers, site visitors, and all other types of users of Umbraco."
 ---
 
 # Packages
@@ -19,29 +22,61 @@ An Umbraco Package can be many things, but are generally characterized by:
 
 Packages provide a wide variety of functionality, and can often span multiple categories. In general, though, the functionality they provide fall into these main groups:
 
- - [Schema Extensions](#schema-extensions): e.g. Data Types, Doc Types,
- - Management Extensions: e.g. Dashboards, Admin tools
- - Starter Kits
- - Content Apps
- - Integration Extensions: e.g. E-Commerce packages
-
- There is also another way of categorising packages which is based around their use-case:
- 
- - **Editor Enhancements**: Property Editors, Content Apps, etc. that extends Umbraco with new ways of editing content
- - **Administration tools**: Dashboards, Health Checks, etc. that helps administrators with a better overview of content
- - **Starter Kits**: Complete websites or large features that enables both editors and developers to get a head start
- - **Backoffice developer functionality** Productivity tools for developers that increases developer productivity and skills 
+ - [Schema Extensions](#schema-extensions)
+ - [Management Extensions](#management-extensions)
+ - [Starter Kits](#starter-kits)
+ - [Content Apps](#content-apps)
+ - [Integration Extensions](#integration-extensions)
 
 #### Schema Extensions
 
 A package that can be categorised as a Schema Extension will extend the default Umbraco Schema. Schema in this sense is things like Data Types / Property Editors / Document Types / Media Types. By extending Umbraco with packages such as [Our.Umbraco.GMaps](https://our.umbraco.com/packages/backoffice-extensions/ourumbracogmaps-google-maps-for-umbraco-8/) it gives editors greater capabilities when they are populating their content pages.
 
+#### Management Extensions
 
+A Management Extension package helps you manage your site, and provides info to the users. Management extensions can be made of many different parts, but often they include custom sections or dashboards for you to manage something.
+A good example of a management extension package is [Diplo God Mode](https://our.umbraco.com/packages/developer-tools/diplo-god-mode/) which gives you a lot of extra info and tools to manage your site.
+
+#### Starter Kits
+
+Starter kits are, as the name suggests, a package that helps you set up a starter version of whatever you want to build. Most starter kit packages are for starting a website, so they include doc types, templates, data types, content nodes and media. There are also some quite specialized starter kits, for example for creating a blog. Umbraco HQ has released their [own starter kit](https://our.umbraco.com/packages/starter-kits/the-starter-kit/), that creates a small site with the most commonly used parts. 
+
+#### Content Apps
+
+:::note
+Content Apps are only available from Umbraco 8
+:::
+
+Content apps are almost like dashboards for content nodes that are intended to display node specific information. A good example of this is the [Preflight](https://our.umbraco.com/packages/backoffice-extensions/preflight-content-health-checks-for-umbraco-8/) content app. It shows you readability scores for your written content, directly on each content node.
+
+#### Integration extensions
+
+This type of package can be a lot of things, and can include a lot of the other package types in it. They are generally integrating a larger system into Umbraco, a good example could be an ecommerce package such as [UCommerce](https://our.umbraco.com/packages/website-utilities/ucommerce/), that includes an entire webshop module.
+
+## [Types of Packages](package-types.md)
+
+There are two common types of package for Umbraco; Package zip files and NuGet Packages.
 
 ## [Creating a Package](Creating-a-Package/index.md)
 
 This short tutorial will teach you how to create a package in the Umbraco backoffice. It will also give a quick overview of what a generated package will contain.
 
-## [Package Actions](package-actions.md)
+## [Creating a NuGet Package](Creating-a-nuget-package/index.md)
+
+This short tutorial will teach you how to create a NuGet package for your Umbraco code.
+
+## [Package Actions](Package-Actions/index.md)
 
 Package actions are actions you want to trigger when your package gets installed. 
+
+## [Uploading a Package to Our](Uploading-to-Our/index.md)
+
+Once you've created a package upload it on Our to share it with the community.
+
+## [Packages on Umbraco Cloud](Packages-on-Umbraco-Cloud/index.md)
+
+Things you should know if you are developing for Umbraco Cloud.
+
+## [Maintaining Packages](Maintaining-Packages/index.md)
+
+Some guidance on how to maintain your package after release.
