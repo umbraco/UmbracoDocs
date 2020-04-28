@@ -42,7 +42,7 @@ In the menu you can find a tab called *"Upgrade plan"*.
 ![Upgrade plane step2](images/step_2.png)
 
 
-- If you are on a Starter plan you can upgrade to the Standard and the professional plan.
+- If you are on a Starter plan you can upgrade to the Standard and the Professional plan.
 
 - If you are on the Standard plan you can upgrade to the Professional plan.
 
