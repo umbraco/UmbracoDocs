@@ -1,4 +1,6 @@
 ---
+meta.Title: "Umbraco in Load Balanced Environments"
+meta.Description: "Information on how to deploy Umbraco in a Load Balanced scenario and other details to consider when setting up Umbraco for load balancing"
 versionFrom: 8.0.0
 ---
 
@@ -62,11 +64,11 @@ In Umbraco there can only be a single scheduling server which performs the follo
 * Keep alive service - to ensure scheduled publishing occurs
 * Scheduled tasks - to initiate any configured scheduled tasks
 * Scheduled publishing - to initiate any scheduled publishing for documents
-* 
+
 Umbraco will automatically elect a "Scheduling server" to perform the above services. This means
 that all of the servers will need to be able to resolve the URL of either: itself, the Master server, the internal load balancer or the public address.
 
-For example, In the following diagram the slave node **f02.mysite.local** is the elected "Scheduling server". In order for scheduling to work it needs to be able to send
+For example, In the following diagram the replica node **f02.mysite.local** is the elected "Scheduling server". In order for scheduling to work it needs to be able to send
 requests to itself, the Master server, the internal load balancer or the public address. The address used by the "Scheduling server" is called the "umbracoApplicationUrl". 
 
 ![Umbraco flexible load balancing diagram](images/flexible-load-balancing-scheduler.png)
@@ -79,9 +81,8 @@ by default would mean the "umbracoApplicationUrl" is "f02.mysite.local". In any 
 
 In many scenarios this is fine, but in case this is not adequate there's a few of options you can use:
 
-* __Recommended__: [set your front-end(s) (non-admin server) to be explicit replica servers](TBC.md) which means they will never be used as the master scheduler
+* __Recommended__: [set your front-end(s) (non-admin server) to be explicit replica servers](flexible-advanced.md#explicit-master-scheduling-server) by creating a custom `IServerRegistrar`, this means the front end servers will never be used as the master scheduler
 * Set the `umbracoApplicationUrl` property in the [Web.Routing section of /Config/umbracoSettings.config](../../../../Reference/Config/umbracoSettings/index.md)
-* Or implement a custom [IServerRegistrar](TBC.md)
 
 ## Common load balancing setup information
 

@@ -8,6 +8,7 @@ meta.Description: "A package extends the functionality of Umbraco to provide add
 # Packages
 
 ## What is a Package?
+
 A package extends Umbraco to provide additional functionality to editors, developers, site visitors, and all other types of users of Umbraco. It can impact one or more of these groups of people depending on the type of package.
 
 An Umbraco Package can be many things, but are generally characterized by:

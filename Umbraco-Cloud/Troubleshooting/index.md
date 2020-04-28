@@ -14,6 +14,8 @@ Start by determining where this error is reported and what causes the error. The
 
 ## [Frontend](troubleshooting-frontend)
 
+## [Site Performance](troubleshooting-siteperformance)
+
 ## Is your issue related to something else?
 - [Minor upgrades issues](../Upgrades/Minor-Upgrades/)
 - [Baseline merge conflicts](../Getting-Started/Baselines/Baseline-Merge-Conflicts)

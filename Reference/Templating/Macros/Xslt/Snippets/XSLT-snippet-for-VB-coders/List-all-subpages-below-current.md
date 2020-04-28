@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
+versionRemoved: 8.0.0
 ---
 
 # List all subpages below current, vb in xslt

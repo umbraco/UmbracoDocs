@@ -1,5 +1,7 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "Public Umbraco Cloud REST API"
+meta.Description: "A guide to using the public Umbraco Cloud REST API"
 ---
 
 # Public Umbraco Cloud REST API
@@ -48,6 +50,10 @@ To use this endpoint, make a request like this:
         "ownerId": "c5821a98-ce88-4796-be90-e29f0a05fa39", // Optional. Can be a GUID of an organization or an email. If nothing is provided the owner becomes the user the token is associated with
         "baselineAlias": "an-alias-of-a-baseline" // Optional. If the project needs to be a child, then you can provide the alias of the baseline
     }
+    
+:::note
+You'll notice the "plan" parameter takes either "Single" or "Studio" as valid options. The terminology used for these plans has since changed. "Single" will create a "Starter" plan whereas "Studio" a "Professional".
+:::
 
 If everything went as expected, the endpoint will return a `HTTP 200` status code and a JSON object that looks like this:
 

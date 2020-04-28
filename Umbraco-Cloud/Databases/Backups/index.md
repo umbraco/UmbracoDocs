@@ -7,6 +7,7 @@ Sometimes you might need to have a backup of your Cloud database. This can be ac
 
 - [Backup with SQL Server Management Studio](#backup-with-sql-server-management-studio).
 - [Backup with PowerShell Script](#backup-with-powershell-script)
+- [Backup and data retention policy](https://our.umbraco.com/documentation/Umbraco-Cloud/Frequently-Asked-Questions/#backups-and-data-retention)
 
 ## Backup with SQL Server Management Studio
 Follow these steps:

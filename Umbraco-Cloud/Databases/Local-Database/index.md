@@ -1,5 +1,7 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "Working with a Cloud database locally"
+meta.Description: "Explanation on how to work with an Umbraco Cloud database locally, connecting to your local database using Visual Studio and working with custom tables in the Cloud database"
 ---
 
 # Working with a Cloud database locally
@@ -21,4 +23,8 @@ Umbraco Cloud will ensure that your Umbraco related data is always up to date, b
 
 The good news is that you have full access to the SQL Azure databases running on Umbraco Cloud and you can create custom tables like you'd expect on any other hosting provider. The easiest way to do this is to connect using SQL Management Studio.
 
-A recommended way of making sure your custom tables are present, is to use Migrations to ensure that the tables will be created or altered when starting your site. Migrations will ensure that if you are adding environments to your Umbraco Cloud site, then the tables in the newly created databases will automatically be created for you. Check [this blog post](https://cultiv.nl/blog/using-umbraco-migrations-to-deploy-changes/) for a full walkthrough of how to create and use Migrations.
+A recommended way of making sure your custom tables are present, is to use Migrations to ensure that the tables will be created or altered when starting your site. Migrations will ensure that if you are adding environments to your Umbraco Cloud site, then the tables in the newly created databases will automatically be created for you. Check [Creating a custom Database table](https://our.umbraco.com/Documentation/Extending/Database/) for an example of how to create and use Migrations.
+
+:::note
+If you're using Umbraco 7 check instead [this blog post](https://cultiv.nl/blog/using-umbraco-migrations-to-deploy-changes/) for a full walkthrough of how to create and use Migrations.
+:::

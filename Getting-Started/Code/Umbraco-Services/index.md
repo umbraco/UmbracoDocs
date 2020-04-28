@@ -1,4 +1,6 @@
 ---
+meta.title: "Using Umbraco's service APIs"
+meta.description: "Using the Umbraco service APIs you can create, update and delete any of the core Umbraco entities directly from your custom code"
 versionFrom: 8.0.0
 ---
 
@@ -153,7 +155,7 @@ namespace Umbraco8.Services
             using (var contextReference = _contextFactory.EnsureUmbracoContext())
             {
                 IPublishedContentCache contentCache = contextReference.UmbracoContext.Content;
-                IPublishedContent newsSection = cache.GetAtRoot().FirstOrDefault().Children.FirstOrDefault(f => f.ContentType.Alias == "newsSection");
+                IPublishedContent newsSection = contentCache.GetAtRoot().FirstOrDefault().Children.FirstOrDefault(f => f.ContentType.Alias == "newsSection");
                 if (newsSection== null)
                 {
                     _logger.Debug<CustomNewsArticleService>("News Section Not Found");

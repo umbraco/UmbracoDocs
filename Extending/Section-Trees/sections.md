@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Umbraco Sections"
+meta.Description: "A guide to creating a custom section in Umbraco"
 ---
 
 # Sections
@@ -14,6 +16,11 @@ To create a new custom section in your Umbraco backoffice, the first thing you h
 
 Next we need to create a manifest where we'll include some basic configuration for our new section.
 
+## Registering a Custom Section
+
+There are two approaches to registering a custom section to appear in the Umbraco Backoffice:
+
+### Registering with package.manifest
 Create a new file in the `/App_Plugins/MyFavouriteThings/` folder and name it `package.manifest`. In this new file, copy the code snippet below and save it.
 
 ```json
@@ -27,7 +34,48 @@ Create a new file in the `/App_Plugins/MyFavouriteThings/` folder and name it `p
 }
 ```
 
-... would create a new Section in your Umbraco backoffice called 'My Favourite Things'.
+... would create a new section in your Umbraco backoffice called 'My Favourite Things'.
+
+### Registering with C# Type
+By creating a C# class that implements `ISection` from `Umbraco.Core.Models.Sections`
+
+```csharp
+using Umbraco.Core.Models.Sections;
+
+namespace My.Website.Sections
+{
+    public class MyFavouriteThingsSection : ISection
+    {
+        /// <inheritdoc />
+        public string Alias => "myFavouriteThings";
+
+        /// <inheritdoc />
+        public string Name => "My Favourite Things";
+    }
+}
+```
+
+For your C# type to be discovered by Umbraco at application start up, it needs to be appended to the `SectionCollectionBuilder` using a C# class which implements `IUserComposer` .
+
+```csharp
+using My.Website.Sections;
+using Umbraco.Core.Composing;
+using Umbraco.Web;
+
+namespace My.Website.Composers
+{
+    public class SectionComposer : IUserComposer
+    {
+        /// <summary>Compose.</summary>
+        public void Compose(Composition composition)
+        {
+            composition.Sections().Append<MyFavouriteThingsSection>();
+        }
+    }
+}
+```
+
+This would also create a new section called 'My Favourite Things' in your Umbraco Backoffice.
 
 ### Why can't I see my new Custom Section?
 

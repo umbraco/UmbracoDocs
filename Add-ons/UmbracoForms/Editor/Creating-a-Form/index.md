@@ -111,7 +111,7 @@ Once you are satisfied with the form you can save the design by hitting the save
 
 ### Select page
 
-Navigate to the Content section of the Umbraco Backoffice and select the content page where you want to insert the form (this page should either have an RTE field, a Grid Editor, or a form picker)
+Navigate to the Content section of the Umbraco Backoffice and select the content page where you want to insert the form. The page you choose should either have an RTE field, a Grid Editor, or a form picker all of which you can add in the Settings section under Document Types.
 
 ![Content page](images/ContentExamples.png)
 

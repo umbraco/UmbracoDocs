@@ -1,6 +1,5 @@
 ---
 versionFrom: 8.0.0
-needsV8Update: "false"
 ---
 
 
@@ -53,7 +52,7 @@ If you want to convert a type and it's possible, you can do that by typing a var
 ```csharp
 @foreach (TeamMember person in Model.TeamMembers)
    {
-     <a href="@person.Url">                                                              
+     <a href="@person.Url">
         <p>@person.Name</p>
      </a>
    }
@@ -96,7 +95,7 @@ This renders a macro with some parameters using a dictionary
     var umbracomember = Members.GetByUsername(profile.UserName);
 
     <h1>@umbracomember.Name</h1>
-    <p>@umbracomember.GetPropertyValue<string>("bio")</p>
+    <p>@umbracomember.Value<string>("bio")</p>
 }
 ```
 

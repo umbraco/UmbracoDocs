@@ -1,4 +1,6 @@
 ---
+meta.Title: "Razor Syntax with Umbraco"
+meta.Description: "How to perform common logical tasks in Razor like if/else, foreach loops, switch statements and using the @ character to separate code and markup"
 versionFrom: 8.0.0
 ---
 
@@ -8,7 +10,7 @@ _Shows how to perform common logical tasks in Razor like if/else, foreach loops,
 
 ## The @ symbol
 
-The @ symbol is used in Razor initiate code, and tell the compiler where to start interpreting code, instead of return the content of the file as text. Using a single character for this separation, results in cleaner, compact code which is easier to read.
+The @ symbol is used in Razor to initiate code, and tell the compiler where to start interpreting code, instead of returning the content of the file as text. Using a single character for this separation, results in cleaner, compact code which is easier to read.
 
 ```csharp
 @* Writing a value inside a html element *@
@@ -48,7 +50,7 @@ Commenting your code is important, use comments to explain what the code does. `
 
 ## If/else
 
-If/else statements performs one task if a condition is true, and another is the condition is not true
+If/else statements perform one task if a condition is true, and another if the condition is not true
 
 ```csharp
 @if (Model.Name == "home")

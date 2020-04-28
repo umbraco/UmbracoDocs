@@ -1,11 +1,10 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
 ---
 
 # Locking of Users and password reset
 
-It's impossible to brute force the authentication on the login screen because after 'maxInvalidPasswordAttempts' the account of the user will be locked, and until that account is unlocked in the Users section, no attempt will succeed.
+It's impossible to brute force the authentication on the login screen because after `maxInvalidPasswordAttempts` the account of the user will be locked, and until that account is unlocked in the Users section, no attempt will succeed.
 
 ## Password reset on login screen
 

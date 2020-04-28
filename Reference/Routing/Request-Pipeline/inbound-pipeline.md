@@ -1,13 +1,12 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 # Inbound request pipeline
 
-The inbound process is triggered by the Umbraco (http) Module.  The **[published content request preparation](published-content-request-preparation.md)** process kicks in and creates a `PublishedContentRequest`.
+The inbound process is triggered by the Umbraco (http) Module.  The **[published content request preparation](published-content-request-preparation.md)** process kicks in and creates a `PublishedRequest`.
 
-The `PublishedContentRequest` object represents the request which Umbraco must handle.  It contains everything that will be needed to render it.  All this happens when the Umbraco modules thinks it's a document to render.
+The `PublishedRequest` object represents the request which Umbraco must handle.  It contains everything that will be needed to render it.  All this occurs when the Umbraco modules consider that an incoming request maps to a document that can be rendered.
 
 ```csharp
 public class PublishedContentRequest
@@ -21,14 +20,12 @@ There are 4 important properties, which contains all the information to find bac
 
 ```csharp
 public bool HasDomain { get; }
-public Domain Domain { get; }
-public Uri DomainUri { get; }
+public DomainAndUri Domain { get; }
 public CultureInfo Culture { get; }
 ```
+Domain is a DomainAndUri object ie a standard Domain plus the fully qualified uri. For example, the Domain may contain "example.com" whereas the Uri will be fully qualified eg "https://example.com/".
 
-Domain contains: "example.com", while Uri is "http://example.com".
-
-It contains also the content to render:
+It contains the content to render:
 
 ```csharp
 public bool HasPublishedContent { get; }
@@ -45,19 +42,30 @@ Contains template information and the corresponding rendering engine:
 ```csharp
 public bool HasTemplate { get; }
 public string TemplateAlias { get; }
-public RenderingEngine RenderingEngine { get; }
 public bool TrySetTemplate(string alias);
 public void SetTemplate(ITemplate template);
 ```
 
-You can subscribe to the event to know when the `PublishedContentRequest` is ready to be processed.  It's up to you to change anything (content, template, ...):
+You can subscribe to the 'Prepared' event which is triggered right after the point when the`PublishedRequest` is prepared - (but before it is ready to be processed).  Here modify anything in the request before it is processed!  eg. content, template, etc:
 
 ```csharp
-// public static event EventHandler<EventArgs> Prepared;
+using Umbraco.Core.Composing;
+using Umbraco.Web.Routing;
 
-PublishedContentRequest.Prepared += (sender, args) =>
+namespace Umbraco8.Components
 {
-  var request = sender as PublishedContentRequest;
-  // do something…
+    public class PublishedRequestComponent : IComponent
+    {
+        public void Initialize()
+        {
+            PublishedRequest.Prepared += (sender, args) =>
+            {
+                var request = sender as PublishedRequest;
+                // do something…
+            };
+        }
+
+        public void Terminate() {}
+    }
 }
 ```

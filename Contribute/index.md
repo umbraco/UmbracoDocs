@@ -1,5 +1,4 @@
 ---
-versionFrom: 7.0.0
 meta.Title: "Contribute to Umbraco CMS"
 meta.Description: "Explanation of how you can contribute to Umbraco, what the process is like and what things to keep in mind when contributing."
 ---
@@ -33,10 +32,10 @@ Whenever a new version of Umbraco is released new features might introduced and 
 
 Therefor we've introduced **versioned documentation**, which includes 2 different mechanisms:
 
-1. The [YAML meta data](adding-metadata.md) describing `versionFrom` and `versionTo`.
-2. The possibility to [add multiple files about the same topic](file-naming-conventions.md)
+1. The [YAML meta data](Adding-Metadata/index.md) describing `versionFrom` and `versionTo`.
+2. The possibility to [add multiple files about the same topic](File-Naming-Conventions/index.md)
 
-## [Adding meta data](adding-metadata.md)
+## [Adding meta data](Adding-Metadata/index.md)
 
 You can add meta data to any article in the Umbraco Documentation. This includes `meta title` and `meta description` as well as information on the versioning of the article.
 
@@ -56,7 +55,7 @@ Labels will be added to your Pull Request or Issue once it has been reviewed.
 
 ## Documentation Curators
 
-All the work of adding labels, going through issues and PRs and managing the Documentation repository is done by the Umbraco Documentation Curators team. If you wish to know more about who they are and how they work there is some information about them here: https://our.umbraco.com/community/the-documentation-curators/
+All the work of adding labels, going through issues and PRs and managing the Documentation repository is done by the Umbraco Documentation Curators team. If you wish to know more about who they are and how they work there is some information about them here: https://our.umbraco.com/get-involved/the-documentation-curators/
 
 ## Contribution badge
 

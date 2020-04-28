@@ -24,6 +24,10 @@ Reference for the package.manifest JSON file format to register one or more prop
 
 Convert the stored property data value to a useful object returned by the Published Content APIs.
 
+## [Property Actions](Property-Actions/)
+
+**Requires Umbraco 8.4+**. Use Property Actions to add additional functionaility to your custom property editors.
+
 ## [Tag support](tag-support.md)
 
 Property editors can be configured to support tag data. In v7 the tag system has been overhauled and updated for easier querying and seamless integration into any property editor, not the tags property editor. This document covers how you can integrate tagging support within your property editor.
