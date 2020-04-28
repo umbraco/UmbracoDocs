@@ -50,7 +50,7 @@ In the menu you can find a tab called *"Upgrade plan"*.
  To upgrade to the plan of your choosing, click on the green button for the plan that you want to upgrade to and then your project will be upgraded.
  
   :::note
-The change in price will first take effect from the next periode of the subscription for your.
+The change in price will first take effect from the next periode of your subscription.
  :::
 
 
