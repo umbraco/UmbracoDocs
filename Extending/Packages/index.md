@@ -30,7 +30,7 @@ Packages provide a wide variety of functionality, and often they can span multip
  - **Editor Enhancements**: Property Editors, Content Apps, etc. that extends Umbraco with new ways of editing content
  - **Administration tools**: Dashboards, Health Checks, etc. that helps administrators with a better overview of content
  - **Starter Kits**: Complete websites or large features that enables both editors and developers to get a head start
- - **Back office developer functionality** Productivity tools for developers that increases developer productivity and skills 
+ - **Backoffice developer functionality** Productivity tools for developers that increases developer productivity and skills 
 
 #### Schema Extensions
 
