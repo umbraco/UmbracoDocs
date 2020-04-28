@@ -23,7 +23,7 @@ Before you decide to upgrade your Umbraco Cloud plan, you need to consider a few
 
 ## How to upgrade your plan
 
-The first step to upgrading your Umbraco Cloud plan is to access your project in the project overview at Umbraco.io. 
+The first step to upgrading your Umbraco Cloud plan is to access your project in the project overview at [Umbraco.io](https://www.s1.umbraco.io/projects). 
 
 - In the project overview you can find all the project that you have been invited to or have created.
 
