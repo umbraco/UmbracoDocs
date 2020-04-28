@@ -47,7 +47,7 @@ In the menu you can find a tab called *"Upgrade plan"*.
 - If you are on the Standard plan you can upgrade to the Professional plan.
 
 
- To upgrade to the plan of your choosing  you simply click on the green button for the plan that you want to upgrade to and then your project will be upgraded.
+ To upgrade to the plan of your choosing, click on the green button for the plan that you want to upgrade to and then your project will be upgraded.
 
 
 
