@@ -61,4 +61,4 @@ If you change plan in the middle of the month, the time from that date until the
 
 If you need to downgrade the plan you are on, please reach out to our friendly support team, they can help you in doing so.
 
-You can either contact them through the chat on Umbraco.io or send them an email to contact@umbraco.dk, they will be more than happy to help.
+You can either contact them through the chat on Umbraco.io or send them an email to contact@umbraco.com, they will be more than happy to help.
