@@ -61,7 +61,7 @@ Or if you want to control this this via the Azure Portal with the other options 
 e.g. 
 
 ```csharp
-var appSettingIgnoreLocalDb = ConfigurationManager.AppSettings["Umbraco.Core.IgnoreLocalDb"];
+var appSettingIgnoreLocalDb = ConfigurationManager.AppSettings["PublishedSnapshotServiceOptions.IgnoreLocalDb"];
 
 if (appSettingIgnoreLocalDb == "true")
 {
