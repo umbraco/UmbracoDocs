@@ -18,4 +18,8 @@ Any widgets added to the Feed content type, will be shown below the feed of post
 
 ## Post
 
+The Post content type is used to create subpages under the Feed content type.
+
+Posts are created through the Feed content type, using the "Create post" feature on the Child items tab.
+
 ### Meta
