@@ -44,11 +44,11 @@ Contents:
 * Landing page (index)
   * How to get an Umbraco Starterkit project
   * How to take a trial
+  * Overview of contents in this docs section
 * Getting Started
   * How to get the "sample site/content"
   * A quick introduction to the "starter content" (the content there when installing?)
-  * Should be part of the index page for the Starter kit
-  * How to create content
+  * How to create content (create, move, delete - possibly also content templates)
   * Selecting a theme
 * Going Live (we need an article like this in the Cloud section as well)
   * Hostnames, SMTP settings
@@ -60,8 +60,6 @@ Contents:
 * An overview of the available content types
   * Global Content should have its own section / article
 * Media content
-* Creating content
-  * Including how to make language varied content
 
 Sample structure:
 
