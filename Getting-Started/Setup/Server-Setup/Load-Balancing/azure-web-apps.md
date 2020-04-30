@@ -26,16 +26,51 @@ When an instance of Umbraco starts up it generates some 'temporary' files on dis
 
 ### Umbraco PublishedCache
 
-When Azure Web Apps auto transitions between hosts, you scale the instances or you utilise slot swapping you may experience issues with the Umbraco Published Cache becoming locked unless Umbraco is configured to use SQL for MainDom locking. 
+When Azure Web Apps auto transitions between hosts, you scale the instances or you utilise slot swapping you may experience issues with the Umbraco Published Cache becoming locked unless Umbraco is configured correctly.
+
+#### Backoffice
+
+For the backoffice Web App **only** you should configure Umbraco to use SQL for MainDom locking. 
+
+Either in web.config or via the Azure Portal WebApp Application Settings section
 
 ```xml
 <add key="Umbraco.Core.MainDom.Lock" value="SqlMainDomLock" />
 ```
 
-:::note
-The `Umbraco.Core.MainDom.Lock` setting is for Umbraco v8.6+. Having this setting for versions between v8.0-v8.5 will not have any affect. It is recommended to use 8.6+ when running Umbraco on Azure Web Apps since this setting will prevent file locking issues.
-:::
+#### Front end
 
+ For the front end WebApp **only** instances you should configure disable overlapped recycling. 
+
+[Disable overlapping recycling](https://github.com/projectkudu/kudu/wiki/Configurable-settings#disable-overlapped-recycling) by adding the `WEBSITE_DISABLE_OVERLAPPED_RECYCLING` setting to application settings with a value of `1`. This setting must be set in the Application Settings part of your Azure portal. Setting it in your `web.config` file is not supported.
+
+In some cases if locking issues are continuing to occur on the front end WebApp with `WEBSITE_DISABLE_OVERLAPPED_RECYCLING`
+configured then you can set the published cache to ignore the local database, do this **only** for the front end WebApp. 
+
+A composer is required to configure this option
+
+```csharp
+composition.Register(factory => new PublishedSnapshotServiceOptions
+{
+    IgnoreLocalDb = true
+});
+```
+
+Or if you want to control this this via the Azure Portal with the other options you could add a Application Setting.
+
+e.g. 
+
+```csharp
+var appSettingIgnoreLocalDb = ConfigurationManager.AppSettings["Umbraco.Core.IgnoreLocalDb"];
+
+if (appSettingIgnoreLocalDb == "true")
+{
+    composition.Register(factory => new PublishedSnapshotServiceOptions
+    {
+        IgnoreLocalDb = true
+    });
+}
+```
 
 ### Steps to set-up a environment
 
