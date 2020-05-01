@@ -90,11 +90,11 @@ _The below section applies to all ASP.NET load balancing configurations._
 
 ## Server Configuration
 
-This section describes the various configuration options depending on if you are hosting setup:
+This section describes the various configuration options depending on your hosting setup:
 
-1. [Azure Web Apps](file-system-replication#mixture-of-standalone--synchronised) - _You use cloud based auto-scaling appliances like [Microsoft's Azure Web Apps](https://azure.microsoft.com/en-us/services/app-service/web/)_
-2. [File Replication](file-system-replication#synchronised-file-system) - _Each server hosts copies of the load balanced website files and a file replication service is running to ensure that all files on all servers are up to date_
-3. [Centralized file share](file-system-replication#standalone-file-system) - _The load balanced website files are located on a centralized file share (SAN/NAS/Clustered File Server/Network Share)_
+1. [Azure Web Apps](file-system-replication.md#mixture-of-standalone--synchronised) - _You use cloud based auto-scaling appliances like [Microsoft's Azure Web Apps](https://azure.microsoft.com/en-us/services/app-service/web/)_
+2. [File Replication](file-system-replication.md#synchronised-file-system) - _Each server hosts copies of the load balanced website files and a file replication service is running to ensure that all files on all servers are up to date_
+3. [Centralized file share](file-system-replication.md#synchronised-file-system) - _The load balanced website files are located on a centralized file share (SAN/NAS/Clustered File Server/Network Share)_
 
 [Full documentation is available here](file-system-replication.md)
 
