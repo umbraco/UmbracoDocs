@@ -35,7 +35,7 @@ Several file system based services in Umbraco such as the Published Cache and Lu
 <add key="Umbraco.Core.MainDom.Lock" value="SqlMainDomLock" />
 ```
 
-#### v8.6.0 - v8.6.1
+##### v8.6.0 - v8.6.1
 
 The `Umbraco.Core.MainDom.Lock` should be applied to your __MASTER__ server only.
 
@@ -71,7 +71,7 @@ if (appSettingIgnoreLocalDb == "true")
 }
 ```
 
-#### v8.0 - v8.5.x
+##### v8.0 - v8.5.x
 
 You should configure both your __MASTER__ and __REPLICA__ servers as if they were all replica servers based on the [v8.6.0 - v8.6.1](#v860---v861) configuration above.
 
