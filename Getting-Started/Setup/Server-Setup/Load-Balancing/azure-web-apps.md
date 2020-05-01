@@ -73,7 +73,7 @@ if (appSettingIgnoreLocalDb == "true")
 
 #### v8.0 - v8.5.x
 
-You should configure both your __MASTER__ and __REPLICA__ servers as if they were all replica servers based on the [v8.6.0 - v8.6.1](#v8_6_0_-_v8_6_1) configuration above.
+You should configure both your __MASTER__ and __REPLICA__ servers as if they were all replica servers based on the [v8.6.0 - v8.6.1](#v860---v861) configuration above.
 
 
 ### Steps to set-up a environment
