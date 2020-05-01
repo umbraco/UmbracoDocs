@@ -70,7 +70,7 @@ if (appSettingIgnoreLocalDb == "true")
     });
 }
 ```
-The downside of this approach is it will take slightly longer to build the published cache when a new server is intialilized, therefore consider ensuring new servers are fully 'warmed up' before swapping a slot, or enabling Application Intialization to allow Azure to warm up the server before any scaling or auto transitions occur.
+The downside of this approach is it will take slightly longer to build the published cache when a new server is intialilized, therefore consider ensuring new servers are fully 'warmed up' before swapping a slot, or enabling [Application Intialization](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/applicationinitialization/) to allow Azure to warm up the server before any scaling or auto transitions occur.
 
 ```xml
 <applicationInitialization doAppInitAfterRestart="true">
