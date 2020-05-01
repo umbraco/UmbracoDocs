@@ -138,11 +138,11 @@ Define the width of the container inside of the footer which will always be the 
 
 In this group you can custmize the dimensions of the *Grid* widget.
 
-### Container Width Small/Big
+### Container Width (Grid)
 
 Define the width (in pixels) of the container holding the grid widget. It's possible to define 3 sizes: Small, regular and big.
 
-### Grid Gutter Medium/Small/XS
+### Grid Gutter
 
 The *Grid Gutter* is the space between columns when working with the *Grid* widget.
 
