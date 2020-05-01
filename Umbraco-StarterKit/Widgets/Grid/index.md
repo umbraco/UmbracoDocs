@@ -13,7 +13,7 @@ Settings image
 
 There are some settings you can change around for how you want the standard frame for Grid to look, these settings can be seen in the image below:
 
-![Grid Settings](Images/Grid-Settings.png)
+![Grid Settings](images/Grid-Settings.png)
 
 ## Presentation widgets
 
