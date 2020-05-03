@@ -17,7 +17,7 @@ This document assumes that you have a fair amount of knowledge about:
 * Umbraco
 * IIS 7+
 * Networking & DNS
-* Windows Server 
+* Windows Server
 * .NET Framework v4.7.2+
 
 :::note
@@ -58,7 +58,7 @@ The process is as follows:
 
 ## Scheduling and master election
 
-Although there is a Master server designated for administration, by default this is not explicitly set as the "Scheduling server". 
+Although there is a Master server designated for administration, by default this is not explicitly set as the "Scheduling server".
 In Umbraco there can only be a single scheduling server which performs the following 3 things:
 
 * Keep alive service - to ensure scheduled publishing occurs
@@ -69,15 +69,15 @@ Umbraco will automatically elect a "Scheduling server" to perform the above serv
 that all of the servers will need to be able to resolve the URL of either: itself, the Master server, the internal load balancer or the public address.
 
 For example, In the following diagram the replica node **f02.mysite.local** is the elected "Scheduling server". In order for scheduling to work it needs to be able to send
-requests to itself, the Master server, the internal load balancer or the public address. The address used by the "Scheduling server" is called the "umbracoApplicationUrl". 
+requests to itself, the Master server, the internal load balancer or the public address. The address used by the "Scheduling server" is called the "umbracoApplicationUrl".
 
 ![Umbraco flexible load balancing diagram](images/flexible-load-balancing-scheduler.png)
 
 By default, Umbraco will set the "umbracoApplicationUrl" to the address made by the first accepted request when the AppDomain starts.
 It is assumed that this address will be a DNS address that the server can resolve.
 
-For example, if a public request reached the load balancer on `www.mysite.com`, the load balancer may send the request on to the servers with the original address: `www.mysite.com`. By default the "umbracoApplicationUrl" will be `www.mysite.com`. However, load balancers may route the request internally under a different DNS name such as "f02.mysite.local" which 
-by default would mean the "umbracoApplicationUrl" is "f02.mysite.local". In any case the elected "Scheduling server" must be able to resolve this address. 
+For example, if a public request reached the load balancer on `www.mysite.com`, the load balancer may send the request on to the servers with the original address: `www.mysite.com`. By default the "umbracoApplicationUrl" will be `www.mysite.com`. However, load balancers may route the request internally under a different DNS name such as "f02.mysite.local" which
+by default would mean the "umbracoApplicationUrl" is "f02.mysite.local". In any case the elected "Scheduling server" must be able to resolve this address.
 
 In many scenarios this is fine, but in case this is not adequate there's a few of options you can use:
 
@@ -86,7 +86,17 @@ In many scenarios this is fine, but in case this is not adequate there's a few o
 
 ## Common load balancing setup information
 
-_The below section applies to all ASP.NET load balancing configurations.
+_The below section applies to all ASP.NET load balancing configurations._
+
+## Server Configuration
+
+This section describes the various configuration options depending on your hosting setup:
+
+1. [Azure Web Apps](file-system-replication.md#mixture-of-standalone--synchronised) - _You use cloud based auto-scaling appliances like [Microsoft's Azure Web Apps](https://azure.microsoft.com/en-us/services/app-service/web/)_
+2. [File Replication](file-system-replication.md#synchronised-file-system) - _Each server hosts copies of the load balanced website files and a file replication service is running to ensure that all files on all servers are up to date_
+3. [Centralized file share](file-system-replication.md#synchronised-file-system) - _The load balanced website files are located on a centralized file share (SAN/NAS/Clustered File Server/Network Share)_
+
+[Full documentation is available here](file-system-replication.md)
 
 ### Machine Key
 
@@ -109,7 +119,7 @@ _The below section applies to all ASP.NET load balancing configurations.
 ```
 
 ### Session State
-            
+
 * If you use SessionState in your application, or are using the default TempDataProvider in MVC (which uses SessionState) then you will need to configure your application to use the SqlSessionStateStore or an alternative provider (see [https://msdn.microsoft.com/en-us/library/aa478952.aspx](https://msdn.microsoft.com/en-us/library/aa478952.aspx) for more details).
 
 ### Logging
@@ -125,13 +135,6 @@ Your staging environment should also be load balanced so that you can see any is
 You'll need to test this solution **a lot** before going to production. You need to ensure there are no windows security issues, etc... The best way to determine issues is have a lot of people testing this setup and ensuring all errors and warnings in your application/system logs in Windows are fixed.
 
 Ensure to analyze logs from all servers and check for any warnings and errors.
-
-## File system replication
-
-There are various configuration options that need to be considered depending on your infrastructure set-up.
-
-[Full documentation is available here](file-system-replication.md)  
-
 
 ## FAQs
 

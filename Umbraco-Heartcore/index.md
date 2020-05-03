@@ -26,6 +26,12 @@ There are 3 ways to get your hands on an Umbraco Heartcore project:
 - [Purchase a Heartcore from Umbraco.com](https://umbraco.com/umbraco-heartcore-pricing)
 - [Setup a project directly from the Umbraco Cloud Portal](https://umbraco.io) - requires that you already have an account
 
+## [Getting Started with Umbraco Heartcore](Getting-Started-Cloud/)
+
+In order to get started with Umbraco Heartcore you will need to create a new project via the Umbraco Cloud Portal and familiarize yourself with the features available. This includes the Headless section in the backoffice and creating API Keys for authentication and authorization purposes.
+
+In this article you will learn how to create your first Umbraco Heartcore project and go through the steps needed to get your first content published in order to start using the APIs.
+
 ### Setup a Trial project
 
 <iframe width="800" height="450" src="https://www.youtube.com/embed/VL87NCz5Dwg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -37,12 +43,6 @@ Reference documentation for the two APIs available, as well as details about com
 - [Authentication and Authorization](API-Documentation/#authentication-and-authorization)
 - [Content Delivery API](API-Documentation/Content-Delivery)
 - [Content Management API](API-Documentation/Content-Management)
-
-## [Getting Started with Umbraco Heartcore](Getting-Started-Cloud/)
-
-In order to get started with Umbraco Heartcore you will need to create a new project via the Umbraco Cloud Portal and familiarize yourself with the features available. This includes the Headless section in the backoffice and creating API Keys for authentication and authorization purposes.
-
-In this article you will learn how to create your first Umbraco Heartcore project and go through the steps needed to get your first content published in order to start using the APIs.
 
 ## [Client libraries](Client-Libraries)
 

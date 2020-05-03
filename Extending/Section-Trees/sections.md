@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Umbraco Sections"
+meta.Description: "A guide to creating a custom section in Umbraco"
 ---
 
 # Sections
