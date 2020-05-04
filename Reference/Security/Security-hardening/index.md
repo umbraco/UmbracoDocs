@@ -46,6 +46,8 @@ Some older versions of Umbraco also relied on /umbraco/webservices/ for loadbala
 </rule>
 ```
 
+If your server is behind a load balancer, you should use `{HTTP_X_FORWARDED_FOR}` instead of `{REMOTE_ADDR}` as the input for the rule.
+
 If you now go to /umbraco/ for example from a different IP-address the login screen will not be rendered.
 
 ## Rename your Umbraco-folder
