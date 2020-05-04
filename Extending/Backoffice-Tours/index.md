@@ -196,3 +196,37 @@ The image below shows the entire tree highlighted, but requires the user to clic
 ### customProperties
 
 A JSON object that is passed to the scope of a custom step view, so you can use this data in your view with `$scope.model.currentStep.customProperties`.
+
+## How to filter/disable tours being shown
+It is possible to hide/disable tours using a C# composer by adding to the TourFilters collection. Here is an example of disabling all the CMS core tours based on the alias.
+
+```cs
+using System.Text.RegularExpressions;
+using Umbraco.Core.Composing;
+using Umbraco.Web;
+using Umbraco.Web.Tour;
+
+namespace Umbraco.Examples
+{
+    public class BackofficeComposer : IUserComposer
+    {
+        public void Compose(Composition composition)
+        {
+            // Filter out all the CMS core tours by alias with a Regex that start with the umbIntro alias
+            composition.TourFilters()
+                .AddFilter(new BackOfficeTourFilter(pluginName: null, tourFileName: null, tourAlias: new Regex("^umbIntro", RegexOptions.IgnoreCase)));
+
+            // Filter any tours in the file that is custom-tours.json
+            // Found in App_plugins/MyAwesomePlugin/backoffice/tours/
+            // OR at /config/backofficetours/
+            composition.TourFilters()
+                .AddFilterByFile("custom-tours.json");
+
+            // Filter out one or more tour JSON files from a specific plugin/package
+            // Found in App_plugins/MyAwesomePlugin/backoffice/tours/tour-two.json
+            composition.TourFilters()
+                .AddFilterByPlugin("MyAwesomePlugin");
+        }
+    }
+}
+```
