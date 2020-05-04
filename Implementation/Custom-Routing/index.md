@@ -100,7 +100,7 @@ namespace Umbraco8.Components
 See: [Custom routing documentation](../../Reference/Routing/custom-routes)
 
 :::note
-This is an approach for mapping a custom route to a custom MVC controller, for existing content page routes you can use a custom MVC controller to handle the request by naming convention: see [Custom Controllers - Route Hijacking](../../Reference/Routing/custom-controllers). 
+This is an approach for mapping a custom route to a custom MVC controller. For creating routes for existing content pages you can use a custom MVC controller to handle the request by naming convention: see [Custom Controllers - Route Hijacking](../../Reference/Routing/custom-controllers). 
 :::
 
 ### PublishedRequest.Prepared event
