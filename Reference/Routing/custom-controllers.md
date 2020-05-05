@@ -108,7 +108,7 @@ or if you are using modelsbuilder:
 ```
 `<>` contains a model generated for each document type to give strongly typed access to the Document Type properties in the template view.
 
-To use a specific custom view model, the @inherits directive will need to be updated to reference your custom model using the `Umbraco.Web.Mvc.UmbracoViewPage<T>` format where 'T' is the type of your custom model.
+To use a specific custom view model, the `@inherits` directive will need to be updated to reference your custom model using the `Umbraco.Web.Mvc.UmbracoViewPage<T>` format where 'T' is the type of your custom model.
 
 So for example, if your custom model is of type 'MyProductModel' then your @inherits directive will look like:
 
