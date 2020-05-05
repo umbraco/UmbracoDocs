@@ -47,7 +47,7 @@ The example above shows the default behaviour that Umbraco's core RenderMvcContr
 
 A further convention is that if an action on the controller has a name that matches the template name, this action will be executed instead of the default 'Index' action.
 
-### Example hijacking route requests to a 'product' for an alternative 'AMP' template
+### Example: Hijacking route requests to a 'product' for an alternative 'AMP' template
 
 In this example, the Product Page Document Type has two templates 'ProductPage' and 'ProductAmpPage', we can hijack and handle the requests to the two templates differently.
 
