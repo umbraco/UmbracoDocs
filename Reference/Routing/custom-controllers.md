@@ -110,7 +110,7 @@ or if you are using modelsbuilder:
 
 To use a specific custom view model, the `@inherits` directive will need to be updated to reference your custom model using the `Umbraco.Web.Mvc.UmbracoViewPage<T>` format where 'T' is the type of your custom model.
 
-So for example, if your custom model is of type 'MyProductModel' then your @inherits directive will look like:
+So for example, if your custom model is of type 'MyProductModel' then your `@inherits` directive will look like:
 
 ```csharp
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<MyProductModel>
