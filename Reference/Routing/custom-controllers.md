@@ -39,7 +39,7 @@ public class ProductPageController : Umbraco.Web.Mvc.RenderMvcController
     }
 }
 ```
-Will result in ALL requests to ANY 'product' pages being 'hijacked' and routed through your custom MVC controller!
+This will result in ALL requests to ANY 'product' pages being 'hijacked' and routed through your custom MVC controller.
 
 The example above shows the default behaviour that Umbraco's core RenderMvcController provides. By default, the 'Index' action of the controller will be executed, and the CurrentTemplate helper sends the model containing the published content for the request to the relevant template/view. 
 
