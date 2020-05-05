@@ -143,7 +143,7 @@ public class MyProductViewModel : PublishContentWrapped
 
 (`PublishedContentWrapped` will take care of populating all the usual underlying Umbraco properties and means the `@Model.` syntax will continue to work in the layouts used by your template).
 
-using Modelsbuilder you will find that all the generated models have a constructor that takes an IPublishedContent item in a similar way:
+Using Modelsbuilder you will find that all the generated models have a constructor that takes an IPublishedContent item in a similar way:
 
 ```csharp
 public class MyProductViewModel : ProductPage
