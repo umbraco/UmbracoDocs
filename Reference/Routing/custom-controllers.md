@@ -51,7 +51,7 @@ A further convention is that if an action on the controller has a name that matc
 
 In this example, the Product Page Document Type has two templates 'ProductPage' and 'ProductAmpPage'. We can hijack and handle the requests to the two templates differently.
 
-Creating the Controller as before
+Create the Controller as before:
 
 ```csharp
 public class ProductPageController : Umbraco.Web.Mvc.RenderMvcController
