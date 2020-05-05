@@ -79,7 +79,7 @@ The page in Umbraco will have a single 'template' selected as it's default templ
 
 would request the Super Fancy Product page but force it to be loaded with the ProductAmpPage template, this can be simplified further:
 
-/products/superfancyproduct/ProductAmpPage/
+`/products/superfancyproduct/ProductAmpPage/`
 
 where the final part of the url is assumed to be the altTemplate querystring value.
 
