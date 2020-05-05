@@ -117,7 +117,7 @@ So for example, if your custom model is of type 'MyProductModel' then your @inhe
 ```
 
 :::note
-Views in MVC will likely specify a master view to use as the common layout for the site html, when using a custom view model it's necessary to make sure this doesn't conflict with any implementation in the master layout view.
+Views in MVC will likely specify a master view to use as the common layout for the site html. When using a custom view model it's necessary to make sure this doesn't conflict with any implementation in the master layout view.
 eg: if your master layout view is inheriting from a specific model `UmbracoViewPage<SpecificModel>` and using a property from SpecificModel that isn't available in your custom model an exception will be thrown!
 To avoid this you could:
 _ Keep your Master layout view 'generically typed', eg only have @inherits UmbracoViewPage, and use Model.Value syntax to access properties.
