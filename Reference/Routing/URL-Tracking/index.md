@@ -34,3 +34,18 @@ It is possible to disable the feature entirely (both generating URLs in the data
 ```
 
 See: [/Documentation/Reference/Config/umbracoSettings/#web-routing](/Documentation/Reference/Config/umbracoSettings/#web-routing)
+
+## Note 
+
+**The following applies only to v7 sites.**
+
+In addition, Umbraco will automatically disable the feature if it detects any DLL whose name would contain any of the following strings: 
+
+      "InfoCaster.Umbraco.UrlTracker"	
+      "SEOChecker"	
+      "Simple301"	
+      "Terabyte.Umbraco.Modules.PermanentRedirect"	
+      "CMUmbracoTools"	
+      "PWUrlRedirect"	
+
+These products already implement redirect management and we do not want to interfere.
