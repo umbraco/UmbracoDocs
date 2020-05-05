@@ -18,7 +18,7 @@ This replacement of the default controller can either be achieved 'globally' for
 
 ## Creating a custom controller
 
-### Example: hijacking route requests to a 'product' page
+### Example: Hijacking route requests to a 'product' page
 
 If the Umbraco site has 'product' pages created from a Document Type called 'Product Page' with alias 'productPage'.
 
