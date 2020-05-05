@@ -73,7 +73,7 @@ public class ProductPageController : Umbraco.Web.Mvc.RenderMvcController
 }
 ```
 #### How can a page be requested via two different templates?
-The page in Umbraco will have a single 'template' selected as it's default template, but it's possible to call this same page on a different template by adding ?altTemplate=othertemplatename to the Url QueryString eg:
+The page in Umbraco will have a single 'template' selected as it's default template, but it's possible to call this same page on a different template by adding `?altTemplate=othertemplatename` to the Url QueryString eg:
 
 /products/superfancyproduct/?altTemplate=ProductAmpPage
 
