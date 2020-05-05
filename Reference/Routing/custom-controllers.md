@@ -8,23 +8,27 @@ _Use a custom MVC controller to handle and control incoming requests for content
 
 ## What is Umbraco Route Hijacking?
 
-By default, all front end requests to an Umbraco site are auto-routed via the 'Index' action of a core MVC Controller: `Umbraco.Web.Mvc.RenderMvcController`. This core controller handles the incoming request, builds the associated PublishedContent view model, and passes this to the appropriate Umbraco Template/MVC View. 
+By default, all front end requests to an Umbraco site are auto-routed via the 'Index' action of a core MVC Controller: `Umbraco.Web.Mvc.RenderMvcController`. This core controller handles the incoming request, builds the associated PublishedContent model, and passes this to the appropriate Umbraco Template/MVC View. 
 
 It is however possible to implement a custom MVC Controller to replace this default implementation to give complete control over this execution.
 
-For example, to enrich the view model used for the template with additional properties perhaps retrieved from other published content items or even outside of Umbraco, or to implement serverside paging, or any custom/granular security or business logic required to actioned before rendering the template/view on the front-end.
+For example:
+- to enrich the view model passed to the template with additional properties (from other published content items or outside Umbraco) 
+- to implement serverside paging
+- to implement any custom/granular security
+- to return alternative templates depending on some custom business logic
 
-This replacement of the default controller can either be achieved 'globally' for all requests or by 'hijacking' requests for pages based on a specific Document Type following a simple controller naming convention [doctypealias]Controller. 
+This replacement of the default controller can either be made 'globally' for all requests (see last example) or by *'hijacking'* requests for types of pages based on their specific Document Type following a simple controller naming convention `[DocumentTypeAlias]Controller`. 
 
 ## Creating a custom controller
 
 ### Example: Hijacking route requests to a 'product' page
 
-In the following example, the Umbraco site has a set of 'product' pages created from a Document Type called 'Product Page' with alias 'productPage'.
+In the following example, imagine an Umbraco site with a set of 'product' pages created from a Document Type called 'Product Page' with an alias 'productPage'.
 
-Then, creating a custom locally declared controller in the Umbraco MVC web application project (or App_Code folder for website projects) named 'ProductPageController'.
+Then if we create a custom locally declared controller in the Umbraco MVC web application project (or App_Code folder for website projects) named 'ProductPageController'.
 
-And, ensuring this controller inherits from the base `Umbraco.Web.Mvc.RenderMvcController`.
+And then we ensure that this controller inherits from the base controller `Umbraco.Web.Mvc.RenderMvcController`.
 
 eg:
 ```csharp
@@ -39,9 +43,9 @@ public class ProductPageController : Umbraco.Web.Mvc.RenderMvcController
     }
 }
 ```
-This will result in ALL requests to ANY 'product' pages being 'hijacked' and routed through your custom MVC controller.
+Then ALL requests to ANY 'product' pages in the site will be'hijacked' and routed through the custom ProductPageController.
 
-The example above shows the default behaviour that Umbraco's core RenderMvcController provides. By default, the 'Index' action of the controller will be executed, and the CurrentTemplate helper sends the model containing the published content for the request to the relevant template/view. 
+The example implementation above shows the default behaviour of Umbraco's core RenderMvcController provides. The 'Index' action of the controller is executed, and the CurrentTemplate helper sends the model containing the details of the published content item related to the request to the relevant template/view. 
 
 ## Routing via template
 
@@ -275,7 +279,9 @@ public class SetDefaultRenderMvcControllerComposer : IUserComposer
         composition.SetDefaultRenderMvcController(typeof(MyRenderMvcController));
     }
 }
-
+```
+where your custom MVC controller implements IRenderMvcController
+```csharp
 public class MyRenderMvcController : IRenderMvcController
 {
     public void Execute(RequestContext requestContext)
@@ -289,4 +295,4 @@ public class MyRenderMvcController : IRenderMvcController
     }
 }
 ```
-or inherit from the default RenderMVCController as in the route hijacking examples.
+or inherits from the base RenderMVCController as in the route hijacking examples above.
