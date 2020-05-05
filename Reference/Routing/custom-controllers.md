@@ -127,7 +127,7 @@ or
 * Ensure your custom models inherit from whichever class is used to strongly type the master layout view.
 :::
 
-In most cases you will need your custom model to build upon the underlying existing PublishedContent model for the page, this can be achieved by making your custom model inherit from a special base class called PublishedContentWrapped:
+In most cases you will need your custom model to build upon the underlying existing PublishedContent model for the page. This can be achieved by making your custom model inherit from a special base class called `PublishedContentWrapped`:
 
 ```csharp
 public class MyProductViewModel : PublishContentWrapped
