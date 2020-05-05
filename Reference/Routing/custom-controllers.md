@@ -120,11 +120,11 @@ So for example, if your custom model is of type 'MyProductModel' then your `@inh
 Views in MVC will likely specify a master view to use as the common layout for the site html. When using a custom view model it's necessary to make sure this doesn't conflict with any implementation in the master layout view.
 eg: if your master layout view is inheriting from a specific model `UmbracoViewPage<SpecificModel>` and using a property from SpecificModel that isn't available in your custom model an exception will be thrown!
 To avoid this you could:
-_ Keep your Master layout view 'generically typed', eg only have @inherits UmbracoViewPage, and use Model.Value syntax to access properties.
+* Keep your Master layout view 'generically typed', eg. only have `@inherits UmbracoViewPage`, and use Model.Value syntax to access properties.
 or
-_ Break the dependency on `Umbraco.Web.Models.ContentModel` in your master layout by having it instead inherit from `Umbraco.Web.Mvc.UmbracoViewPage<ISomeInterface>` (where ISomeInterface is implemented by all your models and contains the properties that the master layout view uses).
+* Break the dependency on `Umbraco.Web.Models.ContentModel` in your master layout by having it instead inherit from `Umbraco.Web.Mvc.UmbracoViewPage<ISomeInterface>`. This would be where ISomeInterface is implemented by all your models and contains the properties that the master layout view uses.
 or
-_ Ensure your custom models inherit from whichever class is used to strongly type the master layout view.
+* Ensure your custom models inherit from whichever class is used to strongly type the master layout view.
 :::
 
 In most cases you will need your custom model to build upon the underlying existing PublishedContent model for the page, this can be achieved by making your custom model inherit from a special base class called PublishedContentWrapped:
