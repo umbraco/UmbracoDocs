@@ -106,7 +106,7 @@ or if you are using modelsbuilder:
 ```csharp
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<ProductPage>
 ```
-(where <> contains a model generated for each document type to give strongly typed access to the document type properties in the template view)
+`<>` contains a model generated for each document type to give strongly typed access to the Document Type properties in the template view.
 
 To use a specific custom view model, the @inherits directive will need to be updated to reference your custom model using the `Umbraco.Web.Mvc.UmbracoViewPage<T>` format where 'T' is the type of your custom model.
 
