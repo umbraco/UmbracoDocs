@@ -81,7 +81,7 @@ would request the Super Fancy Product page but force it to be loaded with the Pr
 
 `/products/superfancyproduct/ProductAmpPage/`
 
-where the final part of the url is assumed to be the altTemplate querystring value.
+The final part of this url is assumed to be the 'altTemplate' querystring value.
 
 ### Summary - How the route hijacking convention works
 
