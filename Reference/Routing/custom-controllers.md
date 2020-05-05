@@ -223,7 +223,7 @@ public class ProductListingPageController : Umbraco.Web.Mvc.RenderMvcController
 }
 ```
 ## Controller Injection
-Injecting services into your controller constructors is possible with Umbraco's underlying dependency injection implementation. see (Services and Helpers)[../../Implementation/Services/#custom-services-and-helpers-1].
+Injecting services into your controller constructors is possible with Umbraco's underlying dependency injection implementation. See (Services and Helpers)[../../Implementation/Services/#custom-services-and-helpers-1] for more info on this.
 
 For example:
 ```csharp
