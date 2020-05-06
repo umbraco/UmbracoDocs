@@ -99,7 +99,10 @@ The steps to achieve this will differ, depending if your template views are usin
 
 ### Changing the @inherits directive of your template
 
-By default, your Umbraco Template will be based on the `ContentModel` that the default `RenderMvcController` passes through to it. (NB: ContentModel has one property called 'Content' of type IPublishedContent, and the @Model syntax in V8 is wired up to use this IPublishedContent item, to save having to type @Model.Content.etc as in V7)
+By default, your Umbraco Template will be based on the `ContentModel` that the default `RenderMvcController` passes through to it. 
+
+:::note `ContentModel` has one property called 'Content' of type `IPublishedContent`, and the @Model syntax in V8 is wired up to use this `IPublishedContent` item, to save having to type `@Model.Content.etc` as in V7.
+:::
 
 The default inherits statement:
 ```csharp
