@@ -198,7 +198,9 @@ The image below shows the entire tree highlighted, but requires the user to clic
 A JSON object that is passed to the scope of a custom step view, so you can use this data in your view with `$scope.model.currentStep.customProperties`.
 
 ## How to filter/disable tours being shown
-It is possible to hide/disable tours using a C# composer by adding to the TourFilters collection. Here is an example of disabling all the CMS core tours based on the alias., along with showing approaches how you could filter out tours by its JSON filename or by any tour JSON files coming from an App_Plugin plugin/package.
+It is possible to hide/disable tours using a C# composer by adding to the TourFilters collection.
+
+Here is an example of disabling all the CMS core tours based on the alias, along with examples on how you could filter out tours by its JSON filename and how to disable tours from specific packages.
 
 ```cs
 using System.Text.RegularExpressions;
