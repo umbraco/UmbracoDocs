@@ -118,7 +118,14 @@ This is a great candidate for a [Razor Helper](https://weblogs.asp.net/scottgu/a
 ```csharp
 @helper RenderSiteMapUrlEntry(IPublishedContent node)
 {
-    var changeFreq = node.HasValue("searchEngineChangeFrequency", fallback: Fallback.ToAncestors) ? node.Value("searchEngineChangeFrequency", fallback: Fallback.ToAncestors) : "monthly";
+	string changeFreq = string.Empty;
+	if(String.IsNullOrEmpty(node.Value<string>("searchEngineChangeFrequency", fallback: Fallback.ToAncestors))) {
+        changeFreq = node.Parent.Value<string>("searchEngineChangeFrequency", fallback: Fallback.ToAncestors);
+    } else {
+        changeFreq = node.Value<string>("searchEngineChangeFrequency", fallback: Fallback.ToAncestors);
+    }
+    changeFreq = String.IsNullOrEmpty(changeFreq) ? "monthly" : changeFreq;
+    
     // with the relative priority, this is a per page setting only, so we're not using recursion, so we won't set Fallback.ToAncestors here and we'll default to 0.5 if no value is set
     var priority = node.HasValue("searchEngineRelativePriority") ? node.Value<string>("searchEngineRelativePriority") : "0.5";
     
@@ -339,7 +346,14 @@ string[] excludedDocumentTypes = (!String.IsNullOrEmpty(excludedDocumentTypeList
 
 @helper RenderSiteMapUrlEntry(IPublishedContent node)
 {
-    var changeFreq = node.HasValue("searchEngineChangeFrequency", fallback: Fallback.ToAncestors) ? node.Value("searchEngineChangeFrequency", fallback: Fallback.ToAncestors) : "monthly";
+	string changeFreq = string.Empty;
+	if(String.IsNullOrEmpty(node.Value<string>("searchEngineChangeFrequency", fallback: Fallback.ToAncestors))) {
+        changeFreq = node.Parent.Value<string>("searchEngineChangeFrequency", fallback: Fallback.ToAncestors);
+    } else {
+        changeFreq = node.Value<string>("searchEngineChangeFrequency", fallback: Fallback.ToAncestors);
+    }
+    changeFreq = String.IsNullOrEmpty(changeFreq) ? "monthly" : changeFreq;
+    
     // with the relative priority, this is a per page setting only, so we're not using recursion, so we won't fallback to ancestors here and we'll default to 0.5 if no value is set
     var priority = node.HasValue("searchEngineRelativePriority") ? node.Value<string>("searchEngineRelativePriority") : "0.5";
     
