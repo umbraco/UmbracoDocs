@@ -270,9 +270,10 @@ To wire up a concrete instance of IMadeUpProductService, use a composer:
 ```
 See (Composing)[../../Implementation/Composing/] for further information.
 
-## Change the default RenderMVCController globally
+## Replace Umbraco's default `RenderMVCController`
 
-In some cases you might want to have your own custom controller execute for ALL MVC requests when you haven't hijacked a specific route. This is possible by assigning your own default controller during initialization using a composer.
+You can replace Umbraco's default implementation of RenderMVCController with your own custom controller for all MVC requests. 
+This is possible by assigning your own default controller during initialization using a composer and the `SetDefaultRenderMvcController(T)` method.
 
 ```csharp
 public class SetDefaultRenderMvcControllerComposer : IUserComposer
@@ -283,7 +284,8 @@ public class SetDefaultRenderMvcControllerComposer : IUserComposer
     }
 }
 ```
-where your custom MVC controller implements IRenderMvcController
+Your custom implementation of RenderMvcController should either inherit from the core `RenderMvcController` as in the examples above or implement the `IRenderMvcController` interface.
+
 ```csharp
 public class MyRenderMvcController : IRenderMvcController
 {
@@ -298,4 +300,3 @@ public class MyRenderMvcController : IRenderMvcController
     }
 }
 ```
-or inherits from the base RenderMVCController as in the route hijacking examples above.
