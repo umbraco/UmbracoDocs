@@ -26,9 +26,9 @@ This replacement of the default controller can either be made 'globally' for all
 
 In the following example, imagine an Umbraco site with a set of 'product' pages created from a Document Type called 'Product Page' with an alias 'productPage'.
 
-Then if we create a custom locally declared controller in the Umbraco MVC web application project (or App_Code folder for website projects) named 'ProductPageController'.
+Create a custom locally declared controller in the Umbraco MVC web application project (or App_Code folder for website projects) named 'ProductPageController'.
 
-And then we ensure that this controller inherits from the base controller `Umbraco.Web.Mvc.RenderMvcController`.
+Ensure that this controller inherits from the base controller `Umbraco.Web.Mvc.RenderMvcController`.
 
 eg:
 ```csharp
@@ -43,9 +43,9 @@ public class ProductPageController : Umbraco.Web.Mvc.RenderMvcController
     }
 }
 ```
-Then ALL requests to ANY 'product' pages in the site will be'hijacked' and routed through the custom ProductPageController.
+ALL requests to ANY 'product' pages in the site will be'hijacked' and routed through the custom ProductPageController.
 
-The example implementation above shows the default behaviour of Umbraco's core RenderMvcController provides. The 'Index' action of the controller is executed, and the CurrentTemplate helper sends the model containing the details of the published content item related to the request to the relevant template/view. 
+This example shows the default behaviour that Umbraco's core RenderMvcController provides. The 'Index' action of the controller is executed, and the CurrentTemplate helper sends the model containing the details of the published content item related to the request to the relevant template/view. 
 
 ## Routing via template
 
