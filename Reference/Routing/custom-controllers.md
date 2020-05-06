@@ -81,7 +81,7 @@ The page in Umbraco will have a single 'template' selected as it's default templ
 
 `/products/superfancyproduct/?altTemplate=ProductAmpPage`
 
-would request the Super Fancy Product page but force it to be loaded with the ProductAmpPage template, this can be simplified further:
+This would request the 'Super Fancy Product' page but force it to be loaded with the 'ProductAmpPage template'. This can be simplified further:
 
 `/products/superfancyproduct/ProductAmpPage/`
 
