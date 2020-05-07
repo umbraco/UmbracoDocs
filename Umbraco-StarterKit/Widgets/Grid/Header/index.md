@@ -4,13 +4,13 @@ versionFrom: 8.0.0
 
 # Header
 
-The Header is a feature that lets you make a header element in your grid, a header element works as a title for the page or in this case a title for the elements you choose to ad under it in the grid.
+The Header is a feature that lets you make a header element in your grid, a header element works as a title for the page, in this case a title for the elements you choose to ad under it in the grid.
 
 Here you can see what the Header could look like on the front end:
 
 ![Quote image](images/Header-Frontend.png)
 
-Here you can see what the Header could look like in the back office:
+Here you can see what the Header could look like in the backoffice:
 
 ![Price List](images/Header-Backoffice.png)
 
