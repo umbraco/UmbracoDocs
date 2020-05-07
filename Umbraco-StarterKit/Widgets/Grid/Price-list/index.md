@@ -1,3 +1,7 @@
+---
+versionFrom: 8.0.0
+---
+
 # Price List
 
 The Price List, lets you create a list of items with a title, description, and price of the items. 
