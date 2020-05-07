@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Latest from feed
 
-![movePage.jpg](images/The-Latest-Form-Feed-Widget1.png)
+![Latest from Feed widget icon](images/The-Latest-Form-Feed-Widget1.png)
 
 The Latest From Feed Widget, is used to show posts from a ***Feed*** that you already have on your website. ***Feed*** here referring to the ***Feed*** content type.
 

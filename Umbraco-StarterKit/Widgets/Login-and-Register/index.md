@@ -4,7 +4,11 @@ versionFrom: 8.0.0
 
 # Login and Register
 
-![movePage.jpg](images/The-Register-Widget.png)
+Umbraco Uno offers a couple of widgets to setup member registration and access. This articles presents an overview of the two widgets, Register and Login. To learn more about how to setup and restrict member access on an Umbraco Uno website, read the [Members](link) article.
+
+## Register
+
+![Register widget icon](images/The-Register-Widget.png)
 
 This widget lets you create an element on your page, where people can register for an account on your website.
 They will register by filling out the fields, which are Name, Email, and Password, and finalizing by pressing the Register button. After doing that they will get a message saying that their sign up was successful.
@@ -22,11 +26,11 @@ The setup options for this widget are as follows:
 - Success Message Text (This is the message that displays after a member has successfully been created)
 
 Here you see an example of how a Register Widget could look on the front-end.
-![movePage.jpg](images/Regiseter-element.png)
+![Example of a Register form on the frontend](images/Regiseter-element.png)
 
-LOGIN
+## Login
 
-![movePage.jpg](images/The-Login-Widget.png)
+![Login widget icon](images/The-Login-Widget.png)
 
 The Login Widget allows the member that was created, using The Register Widget to login to their account.
 
@@ -42,4 +46,10 @@ The setup options for this widget are as follows:
 - Redirect URL (This is where you decide where the members are redirected to after they log in)
 
 Below you can see what the widget could look like at the front-end.
-![movePage.jpg](images/login-prompt.png)
+![Frontend example of a Login form](images/login-prompt.png)
+
+:::note
+When the Login widget is added to a page, whenever that page is loaded it will default to show the login form.
+
+This means that even if the Login widget is added as the bottom widget on a page, the frontend will be automatically be *scrolled* down to show the login form as the first thing.
+:::

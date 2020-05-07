@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Image (single)
 
-![movePage.jpg](images/The-Image-Widget.png)
+![Image widget icon](images/The-Image-Widget.png)
 
 This Widget allows you to add an image to your site, select the size of the image, Caption The image and select the background and text color.
 

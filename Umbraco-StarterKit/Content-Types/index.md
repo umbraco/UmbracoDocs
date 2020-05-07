@@ -14,7 +14,9 @@ The Site Content Type is the frontpage of your website, and it is build using wi
 
 [Learn more about how to configure the frontpage on your website.](Site-Start)
 
-## Page
+## [Page](Page)
+
+The Page content type is the default type for creating landingpages.
 
 ## [Feed](Feed)
 
@@ -40,7 +42,13 @@ It's possible to [configure SEO](../Settings/Specific-Settings/#seo) for the Sea
 
 ## Sitemap
 
-Short explanation of the what the sitemap does.
+The Sitemap content type can only be added a subpage under the root page in the Content tree. An item based on this content type is part of the starter/default content, which means it will rarely be necessary to create a new instance of this.
+
+A sitemap is primarily used to further the SEO of websites. It will contain a list of all content and media items on the websites, while also giving search engines details about what type of content each item contains and the relation between them.
+
+All content added to the website will by default be added to the sitemap as well. This can be configured for each individual content item, by using three options in the SEO group: *Hide in Sitemap*, *Sitemap Page Priority* and *Sitemap Page Change Frequently*.
+
+A sitemap content item will be excluded from the default navigation menu.
 
 ## Settings
 

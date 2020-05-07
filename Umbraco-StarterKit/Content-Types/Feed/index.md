@@ -49,7 +49,7 @@ Both of these fields are optional and will be shown before the actual content of
 
 This field is where the main contents of the post needs to go. The Text field uses a Rich Text Editor, which enables the use of images, links, lists and other text formatting options.
 
-There is also a set of already defined formats for headers, quotes and other text elements. These are explained in more detail in the [Rich Text Editor]() article.
+There is also a set of already defined formats for headers, quotes and other text elements. These are explained in more detail in the [Rich Text Editor](link) article.
 
 ### Meta
 

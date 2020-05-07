@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Global Content
 
-![movePage.jpg](images/The-Global-Content-Widget.png)
+![Global Content widget icon](images/The-Global-Content-Widget.png)
 
 What this widget does for you, is that it allows you to pick pre-made widgets, also called Global Content.
 
@@ -22,4 +22,4 @@ This is a very useful tool if you have a widget that you use a lot and want to l
 
 See below an example, of what it might look like. In this example, there is a Hero Widget which have been created as Global Content and can therefore by selected with The Global Content Widget.
 
-![movePage.jpg](images/hero-standard.png)
+![Configuration options for the Global Content widget](images/hero-standard.png)
