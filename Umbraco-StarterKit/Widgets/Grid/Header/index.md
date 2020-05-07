@@ -17,7 +17,7 @@ Here you can see what the Header could look like in the backoffice:
 For the header you have the following options:
 
 - Column Width (This is mandatory because it decides how large the column containing the header is)
-- Center Content (Flipping this switch on or of decided whether your content is centered in the column or not)
+- Center Content (Decide whether your content is centered in the column or not)
 - Pre Heading (This option lets you make a text above the main heading)
 - Heading (This is the main heading)
 - Text (This option let you create a text field under your heading)
