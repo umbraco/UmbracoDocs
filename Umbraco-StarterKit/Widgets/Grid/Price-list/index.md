@@ -1,12 +1,13 @@
 # Price List
 
-The Price List, lets you create a list of items with a title, description, and price of the items. The way it works is that you click the add content button next to items and then fill out all the fields, and then you will have the items for your price list.
+The Price List, lets you create a list of items with a title, description, and price of the items. 
+The way it works is that you click the add content button next to items, then fill out all the fields, and then you will have the items for your price list.
 
-Here you can see what the frontend could look like.
+Here you can see what the front end could look like.
 
 ![Price List](images/Price-List.png) ![Price List](images/Price-List-frontend2.png)
 
-Here you can see what it could look like in the backend.
+Here you can see what it could look like in the backoffice.
 
 ![Price List](images/Price-List-backoffice.png)
 
