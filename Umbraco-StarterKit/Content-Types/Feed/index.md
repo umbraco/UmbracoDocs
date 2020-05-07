@@ -57,4 +57,8 @@ The Meta group presents a few options for adding meta data to the post.
 
 This includes setting a publish date for the post. If a date is not defined it will default to 01-01-0001. The date will be below the post Heading on the post itself and when feed is listed on the frontend.
 
+:::note
+When using "Scheduled Publishing" on posts, the *Date* field will **not** update automatically, and will still need to be manually set to the correct date.
+:::
+
 Also in this group if an *Image* field and *Description* field. Whichever is added to these two fields, will be used to present the post when the feed is listed on the frontend.
