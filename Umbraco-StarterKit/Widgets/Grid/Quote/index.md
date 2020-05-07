@@ -10,7 +10,7 @@ Here you can see what the quote could look like on the front end:
 
 ![Quote image](images/Quote-frontend1.png)
 
-Here you can see what the quote could look like in the back office:
+Here you can see what the quote could look like in the backoffice:
 
 ![Price List](images/Quote-Backoffice.png)
 
