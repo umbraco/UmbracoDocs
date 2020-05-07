@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Quote
 
-Quote, lets you add a quote that you like and places it in "", and lets you add the author of the quote and their title as well as an image of the author.
+Quote, lets you add a piece of text that will then be placed between `""`.  You can add the author of the quote and their title as well as an image of the author.
 
 Here you can see what the quote could look like on the front end:
 
