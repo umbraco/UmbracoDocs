@@ -13,7 +13,7 @@ Here you can see what the front end could look like.
 
 Here you can see what it could look like in the backoffice.
 
-![Price List](images/Price-List-backoffice.png)
+![Price List](images/Price-List-Backoffice.png)
 
 The options of the Price List is as follows:
 
