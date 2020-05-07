@@ -1,0 +1,38 @@
+---
+versionFrom: 8.0.0
+---
+
+# Button
+
+The button lets you as the name implies, create buttons, The way the buttons work is that you choose an alignment for the button and then pick how you want it to look and then link the button to something on your website.
+
+
+Here you can see what the Button could look like on the front end:
+
+![Quote image](images/Button-Frontend.png)
+
+Here you can see what the Button could look like in the back office:
+
+![Price List](images/Button-Backoffice.png)
+
+![Price List](images/Button-Options-Backoffice.png)
+
+The options for Button is as follows:
+
+- Column Width (This is mandatory because it decides how large the column containing the Price list is)
+
+- Align content (This lets you choose if the button should be left, center or right aligned in the column)
+
+- Buttons (This is where you create your buttons by setting up the options as you want them)
+
+The options in Buttons are:
+
+- Text (This lets you add the text you want to your button)
+
+- Link (What the button should link to)
+
+- Color (What color you want your button to be)
+
+- Transparent (If you switch this on your button will be transparent)
+
+- Button Size (This lets you decide how big you want your button)
