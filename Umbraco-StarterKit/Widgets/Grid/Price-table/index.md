@@ -4,13 +4,13 @@ versionFrom: 8.0.0
 
 # Price Table
 
-The Price Table is a great tool for when you want to list multiple products and compare them, for example, different tiers of plans, the price table lets you outline the price and what features each tier contains.
+The Price Table, is a great tool for when you want to list multiple products and compare them, for example, different tiers of plans. The Price Table lets you outline the price and what features each tier contains.
 
 Here you can see what it could look like on the front end.
 
 ![Price Table](images/Price-Table-frontend1.png) ![Price Table](images/Price-Table-frontend2.png)
 
-Here you can see what it could look like in the back office
+Here you can see what it could look like in the backoffice
 
 ![Price Table](images/Price-Table-backoffice.png)
 
