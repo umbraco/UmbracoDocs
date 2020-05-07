@@ -14,7 +14,7 @@ Here you can see what the Line Break could look like in the backoffice:
 
 ![Price List](images/Line-Breaker-Backoffice.png)
 
-The options for the Line Breaker is as follows:
+The options for the Line Break is as follows:
 
 - Draw Line (This will add a line that will separate the column above from the column below)
 
