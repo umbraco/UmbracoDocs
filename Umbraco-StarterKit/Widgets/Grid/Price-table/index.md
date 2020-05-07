@@ -20,7 +20,7 @@ The options for Price Table is as follows:
 
 - Boxed Column (This switch adds a box around the entire Price Table columns width)
 
-- Center Content (Flipping this switch on or of decided whether your content is centered in the column or not)
+- Center Content (Decide whether your content is centered in the column or not)
 
 - Image (This lets you add an image)
 
