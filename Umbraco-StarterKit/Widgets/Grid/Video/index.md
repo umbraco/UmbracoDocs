@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Video
 
-If you want a video on your site this is one way to go about it, this lets you upload an MP4 file, with various options such as autoplay or loop.
+If you want a video on your site this is one way to go about it. This lets you upload an MP4 file, with various options such as autoplay or loop.
 
 Here you can see what the Video could look like on the front end:
 
