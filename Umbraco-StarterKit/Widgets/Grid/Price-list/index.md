@@ -9,11 +9,11 @@ The way it works is that you click the add content button next to items, then fi
 
 Here you can see what the front end could look like.
 
-![Price List](images/Price-List.png) ![Price List](images/Price-List-frontend2.png)
+![Price List Frontend](images/Price-List.png) ![Price List](images/Price-List-frontend2.png)
 
 Here you can see what it could look like in the backoffice.
 
-![Price List](images/Price-List-Backoffice.png)
+![Price List Backoffice](images/Price-List-Backoffice.png)
 
 The options of the Price List is as follows:
 

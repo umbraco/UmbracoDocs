@@ -8,11 +8,11 @@ The Header is a feature that lets you make a header element in your grid. A head
 
 Here you can see what the Header could look like on the front end:
 
-![Quote image](images/Header-Frontend.png)
+![Header Frontend](images/Header-Frontend.png)
 
 Here you can see what the Header could look like in the backoffice:
 
-![Price List](images/Header-Backoffice.png)
+![Header Backoffice](images/Header-Backoffice.png)
 
 For the header you have the following options:
 

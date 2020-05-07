@@ -8,11 +8,11 @@ Text adds a text field to your Grid. It contains a rich text editor and is very 
 
 Here you can see what the Text could look like on the front end:
 
-![Quote image](images/Text-Frontend.png)
+![Text Frontend](images/Text-Frontend.png)
 
 Here you can see what the Text could look like in the backoffice:
 
-![Price List](images/Text-Backoffice.png)
+![Text Backoffice](images/Text-Backoffice.png)
 
 The options for Text is as follows:
 

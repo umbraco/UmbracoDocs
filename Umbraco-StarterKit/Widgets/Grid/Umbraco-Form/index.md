@@ -8,11 +8,11 @@ If you want to add a form to your Grid this is the way to go about it. It is imp
 
 Here you can see what the Umbraco Form could look like on the front end:
 
-![Quote image](images/Umbraco-Forms-frontend.png)
+![Umbraco Forms Frontend](images/Umbraco-Forms-frontend.png)
 
 Here you can see what the Umbraco Form could look like in the backoffice:
 
-![Price List](images/Umbraco-Form-backoffice.png)
+![Umbraco Forms Backoffice](images/Umbraco-Form-backoffice.png)
 
 The options for Umbraco Forms are as follows:
 

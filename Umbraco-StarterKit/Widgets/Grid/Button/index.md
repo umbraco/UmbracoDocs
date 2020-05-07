@@ -10,13 +10,13 @@ Then pick how you want it to look, then you link the button to something on your
 
 Here you can see what the Button could look like on the front end:
 
-![Quote image](images/Button-Frontend.png)
+![Button Frontend](images/Button-Frontend.png)
 
 Here you can see what the Button could look like in the backoffice:
 
-![Price List](images/Button-Backoffice.png)
+![Button Backoffice](images/Button-Backoffice.png)
 
-![Price List](images/Button-Options-Backoffice.png)
+![Button Options Backoffice](images/Button-Options-Backoffice.png)
 
 The options for Button is as follows:
 

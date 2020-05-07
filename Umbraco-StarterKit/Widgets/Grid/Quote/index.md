@@ -8,11 +8,11 @@ Quote, lets you add a piece of text that will then be placed between `""`.  You 
 
 Here you can see what the quote could look like on the front end:
 
-![Quote image](images/Quote-frontend1.png)
+![Quote Frontend](images/Quote-frontend1.png)
 
 Here you can see what the quote could look like in the backoffice:
 
-![Price List](images/Quote-Backoffice.png)
+![Quote Backoffice](images/Quote-Backoffice.png)
 
 The options you have for Quote is as follows:
 

@@ -8,11 +8,11 @@ The Line Break is a very useful tool, that allows you to create a space between 
 
 Here you can see what the Line Break could look like on the front end:
 
-![Quote image](images/Line-Breaker-Frontend.png)
+![Line Break Frontend](images/Line-Breaker-Frontend.png)
 
 Here you can see what the Line Break could look like in the backoffice:
 
-![Price List](images/Line-Breaker-Backoffice.png)
+![Line Break Backoffice](images/Line-Breaker-Backoffice.png)
 
 The options for the Line Break is as follows:
 

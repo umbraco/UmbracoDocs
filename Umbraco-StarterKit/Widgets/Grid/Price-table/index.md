@@ -8,11 +8,11 @@ The Price Table is a great tool for when you want to list multiple products and 
 
 Here you can see what it could look like on the front end.
 
-![Price Table](images/Price-Table-frontend1.png) ![Price Table](images/Price-Table-frontend2.png)
+![Price Table Frontend](images/Price-Table-Frontend.png)
 
 Here you can see what it could look like in the backoffice
 
-![Price Table](images/Price-Table-backoffice.png)
+![Price Table Backoffice](images/Price-Table-backoffice.png)
 
 The options for Price Table is as follows:
 
