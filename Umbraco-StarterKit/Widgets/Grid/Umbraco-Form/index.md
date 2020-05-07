@@ -10,7 +10,7 @@ Here you can see what the Umbraco Form could look like on the front end:
 
 ![Quote image](images/Umbraco-Forms-frontend.png)
 
-Here you can see what the Umbraco Form could look like in the back office:
+Here you can see what the Umbraco Form could look like in the backoffice:
 
 ![Price List](images/Umbraco-Form-backoffice.png)
 
