@@ -10,7 +10,7 @@ Here you can see what the Line Break could look like on the front end:
 
 ![Quote image](images/Line-Breaker-Frontend.png)
 
-Here you can see what the Line Breaker could look like in the backoffice:
+Here you can see what the Line Break could look like in the backoffice:
 
 ![Price List](images/Line-Breaker-Backoffice.png)
 
