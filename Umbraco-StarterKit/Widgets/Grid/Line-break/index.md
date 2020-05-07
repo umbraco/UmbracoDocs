@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Line Break
 
-The Line Breaker is a very useful tool, that allows you to create a space between your columns by making the next column on the next row.
+The Line Break is a very useful tool, that allows you to create a space between your columns and to ensure that the next column starts in a new row.
 
 Here you can see what the Line Breaker could look like on the front end:
 
