@@ -16,7 +16,7 @@ Here you can see what it could look like in the backoffice
 
 The options for Price Table is as follows:
 
-- Column Width (This decides how large the column containing the Umbraco Forms is)
+- Column Width (This decides how large the column containing the Price Table is)
 
 - Boxed Column (This switch adds a box around the entire Price Table columns width)
 
