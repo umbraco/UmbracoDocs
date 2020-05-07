@@ -22,4 +22,5 @@ This widget contains these customization options:
 - Animate
 
 This is to show how a Newsletter Widget could look:
-![movePage.jpg](images/news-letter-signup.png)
+
+![Frontend example of the Newletter widget form on a background using an image](images/news-letter-signup.png)

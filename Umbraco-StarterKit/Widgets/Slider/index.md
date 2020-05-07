@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Slider
 
-![movePage.jpg](images/The-Slider-Widget.png)
+![Slider widget icon](images/The-Slider-Widget.png)
 
 The Slider Widget allows you to pick 1 or more widgets to display in a slideshow.
 
@@ -19,8 +19,8 @@ You will have a set of different configuration option in order to customize the 
 
 Below is an example of how a slider could look. It contains an ***Image Widget***, uses ***Show Next/prev arrows*** and ***Show Page Dots***. It has a black ***Background Color*** picked in the ***Image Widget***.
 
-![movePage.jpg](images/Slider-example.png)
+![Frontend example of a slider with 2 pages, and both page dots and arrows enabled](images/Slider-example.png)
 
-::: Note
+:::note
 For the best experience with the Slider Widget, we recommend adding multiple ***Image Widgets*** containing one image each.
 :::

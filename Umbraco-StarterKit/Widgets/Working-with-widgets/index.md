@@ -12,6 +12,7 @@ Being the main way to add content to pages, widgets are available on the followi
 * Page
 * Feed
 * Global Content
+* Search
 
 Contents of this article:
 

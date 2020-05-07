@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Logos
 
-![movePage.jpg](images/The-Logos-Widget.png)
+![Logos widget icon](images/The-Logos-Widget.png)
 
 The Logos Widget does what the name implies, and lets you add a set of logos to your website.
 You can choose what images you will use for logos, and what pages they need to link to and/or you can add text to it.
@@ -32,4 +32,4 @@ Part two is for adding logo and settings for these. For each logo you want to ad
 
 Below you can see an example that uses the back and white feature, and has two logos.
 
-![movePage.jpg](images/Logos.png)
+![Frontend example of the Logos widget with 2 widgets added in black and white on a dark background](images/Logos.png)

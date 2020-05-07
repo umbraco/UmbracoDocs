@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Map (Google)
 
-![movePage.jpg](images/The-Map-Widget1.png)
+![Map widget icon](images/The-Map-Widget1.png)
 
 The Map Widget is a feature that lets you use Google Maps to show the location of your choice, this could be if you need to show where your company is located.
 
@@ -28,6 +28,6 @@ You will have some settings to set the Map widget up as you want it:
 
 Below you can see an example of a Map widget with the ***Show Content Next To Map*** Enabled:
 
-![movePage.jpg](images/Map.png)
+![Frontend example of the Map widget with default details added to info fields](images/Map.png)
 
 When ***Show Content Next To Map*** is disabled the blue section on the left will not appear and the map will take up all the space.
