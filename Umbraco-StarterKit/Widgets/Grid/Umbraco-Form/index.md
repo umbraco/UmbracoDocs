@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Umbraco Forms
 
-If you want to add a form to your Grid this is the way to go about it, however, it is important to note that the form will have to be created in the forms section you find this in the menu at the top of the site.
+If you want to add a form to your Grid this is the way to go about it. It is important to note that the form will have to be created in the Forms section, which you can find in the menu at the top of the site.
 
 Here you can see what the Umbraco Form could look like on the front end:
 
