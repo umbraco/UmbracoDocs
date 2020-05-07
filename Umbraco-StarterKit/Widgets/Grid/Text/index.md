@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Text
 
-Text adds a text field to your Grid, it contains a rich text editor and is very useful if you need a text area in your Grid.
+Text adds a text field to your Grid. It contains a rich text editor and is very useful if you need a text area in your Grid.
 
 Here you can see what the Text could look like on the front end:
 
