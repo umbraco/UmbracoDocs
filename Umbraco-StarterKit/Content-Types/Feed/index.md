@@ -35,4 +35,20 @@ The Post content type provides the following groups of options:
 
 ### Content
 
+When creating a new post, the first thing that needs to be filled in is the fields in the Content group. The fields in the group make out the entire blogpost or news item.
+
+#### Pre Heading and Heading
+
+While the *Pre Heading* is optional, the *Heading* is mandatory. The Heading will be the title shown along with the post whenever the feed is listed on the frontend.
+
+#### Intro Text and Image
+
+Both of these fields are optional and will be shown before the actual content of the post. The image will be shown in full-width.
+
+#### Text
+
+This field is where the main contents of the post needs to go. The Text field uses a Rich Text Editor, which enables the use of images, links, lists and other text formatting options.
+
+There is also a set of already defined formats for headers, quotes and other text elements. These are explained in more detail in the [Rich Text Editor]() article.
+
 ### Meta
