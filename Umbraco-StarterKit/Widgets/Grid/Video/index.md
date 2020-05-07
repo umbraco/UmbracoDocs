@@ -10,7 +10,7 @@ Here you can see what the Video could look like on the front end:
 
 ![Quote image](images/Video-Frontend.png)
 
-Here you can see what the Video could look like in the back office:
+Here you can see what the Video could look like in the backoffice:
 
 ![Price List](images/Video-Backoffice.png)
 
