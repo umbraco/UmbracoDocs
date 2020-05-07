@@ -14,7 +14,7 @@ Here you can see what the Umbraco Form could look like in the backoffice:
 
 ![Price List](images/Umbraco-Form-backoffice.png)
 
-the options for Umbraco Forms are as follows:
+The options for Umbraco Forms are as follows:
 
 - Column Width (This is mandatory because it decides how large the column containing the Umbraco Forms is)
 
