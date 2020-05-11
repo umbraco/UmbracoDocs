@@ -20,7 +20,26 @@ This article provides an overview of the various formatting and styling options 
 
 ## Formats
 
+Each Rich Text Editor in Umbraco Uno provides a set of pre-defined text formats. These can be accesed by selecting the "Formats" dropdown in the Rich Text Editor toolbar.
 
+![List of formatting options in the Rich Text Editor](images/RTE-formatoptions.png)
+
+The pre-defined formats include 6 different heading sizes, specific styling for quote elements and for big text.
+
+When adding images through the Rich Text Editor, the image will by default be added on a new line. Use the *Image Left* or *Image Right* format options to place image in the same line as the text.
+
+### Adding formatting
+
+Applying a pre-defined format to a piece of text can be achieved in one of two ways:
+
+* Select/highlight a piece of text (or place the cursor on the text) that has already been added and choose the wanted format from the dropdown list, or
+* Select the wanted format from the dropdown list and then start adding the text.
+
+### Clear formatting
+
+In some cases it might become necessary to remove the formatting that has been added to a line or section of text. This can be done by using the *Clear formatting* option which is to the left of the "Formats" dropdown in the Rich Text Editor toolbar.
+
+* Select/highlight the text where the formatting needs to be cleared (or place the cursor )
 
 ## Font styles
 
