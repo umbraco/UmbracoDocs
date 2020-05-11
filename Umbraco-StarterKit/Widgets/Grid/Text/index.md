@@ -14,7 +14,7 @@ Here you can see what the Text could look like in the backoffice:
 
 ![Text Backoffice](images/Text-Backoffice.png)
 
-The options for Text is as follows:
+The options for Text are as follows:
 
 - Column Width (This is mandatory because it decides how large the column containing Text is)
 

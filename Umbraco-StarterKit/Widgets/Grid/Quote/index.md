@@ -14,7 +14,7 @@ Here you can see what the quote could look like in the backoffice:
 
 ![Quote Backoffice](images/Quote-Backoffice.png)
 
-The options you have for Quote is as follows:
+The options you have for Quote are as follows:
 
 - Column Width (This is mandatory because it decides how large the column containing Quote is)
 

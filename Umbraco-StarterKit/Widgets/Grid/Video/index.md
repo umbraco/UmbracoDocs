@@ -14,7 +14,7 @@ Here you can see what the Video could look like in the backoffice:
 
 ![Video Backoffice](images/Video-Backoffice.png)
 
-The options for Video is as follows:
+The options for Video are as follows:
 
 - Column Width (This is mandatory because it decides how large the column containing the Video is)
 

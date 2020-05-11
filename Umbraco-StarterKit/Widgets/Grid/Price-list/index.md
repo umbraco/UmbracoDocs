@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Price List
 
-The Price List lets you create a list of items with a title, description, and price of the items. 
+The Price List lets you create a list of items with a title, description, and price of the items.
 The way it works is that you click the add content button next to items, then fill out all the fields, and then you will have the items for your price list.
 
 Here you can see what the front end could look like.
@@ -15,7 +15,7 @@ Here you can see what it could look like in the backoffice.
 
 ![Price List Backoffice](images/Price-List-Backoffice.png)
 
-The options of the Price List is as follows:
+The options of the Price List are as follows:
 
 - Column Width (This is mandatory because it decides how large the column containing the Price list is)
 

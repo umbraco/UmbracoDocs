@@ -14,7 +14,7 @@ Here you can see what it could look like in the backoffice
 
 ![Price Table Backoffice](images/Price-Table-backoffice.png)
 
-The options for Price Table is as follows:
+The options for Price Table are as follows:
 
 - Column Width (This decides how large the column containing the Price Table is)
 
