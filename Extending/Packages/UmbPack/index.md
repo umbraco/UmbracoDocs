@@ -59,15 +59,77 @@ In this example I wanted to pack up the ~App_Plugins/CustomPackage folder inside
 umbpack pack C:\Umbraco\Customers\test\package.xml
 ```
 
-In this example you can imagine I keep a package.xml file outside of the project folders, inside the `src` folder of a Visual Studio solution. The benefit here is that it would not actually be part of the website, but could still be source controlled. Additionally this is a better approach if you want your package to include files outside of a specific folder. For example if you want to include both:
+In this example you can imagine I keep a package.xml file outside of the project folders, inside the `src` folder of a Visual Studio solution. The benefit here is that it would not be part of the website, but could still be source controlled. Additionally this is a better approach if you want your package to include files outside of a specific folder. 
+
+Let's say you have a solution that looks like this:
+
+![Solution setup](images/solutionfiles.png)
+
+So there is a .Web project and a .Core project. We have a controller in the .Core project that gets built into a dll in the .Web project, so the package files we would want to include are in the .Web project:
 
 ```
-~/App_Plugins/Custompackage
-~/bin/CustomPackage.dll
-``` 
+~/App_Plugins/CustomPackage
+~/bin/UmbPackTest.Core.dll
+```
 
-The package.xml file at the root can be used for both of them by adding some extra xml that is outside of the regular schema but that the tool can handle.
+In that case you can add a bit of special xml to the package.xml file that the UmbPack tool can recognize to include it all in the package files:
 
-TODO explain the file and folder schema
+```xml
+<files>
+    <folder path="UmbPackTest.Web/App_Plugins/CustomPackage" orgPath="App_Plugins/CustomPackage" /> 
+    <file path="UmbPackTest.Web/bin/UmbPackTest.Core.dll" orgPath="bin/UmbPackTest.Core.dll" />
+</files>
+```
+
+:::note
+orgPath is where it will try to install the package files to. So when doing this from outside the website root you should edit the orgPath to be from the root of a new site
+:::
+
+So we can specify a folder and a file (or add additional xml elements for additional files), when you then run the command targetting a package.xml file in the root of the solution:
+
+![UmbPack pack command](images/umbpackpack.png)
+
+You will have a zipped version of the package in the location you ran the tool (otherwise you can specify an output location `-o`). And it will have rewritten the file info to be valid package file info:
+
+```xml
+<files>
+    <file>
+        <guid>UmbPackTest.Core.dll</guid>
+        <orgPath>/bin</orgPath>
+        <orgName>UmbPackTest.Core.dll</orgName>
+    </file>
+    <file>
+        <guid>custompackage.controller.js</guid>
+        <orgPath>/App_Plugins/CustomPackage</orgPath>
+        <orgName>custompackage.controller.js</orgName>
+    </file>
+    <file>
+        <guid>CustomPackage.html</guid>
+        <orgPath>/App_Plugins/CustomPackage</orgPath>
+        <orgName>CustomPackage.html</orgName>
+    </file>
+    <file>
+        <guid>package.manifest</guid>
+        <orgPath>/App_Plugins/CustomPackage</orgPath>
+        <orgName>package.manifest</orgName>
+    </file>
+</files>
+```
+
+### Pack options
+
+The pack command has a few options, as described above the mandatory value is a path to a package.xml file or a folder containing a package.xml file. There are 2 other configurations you can set on the pack command as well though:
+
+`-o` - specifies an output folder. It defaults to the current folder, but you could do something like:
+
+```
+umbpack pack .\package.xml -o ../MyCustomPackageVersions
+```
+
+-v - specifies a version for the package. When packing a package it will name it as {packagename}_{version}.zip. By default it will take the version from the package.xml, but if running in CI/CD for example you may not want to update this value all the time, so you can overwrite it using:
+
+```
+umbpack pack .\package.xml -v 1.9.9
+```
 
 ## The push command
