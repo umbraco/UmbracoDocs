@@ -63,9 +63,9 @@ Along with plain text, a few other elements can be added to content throught the
 
 ## Shortcuts / key-bindings / Easy access
 
-As with many other text editors, it's possible to use general keyboard short-cuts when editing text through the Rich Text Editors.
+As with many other text editors, it's possible to use general keyboard shortcuts when editing text through the Rich Text Editors.
 
-Here's a few examples of the short-cuts available in Umbraco Uno:
+Here's a few examples of the shortcuts available in Umbraco Uno:
 
 * Ctrl+b to toggle **bold**
 * Ctrl+i to toggle *italics*
