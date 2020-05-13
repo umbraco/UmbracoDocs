@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Slider
 
-The slider slides through your selected content, it can be very visually pleasing to have it go through images.
+The slider slides through your selected content. It can be very visually pleasing to have it go through images.
 
 ## Sample
 
