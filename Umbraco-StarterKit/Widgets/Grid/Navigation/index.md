@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Navigation
 
-Navigation is a tool that allows you to create a menu, that links to your other pages, you can create a header for the navigation menu, followed by a list of links.
+Navigation is a tool that allows you to create a menu, that links to your other pages. You can create a header for the navigation menu, followed by a list of links.
 
 ## Sample
 
