@@ -5,7 +5,7 @@ versionFrom: 8.0.0
 # Card
 
 This feature will let you create a card on your page, this card could be a business card, it could also function as a presentation of an employee or a product.
-Please note that you will have to either choose between having a button or a link, as the link makes the entire card a "button" of sorts.
+Please note that you will have to choose between either having a button on the card or use the link option, which makes the entire card a "button".
 
 ## Sample
 

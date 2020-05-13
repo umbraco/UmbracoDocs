@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Sub-grid
 
-The Sub-grid, adds another grid within the original grid, you have the same options in a Sub-grid as you have in the regular grid.
+The Sub-grid, adds another grid within the original grid. You have the same options in a Sub-grid as you have in the regular grid.
 
 ## Sample
 

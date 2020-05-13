@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Image
 
-This will allow you to add an image to your grid, this image will have the option to have a link and a caption added to it.
+This will allow you to add an image to your grid. It's possible to add a link and a caption to the image.
 
 ## Sample
 
