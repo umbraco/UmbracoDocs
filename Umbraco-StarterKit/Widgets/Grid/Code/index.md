@@ -10,12 +10,10 @@ This allows you to add code to your grid, in such a way that the code that you a
 
 ![Code Frontend](images/Code-frontend.png)
 
-The options for Code are as follows:
+## Configuration options
 
 - Column Width
 - Alias
 - Code
-
-## Configuration options
 
 ![Code Backoffice](images/Code-backoffice.png)

@@ -11,7 +11,7 @@ The way it works is that you click the add content button next to items, then fi
 
 ![Price List Frontend](images/Price-List.png) ![Price List](images/Price-List-frontend2.png)
 
-The options of the Price List is as follows:
+## Configuration options
 
 - Column Width (This is mandatory because it decides how large the column containing the Price list is)
 
@@ -20,7 +20,5 @@ The options of the Price List is as follows:
 - Boxed Column (This switch adds a box around the entire Price List columns width)
 
 - Items (This is where you create the items in your Price List)
-
-## Configuration options
 
 ![Price List Backoffice](images/Price-List-Backoffice.png)

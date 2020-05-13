@@ -10,7 +10,7 @@ If you want a video on your site this is one way to go about it. This lets you u
 
 ![Video Frontend](images/Video-Frontend.png)
 
-The options for Video is as follows:
+## Configuration options
 
 - Column Width (This is mandatory because it decides how large the column containing the Video is)
 
@@ -27,7 +27,5 @@ The options for Video is as follows:
 - Poster (This is an image that is shown until the video is loaded or the user press play if there is no poster selected this will display the first frame of the video)
 
 - Video Shadow (If turned on This will create a shadow under the video frame)
-
-## Configurations options
 
 ![Video Backoffice](images/Video-Backoffice.png)

@@ -11,7 +11,7 @@ Please note that you will have to either choose between having a button or a lin
 
 ![Card Frontend](images/Card-frontend.png)
 
-You have the following options:
+## Configuration options
 
 - Column Width
 - Heading
@@ -25,7 +25,5 @@ You have the following options:
 - Overlay Strength
 - Buttons
 - Link
-
-## Configuration options
 
 ![Card Backoffice part 1 ](images/Card-backoffice1.png)![Card Backoffice part 2 ](images/Card-backoffice2.png)

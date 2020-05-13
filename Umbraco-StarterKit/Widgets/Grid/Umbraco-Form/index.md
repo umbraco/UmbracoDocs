@@ -10,14 +10,12 @@ If you want to add a form to your Grid this is the way to go about it. It is imp
 
 ![Umbraco Forms Frontend](images/Umbraco-Forms-frontend.png)
 
-The options for Umbraco Forms are as follows:
+## Configuration options
 
 - Column Width (This is mandatory because it decides how large the column containing the Umbraco Forms is)
 
 - Form (This is where you add the form that you have created in the form section)
 
 - Boxed Column (This switch adds a box around the entire Umbraco Forms columns width)
-
-## Configuration options
 
 ![Umbraco Forms Backoffice](images/Umbraco-Form-backoffice.png)

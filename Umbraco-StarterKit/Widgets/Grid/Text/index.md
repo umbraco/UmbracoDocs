@@ -10,7 +10,7 @@ Text adds a text field to your Grid. It contains a rich text editor and is very 
 
 ![Text Frontend](images/Text-Frontend.png)
 
-The options for Text is as follows:
+## Configuration options
 
 - Column Width (This is mandatory because it decides how large the column containing Text is)
 
@@ -19,7 +19,5 @@ The options for Text is as follows:
 - Text (This is the text field itself)
 
 - Boxed (This switch adds a box around the entire Text columns width)
-
-## Configuration options
 
 ![Text Backoffice](images/Text-Backoffice.png)

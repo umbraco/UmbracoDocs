@@ -12,7 +12,7 @@ You can also add a link and a background image.
 
 ![Pod Frontend](images/Pod-frontend.png)
 
-The options for Pod are as follows:
+## Configuration options
 
 - Column Width
 - Heading
@@ -24,7 +24,5 @@ The options for Pod are as follows:
 - Pod Media Left - This will allow you to let the image and icon float to the left of your text.
 - Link
 - Button
-
-## Configuration options
 
 ![Pod Backoffice](images/Pod-backoffice1.png)![Pod Backoffice](images/Pod-backoffice2.png)

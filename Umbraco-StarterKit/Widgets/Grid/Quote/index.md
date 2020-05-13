@@ -10,7 +10,7 @@ Quote, lets you add a piece of text that will then be placed between `""`.  You 
 
 ![Quote Frontend](images/Quote-frontend1.png)
 
-The options you have for Quote is as follows:
+## Configuration options
 
 - Column Width (This is mandatory because it decides how large the column containing Quote is)
 
@@ -23,7 +23,5 @@ The options you have for Quote is as follows:
 - Author Title (In this field you can add the title of the author)
 
 - Author Image (This lets you upload an image of the author you are quoting)
-
-## Configuration options
 
 ![Quote Backoffice](images/Quote-Backoffice.png)

@@ -10,13 +10,11 @@ This will allow you to add an image to your grid, this image will have the optio
 
 ![Image Frontend](images/Image-frontend.png)
 
-The options for Image are as follows:
+## Configuration options
 
 - Column Width
 - Image
 - Caption
 - Link
-
-## Configuration options
 
 ![Image Backoffice](images/Image-backoffice.png)

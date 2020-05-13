@@ -10,7 +10,7 @@ This lets you create multiple boxes containing a header and an arrow down, this 
 
 ![Accordion Frontend](images/Accordion-fold.png) ![Accordion unfolded Frontend](images/Accordion-unfolded.png)
 
-You have the following options:
+## Configuration options
 
 - Column Width
 - Boxed Column
@@ -19,7 +19,5 @@ In the separate Accorcions you have the following options:
 
 - Header
 - Text
-
-## Configuration options
 
 ![Accordion Backoffice](images/Accordion-options.png)

@@ -10,7 +10,7 @@ Navigation is a tool that allows you to create a menu, that links to your other 
 
 ![Navigation Frontend](images/Navigation-frontend.png)
 
-The options for Navigation are as follows:
+## Configuration options
 
 - Column Width
 - Heading
@@ -18,7 +18,5 @@ The options for Navigation are as follows:
 - Levels of Children - This will allow you to add links under one of the existing links.
 - Only Render Children -This will make it so that only the child links appear.
 - Boxed Column
-
-## Configuration options
 
 ![Navigation Backoffice](images/Navigation-backoffice.png)

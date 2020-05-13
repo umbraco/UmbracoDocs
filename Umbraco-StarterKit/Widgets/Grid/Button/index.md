@@ -11,7 +11,7 @@ Then pick how you want it to look, then you link the button to something on your
 
 ![Button Frontend](images/Button-Frontend.png)
 
-The options for Button is as follows:
+## Configuration options
 
 - Column Width (This is mandatory because it decides how large the column containing the Price list is)
 
@@ -30,8 +30,6 @@ The options in Buttons are:
 - Transparent (If you switch this on your button will be transparent)
 
 - Button Size (This lets you decide how big you want your button)
-
-## Configuration options
 
 ![Button Backoffice](images/Button-Backoffice.png)
 

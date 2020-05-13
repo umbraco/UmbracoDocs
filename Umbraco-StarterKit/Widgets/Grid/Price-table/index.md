@@ -10,7 +10,7 @@ The Price Table is a great tool for when you want to list multiple products and 
 
 ![Price Table Frontend](images/Price-Table-Frontend.png)
 
-The options for Price Table is as follows:
+## Configuration options
 
 - Column Width (This decides how large the column containing the Price Table is)
 
@@ -29,7 +29,5 @@ The options for Price Table is as follows:
 - Buttons (This lets you add buttons)
 
 - Disclaimer (this lets your write the disclaimer for the product)
-
-## Configuration options
 
 ![Price Table Backoffice](images/Price-Table-backoffice.png)
