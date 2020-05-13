@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Accordion
 
-This lets you create multiple boxes containing a header and an arrow down, this lets you unfold the header such that it includes text. This could be used if you had a subject in the header and then unfold the subject to get further information.
+This lets you create multiple boxes containing a header and an arrow down, which lets you expand the box to reveal more information, usually related to the header. This could be used if you had a subject in the header and then unfold the subject to get further information.
 
 ## Sample
 
