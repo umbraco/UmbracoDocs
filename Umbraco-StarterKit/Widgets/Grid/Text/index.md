@@ -6,15 +6,11 @@ versionFrom: 8.0.0
 
 Text adds a text field to your Grid. It contains a rich text editor and is very useful if you need a text area in your Grid.
 
-Here you can see what the Text could look like on the front end:
+## Sample
 
 ![Text Frontend](images/Text-Frontend.png)
 
-Here you can see what the Text could look like in the backoffice:
-
-![Text Backoffice](images/Text-Backoffice.png)
-
-The options for Text are as follows:
+The options for Text is as follows:
 
 - Column Width (This is mandatory because it decides how large the column containing Text is)
 
@@ -23,3 +19,7 @@ The options for Text are as follows:
 - Text (This is the text field itself)
 
 - Boxed (This switch adds a box around the entire Text columns width)
+
+## Configuration options
+
+![Text Backoffice](images/Text-Backoffice.png)

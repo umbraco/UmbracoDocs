@@ -2,4 +2,26 @@
 versionFrom: 8.0.0
 ---
 
-# The Header
+# Slider
+
+The slider slides through your selected content, it can be very visually pleasing to have it go through images.
+
+## Sample
+
+![Slider Frontend](images/Slider-frontend.png)
+
+The options for Slider are as follows:
+
+- Column Width - The slider is one of the only grid widgets that do dont require you to fill out Column Width.
+- columns - This is where you pick what each slide contains.
+- Show Next/Prev Arrows
+- Show Page Dots
+- Wrap Around
+- Autoplay - it is required to fill this out, 1000 = 1 sec
+- Image
+- Pause Autoplay On Hover - This stops the slider from sliding to the next slide as long as you hover the cursor over the slider.
+- Fade Animation - When this is on your slides will fade into the next one instead of sliding.
+
+## Configuration options
+
+![Slider Backoffice](images/Slider-backoffice1.png)![Slider Backoffice](images/Slider-backoffice2.png)

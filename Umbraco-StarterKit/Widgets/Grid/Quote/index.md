@@ -6,15 +6,11 @@ versionFrom: 8.0.0
 
 Quote, lets you add a piece of text that will then be placed between `""`.  You can add the author of the quote and their title as well as an image of the author.
 
-Here you can see what the quote could look like on the front end:
+## Sample
 
 ![Quote Frontend](images/Quote-frontend1.png)
 
-Here you can see what the quote could look like in the backoffice:
-
-![Quote Backoffice](images/Quote-Backoffice.png)
-
-The options you have for Quote are as follows:
+The options you have for Quote is as follows:
 
 - Column Width (This is mandatory because it decides how large the column containing Quote is)
 
@@ -27,3 +23,7 @@ The options you have for Quote are as follows:
 - Author Title (In this field you can add the title of the author)
 
 - Author Image (This lets you upload an image of the author you are quoting)
+
+## Configuration options
+
+![Quote Backoffice](images/Quote-Backoffice.png)

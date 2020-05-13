@@ -6,13 +6,9 @@ versionFrom: 8.0.0
 
 The Header is a feature that lets you make a header element in your grid. A header element works as a title for the page, in this case a title for the elements you choose to add under it in the grid.
 
-Here you can see what the Header could look like on the front end:
+## Sample
 
 ![Header Frontend](images/Header-Frontend.png)
-
-Here you can see what the Header could look like in the backoffice:
-
-![Header Backoffice](images/Header-Backoffice.png)
 
 For the header you have the following options:
 
@@ -22,3 +18,7 @@ For the header you have the following options:
 - Heading (This is the main heading)
 - Text (This option let you create a text field under your heading)
 - Buttons (This final option let you create buttons)
+
+## Configuration options
+
+![Header Backoffice](images/Header-Backoffice.png)

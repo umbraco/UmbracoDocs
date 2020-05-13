@@ -2,4 +2,24 @@
 versionFrom: 8.0.0
 ---
 
-# The Header
+# Accordion
+
+This lets you create multiple boxes containing a header and an arrow down, this lets you unfold the header such that it includes text. This could be used if you had a subject in the header and then unfold the subject to get further information.
+
+## Sample
+
+![Accordion Frontend](images/Accordion-fold.png) ![Accordion unfolded Frontend](images/Accordion-unfolded.png)
+
+You have the following options:
+
+- Column Width
+- Boxed Column
+
+In the separate Accorcions you have the following options:
+
+- Header
+- Text
+
+## Configuration options
+
+![Accordion Backoffice](images/Accordion-options.png)

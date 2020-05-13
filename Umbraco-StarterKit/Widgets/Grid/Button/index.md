@@ -5,17 +5,11 @@ versionFrom: 8.0.0
 # Button
 
 The button lets you as the name implies, create buttons. The way the buttons work is that you choose an alignment for the button.
-Then pick how you want it to look, and finally link the button to something either on your website or an external site.
+Then pick how you want it to look, then you link the button to something on your website.
 
-Here you can see what the Button could look like on the front end:
+## Sample
 
 ![Button Frontend](images/Button-Frontend.png)
-
-Here you can see what the Button could look like in the backoffice:
-
-![Button Backoffice](images/Button-Backoffice.png)
-
-![Button Options Backoffice](images/Button-Options-Backoffice.png)
 
 The options for Button is as follows:
 
@@ -36,3 +30,9 @@ The options in Buttons are:
 - Transparent (If you switch this on your button will be transparent)
 
 - Button Size (This lets you decide how big you want your button)
+
+## Configuration options
+
+![Button Backoffice](images/Button-Backoffice.png)
+
+![Button Options Backoffice](images/Button-Options-Backoffice.png)

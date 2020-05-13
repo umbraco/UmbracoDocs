@@ -6,15 +6,11 @@ versionFrom: 8.0.0
 
 If you want a video on your site this is one way to go about it. This lets you upload an MP4 file, with various options such as autoplay or loop.
 
-Here you can see what the Video could look like on the front end:
+## Sample
 
 ![Video Frontend](images/Video-Frontend.png)
 
-Here you can see what the Video could look like in the backoffice:
-
-![Video Backoffice](images/Video-Backoffice.png)
-
-The options for Video are as follows:
+The options for Video is as follows:
 
 - Column Width (This is mandatory because it decides how large the column containing the Video is)
 
@@ -31,3 +27,7 @@ The options for Video are as follows:
 - Poster (This is an image that is shown until the video is loaded or the user press play if there is no poster selected this will display the first frame of the video)
 
 - Video Shadow (If turned on This will create a shadow under the video frame)
+
+## Configurations options
+
+![Video Backoffice](images/Video-Backoffice.png)
