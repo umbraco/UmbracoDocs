@@ -4,8 +4,7 @@ versionFrom: 8.0.0
 
 # Pod
 
-The Pod will allow you to create a container of content, containing a header, a text,
-an icon and a button.
+The Pod will allow you to create a container of content, containing a header, text, an icon, and a button.
 You can also add a link and a background image.
 
 ## Sample
