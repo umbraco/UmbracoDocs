@@ -51,3 +51,24 @@ The Rich Text Editor provides a set of various options for aligning text and ima
 The following four options are available for aligning content: Left, Center, Right and Justify.
 
 Besides the options to create ordered and unordered lists, it is also possible to create single indentations using either of the two options: *Decrease indent* and *Increase indent*.
+
+## Multi-media options
+
+Along with plain text, a few other elements can be added to content throught the Rich Text Editor:
+
+* Convert pieces of text to **links**
+* Add **images and media** from the Media library
+* **Embed** external resourcdes such as videos
+* Mark the ending of a section by **drawing a horizontal line**
+
+## Shortcuts / key-bindings / Easy access
+
+As with many other text editors, it's possible to use general keyboard short-cuts when editing text through the Rich Text Editors.
+
+Here's a few examples of the short-cuts available in Umbraco Uno:
+
+* Ctrl+b to toggle **bold**
+* Ctrl+i to toggle *italics*
+* Ctrl+u to toggle underline
+* Ctrl+k to open the links dialog
+* Ctrl+f to searh within the active Rich Text Editor
