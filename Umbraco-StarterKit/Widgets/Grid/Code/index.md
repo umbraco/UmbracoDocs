@@ -4,7 +4,8 @@ versionFrom: 8.0.0
 
 # Code
 
-This allows you to add code to your grid, in such a way that the code that you add will be displayed on the frontend, as an example, if you added a paragraph it will display the text within the <p,> (note that the comma is not normaly there in a p tag).
+This allows you to add code to your grid, in such a way that the code that you add will be displayed on the frontend.
+As an example, if you added a paragraph it will display the text within the <p,> (note that the comma is not normaly there in a p tag).
 
 ## Sample
 
