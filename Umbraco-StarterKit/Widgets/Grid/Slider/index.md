@@ -13,7 +13,7 @@ The slider slides through your selected content. It can be very visually pleasin
 ## Configuration options
 
 - Column Width - The slider is one of the only grid widgets that do dont require you to fill out Column Width.
-- columns - This is where you pick what each slide contains.
+- Columns - This is where you pick what each slide contains.
 - Show Next/Prev Arrows
 - Show Page Dots
 - Wrap Around
