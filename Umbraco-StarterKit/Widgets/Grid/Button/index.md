@@ -5,7 +5,7 @@ versionFrom: 8.0.0
 # Button
 
 The button lets you as the name implies, create buttons. The way the buttons work is that you choose an alignment for the button.
-Then pick how you want it to look, then you link the button to something on your website.
+Then pick how you want it to look, and finally you link the button to something either on your website or on an external site.
 
 ## Sample
 
