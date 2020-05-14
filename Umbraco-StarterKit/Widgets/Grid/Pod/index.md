@@ -3,8 +3,6 @@ versionFrom: 8.0.0
 ---
 
 # Pod
-<<<<<<< HEAD
-=======
 
 The Pod will allow you to create a container of content, containing a header, text, an icon, and a button.
 You can also add a link and a background image.
@@ -27,4 +25,3 @@ You can also add a link and a background image.
 - Button
 
 ![Pod Backoffice](images/Pod-backoffice1.png)![Pod Backoffice](images/Pod-backoffice2.png)
->>>>>>> 9373db6d3c5eb0ab348658a2177f49ad9bf4eb66
