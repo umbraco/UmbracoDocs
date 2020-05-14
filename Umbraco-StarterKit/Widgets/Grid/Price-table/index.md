@@ -6,15 +6,11 @@ versionFrom: 8.0.0
 
 The Price Table is a great tool for when you want to list multiple products and compare them, for example, different tiers of plans. The Price Table lets you outline the price and what features each tier contains.
 
-Here you can see what it could look like on the front end.
+## Sample
 
 ![Price Table Frontend](images/Price-Table-Frontend.png)
 
-Here you can see what it could look like in the backoffice
-
-![Price Table Backoffice](images/Price-Table-backoffice.png)
-
-The options for Price Table are as follows:
+## Configuration options
 
 - Column Width (This decides how large the column containing the Price Table is)
 
@@ -33,3 +29,5 @@ The options for Price Table are as follows:
 - Buttons (This lets you add buttons)
 
 - Disclaimer (this lets your write the disclaimer for the product)
+
+![Price Table Backoffice](images/Price-Table-backoffice.png)
