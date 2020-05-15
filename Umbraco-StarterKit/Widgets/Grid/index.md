@@ -45,7 +45,7 @@ These widgets are tools to make your grid as nice look as possible, each of them
 - [Header](Header/index.md)
 - [Text](Text/index.md)
 - [Navigation](Navigation/index.md)
-- [Line break](Line-breaker/index.md)
+- [Line break](Line-break/index.md)
 - [Sub grid](Sub-grid/index.md)
 - [Slider](Slider/index.md)
 - [Button](Button/index.md)
