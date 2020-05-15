@@ -21,7 +21,7 @@ A Row is a kind of shelf for the columns in the grid, and each row has a total c
 ## Using the Grid
 
 It can be very beneficial to be using a grid because it makes sure that everything stays in the alignment that you have set up for the grid.
-The grid is awesome for multiple reasons, it keeps your page-aligned beautifully, however that is not all a grid can do, the grid also provides you a lot of awesome tools such as Navigation or Line break.
+The grid is good for multiple reasons. It keeps your page-aligned beautifully and also provides you with a lot of great tools such as Navigation or Line break.
 
 ## Configuration options
 
