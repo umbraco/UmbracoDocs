@@ -23,6 +23,13 @@ Columns are the boxes wherein you create your content when working in a grid. Mo
 It can be very beneficial to be using a grid because it makes sure that everything stays in the alignment that you have set up for the grid.
 The grid is good for multiple reasons. It keeps your page-aligned beautifully and also provides you with a lot of great tools such as Navigation or Line break.
 
+## Customizing the grid
+
+The grid widget comes with a set of configuration options that can be used to customize how the grid is presented on the frontend.
+It includes options such as deciding the alignment of the content, how close the columns should be placed together as well as a few options to change colors or adding a background image.
+Finally, there is also an option called "animate". When this is checked, the content in the grid will appear with a "fade-in" animation as the visitor scrolls down the page.
+The best way to learn about how to customize the grid is to create a few widgets and then test out the various configuration settings. In the section below, you can find a complete list of the options available.
+
 ## Configuration options
 
 These are the options you will have to customize your grid, each of these options plays an important part in making your grid exactly how you like it.
@@ -39,16 +46,6 @@ These are the options you will have to customize your grid, each of these option
 - Animate - This gives your grid an animation that makes it fade into view when the user arrives at the grid.
 
 ![Grid Settings](images/Grid-Settings.png)
-
-## Setting up your grid
-
-Making a good looking grid comes through a few steps.
-The first step would be to set up an ***Alias*** because this lets you distinguish each grid from one and other. The next step is choosing ***Container Width*** with this option you can select how big you want your grid to be.
-With both ***Horizontal Align Columns*** and ***Vertical Align Columns*** you can make sure your columns are aligned the way you would like.
-To make your columns look how you would like them to, both ***Compact*** and ***Remove Column Gutter*** allows you to make changes to your column box.
-Finally, you have some design options with ***Background Image***,***Background Color***,***Text Color*** and ***Animate***, with these you can change the look of your entire grid by adding a background color or image with a specific color text, and make your grid fade into view.
-
-
 
 ## Presentation widgets
 
