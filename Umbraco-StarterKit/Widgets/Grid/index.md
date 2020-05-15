@@ -67,7 +67,7 @@ These widgets are tools to help you get your desired content shown in the best p
 
 ## Media widgets
 
-These are great tools for adding your media to your grid in a manageable fashion, it is straight forward to use, please note that video files can only be MP4.
+These are great tools for adding media to your grid in a manageable fashion. Please note that video files needs to be MP4.
 
 - [Video](Video/index.md)
 - [Image](Image/index.md)
