@@ -27,18 +27,28 @@ The grid is good for multiple reasons. It keeps your page-aligned beautifully an
 
 These are the options you will have to customize your grid, each of these options plays an important part in making your grid exactly how you like it.
 
-- Alias - The purpose of this is only to make each grid distinguishable.
-- Container Width - This lets you choose how big of a grid you want.
-- Remove Column Gutter - This lets you remove the space around the Column "box".
-- Compact - This removes the space on the inside of the column making it so there is less space between the walls of the "box" and the content in the "box".
-- Horizontal Align Columns - This lets you choose how your Columns are aligned horizontally.
-- Vertical Align Columns - This lets you choose how your Columns are aligned vertically.
+- Alias
+- Container Width
+- Remove Column Gutter
+- Compact
+- Horizontal Align Columns
+- Vertical Align Columns
 - Background Image - This lets you add a background image to the entire grid.
 - Background Color - This lets you add a background color to the entire grid.
 - Text Color - This lets you change the text color in your grid.
 - Animate - This gives your grid an animation that makes it fade into view when the user arrives at the grid.
 
 ![Grid Settings](images/Grid-Settings.png)
+
+## Setting up your grid
+
+Making a good looking grid comes through a few steps.
+The first step would be to set up an ***Alias*** because this lets you distinguish each grid from one and other. The next step is choosing ***Container Width*** with this option you can select how big you want your grid to be.
+With both ***Horizontal Align Columns*** and ***Vertical Align Columns*** you can make sure your columns are aligned the way you would like.
+To make your columns look how you would like them to, both ***Compact*** and ***Remove Column Gutter*** allows you to make changes to your column box.
+Finally, you have some design options with ***Background Image***,***Background Color***,***Text Color*** and ***Animate***, with these you can change the look of your entire grid by adding a background color or image with a specific color text, and make your grid fade into view.
+
+
 
 ## Presentation widgets
 
