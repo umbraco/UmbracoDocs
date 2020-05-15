@@ -42,30 +42,30 @@ These are the options you will have to customize your grid, each of these option
 
 These widgets are tools to make your grid as nice look as possible, each of them offers unique functionality, that in some way has the potential to improve the overall look of your grid.
 
-- [Header](Header)
-- [Text](Text)
-- [Navigation](Navigation)
-- [Line break](Line-breaker)
-- [Sub grid](Sub-grid)
-- [Slider](Slider)
-- [Button](Button)
+- [Header](Header/index.md)
+- [Text](Text/index.md)
+- [Navigation](Navigation/index.md)
+- [Line break](Line-breaker/index.md)
+- [Sub grid](Sub-grid/index.md)
+- [Slider](Slider/index.md)
+- [Button](Button/index.md)
 
 ## Content widgets
 
 These widgets are tools to help you get your desired content shown in the best possible way, each of them offering unique functionalities to display content.
 
-- [Accordion](Accordion)
-- [Quote](Quote)
-- [Code](Code)
-- [Price list](Price-list)
-- [Price table](Price-table)
-- [Umbraco Form](Umbraco-Form)
-- [Pod](Pod)
-- [Card](Card)
+- [Accordion](Accordion/index.md)
+- [Quote](Quote/index.md)
+- [Code](Code/index.md)
+- [Price list](Price-list/index.md)
+- [Price table](Price-table/index.md)
+- [Umbraco Form](Umbraco-Form/index.md)
+- [Pod](Pod/index.md)
+- [Card](Card/index.md)
 
 ## Media widgets
 
 These are great tools for adding your media to your grid in a manageable fashion, it is straight forward to use, please note that video files can only be MP4.
 
-- [Video](Video)
-- [Image](../Image/index.md)
+- [Video](Video/index.md)
+- [Image](Image/index.md)
