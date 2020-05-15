@@ -4,7 +4,9 @@ versionFrom: 8.0.0
 
 # The Grid
 
-The Grid Widget lets you set up a framework of widgets, you will have the ability to make it look the way u want. You can do so by setting up the general look of the grid, and choose what widgets you want your grid to contain.
+The Grid Widget lets you set up a framework of widgets and you will have the ability to make it look the way you want. 
+
+When you add the Grid widget you get to set up the general look of the grid, and choose what widgets you want it  to contain.
 
 ## Columns
 
