@@ -14,7 +14,7 @@ A Column is the boxes wherein you create your content when working in a grid. Mo
 
 A Row is a kind of shelf for the columns in the grid, each row has a total column width of 100%. Say you wanted three columns on your row each of these would have to have a column width of 33%.
 
-![Rows and Columns](images/Row-Columns.png)
+![Rows and Columns](images/Rows-Columns.png)
 
 ## Using the Grid
 
@@ -36,7 +36,7 @@ These are the options you will have to customize your grid, each of these option
 - Text Color - This lets you change the text color in your grid.
 - Animate - This gives your grid an animation that makes it fade into view when the user arrives at the grid.
 
-![Grid Settings](images/Gri-Settings.png)
+![Grid Settings](images/Grid-Settings.png)
 
 ## Presentation widgets
 
