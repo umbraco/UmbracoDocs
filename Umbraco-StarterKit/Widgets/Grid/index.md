@@ -6,10 +6,11 @@ versionFrom: 8.0.0
 
 The Grid Widget lets you set up a framework of widgets, you will have the ability to make it look the way u want. You can do so by setting up the general look of the grid, and choose what widgets you want your grid to contain.
 
-### Columns
+## Columns
 
 A Column is the boxes wherein you create your content when working in a grid. Most of the grid widgets require you to set a column width. This is because it sets the width for how big the box will be and by that determine how many consecutive Columns can be in a row.
-### Rows
+
+## Rows
 
 A Row is a kind of shelf for the columns in the grid, each row has a total column width of 100%. Say you wanted three columns on your row each of these would have to have a column width of 33%.
 
