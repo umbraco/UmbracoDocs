@@ -7,6 +7,8 @@ versionFrom: 8.0.0
 The button lets you as the name implies, create buttons. The way the buttons work is that you choose an alignment for the button.
 Then pick how you want it to look, and finally you link the button to something either on your website or on an external site.
 
+By clicking this link you can find more information on how the [Button](../../Buttons/index.md) widget works in general
+
 ## Sample
 
 ![Button Frontend](images/Button-Frontend.png)

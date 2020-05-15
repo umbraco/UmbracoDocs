@@ -5,6 +5,7 @@ versionFrom: 8.0.0
 # Slider
 
 The slider slides through your selected content. It can be very visually pleasing to have it go through images.
+By clicking this link you can find more information on how the [Slider](../../slider/index.md) widget works in general
 
 ## Sample
 
