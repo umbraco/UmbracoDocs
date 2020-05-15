@@ -74,3 +74,14 @@ As these are **only** files, everything will be deleted on the next environment 
 ### Deleting content and / or media
 
 Content and media deletions will not be picked up by deployments and will have to be deleted on each environment you wish to delete the content or media on.
+
+### Deleting backoffice languages
+
+Deleted:
+* The associated `.UDA` file
+
+Not deleted:
+* The entry in the database
+* The language will still be visible in the backoffice/content dashboard (for multilingual content)
+
+Deleting the language in the backoffice on the target environment will ensure the environments are in sync.
