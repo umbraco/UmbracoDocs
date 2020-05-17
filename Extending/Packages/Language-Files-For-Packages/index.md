@@ -1,5 +1,7 @@
 ---
 versionFrom: 7.3.0
+meta.Title: "Language file for packages"
+meta.Description: "Information on how to use language files to make your Umbraco package UI support multiple languages"
 ---
 
 # Language file for packages

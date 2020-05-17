@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Package actions"
+meta.Description: "Information on how to add actions to your Umbraco package"
 ---
 
 # What are package actions?
