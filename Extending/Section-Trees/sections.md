@@ -8,7 +8,7 @@ meta.Description: "A guide to creating a custom section in Umbraco"
 
 The Umbraco backoffice consists of Sections, also referred to as Applications, which contain Trees.
 
-Each section is identified by an icon in the top navigation ribbon of the Umbraco Backoffice.
+Each section is shown in the top navigation ribbon of the Umbraco Backoffice.
 
 ## Create a Custom Section
 
