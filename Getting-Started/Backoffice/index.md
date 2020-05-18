@@ -63,7 +63,7 @@ Each Document Type property has a Data Type which defines the type of input of t
 [Read more about Data Types](../Data/Data-Types/)
 
 ### [Property Editors](Property-Editors)
-A property editor the view used by Data Types to insert content into Umbraco. An example of a property editor is the *Textarea*. It's possible to have many Textarea Data Types with different settings that all use the Textarea property editor.
+A property editor is the view used by Data Types to insert content into Umbraco. An example of a property editor is the *Textarea*. It's possible to have many Textarea Data Types with different settings that all use the Textarea property editor.
 
 [Read more about Property Editors](Property-Editors)
 
