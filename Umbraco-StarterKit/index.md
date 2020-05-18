@@ -6,25 +6,35 @@ versionFrom: 8.0.0
 
 Needs a proper introduction.
 
+This page needs to list all the most essential articles.
+
 In this section you will find all you need to know in order to setup, configure and work with **Umbraco Starterkit**.
 
 ## [Getting Started](Getting-Started)
 
 Learn more about how to get your hands on an Umbraco Starterkit project, how to configure it and learn the basics of working with content.
 
-## Publishing your site
+## [How to work with content](Creating-Content)
+
+## [Manage users](Manage-users)
+
+## [Publishing your site](Going-live)
 
 In this section you can find all the information you need, in order publish your website.
 
-## [Settings](Settings)
+## [Uno-pedia](Uno-pedia)
+
+The only encyclopedia you need when you're working with Umbraco Uno.
+
+### [Settings](Uno-pedia/Settings)
 
 An Umbraco Starterkit project can be configured in many different way. In this section you can learn more about the various caonfiguration options that are available to you.
 
-## [Content Types](Content-Types)
+### [Content Types](Uno-pedia/Content-Types)
 
 A set of content types will be available to you. This section will give you more information about each of these types.
 
-## [Widgets](Widgets)
+### [Widgets](Uno-pedia/Widgets)
 
 Widgets are the *building blocks* of Umbraco Starterkit. In this section you can learn more about each of the widgets, to learn how they can be used.
 
@@ -32,52 +42,45 @@ Widgets are the *building blocks* of Umbraco Starterkit. In this section you can
 
 In the Media library you can store the images and other media files you will be using on your website. Learn more how to use the library in this section.
 
-## Multilingual sites
-
-In this section you can learn how setup your Umbraco Starterkit website with multiple languages.
-
 ----------------------
 THIS SECTION AND THIS DOCUMENT SERVCES AS A PLACEHOLDER FOR THE UPCOMING STARTER KIT DOCUMENTATION.
-
-Contents:
-
-* Landing page (index)
-  * How to get an Umbraco Starterkit project
-  * How to take a trial
-  * Overview of contents in this docs section
-* Getting Started
-  * How to get the "sample site/content"
-  * A quick introduction to the "starter content" (the content there when installing?)
-  * How to create content (create, move, delete - possibly also content templates)
-  * Selecting a theme
-* Going Live (we need an article like this in the Cloud section as well)
-  * Hostnames, SMTP settings
-  * A check list for publishing a website!
-* "Settings" (General and Theme settings)
-  * This will be based on the config options on the default settings nodes
-* An overview of the available widgets
-  * Some of the more advanced widgets should have their own article (like the Grid)
-* An overview of the available content types
-  * Global Content should have its own section / article
-* Media content
 
 Sample structure:
 
 Umbraco Starter kit landing page (including installation guide + sample content overview).
 
 * Getting Started
-* Settings
-  * General
-  * Theme
-  * Specific Settings (Content Type specific settings)
-* Content Types
-  * Site
-  * Feed
-  * Global Content
-* Widgets
-* Media library
-* Multilingual site (perhaps with another name)
+  * *Sample content*
+  * *Introduction to the platforms (Portal, Backoffice, Frontend?)*
+  * *Tour of the backoffice*
+  * *Themes (options, customizing)*
+  * *Project landing page on Portal*
+* Creating content
+  * *How to work with content (create, delete, publish, preview, etc.)*
+  * *How to use Global Content*
+  * *Content Templates*
+  * *Working with SEO*
+  * *Media library*
+  * *Multilingual site (perhaps with another name)*
+  * How to work with widgets
+  * Rich Text Editors (text formatting/styling)
+* Manage users
+  * *Users*
+  * *Members*
 * Going Live (link to Cloud section)
-* The Cloud Portal (link to Cloud section)
+  * *Essentials (SMTP, hostnames, DNS, etc)*
+* *The Cloud Portal (link to Cloud section)*
+* FAQ (link to Umbraco.com)
+* Uno-pedia
+  * *Backoffice (Umbraco basics)*
+  * Settings
+    * General
+    * Theme
+    * Specific Settings (Content Type specific settings)
+  * Content Types
+    * Site
+    * Feed
+    * Global Content
+  * Widgets
 
 ----------------------
