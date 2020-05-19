@@ -2,7 +2,7 @@
 versionFrom: 7.0.0
 ---
 
-# Troubleshooting languages mismatch
+# Troubleshooting language mismatches
 
 If you are using dictionary items on a multi-lingual setup, you might see errors related to mismatches between languages.
 
