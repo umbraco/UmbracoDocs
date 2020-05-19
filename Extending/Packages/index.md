@@ -39,6 +39,10 @@ Package actions are actions you want to trigger when your package gets installed
 
 Once you've created a package upload it on Our to share it with the community.
 
+## [UmbPack](UmbPack/index.md)
+
+ Dotnet tool for packing and deploying packages to Our. Can be used to automate updates to packages.
+
 ## [Packages on Umbraco Cloud](Packages-on-Umbraco-Cloud/index.md)
 
 Things you should know if you are developing for Umbraco Cloud.
