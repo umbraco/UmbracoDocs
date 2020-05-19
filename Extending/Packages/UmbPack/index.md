@@ -37,7 +37,7 @@ You will then be able to use it by running `umbpack [command]` in the command li
 
 ## The Init command
 
-The init command helps you create a package.xml file, which is the file in an Umbraco package that contains all the metadata for a package - things like author info, version compatibility, etc.
+The `init` command helps you create a `package.xml` file, which is the file in an Umbraco package that contains all the metadata for a package - things like author info, version compatibility, etc.
 The init command can be used by typing:
 
 ```
