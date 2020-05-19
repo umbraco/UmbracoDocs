@@ -23,7 +23,7 @@ To generate a key, you need to add a description. When you click "Add" it will s
 
 ![Example key](images/exampleKey.png)
 
-Once you copy the key you are ready to use it, but first you must set up the UmbPack tool:
+Once you copy the key one more step is needed in order to start using it: you must set up the UmbPack tool.
 
 ## Installing UmbPack locally
 
