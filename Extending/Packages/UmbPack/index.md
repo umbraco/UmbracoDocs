@@ -35,10 +35,6 @@ dotnet tool install --global Umbraco.Tools.Packages
 
 You will then be able to use it by running `umbpack [command]` in the command line afterwards. More on the commands of the tool below.
 
-## Installing UmbPack in CI/CD
-
-Todo
-
 ## The Init command
 
 The init command helps you create a package.xml file, which is the file in an Umbraco package that contains all the metadata for a package - things like author info, version compatibility, etc.
