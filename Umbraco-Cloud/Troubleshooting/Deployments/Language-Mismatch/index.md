@@ -16,7 +16,7 @@ The issue will show up as an extraction error on your Umbraco Cloud environment 
 
 ![Extraction error](images/error.png)
 
-Upon closer inspection, a more detailed error will reveal itself: 'Languages in source and destination site do not match.'
+Upon closer inspection, a more detailed error will reveal itself: `Languages in source and destination site do not match.`
 
 ![Languages do not match](images/detailed-error.png)
 
