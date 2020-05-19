@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # Troubleshooting languages mismatch
 
-If you are using dictionary items on a multi-lingual setup, you might see this error happen in some cases.
+If you are using dictionary items on a multi-lingual setup, you might see errors related to mismatches between languages.
 
 ## Cause
 
@@ -45,5 +45,4 @@ In order to fix this issue, English-US should be present on the source environme
 2. Recreate the environment/child project
 
 3. If you would like not to have the English-US language on your project, now you can safely delete it from the backoffice on both the source and target environments.
-
 
