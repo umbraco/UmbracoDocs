@@ -8,7 +8,7 @@ If you are using dictionary items on a multi-lingual setup, you might see errors
 
 ## Cause
 
-This error most often occurs when the default Umbraco language (English-US) is deleted from the backoffice. When creating a new site, or a new environment on a project, said project will always have the default English language added - which could cause your environments to become out of sync.
+This error most often occurs when the default Umbraco language (English-US) is deleted from the backoffice. When creating a new site, or a new environment on a project, said instance will always have the default English-US language added, which could cause your environments to become out of sync.
 
 ## Identify the issue
 
@@ -45,4 +45,3 @@ In order to fix this issue, English-US should be present on the source environme
 2. Recreate the environment/child project
 
 3. If you would like not to have the English-US language on your project, now you can safely delete it from the backoffice on both the source and target environments.
-
