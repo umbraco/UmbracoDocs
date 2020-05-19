@@ -36,7 +36,7 @@ The second scenario (*Scenario 2*) is when you create a new project from a basel
 
 ## Fixing
 
-Thankfully, this issue is relatively easy to fix - and there are 2 ways to get this error resolved.
+There are 2 ways to get this error resolved.
 
 (*Method 1*) - prevention is better than the cure! If you resave all your dictionary items on the source environment after deleting the backoffice language(s), the newly created Development environment/child project should have no issues whatsoever.
 
