@@ -44,7 +44,7 @@ The `init` command can be used by typing:
 umbpack init
 ```
 
-It is usually used to scaffold a package.xml file that you can then use with the `pack` command to create an Umbraco package.
+It is usually used to scaffold a `package.xml` file that you can then use with the `pack` command to create an Umbraco package.
 
 Here is an example of what it will look like in the commandline. It will also post back the package.xml for verification at the end:
 
