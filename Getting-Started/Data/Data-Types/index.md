@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Data types in Umbraco"
+meta.Description: "Learn about the data types in Umbraco."
 ---
 
 # Data Types
