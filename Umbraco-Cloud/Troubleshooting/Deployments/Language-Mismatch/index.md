@@ -28,7 +28,7 @@ If the below conditions are met, you will be presented with the 'Languages in so
 
 2. The default English-US language is not present amongst your languages
 
-3. Your document types are set to "Vary by language"
+3. Your Document Types are set to "Vary by language"
 
 4. You have some dictionary items on the "source" environment (which would be Live, since new environments are cloned from Live repository)
 
