@@ -8,13 +8,32 @@ meta.Description: "How to use the UmbPack tool to deploy package versions to Our
 
 UmbPack is an open source NuGet tool that can deploy packages to Our, and also help you pack your files into a package. 
 
+:::note
+You still need to create the package on Our before the tool can be used. Once it has been set up you will then be able to add new versions of the package zip files using UmbPack
+:::
+
 ## Creating an API key on Our.umbraco.com
 
-Todo
+To create an API key to use with the UmbPack tool you should first log in with your user and go to the [manage packages section](https://our.umbraco.com/member/profile/packages/).
+There you will find a button under each package to manage API keys:
+
+![Api keys button](images/apiKeysButton.png)
+
+To generate a key, you need to add a description, when you click add it will show you your key. Be aware that as soon as you refresh the page the key will be gone, and if you lose it you will have to generate a new one.
+
+![Example key](images/exampleKey.png)
+
+Once you copy the key you are ready to use it, but first you must set up the UmbPack tool:
 
 ## Installing UmbPack locally
 
-Todo
+To install the latest version of the tool locally you need to run the following command in a commandline:
+
+```
+dotnet tool install --global Umbraco.Tools.Packages
+```
+
+You will then be able to use it by running `umbpack [command]` in the command line afterwards. More on the commands of the tool below.
 
 ## Installing UmbPack in CI/CD
 
@@ -133,3 +152,27 @@ umbpack pack .\package.xml -v 1.9.9
 ```
 
 ## The push command
+
+The push command requires an API key and a path to your package zip file, so will look something like this:
+
+```
+umbpack push -k [APIKEY] .\UmbPackTest_1.0.0.zip
+```
+
+However it also contains a few extra options. By default the pushed version will be set as the new current package version, you can change that by via the `-c` flag:
+
+```
+umbpack push -c false -k [APIKEY] .\UmbPackTest_1.0.0.zip
+```
+
+Also when you upload a new package you need to specify which versions it works with, it will default to the latest, but you can specify more with the `-w` flag:
+
+```
+umbpack push -w v860,v850,v840,v830,v820,v810,v800 -k [APIKEY] .\UmbPackTest_1.0.0.zip
+```
+
+You can also specify the compatible DotNetVersion if you would like, it defaults to 4.7.2:
+
+```
+umbpack push --DotNetVersion=4.5.2 -k [APIKEY] .\UmbPackTest_1.0.0.zip
+```
