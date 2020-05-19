@@ -18,7 +18,7 @@ namespace TestWebsite.Core.Controllers
     {
       
         [HttpPost]
-        public ActionResult PostForm(TestViewModel vm)
+        public ActionResult PostMethod()
         {
             if (!ModelState.IsValid)
             {
@@ -42,7 +42,7 @@ namespace TestWebsite.Core.Controllers
     {
       
         [HttpPost]
-        public ActionResult PostForm(TestViewModel vm)
+        public ActionResult PostMethod()
         {
             if (!ModelState.IsValid)
             {
@@ -63,7 +63,8 @@ namespace TestWebsite.Core.Controllers
 {
     public class TestSurfaceController : SurfaceController
     {
-        public ActionResult Index()
+        [HttpPost]
+        public ActionResult PostMethod()
         {
             var paramValue = "someValue";
             return this.RedirectToCurrentUmbracoPage("param=" + paramValue);
@@ -78,7 +79,8 @@ namespace TestWebsite.Core.Controllers
 {
     public class TestSurfaceController : SurfaceController
     {
-        public ActionResult Index()
+       [HttpPost]
+        public ActionResult PostMethod()
         {
             var queryStringCollection = new NameValueCollection();
             queryStringCollection.Add("param1", "paramvalue1");
@@ -98,7 +100,8 @@ namespace TestWebsite.Core.Controllers
 {
     public class TestSurfaceController : SurfaceController
     {
-        public ActionResult Index()
+        [HttpPost]
+        public ActionResult PostMethod()
         {
             return this.RedirectToCurrentUmbracoUrl();
         }
@@ -115,7 +118,8 @@ namespace TestWebsite.Core.Controllers
 {
     public class TestSurfaceController : SurfaceController
     {
-        public ActionResult Index()
+        [HttpPost]
+        public ActionResult PostMethod()
         {
             //gets the first child page of the current page
             var childPage = CurrentPage.FirstChild();
@@ -132,7 +136,8 @@ namespace TestWebsite.Core.Controllers
 {
     public class TestSurfaceController : SurfaceController
     {
-        public ActionResult Index()
+        [HttpPost]
+        public ActionResult PostMethod()
         {
             //redirect to a page with id 1054
             return this.RedirectToUmbracoPage(1054);
