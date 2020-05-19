@@ -42,15 +42,24 @@ Users are managed in the **Users** section. Learn more about users and how to ma
 
 ## Sections
 
-Each section in the Umbraco Backoffice consist of two main areas: a **Section Tree** and a **Dashboard**/**Workspace** area.
+There are a total of 6 sections available in the backoffice of an Umbraco Uno project.
+
+1. There's a section where you can manage all **Content** on the website.
+2. In the **Media** section you can manage all uploaded media items like images and videos.
+3. Invite new users into the backoffice and manage existing users from the **Users** section.
+4. When you're working with restricted areas on your frontend, use the **Members** section to manage who can access that area.
+5. Create and manage contact forms or signup forms from the **Forms** section.
+6. When you're creating a multilingual website, make sure to also update the default dictionary items in the **Translation** section.
+
+See the [Umbraco Backoffice](../../Uno-pedia/Umbraco-Backoffice) section in the Uno-pedia for more indepth descriptions and details on each of the sections.
+
+Each of the sections consist of two areas: a **Section Tree** and a **Dashboard**/**Workspace** area.
 
 ### Section Tree
 
 The Section Tree is a menu of the available items and/or workspaces in that section.
 
 In the Content section it will list all the created content, in the Media section it will list all the uploaded media items and in the Users section all existing users and User Groups will be listed.
-
-Learn more about what you can find in each section in the [Uno-pedia](../../Uno-pedia).
 
 ### Dashboards and Workspaces
 
