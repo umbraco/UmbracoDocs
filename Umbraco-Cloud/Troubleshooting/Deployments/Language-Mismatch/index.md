@@ -40,7 +40,7 @@ There are 2 ways to get this error resolved.
 
 (*Method 1*) - prevention is better than the cure! If you resave all your dictionary items on the source environment after deleting the backoffice language(s), the newly created Development environment/child project should have no issues whatsoever.
 
-(*Method 2*)  - if you have already created the new instance and do not wish to re-create it, you could instead navigate to site/wwwroot/data/revision folder via [KUDU tools](../../../Set-up/Power-Tools/index), find the dictionary items, and edit the UDA files directly.
+*Method 2*  - if you have already created the new instance and do not wish to re-create it, you could instead follow this flow: Navigate to `site/wwwroot/data/revision` folder via [KUDU tools](../../../Set-up/Power-Tools/index), find the dictionary items, and then edit the UDA files directly.
 
 ![KUDU tools procedure](images/kudutools.png)
 
