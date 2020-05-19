@@ -89,8 +89,8 @@ Run recurring code using the BackgroundTaskRunner.
 
 Information about setting up Inversion of Control / Dependency Injection to work with Umbraco.
 
+## External resources
 
-
-
+* [Umbraco and precompiled views](https://dobryak.org/road-to-precompiled-web-application-based-on-umbraco-cms/)
 
 
