@@ -19,11 +19,11 @@ There you will find a button under each package to manage API keys:
 
 ![Api keys button](images/apiKeysButton.png)
 
-To generate a key, you need to add a description, when you click add it will show you your key. Be aware that as soon as you refresh the page the key will be gone, and if you lose it you will have to generate a new one.
+To generate a key, you need to add a description. When you click "Add" it will show you your key. Be aware that as soon as you refresh the page the key will be gone, and if you lose it you will have to generate a new one.
 
 ![Example key](images/exampleKey.png)
 
-Once you copy the key you are ready to use it, but first you must set up the UmbPack tool:
+Once you copy the key one more step is needed in order to start using it: you must set up the UmbPack tool.
 
 ## Installing UmbPack locally
 
@@ -37,28 +37,28 @@ You will then be able to use it by running `umbpack [command]` in the command li
 
 ## The Init command
 
-The init command helps you create a package.xml file, which is the file in an Umbraco package that contains all the metadata for a package - things like author info, version compatibility, etc.
-The init command can be used by typing:
+The `init` command helps you create a `package.xml` file, which is the file in an Umbraco package that contains all the metadata for a package - things like author info, version compatibility, etc.
+The `init` command can be used by typing:
 
 ```
 umbpack init
 ```
 
-It is usually used to scaffold a package.xml file that you can then use with the `pack` command to create an Umbraco package.
+It is usually used to scaffold a `package.xml` file that you can then use with the `pack` command to create an Umbraco package.
 
-Here is an example of what it will look like in the commandline. It will also post back the package.xml for verification at the end:
+Here is an example of what it will look like in the commandline. It will also post back the `package.xml` for verification at the end:
 
 ![UmbPack init example](images/umbpackinit.png)
 
 ## The Pack command
 
-The pack command is used to create an Umbraco zip package from some specified files. It is similar to what would happen if you picked the files via the backoffice.
+The `pack` command is used to create an Umbraco zip package from some specified files. It is similar to what would happen if you picked the files via the backoffice.
 
 :::warn
-The pack command has no way of handling package actions, Umbraco schema and content! If you need any of those you will have to still pick them from the backoffice.
+The `pack` command has no way of handling package actions, Umbraco schema and content. If you need any of those you will still have to pick them from the backoffice.
 :::
 
-The pack command has a few options, the only mandatory one is to point it at either a package.xml file or a folder containing a package.xml file:
+The `pack` command has a few options. The only mandatory one is to point it at either a `package.xml` file or a folder containing a `package.xml` file:
 
 **Example of packing a folder**
 
@@ -66,7 +66,7 @@ The pack command has a few options, the only mandatory one is to point it at eit
 umbpack pack C:\Umbraco\Customers\test\Test.Web\App_Plugins\CustomPackage
 ```
 
-In this example I wanted to pack up the ~App_Plugins/CustomPackage folder inside the .Web project. Often that is where you will store package files, the tool will ensure it adds all files to the package.xml inside the folder so if you continue to develop and add things a new pack will update it.
+In this example I wanted to pack up the `~App_Plugins/CustomPackage` folder inside the .Web project. Often that is where you will store package files. The tool will ensure it adds all files to the `package.xml` inside the folder so if you continue to develop and add things a new pack will update it.
 
 **Example of packing based on a package.xml file**
 
@@ -74,20 +74,20 @@ In this example I wanted to pack up the ~App_Plugins/CustomPackage folder inside
 umbpack pack C:\Umbraco\Customers\test\package.xml
 ```
 
-In this example you can imagine I keep a package.xml file outside of the project folders, inside the `src` folder of a Visual Studio solution. The benefit here is that it would not be part of the website, but could still be source controlled. Additionally this is a better approach if you want your package to include files outside of a specific folder. 
+In this example you can imagine I keep a `package.xml` file outside of the project folders, inside the `src` folder of a Visual Studio solution. The benefit here is that it would not be part of the website, but could still be source controlled. Additionally this is a better approach if you want your package to include files outside of a specific folder. 
 
 Let's say you have a solution that looks like this:
 
 ![Solution setup](images/solutionfiles.png)
 
-So there is a .Web project and a .Core project. We have a controller in the .Core project that gets built into a dll in the .Web project, so the package files we would want to include are in the .Web project:
+There is a .Web project and a .Core project. We have a controller in the .Core project that gets built into a dll in the .Web project, so the package files we would want to include are in the .Web project:
 
 ```
 ~/App_Plugins/CustomPackage
 ~/bin/UmbPackTest.Core.dll
 ```
 
-In that case you can add a bit of special xml to the package.xml file that the UmbPack tool can recognize to include it all in the package files:
+In that case you can add a bit of special xml to the `package.xml` file that the UmbPack tool can recognize to include it all in the package files:
 
 ```xml
 <files>
@@ -97,10 +97,10 @@ In that case you can add a bit of special xml to the package.xml file that the U
 ```
 
 :::note
-orgPath is where it will try to install the package files to. So when doing this from outside the website root you should edit the orgPath to be from the root of a new site
+`orgPath` is the location it will try to install the package files to. So when doing this from outside the website root you should edit the `orgPath` to be from the root of a new site.
 :::
 
-So we can specify a folder and a file (or add additional xml elements for additional files), when you then run the command targetting a package.xml file in the root of the solution:
+We can specify a folder and a file (or add additional xml elements for additional files), and when you then run the command targetting a `package.xml` file in the root of the solution:
 
 ![UmbPack pack command](images/umbpackpack.png)
 
@@ -133,7 +133,7 @@ You will have a zipped version of the package in the location you ran the tool (
 
 ### Pack options
 
-The pack command has a few options, as described above the mandatory value is a path to a package.xml file or a folder containing a package.xml file. There are 2 other configurations you can set on the pack command as well though:
+The `pack` command has a few options. As described above the mandatory value is a path to a `package.xml` file or a folder containing a `package.xml` file. There are 2 other configurations you can set on the pack command as well though:
 
 `-o` - specifies an output folder. It defaults to the current folder, but you could do something like:
 
@@ -141,7 +141,7 @@ The pack command has a few options, as described above the mandatory value is a 
 umbpack pack .\package.xml -o ../MyCustomPackageVersions
 ```
 
--v - specifies a version for the package. When packing a package it will name it as {packagename}_{version}.zip. By default it will take the version from the package.xml, but if running in CI/CD for example you may not want to update this value all the time, so you can overwrite it using:
+`-v` - specifies a version for the package. When packing a package it will name it as `{packagename}_{version}.zip`. By default it will take the version from the `package.xml`, but if running in CI/CD for example you may not want to update this value all the time, so you can overwrite it using:
 
 ```
 umbpack pack .\package.xml -v 1.9.9
@@ -149,19 +149,19 @@ umbpack pack .\package.xml -v 1.9.9
 
 ## The push command
 
-The push command requires an API key and a path to your package zip file, so will look something like this:
+The `push` command requires an API key and a path to your package zip file, so will look something like this:
 
 ```
 umbpack push -k [APIKEY] .\UmbPackTest_1.0.0.zip
 ```
 
-However it also contains a few extra options. By default the pushed version will be set as the new current package version, you can change that by via the `-c` flag:
+However it also contains a few extra options. By default the pushed version will be set as the new current package version. You can change that by via the `-c` flag:
 
 ```
 umbpack push -c false -k [APIKEY] .\UmbPackTest_1.0.0.zip
 ```
 
-Also when you upload a new package you need to specify which versions it works with, it will default to the latest, but you can specify more with the `-w` flag:
+Also when you upload a new package you need to specify which versions it works with. It will default to the latest, but you can specify more with the `-w` flag:
 
 ```
 umbpack push -w v860,v850,v840,v830,v820,v810,v800 -k [APIKEY] .\UmbPackTest_1.0.0.zip
