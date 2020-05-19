@@ -19,7 +19,7 @@ There you will find a button under each package to manage API keys:
 
 ![Api keys button](images/apiKeysButton.png)
 
-To generate a key, you need to add a description, when you click add it will show you your key. Be aware that as soon as you refresh the page the key will be gone, and if you lose it you will have to generate a new one.
+To generate a key, you need to add a description. When you click "Add" it will show you your key. Be aware that as soon as you refresh the page the key will be gone, and if you lose it you will have to generate a new one.
 
 ![Example key](images/exampleKey.png)
 
