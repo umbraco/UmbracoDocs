@@ -12,4 +12,22 @@ You will have a lot of settings for your ***Hero Widget***, letting you customiz
 
 Below you can see an example of how a ***Hero Widget*** might look. This contains the ***Pre Header***, ***Heading***, ***Text*** and different types of ***Buttons***
 
+## Sample
+
 ![Frontend example of the Hero widget including 3 different types of buttons](images/Scrren-shot-of-hero-widget.png)
+
+## Configuration Options
+
+- Pre Heading
+- Heading
+- Text
+- Background
+- Text Color
+- Container width
+- Text Width
+- Height
+- Overlay Strenght
+- Text Alignment
+- Vertical Text Alignment
+- Animate
+- Buttons

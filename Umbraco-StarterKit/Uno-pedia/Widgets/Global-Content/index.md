@@ -22,4 +22,8 @@ This is a very useful tool if you have a widget that you use a lot and want to l
 
 See below an example, of what it might look like. In this example, there is a Hero Widget which have been created as Global Content and can therefore by selected with The Global Content Widget.
 
+## Configuration Options
+
+
+
 ![Configuration options for the Global Content widget](images/hero-standard.png)

@@ -15,7 +15,11 @@ They will register by filling out the fields, which are Name, Email, and Passwor
 
 In the backoffice you will be able to see your registerd members by clicking onto the Members tab. Here you can edit members and view how many members you have.
 
-The setup options for this widget are as follows:
+## Sample
+
+![Example of a Register form on the frontend](images/Regiseter-element.png)
+
+## Configuration Options
 
 - Header
 - Text
@@ -25,9 +29,6 @@ The setup options for this widget are as follows:
 - Success Message Heading (This is the heading of the message that displays after a member has successfully been created)
 - Success Message Text (This is the message that displays after a member has successfully been created)
 
-Here you see an example of how a Register Widget could look on the front-end.
-![Example of a Register form on the frontend](images/Regiseter-element.png)
-
 ## Login
 
 ![Login widget icon](images/The-Login-Widget.png)
@@ -36,7 +37,11 @@ The Login Widget allows the member that was created, using The Register Widget t
 
 It is worth to note that The Login Widget, also works for members that were created by the admins in the backoffice.
 
-The setup options for this widget are as follows:
+## Sample
+
+![Frontend example of a Login form](images/login-prompt.png)
+
+## Configuration Options
 
 - Heading
 - Text
@@ -44,9 +49,6 @@ The setup options for this widget are as follows:
 - Background Color
 - Text Color
 - Redirect URL (This is where you decide where the members are redirected to after they log in)
-
-Below you can see what the widget could look like at the front-end.
-![Frontend example of a Login form](images/login-prompt.png)
 
 :::note
 When the Login widget is added to a page, whenever that page is loaded it will default to show the login form.

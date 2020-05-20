@@ -12,8 +12,8 @@ This widget is useful if you only need to add a text box. Most of the other widg
 
 ## Configuration options
 
-* Content (Rich Text Editor)
-* Sidebar widgets
+- Content (Rich Text Editor)
+- Sidebar widgets
 
 ::: Note
 The Text widget is the *standard* width per default. This cannot be changed.
