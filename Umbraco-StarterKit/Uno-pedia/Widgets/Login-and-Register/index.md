@@ -43,7 +43,7 @@ It is worth to note that The Login Widget, also works for members that were crea
 
 ![Frontend example of a Login form](images/login-prompt.png)
 
-## Configuration Options
+### Configuration Options
 
 - Heading
 - Text
