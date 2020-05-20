@@ -10,7 +10,6 @@ Some widgets in Umbraco StarterKit provides the option to create more widgets. T
 
 ![The three sidebar widgets available](images/sidebarwidgets-options.png)
 
-## Configuration options
 
 * Text (heading and text)
 * Navigation (external or internal links, with option to include child/sub pages)
