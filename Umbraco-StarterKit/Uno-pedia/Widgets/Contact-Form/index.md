@@ -22,3 +22,5 @@ You will need to set up [SMTP](../../../../Umbraco-Cloud/Set-Up/SMTP-settings/) 
 - Background Color
 - Message Sent Text
 - Container Width
+
+![Contact Form Backofice](images/Contactform-backoffice.png)

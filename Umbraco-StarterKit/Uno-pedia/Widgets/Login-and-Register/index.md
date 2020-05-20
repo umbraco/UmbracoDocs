@@ -29,6 +29,8 @@ In the backoffice you will be able to see your registerd members by clicking ont
 - Success Message Heading (This is the heading of the message that displays after a member has successfully been created)
 - Success Message Text (This is the message that displays after a member has successfully been created)
 
+![Register Backoffice](images/Register-Backoffice.png)
+
 ## Login
 
 ![Login widget icon](images/The-Login-Widget.png)
@@ -49,6 +51,8 @@ It is worth to note that The Login Widget, also works for members that were crea
 - Background Color
 - Text Color
 - Redirect URL (This is where you decide where the members are redirected to after they log in)
+
+![Login Backoffice](images/Login-Backoffice.png)
 
 :::note
 When the Login widget is added to a page, whenever that page is loaded it will default to show the login form.

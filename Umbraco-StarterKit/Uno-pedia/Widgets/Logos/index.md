@@ -27,9 +27,13 @@ The configuration for this widget is divided into two parts:
 - Background Color
 - Text Color
 
+![Logos Backoffice part 1](images/Logos-part1.png)
+
 Part two is for adding logo and settings for these. For each logo you want to add, you have the following options:
 
 - Alias (the name of the logos)
 - Image
 - Link (links the logo to another page on your site or a different site)
 - Width
+
+![Logos Backoffice part 2](images/Logos-part2.png)

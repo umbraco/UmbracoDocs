@@ -27,3 +27,5 @@ Below you can see how the gallery would look with image width at 20%, and a blue
 - Animate
 
 You can click the image to zoom in, where you can browse through the images in the gallery by using the arrows next to the images or use the arrow keys on the keyboard.
+
+![Gallery Backoffice](images/Gallery-Backoffice.png)

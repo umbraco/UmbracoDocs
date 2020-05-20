@@ -31,3 +31,5 @@ Below you can see an example of how a ***Hero Widget*** might look. This contain
 - Vertical Text Alignment
 - Animate
 - Buttons
+
+![Hero Backoffice](images/Hero-Backoffice.png)

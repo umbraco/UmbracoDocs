@@ -17,3 +17,5 @@ You can even add multiple widgets within one ***Tabs Widget***. This means you c
 ## Configuration options
 
 - Theme Color
+
+![Tab Backoffice](images/Tabs-Backoffice.png)

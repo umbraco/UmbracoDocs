@@ -31,3 +31,6 @@ When ***Show Content Next To Map*** is disabled the blue section on the left wil
 - Background Color
 - Text Color
 - Buttons
+
+![Part 1 of the map backoffice](images/Map-backoffice1.png)
+![Part 2 of the map backoffice](images/Map-backoffice2.png)

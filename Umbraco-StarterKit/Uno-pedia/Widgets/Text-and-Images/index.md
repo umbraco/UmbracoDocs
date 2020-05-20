@@ -28,3 +28,5 @@ You can have ***six*** images in total, You can add a ***Pre Heading*** and a **
 - Text Color
 - Animate
 - Buttons
+
+![Text and Images Backoffice](images/Text-Image-Backoffice.png)

@@ -3,6 +3,7 @@ versionFrom: 8.0.0
 ---
 
 # Slider
+
 ![Slider widget icon](images/The-Slider-Widget.png)
 
 The Slider Widget allows you to pick 1 or more widgets to display in a slideshow.
@@ -19,6 +20,8 @@ The Slider Widget allows you to pick 1 or more widgets to display in a slideshow
 - Make the slider pause when you hover over it.
 - Choose to have the slider ***Wrap Around*** to make it loop between the widgets indefinitely.  
 - Make the transition between slides more seamless by using ***Fade Animation***.
+
+![Slider Backoffice](images/Slider-Backoffice.png)
 
 :::note
 For the best experience with the Slider Widget, we recommend adding multiple ***Image Widgets*** containing one image each.

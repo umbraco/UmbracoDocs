@@ -24,3 +24,5 @@ You can setup all this in the [General Settings](../../Settings/General-Settings
 - Background Color
 - Text Color
 - Animate
+
+![Newsletter Backoffice](images/Newsletter-Backoffice.png)
