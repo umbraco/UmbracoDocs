@@ -12,6 +12,8 @@ This also contains the feature to click on images to zoom in on the images. This
 You will be able to change the setup of your gallery. This could be the size of the images or the background color of the whole container.
 Below you can see how the gallery would look with image width at 20%, and a blue background color.
 
+You can click the image to zoom in, where you can browse through the images in the gallery by using the arrows next to the images or use the arrow keys on the keyboard.
+
 ## Sample
 
 ![Example of Gallery with 3 images and the theme color used as background](images/The-Gallery.png)
@@ -25,7 +27,5 @@ Below you can see how the gallery would look with image width at 20%, and a blue
 - Disable Gallery Zoom
 - Background Color
 - Animate
-
-You can click the image to zoom in, where you can browse through the images in the gallery by using the arrows next to the images or use the arrow keys on the keyboard.
 
 ![Gallery Backoffice](images/Gallery-Backoffice.png)
