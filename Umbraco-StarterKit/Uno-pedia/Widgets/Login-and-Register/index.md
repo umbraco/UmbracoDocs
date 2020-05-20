@@ -39,7 +39,7 @@ The Login Widget allows the member that was created, using The Register Widget t
 
 It is worth to note that The Login Widget, also works for members that were created by the admins in the backoffice.
 
-## Sample
+### Sample
 
 ![Frontend example of a Login form](images/login-prompt.png)
 
