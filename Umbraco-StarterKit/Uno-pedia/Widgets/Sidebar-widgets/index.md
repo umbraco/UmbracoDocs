@@ -17,6 +17,7 @@ Some widgets in Umbraco StarterKit provides the option to create more widgets. T
 
 ![A visual sample of all three sidebar widgets](images/sidebarwidgets-samples.png)
 
+## Configuration options
 ### Text
 
 * Heading
