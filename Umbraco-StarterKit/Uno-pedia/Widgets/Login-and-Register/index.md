@@ -15,7 +15,7 @@ They will register by filling out the fields, which are Name, Email, and Passwor
 
 In the backoffice you will be able to see your registerd members by clicking onto the Members tab. Here you can edit members and view how many members you have.
 
-## Sample
+### Sample
 
 ![Example of a Register form on the frontend](images/Regiseter-element.png)
 
