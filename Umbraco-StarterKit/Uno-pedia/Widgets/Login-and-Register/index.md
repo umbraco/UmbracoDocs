@@ -19,7 +19,7 @@ In the backoffice you will be able to see your registerd members by clicking ont
 
 ![Example of a Register form on the frontend](images/Regiseter-element.png)
 
-## Configuration Options
+### Configuration Options
 
 - Header
 - Text
