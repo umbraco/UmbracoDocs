@@ -1,3 +1,8 @@
+---
+meta.Title: "Umbraco 8 FAQ"
+meta.Description: "Frequently asked questions on Umbraco 8"
+---
+
 # Umbraco 8 - Frequently Asked Questions
 
 In this article you can find answers to some of the most frequently asked questions about Umbraco 8.
