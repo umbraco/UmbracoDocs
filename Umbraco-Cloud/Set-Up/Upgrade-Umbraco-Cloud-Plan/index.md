@@ -15,15 +15,15 @@ Before you decide to upgrade your Umbraco Cloud plan, you need to consider a few
 
 - When you upgrade from the Starter plan to the Standard plan, the price will increase from €30 a month to €185.
 
-- With the standard plan you will get a development environment for no additional cost and it is possible to add a staging environment for €50.
+- With the Standard plan you will get a Development environment for no additional cost and it is possible to add a Staging environment for €50.
 
-- The Professional plan costs €500 per month and you get both a development and a staging environment for free.
+- The Professional plan costs €500 per month and you get both a Development and a Staging environment for free.
 
 
 
 ## How to upgrade your plan
 
-The first step to upgrading your Umbraco Cloud plan is to access your project in the project overview at Umbraco.io. 
+The first step to upgrading your Umbraco Cloud plan is to access your project in the project overview at [Umbraco.io](https://www.s1.umbraco.io/projects). 
 
 - In the project overview you can find all the project that you have been invited to or have created.
 
@@ -42,12 +42,16 @@ In the menu you can find a tab called *"Upgrade plan"*.
 ![Upgrade plane step2](images/step_2.png)
 
 
-- If you are on a Starter plan you can upgrade to the Standard and the professional plan.
+- If you are on a Starter plan you can upgrade to the Standard and the Professional plan.
 
 - If you are on the Standard plan you can upgrade to the Professional plan.
 
 
- To upgrade to the plan of your choosing  you simply click on the green button for the plan that you want to upgrade to and then your project will be upgraded.
+ To upgrade to the plan of your choosing, click on the green button for the plan that you want to upgrade to and then your project will be upgraded.
+ 
+  :::note
+The change in price will first take effect from the next periode of your subscription.
+ :::
 
 
 
@@ -56,4 +60,3 @@ In the menu you can find a tab called *"Upgrade plan"*.
 If you need to downgrade the plan you are on, please reach out to our friendly support team, they can help you in doing so.
 
 You can either contact them through the chat on Umbraco.io or send them an email to contact@umbraco.dk, they will be more than happy to help.
-
