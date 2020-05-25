@@ -69,3 +69,71 @@ Once a piece of content or a section has been deleting, it will be mvoed to the 
 :::warning
 When deleting a piece of content it is important to note that **all** language variants as well as any sub pages will be deleted as well.
 :::
+
+## Publishing content
+
+When you're done editing a piece of content you can choose to either publish the page right away or you can schedule it for a later point on time.
+
+To **publish the content right away** select the green "Save and publish" button in the bottom-right corner.
+
+To schedule to content for another point in time select the "Schedule..." option, which canbe found by clicking the arrow next to the green "Save and publish" button in the bottom-right corner. Read the [Scheduled publishing](#LINK) article to learn more about how to setup the schedule.
+
+## Unpublish content
+
+Once a page is published on your website you can at any time choose to unpublish it. The option to do this is available from the publish menu which is accessible through the arrow next to the green "Save and publish" button in the bottom-right corner.
+
+It is also possible to automatically unpublish content items at a given time using the [Scheduled publishing](#LINK) feature.
+
+## Other options
+
+When you right click a piece of content in the Content tree, you will be presented with a list of different options. Some of the options are described further up in this article, the rest will be shortly explained below.
+
+### Create Content Template
+
+This feature allows you to use the selected piece of content to create a Content Template which can be used to create additional content.
+
+To learn more about this feature read the [Content Templates](#LINK) article.
+
+### Move
+
+Move the content item to another section in the Content tree.
+
+### Copy
+
+Create a copy of the selected content item, and choose where the new copy should be located in the tree.
+
+### Sort
+
+This feature allows you to change the order of the content items and sections in the Content tree.
+
+This will also affect how the main navigation is ordered, if you haven't enabled the custom navigation.
+
+### Culture and Hostnames
+
+Choose a specific hostname for the content item or section, and decide which culture (language) should be associated with it.
+
+### Permissions
+
+This options lets you specify permissions on the selected piece of content for each user group. Note that this will overwrite the overall permissions which are configured on the User Group.
+
+Learn more about User Groups and permissions in the [Manage Users](#LINK) section.
+
+### Public access
+
+This feature lets you control who should have access to view a specific page on the frontend of your website.
+
+When you're creating a website that allows users to sign up for a membership, you can create pages and sections that only (some) members can see once they're logged in.
+
+Learn more about this feature in the [Manage users](#LINK) section.
+
+### Notifications
+
+You can setup notifications to be notified whenever a specific action is performed on the selected piece of content. The actions include, but are not limited to, copies, deletion, rollbacks and updates.
+
+### Reload
+
+This option will reload the sub pages for the selected piece of content.
+
+:::tip
+Use this option on the start node to reload the entire Content tree.
+:::
