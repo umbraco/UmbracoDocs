@@ -8,7 +8,11 @@ versionFrom: 8.0.0
 
 The Latest From Feed Widget, is used to show posts from a ***Feed*** that you already have on your website. ***Feed*** here referring to the ***Feed*** content type.
 
-The widget allows you to set up a few things as mentioned below:
+## Sample
+
+![Feed Frontend](images/Feed-frontend.png)
+
+## Configuation Options
 
 - Pre Header - text above the Heading.
 - Heading
@@ -18,3 +22,5 @@ The widget allows you to set up a few things as mentioned below:
 - Background Color
 - Text Color
 - Buttons
+
+![Feed Backoffice](images/Feed-Backoffice.png)

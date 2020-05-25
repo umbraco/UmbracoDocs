@@ -10,7 +10,13 @@ The Map Widget is a feature that lets you use Google Maps to show the location o
 
 The way it works is that you type in the ***Latitude*** and ***Longitude*** and select how zoomed in you want the map to be on a scale from 0 - 20 with 7 being default.
 
-You will have some settings to set the Map widget up as you want it:
+## Sample
+
+![Frontend example of the Map widget with default details added to info fields](images/Map.png)
+
+When ***Show Content Next To Map*** is disabled the blue section on the left will not appear and the map will take up all the space.
+
+## Configuration Options
 
 - Height
 - Custom Map Pin Icon
@@ -26,8 +32,5 @@ You will have some settings to set the Map widget up as you want it:
 - Text Color
 - Buttons
 
-Below you can see an example of a Map widget with the ***Show Content Next To Map*** Enabled:
-
-![Frontend example of the Map widget with default details added to info fields](images/Map.png)
-
-When ***Show Content Next To Map*** is disabled the blue section on the left will not appear and the map will take up all the space.
+![Part 1 of the map backoffice](images/Map-backoffice1.png)
+![Part 2 of the map backoffice](images/Map-backoffice2.png)

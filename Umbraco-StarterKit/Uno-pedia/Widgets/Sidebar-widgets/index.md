@@ -6,20 +6,18 @@ versionFrom: 8.0.0
 
 Some widgets in Umbraco StarterKit provides the option to create more widgets. This is the case with the Text widget, which has the option to add one or more *sidebar widgets*.
 
+## Sample
+
 ![The three sidebar widgets available](images/sidebarwidgets-options.png)
 
-There are a total of 3 available sidebar widgets:
 
 * Text (heading and text)
 * Navigation (external or internal links, with option to include child/sub pages)
 * Button (learn more about the various option in the [Buttons widget](../Buttons) article)
 
-## Sample
-
 ![A visual sample of all three sidebar widgets](images/sidebarwidgets-samples.png)
 
 ## Configuration options
-
 ### Text
 
 * Heading

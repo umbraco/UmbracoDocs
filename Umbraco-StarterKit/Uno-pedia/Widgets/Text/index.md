@@ -10,10 +10,16 @@ The Text Widget lets you create a text field on the page. The widget contains a 
 
 This widget is useful if you only need to add a text box. Most of the other widgets come with an option to add text as well.
 
+## Sample
+
+![Text Frontend](images/Text-Frontend1.png)
+
 ## Configuration options
 
-* Content (Rich Text Editor)
-* Sidebar widgets
+- Content (Rich Text Editor)
+- Sidebar widgets
+
+![Text Backoffice](images/Text-Backoffice1.png)
 
 ::: Note
 The Text widget is the *standard* width per default. This cannot be changed.
