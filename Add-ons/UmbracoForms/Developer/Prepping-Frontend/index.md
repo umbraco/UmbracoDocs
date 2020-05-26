@@ -4,7 +4,7 @@ versionFrom: 7.0.0
 
 # Preparing your frontend
 
-In order for Umbraco Forms to work correctly, Umbraco Forms need you to include some client dependencies.
+In order for Umbraco Forms to work correctly, you need to include some client dependencies.
 
 With latest version of Umbraco Forms, we provide a method that will output the script tags containing the dependencies. Dne with this razor method:
 
