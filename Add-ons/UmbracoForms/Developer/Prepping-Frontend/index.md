@@ -14,7 +14,7 @@ With latest version of Umbraco Forms, we provide a method that will output the s
 </head>
 ```
 
-All dependencies originates from your UmbracoForms instalation, no external references.
+All dependencies originates from your Umbraco Forms installation, which means that no external references are needed.
 
 If you like to use jQuery instead, you will instead have to manually add those. Without using the above. Jump the the section 'Use jQuery' to learn more.
 
