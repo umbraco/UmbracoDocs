@@ -16,7 +16,7 @@ With latest version of Umbraco Forms, we provide a method that will output the s
 
 All dependencies originates from your Umbraco Forms installation, which means that no external references are needed.
 
-If you like to use jQuery instead, you will instead have to manually add those. Without using the above. Jump the the section 'Use jQuery' to learn more.
+If you like to use jQuery instead, you can manually add those. Without using the above, jump to the 'Use jQuery' section below to learn more.
 
 
 ## Use jQuery
