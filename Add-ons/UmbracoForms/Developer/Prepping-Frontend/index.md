@@ -6,7 +6,7 @@ versionFrom: 7.0.0
 
 In order for Umbraco Forms to work correctly, you need to include some client dependencies.
 
-With latest version of Umbraco Forms, we provide a method that will output the script tags containing the dependencies. Dne with this razor method:
+Use the following Razor method to output script tags containing the dependencies:
 
 ```html
 <head>
