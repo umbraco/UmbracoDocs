@@ -33,7 +33,7 @@ We will continue to refer to this as the Backoffice throughout the rest of the d
 ## Frontend
 
 The Frontend is what people see when they visit your website, meaning that this is where all the content you create in the backoffice goes.
-How the frontend looks is completely up to you, and you choose this by creating the look you want in the backoffice, you cannot do any editing on the frontend.
+How the frontend looks is completely up to you, and you choose this by creating the look you want in the backoffice. You cannot do any editing on the frontend.
 We will continue to refer to this as the Frontend throughout the rest of the documentation.
 
 ## "Tour of the backoffice"
