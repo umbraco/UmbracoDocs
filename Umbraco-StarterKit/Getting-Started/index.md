@@ -20,7 +20,7 @@ If you've never worked with Umbraco before, there's a few resources which we rec
 ## Portal
 
 The Portal is the landing space for when you enter your project, here you will have the options to manage your project.
-This is also where you can overview your environments, make changes to them, invite users, and Delete environments.
+This is also where you can get an overview of your environments, make changes to them, and invite users.
 We will continue to refer to this as the portal throughout the rest of the documentation.
 The portal is a general thing when working with Umbraco on the cloud, it is used on both regular cloud projects and Heartcore as well as Umbraco Uno.
 
