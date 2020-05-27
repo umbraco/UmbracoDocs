@@ -20,20 +20,21 @@ If you've never worked with Umbraco before, there's a few resources which we rec
 ## Portal
 
 The Portal is the landing space for when you enter your project, here you will have the options to manage your project.
-This is also where you can overview your environments, make changes to them, invite users and Delete environments.
+This is also where you can overview your environments, make changes to them, invite users, and Delete environments.
 We will continue to refer to this as the portal throughout the rest of the documentation.
-
-
+The portal is a general thing when working with Umbraco on the cloud, it is used on both regular cloud projects and Heartcore as well as Umbraco Uno.
 
 ## Backoffice
 
-The Backoffice is where you will be working when editing, It is divided into sections in the top of the page.
+The Backoffice is where you will be working when editing and creating content, It is divided into sections in the top of the page.
 In the content section of the backoffice, you will have a content tree on the left side of the screen, This content tree is where your content nodes will be when you start making content.
 We will continue to refer to this as the Backoffice throughout the rest of the documentation.
 
 ## Frontend
 
-The Frontend is what people see when they visit your website, meaning that this is where all the content you create in the backoffice go.
+The Frontend is what people see when they visit your website, meaning that this is where all the content you create in the backoffice goes.
+How the frontend looks is completely up to you, and you choose this by creating the look you want in the backoffice, you cannot do any editing on the frontend.
+We will continue to refer to this as the Frontend throughout the rest of the documentation.
 
 ## "Tour of the backoffice"
 
