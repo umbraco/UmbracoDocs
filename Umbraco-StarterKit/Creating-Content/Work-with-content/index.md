@@ -29,6 +29,9 @@ In Umbraco Uno there are a hand-full of options for creating content along with 
 * [Creating content](#creating-content)
 * [Updating content](#updating-content)
 * [Deleting content](#deleting-content)
+* [Publishing content](#publishing-content)
+* [Unpublishing content](#unpublishing-content)
+* [Other options](#other-options)
 
 ## Creating content
 
@@ -78,7 +81,7 @@ To **publish the content right away** select the green "Save and publish" button
 
 To schedule to content for another point in time select the "Schedule..." option, which canbe found by clicking the arrow next to the green "Save and publish" button in the bottom-right corner. Read the [Scheduled publishing](#LINK) article to learn more about how to setup the schedule.
 
-## Unpublish content
+## Unpublishing content
 
 Once a page is published on your website you can at any time choose to unpublish it. The option to do this is available from the publish menu which is accessible through the arrow next to the green "Save and publish" button in the bottom-right corner.
 
