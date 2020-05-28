@@ -6,7 +6,7 @@ versionFrom: 7.0.0
 
 This issue will present itself as an extraction error on your target environment for a deploy.
 
-![Extraction error on Live](images/Error_Environment.png)
+![Extraction error on Live](images/Error_environment.png)
 
 The extraction error happens with two Document Types where one of them have been allowed as a child node type for  the other Document Type.
 
