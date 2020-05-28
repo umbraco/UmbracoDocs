@@ -172,20 +172,19 @@ Run the site locally and verify your own project and the cloned Umbraco Cloud pr
 Merging your existing site into the Umbraco Cloud project is a matter of moving and merging files between the two projects. When following the steps outlined below it is important that you do not overwrite any settings and configuration related to Umbraco Deploy.
 
 1. Copy and replace all folders from your own project to the Umbraco Cloud project
-    * Excluding the following folders:
+    * **Do not copy and replace** the following folders:
         * `/Config`
         * `/App_Data`
     * If your existing site uses Umbraco Forms, make sure you **do not overwrite** the `App_Plugins/UmbracoLicenses/umbracoForms.lic` file
 2. Merge the config files. Pay special attention to the following files:
-    * `/web.config` - in the `web.config` file for the Umbraco Cloud project you will see some new configuration related to Umbraco Deploy, Licenses and Forms. Make sure you **do not overwrite** these when you merge the files.
-    * `/Config/dashboard.config` - make sure to keep the **Deploy dashboard**!
+    * `/web.config` - in the `web.config` file for the Umbraco Cloud project you will see some new configuration related to Umbraco Deploy, Licenses and Forms. Make sure you **do not overwrite** these when you merge the files
     * `/Config/UmbracoDeploy.config` - *only relevant if you are migrating a Cloud project*
 3. Copy the rest of the files in the `/Config` folder from your own project to the Cloud project
 4. If you are using SQL CE
     * Make sure the SQL CE database from your own project replaces the one provided with your Umbraco Cloud project (`.mdf` or `.sdf`)
     * You can find it in `App_Data/umbraco.sdf`
 5. If you are using a local SQL server make sure to update the connection string in the `web.config` for the Umbraco Cloud project.
-6. Copy the rest of the files / folder in the `/App_Data` folder from your own project to the Cloud project
+6. Copy the rest of the files/folders in the `/App_Data` folder from your own project to the Cloud project
 
 As Umbraco Forms comes with an Umbraco Cloud project, there are a few things you need to do / be aware of depending on whether your existing site uses Umbraco Forms or not.
 
