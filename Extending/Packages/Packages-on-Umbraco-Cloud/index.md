@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Packages on Umbraco Cloud"
+meta.Description: "Things to consider for package development and usage in Umbraco Cloud"
 ---
 
 # Packages on Umbraco Cloud

@@ -1,5 +1,7 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "Naming Conventions in Umbraco CMS codebase"
+meta.Description: "A guide to coding naming conventions in Umbraco."
 ---
 
 # Naming conventions

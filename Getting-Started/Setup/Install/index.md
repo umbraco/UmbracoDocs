@@ -1,5 +1,7 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "Installing Umbraco"
+meta.Description: "Instructions on installing Umbraco: in VS code, via NuGet or on a Mac"
 ---
 
 # Installation

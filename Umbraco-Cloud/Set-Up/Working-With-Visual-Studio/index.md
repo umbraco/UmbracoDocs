@@ -54,8 +54,6 @@ This is a recommended setup. If you don't like the setup then you can play with 
 
 What follows is **a recommendation and not the only way to work with Visual Studio**.
 
-![](images/cmd-in-empty-folder.png)
-
 Before running the UaaS.cmd tool you will need the **git clone url** for your Umbraco Cloud Project.
 
 * Go to the Project in the Portal
@@ -123,6 +121,15 @@ We recommend placing all your code in the `*.Core` project (instead of, for exam
 * Models and ViewModels
 * Data Access (the `*.Core` project references Umbraco so you can use the Umbraco datalayer as needed)
 * Extensions methods
+
+### Using ModelsBuilder and IntelliSense
+In order to use ModelsBuilder with IntelliSense in Visual Studio, you will need to make a couple of configuration changes to the web.config file of your `*.Web` project. This is to ensure that the models produced by ModelsBuilder are stored in the right place for compilation.
+1. Make sure ModelsBuilder.Enable is set to true (default): `<add key="Umbraco.ModelsBuilder.Enable" value="true" />`
+2. Set the Mode to `AppData` or `LiveAppData`. This will ensure you can use ModelsBuilder with Visual Studio. So in your Web.config, you should to have: `<add key="Umbraco.ModelsBuilder.ModelsMode" value="AppData" />`
+3. Create a directory called "Models" in your App_Code folder in the `*.Web` directory of your site. Then add: `<add key="Umbraco.ModelsBuilder.ModelsDirectory" value="~/App_Code/Models/" />` to Web.config.
+
+This will make the models of your Document Types available with IntelliSense in Visual Studio.
+[You can read more about configuring ModelsBuilder here.](../../../Reference/Templating/Modelsbuilder)
 
 ### Using Umbraco namespaces in your `*.Core` project
 In order to use Umbraco's features in your `*.Core` project, you have to add references to the DLLs in your `*.Web/bin`.

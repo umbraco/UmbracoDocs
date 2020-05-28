@@ -42,4 +42,4 @@ If neither a `Services` property or a `ApplicationContext` is available, you can
 
 * [**Get a reference to a user**](Get-a-reference-to-a-user-v7.md)<br />See the different ways to lookup a backoffice user.
 
-* [**Update user information**](Update-user-information.md)<br />See how you can update user information such as names and avatars.
+* [**Update user information**](Update-user-information-v7.md)<br />See how you can update user information such as names and avatars.

@@ -49,4 +49,4 @@ ApplicationContext.Current.Services.LocalizationService
 
 ## Samples
 
-* [**Retrieving languages**](Retrieving-languages.md)<br />See examples on how to retrieve languages via the localization service - either individually or as a collection.
+* [**Retrieving languages**](Retrieving-languages-v7.md)<br />See examples on how to retrieve languages via the localization service - either individually or as a collection.

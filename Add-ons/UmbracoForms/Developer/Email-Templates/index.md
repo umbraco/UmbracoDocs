@@ -1,5 +1,7 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "Umbraco Forms Email Templates"
+meta.Description: "Creating an email template for Umbraco Forms."
 ---
 
 # Email Templates

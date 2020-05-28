@@ -43,7 +43,7 @@ user.Avatar = "UserAvatars/6708a49022a712eb7624c7b8aab811370526744b.jpg";
 @{
 
 	// Get a reference to the user service
-	IUserService us = ApplicationContext.Services.UserService;
+	IUserService us = Services.UserService;
 
 	// Get a reference to the user
 	IUser user = us.GetByEmail("john-doe@xample.org");
