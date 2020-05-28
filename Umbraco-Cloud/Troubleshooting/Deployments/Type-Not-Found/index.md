@@ -10,9 +10,7 @@ This issue will present itself as an extraction error on your target environment
 
 The extraction error happens with two Document Types where one of them have been allowed as a child node type for  the other Document Type.
 
-If the Document Type that have been allowed as the child is then deleted,
-
-the references for the child Document Type is not removed from the parent Document Type.
+If the Document Type that have been allowed as the child is then deleted, the references for the child Document Type is not removed from the parent Document Type.
 
 Because the parent Document Type still have the references from the deleted child Document Type,
 
