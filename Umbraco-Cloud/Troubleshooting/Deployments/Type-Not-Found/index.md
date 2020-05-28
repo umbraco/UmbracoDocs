@@ -32,6 +32,6 @@ In this case that is the Document Type *"test1"*.
 
 Resave the parent Document Type so that the references to the deleted child Document Type will be removed from the parent Document Type.
 
-After the Document Type have been saved again make a new deploy and you will see that the deploy will go through
+After the Document Type have been saved again make a new deploy and you will see that the deploy will go through.
 
 and the environment will be green and the deploy have successfully gone through without any errors.
