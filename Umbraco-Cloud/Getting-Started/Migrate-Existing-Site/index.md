@@ -189,11 +189,11 @@ Merging your existing site into the Umbraco Cloud project is a matter of moving 
 As Umbraco Forms comes with an Umbraco Cloud project, there are a few things you need to do / be aware of depending on whether your existing site uses Umbraco Forms or not.
 
 * The existing site didn't use Umbraco Forms
-    * Locate the `installed` marker in `App_Plugins/UmbracoForms` in the Cloud project folder
-    * Delete the `installed` marker
-    * We are doing this to make sure the database from the migrated site is updated with the latest version of Umbraco Forms
+  * Locate the `installed` marker in `App_Plugins/UmbracoForms` in the Cloud project folder
+  * Delete the `installed` marker
+  * We are doing this to make sure the database from the migrated site is updated with the latest version of Umbraco Forms
 * The existing site uses Umbraco Forms
-    * No extra steps needed, as you will have upgraded Umbraco Forms to the latest version before starting the migration
+  * No extra steps needed, as you will have upgraded Umbraco Forms to the latest version before starting the migration
 
 The final thing to do before moving on, is to make sure your Umbraco Cloud user will be added to the new database you've merged into the project. First you need to check if any Umbraco user uses the same email address as your Umbraco Cloud account. If this is the case you need to change the email address of the existing user to something else otherwise your Cloud user will be stuck in a inactive state. If you have confirmed there is no user with the same email address you can add the cloud by following these steps.
 
@@ -221,14 +221,14 @@ In this next part, it is time to generate the so called UDA-files for all your p
 For more details about UDA files, read the [UDA Files](../../Set-Up/Power-Tools/Generating-UDA-files/#what-are-uda-files) article.
 
 * Make sure the folder `/data/revision` on your Umbraco Cloud project is empty
-    * If you have any files in the folder, you can safely remove those at this point
+  * If you have any files in the folder, you can safely remove those at this point
 * Open a command prompt
 * Navigate to the `/data` folder in your local Umbraco Cloud project files
 * Add an *export* marker by typing `echo > deploy-export`
-    * Generating the UDA files may take a while, depending on the extent of your project
-    * You will see a `deploy-complete` marker once the export is done
-    * Run `echo > deploy` again in order to double-check that the UDA files have been generated correctly
-    * When you see a `deploy-complete` marker, it means everything is working as expected
+  * Generating the UDA files may take a while, depending on the extent of your project
+  * You will see a `deploy-complete` marker once the export is done
+  * Run `echo > deploy` again in order to double-check that the UDA files have been generated correctly
+  * When you see a `deploy-complete` marker, it means everything is working as expected
 * You should now see that your `/data/revision` folder has been populated with UDA files corresponding to your projects metadata
 
 ![Run echo > deploy-export](images/deploy-export.gif)
