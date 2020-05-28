@@ -24,7 +24,7 @@ when trying to deploy to the next environment.
 
 Open the **More info** to see the details for the error message.
 
-![Extraction error on Live](images/Extraction_error.png)
+![Extraction error on Live](images/Extraction_Error.png)
 
 In the case illustrated above the extraction error is saying:
 
