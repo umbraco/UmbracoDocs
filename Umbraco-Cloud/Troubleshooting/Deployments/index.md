@@ -18,6 +18,7 @@ The most common [Deployment](../../Deployment/Cloud-to-Cloud) issues are listed 
 * [Collision Errors](Structure-Error)
 * [Dependency Exception](Dependency-Exceptions)
 * [Colliding Data Types](Colliding-Datatypes)
+* [Type Not Found](Type-Not-Found)
 
 The most common Content [Transfer](../../Deployment/Content-Transfer) / [Restore](../../Deployment/Restoring-content) issues are listed below:
 * [Schema mismatch](Schema-Mismatches)
