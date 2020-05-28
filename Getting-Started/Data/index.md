@@ -22,3 +22,9 @@ Defining Member Types and creating members for authentication and user profiles.
 
 ## [Customizing Data Types](Data-Types/)
 Creating and editing Data Types.
+
+## [Scheduled Publishing](Scheduled-Publishing/)
+Schedule when content should be published / unpublished automatically.
+
+## [Users](Users/)
+Control who has access to the Umbraco backoffice and what permissions they have.

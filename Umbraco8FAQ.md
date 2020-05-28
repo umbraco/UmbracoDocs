@@ -1,3 +1,8 @@
+---
+meta.Title: "Umbraco 8 FAQ"
+meta.Description: "Frequently asked questions on Umbraco 8"
+---
+
 # Umbraco 8 - Frequently Asked Questions
 
 In this article you can find answers to some of the most frequently asked questions about Umbraco 8.
@@ -10,7 +15,7 @@ Yes, you can! All free Umbraco Cloud trials will be on Umbraco 8 from the offici
 
 ## Can I still create Umbraco 7 projects on Umbraco Cloud and for how long?
 
-Yes, until the end of 2019 you are still able to create Umbraco 7 Projects on Umbraco Cloud.
+Yes, for now it is still possible to create Umbraco 7 projects on Umbraco Cloud.
 
 When creating a new paid Umbraco Cloud project, you’ll get the option to create it in either Umbraco 7 or Umbraco 8.
 

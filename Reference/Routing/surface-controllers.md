@@ -96,6 +96,8 @@ Since they get routed via an MVC area, your views should be placed in the follow
 * `~/App_Plugins/{areaname}/Views/{controllername}/`
 * `~/App_Plugins/{areaname}/Views/Shared/`
 
+The controller itself should not be placed in the App_Plugins folder, as files in this folder are not compiled by Umbraco. Either build your controller to a dll file and place it in bin, or put the .cs file in the App_Code folder.
+
 #### Protecting surface controller routes
 
 If you only want a surface controller action to be available when it's used within an Umbraco form and not from the auto-routed URL, you can add the `[ValidateUmbracoFormRouteString]` attribute to the action method. This can be especially useful for plugin based controllers, as this makes sure the actions can only be activated whenever it's used within the website.
@@ -121,7 +123,7 @@ This attribute is only available since Umbraco 7.15.1 and 8.1.1.
 
 Whenever you render an Umbraco form within your view using `Html.BeginUmbracoForm<MyController>(...)`, the forms action will be the URL of the current page (not the auto-routed URL of the surface controller). Umbraco will therefore add a hidden `ufprt` field to the form with an encrypted value containing the controller, action and optional area (known as the 'Umbraco form route string'). On form submission, this value is decrypted and Umbraco will activate the specified action of the surface controller.
 
-```razor
+```html
 @using (Html.BeginUmbracoForm<MyController>("HandleSubmit"))
 {
     <input type="submit" />

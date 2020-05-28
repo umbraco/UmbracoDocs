@@ -149,3 +149,7 @@ namespace My.Website
 }
 
 ```
+
+:::note
+To make sure your custom 404 page is served set the `error404` in `umbracoSettings.config` to 0.  
+:::

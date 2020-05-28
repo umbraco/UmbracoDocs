@@ -17,14 +17,14 @@ Learn more about our recommendations for DNS records in the [Manage Hostnames](.
 
 ## HTTPS by default
 
-All new Live sites created on Cloud since version 7.12 will automagically have a permanent redirect (301) from HTTP to HTTPS. This is achieved by a web.config transform called: `Latch.Web.live.xdt.config` - accessible in your git repository. If you'd like to remove the redirect rule (which we and [others](https://www.blog.google/products/chrome/milestone-chrome-security-marking-http-not-secure/) strongly discourage) you'll need to remove the file `Latch.Web.live.xdt.config` from projects repository and push the change to Cloud.
+All new Live sites created on Cloud since version 7.12 will automaticallt have a permanent redirect (301) from HTTP to HTTPS. This is achieved by a web.config transform called: `Latch.Web.live.xdt.config` - accessible in your git repository. If you'd like to remove the redirect rule (which we and [others](https://www.blog.google/products/chrome/milestone-chrome-security-marking-http-not-secure/) strongly discourage) you'll need to remove the file `Latch.Web.live.xdt.config` from projects repository and push the change to Cloud.
 
 ## Default TLS Certificates
 
 All `*.umbraco.io` domains will serve a default wildcard certificate with a common name `*.umbraco.io`.
 Custom domains will automatically be secured by a Let's Encrypt certificate.
 
-You can always [upload a custom certificate](../Manage-Hostnames/Security-Certificates/) to overwrite the default certificates provided for the domains.
+On Umbraco Cloud projects on the Professional or Enterprise plan, it is possible to [upload a custom certificate](../Manage-Hostnames/Security-Certificates/) that will overwrite the default certificates provided for the domains.
 
 ## Latch and CDN
 
@@ -45,6 +45,7 @@ In order to resolve this, you will need to disable IPv6 for that domain.
 ## Status definitions
 
 When Umbraco Latch is issuing a certificate for one of your hostnames it goes through the following states:
+
 * Initial
 * DnsApproved
 * NoRewrites

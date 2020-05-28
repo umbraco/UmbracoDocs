@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Adding a type to the provider model"
 ---
 
 # Adding a type to the provider model
@@ -96,7 +97,7 @@ needed. Also look in the reference chapter for complete class implementations of
 
 ## Overriding default providers in Umbraco Forms
 
-This is a new feature in **Forms 6.0.3+** that makes it possible to override & inherit the original provider, be it a Field Type or Workflow etc. The only requirement when inheriting a fieldtype that you wish to override is to ensure you do not override/change the Id set for the provider.
+This is a new feature in **Forms 6.0.3+** that makes it possible to override & inherit the original provider, be it a Field Type or Workflow etc. The only requirement when inheriting a fieldtype that you wish to override is to ensure you do not override/change the Id set for the provider, and make sure your class is public.
 
 Here is an example of overriding the Textarea field aka Long Answer that is taken from Per's CodeGarden 17 talk, which has been updated for Forms 8.
 

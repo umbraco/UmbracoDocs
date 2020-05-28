@@ -1,6 +1,8 @@
 ---
 keywords: dashboards dashboard extending v8 version8
 versionFrom: 8.0.0
+meta.Title: "Umbraco Custom Dashboards"
+meta.Description: "A guide to creating custom dashboards in Umbraco"
 ---
 
 # Dashboards

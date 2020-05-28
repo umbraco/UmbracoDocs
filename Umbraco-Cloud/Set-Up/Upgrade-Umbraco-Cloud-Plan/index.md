@@ -47,11 +47,13 @@ In the menu you can find a tab called *"Upgrade plan"*.
 - If you are on the Standard plan you can upgrade to the Professional plan.
 
 
- To upgrade to the plan of your choosing, click on the green button for the plan that you want to upgrade to and then your project will be upgraded.
+To upgrade to the plan of your choosing, click on the green button for the plan that you want to upgrade to and then your project will be upgraded.
  
-  :::note
-The change in price will first take effect from the next periode of your subscription.
- :::
+:::note
+The change in price will take effect from the next period of your subscription.
+
+If you change plan in the middle of the month, the time from that date until the start of the next subscription period, will be added to the next invoice.
+:::
 
 
 
@@ -59,4 +61,4 @@ The change in price will first take effect from the next periode of your subscri
 
 If you need to downgrade the plan you are on, please reach out to our friendly support team, they can help you in doing so.
 
-You can either contact them through the chat on Umbraco.io or send them an email to contact@umbraco.dk, they will be more than happy to help.
+You can either contact them through the chat on Umbraco.io or send them an email to contact@umbraco.com, they will be more than happy to help.

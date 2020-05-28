@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "Adding a field type to Umbraco Forms"
 ---
 
 # Adding a field type to Umbraco Forms #
@@ -70,7 +71,7 @@ We will also add a file for the default theme of the form at `Views\Partials\For
 
 ```csharp
 @model Umbraco.Forms.Mvc.Models.FieldViewModel
-<input type="text" name="@Model.Name" id="@Model.Id" class="text" value="@Model.Value" maxlength="500"
+<input type="text" name="@Model.Name" id="@Model.Id" class="text" value="@Model.ValueAsHtmlString" maxlength="500"
         @{if (string.IsNullOrEmpty(Model.PlaceholderText) == false) { <text> placeholder="@Model.PlaceholderText" </text> }}
         @{if (Model.Mandatory || Model.Validate) { <text> data-val="true" </text> }}
         @{if (Model.Mandatory) { <text> data-val-required="@Model.RequiredErrorMessage" </text> }}
