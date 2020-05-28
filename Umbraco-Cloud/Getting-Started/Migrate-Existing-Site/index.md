@@ -135,6 +135,16 @@ Before the migration process can start, you will need to have an Umbraco Cloud p
 
 ![Manage environments](images/setup-dev-env.png)
 
+If you on your existing site have been working with members and made changes to the default Member Type, it is important that you follow these steps on the Umbraco Cloud environments:
+
+1. Head to the backoffice of the Development environment
+2. Navigate to the *Settings* section
+3. Open the *Media types* folder
+4. Delete **Member**
+5. Repeat these steps on all the Cloud environments
+
+![Default media types](images/MemberType-delete.png)
+
 :::note
 
 ### Data types
