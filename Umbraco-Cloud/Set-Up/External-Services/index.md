@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+keywords: whitelist ip internal 
+---
+
 # Using external services with Umbraco Cloud
 
 In some cases Umbraco Cloud might not be the only service you are working with. You might need to work with other services as well - this could be either internal or third party services. In either case, it will be services external to Umbraco Cloud.
