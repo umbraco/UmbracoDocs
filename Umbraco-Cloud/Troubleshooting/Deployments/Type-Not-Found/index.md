@@ -26,9 +26,7 @@ In the case illustrated above the extraction error is saying:
     
     as an allowed child content type of parent Document type Test1 with id: 1087, and guid: 4a06f910-7b1b-4ad6-84db-72481b1ae529"
 
-To resolve the extraction error go to the backoffice of the environment, which you are deploying from and
-
-find the Document Type that is listed as the parent for the deleted Document Type in the error message,
+To resolve the extraction error go to the backoffice of the environment, which you are deploying from and find the Document Type that is listed as the parent for the deleted Document Type in the error message.
 
 in this case it is the Document Type *"test1"*.
 
