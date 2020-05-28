@@ -19,7 +19,9 @@ In the Media Library there are multiple different ways to upload media items. Th
 
 The "drag and drop" area is available in every folder in the Media section, which enables you to upload media items exactly where you need them.
 
-## 
+## Manage media items
+
+For each media item on your website 
 
 ## Supported media types (file types)
 
