@@ -34,14 +34,14 @@ Before you start migrating your Umbraco site to Umbraco Cloud there are a few th
 Your Umbraco site has to fulfill these requirements:
 
 * Has no more content nodes than your plan covers (Starter plan: 500 - Standard plan: 2500 - Pro Plan: 7500)
-    * Read more about the Umbraco Cloud Plans on [Umbraco.com](https://umbraco.com/umbraco-cloud-pricing/)
+  * Read more about the Umbraco Cloud Plans on [Umbraco.com](https://umbraco.com/umbraco-cloud-pricing/)
 * Contains no member data
-    * If you do have member data, these will need to be imported manually after the migration
+  * If you do have member data, these will need to be imported manually after the migration
 * No obsolete/old packages
-    * Not all packages will work on Umbraco Cloud
-    * Read more about this in the section below
+  * Not all packages will work on Umbraco Cloud
+  * Read more about this in the section below
 * Isn’t a site that has been upgraded from versions below Umbraco 7
-    * Legacy code from older versions can potentially cause issues
+  * Legacy code from older versions can potentially cause issues
 
 If you have a site that does not meet the above requirements, feel free to contact us and we will help you find the best solution for your site.
 
@@ -71,7 +71,7 @@ To help smooth this process for you, there is a community project called [Umbrac
 There are a few tools we recommend using to make the migration process as smooth as possible. We've made a checklist for you here:
 
 * Git needs to be installed on your computer
-    * Optional: Git client, like [Fork](https://git-fork.com/), [SourceTree](https://www.sourcetreeapp.com/), or [GitKraken](https://www.gitkraken.com/)
+  * Optional: Git client, like [Fork](https://git-fork.com/), [SourceTree](https://www.sourcetreeapp.com/), or [GitKraken](https://www.gitkraken.com/)
 * Visual Studio OR Visual Studio Code + IIS Express
 * Merging tool - like [WinMerge](http://winmerge.org/) or [DiffMerge](https://sourcegear.com/diffmerge/)
 
@@ -79,7 +79,7 @@ Aside from these tools you'll also need:
 
 * A local copy of your existing site
 * A new and clean Umbraco Cloud project
-    * We strongly recommend having a project with **at least 2 environments**
+  * We strongly recommend having a project with **at least 2 environments**
 
 ## 3. Prepare your site
 
@@ -105,18 +105,17 @@ Before moving on to the next step, you need to clean up the local clone of your 
 
 While the site is running you need to:
 
-  * Go the backoffice of your project
-  * Empty the recycle bins from both the Content and Media sections
+* Go the backoffice of your project
+* Empty the recycle bins from both the Content and Media sections
 
 Now, shut down the project, and delete the following files and folders from `/App_Data`
 
-  * `/TEMP`
-  * `/Logs`
-  * `/cache`
-  * `/preview`
-  * `umbraco.config`
+* `/TEMP`
+* `/Logs`
+* `/cache`
+* `/preview`
 
-![delete-from-app-data](images/App_Data-DELETE.png)
+![delete-from-app-data](images/App_Data-deleted.png)
 
 That was it! Now you are ready to start the actual migration process, or in other words: **now the real fun begins!**
 
