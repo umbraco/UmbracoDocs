@@ -186,15 +186,6 @@ Merging your existing site into the Umbraco Cloud project is a matter of moving 
 5. If you are using a local SQL server make sure to update the connection string in the `web.config` for the Umbraco Cloud project.
 6. Copy the rest of the files/folders in the `/App_Data` folder from your own project to the Cloud project
 
-As Umbraco Forms comes with an Umbraco Cloud project, there are a few things you need to do / be aware of depending on whether your existing site uses Umbraco Forms or not.
-
-* The existing site didn't use Umbraco Forms
-  * Locate the `installed` marker in `App_Plugins/UmbracoForms` in the Cloud project folder
-  * Delete the `installed` marker
-  * We are doing this to make sure the database from the migrated site is updated with the latest version of Umbraco Forms
-* The existing site uses Umbraco Forms
-  * No extra steps needed, as you will have upgraded Umbraco Forms to the latest version before starting the migration
-
 The final thing to do before moving on, is to make sure your Umbraco Cloud user will be added to the new database you've merged into the project. First you need to check if any Umbraco user uses the same email address as your Umbraco Cloud account. If this is the case you need to change the email address of the existing user to something else otherwise your Cloud user will be stuck in a inactive state. If you have confirmed there is no user with the same email address you can add the cloud by following these steps.
 
 * Go to the `data/backoffice/users` folder in your Umbraco Cloud project files
