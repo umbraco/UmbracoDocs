@@ -139,7 +139,7 @@ If you on your existing site have been working with members and made changes to 
 
 1. Head to the backoffice of the Development environment
 2. Navigate to the *Settings* section
-3. Open the *Media types* folder
+3. Open the *Member types* folder
 4. Delete **Member**
 5. Repeat these steps on all the Cloud environments
 
