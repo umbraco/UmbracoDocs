@@ -28,7 +28,7 @@ In the case illustrated above the extraction error is saying:
 
 To resolve the extraction error go to the backoffice of the environment, which you are deploying from and find the Document Type that is listed as the parent for the deleted Document Type in the error message.
 
-in this case it is the Document Type *"test1"*.
+In this case that is the Document Type *"test1"*.
 
 Resave the parent Document Type so that the references to the deleted child Document Type will be removed from the parent Document Type.
 
