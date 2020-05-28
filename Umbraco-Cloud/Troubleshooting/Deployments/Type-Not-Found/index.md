@@ -34,4 +34,4 @@ Resave the parent Document Type so that the references to the deleted child Docu
 
 After the Document Type have been saved again make a new deploy and you will see that the deploy will go through.
 
-and the environment will be green and the deploy have successfully gone through without any errors.
+The environment will be green and the deployment has successfully gone through without any errors.
