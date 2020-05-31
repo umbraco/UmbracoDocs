@@ -4,6 +4,14 @@ versionFrom: 7.0.0
 
 # Upload certificates manually
 
+:::note
+This feature is only available for Umbraco Cloud projects on a Professional or Enterprise plan.
+
+All projects on a Starter or Standard plan will automatically be assigned an [Umbraco Latch certificate](../../Umbraco-Latch).
+
+See the full list of features including in the [Umbraco Cloud pricing plans on Umbraco.com](https://umbraco.com/umbraco-cloud-pricing/).
+:::
+
 Under **Certificates** you'll find an option to manually upload your own certificate and assign it to one of the hostnames you've added.
 
 Your certificates need to be **`.pfx`** format and must be set to use a password. Each certificate can then be bound to a hostname you have already added to your site. Make sure you use the hostname you will bind the certificate to as the common name (CN) when generating the certificate.

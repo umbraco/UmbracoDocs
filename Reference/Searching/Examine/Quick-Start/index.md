@@ -108,7 +108,7 @@ else
 At this point we have chosen to use the External index and it's searcher. 
 
 :::tip
-We reference the External index by it's alias "ExternalIndex". Umbraco has a set of 'Constants' that refer to the indexes that can be more convenient to use `Constants.UmbracoIndexes`. So, in the example here we could have used `Constants.UmbracoIndexes.ExternalIndex` instead of "ExternalIndex".
+We reference the External index by it's alias "ExternalIndex". Umbraco has a set of 'Constants' that refer to the indexes that can be more convenient to use `Constants.UmbracoIndexes`. So, in the example here we could have used `Constants.UmbracoIndexes.ExternalIndexName` instead of "ExternalIndex".
 :::
 
 The `searcher` has a CreateQuery method, where you can choose to search content, media or members eg:
