@@ -10,11 +10,25 @@ This is an article about the backoffice, and is design around giving you a deepe
 
 The Backoffice is the counterpart to the Frontend, it is in the backoffice that you can create all of your content, this can be done in the content section of the backoffice.
 A backoffice is built of multiple areas, there's the tree on the left, the dashboard in the middle. the sections in the top to learn more please read [the Getting started guide for the backoffice](../../../Getting-Started/Backoffice/index.md)
-
-
 The backoffice also lets you control what your users can do and you can change settings for your users and members.
-
 Essentially the backoffice works as your main workspace when creating and managing things in your Umbraco Uno project.
+
+### Tree
+
+The tree is a list of multiple items, it could be media items or content items.
+The tree is always located to the left of the Dashboard.
+
+### Node
+
+A node is an item in the tree list, what a node is, changes depending on what section you are in. 
+For example in the content section a node would be a piece of content or a page, and in media, it would an image or a folder.
+
+### Dashboards
+
+The dashboard is located in the middle of the screen for each of the sections.
+The main function of the dashboard is to show you important information.
+
+## The Sections
 
 The backoffice is divided into sections you will see this in a menu bar in the top of the page, These sections are as follows:
 
@@ -25,41 +39,12 @@ The backoffice is divided into sections you will see this in a menu bar in the t
 - Forms
 - Translation
 
-### Tree
-
-The tree is a list of multiple items, it could be media items or content items.
-The tree is always located to the left of the Dashboard.
-
-### Sample
-
-![Image of a Tree](images/Tree.png)
-
-### Node
-
-A node is an item in the tree list, what a node is, changes depending on what section you are in. 
-For example in the content section a node would be a piece of content or a page, and in media, it would an image or a folder.
-
-### Sample
-
-![Image of a Node](images/Node.png)
-
-### Dashboards
-
-The dashboard is located in the middle of the screen for each of the sections.
-The main function of the dashboard is to show you important information.
-
-### Sample
-
-![Image of a Dashboard](images/Dashboard.png)
-
-## The Sections
-
 Here we will get in-depth with what each section offers you in tools.
 You will to the majority of your work from the content section, however, some tools may only be used on certain sections such as creating a new form for instance.
 
-### Sample
+### What it looks like
 
-![Image of the sections](images/Sections.png)
+![Image of the Backoffice](images/Backoffice-All.png)
 
 ### Content
 
@@ -87,6 +72,4 @@ You can choose to create members manually as well, from the members section you 
 The Forms section lets you create forms to use in your content section.
 You can read more about forms and how to create them here [Umbraco Forms](../../../UmbracoForms/index.md)
 
-
 ### Translation
-
