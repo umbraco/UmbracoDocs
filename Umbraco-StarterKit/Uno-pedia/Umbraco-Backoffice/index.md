@@ -34,12 +34,12 @@ To switch between workspace and dashboard you can click nodes for  workspace and
 
 The backoffice is divided into sections you will see this in a menu bar in the top of the page. The sections are as follows:
 
-- Content
-- Media
-- Users
-- Members
-- Forms
-- Translation
+- [Content](###Content)
+- [Media](###Media)
+- [Users](###Users)
+- [Members](###Members)
+- [Forms](###Forms)
+- [Translation](###Translation)
 
 Here we will get in-depth with what each section offers you in tools.
 You will do the majority of your work from the Content sections, however, some tools may only be used on certain sections such as creating a new form for instance.
@@ -57,17 +57,19 @@ The content section is where you generally work with your content, it utilizes a
 The media section is where you can handle all of your images and videos. The way it works is that you can create a folder for your media files if you want, by pressing the button in the left top of the dashboard that says “create”.
 When you have created a folder, you can open the folder and then you drag the images, from your local machine into the folder, and voíla its in your media library.
 On the left side of the screen, you can see your entire media library.
-
+There is much more to learn about [Media](../../Creating-Content/Manage-Media-library/index.md).
 ### Users
 
 The users section handles all of the backoffice users that have been invited to the backoffice by the owners. Here you can change what permissions the users have such for example read-only users.
 What sections they should have access to is also up to you, and you can choose that by creating a group for the users that only have access to the sections you want them to.
+You can get a deeper knowledge about [Users](../../Manage-users/index.md) by following this article.
 
 ### Members
 
 The members section handles members which are not to confuse with users, members are people that sign up to your site via the register widget.
 This means that the members are your “customers” and users are your “workers”.
 You can choose to create members manually as well, from the members section you will be able to fix their passwords or what other management might be needed there.
+If you want to learn more about [Members](../../Manage-users/index.md), you can do so by following this article.
 
 ### Forms
 
