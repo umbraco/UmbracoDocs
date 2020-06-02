@@ -58,6 +58,7 @@ The media section is where you can handle all of your images and videos. The way
 When you have created a folder, you can open the folder and then you drag the images, from your local machine into the folder, and voíla its in your media library.
 On the left side of the screen, you can see your entire media library.
 There is much more to learn about [Media](../../Creating-Content/Manage-Media-library/index.md).
+
 ### Users
 
 The users section handles all of the backoffice users that have been invited to the backoffice by the owners. Here you can change what permissions the users have such for example read-only users.
