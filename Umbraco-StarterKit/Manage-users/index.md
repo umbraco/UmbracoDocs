@@ -14,8 +14,12 @@ You can manage your users so they can’t publish or edit only read, or you can 
 
 Please note that for now a user cannot be deleted, they can only be disabled.
 
-
-
 ## What is a Member
 
+A member is someone who is strictly limited to the front end.
+
 ## What is a Team Member
+
+Invite member in the portal, is a bit of weird one, as you don't actually invite a member but a user.
+While this can be a bit confusing, you can view a team member as a user of the backoffice.
+When you invite a team member you can decide if they need admin access, if you grant them that they will be able to access and edit everything.
