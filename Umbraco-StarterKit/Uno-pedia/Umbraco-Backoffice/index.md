@@ -34,12 +34,12 @@ To switch between workspace and dashboard you can click nodes for  workspace and
 
 The backoffice is divided into sections you will see this in a menu bar in the top of the page. The sections are as follows:
 
-- [Content](###Content)
-- [Media](###Media)
-- [Users](###Users)
-- [Members](###Members)
-- [Forms](###Forms)
-- [Translation](###Translation)
+- [Content](#Content)
+- [Media](#Media)
+- [Users](#Users)
+- [Members](#Members)
+- [Forms](#Forms)
+- [Translation](#Translation)
 
 Here we will get in-depth with what each section offers you in tools.
 You will do the majority of your work from the Content sections, however, some tools may only be used on certain sections such as creating a new form for instance.
