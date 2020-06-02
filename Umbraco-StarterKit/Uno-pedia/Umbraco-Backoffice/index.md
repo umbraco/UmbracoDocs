@@ -8,7 +8,7 @@ This is an article about the backoffice, and is design around giving you a deepe
 
 ## What is a Backoffice
 
-The Backoffice is the counterpart to the Frontend, it is in the backoffice that you can create all of your content, this can be done in the content section of the backoffice.
+The Backoffice is the counterpart to the Frontend. It is in the backoffice that you create all of your content, which is done in the Content section of the backoffice.
 A backoffice is built of multiple areas, there's the tree on the left, the dashboard in the middle. the sections in the top to learn more please read [the Getting started guide for the backoffice](../../../Getting-Started/Backoffice/index.md)
 The backoffice also lets you control what your users can do and you can change settings for your users and members.
 Essentially the backoffice works as your main workspace when creating and managing things in your Umbraco Uno project.
