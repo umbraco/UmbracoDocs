@@ -27,7 +27,7 @@ For example, in the Content section a node would be a piece of content or a page
 
 The dashboard is located in the middle of the screen for each of the sections.
 The main function of the dashboard is to show you important information.
-It is worth noting that the dashboard will be transformed into your workspace when working with content.
+It is worth noting that the dashboard will be transformed into your workspace when working with content and media.
 To switch between workspace and dashboard you can click nodes for  workspace and the field saying "content" in the top of the tree.
 
 ## The Sections
