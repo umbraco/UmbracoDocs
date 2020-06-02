@@ -1,8 +1,7 @@
 ---
 versionFrom: 7.0.0
 meta.Title: "Surface Controller Actions"
-meta.Description: "Information about Surface Controller Actions in Umbraco"
-
+meta.Description: "Information about Surface Controller Actions Result Helpers in Umbraco"
 ---
 
 A surface controller can return a few Umbraco specific actions. 
