@@ -84,7 +84,7 @@ You can choose to create members manually as well, from the members section you 
 ### Forms
 
 The Forms section lets you create forms to use in your content section.
-You can read more about forms and how to create them here [Umbraco Forms](../../../UmbracoForms/index.md)
+You can read more about forms and how to create them here [Umbraco Forms](../../../Add-ons/UmbracoForms/index.md)
 
 
 ### Translation
