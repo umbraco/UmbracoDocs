@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Handling application startup events in Umbraco"
+meta.Description: "How to handle application startup events in Umbraco"
 ---
 
 # Application startup

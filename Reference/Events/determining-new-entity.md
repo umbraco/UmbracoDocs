@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Determining whether an entity is new in Umbraco"
+meta.Description: "How to determine whether an entity is new in Umbraco"
 ---
 
 # Determining if an entity is new
