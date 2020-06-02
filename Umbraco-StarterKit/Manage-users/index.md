@@ -14,9 +14,12 @@ You can manage your users so they can’t publish or edit only read, or you can 
 
 Please note that for now a user cannot be deleted, they can only be disabled.
 
+Please see the [User](../Manage-users/Users/index.md) section for more information about users and what you can do with them.
+
 ## What is a Member
 
 A member is someone who is strictly limited to the front end and typically these members will be customers, clients, or users of your page's front end.
+If you want to lern more about how you can manage your [Members](../Manage-users/Members/index.md) Theres an entire article about it.
 
 ## What is a Team Member
 
