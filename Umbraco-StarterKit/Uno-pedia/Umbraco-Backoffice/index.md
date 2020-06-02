@@ -23,10 +23,12 @@ The tree is always located to the left of the Dashboard.
 A node is an item in the tree list, what a node is, changes depending on what section you are in. 
 For example in the content section a node would be a piece of content or a page, and in media, it would an image or a folder.
 
-### Dashboards
+### Dashboards/Workspaces
 
 The dashboard is located in the middle of the screen for each of the sections.
 The main function of the dashboard is to show you important information.
+It is worth noting that the dashboard will be transformed into your workspace when working with content.
+To switch between workspace and dashboard you can click nodes for  workspace and the field saying "content" in the top of the tree.
 
 ## The Sections
 
