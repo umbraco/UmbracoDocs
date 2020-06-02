@@ -23,6 +23,6 @@ If you want to lern more about how you can manage your [Members](../Manage-users
 
 ## What is a Team Member
 
-Invite member in the portal, is a bit of weird one, as you don't actually invite a member but a user.
+Invite member in the portal, is a bit of weird one, as you don't invite a member but a user.
 While this can be a bit confusing, you can view a team member as a user of the backoffice.
 When you invite a team member you can decide if they need admin access, if you grant them that they will be able to access and edit everything.
