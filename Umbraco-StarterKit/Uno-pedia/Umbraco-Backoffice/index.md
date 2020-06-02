@@ -42,7 +42,7 @@ The backoffice is divided into sections you will see this in a menu bar in the t
 - Translation
 
 Here we will get in-depth with what each section offers you in tools.
-You will to the majority of your work from the content section, however, some tools may only be used on certain sections such as creating a new form for instance.
+You will do the majority of your work from the Content sections, however, some tools may only be used on certain sections such as creating a new form for instance.
 
 ### What it looks like
 
