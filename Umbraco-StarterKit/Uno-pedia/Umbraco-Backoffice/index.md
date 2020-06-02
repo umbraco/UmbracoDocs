@@ -20,7 +20,7 @@ The tree is always located to the left of the Dashboard.
 
 ### Node
 
-A node is an item in the tree list, what a node is, changes depending on what section you are in. 
+A node is an item in the tree list. What a node is changes depending on what section you are in. 
 For example in the content section a node would be a piece of content or a page, and in media, it would an image or a folder.
 
 ### Dashboards/Workspaces
