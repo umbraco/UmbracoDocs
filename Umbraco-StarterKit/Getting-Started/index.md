@@ -28,7 +28,7 @@ This is also where you can get an overview of your environments, make changes to
 We will continue to refer to this as the portal throughout the rest of the documentation.
 The portal is a general thing when working with Umbraco on the cloud, it is used on both regular cloud projects and Heartcore as well as Umbraco Uno.
 
-### Umbraco Backoffice
+### [Umbraco Backoffice](Tour-of-the-backoffice)
 
 The Umbraco Backoffice is where you will be working when editing and creating content. It is divided into sections in the top of the page.
 In the content section of the backoffice, you will have a content tree on the left side of the screen. This content tree is where your content nodes will be when you start making content.
@@ -44,6 +44,6 @@ We will continue to refer to this as the Frontend throughout the rest of the doc
 
 ## Sample site
 
-## Working with content
+## [Working with content](../Creating-Content/Work-with-content)
 
 ## Selecting a theme
