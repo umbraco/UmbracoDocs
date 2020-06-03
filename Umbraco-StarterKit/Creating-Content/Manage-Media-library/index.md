@@ -10,7 +10,7 @@ All images, video clips and files that are uploaded to your Umbraco Uno website,
 
 ## Uploading media items
 
-Media items can be uploaded while working with content in the Content section, or directly through the Media section, which is also often refered to as the **Media Library**.
+Media items can be [uploaded while working with content](link to content docs) in the Content section, or directly through the Media section, which is also often refered to as the **Media Library**.
 
 In the Media Library there are multiple different ways to upload media items. These are the two most commonly used ones:
 
@@ -21,13 +21,31 @@ The "drag and drop" area is available in every folder in the Media section, whic
 
 ## Manage media items
 
-For each media item on your website 
+For each media item on your website you can add any time change the name of the item as well as see the dimensions for it.
 
-## Supported media types (file types)
+You can also see on which pieces of content each media item is being used. Find this feature on the "Info" tab when browsing through items in the Media Library.
+
+## Supported types
+
+Most of the common types can be uploaded to the Media Library in Umbraco.
 
 ### Images
 
+Supported media types include (but are not limited to):
+
+* `png`
+* `jpg/jpeg`
+* `gif`
+* `svg`
+
 ### Files
+
+Supported file types include (but are not limited to):
+
+* `pdf`
+* `doc/docx`
+* `xlsx`
+* `txt`
 
 :::tip
 
