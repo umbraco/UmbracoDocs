@@ -35,16 +35,16 @@ Adding a user to a user group can be done when the user is created/invited, howe
 
 The way you do this is to:
 
-- click the user in question
-- then when on their profile, you scroll down until you see, assign access
-- in this section the first option is groups 
-- here you can add or remove the user to/from any group you would like
+- Click the user in question
+- When on their profile, you scroll down until you see, assign access
+- In this section the first option is groups 
+- Here you can add or remove the user to/from any group you would like
 - You can also choose a media and a content start node for the user, to limit the tree for the users.
 
 Another and perhaps more efficient way to add users to groups is to:
 
-- go to the group's section
+- Go to the group's section
 - click the name of the group you want to add users to
-- once inside the group navigate to the right side of the screen where there is a box saying users
-- click the "Add" button.
-- select the user you wnat to add
+- Once inside the group navigate to the right side of the screen where there is a box saying users
+- Click the "Add" button.
+- Select the user you wnat to add
