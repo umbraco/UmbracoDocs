@@ -21,7 +21,7 @@ Please see the [User](../Manage-users/Users/index.md) article for more informati
 ## What is a Member
 
 A member is someone who is strictly limited to the frontend and typically these members will be customers, clients, or users of your page's frontend.
-If you want to lern more about how you can manage your [Members](../Manage-users/Members/index.md) Theres an entire article about it.
+If you want to learn more about how you can manage your [Members](../Manage-users/Members/index.md) there's an entire article about it.
 
 ## What is a Team Member
 
