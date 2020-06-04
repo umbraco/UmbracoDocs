@@ -16,7 +16,7 @@ Please note that for now a user cannot be deleted, they can only be disabled.
 
 You will find that your project has a user named themeowner, it is there to make your project work.
 
-Please see the [User](../Manage-users/Users/index.md) section for more information about users and what you can do with them.
+Please see the [User](../Manage-users/Users/index.md) article for more information about users and what you can do with them.
 
 ## What is a Member
 
