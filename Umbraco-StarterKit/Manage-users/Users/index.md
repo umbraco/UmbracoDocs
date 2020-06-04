@@ -25,7 +25,7 @@ The only major difference in these two options is that if you choose to invite a
 Creating user groups can be a great way of keeping track of what users have access to in the backoffice.
 
 The way a user group works is that you create it in the User section, then set up what these groups should have permission to access and change.
-This can be achieved by entering the user group section, then hit create user, from there you will be able to create user groups with a restriction for what the users in that group will be able to do and then you add the users to the groups accordingly.
+This can be achieved by entering the user group section. Hit create user, from there you will be able to create user groups, and add the restrictions for what the users, in that group will be able to do and then you add the users to the groups accordingly.
 
 ![Image of the user group creation section](images/User-creation.png)
 
@@ -44,7 +44,7 @@ The way you do this is to:
 Another and perhaps more efficient way to add users to groups is to:
 
 - Go to the group's section
-- click the name of the group you want to add users to
+- Click the name of the group you want to add users to
 - Once inside the group navigate to the right side of the screen where there is a box saying users
 - Click the "Add" button.
 - Select the user you wnat to add
