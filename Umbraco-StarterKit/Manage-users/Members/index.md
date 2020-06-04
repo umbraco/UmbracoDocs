@@ -12,4 +12,14 @@ You can also add a member to a member group.
 
 ### Member groups
 
-You can create member groups, which can be useful to keep track of your frontend members, making it easier to do things like changing passwords for specific members or deleting specific members.
+You can add members groups, this can be useful to keep track of your front end members, making it easier to do things like changing passwords for specific members or deleting specific members.
+
+### The purpose of members
+
+The purpose of having members on your page is to allow the people that use your page to set up a personal account on the front end of your page.
+This in turn allows for a better overview of the page because you in the back office have the option to sort these members into member groups, by doing that you can decide what member groups have access to certain things on the front end.
+
+### Widgets for creating and logging in a user
+
+To make the creation of members a more smooth experience, using the register widget might be your best solution, as this lets the people using your page set up their own member account.
+Then after creating a member they can use the login widget to login into their account.

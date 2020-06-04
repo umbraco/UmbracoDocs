@@ -9,16 +9,20 @@ In this section, you can find all the information and details you need in order 
 ## What is a User
 
 A user is someone who has access to the Umbraco backoffice and is not to be confused with Members. When Umbraco has been installed a user will automatically be generated with the login (email) and password entered during installation. Users can be created, edited, and managed in the User section.
+Managing your users.
 You can manage your users so they can’t publish or edit only read, or you can disable someone from your project if they should not have access anymore.
 
-Please note that for now a user cannot be deleted, they can only be disabled.
-You will find that your project has a user named themeowner, it is there to make your project work.
+Please note that for now a user cannot be deleted, they can only be disabled
+The reason for this is that, if the user were deleted then everything they created would be deleted along with the user.
 
-Please see the [User](../Manage-users/Users/index.md) article for more information about users and what you can do with them.
+Please see the [User](../Manage-users/Users/index.md) section for more information about users and what you can do with them.
+
+::: Note You will find that your project has a user named themeowner, it is there because this is what implements the entire theme on your project if you remove this your project won't have access to the theme anymore and that will make your project cease to function.:::
+
 
 ## What is a Member
 
-A member is someone who is strictly limited to the frontend and typically these members will be customers, clients, or users of your page's frontend.
-If you want to learn more about how you can manage your [Members](../Manage-users/Members/index.md) there's an entire article about it.
+A member is someone who is strictly limited to the front end and typically these members will be customers, clients, or users of your page's front end.
+If you want to learn more about how you can manage your [Members](../Manage-users/Members/index.md) There's an entire article about it.
 
  
