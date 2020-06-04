@@ -11,7 +11,7 @@ In this section, you can find all the information and details you need in order 
 A user is someone who has access to the Umbraco backoffice and is not to be confused with Members. When you enter your Umbraco project you will find that a user allready excist made with the login (email) and password entered during creation of the project. Users can be created, edited, and managed in the User section.
 You can manage your users so they can’t publish or edit only read, or you can disable someone from your project if they should not have access anymore.
 
-Please note that for now a user cannot be deleted, they can only be disabled
+A user cannot be deleted, they can only be disabled
 The reason for this is that, if the user were deleted then everything they created would be deleted along with the user.
 
 Please see the [User](../Manage-users/Users/index.md) section for more information about users and what you can do with them.
