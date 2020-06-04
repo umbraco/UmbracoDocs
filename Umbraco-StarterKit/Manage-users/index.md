@@ -23,8 +23,4 @@ Please see the [User](../Manage-users/Users/index.md) article for more informati
 A member is someone who is strictly limited to the frontend and typically these members will be customers, clients, or users of your page's frontend.
 If you want to learn more about how you can manage your [Members](../Manage-users/Members/index.md) there's an entire article about it.
 
-## What is a Team Member
-
-Invite member in the portal, is a bit of weird one, as you don't invite a member but a user.
-While this can be a bit confusing, you can view a team member as a user of the backoffice.
-When you invite a team member you can decide if they need admin access, if you grant them that they will be able to access and edit everything.
+ 
