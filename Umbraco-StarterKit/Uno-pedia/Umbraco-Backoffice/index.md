@@ -75,6 +75,6 @@ If you want to learn more about [Members](../../Manage-users/index.md), you can 
 ### Forms
 
 The Forms section lets you create forms to use in your content section.
-You can read more about forms and how to create them here [Umbraco Forms](../../../UmbracoForms/index.md)
+You can read more about forms and how to create them here [Umbraco Forms](../../../Add-ons/UmbracoForms/index.md)
 
 ### Translation
