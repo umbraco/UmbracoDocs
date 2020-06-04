@@ -35,4 +35,4 @@ The menu consists of the following options:
 * **Public access** which gives you the option to toggle whether the website should be publicly accessible or only available to the ones with a login
 * **Upgrade plan** gives you both overview of the plans and the option to upgrade
 * **Rename project** provides you with the option to give you Umbraco Uno project a new name
-* **Delete project**
+* **Delete project** gives you the option to delete the website
