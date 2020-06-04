@@ -17,7 +17,7 @@ You can add members groups, this can be useful to keep track of your front end m
 ### The purpose of members
 
 The purpose of having members on your page is to allow the people that use your page to set up a personal account on the front end of your page.
-This in turn allows for a better overview of the page because you in the back office have the option to sort these members into member groups, by doing that you can decide what member groups have access to certain things on the front end.
+This in turn allows for a better overview of the page, because you in the backoffice have the option to sort these members, into member groups. By doing that you can decide what member groups have access to certain things on the front end.
 
 ### Widgets for creating and logging in a user
 
