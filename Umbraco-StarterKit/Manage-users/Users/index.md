@@ -16,7 +16,7 @@ When it comes to adding users to your project, you will have two options in how 
 
 Inviting a user lets you write the name of the receiver and their email, then you will get the option to add their user group and finalize it with a message for the receiver.
 
-Creating a user, lets you create the user for the person and add the name and email for the user along with assigning it to a user group, you get to the create user window, by clicking the arrow down next to the "invite user" button.
+Creating a user, lets you create the user for the person and add the name and email for the user along with assigning it to a user group. You get to the create user window, by clicking the arrow down next to the "invite user" button.
 
 The only major difference in these two options is that if you choose to invite a user they will have 72 hours to accept or the invitation becomes invalid.
 
