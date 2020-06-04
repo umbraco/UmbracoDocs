@@ -7,7 +7,7 @@ versionFrom: 8.0.0
 
 As a user has access to your backoffice, you will need to decide what your users need to be able to do in your backoffice, this can be controlled by adding your users to the correct user groups.
 
-## Creating a user
+## Invite a user
 
 When it comes to adding users to your project, you will have two options in how you do so.
 
@@ -36,4 +36,3 @@ The way you do this is to click the user in question, then when on their profile
 You can also choose a media and a content start node for the user, to limit the tree for the users.
 
 Another and perhaps more efficient way to add users to groups is to go to the group's section click the name of the group you want to add users to, and then once inside the group navigate to the right side of the screen where there is a box saying users, and click the "Add" button.
-
