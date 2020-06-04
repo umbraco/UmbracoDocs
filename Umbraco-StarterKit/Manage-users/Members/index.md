@@ -12,4 +12,4 @@ You can also add a member to a member group.
 
 ### Member groups
 
-You can add members groups, this can be useful to keep track of your front end members, making it easier to do things like changing passwords for specific members or deleting specific members.
+You can create member groups, which can be useful to keep track of your frontend members, making it easier to do things like changing passwords for specific members or deleting specific members.

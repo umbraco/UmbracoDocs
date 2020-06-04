@@ -14,12 +14,12 @@ You can manage your users so they can’t publish or edit only read, or you can 
 Please note that for now a user cannot be deleted, they can only be disabled.
 You will find that your project has a user named themeowner, it is there to make your project work.
 
-Please see the [User](../Manage-users/Users/index.md) section for more information about users and what you can do with them.
+Please see the [User](../Manage-users/Users/index.md) article for more information about users and what you can do with them.
 
 ## What is a Member
 
-A member is someone who is strictly limited to the front end and typically these members will be customers, clients, or users of your page's front end.
-If you want to lern more about how you can manage your [Members](../Manage-users/Members/index.md) Theres an entire article about it.
+A member is someone who is strictly limited to the frontend and typically these members will be customers, clients, or users of your page's frontend.
+If you want to learn more about how you can manage your [Members](../Manage-users/Members/index.md) there's an entire article about it.
 
 ## What is a Team Member
 
