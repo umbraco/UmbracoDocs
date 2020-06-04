@@ -17,7 +17,7 @@ The reason for this is that, if the user were deleted then everything they creat
 
 Please see the [User](../Manage-users/Users/index.md) section for more information about users and what you can do with them.
 
-:::note You will find that your project has a user named themeowner, it is there because this is what implements the entire theme on your project, if you remove this user your project won't have access to the theme anymore and that will make your project cease to function.:::
+:::note You will find that your project has a user named themeowner. It is there because this is what implements the entire theme on your project. If you remove this user your project won't have access to the theme anymore and that will make your project cease to function.:::
 
 
 ## What is a Member
