@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Creating content
 
-When you are creating content in Umbraco Uno, you will have many tools at your disposal, this page is designed to help you get started on utilizing these tools.
+When you are creating content in Umbraco Uno, you will have many tools at your disposal. This page is designed to help you get started on utilizing these tools.
 
 ## Getting started
 
