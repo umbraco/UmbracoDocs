@@ -25,7 +25,7 @@ When creating content, you will most likely need to work with media as well. The
 
 The Rich Text Editor or RTE as people call it is a great way to create content. It is a text editor, that allows you to write longer text pieces with all the formatting options you would need.
 
-To learn more about what features a  [Rich Text Editor](Rich-Text-Editors/index.md)  offers, it would be a good idea to read this article.
+To learn more about what features the RTE offers, it would be a good idea to read the [Rich Text Editor](Rich-Text-Editors/index.md) article.
 
 ### Working With Content
 
