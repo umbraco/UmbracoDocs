@@ -14,8 +14,13 @@ An example of this could be choosing between the Image widget and the Gallery wi
 
 Which of these two widgets you choose to use for the job depends on what you specifically need for this situation.
 
-The way to best achieve a good content creation flow could be to sit down mark up what you want to create on the page and then choose the tools accordingly.
-When you have chosen what should be on the page and what tools to use, then you can start building from the top to the bottom.
+There is multiple ways to approach content creation, two of these ways could be the following:
+
+Widget based design and structure
+
+- If you do not have a predefined design you want to follow, comming up with a design and a structure based on the possibilities of widgets is a great way to start.
+The grid widget gives you all the tools you would need to create a good looking website, all of these widgets are great to work with.
+Making a grid is a good way to secure a nice look with a good structure, and these grids can be saved en global content to keep the same look and feel throughout you website pages.
 
 ### Manage Media Library
 
