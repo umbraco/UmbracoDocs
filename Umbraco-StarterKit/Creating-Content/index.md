@@ -19,7 +19,7 @@ When you have chosen what should be on the page and what tools to use, then you 
 
 ### Manage Media Library
 
-When creating content, you will most likely need to work with media as well, and to best work, with your media library, this article offers a good piece of insight into how you can do this best[Manage Media Library](Manage-Media-Library/index.md).
+When creating content, you will most likely need to work with media as well. The [Manage Media Library](Manage-Media-Library/index.md) article offers a good piece of insight into how you can do this best.
 
 ### Rich Text Editors
 
