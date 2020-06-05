@@ -29,7 +29,7 @@ To learn more about what features the RTE offers, it would be a good idea to rea
 
 ### Working With Content
 
-To have the best experience while creating content it is highly recommendable to have a look at this article [Working With Content](Work-With-content/index.md).
+To have the best experience while creating content it is highly recommendable to have a look at the [Working With Content](Work-With-content/index.md) article.
 
 ### Working With Widgets
 
