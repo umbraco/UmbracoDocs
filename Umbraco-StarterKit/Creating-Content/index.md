@@ -8,7 +8,7 @@ When you are creating content in Umbraco Uno, you will have many tools at your d
 
 ## Getting started
 
-When you want to create content, it is a good idea to think about what tools to use for the job. An example of this is between image widget and gallery widget, image widget only allows you to add one image, however, if you only need one image that is the perfect tool for the job. Gallery widget will allow you to set up a gallery of images, that also means that you can choose to only select one image with that widget, which of these two widgets you choose to use for the job depends on what you specifically need for this situation.
+When you want to create content, it is a good idea to think about what tools to use for the job. An example of this is between image widget and gallery widget, image widget only allows you to add one image. However, if you only need one image that is the perfect tool for the job. Gallery widget will allow you to set up a gallery of images. That also means that you can choose to only select one image with that widget, which of these two widgets you choose to use for the job, depends on what you specifically need for this situation.
 
 The way to best achieve a good content creation flow could be to sit down mark up what you want to create on the page and then choose the tools accordingly.
 When you have chosen what should be on the page and what tools to use, then you can start building from the top to the bottom.
