@@ -35,4 +35,6 @@ To have the best experience while creating content it is highly recommendable to
 
 When you're creating content in Umbraco Uno you will primarily be working with Widgets. These allow for a work process that is very straight forward, and they can be arranged in a grid for more complexity.
 
-There are a lot of widgets to choose from, a good place to start would be [Working With Widgets](Working-With-Widgets/index.md) and to learn more about the individual [widgets](../Uno-pedia/Widgets/index.md) look in the uno-pedia.
+There are a lot of widgets to choose from. A good place to start would be the [Working With Widgets](Working-With-Widgets/index.md) article.
+
+For a full overview of the Widgets provided with Umbraco Uno see the [Widgets](../Uno-pedia/Widgets/index.md) section in the Uno-pedia.
