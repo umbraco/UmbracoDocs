@@ -17,7 +17,13 @@ If you've never worked with Umbraco before, there's a few resources which we rec
 * [How to work with content](link)
 :::
 
-## The three platforms for your Umbraco experience
+## Content
+
+* [Working with content](../Creating-Content/Work-with-content)
+* [Themes](Themes)
+* Sample site
+
+## The three platforms for Umbraco Uno
 
 There are three platforms that you will be going through as you work with your Umbraco project.
 
@@ -39,11 +45,3 @@ We will continue to refer to this as the Backoffice throughout the rest of the d
 The Frontend is what people see when they visit your website, meaning that this is where all the content you create in the backoffice goes.
 How the frontend looks is completely up to you, and you choose this by creating the look you want in the backoffice. You cannot do any editing on the frontend.
 We will continue to refer to this as the Frontend throughout the rest of the documentation.
-
-## "Tour of the backoffice"
-
-## Sample site
-
-## [Working with content](../Creating-Content/Work-with-content)
-
-## Selecting a theme
