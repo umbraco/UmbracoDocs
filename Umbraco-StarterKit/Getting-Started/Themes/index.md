@@ -29,7 +29,8 @@ When you're previewing the content you're working with, you can use the **Theme 
 To access the Theme Editor, follow these steps:
 
 1. Select a piece of content from the Content tree
-2. 
+2. Use the *Preview* feature at the bottom of the page
+3. Select the Theme Editor which is the green button with the white pencil
 
 ![The Theme Editor on the sample site](images/Theme-editor.png)
 
