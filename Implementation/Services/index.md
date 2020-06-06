@@ -421,7 +421,7 @@ namespace Umbraco8.Services
 
             using (UmbracoContextReference umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext())
             {
-                IPublishedContentCache contentCache = umbracoContextReference.UmbracoContext.ContentCache;
+                IPublishedContentCache contentCache = umbracoContextReference.UmbracoContext.Content;
                 IPublishedContent siteRoot = contentCache.GetAtRoot().FirstOrDefault();
                 newsSection = siteRoot?.FirstChild(f => f.ContentType.Alias == "newsSection") ?? null;
             }
@@ -433,7 +433,7 @@ namespace Umbraco8.Services
             IPublishedContent contactUsPage = null;
             using (UmbracoContextReference umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext())
             {
-                IPublishedContentCache contentCache = umbracoContextReference.UmbracoContext.ContentCache;
+                IPublishedContentCache contentCache = umbracoContextReference.UmbracoContext.Content;
                 IPublishedContent siteRoot = contentCache.GetAtRoot().FirstOrDefault();
                 contactUsPage = siteRoot?.FirstChild(f => f.ContentType.Alias == "contactUs") ?? null;
             }
