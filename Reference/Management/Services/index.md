@@ -11,6 +11,9 @@ The intended audience for these reference pages are .net developers, it is assum
 ## [AuditService](AuditService)
 A service for handling audit.
 
+## [ApplicationTreeService](TreeService)
+The ApplicationTreeService is used to control/query the storage for tree registrations.
+
 ## [ConsentService](ConsentService)
 A service for handling lawful data processing requirements.
 
