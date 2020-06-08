@@ -18,7 +18,8 @@ Umbraco will run on Azure Web Apps but there are some configuration options and 
 
 ## Recommended configuration
 
-* You need to [disable overlapping recycling](https://github.com/projectkudu/kudu/wiki/Configurable-settings#disable-overlapped-recycling) by adding the `WEBSITE_DISABLE_OVERLAPPED_RECYCLING` setting to appSettings with a value of `1`. If you don't do this, you will most likely get some file locking issues with Umbraco caches files and Lucene files.
+* You need to [disable overlapping recycling](https://github.com/projectkudu/kudu/wiki/Configurable-settings#disable-overlapped-recycling) by adding the `WEBSITE_DISABLE_OVERLAPPED_RECYCLING` setting to appSettings with a value of `1`. If you don't do this, you will most likely get some file locking issues with Umbraco caches files and Lucene files. 
+NOTE: This setting needs to be set as an Azure app setting, not in the web.config!
 * The minimum recommended Azure SQL Tier is "S2", however noticeable performance improvements are seen in higher Tiers
 * You should set your log4net minimum log priority to "WARN" in /Config/log4net.config if you are running a live site (of course if you are debugging this is irrelevant)
 
