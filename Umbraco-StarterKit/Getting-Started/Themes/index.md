@@ -30,7 +30,7 @@ To access the Theme Editor, follow these steps:
 
 1. Select a piece of content from the Content tree
 2. Use the *Preview* feature at the bottom of the page
-3. Select the Theme Editor which is the green button with the white pencil
+3. Access the Theme Editor by selecting the green pencil-button in the right side of the screen
 
 ![Theme Editor on Sample site](images/Theme-editor.png)
 
