@@ -10,9 +10,8 @@ In this section, you can find all the information needed in order to publish you
 
 ### Configure DNS records
 
-The first step is to set up your Hostname, You can do this from the portal.
-This guide will show you how to bind your hostname to your Umbraco Uno environment
-Where you see your environment.
+The first step is to set up your Hostname, you can do this from the portal.
+This guide will show you how to bind your hostname to your Umbraco Uno environment where you see your environment.
 
 It is recommended to set-up an ALIAS record for your root hostname (e.g. mysite.s1.umbraco.io), rather than an A record for the umbraco.io service IP address - 23.100.15.180.
 Check with your DNS host or hostname provider for details on how to configure this for your hostnames.
@@ -22,8 +21,8 @@ Check with your DNS host or hostname provider for details on how to configure th
 - Click Settings
 - Select Hostnames
 - Once inside Hostnames, click "Add new hostname"
-- Add your hostname o the field and select add
-- To keep track of the process you can, refresh the page when it is done sucessfully it will say: Protected by LATCH  
+- Add your hostname to the field and select add
+- To keep track of the process, you can refresh the page when it is done sucessfully it will say: Protected by LATCH  
 
 ### Umbraco LATCH
 
