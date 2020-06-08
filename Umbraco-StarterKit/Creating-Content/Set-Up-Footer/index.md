@@ -62,7 +62,6 @@ The next step is to add Contact to your footer.
 
 ## [Social Links](../../Uno-pedia/Widgets/Social-links/index.md)
 
- Click "Add content".
  For our final piece of content in the footer choose "Social Links".
 
 - Click "Add content"
