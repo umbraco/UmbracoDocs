@@ -24,7 +24,7 @@ Start by doing the following:
 
 ## [Navigation](../../Uno-pedia/Content-Types/Site-Start/Custom-Navigation/index.md)
 
-Let’s start by adding Navigation, pick "Navigation" on the list
+Let’s start by adding Navigation.
 
 - Click Navigation in the list
 - Set column width to 25% as 100% would be the entire width of the page.
