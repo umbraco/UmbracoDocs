@@ -33,7 +33,7 @@ Let’s start by adding Navigation.
 - Navigate to the part of the window that says “ Link to page”, where you will see your entire Content tree.
 - Choose an item from the tree - in this case, we'll choose "Unicorn Hotel"
 - Click "Submit" to add the link
-- Next, we get the option to select children, which is another layer of links. we won't need this for now.
+- Next, we get the option to select children, which is another layer of links. We won't need this for now.
 - The final button here is "Only Render Children" which would make the node only display links to the child pages, instead of the selected one
 
      ![The finished footer](images/Navigatio-Footer.png)
