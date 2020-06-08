@@ -22,21 +22,21 @@ Widget based design and structure
 The grid widget gives you all the tools you would need to create a good looking website, all of these widgets are great to work with.
 Making a grid is a good way to secure a nice look with a good structure, and these grids can be saved en global content to keep the same look and feel throughout you website pages.
 
-### Manage Media Library
+## Manage Media Library
 
 When creating content, you will most likely need to work with media as well. The [Manage Media Library](Manage-Media-Library/index.md) article offers a good piece of insight into how you can do this best.
 
-### Rich Text Editors
+## Rich Text Editors
 
 The Rich Text Editor or RTE as people call it is a great way to create content. It is a text editor, that allows you to write longer text pieces with all the formatting options you would need.
 
 To learn more about what features the RTE offers, it would be a good idea to read the [Rich Text Editor](Rich-Text-Editors/index.md) article.
 
-### Working With Content
+## Working With Content
 
 To have the best experience while creating content it is highly recommendable to have a look at the [Working With Content](Work-With-content/index.md) article.
 
-### Working With Widgets
+## Working With Widgets
 
 When you're creating content in Umbraco Uno you will primarily be working with Widgets. These allow for a work process that is very straight forward, and they can be arranged in a grid for more complexity.
 
