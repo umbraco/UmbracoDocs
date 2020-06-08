@@ -13,6 +13,8 @@ This is how the footer should look after you have gone through the guide:
 
 ![The finished footer](images/Footer-example.png)
 
+## The Footer
+
 Start by doing the following:
 
 1. Go to the Umbraco Backoffice
