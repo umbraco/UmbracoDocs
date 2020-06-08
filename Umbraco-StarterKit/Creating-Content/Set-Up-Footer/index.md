@@ -49,7 +49,7 @@ Now we click "Add content" again. To add your opening hours click "Opening Hours
 
 ## [Contact](../../Uno-pedia/Widgets/Contact/index.md)
 
-The next step is to add Contact to your footer to do this by Clicking "Add Content" then Choose "Contact".
+The next step is to add Contact to your footer.
 
 - Set the "Column Width" to 25%.
 - Choose Align "Left".
