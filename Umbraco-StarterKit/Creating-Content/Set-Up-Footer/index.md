@@ -65,6 +65,7 @@ The next step is to add Contact to your footer.
  Click "Add content".
  For our final piece of content in the footer choose "Social Links".
 
+- Click "Add content"
 - Set "Column Width" to 25%.
 - Align Content Left
 - Heading could be something like "Find us at:"
