@@ -47,6 +47,14 @@ Changing subscription ownerships is not something you can do by yourself. You wi
 
 Whomever is taking over a subscription will need to have an existing account on umbraco.com. If they do not have an account they can [register here](https://shop.umbraco.com/profile/register).
 
+When you have registed your user. You will need login to your [profile] (https://shop.umbraco.com/profile/edit-your-details/) and fiil out the following info under the invocing information section.
+
+- Company Name 
+- Address
+- Country 
+- VAT number (if within EU)
+
+
 :::note
 Do note that it will have to be the owner of the subscription who reaches out when changing the owner.
 :::
