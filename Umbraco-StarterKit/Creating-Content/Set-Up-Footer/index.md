@@ -17,7 +17,7 @@ In this guide you will learn to set up a nice looking footer.
     - Next got to the field called “Links” and select “Add” then a window pops out on the right -hand side.
     - Navigate to the part of the window that says “ Link to page” if this is a clean install you will have the options of Unicorn Hotel or Global Content, If you have created a page you can select that one, however, if that is not the case lets create a link to Unicorn Hotel, we do that by clicking the text, that will mark the field with a green checkmark, finalize by clicking submit.
     - Next, we get the option to select children, which is another layer of links. we won't need this for now.
-    - The final button here is "Only Render Children" this would make the node only display the child links not the main links.
+    - The final button here is "Only Render Children" which would make the node only display links to the child pages, instead of the selected one
 
         ![The finished footer](images/Navigatio-Footer.png)
 
