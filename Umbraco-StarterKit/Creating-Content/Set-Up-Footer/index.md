@@ -15,7 +15,7 @@ This is how the footer should look after you have gone through the guide:
 
 Start by doing the following:
 
-1. Go to the backoffice
+1. Go to the Umbraco Backoffice
 2. Click your home node
 3. In the workspace scroll to the bottom and find the section called footer
 4. In the field saying “Footer Columns” click “Add Content” this will give you 7 options of content
