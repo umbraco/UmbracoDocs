@@ -51,6 +51,7 @@ Now we click "Add content" again. To add your opening hours click "Opening Hours
 
 The next step is to add Contact to your footer.
 
+- Click "Add Content" and choose "Contact"
 - Set the "Column Width" to 25%.
 - Choose Align "Left".
 - The Heading could be Contact us.
