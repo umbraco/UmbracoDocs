@@ -22,7 +22,7 @@ Start by doing the following:
 3. In the workspace scroll to the bottom and find the group called Footer
 4. In the field saying “Footer Columns” click “Add Content” which will give you 7 options for content to add
 
-## [Navigation](../../Uno-pedia/Content-Types/Site-Start/Custom-Navigation/index.md)
+## [Navigation](../../Uno-pedia/Widgets/Grid/Navigation/index.md)
 
 Let’s start by adding Navigation.
 
