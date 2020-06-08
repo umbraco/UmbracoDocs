@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Set-up your footer
 
-It can be challenging to make a footer if you never tried it before, this guide will help step-by-step, to get a nice looking informative footer for your page.
+It can be challenging to set-up a footer if you never tried it before. This guide will help step-by-step, to get a nice looking and informative footer for your website.
 In this guide you will be introduced, to some of the features you can add to your footer, namely Navigation. Opening Hours, Contact, and Social Links.
 
 You can set the theme for your footer by navigating to the "Settings" node, Then click the "Theme". From there you scroll down to you reach "Footer" here you can choose between black theme or white theme, and you can change the container width.
