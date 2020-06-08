@@ -72,5 +72,5 @@ The next step is to add Contact to your footer.
 
     ![The finished footer](images/Social-Links-Footer.png)
 
-The last option is to add some bottom text the could be a copyright text or something along those lines.
+The last option is to add some bottom text. This could be a copyright text or something along those lines.
 Finalize the footer by clicking "Save" or "Save and publish".
