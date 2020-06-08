@@ -2,7 +2,7 @@
 versionFrom: 8.0.0
 ---
 
-# Set-up your footer
+# How to set-up your Footer
 
 It can be challenging to set-up a footer if you never tried it before. This guide will help step-by-step, to get a nice looking and informative footer for your website.
 In this guide you will be introduced, to some of the features you can add to your footer, namely Navigation. Opening Hours, Contact, and Social Links.
