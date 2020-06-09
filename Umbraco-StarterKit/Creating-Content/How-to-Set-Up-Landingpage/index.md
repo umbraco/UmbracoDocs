@@ -46,6 +46,8 @@ We will be adding multiple grids to this page because the grid provides a lot of
 
 ### The Text and Image Grid
 
+***Text Widget***
+
 - Click "Add content"
 - Select Grid
 - Select "Add Content" next to *Columns*
@@ -55,11 +57,15 @@ We will be adding multiple grids to this page because the grid provides a lot of
 - Add the text you want
 - Toggle *Boxed* to on
 
+***Image Widget***
+
 - Click "Add Content"
 - Select Image
 - Name it in alias
 - Column Width: 50%
 - Select an image by clicking the +
+
+***Grid Settings***
 
 - Name the grid something in alias
 - Container Width: Standard
@@ -74,6 +80,8 @@ We will be adding multiple grids to this page because the grid provides a lot of
 
 ### The Video and Price List Grid
 
+***Video Widget***
+
 - Click "Add content"
 - Select Grid
 - Select "Add Content" next to *Columns*
@@ -87,6 +95,8 @@ We will be adding multiple grids to this page because the grid provides a lot of
 - Add a poster
 - Leave video shadow off
 
+***Price List Widget***
+
 - Click "Add Content"
 - Select the Price List widget
 - Column Width: 50%
@@ -95,6 +105,8 @@ We will be adding multiple grids to this page because the grid provides a lot of
 - Under Items click "Add content" to create the list items
 - Fill in the spaces of Title, Description, and Price for the item 
 - Repeat this process until you have the number of items you want
+
+***Grid Settings***
 
 - Name the grid something in alias
 - Container Width: Standard
