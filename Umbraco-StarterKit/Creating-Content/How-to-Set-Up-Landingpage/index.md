@@ -41,7 +41,7 @@ We will start by adding a greeting to our page. This will be done using the Hero
 
 ## Grid
 
-Next, let's add a grid to be able to have a nice frem for how the widgets are structured.
+Next, let's add a grid to be able to have a frame for how the widgets are structured.
 We will be adding multiple grids to this page because the grid provides a lot of options and flexibility.
 
 ### The Text and Image Grid
