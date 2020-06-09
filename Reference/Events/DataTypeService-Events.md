@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Umbraco DataTypeService Events"
+meta.Description: "Information on the various events available in the DataTypeService"
 ---
 
 # DataTypeService Events#
