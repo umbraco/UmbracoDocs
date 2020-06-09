@@ -10,9 +10,9 @@ Every piece of content you create directly under the *Start node* on your Umbrac
 
 The navigation menu will be visible at the top of the page as part of the **Header**. On the Theme settings page there are a few different layout options. These are also available through the [Theme Editor](../../Getting-Started/Themes).
 
-In some cases, you might want to make changes to the automatically created navigation menu. This can be done by using the **Custom navigation** feature. Get a more details introduction to the configuration options for both the navigation menu and for the Header in general on the [Start node](../../Uno-pedia/Content-Types/Site-Start/#navigation) article.
+In some cases, you might want to make changes to the automatically created navigation menu. This can be done by using the **Custom navigation** feature. Get a more detailed introduction to the configuration options for both the navigation menu, and the Header in general, on the [Start node](../../Uno-pedia/Content-Types/Site-Start/#navigation) article.
 
-In this article you will get a guide on how you can costumize the default automatically generated navigation menu and add more elements as buttons and icons.
+In this article you will get a guide on how you can costumize the default automatically generated navigation menu and add more elements, like buttons and icons.
 
 ## Custom navigation and Header
 
@@ -24,24 +24,24 @@ Once complete, the new header including the navigation menu will look similar to
 
 ### Links and buttons
 
-The first part of the navigation will revolve around choosing links and buttons for the navigation. This will be done from the **Navigation** group, which can be found on the *home node*.
+The first part of the navigation will revolve around choosing links and buttons for the navigation. This will be done from the **Navigation** group, which can be found on the *Home node* in the Content section of the Umbraco backoffice.
 
 ![The Navigation group on the home node](images/navigation-group.png)
 
-1. To add item to the custom navigation, click **Add Content**
+1. To add items to the custom navigation, click **Add Content**
 2. Choose **Navigation item**
-3. Give the item a name - We'll go with *Unicorn Hotel*
-4. Click **Add** next to link
-5. Choose where the item should link to - for this guide, we'll choose our home node, *Unicorn Hotel*.
+3. Give the item a name - we'll go with *Unicorn Hotel*
+4. Click the **Add** option next to *Link*
+5. Choose where the item should link to - for this guide, we'll choose our Home node, *Unicorn Hotel*.
 6. Hit **Submit** to add the link
 
-That was the first item in our custom navigation. If you at this point where to *Save* and *Preview* the home node, you'll see that the navigation menu currently only has a single link; *Unicorn Hotel*.
+That was the first item in our custom navigation. If you at this point where to *Save* and *Preview* the Home node, you'll see that the navigation menu currently only has a single link; *Unicorn Hotel*.
 
-7. Click on the name of the item to *collapse it*
+7. Click on the name of the *Unicorn Hotel* item to *collapse it*
 8. Again, we'll select **Add content** to add the next item for our navigation
 9. This time we'll choose **Big Navigation**
 10. We'll give it a name - *Accommodations*
-11. For link, we'll choose the *Accommodations* content node in the Content tree (to expand the Content tree in the Link dialog, click on the little arrow next to the home node)
+11. For *Link*, we'll choose the *Accommodations* content node in the Content tree (to expand the Content tree in the Link dialog, click on the little arrow next to the Home node)
 12. Next up, we'll select **Add content** next to *Navigation Grid*
 
 This is a bit different, from adding a link to the navigation. Instead we will add a box that will appear when you hover over the *Accommodation* link.
