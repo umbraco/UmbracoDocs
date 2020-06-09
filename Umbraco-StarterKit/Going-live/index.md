@@ -36,17 +36,17 @@ Check with your DNS host or hostname provider for details on how to configure th
 
 ### Umbraco LATCH
 
-Every Umbraco Project is protected by LATCH witch means that a TLS Certificate will be applied automatically.
-If you are interested in learning more about [LATCH](https://umbraco.com/products/umbraco-cloud/umbraco-latch/) this is a good place to start.
+Every Umbraco Uno project is protected by Umbraco LATCH witch means that a TLS Certificate will be applied automatically.
+If you are interested in learning more about Umbraco LATCH check out the [product page on Umbraco.com](https://umbraco.com/products/umbraco-cloud/umbraco-latch/).
 
-### SMTP
+## SMTP
 
 In Umbraco Uno projects we take care of SMTP(Simple Mail Transfer Protocol) so that you don't have to do anything.
+SMTP allows your features like Umbraco Forms to be connected to your email, making you recieve the emails when people answer your forms. if SMTP wasn't set up your forms replies would not be sent anywhere.
 
 ## SEO
 
-Setting up should be part of your general workflow for each of your nodes.
-This is to make your page as visible in search engines as possible - all of the fields below should be filled out.
+Setting up SEO should be part of your general workflow when you create content. This is to make your page is the most visible in search engines as possible. All of the fields below should be filled out.
 
 - Company Name
 - Site Name
@@ -56,21 +56,23 @@ This is to make your page as visible in search engines as possible - all of the 
 - Latitude
 - Longitude
 
-You can reach the general SEO Under your home node > Settings > General.
+You can reach the general SEO under your home node > Settings > General.
 
-There is more documentation about SEO at these pages [General settings](../Uno-pedia/Settings/General-Settings/index.md/#SEO) and [Specific settings ](../Uno-pedia/Settings/Specific-Settings/index.md/#SEO) 
+There is more documentation about SEO at these pages [General settings](../Uno-pedia/Settings/General-Settings/index.md/#SEO) and [Specific settings](../Uno-pedia/Settings/Specific-Settings/index.md/#SEO)
 
 ## Newsletter
 
 You will need to choose between Mailchimp or Campaign Monitor, and then after that fill out your API Key and Default Subscriber ID.
 This is necessary, otherwise your newsletter won't work.
 
+To have a newsletter function on your website it will need to be set up through the [Newsletter Widget](../Uno-pedia/Widgets/Newsletter/index.md/).
+
 ## Tracking and Access
 
-Tracking and Access can be found in the Settings > General section. If you want to use any extensions such as Google maps or Google Analytics. This is where you put the API Keys.
+The Tracking and Access group can be found in the General section node in the Content section. If you want to use any extensions such as Google maps or Google Analytics. This is where you put the API Keys.
 
 :::note
-It is important to note that the AIzaSyDX76tv4LsYpvuS-ue5cl6-C_pKRauv5XI API Key for Google Maps should be changed to your own API Key, as this standard one will stop working eventually.
+In order to your to get the most out of the Google Maps API, then the API Key should be changed to your own API Key.
 :::
 
 ## Responsive on all platforms
