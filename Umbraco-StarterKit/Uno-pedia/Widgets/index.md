@@ -61,7 +61,6 @@ More widgets can be added within the Slider widget.
 The following widgets represent different ways to add forms to the website. It could be a signup form for a newsletter, a form where members can login or it could be a contact form where customers can get in touch.
 
 * [Umbraco Form](Umbraco-Form)
-* [Contact form](Contact-Form)
 * [Newsletter form](Newsletter)
 * [Login and Register forms](Login-and-Register)
 
