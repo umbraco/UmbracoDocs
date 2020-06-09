@@ -28,7 +28,11 @@ Working with content in Umbraco Uno has many different aspects to it, which are 
 
 ## [How to create a landingpage](How-to-Set-Up-Landingpage)
 
+Create a brand new landingpage fra scratch following our "How to create a landingpage" guide. It will provide thorough steps and introduce you to a few widgets along the way.
+
 ## [Set-up a Footer](Set-Up-Footer)
+
+On some website the bottom is where you would go for all sorts of different information. With Umbraco Uno you can create a Footer exactly like that; with all sorts of different information.
 
 ## [Navigation-menu](Navigation-menu)
 
