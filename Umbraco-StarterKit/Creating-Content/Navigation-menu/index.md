@@ -54,7 +54,7 @@ We'll be adding a total of **3 columns** to the Accommodation navigation item.
 14. Choose the [Pod widget](../../Uno-pedia/Widgets/Grid/Pod)
 15. Set the *Column width* to 33%
 16. Choose a heading - *Executive suites*
-17. Add a bit of text - for this guide, I'll be adding a bit of *Lorem ipsum* text
+17. Add a bit of text - for this guide, I'll be adding a bit of *Lorem Ipsum* text
 18. Select **Pick an icon...** next to *Icon*, and choose the diamond icon
 19. Toggle the *Media left* option to ensure that the icon will be displayed left of the content
 20. Add a link to the *Effective Executive Suite* content node
@@ -62,25 +62,25 @@ We'll be adding a total of **3 columns** to the Accommodation navigation item.
 That was the first of the three columns. We're going to copy this first Pod widget in order to create the remaining two.
 
 21. Copy the *Pod: Executive Suites* widget by clicking the copy-icon on the right-side
-22. Click **Add Content** and choose the widget that you just copied
+22. Click **Add Content** and choose the widget that you've copied
 
 ![Copy widgets feature](images/copy-widgets.png)
 
-Once you've copied the widget twice, make sure to update the heading, text, icon and link to match the remaining to content nodes under Accommodations, *Family Wonderland* and *The Unicorn King*.
+Once you've copied the widget twice, make sure to update the heading, text, icon and link to match the remaining two content nodes under Accommodations, *Family Wonderland* and *The Unicorn King*.
 
-For the next item in our custom navigation, we're going to copy the item we just made.
+For the next item in our custom navigation, we're going to copy the *Big Navigation* item we created above; the *Accommodations* item.
 
-23. Copy the **Accommodations** navigation item we just created
+23. Copy the **Accommodations** navigation item
 24. Select **Add content** under the last navigation item and choose *Accommodations* from the clipboard
-25. Update the name of the new item to **Facilities** and link it to the home node
-26. In the navigation grid for this item, we will only need 2 columns; one for *The Restaurant* and one for *Unicorn Spa*
+25. Update the name of the new item to **Facilities** and link it to the Home node
+26. In the navigation grid for this item, we will only need two columns; one for *The Restaurant* and one for *Unicorn Spa*
 27. Make sure to update heading, text, icon and link to match the two content nodes, *The Restaurant* and *Unicorn Spa*.
 
 When you've setup everything you need in the *Facilities* navigation item, add a couple more item to the navigation menu.
 
 ![Final custom navigation](images/final-custom-nav.png)
 
-Below the Custom navigation which we just created, there's an option to add buttons to the navigation. These will be added in the right-most side of the header. For this guide, we'll be adding a single button.
+Below the Custom navigation which we've been working with so far, there's an option to add buttons to the navigation. These will be added in the right-most side of the header. For this guide, we'll be adding a single button.
 
 1. Click **Add content**
 2. Choose a text for the button - *Book*
@@ -100,7 +100,7 @@ A bit further down in the Navigation group, you'll find the option to add sub he
 
 ![Section to add sub headers](images/add-subheaders.png)
 
-1. Toggle to enable sub headers
+1. Toggle to **Enable Sub Headers**
 2. Click **Add content** next to *Sub Header Right* as this is where we'll be adding our social media links
 3. Leave the *Name* field blank
 4. Choose an icon - preferably one that represents a social media site like Twitter, LinkedIn or YouTube
