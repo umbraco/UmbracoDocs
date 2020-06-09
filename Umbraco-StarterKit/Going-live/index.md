@@ -36,7 +36,7 @@ Check with your DNS host or hostname provider for details on how to configure th
 
 ### Umbraco LATCH
 
-Every Umbraco Project is protected by LATCH witch means that a TLS Certificate will be applied automatically.
+Every Umbraco Uno project is protected by Umbraco LATCH witch means that a TLS Certificate will be applied automatically.
 If you are interested in learning more about [LATCH](https://umbraco.com/products/umbraco-cloud/umbraco-latch/) this is a good place to start.
 
 ### SMTP
