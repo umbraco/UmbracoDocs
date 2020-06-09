@@ -26,7 +26,7 @@ We will start by adding a greeting to our page. This will be done using the Hero
 - Heading: This is the main part of the heading so this will be in a larger font size
 - The text will be below the heading and in a smaller font size
 - Add a background image
-- Text color black/white depending on the colors of your image
+- Choose a dark or light theme for the text depending on the colors of your image
 - Container Width full width
 - Text width 50%
 - Height 70%
