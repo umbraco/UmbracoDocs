@@ -49,27 +49,24 @@ We will be adding multiple grids to this page because the grid provides a lot of
 - Click "Add content"
 - Select Grid
 - Select "Add Content" next to *Columns*
-- Pick Text
-- Column Width 50%
-- Set a name for it in Alias
+- Choose the Text widget
+- Column Width: 50%
+- Set a name for the item in Alias (this is for display purposes only, and will not show on the frontend)
 - Add the text you want
-- Put boxed to on
+- Toggle *Boxed* to on
+
 - Click "Add Content"
 - Select Image
 - Name it in alias
-- Column Width 50%
+- Column Width: 50%
 - Select an image by clicking the +
-- Caption it if you like
-- We won't add link this time
+
 - Name the grid something in alias
-- Container Width Standard
+- Container Width: Standard
 - Leave these options off: Remove Column Gutter and Compact
-- Horizontal align left
-- Vertical align top
-- Background image none
-- Background color White
-- Text Color none
-- Animate off
+- Horizontal align: Left
+- Vertical align: Top
+- Select a light color for the background
 - Click Save in the bottom of the page
 - Go to the top of the grid and click the grid tab to minimize it
 
