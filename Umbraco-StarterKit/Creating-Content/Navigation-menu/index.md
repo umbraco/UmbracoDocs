@@ -16,4 +16,4 @@ In this article you will get a guide on how you can costumize the default automa
 
 ## Custom navigation
 
-
+The following guide will give you a walk-through on how you can create a
