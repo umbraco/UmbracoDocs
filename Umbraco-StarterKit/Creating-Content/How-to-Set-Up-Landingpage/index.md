@@ -110,7 +110,7 @@ We will be adding multiple grids to this page because the grid provides a lot of
 
 ## Slider Widget
 
-Let's Finalize by adding a slider element to the bottom of the page, to slide through products.
+Let's finalize by adding a slider element to the bottom of the page, to slide through products.
 
 - In the Alias name the slider what you want to call it
 - Next click "Add content" to choose what kind of content you want in the slider 
