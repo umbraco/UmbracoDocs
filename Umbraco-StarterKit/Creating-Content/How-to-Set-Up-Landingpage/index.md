@@ -20,7 +20,7 @@ The Result should look somewhat like this:
 
 ## Hero
 
-We will start by adding a Greeting to our page, this will be done using the hero widget, as it allows for having text on top of a background image in a good way.
+We will start by adding a greeting to our page. This will be done using the Hero widget, as it allows for having text on top of a background image in a good way.
 
 - Pre heading add part of your heading here this will be in a smaller font size
 - Heading this is the main part of the heading so this will be in big size font
