@@ -49,7 +49,7 @@ We will be adding multiple grids to this page because the grid is a great tool w
 - Click "Add content"
 - Select Grid
 - Select columns
-- pick Text
+- Pick Text
 - Column Width 50%
 - Set a name for it in Alias
 - Add the text you want
@@ -80,7 +80,7 @@ We will be adding multiple grids to this page because the grid is a great tool w
 - Click "Add content"
 - Select Grid
 - Select columns
-- pick Video
+- Pick Video
 - Column Width 50%
 - Pick an MP4 video file
 - Hide controls off
@@ -113,7 +113,7 @@ We will be adding multiple grids to this page because the grid is a great tool w
 
 ## Slider Widget
 
-Let's Finalize by adding a slider element to the top of the page, to have a nice overview of what that page has to offer.
+Let's Finalize by adding a slider element to the bottom of the page, to slide through products.
 
 - In the Alias name the slider what you want to call it
 - Next click "add content" to choose what kind of content you want in the slider 
@@ -124,10 +124,10 @@ Let's Finalize by adding a slider element to the top of the page, to have a nice
 - Set compact to on
 - Write a caption if you want to add text to the image
 - Select Background color gray
-- leave text color empty
-- repeat the previous steps to add more images to the slider
-- turn on Show next/prev Arrow
-- turn off Show Page Dots
+- Leave text color empty
+- Repeat the previous steps to add more images to the slider
+- Turn on Show next/prev Arrow
+- Turn off Show Page Dots
 - Wrap around should be on for the best result
 - Set Autoplay to 3000
 - Pause AutoPlay should be on
