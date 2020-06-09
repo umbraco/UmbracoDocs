@@ -76,33 +76,32 @@ We will be adding multiple grids to this page because the grid provides a lot of
 
 - Click "Add content"
 - Select Grid
-- Select columns
-- Pick Video
-- Column Width 50%
+- Select "Add Content" next to *Columns*
+- Pick the Video widget
+- Column Width: 50%
 - Pick an MP4 video file
-- Hide controls off
-- Set Autoplay to on
-- Set Mute to on
+- Hide controls: Off
+- Set Autoplay to On
+- Set Mute to On
 - Leave Loop off
 - Add a poster
 - Leave video shadow off
+
 - Click "Add Content"
-- Select Price List
-- Column Width 50%
+- Select the Price List widget
+- Column Width: 50%
 - Choose a Heading 
 - Leave Boxed off
 - Under Items click "Add content" to create the list items
 - Fill in the spaces of Title, Description, and Price for the item 
 - Repeat this process until you have the number of items you want
+
 - Name the grid something in alias
-- Container Width Standard
+- Container Width: Standard
 - Leave these options off: Remove Column Gutter and Compact
-- Horizontal align left
-- Vertical align top
-- Background image none
-- Background color White
-- Text Color none
-- Animate off
+- Horizontal align: Left
+- Vertical align: Top
+- Select a light color for the background
 - Click Save in the bottom of the page
 - Go to the top of the grid and click the grid tab to minimize it
 
