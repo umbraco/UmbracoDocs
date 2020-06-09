@@ -27,12 +27,12 @@ We will start by adding a greeting to our page. This will be done using the Hero
 - The text will be below the heading and in a smaller font size
 - Add a background image
 - Choose a dark or light theme for the text depending on the colors of your image
-- Container Width full width
-- Text width 50%
-- Height 70%
-- Overlay 60%
-- Text Align center
-- Vertical text-align top
+- Container Width: Full width
+- Text width: 50%
+- Height: 70%
+- Overlay: 60%
+- Text Align: Center
+- Vertical text-align: Top
 - Animate turned on
 - Click Save in the bottom of the page
 - Go to the top of the hero and click the hero tab to minimize it
