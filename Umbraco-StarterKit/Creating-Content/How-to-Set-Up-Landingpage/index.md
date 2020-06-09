@@ -23,7 +23,7 @@ The Result should look somewhat like this:
 We will start by adding a greeting to our page. This will be done using the Hero widget, as it allows for having text on top of a background image in a good way.
 
 - Pre heading: Add part of your heading here - it will be in a smaller font size above the actual Heading
-- Heading this is the main part of the heading so this will be in big size font
+- Heading: This is the main part of the heading so this will be in a larger font size
 - The text will be below the heading and in a smaller font size
 - Add a background image
 - Text color black/white depending on the colors of your image
