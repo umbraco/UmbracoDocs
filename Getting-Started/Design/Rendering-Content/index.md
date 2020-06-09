@@ -76,7 +76,7 @@ In this further example, we are looking for content firstly on the current node 
 We can use similar overloads when working with ModelsBuilder, for example:
 
 ```csharp
-// For projects created before Jannuary 2020
+// For projects created before January 2020
 @model.Value(x => x.PageTitle, "fr", fallback: Fallback.ToLanguage)
 @model.Value(x => x.PageTitle, fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue), defaultValue: "Default page title")
 
