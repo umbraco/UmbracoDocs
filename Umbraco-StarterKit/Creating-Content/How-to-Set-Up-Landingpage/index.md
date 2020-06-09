@@ -143,3 +143,15 @@ Let's finalize by adding a slider element to the bottom of the page, to slide th
 - Go to the top of the slider and click the slider tab to minimize it
 
 ![Settings for the Slider](images/Slider.gif)
+
+
+## The widgets we used
+
+If you are interested in learning more about the widgets that we used, i have collected them all below  along with a link to their article:
+
+- [Hero](../../Uno-pedia/Widgets/Hero)
+- [Grid Text Widget](../../Uno-pedia/Widgets/Grid/Text)
+- [Grid Image Widget](../../Uno-pedia/Widgets/Grid/Image)
+- [Grid Video Widget](../../Uno-pedia/Widgets/Grid/Video)
+- [Grid Price List Widget](../../Uno-pedia/Widgets/Grid/Price-List)
+- [Slider Widget](../../Uno-pedia/Widgets/Slider)
