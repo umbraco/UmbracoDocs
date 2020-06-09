@@ -46,6 +46,8 @@ That was the first item in our custom navigation. If you at this point where to 
 
 This is a bit different, from adding a link to the navigation. Instead we will add a box that will appear when you hover over the *Accommodation* link.
 
+#### Big Navigation items and grids
+
 To add this, we're going to use a Grid, which uses all the standard [Grid widgets](../../Uno-pedia/Widgets/Grid).
 
 We'll be adding a total of **3 columns** to the Accommodation navigation item.
