@@ -113,22 +113,21 @@ We will be adding multiple grids to this page because the grid provides a lot of
 Let's Finalize by adding a slider element to the bottom of the page, to slide through products.
 
 - In the Alias name the slider what you want to call it
-- Next click "add content" to choose what kind of content you want in the slider 
-- Select image
+- Next click "Add content" to choose what kind of content you want in the slider 
+- Select the Image widget
 - Give the image a name in the alias field
-- Select the image you want to use by clicking the square with a + in it
-- Next select size small
+- Select the image you want to use by clicking +
+- Next, select a small size
 - Set compact to on
 - Write a caption if you want to add text to the image
-- Select Background color gray
-- Leave text color empty
+- Background color: Gray
 - Repeat the previous steps to add more images to the slider
 - Turn on Show next/prev Arrow
 - Turn off Show Page Dots
-- Wrap around should be on for the best result
+- "Wrap-around" should be on for the best result
 - Set Autoplay to 3000
 - Pause AutoPlay should be on
-- Fade Animation off
+- Fade Animation: Off
 - Click Save in the bottom of the page
 - Go to the top of the slider and click the slider tab to minimize it
 
