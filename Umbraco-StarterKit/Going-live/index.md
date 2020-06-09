@@ -72,7 +72,11 @@ To have a newsletter function on your website it will need to be set up through 
 The Tracking and Access group can be found in the General section node in the Content section. If you want to use any extensions such as Google maps or Google Analytics. This is where you put the API Keys.
 
 :::note
+<<<<<<< HEAD
 In order to your to get the most out of the Google Maps API, then the API Key should be changed to your own API Key.
+=======
+In order to your to get the most out of the Google Maps API, that the API Key is be changed to your own API Key.
+>>>>>>> Going-Live
 :::
 
 ## Responsive on all platforms
