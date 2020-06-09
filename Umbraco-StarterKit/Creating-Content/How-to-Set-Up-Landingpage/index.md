@@ -48,7 +48,7 @@ We will be adding multiple grids to this page because the grid provides a lot of
 
 - Click "Add content"
 - Select Grid
-- Select columns
+- Select "Add Content" next to *Columns*
 - Pick Text
 - Column Width 50%
 - Set a name for it in Alias
