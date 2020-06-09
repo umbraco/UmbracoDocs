@@ -22,7 +22,7 @@ Start by doing the following:
 3. In the workspace scroll to the bottom and find the group called Footer
 4. In the field saying “Footer Columns” click “Add Content” which will give you 7 options for content to add
 
-## [Navigation](../../Uno-pedia/Widgets/Grid/Navigation/index.md)
+## [Navigation](../../Uno-pedia/Widgets/Grid/Navigation)
 
 Let’s start by adding Navigation.
 
@@ -36,9 +36,9 @@ Let’s start by adding Navigation.
 - Next, we get the option to select children, which is another layer of links. We won't need this for now.
 - The final button here is "Only Render Children" which would make the node only display links to the child pages, instead of the selected one
 
-     ![The finished footer](images/Navigatio-Footer.png)
+![The finished footer](images/Navigatio-Footer.png)
 
-## [Opening Hours](../../Uno-pedia/Widgets/Opening-hours/index.md)
+## [Opening Hours](../../Uno-pedia/Widgets/Opening-hours)
 
 Now we click "Add content" again. To add your opening hours click "Opening Hours"
 
@@ -49,9 +49,9 @@ Now we click "Add content" again. To add your opening hours click "Opening Hours
 - Write down your open days like so: Mon-Fri
 - Fill in the time slots fx 08:00-20:00
 
-    ![The finished footer](images/Opening-Hours-Footer.png)
+![The finished footer](images/Opening-Hours-Footer.png)
 
-## [Contact](../../Uno-pedia/Widgets/Contact/index.md)
+## [Contact](../../Uno-pedia/Widgets/Contact)
 
 The next step is to add Contact to your footer.
 
@@ -63,9 +63,9 @@ The next step is to add Contact to your footer.
 - The next option is to add your phone number
 - Lastly is the option to add your email.
 
-    ![The finished footer](images/Contact-Footer.png)
+![The finished footer](images/Contact-Footer.png)
 
-## [Social Links](../../Uno-pedia/Widgets/Social-links/index.md)
+## [Social Links](../../Uno-pedia/Widgets/Social-links)
 
  For our final piece of content in the footer choose "Social Links".
 
@@ -75,7 +75,7 @@ The next step is to add Contact to your footer.
 - Heading could be something like "Find us at:"
 - Add the URLs for your Social media pages
 
-    ![The finished footer](images/Social-Links-Footer.png)
+![The finished footer](images/Social-Links-Footer.png)
 
 The last option is to add some bottom text. This could be a copyright text or something along those lines.
 Finalize the footer by clicking "Save" or "Save and publish".
