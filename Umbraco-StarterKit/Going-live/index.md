@@ -70,7 +70,7 @@ This is necessary, otherwise your newsletter won't work.
 Tracking and Access can be found in the Settings > General section. If you want to use any extensions such as Google maps or Google Analytics. This is where you put the API Keys.
 
 :::note
-It is important to note that the AIzaSyDX76tv4LsYpvuS-ue5cl6-C_pKRauv5XI API Key for Google Maps should be changed to your own API Key, as this standard one will stop working eventually.
+In order to your to get the most out of the Google Maps API, that the API Key is be changed to your own API Key.
 :::
 
 ## Responsive on all platforms
