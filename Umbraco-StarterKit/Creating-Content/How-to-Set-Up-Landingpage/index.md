@@ -46,10 +46,13 @@ We will be adding multiple grids to this page because the grid provides a lot of
 
 ### The Text and Image Grid
 
-***Text Widget***
+We will start by making the grid:
 
 - Click "Add content"
 - Select Grid
+
+***Text Widget***
+
 - Select "Add Content" next to *Columns*
 - Choose the Text widget
 - Column Width: 50%
@@ -80,10 +83,13 @@ We will be adding multiple grids to this page because the grid provides a lot of
 
 ### The Video and Price List Grid
 
-***Video Widget***
+To get started on this grid:
 
 - Click "Add content"
 - Select Grid
+
+***Video Widget***
+
 - Select "Add Content" next to *Columns*
 - Pick the Video widget
 - Column Width: 50%
@@ -149,9 +155,9 @@ Let's finalize by adding a slider element to the bottom of the page, to slide th
 
 If you are interested in learning more about the widgets that we used, i have collected them all below  along with a link to their article:
 
-- [Hero](../../Uno-pedia/Widgets/Hero)
-- [Grid Text Widget](../../Uno-pedia/Widgets/Grid/Text)
-- [Grid Image Widget](../../Uno-pedia/Widgets/Grid/Image)
-- [Grid Video Widget](../../Uno-pedia/Widgets/Grid/Video)
-- [Grid Price List Widget](../../Uno-pedia/Widgets/Grid/Price-List)
-- [Slider Widget](../../Uno-pedia/Widgets/Slider)
+- [Hero](../../Uno-pedia/Widgets/Hero/index.md)
+- [Grid Text Widget](../../Uno-pedia/Widgets/Grid/Text/index.md)
+- [Grid Image Widget](../../Uno-pedia/Widgets/Grid/Image/index.md)
+- [Grid Video Widget](../../Uno-pedia/Widgets/Grid/Video/index.md)
+- [Grid Price List Widget](../../Uno-pedia/Widgets/Grid/Price-List/index.md)
+- [Slider Widget](../../Uno-pedia/Widgets/Slider/index.md)
