@@ -20,7 +20,7 @@ The Start node also provides options for customizing the websites navigation men
 
 The following provides details for each of the configuration option in the Navigation group.
 
-### [Custom navigation](Custom-Navigation)
+### Custom navigation
 
 The default navigation on any Umbraco Starterkit website is built based on pages added to the content tree in the Content section. Unless the "Hide In Navigation" is checked, all pages will automatically be added to the navigation menu in the header of the website.
 
@@ -31,7 +31,7 @@ Clicking "Add Content" will provide 2 options:
 1. Navigation item and
 2. Big Navigation
 
-Learn more about the difference of these two as well as how to set them up in the [Custom Navigation](Custom-Navigation) article.
+Learn more about the difference of these two as well as how to set them up in the [Navigation menu](../../../Creating-Content/Navigation-menu) article.
 
 ### Buttons
 
