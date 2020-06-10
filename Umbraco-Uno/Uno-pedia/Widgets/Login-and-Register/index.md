@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Login and Register
 
-Umbraco Uno offers a couple of widgets to setup member registration and access. This articles presents an overview of the two widgets, Register and Login. To learn more about how to setup and restrict member access on an Umbraco Uno website, read the [Members](link) article.
+Umbraco Uno offers a couple of widgets to setup member registration and access. This articles presents an overview of the two widgets, Register and Login. To learn more about how to setup and restrict member access on an Umbraco Uno website, read the [Members](../../../Manage-Users/Members) article.
 
 ## Register
 
