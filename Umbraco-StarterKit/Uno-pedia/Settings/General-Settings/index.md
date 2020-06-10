@@ -64,11 +64,11 @@ Currently we support [MailChimp](https://mailchimp.com/) and [Campaign Monitor](
 
 In order for your website to connect with the external, you will need to add in your API key.
 
-NEED SHORT INSTRUCTIONS ON HOW TO DO THAT!
-
 ### Default Subscriber List ID
 
-## Instagram [Instagram API deprecated after March 31st 2020???]
+In order to choose which list your users will be subscribing to from your website, set the List ID here.
+
+## Instagram
 
 In order to use the *Instagram Feed* widget, you will need to configure the following settings:
 
@@ -82,7 +82,7 @@ Your Instragram User ID which you can find by using this tool: [Find your User I
 
 ### Access Token
 
-[not able to get this]
+You will need to add your access token as well, in order for your Umbraco Uno project to connect.
 
 ## Cookie Consent
 
@@ -116,7 +116,7 @@ You can choose between three different layouts for the cookie consent dialog:
 * A box that floats in the bottom-right of your website (`float-right`)
 * A full-width banner at the bottom of your website (`banner-bottom`)
 
-![Cookie Consent Dialog](images/cookie-consent-dialog.png)
+![Cookie Consent Dialog](images/cookies-options.png)
 
 ## Search
 

@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Feed
 
-Many websites requires a new section or a blog or sometimes even both. With Umbraco Starterkit that can be achieved used the **Feed** content type. Once a Feed has been setup, **Posts** can be created as child elements or subpages - these could be anything from blogposts to news articles.
+Many websites requires a new section or a blog or sometimes even both. With Umbraco Uno that can be achieved used the **Feed** content type. Once a Feed has been setup, **Posts** can be created as child elements or subpages - these could be anything from blogposts to news articles.
 
 Below is an example of a feed page with a Hero widget and a feed with 3 posts.
 
@@ -49,7 +49,7 @@ Both of these fields are optional and will be shown before the actual content of
 
 This field is where the main contents of the post needs to go. The Text field uses a Rich Text Editor, which enables the use of images, links, lists and other text formatting options.
 
-There is also a set of already defined formats for headers, quotes and other text elements. These are explained in more detail in the [Rich Text Editor](link) article.
+There is also a set of already defined formats for headers, quotes and other text elements. These are explained in more detail in the [Rich Text Editor](../../../Creating-Content/Rich-Text-Editors) article.
 
 ### Meta
 

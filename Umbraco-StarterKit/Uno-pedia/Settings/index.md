@@ -4,11 +4,11 @@ versionFrom: 8.0.0
 
 # Settings
 
-When building a website using the [Starter Kit] there are multiple settings and configuration options that you need to consider. This includes choosing the correct colors, connecting your SMTP service and defining content for the footer of the website.
+When building a website using the Umbraco Uno there are multiple settings and configuration options that you need to consider. This includes choosing the correct colors, connecting your Google Analytics account and defining content for the footer of the website.
 
-This section contains everything you need to know, in order to configure the website to suite your needs / requirements.
+This section contains everything you need to know, in order to configure the website to suite your needs and/or requirements.
 
-There is **three primary areas** you need to know about, when setting up and configuring your website. These are:
+There are **three primary areas** you need to know about, when setting up and configuring your website. These are:
 
 1. General settings
 2. Theme settings
@@ -16,7 +16,7 @@ There is **three primary areas** you need to know about, when setting up and con
 
 ## [General settings](General-Settings)
 
-These are usually settings that has an effect on the entire site, and include things like connecting your SMTP service, setting up tracking for Google and managing the cookie consent.
+These are usually settings that has an effect on the entire site, and include things like setting up tracking for Google and managing the cookie consent.
 
 You can manage the general settings for your website on the *General* content node, which you can find as a child node to *Settings*.
 

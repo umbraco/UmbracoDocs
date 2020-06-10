@@ -4,13 +4,13 @@ versionFrom: 8.0.0
 
 # Content Types
 
-The Starter Kit ships with a total of 11 Content Types. 5 of these you will be setting up and expanding on as your build your website. 4 of them are pages concerning settings or other basic website functionality, 1 acts as a folder and the final Content Type is used for the search functionality on the Website.
+Umbraco Uno ships with a total of 11 Content Types. 5 of these you will be set up and expanding on as your build your website. 4 of them are pages concerning settings or other basic website functionality, 1 acts as a folder and the final Content Type is used for the search functionality on the website.
 
 In this section you can learn more about the available Content Types in the Starter Kit, where to find them and the recommended way of using them.
 
 ## [Site (Start)](Site-Start)
 
-The Site Content Type is the frontpage of your website, and it is build using widgets. Site contains a lot of configuration options that will apply to the entire website, such as customizable option for the Navigation, Header and Footer of the website.
+The Site Content Type is the frontpage of your website, and is build using widgets. Site contains a lot of configuration options that will apply to the entire website, such as customizable option for the Navigation, Header and Footer of the website.
 
 [Learn more about how to configure the frontpage on your website.](Site-Start)
 
@@ -52,7 +52,7 @@ A sitemap content item will be excluded from the default navigation menu.
 
 ## Settings
 
-When building an Umbraco website using the Starter Kit the Settings Content Type and subpages are essential. This is where you configure your website, connect mailervices and social media and decide on both general and specific options for the theme of the website.
+When building an Umbraco Uno website the Settings Content Type and subpages are essential. This is where you configure your website, connect mailservices and social media and decide on both general and specific options for the theme of the website.
 
 ### [General settings](../Settings/General-Settings)
 
