@@ -8,7 +8,7 @@ While everything related to content and media is handled throught the Umbraco Ba
 
 In this article you will get a full overview on how to navigate the Portal Landingpage, as well as which features the page offers.
 
-![Overview of the Uno Portal Landingpage](images/portal.png)
+![Overview of the Uno Portal Landingpage](images/The-portal.png)
 
 ## Environment overview
 
