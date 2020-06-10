@@ -43,7 +43,9 @@ In the Help section you will also find links to other resources such a this docu
 
 ### Chat support
 
-You will be able to reach our support channel, by clicking the blue bobble in the bottom right corner, here you can also search for articles, and see the status on all systems.
+You will be able to reach our support channel, by clicking the blue bubble in the bottom right corner. Here you can also search for articles, and see the status on all systems.
+
+The chat bubble is only accessible on the dashboard in the Content section of the Umbraco backoffice.
 
 ### Profile menu
 
