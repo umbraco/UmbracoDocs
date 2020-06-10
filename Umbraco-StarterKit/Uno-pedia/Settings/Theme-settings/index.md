@@ -6,6 +6,8 @@ versionFrom: 8.0.0
 
 As a child node under *Settings* you'll find the *Theme* node. Here you will find a long list of settings and configuration options for your website. The theme settings will apply to the entire website.
 
+Most of the options found here, are also available through the [Theme Editor](../../../Getting-Starter/Themes).
+
 In this article you can learn more about the various options as well as get an idea of what the settings will affect.
 
 The general settings node is divided into 7 different groups:
@@ -102,6 +104,10 @@ This group contains configuration options for the header of your website, hich b
 
 For the header background you can choose either black or white.
 
+### Header Layout
+
+You can choose between 4 different layouts for the Header of your website.
+
 ### Container Width
 
 Define the width of the container inside of the header which will always be the full width of the screen size.
@@ -128,7 +134,7 @@ In this group you get a couple of configuration options to customize the look of
 
 ### Footer Theme
 
-For the footer background you can choose either black or white.
+For the footer background you can choose either dark or light.
 
 ### Container Width (Footer)
 
