@@ -78,3 +78,9 @@ If you want to learn more about Members and how to manage them, see the [Members
 ### Forms
 
 The Umbraco Forms Forms section lets you create forms to use in your content section. You can read more about Umbraco Forms and how to create them in the official [Umbraco Forms Documentation](../../../Add-ons/UmbracoForms).
+
+### Translation
+
+In this section you can add text to some of the more static elements on the website.
+
+This could be tooltips for when things are hovered over and it could be more static button texts like "Login" and "Register".
