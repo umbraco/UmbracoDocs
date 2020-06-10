@@ -95,8 +95,6 @@ When you right click a piece of content in the Content tree, you will be present
 
 This feature allows you to use the selected piece of content to create a Content Template which can be used to create additional content.
 
-To learn more about this feature read the [Content Templates](#LINK) article.
-
 ### Move
 
 Move the content item to another section in the Content tree.
