@@ -52,7 +52,7 @@ A sitemap content item will be excluded from the default navigation menu.
 
 ## Settings
 
-When building an Umbraco website using the Starter Kit the Settings Content Type and subpages are essential. This is where you configure your website, connect mailervices and social media and decide on both general and specific options for the theme of the website.
+When building an Umbraco Uno website the Settings Content Type and subpages are essential. This is where you configure your website, connect mailservices and social media and decide on both general and specific options for the theme of the website.
 
 ### [General settings](../Settings/General-Settings)
 
