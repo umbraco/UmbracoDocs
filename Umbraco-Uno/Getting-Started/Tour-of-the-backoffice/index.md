@@ -4,8 +4,6 @@ versionFrom: 8.0.0
 
 # Tour of the Backoffice
 
------
-
 The Umbraco Backoffice is the first meeting you will have with your new Umbraco Uno project. This is the platform you will be working on when creating content, adding images and media and preparing your website to be published.
 
 ![Image of Welcome Dasboard](images/Welcome-Dashboard.png)
