@@ -16,7 +16,7 @@ A Row is a kind of shelf for the columns in the grid, and each row has a total c
 
 Columns are the boxes wherein you create your content when working in a grid. Most of the grid widgets require you to set a column width. This is because it sets the width for how big the box will be and by that determine how many consecutive columns can be in a row.
 
-![Rows and Columns](images/Rows-Columns.png)
+![Rows and Columns](images/Columns-Rows-Grid.png)
 
 ## Using the Grid
 
