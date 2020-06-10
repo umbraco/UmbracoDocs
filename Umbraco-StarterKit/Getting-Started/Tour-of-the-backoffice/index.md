@@ -6,15 +6,9 @@ versionFrom: 8.0.0
 
 -----
 
-This article should serve as an introduction to the Umbraco Backoffice, and take the reader/user on a tour of the backoffice, shortly explaining the purpose of each section and how they go together.
-
-More details on each section and the trees will be added to this Uno-pedia article: [Umbraco Backoffice](../../Uno-pedia/Umbraco-Backoffice).
-
------
-
 The Umbraco Backoffice is the first meeting you will have with your new Umbraco Uno project. This is the platform you will be working on when creating content, adding images and media and preparing your website to be published.
 
-[IMAGE OF THE "WELCOME DASHBOARD" ON A NEW UMBRACO UNO PROJECT]
+![Image of Welcome Dasboard](images/Welcome-Dashboard.png)
 
 This article aims to give you a better understanding of each of the sections in the Umbraco Backoffice, as well as enabling you to navigate the various Umbraco-specific lingo that you might encounter.
 
@@ -48,6 +42,10 @@ The Help section provides a set of resources designed to aid you in various task
 Each of the **Tours** will take you through a detailed step-by-step guide on a specific task. The amount of Tours added will be updated frequently, and is a resource we highly recommend that new Umbraco users uses.
 
 In the Help section you will also find links to other resources such a this documentation and video material on [Umbraco.TV](https://umbraco.tv).
+
+### Chat support
+
+You will be able to reach our support channel, by clicking the blue bobble in the bottom right corner, here you can also search for articles, and see the status on all systems.
 
 ### Profile menu
 
