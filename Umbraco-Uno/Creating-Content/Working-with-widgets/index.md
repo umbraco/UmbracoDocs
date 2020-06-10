@@ -37,7 +37,7 @@ To add a widget, follow these steps:
 * Save and/or publish the page in order for the changes to be reflected
 
 :::tip
-Find links to articles describing each available widget in the [Widgets](../Uno-pedia/Widgets) article.
+Find links to articles describing each available widget in the [Widgets](../../Uno-pedia/Widgets) article.
 :::
 
 ## Copying widgets
