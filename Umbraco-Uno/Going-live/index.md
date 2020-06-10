@@ -8,7 +8,7 @@ In this section, you can find all the information needed in order to publish you
 
 - [Domain/Hostname](#domain-hostname)
 - [Configure DNS records](#configure-dns-records)
-- [Add Hostnames from the portal](#add-hostnames-from-the-portal)
+- [Add Hostnames from the portal](#add-hostname-from-the-portal)
 - [Umbraco Latch](#umbraco-latch)
 - [SMTP](#smtp)
 - [SEO](#seo)
