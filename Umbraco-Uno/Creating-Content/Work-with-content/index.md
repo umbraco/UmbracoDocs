@@ -117,7 +117,7 @@ Choose a specific hostname for the content item or section, and decide which cul
 
 This options lets you specify permissions on the selected piece of content for each user group. Note that this will overwrite the overall permissions which are configured on the User Group.
 
-Learn more about User Groups and permissions in the [Manage Users](#LINK) section.
+Learn more about User Groups and permissions in the [Manage Users](../../Manage-users) section.
 
 ### Public access
 
@@ -125,7 +125,7 @@ This feature lets you control who should have access to view a specific page on 
 
 When you're creating a website that allows users to sign up for a membership, you can create pages and sections that only (some) members can see once they're logged in.
 
-Learn more about this feature in the [Manage users](#LINK) section.
+Learn more about this feature in the [Manage users](../../Manage-users) section.
 
 ### Notifications
 
