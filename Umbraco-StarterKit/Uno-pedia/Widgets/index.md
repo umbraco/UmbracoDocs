@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Widgets
 
-Umbraco Starterkit provides a lot of flexibility in terms of customizing the types of content as well as the content itself.
+Umbraco Uno provides a lot of flexibility in terms of customizing the types of content as well as the content itself.
 
 This is made possible by a large array of different **widgets**, which acts like building blocks for creating, structuring and customizing webstes.
 
@@ -14,7 +14,7 @@ This article gives an overview of the available widgets, along with resources on
 
 Widgets are the building blocks of Umbraco Starterkit and provide a long list of different features that can be used to create websites for any scenario. This is designed in such a way that there is a widget for every need.
 
-## [Working with widgets](Working-with-widgets)
+## [Working with widgets](../../Creating-Content/Working-with-widgets)
 
 Learn how and when to add widgets to pages, how to sort and arrange them as well as how to get a copy of already configured widgets.
 
