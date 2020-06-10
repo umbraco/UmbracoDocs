@@ -4,7 +4,7 @@ versionFrom: 8.0.0
 
 # Sidebar widgets
 
-Some widgets in Umbraco StarterKit provides the option to create more widgets. This is the case with the Text widget, which has the option to add one or more *sidebar widgets*.
+Some widgets in Umbraco Uno provides the option to create more widgets. This is the case with the Text widget, which has the option to add one or more *sidebar widgets*.
 
 ## Sample
 
