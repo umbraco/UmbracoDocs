@@ -9,7 +9,7 @@ In this section, you can find all the information needed in order to publish you
 - [Domain/Hostname](#Domain/Hostname)
 - [Configure DNS records](#Configure-DNS-records)
 - [Add Hostnames from the portal](#Add-Hostnames-from-the-portal)
-- [Umbraco LATCH](#Umbraco-LATCH)
+- [Umbraco Latch](#Umbraco-Latch)
 - [SMTP](#SMTP)
 - [SEO](#SEO)
 - [Newsletter](#Newsletter)
@@ -34,10 +34,10 @@ Check with your DNS host or hostname provider for details on how to configure th
 - Add your hostname to the field and select add
 - To keep track of the process, you can refresh the page when it is done sucessfully it will say: Protected by LATCH  
 
-### Umbraco LATCH
+### Umbraco Latch
 
-Every Umbraco Uno project is protected by Umbraco LATCH witch means that a TLS Certificate will be applied automatically.
-If you are interested in learning more about Umbraco LATCH check out the [product page on Umbraco.com](https://umbraco.com/products/umbraco-cloud/umbraco-latch/).
+Every Umbraco Uno project is protected by Umbraco Latch witch means that a TLS Certificate will be applied automatically.
+If you are interested in learning more about Umbraco Latch check out the [product page on Umbraco.com](https://umbraco.com/products/umbraco-cloud/umbraco-latch/).
 
 ## SMTP
 

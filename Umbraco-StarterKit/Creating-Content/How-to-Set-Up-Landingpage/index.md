@@ -106,7 +106,7 @@ To get started on this grid:
 - Click ***Add content***
 - Select the Price List widget
 - Column Width: 50%
-- Choose a Heading 
+- Choose a Heading
 - Leave Boxed off
 - Under Items click ***Add content*** to create the list items
 - Fill in the spaces of Title, Description, and Price for the item 
@@ -150,7 +150,6 @@ Let's finalize by adding a slider element to the bottom of the page, to slide th
 
 ![Settings for the Slider](images/Slider.gif)
 
-
 ## The widgets we used
 
 If you are interested in learning more about the widgets that we used, i have collected them all below  along with a link to their article:
@@ -161,3 +160,4 @@ If you are interested in learning more about the widgets that we used, i have co
 - [Grid Video Widget](../../Uno-pedia/Widgets/Grid/Video/index.md)
 - [Grid Price List Widget](../../Uno-pedia/Widgets/Grid/Price-List/index.md)
 - [Slider Widget](../../Uno-pedia/Widgets/Slider/index.md)
+
