@@ -6,11 +6,11 @@ versionFrom: 8.0.0
 
 All images, video clips and files that are uploaded to your Umbraco Uno website, can be managed from the Media section in the Umbraco Backoffice. Here you can upload more media items as well as sort and edit the existing items.
 
-![The Media section](images/Media-section.png)
+![The Media section](images/Manage-Media-Library.png)
 
 ## Uploading media items
 
-Media items can be [uploaded while working with content](link to content docs) in the Content section, or directly through the Media section, which is also often refered to as the **Media Library**.
+Media items can be [uploaded while working with content](../Work-with-content/index.md) in the Content section, or directly through the Media section, which is also often refered to as the **Media Library**.
 
 In the Media Library there are multiple different ways to upload media items. These are the two most commonly used ones:
 
@@ -21,7 +21,7 @@ The "drag and drop" area is available in every folder in the Media section, whic
 
 We highly recommend that you use folders to organize your images and other media items. This is especially relevant, if you're going to add a lot of media to your website.
 
-Read the [Folders for Media](Folders-for-Media) article to learn more about how to organize your media items.
+Read the [Folders for Media](Folders-for-media/index.md) article to learn more about how to organize your media items.
 
 ## Manage media items
 
