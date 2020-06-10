@@ -17,7 +17,7 @@ If you've never worked with Umbraco before, there's a few resources which we rec
 * [How to work with content](link)
 :::
 
-## The three platforms for your Umbraco experience
+## The three platforms for Umbraco Uno
 
 There are three platforms that you will be going through as you work with your Umbraco project.
 
@@ -40,10 +40,14 @@ The Frontend is what people see when they visit your website, meaning that this 
 How the frontend looks is completely up to you, and you choose this by creating the look you want in the backoffice. You cannot do any editing on the frontend.
 We will continue to refer to this as the Frontend throughout the rest of the documentation.
 
-## "Tour of the backoffice"
+## [Working with content](../Creating-Content/Work-with-content)
+
+Learn the basics of working with content in an Umbraco Uno project.
+
+## [Themes](Themes)
+
+You can customize your Umbraco Uno project to have exactly the look you want. Customize colors and fonts using the Theme Editor and add custom logos through the Themes settings page.
 
 ## Sample site
 
-## [Working with content](../Creating-Content/Work-with-content)
-
-## Selecting a theme
+Every Umbraco Uno ships with a sample site for the **Unicorn Resort**. It is designed to showcase the various features Umbraco Uno provides.
