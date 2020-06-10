@@ -13,3 +13,5 @@ The content type contains the following groups of fields:
 * [Settings](../../Settings/Specific-Settings/#settings)
 
 Content items based on this type can be created as subpages to the Site (Start) content type and a subpages to items of the same type. This means that it's possible to create nested pages on the website based on the Page content type.
+
+Use the [How to set-up a Landingpage](../../../Creating-Content/How-to-Set-Up-Landingpage) guide to learn how to work with the Page content type.
