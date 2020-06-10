@@ -4,7 +4,11 @@ versionFrom: 8.0.0
 
 # Umbraco Uno
 
-Still need an intro.
+Without having to write any code or build a complex setup, you can build, design and create websites for any occasion with Umbraco Uno. Everything you would need is already setup for you and ready for you to use.
+
+Umbraco Uno projects are all hosted on our servers and you can get a new project in a matter of minutes. Follow the link below to take a free 14-day trial or, if you already have an account on [Umbraco.io](https://umbraco.io), use the **Create project**
+
+[Try Umbraco Uno today by taking a 14-day free trial.](https://umbraco.com/try-umbraco-uno/)
 
 In this section you will find all you need to know in order to setup, configure and work with **Umbraco Uno**.
 
