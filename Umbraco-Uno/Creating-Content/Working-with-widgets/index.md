@@ -37,7 +37,7 @@ To add a widget, follow these steps:
 * Save and/or publish the page in order for the changes to be reflected
 
 :::tip
-Find links to articles describing each available widget in the [Widgets](../Widgets) article.
+Find links to articles describing each available widget in the [Widgets](../Uno-pedia/Widgets) article.
 :::
 
 ## Copying widgets
@@ -80,7 +80,7 @@ In order to clear the clipboard, click on the "trashcan" icon in the top-right c
 :::note
 Widgets that are copied in this way, will have no relation to each other. This means that once a widget has been copied, and the original is changed, the copies will not be updated to reflect those changes.
 
-In order to create a set of widgets that can be used on multiple pages, while only needing to be maintained one place, use [Global Content](../../Content-Types/Global-Content)
+In order to create a set of widgets that can be used on multiple pages, while only needing to be maintained one place, use [Global Content](../../Uno-pedia/Content-Types/Global-Content)
 :::
 
 ## Re-ordering widgets
