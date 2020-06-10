@@ -16,11 +16,20 @@ Which of these two widgets you choose to use for the job depends on what you spe
 
 There is multiple ways to approach content creation, two of these ways could be the following:
 
-Widget based design and structure
+### Widget based design and structure
 
-- If you do not have a predefined design you want to follow, comming up with a design and a structure based on the possibilities of widgets is a great way to start.
+If you do not have a predefined design you want to follow, comming up with a design and a structure based on the possibilities of widgets is a great way to start.
 The grid widget gives you all the tools you would need to create a good looking website, all of these widgets are great to work with.
 Making a grid is a good way to secure a nice look with a good structure, and these grids can be saved en global content to keep the same look and feel throughout you website pages.
+
+
+### Fitting widgets to your allready excisting design and structure
+
+If you allready have a predefined design you need to achieve, The grid widget is your best bet.
+To get started it would be a good choice, to start my setting up your grid structure in a global content node.
+Doing so will allow you to keep a consistent structure throughout your pages.
+Keeping the grid in a global conetent node is both time efficient and structure efficient as you will only have to set up the core structure once.
+
 
 ## Manage Media Library
 
