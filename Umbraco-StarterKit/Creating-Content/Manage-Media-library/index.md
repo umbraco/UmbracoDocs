@@ -19,6 +19,10 @@ In the Media Library there are multiple different ways to upload media items. Th
 
 The "drag and drop" area is available in every folder in the Media section, which enables you to upload media items exactly where you need them.
 
+We highly recommend that you use folders to organize your images and other media items. This is especially relevant, if you're going to add a lot of media to your website.
+
+Read the [Folders for Media](Folders-for-Media) article to learn more about how to organize your media items.
+
 ## Manage media items
 
 For each media item on your website you can add any time change the name of the item as well as see the dimensions for it.
