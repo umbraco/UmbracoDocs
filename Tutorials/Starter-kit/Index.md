@@ -7,7 +7,7 @@ meta.Description: "A tutorial on getting started with Umbraco using the starter 
 
 # The Starter Kit
 
-The *Starter kit* is the name of the default starter kit for Umbraco. It is the perfect way to familiarize yourself with Umbraco CMS.
+The *Starter kit* is the name of one of the Starter kits build for Umbraco by Umbraco HQ. It is the great way to familiarize yourself with Umbraco CMS.
 
 Developed and maintained by Umbraco HQ and the Umbraco community it aims to give you the basic knowledge you need in order to hit the ground running.
 

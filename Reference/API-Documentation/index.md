@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Umbraco API Documentation"
+meta.Description: "Information on Umbraco API Documentation"
 ---
 
 # API Documentation

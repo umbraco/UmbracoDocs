@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Umbraco events"
+meta.Description: "Information on various backofice events in Umbraco"
 ---
 
 # Using events

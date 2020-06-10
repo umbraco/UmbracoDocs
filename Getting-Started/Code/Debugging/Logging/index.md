@@ -1,6 +1,6 @@
 ---
 keywords: logging serilog messagetemplates logs v8 version8
-versionFrom: 8.0.0
+versionFrom: 8.6.2
 ---
 
 # Logging
@@ -158,7 +158,6 @@ using Umbraco.Web;
 using Umbraco.Core;
 using Umbraco.Web.Runtime;
 using Umbraco.Core.Logging.Serilog;
-using ILogger = Umbraco.Core.Logging.ILogger;
 
 using Serilog;
 using Serilog.Core;
@@ -169,17 +168,6 @@ namespace MyNamespace
     public class FineTuneLoggingApplication : UmbracoApplication
     {
         protected override IRuntime GetRuntime()
-        {
-            return new FineTuneLoggingWebRuntime(this);
-        }
-    }
-
-    public class FineTuneLoggingWebRuntime : WebRuntime
-    {
-        public FineTuneLoggingWebRuntime(UmbracoApplicationBase umbracoApplication) : base(umbracoApplication)
-        {
-        }
-        protected override ILogger GetLogger()
         {
             var logLevelSetting = ConfigurationManager.AppSettings["YourMinimumLoggingLevel"]; //Warning, Debug, Information, etc
 
@@ -197,7 +185,11 @@ namespace MyNamespace
                 .ReadFromUserConfigFile()
                 .MinimumLevel.ControlledBy(levelSwitch);
 
-            return new SerilogLogger(loggerConfig);
+            var logger = new SerilogLogger(loggerConfig);
+
+            var runtime = new WebRuntime(this, logger, GetMainDom(logger));
+
+            return runtime;
         }
     }
 }

@@ -22,6 +22,7 @@ using Umbraco.Core.Persistence.DatabaseAnnotations;
 
 namespace Umbraco.Web.UI
 {
+    [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
     public class BlogCommentsComposer : ComponentComposer<BlogCommentsComponent>
     {
     }

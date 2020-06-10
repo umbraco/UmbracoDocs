@@ -92,6 +92,9 @@ This is the state you will see next to your hostname if Umbraco Latch has tried 
 
 If you see this state, you will need to wait a week, before Umbraco Latch can assign a certificate to your hostname.
 
+## CAA records and Umbraco Latch
+If you have CAA (Certification Authority Authorization) records configured for your domain, that does not allow the certificate provider of Umbraco Latch (Lets Encrypt) to issue a certificate, the hostname will be stuck in the 'Inital' phase. To make sure that Umbraco Latch can have a certificate issued for your hostname, you can either delete the CAA record preventing issuance, or you can add a record to allow LetsEncrypt to issue certificates for your domain. Let’s Encrypt’s identifying domain name for CAA is ```letsencrypt.org```. You can read more about CAA and LetsEncrypt in [the official LetsEncrypt documentation](https://letsencrypt.org/docs/caa/).
+
 ## Read more
 
 * [Redirect from HTTP to HTTPS](https://our.umbraco.com/documentation/Umbraco-Cloud/Set-Up/Manage-Hostnames/Rewrites-on-Cloud/#running-your-site-on-https-only)
