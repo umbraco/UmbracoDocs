@@ -22,7 +22,7 @@ The following provides details for each of the configuration option in the Navig
 
 ### Custom navigation
 
-The default navigation on any Umbraco Starterkit website is built based on pages added to the content tree in the Content section. Unless the "Hide In Navigation" is checked, all pages will automatically be added to the navigation menu in the header of the website.
+The default navigation on any Umbraco Uno website is built based on pages added to the content tree in the Content section. Unless the "Hide In Navigation" is checked, all pages will automatically be added to the navigation menu in the header of the website.
 
 To avoid the dynamically added navigation menu, this feature can be used to create a custom and static navigation.
 
