@@ -13,8 +13,8 @@ In this section you can find all the resources you need in order to get the best
 
 If you've never worked with Umbraco before, there's a few resources which we recommend that you start with in order to get to know your way around the *backoffice* and learn the essentials for working with content.
 
-* [Tour of the Umbraco Backoffice](link)
-* [How to work with content](link)
+* [Tour of the Umbraco Backoffice](Tour-of-the-backoffice)
+* [How to work with content](../Creating-Content/Working-with-content)
 :::
 
 ## The three platforms for Umbraco Uno
