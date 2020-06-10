@@ -16,7 +16,7 @@ The Result should look somewhat like this:
 - Start by right-clicking the Umbraco Hotel node
 - Choose Create and select **Page**
 - Name your landing page and you are ready to start creating your new landing page
-- In the Content group of your page, navigate to the Widget section and click "Add content"
+- In the Content group of your page, navigate to the Widget section and click ***Add content***
 
 ## Hero
 
@@ -34,7 +34,7 @@ We will start by adding a greeting to our page. This will be done using the Hero
 - Text Align: Center
 - Vertical text-align: Top
 - Animate turned on
-- Click Save in the bottom of the page
+- Click ***Save*** in the bottom of the page
 - Go to the top of the hero and click the hero tab to minimize it
 
 ![Settings for the Hero](images/Heo-Grid.gif)
@@ -46,11 +46,14 @@ We will be adding multiple grids to this page because the grid provides a lot of
 
 ### The Text and Image Grid
 
+We will start by making the grid:
+
+- Click ***Add content***
+- Select Grid
+
 ***Text Widget***
 
-- Click "Add content"
-- Select Grid
-- Select "Add Content" next to *Columns*
+- Select ***Add content*** next to *Columns*
 - Choose the Text widget
 - Column Width: 50%
 - Set a name for the item in Alias (this is for display purposes only, and will not show on the frontend)
@@ -59,7 +62,7 @@ We will be adding multiple grids to this page because the grid provides a lot of
 
 ***Image Widget***
 
-- Click "Add Content"
+- Click ***Add content***
 - Select Image
 - Name it in alias
 - Column Width: 50%
@@ -73,18 +76,21 @@ We will be adding multiple grids to this page because the grid provides a lot of
 - Horizontal align: Left
 - Vertical align: Top
 - Select a light color for the background
-- Click Save in the bottom of the page
+- Click ***Save*** in the bottom of the page
 - Go to the top of the grid and click the grid tab to minimize it
 
 ![Settings for the Text and Image Grid](images/Text-Image-grid.gif)
 
 ### The Video and Price List Grid
 
+To get started on this grid:
+
+- Click ***Add content***
+- Select Grid
+
 ***Video Widget***
 
-- Click "Add content"
-- Select Grid
-- Select "Add Content" next to *Columns*
+- Select ***Add content*** next to *Columns*
 - Pick the Video widget
 - Column Width: 50%
 - Pick an MP4 video file
@@ -97,13 +103,13 @@ We will be adding multiple grids to this page because the grid provides a lot of
 
 ***Price List Widget***
 
-- Click "Add Content"
+- Click ***Add content***
 - Select the Price List widget
 - Column Width: 50%
 - Choose a Heading
 - Leave Boxed off
-- Under Items click "Add content" to create the list items
-- Fill in the spaces of Title, Description, and Price for the item
+- Under Items click ***Add content*** to create the list items
+- Fill in the spaces of Title, Description, and Price for the item 
 - Repeat this process until you have the number of items you want
 
 ***Grid Settings***
@@ -114,7 +120,7 @@ We will be adding multiple grids to this page because the grid provides a lot of
 - Horizontal align: Left
 - Vertical align: Top
 - Select a light color for the background
-- Click Save in the bottom of the page
+- Click ***Save*** in the bottom of the page
 - Go to the top of the grid and click the grid tab to minimize it
 
 ![Settings for the Video and Pricelist Grid](images/video-Pricelist-grid.gif)
@@ -124,7 +130,7 @@ We will be adding multiple grids to this page because the grid provides a lot of
 Let's finalize by adding a slider element to the bottom of the page, to slide through products.
 
 - In the Alias name the slider what you want to call it
-- Next click "Add content" to choose what kind of content you want in the slider
+- Next click ***Add content*** to choose what kind of content you want in the slider 
 - Select the Image widget
 - Give the image a name in the alias field
 - Select the image you want to use by clicking +
@@ -139,7 +145,7 @@ Let's finalize by adding a slider element to the bottom of the page, to slide th
 - Set Autoplay to 3000
 - Pause AutoPlay should be on
 - Fade Animation: Off
-- Click Save in the bottom of the page
+- Click ***Save*** in the bottom of the page
 - Go to the top of the slider and click the slider tab to minimize it
 
 ![Settings for the Slider](images/Slider.gif)
@@ -148,9 +154,10 @@ Let's finalize by adding a slider element to the bottom of the page, to slide th
 
 If you are interested in learning more about the widgets that we used, i have collected them all below  along with a link to their article:
 
-- [Hero](../../Uno-pedia/Widgets/Hero)
-- [Grid Text Widget](../../Uno-pedia/Widgets/Grid/Text)
-- [Grid Image Widget](../../Uno-pedia/Widgets/Grid/Image)
-- [Grid Video Widget](../../Uno-pedia/Widgets/Grid/Video)
-- [Grid Price List Widget](../../Uno-pedia/Widgets/Grid/Price-List)
-- [Slider Widget](../../Uno-pedia/Widgets/Slider)
+- [Hero](../../Uno-pedia/Widgets/Hero/index.md)
+- [Grid Text Widget](../../Uno-pedia/Widgets/Grid/Text/index.md)
+- [Grid Image Widget](../../Uno-pedia/Widgets/Grid/Image/index.md)
+- [Grid Video Widget](../../Uno-pedia/Widgets/Grid/Video/index.md)
+- [Grid Price List Widget](../../Uno-pedia/Widgets/Grid/Price-List/index.md)
+- [Slider Widget](../../Uno-pedia/Widgets/Slider/index.md)
+
