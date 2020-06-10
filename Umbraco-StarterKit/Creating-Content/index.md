@@ -14,13 +14,20 @@ An example of this could be choosing between the Image widget and the Gallery wi
 
 Which of these two widgets you choose to use for the job depends on what you specifically need for this situation.
 
-There is multiple ways to approach content creation, two of these ways could be the following:
+There is multiple ways to approach content creation, two of these ways are explained. Both approaches use the [Grid](../Uno-pedia/Widgets/Grid) feature.
 
-Widget based design and structure
+### Widget based design and structure
 
-- If you do not have a predefined design you want to follow, comming up with a design and a structure based on the possibilities of widgets is a great way to start.
-The grid widget gives you all the tools you would need to create a good looking website, all of these widgets are great to work with.
-Making a grid is a good way to secure a nice look with a good structure, and these grids can be saved en global content to keep the same look and feel throughout you website pages.
+If you do not have a predefined design you want to follow, coming up with a design and a structure based on the possibilities of widgets is a great way to start.
+
+The grid widget gives you all the tools you would need to create a good looking website. All of these widgets are great to work with. Making a grid is a good way to secure a good structure, and these grids can be saved in global content to keep the same look and feel throughout you website pages.
+
+### Fitting widgets to your already existing design and structure
+
+If you already have a predefined design you need to achieve, the grid widget is a good option. 
+
+To get started it would be a good choice, to start by setting up the grid structure in a global content node. Doing so will allow you to keep a consistent structure throughout your pages.
+Keeping the grid in a global conetent node is both time efficient and structure efficient as you will only have to set up the core structure once.
 
 ## [Working With Content](Work-With-content/index.md)
 
@@ -50,4 +57,4 @@ The Rich Text Editor or RTE as people call it is a great way to create content. 
 
 When you're creating content in Umbraco Uno you will primarily be working with Widgets. These allow for a work process that is very straight forward, and they can be arranged in a grid for more complexity.
 
-For a full overview of the Widgets provided with Umbraco Uno see the [Widgets](../Uno-pedia/Widgets/index.md) section in the Uno-pedia.
+For a full overview of the Widgets provided with Umbraco Uno see the [Widgets](../Uno-pedia/Widgets) section in the Uno-pedia.
