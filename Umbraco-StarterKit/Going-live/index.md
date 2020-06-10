@@ -58,14 +58,14 @@ Setting up SEO should be part of your general workflow when you create content. 
 
 You can reach the general SEO under your home node > Settings > General.
 
-There is more documentation about SEO at these pages [General settings](../Uno-pedia/Settings/General-Settings/index.md/#SEO) and [Specific settings](../Uno-pedia/Settings/Specific-Settings/index.md/#SEO)
+There is more documentation about SEO at these pages [General settings](../Uno-pedia/Settings/General-Settings/index.md/#SEO) and [Specific settings](../Uno-pedia/Settings/Specific-Settings/#SEO)
 
 ## Newsletter
 
 You will need to choose between Mailchimp or Campaign Monitor, and then after that fill out your API Key and Default Subscriber ID.
 This is necessary, otherwise your newsletter won't work.
 
-To have a newsletter function on your website it will need to be set up through the [Newsletter Widget](../Uno-pedia/Widgets/Newsletter/index.md/).
+To have a newsletter function on your website it will need to be set up through the [Newsletter Widget](../Uno-pedia/Widgets/Newsletter).
 
 ## Tracking and Access
 
