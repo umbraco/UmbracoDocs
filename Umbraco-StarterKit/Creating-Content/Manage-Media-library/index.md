@@ -21,7 +21,7 @@ The "drag and drop" area is available in every folder in the Media section, whic
 
 We highly recommend that you use folders to organize your images and other media items. This is especially relevant, if you're going to add a lot of media to your website.
 
-Read the [Folders for Media](Folders-for-Media/index.md) article to learn more about how to organize your media items.
+Read the [Folders for Media](Folders-for-media/index.md) article to learn more about how to organize your media items.
 
 ## Manage media items
 
