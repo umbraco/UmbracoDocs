@@ -12,7 +12,7 @@ This article gives an overview of the available widgets, along with resources on
 
 ## What are widgets
 
-Widgets are the building blocks of Umbraco Starterkit and provide a long list of different features that can be used to create websites for any scenario. This is designed in such a way that there is a widget for every need.
+Widgets are the building blocks of Umbraco Uno and provide a long list of different features that can be used to create websites for any scenario. This is designed in such a way that there is a widget for every need.
 
 ## [Working with widgets](../../Creating-Content/Working-with-widgets)
 
