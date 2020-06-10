@@ -47,7 +47,7 @@ Whether you're creating a new landing page, a new section or a feed area, the pr
 
 While working on a piece of content you can use the *Preview* feature to preview how the page looks. Once the page is done you can choose to either publish it right away, or schedule when the page should be published.
 
-When you have a website that uses multiple languages, you can create a new *variant* of the content item for each language you're using. Learn more about how this is done in the [Multi-lingual website] article.
+When you have a website that uses multiple languages, you can create a new *variant* of the content item for each language you're using. 
 
 ## Updating content
 
@@ -79,13 +79,11 @@ When you're done editing a piece of content you can choose to either publish the
 
 To **publish the content right away** select the green "Save and publish" button in the bottom-right corner.
 
-To schedule to content for another point in time select the "Schedule..." option, which canbe found by clicking the arrow next to the green "Save and publish" button in the bottom-right corner. Read the [Scheduled publishing](#LINK) article to learn more about how to setup the schedule.
+To schedule to content for another point in time select the "Schedule..." option, which canbe found by clicking the arrow next to the green "Save and publish" button in the bottom-right corner.
 
 ## Unpublishing content
 
 Once a page is published on your website you can at any time choose to unpublish it. The option to do this is available from the publish menu which is accessible through the arrow next to the green "Save and publish" button in the bottom-right corner.
-
-It is also possible to automatically unpublish content items at a given time using the [Scheduled publishing](#LINK) feature.
 
 ## Other options
 
