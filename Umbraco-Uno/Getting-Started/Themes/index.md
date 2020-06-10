@@ -10,7 +10,7 @@ In this article you will find more information about how to work with themes, fo
 
 ## Theme Editor
 
-When you're previewing the content you're working with, you can use the **Theme Editor** to change colors on the website, set different fonts for the headings and text as well as costumize various other aspects of the website.
+When you're previewing the content you're working with, you can use the **Theme Editor** to change colors on the website, set different fonts for the headings and text as well as customize various other aspects of the website.
 
 To access the Theme Editor, follow these steps:
 
@@ -35,7 +35,7 @@ Any changes made and saved through the Theme Editor will automatically be saved 
 
 All available options in the Theme Editor is also available from the *Theme* settings node which can be found under *Settings* in the Content tree.
 
-In the Uno-pedia you will find a thorough list of all availalble [Theme settings](../../Uno-pedia/Settings/Theme-settings)
+In the Uno-pedia you will find a thorough list of all available [Theme settings](../../Uno-pedia/Settings/Theme-settings)
 
 ### Logos
 
@@ -44,5 +44,5 @@ Umbraco Uno provides a set of different options for you to add your company logo
 On the Theme settings node, you can define logos for both dark and light backgrounds, upload a favicon as well as choose an app icon for your website.
 
 :::tip
-We recommend that you upload `SVG` files for the logos and `PNG` files for both the facivon and the app icon.
+We recommend that you upload `SVG` files for the logos and `PNG` files for both the favicon and the app icon.
 :::
