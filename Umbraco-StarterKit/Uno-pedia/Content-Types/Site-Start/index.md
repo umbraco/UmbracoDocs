@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 The Start node is based on a Content Type called "Site". It serves as the main page of the website, also called the frontpage or root page. When visitors visits the website, the Start node is the first this they will see.
 
-As with most content types in Umbraco Starterkit, [widgets](../../Widgets) are used to build the structure and setup the content of the page. Add as many or as few widgets as necessary to populate the Start node.
+As with most content types in Umbraco Uno, [widgets](../../Widgets) are used to build the structure and setup the content of the page. Add as many or as few widgets as necessary to populate the Start node.
 
 :::note
 The Start node also contains the SEO and the Settings groups for configuring various options around the page like whether or not to hide the footer content and what title should be used for SEO.
