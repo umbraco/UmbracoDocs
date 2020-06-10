@@ -6,15 +6,15 @@ versionFrom: 8.0.0
 
 In this section, you can find all the information needed in order to publish your website to the world wide web.
 
-- [Domain/Hostname](#Domain/Hostname)
-- [Configure DNS records](#Configure-DNS-records)
-- [Add Hostnames from the portal](#Add-Hostnames-from-the-portal)
-- [Umbraco Latch](#Umbraco-Latch)
-- [SMTP](#SMTP)
-- [SEO](#SEO)
-- [Newsletter](#Newsletter)
-- [Tracking and Access](#Tracking-and-Access)
-- [Responsive on all platforms](#Responsive-on-all-platforms)
+- [Domain/Hostname](#domain-hostname)
+- [Configure DNS records](#configure-dns-records)
+- [Add Hostnames from the portal](#add-hostnames-from-the-portal)
+- [Umbraco Latch](#umbraco-latch)
+- [SMTP](#smtp)
+- [SEO](#seo)
+- [Newsletter](#newsletter)
+- [Tracking and Access](#tracking-and-access)
+- [Responsive on all platforms](#responsive-on-all-platforms)
 
 ## Domain/Hostname
 
