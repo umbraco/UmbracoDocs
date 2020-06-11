@@ -53,10 +53,6 @@ In some cases you might need to delete page or entire sections of your website. 
 
 Once a piece of content or a section has been deleting, it will be mvoed to the **Recycle Bin** which is accessible from the Content tree. It is possible to **restore** deleted content by either moving the item back under the start node or by right-clicking it in the Content tree and choose "Restore".
 
-:::warning
-When deleting a piece of content it is important to note that **all** language variants as well as any sub pages will be deleted as well.
-:::
-
 ## Publishing content
 
 When you're done editing a piece of content you can choose to either publish the page right away or you can schedule it for a later point on time.
