@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 Umbraco Uno provides a lot of flexibility in terms of customizing the types of content as well as the content itself.
 
-This is made possible by a large array of different **widgets**, which acts like building blocks for creating, structuring and customizing webstes.
+This is made possible by a large array of different **widgets**, which acts like building blocks for creating, structuring and customizing websites.
 
 This article gives an overview of the available widgets, along with resources on how to work with and configure each of them.
 
