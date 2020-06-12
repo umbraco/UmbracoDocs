@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+versionFrom: 7.0.0
 ---
 
 # Notifications
@@ -14,4 +14,4 @@ You can set up notifications so any user can receive an email when an action is 
 The notification settings apply to the chosen content item as well as any child items that appear below the item in the content tree.
 :::
 
-![notifications.jpg](images/notifications-v8.png)
+![notifications.jpg](images/notifications.jpg)
