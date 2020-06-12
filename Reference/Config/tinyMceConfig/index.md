@@ -20,7 +20,7 @@ Inside the `<commands>` section of the configuration file you will find multiple
 
 `name` defines the name that will be seen in the list of Toolbar configuration options in the backoffice for the rich text editor 
 
-`mode` this can be set to be either 'Insert', 'Selection' or 'All' and this decides in 'distraction free' mode, which quick menu the icon should appear on, eg the menu that appears when you are about to 'insert' text or the menu that appears when you 'select' text or both!
+`mode` this can be set to be either 'Insert', 'Selection' or 'All'. In 'distraction free' mode, there are two 'quick menus' that appear - one when you are about to 'insert' text, and one when you 'select' existing text. This setting determines which 'quick menu' the icon should appear on or whether it should appear on both!
 
 :::note
 The order of the commands in this configuration file influences the order of the buttons in the toolbar.
@@ -62,7 +62,7 @@ Next we add a reference to the plugin itself:
         <plugin>codesample</plugin>
 ```
 :::note
-The plugin implementation for 'code sample' is already shipped with TinyMce inside Umbraco, and is loaded 'by convention' from the location **/umbraco/lib/tinymce/plugins/codesample/plugin.min.js** - where the 'codesample' folder matches the plugin alias, and the plugin.min.js contains the implementation (NB: this is where the toolbar icon is set for the plugin).
+The plugin implementation for 'code sample' is already shipped with TinyMce inside Umbraco. It is loaded 'by convention' from the location **/umbraco/lib/tinymce/plugins/codesample/plugin.min.js**. The convention here is the 'codesample' folder matches the plugin alias, and the plugin.min.js contains the actual implementation. (NB: this is where the toolbar icon is set for the plugin).
 :::
 
 Now after restarting the Umbraco site, The Code Sample option will be available to select for use in Rich Text Editor instances:
@@ -195,7 +195,8 @@ This option doesn't accept attributes.
 
 ## Extended Valid Elements
 
-Extended valid elements(`extended_valid_elements`) is a configuration option of TinyMCE that is normally used to apply additional specific rules on top of the existing `validElements` ruleset. However Umbraco currently uses this configuration setting to ensure that core 'Umbraco specific' Rich Text Editor functionality is always allowed: eg Inserting Macros - therefore it is recommended not to use the extended_valid_elements option in custom TinyMCE configuration to avoid breaking core Umbraco functionality.
+Extended valid elements(`extended_valid_elements`) is a configuration option of TinyMCE that is normally used to apply additional specific rules on top of the existing `validElements` ruleset. However Umbraco currently uses this configuration setting to ensure that core 'Umbraco specific' Rich Text Editor functionality is always allowed, eg inserting Macros. It is therefore recommended not to use the `extended_valid_elements` option in any custom TinyMCE configuration to avoid breaking core Umbraco functionality.
+
 For reference this is the use of extended_valid_elements in the Umbraco core:
 
 ```js
@@ -216,7 +217,7 @@ The `customConfig` node contains any custom configuration you would like applied
 ```
 ### Common Custom Configuration Examples
 
-By default, Umbraco doesn't provide any custom configuration defaults for TinyMce other than setting `entity_encoding` to be raw, however there are some common configurations worth considering on most sites, or at least here are some examples for inspiration of how to extend TinyMce in Umbraco via configuration.
+By default, Umbraco doesn't provide any custom configurations for TinyMce other than setting the `entity_encoding` value to be raw. However there are some common configurations worth considering making for improving the editor experience for most sites. (Or at least here are some examples for inspiration of how to extend TinyMce in Umbraco via configuration).
 
 #### Spellchecking
 
@@ -230,7 +231,7 @@ There is a paid for extension for TinyMCE called [Spell Checker Pro](https://www
 ```
 
 #### Responsive Tables
-When you insert a table into the rich text area, by default the columns and rows will be defined by pixels and not stretch full width across the container, additionally you might want to provide styling options for 'striped' rows, or border size, or at least make sure the table has a css class so you can target it with tablesaw or similar plugin. The following configuration will make inserted tables more responsive:
+When you insert a table into the rich text area, by default the columns and rows will be defined by 'pixels' and not stretch full-width across the page container. Additionally you might want to provide styling options for 'striped' rows, or set a default border size, or at least make sure the table has a css class so you can target it with tablesaw or similar plugin. The following configuration will make inserted tables more responsive:
 
 ```xml
 <customConfig>
@@ -252,7 +253,7 @@ When you insert a table into the rich text area, by default the columns and rows
 ```
 #### Style Formats
 
-Umbraco provides a mechanism of associating a css stylesheet with a Rich Text Editor configuration, which enables using the UI of the backoffice to update the stylesheet with some 'comments' that in turn build up a list of custom style format options to appear in the Formats dropdown of the Rich Text Editor.
+Umbraco provides a mechanism for using a CSS stylesheet + comments, updated via a nice backoffice UI to set custom style formats for a Rich Text Editor configuration:
 
 ![Add style format rule via backoffice](images/add-via-backoffice.png)
 
