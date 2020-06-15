@@ -87,7 +87,7 @@ The following table of control characters is taken from [the official TinyMce do
 <td>@</td>
 <td>
 
-Rules with this name will be applied to all elements defined after this rule. So @[attr1|attr2] will enable attr1 and attr2 for all elements, but element1,@[attr1|attr2],element2,element3 will enable attr1 and attr2 only for element2 and element3.
+Rules with this name will be applied to all elements defined after this rule. So `@[attr1|attr2]` will enable attr1 and attr2 for all elements, but element1, `@[attr1|attr2]`, element2, element3 will enable attr1 and attr2 only for element2 and element3.
 
 If applied in extended_valid_elements, it is only effective for the elements in the extended_valid_elements list.
 
