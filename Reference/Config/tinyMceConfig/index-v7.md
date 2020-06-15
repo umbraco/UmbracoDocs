@@ -156,7 +156,7 @@ This option should contain a comma separated list of element names to exclude fr
 <invalidElements>font</invalidElements>
 ```
 
-# extendedValidElements
+## extendedValidElements
 
 Extended valid elements is a configuration option of TinyMCE that is normally used to apply extensions to the `validElements` setting of TinyMCE. This configuration setting is however not available in the current implementation of TinyMCE in Umbraco CMS.
 
