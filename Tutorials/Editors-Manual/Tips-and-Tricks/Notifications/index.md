@@ -14,4 +14,8 @@ You can set up notifications so any user can receive an email when an action is 
 The notification settings apply to the chosen content item as well as any child items that appear below the item in the content tree.
 :::
 
+:::note
+If the notifications option does not appear, the SMTP settings are probably incorrect. In this case please contact the administrator of your website. 
+:::
+
 ![notifications.jpg](images/notifications-v8.png)
