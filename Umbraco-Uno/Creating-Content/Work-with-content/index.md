@@ -4,22 +4,6 @@ versionFrom: 8.0.0
 
 # Working with content
 
-----------
-This article should contain all necessary information needed to work with content in an Umbraco Uno project.
-
-* Update content
-* Create new content
-* Delete content
-* Save
-* Publish / Schedule for publish
-* Preview
-* Sort order
-* Roll back
-
-This article should link out to more tutorial-like articles; "Create a landing page", "Setup a feed", "Create a frontapge" (or something...)
-
-----------
-
 Whether you're building your website around the sample content or you're setting everything up from scratch, content is the most important part of your website. Every landing page, section and article are created and maintained from the **Content** section of the Umbraco Backoffice.
 
 In Umbraco Uno there are a hand-full of options for creating content along with a long list of customizable elements. This article aims to give you the basics of working with content be it updating, creating or even deleting.
@@ -68,10 +52,6 @@ In some cases you might need to delete page or entire sections of your website. 
 4. Select "OK" to confirm the deletion
 
 Once a piece of content or a section has been deleting, it will be mvoed to the **Recycle Bin** which is accessible from the Content tree. It is possible to **restore** deleted content by either moving the item back under the start node or by right-clicking it in the Content tree and choose "Restore".
-
-:::warning
-When deleting a piece of content it is important to note that **all** language variants as well as any sub pages will be deleted as well.
-:::
 
 ## Publishing content
 
