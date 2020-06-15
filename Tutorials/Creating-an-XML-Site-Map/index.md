@@ -135,7 +135,7 @@ This is a great candidate for a [Razor Helper](https://weblogs.asp.net/scottgu/a
 We're using `IPublishedContent` in this example but if you prefer to use __ModelsBuilder__ you could take advantage of the fact that the XMl Sitemap Settings composition will create an interface called `IXmlSiteMapSettings`. This will allow you to adjust the helper to accept this 'type' eg `RenderSiteMapUrlEntry(IXmlSiteMapSettings node)` and allow you to read the properties without the `Value` helper, eg `node.SearchEngineRelativePriority`. You would still need to create an extension method on `IXmlSiteMapSettings` to implement the recursive functionality we make use of on the `SearchEngineChangeFrequency` property.
 :::
 :::warning
-A bug present in v8.0.x to v8.6.x, stops a dropdown 'falling back' to it's ancestor if it has been set as a value, published and then reverted back to having no value selected - which could break the inheritance of change frequency in this tutorial, this is fixed in v8.7.x and above. 
+A bug present in v8.0.x to v8.6.x, stops a dropdown 'falling back' to its ancestor if it has been set as a value, published, and then reverted back to having no value selected. This could break the inheritance of change frequency in this tutorial and this is fixed in v8.7.x and above. 
 :::
 #### EnsureUrlStartsWithDomain - Razor Function
 
