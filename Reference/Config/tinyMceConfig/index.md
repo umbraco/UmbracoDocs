@@ -261,7 +261,7 @@ This enables editors to apply style formats to text using the 'Formats' dropdown
 
 ![Style format dropdown](images/formats-dropdown.png)
 
-...however TinyMce has a couple of further options for customising this menu that can't currently be set via the backoffice approach.
+However, TinyMce has a couple of further options for customising this menu that can't currently be set via the backoffice approach.
 
 ##### Providing context
 
