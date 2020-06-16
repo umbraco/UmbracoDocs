@@ -1,5 +1,5 @@
 ---
-versionFrom: 7.0.0
+versionFrom: 8.0.0
 ---
 
 # Routing
@@ -82,11 +82,7 @@ Get an overview of how the Umbraco pipeline is structured. See what happens from
             <div class="col-sm-6">
                 <h5><a href="../../Reference/Querying/IPublishedContent/">IPublishedContent</a></h5>
                 <small>IPublishedContent is the underlying model used in all Umbraco views.</small>
-            </div>
-            <div class="col-sm-6">
-                <h5><a href="../../Reference/Querying/DynamicPublishedContent/">DynamicPublishedContent</a></h5>
-                <small>The dynamic version of IPublishedContent that can be used in all Umbraco views.</small>
-            </div>
+            </div>       
             <div class="col-sm-6">
                 <h5><a href="../../Reference/Querying/UmbracoHelper/">UmbracoHelper</a></h5>
                 <small>Use UmbracoHelper to query published media and content.</small>

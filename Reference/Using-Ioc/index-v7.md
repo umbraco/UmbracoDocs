@@ -4,13 +4,15 @@ versionFrom: 7.0.0
 
 # Using IoC with Umbraco
 
-_This section will show you how to setup Ioc/Dependency Injection with your Umbraco installation. The examples will use Autofac but you can use whatever you want_
+_This section will show you how to setup IoC/Dependency Injection with your Umbraco installation. The examples will use Autofac but you can use whatever you want_
 
 ## Overview
 
 We don't use IoC in the Umbraco source code. This isn't because we don't like it or don't want to use it. It's because we want you as a developer to be able to use whatever IoC framework that you would like to use without jumping through any hoops. With that said, it means it is possible to implement whatever IoC engine that you'd like!
 
 ## Implementation
+
+The easiest way to get up and running with IoC/Dependency Injection in Umbraco is to use the [Our.Umbraco.IoC](https://github.com/Shazwazza/Our.Umbraco.IoC) package. It contains support for most popular dependency injection frameworks and has all of the boilerplate code and work done for you. The info below describes how you can configure your own framework manually without this package.
 
 In most IoC frameworks, you would setup your container in your global.asax class. To do that in Umbraco, you will need to inherit from our global.asax class called: `Umbraco.Web.UmbracoApplication`. You should then override the `OnApplicationStarted` method to build your container, and initialize any of the IoC stuff that you require.
 Alternatively, you can implement the `Umbraco.Web.IApplicationEventHandler` interface.
@@ -208,9 +210,9 @@ class UnityEvents : IApplicationEventHandler
 
         // The UmbracoContext must be registered so that the Umbraco backoffice controllers
         // can be successfully resolved.
-        container.RegisterType<UmbracoContext>(
-            new PerRequestLifetimeManager(),
-            new InjectionFactory(c => UmbracoContext.Current)
+        container.RegisterFactory<UmbracoContext>(
+          _ => UmbracoContext.Current,
+          new PerRequestLifetimeManager()
         );
 
         // Unity by default chooses the constructor with the most amount of arguments.

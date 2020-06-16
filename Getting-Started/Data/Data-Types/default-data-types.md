@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Default data types in Umbraco"
+meta.Description: "Learn about the default data types in Umbraco."
 ---
 
 # Default Data Types
@@ -40,7 +42,9 @@ Allows for the upload and cropping of images by using a focal point. Specific cr
 Is a non-editable control, can only be used to display a present text (string). It can also be used in the
 media section to load in values related to the node, such as width, height and file size.
 
-If you want to input something other than a string into a Label, you can use one of the five other Label Data Types: Label (bigint), Label (datetime), Label (decimal), Label (integer) or Label (time).
+If you want to input something other than a string into a Label, you can use one of the five other Label Data Types: Label (bigint), Label (datetime), Label (decimal), Label (integer) or Label (time). 
+
+If you want to save a long string value for a Label, there is a Value type: Label (Long string) which can be used for that.
 
 ### List View - Content
 This data type is used by Document Types that are set to display as list views.

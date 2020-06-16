@@ -84,9 +84,9 @@ When merging the `Dashboard.config` file make sure that you **do not overwrite /
         <area>forms</area>
         </areas>
         <tab caption="Dashboard">
-        <control>/app_plugins/umbracoforms/backoffice/dashboards/licensing.html</control>
-        <control>/app_plugins/umbracoforms/backoffice/dashboards/yourforms.html</control>
-        <control>/app_plugins/umbracoforms/backoffice/dashboards/activity.html</control>
+        <control>/App_Plugins/umbracoforms/backoffice/dashboards/licensing.html</control>
+        <control>/App_Plugins/umbracoforms/backoffice/dashboards/yourforms.html</control>
+        <control>/App_Plugins/umbracoforms/backoffice/dashboards/activity.html</control>
         </tab>
     </section>
 

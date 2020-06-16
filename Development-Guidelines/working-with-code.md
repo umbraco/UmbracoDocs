@@ -1,5 +1,7 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "Working with with Umbraco codebase"
+meta.Description: "Guidelines for creating and updating code in the Umbraco core"
 ---
 
 # Working with the code

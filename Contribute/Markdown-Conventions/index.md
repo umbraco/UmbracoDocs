@@ -1,5 +1,6 @@
 ---
-versionFrom: 7.0.0
+meta.Title: "Markdown conventions"
+meta.Description: "Explaination of how to use markdown and how we structure the files."
 ---
 
 # Markdown conventions

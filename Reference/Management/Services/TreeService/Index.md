@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
+versionRemoved: 8.0.0
 ---
 
 # ApplicationTreeService
@@ -32,26 +32,3 @@ The ApplicationTreeService is available through the `ApplicationContext`, but th
 Getting the service through the `ApplicationContext`:
 
     ApplicationContext.Current.Services.ApplicationTreeService
-
-## Methods
-
-### .MakeNew(bool initialize, byte sortOrder, string applicationAlias, string alias, string title, string iconClosed, string iconOpened, string type)
-Persists a new `Umbraco.Core.Models.ApplicationTree` object
-
-### .SaveTree(ApplicationTree tree)
-Saves a `Umbraco.Core.Models.ApplicationTree` object
-
-### .DeleteTree(ApplicationTree tree)
-Deletes a `Umbraco.Core.Models.ApplicationTree` object
-
-### .GetByAlias(string treeAlias)
-Gets a `Umbraco.Core.Models.ApplicationTree` object by alias
-
-### .GetAll()
-Gets all registered `Umbraco.Core.Models.ApplicationTree` objects
-
-### .GetApplicationTrees(string applicationAlias)
-Gets all `Umbraco.Core.Models.ApplicationTree` objects for the specified section
-
-### .GetApplicationTrees(string applicationAlias, bool onlyInitialized)
-Gets all `Umbraco.Core.Models.ApplicationTree` objects for the specified section that are marked to be initialized

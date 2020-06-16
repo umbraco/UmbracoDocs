@@ -9,7 +9,7 @@ _This section will explain the many configuration options in Umbraco and what th
 ### [web.config](webconfig/index-v7.md)
 This file can be found at the following path: /web.config
 
-### [404handlers.config](404handlers/index.md)
+### [404handlers.config](404handlers/index-v7.md)
 Configuration file for legacy NotFoundHandlers
 
 This file can be found at the following path: /config/404handlers.config
@@ -19,7 +19,7 @@ Configuration options of setting up sections within the Umbraco Backoffice.
 
 This file can be found at the following path: /config/applications.config
 
-### [dashboards.config](dashboard/index.md)
+### [dashboards.config](dashboard/index-v7.md)
 Configuration options for controlling which dashboards appear in which sections of the backoffice and who has the permissions to see them.
 
 This file can be found at the following path: /config/Dashboard.config
@@ -56,7 +56,7 @@ The 'tinyMceConfig.config' contains configuration options for the [TinyMce](http
 
 This file can be found at the following path: /config/tinyMceConfig.config
 
-### [trees.config](trees/index.md)
+### [trees.config](trees/index-v7.md)
 The 'trees.config' file contains the configuration for trees that are loaded within each section of the Umbraco Backoffice.
 
 This file can be found at the following path: /config/trees.config

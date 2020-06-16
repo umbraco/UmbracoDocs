@@ -1,6 +1,8 @@
 ---
 versionFrom: 7.0.0
 needsV8Update: "true"
+meta.Title: "Umbraco Property Editors"
+meta.Description: "Guide on how to work with and create Property Editors in Umbraco"
 ---
 
 # Property Editors
@@ -21,6 +23,10 @@ Reference for the package.manifest JSON file format to register one or more prop
 ## [Property Value Converters](value-converters.md)
 
 Convert the stored property data value to a useful object returned by the Published Content APIs.
+
+## [Property Actions](Property-Actions/)
+
+**Requires Umbraco 8.4+**. Use Property Actions to add additional functionaility to your custom property editors.
 
 ## [Tag support](tag-support.md)
 

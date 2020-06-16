@@ -1,6 +1,8 @@
 ---
 keywords: dashboards dashboard extending v8 version8
 versionFrom: 8.0.0
+meta.Title: "Umbraco Custom Dashboards"
+meta.Description: "A guide to creating custom dashboards in Umbraco"
 ---
 
 # Dashboards
@@ -12,7 +14,7 @@ The dashboard area of Umbraco is used to display an 'editor' for the selected it
 There are two approaches to registering a custom dashboard to appear in the Umbraco Backoffice:
 
 ### Registering with package.manifest
-Add a file named 'package.manifest' to the app_plugins folder, containing the following json configuration pointing to your dashboard view:
+Add a file named 'package.manifest' to the 'App_Plugins' folder, containing the following json configuration pointing to your dashboard view:
 
 ```json
 {
@@ -42,7 +44,11 @@ namespace My.Website
     {
         public string Alias => "myCustomDashboard";
 
-        public string[] Sections => new[] { "content", "settings" };
+        public string[] Sections => new[]
+        {
+            Umbraco.Core.Constants.Applications.Content,
+            Umbraco.Core.Constants.Applications.Settings
+        };
 
         public string View => "/App_Plugins/myCustom/dashboard.html";
 
@@ -234,9 +240,13 @@ namespace My.Website
     public class MyDashboard : IDashboard
     {
         public string Alias => "myCustomDashboard";
-
-        public string[] Sections => new[] { "content", "settings" };
-
+		
+        public string[] Sections => new[]
+        {
+            Umbraco.Core.Constants.Applications.Content,
+            Umbraco.Core.Constants.Applications.Settings
+        };
+				
         public string View => "/App_Plugins/myCustom/dashboard.html";
 
         public IAccessRule[] AccessRules
@@ -275,6 +285,43 @@ namespace My.Website
         {
             composition.Dashboards().Remove<ContentDashboard>();
         }
+    }
+}
+```
+
+## Override an Umbraco Dashboard
+In Umbraco 8+, to modify the order of a default dashboard or change its permissions, you must first remove the default dashboard (see above), then add an overridden instance of the default dashboard.  The overridden dashboard can then include your modifications.  For example, if you wanted to deny the Writers group access to the default Redirect URL Management dashboard, you would create an override of RedirectUrlDashboard to add after removing the default dashboard.
+
+```csharp
+using Umbraco.Core;
+using Umbraco.Core.Composing;
+using Umbraco.Core.Dashboards;
+using Umbraco.Web;
+using Umbraco.Web.Dashboards;
+
+namespace MyDashboardCustomization
+    {
+    public class MyComposer : IComposer
+    {
+        public void Compose(Composition composition)
+        {
+            composition.Dashboards()
+                // Remove the default
+                .Remove<RedirectUrlDashboard>()
+                // Add the overridden one
+                .Add<MyRedirectUrlDashboard>();
+        }
+    }
+
+    // overridden redirect dashboard with custom rules
+    public class MyRedirectUrlDashboard : RedirectUrlDashboard, IDashboard
+    {
+        // override explicit implementation
+        IAccessRule[] IDashboard.AccessRules { get; } = new IAccessRule[]
+        {
+            new AccessRule {Type = AccessRuleType.Deny, Value = "writer"},
+            new AccessRule {Type = AccessRuleType.Grant, Value = Umbraco.Core.Constants.Security.AdminGroupAlias}
+        };
     }
 }
 ```

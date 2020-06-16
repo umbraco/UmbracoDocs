@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Umbraco ContentService Events"
+meta.Description: "Information on the various events available in the ContentService"
 ---
 
 # ContentService Events
@@ -332,7 +334,9 @@ namespace Umbraco8.Components
         "e" will provide:
             <ol>
                 <li>NodeObjectType: Gets the Id of the node object type of the items being deleted from the Recycle Bin.</li>
-                <li>AllPropertyData: Gets the list of all property data associated with a content id.</li>
+                <li>RecycleBinEmptiedSuccessfully: Boolean indicating whether the Recycle Bin was emptied successfully.</li>
+                <li>IsContentRecycleBin: Boolean indicating whether this event was fired for the Content's Recycle Bin.</li>
+                <li>IsMediaRecycleBin: Boolean indicating whether this event was fired for the Media's Recycle Bin.</li>
             </ol>
         </td>
     </tr>
@@ -345,8 +349,9 @@ namespace Umbraco8.Components
         "e" will provide:
             <ol>
                 <li>NodeObjectType: Gets the Id of the node object type of the items deleted from the Recycle Bin.</li>
-                <li>AllPropertyData: Gets the list of all property data associated with a content id.</li>
-                <li>EmptiedSuccessfully: Boolean indicating whether the Recycle Bin was emptied successfully.</li>
+                <li>RecycleBinEmptiedSuccessfully: Boolean indicating whether the Recycle Bin was emptied successfully.</li>
+                <li>IsContentRecycleBin: Boolean indicating whether this event was fired for the Content's Recycle Bin.</li>
+                <li>IsMediaRecycleBin: Boolean indicating whether this event was fired for the Media's Recycle Bin.</li>
             </ol>
         </td>
     </tr>

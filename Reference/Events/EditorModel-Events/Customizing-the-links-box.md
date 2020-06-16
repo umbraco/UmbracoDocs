@@ -25,7 +25,7 @@ EditorModelEventManager.SendingContentModel += (sender, e) => {
 
 or remove the box entirely by providing an empty list of links:
 
-:::tip
+:::warning
 Versions prior to Umbraco 7.13 don't support hiding the **Links** box, and as a result, the example below will lead to an empty box.
 :::
 

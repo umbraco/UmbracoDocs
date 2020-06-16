@@ -1,11 +1,11 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
+versionRemoved: 8.0.0
 ---
 
 # XSLT-snippet for VB-coders
 
-There's a coveniant way to add VB-code directly in the Umbraco UI, as a XSLT-macro. Add a new empty XSLT-file and paste this snippet.
+There's a convenient way to add VB-code directly in the Umbraco UI, as a XSLT-macro. Add a new empty XSLT-file and paste this snippet.
 
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE xsl:stylesheet [ <!ENTITY nbsp "&#x00A0;"> ]>

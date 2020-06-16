@@ -17,7 +17,14 @@ Learn more about our recommendations for DNS records in the [Manage Hostnames](.
 
 ## HTTPS by default
 
-All new Live sites created on Cloud since version 7.12 will automagically have a permanent redirect (301) from HTTP to HTTPS. This is achieved by a web.config transform called: `Latch.Web.live.xdt.config` - accessible in your git repository. If you'd like to remove the redirect rule (which we and [others](https://www.blog.google/products/chrome/milestone-chrome-security-marking-http-not-secure/) strongly discourage) you'll need to remove the file `Latch.Web.live.xdt.config` from projects repository and push the change to Cloud.
+All new Live sites created on Cloud since version 7.12 will automaticallt have a permanent redirect (301) from HTTP to HTTPS. This is achieved by a web.config transform called: `Latch.Web.live.xdt.config` - accessible in your git repository. If you'd like to remove the redirect rule (which we and [others](https://www.blog.google/products/chrome/milestone-chrome-security-marking-http-not-secure/) strongly discourage) you'll need to remove the file `Latch.Web.live.xdt.config` from projects repository and push the change to Cloud.
+
+## Default TLS Certificates
+
+All `*.umbraco.io` domains will serve a default wildcard certificate with a common name `*.umbraco.io`.
+Custom domains will automatically be secured by a Let's Encrypt certificate.
+
+On Umbraco Cloud projects on the Professional or Enterprise plan, it is possible to [upload a custom certificate](../Manage-Hostnames/Security-Certificates/) that will overwrite the default certificates provided for the domains.
 
 ## Latch and CDN
 
@@ -29,9 +36,16 @@ In that case you can manually add a TLS certificate to your project instead. Rea
 Umbraco Latch can issue 5 certificates for a single domain per week. If this limit is exceeded, you will have to wait a week in order to regenerate the certificate for the domain.
 :::
 
+:::note
+The generation process might freeze (e.g. Initial > DnsApproved > ChallengeFileWritten > Initial) when your DNS provider has both an IPv4 and IPv6 IP address. 
+Unfortunately, Latch doesn't support IPv6 but Lets Encrypt will take that over IPv4 when it's there.
+In order to resolve this, you will need to disable IPv6 for that domain.
+:::
+
 ## Status definitions
 
 When Umbraco Latch is issuing a certificate for one of your hostnames it goes through the following states:
+
 * Initial
 * DnsApproved
 * NoRewrites
@@ -77,6 +91,9 @@ Do you need to add the hostname, we recommend setting up CDN and [upload a manua
 This is the state you will see next to your hostname if Umbraco Latch has tried issuing a certificate 5 times, which is the limit per week.
 
 If you see this state, you will need to wait a week, before Umbraco Latch can assign a certificate to your hostname.
+
+## CAA records and Umbraco Latch
+If you have CAA (Certification Authority Authorization) records configured for your domain, that does not allow the certificate provider of Umbraco Latch (Lets Encrypt) to issue a certificate, the hostname will be stuck in the 'Inital' phase. To make sure that Umbraco Latch can have a certificate issued for your hostname, you can either delete the CAA record preventing issuance, or you can add a record to allow LetsEncrypt to issue certificates for your domain. Let’s Encrypt’s identifying domain name for CAA is ```letsencrypt.org```. You can read more about CAA and LetsEncrypt in [the official LetsEncrypt documentation](https://letsencrypt.org/docs/caa/).
 
 ## Read more
 

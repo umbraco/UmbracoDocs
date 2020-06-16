@@ -1,6 +1,5 @@
 ---
-versionFrom: 7.0.0
-needsV8Update: "true"
+versionFrom: 8.0.0
 ---
 
 
@@ -10,102 +9,60 @@ _Working with MVC Views and Razor syntax in Umbraco_
 
 ## Properties available in Views
 
-All Umbraco views inherit from `Umbraco.Web.Mvc.UmbracoTemplatePage` which exposes many properties that are available in razor:
+All Umbraco views inherit from `Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.NameOfYourDocType>` along with the using statement `@using ContentModels = Umbraco.Web.PublishedModels;`. This exposes many properties that are available in razor. The properties on the Document Type can be accessed in a number of ways:
 
+* @Model (of type `Umbraco.Web.Mvc.ContentModel`) -> the model for the view which contains the standard list of IPublishedContent properties but also gives you access to the typed current page (of type whatever type you have added in the angled brackets).
 * @Umbraco (of type `Umbraco.Web.UmbracoHelper`) -> contains many helpful methods, from rendering macros and fields to retrieving content based on an Id and tons of other helpful methods. [See UmbracoHelper Documentation](../../Querying/UmbracoHelper/index.md)
 * @Html (of type `HtmlHelper`) -> the same HtmlHelper you know and love from Microsoft but we've added a bunch of handy extension methods like @Html.BeginUmbracoForm
-* @CurrentPage (of type `DynamicPublishedContent`) -> the dynamic representation of the current page model which allows dynamic access to fields and also dynamic LINQ
-* @Model (of type `Umbraco.Web.Mvc.RenderModel`) -> the model for the view which contains a property called `Content` which gives you access to the typed current page (of type `IPublishedContent`).
 * @UmbracoContext (of type `Umbraco.Web.UmbracoContext`)
-* @ApplicationContext (of type `Umbraco.Core.ApplicationContext`)
 * @Members (of type `Umbraco.Web.Security.MemberShipHelper`) [See MemberShipHelper Documentation](../../Querying/MemberShipHelper/index.md)
 
-## Rendering a field with UmbracoHelper
+## Rendering a field in a strongly typed view
 
-This is probably the most used method which renders the contents of a field for the current content item.
-
-```csharp
-@Umbraco.Field("bodyContent")
-```
-
-If you're using the Field method from within a partial view then be aware that you will need to pass the context so the Field method knows where to get the desired value from. For instance you can pass "CurrentPage" like this:
+This is probably the most used method which renders the contents of a field using the alias of the content item.
 
 ```csharp
-@Umbraco.Field(Model.Content, "eventLink")
+@Model.Value("bodyContent")
 ```
 
-You will also need to pass the "Context" to the @Umbraco.Field() method if you're looping over a selection like this where we pass the "item" variable.
+If you're using the method from within a partial view then be aware that you will need to inherit the context so the method knows which type to get the desired value from. You'd do this at the top of partial view and so strongly typed properties can then be accessed in the partial view. For instance you can pass "HomePage" like this:
+
+```csharp
+@inherits UmbracoViewPage<HomePage>
+...
+@Model.Value("title")
+```
+
+You will also need to pass the "Context" to the @Model.Value() method if you're looping over a selection like this where we pass the "item" variable.
+
+Looping over a selection works in a similar way. If you have a property that contains, for instance, an IEnumberable collection, you can access the individual items using a foreach loop. Below illustrates how you might do that using "item" as a variable.
 
 ```csharp
 @{
-    var selection = Model.Content.Site().FirstChild("events").Children("event").Where(x => x.IsVisible());
+    var collection = Model.ItemList;
 }
 
 <ul>
-    @foreach(var item in selection){
-        @Umbraco.Field(item, "eventLink")
+    @foreach(var item in collection){
+        <p>@item.Name</p>
     }
 </ul>
 ```
-
-There are several optional parameters. Here is the list with their default values:
-
-* `altFieldAlias = ""`
-* `altText = ""`
-* `insertBefore = ""`
-* `insertAfter = ""`
-* `recursive = false`
-* `convertLineBreaks = false`
-* `removeParagraphTags = false`
-* `casing = RenderFieldCaseType.Unchanged`
-* `encoding = RenderFieldEncodingType.Unchanged`
-
-The easiest way to use the Field method is to specify the optional parameters you'd like to set. For example, if we want to set the insertBefore and insertAfter parameters we'd do:
-
+If you want to convert a type and it's possible, you can do that by typing a variable and assigning the value from your property to it. This could look like the example below.
 ```csharp
-@Umbraco.Field("bodyContent", insertBefore : "<h2>", insertAfter : "</h2>")
-```
+@foreach (TeamMember person in Model.TeamMembers)
+   {
+     <a href="@person.Url">
+        <p>@person.Name</p>
+     </a>
+   }
+ ```
 
-## Rendering a field with Model
-
-The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however want to render value "as-is" you can use the @Model.Content property of the view. For example:
-
-```csharp
-@Model.Content.Properties["bodyContent"].Value
-```
-
-Or alternatively:
-
-```csharp
-@Model.Content.GetPropertyValue("bodyContent")
-```
-
-You can also specify the output type that you want from the property. If the property editor or value does not support the conversion then an exception will be thrown. Some examples:
-
-```csharp
-@Model.Content.GetPropertyValue<double>("amount")
-@Model.Content.GetPropertyValue<RawXElement>("xmlContents")
-```
-
-## Rendering a field using @CurrentPage (dynamically)
-
-**Attention! This approach is considered obsolete** - See [Common pitfalls]
-
-:::warning
-Attention! This approach is considered obsolete - See [Common pitfalls](../../Common-Pitfalls/index.md#dynamics) for more information about why the dynamic approach is obsolete. for more information about why the dynamic approach is obsolete.
-:::
-
-The UmbracoHelper method provides many useful parameters to change how the value is rendered. If you however want to render value "as-is" you can use the @CurrentPage property of the view. The difference between @CurrentPage and @Model.Content is that @CurrentPage is the dynamic representation of the model which exposes many dynamic features for querying. For example, to render a field you use this syntax:
-
-```csharp
-@CurrentPage.bodyContent
-```
-
-*NOTE: When accessing content dynamically you will not get intellisense if you are using Visual Studio to edit your templates.*
+In this example, we are looping through a list of items with the custom made type TeamMember assigned. This means we are able to access the strongly typed properties on the TeamMember item.
 
 ## <a name="renderingMacros"></a>Rendering Macros
 
-Rendering a macro is easy using UmbracoHelper. There are 3 overloads, we'll start with the most basic:
+Rendering a macro is done using UmbracoHelper. There are 3 overloads, we'll start with the most basic:
 
 This renders a macro with the specified alias without any parameters:
 
@@ -138,7 +95,7 @@ This renders a macro with some parameters using a dictionary
     var umbracomember = Members.GetByUsername(profile.UserName);
 
     <h1>@umbracomember.Name</h1>
-    <p>@umbracomember.GetPropertyValue<string>("bio")</p>
+    <p>@umbracomember.Value<string>("bio")</p>
 }
 ```
 

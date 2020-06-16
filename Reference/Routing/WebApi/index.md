@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.Title: "Umbraco WebApi Routing"
+meta.Description: "A guide to implenting WebApi in Umbraco projects"
 ---
 
 # Umbraco Api

@@ -1,6 +1,5 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
 ---
 
 # HTTPS
@@ -18,7 +17,7 @@ Another benefits of HTTPS is that you are able to use the [http2](https://en.wik
 
 ## Set UseSSL configuration option
 
-Umbraco allows you to force HTTPS for all backoffice communications but using the following appSettings configuration:
+Umbraco allows you to force HTTPS for all backoffice communications by using the following appSettings configuration:
 
 In Umbraco V7
 

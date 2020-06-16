@@ -1,6 +1,5 @@
 ---
 versionFrom: 7.0.0
-needsV8Update: "true"
 ---
 
 # Using MVC Child Actions in Umbraco
@@ -17,7 +16,7 @@ Child Actions can be very powerful especially when you want to have re-usable co
 
 ## Creating a Child Action
 
-This documentation is going to use [SurfaceControllers](../../Routing/surface-controllers.md) to create child actions but if you want to create child actions with your own custom controllers with your own custom routing that will work too. Once you've created a SurfaceController, you need to create an action (Note the ChildActionOnly attribute, this will ensure that this action is not publicly routable via a URL):
+This documentation is going to use [SurfaceControllers](../../Routing/surface-controllers.md) to create child actions but if you want to create child actions with your own custom controllers with your own custom routing that will work too. Once you've created a SurfaceController, you need to create an action (Note the `ChildActionOnly` attribute, this will ensure that this action is not publicly routable via a URL):
 
 ```csharp
 public class MySearchController : SurfaceController
@@ -46,11 +45,11 @@ MVC allows you to have the same overloaded action names on your controllers. How
 
 The same view locations apply to Partial Views returned from Child Actions as the ones listed here: [Partial Views](partial-views.md)
 
-Also note that since this example is using a Surface Controller and if we were shipping this controller as part of a package, then the ~/App_Plugins view location will work too. See  [SurfaceControllers](../../Routing/surface-controllers.md) documentation under the heading *Plugin based controllers*.
+Also note that since this example is using a Surface Controller and if we were shipping this controller as part of a package, then the *~/App_Plugins* view location will work too. See  [SurfaceControllers](../../Routing/surface-controllers.md) documentation under the heading *Plugin based controllers*.
 
 ## Rendering a Child Action
 
-To render a child action in your view is really easy, call the Html.Action method, pass in the Action name and your controller's name and the route values including your model. In this case we are passing in a new instance of a custom QueryParameters class and using a current 'search' query string from the Http request:
+To render a child action in your view, call the Html.Action method, pass in the Action name and your controller's name and the route values including your model. In this case we are passing in a new instance of a custom *QueryParameters* class and using a current 'search' query string from the Http request:
 
 ```csharp
     @Html.Action("SearchResults", "MySearch",
@@ -88,6 +87,6 @@ Now the syntax to render a Child Action becomes:
 })
 ```
 
-the only thing that is changed is that we've told it to route to the 'area' called "MyCustomSearchPackage". If this syntax seems strange to you please note that this routing logic and syntax is standard and very common practice in ASP.NET MVC.
+the only thing that is changed is that we've told it to route to the 'area' called *MyCustomSearchPackage*. If this syntax seems strange to you please note that this routing logic and syntax is standard and very common practice in ASP.NET MVC.
 
 More documentation regarding Child Actions and how to render them can be found on the net, a nice write up can also be found here: [https://haacked.com/archive/2009/11/18/aspnetmvc2-render-action.aspx](https://haacked.com/archive/2009/11/18/aspnetmvc2-render-action.aspx)

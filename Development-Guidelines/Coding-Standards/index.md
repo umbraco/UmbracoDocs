@@ -1,5 +1,7 @@
 ---
 versionFrom: 7.0.0
+meta.Title: "Coding Standards"
+meta.Description: "A guide to coding standards and naming conventions in Umbraco core."
 ---
 
 # Coding standards and naming conventions
@@ -27,6 +29,6 @@ _Coding standards and naming conventions for all languages used in the Umbraco c
 ### C&#35;
 When developing new Class libraries we will be adhering as closely as possible to the official guidelines as proposed by Microsoft [https://msdn.microsoft.com/en-us/library/ms229042.aspx](https://msdn.microsoft.com/en-us/library/ms229042.aspx)
 
-Another good reference is "Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries" book by Krzysztof Cwalina and Brad Abrams
+Another good reference is [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries](https://www.oreilly.com/library/view/framework-design-guidelines/9780321545671)  book by Krzysztof Cwalina and Brad Abrams
 
 Resharper settings are included with the solution, so developers can cleanup code in a consistent manner.

@@ -1,4 +1,6 @@
 ---
+meta.Title: "Source Control with Umbraco"
+meta.Description: "In this article you can learn more about how to effectively source control your Umbraco site."
 versionFrom: 8.0.0
 ---
 
@@ -62,7 +64,7 @@ They include:
 - `Umbraco.sdf` - If you are using SQLCE for the data store in your Umbraco site, then this file IS that datastore, it will be difficult to source control the constant changes to this file.
 
 :::note
-There is a file `/App_Data/packages/installed/installedPackages.config` that lists all packages installed via the Umbraco backoffice, depending on how you update or install packages to your site, it can be useful to track changes to this file in source control.
+There is a file `/App_Data/packages/installedPackages.config` that lists all packages installed via the Umbraco backoffice, depending on how you update or install packages to your site, it can be useful to track changes to this file in source control.
 :::
 
 #### Umbraco Models Builder
@@ -143,7 +145,7 @@ When you create and edit eg. Document Types, Media Types and Data Types in the U
 
 There are several add-on packages that can help add source control to these structure changes:
 
-- *[The uSync package (free)](https://our.umbraco.org/projects/developer-tools/usync/)* - which can be configured to serialize these changes to files on disk, in a folder called /uSync - enabling you to source/version control these changes and synchronise them to other environments.
+- *[The uSync package (free)](https://our.umbraco.com/projects/developer-tools/usync/)* - which can be configured to serialize these changes to files on disk, in a folder called /uSync - enabling you to source/version control these changes and synchronise them to other environments.
 
 - *[uSync Snapshots (licensed)](https://our.umbraco.com/packages/developer-tools/usyncsnapshots/)* - an extension to uSync, for taking 'before' and 'after' snapshots of an Umbraco site, for managing a release of a 'set of changes' between environments.
 
