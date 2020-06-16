@@ -32,21 +32,19 @@ To further break this down, the `value` attribute is usually an empty value as m
 
 ## plugins
 
-Inside of the `<plugins>` node you can find one or more `<plugin>` nodes. Each one of these nodes defines a plugin which extends the functionality of TinyMce. Below you will find the standard plugins configured in a clean install of Umbraco v6.x.
+Inside of the `<plugins>` node you can find one or more `<plugin>` nodes. Each one of these nodes defines a plugin which extends the functionality of TinyMce. Below you will find the standard plugins configured in a clean install of Umbraco v7.x.
 
 ```xml
 <plugins>
+    <plugin loadOnFrontend="true">code</plugin>
+    <plugin loadOnFrontend="true">codemirror</plugin>
     <plugin loadOnFrontend="true">paste</plugin>
-    <plugin loadOnFrontend="true">inlinepopups</plugin>
-    <plugin loadOnFrontend="true">noneditable</plugin>
+    <plugin loadOnFrontend="true">anchor</plugin>
+    <plugin loadOnFrontend="true">charmap</plugin>
     <plugin loadOnFrontend="true">table</plugin>
-    <plugin loadOnFrontend="false">umbracomacro</plugin>
-    <plugin loadOnFrontend="false">umbracoimg</plugin>
-    <plugin loadOnFrontend="false">advlink</plugin>
-    <plugin loadOnFrontend="false">umbracocss</plugin>
-    <plugin loadOnFrontend="false">umbracoembed</plugin>
-    <plugin loadOnFrontend="false">spellchecker</plugin>
-</plugins>
+    <plugin loadOnFrontend="true">lists</plugin>
+    <plugin loadOnFrontend="true">hr</plugin>
+  </plugins>
 ```
 
 ## validElements
