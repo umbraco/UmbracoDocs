@@ -47,7 +47,7 @@ Below you will find the standard tinyMCE plugins configured in a clean install o
         <plugin>fullscreen</plugin>
     </plugins>
 ```
-Additionally Umbraco has it's own custom TinyMce plugins to handle inserting Media + Macros and these are implemented in the [tinyMceService](/apidocs/v8/ui/#/api/umbraco.services.tinyMceService)
+Umbraco has it's own custom TinyMce plugins to handle inserting Media + Macros and these are implemented in the [tinyMceService](/apidocs/v8/ui/#/api/umbraco.services.tinyMceService).
 
 ### Example - Adding the TinyMce Code Sample plugin
 TinyMce has a 'code highlighting' plugin that works with [prism.js](https://prismjs.com/) called [Code Sample](https://www.tiny.cloud/docs-4x/plugins/codesample/).
