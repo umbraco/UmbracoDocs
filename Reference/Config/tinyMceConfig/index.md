@@ -51,7 +51,7 @@ Umbraco has it's own custom TinyMce plugins to handle inserting Media + Macros a
 
 ### Example - Adding the TinyMce Code Sample plugin
 TinyMce has a 'code highlighting' plugin that works with [prism.js](https://prismjs.com/) called [Code Sample](https://www.tiny.cloud/docs-4x/plugins/codesample/).
-For most Umbraco site's this perhaps wouldn't be that useful for editors, but a blog about coding? let's add it in!
+For most Umbraco site's this perhaps wouldn't be that useful for editors, but a blog about coding? Let's add it in.
 
 First we need to update the **/config/tinyMceConfig.config** file and add the alias for the plugin: 'codesample' to the list of Commands:
 ```xml
