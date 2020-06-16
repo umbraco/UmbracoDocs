@@ -113,6 +113,7 @@ In this tutorial you will get an example of how you can send your data to Google
 ## Example: Sending data to Google Sheets
 
 As a “Do this…” action you want to send data to Google Sheets. Before doing so in your Zap you need to ensure that you have created a Google Sheet to receive the data. You also need to connect your Zapier account to your Google Sheets account.
+
 Once you have done these steps it is time to finish the setup of the Zap.
 
 First thing to do is find the “Google Sheets” app in the “Do this…” action.
