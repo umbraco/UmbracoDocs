@@ -137,15 +137,25 @@ namespace My.Website
 }
 ```
 ## Types of Composers
-Composers are responsible for drawing together the different components an Umbraco application is composed of. They implement the following Composer interfaces which group together the composers and control the order in which they are run:<br/>
-`InitialComposer`<br/>
-The *CoreInitialComposer* and the *WebInitialComposer* which sets up everything required for Umbraco to run. The *CoreInitialComposer* runs before the *WebInitialComposer* . Registering the database builder, registering the various services in Umbraco, registering the routes for *RenderMvcControllers*, *APIControllers* and *SurfaceControllers* in Umbraco etc are some of the resposibilities of these composers. These composers runs before any other composers and there should only be one instance of these composers. It belongs to Umbraco and must not be used for any customisations. This was called the `IRuntimeComposer` initially.
 
-`ICoreComposer`<br/>
-After the IRuntimeComposer has 'composed' - all ICoreComposer instances also 'compose'. They compose all the default elements that Umbraco needs to run. Some of the responsibilities covered by ICoreComposers include registering ModelsBuilder, registering the log viewer, registering the component responsible for writing into the audit logs etc.
+Composers are responsible for drawing together the different components an Umbraco application is composed of. 
 
-`IUserComposer`<br/>
-Finally, all IUserComposer instances 'compose'. These types of composers are for developers/implementors to use to customise and extend Umbraco or use in package development.
+`InitialComposer`
+
+The *CoreInitialComposer* and the *WebInitialComposer* setup everything required for Umbraco to run. The *CoreInitialComposer* runs first, followed by the *WebInitialComposer* . Registering the database builder, services, routes for *RenderMvcControllers*, *APIControllers* and *SurfaceControllers* are some of the resposibilities of these two composers. 
+
+These composers run before any other composers and there should only be one instance of each of these composers. They belong to Umbraco and must not be used for any customisations. 
+
+After the InitialComposer's there are two groups of composers that execute, they implement the following interfaces to control the order in which they are run:
+
+
+`ICoreComposer`
+
+After the WebInitialComposer has 'composed' - all ICoreComposer instances also 'compose'. They compose all the default elements that Umbraco needs to run. Some of the responsibilities covered by ICoreComposers include registering ModelsBuilder, registering the log viewer, registering the component responsible for writing into the audit logs etc.
+
+`IUserComposer`
+
+Finally, all IUserComposer instances 'compose'. These types of composers are for developers/implementors to use to customise and extend Umbraco or for use in package development.
 
 :::warning
 Ordering of composers is important, the last one added can override a previously added composer! Make sure, when overriding, that your composer that is doing the overriding, is 'composing', after the composer has 'composed' the element you wish to override!
